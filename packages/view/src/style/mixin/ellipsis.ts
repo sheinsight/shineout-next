@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import type { CSSProperties } from 'react';
 
 export default (line: number = 1) => {
   if (line === 1)
@@ -6,12 +6,12 @@ export default (line: number = 1) => {
       overflow: `hidden`,
       textOverflow: `ellipsis`,
       whiteSpace: `nowrap`,
-    } as CSSProperties
+    } as CSSProperties;
   else
     return {
       display: `-webkit-box`,
       '-webkit-line-clamp': line,
       '-webkit-box-orient': 'vertical',
       overflow: 'hidden',
-    } as CSSProperties
-}
+    } as CSSProperties;
+};

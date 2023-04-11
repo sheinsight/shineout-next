@@ -4,356 +4,356 @@ export interface Theme {
       /**
        * 主色
        */
-      primary: string
+      primary: string;
       /**
        * 主色2
        */
-      primary2: string
+      primary2: string;
       /**
        * 主色激活
        */
-      primaryActive: string
+      primaryActive: string;
       /**
        * 主色对应的文本颜色
        */
-      primaryText: string
+      primaryText: string;
       /**
        * 常规文本颜色
        */
-      text: string
+      text: string;
       /**
        * 常规背景色
        */
-      background: string
+      background: string;
       /**
        * 次要文本颜色
        */
-      secondaryText: string
+      secondaryText: string;
       /**
        * 次要文本颜色2
        */
-      secondaryText2: string
+      secondaryText2: string;
       /**
        * 次要文本颜色3
        */
-      secondaryText3: string
+      secondaryText3: string;
       /**
        * 边框色
        */
-      border: string
+      border: string;
       /**
        * 警示文字颜色
        */
-      warning: string
+      warning: string;
       /**
        * 禁用背景色
        */
-      disabledBackground: string
+      disabledBackground: string;
       /**
        * 禁用文字颜色
        */
-      disabledText: string
+      disabledText: string;
       /**
        * 激活状态背景色
        */
-      active: string
+      active: string;
       /**
        * 遮罩背景色
        */
-      mask: string
-    }
+      mask: string;
+    };
     borderRadius: {
-      md: number
-      sm: number
-      lg: number
-      round: number
-    }
+      md: number;
+      sm: number;
+      lg: number;
+      round: number;
+    };
     size: {
       font: {
-        md: number
-        sm: number
-        xs: number
-        lg: number
-      }
-    }
+        md: number;
+        sm: number;
+        xs: number;
+        lg: number;
+      };
+    };
     weight: {
       bold: {
-        value: number
-        family: string
-      }
-    }
+        value: number;
+        family: string;
+      };
+    };
     padding: {
-      xs: number
-      sm: number
-      md: number
-      lg: number
-    }
+      xs: number;
+      sm: number;
+      md: number;
+      lg: number;
+    };
     animate: {
       normal: {
-        duration: string
-        timer: string
-      }
+        duration: string;
+        timer: string;
+      };
       zoomIn: {
-        timer: string
-      }
+        timer: string;
+      };
       zoomOut: {
-        timer: string
-      }
-    }
-  }
+        timer: string;
+      };
+    };
+  };
   components: {
     button: {
       height: {
-        xs: number
-        md: number
-        sm: number
-        lg: number
-      }
+        xs: number;
+        md: number;
+        sm: number;
+        lg: number;
+      };
       padding: {
-        xs: number
-        sm: number
-        md: number
-        lg: number
-      }
-      borderRadius: number
+        xs: number;
+        sm: number;
+        md: number;
+        lg: number;
+      };
+      borderRadius: number;
       disabled: {
-        background: string
-        text: string
-        border: string
-      }
-    }
+        background: string;
+        text: string;
+        border: string;
+      };
+    };
     checkbox: {
-      size: number
-    }
+      size: number;
+    };
     navbar: {
-      height: number
-      background: string
-      textColor: string
-      titleFontSize: number
-      padding: number
-    }
+      height: number;
+      background: string;
+      textColor: string;
+      titleFontSize: number;
+      padding: number;
+    };
     tabbar: {
-      zIndex: number
+      zIndex: number;
       size: {
-        height: number
-      }
+        height: number;
+      };
       color: {
-        text: string
-      }
-    }
+        text: string;
+      };
+    };
     cell: {
       padding: {
-        h: number
-        v: number
-        card: number
-      }
-      cardBorderRadius: number
+        h: number;
+        v: number;
+        card: number;
+      };
+      cardBorderRadius: number;
       color: {
-        value: string
-        divider: string
-        active: string
-      }
+        value: string;
+        divider: string;
+        active: string;
+      };
       size: {
-        minHeight: number
-      }
-    }
+        minHeight: number;
+      };
+    };
     modal: {
       zIndex: {
-        mask: number
-        modal: number
-      }
+        mask: number;
+        modal: number;
+      };
       color: {
-        mask: string
-        background: string
-        close: string
-      }
+        mask: string;
+        background: string;
+        close: string;
+      };
       size: {
-        padding: number[]
-        font: number
-        titleFont: number
-        minHeight: number
-        borderRadius: number
-        buttonBorderRadius: number
-        width: number
-      }
-    }
+        padding: number[];
+        font: number;
+        titleFont: number;
+        minHeight: number;
+        borderRadius: number;
+        buttonBorderRadius: number;
+        width: number;
+      };
+    };
     toast: {
       zIndex: {
-        mask: number
-        toast: number
-      }
+        mask: number;
+        toast: number;
+      };
       color: {
-        background: string
-      }
+        background: string;
+      };
       size: {
-        minWidth: number
-        maxWidth: number
-        loadingMinWidth: number
-        borderRadius: number
-        padding: number
-        font: number
-      }
-    }
+        minWidth: number;
+        maxWidth: number;
+        loadingMinWidth: number;
+        borderRadius: number;
+        padding: number;
+        font: number;
+      };
+    };
     input: {
       color: {
-        background: string
-        placeholder: string
-      }
+        background: string;
+        placeholder: string;
+      };
       size: {
-        font: number
+        font: number;
         padding: {
-          v: number
-          h: number
-        }
-        height: number
-      }
-      borderRadius: number
-      groupRadius: number
-    }
+          v: number;
+          h: number;
+        };
+        height: number;
+      };
+      borderRadius: number;
+      groupRadius: number;
+    };
     popup: {
       color: {
-        mask: string
-        background: string
-        close: string
-      }
+        mask: string;
+        background: string;
+        close: string;
+      };
       size: {
-        padding: number[]
-        font: number
-        titleFont: number
-        minHeight: number
-        borderRadius: number
-        buttonBorderRadius: number
-        width: number
-      }
-      borderRadius: number
-    }
+        padding: number[];
+        font: number;
+        titleFont: number;
+        minHeight: number;
+        borderRadius: number;
+        buttonBorderRadius: number;
+        width: number;
+      };
+      borderRadius: number;
+    };
 
     tabs: {
       color: {
         header: {
-          bg: string
-        }
+          bg: string;
+        };
         body: {
-          bg: string
-        }
-      }
-      zIndex: number
-      padding: [number, number]
+          bg: string;
+        };
+      };
+      zIndex: number;
+      padding: [number, number];
       size: {
         header: {
-          height: number
-        }
+          height: number;
+        };
         content: {
-          padding: [number, number]
-        }
-      }
-    }
+          padding: [number, number];
+        };
+      };
+    };
     empty: {
       color: {
-        icon: string
-        desc: string
-      }
+        icon: string;
+        desc: string;
+      };
       size: {
-        icon: number
-        title: number
-        desc: number
-      }
-    }
+        icon: number;
+        title: number;
+        desc: number;
+      };
+    };
     spin: {
       color: {
-        icon: string
-        font: string
-      }
+        icon: string;
+        font: string;
+      };
       size: {
-        font: number
-        icon: number
-        margin: number
-      }
-    }
+        font: number;
+        icon: number;
+        margin: number;
+      };
+    };
 
     image: {
-      background: string
-      radius: number
-    }
+      background: string;
+      radius: number;
+    };
 
     list: {
       color: {
-        error: string
-        finished: string
-        loading: string
-      }
-    }
+        error: string;
+        finished: string;
+        loading: string;
+      };
+    };
     ellipsis: {
       size: {
-        lineHeight: string
-      }
-    }
+        lineHeight: string;
+      };
+    };
     tag: {
       color: {
-        text: string
-        background: string
-      }
+        text: string;
+        background: string;
+      };
       size: {
-        radius: number | string
-        padding: [number, number]
-      }
-    }
+        radius: number | string;
+        padding: [number, number];
+      };
+    };
 
     card: {
       color: {
-        text: string
-        background: string
-      }
+        text: string;
+        background: string;
+      };
       size: {
-        radius: number | string
-        padding: number
-      }
-    }
+        radius: number | string;
+        padding: number;
+      };
+    };
 
     swipeAction: {
       color: {
         content: {
-          background: string
-          font: string
-        }
-      }
-    }
+          background: string;
+          font: string;
+        };
+      };
+    };
 
     badge: {
       size: {
-        content: number
-        dot: number
-      }
+        content: number;
+        dot: number;
+      };
       color: {
-        contentColor: string
-        background: string
-      }
-    }
+        contentColor: string;
+        background: string;
+      };
+    };
 
     rate: {
       color: {
-        active: string
-      }
-    }
+        active: string;
+      };
+    };
 
     backTop: {
       size: {
-        width: number
-        right: number | string
-        bottom: number | string
-      }
+        width: number;
+        right: number | string;
+        bottom: number | string;
+      };
       color: {
-        background: string
-      }
-      borderRadius: number | string
-      zIndex: number
-    }
+        background: string;
+      };
+      borderRadius: number | string;
+      zIndex: number;
+    };
     icon: {
-      color: string
-    }
-  }
+      color: string;
+    };
+  };
 }
 
-type DeepPartial<T> = Partial<{ [P in keyof T]: DeepPartial<T[P]> }>
+type DeepPartial<T> = Partial<{ [P in keyof T]: DeepPartial<T[P]> }>;
 
-export type OptTheme = DeepPartial<Theme>
+export type OptTheme = DeepPartial<Theme>;

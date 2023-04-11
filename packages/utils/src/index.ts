@@ -1,1 +1,1 @@
-export { isBrowser, isSupportWebp } from './is'
+export { isBrowser, isSupportWebp } from './is';

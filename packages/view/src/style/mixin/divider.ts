@@ -1,12 +1,12 @@
-import type { CSSProperties } from 'react'
+import type { CSSProperties } from 'react';
 
 export default (
   color: string,
   {
     margin,
   }: {
-    dir?: 'bottom' | 'left' | 'right' | 'top'
-    margin?: number
+    dir?: 'bottom' | 'left' | 'right' | 'top';
+    margin?: number;
   } = {},
 ) => ({
   '&:after': {
@@ -20,4 +20,4 @@ export default (
     transform: `scaleY(0.5)`,
     transition: `all .2s`,
   } as CSSProperties,
-})
+});

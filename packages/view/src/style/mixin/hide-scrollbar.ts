@@ -4,5 +4,5 @@ export default function hideScrollBar() {
     '&::-webkit-scrollbar': {
       display: `none`,
     },
-  }
+  };
 }

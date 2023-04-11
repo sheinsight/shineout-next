@@ -1,4 +1,4 @@
-import type { Theme } from '../type'
+import type { Theme } from '../type';
 
 const basic: Theme['basic'] = {
   color: {
@@ -56,7 +56,7 @@ const basic: Theme['basic'] = {
       timer: `cubic-bezier(0.78, 0.14, 0.15, 0.86)`,
     },
   },
-}
+};
 
 const def: Theme = {
   components: {
@@ -304,6 +304,6 @@ const def: Theme = {
     },
   },
   basic,
-}
+};
 
-export default def
+export default def;
