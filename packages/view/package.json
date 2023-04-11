@@ -1,0 +1,23 @@
+{
+  "name": "@soui/view",
+  "version": "1.0.77",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "sideEffects": false,
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "typings": "./dist/cjs/index.d.ts",
+  "scripts": {
+    "build": "father build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react-jss": "10.9.2",
+    "ts-deepmerge": "5.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}

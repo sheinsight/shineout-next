@@ -1,0 +1,17 @@
+{
+  "name": "@soui/utils",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "sideEffects": false,
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "typings": "./dist/cjs/index.d.ts",
+  "scripts": {
+    "build": "father build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+
