@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
     "strict": true,
-    "declaration": true,
+    "declaration": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "target": "es5",
+    "moduleResolution": "node",
+    "module": "ES2015",
+    "target": "ES5",
+    "lib": ["ES2015", "DOM"],
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],

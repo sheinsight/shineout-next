@@ -1,14 +1,16 @@
 {
   "name": "soui",
+  "private": true,
   "version": "0.0.1",
   "description": "A react library developed with dumi",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "packageManager": "pnpm@8.2.0",
   "scripts": {
     "start": "npm run dev",
     "dev": "dumi dev",
-    "build": "father build",
-    "build:watch": "father dev",
+    "build": "pnpm multi run build",
+    "build:watch": "pnpm multi run build:watch",
     "docs:build": "dumi build",
     "prepare": "husky install && dumi setup",
     "doctor": "father doctor",
@@ -39,7 +41,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@types/react": "^18.0.0",
+    "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.0",
     "@umijs/lint": "^4.0.0",
     "dumi": "^2.0.2",
@@ -52,6 +54,7 @@
     "prettier-plugin-packagejson": "^2.2.18",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "stylelint": "^14.9.1"
+    "stylelint": "^14.9.1",
+    "typescript": "^4.9.0"
   }
 }

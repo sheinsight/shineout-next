@@ -34,7 +34,7 @@ export const StyleProvider: FC<{ theme?: OptTheme; children?: any }> = function 
 
 export const styled = (
   style:
-    | Styles<string, { theme: Theme }, Theme>
+    | Styles<any, { theme: Theme }, Theme>
     | ((theme: Theme) => Styles<string, { theme: Theme }, undefined>),
   ns: string,
 ) => {
