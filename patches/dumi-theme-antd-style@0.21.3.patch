@@ -1,0 +1,15 @@
+diff --git a/dist/components/Toc/index.js b/dist/components/Toc/index.js
+index 6c31786053b1d44f593825b43281a6d1eb4ad34f..7dff98cdf5f891781bd21793d55d474ddcfca1c2 100644
+--- a/dist/components/Toc/index.js
++++ b/dist/components/Toc/index.js
+@@ -88,9 +88,7 @@ var Toc = /*#__PURE__*/memo(function (_ref) {
+     })
+   }) : /*#__PURE__*/_jsxs("div", {
+     className: styles.container,
+-    children: [/*#__PURE__*/_jsx("h4", {
+-      children: "Table of Contents"
+-    }), /*#__PURE__*/_jsx(Anchor, {
++    children: [/*#__PURE__*/_jsx(Anchor, {
+       items: linkItems,
+       className: styles.anchor,
+       targetOffset: theme.headerHeight + 12
