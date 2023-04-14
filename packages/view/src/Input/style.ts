@@ -94,4 +94,4 @@ type SetCustomInputStyle = (style: InputStyleType, t: Theme) => InputStyleType;
 export const getInputStyle = (trans: SetCustomInputStyle = (style: InputStyleType) => style) =>
   styled((t) => trans(createStyle(t), t), 'input');
 
-export default styled(createStyle, 'input');
+export default getInputStyle();

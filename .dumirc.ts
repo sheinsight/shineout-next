@@ -3,10 +3,11 @@ import path from 'path';
 
 export default defineConfig({
   outputPath: 'docs-dist',
+  hash: true,
   themeConfig: {
     name: 'soui',
-    favicon: 'https://assets.dotfashion.cn/webassets/assets-ocean/1625119864754.png',
-    mode: 'site',
+    favicon: '/shine.svg',
+    logo: '/shine.svg',
   },
   resolve: {
     atomDirs: [
