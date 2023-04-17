@@ -24,12 +24,13 @@ const Input: FC<InputProps> = memo((props) => {
     left,
     right,
     clearable,
+    customStyle,
     ...otherProps
   } = useInput(props).props;
   const inputEl = useRef<HTMLInputElement | null>(null);
 
-  const [hideValue, pwdEl] = usePassword(type, props?.customStyle);
-  const styles = (props?.customStyle || useStyle)();
+  const [hideValue, pwdEl] = usePassword(type, customStyle);
+  const styles = (customStyle || useStyle)();
   const showClear = clearable && value.length > 0;
 
   const handleClear = () => {

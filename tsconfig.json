@@ -14,5 +14,6 @@
       "@@/*": [".dumi/tmp/*"],
       "reat-jss": ["packages/view/node_modules/react-jss"]
     }
-  }
+  },
+  "includes": [".dumi/**/*", ".dumirc.ts", "packages/**/*"]
 }

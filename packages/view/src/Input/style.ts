@@ -1,6 +1,7 @@
-import { styled } from '../js-style';
+import { makeStyle } from '../js-style';
 import type {} from 'jss';
 import { Theme } from '../js-style/type';
+import { CompStyle } from '../types/common';
 
 const createStyle = (t: Theme) => ({
   wrapper: {
@@ -80,18 +81,8 @@ const createStyle = (t: Theme) => ({
   },
 });
 
-type TransType<T> = {
-  [P in keyof T]: T[P] extends string
-    ? string | number
-    : T[P] extends number
-    ? string | number
-    : TransType<T[P]>;
-};
-export type InputStyleType = TransType<ReturnType<typeof createStyle>>;
+export type InputStyleType = CompStyle<typeof createStyle>;
 
-type SetCustomInputStyle = (style: InputStyleType, t: Theme) => InputStyleType;
-
-export const getInputStyle = (trans: SetCustomInputStyle = (style: InputStyleType) => style) =>
-  styled((t) => trans(createStyle(t), t), 'input');
+export const getInputStyle = makeStyle(createStyle);
 
 export default getInputStyle();

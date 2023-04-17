@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 import { createContext, useCallback, useContext } from 'react';
 import type { Styles } from 'react-jss';
+import type {} from 'jss';
 import { createGenerateId, createUseStyles, JssProvider, SheetsRegistry } from 'react-jss';
 import deepmerge from 'ts-deepmerge';
+import { CompStyle } from '../types/common';
 
 import * as mixins from './mixin';
 import defaultTheme from './themes/default';
@@ -22,6 +24,7 @@ export const StyleProvider: FC<{ theme?: OptTheme; children?: any }> = function 
     if (!ns) {
       console.warn('[soui-view]: styled should give namespace');
     }
+    console.log('!!!!', `${CLS_PREFIX}${ns}${rule.key}`);
     return `${CLS_PREFIX}${ns}${rule.key}`;
   }, []);
 
@@ -32,10 +35,9 @@ export const StyleProvider: FC<{ theme?: OptTheme; children?: any }> = function 
   );
 };
 
+type StyledArgFuncType = (theme: Theme) => Styles<string, { theme: Theme }, undefined>;
 export const styled = (
-  style:
-    | Styles<any, { theme: Theme }, Theme>
-    | ((theme: Theme) => Styles<string, { theme: Theme }, undefined>),
+  style: Styles<any, { theme: Theme }, Theme> | StyledArgFuncType,
   ns: string,
 ) => {
   const hoc = createUseStyles(style, { name: ns });
@@ -59,3 +61,16 @@ export const DocumentProvider: FC<{
 };
 
 export { SheetsRegistry };
+
+export function makeStyle<T extends StyledArgFuncType>(createStyle: T) {
+  type InputStyleType = CompStyle<T>;
+
+  type SetCustomInputStyle = (style: ReturnType<T>, t: Theme) => InputStyleType;
+
+  const getInputStyle = (
+    trans: SetCustomInputStyle = (style: ReturnType<T>) => style as InputStyleType,
+    name?: string,
+  ) => styled((t) => trans(createStyle(t) as ReturnType<T>, t) as ReturnType<T>, name || 'input');
+
+  return getInputStyle;
+}

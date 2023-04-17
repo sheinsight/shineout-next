@@ -59,6 +59,8 @@ interface BasicProps {
   right?: ReactNode;
 
   clearable?: boolean;
+
+  customStyle?: () => Record<string, string>;
 }
 
 export type InputProps = Omit<HTMLAttributes<HTMLInputElement>, keyof BasicProps> & BasicProps;
