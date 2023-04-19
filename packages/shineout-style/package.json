@@ -1,6 +1,6 @@
 {
-  "name": "@shined/hooks",
-  "version": "1.0.0",
+  "name": "@shined/shineout-style",
+  "version": "0.0.0",
   "description": "",
   "keywords": [],
   "license": "ISC",
@@ -14,7 +14,9 @@
     "build:watch": "father dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "peerDependencies": {
-    "react": "^18.2.0"
+  "dependencies": {
+    "jss": "10.9.2",
+    "react-jss": "10.9.2",
+    "ts-deepmerge": "5.0.0"
   }
 }

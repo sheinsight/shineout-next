@@ -9,8 +9,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "dumi dev",
-    "build": "pnpm multi run build",
-    "build:watch": "pnpm multi run build:watch",
+    "build": "pnpm --filter=./packages/* run build",
+    "build:watch": "pnpm --filter=./packages/* run build:watch",
     "docs:build": "dumi build",
     "prepare": "husky install && dumi setup",
     "doctor": "father doctor",

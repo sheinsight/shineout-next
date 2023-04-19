@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "baseUrl": "./",
+    "paths": {
+      "@shined/ui": ["./src/index"]
+    }
+  },
+  "include": ["src"]
+}

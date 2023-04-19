@@ -6,13 +6,12 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
-    "module": "ES2015",
+    "module": "ES2020",
     "target": "ES5",
-    "lib": ["ES2015", "DOM"],
+    "lib": ["ES2020", "DOM"],
     "baseUrl": "./",
     "paths": {
-      "@@/*": [".dumi/tmp/*"],
-      "reat-jss": ["packages/view/node_modules/react-jss"]
+      "@@/*": [".dumi/tmp/*"]
     }
   },
   "includes": [".dumi/**/*", ".dumirc.ts", "packages/**/*"]

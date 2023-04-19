@@ -1,6 +1,6 @@
 {
-  "name": "@shined/hooks",
-  "version": "1.0.0",
+  "name": "@shined/ui",
+  "version": "0.0.0",
   "description": "",
   "keywords": [],
   "license": "ISC",
@@ -13,6 +13,13 @@
     "build": "father build",
     "build:watch": "father dev",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@shined/hooks": "workspace:*",
+    "classnames": "^2.3.2"
+  },
+  "devDependencies": {
+    "@shined/shineout-style": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.2.0"
