@@ -8,7 +8,11 @@ import defaultTheme from '../themes/default';
 import type { OptTheme, Theme } from '../themes/type';
 
 const context = createContext<Theme>(defaultTheme);
-const CLS_PREFIX = 'soui';
+const CLS_PREFIX = 'so-';
+
+function camelToDash(str: string): string {
+  return str.replace(/([A-Z])/g, '-$1').toLowerCase();
+}
 
 export const StyleProvider: FC<{ theme?: OptTheme; children?: any }> = function ({
   theme = {},
@@ -20,7 +24,7 @@ export const StyleProvider: FC<{ theme?: OptTheme; children?: any }> = function 
     if (!ns) {
       console.warn('[shined/ui]: styled should give namespace');
     }
-    return `${CLS_PREFIX}${ns}${rule.key}`;
+    return `${CLS_PREFIX}${ns}${camelToDash(rule.key)}`;
   }, []);
 
   return (
@@ -30,10 +34,10 @@ export const StyleProvider: FC<{ theme?: OptTheme; children?: any }> = function 
   );
 };
 
-export const styled = (
+export const styled = <C extends string>(
   style:
-    | Styles<any, { theme: Theme }, Theme>
-    | ((theme: Theme) => Styles<string, { theme: Theme }, undefined>),
+    | Styles<C, { theme: Theme }, Theme>
+    | ((theme: Theme) => Styles<C, { theme: Theme }, undefined>),
   ns: string,
 ) => {
   const hoc = createUseStyles(style, { name: ns });

@@ -1,32 +1,32 @@
 import { styled } from '../jss-style';
+import border from '../mixin/inputBorder';
 
-export default styled(() => {
+export default styled((t) => {
+  const inputTheme = t.components.input;
+  const inputBorder = border(t.common.inputBorder, 'wrapper');
+  const { wrapperFocus, wrapperError, wrapperDisabled, wrapper } = inputBorder;
   return {
+    ...inputBorder,
     wrapper: {
       display: 'flex',
-      borderRadius: 4,
-      background: '#fff',
       alignItems: 'center',
-      border: '1px solid #333e59',
-      '&:hover': {
-        border: '1px solid #197afa',
-      },
+      ...wrapper,
     },
-    wrapperFocus: {
-      border: '1px solid #197afa',
-    },
+    wrapperFocus,
+    wrapperError,
+    wrapperDisabled,
     input: {
-      flexGrow: 1,
+      flexGrow: '1',
       background: 'transparent',
-      border: 0,
-      padding: [5, 8],
+      border: '0',
+      padding: `${inputTheme.paddingY} ${inputTheme.paddingX}`,
       outline: 'none',
     },
     clear: {
-      width: 16,
-      height: 16,
+      width: '16px',
+      height: '16px',
       display: 'flex',
-      marginRight: 5,
+      marginRight: '5px',
       cursor: 'pointer',
     },
   };

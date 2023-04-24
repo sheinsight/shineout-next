@@ -14,4 +14,10 @@ group:
 
 基本用法
 
-<code src="./examples/base.tsx"></code>
+<code src="./examples/001-base.tsx"></code>
+
+## Disabled
+
+禁用
+
+<code src="./examples/002-disabled.tsx"></code>

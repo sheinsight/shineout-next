@@ -1,7 +1,8 @@
 import { useOutlet } from 'dumi';
+import { StyleProvider } from '../../../packages/shineout-style/src';
 
 export default () => {
   const outlet = useOutlet();
 
-  return <div>{outlet}</div>;
+  return <StyleProvider>{outlet}</StyleProvider>;
 };

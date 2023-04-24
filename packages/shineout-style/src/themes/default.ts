@@ -1,49 +1,39 @@
-import type { Theme } from './type';
+import deepMerge from 'ts-deepmerge';
+const vars = {
+  primary: '#197afa',
+  white: '#fff',
+  error: 'ff4d4f',
+};
 
-const basic: Theme['basic'] = {
+const inputBorder = {
   color: {
-    secondaryText: '#767676',
-    secondaryText2: '#959595',
-    secondaryText3: '#98A2B3',
-    primaryText: '#fff',
-    primary2: '#222222',
-    primary: '#222222',
-    primaryActive: '#616161',
-    text: '#222',
-    background: '#fff',
-    border: '#ccc',
-    active: '#f2f3f5',
-    warning: '#FF323D',
-    disabledBackground: '#ebedf0',
-    disabledText: '#c8c9cc',
-    mask: `rgba(75, 76, 78, 0.3)`,
+    background: {
+      normal: vars.white,
+      disabled: 'rgba(0,0,0,.04)',
+    },
+    border: {
+      normal: '#cccfd7',
+      disabled: '#d9d9d9',
+      focus: vars.primary,
+      error: vars.error,
+    },
+    text: {
+      normal: '#333e59',
+      disabled: 'rgba(0,0,0,.25)',
+    },
   },
-  borderRadius: {
-    md: 8,
-    sm: 0,
-    lg: 16,
-    round: 99,
+  radius: '4px',
+  boxShadow: {
+    focus: '0 0 0 2px rgba(5,145,255,.1)',
   },
+};
+
+const common = {
   size: {
-    font: {
-      md: 14,
-      sm: 12,
-      xs: 10,
-      lg: 16,
-    },
+    font: '14px',
+    lineHeight: '1.42857143',
   },
-  weight: {
-    bold: {
-      family: '',
-      value: 500,
-    },
-  },
-  padding: {
-    xs: 8,
-    sm: 12,
-    md: 16,
-    lg: 24,
-  },
+  inputBorder: deepMerge({}, inputBorder) as typeof inputBorder,
   animate: {
     normal: {
       timer: `cubic-bezier(0.645, 0.045, 0.355, 1)`,
@@ -58,26 +48,18 @@ const basic: Theme['basic'] = {
   },
 };
 
-const def: Theme = {
-  components: {
-    input: {
-      color: {
-        background: '#F6F6F6',
-        placeholder: '#bbb',
-      },
-      size: {
-        font: basic.size.font.lg,
-        padding: {
-          v: 14,
-          h: 12,
-        },
-        height: 44,
-      },
-      borderRadius: basic.borderRadius.md,
-      groupRadius: basic.borderRadius.md,
-    },
-  },
-  basic,
+const inputTheme = {
+  paddingX: '5px',
+  paddingY: '8px',
 };
+const def = {
+  components: {
+    input: inputTheme,
+  },
+  common,
+  vars,
+};
+
+export type DefTheme = typeof def;
 
 export default def;

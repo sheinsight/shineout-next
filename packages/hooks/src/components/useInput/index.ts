@@ -1,4 +1,4 @@
-import { useInputable, useForkRef } from '../../index';
+import { useInputAble, useForkRef, useFormControl } from '../../index';
 import * as React from 'react';
 import extractEventHandlers from '../../utils/extractEventHandlers';
 import type {
@@ -7,6 +7,7 @@ import type {
   UseInputSlotProps,
   UseInputClearProps,
 } from './types';
+import { HandlerType, ObjectType } from '../../common/type';
 
 /*
   数据:
@@ -21,36 +22,47 @@ import type {
 
 const useInput = (params: UseInputParams) => {
   const {
+    name,
+    inputRef: inputRefPo,
     value: valuePo,
     defaultValue: defaultValuePo,
     onChange: onChangePo,
     onFocus,
     onBlur,
-    inputRef: inputRefPo,
-    disabled,
     clearable,
+    disabled,
+    reservable,
+    error: errorPo,
+    ...propsToForward
   } = params;
 
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const [focused, setFocused] = React.useState(false);
 
-  const [value, onChange] = useInputable({
+  const formControl = useFormControl({
+    name,
     value: valuePo,
-    defaultValue: defaultValuePo || '',
+    defaultValue: defaultValuePo,
     onChange: onChangePo,
+    reservable: reservable,
+  });
+
+  const [value, onChange] = useInputAble({
+    value: formControl.value,
+    onChange: formControl.onChange,
+    defaultValue: defaultValuePo,
   });
 
   const handleClick =
-    (otherHandlers: { onClick?: React.EventHandler<any> }) =>
-    (event: React.MouseEvent<HTMLInputElement>) => {
+    (otherHandlers: HandlerType) => (event: React.MouseEvent<HTMLInputElement>) => {
       if (inputRef.current && event.currentTarget === event.target) {
         inputRef.current.focus();
       }
 
       otherHandlers.onClick?.(event);
     };
-  const getRootProps = <TOther extends Record<string, any> = Record<string, unknown>>(
+  const getRootProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,
   ): UseInputRootSlotProps<TOther> => {
     // onBlur, onChange and onFocus are forwarded to the input slot.
@@ -65,21 +77,19 @@ const useInput = (params: UseInputParams) => {
   };
 
   const handleBlur =
-    (otherHandlers: Record<string, React.EventHandler<any> | undefined>) =>
-    (event: React.FocusEvent<HTMLInputElement>) => {
+    (otherHandlers: HandlerType) => (event: React.FocusEvent<HTMLInputElement>) => {
       otherHandlers.onBlur?.(event);
       setFocused(false);
     };
 
   const handleFocus =
-    (otherHandlers: Record<string, React.EventHandler<any> | undefined>) =>
-    (event: React.FocusEvent<HTMLInputElement>) => {
+    (otherHandlers: HandlerType) => (event: React.FocusEvent<HTMLInputElement>) => {
       otherHandlers.onFocus?.(event);
       setFocused(true);
     };
 
   const handleChange =
-    (otherHandlers: Record<string, React.EventHandler<any> | undefined>) =>
+    (otherHandlers: HandlerType) =>
     (event: React.ChangeEvent<HTMLInputElement>, ...args: any[]) => {
       // @ts-ignore
       otherHandlers.onChange?.(event, ...args);
@@ -88,13 +98,15 @@ const useInput = (params: UseInputParams) => {
 
   const handleInputRef = useForkRef(inputRef, inputRefPo);
 
-  const getInputProps = <TOther extends Record<string, any> = Record<string, unknown>>(
+  const getInputProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,
   ): UseInputSlotProps<TOther> => {
     const externalEventHandlers = { onBlur, onFocus, ...extractEventHandlers(externalProps) };
     const mergedEventHandlers = {
+      ...propsToForward,
       ...externalProps,
       ...externalEventHandlers,
+      disabled,
       onFocus: handleFocus(externalEventHandlers),
       onBlur: handleBlur(externalEventHandlers),
       onChange: handleChange(externalEventHandlers),
@@ -103,8 +115,7 @@ const useInput = (params: UseInputParams) => {
     return {
       ...mergedEventHandlers,
       ref: handleInputRef,
-      value: value as string | number | readonly string[] | undefined,
-      disabled: disabled,
+      value: value ?? '',
     };
   };
 
@@ -115,7 +126,7 @@ const useInput = (params: UseInputParams) => {
       otherHandlers.onClick?.(event);
     };
 
-  const getClearProps = <TOther extends Record<string, any> = Record<string, unknown>>(
+  const getClearProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,
   ): UseInputClearProps<TOther> => {
     const externalEventHandlers = extractEventHandlers(externalProps);
@@ -133,6 +144,7 @@ const useInput = (params: UseInputParams) => {
     focused,
     disabled,
     showClear,
+    error: errorPo ?? formControl.error,
     getRootProps,
     getInputProps,
     getClearProps,

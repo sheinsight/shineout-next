@@ -1,19 +1,29 @@
 import React from 'react';
+import { AddNoProps } from '../../common/type';
 
-export interface UseInputParams {
+export interface UseInputParamsOwn {
   /**
    * The default value. Use when the component is not controlled.
    */
   defaultValue?: string;
   disabled?: boolean;
-  onBlur?: React.FocusEventHandler;
-  onClick?: React.MouseEventHandler;
-  onChange?: (value: string) => void;
-  onFocus?: React.FocusEventHandler;
   inputRef?: React.Ref<HTMLInputElement>;
   value?: string;
   clearable?: boolean;
+  onBlur?: React.FocusEventHandler;
+  onChange?: (value: string) => void;
+  onFocus?: React.FocusEventHandler;
+  onClick?: React.MouseEventHandler;
+  // form control
+  name?: string;
+  // true: keep value when unmount
+  reservable?: boolean;
+  error?: Error | boolean;
 }
+
+export interface UseInputParams
+  extends UseInputParamsOwn,
+    Omit<React.HTMLAttributes<HTMLInputElement>, keyof UseInputParamsOwn> {}
 
 export interface UseInputRootSlotOwnProps {
   onClick: React.MouseEventHandler | undefined;
@@ -45,8 +55,7 @@ export type UseInputClearOwnProps = {
   onClick: React.MouseEventHandler;
 };
 
-export type UseInputClearProps<TOther = Record<string, unknown>> = Omit<
-  TOther,
-  keyof UseInputClearOwnProps
-> &
-  UseInputClearOwnProps;
+export type UseInputClearProps<TOther = Record<string, unknown>> = AddNoProps<
+  UseInputClearOwnProps,
+  TOther
+>;

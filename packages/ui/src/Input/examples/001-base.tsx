@@ -7,11 +7,10 @@ export default () => {
       <Input
         jssStyle={jssStyle}
         onChange={(v) => {
-          console.log(v);
+          console.log('input onchange', v);
         }}
         clearable
         placeholder='Username'
-        style={{ marginBottom: 12 }}
       />
     </div>
   );
