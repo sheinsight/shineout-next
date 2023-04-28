@@ -16,6 +16,8 @@ const Input = (props: InputProps) => {
       [jssStyle.wrapperDisabled]: disabled,
     },
   ]);
+  const inputProps = getInputProps({ className: jssStyle.input });
+  console.log('inputprops', JSON.stringify(inputProps));
 
   return (
     <div
@@ -24,7 +26,7 @@ const Input = (props: InputProps) => {
         style,
       })}
     >
-      <input type='text' {...getInputProps({ className: jssStyle.input })} />
+      <input type='text' {...inputProps} />
       {showClear ? <Clear {...getClearProps({ className: jssStyle.clear })} /> : null}
     </div>
   );

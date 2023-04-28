@@ -14,6 +14,7 @@ export type FormThis = {
   mounted: boolean;
   removeArr: Set<string>;
   removeTimer?: number;
+  names: Set<string>;
 };
 
 export type UseFormOwnProps = {

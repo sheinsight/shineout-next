@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { FormContext, FormContextType } from '../../logic/useFormControl/formContext';
 import { useInputAble } from '../../index';
 import { HandlerType, ObjectType } from '../../common/type';
@@ -25,6 +24,7 @@ const useForm = (params: useFormParams) => {
     rules: {},
     mounted: false,
     removeArr: new Set<string>(),
+    names: new Set<string>(),
   });
 
   const [errors, setErrors] = React.useState<ObjectType>({});
@@ -43,7 +43,7 @@ const useForm = (params: useFormParams) => {
   };
 
   const remove = () => {
-    let newValue = value;
+    let newValue = deepClone(value);
     ref.current.removeArr.forEach((n) => {
       newValue = deepRemove(value, n);
     });
@@ -74,7 +74,7 @@ const useForm = (params: useFormParams) => {
     const v = deepClone(defaultValue);
     Object.keys(ref.current.defaultValues).forEach((key) => {
       const df = ref.current.defaultValues[key];
-      deepSet(v, key, typeof df !== 'object' ? df : deepClone(df));
+      deepSet(v, key, deepClone(df));
     });
     return v;
   };
@@ -100,24 +100,30 @@ const useForm = (params: useFormParams) => {
 
   const formFunc: FormContextType['formFunc'] = useLatest({
     bind: (n: string, df: any, validate: () => void) => {
+      if (ref.current.names.has(n)) {
+        console.error(`name "${n}" already exist`);
+        return;
+      }
+      ref.current.names.add(n);
       ref.current.rules[n] = validate;
       ref.current.removeArr.delete(n);
       if (df !== undefined) {
         ref.current.defaultValues[n] = df;
-        const newValue = deepSet(value, n, df);
+        const newValue = deepSet(deepClone(value), n, df, { clone: true });
         onChange(newValue);
       }
     },
     unbind: (n: string, reserveAble?: boolean) => {
       delete ref.current.rules[n];
       delete ref.current.defaultValues[n];
+      ref.current.names.delete(n);
       if (!reserveAble) {
         addRemove(n);
       }
     },
 
     setValue: (n: string, v: any) => {
-      const newValue = deepSet(value, n, v);
+      const newValue = deepSet(deepClone(value), n, v, { clone: true });
       onChange(newValue);
     },
   });

@@ -9,7 +9,7 @@ export default () => {
     <div>
       <Form
         jssStyle={formStyle}
-        defaultValue={{ name: 'aaa' }}
+        defaultValue={{ name: 'spana' }}
         onSubmit={(v) => {
           console.log('form submit', v);
         }}
@@ -27,7 +27,7 @@ export default () => {
             console.log('input change', v);
           }}
           clearable
-          placeholder='Username'
+          placeholder='please input name'
         />
         <button type={'submit'}>提交</button>
         <button type={'reset'}>重置</button>
