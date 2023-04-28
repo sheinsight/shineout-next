@@ -12,6 +12,8 @@ export type FormThis = {
   defaultValues: ObjectType;
   rules: ObjectType;
   mounted: boolean;
+  removeArr: Set<string>;
+  removeTimer?: number;
 };
 
 export type UseFormOwnProps = {

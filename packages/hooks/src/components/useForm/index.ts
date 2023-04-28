@@ -18,23 +18,13 @@ import useLatest from '../../common/useLatest';
 //提交 校验 重置
 
 const useForm = (params: useFormParams) => {
-  const {
-    value: valuePo,
-    defaultValue = {},
-    onChange: onChangePo,
-    onSubmit: onSubmitPo,
-    onReset: onResetPo,
-  } = params;
-  const [value = {}, onChange] = useInputAble({
-    value: valuePo,
-    defaultValue,
-    onChange: onChangePo,
-  });
-  console.log('!!!df', value);
+  const { defaultValue = {}, onSubmit: onSubmitPo, onReset: onResetPo } = params;
+  const [value = {}, onChange] = useInputAble(params);
   const ref = React.useRef<FormThis>({
     defaultValues: {},
     rules: {},
     mounted: false,
+    removeArr: new Set<string>(),
   });
 
   const [errors, setErrors] = React.useState<ObjectType>({});
@@ -50,6 +40,22 @@ const useForm = (params: useFormParams) => {
       console.log('校验');
       resolve([]);
     });
+  };
+
+  const remove = () => {
+    let newValue = value;
+    ref.current.removeArr.forEach((n) => {
+      newValue = deepRemove(value, n);
+    });
+    onChange(newValue);
+  };
+
+  const addRemove = (name: string) => {
+    ref.current.removeArr.add(name);
+    if (ref.current.removeTimer) {
+      clearTimeout(ref.current.removeTimer);
+    }
+    ref.current.removeTimer = setTimeout(remove);
   };
 
   const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
@@ -94,8 +100,8 @@ const useForm = (params: useFormParams) => {
 
   const formFunc: FormContextType['formFunc'] = useLatest({
     bind: (n: string, df: any, validate: () => void) => {
-      console.log('bind');
       ref.current.rules[n] = validate;
+      ref.current.removeArr.delete(n);
       if (df !== undefined) {
         ref.current.defaultValues[n] = df;
         const newValue = deepSet(value, n, df);
@@ -103,12 +109,10 @@ const useForm = (params: useFormParams) => {
       }
     },
     unbind: (n: string, reserveAble?: boolean) => {
-      console.log('unbind');
       delete ref.current.rules[n];
       delete ref.current.defaultValues[n];
       if (!reserveAble) {
-        const newValue = deepRemove(value, n);
-        onChange(newValue);
+        addRemove(n);
       }
     },
 
