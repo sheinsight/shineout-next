@@ -6,6 +6,7 @@ export type useFormParams = {
   onChange?: (value: any) => void;
   onSubmit?: (value: any) => void;
   onReset?: () => void;
+  control: boolean;
 };
 
 export type FormThis = {

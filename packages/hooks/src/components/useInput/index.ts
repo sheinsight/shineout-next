@@ -32,6 +32,7 @@ const useInput = (params: UseInputParams) => {
     clearable,
     disabled,
     reservable,
+    control,
     error: errorPo,
     ...propsToForward
   } = params;
@@ -52,6 +53,7 @@ const useInput = (params: UseInputParams) => {
     value: formControl.value,
     onChange: formControl.onChange,
     defaultValue: defaultValuePo,
+    control: formControl.inForm || control,
   });
 
   const handleClick =

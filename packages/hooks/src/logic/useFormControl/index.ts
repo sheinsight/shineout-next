@@ -45,10 +45,5 @@ export default function useFormControl<T>(props: FormControlProps<T>) {
     },
     [onChangePo, inForm, formFunc],
   );
-  const result = { value, onChange, error };
-  if (inForm) return result;
-  if (!('value' in props)) {
-    delete result.value;
-  }
-  return result;
+  return { value, onChange, error, inForm };
 }

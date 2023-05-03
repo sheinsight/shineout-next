@@ -17,8 +17,20 @@ import useLatest from '../../common/useLatest';
 //提交 校验 重置
 
 const useForm = (params: useFormParams) => {
-  const { defaultValue = {}, onSubmit: onSubmitPo, onReset: onResetPo } = params;
-  const [value = {}, onChange] = useInputAble(params);
+  const {
+    defaultValue = {},
+    onSubmit: onSubmitPo,
+    onReset: onResetPo,
+    value: valuePo,
+    onChange: onChangePo,
+    control,
+  } = params;
+  const [value = {}, onChange] = useInputAble({
+    value: valuePo,
+    defaultValue,
+    onChange: onChangePo,
+    control,
+  });
   const ref = React.useRef<FormThis>({
     defaultValues: {},
     rules: {},
@@ -37,7 +49,7 @@ const useForm = (params: useFormParams) => {
   const validate = (): Promise<Error[]> => {
     // todo
     return new Promise((resolve) => {
-      console.log('校验');
+      console.info('校验');
       resolve([]);
     });
   };

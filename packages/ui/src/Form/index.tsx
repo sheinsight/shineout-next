@@ -5,7 +5,7 @@ import { FormProps } from './types';
 
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, ...rest } = props;
-  const { Provider, ProviderValue, getFormProps } = useForm(rest);
+  const { Provider, ProviderValue, getFormProps } = useForm({ ...rest, control: 'value' in props });
   const rootClass = classNames([jssStyle.form, className]);
 
   return (

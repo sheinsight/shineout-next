@@ -1,15 +1,16 @@
 import { useState, useCallback } from 'react';
 
 export interface InputAbleProps<T> {
-  value?: T;
-  defaultValue?: T;
-  onChange?: (value: T, ...other: any[]) => void;
+  value: T | undefined;
+  defaultValue: T | undefined;
+  onChange: ((value: T, ...other: any[]) => void) | undefined;
+  control: boolean;
 }
 
 export default function useInputAble<T>(props: InputAbleProps<T>) {
-  const { value: valuePo, onChange } = props;
+  const { value: valuePo, onChange, control } = props;
   const [stateValue, changeStateValue] = useState<T | undefined>(props.value || props.defaultValue);
-  const value = 'value' in props ? valuePo : stateValue;
+  const value = control ? valuePo : stateValue;
 
   const handleChange = useCallback(
     (v: T, ...other: any[]) => {

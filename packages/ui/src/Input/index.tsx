@@ -6,8 +6,10 @@ import Clear from '../Icon/clear';
 
 const Input = (props: InputProps) => {
   const { jssStyle, className, style, ...rest } = props;
-  const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } =
-    useInput(rest);
+  const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
+    ...rest,
+    control: 'value' in props,
+  });
   const rootClass = classNames([
     jssStyle.wrapper,
     className,
@@ -17,7 +19,6 @@ const Input = (props: InputProps) => {
     },
   ]);
   const inputProps = getInputProps({ className: jssStyle.input });
-  console.log('inputprops', JSON.stringify(inputProps));
 
   return (
     <div
