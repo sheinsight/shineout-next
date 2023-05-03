@@ -15,3 +15,18 @@ export interface FormProps<V extends ObjectType> {
   onSubmit?: (value: V) => void;
   onReset?: () => void;
 }
+
+export interface FieldControlProps<T> {
+  value?: T;
+  onChange?: (value: T, ...rest: any) => void;
+  status?: 'error';
+}
+export interface FormFieldProps<T> {
+  name: string;
+  reservable?: boolean;
+  defaultValue?: T;
+  children:
+    | React.ReactElement<{ value?: any; onChange?: any; [name: string]: any }>
+    | ((props: FieldControlProps<T>) => React.ReactElement);
+  onChange?: (value: T, ...rest: any) => void;
+}

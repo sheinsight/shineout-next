@@ -1,4 +1,4 @@
-import { useInputAble, useForkRef, useFormControl } from '../../index';
+import { useInputAble, useForkRef } from '../../index';
 import * as React from 'react';
 import extractEventHandlers from '../../utils/extractEventHandlers';
 import type {
@@ -22,18 +22,16 @@ import { HandlerType, ObjectType } from '../../common/type';
 
 const useInput = (params: UseInputParams) => {
   const {
-    name,
     inputRef: inputRefPo,
     value: valuePo,
-    defaultValue: defaultValuePo,
+    defaultValue,
     onChange: onChangePo,
     onFocus,
     onBlur,
     clearable,
     disabled,
-    reservable,
     control,
-    error: errorPo,
+    beforeChange,
     ...propsToForward
   } = params;
 
@@ -41,19 +39,12 @@ const useInput = (params: UseInputParams) => {
 
   const [focused, setFocused] = React.useState(false);
 
-  const formControl = useFormControl({
-    name,
-    value: valuePo,
-    defaultValue: defaultValuePo,
-    onChange: onChangePo,
-    reservable: reservable,
-  });
-
   const [value, onChange] = useInputAble({
-    value: formControl.value,
-    onChange: formControl.onChange,
-    defaultValue: defaultValuePo,
-    control: formControl.inForm || control,
+    value: valuePo,
+    onChange: onChangePo,
+    defaultValue,
+    beforeChange,
+    control,
   });
 
   const handleClick =
@@ -146,7 +137,6 @@ const useInput = (params: UseInputParams) => {
     focused,
     disabled,
     showClear,
-    error: errorPo ?? formControl.error,
     getRootProps,
     getInputProps,
     getClearProps,

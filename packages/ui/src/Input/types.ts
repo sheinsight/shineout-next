@@ -25,7 +25,7 @@ export interface InputBaseProps {
   jssStyle: InputClasses;
   className?: string;
   style?: React.CSSProperties;
-  name?: string;
+  beforeChange?: (value?: string) => string | void;
 }
 
 export type InputProps = InputBaseProps &

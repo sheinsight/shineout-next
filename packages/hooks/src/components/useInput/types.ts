@@ -14,12 +14,8 @@ export interface UseInputParamsOwn {
   onChange?: (value: string) => void;
   onFocus?: React.FocusEventHandler;
   onClick?: React.MouseEventHandler;
+  beforeChange?: (value: string) => string | void;
   control: boolean;
-  // form control
-  name?: string;
-  // true: keep value when unmount
-  reservable?: boolean;
-  error?: Error | boolean;
 }
 
 export interface UseInputParams

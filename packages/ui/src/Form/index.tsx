@@ -2,6 +2,7 @@ import { ObjectType, useForm } from '@shined/hooks';
 import classNames from 'classnames';
 import * as React from 'react';
 import { FormProps } from './types';
+import FormField from './Field';
 
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, ...rest } = props;
@@ -19,5 +20,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     </form>
   );
 };
+
+Form.Field = FormField;
 
 export default Form;

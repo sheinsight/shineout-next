@@ -1,3 +1,5 @@
+import * as util from './utils/';
+export { util };
 export { default as useInputAble } from './logic/useInputAble';
 export { default as useFormControl } from './logic/useFormControl';
 export { default as useForkRef } from './common/useForkRef';

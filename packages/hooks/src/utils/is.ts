@@ -37,3 +37,5 @@ export const isMergeable = (val: unknown): boolean => {
 
   return true;
 };
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const isFunc = (f: unknown): f is Function => typeof f === 'function';

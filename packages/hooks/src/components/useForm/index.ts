@@ -29,6 +29,7 @@ const useForm = (params: useFormParams) => {
     value: valuePo,
     defaultValue,
     onChange: onChangePo,
+    beforeChange: undefined,
     control,
   });
   const ref = React.useRef<FormThis>({

@@ -9,7 +9,7 @@ export default () => {
     <div>
       <Form
         jssStyle={formStyle}
-        defaultValue={{ name: 'spana' }}
+        defaultValue={{ email: 'spana@qq.com' }}
         onSubmit={(v) => {
           console.log('form submit', v);
         }}
@@ -20,15 +20,31 @@ export default () => {
           console.log('form reset');
         }}
       >
-        <Input
+        <Form.Field
           name={'name'}
-          jssStyle={inputStyle}
+          defaultValue={'spana'}
           onChange={(v) => {
             console.log('input change', v);
           }}
-          clearable
-          placeholder='please input name'
-        />
+        >
+          <Input jssStyle={inputStyle} clearable placeholder='please input name' />
+        </Form.Field>
+        <Form.Field
+          name={'email'}
+          onChange={(v?: string) => {
+            console.log('input change', v);
+          }}
+        >
+          {({ value, onChange }) => (
+            <Input
+              value={value}
+              onChange={onChange}
+              jssStyle={inputStyle}
+              clearable
+              placeholder='please input email'
+            />
+          )}
+        </Form.Field>
         <button type={'submit'}>提交</button>
         <button type={'reset'}>重置</button>
       </Form>
