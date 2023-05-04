@@ -1,8 +1,8 @@
 ---
 title: Form
 nav:
-  title: UI
-  order: 0
+  title: Shineout
+  order: 1
 group:
   title: Form
 ---
@@ -15,4 +15,4 @@ group:
 
 基本用法
 
-<code src="./examples/001-base.tsx"></code>
+<code src="./examples/s-001-base.tsx"></code>

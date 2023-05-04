@@ -21,6 +21,9 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   );
 };
 
-Form.Field = FormField;
+type FormGroup = typeof Form & {
+  Field: typeof FormField;
+};
+(Form as FormGroup).Field = FormField;
 
-export default Form;
+export default Form as FormGroup;

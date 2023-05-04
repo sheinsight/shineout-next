@@ -65,6 +65,21 @@ importers:
         specifier: '>=16.8'
         version: 17.0.2
 
+  packages/shineout:
+    dependencies:
+      '@shined/shineout-style':
+        specifier: workspace:*
+        version: link:../shineout-style
+      '@shined/ui':
+        specifier: workspace:*
+        version: link:../ui
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
+      react:
+        specifier: '>=16.8'
+        version: 18.2.0
+
   packages/shineout-style:
     dependencies:
       jss:
