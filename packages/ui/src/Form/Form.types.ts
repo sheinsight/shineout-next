@@ -1,19 +1,15 @@
 import React from 'react';
-import { ObjectType } from '@shined/hooks';
+import type { ObjectType, BaseFormProps } from '@shined/hooks';
+import type { CommonType } from '../types/common';
 
 export interface FormClasses {
   form: string;
 }
-export interface FormProps<V extends ObjectType> {
-  value?: V;
-  defaultValue?: V;
-  onChange?: (value: V) => void;
+export interface FormProps<V extends ObjectType>
+  extends BaseFormProps<V>,
+    Pick<CommonType, 'className' | 'style'> {
   jssStyle: FormClasses;
-  className?: string;
-  style?: React.CSSProperties;
   children?: React.ReactNode;
-  onSubmit?: (value: V) => void;
-  onReset?: () => void;
 }
 
 export interface FieldControlProps<T> {
@@ -21,6 +17,7 @@ export interface FieldControlProps<T> {
   onChange?: (value: T, ...rest: any) => void;
   status?: 'error';
 }
+
 export interface FormFieldProps<T> {
   name: string;
   reservable?: boolean;

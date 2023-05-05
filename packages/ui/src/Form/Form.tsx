@@ -1,12 +1,13 @@
-import { ObjectType, useForm } from '@shined/hooks';
+import { useForm } from '@shined/hooks';
 import classNames from 'classnames';
 import * as React from 'react';
-import { FormProps } from './types';
+import { FormProps } from './Form.types';
 import FormField from './Field';
+import type { ObjectType } from '@shined/hooks';
 
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, ...rest } = props;
-  const { Provider, ProviderValue, getFormProps } = useForm({ ...rest, control: 'value' in props });
+  const { Provider, ProviderProps, getFormProps } = useForm({ ...rest, control: 'value' in props });
   const rootClass = classNames([jssStyle.form, className]);
 
   return (
@@ -16,7 +17,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
         style,
       })}
     >
-      <Provider value={ProviderValue}>{children}</Provider>
+      <Provider {...ProviderProps}>{children}</Provider>
     </form>
   );
 };

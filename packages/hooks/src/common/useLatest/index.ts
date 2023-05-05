@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { ObjectType } from '../../common/type';
+import type { ObjectType } from '../../common/type';
 //保持对象引用不变并且每次都是最新的
 function useLatest<T extends ObjectType>(value: T): T {
   const ref = useRef(value);

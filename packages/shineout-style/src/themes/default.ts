@@ -2,7 +2,7 @@ import deepMerge from 'ts-deepmerge';
 const vars = {
   primary: '#197afa',
   white: '#fff',
-  error: 'ff4d4f',
+  error: '#ff4d4f',
 };
 
 const inputBorder = {

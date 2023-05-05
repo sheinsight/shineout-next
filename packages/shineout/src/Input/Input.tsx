@@ -1,7 +1,7 @@
 import React from 'react';
 import { useInputStyle } from '@shined/shineout-style';
 import { Input, Form } from '@shined/ui';
-import { InputProps } from './types';
+import { InputProps } from './Input.types';
 
 export default (props: InputProps) => {
   const { name, value, onChange, defaultValue, reservable, ...rest } = props;

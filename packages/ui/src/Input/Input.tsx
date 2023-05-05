@@ -1,11 +1,11 @@
 import { useInput } from '@shined/hooks';
 import classNames from 'classnames';
 import * as React from 'react';
-import { InputProps } from './types';
+import { InputProps } from './Input.types';
 import Clear from '../Icon/clear';
 
 const Input = (props: InputProps) => {
-  const { jssStyle, className, style, ...rest } = props;
+  const { jssStyle, className, style, status, ...rest } = props;
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
     control: 'value' in props,
@@ -16,6 +16,7 @@ const Input = (props: InputProps) => {
     {
       [jssStyle.wrapperFocus]: focused,
       [jssStyle.wrapperDisabled]: disabled,
+      [jssStyle.wrapperError]: status === 'error',
     },
   ]);
   const inputProps = getInputProps({ className: jssStyle.input });

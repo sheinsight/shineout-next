@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormControl, util } from '@shined/hooks';
-import { FormFieldProps, FieldControlProps } from '../types';
+import { FormFieldProps, FieldControlProps } from '../Form.types';
 
 const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
   const { children } = props;

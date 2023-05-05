@@ -1,4 +1,5 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
+import type { CommonType } from '../types/common';
 
 export interface InputClasses {
   /**
@@ -13,10 +14,14 @@ export interface InputClasses {
    * 当 input 禁用时最外层class
    */
   wrapperDisabled: string;
+  /**
+   * 当 status 为 error 时
+   */
+  wrapperError: string;
   input: string;
   clear: string;
 }
-export interface InputBaseProps {
+export interface InputBaseProps extends Pick<CommonType, 'status'> {
   value?: string;
   defaultValue?: string;
   onChange?: (value?: string) => void;
@@ -29,4 +34,4 @@ export interface InputBaseProps {
 }
 
 export type InputProps = InputBaseProps &
-  Omit<HTMLAttributes<HTMLInputElement>, keyof InputBaseProps>;
+  Omit<React.HTMLAttributes<HTMLInputElement>, keyof InputBaseProps>;

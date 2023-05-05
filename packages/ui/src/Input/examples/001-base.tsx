@@ -11,6 +11,7 @@ export default () => {
         }}
         clearable
         placeholder='Username'
+        status={'error'}
       />
     </div>
   );

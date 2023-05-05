@@ -1,7 +1,7 @@
 import React from 'react';
 import { AddNoProps } from '../../common/type';
 
-export interface UseInputParamsOwn {
+export interface InputPropsOwn {
   /**
    * The default value. Use when the component is not controlled.
    */
@@ -15,12 +15,15 @@ export interface UseInputParamsOwn {
   onFocus?: React.FocusEventHandler;
   onClick?: React.MouseEventHandler;
   beforeChange?: (value: string) => string | void;
-  control: boolean;
 }
 
-export interface UseInputParams
-  extends UseInputParamsOwn,
-    Omit<React.HTMLAttributes<HTMLInputElement>, keyof UseInputParamsOwn> {}
+export interface BaseInputProps
+  extends InputPropsOwn,
+    Omit<React.HTMLAttributes<HTMLInputElement>, keyof InputPropsOwn> {}
+
+export interface UseInputParams extends BaseInputProps {
+  control: boolean;
+}
 
 export interface UseInputRootSlotOwnProps {
   onClick: React.MouseEventHandler | undefined;

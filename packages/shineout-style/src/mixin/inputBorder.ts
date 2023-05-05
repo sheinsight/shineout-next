@@ -19,6 +19,9 @@ export default <T extends string>(InputTheme: Theme['common']['inputBorder'], na
     } as CSSProperties,
     [`${name}Error`]: {
       borderColor: InputTheme.color.border.error,
+      '&:hover': {
+        borderColor: InputTheme.color.border.error,
+      },
     } as CSSProperties,
     [`${name}Disabled`]: {
       color: InputTheme.color.text.disabled,
