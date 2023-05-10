@@ -1,6 +1,6 @@
 import { ObjectType } from '../../common/type';
 
-export interface RuleFunc<T> {
+export interface RuleFunc<T = any> {
   (
     value: T | undefined,
     formValue: ObjectType,

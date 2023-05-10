@@ -4,7 +4,7 @@ import { Input, Form } from '@shined/ui';
 import { InputProps } from './Input.types';
 
 export default (props: InputProps) => {
-  const { name, value, onChange, defaultValue, reservable, ...rest } = props;
+  const { name, value, onChange, defaultValue, reservable, rules, ...rest } = props;
   const style = useInputStyle();
   if (!name)
     return (
@@ -17,7 +17,13 @@ export default (props: InputProps) => {
       />
     );
   return (
-    <Form.Field name={name} onChange={onChange} defaultValue={defaultValue} reservable={reservable}>
+    <Form.Field
+      name={name}
+      onChange={onChange}
+      defaultValue={defaultValue}
+      reservable={reservable}
+      rules={rules}
+    >
       <Input {...rest} jssStyle={style} />
     </Form.Field>
   );

@@ -1,6 +1,9 @@
-import React from 'react';
-import { Form } from '@shined/ui';
+import type {
+  FormProps as UiFormProps,
+  FormItemProps as UiFormItemProps,
+  ObjectType,
+} from '@shined/ui';
 
-export type BaseFormType = React.ComponentProps<typeof Form>;
+export type FormProps<T extends ObjectType> = Omit<UiFormProps<T>, 'jssStyle'>;
 
-export type FormProps = Omit<BaseFormType, 'jssStyle'>;
+export type FormItemProps = Omit<UiFormItemProps, 'jssStyle'>;

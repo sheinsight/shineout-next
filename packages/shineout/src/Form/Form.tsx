@@ -1,8 +1,9 @@
 import React from 'react';
 import { Form } from '@shined/ui';
 import { useFormStyle } from '@shined/shineout-style';
-import { FormProps } from './Form.types';
+import type { FormProps } from './Form.types';
+import type { ObjectType } from '@shined/ui';
 
-export default (props: FormProps) => {
+export default <T extends ObjectType>(props: FormProps<T>) => {
   return <Form {...props} jssStyle={useFormStyle()} />;
 };
