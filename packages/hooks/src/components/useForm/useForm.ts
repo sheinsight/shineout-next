@@ -44,14 +44,6 @@ const useForm = <T extends ObjectType>(params: useFormParams<T>) => {
     ref.current.mounted = true;
   }, []);
 
-  const validate = (): Promise<Error[]> => {
-    // todo
-    return new Promise((resolve) => {
-      console.info('校验');
-      resolve([]);
-    });
-  };
-
   const remove = () => {
     let newValue = deepClone(value);
     ref.current.removeArr.forEach((n) => {
@@ -66,46 +58,6 @@ const useForm = <T extends ObjectType>(params: useFormParams<T>) => {
       clearTimeout(ref.current.removeTimer);
     }
     ref.current.removeTimer = setTimeout(remove);
-  };
-
-  const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    (async () => {
-      const error: Error[] = await validate();
-      if (error.length) {
-        return;
-      }
-      onSubmitPo?.(value ?? ({} as T));
-      other?.onSubmit?.(e);
-    })();
-  };
-
-  const getDefaultValue = () => {
-    const v = deepClone(defaultValue);
-    Object.keys(ref.current.defaultValues).forEach((key) => {
-      const df = ref.current.defaultValues[key];
-      deepSet(v, key, deepClone(df));
-    });
-    return v;
-  };
-
-  const handleReset = (other: HandlerType) => (e: React.FormEventHandler<HTMLFormElement>) => {
-    onChange(getDefaultValue());
-    setErrors({});
-    onResetPo?.();
-    other?.onReset?.(e);
-  };
-
-  const getFormProps = <TOther extends ObjectType = ObjectType>(
-    externalProps: TOther = {} as TOther,
-  ): UseFormSlotProps<TOther> => {
-    const externalEventHandlers = extractEventHandlers(externalProps);
-    return {
-      ...externalProps,
-      ...externalEventHandlers,
-      onSubmit: handleSubmit(externalEventHandlers),
-      onReset: handleReset(externalEventHandlers),
-    };
   };
 
   const formFunc: FormContextType['formFunc'] = useLatest({
@@ -136,7 +88,74 @@ const useForm = <T extends ObjectType>(params: useFormParams<T>) => {
       const newValue = deepSet(deepClone(value), n, v, { clone: true }) as T;
       onChange(newValue);
     },
+
+    setError(n: string, e: Error | undefined) {
+      setErrors((prev) => ({ ...prev, [n]: e }));
+    },
+
+    clearErrors() {
+      setErrors({});
+    },
   });
+
+  const validate = (): Promise<boolean> => {
+    // todo
+    return new Promise((resolve) => {
+      const validates = Object.values(ref.current.rules).map((f) => f());
+      Promise.all(validates)
+        .then((results) => {
+          const error = results.find((n) => n instanceof Error);
+          if (error) {
+            resolve(false);
+          } else {
+            resolve(true);
+          }
+        })
+        .catch(() => {
+          resolve(false);
+        });
+    });
+  };
+
+  const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    (async () => {
+      const pass = await validate();
+      if (!pass) {
+        return;
+      }
+      onSubmitPo?.(value ?? ({} as T));
+      other?.onSubmit?.(e);
+    })();
+  };
+
+  const getDefaultValue = () => {
+    const v = deepClone(defaultValue);
+    Object.keys(ref.current.defaultValues).forEach((key) => {
+      const df = ref.current.defaultValues[key];
+      deepSet(v, key, deepClone(df));
+    });
+    return v;
+  };
+
+  const handleReset = (other: HandlerType) => (e: React.FormEventHandler<HTMLFormElement>) => {
+    onChange(getDefaultValue());
+    formFunc?.clearErrors?.();
+    onResetPo?.();
+    other?.onReset?.(e);
+  };
+
+  const getFormProps = <TOther extends ObjectType = ObjectType>(
+    externalProps: TOther = {} as TOther,
+  ): UseFormSlotProps<TOther> => {
+    const externalEventHandlers = extractEventHandlers(externalProps);
+    return {
+      ...externalProps,
+      ...externalEventHandlers,
+      onSubmit: handleSubmit(externalEventHandlers),
+      onReset: handleReset(externalEventHandlers),
+    };
+  };
 
   const form: FormContextType = React.useMemo(
     () => ({

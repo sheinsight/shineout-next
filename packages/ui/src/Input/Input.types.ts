@@ -18,6 +18,7 @@ export interface InputClasses {
    * 当 status 为 error 时
    */
   wrapperError: string;
+  inputWrapper: string;
   input: string;
   clear: string;
 }

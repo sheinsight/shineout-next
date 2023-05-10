@@ -1,2 +1,2 @@
 export { default } from './useForm';
-export type { BaseFormProps } from './useForm.types';
+export type { BaseFormProps, FormLabelConfig } from './useForm.types';

@@ -39,3 +39,22 @@ export const isMergeable = (val: unknown): boolean => {
 };
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const isFunc = (f: unknown): f is Function => typeof f === 'function';
+
+// eslint-disable-next-line no-self-compare
+export const isNan = (a: unknown): boolean => a !== a;
+
+export const isEmpty = (val: unknown): boolean => {
+  // eslint-disable-next-line eqeqeq
+  if (val == null) return true;
+
+  if (isNan(val)) return true;
+
+  if ((val as ArrayLike<unknown>).length !== undefined)
+    return (val as ArrayLike<unknown>).length === 0;
+
+  if (val instanceof Date) return false;
+
+  if (typeof val === 'object') return Object.keys(val).length === 0;
+
+  return false;
+};

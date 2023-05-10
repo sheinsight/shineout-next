@@ -28,8 +28,10 @@ const Input = (props: InputProps) => {
         style,
       })}
     >
-      <input type='text' {...inputProps} />
-      {showClear ? <Clear {...getClearProps({ className: jssStyle.clear })} /> : null}
+      <div className={jssStyle.inputWrapper}>
+        <input type='text' {...inputProps} />
+        {showClear ? <Clear {...getClearProps({ className: jssStyle.clear })} /> : null}
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormControl, util } from '@shined/hooks';
-import { FormFieldProps, FieldControlProps } from '../Form.types';
+import type { FormFieldProps, FieldControlProps } from './FormField.types';
 
 const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
   const { children } = props;
@@ -9,6 +9,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     defaultValue: props.defaultValue,
     onChange: props.onChange,
     reservable: props.reservable,
+    rules: props.rules,
   });
   const cloneProps: FieldControlProps<T> = {
     onChange: formControl.onChange,

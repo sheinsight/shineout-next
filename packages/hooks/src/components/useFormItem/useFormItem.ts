@@ -13,7 +13,7 @@ const UseFormItem = () => {
     }
   };
 
-  const helps = Object.keys(errors)
+  const msg = Object.keys(errors)
     .map((name) => {
       const err = errors[name];
       if (err instanceof Error) return err.message;
@@ -25,7 +25,7 @@ const UseFormItem = () => {
     ProviderValue: {
       updateError: handlerErrorUpdate,
     } as FormItemContextValueType,
-    helps,
+    errors: msg,
     labelConfig,
   };
 };
