@@ -8,12 +8,17 @@ export default styled(() => {
   };
 }, 'form');
 
+const ItemGap = '22px';
+
 const useFormItemStyle = styled((theme) => {
   return {
     wrapper: {
       display: 'flex',
       alignItems: 'flex-start',
-      marginBottom: '12px',
+      marginBottom: ItemGap,
+    },
+    wrapperTip: {
+      marginBottom: '0',
     },
     label: {
       width: '140px',
@@ -42,9 +47,15 @@ const useFormItemStyle = styled((theme) => {
     wrapperLabelVerticalBottom: {
       alignItems: 'flex-end',
     },
-    wrapperKeepHeight: {
-      '& $control': {},
+    wrapperRequired: {
+      '& $label::before': {
+        marginRight: '4px',
+        color: theme.vars.danger,
+        content: '"*"',
+        fontFamily: 'SimSun',
+      },
     },
+    wrapperKeepHeight: {},
     control: {
       minWidth: '0',
       padding: '0 6px',
@@ -54,11 +65,13 @@ const useFormItemStyle = styled((theme) => {
     },
     error: {
       color: theme.vars.error,
-      marginTop: '5px',
+      minHeight: ItemGap,
+      fontSize: '14px',
     },
     tip: {
       color: '#999da8',
-      marginTop: '5px',
+      minHeight: ItemGap,
+      fontSize: '14px',
     },
   };
 }, 'form-item');

@@ -55,6 +55,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   useEffect(() => {
     if (!ref.current.shouldValidate) return;
     validateFiled();
+    ref.current.shouldValidate = false;
   }, [value]);
 
   useEffect(() => {

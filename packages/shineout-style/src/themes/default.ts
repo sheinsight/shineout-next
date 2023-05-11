@@ -3,6 +3,7 @@ const vars = {
   primary: '#197afa',
   white: '#fff',
   error: '#ff4d4f',
+  danger: 'var(--danger-color,#ff4d50)',
 };
 
 const inputBorder = {

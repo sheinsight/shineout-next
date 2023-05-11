@@ -5,9 +5,9 @@ import classNames from 'classnames';
 import type { FormItemProps } from './FormItem.types';
 
 export default (props: FormItemProps) => {
-  const { children, jssStyle, className, style, label, tip, ...rest } = props;
+  const { children, jssStyle, className, style, label, tip, required, ...rest } = props;
   const { Provider, ProviderValue, labelConfig, errors } = useFormItem();
-  const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight } = {
+  const { labelWidth, labelAlign, labelVerticalAlign, inline } = {
     ...labelConfig,
     ...rest,
   };
@@ -27,7 +27,9 @@ export default (props: FormItemProps) => {
           labelVerticalAlign === 'bottom' &&
           jssStyle?.wrapperLabelVerticalBottom,
         inline && jssStyle?.wrapperInline,
-        keepErrorHeight && jssStyle?.wrapperKeepHeight,
+        // keepErrorHeight && jssStyle?.wrapperKeepHeight,
+        required && jssStyle?.wrapperRequired,
+        (showError || tip) && jssStyle?.wrapperTip,
       )}
       style={style}
     >

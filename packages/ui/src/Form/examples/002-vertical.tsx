@@ -8,10 +8,9 @@ export default () => {
   return (
     <div>
       <Form jssStyle={formStyle} defaultValue={{ email: 'spana@qq.com' }} labelAlign={'top'}>
-        <Form.Item label={'username'} tip={'我劝你早点归去'} jssStyle={itemStyle}>
+        <Form.Item label={'username'} tip={'请输入用户名'} jssStyle={itemStyle}>
           <Form.Field
             name={'name'}
-            defaultValue={'spana'}
             onChange={(v) => {
               console.log('input change', v);
             }}
@@ -19,7 +18,7 @@ export default () => {
             <Input jssStyle={inputStyle} clearable placeholder='please input name' />
           </Form.Field>
         </Form.Item>
-        <Form.Item label={'email'} tip={'快点输入吧'} jssStyle={itemStyle}>
+        <Form.Item label={'email'} jssStyle={itemStyle}>
           <Form.Field
             name={'email'}
             onChange={(v?: string) => {

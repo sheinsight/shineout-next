@@ -20,7 +20,7 @@ export default () => {
           console.log('form reset');
         }}
       >
-        <Form.Item label={'username'} jssStyle={itemStyle} tip='名字要小于5个字符'>
+        <Form.Item required label={'Username'} jssStyle={itemStyle}>
           <Form.Field
             name={'name'}
             defaultValue={'spana'}
@@ -40,7 +40,7 @@ export default () => {
             <Input jssStyle={inputStyle} clearable placeholder='please input name' />
           </Form.Field>
         </Form.Item>
-        <Form.Item label={'email'} tip={'输入公司邮箱'} jssStyle={itemStyle}>
+        <Form.Item label={'Email'} tip={'输入公司邮箱'} jssStyle={itemStyle}>
           <Form.Field
             name={'email'}
             onChange={(v?: string) => {

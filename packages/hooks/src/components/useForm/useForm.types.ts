@@ -35,6 +35,7 @@ export type FormThis = {
   removeArr: Set<string>;
   removeTimer?: number;
   names: Set<string>;
+  submitLock: boolean;
 };
 
 export type UseFormSlotOwnProps = {

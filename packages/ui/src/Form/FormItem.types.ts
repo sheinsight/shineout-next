@@ -10,6 +10,8 @@ export interface FormItemClasses {
   wrapperLabelVerticalMiddle: string;
   wrapperLabelVerticalBottom: string;
   wrapperKeepHeight: string;
+  wrapperRequired: string;
+  wrapperTip: string;
   label: string;
   labelLeft: string;
   control: string;

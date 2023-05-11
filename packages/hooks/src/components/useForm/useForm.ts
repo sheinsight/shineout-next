@@ -35,6 +35,7 @@ const useForm = <T extends ObjectType>(params: useFormParams<T>) => {
     mounted: false,
     removeArr: new Set<string>(),
     names: new Set<string>(),
+    submitLock: false,
   });
 
   const [errors, setErrors] = React.useState<ObjectType>({});
@@ -99,7 +100,6 @@ const useForm = <T extends ObjectType>(params: useFormParams<T>) => {
   });
 
   const validate = (): Promise<boolean> => {
-    // todo
     return new Promise((resolve) => {
       const validates = Object.values(ref.current.rules).map((f) => f());
       Promise.all(validates)
@@ -119,6 +119,14 @@ const useForm = <T extends ObjectType>(params: useFormParams<T>) => {
 
   const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (ref.current.submitLock) {
+      return;
+    }
+    ref.current.submitLock = true;
+    setTimeout(() => {
+      // 防止连续点击
+      ref.current.submitLock = false;
+    }, 1000);
     (async () => {
       const pass = await validate();
       if (!pass) {
