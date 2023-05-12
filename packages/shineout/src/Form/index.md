@@ -15,4 +15,4 @@ group:
 
 基本用法
 
-<code src="./examples/s-001-base.tsx"></code>
+<code src="./__example__/s-001-base.tsx"></code>

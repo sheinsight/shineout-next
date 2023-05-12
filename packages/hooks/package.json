@@ -14,6 +14,9 @@
     "build:watch": "father dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "devDependencies": {
+    "react": "18.2.0"
+  },
   "peerDependencies": {
     "react": ">=16.8"
   }

@@ -12,10 +12,10 @@ group:
 
 基本用法
 
-<code src="./examples/s-001-base.tsx"></code>
+<code src="./__example__/s-001-base.tsx"></code>
 
 ## Disabled
 
 禁用
 
-<code src="./examples/s-002-disabled.tsx"></code>
+<code src="./__example__/s-002-disabled.tsx"></code>
