@@ -1,5 +1,5 @@
 import { styled } from '../jss-style';
-import border from '../mixin/inputBorder';
+import border from '../mixin/input-border';
 
 export default styled((t) => {
   const inputTheme = t.components.input;

@@ -26,6 +26,7 @@ export const StyleProvider: FC<{ theme?: OptTheme; children?: any }> = function 
     }
     return `${CLS_PREFIX}${ns}${camelToDash(rule.key)}`;
   }, []);
+  // todo: 不用 ThemeProvider
 
   return (
     <context.Provider value={mergedTheme}>
