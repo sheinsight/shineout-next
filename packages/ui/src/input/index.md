@@ -19,3 +19,9 @@ group:
 禁用
 
 <code src="./__example__/002-disabled.tsx"></code>
+
+## status
+
+状态
+
+<code src="./__example__/003-status.tsx"></code>

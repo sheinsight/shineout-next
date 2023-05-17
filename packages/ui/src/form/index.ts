@@ -1,5 +1,5 @@
 export { default } from './form';
 
-export { FormProps } from './form.type';
-export { FormItemProps } from './form-item.type';
-export { FormFieldProps } from './form-field.type';
+export type { FormProps } from './form.type';
+export type { FormItemProps } from './form-item.type';
+export type { FormFieldProps } from './form-field.type';
