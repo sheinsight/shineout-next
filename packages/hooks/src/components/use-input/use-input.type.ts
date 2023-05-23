@@ -5,25 +5,25 @@ export interface InputPropsOwn {
   /**
    * The default value. Use when the component is not controlled.
    */
-  defaultValue?: string;
-  disabled?: boolean;
-  inputRef?: React.Ref<HTMLInputElement>;
-  value?: string;
-  clearable?: boolean;
+  value: string | undefined;
+  onChange: (value: string) => void;
   onBlur?: React.FocusEventHandler;
-  onChange?: (value: string) => void;
   onFocus?: React.FocusEventHandler;
   onClick?: React.MouseEventHandler;
-  beforeChange?: (value: string) => string | void;
+  disabled?: boolean;
+  clearable?: boolean;
+  /**
+   * focus后自动全选数据
+   */
+  autoSelect?: boolean;
+  inputRef?: React.Ref<HTMLInputElement>;
 }
 
 export interface BaseInputProps
   extends InputPropsOwn,
-    Omit<React.HTMLAttributes<HTMLInputElement>, keyof InputPropsOwn> {}
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof InputPropsOwn | 'size'> {}
 
-export interface UseInputParams extends BaseInputProps {
-  control: boolean;
-}
+export type UseInputParams = BaseInputProps;
 
 export interface UseInputRootSlotOwnProps {
   onClick: React.MouseEventHandler | undefined;
@@ -52,7 +52,7 @@ export type UseInputSlotProps<TOther = Record<string, unknown>> = Omit<
   UseInputSlotOwnProps;
 
 export type UseInputClearOwnProps = {
-  onClick: React.MouseEventHandler;
+  onMouseDown: React.MouseEventHandler;
 };
 
 export type UseInputClearProps<TOther = Record<string, unknown>> = AddNoProps<

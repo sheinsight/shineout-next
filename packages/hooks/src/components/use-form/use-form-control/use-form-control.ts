@@ -2,10 +2,10 @@ import React, { useEffect, useCallback, useRef } from 'react';
 import { FormContext } from './form-context';
 import { FormItemContext } from './form-item-context';
 import { deepGet } from '../../../utils';
-import useLatest from '../../../common/use-latest';
 import validate from './validate';
 
 import { BaseFormControlProps } from './use-form-control.type';
+import { usePersistFn } from '../../../common/use-persist-fn';
 
 export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const { onChange: onChangePo, name, reservable, defaultValue, rules } = props;
@@ -27,10 +27,8 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   }
   const ref = useRef({ shouldValidate: false });
 
-  const latest = useLatest({ rules, value, formValue });
-
-  const validateFiled = React.useCallback(() => {
-    return validate(latest.value, latest.formValue, latest.rules || [], {})
+  const validateFiled = usePersistFn(() => {
+    return validate(value, formValue, rules || [], {})
       .then((res) => {
         formFunc?.setError(name, res === true ? undefined : res);
         return res;
@@ -39,7 +37,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         formFunc?.setError(name, e);
         return e;
       });
-  }, []);
+  });
 
   useEffect(() => {
     if (formFunc) {

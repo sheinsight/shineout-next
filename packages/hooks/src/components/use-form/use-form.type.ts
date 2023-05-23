@@ -18,16 +18,14 @@ export interface FormLabelConfig {
 }
 
 export interface BaseFormProps<T> extends FormLabelConfig {
-  value?: T;
-  defaultValue?: T;
-  onChange?: (value: T) => void;
-  onSubmit?: (value: T) => void;
-  onReset?: () => void;
+  value: T | undefined;
+  defaultValue: T | undefined;
+  onChange: (value: T) => void | undefined;
+  onSubmit: (value: T) => void | undefined;
+  onReset: () => void | undefined;
 }
 
-export interface UseFormProps<T> extends BaseFormProps<T> {
-  control: boolean;
-}
+export type UseFormProps<T> = BaseFormProps<T>;
 
 export type FormContext = {
   defaultValues: ObjectType;

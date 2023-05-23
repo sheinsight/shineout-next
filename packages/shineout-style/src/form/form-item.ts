@@ -1,4 +1,4 @@
-import theme from '../themes/default';
+import { colorVar } from '../themes/default';
 
 import { JsStyles } from '../jss-style';
 
@@ -58,7 +58,7 @@ const formItemStyle: JsStyles<FormItemClass> = {
   wrapperRequired: {
     '& $label::before': {
       marginRight: '4px',
-      color: theme.vars.danger,
+      color: colorVar.danger,
       content: '"*"',
       fontFamily: 'SimSun',
     },
@@ -72,7 +72,7 @@ const formItemStyle: JsStyles<FormItemClass> = {
     lineHeight: '1.42857143',
   },
   error: {
-    color: theme.vars.error,
+    color: colorVar.danger,
     minHeight: ItemGap,
     fontSize: '14px',
   },

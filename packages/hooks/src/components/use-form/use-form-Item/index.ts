@@ -1,1 +1,1 @@
-export { default } from './use-form-item';
+export { default, default as useFormItem } from './use-form-item';

@@ -1,4 +1,3 @@
-import useInputAble from '../../common/use-input-able';
 import useForkRef from '../../common/use-fork-ref';
 import * as React from 'react';
 import { extractEventHandlers } from '../../utils';
@@ -24,29 +23,19 @@ import { HandlerType, ObjectType } from '../../common/type';
 const useInput = (params: UseInputParams) => {
   const {
     inputRef: inputRefPo,
-    value: valuePo,
-    defaultValue,
-    onChange: onChangePo,
+    value,
+    onChange,
     onFocus,
     onBlur,
     clearable,
     disabled,
-    control,
-    beforeChange,
+    autoSelect,
     ...propsToForward
   } = params;
 
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const [focused, setFocused] = React.useState(false);
-
-  const [value, onChange] = useInputAble({
-    value: valuePo,
-    onChange: onChangePo,
-    defaultValue,
-    beforeChange,
-    control,
-  });
 
   const handleClick =
     (otherHandlers: HandlerType) => (event: React.MouseEvent<HTMLInputElement>) => {
@@ -80,14 +69,15 @@ const useInput = (params: UseInputParams) => {
     (otherHandlers: HandlerType) => (event: React.FocusEvent<HTMLInputElement>) => {
       otherHandlers.onFocus?.(event);
       setFocused(true);
+      if (autoSelect) {
+        event.target.select();
+      }
     };
 
   const handleChange =
-    (otherHandlers: HandlerType) =>
-    (event: React.ChangeEvent<HTMLInputElement>, ...args: any[]) => {
-      // @ts-ignore
-      otherHandlers.onChange?.(event, ...args);
-      onChange(event?.target.value);
+    (otherHandlers: HandlerType) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      otherHandlers.onChange?.(event);
+      onChange?.(event.target.value);
     };
 
   const handleInputRef = useForkRef(inputRef, inputRefPo);
@@ -95,11 +85,14 @@ const useInput = (params: UseInputParams) => {
   const getInputProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,
   ): UseInputSlotProps<TOther> => {
-    const externalEventHandlers = { onBlur, onFocus, ...extractEventHandlers(externalProps) };
+    const externalEventHandlers = {
+      onBlur,
+      onFocus,
+      ...extractEventHandlers(externalProps),
+    };
     const mergedEventHandlers = {
       ...propsToForward,
       ...externalProps,
-      ...externalEventHandlers,
       disabled,
       onFocus: handleFocus(externalEventHandlers),
       onBlur: handleBlur(externalEventHandlers),
@@ -116,7 +109,9 @@ const useInput = (params: UseInputParams) => {
   const handleClear =
     (otherHandlers: { onClick?: React.EventHandler<any> }) =>
     (event: React.MouseEvent<HTMLInputElement>) => {
-      onChange('');
+      // do not blur
+      event.preventDefault();
+      onChange?.('');
       otherHandlers.onClick?.(event);
     };
 
@@ -127,8 +122,7 @@ const useInput = (params: UseInputParams) => {
 
     return {
       ...externalProps,
-      ...externalEventHandlers,
-      onClick: handleClear(externalEventHandlers),
+      onMouseDown: handleClear(externalEventHandlers),
     };
   };
 

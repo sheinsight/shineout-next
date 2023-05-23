@@ -8,14 +8,18 @@ group:
 
 用户可以在文本框内输入或编辑文字。
 
-## Basic Usage
-
-基本用法
+## 基本用法
 
 <code src="./__example__/s-001-base.tsx"></code>
 
-## Disabled
+## 大小
 
-禁用
+<code src="./__example__/s-002-size.tsx"></code>
 
-<code src="./__example__/s-002-disabled.tsx"></code>
+### 数字
+
+<code src="./__example__/s-003-number.tsx"></code>
+
+### 分组
+
+<code src="./__example__/s-004-group.tsx"></code>

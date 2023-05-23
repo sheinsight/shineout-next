@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Provider } from './Provider';
-import useInputAble from '../../common/use-input-able';
-import useLatest from '../../common/use-latest';
+import useLatestObj from '../../common/use-latest-obj';
 import { extractEventHandlers, deepRemove, deepSet, deepClone } from '../../utils';
 
 import { ProviderProps, FormContext, UseFormProps, UseFormSlotProps } from './use-form.type';
@@ -10,21 +9,15 @@ import { HandlerType, ObjectType } from '../../common/type';
 type FormContextType = ProviderProps['form'];
 const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const {
+    value = {} as T,
+    onChange,
     defaultValue = {} as T,
-    control,
     labelWidth,
     labelAlign,
     labelVerticalAlign,
     keepErrorHeight,
     inline,
   } = props;
-  const [value = {} as T, onChange] = useInputAble({
-    value: props.value,
-    defaultValue,
-    onChange: props.onChange,
-    beforeChange: undefined,
-    control,
-  });
 
   const ref = React.useRef<FormContext>({
     defaultValues: {},
@@ -43,11 +36,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   }, []);
 
   const remove = () => {
-    let newValue = deepClone(value);
+    let newValue: T = deepClone(value);
     ref.current.removeArr.forEach((n) => {
-      newValue = deepRemove(value, n);
+      newValue = deepRemove(value!, n) as T;
     });
-    onChange(newValue);
+    onChange?.(newValue);
   };
 
   const addRemove = (name: string) => {
@@ -58,7 +51,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     ref.current.removeTimer = setTimeout(remove);
   };
 
-  const formFunc: FormContextType['formFunc'] = useLatest({
+  const formFunc: FormContextType['formFunc'] = useLatestObj({
     bind: (n: string, df: any, validate: () => void) => {
       if (ref.current.names.has(n)) {
         console.error(`name "${n}" already exist`);
@@ -70,7 +63,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       if (df !== undefined) {
         ref.current.defaultValues[n] = df;
         const newValue = deepSet(deepClone(value), n, df, { clone: true }) as T;
-        onChange(newValue);
+        onChange?.(newValue);
       }
     },
     unbind: (n: string, reserveAble?: boolean) => {
@@ -84,7 +77,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
     setValue: (n: string, v: any) => {
       const newValue = deepSet(deepClone(value), n, v, { clone: true }) as T;
-      onChange(newValue);
+      onChange?.(newValue);
     },
 
     setError(n: string, e: Error | undefined) {
@@ -144,7 +137,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   };
 
   const handleReset = (other: HandlerType) => (e: React.FormEventHandler<HTMLFormElement>) => {
-    onChange(getDefaultValue());
+    onChange?.(getDefaultValue());
     formFunc?.clearErrors?.();
     props.onReset?.();
     other?.onReset?.(e);

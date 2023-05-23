@@ -21,5 +21,5 @@ export default function useInputAble<T>(props: InputAbleProps<T>) {
     [onChange],
   );
 
-  return [value, handleChange] as const;
+  return { value, onChange: handleChange } as const;
 }

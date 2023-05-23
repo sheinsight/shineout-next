@@ -8,6 +8,7 @@ export default () => {
   return (
     <div>
       <Form
+        inline
         jssStyle={formStyle}
         defaultValue={{ email: 'spana@qq.com' }}
         onSubmit={(v) => {

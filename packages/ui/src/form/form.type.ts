@@ -7,7 +7,7 @@ export interface FormClasses {
   wrapper: string;
 }
 export interface FormProps<V extends ObjectType>
-  extends BaseFormProps<V>,
+  extends Partial<BaseFormProps<V>>,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle: FormClasses;
   children?: React.ReactNode;
