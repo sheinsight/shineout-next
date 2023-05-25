@@ -9,6 +9,7 @@ type Props = {
   className?: string;
   style?: React.CSSProperties;
   size?: 'small' | 'large' | 'default';
+  disabled?: boolean;
 };
 export default (props: Props) => {
   const jssStyle = useInputStyle();
@@ -38,12 +39,13 @@ export default (props: Props) => {
     return ref.current.eventMap.get(child) || {};
   };
 
-  const { children, className, style, size } = props;
+  const { children, className, style, size, disabled } = props;
   const rootClass = classNames({
     [jssStyle.group]: true,
     [jssStyle.groupSmall]: size === 'small',
     [jssStyle.groupLarge]: size === 'large',
     [jssStyle.groupFocus]: size === 'large',
+    [jssStyle.groupDisabled]: !!disabled,
     [className!]: !!props.className,
     [jssStyle.groupFocus]: focus,
   });
@@ -55,7 +57,7 @@ export default (props: Props) => {
           return <span key={i}>{child}</span>;
         }
         if (React.isValidElement(child)) {
-          return cloneElement(child, getEvent(child));
+          return cloneElement(child, { ...getEvent(child), disabled });
         }
         return <span key={i}>{child}</span>;
       })}

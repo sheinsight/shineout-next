@@ -1,17 +1,17 @@
+import { InputPasswordPros } from '@shined/hooks';
 import { InputProps as UiInputProps } from '@shined/ui';
-import { InputFormatProps } from '@shined/hooks';
 import { ExtendsFieldProps, TipProps } from '../@types/common';
 
-export interface BaseInputProps
+export interface BasePasswordProps
   extends Omit<UiInputProps, 'jssStyle'>,
-    Omit<InputFormatProps, 'value' | 'onChange'> {
+    Omit<InputPasswordPros, 'value' | 'onChange'> {
   value?: string;
   defaultValue?: string;
   onChange?: (value: string) => void | undefined;
   beforeChange?: (value: string) => void | string | undefined;
 }
 
-export interface InputProps
-  extends Omit<BaseInputProps, 'getStatus'>,
+export interface InputPasswordProps
+  extends Omit<BasePasswordProps, 'getStatus'>,
     ExtendsFieldProps<string>,
     TipProps {}

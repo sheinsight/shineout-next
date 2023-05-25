@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@shined/shineout-style": "workspace:*",
+    "@shined/hooks": "workspace:*",
     "@shined/ui": "workspace:*",
     "classnames": "^2.3.2"
   },

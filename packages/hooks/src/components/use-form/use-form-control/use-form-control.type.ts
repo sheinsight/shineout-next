@@ -1,9 +1,6 @@
 import { ObjectType } from '../../../common/type';
-import { RuleFunc } from './validate.type';
+import { RuleFunc } from '../../../utils/type';
 
-export interface FormItemContextValueType {
-  updateError: (name: string, error?: Error) => void;
-}
 export interface FormContextValueType {
   errors?: ObjectType<Error>;
   value?: ObjectType;
@@ -22,4 +19,5 @@ export interface BaseFormControlProps<T> {
   onChange: ((value: T, ...other: any[]) => void) | undefined;
   reservable: boolean | undefined;
   rules: RuleFunc<T>[] | undefined;
+  onError: ((error: Error | undefined) => void) | undefined;
 }

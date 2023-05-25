@@ -1,12 +1,12 @@
 import React from 'react';
 import { Form } from '@shined/ui';
 import { usePersistFn, util } from '@shined/hooks';
-import Input from './base-input';
+import Password from './base-password';
 import useItemValidate from './use-item-validate';
 
-import { InputProps } from './input.type';
+import { InputPasswordProps } from './password.type';
 
-export default (props: InputProps) => {
+export default (props: InputPasswordProps) => {
   const { name, onChange, defaultValue, rules, popover, tip, onError, status, ...rest } = props;
   const helpParams = {
     tip,
@@ -46,7 +46,7 @@ export default (props: InputProps) => {
       onError,
     });
     return (
-      <Input
+      <Password
         {...inputProps}
         getStatus={onStatusChange}
         defaultValue={defaultValue}
@@ -58,7 +58,7 @@ export default (props: InputProps) => {
   }
   return (
     <Form.Field {...FieldParams} onError={onFieldError}>
-      <Input {...rest} suffix={renderTip(fieldError)} />
+      <Password {...rest} suffix={renderTip(fieldError)} />
     </Form.Field>
   );
 };

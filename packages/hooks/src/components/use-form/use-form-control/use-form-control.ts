@@ -1,14 +1,13 @@
 import React, { useEffect, useCallback, useRef } from 'react';
 import { FormContext } from './form-context';
-import { FormItemContext } from './form-item-context';
-import { deepGet } from '../../../utils';
-import validate from './validate';
+import { FormItemContext } from '../use-form-Item/form-item-context';
+import { deepGet, validate } from '../../../utils';
 
 import { BaseFormControlProps } from './use-form-control.type';
-import { usePersistFn } from '../../../common/use-persist-fn';
+import usePersistFn from '../../../common/use-persist-fn';
 
 export default function useFormControl<T>(props: BaseFormControlProps<T>) {
-  const { onChange: onChangePo, name, reservable, defaultValue, rules } = props;
+  const { onChange: onChangePo, name, reservable, defaultValue, rules, onError } = props;
   let value: T | undefined;
   const { value: formValue = {}, formFunc, errors } = React.useContext(FormContext);
   const { updateError } = React.useContext(FormItemContext);
@@ -30,11 +29,14 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const validateFiled = usePersistFn(() => {
     return validate(value, formValue, rules || [], {})
       .then((res) => {
-        formFunc?.setError(name, res === true ? undefined : res);
+        const err = res === true ? undefined : res;
+        formFunc?.setError(name, err);
+        onError?.(err);
         return res;
       })
       .catch((e) => {
         formFunc?.setError(name, e);
+        onError?.(e);
         return e;
       });
   });

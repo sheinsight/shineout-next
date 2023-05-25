@@ -1,6 +1,6 @@
-import { useInput, useInputFormat, useInputAble } from '@shined/hooks';
+import { useInput } from '@shined/hooks';
 import classNames from 'classnames';
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { InputProps } from './input.type';
 import Clear from '../icon/clear';
 
@@ -13,41 +13,42 @@ const Input = (props: InputProps) => {
     status,
     clearIcon,
     size,
-    beforeChange,
-    coin,
-    type,
-    autoFix,
-    autoSelect,
-    digits,
-    integerLimit,
-    numType,
-    trim,
+    prefix,
+    suffix,
+    // beforeChange,
+    // coin,
+    // type,
+    // autoFix,
+    // digits,
+    // integerLimit,
+    // numType,
+    // trim,
+    getStatus,
     ...rest
   } = props;
-  const inputAbleProps = useInputAble({
-    value: props.value,
-    defaultValue: props.defaultValue,
-    control: 'value' in props,
-    onChange: props.onChange,
-    beforeChange: beforeChange,
-  });
-  const formatProps = useInputFormat({
-    autoFix,
-    coin,
-    type,
-    value: inputAbleProps.value,
-    onChange: inputAbleProps.onChange,
-    onBlur: props.onBlur,
-    onFocus: props.onFocus,
-    digits,
-    integerLimit,
-    numType,
-    trim,
-  });
+  // const inputAbleProps = useInputAble({
+  //   value: props.value,
+  //   defaultValue: props.defaultValue,
+  //   control: 'value' in props,
+  //   onChange: props.onChange,
+  //   beforeChange: beforeChange,
+  // });
+  //
+  // const formatProps = useInputFormat({
+  //   autoFix,
+  //   coin,
+  //   type,
+  //   value: inputAbleProps.value,
+  //   onChange: inputAbleProps.onChange,
+  //   onBlur: props.onBlur,
+  //   onFocus: props.onFocus,
+  //   digits,
+  //   integerLimit,
+  //   numType,
+  //   trim,
+  // });
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
-    autoSelect,
-    ...formatProps,
   });
   const rootClass = classNames([
     jssStyle.wrapper,
@@ -62,6 +63,12 @@ const Input = (props: InputProps) => {
   ]);
   const inputProps = getInputProps({ className: jssStyle.input });
 
+  useEffect(() => {
+    if (getStatus) {
+      getStatus({ focused });
+    }
+  }, [focused]);
+
   return (
     <div
       {...getRootProps({
@@ -69,12 +76,14 @@ const Input = (props: InputProps) => {
         style,
       })}
     >
+      {prefix}
       <input type='text' {...inputProps} />
       {showClear && (
         <div className={jssStyle.clearWrapper} {...getClearProps()}>
           <Clear className={jssStyle.clear} icon={clearIcon} />
         </div>
       )}
+      {suffix}
     </div>
   );
 };

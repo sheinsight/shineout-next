@@ -1,4 +1,7 @@
-import { ObjectType } from '../../../common/type';
+import * as React from 'react';
+import { ObjectType } from '../common/type';
+
+export type EventHandlers = Record<string, React.EventHandler<any>>;
 
 export interface RuleFunc<T = any> {
   (

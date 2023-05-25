@@ -1,6 +1,5 @@
-import { ObjectType } from '../../../common/type';
-import { RuleFunc } from './validate.type';
-
+import { ObjectType } from '../../common/type';
+import { RuleFunc } from '../type';
 export class FormError extends Error {}
 
 export function wrapFormError(error: Error): FormError;
@@ -15,7 +14,7 @@ export function wrapFormError(error: Error | Error[]) {
   return error;
 }
 
-const validate = <T>(
+export const validate = <T>(
   value: T | undefined,
   formData: ObjectType,
   rules: RuleFunc<T>[],

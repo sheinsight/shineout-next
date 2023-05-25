@@ -1,6 +1,6 @@
 import React from 'react';
 import { CommonType } from '../types/common';
-import { InputFormatProps, BaseInputProps } from '@shined/hooks';
+import { BaseInputProps } from '@shined/hooks';
 
 export interface InputClasses {
   /**
@@ -26,20 +26,18 @@ export interface InputClasses {
   wrapperSmall: string;
 }
 
-export interface InputBaseProps
-  extends Partial<BaseInputProps>,
-    Partial<InputFormatProps>,
-    Pick<CommonType, 'status'> {
+export interface InputBaseProps extends BaseInputProps, Pick<CommonType, 'status'> {
   value?: string;
   defaultValue?: string;
-  onChange?: (value?: string) => void;
+  onChange?: (value: string) => void;
   jssStyle: InputClasses;
   className?: string;
   style?: React.CSSProperties;
-  beforeChange?: (value?: string) => string | void;
   clearIcon?: React.ReactNode;
   size?: 'small' | 'default' | 'large';
+  prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
+  getStatus?: (status: { focused?: boolean }) => void;
 }
 
-export type InputProps = InputBaseProps &
-  Omit<React.HTMLAttributes<HTMLInputElement>, keyof InputBaseProps>;
+export type InputProps = InputBaseProps;

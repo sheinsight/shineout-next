@@ -10,6 +10,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     onChange: props.onChange,
     reservable: props.reservable,
     rules: props.rules,
+    onError: props.onError,
   });
   const cloneProps: FieldControlProps<T> = {
     onChange: formControl.onChange,

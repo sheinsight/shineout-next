@@ -20,8 +20,8 @@ export interface InputFormatProps {
    * 是否自动补全小数位数, 仅在 type = number 下生效
    */
   autoFix?: boolean;
-  onChange?: (value: string) => void;
+  value: string | undefined;
+  onChange: (value: string) => void | undefined;
   onBlur?: React.FocusEventHandler;
-  value?: string;
   onFocus?: React.FocusEventHandler;
 }

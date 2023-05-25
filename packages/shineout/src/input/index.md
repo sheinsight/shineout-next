@@ -23,3 +23,19 @@ group:
 ### 分组
 
 <code src="./__example__/s-004-group.tsx"></code>
+
+### 提示
+
+<code src="./__example__/s-005-tip.tsx"></code>
+
+### 校验
+
+<code src="./__example__/s-006-validate.tsx"></code>
+
+### 禁用
+
+<code src="./__example__/s-007-disabled.tsx"></code>
+
+### 密码
+
+<code src="./__example__/s-008-password.tsx"></code>

@@ -14,8 +14,8 @@ import { HandlerType, ObjectType } from '../../common/type';
   value  focused  disabled  showClear
 
   逻辑:
-  1. 输入触发onChange
-  2. 聚焦focus 为 true
+  1. 输入触发 onChange
+  2. 聚焦 focus 为 true
   3. 失去焦点 focus 为 false
   4. 清空数据触发 onChange
 */
@@ -30,6 +30,7 @@ const useInput = (params: UseInputParams) => {
     clearable,
     disabled,
     autoSelect,
+    onClear,
     ...propsToForward
   } = params;
 
@@ -102,7 +103,7 @@ const useInput = (params: UseInputParams) => {
     return {
       ...mergedEventHandlers,
       ref: handleInputRef,
-      value: value ?? '',
+      value: value,
     };
   };
 
@@ -111,7 +112,11 @@ const useInput = (params: UseInputParams) => {
     (event: React.MouseEvent<HTMLInputElement>) => {
       // do not blur
       event.preventDefault();
-      onChange?.('');
+      if (onClear) {
+        onClear?.();
+      } else {
+        onChange?.('');
+      }
       otherHandlers.onClick?.(event);
     };
 

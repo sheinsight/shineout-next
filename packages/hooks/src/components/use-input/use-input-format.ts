@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePersistFn } from '../../common/use-persist-fn';
+import usePersistFn from '../../common/use-persist-fn';
 import { InputFormatProps } from './use-input-format.type';
 
 function regLength(size?: number) {
@@ -95,11 +95,13 @@ const useInputFormat = (props: InputFormatProps) => {
   });
 
   function getValue(str?: string) {
-    if (!(type === 'number' && coin)) return str;
-    if (showCoin && str) {
-      return `${str}`.replace(/\d+/, (n) => n.replace(/(\d)(?=(\d{3})+$)/g, ($1) => `${$1},`));
+    if (type === 'number' && coin) {
+      if (showCoin && str) {
+        return `${str}`.replace(/\d+/, (n) => n.replace(/(\d)(?=(\d{3})+$)/g, ($1) => `${$1},`));
+      }
+      return `${str || ''}`.replace(/,/g, '');
     }
-    return `${str || ''}`.replace(/,/g, '');
+    return str;
   }
 
   return {

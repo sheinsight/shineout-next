@@ -7,7 +7,7 @@ export const colorVar = {
   success: va('success-color', '#52c41a'),
   info: va('info-color', '#197AFA'),
   warning: va('warning-color', '#ff8c00'),
-  danger: va('danger-color', '#ff8c00'),
+  danger: va('danger-color', '#ff4d50'),
   white: '#fff',
   grey200: va('grey-200', '#e8ebf0'),
 };

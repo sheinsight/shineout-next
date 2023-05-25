@@ -5,7 +5,7 @@ import { useRef } from 'react';
  * @param fn 函数 {@link T | T}
  * @return 被持久化引用地址的函数 {@link T | T}
  */
-export function usePersistFn<T extends (...args: any[]) => any>(fn: T): T {
+function usePersistFn<T extends (...args: any[]) => any>(fn: T): T {
   const fnRef = useRef<T>(fn);
   fnRef.current = fn;
 
@@ -17,3 +17,5 @@ export function usePersistFn<T extends (...args: any[]) => any>(fn: T): T {
 
   return persistFn.current!;
 }
+
+export default usePersistFn;

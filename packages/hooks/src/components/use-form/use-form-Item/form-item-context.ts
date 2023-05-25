@@ -1,6 +1,8 @@
 import * as React from 'react';
 
-import { FormItemContextValueType } from './use-form-control.type';
+export interface FormItemContextValueType {
+  updateError: (name: string, error?: Error) => void;
+}
 
 export const FormItemContext = React.createContext<FormItemContextValueType>({
   updateError: () => {},

@@ -1,15 +1,15 @@
 import React, { useMemo } from 'react';
-import { FormItemContext } from '../use-form-control/form-item-context';
+import { FormItemContext } from '../use-form-Item/form-item-context';
 import { LabelConfigContext } from '../use-form-control/label-config-context';
-import { usePersistFn } from '../../../common/use-persist-fn';
+import usePersistFn from '../../../common/use-persist-fn';
 
-import { FormItemContextValueType } from '../use-form-control/use-form-control.type';
+import type { FormItemContextValueType } from '../use-form-Item/form-item-context';
 
 const UseFormItem = () => {
   const [errors, setErrors] = React.useState<{ [name: string]: Error | undefined }>({});
   const labelConfig = React.useContext(LabelConfigContext);
   const handlerErrorUpdate = usePersistFn((name: string, error?: Error) => {
-    if (name && errors[name] !== error) {
+    if (errors[name] !== error) {
       setErrors({ ...errors, [name]: error });
     }
   });

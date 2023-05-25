@@ -16,4 +16,5 @@ export interface FormFieldProps<T> {
     | React.ReactElement<{ value?: any; onChange?: any; [name: string]: any }>
     | ((props: FieldControlProps<T>) => React.ReactElement);
   onChange?: (value: T, ...rest: any) => void;
+  onError?: (error?: Error) => void;
 }

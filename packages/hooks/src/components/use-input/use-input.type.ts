@@ -5,8 +5,8 @@ export interface InputPropsOwn {
   /**
    * The default value. Use when the component is not controlled.
    */
-  value: string | undefined;
-  onChange: (value: string) => void;
+  value?: string;
+  onChange?: (value: string) => void;
   onBlur?: React.FocusEventHandler;
   onFocus?: React.FocusEventHandler;
   onClick?: React.MouseEventHandler;
@@ -17,11 +17,15 @@ export interface InputPropsOwn {
    */
   autoSelect?: boolean;
   inputRef?: React.Ref<HTMLInputElement>;
+  onClear?: () => void;
 }
 
 export interface BaseInputProps
   extends InputPropsOwn,
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, keyof InputPropsOwn | 'size'> {}
+    Omit<
+      React.InputHTMLAttributes<HTMLInputElement>,
+      keyof InputPropsOwn | 'size' | 'prefix' | 'onError'
+    > {}
 
 export type UseInputParams = BaseInputProps;
 
