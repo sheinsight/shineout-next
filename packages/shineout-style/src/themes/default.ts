@@ -10,6 +10,7 @@ export const colorVar = {
   danger: va('danger-color', '#ff4d50'),
   white: '#fff',
   grey200: va('grey-200', '#e8ebf0'),
+  grey500: va('grey-500', '#adb5bd'),
 };
 
 export const sizeVar = {

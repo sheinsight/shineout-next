@@ -49,7 +49,6 @@ export default (props: Props) => {
     [className!]: !!props.className,
     [jssStyle.groupFocus]: focus,
   });
-  console.log('focus', focus);
   return (
     <div className={rootClass} style={style}>
       {Children.toArray(children).map((child, i) => {

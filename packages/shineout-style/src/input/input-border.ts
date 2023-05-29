@@ -17,7 +17,7 @@ export default <T extends string>(name: T, isInput?: boolean) => {
       '&:hover': {
         borderColor: InputBorderVar.color.border.focus,
       },
-    } as CSSProperties,
+    },
     [`${name}Small`]: {
       lineHeight: 1.5,
       fontSize: InputBorderVar.size.fontSize.small,
@@ -54,5 +54,22 @@ export default <T extends string>(name: T, isInput?: boolean) => {
         cursor: 'not-allowed',
       },
     },
-  } as Record<`${T}` | `${T}Focus` | `${T}Error` | `${T}Disabled` | `${T}Small` | `${T}Large`, any>;
+    [`${name}Underline`]: {
+      '&&': {
+        borderLeftColor: 'transparent',
+        borderRightColor: 'transparent',
+        borderTopColor: 'transparent',
+        borderRadius: 0,
+      },
+    },
+  } as Record<
+    | `${T}`
+    | `${T}Focus`
+    | `${T}Error`
+    | `${T}Disabled`
+    | `${T}Small`
+    | `${T}Large`
+    | `${T}Underline`,
+    any
+  >;
 };

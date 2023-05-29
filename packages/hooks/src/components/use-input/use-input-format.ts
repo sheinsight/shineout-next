@@ -19,9 +19,6 @@ const useInputFormat = (props: InputFormatProps) => {
 
   const handleChange = usePersistFn((v: string) => {
     let value = v;
-    if (trim) {
-      value = value.trim();
-    }
     if (type === 'number') {
       value = String(value).replace(/。/g, '.'); // 中文小数点转英文小数点
       if (coin) {

@@ -1,8 +1,8 @@
 import { Input } from '@shined/ui';
 import { useInputStyle } from '@shined/shineout-style';
 import { useInputPassword, useInputAble, util } from '@shined/hooks';
-
-export default (props: any) => {
+import { BasePasswordProps } from './password.type';
+export default (props: BasePasswordProps) => {
   const inputAbleParams = {
     value: props.value,
     onChange: props.onChange,
@@ -15,7 +15,7 @@ export default (props: any) => {
   });
 
   const InputPasswordParams = {
-    point: props.coin,
+    point: props.point,
   };
 
   const InputFormatProps = useInputPassword({

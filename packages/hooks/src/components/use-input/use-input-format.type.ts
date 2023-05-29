@@ -24,4 +24,8 @@ export interface InputFormatProps {
   onChange: (value: string) => void | undefined;
   onBlur?: React.FocusEventHandler;
   onFocus?: React.FocusEventHandler;
+  /**
+   * 取消 blur 的onChange,用于多层嵌套的格式化，只在最外层触发一次onChange
+   */
+  cancelBlurChange?: boolean;
 }

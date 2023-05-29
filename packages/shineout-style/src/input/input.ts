@@ -8,10 +8,18 @@ import { colorVar } from '../themes/default';
 
 const inputBorder = border('wrapper', true);
 const groupBorder = border('group', true);
-const { wrapperFocus, wrapperError, wrapperDisabled, wrapper, wrapperSmall, wrapperLarge } =
-  inputBorder;
+const {
+  wrapperFocus,
+  wrapperError,
+  wrapperDisabled,
+  wrapper,
+  wrapperSmall,
+  wrapperLarge,
+  wrapperUnderline,
+} = inputBorder;
 
-const { group, groupError, groupDisabled, groupFocus, groupSmall, groupLarge } = groupBorder;
+const { group, groupError, groupDisabled, groupFocus, groupSmall, groupLarge, groupUnderline } =
+  groupBorder;
 
 type InputClass =
   | 'wrapper'
@@ -20,6 +28,7 @@ type InputClass =
   | 'wrapperFocus'
   | 'wrapperError'
   | 'wrapperDisabled'
+  | 'wrapperUnderline'
   | 'clearWrapper'
   | 'input'
   | 'clear'
@@ -28,7 +37,10 @@ type InputClass =
   | 'groupLarge'
   | 'groupFocus'
   | 'groupError'
-  | 'groupDisabled';
+  | 'groupDisabled'
+  | 'groupUnderline'
+  | 'wrapperNumber'
+  | 'numberStep';
 
 const groupSpace = (gap: string) => ({
   '& > i:first-child, & > span:first-child': {
@@ -67,7 +79,6 @@ const input: JsStyles<InputClass> = {
     width: '100%',
     boxSizing: 'border-box',
     alignItems: 'center',
-    position: 'relative',
     ...wrapper,
   },
   wrapperFocus,
@@ -75,6 +86,10 @@ const input: JsStyles<InputClass> = {
   wrapperDisabled,
   wrapperSmall,
   wrapperLarge,
+  wrapperUnderline,
+  wrapperNumber: {
+    paddingRight: 0,
+  },
   input: {
     width: '100%',
     background: 'transparent',
@@ -131,6 +146,8 @@ const input: JsStyles<InputClass> = {
       boxShadow: 'none',
       backgroundColor: 'transparent',
       borderColor: inputBorderVar.color.border.default,
+      flex: 1,
+      minWidth: 0,
     },
     '& $wrapper + $wrapper': {
       borderLeftWidth: '1px',
@@ -140,6 +157,7 @@ const input: JsStyles<InputClass> = {
   groupError,
   groupDisabled,
   groupFocus,
+  groupUnderline,
   groupSmall: {
     ...groupSmall,
     ...groupSpace(inputBorderVar.size.paddingX.small),
@@ -147,6 +165,33 @@ const input: JsStyles<InputClass> = {
   groupLarge: {
     ...groupLarge,
     ...groupSpace(inputBorderVar.size.paddingX.large),
+  },
+
+  numberStep: {
+    display: 'flex',
+    height: '100%',
+    boxSizing: 'border-box',
+    flexFlow: 'column noWrap',
+    '& > span': {
+      display: 'block',
+      minHeight: '0',
+      flexGrow: '1',
+      boxSizing: 'border-box',
+      width: '18px',
+      padding: '0 4px',
+      borderLeft: `1px solid ${colorVar.grey200}`,
+      lineHeight: '1',
+      color: colorVar.grey500,
+      '&:hover': {
+        color: colorVar.primary,
+      },
+      '&:first-child': {
+        borderBottom: `1px solid ${colorVar.grey200}`,
+      },
+      '& svg': {
+        transform: 'rotate(-90deg)',
+      },
+    },
   },
 };
 

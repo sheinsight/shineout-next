@@ -1,11 +1,10 @@
-import { useInput } from '@shined/hooks';
+import { useInput, useKeyEvent, usePersistFn } from '@shined/hooks';
 import classNames from 'classnames';
-import React, { useEffect } from 'react';
+import React, { KeyboardEvent, useEffect } from 'react';
 import { InputProps } from './input.type';
-import Clear from '../icon/clear';
+import Icons from '../icons';
 
 const Input = (props: InputProps) => {
-  // rest 中包含了所有的 input 的属性
   const {
     jssStyle,
     className,
@@ -15,38 +14,10 @@ const Input = (props: InputProps) => {
     size,
     prefix,
     suffix,
-    // beforeChange,
-    // coin,
-    // type,
-    // autoFix,
-    // digits,
-    // integerLimit,
-    // numType,
-    // trim,
+    underline,
     getStatus,
     ...rest
   } = props;
-  // const inputAbleProps = useInputAble({
-  //   value: props.value,
-  //   defaultValue: props.defaultValue,
-  //   control: 'value' in props,
-  //   onChange: props.onChange,
-  //   beforeChange: beforeChange,
-  // });
-  //
-  // const formatProps = useInputFormat({
-  //   autoFix,
-  //   coin,
-  //   type,
-  //   value: inputAbleProps.value,
-  //   onChange: inputAbleProps.onChange,
-  //   onBlur: props.onBlur,
-  //   onFocus: props.onFocus,
-  //   digits,
-  //   integerLimit,
-  //   numType,
-  //   trim,
-  // });
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
   });
@@ -59,9 +30,22 @@ const Input = (props: InputProps) => {
       [jssStyle.wrapperError]: status === 'error',
       [jssStyle.wrapperSmall]: size === 'small',
       [jssStyle.wrapperLarge]: size === 'large',
+      [jssStyle.wrapperUnderline]: underline,
     },
   ]);
-  const inputProps = getInputProps({ className: jssStyle.input });
+
+  const keyHandler = useKeyEvent({
+    onEnterPress: (e: KeyboardEvent) => {
+      props.onEnterPress?.((e.target as HTMLInputElement).value || '', e);
+    },
+  });
+
+  const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLInputElement>) => {
+    props.onKeyUp?.(e);
+    keyHandler(e);
+  });
+
+  const inputProps = getInputProps({ className: jssStyle.input, onKeyUp });
 
   useEffect(() => {
     if (getStatus) {
@@ -80,7 +64,7 @@ const Input = (props: InputProps) => {
       <input type='text' {...inputProps} />
       {showClear && (
         <div className={jssStyle.clearWrapper} {...getClearProps()}>
-          <Clear className={jssStyle.clear} icon={clearIcon} />
+          <span className={jssStyle.clear}>{clearIcon || Icons.CloseCircle}</span>
         </div>
       )}
       {suffix}

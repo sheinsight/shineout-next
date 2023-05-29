@@ -1,32 +1,29 @@
-import React, { useCallback } from 'react';
-import useLatestObj from '../use-latest-obj';
+import React from 'react';
+import usePersistFn from '../use-persist-fn';
 interface UseKeyEventParams {
-  onEnterPress?: () => void;
-  onEscPress?: () => void;
-  onSpacePress?: () => void;
+  onEnterPress?: (e: React.KeyboardEvent) => void;
+  onEscPress?: (e: React.KeyboardEvent) => void;
+  onSpacePress?: (e: React.KeyboardEvent) => void;
 }
-// 返回一个函数，封装keyDown事件
+
 const useKeyEvent = (params: UseKeyEventParams) => {
-  const latestParams = useLatestObj(params);
-  const onKeydown = useCallback((e: React.KeyboardEvent) => {
+  const keyEvent = usePersistFn((e: React.KeyboardEvent) => {
     const { keyCode } = e;
     switch (keyCode) {
       case 13:
-        latestParams.onEnterPress?.();
+        params.onEnterPress?.(e);
         break;
       case 27:
-        latestParams.onEscPress?.();
+        params.onEscPress?.(e);
         break;
       case 32:
-        latestParams.onSpacePress?.();
+        params.onSpacePress?.(e);
         break;
       default:
         break;
     }
-  }, []);
-  return {
-    onKeydown,
-  };
+  });
+  return keyEvent;
 };
 
 export default useKeyEvent;
