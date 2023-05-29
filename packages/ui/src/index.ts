@@ -1,5 +1,5 @@
-export { default as Input } from './Input';
-export type * from './Input';
-export { default as Form } from './Form';
-export type * from './Form';
+export { default as Input } from './input';
+export * from './input';
+export { default as Form } from './form';
+export * from './form';
 export type { ObjectType } from '@shined/hooks';

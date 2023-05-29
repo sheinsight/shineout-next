@@ -218,3 +218,13 @@ export const entries = (obj: ObjectType) => {
   const keys = Object.keys(obj);
   return keys.map((key) => [key, obj[key]]);
 };
+
+export const removeProps = <T extends ObjectType, K extends ObjectType>(target: T, remove: K) => {
+  const a: ObjectType = {};
+  for (const [key, value] of entries(target)) {
+    if (!(key in remove)) {
+      a[key] = value;
+    }
+  }
+  return a as Omit<T, keyof K>;
+};

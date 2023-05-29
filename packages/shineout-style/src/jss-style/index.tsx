@@ -1,48 +1,33 @@
 import type { FC } from 'react';
-import { createContext, useCallback, useContext } from 'react';
-import type { Styles } from 'react-jss';
-import type {} from 'jss';
+import { useCallback } from 'react';
 import { createUseStyles, JssProvider } from 'react-jss';
-import deepmerge from 'ts-deepmerge';
-import defaultTheme from '../themes/default';
-import type { OptTheme, Theme } from '../themes/type';
-
-const context = createContext<Theme>(defaultTheme);
-const CLS_PREFIX = 'so-';
+import { JssStyle } from 'jss';
 
 function camelToDash(str: string): string {
   return str.replace(/([A-Z])/g, '-$1').toLowerCase();
 }
 
-export const StyleProvider: FC<{ theme?: OptTheme; children?: any }> = function ({
-  theme = {},
+export const StyleProvider: FC<{ children?: any; prefix?: string }> = function ({
   children,
+  prefix = 'so-',
 }) {
-  const mergedTheme = deepmerge(defaultTheme, theme) as Theme;
   const createClassname = useCallback((rule: any, sheet: any) => {
     const ns = sheet.options.classNamePrefix;
     if (!ns) {
       console.warn('[shined/ui]: styled should give namespace');
     }
-    return `${CLS_PREFIX}${ns}${camelToDash(rule.key)}`;
+    return `${prefix}${ns}${camelToDash(rule.key)}`;
   }, []);
 
-  return (
-    <context.Provider value={mergedTheme}>
-      <JssProvider generateId={createClassname}>{children}</JssProvider>
-    </context.Provider>
-  );
+  return <JssProvider generateId={createClassname}>{children}</JssProvider>;
 };
 
-export const styled = <C extends string>(
-  style:
-    | Styles<C, { theme: Theme }, Theme>
-    | ((theme: Theme) => Styles<C, { theme: Theme }, undefined>),
-  ns: string,
-) => {
+export type JsStyles<Name extends string = string> = Record<Name, JssStyle<undefined> | string>;
+
+export type ClassStyle<K extends Record<string, any>> = {
+  [P in keyof K]: Record<string, any>;
+};
+export const styled = <C extends string>(style: JsStyles<C>, ns: string) => {
   const hoc = createUseStyles(style, { name: ns });
-  return () => {
-    const theme = useContext<Theme>(context);
-    return hoc({ theme });
-  };
+  return hoc;
 };
