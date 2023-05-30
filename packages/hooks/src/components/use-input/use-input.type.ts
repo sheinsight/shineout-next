@@ -18,6 +18,7 @@ export interface InputPropsOwn {
   autoSelect?: boolean;
   inputRef?: React.Ref<HTMLInputElement>;
   onClear?: () => void;
+  showClear?: boolean;
 }
 
 export interface BaseInputProps

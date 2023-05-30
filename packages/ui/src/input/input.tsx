@@ -15,6 +15,8 @@ const Input = (props: InputProps) => {
     prefix,
     suffix,
     underline,
+    border = true,
+    inGroup = false,
     getStatus,
     ...rest
   } = props;
@@ -31,6 +33,8 @@ const Input = (props: InputProps) => {
       [jssStyle.wrapperSmall]: size === 'small',
       [jssStyle.wrapperLarge]: size === 'large',
       [jssStyle.wrapperUnderline]: underline,
+      [jssStyle.wrapperNoBorder]: !border,
+      [jssStyle.wrapperInGroup]: inGroup,
     },
   ]);
 
@@ -62,7 +66,7 @@ const Input = (props: InputProps) => {
     >
       {prefix}
       <input type='text' {...inputProps} />
-      {showClear && (
+      {(showClear || props.showClear) && (
         <div className={jssStyle.clearWrapper} {...getClearProps()}>
           <span className={jssStyle.clear}>{clearIcon || Icons.CloseCircle}</span>
         </div>

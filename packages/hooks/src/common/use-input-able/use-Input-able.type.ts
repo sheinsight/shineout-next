@@ -1,7 +1,7 @@
 export interface InputAbleProps<T> {
   value: T | undefined;
   defaultValue: T | undefined;
-  beforeChange: ((value: T) => T | void) | undefined;
-  onChange: ((value: T, ...other: any[]) => void) | undefined;
+  beforeChange: ((value: T | undefined) => T | void) | undefined;
+  onChange: ((value: T | undefined, ...other: any[]) => void) | undefined;
   control: boolean;
 }

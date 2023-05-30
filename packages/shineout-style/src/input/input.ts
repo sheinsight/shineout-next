@@ -8,18 +8,9 @@ import { colorVar } from '../themes/default';
 
 const inputBorder = border('wrapper', true);
 const groupBorder = border('group', true);
-const {
-  wrapperFocus,
-  wrapperError,
-  wrapperDisabled,
-  wrapper,
-  wrapperSmall,
-  wrapperLarge,
-  wrapperUnderline,
-} = inputBorder;
+const { wrapper, ...resetWrapper } = inputBorder;
 
-const { group, groupError, groupDisabled, groupFocus, groupSmall, groupLarge, groupUnderline } =
-  groupBorder;
+const { group, groupSmall, groupLarge, ...resetGroup } = groupBorder;
 
 type InputClass =
   | 'wrapper'
@@ -29,6 +20,8 @@ type InputClass =
   | 'wrapperError'
   | 'wrapperDisabled'
   | 'wrapperUnderline'
+  | 'wrapperInGroup'
+  | 'wrapperNoBorder'
   | 'clearWrapper'
   | 'input'
   | 'clear'
@@ -81,12 +74,7 @@ const input: JsStyles<InputClass> = {
     alignItems: 'center',
     ...wrapper,
   },
-  wrapperFocus,
-  wrapperError,
-  wrapperDisabled,
-  wrapperSmall,
-  wrapperLarge,
-  wrapperUnderline,
+  ...resetWrapper,
   wrapperNumber: {
     paddingRight: 0,
   },
@@ -140,24 +128,8 @@ const input: JsStyles<InputClass> = {
     boxSizing: 'border-box',
     alignItems: 'stretch',
     padding: '0',
-    '& $wrapper': {
-      borderWidth: 0,
-      borderRadius: 0,
-      boxShadow: 'none',
-      backgroundColor: 'transparent',
-      borderColor: inputBorderVar.color.border.default,
-      flex: 1,
-      minWidth: 0,
-    },
-    '& $wrapper + $wrapper': {
-      borderLeftWidth: '1px',
-    },
     ...groupSpace(inputBorderVar.size.paddingX.default),
   },
-  groupError,
-  groupDisabled,
-  groupFocus,
-  groupUnderline,
   groupSmall: {
     ...groupSmall,
     ...groupSpace(inputBorderVar.size.paddingX.small),
@@ -166,7 +138,7 @@ const input: JsStyles<InputClass> = {
     ...groupLarge,
     ...groupSpace(inputBorderVar.size.paddingX.large),
   },
-
+  ...resetGroup,
   numberStep: {
     display: 'flex',
     height: '100%',

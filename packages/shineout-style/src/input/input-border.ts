@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 import InputBorderVar from './input-border-var';
 import { sizeVar } from '../themes/default';
+import inputBorderVar from './input-border-var';
 
 export default <T extends string>(name: T, isInput?: boolean) => {
   return {
@@ -62,6 +63,25 @@ export default <T extends string>(name: T, isInput?: boolean) => {
         borderRadius: 0,
       },
     },
+    [`${name}NoBorder`]: {
+      '&&': {
+        borderColor: 'transparent',
+      },
+    },
+    [`${name}InGroup`]: {
+      '&': {
+        borderWidth: 0,
+        borderRadius: 0,
+        boxShadow: 'none',
+        backgroundColor: 'transparent',
+        borderColor: inputBorderVar.color.border.default,
+        flex: 1,
+        minWidth: 0,
+      },
+      '& + &': {
+        borderLeftWidth: '1px',
+      },
+    },
   } as Record<
     | `${T}`
     | `${T}Focus`
@@ -69,7 +89,9 @@ export default <T extends string>(name: T, isInput?: boolean) => {
     | `${T}Disabled`
     | `${T}Small`
     | `${T}Large`
-    | `${T}Underline`,
+    | `${T}Underline`
+    | `${T}NoBorder`
+    | `${T}InGroup`,
     any
   >;
 };

@@ -19,7 +19,7 @@ InputComp.Number = INumber as InputComponent['Number'];
 
 InputComp.displayName = 'ShineoutInput';
 InputComp.Group.displayName = 'ShineoutInputGroup';
-InputComp.Password.displayName = 'ShineouInputPassword';
-InputComp.Number.displayName = 'ShineouInputNumber';
+InputComp.Password.displayName = 'ShineoutInputPassword';
+InputComp.Number.displayName = 'ShineoutInputNumber';
 
 export default InputComp;

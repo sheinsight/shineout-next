@@ -25,6 +25,8 @@ export interface InputClasses {
   wrapperLarge: string;
   wrapperSmall: string;
   wrapperUnderline: string;
+  wrapperNoBorder: string;
+  wrapperInGroup: string;
 }
 
 export interface InputBaseProps extends BaseInputProps, Pick<CommonType, 'status'> {
@@ -40,7 +42,16 @@ export interface InputBaseProps extends BaseInputProps, Pick<CommonType, 'status
   suffix?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;
   underline?: boolean;
+  /**
+   * @default: true
+   */
+  border?: boolean;
+  /**
+   * @default: false
+   */
+  inGroup?: boolean;
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
+  showClear?: boolean;
 }
 
 export type InputProps = InputBaseProps;

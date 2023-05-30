@@ -1,6 +1,7 @@
 import { Input } from '@shined/ui';
 import { useInputStyle } from '@shined/shineout-style';
 import { useInputFormat, useInputAble, util } from '@shined/hooks';
+import useClear from './use-clear';
 import { BaseInputProps } from './input.type';
 
 export default (props: BaseInputProps) => {
@@ -15,6 +16,16 @@ export default (props: BaseInputProps) => {
     ...inputAbleParams,
   });
 
+  const clearParams = {
+    clearable: props.clearable,
+    clearToUndefined: props.clearToUndefined,
+  };
+  const clearProps = useClear({
+    ...clearParams,
+    value: InputAbleProps.value,
+    onChange: InputAbleProps.onChange,
+  });
+
   const InputFormatParams = {
     coin: props.coin,
     autoFix: props.autoFix,
@@ -26,16 +37,27 @@ export default (props: BaseInputProps) => {
     numType: props.numType,
     trim: props.trim,
   };
-
   const InputFormatProps = useInputFormat({
     value: InputAbleProps.value,
-    onChange: InputAbleProps.onChange,
+    onChange: clearProps.onChange,
     ...InputFormatParams,
   });
 
   const jssStyle = useInputStyle();
 
-  const resetProps = util.removeProps(props, { ...InputFormatParams, ...inputAbleParams });
+  const resetProps = util.removeProps(props, {
+    ...InputFormatParams,
+    ...inputAbleParams,
+    ...clearParams,
+  });
 
-  return <Input jssStyle={jssStyle} {...resetProps} {...InputFormatProps} />;
+  return (
+    <Input
+      jssStyle={jssStyle}
+      {...resetProps}
+      {...clearProps}
+      {...InputFormatProps}
+      value={InputFormatProps.value || ''}
+    />
+  );
 };

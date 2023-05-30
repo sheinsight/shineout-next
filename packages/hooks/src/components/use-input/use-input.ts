@@ -31,6 +31,7 @@ const useInput = (params: UseInputParams) => {
     disabled,
     autoSelect,
     onClear,
+    showClear,
     ...propsToForward
   } = params;
 
@@ -131,12 +132,12 @@ const useInput = (params: UseInputParams) => {
     };
   };
 
-  const showClear = clearable && value;
+  const showClearValue = showClear !== undefined ? !!showClear : clearable && value;
 
   return {
     focused,
     disabled,
-    showClear,
+    showClear: showClearValue,
     getRootProps,
     getInputProps,
     getClearProps,
