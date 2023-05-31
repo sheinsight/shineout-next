@@ -12,6 +12,7 @@ const webpackConfig = {
     alias: {
       shineout: path.resolve(__dirname, '../packages/shineout'),
       store: path.resolve(__dirname, '../docs/theme/store'),
+      chunk: path.resolve(__dirname, '../docs/chunk'),
     },
   },
   module: {

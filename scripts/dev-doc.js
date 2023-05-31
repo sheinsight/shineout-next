@@ -169,7 +169,7 @@ fs.readdirSync(componentsDir)
       const doc = tokenLoader(tokens, component);
 
       fs.writeFileSync(
-        path.join(__dirname, `../docs/chunk/${component}.js`),
+        path.join(__dirname, `../docs/chunk/${component}.ts`),
         `export default ${JSON.stringify(doc, null, 2).replace(
           /"component":\s*"([^"]*)"/g,
           '"component": $1',

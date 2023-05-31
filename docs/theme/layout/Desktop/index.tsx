@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useRoutes } from 'react-router-dom';
 import useStyles from './style';
 
@@ -47,8 +46,6 @@ const Desktop = () => {
   function Routes() {
     return useRoutes(routes);
   }
-
-  useEffect(() => {}, []);
 
   return (
     <section className={classes.desktop}>

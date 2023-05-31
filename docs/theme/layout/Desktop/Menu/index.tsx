@@ -38,7 +38,7 @@ const MenuComponent = () => {
     const menus: Menus[] = [];
 
     // @ts-ignore
-    const files = require.context('../../../../chunk', false, /\.js$/).keys() as string[];
+    const files = require.context('../../../../chunk', false, /\.ts$/).keys() as string[];
     files.forEach((file) => {
       const menu: Menu = {
         name: '',
