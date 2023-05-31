@@ -31,6 +31,7 @@ const useInput = (params: UseInputParams) => {
     disabled,
     autoSelect,
     onClear,
+    onClick,
     showClear,
     ...propsToForward
   } = params;
@@ -50,10 +51,7 @@ const useInput = (params: UseInputParams) => {
   const getRootProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,
   ): UseInputRootSlotProps<TOther> => {
-    // onBlur, onChange and onFocus are forwarded to the input slot.
-    const propsEventHandlers = extractEventHandlers(params, ['onBlur', 'onChange', 'onFocus']);
-    const externalEventHandlers = { ...propsEventHandlers, ...extractEventHandlers(externalProps) };
-
+    const externalEventHandlers = { onClick, ...extractEventHandlers(externalProps) };
     return {
       ...externalProps,
       ...externalEventHandlers,
@@ -113,6 +111,9 @@ const useInput = (params: UseInputParams) => {
     (event: React.MouseEvent<HTMLInputElement>) => {
       // do not blur
       event.preventDefault();
+      if (!focused) {
+        inputRef.current?.focus();
+      }
       if (onClear) {
         onClear?.();
       } else {

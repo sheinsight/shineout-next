@@ -17,6 +17,7 @@ const Input = (props: InputProps) => {
     underline,
     border = true,
     inGroup = false,
+    onEnterPress,
     getStatus,
     ...rest
   } = props;
@@ -40,7 +41,7 @@ const Input = (props: InputProps) => {
 
   const keyHandler = useKeyEvent({
     onEnterPress: (e: KeyboardEvent) => {
-      props.onEnterPress?.((e.target as HTMLInputElement).value || '', e);
+      onEnterPress?.((e.target as HTMLInputElement).value || '', e);
     },
   });
 

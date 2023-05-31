@@ -11,7 +11,7 @@ export default (props: BaseInputProps) => {
     defaultValue: props.defaultValue,
     beforeChange: props.beforeChange,
   };
-  const InputAbleProps = useInputAble({
+  const inputAbleProps = useInputAble({
     control: 'value' in props,
     ...inputAbleParams,
   });
@@ -22,11 +22,11 @@ export default (props: BaseInputProps) => {
   };
   const clearProps = useClear({
     ...clearParams,
-    value: InputAbleProps.value,
-    onChange: InputAbleProps.onChange,
+    value: inputAbleProps.value,
+    onChange: inputAbleProps.onChange,
   });
 
-  const InputFormatParams = {
+  const inputFormatParams = {
     coin: props.coin,
     autoFix: props.autoFix,
     type: props.type,
@@ -37,16 +37,16 @@ export default (props: BaseInputProps) => {
     numType: props.numType,
     trim: props.trim,
   };
-  const InputFormatProps = useInputFormat({
-    value: InputAbleProps.value,
+  const inputFormatProps = useInputFormat({
+    value: inputAbleProps.value,
     onChange: clearProps.onChange,
-    ...InputFormatParams,
+    ...inputFormatParams,
   });
 
   const jssStyle = useInputStyle();
 
   const resetProps = util.removeProps(props, {
-    ...InputFormatParams,
+    ...inputFormatParams,
     ...inputAbleParams,
     ...clearParams,
   });
@@ -56,8 +56,8 @@ export default (props: BaseInputProps) => {
       jssStyle={jssStyle}
       {...resetProps}
       {...clearProps}
-      {...InputFormatProps}
-      value={InputFormatProps.value || ''}
+      {...inputFormatProps}
+      value={inputFormatProps.value || ''}
     />
   );
 };

@@ -21,7 +21,7 @@ export interface InputFormatProps {
    */
   autoFix?: boolean;
   value: string | undefined;
-  onChange: (value: string) => void | undefined;
+  onChange: (value: string | undefined) => void | undefined;
   onBlur?: React.FocusEventHandler;
   onFocus?: React.FocusEventHandler;
   /**

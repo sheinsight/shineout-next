@@ -8,9 +8,10 @@ export interface BasePasswordProps
     Omit<PasswordProps, 'value' | 'onChange'> {
   value?: string;
   defaultValue?: string;
-  onChange?: (value: string) => void | undefined;
-  beforeChange?: (value: string) => void | string | undefined;
+  onChange?: (value: string | undefined) => void | undefined;
+  beforeChange?: (value: string | undefined) => void | string | undefined;
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
+  clearToUndefined?: boolean;
 }
 
 export interface InputPasswordProps

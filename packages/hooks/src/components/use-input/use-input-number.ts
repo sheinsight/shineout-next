@@ -61,7 +61,7 @@ const useNumberFormat = (props: InputNumberProps) => {
     onBlur?.(e);
   });
 
-  const onNumberChange = usePersistFn((value: string) => {
+  const onNumberChange = usePersistFn((value: string | undefined) => {
     const result = value;
     onChange?.(result);
   });

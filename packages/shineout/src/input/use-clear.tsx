@@ -1,6 +1,6 @@
 import { usePersistFn } from '@shined/hooks';
 
-interface ClearProps<T> {
+export interface ClearProps<T> {
   value?: T;
   clearable?: boolean | (() => void);
   clearToUndefined?: boolean;
@@ -21,7 +21,7 @@ const useClear = <T,>(props: ClearProps<T>) => {
     }
   });
 
-  const handleChange = usePersistFn((v: T, ...rest: any) => {
+  const handleChange = usePersistFn((v: T | undefined, ...rest: any) => {
     if (value === undefined && (v === '' || (Array.isArray(v) && v.length === 0))) {
       return;
     }
@@ -36,6 +36,7 @@ const useClear = <T,>(props: ClearProps<T>) => {
     if (Array.isArray(value)) {
       return value.length > 0;
     }
+    if (value === 0) return true;
     return !!value;
   };
 

@@ -7,7 +7,15 @@ export type NumValueType = string | number | null | undefined;
 export interface BaseNumberProps
   extends Omit<
       UiInputProps,
-      'jssStyle' | 'min' | 'max' | 'step' | 'value' | 'defaultValue' | 'type'
+      | 'jssStyle'
+      | 'min'
+      | 'max'
+      | 'step'
+      | 'value'
+      | 'defaultValue'
+      | 'type'
+      | 'clearable'
+      | 'onClear'
     >,
     Omit<NumberProps, 'value' | 'onChange'> {
   value?: NumValueType;
@@ -15,6 +23,8 @@ export interface BaseNumberProps
   onChange?: (value: NumValueType) => void | undefined;
   beforeChange?: (value: NumValueType) => void | string | undefined;
   onEnterPress?: (value: NumValueType, e: React.KeyboardEvent) => void;
+  clearable?: boolean | (() => void);
+  clearToUndefined?: boolean;
 }
 
 export interface InputNumberProps

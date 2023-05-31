@@ -2,6 +2,8 @@ import React from 'react';
 import { Input, Icons } from '@shined/ui';
 import { useInputStyle } from '@shined/shineout-style';
 import { useInputNumber, useInputAble, util, usePersistFn } from '@shined/hooks';
+import useClear from './use-clear';
+
 import { BaseNumberProps } from './number.type';
 import classNames from 'classnames';
 
@@ -12,12 +14,22 @@ export default (props: BaseNumberProps) => {
     defaultValue: props.defaultValue,
     beforeChange: props.beforeChange,
   };
-  const InputAbleProps = useInputAble<BaseNumberProps['value']>({
+  const inputAbleProps = useInputAble<BaseNumberProps['value']>({
     control: 'value' in props,
     ...inputAbleParams,
   });
 
-  const InputFormatParams = {
+  const clearParams = {
+    clearable: props.clearable,
+    clearToUndefined: props.clearToUndefined,
+  };
+  const clearProps = useClear({
+    ...clearParams,
+    value: inputAbleProps.value,
+    onChange: inputAbleProps.onChange,
+  });
+
+  const inputFormatParams = {
     onBlur: props.onBlur,
     onFocus: props.onFocus,
     digits: props.digits,
@@ -29,14 +41,18 @@ export default (props: BaseNumberProps) => {
   };
 
   const { onMinus, onPlus, ...inputFormatProps } = useInputNumber({
-    value: InputAbleProps.value,
-    onChange: InputAbleProps.onChange,
-    ...InputFormatParams,
+    value: inputAbleProps.value,
+    onChange: clearProps.onChange,
+    ...inputFormatParams,
   });
 
   const jssStyle = useInputStyle();
 
-  const resetProps = util.removeProps(props, { ...InputFormatParams, ...inputAbleParams });
+  const resetProps = util.removeProps(props, {
+    ...inputFormatParams,
+    ...inputAbleParams,
+    ...clearParams,
+  });
 
   const suffix = (
     <React.Fragment>
@@ -63,6 +79,8 @@ export default (props: BaseNumberProps) => {
       jssStyle={jssStyle}
       {...resetProps}
       {...inputFormatProps}
+      {...clearProps}
+      value={inputFormatProps.value || ''}
       className={classNames(resetProps.className, jssStyle.wrapperNumber)}
       onKeyDown={onKeyDown}
       suffix={suffix}
