@@ -1,14 +1,9 @@
 import useStyles from '../style';
-import ShineoutComponent from '../../../../pages/Component/index';
 
 const Content = () => {
   const classes = useStyles();
 
-  return (
-    <div className={classes.content}>
-      <ShineoutComponent></ShineoutComponent>
-    </div>
-  );
+  return <div className={classes.content}>content</div>;
 };
 
 export default Content;

@@ -25,7 +25,7 @@ export default {
         en: '',
         cn: '',
       },
-      component: require('shineout/src/Form/__example__/s-001-base.tsx'),
+      component: require('shineout/src/form/__example__/s-001-base.tsx'),
     },
   ],
 };

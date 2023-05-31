@@ -26,7 +26,7 @@ const titleLoader = (tokens) => {
 
   tokens.forEach((token) => {
     title.title = title.title || astLoader(token, 'text', 'title:');
-    title.group = title.title || astLoader(token, 'text', 'group:');
+    title.group = title.group || astLoader(token, 'text', 'group:');
     title.order = title.order || astLoader(token, 'text', 'order:');
   });
 
@@ -160,6 +160,7 @@ const componentsDir = path.join(__dirname, '../packages', 'shineout', 'src');
 // 读取组件文件夹
 fs.readdirSync(componentsDir)
   .filter((file) => fs.statSync(path.join(componentsDir, file)).isDirectory())
+  .filter((file) => file.indexOf('@') === -1)
   .forEach((component) => {
     const indexPath = path.join(componentsDir, component, 'index.md');
     try {

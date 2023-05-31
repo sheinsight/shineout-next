@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { HashRouter as Router } from 'react-router-dom';
 import LayoutDasktop from './Desktop';
 import LayoutMobile from './Moblie';
 
@@ -17,7 +18,7 @@ const Layout = () => {
     };
   }, []);
 
-  return <>{windowWidth > 768 ? <LayoutDasktop /> : <LayoutMobile />}</>;
+  return <Router>{windowWidth > 768 ? <LayoutDasktop /> : <LayoutMobile />}</Router>;
 };
 
 export default Layout;

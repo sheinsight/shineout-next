@@ -11,6 +11,7 @@ const webpackConfig = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.md', '.less'],
     alias: {
       shineout: path.resolve(__dirname, '../packages/shineout'),
+      store: path.resolve(__dirname, '../docs/theme/store'),
     },
   },
   module: {
@@ -18,23 +19,6 @@ const webpackConfig = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
-      },
-      {
-        test: /\.less$/i,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
-          {
-            loader: 'less-loader',
-          },
-        ],
       },
       {
         test: /\.md$/i,
@@ -57,7 +41,7 @@ const webpackConfig = {
       React: 'react',
     }),
     new HTMLWebpackPlugin({
-      title: 'Custom template',
+      title: 'Shineout Next',
       template: path.join(__dirname, '../public/index.ejs'),
     }),
   ],
