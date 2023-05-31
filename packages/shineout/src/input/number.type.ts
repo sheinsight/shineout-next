@@ -16,6 +16,7 @@ export interface BaseNumberProps
       | 'type'
       | 'clearable'
       | 'onClear'
+      | 'inputRef'
     >,
     Omit<NumberProps, 'value' | 'onChange'> {
   value?: NumValueType;
@@ -25,6 +26,7 @@ export interface BaseNumberProps
   onEnterPress?: (value: NumValueType, e: React.KeyboardEvent) => void;
   clearable?: boolean | (() => void);
   clearToUndefined?: boolean;
+  forwardRef?: UiInputProps['inputRef'];
 }
 
 export interface InputNumberProps

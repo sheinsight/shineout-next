@@ -1,10 +1,11 @@
 import { Input } from '@shined/ui';
 import { useInputStyle } from '@shined/shineout-style';
 import { useInputPassword, useInputAble, util } from '@shined/hooks';
-import useClear from './use-clear';
+import useClear from '../hooks/use-clear';
 
 import { BasePasswordProps } from './password.type';
 export default (props: BasePasswordProps) => {
+  const { forwardRef, ...restProps } = props;
   const inputAbleParams = {
     value: props.value,
     onChange: props.onChange,
@@ -32,13 +33,13 @@ export default (props: BasePasswordProps) => {
 
   const inputFormatProps = useInputPassword({
     value: inputAbleProps.value,
-    onChange: clearProps.onChange,
+    onChange: inputAbleProps.onChange,
     ...inputPasswordParams,
   });
 
   const jssStyle = useInputStyle();
 
-  const resetProps = util.removeProps(props, {
+  const forwardProps = util.removeProps(restProps, {
     ...inputPasswordParams,
     ...inputAbleParams,
     ...clearParams,
@@ -47,10 +48,11 @@ export default (props: BasePasswordProps) => {
   return (
     <Input
       jssStyle={jssStyle}
-      {...resetProps}
+      {...forwardProps}
       {...clearProps}
       {...inputFormatProps}
       value={inputFormatProps.value || ''}
+      inputRef={forwardRef}
     />
   );
 };

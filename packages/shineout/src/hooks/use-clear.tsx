@@ -21,13 +21,6 @@ const useClear = <T,>(props: ClearProps<T>) => {
     }
   });
 
-  const handleChange = usePersistFn((v: T | undefined, ...rest: any) => {
-    if (value === undefined && (v === '' || (Array.isArray(v) && v.length === 0))) {
-      return;
-    }
-    onChange?.(v, ...rest);
-  });
-
   const getShowClear = () => {
     if (!clearable) return false;
     if (clearToUndefined) {
@@ -42,7 +35,6 @@ const useClear = <T,>(props: ClearProps<T>) => {
 
   return {
     onClear: handleClear,
-    onChange: handleChange,
     clearable: !!clearable,
     showClear: getShowClear(),
   };

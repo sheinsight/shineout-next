@@ -2,12 +2,13 @@ import React from 'react';
 import { Input, Icons } from '@shined/ui';
 import { useInputStyle } from '@shined/shineout-style';
 import { useInputNumber, useInputAble, util, usePersistFn } from '@shined/hooks';
-import useClear from './use-clear';
+import useClear from '../hooks/use-clear';
 
 import { BaseNumberProps } from './number.type';
 import classNames from 'classnames';
 
 export default (props: BaseNumberProps) => {
+  const { forwardRef, ...restProps } = props;
   const inputAbleParams = {
     value: props.value,
     onChange: props.onChange,
@@ -38,17 +39,18 @@ export default (props: BaseNumberProps) => {
     min: props.min,
     max: props.max,
     step: props.step,
+    allowNull: props.allowNull,
   };
 
   const { onMinus, onPlus, ...inputFormatProps } = useInputNumber({
     value: inputAbleProps.value,
-    onChange: clearProps.onChange,
+    onChange: inputAbleProps.onChange,
     ...inputFormatParams,
   });
 
   const jssStyle = useInputStyle();
 
-  const resetProps = util.removeProps(props, {
+  const forwardProps = util.removeProps(restProps, {
     ...inputFormatParams,
     ...inputAbleParams,
     ...clearParams,
@@ -77,13 +79,14 @@ export default (props: BaseNumberProps) => {
   return (
     <Input
       jssStyle={jssStyle}
-      {...resetProps}
+      {...forwardProps}
       {...inputFormatProps}
       {...clearProps}
       value={inputFormatProps.value || ''}
-      className={classNames(resetProps.className, jssStyle.wrapperNumber)}
+      className={classNames(forwardProps.className, jssStyle.wrapperNumber)}
       onKeyDown={onKeyDown}
       suffix={suffix}
+      inputRef={forwardRef}
     />
   );
 };

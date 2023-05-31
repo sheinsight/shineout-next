@@ -50,6 +50,11 @@ const useInputFormat = (props: InputFormatProps) => {
     let value = target.value;
     let before = value;
 
+    // 没有输入任何值
+    if (props.value === undefined && value === '') {
+      return;
+    }
+
     // 去除前后空格
     if (trim) {
       value = value.trim();

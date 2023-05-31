@@ -3,7 +3,7 @@ import { InputFormatProps } from '@shined/hooks';
 import { ExtendsFieldProps, TipProps } from '../@types/common';
 
 export interface BaseInputProps
-  extends Omit<UiInputProps, 'jssStyle' | 'clearable' | 'onClear'>,
+  extends Omit<UiInputProps, 'jssStyle' | 'clearable' | 'onClear' | 'inputRef'>,
     Omit<InputFormatProps, 'value' | 'onChange'> {
   value?: string | undefined;
   defaultValue?: string;
@@ -12,6 +12,7 @@ export interface BaseInputProps
   // clearable 包含 onClear
   clearable?: boolean | (() => void);
   clearToUndefined?: boolean;
+  forwardRef?: UiInputProps['inputRef'];
 }
 
 export interface InputProps

@@ -8,8 +8,9 @@ const useNumberFormat = (props: InputNumberProps) => {
   const { onChange, onBlur, numType, integerLimit, digits, min, max, allowNull, step = 1 } = props;
 
   const getStringValue = (value: string | number | null | undefined) => {
-    if (isNaN(value as unknown as number)) return '0';
+    if (value === undefined) return value;
     if (typeof value === 'number') {
+      if (isNaN(value as unknown as number)) return '0';
       return String(value);
     }
     return value || '';
@@ -89,10 +90,9 @@ const useNumberFormat = (props: InputNumberProps) => {
     changeValue(-step);
   });
 
-  const strValue = typeof props.value === 'number' ? String(props.value) : props.value || '';
   return {
     ...useInputFormat({
-      value: getStringValue(strValue),
+      value: getStringValue(props.value),
       type: 'number',
       numType,
       integerLimit,

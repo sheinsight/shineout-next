@@ -1,10 +1,11 @@
 import { Input } from '@shined/ui';
 import { useInputStyle } from '@shined/shineout-style';
 import { useInputFormat, useInputAble, util } from '@shined/hooks';
-import useClear from './use-clear';
+import useClear from '../hooks/use-clear';
 import { BaseInputProps } from './input.type';
 
 export default (props: BaseInputProps) => {
+  const { forwardRef, ...otherProps } = props;
   const inputAbleParams = {
     value: props.value,
     onChange: props.onChange,
@@ -39,13 +40,13 @@ export default (props: BaseInputProps) => {
   };
   const inputFormatProps = useInputFormat({
     value: inputAbleProps.value,
-    onChange: clearProps.onChange,
+    onChange: inputAbleProps.onChange,
     ...inputFormatParams,
   });
 
   const jssStyle = useInputStyle();
 
-  const resetProps = util.removeProps(props, {
+  const forwardProps = util.removeProps(otherProps, {
     ...inputFormatParams,
     ...inputAbleParams,
     ...clearParams,
@@ -54,10 +55,11 @@ export default (props: BaseInputProps) => {
   return (
     <Input
       jssStyle={jssStyle}
-      {...resetProps}
+      {...forwardProps}
       {...clearProps}
       {...inputFormatProps}
       value={inputFormatProps.value || ''}
+      inputRef={forwardRef}
     />
   );
 };
