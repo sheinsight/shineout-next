@@ -8,9 +8,8 @@
   "packageManager": "pnpm@8.2.0",
   "scripts": {
     "start": "npm run dev",
-    "dev": "dumi dev",
     "clean:cache": "node ./scripts/cleanCache.js",
-    "dev:shineout": "cross-env NODE_ENV=development CASE_ENV=test node ./webpack/config.dev.ts",
+    "dev:shineout": "cross-env NODE_ENV=development CASE_ENV=test  node ./webpack/config.dev.ts",
     "build:md": "cross-env NODE_ENV=development CASE_ENV=test node ./scripts/dev-doc.js",
     "build": "pnpm --filter=./packages/* run build",
     "build:watch": "pnpm --filter=./packages/* run build:watch",
@@ -57,6 +56,7 @@
     "@umijs/lint": "^4.0.0",
     "babel-jest": "^29.5.0",
     "babel-loader": "^9.1.2",
+    "chokidar": "^3.5.3",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.4",
     "dumi": "^2.1.21",

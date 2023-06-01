@@ -3,6 +3,8 @@ const Webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
+require('../scripts/dev-doc.js');
+
 const webpackConfig = {
   mode: 'development',
   stats: 'errors-only',

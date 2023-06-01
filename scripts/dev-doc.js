@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const chokidar = require('chokidar');
 
 const md = require('markdown-it')({
   html: true,
@@ -157,25 +158,63 @@ const tokenLoader = (tokens, component) => {
 
 const componentsDir = path.join(__dirname, '../packages', 'shineout', 'src');
 
-// 读取组件文件夹
-fs.readdirSync(componentsDir)
-  .filter((file) => fs.statSync(path.join(componentsDir, file)).isDirectory())
-  .filter((file) => file.indexOf('@') === -1)
-  .forEach((component) => {
-    const indexPath = path.join(componentsDir, component, 'index.md');
-    try {
-      const content = fs.readFileSync(indexPath, 'utf8');
-      const tokens = md.parse(content);
-      const doc = tokenLoader(tokens, component);
+const compile = (fileName) => {
+  fs.readdirSync(componentsDir)
+    .filter((file) => fs.statSync(path.join(componentsDir, file)).isDirectory())
+    .filter((file) => {
+      if (fileName) {
+        return file === fileName;
+      }
+      return file.indexOf('@') === -1;
+    })
+    .forEach((component) => {
+      const indexPath = path.join(componentsDir, component, 'index.md');
+      try {
+        const content = fs.readFileSync(indexPath, 'utf8');
+        const tokens = md.parse(content);
+        const doc = tokenLoader(tokens, component);
 
-      fs.writeFileSync(
-        path.join(__dirname, `../docs/chunk/${component}.ts`),
-        `export default ${JSON.stringify(doc, null, 2).replace(
-          /"component":\s*"([^"]*)"/g,
-          '"component": $1',
-        )}`,
-      );
-    } catch (err) {
-      console.error(`Error reading file: ${indexPath}`);
+        fs.writeFileSync(
+          path.join(__dirname, `../docs/chunk/${component}.ts`),
+          `export default ${JSON.stringify(doc, null, 2).replace(
+            /"component":\s*"([^"]*)"/g,
+            '"component": $1',
+          )}`,
+        );
+      } catch (err) {
+        console.error(`Error reading file: ${indexPath}`);
+      }
+    });
+};
+
+const resolveDir = (filePath) => {
+  const paths = filePath.split('/');
+  return {
+    component: paths.at(-2),
+    fileType: paths.at(-1).split('.')[1],
+  };
+};
+
+const watcher = chokidar.watch(componentsDir, { ignored: /index\.(ts|tsx)$/ });
+
+watcher
+  .on('add', (filePath) => {
+    const { component, fileType } = resolveDir(filePath);
+    if (fileType === 'md') {
+      compile(component);
+    }
+  })
+  .on('change', (filePath) => {
+    const { component, fileType } = resolveDir(filePath);
+    if (fileType === 'md') {
+      compile(component);
+    }
+  })
+  .on('unlink', (filePath) => {
+    const { fileType } = resolveDir(filePath);
+    if (fileType === 'md') {
+      compile();
     }
   });
+
+compile();
