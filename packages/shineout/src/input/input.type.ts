@@ -1,19 +1,40 @@
 import { InputProps as UiInputProps } from '@shined/ui';
 import { InputFormatProps } from '@shined/hooks';
 import { ExtendsFieldProps, TipProps } from '../@types/common';
+import React from 'react';
 
-export interface BaseInputProps
-  extends Omit<UiInputProps, 'jssStyle' | 'clearable' | 'onClear' | 'inputRef'>,
-    Omit<InputFormatProps, 'value' | 'onChange'> {
-  value?: string | undefined;
-  defaultValue?: string;
-  onChange?: (value: string | undefined) => void | undefined;
-  beforeChange?: (value: string | undefined) => void | string | undefined;
-  // clearable 包含 onClear
+export interface InputCommonProps<V> {
+  forwardRef?: UiInputProps['inputRef'];
+  htmlName?: string;
+  value?: V;
+  onChange?: (value: V | undefined, ...rest: any) => void;
+  defaultValue?: V;
+  beforeChange?: (value: V | undefined) => void | V;
   clearable?: boolean | (() => void);
   clearToUndefined?: boolean;
-  forwardRef?: UiInputProps['inputRef'];
+  width?: string | number;
+  style?: React.CSSProperties;
 }
+
+export type GetCommonProps<Props, V> = Omit<
+  Props,
+  | 'jssStyle'
+  | 'value'
+  | 'onChange'
+  | 'defaultValue'
+  | 'clearable'
+  | 'onClear'
+  | 'name'
+  | 'inputRef'
+  | 'step'
+  | 'min'
+  | 'max'
+> &
+  InputCommonProps<V>;
+
+export interface BaseInputProps
+  extends GetCommonProps<UiInputProps, string>,
+    Omit<InputFormatProps, 'value' | 'onChange'> {}
 
 export interface InputProps
   extends Omit<BaseInputProps, 'getStatus'>,

@@ -1,36 +1,24 @@
 import React from 'react';
 import { Input, Icons } from '@shined/ui';
 import { useInputStyle } from '@shined/shineout-style';
-import { useInputNumber, useInputAble, util, usePersistFn } from '@shined/hooks';
-import useClear from '../hooks/use-clear';
+import { useInputNumber, util, usePersistFn } from '@shined/hooks';
 
 import { BaseNumberProps } from './number.type';
 import classNames from 'classnames';
+import useInputCommon from './use-input-common';
 
 export default (props: BaseNumberProps) => {
-  const { forwardRef, ...restProps } = props;
+  const jssStyle = useInputStyle();
+
+  const commonProps = useInputCommon<BaseNumberProps['value'], BaseNumberProps>(props);
   const inputAbleParams = {
     value: props.value,
     onChange: props.onChange,
     defaultValue: props.defaultValue,
     beforeChange: props.beforeChange,
   };
-  const inputAbleProps = useInputAble<BaseNumberProps['value']>({
-    control: 'value' in props,
-    ...inputAbleParams,
-  });
 
-  const clearParams = {
-    clearable: props.clearable,
-    clearToUndefined: props.clearToUndefined,
-  };
-  const clearProps = useClear({
-    ...clearParams,
-    value: inputAbleProps.value,
-    onChange: inputAbleProps.onChange,
-  });
-
-  const inputFormatParams = {
+  const numberFormatParams = {
     onBlur: props.onBlur,
     onFocus: props.onFocus,
     digits: props.digits,
@@ -42,18 +30,16 @@ export default (props: BaseNumberProps) => {
     allowNull: props.allowNull,
   };
 
-  const { onMinus, onPlus, ...inputFormatProps } = useInputNumber({
-    value: inputAbleProps.value,
-    onChange: inputAbleProps.onChange,
-    ...inputFormatParams,
+  const { onMinus, onPlus, ...numberFormatProps } = useInputNumber({
+    value: commonProps.value,
+    onChange: commonProps.onChange,
+    ...numberFormatParams,
   });
 
-  const jssStyle = useInputStyle();
-
-  const forwardProps = util.removeProps(restProps, {
-    ...inputFormatParams,
+  const forwardProps = util.removeProps(commonProps, {
+    ...numberFormatParams,
     ...inputAbleParams,
-    ...clearParams,
+    ...numberFormatParams,
   });
 
   const suffix = (
@@ -80,13 +66,11 @@ export default (props: BaseNumberProps) => {
     <Input
       jssStyle={jssStyle}
       {...forwardProps}
-      {...inputFormatProps}
-      {...clearProps}
-      value={inputFormatProps.value || ''}
+      {...numberFormatProps}
+      value={numberFormatProps.value || ''}
       className={classNames(forwardProps.className, jssStyle.wrapperNumber)}
       onKeyDown={onKeyDown}
       suffix={suffix}
-      inputRef={forwardRef}
     />
   );
 };
