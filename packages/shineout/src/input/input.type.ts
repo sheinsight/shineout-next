@@ -4,6 +4,8 @@ import { ExtendsFieldProps, TipProps } from '../@types/common';
 import React from 'react';
 
 export interface InputCommonProps<V> {
+  suffix?: UiInputProps['suffix'];
+  className?: UiInputProps['className'];
   forwardRef?: UiInputProps['inputRef'];
   htmlName?: string;
   value?: V;
@@ -14,6 +16,7 @@ export interface InputCommonProps<V> {
   clearToUndefined?: boolean;
   width?: string | number;
   style?: React.CSSProperties;
+  info?: number | ((value: V | undefined) => string);
 }
 
 export type GetCommonProps<Props, V> = Omit<

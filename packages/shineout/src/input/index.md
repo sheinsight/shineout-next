@@ -67,3 +67,11 @@ group:
 ## 无边框
 
 <code src="./__example__/st-0015-no-border.tsx"></code>
+
+## inputRef
+
+<code src="./__example__/st-0016-ref.tsx"></code>
+
+## info
+
+<code src="./__example__/st-0017-info.tsx"></code>
