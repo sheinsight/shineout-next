@@ -1,26 +1,58 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import InputChunk from 'chunk/input';
-
+import Example from '../../../components/Example';
 import useStyles from '../style';
+
+interface Locales {
+  en?: string;
+  cn?: string;
+}
+interface ExampleProps {
+  prop: string;
+  propName: Locales;
+  propDescribe: Locales;
+}
+
+interface ChunkProps {
+  title: {
+    title: string;
+    group: string;
+    order: number;
+  };
+  header: {
+    title: Locales;
+    describe: Locales;
+  };
+  examples: ExampleProps[];
+}
 
 const Content = () => {
   const classes = useStyles();
   const location = useLocation();
 
-  const [, setComponent] = useState<string | undefined>('content');
-
-  useEffect(() => {
+  const example = useMemo(() => {
     const paths = location.pathname.split('/');
-    setComponent(paths.at(-1));
-  }, [location]);
+    const componentName = paths.at(-1);
+    let component: ChunkProps;
+    try {
+      component = require(`../../../../chunk/${componentName?.toLocaleLowerCase()}.ts`)?.default;
+      return component;
+    } catch (error) {
+      return null;
+    }
+  }, [location.pathname]);
 
   return (
     <div className={classes.content}>
-      {InputChunk.examples.map((item, index) => {
-        return <div key={index}>{item.component.default()}</div>;
-      })}
+      {example &&
+        example.examples.map((item, index) => {
+          return (
+            <div key={index}>
+              <Example example={item}></Example>
+            </div>
+          );
+        })}
     </div>
   );
 };

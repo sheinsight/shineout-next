@@ -12,7 +12,7 @@ export default createUseStyles({
     height: 59,
     display: 'flex',
     backgroundColor: '#ffffff',
-    borderBottom: '1px solid #e5e6eb',
+    borderBottom: '1px solid rgb(229,230,235)',
     '& .entry': {
       gap: 20,
       width: '100%',
@@ -36,6 +36,7 @@ export default createUseStyles({
     display: 'flex',
     width: '100%',
     height: '100%',
+    overflow: 'auto',
     '& .component': {
       display: 'flex',
       width: '100%',
@@ -45,7 +46,7 @@ export default createUseStyles({
 
   menu: {
     width: 259,
-    borderRight: '1px solid #e5e6eb',
+    borderRight: '1px solid rgb(229,230,235)',
     listStyle: 'none',
     margin: 0,
     fontSize: 14,
@@ -67,6 +68,9 @@ export default createUseStyles({
         lineHeight: '36px',
         padding: '0 20px',
         cursor: 'pointer',
+        '&.active': {
+          backgroundColor: '#f5f5f5',
+        },
         '&:hover': {
           backgroundColor: '#f5f5f5',
         },
@@ -76,5 +80,16 @@ export default createUseStyles({
 
   content: {
     flex: 1,
+    width: '100%',
+    height: '100%',
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    padding: '0 56px',
+  },
+
+  footer: {
+    width: '100%',
+    height: 500,
+    background: '#f7f8fa',
   },
 });

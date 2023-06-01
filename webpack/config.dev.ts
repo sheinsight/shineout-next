@@ -6,6 +6,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const webpackConfig = {
   mode: 'development',
   stats: 'errors-only',
+  devtool: 'source-map',
   entry: path.join(__dirname, '../docs/index.tsx'),
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.md', '.less'],

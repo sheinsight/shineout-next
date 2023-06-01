@@ -1,8 +1,9 @@
-import useStyles from '../style';
+import { useEffect, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
 import store, { Menu, Menus } from '../../../store';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+import useStyles from '../style';
 
 export interface MarkdownComponent {
   title: {
@@ -27,6 +28,7 @@ const MenuComponent = () => {
   const classes = useStyles();
   const state = useSnapshot(store);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClick = (component: Menu) => {
     navigate({
@@ -65,6 +67,12 @@ const MenuComponent = () => {
     store.menu = menus;
   }, []);
 
+  const active = useMemo(() => {
+    const paths = location.pathname.split('/');
+    const componentName = paths.at(-1);
+    return componentName;
+  }, [location.pathname]);
+
   return (
     <ul className={classes.menu}>
       {state.menu.map((item, index) => {
@@ -74,7 +82,11 @@ const MenuComponent = () => {
             <ul>
               {item.components.map((component, index) => {
                 return (
-                  <li key={index} onClick={() => handleClick(component)}>
+                  <li
+                    key={index}
+                    onClick={() => handleClick(component)}
+                    className={active === component.name ? 'active' : ''}
+                  >
                     {component.title[state.locales]}
                   </li>
                 );
