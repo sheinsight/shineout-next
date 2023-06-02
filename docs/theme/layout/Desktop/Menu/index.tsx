@@ -82,13 +82,16 @@ const MenuComponent = () => {
             <ul>
               {item.components.map((component, index) => {
                 return (
-                  <li
-                    key={index}
-                    onClick={() => handleClick(component)}
-                    className={active === component.name ? 'active' : ''}
-                  >
-                    {component.title[state.locales]}
-                  </li>
+                  component &&
+                  component.title && (
+                    <li
+                      key={index}
+                      onClick={() => handleClick(component)}
+                      className={active === component.name ? 'active' : ''}
+                    >
+                      {component.title[state.locales]}
+                    </li>
+                  )
                 );
               })}
             </ul>

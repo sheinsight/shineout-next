@@ -1,9 +1,12 @@
-import useStyles from '../style';
 import { useNavigate } from 'react-router-dom';
+import { useSnapshot } from 'valtio';
+import store from '../../../store';
+import useStyles from '../style';
 
 const Nav = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const state = useSnapshot(store);
 
   const navs = [
     {
@@ -28,6 +31,10 @@ const Nav = () => {
     },
   ];
 
+  const handleChangeLocales = () => {
+    store.locales = state.locales === 'en' ? 'cn' : 'en';
+  };
+
   return (
     <div className={classes.nav}>
       <ul className='entry'>
@@ -36,6 +43,7 @@ const Nav = () => {
             {nav.title}
           </li>
         ))}
+        <li onClick={handleChangeLocales}>{state.locales.toLocaleUpperCase()}</li>
       </ul>
     </div>
   );
