@@ -74,6 +74,7 @@
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
+    "prismjs": "^1.29.0",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -21,6 +21,11 @@ const webpackConfig = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        include: [/prismjs/],
+      },
+      {
         test: /\.html$/i,
         loader: 'html-loader',
       },

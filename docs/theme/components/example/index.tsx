@@ -1,5 +1,6 @@
 import { useSnapshot } from 'valtio';
 import store from '../../store';
+import Code from './code';
 
 import useStyles from './style';
 
@@ -12,7 +13,7 @@ const Example = (props: ExampleProps) => {
   const state = useSnapshot(store);
 
   const { example } = props;
-  const { prop, propName = { en: '', cn: '' }, propDescribe } = example;
+  const { prop, propName = { en: '', cn: '' }, propDescribe, code } = example;
 
   const Example = example.component.default;
 
@@ -26,7 +27,9 @@ const Example = (props: ExampleProps) => {
         <span className='prop'>{prop}</span>
         <Example></Example>
       </div>
-      <div className='footer'></div>
+      <div className='footer'>
+        <Code>{code}</Code>
+      </div>
     </div>
   );
 };

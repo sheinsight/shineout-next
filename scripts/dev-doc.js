@@ -102,6 +102,8 @@ const exampleLoader = (tokens, component) => {
     if (token.content.indexOf('<code' > -1)) {
       const match = token.content.match(regex);
       if (match) {
+        const code = fs.readFileSync(path.join(componentsDir, component, match[1]), 'utf8');
+        example.code = code;
         example.component = `require('shineout/src/${component}/${match[1]}')`;
       }
     }

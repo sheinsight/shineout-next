@@ -107,6 +107,9 @@ importers:
       prettier-plugin-packagejson:
         specifier: ^2.2.18
         version: 2.2.18(prettier@2.7.1)
+      prismjs:
+        specifier: ^1.29.0
+        version: 1.29.0
       raw-loader:
         specifier: ^4.0.2
         version: 4.0.2(webpack@5.79.0)
