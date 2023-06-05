@@ -7,7 +7,7 @@ export default {
   header: {
     title: {
       en: 'Form',
-      cn: '表单',
+      cn: '表单 Form',
     },
     describe: {
       en: 'Users can input or edit text in the text box.',

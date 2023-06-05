@@ -1,6 +1,9 @@
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import Code from './code';
+import Copy from './copy';
+import Ue from './ue';
+import Codesandbox from './codesandbox';
 
 import useStyles from './style';
 
@@ -26,6 +29,11 @@ const Example = (props: ExampleProps) => {
       <div className='demo'>
         <span className='prop'>{prop}</span>
         <Example></Example>
+      </div>
+      <div className='action'>
+        <Copy></Copy>
+        <Codesandbox></Codesandbox>
+        {state.env === 'SHEIN' && <Ue></Ue>}
       </div>
       <div className='footer'>
         <Code>{code}</Code>

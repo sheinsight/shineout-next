@@ -7,7 +7,7 @@ export default {
   header: {
     title: {
       en: 'Input',
-      cn: '输入框',
+      cn: '输入框 Input',
     },
     describe: {
       en: 'Users can input or edit text in the text box.',

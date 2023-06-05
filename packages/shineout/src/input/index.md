@@ -5,7 +5,7 @@ group: Form
 
 # Head
 
--cn 输入框
+-cn 输入框 Input
 -en Input
 
 ~cn 用户可以在文本框内输入或编辑文字。

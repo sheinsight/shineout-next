@@ -3,6 +3,8 @@ import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import Example from '../../../components/example';
 import useStyles from '../style';
+import Header from '../header';
+import Footer from '../footer';
 
 interface Locales {
   en?: string;
@@ -45,6 +47,7 @@ const Content = () => {
 
   return (
     <div className={classes.content}>
+      {example && <Header example={example}></Header>}
       {example &&
         example.examples.map((item, index) => {
           return (
@@ -53,6 +56,7 @@ const Content = () => {
             </div>
           );
         })}
+      {example && <Footer></Footer>}
     </div>
   );
 };

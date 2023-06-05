@@ -35,6 +35,10 @@ const Nav = () => {
     store.locales = state.locales === 'en' ? 'cn' : 'en';
   };
 
+  const handleChangeEnv = () => {
+    store.env = state.env === 'SHEIN' ? 'GitHub' : 'SHEIN';
+  };
+
   return (
     <div className={classes.nav}>
       <ul className='entry'>
@@ -44,6 +48,7 @@ const Nav = () => {
           </li>
         ))}
         <li onClick={handleChangeLocales}>{state.locales.toLocaleUpperCase()}</li>
+        <li onClick={handleChangeEnv}>{state.env}</li>
       </ul>
     </div>
   );

@@ -29,21 +29,8 @@ pre[class*='language-'] {
   line-height: 1.5;
   letter-spacing: 0.5px;
   tab-size: 4;
-  tab-size: 4;
-  tab-size: 4;
   outline: none;
   hyphens: none;
-  hyphens: none;
-  hyphens: none;
-  hyphens: none;
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-'] ::selection,
-code[class*='language-']::selection,
-code[class*='language-'] ::selection {
-  text-shadow: none;
-  background: #b3d4fc;
 }
 
 pre[class*='language-']::selection,
@@ -64,7 +51,7 @@ code[class*='language-'] ::selection {
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1em;
-  margin: 0.5em 0;
+  margin: 0 0 0.5em;
   overflow: auto;
 }
 

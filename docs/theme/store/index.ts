@@ -18,12 +18,14 @@ interface State {
   menu: Menus[];
   locales: 'cn' | 'en';
   rtl: boolean;
+  env: 'GitHub' | 'SHEIN';
 }
 
 const state: State = {
   menu: [],
   locales: 'cn',
   rtl: false,
+  env: 'SHEIN',
 };
 
 export default proxy(state);

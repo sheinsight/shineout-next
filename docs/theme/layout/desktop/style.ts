@@ -78,18 +78,32 @@ export default createUseStyles({
     },
   },
 
+  header: {
+    padding: '0 56px',
+    '& .title': {
+      fontSize: 32,
+      marginBottom: 0,
+    },
+
+    '& .subtitle': {
+      fontSize: 14,
+      marginBottom: 0,
+      color: 'rgb(78,89,105)',
+    },
+  },
+
   content: {
     flex: 1,
     width: '100%',
     height: '100%',
     overflowY: 'auto',
     overflowX: 'hidden',
-    padding: '0 56px',
   },
 
   footer: {
     width: '100%',
     height: 500,
+    marginTop: 100,
     background: '#f7f8fa',
   },
 });

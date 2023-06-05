@@ -5,7 +5,7 @@ group: Form
 
 # Head
 
--cn 表单
+-cn 表单 Form
 -en Form
 
 ~cn 高性能表单控件，自带数据域管理。包含数据录入、校验以及对应样式。

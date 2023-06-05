@@ -2,6 +2,7 @@ import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
   example: {
+    padding: '0 56px',
     '& .head': {},
     '& .title': {
       fontSize: 20,
@@ -17,6 +18,29 @@ export default createUseStyles({
       marginTop: '36px',
       padding: 48,
       border: '1px solid rgb(229,230,235)',
+    },
+    '& .action': {
+      width: '100%',
+      height: 52,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      gap: 10,
+    },
+    '& .icon': {
+      width: 16,
+      height: 16,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '50%',
+      border: '1px solid rgb(229,230,235)',
+      padding: 6,
+      cursor: 'pointer',
+      '&:hover': {
+        background: '#000000',
+        color: '#ffffff',
+      },
     },
     '& .prop': {
       position: 'absolute',
