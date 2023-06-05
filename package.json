@@ -79,6 +79,7 @@
     "react-dom": "18.2.0",
     "react-jss": "10.9.2",
     "react-markdown": "^8.0.7",
+    "react-router-dom": "^6.11.2",
     "react-test-renderer": "^18.2.0",
     "rimraf": "^5.0.1",
     "soui": "link:",
@@ -87,10 +88,7 @@
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.0",
     "unified": "^10.1.2",
+    "valtio": "^1.10.5",
     "webpack-dev-server": "^4.15.0"
-  },
-  "dependencies": {
-    "react-router-dom": "^6.11.2",
-    "valtio": "^1.10.5"
   }
 }
