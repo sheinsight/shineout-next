@@ -197,24 +197,32 @@ const resolveDir = (filePath) => {
   };
 };
 
-const watcher = chokidar.watch(componentsDir, { ignored: /index\.(ts|tsx)$/ });
+const watchList = ['md', 'tsx'];
+
+const watcher = chokidar.watch(componentsDir);
+// { ignored: /index\.(ts|tsx)$/ }
 
 watcher
   .on('add', (filePath) => {
     const { component, fileType } = resolveDir(filePath);
-    if (fileType === 'md') {
+    if (watchList.includes(fileType)) {
       compile(component);
     }
   })
   .on('change', (filePath) => {
     const { component, fileType } = resolveDir(filePath);
-    if (fileType === 'md') {
-      compile(component);
+    if (watchList.includes(fileType)) {
+      console.log(component, filePath);
+      if (component === '__example__') {
+        compile(filePath.split('/').at(-3));
+      } else {
+        compile(component);
+      }
     }
   })
   .on('unlink', (filePath) => {
     const { fileType } = resolveDir(filePath);
-    if (fileType === 'md') {
+    if (watchList.includes(fileType)) {
       compile();
     }
   });
