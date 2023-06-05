@@ -1,21 +1,15 @@
 import { Input } from '@shined/ui';
 import { useInputStyle } from '@shined/shineout-style';
-import { useInputFormat, useInputAble, util } from '@shined/hooks';
+import { useInputFormat, util } from '@shined/hooks';
 import { BaseInputProps } from './input.type';
+import useInputCommon from './use-input-common';
 
 export default (props: BaseInputProps) => {
-  const inputAbleParams = {
-    value: props.value,
-    onChange: props.onChange,
-    defaultValue: props.defaultValue,
-    beforeChange: props.beforeChange,
-  };
-  const InputAbleProps = useInputAble({
-    control: 'value' in props,
-    ...inputAbleParams,
-  });
+  const jssStyle = useInputStyle();
 
-  const InputFormatParams = {
+  const commonProps = useInputCommon<BaseInputProps['value'], BaseInputProps>(props);
+
+  const inputFormatParams = {
     coin: props.coin,
     autoFix: props.autoFix,
     type: props.type,
@@ -26,16 +20,22 @@ export default (props: BaseInputProps) => {
     numType: props.numType,
     trim: props.trim,
   };
-
-  const InputFormatProps = useInputFormat({
-    value: InputAbleProps.value,
-    onChange: InputAbleProps.onChange,
-    ...InputFormatParams,
+  const inputFormatProps = useInputFormat({
+    value: commonProps.value,
+    onChange: commonProps.onChange,
+    ...inputFormatParams,
   });
 
-  const jssStyle = useInputStyle();
+  const forwardProps = util.removeProps(commonProps, {
+    ...inputFormatParams,
+  });
 
-  const resetProps = util.removeProps(props, { ...InputFormatParams, ...inputAbleParams });
-
-  return <Input jssStyle={jssStyle} {...resetProps} {...InputFormatProps} />;
+  return (
+    <Input
+      jssStyle={jssStyle}
+      {...forwardProps}
+      {...inputFormatProps}
+      value={inputFormatProps.value || ''}
+    />
+  );
 };

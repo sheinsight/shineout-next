@@ -15,11 +15,16 @@ export default (props: Props) => {
   const jssStyle = useInputStyle();
   const [focus, setFocus] = React.useState(false);
   const ref = useRef({
-    eventMap: new Map(),
-    propsMap: new Map(),
+    eventMap: new WeakMap(),
+    propsMap: new WeakMap(),
   });
-  const getEvent = (child: React.ReactElement) => {
-    if (!['ShineoutInput'].includes((child?.type as any)?.displayName)) return {};
+  const getProps = (child: React.ReactElement) => {
+    if (
+      !['ShineoutInput', 'ShineoutInputNumber', 'ShineoutInputPassword'].includes(
+        (child?.type as any)?.displayName,
+      )
+    )
+      return {};
     ref.current.propsMap.set(child, {
       onFocus: child.props.onFocus,
       onBlur: child.props.onBlur,
@@ -34,6 +39,7 @@ export default (props: Props) => {
           setFocus(false);
           ref.current.propsMap.get(child)?.onBlur?.(args);
         },
+        inGroup: true,
       });
     }
     return ref.current.eventMap.get(child) || {};
@@ -49,7 +55,6 @@ export default (props: Props) => {
     [className!]: !!props.className,
     [jssStyle.groupFocus]: focus,
   });
-  console.log('focus', focus);
   return (
     <div className={rootClass} style={style}>
       {Children.toArray(children).map((child, i) => {
@@ -57,7 +62,7 @@ export default (props: Props) => {
           return <span key={i}>{child}</span>;
         }
         if (React.isValidElement(child)) {
-          return cloneElement(child, { ...getEvent(child), disabled });
+          return cloneElement(child, { ...getProps(child), disabled });
         }
         return <span key={i}>{child}</span>;
       })}

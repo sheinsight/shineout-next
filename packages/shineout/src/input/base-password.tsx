@@ -1,32 +1,33 @@
 import { Input } from '@shined/ui';
 import { useInputStyle } from '@shined/shineout-style';
-import { useInputPassword, useInputAble, util } from '@shined/hooks';
+import { useInputPassword, util } from '@shined/hooks';
+import useInputCommon from './use-input-common';
 
-export default (props: any) => {
-  const inputAbleParams = {
-    value: props.value,
-    onChange: props.onChange,
-    defaultValue: props.defaultValue,
-    beforeChange: props.beforeChange,
-  };
-  const InputAbleProps = useInputAble({
-    control: 'value' in props,
-    ...inputAbleParams,
-  });
-
-  const InputPasswordParams = {
-    point: props.coin,
-  };
-
-  const InputFormatProps = useInputPassword({
-    value: InputAbleProps.value,
-    onChange: InputAbleProps.onChange,
-    ...InputPasswordParams,
-  });
-
+import { BasePasswordProps } from './password.type';
+export default (props: BasePasswordProps) => {
   const jssStyle = useInputStyle();
+  const commonProps = useInputCommon<BasePasswordProps['value'], BasePasswordProps>(props);
 
-  const resetProps = util.removeProps(props, { ...InputPasswordParams, ...inputAbleParams });
+  const inputPasswordParams = {
+    point: props.point,
+  };
 
-  return <Input jssStyle={jssStyle} {...resetProps} {...InputFormatProps} />;
+  const inputFormatProps = useInputPassword({
+    value: commonProps.value,
+    onChange: commonProps.onChange,
+    ...inputPasswordParams,
+  });
+
+  const forwardProps = util.removeProps(commonProps, {
+    ...inputPasswordParams,
+  });
+
+  return (
+    <Input
+      jssStyle={jssStyle}
+      {...forwardProps}
+      {...inputFormatProps}
+      value={inputFormatProps.value || ''}
+    />
+  );
 };

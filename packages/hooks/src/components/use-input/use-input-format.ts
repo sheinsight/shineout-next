@@ -17,12 +17,12 @@ const useInputFormat = (props: InputFormatProps) => {
     return regExp.test(val);
   }
 
-  const handleChange = usePersistFn((v: string) => {
+  const handleChange = usePersistFn((v: string | undefined) => {
     let value = v;
-    if (trim) {
-      value = value.trim();
-    }
-    if (type === 'number') {
+    if (v === undefined) {
+      onChange?.(value);
+      return;
+    } else if (type === 'number') {
       value = String(value).replace(/。/g, '.'); // 中文小数点转英文小数点
       if (coin) {
         // 千分位
@@ -49,6 +49,11 @@ const useInputFormat = (props: InputFormatProps) => {
     const target = e.target as HTMLInputElement;
     let value = target.value;
     let before = value;
+
+    // 没有输入任何值
+    if (props.value === undefined && value === '') {
+      return;
+    }
 
     // 去除前后空格
     if (trim) {

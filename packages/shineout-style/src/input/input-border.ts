@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 import InputBorderVar from './input-border-var';
 import { sizeVar } from '../themes/default';
+import inputBorderVar from './input-border-var';
 
 export default <T extends string>(name: T, isInput?: boolean) => {
   return {
@@ -17,7 +18,7 @@ export default <T extends string>(name: T, isInput?: boolean) => {
       '&:hover': {
         borderColor: InputBorderVar.color.border.focus,
       },
-    } as CSSProperties,
+    },
     [`${name}Small`]: {
       lineHeight: 1.5,
       fontSize: InputBorderVar.size.fontSize.small,
@@ -54,5 +55,43 @@ export default <T extends string>(name: T, isInput?: boolean) => {
         cursor: 'not-allowed',
       },
     },
-  } as Record<`${T}` | `${T}Focus` | `${T}Error` | `${T}Disabled` | `${T}Small` | `${T}Large`, any>;
+    [`${name}Underline`]: {
+      '&&': {
+        borderLeftColor: 'transparent',
+        borderRightColor: 'transparent',
+        borderTopColor: 'transparent',
+        borderRadius: 0,
+      },
+    },
+    [`${name}NoBorder`]: {
+      '&&': {
+        borderColor: 'transparent',
+      },
+    },
+    [`${name}InGroup`]: {
+      '&': {
+        borderWidth: 0,
+        borderRadius: 0,
+        boxShadow: 'none',
+        backgroundColor: 'transparent',
+        borderColor: inputBorderVar.color.border.default,
+        flex: 1,
+        minWidth: 0,
+      },
+      '& + &': {
+        borderLeftWidth: '1px',
+      },
+    },
+  } as Record<
+    | `${T}`
+    | `${T}Focus`
+    | `${T}Error`
+    | `${T}Disabled`
+    | `${T}Small`
+    | `${T}Large`
+    | `${T}Underline`
+    | `${T}NoBorder`
+    | `${T}InGroup`,
+    any
+  >;
 };

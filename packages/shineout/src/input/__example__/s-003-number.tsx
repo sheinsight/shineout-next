@@ -26,6 +26,7 @@ const App: React.FC = () => (
       type='number'
       placeholder='positive;integerLimit 3'
     />
+    <Input.Number numType='positive' integerLimit={3} placeholder='positive; integerLimit 3' />
   </div>
 );
 

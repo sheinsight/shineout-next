@@ -9,7 +9,7 @@ export default function useInputAble<T>(props: InputAbleProps<T>) {
   const value = control ? valuePo : stateValue;
 
   const handleChange = useCallback(
-    (v: T, ...other: any[]) => {
+    (v: T | undefined, ...other: any[]) => {
       let vv = v;
       if (isFunc(beforeChange)) {
         const temp = beforeChange(v);

@@ -16,8 +16,7 @@
     "docs:build": "dumi build",
     "prepare": "husky install && dumi setup",
     "doctor": "father doctor",
-    "lint": "npm run lint:es && npm run lint:css",
-    "lint:css": "stylelint \"packages/**/*.{css,less}\"",
+    "lint": "npm run lint:es",
     "lint:es": "eslint \"packages/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && npm run build",
     "test": "jest"
