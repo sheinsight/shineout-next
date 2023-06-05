@@ -7,6 +7,9 @@ export interface InputCommonProps<V> {
   suffix?: UiInputProps['suffix'];
   className?: UiInputProps['className'];
   forwardRef?: UiInputProps['inputRef'];
+  getStatus?: UiInputProps['getStatus'];
+  innerTitle?: React.ReactNode;
+  placeTitle?: React.ReactNode;
   htmlName?: string;
   value?: V;
   onChange?: (value: V | undefined, ...rest: any) => void;

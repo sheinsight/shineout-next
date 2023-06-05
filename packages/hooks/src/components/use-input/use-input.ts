@@ -42,7 +42,7 @@ const useInput = (params: UseInputParams) => {
 
   const handleClick =
     (otherHandlers: HandlerType) => (event: React.MouseEvent<HTMLInputElement>) => {
-      if (inputRef.current && event.currentTarget === event.target) {
+      if (inputRef.current) {
         inputRef.current.focus();
       }
 

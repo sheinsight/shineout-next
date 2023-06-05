@@ -19,6 +19,7 @@ const Input = (props: InputProps) => {
     inGroup = false,
     onEnterPress,
     getStatus,
+    renderInput,
     ...rest
   } = props;
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
@@ -58,6 +59,12 @@ const Input = (props: InputProps) => {
     }
   }, [focused]);
 
+  let inputEl = <input type='text' {...inputProps} />;
+
+  if (typeof renderInput === 'function') {
+    inputEl = renderInput(inputEl);
+  }
+
   return (
     <div
       {...getRootProps({
@@ -66,7 +73,7 @@ const Input = (props: InputProps) => {
       })}
     >
       {prefix}
-      <input type='text' {...inputProps} />
+      {inputEl}
       {(showClear || props.showClear) && (
         <div className={jssStyle.clearWrapper} {...getClearProps()}>
           <span className={jssStyle.clear}>{clearIcon || Icons.CloseCircle}</span>

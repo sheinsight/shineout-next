@@ -52,6 +52,7 @@ export interface InputBaseProps extends BaseInputProps, Pick<CommonType, 'status
   inGroup?: boolean;
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
   showClear?: boolean;
+  renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
 }
 
 export type InputProps = InputBaseProps;

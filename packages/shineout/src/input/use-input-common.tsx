@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
-import { useInputAble } from '@shined/hooks';
+import { useInputAble, usePersistFn } from '@shined/hooks';
 import useClear from '../hooks/use-clear';
 import { useInputStyle } from '@shined/shineout-style';
+import useInnerTitle from '../hooks/use-inner-title';
 import classNames from 'classnames';
 
 import { InputCommonProps } from './input.type';
@@ -26,10 +27,13 @@ const useInputCommon = <V, T extends InputCommonProps<V>>(props: T) => {
     style,
     suffix,
     info,
+    getStatus,
     ...rest
   } = props;
 
   const jssStyle = useInputStyle();
+
+  const [focused, setFocused] = React.useState(false);
 
   const inputAbleParams = {
     value: value,
@@ -40,6 +44,12 @@ const useInputCommon = <V, T extends InputCommonProps<V>>(props: T) => {
   const inputAbleProps = useInputAble({
     control: 'value' in props,
     ...inputAbleParams,
+  });
+  const hasValue = (value: any) => value === 0 || (value && value.length);
+  const renderInput = useInnerTitle({
+    innerTitle: props.innerTitle,
+    placeTitle: props.placeTitle,
+    open: focused || hasValue(value),
   });
 
   const clearProps = useClear({
@@ -79,6 +89,13 @@ const useInputCommon = <V, T extends InputCommonProps<V>>(props: T) => {
     </React.Fragment>
   );
 
+  const onStatusChange = usePersistFn((status: { focused?: boolean }) => {
+    setFocused(!!status.focused);
+    if (getStatus) {
+      getStatus(status);
+    }
+  });
+
   const mergeStyle = useMemo(() => {
     return { width: props.width, ...(style || {}) };
   }, [props.width, style]) as React.CSSProperties;
@@ -90,6 +107,8 @@ const useInputCommon = <V, T extends InputCommonProps<V>>(props: T) => {
     name: htmlName,
     style: mergeStyle,
     suffix: mergeSuffix,
+    renderInput: renderInput,
+    getStatus: onStatusChange,
   };
 };
 

@@ -6,6 +6,7 @@ import inputBorderVar from './input-border-var';
 export default <T extends string>(name: T, isInput?: boolean) => {
   return {
     [name]: {
+      boxSizing: 'border-box',
       borderRadius: InputBorderVar.size.radius.default,
       background: InputBorderVar.color.background.default,
       border: `1px solid ${InputBorderVar.color.border.default}`,
