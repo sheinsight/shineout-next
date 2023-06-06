@@ -157,3 +157,33 @@ group: Form
 ~en After enabling the border attribute, the Input component will no longer display a border.
 
 <code src="./__example__/st-0015-no-border.tsx"></code>
+
+## ref
+
+-cn 获取 ref
+-en ref
+
+~cn ref
+~en ref
+
+<code src="./__example__/st-0016-ref.tsx"></code>
+
+## info
+
+-cn info
+-en info
+
+~cn info
+~en info
+
+<code src="./__example__/st-0017-info.tsx"></code>
+
+## innerTitle
+
+-cn 内嵌标题
+-en inner title
+
+~cn 内嵌标题
+~en inner title
+
+<code src="./__example__/st-0018-inner-title.tsx"></code>

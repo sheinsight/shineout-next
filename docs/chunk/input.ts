@@ -210,5 +210,44 @@ export default {
       code: "import { Input } from 'shineout';\nexport default () => {\n  return <Input placeholder='input something' border={false} />;\n};\n",
       component: require('shineout/src/input/__example__/st-0015-no-border.tsx'),
     },
+    {
+      prop: 'ref',
+      propName: {
+        en: 'ref',
+        cn: '获取ref',
+      },
+      propDescribe: {
+        en: 'ref',
+        cn: 'ref',
+      },
+      code: "import { Input } from 'shineout';\nexport default () => {\n  return (\n    <Input\n      placeholder='input something'\n      forwardRef={(e) => {\n        console.log('ref', e);\n      }}\n    />\n  );\n};\n",
+      component: require('shineout/src/input/__example__/st-0016-ref.tsx'),
+    },
+    {
+      prop: 'ref',
+      propName: {
+        en: 'info',
+        cn: 'info',
+      },
+      propDescribe: {
+        en: 'info',
+        cn: 'info',
+      },
+      code: "import { Input } from 'shineout';\nexport default () => {\n  return <Input placeholder='input something' info={5} />;\n};\n",
+      component: require('shineout/src/input/__example__/st-0017-info.tsx'),
+    },
+    {
+      prop: 'innerTitle',
+      propName: {
+        en: 'inner title',
+        cn: '内嵌标题',
+      },
+      propDescribe: {
+        en: 'inner title',
+        cn: '内嵌标题',
+      },
+      code: "import { Input } from 'shineout';\nexport default () => {\n  return <Input placeholder='input something' innerTitle={'hello world'} clearable />;\n};\n",
+      component: require('shineout/src/input/__example__/st-0018-inner-title.tsx'),
+    },
   ],
 };

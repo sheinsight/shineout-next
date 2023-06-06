@@ -26,16 +26,6 @@ group: Form
 ~cn 开启 disabled 属性后，组件将禁止输入
 ~en When the disabled attribute is enabled, the component will prevent input.
 
-<code src="./__example__/s-002-disabled.tsx"></code>
-
-## clearable
-
--cn 允许清除内容
--en Allow content clearing
-
-~cn 允许清除输入框内容，并展示清空图标。
-~en Allow clearing input field content and display a clear icon.
-
 <code src="./__example__/002-disabled.tsx"></code>
 
 ## status

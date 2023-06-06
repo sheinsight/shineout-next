@@ -8,6 +8,7 @@ export interface InputCommonProps<V> {
   className?: UiInputProps['className'];
   forwardRef?: UiInputProps['inputRef'];
   getStatus?: UiInputProps['getStatus'];
+  size?: UiInputProps['size'];
   innerTitle?: React.ReactNode;
   placeTitle?: React.ReactNode;
   htmlName?: string;

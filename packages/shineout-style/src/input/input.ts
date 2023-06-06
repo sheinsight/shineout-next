@@ -87,7 +87,7 @@ const input: JsStyles<InputClass> = {
     border: '0',
     lineHeight: 'inherit',
     color: 'inherit',
-    fontSize: '100%',
+    fontSize: 'inherit',
     outline: 'none',
     backgroundColor: 'transparent',
     padding: `${InputBorderVar.size.paddingY.default} 0`,

@@ -1,4 +1,10 @@
 import { Input } from 'shineout';
 export default () => {
-  return <Input placeholder='input something' innerTitle={'hello world'} clearable />;
+  return (
+    <div>
+      <Input placeholder='small' innerTitle={'hello world'} clearable size={'small'} />
+      <Input placeholder='default' innerTitle={'hello world'} clearable />
+      <Input placeholder='large' innerTitle={'hello world'} clearable size={'large'} />
+    </div>
+  );
 };

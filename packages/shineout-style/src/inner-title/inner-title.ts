@@ -1,11 +1,20 @@
 import { JsStyles } from '../jss-style';
 
-type Class = 'wrapper' | 'wrapperOpen' | 'title' | 'content' | 'place';
+type Class =
+  | 'wrapper'
+  | 'wrapperSmall'
+  | 'wrapperLarge'
+  | 'wrapperOpen'
+  | 'title'
+  | 'content'
+  | 'place';
 
 const innerTitleVar = {
   size: {
     paddingY: {
       default: '4px',
+      small: '2px',
+      large: '4px',
     },
   },
 };
@@ -15,6 +24,15 @@ const innerTitle: JsStyles<Class> = {
     width: '100%',
     padding: `${innerTitleVar.size.paddingY.default} 0`,
     position: 'relative',
+  },
+  wrapperSmall: {
+    padding: `${innerTitleVar.size.paddingY.small} 0`,
+  },
+  wrapperLarge: {
+    padding: `${innerTitleVar.size.paddingY.large} 0`,
+    '& $content  > input, & $content > div, & $title': {
+      lineHeight: '1.5',
+    },
   },
   wrapperOpen: {
     display: 'block',
@@ -43,7 +61,7 @@ const innerTitle: JsStyles<Class> = {
       opacity: '1',
     },
     display: 'block',
-    '& > input, & > div': {
+    '&& > input, && > div': {
       padding: '0',
     },
   },

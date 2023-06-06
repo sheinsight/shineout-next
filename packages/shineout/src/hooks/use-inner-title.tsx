@@ -3,14 +3,17 @@ import { usePersistFn } from '@shined/hooks';
 import { useInnerTitleStyle } from '@shined/shineout-style';
 import classNames from 'classnames';
 
+import { InputProps as UiInputProps } from '@shined/ui';
+
 interface InnerTitleProps {
   innerTitle?: React.ReactNode;
   placeTitle?: React.ReactNode;
   open?: boolean;
+  size?: UiInputProps['size'];
 }
 
 const useInnerTitle = (props: InnerTitleProps) => {
-  const { innerTitle, open, placeTitle } = props;
+  const { innerTitle, open, placeTitle, size } = props;
   const jssStyle = useInnerTitleStyle();
   const renderInput = usePersistFn((el: React.ReactElement) => {
     if (!innerTitle) return el;
@@ -19,6 +22,8 @@ const useInnerTitle = (props: InnerTitleProps) => {
         className={classNames({
           [jssStyle.wrapper]: true,
           [jssStyle.wrapperOpen]: open,
+          [jssStyle.wrapperSmall]: size === 'small',
+          [jssStyle.wrapperLarge]: size === 'large',
         })}
       >
         <div className={jssStyle.title}>{innerTitle}</div>

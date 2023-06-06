@@ -49,7 +49,8 @@ const useInputCommon = <V, T extends InputCommonProps<V>>(props: T) => {
   const renderInput = useInnerTitle({
     innerTitle: props.innerTitle,
     placeTitle: props.placeTitle,
-    open: focused || hasValue(value),
+    open: focused || hasValue(inputAbleProps.value),
+    size: props.size,
   });
 
   const clearProps = useClear({

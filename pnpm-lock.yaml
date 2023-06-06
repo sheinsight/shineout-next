@@ -136,6 +136,9 @@ importers:
       stylelint:
         specifier: ^14.9.1
         version: 14.9.1
+      ts-deepmerge:
+        specifier: ^1.0.0
+        version: 1.0.0
       ts-loader:
         specifier: ^9.4.2
         version: 9.4.2(typescript@4.9.3)(webpack@5.79.0)
@@ -16564,6 +16567,10 @@ packages:
 
   /trough@2.1.0:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
+    dev: true
+
+  /ts-deepmerge@1.0.0:
+    resolution: {integrity: sha512-ExxHq1g8SptwuDLYiW5yFtk6DyNIZ4pOeSRwE38VffDJAMUk51yD/Jn8j7AsPVhY4rfeajYi2+i8r9r2nVDTRA==}
     dev: true
 
   /ts-loader@9.4.2(typescript@4.9.3)(webpack@5.79.0):
