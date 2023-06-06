@@ -8,6 +8,10 @@ export default createUseStyles({
       fontSize: 20,
       marginTop: 64,
       marginBottom: 12,
+      '& a': {
+        color: '#000000',
+        textDecoration: 'none',
+      },
     },
     '& .subtitle': {
       fontSize: 14,

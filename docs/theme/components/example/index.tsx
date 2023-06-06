@@ -23,7 +23,9 @@ const Example = (props: ExampleProps) => {
   return (
     <div className={classes.example}>
       <div className='header'>
-        <h2 className='title'>{propName[state.locales]}</h2>
+        <h2 className='title' id={propName[state.locales]}>
+          {propName[state.locales]}
+        </h2>
         <p className='subtitle'>{propDescribe[state.locales]}</p>
       </div>
       <div className='demo'>

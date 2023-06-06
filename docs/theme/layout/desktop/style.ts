@@ -98,6 +98,34 @@ export default createUseStyles({
     height: '100%',
     overflowY: 'auto',
     overflowX: 'hidden',
+    paddingRight: 196,
+  },
+
+  anchor: {
+    position: 'fixed',
+    right: 20,
+    top: 20,
+    minWidth: 180,
+    width: 180,
+    marginTop: 80,
+    listStyle: 'none',
+    '& a': {
+      display: 'block',
+      color: '#000000',
+      textDecoration: 'none',
+      height: 24,
+      lineHeight: '24px',
+      fontSize: 12,
+      cursor: 'pointer',
+      padding: '0 10px',
+      '&.active': {
+        background: '#f5f5f5',
+        fontWeight: '700',
+      },
+      '&:hover': {
+        background: '#f5f5f5',
+      },
+    },
   },
 
   footer: {
