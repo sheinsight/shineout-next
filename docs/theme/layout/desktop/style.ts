@@ -118,6 +118,9 @@ export default createUseStyles({
       fontSize: 12,
       cursor: 'pointer',
       padding: '0 10px',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
       '&.active': {
         background: '#f5f5f5',
         fontWeight: '700',
