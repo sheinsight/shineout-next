@@ -48,7 +48,7 @@ const Anchor = () => {
     }
     setHash(hash);
     const target = document.getElementById(hash);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    if (target) target.scrollIntoView();
   }, [location]);
 
   return (

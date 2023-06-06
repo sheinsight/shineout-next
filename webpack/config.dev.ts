@@ -13,9 +13,11 @@ const webpackConfig = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.md', '.less'],
     alias: {
-      shineout: path.resolve(__dirname, '../packages/shineout'),
+      shineout: path.resolve(__dirname, '../packages/shineout/src'),
       store: path.resolve(__dirname, '../docs/theme/store'),
       chunk: path.resolve(__dirname, '../docs/chunk'),
+      '@shined/ui': path.resolve(__dirname, '../packages/ui/src'),
+      '@shined/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
     },
   },
   module: {
