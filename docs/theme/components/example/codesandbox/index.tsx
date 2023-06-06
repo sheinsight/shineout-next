@@ -8,7 +8,6 @@ const Codesandbox = () => {
         viewBox='0 0 48 48'
         aria-hidden='true'
         focusable='false'
-        className='arco-icon arco-icon-code-sandbox'
       >
         <path
           fill='currentColor'

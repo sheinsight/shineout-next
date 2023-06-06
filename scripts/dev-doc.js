@@ -104,7 +104,7 @@ const exampleLoader = (tokens, component) => {
       if (match) {
         const code = fs.readFileSync(path.join(componentsDir, component, match[1]), 'utf8');
         example.code = code;
-        example.component = `require('shineout/src/${component}/${match[1]}')`;
+        example.component = `require('shineout/${component}/${match[1]}')`;
       }
     }
   });
@@ -159,6 +159,7 @@ const tokenLoader = (tokens, component) => {
 };
 
 const componentsDir = path.join(__dirname, '../packages', 'shineout', 'src');
+const regexp = /\.md$/i;
 
 const compile = (fileName) => {
   fs.readdirSync(componentsDir)
@@ -170,6 +171,15 @@ const compile = (fileName) => {
       return file.indexOf('@') === -1;
     })
     .forEach((component) => {
+      if (fs.existsSync(path.join(componentsDir, component))) {
+        const files = fs.readdirSync(path.join(componentsDir, component));
+        const isExistsMd = files.some((file) => regexp.test(file));
+        if (!isExistsMd) return;
+      } else {
+        console.log(`Directory ${component} does not exist`);
+        return;
+      }
+
       const indexPath = path.join(componentsDir, component, 'index.md');
       try {
         const content = fs.readFileSync(indexPath, 'utf8');
