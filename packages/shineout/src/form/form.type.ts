@@ -5,7 +5,10 @@ import {
   FormFieldProps as UiFormFieldProps,
 } from '@shined/ui';
 
-export type FormProps<T extends ObjectType> = Omit<UiFormProps<T>, 'jssStyle'>;
+export interface FormProps<T extends ObjectType> extends Omit<UiFormProps<T>, 'jssStyle'> {
+  value?: T;
+  onChange?: (value: T) => void;
+}
 
 export type FormItemProps = Omit<UiFormItemProps, 'jssStyle'>;
 

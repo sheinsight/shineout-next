@@ -30,9 +30,6 @@ export interface InputClasses {
 }
 
 export interface InputBaseProps extends BaseInputProps, Pick<CommonType, 'status'> {
-  value?: string;
-  defaultValue?: string;
-  onChange?: (value: string) => void;
   jssStyle: InputClasses;
   className?: string;
   style?: React.CSSProperties;

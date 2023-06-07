@@ -1,7 +1,7 @@
 import usePersistFn from '../../common/use-persist-fn';
-import { InputPasswordPros } from './use-input-password.type';
+import { InputPasswordProps } from './use-input-password.type';
 
-const useInputPassword = (props: InputPasswordPros) => {
+const useInputPassword = (props: InputPasswordProps) => {
   const point = props.point || '*';
   const value = props.value || '';
   const onChange = usePersistFn((val: string | undefined = '') => {

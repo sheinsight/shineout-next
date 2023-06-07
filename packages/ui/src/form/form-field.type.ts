@@ -1,14 +1,15 @@
 import React from 'react';
-import { RuleFunc } from '@shined/hooks';
+import { RuleFunc, BaseFormControlProps } from '@shined/hooks';
 
+// 子元素需要有的数据线
 export interface FieldControlProps<T> {
   value?: T;
   onChange?: (value: T, ...rest: any) => void;
   status?: 'error';
 }
 
-export interface FormFieldProps<T> {
-  name: string;
+export interface FormFieldProps<T> extends Partial<BaseFormControlProps<T>> {
+  name: string | string[];
   reservable?: boolean;
   defaultValue?: T;
   rules?: RuleFunc<T>[];

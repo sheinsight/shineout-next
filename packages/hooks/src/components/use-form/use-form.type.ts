@@ -19,10 +19,10 @@ export interface FormLabelConfig {
 
 export interface BaseFormProps<T> extends FormLabelConfig {
   value: T | undefined;
-  defaultValue: T | undefined;
-  onChange: (value: T) => void | undefined;
-  onSubmit: (value: T) => void | undefined;
-  onReset: () => void | undefined;
+  onChange: (value: T) => void;
+  defaultValue?: T;
+  onSubmit?: (value: T) => void;
+  onReset?: () => void;
 }
 
 export type UseFormProps<T> = BaseFormProps<T>;

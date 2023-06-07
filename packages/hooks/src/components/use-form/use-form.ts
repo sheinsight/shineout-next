@@ -40,7 +40,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     ref.current.removeArr.forEach((n) => {
       newValue = deepRemove(value!, n) as T;
     });
-    onChange?.(newValue);
+    onChange(newValue);
   };
 
   const addRemove = (name: string) => {
@@ -63,7 +63,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       if (df !== undefined) {
         ref.current.defaultValues[n] = df;
         const newValue = deepSet(deepClone(value), n, df, { clone: true }) as T;
-        onChange?.(newValue);
+        onChange(newValue);
       }
     },
     unbind: (n: string, reserveAble?: boolean) => {
@@ -86,7 +86,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
           ref.current.rules[key]?.(key, vals[key], newValue);
         }
       });
-      onChange?.(newValue);
+      onChange(newValue);
     },
 
     setError(n: string, e: Error | undefined) {
@@ -148,7 +148,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   };
 
   const handleReset = (other: HandlerType) => (e: React.FormEventHandler<HTMLFormElement>) => {
-    onChange?.(getDefaultValue());
+    onChange(getDefaultValue());
     formFunc?.clearErrors?.();
     props.onReset?.();
     other?.onReset?.(e);

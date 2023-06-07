@@ -31,7 +31,7 @@ export interface BaseInputProps
 export type UseInputParams = BaseInputProps;
 
 export interface UseInputRootSlotOwnProps {
-  onClick: React.MouseEventHandler | undefined;
+  onClick?: React.MouseEventHandler;
 }
 
 export type UseInputRootSlotProps<TOther = Record<string, unknown>> = Omit<

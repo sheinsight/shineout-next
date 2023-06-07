@@ -1,5 +1,6 @@
+export type PasswordValue = string | undefined;
 export interface InputPasswordProps {
-  value: string | undefined;
-  onChange: (value: string) => void;
+  value: PasswordValue;
+  onChange: (value: PasswordValue) => void;
   point?: string;
 }

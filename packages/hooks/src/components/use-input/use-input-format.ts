@@ -20,7 +20,7 @@ const useInputFormat = (props: InputFormatProps) => {
   const handleChange = usePersistFn((v: string | undefined) => {
     let value = v;
     if (v === undefined) {
-      onChange?.(value);
+      onChange(value);
       return;
     } else if (type === 'number') {
       value = String(value).replace(/。/g, '.'); // 中文小数点转英文小数点
@@ -42,7 +42,7 @@ const useInputFormat = (props: InputFormatProps) => {
 
       value = value.replace(regExp, '$1$2$3');
     }
-    onChange?.(value);
+    onChange(value);
   });
 
   const handleBlur = usePersistFn((e: React.FocusEvent) => {

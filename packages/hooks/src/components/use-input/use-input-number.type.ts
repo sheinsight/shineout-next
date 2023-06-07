@@ -1,9 +1,10 @@
 import { InputFormatProps } from './use-input-format.type';
 
+export type NumberValue = string | number | undefined | null;
 export interface InputNumberProps
   extends Omit<InputFormatProps, 'value' | 'onChange' | 'autoFix' | 'trim' | 'coin' | 'type'> {
-  value: string | number | undefined | null;
-  onChange: (value: number | string | null | undefined) => void | undefined;
+  value: NumberValue;
+  onChange: (value: NumberValue) => void | undefined;
   min?: number;
   max?: number;
   allowNull?: boolean;
