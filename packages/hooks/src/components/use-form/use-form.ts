@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Provider } from './Provider';
 import useLatestObj from '../../common/use-latest-obj';
-import { extractEventHandlers, deepRemove, deepSet, deepClone } from '../../utils';
+import { extractEventHandlers, deepRemove, deepSet, deepClone, deepGet } from '../../utils';
 
 import { ProviderProps, FormContext, UseFormProps, UseFormSlotProps } from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
@@ -52,7 +52,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   };
 
   const formFunc: FormContextType['formFunc'] = useLatestObj({
-    bind: (n: string, df: any, validate: () => void) => {
+    bind: (n: string, df: any, validate: (name: string, v: any, formValue: ObjectType) => void) => {
       if (ref.current.names.has(n)) {
         console.error(`name "${n}" already exist`);
         return;
@@ -75,8 +75,17 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       }
     },
 
-    setValue: (n: string, v: any) => {
-      const newValue = deepSet(deepClone(value), n, v, { clone: true }) as T;
+    setValue: (
+      vals: { [key: string]: any },
+      option: { validate?: boolean } = { validate: false },
+    ) => {
+      let newValue = deepClone(value);
+      Object.keys(vals).forEach((key) => {
+        newValue = deepSet(newValue, key, vals[key], { clone: true }) as T;
+        if (option.validate) {
+          ref.current.rules[key]?.(key, vals[key], newValue);
+        }
+      });
       onChange?.(newValue);
     },
 
@@ -91,7 +100,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const validate = (): Promise<boolean> => {
     return new Promise((resolve) => {
-      const validates = Object.values(ref.current.rules).map((f) => f());
+      const validates = Object.entries(ref.current.rules).map(([key, f]) => {
+        return f(key, deepGet(value, key), value);
+      });
       Promise.all(validates)
         .then((results) => {
           const error = results.find((n) => n instanceof Error);

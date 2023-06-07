@@ -5,16 +5,20 @@ export interface FormContextValueType {
   errors?: ObjectType<Error>;
   value?: ObjectType;
   formFunc?: {
-    setValue: (n: string, v: any) => void;
+    setValue: (value: { [key: string]: any }, config?: { validate?: boolean }) => void;
     unbind: (n: string, reserveAble?: boolean) => void;
-    bind: (n: string, df: any, validate: () => void) => void;
+    bind: (
+      n: string,
+      df: any,
+      validate: (name: string, value: any, formData: ObjectType) => void,
+    ) => void;
     setError: (n: string, e: Error | undefined) => void;
     clearErrors: () => void;
   };
 }
 
 export interface BaseFormControlProps<T> {
-  name: string;
+  name: string | string[];
   defaultValue: T | undefined;
   onChange: ((value: T, ...other: any[]) => void) | undefined;
   reservable: boolean | undefined;

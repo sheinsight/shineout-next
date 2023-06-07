@@ -18,7 +18,8 @@
     "@shined/shineout-style": "workspace:*",
     "@shined/hooks": "workspace:*",
     "@shined/ui": "workspace:*",
-    "classnames": "^2.3.2"
+    "classnames": "^2.3.2",
+    "immer": "10.0.2"
   },
   "devDependencies": {
     "react": "18.2.0"

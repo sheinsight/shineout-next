@@ -37,7 +37,6 @@ export default (props: BaseNumberProps) => {
   });
 
   const forwardProps = util.removeProps(commonProps, {
-    ...numberFormatParams,
     ...inputAbleParams,
     ...numberFormatParams,
   });

@@ -85,6 +85,7 @@ const input: JsStyles<InputClass> = {
     width: '100%',
     background: 'transparent',
     border: '0',
+    margin: '0',
     lineHeight: 'inherit',
     color: 'inherit',
     fontSize: 'inherit',

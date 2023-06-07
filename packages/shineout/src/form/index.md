@@ -17,3 +17,10 @@ group: Form
 -en Basic usage
 
 <code src="./__example__/s-001-base.tsx"></code>
+
+## 数组 name
+
+-cn -
+-en -
+
+<code src="./__example__/s-002-array.tsx"></code>
