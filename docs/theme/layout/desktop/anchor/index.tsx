@@ -49,7 +49,7 @@ const Anchor = () => {
     setHash(hash);
     const target = document.getElementById(hash);
     if (target) target.scrollIntoView();
-  }, [location]);
+  }, [location, state.locales]);
 
   return (
     <ul className={classes.anchor}>

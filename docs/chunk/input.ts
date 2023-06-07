@@ -214,17 +214,17 @@ export default {
       prop: 'ref',
       propName: {
         en: 'ref',
-        cn: '获取ref',
+        cn: '获取 ref',
       },
       propDescribe: {
         en: 'ref',
         cn: 'ref',
       },
       code: "import { Input } from 'shineout';\nexport default () => {\n  return (\n    <Input\n      placeholder='input something'\n      forwardRef={(e) => {\n        console.log('ref', e);\n      }}\n    />\n  );\n};\n",
-      component: require('shineout/src/input/__example__/st-0016-ref.tsx'),
+      component: require('shineout/input/__example__/st-0016-ref.tsx'),
     },
     {
-      prop: 'ref',
+      prop: 'info',
       propName: {
         en: 'info',
         cn: 'info',
@@ -234,7 +234,7 @@ export default {
         cn: 'info',
       },
       code: "import { Input } from 'shineout';\nexport default () => {\n  return <Input placeholder='input something' info={5} />;\n};\n",
-      component: require('shineout/src/input/__example__/st-0017-info.tsx'),
+      component: require('shineout/input/__example__/st-0017-info.tsx'),
     },
     {
       prop: 'innerTitle',
@@ -246,8 +246,8 @@ export default {
         en: 'inner title',
         cn: '内嵌标题',
       },
-      code: "import { Input } from 'shineout';\nexport default () => {\n  return <Input placeholder='input something' innerTitle={'hello world'} clearable />;\n};\n",
-      component: require('shineout/src/input/__example__/st-0018-inner-title.tsx'),
+      code: "import { Input } from 'shineout';\nexport default () => {\n  return (\n    <div>\n      <Input placeholder='small' innerTitle={'hello world'} clearable size={'small'} />\n      <Input placeholder='default' innerTitle={'hello world'} clearable />\n      <Input placeholder='large' innerTitle={'hello world'} clearable size={'large'} />\n    </div>\n  );\n};\n",
+      component: require('shineout/input/__example__/st-0018-inner-title.tsx'),
     },
   ],
 };

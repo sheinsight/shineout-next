@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const chokidar = require('chokidar');
+const prettier = require('prettier');
 
 const md = require('markdown-it')({
   html: true,
@@ -186,13 +187,16 @@ const compile = (fileName) => {
         const tokens = md.parse(content);
         const doc = tokenLoader(tokens, component);
 
-        fs.writeFileSync(
-          path.join(__dirname, `../docs/chunk/${component}.ts`),
-          `export default ${JSON.stringify(doc, null, 2).replace(
-            /"component":\s*"([^"]*)"/g,
-            '"component": $1',
-          )}`,
-        );
+        const prettierPath = prettier.resolveConfigFile.sync();
+        const beforeFormat = `export default ${JSON.stringify(doc, null, 2).replace(
+          /"component":\s*"([^"]*)"/g,
+          '"component": $1',
+        )}`;
+        const formattedCode = prettier.format(beforeFormat, {
+          filepath: prettierPath,
+          singleQuote: true,
+        });
+        fs.writeFileSync(path.join(__dirname, `../docs/chunk/${component}.ts`), formattedCode);
       } catch (err) {
         console.error(`Error reading file: ${indexPath}`);
       }
@@ -222,7 +226,6 @@ watcher
   .on('change', (filePath) => {
     const { component, fileType } = resolveDir(filePath);
     if (watchList.includes(fileType)) {
-      console.log(component, filePath);
       if (component === '__example__') {
         compile(filePath.split('/').at(-3));
       } else {
