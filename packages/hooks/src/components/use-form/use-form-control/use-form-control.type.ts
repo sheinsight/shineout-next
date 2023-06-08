@@ -24,4 +24,5 @@ export interface BaseFormControlProps<T> {
   reservable: boolean | undefined;
   rules: RuleFunc<T>[] | undefined;
   onError: ((error: Error | undefined) => void) | undefined;
+  bind: string[] | undefined;
 }

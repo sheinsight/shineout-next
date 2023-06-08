@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 import { FormContext } from './form-context';
-import { FormItemContext } from '../use-form-Item/form-item-context';
+import { FormItemContext } from '../use-form-item/form-item-context';
 import { deepGet, isArray, validate } from '../../../utils';
 
 import { BaseFormControlProps } from './use-form-control.type';

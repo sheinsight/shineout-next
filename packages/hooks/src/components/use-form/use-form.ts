@@ -1,7 +1,15 @@
 import * as React from 'react';
 import { Provider } from './Provider';
 import useLatestObj from '../../common/use-latest-obj';
-import { extractEventHandlers, deepRemove, deepSet, deepClone, deepGet } from '../../utils';
+import usePersistFn from '../../common/use-persist-fn';
+import {
+  extractEventHandlers,
+  deepRemove,
+  deepSet,
+  deepClone,
+  deepGet,
+  shallowEqual,
+} from '../../utils';
 
 import { ProviderProps, FormContext, UseFormProps, UseFormSlotProps } from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
@@ -17,23 +25,59 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     labelVerticalAlign,
     keepErrorHeight,
     inline,
+    initValidate,
   } = props;
 
   const ref = React.useRef<FormContext>({
     defaultValues: {},
     rules: {},
-    mounted: false,
     removeArr: new Set<string>(),
     names: new Set<string>(),
     submitLock: false,
+    lastValue: value,
+    resetTime: 0,
   });
 
   const [errors, setErrors] = React.useState<ObjectType>({});
 
+  const validateFields = usePersistFn((fields?: string[]) => {
+    return new Promise((resolve) => {
+      const files2 = fields
+        ? fields.filter((key) => ref.current.rules[key])
+        : Object.keys(ref.current.rules);
+      const validates = files2.map((key) => {
+        const f = ref.current.rules[key];
+        return f(key, deepGet(value, key), value);
+      });
+      Promise.all(validates)
+        .then((results) => {
+          const error = results.find((n) => n instanceof Error);
+          if (error) {
+            resolve(false);
+          } else {
+            resolve(true);
+          }
+        })
+        .catch(() => {
+          resolve(false);
+        });
+    });
+  });
+
   // 默认值更新
   React.useEffect(() => {
-    ref.current.mounted = true;
-  }, []);
+    // initValidate 字段改变后自动校验对应的值
+    if (initValidate && !ref.current.resetTime) {
+      const keys = Object.keys(ref.current.rules).filter((key) => {
+        const oldValue = deepGet(ref.current.lastValue || {}, key);
+        const newValue = deepGet(value || {}, key);
+        return !shallowEqual(oldValue, newValue);
+      });
+      validateFields(keys);
+    }
+    ref.current.resetTime = 0;
+    ref.current.lastValue = value;
+  }, [value]);
 
   const remove = () => {
     let newValue: T = deepClone(value);
@@ -98,26 +142,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     },
   });
 
-  const validate = (): Promise<boolean> => {
-    return new Promise((resolve) => {
-      const validates = Object.entries(ref.current.rules).map(([key, f]) => {
-        return f(key, deepGet(value, key), value);
-      });
-      Promise.all(validates)
-        .then((results) => {
-          const error = results.find((n) => n instanceof Error);
-          if (error) {
-            resolve(false);
-          } else {
-            resolve(true);
-          }
-        })
-        .catch(() => {
-          resolve(false);
-        });
-    });
-  };
-
   const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (ref.current.submitLock) {
@@ -129,7 +153,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       ref.current.submitLock = false;
     }, 1000);
     (async () => {
-      const pass = await validate();
+      const pass = await validateFields();
       if (!pass) {
         return;
       }
@@ -150,6 +174,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const handleReset = (other: HandlerType) => (e: React.FormEventHandler<HTMLFormElement>) => {
     onChange(getDefaultValue());
     formFunc?.clearErrors?.();
+    ref.current.resetTime = 1;
     props.onReset?.();
     other?.onReset?.(e);
   };

@@ -21,6 +21,10 @@ export interface BaseFormProps<T> extends FormLabelConfig {
   value: T | undefined;
   onChange: (value: T) => void;
   defaultValue?: T;
+  /**
+   * @cn 设置 value 后是否自动校验
+   */
+  initValidate?: boolean;
   onSubmit?: (value: T) => void;
   onReset?: () => void;
 }
@@ -30,11 +34,12 @@ export type UseFormProps<T> = BaseFormProps<T>;
 export type FormContext = {
   defaultValues: ObjectType;
   rules: ObjectType;
-  mounted: boolean;
   removeArr: Set<string>;
   removeTimer?: number;
   names: Set<string>;
   submitLock: boolean;
+  lastValue: ObjectType | undefined;
+  resetTime: number;
 };
 
 export type UseFormSlotOwnProps = {

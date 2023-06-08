@@ -6,3 +6,4 @@ export * from './string';
 export * from './func';
 export * from './validate';
 export * from './number';
+export * from './shallowEqual';

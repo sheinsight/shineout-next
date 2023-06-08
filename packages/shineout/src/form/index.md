@@ -24,3 +24,10 @@ group: Form
 -en -
 
 <code src="./__example__/s-002-array.tsx"></code>
+
+## initValidate
+
+-cn -
+-en -
+
+<code src="./__example__/t-003-initvalidate.tsx"></code>

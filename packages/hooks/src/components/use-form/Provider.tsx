@@ -1,5 +1,5 @@
-import { FormContext } from '../use-form/use-form-control/form-context';
-import { LabelConfigContext } from '../use-form/use-form-control/label-config-context';
+import { FormContext } from './use-form-control/form-context';
+import { LabelConfigContext } from './use-form-item/label-config-context';
 import * as React from 'react';
 import { ProviderProps } from './use-form.type';
 

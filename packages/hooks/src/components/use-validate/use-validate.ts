@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 import { validate as valli } from '../../utils';
-import { FormItemContext } from '../use-form/use-form-Item/form-item-context';
+import { FormItemContext } from '../use-form/use-form-item/form-item-context';
 import { UseValidateProps } from './use-validate.type';
 
 const useValidate = (props: UseValidateProps) => {
