@@ -40,26 +40,26 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const [errors, setErrors] = React.useState<ObjectType>({});
 
-  const validateFields = usePersistFn((fields?: string[]) => {
-    return new Promise((resolve) => {
+  const validateFields = usePersistFn((fields?: string[], config = {}): Promise<true> => {
+    return new Promise((resolve, reject) => {
       const files2 = fields
         ? fields.filter((key) => ref.current.rules[key])
         : Object.keys(ref.current.rules);
       const validates = files2.map((key) => {
         const f = ref.current.rules[key];
-        return f(key, deepGet(value, key), value);
+        return f(key, deepGet(value, key), value, config);
       });
       Promise.all(validates)
         .then((results) => {
-          const error = results.find((n) => n instanceof Error);
-          if (error) {
-            resolve(false);
+          const error = results.filter((n) => n instanceof Error);
+          if (error.length) {
+            reject(error);
           } else {
             resolve(true);
           }
         })
-        .catch(() => {
-          resolve(false);
+        .catch((e: Error) => {
+          reject([e]);
         });
     });
   });
@@ -73,7 +73,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         const newValue = deepGet(value || {}, key);
         return !shallowEqual(oldValue, newValue);
       });
-      validateFields(keys);
+      validateFields(keys).catch(() => {});
     }
     ref.current.resetTime = 0;
     ref.current.lastValue = value;
@@ -96,7 +96,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   };
 
   const formFunc: FormContextType['formFunc'] = useLatestObj({
-    bind: (n: string, df: any, validate: (name: string, v: any, formValue: ObjectType) => void) => {
+    bind: (
+      n: string,
+      df: any,
+      validate: (
+        name: string,
+        v: any,
+        formValue: ObjectType,
+        config: { ignoreBind?: boolean },
+      ) => void,
+    ) => {
       if (ref.current.names.has(n)) {
         console.error(`name "${n}" already exist`);
         return;
@@ -140,6 +149,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     clearErrors() {
       setErrors({});
     },
+
+    validateFields,
   });
 
   const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
@@ -153,7 +164,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       ref.current.submitLock = false;
     }, 1000);
     (async () => {
-      const pass = await validateFields();
+      const pass = (await validateFields(undefined, { ignoreBind: true }).catch((e) => e)) === true;
       if (!pass) {
         return;
       }

@@ -1,6 +1,3 @@
-/**
- * 联动校验
- */
 import { Input, Form } from 'shineout';
 import React from 'react';
 export default () => {
@@ -8,7 +5,6 @@ export default () => {
   return (
     <div>
       <Form
-        initValidate
         value={v}
         onSubmit={(v) => {
           console.log('form submit', v);
@@ -21,50 +17,46 @@ export default () => {
           console.log('form reset');
         }}
       >
-        <Form.Item label='name'>
-          <Input
+        <Form.Item label='password'>
+          <Input.Password
+            bind={['repeat']}
             rules={[
               (value, _, callback) => {
                 if (!value) {
-                  callback(new Error('name is required'));
+                  callback(new Error('password is required'));
                 }
                 if (value && value.length > 10) {
-                  callback(new Error('name length must less than 10'));
+                  callback(new Error('password length must less than 10'));
                 }
                 callback(true);
               },
             ]}
-            name={'name'}
+            name={'password'}
             clearable
-            placeholder='please input name'
+            placeholder='please input password'
           />
         </Form.Item>
-        <Form.Item label='email'>
-          <Input
-            name={'email'}
+        <Form.Item label='repeat'>
+          <Input.Password
+            name={'repeat'}
             rules={[
-              (value, _, callback) => {
+              (value, formValue, callback) => {
                 if (!value) {
-                  callback(new Error('email is required'));
+                  callback(new Error('repeat is required'));
+                }
+                if (value && value !== formValue.password) {
+                  callback(new Error('两次输入不一致'));
                 }
                 callback(true);
               },
             ]}
             clearable
-            placeholder='please input email'
+            placeholder='please input password again'
           />
         </Form.Item>
 
         <button type={'submit'}>提交</button>
         <button type={'reset'}>重置</button>
-        <button
-          type={'button'}
-          onClick={() => {
-            setV({ name: 'aelsssssllonnnnggggggg' });
-          }}
-        >
-          改值后自动校验修改的字段
-        </button>
       </Form>
     </div>
   );

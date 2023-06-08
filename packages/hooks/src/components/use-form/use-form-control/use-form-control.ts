@@ -8,7 +8,7 @@ import usePersistFn from '../../../common/use-persist-fn';
 import { ObjectType } from '../../../common/type';
 
 export default function useFormControl<T>(props: BaseFormControlProps<T>) {
-  const { onChange: onChangePo, name, reservable, defaultValue, rules, onError } = props;
+  const { onChange: onChangePo, name, reservable, defaultValue, rules, onError, bind } = props;
 
   let value: T | undefined;
   let error: Error | undefined = undefined;
@@ -48,17 +48,24 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     }
   }
 
-  const validateFiled = usePersistFn((name, v, formV) => {
+  const validateFiled = usePersistFn((name, v, formV, config = {}) => {
+    const bindValidate = () => {
+      if (!config.ignoreBind && isArray(bind)) {
+        formFunc?.validateFields(bind, { ignoreBind: true }).catch(() => {});
+      }
+    };
     return validate(v, formV, rules || [], {})
       .then((res) => {
         const err = res === true ? undefined : res;
         formFunc?.setError(name, err);
         onError?.(err);
+        bindValidate();
         return res;
       })
       .catch((e) => {
         formFunc?.setError(name, e);
         onError?.(e);
+        bindValidate();
         return e;
       });
   });

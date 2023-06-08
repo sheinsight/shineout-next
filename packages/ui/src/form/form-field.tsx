@@ -11,6 +11,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     reservable: props.reservable,
     rules: props.rules,
     onError: props.onError,
+    bind: props.bind,
   });
   const cloneProps: FieldControlProps<T> = {
     onChange: formControl.onChange,

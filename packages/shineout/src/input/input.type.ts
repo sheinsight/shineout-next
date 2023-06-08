@@ -1,7 +1,7 @@
 import { InputProps as UiInputProps } from '@shined/ui';
 import { InputFormatProps } from '@shined/hooks';
-import { ExtendsFieldProps, TipProps } from '../@types/common';
 import React from 'react';
+import { GetWithFieldProps } from '../hooks/use-field-common';
 
 export interface InputCommonProps<V> {
   suffix?: UiInputProps['suffix'];
@@ -13,9 +13,9 @@ export interface InputCommonProps<V> {
   placeTitle?: React.ReactNode;
   htmlName?: string;
   value?: V;
-  onChange?: (value: V | undefined, ...rest: any) => void;
+  onChange?: (value: V) => void;
   defaultValue?: V;
-  beforeChange?: (value: V | undefined) => void | V;
+  beforeChange?: (value: V) => void | V;
   clearable?: boolean | (() => void);
   clearToUndefined?: boolean;
   width?: string | number;
@@ -40,10 +40,7 @@ export type GetCommonProps<Props, V> = Omit<
   InputCommonProps<V>;
 
 export interface BaseInputProps
-  extends GetCommonProps<UiInputProps, string>,
+  extends GetCommonProps<UiInputProps, string | undefined>,
     Omit<InputFormatProps, 'value' | 'onChange'> {}
 
-export interface InputProps
-  extends Omit<BaseInputProps, 'getStatus'>,
-    ExtendsFieldProps<string>,
-    TipProps {}
+export type InputProps = GetWithFieldProps<BaseInputProps, BaseInputProps['value']>;

@@ -14,7 +14,7 @@ const defaultInfo = (num: number, msg: any) => {
   return new Error(text);
 };
 
-const useInputCommon = <V, T extends InputCommonProps<V>>(props: T) => {
+const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Props) => {
   const {
     forwardRef,
     htmlName,
@@ -28,6 +28,8 @@ const useInputCommon = <V, T extends InputCommonProps<V>>(props: T) => {
     suffix,
     info,
     getStatus,
+    innerTitle,
+    placeTitle,
     ...rest
   } = props;
 
@@ -46,9 +48,10 @@ const useInputCommon = <V, T extends InputCommonProps<V>>(props: T) => {
     ...inputAbleParams,
   });
   const hasValue = (value: any) => value === 0 || (value && value.length);
+
   const renderInput = useInnerTitle({
-    innerTitle: props.innerTitle,
-    placeTitle: props.placeTitle,
+    innerTitle,
+    placeTitle,
     open: focused || hasValue(inputAbleProps.value),
     size: props.size,
   });

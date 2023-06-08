@@ -4,7 +4,7 @@ export interface ClearProps<T> {
   value?: T;
   clearable?: boolean | (() => void);
   clearToUndefined?: boolean;
-  onChange?: (v?: T, ...rest: any) => void;
+  onChange?: (v: T, ...rest: any) => void;
 }
 
 const useClear = <T,>(props: ClearProps<T>) => {
@@ -15,7 +15,7 @@ const useClear = <T,>(props: ClearProps<T>) => {
   }
 
   const handleClear = usePersistFn(() => {
-    onChange?.(clearToUndefined ? undefined : clearValue);
+    onChange?.(clearToUndefined ? (undefined as T) : clearValue);
     if (typeof clearable === 'function') {
       clearable();
     }

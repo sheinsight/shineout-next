@@ -31,3 +31,10 @@ group: Form
 -en -
 
 <code src="./__example__/t-003-initvalidate.tsx"></code>
+
+## bind
+
+-cn -
+-en -
+
+<code src="./__example__/s-004-bind.tsx"></code>

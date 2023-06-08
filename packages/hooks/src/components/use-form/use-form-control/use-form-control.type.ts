@@ -10,10 +10,18 @@ export interface FormContextValueType {
     bind: (
       n: string,
       df: any,
-      validate: (name: string, value: any, formData: ObjectType) => void,
+      validate: (
+        name: string,
+        value: any,
+        formData: ObjectType,
+        config: {
+          ignoreBind?: boolean;
+        },
+      ) => void,
     ) => void;
     setError: (n: string, e: Error | undefined) => void;
     clearErrors: () => void;
+    validateFields: (names?: string[], config?: { ignoreBind?: boolean }) => Promise<true>;
   };
 }
 

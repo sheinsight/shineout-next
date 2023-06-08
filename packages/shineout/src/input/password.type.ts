@@ -1,13 +1,10 @@
 import { InputPasswordProps as PasswordProps } from '@shined/hooks';
 import { InputProps as UiInputProps } from '@shined/ui';
-import { ExtendsFieldProps, TipProps } from '../@types/common';
 import { GetCommonProps } from './input.type';
+import { GetWithFieldProps } from '../hooks/use-field-common';
 
 export interface BasePasswordProps
-  extends GetCommonProps<UiInputProps, string>,
+  extends GetCommonProps<UiInputProps, string | undefined>,
     Omit<PasswordProps, 'value' | 'onChange'> {}
 
-export interface InputPasswordProps
-  extends Omit<BasePasswordProps, 'getStatus'>,
-    ExtendsFieldProps<string>,
-    TipProps {}
+export type InputPasswordProps = GetWithFieldProps<BasePasswordProps, BasePasswordProps['value']>;
