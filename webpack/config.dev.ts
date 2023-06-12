@@ -30,6 +30,7 @@ const webpackConfig = {
       docs: path.resolve(__dirname, '../docs'),
       '@shined/ui': path.resolve(__dirname, '../packages/ui/src'),
       '@shined/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
+      '@shined/hooks': path.resolve(__dirname, '../packages/hooks/src'),
     },
   },
   module: {
