@@ -35,6 +35,48 @@ export const examples = [
       .trim(),
     component: require('shineout/form/__example__/s-001-base.tsx').default,
   },
+  {
+    propName: {
+      cn: '数组name',
+      en: '数组name',
+    },
+    propDescribe: {
+      cn: '',
+      en: '',
+    },
+    code: require('!raw-loader!shineout/form/__example__/s-002-array.tsx')
+      .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
+      .trim(),
+    component: require('shineout/form/__example__/s-002-array.tsx').default,
+  },
+  {
+    propName: {
+      cn: 'initValidate',
+      en: 'initValidate',
+    },
+    propDescribe: {
+      cn: '',
+      en: '',
+    },
+    code: require('!raw-loader!shineout/form/__example__/t-003-initvalidate.tsx')
+      .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
+      .trim(),
+    component: require('shineout/form/__example__/t-003-initvalidate.tsx').default,
+  },
+  {
+    propName: {
+      cn: '联动校验',
+      en: '联动校验',
+    },
+    propDescribe: {
+      cn: '',
+      en: '',
+    },
+    code: require('!raw-loader!shineout/form/__example__/s-004-bind.tsx')
+      .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
+      .trim(),
+    component: require('shineout/form/__example__/s-004-bind.tsx').default,
+  },
 ];
 
 export default (props) => (

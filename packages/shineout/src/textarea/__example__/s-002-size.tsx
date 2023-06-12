@@ -1,3 +1,9 @@
+/**
+ * cn - 尺寸
+ *    --基础 textarea 用法
+ * en - Size
+ *    --Base Textarea
+ */
 import React from 'react';
 import { Textarea } from 'shineout';
 

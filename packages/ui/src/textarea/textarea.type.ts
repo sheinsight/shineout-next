@@ -25,7 +25,7 @@ export interface TextareaClasses {
   wrapperUnderline: string;
   wrapperNoBorder: string;
   paddingBox: string;
-  // wrapperInGroup: string;
+  resize: string;
 }
 
 export interface TextareaBaseProps extends BaseTextareaProps, Pick<CommonType, 'status'> {
@@ -41,7 +41,7 @@ export interface TextareaBaseProps extends BaseTextareaProps, Pick<CommonType, '
    * @default: true
    */
   border?: boolean;
-  // inGroup?: boolean;
+  resize?: boolean;
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
   renderTextarea?: (textareaEl: React.ReactElement) => React.ReactElement;
 }

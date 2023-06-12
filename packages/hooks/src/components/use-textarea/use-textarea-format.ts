@@ -12,6 +12,7 @@ const useInputFormat = (props: InputFormatProps) => {
 
     // 没有输入任何值
     if (props.value === undefined && value === '') {
+      onBlur?.(e);
       return;
     }
 

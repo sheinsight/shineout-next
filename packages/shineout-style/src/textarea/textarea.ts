@@ -18,9 +18,11 @@ type InputClass =
   | 'wrapperNoBorder'
   | 'paddingBox'
   | 'textarea'
+  | 'resize'
   | 'shadow'
   | 'info'
-  | 'infoError';
+  | 'infoError'
+  | 'footer';
 
 const input: JsStyles<InputClass> = {
   ...inputBorder,
@@ -30,6 +32,7 @@ const input: JsStyles<InputClass> = {
     boxSizing: 'border-box',
     alignItems: 'center',
     position: 'relative',
+    flexWrap: 'wrap',
     ...wrapper,
   },
   ...resetWrapper,
@@ -45,6 +48,12 @@ const input: JsStyles<InputClass> = {
     backgroundColor: 'transparent',
     resize: 'none',
     boxSizing: 'border-box',
+    '&$resize': {
+      resize: 'vertical',
+    },
+  },
+  resize: {
+    resize: 'vertical',
   },
   info: {
     position: 'absolute',
@@ -88,6 +97,7 @@ const input: JsStyles<InputClass> = {
     zIndex: 0,
     visibility: 'hidden',
   },
+  footer: {},
 };
 
 export default input;

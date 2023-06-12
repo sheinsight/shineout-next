@@ -14,7 +14,7 @@ const Textarea = (props: TextareaProps) => {
     suffix,
     underline,
     border = true,
-    // inGroup = false,
+    resize = false,
     onEnterPress,
     getStatus,
     renderTextarea,
@@ -34,7 +34,6 @@ const Textarea = (props: TextareaProps) => {
       [jssStyle.wrapperLarge]: size === 'large',
       [jssStyle.wrapperUnderline]: underline,
       [jssStyle.wrapperNoBorder]: !border,
-      // [jssStyle.wrapperInGroup]: inGroup,
     },
   ]);
 
@@ -50,7 +49,9 @@ const Textarea = (props: TextareaProps) => {
   });
 
   const textareaProps = getTextAreaProps({
-    className: classNames(jssStyle.paddingBox, jssStyle.textarea),
+    className: classNames(jssStyle.paddingBox, jssStyle.textarea, {
+      [jssStyle.resize]: resize,
+    }),
     onKeyUp,
   });
 

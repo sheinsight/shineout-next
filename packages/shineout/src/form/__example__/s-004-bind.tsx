@@ -1,3 +1,9 @@
+/**
+ * cn - 联动校验
+ *    --
+ * en - 联动校验
+ *    --
+ */
 import { Input, Form } from 'shineout';
 import React from 'react';
 export default () => {

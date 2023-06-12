@@ -16,20 +16,25 @@ const innerTitleVar = {
       small: '2px',
       large: '4px',
     },
+    paddingX: {
+      default: '8px',
+      small: '8px',
+      large: '8px',
+    },
   },
 };
 
 const innerTitle: JsStyles<Class> = {
   wrapper: {
     width: '100%',
-    padding: `${innerTitleVar.size.paddingY.default} 0`,
+    padding: `${innerTitleVar.size.paddingY.default} ${innerTitleVar.size.paddingX.default}`,
     position: 'relative',
   },
   wrapperSmall: {
-    padding: `${innerTitleVar.size.paddingY.small} 0`,
+    padding: `${innerTitleVar.size.paddingY.small} ${innerTitleVar.size.paddingX.small}`,
   },
   wrapperLarge: {
-    padding: `${innerTitleVar.size.paddingY.large} 0`,
+    padding: `${innerTitleVar.size.paddingY.large} ${innerTitleVar.size.paddingX.large}`,
     '& $content  > input, & $content > div, & $title': {
       lineHeight: '1.5',
     },
@@ -40,6 +45,7 @@ const innerTitle: JsStyles<Class> = {
   title: {
     visibility: 'hidden',
     height: 'initial',
+    padding: 'inherit',
   },
   place: {
     pointerEvents: 'none',

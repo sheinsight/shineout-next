@@ -30,6 +30,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     getStatus,
     innerTitle,
     placeTitle,
+    width,
     ...rest
   } = props;
 
@@ -101,8 +102,8 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
   });
 
   const mergeStyle = useMemo(() => {
-    return { width: props.width, ...(style || {}) };
-  }, [props.width, style]) as React.CSSProperties;
+    return { width: width, ...(style || {}) };
+  }, [width, style]) as React.CSSProperties;
   return {
     ...rest,
     ...inputAbleProps,

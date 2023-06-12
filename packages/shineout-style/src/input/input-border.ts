@@ -12,6 +12,7 @@ export default <T extends string>(name: T) => {
       border: `1px solid ${InputBorderVar.color.border.default}`,
       color: InputBorderVar.color.text.default,
       lineHeight: sizeVar.lineHeight,
+      fontSize: InputBorderVar.size.fontSize.default,
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
         borderColor: InputBorderVar.color.border.focus,
@@ -19,6 +20,7 @@ export default <T extends string>(name: T) => {
     },
     paddingBox: {
       padding: `${InputBorderVar.size.paddingY.default} ${InputBorderVar.size.paddingX.default}`,
+      borderRadius: 'inherit',
     },
     [`${name}Small`]: {
       lineHeight: 1.5,

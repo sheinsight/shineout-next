@@ -1,5 +1,8 @@
 /**
- * 联动校验
+ * cn - initValidate
+ *    --
+ * en - initValidate
+ *    --
  */
 import { Input, Form } from 'shineout';
 import React from 'react';
