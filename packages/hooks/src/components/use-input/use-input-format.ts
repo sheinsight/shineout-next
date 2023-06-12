@@ -7,8 +7,19 @@ function regLength(size?: number) {
 }
 
 const useInputFormat = (props: InputFormatProps) => {
-  const { trim, onChange, onBlur, onFocus, type, numType, integerLimit, digits, autoFix, coin } =
-    props;
+  const {
+    trim,
+    onChange,
+    onBlur,
+    onFocus,
+    type,
+    numType,
+    integerLimit,
+    digits,
+    autoFix,
+    coin,
+    cancelBlurChange,
+  } = props;
   const [showCoin, setShowCoin] = React.useState(false);
   function isValidNumber(val: string) {
     const { numType } = props;
@@ -84,7 +95,7 @@ const useInputFormat = (props: InputFormatProps) => {
     }
     if (value !== before) {
       target.value = value;
-      onChange?.(value);
+      if (!cancelBlurChange) onChange?.(value);
     }
     if (type === 'number' && coin) {
       setShowCoin(true);

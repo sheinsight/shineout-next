@@ -13,5 +13,6 @@ export { default as useKeyEvent } from './common/use-key-event';
 
 //components
 export * from './components/use-input';
+export * from './components/use-textarea';
 export * from './components/use-form';
 export * from './components/use-validate';

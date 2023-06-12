@@ -28,8 +28,6 @@ export interface BaseInputProps
       keyof InputPropsOwn | 'size' | 'prefix' | 'onError'
     > {}
 
-export type UseInputParams = BaseInputProps;
-
 export interface UseInputRootSlotOwnProps {
   onClick?: React.MouseEventHandler;
 }

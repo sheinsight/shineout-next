@@ -15,6 +15,7 @@ const useInputPassword = (props: InputPasswordProps) => {
   return {
     value: newValue,
     onChange,
+    type: 'text',
   };
 };
 

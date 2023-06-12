@@ -1,13 +1,12 @@
 import border from './input-border';
 import inputVar from './input-var';
 import InputBorderVar from './input-border-var';
-
-import { JsStyles } from '../jss-style';
-import inputBorderVar from './input-border-var';
 import { colorVar } from '../themes/default';
 
-const inputBorder = border('wrapper', true);
-const groupBorder = border('group', true);
+import { JsStyles } from '../jss-style';
+
+const inputBorder = border('wrapper');
+const groupBorder = border('group');
 const { wrapper, ...resetWrapper } = inputBorder;
 
 const { group, groupSmall, groupLarge, ...resetGroup } = groupBorder;
@@ -22,6 +21,7 @@ type InputClass =
   | 'wrapperUnderline'
   | 'wrapperInGroup'
   | 'wrapperNoBorder'
+  | 'paddingBox'
   | 'clearWrapper'
   | 'input'
   | 'clear'
@@ -91,13 +91,7 @@ const input: JsStyles<InputClass> = {
     fontSize: 'inherit',
     outline: 'none',
     backgroundColor: 'transparent',
-    padding: `${InputBorderVar.size.paddingY.default} 0`,
-    '$wrapperSmall &': {
-      padding: `${InputBorderVar.size.paddingY.small} 0`,
-    },
-    '$wrapperLarge &': {
-      padding: `${InputBorderVar.size.paddingY.large} 0`,
-    },
+    boxSizing: 'border-box',
   },
   clearWrapper: {
     position: 'relative',
@@ -111,7 +105,7 @@ const input: JsStyles<InputClass> = {
 
   clear: {
     position: 'absolute',
-    right: '0',
+    right: InputBorderVar.size.paddingX.default,
     top: '0',
     bottom: '0',
     margin: 'auto',
@@ -124,6 +118,12 @@ const input: JsStyles<InputClass> = {
     '&:hover svg': {
       color: inputVar.clearColorHover,
     },
+    '$wrapperSmall &': {
+      right: InputBorderVar.size.paddingX.small,
+    },
+    '$wrapperLarge &': {
+      right: InputBorderVar.size.paddingX.large,
+    },
   },
   // todo button select cascader datepicker 等组件的样式覆盖问题
   group: {
@@ -132,15 +132,15 @@ const input: JsStyles<InputClass> = {
     boxSizing: 'border-box',
     alignItems: 'stretch',
     padding: '0',
-    ...groupSpace(inputBorderVar.size.paddingX.default),
+    ...groupSpace(InputBorderVar.size.paddingX.default),
   },
   groupSmall: {
     ...groupSmall,
-    ...groupSpace(inputBorderVar.size.paddingX.small),
+    ...groupSpace(InputBorderVar.size.paddingX.small),
   },
   groupLarge: {
     ...groupLarge,
-    ...groupSpace(inputBorderVar.size.paddingX.large),
+    ...groupSpace(InputBorderVar.size.paddingX.large),
   },
   ...resetGroup,
   numberStep: {
@@ -179,8 +179,8 @@ const input: JsStyles<InputClass> = {
     maxWidth: '400px',
     padding: '5px 8px',
     background: colorVar.grey100,
-    borderRadius: inputBorderVar.size.radius.default,
-    boxShadow: `0 0 0 1px ${inputBorderVar.color.border.default}`,
+    borderRadius: InputBorderVar.size.radius.default,
+    boxShadow: `0 0 0 1px ${InputBorderVar.color.border.default}`,
     fontSize: '12px',
     color: '#1261d4',
     '&::before': {
@@ -191,7 +191,7 @@ const input: JsStyles<InputClass> = {
       transform: 'rotate(45deg) translateY(3px)',
       width: '6px',
       height: '6px',
-      border: `1px solid ${inputBorderVar.color.border.default}`,
+      border: `1px solid ${InputBorderVar.color.border.default}`,
       borderWidth: '1px 0 0 1px',
       background: 'inherit',
       content: "'  '",

@@ -3,7 +3,7 @@ import InputBorderVar from './input-border-var';
 import { sizeVar } from '../themes/default';
 import inputBorderVar from './input-border-var';
 
-export default <T extends string>(name: T, isInput?: boolean) => {
+export default <T extends string>(name: T) => {
   return {
     [name]: {
       boxSizing: 'border-box',
@@ -13,25 +13,25 @@ export default <T extends string>(name: T, isInput?: boolean) => {
       color: InputBorderVar.color.text.default,
       lineHeight: sizeVar.lineHeight,
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
-      padding: `${isInput ? 0 : InputBorderVar.size.paddingY.default} ${
-        InputBorderVar.size.paddingX.default
-      }`,
       '&:hover': {
         borderColor: InputBorderVar.color.border.focus,
       },
     },
+    paddingBox: {
+      padding: `${InputBorderVar.size.paddingY.default} ${InputBorderVar.size.paddingX.default}`,
+    },
     [`${name}Small`]: {
       lineHeight: 1.5,
       fontSize: InputBorderVar.size.fontSize.small,
-      padding: `${isInput ? 0 : InputBorderVar.size.paddingY.default} ${
-        InputBorderVar.size.paddingX.default
-      }`,
+      '& $paddingBox': {
+        padding: `${InputBorderVar.size.paddingY.small} ${InputBorderVar.size.paddingX.small}`,
+      },
     },
     [`${name}Large`]: {
       fontSize: InputBorderVar.size.fontSize.large,
-      padding: `${isInput ? 0 : InputBorderVar.size.paddingY.default} ${
-        InputBorderVar.size.paddingX.default
-      }`,
+      '& $paddingBox': {
+        padding: `${InputBorderVar.size.paddingY.large} ${InputBorderVar.size.paddingX.large}`,
+      },
     },
     [`${name}Focus`]: {
       borderColor: InputBorderVar.color.border.focus,
@@ -84,6 +84,7 @@ export default <T extends string>(name: T, isInput?: boolean) => {
       },
     },
   } as Record<
+    | 'paddingBox'
     | `${T}`
     | `${T}Focus`
     | `${T}Error`

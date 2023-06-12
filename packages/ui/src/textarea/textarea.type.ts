@@ -1,8 +1,8 @@
 import React from 'react';
 import { CommonType } from '../types/common';
-import { BaseInputProps } from '@shined/hooks';
+import { BaseTextareaProps } from '@shined/hooks';
 
-export interface InputClasses {
+export interface TextareaClasses {
   /**
    * 最外层class
    */
@@ -19,22 +19,19 @@ export interface InputClasses {
    * 当 status 为 error 时
    */
   wrapperError: string;
-  input: string;
-  clear: string;
-  clearWrapper: string;
+  textarea: string;
   wrapperLarge: string;
   wrapperSmall: string;
   wrapperUnderline: string;
   wrapperNoBorder: string;
-  wrapperInGroup: string;
   paddingBox: string;
+  // wrapperInGroup: string;
 }
 
-export interface InputBaseProps extends BaseInputProps, Pick<CommonType, 'status'> {
-  jssStyle: InputClasses;
+export interface TextareaBaseProps extends BaseTextareaProps, Pick<CommonType, 'status'> {
+  jssStyle: TextareaClasses;
   className?: string;
   style?: React.CSSProperties;
-  clearIcon?: React.ReactNode;
   size?: 'small' | 'default' | 'large';
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
@@ -44,13 +41,9 @@ export interface InputBaseProps extends BaseInputProps, Pick<CommonType, 'status
    * @default: true
    */
   border?: boolean;
-  /**
-   * @default: false
-   */
-  inGroup?: boolean;
+  // inGroup?: boolean;
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
-  showClear?: boolean;
-  renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
+  renderTextarea?: (textareaEl: React.ReactElement) => React.ReactElement;
 }
 
-export type InputProps = InputBaseProps;
+export type TextareaProps = TextareaBaseProps;

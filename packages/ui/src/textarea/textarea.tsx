@@ -1,28 +1,26 @@
-import { useInput, useKeyEvent, usePersistFn } from '@shined/hooks';
+import { useTextarea, useKeyEvent, usePersistFn } from '@shined/hooks';
 import classNames from 'classnames';
 import React, { KeyboardEvent, useEffect } from 'react';
-import { InputProps } from './input.type';
-import Icons from '../icons';
+import { TextareaProps } from './textarea.type';
 
-const Input = (props: InputProps) => {
+const Textarea = (props: TextareaProps) => {
   const {
     jssStyle,
     className,
     style,
     status,
-    clearIcon,
     size,
     prefix,
     suffix,
     underline,
     border = true,
-    inGroup = false,
+    // inGroup = false,
     onEnterPress,
     getStatus,
-    renderInput,
+    renderTextarea,
     ...rest
   } = props;
-  const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
+  const { getRootProps, getTextAreaProps, focused, disabled } = useTextarea({
     ...rest,
   });
   const rootClass = classNames([
@@ -36,23 +34,23 @@ const Input = (props: InputProps) => {
       [jssStyle.wrapperLarge]: size === 'large',
       [jssStyle.wrapperUnderline]: underline,
       [jssStyle.wrapperNoBorder]: !border,
-      [jssStyle.wrapperInGroup]: inGroup,
+      // [jssStyle.wrapperInGroup]: inGroup,
     },
   ]);
 
   const keyHandler = useKeyEvent({
     onEnterPress: (e: KeyboardEvent) => {
-      onEnterPress?.((e.target as HTMLInputElement).value || '', e);
+      onEnterPress?.((e.target as HTMLTextAreaElement).value || '', e);
     },
   });
 
-  const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLInputElement>) => {
+  const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLTextAreaElement>) => {
     props.onKeyUp?.(e);
     keyHandler(e);
   });
 
-  const inputProps = getInputProps({
-    className: classNames(jssStyle.input, jssStyle.paddingBox),
+  const textareaProps = getTextAreaProps({
+    className: classNames(jssStyle.paddingBox, jssStyle.textarea),
     onKeyUp,
   });
 
@@ -62,10 +60,10 @@ const Input = (props: InputProps) => {
     }
   }, [focused]);
 
-  let inputEl = <input type='text' {...inputProps} />;
+  let textareaEl = <textarea {...textareaProps} />;
 
-  if (typeof renderInput === 'function') {
-    inputEl = renderInput(inputEl);
+  if (typeof renderTextarea === 'function') {
+    textareaEl = renderTextarea(textareaEl);
   }
 
   return (
@@ -76,15 +74,10 @@ const Input = (props: InputProps) => {
       })}
     >
       {prefix}
-      {inputEl}
-      {(showClear || props.showClear) && (
-        <div className={jssStyle.clearWrapper} {...getClearProps()}>
-          <span className={jssStyle.clear}>{clearIcon || Icons.CloseCircle}</span>
-        </div>
-      )}
+      {textareaEl}
       {suffix}
     </div>
   );
 };
 
-export default Input;
+export default Textarea;

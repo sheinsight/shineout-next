@@ -2,7 +2,7 @@ import useForkRef from '../../common/use-fork-ref';
 import * as React from 'react';
 import { extractEventHandlers } from '../../utils';
 import {
-  UseInputParams,
+  BaseInputProps,
   UseInputRootSlotProps,
   UseInputSlotProps,
   UseInputClearProps,
@@ -20,7 +20,7 @@ import { HandlerType, ObjectType } from '../../common/type';
   4. 清空数据触发 onChange
 */
 
-const useInput = (params: UseInputParams) => {
+const useInput = (params: BaseInputProps) => {
   const {
     inputRef: inputRefPo,
     value,

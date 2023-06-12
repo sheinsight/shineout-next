@@ -5,7 +5,19 @@ import useInputFormat from './use-input-format';
 import { sub } from '../../utils';
 
 const useNumberFormat = (props: InputNumberProps) => {
-  const { onChange, onBlur, numType, integerLimit, digits, min, max, allowNull, step = 1 } = props;
+  const {
+    onChange,
+    value,
+    onBlur,
+    numType,
+    integerLimit,
+    digits,
+    min,
+    max,
+    allowNull,
+    step = 1,
+    cancelBlurChange,
+  } = props;
 
   const getStringValue = (value: string | number | null | undefined) => {
     if (value === undefined) return value;
@@ -57,8 +69,10 @@ const useNumberFormat = (props: InputNumberProps) => {
 
     num = commonFormat(num);
 
-    target.value = typeof num === 'number' ? String(num) : '';
-    onChange?.(num);
+    if (num !== value) {
+      target.value = typeof num === 'number' ? String(num) : '';
+      if (!cancelBlurChange) onChange?.(num);
+    }
     onBlur?.(e);
   });
 

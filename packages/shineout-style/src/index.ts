@@ -1,4 +1,5 @@
 export * from './input';
+export * from './textarea';
 export * from './form';
 export * from './inner-title';
 

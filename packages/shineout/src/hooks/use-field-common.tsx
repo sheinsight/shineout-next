@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePersistFn, util } from '@shined/hooks';
 import { ExtendsFieldProps, TipProps } from '../../dist/cjs/@types/common';
-import useItemValidate from '../input/use-item-validate';
+import useItemValidate from './use-item-validate';
 import { Form } from '@shined/ui';
 
 export interface FiledItemCommonProps {
