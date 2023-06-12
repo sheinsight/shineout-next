@@ -1,6 +1,6 @@
-import { Input } from '@shined/ui';
-import { useInputStyle } from '@shined/shineout-style';
-import { useInputFormat, util } from '@shined/hooks';
+import { Input } from '@sheinx/ui';
+import { useInputStyle } from '@sheinx/shineout-style';
+import { useInputFormat, util } from '@sheinx/hooks';
 import { BaseInputProps } from './input.type';
 import useInputCommon from './use-input-common';
 

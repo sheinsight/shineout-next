@@ -1,4 +1,4 @@
-import { useTextarea, useKeyEvent, usePersistFn } from '@shined/hooks';
+import { useTextarea, useKeyEvent, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { KeyboardEvent, useEffect } from 'react';
 import { TextareaProps } from './textarea.type';

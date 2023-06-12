@@ -170,13 +170,13 @@ importers:
 
   packages/shineout:
     dependencies:
-      '@shined/hooks':
+      '@sheinx/hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@shined/shineout-style':
+      '@sheinx/shineout-style':
         specifier: workspace:*
         version: link:../shineout-style
-      '@shined/ui':
+      '@sheinx/ui':
         specifier: workspace:*
         version: link:../ui
       classnames:
@@ -201,14 +201,14 @@ importers:
 
   packages/ui:
     dependencies:
-      '@shined/hooks':
+      '@sheinx/hooks':
         specifier: workspace:*
         version: link:../hooks
       classnames:
         specifier: ^2.3.2
         version: 2.3.2
     devDependencies:
-      '@shined/shineout-style':
+      '@sheinx/shineout-style':
         specifier: workspace:*
         version: link:../shineout-style
       react:

@@ -1,5 +1,5 @@
 import React, { useState, cloneElement, useRef } from 'react';
-import { useTextareaStyle } from '@shined/shineout-style';
+import { useTextareaStyle } from '@sheinx/shineout-style';
 import classNames from 'classnames';
 
 const useAutoSize = (props: {

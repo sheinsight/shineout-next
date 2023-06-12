@@ -1,6 +1,6 @@
-import { Textarea } from '@shined/ui';
-import { useTextareaStyle } from '@shined/shineout-style';
-import { useInputAble, useTextareaFormat, util } from '@shined/hooks';
+import { Textarea } from '@sheinx/ui';
+import { useTextareaStyle } from '@sheinx/shineout-style';
+import { useInputAble, useTextareaFormat, util } from '@sheinx/hooks';
 import { BaseTextareaProps } from './textarea.type';
 import useAutoSize from './use-auto-size';
 

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { useInputAble, usePersistFn } from '@shined/hooks';
+import { useInputAble, usePersistFn } from '@sheinx/hooks';
 import useClear from '../hooks/use-clear';
-import { useInputStyle } from '@shined/shineout-style';
+import { useInputStyle } from '@sheinx/shineout-style';
 import useInnerTitle from '../hooks/use-inner-title';
 import classNames from 'classnames';
 

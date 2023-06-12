@@ -1,6 +1,6 @@
 import React from 'react';
 import { CommonType } from '../types/common';
-import { BaseTextareaProps } from '@shined/hooks';
+import { BaseTextareaProps } from '@sheinx/hooks';
 
 export interface TextareaClasses {
   /**

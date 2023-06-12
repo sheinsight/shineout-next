@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormItem } from '@shined/hooks';
+import { useFormItem } from '@sheinx/hooks';
 import classNames from 'classnames';
 
 import { FormItemProps } from './form-item.type';

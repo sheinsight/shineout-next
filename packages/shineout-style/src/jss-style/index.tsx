@@ -14,7 +14,7 @@ export const StyleProvider: FC<{ children?: any; prefix?: string }> = function (
   const createClassname = useCallback((rule: any, sheet: any) => {
     const ns = sheet.options.classNamePrefix;
     if (!ns) {
-      console.warn('[shined/ui]: styled should give namespace');
+      console.warn('[sheinx/ui]: styled should give namespace');
     }
     return `${prefix}${ns}${camelToDash(rule.key)}`;
   }, []);

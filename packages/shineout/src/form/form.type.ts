@@ -3,7 +3,7 @@ import {
   FormItemProps as UiFormItemProps,
   ObjectType,
   FormFieldProps as UiFormFieldProps,
-} from '@shined/ui';
+} from '@sheinx/ui';
 
 export interface FormProps<T extends ObjectType> extends Omit<UiFormProps<T>, 'jssStyle'> {
   value?: T;

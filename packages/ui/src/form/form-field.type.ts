@@ -1,5 +1,5 @@
 import React from 'react';
-import { RuleFunc, BaseFormControlProps } from '@shined/hooks';
+import { RuleFunc, BaseFormControlProps } from '@sheinx/hooks';
 
 // 子元素需要有的数据线
 export interface FieldControlProps<T> {

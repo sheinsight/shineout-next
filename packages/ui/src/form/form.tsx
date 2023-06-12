@@ -1,4 +1,4 @@
-import { useForm, useInputAble } from '@shined/hooks';
+import { useForm, useInputAble } from '@sheinx/hooks';
 import classNames from 'classnames';
 import * as React from 'react';
 import FormField from './form-field';
@@ -6,7 +6,7 @@ import FormItem from './form-item';
 
 import { FormProps } from './form.type';
 
-import { ObjectType } from '@shined/hooks';
+import { ObjectType } from '@sheinx/hooks';
 
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, ...rest } = props;

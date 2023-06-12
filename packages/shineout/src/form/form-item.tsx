@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form } from '@shined/ui';
-import { useFormItemStyle } from '@shined/shineout-style';
+import { Form } from '@sheinx/ui';
+import { useFormItemStyle } from '@sheinx/shineout-style';
 import { FormItemProps } from './form.type';
 
 export default (props: FormItemProps) => {

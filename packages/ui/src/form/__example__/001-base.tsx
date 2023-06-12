@@ -1,5 +1,5 @@
-import { Input, Form } from '@shined/ui';
-import { useInputStyle, useFormStyle, useFormItemStyle } from '@shined/shineout-style';
+import { Input, Form } from '@sheinx/ui';
+import { useInputStyle, useFormStyle, useFormItemStyle } from '@sheinx/shineout-style';
 import React from 'react';
 export default () => {
   const inputStyle = useInputStyle();

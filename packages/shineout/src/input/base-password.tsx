@@ -1,6 +1,6 @@
-import { Input } from '@shined/ui';
-import { useInputStyle } from '@shined/shineout-style';
-import { useInputPassword, util } from '@shined/hooks';
+import { Input } from '@sheinx/ui';
+import { useInputStyle } from '@sheinx/shineout-style';
+import { useInputPassword, util } from '@sheinx/hooks';
 import useInputCommon from './use-input-common';
 
 import { BasePasswordProps } from './password.type';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FormLabelConfig } from '@shined/hooks';
+import { FormLabelConfig } from '@sheinx/hooks';
 import { CommonType } from '../types/common';
 
 export interface FormItemClasses {

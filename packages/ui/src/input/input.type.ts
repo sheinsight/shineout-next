@@ -1,6 +1,6 @@
 import React from 'react';
 import { CommonType } from '../types/common';
-import { BaseInputProps } from '@shined/hooks';
+import { BaseInputProps } from '@sheinx/hooks';
 
 export interface InputClasses {
   /**

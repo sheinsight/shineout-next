@@ -16,8 +16,8 @@ const webpackConfig = {
       shineout: path.resolve(__dirname, '../packages/shineout/src'),
       store: path.resolve(__dirname, '../docs/theme/store'),
       chunk: path.resolve(__dirname, '../docs/chunk'),
-      '@shined/ui': path.resolve(__dirname, '../packages/ui/src'),
-      '@shined/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
+      '@sheinx/ui': path.resolve(__dirname, '../packages/ui/src'),
+      '@sheinx/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
     },
   },
   module: {

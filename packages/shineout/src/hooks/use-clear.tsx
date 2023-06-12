@@ -1,4 +1,4 @@
-import { usePersistFn } from '@shined/hooks';
+import { usePersistFn } from '@sheinx/hooks';
 
 export interface ClearProps<T> {
   value?: T;

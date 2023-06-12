@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { ReactNode, Children, cloneElement, useRef } from 'react';
-import { useInputStyle } from '@shined/shineout-style';
+import { useInputStyle } from '@sheinx/shineout-style';
 import classNames from 'classnames';
 
 type Props = {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Textarea } from '@shined/ui';
-import { useTextareaStyle } from '@shined/shineout-style';
+import { Textarea } from '@sheinx/ui';
+import { useTextareaStyle } from '@sheinx/shineout-style';
 export default () => {
   const jssStyle = useTextareaStyle();
   return (

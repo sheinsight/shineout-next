@@ -1,9 +1,9 @@
 import React from 'react';
-import { usePersistFn } from '@shined/hooks';
-import { useInnerTitleStyle } from '@shined/shineout-style';
+import { usePersistFn } from '@sheinx/hooks';
+import { useInnerTitleStyle } from '@sheinx/shineout-style';
 import classNames from 'classnames';
 
-import { InputProps as UiInputProps } from '@shined/ui';
+import { InputProps as UiInputProps } from '@sheinx/ui';
 
 interface InnerTitleProps {
   innerTitle?: React.ReactNode;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Input, Icons } from '@shined/ui';
-import { useInputStyle } from '@shined/shineout-style';
-import { useInputNumber, util, usePersistFn } from '@shined/hooks';
+import { Input, Icons } from '@sheinx/ui';
+import { useInputStyle } from '@sheinx/shineout-style';
+import { useInputNumber, util, usePersistFn } from '@sheinx/hooks';
 
 import { BaseNumberProps } from './number.type';
 import classNames from 'classnames';

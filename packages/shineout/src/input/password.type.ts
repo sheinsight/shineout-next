@@ -1,5 +1,5 @@
-import { InputPasswordProps as PasswordProps } from '@shined/hooks';
-import { InputProps as UiInputProps } from '@shined/ui';
+import { InputPasswordProps as PasswordProps } from '@sheinx/hooks';
+import { InputProps as UiInputProps } from '@sheinx/ui';
 import { GetCommonProps } from './input.type';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 

@@ -1,4 +1,4 @@
-import { useInput, useKeyEvent, usePersistFn } from '@shined/hooks';
+import { useInput, useKeyEvent, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { KeyboardEvent, useEffect } from 'react';
 import { InputProps } from './input.type';

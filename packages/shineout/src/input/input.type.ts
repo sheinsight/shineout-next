@@ -1,5 +1,5 @@
-import { InputProps as UiInputProps } from '@shined/ui';
-import { InputFormatProps } from '@shined/hooks';
+import { InputProps as UiInputProps } from '@sheinx/ui';
+import { InputFormatProps } from '@sheinx/hooks';
 import React from 'react';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 

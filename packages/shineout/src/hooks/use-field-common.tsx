@@ -1,8 +1,8 @@
 import React from 'react';
-import { usePersistFn, util } from '@shined/hooks';
+import { usePersistFn, util } from '@sheinx/hooks';
 import { ExtendsFieldProps, TipProps } from '../../dist/cjs/@types/common';
 import useItemValidate from './use-item-validate';
-import { Form } from '@shined/ui';
+import { Form } from '@sheinx/ui';
 
 export interface FiledItemCommonProps {
   defaultValue?: any;

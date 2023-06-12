@@ -4,7 +4,7 @@ import path from 'path';
 export default defineConfig({
   outputPath: 'docs-dist',
   mfsu: {
-    exclude: [/^@shined/, 'shineout'],
+    exclude: [/^@sheinx/, 'shineout'],
   },
   hash: true,
   themeConfig: {
@@ -20,7 +20,7 @@ export default defineConfig({
     ],
   },
   alias: {
-    '@shined/ui': path.resolve(__dirname, 'packages/ui/src'),
+    '@sheinx/ui': path.resolve(__dirname, 'packages/ui/src'),
     shineout: path.resolve(__dirname, 'packages/shineout/src'),
   },
 });

@@ -15,9 +15,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@shined/shineout-style": "workspace:*",
-    "@shined/hooks": "workspace:*",
-    "@shined/ui": "workspace:*",
+    "@sheinx/shineout-style": "workspace:*",
+    "@sheinx/hooks": "workspace:*",
+    "@sheinx/ui": "workspace:*",
     "classnames": "^2.3.2",
     "immer": "10.0.2"
   },

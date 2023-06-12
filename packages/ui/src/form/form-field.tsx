@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormControl, util } from '@shined/hooks';
+import { useFormControl, util } from '@sheinx/hooks';
 import { FormFieldProps, FieldControlProps } from './form-field.type';
 
 const FormField = <T extends any = any>(props: FormFieldProps<T>) => {

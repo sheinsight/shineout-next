@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ObjectType, BaseFormProps } from '@shined/hooks';
+import { ObjectType, BaseFormProps } from '@sheinx/hooks';
 import { CommonType } from '../types/common';
 
 export interface FormClasses {
