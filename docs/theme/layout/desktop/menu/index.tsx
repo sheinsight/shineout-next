@@ -13,7 +13,7 @@ const MenuComponent = () => {
 
   const handleClick = (component: Menu) => {
     navigate({
-      pathname: `/component/${component.name}`,
+      pathname: `/${state.locales}/component/${component.name}`,
     });
   };
 

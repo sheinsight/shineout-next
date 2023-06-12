@@ -29,7 +29,7 @@ const Desktop = () => {
       element: <Introduce />,
     },
     {
-      path: '/component/:name?',
+      path: ':name?/component/:name?',
       element: (
         <Component>
           <Menu></Menu>

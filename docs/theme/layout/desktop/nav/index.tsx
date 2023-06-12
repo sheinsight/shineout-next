@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store from '../../../store';
 import useStyles from '../style';
@@ -7,6 +7,7 @@ const Nav = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const state = useSnapshot(store);
+  const location = useLocation();
 
   const navs = [
     {
@@ -23,7 +24,7 @@ const Nav = () => {
     },
     {
       title: 'Component',
-      path: '/component',
+      path: `/${state.locales}/component`,
     },
     {
       title: 'Changelog',
@@ -32,7 +33,12 @@ const Nav = () => {
   ];
 
   const handleChangeLocales = () => {
-    store.locales = state.locales === 'en' ? 'cn' : 'en';
+    const nextLocales = state.locales === 'en' ? 'cn' : 'en';
+    store.locales = nextLocales;
+
+    const nextPath = location.pathname.replace(`/${state.locales}/`, `/${nextLocales}/`);
+
+    navigate(nextPath);
   };
 
   const handleChangeEnv = () => {

@@ -8,10 +8,11 @@ const Content = () => {
 
   const component = useMemo(() => {
     const paths = location.pathname.split('/');
-    const componentName = paths[2]?.toLocaleLowerCase();
 
+    const componentFlagIndex = paths.findIndex((item) => item === 'component');
+    if (componentFlagIndex === -1) return;
+    const componentName = paths[componentFlagIndex + 1]?.toLocaleLowerCase();
     if (!componentName) return;
-
     try {
       return require(`../../../../chunk/${componentName}.tsx`).default();
     } catch (error) {
