@@ -1,3 +1,10 @@
+/**
+ * cn - 基本用法
+ *    --
+ * en - Basic usage
+ *    --
+ */
+
 import { Input, Form } from 'shineout';
 export default () => {
   return (

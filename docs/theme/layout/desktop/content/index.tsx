@@ -1,64 +1,25 @@
-import React from 'react';
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import Example from '../../../components/example';
 import useStyles from '../style';
-import Header from '../header';
-import Footer from '../footer';
-
-interface Locales {
-  en?: string;
-  cn?: string;
-}
-interface ExampleProps {
-  prop: string;
-  propName: Locales;
-  propDescribe: Locales;
-}
-
-interface ChunkProps {
-  title: {
-    title: string;
-    group: string;
-    order: number;
-  };
-  header: {
-    title: Locales;
-    describe: Locales;
-  };
-  examples: ExampleProps[];
-}
 
 const Content = () => {
   const classes = useStyles();
   const location = useLocation();
 
-  const example = useMemo(() => {
+  const component = useMemo(() => {
     const paths = location.pathname.split('/');
-    const componentName = paths.at(-1);
-    let component: ChunkProps;
+    const componentName = paths[2]?.toLocaleLowerCase();
+
+    if (!componentName) return;
+
     try {
-      component = require(`../../../../chunk/${componentName?.toLocaleLowerCase()}.ts`)?.default;
-      return component;
+      return require(`../../../../chunk/${componentName}.tsx`).default();
     } catch (error) {
-      return null;
+      return <div>Error</div>;
     }
   }, [location.pathname]);
 
-  return (
-    <div className={classes.content}>
-      {example && <Header example={example}></Header>}
-      {example &&
-        example.examples.map((item, index) => {
-          return (
-            <div key={index}>
-              <Example example={item}></Example>
-            </div>
-          );
-        })}
-      {example && <Footer></Footer>}
-    </div>
-  );
+  return <div className={classes.content}>{component}</div>;
 };
 
 export default Content;

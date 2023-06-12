@@ -1,3 +1,10 @@
+/**
+ * cn - 数字数据
+ *    -- 设置 type 属性为 number 后，将支持数字数据的处理。通过设置 numType、integerLimit、autoFix、digits 属性来定制不同的数值处理结果。
+ * en - Numerical data
+ *    -- After setting the type attribute to "number", it enables the handling of numerical data. You can customize different numerical processing results by using the numType, integerLimit, autoFix, and digits attributes.
+ */
+
 import React from 'react';
 import { Input } from 'shineout';
 

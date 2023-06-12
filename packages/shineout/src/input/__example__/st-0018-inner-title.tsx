@@ -1,3 +1,10 @@
+/**
+ * cn - innerTitle
+ *    --
+ * en - innerTitle
+ *    --
+ */
+
 import { Input } from 'shineout';
 export default () => {
   return (

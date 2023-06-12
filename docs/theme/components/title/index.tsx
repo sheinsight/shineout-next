@@ -1,22 +1,18 @@
 import { useSnapshot } from 'valtio';
 import useStyles from '../style';
-import store from '../../../store';
-
-interface HeaderProps {
-  example: any;
-}
+import store from '../../store';
+import { Header as HeaderProps } from 'docs/types';
 
 const Header = (props: HeaderProps) => {
   const classes = useStyles();
   const state = useSnapshot(store);
 
-  const { example } = props;
-  const { header } = example;
+  const { describe, title } = props;
 
   return (
     <div className={classes.header}>
-      <h1 className='title'>{header.title[state.locales]}</h1>
-      <p className='subtitle'>{header.describe[state.locales]}</p>
+      <h1 className='title'>{title[state.locales]}</h1>
+      <p className='subtitle'>{describe[state.locales]}</p>
     </div>
   );
 };

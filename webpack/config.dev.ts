@@ -4,6 +4,17 @@ const WebpackDevServer = require('webpack-dev-server');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 require('../scripts/dev-doc.js');
+// class CustomPlugin {
+//   apply(compiler) {
+//     compiler.hooks.invalid.tap('CustomPlugin', () => {
+//       console.log('Shineout Doc is compiling...');
+//     });
+
+//     compiler.hooks.done.tap('CustomPlugin', (stats) => {
+//       console.log('Shineout Doc is compiled');
+//     });
+//   }
+// }
 
 const webpackConfig = {
   mode: 'development',
@@ -16,8 +27,10 @@ const webpackConfig = {
       shineout: path.resolve(__dirname, '../packages/shineout/src'),
       store: path.resolve(__dirname, '../docs/theme/store'),
       chunk: path.resolve(__dirname, '../docs/chunk'),
+      docs: path.resolve(__dirname, '../docs'),
       '@sheinx/ui': path.resolve(__dirname, '../packages/ui/src'),
       '@sheinx/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
+      '@sheinx/hooks': path.resolve(__dirname, '../packages/hooks/src'),
     },
   },
   module: {
@@ -55,6 +68,7 @@ const webpackConfig = {
       title: 'Shineout Next',
       template: path.join(__dirname, '../public/index.ejs'),
     }),
+    // new CustomPlugin(),
   ],
 };
 

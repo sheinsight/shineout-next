@@ -1,3 +1,10 @@
+/**
+ * cn - ref
+ *    --
+ * en - ref
+ *    --
+ */
+
 import { Input } from 'shineout';
 export default () => {
   return (

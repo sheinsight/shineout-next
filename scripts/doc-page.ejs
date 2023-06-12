@@ -1,0 +1,40 @@
+import React from 'react'
+import MarkDown from '../theme/components/markdown/index.tsx'
+
+const source = require('shineout/<%= componentDir %>/index.md')
+
+export const api = []
+
+export const header = {
+  name: '<%= header.name %>',
+  group: '<%= header.group %>',
+}
+
+export const title = {
+  cn: '<%= title.cn %>',
+  en: '<%= title.en %>',
+}
+
+export const describe = {
+  cn: '<%= describe.cn %>',
+  en: '<%= describe.en %>',
+}
+
+export const examples = [
+<% examples.forEach(function (exam, i) { -%>
+  {
+    propName: {
+      cn: '<%= exam.propName.cn %>',
+      en: '<%= exam.propName.en %>',
+    },
+    propDescribe: {
+      cn: '<%= exam.propDescribe.cn %>',
+      en: '<%= exam.propDescribe.en %>',
+    },
+    code: require('!raw-loader!shineout/<%= componentDir %>/__example__/<%= exam.fileName %>').default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '').trim(),
+    component: require('shineout/<%= componentDir %>/__example__/<%= exam.fileName %>').default,
+  },
+<% }) -%>
+]
+
+export default (props) => <MarkDown {...props} source={source} header={header} title={title} describe={describe} examples={examples} api={api} />

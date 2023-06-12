@@ -1,3 +1,10 @@
+/**
+ * cn - 内置分组组件
+ *    -- 利用内置的 group 组件可以实现多个 输入组件 或 选择型组件 联合展示。
+ * en - Built-in group component
+ *    -- By utilizing the built-in group component, you can combine multiple input components or selection components for joint display.
+ */
+
 import React from 'react';
 import { Input } from 'shineout';
 

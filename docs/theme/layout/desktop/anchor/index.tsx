@@ -25,7 +25,7 @@ const Anchor = () => {
     if (chunk) {
       let component;
       try {
-        component = require(`../../../../chunk/${chunk.toLocaleLowerCase()}`)?.default;
+        component = require(`../../../../chunk/${chunk.toLocaleLowerCase()}`);
       } catch (error) {
         component = null;
         setHash('');

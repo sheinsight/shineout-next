@@ -1,3 +1,10 @@
+/**
+ * cn - 校验
+ *    -- 组件支持传入 rules 属性来配置校验规则。
+ * en - validate
+ *    -- The component supports passing the 'rules' attribute to configure validation rules.
+ */
+
 import React from 'react';
 import { Input, Form } from 'shineout';
 

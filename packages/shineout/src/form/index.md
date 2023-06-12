@@ -1,40 +1,20 @@
 ---
-title: Form
+name: Form
 group: Form
 ---
 
-# Head
+# Title
 
--cn 表单 Form
--en Form
+表单 Form
+Form
 
-~cn 高性能表单控件，自带数据域管理。包含数据录入、校验以及对应样式。
-~en Users can input or edit text in the text box.
+# Describe
 
-## Base
+高性能表单控件，自带数据域管理。包含数据录入、校验以及对应样式。
+Users can input or edit text in the text box.
 
--cn 基本用法
--en Basic usage
+# Example
 
 <code src="./__example__/s-001-base.tsx"></code>
 
-## 数组 name
-
--cn -
--en -
-
-<code src="./__example__/s-002-array.tsx"></code>
-
-## initValidate
-
--cn -
--en -
-
-<code src="./__example__/t-003-initvalidate.tsx"></code>
-
-## bind
-
--cn -
--en -
-
-<code src="./__example__/s-004-bind.tsx"></code>
+# Api
