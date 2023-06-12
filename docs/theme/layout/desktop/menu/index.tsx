@@ -5,25 +5,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 import useStyles from '../style';
 
-export interface MarkdownComponent {
-  title: {
-    title: string;
-    group: string;
-    order: number;
-  };
-  header: {
-    title: {
-      en: string;
-      cn: string;
-    };
-    describe: {
-      en: string;
-      cn: string;
-    };
-  };
-  examples: any[];
-}
-
 const MenuComponent = () => {
   const classes = useStyles();
   const state = useSnapshot(store);
@@ -40,7 +21,7 @@ const MenuComponent = () => {
     const menus: Menus[] = [];
 
     // @ts-ignore
-    const files = require.context('../../../../chunk', false, /\.ts$/).keys() as string[];
+    const files = require.context('../../../../chunk', false, /\.tsx$/).keys() as string[];
     files.forEach((file) => {
       const menu: Menu = {
         name: '',
@@ -49,20 +30,18 @@ const MenuComponent = () => {
           cn: '',
         },
       };
-
-      const component = require(`../../../../chunk/${file.split('/')[1]}`)
-        .default as MarkdownComponent;
-      const group = menus.find((item) => item.group === component.title.group);
+      const component = require(`../../../../chunk/${file.split('/')[1]}`);
+      const group = menus.find((item) => item.group === component.header.group);
       if (!group) {
         menus.push({
-          group: component.title.group,
+          group: component.header.group,
           components: [],
         });
       }
-      menu.group = component.title.group;
-      menu.title = component.header.title;
-      menu.name = component.title.title;
-      menus.find((item) => item.group === component.title.group)?.components.push(menu);
+      menu.group = component.header.group;
+      menu.name = component.header.name;
+      menu.title = component.title;
+      menus.find((item) => item.group === component.header.group)?.components.push(menu);
     });
     store.menu = menus;
   }, []);

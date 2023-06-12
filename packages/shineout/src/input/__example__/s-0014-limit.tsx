@@ -1,3 +1,10 @@
+/**
+ * cn - 输入限制
+ *    -- 通过设置 min（最小值）、 max（最大值）、 maxLength（最大长度）来限制 Input 组件的输入内容。
+ * en - Input restriction
+ *    -- Set min (minimum value), max (maximum value), and maxLength (maximum length) to restrict the input content of the Input component.
+ */
+
 import React from 'react';
 import { Input } from 'shineout';
 

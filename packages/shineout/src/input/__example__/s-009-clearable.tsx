@@ -1,3 +1,10 @@
+/**
+ * cn - 允许删除
+ *    -- 允许清除 input 框内输入的内容。
+ * en - Allow clearing
+ *    -- Allow clearing the content entered in the input box.
+ */
+
 import React from 'react';
 import { Input } from 'shineout';
 

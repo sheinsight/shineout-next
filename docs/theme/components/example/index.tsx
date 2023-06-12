@@ -6,22 +6,17 @@ import Copy from './copy';
 import Ue from './ue';
 import Open from './open';
 import Codesandbox from './codesandbox';
-
+import { Example as ExampleProps } from 'docs/types';
 import useStyles from './style';
-
-interface ExampleProps {
-  example: any;
-}
 
 const Example = (props: ExampleProps) => {
   const classes = useStyles();
   const state = useSnapshot(store);
   const [open, setOpen] = useState(false);
 
-  const { example } = props;
-  const { prop, propName = { en: '', cn: '' }, propDescribe, code } = example;
+  const { propName, propDescribe, component, code } = props;
 
-  const Example = example.component.default;
+  const Example = component;
 
   const handleOpen = () => {
     setOpen(!open);
@@ -40,7 +35,7 @@ const Example = (props: ExampleProps) => {
         <p className='subtitle'>{propDescribe[state.locales]}</p>
       </div>
       <div className='demo'>
-        <span className='prop'>{prop}</span>
+        {/* <span className='prop'>{prop}</span> */}
         <Example></Example>
       </div>
       <div className='action'>
