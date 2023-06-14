@@ -14,7 +14,9 @@ const Example = (props: ExampleProps) => {
   const state = useSnapshot(store);
   const [open, setOpen] = useState(false);
 
-  const { propName, propDescribe, component, code } = props;
+  const { propName, propDescribe, component, code, index } = props;
+
+  const defaultName = `Example ${index + 1}`;
 
   const Example = component;
 
@@ -29,10 +31,10 @@ const Example = (props: ExampleProps) => {
   return (
     <div className={classes.example}>
       <div className='header'>
-        <h2 className='title' id={propName[state.locales]}>
-          {propName[state.locales]}
+        <h2 className='title' id={propName[state.locales] || defaultName}>
+          {propName[state.locales] || defaultName}
         </h2>
-        <p className='subtitle'>{propDescribe[state.locales]}</p>
+        <p className='subtitle'>{propDescribe[state.locales] || `${defaultName} Describe`}</p>
       </div>
       <div className='demo'>
         {/* <span className='prop'>{prop}</span> */}

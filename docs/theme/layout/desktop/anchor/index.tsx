@@ -25,7 +25,7 @@ const Anchor = () => {
     if (chunk) {
       let component;
       try {
-        component = require(`../../../../chunk/${chunk.toLocaleLowerCase()}`);
+        component = require(`../../../../chunk/${state.doc}/${chunk.toLocaleLowerCase()}`);
       } catch (error) {
         component = null;
         setAnchor([]);
@@ -34,8 +34,8 @@ const Anchor = () => {
       }
 
       if (component && component.examples) {
-        const anchorNames = component.examples.map((item: { propName: any }) => {
-          return item.propName[state.locales];
+        const anchorNames = component.examples.map((item: { propName: any }, index: number) => {
+          return item.propName[state.locales] || `Example ${index + 1}`;
         });
 
         setAnchor(anchorNames);

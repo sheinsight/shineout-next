@@ -13,15 +13,22 @@ const MenuComponent = () => {
 
   const handleClick = (component: Menu) => {
     navigate({
-      pathname: `/${state.locales}/component/${component.name}`,
+      pathname: `/${state.locales}/component/${state.doc}/${component.name}`,
     });
+  };
+
+  const handleChangeDoc = (doc: 'shineout' | 'ui') => {
+    const currentDoc = doc === 'shineout' ? 'ui' : 'shineout';
+    const nextPath = location.pathname.replace(`/${currentDoc}`, `/${doc}`);
+    store.doc = doc;
+    navigate(nextPath);
   };
 
   useEffect(() => {
     const menus: Menus[] = [];
 
     // @ts-ignore
-    const files = require.context('../../../../chunk', false, /\.tsx$/).keys() as string[];
+    const files = require.context('../../../../chunk/shineout', false, /\.tsx$/).keys() as string[];
     files.forEach((file) => {
       const menu: Menu = {
         name: '',
@@ -30,7 +37,7 @@ const MenuComponent = () => {
           cn: '',
         },
       };
-      const component = require(`../../../../chunk/${file.split('/')[1]}`);
+      const component = require(`../../../../chunk/shineout/${file.split('/')[1]}`);
       const group = menus.find((item) => item.group === component.header.group);
       if (!group) {
         menus.push({
@@ -54,6 +61,17 @@ const MenuComponent = () => {
 
   return (
     <ul className={classes.menu}>
+      <li className='doc'>
+        <span
+          className={state.doc === 'shineout' ? 'active' : ''}
+          onClick={() => handleChangeDoc('shineout')}
+        >
+          SHINEOUT
+        </span>
+        <span className={state.doc === 'ui' ? 'active' : ''} onClick={() => handleChangeDoc('ui')}>
+          UI
+        </span>
+      </li>
       {state.menu.map((item, index) => {
         return (
           <li key={index}>

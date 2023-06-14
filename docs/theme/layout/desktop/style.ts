@@ -46,6 +46,7 @@ export default createUseStyles({
 
   menu: {
     width: 259,
+    height: '100%',
     borderRight: '1px solid rgb(229,230,235)',
     listStyle: 'none',
     margin: 0,
@@ -56,6 +57,26 @@ export default createUseStyles({
       height: 40,
       padding: '0 20px',
       lineHeight: '40px',
+    },
+    '& .doc': {
+      height: 40,
+      padding: '0 20px',
+      lineHeight: '40px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      '& span': {
+        display: 'inline-block',
+        width: 120,
+        textAlign: 'center',
+        cursor: 'pointer',
+        '&:hover': {
+          color: '#999999',
+        },
+        '&.active': {
+          color: '#000000',
+        },
+      },
     },
     '& ul': {
       listStyle: 'none',

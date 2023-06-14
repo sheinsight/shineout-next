@@ -1,5 +1,5 @@
 import React from 'react';
-import MarkDown from '../theme/components/markdown/index.tsx';
+import MarkDown from '../../theme/components/markdown/index.tsx';
 
 const source = require('shineout/input/index.md');
 

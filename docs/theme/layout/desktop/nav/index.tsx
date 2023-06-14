@@ -12,23 +12,23 @@ const Nav = () => {
   const navs = [
     {
       title: 'Home',
-      path: '/home',
+      path: `/${state.locales}/home`,
     },
     {
       title: 'Design',
-      path: '/design',
+      path: `/${state.locales}/design`,
     },
     {
       title: 'Introduce',
-      path: '/introduce',
+      path: `/${state.locales}/introduce`,
     },
     {
       title: 'Component',
-      path: `/${state.locales}/component`,
+      path: `/${state.locales}/component/${state.doc}`,
     },
     {
       title: 'Changelog',
-      path: '/changelog',
+      path: `/${state.locales}/changelog`,
     },
   ];
 

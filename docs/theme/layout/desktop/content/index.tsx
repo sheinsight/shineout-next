@@ -11,10 +11,11 @@ const Content = () => {
 
     const componentFlagIndex = paths.findIndex((item) => item === 'component');
     if (componentFlagIndex === -1) return;
-    const componentName = paths[componentFlagIndex + 1]?.toLocaleLowerCase();
+    const moduleName = paths[componentFlagIndex + 1]?.toLocaleLowerCase();
+    const componentName = paths[componentFlagIndex + 2]?.toLocaleLowerCase();
     if (!componentName) return;
     try {
-      return require(`../../../../chunk/${componentName}.tsx`).default();
+      return require(`../../../../chunk/${moduleName}/${componentName}.tsx`).default();
     } catch (error) {
       return <div>Error</div>;
     }

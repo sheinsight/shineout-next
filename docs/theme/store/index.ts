@@ -14,18 +14,26 @@ export interface Menus {
   components: Menu[];
 }
 
+type Doc = 'shineout' | 'ui';
+
 interface State {
   menu: Menus[];
   locales: 'cn' | 'en';
+  doc: 'shineout' | 'ui';
   rtl: boolean;
   env: 'GitHub' | 'SHEIN';
 }
 
+const regex = /(?<=\/\w+\/component\/)\w+/;
+
 const state: State = {
   menu: [],
   locales: 'cn',
+  doc: (window.location.hash.match(regex)?.[0] as Doc) || 'shineout',
   rtl: false,
   env: 'SHEIN',
 };
 
-export default proxy(state);
+const proxyState = proxy(state);
+
+export default proxyState;
