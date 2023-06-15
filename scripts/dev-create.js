@@ -68,12 +68,25 @@ function mkdir(dir, module) {
 
 dirs.forEach((dir) => {
   if (!fs.existsSync(`${dir.path}/${component}`)) {
+    // 创建模板
     mkdir(`${dir.path}/${component}`, dir.module);
+    // 创建示例
+    if (dir.module !== 'shineout-style') {
+      const content = ejs.compile(
+        fs.readFileSync(path.join(__dirname, `./ejs/${dir.module}.example.tsx.ejs`), 'utf-8'),
+      );
+
+      const render = content({
+        Component: component.charAt(0).toUpperCase() + component.slice(1),
+      });
+      fs.writeFileSync(`${dir.path}/${component}/__example__/s-001-base.tsx`, render);
+    }
   } else {
     // 删除已存在的文件夹
     fs.rmdirSync(`${dir.path}/${component}`, { recursive: true });
   }
 
+  // 更新 index.ts 文件
   const files = fs.readdirSync(dir.path, 'utf-8').filter((i) => !whiteList[dir.module].includes(i));
   const content = ejs.compile(
     fs.readFileSync(path.join(__dirname, `./ejs/${dir.module}.index.ts.ejs`), 'utf-8'),

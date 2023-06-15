@@ -1,0 +1,16 @@
+/**
+ * cn - 基本用法
+ *    --基础 <%= Component %> 用法
+ * en - Base
+ *    --Base <%= Component %>
+ */
+
+import React from 'react';
+import { <%= Component %> } from '@sheinx/ui';
+import { use<%= Component %>Style } from '@sheinx/shineout-style';
+
+export default () => {
+const jssStyle = use<%= Component %>Style();
+
+  return <<%= Component %> jssStyle={jssStyle} />;
+};
