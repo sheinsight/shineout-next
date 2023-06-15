@@ -6,13 +6,13 @@ const source = require('ui/form/index.md');
 export const api = [];
 
 export const header = {
-  name: '',
-  group: '',
+  name: 'Form',
+  group: 'Form',
 };
 
 export const title = {
-  cn: '',
-  en: '',
+  cn: '表单 Form',
+  en: 'Form',
 };
 
 export const describe = {
@@ -20,7 +20,36 @@ export const describe = {
   en: '',
 };
 
-export const examples = [];
+export const examples = [
+  {
+    propName: {
+      cn: '',
+      en: '',
+    },
+    propDescribe: {
+      cn: '',
+      en: '',
+    },
+    code: require('!raw-loader!ui/form/__example__/001-base.tsx')
+      .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
+      .trim(),
+    component: require('ui/form/__example__/001-base.tsx').default,
+  },
+  {
+    propName: {
+      cn: '',
+      en: '',
+    },
+    propDescribe: {
+      cn: '',
+      en: '',
+    },
+    code: require('!raw-loader!ui/form/__example__/002-vertical.tsx')
+      .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
+      .trim(),
+    component: require('ui/form/__example__/002-vertical.tsx').default,
+  },
+];
 
 export default (props) => (
   <MarkDown
