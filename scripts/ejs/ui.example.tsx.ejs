@@ -12,5 +12,8 @@ import { use<%= Component %>Style } from '@sheinx/shineout-style';
 export default () => {
 const jssStyle = use<%= Component %>Style();
 
-  return <<%= Component %> jssStyle={jssStyle} />;
+  return <div>
+    <div>ui</div>
+    <div><<%= Component %> jssStyle={jssStyle} /></div>
+  </div>;
 };

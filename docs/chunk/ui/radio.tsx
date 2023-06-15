@@ -6,13 +6,13 @@ const source = require('ui/radio/index.md');
 export const api = [];
 
 export const header = {
-  name: '',
+  name: 'Radio',
   group: 'Form',
 };
 
 export const title = {
-  cn: '',
-  en: '',
+  cn: '单选 Radio',
+  en: 'Radio',
 };
 
 export const describe = {
@@ -20,7 +20,36 @@ export const describe = {
   en: '',
 };
 
-export const examples = [];
+export const examples = [
+  {
+    propName: {
+      cn: '',
+      en: '',
+    },
+    propDescribe: {
+      cn: '',
+      en: '',
+    },
+    code: require('!raw-loader!ui/radio/__example__/001-base.tsx')
+      .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
+      .trim(),
+    component: require('ui/radio/__example__/001-base.tsx').default,
+  },
+  {
+    propName: {
+      cn: '',
+      en: '',
+    },
+    propDescribe: {
+      cn: '',
+      en: '',
+    },
+    code: require('!raw-loader!ui/radio/__example__/002-disabled.tsx')
+      .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
+      .trim(),
+    component: require('ui/radio/__example__/002-disabled.tsx').default,
+  },
+];
 
 export default (props) => (
   <MarkDown

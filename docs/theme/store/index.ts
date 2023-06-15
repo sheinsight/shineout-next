@@ -39,8 +39,33 @@ const state: State = {
 const proxyState = proxy(state);
 
 export const dispatch = {
-  setMenu: (menu: Menus[]) => {
-    proxyState.menu = menu;
+  setMenu: () => {
+    const menus: Menus[] = [];
+
+    const context = require(`chunk/${proxyState.doc}/index.ts`);
+    const files = context.files as string[];
+    files.forEach((file) => {
+      const menu: Menu = {
+        name: '',
+        title: {
+          en: '',
+          cn: '',
+        },
+      };
+      const component = require(`chunk/${proxyState.doc}/${file}`);
+      const group = menus.find((item) => item.group === component.header.group);
+      if (!group) {
+        menus.push({
+          group: component.header.group,
+          components: [],
+        });
+      }
+      menu.group = component.header.group;
+      menu.name = component.header.name;
+      menu.title = component.title;
+      menus.find((item) => item.group === component.header.group)?.components.push(menu);
+    });
+    proxyState.menu = menus;
   },
   setLocales: (locales: Locales) => {
     proxyState.locales = locales;
