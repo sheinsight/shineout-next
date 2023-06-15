@@ -38,10 +38,6 @@ function mkdir(dir, module) {
   if (module !== 'shineout-style') {
     fs.mkdirSync(path.join(dir, '__example__'));
     fs.mkdirSync(path.join(dir, '__test__'));
-    fs.writeFileSync(path.join(dir, 'index.md'), '');
-    fs.writeFileSync(path.join(dir, 'index.ts'), '');
-    fs.writeFileSync(path.join(dir, `${component}.tsx`), '');
-    fs.writeFileSync(path.join(dir, `${component}.type.ts`), '');
   }
 
   // Read all ejs templates under the ./ejs/${module} folder, and read them one by one.
