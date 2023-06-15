@@ -17,5 +17,5 @@ function usePersistFn<T extends (...args: any[]) => any>(fn: T): T {
 
   return persistFn.current!;
 }
-
+export { usePersistFn };
 export default usePersistFn;

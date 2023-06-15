@@ -1,6 +1,6 @@
 import border from '../input/input-border';
 // import TextareaVar from './textarea.var';
-import InputBorderVar from '../input/input-border-var';
+import InputBorderVar from '../input/input-border.var';
 import { colorVar } from '../themes/default';
 import { JsStyles } from '../jss-style';
 

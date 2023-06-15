@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
-import InputBorderVar from './input-border-var';
+import InputBorderVar from './input-border.var';
 import { sizeVar } from '../themes/default';
-import inputBorderVar from './input-border-var';
+import inputBorderVar from './input-border.var';
 
 export default <T extends string>(name: T) => {
   return {

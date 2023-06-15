@@ -1,5 +1,6 @@
 export * from './input';
 export * from './textarea';
+export * from './radio';
 export * from './form';
 export * from './inner-title';
 

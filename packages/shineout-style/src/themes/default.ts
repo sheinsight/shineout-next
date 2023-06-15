@@ -3,6 +3,8 @@ export const va = (name: string, value: string) => {
 };
 export const colorVar = {
   primary: va('primary-color', '#197AFA'),
+  primaryFade50: va('primary-color-fade-50', 'rgba(25,122,250,.5)'),
+  primaryFade0: va('primary-color-fade-0', 'rgba(25,122,250,0)'),
   secondary: va('secondary-color', '#666c7c'),
   success: va('success-color', '#52c41a'),
   info: va('info-color', '#197AFA'),
@@ -11,6 +13,7 @@ export const colorVar = {
   white: '#fff',
   grey100: va('grey-100', '#f4f5f8'),
   grey200: va('grey-200', '#e8ebf0'),
+  grey300: va('grey-300', '#cccfd7'),
   grey500: va('grey-500', '#adb5bd'),
 };
 

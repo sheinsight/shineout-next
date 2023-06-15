@@ -9,4 +9,6 @@ function useLatestObj<T extends ObjectType>(value: T): T {
   });
   return ref.current;
 }
+
+export { useLatestObj };
 export default useLatestObj;

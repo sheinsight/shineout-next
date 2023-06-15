@@ -1,1 +1,1 @@
-export { default } from './use-Input-able';
+export { default, default as UseInputAble } from './use-Input-able';

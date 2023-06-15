@@ -25,5 +25,5 @@ const useKeyEvent = (params: UseKeyEventParams) => {
   });
   return keyEvent;
 };
-
+export { useKeyEvent };
 export default useKeyEvent;

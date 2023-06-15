@@ -30,12 +30,11 @@ export interface InputClasses {
   paddingBox: string;
 }
 
-export interface InputBaseProps extends BaseInputProps, Pick<CommonType, 'status'> {
+export interface InputBaseProps
+  extends BaseInputProps,
+    Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
   jssStyle: InputClasses;
-  className?: string;
-  style?: React.CSSProperties;
   clearIcon?: React.ReactNode;
-  size?: 'small' | 'default' | 'large';
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;

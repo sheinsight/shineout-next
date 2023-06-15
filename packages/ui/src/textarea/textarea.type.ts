@@ -28,11 +28,10 @@ export interface TextareaClasses {
   resize: string;
 }
 
-export interface TextareaBaseProps extends BaseTextareaProps, Pick<CommonType, 'status'> {
+export interface TextareaBaseProps
+  extends BaseTextareaProps,
+    Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
   jssStyle: TextareaClasses;
-  className?: string;
-  style?: React.CSSProperties;
-  size?: 'small' | 'default' | 'large';
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import setRef from './setRef';
 
-export default function useForkRef<Instance>(
+function useForkRef<Instance>(
   ...refs: Array<React.Ref<Instance> | undefined>
 ): React.RefCallback<Instance> | null {
   /**
@@ -23,3 +23,5 @@ export default function useForkRef<Instance>(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, refs);
 }
+export { useForkRef };
+export default useForkRef;
