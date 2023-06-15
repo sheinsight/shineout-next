@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import store, { Menu, Menus } from '../../../store';
+import store, { Menu, Menus, dispatch } from '../../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import useStyles from '../style';
@@ -20,15 +20,15 @@ const MenuComponent = () => {
   const handleChangeDoc = (doc: 'shineout' | 'ui') => {
     const currentDoc = doc === 'shineout' ? 'ui' : 'shineout';
     const nextPath = location.pathname.replace(`/${currentDoc}`, `/${doc}`);
-    store.doc = doc;
+    dispatch.setDoc(doc);
     navigate(nextPath);
   };
 
   useEffect(() => {
     const menus: Menus[] = [];
 
-    // @ts-ignore
-    const files = require.context('../../../../chunk/shineout', false, /\.tsx$/).keys() as string[];
+    const context = require(`chunk/${state.doc}/index.ts`);
+    const files = context.files as string[];
     files.forEach((file) => {
       const menu: Menu = {
         name: '',
@@ -37,7 +37,7 @@ const MenuComponent = () => {
           cn: '',
         },
       };
-      const component = require(`../../../../chunk/shineout/${file.split('/')[1]}`);
+      const component = require(`chunk/${state.doc}/${file}`);
       const group = menus.find((item) => item.group === component.header.group);
       if (!group) {
         menus.push({
@@ -50,7 +50,8 @@ const MenuComponent = () => {
       menu.title = component.title;
       menus.find((item) => item.group === component.header.group)?.components.push(menu);
     });
-    store.menu = menus;
+
+    dispatch.setMenu(menus);
   }, []);
 
   const active = useMemo(() => {

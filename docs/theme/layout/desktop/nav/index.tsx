@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import store from '../../../store';
+import store, { dispatch } from '../../../store';
 import useStyles from '../style';
 
 const Nav = () => {
@@ -34,7 +34,8 @@ const Nav = () => {
 
   const handleChangeLocales = () => {
     const nextLocales = state.locales === 'en' ? 'cn' : 'en';
-    store.locales = nextLocales;
+
+    dispatch.setLocales(nextLocales);
 
     const nextPath = location.pathname.replace(`/${state.locales}/`, `/${nextLocales}/`);
 
@@ -42,7 +43,7 @@ const Nav = () => {
   };
 
   const handleChangeEnv = () => {
-    store.env = state.env === 'SHEIN' ? 'GitHub' : 'SHEIN';
+    dispatch.setEnv(state.env === 'SHEIN' ? 'GitHub' : 'SHEIN');
   };
 
   return (

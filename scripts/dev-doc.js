@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
 const chokidar = require('chokidar');
-// const prettier = require('prettier');
+const prettier = require('prettier');
 
 const { markdownLoader } = require('./utils/markdown-loader');
 
@@ -12,6 +12,7 @@ const styleDir = path.join(__dirname, '../packages', 'shineout-style', 'src');
 const uiDir = path.join(__dirname, '../packages', 'ui', 'src');
 const chunkDir = path.join(__dirname, '../docs', 'chunk');
 const templatePath = path.resolve(__dirname, './doc-page.ejs');
+const templateIndexPath = path.resolve(__dirname, './doc-index.ejs');
 
 function rmrfChunk(directory) {
   try {
@@ -35,7 +36,7 @@ function rmrfChunk(directory) {
 function compile(dirPath = shineoutDir) {
   const pattern = new RegExp(`packages/(.*?)/`, 'i');
   const match = dirPath.match(pattern);
-
+  const options = prettier.resolveConfig.sync(path.join(__dirname, '../.prettierrc.js'));
   if (!match[1]) return;
 
   const chunkModuleName = match[1];
@@ -56,9 +57,14 @@ function compile(dirPath = shineoutDir) {
 
     const template = ejs.compile(fs.readFileSync(templatePath, 'utf-8'));
     const render = template({ ...result, componentDir: dir, source: mdPath, chunkModuleName });
-
-    fs.writeFileSync(`${chunkDir}/${chunkModuleName}/${dir}.tsx`, render);
+    const formatRender = prettier.format(render, { ...options });
+    fs.writeFileSync(`${chunkDir}/${chunkModuleName}/${dir}.tsx`, formatRender);
   });
+  const files = fs.readdirSync(`${chunkDir}/${chunkModuleName}`).map((i) => i.split('.')[0]);
+  const template = ejs.compile(fs.readFileSync(templateIndexPath, 'utf-8'));
+  const render = template({ files });
+  const formatRender = prettier.format(render, { ...options });
+  fs.writeFileSync(`${chunkDir}/${chunkModuleName}/index.ts`, formatRender);
 }
 
 rmrfChunk(chunkDir);
@@ -73,7 +79,7 @@ const watcher = chokidar.watch(watchList);
 watcher.on('change', (filePath) => {
   const pattern = new RegExp(`src/(.*?)/`, 'i');
   const match = filePath.match(pattern);
-  if (!match[1]) return;
+  if (!match?.[1]) return;
   if (filePath.indexOf(shineoutDir) > -1) {
     compile(shineoutDir);
   }

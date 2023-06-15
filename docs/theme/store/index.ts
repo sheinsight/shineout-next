@@ -15,13 +15,15 @@ export interface Menus {
 }
 
 type Doc = 'shineout' | 'ui';
+type Locales = 'cn' | 'en';
+type Env = 'GitHub' | 'SHEIN';
 
 interface State {
   menu: Menus[];
-  locales: 'cn' | 'en';
-  doc: 'shineout' | 'ui';
+  locales: Locales;
+  doc: Doc;
   rtl: boolean;
-  env: 'GitHub' | 'SHEIN';
+  env: Env;
 }
 
 const regex = /(?<=\/\w+\/component\/)\w+/;
@@ -35,5 +37,23 @@ const state: State = {
 };
 
 const proxyState = proxy(state);
+
+export const dispatch = {
+  setMenu: (menu: Menus[]) => {
+    proxyState.menu = menu;
+  },
+  setLocales: (locales: Locales) => {
+    proxyState.locales = locales;
+  },
+  setDoc: (doc: Doc) => {
+    proxyState.doc = doc;
+  },
+  setRtl: (rtl: boolean) => {
+    proxyState.rtl = rtl;
+  },
+  setEnv: (env: Env) => {
+    proxyState.env = env;
+  },
+};
 
 export default proxyState;
