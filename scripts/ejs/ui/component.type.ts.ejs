@@ -1,12 +1,19 @@
-import React from 'react';
-import { CommonType } from '../types/common';
-import { Base<%= Component %>Props } from '@sheinx/hooks';
+// import React from 'react';
+// import { CommonType } from '../types/common';
+// import { Base<%= Component %>Props } from '@sheinx/hooks';
 
 export interface <%= Component %>Classes {
-    //...
+  /**
+   * 最外层class
+   */
+  wrapper: string;
+
+  //...
 }
 
 export interface <%= Component %>BaseProps {
+    jssStyle: <%= Component %>Classes;
+    
     //...
 }
 

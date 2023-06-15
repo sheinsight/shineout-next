@@ -49,20 +49,6 @@ export const examples = [
       .trim(),
     component: require('ui/textarea/__example__/002-disabled.tsx').default,
   },
-  {
-    propName: {
-      cn: '',
-      en: '',
-    },
-    propDescribe: {
-      cn: '',
-      en: '',
-    },
-    code: require('!raw-loader!ui/textarea/__example__/003-status.tsx')
-      .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
-      .trim(),
-    component: require('ui/textarea/__example__/003-status.tsx').default,
-  },
 ];
 
 export default (props) => (

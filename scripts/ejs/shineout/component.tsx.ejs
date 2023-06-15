@@ -2,5 +2,7 @@ import <%= Component %> from './base-<%= component %>';
 import { <%= Component %>Props, Base<%= Component %>Props } from './<%= component %>.type';
 
 export default (props: <%= Component %>Props) => {
-  return <><%= Component %>.tsx</>;
+  const {} = props;
+  
+  return <<%= Component %>></<%= Component %>>;
 };

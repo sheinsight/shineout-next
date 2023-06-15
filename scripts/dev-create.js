@@ -17,13 +17,19 @@ if (!pattern.test(component)) {
 }
 
 const dirs = [
-  { path: path.join(__dirname, '../packages', 'ui', 'src', component), module: 'ui' },
-  { path: path.join(__dirname, '../packages', 'shineout', 'src', component), module: 'shineout' },
+  { path: path.join(__dirname, '../packages', 'ui', 'src'), module: 'ui' },
+  { path: path.join(__dirname, '../packages', 'shineout', 'src'), module: 'shineout' },
   {
-    path: path.join(__dirname, '../packages', 'shineout-style', 'src', component),
+    path: path.join(__dirname, '../packages', 'shineout-style', 'src'),
     module: 'shineout-style',
   },
 ];
+
+const whiteList = {
+  shineout: ['@types', 'hooks', 'index.ts'],
+  'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts'],
+  ui: ['types', 'icons', 'index.ts'],
+};
 
 function mkdir(dir, module) {
   // Create a base directory.
@@ -31,23 +37,18 @@ function mkdir(dir, module) {
   // Create the __example__ directory under the base directory.
   if (module !== 'shineout-style') {
     fs.mkdirSync(path.join(dir, '__example__'));
-    // Create the __test__ directory under the base directory.
     fs.mkdirSync(path.join(dir, '__test__'));
-    // Create the index.md file under the base directory.
     fs.writeFileSync(path.join(dir, 'index.md'), '');
-    // Create the index.ts file under the base directory.
     fs.writeFileSync(path.join(dir, 'index.ts'), '');
-    // Create the ${component}.tsx file under the base directory.
     fs.writeFileSync(path.join(dir, `${component}.tsx`), '');
-    // Create the .type.tsx file under the base directory.
     fs.writeFileSync(path.join(dir, `${component}.type.ts`), '');
   }
 
-  // 读取 ./ejs/`${module}` 文件夹下的所有 ejs 模板，并依次读取
+  // Read all ejs templates under the ./ejs/${module} folder, and read them one by one.
   const templates = fs.readdirSync(path.join(__dirname, `./ejs/${module}`), 'utf-8');
   templates.forEach((template) => {
     const fileName = template.replace('.ejs', '').replace('component', component);
-    // 读取 ejs 模板内容
+    // Read the content of the ejs template.
     const content = ejs.compile(
       fs.readFileSync(path.join(__dirname, `./ejs/${module}`, template), 'utf-8'),
     );
@@ -70,10 +71,19 @@ function mkdir(dir, module) {
 }
 
 dirs.forEach((dir) => {
-  if (!fs.existsSync(dir.path)) {
-    mkdir(dir.path, dir.module);
+  if (!fs.existsSync(`${dir.path}/${component}`)) {
+    mkdir(`${dir.path}/${component}`, dir.module);
   } else {
     // 删除已存在的文件夹
-    fs.rmdirSync(dir.path, { recursive: true });
+    fs.rmdirSync(`${dir.path}/${component}`, { recursive: true });
   }
+
+  const files = fs.readdirSync(dir.path, 'utf-8').filter((i) => !whiteList[dir.module].includes(i));
+  const content = ejs.compile(
+    fs.readFileSync(path.join(__dirname, `./ejs/${dir.module}.index.ts.ejs`), 'utf-8'),
+  );
+  const render = content({
+    files,
+  });
+  fs.writeFileSync(`${dir.path}/index.ts`, render);
 });

@@ -1,0 +1,6 @@
+<% files.forEach(function (file, i) { -%>
+export { default as <%= file %> } from './<%= file %>';
+<% }) -%>
+
+export type { ObjectType } from '@sheinx/hooks';
+export { default as Icons } from './icons';

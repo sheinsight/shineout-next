@@ -1,23 +1,23 @@
 import React from 'react';
 import MarkDown from '../../theme/components/markdown/index.tsx';
 
-const source = require('ui/select/index.md');
+const source = require('ui/radio/index.md');
 
 export const api = [];
 
 export const header = {
-  name: 'Select',
-  group: 'Other',
+  name: '',
+  group: 'Form',
 };
 
 export const title = {
-  cn: 'Select',
-  en: 'Select',
+  cn: '',
+  en: '',
 };
 
 export const describe = {
-  cn: 'Select 描述信息',
-  en: 'Select Describe',
+  cn: '',
+  en: '',
 };
 
 export const examples = [];

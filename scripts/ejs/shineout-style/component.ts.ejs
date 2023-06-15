@@ -1,11 +1,11 @@
-import <%= component %>Var from './<%= component %>.var.ts';
-import { colorVar } from '../themes/default';
+// import <%= component %>Var from './<%= component %>.var';
+// import { colorVar } from '../themes/default';
 import { JsStyles } from '../jss-style';
 
-type <%= component %>Class = '';
+type <%= Component %>Class = '<%= component %>';
 
-const <%= component %>: JsStyles&lt;<%= component %>Class&gt; = {
-
+const <%= Component %>Style: JsStyles<<%= Component %>Class> = {
+    <%= component %>:{}
 }
 
-export default <%= component %>;
+export default <%= Component %>Style;

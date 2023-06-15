@@ -1,1 +1,1 @@
-export const files = ['form', 'input', 'select', 'textarea'];
+export const files = ['form', 'input', 'radio', 'textarea'];
