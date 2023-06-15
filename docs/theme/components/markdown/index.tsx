@@ -10,7 +10,7 @@ const Markdown = (props: MarkdownProps) => {
     <div className={classes.pages}>
       <Title title={title} describe={describe}></Title>
       {examples.map((example, index) => {
-        return <Example key={index} {...example}></Example>;
+        return <Example key={index} {...example} index={index}></Example>;
       })}
     </div>
   );

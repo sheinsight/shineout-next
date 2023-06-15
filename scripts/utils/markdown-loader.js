@@ -4,8 +4,6 @@ const prettier = require('prettier');
 const prettierPath = prettier.resolveConfigFile.sync();
 const exampleReader = require('./example-loader');
 
-const exampleDir = path.join(__dirname, '../../packages', 'shineout', 'src');
-
 const md = require('markdown-it')({
   html: true,
 });
@@ -107,7 +105,7 @@ const describeLoader = (tokens) => {
 };
 
 // 提取 tokens 中的 example 信息
-const exampleLoader = (tokens, component) => {
+const exampleLoader = (tokens, component, module) => {
   const srcRegex = /<code src=".\/([^"]+)">/i;
 
   const examplesToken = tokens.find((token, index) => {
@@ -126,7 +124,7 @@ const exampleLoader = (tokens, component) => {
       })
       .map((example) => {
         const match = example.content.match(srcRegex);
-        const context = fs.readFileSync(path.join(exampleDir, component, match[1]), 'utf8');
+        const context = fs.readFileSync(path.join(module, component, match[1]), 'utf8');
         return exampleReader(context, component, match[1].split('/')?.at(-1));
       });
     return examples;
@@ -135,12 +133,12 @@ const exampleLoader = (tokens, component) => {
   return [];
 };
 
-const markdownLoader = (content, component) => {
+const markdownLoader = (content, component, module) => {
   const tokens = tokenLoader(content);
   const header = headerLoader(tokens);
   const title = titleLoader(tokens);
   const describe = describeLoader(tokens);
-  const examples = exampleLoader(tokens, component);
+  const examples = exampleLoader(tokens, component, module);
   return {
     header,
     title,

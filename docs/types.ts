@@ -13,6 +13,7 @@ export interface Example {
   propDescribe: Local;
   component: React.FC;
   code: string;
+  index: number;
 }
 
 export interface MarkdownProps {

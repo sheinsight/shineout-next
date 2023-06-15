@@ -25,6 +25,7 @@ const webpackConfig = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.md', '.less'],
     alias: {
       shineout: path.resolve(__dirname, '../packages/shineout/src'),
+      ui: path.resolve(__dirname, '../packages/ui/src'),
       store: path.resolve(__dirname, '../docs/theme/store'),
       chunk: path.resolve(__dirname, '../docs/chunk'),
       docs: path.resolve(__dirname, '../docs'),

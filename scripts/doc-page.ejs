@@ -1,7 +1,7 @@
 import React from 'react'
-import MarkDown from '../theme/components/markdown/index.tsx'
+import MarkDown from '../../theme/components/markdown/index.tsx'
 
-const source = require('shineout/<%= componentDir %>/index.md')
+const source = require('<%= chunkModuleName %>/<%= componentDir %>/index.md')
 
 export const api = []
 
@@ -31,8 +31,8 @@ export const examples = [
       cn: '<%= exam.propDescribe.cn %>',
       en: '<%= exam.propDescribe.en %>',
     },
-    code: require('!raw-loader!shineout/<%= componentDir %>/__example__/<%= exam.fileName %>').default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '').trim(),
-    component: require('shineout/<%= componentDir %>/__example__/<%= exam.fileName %>').default,
+    code: require('!raw-loader!<%= chunkModuleName %>/<%= componentDir %>/__example__/<%= exam.fileName %>').default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '').trim(),
+    component: require('<%= chunkModuleName %>/<%= componentDir %>/__example__/<%= exam.fileName %>').default,
   },
 <% }) -%>
 ]

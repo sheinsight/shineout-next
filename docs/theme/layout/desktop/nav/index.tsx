@@ -1,42 +1,49 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import store from '../../../store';
+import store, { dispatch } from '../../../store';
 import useStyles from '../style';
 
 const Nav = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const state = useSnapshot(store);
+  const location = useLocation();
 
   const navs = [
     {
       title: 'Home',
-      path: '/home',
+      path: `/${state.locales}/home`,
     },
     {
       title: 'Design',
-      path: '/design',
+      path: `/${state.locales}/design`,
     },
     {
       title: 'Introduce',
-      path: '/introduce',
+      path: `/${state.locales}/introduce`,
     },
     {
       title: 'Component',
-      path: '/component',
+      path: `/${state.locales}/component/${state.doc}`,
     },
     {
       title: 'Changelog',
-      path: '/changelog',
+      path: `/${state.locales}/changelog`,
     },
   ];
 
   const handleChangeLocales = () => {
-    store.locales = state.locales === 'en' ? 'cn' : 'en';
+    const nextLocales = state.locales === 'en' ? 'cn' : 'en';
+
+    dispatch.setLocales(nextLocales);
+
+    const nextPath = location.pathname.replace(`/${state.locales}/`, `/${nextLocales}/`);
+
+    navigate(nextPath);
   };
 
   const handleChangeEnv = () => {
-    store.env = state.env === 'SHEIN' ? 'GitHub' : 'SHEIN';
+    dispatch.setEnv(state.env === 'SHEIN' ? 'GitHub' : 'SHEIN');
   };
 
   return (

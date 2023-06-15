@@ -11,25 +11,26 @@ import Design from '../../../pages/design';
 import Introduce from '../../../pages/introduce';
 import Component from '../../../pages/component';
 import Changelog from '../../../pages/changelog';
+import Debugger from '../../../pages/debug';
 
 const Desktop = () => {
   const classes = useStyles();
 
   const routes = [
     {
-      path: '/home',
+      path: ':name?/home',
       element: <Home />,
     },
     {
-      path: '/design',
+      path: ':name?/design',
       element: <Design />,
     },
     {
-      path: '/introduce',
+      path: ':name?/introduce',
       element: <Introduce />,
     },
     {
-      path: '/component/:name?',
+      path: ':name?/component/:name?/:name?',
       element: (
         <Component>
           <Menu></Menu>
@@ -40,8 +41,12 @@ const Desktop = () => {
       children: [],
     },
     {
-      path: '/Changelog',
+      path: ':name?/changelog',
       element: <Changelog />,
+    },
+    {
+      path: ':name?/debugger',
+      element: <Debugger />,
     },
   ];
 
