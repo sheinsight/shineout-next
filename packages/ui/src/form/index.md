@@ -1,24 +1,14 @@
 ---
-title: Form
-nav:
-  title: UI
-  order: 0
-group:
-  title: Form
+name: Form
+group: Form
 ---
 
-# Form 表单
+# Title
 
-管理表单数据
+表单 Form
+Form
 
-## Basic Usage
-
-基本用法
+# Example
 
 <code src="./__example__/001-base.tsx"></code>
-
-## vertical
-
-label 在上方
-
 <code src="./__example__/002-vertical.tsx"></code>

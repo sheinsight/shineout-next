@@ -60,7 +60,10 @@ function compile(dirPath = shineoutDir) {
     const formatRender = prettier.format(render, { ...options });
     fs.writeFileSync(`${chunkDir}/${chunkModuleName}/${dir}.tsx`, formatRender);
   });
-  const files = fs.readdirSync(`${chunkDir}/${chunkModuleName}`).map((i) => i.split('.')[0]);
+  const files = fs
+    .readdirSync(`${chunkDir}/${chunkModuleName}`)
+    .map((i) => i.split('.')[0])
+    .filter((i) => i !== 'index');
   const template = ejs.compile(fs.readFileSync(templateIndexPath, 'utf-8'));
   const render = template({ files });
   const formatRender = prettier.format(render, { ...options });
