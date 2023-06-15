@@ -59,7 +59,13 @@ function mkdir(dir, module) {
     }
     // 对非 md 文件做 prettier 格式化
     try {
-      fs.writeFileSync(path.join(dir, fileName), prettier.format(render, { ...options }));
+      fs.writeFileSync(
+        path.join(dir, fileName),
+        prettier.format(render, {
+          filepath: path.join(__dirname, '../.prettierrc.js'),
+          ...options,
+        }),
+      );
     } catch (error) {
       fs.writeFileSync(path.join(dir, fileName), render);
     }
@@ -94,5 +100,11 @@ dirs.forEach((dir) => {
   const render = content({
     files,
   });
-  fs.writeFileSync(`${dir.path}/index.ts`, render);
+  fs.writeFileSync(
+    `${dir.path}/index.ts`,
+    prettier.format(render, {
+      filepath: path.join(__dirname, '../.prettierrc.js'),
+      ...options,
+    }),
+  );
 });

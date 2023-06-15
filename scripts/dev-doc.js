@@ -57,7 +57,10 @@ function compile(dirPath = shineoutDir) {
 
     const template = ejs.compile(fs.readFileSync(templatePath, 'utf-8'));
     const render = template({ ...result, componentDir: dir, source: mdPath, chunkModuleName });
-    const formatRender = prettier.format(render, { ...options });
+    const formatRender = prettier.format(render, {
+      filepath: path.join(__dirname, '../.prettierrc.js'),
+      ...options,
+    });
     fs.writeFileSync(`${chunkDir}/${chunkModuleName}/${dir}.tsx`, formatRender);
   });
   const files = fs
@@ -66,7 +69,10 @@ function compile(dirPath = shineoutDir) {
     .filter((i) => i !== 'index');
   const template = ejs.compile(fs.readFileSync(templateIndexPath, 'utf-8'));
   const render = template({ files });
-  const formatRender = prettier.format(render, { ...options });
+  const formatRender = prettier.format(render, {
+    filepath: path.join(__dirname, '../.prettierrc.js'),
+    ...options,
+  });
   fs.writeFileSync(`${chunkDir}/${chunkModuleName}/index.ts`, formatRender);
 }
 
