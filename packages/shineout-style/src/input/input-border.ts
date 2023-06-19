@@ -1,58 +1,56 @@
 import type { CSSProperties } from 'react';
-import InputBorderVar from './input-border.var';
-import { sizeVar } from '../themes/default';
-import inputBorderVar from './input-border.var';
+import cssVars from '../cssvar';
 
 export default <T extends string>(name: T) => {
   return {
     [name]: {
       boxSizing: 'border-box',
-      borderRadius: InputBorderVar.size.radius.default,
-      background: InputBorderVar.color.background.default,
-      border: `1px solid ${InputBorderVar.color.border.default}`,
-      color: InputBorderVar.color.text.default,
-      lineHeight: sizeVar.lineHeight,
-      fontSize: InputBorderVar.size.fontSize.default,
+      borderRadius: cssVars.inputBorderRadius,
+      background: cssVars.inputBg,
+      border: `1px solid ${cssVars.inputBorderColor}`,
+      color: cssVars.inputTextColor,
+      commonLineHeight: cssVars.commonLineHeight,
+      fontSize: cssVars.fontSize,
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
-        borderColor: InputBorderVar.color.border.focus,
+        borderColor: cssVars.inputBorderFocusColor,
       },
     },
     paddingBox: {
-      padding: `${InputBorderVar.size.paddingY.default} ${InputBorderVar.size.paddingX.default}`,
+      padding: `${cssVars.inputPaddingY} ${cssVars.inputPaddingX}`,
       borderRadius: 'inherit',
     },
     [`${name}Small`]: {
       lineHeight: 1.5,
-      fontSize: InputBorderVar.size.fontSize.small,
+      fontSize: cssVars.fontSizeSmall,
       '& $paddingBox': {
-        padding: `${InputBorderVar.size.paddingY.small} ${InputBorderVar.size.paddingX.small}`,
+        padding: `${cssVars.inputPaddingYSmall} ${cssVars.inputPaddingXSmall}`,
       },
     },
     [`${name}Large`]: {
-      fontSize: InputBorderVar.size.fontSize.large,
+      fontSize: cssVars.fontSizeLarge,
       '& $paddingBox': {
-        padding: `${InputBorderVar.size.paddingY.large} ${InputBorderVar.size.paddingX.large}`,
+        padding: `${cssVars.inputPaddingYLarge} ${cssVars.inputPaddingXLarge}`,
       },
     },
     [`${name}Focus`]: {
-      borderColor: InputBorderVar.color.border.focus,
-      boxShadow: InputBorderVar.boxShadow.focus,
+      borderColor: cssVars.inputBorderFocusColor,
+      boxShadow: `0 0 0 ${cssVars.inputFocusWidth} ${cssVars.inputBorderFocusColorFade25}`,
     } as CSSProperties,
     [`${name}Error`]: {
-      borderColor: InputBorderVar.color.border.error,
+      borderColor: cssVars.inputBorderErrorColor,
       '&:hover': {
-        borderColor: InputBorderVar.color.border.error,
+        borderColor: cssVars.inputBorderErrorColor,
       },
     } as CSSProperties,
     [`${name}Disabled`]: {
-      color: InputBorderVar.color.text.disabled,
-      backgroundColor: InputBorderVar.color.background.disabled,
-      borderColor: InputBorderVar.color.border.disabled,
+      color: cssVars.inputDisabledColor,
+      backgroundColor: cssVars.inputBgDisabled,
+      borderColor: cssVars.inputBorderDisabledColor,
       boxShadow: 'none',
       cursor: 'not-allowed',
       '&:hover': {
-        borderColor: InputBorderVar.color.border.disabled,
+        borderColor: cssVars.inputBorderDisabledColor,
       },
       '& *': {
         cursor: 'not-allowed',
@@ -77,7 +75,7 @@ export default <T extends string>(name: T) => {
         borderRadius: 0,
         boxShadow: 'none',
         backgroundColor: 'transparent',
-        borderColor: inputBorderVar.color.border.default,
+        borderColor: cssVars.inputBorderColor,
         flex: 1,
         minWidth: 0,
       },

@@ -18,9 +18,6 @@ export const title = {
 export const describe = {
   cn: '用户可以在文本框内输入或编辑文字。',
   en: 'Users can input or edit text in the text box.',
-  cn: '单选框 Radio',
-  cn: '用户可以在文本框内输入或编辑文字。',
-  en: 'Users can input or edit text in the text box.',
 };
 
 export const examples = [

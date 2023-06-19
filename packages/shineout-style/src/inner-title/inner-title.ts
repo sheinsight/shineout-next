@@ -1,5 +1,5 @@
 import { JsStyles } from '../jss-style';
-
+import cssvar from '../cssvar';
 type Class =
   | 'wrapper'
   | 'wrapperSmall'
@@ -9,32 +9,17 @@ type Class =
   | 'content'
   | 'place';
 
-const innerTitleVar = {
-  size: {
-    paddingY: {
-      default: '4px',
-      small: '2px',
-      large: '4px',
-    },
-    paddingX: {
-      default: '8px',
-      small: '8px',
-      large: '8px',
-    },
-  },
-};
-
 const innerTitle: JsStyles<Class> = {
   wrapper: {
     width: '100%',
-    padding: `${innerTitleVar.size.paddingY.default} ${innerTitleVar.size.paddingX.default}`,
+    padding: `${cssvar.innerTitlePaddingY} ${cssvar.innerTitlePaddingX}`,
     position: 'relative',
   },
   wrapperSmall: {
-    padding: `${innerTitleVar.size.paddingY.small} ${innerTitleVar.size.paddingX.small}`,
+    padding: `${cssvar.innerTitlePaddingYSmall} ${cssvar.innerTitlePaddingXSmall}`,
   },
   wrapperLarge: {
-    padding: `${innerTitleVar.size.paddingY.large} ${innerTitleVar.size.paddingX.large}`,
+    padding: `${cssvar.innerTitlePaddingYLarge} ${cssvar.innerTitlePaddingXLarge}`,
     '& $content  > input, & $content > div, & $title': {
       lineHeight: '1.5',
     },
@@ -57,8 +42,14 @@ const innerTitle: JsStyles<Class> = {
     left: '0',
     width: '100%',
     '$wrapperOpen &': {
-      top: innerTitleVar.size.paddingY.default,
+      top: cssvar.innerTitlePaddingY,
       transform: 'translateY(0%)',
+    },
+    '$wrapperSmall$wrapperOpen &': {
+      top: cssvar.innerTitlePaddingYSmall,
+    },
+    '$wrapperLarge$wrapperOpen &': {
+      top: cssvar.innerTitlePaddingYLarge,
     },
   },
   content: {

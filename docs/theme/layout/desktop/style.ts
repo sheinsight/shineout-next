@@ -56,12 +56,12 @@ export default createUseStyles({
     '& .group': {
       height: 40,
       padding: '0 20px',
-      lineHeight: '40px',
+      commonLineHeight: '40px',
     },
     '& .doc': {
       height: 40,
       padding: '0 20px',
-      lineHeight: '40px',
+      commonLineHeight: '40px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -86,7 +86,7 @@ export default createUseStyles({
       color: '#333333',
       '& li': {
         height: 36,
-        lineHeight: '36px',
+        commonLineHeight: '36px',
         padding: '0 20px',
         cursor: 'pointer',
         '&.active': {
@@ -121,7 +121,7 @@ export default createUseStyles({
       color: '#000000',
       textDecoration: 'none',
       height: 24,
-      lineHeight: '24px',
+      commonLineHeight: '24px',
       fontSize: 12,
       cursor: 'pointer',
       padding: '0 10px',

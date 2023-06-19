@@ -1,6 +1,5 @@
-import { colorVar } from '../themes/default';
+import cssVars from '../cssvar';
 import { JsStyles } from '../jss-style';
-import RadioVar from './radio.var';
 
 /*
 groupBlock]: block,
@@ -29,17 +28,17 @@ type RadioClass =
 const radioStyle: JsStyles<RadioClass> = {
   '@keyframes so-checkinput-focus': {
     '0%': {
-      boxShadow: `0 0 0 0 ${colorVar.primaryFade50}`,
+      boxShadow: `0 0 0 0 ${cssVars.primaryColorFade50}`,
     },
     '50%': {
-      boxShadow: `0 0 0 4px ${colorVar.primaryFade0}`,
+      boxShadow: `0 0 0 4px ${cssVars.primaryColorFade0}`,
     },
     '100%': {
-      boxShadow: `0 0 0 8px ${colorVar.primaryFade0}`,
+      boxShadow: `0 0 0 8px ${cssVars.primaryColorFade0}`,
     },
   },
   wrapper: {
-    color: RadioVar.color,
+    color: cssVars.checkinputColor,
     display: 'inline-block',
     position: 'relative',
     marginRight: '10px',
@@ -55,28 +54,26 @@ const radioStyle: JsStyles<RadioClass> = {
   },
   indicator: {
     boxSizing: 'border-box',
-    width: RadioVar.size,
-    height: RadioVar.size,
+    width: cssVars.radioWidth,
+    height: cssVars.radioWidth,
     borderRadius: '50%',
     borderStyle: 'solid',
-    borderWidth: RadioVar.borderWidthUnChecked,
-    borderColor: RadioVar.borderColor,
-    backgroundColor: RadioVar.backgroundColor,
+    borderWidth: cssVars.radioBorderUncheckWidth,
+    borderColor: cssVars.checkboxBorderColor,
+    backgroundColor: cssVars.white,
     display: 'inline-flex',
     verticalAlign: 'middle',
     '$wrapperChecked &': {
-      borderColor: colorVar.primary,
-      borderWidth: RadioVar.borderWidthChecked,
-      boxShadow: `0 0 0 0 ${colorVar.primaryFade50}`,
+      borderColor: cssVars.primaryColor,
+      borderWidth: cssVars.radioWidth,
+      boxShadow: `0 0 0 0 ${cssVars.primaryColorFade50}`,
       animation: '$so-checkinput-focus .6s ease-out',
     },
     '$wrapperDisabled &': {
-      borderColor: RadioVar.borderColor,
-      backgroundColor: RadioVar.backgroundColorDisabled,
+      backgroundColor: cssVars.checkboxDisabledBgc,
     },
     '$wrapperDisabled$wrapperChecked &': {
-      borderColor: RadioVar.borderColor,
-      backgroundColor: '#fff',
+      backgroundColor: cssVars.white,
     },
   },
   desc: {

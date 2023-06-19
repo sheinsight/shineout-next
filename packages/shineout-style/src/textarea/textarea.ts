@@ -1,7 +1,5 @@
 import border from '../input/input-border';
-// import TextareaVar from './textarea.var';
-import InputBorderVar from '../input/input-border.var';
-import { colorVar } from '../themes/default';
+import cssVars from '../cssvar';
 import { JsStyles } from '../jss-style';
 
 const inputBorder = border('wrapper');
@@ -64,9 +62,9 @@ const input: JsStyles<InputClass> = {
     animation: 'so-input-fade .16s ease-in',
     maxWidth: '400px',
     padding: '5px 8px',
-    background: colorVar.grey100,
-    borderRadius: InputBorderVar.size.radius.default,
-    boxShadow: `0 0 0 1px ${InputBorderVar.color.border.default}`,
+    background: cssVars.grey100,
+    borderRadius: cssVars.inputBorderRadius,
+    boxShadow: `0 0 0 1px ${cssVars.inputBorderColor}`,
     fontSize: '12px',
     color: '#1261d4',
     '&::before': {
@@ -77,7 +75,7 @@ const input: JsStyles<InputClass> = {
       transform: 'rotate(45deg) translateY(3px)',
       width: '6px',
       height: '6px',
-      border: `1px solid ${InputBorderVar.color.border.default}`,
+      border: `1px solid ${cssVars.inputBorderColor}`,
       borderWidth: '1px 0 0 1px',
       background: 'inherit',
       content: "'  '",
@@ -85,7 +83,7 @@ const input: JsStyles<InputClass> = {
   },
   infoError: {
     boxShadow: '0 0 0 1px rgba(255,77,80,.1), 0 2px 8px rgba(0,0,0,.15)',
-    color: colorVar.danger,
+    color: cssVars.dangerColor,
     '&::before': {
       borderColor: 'rgba(255,77,80,.1);',
     },

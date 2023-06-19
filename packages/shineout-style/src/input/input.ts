@@ -1,7 +1,5 @@
 import border from './input-border';
-import inputVar from './input.var';
-import InputBorderVar from './input-border.var';
-import { colorVar } from '../themes/default';
+import cssVars from '../cssvar';
 
 import { JsStyles } from '../jss-style';
 
@@ -48,19 +46,19 @@ const groupSpace = (gap: string) => ({
     padding: `0 ${gap}`,
     display: 'flex',
     alignItems: 'center',
-    border: `1px solid ${InputBorderVar.color.border.default}`,
+    border: `1px solid ${cssVars.inputBorderColor}`,
     borderWidth: '0 1px',
-    background: colorVar.grey200,
+    background: cssVars.grey200,
     fontWeight: 'normal',
     '&:first-child': {
-      borderTopLeftRadius: InputBorderVar.size.radius.default,
-      borderBottomLeftRadius: InputBorderVar.size.radius.default,
+      borderTopLeftRadius: cssVars.inputBorderRadius,
+      borderBottomLeftRadius: cssVars.inputBorderRadius,
       borderLeftColor: 'inherit',
       marginLeft: '-1px',
     },
     '&:last-child': {
-      borderTopRightRadius: InputBorderVar.size.radius.default,
-      borderBottomRightRadius: InputBorderVar.size.radius.default,
+      borderTopRightRadius: cssVars.inputBorderRadius,
+      borderBottomRightRadius: cssVars.inputBorderRadius,
       borderRightColor: 'inherit',
       marginRight: '-1px',
     },
@@ -95,7 +93,7 @@ const input: JsStyles<InputClass> = {
   },
   clearWrapper: {
     position: 'relative',
-    flexBasis: `calc(${inputVar.clearSize} + 2px)`,
+    flexBasis: `calc(${cssVars.inputClearSize} + 2px)`,
     flexShrink: 0,
     display: 'none',
     '$wrapper:hover &, $wrapperFocus &': {
@@ -105,24 +103,24 @@ const input: JsStyles<InputClass> = {
 
   clear: {
     position: 'absolute',
-    right: InputBorderVar.size.paddingX.default,
+    right: cssVars.inputPaddingX,
     top: '0',
     bottom: '0',
     margin: 'auto',
-    width: inputVar.clearSize,
-    height: inputVar.clearSize,
+    width: cssVars.inputClearSize,
+    height: cssVars.inputClearSize,
     boxSizing: 'border-box',
     display: 'flex',
     cursor: 'pointer',
-    color: inputVar.clearColor,
+    color: cssVars.inputClearBgColor,
     '&:hover svg': {
-      color: inputVar.clearColorHover,
+      color: cssVars.inputClearBgHoverColor,
     },
     '$wrapperSmall &': {
-      right: InputBorderVar.size.paddingX.small,
+      right: cssVars.inputPaddingXSmall,
     },
     '$wrapperLarge &': {
-      right: InputBorderVar.size.paddingX.large,
+      right: cssVars.inputPaddingXLarge,
     },
   },
   // todo button select cascader datepicker 等组件的样式覆盖问题
@@ -132,15 +130,15 @@ const input: JsStyles<InputClass> = {
     boxSizing: 'border-box',
     alignItems: 'stretch',
     padding: '0',
-    ...groupSpace(InputBorderVar.size.paddingX.default),
+    ...groupSpace(cssVars.inputPaddingX),
   },
   groupSmall: {
     ...groupSmall,
-    ...groupSpace(InputBorderVar.size.paddingX.small),
+    ...groupSpace(cssVars.inputPaddingXSmall),
   },
   groupLarge: {
     ...groupLarge,
-    ...groupSpace(InputBorderVar.size.paddingX.large),
+    ...groupSpace(cssVars.inputPaddingXLarge),
   },
   ...resetGroup,
   numberStep: {
@@ -155,14 +153,14 @@ const input: JsStyles<InputClass> = {
       boxSizing: 'border-box',
       width: '18px',
       padding: '0 4px',
-      borderLeft: `1px solid ${colorVar.grey200}`,
+      borderLeft: `1px solid ${cssVars.grey200}`,
       lineHeight: '1',
-      color: colorVar.grey500,
+      color: cssVars.grey500,
       '&:hover': {
-        color: colorVar.primary,
+        color: cssVars.primaryColor,
       },
       '&:first-child': {
-        borderBottom: `1px solid ${colorVar.grey200}`,
+        borderBottom: `1px solid ${cssVars.grey200}`,
       },
       '& svg': {
         transform: 'rotate(-90deg)',
@@ -178,9 +176,9 @@ const input: JsStyles<InputClass> = {
     animation: 'so-input-fade .16s ease-in',
     maxWidth: '400px',
     padding: '5px 8px',
-    background: colorVar.grey100,
-    borderRadius: InputBorderVar.size.radius.default,
-    boxShadow: `0 0 0 1px ${InputBorderVar.color.border.default}`,
+    background: cssVars.grey100,
+    borderRadius: cssVars.inputBorderRadius,
+    boxShadow: `0 0 0 1px ${cssVars.inputBorderColor}`,
     fontSize: '12px',
     color: '#1261d4',
     '&::before': {
@@ -191,7 +189,7 @@ const input: JsStyles<InputClass> = {
       transform: 'rotate(45deg) translateY(3px)',
       width: '6px',
       height: '6px',
-      border: `1px solid ${InputBorderVar.color.border.default}`,
+      border: `1px solid ${cssVars.inputBorderColor}`,
       borderWidth: '1px 0 0 1px',
       background: 'inherit',
       content: "'  '",
@@ -199,7 +197,7 @@ const input: JsStyles<InputClass> = {
   },
   infoError: {
     boxShadow: '0 0 0 1px rgba(255,77,80,.1), 0 2px 8px rgba(0,0,0,.15)',
-    color: colorVar.danger,
+    color: cssVars.dangerColor,
     '&::before': {
       borderColor: 'rgba(255,77,80,.1);',
     },

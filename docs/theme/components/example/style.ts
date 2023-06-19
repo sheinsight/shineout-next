@@ -52,7 +52,7 @@ export default createUseStyles({
       left: 20,
       display: 'inline-block',
       height: 14,
-      lineHeight: '14px',
+      commonLineHeight: '14px',
       background: '#ffffff',
       padding: '0 10px',
       color: 'rgb(134 142 152)',

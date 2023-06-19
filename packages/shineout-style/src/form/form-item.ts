@@ -1,4 +1,4 @@
-import { colorVar } from '../themes/default';
+import cssVars from '../cssvar';
 
 import { JsStyles } from '../jss-style';
 
@@ -17,17 +17,13 @@ type FormItemClass =
   | 'error'
   | 'tip';
 
-const ItemGap = '22px';
-
 const formItemStyle: JsStyles<FormItemClass> = {
   wrapper: {
     display: 'flex',
     alignItems: 'flex-start',
-    marginBottom: ItemGap,
+    marginBottom: cssVars.formItemMarginBottom,
   },
-  wrapperTip: {
-    marginBottom: '0',
-  },
+  wrapperTip: {},
   label: {
     width: '140px',
     padding: '5px 6px',
@@ -58,27 +54,32 @@ const formItemStyle: JsStyles<FormItemClass> = {
   wrapperRequired: {
     '& $label::before': {
       marginRight: '4px',
-      color: colorVar.danger,
+      color: cssVars.dangerColor,
       content: '"*"',
       fontFamily: 'SimSun',
     },
   },
-  wrapperKeepHeight: {},
+  wrapperKeepHeight: {
+    marginBottom: cssVars.formItemTipGap,
+    '&$wrapperTip': {
+      marginBottom: '0',
+    },
+  },
   control: {
     minWidth: '0',
     padding: '0 6px',
     flex: '1',
     fontSize: '14px',
-    lineHeight: '1.42857143',
+    lineHeight: cssVars.commonLineHeight,
   },
   error: {
-    color: colorVar.danger,
-    minHeight: ItemGap,
+    color: cssVars.dangerColor,
+    minHeight: cssVars.formItemTipGap,
     fontSize: '14px',
   },
   tip: {
     color: '#999da8',
-    minHeight: ItemGap,
+    minHeight: cssVars.formItemTipGap,
     fontSize: '14px',
   },
 };
