@@ -7,10 +7,10 @@
   "types": "dist/index.d.ts",
   "packageManager": "pnpm@8.2.0",
   "scripts": {
-    "dev": "dumi dev",
+    "dev:dumi": "dumi dev",
     "start": "npm run dev",
     "clean:cache": "node ./scripts/cleanCache.js",
-    "dev:shineout": "cross-env NODE_ENV=development CASE_ENV=test  node ./webpack/config.dev.ts",
+    "dev": "cross-env NODE_ENV=development CASE_ENV=test  node ./webpack/config.dev.ts",
     "dev:create": "cross-env NODE_ENV=development CASE_ENV=test  node ./scripts/dev-create.js",
     "build:md": "cross-env NODE_ENV=development CASE_ENV=test node ./scripts/dev-doc.js",
     "build": "pnpm --filter=./packages/* run build",
