@@ -1,18 +1,18 @@
 import React from 'react';
 import MarkDown from '../../theme/components/markdown/index.tsx';
 
-const source = require('ui/textarea/index.md');
+const source = require('ui/radio/index.md');
 
 export const api = [];
 
 export const header = {
-  name: '',
+  name: 'Radio',
   group: 'Form',
 };
 
 export const title = {
-  cn: '多行文本框 Textarea',
-  en: 'Textarea',
+  cn: '单选框 Radio',
+  en: 'Radio',
 };
 
 export const describe = {
@@ -30,10 +30,10 @@ export const examples = [
       cn: '',
       en: '',
     },
-    code: require('!raw-loader!ui/textarea/__example__/001-base.tsx')
+    code: require('!raw-loader!ui/radio/__example__/001-base.tsx')
       .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
       .trim(),
-    component: require('ui/textarea/__example__/001-base.tsx').default,
+    component: require('ui/radio/__example__/001-base.tsx').default,
   },
   {
     propName: {
@@ -44,10 +44,10 @@ export const examples = [
       cn: '',
       en: '',
     },
-    code: require('!raw-loader!ui/textarea/__example__/002-disabled.tsx')
+    code: require('!raw-loader!ui/radio/__example__/002-disabled.tsx')
       .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
       .trim(),
-    component: require('ui/textarea/__example__/002-disabled.tsx').default,
+    component: require('ui/radio/__example__/002-disabled.tsx').default,
   },
 ];
 

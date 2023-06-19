@@ -7,9 +7,9 @@ import React from 'react';
 import { HandlerType, ObjectType } from '../../common/type';
 import { extractEventHandlers } from '../../utils';
 import useForkRef from '../../common/use-fork-ref';
-import { UseRadioProps } from './use-radio.type';
+import { BaseRadioProps } from './use-radio.type';
 
-const useRadio = (props: UseRadioProps) => {
+const useRadio = (props: BaseRadioProps) => {
   const { checked, defaultChecked, onChange, disabled, inputRef: inputRefPo } = props;
   const [checkedState, setCheckedState] = React.useState<boolean>(defaultChecked || false);
 
@@ -69,7 +69,7 @@ const useRadio = (props: UseRadioProps) => {
   const getIndicatorProps = <TOther extends ObjectType>(externalProps: TOther = {} as TOther) => {
     return {
       ...externalProps,
-      tabIndex: 1,
+      tabIndex: disabled ? -1 : 1,
     };
   };
 

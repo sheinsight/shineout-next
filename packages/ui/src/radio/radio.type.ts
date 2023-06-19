@@ -24,7 +24,7 @@ export interface RadioClasses {
 
 export interface RadioBaseProps
   extends BaseRadioProps,
-    Pick<CommonType, 'status' | 'size' | 'style' | 'className'> {
+    Pick<CommonType, 'status' | 'style' | 'className'> {
   jssStyle: RadioClasses;
   children?: React.ReactNode;
 }

@@ -1,39 +1,39 @@
 import React from 'react';
 import MarkDown from '../../theme/components/markdown/index.tsx';
 
-const source = require('ui/textarea/index.md');
+const source = require('shineout/radio/index.md');
 
 export const api = [];
 
 export const header = {
-  name: '',
+  name: 'Radio',
   group: 'Form',
 };
 
 export const title = {
-  cn: '多行文本框 Textarea',
-  en: 'Textarea',
+  cn: '单选框 Radio',
+  en: 'Radio',
 };
 
 export const describe = {
-  cn: '用户可以在文本框内输入或编辑文字。',
-  en: 'Users can input or edit text in the text box.',
+  cn: '描述中文---',
+  en: '描述英文---',
 };
 
 export const examples = [
   {
     propName: {
-      cn: '',
-      en: '',
+      cn: '基本用法',
+      en: 'Base',
     },
     propDescribe: {
-      cn: '',
-      en: '',
+      cn: '基础 radio 用法',
+      en: 'Base radio',
     },
-    code: require('!raw-loader!ui/textarea/__example__/001-base.tsx')
+    code: require('!raw-loader!shineout/radio/__example__/001-base.tsx')
       .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
       .trim(),
-    component: require('ui/textarea/__example__/001-base.tsx').default,
+    component: require('shineout/radio/__example__/001-base.tsx').default,
   },
   {
     propName: {
@@ -41,13 +41,13 @@ export const examples = [
       en: '',
     },
     propDescribe: {
-      cn: '',
-      en: '',
+      cn: '将一组 Radio 放在 Radio.Group 中，以 React 组件方式调用。',
+      en: 'A series of radios group by Radio.Group.',
     },
-    code: require('!raw-loader!ui/textarea/__example__/002-disabled.tsx')
+    code: require('!raw-loader!shineout/radio/__example__/002-group.tsx')
       .default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '')
       .trim(),
-    component: require('ui/textarea/__example__/002-disabled.tsx').default,
+    component: require('shineout/radio/__example__/002-group.tsx').default,
   },
 ];
 

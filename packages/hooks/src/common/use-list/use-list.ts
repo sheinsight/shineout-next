@@ -1,4 +1,4 @@
-import { isObject } from '../../utils';
+import { isArray, isObject } from '../../utils';
 import React from 'react';
 
 import { UnMatchedData, UseListProps } from './use-list.type';
@@ -8,6 +8,7 @@ const isUnMatchedData = (data: any): data is UnMatchedData => {
 };
 
 const useList = <ValueItem = any, DataItem = any>(props: UseListProps) => {
+  const valueArr = props.value || ([] as ValueItem[]);
   const { current: context } = React.useRef({
     lastValue: [] as ValueItem[],
     valueMap: new Map<ValueItem, boolean>(),
@@ -38,41 +39,46 @@ const useList = <ValueItem = any, DataItem = any>(props: UseListProps) => {
   };
 
   const getValueMap = () => {
-    if (props.value === context.lastValue) return context.valueMap;
+    if (valueArr === context.lastValue) return context.valueMap;
     const map = new Map<ValueItem, boolean>();
-    for (let i = 0; i < props.value.length; i++) {
-      const item = props.value[i];
+    for (let i = 0; i < valueArr.length; i++) {
+      const item = valueArr[i];
       map.set(item, true);
     }
     context.valueMap = map;
-    context.lastValue = props.value;
+    context.lastValue = valueArr;
     return map;
   };
 
-  const add = (data: DataItem[], config: { unshift?: boolean; overwrite?: boolean } = {}) => {
+  const add = (
+    data: DataItem[] | DataItem,
+    config: { unshift?: boolean; overwrite?: boolean } = {},
+  ) => {
     if (data === null || data === undefined) return;
 
     const values = [];
-    for (let i = 0; i < data.length; i++) {
-      if (!disabledCheck(data[i])) {
-        values.push(formatData(data[i]));
+    const raws = isArray(data) ? data : [data];
+    for (let i = 0; i < raws.length; i++) {
+      if (!disabledCheck(raws[i])) {
+        values.push(formatData(raws[i]));
       }
     }
-    const before = config.overwrite ? [] : props.value;
+    const before = config.overwrite ? [] : valueArr || [];
     if (values.length) {
       const newValue = config.unshift ? values.concat(before) : before.concat(values);
-      props.onChange(newValue);
+      props.onChange(newValue, data, true);
     }
   };
 
   // 删除数据
-  const remove = (data: (DataItem | UnMatchedData)[]) => {
+  const remove = (data: (DataItem | UnMatchedData) | (DataItem | UnMatchedData)[]) => {
     if (data === null || data === undefined) return;
     const values = [];
+    const raws = isArray(data) ? data : [data];
     if (!props.prediction) {
       const rowValueMap = new Map();
-      for (let i = 0; i < data.length; i++) {
-        const item = data[i];
+      for (let i = 0; i < raws.length; i++) {
+        const item = raws[i];
         if (isUnMatchedData(item)) {
           rowValueMap.set(item.value, true);
         } else {
@@ -82,16 +88,16 @@ const useList = <ValueItem = any, DataItem = any>(props: UseListProps) => {
           rowValueMap.set(formatData(item), true);
         }
       }
-      for (let i = 0; i < props.value.length; i++) {
-        const val = props.value[i];
+
+      for (let i = 0; i < valueArr.length; i++) {
+        const val = valueArr[i];
         if (!rowValueMap.get(val)) {
           values.push(val);
         }
       }
     } else {
-      const raws = [...data];
       const { prediction } = props;
-      outer: for (const val of props.value) {
+      outer: for (const val of valueArr) {
         for (let j = 0; j < raws.length; j++) {
           const item = raws[j];
           const isSame = isUnMatchedData(item)
@@ -105,12 +111,12 @@ const useList = <ValueItem = any, DataItem = any>(props: UseListProps) => {
         values.push(val);
       }
     }
-    props.onChange(values);
+    props.onChange(values, data, false);
   };
   const check = (raw: DataItem) => {
     if (props.prediction) {
-      for (let i = 0, count = props.value.length; i < count; i++) {
-        if (props.prediction(props.value[i], raw)) return true;
+      for (let i = 0, count = valueArr.length; i < count; i++) {
+        if (props.prediction(valueArr[i], raw)) return true;
       }
       return false;
     }
@@ -156,6 +162,7 @@ const useList = <ValueItem = any, DataItem = any>(props: UseListProps) => {
     check,
     getDataByValues,
     isUnMatchedData,
+    disabledCheck,
   };
 };
 

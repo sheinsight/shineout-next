@@ -4,7 +4,7 @@ import React from 'react';
 import { RadioProps } from './radio.type';
 
 const Textarea = (props: RadioProps) => {
-  const { jssStyle, className, style, status, size, children, ...rest } = props;
+  const { jssStyle, className, style, status, children, ...rest } = props;
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useRadio({
     ...rest,
   });
@@ -14,8 +14,6 @@ const Textarea = (props: RadioProps) => {
     {
       [jssStyle.wrapperDisabled]: disabled,
       [jssStyle.wrapperError]: status === 'error',
-      [jssStyle.wrapperSmall]: size === 'small',
-      [jssStyle.wrapperLarge]: size === 'large',
       [jssStyle.wrapperChecked]: checked,
     },
   ]);

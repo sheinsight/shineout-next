@@ -2,6 +2,13 @@ import { colorVar } from '../themes/default';
 import { JsStyles } from '../jss-style';
 import RadioVar from './radio.var';
 
+/*
+groupBlock]: block,
+    [jssStyle.groupButton]: button,
+    [jssStyle.groupOutline]: button === 'outline',
+    [jssStyle.groupSmall]: button && size === 'small',
+    [jssStyle.groupLarge]: button && size === 'large',
+ */
 type RadioClass =
   | 'wrapper'
   | 'wrapperSmall'
@@ -11,7 +18,13 @@ type RadioClass =
   | 'wrapperChecked'
   | 'indicator'
   | '@keyframes so-checkinput-focus'
-  | 'desc';
+  | 'desc'
+  | 'group'
+  | 'groupBlock'
+  | 'groupButton'
+  | 'groupOutline'
+  | 'groupSmall'
+  | 'groupLarge';
 
 const radioStyle: JsStyles<RadioClass> = {
   '@keyframes so-checkinput-focus': {
@@ -70,6 +83,14 @@ const radioStyle: JsStyles<RadioClass> = {
     verticalAlign: 'middle',
     padding: '0 8px',
   },
+  group: {
+    padding: '5px 0',
+  },
+  groupBlock: {},
+  groupButton: {},
+  groupOutline: {},
+  groupSmall: {},
+  groupLarge: {},
 };
 
 export default radioStyle;
