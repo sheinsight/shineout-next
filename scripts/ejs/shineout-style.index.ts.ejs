@@ -1,0 +1,8 @@
+<% files.forEach(function (file, i) { -%>
+export * from './<%= file %>';
+<% }) -%>
+
+export { styled, StyleProvider } from './jss-style';
+export * as mixins from './mixin';
+
+export default {};

@@ -8,6 +8,7 @@ import Open from './open';
 import Codesandbox from './codesandbox';
 import { Example as ExampleProps } from 'docs/types';
 import useStyles from './style';
+import { StyleProvider } from '@sheinx/shineout-style';
 
 const Example = (props: ExampleProps) => {
   const classes = useStyles();
@@ -38,7 +39,9 @@ const Example = (props: ExampleProps) => {
       </div>
       <div className='demo'>
         {/* <span className='prop'>{prop}</span> */}
-        <Example></Example>
+        <StyleProvider>
+          <Example></Example>
+        </StyleProvider>
       </div>
       <div className='action'>
         <Open onClick={handleOpen}></Open>
