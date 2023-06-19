@@ -65,7 +65,7 @@ const radioStyle: JsStyles<RadioClass> = {
     verticalAlign: 'middle',
     '$wrapperChecked &': {
       borderColor: cssVars.primaryColor,
-      borderWidth: cssVars.radioWidth,
+      borderWidth: cssVars.radioBorderWidth,
       boxShadow: `0 0 0 0 ${cssVars.primaryColorFade50}`,
       animation: '$so-checkinput-focus .6s ease-out',
     },

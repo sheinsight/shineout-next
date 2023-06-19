@@ -9,7 +9,7 @@ export default <T extends string>(name: T) => {
       background: cssVars.inputBg,
       border: `1px solid ${cssVars.inputBorderColor}`,
       color: cssVars.inputTextColor,
-      commonLineHeight: cssVars.commonLineHeight,
+      lineHeight: cssVars.commonLineHeight,
       fontSize: cssVars.fontSize,
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
