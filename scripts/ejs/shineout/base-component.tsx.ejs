@@ -1,11 +1,11 @@
-import { <%= Component %> } from '@sheinx/ui';
+import { <%= Component %> } from '@sheinx/base';
 import { use<%= Component %>Style } from '@sheinx/shineout-style';
 import { Base<%= Component %>Props } from './<%= component %>.type';
 
 export default (props: Base<%= Component %>Props) => {
     const {} = props;
     const jssStyle = use<%= Component %>Style();
-    
+
     return (
         <<%= Component %>
         jssStyle={jssStyle}

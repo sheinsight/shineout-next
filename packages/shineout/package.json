@@ -17,7 +17,7 @@
   "dependencies": {
     "@sheinx/shineout-style": "workspace:*",
     "@sheinx/hooks": "workspace:*",
-    "@sheinx/ui": "workspace:*",
+    "@sheinx/base": "workspace:*",
     "classnames": "^2.3.2",
     "immer": "10.0.2"
   },

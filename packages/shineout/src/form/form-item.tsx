@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from '@sheinx/ui';
+import { Form } from '@sheinx/base';
 import { useFormItemStyle } from '@sheinx/shineout-style';
 import { FormItemProps } from './form.type';
 

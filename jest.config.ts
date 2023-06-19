@@ -140,7 +140,7 @@ export default {
     {
       ...createTesterConfig('ui'),
       moduleNameMapper: {
-        '^@sheinx/ui(.*)': '<rootDir>/packages/ui/src/$1',
+        '^@sheinx/base(.*)': '<rootDir>/packages/base/src/$1',
       },
     },
     {

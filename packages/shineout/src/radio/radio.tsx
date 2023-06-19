@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio as UiRadio } from '@sheinx/ui';
+import { Radio as UiRadio } from '@sheinx/base';
 import { useRadioStyle } from '@sheinx/shineout-style';
 import { usePersistFn } from '@sheinx/hooks';
 import { RadioProps } from './radio.type';

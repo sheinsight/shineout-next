@@ -3,7 +3,7 @@ import { usePersistFn } from '@sheinx/hooks';
 import { useInnerTitleStyle } from '@sheinx/shineout-style';
 import classNames from 'classnames';
 
-import { InputProps as UiInputProps } from '@sheinx/ui';
+import { InputProps as UiInputProps } from '@sheinx/base';
 
 interface InnerTitleProps {
   innerTitle?: React.ReactNode;

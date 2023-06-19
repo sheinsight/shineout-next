@@ -15,12 +15,12 @@ export default defineConfig({
   autoAlias: false,
   resolve: {
     atomDirs: [
-      { type: 'ui', dir: 'packages/ui/src' },
+      { type: 'ui', dir: 'packages/base/src' },
       { type: 'shineout', dir: 'packages/shineout/src' },
     ],
   },
   alias: {
-    '@sheinx/ui': path.resolve(__dirname, 'packages/ui/src'),
+    '@sheinx/base': path.resolve(__dirname, 'packages/base/src'),
     shineout: path.resolve(__dirname, 'packages/shineout/src'),
   },
 });

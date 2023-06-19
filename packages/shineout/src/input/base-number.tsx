@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Icons } from '@sheinx/ui';
+import { Input, Icons } from '@sheinx/base';
 import { useInputStyle } from '@sheinx/shineout-style';
 import { useInputNumber, util, usePersistFn } from '@sheinx/hooks';
 

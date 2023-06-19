@@ -1,5 +1,5 @@
 import { InputNumberProps as NumberProps } from '@sheinx/hooks';
-import { InputProps as UiInputProps } from '@sheinx/ui';
+import { InputProps as UiInputProps } from '@sheinx/base';
 import { GetCommonProps } from './input.type';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 

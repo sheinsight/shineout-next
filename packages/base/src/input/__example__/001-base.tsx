@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Input } from '@sheinx/ui';
+import { Input } from '@sheinx/base';
 import { useInputStyle } from '@sheinx/shineout-style';
 export default () => {
   const jssStyle = useInputStyle();

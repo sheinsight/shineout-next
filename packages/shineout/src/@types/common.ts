@@ -1,4 +1,4 @@
-import { FormFieldProps } from '@sheinx/ui';
+import { FormFieldProps } from '@sheinx/base';
 import React from 'react';
 
 export interface ExtendsFieldProps<T>

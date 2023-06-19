@@ -1,4 +1,4 @@
-import { Textarea } from '@sheinx/ui';
+import { Textarea } from '@sheinx/base';
 import { useTextareaStyle } from '@sheinx/shineout-style';
 import { useInputAble, useTextareaFormat, util } from '@sheinx/hooks';
 import { BaseTextareaProps } from './textarea.type';

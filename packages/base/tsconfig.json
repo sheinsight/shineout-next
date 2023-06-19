@@ -4,7 +4,7 @@
     "declaration": true,
     "baseUrl": "./",
     "paths": {
-      "@sheinx/ui": ["./src/index"]
+      "@sheinx/base": ["./src/index"]
     }
   },
   "include": ["src"]

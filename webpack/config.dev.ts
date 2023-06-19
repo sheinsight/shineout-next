@@ -25,11 +25,11 @@ const webpackConfig = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.md', '.less'],
     alias: {
       shineout: path.resolve(__dirname, '../packages/shineout/src'),
-      ui: path.resolve(__dirname, '../packages/ui/src'),
+      base: path.resolve(__dirname, '../packages/base/src'),
       store: path.resolve(__dirname, '../docs/theme/store'),
       chunk: path.resolve(__dirname, '../docs/chunk'),
       docs: path.resolve(__dirname, '../docs'),
-      '@sheinx/ui': path.resolve(__dirname, '../packages/ui/src'),
+      '@sheinx/base': path.resolve(__dirname, '../packages/base/src'),
       '@sheinx/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
       '@sheinx/hooks': path.resolve(__dirname, '../packages/hooks/src'),
     },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from '@sheinx/ui';
+import { Form } from '@sheinx/base';
 import { FormFieldProps } from './form.type';
 
 export default <T,>(props: FormFieldProps<T>) => {

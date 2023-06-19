@@ -1,8 +1,8 @@
 import React from 'react';
-import { Form } from '@sheinx/ui';
+import { Form } from '@sheinx/base';
 import { useFormStyle } from '@sheinx/shineout-style';
 import { FormProps } from './form.type';
-import { ObjectType } from '@sheinx/ui';
+import { ObjectType } from '@sheinx/base';
 import { useInputAble, util } from '@sheinx/hooks';
 
 export default <T extends ObjectType>(props: FormProps<T>) => {

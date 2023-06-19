@@ -1,4 +1,4 @@
-import { TextareaProps as UiTextareaProps } from '@sheinx/ui';
+import { TextareaProps as UiTextareaProps } from '@sheinx/base';
 import React from 'react';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 
