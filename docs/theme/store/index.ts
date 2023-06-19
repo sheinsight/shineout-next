@@ -14,9 +14,9 @@ export interface Menus {
   components: Menu[];
 }
 
-type Doc = 'shineout' | 'ui';
-type Locales = 'cn' | 'en';
-type Env = 'GitHub' | 'SHEIN';
+export type Doc = 'shineout' | 'base';
+export type Locales = 'cn' | 'en';
+export type Env = 'GitHub' | 'SHEIN';
 
 interface State {
   menu: Menus[];

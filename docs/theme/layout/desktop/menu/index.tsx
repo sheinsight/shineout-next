@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { useSnapshot } from 'valtio';
-import store, { Menu, dispatch } from '../../../store';
+import store, { Menu, Doc, dispatch } from '../../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import useStyles from '../style';
@@ -17,8 +17,8 @@ const MenuComponent = () => {
     });
   };
 
-  const handleChangeDoc = (doc: 'shineout' | 'ui') => {
-    const currentDoc = doc === 'shineout' ? 'ui' : 'shineout';
+  const handleChangeDoc = (doc: Doc) => {
+    const currentDoc: Doc = doc === 'shineout' ? 'base' : 'shineout';
     const nextPath = location.pathname.replace(`/${currentDoc}`, `/${doc}`);
     dispatch.setDoc(doc);
     dispatch.setMenu();
@@ -44,8 +44,11 @@ const MenuComponent = () => {
         >
           SHINEOUT
         </span>
-        <span className={state.doc === 'ui' ? 'active' : ''} onClick={() => handleChangeDoc('ui')}>
-          UI
+        <span
+          className={state.doc === 'base' ? 'active' : ''}
+          onClick={() => handleChangeDoc('base')}
+        >
+          BASE
         </span>
       </li>
       {state.menu.map((item, index) => {
