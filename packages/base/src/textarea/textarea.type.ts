@@ -26,9 +26,13 @@ export interface TextareaClasses {
   wrapperNoBorder: string;
   paddingBox: string;
   resize: string;
+  shadow: string;
+  info: string;
+  infoError: string;
+  footer: string;
 }
 
-export interface TextareaBaseProps
+export interface SimpleTextareaProps
   extends BaseTextareaProps,
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
   jssStyle: TextareaClasses;
@@ -45,4 +49,20 @@ export interface TextareaBaseProps
   renderTextarea?: (textareaEl: React.ReactElement) => React.ReactElement;
 }
 
-export type TextareaProps = TextareaBaseProps;
+type TextareaValueType = string;
+
+export interface TextareaProps
+  extends Omit<SimpleTextareaProps, 'value' | 'onChange' | 'defaultValue'> {
+  innerTitle?: React.ReactNode;
+  placeTitle?: React.ReactNode;
+  autosize?: boolean;
+  info?: number | ((value: string | undefined) => React.ReactNode | Error);
+  value?: TextareaValueType;
+  defaultValue?: TextareaValueType;
+  onChange?: (value: TextareaValueType) => void;
+  beforeChange?: (value: TextareaValueType) => void | string;
+  maxHeight?: string | number;
+  trim?: boolean;
+  renderFooter?: (value?: string) => React.ReactNode;
+  width?: number | string;
+}

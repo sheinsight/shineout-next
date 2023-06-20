@@ -1,84 +1,106 @@
-import { useTextarea, useKeyEvent, usePersistFn } from '@sheinx/hooks';
-import classNames from 'classnames';
-import React, { KeyboardEvent, useEffect } from 'react';
+import React, { useMemo } from 'react';
+import SimpleTextarea from './simple-textarea';
+import { useInputAble, useTextareaFormat, util } from '@sheinx/hooks';
 import { TextareaProps } from './textarea.type';
+import useAutoSize from './use-auto-size';
+import classNames from 'classnames';
 
-const Textarea = (props: TextareaProps) => {
-  const {
-    jssStyle,
-    className,
-    style,
-    status,
-    size,
-    prefix,
-    suffix,
-    underline,
-    border = true,
-    resize = false,
-    onEnterPress,
-    getStatus,
-    renderTextarea,
-    ...rest
-  } = props;
-  const { getRootProps, getTextAreaProps, focused, disabled } = useTextarea({
-    ...rest,
-  });
-  const rootClass = classNames([
-    jssStyle.wrapper,
-    className,
-    {
-      [jssStyle.wrapperFocus]: focused,
-      [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperError]: status === 'error',
-      [jssStyle.wrapperSmall]: size === 'small',
-      [jssStyle.wrapperLarge]: size === 'large',
-      [jssStyle.wrapperUnderline]: underline,
-      [jssStyle.wrapperNoBorder]: !border,
-    },
-  ]);
+const defaultInfo = (num: number, msg: any) => {
+  if (!msg || msg.length === 0) return null;
+  const text = `${msg.length} / ${num}`;
+  if (msg.length <= num) return text;
+  return new Error(text);
+};
+export default (props: TextareaProps) => {
+  const { info, suffix, renderFooter, width, style, jssStyle, ...resetProps } = props;
 
-  const keyHandler = useKeyEvent({
-    onEnterPress: (e: KeyboardEvent) => {
-      onEnterPress?.((e.target as HTMLTextAreaElement).value || '', e);
-    },
-  });
+  // inputAble
+  const inputAbleParams = {
+    value: resetProps.value,
+    onChange: resetProps.onChange,
+    beforeChange: resetProps.beforeChange,
+    control: 'value' in resetProps,
+    defaultValue: resetProps.defaultValue,
+  };
+  const inputAbleProps = useInputAble(inputAbleParams);
 
-  const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLTextAreaElement>) => {
-    props.onKeyUp?.(e);
-    keyHandler(e);
+  // format
+  const formatParams = {
+    trim: resetProps.trim,
+    value: inputAbleProps.value,
+    onChange: inputAbleProps.onChange,
+    onBlur: resetProps.onBlur,
+  };
+  const formatProps = useTextareaFormat(formatParams);
+
+  // autosize
+  const autosizeParams = {
+    autosize: resetProps.autosize,
+    maxHeight: resetProps.maxHeight,
+  };
+  const renderTextarea = useAutoSize({
+    ...autosizeParams,
+    value: inputAbleProps.value,
+    jssStyle: jssStyle,
   });
 
-  const textareaProps = getTextAreaProps({
-    className: classNames(jssStyle.paddingBox, jssStyle.textarea, {
-      [jssStyle.resize]: resize,
-    }),
-    onKeyUp,
+  // forwardProps
+  const forwardProps = util.removeProps(resetProps, {
+    ...inputAbleParams,
+    ...autosizeParams,
+    ...formatParams,
   });
 
-  useEffect(() => {
-    if (getStatus) {
-      getStatus({ focused });
-    }
-  }, [focused]);
+  const getInfo = () => {
+    const notNumber = typeof info !== 'number';
+    if (typeof info !== 'function' && notNumber) return null;
+    const textInfo = notNumber ? info : defaultInfo.bind(null, info);
+    const res = textInfo(inputAbleProps.value);
+    // empty
+    if (!res) return null;
+    const isError = res instanceof Error;
+    const text = isError ? res.message : res;
+    return (
+      <div
+        key='info'
+        style={{ minWidth: 'auto' }}
+        className={classNames({
+          [jssStyle.info]: true,
+          [jssStyle.infoError]: isError,
+        })}
+      >
+        {text}
+      </div>
+    );
+  };
 
-  let textareaEl = <textarea {...textareaProps} />;
+  const mergeSuffix = (
+    <React.Fragment>
+      {suffix}
+      {getInfo()}
+      {util.isFunc(renderFooter) && (
+        <div className={classNames(jssStyle.paddingBox, jssStyle.footer)}>
+          {renderFooter(inputAbleProps.value)}
+        </div>
+      )}
+    </React.Fragment>
+  );
 
-  if (typeof renderTextarea === 'function') {
-    textareaEl = renderTextarea(textareaEl);
-  }
+  const mergeStyle = useMemo(() => {
+    return { width, ...(style || {}) };
+  }, [width, style]) as React.CSSProperties;
 
   return (
-    <div
-      {...getRootProps({
-        className: rootClass,
-        style,
-      })}
-    >
-      {prefix}
-      {textareaEl}
-      {suffix}
-    </div>
+    <SimpleTextarea
+      rows={4}
+      jssStyle={jssStyle}
+      {...forwardProps}
+      {...inputAbleProps}
+      {...formatProps}
+      renderTextarea={renderTextarea}
+      value={inputAbleProps.value || ''}
+      suffix={mergeSuffix}
+      style={mergeStyle}
+    />
   );
 };
-
-export default Textarea;

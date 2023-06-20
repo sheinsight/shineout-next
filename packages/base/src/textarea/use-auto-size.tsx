@@ -1,14 +1,15 @@
 import React, { useState, cloneElement, useRef } from 'react';
-import { useTextareaStyle } from '@sheinx/shineout-style';
 import classNames from 'classnames';
 
 const useAutoSize = (props: {
   autosize?: boolean;
   maxHeight?: number | string;
   value?: string;
+  jssStyle: {
+    shadow: string;
+  };
 }) => {
-  const jssStyle = useTextareaStyle();
-  const { autosize, maxHeight, value } = props || {};
+  const { autosize, maxHeight, value, jssStyle } = props || {};
   const [height, setHeight] = useState<number>();
   const shadowRef = useRef<HTMLTextAreaElement>();
 
