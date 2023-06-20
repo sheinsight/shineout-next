@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import useStyles from '../style';
+import { StyleProvider } from '@sheinx/shineout-style';
 
 const Content = () => {
   const classes = useStyles();
@@ -21,7 +22,11 @@ const Content = () => {
     }
   }, [location.pathname]);
 
-  return <div className={classes.content}>{component}</div>;
+  return (
+    <StyleProvider>
+      <div className={classes.content}>{component}</div>
+    </StyleProvider>
+  );
 };
 
 export default Content;
