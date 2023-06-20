@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const componentNameReg = /^[a-zA-Z]*$/;
 const { writeTemplate } = require('./utils/writeTemplate');
-const { updatePackages } = require('./utils/updateIndex');
+const { updatePackages } = require('./dev-remove');
 const component = process.argv.slice(2)?.[0].trim().toLowerCase();
 
 const cssVarTemplatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.ts.ejs`);
