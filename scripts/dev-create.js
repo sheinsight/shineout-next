@@ -92,45 +92,6 @@ dirs.forEach((dir) => {
       },
     });
   }
-
-  // // Update the index.ts file
-  // const files = fs.readdirSync(dir.path, 'utf-8').filter((i) => !whiteList[dir.module].includes(i));
-
-  // const templatePath = path.join(__dirname, `./ejs/${dir.module}.index.ts.ejs`);
-  // const targetPath = dir.path;
-  // const fileName = 'index.ts';
-
-  // writeTemplate({
-  //   fileName,
-  //   targetPath,
-  //   templatePath,
-  //   ejsVars: {
-  //     files,
-  //   },
-  //   needPrettier: true,
-  // });
-
-  // // Update the cssvar/index.ts file in the shineout-style package
-  // if (dir.module === 'shineout-style') {
-  //   const files = fs
-  //     .readdirSync(path.join(dir.path, 'cssvar'), 'utf-8')
-  //     .filter((i) => !['common.ts', 'index.ts'].includes(i))
-  //     .map((file) => file.split('.')[0]);
-
-  //   const templatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.index.ts.ejs`);
-  //   const targetPath = path.join(dir.path, 'cssvar');
-  //   const fileName = 'index.ts';
-
-  //   writeTemplate({
-  //     fileName,
-  //     targetPath,
-  //     templatePath,
-  //     ejsVars: {
-  //       files,
-  //     },
-  //     needPrettier: true,
-  //   });
-  // }
 });
 
 updatePackages();
