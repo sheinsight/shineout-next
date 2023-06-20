@@ -12,6 +12,7 @@
     "clean:cache": "node ./scripts/cleanCache.js",
     "dev": "cross-env NODE_ENV=development CASE_ENV=test  node ./webpack/config.dev.ts",
     "dev:create": "cross-env NODE_ENV=development CASE_ENV=test  node ./scripts/dev-create.js",
+    "dev:remove": "cross-env NODE_ENV=development CASE_ENV=test  node ./scripts/dev-remove.js",
     "build:md": "cross-env NODE_ENV=development CASE_ENV=test node ./scripts/dev-doc.js",
     "build": "pnpm --filter=./packages/* run build",
     "build:watch": "pnpm --filter=./packages/* run build:watch",

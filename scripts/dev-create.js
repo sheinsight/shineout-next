@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const componentNameReg = /^[a-zA-Z]*$/;
 const { writeTemplate } = require('./utils/writeTemplate');
+const { updatePackages } = require('./utils/updateIndex');
 const component = process.argv.slice(2)?.[0].trim().toLowerCase();
 
 const cssVarTemplatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.ts.ejs`);
@@ -24,12 +25,6 @@ const dirs = [
     module: 'shineout-style',
   },
 ];
-
-const whiteList = {
-  shineout: ['@types', 'hooks', 'index.ts'],
-  'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts'],
-  base: ['types', 'icons', 'index.ts'],
-};
 
 function createPublicFilesByEjs(dir) {
   const componentPath = `${dir.path}/${component}`;
@@ -98,42 +93,44 @@ dirs.forEach((dir) => {
     });
   }
 
-  // Update the index.ts file
-  const files = fs.readdirSync(dir.path, 'utf-8').filter((i) => !whiteList[dir.module].includes(i));
+  // // Update the index.ts file
+  // const files = fs.readdirSync(dir.path, 'utf-8').filter((i) => !whiteList[dir.module].includes(i));
 
-  const templatePath = path.join(__dirname, `./ejs/${dir.module}.index.ts.ejs`);
-  const targetPath = dir.path;
-  const fileName = 'index.ts';
+  // const templatePath = path.join(__dirname, `./ejs/${dir.module}.index.ts.ejs`);
+  // const targetPath = dir.path;
+  // const fileName = 'index.ts';
 
-  writeTemplate({
-    fileName,
-    targetPath,
-    templatePath,
-    ejsVars: {
-      files,
-    },
-    needPrettier: true,
-  });
+  // writeTemplate({
+  //   fileName,
+  //   targetPath,
+  //   templatePath,
+  //   ejsVars: {
+  //     files,
+  //   },
+  //   needPrettier: true,
+  // });
 
-  // Update the cssvar/index.ts file in the shineout-style package
-  if (dir.module === 'shineout-style') {
-    const files = fs
-      .readdirSync(path.join(dir.path, 'cssvar'), 'utf-8')
-      .filter((i) => !['common.ts', 'index.ts'].includes(i))
-      .map((file) => file.split('.')[0]);
+  // // Update the cssvar/index.ts file in the shineout-style package
+  // if (dir.module === 'shineout-style') {
+  //   const files = fs
+  //     .readdirSync(path.join(dir.path, 'cssvar'), 'utf-8')
+  //     .filter((i) => !['common.ts', 'index.ts'].includes(i))
+  //     .map((file) => file.split('.')[0]);
 
-    const templatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.index.ts.ejs`);
-    const targetPath = path.join(dir.path, 'cssvar');
-    const fileName = 'index.ts';
+  //   const templatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.index.ts.ejs`);
+  //   const targetPath = path.join(dir.path, 'cssvar');
+  //   const fileName = 'index.ts';
 
-    writeTemplate({
-      fileName,
-      targetPath,
-      templatePath,
-      ejsVars: {
-        files,
-      },
-      needPrettier: true,
-    });
-  }
+  //   writeTemplate({
+  //     fileName,
+  //     targetPath,
+  //     templatePath,
+  //     ejsVars: {
+  //       files,
+  //     },
+  //     needPrettier: true,
+  //   });
+  // }
 });
+
+updatePackages();

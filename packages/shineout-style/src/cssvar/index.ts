@@ -1,15 +1,18 @@
 import { colorVar, sizeVar } from './common';
+
+import formVar from './form';
+import innerTitleVar from './innerTitle';
 import inputVar from './input';
 import radioVar from './radio';
-import innerTitleVar from './innerTitle';
-import formVar from './form';
+
 const cssVars = {
   ...colorVar,
   ...sizeVar,
+
+  ...formVar,
+  ...innerTitleVar,
   ...inputVar,
   ...radioVar,
-  ...innerTitleVar,
-  ...formVar,
 };
 
 export default cssVars;
