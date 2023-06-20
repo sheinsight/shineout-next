@@ -1,4 +1,4 @@
-import { CommonType } from '../types/common';
+import { CommonType } from '../common/type';
 import { BaseRadioProps } from '@sheinx/hooks';
 import React from 'react';
 

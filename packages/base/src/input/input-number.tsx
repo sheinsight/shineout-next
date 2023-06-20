@@ -1,33 +1,26 @@
 import React from 'react';
-import { Input, Icons } from '@sheinx/base';
-import { useInputStyle } from '@sheinx/shineout-style';
+import SimpleInput from './simple-input';
+import Icons from '../icons';
 import { useInputNumber, util, usePersistFn } from '@sheinx/hooks';
 
-import { BaseNumberProps } from './number.type';
+import { InputNumberProps } from './input-number.type';
 import classNames from 'classnames';
 import useInputCommon from './use-input-common';
 
-export default (props: BaseNumberProps) => {
-  const jssStyle = useInputStyle();
-
-  const commonProps = useInputCommon<BaseNumberProps['value'], BaseNumberProps>(props);
-  const inputAbleParams = {
-    value: props.value,
-    onChange: props.onChange,
-    defaultValue: props.defaultValue,
-    beforeChange: props.beforeChange,
-  };
+export default (props: InputNumberProps) => {
+  const commonProps = useInputCommon<InputNumberProps['value'], InputNumberProps>(props);
+  const { jssStyle, ...restProps } = commonProps;
 
   const numberFormatParams = {
-    onBlur: props.onBlur,
-    onFocus: props.onFocus,
-    digits: props.digits,
-    integerLimit: props.integerLimit,
-    numType: props.numType,
-    min: props.min,
-    max: props.max,
-    step: props.step,
-    allowNull: props.allowNull,
+    onBlur: restProps.onBlur,
+    onFocus: restProps.onFocus,
+    digits: restProps.digits,
+    integerLimit: restProps.integerLimit,
+    numType: restProps.numType,
+    min: restProps.min,
+    max: restProps.max,
+    step: restProps.step,
+    allowNull: restProps.allowNull,
   };
 
   const { onMinus, onPlus, ...numberFormatProps } = useInputNumber({
@@ -37,7 +30,6 @@ export default (props: BaseNumberProps) => {
   });
 
   const forwardProps = util.removeProps(commonProps, {
-    ...inputAbleParams,
     ...numberFormatParams,
   });
 
@@ -47,7 +39,7 @@ export default (props: BaseNumberProps) => {
         <span onMouseDown={onPlus}>{Icons.AngleRight}</span>
         <span onMouseDown={onMinus}>{Icons.AngleLeft}</span>
       </div>
-      {props.suffix}
+      {restProps.suffix}
     </React.Fragment>
   );
   const onKeyDown = usePersistFn((e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -59,13 +51,13 @@ export default (props: BaseNumberProps) => {
       e.preventDefault();
       onMinus();
     }
-    props.onKeyDown?.(e);
+    restProps.onKeyDown?.(e);
   });
   return (
-    <Input
-      jssStyle={jssStyle}
+    <SimpleInput
       {...forwardProps}
       {...numberFormatProps}
+      jssStyle={jssStyle}
       value={numberFormatProps.value || ''}
       className={classNames(forwardProps.className, jssStyle.wrapperNumber)}
       onKeyDown={onKeyDown}

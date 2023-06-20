@@ -5,3 +5,4 @@ dist
 .dumi/tmp-production
 .idea
 .vscode
+docs/chunk

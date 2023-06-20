@@ -1,10 +1,16 @@
 import { Input, Form } from '@sheinx/base';
-import { useInputStyle, useFormStyle, useFormItemStyle } from '@sheinx/shineout-style';
+import {
+  useInputStyle,
+  useFormStyle,
+  useFormItemStyle,
+  useInnerTitleStyle,
+} from '@sheinx/shineout-style';
 import React from 'react';
 export default () => {
   const inputStyle = useInputStyle();
   const formStyle = useFormStyle();
   const itemStyle = useFormItemStyle();
+  const innerTitleStyle = useInnerTitleStyle();
   return (
     <div>
       <Form jssStyle={formStyle} defaultValue={{ email: 'spana@qq.com' }} labelAlign={'top'}>
@@ -15,7 +21,12 @@ export default () => {
               console.log('input change', v);
             }}
           >
-            <Input jssStyle={inputStyle} clearable placeholder='please input name' />
+            <Input
+              jssStyle={inputStyle}
+              innerTitleJssStyle={innerTitleStyle}
+              clearable
+              placeholder='please input name'
+            />
           </Form.Field>
         </Form.Item>
         <Form.Item label={'email'} jssStyle={itemStyle}>
@@ -30,6 +41,7 @@ export default () => {
                 value={value}
                 onChange={onChange}
                 jssStyle={inputStyle}
+                innerTitleJssStyle={innerTitleStyle}
                 clearable
                 placeholder='please input email'
               />

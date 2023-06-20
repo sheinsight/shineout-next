@@ -1,6 +1,7 @@
 import React from 'react';
-import { CommonType } from '../types/common';
-import { BaseInputProps } from '@sheinx/hooks';
+import { CommonType } from '../common/type';
+import { InnerTitleClass } from '../common/use-inner-title';
+import { BaseInputProps, InputFormatProps } from '@sheinx/hooks';
 
 export interface InputClasses {
   /**
@@ -28,9 +29,11 @@ export interface InputClasses {
   wrapperNoBorder: string;
   wrapperInGroup: string;
   paddingBox: string;
+  info: string;
+  infoError: string;
 }
 
-export interface InputBaseProps
+export interface SimpleInputProps
   extends BaseInputProps,
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
   jssStyle: InputClasses;
@@ -52,4 +55,43 @@ export interface InputBaseProps
   renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
 }
 
-export type InputProps = InputBaseProps;
+export interface InputCommonProps<V> {
+  suffix?: SimpleInputProps['suffix'];
+  className?: SimpleInputProps['className'];
+  forwardRef?: SimpleInputProps['inputRef'];
+  getStatus?: SimpleInputProps['getStatus'];
+  size?: SimpleInputProps['size'];
+  jssStyle: SimpleInputProps['jssStyle'];
+  innerTitleJssStyle: InnerTitleClass;
+  innerTitle?: React.ReactNode;
+  placeTitle?: React.ReactNode;
+  htmlName?: string;
+  value?: V;
+  onChange?: (value: V) => void;
+  defaultValue?: V;
+  beforeChange?: (value: V) => void | V;
+  clearable?: boolean | (() => void);
+  clearToUndefined?: boolean;
+  width?: string | number;
+  style?: React.CSSProperties;
+  info?: number | ((value: V | undefined) => string);
+}
+
+export type GetCommonProps<Props, V> = Omit<
+  Props,
+  | 'value'
+  | 'onChange'
+  | 'defaultValue'
+  | 'clearable'
+  | 'onClear'
+  | 'name'
+  | 'inputRef'
+  | 'step'
+  | 'min'
+  | 'max'
+> &
+  InputCommonProps<V>;
+
+export interface InputProps
+  extends GetCommonProps<SimpleInputProps, string | undefined>,
+    Omit<InputFormatProps, 'value' | 'onChange'> {}

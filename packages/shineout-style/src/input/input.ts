@@ -130,6 +130,11 @@ const input: JsStyles<InputClass> = {
     boxSizing: 'border-box',
     alignItems: 'stretch',
     padding: '0',
+    '& > i, & > span': {
+      display: 'block',
+      margin: 'auto 0',
+      background: 'transparent',
+    },
     ...groupSpace(cssVars.inputPaddingX),
   },
   groupSmall: {
