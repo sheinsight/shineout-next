@@ -77,25 +77,25 @@ function createPublicFilesByEjs(dir) {
 }
 
 dirs.forEach((dir) => {
-  if (!fs.existsSync(`${dir.path}/${component}`)) {
-    createPublicFilesByEjs(dir);
+  if (fs.existsSync(`${dir.path}/${component}`)) {
+    fs.rmSync(`${dir.path}/${component}`, { recursive: true, force: true });
+  }
 
-    if (dir.module !== 'shineout-style') {
-      const fileName = `s-001-base.tsx`;
-      const targetPath = path.join(dir.path, component, '__example__');
-      const templatePath = path.join(__dirname, `./ejs/${dir.module}.example.tsx.ejs`);
+  createPublicFilesByEjs(dir);
 
-      writeTemplate({
-        fileName,
-        targetPath,
-        templatePath,
-        ejsVars: {
-          Component: component.charAt(0).toUpperCase() + component.slice(1),
-        },
-      });
-    }
-  } else {
-    fs.rmdirSync(`${dir.path}/${component}`, { recursive: true });
+  if (dir.module !== 'shineout-style') {
+    const fileName = `s-001-base.tsx`;
+    const targetPath = path.join(dir.path, component, '__example__');
+    const templatePath = path.join(__dirname, `./ejs/${dir.module}.example.tsx.ejs`);
+
+    writeTemplate({
+      fileName,
+      targetPath,
+      templatePath,
+      ejsVars: {
+        Component: component.charAt(0).toUpperCase() + component.slice(1),
+      },
+    });
   }
 
   // Update the index.ts file
