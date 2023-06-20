@@ -7,6 +7,7 @@ const component = process.argv.slice(2)?.[0].trim().toLowerCase();
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const baseDir = path.join(__dirname, '../packages', 'base', 'src');
 const shineoutStyleDir = path.join(__dirname, '../packages', 'shineout-style', 'src');
+const cssVarDir = path.join(__dirname, '../packages', 'shineout-style', 'src', 'cssvar');
 
 const whiteList = {
   shineout: ['@types', 'hooks', 'index.ts'],
@@ -92,6 +93,23 @@ function updateShineoutStyle() {
     templatePath,
     ejsVars: {
       files,
+    },
+    needPrettier: true,
+  });
+
+  const cssVarFiles = fs
+    .readdirSync(cssVarDir, 'utf-8')
+    .filter((i) => !['common.ts', 'index.ts'].includes(i))
+    .map((file) => file.split('.')[0]);
+
+  const cssVarTemplatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.index.ts.ejs`);
+
+  writeTemplate({
+    fileName,
+    targetPath: cssVarDir,
+    templatePath: cssVarTemplatePath,
+    ejsVars: {
+      files: cssVarFiles,
     },
     needPrettier: true,
   });
