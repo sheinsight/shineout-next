@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const componentNameReg = /^[a-zA-Z]*$/;
-const { writeTemplate } = require('./utils/writeTemplate');
+const { writeTemplate } = require('./utils/write-template');
 const { updatePackages } = require('./dev-remove');
+const { compile } = require('./utils/compile');
 const component = process.argv.slice(2)?.[0].trim().toLowerCase();
 
 const cssVarTemplatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.ts.ejs`);
@@ -91,6 +92,7 @@ dirs.forEach((dir) => {
         Component: component.charAt(0).toUpperCase() + component.slice(1),
       },
     });
+    compile(dir.path);
   }
 });
 

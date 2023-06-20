@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const componentNameReg = /^[a-zA-Z]*$/;
-const { writeTemplate } = require('./utils/writeTemplate');
+const { compile } = require('./utils/compile');
+const { writeTemplate } = require('./utils/write-template');
 const component = process.argv.slice(2)?.[0].trim().toLowerCase();
 
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
@@ -45,11 +46,13 @@ function updateBase() {
     },
     needPrettier: true,
   });
+  compile(baseDir);
 }
 
 function rmShineout() {
   fs.rmSync(path.join(shineoutDir, component), { recursive: true, force: true });
   updateShineout();
+  compile(shineoutDir);
 }
 
 function updateShineout() {
@@ -128,8 +131,6 @@ function updatePackages() {
 }
 
 rmComponent();
-
-console.log('\x1b[32m%s\x1b[0m', `[SUCCESS] ${component} has been removed.`);
 
 module.exports = {
   whiteList,
