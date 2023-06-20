@@ -1,0 +1,16 @@
+import { colorVar, sizeVar } from './common';
+
+<% files.forEach(function (file, i) { -%>
+import <%= file %>Var from './<%= file %>';
+<% }) -%>
+
+const cssVars = {
+  ...colorVar,
+  ...sizeVar,
+
+<% files.forEach(function (file, i) { -%>
+  ...<%= file %>Var,
+<% }) -%>
+};
+
+export default cssVars;

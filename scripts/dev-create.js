@@ -1,23 +1,23 @@
 const fs = require('fs');
-const ejs = require('ejs');
 const path = require('path');
-const pattern = /^[a-zA-Z]*$/;
-const prettier = require('prettier');
-const component = process.argv.slice(2)?.[0].trim();
-const options = prettier.resolveConfig.sync(path.join(__dirname, '../.prettierrc.js'));
+const componentNameReg = /^[a-zA-Z]*$/;
+const { writeTemplate } = require('./utils/writeTemplate');
+const component = process.argv.slice(2)?.[0].trim().toLowerCase();
+
+const cssVarTemplatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.ts.ejs`);
 
 if (!component) {
   console.log('\x1b[31m%s\x1b[0m', '[ERROR] Please enter the component name.');
   return;
 }
 
-if (!pattern.test(component)) {
+if (!componentNameReg.test(component)) {
   console.log('\x1b[31m%s\x1b[0m', '[ERROR] Component names cannot include special characters.');
   return;
 }
 
 const dirs = [
-  { path: path.join(__dirname, '../packages', 'ui', 'src'), module: 'ui' },
+  { path: path.join(__dirname, '../packages', 'base', 'src'), module: 'base' },
   { path: path.join(__dirname, '../packages', 'shineout', 'src'), module: 'shineout' },
   {
     path: path.join(__dirname, '../packages', 'shineout-style', 'src'),
@@ -28,83 +28,112 @@ const dirs = [
 const whiteList = {
   shineout: ['@types', 'hooks', 'index.ts'],
   'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts'],
-  ui: ['types', 'icons', 'index.ts'],
+  base: ['types', 'icons', 'index.ts'],
 };
 
-function mkdir(dir, module) {
+function createPublicFilesByEjs(dir) {
+  const componentPath = `${dir.path}/${component}`;
+  const module = dir.module;
   // Create a base directory.
-  fs.mkdirSync(dir);
+  fs.mkdirSync(componentPath);
+
   // Create the __example__ directory under the base directory.
   if (module !== 'shineout-style') {
-    fs.mkdirSync(path.join(dir, '__example__'));
-    fs.mkdirSync(path.join(dir, '__test__'));
+    fs.mkdirSync(path.join(componentPath, '__example__'));
+    fs.mkdirSync(path.join(componentPath, '__test__'));
+  } else if (module === 'shineout-style') {
+    const templatePath = cssVarTemplatePath;
+    const targetPath = path.join(dir.path, 'cssvar');
+    const fileName = `${component}.ts`;
+
+    writeTemplate({
+      fileName,
+      targetPath,
+      templatePath,
+    });
   }
 
   // Read all ejs templates under the ./ejs/${module} folder, and read them one by one.
   const templates = fs.readdirSync(path.join(__dirname, `./ejs/${module}`), 'utf-8');
+
   templates.forEach((template) => {
-    const fileName = template.replace('.ejs', '').replace('component', component);
     // Read the content of the ejs template.
-    const content = ejs.compile(
-      fs.readFileSync(path.join(__dirname, `./ejs/${module}`, template), 'utf-8'),
-    );
-    const render = content({
-      component,
-      Component: component.charAt(0).toUpperCase() + component.slice(1),
+    const targetPath = path.join(componentPath);
+    const templatePath = path.join(__dirname, `./ejs/${module}`, template);
+    const fileName = template.replace('.ejs', '').replace('component', component);
+
+    writeTemplate({
+      fileName,
+      targetPath,
+      templatePath,
+      needPrettier: true,
+      prettierWhiteList: ['.md'],
+      ejsVars: {
+        component,
+        Component: component.charAt(0).toUpperCase() + component.slice(1),
+      },
     });
-    // 根据 ejs 模板内容，创建文件
-    if (fileName.indexOf('.md') > -1) {
-      fs.writeFileSync(path.join(dir, fileName), render);
-      return;
-    }
-    // 对非 md 文件做 prettier 格式化
-    try {
-      fs.writeFileSync(
-        path.join(dir, fileName),
-        prettier.format(render, {
-          filepath: path.join(__dirname, '../.prettierrc.js'),
-          ...options,
-        }),
-      );
-    } catch (error) {
-      fs.writeFileSync(path.join(dir, fileName), render);
-    }
   });
 }
 
 dirs.forEach((dir) => {
   if (!fs.existsSync(`${dir.path}/${component}`)) {
-    // 创建模板
-    mkdir(`${dir.path}/${component}`, dir.module);
-    // 创建示例
-    if (dir.module !== 'shineout-style') {
-      const content = ejs.compile(
-        fs.readFileSync(path.join(__dirname, `./ejs/${dir.module}.example.tsx.ejs`), 'utf-8'),
-      );
+    createPublicFilesByEjs(dir);
 
-      const render = content({
-        Component: component.charAt(0).toUpperCase() + component.slice(1),
+    if (dir.module !== 'shineout-style') {
+      const fileName = `s-001-base.tsx`;
+      const targetPath = path.join(dir.path, component, '__example__');
+      const templatePath = path.join(__dirname, `./ejs/${dir.module}.example.tsx.ejs`);
+
+      writeTemplate({
+        fileName,
+        targetPath,
+        templatePath,
+        ejsVars: {
+          Component: component.charAt(0).toUpperCase() + component.slice(1),
+        },
       });
-      fs.writeFileSync(`${dir.path}/${component}/__example__/s-001-base.tsx`, render);
     }
   } else {
-    // 删除已存在的文件夹
     fs.rmdirSync(`${dir.path}/${component}`, { recursive: true });
   }
 
-  // 更新 index.ts 文件
+  // Update the index.ts file
   const files = fs.readdirSync(dir.path, 'utf-8').filter((i) => !whiteList[dir.module].includes(i));
-  const content = ejs.compile(
-    fs.readFileSync(path.join(__dirname, `./ejs/${dir.module}.index.ts.ejs`), 'utf-8'),
-  );
-  const render = content({
-    files,
+
+  const templatePath = path.join(__dirname, `./ejs/${dir.module}.index.ts.ejs`);
+  const targetPath = dir.path;
+  const fileName = 'index.ts';
+
+  writeTemplate({
+    fileName,
+    targetPath,
+    templatePath,
+    ejsVars: {
+      files,
+    },
+    needPrettier: true,
   });
-  fs.writeFileSync(
-    `${dir.path}/index.ts`,
-    prettier.format(render, {
-      filepath: path.join(__dirname, '../.prettierrc.js'),
-      ...options,
-    }),
-  );
+
+  // Update the cssvar/index.ts file in the shineout-style package
+  if (dir.module === 'shineout-style') {
+    const files = fs
+      .readdirSync(path.join(dir.path, 'cssvar'), 'utf-8')
+      .filter((i) => !['common.ts', 'index.ts'].includes(i))
+      .map((file) => file.split('.')[0]);
+
+    const templatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.index.ts.ejs`);
+    const targetPath = path.join(dir.path, 'cssvar');
+    const fileName = 'index.ts';
+
+    writeTemplate({
+      fileName,
+      targetPath,
+      templatePath,
+      ejsVars: {
+        files,
+      },
+      needPrettier: true,
+    });
+  }
 });
