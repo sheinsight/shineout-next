@@ -1,10 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const componentNameReg = /^[a-zA-Z]*$/;
+const { rmrf } = require('./utils/rmrf');
 const { compile } = require('./utils/compile');
 const { writeTemplate } = require('./utils/write-template');
 const component = process.argv.slice(2)?.[0].trim().toLowerCase();
 
+const chunkDir = path.join(__dirname, '../docs', 'chunk');
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const baseDir = path.join(__dirname, '../packages', 'base', 'src');
 const shineoutStyleDir = path.join(__dirname, '../packages', 'shineout-style', 'src');
@@ -46,13 +48,11 @@ function updateBase() {
     },
     needPrettier: true,
   });
-  compile(baseDir);
 }
 
 function rmShineout() {
   fs.rmSync(path.join(shineoutDir, component), { recursive: true, force: true });
   updateShineout();
-  compile(shineoutDir);
 }
 
 function updateShineout() {
@@ -131,6 +131,11 @@ function updatePackages() {
 }
 
 rmComponent();
+
+rmrf(chunkDir);
+fs.mkdirSync(chunkDir);
+compile(baseDir);
+compile(shineoutDir);
 
 module.exports = {
   whiteList,

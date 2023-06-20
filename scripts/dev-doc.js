@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const chokidar = require('chokidar');
 const { compile } = require('./utils/compile');
+const { rmrf } = require('./utils/rmrf');
 
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const hooksDir = path.join(__dirname, '../packages', 'hooks', 'src');
@@ -9,26 +10,7 @@ const styleDir = path.join(__dirname, '../packages', 'shineout-style', 'src');
 const baseDir = path.join(__dirname, '../packages', 'base', 'src');
 const chunkDir = path.join(__dirname, '../docs', 'chunk');
 
-function rmrfChunk(directory) {
-  try {
-    const files = fs.readdirSync(directory);
-    files.forEach(function (file) {
-      const curPath = directory + '/' + file;
-      if (fs.lstatSync(curPath).isDirectory()) {
-        // 递归删除子目录
-        rmrfChunk(curPath);
-      } else {
-        // 删除文件
-        fs.unlinkSync(curPath);
-      }
-    });
-    fs.rmdirSync(directory);
-  } catch (e) {
-    console.error(`删除目录 ${directory} 失败: ${e.message}`);
-  }
-}
-
-rmrfChunk(chunkDir);
+rmrf(chunkDir);
 fs.mkdirSync(chunkDir);
 
 compile(shineoutDir);

@@ -51,6 +51,7 @@ function compile(dirPath = shineoutDir) {
     fileName: 'index.ts',
     targetPath: `${chunkDir}/${chunkModuleName}`,
     templatePath: templateIndexPath,
+    needPrettier: true,
     ejsVars: {
       files,
     },
