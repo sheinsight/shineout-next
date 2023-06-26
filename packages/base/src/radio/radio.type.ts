@@ -36,4 +36,5 @@ export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'chec
   htmlValue?: T;
   onChange?: (value: T) => void;
   checked?: boolean | ((d: T) => boolean);
+  onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
 }

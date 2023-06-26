@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { SimpleRadioProps } from './radio.type';
 
-const Textarea = (props: SimpleRadioProps) => {
+const Radio = (props: SimpleRadioProps) => {
   const { jssStyle, className, style, status, children, ...rest } = props;
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useRadio({
     ...rest,
@@ -34,4 +34,4 @@ const Textarea = (props: SimpleRadioProps) => {
   );
 };
 
-export default Textarea;
+export default Radio;

@@ -20,6 +20,7 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
     value: inputAbleProps.value,
     onChange: inputAbleProps.onChange,
     prediction: props.prediction,
+    disabled: props.disabled,
     format: props.format,
     keygen: props.keygen,
     data: props.data || ([] as DataItem[]),

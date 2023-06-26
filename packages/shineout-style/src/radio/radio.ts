@@ -37,6 +37,7 @@ const radioStyle: JsStyles<RadioClass> = {
     marginRight: '10px',
     verticalAlign: 'middle',
     cursor: 'pointer',
+    fontSize: cssVars.fontSize,
   },
   wrapperChecked: {},
   wrapperSmall: {},
@@ -67,6 +68,7 @@ const radioStyle: JsStyles<RadioClass> = {
     },
     '$wrapperDisabled$wrapperChecked &': {
       backgroundColor: cssVars.white,
+      borderColor: cssVars.checkboxCheckedDisabledBgc,
     },
   },
   desc: {
@@ -171,9 +173,31 @@ const radioStyle: JsStyles<RadioClass> = {
       color: cssVars.buttonDisabledColor,
     },
   },
-  groupOutline: {},
-  groupSmall: {},
-  groupLarge: {},
+  groupOutline: {
+    '&$wrapperButton $wrapper$wrapperChecked': {
+      borderColor: cssVars.primaryColor,
+      backgroundColor: cssVars.white,
+      color: cssVars.primaryColor,
+    },
+  },
+  groupSmall: {
+    '& $wrapper': {
+      padding: `${cssVars.buttonPaddingSmallVertical} ${cssVars.buttonPaddingSmallHorizontal}`,
+    },
+    '& $desc': {
+      lineHeight: cssVars.buttonLineHeightSmall,
+      fontSize: cssVars.fontSizeSmall,
+    },
+  },
+  groupLarge: {
+    '& $wrapper': {
+      padding: `${cssVars.buttonPaddingLargeVertical} ${cssVars.buttonPaddingLargeHorizontal}`,
+    },
+    '& $desc': {
+      lineHeight: cssVars.commonLineHeight,
+      fontSize: cssVars.fontSizeLarge,
+    },
+  },
 };
 
 export default radioStyle;

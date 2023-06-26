@@ -10,7 +10,7 @@ import useForkRef from '../../common/use-fork-ref';
 import { BaseRadioProps } from './use-radio.type';
 
 const useRadio = (props: BaseRadioProps) => {
-  const { checked, defaultChecked, onChange, disabled, inputRef: inputRefPo } = props;
+  const { checked, defaultChecked, onChange, disabled, inputRef: inputRefPo, onClick } = props;
   const [checkedState, setCheckedState] = React.useState<boolean>(defaultChecked || false);
 
   const getChecked = () => {
@@ -57,8 +57,9 @@ const useRadio = (props: BaseRadioProps) => {
       checked,
       disabled,
       defaultChecked,
-      onClick: (e: React.MouseEvent) => {
+      onClick: (e: React.MouseEvent<HTMLInputElement>) => {
         e.stopPropagation();
+        onClick?.(e);
       },
       onChange: handleChange(extractEventHandlers(externalProps)),
       tabIndex: 0,
