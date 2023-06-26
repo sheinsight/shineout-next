@@ -19,8 +19,9 @@ const cssVars = {
   buttonPaddingLargeHorizontal: va('button-padding-large-horizontal', `12px`),
   buttonDefaultTextColor: va('button-default-text-color', `#333e59`),
   buttonBorderRadius: va('button-border-radius', `4px`),
-  buttonDisabledBg: va('button-disabled-bg', `#f5f5f5`),
-  buttonDisabledColor: va('button-disabled-bg', `rgba(0, 0, 0, 0.45)`),
+  buttonDisabledBg: va('button-disabled-bg', colorVar.grey300),
+  buttonDisabledColor: va('button-disabled-color', '#fff'),
+  buttonDisabledDelimiter: va('button-disabled-delimiter', '#d9d9d9'),
   buttonLineHeightSmall: 1.5,
 };
 

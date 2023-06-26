@@ -38,6 +38,8 @@ const radioStyle: JsStyles<RadioClass> = {
     verticalAlign: 'middle',
     cursor: 'pointer',
     fontSize: cssVars.fontSize,
+    lineHeight: cssVars.commonLineHeight,
+    boxSizing: 'border-box',
   },
   wrapperChecked: {},
   wrapperSmall: {},
@@ -74,6 +76,7 @@ const radioStyle: JsStyles<RadioClass> = {
   desc: {
     verticalAlign: 'middle',
     padding: '0 8px',
+    boxSizing: 'border-box',
   },
   group: {
     padding: '5px 0',
@@ -163,18 +166,28 @@ const radioStyle: JsStyles<RadioClass> = {
       backgroundColor: cssVars.primaryColor,
       color: cssVars.white,
       fill: cssVars.white,
-      zIndex: 1,
+      '&:not($wrapperDisabled)': {
+        zIndex: 1,
+      },
       '&:not(:first-child)::before': {
         backgroundColor: cssVars.primaryColor,
       },
     },
     '& $wrapper$wrapperDisabled': {
-      backgroundColor: cssVars.buttonDisabledBg,
-      color: cssVars.buttonDisabledColor,
+      '&:not($wrapperChecked)': {
+        backgroundColor: cssVars.buttonDisabledBg,
+        color: cssVars.buttonDisabledColor,
+        '&::before': {
+          backgroundColor: cssVars.buttonDisabledDelimiter,
+        },
+      },
+      '&$wrapperChecked': {
+        opacity: 0.4,
+      },
     },
   },
   groupOutline: {
-    '&$wrapperButton $wrapper$wrapperChecked': {
+    '&$groupButton $wrapper$wrapperChecked': {
       borderColor: cssVars.primaryColor,
       backgroundColor: cssVars.white,
       color: cssVars.primaryColor,
