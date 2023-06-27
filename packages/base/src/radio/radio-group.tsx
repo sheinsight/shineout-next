@@ -1,5 +1,5 @@
 import { RadioGroupProps } from './radio-group.type';
-import { usePersistFn, useListSingle, useInputAble, util } from '@sheinx/hooks';
+import { useInputAble, useListSelectSingle, usePersistFn, util } from '@sheinx/hooks';
 import groupContext from './group-context';
 import Radio from './radio';
 import React from 'react';
@@ -26,7 +26,7 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
     data: props.data || ([] as DataItem[]),
   };
 
-  const datum = useListSingle(useListParams);
+  const datum = useListSelectSingle(useListParams);
 
   const handleItemChange = usePersistFn((d: DataItem) => {
     datum.add(d, { overwrite: true });

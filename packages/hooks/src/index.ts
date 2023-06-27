@@ -1,4 +1,5 @@
 import * as util from './utils/';
+
 export { util };
 
 //common
@@ -10,7 +11,9 @@ export * from './common/use-input-able';
 export * from './common/use-latest-obj';
 export * from './common/use-persist-fn';
 export * from './common/use-key-event';
-export * from './common/use-list';
+export * from './common/use-list-select';
+export * from './common/use-click-away';
+export * from './common/use-previous';
 
 //components
 export * from './components/use-input';

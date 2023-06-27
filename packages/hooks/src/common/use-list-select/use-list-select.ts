@@ -7,7 +7,7 @@ const isUnMatchedData = (data: any): data is UnMatchedData => {
   return data && data.IS_NOT_MATCHED_VALUE;
 };
 
-const useList = <ValueItem = any, DataItem = any>(props: UseListProps) => {
+const useListSelect = <ValueItem = any, DataItem = any>(props: UseListProps) => {
   const valueArr = props.value || ([] as ValueItem[]);
   const { current: context } = React.useRef({
     lastValue: [] as ValueItem[],
@@ -166,4 +166,4 @@ const useList = <ValueItem = any, DataItem = any>(props: UseListProps) => {
   };
 };
 
-export default useList;
+export default useListSelect;

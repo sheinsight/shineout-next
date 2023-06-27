@@ -1,9 +1,11 @@
-import useList from './use-list';
+import useListSelect from './use-list-select';
 import { UseListSingleProps } from './use-list.type';
 import usePersistFn from '../use-persist-fn';
 import { isArray } from '../../utils';
 
-const useListSingle = <ValueItem, DataItem>(props: UseListSingleProps<ValueItem, DataItem>) => {
+const useListSelectSingle = <ValueItem, DataItem>(
+  props: UseListSingleProps<ValueItem, DataItem>,
+) => {
   const onChange = usePersistFn(
     (value: ValueItem[], data: DataItem | DataItem[], checked: boolean) => {
       props.onChange(value[0], data, checked);
@@ -14,11 +16,11 @@ const useListSingle = <ValueItem, DataItem>(props: UseListSingleProps<ValueItem,
     if (isArray(v)) return v;
     return [v];
   };
-  return useList<ValueItem, DataItem>({
+  return useListSelect<ValueItem, DataItem>({
     ...props,
     value: getValue(props.value),
     onChange,
   });
 };
 
-export default useListSingle;
+export default useListSelectSingle;
