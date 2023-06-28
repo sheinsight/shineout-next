@@ -40,6 +40,7 @@ export type FormContext = {
   submitLock: boolean;
   lastValue: ObjectType | undefined;
   resetTime: number;
+  mounted: boolean;
 };
 
 export type UseFormSlotOwnProps = {

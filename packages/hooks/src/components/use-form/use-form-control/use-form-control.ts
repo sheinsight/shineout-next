@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FormContext } from './form-context';
 import { FormItemContext } from '../use-form-item/form-item-context';
 import { useFieldSetConsumer } from '../use-form-fieldset/fieldset-context';
 import { deepGet, isArray, validate } from '../../../utils';
+import usePersistFn from '../../../common/use-persist-fn';
 
 import { BaseFormControlProps } from './use-form-control.type';
-import usePersistFn from '../../../common/use-persist-fn';
 import { ObjectType } from '../../../common/type';
 
 export default function useFormControl<T>(props: BaseFormControlProps<T>) {
@@ -103,23 +103,20 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     updateError(isArray(name) ? name.join('|') : name, error);
   }, [error]);
 
-  const onChange = useCallback(
-    (v: T, ...other: any[]) => {
-      if (formFunc) {
-        if (isArray(name)) {
-          const arrV = isArray(v) ? v : [];
-          const objetcV = name.reduce((result, name, index) => {
-            result[name] = arrV[index];
-            return result;
-          }, {} as ObjectType);
-          formFunc.setValue(objetcV, { validate: true });
-        } else {
-          formFunc.setValue({ [name]: v }, { validate: true });
-        }
+  const onChange = usePersistFn((v: T, ...other: any[]) => {
+    if (formFunc) {
+      if (isArray(name)) {
+        const arrV = isArray(v) ? v : [];
+        const objetcV = name.reduce((result, name, index) => {
+          result[name] = arrV[index];
+          return result;
+        }, {} as ObjectType);
+        formFunc.setValue(objetcV, { validate: true });
+      } else {
+        formFunc.setValue({ [name]: v }, { validate: true });
       }
-      if (onChangePo) onChangePo(v, ...other);
-    },
-    [onChangePo, inForm, formFunc],
-  );
+    }
+    if (onChangePo) onChangePo(v, ...other);
+  });
   return { value, onChange, error, inForm };
 }

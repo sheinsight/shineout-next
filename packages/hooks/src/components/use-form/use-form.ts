@@ -30,7 +30,12 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     submitLock: false,
     lastValue: value,
     resetTime: 0,
+    mounted: false,
   });
+
+  React.useEffect(() => {
+    ref.current.mounted = true;
+  }, []);
 
   const [errors, setErrors] = React.useState<ObjectType>({});
 
@@ -74,6 +79,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   }, [value]);
 
   const remove = () => {
+    if (!ref.current.removeArr.size) return;
     let newValue: T = produce(value, (draft) => {
       ref.current.removeArr.forEach((n) => {
         deepRemove(draft, n);
@@ -110,7 +116,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       ref.current.rules[n] = validate;
       ref.current.removeArr.delete(n);
       if (df !== undefined && deepGet(value, n) === undefined) {
-        ref.current.defaultValues[n] = df;
+        if (!ref.current.mounted) ref.current.defaultValues[n] = df;
         const newValue = produce(value, (draft) => {
           deepSet(draft, n, df, { clone: true });
         });
