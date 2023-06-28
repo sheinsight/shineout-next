@@ -1,4 +1,4 @@
-import { Form, FormField, FormItem, Input } from '@sheinx/base';
+import { Form, FormField, FormFieldSet, FormItem, Input } from '@sheinx/base';
 import {
   useFormItemStyle,
   useFormStyle,
@@ -28,49 +28,40 @@ export default () => {
           console.log('form reset');
         }}
       >
-        <FormItem required label={'Username'} jssStyle={itemStyle}>
-          <FormField
-            name={'name'}
-            defaultValue={'spana'}
+        <FormItem jssStyle={itemStyle} label={'Email'} tip={'输入公司邮箱'}>
+          <FormFieldSet
+            name={'super'}
             rules={[
-              (value, formValue, callback) => {
-                if (value && value.length > 5) {
+              (value: any, formValue, callback) => {
+                console.log('supervalidate', value);
+                if (value && value.email && value.email.length > 5) {
                   callback(new Error('长度不能大于5'));
                 } else {
                   callback(true);
                 }
               },
             ]}
-            onChange={(v) => {
-              console.log('input change', v);
-            }}
           >
-            <Input
-              jssStyle={inputStyle}
-              innerTitleJssStyle={innerTitleStyle}
-              clearable
-              placeholder='please input name'
-            />
-          </FormField>
-        </FormItem>
-        <FormItem label={'Email'} tip={'输入公司邮箱'} jssStyle={itemStyle}>
-          <FormField
-            name={'email'}
-            onChange={(v?: string) => {
-              console.log('input change', v);
-            }}
-          >
-            {({ value, onChange }) => (
+            <FormField
+              name={'email'}
+              rules={[
+                (value, formValue, callback) => {
+                  if (value && value.length > 2) {
+                    callback(new Error('长度不能大于2'));
+                  } else {
+                    callback(true);
+                  }
+                },
+              ]}
+            >
               <Input
-                value={value}
-                onChange={onChange}
                 jssStyle={inputStyle}
                 innerTitleJssStyle={innerTitleStyle}
                 clearable
                 placeholder='please input email'
               />
-            )}
-          </FormField>
+            </FormField>
+          </FormFieldSet>
         </FormItem>
         <button type={'submit'}>提交</button>
         <button type={'reset'}>重置</button>

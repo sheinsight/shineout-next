@@ -130,13 +130,14 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       vals: { [key: string]: any },
       option: { validate?: boolean } = { validate: false },
     ) => {
-      let newValue = produce(value, (draft) => {
-        Object.keys(vals).forEach((key) => {
+      let newValue = value;
+      Object.keys(vals).forEach((key) => {
+        newValue = produce(newValue, (draft) => {
           deepSet(draft, key, vals[key], { clone: true });
-          if (option.validate) {
-            ref.current.rules[key]?.(key, vals[key], newValue);
-          }
         });
+        if (option.validate) {
+          ref.current.rules[key]?.(key, vals[key], newValue);
+        }
       });
 
       onChange(newValue);

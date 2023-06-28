@@ -1,6 +1,7 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { FormContext } from './form-context';
 import { FormItemContext } from '../use-form-item/form-item-context';
+import { useFieldSetConsumer } from '../use-form-fieldset/fieldset-context';
 import { deepGet, isArray, validate } from '../../../utils';
 
 import { BaseFormControlProps } from './use-form-control.type';
@@ -8,7 +9,11 @@ import usePersistFn from '../../../common/use-persist-fn';
 import { ObjectType } from '../../../common/type';
 
 export default function useFormControl<T>(props: BaseFormControlProps<T>) {
-  const { onChange: onChangePo, name, reservable, defaultValue, rules, onError, bind } = props;
+  const { onChange: onChangePo, reservable, defaultValue, rules, onError } = props;
+  const { name, bind } = useFieldSetConsumer({
+    name: props.name,
+    bind: props.bind,
+  });
 
   let value: T | undefined;
   let error: Error | undefined = undefined;
@@ -27,12 +32,12 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const getError = () => {
     if (isArray(name)) {
       for (let i = 0; i < name.length; i++) {
-        const err = deepGet(errors ?? [], name[i]) as Error;
+        const err = (errors ?? {})[name[i]] as Error;
         if (err) return err;
       }
       return;
     } else {
-      return deepGet(errors ?? [], name) as Error;
+      return (errors ?? {})[name] as Error;
     }
   };
 
@@ -95,7 +100,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   }, [name]);
 
   useEffect(() => {
-    updateError(isArray(name) ? name.join('|') : '', error);
+    updateError(isArray(name) ? name.join('|') : name, error);
   }, [error]);
 
   const onChange = useCallback(
