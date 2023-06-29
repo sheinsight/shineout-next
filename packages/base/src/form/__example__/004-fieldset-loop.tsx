@@ -28,20 +28,7 @@ export default () => {
         }}
       >
         <FormItem jssStyle={itemStyle} label={'friends'}>
-          <FormFieldSet
-            name={'friends'}
-            defaultValue={[{ name: 'leo' }]}
-            // rules={[
-            //   (value: any, formValue, callback) => {
-            //     console.log('supervalidate', value);
-            //     if (value && value.email && value.email.length > 5) {
-            //       callback(new Error('长度不能大于5'));
-            //     } else {
-            //       callback(true);
-            //     }
-            //   },
-            // ]}
-          >
+          <FormFieldSet name={'friends'} defaultValue={[{ name: 'leo', age: 20 }]}>
             {(ii) => {
               return (
                 <FormItem jssStyle={itemStyle} style={{ display: 'flex', marginBottom: '10px' }}>
@@ -70,21 +57,6 @@ export default () => {
                 </FormItem>
               );
             }}
-            {/*<FormField*/}
-            {/*  name={'name'}*/}
-            {/*  defaultValue={[{ name: 'leo' }]}*/}
-            {/*  rules={[*/}
-            {/*    (value, formValue, callback) => {*/}
-            {/*      if (value && value.length > 2) {*/}
-            {/*        callback(new Error('长度不能大于2'));*/}
-            {/*      } else {*/}
-            {/*        callback(true);*/}
-            {/*      }*/}
-            {/*    },*/}
-            {/*  ]}*/}
-            {/*>*/}
-
-            {/*</FormField>*/}
           </FormFieldSet>
         </FormItem>
         <button type={'submit'}>提交</button>

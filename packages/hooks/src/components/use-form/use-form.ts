@@ -83,6 +83,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     let newValue: T = produce(value, (draft) => {
       ref.current.removeArr.forEach((n) => {
         deepRemove(draft, n);
+        ref.current.removeArr.delete(n);
       });
     });
 
