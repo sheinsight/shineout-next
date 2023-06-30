@@ -1,90 +1,37 @@
-import { useInput, useKeyEvent, usePersistFn } from '@sheinx/hooks';
-import classNames from 'classnames';
-import React, { KeyboardEvent, useEffect } from 'react';
+import SimpleInputInput from './simple-input';
+import { useInputFormat, util } from '@sheinx/hooks';
 import { InputProps } from './input.type';
-import Icons from '../icons';
+import useInputCommon from './use-input-common';
 
-const Input = (props: InputProps) => {
-  const {
-    jssStyle,
-    className,
-    style,
-    status,
-    clearIcon,
-    size,
-    prefix,
-    suffix,
-    underline,
-    border = true,
-    inGroup = false,
-    onEnterPress,
-    getStatus,
-    renderInput,
-    ...rest
-  } = props;
-  const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
-    ...rest,
-  });
-  const rootClass = classNames([
-    jssStyle.wrapper,
-    className,
-    {
-      [jssStyle.wrapperFocus]: focused,
-      [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperError]: status === 'error',
-      [jssStyle.wrapperSmall]: size === 'small',
-      [jssStyle.wrapperLarge]: size === 'large',
-      [jssStyle.wrapperUnderline]: underline,
-      [jssStyle.wrapperNoBorder]: !border,
-      [jssStyle.wrapperInGroup]: inGroup,
-    },
-  ]);
+export default (props: InputProps) => {
+  const commonProps = useInputCommon<InputProps['value'], InputProps>(props);
 
-  const keyHandler = useKeyEvent({
-    onEnterPress: (e: KeyboardEvent) => {
-      onEnterPress?.((e.target as HTMLInputElement).value || '', e);
-    },
+  const inputFormatParams = {
+    coin: commonProps.coin,
+    autoFix: commonProps.autoFix,
+    type: commonProps.type,
+    onBlur: commonProps.onBlur,
+    onFocus: commonProps.onFocus,
+    digits: commonProps.digits,
+    integerLimit: commonProps.integerLimit,
+    numType: commonProps.numType,
+    trim: commonProps.trim,
+  };
+  const inputFormatProps = useInputFormat({
+    value: commonProps.value,
+    onChange: commonProps.onChange,
+    ...inputFormatParams,
   });
 
-  const onKeyUp = usePersistFn((e: KeyboardEvent<HTMLInputElement>) => {
-    props.onKeyUp?.(e);
-    keyHandler(e);
+  const forwardProps = util.removeProps(commonProps, {
+    ...inputFormatParams,
   });
-
-  const inputProps = getInputProps({
-    className: classNames(jssStyle.input, jssStyle.paddingBox),
-    onKeyUp,
-  });
-
-  useEffect(() => {
-    if (getStatus) {
-      getStatus({ focused });
-    }
-  }, [focused]);
-
-  let inputEl = <input type='text' {...inputProps} />;
-
-  if (typeof renderInput === 'function') {
-    inputEl = renderInput(inputEl);
-  }
 
   return (
-    <div
-      {...getRootProps({
-        className: rootClass,
-        style,
-      })}
-    >
-      {prefix}
-      {inputEl}
-      {(showClear || props.showClear) && (
-        <div className={jssStyle.clearWrapper} {...getClearProps()}>
-          <span className={jssStyle.clear}>{clearIcon || Icons.CloseCircle}</span>
-        </div>
-      )}
-      {suffix}
-    </div>
+    <SimpleInputInput
+      {...forwardProps}
+      {...inputFormatProps}
+      value={inputFormatProps.value || ''}
+    />
   );
 };
-
-export default Input;

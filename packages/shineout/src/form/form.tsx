@@ -1,8 +1,7 @@
 import React from 'react';
-import { Form } from '@sheinx/base';
+import { Form, ObjectType } from '@sheinx/base';
 import { useFormStyle } from '@sheinx/shineout-style';
 import { FormProps } from './form.type';
-import { ObjectType } from '@sheinx/base';
 import { useInputAble, util } from '@sheinx/hooks';
 
 export default <T extends ObjectType>(props: FormProps<T>) => {
@@ -18,5 +17,12 @@ export default <T extends ObjectType>(props: FormProps<T>) => {
   const forwardProps = util.removeProps(props, {
     ...inputAbleParams,
   });
-  return <Form {...forwardProps} {...inputAbleProps} jssStyle={useFormStyle()} />;
+  return (
+    <Form
+      {...forwardProps}
+      {...inputAbleProps}
+      defaultValue={props.defaultValue}
+      jssStyle={useFormStyle()}
+    />
+  );
 };

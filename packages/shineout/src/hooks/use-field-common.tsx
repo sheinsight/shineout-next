@@ -2,7 +2,7 @@ import React from 'react';
 import { usePersistFn, util } from '@sheinx/hooks';
 import { ExtendsFieldProps, TipProps } from '../../dist/cjs/@types/common';
 import useItemValidate from './use-item-validate';
-import { Form } from '@sheinx/base';
+import { FormField } from '@sheinx/base';
 
 export interface FiledItemCommonProps {
   defaultValue?: any;
@@ -78,9 +78,9 @@ const useFieldCommon = <Props extends FiledItemCommonProps, Value>(
     );
   }
   return (
-    <Form.Field {...FieldParams} onError={onFieldError}>
+    <FormField {...FieldParams} onError={onFieldError}>
       <Origin {...(forwardProps as Props)} suffix={renderTip(fieldError)} />
-    </Form.Field>
+    </FormField>
   );
 };
 

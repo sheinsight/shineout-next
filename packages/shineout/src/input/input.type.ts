@@ -1,46 +1,9 @@
-import { InputProps as UiInputProps } from '@sheinx/base';
-import { InputFormatProps } from '@sheinx/hooks';
-import React from 'react';
+import { InputProps as UnStyledInputProps } from '@sheinx/base';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 
-export interface InputCommonProps<V> {
-  suffix?: UiInputProps['suffix'];
-  className?: UiInputProps['className'];
-  forwardRef?: UiInputProps['inputRef'];
-  getStatus?: UiInputProps['getStatus'];
-  size?: UiInputProps['size'];
-  innerTitle?: React.ReactNode;
-  placeTitle?: React.ReactNode;
-  htmlName?: string;
-  value?: V;
-  onChange?: (value: V) => void;
-  defaultValue?: V;
-  beforeChange?: (value: V) => void | V;
-  clearable?: boolean | (() => void);
-  clearToUndefined?: boolean;
-  width?: string | number;
-  style?: React.CSSProperties;
-  info?: number | ((value: V | undefined) => string);
-}
-
-export type GetCommonProps<Props, V> = Omit<
-  Props,
-  | 'jssStyle'
-  | 'value'
-  | 'onChange'
-  | 'defaultValue'
-  | 'clearable'
-  | 'onClear'
-  | 'name'
-  | 'inputRef'
-  | 'step'
-  | 'min'
-  | 'max'
-> &
-  InputCommonProps<V>;
-
 export interface BaseInputProps
-  extends GetCommonProps<UiInputProps, string | undefined>,
-    Omit<InputFormatProps, 'value' | 'onChange'> {}
+  extends Omit<UnStyledInputProps, 'jssStyle' | 'innerTitleJssStyle'> {
+  value?: string;
+}
 
 export type InputProps = GetWithFieldProps<BaseInputProps, BaseInputProps['value']>;

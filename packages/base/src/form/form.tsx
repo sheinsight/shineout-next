@@ -1,12 +1,7 @@
-import { useForm, useInputAble } from '@sheinx/hooks';
+import { ObjectType, useForm, useInputAble } from '@sheinx/hooks';
 import classNames from 'classnames';
 import * as React from 'react';
-import FormField from './form-field';
-import FormItem from './form-item';
-
 import { FormProps } from './form.type';
-
-import { ObjectType } from '@sheinx/hooks';
 
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, ...rest } = props;
@@ -32,12 +27,4 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   );
 };
 
-type FormGroup = typeof Form & {
-  Field: typeof FormField;
-  Item: typeof FormItem;
-};
-
-(Form as FormGroup).Field = FormField;
-(Form as FormGroup).Item = FormItem;
-
-export default Form as FormGroup;
+export default Form;

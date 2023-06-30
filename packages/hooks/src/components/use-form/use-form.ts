@@ -2,19 +2,13 @@ import * as React from 'react';
 import { Provider } from './Provider';
 import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
-import {
-  extractEventHandlers,
-  deepRemove,
-  deepSet,
-  deepClone,
-  deepGet,
-  shallowEqual,
-} from '../../utils';
+import { produce } from 'immer';
+import { deepGet, deepRemove, deepSet, extractEventHandlers, shallowEqual } from '../../utils';
 
-import { ProviderProps, FormContext, UseFormProps, UseFormSlotProps } from './use-form.type';
+import { FormContext, ProviderProps, UseFormProps, UseFormSlotProps } from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
 
-type FormContextType = ProviderProps['form'];
+type FormContextType = ProviderProps['formValue'];
 const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const {
     value = {} as T,
@@ -36,7 +30,12 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     submitLock: false,
     lastValue: value,
     resetTime: 0,
+    mounted: false,
   });
+
+  React.useEffect(() => {
+    ref.current.mounted = true;
+  }, []);
 
   const [errors, setErrors] = React.useState<ObjectType>({});
 
@@ -80,10 +79,14 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   }, [value]);
 
   const remove = () => {
-    let newValue: T = deepClone(value);
-    ref.current.removeArr.forEach((n) => {
-      newValue = deepRemove(value!, n) as T;
+    if (!ref.current.removeArr.size) return;
+    let newValue: T = produce(value, (draft) => {
+      ref.current.removeArr.forEach((n) => {
+        deepRemove(draft, n);
+        ref.current.removeArr.delete(n);
+      });
     });
+
     onChange(newValue);
   };
 
@@ -113,9 +116,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       ref.current.names.add(n);
       ref.current.rules[n] = validate;
       ref.current.removeArr.delete(n);
-      if (df !== undefined) {
-        ref.current.defaultValues[n] = df;
-        const newValue = deepSet(deepClone(value), n, df, { clone: true }) as T;
+      if (df !== undefined && deepGet(value, n) === undefined) {
+        if (!ref.current.mounted) ref.current.defaultValues[n] = df;
+        const newValue = produce(value, (draft) => {
+          deepSet(draft, n, df, { clone: true });
+        });
         onChange(newValue);
       }
     },
@@ -132,13 +137,16 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       vals: { [key: string]: any },
       option: { validate?: boolean } = { validate: false },
     ) => {
-      let newValue = deepClone(value);
+      let newValue = value;
       Object.keys(vals).forEach((key) => {
-        newValue = deepSet(newValue, key, vals[key], { clone: true }) as T;
+        newValue = produce(newValue, (draft) => {
+          deepSet(draft, key, vals[key], { clone: true });
+        });
         if (option.validate) {
           ref.current.rules[key]?.(key, vals[key], newValue);
         }
       });
+
       onChange(newValue);
     },
 
@@ -174,10 +182,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   };
 
   const getDefaultValue = () => {
-    const v = deepClone(defaultValue);
-    Object.keys(ref.current.defaultValues).forEach((key) => {
-      const df = ref.current.defaultValues[key];
-      deepSet(v, key, deepClone(df));
+    const v = produce(defaultValue, (draft) => {
+      Object.keys(ref.current.defaultValues).forEach((key) => {
+        const df = ref.current.defaultValues[key];
+        if (deepGet(draft, key) === undefined) deepSet(draft, key, df, { clone: true });
+      });
     });
     return v;
   };
@@ -202,7 +211,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     };
   };
 
-  const form: FormContextType = React.useMemo(
+  const formValue: FormContextType = React.useMemo(
     () => ({
       errors,
       value,
@@ -210,7 +219,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     }),
     [errors, value, formFunc],
   );
-  const label: ProviderProps['label'] = React.useMemo(
+  const labelValue: ProviderProps['labelValue'] = React.useMemo(
     () => ({
       labelWidth,
       labelAlign,
@@ -225,8 +234,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     getFormProps,
     Provider: Provider,
     ProviderProps: {
-      form,
-      label,
+      formValue,
+      labelValue,
     },
   };
 };

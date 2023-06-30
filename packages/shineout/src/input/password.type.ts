@@ -1,10 +1,9 @@
-import { InputPasswordProps as PasswordProps } from '@sheinx/hooks';
-import { InputProps as UiInputProps } from '@sheinx/base';
-import { GetCommonProps } from './input.type';
+import { InputPasswordProps as UnStyledInputPasswordProps } from '@sheinx/base';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 
 export interface BasePasswordProps
-  extends GetCommonProps<UiInputProps, string | undefined>,
-    Omit<PasswordProps, 'value' | 'onChange'> {}
+  extends Omit<UnStyledInputPasswordProps, 'jssStyle' | 'innerTitleJssStyle'> {
+  value?: string;
+}
 
 export type InputPasswordProps = GetWithFieldProps<BasePasswordProps, BasePasswordProps['value']>;

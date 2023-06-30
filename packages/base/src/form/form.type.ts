@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ObjectType, BaseFormProps } from '@sheinx/hooks';
-import { CommonType } from '../types/common';
+import { CommonType } from '../common/type';
 
 export interface FormClasses {
   wrapper: string;

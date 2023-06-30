@@ -1,4 +1,4 @@
-import { CommonType } from '../types/common';
+import { CommonType } from '../common/type';
 import { BaseRadioProps } from '@sheinx/hooks';
 import React from 'react';
 
@@ -22,11 +22,19 @@ export interface RadioClasses {
   desc: string;
 }
 
-export interface RadioBaseProps
+export interface SimpleRadioProps
   extends BaseRadioProps,
     Pick<CommonType, 'status' | 'style' | 'className'> {
   jssStyle: RadioClasses;
   children?: React.ReactNode;
 }
 
-export type RadioProps = RadioBaseProps;
+export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'checked'> {
+  /**
+   * 选中后返回的值默认为 true
+   */
+  htmlValue?: T;
+  onChange?: (value: T) => void;
+  checked?: boolean | ((d: T) => boolean);
+  onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+}

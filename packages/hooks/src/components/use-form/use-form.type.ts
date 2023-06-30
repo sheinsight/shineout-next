@@ -4,8 +4,8 @@ import { AddNoProps, ObjectType } from '../../common/type';
 import { FormContextValueType } from './use-form-control/use-form-control.type';
 
 export interface ProviderProps {
-  label: FormLabelConfig;
-  form: FormContextValueType;
+  labelValue: FormLabelConfig;
+  formValue: FormContextValueType;
   children?: ReactNode;
 }
 
@@ -40,6 +40,7 @@ export type FormContext = {
   submitLock: boolean;
   lastValue: ObjectType | undefined;
   resetTime: number;
+  mounted: boolean;
 };
 
 export type UseFormSlotOwnProps = {

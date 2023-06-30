@@ -1,10 +1,17 @@
-import { Input, Form } from '@sheinx/base';
-import { useInputStyle, useFormStyle, useFormItemStyle } from '@sheinx/shineout-style';
+import { Form, FormField, FormItem, Input } from '@sheinx/base';
+import {
+  useFormItemStyle,
+  useFormStyle,
+  useInnerTitleStyle,
+  useInputStyle,
+} from '@sheinx/shineout-style';
 import React from 'react';
+
 export default () => {
   const inputStyle = useInputStyle();
   const formStyle = useFormStyle();
   const itemStyle = useFormItemStyle();
+  const innerTitleStyle = useInnerTitleStyle();
   return (
     <div>
       <Form
@@ -21,8 +28,8 @@ export default () => {
           console.log('form reset');
         }}
       >
-        <Form.Item required label={'Username'} jssStyle={itemStyle}>
-          <Form.Field
+        <FormItem required label={'Username'} jssStyle={itemStyle}>
+          <FormField
             name={'name'}
             defaultValue={'spana'}
             rules={[
@@ -38,11 +45,16 @@ export default () => {
               console.log('input change', v);
             }}
           >
-            <Input jssStyle={inputStyle} clearable placeholder='please input name' />
-          </Form.Field>
-        </Form.Item>
-        <Form.Item label={'Email'} tip={'输入公司邮箱'} jssStyle={itemStyle}>
-          <Form.Field
+            <Input
+              jssStyle={inputStyle}
+              innerTitleJssStyle={innerTitleStyle}
+              clearable
+              placeholder='please input name'
+            />
+          </FormField>
+        </FormItem>
+        <FormItem label={'Email'} tip={'输入公司邮箱'} jssStyle={itemStyle}>
+          <FormField
             name={'email'}
             onChange={(v?: string) => {
               console.log('input change', v);
@@ -53,12 +65,13 @@ export default () => {
                 value={value}
                 onChange={onChange}
                 jssStyle={inputStyle}
+                innerTitleJssStyle={innerTitleStyle}
                 clearable
                 placeholder='please input email'
               />
             )}
-          </Form.Field>
-        </Form.Item>
+          </FormField>
+        </FormItem>
         <button type={'submit'}>提交</button>
         <button type={'reset'}>重置</button>
       </Form>

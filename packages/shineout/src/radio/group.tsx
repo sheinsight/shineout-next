@@ -1,95 +1,18 @@
-import { BaseRadioGroupProps } from './group.type';
-import { usePersistFn, useListSingle, useInputAble, util } from '@sheinx/hooks';
-import groupContext from './group-context';
-import Radio from './radio';
-
+import { BaseRadioGroupProps, RadioGroupProps } from './group.type';
+import { RadioGroup as UnStyledRadioGroup } from '@sheinx/base';
 import { useRadioStyle } from '@sheinx/shineout-style';
-import React from 'react';
-import classNames from 'classnames';
+import useFieldCommon from '../hooks/use-field-common';
 
-const Group = <DataItem, Value>(props: BaseRadioGroupProps<DataItem, Value>) => {
-  const { children, className, button, size, block, keygen } = props;
+const BaseRadioGroup = <DataItem, Value>(props: BaseRadioGroupProps<DataItem, Value>) => {
   const jssStyle = useRadioStyle();
-
-  const inputAbleProps = useInputAble({
-    value: props.value,
-    defaultValue: props.defaultValue,
-    onChange: props.onChange,
-    control: 'value' in props,
-    beforeChange: props.beforeChange,
-  });
-
-  const useListParams = {
-    value: inputAbleProps.value,
-    onChange: inputAbleProps.onChange,
-    prediction: props.prediction,
-    format: props.format,
-    keygen: props.keygen,
-    data: props.data || ([] as DataItem[]),
-  };
-
-  const datum = useListSingle(useListParams);
-
-  const handleItemChange = usePersistFn((d: DataItem) => {
-    datum.add(d, { overwrite: true });
-  });
-
-  const handleIndexChange = usePersistFn((index: number) => {
-    datum.add(props.data![index], { overwrite: true });
-  });
-
-  const isChecked = usePersistFn((d: DataItem) => {
-    return datum.check(d);
-  });
-
-  const getContent = (d: DataItem, index: number) => {
-    const { renderItem } = props;
-    if (typeof renderItem === 'string') {
-      return d[renderItem] as unknown as React.ReactNode;
-    }
-    if (typeof renderItem === 'function') {
-      return renderItem(d, index);
-    }
-
-    return '';
-  };
-
-  const providerValue = {
-    checked: isChecked,
-    onChange: handleItemChange,
-    disabled: props.disabled,
-  };
-  const groupClass = classNames(className, jssStyle.group, {
-    [jssStyle.groupBlock]: block,
-    [jssStyle.groupButton]: button,
-    [jssStyle.groupOutline]: button === 'outline',
-    [jssStyle.groupSmall]: button && size === 'small',
-    [jssStyle.groupLarge]: button && size === 'large',
-  });
-  if (props.data === undefined) {
-    return (
-      <div className={groupClass}>
-        <groupContext.Provider value={providerValue}>{children}</groupContext.Provider>
-      </div>
-    );
-  } else {
-    return (
-      <div className={groupClass}>
-        {props.data.map((d, i) => (
-          <Radio
-            checked={datum.check(d)}
-            disabled={datum.disabledCheck(d)}
-            key={util.getKey(d, keygen, i)}
-            htmlValue={i}
-            onChange={handleIndexChange}
-          >
-            {getContent(d, i)}
-          </Radio>
-        ))}
-        {children}
-      </div>
-    );
-  }
+  return <UnStyledRadioGroup {...props} jssStyle={jssStyle} />;
 };
 
-export default Group;
+const RadioGroupWithField = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
+  return useFieldCommon<
+    BaseRadioGroupProps<DataItem, Value>,
+    BaseRadioGroupProps<DataItem, Value>['value']
+  >(props, BaseRadioGroup);
+};
+
+export default RadioGroupWithField;

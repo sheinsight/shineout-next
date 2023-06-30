@@ -4,10 +4,10 @@ import * as React from 'react';
 import { ProviderProps } from './use-form.type';
 
 export const Provider = (props: ProviderProps) => {
-  const { children, label, form } = props;
+  const { children, labelValue, formValue } = props;
   return (
-    <FormContext.Provider value={form}>
-      <LabelConfigContext.Provider value={label}>{children}</LabelConfigContext.Provider>
+    <FormContext.Provider value={formValue}>
+      <LabelConfigContext.Provider value={labelValue}>{children}</LabelConfigContext.Provider>
     </FormContext.Provider>
   );
 };

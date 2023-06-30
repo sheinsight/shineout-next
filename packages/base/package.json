@@ -15,14 +15,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@sheinx/hooks": "workspace:*",
-    "classnames": "^2.3.2"
+    "@sheinx/hooks": "workspace:*"
   },
   "devDependencies": {
-    "@sheinx/shineout-style": "workspace:*",
-    "react": "18.2.0"
+    "@sheinx/shineout-style": "workspace:*"
   },
   "peerDependencies": {
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "immer": ">=10",
+    "classnames": ">=2"
   }
 }

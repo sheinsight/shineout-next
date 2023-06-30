@@ -1,37 +1,32 @@
-import { useRadio } from '@sheinx/hooks';
-import classNames from 'classnames';
 import React from 'react';
+import SimpleRadio from './simple-radio';
+import { usePersistFn } from '@sheinx/hooks';
 import { RadioProps } from './radio.type';
+import GroupContext from './group-context';
 
-const Textarea = (props: RadioProps) => {
-  const { jssStyle, className, style, status, children, ...rest } = props;
-  const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useRadio({
-    ...rest,
+const Radio = <T,>(props: RadioProps<T>) => {
+  const { children, htmlValue = true as T, onChange, checked, jssStyle, ...rest } = props;
+  const handleChange = usePersistFn(() => {
+    onChange?.(htmlValue);
   });
-  const rootClass = classNames([
-    jssStyle.wrapper,
-    className,
-    {
-      [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperError]: status === 'error',
-      [jssStyle.wrapperChecked]: checked,
-    },
-  ]);
 
-  const inputProps = getInputProps();
-
+  const getChecked = () => {
+    if (typeof checked === 'function') {
+      return checked(htmlValue);
+    }
+    return checked;
+  };
   return (
-    <div
-      {...getRootProps({
-        className: rootClass,
-        style,
-      })}
-    >
-      <input {...inputProps} type='radio' />
-      <i {...getIndicatorProps()} className={jssStyle.indicator} />
-      <span className={jssStyle.desc}>{children}</span>
-    </div>
+    <SimpleRadio jssStyle={jssStyle} {...rest} checked={getChecked()} onChange={handleChange}>
+      {children}
+    </SimpleRadio>
   );
 };
 
-export default Textarea;
+const RadioWithContext = <T,>(props: RadioProps<T>) => {
+  return (
+    <GroupContext.Consumer>{(value) => <Radio {...props} {...value} />}</GroupContext.Consumer>
+  );
+};
+
+export default RadioWithContext;

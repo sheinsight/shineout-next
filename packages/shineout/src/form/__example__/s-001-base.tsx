@@ -5,7 +5,8 @@
  *    --
  */
 
-import { Input, Form } from 'shineout';
+import { Form, Input } from 'shineout';
+
 export default () => {
   return (
     <div>
@@ -34,6 +35,7 @@ export default () => {
                 callback(true);
               },
             ]}
+            defaultValue={'spana'}
             name={'name'}
             clearable
             placeholder='please input name'
