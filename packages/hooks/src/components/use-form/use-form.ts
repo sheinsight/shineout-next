@@ -4,7 +4,16 @@ import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
 import useFuncChange from '../../common/use-func-change';
 import { current, produce } from 'immer';
-import { deepGet, deepRemove, deepSet, extractEventHandlers, shallowEqual } from '../../utils';
+import {
+  deepGet,
+  deepRemove,
+  deepSet,
+  docScroll,
+  extractEventHandlers,
+  isArray,
+  shallowEqual,
+  wrapFormError,
+} from '../../utils';
 
 import { FormContext, ProviderProps, UseFormProps, UseFormSlotProps } from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
@@ -20,6 +29,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     inline,
     initValidate,
     disabled,
+    onError,
+    scrollToError,
   } = props;
 
   const { value, onChange } = useFuncChange({
@@ -27,7 +38,21 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     onChange: props.onChange,
   });
 
-  const ref = React.useRef<FormContext>({
+  const formRef = React.useRef<HTMLFormElement>();
+
+  const handleSubmitError = (err: Error) => {
+    onError?.(err);
+    if (!props.scrollToError) return;
+    const el = formRef.current?.querySelector('.shineout-form-error');
+    if (el) {
+      el.scrollIntoView();
+    }
+    if (typeof scrollToError === 'number' && scrollToError !== 0) {
+      docScroll.top -= scrollToError;
+    }
+  };
+
+  const context = React.useRef<FormContext>({
     defaultValues: {},
     rules: {},
     removeArr: new Set<string>(),
@@ -39,31 +64,31 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   });
 
   React.useEffect(() => {
-    ref.current.mounted = true;
+    context.current.mounted = true;
   }, []);
 
   const [errors, setErrors] = React.useState<ObjectType>({});
 
-  const validateFields = usePersistFn((fields?: string[], config = {}): Promise<true> => {
+  const validateFields = usePersistFn((fields?: string | string[], config = {}): Promise<true> => {
     return new Promise((resolve, reject) => {
       const files2 = fields
-        ? fields.filter((key) => ref.current.rules[key])
-        : Object.keys(ref.current.rules);
+        ? (isArray(fields) ? fields : [fields]).filter((key) => context.current.rules[key])
+        : Object.keys(context.current.rules);
       const validates = files2.map((key) => {
-        const f = ref.current.rules[key];
+        const f = context.current.rules[key];
         return f(key, deepGet(value, key), value, config);
       });
       Promise.all(validates)
         .then((results) => {
-          const error = results.filter((n) => n instanceof Error);
-          if (error.length) {
+          const error = results.find((n) => n !== true);
+          if (error !== undefined) {
             reject(error);
           } else {
             resolve(true);
           }
         })
         .catch((e: Error) => {
-          reject([e]);
+          reject(wrapFormError(e));
         });
     });
   });
@@ -71,34 +96,34 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   // 默认值更新
   React.useEffect(() => {
     // initValidate 字段改变后自动校验对应的值
-    if (initValidate && !ref.current.resetTime) {
-      const keys = Object.keys(ref.current.rules).filter((key) => {
-        const oldValue = deepGet(ref.current.lastValue || {}, key);
+    if (initValidate && !context.current.resetTime) {
+      const keys = Object.keys(context.current.rules).filter((key) => {
+        const oldValue = deepGet(context.current.lastValue || {}, key);
         const newValue = deepGet(value || {}, key);
         return !shallowEqual(oldValue, newValue);
       });
       validateFields(keys).catch(() => {});
     }
-    ref.current.resetTime = 0;
-    ref.current.lastValue = value;
+    context.current.resetTime = 0;
+    context.current.lastValue = value;
   }, [value]);
 
   const remove = () => {
-    if (!ref.current.removeArr.size) return;
+    if (!context.current.removeArr.size) return;
     onChange((v) => {
-      ref.current.removeArr.forEach((n) => {
+      context.current.removeArr.forEach((n) => {
         deepRemove(v, n);
-        ref.current.removeArr.delete(n);
+        context.current.removeArr.delete(n);
       });
     });
   };
 
   const addRemove = (name: string) => {
-    ref.current.removeArr.add(name);
-    if (ref.current.removeTimer) {
-      clearTimeout(ref.current.removeTimer);
+    context.current.removeArr.add(name);
+    if (context.current.removeTimer) {
+      clearTimeout(context.current.removeTimer);
     }
-    ref.current.removeTimer = setTimeout(remove);
+    context.current.removeTimer = setTimeout(remove);
   };
 
   const formFunc: FormContextType['formFunc'] = useLatestObj({
@@ -112,24 +137,24 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         config: { ignoreBind?: boolean },
       ) => void,
     ) => {
-      if (ref.current.names.has(n)) {
+      if (context.current.names.has(n)) {
         console.error(`name "${n}" already exist`);
         return;
       }
-      ref.current.names.add(n);
-      ref.current.rules[n] = validate;
-      ref.current.removeArr.delete(n);
+      context.current.names.add(n);
+      context.current.rules[n] = validate;
+      context.current.removeArr.delete(n);
       if (df !== undefined && deepGet(value, n) === undefined) {
-        if (!ref.current.mounted) ref.current.defaultValues[n] = df;
+        if (!context.current.mounted) context.current.defaultValues[n] = df;
         onChange((v) => {
           deepSet(v, n, df, { clone: true });
         });
       }
     },
     unbind: (n: string, reserveAble?: boolean) => {
-      delete ref.current.rules[n];
-      delete ref.current.defaultValues[n];
-      ref.current.names.delete(n);
+      delete context.current.rules[n];
+      delete context.current.defaultValues[n];
+      context.current.names.delete(n);
       if (!reserveAble) {
         addRemove(n);
       }
@@ -143,7 +168,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         Object.keys(vals).forEach((key) => {
           deepSet(draft, key, vals[key], { clone: true });
           if (option.validate) {
-            ref.current.rules[key]?.(key, vals[key], current(draft));
+            context.current.rules[key]?.(key, vals[key], current(draft));
           }
         });
       });
@@ -160,31 +185,41 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     validateFields,
   });
 
-  const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
+  const submit = usePersistFn((withValidate = true) => {
     if (disabled) return;
-    e.preventDefault();
-    if (ref.current.submitLock) {
+    if (context.current.submitLock) {
       return;
     }
-    ref.current.submitLock = true;
+    context.current.submitLock = true;
     setTimeout(() => {
       // 防止连续点击
-      ref.current.submitLock = false;
+      context.current.submitLock = false;
     }, 1000);
     (async () => {
-      const pass = (await validateFields(undefined, { ignoreBind: true }).catch((e) => e)) === true;
-      if (!pass) {
+      if (!withValidate) {
+        props.onSubmit?.(value ?? ({} as T));
         return;
       }
-      props.onSubmit?.(value ?? ({} as T));
-      other?.onSubmit?.(e);
+      const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
+      if (result === true) {
+        props.onSubmit?.(value ?? ({} as T));
+      } else {
+        handleSubmitError(result);
+        return;
+      }
     })();
+  });
+
+  const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    submit();
+    other?.onSubmit?.(e);
   };
 
   const getDefaultValue = () => {
     const v = produce(defaultValue, (draft) => {
-      Object.keys(ref.current.defaultValues).forEach((key) => {
-        const df = ref.current.defaultValues[key];
+      Object.keys(context.current.defaultValues).forEach((key) => {
+        const df = context.current.defaultValues[key];
         if (deepGet(draft, key) === undefined) deepSet(draft, key, df, { clone: true });
       });
     });
@@ -195,7 +230,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     if (disabled) return;
     onChange(getDefaultValue());
     formFunc?.clearErrors?.();
-    ref.current.resetTime = 1;
+    context.current.resetTime = 1;
     props.onReset?.();
     other?.onReset?.(e);
   };
@@ -207,6 +242,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     return {
       ...externalProps,
       ...externalEventHandlers,
+      ref: formRef,
       disabled: !!disabled,
       onSubmit: handleSubmit(externalEventHandlers),
       onReset: handleReset(externalEventHandlers),
@@ -234,6 +270,26 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled],
   );
 
+  const getValue = usePersistFn(() => value);
+  const reset = usePersistFn(() => handleReset({})(undefined as any));
+  const clearValidate = usePersistFn(formFunc.clearErrors);
+  const validate = usePersistFn(() => validateFields());
+  const validateFieldsFunc = usePersistFn((fields: string | string[]) =>
+    validateFields(fields).catch(() => {}),
+  );
+  const validateFieldsWithError = usePersistFn((fields: string | string[]) =>
+    validateFields(fields),
+  );
+  const func = useLatestObj({
+    submit,
+    getValue,
+    reset,
+    clearValidate,
+    validate,
+    validateFields: validateFieldsFunc,
+    validateFieldsWithError,
+  });
+
   return {
     getFormProps,
     Provider: Provider,
@@ -241,6 +297,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       formValue,
       labelValue,
     },
+    func,
   };
 };
 

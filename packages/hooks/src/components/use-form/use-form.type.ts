@@ -28,6 +28,8 @@ export interface BaseFormProps<T> extends FormCommonConfig {
   initValidate?: boolean;
   onSubmit?: (value: T) => void;
   onReset?: () => void;
+  scrollToError?: boolean;
+  onError?: (error: Error) => void;
 }
 
 export type UseFormProps<T> = BaseFormProps<T>;
