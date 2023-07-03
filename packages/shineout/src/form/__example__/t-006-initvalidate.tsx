@@ -4,8 +4,9 @@
  * en - initValidate
  *    --
  */
-import { Input, Form } from 'shineout';
+import { Form, Input } from 'shineout';
 import React from 'react';
+
 export default () => {
   const [v, setV] = React.useState({});
   return (

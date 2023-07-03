@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Provider } from './Provider';
 import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
-import { produce } from 'immer';
+import useFuncChange from '../../common/use-func-change';
+import { current, produce } from 'immer';
 import { deepGet, deepRemove, deepSet, extractEventHandlers, shallowEqual } from '../../utils';
 
 import { FormContext, ProviderProps, UseFormProps, UseFormSlotProps } from './use-form.type';
@@ -11,8 +12,6 @@ import { HandlerType, ObjectType } from '../../common/type';
 type FormContextType = ProviderProps['formValue'];
 const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const {
-    value = {} as T,
-    onChange,
     defaultValue = {} as T,
     labelWidth,
     labelAlign,
@@ -20,7 +19,13 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     keepErrorHeight,
     inline,
     initValidate,
+    disabled,
   } = props;
+
+  const { value, onChange } = useFuncChange({
+    value: props.value || ({} as T),
+    onChange: props.onChange,
+  });
 
   const ref = React.useRef<FormContext>({
     defaultValues: {},
@@ -80,14 +85,12 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const remove = () => {
     if (!ref.current.removeArr.size) return;
-    let newValue: T = produce(value, (draft) => {
+    onChange((v) => {
       ref.current.removeArr.forEach((n) => {
-        deepRemove(draft, n);
+        deepRemove(v, n);
         ref.current.removeArr.delete(n);
       });
     });
-
-    onChange(newValue);
   };
 
   const addRemove = (name: string) => {
@@ -118,10 +121,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       ref.current.removeArr.delete(n);
       if (df !== undefined && deepGet(value, n) === undefined) {
         if (!ref.current.mounted) ref.current.defaultValues[n] = df;
-        const newValue = produce(value, (draft) => {
-          deepSet(draft, n, df, { clone: true });
+        onChange((v) => {
+          deepSet(v, n, df, { clone: true });
         });
-        onChange(newValue);
       }
     },
     unbind: (n: string, reserveAble?: boolean) => {
@@ -137,17 +139,14 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       vals: { [key: string]: any },
       option: { validate?: boolean } = { validate: false },
     ) => {
-      let newValue = value;
-      Object.keys(vals).forEach((key) => {
-        newValue = produce(newValue, (draft) => {
+      onChange((draft) => {
+        Object.keys(vals).forEach((key) => {
           deepSet(draft, key, vals[key], { clone: true });
+          if (option.validate) {
+            ref.current.rules[key]?.(key, vals[key], current(draft));
+          }
         });
-        if (option.validate) {
-          ref.current.rules[key]?.(key, vals[key], newValue);
-        }
       });
-
-      onChange(newValue);
     },
 
     setError(n: string, e: Error | undefined) {
@@ -162,6 +161,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   });
 
   const handleSubmit = (other: HandlerType) => (e: React.FormEvent<HTMLFormElement>) => {
+    if (disabled) return;
     e.preventDefault();
     if (ref.current.submitLock) {
       return;
@@ -192,6 +192,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   };
 
   const handleReset = (other: HandlerType) => (e: React.FormEventHandler<HTMLFormElement>) => {
+    if (disabled) return;
     onChange(getDefaultValue());
     formFunc?.clearErrors?.();
     ref.current.resetTime = 1;
@@ -206,6 +207,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     return {
       ...externalProps,
       ...externalEventHandlers,
+      disabled: !!disabled,
       onSubmit: handleSubmit(externalEventHandlers),
       onReset: handleReset(externalEventHandlers),
     };
@@ -216,6 +218,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       errors,
       value,
       formFunc,
+      disabled: !!disabled,
     }),
     [errors, value, formFunc],
   );
@@ -226,8 +229,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       labelVerticalAlign,
       keepErrorHeight,
       inline,
+      disabled,
     }),
-    [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline],
+    [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled],
   );
 
   return {

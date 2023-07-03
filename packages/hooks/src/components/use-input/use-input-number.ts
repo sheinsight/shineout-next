@@ -17,6 +17,7 @@ const useNumberFormat = (props: InputNumberProps) => {
     allowNull,
     step = 1,
     cancelBlurChange,
+    disabled,
   } = props;
 
   const getStringValue = (value: string | number | null | undefined) => {
@@ -98,9 +99,11 @@ const useNumberFormat = (props: InputNumberProps) => {
   };
 
   const handlePlus = usePersistFn(() => {
+    if (disabled) return;
     changeValue(step);
   });
   const handleMinus = usePersistFn(() => {
+    if (disabled) return;
     changeValue(-step);
   });
 

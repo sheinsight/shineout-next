@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useInputAble, usePersistFn } from '@sheinx/hooks';
+import { useFormConfig, useInputAble, usePersistFn } from '@sheinx/hooks';
 import useClear from '../common/use-clear';
 import useInnerTitle from '../common/use-inner-title';
 import classNames from 'classnames';
@@ -33,6 +33,9 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     innerTitleJssStyle,
     ...rest
   } = props;
+
+  const formConfig = useFormConfig();
+  const disabled = formConfig.disabled || props.disabled;
 
   const [focused, setFocused] = React.useState(false);
 
@@ -113,6 +116,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     suffix: mergeSuffix,
     renderInput: renderInput,
     getStatus: onStatusChange,
+    disabled,
   };
 };
 

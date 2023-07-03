@@ -22,7 +22,7 @@ export const useFormFieldSet = <T>(props: BaseFormFieldSetProps<T>) => {
   }
 
   const ProviderValue = {
-    path: props.name,
+    path: name,
   };
 
   return {

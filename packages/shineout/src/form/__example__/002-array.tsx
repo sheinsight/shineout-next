@@ -4,7 +4,7 @@
  * en - 数组name
  *    --
  */
-import { Input, Form } from 'shineout';
+import { Form, Input } from 'shineout';
 import { produce } from 'immer';
 
 const NameInput = (props: any) => {
@@ -36,7 +36,7 @@ export default () => {
   return (
     <div>
       <Form
-        defaultValue={{ email: 'spana@qq.com' }}
+        defaultValue={{ email: 'zhangsan@qq.com' }}
         onSubmit={(v) => {
           console.log('form submit', v);
         }}

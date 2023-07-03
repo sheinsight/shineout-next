@@ -14,6 +14,8 @@ export * from './common/use-key-event';
 export * from './common/use-list-select';
 export * from './common/use-click-away';
 export * from './common/use-previous';
+export * from './common/use-render';
+export * from './common/use-safe-state';
 
 //components
 export * from './components/use-input';

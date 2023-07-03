@@ -1,7 +1,7 @@
 import React from 'react';
 import SimpleInput from './simple-input';
 import Icons from '../icons';
-import { useInputNumber, util, usePersistFn } from '@sheinx/hooks';
+import { useInputNumber, usePersistFn, util } from '@sheinx/hooks';
 
 import { InputNumberProps } from './input-number.type';
 import classNames from 'classnames';
@@ -26,6 +26,7 @@ export default (props: InputNumberProps) => {
   const { onMinus, onPlus, ...numberFormatProps } = useInputNumber({
     value: commonProps.value,
     onChange: commonProps.onChange,
+    disabled: !!commonProps.disabled,
     ...numberFormatParams,
   });
 

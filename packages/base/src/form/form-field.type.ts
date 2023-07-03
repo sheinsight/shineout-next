@@ -1,11 +1,12 @@
 import React from 'react';
-import { RuleFunc, BaseFormControlProps } from '@sheinx/hooks';
+import { BaseFormControlProps, RuleFunc } from '@sheinx/hooks';
 
 // 子元素需要有的数据线
 export interface FieldControlProps<T> {
   value?: T;
   onChange?: (value: T, ...rest: any) => void;
   status?: 'error';
+  disabled?: boolean;
 }
 
 export interface FormFieldProps<T> extends Partial<BaseFormControlProps<T>> {

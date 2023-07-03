@@ -23,6 +23,7 @@ export interface FormContextValueType {
     clearErrors: () => void;
     validateFields: (names?: string[], config?: { ignoreBind?: boolean }) => Promise<true>;
   };
+  disabled?: boolean;
 }
 
 export interface BaseFormControlProps<T> {

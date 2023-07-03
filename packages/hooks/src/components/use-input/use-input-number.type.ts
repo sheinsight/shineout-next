@@ -9,4 +9,5 @@ export interface InputNumberProps
   max?: number;
   allowNull?: boolean;
   step?: number;
+  disabled?: boolean;
 }

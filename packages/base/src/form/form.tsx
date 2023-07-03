@@ -13,7 +13,13 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     beforeChange: undefined,
   });
   const { Provider, ProviderProps, getFormProps } = useForm({ ...rest, value, onChange });
-  const rootClass = classNames([jssStyle.wrapper, className]);
+  const rootClass = classNames([
+    jssStyle.wrapper,
+    className,
+    {
+      [jssStyle.wrapperInline]: props.inline,
+    },
+  ]);
 
   return (
     <form

@@ -4,20 +4,21 @@ import { AddNoProps, ObjectType } from '../../common/type';
 import { FormContextValueType } from './use-form-control/use-form-control.type';
 
 export interface ProviderProps {
-  labelValue: FormLabelConfig;
+  labelValue: FormCommonConfig;
   formValue: FormContextValueType;
   children?: ReactNode;
 }
 
-export interface FormLabelConfig {
+export interface FormCommonConfig {
   labelWidth?: string | number;
   labelAlign?: 'left' | 'right' | 'top';
   labelVerticalAlign?: 'bottom' | 'top' | 'middle';
   keepErrorHeight?: boolean;
   inline?: boolean;
+  disabled?: boolean;
 }
 
-export interface BaseFormProps<T> extends FormLabelConfig {
+export interface BaseFormProps<T> extends FormCommonConfig {
   value: T | undefined;
   onChange: (value: T) => void;
   defaultValue?: T;

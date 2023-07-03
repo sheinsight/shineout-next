@@ -22,12 +22,15 @@ const formItemStyle: JsStyles<FormItemClass> = {
     display: 'flex',
     alignItems: 'flex-start',
     marginBottom: cssVars.formItemMarginBottom,
+    fontSize: cssVars.fontSize,
+    lineHeight: cssVars.commonLineHeight,
+    color: cssVars,
   },
   wrapperTip: {},
   label: {
     width: '140px',
     padding: '5px 6px',
-    wordBreak: 'break-all',
+    wordBreak: 'break-word',
     textAlign: 'end',
   },
   labelLeft: {
@@ -35,6 +38,7 @@ const formItemStyle: JsStyles<FormItemClass> = {
   },
   wrapperInline: {
     display: 'inline-flex',
+    marginRight: cssVars.formItemMarginRight,
   },
   wrapperLabelTop: {
     flexFlow: 'column nowrap',
@@ -47,6 +51,11 @@ const formItemStyle: JsStyles<FormItemClass> = {
   },
   wrapperLabelVerticalMiddle: {
     alignItems: 'center',
+    '& $label': {
+      lineHeight: 1,
+      padding: 0,
+      marginTop: 0,
+    },
   },
   wrapperLabelVerticalBottom: {
     alignItems: 'flex-end',
@@ -71,6 +80,9 @@ const formItemStyle: JsStyles<FormItemClass> = {
     flex: '1',
     fontSize: '14px',
     lineHeight: cssVars.commonLineHeight,
+    '$wrapperInline &': {
+      padding: 0,
+    },
   },
   error: {
     color: cssVars.dangerColor,

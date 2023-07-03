@@ -90,6 +90,10 @@ const input: JsStyles<InputClass> = {
     outline: 'none',
     backgroundColor: 'transparent',
     boxSizing: 'border-box',
+    '&::placeholder': {
+      color: cssVars.inputPlaceholderColor,
+      fontSize: cssVars.inputPlaceholderSize,
+    },
   },
   clearWrapper: {
     position: 'relative',
@@ -162,7 +166,9 @@ const input: JsStyles<InputClass> = {
       lineHeight: '1',
       color: cssVars.grey500,
       '&:hover': {
-        color: cssVars.primaryColor,
+        '$wrapper:not($wrapperDisabled) &': {
+          color: cssVars.primaryColor,
+        },
       },
       '&:first-child': {
         borderBottom: `1px solid ${cssVars.grey200}`,

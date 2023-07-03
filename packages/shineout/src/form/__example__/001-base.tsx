@@ -11,7 +11,7 @@ export default () => {
   return (
     <div>
       <Form
-        defaultValue={{ email: 'spana@qq.com' }}
+        defaultValue={{ email: 'zhangsan@qq.com' }}
         onSubmit={(v) => {
           console.log('form submit', v);
         }}
@@ -24,18 +24,7 @@ export default () => {
       >
         <Form.Item label='name'>
           <Input
-            rules={[
-              (value, _, callback) => {
-                if (!value) {
-                  callback(new Error('name is required'));
-                }
-                if (value && value.length > 10) {
-                  callback(new Error('name length must less than 10'));
-                }
-                callback(true);
-              },
-            ]}
-            defaultValue={'spana'}
+            defaultValue={'zhangsan'}
             name={'name'}
             clearable
             placeholder='please input name'
@@ -45,8 +34,10 @@ export default () => {
           <Input name={'email'} clearable placeholder='please input email' />
         </Form.Item>
 
-        <button type={'submit'}>提交</button>
-        <button type={'reset'}>重置</button>
+        <Form.Item label=''>
+          <button type={'submit'}>提交</button>
+          <button type={'reset'}>重置</button>
+        </Form.Item>
       </Form>
     </div>
   );
