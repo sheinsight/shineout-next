@@ -1,4 +1,8 @@
-export type { FormRef as Ref } from '@sheinx/base';
+export type {
+  FormRef as Ref,
+  FormFieldChildrenFunc as FieldChildrenFunc,
+  FormFieldSetChildrenFunc as FieldSetChildrenFunc,
+} from '@sheinx/base';
 
 export type {
   FormProps as Props,

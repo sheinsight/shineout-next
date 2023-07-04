@@ -5,5 +5,5 @@ export { default as FormFieldSet } from './form-fieldset';
 
 export type { FormProps, FormRef } from './form.type';
 export type { FormItemProps } from './form-item.type';
-export type { FormFieldProps } from './form-field.type';
-export type { FormFieldSetProps } from './form-fieldset.type';
+export type { FormFieldProps, FormFieldChildrenFunc } from './form-field.type';
+export type { FormFieldSetProps, FormFieldSetChildrenFunc } from './form-fieldset.type';

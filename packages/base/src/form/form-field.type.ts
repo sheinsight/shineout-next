@@ -9,6 +9,8 @@ export interface FieldControlProps<T> {
   disabled?: boolean;
 }
 
+export type FormFieldChildrenFunc<T> = (props: FieldControlProps<T>) => React.ReactElement;
+
 export interface FormFieldProps<T> extends Partial<BaseFormControlProps<T>> {
   name: string | string[];
   reservable?: boolean;
@@ -16,7 +18,7 @@ export interface FormFieldProps<T> extends Partial<BaseFormControlProps<T>> {
   rules?: RuleFunc<T>[];
   children:
     | React.ReactElement<{ value?: any; onChange?: any; [name: string]: any }>
-    | ((props: FieldControlProps<T>) => React.ReactElement);
+    | FormFieldChildrenFunc<T>;
   onChange?: (value: T, ...rest: any) => void;
   onError?: (error?: Error) => void;
 }
