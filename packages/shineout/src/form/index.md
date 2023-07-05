@@ -28,5 +28,6 @@ Users can input or edit text in the text box.
 <code src="./__example__/009-field.tsx"></code>
 <code src="./__example__/010-fieldset-object.tsx"></code>
 <code src="./__example__/011-fieldset-loop.tsx"></code>
+<code src="./__example__/t-012-size.tsx"></code>
 
 # Api

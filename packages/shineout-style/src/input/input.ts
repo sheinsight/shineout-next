@@ -92,7 +92,7 @@ const input: JsStyles<InputClass> = {
     boxSizing: 'border-box',
     '&::placeholder': {
       color: cssVars.inputPlaceholderColor,
-      fontSize: cssVars.inputPlaceholderSize,
+      fontSize: 'inherit',
     },
   },
   clearWrapper: {
@@ -152,7 +152,7 @@ const input: JsStyles<InputClass> = {
   ...resetGroup,
   numberStep: {
     display: 'flex',
-    height: '100%',
+    alignSelf: 'stretch',
     boxSizing: 'border-box',
     flexFlow: 'column noWrap',
     '& > span': {

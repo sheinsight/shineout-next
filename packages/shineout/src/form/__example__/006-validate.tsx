@@ -5,12 +5,14 @@
  *    --
  */
 
-import { Form, Input } from 'shineout';
+import { Form, Input, Rule } from 'shineout';
 
+const rules = Rule();
 export default () => {
   return (
     <div>
       <Form
+        rules={{ email: [rules.required('email is required'), rules.email('email is not valid')] }}
         onSubmit={(v) => {
           console.log('form submit', v);
         }}
@@ -24,8 +26,8 @@ export default () => {
         <Form.Item label='name' required>
           <Input
             rules={[
-              { required: true, message: 'name is required' },
-              { max: 10, message: 'name length must less than 10' },
+              rules.required('name is required'),
+              rules.max(10, 'name length must less than 10'),
             ]}
             name={'name'}
             clearable
@@ -35,18 +37,7 @@ export default () => {
         <Form.Item label='email' required>
           <Input
             name={'email'}
-            rules={[
-              (value, _, callback, _prop) => {
-                if (!value) {
-                  callback(new Error('email is required'));
-                }
-                // 校验email 类型
-                if (value && !/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(value)) {
-                  callback(new Error('email is not valid'));
-                }
-                callback(true);
-              },
-            ]}
+            rules={[rules.required('email is required'), rules.email('email is not valid')]}
             clearable
             placeholder='please input email'
           />

@@ -5,18 +5,21 @@ import { FormContextValueType } from './use-form-control/use-form-control.type';
 import { FormItemRule } from '../../utils/rule/rule.type';
 
 export interface ProviderProps {
-  labelValue: FormCommonConfig;
+  formConfig: FormCommonConfig;
   formValue: FormContextValueType;
   children?: ReactNode;
 }
 
-export interface FormCommonConfig {
+export interface FormLabelConfig {
   labelWidth?: string | number;
   labelAlign?: 'left' | 'right' | 'top';
   labelVerticalAlign?: 'bottom' | 'top' | 'middle';
   keepErrorHeight?: boolean;
   inline?: boolean;
+}
+export interface FormCommonConfig extends FormLabelConfig {
   disabled?: boolean;
+  size?: 'small' | 'default' | 'large';
 }
 
 interface FormRuleObject<T> {
@@ -41,6 +44,11 @@ export interface BaseFormProps<T> extends FormCommonConfig {
    */
   removeUndefined?: boolean;
   rules?: FormRuleObject<T>;
+  /**
+   * @cn ms, 两次提交间隔时长（防止重复提交)
+   * @default 1000
+   */
+  throttle?: number;
 }
 
 export type UseFormProps<T> = BaseFormProps<T>;

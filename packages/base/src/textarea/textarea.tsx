@@ -4,6 +4,7 @@ import { useInputAble, useTextareaFormat, util } from '@sheinx/hooks';
 import { TextareaProps } from './textarea.type';
 import useAutoSize from './use-auto-size';
 import classNames from 'classnames';
+import useWithFormConfig from '../common/use-with-form-config';
 
 const defaultInfo = (num: number, msg: any) => {
   if (!msg || msg.length === 0) return null;
@@ -13,6 +14,10 @@ const defaultInfo = (num: number, msg: any) => {
 };
 export default (props: TextareaProps) => {
   const { info, suffix, renderFooter, width, style, jssStyle, ...resetProps } = props;
+
+  const { disabled, size } = useWithFormConfig(props);
+  resetProps.disabled = disabled;
+  resetProps.size = size;
 
   // inputAble
   const inputAbleParams = {

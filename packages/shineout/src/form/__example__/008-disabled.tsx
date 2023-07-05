@@ -5,9 +5,8 @@
  *    -- Use the disabled property to make the Form support to disable component.
  */
 import React from 'react';
-import { Form, Input } from 'shineout';
+import { Form, Input, Textarea } from 'shineout';
 
-// todo
 const App: React.FC = () => (
   <Form disabled>
     <Form.Item label='Email'>
@@ -31,6 +30,9 @@ const App: React.FC = () => (
 
     <Form.Item label='Age'>
       <Input.Number style={{ width: 100 }} name='age' type='number' digits={0} defaultValue='0' />
+    </Form.Item>
+    <Form.Item label='address'>
+      <Textarea rows={2} name='address' defaultValue='xxx' />
     </Form.Item>
   </Form>
 );

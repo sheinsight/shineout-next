@@ -28,15 +28,8 @@ export default () => {
         <Form.Item label='name'>
           <Input
             rules={[
-              (value, _, callback) => {
-                if (!value) {
-                  callback(new Error('name is required'));
-                }
-                if (value && value.length > 10) {
-                  callback(new Error('name length must less than 10'));
-                }
-                callback(true);
-              },
+              { required: true, message: 'name is required' },
+              { max: 10, message: 'name length must less than 10' },
             ]}
             name={'name'}
             clearable
@@ -46,14 +39,7 @@ export default () => {
         <Form.Item label='email'>
           <Input
             name={'email'}
-            rules={[
-              (value, _, callback) => {
-                if (!value) {
-                  callback(new Error('email is required'));
-                }
-                callback(true);
-              },
-            ]}
+            rules={[{ required: true, message: 'email is required' }]}
             clearable
             placeholder='please input email'
           />

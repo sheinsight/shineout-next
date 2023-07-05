@@ -5,7 +5,7 @@
  *    -- When FieldSet's children is a function, takes the value (type is array) from the form by the name property, and generate a set of subcomponents.
  */
 import React, { useState } from 'react';
-import { Form, Input } from 'shineout';
+import { Form, Input, Rule } from 'shineout';
 
 interface Value {
   account?: {
@@ -16,6 +16,8 @@ interface Value {
     age?: number;
   };
 }
+
+const rules = Rule();
 
 const App: React.FC = () => {
   const [value, setValue] = useState<Value>({});
@@ -57,28 +59,14 @@ const App: React.FC = () => {
                 name='name'
                 placeholder='Name'
                 title='Friend name'
-                rules={[
-                  (value, _, callback) => {
-                    if (!value) {
-                      callback(new Error('Name is required'));
-                    }
-                    callback(true);
-                  },
-                ]}
+                rules={[rules.required('Name is required')]}
                 style={{ width: 180, marginInlineEnd: 8 }}
               />
               <Input
                 name='age'
                 type='number'
                 placeholder='Age'
-                rules={[
-                  (value, _, callback) => {
-                    if (!value) {
-                      callback(new Error('Age is required'));
-                    }
-                    callback(true);
-                  },
-                ]}
+                rules={[rules.required('Age is required')]}
                 title='Friend age'
                 style={{ width: 60 }}
               />

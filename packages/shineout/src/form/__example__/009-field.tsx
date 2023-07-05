@@ -9,7 +9,7 @@
  *    -- When the children property is a function, return one or one group of ReactElement.
  */
 import React from 'react';
-import { Form } from 'shineout';
+import { Form, Rule } from 'shineout';
 
 function Input(props: any) {
   const { value = '', status, onChange } = props;
@@ -25,25 +25,14 @@ function Input(props: any) {
     />
   );
 }
-
+const rule = Rule();
 const App: React.FC = () => (
   <Form style={{ maxWidth: 500 }} onSubmit={(d) => console.log(d)}>
     <Form.Item required label='Email'>
       <Form.Field
         name='email'
         defaultValue='test@email.com'
-        rules={[
-          (value, _, callback) => {
-            if (!value) {
-              callback(new Error('email is required'));
-            }
-            // 校验email 类型
-            if (value && !/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(value)) {
-              callback(new Error('email is not valid'));
-            }
-            callback(true);
-          },
-        ]}
+        rules={[rule.required('不能为空'), rule.email('格式不正确')]}
       >
         {({ value, onChange, status }) => (
           <Input value={value || ''} status={status} onChange={onChange} type='text' />
@@ -52,7 +41,14 @@ const App: React.FC = () => (
     </Form.Item>
 
     <Form.Item label='Password' tip='Use at least one letter, one numeral, and seven characters.'>
-      <Form.Field name='password'>
+      <Form.Field
+        name='password'
+        rules={[
+          rule.required,
+          rule.min(7, '不能小于7个字符'),
+          rule.regExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/, '格式不正确'),
+        ]}
+      >
         <Input type='password' />
       </Form.Field>
     </Form.Item>

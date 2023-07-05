@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
-import { useFormConfig, useInputAble, usePersistFn } from '@sheinx/hooks';
+import { useInputAble, usePersistFn } from '@sheinx/hooks';
 import useClear from '../common/use-clear';
 import useInnerTitle from '../common/use-inner-title';
 import classNames from 'classnames';
 
 import { InputCommonProps } from './input.type';
+import useWithFormConfig from '../common/use-with-form-config';
 
 const defaultInfo = (num: number, msg: any) => {
   if (!msg || msg.length === 0) return null;
@@ -34,8 +35,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     ...rest
   } = props;
 
-  const formConfig = useFormConfig();
-  const disabled = formConfig.disabled || props.disabled;
+  const { size, disabled } = useWithFormConfig(props);
 
   const [focused, setFocused] = React.useState(false);
 
@@ -54,8 +54,8 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
   const renderInput = useInnerTitle({
     innerTitle,
     placeTitle,
+    size,
     open: focused || hasValue(inputAbleProps.value),
-    size: props.size,
     jssStyle: innerTitleJssStyle,
   });
 
@@ -117,6 +117,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     renderInput: renderInput,
     getStatus: onStatusChange,
     disabled,
+    size,
   };
 };
 

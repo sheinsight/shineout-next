@@ -4,4 +4,4 @@ export * from './use-form-fieldset';
 
 export { default, default as useForm } from './use-form';
 export { useFormConfig } from './form-config-context';
-export type { BaseFormProps, FormCommonConfig } from './use-form.type';
+export type { BaseFormProps, FormCommonConfig, FormLabelConfig } from './use-form.type';

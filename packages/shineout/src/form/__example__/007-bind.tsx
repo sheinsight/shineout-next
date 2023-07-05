@@ -28,7 +28,7 @@ export default () => {
           <Input.Password
             bind={['repeat']}
             rules={[
-              (value, _, callback) => {
+              (value, _, callback, _prop) => {
                 if (!value) {
                   callback(new Error('password is required'));
                 }
@@ -47,7 +47,7 @@ export default () => {
           <Input.Password
             name={'repeat'}
             rules={[
-              (value, formValue, callback) => {
+              (value, formValue, callback, _prop) => {
                 if (!value) {
                   callback(new Error('repeat is required'));
                 }

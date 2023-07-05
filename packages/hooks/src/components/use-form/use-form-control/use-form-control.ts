@@ -59,7 +59,8 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         formFunc?.validateFields(bind, { ignoreBind: true }).catch(() => {});
       }
     };
-    return validate(v, formV, rules || [], {})
+    const fullRules = formFunc?.combineRules(name, rules || []) || [];
+    return validate(v, formV, fullRules, {})
       .then((res) => {
         const err = res === true ? undefined : res;
         formFunc?.setError(name, err);

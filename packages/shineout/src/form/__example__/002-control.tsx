@@ -60,31 +60,13 @@ const App: React.FC = () => {
       </div>
 
       <Form.Item label='name'>
-        <Input
-          name='name'
-          rules={[
-            (value, _, callback) => {
-              if (!value) {
-                callback(new Error('name is required'));
-              }
-              callback(true);
-            },
-          ]}
-        />
+        <Input name='name' rules={[{ required: true, message: 'name is required' }]} />
       </Form.Item>
 
       <Form.Item label='Password'>
         <Input.Password
           name='password'
-          type='password'
-          rules={[
-            (value, _, callback) => {
-              if (!value) {
-                callback(new Error('name is required'));
-              }
-              callback(true);
-            },
-          ]}
+          rules={[{ required: true, message: 'password is required' }]}
         />
       </Form.Item>
 

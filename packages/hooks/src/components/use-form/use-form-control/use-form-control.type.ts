@@ -21,6 +21,10 @@ export interface FormContextValueType {
     ) => void;
     setError: (n: string, e: Error | undefined) => void;
     clearErrors: () => void;
+    combineRules: <ValueItem>(
+      name: string,
+      propRules: FormItemRule<ValueItem>,
+    ) => FormItemRule<ValueItem>;
     validateFields: (names?: string[], config?: { ignoreBind?: boolean }) => Promise<true>;
   };
   disabled?: boolean;

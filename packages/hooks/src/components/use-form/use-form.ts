@@ -11,12 +11,14 @@ import {
   docScroll,
   extractEventHandlers,
   isArray,
+  isObject,
   shallowEqual,
   wrapFormError,
 } from '../../utils';
 
 import { FormContext, ProviderProps, UseFormProps, UseFormSlotProps } from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
+import { FormItemRule } from '../../utils/rule';
 
 type FormContextType = ProviderProps['formValue'];
 const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
@@ -32,6 +34,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     onError,
     scrollToError,
     removeUndefined = true,
+    rules,
+    throttle = 1000,
+    size,
   } = props;
 
   const deepSetOptions = {
@@ -188,6 +193,17 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       setErrors({});
     },
 
+    combineRules<ItemValue>(name: string, propRules: FormItemRule<ItemValue>) {
+      let newRules: FormItemRule<ItemValue> = [];
+      if (isObject(rules) && name) {
+        newRules = (deepGet(rules, name) || []) as FormItemRule<ItemValue>;
+      }
+      if (isArray(propRules)) {
+        newRules = newRules.concat(propRules);
+      }
+      return newRules;
+    },
+
     validateFields,
   });
 
@@ -200,7 +216,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     setTimeout(() => {
       // 防止连续点击
       context.current.submitLock = false;
-    }, 1000);
+    }, throttle);
     (async () => {
       if (!withValidate) {
         props.onSubmit?.(value ?? ({} as T));
@@ -264,7 +280,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     }),
     [errors, value, formFunc],
   );
-  const labelValue: ProviderProps['labelValue'] = React.useMemo(
+  const formConfig: ProviderProps['formConfig'] = React.useMemo(
     () => ({
       labelWidth,
       labelAlign,
@@ -272,8 +288,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       keepErrorHeight,
       inline,
       disabled,
+      size,
     }),
-    [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled],
+    [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size],
   );
 
   const getValue = usePersistFn(() => value);
@@ -301,7 +318,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     Provider: Provider,
     ProviderProps: {
       formValue,
-      labelValue,
+      formConfig,
     },
     func,
   };

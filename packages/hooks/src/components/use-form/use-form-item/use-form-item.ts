@@ -7,7 +7,7 @@ import { produce } from 'immer';
 
 const UseFormItem = () => {
   const [errors, setErrors] = React.useState<{ [name: string]: Error | undefined }>({});
-  const formConfig = useFormConfig;
+  const formConfig = useFormConfig();
   const handlerErrorUpdate = usePersistFn((name: string, error?: Error) => {
     if (errors[name] !== error) {
       setErrors((prev) => {
