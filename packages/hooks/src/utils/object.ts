@@ -1,4 +1,4 @@
-import { isObject, isMergeable } from './is';
+import { isMergeable, isObject } from './is';
 import { ObjectType } from '../common/type';
 
 export function insertPoint(name: string) {
@@ -88,11 +88,17 @@ export function pathGenerator(raw: string) {
   return results;
 }
 
+interface DeepSetOptions {
+  removeUndefined?: boolean;
+  skipUndefined?: boolean;
+  forceSet?: boolean;
+}
+
 export const deepSet = (
   target: ObjectType,
   path: string,
   value: any,
-  options: deepOptions = {},
+  options: DeepSetOptions = {},
 ) => {
   if (!isObject(target)) throw new Error('Target must be an object.');
   if (typeof path !== 'string') throw new Error('Path must be a string.');

@@ -4,7 +4,7 @@
  * hideActions:
  *  - CSB
  */
-import { useClickAway } from '@sheinx/hooks';
+import useClickAway from '../../use-click-away';
 import React, { useState } from 'react';
 
 export default function Demo1() {

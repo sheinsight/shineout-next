@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { AddNoProps, ObjectType } from '../../common/type';
 import { FormContextValueType } from './use-form-control/use-form-control.type';
+import { FormItemRule } from '../../utils/rule/rule.type';
 
 export interface ProviderProps {
   labelValue: FormCommonConfig;
@@ -18,6 +19,10 @@ export interface FormCommonConfig {
   disabled?: boolean;
 }
 
+interface FormRuleObject<T> {
+  [key: string]: FormRuleObject<T> | FormItemRule<T>;
+}
+
 export interface BaseFormProps<T> extends FormCommonConfig {
   value: T | undefined;
   onChange: (value: T) => void;
@@ -30,6 +35,12 @@ export interface BaseFormProps<T> extends FormCommonConfig {
   onReset?: () => void;
   scrollToError?: boolean;
   onError?: (error: Error) => void;
+  /**
+   * @cn 是否删除值为 undefined 的字段
+   * @default true
+   */
+  removeUndefined?: boolean;
+  rules?: FormRuleObject<T>;
 }
 
 export type UseFormProps<T> = BaseFormProps<T>;

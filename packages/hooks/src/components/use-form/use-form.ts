@@ -31,7 +31,13 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     disabled,
     onError,
     scrollToError,
+    removeUndefined = true,
   } = props;
+
+  const deepSetOptions = {
+    removeUndefined,
+    forceSet: true,
+  };
 
   const { value, onChange } = useFuncChange({
     value: props.value || ({} as T),
@@ -147,7 +153,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       if (df !== undefined && deepGet(value, n) === undefined) {
         if (!context.current.mounted) context.current.defaultValues[n] = df;
         onChange((v) => {
-          deepSet(v, n, df, { clone: true });
+          deepSet(v, n, df, deepSetOptions);
         });
       }
     },
@@ -166,7 +172,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     ) => {
       onChange((draft) => {
         Object.keys(vals).forEach((key) => {
-          deepSet(draft, key, vals[key], { clone: true });
+          deepSet(draft, key, vals[key], deepSetOptions);
           if (option.validate) {
             context.current.rules[key]?.(key, vals[key], current(draft));
           }
@@ -220,7 +226,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     const v = produce(defaultValue, (draft) => {
       Object.keys(context.current.defaultValues).forEach((key) => {
         const df = context.current.defaultValues[key];
-        if (deepGet(draft, key) === undefined) deepSet(draft, key, df, { clone: true });
+        if (deepGet(draft, key) === undefined) deepSet(draft, key, df, deepSetOptions);
       });
     });
     return v;

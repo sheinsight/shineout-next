@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseFormControlProps, RuleFunc } from '@sheinx/hooks';
+import { BaseFormControlProps, FormItemRule } from '@sheinx/hooks';
 
 // 子元素需要有的数据线
 export interface FieldControlProps<T> {
@@ -15,7 +15,7 @@ export interface FormFieldProps<T> extends Partial<BaseFormControlProps<T>> {
   name: string | string[];
   reservable?: boolean;
   defaultValue?: T;
-  rules?: RuleFunc<T>[];
+  rules?: FormItemRule<T>;
   children:
     | React.ReactElement<{ value?: any; onChange?: any; [name: string]: any }>
     | FormFieldChildrenFunc<T>;

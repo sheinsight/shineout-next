@@ -1,8 +1,8 @@
 import { ObjectType } from '../../common/type';
-import { RuleFunc } from '../../utils/type';
+import { FormItemRule } from '../../utils/rule/rule.type';
 
 export interface UseValidateProps {
-  rules?: Array<RuleFunc>;
+  rules?: FormItemRule<any>;
   options?: ObjectType;
   shouldSetError?: boolean;
 }

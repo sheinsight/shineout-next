@@ -1,10 +1,11 @@
 import * as util from './utils/';
 
+export * from './utils/rule';
+
 export { util };
 
 //common
 export * from './common/type';
-export * from './utils/type';
 
 export * from './common/use-fork-ref';
 export * from './common/use-input-able';

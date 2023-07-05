@@ -23,12 +23,7 @@ export default () => {
         }}
       >
         <Form.Item label='name'>
-          <Input
-            defaultValue={'zhangsan'}
-            name={'name'}
-            clearable
-            placeholder='please input name'
-          />
+          <Input defaultValue={'zhangsan'} name={'name'} placeholder='please input name' />
         </Form.Item>
         <Form.Item label='email'>
           <Input name={'email'} clearable placeholder='please input email' />

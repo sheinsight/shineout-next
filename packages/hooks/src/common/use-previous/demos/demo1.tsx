@@ -5,7 +5,7 @@
  *  - CSB
  */
 
-import { usePrevious } from '@sheinx/hooks';
+import usePrevious from '../../use-previous';
 import React, { useState } from 'react';
 
 export default () => {
