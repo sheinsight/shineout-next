@@ -37,8 +37,24 @@ export default (props: InputNumberProps) => {
   const suffix = (
     <React.Fragment>
       <div className={jssStyle.numberStep}>
-        <span onMouseDown={onPlus}>{Icons.AngleRight}</span>
-        <span onMouseDown={onMinus}>{Icons.AngleLeft}</span>
+        <span
+          onMouseDown={(e) => {
+            // 阻止默认事件，防止点击按钮时，input失去焦点
+            e.preventDefault();
+            onPlus();
+          }}
+        >
+          {Icons.AngleRight}
+        </span>
+        <span
+          onMouseDown={(e) => {
+            // 阻止默认事件，防止点击按钮时，input失去焦点
+            e.preventDefault();
+            onMinus();
+          }}
+        >
+          {Icons.AngleLeft}
+        </span>
       </div>
       {restProps.suffix}
     </React.Fragment>
