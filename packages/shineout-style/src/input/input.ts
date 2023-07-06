@@ -76,9 +76,7 @@ const input: JsStyles<InputClass> = {
     ...wrapper,
   },
   ...resetWrapper,
-  wrapperNumber: {
-    paddingRight: 0,
-  },
+  wrapperNumber: {},
   input: {
     width: '100%',
     background: 'transparent',
