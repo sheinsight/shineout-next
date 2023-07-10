@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface BaseRadioProps {
+export interface BaseCheckProps {
   checked?: boolean;
   defaultChecked?: boolean;
   onChange?: (checked: boolean, event: React.ChangeEvent) => void;

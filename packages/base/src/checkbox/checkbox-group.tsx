@@ -1,12 +1,12 @@
-import { RadioGroupProps } from './radio-group.type';
-import { useInputAble, useListSelectSingle, usePersistFn, util } from '@sheinx/hooks';
+import { CheckboxGroupProps } from './checkbox-group.type';
+import { useInputAble, useListSelect, usePersistFn, util } from '@sheinx/hooks';
 import groupContext from './group-context';
-import Radio from './radio';
+import Checkbox from './checkbox';
 import React from 'react';
 import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 
-const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
+const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem, Value>) => {
   const { children, className, button, block, keygen, jssStyle } = props;
   const { size, disabled } = useWithFormConfig(props);
 
@@ -28,15 +28,17 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
     data: props.data || ([] as DataItem[]),
   };
 
-  const datum = useListSelectSingle(useListParams);
+  const datum = useListSelect<DataItem, Value>(useListParams);
 
-  const handleItemChange = usePersistFn((d: DataItem) => {
-    datum.add(d);
-  });
-
-  const handleIndexChange = usePersistFn((index: number) => {
-    datum.add(props.data![index]);
-  });
+  const handleItemChange = usePersistFn(
+    (_: DataItem | undefined, checked: boolean, raw: DataItem) => {
+      if (checked) {
+        datum.add(raw);
+      } else {
+        datum.remove(raw);
+      }
+    },
+  );
 
   const isChecked = usePersistFn((d: DataItem) => {
     return datum.check(d);
@@ -76,16 +78,16 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
     return (
       <div className={groupClass}>
         {props.data.map((d, i) => (
-          <Radio
+          <Checkbox
             jssStyle={jssStyle}
             checked={datum.check(d)}
             disabled={datum.disabledCheck(d)}
             key={util.getKey(d, keygen, i)}
-            htmlValue={i}
-            onChange={handleIndexChange}
+            htmlValue={d}
+            onChange={handleItemChange}
           >
             {getContent(d, i)}
-          </Radio>
+          </Checkbox>
         ))}
         {children}
       </div>

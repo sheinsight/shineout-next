@@ -7,9 +7,9 @@ import React from 'react';
 import { HandlerType, ObjectType } from '../../common/type';
 import { extractEventHandlers } from '../../utils';
 import useForkRef from '../../common/use-fork-ref';
-import { BaseRadioProps } from './use-radio.type';
+import { BaseCheckProps } from './use-check.type';
 
-const useRadio = (props: BaseRadioProps) => {
+const useCheck = (props: BaseCheckProps) => {
   const { checked, defaultChecked, onChange, disabled, inputRef: inputRefPo, onClick } = props;
   const [checkedState, setCheckedState] = React.useState<boolean>(defaultChecked || false);
 
@@ -51,12 +51,18 @@ const useRadio = (props: BaseRadioProps) => {
   const getInputProps = <TOther extends ObjectType>(externalProps: TOther = {} as TOther) => {
     // 封装onChange 事件
     // ref
+    const checkProps = {
+      checked,
+      defaultChecked,
+    };
+    if (checked !== undefined) {
+      delete checkProps.defaultChecked;
+    }
     return {
       ...externalProps,
       ref: handleInputRef,
-      checked,
       disabled,
-      defaultChecked,
+      ...checkProps,
       onClick: (e: React.MouseEvent<HTMLInputElement>) => {
         e.stopPropagation();
         onClick?.(e);
@@ -83,4 +89,4 @@ const useRadio = (props: BaseRadioProps) => {
   };
 };
 
-export default useRadio;
+export default useCheck;

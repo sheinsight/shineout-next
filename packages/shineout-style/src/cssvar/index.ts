@@ -3,11 +3,14 @@ import inputVar from './input';
 import radioVar from './radio';
 import innerTitleVar from './innerTitle';
 import formVar from './form';
+import checkbox from './checkbox';
+
 const cssVars = {
   ...colorVar,
   ...sizeVar,
   ...inputVar,
   ...radioVar,
+  ...checkbox,
   ...innerTitleVar,
   ...formVar,
   buttonDefaultBorder: va('button-default-border', `#d9d9d9`),

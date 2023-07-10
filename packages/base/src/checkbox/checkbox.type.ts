@@ -2,7 +2,7 @@ import { CommonType } from '../common/type';
 import { BaseCheckProps } from '@sheinx/hooks';
 import React from 'react';
 
-export interface RadioClasses {
+export interface CheckboxClasses {
   /**
    * 最外层class
    */
@@ -18,23 +18,28 @@ export interface RadioClasses {
   wrapperLarge: string;
   wrapperSmall: string;
   wrapperChecked: string;
+  wrapperIndeterminate: string;
   indicator: string;
   desc: string;
 }
 
-export interface SimpleRadioProps
-  extends BaseCheckProps,
+export interface SimpleCheckboxProps
+  extends Omit<BaseCheckProps, 'checked' | 'defaultChecked'>,
     Pick<CommonType, 'status' | 'style' | 'className'> {
-  jssStyle: RadioClasses;
+  jssStyle: CheckboxClasses;
   children?: React.ReactNode;
+  checked?: boolean | 'indeterminate';
+  defaultChecked?: boolean | 'indeterminate';
 }
 
-export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'checked'> {
+export interface CheckboxProps<T> extends Omit<SimpleCheckboxProps, 'onChange' | 'checked'> {
   /**
    * 选中后返回的值默认为 true
    */
   htmlValue?: T;
-  onChange?: (value: T) => void;
-  checked?: boolean | ((d: T) => boolean);
+  onChange?: (value: T | undefined, checked: boolean, raw: T) => void;
+  checked?: boolean | 'indeterminate' | ((d: T) => boolean | 'indeterminate');
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+  value?: T;
+  defaultValue?: T;
 }

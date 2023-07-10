@@ -1,12 +1,14 @@
 import { useCheck } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
-import { SimpleRadioProps } from './radio.type';
+import { SimpleCheckboxProps } from './checkbox.type';
 
-const Radio = (props: SimpleRadioProps) => {
+const Checkbox = (props: SimpleCheckboxProps) => {
   const { jssStyle, className, style, status, children, ...rest } = props;
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
+    checked: props.checked === 'indeterminate' ? false : props.checked,
+    defaultChecked: props.defaultChecked === 'indeterminate' ? false : props.defaultChecked,
   });
   const rootClass = classNames([
     jssStyle.wrapper,
@@ -15,6 +17,7 @@ const Radio = (props: SimpleRadioProps) => {
       [jssStyle.wrapperDisabled]: disabled,
       [jssStyle.wrapperError]: status === 'error',
       [jssStyle.wrapperChecked]: checked,
+      [jssStyle.wrapperIndeterminate]: props.checked === 'indeterminate',
     },
   ]);
 
@@ -27,11 +30,11 @@ const Radio = (props: SimpleRadioProps) => {
         style,
       })}
     >
-      <input {...inputProps} type='radio' />
+      <input {...inputProps} type='checkbox' />
       <i {...getIndicatorProps()} className={jssStyle.indicator} />
       <span className={jssStyle.desc}>{children}</span>
     </div>
   );
 };
 
-export default Radio;
+export default Checkbox;

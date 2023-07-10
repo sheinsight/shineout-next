@@ -2,6 +2,7 @@ export * from './form';
 export * from './inner-title';
 export * from './input';
 export * from './radio';
+export * from './checkbox';
 export * from './textarea';
 
 export { styled, StyleProvider } from './jss-style';

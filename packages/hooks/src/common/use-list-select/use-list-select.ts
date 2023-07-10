@@ -7,8 +7,9 @@ const isUnMatchedData = (data: any): data is UnMatchedData => {
   return data && data.IS_NOT_MATCHED_VALUE;
 };
 
-const useListSelect = <ValueItem = any, DataItem = any>(props: UseListProps) => {
-  const valueArr = props.value || ([] as ValueItem[]);
+const useListSelect = <DataItem, Value extends any[]>(props: UseListProps<DataItem, Value>) => {
+  type ValueItem = Value[number];
+  const valueArr = props.value || ([] as unknown as Value);
   const { current: context } = React.useRef({
     lastValue: [] as ValueItem[],
     valueMap: new Map<ValueItem, boolean>(),
@@ -21,10 +22,10 @@ const useListSelect = <ValueItem = any, DataItem = any>(props: UseListProps) => 
     return false;
   };
 
-  const formatData = (data: DataItem) => {
+  const formatData = (data: DataItem): ValueItem => {
     if (typeof props.format === 'string' && isObject(data)) return data[props.format];
     if (typeof props.format === 'function') return props.format(data);
-    return data;
+    return data as ValueItem;
   };
   const getDataMap = () => {
     if (props.data === context.lastData) return context.valueMap;
@@ -56,17 +57,17 @@ const useListSelect = <ValueItem = any, DataItem = any>(props: UseListProps) => 
   ) => {
     if (data === null || data === undefined) return;
 
-    const values = [];
+    const values = [] as ValueItem[];
     const raws = isArray(data) ? data : [data];
     for (let i = 0; i < raws.length; i++) {
       if (!disabledCheck(raws[i])) {
         values.push(formatData(raws[i]));
       }
     }
-    const before = config.overwrite ? [] : valueArr || [];
+    const before = (config.overwrite ? [] : valueArr || []) as Value;
     if (values.length) {
       const newValue = config.unshift ? values.concat(before) : before.concat(values);
-      props.onChange(newValue, data, true);
+      props.onChange(newValue as Value, data, true);
     }
   };
 
@@ -111,7 +112,7 @@ const useListSelect = <ValueItem = any, DataItem = any>(props: UseListProps) => 
         values.push(val);
       }
     }
-    props.onChange(values, data, false);
+    props.onChange(values as Value, data as DataItem, false);
   };
   const check = (raw: DataItem) => {
     if (props.prediction) {
