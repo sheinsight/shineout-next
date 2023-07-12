@@ -29,7 +29,7 @@ const buttonTokenValue = {
     },
     Round: {
       Border: {
-        Radius: 'Radius-10',
+        Radius: 'Radius-1000',
       },
     },
     Circle: {
@@ -56,7 +56,7 @@ const buttonTokenValue = {
     },
     Round: {
       Border: {
-        Radius: 'Radius-10',
+        Radius: 'Radius-1000',
       },
     },
     Circle: {
@@ -82,7 +82,7 @@ const buttonTokenValue = {
   },
   Round: {
     Border: {
-      Radius: 'Radius-10',
+      Radius: 'Radius-1000',
     },
   },
   Circle: {

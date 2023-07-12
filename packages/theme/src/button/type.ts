@@ -526,7 +526,7 @@ export interface ButtonTokens {
   buttonLargePaddingY: string;
   /**
    * @type {string}
-   * @token Radius-10
+   * @token Radius-1000
    * @description 按钮药丸形边框圆角
    */
   buttonRoundBorderRadius: string;
@@ -544,7 +544,7 @@ export interface ButtonTokens {
   buttonSquareBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-10
+   * @token Radius-1000
    * @description 按钮小尺寸药丸形边框圆角
    */
   buttonSmallRoundBorderRadius: string;
@@ -562,7 +562,7 @@ export interface ButtonTokens {
   buttonSmallSquareBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-10
+   * @token Radius-1000
    * @description 按钮大尺寸药丸形边框圆角
    */
   buttonLargeRoundBorderRadius: string;

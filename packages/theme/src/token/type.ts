@@ -772,52 +772,10 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '1px'
-   * @description 1 外边距
-   */
-  'Margin-1': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '2px'
-   * @description 2 外边距
-   */
-  'Margin-2': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '3px'
-   * @description 3 外边距
-   */
-  'Margin-3': string;
-  /**
-   * @type {string}
-   * @categoty string
    * @default '4px'
    * @description 4 外边距
    */
   'Margin-4': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '5px'
-   * @description 5 外边距
-   */
-  'Margin-5': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '6px'
-   * @description 6 外边距
-   */
-  'Margin-6': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '7px'
-   * @description 7 外边距
-   */
-  'Margin-7': string;
   /**
    * @type {string}
    * @categoty string
@@ -828,24 +786,38 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '9px'
-   * @description 9 外边距
+   * @default '12px'
+   * @description 12 外边距
    */
-  'Margin-9': string;
+  'Margin-12': string;
   /**
    * @type {string}
    * @categoty string
-   * @default '10px'
-   * @description 10 外边距
+   * @default '16px'
+   * @description 16 外边距
    */
-  'Margin-10': string;
+  'Margin-16': string;
   /**
    * @type {string}
    * @categoty string
-   * @default '1px'
-   * @description 1 圆角
+   * @default '24px'
+   * @description 24 外边距
    */
-  'Radius-1': string;
+  'Margin-24': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '32px'
+   * @description 32 外边距
+   */
+  'Margin-32': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0px'
+   * @description 直角
+   */
+  'Radius-0': string;
   /**
    * @type {string}
    * @categoty string
@@ -856,38 +828,10 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '3px'
-   * @description 3 圆角
-   */
-  'Radius-3': string;
-  /**
-   * @type {string}
-   * @categoty string
    * @default '4px'
    * @description 4 圆角
    */
   'Radius-4': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '5px'
-   * @description 5 圆角
-   */
-  'Radius-5': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '6px'
-   * @description 6 圆角
-   */
-  'Radius-6': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '7px'
-   * @description 7 圆角
-   */
-  'Radius-7': string;
   /**
    * @type {string}
    * @categoty string
@@ -898,22 +842,43 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '9px'
-   * @description 9 圆角
+   * @default '12px'
+   * @description 12 圆角
    */
-  'Radius-9': string;
+  'Radius-12': string;
   /**
    * @type {string}
    * @categoty string
-   * @default '10px'
-   * @description 10 圆角
+   * @default '1000px'
+   * @description 1000 大圆角
    */
-  'Radius-10': string;
+  'Radius-1000': string;
   /**
    * @type {string}
    * @categoty string
    * @default '50%'
-   * @description 50% 圆角
+   * @description 50% 全圆角
    */
   'Radius-50%': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0px 2px 4px -1px rgba(2, 11, 24, 0.12),0px 4px 5px 0px rgba(2, 11, 24, 0.08),0px 1px 10px 0px rgba(2, 11, 24, 0.05)'
+   * @description 表格拖拽、树组件拖拽
+   */
+  'Shadow-1': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0px 5px 5px -3px rgba(2, 11, 24, 0.1),0px 8px 10px 1px rgba(2, 11, 24, 0.06),0px 3px 14px 2px rgba(2, 11, 24, 0.05)'
+   * @description 所有下拉组件使用，下拉菜单、气泡确认框、选择器
+   */
+  'Shadow-2': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0px 8px 10px -5px rgba(2, 11, 24, 0.08),0px 16px 24px 2px rgba(2, 11, 24, 0.04),0px 6px 30px 5px rgba(2, 11, 24, 0.05)'
+   * @description 所有下拉组件使用，下拉菜单、气泡确认框、选择器
+   */
+  'Shadow-3': string;
 }

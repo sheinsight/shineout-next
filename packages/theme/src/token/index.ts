@@ -670,47 +670,11 @@ const Tokens = {
     value: '10px',
     describe: '10 内边距',
   },
-  'Margin-1': {
-    type: 'string',
-    name: '1/margin',
-    value: '1px',
-    describe: '1 外边距',
-  },
-  'Margin-2': {
-    type: 'string',
-    name: '2/margin',
-    value: '2px',
-    describe: '2 外边距',
-  },
-  'Margin-3': {
-    type: 'string',
-    name: '3/margin',
-    value: '3px',
-    describe: '3 外边距',
-  },
   'Margin-4': {
     type: 'string',
     name: '4/margin',
     value: '4px',
     describe: '4 外边距',
-  },
-  'Margin-5': {
-    type: 'string',
-    name: '5/margin',
-    value: '5px',
-    describe: '5 外边距',
-  },
-  'Margin-6': {
-    type: 'string',
-    name: '6/margin',
-    value: '6px',
-    describe: '6 外边距',
-  },
-  'Margin-7': {
-    type: 'string',
-    name: '7/margin',
-    value: '7px',
-    describe: '7 外边距',
   },
   'Margin-8': {
     type: 'string',
@@ -718,23 +682,35 @@ const Tokens = {
     value: '8px',
     describe: '8 外边距',
   },
-  'Margin-9': {
+  'Margin-12': {
     type: 'string',
-    name: '9/margin',
-    value: '9px',
-    describe: '9 外边距',
+    name: '12/margin',
+    value: '12px',
+    describe: '12 外边距',
   },
-  'Margin-10': {
+  'Margin-16': {
     type: 'string',
-    name: '10/margin',
-    value: '10px',
-    describe: '10 外边距',
+    name: '16/margin',
+    value: '16px',
+    describe: '16 外边距',
   },
-  'Radius-1': {
+  'Margin-24': {
     type: 'string',
-    name: '1/radius',
-    value: '1px',
-    describe: '1 圆角',
+    name: '24/margin',
+    value: '24px',
+    describe: '24 外边距',
+  },
+  'Margin-32': {
+    type: 'string',
+    name: '32/margin',
+    value: '32px',
+    describe: '32 外边距',
+  },
+  'Radius-0': {
+    type: 'string',
+    name: '0/radius',
+    value: '0px',
+    describe: '直角',
   },
   'Radius-2': {
     type: 'string',
@@ -742,35 +718,11 @@ const Tokens = {
     value: '2px',
     describe: '2 圆角',
   },
-  'Radius-3': {
-    type: 'string',
-    name: '3/radius',
-    value: '3px',
-    describe: '3 圆角',
-  },
   'Radius-4': {
     type: 'string',
     name: '4/radius',
     value: '4px',
     describe: '4 圆角',
-  },
-  'Radius-5': {
-    type: 'string',
-    name: '5/radius',
-    value: '5px',
-    describe: '5 圆角',
-  },
-  'Radius-6': {
-    type: 'string',
-    name: '6/radius',
-    value: '6px',
-    describe: '6 圆角',
-  },
-  'Radius-7': {
-    type: 'string',
-    name: '7/radius',
-    value: '7px',
-    describe: '7 圆角',
   },
   'Radius-8': {
     type: 'string',
@@ -778,23 +730,44 @@ const Tokens = {
     value: '8px',
     describe: '8 圆角',
   },
-  'Radius-9': {
+  'Radius-12': {
     type: 'string',
-    name: '9/radius',
-    value: '9px',
-    describe: '9 圆角',
+    name: '12/radius',
+    value: '12px',
+    describe: '12 圆角',
   },
-  'Radius-10': {
+  'Radius-1000': {
     type: 'string',
-    name: '10/radius',
-    value: '10px',
-    describe: '10 圆角',
+    name: '1000/radius',
+    value: '1000px',
+    describe: '1000 大圆角',
   },
   'Radius-50%': {
     type: 'string',
     name: '50%/radius',
     value: '50%',
-    describe: '50% 圆角',
+    describe: '50% 全圆角',
+  },
+  'Shadow-1': {
+    type: 'string',
+    name: '基础阴影',
+    value:
+      '0px 2px 4px -1px rgba(2, 11, 24, 0.12),0px 4px 5px 0px rgba(2, 11, 24, 0.08),0px 1px 10px 0px rgba(2, 11, 24, 0.05)',
+    describe: '表格拖拽、树组件拖拽',
+  },
+  'Shadow-2': {
+    type: 'string',
+    name: '中阴影',
+    value:
+      '0px 5px 5px -3px rgba(2, 11, 24, 0.1),0px 8px 10px 1px rgba(2, 11, 24, 0.06),0px 3px 14px 2px rgba(2, 11, 24, 0.05)',
+    describe: '所有下拉组件使用，下拉菜单、气泡确认框、选择器',
+  },
+  'Shadow-3': {
+    type: 'string',
+    name: '重阴影',
+    value:
+      '0px 8px 10px -5px rgba(2, 11, 24, 0.08),0px 16px 24px 2px rgba(2, 11, 24, 0.04),0px 6px 30px 5px rgba(2, 11, 24, 0.05)',
+    describe: '所有下拉组件使用，下拉菜单、气泡确认框、选择器',
   },
 };
 
