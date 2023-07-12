@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "moduleDetection": "force",
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "@sheinx/theme": ["./src/index"]
+    }
+  }
+}
