@@ -1,8 +1,7 @@
 {
-  "name": "@sheinx/shineout-style",
+  "name": "@sheinx/theme",
   "version": "0.0.0",
   "description": "",
-  "keywords": [],
   "license": "ISC",
   "author": "",
   "sideEffects": false,
@@ -11,12 +10,9 @@
   "typings": "./dist/cjs/index.d.ts",
   "scripts": {
     "build": "father build",
-    "build:watch": "father dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "jss": "10.9.2",
-    "react-jss": "10.9.2",
-    "@sheinx/theme": "workspace:*"
+  "devDependencies": {
+    "@types/node": "^20.4.0"
   }
 }
