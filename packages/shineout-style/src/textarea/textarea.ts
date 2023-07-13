@@ -5,7 +5,7 @@ import { JsStyles } from '../jss-style';
 const inputBorder = border('wrapper');
 const { wrapper, ...resetWrapper } = inputBorder;
 
-type InputClass =
+export type InputClass =
   | 'wrapper'
   | 'wrapperSmall'
   | 'wrapperLarge'

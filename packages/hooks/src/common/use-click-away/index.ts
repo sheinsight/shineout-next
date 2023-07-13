@@ -8,7 +8,7 @@ export type OnClickAwayFn<T> = (event: T) => void;
  * @param onClickAway 当点击其他区域时的回调 {@link OnClickAwayFn | OnClickAwayFn}
  * @returns 返回 Ref 可以用于绑定指定的 dom {@link React.MutableRefObject | React.MutableRefObject}
  */
-export function useClickAway<T extends Event = Event>(onClickAway: OnClickAwayFn<T>) {
+export function useClickAway<T extends Event = Event>(onClickAway: OnClickAwayFn<T>, show = true) {
   const context = useLatestObj({ onClickAway });
   const domRef = useRef<any>();
 
@@ -20,15 +20,15 @@ export function useClickAway<T extends Event = Event>(onClickAway: OnClickAwayFn
       }
       context.onClickAway(event);
     };
-
-    // @ts-ignore
-    document.addEventListener('click', handleClickAway);
-
+    if (show) {
+      // @ts-ignore
+      document.addEventListener('click', handleClickAway);
+    }
     return () => {
       // @ts-ignore
       document.removeEventListener('click', handleClickAway);
     };
-  }, []);
+  }, [show]);
   return domRef;
 }
 

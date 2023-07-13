@@ -1,6 +1,7 @@
 import { JsStyles } from '../jss-style';
 import cssvar from '../cssvar';
-type Class =
+
+export type Class =
   | 'wrapper'
   | 'wrapperSmall'
   | 'wrapperLarge'

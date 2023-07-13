@@ -17,6 +17,7 @@ export * from './common/use-click-away';
 export * from './common/use-previous';
 export * from './common/use-render';
 export * from './common/use-safe-state';
+export * from './common/use-toggle';
 
 //components
 export * from './components/use-input';

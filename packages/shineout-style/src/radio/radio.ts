@@ -1,7 +1,7 @@
 import cssVars from '../cssvar';
 import { JsStyles } from '../jss-style';
 
-type RadioClass =
+export type RadioClass =
   | 'wrapper'
   | 'wrapperSmall'
   | 'wrapperLarge'
