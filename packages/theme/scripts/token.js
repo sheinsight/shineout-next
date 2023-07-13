@@ -5,6 +5,8 @@ const { tokenDescriptionMap, tokenValueMap } = require('../src/token/map.ts');
 const srcPath = path.resolve(__dirname, '../src');
 const templatePath = path.resolve(__dirname, './token.ejs');
 const componentTemplatePath = path.resolve(__dirname, './component.ejs');
+const prettier = require('prettier');
+const prettierOptions = prettier.resolveConfig.sync(path.join(__dirname, '../../.prettierrc.js'));
 
 const toCamelCase = (str) => {
   return str.replace(/-([a-z])/g, (match, letter) => {
@@ -147,38 +149,58 @@ function generateTokenTs(component, describesValue, describeMap, valueMap) {
   return result;
 }
 
-fs.readdirSync(srcPath).forEach((component) => {
-  const hasRuleFile = fs.existsSync(path.resolve(srcPath, component, 'rule.ts'));
+const compileToken = () => {
+  fs.readdirSync(srcPath).forEach((component) => {
+    const hasRuleFile = fs.existsSync(path.resolve(srcPath, component, 'rule.ts'));
 
-  if (!hasRuleFile) return;
+    if (!hasRuleFile) return;
 
-  const rule = require(path.resolve(srcPath, component, 'rule.ts'));
+    delete require.cache[require.resolve(path.resolve(srcPath, component, 'rule.ts'))];
 
-  const rules = rule[`${component}Rules`];
-  const componentDescriptionMap = rule[`${component}TokenDescription`];
-  const describeMap = { ...tokenDescriptionMap, ...componentDescriptionMap };
-  const valueMap = { ...tokenValueMap, ...rule[`${component}TokenValue`] };
-  const result = generateToken(rules, component, describeMap);
+    const rule = require(path.resolve(srcPath, component, 'rule.ts'));
 
-  prop = [];
+    const rules = rule[`${component}Rules`];
+    const componentDescriptionMap = rule[`${component}TokenDescription`];
+    const describeMap = { ...tokenDescriptionMap, ...componentDescriptionMap };
+    const valueMap = { ...tokenValueMap, ...rule[`${component}TokenValue`] };
+    const result = generateToken(rules, component, describeMap);
 
-  const Component = component.charAt(0).toUpperCase() + component.slice(1);
-  const describesKey = Object.keys(result);
-  const describesValues = Object.values(result);
-  const tsMap = generateTokenTs(component, describesValues, describesKey, valueMap);
-  const template = ejs.compile(fs.readFileSync(templatePath, 'utf-8'));
-  const render = template({
-    Component,
-    tokens: tsMap,
+    prop = [];
+
+    const Component = component.charAt(0).toUpperCase() + component.slice(1);
+    const describesKey = Object.keys(result);
+    const describesValues = Object.values(result);
+    const tsMap = generateTokenTs(component, describesValues, describesKey, valueMap);
+    const template = ejs.compile(fs.readFileSync(templatePath, 'utf-8'));
+
+    let render = template({
+      Component,
+      tokens: tsMap,
+    });
+    render = prettier.format(render, {
+      filepath: path.join(__dirname, '../../.prettierrc.js'),
+      ...prettierOptions,
+    });
+
+    fs.writeFileSync(path.resolve(srcPath, component, 'type.ts'), render);
+
+    const componentTemplateContext = ejs.compile(fs.readFileSync(componentTemplatePath, 'utf-8'));
+    let componentRender = componentTemplateContext({
+      compomentTokenMap: tsMap,
+      Component,
+      component,
+    });
+
+    componentRender = prettier.format(componentRender, {
+      filepath: path.join(__dirname, '../../.prettierrc.js'),
+      ...prettierOptions,
+    });
+    fs.writeFileSync(path.resolve(srcPath, component, `${component}.ts`), componentRender);
   });
-  fs.writeFileSync(path.resolve(srcPath, component, 'type.ts'), render);
+};
 
-  const componentTemplateContext = ejs.compile(fs.readFileSync(componentTemplatePath, 'utf-8'));
-  const componentRender = componentTemplateContext({
-    compomentTokenMap: tsMap,
-    Component,
-    component,
-  });
+compileToken();
 
-  fs.writeFileSync(path.resolve(srcPath, component, `${component}.ts`), componentRender);
-});
+module.exports = {
+  compileToken,
+};

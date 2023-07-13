@@ -3,11 +3,13 @@ const path = require('path');
 const chokidar = require('chokidar');
 const { compile } = require('./utils/compile');
 const { rmrf } = require('./utils/rmrf');
+const { compileToken } = require('../packages/theme/scripts/token');
 
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const hooksDir = path.join(__dirname, '../packages', 'hooks', 'src');
 const styleDir = path.join(__dirname, '../packages', 'shineout-style', 'src');
 const baseDir = path.join(__dirname, '../packages', 'base', 'src');
+const themeDir = path.join(__dirname, '../packages', 'theme', 'src');
 const chunkDir = path.join(__dirname, '../docs', 'chunk');
 
 rmrf(chunkDir);
@@ -16,7 +18,7 @@ fs.mkdirSync(chunkDir);
 compile(shineoutDir);
 compile(baseDir);
 
-const watchList = [shineoutDir, hooksDir, styleDir, baseDir];
+const watchList = [shineoutDir, hooksDir, styleDir, baseDir, themeDir];
 const watcher = chokidar.watch(watchList);
 
 watcher.on('change', (filePath) => {
@@ -28,5 +30,8 @@ watcher.on('change', (filePath) => {
   }
   if (filePath.indexOf(baseDir) > -1) {
     compile(baseDir);
+  }
+  if (filePath.indexOf(themeDir) > -1 && filePath.indexOf('rule') > -1) {
+    compileToken();
   }
 });
