@@ -29,7 +29,15 @@ const button = (type: string) => ({
   },
 
   '&:active': {
-    animationName: `$${type.toLocaleLowerCase()}Animation`,
+    color: Token[`button${type}ActiveFontColor` as keyof typeof Token],
+    backgroundColor: Token[`button${type}ActiveBackgroundColor` as keyof typeof Token],
+    borderColor: Token[`button${type}ActiveBorderColor` as keyof typeof Token],
+  },
+
+  '&:disabled': {
+    color: Token[`button${type}DisabledFontColor` as keyof typeof Token],
+    backgroundColor: Token[`button${type}DisabledBackgroundColor` as keyof typeof Token],
+    borderColor: Token[`button${type}DisabledBorderColor` as keyof typeof Token],
   },
 });
 
@@ -118,14 +126,6 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   disabled: {
     cursor: 'not-allowed',
     opacity: 0.65,
-
-    '&:active': {
-      animationName: 'none',
-    },
-
-    '&:hover': {
-      opacity: 0.65,
-    },
   },
   loading: {
     cursor: 'not-allowed',

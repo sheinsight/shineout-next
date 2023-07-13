@@ -2,18 +2,23 @@ const buttonTokenDescription = {
   button: '按钮',
   Nearly: '相邻之间的',
   Text: '文本模式',
+  Outline: '线框模式',
 };
 
 const buttonRules = {
   color: [
     ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],
-    ['', 'text'],
     ['', 'disabled', 'hover', 'active', 'focus'],
     ['font-color', 'background-color', 'border-color'],
   ],
   size: [
     ['', 'small', 'large'],
     ['font-size', 'border-radius', 'padding-x', 'padding-y'],
+  ],
+  type: [
+    ['outline', 'text', 'dash'],
+    ['disabled', 'hover', 'active', 'focus'],
+    ['font-color', 'background-color', 'border-color'],
   ],
   shape: [['', 'small', 'large'], ['round', 'circle', 'square'], ['border-radius']],
   extra_nearly_margin: [['nearly-margin']],
@@ -74,6 +79,7 @@ const buttonTokenValue = {
     Font: {
       Color: 'Neutral-text-1',
     },
+    Text: {},
   },
   Small: {
     Font: {
