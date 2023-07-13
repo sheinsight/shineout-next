@@ -1,5 +1,5 @@
-import cssVars from '../cssvar';
 import { JsStyles } from '../jss-style';
+import Token from '@sheinx/theme';
 
 type ButtonClass =
   | 'button'
@@ -15,23 +15,17 @@ type ButtonClass =
   | 'href'
   | 'text'
   | 'small'
-  | 'large'
-  | '@keyframes primaryAnimation'
-  | '@keyframes successAnimation'
-  | '@keyframes dangerAnimation'
-  | '@keyframes warningAnimation'
-  | '@keyframes defaultAnimation'
-  | '@keyframes secondaryAnimation';
+  | 'large';
 
 const button = (type: string) => ({
-  color: cssVars[`button${type}Color` as keyof typeof cssVars],
-  backgroundColor: cssVars[`button${type}Bg` as keyof typeof cssVars],
-  borderColor: cssVars[`button${type}BorderColor` as keyof typeof cssVars],
+  color: Token[`button${type}FontColor` as keyof typeof Token],
+  backgroundColor: Token[`button${type}BackgroundColor` as keyof typeof Token],
+  borderColor: Token[`button${type}BorderColor` as keyof typeof Token],
 
   '&:hover': {
-    color: cssVars[`button${type}ColorHover` as keyof typeof cssVars],
-    backgroundColor: cssVars[`button${type}BgHover` as keyof typeof cssVars],
-    borderColor: cssVars[`button${type}BorderColorHover` as keyof typeof cssVars],
+    color: Token[`button${type}HoverFontColor` as keyof typeof Token],
+    backgroundColor: Token[`button${type}HoverBackgroundColor` as keyof typeof Token],
+    borderColor: Token[`button${type}HoverBorderColor` as keyof typeof Token],
   },
 
   '&:active': {
@@ -40,7 +34,7 @@ const button = (type: string) => ({
 });
 
 const text = (type: string) => ({
-  color: cssVars[`${type.toLocaleLowerCase()}Color` as keyof typeof cssVars],
+  color: Token[`${type.toLocaleLowerCase()}Color` as keyof typeof Token],
   background: 'transparent',
   borderColor: 'transparent',
 
@@ -67,14 +61,14 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     backgroundImage: 'none',
     verticalAlign: 'middle',
     border: '1px solid transparent',
-    fontSize: cssVars.buttonDefaultFontSize,
-    borderRadius: cssVars.buttonBorderRadius,
-    lineHeight: cssVars.buttonDefaultLineHeight,
-    padding: `${cssVars.buttonDefaultPaddingY} ${cssVars.buttonDefaultPaddingX}`,
+    fontSize: Token.buttonFontSize,
+    borderRadius: Token.buttonBorderRadius,
+    // lineHeight: Token.buttonLineHeight,
+    padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
     transition: 'all 0.15s ease-in-out',
 
     '& + &': {
-      marginLeft: cssVars.buttonNearlyMargin,
+      marginLeft: Token.buttonNearlyMargin,
     },
 
     '&:active': {
@@ -90,13 +84,13 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
 
   small: {
-    fontSize: cssVars.buttonSmallFontSize,
-    padding: `${cssVars.buttonSmallPaddingY} ${cssVars.buttonSmallPaddingX}`,
+    fontSize: Token.buttonSmallFontSize,
+    padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
   },
 
   large: {
-    fontSize: cssVars.buttonLargeFontSize,
-    padding: `${cssVars.buttonLargePaddingY} ${cssVars.buttonLargePaddingX}`,
+    fontSize: Token.buttonLargeFontSize,
+    padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
   },
 
   default: {
@@ -166,14 +160,6 @@ const ButtonStyle: JsStyles<ButtonClass> = {
       ...text('Secondary'),
     },
   },
-
-  // animation
-  '@keyframes defaultAnimation': cssVars.buttonDefaultActiveAnimation,
-  '@keyframes primaryAnimation': cssVars.buttonPrimaryActiveAnimation,
-  '@keyframes successAnimation': cssVars.buttonSuccessActiveAnimation,
-  '@keyframes dangerAnimation': cssVars.buttonDangerActiveAnimation,
-  '@keyframes warningAnimation': cssVars.buttonWarningActiveAnimation,
-  '@keyframes secondaryAnimation': cssVars.buttonSecondaryActiveAnimation,
 };
 
 export default ButtonStyle;

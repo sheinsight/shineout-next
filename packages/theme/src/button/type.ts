@@ -5,6 +5,96 @@ export interface ButtonTokens {
   /**
    * @type {string}
    * @token Neutral-text-1
+   * @description 按钮默认尺寸字体颜色
+   */
+  buttonDefaultFontColor: string;
+  /**
+   * @type {string}
+   * @token Secondary-5
+   * @description 按钮默认尺寸背景颜色
+   */
+  buttonDefaultBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Secondary-5
+   * @description 按钮默认尺寸边框颜色
+   */
+  buttonDefaultBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 按钮默认尺寸禁用时的字体颜色
+   */
+  buttonDefaultDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 按钮默认尺寸禁用时的背景颜色
+   */
+  buttonDefaultDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 按钮默认尺寸禁用时的边框颜色
+   */
+  buttonDefaultDisabledBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 按钮默认尺寸鼠标移入时的字体颜色
+   */
+  buttonDefaultHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮默认尺寸鼠标移入时的背景颜色
+   */
+  buttonDefaultHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 按钮默认尺寸鼠标移入时的边框颜色
+   */
+  buttonDefaultHoverBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 按钮默认尺寸鼠标点击时的字体颜色
+   */
+  buttonDefaultActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮默认尺寸鼠标点击时的背景颜色
+   */
+  buttonDefaultActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-7
+   * @description 按钮默认尺寸鼠标点击时的边框颜色
+   */
+  buttonDefaultActiveBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 按钮默认尺寸鼠标聚焦时的字体颜色
+   */
+  buttonDefaultFocusFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮默认尺寸鼠标聚焦时的背景颜色
+   */
+  buttonDefaultFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 按钮默认尺寸鼠标聚焦时的边框颜色
+   */
+  buttonDefaultFocusBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
    * @description 按钮主要色字体颜色
    */
   buttonPrimaryFontColor: string;
@@ -578,4 +668,10 @@ export interface ButtonTokens {
    * @description 按钮大尺寸方形边框圆角
    */
   buttonLargeSquareBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Margin-8
+   * @description 按钮相邻之间的外边距
+   */
+  buttonNearlyMargin: string;
 }

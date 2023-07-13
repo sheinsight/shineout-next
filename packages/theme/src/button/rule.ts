@@ -1,10 +1,13 @@
 const buttonTokenDescription = {
   button: '按钮',
+  Nearly: '相邻之间的',
+  Text: '文本模式',
 };
 
 const buttonRules = {
   color: [
-    ['primary', 'secondary', 'success', 'warning', 'danger'],
+    ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],
+    ['', 'text'],
     ['', 'disabled', 'hover', 'active', 'focus'],
     ['font-color', 'background-color', 'border-color'],
   ],
@@ -13,9 +16,65 @@ const buttonRules = {
     ['font-size', 'border-radius', 'padding-x', 'padding-y'],
   ],
   shape: [['', 'small', 'large'], ['round', 'circle', 'square'], ['border-radius']],
+  extra_nearly_margin: [['nearly-margin']],
 };
 
 const buttonTokenValue = {
+  Default: {
+    Disabled: {
+      Background: {
+        Color: 'Neutral-fill-2',
+      },
+      Border: {
+        Color: 'Neutral-fill-2',
+      },
+      Font: {
+        Color: 'Neutral-text-2',
+      },
+    },
+    Hover: {
+      Background: {
+        Color: 'Neutral-fill-1',
+      },
+      Border: {
+        Color: 'Brand-6',
+      },
+      Font: {
+        Color: 'Neutral-text-1',
+      },
+    },
+    Active: {
+      Background: {
+        Color: 'Neutral-fill-1',
+      },
+      Border: {
+        Color: 'Brand-7',
+      },
+      Font: {
+        Color: 'Neutral-text-1',
+      },
+    },
+    Focus: {
+      Background: {
+        Color: 'Neutral-fill-1',
+      },
+      Border: {
+        Color: 'Brand-6',
+      },
+      Font: {
+        Color: 'Neutral-text-1',
+      },
+    },
+    Background: {
+      Color: 'Secondary-5',
+    },
+    Border: {
+      Color: 'Secondary-5',
+    },
+    Font: {
+      Color: 'Neutral-text-1',
+    },
+  },
   Small: {
     Font: {
       Size: '12/regular',
@@ -72,6 +131,7 @@ const buttonTokenValue = {
   },
   Font: {
     Size: '14/regular',
+    Color: 'Color-Primary-500',
   },
   Border: {
     Radius: 'Radius-4',
@@ -94,6 +154,9 @@ const buttonTokenValue = {
     Border: {
       Radius: 'Radius-4',
     },
+  },
+  Nearly: {
+    Margin: 'Margin-8',
   },
 };
 

@@ -16,12 +16,6 @@ export default () => {
     <div>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
         <span>
-          <Button jssStyle={jssStyle} disabled>
-            Default
-          </Button>
-        </span>
-
-        <span>
           <Button jssStyle={jssStyle} disabled type='primary'>
             Primary
           </Button>

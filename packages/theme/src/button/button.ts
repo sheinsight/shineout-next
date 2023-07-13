@@ -4,6 +4,21 @@
 import { ButtonTokens } from './type';
 
 const button: ButtonTokens = {
+  buttonDefaultFontColor: 'Neutral-text-1',
+  buttonDefaultBackgroundColor: 'Secondary-5',
+  buttonDefaultBorderColor: 'Secondary-5',
+  buttonDefaultDisabledFontColor: 'Neutral-text-2',
+  buttonDefaultDisabledBackgroundColor: 'Neutral-fill-2',
+  buttonDefaultDisabledBorderColor: 'Neutral-fill-2',
+  buttonDefaultHoverFontColor: 'Neutral-text-1',
+  buttonDefaultHoverBackgroundColor: 'Neutral-fill-1',
+  buttonDefaultHoverBorderColor: 'Brand-6',
+  buttonDefaultActiveFontColor: 'Neutral-text-1',
+  buttonDefaultActiveBackgroundColor: 'Neutral-fill-1',
+  buttonDefaultActiveBorderColor: 'Brand-7',
+  buttonDefaultFocusFontColor: 'Neutral-text-1',
+  buttonDefaultFocusBackgroundColor: 'Neutral-fill-1',
+  buttonDefaultFocusBorderColor: 'Brand-6',
   buttonPrimaryFontColor: 'Neutral-text-1',
   buttonPrimaryBackgroundColor: 'Brand-5',
   buttonPrimaryBorderColor: 'Brand-5',
@@ -100,6 +115,7 @@ const button: ButtonTokens = {
   buttonLargeRoundBorderRadius: 'Radius-1000',
   buttonLargeCircleBorderRadius: 'Radius-50%',
   buttonLargeSquareBorderRadius: 'Radius-4',
+  buttonNearlyMargin: 'Margin-8',
 };
 
 export default button;

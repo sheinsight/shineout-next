@@ -16,12 +16,6 @@ export default () => {
     <div>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
         <span>
-          <Button jssStyle={jssStyle} onClick={(e) => console.log(e)}>
-            Default
-          </Button>
-        </span>
-
-        <span>
           <Button jssStyle={jssStyle} type='primary'>
             Primary
           </Button>
