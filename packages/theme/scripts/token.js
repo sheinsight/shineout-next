@@ -82,8 +82,11 @@ function getTokenValue(obj, keys) {
 
   const key = keys.shift();
 
-  if (Object.prototype.hasOwnProperty.call(obj, key)) {
-    const val = obj[key];
+  if (
+    Object.prototype.hasOwnProperty.call(obj, key) ||
+    Object.prototype.hasOwnProperty.call(obj, key.toLocaleLowerCase())
+  ) {
+    const val = obj[key] || obj[key.toLocaleLowerCase()];
     if (keys.length) {
       return getTokenValue(val, keys);
     } else {
