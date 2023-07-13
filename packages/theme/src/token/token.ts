@@ -130,6 +130,10 @@ const Token: Tokens = {
     '0px 5px 5px -3px rgba(2, 11, 24, 0.1),0px 8px 10px 1px rgba(2, 11, 24, 0.06),0px 3px 14px 2px rgba(2, 11, 24, 0.05)',
   'Shadow-3':
     '0px 8px 10px -5px rgba(2, 11, 24, 0.08),0px 16px 24px 2px rgba(2, 11, 24, 0.04),0px 6px 30px 5px rgba(2, 11, 24, 0.05)',
+  'Line-height-dynamic': 'calc( 1em + 8px )',
+  'Border-1': '1px',
+  'Border-2': '2px',
+  'Border-3': '3px',
 };
 
 export default Token;
