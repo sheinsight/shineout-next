@@ -75,6 +75,7 @@ export interface InputCommonProps<V> {
   width?: string | number;
   style?: React.CSSProperties;
   info?: number | ((value: V | undefined) => string);
+  disabled?: boolean;
 }
 
 export type GetCommonProps<Props, V> = Omit<

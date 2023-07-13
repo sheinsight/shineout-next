@@ -1,9 +1,9 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { isFunc } from '../../utils';
 
-import { InputAbleProps } from './use-Input-able.type';
+import { ChangeType, InputAbleProps } from './use-Input-able.type';
 
-export default function useInputAble<T>(props: InputAbleProps<T>) {
+export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbleProps<T, V>) {
   const { value: valuePo, onChange, control, beforeChange } = props;
   const [stateValue, changeStateValue] = useState<T | undefined>(props.value || props.defaultValue);
   const value = control ? valuePo : stateValue;
@@ -18,7 +18,7 @@ export default function useInputAble<T>(props: InputAbleProps<T>) {
       if (onChange) onChange(vv, ...other);
     },
     [onChange],
-  );
+  ) as V;
 
   return { value, onChange: handleChange } as const;
 }

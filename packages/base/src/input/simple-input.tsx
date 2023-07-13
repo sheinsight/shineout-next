@@ -70,6 +70,7 @@ const Input = (props: SimpleInputProps) => {
 
   return (
     <div
+      data-type='so-input'
       {...getRootProps({
         className: rootClass,
         style,

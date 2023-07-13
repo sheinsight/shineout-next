@@ -1,5 +1,5 @@
 import { ObjectType } from '../../../common/type';
-import { RuleFunc } from '../../../utils/type';
+import { FormItemRule } from '../../../utils/rule/rule.type';
 
 export interface FormContextValueType {
   errors?: ObjectType<Error>;
@@ -21,8 +21,13 @@ export interface FormContextValueType {
     ) => void;
     setError: (n: string, e: Error | undefined) => void;
     clearErrors: () => void;
+    combineRules: <ValueItem>(
+      name: string,
+      propRules: FormItemRule<ValueItem>,
+    ) => FormItemRule<ValueItem>;
     validateFields: (names?: string[], config?: { ignoreBind?: boolean }) => Promise<true>;
   };
+  disabled?: boolean;
 }
 
 export interface BaseFormControlProps<T> {
@@ -30,7 +35,7 @@ export interface BaseFormControlProps<T> {
   defaultValue: T | undefined;
   onChange: ((value: T, ...other: any[]) => void) | undefined;
   reservable: boolean | undefined;
-  rules: RuleFunc<T>[] | undefined;
+  rules: FormItemRule<T> | undefined;
   onError: ((error: Error | undefined) => void) | undefined;
   bind: string[] | undefined;
 }

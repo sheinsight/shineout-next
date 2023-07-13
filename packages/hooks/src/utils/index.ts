@@ -8,3 +8,4 @@ export * from './validate';
 export * from './number';
 export * from './shallowEqual';
 export * from './uid';
+export * from './document';

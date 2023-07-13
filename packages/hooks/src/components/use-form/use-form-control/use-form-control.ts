@@ -19,7 +19,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   let error: Error | undefined = undefined;
   let inForm = false;
 
-  const { value: formValue = {}, formFunc, errors } = React.useContext(FormContext);
+  const { value: formValue = {}, formFunc, errors, disabled } = React.useContext(FormContext);
   const { updateError } = React.useContext(FormItemContext);
 
   const getValue = () => {
@@ -59,7 +59,8 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         formFunc?.validateFields(bind, { ignoreBind: true }).catch(() => {});
       }
     };
-    return validate(v, formV, rules || [], {})
+    const fullRules = formFunc?.combineRules(name, rules || []) || [];
+    return validate(v, formV, fullRules, {})
       .then((res) => {
         const err = res === true ? undefined : res;
         formFunc?.setError(name, err);
@@ -118,5 +119,5 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     }
     if (onChangePo) onChangePo(v, ...other);
   });
-  return { value, onChange, error, inForm };
+  return { value, onChange, error, inForm, disabled };
 }

@@ -1,0 +1,14 @@
+// 此文件由脚本自动生成，请勿直接修改。
+// This file was generated automatically by a script. Please do not modify it directly.
+
+export interface <%= Component %>Tokens {
+  <% tokens.forEach(function (token, i) { -%>
+/**
+   * @type {string}
+   * @token <%= token.token %>
+   * @description <%= token.description %>
+   */
+  <%= token.name %>: string;
+  <% }) -%>
+  
+}

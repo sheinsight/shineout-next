@@ -22,13 +22,15 @@ const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
 
   if (valueArr.length === 0 && valueArr && empty) {
     result.push(
-      empty((val: T extends (infer U)[] ? U : never) => {
-        const newValue = produce(valueArr, (draft) => {
-          draft.push(val);
-        }) as T;
-        onChange(newValue);
-        context.ids.push(util.generateUUID());
-      }),
+      <React.Fragment key={'empty'}>
+        {empty((val: T extends (infer U)[] ? U : never) => {
+          const newValue = produce(valueArr, (draft) => {
+            draft.push(val);
+          }) as T;
+          onChange(newValue);
+          context.ids.push(util.generateUUID());
+        })}
+      </React.Fragment>,
     );
   }
 

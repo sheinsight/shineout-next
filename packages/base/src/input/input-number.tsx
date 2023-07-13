@@ -1,7 +1,7 @@
 import React from 'react';
 import SimpleInput from './simple-input';
 import Icons from '../icons';
-import { useInputNumber, util, usePersistFn } from '@sheinx/hooks';
+import { useInputNumber, usePersistFn, util } from '@sheinx/hooks';
 
 import { InputNumberProps } from './input-number.type';
 import classNames from 'classnames';
@@ -26,6 +26,7 @@ export default (props: InputNumberProps) => {
   const { onMinus, onPlus, ...numberFormatProps } = useInputNumber({
     value: commonProps.value,
     onChange: commonProps.onChange,
+    disabled: !!commonProps.disabled,
     ...numberFormatParams,
   });
 
@@ -36,8 +37,24 @@ export default (props: InputNumberProps) => {
   const suffix = (
     <React.Fragment>
       <div className={jssStyle.numberStep}>
-        <span onMouseDown={onPlus}>{Icons.AngleRight}</span>
-        <span onMouseDown={onMinus}>{Icons.AngleLeft}</span>
+        <span
+          onMouseDown={(e) => {
+            // 阻止默认事件，防止点击按钮时，input失去焦点
+            e.preventDefault();
+            onPlus();
+          }}
+        >
+          {Icons.AngleRight}
+        </span>
+        <span
+          onMouseDown={(e) => {
+            // 阻止默认事件，防止点击按钮时，input失去焦点
+            e.preventDefault();
+            onMinus();
+          }}
+        >
+          {Icons.AngleLeft}
+        </span>
       </div>
       {restProps.suffix}
     </React.Fragment>

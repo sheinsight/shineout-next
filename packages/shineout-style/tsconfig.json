@@ -1,6 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declaration": true
+    "declaration": true,
+    "paths": {
+      "@sheinx/theme": ["../theme/src/index"]
+    }
   }
 }

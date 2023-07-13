@@ -1,5 +1,7 @@
 import { ObjectType } from '../../common/type';
-import { RuleFunc } from '../type';
+import { FormItemRule } from '../rule/rule.type';
+import getRule from './getRule';
+
 export class FormError extends Error {}
 
 export function wrapFormError(error: Error): FormError;
@@ -17,7 +19,7 @@ export function wrapFormError(error: Error | Error[]) {
 export const validate = <T>(
   value: T | undefined,
   formData: ObjectType,
-  rules: RuleFunc<T>[],
+  rules: FormItemRule<T>,
   props: ObjectType,
 ) =>
   new Promise<true | Error>((resolve, reject) => {
@@ -37,7 +39,9 @@ export const validate = <T>(
       }
       validate(value, formData, restRule, props).then(resolve, reject);
     };
-    const cb = rule(value, formData, callback);
+
+    const fn = getRule(rule, props);
+    const cb = fn(value, formData, callback, props);
     if (cb) {
       cb?.then(callback.bind(null, true)).catch((e: Error) => {
         reject(wrapFormError(e));

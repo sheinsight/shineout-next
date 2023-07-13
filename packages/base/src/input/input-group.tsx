@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Children, cloneElement, useRef } from 'react';
 import classNames from 'classnames';
 import { InputGroupProps } from './input-group.type';
+import useWithFormConfig from '../common/use-with-form-config';
 
 export default (props: InputGroupProps) => {
   const [focus, setFocus] = React.useState(false);
@@ -11,6 +12,8 @@ export default (props: InputGroupProps) => {
     eventMap: new WeakMap(),
     propsMap: new WeakMap(),
   });
+  const { size, disabled } = useWithFormConfig(props);
+
   const getProps = (child: React.ReactElement) => {
     if (
       !['ShineoutInput', 'ShineoutInputNumber', 'ShineoutInputPassword'].includes(
@@ -38,7 +41,7 @@ export default (props: InputGroupProps) => {
     return ref.current.eventMap.get(child) || {};
   };
 
-  const { children, className, style, size, disabled } = props;
+  const { children, className, style } = props;
   const rootClass = classNames({
     [jssStyle.group]: true,
     [jssStyle.groupSmall]: size === 'small',

@@ -17,7 +17,7 @@ export default () => {
       <Form
         inline
         jssStyle={formStyle}
-        defaultValue={{ email: 'spana@qq.com' }}
+        defaultValue={{ email: 'zhangsan@qq.com' }}
         onSubmit={(v) => {
           console.log('form submit', v);
         }}
@@ -31,9 +31,9 @@ export default () => {
         <FormItem required label={'Username'} jssStyle={itemStyle}>
           <FormField
             name={'name'}
-            defaultValue={'spana'}
+            defaultValue={'zhangsan'}
             rules={[
-              (value, formValue, callback) => {
+              (value, formValue, callback, _prop) => {
                 if (value && value.length > 5) {
                   callback(new Error('长度不能大于5'));
                 } else {

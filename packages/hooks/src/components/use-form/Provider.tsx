@@ -1,13 +1,13 @@
 import { FormContext } from './use-form-control/form-context';
-import { LabelConfigContext } from './use-form-item/label-config-context';
+import { FormConfigContext } from './form-config-context';
 import * as React from 'react';
 import { ProviderProps } from './use-form.type';
 
 export const Provider = (props: ProviderProps) => {
-  const { children, labelValue, formValue } = props;
+  const { children, formConfig, formValue } = props;
   return (
     <FormContext.Provider value={formValue}>
-      <LabelConfigContext.Provider value={labelValue}>{children}</LabelConfigContext.Provider>
+      <FormConfigContext.Provider value={formConfig}>{children}</FormConfigContext.Provider>
     </FormContext.Provider>
   );
 };

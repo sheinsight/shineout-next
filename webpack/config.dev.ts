@@ -32,6 +32,7 @@ const webpackConfig = {
       '@sheinx/base': path.resolve(__dirname, '../packages/base/src'),
       '@sheinx/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
       '@sheinx/hooks': path.resolve(__dirname, '../packages/hooks/src'),
+      '@sheinx/theme': path.resolve(__dirname, '../packages/theme/src'),
     },
   },
   module: {

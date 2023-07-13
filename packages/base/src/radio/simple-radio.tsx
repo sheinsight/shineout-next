@@ -1,11 +1,11 @@
-import { useRadio } from '@sheinx/hooks';
+import { useCheck } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
 import { SimpleRadioProps } from './radio.type';
 
 const Radio = (props: SimpleRadioProps) => {
   const { jssStyle, className, style, status, children, ...rest } = props;
-  const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useRadio({
+  const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
   });
   const rootClass = classNames([

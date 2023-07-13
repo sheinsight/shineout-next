@@ -1,8 +1,9 @@
 import {
-  FormProps as UiFormProps,
-  FormItemProps as UiFormItemProps,
-  ObjectType,
   FormFieldProps as UiFormFieldProps,
+  FormFieldSetProps as UiFormFieldSetProps,
+  FormItemProps as UiFormItemProps,
+  FormProps as UiFormProps,
+  ObjectType,
 } from '@sheinx/base';
 
 export interface FormProps<T extends ObjectType> extends Omit<UiFormProps<T>, 'jssStyle'> {
@@ -13,3 +14,5 @@ export interface FormProps<T extends ObjectType> extends Omit<UiFormProps<T>, 'j
 export type FormItemProps = Omit<UiFormItemProps, 'jssStyle'>;
 
 export type FormFieldProps<T> = UiFormFieldProps<T>;
+
+export type FormFieldSetProps<T> = UiFormFieldSetProps<T>;

@@ -16,6 +16,7 @@ export const colorVar = {
   grey200: va('grey-200', '#e8ebf0'),
   grey300: va('grey-300', '#cccfd7'),
   grey500: va('grey-500', '#adb5bd'),
+  grey900: va('grey-900', '#020b18'),
 };
 
 export const sizeVar = {

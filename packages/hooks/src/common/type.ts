@@ -1,5 +1,7 @@
 import React from 'react';
 
+export type EventHandlers = Record<string, React.EventHandler<any>>;
+
 export type ObjectType<V = any> = Record<string, V>;
 export type HandlerType = Record<string, React.EventHandler<any> | undefined>;
 

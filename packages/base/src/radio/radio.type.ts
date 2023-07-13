@@ -1,5 +1,5 @@
 import { CommonType } from '../common/type';
-import { BaseRadioProps } from '@sheinx/hooks';
+import { BaseCheckProps } from '@sheinx/hooks';
 import React from 'react';
 
 export interface RadioClasses {
@@ -23,7 +23,7 @@ export interface RadioClasses {
 }
 
 export interface SimpleRadioProps
-  extends BaseRadioProps,
+  extends BaseCheckProps,
     Pick<CommonType, 'status' | 'style' | 'className'> {
   jssStyle: RadioClasses;
   children?: React.ReactNode;

@@ -44,8 +44,8 @@
     "react-dom": ">=16.8"
   },
   "dependencies": {
-    "immer": "10.0.2",
     "classnames": "2.3.2",
+    "immer": "10.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -59,6 +59,7 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/jest": "^29.5.1",
+    "@types/node": "^20.4.0",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.0",
     "@umijs/lint": "^4.0.0",

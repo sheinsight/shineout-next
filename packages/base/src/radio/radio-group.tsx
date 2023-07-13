@@ -4,9 +4,11 @@ import groupContext from './group-context';
 import Radio from './radio';
 import React from 'react';
 import classNames from 'classnames';
+import useWithFormConfig from '../common/use-with-form-config';
 
 const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
-  const { children, className, button, size, block, keygen, jssStyle } = props;
+  const { children, className, button, block, keygen, jssStyle } = props;
+  const { size, disabled } = useWithFormConfig(props);
 
   const inputAbleProps = useInputAble({
     value: props.value,
@@ -20,7 +22,7 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
     value: inputAbleProps.value,
     onChange: inputAbleProps.onChange,
     prediction: props.prediction,
-    disabled: props.disabled,
+    disabled,
     format: props.format,
     keygen: props.keygen,
     data: props.data || ([] as DataItem[]),
@@ -29,11 +31,11 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
   const datum = useListSelectSingle(useListParams);
 
   const handleItemChange = usePersistFn((d: DataItem) => {
-    datum.add(d, { overwrite: true });
+    datum.add(d);
   });
 
   const handleIndexChange = usePersistFn((index: number) => {
-    datum.add(props.data![index], { overwrite: true });
+    datum.add(props.data![index]);
   });
 
   const isChecked = usePersistFn((d: DataItem) => {
@@ -55,7 +57,7 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
   const providerValue = {
     checked: isChecked,
     onChange: handleItemChange,
-    disabled: props.disabled,
+    disabled,
   };
   const groupClass = classNames(className, jssStyle.group, {
     [jssStyle.groupBlock]: block,

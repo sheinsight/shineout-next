@@ -76,9 +76,7 @@ const input: JsStyles<InputClass> = {
     ...wrapper,
   },
   ...resetWrapper,
-  wrapperNumber: {
-    paddingRight: 0,
-  },
+  wrapperNumber: {},
   input: {
     width: '100%',
     background: 'transparent',
@@ -90,6 +88,10 @@ const input: JsStyles<InputClass> = {
     outline: 'none',
     backgroundColor: 'transparent',
     boxSizing: 'border-box',
+    '&::placeholder': {
+      color: cssVars.inputPlaceholderColor,
+      fontSize: 'inherit',
+    },
   },
   clearWrapper: {
     position: 'relative',
@@ -148,7 +150,7 @@ const input: JsStyles<InputClass> = {
   ...resetGroup,
   numberStep: {
     display: 'flex',
-    height: '100%',
+    alignSelf: 'stretch',
     boxSizing: 'border-box',
     flexFlow: 'column noWrap',
     '& > span': {
@@ -162,7 +164,9 @@ const input: JsStyles<InputClass> = {
       lineHeight: '1',
       color: cssVars.grey500,
       '&:hover': {
-        color: cssVars.primaryColor,
+        '$wrapper:not($wrapperDisabled) &': {
+          color: cssVars.primaryColor,
+        },
       },
       '&:first-child': {
         borderBottom: `1px solid ${cssVars.grey200}`,

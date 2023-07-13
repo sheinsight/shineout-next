@@ -17,7 +17,7 @@ export default () => {
       <Form
         inline
         jssStyle={formStyle}
-        defaultValue={{ email: 'spana@qq.com' }}
+        defaultValue={{ email: 'zhangsan@qq.com' }}
         onSubmit={(v) => {
           console.log('form submit', v);
         }}
@@ -32,7 +32,7 @@ export default () => {
           <FormFieldSet
             name={'super'}
             rules={[
-              (value: any, formValue, callback) => {
+              (value: any, formValue, callback, _) => {
                 console.log('supervalidate', value);
                 if (value && value.email && value.email.length > 5) {
                   callback(new Error('长度不能大于5'));
@@ -45,7 +45,7 @@ export default () => {
             <FormField
               name={'email'}
               rules={[
-                (value, formValue, callback) => {
+                (value, formValue, callback, _) => {
                   if (value && value.length > 2) {
                     callback(new Error('长度不能大于2'));
                   } else {

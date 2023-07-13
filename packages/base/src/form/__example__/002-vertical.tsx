@@ -14,7 +14,7 @@ export default () => {
   const innerTitleStyle = useInnerTitleStyle();
   return (
     <div>
-      <Form jssStyle={formStyle} defaultValue={{ email: 'spana@qq.com' }} labelAlign={'top'}>
+      <Form jssStyle={formStyle} defaultValue={{ email: 'zhangsan@qq.com' }} labelAlign={'top'}>
         <FormItem label={'username'} tip={'请输入用户名'} jssStyle={itemStyle}>
           <FormField
             name={'name'}
