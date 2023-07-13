@@ -881,4 +881,32 @@ export interface Tokens {
    * @description 所有下拉组件使用，下拉菜单、气泡确认框、选择器
    */
   'Shadow-3': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default 'calc( 1em + 8px )'
+   * @description 根据当前的字体大小 + 8px
+   */
+  'Line-height-dynamic': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '1px'
+   * @description 常规边框宽度
+   */
+  'Border-1': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '2px'
+   * @description 较粗边框宽度
+   */
+  'Border-2': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '3px'
+   * @description 较粗边框宽度
+   */
+  'Border-3': string;
 }

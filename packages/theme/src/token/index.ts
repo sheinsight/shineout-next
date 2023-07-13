@@ -769,6 +769,30 @@ const Tokens = {
       '0px 8px 10px -5px rgba(2, 11, 24, 0.08),0px 16px 24px 2px rgba(2, 11, 24, 0.04),0px 6px 30px 5px rgba(2, 11, 24, 0.05)',
     describe: '所有下拉组件使用，下拉菜单、气泡确认框、选择器',
   },
+  'Line-height-dynamic': {
+    type: 'string',
+    name: '动态行高',
+    value: 'calc( 1em + 8px )',
+    describe: '根据当前的字体大小 + 8px',
+  },
+  'Border-1': {
+    type: 'string',
+    name: '常规边框',
+    value: '1px',
+    describe: '常规边框宽度',
+  },
+  'Border-2': {
+    type: 'string',
+    name: '较粗边框',
+    value: '2px',
+    describe: '较粗边框宽度',
+  },
+  'Border-3': {
+    type: 'string',
+    name: '粗边框',
+    value: '3px',
+    describe: '较粗边框宽度',
+  },
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-types
