@@ -1,7 +1,7 @@
 const inputTokenDescription = {
   input: '输入框',
-  Inner: '内嵌',
-  Title: '标题模式',
+  inner: '内嵌',
+  title: '标题模式',
 };
 
 const inputRules = {

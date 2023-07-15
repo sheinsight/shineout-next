@@ -1,4 +1,4 @@
-const radioTokenDescription = { radio: '单选框', Button: '按钮模式', Outline: '线框模式' };
+const radioTokenDescription = { radio: '单选框', button: '按钮模式', outline: '线框模式' };
 
 const radioRules = {
   color: [

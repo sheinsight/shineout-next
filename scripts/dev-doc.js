@@ -4,6 +4,7 @@ const chokidar = require('chokidar');
 const { compile } = require('./utils/compile');
 const { compileRule, writeRule } = require('./utils/rules');
 const { rmrf } = require('./utils/rmrf');
+const { compileToken } = require('../packages/theme/scripts/token');
 
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const hooksDir = path.join(__dirname, '../packages', 'hooks', 'src');
@@ -38,6 +39,7 @@ watcher.on('change', (filePath) => {
     if (num === 0) {
       num += 1;
       writeRule(value, filePath);
+      compileToken();
       console.log(233);
     } else {
       num = 0;

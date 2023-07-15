@@ -40,7 +40,7 @@ export interface InputTokens {
   inputDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-Border-2
+   * @token Neutral-border-2
    * @description 输入框禁用时的边框颜色
    */
   inputDisabledBorderColor: string;

@@ -1,6 +1,6 @@
 const dropdownTokenDescription = {
   dropdown: '下拉菜单',
-  Outline: '线框模式下',
+  outline: '线框模式下',
 };
 
 const dropdownRules = {

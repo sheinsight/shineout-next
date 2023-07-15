@@ -10,13 +10,13 @@ export interface RadioTokens {
   radioFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-Fill-3
+   * @token
    * @description 单选框背景颜色
    */
   radioBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-2
+   * @token
    * @description 单选框边框颜色
    */
   radioBorderColor: string;
@@ -40,19 +40,19 @@ export interface RadioTokens {
   radioOutlineBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-2
+   * @token
    * @description 单选框禁用时的字体颜色
    */
   radioDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-Fill-2
+   * @token
    * @description 单选框禁用时的背景颜色
    */
   radioDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-Border-2
+   * @token
    * @description 单选框禁用时的边框颜色
    */
   radioDisabledBorderColor: string;
