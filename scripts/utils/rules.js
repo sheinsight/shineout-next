@@ -74,7 +74,12 @@ const arrayToObjectPath = (array) => {
             [keys[1]]: '',
           };
         } else {
-          current[key] = {};
+          if (j === array[i].length - 1) {
+            current[key] = '';
+            console.log(current[key]);
+          } else {
+            current[key] = {};
+          }
         }
       }
       if (key.indexOf('-') > -1) {

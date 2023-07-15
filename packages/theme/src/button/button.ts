@@ -93,7 +93,7 @@ const button: ButtonTokens = {
   buttonLargePaddingY: 'Padding-8',
   buttonRoundBorderRadius: 'Radius-1000',
   buttonCircleBorderRadius: 'Radius-50%',
-  buttonSquareBorderRadius: 'Radius-4',
+  buttonSquareBorderRadius: 'Radius-2',
   buttonSmallRoundBorderRadius: 'Radius-1000',
   buttonSmallCircleBorderRadius: 'Radius-50%',
   buttonSmallSquareBorderRadius: 'Radius-4',

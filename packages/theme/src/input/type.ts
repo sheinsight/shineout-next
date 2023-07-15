@@ -124,7 +124,7 @@ export interface InputTokens {
   inputErrorClearIconColor: string;
   /**
    * @type {string}
-   * @token [object Object]
+   * @token
    * @description 输入框高度
    */
   inputHeight: string;
@@ -256,7 +256,7 @@ export interface InputTokens {
   inputSmallPaddingY: string;
   /**
    * @type {string}
-   * @token [object Object]
+   * @token
    * @description 输入框大尺寸高度
    */
   inputLargeHeight: string;
