@@ -10,7 +10,7 @@ const input: InputTokens = {
   inputClearIconColor: '',
   inputDisabledFontColor: 'Neutral-text-2',
   inputDisabledBackgroundColor: 'Neutral-Fill-2',
-  inputDisabledBorderColor: 'Neutral-Border-2',
+  inputDisabledBorderColor: 'Neutral-border-2',
   inputDisabledClearIconColor: '',
   inputFocusFontColor: '',
   inputFocusBackgroundColor: '',

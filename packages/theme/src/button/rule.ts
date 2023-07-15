@@ -1,10 +1,20 @@
+/**
+ * 描述词典
+ * 用于生成文本。
+ * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
+ */
 const buttonTokenDescription = {
   button: '按钮',
-  Nearly: '相邻之间的',
-  Text: '文本模式',
-  Outline: '线框模式',
+  nearly: '相邻之间的',
+  text: '文本模式',
+  outline: '线框模式',
 };
 
+/**
+ * token 规则
+ * 用于生成 token 的规则，修改保存后将自动更新 token。
+ * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
+ */
 const buttonRules = {
   color: [
     ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],
@@ -20,6 +30,13 @@ const buttonRules = {
   extra_nearly_margin: [['nearly-margin']],
 };
 
+/**
+ * token 值映射表
+ * 用于生成 token 的值，修改保存后将自动同步 type.ts button.ts 的内容。
+ * 值映射表变量名称为 组件名称 + TokenValue。请勿修改变量命名，否则将导致 token 无法生成。
+ * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
+ * 注意，该映射表的内容不与 buttonRules 强关联，非 buttonRules 规则内的 token 需手动增加或删减。
+ */
 const buttonTokenValue = {
   Default: {
     Disabled: {

@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const chokidar = require('chokidar');
 const { compile } = require('./utils/compile');
+const { compileRule, writeRule } = require('./utils/rules');
 const { rmrf } = require('./utils/rmrf');
 const { compileToken } = require('../packages/theme/scripts/token');
 
@@ -21,6 +22,8 @@ compile(baseDir);
 const watchList = [shineoutDir, hooksDir, styleDir, baseDir, themeDir];
 const watcher = chokidar.watch(watchList);
 
+let num = 0;
+
 watcher.on('change', (filePath) => {
   const pattern = new RegExp(`src/(.*?)/`, 'i');
   const match = filePath.match(pattern);
@@ -32,6 +35,14 @@ watcher.on('change', (filePath) => {
     compile(baseDir);
   }
   if (filePath.indexOf(themeDir) > -1 && filePath.indexOf('rule') > -1) {
-    compileToken();
+    const value = compileRule(filePath);
+    if (num === 0) {
+      num += 1;
+      writeRule(value, filePath);
+      compileToken();
+      console.log(233);
+    } else {
+      num = 0;
+    }
   }
 });

@@ -86,7 +86,7 @@ function splitCamelCaseToArray(str) {
 
   const result = str.split(/(?=[A-Z])/);
 
-  return result.map((str) => str.charAt(0).toUpperCase() + str.substring(1));
+  return result.map((str) => str.charAt(0).toLocaleLowerCase() + str.substring(1));
 }
 
 function getTokenValue(obj, keys) {
@@ -110,13 +110,13 @@ function getTokenValue(obj, keys) {
 
   return undefined;
 }
+let token = [];
 
 function generateToken(rule, componentName, tokenMap) {
   const data = [];
   const result = [];
   const describeMap = {};
   const arrays = getRulePath(rule);
-
   arrays.forEach((i) => {
     const res = generatePaths(i);
     result.push(res);
@@ -131,6 +131,7 @@ function generateToken(rule, componentName, tokenMap) {
         .filter((i) => i !== '')
         .toString()
         .replaceAll(',', '-');
+      token.push(res);
       data.push(toCamelCase(`${componentName}-${res}`));
     });
   });
@@ -139,11 +140,10 @@ function generateToken(rule, componentName, tokenMap) {
     const split = splitCamelCase(item);
     let desc = '';
     split.forEach((i) => {
-      desc += tokenMap[i];
+      desc += tokenMap[i.toLowerCase()];
     });
     describeMap[item] = desc;
   });
-
   return describeMap;
 }
 
@@ -184,6 +184,7 @@ const compileToken = () => {
     const describesKey = Object.keys(result);
     const describesValues = Object.values(result);
     const tsMap = generateTokenTs(component, describesValues, describesKey, valueMap);
+
     const template = ejs.compile(fs.readFileSync(templatePath, 'utf-8'));
 
     let render = template({
@@ -196,6 +197,8 @@ const compileToken = () => {
     });
 
     fs.writeFileSync(path.resolve(srcPath, component, 'type.ts'), render);
+
+    token = [];
 
     const componentTemplateContext = ejs.compile(fs.readFileSync(componentTemplatePath, 'utf-8'));
     let componentRender = componentTemplateContext({

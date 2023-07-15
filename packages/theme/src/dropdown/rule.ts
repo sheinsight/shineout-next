@@ -1,8 +1,18 @@
-const dropdownTokenDescription = {
-  dropdown: '下拉菜单',
-  Outline: '线框模式下',
-};
+// 此文件受脚本控制，修改后将自动同步 type.ts dropdown.ts 的内容
+// This file is script-controlled and any changes made will be automatically synchronized with the type.ts and dropdown.ts files.
 
+/**
+ * 描述词典
+ * 用于生成文本。
+ * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
+ */
+const dropdownTokenDescription = { dropdown: '下拉菜单', outline: '线框模式下' };
+
+/**
+ * token 规则
+ * 用于生成 token 的规则，修改保存后将自动更新 token。
+ * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
+ */
 const dropdownRules = {
   color: [
     ['primary', 'secondary', 'success', 'warning', 'danger'],
@@ -16,593 +26,277 @@ const dropdownRules = {
   ],
 };
 
+/**
+ * token 值映射表
+ * 用于生成 token 的值，修改保存后将自动同步 type.ts dropdown.ts 的内容。
+ * 值映射表变量名称为 组件名称 + TokenValue。请勿修改变量命名，否则将导致 token 无法生成。
+ * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
+ * 注意，该映射表的内容不与 dropdownRules 强关联，非 dropdownRules 规则内的 token 需手动增加或删减。
+ */
 const dropdownTokenValue = {
-  Small: {
-    Font: {
-      Size: '12/regular',
+  primary: {
+    font: { color: 'Neutral-text-5' },
+    background: { color: 'Brand-5' },
+    border: { color: 'Brand-5' },
+    disabled: {
+      font: { color: 'Neutral-text-2' },
+      background: { color: 'Brand-3' },
+      border: { color: 'Brand-3' },
     },
-    Border: {
-      Radius: 'Radius-4',
+    hover: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Brand-4' },
+      border: { color: 'Brand-4' },
     },
-    Padding: {
-      X: 'Padding-8',
-      Y: 'Padding-2',
+    active: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Brand-6' },
+      border: { color: 'Brand-6' },
     },
-  },
-  Large: {
-    Font: {
-      Size: '16/regular',
-    },
-    Border: {
-      Radius: 'Radius-4',
-    },
-    Padding: {
-      X: 'Padding-12',
-      Y: 'Padding-8',
-    },
-  },
-  Font: {
-    Size: '14/regular',
-  },
-  Border: {
-    Radius: 'Radius-4',
-  },
-  Padding: {
-    X: 'Padding-8',
-    Y: 'Padding-5',
-  },
-
-  Primary: {
-    Disabled: {
-      Background: {
-        Color: 'Brand-3',
-      },
-      Border: {
-        Color: 'Brand-3',
-      },
-      Font: {
-        Color: 'Neutral-text-2',
-      },
-    },
-    Hover: {
-      Background: {
-        Color: 'Brand-4',
-      },
-      Border: {
-        Color: 'Brand-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
-    },
-    Active: {
-      Background: {
-        Color: 'Brand-6',
-      },
-      Border: {
-        Color: 'Brand-6',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
-    },
-    Focus: {
-      Background: {
-        Color: 'Brand-4',
-      },
-      Border: {
-        Color: 'Brand-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
-    },
-    Background: {
-      Color: 'Brand-5',
-    },
-    Border: {
-      Color: 'Brand-5',
-    },
-    Font: {
-      Color: 'Neutral-text-5',
+    focus: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Brand-4' },
+      border: { color: 'Brand-4' },
     },
   },
-  Success: {
-    Disabled: {
-      Background: {
-        Color: 'Success-3',
-      },
-      Border: {
-        Color: 'Success-3',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+  secondary: {
+    font: { color: 'Neutral-text-1' },
+    background: { color: 'Secondary-5' },
+    border: { color: 'Secondary-5' },
+    disabled: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Secondary-3' },
+      border: { color: 'Secondary-3' },
     },
-    Hover: {
-      Background: {
-        Color: 'Success-4',
-      },
-      Border: {
-        Color: 'Success-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    hover: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Secondary-4' },
+      border: { color: 'Secondary-4' },
     },
-    Active: {
-      Background: {
-        Color: 'Success-6',
-      },
-      Border: {
-        Color: 'Success-6',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    active: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Secondary-6' },
+      border: { color: 'Secondary-6' },
     },
-    Focus: {
-      Background: {
-        Color: 'Success-4',
-      },
-      Border: {
-        Color: 'Success-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
-    },
-    Background: {
-      Color: 'Success-5',
-    },
-    Border: {
-      Color: 'Success-5',
-    },
-    Font: {
-      Color: 'Neutral-text-1',
+    focus: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Secondary-4' },
+      border: { color: 'Secondary-4' },
     },
   },
-  Warning: {
-    Disabled: {
-      Background: {
-        Color: 'Warning-3',
-      },
-      Border: {
-        Color: 'Warning-3',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+  success: {
+    font: { color: 'Neutral-text-1' },
+    background: { color: 'Success-5' },
+    border: { color: 'Success-5' },
+    disabled: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Success-3' },
+      border: { color: 'Success-3' },
     },
-    Hover: {
-      Background: {
-        Color: 'Warning-4',
-      },
-      Border: {
-        Color: 'Warning-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    hover: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Success-4' },
+      border: { color: 'Success-4' },
     },
-    Active: {
-      Background: {
-        Color: 'Warning-6',
-      },
-      Border: {
-        Color: 'Warning-6',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    active: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Success-6' },
+      border: { color: 'Success-6' },
     },
-    Focus: {
-      Background: {
-        Color: 'Warning-4',
-      },
-      Border: {
-        Color: 'Warning-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
-    },
-    Background: {
-      Color: 'Warning-5',
-    },
-    Border: {
-      Color: 'Warning-5',
-    },
-    Font: {
-      Color: 'Neutral-text-1',
+    focus: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Success-4' },
+      border: { color: 'Success-4' },
     },
   },
-  Danger: {
-    Disabled: {
-      Background: {
-        Color: 'Danger-3',
-      },
-      Border: {
-        Color: 'Danger-3',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+  warning: {
+    font: { color: 'Neutral-text-1' },
+    background: { color: 'Warning-5' },
+    border: { color: 'Warning-5' },
+    disabled: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Warning-3' },
+      border: { color: 'Warning-3' },
     },
-    Hover: {
-      Background: {
-        Color: 'Danger-4',
-      },
-      Border: {
-        Color: 'Danger-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    hover: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Warning-4' },
+      border: { color: 'Warning-4' },
     },
-    Active: {
-      Background: {
-        Color: 'Danger-6',
-      },
-      Border: {
-        Color: 'Danger-6',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    active: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Warning-6' },
+      border: { color: 'Warning-6' },
     },
-    Focus: {
-      Background: {
-        Color: 'Danger-4',
-      },
-      Border: {
-        Color: 'Danger-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
-    },
-    Background: {
-      Color: 'Danger-5',
-    },
-    Border: {
-      Color: 'Danger-5',
-    },
-    Font: {
-      Color: 'Neutral-text-1',
+    focus: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Warning-4' },
+      border: { color: 'Warning-4' },
     },
   },
-  Secondary: {
-    Disabled: {
-      Background: {
-        Color: 'Secondary-3',
-      },
-      Border: {
-        Color: 'Secondary-3',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+  danger: {
+    font: { color: 'Neutral-text-1' },
+    background: { color: 'Danger-5' },
+    border: { color: 'Danger-5' },
+    disabled: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Danger-3' },
+      border: { color: 'Danger-3' },
     },
-    Hover: {
-      Background: {
-        Color: 'Secondary-4',
-      },
-      Border: {
-        Color: 'Secondary-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    hover: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Danger-4' },
+      border: { color: 'Danger-4' },
     },
-    Active: {
-      Background: {
-        Color: 'Secondary-6',
-      },
-      Border: {
-        Color: 'Secondary-6',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    active: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Danger-6' },
+      border: { color: 'Danger-6' },
     },
-    Focus: {
-      Background: {
-        Color: 'Secondary-4',
-      },
-      Border: {
-        Color: 'Secondary-4',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
-    },
-    Background: {
-      Color: 'Secondary-5',
-    },
-    Border: {
-      Color: 'Secondary-5',
-    },
-    Font: {
-      Color: 'Neutral-text-1',
+    focus: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Danger-4' },
+      border: { color: 'Danger-4' },
     },
   },
-
-  Outline: {
-    Primary: {
-      Disabled: {
-        Background: {
-          Color: 'Brand-3',
-        },
-        Border: {
-          Color: 'Brand-3',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+  font: { size: '14/regular' },
+  border: { radius: 'Radius-4' },
+  padding: { y: 'Padding-5', x: 'Padding-8' },
+  small: {
+    font: { size: '12/regular' },
+    border: { radius: 'Radius-4' },
+    padding: { y: 'Padding-2', x: 'Padding-8' },
+  },
+  large: {
+    font: { size: '16/regular' },
+    border: { radius: 'Radius-4' },
+    padding: { y: 'Padding-8', x: 'Padding-12' },
+  },
+  outline: {
+    primary: {
+      disabled: {
+        background: { color: 'Brand-3' },
+        border: { color: 'Brand-3' },
+        font: { color: 'Neutral-text-1' },
       },
-      Hover: {
-        Background: {
-          Color: 'Brand-4',
-        },
-        Border: {
-          Color: 'Brand-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      hover: {
+        background: { color: 'Brand-4' },
+        border: { color: 'Brand-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Active: {
-        Background: {
-          Color: 'Brand-6',
-        },
-        Border: {
-          Color: 'Brand-6',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      active: {
+        background: { color: 'Brand-6' },
+        border: { color: 'Brand-6' },
+        font: { color: 'Neutral-text-1' },
       },
-      Focus: {
-        Background: {
-          Color: 'Brand-4',
-        },
-        Border: {
-          Color: 'Brand-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      focus: {
+        background: { color: 'Brand-4' },
+        border: { color: 'Brand-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Background: {
-        Color: 'Brand-5',
-      },
-      Border: {
-        Color: 'Brand-5',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+      background: { color: 'Brand-5' },
+      border: { color: 'Brand-5' },
+      font: { color: 'Neutral-text-1' },
     },
-    Success: {
-      Disabled: {
-        Background: {
-          Color: 'Success-3',
-        },
-        Border: {
-          Color: 'Success-3',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+    success: {
+      disabled: {
+        background: { color: 'Success-3' },
+        border: { color: 'Success-3' },
+        font: { color: 'Neutral-text-1' },
       },
-      Hover: {
-        Background: {
-          Color: 'Success-4',
-        },
-        Border: {
-          Color: 'Success-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      hover: {
+        background: { color: 'Success-4' },
+        border: { color: 'Success-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Active: {
-        Background: {
-          Color: 'Success-6',
-        },
-        Border: {
-          Color: 'Success-6',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      active: {
+        background: { color: 'Success-6' },
+        border: { color: 'Success-6' },
+        font: { color: 'Neutral-text-1' },
       },
-      Focus: {
-        Background: {
-          Color: 'Success-4',
-        },
-        Border: {
-          Color: 'Success-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      focus: {
+        background: { color: 'Success-4' },
+        border: { color: 'Success-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Background: {
-        Color: 'Success-5',
-      },
-      Border: {
-        Color: 'Success-5',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+      background: { color: 'Success-5' },
+      border: { color: 'Success-5' },
+      font: { color: 'Neutral-text-1' },
     },
-    Warning: {
-      Disabled: {
-        Background: {
-          Color: 'Warning-3',
-        },
-        Border: {
-          Color: 'Warning-3',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+    warning: {
+      disabled: {
+        background: { color: 'Warning-3' },
+        border: { color: 'Warning-3' },
+        font: { color: 'Neutral-text-1' },
       },
-      Hover: {
-        Background: {
-          Color: 'Warning-4',
-        },
-        Border: {
-          Color: 'Warning-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      hover: {
+        background: { color: 'Warning-4' },
+        border: { color: 'Warning-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Active: {
-        Background: {
-          Color: 'Warning-6',
-        },
-        Border: {
-          Color: 'Warning-6',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      active: {
+        background: { color: 'Warning-6' },
+        border: { color: 'Warning-6' },
+        font: { color: 'Neutral-text-1' },
       },
-      Focus: {
-        Background: {
-          Color: 'Warning-4',
-        },
-        Border: {
-          Color: 'Warning-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      focus: {
+        background: { color: 'Warning-4' },
+        border: { color: 'Warning-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Background: {
-        Color: 'Warning-5',
-      },
-      Border: {
-        Color: 'Warning-5',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+      background: { color: 'Warning-5' },
+      border: { color: 'Warning-5' },
+      font: { color: 'Neutral-text-1' },
     },
-    Danger: {
-      Disabled: {
-        Background: {
-          Color: 'Danger-3',
-        },
-        Border: {
-          Color: 'Danger-3',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+    danger: {
+      disabled: {
+        background: { color: 'Danger-3' },
+        border: { color: 'Danger-3' },
+        font: { color: 'Neutral-text-1' },
       },
-      Hover: {
-        Background: {
-          Color: 'Danger-4',
-        },
-        Border: {
-          Color: 'Danger-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      hover: {
+        background: { color: 'Danger-4' },
+        border: { color: 'Danger-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Active: {
-        Background: {
-          Color: 'Danger-6',
-        },
-        Border: {
-          Color: 'Danger-6',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      active: {
+        background: { color: 'Danger-6' },
+        border: { color: 'Danger-6' },
+        font: { color: 'Neutral-text-1' },
       },
-      Focus: {
-        Background: {
-          Color: 'Danger-4',
-        },
-        Border: {
-          Color: 'Danger-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      focus: {
+        background: { color: 'Danger-4' },
+        border: { color: 'Danger-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Background: {
-        Color: 'Danger-5',
-      },
-      Border: {
-        Color: 'Danger-5',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+      background: { color: 'Danger-5' },
+      border: { color: 'Danger-5' },
+      font: { color: 'Neutral-text-1' },
     },
-    Secondary: {
-      Disabled: {
-        Background: {
-          Color: 'Secondary-3',
-        },
-        Border: {
-          Color: 'Secondary-3',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+    secondary: {
+      disabled: {
+        background: { color: 'Secondary-3' },
+        border: { color: 'Secondary-3' },
+        font: { color: 'Neutral-text-1' },
       },
-      Hover: {
-        Background: {
-          Color: 'Secondary-4',
-        },
-        Border: {
-          Color: 'Secondary-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      hover: {
+        background: { color: 'Secondary-4' },
+        border: { color: 'Secondary-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Active: {
-        Background: {
-          Color: 'Secondary-6',
-        },
-        Border: {
-          Color: 'Secondary-6',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      active: {
+        background: { color: 'Secondary-6' },
+        border: { color: 'Secondary-6' },
+        font: { color: 'Neutral-text-1' },
       },
-      Focus: {
-        Background: {
-          Color: 'Secondary-4',
-        },
-        Border: {
-          Color: 'Secondary-4',
-        },
-        Font: {
-          Color: 'Neutral-text-1',
-        },
+      focus: {
+        background: { color: 'Secondary-4' },
+        border: { color: 'Secondary-4' },
+        font: { color: 'Neutral-text-1' },
       },
-      Background: {
-        Color: 'Secondary-5',
-      },
-      Border: {
-        Color: 'Secondary-5',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+      background: { color: 'Secondary-5' },
+      border: { color: 'Secondary-5' },
+      font: { color: 'Neutral-text-1' },
     },
   },
 };
