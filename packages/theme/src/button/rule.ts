@@ -1,6 +1,4 @@
-const buttonTokenDescription = {
-  button: '按钮',
-};
+const buttonTokenDescription = { button: '按钮' };
 
 const buttonRules = {
   color: [
@@ -16,85 +14,28 @@ const buttonRules = {
 };
 
 const buttonTokenValue = {
-  Small: {
-    Font: {
-      Size: '12/regular',
-    },
-    Border: {
-      Radius: 'Radius-4',
-    },
-    Padding: {
-      X: 'Padding-8',
-      Y: 'Padding-2',
-    },
-    Round: {
-      Border: {
-        Radius: 'Radius-1000',
-      },
-    },
-    Circle: {
-      Border: {
-        Radius: 'Radius-50%',
-      },
-    },
-    Square: {
-      Border: {
-        Radius: 'Radius-4',
-      },
-    },
+  font: { size: '14/regular' },
+  border: { radius: 'Radius-4' },
+  padding: { y: 'Padding-5', x: 'Padding-8' },
+  small: {
+    font: { size: '12/regular' },
+    border: { radius: 'Radius-4' },
+    padding: { y: 'Padding-2', x: 'Padding-8' },
+    round: { border: { radius: 'Radius-1000' } },
+    circle: { border: { radius: 'Radius-50%' } },
+    square: { border: { radius: 'Radius-4' } },
   },
-  Large: {
-    Font: {
-      Size: '16/regular',
-    },
-    Border: {
-      Radius: 'Radius-4',
-    },
-    Padding: {
-      X: 'Padding-12',
-      Y: 'Padding-8',
-    },
-    Round: {
-      Border: {
-        Radius: 'Radius-1000',
-      },
-    },
-    Circle: {
-      Border: {
-        Radius: 'Radius-50%',
-      },
-    },
-    Square: {
-      Border: {
-        Radius: 'Radius-4',
-      },
-    },
+  large: {
+    font: { size: '16/regular' },
+    border: { radius: 'Radius-4' },
+    padding: { y: 'Padding-8', x: 'Padding-12' },
+    round: { border: { radius: 'Radius-1000' } },
+    circle: { border: { radius: 'Radius-50%' } },
+    square: { border: { radius: 'Radius-4' } },
   },
-  Font: {
-    Size: '14/regular',
-  },
-  Border: {
-    Radius: 'Radius-4',
-  },
-  Padding: {
-    X: 'Padding-8',
-    Y: 'Padding-5',
-  },
-  Round: {
-    Border: {
-      Radius: 'Radius-1000',
-    },
-  },
-  Circle: {
-    Border: {
-      Radius: 'Radius-50%',
-    },
-  },
-  Square: {
-    Border: {
-      Radius: 'Radius-4',
-    },
-  },
+  round: { border: { radius: 'Radius-1000' } },
+  circle: { border: { radius: 'Radius-50%' } },
+  square: { border: { radius: 'Radius-4' } },
 };
 
 module.exports = {

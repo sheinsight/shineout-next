@@ -30,18 +30,18 @@ const radioTokenValue = {
     hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
   },
   line: { height: '' },
-  padding: { x: '', y: '' },
+  padding: { y: '', x: '' },
   small: {
     font: { size: '' },
     border: { radius: '' },
     line: { height: '' },
-    padding: { x: '', y: '' },
+    padding: { y: '', x: '' },
   },
   large: {
     font: { size: '' },
     border: { radius: '' },
     line: { height: '' },
-    padding: { x: '', y: '' },
+    padding: { y: '', x: '' },
   },
 };
 

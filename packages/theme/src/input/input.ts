@@ -5,7 +5,7 @@ import { InputTokens } from './type';
 
 const input: InputTokens = {
   inputFontColor: '',
-  inputBackgroundColor: 'Neutral-Fill-1',
+  inputBackgroundColor: 'Neutral-Fill-3',
   inputBorderColor: 'Neutral-border-2',
   inputClearIconColor: '',
   inputDisabledFontColor: 'Neutral-text-2',

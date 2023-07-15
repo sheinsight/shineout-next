@@ -10,7 +10,7 @@ export interface InputTokens {
   inputFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-Fill-1
+   * @token Neutral-Fill-3
    * @description 输入框背景颜色
    */
   inputBackgroundColor: string;

@@ -4,7 +4,7 @@
 export interface DropdownTokens {
   /**
    * @type {string}
-   * @token Neutral-text-5
+   * @token Neutral-text-1
    * @description 下拉菜单主要色字体颜色
    */
   dropdownPrimaryFontColor: string;
@@ -22,7 +22,7 @@ export interface DropdownTokens {
   dropdownPrimaryBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-2
+   * @token Neutral-text-1
    * @description 下拉菜单主要色禁用时的字体颜色
    */
   dropdownPrimaryDisabledFontColor: string;
@@ -904,73 +904,73 @@ export interface DropdownTokens {
   dropdownDangerOutlineFocusBorderColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token
    * @description 下拉菜单字体字号
    */
   dropdownFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token
    * @description 下拉菜单边框圆角
    */
   dropdownBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token
    * @description 下拉菜单内边距（水平方向）
    */
   dropdownPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token
    * @description 下拉菜单内边距（垂直方向）
    */
   dropdownPaddingY: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token
    * @description 下拉菜单小尺寸字体字号
    */
   dropdownSmallFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token
    * @description 下拉菜单小尺寸边框圆角
    */
   dropdownSmallBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token
    * @description 下拉菜单小尺寸内边距（水平方向）
    */
   dropdownSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token
    * @description 下拉菜单小尺寸内边距（垂直方向）
    */
   dropdownSmallPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token
    * @description 下拉菜单大尺寸字体字号
    */
   dropdownLargeFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token
    * @description 下拉菜单大尺寸边框圆角
    */
   dropdownLargeBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token
    * @description 下拉菜单大尺寸内边距（水平方向）
    */
   dropdownLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token
    * @description 下拉菜单大尺寸内边距（垂直方向）
    */
   dropdownLargePaddingY: string;

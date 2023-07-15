@@ -1,8 +1,4 @@
-const inputTokenDescription = {
-  input: '输入框',
-  inner: '内嵌',
-  title: '标题模式',
-};
+const inputTokenDescription = { input: '输入框', inner: '内嵌', title: '标题模式' };
 
 const inputRules = {
   color: [
@@ -38,15 +34,45 @@ const inputRules = {
 };
 
 const inputTokenValue = {
-  Prefix: {
-    Padding: {},
+  font: { color: '', size: '' },
+  background: { color: 'Neutral-Fill-1' },
+  clear: { icon: '' },
+  focus: {
+    font: { color: '' },
+    background: { color: '' },
+    border: { color: '' },
+    clear: { icon: '' },
   },
-  Suffix: {
-    Padding: {},
+  hover: {
+    font: { color: '' },
+    background: { color: '' },
+    border: { color: '' },
+    clear: { icon: '' },
   },
-  Background: {
-    Color: 'Neutral-Fill-1',
+  error: {
+    font: { color: '' },
+    background: { color: '' },
+    border: { color: '' },
+    clear: { icon: '' },
   },
+  height: {},
+  line: { height: '' },
+  inner: { title: '' },
+  padding: { y: '' },
+  large: {
+    height: {},
+    font: { size: '' },
+    border: { width: '' },
+    line: { height: '' },
+    inner: { title: '' },
+    clear: { icon: '' },
+    padding: { y: '' },
+    prefix: { padding: { y: '' } },
+    suffix: { padding: { y: '' } },
+  },
+  prefix: { font: { color: '' }, background: { color: '' }, padding: { y: '' } },
+  suffix: { font: { color: '' }, background: { color: '' }, padding: { y: '' } },
+  icon: { font: { color: '' }, background: { color: '' } },
 };
 
 module.exports = {
