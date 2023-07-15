@@ -1,3 +1,6 @@
+// 此文件受脚本控制，修改后将自动同步 type.ts button.ts 的内容
+// This file is script-controlled and any changes made will be automatically synchronized with the type.ts and button.ts files.
+
 /**
  * 描述词典
  * 用于生成文本。
@@ -38,202 +41,82 @@ const buttonRules = {
  * 注意，该映射表的内容不与 buttonRules 强关联，非 buttonRules 规则内的 token 需手动增加或删减。
  */
 const buttonTokenValue = {
-  Default: {
-    Disabled: {
-      Background: {
-        Color: 'Neutral-fill-2',
-      },
-      Border: {
-        Color: 'Neutral-fill-2',
-      },
-      Font: {
-        Color: 'Neutral-text-2',
-      },
+  default: {
+    font: { color: 'Neutral-text-1' },
+    background: { color: 'Secondary-5' },
+    border: { color: 'Secondary-5' },
+    disabled: {
+      font: { color: 'Neutral-text-2' },
+      background: { color: 'Neutral-fill-2' },
+      border: { color: 'Neutral-fill-2' },
     },
-    Hover: {
-      Background: {
-        Color: 'Neutral-fill-1',
-      },
-      Border: {
-        Color: 'Brand-6',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    hover: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Neutral-fill-1' },
+      border: { color: 'Brand-6' },
     },
-    Active: {
-      Background: {
-        Color: 'Neutral-fill-1',
-      },
-      Border: {
-        Color: 'Brand-7',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    active: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Neutral-fill-1' },
+      border: { color: 'Brand-7' },
     },
-    Focus: {
-      Background: {
-        Color: 'Neutral-fill-1',
-      },
-      Border: {
-        Color: 'Brand-6',
-      },
-      Font: {
-        Color: 'Neutral-text-1',
-      },
+    focus: {
+      font: { color: 'Neutral-text-1' },
+      background: { color: 'Neutral-fill-1' },
+      border: { color: 'Brand-6' },
     },
-    Background: {
-      Color: 'Secondary-5',
-    },
-    Border: {
-      Color: 'Secondary-5',
-    },
-    Font: {
-      Color: 'Neutral-text-1',
-    },
-    Text: {},
+    text: {},
   },
-  Small: {
-    Font: {
-      Size: '12/regular',
-    },
-    Border: {
-      Radius: 'Radius-4',
-    },
-    Padding: {
-      X: 'Padding-8',
-      Y: 'Padding-2',
-    },
-    Round: {
-      Border: {
-        Radius: 'Radius-1000',
+  primary: {
+    outline: {
+      font: { color: 'Brand-6' },
+      background: { color: 'Neutral-fill-1' },
+      border: { color: 'Brand-6' },
+      disabled: {
+        font: { color: 'Brand-3' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Brand-3' },
       },
-    },
-    Circle: {
-      Border: {
-        Radius: 'Radius-50%',
+      hover: {
+        font: { color: 'Brand-5' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Brand-5' },
       },
-    },
-    Square: {
-      Border: {
-        Radius: 'Radius-4',
+      active: {
+        font: { color: 'Brand-7' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Brand-7' },
+      },
+      focus: {
+        font: { color: 'Brand-5' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Brand-5' },
       },
     },
   },
-  Large: {
-    Font: {
-      Size: '16/regular',
-    },
-    Border: {
-      Radius: 'Radius-4',
-    },
-    Padding: {
-      X: 'Padding-12',
-      Y: 'Padding-8',
-    },
-    Round: {
-      Border: {
-        Radius: 'Radius-1000',
-      },
-    },
-    Circle: {
-      Border: {
-        Radius: 'Radius-50%',
-      },
-    },
-    Square: {
-      Border: {
-        Radius: 'Radius-4',
-      },
-    },
+  font: { size: '14/regular', color: 'Color-Primary-500' },
+  border: { radius: 'Radius-4' },
+  padding: { y: 'Padding-5', x: 'Padding-8' },
+  small: {
+    font: { size: '12/regular' },
+    border: { radius: 'Radius-4' },
+    padding: { y: 'Padding-2', x: 'Padding-8' },
+    round: { border: { radius: 'Radius-1000' } },
+    circle: { border: { radius: 'Radius-50%' } },
+    square: { border: { radius: 'Radius-4' } },
   },
-  Font: {
-    Size: '14/regular',
-    Color: 'Color-Primary-500',
+  large: {
+    font: { size: '16/regular' },
+    border: { radius: 'Radius-4' },
+    padding: { y: 'Padding-8', x: 'Padding-12' },
+    round: { border: { radius: 'Radius-1000' } },
+    circle: { border: { radius: 'Radius-50%' } },
+    square: { border: { radius: 'Radius-4' } },
   },
-  Border: {
-    Radius: 'Radius-4',
-  },
-  Padding: {
-    X: 'Padding-8',
-    Y: 'Padding-5',
-  },
-  Round: {
-    Border: {
-      Radius: 'Radius-1000',
-    },
-  },
-  Circle: {
-    Border: {
-      Radius: 'Radius-50%',
-    },
-  },
-  Square: {
-    Border: {
-      Radius: 'Radius-4',
-    },
-  },
-  Nearly: {
-    Margin: 'Margin-8',
-  },
-  Primary: {
-    Outline: {
-      Disabled: {
-        Background: {
-          Color: 'Neutral-fill-1',
-        },
-        Border: {
-          Color: 'Brand-3',
-        },
-        Font: {
-          Color: 'Brand-3',
-        },
-      },
-      Hover: {
-        Background: {
-          Color: 'Neutral-fill-1',
-        },
-        Border: {
-          Color: 'Brand-5',
-        },
-        Font: {
-          Color: 'Brand-5',
-        },
-      },
-      Active: {
-        Background: {
-          Color: 'Neutral-fill-1',
-        },
-        Border: {
-          Color: 'Brand-7',
-        },
-        Font: {
-          Color: 'Brand-7',
-        },
-      },
-      Focus: {
-        Background: {
-          Color: 'Neutral-fill-1',
-        },
-        Border: {
-          Color: 'Brand-5',
-        },
-        Font: {
-          Color: 'Brand-5',
-        },
-      },
-      Background: {
-        Color: 'Neutral-fill-1',
-      },
-      Border: {
-        Color: 'Brand-6',
-      },
-      Font: {
-        Color: 'Brand-6',
-      },
-    },
-  },
+  round: { border: { radius: 'Radius-1000' } },
+  circle: { border: { radius: 'Radius-50%' } },
+  square: { border: { radius: 'Radius-4' } },
+  nearly: { margin: 'Margin-8' },
 };
 
 module.exports = {

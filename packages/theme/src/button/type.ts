@@ -2248,7 +2248,7 @@ export interface ButtonTokens {
   buttonCircleBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-4
    * @description 按钮方形边框圆角
    */
   buttonSquareBorderRadius: string;
