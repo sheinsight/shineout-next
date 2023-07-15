@@ -14,6 +14,18 @@ const toCamelCase = (str) => {
   });
 };
 
+function deepMerge(obj1, obj2) {
+  return {
+    ...obj1,
+    ...obj2,
+    ...Object.fromEntries(
+      Object.entries(obj1)
+        .filter(([k, v]) => v && typeof v === 'object' && obj2[k])
+        .map(([k, v]) => [k, deepMerge(v, obj2[k])]),
+    ),
+  };
+}
+
 function generatePaths(arrays) {
   function helper(arrays, index, current, result) {
     if (index === arrays.length) {
@@ -162,7 +174,8 @@ const compileToken = () => {
     const rules = rule[`${component}Rules`];
     const componentDescriptionMap = rule[`${component}TokenDescription`];
     const describeMap = { ...tokenDescriptionMap, ...componentDescriptionMap };
-    const valueMap = { ...tokenValueMap, ...rule[`${component}TokenValue`] };
+    // const valueMap = { ...tokenValueMap, ...rule[`${component}TokenValue`] };
+    const valueMap = deepMerge(tokenValueMap, rule[`${component}TokenValue`]);
     const result = generateToken(rules, component, describeMap);
 
     prop = [];

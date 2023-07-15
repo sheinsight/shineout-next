@@ -18,8 +18,9 @@ export interface ButtonClasses {
   danger: string;
   warning: string;
   success: string;
-  link: string;
   href: string;
+  link: string;
+  outline: string;
 }
 
 export interface ButtonBaseProps

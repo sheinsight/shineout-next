@@ -8,17 +8,13 @@ const buttonTokenDescription = {
 const buttonRules = {
   color: [
     ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],
+    ['', 'outline', 'text', 'dash'],
     ['', 'disabled', 'hover', 'active', 'focus'],
     ['font-color', 'background-color', 'border-color'],
   ],
   size: [
     ['', 'small', 'large'],
     ['font-size', 'border-radius', 'padding-x', 'padding-y'],
-  ],
-  type: [
-    ['outline', 'text', 'dash'],
-    ['disabled', 'hover', 'active', 'focus'],
-    ['font-color', 'background-color', 'border-color'],
   ],
   shape: [['', 'small', 'large'], ['round', 'circle', 'square'], ['border-radius']],
   extra_nearly_margin: [['nearly-margin']],
@@ -163,6 +159,63 @@ const buttonTokenValue = {
   },
   Nearly: {
     Margin: 'Margin-8',
+  },
+  Primary: {
+    Outline: {
+      Disabled: {
+        Background: {
+          Color: 'Neutral-fill-1',
+        },
+        Border: {
+          Color: 'Brand-3',
+        },
+        Font: {
+          Color: 'Brand-3',
+        },
+      },
+      Hover: {
+        Background: {
+          Color: 'Neutral-fill-1',
+        },
+        Border: {
+          Color: 'Brand-5',
+        },
+        Font: {
+          Color: 'Brand-5',
+        },
+      },
+      Active: {
+        Background: {
+          Color: 'Neutral-fill-1',
+        },
+        Border: {
+          Color: 'Brand-7',
+        },
+        Font: {
+          Color: 'Brand-7',
+        },
+      },
+      Focus: {
+        Background: {
+          Color: 'Neutral-fill-1',
+        },
+        Border: {
+          Color: 'Brand-5',
+        },
+        Font: {
+          Color: 'Brand-5',
+        },
+      },
+      Background: {
+        Color: 'Neutral-fill-1',
+      },
+      Border: {
+        Color: 'Brand-6',
+      },
+      Font: {
+        Color: 'Brand-6',
+      },
+    },
   },
 };
 

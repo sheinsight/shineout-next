@@ -1,5 +1,6 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
+console.log(Token.buttonPrimaryOutlineDisabledBackgroundColor);
 
 type ButtonClass =
   | 'button'
@@ -11,33 +12,38 @@ type ButtonClass =
   | 'danger'
   | 'warning'
   | 'success'
+  | 'text'
+  | 'outline'
   | 'link'
   | 'href'
-  | 'text'
   | 'small'
   | 'large';
 
-const button = (type: string) => ({
-  color: Token[`button${type}FontColor` as keyof typeof Token],
-  backgroundColor: Token[`button${type}BackgroundColor` as keyof typeof Token],
-  borderColor: Token[`button${type}BorderColor` as keyof typeof Token],
+type ButtonType = 'Default' | 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
+
+type ButtonStyleType = 'Text' | 'Outline' | '';
+
+const button = (type: ButtonType, styles: ButtonStyleType) => ({
+  color: Token[`button${type}${styles}FontColor`],
+  backgroundColor: Token[`button${type}${styles}BackgroundColor`],
+  borderColor: Token[`button${type}${styles}BorderColor`],
 
   '&:hover': {
-    color: Token[`button${type}HoverFontColor` as keyof typeof Token],
-    backgroundColor: Token[`button${type}HoverBackgroundColor` as keyof typeof Token],
-    borderColor: Token[`button${type}HoverBorderColor` as keyof typeof Token],
+    color: Token[`button${type}${styles}HoverFontColor`],
+    backgroundColor: Token[`button${type}${styles}HoverBackgroundColor`],
+    borderColor: Token[`button${type}${styles}HoverBorderColor`],
   },
 
   '&:active': {
-    color: Token[`button${type}ActiveFontColor` as keyof typeof Token],
-    backgroundColor: Token[`button${type}ActiveBackgroundColor` as keyof typeof Token],
-    borderColor: Token[`button${type}ActiveBorderColor` as keyof typeof Token],
+    color: Token[`button${type}${styles}ActiveFontColor`],
+    backgroundColor: Token[`button${type}${styles}ActiveBackgroundColor`],
+    borderColor: Token[`button${type}${styles}ActiveBorderColor`],
   },
 
   '&:disabled': {
-    color: Token[`button${type}DisabledFontColor` as keyof typeof Token],
-    backgroundColor: Token[`button${type}DisabledBackgroundColor` as keyof typeof Token],
-    borderColor: Token[`button${type}DisabledBorderColor` as keyof typeof Token],
+    color: Token[`button${type}${styles}DisabledFontColor`],
+    backgroundColor: Token[`button${type}${styles}DisabledBackgroundColor`],
+    borderColor: Token[`button${type}${styles}DisabledBorderColor`],
   },
 });
 
@@ -102,24 +108,43 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
 
   default: {
-    ...button('Default'),
+    ...button('Default', ''),
   },
   primary: {
-    ...button('Primary'),
+    ...button('Primary', ''),
   },
   secondary: {
-    ...button('Secondary'),
+    ...button('Secondary', ''),
   },
   danger: {
-    ...button('Danger'),
+    ...button('Danger', ''),
   },
   warning: {
-    ...button('Warning'),
+    ...button('Warning', ''),
   },
   success: {
-    ...button('Success'),
+    ...button('Success', ''),
   },
-  link: {},
+  outline: {
+    '&$default': {
+      ...button('Default', 'Outline'),
+    },
+    '&$primary': {
+      ...button('Primary', 'Outline'),
+    },
+    '&$success': {
+      ...button('Success', 'Outline'),
+    },
+    '&$danger': {
+      ...button('Danger', 'Outline'),
+    },
+    '&$warning': {
+      ...button('Warning', 'Outline'),
+    },
+    '&$secondary': {
+      ...button('Secondary', 'Outline'),
+    },
+  },
   href: {
     textDecoration: 'none',
   },
