@@ -5,7 +5,7 @@ import { InputTokens } from './type';
 
 const input: InputTokens = {
   inputFontColor: '',
-  inputBackgroundColor: 'Neutral-Fill-3',
+  inputBackgroundColor: 'Neutral-Fill-1',
   inputBorderColor: 'Neutral-border-2',
   inputClearIconColor: '',
   inputDisabledFontColor: 'Neutral-text-2',
@@ -24,7 +24,7 @@ const input: InputTokens = {
   inputErrorBackgroundColor: '',
   inputErrorBorderColor: '',
   inputErrorClearIconColor: '',
-  inputHeight: '',
+  inputHeight: '[object Object]',
   inputFontSize: '',
   inputBorderRadius: '',
   inputBorderWidth: '',
@@ -46,7 +46,7 @@ const input: InputTokens = {
   inputSmallClearIconFontSize: '',
   inputSmallPaddingX: '',
   inputSmallPaddingY: '',
-  inputLargeHeight: '',
+  inputLargeHeight: '[object Object]',
   inputLargeFontSize: '',
   inputLargeBorderRadius: '',
   inputLargeBorderWidth: '',

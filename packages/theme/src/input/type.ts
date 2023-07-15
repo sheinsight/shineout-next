@@ -10,7 +10,7 @@ export interface InputTokens {
   inputFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-Fill-3
+   * @token Neutral-Fill-1
    * @description 输入框背景颜色
    */
   inputBackgroundColor: string;
@@ -124,7 +124,7 @@ export interface InputTokens {
   inputErrorClearIconColor: string;
   /**
    * @type {string}
-   * @token
+   * @token [object Object]
    * @description 输入框高度
    */
   inputHeight: string;
@@ -256,7 +256,7 @@ export interface InputTokens {
   inputSmallPaddingY: string;
   /**
    * @type {string}
-   * @token
+   * @token [object Object]
    * @description 输入框大尺寸高度
    */
   inputLargeHeight: string;

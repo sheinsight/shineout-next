@@ -4,10 +4,10 @@
 import { DropdownTokens } from './type';
 
 const dropdown: DropdownTokens = {
-  dropdownPrimaryFontColor: 'Neutral-text-1',
+  dropdownPrimaryFontColor: 'Neutral-text-5',
   dropdownPrimaryBackgroundColor: 'Brand-5',
   dropdownPrimaryBorderColor: 'Brand-5',
-  dropdownPrimaryDisabledFontColor: 'Neutral-text-1',
+  dropdownPrimaryDisabledFontColor: 'Neutral-text-2',
   dropdownPrimaryDisabledBackgroundColor: 'Brand-3',
   dropdownPrimaryDisabledBorderColor: 'Brand-3',
   dropdownPrimaryHoverFontColor: 'Neutral-text-1',
@@ -154,18 +154,18 @@ const dropdown: DropdownTokens = {
   dropdownDangerOutlineFocusFontColor: '',
   dropdownDangerOutlineFocusBackgroundColor: '',
   dropdownDangerOutlineFocusBorderColor: '',
-  dropdownFontSize: '',
-  dropdownBorderRadius: '',
-  dropdownPaddingX: '',
-  dropdownPaddingY: '',
-  dropdownSmallFontSize: '',
-  dropdownSmallBorderRadius: '',
-  dropdownSmallPaddingX: '',
-  dropdownSmallPaddingY: '',
-  dropdownLargeFontSize: '',
-  dropdownLargeBorderRadius: '',
-  dropdownLargePaddingX: '',
-  dropdownLargePaddingY: '',
+  dropdownFontSize: '14/regular',
+  dropdownBorderRadius: 'Radius-4',
+  dropdownPaddingX: 'Padding-8',
+  dropdownPaddingY: 'Padding-5',
+  dropdownSmallFontSize: '12/regular',
+  dropdownSmallBorderRadius: 'Radius-4',
+  dropdownSmallPaddingX: 'Padding-8',
+  dropdownSmallPaddingY: 'Padding-2',
+  dropdownLargeFontSize: '16/regular',
+  dropdownLargeBorderRadius: 'Radius-4',
+  dropdownLargePaddingX: 'Padding-12',
+  dropdownLargePaddingY: 'Padding-8',
 };
 
 export default dropdown;

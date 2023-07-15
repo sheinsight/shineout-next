@@ -454,127 +454,127 @@ export interface ButtonTokens {
   buttonDangerFocusBorderColor: string;
   /**
    * @type {string}
-   * @token
+   * @token 14/regular
    * @description 按钮字体字号
    */
   buttonFontSize: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-4
    * @description 按钮边框圆角
    */
   buttonBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Padding-8
    * @description 按钮内边距（水平方向）
    */
   buttonPaddingX: string;
   /**
    * @type {string}
-   * @token
+   * @token Padding-5
    * @description 按钮内边距（垂直方向）
    */
   buttonPaddingY: string;
   /**
    * @type {string}
-   * @token
+   * @token 12/regular
    * @description 按钮小尺寸字体字号
    */
   buttonSmallFontSize: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-4
    * @description 按钮小尺寸边框圆角
    */
   buttonSmallBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Padding-8
    * @description 按钮小尺寸内边距（水平方向）
    */
   buttonSmallPaddingX: string;
   /**
    * @type {string}
-   * @token
+   * @token Padding-2
    * @description 按钮小尺寸内边距（垂直方向）
    */
   buttonSmallPaddingY: string;
   /**
    * @type {string}
-   * @token
+   * @token 16/regular
    * @description 按钮大尺寸字体字号
    */
   buttonLargeFontSize: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-4
    * @description 按钮大尺寸边框圆角
    */
   buttonLargeBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Padding-12
    * @description 按钮大尺寸内边距（水平方向）
    */
   buttonLargePaddingX: string;
   /**
    * @type {string}
-   * @token
+   * @token Padding-8
    * @description 按钮大尺寸内边距（垂直方向）
    */
   buttonLargePaddingY: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-1000
    * @description 按钮药丸形边框圆角
    */
   buttonRoundBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-50%
    * @description 按钮圆形边框圆角
    */
   buttonCircleBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-4
    * @description 按钮方形边框圆角
    */
   buttonSquareBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-1000
    * @description 按钮小尺寸药丸形边框圆角
    */
   buttonSmallRoundBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-50%
    * @description 按钮小尺寸圆形边框圆角
    */
   buttonSmallCircleBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-4
    * @description 按钮小尺寸方形边框圆角
    */
   buttonSmallSquareBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-1000
    * @description 按钮大尺寸药丸形边框圆角
    */
   buttonLargeRoundBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-50%
    * @description 按钮大尺寸圆形边框圆角
    */
   buttonLargeCircleBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Radius-4
    * @description 按钮大尺寸方形边框圆角
    */
   buttonLargeSquareBorderRadius: string;
