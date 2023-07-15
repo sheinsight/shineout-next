@@ -330,8 +330,8 @@ const tokenValueMap = {
       size: undefined,
     },
     border: {
-      Radius: undefined,
-      Width: undefined,
+      radius: undefined,
+      width: undefined,
     },
     padding: {
       x: undefined,
@@ -350,8 +350,8 @@ const tokenValueMap = {
       size: undefined,
     },
     border: {
-      Radius: undefined,
-      Width: undefined,
+      radius: undefined,
+      width: undefined,
     },
     padding: {
       x: undefined,
@@ -370,8 +370,8 @@ const tokenValueMap = {
       size: undefined,
     },
     border: {
-      Radius: undefined,
-      Width: undefined,
+      radius: undefined,
+      width: undefined,
     },
     padding: {
       x: undefined,

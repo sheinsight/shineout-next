@@ -4,7 +4,6 @@ const ejs = require('ejs');
 const { tokenDescriptionMap, tokenValueMap } = require('../src/token/map.ts');
 const srcPath = path.resolve(__dirname, '../src');
 const templatePath = path.resolve(__dirname, './token.ejs');
-const ruleTemplatePath = path.resolve(__dirname, './rule.ejs');
 const componentTemplatePath = path.resolve(__dirname, './component.ejs');
 const prettier = require('prettier');
 const prettierOptions = prettier.resolveConfig.sync(path.join(__dirname, '../../.prettierrc.js'));
@@ -75,7 +74,7 @@ function splitCamelCaseToArray(str) {
 
   const result = str.split(/(?=[A-Z])/);
 
-  return result.map((str) => str.charAt(0).toUpperCase() + str.substring(1));
+  return result.map((str) => str.charAt(0).toLocaleLowerCase() + str.substring(1));
 }
 
 function getTokenValue(obj, keys) {
@@ -150,62 +149,7 @@ function generateTokenTs(component, describesValue, describeMap, valueMap) {
   return result;
 }
 
-function nestedObject(strArr) {
-  const result = {};
-  if (!strArr.forEach) return;
-  strArr.forEach((str) => {
-    const keys = str.split('-');
-    let obj = result;
-    for (let i = 0; i < keys.length - 1; i++) {
-      const key = keys[i];
-      if (!obj[key]) {
-        obj[key] = {};
-      }
-      obj = obj[key];
-    }
-    obj[keys[keys.length - 1]] = '';
-  });
-  return result;
-}
-
-function keysToLowerCase(obj) {
-  const result = {};
-
-  // 遍历对象的所有属性，如果属性的值是对象，则递归调用本函数来转换它的属性
-  // eslint-disable-next-line guard-for-in
-  for (const key in obj) {
-    const value = obj[key];
-
-    if (typeof value === 'object' && value !== null) {
-      result[key.toLowerCase()] = keysToLowerCase(value);
-    } else {
-      result[key.toLowerCase()] = value;
-    }
-  }
-
-  return result;
-}
-
-function deepMerge(obj1, obj2) {
-  return Object.entries(obj2).reduce(
-    (acc, [key, value]) => {
-      const targetValue = obj1[key] ?? {};
-      acc[key] = typeof value === 'object' ? deepMerge(targetValue, value) : value;
-      return acc;
-    },
-    { ...obj1 },
-  );
-}
-
-function updateTokenValues(templateTokens, tokens) {
-  const a = nestedObject(templateTokens);
-  const b = keysToLowerCase(tokens);
-  console.log(templateTokens);
-  const result = deepMerge(a, b);
-  return result;
-}
-
-const compileToken = (updateToken = false) => {
+const compileToken = () => {
   fs.readdirSync(srcPath).forEach((component) => {
     const hasRuleFile = fs.existsSync(path.resolve(srcPath, component, 'rule.ts'));
 
@@ -240,24 +184,6 @@ const compileToken = (updateToken = false) => {
     });
 
     fs.writeFileSync(path.resolve(srcPath, component, 'type.ts'), render);
-
-    // 更新 rule.ts
-    if (updateToken) {
-      const newTokenValue = updateTokenValues(token, valueMap);
-      const template = ejs.compile(fs.readFileSync(ruleTemplatePath, 'utf-8'));
-      let render = template({
-        component,
-        description: rule[`${component}TokenDescription`],
-        value: newTokenValue,
-        rules: rule[`${component}Rules`],
-      });
-      render = prettier.format(render, {
-        filepath: path.join(__dirname, '../../.prettierrc.js'),
-        ...prettierOptions,
-      });
-
-      fs.writeFileSync(path.resolve(srcPath, component, 'rule.ts'), render);
-    }
 
     token = [];
 
