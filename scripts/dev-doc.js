@@ -40,7 +40,6 @@ watcher.on('change', (filePath) => {
       num += 1;
       writeRule(value, filePath);
       compileToken();
-      console.log(233);
     } else {
       num = 0;
     }
