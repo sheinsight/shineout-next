@@ -817,7 +817,14 @@ const Tokens = {
     value: '3px',
     describe: '较粗边框宽度',
   },
+  Transparent: {
+    type: 'string',
+    name: '透明色',
+    value: 'transparent',
+    describe: '较粗边框宽度',
+  },
 };
+
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const tokenToVars = <T extends {}>(
   componentToken: T,
