@@ -138,6 +138,7 @@ const Token: Tokens = {
   'Border-1': '1px',
   'Border-2': '2px',
   'Border-3': '3px',
+  Transparent: 'transparent',
 };
 
 export default Token;

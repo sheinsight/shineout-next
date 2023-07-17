@@ -937,4 +937,11 @@ export interface Tokens {
    * @description 较粗边框宽度
    */
   'Border-3': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default 'transparent'
+   * @description 较粗边框宽度
+   */
+  Transparent: string;
 }
