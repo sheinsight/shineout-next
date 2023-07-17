@@ -97,6 +97,33 @@ export default () => {
           </Button>
         </span>
       </div>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='primary' text>
+            Primary
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='success' text>
+            Success
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='danger' text>
+            Danger
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='warning' text>
+            Warning
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='secondary' text>
+            Secondary
+          </Button>
+        </span>
+      </div>
     </div>
   );
 };
