@@ -370,13 +370,13 @@ export interface ButtonTokens {
   buttonPrimaryFontColor: string;
   /**
    * @type {string}
-   * @token Brand-5
+   * @token Brand-6
    * @description 按钮主要色背景颜色
    */
   buttonPrimaryBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-5
+   * @token Brand-6
    * @description 按钮主要色边框颜色
    */
   buttonPrimaryBorderColor: string;
@@ -406,13 +406,13 @@ export interface ButtonTokens {
   buttonPrimaryHoverFontColor: string;
   /**
    * @type {string}
-   * @token Brand-4
+   * @token Brand-5
    * @description 按钮主要色鼠标移入时的背景颜色
    */
   buttonPrimaryHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-4
+   * @token Brand-5
    * @description 按钮主要色鼠标移入时的边框颜色
    */
   buttonPrimaryHoverBorderColor: string;
@@ -424,13 +424,13 @@ export interface ButtonTokens {
   buttonPrimaryActiveFontColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-7
    * @description 按钮主要色鼠标点击时的背景颜色
    */
   buttonPrimaryActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-7
    * @description 按钮主要色鼠标点击时的边框颜色
    */
   buttonPrimaryActiveBorderColor: string;
@@ -442,373 +442,103 @@ export interface ButtonTokens {
   buttonPrimaryFocusFontColor: string;
   /**
    * @type {string}
-   * @token Brand-4
+   * @token Brand-5
    * @description 按钮主要色鼠标聚焦时的背景颜色
    */
   buttonPrimaryFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-4
+   * @token Brand-5
    * @description 按钮主要色鼠标聚焦时的边框颜色
    */
   buttonPrimaryFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Brand-6
-   * @description 按钮主要色线框模式字体颜色
-   */
-  buttonPrimaryOutlineFontColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 按钮主要色线框模式背景颜色
-   */
-  buttonPrimaryOutlineBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-6
-   * @description 按钮主要色线框模式边框颜色
-   */
-  buttonPrimaryOutlineBorderColor: string;
-  /**
-   * @type {string}
-   * @token Brand-3
-   * @description 按钮主要色线框模式禁用时的字体颜色
-   */
-  buttonPrimaryOutlineDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 按钮主要色线框模式禁用时的背景颜色
-   */
-  buttonPrimaryOutlineDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-3
-   * @description 按钮主要色线框模式禁用时的边框颜色
-   */
-  buttonPrimaryOutlineDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token Brand-5
-   * @description 按钮主要色线框模式鼠标移入时的字体颜色
-   */
-  buttonPrimaryOutlineHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 按钮主要色线框模式鼠标移入时的背景颜色
-   */
-  buttonPrimaryOutlineHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-5
-   * @description 按钮主要色线框模式鼠标移入时的边框颜色
-   */
-  buttonPrimaryOutlineHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token Brand-7
-   * @description 按钮主要色线框模式鼠标点击时的字体颜色
-   */
-  buttonPrimaryOutlineActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 按钮主要色线框模式鼠标点击时的背景颜色
-   */
-  buttonPrimaryOutlineActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-7
-   * @description 按钮主要色线框模式鼠标点击时的边框颜色
-   */
-  buttonPrimaryOutlineActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token Brand-5
-   * @description 按钮主要色线框模式鼠标聚焦时的字体颜色
-   */
-  buttonPrimaryOutlineFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 按钮主要色线框模式鼠标聚焦时的背景颜色
-   */
-  buttonPrimaryOutlineFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-5
-   * @description 按钮主要色线框模式鼠标聚焦时的边框颜色
-   */
-  buttonPrimaryOutlineFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式字体颜色
-   */
-  buttonPrimaryTextFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式背景颜色
-   */
-  buttonPrimaryTextBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式边框颜色
-   */
-  buttonPrimaryTextBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式禁用时的字体颜色
-   */
-  buttonPrimaryTextDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式禁用时的背景颜色
-   */
-  buttonPrimaryTextDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式禁用时的边框颜色
-   */
-  buttonPrimaryTextDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式鼠标移入时的字体颜色
-   */
-  buttonPrimaryTextHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式鼠标移入时的背景颜色
-   */
-  buttonPrimaryTextHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式鼠标移入时的边框颜色
-   */
-  buttonPrimaryTextHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式鼠标点击时的字体颜色
-   */
-  buttonPrimaryTextActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式鼠标点击时的背景颜色
-   */
-  buttonPrimaryTextActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式鼠标点击时的边框颜色
-   */
-  buttonPrimaryTextActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式鼠标聚焦时的字体颜色
-   */
-  buttonPrimaryTextFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式鼠标聚焦时的背景颜色
-   */
-  buttonPrimaryTextFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色文本模式鼠标聚焦时的边框颜色
-   */
-  buttonPrimaryTextFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined字体颜色
-   */
-  buttonPrimaryDashFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined背景颜色
-   */
-  buttonPrimaryDashBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined边框颜色
-   */
-  buttonPrimaryDashBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined禁用时的字体颜色
-   */
-  buttonPrimaryDashDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined禁用时的背景颜色
-   */
-  buttonPrimaryDashDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined禁用时的边框颜色
-   */
-  buttonPrimaryDashDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined鼠标移入时的字体颜色
-   */
-  buttonPrimaryDashHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined鼠标移入时的背景颜色
-   */
-  buttonPrimaryDashHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined鼠标移入时的边框颜色
-   */
-  buttonPrimaryDashHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined鼠标点击时的字体颜色
-   */
-  buttonPrimaryDashActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined鼠标点击时的背景颜色
-   */
-  buttonPrimaryDashActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined鼠标点击时的边框颜色
-   */
-  buttonPrimaryDashActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined鼠标聚焦时的字体颜色
-   */
-  buttonPrimaryDashFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined鼠标聚焦时的背景颜色
-   */
-  buttonPrimaryDashFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 按钮主要色undefined鼠标聚焦时的边框颜色
-   */
-  buttonPrimaryDashFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮次要色字体颜色
    */
   buttonSecondaryFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-5
+   * @token Neutral-fill-3
    * @description 按钮次要色背景颜色
    */
   buttonSecondaryBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-5
+   * @token Neutral-fill-3
    * @description 按钮次要色边框颜色
    */
   buttonSecondaryBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-2
    * @description 按钮次要色禁用时的字体颜色
    */
   buttonSecondaryDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-3
+   * @token Brand-3
    * @description 按钮次要色禁用时的背景颜色
    */
   buttonSecondaryDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-3
+   * @token Brand-3
    * @description 按钮次要色禁用时的边框颜色
    */
   buttonSecondaryDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮次要色鼠标移入时的字体颜色
    */
   buttonSecondaryHoverFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-4
+   * @token Neutral-fill-2
    * @description 按钮次要色鼠标移入时的背景颜色
    */
   buttonSecondaryHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-4
+   * @token Neutral-fill-2
    * @description 按钮次要色鼠标移入时的边框颜色
    */
   buttonSecondaryHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮次要色鼠标点击时的字体颜色
    */
   buttonSecondaryActiveFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-6
+   * @token Neutral-fill-5
    * @description 按钮次要色鼠标点击时的背景颜色
    */
   buttonSecondaryActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-6
+   * @token Neutral-fill-5
    * @description 按钮次要色鼠标点击时的边框颜色
    */
   buttonSecondaryActiveBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮次要色鼠标聚焦时的字体颜色
    */
   buttonSecondaryFocusFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-4
+   * @token Neutral-fill-4
    * @description 按钮次要色鼠标聚焦时的背景颜色
    */
   buttonSecondaryFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-4
+   * @token Neutral-fill-4
    * @description 按钮次要色鼠标聚焦时的边框颜色
    */
   buttonSecondaryFocusBorderColor: string;
@@ -1108,13 +838,13 @@ export interface ButtonTokens {
   buttonSuccessDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Success-3
+   * @token Success-5
    * @description 按钮成功色禁用时的背景颜色
    */
   buttonSuccessDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-3
+   * @token Success-5
    * @description 按钮成功色禁用时的边框颜色
    */
   buttonSuccessDisabledBorderColor: string;
@@ -1138,7 +868,7 @@ export interface ButtonTokens {
   buttonSuccessHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮成功色鼠标点击时的字体颜色
    */
   buttonSuccessActiveFontColor: string;
@@ -1468,13 +1198,13 @@ export interface ButtonTokens {
   buttonWarningDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Warning-3
+   * @token Warning-5
    * @description 按钮警告色禁用时的背景颜色
    */
   buttonWarningDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-3
+   * @token Warning-5
    * @description 按钮警告色禁用时的边框颜色
    */
   buttonWarningDisabledBorderColor: string;
@@ -1498,7 +1228,7 @@ export interface ButtonTokens {
   buttonWarningHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮警告色鼠标点击时的字体颜色
    */
   buttonWarningActiveFontColor: string;
@@ -1828,13 +1558,13 @@ export interface ButtonTokens {
   buttonDangerDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Danger-3
+   * @token Danger-5
    * @description 按钮危险色禁用时的背景颜色
    */
   buttonDangerDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-3
+   * @token Danger-5
    * @description 按钮危险色禁用时的边框颜色
    */
   buttonDangerDisabledBorderColor: string;
@@ -1858,7 +1588,7 @@ export interface ButtonTokens {
   buttonDangerHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮危险色鼠标点击时的字体颜色
    */
   buttonDangerActiveFontColor: string;

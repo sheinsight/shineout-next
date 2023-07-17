@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
-const { tokenDescriptionMap, tokenValueMap } = require('../src/token/map.ts');
+const { tokenDescriptionMap } = require('../src/token/map.ts');
 const srcPath = path.resolve(__dirname, '../src');
 const templatePath = path.resolve(__dirname, './token.ejs');
 const componentTemplatePath = path.resolve(__dirname, './component.ejs');
@@ -13,18 +13,6 @@ const toCamelCase = (str) => {
     return letter.toUpperCase();
   });
 };
-
-function deepMerge(obj1, obj2) {
-  return {
-    ...obj1,
-    ...obj2,
-    ...Object.fromEntries(
-      Object.entries(obj1)
-        .filter(([k, v]) => v && typeof v === 'object' && obj2[k])
-        .map(([k, v]) => [k, deepMerge(v, obj2[k])]),
-    ),
-  };
-}
 
 function generatePaths(arrays) {
   function helper(arrays, index, current, result) {
@@ -161,58 +149,59 @@ function generateTokenTs(component, describesValue, describeMap, valueMap) {
   return result;
 }
 
-const compileToken = () => {
-  fs.readdirSync(srcPath).forEach((component) => {
-    const hasRuleFile = fs.existsSync(path.resolve(srcPath, component, 'rule.ts'));
+const compileToken = (filePath) => {
+  if (!filePath) return;
+  const pattern = new RegExp(`src(.*?)token`, 'i');
+  const match = filePath.match(pattern);
+  if (!match?.[1]) return;
+  const component = match[1].replace(/\//g, '');
+  const componentPath = path.resolve(srcPath, component);
+  const hasRuleFile = fs.existsSync(path.resolve(componentPath, 'rule.ts'));
+  if (!hasRuleFile) return;
 
-    if (!hasRuleFile) return;
+  delete require.cache[require.resolve(path.resolve(componentPath, 'rule.ts'))];
+  delete require.cache[require.resolve(path.resolve(componentPath, 'token.ts'))];
 
-    delete require.cache[require.resolve(path.resolve(srcPath, component, 'rule.ts'))];
+  const rule = require(path.resolve(componentPath, 'rule.ts'));
+  const rules = rule[`${component}Rules`];
+  const token = require(path.resolve(componentPath, 'token.ts'));
+  const componentDescriptionMap = token[`${component}TokenDescription`];
+  const describeMap = { ...tokenDescriptionMap, ...componentDescriptionMap };
+  const valueMap = token[`${component}TokenValue`];
+  const result = generateToken(rules, component, describeMap);
 
-    const rule = require(path.resolve(srcPath, component, 'rule.ts'));
+  prop = [];
 
-    const rules = rule[`${component}Rules`];
-    const componentDescriptionMap = rule[`${component}TokenDescription`];
-    const describeMap = { ...tokenDescriptionMap, ...componentDescriptionMap };
-    // const valueMap = { ...tokenValueMap, ...rule[`${component}TokenValue`] };
-    const valueMap = deepMerge(tokenValueMap, rule[`${component}TokenValue`]);
-    const result = generateToken(rules, component, describeMap);
+  const Component = component.charAt(0).toUpperCase() + component.slice(1);
+  const describesKey = Object.keys(result);
+  const describesValues = Object.values(result);
+  const tsMap = generateTokenTs(component, describesValues, describesKey, valueMap);
 
-    prop = [];
+  const template = ejs.compile(fs.readFileSync(templatePath, 'utf-8'));
 
-    const Component = component.charAt(0).toUpperCase() + component.slice(1);
-    const describesKey = Object.keys(result);
-    const describesValues = Object.values(result);
-    const tsMap = generateTokenTs(component, describesValues, describesKey, valueMap);
-
-    const template = ejs.compile(fs.readFileSync(templatePath, 'utf-8'));
-
-    let render = template({
-      Component,
-      tokens: tsMap,
-    });
-    render = prettier.format(render, {
-      filepath: path.join(__dirname, '../../.prettierrc.js'),
-      ...prettierOptions,
-    });
-
-    fs.writeFileSync(path.resolve(srcPath, component, 'type.ts'), render);
-
-    token = [];
-
-    const componentTemplateContext = ejs.compile(fs.readFileSync(componentTemplatePath, 'utf-8'));
-    let componentRender = componentTemplateContext({
-      compomentTokenMap: tsMap,
-      Component,
-      component,
-    });
-
-    componentRender = prettier.format(componentRender, {
-      filepath: path.join(__dirname, '../../.prettierrc.js'),
-      ...prettierOptions,
-    });
-    fs.writeFileSync(path.resolve(srcPath, component, `${component}.ts`), componentRender);
+  let render = template({
+    Component,
+    tokens: tsMap,
   });
+  render = prettier.format(render, {
+    filepath: path.join(__dirname, '../../.prettierrc.js'),
+    ...prettierOptions,
+  });
+
+  fs.writeFileSync(path.resolve(srcPath, component, 'type.ts'), render);
+
+  const componentTemplateContext = ejs.compile(fs.readFileSync(componentTemplatePath, 'utf-8'));
+  let componentRender = componentTemplateContext({
+    compomentTokenMap: tsMap,
+    Component,
+    component,
+  });
+
+  componentRender = prettier.format(componentRender, {
+    filepath: path.join(__dirname, '../../.prettierrc.js'),
+    ...prettierOptions,
+  });
+  fs.writeFileSync(path.resolve(srcPath, component, `${component}.ts`), componentRender);
 };
 
 compileToken();
