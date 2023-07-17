@@ -94,6 +94,87 @@ const buttonTokenValue = {
       },
     },
   },
+  success: {
+    outline: {
+      font: { color: 'Success-5' },
+      background: { color: 'Neutral-fill-1' },
+      border: { color: 'Success-5' },
+      disabled: {
+        font: { color: 'Success-3' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Success-3' },
+      },
+      hover: {
+        font: { color: 'Success-4' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Success-4' },
+      },
+      active: {
+        font: { color: 'Success-6' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Success-6' },
+      },
+      focus: {
+        font: { color: 'Success-4' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Success-4' },
+      },
+    },
+  },
+  warning: {
+    outline: {
+      font: { color: 'Warning-5' },
+      background: { color: 'Neutral-fill-1' },
+      border: { color: 'Warning-5' },
+      disabled: {
+        font: { color: 'Warning-3' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Warning-3' },
+      },
+      hover: {
+        font: { color: 'Warning-4' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Warning-4' },
+      },
+      active: {
+        font: { color: 'Warning-6' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Warning-6' },
+      },
+      focus: {
+        font: { color: 'Warning-4' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Warning-4' },
+      },
+    },
+  },
+  danger: {
+    outline: {
+      font: { color: 'Danger-5' },
+      background: { color: 'Neutral-fill-1' },
+      border: { color: 'Danger-5' },
+      disabled: {
+        font: { color: 'Danger-3' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Danger-3' },
+      },
+      hover: {
+        font: { color: 'Danger-4' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Danger-4' },
+      },
+      active: {
+        font: { color: 'Danger-6' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Danger-6' },
+      },
+      focus: {
+        font: { color: 'Danger-4' },
+        background: { color: 'Neutral-fill-1' },
+        border: { color: 'Danger-4' },
+      },
+    },
+  },
   font: { size: '14/regular', color: 'Color-Primary-500' },
   border: { radius: 'Radius-4' },
   padding: { y: 'Padding-5', x: 'Padding-8' },

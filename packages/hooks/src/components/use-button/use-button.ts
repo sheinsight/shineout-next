@@ -9,6 +9,7 @@ const useButton = (props: BaseButtonProps = {}) => {
   const {
     htmlType,
     loading,
+    dash,
     text,
     outline,
     size,
@@ -97,6 +98,7 @@ const useButton = (props: BaseButtonProps = {}) => {
     disabled,
     loading,
     text,
+    dash,
     outline,
     size,
     space,

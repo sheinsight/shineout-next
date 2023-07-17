@@ -16,7 +16,7 @@ export default () => {
     <div>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
         <span>
-          <Button jssStyle={jssStyle} type='primary' outline>
+          <Button jssStyle={jssStyle} type='primary'>
             Primary
           </Button>
         </span>
@@ -37,6 +37,34 @@ export default () => {
         </span>
         <span>
           <Button jssStyle={jssStyle} type='secondary'>
+            Secondary
+          </Button>
+        </span>
+      </div>
+
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
+        <span>
+          <Button jssStyle={jssStyle} type='primary' outline>
+            Primary
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} type='success' outline>
+            Success
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} type='danger' outline>
+            Danger
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} type='warning' outline>
+            Warning
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} type='secondary' outline>
             Secondary
           </Button>
         </span>

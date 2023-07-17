@@ -13,6 +13,7 @@ export type ButtonType =
 export interface ButtonPropsOwn {
   disabled?: boolean;
   loading?: boolean;
+  dash?: boolean;
   outline?: boolean;
   type?: ButtonType;
   size?: 'small' | 'large' | 'default';

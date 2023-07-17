@@ -14,6 +14,7 @@ type ButtonClass =
   | 'success'
   | 'text'
   | 'outline'
+  | 'dash'
   | 'link'
   | 'href'
   | 'small'
@@ -21,7 +22,7 @@ type ButtonClass =
 
 type ButtonType = 'Default' | 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 
-type ButtonStyleType = 'Text' | 'Outline' | '';
+type ButtonStyleType = 'Text' | 'Outline' | 'Dash' | '';
 
 const button = (type: ButtonType, styles: ButtonStyleType) => ({
   color: Token[`button${type}${styles}FontColor`],
@@ -125,6 +126,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   success: {
     ...button('Success', ''),
   },
+  link: {},
   outline: {
     '&$default': {
       ...button('Default', 'Outline'),
@@ -144,6 +146,27 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     '&$secondary': {
       ...button('Secondary', 'Outline'),
     },
+  },
+  dash: {
+    '&$default': {
+      ...button('Default', 'Outline'),
+    },
+    '&$primary': {
+      ...button('Primary', 'Outline'),
+    },
+    '&$success': {
+      ...button('Success', 'Outline'),
+    },
+    '&$danger': {
+      ...button('Danger', 'Outline'),
+    },
+    '&$warning': {
+      ...button('Warning', 'Outline'),
+    },
+    '&$secondary': {
+      ...button('Secondary', 'Outline'),
+    },
+    borderStyle: 'dashed',
   },
   href: {
     textDecoration: 'none',

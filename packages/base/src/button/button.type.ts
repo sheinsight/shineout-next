@@ -20,6 +20,7 @@ export interface ButtonClasses {
   success: string;
   href: string;
   link: string;
+  dash: string;
   outline: string;
 }
 
