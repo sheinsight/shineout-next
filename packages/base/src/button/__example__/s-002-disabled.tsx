@@ -14,7 +14,7 @@ export default () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
         <span>
           <Button jssStyle={jssStyle} disabled type='primary'>
             Primary
@@ -42,35 +42,57 @@ export default () => {
         </span>
       </div>
 
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
         <span>
-          <Button jssStyle={jssStyle} disabled text>
-            Default
-          </Button>
-        </span>
-
-        <span>
-          <Button jssStyle={jssStyle} disabled text type='primary'>
+          <Button jssStyle={jssStyle} disabled type='primary' outline>
             Primary
           </Button>
         </span>
         <span>
-          <Button jssStyle={jssStyle} disabled text type='success'>
+          <Button jssStyle={jssStyle} disabled type='success' outline>
             Success
           </Button>
         </span>
         <span>
-          <Button jssStyle={jssStyle} disabled text type='danger'>
+          <Button jssStyle={jssStyle} disabled type='danger' outline>
             Danger
           </Button>
         </span>
         <span>
-          <Button jssStyle={jssStyle} disabled text type='warning'>
+          <Button jssStyle={jssStyle} disabled type='warning' outline>
             Warning
           </Button>
         </span>
         <span>
-          <Button jssStyle={jssStyle} disabled text type='secondary'>
+          <Button jssStyle={jssStyle} disabled type='secondary' outline>
+            Secondary
+          </Button>
+        </span>
+      </div>
+
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='primary' dash>
+            Primary
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='success' dash>
+            Success
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='danger' dash>
+            Danger
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='warning' dash>
+            Warning
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} disabled type='secondary' dash>
             Secondary
           </Button>
         </span>

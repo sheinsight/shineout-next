@@ -48,22 +48,6 @@ const button = (type: ButtonType, styles: ButtonStyleType) => ({
   },
 });
 
-const text = (type: string) => ({
-  color: Token[`${type.toLocaleLowerCase()}Color` as keyof typeof Token],
-  background: 'transparent',
-  borderColor: 'transparent',
-
-  '&:hover': {
-    opacity: 0.8,
-    borderColor: 'transparent',
-    backgroundColor: 'transparent',
-  },
-
-  '&:active': {
-    animationName: 'none',
-  },
-});
-
 const ButtonStyle: JsStyles<ButtonClass> = {
   button: {
     outline: 'none',
@@ -190,22 +174,23 @@ const ButtonStyle: JsStyles<ButtonClass> = {
 
   text: {
     '&$default': {
-      ...text('Default'),
+      ...button('Default', 'Text'),
+      backgroundColor: 'transparent',
     },
     '&$primary': {
-      ...text('Primary'),
+      ...button('Primary', 'Text'),
     },
     '&$success': {
-      ...text('Success'),
+      ...button('Success', 'Text'),
     },
     '&$danger': {
-      ...text('Danger'),
+      ...button('Danger', 'Text'),
     },
     '&$warning': {
-      ...text('Warning'),
+      ...button('Warning', 'Text'),
     },
     '&$secondary': {
-      ...text('Secondary'),
+      ...button('Secondary', 'Text'),
     },
   },
 };
