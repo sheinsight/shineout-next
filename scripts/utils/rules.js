@@ -1,34 +1,6 @@
 const path = require('path');
 const { writeTemplate } = require('./write-template');
-const templatePath = path.resolve(__dirname, '../ejs/rule.ejs');
-
-const { tokenValueMap } = require('../../packages/theme/src/token/map.ts');
-
-function mergeAndRemove(obj1, obj2) {
-  for (let key in obj1) {
-    // 如果 obj1 的属性在 obj2 中未定义，则从 obj1 中删除该属性。
-    if (!obj2.hasOwnProperty(key)) {
-      delete obj1[key];
-    } else if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
-      // 如果该属性是一个对象，则递归地合并此对象。
-      mergeAndRemove(obj1[key], obj2[key]);
-    }
-  }
-
-  // 遍历 obj2 中的属性，并将它们添加到 obj1 中。
-  for (let key in obj2) {
-    if (typeof obj2[key] === 'object' && obj2[key] !== null && !Array.isArray(obj2[key])) {
-      if (!obj1.hasOwnProperty(key)) {
-        obj1[key] = {};
-      }
-      mergeAndRemove(obj1[key], obj2[key]);
-    } else {
-      obj1[key] = obj2[key];
-    }
-  }
-
-  return obj1;
-}
+const templatePath = path.resolve(__dirname, '../ejs/theme/token.ejs');
 
 function keysToLowerCase(obj) {
   const result = {};
@@ -46,52 +18,76 @@ function keysToLowerCase(obj) {
   return result;
 }
 
-const deepMerge = (obj1, obj2) => {
-  return Object.entries(obj2).reduce(
-    (acc, [key, value]) => {
-      const targetValue = obj1[key] ?? {};
-      acc[key] = typeof value === 'object' ? deepMerge(targetValue, value) : value;
-      return acc;
-    },
-    { ...obj1 },
-  );
-};
+function deepMergeObjects(obj1, obj2) {
+  const result = {};
 
-const arrayToObjectPath = (array) => {
-  const obj = {};
-
-  for (let i = 0; i < array.length; i++) {
-    let current = obj;
-    for (let j = 0; j < array[i].length; j++) {
-      const key = array[i][j];
-      if (!key) {
-        continue;
-      }
-      if (!current[key]) {
-        if (key.indexOf('-') > -1) {
-          const keys = key.split('-');
-          current[keys[0]] = {
-            [keys[1]]: '',
-          };
-        } else {
-          if (j === array[i].length - 1) {
-            current[key] = '';
-            console.log(current[key]);
-          } else {
-            current[key] = {};
-          }
-        }
-      }
-      if (key.indexOf('-') > -1) {
-        const keys = key.split('-');
-        current[keys[0]] = {
-          [keys[1]]: '',
-        };
+  for (const key in obj1) {
+    if (key in obj2) {
+      if (
+        typeof obj1[key] === 'object' &&
+        obj1[key] !== null &&
+        typeof obj2[key] === 'object' &&
+        obj2[key] !== null
+      ) {
+        result[key] = deepMergeObjects(obj1[key], obj2[key]);
       } else {
-        current = current[key];
+        result[key] = obj2[key];
       }
+    } else {
+      result[key] = obj1[key];
     }
   }
+
+  for (const key in obj2) {
+    if (!(key in obj1)) {
+      result[key] = obj2[key];
+    }
+  }
+
+  return result;
+}
+
+function mergeAndRemove(obj1, obj2) {
+  for (let key in obj1) {
+    if (!obj2.hasOwnProperty(key)) {
+      continue;
+    }
+
+    if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
+      // 如果 obj1 和 obj2 的属性都是对象，则递归地合并对象。
+      mergeAndRemove(obj1[key], obj2[key]);
+    } else {
+      // 否则将 obj2 的值覆盖 obj1。
+      obj1[key] = obj2[key];
+    }
+  }
+
+  return obj1;
+}
+
+const arrayToObjectPath = (array) => {
+  let obj = {};
+
+  array.forEach((item) => {
+    const res = item.reduceRight((acc, cur) => {
+      if (!acc && !cur) {
+        return null;
+      }
+
+      if (!acc) {
+        const [first, second] = cur.split('-');
+        return { [first]: { [second]: '' } };
+      }
+
+      if (cur.includes('-')) {
+        const [first, second] = cur.split('-');
+        return { [first]: { [second]: acc } };
+      }
+
+      return { [cur]: acc };
+    }, null);
+    obj = deepMergeObjects(obj, res);
+  });
 
   return obj;
 };
@@ -100,7 +96,7 @@ const findAllPaths = (array) => {
   const paths = [];
   function dfs(row, path) {
     if (row === array.length) {
-      paths.push(path);
+      paths.push(path.filter((i) => i !== ''));
       return;
     }
 
@@ -127,7 +123,7 @@ const createTemplateTokenValue = (rules) => {
   Object.values(rules).forEach((category) => {
     const paths = findAllPaths(category);
     const res = arrayToObjectPath(paths);
-    token = deepMerge(token, res);
+    token = deepMergeObjects(token, res);
   });
   return token;
 };
@@ -136,54 +132,44 @@ const compileRule = (filePath) => {
   const pattern = new RegExp(`src(.*?)rule`, 'i');
   const match = filePath.match(pattern);
   if (!match?.[1]) return;
+  // 组件名
   const component = removeFirstAndLastCharacter(match[1]);
+  // 清除缓存
   delete require.cache[require.resolve(filePath)];
+  // 获取 rule
   const rule = require(filePath);
+
   const rules = rule[`${component}Rules`];
-  const values = rule[`${component}TokenValue`];
+
+  const valuePath = filePath.replace('rule', 'token');
+
+  // 清除缓存
+  delete require.cache[require.resolve(valuePath)];
+  const token = require(valuePath);
+  // 获取 token
+  const values = token[`${component}TokenValue`];
+  const description = token[`${component}TokenDescription`];
+
   // 根据 rule 生成空模板
   const templateTokenValue = createTemplateTokenValue(rules);
-
   const originValues = keysToLowerCase(values);
-
-  // 去除公共的 token
-  Object.keys(tokenValueMap).forEach((i) => {
-    if (!originValues[i]) {
-      delete templateTokenValue[i];
-    } else {
-      templateTokenValue[i] = mergeAndRemove(templateTokenValue[i], originValues[i]);
-    }
-  });
-
-  const result = deepMerge(templateTokenValue, originValues);
-  return result;
-};
-
-const writeRule = (value, filePath) => {
-  const pattern = new RegExp(`src(.*?)rule`, 'i');
-  const match = filePath.match(pattern);
-  if (!match?.[1]) return;
-  const component = removeFirstAndLastCharacter(match[1]);
-  delete require.cache[require.resolve(filePath)];
-  const rule = require(filePath);
-  const rules = rule[`${component}Rules`];
-  const description = rule[`${component}TokenDescription`];
+  const newValues = mergeAndRemove(templateTokenValue, originValues);
 
   writeTemplate({
     templatePath,
-    targetPath: filePath,
+    targetPath: valuePath,
     fileName: '',
     needPrettier: true,
     ejsVars: {
-      rules,
-      values: value,
+      values: newValues,
       component,
       description,
     },
   });
+
+  return newValues;
 };
 
 module.exports = {
   compileRule,
-  writeRule,
 };

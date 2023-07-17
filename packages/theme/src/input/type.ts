@@ -16,7 +16,7 @@ export interface InputTokens {
   inputBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-2
+   * @token
    * @description 输入框边框颜色
    */
   inputBorderColor: string;
@@ -28,19 +28,19 @@ export interface InputTokens {
   inputClearIconColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-2
+   * @token
    * @description 输入框禁用时的字体颜色
    */
   inputDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-Fill-2
+   * @token
    * @description 输入框禁用时的背景颜色
    */
   inputDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-2
+   * @token
    * @description 输入框禁用时的边框颜色
    */
   inputDisabledBorderColor: string;
@@ -190,7 +190,7 @@ export interface InputTokens {
   inputPaddingY: string;
   /**
    * @type {string}
-   * @token
+   * @token [object Object]
    * @description 输入框小尺寸高度
    */
   inputSmallHeight: string;
