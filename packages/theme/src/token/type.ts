@@ -485,24 +485,52 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#429AFF'
+   * @default '#6BB5FF'
    * @description 悬浮
    */
   'Brand-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#197AFA'
+   * @default '#429AFF'
    * @description 常规
    */
   'Brand-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#0B5BD4'
+   * @default '#197AFA'
    * @description 点击
    */
   'Brand-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#0B5BD4'
+   * @description 点击
+   */
+  'Brand-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#0040AD'
+   * @description
+   */
+  'Brand-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#002D87'
+   * @description
+   */
+  'Brand-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#001D61'
+   * @description
+   */
+  'Brand-10': string;
   /**
    * @type {string}
    * @categoty color

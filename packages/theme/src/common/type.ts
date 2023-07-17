@@ -6,4 +6,11 @@ export interface CommonTokens {
    * @description 动态行高，根据当前的字体大小 + 8px
    */
   lineHeightDynamic: string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '3px'
+   * @description 较粗边框宽度
+   */
+  defaultBorder: string;
 }

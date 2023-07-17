@@ -427,20 +427,44 @@ const Tokens = {
   'Brand-4': {
     type: 'color',
     name: '主题色',
-    value: '#429AFF',
+    value: '#6BB5FF',
     describe: '悬浮',
   },
   'Brand-5': {
     type: 'color',
     name: '主题色',
-    value: '#197AFA',
+    value: '#429AFF',
     describe: '常规',
   },
   'Brand-6': {
     type: 'color',
     name: '主题色',
+    value: '#197AFA',
+    describe: '点击',
+  },
+  'Brand-7': {
+    type: 'color',
+    name: '主题色',
     value: '#0B5BD4',
     describe: '点击',
+  },
+  'Brand-8': {
+    type: 'color',
+    name: '主题色',
+    value: '#0040AD',
+    describe: '',
+  },
+  'Brand-9': {
+    type: 'color',
+    name: '主题色',
+    value: '#002D87',
+    describe: '',
+  },
+  'Brand-10': {
+    type: 'color',
+    name: '主题色',
+    value: '#001D61',
+    describe: '',
   },
   'Neutral-text-5': {
     type: 'color',
@@ -794,7 +818,6 @@ const Tokens = {
     describe: '较粗边框宽度',
   },
 };
-
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const tokenToVars = <T extends {}>(
   componentToken: T,
