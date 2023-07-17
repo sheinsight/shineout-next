@@ -80,7 +80,7 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
             jssStyle={jssStyle}
             checked={datum.check(d)}
             disabled={datum.disabledCheck(d)}
-            key={util.getKey(d, keygen, i)}
+            key={util.getKey(keygen, d, i)}
             htmlValue={i}
             onChange={handleIndexChange}
           >

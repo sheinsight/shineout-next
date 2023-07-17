@@ -82,7 +82,7 @@ const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem
             jssStyle={jssStyle}
             checked={datum.check(d)}
             disabled={datum.disabledCheck(d)}
-            key={util.getKey(d, keygen, i)}
+            key={util.getKey(keygen, d, i)}
             htmlValue={d}
             onChange={handleItemChange}
           >

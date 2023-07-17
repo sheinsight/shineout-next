@@ -4,8 +4,26 @@ import { AnimationListClass } from '../animation-list/animation-list.type';
 
 export interface DropdownClass {
   wrapper: string;
+  boxList: string;
   list: string;
+  caret: string;
+  content: string;
+  button: string;
+  item: string;
+  itemDisabled: string;
+  itemActive: string;
+  splitButton: string;
 }
+
+export type MenuPosition =
+  | 'left-top'
+  | 'left-bottom'
+  | 'right-top'
+  | 'right-bottom'
+  | 'top-right'
+  | 'top-left'
+  | 'bottom-right'
+  | 'bottom-left';
 
 export type TriggerType = 'click' | 'hover';
 
@@ -123,7 +141,7 @@ export interface SimpleDropdownProps
    */
   placeholder?: React.ReactNode;
 
-  type?: 'primary' | 'success' | 'warning' | 'danger';
+  type?: 'primary' | 'success' | 'warning' | 'danger' | 'link';
 
   /**
    * @en The click event. The parameter is the rendered data. <br /> Note: if the onClick is set in the data, this method will be ignored and data.onclick will be called.
@@ -142,16 +160,7 @@ export interface SimpleDropdownProps
    * @cn 弹出的方向和位置
    * @default 'auto'
    */
-  position?:
-    | 'left-top'
-    | 'left-bottom'
-    | 'right-top'
-    | 'right-bottom'
-    | 'top-right'
-    | 'top-left'
-    | 'bottom-right'
-    | 'bottom-left'
-    | 'auto';
+  position?: MenuPosition | 'auto';
 
   /**
    * @en Set the displayed content. If it is a string,  the corresponding value will be displayed. \n If it is a function, the return value will be displayed and its parameter is the current data.

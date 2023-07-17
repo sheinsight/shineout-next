@@ -4,974 +4,230 @@
 export interface DropdownTokens {
   /**
    * @type {string}
-   * @token Neutral-text-5
-   * @description 下拉菜单主要色字体颜色
+   * @token Neutral-border-1
+   * @description 下拉菜单下拉菜单列表边框宽度
    */
-  dropdownPrimaryFontColor: string;
+  dropdownListBorderWidth: string;
   /**
    * @type {string}
-   * @token Brand-5
-   * @description 下拉菜单主要色背景颜色
+   * @token Radius-4
+   * @description 下拉菜单下拉菜单列表边框圆角
    */
-  dropdownPrimaryBackgroundColor: string;
+  dropdownListBorderRadius: string;
   /**
    * @type {string}
-   * @token Brand-5
-   * @description 下拉菜单主要色边框颜色
+   * @token Padding-4
+   * @description 下拉菜单下拉菜单列表内边距（水平方向）
    */
-  dropdownPrimaryBorderColor: string;
+  dropdownListPaddingX: string;
   /**
    * @type {string}
-   * @token Neutral-text-2
-   * @description 下拉菜单主要色禁用时的字体颜色
+   * @token Padding-4
+   * @description 下拉菜单下拉菜单列表内边距（垂直方向）
    */
-  dropdownPrimaryDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token Brand-3
-   * @description 下拉菜单主要色禁用时的背景颜色
-   */
-  dropdownPrimaryDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-3
-   * @description 下拉菜单主要色禁用时的边框颜色
-   */
-  dropdownPrimaryDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单主要色鼠标移入时的字体颜色
-   */
-  dropdownPrimaryHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token Brand-4
-   * @description 下拉菜单主要色鼠标移入时的背景颜色
-   */
-  dropdownPrimaryHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-4
-   * @description 下拉菜单主要色鼠标移入时的边框颜色
-   */
-  dropdownPrimaryHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单主要色鼠标点击时的字体颜色
-   */
-  dropdownPrimaryActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token Brand-6
-   * @description 下拉菜单主要色鼠标点击时的背景颜色
-   */
-  dropdownPrimaryActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-6
-   * @description 下拉菜单主要色鼠标点击时的边框颜色
-   */
-  dropdownPrimaryActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单主要色鼠标聚焦时的字体颜色
-   */
-  dropdownPrimaryFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token Brand-4
-   * @description 下拉菜单主要色鼠标聚焦时的背景颜色
-   */
-  dropdownPrimaryFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-4
-   * @description 下拉菜单主要色鼠标聚焦时的边框颜色
-   */
-  dropdownPrimaryFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下字体颜色
-   */
-  dropdownPrimaryOutlineFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下背景颜色
-   */
-  dropdownPrimaryOutlineBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下边框颜色
-   */
-  dropdownPrimaryOutlineBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下禁用时的字体颜色
-   */
-  dropdownPrimaryOutlineDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下禁用时的背景颜色
-   */
-  dropdownPrimaryOutlineDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下禁用时的边框颜色
-   */
-  dropdownPrimaryOutlineDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下鼠标移入时的字体颜色
-   */
-  dropdownPrimaryOutlineHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下鼠标移入时的背景颜色
-   */
-  dropdownPrimaryOutlineHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下鼠标移入时的边框颜色
-   */
-  dropdownPrimaryOutlineHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下鼠标点击时的字体颜色
-   */
-  dropdownPrimaryOutlineActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下鼠标点击时的背景颜色
-   */
-  dropdownPrimaryOutlineActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下鼠标点击时的边框颜色
-   */
-  dropdownPrimaryOutlineActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下鼠标聚焦时的字体颜色
-   */
-  dropdownPrimaryOutlineFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下鼠标聚焦时的背景颜色
-   */
-  dropdownPrimaryOutlineFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单主要色线框模式下鼠标聚焦时的边框颜色
-   */
-  dropdownPrimaryOutlineFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单次要色字体颜色
-   */
-  dropdownSecondaryFontColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-5
-   * @description 下拉菜单次要色背景颜色
-   */
-  dropdownSecondaryBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-5
-   * @description 下拉菜单次要色边框颜色
-   */
-  dropdownSecondaryBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单次要色禁用时的字体颜色
-   */
-  dropdownSecondaryDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-3
-   * @description 下拉菜单次要色禁用时的背景颜色
-   */
-  dropdownSecondaryDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-3
-   * @description 下拉菜单次要色禁用时的边框颜色
-   */
-  dropdownSecondaryDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单次要色鼠标移入时的字体颜色
-   */
-  dropdownSecondaryHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-4
-   * @description 下拉菜单次要色鼠标移入时的背景颜色
-   */
-  dropdownSecondaryHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-4
-   * @description 下拉菜单次要色鼠标移入时的边框颜色
-   */
-  dropdownSecondaryHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单次要色鼠标点击时的字体颜色
-   */
-  dropdownSecondaryActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-6
-   * @description 下拉菜单次要色鼠标点击时的背景颜色
-   */
-  dropdownSecondaryActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-6
-   * @description 下拉菜单次要色鼠标点击时的边框颜色
-   */
-  dropdownSecondaryActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单次要色鼠标聚焦时的字体颜色
-   */
-  dropdownSecondaryFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-4
-   * @description 下拉菜单次要色鼠标聚焦时的背景颜色
-   */
-  dropdownSecondaryFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Secondary-4
-   * @description 下拉菜单次要色鼠标聚焦时的边框颜色
-   */
-  dropdownSecondaryFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下字体颜色
-   */
-  dropdownSecondaryOutlineFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下背景颜色
-   */
-  dropdownSecondaryOutlineBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下边框颜色
-   */
-  dropdownSecondaryOutlineBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下禁用时的字体颜色
-   */
-  dropdownSecondaryOutlineDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下禁用时的背景颜色
-   */
-  dropdownSecondaryOutlineDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下禁用时的边框颜色
-   */
-  dropdownSecondaryOutlineDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下鼠标移入时的字体颜色
-   */
-  dropdownSecondaryOutlineHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下鼠标移入时的背景颜色
-   */
-  dropdownSecondaryOutlineHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下鼠标移入时的边框颜色
-   */
-  dropdownSecondaryOutlineHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下鼠标点击时的字体颜色
-   */
-  dropdownSecondaryOutlineActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下鼠标点击时的背景颜色
-   */
-  dropdownSecondaryOutlineActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下鼠标点击时的边框颜色
-   */
-  dropdownSecondaryOutlineActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下鼠标聚焦时的字体颜色
-   */
-  dropdownSecondaryOutlineFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下鼠标聚焦时的背景颜色
-   */
-  dropdownSecondaryOutlineFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单次要色线框模式下鼠标聚焦时的边框颜色
-   */
-  dropdownSecondaryOutlineFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单成功色字体颜色
-   */
-  dropdownSuccessFontColor: string;
-  /**
-   * @type {string}
-   * @token Success-5
-   * @description 下拉菜单成功色背景颜色
-   */
-  dropdownSuccessBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Success-5
-   * @description 下拉菜单成功色边框颜色
-   */
-  dropdownSuccessBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单成功色禁用时的字体颜色
-   */
-  dropdownSuccessDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token Success-3
-   * @description 下拉菜单成功色禁用时的背景颜色
-   */
-  dropdownSuccessDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Success-3
-   * @description 下拉菜单成功色禁用时的边框颜色
-   */
-  dropdownSuccessDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单成功色鼠标移入时的字体颜色
-   */
-  dropdownSuccessHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token Success-4
-   * @description 下拉菜单成功色鼠标移入时的背景颜色
-   */
-  dropdownSuccessHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Success-4
-   * @description 下拉菜单成功色鼠标移入时的边框颜色
-   */
-  dropdownSuccessHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单成功色鼠标点击时的字体颜色
-   */
-  dropdownSuccessActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token Success-6
-   * @description 下拉菜单成功色鼠标点击时的背景颜色
-   */
-  dropdownSuccessActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Success-6
-   * @description 下拉菜单成功色鼠标点击时的边框颜色
-   */
-  dropdownSuccessActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单成功色鼠标聚焦时的字体颜色
-   */
-  dropdownSuccessFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token Success-4
-   * @description 下拉菜单成功色鼠标聚焦时的背景颜色
-   */
-  dropdownSuccessFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Success-4
-   * @description 下拉菜单成功色鼠标聚焦时的边框颜色
-   */
-  dropdownSuccessFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下字体颜色
-   */
-  dropdownSuccessOutlineFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下背景颜色
-   */
-  dropdownSuccessOutlineBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下边框颜色
-   */
-  dropdownSuccessOutlineBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下禁用时的字体颜色
-   */
-  dropdownSuccessOutlineDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下禁用时的背景颜色
-   */
-  dropdownSuccessOutlineDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下禁用时的边框颜色
-   */
-  dropdownSuccessOutlineDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下鼠标移入时的字体颜色
-   */
-  dropdownSuccessOutlineHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下鼠标移入时的背景颜色
-   */
-  dropdownSuccessOutlineHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下鼠标移入时的边框颜色
-   */
-  dropdownSuccessOutlineHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下鼠标点击时的字体颜色
-   */
-  dropdownSuccessOutlineActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下鼠标点击时的背景颜色
-   */
-  dropdownSuccessOutlineActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下鼠标点击时的边框颜色
-   */
-  dropdownSuccessOutlineActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下鼠标聚焦时的字体颜色
-   */
-  dropdownSuccessOutlineFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下鼠标聚焦时的背景颜色
-   */
-  dropdownSuccessOutlineFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单成功色线框模式下鼠标聚焦时的边框颜色
-   */
-  dropdownSuccessOutlineFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单警告色字体颜色
-   */
-  dropdownWarningFontColor: string;
-  /**
-   * @type {string}
-   * @token Warning-5
-   * @description 下拉菜单警告色背景颜色
-   */
-  dropdownWarningBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Warning-5
-   * @description 下拉菜单警告色边框颜色
-   */
-  dropdownWarningBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单警告色禁用时的字体颜色
-   */
-  dropdownWarningDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token Warning-3
-   * @description 下拉菜单警告色禁用时的背景颜色
-   */
-  dropdownWarningDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Warning-3
-   * @description 下拉菜单警告色禁用时的边框颜色
-   */
-  dropdownWarningDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单警告色鼠标移入时的字体颜色
-   */
-  dropdownWarningHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token Warning-4
-   * @description 下拉菜单警告色鼠标移入时的背景颜色
-   */
-  dropdownWarningHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Warning-4
-   * @description 下拉菜单警告色鼠标移入时的边框颜色
-   */
-  dropdownWarningHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单警告色鼠标点击时的字体颜色
-   */
-  dropdownWarningActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token Warning-6
-   * @description 下拉菜单警告色鼠标点击时的背景颜色
-   */
-  dropdownWarningActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Warning-6
-   * @description 下拉菜单警告色鼠标点击时的边框颜色
-   */
-  dropdownWarningActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单警告色鼠标聚焦时的字体颜色
-   */
-  dropdownWarningFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token Warning-4
-   * @description 下拉菜单警告色鼠标聚焦时的背景颜色
-   */
-  dropdownWarningFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Warning-4
-   * @description 下拉菜单警告色鼠标聚焦时的边框颜色
-   */
-  dropdownWarningFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下字体颜色
-   */
-  dropdownWarningOutlineFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下背景颜色
-   */
-  dropdownWarningOutlineBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下边框颜色
-   */
-  dropdownWarningOutlineBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下禁用时的字体颜色
-   */
-  dropdownWarningOutlineDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下禁用时的背景颜色
-   */
-  dropdownWarningOutlineDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下禁用时的边框颜色
-   */
-  dropdownWarningOutlineDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下鼠标移入时的字体颜色
-   */
-  dropdownWarningOutlineHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下鼠标移入时的背景颜色
-   */
-  dropdownWarningOutlineHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下鼠标移入时的边框颜色
-   */
-  dropdownWarningOutlineHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下鼠标点击时的字体颜色
-   */
-  dropdownWarningOutlineActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下鼠标点击时的背景颜色
-   */
-  dropdownWarningOutlineActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下鼠标点击时的边框颜色
-   */
-  dropdownWarningOutlineActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下鼠标聚焦时的字体颜色
-   */
-  dropdownWarningOutlineFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下鼠标聚焦时的背景颜色
-   */
-  dropdownWarningOutlineFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单警告色线框模式下鼠标聚焦时的边框颜色
-   */
-  dropdownWarningOutlineFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单危险色字体颜色
-   */
-  dropdownDangerFontColor: string;
-  /**
-   * @type {string}
-   * @token Danger-5
-   * @description 下拉菜单危险色背景颜色
-   */
-  dropdownDangerBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Danger-5
-   * @description 下拉菜单危险色边框颜色
-   */
-  dropdownDangerBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单危险色禁用时的字体颜色
-   */
-  dropdownDangerDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token Danger-3
-   * @description 下拉菜单危险色禁用时的背景颜色
-   */
-  dropdownDangerDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Danger-3
-   * @description 下拉菜单危险色禁用时的边框颜色
-   */
-  dropdownDangerDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单危险色鼠标移入时的字体颜色
-   */
-  dropdownDangerHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token Danger-4
-   * @description 下拉菜单危险色鼠标移入时的背景颜色
-   */
-  dropdownDangerHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Danger-4
-   * @description 下拉菜单危险色鼠标移入时的边框颜色
-   */
-  dropdownDangerHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单危险色鼠标点击时的字体颜色
-   */
-  dropdownDangerActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token Danger-6
-   * @description 下拉菜单危险色鼠标点击时的背景颜色
-   */
-  dropdownDangerActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Danger-6
-   * @description 下拉菜单危险色鼠标点击时的边框颜色
-   */
-  dropdownDangerActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-1
-   * @description 下拉菜单危险色鼠标聚焦时的字体颜色
-   */
-  dropdownDangerFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token Danger-4
-   * @description 下拉菜单危险色鼠标聚焦时的背景颜色
-   */
-  dropdownDangerFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Danger-4
-   * @description 下拉菜单危险色鼠标聚焦时的边框颜色
-   */
-  dropdownDangerFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下字体颜色
-   */
-  dropdownDangerOutlineFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下背景颜色
-   */
-  dropdownDangerOutlineBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下边框颜色
-   */
-  dropdownDangerOutlineBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下禁用时的字体颜色
-   */
-  dropdownDangerOutlineDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下禁用时的背景颜色
-   */
-  dropdownDangerOutlineDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下禁用时的边框颜色
-   */
-  dropdownDangerOutlineDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下鼠标移入时的字体颜色
-   */
-  dropdownDangerOutlineHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下鼠标移入时的背景颜色
-   */
-  dropdownDangerOutlineHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下鼠标移入时的边框颜色
-   */
-  dropdownDangerOutlineHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下鼠标点击时的字体颜色
-   */
-  dropdownDangerOutlineActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下鼠标点击时的背景颜色
-   */
-  dropdownDangerOutlineActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下鼠标点击时的边框颜色
-   */
-  dropdownDangerOutlineActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下鼠标聚焦时的字体颜色
-   */
-  dropdownDangerOutlineFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下鼠标聚焦时的背景颜色
-   */
-  dropdownDangerOutlineFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单危险色线框模式下鼠标聚焦时的边框颜色
-   */
-  dropdownDangerOutlineFocusBorderColor: string;
+  dropdownListPaddingY: string;
   /**
    * @type {string}
    * @token 14/regular
-   * @description 下拉菜单字体字号
+   * @description 下拉菜单下拉菜单列表字体字号
    */
-  dropdownFontSize: string;
+  dropdownListFontSize: string;
   /**
    * @type {string}
    * @token Radius-4
-   * @description 下拉菜单边框圆角
+   * @description 下拉菜单下拉菜单列表小尺寸边框圆角
    */
-  dropdownBorderRadius: string;
+  dropdownListSmallBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
-   * @description 下拉菜单内边距（水平方向）
+   * @token Padding-4
+   * @description 下拉菜单下拉菜单列表小尺寸内边距（水平方向）
    */
-  dropdownPaddingX: string;
+  dropdownListSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
-   * @description 下拉菜单内边距（垂直方向）
+   * @token Padding-4
+   * @description 下拉菜单下拉菜单列表小尺寸内边距（垂直方向）
    */
-  dropdownPaddingY: string;
+  dropdownListSmallPaddingY: string;
   /**
    * @type {string}
    * @token 12/regular
-   * @description 下拉菜单小尺寸字体字号
+   * @description 下拉菜单下拉菜单列表小尺寸字体字号
    */
-  dropdownSmallFontSize: string;
+  dropdownListSmallFontSize: string;
   /**
    * @type {string}
    * @token Radius-4
-   * @description 下拉菜单小尺寸边框圆角
+   * @description 下拉菜单下拉菜单列表大尺寸边框圆角
    */
-  dropdownSmallBorderRadius: string;
+  dropdownListLargeBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
-   * @description 下拉菜单小尺寸内边距（水平方向）
+   * @token Padding-4
+   * @description 下拉菜单下拉菜单列表大尺寸内边距（水平方向）
    */
-  dropdownSmallPaddingX: string;
+  dropdownListLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
-   * @description 下拉菜单小尺寸内边距（垂直方向）
+   * @token Padding-4
+   * @description 下拉菜单下拉菜单列表大尺寸内边距（垂直方向）
    */
-  dropdownSmallPaddingY: string;
+  dropdownListLargePaddingY: string;
   /**
    * @type {string}
    * @token 16/regular
-   * @description 下拉菜单大尺寸字体字号
+   * @description 下拉菜单下拉菜单列表大尺寸字体字号
    */
-  dropdownLargeFontSize: string;
+  dropdownListLargeFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
-   * @description 下拉菜单大尺寸边框圆角
+   * @token Neutral-fill-1
+   * @description 下拉菜单下拉菜单列表背景颜色
    */
-  dropdownLargeBorderRadius: string;
+  dropdownListBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-12
-   * @description 下拉菜单大尺寸内边距（水平方向）
+   * @token Neutral-border-1
+   * @description 下拉菜单下拉菜单列表边框颜色
    */
-  dropdownLargePaddingX: string;
+  dropdownListBorderColor: string;
   /**
    * @type {string}
-   * @token Padding-8
-   * @description 下拉菜单大尺寸内边距（垂直方向）
+   * @token Neutral-text-5
+   * @description 下拉菜单下拉菜单列表字体颜色
    */
-  dropdownLargePaddingY: string;
+  dropdownListFontColor: string;
+  /**
+   * @type {string}
+   * @token Shadow-2
+   * @description 下拉菜单下拉菜单列表undefinedundefined
+   */
+  dropdownListBoxShadow: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项内边距（水平方向）
+   */
+  dropdownListOptionPaddingX: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项内边距（垂直方向）
+   */
+  dropdownListOptionPaddingY: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项小尺寸内边距（水平方向）
+   */
+  dropdownListOptionSmallPaddingX: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项小尺寸内边距（垂直方向）
+   */
+  dropdownListOptionSmallPaddingY: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项大尺寸内边距（水平方向）
+   */
+  dropdownListOptionLargePaddingX: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项大尺寸内边距（垂直方向）
+   */
+  dropdownListOptionLargePaddingY: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项背景颜色
+   */
+  dropdownListOptionBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项边框颜色
+   */
+  dropdownListOptionBorderColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项字体颜色
+   */
+  dropdownListOptionFontColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项鼠标聚焦时的背景颜色
+   */
+  dropdownListOptionFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项鼠标聚焦时的边框颜色
+   */
+  dropdownListOptionFocusBorderColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项鼠标聚焦时的字体颜色
+   */
+  dropdownListOptionFocusFontColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项鼠标点击时的背景颜色
+   */
+  dropdownListOptionActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项鼠标点击时的边框颜色
+   */
+  dropdownListOptionActiveBorderColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项鼠标点击时的字体颜色
+   */
+  dropdownListOptionActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项undefined背景颜色
+   */
+  dropdownListOptionSelectBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项undefined边框颜色
+   */
+  dropdownListOptionSelectBorderColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项undefined字体颜色
+   */
+  dropdownListOptionSelectFontColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项禁用时的背景颜色
+   */
+  dropdownListOptionDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项禁用时的边框颜色
+   */
+  dropdownListOptionDisabledBorderColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 下拉菜单下拉菜单列表选项禁用时的字体颜色
+   */
+  dropdownListOptionDisabledFontColor: string;
 }

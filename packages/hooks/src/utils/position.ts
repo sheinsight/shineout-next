@@ -1,9 +1,21 @@
-import React from 'react';
 import { docSize } from './document';
 // 根据位置计算合适的 position
-export const getMenuPosition = (target: HTMLElement | null, priorityDirection = 'vertical') => {
+
+type MenuPosition =
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'left-top'
+  | 'left-bottom'
+  | 'right-top'
+  | 'right-bottom';
+export const getMenuPosition = (
+  target: HTMLElement | null,
+  priorityDirection = 'vertical',
+): MenuPosition => {
   let position = 'bottom-left';
-  if (!target) return position;
+  if (!target) return position as MenuPosition;
   const rect = target.getBoundingClientRect();
   let tempPriorityDirection = priorityDirection;
   const horizontalPoint = rect.left + rect.width / 2;
@@ -32,7 +44,7 @@ export const getMenuPosition = (target: HTMLElement | null, priorityDirection = 
       position += '-left';
     }
   }
-  return position;
+  return position as MenuPosition;
 };
 
 export const getPopoverPosition = (target: HTMLElement, priorityDirection = 'vertical') => {
@@ -82,35 +94,3 @@ export const getPopoverPosition = (target: HTMLElement, priorityDirection = 'ver
 //
 //   return position;
 // };
-
-export const getPositionStyle = (position: string) => {
-  let newStyle: React.CSSProperties = {};
-  if (position === 'drop-down') {
-    newStyle = {
-      top: '100%',
-      left: 0,
-    };
-  } else if (position === 'drop-up') {
-    newStyle = {
-      bottom: '100%',
-      left: 0,
-    };
-  } else {
-    const positionArr = (position || '').split('-');
-    if (positionArr.length === 2) {
-      let [m, n] = positionArr;
-      const reverse = {
-        left: 'right',
-        right: 'left',
-        top: 'bottom',
-        bottom: 'top',
-      };
-      m = reverse[m as 'left'];
-      newStyle = {
-        [m]: '100%',
-        [n]: 0,
-      };
-    }
-  }
-  return newStyle;
-};

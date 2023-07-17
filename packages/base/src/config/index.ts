@@ -1,7 +1,9 @@
 import { util } from '@sheinx/hooks';
-import { proxy, subscribe } from 'valtio';
+import { proxy, subscribe, useSnapshot } from 'valtio';
+import { CaretType } from '../icons/caret.type';
+import { INTERNAL_Snapshot as Snapshot } from 'valtio/vanilla';
 
-interface ConfigOption {
+export interface ConfigOption {
   // cssModule: boolean;
   // prefix: string;
   // locale: LanType;
@@ -10,12 +12,13 @@ interface ConfigOption {
   // scrollRatio?: number;
   // trim?: boolean;
   // spin?: string;
-  // caret?: CartType;
+  caret?: CaretType;
   // direction: Direction;
   popupContainer?: HTMLElement | (() => HTMLElement);
 }
 let config: ConfigOption = {
   popupContainer: undefined,
+  caret: 'line',
   // prefix: 'so',
 };
 
@@ -37,3 +40,7 @@ export function getDefaultContainer() {
 
   return document.body;
 }
+
+export const useConfig = (): Snapshot<ConfigOption> => {
+  return useSnapshot(state) as Snapshot<ConfigOption>;
+};

@@ -5,7 +5,7 @@ export type DropdownPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
 export type ListPosition = 'drop-down' | 'drop-up';
 
 export interface AbsoluteListProps {
-  children: (props: { style: React.CSSProperties }) => React.ReactElement;
+  children: React.ReactElement;
   focus: boolean;
   parentElement: HTMLElement | null;
   fixedWidth: 'min' | boolean; // same width with parentElement

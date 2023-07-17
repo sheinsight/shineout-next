@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { AbsoluteListProps } from './absolute-list.type';
 import { util } from '@sheinx/hooks';
 import { getDefaultContainer } from '../config';
+import { getPositionStyle, PICKER_MARGIN } from './get-position-style';
 
 let root: HTMLDivElement;
-const PICKER_V_MARGIN = 4;
 
 function initRoot() {
   const defaultContainer = getDefaultContainer();
@@ -25,12 +25,14 @@ function getRoot() {
 
 const AbsoluteList = (props: AbsoluteListProps) => {
   const [style, setStyle] = useState<React.CSSProperties>({});
+  const childStyle = props.children?.props?.style || {};
   const { current: context } = React.useRef({
     element: null as HTMLDivElement | null,
     containerRect: { left: 0, width: 0 } as DOMRect,
     containerScroll: { left: 0, width: 0 } as DOMRect,
   });
-  const { absolute, position, children, parentElement, scrollElement, fixedWidth, zIndex } = props;
+  const { absolute, position, children, parentElement, scrollElement, fixedWidth, zIndex, focus } =
+    props;
 
   const getContainer = () => {
     if (typeof absolute === 'function') {
@@ -90,16 +92,16 @@ const AbsoluteList = (props: AbsoluteListProps) => {
         style.left = 'auto';
       }
       if (v === 'bottom') {
-        style.top = rect.bottom - containerRect.top + containerScroll.top + PICKER_V_MARGIN;
+        style.top = rect.bottom - containerRect.top + containerScroll.top + PICKER_MARGIN;
       } else {
-        style.top = rect.top - containerRect.top + containerScroll.top - PICKER_V_MARGIN;
+        style.top = rect.top - containerRect.top + containerScroll.top - PICKER_MARGIN;
         style.transform = 'translateY(-100%)';
       }
     }
     return style;
   };
 
-  const setAbsoluteStyle = () => {
+  const getAbsoluteStyle = () => {
     if (!parentElement) return;
     const rect = parentElement.getBoundingClientRect();
     if (scrollElement) {
@@ -114,22 +116,31 @@ const AbsoluteList = (props: AbsoluteListProps) => {
       }
     }
     const style = getAbsolutePositionStyle(rect);
-    setStyle(style);
+    return style;
   };
 
+  // absolute 模式
   useEffect(() => {
-    if (!props.absolute || !parentElement || !position) return;
-    setAbsoluteStyle();
-  }, [absolute, position, fixedWidth, parentElement, scrollElement]);
+    if (!parentElement || !position || !focus || !absolute) return;
+    const newStyle = getAbsoluteStyle();
+    if (newStyle && !util.shallowEqual(newStyle, style)) {
+      setStyle({ ...childStyle, ...newStyle });
+    }
+  }, [absolute, position, parentElement, scrollElement, focus]);
 
-  if (!props.absolute)
-    return children({
-      style: util.getPositionStyle(position),
-    });
-  console.log('!!!', style);
+  // 非 absolute 模式
+  useEffect(() => {
+    if (absolute) return;
+    setStyle({ ...childStyle, ...getPositionStyle(position) });
+  }, [position, absolute]);
   const element = getElement();
+
   element.className = props.rootClass || '';
-  return ReactDOM.createPortal(children({ style }), getElement());
+
+  if (React.isValidElement(children) === false) return null;
+  const styledChild = React.cloneElement(children, { style });
+  if (absolute) return ReactDOM.createPortal(styledChild, getElement());
+  return styledChild;
 };
 
 export default AbsoluteList;

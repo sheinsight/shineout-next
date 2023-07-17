@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { AnimationListProps } from './animation-list.type';
+import { useForkRef } from '@sheinx/hooks';
 
 const getDuration = (duration: AnimationListProps['duration']) => {
   switch (duration) {
@@ -14,11 +15,12 @@ const getDuration = (duration: AnimationListProps['duration']) => {
 };
 
 const AnimationList = (props: AnimationListProps) => {
-  const { display = 'block', children, style, jssStyle } = props;
+  const { display = 'block', children, style, jssStyle, onRef } = props;
 
   const [show, setShow] = useState(props.show);
   const { current: context } = useRef({ mounted: false, height: 0, show: props.show });
   const ref = useRef<HTMLDivElement>(null);
+  const forkRef = useForkRef(ref, onRef);
 
   const duration = getDuration(props.duration);
   const type = Array.isArray(props.type) ? props.type : [props.type];
@@ -114,7 +116,7 @@ const AnimationList = (props: AnimationListProps) => {
   );
 
   return (
-    <div ref={ref} className={className} style={style}>
+    <div ref={forkRef} className={className} style={style}>
       {children}
     </div>
   );
