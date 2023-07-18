@@ -42,7 +42,6 @@ const App: React.FC = () => {
       animationListJssStyle={animationListStyle}
       jssStyle={dropdownStyle}
       trigger='click'
-      absolute
       placeholder='Dropdown'
       data={data}
     />

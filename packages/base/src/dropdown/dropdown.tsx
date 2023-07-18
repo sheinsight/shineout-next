@@ -22,7 +22,9 @@ const positionMap = {
 
 const Dropdown = (props: SimpleDropdownProps) => {
   const { open, setOpen } = useControlOpen({ open: props.open });
-  const [position, setPosition] = useState<MenuPosition>('bottom-left');
+  const [position, setPosition] = useState<MenuPosition>(
+    props.position && props.position !== 'auto' ? props.position : 'bottom-left',
+  );
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
   const { placeholder, animationListJssStyle, jssStyle, isSub, columns, width } = props;
@@ -31,8 +33,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
     const { onCollapse } = props;
     const wrapper = wrapRef.current;
     if (props.position === 'auto') {
-      const position = util.getMenuPosition(wrapper);
-      setPosition(position);
+      const newPosition = util.getMenuPosition(wrapper);
+      if (newPosition !== position) setPosition(newPosition);
     }
     if (onCollapse) {
       onCollapse(true);

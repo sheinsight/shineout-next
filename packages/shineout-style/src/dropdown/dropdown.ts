@@ -29,8 +29,10 @@ export type DropDownClass =
 const dropdown: JsStyles<DropDownClass> = {
   wrapper: {
     display: 'inline-block',
-    background: '#ccc',
     position: 'relative',
+    '& *': {
+      lineHeight: 'calc( 1em + 8px)',
+    },
   },
   list: {
     position: 'absolute',
@@ -38,10 +40,15 @@ const dropdown: JsStyles<DropDownClass> = {
     fontSize: token.dropdownListFontSize,
     border: `${token.dropdownListBorderWidth} solid ${token.dropdownListBorderColor}`,
     borderRadius: token.dropdownListBorderRadius,
-    padding: `${token.dropdownListPaddingY} ${token.dropdownListPaddingX}`,
+    padding: `${token.dropdownListPaddingY} 0`,
     background: token.dropdownListBackgroundColor,
     boxShadow: token.dropdownListBoxShadow,
     width: 'max-content',
+    boxSizing: 'border-box',
+    lineHeight: 'calc( 1em + 8px)',
+    '& $wrapper': {
+      display: 'block',
+    },
   },
   listSmall: {
     fontSize: token.dropdownListSmallFontSize,
@@ -65,7 +72,17 @@ const dropdown: JsStyles<DropDownClass> = {
   },
   content: {},
   button: {},
-  item: {},
+  item: {
+    display: 'block',
+    lineHeight: 'calc( 1em + 8px)',
+    color: 'inherit',
+    textDecoration: 'none',
+    padding: `2px 8px`,
+    cursor: 'pointer',
+    '&:hover': {
+      background: '#ccc',
+    },
+  },
   itemDisabled: {},
   itemActive: {},
   splitButton: {},

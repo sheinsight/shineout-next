@@ -1,19 +1,17 @@
 import React from 'react';
 
 export const PICKER_MARGIN = 4;
-
+const mainMargin = `calc(100% + ${PICKER_MARGIN}px`;
 export const getPositionStyle = (position: string) => {
   let newStyle: React.CSSProperties = {};
   if (position === 'drop-down') {
     newStyle = {
-      top: '100%',
-      marginTop: PICKER_MARGIN,
+      top: mainMargin,
       left: 0,
     };
   } else if (position === 'drop-up') {
     newStyle = {
-      bottom: '100%',
-      marginBottom: PICKER_MARGIN,
+      bottom: mainMargin,
       left: 0,
     };
   } else {
@@ -27,11 +25,8 @@ export const getPositionStyle = (position: string) => {
         bottom: 'top',
       };
       m = reverse[m as 'left'];
-      const capitalizedStr = m.charAt(0).toUpperCase() + m.slice(1);
-
       newStyle = {
-        [m]: '100%',
-        [`margin${capitalizedStr}`]: PICKER_MARGIN,
+        [m]: mainMargin,
         [n]: 0,
       };
     }

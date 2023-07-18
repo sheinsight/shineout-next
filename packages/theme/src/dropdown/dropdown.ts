@@ -4,7 +4,7 @@
 import { DropdownTokens } from './type';
 
 const dropdown: DropdownTokens = {
-  dropdownListBorderWidth: 'Neutral-border-1',
+  dropdownListBorderWidth: 'Border-1',
   dropdownListBorderRadius: 'Radius-4',
   dropdownListPaddingX: 'Padding-4',
   dropdownListPaddingY: 'Padding-4',
@@ -20,7 +20,7 @@ const dropdown: DropdownTokens = {
   dropdownListBackgroundColor: 'Neutral-fill-1',
   dropdownListBorderColor: 'Neutral-border-1',
   dropdownListFontColor: 'Neutral-text-5',
-  dropdownListBoxShadow: 'Shadow-2',
+  dropdownListBoxShadow: 'Shadow-1',
   dropdownListOptionPaddingX: '',
   dropdownListOptionPaddingY: '',
   dropdownListOptionSmallPaddingX: '',

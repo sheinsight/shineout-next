@@ -1,5 +1,9 @@
 import { ObjectType } from '../common/type';
 
+export function isBrowser() {
+  return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+}
+
 const nameIs = (name: unknown) => (val: unknown) => {
   if (typeof val === 'object') {
     return val && val.constructor && val.constructor.name === name;

@@ -6,11 +6,7 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const dropdownTokenDescription = {
-  dropdown: '下拉菜单',
-  List: '下拉菜单列表',
-  Option: '选项',
-};
+const dropdownTokenDescription = { dropdown: '下拉菜单', List: '下拉菜单列表', Option: '选项' };
 
 /**
  * token 规则
@@ -18,14 +14,14 @@ const dropdownTokenDescription = {
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const dropdownRules = {
-  listOptionCommon: [['list'], ['border-width']],
+  listOptionCommon: [['list'], ['border-width', 'aaa']],
   listSize: [
     ['list'],
     ['', 'small', 'large'],
     ['border-radius', 'padding-x', 'padding-y', 'font-size'],
   ],
   listColor: [['list'], ['background-color', 'border-color', 'font-color', 'box-shadow']],
-  ListOptionSize: [['list-option'], ['', 'small', 'large'], ['padding-x', 'padding-y']],
+  ListOptionSize: [['listOption'], ['', 'small', 'large'], ['padding-x', 'padding-y']],
   listOptionColor: [
     ['list-option'],
     ['', 'focus', 'active', 'select', 'disabled'],
@@ -41,50 +37,47 @@ const dropdownRules = {
  * 注意，该映射表的内容不与 dropdownRules 强关联，非 dropdownRules 规则内的 token 需手动增加或删减。
  */
 const dropdownTokenValue = {
-  List: {
-    Box: {
-      Shadow: 'Shadow-2',
+  list: {
+    border: { width: 'Border-1', radius: 'Radius-4', color: 'Neutral-border-1' },
+    aaa: '',
+    padding: { y: 'Padding-4', x: 'Padding-4' },
+    font: { size: '14/regular', color: 'Neutral-text-5' },
+    small: {
+      border: { radius: 'Radius-4' },
+      padding: { y: 'Padding-4', x: 'Padding-4' },
+      font: { size: '12/regular' },
     },
-    Border: {
-      Radius: 'Radius-4',
-      Width: 'Neutral-border-1',
-      Color: 'Neutral-border-1',
+    large: {
+      border: { radius: 'Radius-4' },
+      padding: { y: 'Padding-4', x: 'Padding-4' },
+      font: { size: '16/regular' },
     },
-    Padding: {
-      X: 'Padding-4',
-      Y: 'Padding-4',
-    },
-    Font: {
-      Size: '14/regular',
-      Color: 'Neutral-text-5',
-    },
-    Background: {
-      Color: 'Neutral-fill-1',
-    },
-    Small: {
-      Border: {
-        Radius: 'Radius-4',
-      },
-      Padding: {
-        X: 'Padding-4',
-        Y: 'Padding-4',
-      },
-      Font: {
-        Size: '12/regular',
-      },
-    },
-    Large: {
-      Border: {
-        Radius: 'Radius-4',
-      },
-      Padding: {
-        X: 'Padding-4',
-        Y: 'Padding-4',
-      },
-      Font: {
-        Size: '16/regular',
-      },
-    },
+    background: { color: 'Neutral-fill-1' },
+    box: { shadow: 'Shadow-1' },
+  },
+  listOption: {
+    padding: { y: '' },
+    small: { padding: { y: '' } },
+    large: { padding: { y: '' } },
+    background: { color: '' },
+    border: { color: '' },
+    font: { color: '' },
+    focus: { background: { color: '' }, border: { color: '' }, font: { color: '' } },
+    active: { background: { color: '' }, border: { color: '' }, font: { color: '' } },
+    select: { background: { color: '' }, border: { color: '' }, font: { color: '' } },
+    disabled: { background: { color: '' }, border: { color: '' }, font: { color: '' } },
+  },
+  listoption: {
+    padding: { y: '' },
+    small: { padding: { y: '' } },
+    large: { padding: { y: '' } },
+    background: { color: '' },
+    border: { color: '' },
+    font: { color: '' },
+    focus: { background: { color: '' }, border: { color: '' }, font: { color: '' } },
+    active: { background: { color: '' }, border: { color: '' }, font: { color: '' } },
+    select: { background: { color: '' }, border: { color: '' }, font: { color: '' } },
+    disabled: { background: { color: '' }, border: { color: '' }, font: { color: '' } },
   },
 };
 
