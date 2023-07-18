@@ -485,24 +485,52 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#429AFF'
+   * @default '#6BB5FF'
    * @description 悬浮
    */
   'Brand-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#197AFA'
+   * @default '#429AFF'
    * @description 常规
    */
   'Brand-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#0B5BD4'
+   * @default '#197AFA'
    * @description 点击
    */
   'Brand-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#0B5BD4'
+   * @description 点击
+   */
+  'Brand-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#0040AD'
+   * @description
+   */
+  'Brand-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#002D87'
+   * @description
+   */
+  'Brand-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#001D61'
+   * @description
+   */
+  'Brand-10': string;
   /**
    * @type {string}
    * @categoty color
@@ -772,6 +800,104 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
+   * @default '11px'
+   * @description 11 内边距
+   */
+  'Padding-11': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '12px'
+   * @description 12 内边距
+   */
+  'Padding-12': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '13px'
+   * @description 13 内边距
+   */
+  'Padding-13': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '14px'
+   * @description 14 内边距
+   */
+  'Padding-14': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '15px'
+   * @description 15 内边距
+   */
+  'Padding-15': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '16px'
+   * @description 16 内边距
+   */
+  'Padding-16': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '17px'
+   * @description 17 内边距
+   */
+  'Padding-17': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '18px'
+   * @description 18 内边距
+   */
+  'Padding-18': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '19px'
+   * @description 19 内边距
+   */
+  'Padding-19': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '20px'
+   * @description 20 内边距
+   */
+  'Padding-20': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '21px'
+   * @description 21 内边距
+   */
+  'Padding-21': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '22px'
+   * @description 22 内边距
+   */
+  'Padding-22': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '23px'
+   * @description 23 内边距
+   */
+  'Padding-23': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '24px'
+   * @description 24 内边距
+   */
+  'Padding-24': string;
+  /**
+   * @type {string}
+   * @categoty string
    * @default '4px'
    * @description 4 外边距
    */
@@ -909,4 +1035,11 @@ export interface Tokens {
    * @description 较粗边框宽度
    */
   'Border-3': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default 'transparent'
+   * @description 较粗边框宽度
+   */
+  Transparent: string;
 }

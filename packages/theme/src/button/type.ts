@@ -10,13 +10,13 @@ export interface ButtonTokens {
   buttonPrimaryFontColor: string;
   /**
    * @type {string}
-   * @token Brand-5
+   * @token Brand-6
    * @description 按钮主要色背景颜色
    */
   buttonPrimaryBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-5
+   * @token Brand-6
    * @description 按钮主要色边框颜色
    */
   buttonPrimaryBorderColor: string;
@@ -46,13 +46,13 @@ export interface ButtonTokens {
   buttonPrimaryHoverFontColor: string;
   /**
    * @type {string}
-   * @token Brand-4
+   * @token Brand-5
    * @description 按钮主要色鼠标移入时的背景颜色
    */
   buttonPrimaryHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-4
+   * @token Brand-5
    * @description 按钮主要色鼠标移入时的边框颜色
    */
   buttonPrimaryHoverBorderColor: string;
@@ -64,13 +64,13 @@ export interface ButtonTokens {
   buttonPrimaryActiveFontColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-7
    * @description 按钮主要色鼠标点击时的背景颜色
    */
   buttonPrimaryActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-7
    * @description 按钮主要色鼠标点击时的边框颜色
    */
   buttonPrimaryActiveBorderColor: string;
@@ -82,103 +82,103 @@ export interface ButtonTokens {
   buttonPrimaryFocusFontColor: string;
   /**
    * @type {string}
-   * @token Brand-4
+   * @token Brand-5
    * @description 按钮主要色鼠标聚焦时的背景颜色
    */
   buttonPrimaryFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-4
+   * @token Brand-5
    * @description 按钮主要色鼠标聚焦时的边框颜色
    */
   buttonPrimaryFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮次要色字体颜色
    */
   buttonSecondaryFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-5
+   * @token Neutral-fill-3
    * @description 按钮次要色背景颜色
    */
   buttonSecondaryBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-5
+   * @token Neutral-fill-3
    * @description 按钮次要色边框颜色
    */
   buttonSecondaryBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-2
    * @description 按钮次要色禁用时的字体颜色
    */
   buttonSecondaryDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-3
+   * @token Brand-3
    * @description 按钮次要色禁用时的背景颜色
    */
   buttonSecondaryDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-3
+   * @token Brand-3
    * @description 按钮次要色禁用时的边框颜色
    */
   buttonSecondaryDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮次要色鼠标移入时的字体颜色
    */
   buttonSecondaryHoverFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-4
+   * @token Neutral-fill-2
    * @description 按钮次要色鼠标移入时的背景颜色
    */
   buttonSecondaryHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-4
+   * @token Neutral-fill-2
    * @description 按钮次要色鼠标移入时的边框颜色
    */
   buttonSecondaryHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮次要色鼠标点击时的字体颜色
    */
   buttonSecondaryActiveFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-6
+   * @token Neutral-fill-5
    * @description 按钮次要色鼠标点击时的背景颜色
    */
   buttonSecondaryActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-6
+   * @token Neutral-fill-5
    * @description 按钮次要色鼠标点击时的边框颜色
    */
   buttonSecondaryActiveBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮次要色鼠标聚焦时的字体颜色
    */
   buttonSecondaryFocusFontColor: string;
   /**
    * @type {string}
-   * @token Secondary-4
+   * @token Neutral-fill-4
    * @description 按钮次要色鼠标聚焦时的背景颜色
    */
   buttonSecondaryFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Secondary-4
+   * @token Neutral-fill-4
    * @description 按钮次要色鼠标聚焦时的边框颜色
    */
   buttonSecondaryFocusBorderColor: string;
@@ -208,13 +208,13 @@ export interface ButtonTokens {
   buttonSuccessDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Success-3
+   * @token Success-5
    * @description 按钮成功色禁用时的背景颜色
    */
   buttonSuccessDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-3
+   * @token Success-5
    * @description 按钮成功色禁用时的边框颜色
    */
   buttonSuccessDisabledBorderColor: string;
@@ -238,7 +238,7 @@ export interface ButtonTokens {
   buttonSuccessHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮成功色鼠标点击时的字体颜色
    */
   buttonSuccessActiveFontColor: string;
@@ -298,13 +298,13 @@ export interface ButtonTokens {
   buttonWarningDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Warning-3
+   * @token Warning-5
    * @description 按钮警告色禁用时的背景颜色
    */
   buttonWarningDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-3
+   * @token Warning-5
    * @description 按钮警告色禁用时的边框颜色
    */
   buttonWarningDisabledBorderColor: string;
@@ -328,7 +328,7 @@ export interface ButtonTokens {
   buttonWarningHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮警告色鼠标点击时的字体颜色
    */
   buttonWarningActiveFontColor: string;
@@ -388,13 +388,13 @@ export interface ButtonTokens {
   buttonDangerDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Danger-3
+   * @token Danger-5
    * @description 按钮危险色禁用时的背景颜色
    */
   buttonDangerDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-3
+   * @token Danger-5
    * @description 按钮危险色禁用时的边框颜色
    */
   buttonDangerDisabledBorderColor: string;
@@ -418,7 +418,7 @@ export interface ButtonTokens {
   buttonDangerHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-1
+   * @token Neutral-text-4
    * @description 按钮危险色鼠标点击时的字体颜色
    */
   buttonDangerActiveFontColor: string;
