@@ -1,2 +1,2 @@
 export { default, default as useButton } from './use-button';
-export type { BaseButtonProps } from './use-button.type';
+export type { BaseButtonProps, ButtonShape } from './use-button.type';

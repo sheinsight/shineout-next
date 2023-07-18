@@ -4,25 +4,27 @@ import React from 'react';
 import { ButtonProps } from './button.type';
 
 const Button = (props: ButtonProps) => {
-  const { jssStyle, className, style, children, renderInnerWrapper, renderLoading, ...rest } =
-    props;
-
   const {
-    getRootProps,
-    getButtonProps,
-    getSpaceChildren,
-    disabled,
+    jssStyle,
+    className,
+    style,
+    children,
+    loading,
+    href,
     text,
     dash,
     outline,
-    space,
-    href,
-    target,
-    loading,
+    shape,
     size,
     type,
-    htmlType,
-  } = useButton({
+    space,
+    target,
+    renderInnerWrapper,
+    renderLoading,
+    ...rest
+  } = props;
+
+  const { getButtonProps, getSpaceChildren, getAnchorProps, disabled } = useButton({
     ...rest,
   });
 
@@ -37,13 +39,17 @@ const Button = (props: ButtonProps) => {
       [jssStyle.text]: text,
       [jssStyle.dash]: dash,
       [jssStyle.outline]: outline,
+      [jssStyle.round]: shape === 'round',
+      [jssStyle.circle]: shape === 'circle',
+      [jssStyle.square]: shape === 'square',
       [jssStyle.small]: size === 'small',
       [jssStyle.large]: size === 'large',
     },
   ]);
 
-  const buttonProps = getButtonProps();
-
+  const rootProps = getButtonProps();
+  const { type: buttonType, ...buttonProps } = rootProps;
+  console.log(buttonType);
   const childrenEl = getSpaceChildren(children, space);
 
   let buttonInnerEl: React.ReactNode = <span>{childrenEl}</span>;
@@ -61,12 +67,7 @@ const Button = (props: ButtonProps) => {
 
   if (href) {
     return (
-      <a
-        {...getRootProps({ className: rootClass, style })}
-        {...buttonProps}
-        href={href}
-        target={target}
-      >
+      <a {...getAnchorProps({ className: rootClass, style })} href={href} target={target}>
         {loading && loadingEl}
         {buttonInnerEl}
       </a>
@@ -74,12 +75,8 @@ const Button = (props: ButtonProps) => {
   }
 
   return (
-    <button
-      {...getRootProps({ className: rootClass, style })}
-      {...buttonProps}
-      // eslint-disable-next-line react/button-has-type
-      type={htmlType}
-    >
+    // eslint-disable-next-line react/button-has-type
+    <button {...buttonProps} className={rootClass} style={style}>
       {loading && loadingEl}
       {buttonInnerEl}
     </button>

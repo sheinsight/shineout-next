@@ -1,6 +1,5 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
-console.log(Token.buttonPrimaryOutlineDisabledBackgroundColor);
 
 type ButtonClass =
   | 'button'
@@ -15,6 +14,9 @@ type ButtonClass =
   | 'text'
   | 'outline'
   | 'dash'
+  | 'round'
+  | 'circle'
+  | 'square'
   | 'link'
   | 'href'
   | 'small'
@@ -62,7 +64,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     border: '1px solid transparent',
     fontSize: Token.buttonFontSize,
     borderRadius: Token.buttonBorderRadius,
-    // lineHeight: Token.buttonLineHeight,
+    lineHeight: Token.lineHeightDynamic,
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
     transition: 'all 0.15s ease-in-out',
 
@@ -152,26 +154,6 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     },
     borderStyle: 'dashed',
   },
-  href: {
-    textDecoration: 'none',
-  },
-  disabled: {
-    cursor: 'not-allowed',
-    opacity: 0.65,
-  },
-  loading: {
-    cursor: 'not-allowed',
-    opacity: 0.65,
-
-    '&:active': {
-      animationName: 'none',
-    },
-
-    '&:hover': {
-      opacity: 0.65,
-    },
-  },
-
   text: {
     '&$default': {
       ...button('Default', 'Text'),
@@ -191,6 +173,35 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     },
     '&$secondary': {
       ...button('Secondary', 'Text'),
+    },
+  },
+  href: {
+    textDecoration: 'none',
+  },
+  round: {
+    borderRadius: Token.buttonRoundBorderRadius,
+  },
+  circle: {
+    borderRadius: Token.buttonCircleBorderRadius,
+  },
+  square: {
+    borderRadius: Token.buttonSquareBorderRadius,
+  },
+
+  disabled: {
+    cursor: 'not-allowed',
+    opacity: 0.65,
+  },
+  loading: {
+    cursor: 'not-allowed',
+    opacity: 0.65,
+
+    '&:active': {
+      animationName: 'none',
+    },
+
+    '&:hover': {
+      opacity: 0.65,
     },
   },
 };

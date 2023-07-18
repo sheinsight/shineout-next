@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type ButtonShape = 'circle' | 'round' | 'default';
+export type ButtonShape = 'circle' | 'round' | 'square';
 export type ButtonType =
   | 'default'
   | 'primary'
@@ -10,7 +10,7 @@ export type ButtonType =
   | 'success'
   | 'link';
 
-export interface ButtonPropsOwn {
+export interface BaseButtonProps {
   disabled?: boolean;
   loading?: boolean;
   dash?: boolean;
@@ -22,31 +22,7 @@ export interface ButtonPropsOwn {
   href?: string;
   target?: string;
   shape?: ButtonShape;
-  htmlType?: HTMLButtonElement['type'];
+  htmlType?: 'button' | 'submit' | 'reset';
   buttonRef?: React.Ref<HTMLButtonElement>;
   onClick?: React.MouseEventHandler;
 }
-
-export interface UseButtonRootSlotOwnProps {
-  onClick?: React.MouseEventHandler;
-}
-
-export interface BaseButtonProps
-  extends ButtonPropsOwn,
-    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonPropsOwn> {}
-
-export type UseButtonRootSlotProps<TOther = Record<string, unknown>> = Omit<
-  TOther,
-  keyof UseButtonRootSlotOwnProps
-> &
-  UseButtonRootSlotOwnProps;
-
-export type UseButtonSlotOwnProps = {
-  onClick: React.MouseEventHandler;
-};
-
-export type UseButtonSlotProps<TOther = Record<string, unknown>> = Omit<
-  TOther,
-  keyof UseButtonSlotOwnProps
-> &
-  UseButtonSlotOwnProps;

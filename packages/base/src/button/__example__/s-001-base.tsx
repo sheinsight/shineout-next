@@ -8,36 +8,42 @@
 import React from 'react';
 import { Button } from '@sheinx/base';
 import { useButtonStyle } from '@sheinx/shineout-style';
+import Icon from '../../icons';
 
 export default () => {
   const jssStyle = useButtonStyle();
-
+  const handleClick = () => {
+    console.log(233);
+  };
   return (
     <div>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
         <span>
-          <Button jssStyle={jssStyle} type='primary' size='large'>
-            Primary
+          <Button jssStyle={jssStyle} type='primary' onClick={handleClick}>
+            填充按钮
+            <span style={{ fontSize: 12, width: 12, height: 12, display: 'inline-block' }}>
+              {Icon.Close}
+            </span>
           </Button>
         </span>
         <span>
           <Button jssStyle={jssStyle} type='success'>
-            Success
+            填充按钮
           </Button>
         </span>
         <span>
           <Button jssStyle={jssStyle} type='danger'>
-            Danger
+            填充按钮
           </Button>
         </span>
         <span>
           <Button jssStyle={jssStyle} type='warning'>
-            Warning
+            填充按钮
           </Button>
         </span>
         <span>
           <Button jssStyle={jssStyle} type='secondary'>
-            Secondary
+            填充按钮
           </Button>
         </span>
       </div>
@@ -121,6 +127,34 @@ export default () => {
         </span>
         <span>
           <Button jssStyle={jssStyle} type='secondary' text>
+            Secondary
+          </Button>
+        </span>
+      </div>
+
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
+        <span>
+          <Button jssStyle={jssStyle} type='primary'>
+            Primary
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} type='success'>
+            Success
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} type='danger'>
+            Danger
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} type='warning'>
+            Warning
+          </Button>
+        </span>
+        <span>
+          <Button jssStyle={jssStyle} type='secondary'>
             Secondary
           </Button>
         </span>
