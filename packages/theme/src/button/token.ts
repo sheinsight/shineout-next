@@ -160,8 +160,8 @@ const buttonTokenValue = {
   },
   secondary: {
     font: { color: 'Neutral-text-4' },
-    background: { color: 'Neutral-fill-3' },
-    border: { color: 'Neutral-fill-3' },
+    background: { color: 'Neutral-fill-2' },
+    border: { color: 'Neutral-fill-2' },
     disabled: {
       font: { color: 'Neutral-text-2' },
       background: { color: 'Neutral-fill-2' },
@@ -183,7 +183,7 @@ const buttonTokenValue = {
       border: { color: 'Neutral-fill-4' },
     },
     outline: {
-      font: { color: 'Neutral-text-5' },
+      font: { color: 'Neutral-text-4' },
       background: { color: 'Neutral-fill-1' },
       border: { color: 'Neutral-border-2' },
       disabled: {
@@ -208,7 +208,7 @@ const buttonTokenValue = {
       },
     },
     text: {
-      font: { color: 'Neutral-text-5' },
+      font: { color: 'Neutral-text-4' },
       background: { color: 'Transparent' },
       border: { color: 'Transparent' },
       disabled: {

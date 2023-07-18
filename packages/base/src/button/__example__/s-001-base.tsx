@@ -6,22 +6,61 @@
  */
 
 import React from 'react';
-import { Button } from '@sheinx/base';
-import { useButtonStyle } from '@sheinx/shineout-style';
+import { Button, ButtonGroup } from '@sheinx/base';
+import { useButtonStyle, useButtonGroupStyle } from '@sheinx/shineout-style';
 import Icon from '../../icons';
 
 export default () => {
   const jssStyle = useButtonStyle();
+  const jssGroupStyle = useButtonGroupStyle();
+
   const handleClick = () => {
     console.log(233);
   };
+
+  const randerDropdown = () => {
+    return (
+      <div style={{ display: 'inline-block' }} className='so-dropdown'>
+        <Button jssStyle={jssStyle} type='danger' disabled outline>
+          <span style={{ width: 10, height: 10, display: 'inline-block' }}>{Icon.Close}</span>
+        </Button>
+      </div>
+    );
+  };
   return (
     <div>
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+      <div>
+        <ButtonGroup jssStyle={jssGroupStyle} size='small'>
+          <Button jssStyle={jssStyle} type='danger'>
+            APTX
+          </Button>
+          <Button jssStyle={jssStyle} type='secondary'>
+            SHEIN
+          </Button>
+          <Button jssStyle={jssStyle} type='secondary'>
+            SHEIN
+          </Button>
+          <Button jssStyle={jssStyle} type='primary'>
+            4869
+          </Button>
+        </ButtonGroup>
+        {/* <ButtonGroup jssStyle={jssGroupStyle} dash type='success' style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>增加库存</Button>
+          <Button jssStyle={jssStyle}>减少库存</Button>
+        </ButtonGroup> */}
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='danger' outline style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle} disabled>
+            填充按钮
+          </Button>
+          {randerDropdown()}
+        </ButtonGroup>
+      </div>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
         <span>
           <Button jssStyle={jssStyle} type='primary' onClick={handleClick}>
             填充按钮
-            <span style={{ fontSize: 12, width: 12, height: 12, display: 'inline-block' }}>
+            <span style={{ width: 10, height: 10, display: 'inline-block', marginLeft: 4 }}>
               {Icon.Close}
             </span>
           </Button>

@@ -49,10 +49,12 @@ const Button = (props: ButtonProps) => {
 
   const rootProps = getButtonProps();
   const { type: buttonType, ...buttonProps } = rootProps;
+
   console.log(buttonType);
+
   const childrenEl = getSpaceChildren(children, space);
 
-  let buttonInnerEl: React.ReactNode = <span>{childrenEl}</span>;
+  let buttonInnerEl: React.ReactNode = childrenEl;
 
   if (typeof renderInnerWrapper === 'function') {
     buttonInnerEl = renderInnerWrapper(childrenEl);

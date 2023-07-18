@@ -4,9 +4,12 @@ import React from 'react';
 
 export interface ButtonClasses {
   button: string;
+
+  // 形状
   round: string;
   circle: string;
   square: string;
+
   // 状态
   disabled: string;
   loading: string;
