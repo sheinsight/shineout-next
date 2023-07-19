@@ -35,23 +35,10 @@ export default () => {
   return (
     <div>
       <div>
-        <Button.Group jssStyle={jssGroupStyle} size='small'>
-          <Button jssStyle={jssStyle} type='danger'>
-            APTX
-          </Button>
-          <Button jssStyle={jssStyle} type='secondary'>
-            SHEIN
-          </Button>
-          <Button jssStyle={jssStyle} type='secondary'>
-            SHEIN
-          </Button>
-          <Button jssStyle={jssStyle} type='primary'>
-            4869
-          </Button>
-        </Button.Group>
-
         <ButtonGroup jssStyle={jssGroupStyle} type='danger' style={{ marginTop: 10 }}>
-          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle} disabled>
+            填充按钮
+          </Button>
           <Button jssStyle={jssStyle}>填充按钮</Button>
           <Button jssStyle={jssStyle}>填充按钮</Button>
           <Button jssStyle={jssStyle}>填充按钮</Button>
@@ -60,8 +47,12 @@ export default () => {
 
         <ButtonGroup jssStyle={jssGroupStyle} type='secondary' style={{ marginTop: 10 }}>
           <Button jssStyle={jssStyle}>填充按钮</Button>
-          <Button jssStyle={jssStyle}>填充按钮</Button>
-          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle} type='primary'>
+            填充按钮
+          </Button>
+          <Button jssStyle={jssStyle} disabled>
+            填充按钮
+          </Button>
           <Button jssStyle={jssStyle}>填充按钮</Button>
           {randerDropdown('secondary')}
         </ButtonGroup>
@@ -72,6 +63,14 @@ export default () => {
           <Button jssStyle={jssStyle}>填充按钮</Button>
           <Button jssStyle={jssStyle}>填充按钮</Button>
           {randerDropdown('primary')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='success' style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('success')}
         </ButtonGroup>
 
         <ButtonGroup jssStyle={jssGroupStyle} type='warning' style={{ marginTop: 10 }}>
@@ -151,12 +150,12 @@ export default () => {
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
         <span>
           <Button jssStyle={jssStyle} type='primary' onClick={handleClick}>
-            填充按钮
+            PRIMARY
           </Button>
         </span>
         <span>
           <Button jssStyle={jssStyle} type='success'>
-            填充按钮
+            SUCCESS
           </Button>
         </span>
         <span>

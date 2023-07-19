@@ -18,6 +18,7 @@ type ButtonGroupClass =
   | 'large';
 
 const types = ['Default', 'Primary', 'Secondary', 'Danger', 'Warning', 'Success'];
+type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 
 const getSelector = (type: string) => {
   let splitSelector: string[] = [];
@@ -29,12 +30,24 @@ const getSelector = (type: string) => {
   return splitSelector;
 };
 
-const splitLine = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success') => {
+const splitLine = (type: ButtonType) => {
   const splitSelector = getSelector(type);
+  const _type = type.toLocaleLowerCase();
   return {
-    [`& > button[class*="-${type.toLocaleLowerCase()}"]`]: {
+    [`& > button[class*="-${_type}"]`]: {
+      // 禁用状态
+      [`&[class*="-disabled"]`]: {
+        [`& + button[class*="-${_type}"]:not(:hover)`]: {
+          // 后一个按钮的伪类元素
+          '&::before': {
+            // backgroundColor: 'transparent',
+            backgroundColor: Token[`button${type}SplitDisabledBackgroundColor`],
+          },
+        },
+      },
+
       '&::before': {
-        backgroundColor: Token[`button${type}FontColor`],
+        backgroundColor: Token[`button${type}SplitBackgroundColor`],
       },
       '&:hover': {
         // dropdown 按钮
@@ -46,7 +59,7 @@ const splitLine = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Succe
           },
         },
         // 后一个按钮的伪类元素
-        [`& + button[class*="-${type.toLocaleLowerCase()}"]`]: {
+        [`& + button[class*="-${_type}"]`]: {
           '&::before': {
             backgroundColor: 'transparent',
           },
@@ -63,7 +76,7 @@ const splitLine = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Succe
       },
     },
     // dropdown 按钮
-    [`& div[class*="-dropdown"] > button[class*="-${type.toLocaleLowerCase()}"]`]: {
+    [`& div[class*="-dropdown"] > button[class*="-${_type}"]`]: {
       position: 'relative',
       borderTopLeftRadius: 0,
       borderBottomLeftRadius: 0,
@@ -84,7 +97,7 @@ const splitLine = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Succe
         height: '50%',
         position: 'absolute',
         transition: 'all 0.3s',
-        backgroundColor: Token[`button${type}FontColor`],
+        backgroundColor: Token[`button${type}SplitBackgroundColor`],
       },
       '&:hover': {
         '&::before': {
@@ -95,7 +108,7 @@ const splitLine = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Succe
   };
 };
 
-const splitLineOutlint = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success') => {
+const splitLineOutlint = (type: ButtonType) => {
   const _type = type.toLocaleLowerCase();
   return {
     [`& > button[class*="-${_type}"]`]: {
@@ -105,12 +118,12 @@ const splitLineOutlint = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' |
           [`& + button[class*="-${_type}"]`]: {
             // 后一个按钮的伪类元素
             '&::before': {
-              backgroundColor: Token[`button${type}OutlineDisabledBackgroundColor`],
+              backgroundColor: Token[`button${type}OutlineSplitDisabledBackgroundColor`],
             },
           },
           // 当前按钮的伪类元素
           '&::before': {
-            backgroundColor: Token[`button${type}OutlineDisabledBackgroundColor`],
+            backgroundColor: Token[`button${type}OutlineSplitDisabledBackgroundColor`],
           },
         },
       },
@@ -119,7 +132,7 @@ const splitLineOutlint = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' |
         top: 'calc(1em / 2 + 2px)',
         left: -1,
         width: 1,
-        backgroundColor: Token[`button${type}OutlineBorderColor`],
+        backgroundColor: Token[`button${type}OutlineSplitBackgroundColor`],
       },
       '&:hover': {
         // dropdown 按钮
@@ -128,13 +141,13 @@ const splitLineOutlint = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' |
             // 禁用
             [`&[class*="-disabled"]`]: {
               '&::before': {
-                backgroundColor: Token[`button${type}SplitlineDisabledBackgroundColor`],
+                backgroundColor: Token[`button${type}SplitDisabledBackgroundColor`],
               },
             },
             '&::before': {
               top: -1,
               height: 'calc(100% + 2px)',
-              backgroundColor: Token[`button${type}OutlineBorderColor`],
+              backgroundColor: Token[`button${type}OutlineSplitHoverBackgroundColor`],
             },
           },
         },
@@ -143,14 +156,14 @@ const splitLineOutlint = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' |
           '&::before': {
             top: -1,
             height: 'calc(100% + 2px)',
-            backgroundColor: Token[`button${type}OutlineHoverBorderColor`],
+            backgroundColor: Token[`button${type}OutlineSplitHoverBackgroundColor`],
           },
         },
         // 当前按钮的伪类元素
         '&::before': {
           top: -1,
           height: 'calc(100% + 2px)',
-          backgroundColor: Token[`button${type}OutlineHoverBorderColor`],
+          backgroundColor: Token[`button${type}OutlineSplitHoverBackgroundColor`],
         },
 
         // active 状态
@@ -161,25 +174,25 @@ const splitLineOutlint = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' |
               // 禁用
               [`&[class*="-disabled"]`]: {
                 '&::before': {
-                  backgroundColor: Token[`button${type}OutlineDisabledBackgroundColor`],
+                  backgroundColor: Token[`button${type}OutlineSplitDisabledBackgroundColor`],
                 },
               },
               '&::before': {
                 top: -1,
                 height: 'calc(100% + 2px)',
-                backgroundColor: Token[`button${type}OutlineActiveBorderColor`],
+                backgroundColor: Token[`button${type}OutlineSplitActiveBackgroundColor`],
               },
             },
           },
           // 后一个按钮的伪类元素
           [`& + button[class*="-${_type}"]`]: {
             '&::before': {
-              backgroundColor: Token[`button${type}OutlineActiveBorderColor`],
+              backgroundColor: Token[`button${type}OutlineSplitActiveBackgroundColor`],
             },
           },
           // 当前按钮的伪类元素
           '&::before': {
-            backgroundColor: Token[`button${type}OutlineActiveBorderColor`],
+            backgroundColor: Token[`button${type}OutlineSplitActiveBackgroundColor`],
           },
         },
       },
@@ -193,31 +206,37 @@ const splitLineOutlint = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' |
       // 禁用状态
       [`&[class*="-disabled"]`]: {
         '&::before': {
-          backgroundColor: Token[`button${type}SplitlineDisabledBackgroundColor`],
+          backgroundColor: Token[`button${type}OutlineSplitDisabledBackgroundColor`],
         },
       },
       '&::before': {
         height: '1em',
         top: 'calc(1em / 2 + 1px)',
-        backgroundColor: Token[`button${type}OutlineBorderColor`],
+        backgroundColor: Token[`button${type}OutlineSplitBackgroundColor`],
       },
       '&:hover': {
         '&::before': {
           top: -1,
           height: 'calc(100% + 2px)',
-          backgroundColor: Token[`button${type}OutlineBorderColor`],
+          backgroundColor: Token[`button${type}OutlineSplitHoverBackgroundColor`],
+        },
+        // active 状态
+        '&:active': {
+          '&::before': {
+            backgroundColor: Token[`button${type}OutlineSplitActiveBackgroundColor`],
+          },
         },
       },
     },
   };
 };
 
-const splitLineText = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success') => {
+const splitLineText = (type: ButtonType) => {
   const _type = type.toLocaleLowerCase();
   return {
     [`& > button[class*="-${type.toLocaleLowerCase()}"]`]: {
       '&::before': {
-        backgroundColor: Token[`button${type}TextFontColor`],
+        backgroundColor: Token[`button${type}TextSplitBackgroundColor`],
       },
     },
     // dropdown 按钮
@@ -229,19 +248,23 @@ const splitLineText = (type: 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'S
       // 禁用状态
       [`&[class*="-disabled"]`]: {
         '&::before': {
-          backgroundColor: Token[`button${type}TextDisabledFontColor`],
+          backgroundColor: Token[`button${type}TextSplitDisabledBackgroundColor`],
         },
       },
       '&::before': {
         height: '1em',
         top: 'calc(1em / 2 + 1px)',
-        backgroundColor: Token[`button${type}TextFontColor`],
+        backgroundColor: Token[`button${type}TextSplitBackgroundColor`],
       },
       '&:hover': {
         '&::before': {
-          top: -1,
-          height: 'calc(100% + 2px)',
-          backgroundColor: Token[`button${type}TextFontColor`],
+          backgroundColor: 'transparent',
+        },
+        // active 状态
+        '&:active': {
+          '&::before': {
+            backgroundColor: 'transparent',
+          },
         },
       },
     },
@@ -272,6 +295,7 @@ const ButtonGroupStyle: JsStyles<ButtonGroupClass> = {
     '& > button:not(:first-child):not(:last-child)': {
       borderRadius: 0,
       borderRight: 'none',
+      borderLeft: 'none',
       position: 'relative',
       '&::before': {
         content: '" "',
@@ -333,8 +357,7 @@ const ButtonGroupStyle: JsStyles<ButtonGroupClass> = {
       },
     },
     '& > button:not(:first-child):not(:last-child)': {
-      borderLeftWidth: 1,
-      borderRightWidth: 1,
+      borderLeft: 'none',
     },
     ...splitLineOutlint('Primary'),
     ...splitLineOutlint('Success'),
