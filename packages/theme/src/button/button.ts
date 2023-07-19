@@ -385,7 +385,7 @@ const button: ButtonTokens = {
   buttonLargeRoundBorderRadius: 'Radius-1000',
   buttonLargeCircleBorderRadius: 'Radius-50%',
   buttonLargeSquareBorderRadius: 'Radius-4',
-  buttonNearlyMargin: '',
+  buttonNearlyMargin: 'Margin-8',
 };
 
 export default button;

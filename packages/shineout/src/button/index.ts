@@ -1,15 +1,13 @@
-import IButton from './button';
-// ...
+import Button from './button';
+import Group from './group';
 
-type RefButton = typeof IButton;
+type RefButton = typeof Button;
 export interface ButtonComponent extends RefButton {
+  Group: typeof Group;
   displayName: string;
-  // ...
 }
 
-const ButtonComp: ButtonComponent = IButton as ButtonComponent; // as ButtonComponent;
+(Button as ButtonComponent).displayName = 'ShineoutButton';
+(Button as ButtonComponent).Group = Group;
 
-ButtonComp.displayName = 'ShineoutButton';
-// ...
-
-export default ButtonComp;
+export default Button as ButtonComponent;

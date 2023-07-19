@@ -9,15 +9,41 @@ import { Button } from 'shineout';
 export default () => {
   return (
     <div>
-      <div>shineout</div>
       <div>
-        <Button>Default</Button>
+        <Button.Group type='primary' outline style={{ marginBottom: 10 }}>
+          <Button disabled>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+        </Button.Group>
 
-        <Button type='primary'>Primary</Button>
-        <Button type='success'>Success</Button>
-        <Button type='danger'>Danger</Button>
-        <Button type='warning'>Warning</Button>
-        <Button type='secondary'>Secondary</Button>
+        <Button.Group type='primary' shape='round' outline style={{ marginBottom: 10 }}>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+        </Button.Group>
+
+        <Button.Group type='primary' text style={{ marginBottom: 10 }}>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+        </Button.Group>
+
+        <Button.Group type='success' style={{ marginBottom: 10 }}>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+        </Button.Group>
+
+        <Button.Group type='success' shape='round' style={{ marginBottom: 10 }}>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+          <Button>SHEIN</Button>
+        </Button.Group>
       </div>
     </div>
   );

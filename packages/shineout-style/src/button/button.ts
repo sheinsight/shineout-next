@@ -52,6 +52,7 @@ const button = (type: ButtonType, styles: ButtonStyleType) => ({
 
 const ButtonStyle: JsStyles<ButtonClass> = {
   button: {
+    height: `32px`,
     outline: 'none',
     fontWeight: 400,
     cursor: 'pointer',
@@ -72,6 +73,10 @@ const ButtonStyle: JsStyles<ButtonClass> = {
       marginLeft: Token.buttonNearlyMargin,
     },
 
+    '[class*="button-group"] > & + &': {
+      marginLeft: 0,
+    },
+
     '&:active': {
       animationDelay: '0s',
       backgroundImage: 'none',
@@ -85,13 +90,27 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
 
   small: {
+    height: `28px`,
+
     fontSize: Token.buttonSmallFontSize,
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
+
+    '&$circle,&$square': {
+      width: `28px`,
+      height: `28px`,
+    },
   },
 
   large: {
+    height: `40px`,
+
     fontSize: Token.buttonLargeFontSize,
     padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
+
+    '&$circle,&$square': {
+      width: `40px`,
+      height: `40px`,
+    },
   },
 
   default: {
@@ -182,9 +201,13 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     borderRadius: Token.buttonRoundBorderRadius,
   },
   circle: {
+    width: `32px`,
+    height: `32px`,
     borderRadius: Token.buttonCircleBorderRadius,
   },
   square: {
+    width: `32px`,
+    height: `32px`,
     borderRadius: Token.buttonSquareBorderRadius,
   },
 
