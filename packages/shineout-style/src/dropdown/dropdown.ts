@@ -20,10 +20,6 @@ const dropdown: JsStyles<DropDownClass> = {
   wrapper: {
     display: 'inline-block',
     position: 'relative',
-    '& button': {
-      lineHeight: token.lineHeightDynamic,
-      fontSize: token.dropdownListFontSize,
-    },
   },
   open: {
     '& > $button $caret': {
@@ -62,7 +58,6 @@ const dropdown: JsStyles<DropDownClass> = {
     width: '1em',
     height: '1em',
     display: 'inline-block',
-    verticalAlign: 'middle',
     lineHeight: '1',
     '$wrapper[data-position^="right"] > $button & > svg': {
       transform: 'rotate(-90deg)',
@@ -75,8 +70,16 @@ const dropdown: JsStyles<DropDownClass> = {
     },
   },
 
-  content: {},
-  button: {},
+  content: {
+    flex: '1',
+    minWidth: '0',
+  },
+  button: {
+    '$wrapper &': {
+      display: 'flex',
+      alignItems: 'center',
+    },
+  },
   item: {
     display: 'block',
     lineHeight: token.lineHeightDynamic,

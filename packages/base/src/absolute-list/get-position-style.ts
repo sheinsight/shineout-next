@@ -1,15 +1,15 @@
 import React from 'react';
 
-export const PICKER_MARGIN = 4;
-const mainMargin = `calc(100% + ${PICKER_MARGIN}px`;
-const halfMargin = `calc(50% + ${PICKER_MARGIN}px`;
 const ReverseDir: Record<string, string> = {
   left: 'right',
   right: 'left',
   top: 'bottom',
   bottom: 'top',
 };
-export const getPositionStyle = (position: string) => {
+export const getPositionStyle = (position: string, config?: { listMargin?: number }) => {
+  const { listMargin = 0 } = config || {};
+  const mainMargin = `calc(100% + ${listMargin}px`;
+  const halfMargin = `calc(50% + ${listMargin}px`;
   let newStyle: React.CSSProperties = {};
   if (position === 'drop-down') {
     newStyle = {

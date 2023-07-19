@@ -1,6 +1,7 @@
 import React from 'react';
 import { CommonType } from '../common/type';
 import { AnimationListClass } from '../animation-list/animation-list.type';
+import { ButtonClasses } from '../button/button.type';
 
 export interface DropdownClass {
   wrapper: string;
@@ -93,6 +94,7 @@ export interface SimpleDropdownProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     Pick<AbsoluteProps, 'absolute'> {
   animationListJssStyle: AnimationListClass;
+  buttonJssStyle: ButtonClasses;
   jssStyle: DropdownClass;
   /**
    * @inner 内部属性

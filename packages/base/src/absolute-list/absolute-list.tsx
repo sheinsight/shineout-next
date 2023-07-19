@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { AbsoluteListProps } from './absolute-list.type';
 import { util } from '@sheinx/hooks';
 import { getDefaultContainer } from '../config';
-import { getPositionStyle, PICKER_MARGIN } from './get-position-style';
+import { getPositionStyle } from './get-position-style';
 
 let root: HTMLDivElement;
 
@@ -41,8 +41,17 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     containerRect: { left: 0, width: 0 } as DOMRect,
     containerScroll: { left: 0, width: 0 } as DOMRect,
   });
-  const { absolute, position, children, parentElement, scrollElement, fixedWidth, zIndex, focus } =
-    props;
+  const {
+    absolute,
+    position,
+    children,
+    parentElement,
+    scrollElement,
+    fixedWidth,
+    zIndex,
+    focus,
+    listMargin = 2,
+  } = props;
 
   const getContainer = () => {
     if (typeof absolute === 'function') {
@@ -103,9 +112,9 @@ const AbsoluteList = (props: AbsoluteListProps) => {
         style.transform = 'translateX(-50%)';
       }
       if (v === 'bottom') {
-        style.top = rect.bottom - containerRect.top + containerScroll.top + PICKER_MARGIN;
+        style.top = rect.bottom - containerRect.top + containerScroll.top + listMargin;
       } else {
-        style.top = rect.top - containerRect.top + containerScroll.top - PICKER_MARGIN;
+        style.top = rect.top - containerRect.top + containerScroll.top - listMargin;
         style.transform += 'translateY(-100%)';
       }
     } else if (horizontalPosition.includes(targetPosition)) {
@@ -122,9 +131,9 @@ const AbsoluteList = (props: AbsoluteListProps) => {
         style.transform = 'translateY(-50%)';
       }
       if (h === 'right') {
-        style.left = rect.right - containerRect.left + containerScroll.left + PICKER_MARGIN;
+        style.left = rect.right - containerRect.left + containerScroll.left + listMargin;
       } else {
-        style.left = rect.left - containerRect.left + containerScroll.left - PICKER_MARGIN;
+        style.left = rect.left - containerRect.left + containerScroll.left - listMargin;
         style.transform += ' translateX(-100%)';
       }
     }
@@ -161,7 +170,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
   // 非 absolute 模式
   useEffect(() => {
     if (absolute) return;
-    setStyle({ ...childStyle, ...getPositionStyle(position) });
+    setStyle({ ...childStyle, ...getPositionStyle(position, { listMargin }) });
   }, [position, absolute]);
   const element = getElement();
 

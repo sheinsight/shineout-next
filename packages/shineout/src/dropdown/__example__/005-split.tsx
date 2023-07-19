@@ -5,7 +5,7 @@
  *    -- Dropdown can be combined with Button used in Button.Group.
  */
 import React from 'react';
-import { Dropdown, Message, Button, TYPE } from 'shineout';
+import { Button, Dropdown, TYPE } from 'shineout';
 
 type DropdownItem = TYPE.Dropdown.Item;
 

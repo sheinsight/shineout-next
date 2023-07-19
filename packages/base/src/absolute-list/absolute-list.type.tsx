@@ -37,6 +37,12 @@ export interface AbsoluteListProps {
    */
   zIndex?: number;
 
+  /**
+   * @cn 弹出层距离目标元素的间距
+   * @default 2
+   */
+  listMargin?: number;
+
   scrollElement?: HTMLElement;
   scrollLeft?: number;
   scrollTop?: number;

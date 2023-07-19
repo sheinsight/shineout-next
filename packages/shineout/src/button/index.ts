@@ -7,7 +7,7 @@ export interface ButtonComponent extends RefButton {
   // ...
 }
 
-const ButtonComp: ButtonComponent = IButton; // as ButtonComponent;
+const ButtonComp: ButtonComponent = IButton as ButtonComponent; // as ButtonComponent;
 
 ButtonComp.displayName = 'ShineoutButton';
 // ...

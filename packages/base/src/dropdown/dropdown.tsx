@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import Button from '../button';
 import { DropdownNode, MenuPosition, SimpleDropdownProps } from './dropdown.type';
 import { useClickAway, util } from '@sheinx/hooks';
 import AnimationList from '../animation-list';
@@ -42,9 +43,12 @@ const Dropdown = (props: SimpleDropdownProps) => {
     columns,
     width,
     disabled,
-    trigger,
+    trigger = 'click',
     style,
     className,
+    buttonJssStyle,
+    type = 'primary',
+    size,
   } = props;
 
   const handleFocus = () => {
@@ -131,21 +135,22 @@ const Dropdown = (props: SimpleDropdownProps) => {
       );
     } else
       return (
-        <button
-          type={'button'}
+        <Button
+          jssStyle={buttonJssStyle}
+          text
           disabled={props.disabled}
           onClick={handleFocus}
-          // outline={outline}
+          outline={props.outline}
           className={classNames({
             [jssStyle.button]: true,
             [jssStyle.splitButton]: !placeholder,
           })}
-          // type={type}
-          // size={size}
+          type={type}
+          size={size}
           key='button'
         >
           {child}
-        </button>
+        </Button>
       );
   };
 
@@ -158,6 +163,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       const { children } = d;
       return children ? (
         <Dropdown
+          buttonJssStyle={buttonJssStyle}
           jssStyle={jssStyle}
           animationListJssStyle={animationListJssStyle}
           style={{ width: '100%' }}
