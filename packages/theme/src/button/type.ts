@@ -2290,7 +2290,7 @@ export interface ButtonTokens {
   buttonLargeSquareBorderRadius: string;
   /**
    * @type {string}
-   * @token
+   * @token Margin-8
    * @description 按钮相邻之间的外边距
    */
   buttonNearlyMargin: string;

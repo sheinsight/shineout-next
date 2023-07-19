@@ -179,12 +179,12 @@ export default () => {
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
         <span>
           <Button jssStyle={jssStyle} type='primary' outline>
-            Primary
+            PRIMARY
           </Button>
         </span>
         <span>
           <Button jssStyle={jssStyle} type='success' outline>
-            Success
+            SUCCESS
           </Button>
         </span>
         <span>
@@ -207,12 +207,12 @@ export default () => {
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
         <span>
           <Button jssStyle={jssStyle} type='primary' dash>
-            Primary
+            PRIMARY
           </Button>
         </span>
         <span>
           <Button jssStyle={jssStyle} type='success' dash>
-            Success
+            SUCCESS
           </Button>
         </span>
         <span>
@@ -235,12 +235,12 @@ export default () => {
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
         <span>
           <Button jssStyle={jssStyle} type='primary' text>
-            Primary
+            PRIMARY
           </Button>
         </span>
         <span>
           <Button jssStyle={jssStyle} type='success' text>
-            Success
+            SUCCESS
           </Button>
         </span>
         <span>
@@ -263,12 +263,12 @@ export default () => {
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
         <span>
           <Button jssStyle={jssStyle} type='primary'>
-            Primary
+            PRIMARY
           </Button>
         </span>
         <span>
           <Button jssStyle={jssStyle} type='success'>
-            Success
+            SUCCESS
           </Button>
         </span>
         <span>
@@ -284,6 +284,74 @@ export default () => {
         <span>
           <Button jssStyle={jssStyle} type='secondary'>
             Secondary
+          </Button>
+        </span>
+      </div>
+
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
+        <span>
+          <Button jssStyle={jssStyle} type='primary' shape='circle' size='small'>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='circle'>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='circle' size='large'>
+            A
+          </Button>
+
+          <Button jssStyle={jssStyle} type='primary' shape='circle' outline size='small'>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='circle' outline>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='circle' outline size='large'>
+            A
+          </Button>
+
+          <Button jssStyle={jssStyle} type='primary' shape='circle' dash size='small'>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='circle' dash>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='circle' dash size='large'>
+            A
+          </Button>
+        </span>
+      </div>
+
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
+        <span>
+          <Button jssStyle={jssStyle} type='primary' shape='square' size='small'>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='square'>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='square' size='large'>
+            A
+          </Button>
+
+          <Button jssStyle={jssStyle} type='primary' shape='square' outline size='small'>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='square' outline>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='square' outline size='large'>
+            A
+          </Button>
+
+          <Button jssStyle={jssStyle} type='primary' shape='square' dash size='small'>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='square' dash>
+            A
+          </Button>
+          <Button jssStyle={jssStyle} type='primary' shape='square' dash size='large'>
+            A
           </Button>
         </span>
       </div>
