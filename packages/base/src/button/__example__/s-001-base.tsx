@@ -18,10 +18,15 @@ export default () => {
     console.log(233);
   };
 
-  const randerDropdown = () => {
+  const randerDropdown = (type: any, style?: any) => {
     return (
       <div style={{ display: 'inline-block' }} className='so-dropdown'>
-        <Button jssStyle={jssStyle} type='danger' disabled outline>
+        <Button
+          jssStyle={jssStyle}
+          type={type}
+          outline={style === 'outline' ? true : undefined}
+          text={style === 'text' ? true : undefined}
+        >
           <span style={{ width: 10, height: 10, display: 'inline-block' }}>{Icon.Close}</span>
         </Button>
       </div>
@@ -30,7 +35,7 @@ export default () => {
   return (
     <div>
       <div>
-        <ButtonGroup jssStyle={jssGroupStyle} size='small'>
+        <Button.Group jssStyle={jssGroupStyle} size='small'>
           <Button jssStyle={jssStyle} type='danger'>
             APTX
           </Button>
@@ -43,26 +48,110 @@ export default () => {
           <Button jssStyle={jssStyle} type='primary'>
             4869
           </Button>
-        </ButtonGroup>
-        {/* <ButtonGroup jssStyle={jssGroupStyle} dash type='success' style={{ marginTop: 10 }}>
-          <Button jssStyle={jssStyle}>增加库存</Button>
-          <Button jssStyle={jssStyle}>减少库存</Button>
-        </ButtonGroup> */}
+        </Button.Group>
 
+        <ButtonGroup jssStyle={jssGroupStyle} type='danger' style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('danger')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='secondary' style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('secondary')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='primary' style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('primary')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='warning' style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('warning')}
+        </ButtonGroup>
+        {/* outline */}
         <ButtonGroup jssStyle={jssGroupStyle} type='danger' outline style={{ marginTop: 10 }}>
-          <Button jssStyle={jssStyle} disabled>
-            填充按钮
-          </Button>
-          {randerDropdown()}
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('danger', 'outline')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='secondary' outline style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('secondary', 'outline')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='primary' outline style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('primary', 'outline')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='warning' outline style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('warning', 'outline')}
+        </ButtonGroup>
+
+        {/* text */}
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='danger' text style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('danger', 'text')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='secondary' text style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('secondary', 'text')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='primary' text style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('primary', 'text')}
+        </ButtonGroup>
+
+        <ButtonGroup jssStyle={jssGroupStyle} type='warning' text style={{ marginTop: 10 }}>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {randerDropdown('warning', 'text')}
         </ButtonGroup>
       </div>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
         <span>
           <Button jssStyle={jssStyle} type='primary' onClick={handleClick}>
             填充按钮
-            <span style={{ width: 10, height: 10, display: 'inline-block', marginLeft: 4 }}>
-              {Icon.Close}
-            </span>
           </Button>
         </span>
         <span>

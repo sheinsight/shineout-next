@@ -2,6 +2,7 @@ import { useButton } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
 import { ButtonProps } from './button.type';
+import ButtonGroup from './button-group';
 
 const Button = (props: ButtonProps) => {
   const {
@@ -84,5 +85,7 @@ const Button = (props: ButtonProps) => {
     </button>
   );
 };
+
+Button.Group = ButtonGroup;
 
 export default Button;
