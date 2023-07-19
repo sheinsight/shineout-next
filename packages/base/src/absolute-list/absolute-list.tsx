@@ -7,6 +7,9 @@ import { getPositionStyle, PICKER_MARGIN } from './get-position-style';
 
 let root: HTMLDivElement;
 
+//todo rtl
+//todo overDoc
+
 function initRoot() {
   const defaultContainer = getDefaultContainer();
   root = document.createElement('div');
@@ -15,8 +18,15 @@ function initRoot() {
 }
 
 const listPosition = ['drop-down', 'drop-up'];
-const pickerPosition = ['left-bottom', 'left-top', 'right-bottom', 'right-top'];
-const dropdownPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
+const horizontalPosition = [
+  'left-bottom',
+  'left-top',
+  'right-bottom',
+  'right-top',
+  'left',
+  'right',
+];
+const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right', 'bottom', 'top'];
 
 function getRoot() {
   if (!root || util.isInDocument(root) === false) initRoot();
@@ -62,9 +72,6 @@ const AbsoluteList = (props: AbsoluteListProps) => {
       style[widthKey] = rect.width;
     }
     let targetPosition: string = position;
-    if (dropdownPosition.includes(position)) {
-      targetPosition = position.split('-').reverse().join('-');
-    }
     const container = getContainer();
     const defaultContainer = getDefaultContainer();
     const rootContainer = container === getRoot() || !container ? defaultContainer : container;
@@ -82,20 +89,43 @@ const AbsoluteList = (props: AbsoluteListProps) => {
       } else {
         style.bottom = -(rect.top - containerRect.top + containerScroll.top);
       }
-    } else if (pickerPosition.includes(targetPosition)) {
-      const [h, v] = targetPosition.split('-');
+    } else if (verticalPosition.includes(targetPosition)) {
+      const [v, h] = targetPosition.split('-');
       if (h === 'left') {
         style.left = rect.left - containerRect.left + containerScroll.left;
+        style.transform = '';
+      } else if (h === 'right') {
+        style.left = rect.right;
+        style.transform = 'translateX(-100%)';
       } else {
-        style.right =
-          containerRect.width - rect.width - rect.left + containerRect.left - containerScroll.left;
-        style.left = 'auto';
+        // 居中对齐
+        style.left = rect.left + rect.width / 2;
+        style.transform = 'translateX(-50%)';
       }
       if (v === 'bottom') {
         style.top = rect.bottom - containerRect.top + containerScroll.top + PICKER_MARGIN;
       } else {
         style.top = rect.top - containerRect.top + containerScroll.top - PICKER_MARGIN;
+        style.transform += 'translateY(-100%)';
+      }
+    } else if (horizontalPosition.includes(targetPosition)) {
+      const [h, v] = targetPosition.split('-');
+      if (v === 'top') {
+        style.top = rect.top - containerRect.top + containerScroll.top;
+        style.transform = '';
+      } else if (v === 'bottom') {
+        style.top = rect.bottom;
         style.transform = 'translateY(-100%)';
+      } else {
+        // 居中对齐
+        style.top = rect.top + rect.height / 2;
+        style.transform = 'translateY(-50%)';
+      }
+      if (h === 'right') {
+        style.left = rect.right - containerRect.left + containerScroll.left + PICKER_MARGIN;
+      } else {
+        style.left = rect.left - containerRect.left + containerScroll.left - PICKER_MARGIN;
+        style.transform += ' translateX(-100%)';
       }
     }
     return style;

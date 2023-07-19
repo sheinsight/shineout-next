@@ -17,21 +17,41 @@ const positionMap = {
   'top-left': 'right-bottom',
   'bottom-right': 'left-top',
   'bottom-left': 'right-top',
+  left: 'left',
+  right: 'right',
+  top: 'right',
+  bottom: 'right',
   auto: '',
 };
 
 const Dropdown = (props: SimpleDropdownProps) => {
   const { open, setOpen } = useControlOpen({ open: props.open });
+  const { current: context } = useRef({
+    closeTimer: null as NodeJS.Timeout | null,
+  });
   const [position, setPosition] = useState<MenuPosition>(
     props.position && props.position !== 'auto' ? props.position : 'bottom-left',
   );
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
-  const { placeholder, animationListJssStyle, jssStyle, isSub, columns, width } = props;
+  const {
+    placeholder,
+    animationListJssStyle,
+    jssStyle,
+    isSub,
+    columns,
+    width,
+    disabled,
+    trigger,
+    style,
+    className,
+  } = props;
 
   const handleFocus = () => {
     const { onCollapse } = props;
     const wrapper = wrapRef.current;
+    if (context.closeTimer) clearTimeout(context.closeTimer);
+    if (open) return;
     if (props.position === 'auto') {
       const newPosition = util.getMenuPosition(wrapper);
       if (newPosition !== position) setPosition(newPosition);
@@ -42,16 +62,39 @@ const Dropdown = (props: SimpleDropdownProps) => {
     setOpen(true);
   };
 
-  const handleBlur = () => {
-    const { onCollapse } = props;
-    if (onCollapse) {
-      onCollapse(false);
+  const handleBlur = (delay = 0) => {
+    if (!open) return;
+    if (context.closeTimer) clearTimeout(context.closeTimer);
+    context.closeTimer = setTimeout(() => {
+      const { onCollapse } = props;
+      if (onCollapse) {
+        onCollapse(false);
+      }
+      setOpen(false);
+    }, delay);
+  };
+
+  // todo
+  const handleToggle = (show: boolean) => {
+    if (disabled) return;
+    if (trigger === 'click') return;
+    if (show) {
+      handleFocus();
+    } else {
+      handleBlur(200);
     }
-    setOpen(false);
+  };
+
+  const handleMouseEnter = () => {
+    handleToggle(true);
+  };
+
+  const handleMouseLeave = () => {
+    handleToggle(false);
   };
 
   useClickAway({
-    onClickAway: handleBlur,
+    onClickAway: () => handleBlur(),
     target: [wrapRef, listRef],
   });
 
@@ -67,7 +110,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       </span>,
       caret,
     ];
-    if (['left-bottom', 'left-top'].includes(position!)) {
+    if (['left-bottom', 'left-top', 'left'].includes(position!)) {
       child.reverse();
     }
     if (isSub) {
@@ -145,7 +188,17 @@ const Dropdown = (props: SimpleDropdownProps) => {
   };
 
   return (
-    <div className={jssStyle.wrapper} ref={wrapRef}>
+    <div
+      className={classNames(className, {
+        [jssStyle.wrapper]: true,
+        [jssStyle.open]: !isSub && open,
+      })}
+      ref={wrapRef}
+      style={style}
+      data-position={position}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {renderButton()}
       <AbsoluteList
         position={position}

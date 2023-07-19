@@ -4,5 +4,6 @@ export { default as Form } from './form';
 export { default as Radio } from './radio';
 export { default as Checkbox } from './Checkbox';
 export { default as Rule } from './rule';
+export { default as Dropdown } from './dropdown';
 
 export * as TYPE from './type';

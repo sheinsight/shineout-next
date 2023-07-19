@@ -4,6 +4,7 @@ import { AnimationListClass } from '../animation-list/animation-list.type';
 
 export interface DropdownClass {
   wrapper: string;
+  open: string;
   boxList: string;
   list: string;
   caret: string;
@@ -23,7 +24,11 @@ export type MenuPosition =
   | 'top-right'
   | 'top-left'
   | 'bottom-right'
-  | 'bottom-left';
+  | 'bottom-left'
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'bottom';
 
 export type TriggerType = 'click' | 'hover';
 

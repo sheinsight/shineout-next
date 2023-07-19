@@ -10,16 +10,29 @@ import { useAnimationListStyle, useDropdownStyle } from '@sheinx/shineout-style'
 
 const data: DropdownItem[] = [
   {
-    content: 'Submenu',
+    content: 'SubmenuSubmenuSubmenuSubmenuSubmenu',
     children: [
       {
         content: 'Link to Google',
-        target: '_blank',
-        url: 'https://google.com',
+        children: [
+          {
+            content: 'Link to Google',
+          },
+          {
+            content: 'Disabled',
+            disabled: true,
+          },
+          {
+            content: '666',
+          },
+        ],
       },
       {
         content: 'Disabled',
         disabled: true,
+      },
+      {
+        content: '666',
       },
     ],
   },
@@ -28,9 +41,18 @@ const data: DropdownItem[] = [
   </a>,
   {
     content: 'Message',
-    onClick: () => {
-      alert('Some message.');
-    },
+    children: [
+      {
+        content: 'shuai',
+      },
+      {
+        content: 'kukuku',
+        disabled: true,
+      },
+      {
+        content: 'memem666',
+      },
+    ],
   },
 ];
 
@@ -41,6 +63,7 @@ const App: React.FC = () => {
     <Dropdown
       animationListJssStyle={animationListStyle}
       jssStyle={dropdownStyle}
+      position={'bottom'}
       trigger='click'
       placeholder='Dropdown'
       data={data}

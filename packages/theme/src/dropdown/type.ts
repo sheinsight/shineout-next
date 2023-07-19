@@ -10,22 +10,10 @@ export interface DropdownTokens {
   dropdownListBorderWidth: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined
-   */
-  dropdownListAaa: string;
-  /**
-   * @type {string}
    * @token Radius-4
    * @description 下拉菜单undefined边框圆角
    */
   dropdownListBorderRadius: string;
-  /**
-   * @type {string}
-   * @token Padding-4
-   * @description 下拉菜单undefined内边距（水平方向）
-   */
-  dropdownListPaddingX: string;
   /**
    * @type {string}
    * @token Padding-4
@@ -47,12 +35,6 @@ export interface DropdownTokens {
   /**
    * @type {string}
    * @token Padding-4
-   * @description 下拉菜单undefined小尺寸内边距（水平方向）
-   */
-  dropdownListSmallPaddingX: string;
-  /**
-   * @type {string}
-   * @token Padding-4
    * @description 下拉菜单undefined小尺寸内边距（垂直方向）
    */
   dropdownListSmallPaddingY: string;
@@ -68,12 +50,6 @@ export interface DropdownTokens {
    * @description 下拉菜单undefined大尺寸边框圆角
    */
   dropdownListLargeBorderRadius: string;
-  /**
-   * @type {string}
-   * @token Padding-4
-   * @description 下拉菜单undefined大尺寸内边距（水平方向）
-   */
-  dropdownListLargePaddingX: string;
   /**
    * @type {string}
    * @token Padding-4
@@ -106,134 +82,104 @@ export interface DropdownTokens {
   dropdownListFontColor: string;
   /**
    * @type {string}
-   * @token Shadow-1
+   * @token Shadow-2
    * @description 下拉菜单undefinedundefinedundefined
    */
   dropdownListBoxShadow: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined内边距（水平方向）
+   * @token 8px
+   * @description 下拉菜单undefined内边距（水平方向）
    */
-  dropdownListOptionPaddingX: string;
+  dropdownOptionPaddingX: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined内边距（垂直方向）
+   * @token 5px
+   * @description 下拉菜单undefined内边距（垂直方向）
    */
-  dropdownListOptionPaddingY: string;
+  dropdownOptionPaddingY: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined小尺寸内边距（水平方向）
+   * @token 8px
+   * @description 下拉菜单undefined小尺寸内边距（水平方向）
    */
-  dropdownListOptionSmallPaddingX: string;
+  dropdownOptionSmallPaddingX: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined小尺寸内边距（垂直方向）
+   * @token 2px
+   * @description 下拉菜单undefined小尺寸内边距（垂直方向）
    */
-  dropdownListOptionSmallPaddingY: string;
+  dropdownOptionSmallPaddingY: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined大尺寸内边距（水平方向）
+   * @token 12px
+   * @description 下拉菜单undefined大尺寸内边距（水平方向）
    */
-  dropdownListOptionLargePaddingX: string;
+  dropdownOptionLargePaddingX: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined大尺寸内边距（垂直方向）
+   * @token 8px
+   * @description 下拉菜单undefined大尺寸内边距（垂直方向）
    */
-  dropdownListOptionLargePaddingY: string;
+  dropdownOptionLargePaddingY: string;
   /**
    * @type {string}
-   * @token
+   * @token Neutral-fill-1
+   * @description 下拉菜单undefined背景颜色
+   */
+  dropdownOptionBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 下拉菜单undefined字体颜色
+   */
+  dropdownOptionFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 下拉菜单undefined鼠标移入时的背景颜色
+   */
+  dropdownOptionHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 下拉菜单undefined鼠标移入时的字体颜色
+   */
+  dropdownOptionHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 下拉菜单undefined鼠标点击时的背景颜色
+   */
+  dropdownOptionActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 下拉菜单undefined鼠标点击时的字体颜色
+   */
+  dropdownOptionActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
    * @description 下拉菜单undefinedundefined背景颜色
    */
-  dropdownListOptionBackgroundColor: string;
+  dropdownOptionSelectBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined边框颜色
-   */
-  dropdownListOptionBorderColor: string;
-  /**
-   * @type {string}
-   * @token
+   * @token Brand-6
    * @description 下拉菜单undefinedundefined字体颜色
    */
-  dropdownListOptionFontColor: string;
+  dropdownOptionSelectFontColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined鼠标聚焦时的背景颜色
+   * @token Neutral-fill-1
+   * @description 下拉菜单undefined禁用时的背景颜色
    */
-  dropdownListOptionFocusBackgroundColor: string;
+  dropdownOptionDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined鼠标聚焦时的边框颜色
+   * @token Neutral-text-2
+   * @description 下拉菜单undefined禁用时的字体颜色
    */
-  dropdownListOptionFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined鼠标聚焦时的字体颜色
-   */
-  dropdownListOptionFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined鼠标点击时的背景颜色
-   */
-  dropdownListOptionActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined鼠标点击时的边框颜色
-   */
-  dropdownListOptionActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined鼠标点击时的字体颜色
-   */
-  dropdownListOptionActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefinedundefined背景颜色
-   */
-  dropdownListOptionSelectBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefinedundefined边框颜色
-   */
-  dropdownListOptionSelectBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefinedundefined字体颜色
-   */
-  dropdownListOptionSelectFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined禁用时的背景颜色
-   */
-  dropdownListOptionDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined禁用时的边框颜色
-   */
-  dropdownListOptionDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单undefinedundefined禁用时的字体颜色
-   */
-  dropdownListOptionDisabledFontColor: string;
+  dropdownOptionDisabledFontColor: string;
 }

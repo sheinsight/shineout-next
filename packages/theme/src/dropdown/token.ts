@@ -16,32 +16,33 @@ const dropdownTokenDescription = { dropdown: '下拉菜单', outline: '线框模
  * 注意，该映射表的内容不与 dropdownRules 强关联，非 dropdownRules 规则内的 token 需手动增加或删减。
  */
 const dropdownTokenValue = {
-  font: { color: '', size: '14/regular' },
-  background: { color: '' },
-  border: { color: '', radius: 'Radius-4' },
-  disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  outline: {
-    font: { color: '' },
-    background: { color: '' },
-    border: { color: '' },
-    disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-    hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-    active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-    focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+  list: {
+    border: { width: 'Border-1', radius: 'Radius-4', color: 'Neutral-border-1' },
+    padding: { y: 'Padding-4' },
+    font: { size: '14/regular', color: 'Neutral-text-5' },
+    small: {
+      border: { radius: 'Radius-4' },
+      padding: { y: 'Padding-4' },
+      font: { size: '12/regular' },
+    },
+    large: {
+      border: { radius: 'Radius-4' },
+      padding: { y: 'Padding-4' },
+      font: { size: '16/regular' },
+    },
+    background: { color: 'Neutral-fill-1' },
+    box: { shadow: 'Shadow-2' },
   },
-  padding: { x: 'Padding-8', y: 'Padding-5' },
-  small: {
-    font: { size: '12/regular' },
-    border: { radius: 'Radius-4' },
-    padding: { x: 'Padding-8', y: 'Padding-2' },
-  },
-  large: {
-    font: { size: '16/regular' },
-    border: { radius: 'Radius-4' },
-    padding: { x: 'Padding-12', y: 'Padding-8' },
+  option: {
+    padding: { x: '8px', y: '5px' },
+    small: { padding: { x: '8px', y: '2px' } },
+    large: { padding: { x: '12px', y: '8px' } },
+    background: { color: 'Neutral-fill-1' },
+    font: { color: 'Neutral-text-5' },
+    hover: { background: { color: 'Neutral-fill-2' }, font: { color: 'Neutral-text-5' } },
+    active: { background: { color: 'Neutral-fill-3' }, font: { color: 'Neutral-text-5' } },
+    select: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
+    disabled: { background: { color: 'Neutral-fill-1' }, font: { color: 'Neutral-text-2' } },
   },
 };
 

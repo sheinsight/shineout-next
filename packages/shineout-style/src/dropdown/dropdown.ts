@@ -1,19 +1,9 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 
-// wrapper: string;
-// boxList: string;
-// list: string;
-// caret: string;
-// content: string;
-// button: string;
-// item: string;
-// itemDisabled: string;
-// itemActive: string;
-// splitButton: string;
-
 export type DropDownClass =
   | 'wrapper'
+  | 'open'
   | 'list'
   | 'listSmall'
   | 'listLarge'
@@ -30,13 +20,20 @@ const dropdown: JsStyles<DropDownClass> = {
   wrapper: {
     display: 'inline-block',
     position: 'relative',
-    '& *': {
-      lineHeight: 'calc( 1em + 8px)',
+    '& button': {
+      lineHeight: token.lineHeightDynamic,
+      fontSize: token.dropdownListFontSize,
+    },
+  },
+  open: {
+    '& > $button $caret': {
+      transform: 'rotate(180deg)',
     },
   },
   list: {
     position: 'absolute',
     fontWeight: 400,
+    zIndex: 1000,
     fontSize: token.dropdownListFontSize,
     border: `${token.dropdownListBorderWidth} solid ${token.dropdownListBorderColor}`,
     borderRadius: token.dropdownListBorderRadius,
@@ -45,7 +42,7 @@ const dropdown: JsStyles<DropDownClass> = {
     boxShadow: token.dropdownListBoxShadow,
     width: 'max-content',
     boxSizing: 'border-box',
-    lineHeight: 'calc( 1em + 8px)',
+    lineHeight: token.lineHeightDynamic,
     '& $wrapper': {
       display: 'block',
     },
@@ -53,34 +50,57 @@ const dropdown: JsStyles<DropDownClass> = {
   listSmall: {
     fontSize: token.dropdownListSmallFontSize,
     borderRadius: token.dropdownListSmallBorderRadius,
-    padding: `${token.dropdownListSmallPaddingY} ${token.dropdownListSmallPaddingX}`,
+    padding: `${token.dropdownListSmallPaddingY} 0`,
   },
   listLarge: {
     fontSize: token.dropdownListLargeFontSize,
     borderRadius: token.dropdownListLargeBorderRadius,
-    padding: `${token.dropdownListLargePaddingY} ${token.dropdownListLargePaddingX}`,
+    padding: `${token.dropdownListLargePaddingY} 0`,
   },
   boxList: {},
   caret: {
     width: '1em',
     height: '1em',
-    '& > svg': {
-      width: '1em',
-      height: '1em',
-      verticalAlign: 'middle',
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    lineHeight: '1',
+    '$wrapper[data-position^="right"] > $button & > svg': {
+      transform: 'rotate(-90deg)',
+    },
+    '$wrapper[data-position^="left"] > $button & > svg': {
+      transform: 'rotate(90deg)',
+    },
+    '$wrapper[data-position^="top"] > $button & > svg': {
+      transform: 'rotate(180deg)',
     },
   },
+
   content: {},
   button: {},
   item: {
     display: 'block',
-    lineHeight: 'calc( 1em + 8px)',
-    color: 'inherit',
+    lineHeight: token.lineHeightDynamic,
+    color: token.dropdownOptionFontColor,
+    backgroundColor: token.dropdownOptionBackgroundColor,
     textDecoration: 'none',
     padding: `2px 8px`,
     cursor: 'pointer',
     '&:hover': {
-      background: '#ccc',
+      color: token.dropdownOptionHoverFontColor,
+      backgroundColor: token.dropdownOptionHoverBackgroundColor,
+    },
+    '&:active': {
+      color: token.dropdownOptionActiveFontColor,
+      backgroundColor: token.dropdownOptionActiveBackgroundColor,
+    },
+    '$itemDisabled&, &[disabled]': {
+      color: token.dropdownOptionDisabledFontColor,
+      backgroundColor: token.dropdownOptionDisabledBackgroundColor,
+      cursor: 'not-allowed',
+    },
+    '$itemActive&': {
+      color: token.dropdownOptionSelectFontColor,
+      backgroundColor: token.dropdownOptionSelectBackgroundColor,
     },
   },
   itemDisabled: {},

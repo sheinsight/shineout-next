@@ -2,6 +2,13 @@ import React from 'react';
 
 export const PICKER_MARGIN = 4;
 const mainMargin = `calc(100% + ${PICKER_MARGIN}px`;
+const halfMargin = `calc(50% + ${PICKER_MARGIN}px`;
+const ReverseDir: Record<string, string> = {
+  left: 'right',
+  right: 'left',
+  top: 'bottom',
+  bottom: 'top',
+};
 export const getPositionStyle = (position: string) => {
   let newStyle: React.CSSProperties = {};
   if (position === 'drop-down') {
@@ -18,17 +25,24 @@ export const getPositionStyle = (position: string) => {
     const positionArr = (position || '').split('-');
     if (positionArr.length === 2) {
       let [m, n] = positionArr;
-      const reverse = {
-        left: 'right',
-        right: 'left',
-        top: 'bottom',
-        bottom: 'top',
-      };
-      m = reverse[m as 'left'];
+
       newStyle = {
-        [m]: mainMargin,
+        [ReverseDir[m]]: mainMargin,
         [n]: 0,
       };
+    } else {
+      const [m] = positionArr;
+      newStyle = {
+        [ReverseDir[m]]: mainMargin,
+      };
+      if (m === 'left' || m === 'right') {
+        newStyle.top = halfMargin;
+        newStyle.transform = 'translateY(-50%)';
+      }
+      if (m === 'top' || m === 'bottom') {
+        newStyle.left = halfMargin;
+        newStyle.transform = 'translateX(-50%)';
+      }
     }
   }
   return newStyle;

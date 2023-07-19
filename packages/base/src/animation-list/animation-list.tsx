@@ -15,22 +15,33 @@ const getDuration = (duration: AnimationListProps['duration']) => {
 };
 
 const AnimationList = (props: AnimationListProps) => {
-  const { display = 'block', children, style, jssStyle, onRef } = props;
+  const {
+    display = 'block',
+    children,
+    style,
+    jssStyle,
+    onRef,
+    show: showPo,
+    duration,
+    type: typePo,
+    className: classNamePo,
+    ...forwardProps
+  } = props;
 
-  const [show, setShow] = useState(props.show);
-  const { current: context } = useRef({ mounted: false, height: 0, show: props.show });
+  const [show, setShow] = useState(showPo);
+  const { current: context } = useRef({ mounted: false, height: 0, show: showPo });
   const ref = useRef<HTMLDivElement>(null);
   const forkRef = useForkRef(ref, onRef);
 
-  const duration = getDuration(props.duration);
-  const type = Array.isArray(props.type) ? props.type : [props.type];
+  const durationNum = getDuration(duration);
+  const type = Array.isArray(typePo) ? typePo : [typePo];
   const needCollapse = type.indexOf('collapse') >= 0;
   const needTransform = type.indexOf('scale-y') >= 0;
 
   useEffect(() => {
     context.mounted = true;
     const el = ref.current!;
-    if (props.show || !el) {
+    if (showPo || !el) {
       return;
     }
     if (needCollapse) {
@@ -64,7 +75,7 @@ const AnimationList = (props: AnimationListProps) => {
           setTimeout(() => {
             es.height = 'auto';
             es.overflow = '';
-          }, duration);
+          }, durationNum);
         }
       }
     }, 10);
@@ -90,19 +101,19 @@ const AnimationList = (props: AnimationListProps) => {
       if (!context.show && element) {
         element.style.display = 'none';
       }
-    }, duration);
+    }, durationNum);
   };
 
   useEffect(() => {
     context.show = true;
-    if (props.show) {
+    if (showPo) {
       showList();
     } else {
       hideList();
     }
-  }, [props.show]);
+  }, [showPo]);
 
-  let animation = `animation-${duration}`;
+  let animation = `animation-${durationNum}`;
   if (!needTransform) animation = `fade-${animation}`;
   const className = classNames(
     jssStyle[animation as keyof AnimationListProps['jssStyle']],
@@ -112,11 +123,11 @@ const AnimationList = (props: AnimationListProps) => {
       [jssStyle.collapse]: type.includes('collapse'),
       [jssStyle['scale-y']]: type.includes('scale-y'),
     },
-    props.className,
+    classNamePo,
   );
 
   return (
-    <div ref={forkRef} className={className} style={style}>
+    <div ref={forkRef} className={className} data-class={className} style={style} {...forwardProps}>
       {children}
     </div>
   );

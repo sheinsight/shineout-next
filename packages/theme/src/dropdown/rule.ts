@@ -14,18 +14,14 @@ const dropdownTokenDescription = { dropdown: '下拉菜单', List: '下拉菜单
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const dropdownRules = {
-  listOptionCommon: [['list'], ['border-width', 'aaa']],
-  listSize: [
-    ['list'],
-    ['', 'small', 'large'],
-    ['border-radius', 'padding-x', 'padding-y', 'font-size'],
-  ],
+  listOptionCommon: [['list'], ['border-width']],
+  listSize: [['list'], ['', 'small', 'large'], ['border-radius', 'padding-y', 'font-size']],
   listColor: [['list'], ['background-color', 'border-color', 'font-color', 'box-shadow']],
-  ListOptionSize: [['listOption'], ['', 'small', 'large'], ['padding-x', 'padding-y']],
+  ListOptionSize: [['option'], ['', 'small', 'large'], ['padding-x', 'padding-y']],
   listOptionColor: [
-    ['list-option'],
-    ['', 'focus', 'active', 'select', 'disabled'],
-    ['background-color', 'border-color', 'font-color'],
+    ['option'],
+    ['', 'hover', 'active', 'select', 'disabled'],
+    ['background-color', 'font-color'],
   ],
 };
 
