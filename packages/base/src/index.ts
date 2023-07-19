@@ -5,6 +5,7 @@ export * from './form';
 export * from './rule';
 export * from './checkbox';
 export * from './dropdown';
+export * from './button';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';

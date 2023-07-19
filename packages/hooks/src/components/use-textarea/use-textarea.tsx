@@ -23,7 +23,6 @@ const useTextarea = (props: BaseTextareaProps) => {
       if (textRef.current) {
         textRef.current.focus();
       }
-
       otherHandlers.onClick?.(event);
     };
 
