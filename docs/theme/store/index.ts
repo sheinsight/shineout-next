@@ -17,11 +17,13 @@ export interface Menus {
 export type Doc = 'shineout' | 'base';
 export type Locales = 'cn' | 'en';
 export type Env = 'GitHub' | 'SHEIN';
+export type DocType = 'examples' | 'api' | 'guide' | 'changelog';
 
 interface State {
   menu: Menus[];
   locales: Locales;
   doc: Doc;
+  doctab: DocType;
   rtl: boolean;
   env: Env;
 }
@@ -32,6 +34,7 @@ const state: State = {
   menu: [],
   locales: 'cn',
   doc: (window.location.hash.match(regex)?.[0] as Doc) || 'shineout',
+  doctab: 'examples',
   rtl: false,
   env: 'SHEIN',
 };
@@ -78,6 +81,9 @@ export const dispatch = {
   },
   setEnv: (env: Env) => {
     proxyState.env = env;
+  },
+  setDoctab: (doctab: DocType) => {
+    proxyState.doctab = doctab;
   },
 };
 

@@ -47,12 +47,13 @@ export default createUseStyles({
   menu: {
     width: 259,
     height: '100%',
-    borderRight: '1px solid rgb(229,230,235)',
+    borderRight: '1px solid rgba(232, 235, 240, 1)',
     listStyle: 'none',
     margin: 0,
     fontSize: 14,
     padding: '0 16px',
     color: '#aaaaaa',
+    boxSizing: 'border-box',
     '& .group': {
       height: 40,
       padding: '0 20px',

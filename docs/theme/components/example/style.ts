@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 export default createUseStyles({
   example: {
     padding: '0 40px',
+    marginBottom: 40,
     '& .head': {},
     '& .title': {
       fontSize: 20,
@@ -20,7 +21,7 @@ export default createUseStyles({
     '& .demo': {
       position: 'relative',
       marginTop: 24,
-      padding: 48,
+      padding: 32,
       border: '1px solid rgba(232, 235, 240, 1)',
     },
     '& .action': {
