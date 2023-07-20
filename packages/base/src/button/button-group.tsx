@@ -5,7 +5,6 @@ import { ButtonProps } from './button.type';
 
 const Group = (props: ButtonGroupProps) => {
   const { children, className, style, jssStyle, size, outline, text, shape, dash, type } = props;
-
   const groupClass = classNames(className, jssStyle.group, jssStyle[type || 'default'], {
     [jssStyle.outline]: outline,
     [jssStyle.text]: text,

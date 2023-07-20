@@ -349,8 +349,8 @@ const buttonTokenValue = {
     border: { color: 'Success-5' },
     disabled: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Success-5' },
-      border: { color: 'Success-5' },
+      background: { color: 'Success-3' },
+      border: { color: 'Success-3' },
     },
     hover: {
       font: { color: 'Neutral-text-1' },
@@ -477,8 +477,8 @@ const buttonTokenValue = {
     border: { color: 'Warning-5' },
     disabled: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Warning-5' },
-      border: { color: 'Warning-5' },
+      background: { color: 'Warning-3' },
+      border: { color: 'Warning-3' },
     },
     hover: {
       font: { color: 'Neutral-text-1' },
@@ -605,8 +605,8 @@ const buttonTokenValue = {
     border: { color: 'Danger-5' },
     disabled: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Danger-5' },
-      border: { color: 'Danger-5' },
+      background: { color: 'Danger-3' },
+      border: { color: 'Danger-3' },
     },
     hover: {
       font: { color: 'Neutral-text-1' },

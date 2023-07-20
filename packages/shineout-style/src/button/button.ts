@@ -48,6 +48,13 @@ const button = (type: ButtonType, styles: ButtonStyleType) => ({
     backgroundColor: Token[`button${type}${styles}DisabledBackgroundColor`],
     borderColor: Token[`button${type}${styles}DisabledBorderColor`],
   },
+
+  // a 标签无 disabled 状态
+  '&$disabled': {
+    color: Token[`button${type}${styles}DisabledFontColor`],
+    backgroundColor: Token[`button${type}${styles}DisabledBackgroundColor`],
+    borderColor: Token[`button${type}${styles}DisabledBorderColor`],
+  },
 });
 
 const ButtonStyle: JsStyles<ButtonClass> = {
@@ -196,6 +203,10 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
   href: {
     textDecoration: 'none',
+    boxSizing: 'border-box',
+    '&$danger': {
+      ...button('Danger', ''),
+    },
   },
   round: {
     borderRadius: Token.buttonRoundBorderRadius,
@@ -213,7 +224,6 @@ const ButtonStyle: JsStyles<ButtonClass> = {
 
   disabled: {
     cursor: 'not-allowed',
-    // opacity: 0.65,
   },
   loading: {
     cursor: 'not-allowed',

@@ -50,11 +50,17 @@ const splitLine = (type: ButtonType) => {
         backgroundColor: Token[`button${type}SplitBackgroundColor`],
       },
       '&:hover': {
-        // dropdown 按钮
+        // 后一个是 dropdown 按钮
         [`& + div[class*="-dropdown"]`]: {
           '& > button': {
             '&::before': {
               backgroundColor: 'transparent',
+            },
+            // 禁用状态
+            [`&[class*="-disabled"]`]: {
+              '&::before': {
+                //
+              },
             },
           },
         },
@@ -145,7 +151,15 @@ const splitLineOutlint = (type: ButtonType) => {
               },
             },
           },
+          [`& + div[class*="-dropdown"]`]: {
+            '& > button': {
+              '&::before': {
+                backgroundColor: Token[`button${type}OutlineDisabledBorderColor`],
+              },
+            },
+          },
         },
+        // 禁用状态下后一个是 dropdown
         [`& + div[class*="-dropdown"]`]: {
           '& > button': {
             '&::before': {
@@ -175,8 +189,9 @@ const splitLineOutlint = (type: ButtonType) => {
           '& > button': {
             // 禁用
             [`&[class*="-disabled"]`]: {
+              // 前一个正常按钮，后一个是 dropdown disabled
               '&::before': {
-                backgroundColor: Token[`button${type}SplitDisabledBackgroundColor`],
+                backgroundColor: Token[`button${type}OutlineBorderColor`],
               },
             },
             '&::before': {
@@ -209,11 +224,11 @@ const splitLineOutlint = (type: ButtonType) => {
               // 禁用
               [`&[class*="-disabled"]`]: {
                 '&::before': {
-                  backgroundColor: Token[`button${type}OutlineSplitDisabledBackgroundColor`],
+                  backgroundColor: Token[`button${type}OutlineActiveBorderColor`],
                 },
               },
               '&::before': {
-                backgroundColor: Token[`button${type}OutlineSplitActiveBackgroundColor`],
+                backgroundColor: Token[`button${type}OutlineDisabledBorderColor`],
               },
             },
           },
@@ -237,8 +252,13 @@ const splitLineOutlint = (type: ButtonType) => {
       borderBottomLeftRadius: 0,
       // 禁用状态
       [`&[class*="-disabled"]`]: {
+        borderColor: Token[`button${type}OutlineBorderColor`],
         '&::before': {
           backgroundColor: Token[`button${type}OutlineSplitDisabledBackgroundColor`],
+        },
+        // active 状态
+        '&:active': {
+          borderColor: Token[`button${type}OutlineBorderColor`],
         },
       },
       '&::before': {
@@ -306,11 +326,11 @@ const splitLineText = (type: ButtonType) => {
 const ButtonGroupStyle: JsStyles<ButtonGroupClass> = {
   group: {
     // 第一个和最后一个按钮的圆角
-    '& > button:first-child': {
+    '& > :first-child': {
       borderTopRightRadius: 0,
       borderBottomRightRadius: 0,
     },
-    '& > button:last-child': {
+    '& > :last-child': {
       position: 'relative',
       borderTopLeftRadius: 0,
       borderBottomLeftRadius: 0,
@@ -324,7 +344,7 @@ const ButtonGroupStyle: JsStyles<ButtonGroupClass> = {
         transition: 'all 0.3s',
       },
     },
-    '& > button:not(:first-child):not(:last-child)': {
+    '& > :not(:first-child):not(:last-child)': {
       borderRadius: 0,
       borderRight: 'none',
       borderLeft: 'none',

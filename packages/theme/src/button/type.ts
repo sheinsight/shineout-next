@@ -1108,13 +1108,13 @@ export interface ButtonTokens {
   buttonSuccessDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-3
    * @description 按钮成功色禁用时的背景颜色
    */
   buttonSuccessDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-3
    * @description 按钮成功色禁用时的边框颜色
    */
   buttonSuccessDisabledBorderColor: string;
@@ -1468,13 +1468,13 @@ export interface ButtonTokens {
   buttonWarningDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-3
    * @description 按钮警告色禁用时的背景颜色
    */
   buttonWarningDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-3
    * @description 按钮警告色禁用时的边框颜色
    */
   buttonWarningDisabledBorderColor: string;
@@ -1828,13 +1828,13 @@ export interface ButtonTokens {
   buttonDangerDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-3
    * @description 按钮危险色禁用时的背景颜色
    */
   buttonDangerDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-3
    * @description 按钮危险色禁用时的边框颜色
    */
   buttonDangerDisabledBorderColor: string;
