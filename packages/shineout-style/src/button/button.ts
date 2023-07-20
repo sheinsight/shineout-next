@@ -48,7 +48,24 @@ const button = (type: ButtonType, styles: ButtonStyleType) => ({
     backgroundColor: Token[`button${type}${styles}DisabledBackgroundColor`],
     borderColor: Token[`button${type}${styles}DisabledBorderColor`],
   },
+
+  // a 标签无 disabled 状态
+  '&$disabled': {
+    color: Token[`button${type}${styles}DisabledFontColor`],
+    backgroundColor: Token[`button${type}${styles}DisabledBackgroundColor`],
+    borderColor: Token[`button${type}${styles}DisabledBorderColor`],
+  },
 });
+
+const loading = (type: ButtonType, styles: ButtonStyleType) => {
+  const buttonStyle = button(type, styles);
+
+  return {
+    '&$loading': {
+      ...buttonStyle['&$disabled'],
+    },
+  };
+};
 
 const ButtonStyle: JsStyles<ButtonClass> = {
   button: {
@@ -68,6 +85,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     lineHeight: Token.lineHeightDynamic,
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
     transition: 'all 0.15s ease-in-out',
+    fontFamily: 'inherit',
 
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,
@@ -196,6 +214,10 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
   href: {
     textDecoration: 'none',
+    boxSizing: 'border-box',
+    '&$danger': {
+      ...button('Danger', ''),
+    },
   },
   round: {
     borderRadius: Token.buttonRoundBorderRadius,
@@ -213,18 +235,27 @@ const ButtonStyle: JsStyles<ButtonClass> = {
 
   disabled: {
     cursor: 'not-allowed',
-    opacity: 0.65,
   },
   loading: {
     cursor: 'not-allowed',
-    opacity: 0.65,
 
-    '&:active': {
-      animationName: 'none',
+    '&$default': {
+      ...loading('Default', ''),
     },
-
-    '&:hover': {
-      opacity: 0.65,
+    '&$primary': {
+      ...loading('Primary', ''),
+    },
+    '&$success': {
+      ...loading('Success', ''),
+    },
+    '&$danger': {
+      ...loading('Danger', ''),
+    },
+    '&$warning': {
+      ...loading('Warning', ''),
+    },
+    '&$secondary': {
+      ...loading('Secondary', ''),
     },
   },
 };

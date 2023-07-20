@@ -1,5 +1,5 @@
 import { CommonType } from '../common/type';
-
+import { ButtonMode, ButtonType } from '@sheinx/hooks';
 export interface ButtonGroupClasses {
   group: string;
 
@@ -16,7 +16,7 @@ export interface ButtonGroupClasses {
   warning: string;
   success: string;
   // href: string;
-  // link: string;
+  link: string;
 
   dash: string;
   outline: string;
@@ -33,7 +33,8 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
   dash?: boolean;
   link?: boolean;
   shape?: 'round';
-  type?: 'default' | 'primary' | 'secondary' | 'danger' | 'warning' | 'success';
+  mode?: ButtonMode;
+  type?: ButtonType;
   children: React.ReactNode;
   jssStyle: ButtonGroupClasses;
 }

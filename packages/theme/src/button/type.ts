@@ -1108,13 +1108,13 @@ export interface ButtonTokens {
   buttonSuccessDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-3
    * @description 按钮成功色禁用时的背景颜色
    */
   buttonSuccessDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-3
    * @description 按钮成功色禁用时的边框颜色
    */
   buttonSuccessDisabledBorderColor: string;
@@ -1468,13 +1468,13 @@ export interface ButtonTokens {
   buttonWarningDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-3
    * @description 按钮警告色禁用时的背景颜色
    */
   buttonWarningDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-3
    * @description 按钮警告色禁用时的边框颜色
    */
   buttonWarningDisabledBorderColor: string;
@@ -1828,13 +1828,13 @@ export interface ButtonTokens {
   buttonDangerDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-3
    * @description 按钮危险色禁用时的背景颜色
    */
   buttonDangerDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-3
    * @description 按钮危险色禁用时的边框颜色
    */
   buttonDangerDisabledBorderColor: string;
@@ -2236,6 +2236,726 @@ export interface ButtonTokens {
   buttonLargePaddingY: string;
   /**
    * @type {string}
+   * @token
+   * @description 按钮默认尺寸分割线背景颜色
+   */
+  buttonDefaultSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸分割线禁用时的背景颜色
+   */
+  buttonDefaultSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸分割线鼠标移入时的背景颜色
+   */
+  buttonDefaultSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸分割线鼠标点击时的背景颜色
+   */
+  buttonDefaultSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸分割线鼠标聚焦时的背景颜色
+   */
+  buttonDefaultSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸线框模式分割线背景颜色
+   */
+  buttonDefaultOutlineSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸线框模式分割线禁用时的背景颜色
+   */
+  buttonDefaultOutlineSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸线框模式分割线鼠标移入时的背景颜色
+   */
+  buttonDefaultOutlineSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸线框模式分割线鼠标点击时的背景颜色
+   */
+  buttonDefaultOutlineSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸线框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonDefaultOutlineSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸文本模式分割线背景颜色
+   */
+  buttonDefaultTextSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸文本模式分割线禁用时的背景颜色
+   */
+  buttonDefaultTextSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸文本模式分割线鼠标移入时的背景颜色
+   */
+  buttonDefaultTextSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸文本模式分割线鼠标点击时的背景颜色
+   */
+  buttonDefaultTextSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸文本模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonDefaultTextSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸虚框模式分割线背景颜色
+   */
+  buttonDefaultDashSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸虚框模式分割线禁用时的背景颜色
+   */
+  buttonDefaultDashSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸虚框模式分割线鼠标移入时的背景颜色
+   */
+  buttonDefaultDashSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸虚框模式分割线鼠标点击时的背景颜色
+   */
+  buttonDefaultDashSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮默认尺寸虚框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonDefaultDashSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮主要色分割线背景颜色
+   */
+  buttonPrimarySplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮主要色分割线禁用时的背景颜色
+   */
+  buttonPrimarySplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮主要色分割线鼠标移入时的背景颜色
+   */
+  buttonPrimarySplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮主要色分割线鼠标点击时的背景颜色
+   */
+  buttonPrimarySplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮主要色分割线鼠标聚焦时的背景颜色
+   */
+  buttonPrimarySplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 按钮主要色线框模式分割线背景颜色
+   */
+  buttonPrimaryOutlineSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 按钮主要色线框模式分割线禁用时的背景颜色
+   */
+  buttonPrimaryOutlineSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 按钮主要色线框模式分割线鼠标移入时的背景颜色
+   */
+  buttonPrimaryOutlineSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-7
+   * @description 按钮主要色线框模式分割线鼠标点击时的背景颜色
+   */
+  buttonPrimaryOutlineSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 按钮主要色线框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonPrimaryOutlineSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮主要色文本模式分割线背景颜色
+   */
+  buttonPrimaryTextSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮主要色文本模式分割线禁用时的背景颜色
+   */
+  buttonPrimaryTextSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮主要色文本模式分割线鼠标移入时的背景颜色
+   */
+  buttonPrimaryTextSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮主要色文本模式分割线鼠标点击时的背景颜色
+   */
+  buttonPrimaryTextSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮主要色文本模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonPrimaryTextSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮主要色虚框模式分割线背景颜色
+   */
+  buttonPrimaryDashSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮主要色虚框模式分割线禁用时的背景颜色
+   */
+  buttonPrimaryDashSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮主要色虚框模式分割线鼠标移入时的背景颜色
+   */
+  buttonPrimaryDashSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮主要色虚框模式分割线鼠标点击时的背景颜色
+   */
+  buttonPrimaryDashSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮主要色虚框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonPrimaryDashSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮次要色分割线背景颜色
+   */
+  buttonSecondarySplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮次要色分割线禁用时的背景颜色
+   */
+  buttonSecondarySplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-5
+   * @description 按钮次要色分割线鼠标移入时的背景颜色
+   */
+  buttonSecondarySplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-6
+   * @description 按钮次要色分割线鼠标点击时的背景颜色
+   */
+  buttonSecondarySplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-5
+   * @description 按钮次要色分割线鼠标聚焦时的背景颜色
+   */
+  buttonSecondarySplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮次要色线框模式分割线背景颜色
+   */
+  buttonSecondaryOutlineSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 按钮次要色线框模式分割线禁用时的背景颜色
+   */
+  buttonSecondaryOutlineSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 按钮次要色线框模式分割线鼠标移入时的背景颜色
+   */
+  buttonSecondaryOutlineSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-7
+   * @description 按钮次要色线框模式分割线鼠标点击时的背景颜色
+   */
+  buttonSecondaryOutlineSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 按钮次要色线框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonSecondaryOutlineSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮次要色文本模式分割线背景颜色
+   */
+  buttonSecondaryTextSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮次要色文本模式分割线禁用时的背景颜色
+   */
+  buttonSecondaryTextSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮次要色文本模式分割线鼠标移入时的背景颜色
+   */
+  buttonSecondaryTextSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮次要色文本模式分割线鼠标点击时的背景颜色
+   */
+  buttonSecondaryTextSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮次要色文本模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonSecondaryTextSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮次要色虚框模式分割线背景颜色
+   */
+  buttonSecondaryDashSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮次要色虚框模式分割线禁用时的背景颜色
+   */
+  buttonSecondaryDashSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮次要色虚框模式分割线鼠标移入时的背景颜色
+   */
+  buttonSecondaryDashSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮次要色虚框模式分割线鼠标点击时的背景颜色
+   */
+  buttonSecondaryDashSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮次要色虚框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonSecondaryDashSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮成功色分割线背景颜色
+   */
+  buttonSuccessSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮成功色分割线禁用时的背景颜色
+   */
+  buttonSuccessSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮成功色分割线鼠标移入时的背景颜色
+   */
+  buttonSuccessSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮成功色分割线鼠标点击时的背景颜色
+   */
+  buttonSuccessSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮成功色分割线鼠标聚焦时的背景颜色
+   */
+  buttonSuccessSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Success-5
+   * @description 按钮成功色线框模式分割线背景颜色
+   */
+  buttonSuccessOutlineSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Success-3
+   * @description 按钮成功色线框模式分割线禁用时的背景颜色
+   */
+  buttonSuccessOutlineSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Success-4
+   * @description 按钮成功色线框模式分割线鼠标移入时的背景颜色
+   */
+  buttonSuccessOutlineSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Success-6
+   * @description 按钮成功色线框模式分割线鼠标点击时的背景颜色
+   */
+  buttonSuccessOutlineSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Success-4
+   * @description 按钮成功色线框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonSuccessOutlineSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮成功色文本模式分割线背景颜色
+   */
+  buttonSuccessTextSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮成功色文本模式分割线禁用时的背景颜色
+   */
+  buttonSuccessTextSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮成功色文本模式分割线鼠标移入时的背景颜色
+   */
+  buttonSuccessTextSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮成功色文本模式分割线鼠标点击时的背景颜色
+   */
+  buttonSuccessTextSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮成功色文本模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonSuccessTextSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮成功色虚框模式分割线背景颜色
+   */
+  buttonSuccessDashSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮成功色虚框模式分割线禁用时的背景颜色
+   */
+  buttonSuccessDashSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮成功色虚框模式分割线鼠标移入时的背景颜色
+   */
+  buttonSuccessDashSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮成功色虚框模式分割线鼠标点击时的背景颜色
+   */
+  buttonSuccessDashSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮成功色虚框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonSuccessDashSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮警告色分割线背景颜色
+   */
+  buttonWarningSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮警告色分割线禁用时的背景颜色
+   */
+  buttonWarningSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮警告色分割线鼠标移入时的背景颜色
+   */
+  buttonWarningSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮警告色分割线鼠标点击时的背景颜色
+   */
+  buttonWarningSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮警告色分割线鼠标聚焦时的背景颜色
+   */
+  buttonWarningSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Warning-5
+   * @description 按钮警告色线框模式分割线背景颜色
+   */
+  buttonWarningOutlineSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Warning-3
+   * @description 按钮警告色线框模式分割线禁用时的背景颜色
+   */
+  buttonWarningOutlineSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Warning-4
+   * @description 按钮警告色线框模式分割线鼠标移入时的背景颜色
+   */
+  buttonWarningOutlineSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Warning-6
+   * @description 按钮警告色线框模式分割线鼠标点击时的背景颜色
+   */
+  buttonWarningOutlineSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Warning-4
+   * @description 按钮警告色线框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonWarningOutlineSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮警告色文本模式分割线背景颜色
+   */
+  buttonWarningTextSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮警告色文本模式分割线禁用时的背景颜色
+   */
+  buttonWarningTextSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮警告色文本模式分割线鼠标移入时的背景颜色
+   */
+  buttonWarningTextSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮警告色文本模式分割线鼠标点击时的背景颜色
+   */
+  buttonWarningTextSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮警告色文本模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonWarningTextSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮警告色虚框模式分割线背景颜色
+   */
+  buttonWarningDashSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮警告色虚框模式分割线禁用时的背景颜色
+   */
+  buttonWarningDashSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮警告色虚框模式分割线鼠标移入时的背景颜色
+   */
+  buttonWarningDashSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮警告色虚框模式分割线鼠标点击时的背景颜色
+   */
+  buttonWarningDashSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮警告色虚框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonWarningDashSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮危险色分割线背景颜色
+   */
+  buttonDangerSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮危险色分割线禁用时的背景颜色
+   */
+  buttonDangerSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮危险色分割线鼠标移入时的背景颜色
+   */
+  buttonDangerSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮危险色分割线鼠标点击时的背景颜色
+   */
+  buttonDangerSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 按钮危险色分割线鼠标聚焦时的背景颜色
+   */
+  buttonDangerSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-5
+   * @description 按钮危险色线框模式分割线背景颜色
+   */
+  buttonDangerOutlineSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-3
+   * @description 按钮危险色线框模式分割线禁用时的背景颜色
+   */
+  buttonDangerOutlineSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-4
+   * @description 按钮危险色线框模式分割线鼠标移入时的背景颜色
+   */
+  buttonDangerOutlineSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-6
+   * @description 按钮危险色线框模式分割线鼠标点击时的背景颜色
+   */
+  buttonDangerOutlineSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-4
+   * @description 按钮危险色线框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonDangerOutlineSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮危险色文本模式分割线背景颜色
+   */
+  buttonDangerTextSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮危险色文本模式分割线禁用时的背景颜色
+   */
+  buttonDangerTextSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮危险色文本模式分割线鼠标移入时的背景颜色
+   */
+  buttonDangerTextSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮危险色文本模式分割线鼠标点击时的背景颜色
+   */
+  buttonDangerTextSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 按钮危险色文本模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonDangerTextSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮危险色虚框模式分割线背景颜色
+   */
+  buttonDangerDashSplitBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮危险色虚框模式分割线禁用时的背景颜色
+   */
+  buttonDangerDashSplitDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮危险色虚框模式分割线鼠标移入时的背景颜色
+   */
+  buttonDangerDashSplitHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮危险色虚框模式分割线鼠标点击时的背景颜色
+   */
+  buttonDangerDashSplitActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token
+   * @description 按钮危险色虚框模式分割线鼠标聚焦时的背景颜色
+   */
+  buttonDangerDashSplitFocusBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Radius-1000
    * @description 按钮药丸形边框圆角
    */
@@ -2248,7 +2968,7 @@ export interface ButtonTokens {
   buttonCircleBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-4
    * @description 按钮方形边框圆角
    */
   buttonSquareBorderRadius: string;

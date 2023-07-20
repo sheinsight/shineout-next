@@ -12,6 +12,7 @@ const buttonTokenDescription = {
   outline: '线框模式',
   text: '文本模式',
   nearly: '相邻之间的',
+  split: '分割线',
 };
 
 /**
@@ -38,6 +39,13 @@ const buttonTokenValue = {
       hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      split: {
+        background: { color: '' },
+        disabled: { background: { color: '' } },
+        hover: { background: { color: '' } },
+        active: { background: { color: '' } },
+        focus: { background: { color: '' } },
+      },
     },
     text: {
       font: { color: '' },
@@ -47,6 +55,13 @@ const buttonTokenValue = {
       hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      split: {
+        background: { color: '' },
+        disabled: { background: { color: '' } },
+        hover: { background: { color: '' } },
+        active: { background: { color: '' } },
+        focus: { background: { color: '' } },
+      },
     },
     dash: {
       font: { color: '' },
@@ -56,6 +71,20 @@ const buttonTokenValue = {
       hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      split: {
+        background: { color: '' },
+        disabled: { background: { color: '' } },
+        hover: { background: { color: '' } },
+        active: { background: { color: '' } },
+        focus: { background: { color: '' } },
+      },
+    },
+    split: {
+      background: { color: '' },
+      disabled: { background: { color: '' } },
+      hover: { background: { color: '' } },
+      active: { background: { color: '' } },
+      focus: { background: { color: '' } },
     },
   },
   primary: {
@@ -106,6 +135,13 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Brand-5' },
       },
+      split: {
+        background: { color: 'Brand-6' },
+        disabled: { background: { color: 'Brand-3' } },
+        hover: { background: { color: 'Brand-5' } },
+        active: { background: { color: 'Brand-7' } },
+        focus: { background: { color: 'Brand-5' } },
+      },
     },
     text: {
       font: { color: 'Brand-6' },
@@ -130,6 +166,13 @@ const buttonTokenValue = {
         font: { color: 'Brand-6' },
         background: { color: 'Neutral-fill-2' },
         border: { color: 'Neutral-fill-2' },
+      },
+      split: {
+        background: { color: 'Neutral-border-1' },
+        disabled: { background: { color: 'Neutral-border-1' } },
+        hover: { background: { color: 'Neutral-border-1' } },
+        active: { background: { color: 'Neutral-border-1' } },
+        focus: { background: { color: 'Neutral-border-1' } },
       },
     },
     dash: {
@@ -156,6 +199,20 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Brand-5' },
       },
+      split: {
+        background: { color: 'Neutral-border-1' },
+        disabled: { background: { color: 'Neutral-border-1' } },
+        hover: { background: { color: '' } },
+        active: { background: { color: '' } },
+        focus: { background: { color: '' } },
+      },
+    },
+    split: {
+      background: { color: 'Neutral-fill-1' },
+      disabled: { background: { color: 'Neutral-fill-1' } },
+      hover: { background: { color: 'Neutral-fill-1' } },
+      active: { background: { color: 'Neutral-fill-1' } },
+      focus: { background: { color: 'Neutral-fill-1' } },
     },
   },
   secondary: {
@@ -206,6 +263,13 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Brand-5' },
       },
+      split: {
+        background: { color: 'Neutral-border-1' },
+        disabled: { background: { color: 'Brand-3' } },
+        hover: { background: { color: 'Brand-5' } },
+        active: { background: { color: 'Brand-7' } },
+        focus: { background: { color: 'Brand-5' } },
+      },
     },
     text: {
       font: { color: 'Neutral-text-4' },
@@ -230,6 +294,13 @@ const buttonTokenValue = {
         font: { color: 'Neutral-text-4' },
         background: { color: 'Neutral-fill-2' },
         border: { color: 'Neutral-fill-2' },
+      },
+      split: {
+        background: { color: 'Neutral-border-1' },
+        disabled: { background: { color: 'Neutral-border-1' } },
+        hover: { background: { color: 'Neutral-border-1' } },
+        active: { background: { color: 'Neutral-border-1' } },
+        focus: { background: { color: 'Neutral-border-1' } },
       },
     },
     dash: {
@@ -256,6 +327,20 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Brand-5' },
       },
+      split: {
+        background: { color: '' },
+        disabled: { background: { color: '' } },
+        hover: { background: { color: '' } },
+        active: { background: { color: '' } },
+        focus: { background: { color: '' } },
+      },
+    },
+    split: {
+      background: { color: 'Neutral-border-1' },
+      disabled: { background: { color: 'Neutral-border-1' } },
+      hover: { background: { color: 'Neutral-fill-5' } },
+      active: { background: { color: 'Neutral-fill-6' } },
+      focus: { background: { color: 'Neutral-fill-5' } },
     },
   },
   success: {
@@ -264,8 +349,8 @@ const buttonTokenValue = {
     border: { color: 'Success-5' },
     disabled: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Success-5' },
-      border: { color: 'Success-5' },
+      background: { color: 'Success-3' },
+      border: { color: 'Success-3' },
     },
     hover: {
       font: { color: 'Neutral-text-1' },
@@ -306,6 +391,13 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Success-4' },
       },
+      split: {
+        background: { color: 'Success-5' },
+        disabled: { background: { color: 'Success-3' } },
+        hover: { background: { color: 'Success-4' } },
+        active: { background: { color: 'Success-6' } },
+        focus: { background: { color: 'Success-4' } },
+      },
     },
     text: {
       font: { color: 'Success-5' },
@@ -330,6 +422,13 @@ const buttonTokenValue = {
         font: { color: 'Success-5' },
         background: { color: 'Neutral-fill-2' },
         border: { color: 'Neutral-fill-2' },
+      },
+      split: {
+        background: { color: 'Neutral-border-1' },
+        disabled: { background: { color: 'Neutral-border-1' } },
+        hover: { background: { color: 'Neutral-border-1' } },
+        active: { background: { color: 'Neutral-border-1' } },
+        focus: { background: { color: 'Neutral-border-1' } },
       },
     },
     dash: {
@@ -356,6 +455,20 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Success-4' },
       },
+      split: {
+        background: { color: '' },
+        disabled: { background: { color: '' } },
+        hover: { background: { color: '' } },
+        active: { background: { color: '' } },
+        focus: { background: { color: '' } },
+      },
+    },
+    split: {
+      background: { color: 'Neutral-fill-1' },
+      disabled: { background: { color: 'Neutral-fill-1' } },
+      hover: { background: { color: 'Neutral-fill-1' } },
+      active: { background: { color: 'Neutral-fill-1' } },
+      focus: { background: { color: 'Neutral-fill-1' } },
     },
   },
   warning: {
@@ -364,8 +477,8 @@ const buttonTokenValue = {
     border: { color: 'Warning-5' },
     disabled: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Warning-5' },
-      border: { color: 'Warning-5' },
+      background: { color: 'Warning-3' },
+      border: { color: 'Warning-3' },
     },
     hover: {
       font: { color: 'Neutral-text-1' },
@@ -406,6 +519,13 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Warning-4' },
       },
+      split: {
+        background: { color: 'Warning-5' },
+        disabled: { background: { color: 'Warning-3' } },
+        hover: { background: { color: 'Warning-4' } },
+        active: { background: { color: 'Warning-6' } },
+        focus: { background: { color: 'Warning-4' } },
+      },
     },
     text: {
       font: { color: 'Warning-5' },
@@ -430,6 +550,13 @@ const buttonTokenValue = {
         font: { color: 'Warning-5' },
         background: { color: 'Neutral-fill-2' },
         border: { color: 'Neutral-fill-2' },
+      },
+      split: {
+        background: { color: 'Neutral-border-1' },
+        disabled: { background: { color: 'Neutral-border-1' } },
+        hover: { background: { color: 'Neutral-border-1' } },
+        active: { background: { color: 'Neutral-border-1' } },
+        focus: { background: { color: 'Neutral-border-1' } },
       },
     },
     dash: {
@@ -456,6 +583,20 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Warning-4' },
       },
+      split: {
+        background: { color: '' },
+        disabled: { background: { color: '' } },
+        hover: { background: { color: '' } },
+        active: { background: { color: '' } },
+        focus: { background: { color: '' } },
+      },
+    },
+    split: {
+      background: { color: 'Neutral-fill-1' },
+      disabled: { background: { color: 'Neutral-fill-1' } },
+      hover: { background: { color: 'Neutral-fill-1' } },
+      active: { background: { color: 'Neutral-fill-1' } },
+      focus: { background: { color: 'Neutral-fill-1' } },
     },
   },
   danger: {
@@ -464,8 +605,8 @@ const buttonTokenValue = {
     border: { color: 'Danger-5' },
     disabled: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Danger-5' },
-      border: { color: 'Danger-5' },
+      background: { color: 'Danger-3' },
+      border: { color: 'Danger-3' },
     },
     hover: {
       font: { color: 'Neutral-text-1' },
@@ -506,6 +647,13 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Danger-4' },
       },
+      split: {
+        background: { color: 'Danger-5' },
+        disabled: { background: { color: 'Danger-3' } },
+        hover: { background: { color: 'Danger-4' } },
+        active: { background: { color: 'Danger-6' } },
+        focus: { background: { color: 'Danger-4' } },
+      },
     },
     text: {
       font: { color: 'Danger-5' },
@@ -530,6 +678,13 @@ const buttonTokenValue = {
         font: { color: 'Danger-5' },
         background: { color: 'Neutral-fill-2' },
         border: { color: 'Neutral-fill-2' },
+      },
+      split: {
+        background: { color: 'Neutral-border-1' },
+        disabled: { background: { color: 'Neutral-border-1' } },
+        hover: { background: { color: 'Neutral-border-1' } },
+        active: { background: { color: 'Neutral-border-1' } },
+        focus: { background: { color: 'Neutral-border-1' } },
       },
     },
     dash: {
@@ -556,6 +711,20 @@ const buttonTokenValue = {
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Danger-4' },
       },
+      split: {
+        background: { color: '' },
+        disabled: { background: { color: '' } },
+        hover: { background: { color: '' } },
+        active: { background: { color: '' } },
+        focus: { background: { color: '' } },
+      },
+    },
+    split: {
+      background: { color: 'Neutral-fill-1' },
+      disabled: { background: { color: 'Neutral-fill-1' } },
+      hover: { background: { color: 'Neutral-fill-1' } },
+      active: { background: { color: 'Neutral-fill-1' } },
+      focus: { background: { color: 'Neutral-fill-1' } },
     },
   },
   font: { size: '14/regular' },
@@ -579,7 +748,7 @@ const buttonTokenValue = {
   },
   round: { border: { radius: 'Radius-1000' } },
   circle: { border: { radius: 'Radius-50%' } },
-  square: { border: { radius: 'Radius-2' } },
+  square: { border: { radius: 'Radius-4' } },
   nearly: { margin: 'Margin-8' },
 };
 

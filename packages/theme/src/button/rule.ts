@@ -9,6 +9,13 @@ const buttonRules = {
     ['', 'small', 'large'],
     ['font-size', 'border-radius', 'padding-x', 'padding-y'],
   ],
+  group: [
+    ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],
+    ['', 'outline', 'text', 'dash'],
+    ['split'],
+    ['', 'disabled', 'hover', 'active', 'focus'],
+    ['background-color'],
+  ],
   shape: [['', 'small', 'large'], ['round', 'circle', 'square'], ['border-radius']],
   extra_nearly_margin: [['nearly-margin']],
 };

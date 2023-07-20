@@ -20,6 +20,7 @@ const Button = (props: ButtonProps) => {
     type,
     space,
     target,
+    mode,
     renderInnerWrapper,
     renderLoading,
     ...rest
@@ -29,6 +30,8 @@ const Button = (props: ButtonProps) => {
     ...rest,
   });
 
+  const modeSetted = mode || (text ? 'text' : dash ? 'dash' : outline ? 'outline' : undefined);
+
   const rootClass = classNames([
     className,
     jssStyle[type || 'default'],
@@ -37,9 +40,9 @@ const Button = (props: ButtonProps) => {
       [jssStyle.disabled]: disabled,
       [jssStyle.loading]: loading,
       [jssStyle.href]: href,
-      [jssStyle.text]: text,
-      [jssStyle.dash]: dash,
-      [jssStyle.outline]: outline,
+      [jssStyle.text]: modeSetted === 'text',
+      [jssStyle.dash]: modeSetted === 'dash',
+      [jssStyle.outline]: modeSetted === 'outline',
       [jssStyle.round]: shape === 'round',
       [jssStyle.circle]: shape === 'circle',
       [jssStyle.square]: shape === 'square',
@@ -49,9 +52,8 @@ const Button = (props: ButtonProps) => {
   ]);
 
   const rootProps = getButtonProps();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { type: buttonType, ...buttonProps } = rootProps;
-
-  console.log(buttonType);
 
   const childrenEl = getSpaceChildren(children, space);
 

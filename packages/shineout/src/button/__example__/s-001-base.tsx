@@ -1,50 +1,37 @@
 /**
  * cn - 基本用法
- *    --基础 Button 用法
+ *    -- 按钮分为 主要按钮、次要按钮、线框按钮、虚框按钮、文字按钮五种，主按钮在同一个操作区域最多出现一次
  * en - Base
- *    --Base Button
+ *    -- Button is divided into five types: primary, secondary, outline, dash, and text. The primary button can only appear once in the same operation area.
  */
 
 import { Button } from 'shineout';
 export default () => {
+  const buttonStyle = {
+    margin: 0,
+  };
+
   return (
-    <div>
-      <div>
-        <Button.Group type='primary' outline style={{ marginBottom: 10 }}>
-          <Button disabled>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-        </Button.Group>
+    <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+      <Button type='primary' style={buttonStyle}>
+        Primary
+      </Button>
 
-        <Button.Group type='primary' shape='round' outline style={{ marginBottom: 10 }}>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-        </Button.Group>
+      <Button type='secondary' style={buttonStyle}>
+        Secondary
+      </Button>
 
-        <Button.Group type='primary' text style={{ marginBottom: 10 }}>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-        </Button.Group>
+      <Button type='secondary' mode='outline' style={buttonStyle}>
+        Outline
+      </Button>
 
-        <Button.Group type='success' style={{ marginBottom: 10 }}>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-        </Button.Group>
+      <Button type='secondary' mode='dash' style={buttonStyle}>
+        Dashed
+      </Button>
 
-        <Button.Group type='success' shape='round' style={{ marginBottom: 10 }}>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-          <Button>SHEIN</Button>
-        </Button.Group>
-      </div>
+      <Button type='primary' mode='text' style={buttonStyle}>
+        Text
+      </Button>
     </div>
   );
 };
