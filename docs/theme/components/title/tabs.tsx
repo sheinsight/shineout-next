@@ -1,15 +1,21 @@
-import { useState } from 'react';
 import classnames from 'classnames';
+import { useSnapshot } from 'valtio';
+import store, { dispatch, DocType } from '../../store';
 import useStyles from '../style';
 
 const Tabs = () => {
-  const [active, setActive] = useState('示例');
+  const state = useSnapshot(store);
 
   const classes = useStyles();
-  const tabs = ['示例', 'API', '指南', '更新记录'];
+  const tabs: { name: string; path: DocType }[] = [
+    { name: '示例', path: 'examples' },
+    { name: 'API', path: 'api' },
+    { name: '指南', path: 'guide' },
+    { name: '更新记录', path: 'changelog' },
+  ];
 
-  const handleChangeTab = (tab: string) => {
-    setActive(tab);
+  const handleChangeTab = (tab: DocType) => {
+    dispatch.setDoctab(tab);
   };
 
   return (
@@ -18,10 +24,10 @@ const Tabs = () => {
         return (
           <span
             key={index}
-            onClick={() => handleChangeTab(tab)}
-            className={classnames(classes.tab, tab === active && 'active')}
+            onClick={() => handleChangeTab(tab.path)}
+            className={classnames(classes.tab, tab.path === state.doctab && 'active')}
           >
-            {tab}
+            {tab.name}
           </span>
         );
       })}
