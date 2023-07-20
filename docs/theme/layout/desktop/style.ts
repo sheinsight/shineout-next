@@ -105,7 +105,7 @@ export default createUseStyles({
     height: '100%',
     overflowY: 'auto',
     overflowX: 'hidden',
-    paddingRight: 196,
+    // paddingRight: 196,
   },
 
   anchor: {

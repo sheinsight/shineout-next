@@ -3,7 +3,6 @@ import { useSnapshot } from 'valtio';
 import store from '../../store';
 import Code from './code';
 import Copy from './copy';
-import Ue from './ue';
 import Open from './open';
 import Codesandbox from './codesandbox';
 import { Example as ExampleProps } from 'docs/types';
@@ -34,17 +33,18 @@ const Example = (props: ExampleProps) => {
         <h2 className='title' id={propName[state.locales] || defaultName}>
           {propName[state.locales] || defaultName}
         </h2>
-        <p className='subtitle'>{propDescribe[state.locales] || `${defaultName} Describe`}</p>
+        {/* <p className='subtitle'>{propDescribe[state.locales] || `${defaultName} Describe`}</p> */}
       </div>
       <div className='demo'>
-        {/* <span className='prop'>{prop}</span> */}
         <Example></Example>
       </div>
       <div className='action'>
-        <Open onClick={handleOpen}></Open>
-        <Copy onCopy={handleCopy}></Copy>
-        <Codesandbox></Codesandbox>
-        {state.env === 'SHEIN' && <Ue></Ue>}
+        {propDescribe[state.locales] || `${defaultName} Describe`}
+        <div className='btn'>
+          <Open onClick={handleOpen}></Open>
+          <Copy onCopy={handleCopy}></Copy>
+          <Codesandbox></Codesandbox>
+        </div>
       </div>
       {open && (
         <div className='footer'>

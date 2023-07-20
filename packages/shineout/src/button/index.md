@@ -5,12 +5,12 @@ group: Other
 
 # Title
 
-Button 标题
+Button 按钮
 Button
 
 # Describe
 
-Button 描述
+使用按钮触发操作和链接
 Button Describe
 
 # Example

@@ -4,7 +4,7 @@ import useStyles from './style';
 import Nav from './nav';
 import Menu from './menu';
 import Content from './content';
-import Anchor from './anchor';
+// import Anchor from './anchor';
 
 import Home from '../../../pages/home';
 import Design from '../../../pages/design';
@@ -35,7 +35,7 @@ const Desktop = () => {
         <Component>
           <Menu></Menu>
           <Content></Content>
-          <Anchor></Anchor>
+          {/* <Anchor></Anchor> */}
         </Component>
       ),
       children: [],
