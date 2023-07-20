@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
   example: {
-    padding: '0 56px',
+    padding: '0 40px',
     '& .head': {},
     '& .title': {
       fontSize: 20,
