@@ -1,3 +1,11 @@
+export const docSize = {
+  get width() {
+    return document.documentElement.clientWidth || document.body.clientWidth;
+  },
+  get height() {
+    return document.documentElement.clientHeight || document.body.clientHeight;
+  },
+};
 export const docScroll = {
   get top() {
     return document.documentElement.scrollTop || document.body.scrollTop;
@@ -14,3 +22,10 @@ export const docScroll = {
     document.body.scrollLeft = value;
   },
 };
+
+export function isInDocument(element: HTMLElement | null) {
+  if (element && 'isConnected' in element) {
+    return element.isConnected;
+  }
+  return document.documentElement.contains(element);
+}

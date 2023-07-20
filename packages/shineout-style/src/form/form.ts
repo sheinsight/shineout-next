@@ -1,7 +1,7 @@
 import { JsStyles } from '../jss-style';
 import CssVar from '../cssvar';
 
-type FormClass = 'wrapper' | 'wrapperInline';
+export type FormClass = 'wrapper' | 'wrapperInline';
 
 const form: JsStyles<FormClass> = {
   wrapper: {

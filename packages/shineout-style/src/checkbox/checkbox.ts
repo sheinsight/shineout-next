@@ -1,7 +1,7 @@
 import cssVars from '../cssvar';
 import { JsStyles } from '../jss-style';
 
-type CheckboxClass =
+export type CheckboxClass =
   | 'wrapper'
   | 'wrapperSmall'
   | 'wrapperLarge'

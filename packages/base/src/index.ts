@@ -4,7 +4,9 @@ export * from './radio';
 export * from './form';
 export * from './rule';
 export * from './checkbox';
+export * from './dropdown';
 export * from './button';
+export * from './icon';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';

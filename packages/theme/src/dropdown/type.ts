@@ -4,254 +4,242 @@
 export interface DropdownTokens {
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单字体颜色
+   * @token Radius-4
+   * @description 下拉菜单undefined边框圆角
    */
-  dropdownFontColor: string;
+  dropdownListBorderRadius: string;
   /**
    * @type {string}
-   * @token
-   * @description 下拉菜单背景颜色
+   * @token Padding-4
+   * @description 下拉菜单undefined内边距（垂直方向）
    */
-  dropdownBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单边框颜色
-   */
-  dropdownBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单禁用时的字体颜色
-   */
-  dropdownDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单禁用时的背景颜色
-   */
-  dropdownDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单禁用时的边框颜色
-   */
-  dropdownDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单鼠标移入时的字体颜色
-   */
-  dropdownHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单鼠标移入时的背景颜色
-   */
-  dropdownHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单鼠标移入时的边框颜色
-   */
-  dropdownHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单鼠标点击时的字体颜色
-   */
-  dropdownActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单鼠标点击时的背景颜色
-   */
-  dropdownActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单鼠标点击时的边框颜色
-   */
-  dropdownActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单鼠标聚焦时的字体颜色
-   */
-  dropdownFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单鼠标聚焦时的背景颜色
-   */
-  dropdownFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单鼠标聚焦时的边框颜色
-   */
-  dropdownFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下字体颜色
-   */
-  dropdownOutlineFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下背景颜色
-   */
-  dropdownOutlineBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下边框颜色
-   */
-  dropdownOutlineBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下禁用时的字体颜色
-   */
-  dropdownOutlineDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下禁用时的背景颜色
-   */
-  dropdownOutlineDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下禁用时的边框颜色
-   */
-  dropdownOutlineDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下鼠标移入时的字体颜色
-   */
-  dropdownOutlineHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下鼠标移入时的背景颜色
-   */
-  dropdownOutlineHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下鼠标移入时的边框颜色
-   */
-  dropdownOutlineHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下鼠标点击时的字体颜色
-   */
-  dropdownOutlineActiveFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下鼠标点击时的背景颜色
-   */
-  dropdownOutlineActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下鼠标点击时的边框颜色
-   */
-  dropdownOutlineActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下鼠标聚焦时的字体颜色
-   */
-  dropdownOutlineFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下鼠标聚焦时的背景颜色
-   */
-  dropdownOutlineFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 下拉菜单线框模式下鼠标聚焦时的边框颜色
-   */
-  dropdownOutlineFocusBorderColor: string;
+  dropdownListPaddingY: string;
   /**
    * @type {string}
    * @token 14/regular
-   * @description 下拉菜单字体字号
+   * @description 下拉菜单undefined字体字号
    */
-  dropdownFontSize: string;
+  dropdownListFontSize: string;
   /**
    * @type {string}
    * @token Radius-4
-   * @description 下拉菜单边框圆角
+   * @description 下拉菜单undefined小尺寸边框圆角
    */
-  dropdownBorderRadius: string;
+  dropdownListSmallBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
-   * @description 下拉菜单内边距（水平方向）
+   * @token Padding-4
+   * @description 下拉菜单undefined小尺寸内边距（垂直方向）
    */
-  dropdownPaddingX: string;
-  /**
-   * @type {string}
-   * @token Padding-5
-   * @description 下拉菜单内边距（垂直方向）
-   */
-  dropdownPaddingY: string;
+  dropdownListSmallPaddingY: string;
   /**
    * @type {string}
    * @token 12/regular
-   * @description 下拉菜单小尺寸字体字号
+   * @description 下拉菜单undefined小尺寸字体字号
    */
-  dropdownSmallFontSize: string;
+  dropdownListSmallFontSize: string;
   /**
    * @type {string}
    * @token Radius-4
-   * @description 下拉菜单小尺寸边框圆角
+   * @description 下拉菜单undefined大尺寸边框圆角
    */
-  dropdownSmallBorderRadius: string;
+  dropdownListLargeBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
-   * @description 下拉菜单小尺寸内边距（水平方向）
+   * @token Padding-4
+   * @description 下拉菜单undefined大尺寸内边距（垂直方向）
    */
-  dropdownSmallPaddingX: string;
-  /**
-   * @type {string}
-   * @token Padding-2
-   * @description 下拉菜单小尺寸内边距（垂直方向）
-   */
-  dropdownSmallPaddingY: string;
+  dropdownListLargePaddingY: string;
   /**
    * @type {string}
    * @token 16/regular
-   * @description 下拉菜单大尺寸字体字号
+   * @description 下拉菜单undefined大尺寸字体字号
    */
-  dropdownLargeFontSize: string;
+  dropdownListLargeFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
-   * @description 下拉菜单大尺寸边框圆角
+   * @token Neutral-fill-1
+   * @description 下拉菜单undefined背景颜色
    */
-  dropdownLargeBorderRadius: string;
+  dropdownListBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-12
-   * @description 下拉菜单大尺寸内边距（水平方向）
+   * @token Neutral-border-1
+   * @description 下拉菜单undefined边框颜色
    */
-  dropdownLargePaddingX: string;
+  dropdownListBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 下拉菜单undefined字体颜色
+   */
+  dropdownListFontColor: string;
+  /**
+   * @type {string}
+   * @token Shadow-2
+   * @description 下拉菜单undefinedundefinedundefined
+   */
+  dropdownListBoxShadow: string;
+  /**
+   * @type {string}
+   * @token Border-1
+   * @description 下拉菜单undefined边框宽度
+   */
+  dropdownListBorderWidth: string;
   /**
    * @type {string}
    * @token Padding-8
-   * @description 下拉菜单大尺寸内边距（垂直方向）
+   * @description 下拉菜单undefined内边距（水平方向）
    */
-  dropdownLargePaddingY: string;
+  dropdownOptionPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-5
+   * @description 下拉菜单undefined内边距（垂直方向）
+   */
+  dropdownOptionPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefined小尺寸内边距（水平方向）
+   */
+  dropdownOptionSmallPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-2
+   * @description 下拉菜单undefined小尺寸内边距（垂直方向）
+   */
+  dropdownOptionSmallPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description 下拉菜单undefined大尺寸内边距（水平方向）
+   */
+  dropdownOptionLargePaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefined大尺寸内边距（垂直方向）
+   */
+  dropdownOptionLargePaddingY: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 下拉菜单undefined背景颜色
+   */
+  dropdownOptionBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 下拉菜单undefined字体颜色
+   */
+  dropdownOptionFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 下拉菜单undefined鼠标移入时的背景颜色
+   */
+  dropdownOptionHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 下拉菜单undefined鼠标移入时的字体颜色
+   */
+  dropdownOptionHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 下拉菜单undefined鼠标点击时的背景颜色
+   */
+  dropdownOptionActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 下拉菜单undefined鼠标点击时的字体颜色
+   */
+  dropdownOptionActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description 下拉菜单undefinedundefined背景颜色
+   */
+  dropdownOptionSelectBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 下拉菜单undefinedundefined字体颜色
+   */
+  dropdownOptionSelectFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 下拉菜单undefined禁用时的背景颜色
+   */
+  dropdownOptionDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 下拉菜单undefined禁用时的字体颜色
+   */
+  dropdownOptionDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefined内边距（水平方向）
+   */
+  dropdownColumnPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefined内边距（垂直方向）
+   */
+  dropdownColumnPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefinedundefined内边距（水平方向）
+   */
+  dropdownOptionGroupPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 下拉菜单undefinedundefined内边距（垂直方向）
+   */
+  dropdownOptionGroupPaddingY: string;
+  /**
+   * @type {string}
+   * @token 14/regular
+   * @description 下拉菜单undefinedundefined字体字号
+   */
+  dropdownOptionGroupFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 下拉菜单undefinedundefined字体颜色
+   */
+  dropdownOptionGroupFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 下拉菜单undefinedundefined背景颜色
+   */
+  dropdownOptionDividerBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefinedundefined内边距（水平方向）
+   */
+  dropdownOptionDividerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-2
+   * @description 下拉菜单undefinedundefined内边距（垂直方向）
+   */
+  dropdownOptionDividerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Border-1
+   * @description 下拉菜单undefinedundefined高度
+   */
+  dropdownOptionDividerHeight: string;
 }

@@ -9,3 +9,5 @@ export * from './number';
 export * from './shallowEqual';
 export * from './uid';
 export * from './document';
+export * from './position';
+export * from './render';

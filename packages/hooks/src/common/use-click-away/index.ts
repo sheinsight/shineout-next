@@ -1,35 +1,38 @@
-import { useEffect, useRef } from 'react';
+import { RefObject, useEffect } from 'react';
 import { useLatestObj } from '../use-latest-obj';
 
 export type OnClickAwayFn<T> = (event: T) => void;
 
-/**
- * 指定 dom 区域外触发点击事件 {@link http://lego-master-dev-5828.dev.paas-dev.sheincorp.cn/lego-use/scenes/use-click-away | 查看示例}
- * @param onClickAway 当点击其他区域时的回调 {@link OnClickAwayFn | OnClickAwayFn}
- * @returns 返回 Ref 可以用于绑定指定的 dom {@link React.MutableRefObject | React.MutableRefObject}
- */
-export function useClickAway<T extends Event = Event>(onClickAway: OnClickAwayFn<T>) {
+export type Target = RefObject<HTMLElement | null>;
+export function useClickAway<T extends Event = Event>(params: {
+  // 点击外部触发的回调
+  onClickAway: OnClickAwayFn<T>;
+  // 开启监听
+  listen?: boolean;
+  // 目标元素内点击不触发 onClickAway
+  target: Target | Array<Target>;
+}) {
+  const { onClickAway, listen = true, target: t } = params;
   const context = useLatestObj({ onClickAway });
-  const domRef = useRef<any>();
+  const target = Array.isArray(t) ? t : [t];
 
   useEffect(() => {
     const handleClickAway = (event: T) => {
       // @ts-ignore
-      if (domRef.current?.contains(event.target)) {
+      if (target.findIndex((t) => t.current?.contains(event.target)) > -1) {
         return;
       }
       context.onClickAway(event);
     };
-
-    // @ts-ignore
-    document.addEventListener('click', handleClickAway);
-
+    if (listen) {
+      // @ts-ignore
+      document.addEventListener('click', handleClickAway);
+    }
     return () => {
       // @ts-ignore
       document.removeEventListener('click', handleClickAway);
     };
-  }, []);
-  return domRef;
+  }, [listen]);
 }
 
 export default useClickAway;

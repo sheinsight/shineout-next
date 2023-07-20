@@ -9,7 +9,7 @@ const { wrapper, ...resetWrapper } = inputBorder;
 
 const { group, groupSmall, groupLarge, ...resetGroup } = groupBorder;
 
-type InputClass =
+export type InputClass =
   | 'wrapper'
   | 'wrapperSmall'
   | 'wrapperLarge'
