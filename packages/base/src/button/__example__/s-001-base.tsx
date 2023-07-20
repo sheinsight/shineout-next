@@ -85,15 +85,19 @@ export default () => {
           <Button jssStyle={jssStyle}>填充按钮</Button>
           <Button jssStyle={jssStyle}>填充按钮</Button>
           <Button jssStyle={jssStyle}>填充按钮</Button>
-          <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle} disabled>
+            填充按钮
+          </Button>
           {randerDropdown('danger', 'outline')}
         </ButtonGroup>
 
         <ButtonGroup jssStyle={jssGroupStyle} type='secondary' outline style={{ marginTop: 10 }}>
-          <Button jssStyle={jssStyle}>填充按钮</Button>
-          <Button jssStyle={jssStyle}>填充按钮</Button>
-          <Button jssStyle={jssStyle}>填充按钮</Button>
-          <Button jssStyle={jssStyle}>填充按钮</Button>
+          {/* <Button jssStyle={jssStyle}>填充按钮</Button>
+          <Button jssStyle={jssStyle}>填充按钮</Button> */}
+          <Button jssStyle={jssStyle} disabled>
+            填充按钮
+          </Button>
+          {/* <Button jssStyle={jssStyle}>填充按钮</Button> */}
           {randerDropdown('secondary', 'outline')}
         </ButtonGroup>
 

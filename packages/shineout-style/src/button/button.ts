@@ -213,7 +213,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
 
   disabled: {
     cursor: 'not-allowed',
-    opacity: 0.65,
+    // opacity: 0.65,
   },
   loading: {
     cursor: 'not-allowed',
