@@ -26,7 +26,7 @@ const columnStyle: React.CSSProperties = {
   gap: 20,
 };
 const App: React.FC = () => (
-  <div style={{ display: 'grid', gap: 12, gridTemplateColumns: 'repeat(3, 1fr)' }}>
+  <div style={{ display: 'flex', gap: 12 }}>
     <div style={columnStyle}>
       <Dropdown data={menu} type={'primary'} placeholder={'Default'} />
       <Dropdown data={menu} type={'secondary'} placeholder={'Default'} />

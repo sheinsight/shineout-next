@@ -18,7 +18,6 @@ export function useClickAway<T extends Event = Event>(params: {
 
   useEffect(() => {
     const handleClickAway = (event: T) => {
-      console.log(target);
       // @ts-ignore
       if (target.findIndex((t) => t.current?.contains(event.target)) > -1) {
         return;

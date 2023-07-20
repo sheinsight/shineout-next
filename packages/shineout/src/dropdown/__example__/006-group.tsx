@@ -7,7 +7,7 @@
 import React from 'react';
 import { Dropdown } from 'shineout';
 
-const menu = new Array(12).fill(null).map((_, index) => ({
+const menu = new Array(6).fill(null).map((_, index) => ({
   id: `${index}`,
   content: `item${index}`,
   group: index % 3 === 0 ? `group${index / 3}` : undefined,

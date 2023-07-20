@@ -196,7 +196,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           placeholder={renderPlaceholder}
           key={'group'}
           position={childPosition as MenuPosition}
-          onClick={onClick}
+          onClick={d.onClick || onClick}
           renderItem={renderItem}
           trigger={trigger}
           isSub
