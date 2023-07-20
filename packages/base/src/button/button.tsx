@@ -30,7 +30,7 @@ const Button = (props: ButtonProps) => {
     ...rest,
   });
 
-  const modeSetted = mode || text || dash || outline;
+  const modeSetted = mode || (text ? 'text' : dash ? 'dash' : outline ? 'outline' : undefined);
 
   const rootClass = classNames([
     className,

@@ -16,7 +16,7 @@ export interface ButtonGroupClasses {
   warning: string;
   success: string;
   // href: string;
-  // link: string;
+  link: string;
 
   dash: string;
   outline: string;

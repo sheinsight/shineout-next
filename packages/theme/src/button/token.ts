@@ -748,7 +748,7 @@ const buttonTokenValue = {
   },
   round: { border: { radius: 'Radius-1000' } },
   circle: { border: { radius: 'Radius-50%' } },
-  square: { border: { radius: 'Radius-2' } },
+  square: { border: { radius: 'Radius-4' } },
   nearly: { margin: 'Margin-8' },
 };
 

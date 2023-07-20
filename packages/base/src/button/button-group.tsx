@@ -4,11 +4,21 @@ import { ButtonGroupProps } from './button-group.type';
 import { ButtonProps } from './button.type';
 
 const Group = (props: ButtonGroupProps) => {
-  const { children, className, style, jssStyle, size, outline, text, shape, dash, type } = props;
+  const { children, className, style, jssStyle, size, mode, outline, text, shape, dash, type } =
+    props;
+
+  if (outline || text || dash) {
+    console.warn(
+      '[Button / Button.Group] The properties outline, text, and dash are being deprecated and you should use the mode property to specify the style of the button instead.',
+    );
+  }
+
+  const modeSetted = mode || (text ? 'text' : dash ? 'dash' : outline ? 'outline' : undefined);
+
   const groupClass = classNames(className, jssStyle.group, jssStyle[type || 'default'], {
-    [jssStyle.outline]: outline,
-    [jssStyle.text]: text,
-    [jssStyle.dash]: dash,
+    [jssStyle.text]: modeSetted === 'text',
+    [jssStyle.dash]: modeSetted === 'dash',
+    [jssStyle.outline]: modeSetted === 'outline',
     [jssStyle.round]: shape === 'round',
     [jssStyle.small]: size === 'small',
     [jssStyle.large]: size === 'large',
@@ -23,11 +33,8 @@ const Group = (props: ButtonGroupProps) => {
 
         return cloneElement<ButtonProps>(Child, {
           size,
-          dash,
-          text,
-          outline,
+          mode: modeSetted,
           shape: shapeSetted,
-          // type: type ? type : Child.props.type,
           type: Child.props.type || type,
         });
       })}

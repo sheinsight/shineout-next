@@ -57,6 +57,16 @@ const button = (type: ButtonType, styles: ButtonStyleType) => ({
   },
 });
 
+const loading = (type: ButtonType, styles: ButtonStyleType) => {
+  const buttonStyle = button(type, styles);
+
+  return {
+    '&$loading': {
+      ...buttonStyle['&$disabled'],
+    },
+  };
+};
+
 const ButtonStyle: JsStyles<ButtonClass> = {
   button: {
     height: `32px`,
@@ -75,6 +85,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     lineHeight: Token.lineHeightDynamic,
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
     transition: 'all 0.15s ease-in-out',
+    fontFamily: 'inherit',
 
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,
@@ -227,14 +238,24 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
   loading: {
     cursor: 'not-allowed',
-    opacity: 0.65,
 
-    '&:active': {
-      animationName: 'none',
+    '&$default': {
+      ...loading('Default', ''),
     },
-
-    '&:hover': {
-      opacity: 0.65,
+    '&$primary': {
+      ...loading('Primary', ''),
+    },
+    '&$success': {
+      ...loading('Success', ''),
+    },
+    '&$danger': {
+      ...loading('Danger', ''),
+    },
+    '&$warning': {
+      ...loading('Warning', ''),
+    },
+    '&$secondary': {
+      ...loading('Secondary', ''),
     },
   },
 };
