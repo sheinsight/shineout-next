@@ -23,6 +23,7 @@ function compile(dirPath = shineoutDir) {
   fs.readdirSync(dirPath).forEach((dir) => {
     // 检查是否存在 .md 文件
     const mdPath = path.join(dirPath, dir, 'index.md');
+
     if (!fs.existsSync(mdPath)) return;
     // 读取 .md 文件
     const md = fs.readFileSync(mdPath, 'utf8');
@@ -41,6 +42,11 @@ function compile(dirPath = shineoutDir) {
         chunkModuleName,
       },
     });
+
+    // 读取 guide.md 文件
+    const guidemdPath = path.join(dirPath, dir, 'guide.md');
+    if (!fs.existsSync(guidemdPath)) return;
+    console.log('找到 guide.md 文件', guidemdPath);
   });
   const files = fs
     .readdirSync(`${chunkDir}/${chunkModuleName}`)
