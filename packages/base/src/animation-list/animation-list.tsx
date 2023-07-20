@@ -25,6 +25,7 @@ const AnimationList = (props: AnimationListProps) => {
     duration,
     type: typePo,
     className: classNamePo,
+    animation = true,
     ...forwardProps
   } = props;
 
@@ -32,8 +33,7 @@ const AnimationList = (props: AnimationListProps) => {
   const { current: context } = useRef({ mounted: false, height: 0, show: showPo });
   const ref = useRef<HTMLDivElement>(null);
   const forkRef = useForkRef(ref, onRef);
-
-  const durationNum = getDuration(duration);
+  const durationNum = animation ? getDuration(duration) : 0;
   const type = Array.isArray(typePo) ? typePo : [typePo];
   const needCollapse = type.indexOf('collapse') >= 0;
   const needTransform = type.indexOf('scale-y') >= 0;
@@ -113,10 +113,10 @@ const AnimationList = (props: AnimationListProps) => {
     }
   }, [showPo]);
 
-  let animation = `animation-${durationNum}`;
-  if (!needTransform) animation = `fade-${animation}`;
+  let animationName = durationNum ? `animation-${durationNum}` : '';
+  if (!needTransform) animationName = `fade-${animationName}`;
   const className = classNames(
-    jssStyle[animation as keyof AnimationListProps['jssStyle']],
+    jssStyle[animationName as keyof AnimationListProps['jssStyle']],
     {
       [jssStyle.show]: show,
       [jssStyle.fade]: type.includes('fade'),

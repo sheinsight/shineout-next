@@ -12,28 +12,20 @@ type DropdownItem = TYPE.Dropdown.Item;
 const menu: DropdownItem[] = [
   {
     content: 'First',
-    children: [
-      {
-        content: 'optic 1',
-      },
-    ],
   },
   {
     content: 'Second',
-    url: 'http://www.google.com',
-    children: [
-      {
-        content: 'topic 2',
-        children: [
-          {
-            content: 'topic 3',
-          },
-        ],
-      },
-    ],
+  },
+  {
+    content: 'Third',
   },
 ];
 
-const App: React.FC = () => <Dropdown absolute trigger='hover' placeholder='Hover' data={menu} />;
+const App: React.FC = () => (
+  <>
+    <Dropdown trigger='click' placeholder='Click' data={menu} />
+    <Dropdown trigger='hover' placeholder='Hover' data={menu} />
+  </>
+);
 
 export default App;

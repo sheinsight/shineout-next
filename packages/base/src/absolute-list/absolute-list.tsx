@@ -55,7 +55,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
 
   const getContainer = () => {
     if (typeof absolute === 'function') {
-      return absolute();
+      return absolute() || getRoot();
     }
     return getRoot();
   };

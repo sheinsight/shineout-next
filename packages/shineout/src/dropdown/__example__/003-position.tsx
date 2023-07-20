@@ -9,8 +9,6 @@ import { Dropdown, TYPE } from 'shineout';
 
 type DropdownItem = TYPE.Dropdown.Item;
 
-const style = { marginInlineEnd: 12, marginBottom: 12 };
-
 const menu: DropdownItem[] = [
   {
     content: 'First',
@@ -25,13 +23,9 @@ const menu: DropdownItem[] = [
   },
   {
     content: 'Second',
-    url: 'http://www.google.com',
     children: [
       {
         content: 'link3',
-        onClick: () => {
-          console.log('this is special');
-        },
       },
       {
         content: 'link4',
@@ -49,47 +43,47 @@ const menu: DropdownItem[] = [
 ];
 
 const App: React.FC = () => (
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)' }}>
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px' }}>
     <div>
-      <Dropdown placeholder='Right Top' style={style} position='right-top' data={menu} />
+      <Dropdown placeholder='Right Top' position='right-top' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Bottom Left' style={style} position='bottom-left' data={menu} />
+      <Dropdown placeholder='Bottom Left' position='bottom-left' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Bottom' style={style} position='bottom' data={menu} />
+      <Dropdown placeholder='Bottom' position='bottom' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Bottom Right' style={style} position='bottom-right' data={menu} />
+      <Dropdown placeholder='Bottom Right' position='bottom-right' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Left Top' style={style} position='left-top' data={menu} />
+      <Dropdown placeholder='Left Top' position='left-top' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Right' style={style} position='right' data={menu} />
+      <Dropdown placeholder='Right' position='right' data={menu} />
     </div>
     <div style={{ gridColumn: 'span 3' }}></div>
     <div>
-      <Dropdown placeholder='Left' style={style} position='left' data={menu} />
+      <Dropdown placeholder='Left' position='left' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Right Bottom' style={style} position='right-bottom' data={menu} />
+      <Dropdown placeholder='Right Bottom' position='right-bottom' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Top Left' style={style} position='top-left' data={menu} />
+      <Dropdown placeholder='Top Left' position='top-left' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Top' style={style} position='top' data={menu} />
+      <Dropdown placeholder='Top' position='top' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Top Right' style={style} position='top-right' data={menu} />
+      <Dropdown placeholder='Top Right' position='top-right' data={menu} />
     </div>
     <div>
-      <Dropdown placeholder='Left Bottom' style={style} position='left-bottom' data={menu} />
+      <Dropdown placeholder='Left Bottom' position='left-bottom' data={menu} />
     </div>
 
     <div>
-      <Dropdown placeholder='Auto Position' style={style} position='auto' data={menu} />
+      <Dropdown placeholder='Auto Position' position='auto' data={menu} />
     </div>
   </div>
 );

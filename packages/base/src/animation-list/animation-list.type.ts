@@ -24,4 +24,5 @@ export interface AnimationListProps {
   style?: React.CSSProperties;
   jssStyle: AnimationListClass;
   onRef?: React.Ref<HTMLDivElement | null>;
+  animation?: boolean;
 }

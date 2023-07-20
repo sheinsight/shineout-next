@@ -2,7 +2,7 @@
  * cn - 基本用法
  *    -- Dropdown 通过数据来渲染，支持 json 格式数据、React 组件
  * en - Base
- *    -- Dropdown is rendered through data and supports json formatted data and React components.
+ *   -- Dropdown is rendered through data and supports json formatted data and React components.
  */
 import React from 'react';
 import { Dropdown, TYPE } from 'shineout';
@@ -35,11 +35,11 @@ const data: DropdownItem[] = [
 ];
 
 const App: React.FC = () => {
-  const handleCollapse = (collapsed: boolean) => {
-    console.log('Dropdown collapsed:', collapsed);
-  };
   return (
-    <Dropdown trigger='click' onCollapse={handleCollapse} placeholder='Dropdown' data={data} />
+    <>
+      <Dropdown placeholder='Dropdown' data={data} />
+      <Dropdown placeholder='Dropdown' data={data} disabled />
+    </>
   );
 };
 

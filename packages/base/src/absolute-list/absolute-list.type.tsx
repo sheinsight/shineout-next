@@ -27,7 +27,7 @@ export interface AbsoluteListProps {
    * @cn 为 true 时，选项弹出层在 DOM 中独立 render; 为函数时，返回值作为弹出层容器
    * @default false
    */
-  absolute: boolean | (() => HTMLElement) | undefined;
+  absolute?: boolean | (() => HTMLElement | null) | undefined;
 
   rootClass?: string;
   /**

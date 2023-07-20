@@ -30,16 +30,14 @@ class Item extends React.PureComponent<ItemProps> {
   }
 
   render() {
-    const { itemClassName, renderItem, width, columns } = this.props;
+    const { itemClassName, renderItem } = this.props;
     const data = (this.props.data || {}) as DropdownNode;
 
-    const aWidth = width && columns ? (width - 2) / columns : undefined;
     const props: ItemLinkProps = {
       disabled: data.disabled,
       onClick: this.handleClick,
       className: itemClassName,
       target: data.target,
-      style: (aWidth ? { display: 'inline-block', width: aWidth } : null) as React.CSSProperties,
     };
     if (data.url) props.href = data.url;
 

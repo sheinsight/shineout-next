@@ -4,12 +4,6 @@
 export interface DropdownTokens {
   /**
    * @type {string}
-   * @token Border-1
-   * @description 下拉菜单undefined边框宽度
-   */
-  dropdownListBorderWidth: string;
-  /**
-   * @type {string}
    * @token Radius-4
    * @description 下拉菜单undefined边框圆角
    */
@@ -88,37 +82,43 @@ export interface DropdownTokens {
   dropdownListBoxShadow: string;
   /**
    * @type {string}
-   * @token 8px
+   * @token Border-1
+   * @description 下拉菜单undefined边框宽度
+   */
+  dropdownListBorderWidth: string;
+  /**
+   * @type {string}
+   * @token Padding-8
    * @description 下拉菜单undefined内边距（水平方向）
    */
   dropdownOptionPaddingX: string;
   /**
    * @type {string}
-   * @token 5px
+   * @token Padding-5
    * @description 下拉菜单undefined内边距（垂直方向）
    */
   dropdownOptionPaddingY: string;
   /**
    * @type {string}
-   * @token 8px
+   * @token Padding-8
    * @description 下拉菜单undefined小尺寸内边距（水平方向）
    */
   dropdownOptionSmallPaddingX: string;
   /**
    * @type {string}
-   * @token 2px
+   * @token Padding-2
    * @description 下拉菜单undefined小尺寸内边距（垂直方向）
    */
   dropdownOptionSmallPaddingY: string;
   /**
    * @type {string}
-   * @token 12px
+   * @token Padding-12
    * @description 下拉菜单undefined大尺寸内边距（水平方向）
    */
   dropdownOptionLargePaddingX: string;
   /**
    * @type {string}
-   * @token 8px
+   * @token Padding-8
    * @description 下拉菜单undefined大尺寸内边距（垂直方向）
    */
   dropdownOptionLargePaddingY: string;
@@ -182,4 +182,64 @@ export interface DropdownTokens {
    * @description 下拉菜单undefined禁用时的字体颜色
    */
   dropdownOptionDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefined内边距（水平方向）
+   */
+  dropdownColumnPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefined内边距（垂直方向）
+   */
+  dropdownColumnPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefinedundefined内边距（水平方向）
+   */
+  dropdownOptionGroupPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 下拉菜单undefinedundefined内边距（垂直方向）
+   */
+  dropdownOptionGroupPaddingY: string;
+  /**
+   * @type {string}
+   * @token 14/regular
+   * @description 下拉菜单undefinedundefined字体字号
+   */
+  dropdownOptionGroupFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 下拉菜单undefinedundefined字体颜色
+   */
+  dropdownOptionGroupFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 下拉菜单undefinedundefined背景颜色
+   */
+  dropdownOptionDividerBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefinedundefined内边距（水平方向）
+   */
+  dropdownOptionDividerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-2
+   * @description 下拉菜单undefinedundefined内边距（垂直方向）
+   */
+  dropdownOptionDividerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Border-1
+   * @description 下拉菜单undefinedundefined高度
+   */
+  dropdownOptionDividerHeight: string;
 }

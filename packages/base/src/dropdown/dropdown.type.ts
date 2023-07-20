@@ -1,7 +1,8 @@
 import React from 'react';
 import { CommonType } from '../common/type';
 import { AnimationListClass } from '../animation-list/animation-list.type';
-import { ButtonClasses } from '../button/button.type';
+import { ButtonClasses, ButtonProps } from '../button/button.type';
+import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 
 export interface DropdownClass {
   wrapper: string;
@@ -15,6 +16,8 @@ export interface DropdownClass {
   itemDisabled: string;
   itemActive: string;
   splitButton: string;
+  optionGroup: string;
+  optionDivider: string;
 }
 
 export type MenuPosition =
@@ -41,6 +44,16 @@ export type DropdownItem = DropdownNode | React.ReactNode;
  * @en If data item is a ReactElement, render the item;\nIf data item is an object and renderItem is set, render the renderItem's result;\nif data item is an object and renderItem is not set, handle the parameters as follows;
  */
 export interface DropdownNode {
+  /**
+   * @cn 分组
+   * @en Group
+   */
+  group?: string;
+  /**
+   * @cn 分割线
+   * @en Divider
+   */
+  divider?: boolean;
   /**
    * @en When the url is not empty, a url will be rendered.
    * @cn url属性不为空时，render为一个链接
@@ -86,13 +99,10 @@ export interface ItemProps {
   renderItem: ((data: any) => React.ReactNode) | string;
 }
 
-export interface AbsoluteProps {
-  absolute?: boolean;
-}
-
 export interface SimpleDropdownProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
-    Pick<AbsoluteProps, 'absolute'> {
+    Pick<AbsoluteListProps, 'absolute'>,
+    Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline'> {
   animationListJssStyle: AnimationListClass;
   buttonJssStyle: ButtonClasses;
   jssStyle: DropdownClass;
@@ -105,13 +115,6 @@ export interface SimpleDropdownProps
    * @cn 页面多元素展示,此属性需要依赖width属性,请合理的设置列数和宽度
    */
   columns?: number;
-
-  /**
-   * @en same as [Button](/components/Button)
-   * @cn 同 [Button](/components/Button)
-   * @default false
-   */
-  outline?: boolean;
 
   /**
    * @en Specifies the dropdown should be disabled
@@ -147,8 +150,6 @@ export interface SimpleDropdownProps
    * @cn 按钮显示内容
    */
   placeholder?: React.ReactNode;
-
-  type?: 'primary' | 'success' | 'warning' | 'danger' | 'link';
 
   /**
    * @en The click event. The parameter is the rendered data. <br /> Note: if the onClick is set in the data, this method will be ignored and data.onclick will be called.

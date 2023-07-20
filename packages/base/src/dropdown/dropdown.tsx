@@ -37,6 +37,10 @@ const Dropdown = (props: SimpleDropdownProps) => {
   const listRef = useRef<HTMLDivElement | null>(null);
   const {
     placeholder,
+    onClick,
+    renderItem,
+    absolute,
+    data,
     animationListJssStyle,
     jssStyle,
     isSub,
@@ -47,9 +51,15 @@ const Dropdown = (props: SimpleDropdownProps) => {
     style,
     className,
     buttonJssStyle,
-    type = 'primary',
     size,
   } = props;
+  let { type, text, outline } = props;
+  // 默认使用 secondary text 样式
+  if (type === undefined && text === undefined && outline === undefined) {
+    text = true;
+    outline = false;
+    type = 'secondary';
+  }
 
   const handleFocus = () => {
     const { onCollapse } = props;
@@ -78,8 +88,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     }, delay);
   };
 
-  // todo
-  const handleToggle = (show: boolean) => {
+  const handleHoverToggle = (show: boolean) => {
     if (disabled) return;
     if (trigger === 'click') return;
     if (show) {
@@ -89,12 +98,22 @@ const Dropdown = (props: SimpleDropdownProps) => {
     }
   };
 
+  const handleClickToggle = () => {
+    if (disabled) return;
+    if (trigger === 'hover') return;
+    if (open) {
+      handleBlur();
+    } else {
+      handleFocus();
+    }
+  };
+
   const handleMouseEnter = () => {
-    handleToggle(true);
+    handleHoverToggle(true);
   };
 
   const handleMouseLeave = () => {
-    handleToggle(false);
+    handleHoverToggle(false);
   };
 
   useClickAway({
@@ -124,11 +143,11 @@ const Dropdown = (props: SimpleDropdownProps) => {
           className={classNames({
             [jssStyle.button]: true,
             [jssStyle.item]: true,
-            [jssStyle.itemDisabled]: props.disabled,
+            [jssStyle.itemDisabled]: disabled,
             [jssStyle.itemActive]: !!open,
           })}
           data-role='item'
-          onClick={!props.disabled ? handleFocus : undefined}
+          onClick={!disabled ? handleFocus : undefined}
         >
           {child}
         </a>
@@ -137,16 +156,16 @@ const Dropdown = (props: SimpleDropdownProps) => {
       return (
         <Button
           jssStyle={buttonJssStyle}
-          text
-          disabled={props.disabled}
-          onClick={handleFocus}
-          outline={props.outline}
+          disabled={disabled}
+          onClick={handleClickToggle}
+          outline={outline}
           className={classNames({
             [jssStyle.button]: true,
             [jssStyle.splitButton]: !placeholder,
           })}
           type={type}
           size={size}
+          text={text}
           key='button'
         >
           {child}
@@ -155,40 +174,52 @@ const Dropdown = (props: SimpleDropdownProps) => {
   };
 
   const renderList = () => {
-    return props.data.map((dd, index) => {
+    return data.map((dd, index) => {
       const d = dd as DropdownNode;
       const childPosition = positionMap[position];
 
-      const renderPlaceholder = util.render(props.renderItem || 'content', d);
+      const renderPlaceholder = util.render(renderItem || 'content', d);
       const { children } = d;
-      return children ? (
+      const group = d.group ? (
+        <div key={'group'} className={jssStyle.optionGroup}>
+          {d.group}{' '}
+        </div>
+      ) : null;
+      const divider = d.divider ? <div key={'divider'} className={jssStyle.optionDivider} /> : null;
+      const context = children ? (
         <Dropdown
           buttonJssStyle={buttonJssStyle}
           jssStyle={jssStyle}
           animationListJssStyle={animationListJssStyle}
-          style={{ width: '100%' }}
           data={children}
           disabled={!!d.disabled}
           placeholder={renderPlaceholder}
-          key={index}
+          key={'group'}
           position={childPosition as MenuPosition}
-          onClick={props.onClick}
-          renderItem={props.renderItem}
-          trigger={props.trigger}
+          onClick={onClick}
+          renderItem={renderItem}
+          trigger={trigger}
           isSub
         />
       ) : (
         <Item
           data={d}
           key={index}
-          onClick={d.onClick || props.onClick}
+          onClick={d.onClick || onClick}
           itemClassName={classNames({
             [jssStyle.item]: true,
           })}
-          renderItem={props.renderItem}
+          renderItem={renderItem}
           columns={columns}
           width={width}
         />
+      );
+      return (
+        <React.Fragment key={index}>
+          {group}
+          {context}
+          {divider}
+        </React.Fragment>
       );
     });
   };
@@ -210,17 +241,19 @@ const Dropdown = (props: SimpleDropdownProps) => {
         position={position}
         focus={open}
         parentElement={wrapRef.current}
-        absolute={props.absolute}
+        absolute={absolute}
         fixedWidth={'min'}
       >
         <AnimationList
           onRef={listRef}
+          display={columns ? 'grid' : 'block'}
           className={classNames({
             [jssStyle.list]: true,
             [jssStyle.boxList]: columns !== undefined && columns > 1,
           })}
           style={{
             width: width,
+            gridTemplateColumns: columns ? `repeat(${columns}, 1fr)` : undefined,
           }}
           type={'fade'}
           duration={'fast'}

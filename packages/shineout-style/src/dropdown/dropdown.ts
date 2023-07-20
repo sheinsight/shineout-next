@@ -14,12 +14,17 @@ export type DropDownClass =
   | 'item'
   | 'itemDisabled'
   | 'itemActive'
-  | 'splitButton';
+  | 'splitButton'
+  | 'optionGroup'
+  | 'optionDivider';
 
 const dropdown: JsStyles<DropDownClass> = {
   wrapper: {
     display: 'inline-block',
     position: 'relative',
+    '$list &': {
+      display: 'block',
+    },
   },
   open: {
     '& > $button $caret': {
@@ -29,6 +34,7 @@ const dropdown: JsStyles<DropDownClass> = {
   list: {
     position: 'absolute',
     fontWeight: 400,
+    minWidth: '100%',
     zIndex: 1000,
     fontSize: token.dropdownListFontSize,
     border: `${token.dropdownListBorderWidth} solid ${token.dropdownListBorderColor}`,
@@ -39,9 +45,6 @@ const dropdown: JsStyles<DropDownClass> = {
     width: 'max-content',
     boxSizing: 'border-box',
     lineHeight: token.lineHeightDynamic,
-    '& $wrapper': {
-      display: 'block',
-    },
   },
   listSmall: {
     fontSize: token.dropdownListSmallFontSize,
@@ -53,7 +56,12 @@ const dropdown: JsStyles<DropDownClass> = {
     borderRadius: token.dropdownListLargeBorderRadius,
     padding: `${token.dropdownListLargePaddingY} 0`,
   },
-  boxList: {},
+  boxList: {
+    padding: `${token.dropdownColumnPaddingY} ${token.dropdownColumnPaddingX}`,
+    '& $item': {
+      textAlign: 'center',
+    },
+  },
   caret: {
     width: '1em',
     height: '1em',
@@ -76,8 +84,11 @@ const dropdown: JsStyles<DropDownClass> = {
   },
   button: {
     '$wrapper &': {
-      display: 'flex',
+      display: 'inline-flex',
       alignItems: 'center',
+    },
+    '$list &': {
+      display: 'flex',
     },
   },
   item: {
@@ -107,6 +118,20 @@ const dropdown: JsStyles<DropDownClass> = {
     },
   },
   itemDisabled: {},
+  optionGroup: {
+    padding: `${token.dropdownOptionGroupPaddingY} ${token.dropdownOptionGroupPaddingX}`,
+    fontSize: token.dropdownOptionGroupFontSize,
+    color: token.dropdownOptionGroupFontColor,
+  },
+  optionDivider: {
+    padding: `${token.dropdownOptionDividerPaddingY} ${token.dropdownOptionDividerPaddingX}`,
+    '&::before': {
+      content: '" "',
+      height: token.dropdownOptionDividerHeight,
+      display: 'block',
+      background: token.dropdownOptionDividerBackgroundColor,
+    },
+  },
   itemActive: {},
   splitButton: {},
 };

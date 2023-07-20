@@ -37,9 +37,15 @@ const data: DropdownItem[] = [
 
 const App: React.FC = () => (
   <div style={{ background: '#eee', padding: 20, borderRadius: 10, overflow: 'hidden' }}>
-    <Dropdown absolute placeholder='Absolute' data={data} />
+    <Dropdown outline type={'primary'} absolute placeholder='Absolute' data={data} />
 
-    <Dropdown placeholder='Default' data={data} style={{ marginInlineStart: 40 }} />
+    <Dropdown
+      outline
+      type={'primary'}
+      placeholder='Default'
+      data={data}
+      style={{ marginInlineStart: 40 }}
+    />
   </div>
 );
 
