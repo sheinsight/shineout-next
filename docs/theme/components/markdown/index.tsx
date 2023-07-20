@@ -1,25 +1,26 @@
 import useStyles from '../style';
 import Title from '../title';
-import Anchor from 'docs/theme/layout/desktop/anchor';
+import { useSnapshot } from 'valtio';
+import store from '../../store';
 import { MarkdownProps } from 'docs/types';
-import Example from '../example';
+
+import Doc from './doc';
+import Api from './api';
+import Guide from './guide';
+import Changelog from './changelog';
 
 const Markdown = (props: MarkdownProps) => {
-  const { title, describe, examples } = props;
+  const { title, describe, examples, guides } = props;
   const classes = useStyles();
+  const state = useSnapshot(store);
+
   return (
     <div className={classes.pages}>
       <Title title={title} describe={describe}></Title>
-      <div style={{ display: 'flex' }}>
-        <div className='examples' style={{ flex: 1 }}>
-          {examples.map((example, index) => {
-            return <Example key={index} {...example} index={index}></Example>;
-          })}
-        </div>
-        <div style={{ width: 192 }}>
-          <Anchor></Anchor>
-        </div>
-      </div>
+      {state.doctab === 'examples' && <Doc examples={examples}></Doc>}
+      {state.doctab === 'api' && <Api></Api>}
+      {state.doctab === 'guide' && <Guide guides={guides}></Guide>}
+      {state.doctab === 'changelog' && <Changelog></Changelog>}
     </div>
   );
 };

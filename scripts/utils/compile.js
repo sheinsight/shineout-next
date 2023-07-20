@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { markdownLoader } = require('./markdown-loader');
+const { guideLoader, markdownLoader } = require('./markdown-loader');
 const { writeTemplate } = require('./write-template');
 
 const templatePath = path.resolve(__dirname, '../doc-page.ejs');
@@ -28,7 +28,26 @@ function compile(dirPath = shineoutDir) {
     // 读取 .md 文件
     const md = fs.readFileSync(mdPath, 'utf8');
     // 处理 .md 文件
-    const result = markdownLoader(md, dir, dirPath);
+    const doc = markdownLoader(md, dir, dirPath);
+
+    const guides = {
+      cn: [],
+      en: [],
+    };
+
+    // 读取 guide.cn.md 文件
+    // 读取 guide.en.md 文件
+    const guideCNPath = path.join(dirPath, dir, 'guide.cn.md');
+    const guideENPath = path.join(dirPath, dir, 'guide.en.md');
+    if (fs.existsSync(guideCNPath)) {
+      const guide = fs.readFileSync(guideCNPath, 'utf8');
+      guides.cn = guideLoader(guide, dir, guideCNPath);
+    }
+
+    if (fs.existsSync(guideENPath)) {
+      const guide = fs.readFileSync(guideENPath, 'utf8');
+      guides.en = guideLoader(guide, dir, guideENPath);
+    }
 
     writeTemplate({
       templatePath,
@@ -36,17 +55,13 @@ function compile(dirPath = shineoutDir) {
       fileName: `${dir}.tsx`,
       needPrettier: true,
       ejsVars: {
-        ...result,
+        ...doc,
+        guides,
         componentDir: dir,
         source: mdPath,
         chunkModuleName,
       },
     });
-
-    // 读取 guide.md 文件
-    const guidemdPath = path.join(dirPath, dir, 'guide.md');
-    if (!fs.existsSync(guidemdPath)) return;
-    console.log('找到 guide.md 文件', guidemdPath);
   });
   const files = fs
     .readdirSync(`${chunkDir}/${chunkModuleName}`)

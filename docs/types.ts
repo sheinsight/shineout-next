@@ -15,6 +15,18 @@ export interface Example {
   code: string;
   index: number;
 }
+export interface Guide {
+  title: string;
+  paragraphs: {
+    paragraph: string;
+    image: string;
+  }[];
+}
+
+export interface Guides {
+  cn: Guide[];
+  en: Guide[];
+}
 
 export interface MarkdownProps {
   header: {
@@ -24,4 +36,5 @@ export interface MarkdownProps {
   title: Local;
   describe: Local;
   examples: Example[];
+  guides: Guides;
 }

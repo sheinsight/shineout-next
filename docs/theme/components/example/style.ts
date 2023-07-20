@@ -37,11 +37,11 @@ export default createUseStyles({
       '& .btn': {
         position: 'absolute',
         right: 16,
-        top: 9,
+        top: 16,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        gap: 10,
+        gap: 24,
       },
     },
     '& .icon': {
@@ -51,13 +51,7 @@ export default createUseStyles({
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: '50%',
-      border: '1px solid rgb(229,230,235)',
-      padding: 6,
       cursor: 'pointer',
-      '&:hover': {
-        background: '#000000',
-        color: '#ffffff',
-      },
     },
     '& .prop': {
       position: 'absolute',

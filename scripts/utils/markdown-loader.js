@@ -18,6 +18,77 @@ const tokenLoader = (content) => {
   return result;
 };
 
+const getParagraph = (tokens, index) => {
+  const nextH2Index = tokens.findIndex((token, i) => {
+    return (
+      i > index &&
+      token.tag === 'h2' &&
+      token.type === 'heading_open' &&
+      tokens[i + 1].type === 'inline' &&
+      tokens?.[i + 4] &&
+      tokens[i + 4].content.indexOf('![') > -1
+    );
+  });
+
+  const paragraphs = tokens.filter((token, i) => {
+    if (nextH2Index === -1) {
+      return i > index && token.content.indexOf('![') > -1;
+    } else {
+      return i > index && i < nextH2Index && token.content.indexOf('![') > -1;
+    }
+  });
+
+  const result = paragraphs.map((p) => {
+    return {
+      paragraph: p.children?.[0]?.content,
+      image: p.children?.[0]?.attrs?.[0]?.[1],
+    };
+  });
+
+  return result;
+};
+
+// 提取 tokens 中的段落信息
+const paragraphLoader = (tokens) => {
+  const paragraphs = [];
+  tokens.forEach((token, index) => {
+    if (
+      index === 0 &&
+      token.tag === 'h2' &&
+      token.type === 'heading_open' &&
+      tokens[index + 1].type === 'inline' &&
+      tokens[index + 1].content.indexOf('![') === -1
+    ) {
+      paragraphs.push({
+        title: tokens[index + 1].content,
+        paragraphs: [
+          {
+            paragraph: tokens[index + 4].content,
+            image: '',
+          },
+        ],
+      });
+    }
+
+    if (
+      token.tag === 'h2' &&
+      token.type === 'heading_open' &&
+      tokens[index + 1].type === 'inline' &&
+      tokens?.[index + 4] &&
+      tokens[index + 4].content.indexOf('![') > -1
+    ) {
+      const title = tokens[index + 1].content;
+      const paragraph = getParagraph(tokens, index);
+      paragraphs.push({
+        title,
+        paragraphs: paragraph,
+      });
+    }
+  });
+
+  return paragraphs;
+};
+
 // 提取 tokens 中 title 、 group 信息
 const headerLoader = (tokens) => {
   const header = {
@@ -147,7 +218,14 @@ const markdownLoader = (content, component, module) => {
   };
 };
 
+const guideLoader = (content) => {
+  const tokens = tokenLoader(content);
+  const paragraph = paragraphLoader(tokens);
+  return paragraph;
+};
+
 module.exports = {
+  guideLoader,
   tokenLoader,
   markdownLoader,
 };

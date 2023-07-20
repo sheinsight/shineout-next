@@ -41,9 +41,9 @@ const Example = (props: ExampleProps) => {
       <div className='action'>
         {propDescribe[state.locales] || `${defaultName} Describe`}
         <div className='btn'>
+          <Codesandbox></Codesandbox>
           <Open onClick={handleOpen}></Open>
           <Copy onCopy={handleCopy}></Copy>
-          <Codesandbox></Codesandbox>
         </div>
       </div>
       {open && (

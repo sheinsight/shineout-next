@@ -46,4 +46,30 @@ export default createUseStyles({
       background: '#fff',
     },
   },
+  guide: {
+    color: '#141737',
+
+    '& .title': {
+      fontSize: 20,
+      marginTop: 48,
+      fontWeight: 500,
+      marginBottom: 0,
+      padding: '0 40px',
+    },
+    '& .paragraph': {
+      padding: '0 40px',
+      fontSize: 14,
+      fontWeight: 400,
+      marginTop: 16,
+      marginBottom: 0,
+    },
+    '& .image': {
+      padding: '0 40px',
+      width: '45%',
+      marginTop: 16,
+      marginBottom: 32,
+      boxSizing: 'border-box',
+    },
+  },
+  api: {},
 });

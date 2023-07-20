@@ -37,4 +37,39 @@ export const examples = [
 <% }) -%>
 ]
 
-export default (props) => <MarkDown {...props} source={source} header={header} title={title} describe={describe} examples={examples} api={api} />
+export const guides = {
+  cn: [
+  <% guides.cn.forEach(function (guide, i) { -%>
+    {
+      title: '<%= guide.title %>',
+      paragraphs: [
+      <% guide.paragraphs.forEach(function (item, i) { -%>
+        {
+          paragraph: '<%= item.paragraph %>',
+          image: '<%= item.image %>',
+        },
+      <% }) -%>
+      ]
+    },
+  <% }) -%>
+  ],
+  en: [
+  <% guides.en.forEach(function (guide, i) { -%>
+    {
+      title: '<%= guide.title %>',
+      paragraphs: [
+      <% guide.paragraphs.forEach(function (item, i) { -%>
+        {
+          paragraph: '<%= item.paragraph %>',
+          image: '<%= item.image %>',
+        },
+      <% }) -%>
+      ]
+    },
+  <% }) -%>
+  ],
+}
+
+
+
+export default (props) => <MarkDown {...props} source={source} header={header} title={title} describe={describe} examples={examples} api={api} guides={guides} />
