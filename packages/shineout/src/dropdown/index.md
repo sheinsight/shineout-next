@@ -27,5 +27,6 @@ It is usually used to display the options that users can choose. When there are 
 <code src="./__example__/010-size.tsx"></code>
 <code src="./__example__/011-split.tsx"></code>
 <code src="./__example__/012-absolute.tsx"></code>
+<code src="./__example__/t-002-open.tsx"></code>
 
 # Api

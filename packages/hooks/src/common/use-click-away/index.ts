@@ -1,5 +1,6 @@
 import { RefObject, useEffect } from 'react';
 import { useLatestObj } from '../use-latest-obj';
+import usePersistFn from '../use-persist-fn';
 
 export type OnClickAwayFn<T> = (event: T) => void;
 
@@ -8,31 +9,32 @@ export function useClickAway<T extends Event = Event>(params: {
   // 点击外部触发的回调
   onClickAway: OnClickAwayFn<T>;
   // 开启监听
-  listen?: boolean;
+  effect?: boolean;
   // 目标元素内点击不触发 onClickAway
   target: Target | Array<Target>;
 }) {
-  const { onClickAway, listen = true, target: t } = params;
+  const { onClickAway, effect = true, target: t } = params;
   const context = useLatestObj({ onClickAway });
   const target = Array.isArray(t) ? t : [t];
+  const handleClickAway = usePersistFn((event: T) => {
+    // @ts-ignore
+    if (target.findIndex((t) => t.current?.contains(event.target)) > -1) {
+      return;
+    }
+    context.onClickAway(event);
+  });
 
   useEffect(() => {
-    const handleClickAway = (event: T) => {
+    if (effect) {
       // @ts-ignore
-      if (target.findIndex((t) => t.current?.contains(event.target)) > -1) {
-        return;
-      }
-      context.onClickAway(event);
-    };
-    if (listen) {
-      // @ts-ignore
-      document.addEventListener('click', handleClickAway);
+      // fix 点击绑定事件后会立马触发事件的问题
+      setTimeout(() => document.addEventListener('click', handleClickAway), 0);
     }
     return () => {
       // @ts-ignore
       document.removeEventListener('click', handleClickAway);
     };
-  }, [listen]);
+  }, [effect]);
 }
 
 export default useClickAway;

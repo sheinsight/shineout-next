@@ -120,6 +120,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
   useClickAway({
     onClickAway: () => handleBlur(),
     target: [wrapRef, listRef],
+    effect: open,
   });
 
   const renderButton = () => {
@@ -198,7 +199,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           placeholder={renderPlaceholder}
           key={'group'}
           position={childPosition as MenuPosition}
-          onClick={d.onClick || onClick}
+          onClick={onClick}
           renderItem={renderItem}
           trigger={trigger}
           isSub
