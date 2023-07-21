@@ -4,20 +4,19 @@ import { ButtonGroupProps } from './button-group.type';
 import { ButtonProps } from './button.type';
 
 const Group = (props: ButtonGroupProps) => {
-  const { children, className, style, jssStyle, size, mode, outline, text, shape, dash, type } =
-    props;
+  const { children, className, style, jssStyle, size, mode, outline, text, shape, type } = props;
 
-  if (outline || text || dash) {
+  if (outline || text) {
     console.warn(
-      '[Button / Button.Group] The properties outline, text, and dash are being deprecated and you should use the mode property to specify the style of the button instead.',
+      '[Button / Button.Group] The properties outline, and text are being deprecated and you should use the mode property to specify the style of the button instead.',
     );
   }
 
-  const modeSetted = mode || (text ? 'text' : dash ? 'dash' : outline ? 'outline' : undefined);
+  const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
 
   const groupClass = classNames(className, jssStyle.group, jssStyle[type || 'default'], {
     [jssStyle.text]: modeSetted === 'text',
-    [jssStyle.dash]: modeSetted === 'dash',
+    [jssStyle.dashed]: modeSetted === 'dashed',
     [jssStyle.outline]: modeSetted === 'outline',
     [jssStyle.round]: shape === 'round',
     [jssStyle.small]: size === 'small',

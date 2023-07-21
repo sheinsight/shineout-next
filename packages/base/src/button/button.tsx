@@ -13,7 +13,6 @@ const Button = (props: ButtonProps) => {
     loading,
     href,
     text,
-    dash,
     outline,
     shape,
     size,
@@ -30,7 +29,7 @@ const Button = (props: ButtonProps) => {
     ...rest,
   });
 
-  const modeSetted = mode || (text ? 'text' : dash ? 'dash' : outline ? 'outline' : undefined);
+  const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
 
   const rootClass = classNames([
     className,
@@ -41,7 +40,7 @@ const Button = (props: ButtonProps) => {
       [jssStyle.loading]: loading,
       [jssStyle.href]: href,
       [jssStyle.text]: modeSetted === 'text',
-      [jssStyle.dash]: modeSetted === 'dash',
+      [jssStyle.dashed]: modeSetted === 'dashed',
       [jssStyle.outline]: modeSetted === 'outline',
       [jssStyle.round]: shape === 'round',
       [jssStyle.circle]: shape === 'circle',

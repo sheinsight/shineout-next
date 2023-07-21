@@ -65,7 +65,7 @@ export default createUseStyles({
     },
     '& .image': {
       padding: '0 40px',
-      width: '45%',
+      width: 'calc(100% - 272px)',
       marginTop: 16,
       marginBottom: 32,
       boxSizing: 'border-box',

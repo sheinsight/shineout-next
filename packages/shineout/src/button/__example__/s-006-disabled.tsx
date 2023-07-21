@@ -35,7 +35,7 @@ export default () => {
         <Button type='primary' disabled mode='outline' style={buttonStyle}>
           Primary
         </Button>
-        <Button type='primary' disabled mode='dash' style={buttonStyle}>
+        <Button type='primary' disabled mode='dashed' style={buttonStyle}>
           Primary
         </Button>
         <Button type='primary' disabled mode='text' style={buttonStyle}>
@@ -49,7 +49,7 @@ export default () => {
         <Button type='danger' disabled mode='outline' style={buttonStyle}>
           Danger
         </Button>
-        <Button type='danger' disabled mode='dash' style={buttonStyle}>
+        <Button type='danger' disabled mode='dashed' style={buttonStyle}>
           Danger
         </Button>
         <Button type='danger' disabled mode='text' style={buttonStyle}>
@@ -63,7 +63,7 @@ export default () => {
         <Button type='warning' disabled mode='outline' style={buttonStyle}>
           Warning
         </Button>
-        <Button type='warning' disabled mode='dash' style={buttonStyle}>
+        <Button type='warning' disabled mode='dashed' style={buttonStyle}>
           Warning
         </Button>
         <Button type='warning' disabled mode='text' style={buttonStyle}>
@@ -77,7 +77,7 @@ export default () => {
         <Button type='success' disabled mode='outline' style={buttonStyle}>
           Success
         </Button>
-        <Button type='success' disabled mode='dash' style={buttonStyle}>
+        <Button type='success' disabled mode='dashed' style={buttonStyle}>
           Success
         </Button>
         <Button type='success' disabled mode='text' style={buttonStyle}>

@@ -18,7 +18,7 @@ export interface ButtonGroupClasses {
   // href: string;
   link: string;
 
-  dash: string;
+  dashed: string;
   outline: string;
   text: string;
 
@@ -30,7 +30,6 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
   size?: 'small' | 'large' | 'default';
   outline?: boolean;
   text?: boolean;
-  dash?: boolean;
   link?: boolean;
   shape?: 'round';
   mode?: ButtonMode;

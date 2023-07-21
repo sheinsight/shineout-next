@@ -15,18 +15,21 @@ export default () => {
         <Button>Publish</Button>
         <Button disabled>Publish</Button>
       </Button.Group>
+
       <Button.Group type='secondary'>
         <Button type='primary'>Publish</Button>
         <Button>Publish</Button>
         <Button>Publish</Button>
         <Button>Publish</Button>
       </Button.Group>
+
       <Button.Group type='secondary' mode='outline'>
         <Button>Publish</Button>
         <Button>Publish</Button>
         <Button>Publish</Button>
         <Button>Publish</Button>
       </Button.Group>
+
       <div>
         <Button type='primary'>Primary</Button>
         <Button type='secondary'>Secondary</Button>
