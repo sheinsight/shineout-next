@@ -11,7 +11,7 @@ type ButtonGroupClass =
   | 'success'
   | 'outline'
   | 'text'
-  | 'dash'
+  | 'dashed'
   | 'link'
   | 'round'
   | 'small'
@@ -441,7 +441,7 @@ const ButtonGroupStyle: JsStyles<ButtonGroupClass> = {
     ...splitLineText('Warning'),
     ...splitLineText('Secondary'),
   },
-  dash: {},
+  dashed: {},
 };
 
 export default ButtonGroupStyle;

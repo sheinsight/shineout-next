@@ -25,7 +25,7 @@ export default () => {
         Outline
       </Button>
 
-      <Button type='secondary' mode='dash' style={buttonStyle}>
+      <Button type='secondary' mode='dashed' style={buttonStyle}>
         Dashed
       </Button>
 

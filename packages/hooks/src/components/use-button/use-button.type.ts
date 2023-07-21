@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type ButtonShape = 'circle' | 'round' | 'square';
-export type ButtonMode = 'text' | 'outline' | 'dash';
+export type ButtonMode = 'text' | 'outline' | 'dashed';
 export type ButtonType =
   | 'default'
   | 'primary'
@@ -23,10 +23,6 @@ export interface BaseButtonProps {
    * - outline 线框按钮
    */
   mode?: ButtonMode;
-  /**
-   * @deprecated 虚框按钮,即将废弃，请使用 mode="dash"
-   */
-  dash?: boolean;
 
   /**
    * @deprecated 文本按钮,即将废弃，请使用 mode="text"

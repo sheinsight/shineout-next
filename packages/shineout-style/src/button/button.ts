@@ -13,7 +13,7 @@ type ButtonClass =
   | 'success'
   | 'text'
   | 'outline'
-  | 'dash'
+  | 'dashed'
   | 'round'
   | 'circle'
   | 'square'
@@ -170,7 +170,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
       ...button('Secondary', 'Outline'),
     },
   },
-  dash: {
+  dashed: {
     '&$default': {
       ...button('Default', 'Outline'),
     },
