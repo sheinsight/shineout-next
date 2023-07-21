@@ -1,21 +1,19 @@
 ## When to use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+This function is usually used in the web page navigation menu and other function usage scenarios with many tool menus and options
 
-## Related to layout
+## Related to the layout
 
-![1. Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3e4270a9f0f14024ac4f231aba736ca3~tplv-uwbnlip3yd-image.image)
+![The drop-down menu supports different layout methods according to the layout position in the page](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/001.png?raw=true)
 
-![2. Main button is usually used alone and is the main visual focus in the page. It is recommended to only have one main button per page.](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3e4270a9f0f14024ac4f231aba736ca3~tplv-uwbnlip3yd-image.image)
+## Recommended Use
 
-![3. When too many buttons need to be placed in a limited space, secondary buttons can be folded appropriately or combined and arranged.](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3e4270a9f0f14024ac4f231aba736ca3~tplv-uwbnlip3yd-image.image)
+![1. It can be used as a navigation menu for websites or applications. Users can click on options in the drop-down menu to access specific pages or perform operations](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/002.png?raw=true)
 
-## Component Combination
+![2. Operation menu: used to perform operations on a certain data item, such as the context menu popped up by the right mouse button](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/003.png?raw=true)
 
-![Different types of buttons can be used together to express different levels of emphasis.](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3e4270a9f0f14024ac4f231aba736ca3~tplv-uwbnlip3yd-image.image)
+## Example with caution
 
-## Recommended/Use with caution examples
+![1. Simplify the interaction. When there are only 2 or 1 options, it is not recommended to use the drop-down menu. Please let the user choose directly](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/004.png?raw=true)
 
-![1. When using the main and secondary buttons, it is necessary to express the main-secondary relationship, highlighting the main operation with the main button, and using the secondary button for other operations. Multiple main buttons should not be used at the same time.](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3e4270a9f0f14024ac4f231aba736ca3~tplv-uwbnlip3yd-image.image)
-
-![2. When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3e4270a9f0f14024ac4f231aba736ca3~tplv-uwbnlip3yd-image.image)
+![2. When there are too many menu items, it is recommended to group or classify them](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/004.png?raw=true)
