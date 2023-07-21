@@ -16,4 +16,4 @@ This function is usually used in the web page navigation menu and other function
 
 ![1. Simplify the interaction. When there are only 2 or 1 options, it is not recommended to use the drop-down menu. Please let the user choose directly](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/004.png?raw=true)
 
-![2. When there are too many menu items, it is recommended to group or classify them](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/004.png?raw=true)
+![2. When there are too many menu items, it is recommended to group or classify them](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/005.png?raw=true)

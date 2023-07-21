@@ -16,4 +16,4 @@
 
 ![1、简化交互，只有2个或1个可选项时，不建议使用下拉菜单，请让用户直接选择](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/004.png?raw=true)
 
-![2、菜单项数量过多时，建议对其进行分组或分级处理](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/004.png?raw=true)
+![2、菜单项数量过多时，建议对其进行分组或分级处理](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/005.png?raw=true)
