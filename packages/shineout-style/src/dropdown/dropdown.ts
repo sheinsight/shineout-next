@@ -97,7 +97,7 @@ const dropdown: JsStyles<DropDownClass> = {
     color: token.dropdownOptionFontColor,
     backgroundColor: token.dropdownOptionBackgroundColor,
     textDecoration: 'none',
-    padding: `2px 8px`,
+    padding: `${token.dropdownOptionPaddingY} ${token.dropdownOptionPaddingX}`,
     cursor: 'pointer',
     '&:hover': {
       color: token.dropdownOptionHoverFontColor,
@@ -115,6 +115,12 @@ const dropdown: JsStyles<DropDownClass> = {
     '$itemActive&': {
       color: token.dropdownOptionSelectFontColor,
       backgroundColor: token.dropdownOptionSelectBackgroundColor,
+    },
+    '$listSmall &': {
+      padding: `${token.dropdownOptionSmallPaddingY} ${token.dropdownOptionSmallPaddingX}`,
+    },
+    '$listLarge &': {
+      padding: `${token.dropdownOptionLargePaddingY} ${token.dropdownOptionLargePaddingX}`,
     },
   },
   itemDisabled: {},

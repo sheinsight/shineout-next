@@ -53,12 +53,13 @@ const Dropdown = (props: SimpleDropdownProps) => {
     buttonJssStyle,
     size,
   } = props;
-  let { type, text, outline } = props;
+  // buttonProps
+  let { type, text, outline, mode } = props;
+
   // 默认使用 secondary text 样式
-  if (type === undefined && text === undefined && outline === undefined) {
-    text = true;
-    outline = false;
+  if (type === undefined && text === undefined && outline === undefined && mode === undefined) {
     type = 'secondary';
+    mode = 'text';
   }
 
   const handleFocus = () => {
@@ -163,6 +164,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
             [jssStyle.button]: true,
             [jssStyle.splitButton]: !placeholder,
           })}
+          mode={mode}
           type={type}
           size={size}
           text={text}
@@ -250,6 +252,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
           className={classNames({
             [jssStyle.list]: true,
             [jssStyle.boxList]: columns !== undefined && columns > 1,
+            [jssStyle.listSmall]: size === 'small',
+            [jssStyle.listLarge]: size === 'large',
           })}
           style={{
             width: width,

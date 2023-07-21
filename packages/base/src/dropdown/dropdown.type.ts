@@ -9,6 +9,8 @@ export interface DropdownClass {
   open: string;
   boxList: string;
   list: string;
+  listSmall: string;
+  listLarge: string;
   caret: string;
   content: string;
   button: string;
@@ -102,7 +104,7 @@ export interface ItemProps {
 export interface SimpleDropdownProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     Pick<AbsoluteListProps, 'absolute'>,
-    Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline'> {
+    Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode' | 'dash'> {
   animationListJssStyle: AnimationListClass;
   buttonJssStyle: ButtonClasses;
   jssStyle: DropdownClass;
