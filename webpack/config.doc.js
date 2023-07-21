@@ -1,26 +1,20 @@
 const path = require('path');
 const Webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-require('../scripts/dev-doc.js');
-// class CustomPlugin {
-//   apply(compiler) {
-//     compiler.hooks.invalid.tap('CustomPlugin', () => {
-//       console.log('Shineout Doc is compiling...');
-//     });
-
-//     compiler.hooks.done.tap('CustomPlugin', (stats) => {
-//       console.log('Shineout Doc is compiled');
-//     });
-//   }
-// }
-
-const webpackConfig = {
-  mode: 'development',
-  stats: 'errors-only',
-  devtool: 'source-map',
-  entry: path.join(__dirname, '../docs/index.tsx'),
+module.exports = {
+  mode: 'production',
+  entry: {
+    app: path.join(__dirname, '../docs/index.tsx'),
+    css: path.join(__dirname, '../public/index.css'),
+  },
+  output: {
+    path: path.join(__dirname, `../dist`),
+    publicPath: './',
+    libraryTarget: 'umd',
+    library: 'ShineoutDoc',
+  },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.md', '.less'],
     alias: {
@@ -38,9 +32,8 @@ const webpackConfig = {
   module: {
     rules: [
       {
-        test: /\.(css)$/,
-        use: ['style-loader', 'css-loader'],
-        include: [/prismjs/],
+        test: /\.(css|tsx)$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.html$/i,
@@ -70,20 +63,6 @@ const webpackConfig = {
       title: 'Shineout Next',
       template: path.join(__dirname, '../public/index.ejs'),
     }),
-    // new CustomPlugin(),
+    new MiniCssExtractPlugin(),
   ],
 };
-
-const compiler = Webpack(webpackConfig);
-
-const server = new WebpackDevServer(
-  {
-    open: false,
-    compress: true,
-  },
-  compiler,
-);
-
-server.listen(2333, 'localhost', () => {
-  console.log('Shineout Doc is running on port 2333');
-});
