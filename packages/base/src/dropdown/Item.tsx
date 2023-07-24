@@ -12,7 +12,7 @@ interface ItemLinkProps {
   target?: string;
   className?: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
   style?: React.CSSProperties;
 }
 
@@ -24,7 +24,13 @@ class Item extends React.PureComponent<ItemProps> {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(e: React.MouseEvent) {
+    const data = (this.props.data || {}) as DropdownNode;
+    this.props.handleBlur();
+    if (data.disabled) {
+      e.preventDefault();
+      return;
+    }
     if (!this.props.onClick) return;
     this.props.onClick(this.props.data);
   }
@@ -51,6 +57,7 @@ class Item extends React.PureComponent<ItemProps> {
     if (isValidElement(content)) {
       return cloneElement(content, Object.assign(props, content.props));
     }
+
     return <a {...props}>{content}</a>;
   }
 }

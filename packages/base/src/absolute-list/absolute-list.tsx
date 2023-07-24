@@ -8,7 +8,6 @@ import { getPositionStyle } from './get-position-style';
 let root: HTMLDivElement;
 
 //todo rtl
-//todo overDoc
 
 function initRoot() {
   const defaultContainer = getDefaultContainer();
@@ -158,12 +157,18 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     return style;
   };
 
+  // todo overDoc
+  const adjustOverDoc = () => {};
+
   // absolute 模式
   useEffect(() => {
     if (!parentElement || !position || !focus || !absolute) return;
     const newStyle = getAbsoluteStyle();
     if (newStyle && !util.shallowEqual(newStyle, style)) {
       setStyle({ ...childStyle, ...newStyle });
+      setTimeout(() => {
+        adjustOverDoc();
+      });
     }
   }, [absolute, position, parentElement, scrollElement, focus]);
 
