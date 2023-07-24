@@ -2,6 +2,9 @@ const path = require('path');
 const Webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { docBuild } = require('../scripts/doc-build');
+
+docBuild();
 
 module.exports = {
   mode: 'production',
