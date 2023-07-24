@@ -4,6 +4,7 @@
     "declaration": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "moduleDetection": "force",
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "module": "ES2020",
