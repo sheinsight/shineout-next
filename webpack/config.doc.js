@@ -32,7 +32,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(css|tsx)$/i,
+        test: /\.(css)$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
