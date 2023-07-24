@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/soui.svg?style=flat)](https://npmjs.org/package/soui)
 [![NPM downloads](http://img.shields.io/npm/dm/soui.svg?style=flat)](https://npmjs.org/package/soui)
 
-A react library developed with dumi
+A react library developed with sheinx
 
 ## Usage
 
@@ -20,19 +20,11 @@ TODO
 $ pnpm install
 
 # develop library by docs demo
-$ pnpm start
+$ pnpm dev
 
 # build library source code
-$ pnpm run build
+$ pnpm run build:doc
 
-# build library source code in watch mode
-$ pnpm run build:watch
-
-# build docs
-$ pnpm run docs:build
-
-# check your project for potential problems
-$ pnpm run doctor
 ```
 
 ## LICENSE
@@ -41,7 +33,9 @@ $ pnpm run doctor
 
 packages  
 ├── hooks 逻辑  
-├── ui 结构  
-└── shineout-style 样式
+├── base 基础结构包
+├── theme 主题 token 包
+├── shineout shineout 风格包
+└── shineout-style shineout 样式包
 
 ## 打包
