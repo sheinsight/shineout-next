@@ -99,12 +99,13 @@ export interface ItemProps {
   onClick: DropdownProps['onClick'];
   columns: DropdownProps['columns'];
   renderItem: ((data: any) => React.ReactNode) | string;
+  handleBlur: () => void;
 }
 
 export interface SimpleDropdownProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     Pick<AbsoluteListProps, 'absolute'>,
-    Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode' | 'dash'> {
+    Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode'> {
   animationListJssStyle: AnimationListClass;
   buttonJssStyle: ButtonClasses;
   jssStyle: DropdownClass;

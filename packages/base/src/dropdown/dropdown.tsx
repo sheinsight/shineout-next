@@ -215,6 +215,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           renderItem={renderItem}
           columns={columns}
           width={width}
+          handleBlur={handleBlur}
         />
       );
       return (
