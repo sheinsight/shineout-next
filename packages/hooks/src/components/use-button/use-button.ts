@@ -12,7 +12,9 @@ const useButton = (props: BaseButtonProps = {}) => {
     target,
     buttonRef: buttonRefPo,
     disabled,
+    loading,
     onClick,
+    onRef,
     ...propsToForward
   } = props;
 
@@ -20,12 +22,6 @@ const useButton = (props: BaseButtonProps = {}) => {
 
   const handleButtonRef = useForkRef(buttonRef, buttonRefPo);
 
-  /**
-   * 点击事件
-   *
-   * @param otherHandlers 外部传入的事件
-   * @returns 点击事件
-   */
   const handleClick =
     (otherHandlers: HandlerType) =>
     (event: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => {
@@ -49,6 +45,7 @@ const useButton = (props: BaseButtonProps = {}) => {
       ...propsToForward,
       ...externalProps,
       onClick: handleClick(externalEventHandlers),
+      onRef,
     };
 
     return {
@@ -58,13 +55,6 @@ const useButton = (props: BaseButtonProps = {}) => {
     };
   };
 
-  /**
-   * 获取包含外部传入以及内部定义的的 props
-   * 返回的 props 最终会直接传递给 button 元素
-   *
-   * @param externalProps 外部传入的 props
-   * @returns 所有的 props
-   */
   const getButtonProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,
   ) => {
@@ -75,8 +65,9 @@ const useButton = (props: BaseButtonProps = {}) => {
     const mergedEventHandlers = {
       ...propsToForward,
       ...externalProps,
-      disabled,
+      disabled: disabled || loading,
       htmltype: htmlType,
+      onRef,
       onClick: handleClick(externalEventHandlers),
     };
     return {
