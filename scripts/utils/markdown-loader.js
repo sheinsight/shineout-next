@@ -4,6 +4,8 @@ const prettier = require('prettier');
 const prettierPath = prettier.resolveConfigFile.sync();
 const exampleReader = require('./example-loader');
 
+const exampleDirName = `__example__`;
+
 const md = require('markdown-it')({
   html: true,
 });
@@ -177,31 +179,28 @@ const describeLoader = (tokens) => {
 
 // 提取 tokens 中的 example 信息
 const exampleLoader = (tokens, component, module) => {
-  const srcRegex = /<code src=".\/([^"]+)">/i;
+  const hasExample = tokens.find((i) => i.content === 'Example' && i.type === 'inline');
 
-  const examplesToken = tokens.find((token, index) => {
-    return (
-      tokens[index - 3]?.content === 'Example' &&
-      tokens[index - 1]?.type === 'paragraph_open' &&
-      token.type === 'inline' &&
-      tokens[index + 1]?.type === 'paragraph_close'
-    );
+  if (!hasExample) return [];
+
+  const exampleDir = path.join(module, component, exampleDirName);
+  const hasExampleDir = fs.existsSync(exampleDir);
+
+  if (!hasExampleDir) return [];
+  const examples = [];
+  fs.readdirSync(exampleDir).forEach((file) => {
+    if (file.indexOf('.tsx') === -1) return;
+    const context = fs.readFileSync(path.join(exampleDir, file), 'utf-8');
+    const result = exampleReader(context, component, file.split('/')?.at(-1));
+
+    if (!result) return;
+
+    examples.push(result);
   });
 
-  if (examplesToken && examplesToken.children) {
-    const examples = examplesToken.children
-      .filter((token) => {
-        return token.content.indexOf('src') > -1;
-      })
-      .map((example) => {
-        const match = example.content.match(srcRegex);
-        const context = fs.readFileSync(path.join(module, component, match[1]), 'utf8');
-        return exampleReader(context, component, match[1].split('/')?.at(-1));
-      });
-    return examples;
-  }
+  if (examples.length === 0) return [];
 
-  return [];
+  return examples;
 };
 
 const markdownLoader = (content, component, module) => {

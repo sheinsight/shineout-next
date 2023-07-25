@@ -6,7 +6,7 @@
  */
 
 import { Button } from 'shineout';
-import { Icon02, Icon03 } from './icon';
+import { Icon02, Icon03 } from './static/icon';
 
 export default () => {
   const iconWarpperStyle = {

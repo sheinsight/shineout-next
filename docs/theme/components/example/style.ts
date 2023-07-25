@@ -27,7 +27,7 @@ export default createUseStyles({
     '& .action': {
       position: 'relative',
       width: '100%',
-      height: 48,
+      minHeight: 48,
       boxSizing: 'border-box',
       borderTop: 'none',
       padding: '14px 16px',
@@ -43,6 +43,12 @@ export default createUseStyles({
         justifyContent: 'flex-end',
         gap: 24,
       },
+    },
+    '& .describe': {
+      margin: 0,
+      display: 'flex',
+      alignItems: 'center',
+      flexWrap: 'wrap',
     },
     '& .icon': {
       width: 16,
@@ -67,5 +73,15 @@ export default createUseStyles({
     '& .foot': {
       marginTop: '20px',
     },
+  },
+  tip: {
+    display: 'inline-block',
+    height: 14,
+    lineHeight: '14px',
+    margin: '0 5px',
+    padding: '2px 5px',
+    color: '#5d5d5d',
+    background: '#efefef',
+    borderRadius: 2,
   },
 });

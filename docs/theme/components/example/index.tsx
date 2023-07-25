@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import Code from './code';
 import Copy from './copy';
 import Open from './open';
+import Tip from './tip';
 import Codesandbox from './codesandbox';
 import { Example as ExampleProps } from 'docs/types';
 import useStyles from './style';
@@ -13,11 +14,33 @@ const Example = (props: ExampleProps) => {
   const state = useSnapshot(store);
   const [open, setOpen] = useState(false);
 
-  const { propName, propDescribe, component, code, index } = props;
+  const { propName, propDescribe, component, code } = props;
 
-  const defaultName = `Example ${index + 1}`;
+  const defaultName = '';
 
   const Example = component;
+
+  const describe = propDescribe[state.locales] || [];
+
+  const renderDescribe = (str: any) => {
+    const regex = /(.*?)(<span>.*?<\/span>|$)/g;
+    const result = [];
+    for (const [, part, span] of str.matchAll(regex)) {
+      if (part) {
+        const textNode = <React.Fragment key={result.length}>{part}</React.Fragment>;
+        result.push(textNode);
+      }
+      if (span) {
+        const spanRegex = /<span>(.*?)<\/span>/g;
+        const spanMatch = spanRegex.exec(span);
+        if (spanMatch) {
+          const tipNode = <Tip key={result.length} text={spanMatch[1]}></Tip>;
+          result.push(tipNode);
+        }
+      }
+    }
+    return result;
+  };
 
   const handleOpen = () => {
     setOpen(!open);
@@ -33,13 +56,16 @@ const Example = (props: ExampleProps) => {
         <h2 className='title' id={propName[state.locales] || defaultName}>
           {propName[state.locales] || defaultName}
         </h2>
-        {/* <p className='subtitle'>{propDescribe[state.locales] || `${defaultName} Describe`}</p> */}
       </div>
-      <div className='demo'>
-        <Example></Example>
-      </div>
+      <div className='demo'>{Example && <Example></Example>}</div>
       <div className='action'>
-        {propDescribe[state.locales] || `${defaultName} Describe`}
+        {describe.map((item, index) => {
+          return (
+            <p className='describe' key={index}>
+              {renderDescribe(item)}
+            </p>
+          );
+        })}
         <div className='btn'>
           <Codesandbox></Codesandbox>
           <Open onClick={handleOpen}></Open>
