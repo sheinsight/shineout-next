@@ -44,6 +44,7 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
 
   const handleInputClick = usePersistFn((e: React.MouseEvent<HTMLInputElement>) => {
     e.stopPropagation();
+    props?.onClick?.(e);
   });
 
   const inputValue = typeof value === 'string' ? value : '';
