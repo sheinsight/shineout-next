@@ -2,6 +2,10 @@ export interface Local {
   cn: string;
   en: string;
 }
+export interface Locals {
+  cn: string[];
+  en: string[];
+}
 
 export interface Header {
   title: Local;
@@ -10,7 +14,7 @@ export interface Header {
 
 export interface Example {
   propName: Local;
-  propDescribe: Local;
+  propDescribe: Locals;
   component: React.FC;
   code: string;
   index: number;

@@ -6,7 +6,7 @@
  */
 
 import { Button } from 'shineout';
-import { Icon01 } from './icon';
+import { Icon01 } from './static/icon';
 
 export default () => {
   const buttonStyle = {

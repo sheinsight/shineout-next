@@ -9,5 +9,3 @@ group: General
 Dropdown
 
 # Example
-
-<code src="./__example__/001-base.tsx"></code>

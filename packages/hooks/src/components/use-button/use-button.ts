@@ -37,7 +37,6 @@ const useButton = (props: BaseButtonProps = {}) => {
     externalProps: TOther = {} as TOther,
   ) => {
     const externalEventHandlers = {
-      onClick,
       ...extractEventHandlers(externalProps),
     };
 
