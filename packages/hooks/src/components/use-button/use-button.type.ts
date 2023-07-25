@@ -43,4 +43,5 @@ export interface BaseButtonProps {
   htmlType?: 'button' | 'submit' | 'reset';
   buttonRef?: React.Ref<HTMLButtonElement>;
   onClick?: React.MouseEventHandler;
+  onRef?: React.Ref<HTMLButtonElement | HTMLAnchorElement>;
 }

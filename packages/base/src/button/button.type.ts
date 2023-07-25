@@ -30,7 +30,10 @@ export interface ButtonClasses {
   outline: string;
 }
 
-export interface ButtonBaseProps extends BaseButtonProps, Pick<CommonType, 'style' | 'className'> {
+export interface ButtonBaseProps
+  extends BaseButtonProps,
+    Pick<CommonType, 'style' | 'className'>,
+    Omit<React.TextareaHTMLAttributes<HTMLButtonElement>, 'onClick'> {
   jssStyle: ButtonClasses;
   children?: React.ReactNode;
   renderButton?: (buttonEl: React.ReactNode) => React.ReactElement;

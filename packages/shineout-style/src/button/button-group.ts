@@ -287,7 +287,7 @@ const splitLineOutlint = (type: ButtonType) => {
 const splitLineText = (type: ButtonType) => {
   const _type = type.toLocaleLowerCase();
   return {
-    [`& > button[class*="-${type.toLocaleLowerCase()}"]`]: {
+    [`& > button[class*="-${_type}"]`]: {
       '&::before': {
         backgroundColor: Token[`button${type}TextSplitBackgroundColor`],
       },
