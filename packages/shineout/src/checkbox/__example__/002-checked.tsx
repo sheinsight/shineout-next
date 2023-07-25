@@ -12,6 +12,15 @@ const App: React.FC = () => (
     <Checkbox checked={false}>not checked</Checkbox>
     <Checkbox checked>checked</Checkbox>
     <Checkbox checked='indeterminate'>indeterminate</Checkbox>
+    <Checkbox checked={false} disabled>
+      not checked
+    </Checkbox>
+    <Checkbox checked disabled>
+      checked
+    </Checkbox>
+    <Checkbox checked='indeterminate' disabled>
+      indeterminate
+    </Checkbox>
   </div>
 );
 

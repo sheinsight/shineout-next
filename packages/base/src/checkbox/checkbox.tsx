@@ -3,7 +3,9 @@ import SimpleCheckbox from './simple-checkbox';
 import { useInputAble, usePersistFn } from '@sheinx/hooks';
 import { CheckboxProps } from './checkbox.type';
 import GroupContext from './group-context';
+import Input from '../input';
 
+const emptyStyle = {} as any;
 const Checkbox = <T,>(props: CheckboxProps<T>) => {
   const {
     children,
@@ -11,12 +13,14 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     onChange: onChangePo,
     checked,
     jssStyle,
+    inputJssStyle,
     value: valuePo,
     defaultValue: defaultValuePo,
+    inputable,
     ...rest
   } = props;
 
-  const { onChange } = useInputAble({
+  const { onChange, value } = useInputAble({
     value: valuePo,
     defaultValue: defaultValuePo,
     onChange: onChangePo,
@@ -33,8 +37,38 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     }
     return checked;
   };
+
+  const handleInputChange = usePersistFn((val: string | undefined = '') => {
+    onChange?.(val as T, val?.length > 0, htmlValue);
+  });
+
+  const handleInputClick = usePersistFn((e: React.MouseEvent<HTMLInputElement>) => {
+    e.stopPropagation();
+  });
+
+  const inputValue = typeof value === 'string' ? value : '';
   return (
-    <SimpleCheckbox jssStyle={jssStyle} {...rest} checked={getChecked()} onChange={handleChange}>
+    <SimpleCheckbox
+      jssStyle={jssStyle}
+      {...rest}
+      checked={getChecked()}
+      onChange={handleChange}
+      renderFooter={(c) => {
+        if (inputable && c) {
+          return (
+            <Input
+              jssStyle={inputJssStyle}
+              className={jssStyle.input}
+              innerTitleJssStyle={emptyStyle}
+              value={inputValue}
+              onChange={handleInputChange}
+              onClick={handleInputClick}
+            />
+          );
+        }
+        return null;
+      }}
+    >
       {children}
     </SimpleCheckbox>
   );
