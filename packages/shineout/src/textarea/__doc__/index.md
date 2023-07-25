@@ -1,12 +1,12 @@
 ---
-name: Radio
+name: Textarea
 group: Form
 ---
 
 # Title
 
-单选框 Radio
-Radio
+多行文本框 Textarea
+Textarea
 
 # Describe
 
@@ -14,8 +14,3 @@ Radio
 Users can input or edit text in the text box.
 
 # Example
-
-<code src="./__example__/001-base.tsx"></code>
-<code src="./__example__/002-disabled.tsx"></code>
-
-# Api
