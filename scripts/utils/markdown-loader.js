@@ -4,6 +4,10 @@ const prettier = require('prettier');
 const prettierPath = prettier.resolveConfigFile.sync();
 const exampleReader = require('./example-loader');
 
+const exampleDirName = `__example__`;
+const getStaticUrl = (component, num) =>
+  `https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/${component}/${num}.png`;
+
 const md = require('markdown-it')({
   html: true,
 });
@@ -18,7 +22,7 @@ const tokenLoader = (content) => {
   return result;
 };
 
-const getParagraph = (tokens, index) => {
+const getParagraph = (tokens, index, component) => {
   const nextH2Index = tokens.findIndex((token, i) => {
     return (
       i > index &&
@@ -41,7 +45,8 @@ const getParagraph = (tokens, index) => {
   const result = paragraphs.map((p) => {
     return {
       paragraph: p.children?.[0]?.content,
-      image: p.children?.[0]?.attrs?.[0]?.[1],
+      // image: p.children?.[0]?.attrs?.[0]?.[1],
+      image: getStaticUrl(component, p.children?.[0]?.attrs?.[0]?.[1]),
     };
   });
 
@@ -49,7 +54,7 @@ const getParagraph = (tokens, index) => {
 };
 
 // 提取 tokens 中的段落信息
-const paragraphLoader = (tokens) => {
+const paragraphLoader = (tokens, component) => {
   const paragraphs = [];
   tokens.forEach((token, index) => {
     if (
@@ -78,7 +83,7 @@ const paragraphLoader = (tokens) => {
       tokens[index + 4].content.indexOf('![') > -1
     ) {
       const title = tokens[index + 1].content;
-      const paragraph = getParagraph(tokens, index);
+      const paragraph = getParagraph(tokens, index, component);
       paragraphs.push({
         title,
         paragraphs: paragraph,
@@ -177,31 +182,28 @@ const describeLoader = (tokens) => {
 
 // 提取 tokens 中的 example 信息
 const exampleLoader = (tokens, component, module) => {
-  const srcRegex = /<code src=".\/([^"]+)">/i;
+  const hasExample = tokens.find((i) => i.content === 'Example' && i.type === 'inline');
 
-  const examplesToken = tokens.find((token, index) => {
-    return (
-      tokens[index - 3]?.content === 'Example' &&
-      tokens[index - 1]?.type === 'paragraph_open' &&
-      token.type === 'inline' &&
-      tokens[index + 1]?.type === 'paragraph_close'
-    );
+  if (!hasExample) return [];
+
+  const exampleDir = path.join(module, component, exampleDirName);
+  const hasExampleDir = fs.existsSync(exampleDir);
+
+  if (!hasExampleDir) return [];
+  const examples = [];
+  fs.readdirSync(exampleDir).forEach((file) => {
+    if (file.indexOf('.tsx') === -1) return;
+    const context = fs.readFileSync(path.join(exampleDir, file), 'utf-8');
+    const result = exampleReader(context, component, file.split('/')?.at(-1));
+
+    if (!result) return;
+
+    examples.push(result);
   });
 
-  if (examplesToken && examplesToken.children) {
-    const examples = examplesToken.children
-      .filter((token) => {
-        return token.content.indexOf('src') > -1;
-      })
-      .map((example) => {
-        const match = example.content.match(srcRegex);
-        const context = fs.readFileSync(path.join(module, component, match[1]), 'utf8');
-        return exampleReader(context, component, match[1].split('/')?.at(-1));
-      });
-    return examples;
-  }
+  if (examples.length === 0) return [];
 
-  return [];
+  return examples;
 };
 
 const markdownLoader = (content, component, module) => {
@@ -218,9 +220,9 @@ const markdownLoader = (content, component, module) => {
   };
 };
 
-const guideLoader = (content) => {
+const guideLoader = (content, component) => {
   const tokens = tokenLoader(content);
-  const paragraph = paragraphLoader(tokens);
+  const paragraph = paragraphLoader(tokens, component);
   return paragraph;
 };
 

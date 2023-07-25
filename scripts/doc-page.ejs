@@ -1,7 +1,7 @@
 import React from 'react'
 import MarkDown from '../../theme/components/markdown/index.tsx'
 
-const source = require('<%= chunkModuleName %>/<%= componentDir %>/index.md')
+const source = require('<%= chunkModuleName %>/<%= componentDir %>/<%= docDir %>/index.md')
 
 export const api = []
 
@@ -24,12 +24,20 @@ export const examples = [
 <% examples.forEach(function (exam, i) { -%>
   {
     propName: {
-      cn: '<%= exam.propName.cn %>',
-      en: '<%= exam.propName.en %>',
+      cn: `<%- exam.propName.cn %>`,
+      en: `<%- exam.propName.en %>`,
     },
     propDescribe: {
-      cn: '<%= exam.propDescribe.cn %>',
-      en: '<%= exam.propDescribe.en %>',
+      cn: [
+      <% exam.propDescribe.cn.forEach(function (des, i) { -%>
+        `<%- des %>`,
+      <% }) -%>
+      ],
+      en: [
+      <% exam.propDescribe.en.forEach(function (des, i) { -%>
+        `<%- des %>`,
+      <% }) -%>
+      ],
     },
     code: require('!raw-loader!<%= chunkModuleName %>/<%= componentDir %>/__example__/<%= exam.fileName %>').default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '').trim(),
     component: require('<%= chunkModuleName %>/<%= componentDir %>/__example__/<%= exam.fileName %>').default,

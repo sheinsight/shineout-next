@@ -52,7 +52,7 @@ const Button = (props: ButtonProps) => {
 
   const rootProps = getButtonProps();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { type: buttonType, ...buttonProps } = rootProps;
+  const { type: buttonType, onRef, ...buttonProps } = rootProps;
 
   const childrenEl = getSpaceChildren(children, space);
 
@@ -69,9 +69,14 @@ const Button = (props: ButtonProps) => {
     loadingEl = renderLoading(loadingEl);
   }
 
-  if (href) {
+  if (href && !disabled) {
     return (
-      <a {...getAnchorProps({ className: rootClass, style })} href={href} target={target}>
+      <a
+        {...getAnchorProps({ className: rootClass, style })}
+        href={href}
+        target={target}
+        ref={onRef as React.Ref<HTMLAnchorElement>}
+      >
         {loading && loadingEl}
         {buttonInnerEl}
       </a>
@@ -80,7 +85,7 @@ const Button = (props: ButtonProps) => {
 
   return (
     // eslint-disable-next-line react/button-has-type
-    <button {...buttonProps} className={rootClass} style={style}>
+    <button {...buttonProps} ref={onRef} className={rootClass} style={style}>
       {loading && loadingEl}
       {buttonInnerEl}
     </button>
