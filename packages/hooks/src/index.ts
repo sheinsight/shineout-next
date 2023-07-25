@@ -26,5 +26,6 @@ export * from './components/use-form';
 export * from './components/use-validate';
 export * from './components/use-check';
 export * from './components/use-button';
+export * from './components/use-image';
 
 export default {};
