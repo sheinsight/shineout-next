@@ -5,6 +5,8 @@ const prettierPath = prettier.resolveConfigFile.sync();
 const exampleReader = require('./example-loader');
 
 const exampleDirName = `__example__`;
+const getStaticUrl = (component, num) =>
+  `https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/${component}/${num}.png`;
 
 const md = require('markdown-it')({
   html: true,
@@ -20,7 +22,7 @@ const tokenLoader = (content) => {
   return result;
 };
 
-const getParagraph = (tokens, index) => {
+const getParagraph = (tokens, index, component) => {
   const nextH2Index = tokens.findIndex((token, i) => {
     return (
       i > index &&
@@ -43,7 +45,8 @@ const getParagraph = (tokens, index) => {
   const result = paragraphs.map((p) => {
     return {
       paragraph: p.children?.[0]?.content,
-      image: p.children?.[0]?.attrs?.[0]?.[1],
+      // image: p.children?.[0]?.attrs?.[0]?.[1],
+      image: getStaticUrl(component, p.children?.[0]?.attrs?.[0]?.[1]),
     };
   });
 
@@ -51,7 +54,7 @@ const getParagraph = (tokens, index) => {
 };
 
 // 提取 tokens 中的段落信息
-const paragraphLoader = (tokens) => {
+const paragraphLoader = (tokens, component) => {
   const paragraphs = [];
   tokens.forEach((token, index) => {
     if (
@@ -80,7 +83,7 @@ const paragraphLoader = (tokens) => {
       tokens[index + 4].content.indexOf('![') > -1
     ) {
       const title = tokens[index + 1].content;
-      const paragraph = getParagraph(tokens, index);
+      const paragraph = getParagraph(tokens, index, component);
       paragraphs.push({
         title,
         paragraphs: paragraph,
@@ -217,9 +220,9 @@ const markdownLoader = (content, component, module) => {
   };
 };
 
-const guideLoader = (content) => {
+const guideLoader = (content, component) => {
   const tokens = tokenLoader(content);
-  const paragraph = paragraphLoader(tokens);
+  const paragraph = paragraphLoader(tokens, component);
   return paragraph;
 };
 
