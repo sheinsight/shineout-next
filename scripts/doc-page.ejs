@@ -24,12 +24,12 @@ export const examples = [
 <% examples.forEach(function (exam, i) { -%>
   {
     propName: {
-      cn: '<%= exam.propName.cn %>',
-      en: '<%= exam.propName.en %>',
+      cn: `<%- exam.propName.cn %>`,
+      en: `<%- exam.propName.en %>`,
     },
     propDescribe: {
-      cn: '<%= exam.propDescribe.cn %>',
-      en: '<%= exam.propDescribe.en %>',
+      cn: `<%- exam.propDescribe.cn %>`,
+      en: `<%- exam.propDescribe.en %>`,
     },
     code: require('!raw-loader!<%= chunkModuleName %>/<%= componentDir %>/__example__/<%= exam.fileName %>').default.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '').trim(),
     component: require('<%= chunkModuleName %>/<%= componentDir %>/__example__/<%= exam.fileName %>').default,
