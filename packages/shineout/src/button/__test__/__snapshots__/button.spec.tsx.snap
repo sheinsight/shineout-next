@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button[Base] should render correctly 1`] = `
+<div
+  style="display: flex; gap: 24px; flex-wrap: wrap;"
+>
+  <button
+    class="button-primary-0-2-5 button-button-0-2-1"
+    style="margin: 0px;"
+  >
+    <span>
+      Primary
+    </span>
+  </button>
+  <button
+    class="button-secondary-0-2-6 button-button-0-2-1"
+    style="margin: 0px;"
+  >
+    <span>
+      Secondary
+    </span>
+  </button>
+  <button
+    class="button-secondary-0-2-6 button-button-0-2-1 button-outline-0-2-11"
+    style="margin: 0px;"
+  >
+    <span>
+      Outline
+    </span>
+  </button>
+  <button
+    class="button-secondary-0-2-6 button-button-0-2-1 button-dashed-0-2-12"
+    style="margin: 0px;"
+  >
+    <span>
+      Dashed
+    </span>
+  </button>
+  <button
+    class="button-primary-0-2-5 button-button-0-2-1 button-text-0-2-13"
+    style="margin: 0px;"
+  >
+    <span>
+      Text
+    </span>
+  </button>
+</div>
+`;

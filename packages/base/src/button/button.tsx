@@ -24,7 +24,6 @@ const Button = (props: ButtonProps) => {
     renderLoading,
     ...rest
   } = props;
-
   const { getButtonProps, getSpaceChildren, getAnchorProps, disabled } = useButton({
     ...rest,
   });
