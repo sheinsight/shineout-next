@@ -22,7 +22,11 @@ const menu: DropdownItem[] = [
 
 const App: React.FC = () => (
   <>
-    <Button.Group mode={'outline'} type={'secondary'}>
+    <Button.Group
+      mode={'outline'}
+      type={'secondary'}
+      style={{ display: 'inline-block', marginInlineEnd: 24 }}
+    >
       <Button>Option</Button>
       <Button>Option</Button>
       <Dropdown
@@ -31,14 +35,13 @@ const App: React.FC = () => (
         onClick={(data: any) => console.info(`The Dropdown clicked ${data.content}.`)}
       />
     </Button.Group>
-    <Button.Group outline type={'secondary'} style={{ marginTop: 12 }}>
+    <Button.Group outline type={'secondary'} style={{ display: 'inline-block' }}>
       <Button disabled>Option</Button>
       <Button disabled>Option</Button>
       <Dropdown
         disabled
         data={menu}
         position='bottom-right'
-        placeholder={'Dropdown'}
         onClick={(data: any) => console.info(`The Dropdown clicked ${data.content}.`)}
       />
     </Button.Group>

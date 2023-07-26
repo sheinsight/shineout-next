@@ -43,47 +43,28 @@ const menu: DropdownItem[] = [
 ];
 
 const App: React.FC = () => (
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px' }}>
-    <div>
-      <Dropdown placeholder='Right Top' position='right-top' data={menu} />
-    </div>
-    <div>
-      <Dropdown placeholder='Bottom Left' position='bottom-left' data={menu} />
-    </div>
-    <div>
+  <div style={{ display: 'inline-flex', flexDirection: 'column', gap: 12 }}>
+    <div style={{ display: 'flex', justifyContent: 'center', gap: 12, padding: '0 120px' }}>
+      <Dropdown placeholder='Bottom left' position='bottom-left' data={menu} />
       <Dropdown placeholder='Bottom' position='bottom' data={menu} />
+      <Dropdown placeholder='Bottom right' position='bottom-right' data={menu} />
     </div>
-    <div>
-      <Dropdown placeholder='Bottom Right' position='bottom-right' data={menu} />
-    </div>
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Dropdown placeholder='Right Top' position='right-top' data={menu} />
       <Dropdown placeholder='Left Top' position='left-top' data={menu} />
     </div>
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       <Dropdown placeholder='Right' position='right' data={menu} />
-    </div>
-    <div style={{ gridColumn: 'span 3' }}></div>
-    <div>
       <Dropdown placeholder='Left' position='left' data={menu} />
     </div>
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       <Dropdown placeholder='Right Bottom' position='right-bottom' data={menu} />
-    </div>
-    <div>
-      <Dropdown placeholder='Top Left' position='top-left' data={menu} />
-    </div>
-    <div>
-      <Dropdown placeholder='Top' position='top' data={menu} />
-    </div>
-    <div>
-      <Dropdown placeholder='Top Right' position='top-right' data={menu} />
-    </div>
-    <div>
       <Dropdown placeholder='Left Bottom' position='left-bottom' data={menu} />
     </div>
-
-    <div>
-      <Dropdown placeholder='Auto Position' position='auto' data={menu} />
+    <div style={{ display: 'flex', justifyContent: 'center', gap: 12 }}>
+      <Dropdown placeholder='Top Left' position='top-left' data={menu} />
+      <Dropdown placeholder='Top' position='top-left' data={menu} />
+      <Dropdown placeholder='Top right' position='top-right' data={menu} />
     </div>
   </div>
 );
