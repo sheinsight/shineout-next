@@ -9,7 +9,7 @@
   "scripts": {
     "start": "npm run dev",
     "clean:cache": "node ./scripts/cleanCache.js",
-    "dev": "cross-env NODE_ENV=development CASE_ENV=test  node ./webpack/config.dev.ts",
+    "dev": "cross-env NODE_ENV=development CASE_ENV=test NODE_ENV=development  node ./webpack/config.dev.ts",
     "dev:create": "cross-env NODE_ENV=development CASE_ENV=test  node ./scripts/dev-create.js",
     "build:md": "cross-env NODE_ENV=development CASE_ENV=test node ./scripts/dev-doc.js",
     "build:doc": "cross-env NODE_ENV=production webpack --config ./webpack/config.doc.js",
