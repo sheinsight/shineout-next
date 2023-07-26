@@ -21,12 +21,19 @@ export interface CheckboxClasses {
   indicatorWrapper: string;
   desc: string;
   input: string;
+  group: string;
+  groupBlock: string;
+}
+
+export interface CheckboxStyle {
+  checkbox?: CheckboxClasses;
+  input?: InputClasses;
 }
 
 export interface SimpleCheckboxProps
   extends Omit<BaseCheckProps, 'checked' | 'defaultChecked'>,
     Pick<CommonType, 'style' | 'className'> {
-  jssStyle: CheckboxClasses;
+  jssStyle: CheckboxStyle;
   children?: React.ReactNode;
   checked?: boolean | 'indeterminate';
   defaultChecked?: boolean | 'indeterminate';
@@ -45,5 +52,4 @@ export interface CheckboxProps<T>
   value?: T;
   defaultValue?: T;
   inputable?: boolean;
-  inputJssStyle: InputClasses;
 }

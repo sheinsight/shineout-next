@@ -41,7 +41,6 @@ const Dropdown = (props: SimpleDropdownProps) => {
     renderItem,
     absolute,
     data,
-    animationListJssStyle,
     jssStyle,
     isSub,
     columns,
@@ -50,7 +49,6 @@ const Dropdown = (props: SimpleDropdownProps) => {
     trigger = 'click',
     style,
     className,
-    buttonJssStyle,
     size,
   } = props;
   // buttonProps
@@ -125,12 +123,12 @@ const Dropdown = (props: SimpleDropdownProps) => {
 
   const renderButton = () => {
     const caret = (
-      <span key={'caret'} className={jssStyle.caret}>
+      <span key={'caret'} className={jssStyle?.dropdown?.caret}>
         <Caret />
       </span>
     );
     const child = [
-      <span key='text' className={jssStyle.content}>
+      <span key='text' className={jssStyle?.dropdown?.content}>
         {placeholder}
       </span>,
       caret,
@@ -142,38 +140,38 @@ const Dropdown = (props: SimpleDropdownProps) => {
       return (
         <a
           key='button'
-          className={classNames({
-            [jssStyle.button]: true,
-            [jssStyle.item]: true,
-            [jssStyle.itemDisabled]: disabled,
-            [jssStyle.itemActive]: !!open,
-          })}
+          className={classNames(
+            jssStyle?.dropdown?.button,
+            jssStyle?.dropdown?.item,
+            !!disabled && jssStyle?.dropdown?.itemDisabled,
+            !!open && jssStyle?.dropdown?.itemActive,
+          )}
           data-role='item'
           onClick={!disabled ? handleFocus : undefined}
         >
           {child}
         </a>
       );
-    } else
-      return (
-        <Button
-          jssStyle={buttonJssStyle}
-          disabled={disabled}
-          onClick={handleClickToggle}
-          outline={outline}
-          className={classNames({
-            [jssStyle.button]: true,
-            [jssStyle.splitButton]: !placeholder,
-          })}
-          mode={mode}
-          type={type}
-          size={size}
-          text={text}
-          key='button'
-        >
-          {child}
-        </Button>
-      );
+    }
+    return (
+      <Button
+        disabled={disabled}
+        jssStyle={jssStyle}
+        onClick={handleClickToggle}
+        outline={outline}
+        className={classNames(
+          jssStyle?.dropdown?.button,
+          !placeholder && jssStyle?.dropdown?.splitButton,
+        )}
+        mode={mode}
+        type={type}
+        size={size}
+        text={text}
+        key='button'
+      >
+        {child}
+      </Button>
+    );
   };
 
   const renderList = () => {
@@ -184,16 +182,16 @@ const Dropdown = (props: SimpleDropdownProps) => {
       const renderPlaceholder = util.render(renderItem || 'content', d);
       const { children } = d;
       const group = d.group ? (
-        <div key={'group'} className={jssStyle.optionGroup}>
+        <div key={'group'} className={jssStyle?.dropdown?.optionGroup}>
           {d.group}{' '}
         </div>
       ) : null;
-      const divider = d.divider ? <div key={'divider'} className={jssStyle.optionDivider} /> : null;
+      const divider = d.divider ? (
+        <div key={'divider'} className={jssStyle?.dropdown?.optionDivider} />
+      ) : null;
       const context = children ? (
         <Dropdown
-          buttonJssStyle={buttonJssStyle}
           jssStyle={jssStyle}
-          animationListJssStyle={animationListJssStyle}
           data={children}
           disabled={!!d.disabled}
           placeholder={renderPlaceholder}
@@ -209,9 +207,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           data={d}
           key={index}
           onClick={d.onClick || onClick}
-          itemClassName={classNames({
-            [jssStyle.item]: true,
-          })}
+          itemClassName={classNames(jssStyle?.dropdown?.item)}
           renderItem={renderItem}
           columns={columns}
           width={width}
@@ -230,10 +226,11 @@ const Dropdown = (props: SimpleDropdownProps) => {
 
   return (
     <div
-      className={classNames(className, {
-        [jssStyle.wrapper]: true,
-        [jssStyle.open]: !isSub && open,
-      })}
+      className={classNames(
+        className,
+        jssStyle?.dropdown?.wrapper,
+        !isSub && open && jssStyle?.dropdown?.open,
+      )}
       ref={wrapRef}
       style={style}
       data-position={position}
@@ -251,12 +248,12 @@ const Dropdown = (props: SimpleDropdownProps) => {
         <AnimationList
           onRef={listRef}
           display={columns ? 'grid' : 'block'}
-          className={classNames({
-            [jssStyle.list]: true,
-            [jssStyle.boxList]: columns !== undefined && columns > 1,
-            [jssStyle.listSmall]: size === 'small',
-            [jssStyle.listLarge]: size === 'large',
-          })}
+          className={classNames(
+            jssStyle?.dropdown?.list,
+            columns !== undefined && columns > 1 && jssStyle?.dropdown?.boxList,
+            size === 'small' && jssStyle?.dropdown?.listSmall,
+            size === 'large' && jssStyle?.dropdown?.listLarge,
+          )}
           style={{
             width: width,
             gridTemplateColumns: columns ? `repeat(${columns}, 1fr)` : undefined,
@@ -264,7 +261,6 @@ const Dropdown = (props: SimpleDropdownProps) => {
           type={'fade'}
           duration={'fast'}
           show={open}
-          jssStyle={animationListJssStyle}
         >
           {renderList()}
         </AnimationList>

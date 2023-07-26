@@ -31,12 +31,26 @@ export interface InputClasses {
   paddingBox: string;
   info: string;
   infoError: string;
+  // group
+  group: string;
+  groupSmall: string;
+  groupLarge: string;
+  groupFocus: string;
+  groupDisabled: string;
+  // number
+  wrapperNumber: string;
+  numberStep: string;
+}
+
+export interface InputStyle {
+  input?: InputClasses;
+  innerTitle?: InnerTitleClass;
 }
 
 export interface SimpleInputProps
   extends BaseInputProps,
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
-  jssStyle: InputClasses;
+  jssStyle: InputStyle;
   clearIcon?: React.ReactNode;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
@@ -62,7 +76,6 @@ export interface InputCommonProps<V> {
   getStatus?: SimpleInputProps['getStatus'];
   size?: SimpleInputProps['size'];
   jssStyle: SimpleInputProps['jssStyle'];
-  innerTitleJssStyle: InnerTitleClass;
   innerTitle?: React.ReactNode;
   placeTitle?: React.ReactNode;
   htmlName?: string;

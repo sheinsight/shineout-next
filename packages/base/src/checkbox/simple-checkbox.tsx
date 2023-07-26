@@ -10,15 +10,13 @@ const Checkbox = (props: SimpleCheckboxProps) => {
     checked: props.checked === 'indeterminate' ? false : props.checked,
     defaultChecked: props.defaultChecked === 'indeterminate' ? false : props.defaultChecked,
   });
-  const rootClass = classNames([
-    jssStyle.wrapper,
+  const rootClass = classNames(
     className,
-    {
-      [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperChecked]: checked,
-      [jssStyle.wrapperIndeterminate]: props.checked === 'indeterminate',
-    },
-  ]);
+    jssStyle?.checkbox?.wrapper,
+    !!disabled && jssStyle?.checkbox?.wrapperDisabled,
+    !!checked && jssStyle?.checkbox?.wrapperChecked,
+    props.checked === 'indeterminate' && jssStyle?.checkbox?.wrapperIndeterminate,
+  );
 
   const inputProps = getInputProps();
 
@@ -30,10 +28,10 @@ const Checkbox = (props: SimpleCheckboxProps) => {
       })}
     >
       <input {...inputProps} type='checkbox' />
-      <div className={jssStyle.indicatorWrapper}>
-        <i {...getIndicatorProps()} className={jssStyle.indicator} />
+      <div className={jssStyle?.checkbox?.indicatorWrapper}>
+        <i {...getIndicatorProps()} className={jssStyle?.checkbox?.indicator} />
       </div>
-      <span className={jssStyle.desc}>{children}</span>
+      <span className={jssStyle?.checkbox?.desc}>{children}</span>
       {typeof renderFooter === 'function' ? renderFooter(checked) : null}
     </div>
   );

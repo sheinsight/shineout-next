@@ -106,9 +106,11 @@ export interface SimpleDropdownProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     Pick<AbsoluteListProps, 'absolute'>,
     Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode'> {
-  animationListJssStyle: AnimationListClass;
-  buttonJssStyle: ButtonClasses;
-  jssStyle: DropdownClass;
+  jssStyle?: {
+    animationList?: AnimationListClass;
+    dropdown?: DropdownClass;
+    button?: ButtonClasses;
+  };
   /**
    * @inner 内部属性
    */

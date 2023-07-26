@@ -62,9 +62,11 @@ const App: React.FC = () => {
   const buttonStyle = useButtonStyle();
   return (
     <Dropdown
-      animationListJssStyle={animationListStyle}
-      buttonJssStyle={buttonStyle}
-      jssStyle={dropdownStyle}
+      jssStyle={{
+        dropdown: dropdownStyle,
+        animationList: animationListStyle,
+        button: buttonStyle,
+      }}
       position={'bottom'}
       trigger='click'
       placeholder='Dropdown'

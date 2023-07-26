@@ -7,8 +7,8 @@ import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 
 const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem, Value>) => {
-  const { children, className, button, block, keygen, jssStyle, style, inputJssStyle } = props;
-  const { size, disabled } = useWithFormConfig(props);
+  const { children, className, block, keygen, jssStyle, style } = props;
+  const { disabled } = useWithFormConfig(props);
 
   const inputAbleProps = useInputAble({
     value: props.value,
@@ -61,13 +61,11 @@ const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem
     onChange: handleItemChange,
     disabled,
   };
-  const groupClass = classNames(className, jssStyle.group, {
-    [jssStyle.groupBlock]: block,
-    [jssStyle.groupButton]: button,
-    [jssStyle.groupOutline]: button === 'outline',
-    [jssStyle.groupSmall]: button && size === 'small',
-    [jssStyle.groupLarge]: button && size === 'large',
-  });
+  const groupClass = classNames(
+    className,
+    jssStyle.checkbox?.group,
+    !!block && jssStyle?.checkbox?.groupBlock,
+  );
   if (props.data === undefined) {
     return (
       <div className={groupClass}>
@@ -80,7 +78,6 @@ const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem
         {props.data.map((d, i) => (
           <Checkbox
             jssStyle={jssStyle}
-            inputJssStyle={inputJssStyle}
             checked={datum.check(d)}
             disabled={datum.disabledCheck(d)}
             key={util.getKey(keygen, d, i)}

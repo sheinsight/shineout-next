@@ -5,7 +5,6 @@ import { CheckboxProps } from './checkbox.type';
 import GroupContext from './group-context';
 import Input from '../input';
 
-const emptyStyle = {} as any;
 const Checkbox = <T,>(props: CheckboxProps<T>) => {
   const {
     children,
@@ -13,7 +12,6 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     onChange: onChangePo,
     checked,
     jssStyle,
-    inputJssStyle,
     value: valuePo,
     defaultValue: defaultValuePo,
     inputable,
@@ -58,9 +56,8 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
         if (inputable && c) {
           return (
             <Input
-              jssStyle={inputJssStyle}
-              className={jssStyle.input}
-              innerTitleJssStyle={emptyStyle}
+              jssStyle={jssStyle}
+              className={jssStyle?.checkbox?.input}
               value={inputValue}
               onChange={handleInputChange}
               onClick={handleInputClick}
