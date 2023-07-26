@@ -23,10 +23,10 @@ const columnStyle: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
-  gap: 20,
+  gap: 24,
 };
 const App: React.FC = () => (
-  <div style={{ display: 'flex', gap: 12 }}>
+  <div style={{ display: 'flex', gap: 24 }}>
     <div style={columnStyle}>
       <Dropdown data={menu} type={'primary'} placeholder={'Default'} />
       <Dropdown data={menu} type={'secondary'} placeholder={'Default'} />

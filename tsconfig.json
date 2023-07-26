@@ -12,8 +12,9 @@
     "lib": ["ES2020", "DOM"],
     "baseUrl": "./",
     "paths": {
-      "chunk/*": ["./docs/chunk/*"]
+      "chunk/*": ["./docs/chunk/*"],
+      "shineout": ["packages/shineout/src/index.ts"]
     }
   },
-  "includes": ["packages/**/*"]
+  "includes": ["packages/**/*", "./docs/**/*"]
 }

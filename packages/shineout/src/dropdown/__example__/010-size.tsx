@@ -12,7 +12,7 @@ const menu = new Array(4).fill(null).map((_, index) => ({
   content: `item${index}`,
 }));
 
-const marginStyle = { marginInlineEnd: 12 };
+const marginStyle = { marginInlineEnd: 24 };
 const App: React.FC = () => (
   <div>
     {['small', 'default', 'large'].map((size: any) => (

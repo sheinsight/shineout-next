@@ -4,12 +4,12 @@ When you need to select multiple options from a data set; when you need to switc
 
 ## Common usage
 
-![The multi-select box can be used alone in the form](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/checkbox/001.png?raw=true)
+![The multi-select box can be used alone in the form](001)
 
 ## Components are used together
 
-![In the list, it is generally used for full selection and semi-full selection](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/checkbox/002.png?raw=true)
+![In the list, it is generally used for full selection and semi-full selection](002)
 
 ## Recommended/cautionary examples
 
-![When there are many options and the field lengths are different, it is recommended to align the multi-select boxes](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/checkbox/003.png?raw=true)
+![When there are many options and the field lengths are different, it is recommended to align the multi-select boxes](003)

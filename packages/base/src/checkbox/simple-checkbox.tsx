@@ -4,7 +4,7 @@ import React from 'react';
 import { SimpleCheckboxProps } from './checkbox.type';
 
 const Checkbox = (props: SimpleCheckboxProps) => {
-  const { jssStyle, className, style, status, children, ...rest } = props;
+  const { jssStyle, className, style, children, renderFooter, ...rest } = props;
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
     checked: props.checked === 'indeterminate' ? false : props.checked,
@@ -15,7 +15,6 @@ const Checkbox = (props: SimpleCheckboxProps) => {
     className,
     {
       [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperError]: status === 'error',
       [jssStyle.wrapperChecked]: checked,
       [jssStyle.wrapperIndeterminate]: props.checked === 'indeterminate',
     },
@@ -31,8 +30,11 @@ const Checkbox = (props: SimpleCheckboxProps) => {
       })}
     >
       <input {...inputProps} type='checkbox' />
-      <i {...getIndicatorProps()} className={jssStyle.indicator} />
+      <div className={jssStyle.indicatorWrapper}>
+        <i {...getIndicatorProps()} className={jssStyle.indicator} />
+      </div>
       <span className={jssStyle.desc}>{children}</span>
+      {typeof renderFooter === 'function' ? renderFooter(checked) : null}
     </div>
   );
 };

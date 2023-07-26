@@ -8,5 +8,7 @@ export * from './dropdown';
 export * from './button';
 export * from './icon';
 
+export { setConfig } from './config';
+
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';

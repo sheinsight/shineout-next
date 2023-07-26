@@ -4,12 +4,12 @@
 
 ## 常见用法
 
-![多选框可以在表单中单独使用](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/checkbox/001.png?raw=true)
+![多选框可以在表单中单独使用](001)
 
 ## 组件搭配使用
 
-![在列表中一般会用于全选、半全选](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/checkbox/002.png?raw=true)
+![在列表中一般会用于全选、半全选](002)
 
 ## 推荐/慎用示例
 
-![当选项较多且字段长度不一时，建议将多选框对齐](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/checkbox/003.png?raw=true)
+![当选项较多且字段长度不一时，建议将多选框对齐](003)

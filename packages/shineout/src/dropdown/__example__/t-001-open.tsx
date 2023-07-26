@@ -7,10 +7,9 @@
 import React, { useState } from 'react';
 import { Button, Dropdown } from 'shineout';
 
-const menu = new Array(6).fill(null).map((_, index) => ({
+const menu = new Array(4).fill(null).map((_, index) => ({
   id: `${index}`,
   content: `item${index}`,
-  group: index % 3 === 0 ? `group${index / 3}` : undefined,
 }));
 
 const App: React.FC = () => {
@@ -22,7 +21,7 @@ const App: React.FC = () => {
   };
   return (
     <div style={{ height: 150 }}>
-      <Button id='control' onClick={() => setShow(true)}>
+      <Button onClick={() => setShow(true)} style={{ marginInlineEnd: 24 }}>
         打开弹层
       </Button>
       <Dropdown onCollapse={handleCollapse} open={show} placeholder='Dropdown' data={menu} />

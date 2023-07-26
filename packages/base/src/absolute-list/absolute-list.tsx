@@ -64,7 +64,8 @@ const AbsoluteList = (props: AbsoluteListProps) => {
       context.element = document.createElement('div');
     }
     const container = getContainer();
-    if (util.isInDocument(context.element) === false) {
+    console.log(container);
+    if (!container.contains(context.element)) {
       container.appendChild(context.element);
     }
     return context.element;
@@ -177,13 +178,15 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     if (absolute) return;
     setStyle({ ...childStyle, ...getPositionStyle(position, { listMargin }) });
   }, [position, absolute]);
-  const element = getElement();
-
-  element.className = props.rootClass || '';
 
   if (React.isValidElement(children) === false) return null;
   const styledChild = React.cloneElement(children, { style });
-  if (absolute) return ReactDOM.createPortal(styledChild, getElement());
+  if (absolute) {
+    const element = getElement();
+    element.className = props.rootClass || '';
+    return ReactDOM.createPortal(styledChild, getElement());
+  }
+
   return styledChild;
 };
 

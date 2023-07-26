@@ -26,7 +26,7 @@ const menu: DropdownItem[] = [
 ];
 
 const App: React.FC = () => (
-  <Dropdown data={menu} placeholder={'Dropdown'} position='bottom-left' />
+  <Dropdown data={menu} placeholder={'Dividing Line'} position='bottom-left' />
 );
 
 export default App;
