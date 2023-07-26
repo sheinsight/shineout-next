@@ -14,7 +14,7 @@ export interface ConfigOption {
   // spin?: string;
   caret?: CaretType;
   // direction: Direction;
-  popupContainer?: HTMLElement | (() => HTMLElement);
+  popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
 let config: ConfigOption = {
   popupContainer: undefined,
@@ -43,4 +43,13 @@ export function getDefaultContainer() {
 
 export const useConfig = (): Snapshot<ConfigOption> => {
   return useSnapshot(state) as Snapshot<ConfigOption>;
+};
+
+export const setConfig = (option: ConfigOption) => {
+  for (const [key, value] of Object.entries(option)) {
+    if (key in state) {
+      const k = key as keyof ConfigOption;
+      state[k] = value;
+    }
+  }
 };
