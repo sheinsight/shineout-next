@@ -1,5 +1,5 @@
 /**
- * cn - 一组复选框禁用
+ * cn - 复选框组禁用
  *    -- 设置 Checkbox.Group 的 disabled 为 true，禁用全部选项
  *    -- disabled 为函数时，根据函数结果实现有条件禁用
  * en - Group disabled
@@ -19,8 +19,6 @@ const App: React.FC = () => (
       keygen={(c) => c}
       data={data}
       defaultValue={['blue', 'cyan']}
-      block
-      style={{ marginTop: 32 }}
     />
   </>
 );

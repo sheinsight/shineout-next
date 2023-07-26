@@ -12,7 +12,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Checkbox inputable onClick={() => setTotal(total + 1)}>
+      <Checkbox onClick={() => setTotal(total + 1)}>
         Click Me
         {` ${total} Times!`}
       </Checkbox>
