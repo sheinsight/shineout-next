@@ -10,8 +10,10 @@ import { Button } from '@sheinx/base';
 import { useButtonStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const jssStyle = useButtonStyle();
-
+  const buttonStyle = useButtonStyle();
+  const jssStyle = {
+    button: buttonStyle,
+  };
   return (
     <div>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -72,27 +74,27 @@ export default () => {
 
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
         <span>
-          <Button jssStyle={jssStyle} disabled type='primary' dash>
+          <Button jssStyle={jssStyle} disabled type='primary'>
             Primary
           </Button>
         </span>
         <span>
-          <Button jssStyle={jssStyle} disabled type='success' dash>
+          <Button jssStyle={jssStyle} disabled type='success'>
             Success
           </Button>
         </span>
         <span>
-          <Button jssStyle={jssStyle} disabled type='danger' dash>
+          <Button jssStyle={jssStyle} disabled type='danger'>
             Danger
           </Button>
         </span>
         <span>
-          <Button jssStyle={jssStyle} disabled type='warning' dash>
+          <Button jssStyle={jssStyle} disabled type='warning'>
             Warning
           </Button>
         </span>
         <span>
-          <Button jssStyle={jssStyle} disabled type='secondary' dash>
+          <Button jssStyle={jssStyle} disabled type='secondary'>
             Secondary
           </Button>
         </span>

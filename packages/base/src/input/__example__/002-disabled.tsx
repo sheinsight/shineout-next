@@ -1,10 +1,11 @@
 import { Input } from '@sheinx/base';
 import { useInputStyle } from '@sheinx/shineout-style';
+
 export default () => {
-  const jssStyle = useInputStyle();
+  const style = useInputStyle();
   return (
     <div>
-      <Input jssStyle={jssStyle} disabled />
+      <Input jssStyle={{ input: style }} disabled />
     </div>
   );
 };

@@ -10,7 +10,10 @@ import { Button } from '@sheinx/base';
 import { useButtonStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const jssStyle = useButtonStyle();
+  const buttonStyle = useButtonStyle();
+  const jssStyle = {
+    button: buttonStyle,
+  };
 
   return (
     <div>

@@ -42,14 +42,14 @@ export default (props: InputGroupProps) => {
   };
 
   const { children, className, style } = props;
-  const rootClass = classNames({
-    [jssStyle.group]: true,
-    [jssStyle.groupSmall]: size === 'small',
-    [jssStyle.groupLarge]: size === 'large',
-    [jssStyle.groupDisabled]: !!disabled,
-    [className!]: !!props.className,
-    [jssStyle.groupFocus]: focus,
-  });
+  const rootClass = classNames(
+    className,
+    jssStyle?.input?.group,
+    size === 'small' && jssStyle?.input?.groupSmall,
+    size === 'large' && jssStyle?.input?.groupLarge,
+    !!disabled && jssStyle?.input?.groupDisabled,
+    !!focus && jssStyle?.input?.groupFocus,
+  );
   return (
     <div className={rootClass} style={style}>
       {Children.toArray(children).map((child, i) => {

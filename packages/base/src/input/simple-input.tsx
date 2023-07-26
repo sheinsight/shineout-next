@@ -25,20 +25,18 @@ const Input = (props: SimpleInputProps) => {
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
   });
-  const rootClass = classNames([
-    jssStyle.wrapper,
+  const rootClass = classNames(
     className,
-    {
-      [jssStyle.wrapperFocus]: focused,
-      [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperError]: status === 'error',
-      [jssStyle.wrapperSmall]: size === 'small',
-      [jssStyle.wrapperLarge]: size === 'large',
-      [jssStyle.wrapperUnderline]: underline,
-      [jssStyle.wrapperNoBorder]: !border,
-      [jssStyle.wrapperInGroup]: inGroup,
-    },
-  ]);
+    jssStyle?.input?.wrapper,
+    !!focused && jssStyle?.input?.wrapperFocus,
+    !!disabled && jssStyle?.input?.wrapperDisabled,
+    status === 'error' && jssStyle?.input?.wrapperError,
+    size === 'small' && jssStyle?.input?.wrapperSmall,
+    size === 'large' && jssStyle?.input?.wrapperLarge,
+    !!underline && jssStyle?.input?.wrapperUnderline,
+    !border && jssStyle?.input?.wrapperNoBorder,
+    !!inGroup && jssStyle?.input?.wrapperInGroup,
+  );
 
   const keyHandler = useKeyEvent({
     onEnterPress: (e: KeyboardEvent) => {
@@ -52,7 +50,7 @@ const Input = (props: SimpleInputProps) => {
   });
 
   const inputProps = getInputProps({
-    className: classNames(jssStyle.input, jssStyle.paddingBox),
+    className: classNames(jssStyle?.input?.input, jssStyle?.input?.paddingBox),
     onKeyUp,
   });
 
@@ -79,8 +77,8 @@ const Input = (props: SimpleInputProps) => {
       {prefix}
       {inputEl}
       {(showClear || props.showClear) && (
-        <div className={jssStyle.clearWrapper} {...getClearProps()}>
-          <span className={jssStyle.clear}>{clearIcon || Icons.CloseCircle}</span>
+        <div className={jssStyle?.input?.clearWrapper} {...getClearProps()}>
+          <span className={jssStyle?.input?.clear}>{clearIcon || Icons.CloseCircle}</span>
         </div>
       )}
       {suffix}

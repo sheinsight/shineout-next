@@ -31,7 +31,6 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     innerTitle,
     placeTitle,
     width,
-    innerTitleJssStyle,
     ...rest
   } = props;
 
@@ -56,7 +55,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     placeTitle,
     size,
     open: focused || hasValue(inputAbleProps.value),
-    jssStyle: innerTitleJssStyle,
+    jssStyle: props.jssStyle,
   });
 
   const clearProps = useClear({
@@ -79,10 +78,10 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
       <div
         key='info'
         style={{ minWidth: 'auto' }}
-        className={classNames({
-          [props.jssStyle.info]: true,
-          [props.jssStyle.infoError]: isError,
-        })}
+        className={classNames(
+          props.jssStyle?.input?.info,
+          !!isError && props.jssStyle?.input?.infoError,
+        )}
       >
         {text}
       </div>

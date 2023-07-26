@@ -36,7 +36,7 @@ export default (props: InputNumberProps) => {
 
   const suffix = (
     <React.Fragment>
-      <div className={jssStyle.numberStep}>
+      <div className={jssStyle?.input?.numberStep}>
         <span
           onMouseDown={(e) => {
             // 阻止默认事件，防止点击按钮时，input失去焦点
@@ -76,7 +76,7 @@ export default (props: InputNumberProps) => {
       {...numberFormatProps}
       jssStyle={jssStyle}
       value={numberFormatProps.value || ''}
-      className={classNames(forwardProps.className, jssStyle.wrapperNumber)}
+      className={classNames(forwardProps.className, jssStyle?.input?.wrapperNumber)}
       onKeyDown={onKeyDown}
       suffix={suffix}
     />
