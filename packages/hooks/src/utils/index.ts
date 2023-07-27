@@ -11,3 +11,4 @@ export * from './uid';
 export * from './document';
 export * from './position';
 export * from './render';
+export * from './lazyload';

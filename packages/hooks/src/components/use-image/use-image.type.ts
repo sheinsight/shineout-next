@@ -53,14 +53,14 @@ export interface BaseImageProps {
    * @default 'rounded'
    */
   shape?: ImageShapeType;
-
   target?: ImageTargetType;
-
   width?: number | string;
-
   height?: number | string;
-
   src?: string;
-
   title?: string;
+  imageRef?: React.RefObject<HTMLImageElement>;
+  onClick?: React.MouseEventHandler;
+  alt?: string;
+  autoSSL?: boolean;
+  onError?: (e: Event, type: number) => void;
 }

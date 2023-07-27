@@ -28,3 +28,18 @@ export function substitute<T extends ObjectType = ObjectType>(
 
   return '';
 }
+
+/**
+ *
+ * 输入 'https://github.com/'
+ * 输出 '//github.com/'
+ */
+export function removeProtocol(url: string) {
+  if (url.indexOf('http') !== 0) return url;
+  try {
+    const { href, protocol } = new URL(url);
+    return href.slice(protocol.length);
+  } catch (error) {
+    return url;
+  }
+}

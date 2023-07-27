@@ -15,6 +15,4 @@ Image Describe
 
 # Example
 
-<code src="./__example__/s-001-base.tsx"></code>
-
 # Api
