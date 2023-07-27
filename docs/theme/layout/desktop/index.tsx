@@ -32,11 +32,12 @@ const Desktop = () => {
     {
       path: ':name?/component/:name?/:name?',
       element: (
-        <Component>
+        <>
           <Menu></Menu>
-          <Content></Content>
-          {/* <Anchor></Anchor> */}
-        </Component>
+          <Component>
+            <Content></Content>
+          </Component>
+        </>
       ),
       children: [],
     },
@@ -55,11 +56,9 @@ const Desktop = () => {
   }
 
   return (
-    <section className={classes.desktop}>
+    <section id='layout' className={classes.desktop}>
       <Nav></Nav>
-      <div className={classes.main}>
-        <Routes></Routes>
-      </div>
+      <Routes></Routes>
     </section>
   );
 };

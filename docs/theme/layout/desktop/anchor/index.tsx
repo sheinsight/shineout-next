@@ -34,9 +34,11 @@ const Anchor = () => {
       }
 
       if (component && component.examples) {
-        const anchorNames = component.examples.map((item: { propName: any }, index: number) => {
-          return item.propName[state.locales] || `Example ${index + 1}`;
-        });
+        const anchorNames = component.examples
+          .filter((item: { propName: any }) => item.propName[state.locales])
+          .map((item: { propName: any }) => {
+            return item.propName[state.locales];
+          });
 
         setAnchor(anchorNames);
       }
