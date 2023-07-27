@@ -10,10 +10,8 @@ let root: HTMLDivElement;
 //todo rtl
 
 function initRoot() {
-  const defaultContainer = getDefaultContainer();
   root = document.createElement('div');
   root.setAttribute('data-type', 'absolute-list-wrap');
-  defaultContainer.appendChild(root);
 }
 
 const listPosition = ['drop-down', 'drop-up'];
@@ -29,6 +27,8 @@ const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'
 
 function getRoot() {
   if (!root || util.isInDocument(root) === false) initRoot();
+  const defaultContainer = getDefaultContainer();
+  if (!defaultContainer.contains(root)) defaultContainer.appendChild(root);
   return root;
 }
 
@@ -64,7 +64,6 @@ const AbsoluteList = (props: AbsoluteListProps) => {
       context.element = document.createElement('div');
     }
     const container = getContainer();
-    console.log(container);
     if (!container.contains(context.element)) {
       container.appendChild(context.element);
     }

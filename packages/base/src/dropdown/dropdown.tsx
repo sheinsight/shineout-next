@@ -248,6 +248,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         <AnimationList
           onRef={listRef}
           display={columns ? 'grid' : 'block'}
+          jssStyle={jssStyle}
           className={classNames(
             jssStyle?.dropdown?.list,
             columns !== undefined && columns > 1 && jssStyle?.dropdown?.boxList,
