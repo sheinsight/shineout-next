@@ -1,9 +1,13 @@
+import useStyles from '../style';
+
 interface ComponentProps {
   children: React.ReactNode;
 }
 
 const Component = (props: ComponentProps) => {
-  return <div className='component'>{props.children}</div>;
+  const classes = useStyles();
+
+  return <div className={classes.component}>{props.children}</div>;
 };
 
 export default Component;

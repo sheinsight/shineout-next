@@ -17,6 +17,6 @@ const menu = new Array(5).fill(null).map((_, index) => ({
   ),
 }));
 
-const App: React.FC = () => <Dropdown placeholder='Dropdown' data={menu} />;
+const App: React.FC = () => <Dropdown placeholder='Icon Menu' data={menu} />;
 
 export default App;

@@ -6,10 +6,10 @@ export default () => {
   const jssStyle = useCheckboxStyle();
   return (
     <div>
-      <Checkbox jssStyle={jssStyle} disabled>
+      <Checkbox jssStyle={{ checkbox: jssStyle }} disabled>
         red
       </Checkbox>
-      <Checkbox jssStyle={jssStyle} disabled defaultChecked>
+      <Checkbox jssStyle={{ checkbox: jssStyle }} disabled defaultChecked>
         green
       </Checkbox>
     </div>

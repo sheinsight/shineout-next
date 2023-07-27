@@ -9,9 +9,10 @@ const wrapWithSpan = (str) => {
 
 const exampleLoader = (content, component, fileName) => {
   // 仅处理非 t-xxx 的文件
-  // if (fileName.indexOf(testFlag) > -1) {
-  //   return false;
-  // }
+
+  if (process.env.NODE_ENV === 'production' && fileName.indexOf(testFlag) > -1) {
+    return false;
+  }
 
   const example = {
     fileName,

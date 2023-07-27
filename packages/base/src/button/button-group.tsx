@@ -1,6 +1,6 @@
 import React, { Children, cloneElement } from 'react';
 import classNames from 'classnames';
-import { ButtonGroupProps } from './button-group.type';
+import { ButtonGroupClasses, ButtonGroupProps } from './button-group.type';
 import { ButtonProps } from './button.type';
 
 const Group = (props: ButtonGroupProps) => {
@@ -13,15 +13,19 @@ const Group = (props: ButtonGroupProps) => {
   }
 
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
+  const groupStyle = jssStyle?.buttonGroup || ({} as ButtonGroupClasses);
 
-  const groupClass = classNames(className, jssStyle.group, jssStyle[type || 'default'], {
-    [jssStyle.text]: modeSetted === 'text',
-    [jssStyle.dashed]: modeSetted === 'dashed',
-    [jssStyle.outline]: modeSetted === 'outline',
-    [jssStyle.round]: shape === 'round',
-    [jssStyle.small]: size === 'small',
-    [jssStyle.large]: size === 'large',
-  });
+  const groupClass = classNames(
+    className,
+    groupStyle?.group,
+    groupStyle[type || 'default'],
+    modeSetted === 'text' && groupStyle.text,
+    modeSetted === 'dashed' && groupStyle.dashed,
+    modeSetted === 'outline' && groupStyle.outline,
+    shape === 'round' && groupStyle.round,
+    size === 'small' && groupStyle.small,
+    size === 'large' && groupStyle.large,
+  );
 
   const shapeSetted = shape === 'round' ? 'round' : undefined;
 

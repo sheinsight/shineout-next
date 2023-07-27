@@ -13,7 +13,7 @@ type CheckboxGroupRenderItem = CheckboxGroupProps['renderItem'];
 const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
 
 const renderItem: CheckboxGroupRenderItem = (color) => {
-  const style = { borderBottom: `solid 1px ${color}`, paddingBottom: 2 };
+  const style = { borderBottom: `solid 1px ${color}` };
   return <span style={style}>{color}</span>;
 };
 

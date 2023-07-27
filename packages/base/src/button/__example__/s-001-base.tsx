@@ -7,16 +7,20 @@
 
 import React from 'react';
 import { Button } from '@sheinx/base';
-import { useButtonStyle, useButtonGroupStyle } from '@sheinx/shineout-style';
+import { useButtonGroupStyle, useButtonStyle } from '@sheinx/shineout-style';
 // import Icon from '../../icons';
 
 export default () => {
-  const jssStyle = useButtonStyle();
-  const jssGroupStyle = useButtonGroupStyle();
+  const buttonStyle = useButtonStyle();
+  const buttonGroupStyle = useButtonGroupStyle();
+  const jssStyle = {
+    button: buttonStyle,
+    buttonGroup: buttonGroupStyle,
+  };
 
   return (
     <div>
-      <Button.Group jssStyle={jssGroupStyle} type='secondary'>
+      <Button.Group jssStyle={jssStyle} type='secondary'>
         <Button jssStyle={jssStyle}>123</Button>
         <Button jssStyle={jssStyle}>123</Button>
         <Button jssStyle={jssStyle}>123</Button>

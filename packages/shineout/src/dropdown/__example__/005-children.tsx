@@ -1,5 +1,5 @@
 /**
- * cn - 多级下拉
+ * cn - 多级菜单
  *    -- 带有多个下钻层级菜单的下拉框, 在 data 中设置 children 属性即可
  * en - Multi-level
  *   -- Dropdown with multiple levels of menu, set the children property in data.
@@ -16,6 +16,6 @@ const menu = new Array(5).fill(null).map((_, index) => ({
   })),
 }));
 
-const App: React.FC = () => <Dropdown data={menu} placeholder={'Dropdown'} />;
+const App: React.FC = () => <Dropdown data={menu} placeholder={'Click me'} />;
 
 export default App;

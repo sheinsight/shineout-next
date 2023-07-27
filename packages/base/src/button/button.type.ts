@@ -34,7 +34,9 @@ export interface ButtonBaseProps
   extends BaseButtonProps,
     Pick<CommonType, 'style' | 'className'>,
     Omit<React.TextareaHTMLAttributes<HTMLButtonElement>, 'onClick'> {
-  jssStyle: ButtonClasses;
+  jssStyle?: {
+    button?: ButtonClasses;
+  };
   children?: React.ReactNode;
   renderButton?: (buttonEl: React.ReactNode) => React.ReactElement;
   renderLoading?: (buttonEl: React.ReactNode) => React.ReactElement;

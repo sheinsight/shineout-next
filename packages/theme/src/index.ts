@@ -4,6 +4,7 @@ import Radio from './radio';
 import Input from './input';
 import Dropdown from './dropdown';
 import Icon from './icon';
+import Checkbox from './checkbox';
 import Image from './image';
 
 import { CommonTokens } from './common/type';
@@ -12,6 +13,7 @@ import { RadioTokens } from './radio/type';
 import { InputTokens } from './input/type';
 import { DropdownTokens } from './dropdown/type';
 import { IconTokens } from './icon/type';
+import { CheckboxTokens } from './checkbox/type';
 import { ImageTokens } from './image/type';
 
 export type ThemeTokens = CommonTokens &
@@ -20,6 +22,7 @@ export type ThemeTokens = CommonTokens &
   InputTokens &
   DropdownTokens &
   IconTokens &
+  CheckboxTokens &
   ImageTokens;
 
 const Token: ThemeTokens = {
@@ -29,6 +32,7 @@ const Token: ThemeTokens = {
   ...Input,
   ...Dropdown,
   ...Icon,
+  ...Checkbox,
   ...Image,
 };
 

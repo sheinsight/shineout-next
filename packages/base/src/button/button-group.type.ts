@@ -1,5 +1,6 @@
 import { CommonType } from '../common/type';
 import { ButtonMode, ButtonType } from '@sheinx/hooks';
+
 export interface ButtonGroupClasses {
   group: string;
 
@@ -35,5 +36,7 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
   mode?: ButtonMode;
   type?: ButtonType;
   children: React.ReactNode;
-  jssStyle: ButtonGroupClasses;
+  jssStyle: {
+    buttonGroup?: ButtonGroupClasses;
+  };
 }

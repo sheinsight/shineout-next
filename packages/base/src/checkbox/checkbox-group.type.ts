@@ -1,20 +1,11 @@
 import { ReactNode } from 'react';
 import { KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
-import { CheckboxClasses } from './checkbox.type';
-
-export interface CheckboxGroupClasses extends CheckboxClasses {
-  group: string;
-  groupBlock: string;
-  groupButton: string;
-  groupOutline: string;
-  groupSmall: string;
-  groupLarge: string;
-}
+import { CheckboxStyle } from './checkbox.type';
 
 export interface CheckboxGroupProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'size' | 'style'> {
-  jssStyle: CheckboxGroupClasses;
+  jssStyle: CheckboxStyle;
   /**
    * @en You can pass in a set of Checkbox
    * @cn 可以传入一组Checkbox
@@ -34,11 +25,6 @@ export interface CheckboxGroupProps<DataItem, Value>
    * @cn 默认为水平布局，设置 block 属性可以改为垂直布局
    */
   block?: boolean;
-  /**
-   * @en set button to show button style
-   * @cn 设置 button 属性可以展示为按钮样式
-   */
-  button?: boolean | 'outline';
   /**
    * @en the data items
    * @cn 数据项

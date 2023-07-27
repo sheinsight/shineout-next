@@ -1,7 +1,7 @@
 import { useButton } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
-import { ButtonProps } from './button.type';
+import { ButtonClasses, ButtonProps } from './button.type';
 import ButtonGroup from './button-group';
 
 const Button = (props: ButtonProps) => {
@@ -28,28 +28,26 @@ const Button = (props: ButtonProps) => {
   const { getButtonProps, getSpaceChildren, getAnchorProps, disabled } = useButton({
     ...rest,
   });
+  const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
 
-  const rootClass = classNames([
+  const rootClass = classNames(
     className,
-    jssStyle[type || 'default'],
-    jssStyle.button,
-    {
-      [jssStyle.disabled]: disabled,
-      [jssStyle.loading]: loading,
-      [jssStyle.href]: href,
-      [jssStyle.text]: modeSetted === 'text',
-      [jssStyle.dashed]: modeSetted === 'dashed',
-      [jssStyle.outline]: modeSetted === 'outline',
-      [jssStyle.round]: shape === 'round',
-      [jssStyle.circle]: shape === 'circle',
-      [jssStyle.square]: shape === 'square',
-      [jssStyle.small]: size === 'small',
-      [jssStyle.large]: size === 'large',
-    },
-  ]);
-
+    buttonStyle[type || 'default'],
+    buttonStyle.button,
+    !!disabled && buttonStyle.disabled,
+    !!loading && buttonStyle.loading,
+    !!href && buttonStyle.href,
+    modeSetted === 'text' && buttonStyle.text,
+    modeSetted === 'dashed' && buttonStyle.dashed,
+    modeSetted === 'outline' && buttonStyle.outline,
+    shape === 'round' && buttonStyle.round,
+    shape === 'circle' && buttonStyle.circle,
+    shape === 'square' && buttonStyle.square,
+    size === 'small' && buttonStyle.small,
+    size === 'large' && buttonStyle.large,
+  );
   const rootProps = getButtonProps();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { type: buttonType, onRef, ...buttonProps } = rootProps;
@@ -85,7 +83,7 @@ const Button = (props: ButtonProps) => {
 
   return (
     // eslint-disable-next-line react/button-has-type
-    <button {...buttonProps} ref={onRef} className={rootClass} style={style}>
+    <button {...buttonProps} ref={onRef as any} className={rootClass} style={style}>
       {loading && loadingEl}
       {buttonInnerEl}
     </button>

@@ -22,7 +22,9 @@ export interface AnimationListProps {
   children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  jssStyle: AnimationListClass;
+  jssStyle?: {
+    animationList?: AnimationListClass;
+  };
   onRef?: React.Ref<HTMLDivElement | null>;
   animation?: boolean;
 }

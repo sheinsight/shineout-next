@@ -6,7 +6,13 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const checkboxTokenDescription = { checkbox: '单选框', button: '按钮模式', outline: '线框模式' };
+const checkboxTokenDescription = {
+  checkbox: '单选框',
+  button: '按钮模式',
+  outline: '线框模式',
+  gap: '间距',
+  Activedisabled: '选中禁用',
+};
 
 /**
  * token 值映射表
@@ -16,36 +22,38 @@ const checkboxTokenDescription = { checkbox: '单选框', button: '按钮模式'
  * 注意，该映射表的内容不与 checkboxRules 强关联，非 checkboxRules 规则内的 token 需手动增加或删减。
  */
 const checkboxTokenValue = {
-  border: { color: '', radius: '' },
-  background: { color: '' },
-  font: { color: '', size: '' },
-  icon: { color: '' },
-  disabled: {
-    border: { color: '' },
-    background: { color: '' },
-    font: { color: '' },
-    icon: { color: '' },
+  icon: {
+    border: { color: 'Neutral-border-1', radius: 'Radius-2', width: 'Border-2' },
+    background: { color: 'Neutral-fill-1' },
+    color: 'transparent',
+    disabled: {
+      border: { color: 'Neutral-border-1' },
+      background: { color: 'Neutral-fill-2' },
+      color: 'transparent',
+    },
+    hover: {
+      border: { color: 'Neutral-border-2' },
+      background: { color: 'Neutral-fill-1' },
+      color: 'transparent',
+    },
+    active: {
+      border: { color: 'Brand-6' },
+      background: { color: 'Brand-6' },
+      color: 'Neutral-fill-1',
+    },
+    activedisabled: {
+      border: { color: 'Brand-3' },
+      background: { color: 'Brand-3' },
+      color: 'Neutral-fill-1',
+    },
+    gap: 'Margin-8',
+    circle: { fill: 'Neutral-fill-2' },
   },
-  hover: {
-    border: { color: '' },
-    background: { color: '' },
-    font: { color: '' },
-    icon: { color: '' },
+  label: {
+    font: { color: 'Neutral-text-5', size: '14/regular' },
+    disabled: { font: { color: 'Neutral-text-2' } },
+    gap: 'Margin-24',
   },
-  active: {
-    border: { color: '' },
-    background: { color: '' },
-    font: { color: '' },
-    icon: { color: '' },
-  },
-  activeDisabled: {
-    border: { color: '' },
-    background: { color: '' },
-    font: { color: '' },
-    icon: { color: '' },
-  },
-  line: { height: '' },
-  padding: { x: '', y: '' },
 };
 
 const checkboxTokenExtraValue = {};

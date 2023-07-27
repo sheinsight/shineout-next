@@ -44,7 +44,7 @@ const App: React.FC = () => (
       type={'primary'}
       placeholder='Default'
       data={data}
-      style={{ marginInlineStart: 40 }}
+      style={{ marginInlineStart: 24 }}
     />
   </div>
 );

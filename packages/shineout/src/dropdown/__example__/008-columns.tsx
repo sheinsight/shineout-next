@@ -1,5 +1,5 @@
 /**
- * cn - 多列平铺
+ * cn - 多列平铺下拉菜单
  *    -- 设置 columns 属性可以让选项多列平铺
  * en - Multiple columns
  *    -- Set columns property can make the option multi-column tiled.
@@ -12,6 +12,8 @@ const menu = new Array(30).fill(null).map((_, index) => ({
   content: `item${index}`,
 }));
 
-const App: React.FC = () => <Dropdown placeholder='Dropdown' width={500} columns={5} data={menu} />;
+const App: React.FC = () => (
+  <Dropdown placeholder='Tiling Menu' width={500} columns={5} data={menu} />
+);
 
 export default App;

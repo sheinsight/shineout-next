@@ -4,152 +4,140 @@
 export interface CheckboxTokens {
   /**
    * @type {string}
-   * @token
-   * @description 单选框边框颜色
+   * @token Neutral-border-1
+   * @description 单选框图标边框颜色
    */
-  checkboxBorderColor: string;
+  checkboxIconBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框背景颜色
+   * @token Neutral-fill-1
+   * @description 单选框图标背景颜色
    */
-  checkboxBackgroundColor: string;
+  checkboxIconBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框字体颜色
-   */
-  checkboxFontColor: string;
-  /**
-   * @type {string}
-   * @token
+   * @token transparent
    * @description 单选框图标颜色
    */
   checkboxIconColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框禁用时的边框颜色
+   * @token Neutral-border-1
+   * @description 单选框图标禁用时的边框颜色
    */
-  checkboxDisabledBorderColor: string;
+  checkboxIconDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框禁用时的背景颜色
+   * @token Neutral-fill-2
+   * @description 单选框图标禁用时的背景颜色
    */
-  checkboxDisabledBackgroundColor: string;
+  checkboxIconDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框禁用时的字体颜色
+   * @token transparent
+   * @description 单选框图标禁用时的颜色
    */
-  checkboxDisabledFontColor: string;
+  checkboxIconDisabledColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框禁用时的图标颜色
+   * @token Neutral-border-2
+   * @description 单选框图标鼠标移入时的边框颜色
    */
-  checkboxDisabledIconColor: string;
+  checkboxIconHoverBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标移入时的边框颜色
+   * @token Neutral-fill-1
+   * @description 单选框图标鼠标移入时的背景颜色
    */
-  checkboxHoverBorderColor: string;
+  checkboxIconHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标移入时的背景颜色
+   * @token transparent
+   * @description 单选框图标鼠标移入时的颜色
    */
-  checkboxHoverBackgroundColor: string;
+  checkboxIconHoverColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标移入时的字体颜色
+   * @token Brand-6
+   * @description 单选框图标鼠标点击时的边框颜色
    */
-  checkboxHoverFontColor: string;
+  checkboxIconActiveBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标移入时的图标颜色
+   * @token Brand-6
+   * @description 单选框图标鼠标点击时的背景颜色
    */
-  checkboxHoverIconColor: string;
+  checkboxIconActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标点击时的边框颜色
+   * @token Neutral-fill-1
+   * @description 单选框图标鼠标点击时的颜色
    */
-  checkboxActiveBorderColor: string;
+  checkboxIconActiveColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标点击时的背景颜色
+   * @token Brand-3
+   * @description 单选框图标undefined边框颜色
    */
-  checkboxActiveBackgroundColor: string;
+  checkboxIconActivedisabledBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标点击时的字体颜色
+   * @token Brand-3
+   * @description 单选框图标undefined背景颜色
    */
-  checkboxActiveFontColor: string;
+  checkboxIconActivedisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标点击时的图标颜色
+   * @token Neutral-fill-1
+   * @description 单选框图标undefined颜色
    */
-  checkboxActiveIconColor: string;
+  checkboxIconActivedisabledColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标点击时的禁用时的边框颜色
+   * @token Radius-2
+   * @description 单选框图标边框圆角
    */
-  checkboxActiveDisabledBorderColor: string;
+  checkboxIconBorderRadius: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标点击时的禁用时的背景颜色
+   * @token Margin-8
+   * @description 单选框图标间距
    */
-  checkboxActiveDisabledBackgroundColor: string;
+  checkboxIconGap: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标点击时的禁用时的字体颜色
+   * @token Border-2
+   * @description 单选框图标边框宽度
    */
-  checkboxActiveDisabledFontColor: string;
+  checkboxIconBorderWidth: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标点击时的禁用时的图标颜色
+   * @token Neutral-fill-2
+   * @description 单选框图标圆形undefined
    */
-  checkboxActiveDisabledIconColor: string;
+  checkboxIconCircleFill: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框字体字号
+   * @token Neutral-text-5
+   * @description 单选框undefined字体颜色
    */
-  checkboxFontSize: string;
+  checkboxLabelFontColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框边框圆角
+   * @token Neutral-text-2
+   * @description 单选框undefined禁用时的字体颜色
    */
-  checkboxBorderRadius: string;
+  checkboxLabelDisabledFontColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框行高度
+   * @token 14/regular
+   * @description 单选框undefined字体字号
    */
-  checkboxLineHeight: string;
+  checkboxLabelFontSize: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框内边距（水平方向）
+   * @token Margin-24
+   * @description 单选框undefined间距
    */
-  checkboxPaddingX: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框内边距（垂直方向）
-   */
-  checkboxPaddingY: string;
+  checkboxLabelGap: string;
 }

@@ -67,5 +67,10 @@ module.exports = {
       template: path.join(__dirname, '../public/index.ejs'),
     }),
     new MiniCssExtractPlugin(),
+    new Webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
   ],
 };

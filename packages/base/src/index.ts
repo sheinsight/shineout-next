@@ -12,5 +12,7 @@ export * from './rule';
 export * from './textarea';
 export * from './image';
 
+export { setConfig } from './config';
+
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';

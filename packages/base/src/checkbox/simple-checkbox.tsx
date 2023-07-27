@@ -4,22 +4,19 @@ import React from 'react';
 import { SimpleCheckboxProps } from './checkbox.type';
 
 const Checkbox = (props: SimpleCheckboxProps) => {
-  const { jssStyle, className, style, status, children, ...rest } = props;
+  const { jssStyle, className, style, children, renderFooter, ...rest } = props;
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
     checked: props.checked === 'indeterminate' ? false : props.checked,
     defaultChecked: props.defaultChecked === 'indeterminate' ? false : props.defaultChecked,
   });
-  const rootClass = classNames([
-    jssStyle.wrapper,
+  const rootClass = classNames(
     className,
-    {
-      [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperError]: status === 'error',
-      [jssStyle.wrapperChecked]: checked,
-      [jssStyle.wrapperIndeterminate]: props.checked === 'indeterminate',
-    },
-  ]);
+    jssStyle?.checkbox?.wrapper,
+    !!disabled && jssStyle?.checkbox?.wrapperDisabled,
+    !!checked && jssStyle?.checkbox?.wrapperChecked,
+    props.checked === 'indeterminate' && jssStyle?.checkbox?.wrapperIndeterminate,
+  );
 
   const inputProps = getInputProps();
 
@@ -31,8 +28,11 @@ const Checkbox = (props: SimpleCheckboxProps) => {
       })}
     >
       <input {...inputProps} type='checkbox' />
-      <i {...getIndicatorProps()} className={jssStyle.indicator} />
-      <span className={jssStyle.desc}>{children}</span>
+      <div className={jssStyle?.checkbox?.indicatorWrapper}>
+        <i {...getIndicatorProps()} className={jssStyle?.checkbox?.indicator} />
+      </div>
+      <span className={jssStyle?.checkbox?.desc}>{children}</span>
+      {typeof renderFooter === 'function' ? renderFooter(checked) : null}
     </div>
   );
 };

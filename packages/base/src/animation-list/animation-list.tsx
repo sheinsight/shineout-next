@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
-import { AnimationListProps } from './animation-list.type';
+import { AnimationListClass, AnimationListProps } from './animation-list.type';
 import { useForkRef } from '@sheinx/hooks';
 
 const getDuration = (duration: AnimationListProps['duration']) => {
@@ -115,15 +115,14 @@ const AnimationList = (props: AnimationListProps) => {
 
   let animationName = durationNum ? `animation-${durationNum}` : '';
   if (!needTransform) animationName = `fade-${animationName}`;
+  const animationStyle = jssStyle?.animationList || ({} as AnimationListClass);
   const className = classNames(
-    jssStyle[animationName as keyof AnimationListProps['jssStyle']],
-    {
-      [jssStyle.show]: show,
-      [jssStyle.fade]: type.includes('fade'),
-      [jssStyle.collapse]: type.includes('collapse'),
-      [jssStyle['scale-y']]: type.includes('scale-y'),
-    },
     classNamePo,
+    animationStyle[animationName as keyof AnimationListClass],
+    !!show && animationStyle.show,
+    type.includes('fade') && animationStyle.fade,
+    type.includes('collapse') && animationStyle.collapse,
+    type.includes('scale-y') && animationStyle['scale-y'],
   );
 
   return (
