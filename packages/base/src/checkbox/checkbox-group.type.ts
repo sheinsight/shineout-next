@@ -2,12 +2,10 @@ import { ReactNode } from 'react';
 import { KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { CheckboxStyle } from './checkbox.type';
-import { InputClasses } from '../input/input.type';
 
 export interface CheckboxGroupProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'size' | 'style'> {
   jssStyle: CheckboxStyle;
-  inputJssStyle: InputClasses;
   /**
    * @en You can pass in a set of Checkbox
    * @cn 可以传入一组Checkbox
