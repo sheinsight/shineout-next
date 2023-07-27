@@ -4,15 +4,19 @@ export default createUseStyles({
   desktop: {
     width: '100%',
     height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
+    overflow: 'auto',
+    position: 'relative',
   },
 
   nav: {
+    position: 'sticky',
+    top: 0,
     height: 59,
+    width: '100%',
     display: 'flex',
     backgroundColor: '#ffffff',
     borderBottom: '1px solid rgb(229,230,235)',
+    zIndex: 1,
     '& .entry': {
       gap: 20,
       width: '100%',
@@ -32,21 +36,24 @@ export default createUseStyles({
   },
 
   main: {
-    flex: 1,
-    display: 'flex',
     width: '100%',
     height: '100%',
-    overflow: 'auto',
+    marginTop: 60,
     '& .component': {
-      display: 'flex',
+      float: 'left',
       width: '100%',
       height: '100%',
+      paddingLeft: 260,
+      boxSizing: 'border-box',
     },
   },
 
   menu: {
+    position: 'sticky',
+    float: 'left',
+    top: 60,
     width: 259,
-    height: '100%',
+    height: 'calc(100% - 60px)',
     borderRight: '1px solid rgba(232, 235, 240, 1)',
     listStyle: 'none',
     margin: 0,
@@ -107,9 +114,6 @@ export default createUseStyles({
     flex: 1,
     width: '100%',
     height: '100%',
-    overflowY: 'auto',
-    overflowX: 'hidden',
-    // paddingRight: 196,
   },
 
   anchor: {
@@ -118,6 +122,8 @@ export default createUseStyles({
     top: 240,
     minWidth: 180,
     width: 180,
+    height: 170,
+    overflow: 'auto',
     marginTop: 80,
     listStyle: 'none',
     margin: 0,
@@ -153,6 +159,15 @@ export default createUseStyles({
         color: '#197AFA',
       },
     },
+  },
+
+  relative: {
+    position: 'fixed',
+    height: 1,
+    background: 'red',
+    width: '100%',
+    top: '30%',
+    left: 0,
   },
 
   footer: {

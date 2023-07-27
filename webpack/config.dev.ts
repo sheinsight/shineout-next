@@ -4,17 +4,6 @@ const WebpackDevServer = require('webpack-dev-server');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 require('../scripts/dev-doc.js');
-// class CustomPlugin {
-//   apply(compiler) {
-//     compiler.hooks.invalid.tap('CustomPlugin', () => {
-//       console.log('Shineout Doc is compiling...');
-//     });
-
-//     compiler.hooks.done.tap('CustomPlugin', (stats) => {
-//       console.log('Shineout Doc is compiled');
-//     });
-//   }
-// }
 
 const webpackConfig = {
   mode: 'development',
@@ -70,7 +59,11 @@ const webpackConfig = {
       title: 'Shineout Next',
       template: path.join(__dirname, '../public/index.ejs'),
     }),
-    // new CustomPlugin(),
+    new Webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+      },
+    }),
   ],
 };
 

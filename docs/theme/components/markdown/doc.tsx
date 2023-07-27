@@ -1,13 +1,16 @@
+// import { useEffect } from 'react';
 import Example from '../example';
 import { Example as ExampleType } from 'docs/types';
 import Anchor from 'docs/theme/layout/desktop/anchor';
-
+// import { useSnapshot } from 'valtio';
+// import store from '../../store';
 interface DocProps {
   examples: ExampleType[];
 }
 
 const Doc = (props: DocProps) => {
   const { examples } = props;
+  // const state = useSnapshot(store);
 
   return (
     <div style={{ display: 'flex' }}>
