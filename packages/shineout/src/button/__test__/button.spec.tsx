@@ -84,11 +84,16 @@ describe('Button[Base]', () => {
   test('should render when set size', () => {
     const sizes = ['small', '', 'large'];
     const { container } = render(<ButtonSize />);
-    screen.debug();
     container.querySelectorAll('button').forEach((button, index) => {
       if (!button.classList[2]) return;
       expect(button.classList[2].includes(sizes[index])).toBeTruthy();
     });
+  });
+  test('should render space in text when set space', () => {
+    const { container } = render(<Button space>测试</Button>);
+    const button = container.querySelector('button');
+    expect(button?.textContent).not.toBe('测试');
+    expect(button?.textContent).toBe('测 试');
   });
 });
 describe('Button[Status]', () => {
@@ -104,7 +109,6 @@ describe('Button[Status]', () => {
 describe('Button[Disabled]', () => {
   test('should render when set disabled', () => {
     const { container } = render(<ButtonDisbled />);
-    screen.debug();
     container.querySelectorAll('button').forEach((button) => {
       expect(
         button.classList[0].includes(button.textContent?.toLocaleLowerCase() as string),
@@ -181,6 +185,7 @@ describe('Button[Loading]', () => {
     ).toBeFalsy();
   });
 });
+// TODO: have warning about onRef when set href in button
 describe('Button[Href]', () => {
   test('should render when set href', () => {
     const handleFn = jest.fn();
@@ -194,7 +199,63 @@ describe('Button[Href]', () => {
     expect(href?.classList.contains(`${SO_PREFIX}-href-0-2-14`)).toBeTruthy();
     expect(href?.getAttribute('href')).toBe('aaa');
     fireEvent.click(href as HTMLAnchorElement);
-    console.log(handleFn.mock.calls);
+    // TODO:useButton href 两次click
     // expect(handleFn.mock.calls.length).toBe(1)
   });
+  test('should render when set href and target', () => {
+    const { container } = render(
+      <Button href='#home' target='_blank' type='primary'>
+        Home
+      </Button>,
+    );
+    const href = container.querySelector('a');
+    expect(container.querySelectorAll('a').length).toBe(1);
+    expect(href?.classList.contains(`${SO_PREFIX}-href-0-2-14`)).toBeTruthy();
+    expect(href?.getAttribute('href')).toBe('#home');
+    expect(href?.getAttribute('target')).toBe('_blank');
+  });
 });
+describe('Button[HtmlType]', () => {
+  const htmlTypes = ['button', 'reset', 'submit'];
+  htmlTypes.forEach((htmlType) => {
+    test(`should render when set htmlType is ${htmlType}`, () => {
+      const { container } = render(<Button htmlType={htmlType}>Test</Button>);
+      expect(container.querySelector('button')?.getAttribute('htmltype')).toBe(htmlType);
+    });
+  });
+});
+describe('Button[Children]', () => {
+  test('should render when children is null', () => {
+    const { container } = render(<Button></Button>);
+    expect(container.querySelector('button')?.firstChild).toBeNull();
+  });
+});
+describe('Button[onClick]', () => {
+  test('should render when set onClick', () => {
+    const ButtonClick: React.FC<any> = () => {
+      const [data, setData] = useState<number>(0);
+      return (
+        <>
+          <span className='testData'>{data}</span>
+          <Button
+            onClick={() => {
+              setData((prev) => prev + 1);
+            }}
+          >
+            Click
+          </Button>
+        </>
+      );
+    };
+    const { container } = render(<ButtonClick />);
+    screen.debug();
+    const testData = container.querySelector('.testData');
+    const button = container.querySelector('button') as HTMLButtonElement;
+    expect(testData?.textContent).toBe('0');
+    fireEvent.click(button);
+    expect(testData?.textContent).toBe('1');
+    fireEvent.click(button);
+    expect(testData?.textContent).toBe('2');
+  });
+});
+// TODO: onRef
