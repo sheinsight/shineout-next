@@ -2,17 +2,10 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { AbsoluteListProps } from './absolute-list.type';
 import { util } from '@sheinx/hooks';
-import { getDefaultContainer } from '../config';
 import { getPositionStyle } from './get-position-style';
-
-let root: HTMLDivElement;
+import useContainer from './use-container';
 
 //todo rtl
-
-function initRoot() {
-  root = document.createElement('div');
-  root.setAttribute('data-type', 'absolute-list-wrap');
-}
 
 const listPosition = ['drop-down', 'drop-up'];
 const horizontalPosition = [
@@ -24,13 +17,6 @@ const horizontalPosition = [
   'right',
 ];
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right', 'bottom', 'top'];
-
-function getRoot() {
-  if (!root || util.isInDocument(root) === false) initRoot();
-  const defaultContainer = getDefaultContainer();
-  if (!defaultContainer.contains(root)) defaultContainer.appendChild(root);
-  return root;
-}
 
 const AbsoluteList = (props: AbsoluteListProps) => {
   const [style, setStyle] = useState<React.CSSProperties>({});
@@ -52,23 +38,9 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     listMargin = 2,
   } = props;
 
-  const getContainer = () => {
-    if (typeof absolute === 'function') {
-      return absolute() || getRoot();
-    }
-    return getRoot();
-  };
-
-  const getElement = () => {
-    if (!context.element) {
-      context.element = document.createElement('div');
-    }
-    const container = getContainer();
-    if (!container.contains(context.element)) {
-      container.appendChild(context.element);
-    }
-    return context.element;
-  };
+  const { getElement, getContainer } = useContainer({
+    container: typeof absolute === 'function' ? absolute : undefined,
+  });
 
   const getAbsolutePositionStyle = (rect: DOMRect) => {
     const style: React.CSSProperties = {
@@ -80,9 +52,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
       style[widthKey] = rect.width;
     }
     let targetPosition: string = position;
-    const container = getContainer();
-    const defaultContainer = getDefaultContainer();
-    const rootContainer = container === getRoot() || !container ? defaultContainer : container;
+    const rootContainer = getContainer();
     const containerRect = rootContainer.getBoundingClientRect();
     const containerScroll = {
       left: rootContainer.scrollLeft,
@@ -183,7 +153,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
   if (absolute) {
     const element = getElement();
     element.className = props.rootClass || '';
-    return ReactDOM.createPortal(styledChild, getElement());
+    return ReactDOM.createPortal(styledChild, element);
   }
 
   return styledChild;
