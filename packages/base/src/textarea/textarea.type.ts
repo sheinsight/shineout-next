@@ -65,4 +65,5 @@ export interface TextareaProps
   trim?: boolean;
   renderFooter?: (value?: string) => React.ReactNode;
   width?: number | string;
+  delay?: number;
 }

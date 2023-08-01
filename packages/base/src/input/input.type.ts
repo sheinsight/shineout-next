@@ -89,6 +89,7 @@ export interface InputCommonProps<V> {
   style?: React.CSSProperties;
   info?: number | ((value: V | undefined) => string);
   disabled?: boolean;
+  delay?: number;
 }
 
 export type GetCommonProps<Props, V> = Omit<

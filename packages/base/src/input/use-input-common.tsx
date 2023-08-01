@@ -31,6 +31,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     innerTitle,
     placeTitle,
     width,
+    delay,
     ...rest
   } = props;
 
@@ -43,6 +44,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     onChange: onChange,
     defaultValue: defaultValue,
     beforeChange: beforeChange,
+    delay: delay,
   };
   const inputAbleProps = useInputAble({
     control: 'value' in props,
