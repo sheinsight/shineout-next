@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup[Base] should render correctly 1`] = `
+<div
+  style="display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;"
+>
+  <div
+    class="button-group-group-0-2-1 button-group-secondary-0-2-8 button-group-text-0-2-13"
+  >
+    <button
+      class="button-primary-0-2-19 button-button-0-2-15 button-text-0-2-27"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15 button-text-0-2-27"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15 button-text-0-2-27"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15 button-disabled-0-2-32 button-text-0-2-27"
+      disabled=""
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+  </div>
+  <div
+    class="button-group-group-0-2-1 button-group-secondary-0-2-8"
+  >
+    <button
+      class="button-primary-0-2-19 button-button-0-2-15"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+  </div>
+  <div
+    class="button-group-group-0-2-1 button-group-secondary-0-2-8 button-group-outline-0-2-12"
+  >
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15 button-outline-0-2-25"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15 button-outline-0-2-25"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15 button-outline-0-2-25"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15 button-outline-0-2-25"
+    >
+      <span>
+        Publish
+      </span>
+    </button>
+  </div>
+  <div>
+    <button
+      class="button-primary-0-2-19 button-button-0-2-15"
+    >
+      <span>
+        Primary
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15"
+    >
+      <span>
+        Secondary
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15"
+    >
+      <span>
+        Secondary
+      </span>
+    </button>
+    <button
+      class="button-secondary-0-2-20 button-button-0-2-15"
+    >
+      <span>
+        Secondary
+      </span>
+    </button>
+  </div>
+  <div
+    style="display: flex; gap: 24px;"
+  >
+    <div
+      class="button-group-group-0-2-1 button-group-primary-0-2-7"
+    >
+      <button
+        class="button-primary-0-2-19 button-button-0-2-15"
+      >
+        <span>
+          Publish
+        </span>
+      </button>
+      <button
+        class="button-primary-0-2-19 button-button-0-2-15"
+      >
+        <span
+          style="display: flex; align-items: center; justify-content: center; gap: 4px;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 24 24"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              fill="#ffffff"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="button-group-group-0-2-1 button-group-secondary-0-2-8"
+    >
+      <button
+        class="button-secondary-0-2-20 button-button-0-2-15"
+      >
+        <span>
+          Publish
+        </span>
+      </button>
+      <button
+        class="button-secondary-0-2-20 button-button-0-2-15"
+      >
+        <span
+          style="display: flex; align-items: center; justify-content: center; gap: 4px;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 24 24"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

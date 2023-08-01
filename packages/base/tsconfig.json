@@ -7,5 +7,5 @@
       "@sheinx/base": ["./src/index"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "../shineout/src/button/__test__"]
 }
