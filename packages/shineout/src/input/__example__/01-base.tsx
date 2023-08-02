@@ -8,5 +8,5 @@
 import { Input } from 'shineout';
 
 export default () => {
-  return <Input placeholder='input something' delay={300} onChange={(d) => console.log(d)} />;
+  return <Input placeholder='input something' />;
 };
