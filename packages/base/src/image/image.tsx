@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React from 'react';
 import showGallery from './image-event';
 import { ImageProps, ImageClasses } from './image.type';
+import ImageGroup from './image-group';
 
 const PLACEHOLDER = 0;
 const SRC = 1;
@@ -187,5 +188,7 @@ const Image = (props: ImageProps) => {
     </Tag>
   );
 };
+
+Image.Group = ImageGroup;
 
 export default Image;

@@ -14,70 +14,29 @@ export default () => {
   const jssStyle = {
     image: imageStyle,
   };
+  const Images = [
+    'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',
+    // 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png',
+    // 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png',
+    // 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png',
+    // 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png',
+  ];
   return (
-    // <ImageGroup jssStyle={jssStyle} width={128} shape='thumbnail' height={128} showCount pile lazy>
-    //   <Image
-    //     fit='fill'
-    //     jssStyle={jssStyle}
-    //     src='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/1_b.jpg'
-    //     href='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/1_b.jpg'
-    //   ></Image>
-    //   <Image
-    //     fit='fill'
-    //     jssStyle={jssStyle}
-    //     src='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/2_b.jpg'
-    //     href='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/2_b.jpg'
-    //   ></Image>
-    //   <Image
-    //     fit='fill'
-    //     jssStyle={jssStyle}
-    //     src='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/3_b.jpg'
-    //     href='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/3_b.jpg'
-    //   ></Image>
-    //   <Image
-    //     fit='fill'
-    //     jssStyle={jssStyle}
-    //     src='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/4_b.jpg'
-    //     href='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/4_b.jpg'
-    //   ></Image>
-    // </ImageGroup>
-    <div>
-      <Image
-        lazy
-        fit='fill'
-        width={600}
-        height={400}
-        jssStyle={jssStyle}
-        src='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/1_b.jpg'
-        href='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/1_b.jpg'
-      ></Image>
-      <Image
-        lazy
-        fit='fill'
-        width={600}
-        height={400}
-        jssStyle={jssStyle}
-        src='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/2_b.jpg'
-        href='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/2_b.jpg'
-      ></Image>
-      <Image
-        lazy
-        fit='fill'
-        width={600}
-        height={400}
-        jssStyle={jssStyle}
-        src='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/3_b.jpg'
-        href='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/3_b.jpg'
-      ></Image>
-      <Image
-        lazy
-        fit='fill'
-        width={600}
-        height={400}
-        jssStyle={jssStyle}
-        src='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/4_b.jpg'
-        href='https://raw.githubusercontent.com/sheinsight/shineout/master/site/images/4_b.jpg'
-      ></Image>
+    <div id='ddd'>
+      {Images.map((img, idx) => {
+        return (
+          <Image
+            key={idx}
+            target='_modal'
+            fit='fill'
+            width={128}
+            height={128}
+            jssStyle={jssStyle}
+            src={img}
+            href={img}
+          ></Image>
+        );
+      })}
     </div>
   );
 };

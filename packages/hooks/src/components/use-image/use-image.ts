@@ -22,7 +22,7 @@ const useImage = (props: BaseImageProps = {}) => {
 
   const [status, setStatus] = React.useState<number>(PLACEHOLDER);
 
-  const elementRef = React.useRef<HTMLImageElement>(null);
+  const elementRef = React.useRef<HTMLDivElement | HTMLAnchorElement>(null);
 
   const getUrl = (url: string) => {
     const auto = 'autoSSL' in props ? autoSSL : config.autoSSL;
