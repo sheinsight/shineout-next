@@ -16,15 +16,7 @@ export default () => {
       <Button type='primary' loading style={buttonStyle}>
         Primary
       </Button>
-      <Button
-        type='primary'
-        loading
-        shape='square'
-        style={buttonStyle}
-        onClick={() => {
-          console.log(1);
-        }}
-      ></Button>
+      <Button type='primary' loading shape='square' style={buttonStyle}></Button>
     </div>
   );
 };
