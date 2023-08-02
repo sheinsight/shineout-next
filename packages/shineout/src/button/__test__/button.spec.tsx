@@ -15,6 +15,7 @@ const SO_PREFIX = 'button';
 afterEach(cleanup);
 describe('Button[Base]', () => {
   mountTest(Button);
+
   test('should render correctly', () => {
     const { container } = render(<ButtonBase />);
     expect(container.firstChild).toMatchSnapshot();
@@ -53,6 +54,7 @@ describe('Button[Base]', () => {
   });
   test('should render when set icon', () => {
     const { container } = render(<ButtonIcon />);
+    expect(container.firstChild).toMatchSnapshot();
     container.querySelectorAll('button').forEach((button) => {
       expect(button.querySelectorAll('svg').length).toBe(1);
     });
@@ -76,6 +78,7 @@ describe('Button[Base]', () => {
   test('should render when set shape', () => {
     const shape = ['square', 'circle', 'round'];
     const { container } = render(<ButtonShape />);
+    expect(container.firstChild).toMatchSnapshot();
     container.querySelectorAll('button').forEach((button, index) => {
       if (index === 3) return;
       expect(button.classList[2].includes(shape[index])).toBeTruthy();
@@ -84,6 +87,7 @@ describe('Button[Base]', () => {
   test('should render when set size', () => {
     const sizes = ['small', '', 'large'];
     const { container } = render(<ButtonSize />);
+    expect(container.firstChild).toMatchSnapshot();
     container.querySelectorAll('button').forEach((button, index) => {
       if (!button.classList[2]) return;
       expect(button.classList[2].includes(sizes[index])).toBeTruthy();
@@ -99,6 +103,7 @@ describe('Button[Base]', () => {
 describe('Button[Status]', () => {
   test('should render when set type', () => {
     const { container } = render(<ButtonStatus />);
+    expect(container.firstChild).toMatchSnapshot();
     container.querySelectorAll('button').forEach((button) => {
       expect(
         button.classList[0].includes(button.textContent?.toLocaleLowerCase() as string),
@@ -109,6 +114,7 @@ describe('Button[Status]', () => {
 describe('Button[Disabled]', () => {
   test('should render when set disabled', () => {
     const { container } = render(<ButtonDisbled />);
+    expect(container.firstChild).toMatchSnapshot();
     container.querySelectorAll('button').forEach((button) => {
       expect(
         button.classList[0].includes(button.textContent?.toLocaleLowerCase() as string),
@@ -141,6 +147,7 @@ describe('Button[Disabled]', () => {
 describe('Button[Loading]', () => {
   test('should render when set loading', () => {
     const { container } = render(<ButtonLoading />);
+    expect(container.firstChild).toMatchSnapshot();
     container.querySelectorAll('button').forEach((button) => {
       expect(button.classList.contains(`${SO_PREFIX}-loading-0-2-19`)).toBeTruthy();
     });
@@ -225,9 +232,24 @@ describe('Button[HtmlType]', () => {
   });
 });
 describe('Button[Children]', () => {
-  test('should render when children is null', () => {
+  test('should render without errors when children is null', () => {
     const { container } = render(<Button></Button>);
     expect(container.querySelector('button')?.firstChild).toBeNull();
+  });
+  test('should render without errors when children is undefined', () => {
+    const { container } = render(<Button>{undefined}</Button>);
+    expect(container.querySelector('button')?.firstChild).toBeNull();
+  });
+  test('should render without errors when children is false ans 0', () => {
+    const { container } = render(
+      <>
+        <Button>{0}</Button>
+        <Button>{false}</Button>
+      </>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    expect(container.querySelectorAll('button')[0].textContent).toBe('0');
+    expect(container.querySelectorAll('button')[1].firstChild).toBeNull();
   });
 });
 describe('Button[onClick]', () => {
