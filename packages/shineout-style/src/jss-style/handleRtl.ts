@@ -16,7 +16,7 @@ const handleStyle = (
 ) => {
   Object.keys(style).forEach((key) => {
     const value = style[key];
-    if (typeof value === 'object') {
+    if (typeof value === 'object' && !'@'.indexOf(key)) {
       originStyle[key] = {};
       supportStyle[key] = {};
       unSupportStyle[key] = {};
