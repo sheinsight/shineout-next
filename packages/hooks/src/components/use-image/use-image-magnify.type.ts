@@ -1,3 +1,3 @@
 export interface BaseImageMagnifyProps {
-  a: string;
+  a: '';
 }

@@ -70,7 +70,6 @@ const useImage = (props: BaseImageProps = {}) => {
 
   const fetchImage = () => {
     if (lazyId) removeStack(lazyId);
-
     lazyId = addStack({
       offset: typeof lazy === 'number' ? lazy : 0,
       element: elementRef.current!,
@@ -120,6 +119,7 @@ const useImage = (props: BaseImageProps = {}) => {
     const mergedEventHandlers = {
       ...externalProps,
       onClick: handleClick(externalEventHandlers),
+      ref: elementRef,
     };
 
     return {
@@ -131,9 +131,16 @@ const useImage = (props: BaseImageProps = {}) => {
     if (!lazy) {
       markToRender();
     } else {
-      //
+      if (elementRef.current) {
+        lazyId = addStack({
+          offset: typeof lazy === 'number' ? lazy : 0,
+          element: elementRef.current!,
+          render: markToRender,
+          container: typeof container === 'string' ? document.querySelector(container) : container,
+        });
+      }
     }
-  }, [src, alt]);
+  }, []);
 
   return {
     src,

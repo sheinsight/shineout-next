@@ -1,4 +1,5 @@
 import { useImage } from '@sheinx/hooks';
+import { getDefaultContainer } from '../config';
 import classNames from 'classnames';
 import React from 'react';
 import showGallery from './image-event';
@@ -33,7 +34,7 @@ const Image = (props: ImageProps) => {
     getRootProps,
     getImageProps,
     getImageDivProps,
-  } = useImage(rest);
+  } = useImage({ container: getDefaultContainer(), ...rest });
   const imageStyle = jssStyle.image || ({} as ImageClasses);
 
   const rootClass = classNames(className, imageStyle.image, {

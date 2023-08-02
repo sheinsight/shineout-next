@@ -8,7 +8,7 @@ const ImageMagnify = (props: ImageMagnifyProps) => {
   const rootProps = getRootProps();
 
   const renderLoading = () => {
-    return <div>Loading...</div>;
+    return <div></div>;
   };
 
   const rootStyle = {

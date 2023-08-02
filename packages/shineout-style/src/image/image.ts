@@ -181,16 +181,15 @@ const ImageStyle: JsStyles<ImageClass> = {
     transform: 'translate(-50%,-50%)',
   },
   galleryForward: {
-    // transform: 'translateY(-50%)',
+    transform: 'translate(-50%,-50%)',
     display: 'flex',
     position: 'absolute',
     animationName: '$gallery-fade-in',
   },
   galleryBackward: {
-    // transform: 'translateY(-50%)',
+    transform: 'translate(-50%,-50%)',
     display: 'flex',
     position: 'absolute',
-    transform: 'translate(-50%,-50%)',
   },
   galleryCenter: {
     cursor: 'zoom-in',

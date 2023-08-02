@@ -117,16 +117,3 @@ export function addStack(obj: LazyConfig) {
   }
   return null;
 }
-
-// export function throttleWrapper(cb: any) {
-//   let timer: Timer = null;
-//   return (...args: any[]) => {
-//     const ctx = this;
-//     if (!timer) {
-//       timer = setTimeout(() => {
-//         cb.apply(ctx, args);
-//         timer = null;
-//       }, throttle);
-//     }
-//   };
-// }
