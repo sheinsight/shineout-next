@@ -3,6 +3,16 @@
 
 import { ImageTokens } from './type';
 
-const image: ImageTokens = {};
+const image: ImageTokens = {
+  imageCircleBorderRadius: 'Radius-50%',
+  imageCircleBorderColor: 'Neutral-border-1',
+  imageRoundedBorderRadius: 'Radius-4',
+  imageRoundedBorderColor: 'Neutral-border-1',
+  imageThumbnailBorderRadius: 'Radius-4',
+  imageThumbnailBorderColor: 'Neutral-border-1',
+  imagePlaceholderBackgroundColor: 'Neutral-fill-2',
+  imageErrorBackgroundColor: 'Neutral-fill-2',
+  imageGroupNearlyMargin: 'Margin-8',
+};
 
 export default image;

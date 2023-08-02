@@ -1,8 +1,14 @@
 import React from 'react';
 
-export type ImageShapeType = 'rounded' | 'cricle' | 'thumbnail';
+export type ImageShapeType = 'rounded' | 'circle' | 'thumbnail';
 export type ImageFitType = 'fill' | 'center' | 'fit' | 'stretch';
 export type ImageTargetType = '_self' | '_blank' | '_modal' | '_download';
+
+export type Images = {
+  src?: string;
+  thumb?: string;
+  key?: number | string;
+};
 
 export interface BaseImageProps {
   /**
@@ -46,8 +52,8 @@ export interface BaseImageProps {
 
   /**
    * @title 图片形状
-   * @description 指定图片的形状，可选值有 rounded, cricle, thumbnail
-   * - cricle: 圆形
+   * @description 指定图片的形状，可选值有 rounded, circle, thumbnail
+   * - circle: 圆形
    * - rounded: 圆角
    * - thumbnail: 缩略图
    * @default 'rounded'
