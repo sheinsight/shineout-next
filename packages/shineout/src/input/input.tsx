@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Input as UnStyleInput } from '@sheinx/base';
-import { useInputStyle, useInnerTitleStyle } from '@sheinx/shineout-style';
+import { useInnerTitleStyle, useInputStyle } from '@sheinx/shineout-style';
 
-import { InputProps, BaseInputProps } from './input.type';
+import { BaseInputProps, InputProps } from './input.type';
 import useFieldCommon from '../hooks/use-field-common';
 
-const Input = (props: BaseInputProps) => (
-  <UnStyleInput {...props} jssStyle={useInputStyle()} innerTitleJssStyle={useInnerTitleStyle()} />
-);
+const Input = (props: BaseInputProps) => {
+  const inputStyle = useInputStyle();
+  const innerTitleStyle = useInnerTitleStyle();
+  const jssStyle = useMemo(
+    () => ({ input: inputStyle, innerTitle: innerTitleStyle }),
+    [inputStyle],
+  );
+  return <UnStyleInput {...props} jssStyle={jssStyle} />;
+};
 export default (props: InputProps) => {
   return useFieldCommon<BaseInputProps, BaseInputProps['value']>(props, Input);
 };
