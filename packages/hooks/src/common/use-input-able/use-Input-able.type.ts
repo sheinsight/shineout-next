@@ -5,4 +5,6 @@ export interface InputAbleProps<T, V extends ChangeType<T>> {
   beforeChange: ((value: T) => T | void) | undefined;
   onChange: V | undefined;
   control: boolean;
+  // 延迟时间
+  delay?: number;
 }

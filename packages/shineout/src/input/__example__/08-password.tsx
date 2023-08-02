@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Input, Form } from 'shineout';
+import { Form, Input } from 'shineout';
 
 const App: React.FC = () => (
   <Form>

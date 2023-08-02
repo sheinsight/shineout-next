@@ -10,6 +10,7 @@ export interface FiledItemCommonProps {
   onChange?: (...args: any) => void;
   status?: 'error';
   getStatus?: (config: { focused?: boolean }) => void;
+  bind?: string[];
 }
 
 export type GetWithFieldProps<Props, Value> = Omit<Props, 'getStatus'> &

@@ -26,6 +26,7 @@ export default (props: TextareaProps) => {
     beforeChange: resetProps.beforeChange,
     control: 'value' in resetProps,
     defaultValue: resetProps.defaultValue,
+    delay: resetProps.delay,
   };
   const inputAbleProps = useInputAble(inputAbleParams);
 
