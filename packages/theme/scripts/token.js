@@ -140,11 +140,14 @@ function generateTokenTs(component, describesValue, describeMap, valueMap) {
   describeMap
     .map((i) => i.replace(component, ''))
     .forEach((item, index) => {
-      result.push({
-        name: describeMap[index],
-        description: describesValue[index],
-        token: getTokenValue(valueMap, splitCamelCaseToArray(item)),
-      });
+      const tokenValue = getTokenValue(valueMap, splitCamelCaseToArray(item));
+      if (!!tokenValue) {
+        result.push({
+          name: describeMap[index],
+          description: describesValue[index],
+          token: tokenValue,
+        });
+      }
     });
   return result;
 }
