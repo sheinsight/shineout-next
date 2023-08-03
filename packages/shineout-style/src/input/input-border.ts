@@ -1,56 +1,89 @@
 import type { CSSProperties } from 'react';
-import cssVars from '../cssvar';
 
-export default <T extends string>(name: T) => {
+export default <T extends string>(
+  name: T,
+  token: {
+    lineHeightDynamic: string;
+    borderRadius: string;
+
+    fontSize: string;
+    smallFontSize: string;
+    largeFontSize: string;
+
+    paddingY: string;
+    smallPaddingY: string;
+    largePaddingY: string;
+
+    paddingX: string;
+    smallPaddingX: string;
+    largePaddingX: string;
+
+    borderColor: string;
+    focusBorderColor: string;
+    hoverBorderColor: string;
+    disabledBorderColor: string;
+    errorBorderColor: string;
+
+    fontColor: string;
+    disabledFontColor: string;
+
+    backgroundColor: string;
+    disabledBackgroundColor: string;
+
+    focusShadow: string;
+  } = {} as any,
+) => {
   return {
     [name]: {
       boxSizing: 'border-box',
-      borderRadius: cssVars.inputBorderRadius,
-      background: cssVars.inputBg,
-      border: `1px solid ${cssVars.inputBorderColor}`,
-      color: cssVars.inputTextColor,
-      lineHeight: cssVars.commonLineHeight,
-      fontSize: cssVars.fontSize,
+      borderRadius: token.borderRadius,
+      background: token.backgroundColor,
+      border: `1px solid ${token.borderColor}`,
+      color: token.fontColor,
+      lineHeight: token.lineHeightDynamic,
+      fontSize: token.fontSize,
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
-        borderColor: cssVars.inputBorderFocusColor,
+        borderColor: token.hoverBorderColor,
       },
     },
     paddingBox: {
-      padding: `${cssVars.inputPaddingY} ${cssVars.inputPaddingX}`,
+      padding: `${token.paddingY} ${token.paddingX}`,
       borderRadius: 'inherit',
     },
     [`${name}Small`]: {
-      lineHeight: 1.5,
-      fontSize: cssVars.fontSizeSmall,
+      fontSize: token.smallFontSize,
       '& $paddingBox': {
-        padding: `${cssVars.inputPaddingYSmall} ${cssVars.inputPaddingXSmall}`,
+        padding: `${token.smallPaddingY} ${token.smallPaddingX}`,
       },
     },
     [`${name}Large`]: {
-      fontSize: cssVars.fontSizeLarge,
+      fontSize: token.largeFontSize,
       '& $paddingBox': {
-        padding: `${cssVars.inputPaddingYLarge} ${cssVars.inputPaddingXLarge}`,
+        padding: `${token.largePaddingY} ${token.largePaddingX}`,
       },
     },
     [`${name}Focus`]: {
-      borderColor: cssVars.inputBorderFocusColor,
-      boxShadow: `0 0 0 ${cssVars.inputFocusWidth} ${cssVars.inputBorderFocusColorFade25}`,
+      borderColor: token.focusBorderColor,
+      boxShadow: token.focusShadow,
+      '&:hover': {
+        borderColor: token.focusBorderColor,
+      },
     } as CSSProperties,
     [`${name}Error`]: {
-      borderColor: cssVars.inputBorderErrorColor,
+      borderColor: token.errorBorderColor,
       '&:hover': {
-        borderColor: cssVars.inputBorderErrorColor,
+        borderColor: token.errorBorderColor,
       },
     } as CSSProperties,
     [`${name}Disabled`]: {
-      color: cssVars.inputDisabledColor,
-      backgroundColor: cssVars.inputBgDisabled,
-      borderColor: cssVars.inputBorderDisabledColor,
+      color: token.disabledFontColor,
+      backgroundColor: token.disabledBackgroundColor,
+      borderColor: token.disabledBorderColor,
       boxShadow: 'none',
       cursor: 'not-allowed',
       '&:hover': {
-        borderColor: cssVars.inputBorderDisabledColor,
+        borderColor: token.disabledBorderColor,
       },
       '& *': {
         cursor: 'not-allowed',
@@ -75,7 +108,6 @@ export default <T extends string>(name: T) => {
         borderRadius: 0,
         boxShadow: 'none',
         backgroundColor: 'transparent',
-        borderColor: cssVars.inputBorderColor,
         flex: 1,
         minWidth: 0,
       },

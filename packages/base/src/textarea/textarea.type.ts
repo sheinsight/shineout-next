@@ -35,7 +35,9 @@ export interface TextareaClasses {
 export interface SimpleTextareaProps
   extends BaseTextareaProps,
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
-  jssStyle: TextareaClasses;
+  jssStyle?: {
+    textarea?: TextareaClasses;
+  };
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;

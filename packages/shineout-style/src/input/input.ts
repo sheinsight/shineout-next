@@ -2,9 +2,40 @@ import border from './input-border';
 import cssVars from '../cssvar';
 
 import { JsStyles } from '../jss-style';
+import token from '@sheinx/theme';
 
-const inputBorder = border('wrapper');
-const groupBorder = border('group');
+const inputBorderToken = {
+  lineHeightDynamic: token.lineHeightDynamic,
+  borderRadius: token.inputBorderRadius,
+
+  fontSize: token.inputFontSize,
+  smallFontSize: token.inputSmallFontSize,
+  largeFontSize: token.inputLargeFontSize,
+
+  paddingY: token.inputPaddingY,
+  smallPaddingY: token.inputSmallPaddingY,
+  largePaddingY: token.inputLargePaddingY,
+
+  paddingX: token.inputPaddingX,
+  smallPaddingX: token.inputSmallPaddingX,
+  largePaddingX: token.inputLargePaddingX,
+
+  borderColor: token.inputBorderColor,
+  focusBorderColor: token.inputFocusBorderColor,
+  hoverBorderColor: token.inputHoverBorderColor,
+  disabledBorderColor: token.inputDisabledBorderColor,
+  errorBorderColor: token.inputErrorBorderColor,
+
+  fontColor: token.inputFontColor,
+  disabledFontColor: token.inputDisabledFontColor,
+
+  backgroundColor: token.inputBackgroundColor,
+  disabledBackgroundColor: token.inputDisabledBackgroundColor,
+
+  focusShadow: token.inputFocusShadow,
+};
+const inputBorder = border('wrapper', inputBorderToken);
+const groupBorder = border('group', inputBorderToken);
 const { wrapper, ...resetWrapper } = inputBorder;
 
 const { group, groupSmall, groupLarge, ...resetGroup } = groupBorder;
