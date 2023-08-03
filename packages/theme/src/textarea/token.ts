@@ -16,13 +16,60 @@ const textareaTokenDescription = {};
  * 注意，该映射表的内容不与 textareaRules 强关联，非 textareaRules 规则内的 token 需手动增加或删减。
  */
 const textareaTokenValue = {
-  font: { color: '' },
-  primary: { font: { color: '' } },
-  secondary: { font: { color: '' } },
-  success: { font: { color: '' } },
-  info: { font: { color: '' } },
-  warning: { font: { color: '' } },
-  danger: { font: { color: '' } },
+  font: { size: '14/regular', color: 'Neutral-text-5' },
+  border: { radius: 'Radius-4', color: 'Neutral-border-2' },
+  padding: { x: 'Padding-8', y: 'Padding-4' },
+  small: {
+    font: { size: '12/regular' },
+    border: { radius: '' },
+    padding: { x: 'Padding-8', y: 'Padding-1' },
+  },
+  large: {
+    font: { size: '16/regular' },
+    border: { radius: '' },
+    padding: { x: 'Padding-12', y: 'Padding-7' },
+  },
+  placeholder: { color: 'Neutral-text-2' },
+  background: { color: 'Neutral-fill-1' },
+  shadow: 'Shadow-1',
+  hover: {
+    font: { color: '' },
+    placeholder: { color: '' },
+    border: { color: 'Brand-6' },
+    background: { color: '' },
+    shadow: '',
+  },
+  focus: {
+    font: { color: '' },
+    placeholder: { color: '' },
+    border: { color: 'Brand-7' },
+    background: { color: '' },
+    shadow: '',
+  },
+  disabled: {
+    font: { color: 'Neutral-text-2' },
+    placeholder: { color: 'Neutral-text-2' },
+    border: { color: 'Neutral-border-2' },
+    background: { color: 'Neutral-fill-2' },
+    shadow: '',
+  },
+  error: {
+    font: { color: '' },
+    placeholder: { color: '' },
+    border: { color: 'Danger-6' },
+    background: { color: '' },
+    shadow: '',
+  },
+  info: {
+    font: { color: 'Brand-6' },
+    background: { color: 'Neutral-fill-1' },
+    border: { color: 'Neutral-border-2' },
+    error: {
+      font: { color: 'Danger-6' },
+      background: { color: 'Danger-1' },
+      border: { color: 'Danger-6' },
+    },
+  },
 };
 
 const textareaTokenExtraValue = {};

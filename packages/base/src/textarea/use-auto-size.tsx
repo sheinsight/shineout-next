@@ -1,12 +1,13 @@
-import React, { useState, cloneElement, useRef } from 'react';
+import React, { cloneElement, useRef, useState } from 'react';
 import classNames from 'classnames';
+import { TextareaClasses } from './textarea.type';
 
 const useAutoSize = (props: {
   autosize?: boolean;
   maxHeight?: number | string;
   value?: string;
-  jssStyle: {
-    shadow: string;
+  jssStyle?: {
+    textarea?: TextareaClasses;
   };
 }) => {
   const { autosize, maxHeight, value, jssStyle } = props || {};
@@ -40,7 +41,7 @@ const useAutoSize = (props: {
             },
           })}
           {cloneElement(el, {
-            className: classNames(el.props.className, jssStyle.shadow),
+            className: classNames(el.props.className, jssStyle?.textarea?.shadow),
             ref: shadowRef,
             key: 'shadow',
           })}
