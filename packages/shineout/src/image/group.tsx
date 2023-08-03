@@ -4,8 +4,8 @@ import { useImageStyle } from '@sheinx/shineout-style';
 import { useMemo } from 'react';
 
 const ImageGroup = (props: ImageGroupProps) => {
-  const imageGroupStyle = useImageStyle();
-  const jssStyle = useMemo(() => ({ imageGroup: imageGroupStyle }), [imageGroupStyle]);
+  const imageStyle = useImageStyle();
+  const jssStyle = useMemo(() => ({ image: imageStyle }), [imageStyle]);
   return <UnStyledImageGroup {...props} jssStyle={jssStyle} />;
 };
 

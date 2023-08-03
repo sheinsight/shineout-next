@@ -19,9 +19,7 @@ const ImageGroup = (props: ImageGroupProps) => {
   } = props;
 
   const targetSet = pile ? '_modal' : target;
-
   const shouldPreview = targetSet === '_modal';
-
   const groupClass = classNames(jssStyle?.image.group, {
     [jssStyle?.image.groupPile]: pile,
   });

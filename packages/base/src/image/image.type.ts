@@ -17,6 +17,7 @@ export interface ImageClasses {
   stretch: string;
   href: string;
   placeholder: string;
+  defaultPlaceholder: string;
   error: string;
   defaultError: string;
   preview: string;

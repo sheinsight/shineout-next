@@ -5,12 +5,12 @@ group: Other
 
 # Title
 
-Image 标题
+Image 图片
 Image
 
 # Describe
 
-Image 描述
+用于图片展示及预览
 Image Describe
 
 # Example

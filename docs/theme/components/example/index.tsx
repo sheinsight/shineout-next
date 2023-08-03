@@ -59,13 +59,15 @@ const Example = (props: ExampleProps) => {
       </div>
       <div className='demo'>{Example && <Example></Example>}</div>
       <div className='action'>
-        {describe.map((item, index) => {
-          return (
-            <p className='describe' key={index}>
-              {renderDescribe(item)}
-            </p>
-          );
-        })}
+        <div>
+          {describe.map((item, index) => {
+            return (
+              <p className='describe' key={index}>
+                {renderDescribe(item)}
+              </p>
+            );
+          })}
+        </div>
         <div className='btn'>
           <Codesandbox></Codesandbox>
           <Open onClick={handleOpen}></Open>

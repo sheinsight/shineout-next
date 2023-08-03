@@ -1,6 +1,6 @@
 /**
  * cn - 基本用法
- *    --基础 Image 用法
+ *    --基础 Image 用法。
  * en - Base
  *    --Base Image
  */
@@ -12,7 +12,8 @@ export default () => {
   return (
     <div>
       <Image
-        width={256}
+        fit='fill'
+        width={128}
         height={128}
         src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'
       ></Image>

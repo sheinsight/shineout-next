@@ -38,7 +38,7 @@ const Image = (props: ImageProps) => {
   } = useImage({ container: getDefaultContainer(), ...rest });
   const imageStyle = jssStyle.image || ({} as ImageClasses);
 
-  const shouldPreview = href && (target === '_modal' || target === '_blank') && status !== ERROR;
+  const shouldPreview = href && target === '_modal' && status !== ERROR && status !== PLACEHOLDER;
   const shouldDownload = target === '_download';
 
   const rootClass = classNames(className, imageStyle.image, {
@@ -57,6 +57,7 @@ const Image = (props: ImageProps) => {
   const imgClass = classNames(imageStyle.img);
   const imgInnerClass = classNames(imageStyle.inner);
   const placeholderClass = classNames(imageStyle.placeholder);
+  const defaultPlaceholderClass = classNames(imageStyle.defaultPlaceholder);
   const errorClass = classNames(imageStyle.error);
   const defaultErrorClass = classNames(imageStyle.defaultError);
   const maskClass = classNames(imageStyle.previewMask);
@@ -96,7 +97,7 @@ const Image = (props: ImageProps) => {
   // 默认占位图
   const renderDefaultPlaceholder = () => {
     return (
-      <div className={placeholderClass}>
+      <div className={defaultPlaceholderClass}>
         <svg
           width='16'
           height='16'
@@ -123,7 +124,7 @@ const Image = (props: ImageProps) => {
   // 占位图
   const renderPlaceholder = () => {
     if (placeholder) {
-      return <div>{placeholder}</div>;
+      return <div className={placeholderClass}>{placeholder}</div>;
     }
     return renderDefaultPlaceholder();
   };

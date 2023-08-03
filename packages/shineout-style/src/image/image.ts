@@ -15,6 +15,7 @@ type ImageClass =
   | 'fit'
   | 'stretch'
   | 'placeholder'
+  | 'defaultPlaceholder'
   | 'error'
   | 'defaultError'
   | 'preview'
@@ -116,9 +117,7 @@ const ImageStyle: JsStyles<ImageClass> = {
   },
 
   preview: {
-    // hover
     '&:hover': {
-      // after
       '& $previewMask': {
         display: 'flex',
         justifyContent: 'center',
@@ -153,10 +152,12 @@ const ImageStyle: JsStyles<ImageClass> = {
     borderRadius: Token.imageCircleBorderRadius,
     border: `1px solid ${Token.imageCircleBorderColor}`,
   },
+
   rounded: {
     borderRadius: Token.imageRoundedBorderRadius,
     border: `1px solid ${Token.imageRoundedBorderColor}`,
   },
+
   thumbnail: {
     borderRadius: Token.imageThumbnailBorderRadius,
     backgroundColor: '#FFFFFF',
@@ -174,11 +175,19 @@ const ImageStyle: JsStyles<ImageClass> = {
     width: '100%',
     height: '100%',
     margin: 'auto',
+    backgroundColor: Token.imagePlaceholderBackgroundColor,
+  },
+
+  defaultPlaceholder: {
+    width: '100%',
+    height: '100%',
+    margin: 'auto',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: Token.imagePlaceholderBackgroundColor,
   },
+
   defaultError: {
     width: '100%',
     height: '100%',
@@ -190,6 +199,7 @@ const ImageStyle: JsStyles<ImageClass> = {
     fontSize: Token.imageErrorFontSize,
     backgroundColor: Token.imageErrorBackgroundColor,
   },
+
   error: {
     width: '100%',
     height: '100%',
@@ -288,6 +298,7 @@ const ImageStyle: JsStyles<ImageClass> = {
       marginLeft: Token.imageGroupNearlyMargin,
     },
   },
+
   groupPile: {
     position: 'relative',
     '& $image:nth-child(1)': {
@@ -296,7 +307,6 @@ const ImageStyle: JsStyles<ImageClass> = {
     '& $groupPileItem:nth-child(2)': {
       position: 'absolute',
       borderWidth: 0,
-      // left: '3%',
       top: 1,
       zIndex: 2,
       marginLeft: 0,
@@ -307,7 +317,6 @@ const ImageStyle: JsStyles<ImageClass> = {
     '& $groupPileItem:nth-child(3)': {
       position: 'absolute',
       borderWidth: 0,
-      // left: '6%',
       top: 1,
       zIndex: 1,
       marginLeft: 0,
@@ -316,9 +325,11 @@ const ImageStyle: JsStyles<ImageClass> = {
       borderRadius: 2,
     },
   },
+
   groupPileItem: {
     position: 'absolute',
   },
+
   groupCount: {
     position: 'absolute',
     right: 1,
@@ -328,7 +339,6 @@ const ImageStyle: JsStyles<ImageClass> = {
     backgroundColor: 'rgba(2, 11, 24, 0.3)',
     borderRadius: '4px 0 4px 0',
     zIndex: 4,
-
     padding: 4,
     boxSizing: 'border-box',
     display: 'flex',
