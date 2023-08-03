@@ -24,3 +24,267 @@ exports[`Checkbox[Base] should render correctly 1`] = `
   </span>
 </div>
 `;
+
+exports[`Checkbox[Checked] should render corretly about checked 1`] = `
+<div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      not checked
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      checked
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperIndeterminate-0-2-4"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      indeterminate
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      not checked
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      checked
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5 checkbox-wrapperIndeterminate-0-2-4"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      indeterminate
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Checkbox[Checked] should render corretly about checked is indeterminate 1`] = `
+<div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      CheckAll
+    </span>
+  </div>
+  <div
+    class="checkbox-group-0-2-9"
+  >
+    <div
+      class="checkbox-wrapper-0-2-1"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="checkbox-indicatorWrapper-0-2-6"
+      >
+        <i
+          class="checkbox-indicator-0-2-7"
+          tabindex="1"
+        />
+      </div>
+      <span
+        class="checkbox-desc-0-2-8"
+      >
+        Option1
+      </span>
+    </div>
+    <div
+      class="checkbox-wrapper-0-2-1"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="checkbox-indicatorWrapper-0-2-6"
+      >
+        <i
+          class="checkbox-indicator-0-2-7"
+          tabindex="1"
+        />
+      </div>
+      <span
+        class="checkbox-desc-0-2-8"
+      >
+        Option2
+      </span>
+    </div>
+    <div
+      class="checkbox-wrapper-0-2-1"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
+      />
+      <div
+        class="checkbox-indicatorWrapper-0-2-6"
+      >
+        <i
+          class="checkbox-indicator-0-2-7"
+          tabindex="1"
+        />
+      </div>
+      <span
+        class="checkbox-desc-0-2-8"
+      >
+        Option3
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Checkbox[HtmlValue] should render corretly about htmlValue 1`] = `
+<div
+  class="checkbox-wrapper-0-2-1"
+>
+  <input
+    style="display: none;"
+    tabindex="0"
+    type="checkbox"
+  />
+  <div
+    class="checkbox-indicatorWrapper-0-2-6"
+  >
+    <i
+      class="checkbox-indicator-0-2-7"
+      tabindex="1"
+    />
+  </div>
+  <span
+    class="checkbox-desc-0-2-8"
+  >
+    value is "ok"
+  </span>
+</div>
+`;
