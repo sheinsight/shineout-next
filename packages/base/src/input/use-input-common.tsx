@@ -32,6 +32,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     placeTitle,
     width,
     delay,
+    onBlur,
     ...rest
   } = props;
 
@@ -107,9 +108,16 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
   const mergeStyle = useMemo(() => {
     return { width: width, ...(style || {}) };
   }, [width, style]) as React.CSSProperties;
+
+  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
+    onBlur?.(e);
+    inputAbleProps.forceDelayChange();
+  });
   return {
     ...rest,
-    ...inputAbleProps,
+    value: inputAbleProps.value,
+    onChange: inputAbleProps.onChange,
+    onBlur: handleBlur,
     ...clearProps,
     inputRef: forwardRef,
     name: htmlName,
