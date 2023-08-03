@@ -52,8 +52,32 @@ export interface ImageTokens {
   imageErrorBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 图片加载错误时的字体颜色
+   */
+  imageErrorFontColor: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 图片加载错误时的字体字号
+   */
+  imageErrorFontSize: string;
+  /**
+   * @type {string}
    * @token Margin-8
    * @description 图片组相邻之间的外边距
    */
   imageGroupNearlyMargin: string;
+  /**
+   * @type {string}
+   * @token Mask-fill-1
+   * @description 图片遮罩层背景颜色
+   */
+  imageMaskBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 图片背景颜色
+   */
+  imageBackgroundColor: string;
 }

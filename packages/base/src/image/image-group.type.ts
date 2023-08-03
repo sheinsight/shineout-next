@@ -1,4 +1,4 @@
-import { ImageTargetType, ImageShapeType } from '@sheinx/hooks';
+import { ImageTargetType, ImageShapeType, ImageFitType } from '@sheinx/hooks';
 import { ImageClasses } from './image.type';
 
 export interface ImageGroupProps {
@@ -10,6 +10,7 @@ export interface ImageGroupProps {
   shape?: ImageShapeType;
   lazy?: boolean;
   pile?: boolean;
+  fit?: ImageFitType;
   width?: number | string;
   height?: number | string;
   children: React.ReactNode;

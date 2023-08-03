@@ -628,7 +628,7 @@ export interface Tokens {
    * @default '12px'
    * @description 提示、标签、辅助文案
    */
-  mediium: string;
+  medium: string;
   /**
    * @type {string}
    * @categoty string
@@ -1042,4 +1042,11 @@ export interface Tokens {
    * @description 较粗边框宽度
    */
   Transparent: string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default 'rgba(2, 11, 24, 0.3)'
+   * @description 用于遮罩层的带透明度背景色
+   */
+  'Mask-fill-1': string;
 }

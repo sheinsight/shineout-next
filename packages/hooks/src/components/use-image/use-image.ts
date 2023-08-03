@@ -5,7 +5,7 @@ import { addStack, removeStack, removeProtocol } from '../../utils';
 import { BaseImageProps } from './use-image.type';
 
 const config = {
-  autoSSL: true,
+  autoSSL: false,
 };
 
 const PLACEHOLDER = 0;
@@ -118,8 +118,8 @@ const useImage = (props: BaseImageProps = {}) => {
     const externalEventHandlers = extractEventHandlers(externalProps);
     const mergedEventHandlers = {
       ...externalProps,
-      onClick: handleClick(externalEventHandlers),
       ref: elementRef,
+      onClick: handleClick(externalEventHandlers),
     };
 
     return {

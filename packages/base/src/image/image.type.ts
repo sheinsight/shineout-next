@@ -18,6 +18,10 @@ export interface ImageClasses {
   href: string;
   placeholder: string;
   error: string;
+  defaultError: string;
+  preview: string;
+  previewMask: string;
+  download: string;
 
   overlay: string;
   magnify: string;

@@ -1,17 +1,36 @@
-import { cloneElement, Children } from 'react';
+import React, { cloneElement, Children } from 'react';
 import { ImageGroupProps } from './image-group.type';
 import { ImageProps, Images } from './image.type';
 import showGallery from './image-event';
 import classNames from 'classnames';
 
 const ImageGroup = (props: ImageGroupProps) => {
-  const { jssStyle, children, lazy, target, shape, pile, width, height, showCount = false } = props;
+  const {
+    jssStyle,
+    children,
+    lazy,
+    target = '_modal',
+    shape,
+    pile,
+    width,
+    height,
+    fit,
+    showCount = false,
+  } = props;
+
+  const targetSet = pile ? '_modal' : target;
+
+  const shouldPreview = targetSet === '_modal';
 
   const groupClass = classNames(jssStyle?.image.group, {
     [jssStyle?.image.groupPile]: pile,
   });
 
-  const handleClick = (index: number) => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLDivElement>,
+    index: number,
+    originClick?: React.MouseEventHandler,
+  ) => {
     const _images: Images[] = [];
     let current = 0;
     Children.toArray(children).forEach((child, i) => {
@@ -21,8 +40,13 @@ const ImageGroup = (props: ImageGroupProps) => {
       _images.push({ thumb: src, src: href || src, key: i });
     });
 
-    showGallery(jssStyle, _images, current);
+    if (shouldPreview) {
+      showGallery(jssStyle, _images, current);
+    }
+
+    if (originClick) originClick(e);
   };
+
   const renderPile = (Child: React.ReactElement<ImageProps>, index: number) => {
     return (
       <div
@@ -42,11 +66,12 @@ const ImageGroup = (props: ImageGroupProps) => {
       ...props,
       jssStyle,
       lazy,
+      fit: Child.props.fit || fit || undefined,
       width: width || Child.props.width || '100%',
       height: height || Child.props.height || '100%',
       shape: shape || Child.props.shape || 'rounded',
-      target: target || Child.props.target || '_modal',
-      onClick: () => handleClick(index),
+      target: targetSet || '_modal',
+      onClick: (e: React.MouseEvent<HTMLDivElement>) => handleClick(e, index, Child.props.onClick),
     });
   };
 

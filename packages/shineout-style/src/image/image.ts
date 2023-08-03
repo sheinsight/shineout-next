@@ -16,6 +16,10 @@ type ImageClass =
   | 'stretch'
   | 'placeholder'
   | 'error'
+  | 'defaultError'
+  | 'preview'
+  | 'previewMask'
+  | 'download'
   | 'group'
   | 'groupPile'
   | 'groupPileItem'
@@ -55,7 +59,7 @@ const ImageStyle: JsStyles<ImageClass> = {
     display: 'inline-block',
     boxSizing: 'border-box',
 
-    background: '#ffffff',
+    background: Token.imageBackgroundColor,
 
     '& > *': {
       position: 'absolute',
@@ -86,6 +90,46 @@ const ImageStyle: JsStyles<ImageClass> = {
       backgroundSize: 'cover',
       backgroundPosition: '50% 50%',
       backgroundRepeat: 'no-repeat',
+    },
+  },
+
+  previewMask: {
+    display: 'none',
+  },
+
+  download: {
+    // hover
+    '&:hover': {
+      // after
+      '& $previewMask': {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: Token.imageMaskBackgroundColor,
+      },
+    },
+  },
+
+  preview: {
+    // hover
+    '&:hover': {
+      // after
+      '& $previewMask': {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: Token.imageMaskBackgroundColor,
+      },
     },
   },
 
@@ -135,13 +179,21 @@ const ImageStyle: JsStyles<ImageClass> = {
     justifyContent: 'center',
     backgroundColor: Token.imagePlaceholderBackgroundColor,
   },
-  error: {
+  defaultError: {
     width: '100%',
     height: '100%',
     margin: 'auto',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: Token.imageErrorFontColor,
+    fontSize: Token.imageErrorFontSize,
+    backgroundColor: Token.imageErrorBackgroundColor,
+  },
+  error: {
+    width: '100%',
+    height: '100%',
+    margin: 'auto',
     backgroundColor: Token.imageErrorBackgroundColor,
   },
 
@@ -152,7 +204,7 @@ const ImageStyle: JsStyles<ImageClass> = {
     right: 0,
     bottom: 0,
     left: 0,
-    background: 'rgba(0, 0, 0, 0.5)',
+    background: Token.imageMaskBackgroundColor,
   },
 
   magnify: {

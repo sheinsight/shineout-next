@@ -12,7 +12,11 @@ const image: ImageTokens = {
   imageThumbnailBorderColor: 'Neutral-border-1',
   imagePlaceholderBackgroundColor: 'Neutral-fill-2',
   imageErrorBackgroundColor: 'Neutral-fill-2',
+  imageErrorFontColor: 'Neutral-text-4',
+  imageErrorFontSize: '12/regular',
   imageGroupNearlyMargin: 'Margin-8',
+  imageMaskBackgroundColor: 'Mask-fill-1',
+  imageBackgroundColor: 'Neutral-fill-2',
 };
 
 export default image;

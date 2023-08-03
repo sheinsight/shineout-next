@@ -90,7 +90,7 @@ const Token: Tokens = {
   'Neutral-fill-2': '#F4F5F8',
   'Neutral-fill-1': '#FFFFFF',
   '12/regular': '12px',
-  mediium: '12px',
+  medium: '12px',
   '14/regular': '14px',
   '14/medium': '14px',
   '16/regular': '16px',
@@ -153,6 +153,7 @@ const Token: Tokens = {
   'Border-2': '2px',
   'Border-3': '3px',
   Transparent: 'transparent',
+  'Mask-fill-1': 'rgba(2, 11, 24, 0.3)',
 };
 
 export default Token;

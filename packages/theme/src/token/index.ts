@@ -544,7 +544,7 @@ const Tokens = {
     value: '12px',
     describe: '提示、标签、辅助文案',
   },
-  mediium: {
+  medium: {
     type: 'string',
     name: '12',
     value: '12px',
@@ -906,6 +906,12 @@ const Tokens = {
     name: '透明色',
     value: 'transparent',
     describe: '较粗边框宽度',
+  },
+  'Mask-fill-1': {
+    type: 'string',
+    name: '遮罩填充色',
+    value: 'rgba(2, 11, 24, 0.3)',
+    describe: '用于遮罩层的带透明度背景色',
   },
 };
 

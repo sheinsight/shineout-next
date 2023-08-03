@@ -15,6 +15,7 @@ const imageTokenDescription = {
   error: '加载错误时的',
   placeholder: '加载中的',
   nearly: '相邻之间的',
+  mask: '遮罩层',
 };
 
 /**
@@ -28,9 +29,14 @@ const imageTokenValue = {
   circle: { border: { radius: 'Radius-50%', color: 'Neutral-border-1' } },
   rounded: { border: { radius: 'Radius-4', color: 'Neutral-border-1' } },
   thumbnail: { border: { radius: 'Radius-4', color: 'Neutral-border-1' } },
-  placeholder: { background: { color: 'Neutral-fill-2' } },
-  error: { background: { color: 'Neutral-fill-2' } },
+  placeholder: { background: { color: 'Neutral-fill-2' }, font: { color: '', size: '' } },
+  error: {
+    background: { color: 'Neutral-fill-2' },
+    font: { color: 'Neutral-text-4', size: '12/regular' },
+  },
   group: { nearly: { margin: 'Margin-8' } },
+  mask: { background: { color: 'Mask-fill-1' } },
+  background: { color: 'Neutral-fill-2' },
 };
 
 const imageTokenExtraValue = {};
