@@ -21,6 +21,7 @@ type ImageClass =
   | 'preview'
   | 'previewMask'
   | 'download'
+  | 'close'
   | 'group'
   | 'groupPile'
   | 'groupPileItem'
@@ -223,10 +224,18 @@ const ImageStyle: JsStyles<ImageClass> = {
     boxSizing: 'content-box',
     '& img': {
       position: 'relative',
-      zIndex: 2,
       display: 'block',
       borderStyle: 'none',
     },
+  },
+
+  close: {
+    position: 'absolute',
+    top: -15,
+    right: -15,
+    zIndex: 1,
+    cursor: 'pointer',
+    outline: 'none',
   },
 
   // gallery

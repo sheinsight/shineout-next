@@ -1,14 +1,12 @@
 /**
  * cn -
  *    -- 支持自定义渲染不同状态下的内容：
- *    -- 1、`error` 用于自定义渲染加载失败时的内容。
- *    -- 2、`placeholder` 用于自定义渲染加载中时的占位符内容。
- *    -- * 加载中状态可以通过限制浏览器的网速来模拟。
+ *    -- 1、通过设置 `error` 属性自定义渲染加载失败时的内容。
+ *    -- 2、通过设置 `placeholder` 属性用于自定义渲染加载中时的占位符内容。
  * en -
  *    -- Custom rendering of content in different states:
  *    -- 1. `error` is used to customize the content when loading fails.
  *    -- 2. `placeholder` is used to customize the placeholder content when loading.
- *    -- * The loading state can be simulated by limiting the browser's network speed.
  */
 
 import React from 'react';
@@ -84,8 +82,7 @@ export default () => {
         height={128}
         target='_modal'
         placeholder={renderPlaceholder()}
-        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png'
-        href='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png'
+        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'
       ></Image>
       <Image fit='fill' width={128} height={128} src='error' error={renderError()}></Image>
     </div>

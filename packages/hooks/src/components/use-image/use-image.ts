@@ -17,8 +17,19 @@ const useImage = (props: BaseImageProps = {}) => {
   let lazyId: string | null = null;
   let image = null;
 
-  const { container, lazy, src, alt, href, target, title, autoSSL, noImgDrag, onError, onClick } =
-    props;
+  const {
+    container,
+    lazy,
+    src,
+    alt,
+    href,
+    target,
+    title,
+    autoSSL,
+    noImgDrag = false,
+    onError,
+    onClick,
+  } = props;
 
   const [status, setStatus] = React.useState<number>(PLACEHOLDER);
 
@@ -91,7 +102,7 @@ const useImage = (props: BaseImageProps = {}) => {
     const mergedEventHandlers = {
       ...externalProps,
       alt,
-      draggable: noImgDrag,
+      draggable: !noImgDrag,
     };
 
     return {

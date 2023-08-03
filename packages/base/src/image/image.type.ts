@@ -26,6 +26,7 @@ export interface ImageClasses {
 
   overlay: string;
   magnify: string;
+  close: string;
 
   gallery: string;
   galleryInit: string;

@@ -22,21 +22,21 @@ export default () => {
         fit='fill'
         width={128}
         height={128}
-        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png'
+        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'
       ></Image>
       <Image
         shape='circle'
         fit='fill'
         width={128}
         height={128}
-        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png'
+        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'
       ></Image>
       <Image
         shape='thumbnail'
         fit='fill'
         width={128}
         height={128}
-        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png'
+        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'
       ></Image>
     </div>
   );

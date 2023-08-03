@@ -3,20 +3,12 @@ import { ImageGroupProps } from './image-group.type';
 import { ImageProps, Images } from './image.type';
 import showGallery from './image-event';
 import classNames from 'classnames';
+import { useStyleUnitValue, useImageGroup } from '@sheinx/hooks';
 
 const ImageGroup = (props: ImageGroupProps) => {
-  const {
-    jssStyle,
-    children,
-    lazy,
-    target = '_modal',
-    shape,
-    pile,
-    width,
-    height,
-    fit,
-    showCount = false,
-  } = props;
+  const { jssStyle, children, target = '_modal', pile, width, height, showCount = false } = props;
+
+  const { getGroupItemProps } = useImageGroup(props);
 
   const targetSet = pile ? '_modal' : target;
   const shouldPreview = targetSet === '_modal';
@@ -24,53 +16,15 @@ const ImageGroup = (props: ImageGroupProps) => {
     [jssStyle?.image.groupPile]: pile,
   });
 
-  const handleClick = (
-    e: React.MouseEvent<HTMLDivElement>,
-    index: number,
-    originClick?: React.MouseEventHandler,
-  ) => {
-    const _images: Images[] = [];
-    let current = 0;
-    Children.toArray(children).forEach((child, i) => {
-      const Child = child as React.ReactElement<ImageProps>;
-      if (index === i) current = _images.length;
-      const { src, href } = Child.props;
-      _images.push({ thumb: src, src: href || src, key: i });
-    });
-
+  const handleItemClick = (images: Images[], current: number) => {
     if (shouldPreview) {
-      showGallery(jssStyle, _images, current);
+      showGallery(jssStyle, images, current);
     }
-
-    if (originClick) originClick(e);
-  };
-
-  const renderPile = (Child: React.ReactElement<ImageProps>, index: number) => {
-    return (
-      <div
-        key={index}
-        className={classNames(jssStyle?.image.groupPileItem)}
-        style={{
-          width: width || Child.props.width || '100%',
-          height: height || Child.props.height || '100%',
-          left: (width || Child.props.width) * (0.0625 * index),
-        }}
-      ></div>
-    );
   };
 
   const renderGroupItem = (Child: React.ReactElement<ImageProps>, index: number) => {
-    return cloneElement(Child, {
-      ...props,
-      jssStyle,
-      lazy,
-      fit: Child.props.fit || fit || undefined,
-      width: width || Child.props.width || '100%',
-      height: height || Child.props.height || '100%',
-      shape: shape || Child.props.shape || 'rounded',
-      target: targetSet || '_modal',
-      onClick: (e: React.MouseEvent<HTMLDivElement>) => handleClick(e, index, Child.props.onClick),
-    });
+    const groupItemProps = getGroupItemProps(Child, index, { ...props, onClick: handleItemClick });
+    return cloneElement(Child, groupItemProps);
   };
 
   const renderGroupCount = () => {
@@ -95,15 +49,33 @@ const ImageGroup = (props: ImageGroupProps) => {
     );
   };
 
+  const renderPile = (Child: React.ReactElement<ImageProps>, index: number) => {
+    if (index === 0) return renderGroupItem(Child, index);
+
+    if (index > 2) return null;
+
+    // @ts-ignore
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { value, unit } = useStyleUnitValue(width || Child.props.width);
+
+    return (
+      <div
+        key={index}
+        className={classNames(jssStyle?.image.groupPileItem)}
+        style={{
+          width: value || '100%',
+          height: height || Child.props.height || '100%',
+          left: `calc(${value}${unit} * ${0.0625 * index})`,
+        }}
+      ></div>
+    );
+  };
+
   return (
     <div className={groupClass}>
       {Children.toArray(children).map((child, index) => {
         const Child = child as React.ReactElement<ImageProps>;
         if (pile) {
-          if (index === 0) return renderGroupItem(Child, index);
-
-          if (index > 2) return null;
-
           return renderPile(Child, index);
         } else {
           return renderGroupItem(Child, index);

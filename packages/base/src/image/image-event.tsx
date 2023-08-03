@@ -1,7 +1,7 @@
 import { getDefaultContainer } from '../config';
 import { Images } from './image.type';
 import classNames from 'classnames';
-import ImageModal from './image-gallery';
+import ImageGallery from './image-gallery';
 import { util } from '@sheinx/hooks';
 import { ImageClasses } from './image.type';
 
@@ -45,7 +45,7 @@ const showGallery = (
   document.addEventListener('keydown', keyClose);
 
   ReactRender(
-    <ImageModal jssStyle={jssStyle} onClose={close} current={current} images={Images} />,
+    <ImageGallery jssStyle={jssStyle} onClose={close} current={current} images={Images} />,
     container,
   );
 };

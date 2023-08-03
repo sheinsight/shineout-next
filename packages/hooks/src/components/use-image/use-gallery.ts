@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react';
 import { docSize } from '../../utils';
+import { NormalizeWheel } from '../../utils/dom';
 import { BaseImageGalleryProps } from './use-image-gallery.type';
+import { usePersistFn } from '@sheinx/hooks';
 
+let scrollX = 0;
 const useImageGallery = (props: BaseImageGalleryProps) => {
-  const { images } = props;
+  let shouldScroll = false;
 
-  const [current, setCurrent] = useState(0);
+  const { images, current: defaultCurrent } = props;
+  const [current, setCurrent] = useState(defaultCurrent);
   const [direction, setDirection] = useState('init');
 
   const handleClose = () => {};
+
+  const handleLockScroll = (status: boolean) => {
+    shouldScroll = status;
+  };
 
   const handleClick = (index?: number) => {
     if (index === undefined) return;
@@ -23,10 +31,23 @@ const useImageGallery = (props: BaseImageGalleryProps) => {
     setCurrent(newCurrent);
   };
 
+  const handleScroll = usePersistFn((e: WheelEvent) => {
+    if (shouldScroll) return;
+    const wheel = NormalizeWheel(e);
+    scrollX += wheel.spinX;
+
+    if (scrollX < 0) handleClick(-1);
+    if (scrollX > 0) handleClick(1);
+
+    setTimeout(() => {
+      scrollX = 0;
+    }, 1000);
+  });
+
   useEffect(() => {
     if (direction === 'init') return;
     setTimeout(() => {
-      // setDirection('init');
+      setDirection('init');
     }, 400);
   }, [current]);
 
@@ -37,12 +58,22 @@ const useImageGallery = (props: BaseImageGalleryProps) => {
     };
   };
 
+  useEffect(() => {
+    document.addEventListener('wheel', handleScroll, { passive: false });
+    return () => {
+      document.removeEventListener('wheel', handleScroll, {
+        passive: false,
+      } as EventListenerOptions);
+    };
+  }, []);
+
   return {
     images,
     current,
     direction,
     windowWidth: docSize.width,
     windowHeight: docSize.height,
+    lockScroll: handleLockScroll,
     getRootProps,
   };
 };

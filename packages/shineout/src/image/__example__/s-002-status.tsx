@@ -21,8 +21,8 @@ export default () => {
         width={128}
         height={128}
         target='_modal'
-        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png'
-        href='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png'
+        src='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'
+        href='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'
       ></Image>
       <Image fit='fill' width={128} height={128} src='error'></Image>
     </div>

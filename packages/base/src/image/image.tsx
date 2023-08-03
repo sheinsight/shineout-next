@@ -16,8 +16,8 @@ const Image = (props: ImageProps) => {
     jssStyle,
     className,
     fit,
-    width,
-    height,
+    width = '100%',
+    height = '100%',
     error,
     placeholder,
     shape = 'rounded',
@@ -217,13 +217,12 @@ const Image = (props: ImageProps) => {
   const Tag = href ? 'a' : 'div';
 
   const rootProps = getRootProps({
-    style: { width, paddingBottom: height },
     download: shouldDownload,
     target: shouldDownload ? '_self' : target,
     href: !href || target !== '_modal' ? href : undefined,
   });
   return (
-    <Tag {...rootProps} className={rootClass}>
+    <Tag {...rootProps} className={rootClass} style={{ width, paddingBottom: height }}>
       {renderImage()}
       {(shouldPreview || shouldDownload) && renderMask()}
     </Tag>

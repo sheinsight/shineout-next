@@ -1,6 +1,7 @@
 import * as util from './utils/';
 
 export * from './utils/rule';
+export * from './utils/dom';
 
 export { util };
 
@@ -19,6 +20,7 @@ export * from './common/use-render';
 export * from './common/use-safe-state';
 export * from './common/use-toggle';
 export * from './common/use-react-render';
+export * from './common/use-style';
 
 //components
 export * from './components/use-input';
