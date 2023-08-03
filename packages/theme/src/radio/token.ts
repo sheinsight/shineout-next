@@ -16,22 +16,12 @@ const radioTokenDescription = { radio: '单选框', button: '按钮模式', outl
  * 注意，该映射表的内容不与 radioRules 强关联，非 radioRules 规则内的 token 需手动增加或删减。
  */
 const radioTokenValue = {
-  font: { color: '', size: '' },
+  font: { color: '123', size: '' },
   background: { color: '' },
   border: { color: '', radius: '' },
-  outline: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+  checked: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
   focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
   hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  button: {
-    font: { color: '' },
-    background: { color: '' },
-    border: { color: '' },
-    outline: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-    disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-    focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-    hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  },
   line: { height: '' },
   padding: { x: '', y: '' },
   small: {

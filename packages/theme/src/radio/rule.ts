@@ -8,8 +8,7 @@
  */
 const radioRules = {
   color: [
-    ['', 'button'],
-    ['', 'outline', 'disabled', 'focus', 'hover'],
+    ['', 'checked', 'focus', 'hover'],
     ['font-color', 'background-color', 'border-color'],
   ],
   size: [
