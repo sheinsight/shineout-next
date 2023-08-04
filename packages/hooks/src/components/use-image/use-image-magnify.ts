@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BaseImageGalleryProps } from './use-image-gallery.type';
+import { BaseImageMagnifyProps } from './use-image-magnify.type';
 
 let ClientX = 0;
 let ClientY = 0;
 
-const useImageMagnify = (props: BaseImageGalleryProps) => {
+const useImageMagnify = (props: BaseImageMagnifyProps) => {
   const { maxHeight, maxWidth, position, lockScroll, src } = props;
 
   const [status, setStatus] = useState(0);
@@ -80,6 +80,7 @@ const useImageMagnify = (props: BaseImageGalleryProps) => {
   }, [src]);
 
   return {
+    src,
     status,
     maxWidth,
     maxHeight,

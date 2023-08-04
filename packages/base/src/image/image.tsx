@@ -13,13 +13,13 @@ const ERROR = 3;
 
 const Image = (props: ImageProps) => {
   const {
+    fit,
+    error,
     jssStyle,
     className,
-    fit,
+    placeholder,
     width = '100%',
     height = '100%',
-    error,
-    placeholder,
     shape = 'rounded',
     ...rest
   } = props;
@@ -36,10 +36,17 @@ const Image = (props: ImageProps) => {
     getImageProps,
     getImageDivProps,
   } = useImage({ container: getDefaultContainer(), ...rest });
-  const imageStyle = jssStyle.image || ({} as ImageClasses);
 
+  const imageStyle = jssStyle.image || ({} as ImageClasses);
   const shouldPreview = href && target === '_modal' && status !== ERROR && status !== PLACEHOLDER;
   const shouldDownload = target === '_download';
+
+  const rootProps = getRootProps({
+    download: shouldDownload,
+    target: shouldDownload ? '_self' : target,
+    href: !href || target !== '_modal' ? href : undefined,
+    style: { width, paddingBottom: height },
+  });
 
   const rootClass = classNames(className, imageStyle.image, {
     [imageStyle.href]: !!href,
@@ -177,7 +184,7 @@ const Image = (props: ImageProps) => {
     }
   };
 
-  // mask
+  // 遮罩层
   const renderMask = () => {
     return (
       <span className={maskClass} onClick={handleOpenModal}>
@@ -216,13 +223,8 @@ const Image = (props: ImageProps) => {
   // 根据是否有 href 属性，渲染不同的标签
   const Tag = href ? 'a' : 'div';
 
-  const rootProps = getRootProps({
-    download: shouldDownload,
-    target: shouldDownload ? '_self' : target,
-    href: !href || target !== '_modal' ? href : undefined,
-  });
   return (
-    <Tag {...rootProps} className={rootClass} style={{ width, paddingBottom: height }}>
+    <Tag {...rootProps} className={rootClass}>
       {renderImage()}
       {(shouldPreview || shouldDownload) && renderMask()}
     </Tag>

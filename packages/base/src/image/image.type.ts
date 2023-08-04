@@ -46,17 +46,17 @@ export interface ImageGroupClasses {
   group: string;
 }
 
-export interface Images {
+export type Image = {
   src?: string;
   thumb?: string;
   key?: number | string;
-}
+};
 
 export interface ImageGalleryProps {
   jssStyle: {
     image?: ImageClasses;
   };
-  images: Images[];
+  images: Image[];
   onClose: () => void;
   current: number;
 }

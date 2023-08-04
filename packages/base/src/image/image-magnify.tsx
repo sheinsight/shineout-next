@@ -2,8 +2,8 @@ import { useImageMagnify } from '@sheinx/hooks';
 import { ImageMagnifyProps } from './image.type';
 
 const ImageMagnify = (props: ImageMagnifyProps) => {
-  const { className, src, ...rest } = props;
-  const { loading, status, maxWidth, maxHeight, getRootProps } = useImageMagnify(rest);
+  const { className, ...rest } = props;
+  const { loading, status, src, maxWidth, maxHeight, getRootProps } = useImageMagnify(rest);
 
   const rootProps = getRootProps();
 

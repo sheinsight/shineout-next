@@ -1,6 +1,6 @@
 export { default, default as useImage } from './use-image';
-export { default as useImageMagnify } from './use-magnify';
-export { default as useImageGallery } from './use-gallery';
+export { default as useImageMagnify } from './use-image-magnify';
+export { default as useImageGallery } from './use-image-gallery';
 export { default as useImageGroup } from './use-image-group';
 
 export type {

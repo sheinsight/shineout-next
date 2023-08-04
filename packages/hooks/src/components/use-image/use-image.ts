@@ -99,7 +99,9 @@ const useImage = (props: BaseImageProps = {}) => {
   const getImageProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,
   ) => {
+    const externalEventHandlers = extractEventHandlers(externalProps);
     const mergedEventHandlers = {
+      ...externalEventHandlers,
       ...externalProps,
       alt,
       draggable: !noImgDrag,
@@ -113,9 +115,10 @@ const useImage = (props: BaseImageProps = {}) => {
   const getImageDivProps = <TOther extends ObjectType = ObjectType>(
     externalProps: TOther = {} as TOther,
   ) => {
+    const externalEventHandlers = extractEventHandlers(externalProps);
     const mergedEventHandlers = {
+      ...externalEventHandlers,
       ...externalProps,
-      title,
     };
 
     return {
@@ -128,6 +131,7 @@ const useImage = (props: BaseImageProps = {}) => {
   ) => {
     const externalEventHandlers = extractEventHandlers(externalProps);
     const mergedEventHandlers = {
+      ...externalEventHandlers,
       ...externalProps,
       ref: elementRef,
       onClick: handleClick(externalEventHandlers),

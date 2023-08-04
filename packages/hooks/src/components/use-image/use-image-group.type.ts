@@ -1,7 +1,6 @@
-import { Images, ImageTargetType, ImageFitType, ImageShapeType } from './use-image.type';
+import { ImageTargetType, ImageFitType, ImageShapeType } from './use-image.type';
 
 export interface BaseImageGroupProps {
-  images: Images[];
   width?: number | string;
   height?: number | string;
   lazy?: boolean;

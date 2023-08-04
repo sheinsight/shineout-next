@@ -1,32 +1,35 @@
 import React, { cloneElement, Children } from 'react';
 import { ImageGroupProps } from './image-group.type';
-import { ImageProps, Images } from './image.type';
+import { ImageProps, Image } from './image.type';
 import showGallery from './image-event';
 import classNames from 'classnames';
-import { useStyleUnitValue, useImageGroup } from '@sheinx/hooks';
+import { useImageGroup } from '@sheinx/hooks';
 
 const ImageGroup = (props: ImageGroupProps) => {
-  const { jssStyle, children, target = '_modal', pile, width, height, showCount = false } = props;
-
-  const { getGroupItemProps } = useImageGroup(props);
+  const { jssStyle, children, target = '_modal', pile, showCount = false } = props;
+  const { getGroupItemProps, getPileProps } = useImageGroup(props);
 
   const targetSet = pile ? '_modal' : target;
   const shouldPreview = targetSet === '_modal';
+
   const groupClass = classNames(jssStyle?.image.group, {
     [jssStyle?.image.groupPile]: pile,
   });
 
-  const handleItemClick = (images: Images[], current: number) => {
+  // 图片组成员点击事件
+  const handleItemClick = (images: Image[], current: number) => {
     if (shouldPreview) {
       showGallery(jssStyle, images, current);
     }
   };
 
+  // 渲染图片组成员
   const renderGroupItem = (Child: React.ReactElement<ImageProps>, index: number) => {
     const groupItemProps = getGroupItemProps(Child, index, { ...props, onClick: handleItemClick });
     return cloneElement(Child, groupItemProps);
   };
 
+  // 渲染图片总数角标
   const renderGroupCount = () => {
     return (
       <div className={classNames(jssStyle?.image.groupCount)}>
@@ -49,26 +52,17 @@ const ImageGroup = (props: ImageGroupProps) => {
     );
   };
 
+  // 渲染堆叠图片
   const renderPile = (Child: React.ReactElement<ImageProps>, index: number) => {
+    // 仅渲染第一张，第二张和第三张为占位图
     if (index === 0) return renderGroupItem(Child, index);
 
     if (index > 2) return null;
 
-    // @ts-ignore
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { value, unit } = useStyleUnitValue(width || Child.props.width);
-
-    return (
-      <div
-        key={index}
-        className={classNames(jssStyle?.image.groupPileItem)}
-        style={{
-          width: value || '100%',
-          height: height || Child.props.height || '100%',
-          left: `calc(${value}${unit} * ${0.0625 * index})`,
-        }}
-      ></div>
-    );
+    const pileProps = getPileProps(Child, index, {
+      className: classNames(jssStyle?.image.groupPileItem),
+    });
+    return <div key={index} {...pileProps}></div>;
   };
 
   return (

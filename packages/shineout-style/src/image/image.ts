@@ -35,18 +35,64 @@ type ImageClass =
   | 'galleryRight'
   | 'overlay'
   | 'magnify'
-  | '@keyframes gallery-fade-in';
+  | '@keyframes keyframe-f2c'
+  | '@keyframes keyframe-c2b'
+  | '@keyframes keyframe-c2f'
+  | '@keyframes keyframe-b2c';
 
 const ImageStyle: JsStyles<ImageClass> = {
-  '@keyframes gallery-fade-in': {
+  '@keyframes keyframe-f2c': {
     '0%': {
-      transform: 'translate(0%,-50%)',
-    },
-    '50%': {
-      transform: 'translate(-25%,-50%)',
+      left: '100%',
+      marginLeft: '-80px',
+      transform: 'translate(0, -50%)',
     },
     '100%': {
-      transform: 'translate(-50%,-50%)',
+      left: '50%',
+      marginLeft: 0,
+      transform: 'translate(-50%, -50%)',
+    },
+  },
+
+  '@keyframes keyframe-c2b': {
+    '0%': {
+      right: '50%',
+      marginRight: 0,
+      transform: 'translate(50%, -50%)',
+    },
+
+    '100%': {
+      right: '100%',
+      marginRight: '-80px',
+      transform: 'translate(0, -50%)',
+    },
+  },
+
+  '@keyframes keyframe-c2f': {
+    '0%': {
+      left: ' 50%',
+      marginLeft: 0,
+      transform: 'translate(-50%, -50%)',
+    },
+
+    '100%': {
+      left: '100%',
+      marginLeft: '-80px',
+      transform: 'translate(0, -50%)',
+    },
+  },
+
+  '@keyframes keyframe-b2c': {
+    '0%': {
+      right: '100%',
+      marginRight: '-80px',
+      transform: 'translate(0, -50%)',
+    },
+
+    '100%': {
+      right: '50%',
+      marginRight: 0,
+      transform: 'translate(50%, -50%)',
     },
   },
   // image
@@ -251,17 +297,19 @@ const ImageStyle: JsStyles<ImageClass> = {
   galleryInit: {
     transform: 'translate(-50%,-50%)',
   },
+
   galleryForward: {
     transform: 'translate(-50%,-50%)',
     display: 'flex',
     position: 'absolute',
-    animationName: '$gallery-fade-in',
   },
+
   galleryBackward: {
     transform: 'translate(-50%,-50%)',
     display: 'flex',
     position: 'absolute',
   },
+
   galleryCenter: {
     cursor: 'zoom-in',
     position: 'absolute',
@@ -272,7 +320,17 @@ const ImageStyle: JsStyles<ImageClass> = {
     background: '#fff',
 
     top: '50%',
-    left: '50%',
+
+    '&$galleryInit': {
+      left: '50%',
+    },
+
+    '&$galleryForward': {
+      animation: '$keyframe-f2c 0.5s ease-in-out',
+    },
+    '&$galleryBackward': {
+      animation: '$keyframe-b2c 0.5s ease-in-out',
+    },
   },
 
   galleryLeft: {
@@ -285,6 +343,10 @@ const ImageStyle: JsStyles<ImageClass> = {
 
     right: '100%',
     top: '50%',
+
+    '&$galleryForward': {
+      animation: '$keyframe-c2b 0.5s ease-in-out',
+    },
   },
 
   galleryRight: {
@@ -297,6 +359,10 @@ const ImageStyle: JsStyles<ImageClass> = {
 
     left: '100%',
     top: '50%',
+
+    '&$galleryBackward': {
+      animation: '$keyframe-c2f 0.5s ease-in-out',
+    },
   },
 
   // group

@@ -1,5 +1,5 @@
 import { getDefaultContainer } from '../config';
-import { Images } from './image.type';
+import { Image } from './image.type';
 import classNames from 'classnames';
 import ImageGallery from './image-gallery';
 import { util } from '@sheinx/hooks';
@@ -36,7 +36,7 @@ const getContainer = (classnames: { image?: ImageClasses }) => {
 
 const showGallery = (
   jssStyle: { image?: ImageClasses },
-  images: Images | Images[],
+  images: Image | Image[],
   current: number = 0,
 ) => {
   const Images = !Array.isArray(images) ? [images] : images;

@@ -1,17 +1,22 @@
 import classNames from 'classnames';
 import { useImageGallery } from '@sheinx/hooks';
 import Magnify from './image-magnify';
-import { ImageGalleryProps, Images, MagnifyPositionType, ImageClasses } from './image.type';
+import { ImageGalleryProps, Image, MagnifyPositionType, ImageClasses } from './image.type';
 
 const ImageModal = (props: ImageGalleryProps) => {
-  const { jssStyle, images, onClose, ...rest } = props;
+  const { jssStyle, images, ...rest } = props;
 
-  const { direction, current, windowWidth, windowHeight, lockScroll, getRootProps } =
-    useImageGallery({
-      ...rest,
-      images,
-    });
-  const { onClick } = getRootProps();
+  const {
+    current,
+    direction,
+    getMaginfyProps,
+    getOverlayProps,
+    getGalleryProps,
+    getCloseIconProps,
+  } = useImageGallery({
+    ...rest,
+    images,
+  });
 
   const galleryStyle = jssStyle.image || ({} as ImageClasses);
 
@@ -19,9 +24,11 @@ const ImageModal = (props: ImageGalleryProps) => {
   const magnifyClass = classNames(jssStyle.image?.magnify);
   const closeClass = classNames(jssStyle.image?.close);
 
+  const closeIconProps = getCloseIconProps();
+
   const renderColseIcon = () => {
     return (
-      <a className={closeClass} onClick={onClose}>
+      <a className={closeClass} {...closeIconProps}>
         <svg
           width='30'
           height='30'
@@ -38,7 +45,7 @@ const ImageModal = (props: ImageGalleryProps) => {
     );
   };
 
-  const renderImage = (image: Images, position: MagnifyPositionType) => {
+  const renderImage = (image: Image, position: MagnifyPositionType) => {
     const galleryClass = classNames({
       [galleryStyle.galleryInit]: direction === 'init',
       [galleryStyle.galleryForward]: direction === 'forward',
@@ -49,25 +56,21 @@ const ImageModal = (props: ImageGalleryProps) => {
       [galleryStyle.galleryCenter]: position === 'center',
     });
 
-    const handleClick = () => {
-      if (position === 'center') {
-        return undefined;
-      }
-      const index = position === 'left' ? -1 : 1;
-      return onClick(index);
-    };
+    const index = position === 'left' ? -1 : 1;
+
+    const galleryProps = getGalleryProps(index, position, {
+      className: classNames(galleryClass),
+    });
+
+    const magnifyProps = getMaginfyProps(position, {
+      className: magnifyClass,
+      src: image.src,
+    });
 
     return (
-      <div key={image.key} className={classNames(galleryClass)} onClick={handleClick}>
+      <div key={image.key} {...galleryProps}>
         {renderColseIcon()}
-        <Magnify
-          className={magnifyClass}
-          position={position}
-          src={image.src}
-          lockScroll={lockScroll}
-          maxWidth={windowWidth - 400}
-          maxHeight={windowHeight - 160}
-        ></Magnify>
+        <Magnify {...magnifyProps}></Magnify>
       </div>
     );
   };
@@ -87,9 +90,11 @@ const ImageModal = (props: ImageGalleryProps) => {
     return result;
   };
 
+  const overlayProps = getOverlayProps(rest);
+
   return (
     <>
-      <div className={overlayClass}></div>
+      <div className={overlayClass} {...overlayProps}></div>
       {renderResult()}
     </>
   );

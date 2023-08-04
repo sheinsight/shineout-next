@@ -1,6 +1,6 @@
-import { isNumber } from '../../utils/is';
+import { isNumber } from './is';
 
-export function useStyleUnitValue(value?: string | number) {
+export function parseStyleUnitValue(value?: string | number) {
   if (value === undefined) return;
 
   if (isNumber(value)) {
