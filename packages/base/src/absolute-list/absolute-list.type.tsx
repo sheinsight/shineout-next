@@ -22,6 +22,7 @@ export interface AbsoluteListProps {
   parentElement: HTMLElement | null;
   fixedWidth: 'min' | boolean; // same width with parentElement
   position: ListPosition | HorizontalPosition | VerticalPosition;
+  updateKey?: number | string;
   /**
    * @en When it is true, the pop-up layer of option append into document.body; When it is a function, the return value is used as the popup layer container
    * @cn 为 true 时，选项弹出层在 DOM 中独立 render; 为函数时，返回值作为弹出层容器
@@ -46,4 +47,5 @@ export interface AbsoluteListProps {
   scrollElement?: HTMLElement;
   scrollLeft?: number;
   scrollTop?: number;
+  popupEl?: HTMLElement | null;
 }
