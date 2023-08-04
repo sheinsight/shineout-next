@@ -1,9 +1,13 @@
 import { render, cleanup, screen, fireEvent } from '@testing-library/react';
 import Checkbox from '..';
+import { Form } from 'shineout';
 import mountTest from '../../tests/mountTest';
 import CheckboxRawgroup from '../__example__/004-rawgroup';
 import CheckboxGroup from '../__example__/005-group';
 import CheckboxBlock from '../__example__/006-block';
+import CheckboxDisabled from '../__example__/007-disabled-1';
+import CheckboxDisabledByFunc from '../__example__/007-disabled-2';
+import React, { useState } from 'react';
 
 const SO_PREFIX = 'checkbox';
 const dataRender = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
@@ -85,5 +89,63 @@ describe('CheckboxGroup[Base]', () => {
     const checkboxGroup = container.querySelector(`.${SO_PREFIX}-group-0-2-9`);
     expect(checkboxGroup?.classList.contains('demo')).toBeTruthy();
     expect(checkboxGroup?.getAttribute('style')).toBe('margin-top: 32px; display: inline-block;');
+  });
+});
+describe('CheckboxGroup[Disabled]', () => {
+  test('should render correctly by disabled-A', () => {
+    const { container } = render(<CheckboxDisabled />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('should render correctly by disabled-B', () => {
+    const { container } = render(<CheckboxDisabledByFunc />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('should render when set disabled', () => {
+    const { container } = render(<CheckboxDisabled />);
+    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`).forEach((checkbox) => {
+      expect(checkbox.classList.contains(`${SO_PREFIX}-wrapperDisabled-0-2-5`)).toBeTruthy();
+    });
+  });
+  test('should render when set disabled by function', () => {
+    const { container } = render(<CheckboxDisabledByFunc />);
+    screen.debug();
+    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`).forEach((checkbox) => {
+      if (checkbox.textContent !== 'yellow') return;
+      expect(checkbox.classList.contains(`${SO_PREFIX}-wrapperDisabled-0-2-5`)).toBeTruthy();
+      fireEvent.click(checkbox);
+      expect(checkbox.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeFalsy();
+    });
+  });
+  test('should render when set disabled in form and checkboxGroup', () => {
+    const changeFn = jest.fn();
+    const { container } = render(
+      <Form disabled={true}>
+        <Checkbox.Group data={dataRender} disabled={false} onChange={changeFn} />
+      </Form>,
+    );
+    fireEvent.click(container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`)[0]);
+    expect(changeFn.mock.calls.length).toBe(0);
+  });
+});
+describe('Checkbox[Format]', () => {
+  // TODO: 未完
+  test('should render when set format', () => {
+    const RenderDemo = () => {
+      const [selected, setSelected] = useState(['red']);
+      return (
+        <>
+          <Checkbox.Group
+            data={dataRender}
+            value={selected}
+            onChange={setSelected}
+            formate={(e: any) => e + '!'}
+          />
+          <div className='render'>{selected}</div>
+        </>
+      );
+    };
+    const { container } = render(<RenderDemo />);
+    fireEvent.click(container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`)[2]);
+    screen.debug();
   });
 });
