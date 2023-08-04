@@ -9,7 +9,7 @@ import React from 'react';
 import { Checkbox } from 'shineout';
 
 const App: React.FC = () => (
-  <Checkbox htmlValue='ok' onChange={console.log}>
+  <Checkbox htmlValue='ok' value='red' onChange={console.log}>
     {'value is "ok"'}
   </Checkbox>
 );
