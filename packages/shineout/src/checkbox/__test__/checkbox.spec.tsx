@@ -8,6 +8,7 @@ import CheckboxStatus from '../__example__/002-checked-1';
 import CheckboxIndeterminate from '../__example__/002-checked-2';
 import CheckboxHtmlValue from '../__example__/003-value';
 import CheckboxInputable from '../__example__/008-inputable';
+import CheckboxClick from '../__example__/009-click';
 
 const SO_PREFIX = 'checkbox';
 const attributes = [
@@ -242,5 +243,20 @@ describe('Checkbox[Value]', () => {
     const { container } = render(<Checkbox htmlValue='red' value='blue' onClick={clickFn} />);
     fireEvent.click(container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)!);
     screen.debug();
+  });
+});
+describe('Checkbox[Click]', () => {
+  test('should render corretly about click', () => {
+    const { container } = render(<CheckboxClick />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('should render when click', () => {
+    const { container } = render(<CheckboxClick />);
+    const checkbox = container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)!;
+    expect(checkbox?.textContent).toBe('Click Me 0 Times!');
+    fireEvent.click(checkbox);
+    expect(checkbox?.textContent).toBe('Click Me 1 Times!');
+    fireEvent.click(checkbox);
+    expect(checkbox?.textContent).toBe('Click Me 2 Times!');
   });
 });

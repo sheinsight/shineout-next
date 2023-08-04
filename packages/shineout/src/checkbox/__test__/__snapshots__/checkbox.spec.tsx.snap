@@ -503,6 +503,34 @@ exports[`Checkbox[Checked] should render corretly about checked is indeterminate
 </div>
 `;
 
+exports[`Checkbox[Click] should render corretly about click 1`] = `
+<div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      Click Me
+       0 Times!
+    </span>
+  </div>
+</div>
+`;
+
 exports[`Checkbox[HtmlValue] should render corretly about htmlValue 1`] = `
 <div
   class="checkbox-wrapper-0-2-1"
