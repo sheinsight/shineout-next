@@ -16,25 +16,37 @@ const radioTokenDescription = { radio: '单选框', button: '按钮模式', outl
  * 注意，该映射表的内容不与 radioRules 强关联，非 radioRules 规则内的 token 需手动增加或删减。
  */
 const radioTokenValue = {
-  font: { color: '123', size: '' },
-  background: { color: '' },
-  border: { color: '', radius: '' },
-  checked: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
-  line: { height: '' },
-  padding: { x: '', y: '' },
-  small: {
-    font: { size: '' },
-    border: { radius: '' },
-    line: { height: '' },
-    padding: { x: '', y: '' },
+  icon: {
+    border: { color: 'Neutral-border-1', width: 'Border-2' },
+    background: { color: 'Neutral-fill-1' },
+    color: '',
+    disabled: {
+      border: { color: 'Neutral-border-1' },
+      background: { color: 'Neutral-fill-2' },
+      color: '',
+    },
+    hover: {
+      border: { color: 'Neutral-border-2' },
+      background: { color: 'Neutral-fill-1' },
+      color: '',
+    },
+    active: {
+      border: { color: 'Brand-6' },
+      background: { color: 'Neutral-fill-1' },
+      color: 'Brand-6',
+    },
+    activedisabled: {
+      border: { color: 'Brand-3' },
+      background: { color: 'Neutral-fill-1' },
+      color: 'Brand-3',
+    },
+    gap: 'Margin-8',
+    circle: { fill: 'Neutral-fill-2' },
   },
-  large: {
-    font: { size: '' },
-    border: { radius: '' },
-    line: { height: '' },
-    padding: { x: '', y: '' },
+  label: {
+    font: { color: 'Neutral-text-5', size: '14/regular' },
+    disabled: { font: { color: 'Neutral-text-2' } },
+    gap: 'Margin-24',
   },
 };
 

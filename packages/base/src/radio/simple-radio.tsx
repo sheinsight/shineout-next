@@ -9,13 +9,11 @@ const Radio = (props: SimpleRadioProps) => {
     ...rest,
   });
   const rootClass = classNames([
-    jssStyle.wrapper,
+    jssStyle?.radio?.wrapper,
     className,
-    {
-      [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperError]: status === 'error',
-      [jssStyle.wrapperChecked]: checked,
-    },
+    !!disabled && jssStyle?.radio?.wrapperDisabled,
+    status === 'error' && jssStyle?.radio?.wrapperError,
+    !!checked && jssStyle?.radio?.wrapperChecked,
   ]);
 
   const inputProps = getInputProps();
@@ -28,8 +26,10 @@ const Radio = (props: SimpleRadioProps) => {
       })}
     >
       <input {...inputProps} type='radio' />
-      <i {...getIndicatorProps()} className={jssStyle.indicator} />
-      <span className={jssStyle.desc}>{children}</span>
+      <div className={jssStyle?.radio?.indicatorWrapper}>
+        <i {...getIndicatorProps()} className={jssStyle?.radio?.indicator} />
+      </div>
+      <span className={jssStyle?.radio?.desc}>{children}</span>
     </div>
   );
 };

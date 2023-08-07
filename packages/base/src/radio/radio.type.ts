@@ -18,14 +18,24 @@ export interface RadioClasses {
   wrapperLarge: string;
   wrapperSmall: string;
   wrapperChecked: string;
+  indicatorWrapper: string;
   indicator: string;
   desc: string;
+  // 组
+  group: string;
+  groupBlock: string;
+  groupButton: string;
+  groupOutline: string;
+  groupSmall: string;
+  groupLarge: string;
 }
 
 export interface SimpleRadioProps
   extends BaseCheckProps,
     Pick<CommonType, 'status' | 'style' | 'className'> {
-  jssStyle: RadioClasses;
+  jssStyle?: {
+    radio?: RadioClasses;
+  };
   children?: React.ReactNode;
 }
 

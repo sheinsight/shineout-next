@@ -2,9 +2,11 @@ import { BaseRadioGroupProps, RadioGroupProps } from './group.type';
 import { RadioGroup as UnStyledRadioGroup } from '@sheinx/base';
 import { useRadioStyle } from '@sheinx/shineout-style';
 import useFieldCommon from '../hooks/use-field-common';
+import { useMemo } from 'react';
 
 const BaseRadioGroup = <DataItem, Value>(props: BaseRadioGroupProps<DataItem, Value>) => {
-  const jssStyle = useRadioStyle();
+  const radioStyle = useRadioStyle();
+  const jssStyle = useMemo(() => ({ radio: radioStyle }), [radioStyle]);
   return <UnStyledRadioGroup {...props} jssStyle={jssStyle} />;
 };
 

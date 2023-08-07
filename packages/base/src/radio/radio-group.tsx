@@ -59,13 +59,16 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
     onChange: handleItemChange,
     disabled,
   };
-  const groupClass = classNames(className, jssStyle.group, {
-    [jssStyle.groupBlock]: block,
-    [jssStyle.groupButton]: button,
-    [jssStyle.groupOutline]: button === 'outline',
-    [jssStyle.groupSmall]: button && size === 'small',
-    [jssStyle.groupLarge]: button && size === 'large',
-  });
+  const groupClass = classNames(
+    className,
+    jssStyle?.radio?.group,
+    !!block && jssStyle?.radio?.groupBlock,
+    !!button && jssStyle?.radio?.groupButton,
+    button === 'outline' && jssStyle?.radio?.groupOutline,
+    button && size === 'small' && jssStyle?.radio?.groupSmall,
+    button && size === 'large' && jssStyle?.radio?.groupLarge,
+  );
+
   if (props.data === undefined) {
     return (
       <div className={groupClass}>

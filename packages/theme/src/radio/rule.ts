@@ -7,14 +7,15 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const radioRules = {
-  color: [
-    ['', 'checked', 'focus', 'hover'],
-    ['font-color', 'background-color', 'border-color'],
+  iconColor: [
+    ['icon'],
+    ['', 'disabled', 'hover', 'active', 'activedisabled'],
+    ['border-color', 'background-color', 'color'],
   ],
-  size: [
-    ['', 'small', 'large'],
-    ['font-size', 'border-radius', 'line-height', 'padding-x', 'padding-y'],
-  ],
+  iconCommon: [['icon'], ['gap', 'border-width']],
+  iconCircle: [['icon'], ['circle'], ['fill']],
+  labelColor: [['label'], ['', 'disabled'], ['font-color']],
+  labelSize: [['label'], ['font-size', 'gap']],
 };
 
 module.exports = {

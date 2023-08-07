@@ -1,11 +1,12 @@
 import React from 'react';
 import { Radio } from '@sheinx/base';
 import { useRadioStyle } from '@sheinx/shineout-style';
+
 export default () => {
-  const jssStyle = useRadioStyle();
+  const radioStyle = useRadioStyle();
   return (
     <div>
-      <Radio jssStyle={jssStyle}>yellow</Radio>
+      <Radio jssStyle={{ radio: radioStyle }}>yellow</Radio>
     </div>
   );
 };

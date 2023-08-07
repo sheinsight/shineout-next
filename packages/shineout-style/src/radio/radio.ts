@@ -1,5 +1,6 @@
 import cssVars from '../cssvar';
 import { JsStyles } from '../jss-style';
+import token from '@sheinx/theme';
 
 export type RadioClass =
   | 'wrapper'
@@ -8,8 +9,9 @@ export type RadioClass =
   | 'wrapperError'
   | 'wrapperDisabled'
   | 'wrapperChecked'
+  | 'indicatorWrapper'
   | 'indicator'
-  | '@keyframes so-checkinput-focus'
+  // | '@keyframes so-checkinput-focus'
   | 'desc'
   | 'group'
   | 'groupBlock'
@@ -18,28 +20,28 @@ export type RadioClass =
   | 'groupSmall'
   | 'groupLarge';
 
+const iconSize = '14px';
+const circleSize = '5px';
+
 const radioStyle: JsStyles<RadioClass> = {
-  '@keyframes so-checkinput-focus': {
-    '0%': {
-      boxShadow: `0 0 0 0 ${cssVars.primaryColorFade50}`,
-    },
-    '50%': {
-      boxShadow: `0 0 0 4px ${cssVars.primaryColorFade0}`,
-    },
-    '100%': {
-      boxShadow: `0 0 0 8px ${cssVars.primaryColorFade0}`,
-    },
-  },
+  // '@keyframes so-checkinput-focus': {
+  //   '0%': {
+  //     boxShadow: `0 0 0 0 ${cssVars.primaryColorFade50}`,
+  //   },
+  //   '50%': {
+  //     boxShadow: `0 0 0 4px ${cssVars.primaryColorFade0}`,
+  //   },
+  //   '100%': {
+  //     boxShadow: `0 0 0 8px ${cssVars.primaryColorFade0}`,
+  //   },
+  // },
   wrapper: {
-    color: cssVars.checkinputColor,
     display: 'inline-block',
     position: 'relative',
-    marginRight: '10px',
     verticalAlign: 'middle',
     cursor: 'pointer',
-    fontSize: cssVars.fontSize,
-    lineHeight: cssVars.commonLineHeight,
     boxSizing: 'border-box',
+    marginRight: token.radioLabelGap,
   },
   wrapperChecked: {},
   wrapperSmall: {},
@@ -48,29 +50,81 @@ const radioStyle: JsStyles<RadioClass> = {
   wrapperDisabled: {
     cursor: 'not-allowed',
   },
-  indicator: {
+  indicatorWrapper: {
+    display: 'inline-block',
+    position: 'relative',
     boxSizing: 'border-box',
-    width: cssVars.radioWidth,
-    height: cssVars.radioWidth,
+    width: iconSize,
+    height: iconSize,
+    marginRight: token.radioIconGap,
+    verticalAlign: 'middle',
+    '&::before': {
+      content: '" "',
+      display: 'block',
+      width: '100%',
+      height: '100%',
+      padding: circleSize,
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      boxSizing: 'content-box',
+      background: 'transparent',
+      borderRadius: '50%',
+    },
+    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &': {
+      '&::before': {
+        background: token.radioIconCircleFill,
+      },
+      '& $indicator': {
+        borderColor: token.radioIconHoverBorderColor,
+        backgroundColor: token.radioIconHoverBackgroundColor,
+      },
+    },
+  },
+  indicator: {
+    position: 'absolute',
+    boxSizing: 'border-box',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
     borderRadius: '50%',
     borderStyle: 'solid',
-    borderWidth: cssVars.radioBorderUncheckWidth,
-    borderColor: cssVars.checkboxBorderColor,
-    backgroundColor: cssVars.white,
-    display: 'inline-flex',
+    borderWidth: token.radioIconBorderWidth,
+    borderColor: token.radioIconBorderColor,
+    backgroundColor: token.radioIconBackgroundColor,
+    color: 'transparent',
+    display: 'inline-block',
     verticalAlign: 'middle',
+    '$wrapperChecked &::after': {
+      content: '" "',
+      position: 'absolute',
+      zIndex: '10',
+      display: 'block',
+      background: 'currentColor',
+      left: '0px',
+      right: '0px',
+      top: '0px',
+      bottom: '0px',
+      margin: 'auto',
+      width: '4px',
+      height: '4px',
+      borderRadius: '50%',
+    },
     '$wrapperChecked &': {
-      borderColor: cssVars.primaryColor,
-      borderWidth: cssVars.radioBorderWidth,
-      boxShadow: `0 0 0 0 ${cssVars.primaryColorFade50}`,
-      animation: '$so-checkinput-focus .6s ease-out',
+      borderColor: token.radioIconActiveBorderColor,
+      backgroundColor: token.radioIconActiveBackgroundColor,
+      color: token.radioIconActiveColor,
     },
     '$wrapperDisabled &': {
-      backgroundColor: cssVars.checkboxDisabledBgc,
+      borderColor: token.radioIconDisabledBorderColor,
+      backgroundColor: token.radioIconDisabledBackgroundColor,
     },
-    '$wrapperDisabled$wrapperChecked &': {
-      backgroundColor: cssVars.white,
-      borderColor: cssVars.checkboxCheckedDisabledBgc,
+    '$wrapperDisabled$wrapperChecked &, $wrapperDisabled$wrapperIndeterminate &': {
+      borderColor: token.radioIconActivedisabledBorderColor,
+      backgroundColor: token.radioIconActivedisabledBackgroundColor,
+      color: token.radioIconActivedisabledColor,
     },
   },
   desc: {
@@ -88,7 +142,7 @@ const radioStyle: JsStyles<RadioClass> = {
     },
   },
   groupButton: {
-    '& $indicator': {
+    '& $indicatorWrapper': {
       display: 'none',
     },
     '& $wrapper': {
