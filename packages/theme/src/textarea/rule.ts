@@ -7,9 +7,15 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const textareaRules = {
-  common: [[''], ['font-size', 'font-color']],
-  color: [['', 'focus', 'hover'], ['font-size']],
-  type: [['', 'success', 'info', 'warning', 'danger'], ['font-color']],
+  size: [
+    ['', 'small', 'large'],
+    ['font-size', 'border-radius', 'padding-x', 'padding-y'],
+  ],
+  color: [
+    ['', 'hover', 'focus', 'disabled', 'error'],
+    ['font-color', 'placeholder-color', 'border-color', 'background-color', 'shadow'],
+  ],
+  infoColor: [['info'], ['', 'error'], ['font-color', 'background-color', 'border-color']],
 };
 
 module.exports = {

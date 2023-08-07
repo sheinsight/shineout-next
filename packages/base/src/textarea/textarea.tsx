@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import SimpleTextarea from './simple-textarea';
-import { useInputAble, useTextareaFormat, util } from '@sheinx/hooks';
+import { useInputAble, usePersistFn, useTextareaFormat, util } from '@sheinx/hooks';
 import { TextareaProps } from './textarea.type';
 import useAutoSize from './use-auto-size';
 import classNames from 'classnames';
@@ -13,7 +13,7 @@ const defaultInfo = (num: number, msg: any) => {
   return new Error(text);
 };
 export default (props: TextareaProps) => {
-  const { info, suffix, renderFooter, width, style, jssStyle, ...resetProps } = props;
+  const { info, suffix, renderFooter, width, style, jssStyle, onBlur, ...resetProps } = props;
 
   const { disabled, size } = useWithFormConfig(props);
   resetProps.disabled = disabled;
@@ -30,12 +30,17 @@ export default (props: TextareaProps) => {
   };
   const inputAbleProps = useInputAble(inputAbleParams);
 
+  const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
+    onBlur?.(e);
+    inputAbleProps.forceDelayChange();
+  });
+
   // format
   const formatParams = {
     trim: resetProps.trim,
     value: inputAbleProps.value,
     onChange: inputAbleProps.onChange,
-    onBlur: resetProps.onBlur,
+    onBlur: handleBlur,
   };
   const formatProps = useTextareaFormat(formatParams);
 
@@ -70,10 +75,7 @@ export default (props: TextareaProps) => {
       <div
         key='info'
         style={{ minWidth: 'auto' }}
-        className={classNames({
-          [jssStyle.info]: true,
-          [jssStyle.infoError]: isError,
-        })}
+        className={classNames(jssStyle?.textarea?.info, !!isError && jssStyle?.textarea?.infoError)}
       >
         {text}
       </div>
@@ -85,7 +87,12 @@ export default (props: TextareaProps) => {
       {suffix}
       {getInfo()}
       {util.isFunc(renderFooter) && (
-        <div className={classNames(jssStyle.paddingBox, jssStyle.footer)}>
+        <div
+          onMouseDown={(e) => {
+            e.preventDefault();
+          }}
+          className={classNames(jssStyle?.textarea?.paddingBox, jssStyle?.textarea?.footer)}
+        >
           {renderFooter(inputAbleProps.value)}
         </div>
       )}
@@ -101,7 +108,6 @@ export default (props: TextareaProps) => {
       rows={4}
       jssStyle={jssStyle}
       {...forwardProps}
-      {...inputAbleProps}
       {...formatProps}
       renderTextarea={renderTextarea}
       value={inputAbleProps.value || ''}

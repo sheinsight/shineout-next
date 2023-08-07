@@ -7,36 +7,14 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const inputRules = {
-  color: [
-    ['', 'disabled', 'focus', 'hover', 'error'],
-    ['font-color', 'background-color', 'border-color', 'clear-icon-color'],
-  ],
   size: [
     ['', 'small', 'large'],
-    [
-      'height',
-      'font-size',
-      'border-radius',
-      'border-width',
-      'line-height',
-      'inner-title-height',
-      'inner-title-border-radius',
-      'inner-title-line-height',
-      'clear-icon-font-size',
-      'padding-x',
-      'padding-y',
-    ],
+    ['font-size', 'border-radius', 'padding-x', 'padding-y'],
   ],
-  extra_prefix_suffix_color: [
-    ['prefix', 'suffix'],
-    ['font-color', 'background-color'],
+  color: [
+    ['', 'hover', 'focus', 'disabled', 'error'],
+    ['font-color', 'placeholder-color', 'border-color', 'background-color', 'shadow'],
   ],
-  extra_prefix_suffix_layout: [
-    ['', 'small', 'large'],
-    ['prefix', 'suffix'],
-    ['padding-x', 'padding-y'],
-  ],
-  extra_icon_color: [['icon'], ['font-color', 'background-color']],
 };
 
 module.exports = {

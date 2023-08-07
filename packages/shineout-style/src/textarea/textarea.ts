@@ -1,8 +1,37 @@
 import border from '../input/input-border';
-import cssVars from '../cssvar';
 import { JsStyles } from '../jss-style';
+import token from '@sheinx/theme';
 
-const inputBorder = border('wrapper');
+const inputBorder = border('wrapper', {
+  lineHeightDynamic: token.lineHeightDynamic,
+  borderRadius: token.textareaBorderRadius,
+
+  fontSize: token.textareaFontSize,
+  smallFontSize: token.textareaSmallFontSize,
+  largeFontSize: token.textareaLargeFontSize,
+
+  paddingY: token.textareaPaddingY,
+  smallPaddingY: token.textareaSmallPaddingY,
+  largePaddingY: token.textareaLargePaddingY,
+
+  paddingX: token.textareaPaddingX,
+  smallPaddingX: token.textareaSmallPaddingX,
+  largePaddingX: token.textareaLargePaddingX,
+
+  borderColor: token.textareaBorderColor,
+  focusBorderColor: token.textareaFocusBorderColor,
+  hoverBorderColor: token.textareaHoverBorderColor,
+  disabledBorderColor: token.textareaDisabledBorderColor,
+  errorBorderColor: token.textareaErrorBorderColor,
+
+  fontColor: token.textareaFontColor,
+  disabledFontColor: token.textareaDisabledFontColor,
+
+  backgroundColor: token.textareaBackgroundColor,
+  disabledBackgroundColor: token.textareaDisabledBackgroundColor,
+
+  focusShadow: token.textareaFocusShadow,
+});
 const { wrapper, ...resetWrapper } = inputBorder;
 
 export type InputClass =
@@ -26,15 +55,18 @@ const input: JsStyles<InputClass> = {
   ...inputBorder,
   wrapper: {
     display: 'inline-flex',
+    flexDirection: 'column',
     width: '100%',
     boxSizing: 'border-box',
-    alignItems: 'center',
     position: 'relative',
     flexWrap: 'wrap',
     ...wrapper,
   },
   ...resetWrapper,
   textarea: {
+    '&::placeholder': {
+      color: token.textareaPlaceholderColor,
+    },
     width: '100%',
     background: 'transparent',
     border: '0',
@@ -62,11 +94,11 @@ const input: JsStyles<InputClass> = {
     animation: 'so-input-fade .16s ease-in',
     maxWidth: '400px',
     padding: '5px 8px',
-    background: cssVars.grey100,
-    borderRadius: cssVars.inputBorderRadius,
-    boxShadow: `0 0 0 1px ${cssVars.inputBorderColor}`,
+    background: token.textareaInfoBackgroundColor,
+    borderRadius: token.textareaBorderRadius,
+    boxShadow: `0 0 0 1px ${token.textareaBorderColor}`,
     fontSize: '12px',
-    color: '#1261d4',
+    color: token.textareaInfoFontColor,
     '&::before': {
       display: 'block',
       position: 'absolute',
@@ -75,17 +107,18 @@ const input: JsStyles<InputClass> = {
       transform: 'rotate(45deg) translateY(3px)',
       width: '6px',
       height: '6px',
-      border: `1px solid ${cssVars.inputBorderColor}`,
+      border: `1px solid ${token.textareaBorderColor}`,
       borderWidth: '1px 0 0 1px',
       background: 'inherit',
       content: "'  '",
     },
   },
   infoError: {
-    boxShadow: '0 0 0 1px rgba(255,77,80,.1), 0 2px 8px rgba(0,0,0,.15)',
-    color: cssVars.dangerColor,
+    boxShadow: `0 0 0 1px ${token.textareaInfoErrorBorderColor}`,
+    color: token.textareaInfoErrorFontColor,
+    background: token.textareaInfoErrorBackgroundColor,
     '&::before': {
-      borderColor: 'rgba(255,77,80,.1);',
+      borderColor: token.textareaInfoErrorBorderColor,
     },
   },
   shadow: {
@@ -95,7 +128,10 @@ const input: JsStyles<InputClass> = {
     zIndex: 0,
     visibility: 'hidden',
   },
-  footer: {},
+  footer: {
+    borderTop: `1px solid ${token.textareaBorderColor}`,
+    borderRadius: 0,
+  },
 };
 
 export default input;

@@ -1,10 +1,17 @@
 import { Textarea as UnStyledTextarea } from '@sheinx/base';
-import { TextareaProps, BaseTextareaProps } from './textarea.type';
+import { BaseTextareaProps, TextareaProps } from './textarea.type';
 import useFieldCommon from '../hooks/use-field-common';
 import { useTextareaStyle } from '@sheinx/shineout-style';
+import { useMemo } from 'react';
 
 const BaseTextarea = (props: BaseTextareaProps) => {
-  const jssStyle = useTextareaStyle();
+  const textareaStyle = useTextareaStyle();
+  const jssStyle = useMemo(() => {
+    return {
+      textarea: textareaStyle,
+    };
+  }, [textareaStyle]);
+
   return <UnStyledTextarea {...props} jssStyle={jssStyle} />;
 };
 

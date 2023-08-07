@@ -23,19 +23,17 @@ const Textarea = (props: SimpleTextareaProps) => {
   const { getRootProps, getTextAreaProps, focused, disabled } = useTextarea({
     ...rest,
   });
-  const rootClass = classNames([
-    jssStyle.wrapper,
+  const rootClass = classNames(
     className,
-    {
-      [jssStyle.wrapperFocus]: focused,
-      [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperError]: status === 'error',
-      [jssStyle.wrapperSmall]: size === 'small',
-      [jssStyle.wrapperLarge]: size === 'large',
-      [jssStyle.wrapperUnderline]: underline,
-      [jssStyle.wrapperNoBorder]: !border,
-    },
-  ]);
+    jssStyle?.textarea?.wrapper,
+    !!focused && jssStyle?.textarea?.wrapperFocus,
+    !!disabled && jssStyle?.textarea?.wrapperDisabled,
+    status === 'error' && jssStyle?.textarea?.wrapperError,
+    size === 'small' && jssStyle?.textarea?.wrapperSmall,
+    size === 'large' && jssStyle?.textarea?.wrapperLarge,
+    !!underline && jssStyle?.textarea?.wrapperUnderline,
+    !border && jssStyle?.textarea?.wrapperNoBorder,
+  );
 
   const keyHandler = useKeyEvent({
     onEnterPress: (e: KeyboardEvent) => {
@@ -49,9 +47,11 @@ const Textarea = (props: SimpleTextareaProps) => {
   });
 
   const textareaProps = getTextAreaProps({
-    className: classNames(jssStyle.paddingBox, jssStyle.textarea, {
-      [jssStyle.resize]: resize,
-    }),
+    className: classNames(
+      jssStyle?.textarea?.paddingBox,
+      jssStyle?.textarea?.textarea,
+      !!resize && jssStyle?.textarea?.resize,
+    ),
     onKeyUp,
   });
 

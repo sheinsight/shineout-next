@@ -90,6 +90,7 @@ export interface InputCommonProps<V> {
   info?: number | ((value: V | undefined) => string);
   disabled?: boolean;
   delay?: number;
+  onBlur?: React.FocusEventHandler;
 }
 
 export type GetCommonProps<Props, V> = Omit<

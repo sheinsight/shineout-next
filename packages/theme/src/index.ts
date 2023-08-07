@@ -5,6 +5,7 @@ import Input from './input';
 import Dropdown from './dropdown';
 import Icon from './icon';
 import Checkbox from './checkbox';
+import Textarea from './textarea';
 import Image from './image';
 
 import { CommonTokens } from './common/type';
@@ -14,6 +15,7 @@ import { InputTokens } from './input/type';
 import { DropdownTokens } from './dropdown/type';
 import { IconTokens } from './icon/type';
 import { CheckboxTokens } from './checkbox/type';
+import { TextareaTokens } from './Textarea/type';
 import { ImageTokens } from './image/type';
 
 export type ThemeTokens = CommonTokens &
@@ -23,6 +25,7 @@ export type ThemeTokens = CommonTokens &
   DropdownTokens &
   IconTokens &
   CheckboxTokens &
+  TextareaTokens &
   ImageTokens;
 
 const Token: ThemeTokens = {
@@ -33,6 +36,7 @@ const Token: ThemeTokens = {
   ...Dropdown,
   ...Icon,
   ...Checkbox,
+  ...Textarea,
   ...Image,
 };
 
