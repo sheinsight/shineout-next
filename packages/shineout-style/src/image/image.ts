@@ -143,6 +143,12 @@ const ImageStyle: JsStyles<ImageClass> = {
 
   previewMask: {
     display: 'none',
+    // icon
+    '& svg': {
+      width: 16,
+      height: 16,
+      color: '#fff',
+    },
   },
 
   download: {
@@ -245,6 +251,12 @@ const ImageStyle: JsStyles<ImageClass> = {
     color: Token.imageErrorFontColor,
     fontSize: Token.imageErrorFontSize,
     backgroundColor: Token.imageErrorBackgroundColor,
+    // icon
+    '& svg': {
+      width: 16,
+      height: 16,
+      color: '#B3B7C1',
+    },
   },
 
   error: {
@@ -282,6 +294,9 @@ const ImageStyle: JsStyles<ImageClass> = {
     zIndex: 1,
     cursor: 'pointer',
     outline: 'none',
+    width: 32,
+    height: 32,
+    color: '#666C7C',
   },
 
   // gallery
@@ -425,6 +440,13 @@ const ImageStyle: JsStyles<ImageClass> = {
       fontSize: 12,
       color: '#fff',
       marginLeft: 5,
+    },
+
+    // icon
+    '& > svg': {
+      width: 12,
+      height: 12,
+      color: '#fff',
     },
   },
 };
