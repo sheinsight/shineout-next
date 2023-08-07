@@ -18,6 +18,7 @@ const Image = (props: ImageProps) => {
     src,
     href,
     lazy,
+    title,
     style,
     error,
     target,
@@ -27,10 +28,11 @@ const Image = (props: ImageProps) => {
     width = '100%',
     height = '100%',
     shape = 'rounded',
+    onClick,
     ...rest
   } = props;
 
-  const { title, status, onClick, getRootProps, getImageProps, getImageDivProps } = useImage({
+  const { status, getRootProps, getImageProps, getImageDivProps } = useImage({
     container: getDefaultContainer(),
     alt,
     src,

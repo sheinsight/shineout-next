@@ -30,9 +30,7 @@ export default () => {
   return (
     <div>
       {images.map((item, index) => {
-        return (
-          <Image key={index} lazy fit='center' width='100%' height='100%' src={item.src}></Image>
-        );
+        return <Image key={index} lazy fit='fill' width={845} height={528} src={item.src}></Image>;
       })}
     </div>
   );

@@ -17,18 +17,7 @@ const useImage = (props: BaseImageProps = {}) => {
   let lazyId: string | null = null;
   let image = null;
 
-  const {
-    container,
-    lazy,
-    src,
-    alt,
-    href,
-    title,
-    autoSSL,
-    noImgDrag = false,
-    onError,
-    onClick,
-  } = props;
+  const { container, lazy, src, alt, href, autoSSL, noImgDrag = false, onError } = props;
 
   const [status, setStatus] = React.useState<number>(PLACEHOLDER);
 
@@ -91,7 +80,6 @@ const useImage = (props: BaseImageProps = {}) => {
   const handleClick =
     (otherHandlers: HandlerType) =>
     (event: React.MouseEvent<HTMLImageElement | HTMLDivElement>) => {
-      onClick?.(event);
       otherHandlers?.onClick?.(event);
     };
 
@@ -160,9 +148,7 @@ const useImage = (props: BaseImageProps = {}) => {
     src,
     alt,
     href,
-    title,
     status,
-    onClick,
     fetchImage,
     getRootProps,
     getImageProps,
