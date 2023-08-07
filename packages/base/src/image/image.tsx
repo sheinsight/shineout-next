@@ -14,7 +14,13 @@ const ERROR = 3;
 const Image = (props: ImageProps) => {
   const {
     fit,
+    alt,
+    src,
+    href,
+    lazy,
+    style,
     error,
+    target,
     jssStyle,
     className,
     placeholder,
@@ -24,18 +30,14 @@ const Image = (props: ImageProps) => {
     ...rest
   } = props;
 
-  const {
-    src,
+  const { title, status, onClick, getRootProps, getImageProps, getImageDivProps } = useImage({
+    container: getDefaultContainer(),
     alt,
+    src,
     href,
-    title,
-    target,
-    status,
-    onClick,
-    getRootProps,
-    getImageProps,
-    getImageDivProps,
-  } = useImage({ container: getDefaultContainer(), ...rest });
+    lazy,
+    ...rest,
+  });
 
   const imageStyle = jssStyle.image || ({} as ImageClasses);
   const shouldPreview = href && target === '_modal' && status !== ERROR && status !== PLACEHOLDER;
@@ -45,7 +47,8 @@ const Image = (props: ImageProps) => {
     download: shouldDownload,
     target: shouldDownload ? '_self' : target,
     href: !href || target !== '_modal' ? href : undefined,
-    style: { width, paddingBottom: height },
+    style: Object.assign({}, style, { width, paddingBottom: height }),
+    ...rest,
   });
 
   const rootClass = classNames(className, imageStyle.image, {
@@ -69,7 +72,7 @@ const Image = (props: ImageProps) => {
   const defaultErrorClass = classNames(imageStyle.defaultError);
   const maskClass = classNames(imageStyle.previewMask);
 
-  const handleOpenModal = (e: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>) => {
+  const handleOpenGallery = (e: React.MouseEvent<HTMLDivElement | HTMLAnchorElement>) => {
     // 2.0 逻辑为：如果有 onClick 事件，则不会触发 Modal
     if (onClick) {
       // 该 onClick 在 hooks 中固定触发，无需在外部单独触发
@@ -187,7 +190,7 @@ const Image = (props: ImageProps) => {
   // 遮罩层
   const renderMask = () => {
     return (
-      <span className={maskClass} onClick={handleOpenModal}>
+      <span className={maskClass} onClick={handleOpenGallery}>
         {shouldDownload && (
           <svg
             width='16'

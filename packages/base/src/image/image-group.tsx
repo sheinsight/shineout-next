@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { useImageGroup } from '@sheinx/hooks';
 
 const ImageGroup = (props: ImageGroupProps) => {
-  const { jssStyle, children, target = '_modal', pile, showCount = false } = props;
+  const { jssStyle, children, target = '_modal', pile, showCount = false, ...rest } = props;
   const { getGroupItemProps, getPileProps } = useImageGroup(props);
 
   const targetSet = pile ? '_modal' : target;
@@ -25,7 +25,7 @@ const ImageGroup = (props: ImageGroupProps) => {
 
   // 渲染图片组成员
   const renderGroupItem = (Child: React.ReactElement<ImageProps>, index: number) => {
-    const groupItemProps = getGroupItemProps(Child, index, { ...props, onClick: handleItemClick });
+    const groupItemProps = getGroupItemProps(Child, index, { ...rest, onClick: handleItemClick });
     return cloneElement(Child, groupItemProps);
   };
 

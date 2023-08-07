@@ -69,7 +69,10 @@ export interface ImageMagnifyProps {
   lockScroll: (isLock: boolean) => void;
   className?: string;
 }
-export interface ImageBaseProps extends BaseImageProps, Pick<CommonType, 'style' | 'className'> {
+export interface ImageBaseProps
+  extends BaseImageProps,
+    Pick<CommonType, 'style' | 'className'>,
+    Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'onError' | 'placeholder'> {
   jssStyle: {
     image?: ImageClasses;
   };

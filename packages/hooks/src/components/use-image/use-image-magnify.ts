@@ -39,7 +39,7 @@ const useImageMagnify = (props: BaseImageMagnifyProps) => {
     const { clientX, clientY } = e;
     ClientY = clientY;
     ClientX = clientX;
-    if (newStatus === 0) return;
+    if (status === 0) return;
     lockScroll(newStatus === 1);
   };
 

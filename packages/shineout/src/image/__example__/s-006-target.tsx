@@ -24,7 +24,7 @@ export default () => {
       target: '_self',
     },
     {
-      src: 'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',
+      src: 'static/image/s-01.png',
       target: '_download',
     },
   ];

@@ -135,7 +135,7 @@ const useImageGallery = (props: BaseImageGalleryProps) => {
       position,
       lockScroll: handleLockScroll,
       maxWidth: docSize.width - 400,
-      maxHeight: docSize.height - 160,
+      maxHeight: docSize.height - 250,
     };
   };
 
