@@ -51,6 +51,7 @@ const Image = (props: ImageProps) => {
     target: shouldDownload ? '_self' : target,
     href: !href || target !== '_modal' ? href : undefined,
     style: Object.assign({}, style, { width, paddingBottom: height }),
+    onClick,
     ...rest,
   });
 
