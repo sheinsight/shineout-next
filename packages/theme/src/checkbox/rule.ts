@@ -15,7 +15,8 @@ const checkboxRules = {
   iconCommon: [['icon'], ['border-radius', 'gap', 'border-width']],
   iconCircle: [['icon'], ['circle'], ['fill']],
   labelColor: [['label'], ['', 'disabled'], ['font-color']],
-  labelSize: [['label'], ['font-size', 'gap']],
+  labelSize: [['label'], ['font-size']],
+  size: [['', 'block'], ['gap']],
 };
 
 module.exports = {

@@ -137,7 +137,13 @@ export interface CheckboxTokens {
   /**
    * @type {string}
    * @token Margin-24
+   * @description 单选框间距
+   */
+  checkboxGap: string;
+  /**
+   * @type {string}
+   * @token Margin-12
    * @description 单选框undefined间距
    */
-  checkboxLabelGap: string;
+  checkboxBlockGap: string;
 }

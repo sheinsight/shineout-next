@@ -920,7 +920,7 @@ export const tokenToVars = <T extends {}>(
   const TOKEN = tokens || Tokens;
   Object.keys(componentToken).forEach((key) => {
     const Key = key as keyof T & string;
-    const tokenKey = componentToken[Key] as keyof typeof TOKEN;
+    const tokenKey = componentToken[Key] as string;
     token[Key] = cssvar(tokenKey, TOKEN[tokenKey]?.value);
   });
 

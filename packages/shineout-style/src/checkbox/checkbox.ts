@@ -22,7 +22,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     verticalAlign: 'middle',
     cursor: 'pointer',
     boxSizing: 'border-box',
-    marginRight: token.checkboxLabelGap,
+    marginRight: token.checkboxGap,
     '& $input': {
       width: 'auto',
       marginLeft: token.checkboxIconGap,
@@ -85,7 +85,6 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     '$wrapperChecked &::after': {
       content: '" "',
       position: 'relative',
-      zIndex: '10',
       display: 'block',
       border: '2px solid transparent',
       borderWidth: '0 0 2px 2px',
@@ -100,7 +99,6 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     '$wrapperIndeterminate &::after': {
       content: '" "',
       position: 'relative',
-      zIndex: '10',
       display: 'block',
       border: '2px solid transparent',
       height: '0px',
@@ -139,7 +137,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
   groupBlock: {
     '& $wrapper': {
       display: 'block',
-      marginBottom: '8px',
+      marginBottom: token.checkboxBlockGap,
     },
   },
 };

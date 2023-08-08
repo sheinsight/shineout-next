@@ -16,6 +16,7 @@ const Radio = <T,>(props: RadioProps<T>) => {
     }
     return checked;
   };
+
   return (
     <SimpleRadio jssStyle={jssStyle} {...rest} checked={getChecked()} onChange={handleChange}>
       {children}

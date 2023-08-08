@@ -6,10 +6,10 @@ const ReverseDir: Record<string, string> = {
   top: 'bottom',
   bottom: 'top',
 };
-export const getPositionStyle = (position: string, config?: { listMargin?: number }) => {
-  const { listMargin = 0 } = config || {};
-  const mainMargin = `calc(100% + ${listMargin}px`;
-  const halfMargin = `calc(50% + ${listMargin}px`;
+export const getPositionStyle = (position: string, config?: { popupGap?: number }) => {
+  const { popupGap = 0 } = config || {};
+  const mainMargin = `calc(100% + ${popupGap}px`;
+  const halfMargin = `calc(50% + ${popupGap}px`;
   let newStyle: React.CSSProperties = {};
   if (position === 'drop-down') {
     newStyle = {
