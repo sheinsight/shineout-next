@@ -33,7 +33,7 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     if (typeof checked === 'function') {
       return checked(htmlValue);
     }
-    if (typeof checked === 'boolean') return checked;
+    if (typeof checked !== 'undefined') return checked;
     return value === htmlValue;
   };
 
