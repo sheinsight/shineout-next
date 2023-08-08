@@ -36,7 +36,7 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
   mode?: ButtonMode;
   type?: ButtonType;
   children: React.ReactNode;
-  jssStyle: {
+  jssStyle?: {
     buttonGroup?: ButtonGroupClasses;
   };
 }

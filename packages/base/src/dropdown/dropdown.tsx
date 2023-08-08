@@ -244,6 +244,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         parentElement={wrapRef.current}
         absolute={absolute}
         fixedWidth={'min'}
+        popupEl={listRef.current}
       >
         <AnimationList
           onRef={listRef}

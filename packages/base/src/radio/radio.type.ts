@@ -18,14 +18,21 @@ export interface RadioClasses {
   wrapperLarge: string;
   wrapperSmall: string;
   wrapperChecked: string;
+  indicatorWrapper: string;
   indicator: string;
   desc: string;
+  // 组
+  group: string;
+  groupBlock: string;
+  groupButton: string;
 }
 
 export interface SimpleRadioProps
   extends BaseCheckProps,
     Pick<CommonType, 'status' | 'style' | 'className'> {
-  jssStyle: RadioClasses;
+  jssStyle?: {
+    radio?: RadioClasses;
+  };
   children?: React.ReactNode;
 }
 
@@ -37,4 +44,10 @@ export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'chec
   onChange?: (value: T) => void;
   checked?: boolean | ((d: T) => boolean);
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+  // 内部属性用于封装按钮单选框样式
+  renderContent?: (info: {
+    content: React.ReactNode;
+    disabled?: boolean;
+    checked?: boolean;
+  }) => React.ReactNode;
 }

@@ -18,6 +18,7 @@ export * from './common/use-previous';
 export * from './common/use-render';
 export * from './common/use-safe-state';
 export * from './common/use-toggle';
+export * from './common/use-position-style';
 
 //components
 export * from './components/use-input';

@@ -24,7 +24,6 @@ const App: React.FC = () => (
         </Radio>
       ))}
     </Radio.Group>
-    <Radio.Group data={data} keygen format={(d) => d} renderItem={(d) => d} />
   </>
 );
 export default App;

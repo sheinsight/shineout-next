@@ -3,7 +3,7 @@ import { KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { CheckboxStyle } from './checkbox.type';
 
-export interface CheckboxGroupProps<DataItem, Value>
+export interface CheckboxGroupProps<DataItem, Value extends any[] | string>
   extends Pick<CommonType, 'className' | 'size' | 'style'> {
   jssStyle: CheckboxStyle;
   /**
@@ -17,8 +17,9 @@ export interface CheckboxGroupProps<DataItem, Value>
    * @default  d => d
    */
   renderItem?: ObjectKey<DataItem> | ((data: DataItem, index?: number) => ReactNode);
-  prediction?: (value: Value, data: DataItem) => boolean;
-  format?: ObjectKey<DataItem> | ((data: DataItem) => Value);
+  prediction?: (value: Value[number], data: DataItem) => boolean;
+  format?: ObjectKey<DataItem> | ((data: DataItem) => Value[number]);
+  separator?: string;
   keygen: KeygenType<DataItem>;
   /**
    * @en The default is horizontal layout and setting the block property can changed it to be vertical layout.

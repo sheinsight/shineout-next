@@ -52,8 +52,9 @@ const checkboxTokenValue = {
   label: {
     font: { color: 'Neutral-text-5', size: '14/regular' },
     disabled: { font: { color: 'Neutral-text-2' } },
-    gap: 'Margin-24',
   },
+  gap: 'Margin-24',
+  block: { gap: 'Margin-12' },
 };
 
 const checkboxTokenExtraValue = {};
