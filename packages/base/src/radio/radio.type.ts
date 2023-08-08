@@ -25,9 +25,6 @@ export interface RadioClasses {
   group: string;
   groupBlock: string;
   groupButton: string;
-  groupOutline: string;
-  groupSmall: string;
-  groupLarge: string;
 }
 
 export interface SimpleRadioProps
@@ -47,4 +44,10 @@ export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'chec
   onChange?: (value: T) => void;
   checked?: boolean | ((d: T) => boolean);
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+  // 内部属性用于封装按钮单选框样式
+  renderContent?: (info: {
+    content: React.ReactNode;
+    disabled?: boolean;
+    checked?: boolean;
+  }) => React.ReactNode;
 }

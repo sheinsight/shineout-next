@@ -26,7 +26,8 @@ const checkbox: CheckboxTokens = {
   checkboxLabelFontColor: 'Neutral-text-5',
   checkboxLabelDisabledFontColor: 'Neutral-text-2',
   checkboxLabelFontSize: '14/regular',
-  checkboxLabelGap: 'Margin-24',
+  checkboxGap: 'Margin-24',
+  checkboxBlockGap: 'Margin-12',
 };
 
 export default checkbox;

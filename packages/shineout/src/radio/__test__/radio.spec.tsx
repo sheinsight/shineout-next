@@ -1,15 +1,15 @@
-import { fireEvent, render, screen, cleanup } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import Radio from '..';
 import { Form } from 'shineout';
 import mountTest from '../../tests/mountTest';
-import RadioBase from '../__example__/001-base';
-import RadioGroup from '../__example__/002-group';
+import RadioBase from '../__example__/002-group-0';
+import RadioGroup from '../__example__/002-group-1';
 import RadioBlock from '../__example__/003-block';
 import RadioButton from '../__example__/004-button';
 import RadioButtonOutline from '../__example__/005-button-outline';
 import RadioSize from '../__example__/006-button-size';
 import RadioDisabled from '../__example__/007-disabled';
-import RadioCancel from '../__example__/009-cancel';
+import RadioCancel from '../__example__/003-cancel';
 import { RadioGroupProps } from '../group.type';
 import { RefAttributes } from 'react';
 

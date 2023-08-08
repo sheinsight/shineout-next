@@ -76,6 +76,18 @@ export interface RadioTokens {
   radioIconActivedisabledColor: string;
   /**
    * @type {string}
+   * @token Margin-24
+   * @description 单选框undefined
+   */
+  radioGap: string;
+  /**
+   * @type {string}
+   * @token Margin-12
+   * @description 单选框undefinedundefined
+   */
+  radioBlockGap: string;
+  /**
+   * @type {string}
    * @token Margin-8
    * @description 单选框图标undefined
    */
@@ -110,10 +122,4 @@ export interface RadioTokens {
    * @description 单选框undefined字体字号
    */
   radioLabelFontSize: string;
-  /**
-   * @type {string}
-   * @token Margin-24
-   * @description 单选框undefinedundefined
-   */
-  radioLabelGap: string;
 }

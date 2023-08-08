@@ -23,7 +23,25 @@ const data: RadioGroupItem[] = [
 ];
 
 const App: React.FC = () => (
-  <Radio.Group keygen='id' block data={data} format={'id'} defaultValue={3} renderItem='color' />
+  <>
+    <Radio.Group
+      style={{}}
+      keygen='id'
+      data={data}
+      format={'id'}
+      defaultValue={3}
+      renderItem='color'
+    />
+    <Radio.Group
+      style={{ display: 'inline-block', marginTop: 24 }}
+      block
+      keygen='id'
+      data={data}
+      format={'id'}
+      defaultValue={3}
+      renderItem='color'
+    />
+  </>
 );
 
 export default App;

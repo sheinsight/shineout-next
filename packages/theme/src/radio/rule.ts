@@ -12,10 +12,11 @@ const radioRules = {
     ['', 'disabled', 'hover', 'active', 'activedisabled'],
     ['border-color', 'background-color', 'color'],
   ],
+  size: [['', 'block'], ['gap']],
   iconCommon: [['icon'], ['gap', 'border-width']],
   iconCircle: [['icon'], ['circle'], ['fill']],
   labelColor: [['label'], ['', 'disabled'], ['font-color']],
-  labelSize: [['label'], ['font-size', 'gap']],
+  labelSize: [['label'], ['font-size']],
 };
 
 module.exports = {

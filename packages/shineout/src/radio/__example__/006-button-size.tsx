@@ -1,7 +1,7 @@
 /**
- * cn -
+ * cn - 按钮单选框尺寸
  *    -- 设置 size 可以控制按钮样式的大小
- * en -
+ * en - Button size
  *    -- size to set button style size
  */
 import React from 'react';

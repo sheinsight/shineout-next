@@ -4,13 +4,14 @@ export interface UnMatchedData {
   IS_NOT_MATCHED_VALUE: boolean;
   value: any;
 }
-export interface UseListProps<DataItem, Value extends any[]> {
+export interface UseListProps<DataItem, Value extends string | any[]> {
   data: DataItem[];
   disabled?: boolean | ((data: DataItem) => boolean);
   value?: Value;
   onChange: (value: Value, data: DataItem | DataItem[], checked: boolean) => void;
   format?: ObjectKey<DataItem> | ((data: DataItem) => Value[number]);
   prediction?: (value: Value[number], Data: DataItem) => boolean;
+  separator?: string;
 }
 
 export interface UseListSingleProps<DataItem, Value>

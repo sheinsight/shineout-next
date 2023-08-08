@@ -43,10 +43,11 @@ const radioTokenValue = {
     gap: 'Margin-8',
     circle: { fill: 'Neutral-fill-2' },
   },
+  gap: 'Margin-24',
+  block: { gap: 'Margin-12' },
   label: {
     font: { color: 'Neutral-text-5', size: '14/regular' },
     disabled: { font: { color: 'Neutral-text-2' } },
-    gap: 'Margin-24',
   },
 };
 

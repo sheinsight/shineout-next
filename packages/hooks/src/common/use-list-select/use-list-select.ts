@@ -7,11 +7,27 @@ const isUnMatchedData = (data: any): data is UnMatchedData => {
   return data && data.IS_NOT_MATCHED_VALUE;
 };
 
-const useListSelect = <DataItem, Value extends any[]>(props: UseListProps<DataItem, Value>) => {
+const useListSelect = <DataItem, Value extends string | any[]>(
+  props: UseListProps<DataItem, Value>,
+) => {
   type ValueItem = Value[number];
-  const valueArr = props.value || ([] as unknown as Value);
+
+  let valueArr: ValueItem[];
+  if (typeof props.separator === 'string' && props.value) {
+    if (typeof props.value === 'string') {
+      valueArr = (props.value || '').split(props.separator);
+    } else {
+      console.error('use-list-select: separator is string, but value is not string');
+      valueArr = props.value;
+    }
+  } else {
+    valueArr = (props.value as ValueItem[]) || [];
+  }
+
+  console.log('valueArr', valueArr);
+
   const { current: context } = React.useRef({
-    lastValue: [] as ValueItem[],
+    lastValue: undefined as Value | undefined,
     valueMap: new Map<ValueItem, boolean>(),
     lastData: [] as DataItem[],
     dataMap: new Map<ValueItem, DataItem>(),
@@ -29,6 +45,7 @@ const useListSelect = <DataItem, Value extends any[]>(props: UseListProps<DataIt
   };
   const getDataMap = () => {
     if (props.data === context.lastData) return context.valueMap;
+
     const map = new Map<ValueItem, DataItem>();
     for (let i = 0; i < props.data.length; i++) {
       const item = props.data[i];
@@ -40,14 +57,14 @@ const useListSelect = <DataItem, Value extends any[]>(props: UseListProps<DataIt
   };
 
   const getValueMap = () => {
-    if (valueArr === context.lastValue) return context.valueMap;
+    if (props.value === context.lastValue) return context.valueMap;
     const map = new Map<ValueItem, boolean>();
     for (let i = 0; i < valueArr.length; i++) {
       const item = valueArr[i];
       map.set(item, true);
     }
     context.valueMap = map;
-    context.lastValue = valueArr;
+    context.lastValue = props.value;
     return map;
   };
 
@@ -64,10 +81,11 @@ const useListSelect = <DataItem, Value extends any[]>(props: UseListProps<DataIt
         values.push(formatData(raws[i]));
       }
     }
-    const before = (config.overwrite ? [] : valueArr || []) as Value;
+    const before = (config.overwrite ? [] : valueArr || []) as ValueItem[];
     if (values.length) {
       const newValue = config.unshift ? values.concat(before) : before.concat(values);
-      props.onChange(newValue as Value, data, true);
+      const valueResult = props.separator ? newValue.join(props.separator) : newValue;
+      props.onChange(valueResult as Value, data, true);
     }
   };
 
@@ -112,7 +130,8 @@ const useListSelect = <DataItem, Value extends any[]>(props: UseListProps<DataIt
         values.push(val);
       }
     }
-    props.onChange(values as Value, data as DataItem, false);
+    const valueResult = props.separator ? values.join(props.separator) : values;
+    props.onChange(valueResult as Value, data as DataItem, false);
   };
   const check = (raw: DataItem) => {
     if (props.prediction) {

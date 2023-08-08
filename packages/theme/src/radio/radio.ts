@@ -16,13 +16,14 @@ const radio: RadioTokens = {
   radioIconActivedisabledBorderColor: 'Brand-3',
   radioIconActivedisabledBackgroundColor: 'Neutral-fill-1',
   radioIconActivedisabledColor: 'Brand-3',
+  radioGap: 'Margin-24',
+  radioBlockGap: 'Margin-12',
   radioIconGap: 'Margin-8',
   radioIconBorderWidth: 'Border-2',
   radioIconCircleFill: 'Neutral-fill-2',
   radioLabelFontColor: 'Neutral-text-5',
   radioLabelDisabledFontColor: 'Neutral-text-2',
   radioLabelFontSize: '14/regular',
-  radioLabelGap: 'Margin-24',
 };
 
 export default radio;

@@ -22,6 +22,7 @@ const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem
     value: inputAbleProps.value,
     onChange: inputAbleProps.onChange,
     prediction: props.prediction,
+    separator: props.separator,
     disabled,
     format: props.format,
     keygen: props.keygen,
