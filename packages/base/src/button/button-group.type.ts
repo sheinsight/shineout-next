@@ -3,6 +3,7 @@ import { ButtonMode, ButtonType } from '@sheinx/hooks';
 
 export interface ButtonGroupClasses {
   group: string;
+  groupItem: string;
 
   // disabled: string;
   // loading: string;
@@ -37,6 +38,6 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
   type?: ButtonType;
   children: React.ReactNode;
   jssStyle: {
-    buttonGroup?: ButtonGroupClasses;
+    button?: ButtonGroupClasses;
   };
 }
