@@ -55,39 +55,38 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
     return '';
   };
 
-  const renderContent = React.useCallback(
-    (info: { content: React.ReactNode; checked?: boolean; disabled?: boolean }) => {
-      const { content, checked, disabled } = info;
-      const checkedProps = {
-        mode: button === 'outline' ? 'outline' : undefined,
-        type: 'primary' as 'primary',
-      } as any;
-      const noCheckedProps = {
-        mode: 'outline' as 'outline',
-        type: 'secondary' as 'secondary',
-      };
-      if (button) {
-        return (
-          <Button
-            jssStyle={jssStyle}
-            size={size}
-            disabled={disabled}
-            {...(checked ? checkedProps : noCheckedProps)}
-          >
-            {content}
-          </Button>
-        );
-      }
-      return content;
-    },
-    [],
-  );
+  const renderRadio = React.useCallback((info: any): React.ReactElement => {
+    const { children, content, checked, disabled, rootProps, inputProps } = info;
+    const checkedProps = {
+      mode: button === 'outline' ? 'outline' : undefined,
+      type: 'primary' as 'primary',
+    } as any;
+    const noCheckedProps = {
+      mode: 'outline' as 'outline',
+      type: 'secondary' as 'secondary',
+    };
+    if (button) {
+      return (
+        <Button
+          jssStyle={jssStyle}
+          size={size}
+          disabled={disabled}
+          {...(checked ? checkedProps : noCheckedProps)}
+          {...rootProps}
+        >
+          <input type='radio' {...inputProps} />
+          {children}
+        </Button>
+      );
+    }
+    return content;
+  }, []);
 
   const providerValue = {
     checked: isChecked,
     onChange: handleItemChange,
     disabled,
-    renderContent,
+    renderRadio,
   };
   const groupClass = classNames(
     className,
@@ -109,7 +108,7 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
             key={util.getKey(keygen, d, i)}
             htmlValue={i}
             onChange={handleIndexChange}
-            renderContent={renderContent}
+            renderRadio={renderRadio}
           >
             {getContent(d, i)}
           </Radio>

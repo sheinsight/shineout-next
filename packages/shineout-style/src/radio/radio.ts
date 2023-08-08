@@ -3,14 +3,10 @@ import token from '@sheinx/theme';
 
 export type RadioClass =
   | 'wrapper'
-  | 'wrapperSmall'
-  | 'wrapperLarge'
-  | 'wrapperError'
   | 'wrapperDisabled'
   | 'wrapperChecked'
   | 'indicatorWrapper'
   | 'indicator'
-  // | '@keyframes so-checkinput-focus'
   | 'desc'
   | 'group'
   | 'groupBlock'
@@ -40,9 +36,6 @@ const radioStyle: JsStyles<RadioClass> = {
     marginRight: token.radioGap,
   },
   wrapperChecked: {},
-  wrapperSmall: {},
-  wrapperLarge: {},
-  wrapperError: {},
   wrapperDisabled: {
     cursor: 'not-allowed',
   },

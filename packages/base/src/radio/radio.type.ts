@@ -11,12 +11,6 @@ export interface RadioClasses {
    * 当 input 禁用时最外层class
    */
   wrapperDisabled: string;
-  /**
-   * 当 status 为 error 时
-   */
-  wrapperError: string;
-  wrapperLarge: string;
-  wrapperSmall: string;
   wrapperChecked: string;
   indicatorWrapper: string;
   indicator: string;
@@ -27,13 +21,15 @@ export interface RadioClasses {
   groupButton: string;
 }
 
-export interface SimpleRadioProps
-  extends BaseCheckProps,
-    Pick<CommonType, 'status' | 'style' | 'className'> {
+export interface SimpleRadioProps extends BaseCheckProps, Pick<CommonType, 'style' | 'className'> {
   jssStyle?: {
     radio?: RadioClasses;
   };
   children?: React.ReactNode;
+  /**
+   * @private 内部属性用于封装按钮单选框样式
+   */
+  renderRadio?: (...args: any) => React.ReactElement;
 }
 
 export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'checked'> {
@@ -44,10 +40,4 @@ export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'chec
   onChange?: (value: T) => void;
   checked?: boolean | ((d: T) => boolean);
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
-  // 内部属性用于封装按钮单选框样式
-  renderContent?: (info: {
-    content: React.ReactNode;
-    disabled?: boolean;
-    checked?: boolean;
-  }) => React.ReactNode;
 }
