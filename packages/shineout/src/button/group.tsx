@@ -1,11 +1,11 @@
 import { ButtonGroupProps } from './group.type';
 import { ButtonGroup as UnStyledButtonGroup } from '@sheinx/base';
-import { useButtonGroupStyle } from '@sheinx/shineout-style';
+import { useButtonStyle } from '@sheinx/shineout-style';
 import { useMemo } from 'react';
 
 const ButtonGroup = (props: ButtonGroupProps) => {
-  const buttonGroupStyle = useButtonGroupStyle();
-  const jssStyle = useMemo(() => ({ buttonGroup: buttonGroupStyle }), [buttonGroupStyle]);
+  const buttonStyle = useButtonStyle();
+  const jssStyle = useMemo(() => ({ button: buttonStyle }), [buttonStyle]);
   return <UnStyledButtonGroup {...props} jssStyle={jssStyle} />;
 };
 

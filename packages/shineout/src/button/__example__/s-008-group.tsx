@@ -10,10 +10,8 @@ import { Icon02, Icon03 } from './static/icon';
 
 export default () => {
   const iconWarpperStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 4,
+    display: 'inline-flex',
+    lineHeight: '22px',
   };
 
   return (
