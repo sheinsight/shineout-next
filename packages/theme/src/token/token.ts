@@ -152,6 +152,7 @@ const Token: Tokens = {
   'Border-1': '1px',
   'Border-2': '2px',
   'Border-3': '3px',
+  Size: '2px',
   Transparent: 'transparent',
 };
 

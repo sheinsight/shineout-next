@@ -1042,4 +1042,11 @@ export interface Tokens {
    * @description 较粗边框宽度
    */
   Transparent: string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '2px'
+   * @description 尺寸基数
+   */
+  Size: string;
 }

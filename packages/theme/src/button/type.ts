@@ -1372,10 +1372,16 @@ export interface ButtonTokens {
   buttonPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-5
    * @description 按钮内边距（垂直方向）
    */
   buttonPaddingY: string;
+  /**
+   * @type {string}
+   * @token Size-16
+   * @description 按钮高度
+   */
+  buttonHeight: string;
   /**
    * @type {string}
    * @token 12/regular
@@ -1396,10 +1402,16 @@ export interface ButtonTokens {
   buttonSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Padding-2
    * @description 按钮小尺寸内边距（垂直方向）
    */
   buttonSmallPaddingY: string;
+  /**
+   * @type {string}
+   * @token Size-12
+   * @description 按钮小尺寸高度
+   */
+  buttonSmallHeight: string;
   /**
    * @type {string}
    * @token 16/regular
@@ -1420,10 +1432,16 @@ export interface ButtonTokens {
   buttonLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Padding-8
    * @description 按钮大尺寸内边距（垂直方向）
    */
   buttonLargePaddingY: string;
+  /**
+   * @type {string}
+   * @token Size-20
+   * @description 按钮大尺寸高度
+   */
+  buttonLargeHeight: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
