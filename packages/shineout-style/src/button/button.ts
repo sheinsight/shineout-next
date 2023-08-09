@@ -59,7 +59,7 @@ const button = (type: ButtonType, styles: ButtonStyleType) => ({
   },
 });
 const beforeLine = () => ({
-  '&::before': {
+  '&:not(&)::before': {
     position: 'absolute',
     content: '" "',
     height: '50%',
@@ -89,7 +89,7 @@ const outlineBeforeLine = (type: ButtonType, styles: ButtonStyleType) => ({
     width: 1,
     background: Token[`button${type}${styles}BorderColor`],
   },
-  '&:hover': {
+  '&:not(:disabled):hover': {
     // before
     '&::before': {
       height: 'calc(100% + 2px)',
@@ -118,6 +118,27 @@ const outlineBeforeLine = (type: ButtonType, styles: ButtonStyleType) => ({
         '&::before': {
           background: Token[`button${type}${styles}ActiveBorderColor`],
         },
+      },
+    },
+  },
+
+  '&$primary,&$success,&$warning,&$danger,$secondary': {
+    '&::before': {
+      height: 'calc(100% + 2px)',
+      top: -1,
+      left: -1,
+      width: 1,
+      bottom: -1,
+      background: `${Token[`button${type}${styles}BorderColor`]}`,
+    },
+    '& + :not(&)': {
+      '&::before': {
+        height: 'calc(100% + 2px)',
+        top: -1,
+        left: -1,
+        width: 1,
+        bottom: -1,
+        background: Token[`button${type}${styles}BorderColor`],
       },
     },
   },
@@ -304,6 +325,13 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   href: {
     textDecoration: 'none',
     boxSizing: 'border-box',
+    color: 'red',
+    '$primary&': {
+      color: 'blue',
+    },
+    '$disabled&': {
+      color: 'blue',
+    },
     '&$danger': {
       ...button('Danger', ''),
     },
@@ -328,7 +356,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     cursor: 'not-allowed',
 
     '&$default': {
-      ...loading('Default', ''),
+      ...loading('Secondary', ''),
     },
     '&$primary': {
       ...loading('Primary', ''),
@@ -427,7 +455,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     },
 
     // outline 型 button
-    '&$outline $button': {
+    '& $outline': {
       position: 'relative',
       '&::before': {
         transition: 'all 0.3s',
@@ -461,7 +489,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     },
 
     // text 型 button
-    '&$text $button': {
+    '& $text': {
       position: 'relative',
       ...textBeforeLine(),
     },

@@ -18,10 +18,6 @@ const Group = (props: ButtonGroupProps) => {
   const groupClass = classNames(
     className,
     buttonStyle?.group,
-    // buttonStyle[type || 'default'],
-    modeSetted === 'text' && buttonStyle.text,
-    modeSetted === 'dashed' && buttonStyle.dashed,
-    modeSetted === 'outline' && buttonStyle.outline,
     shape === 'round' && buttonStyle.round,
     size === 'small' && buttonStyle.small,
     size === 'large' && buttonStyle.large,
@@ -35,9 +31,10 @@ const Group = (props: ButtonGroupProps) => {
         const Child = child as React.ReactElement<ButtonProps>;
         return cloneElement<ButtonProps>(Child, {
           size,
-          mode: modeSetted,
+          mode: modeSetted || Child.props.mode,
           shape: shapeSetted,
           type: Child.props.type || type,
+          className: classNames(Child.props.className),
         });
       })}
     </div>

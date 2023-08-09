@@ -4,6 +4,7 @@ import React from 'react';
 
 export interface ButtonClasses {
   button: string;
+  buttouGroupItem: string;
 
   // 形状
   round: string;
