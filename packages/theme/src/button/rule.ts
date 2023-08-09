@@ -1,7 +1,7 @@
 const buttonRules = {
   color: [
     ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],
-    ['', 'outline', 'text', 'dash'],
+    ['', 'outline', 'text', 'dashed'],
     ['', 'disabled', 'hover', 'active', 'focus'],
     ['font-color', 'background-color', 'border-color'],
   ],
@@ -11,7 +11,7 @@ const buttonRules = {
   ],
   group: [
     ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],
-    ['', 'outline', 'text', 'dash'],
+    ['', 'outline', 'text', 'dashed'],
     ['split'],
     ['', 'disabled', 'hover', 'active', 'focus'],
     ['background-color'],
