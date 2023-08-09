@@ -7,8 +7,21 @@
 import React from 'react';
 import { Radio } from 'shineout';
 
-const data: string[] = ['red', 'orange', 'yellow'];
+const data = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-const App: React.FC = () => <Radio.Group button='outline' keygen data={data} defaultValue='red' />;
+const App: React.FC = () => (
+  <>
+    <Radio.Group button='outline' keygen data={data} defaultValue='Wednesday' />
+    <br />
+    <Radio.Group
+      button='outline'
+      keygen
+      data={data}
+      defaultValue='Wednesday'
+      disabled
+      style={{ marginTop: 24 }}
+    />
+  </>
+);
 
 export default App;
