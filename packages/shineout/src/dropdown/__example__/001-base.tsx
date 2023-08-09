@@ -10,10 +10,10 @@ import { Dropdown, TYPE } from 'shineout';
 type DropdownItem = TYPE.Dropdown.Item;
 const data: DropdownItem[] = [
   {
-    content: 'SubmenuSubmenuSubmenuSubm',
+    content: 'Submenu',
     children: [
       {
-        content: 'Link to GoogleLink to GoogleLink to GoogleLink to GoogleLink to Google',
+        content: 'Link to Google',
         target: '_blank',
         url: 'https://google.com',
       },
@@ -36,26 +36,10 @@ const data: DropdownItem[] = [
 
 const App: React.FC = () => {
   return (
-    <div
-      style={{
-        width: 300,
-        height: 300,
-        position: 'relative',
-        background: '#ccc',
-        overflow: 'auto',
-      }}
-      id='nice'
-    >
-      <div style={{ width: 600 }}></div>
-      <Dropdown
-        style={{ marginLeft: 200 }}
-        position={'bottom-right'}
-        absolute={() => document.querySelector('#nice')}
-        placeholder='Dropdown'
-        data={data}
-        onClick={console.log}
-      />
-    </div>
+    <>
+      <Dropdown placeholder='Dropdown' data={data} onClick={console.log} />
+      <Dropdown placeholder='Dropdown' data={data} disabled />
+    </>
   );
 };
 

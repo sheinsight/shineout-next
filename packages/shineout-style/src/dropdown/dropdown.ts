@@ -36,6 +36,7 @@ const dropdown: JsStyles<DropDownClass> = {
     fontWeight: 400,
     minWidth: '100%',
     zIndex: 1000,
+    textAlign: 'left',
     fontSize: token.dropdownListFontSize,
     border: `${token.dropdownListBorderWidth} solid ${token.dropdownListBorderColor}`,
     borderRadius: token.dropdownListBorderRadius,

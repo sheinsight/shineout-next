@@ -1,10 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import Button from '../button';
 import { DropdownNode, MenuPosition, SimpleDropdownProps } from './dropdown.type';
-import { useClickAway, util } from '@sheinx/hooks';
+import { usePopup, util } from '@sheinx/hooks';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
-import { useControlOpen } from '../common/use-control-open';
 import Caret from '../icons/caret';
 import classNames from 'classnames';
 import Item from './Item';
@@ -26,15 +25,6 @@ const positionMap = {
 };
 
 const Dropdown = (props: SimpleDropdownProps) => {
-  const { open, setOpen } = useControlOpen({ open: props.open });
-  const { current: context } = useRef({
-    closeTimer: null as NodeJS.Timeout | null,
-  });
-  const [position, setPosition] = useState<MenuPosition>(
-    props.position && props.position !== 'auto' ? props.position : 'bottom-left',
-  );
-  const wrapRef = useRef<HTMLDivElement | null>(null);
-  const listRef = useRef<HTMLDivElement | null>(null);
   const {
     placeholder,
     onClick,
@@ -51,6 +41,14 @@ const Dropdown = (props: SimpleDropdownProps) => {
     className,
     size,
   } = props;
+
+  const { open, position, targetRef, popupRef, getTargetProps, closePop, openPop } = usePopup({
+    open: props.open,
+    onCollapse: props.onCollapse,
+    disabled,
+    trigger,
+    position: props.position,
+  });
   // buttonProps
   let { type, text, outline, mode } = props;
 
@@ -59,67 +57,6 @@ const Dropdown = (props: SimpleDropdownProps) => {
     type = 'secondary';
     mode = 'text';
   }
-
-  const handleFocus = () => {
-    const { onCollapse } = props;
-    const wrapper = wrapRef.current;
-    if (context.closeTimer) clearTimeout(context.closeTimer);
-    if (open) return;
-    if (props.position === 'auto') {
-      const newPosition = util.getMenuPosition(wrapper);
-      if (newPosition !== position) setPosition(newPosition);
-    }
-    if (onCollapse) {
-      onCollapse(true);
-    }
-    setOpen(true);
-  };
-
-  const handleBlur = (delay = 0) => {
-    if (!open) return;
-    if (context.closeTimer) clearTimeout(context.closeTimer);
-    context.closeTimer = setTimeout(() => {
-      const { onCollapse } = props;
-      if (onCollapse) {
-        onCollapse(false);
-      }
-      setOpen(false);
-    }, delay);
-  };
-
-  const handleHoverToggle = (show: boolean) => {
-    if (disabled) return;
-    if (trigger === 'click') return;
-    if (show) {
-      handleFocus();
-    } else {
-      handleBlur(200);
-    }
-  };
-
-  const handleClickToggle = () => {
-    if (disabled) return;
-    if (trigger === 'hover') return;
-    if (open) {
-      handleBlur();
-    } else {
-      handleFocus();
-    }
-  };
-
-  const handleMouseEnter = () => {
-    handleHoverToggle(true);
-  };
-
-  const handleMouseLeave = () => {
-    handleHoverToggle(false);
-  };
-
-  useClickAway({
-    onClickAway: () => handleBlur(),
-    target: [wrapRef, listRef],
-    effect: open,
-  });
 
   const renderButton = () => {
     const caret = (
@@ -147,7 +84,6 @@ const Dropdown = (props: SimpleDropdownProps) => {
             !!open && jssStyle?.dropdown?.itemActive,
           )}
           data-role='item'
-          onClick={!disabled ? handleFocus : undefined}
         >
           {child}
         </a>
@@ -157,7 +93,6 @@ const Dropdown = (props: SimpleDropdownProps) => {
       <Button
         disabled={disabled}
         jssStyle={jssStyle}
-        onClick={handleClickToggle}
         outline={outline}
         className={classNames(
           jssStyle?.dropdown?.button,
@@ -183,7 +118,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       const { children } = d;
       const group = d.group ? (
         <div key={'group'} className={jssStyle?.dropdown?.optionGroup}>
-          {d.group}{' '}
+          {d.group}
         </div>
       ) : null;
       const divider = d.divider ? (
@@ -211,7 +146,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           renderItem={renderItem}
           columns={columns}
           width={width}
-          handleBlur={handleBlur}
+          handleBlur={closePop}
         />
       );
       return (
@@ -224,6 +159,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     });
   };
 
+  const targetProps = getTargetProps();
   return (
     <div
       className={classNames(
@@ -231,23 +167,22 @@ const Dropdown = (props: SimpleDropdownProps) => {
         jssStyle?.dropdown?.wrapper,
         !isSub && open && jssStyle?.dropdown?.open,
       )}
-      ref={wrapRef}
       style={style}
       data-position={position}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      ref={targetRef}
+      {...targetProps}
+      onClick={isSub ? openPop : targetProps.onClick}
     >
       {renderButton()}
       <AbsoluteList
         position={position}
         focus={open}
-        parentElement={wrapRef.current}
+        parentElement={targetRef.current}
         absolute={absolute}
         fixedWidth={'min'}
-        popupEl={listRef.current}
+        popupEl={popupRef.current}
       >
         <AnimationList
-          onRef={listRef}
           display={columns ? 'grid' : 'block'}
           jssStyle={jssStyle}
           className={classNames(
@@ -263,6 +198,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           type={'fade'}
           duration={'fast'}
           show={open}
+          onRef={popupRef as any}
         >
           {renderList()}
         </AnimationList>
