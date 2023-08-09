@@ -907,6 +907,12 @@ const Tokens = {
     value: 'transparent',
     describe: '较粗边框宽度',
   },
+  Size: {
+    type: 'string',
+    name: '尺寸基数',
+    value: '2',
+    describe: '尺寸基数，以乘积形式生成所有尺寸，比如：Size * 4px = 8px',
+  },
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -918,10 +924,12 @@ export const tokenToVars = <T extends {}>(
     [key in keyof T]?: string;
   } = {};
   const TOKEN = tokens || Tokens;
+  const SIZE = TOKEN['Size'].value;
+
   Object.keys(componentToken).forEach((key) => {
     const Key = key as keyof T & string;
     const tokenKey = componentToken[Key] as string;
-    token[Key] = cssvar(tokenKey, TOKEN[tokenKey]?.value);
+    token[Key] = cssvar(tokenKey, TOKEN[tokenKey]?.value, SIZE);
   });
 
   return token as T;

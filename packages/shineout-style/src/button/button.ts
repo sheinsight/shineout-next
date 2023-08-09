@@ -197,6 +197,8 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     transition: 'all 0.15s ease-in-out',
     fontFamily: 'inherit',
 
+    height: Token.buttonHeight,
+
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,
     },
@@ -218,7 +220,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
 
   small: {
-    height: `28px`,
+    height: Token.buttonSmallHeight,
 
     fontSize: Token.buttonSmallFontSize,
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
@@ -230,7 +232,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
 
   large: {
-    height: `40px`,
+    height: Token.buttonLargeHeight,
 
     fontSize: Token.buttonLargeFontSize,
     padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
