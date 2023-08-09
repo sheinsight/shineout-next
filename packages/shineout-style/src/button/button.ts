@@ -59,7 +59,7 @@ const button = (type: ButtonType, styles: ButtonStyleType) => ({
   },
 });
 const beforeLine = () => ({
-  '&:not(&)::before': {
+  '&::before': {
     position: 'absolute',
     content: '" "',
     height: '50%',
