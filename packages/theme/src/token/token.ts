@@ -17,8 +17,8 @@ const Token: Tokens = {
   'Danger-2': '#FFD7CF',
   'Danger-3': '#FFBBB1',
   'Danger-4': '#FF7A71',
-  'Danger-5': '#FF4D50',
-  'Danger-6': '#CC3D3A',
+  'Danger-5': '#FF7A71',
+  'Danger-6': '#FF4D50',
   'Tangerine-1': '#FFF0E5',
   'Tangerine-2': '#FED4B9',
   'Tangerine-3': '#FDB58F',
@@ -161,7 +161,7 @@ const Token: Tokens = {
   'Border-3': '3px',
   Transparent: 'transparent',
   'Mask-fill-1': 'rgba(2, 11, 24, 0.3)',
-  Size: '2px',
+  Size: '2',
 };
 
 export default Token;
