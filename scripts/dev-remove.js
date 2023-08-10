@@ -10,12 +10,13 @@ const chunkDir = path.join(__dirname, '../docs', 'chunk');
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const baseDir = path.join(__dirname, '../packages', 'base', 'src');
 const shineoutStyleDir = path.join(__dirname, '../packages', 'shineout-style', 'src');
-const cssVarDir = path.join(__dirname, '../packages', 'shineout-style', 'src', 'cssvar');
+const themeDir = path.join(__dirname, '../packages', 'theme', 'src');
 
 const whiteList = {
-  shineout: ['@types', 'hooks', 'index.ts'],
+  shineout: ['@types', 'hooks', 'index.ts', 'tests', 'type.ts'],
   'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts', 'cssvar'],
-  base: ['types', 'icons', 'index.ts'],
+  base: ['types', 'icons', 'index.ts', 'common'],
+  theme: ['index.ts', 'config.ts', 'utils', 'token'],
 };
 
 if (!component) {
@@ -26,6 +27,28 @@ if (!component) {
 if (!componentNameReg.test(component)) {
   console.log('\x1b[31m%s\x1b[0m', '[ERROR] Component names cannot include special characters.');
   return;
+}
+
+function rmTheme() {
+  fs.rmSync(path.join(themeDir, component), { recursive: true, force: true });
+  updateTheme();
+}
+
+function updateTheme() {
+  const fileName = 'index.ts';
+  const targetPath = path.join(__dirname, '../packages', 'theme', 'src');
+  const templatePath = path.join(__dirname, `./ejs/theme.index.ts.ejs`);
+  const files = fs.readdirSync(targetPath, 'utf-8').filter((i) => !whiteList.theme.includes(i));
+
+  writeTemplate({
+    fileName,
+    targetPath,
+    templatePath,
+    ejsVars: {
+      files,
+    },
+    needPrettier: true,
+  });
 }
 
 function rmBase() {
@@ -99,35 +122,20 @@ function updateShineoutStyle() {
     },
     needPrettier: true,
   });
-
-  const cssVarFiles = fs
-    .readdirSync(cssVarDir, 'utf-8')
-    .filter((i) => !['common.ts', 'index.ts'].includes(i))
-    .map((file) => file.split('.')[0]);
-
-  const cssVarTemplatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.index.ts.ejs`);
-
-  writeTemplate({
-    fileName,
-    targetPath: cssVarDir,
-    templatePath: cssVarTemplatePath,
-    ejsVars: {
-      files: cssVarFiles,
-    },
-    needPrettier: true,
-  });
 }
 
 function rmComponent() {
   rmBase();
   rmShineout();
   rmShineoutStyle();
+  rmTheme();
 }
 
 function updatePackages() {
   updateBase();
   updateShineout();
   updateShineoutStyle();
+  updateTheme();
 }
 
 rmComponent();

@@ -1,6 +1,6 @@
 const path = require('path');
 const { writeTemplate } = require('./write-template');
-const templatePath = path.resolve(__dirname, '../ejs/theme/token.ejs');
+const templatePath = path.resolve(__dirname, '../ejs/token.ejs');
 
 function keysToLowerCase(obj) {
   const result = {};

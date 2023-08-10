@@ -1,11 +1,15 @@
-// import <%= component %>Var from './<%= component %>.var';
-// import { colorVar } from '../themes/default';
+import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 
-type <%= Component %>Class = '<%= component %>';
+export type <%= Component %>Class =
+  | 'wrapper'
+  | 'wrapperDisabled';
 
-const <%= Component %>Style: JsStyles<<%= Component %>Class> = {
-    <%= component %>:{}
-}
+const <%= component %>Style: JsStyles<<%= Component %>Class> = {
+  wrapper: {
+    display: 'block',
+  },
+  wrapperDisabled: {},
+};
 
-export default <%= Component %>Style;
+export default <%= component %>Style;

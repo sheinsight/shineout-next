@@ -121,7 +121,7 @@ const radioStyle: JsStyles<RadioClass> = {
     fontSize: token.radioLabelFontSize,
   },
   group: {
-    padding: '5px 0',
+    // padding: '5px 0',
   },
   groupBlock: {
     '& $wrapper': {

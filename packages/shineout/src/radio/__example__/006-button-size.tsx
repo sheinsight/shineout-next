@@ -12,8 +12,18 @@ const data: string[] = ['red', 'orange', 'yellow'];
 const App: React.FC = () => (
   <div>
     <Radio.Group size='small' button keygen data={data} defaultValue='red' />
-    <Radio.Group keygen button data={data} defaultValue='red' />
-    <Radio.Group size='large' button keygen data={data} defaultValue='red' />
+    <br />
+    <Radio.Group keygen button data={data} defaultValue='red' style={{ marginTop: 24 }} />
+    <br />
+    <Radio.Group
+      size='large'
+      button
+      keygen
+      data={data}
+      defaultValue='red'
+      style={{ marginTop: 24 }}
+    />
+    <br />
   </div>
 );
 
