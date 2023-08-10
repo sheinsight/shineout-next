@@ -1,31 +1,74 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
 
-type TagType = 'Info' | 'Default' | 'Success' | 'Warning' | 'Danger';
+type TagType =
+  | 'Info'
+  | 'Default'
+  | 'Success'
+  | 'Warning'
+  | 'Danger'
+  | 'Orange'
+  | 'Magenta'
+  | 'Purple'
+  | 'Indigo'
+  | 'Cyan'
+  | 'Neon'
+  | 'Lemon'
+  | 'Tangerine';
 
 type TagClass =
   | 'tag'
   | 'disabled'
   | 'closeIcon'
   | 'info'
-  | 'secondary'
+  | 'default'
   | 'success'
   | 'warning'
   | 'danger'
+  | 'orange'
+  | 'magenta'
+  | 'purple'
+  | 'indigo'
+  | 'cyan'
+  | 'neon'
+  | 'lemon'
+  | 'tangerine'
   | 'large'
   | 'small'
   | 'outline'
+  | 'fill'
+  | 'bright'
+  | 'brightOutline'
   | 'rounded';
 
 const tag = (type: TagType) => ({
-  color: Token[`tag${type}FontColor`],
-  backgroundColor: Token[`tag${type}BackgroundColor`],
-  border: `1px solid ${Token[`tag${type}BorderColor`]}`,
+  '&$bright': {
+    color: Token[`tag${type}FontColor`],
+    backgroundColor: Token[`tag${type}BackgroundColor`],
+    border: `1px solid ${Token[`tag${type}BorderColor`]}`,
 
-  '&$disabled': {
-    color: Token[`tag${type}DisabledFontColor`],
-    backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
-    border: `1px solid ${Token[`tag${type}DisabledBorderColor`]}`,
+    '&$disabled': {
+      color: Token[`tag${type}DisabledFontColor`],
+      backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
+      border: `1px solid ${Token[`tag${type}DisabledBorderColor`]}`,
+    },
+  },
+
+  '&$fill': {
+    color: Token[`tag${type}FillFontColor`],
+    backgroundColor: Token[`tag${type}FillBackgroundColor`],
+    border: `1px solid ${Token[`tag${type}FillBorderColor`]}`,
+  },
+
+  '&$outline': {
+    background: '#fff',
+    color: Token[`tag${type}FontColor`],
+    border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
+  },
+  '&$brightOutline': {
+    color: Token[`tag${type}FontColor`],
+    backgroundColor: Token[`tag${type}BackgroundColor`],
+    border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
   },
 });
 
@@ -57,9 +100,6 @@ const TagStyle: JsStyles<TagClass> = {
 
   closeIcon: {},
 
-  outline: {},
-  rounded: {},
-
   info: {
     ...tag('Info'),
   },
@@ -75,6 +115,36 @@ const TagStyle: JsStyles<TagClass> = {
   danger: {
     ...tag('Danger'),
   },
+  orange: {
+    ...tag('Orange'),
+  },
+  magenta: {
+    ...tag('Magenta'),
+  },
+  purple: {
+    ...tag('Purple'),
+  },
+  indigo: {
+    ...tag('Indigo'),
+  },
+  cyan: {
+    ...tag('Cyan'),
+  },
+  neon: {
+    ...tag('Neon'),
+  },
+  lemon: {
+    ...tag('Lemon'),
+  },
+  tangerine: {
+    ...tag('Tangerine'),
+  },
+
+  fill: {},
+  bright: {},
+  outline: {},
+  brightOutline: {},
+  rounded: {},
 };
 
 export default TagStyle;

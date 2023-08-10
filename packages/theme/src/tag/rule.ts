@@ -1,5 +1,5 @@
 const tagRules = {
-  type: [
+  color: [
     [
       'info',
       'default',
@@ -15,7 +15,7 @@ const tagRules = {
       'lemon',
       'tangerine',
     ],
-    ['', 'outline'],
+    ['', 'outline', 'fill'],
     ['', 'disabled'],
     ['font-color', 'background-color', 'border-color'],
   ],
