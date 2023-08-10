@@ -114,14 +114,14 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FF4D50'
+   * @default '#FF7A71'
    * @description 常规
    */
   'Danger-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#CC3D3A'
+   * @default '#FF4D50'
    * @description 点击
    */
   'Danger-6': string;
@@ -1101,7 +1101,7 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '2px'
+   * @default '2'
    * @description 尺寸基数，以乘积形式生成所有尺寸，比如：Size * 4px = 8px
    */
   Size: string;

@@ -109,13 +109,13 @@ const Tokens = {
   'Danger-5': {
     type: 'color',
     name: '危险色',
-    value: '#FF4D50',
+    value: '#FF7A71',
     describe: '常规',
   },
   'Danger-6': {
     type: 'color',
     name: '危险色',
-    value: '#CC3D3A',
+    value: '#FF4D50',
     describe: '点击',
   },
   'Tangerine-1': {
