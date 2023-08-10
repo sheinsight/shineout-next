@@ -217,13 +217,13 @@ const Tokens = {
   'Purple-5': {
     type: 'color',
     name: '紫色',
-    value: '#6C23C6',
+    value: '#8B48D5',
     describe: '常规',
   },
   'Purple-6': {
     type: 'color',
     name: '紫色',
-    value: '#4E159E',
+    value: '#6C23C6',
     describe: '点击',
   },
   'Roxo-azulado-1': {
@@ -298,73 +298,109 @@ const Tokens = {
     value: '#158B90',
     describe: '点击',
   },
-  'Fluorescent-green-1': {
+  'Indigo-1': {
+    type: 'color',
+    name: '靛蓝色',
+    value: '#EEF2FE',
+    describe: '',
+  },
+  'Indigo-2': {
+    type: 'color',
+    name: '靛蓝色',
+    value: '#D7DDFF',
+    describe: '',
+  },
+  'Indigo-3': {
+    type: 'color',
+    name: '靛蓝色',
+    value: '#ABB4FB',
+    describe: '',
+  },
+  'Indigo-4': {
+    type: 'color',
+    name: '靛蓝色',
+    value: '#848FF9',
+    describe: '',
+  },
+  'Indigo-5': {
+    type: 'color',
+    name: '靛蓝色',
+    value: '#3431CD',
+    describe: '',
+  },
+  'Indigo-6': {
+    type: 'color',
+    name: '靛蓝色',
+    value: '#6972F6',
+    describe: '',
+  },
+  'Neon-1': {
     type: 'color',
     name: '荧光绿色',
     value: '#FBFFE4',
     describe: '浅色背景',
   },
-  'Fluorescent-green-2': {
+  'Neon-2': {
     type: 'color',
     name: '荧光绿色',
     value: '#F0FFB3',
     describe: '聚焦',
   },
-  'Fluorescent-green-3': {
+  'Neon-3': {
     type: 'color',
     name: '荧光绿色',
     value: '#E4FF8B',
     describe: '禁用',
   },
-  'Fluorescent-green-4': {
+  'Neon-4': {
     type: 'color',
     name: '荧光绿色',
     value: '#AEE341',
     describe: '悬浮',
   },
-  'Fluorescent-green-5': {
+  'Neon-5': {
     type: 'color',
     name: '荧光绿色',
     value: '#92D42C',
     describe: '常规',
   },
-  'Fluorescent-green-6': {
+  'Neon-6': {
     type: 'color',
     name: '荧光绿色',
     value: '#6EAA21',
     describe: '点击',
   },
-  'Lemon-yellow-1': {
+  'Lemon-1': {
     type: 'color',
     name: '柠檬黄色',
     value: '#FDFFE4',
     describe: '浅色背景',
   },
-  'Lemon-yellow-2': {
+  'Lemon-2': {
     type: 'color',
     name: '柠檬黄色',
     value: '#FDFFB4',
     describe: '聚焦',
   },
-  'Lemon-yellow-3': {
+  'Lemon-3': {
     type: 'color',
     name: '柠檬黄色',
     value: '#FCFC8B',
     describe: '禁用',
   },
-  'Lemon-yellow-4': {
+  'Lemon-4': {
     type: 'color',
     name: '柠檬黄色',
     value: '#FCEB49',
     describe: '悬浮',
   },
-  'Lemon-yellow-5': {
+  'Lemon-5': {
     type: 'color',
     name: '柠檬黄色',
     value: '#F6D833',
     describe: '常规',
   },
-  'Lemon-yellow-6': {
+  'Lemon-6': {
     type: 'color',
     name: '柠檬黄色',
     value: '#D9B62A',
@@ -544,7 +580,7 @@ const Tokens = {
     value: '12px',
     describe: '提示、标签、辅助文案',
   },
-  mediium: {
+  medium: {
     type: 'string',
     name: '12',
     value: '12px',
@@ -826,6 +862,12 @@ const Tokens = {
     value: '2px',
     describe: '2 圆角',
   },
+  'Radius-3': {
+    type: 'string',
+    name: '3/radius',
+    value: '3px',
+    describe: '3 圆角',
+  },
   'Radius-4': {
     type: 'string',
     name: '4/radius',
@@ -906,6 +948,12 @@ const Tokens = {
     name: '透明色',
     value: 'transparent',
     describe: '较粗边框宽度',
+  },
+  'Mask-fill-1': {
+    type: 'string',
+    name: '遮罩填充色',
+    value: 'rgba(2, 11, 24, 0.3)',
+    describe: '用于遮罩层的带透明度背景色',
   },
   Size: {
     type: 'string',
