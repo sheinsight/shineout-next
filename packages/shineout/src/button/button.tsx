@@ -9,4 +9,6 @@ const Button = (props: ButtonProps) => {
   return <UnStyledButton {...props} jssStyle={jssStyle}></UnStyledButton>;
 };
 
+Button.displayName = 'ShineoutButton';
+
 export default Button;

@@ -5,7 +5,7 @@ export interface ButtonGroupClasses {
   group: string;
   groupItem: string;
 
-  // disabled: string;
+  disabled: string;
   // loading: string;
   small: string;
   large: string;
@@ -26,6 +26,19 @@ export interface ButtonGroupClasses {
 
   // 形状
   round: string;
+}
+
+export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'> {
+  type: ButtonType;
+  mode: ButtonMode;
+  size?: string;
+  text?: boolean;
+  outline?: boolean;
+  disabled?: boolean;
+
+  jssStyle: {
+    button?: ButtonGroupClasses;
+  };
 }
 
 export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'> {

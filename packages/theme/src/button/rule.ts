@@ -7,7 +7,7 @@ const buttonRules = {
   ],
   size: [
     ['', 'small', 'large'],
-    ['font-size', 'border-radius', 'padding-x', 'padding-y'],
+    ['font-size', 'border-radius', 'padding-x', 'padding-y', 'height'],
   ],
   group: [
     ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],

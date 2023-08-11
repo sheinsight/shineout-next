@@ -114,14 +114,14 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FF4D50'
+   * @default '#FF7A71'
    * @description 常规
    */
   'Danger-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#CC3D3A'
+   * @default '#FF4D50'
    * @description 点击
    */
   'Danger-6': string;
@@ -240,14 +240,14 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#6C23C6'
+   * @default '#8B48D5'
    * @description 常规
    */
   'Purple-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#4E159E'
+   * @default '#6C23C6'
    * @description 点击
    */
   'Purple-6': string;
@@ -338,87 +338,129 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#EEF2FE'
+   * @description
+   */
+  'Indigo-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#D7DDFF'
+   * @description
+   */
+  'Indigo-2': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#ABB4FB'
+   * @description
+   */
+  'Indigo-3': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#848FF9'
+   * @description
+   */
+  'Indigo-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#3431CD'
+   * @description
+   */
+  'Indigo-5': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#6972F6'
+   * @description
+   */
+  'Indigo-6': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#FBFFE4'
    * @description 浅色背景
    */
-  'Fluorescent-green-1': string;
+  'Neon-1': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#F0FFB3'
    * @description 聚焦
    */
-  'Fluorescent-green-2': string;
+  'Neon-2': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#E4FF8B'
    * @description 禁用
    */
-  'Fluorescent-green-3': string;
+  'Neon-3': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#AEE341'
    * @description 悬浮
    */
-  'Fluorescent-green-4': string;
+  'Neon-4': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#92D42C'
    * @description 常规
    */
-  'Fluorescent-green-5': string;
+  'Neon-5': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#6EAA21'
    * @description 点击
    */
-  'Fluorescent-green-6': string;
+  'Neon-6': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#FDFFE4'
    * @description 浅色背景
    */
-  'Lemon-yellow-1': string;
+  'Lemon-1': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#FDFFB4'
    * @description 聚焦
    */
-  'Lemon-yellow-2': string;
+  'Lemon-2': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#FCFC8B'
    * @description 禁用
    */
-  'Lemon-yellow-3': string;
+  'Lemon-3': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#FCEB49'
    * @description 悬浮
    */
-  'Lemon-yellow-4': string;
+  'Lemon-4': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#F6D833'
    * @description 常规
    */
-  'Lemon-yellow-5': string;
+  'Lemon-5': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#D9B62A'
    * @description 点击
    */
-  'Lemon-yellow-6': string;
+  'Lemon-6': string;
   /**
    * @type {string}
    * @categoty color
@@ -628,7 +670,7 @@ export interface Tokens {
    * @default '12px'
    * @description 提示、标签、辅助文案
    */
-  mediium: string;
+  medium: string;
   /**
    * @type {string}
    * @categoty string
@@ -954,6 +996,13 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
+   * @default '3px'
+   * @description 3 圆角
+   */
+  'Radius-3': string;
+  /**
+   * @type {string}
+   * @categoty string
    * @default '4px'
    * @description 4 圆角
    */
@@ -1042,4 +1091,18 @@ export interface Tokens {
    * @description 较粗边框宽度
    */
   Transparent: string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default 'rgba(2, 11, 24, 0.3)'
+   * @description 用于遮罩层的带透明度背景色
+   */
+  'Mask-fill-1': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '2'
+   * @description 尺寸基数，以乘积形式生成所有尺寸，比如：Size * 4px = 8px
+   */
+  Size: string;
 }
