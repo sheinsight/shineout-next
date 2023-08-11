@@ -1486,8 +1486,44 @@ export interface TagTokens {
   tagLargePaddingY: string;
   /**
    * @type {string}
-   * @token Size-20
+   * @token Size-14
    * @description 标签大尺寸高度
    */
   tagLargeHeight: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 标签undefined内边距（水平方向）
+   */
+  tagInputPaddingX: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 标签undefined字体字号
+   */
+  tagInputFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 标签小尺寸undefined内边距（水平方向）
+   */
+  tagSmallInputPaddingX: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 标签小尺寸undefined字体字号
+   */
+  tagSmallInputFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 标签大尺寸undefined内边距（水平方向）
+   */
+  tagLargeInputPaddingX: string;
+  /**
+   * @type {string}
+   * @token 14/regular
+   * @description 标签大尺寸undefined字体字号
+   */
+  tagLargeInputFontSize: string;
 }

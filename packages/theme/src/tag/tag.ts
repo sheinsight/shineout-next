@@ -251,7 +251,13 @@ const tag: TagTokens = {
   tagLargeBorderRadius: 'Radius-4',
   tagLargePaddingX: 'Padding-12',
   tagLargePaddingY: 'Padding-3',
-  tagLargeHeight: 'Size-20',
+  tagLargeHeight: 'Size-14',
+  tagInputPaddingX: 'Padding-4',
+  tagInputFontSize: '12/regular',
+  tagSmallInputPaddingX: 'Padding-4',
+  tagSmallInputFontSize: '12/regular',
+  tagLargeInputPaddingX: 'Padding-4',
+  tagLargeInputFontSize: '14/regular',
 };
 
 export default tag;

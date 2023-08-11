@@ -5,36 +5,40 @@
  *    --Base Tag
  */
 
-import React from 'react';
 import { Tag } from '@sheinx/base';
-import { useTagStyle } from '@sheinx/shineout-style';
+import { useTagStyle, useInputStyle } from '@sheinx/shineout-style';
 
 export default () => {
   const tagStyle = useTagStyle();
-  const jssStyle = {
-    tag: tagStyle,
-  };
+  const inputStyle = useInputStyle();
 
   const colors = [
+    'info',
     'default',
     'success',
     'warning',
     'danger',
-    'info',
-    'purple',
-    'neon',
-    'cyan',
-    'indigo',
-    'lemon',
+    'orange',
     'magenta',
+    'purple',
+    'indigo',
+    'cyan',
+    'neon',
+    'lemon',
     'tangerine',
   ];
+
+  const jssStyle = {
+    tag: tagStyle,
+    input: inputStyle,
+  };
+
   return (
-    <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-      {colors.map((item, idx) => {
+    <div>
+      {colors.map((i, idx) => {
         return (
-          <Tag jssStyle={jssStyle} key={idx} color={item} mode='fill'>
-            {item}
+          <Tag size='large' key={idx} jssStyle={jssStyle} color={i} onClose>
+            {i}
           </Tag>
         );
       })}

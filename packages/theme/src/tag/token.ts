@@ -37,6 +37,7 @@ const tagTokenValue = {
       font: { color: 'Brand-3' },
       background: { color: 'Brand-1' },
       border: { color: 'Brand-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Brand-6' },
@@ -46,7 +47,9 @@ const tagTokenValue = {
         font: { color: 'Brand-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Brand-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -56,8 +59,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Brand-3' },
         border: { color: 'Brand-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   default: {
     font: { color: 'Neutral-text-5' },
@@ -67,6 +73,7 @@ const tagTokenValue = {
       font: { color: 'Neutral-text-2' },
       background: { color: 'Neutral-fill-2' },
       border: { color: 'Neutral-fill-2' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Neutral-text-4' },
@@ -76,7 +83,9 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-2' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Neutral-border-2' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-5' },
@@ -86,8 +95,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-2' },
         background: { color: 'Neutral-fill-3' },
         border: { color: 'Neutral-fill-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   success: {
     font: { color: 'Success-6' },
@@ -97,6 +109,7 @@ const tagTokenValue = {
       font: { color: 'Success-3' },
       background: { color: 'Success-1' },
       border: { color: 'Success-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Success-5' },
@@ -106,7 +119,9 @@ const tagTokenValue = {
         font: { color: 'Success-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Success-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -116,8 +131,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Success-3' },
         border: { color: 'Success-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   warning: {
     font: { color: 'Warning-6' },
@@ -127,6 +145,7 @@ const tagTokenValue = {
       font: { color: 'Warning-3' },
       background: { color: 'Warning-1' },
       border: { color: 'Warning-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Warning-5' },
@@ -136,7 +155,9 @@ const tagTokenValue = {
         font: { color: 'Warning-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Warning-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -146,8 +167,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Warning-3' },
         border: { color: 'Warning-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   danger: {
     font: { color: 'Danger-6' },
@@ -157,6 +181,7 @@ const tagTokenValue = {
       font: { color: 'Danger-3' },
       background: { color: 'Danger-1' },
       border: { color: 'Danger-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Danger-5' },
@@ -166,7 +191,9 @@ const tagTokenValue = {
         font: { color: 'Danger-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Danger-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -176,8 +203,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Danger-3' },
         border: { color: 'Danger-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   magenta: {
     font: { color: 'Magenta-6' },
@@ -187,6 +217,7 @@ const tagTokenValue = {
       font: { color: 'Magenta-3' },
       background: { color: 'Magenta-1' },
       border: { color: 'Magenta-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Magenta-5' },
@@ -196,7 +227,9 @@ const tagTokenValue = {
         font: { color: 'Magenta-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Magenta-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -206,8 +239,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Magenta-3' },
         border: { color: 'Magenta-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   orange: {
     font: { color: 'Orange-6' },
@@ -217,6 +253,7 @@ const tagTokenValue = {
       font: { color: 'Orange-3' },
       background: { color: 'Orange-1' },
       border: { color: 'Orange-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Orange-5' },
@@ -226,7 +263,9 @@ const tagTokenValue = {
         font: { color: 'Orange-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Orange-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -236,8 +275,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Orange-3' },
         border: { color: 'Orange-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   purple: {
     font: { color: 'Purple-6' },
@@ -247,6 +289,7 @@ const tagTokenValue = {
       font: { color: 'Purple-3' },
       background: { color: 'Purple-1' },
       border: { color: 'Purple-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Purple-5' },
@@ -256,7 +299,9 @@ const tagTokenValue = {
         font: { color: 'Purple-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Purple-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -266,8 +311,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Purple-3' },
         border: { color: 'Purple-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   indigo: {
     font: { color: 'Indigo-6' },
@@ -277,6 +325,7 @@ const tagTokenValue = {
       font: { color: 'Indigo-3' },
       background: { color: 'Indigo-1' },
       border: { color: 'Indigo-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Indigo-5' },
@@ -286,7 +335,9 @@ const tagTokenValue = {
         font: { color: 'Indigo-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Indigo-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -296,8 +347,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Indigo-3' },
         border: { color: 'Indigo-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   cyan: {
     font: { color: 'Cyan-6' },
@@ -307,6 +361,7 @@ const tagTokenValue = {
       font: { color: 'Cyan-3' },
       background: { color: 'Cyan-1' },
       border: { color: 'Cyan-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Cyan-5' },
@@ -316,7 +371,9 @@ const tagTokenValue = {
         font: { color: 'Cyan-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Cyan-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -326,8 +383,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Cyan-3' },
         border: { color: 'Cyan-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   neon: {
     font: { color: 'Neon-6' },
@@ -337,6 +397,7 @@ const tagTokenValue = {
       font: { color: 'Neon-3' },
       background: { color: 'Neon-1' },
       border: { color: 'Neon-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Neon-5' },
@@ -346,7 +407,9 @@ const tagTokenValue = {
         font: { color: 'Neon-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Neon-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -356,8 +419,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Neon-3' },
         border: { color: 'Neon-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   lemon: {
     font: { color: 'Lemon-6' },
@@ -367,6 +433,7 @@ const tagTokenValue = {
       font: { color: 'Lemon-3' },
       background: { color: 'Lemon-1' },
       border: { color: 'Lemon-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Lemon-5' },
@@ -376,7 +443,9 @@ const tagTokenValue = {
         font: { color: 'Lemon-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Lemon-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -386,8 +455,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Lemon-3' },
         border: { color: 'Lemon-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   tangerine: {
     font: { color: 'Tangerine-6' },
@@ -397,6 +469,7 @@ const tagTokenValue = {
       font: { color: 'Tangerine-3' },
       background: { color: 'Tangerine-1' },
       border: { color: 'Tangerine-1' },
+      icon: { background: { color: '' } },
     },
     outline: {
       font: { color: 'Tangerine-5' },
@@ -406,7 +479,9 @@ const tagTokenValue = {
         font: { color: 'Tangerine-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Tangerine-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
     fill: {
       font: { color: 'Neutral-text-1' },
@@ -416,8 +491,11 @@ const tagTokenValue = {
         font: { color: 'Neutral-text-1' },
         background: { color: 'Tangerine-3' },
         border: { color: 'Tangerine-3' },
+        icon: { background: { color: '' } },
       },
+      icon: { background: { color: '' } },
     },
+    icon: { background: { color: '' } },
   },
   font: { size: '12/regular' },
   border: { radius: 'Radius-3' },
@@ -428,13 +506,16 @@ const tagTokenValue = {
     border: { radius: 'Radius-2' },
     padding: { x: 'Padding-4', y: '' },
     height: 'Size-10',
+    input: { padding: { x: 'Padding-4', y: '' }, font: { size: '12/regular' } },
   },
   large: {
     font: { size: '14/regular' },
     border: { radius: 'Radius-4' },
     padding: { x: 'Padding-12', y: 'Padding-3' },
-    height: 'Size-20',
+    height: 'Size-14',
+    input: { padding: { x: 'Padding-4', y: '' }, font: { size: '14/regular' } },
   },
+  input: { padding: { x: 'Padding-4', y: '' }, font: { size: '12/regular' } },
 };
 
 const tagTokenExtraValue = {};

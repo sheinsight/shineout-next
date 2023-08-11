@@ -18,8 +18,10 @@ type TagType =
 
 type TagClass =
   | 'tag'
+  | 'inline'
   | 'disabled'
   | 'closeIcon'
+  | 'closeIconWrapper'
   | 'info'
   | 'default'
   | 'success'
@@ -39,9 +41,11 @@ type TagClass =
   | 'fill'
   | 'bright'
   | 'brightOutline'
-  | 'rounded';
+  | 'rounded'
+  | 'input';
 
 const tag = (type: TagType) => ({
+  // bright 亮色风格
   '&$bright': {
     color: Token[`tag${type}FontColor`],
     backgroundColor: Token[`tag${type}BackgroundColor`],
@@ -52,23 +56,36 @@ const tag = (type: TagType) => ({
       backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
       border: `1px solid ${Token[`tag${type}DisabledBorderColor`]}`,
     },
+
+    '& $closeIconWrapper': {
+      fill: Token[`tag${type}FontColor`],
+      backgroundColor: Token[`tag${type}BackgroundColor`],
+    },
   },
 
+  // fill 填充风格
   '&$fill': {
     color: Token[`tag${type}FillFontColor`],
     backgroundColor: Token[`tag${type}FillBackgroundColor`],
     border: `1px solid ${Token[`tag${type}FillBorderColor`]}`,
   },
 
+  // outline 边框风格
   '&$outline': {
     background: '#fff',
     color: Token[`tag${type}FontColor`],
     border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
   },
+
+  // brightOutline 亮色边框风格
   '&$brightOutline': {
     color: Token[`tag${type}FontColor`],
     backgroundColor: Token[`tag${type}BackgroundColor`],
     border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
+  },
+
+  '& $closeIcon': {
+    fill: Token[`tag${type}FontColor`],
   },
 });
 
@@ -81,24 +98,62 @@ const TagStyle: JsStyles<TagClass> = {
     borderRadius: Token.tagBorderRadius,
     cursor: 'pointer',
     boxSizing: 'border-box',
-    lineHeight: 1.5,
+    lineHeight: `calc(${Token.tagFontSize} + 8px)`,
     '& + &': {
       marginLeft: 8,
     },
   },
+  input: {
+    '&[data-type="so-input"]': {
+      width: 100,
+      '& input': {
+        padding: `0 ${Token.tagInputPaddingX}`,
+      },
+    },
+  },
+  inline: {
+    display: 'inline-block',
+    verticalAlign: 'top',
+  },
 
   large: {
     height: Token.tagLargeHeight,
+    fontSize: Token.tagLargeFontSize,
+    lineHeight: `calc(${Token.tagLargeFontSize} + 8px)`,
+    '& $closeIconWrapper': {
+      width: 16,
+      height: 16,
+    },
   },
   small: {
     height: Token.tagSmallHeight,
+    '& $closeIconWrapper': {
+      width: 14,
+      height: 14,
+    },
   },
 
   disabled: {
     cursor: 'not-allowed',
   },
 
-  closeIcon: {},
+  closeIcon: {
+    marginLeft: 4,
+    alignItems: 'center',
+    height: '100%',
+    display: 'inline-flex',
+    '& span': {
+      width: 14,
+      height: 14,
+    },
+  },
+
+  closeIconWrapper: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    borderRadius: '50%',
+    justifyContent: 'center',
+  },
 
   info: {
     ...tag('Info'),
