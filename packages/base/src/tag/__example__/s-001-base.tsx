@@ -37,7 +37,7 @@ export default () => {
     <div>
       {colors.map((i, idx) => {
         return (
-          <Tag size='large' key={idx} jssStyle={jssStyle} color={i} onClose>
+          <Tag size='large' key={idx} jssStyle={jssStyle} mode='brightOutline' color={i} onClose>
             {i}
           </Tag>
         );

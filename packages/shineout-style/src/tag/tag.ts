@@ -51,15 +51,23 @@ const tag = (type: TagType) => ({
     backgroundColor: Token[`tag${type}BackgroundColor`],
     border: `1px solid ${Token[`tag${type}BorderColor`]}`,
 
+    '& $closeIconWrapper': {
+      '&:hover': {
+        backgroundColor: Token[`tag${type}IconHoverBackgroundColor`],
+      },
+    },
+
     '&$disabled': {
       color: Token[`tag${type}DisabledFontColor`],
       backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
       border: `1px solid ${Token[`tag${type}DisabledBorderColor`]}`,
-    },
 
-    '& $closeIconWrapper': {
-      fill: Token[`tag${type}FontColor`],
-      backgroundColor: Token[`tag${type}BackgroundColor`],
+      '& $closeIconWrapper': {
+        fill: Token[`tag${type}IconDisabledFontColor`],
+        '&:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
     },
   },
 
@@ -75,6 +83,26 @@ const tag = (type: TagType) => ({
     background: '#fff',
     color: Token[`tag${type}FontColor`],
     border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
+
+    '& $closeIconWrapper': {
+      // hover
+      '&:hover': {
+        backgroundColor: Token[`tag${type}BackgroundColor`],
+      },
+    },
+
+    '&$disabled': {
+      color: Token[`tag${type}OutlineDisabledFontColor`],
+      backgroundColor: Token[`tag${type}OutlineDisabledBackgroundColor`],
+      border: `1px solid ${Token[`tag${type}OutlineDisabledBorderColor`]}`,
+
+      '& $closeIconWrapper': {
+        fill: Token[`tag${type}DisabledFontColor`],
+        '&:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
   },
 
   // brightOutline 亮色边框风格
@@ -82,6 +110,25 @@ const tag = (type: TagType) => ({
     color: Token[`tag${type}FontColor`],
     backgroundColor: Token[`tag${type}BackgroundColor`],
     border: `1px solid ${Token[`tag${type}OutlineBorderColor`]}`,
+
+    '& $closeIconWrapper': {
+      '&:hover': {
+        backgroundColor: Token[`tag${type}IconHoverBackgroundColor`],
+      },
+    },
+
+    '&$disabled': {
+      color: Token[`tag${type}DisabledFontColor`],
+      backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
+      border: `1px solid ${Token[`tag${type}OutlineDisabledBorderColor`]}`,
+
+      '& $closeIconWrapper': {
+        fill: Token[`tag${type}IconDisabledFontColor`],
+        '&:hover': {
+          backgroundColor: 'transparent',
+        },
+      },
+    },
   },
 
   '& $closeIcon': {
@@ -98,7 +145,7 @@ const TagStyle: JsStyles<TagClass> = {
     borderRadius: Token.tagBorderRadius,
     cursor: 'pointer',
     boxSizing: 'border-box',
-    lineHeight: `calc(${Token.tagFontSize} + 8px)`,
+    lineHeight: `calc(${Token.tagFontSize} + 6px)`,
     '& + &': {
       marginLeft: 8,
     },
@@ -127,6 +174,7 @@ const TagStyle: JsStyles<TagClass> = {
   },
   small: {
     height: Token.tagSmallHeight,
+    lineHeight: `calc(${Token.tagSmallFontSize} + 2px)`,
     '& $closeIconWrapper': {
       width: 14,
       height: 14,

@@ -1526,4 +1526,196 @@ export interface TagTokens {
    * @description 标签大尺寸undefined字体字号
    */
   tagLargeInputFontSize: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 标签提示色图标禁用状态的字体颜色
+   */
+  tagInfoIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-2
+   * @description 标签提示色图标鼠标移入时的背景颜色
+   */
+  tagInfoIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 标签提示色线框模式图标禁用状态的字体颜色
+   */
+  tagInfoOutlineIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description 标签提示色线框模式图标鼠标移入时的背景颜色
+   */
+  tagInfoOutlineIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 标签提示色线框模式图标鼠标移入时的字体颜色
+   */
+  tagInfoOutlineIconHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 标签默认尺寸图标禁用状态的字体颜色
+   */
+  tagDefaultIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 标签默认尺寸图标鼠标移入时的背景颜色
+   */
+  tagDefaultIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 标签默认尺寸图标鼠标移入时的字体颜色
+   */
+  tagDefaultIconHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Success-3
+   * @description 标签成功色图标禁用状态的字体颜色
+   */
+  tagSuccessIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Success-2
+   * @description 标签成功色图标鼠标移入时的背景颜色
+   */
+  tagSuccessIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Success-3
+   * @description 标签成功色线框模式图标禁用状态的字体颜色
+   */
+  tagSuccessOutlineIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Success-2
+   * @description 标签成功色线框模式图标鼠标移入时的背景颜色
+   */
+  tagSuccessOutlineIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Warning-3
+   * @description 标签警告色图标禁用状态的字体颜色
+   */
+  tagWarningIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Warning-2
+   * @description 标签警告色图标鼠标移入时的背景颜色
+   */
+  tagWarningIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-3
+   * @description 标签危险色图标禁用状态的字体颜色
+   */
+  tagDangerIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Danger-2
+   * @description 标签危险色图标鼠标移入时的背景颜色
+   */
+  tagDangerIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Magenta-3
+   * @description 标签洋红色图标禁用状态的字体颜色
+   */
+  tagMagentaIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Magenta-2
+   * @description 标签洋红色图标鼠标移入时的背景颜色
+   */
+  tagMagentaIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Orange-3
+   * @description 标签橘黄色图标禁用状态的字体颜色
+   */
+  tagOrangeIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Orange-2
+   * @description 标签橘黄色图标鼠标移入时的背景颜色
+   */
+  tagOrangeIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Purple-3
+   * @description 标签紫色图标禁用状态的字体颜色
+   */
+  tagPurpleIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Purple-2
+   * @description 标签紫色图标鼠标移入时的背景颜色
+   */
+  tagPurpleIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Indigo-3
+   * @description 标签靛蓝色图标禁用状态的字体颜色
+   */
+  tagIndigoIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Indigo-2
+   * @description 标签靛蓝色图标鼠标移入时的背景颜色
+   */
+  tagIndigoIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Cyan-3
+   * @description 标签青色图标禁用状态的字体颜色
+   */
+  tagCyanIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Cyan-2
+   * @description 标签青色图标鼠标移入时的背景颜色
+   */
+  tagCyanIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neon-3
+   * @description 标签荧光色图标禁用状态的字体颜色
+   */
+  tagNeonIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neon-2
+   * @description 标签荧光色图标鼠标移入时的背景颜色
+   */
+  tagNeonIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Lemon-3
+   * @description 标签柠檬色图标禁用状态的字体颜色
+   */
+  tagLemonIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Lemon-2
+   * @description 标签柠檬色图标鼠标移入时的背景颜色
+   */
+  tagLemonIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Tangerine-3
+   * @description 标签橘红色图标禁用状态的字体颜色
+   */
+  tagTangerineIconDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Tangerine-2
+   * @description 标签橘红色图标鼠标移入时的背景颜色
+   */
+  tagTangerineIconHoverBackgroundColor: string;
 }

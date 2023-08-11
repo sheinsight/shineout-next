@@ -41,9 +41,9 @@ const tagRules = {
       'tangerine',
     ],
     ['', 'outline', 'fill'],
-    ['', 'disabled'],
     ['icon'],
-    ['background-color'],
+    ['', 'disabled', 'hover'],
+    ['background-color', 'font-color'],
   ],
 };
 
