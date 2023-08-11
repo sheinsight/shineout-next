@@ -23,8 +23,6 @@ export interface TagClasses {
   disabled: string;
   tag: string;
   input: string;
-  wrapper: string;
-  paddingBox: string;
 
   inline: string;
   closeIcon: string;
