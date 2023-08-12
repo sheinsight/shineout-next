@@ -17,6 +17,8 @@ export type TagColorType =
 
 export type TagType = 'default' | 'info' | 'success' | 'warning' | 'danger';
 
+export type TagShape = 'rounded';
+
 export type TagModeType = 'bright' | 'outline' | 'fill' | 'brightOutline';
 
 export interface TagClasses {
@@ -63,6 +65,7 @@ export interface BaseTagProps extends Pick<CommonType, 'style' | 'className' | '
   type?: TagType;
   disabled?: boolean;
   color?: TagColorType;
+  shape?: TagShape;
   children?: React.ReactNode;
   onCompleted?: (value: string) => void;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;

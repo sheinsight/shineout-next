@@ -1,22 +1,13 @@
 /**
- * cn - 基本用法
- *    --基础 Tag 用法
- * en - Base
- *    --Base Tag
+ * cn - 可删除和添加标签
+ *    -- 通过数组生成tags,动态增改
+ * en - Delete and add tags
+ *    -- Generate tags through arrays, dynamically increase and change
  */
+
 import { useState } from 'react';
-import { Tag } from '@sheinx/base';
-import { useTagStyle, useInputStyle } from '@sheinx/shineout-style';
-
+import { Tag } from 'shineout';
 export default () => {
-  const tagStyle = useTagStyle();
-  const inputStyle = useInputStyle();
-
-  const jssStyle = {
-    tag: tagStyle,
-    input: inputStyle,
-  };
-
   const [tags, setTags] = useState(['Tag 1', 'Tag 2', 'Tag 3']);
   const [inputVisible, setInputVisible] = useState(false);
 
@@ -34,7 +25,6 @@ export default () => {
     if (value && tags.indexOf(value) === -1) {
       newTags = [...tags, value];
     }
-    console.log(newTags);
     setTags(newTags);
     setInputVisible(false);
   };
@@ -42,18 +32,14 @@ export default () => {
   return (
     <div>
       {tags.map((a) => (
-        <Tag jssStyle={jssStyle} key={a} onClose={() => remove(a)}>
+        <Tag key={a} onClose={() => remove(a)}>
           {a}
         </Tag>
       ))}
       {inputVisible ? (
-        <Tag.Input jssStyle={jssStyle} onBlur={handleInputBlur} />
+        <Tag.Input onBlur={handleInputBlur} />
       ) : (
-        <Tag
-          jssStyle={jssStyle}
-          onClick={showInput}
-          style={{ background: '#fff', borderStyle: 'dashed' }}
-        >
+        <Tag onClick={showInput} style={{ background: '#fff', borderStyle: 'dashed' }}>
           + New Tag
         </Tag>
       )}

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { TagInputProps, TagClasses } from './tag.type';
-import Input from '../input';
+import Input from '../input/simple-input';
 
 const TagInput = (props: TagInputProps) => {
   const { value, onBlur, onChange, onEnterPress, onFocus, onKeyUp, jssStyle } = props;
@@ -34,10 +34,18 @@ const TagInput = (props: TagInputProps) => {
     }
   }, []);
 
+  const controlProps = {
+    value,
+  };
+
+  if (!('value' in props)) {
+    delete controlProps.value;
+  }
+
   return (
     <Input
-      value={value}
-      forwardRef={inputRef}
+      {...controlProps}
+      inputRef={inputRef}
       className={classNames(tagStyle.input)}
       jssStyle={jssStyle}
       onKeyUp={handleKeyUp}

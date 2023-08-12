@@ -15,6 +15,7 @@ const Tag = (props: TagProps) => {
     size,
     disabled,
     mode,
+    shape,
     children,
     onClick,
     onClose,
@@ -39,6 +40,7 @@ const Tag = (props: TagProps) => {
   const tagClass = classNames(className, tagStyle.tag, {
     [tagStyle.small]: size === 'small',
     [tagStyle.large]: size === 'large',
+    [tagStyle.rounded]: shape === 'rounded',
     [tagStyle[colorSet]]: true,
     [tagStyle[modeSet]]: true,
     [tagStyle.disabled]: !!disabled,

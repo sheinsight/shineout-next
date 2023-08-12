@@ -71,11 +71,36 @@ const tag = (type: TagType) => ({
     },
   },
 
-  // fill 填充风格
   '&$fill': {
     color: Token[`tag${type}FillFontColor`],
     backgroundColor: Token[`tag${type}FillBackgroundColor`],
     border: `1px solid ${Token[`tag${type}FillBorderColor`]}`,
+
+    '& $closeIconWrapper': {
+      fill: Token[`tag${type}FillFontColor`],
+      '&:hover': {
+        fill: Token[`tag${type}FontColor`],
+        backgroundColor: Token[`tag${type}IconHoverBackgroundColor`],
+      },
+    },
+
+    '& $closeIcon': {
+      fill: Token[`tag${type}FillFontColor`],
+    },
+
+    '&$disabled': {
+      color: Token[`tag${type}FillDisabledFontColor`],
+      backgroundColor: Token[`tag${type}FillDisabledBackgroundColor`],
+      border: `1px solid ${Token[`tag${type}FillDisabledBorderColor`]}`,
+
+      '& $closeIconWrapper': {
+        fill: Token[`tag${type}FillFontColor`],
+        '&:hover': {
+          fill: Token[`tag${type}FillFontColor`],
+          backgroundColor: 'transparent',
+        },
+      },
+    },
   },
 
   // outline 边框风格
@@ -167,6 +192,7 @@ const TagStyle: JsStyles<TagClass> = {
     height: Token.tagLargeHeight,
     fontSize: Token.tagLargeFontSize,
     lineHeight: `calc(${Token.tagLargeFontSize} + 8px)`,
+    padding: `${Token.tagLargePaddingY} ${Token.tagLargePaddingX}`,
     '& $closeIconWrapper': {
       width: 16,
       height: 16,
@@ -174,7 +200,8 @@ const TagStyle: JsStyles<TagClass> = {
   },
   small: {
     height: Token.tagSmallHeight,
-    lineHeight: `calc(${Token.tagSmallFontSize} + 2px)`,
+    lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
+    padding: `0 ${Token.tagSmallPaddingX}`,
     '& $closeIconWrapper': {
       width: 14,
       height: 14,
@@ -247,7 +274,9 @@ const TagStyle: JsStyles<TagClass> = {
   bright: {},
   outline: {},
   brightOutline: {},
-  rounded: {},
+  rounded: {
+    borderRadius: Token.buttonRoundBorderRadius,
+  },
 };
 
 export default TagStyle;

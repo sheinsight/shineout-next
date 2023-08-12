@@ -50,8 +50,17 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: 'Brand-3' } },
-        hover: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
+        height: { undefined: '' },
+        disabled: {
+          background: { color: '' },
+          font: { color: 'Brand-3' },
+          height: { undefined: '' },
+        },
+        hover: {
+          background: { color: 'Brand-1' },
+          font: { color: 'Brand-6' },
+          height: { undefined: '' },
+        },
       },
     },
     fill: {
@@ -66,15 +75,21 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Brand-3' } },
-      hover: { background: { color: 'Brand-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Brand-3' },
+        height: { undefined: '' },
+      },
+      hover: { background: { color: 'Brand-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   default: {
@@ -98,8 +113,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -114,15 +130,25 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Neutral-text-2' } },
-      hover: { background: { color: 'Neutral-fill-3' }, font: { color: 'Neutral-text-5' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Neutral-text-2' },
+        height: { undefined: '' },
+      },
+      hover: {
+        background: { color: 'Neutral-fill-3' },
+        font: { color: 'Neutral-text-5' },
+        height: { undefined: '' },
+      },
     },
   },
   success: {
@@ -146,8 +172,17 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: 'Success-3' } },
-        hover: { background: { color: 'Success-2' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: {
+          background: { color: '' },
+          font: { color: 'Success-3' },
+          height: { undefined: '' },
+        },
+        hover: {
+          background: { color: 'Success-2' },
+          font: { color: '' },
+          height: { undefined: '' },
+        },
       },
     },
     fill: {
@@ -162,15 +197,21 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Success-3' } },
-      hover: { background: { color: 'Success-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Success-3' },
+        height: { undefined: '' },
+      },
+      hover: { background: { color: 'Success-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   warning: {
@@ -194,8 +235,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -210,15 +252,21 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Warning-3' } },
-      hover: { background: { color: 'Warning-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Warning-3' },
+        height: { undefined: '' },
+      },
+      hover: { background: { color: 'Warning-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   danger: {
@@ -242,8 +290,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -258,15 +307,21 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Danger-3' } },
-      hover: { background: { color: 'Danger-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Danger-3' },
+        height: { undefined: '' },
+      },
+      hover: { background: { color: 'Danger-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   magenta: {
@@ -290,8 +345,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -306,15 +362,21 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Magenta-3' } },
-      hover: { background: { color: 'Magenta-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Magenta-3' },
+        height: { undefined: '' },
+      },
+      hover: { background: { color: 'Magenta-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   orange: {
@@ -338,8 +400,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -354,15 +417,21 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Orange-3' } },
-      hover: { background: { color: 'Orange-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Orange-3' },
+        height: { undefined: '' },
+      },
+      hover: { background: { color: 'Orange-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   purple: {
@@ -386,8 +455,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -402,15 +472,21 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Purple-3' } },
-      hover: { background: { color: 'Purple-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Purple-3' },
+        height: { undefined: '' },
+      },
+      hover: { background: { color: 'Purple-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   indigo: {
@@ -434,8 +510,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -450,15 +527,21 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Indigo-3' } },
-      hover: { background: { color: 'Indigo-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Indigo-3' },
+        height: { undefined: '' },
+      },
+      hover: { background: { color: 'Indigo-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   cyan: {
@@ -482,8 +565,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -498,15 +582,17 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Cyan-3' } },
-      hover: { background: { color: 'Cyan-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: { background: { color: '' }, font: { color: 'Cyan-3' }, height: { undefined: '' } },
+      hover: { background: { color: 'Cyan-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   neon: {
@@ -530,8 +616,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -546,15 +633,17 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Neon-3' } },
-      hover: { background: { color: 'Neon-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: { background: { color: '' }, font: { color: 'Neon-3' }, height: { undefined: '' } },
+      hover: { background: { color: 'Neon-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   lemon: {
@@ -578,8 +667,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -594,15 +684,21 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Lemon-3' } },
-      hover: { background: { color: 'Lemon-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Lemon-3' },
+        height: { undefined: '' },
+      },
+      hover: { background: { color: 'Lemon-2' }, font: { color: '' }, height: { undefined: '' } },
     },
   },
   tangerine: {
@@ -626,8 +722,9 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     fill: {
@@ -642,15 +739,25 @@ const tagTokenValue = {
       icon: {
         background: { color: '' },
         font: { color: '' },
-        disabled: { background: { color: '' }, font: { color: '' } },
-        hover: { background: { color: '' }, font: { color: '' } },
+        height: { undefined: '' },
+        disabled: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
+        hover: { background: { color: '' }, font: { color: '' }, height: { undefined: '' } },
       },
     },
     icon: {
       background: { color: '' },
       font: { color: '' },
-      disabled: { background: { color: '' }, font: { color: 'Tangerine-3' } },
-      hover: { background: { color: 'Tangerine-2' }, font: { color: '' } },
+      height: { undefined: '' },
+      disabled: {
+        background: { color: '' },
+        font: { color: 'Tangerine-3' },
+        height: { undefined: '' },
+      },
+      hover: {
+        background: { color: 'Tangerine-2' },
+        font: { color: '' },
+        height: { undefined: '' },
+      },
     },
   },
   font: { size: '12/regular' },
