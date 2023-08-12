@@ -13,8 +13,20 @@ const renderItem = (props: renderItemProps) => {
   );
 };
 
+const renderSvgItem = (props: renderItemProps) => {
+  const { jssStyle, index, color } = props;
+
+  return (
+    <div key={index} className={classNames(jssStyle?.spin.item)}>
+      <svg viewBox='0 0 100 100'>
+        <circle fill={color} cx={50} cy={50} r={50} />
+      </svg>
+    </div>
+  );
+};
+
 const Default = (props: SpinProps) => {
-  const { size = 'default', jssStyle, className } = props;
+  const { jssStyle, size = 'default', className } = props;
   const { value, unit } = formatSize(size);
   const sizeSet = Math.ceil(value / 12.5) + unit;
 
@@ -24,8 +36,19 @@ const Default = (props: SpinProps) => {
       className={classNames(className, jssStyle?.spin.default)}
       count={12}
       itemStyle={{ width: sizeSet, borderRadius: sizeSet }}
-      jssStyle={jssStyle}
       render={renderItem}
+    ></BaseSpin>
+  );
+};
+
+const ChasingDots = (props: SpinProps) => {
+  const { jssStyle, className } = props;
+  return (
+    <BaseSpin
+      {...props}
+      className={classNames(className, jssStyle?.spin.chasingDots)}
+      count={2}
+      render={renderSvgItem}
     ></BaseSpin>
   );
 };
@@ -35,6 +58,10 @@ const Spin = (props: SpinProps = {}) => {
 
   if (name === 'default') {
     return <Default {...props}></Default>;
+  }
+
+  if (name === 'chasing-dots') {
+    return <ChasingDots {...props}></ChasingDots>;
   }
 
   return <BaseSpin></BaseSpin>;

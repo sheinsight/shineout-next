@@ -16,6 +16,8 @@ export type SpinNameType =
   | 'chasing-ring';
 export interface SpinClasses {
   default: string;
+  chasingDots: string;
+
   dots: string;
   item: string;
 }
