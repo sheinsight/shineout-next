@@ -10,9 +10,14 @@ import { useSpinStyle } from '@sheinx/shineout-style';
 
 export default () => {
   const spinStyle = useSpinStyle();
+
+  const jssStyle = {
+    spin: spinStyle,
+  };
+
   return (
     <div>
-      <Spin jssStyle={{ spin: spinStyle }} />
+      <Spin jssStyle={jssStyle} size={17} />
     </div>
   );
 };
