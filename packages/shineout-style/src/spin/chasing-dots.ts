@@ -4,7 +4,7 @@ export default {
   position: 'relative',
   margin: 'auto',
   textAlign: 'center',
-  animation: `$keyframesRotate ${duration}s linear infinite`,
+  animation: `$chasing-dots-1 ${duration}s linear infinite`,
 
   '& $item': {
     position: 'absolute',
@@ -13,7 +13,7 @@ export default {
     width: '60%',
     height: '60%',
     borderRadius: '100%',
-    animation: `$keyframesBounce ${duration}s ease-in-out infinite `,
+    animation: `$chasing-dots-2 ${duration}s ease-in-out infinite `,
 
     '&:last-child': {
       top: 'auto',

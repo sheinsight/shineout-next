@@ -18,6 +18,7 @@ export interface SpinClasses {
   default: string;
   chasingDots: string;
   cubeGrid: string;
+  doubleBounce: string;
 
   dots: string;
   item: string;

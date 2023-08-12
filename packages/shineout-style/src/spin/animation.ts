@@ -30,12 +30,12 @@ export default {
   },
 
   // chasingDots
-  '@keyframes keyframesRotate': {
+  '@keyframes chasing-dots-1': {
     '100%': {
       transform: 'rotateZ(360deg)',
     },
   },
-  '@keyframes keyframesBounce': {
+  '@keyframes chasing-dots-2': {
     '0%': {
       transform: 'scale3d(0, 0, 1)',
     },
@@ -48,12 +48,22 @@ export default {
   },
 
   // cubeGrid
-  '@keyframes keyframesName': {
+  '@keyframes cube-grid': {
     '0%,70%,100%': {
       transform: 'scale3d(1, 1, 1)',
     },
     '35%': {
       transform: 'scale3d(0, 0, 1)',
+    },
+  },
+
+  // doubleBounce
+  '@keyframes double-bounce': {
+    '0%,100%': {
+      transform: 'scale3d(0, 0, 1)',
+    },
+    '50%': {
+      transform: 'scale3d(1, 1, 1)',
     },
   },
 };

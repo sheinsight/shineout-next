@@ -6,7 +6,7 @@ export default {
     width: '33.33333%',
     height: '33.3333%',
     float: 'left',
-    animation: '$keyframesName 1.3s infinite ease-in-out',
+    animation: '$cube-grid 1.3s infinite ease-in-out',
     background: '#197AFA',
 
     '&:nth-child(1)': { animationDelay: `${delayRange * 0.5}s` },

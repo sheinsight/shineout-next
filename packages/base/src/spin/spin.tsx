@@ -73,6 +73,18 @@ const CubeGrid = (props: SpinProps) => {
   );
 };
 
+const DoubleBounce = (props: SpinProps) => {
+  const { jssStyle, className } = props;
+  return (
+    <BaseSpin
+      {...props}
+      count={2}
+      className={classNames(className, jssStyle?.spin.doubleBounce)}
+      render={renderSimpleItem}
+    />
+  );
+};
+
 const Spin = (props: SpinProps = {}) => {
   const { name = 'default' } = props;
 
@@ -86,6 +98,10 @@ const Spin = (props: SpinProps = {}) => {
 
   if (name === 'cube-grid') {
     return <CubeGrid {...props}></CubeGrid>;
+  }
+
+  if (name === 'double-bounce') {
+    return <DoubleBounce {...props}></DoubleBounce>;
   }
 
   return <BaseSpin></BaseSpin>;
