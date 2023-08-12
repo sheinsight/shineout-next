@@ -4,11 +4,11 @@ import BaseSpin from './base';
 import { formatSize } from './utils';
 
 const renderItem = (props: renderItemProps) => {
-  const { jssStyle, index, color, style } = props;
-  const styleSet = Object.assign({ backgroundColor: color }, style);
+  const { jssStyle, index, color, itemStyle } = props;
+  const style = Object.assign({ backgroundColor: color }, itemStyle);
   return (
     <div key={index} className={classNames(jssStyle?.spin.item)}>
-      <div style={styleSet}></div>
+      <div style={style}></div>
     </div>
   );
 };
@@ -23,6 +23,13 @@ const renderSvgItem = (props: renderItemProps) => {
       </svg>
     </div>
   );
+};
+
+const renderSimpleItem = (props: renderItemProps) => {
+  const { jssStyle, index, color, itemStyle } = props;
+  const style = Object.assign({ backgroundColor: color }, itemStyle);
+
+  return <div key={index} style={style} className={jssStyle?.spin.item} />;
 };
 
 const Default = (props: SpinProps) => {
@@ -46,10 +53,23 @@ const ChasingDots = (props: SpinProps) => {
   return (
     <BaseSpin
       {...props}
-      className={classNames(className, jssStyle?.spin.chasingDots)}
       count={2}
+      className={classNames(className, jssStyle?.spin.chasingDots)}
       render={renderSvgItem}
     ></BaseSpin>
+  );
+};
+
+const CubeGrid = (props: SpinProps) => {
+  const { jssStyle, className } = props;
+
+  return (
+    <BaseSpin
+      {...props}
+      count={9}
+      className={classNames(className, jssStyle?.spin.cubeGrid)}
+      render={renderSimpleItem}
+    />
   );
 };
 
@@ -62,6 +82,10 @@ const Spin = (props: SpinProps = {}) => {
 
   if (name === 'chasing-dots') {
     return <ChasingDots {...props}></ChasingDots>;
+  }
+
+  if (name === 'cube-grid') {
+    return <CubeGrid {...props}></CubeGrid>;
   }
 
   return <BaseSpin></BaseSpin>;

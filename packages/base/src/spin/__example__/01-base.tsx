@@ -17,7 +17,7 @@ export default () => {
 
   return (
     <div>
-      <Spin jssStyle={jssStyle} name='chasing-dots' size={40} />
+      <Spin jssStyle={jssStyle} name='cube-grid' size={40} />
     </div>
   );
 };

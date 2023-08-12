@@ -46,4 +46,14 @@ export default {
       transform: 'scale3d(0, 0, 1)',
     },
   },
+
+  // cubeGrid
+  '@keyframes keyframesName': {
+    '0%,70%,100%': {
+      transform: 'scale3d(1, 1, 1)',
+    },
+    '35%': {
+      transform: 'scale3d(0, 0, 1)',
+    },
+  },
 };

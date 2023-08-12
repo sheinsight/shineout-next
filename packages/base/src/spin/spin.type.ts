@@ -17,6 +17,7 @@ export type SpinNameType =
 export interface SpinClasses {
   default: string;
   chasingDots: string;
+  cubeGrid: string;
 
   dots: string;
   item: string;
@@ -29,6 +30,7 @@ export interface renderItemProps {
   index: number;
   color?: string;
   style?: React.CSSProperties;
+  itemStyle?: React.CSSProperties;
 }
 
 export interface BaseSpinProps {
