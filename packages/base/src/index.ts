@@ -6,6 +6,7 @@ export * from './rule';
 export * from './checkbox';
 export * from './dropdown';
 export * from './button';
+export * from './spin';
 export * from './icon';
 
 export { setConfig } from './config';
