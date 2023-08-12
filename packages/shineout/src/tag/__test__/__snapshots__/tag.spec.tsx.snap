@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag[Base] should render correctly  1`] = `
+<div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      default
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-info-0-2-9 tag-bright-0-2-23"
+  >
+    <span>
+      info
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-danger-0-2-13 tag-bright-0-2-23"
+  >
+    <span>
+      danger
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-warning-0-2-12 tag-bright-0-2-23"
+  >
+    <span>
+      warning
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-success-0-2-11 tag-bright-0-2-23"
+  >
+    <span>
+      success
+    </span>
+  </div>
+</div>
+`;
