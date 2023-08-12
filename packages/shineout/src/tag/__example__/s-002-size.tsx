@@ -11,9 +11,7 @@ export default () => {
     <div>
       <Tag size='small'>Smal</Tag>
       <Tag>Default</Tag>
-      <Tag size='large' shape='rounded'>
-        Large
-      </Tag>
+      <Tag size='large'>Large</Tag>
     </div>
   );
 };

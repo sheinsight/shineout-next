@@ -1,5 +1,6 @@
 import { InputClasses } from '../input/input.type';
 import { CommonType } from '../common/type';
+import React from 'react';
 
 export type TagColorType =
   | 'default'
@@ -53,7 +54,9 @@ export interface TagClasses {
 
   rounded: string;
 }
-export interface BaseTagProps extends Pick<CommonType, 'style' | 'className' | 'size'> {
+export interface BaseTagProps
+  extends Pick<CommonType, 'style' | 'className' | 'size'>,
+    React.HTMLAttributes<HTMLDivElement> {
   jssStyle: {
     tag: TagClasses;
     input: InputClasses;
@@ -66,6 +69,7 @@ export interface BaseTagProps extends Pick<CommonType, 'style' | 'className' | '
   disabled?: boolean;
   color?: TagColorType;
   shape?: TagShape;
+  backgroundColor?: string;
   children?: React.ReactNode;
   onCompleted?: (value: string) => void;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;

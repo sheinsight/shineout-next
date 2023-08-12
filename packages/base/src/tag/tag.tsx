@@ -19,9 +19,12 @@ const Tag = (props: TagProps) => {
     children,
     onClick,
     onClose,
+    style,
+    backgroundColor,
     onKeyUp,
     onCompleted,
     onEnterPress,
+    ...rest
   } = props;
 
   const { dismiss, showInput, value, handleClose, handleClick, handleBlur, handleInputChange } =
@@ -45,6 +48,20 @@ const Tag = (props: TagProps) => {
     [tagStyle[modeSet]]: true,
     [tagStyle.disabled]: !!disabled,
   });
+
+  const getTagRootProps = () => {
+    const propsSet: Omit<TagProps, 'jssStyle'> = rest;
+    if (style || backgroundColor) {
+      const styleSet = Object.assign({}, style || {}, backgroundColor ? { backgroundColor } : {});
+      propsSet.style = styleSet;
+    }
+
+    return {
+      ...propsSet,
+      className: tagClass,
+      onClick: handleClick,
+    };
+  };
 
   const renderChildren = () => {
     if (onClose) {
@@ -102,7 +119,7 @@ const Tag = (props: TagProps) => {
   }
 
   return (
-    <div className={tagClass} onClick={handleClick}>
+    <div {...getTagRootProps()}>
       {renderChildren()}
       {renderClose()}
     </div>
