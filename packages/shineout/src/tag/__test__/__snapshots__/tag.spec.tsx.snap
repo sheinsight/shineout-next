@@ -39,3 +39,454 @@ exports[`Tag[Base] should render correctly  1`] = `
   </div>
 </div>
 `;
+
+exports[`Tag[Base] should render correctly about color 1`] = `
+<div>
+  <div
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-tangerine-0-2-21 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-magenta-0-2-15 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-purple-0-2-16 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-indigo-0-2-17 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-cyan-0-2-18 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-neon-0-2-19 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-lemon-0-2-20 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-orange-0-2-14 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-tangerine-0-2-21 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-magenta-0-2-15 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-purple-0-2-16 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-indigo-0-2-17 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-cyan-0-2-18 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-neon-0-2-19 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-lemon-0-2-20 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-orange-0-2-14 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-tangerine-0-2-21 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-magenta-0-2-15 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-purple-0-2-16 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-indigo-0-2-17 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-cyan-0-2-18 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-neon-0-2-19 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-lemon-0-2-20 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-orange-0-2-14 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-tangerine-0-2-21 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-magenta-0-2-15 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-purple-0-2-16 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-indigo-0-2-17 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-cyan-0-2-18 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-neon-0-2-19 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-lemon-0-2-20 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-orange-0-2-14 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tag[Base] should render correctly about mode 1`] = `
+<div>
+  <div
+    style="margin-bottom: 8px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+    >
+      <span>
+        default
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-info-0-2-9 tag-bright-0-2-23"
+    >
+      <span>
+        info
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-danger-0-2-13 tag-bright-0-2-23"
+    >
+      <span>
+        danger
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-warning-0-2-12 tag-bright-0-2-23"
+    >
+      <span>
+        warning
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-success-0-2-11 tag-bright-0-2-23"
+    >
+      <span>
+        success
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 8px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-default-0-2-10 tag-fill-0-2-22"
+    >
+      <span>
+        default
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-info-0-2-9 tag-fill-0-2-22"
+    >
+      <span>
+        info
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-danger-0-2-13 tag-fill-0-2-22"
+    >
+      <span>
+        danger
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-warning-0-2-12 tag-fill-0-2-22"
+    >
+      <span>
+        warning
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-success-0-2-11 tag-fill-0-2-22"
+    >
+      <span>
+        success
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 8px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-default-0-2-10 tag-outline-0-2-24"
+    >
+      <span>
+        default
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-info-0-2-9 tag-outline-0-2-24"
+    >
+      <span>
+        info
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-danger-0-2-13 tag-outline-0-2-24"
+    >
+      <span>
+        danger
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-warning-0-2-12 tag-outline-0-2-24"
+    >
+      <span>
+        warning
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-success-0-2-11 tag-outline-0-2-24"
+    >
+      <span>
+        success
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 8px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-default-0-2-10 tag-brightOutline-0-2-25"
+    >
+      <span>
+        default
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-info-0-2-9 tag-brightOutline-0-2-25"
+    >
+      <span>
+        info
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-danger-0-2-13 tag-brightOutline-0-2-25"
+    >
+      <span>
+        danger
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-warning-0-2-12 tag-brightOutline-0-2-25"
+    >
+      <span>
+        warning
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-success-0-2-11 tag-brightOutline-0-2-25"
+    >
+      <span>
+        success
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tag[Base] should render correctly about size 1`] = `
+<div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Small
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Default
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-large-0-2-4 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Large
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Tag[Shape] should render correctly about shape 1`] = `
+<div>
+  <div
+    class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Default
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-rounded-0-2-26 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Rounded
+    </span>
+  </div>
+</div>
+`;

@@ -9,7 +9,7 @@ import { Tag } from 'shineout';
 export default () => {
   return (
     <div>
-      <Tag size='small'>Smal</Tag>
+      <Tag size='small'>Small</Tag>
       <Tag>Default</Tag>
       <Tag size='large'>Large</Tag>
     </div>
