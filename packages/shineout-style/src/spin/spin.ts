@@ -4,6 +4,7 @@ import Default from './default';
 import chasingDots from './chasing-dots';
 import cubeGrid from './cube-grid';
 import doubleBounce from './double-bounce';
+import fadingCircle from './fading-circle';
 import Animation from './animation';
 
 export type SpinClass =
@@ -13,6 +14,8 @@ export type SpinClass =
   | 'doubleBounce'
   | 'dots'
   | 'item'
+  | 'fadingCircle'
+  | 'fade'
   | '@keyframes keyframesFade';
 
 const spinStyle: JsStyles<SpinClass> = {
@@ -23,6 +26,8 @@ const spinStyle: JsStyles<SpinClass> = {
   doubleBounce,
   dots: {},
   item: {},
+  fadingCircle,
+  fade: {},
 };
 
 export default spinStyle;

@@ -14,16 +14,32 @@ const renderItem = (props: renderItemProps) => {
 };
 
 const renderSvgItem = (props: renderItemProps) => {
-  const { jssStyle, index, color } = props;
+  const { jssStyle, index, color, itemClass, itemSize } = props;
 
   return (
-    <div key={index} className={classNames(jssStyle?.spin.item)}>
-      <svg viewBox='0 0 100 100'>
+    <div key={index} className={classNames(jssStyle?.spin.item, itemClass)}>
+      <svg width={itemSize} height={itemSize} viewBox='0 0 100 100'>
         <circle fill={color} cx={50} cy={50} r={50} />
       </svg>
     </div>
   );
 };
+
+// const rendertwelveItems = (props: renderItemProps, itemClassName?: string) => {
+//   const { size = 40 } = props;
+//   const { value, unit } = formatSize(size);
+//   const itemSize = (value / 7).toFixed(3) + unit;
+
+//   return (
+//     <BaseSpin
+//       {...props}
+//       count={12}
+//       itemSize={itemSize}
+//       itemClass={itemClassName}
+//       render={renderSvgItem}
+//     />
+//   );
+// };
 
 const renderSimpleItem = (props: renderItemProps) => {
   const { jssStyle, index, color, itemStyle } = props;
@@ -85,6 +101,23 @@ const DoubleBounce = (props: SpinProps) => {
   );
 };
 
+const FadingCircle = (props: SpinProps) => {
+  const { size = 40, jssStyle, className } = props;
+  const { value, unit } = formatSize(size);
+  const itemSize = (value / 7).toFixed(3) + unit;
+
+  return (
+    <BaseSpin
+      {...props}
+      count={12}
+      className={classNames(className, jssStyle?.spin.fadingCircle)}
+      itemSize={itemSize}
+      itemClass={classNames(jssStyle?.spin.fade)}
+      render={renderSvgItem}
+    />
+  );
+};
+
 const Spin = (props: SpinProps = {}) => {
   const { name = 'default' } = props;
 
@@ -104,7 +137,11 @@ const Spin = (props: SpinProps = {}) => {
     return <DoubleBounce {...props}></DoubleBounce>;
   }
 
-  return <BaseSpin></BaseSpin>;
+  if (name === 'fading-circle') {
+    return <FadingCircle {...props}></FadingCircle>;
+  }
+
+  return <BaseSpin {...props}></BaseSpin>;
 };
 
 export default Spin;

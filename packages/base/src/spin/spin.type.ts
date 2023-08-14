@@ -19,6 +19,8 @@ export interface SpinClasses {
   chasingDots: string;
   cubeGrid: string;
   doubleBounce: string;
+  fadingCircle: string;
+  fade: string;
 
   dots: string;
   item: string;
@@ -30,7 +32,10 @@ export interface renderItemProps {
   };
   index: number;
   color?: string;
+  size?: number | string;
+  itemSize?: number | string;
   style?: React.CSSProperties;
+  itemClass?: string;
   itemStyle?: React.CSSProperties;
 }
 

@@ -17,7 +17,7 @@ export default () => {
 
   return (
     <div>
-      <Spin jssStyle={jssStyle} name='double-bounce' size={40} />
+      <Spin jssStyle={jssStyle} name='fading-circle' size={40} />
     </div>
   );
 };

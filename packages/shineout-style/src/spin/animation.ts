@@ -68,7 +68,7 @@ export default {
   },
 
   // fadeCircle
-  '@keyframes fade-circle-1': {
+  '@keyframes fading-circle-1': {
     '0%,80%,100%': {
       transform: 'scale3d(0, 0, 1)',
     },
@@ -76,7 +76,7 @@ export default {
       transform: 'scale3d(1, 1, 1)',
     },
   },
-  '@keyframes fade-circle-2': {
+  '@keyframes fading-circle-2': {
     '0%,39%,100%': {
       opacity: 0,
     },
