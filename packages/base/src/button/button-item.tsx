@@ -1,11 +1,11 @@
 import classNames from 'classnames';
-import { ButtonItemProps, ButtonGroupClasses } from './button-group.type';
+import { ButtonItemProps, ButtonClasses } from './button.type';
 
 const GroupItem = (props: ButtonItemProps) => {
   const { mode, type, disabled, className, text, outline, jssStyle } = props;
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
 
-  const buttonStyle = jssStyle?.button || ({} as ButtonGroupClasses);
+  const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
   const buttonItemClass = classNames(
     className,

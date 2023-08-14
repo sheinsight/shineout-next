@@ -1,7 +1,6 @@
 import React, { Children, cloneElement } from 'react';
 import classNames from 'classnames';
-import { ButtonGroupClasses, ButtonGroupProps } from './button-group.type';
-import { ButtonProps } from './button.type';
+import { ButtonProps, ButtonGroupProps, ButtonClasses } from './button.type';
 
 const Group = (props: ButtonGroupProps) => {
   const { children, className, style, jssStyle, size, mode, outline, text, shape, type } = props;
@@ -13,8 +12,7 @@ const Group = (props: ButtonGroupProps) => {
   }
 
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
-  const buttonStyle = jssStyle?.button || ({} as ButtonGroupClasses);
-
+  const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
   const groupClass = classNames(
     className,
     buttonStyle?.group,
