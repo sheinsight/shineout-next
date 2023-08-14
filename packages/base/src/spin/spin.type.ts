@@ -20,7 +20,13 @@ export interface SpinClasses {
   cubeGrid: string;
   doubleBounce: string;
   fadingCircle: string;
+  scaleCircle: string;
   fade: string;
+  fourDots: string;
+  plane: string;
+  pulse: string;
+  ring: string;
+  threeBounce: string;
 
   dots: string;
   item: string;

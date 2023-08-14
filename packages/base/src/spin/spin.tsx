@@ -25,22 +25,6 @@ const renderSvgItem = (props: renderItemProps) => {
   );
 };
 
-// const rendertwelveItems = (props: renderItemProps, itemClassName?: string) => {
-//   const { size = 40 } = props;
-//   const { value, unit } = formatSize(size);
-//   const itemSize = (value / 7).toFixed(3) + unit;
-
-//   return (
-//     <BaseSpin
-//       {...props}
-//       count={12}
-//       itemSize={itemSize}
-//       itemClass={itemClassName}
-//       render={renderSvgItem}
-//     />
-//   );
-// };
-
 const renderSimpleItem = (props: renderItemProps) => {
   const { jssStyle, index, color, itemStyle } = props;
   const style = Object.assign({ backgroundColor: color }, itemStyle);
@@ -118,6 +102,99 @@ const FadingCircle = (props: SpinProps) => {
   );
 };
 
+const ScaleCircle = (props: SpinProps) => {
+  const { size = 40, jssStyle, className } = props;
+  const { value, unit } = formatSize(size);
+  const itemSize = (value / 7).toFixed(3) + unit;
+
+  return (
+    <BaseSpin
+      {...props}
+      count={12}
+      className={classNames(className, jssStyle?.spin.fadingCircle)}
+      itemSize={itemSize}
+      itemClass={classNames(jssStyle?.spin.scaleCircle)}
+      render={renderSvgItem}
+    />
+  );
+};
+
+const FourDots = (props: SpinProps) => {
+  const { jssStyle, className } = props;
+  return (
+    <BaseSpin
+      {...props}
+      count={4}
+      className={classNames(className, jssStyle?.spin.fourDots)}
+      render={renderSvgItem}
+    />
+  );
+};
+
+const Plane = (props: SpinProps) => {
+  const { color, jssStyle, className } = props;
+  const style = {
+    backgroundColor: color,
+  };
+  return (
+    <BaseSpin
+      {...props}
+      count={0}
+      style={style}
+      className={classNames(className, jssStyle?.spin.plane)}
+    />
+  );
+};
+
+const Pulse = (props: SpinProps) => {
+  const { color, jssStyle, className } = props;
+  const style = {
+    backgroundColor: color,
+  };
+  return (
+    <BaseSpin
+      {...props}
+      count={0}
+      style={style}
+      className={classNames(className, jssStyle?.spin.pulse)}
+    />
+  );
+};
+
+const Ring = (props: SpinProps) => {
+  const { size = 40, color, jssStyle, className } = props;
+  const { value, unit } = formatSize(size);
+  const style = {
+    borderWidth: value / 10 + unit,
+    borderTopColor: color,
+    fontSize: value / 10 + unit,
+  };
+
+  return (
+    <BaseSpin
+      {...props}
+      count={0}
+      style={style}
+      className={classNames(className, jssStyle?.spin.ring)}
+    />
+  );
+};
+
+const ThreeBounce = (props: SpinProps) => {
+  const { size = 40, jssStyle, className } = props;
+  const { value, unit } = formatSize(size);
+  return (
+    <BaseSpin
+      {...props}
+      count={3}
+      itemSize={value / 2 + unit}
+      style={{ width: value * 2 + unit, height: 'auto' }}
+      className={classNames(className, jssStyle?.spin.threeBounce)}
+      render={renderSvgItem}
+    />
+  );
+};
+
 const Spin = (props: SpinProps = {}) => {
   const { name = 'default' } = props;
 
@@ -139,6 +216,30 @@ const Spin = (props: SpinProps = {}) => {
 
   if (name === 'fading-circle') {
     return <FadingCircle {...props}></FadingCircle>;
+  }
+
+  if (name === 'scale-circle') {
+    return <ScaleCircle {...props}></ScaleCircle>;
+  }
+
+  if (name === 'four-dots') {
+    return <FourDots {...props}></FourDots>;
+  }
+
+  if (name === 'plane') {
+    return <Plane {...props}></Plane>;
+  }
+
+  if (name === 'pulse') {
+    return <Pulse {...props}></Pulse>;
+  }
+
+  if (name === 'ring') {
+    return <Ring {...props}></Ring>;
+  }
+
+  if (name === 'three-bounce') {
+    return <ThreeBounce {...props}></ThreeBounce>;
   }
 
   return <BaseSpin {...props}></BaseSpin>;

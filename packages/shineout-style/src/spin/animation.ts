@@ -68,7 +68,17 @@ export default {
   },
 
   // fadeCircle
-  '@keyframes fading-circle-1': {
+  '@keyframes fading-circle': {
+    '0%,39%,100%': {
+      opacity: 0,
+    },
+    '40%': {
+      opacity: 1,
+    },
+  },
+
+  // scaleCircle
+  '@keyframes scale-circle': {
     '0%,80%,100%': {
       transform: 'scale3d(0, 0, 1)',
     },
@@ -76,12 +86,69 @@ export default {
       transform: 'scale3d(1, 1, 1)',
     },
   },
-  '@keyframes fading-circle-2': {
-    '0%,39%,100%': {
+
+  // fourDots
+  '@keyframes four-dots-1': {
+    '0%': {
+      opacity: 0.2,
+    },
+    '50%': {
+      opacity: 0.9,
+    },
+    '100%': {
+      opacity: 0.2,
+    },
+  },
+  '@keyframes four-dots-2': {
+    '0%': {
+      transform: 'rotateZ(0deg)',
+    },
+    '100%': {
+      transform: 'rotateZ(359deg)',
+    },
+  },
+
+  // plane
+  '@keyframes plane': {
+    '0%': {
+      transform: 'perspective(120px) rotateX(0deg) rotateY(0deg)',
+    },
+    '50%': {
+      transform: 'perspective(120px) rotateX(-180.1deg) rotateY(0deg)',
+    },
+    '100%': {
+      transform: 'perspective(120px) rotateX(-180deg) rotateY(-179.9deg)',
+    },
+  },
+
+  // pulse
+  '@keyframes pulse': {
+    '0%': {
+      transform: 'scale3d(0, 0, 1)',
+    },
+    '100%': {
       opacity: 0,
+      transform: 'scale3d(1, 1, 1)',
+    },
+  },
+
+  // ring
+  '@keyframes ring': {
+    '0%': {
+      transform: 'rotateZ(0deg)',
+    },
+    '100%': {
+      transform: 'rotateZ(359deg)',
+    },
+  },
+
+  // treeBounce
+  '@keyframes three-bounce': {
+    '0%,80%,100%': {
+      transform: 'scale3d(0, 0, 1)',
     },
     '40%': {
-      opacity: 1,
+      transform: 'scale3d(1, 1, 1)',
     },
   },
 };

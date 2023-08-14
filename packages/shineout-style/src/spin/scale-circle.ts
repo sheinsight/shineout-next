@@ -33,6 +33,6 @@ export default {
   },
   '& svg': {
     fill: '#197AFA',
-    animation: '$fading-circle 1.2s infinite ease-in-out both',
+    animation: '$scale-circle 1.2s infinite ease-in-out both',
   },
 };
