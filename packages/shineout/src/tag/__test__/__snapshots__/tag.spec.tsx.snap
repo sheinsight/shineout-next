@@ -1,0 +1,626 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag[Base] should render correctly  1`] = `
+<div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      default
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-info-0-2-9 tag-bright-0-2-23"
+  >
+    <span>
+      info
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-danger-0-2-13 tag-bright-0-2-23"
+  >
+    <span>
+      danger
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-warning-0-2-12 tag-bright-0-2-23"
+  >
+    <span>
+      warning
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-success-0-2-11 tag-bright-0-2-23"
+  >
+    <span>
+      success
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Tag[Base] should render correctly about color 1`] = `
+<div>
+  <div
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-tangerine-0-2-21 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-magenta-0-2-15 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-purple-0-2-16 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-indigo-0-2-17 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-cyan-0-2-18 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-neon-0-2-19 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-lemon-0-2-20 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-orange-0-2-14 tag-bright-0-2-23"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-tangerine-0-2-21 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-magenta-0-2-15 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-purple-0-2-16 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-indigo-0-2-17 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-cyan-0-2-18 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-neon-0-2-19 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-lemon-0-2-20 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-orange-0-2-14 tag-fill-0-2-22"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-tangerine-0-2-21 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-magenta-0-2-15 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-purple-0-2-16 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-indigo-0-2-17 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-cyan-0-2-18 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-neon-0-2-19 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-lemon-0-2-20 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-orange-0-2-14 tag-outline-0-2-24"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-tangerine-0-2-21 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-magenta-0-2-15 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-purple-0-2-16 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-indigo-0-2-17 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-cyan-0-2-18 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-neon-0-2-19 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-lemon-0-2-20 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-orange-0-2-14 tag-brightOutline-0-2-25"
+    >
+      <span>
+        Tag
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tag[Base] should render correctly about mode 1`] = `
+<div>
+  <div
+    style="margin-bottom: 8px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+    >
+      <span>
+        default
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-info-0-2-9 tag-bright-0-2-23"
+    >
+      <span>
+        info
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-danger-0-2-13 tag-bright-0-2-23"
+    >
+      <span>
+        danger
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-warning-0-2-12 tag-bright-0-2-23"
+    >
+      <span>
+        warning
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-success-0-2-11 tag-bright-0-2-23"
+    >
+      <span>
+        success
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 8px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-default-0-2-10 tag-fill-0-2-22"
+    >
+      <span>
+        default
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-info-0-2-9 tag-fill-0-2-22"
+    >
+      <span>
+        info
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-danger-0-2-13 tag-fill-0-2-22"
+    >
+      <span>
+        danger
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-warning-0-2-12 tag-fill-0-2-22"
+    >
+      <span>
+        warning
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-success-0-2-11 tag-fill-0-2-22"
+    >
+      <span>
+        success
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 8px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-default-0-2-10 tag-outline-0-2-24"
+    >
+      <span>
+        default
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-info-0-2-9 tag-outline-0-2-24"
+    >
+      <span>
+        info
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-danger-0-2-13 tag-outline-0-2-24"
+    >
+      <span>
+        danger
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-warning-0-2-12 tag-outline-0-2-24"
+    >
+      <span>
+        warning
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-success-0-2-11 tag-outline-0-2-24"
+    >
+      <span>
+        success
+      </span>
+    </div>
+  </div>
+  <div
+    style="margin-bottom: 8px;"
+  >
+    <div
+      class="tag-tag-0-2-1 tag-default-0-2-10 tag-brightOutline-0-2-25"
+    >
+      <span>
+        default
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-info-0-2-9 tag-brightOutline-0-2-25"
+    >
+      <span>
+        info
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-danger-0-2-13 tag-brightOutline-0-2-25"
+    >
+      <span>
+        danger
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-warning-0-2-12 tag-brightOutline-0-2-25"
+    >
+      <span>
+        warning
+      </span>
+    </div>
+    <div
+      class="tag-tag-0-2-1 tag-success-0-2-11 tag-brightOutline-0-2-25"
+    >
+      <span>
+        success
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tag[Base] should render correctly about size 1`] = `
+<div>
+  <div
+    class="tag-tag-0-2-1 tag-small-0-2-5 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Small
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Default
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-large-0-2-4 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Large
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Tag[Input] should render correctly about dynamic 1`] = `
+<div>
+  <div
+    class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <div
+      class="tag-inline-0-2-3"
+    >
+      <span>
+        Tag 1
+      </span>
+    </div>
+    <div
+      class="tag-closeIcon-0-2-7"
+    >
+      <span
+        class="tag-closeIconWrapper-0-2-8"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 10 10"
+          width="10"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <div
+      class="tag-inline-0-2-3"
+    >
+      <span>
+        Tag 2
+      </span>
+    </div>
+    <div
+      class="tag-closeIcon-0-2-7"
+    >
+      <span
+        class="tag-closeIconWrapper-0-2-8"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 10 10"
+          width="10"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <div
+      class="tag-inline-0-2-3"
+    >
+      <span>
+        Tag 3
+      </span>
+    </div>
+    <div
+      class="tag-closeIcon-0-2-7"
+    >
+      <span
+        class="tag-closeIconWrapper-0-2-8"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 10 10"
+          width="10"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+    style="background: rgb(255, 255, 255); border-style: dashed;"
+  >
+    <span>
+      + New Tag
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Tag[Input] should render correctly about input 1`] = `
+<div>
+  <div
+    class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <div
+      class="tag-inline-0-2-3"
+    >
+      <span>
+        abc
+      </span>
+    </div>
+    <div
+      class="tag-closeIcon-0-2-7"
+    >
+      <span
+        class="tag-closeIconWrapper-0-2-8"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 10 10"
+          width="10"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tag[Shape] should render correctly about shape 1`] = `
+<div>
+  <div
+    class="tag-tag-0-2-1 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Default
+    </span>
+  </div>
+  <div
+    class="tag-tag-0-2-1 tag-rounded-0-2-26 tag-default-0-2-10 tag-bright-0-2-23"
+  >
+    <span>
+      Rounded
+    </span>
+  </div>
+</div>
+`;
