@@ -3,10 +3,10 @@
 
 import { <%= Component %>Tokens } from './type';
 
-const <%= component %>: <%= Component %>Tokens = {
+const <%= component %>Tokens : <%= Component %>Tokens = {
 <% compomentTokenMap.forEach(function (token, i) { -%>
   <%= token.name %>: '<%= token.token %>',
 <% }) -%>
 };
 
-export default <%= component %>;
+export default <%= component %>Tokens;

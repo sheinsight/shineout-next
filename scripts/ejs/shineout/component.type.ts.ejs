@@ -1,8 +1,4 @@
-import React from 'react';
-import { <%= Component %>Props as Ui<%= Component %>Props } from '@sheinx/base';
+import { <%= Component %>Props as UnStyled<%= Component %>Props } from '@sheinx/base';
 
-export interface Base<%= Component %>Props {
-    // ...
-}
 
-export type <%= Component %>Props = Base<%= Component %>Props
+export type <%= Component %>Props = Omit<UnStyled<%= Component %>Props, 'jssStyle'>;
