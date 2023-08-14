@@ -1,4 +1,4 @@
-import { render, screen, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import Tag from '..';
 import {
   snapshotTest,
@@ -300,7 +300,6 @@ describe('Tag[Input]', () => {
       target: { value: 'test' },
     });
     inputValueTest(inputContent, 'test');
-    screen.debug();
   });
   test('should render dynamic', () => {
     const { container } = render(<TagDynamic />);
