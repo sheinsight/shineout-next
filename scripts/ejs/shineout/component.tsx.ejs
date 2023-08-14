@@ -1,8 +1,19 @@
-import <%= Component %> from './base-<%= component %>';
-import { <%= Component %>Props, Base<%= Component %>Props } from './<%= component %>.type';
+import { <%= Component %> } from '@sheinx/base';
+import { use<%= Component %>Style } from '@sheinx/shineout-style';
+import { <%= Component %>Props } from './<%= component %>.type';
 
 export default (props: <%= Component %>Props) => {
-  const {} = props;
-  
-  return <<%= Component %>></<%= Component %>>;
-};
+    const {} = props;
+    const <%= component %>Style = use<%= Component %>Style();
+    const jssStyle = useMemo(
+        () => ({ <%= component %>: <%= component %>Style }),
+        [<%= component %>Style],
+    );
+
+    return (
+        <<%= Component %>
+            jssStyle={jssStyle}
+            // ...
+        />
+  );
+}
