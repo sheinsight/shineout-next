@@ -79,3 +79,13 @@ export function childrenTest(Component: React.ComponentType<BaseTestProps>, sele
     expect(component?.querySelector('.test')?.textContent).toBe(testContent);
   });
 }
+
+export function inputValueTest(element: Element, value: string) {
+  expect(element.getAttribute('value')).toBe(value);
+}
+
+export function displayTest(Component: React.FC, displayName: string) {
+  test('should start with Shineout display', () => {
+    expect(Component.displayName).toBe(displayName);
+  });
+}
