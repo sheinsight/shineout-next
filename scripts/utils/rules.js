@@ -65,6 +65,7 @@ function mergeAndRemove(obj1, obj2) {
   return obj1;
 }
 
+// 路径转换为嵌套对象
 const arrayToObjectPath = (array) => {
   let obj = {};
 
@@ -76,11 +77,17 @@ const arrayToObjectPath = (array) => {
 
       if (!acc) {
         const [first, second] = cur.split('-');
+        if (second === undefined) {
+          return { [first]: '' };
+        }
         return { [first]: { [second]: '' } };
       }
 
       if (cur.includes('-')) {
         const [first, second] = cur.split('-');
+        if (second === undefined) {
+          return { [first]: acc };
+        }
         return { [first]: { [second]: acc } };
       }
 
@@ -92,6 +99,7 @@ const arrayToObjectPath = (array) => {
   return obj;
 };
 
+// 获取所有路径
 const findAllPaths = (array) => {
   const paths = [];
   function dfs(row, path) {
