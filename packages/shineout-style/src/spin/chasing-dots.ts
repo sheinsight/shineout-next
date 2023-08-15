@@ -14,6 +14,7 @@ export default {
     height: '60%',
     borderRadius: '100%',
     animation: `$chasing-dots-2 ${duration}s ease-in-out infinite `,
+    fill: '#197AFA',
 
     '&:last-child': {
       top: 'auto',

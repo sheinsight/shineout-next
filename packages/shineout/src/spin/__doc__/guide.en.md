@@ -1,15 +1,12 @@
 ## When to use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+When all or part of a page is in the waiting status of data processing and users need to be clearly aware of the current status.
 
-## Related to layout
+## Basic usage
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+![When the page is loaded, it is located in the center of the loading content area.](01)
+![When loading partial text or image elements, it is located in the center of the content area of the element.](02)
 
-## Component combination
+## Recommended usage examples
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
-
-## Recommended/Use with caution examples
-
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![Small size is suitable for loading scenes within components, medium size is suitable for loading scenes in containers such as cards, tables, etc., and large size is suitable for full-screen loading scenes of a page.](03)

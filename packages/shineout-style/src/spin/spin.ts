@@ -68,7 +68,7 @@ const spinStyle: JsStyles<SpinClass> = {
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'nowrap',
-
+    zIndex: 1,
     '&$vertical': {
       flexDirection: 'column',
 
@@ -89,6 +89,16 @@ const spinStyle: JsStyles<SpinClass> = {
   },
   container: {
     position: 'relative',
+  },
+  loading: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
 
     '&:after': {
       content: '""',
@@ -102,17 +112,6 @@ const spinStyle: JsStyles<SpinClass> = {
       background: '#FFFFFF',
       opacity: 0.5,
     },
-  },
-  loading: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    height: '100%',
-    width: '100%',
-    zIndex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   tip: {
     color: Token.spinTipFontColor,

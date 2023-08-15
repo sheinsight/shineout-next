@@ -1,8 +1,8 @@
 /**
  * cn - 基本用法
- *    -- 通过配置 name ，可以设置不同的动画效果, 通过配置 size 可以设置动画大小
+ *    -- 基础 Spin 用法。
  * en - Basic
- *    -- Set different animation effects by configuring name, and set animation size by configuring size
+ *    -- Basic Spin usage.
  */
 import React from 'react';
 import { Spin } from 'shineout';

@@ -8,13 +8,17 @@ import React from 'react';
 import { Spin } from 'shineout';
 
 export default () => {
+  const renderTip = () => {
+    return <span style={{ fontSize: 12, fontWeight: 300 }}>Loading...</span>;
+  };
+
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
       <div style={{ width: 100 }}>
-        <Spin name='ring' size={16} mode='vertical' tip='Loading...' />
+        <Spin name='ring' size={16} mode='vertical' tip={renderTip()} />
       </div>
       <div style={{ width: 100 }}>
-        <Spin name='ring' size={16} mode='horizontal' tip='Loading...' />
+        <Spin name='ring' size={16} mode='horizontal' tip={renderTip()} />
       </div>
     </div>
   );
