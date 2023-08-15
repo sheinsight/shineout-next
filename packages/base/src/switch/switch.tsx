@@ -47,6 +47,7 @@ const Switch = (props: SwitchProps) => {
   return (
     <button type={'button'} role={'switch'} {...rootProps}>
       <input {...inputProps} type={'checkbox'} />
+      {/* todo  loading 使用 spin */}
       <div className={jssStyle?.switch?.indicator}>{loading ? '...' : null}</div>
       <div className={jssStyle?.switch?.content}>{checked ? checkedContent : unCheckedContent}</div>
     </button>

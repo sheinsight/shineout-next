@@ -33,7 +33,6 @@ const useCheck = (props: BaseCheckProps) => {
     const externalEventHandlers = extractEventHandlers(externalProps);
     return {
       ...externalProps,
-      checked: getChecked(),
       onClick: handleClick(externalEventHandlers),
     };
     //封装点击事件 点击触发input 的点击
