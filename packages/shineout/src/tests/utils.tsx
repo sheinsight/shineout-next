@@ -12,6 +12,10 @@ export function snapshotTest(component: JSX.Element, testName: string = '') {
   });
 }
 
+export function attributesTest(element: Element, attr: string, content: string) {
+  expect(element.getAttribute(attr)).toBe(content);
+}
+
 // test component class after excludes in components
 export function componentsClassTest(
   components: NodeListOf<Element>,
@@ -35,7 +39,7 @@ export function classContentTest(element: Element, name: string, bool: boolean =
 }
 
 export function styleTest(element: Element, style: string) {
-  expect(element.getAttribute('style')).toBe(style);
+  attributesTest(element, 'style', style);
 }
 
 interface StyleProps {
@@ -81,7 +85,7 @@ export function childrenTest(Component: React.ComponentType<BaseTestProps>, sele
 }
 
 export function inputValueTest(element: Element, value: string) {
-  expect(element.getAttribute('value')).toBe(value);
+  attributesTest(element, 'value', value);
 }
 
 export function displayTest(Component: React.FC, displayName: string) {

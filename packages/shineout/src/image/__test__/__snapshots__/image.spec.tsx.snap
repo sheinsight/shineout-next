@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image[Base] should render correctly  1`] = `
+<div>
+  <div
+    class="image-image-0-2-6 image-fill-0-2-10 image-rounded-0-2-17"
+    style="width: 128px; padding-bottom: 128px;"
+  >
+    <div
+      class="image-inner-0-2-8"
+      style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
+    />
+  </div>
+</div>
+`;
