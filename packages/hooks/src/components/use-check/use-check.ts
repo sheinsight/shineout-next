@@ -24,11 +24,10 @@ const useCheck = (props: BaseCheckProps) => {
 
   const handleInputRef = useForkRef(inputRef, inputRefPo);
 
-  const handleClick =
-    (otherHandlers: HandlerType) => (event: React.MouseEvent<HTMLInputElement>) => {
-      inputRef.current?.click();
-      otherHandlers?.onClick?.(event);
-    };
+  const handleClick = (otherHandlers: HandlerType) => (event: React.MouseEvent) => {
+    inputRef.current?.click();
+    otherHandlers?.onClick?.(event);
+  };
 
   const getRootProps = <TOther extends ObjectType>(externalProps: TOther = {} as TOther) => {
     const externalEventHandlers = extractEventHandlers(externalProps);

@@ -9,7 +9,7 @@
 const checkboxRules = {
   iconColor: [
     ['icon'],
-    ['', 'disabled', 'hover', 'active', 'activedisabled'],
+    ['', 'disabled', 'hover', 'checked', 'checked-disabled'],
     ['border-color', 'background-color', 'color'],
   ],
   iconCommon: [['icon'], ['border-radius', 'gap', 'border-width']],

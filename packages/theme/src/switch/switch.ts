@@ -4,7 +4,37 @@
 import { SwitchTokens } from './type';
 
 const switchTokens: SwitchTokens = {
-  switchFontSize: 'regular/14',
+  switchFontSize: '14/regular',
+  switchPaddingX: 'Padding-4',
+  switchPaddingY: 'Padding-4',
+  switchCircleSize: 'Size-8',
+  switchWidth: 'Size-20',
+  switchSmallFontSize: '12/regular',
+  switchSmallPaddingX: 'Padding-2',
+  switchSmallPaddingY: 'Padding-2',
+  switchSmallCircleSize: 'Size-6',
+  switchSmallWidth: 'Size-14',
+  switchLargeFontSize: 'regular/16',
+  switchLargePaddingX: 'Padding-4',
+  switchLargePaddingY: 'Padding-4',
+  switchLargeCircleSize: 'Size-10',
+  switchLargeWidth: 'Size-26',
+  switchBackgroundColor: 'Neutral-fill-4',
+  switchCircleFill: 'Neutral-text-1',
+  switchCircleShadow: 'Shadow-3',
+  switchFontColor: 'Neutral-text-1',
+  switchDisabledBackgroundColor: 'Neutral-fill-2',
+  switchDisabledCircleFill: 'Neutral-text-2',
+  switchDisabledFontColor: 'Neutral-text-2',
+  switchLoadingBackgroundColor: 'Neutral-fill-2',
+  switchLoadingCircleFill: 'Neutral-text-2',
+  switchLoadingFontColor: 'Neutral-text-2',
+  switchCheckedBackgroundColor: 'Brand-6',
+  switchCheckedFontColor: 'Neutral-text-1',
+  switchCheckedDisabledBackgroundColor: 'Brand-3',
+  switchCheckedDisabledFontColor: 'Neutral-text-1',
+  switchCheckedLoadingBackgroundColor: 'Brand-3',
+  switchCheckedLoadingFontColor: 'Neutral-text-1',
 };
 
 export default switchTokens;

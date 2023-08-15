@@ -3,19 +3,19 @@
 
 import { RadioTokens } from './type';
 
-const radio: RadioTokens = {
+const radioTokens: RadioTokens = {
   radioIconBorderColor: 'Neutral-border-1',
   radioIconBackgroundColor: 'Neutral-fill-1',
   radioIconDisabledBorderColor: 'Neutral-border-1',
   radioIconDisabledBackgroundColor: 'Neutral-fill-2',
   radioIconHoverBorderColor: 'Neutral-border-2',
   radioIconHoverBackgroundColor: 'Neutral-fill-1',
-  radioIconActiveBorderColor: 'Brand-6',
-  radioIconActiveBackgroundColor: 'Neutral-fill-1',
-  radioIconActiveColor: 'Brand-6',
-  radioIconActivedisabledBorderColor: 'Brand-3',
-  radioIconActivedisabledBackgroundColor: 'Neutral-fill-1',
-  radioIconActivedisabledColor: 'Brand-3',
+  radioIconCheckedBorderColor: 'Brand-6',
+  radioIconCheckedBackgroundColor: 'Neutral-fill-1',
+  radioIconCheckedColor: 'Brand-6',
+  radioIconCheckedDisabledBorderColor: 'Brand-3',
+  radioIconCheckedDisabledBackgroundColor: 'Neutral-fill-1',
+  radioIconCheckedDisabledColor: 'Brand-3',
   radioGap: 'Margin-24',
   radioBlockGap: 'Margin-12',
   radioIconGap: 'Margin-8',
@@ -26,4 +26,4 @@ const radio: RadioTokens = {
   radioLabelFontSize: '14/regular',
 };
 
-export default radio;
+export default radioTokens;

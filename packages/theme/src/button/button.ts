@@ -3,7 +3,7 @@
 
 import { ButtonTokens } from './type';
 
-const button: ButtonTokens = {
+const buttonTokens: ButtonTokens = {
   buttonPrimaryFontColor: 'Neutral-text-1',
   buttonPrimaryBackgroundColor: 'Brand-6',
   buttonPrimaryBorderColor: 'Brand-6',
@@ -331,4 +331,4 @@ const button: ButtonTokens = {
   buttonNearlyMargin: 'Margin-8',
 };
 
-export default button;
+export default buttonTokens;

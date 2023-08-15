@@ -36,7 +36,7 @@ export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'>
   outline?: boolean;
   disabled?: boolean;
 
-  jssStyle: {
+  jssStyle?: {
     button?: ButtonGroupClasses;
   };
 }
