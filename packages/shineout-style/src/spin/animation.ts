@@ -151,4 +151,60 @@ export default {
       transform: 'scale3d(1, 1, 1)',
     },
   },
+
+  // wave
+  '@keyframes wave': {
+    '0%,40%,100%': {
+      transform: 'scale3d(1, 0.4, 1)',
+    },
+    '20%': {
+      transform: 'scale3d(1, 1, 1)',
+    },
+  },
+
+  // chasingRing
+  '@keyframes chasing-ring-1': {
+    '0%': {
+      transform: 'rotateZ(0deg)',
+    },
+    '44%': {
+      transform: 'rotateZ(225deg)',
+    },
+    '100%': {
+      transform: 'rotateZ(360deg)',
+    },
+  },
+  '@keyframes chasing-ring-2': {
+    '0%': {
+      transform: 'rotateZ(75deg)',
+    },
+    '44%': {
+      transform: 'rotateZ(225deg)',
+    },
+    '100%': {
+      transform: 'rotateZ(435deg)',
+    },
+  },
+  '@keyframes chasing-ring-3': {
+    '0%': {
+      transform: 'rotateZ(150deg)',
+    },
+    '44%': {
+      transform: 'rotateZ(225deg)',
+    },
+    '100%': {
+      transform: 'rotateZ(510deg)',
+    },
+  },
+  '@keyframes chasing-ring-4': {
+    '0%': {
+      transform: 'rotateZ(225deg)',
+    },
+    '44%': {
+      transform: 'rotateZ(225deg)',
+    },
+    '100%': {
+      transform: 'rotateZ(585deg)',
+    },
+  },
 };

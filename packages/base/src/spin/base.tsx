@@ -1,11 +1,12 @@
 import React from 'react';
+import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
 import { BaseSpinProps } from './spin.type';
 
 const { range } = util;
 
 const Spin = (props: BaseSpinProps) => {
-  const { count = 0, render, size, className } = props;
+  const { count = 0, render, size = 40, className, jssStyle } = props;
   const style = Object.assign(
     {
       width: size,
@@ -19,7 +20,7 @@ const Spin = (props: BaseSpinProps) => {
   }
 
   return (
-    <div style={style} className={className}>
+    <div style={style} className={classNames(className, jssStyle?.spin.spin)}>
       {range(count + 1, 1).map((i) => render({ ...props, index: i }))}
     </div>
   );

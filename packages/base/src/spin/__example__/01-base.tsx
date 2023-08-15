@@ -15,9 +15,15 @@ export default () => {
     spin: spinStyle,
   };
 
+  const renderTip = () => {
+    return <div>hhhh</div>;
+  };
+
   return (
     <div>
-      <Spin jssStyle={jssStyle} name='three-bounce' size={20} />
+      <Spin jssStyle={jssStyle} name='ring' tip={renderTip()}>
+        <div style={{ width: 200, height: 200, background: '#000' }}></div>
+      </Spin>
     </div>
   );
 };

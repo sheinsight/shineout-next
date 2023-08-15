@@ -4,8 +4,20 @@
 export interface SpinTokens {
   /**
    * @type {string}
-   * @token regular/14
-   * @description xxx字体字号
+   * @token Brand-6
+   * @description 加载动画undefined字体颜色
    */
-  popoverFontSize: string;
+  spinTipFontColor: string;
+  /**
+   * @type {string}
+   * @token Margin-4
+   * @description 加载动画垂直模式下与提示文字的外边距
+   */
+  spinVerticalMargin: string;
+  /**
+   * @type {string}
+   * @token Margin-4
+   * @description 加载动画水平模式下与提示文字的外边距
+   */
+  spinHorizontalMargin: string;
 }

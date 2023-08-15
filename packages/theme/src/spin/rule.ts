@@ -7,7 +7,8 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const spinRules = {
-  size: [[''], ['font-size']],
+  color: [['tip'], ['font-color']],
+  space: [['vertical', 'horizontal'], ['margin']],
 };
 
 module.exports = {

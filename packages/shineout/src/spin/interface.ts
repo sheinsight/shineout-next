@@ -1,1 +1,1 @@
-export type { spinProps as Props } from './input.type';
+export type { SpinProps as Props } from './spin.type';
