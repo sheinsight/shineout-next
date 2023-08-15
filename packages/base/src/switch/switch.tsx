@@ -1,4 +1,4 @@
-import { useCheck } from '@sheinx/hooks';
+import { useCheck, useInputAble } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
 import { SwitchProps } from './switch.type';
@@ -8,15 +8,24 @@ const Switch = (props: SwitchProps) => {
 
   const disabled = props.disabled || props.loading;
 
+  const { value, onChange } = useInputAble({
+    value: props.value,
+    onChange: props.onChange,
+    defaultValue: props.defaultValue,
+    control: 'value' in props,
+    beforeChange: props.beforeChange,
+  });
+
   const getChecked = () => {
     if (props.checked !== undefined) {
       return props.checked;
     }
-    return props.value;
+    return value;
   };
+
   const { getInputProps, getRootProps, checked } = useCheck({
     checked: getChecked(),
-    onChange: props.onChange,
+    onChange: onChange,
     onClick: props.onClick,
     disabled: disabled,
     inputRef: props.inputRef,

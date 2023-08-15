@@ -1,12 +1,12 @@
-import ISwitch from './switch';
+import Switch from './switch';
 
-type RefSwitch = typeof ISwitch;
+type RefSwitch = typeof Switch;
 
 export interface SwitchComponent extends RefSwitch {
   displayName: string;
 }
 
-const SwitchComp: SwitchComponent = ISwitch as SwitchComponent;
+const SwitchComp: SwitchComponent = Switch as SwitchComponent;
 
 SwitchComp.displayName = 'ShineoutSwitch';
 

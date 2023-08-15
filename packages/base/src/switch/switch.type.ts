@@ -24,4 +24,7 @@ export interface SwitchProps
   content?: [React.ReactNode, React.ReactNode];
   loading?: boolean;
   value?: boolean;
+  defaultValue?: boolean;
+  onChange?: (value: boolean) => void;
+  beforeChange?: (value: boolean) => boolean | undefined;
 }

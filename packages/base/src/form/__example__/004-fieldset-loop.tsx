@@ -1,17 +1,11 @@
 import { Form, FormField, FormFieldSet, FormItem, Input } from '@sheinx/base';
-import {
-  useFormItemStyle,
-  useFormStyle,
-  useInnerTitleStyle,
-  useInputStyle,
-} from '@sheinx/shineout-style';
+import { useFormItemStyle, useFormStyle, useInputStyle } from '@sheinx/shineout-style';
 import React from 'react';
 
 export default () => {
   const inputStyle = useInputStyle();
   const formStyle = useFormStyle();
   const itemStyle = useFormItemStyle();
-  const innerTitleStyle = useInnerTitleStyle();
   return (
     <div>
       <Form
@@ -34,21 +28,19 @@ export default () => {
                 <FormItem jssStyle={itemStyle} style={{ display: 'flex', marginBottom: '10px' }}>
                   <FormField name={'name'} defaultValue={'leo'}>
                     <Input
-                      jssStyle={inputStyle}
-                      innerTitleJssStyle={innerTitleStyle}
+                      jssStyle={{ input: inputStyle }}
                       style={{ width: 180, marginInlineEnd: 8 }}
                     />
                   </FormField>
                   <FormField name={'age'} defaultValue={'18'}>
                     <Input
-                      jssStyle={inputStyle}
-                      innerTitleJssStyle={innerTitleStyle}
+                      jssStyle={{ input: inputStyle }}
                       style={{ width: 180, marginInlineEnd: 8 }}
                     />
                   </FormField>
                   <span
                     onClick={() => {
-                      ii.onAppend({ name: '' });
+                      ii.onAppend({ name: '', age: 12 });
                     }}
                   >
                     +

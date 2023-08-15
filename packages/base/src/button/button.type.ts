@@ -39,8 +39,7 @@ export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'>
   text?: boolean;
   outline?: boolean;
   disabled?: boolean;
-
-  jssStyle: {
+  jssStyle?: {
     button?: ButtonClasses;
   };
 }
@@ -66,7 +65,7 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
   mode?: ButtonMode;
   type?: ButtonType;
   children: React.ReactNode;
-  jssStyle: {
+  jssStyle?: {
     button?: ButtonClasses;
   };
 }

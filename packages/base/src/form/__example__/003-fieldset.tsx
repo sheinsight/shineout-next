@@ -1,17 +1,11 @@
 import { Form, FormField, FormFieldSet, FormItem, Input } from '@sheinx/base';
-import {
-  useFormItemStyle,
-  useFormStyle,
-  useInnerTitleStyle,
-  useInputStyle,
-} from '@sheinx/shineout-style';
+import { useFormItemStyle, useFormStyle, useInputStyle } from '@sheinx/shineout-style';
 import React from 'react';
 
 export default () => {
   const inputStyle = useInputStyle();
   const formStyle = useFormStyle();
   const itemStyle = useFormItemStyle();
-  const innerTitleStyle = useInnerTitleStyle();
   return (
     <div>
       <Form
@@ -54,12 +48,7 @@ export default () => {
                 },
               ]}
             >
-              <Input
-                jssStyle={inputStyle}
-                innerTitleJssStyle={innerTitleStyle}
-                clearable
-                placeholder='please input email'
-              />
+              <Input jssStyle={{ input: inputStyle }} clearable placeholder='please input email' />
             </FormField>
           </FormFieldSet>
         </FormItem>
