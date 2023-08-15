@@ -1,9 +1,11 @@
 import { CommonType } from '../common/type';
-import { BaseButtonProps } from '@sheinx/hooks';
+import { BaseButtonProps, ButtonMode, ButtonType } from '@sheinx/hooks';
 import React from 'react';
 
 export interface ButtonClasses {
   button: string;
+  group: string;
+  groupItem: string;
 
   // 形状
   round: string;
@@ -30,6 +32,18 @@ export interface ButtonClasses {
   outline: string;
 }
 
+export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'> {
+  type: ButtonType;
+  mode: ButtonMode;
+  size?: string;
+  text?: boolean;
+  outline?: boolean;
+  disabled?: boolean;
+  jssStyle?: {
+    button?: ButtonClasses;
+  };
+}
+
 export interface ButtonBaseProps
   extends BaseButtonProps,
     Pick<CommonType, 'style' | 'className'>,
@@ -41,6 +55,19 @@ export interface ButtonBaseProps
   renderButton?: (buttonEl: React.ReactNode) => React.ReactElement;
   renderLoading?: (buttonEl: React.ReactNode) => React.ReactElement;
   renderInnerWrapper?: (innerWrapperEl: React.ReactNode) => React.ReactElement;
+}
+
+export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className' | 'size'> {
+  outline?: boolean;
+  text?: boolean;
+  link?: boolean;
+  shape?: 'round';
+  mode?: ButtonMode;
+  type?: ButtonType;
+  children: React.ReactNode;
+  jssStyle?: {
+    button?: ButtonClasses;
+  };
 }
 
 export type ButtonProps = ButtonBaseProps;

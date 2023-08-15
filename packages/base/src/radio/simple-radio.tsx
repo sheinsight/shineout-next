@@ -4,34 +4,47 @@ import React from 'react';
 import { SimpleRadioProps } from './radio.type';
 
 const Radio = (props: SimpleRadioProps) => {
-  const { jssStyle, className, style, status, children, ...rest } = props;
+  const { jssStyle, className, style, children, renderRadio, ...rest } = props;
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
   });
   const rootClass = classNames([
-    jssStyle.wrapper,
+    jssStyle?.radio?.wrapper,
     className,
-    {
-      [jssStyle.wrapperDisabled]: disabled,
-      [jssStyle.wrapperError]: status === 'error',
-      [jssStyle.wrapperChecked]: checked,
-    },
+    !!disabled && jssStyle?.radio?.wrapperDisabled,
+    !!checked && jssStyle?.radio?.wrapperChecked,
   ]);
 
   const inputProps = getInputProps();
+  const rootProps = getRootProps({
+    className: rootClass,
+    style,
+  });
+  const indicatorProps = getIndicatorProps();
 
-  return (
-    <div
-      {...getRootProps({
-        className: rootClass,
-        style,
-      })}
-    >
+  const simpleRadio = (
+    <div {...rootProps}>
       <input {...inputProps} type='radio' />
-      <i {...getIndicatorProps()} className={jssStyle.indicator} />
-      <span className={jssStyle.desc}>{children}</span>
+      <div className={jssStyle?.radio?.indicatorWrapper}>
+        <i {...indicatorProps} className={jssStyle?.radio?.indicator} />
+      </div>
+      <span className={jssStyle?.radio?.desc}>{children}</span>
     </div>
   );
+
+  if (typeof renderRadio === 'function') {
+    return renderRadio({
+      content: simpleRadio,
+      rootProps,
+      indicatorProps,
+      inputProps,
+      disabled,
+      checked,
+      children,
+    });
+  }
+
+  return simpleRadio;
 };
 
 export default Radio;

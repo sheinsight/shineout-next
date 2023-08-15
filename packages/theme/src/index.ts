@@ -1,41 +1,58 @@
-import Common from './common';
 import Button from './button';
-import Radio from './radio';
-import Input from './input';
-import Dropdown from './dropdown';
-import Icon from './icon';
-import Checkbox from './checkbox';
-import Textarea from './textarea';
-import Image from './image';
-
-import { CommonTokens } from './common/type';
 import { ButtonTokens } from './button/type';
-import { RadioTokens } from './radio/type';
-import { InputTokens } from './input/type';
-import { DropdownTokens } from './dropdown/type';
-import { IconTokens } from './icon/type';
+
+import Checkbox from './checkbox';
 import { CheckboxTokens } from './checkbox/type';
-import { TextareaTokens } from './Textarea/type';
+
+import Image from './image';
 import { ImageTokens } from './image/type';
 
-export type ThemeTokens = CommonTokens &
-  ButtonTokens &
-  RadioTokens &
-  InputTokens &
+import Common from './common';
+import { CommonTokens } from './common/type';
+
+import Dropdown from './dropdown';
+import { DropdownTokens } from './dropdown/type';
+
+import Icon from './icon';
+import { IconTokens } from './icon/type';
+
+import Input from './input';
+import { InputTokens } from './input/type';
+
+import Popover from './popover';
+import { PopoverTokens } from './popover/type';
+
+import Radio from './radio';
+import { RadioTokens } from './radio/type';
+
+import Switch from './switch';
+import { SwitchTokens } from './switch/type';
+
+import Textarea from './textarea';
+import { TextareaTokens } from './textarea/type';
+
+export type ThemeTokens = ButtonTokens &
+  CheckboxTokens &
+  CommonTokens &
   DropdownTokens &
   IconTokens &
-  CheckboxTokens &
+  InputTokens &
+  PopoverTokens &
+  RadioTokens &
+  SwitchTokens &
   TextareaTokens &
   ImageTokens;
 
 const Token: ThemeTokens = {
-  ...Common,
   ...Button,
-  ...Radio,
-  ...Input,
+  ...Checkbox,
+  ...Common,
   ...Dropdown,
   ...Icon,
-  ...Checkbox,
+  ...Input,
+  ...Popover,
+  ...Radio,
+  ...Switch,
   ...Textarea,
   ...Image,
 };

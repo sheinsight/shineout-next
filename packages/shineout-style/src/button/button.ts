@@ -20,11 +20,13 @@ type ButtonClass =
   | 'link'
   | 'href'
   | 'small'
-  | 'large';
+  | 'large'
+  | 'group'
+  | 'groupItem';
 
-type ButtonType = 'Default' | 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
+type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 
-type ButtonStyleType = 'Text' | 'Outline' | 'Dash' | '';
+type ButtonStyleType = 'Text' | 'Outline' | ''; // Dashed 用 Outline 的样式
 
 const button = (type: ButtonType, styles: ButtonStyleType) => ({
   color: Token[`button${type}${styles}FontColor`],
@@ -56,6 +58,115 @@ const button = (type: ButtonType, styles: ButtonStyleType) => ({
     borderColor: Token[`button${type}${styles}DisabledBorderColor`],
   },
 });
+const beforeLine = () => ({
+  '&::before': {
+    position: 'absolute',
+    content: '" "',
+    height: '50%',
+    top: 'calc(25% + 1px)',
+    left: -1,
+    width: 1,
+    background: '#FFF',
+  },
+  '&:not($disabled):hover': {
+    '&::before': {
+      background: 'transparent',
+    },
+    '& + $button,& + * $button': {
+      '&::before': {
+        background: 'transparent',
+      },
+    },
+  },
+});
+const outlineBeforeLine = (type: ButtonType, styles: ButtonStyleType) => ({
+  '&::before': {
+    position: 'absolute',
+    content: '" "',
+    height: '50%',
+    top: 'calc(25% + 1px)',
+    left: -1,
+    width: 1,
+    background: Token[`button${type}${styles}BorderColor`],
+  },
+  '&:not(:disabled):hover': {
+    // before
+    '&::before': {
+      height: 'calc(100% + 2px)',
+      top: -1,
+      left: -1,
+      width: 1,
+      bottom: -1,
+      background: Token[`button${type}${styles}HoverBorderColor`],
+    },
+    '& + $button,& + * $button': {
+      '&::before': {
+        height: 'calc(100% + 2px)',
+        top: -1,
+        left: -1,
+        width: 1,
+        bottom: -1,
+        background: Token[`button${type}${styles}HoverBorderColor`],
+      },
+    },
+    // active
+    '&:active': {
+      '&::before': {
+        background: Token[`button${type}${styles}ActiveBorderColor`],
+      },
+      '& + $button,& + * $button': {
+        '&::before': {
+          background: Token[`button${type}${styles}ActiveBorderColor`],
+        },
+      },
+    },
+  },
+
+  '&$primary,&$success,&$warning,&$danger,$secondary': {
+    '&::before': {
+      height: 'calc(100% + 2px)',
+      top: -1,
+      left: -1,
+      width: 1,
+      bottom: -1,
+      background: `${Token[`button${type}${styles}BorderColor`]}`,
+    },
+    '& + :not(&)': {
+      '&::before': {
+        height: 'calc(100% + 2px)',
+        top: -1,
+        left: -1,
+        width: 1,
+        bottom: -1,
+        background: Token[`button${type}${styles}BorderColor`],
+      },
+    },
+  },
+});
+
+const textBeforeLine = () => ({
+  '&::before': {
+    transition: 'all 0.3s',
+    position: 'absolute',
+    content: '" "',
+    height: '50%',
+    top: 'calc(25% + 1px)',
+    left: -1,
+    width: 1,
+    background: '#E8EBF0',
+  },
+
+  '&:not($disabled):hover': {
+    '&::before': {
+      background: 'transparent',
+    },
+    '& + $button,& + * $button': {
+      '&::before': {
+        background: 'transparent',
+      },
+    },
+  },
+});
 
 const loading = (type: ButtonType, styles: ButtonStyleType) => {
   const buttonStyle = button(type, styles);
@@ -69,7 +180,6 @@ const loading = (type: ButtonType, styles: ButtonStyleType) => {
 
 const ButtonStyle: JsStyles<ButtonClass> = {
   button: {
-    height: `32px`,
     outline: 'none',
     fontWeight: 400,
     cursor: 'pointer',
@@ -86,6 +196,8 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
     transition: 'all 0.15s ease-in-out',
     fontFamily: 'inherit',
+
+    height: Token.buttonHeight,
 
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,
@@ -108,7 +220,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
 
   small: {
-    height: `28px`,
+    height: Token.buttonSmallHeight,
 
     fontSize: Token.buttonSmallFontSize,
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
@@ -120,7 +232,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
 
   large: {
-    height: `40px`,
+    height: Token.buttonLargeHeight,
 
     fontSize: Token.buttonLargeFontSize,
     padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
@@ -132,7 +244,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
 
   default: {
-    ...button('Default', ''),
+    ...button('Secondary', ''),
   },
   primary: {
     ...button('Primary', ''),
@@ -152,7 +264,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   link: {},
   outline: {
     '&$default': {
-      ...button('Default', 'Outline'),
+      ...button('Secondary', 'Outline'),
     },
     '&$primary': {
       ...button('Primary', 'Outline'),
@@ -172,7 +284,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
   dashed: {
     '&$default': {
-      ...button('Default', 'Outline'),
+      ...button('Secondary', 'Outline'),
     },
     '&$primary': {
       ...button('Primary', 'Outline'),
@@ -193,7 +305,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
   text: {
     '&$default': {
-      ...button('Default', 'Text'),
+      ...button('Secondary', 'Text'),
       backgroundColor: 'transparent',
     },
     '&$primary': {
@@ -215,6 +327,13 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   href: {
     textDecoration: 'none',
     boxSizing: 'border-box',
+    color: 'red',
+    '$primary&': {
+      color: 'blue',
+    },
+    '$disabled&': {
+      color: 'blue',
+    },
     '&$danger': {
       ...button('Danger', ''),
     },
@@ -232,7 +351,6 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     height: `32px`,
     borderRadius: Token.buttonSquareBorderRadius,
   },
-
   disabled: {
     cursor: 'not-allowed',
   },
@@ -240,7 +358,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     cursor: 'not-allowed',
 
     '&$default': {
-      ...loading('Default', ''),
+      ...loading('Secondary', ''),
     },
     '&$primary': {
       ...loading('Primary', ''),
@@ -256,6 +374,132 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     },
     '&$secondary': {
       ...loading('Secondary', ''),
+    },
+  },
+
+  groupItem: {},
+
+  group: {
+    // 2.x 之前非 inline-block
+    display: 'inline-block',
+
+    // 第一个元素下的所有 button 标签的元素
+    '& > :first-child$button,& > :first-child $button': {
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0,
+      borderRight: 'none',
+      '&::before': {
+        display: 'none',
+      },
+    },
+
+    // 最后一个元素下的所有 button 标签的元素
+    '& > :last-child$button,& > :last-child $button': {
+      borderTopLeftRadius: 0,
+      borderBottomLeftRadius: 0,
+      borderLeft: 'none',
+    },
+
+    '& > :not(:first-child):not(:last-child)$button,& > :not(:first-child):not(:last-child) $button':
+      {
+        borderRadius: 0,
+        borderLeft: 'none',
+        borderRight: 'none',
+      },
+
+    // 填充型 button
+    '& $button:not($outline):not($dashed):not($text)': {
+      position: 'relative',
+
+      '&::before': {
+        transition: 'all 0.3s',
+      },
+      // secondary 比较特殊，单独拎出来写覆盖掉 &::before
+      '&$secondary': {
+        ...beforeLine(),
+        '&::before': {
+          position: 'absolute',
+          content: '" "',
+          height: '50%',
+          top: 'calc(25% + 1px)',
+          left: -1,
+          width: 1,
+          background: '#E8EBF0',
+        },
+        '& + :not(&),& + * $button:not(&)': {
+          '&::before': {
+            background: 'transparent',
+          },
+        },
+        '& + $groupItem $button:not(&)': {
+          '&::before': {
+            background: 'transparent',
+          },
+        },
+      },
+      // primary, success, warning, danger 分割线样式
+      '&$primary,&$success,&$warning,&$danger': {
+        ...beforeLine(),
+      },
+      // priamry success warning danger secondary 两两之间如果不是紧挨着，则去除中间的分割线
+      '&$primary,&$success,&$warning,&$danger,$secondary': {
+        '& + :not(&),& + * $button:not(&)': {
+          '&::before': {
+            background: 'transparent',
+          },
+        },
+        '& + $button:not(&)': {
+          '&::before': {
+            background: 'transparent',
+          },
+        },
+      },
+    },
+
+    // outline 型 button
+    '& $outline': {
+      position: 'relative',
+      '&::before': {
+        transition: 'all 0.3s',
+      },
+
+      // secondary 比较特殊，单独拎出来写覆盖掉 &::before
+      '&$secondary': {
+        ...outlineBeforeLine('Secondary', 'Outline'),
+        '&::before': {
+          position: 'absolute',
+          content: '" "',
+          height: '50%',
+          top: 'calc(25% + 1px)',
+          left: -1,
+          width: 1,
+          background: '#E8EBF0', // Neutral-border-1
+        },
+      },
+      '&$primary': {
+        ...outlineBeforeLine('Primary', 'Outline'),
+      },
+      '&$success': {
+        ...outlineBeforeLine('Success', 'Outline'),
+      },
+      '&$warning': {
+        ...outlineBeforeLine('Warning', 'Outline'),
+      },
+      '&$danger': {
+        ...outlineBeforeLine('Danger', 'Outline'),
+      },
+    },
+
+    // text 型 button
+    '& $text': {
+      position: 'relative',
+      ...textBeforeLine(),
+    },
+
+    // dashed 型 button
+    '&$dashed': {
+      position: 'relative',
+      borderStyle: 'none',
     },
   },
 };

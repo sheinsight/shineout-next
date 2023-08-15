@@ -63,7 +63,7 @@ const buttonTokenValue = {
         focus: { background: { color: '' } },
       },
     },
-    dash: {
+    dashed: {
       font: { color: '' },
       background: { color: '' },
       border: { color: '' },
@@ -175,33 +175,17 @@ const buttonTokenValue = {
         focus: { background: { color: 'Neutral-border-1' } },
       },
     },
-    dash: {
-      font: { color: 'Brand-6' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Brand-6' },
-      disabled: {
-        font: { color: 'Brand-3' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: '' },
-      },
-      hover: {
-        font: { color: 'Brand-5' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Brand-5' },
-      },
-      active: {
-        font: { color: 'Brand-7' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Brand-7' },
-      },
-      focus: {
-        font: { color: 'Brand-5' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Brand-5' },
-      },
+    dashed: {
+      font: { color: '' },
+      background: { color: '' },
+      border: { color: '' },
+      disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       split: {
-        background: { color: 'Neutral-border-1' },
-        disabled: { background: { color: 'Neutral-border-1' } },
+        background: { color: '' },
+        disabled: { background: { color: '' } },
         hover: { background: { color: '' } },
         active: { background: { color: '' } },
         focus: { background: { color: '' } },
@@ -303,30 +287,14 @@ const buttonTokenValue = {
         focus: { background: { color: 'Neutral-border-1' } },
       },
     },
-    dash: {
-      font: { color: 'Neutral-text-5' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Neutral-border-2' },
-      disabled: {
-        font: { color: 'Neutral-text-2' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Neutral-border-2' },
-      },
-      hover: {
-        font: { color: 'Brand-5' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Brand-5' },
-      },
-      active: {
-        font: { color: 'Brand-7' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Brand-7' },
-      },
-      focus: {
-        font: { color: 'Brand-5' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Brand-5' },
-      },
+    dashed: {
+      font: { color: '' },
+      background: { color: '' },
+      border: { color: '' },
+      disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       split: {
         background: { color: '' },
         disabled: { background: { color: '' } },
@@ -431,30 +399,14 @@ const buttonTokenValue = {
         focus: { background: { color: 'Neutral-border-1' } },
       },
     },
-    dash: {
-      font: { color: 'Success-5' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Success-5' },
-      disabled: {
-        font: { color: 'Success-3' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Success-3' },
-      },
-      hover: {
-        font: { color: 'Success-4' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Success-4' },
-      },
-      active: {
-        font: { color: 'Success-6' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Success-6' },
-      },
-      focus: {
-        font: { color: 'Success-4' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Success-4' },
-      },
+    dashed: {
+      font: { color: '' },
+      background: { color: '' },
+      border: { color: '' },
+      disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       split: {
         background: { color: '' },
         disabled: { background: { color: '' } },
@@ -559,30 +511,14 @@ const buttonTokenValue = {
         focus: { background: { color: 'Neutral-border-1' } },
       },
     },
-    dash: {
-      font: { color: 'Warning-5' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Warning-5' },
-      disabled: {
-        font: { color: 'Warning-3' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Warning-3' },
-      },
-      hover: {
-        font: { color: 'Warning-4' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Warning-4' },
-      },
-      active: {
-        font: { color: 'Warning-6' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Warning-6' },
-      },
-      focus: {
-        font: { color: 'Warning-4' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Warning-4' },
-      },
+    dashed: {
+      font: { color: '' },
+      background: { color: '' },
+      border: { color: '' },
+      disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       split: {
         background: { color: '' },
         disabled: { background: { color: '' } },
@@ -687,30 +623,14 @@ const buttonTokenValue = {
         focus: { background: { color: 'Neutral-border-1' } },
       },
     },
-    dash: {
-      font: { color: 'Danger-5' },
-      background: { color: 'Neutral-fill-1' },
-      border: { color: 'Danger-5' },
-      disabled: {
-        font: { color: 'Danger-3' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Danger-3' },
-      },
-      hover: {
-        font: { color: 'Danger-4' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Danger-4' },
-      },
-      active: {
-        font: { color: 'Danger-6' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Danger-6' },
-      },
-      focus: {
-        font: { color: 'Danger-4' },
-        background: { color: 'Neutral-fill-1' },
-        border: { color: 'Danger-4' },
-      },
+    dashed: {
+      font: { color: '' },
+      background: { color: '' },
+      border: { color: '' },
+      disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
       split: {
         background: { color: '' },
         disabled: { background: { color: '' } },
@@ -730,10 +650,12 @@ const buttonTokenValue = {
   font: { size: '14/regular' },
   border: { radius: 'Radius-4' },
   padding: { x: 'Padding-8', y: 'Padding-5' },
+  height: 'Size-16',
   small: {
     font: { size: '12/regular' },
     border: { radius: 'Radius-4' },
     padding: { x: 'Padding-8', y: 'Padding-2' },
+    height: 'Size-12',
     round: { border: { radius: 'Radius-1000' } },
     circle: { border: { radius: 'Radius-50%' } },
     square: { border: { radius: 'Radius-4' } },
@@ -742,6 +664,7 @@ const buttonTokenValue = {
     font: { size: '16/regular' },
     border: { radius: 'Radius-4' },
     padding: { x: 'Padding-12', y: 'Padding-8' },
+    height: 'Size-20',
     round: { border: { radius: 'Radius-1000' } },
     circle: { border: { radius: 'Radius-50%' } },
     square: { border: { radius: 'Radius-4' } },

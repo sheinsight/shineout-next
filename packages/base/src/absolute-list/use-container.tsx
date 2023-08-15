@@ -18,7 +18,7 @@ const useContainer = (props: ContainerProps = {}) => {
     }
   });
 
-  function getRoot() {
+  function getRootContainer() {
     const container = getContainer();
     const defaultContainer = getDefaultContainer();
     if (container !== defaultContainer) return container;
@@ -32,13 +32,13 @@ const useContainer = (props: ContainerProps = {}) => {
     return root;
   }
 
-  const getElement = usePersistFn(() => {
+  const getRoot = usePersistFn(() => {
     if (!context.element) {
       context.element = document.createElement('div');
     }
-    const root = getRoot();
-    if (context.element.parentElement !== root) {
-      root.appendChild(context.element);
+    const rootContainer = getRootContainer();
+    if (context.element.parentElement !== rootContainer) {
+      rootContainer.appendChild(context.element);
     }
     return context.element;
   });
@@ -54,7 +54,7 @@ const useContainer = (props: ContainerProps = {}) => {
   }, []);
 
   return {
-    getElement,
+    getRoot,
     getContainer,
     unMount,
   };

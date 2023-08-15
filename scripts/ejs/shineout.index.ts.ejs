@@ -1,3 +1,6 @@
 <% files.forEach(function (file, i) { -%>
 export { default as <%= file.charAt(0).toUpperCase() + file.slice(1) %> } from './<%= file %>';
 <% }) -%>
+export { setConfig } from '@sheinx/base';
+
+export * as TYPE from './type';

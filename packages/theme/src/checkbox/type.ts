@@ -59,39 +59,39 @@ export interface CheckboxTokens {
   /**
    * @type {string}
    * @token Brand-6
-   * @description 单选框图标鼠标点击时的边框颜色
+   * @description 单选框图标undefined边框颜色
    */
-  checkboxIconActiveBorderColor: string;
+  checkboxIconCheckedBorderColor: string;
   /**
    * @type {string}
    * @token Brand-6
-   * @description 单选框图标鼠标点击时的背景颜色
-   */
-  checkboxIconActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 单选框图标鼠标点击时的颜色
-   */
-  checkboxIconActiveColor: string;
-  /**
-   * @type {string}
-   * @token Brand-3
-   * @description 单选框图标undefined边框颜色
-   */
-  checkboxIconActivedisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token Brand-3
    * @description 单选框图标undefined背景颜色
    */
-  checkboxIconActivedisabledBackgroundColor: string;
+  checkboxIconCheckedBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
    * @description 单选框图标undefined颜色
    */
-  checkboxIconActivedisabledColor: string;
+  checkboxIconCheckedColor: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 单选框图标undefined禁用时的边框颜色
+   */
+  checkboxIconCheckedDisabledBorderColor: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 单选框图标undefined禁用时的背景颜色
+   */
+  checkboxIconCheckedDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 单选框图标undefined禁用时的颜色
+   */
+  checkboxIconCheckedDisabledColor: string;
   /**
    * @type {string}
    * @token Radius-2
@@ -137,7 +137,13 @@ export interface CheckboxTokens {
   /**
    * @type {string}
    * @token Margin-24
+   * @description 单选框间距
+   */
+  checkboxGap: string;
+  /**
+   * @type {string}
+   * @token Margin-12
    * @description 单选框undefined间距
    */
-  checkboxLabelGap: string;
+  checkboxBlockGap: string;
 }

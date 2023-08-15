@@ -1,7 +1,6 @@
 import React, { Children, cloneElement } from 'react';
 import classNames from 'classnames';
-import { ButtonGroupClasses, ButtonGroupProps } from './button-group.type';
-import { ButtonProps } from './button.type';
+import { ButtonProps, ButtonGroupProps, ButtonClasses } from './button.type';
 
 const Group = (props: ButtonGroupProps) => {
   const { children, className, style, jssStyle, size, mode, outline, text, shape, type } = props;
@@ -13,18 +12,13 @@ const Group = (props: ButtonGroupProps) => {
   }
 
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
-  const groupStyle = jssStyle?.buttonGroup || ({} as ButtonGroupClasses);
-
+  const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
   const groupClass = classNames(
     className,
-    groupStyle?.group,
-    groupStyle[type || 'default'],
-    modeSetted === 'text' && groupStyle.text,
-    modeSetted === 'dashed' && groupStyle.dashed,
-    modeSetted === 'outline' && groupStyle.outline,
-    shape === 'round' && groupStyle.round,
-    size === 'small' && groupStyle.small,
-    size === 'large' && groupStyle.large,
+    buttonStyle?.group,
+    shape === 'round' && buttonStyle.round,
+    size === 'small' && buttonStyle.small,
+    size === 'large' && buttonStyle.large,
   );
 
   const shapeSetted = shape === 'round' ? 'round' : undefined;
@@ -33,12 +27,12 @@ const Group = (props: ButtonGroupProps) => {
     <div className={groupClass} style={style}>
       {Children.toArray(children).map((child) => {
         const Child = child as React.ReactElement<ButtonProps>;
-
         return cloneElement<ButtonProps>(Child, {
           size,
-          mode: modeSetted,
+          mode: modeSetted || Child.props.mode,
           shape: shapeSetted,
           type: Child.props.type || type,
+          className: classNames(Child.props.className),
         });
       })}
     </div>

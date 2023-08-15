@@ -10,19 +10,25 @@ import { Icon02, Icon03 } from './static/icon';
 
 export default () => {
   const iconWarpperStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 4,
+    display: 'inline-flex',
+    lineHeight: '22px',
   };
 
   return (
     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', flexDirection: 'column' }}>
-      <Button.Group mode='text' type='secondary'>
-        <Button type='primary'>Publish</Button>
-        <Button>Publish</Button>
-        <Button>Publish</Button>
-        <Button disabled>Publish</Button>
+      <Button.Group>
+        <Button type='primary' mode='outline'>
+          Publish
+        </Button>
+        <Button type='secondary' mode='outline'>
+          Publish
+        </Button>
+        <Button type='secondary' mode='outline'>
+          Publish
+        </Button>
+        <Button type='secondary' mode='outline' disabled>
+          Publish
+        </Button>
       </Button.Group>
 
       <Button.Group type='secondary'>

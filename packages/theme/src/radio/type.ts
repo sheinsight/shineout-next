@@ -4,272 +4,122 @@
 export interface RadioTokens {
   /**
    * @type {string}
-   * @token
-   * @description 单选框字体颜色
+   * @token Neutral-border-1
+   * @description 单选框图标边框颜色
    */
-  radioFontColor: string;
+  radioIconBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框背景颜色
+   * @token Neutral-fill-1
+   * @description 单选框图标背景颜色
    */
-  radioBackgroundColor: string;
+  radioIconBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框边框颜色
+   * @token Neutral-border-1
+   * @description 单选框图标禁用时的边框颜色
    */
-  radioBorderColor: string;
+  radioIconDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框线框模式字体颜色
+   * @token Neutral-fill-2
+   * @description 单选框图标禁用时的背景颜色
    */
-  radioOutlineFontColor: string;
+  radioIconDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框线框模式背景颜色
+   * @token Neutral-border-2
+   * @description 单选框图标鼠标移入时的边框颜色
    */
-  radioOutlineBackgroundColor: string;
+  radioIconHoverBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框线框模式边框颜色
+   * @token Neutral-fill-1
+   * @description 单选框图标鼠标移入时的背景颜色
    */
-  radioOutlineBorderColor: string;
+  radioIconHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框禁用时的字体颜色
+   * @token Brand-6
+   * @description 单选框图标undefined边框颜色
    */
-  radioDisabledFontColor: string;
+  radioIconCheckedBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框禁用时的背景颜色
+   * @token Neutral-fill-1
+   * @description 单选框图标undefined背景颜色
    */
-  radioDisabledBackgroundColor: string;
+  radioIconCheckedBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框禁用时的边框颜色
+   * @token Brand-6
+   * @description 单选框图标undefined颜色
    */
-  radioDisabledBorderColor: string;
+  radioIconCheckedColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标聚焦时的字体颜色
+   * @token Brand-3
+   * @description 单选框图标undefined禁用时的边框颜色
    */
-  radioFocusFontColor: string;
+  radioIconCheckedDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标聚焦时的背景颜色
+   * @token Neutral-fill-1
+   * @description 单选框图标undefined禁用时的背景颜色
    */
-  radioFocusBackgroundColor: string;
+  radioIconCheckedDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标聚焦时的边框颜色
+   * @token Brand-3
+   * @description 单选框图标undefined禁用时的颜色
    */
-  radioFocusBorderColor: string;
+  radioIconCheckedDisabledColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标移入时的字体颜色
+   * @token Margin-24
+   * @description 单选框undefined
    */
-  radioHoverFontColor: string;
+  radioGap: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标移入时的背景颜色
+   * @token Margin-12
+   * @description 单选框undefinedundefined
    */
-  radioHoverBackgroundColor: string;
+  radioBlockGap: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框鼠标移入时的边框颜色
+   * @token Margin-8
+   * @description 单选框图标undefined
    */
-  radioHoverBorderColor: string;
+  radioIconGap: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框按钮模式字体颜色
+   * @token Border-2
+   * @description 单选框图标边框宽度
    */
-  radioButtonFontColor: string;
+  radioIconBorderWidth: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框按钮模式背景颜色
+   * @token Neutral-fill-2
+   * @description 单选框图标圆形undefined
    */
-  radioButtonBackgroundColor: string;
+  radioIconCircleFill: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框按钮模式边框颜色
+   * @token Neutral-text-5
+   * @description 单选框undefined字体颜色
    */
-  radioButtonBorderColor: string;
+  radioLabelFontColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框按钮模式线框模式字体颜色
+   * @token Neutral-text-2
+   * @description 单选框undefined禁用时的字体颜色
    */
-  radioButtonOutlineFontColor: string;
+  radioLabelDisabledFontColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 单选框按钮模式线框模式背景颜色
+   * @token 14/regular
+   * @description 单选框undefined字体字号
    */
-  radioButtonOutlineBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式线框模式边框颜色
-   */
-  radioButtonOutlineBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式禁用时的字体颜色
-   */
-  radioButtonDisabledFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式禁用时的背景颜色
-   */
-  radioButtonDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式禁用时的边框颜色
-   */
-  radioButtonDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式鼠标聚焦时的字体颜色
-   */
-  radioButtonFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式鼠标聚焦时的背景颜色
-   */
-  radioButtonFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式鼠标聚焦时的边框颜色
-   */
-  radioButtonFocusBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式鼠标移入时的字体颜色
-   */
-  radioButtonHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式鼠标移入时的背景颜色
-   */
-  radioButtonHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框按钮模式鼠标移入时的边框颜色
-   */
-  radioButtonHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框字体字号
-   */
-  radioFontSize: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框边框圆角
-   */
-  radioBorderRadius: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框行高度
-   */
-  radioLineHeight: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框内边距（水平方向）
-   */
-  radioPaddingX: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框内边距（垂直方向）
-   */
-  radioPaddingY: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框小尺寸字体字号
-   */
-  radioSmallFontSize: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框小尺寸边框圆角
-   */
-  radioSmallBorderRadius: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框小尺寸行高度
-   */
-  radioSmallLineHeight: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框小尺寸内边距（水平方向）
-   */
-  radioSmallPaddingX: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框小尺寸内边距（垂直方向）
-   */
-  radioSmallPaddingY: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框大尺寸字体字号
-   */
-  radioLargeFontSize: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框大尺寸边框圆角
-   */
-  radioLargeBorderRadius: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框大尺寸行高度
-   */
-  radioLargeLineHeight: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框大尺寸内边距（水平方向）
-   */
-  radioLargePaddingX: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 单选框大尺寸内边距（垂直方向）
-   */
-  radioLargePaddingY: string;
+  radioLabelFontSize: string;
 }

@@ -5,9 +5,10 @@ import Radio from './radio';
 import React from 'react';
 import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
+import Button from '../button/button';
 
 const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
-  const { children, className, button, block, keygen, jssStyle } = props;
+  const { children, className, button, block, keygen, jssStyle, style } = props;
   const { size, disabled } = useWithFormConfig(props);
 
   const inputAbleProps = useInputAble({
@@ -54,27 +55,51 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
     return '';
   };
 
+  const renderRadio = React.useCallback((info: any): React.ReactElement => {
+    const { children, content, checked, disabled, rootProps, inputProps } = info;
+    const checkedProps = {
+      mode: button === 'outline' ? 'outline' : undefined,
+      type: 'primary' as 'primary',
+    } as any;
+    const noCheckedProps = {
+      mode: 'outline' as 'outline',
+      type: 'secondary' as 'secondary',
+    };
+    if (button) {
+      return (
+        <Button
+          jssStyle={jssStyle}
+          size={size}
+          disabled={disabled}
+          {...(checked ? checkedProps : noCheckedProps)}
+          {...rootProps}
+        >
+          <input type='radio' {...inputProps} />
+          {children}
+        </Button>
+      );
+    }
+    return content;
+  }, []);
+
   const providerValue = {
     checked: isChecked,
     onChange: handleItemChange,
     disabled,
+    renderRadio,
   };
-  const groupClass = classNames(className, jssStyle.group, {
-    [jssStyle.groupBlock]: block,
-    [jssStyle.groupButton]: button,
-    [jssStyle.groupOutline]: button === 'outline',
-    [jssStyle.groupSmall]: button && size === 'small',
-    [jssStyle.groupLarge]: button && size === 'large',
-  });
-  if (props.data === undefined) {
-    return (
-      <div className={groupClass}>
-        <groupContext.Provider value={providerValue}>{children}</groupContext.Provider>
-      </div>
-    );
-  } else {
-    return (
-      <div className={groupClass}>
+  const groupClass = classNames(
+    className,
+    jssStyle?.radio?.group,
+    !!block && jssStyle?.radio?.groupBlock,
+    !!button && jssStyle?.radio?.groupButton,
+  );
+
+  const Radios =
+    props.data === undefined ? (
+      <groupContext.Provider value={providerValue}>{children}</groupContext.Provider>
+    ) : (
+      <>
         {props.data.map((d, i) => (
           <Radio
             jssStyle={jssStyle}
@@ -83,14 +108,26 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
             key={util.getKey(keygen, d, i)}
             htmlValue={i}
             onChange={handleIndexChange}
+            renderRadio={renderRadio}
           >
             {getContent(d, i)}
           </Radio>
         ))}
         {children}
-      </div>
+      </>
     );
-  }
+  if (button)
+    return (
+      <Button.Group jssStyle={jssStyle} className={groupClass} style={style}>
+        {Radios}
+      </Button.Group>
+    );
+
+  return (
+    <div className={groupClass} style={style}>
+      {Radios}
+    </div>
+  );
 };
 Group.defaultProps = {
   format: (d: any) => d,

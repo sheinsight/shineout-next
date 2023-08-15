@@ -1,16 +1,14 @@
-import I<%= Component %> from './<%= component %>';
-// ...
+import <%= Component %> from './<%= component %>';
 
-type Ref<%= Component %> = typeof I<%= Component %>;
+
+type Ref<%= Component %> = typeof <%= Component %>;
+
 export interface <%= Component %>Component extends Ref<%= Component %> {
-  displayName: string;
-  // ...
+    displayName: string;
 }
 
-const <%= Component %>Comp: <%= Component %>Component = I<%= Component %>; // as <%= Component %>Component;
-
+const <%= Component %>Comp: <%= Component %>Component = <%= Component %> as <%= Component %>Component;
 
 <%= Component %>Comp.displayName = 'Shineout<%= Component %>';
-// ...
 
 export default <%= Component %>Comp;

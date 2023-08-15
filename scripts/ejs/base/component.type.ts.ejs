@@ -11,10 +11,10 @@ export interface <%= Component %>Classes {
   //...
 }
 
-export interface <%= Component %>BaseProps {
-    jssStyle: <%= Component %>Classes;
-    
+export interface <%= Component %>Props {
+    jssStyle?: {
+        <%= component %>: <%= Component %>Classes;
+    };
+
     //...
 }
-
-export type <%= Component %>Props = <%= Component %>BaseProps;
