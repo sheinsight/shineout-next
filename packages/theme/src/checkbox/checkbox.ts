@@ -3,7 +3,7 @@
 
 import { CheckboxTokens } from './type';
 
-const checkbox: CheckboxTokens = {
+const checkboxTokens: CheckboxTokens = {
   checkboxIconBorderColor: 'Neutral-border-1',
   checkboxIconBackgroundColor: 'Neutral-fill-1',
   checkboxIconColor: 'transparent',
@@ -13,12 +13,12 @@ const checkbox: CheckboxTokens = {
   checkboxIconHoverBorderColor: 'Neutral-border-2',
   checkboxIconHoverBackgroundColor: 'Neutral-fill-1',
   checkboxIconHoverColor: 'transparent',
-  checkboxIconActiveBorderColor: 'Brand-6',
-  checkboxIconActiveBackgroundColor: 'Brand-6',
-  checkboxIconActiveColor: 'Neutral-fill-1',
-  checkboxIconActivedisabledBorderColor: 'Brand-3',
-  checkboxIconActivedisabledBackgroundColor: 'Brand-3',
-  checkboxIconActivedisabledColor: 'Neutral-fill-1',
+  checkboxIconCheckedBorderColor: 'Brand-6',
+  checkboxIconCheckedBackgroundColor: 'Brand-6',
+  checkboxIconCheckedColor: 'Neutral-fill-1',
+  checkboxIconCheckedDisabledBorderColor: 'Brand-3',
+  checkboxIconCheckedDisabledBackgroundColor: 'Brand-3',
+  checkboxIconCheckedDisabledColor: 'Neutral-fill-1',
   checkboxIconBorderRadius: 'Radius-2',
   checkboxIconGap: 'Margin-8',
   checkboxIconBorderWidth: 'Border-2',
@@ -30,4 +30,4 @@ const checkbox: CheckboxTokens = {
   checkboxBlockGap: 'Margin-12',
 };
 
-export default checkbox;
+export default checkboxTokens;

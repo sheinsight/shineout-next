@@ -41,39 +41,39 @@ export interface RadioTokens {
   /**
    * @type {string}
    * @token Brand-6
-   * @description 单选框图标鼠标点击时的边框颜色
-   */
-  radioIconActiveBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 单选框图标鼠标点击时的背景颜色
-   */
-  radioIconActiveBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-6
-   * @description 单选框图标鼠标点击时的颜色
-   */
-  radioIconActiveColor: string;
-  /**
-   * @type {string}
-   * @token Brand-3
    * @description 单选框图标undefined边框颜色
    */
-  radioIconActivedisabledBorderColor: string;
+  radioIconCheckedBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
    * @description 单选框图标undefined背景颜色
    */
-  radioIconActivedisabledBackgroundColor: string;
+  radioIconCheckedBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 单选框图标undefined颜色
+   */
+  radioIconCheckedColor: string;
   /**
    * @type {string}
    * @token Brand-3
-   * @description 单选框图标undefined颜色
+   * @description 单选框图标undefined禁用时的边框颜色
    */
-  radioIconActivedisabledColor: string;
+  radioIconCheckedDisabledBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 单选框图标undefined禁用时的背景颜色
+   */
+  radioIconCheckedDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 单选框图标undefined禁用时的颜色
+   */
+  radioIconCheckedDisabledColor: string;
   /**
    * @type {string}
    * @token Margin-24

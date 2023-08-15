@@ -3,7 +3,7 @@
 
 import { DropdownTokens } from './type';
 
-const dropdown: DropdownTokens = {
+const dropdownTokens: DropdownTokens = {
   dropdownListBorderRadius: 'Radius-4',
   dropdownListPaddingY: 'Padding-4',
   dropdownListFontSize: '14/regular',
@@ -46,4 +46,4 @@ const dropdown: DropdownTokens = {
   dropdownOptionDividerHeight: 'Border-1',
 };
 
-export default dropdown;
+export default dropdownTokens;
