@@ -110,9 +110,9 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       borderColor: 'currentColor',
     },
     '$wrapperChecked &, $wrapperIndeterminate &': {
-      borderColor: token.checkboxIconActiveBorderColor,
-      backgroundColor: token.checkboxIconActiveBackgroundColor,
-      color: token.checkboxIconActiveColor,
+      borderColor: token.checkboxIconCheckedBorderColor,
+      backgroundColor: token.checkboxIconCheckedBackgroundColor,
+      color: token.checkboxIconCheckedColor,
     },
 
     '$wrapperDisabled &': {
@@ -121,9 +121,9 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       color: token.checkboxIconDisabledColor,
     },
     '$wrapperDisabled$wrapperChecked &, $wrapperDisabled$wrapperIndeterminate &': {
-      borderColor: token.checkboxIconActivedisabledBorderColor,
-      backgroundColor: token.checkboxIconActivedisabledBackgroundColor,
-      color: token.checkboxIconActivedisabledColor,
+      borderColor: token.checkboxIconCheckedDisabledBorderColor,
+      backgroundColor: token.checkboxIconCheckedDisabledBackgroundColor,
+      color: token.checkboxIconCheckedDisabledColor,
     },
   },
   desc: {

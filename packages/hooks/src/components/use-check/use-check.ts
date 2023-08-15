@@ -24,17 +24,15 @@ const useCheck = (props: BaseCheckProps) => {
 
   const handleInputRef = useForkRef(inputRef, inputRefPo);
 
-  const handleClick =
-    (otherHandlers: HandlerType) => (event: React.MouseEvent<HTMLInputElement>) => {
-      inputRef.current?.click();
-      otherHandlers?.onClick?.(event);
-    };
+  const handleClick = (otherHandlers: HandlerType) => (event: React.MouseEvent) => {
+    inputRef.current?.click();
+    otherHandlers?.onClick?.(event);
+  };
 
   const getRootProps = <TOther extends ObjectType>(externalProps: TOther = {} as TOther) => {
     const externalEventHandlers = extractEventHandlers(externalProps);
     return {
       ...externalProps,
-      checked: getChecked(),
       onClick: handleClick(externalEventHandlers),
     };
     //封装点击事件 点击触发input 的点击

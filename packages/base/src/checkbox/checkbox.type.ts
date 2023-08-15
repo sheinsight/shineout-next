@@ -51,5 +51,8 @@ export interface CheckboxProps<T>
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
   value?: T;
   defaultValue?: T;
+  /**
+   * @deprecated: 废弃属性
+   */
   inputable?: boolean;
 }

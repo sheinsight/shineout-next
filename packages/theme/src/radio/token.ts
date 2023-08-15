@@ -30,15 +30,15 @@ const radioTokenValue = {
       background: { color: 'Neutral-fill-1' },
       color: '',
     },
-    active: {
+    checked: {
       border: { color: 'Brand-6' },
       background: { color: 'Neutral-fill-1' },
       color: 'Brand-6',
-    },
-    activedisabled: {
-      border: { color: 'Brand-3' },
-      background: { color: 'Neutral-fill-1' },
-      color: 'Brand-3',
+      disabled: {
+        border: { color: 'Brand-3' },
+        background: { color: 'Neutral-fill-1' },
+        color: 'Brand-3',
+      },
     },
     gap: 'Margin-8',
     circle: { fill: 'Neutral-fill-2' },

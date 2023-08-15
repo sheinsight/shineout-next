@@ -9,7 +9,7 @@
 const radioRules = {
   iconColor: [
     ['icon'],
-    ['', 'disabled', 'hover', 'active', 'activedisabled'],
+    ['', 'disabled', 'hover', 'checked', 'checked-disabled'],
     ['border-color', 'background-color', 'color'],
   ],
   size: [['', 'block'], ['gap']],

@@ -11,7 +11,6 @@ const checkboxTokenDescription = {
   button: '按钮模式',
   outline: '线框模式',
   gap: '间距',
-  Activedisabled: '选中禁用',
 };
 
 /**
@@ -36,15 +35,15 @@ const checkboxTokenValue = {
       background: { color: 'Neutral-fill-1' },
       color: 'transparent',
     },
-    active: {
+    checked: {
       border: { color: 'Brand-6' },
       background: { color: 'Brand-6' },
       color: 'Neutral-fill-1',
-    },
-    activedisabled: {
-      border: { color: 'Brand-3' },
-      background: { color: 'Brand-3' },
-      color: 'Neutral-fill-1',
+      disabled: {
+        border: { color: 'Brand-3' },
+        background: { color: 'Brand-3' },
+        color: 'Neutral-fill-1',
+      },
     },
     gap: 'Margin-8',
     circle: { fill: 'Neutral-fill-2' },

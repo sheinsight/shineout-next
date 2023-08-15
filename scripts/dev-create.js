@@ -3,10 +3,9 @@ const path = require('path');
 const componentNameReg = /^[a-zA-Z]*$/;
 const { writeTemplate } = require('./utils/write-template');
 const { updatePackages } = require('./dev-remove');
-const { compile } = require('./utils/compile');
+// const { compile } = require('./utils/compile');
 const component = process.argv.slice(2)?.[0].trim().toLowerCase();
-
-const cssVarTemplatePath = path.join(__dirname, `./ejs/shineout-style.cssvar.ts.ejs`);
+const { glob } = require('glob');
 
 if (!component) {
   console.log('\x1b[31m%s\x1b[0m', '[ERROR] Please enter the component name.');
@@ -25,6 +24,10 @@ const dirs = [
     path: path.join(__dirname, '../packages', 'shineout-style', 'src'),
     module: 'shineout-style',
   },
+  {
+    path: path.join(__dirname, '../packages', 'theme', 'src'),
+    module: 'theme',
+  },
 ];
 
 function createPublicFilesByEjs(dir) {
@@ -34,40 +37,31 @@ function createPublicFilesByEjs(dir) {
   fs.mkdirSync(componentPath);
 
   // Create the __example__ directory under the base directory.
-  if (module !== 'shineout-style') {
+  if (module === 'shineout' || module === 'base') {
     fs.mkdirSync(path.join(componentPath, '__example__'));
     fs.mkdirSync(path.join(componentPath, '__test__'));
-  } else if (module === 'shineout-style') {
-    const templatePath = cssVarTemplatePath;
-    const targetPath = path.join(dir.path, 'cssvar');
-    const fileName = `${component}.ts`;
-
-    writeTemplate({
-      fileName,
-      targetPath,
-      templatePath,
-    });
+    fs.mkdirSync(path.join(componentPath, '__doc__'));
   }
 
   // Read all ejs templates under the ./ejs/${module} folder, and read them one by one.
-  const templates = fs.readdirSync(path.join(__dirname, `./ejs/${module}`), 'utf-8');
-
-  templates.forEach((template) => {
-    // Read the content of the ejs template.
-    const targetPath = path.join(componentPath);
-    const templatePath = path.join(__dirname, `./ejs/${module}`, template);
-    const fileName = template.replace('.ejs', '').replace('component', component);
-
-    writeTemplate({
-      fileName,
-      targetPath,
-      templatePath,
-      needPrettier: true,
-      prettierWhiteList: ['.md'],
-      ejsVars: {
-        component,
-        Component: component.charAt(0).toUpperCase() + component.slice(1),
-      },
+  // const templates = fs.readdirSync(path.join(__dirname, `./ejs/${module}`), 'utf-8');
+  console.log(path.join(__dirname, `./ejs/${module}/`));
+  glob('**/*.ejs', { cwd: path.join(__dirname, `./ejs/${module}`) }).then((files) => {
+    files.forEach((template) => {
+      const targetPath = path.join(componentPath);
+      const templatePath = path.join(__dirname, `./ejs/${module}`, template);
+      const fileName = template.replace('.ejs', '').replace('component', component);
+      writeTemplate({
+        fileName,
+        targetPath,
+        templatePath,
+        needPrettier: false,
+        prettierWhiteList: ['.md'],
+        ejsVars: {
+          component,
+          Component: component.charAt(0).toUpperCase() + component.slice(1),
+        },
+      });
     });
   });
 }
@@ -79,21 +73,21 @@ dirs.forEach((dir) => {
 
   createPublicFilesByEjs(dir);
 
-  if (dir.module !== 'shineout-style') {
-    const fileName = `s-001-base.tsx`;
-    const targetPath = path.join(dir.path, component, '__example__');
-    const templatePath = path.join(__dirname, `./ejs/${dir.module}.example.tsx.ejs`);
-
-    writeTemplate({
-      fileName,
-      targetPath,
-      templatePath,
-      ejsVars: {
-        Component: component.charAt(0).toUpperCase() + component.slice(1),
-      },
-    });
-    compile(dir.path);
-  }
+  // if (dir.module !== 'shineout-style') {
+  //   const fileName = `s-001-base.tsx`;
+  //   const targetPath = path.join(dir.path, component, '__example__');
+  //   const templatePath = path.join(__dirname, `./ejs/${dir.module}.example.tsx.ejs`);
+  //
+  //   writeTemplate({
+  //     fileName,
+  //     targetPath,
+  //     templatePath,
+  //     ejsVars: {
+  //       Component: component.charAt(0).toUpperCase() + component.slice(1),
+  //     },
+  //   });
+  //   compile(dir.path);
+  // }
 });
 
 updatePackages();

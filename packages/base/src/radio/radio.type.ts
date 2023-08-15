@@ -21,7 +21,9 @@ export interface RadioClasses {
   groupButton: string;
 }
 
-export interface SimpleRadioProps extends BaseCheckProps, Pick<CommonType, 'style' | 'className'> {
+export interface SimpleRadioProps
+  extends Omit<BaseCheckProps, 'defaultChecked'>,
+    Pick<CommonType, 'style' | 'className'> {
   jssStyle?: {
     radio?: RadioClasses;
   };
