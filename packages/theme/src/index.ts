@@ -31,6 +31,9 @@ import { SwitchTokens } from './switch/type';
 import Textarea from './textarea';
 import { TextareaTokens } from './textarea/type';
 
+import Tag from './tag';
+import { TagTokens } from './Tag/type';
+
 export type ThemeTokens = ButtonTokens &
   CheckboxTokens &
   CommonTokens &
@@ -41,7 +44,8 @@ export type ThemeTokens = ButtonTokens &
   RadioTokens &
   SwitchTokens &
   TextareaTokens &
-  ImageTokens;
+  ImageTokens &
+  TagTokens;
 
 const Token: ThemeTokens = {
   ...Button,
@@ -55,6 +59,7 @@ const Token: ThemeTokens = {
   ...Switch,
   ...Textarea,
   ...Image,
+  ...Tag,
 };
 
 export default Token;

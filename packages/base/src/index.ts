@@ -21,6 +21,7 @@ export * from './rule';
 export * from './switch';
 export * from './textarea';
 export * from './image';
+export * from './tag';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';
