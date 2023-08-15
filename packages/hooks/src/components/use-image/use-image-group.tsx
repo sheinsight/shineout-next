@@ -79,7 +79,7 @@ const useImageGroup = (props: BaseImageGroupProps) => {
     const externalEventHandlers = {
       ...extractEventHandlers(externalProps),
     };
-    const { value, unit } = parseStyleUnitValue(width || child.props.width || '100%') || {};
+    const { value } = parseStyleUnitValue(width || child.props.width || '100%') || {};
 
     return {
       ...externalEventHandlers,
@@ -88,7 +88,6 @@ const useImageGroup = (props: BaseImageGroupProps) => {
       style: {
         width: value || '100%',
         height: height || child.props.height || '100%',
-        left: `calc(${value}${unit} * ${0.0625 * index})`,
       },
     };
   };

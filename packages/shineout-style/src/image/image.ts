@@ -403,6 +403,7 @@ const ImageStyle: JsStyles<ImageClass> = {
       transform: 'scale(0.9375)',
       background: '#CCCFD7',
       borderRadius: 2,
+      right: '-6%',
     },
     '& $groupPileItem:nth-child(3)': {
       position: 'absolute',
@@ -413,6 +414,7 @@ const ImageStyle: JsStyles<ImageClass> = {
       transform: 'scale(0.875)',
       background: '#E8EBF0',
       borderRadius: 2,
+      right: '-12%',
     },
   },
 
