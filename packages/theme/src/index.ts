@@ -4,6 +4,9 @@ import { ButtonTokens } from './button/type';
 import Checkbox from './checkbox';
 import { CheckboxTokens } from './checkbox/type';
 
+import Image from './image';
+import { ImageTokens } from './image/type';
+
 import Common from './common';
 import { CommonTokens } from './common/type';
 
@@ -41,6 +44,7 @@ export type ThemeTokens = ButtonTokens &
   RadioTokens &
   SwitchTokens &
   TextareaTokens &
+  ImageTokens &
   TagTokens;
 
 const Token: ThemeTokens = {
@@ -54,6 +58,7 @@ const Token: ThemeTokens = {
   ...Radio,
   ...Switch,
   ...Textarea,
+  ...Image,
   ...Tag,
 };
 

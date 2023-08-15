@@ -6,7 +6,6 @@ import { StyleProvider } from '@sheinx/shineout-style';
 const Content = () => {
   const classes = useStyles();
   const location = useLocation();
-
   const component = useMemo(() => {
     const paths = location.pathname.split('/');
 
