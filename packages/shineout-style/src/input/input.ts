@@ -1,5 +1,4 @@
 import border from './input-border';
-import cssVars from '../cssvar';
 
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
@@ -32,7 +31,8 @@ const inputBorderToken = {
   backgroundColor: token.inputBackgroundColor,
   disabledBackgroundColor: token.inputDisabledBackgroundColor,
 
-  focusShadow: token.inputFocusShadow,
+  focusShadow: `#bde2ff`,
+  errorFocusShadow: `${token.inputErrorBorderColor}`,
 };
 const inputBorder = border('wrapper', inputBorderToken);
 const groupBorder = border('group', inputBorderToken);
@@ -77,19 +77,19 @@ const groupSpace = (gap: string) => ({
     padding: `0 ${gap}`,
     display: 'flex',
     alignItems: 'center',
-    border: `1px solid ${cssVars.inputBorderColor}`,
+    border: `1px solid ${token.inputBorderColor}`,
     borderWidth: '0 1px',
-    background: cssVars.grey200,
+    background: token.inputDisabledBackgroundColor,
     fontWeight: 'normal',
     '&:first-child': {
-      borderTopLeftRadius: cssVars.inputBorderRadius,
-      borderBottomLeftRadius: cssVars.inputBorderRadius,
+      borderTopLeftRadius: token.inputBorderRadius,
+      borderBottomLeftRadius: token.inputBorderRadius,
       borderLeftColor: 'inherit',
       marginLeft: '-1px',
     },
     '&:last-child': {
-      borderTopRightRadius: cssVars.inputBorderRadius,
-      borderBottomRightRadius: cssVars.inputBorderRadius,
+      borderTopRightRadius: token.inputBorderRadius,
+      borderBottomRightRadius: token.inputBorderRadius,
       borderRightColor: 'inherit',
       marginRight: '-1px',
     },
@@ -120,13 +120,13 @@ const input: JsStyles<InputClass> = {
     backgroundColor: 'transparent',
     boxSizing: 'border-box',
     '&::placeholder': {
-      color: cssVars.inputPlaceholderColor,
+      color: token.inputPlaceholderColor,
       fontSize: 'inherit',
     },
   },
   clearWrapper: {
     position: 'relative',
-    flexBasis: `calc(${cssVars.inputClearSize} + 2px)`,
+    flexBasis: `calc(${token.inputIconSize} + 2px)`,
     flexShrink: 0,
     display: 'none',
     '$wrapper:hover &, $wrapperFocus &': {
@@ -136,24 +136,24 @@ const input: JsStyles<InputClass> = {
 
   clear: {
     position: 'absolute',
-    right: cssVars.inputPaddingX,
+    right: token.inputPaddingX,
     top: '0',
     bottom: '0',
     margin: 'auto',
-    width: cssVars.inputClearSize,
-    height: cssVars.inputClearSize,
+    width: token.inputIconSize,
+    height: token.inputIconSize,
     boxSizing: 'border-box',
     display: 'flex',
     cursor: 'pointer',
-    color: cssVars.inputClearBgColor,
+    color: token.inputClearColor,
     '&:hover svg': {
-      color: cssVars.inputClearBgHoverColor,
+      color: token.inputHoverClearColor,
     },
     '$wrapperSmall &': {
-      right: cssVars.inputPaddingXSmall,
+      right: token.inputSmallPaddingX,
     },
     '$wrapperLarge &': {
-      right: cssVars.inputPaddingXLarge,
+      right: token.inputLargePaddingX,
     },
   },
   // todo button select cascader datepicker 等组件的样式覆盖问题
@@ -168,15 +168,15 @@ const input: JsStyles<InputClass> = {
       margin: 'auto 0',
       background: 'transparent',
     },
-    ...groupSpace(cssVars.inputPaddingX),
+    ...groupSpace(token.inputPaddingX),
   },
   groupSmall: {
     ...groupSmall,
-    ...groupSpace(cssVars.inputPaddingXSmall),
+    ...groupSpace(token.inputSmallPaddingX),
   },
   groupLarge: {
     ...groupLarge,
-    ...groupSpace(cssVars.inputPaddingXLarge),
+    ...groupSpace(token.inputLargePaddingX),
   },
   ...resetGroup,
   numberStep: {
@@ -189,18 +189,19 @@ const input: JsStyles<InputClass> = {
       minHeight: '0',
       flexGrow: '1',
       boxSizing: 'border-box',
+      cursor: 'pointer',
       width: '18px',
       padding: '0 4px',
-      borderLeft: `1px solid ${cssVars.grey200}`,
+      borderLeft: `1px solid ${token.inputDisabledBorderColor}`,
       lineHeight: '1',
-      color: cssVars.grey500,
+      color: token.inputDisabledFontColor,
       '&:hover': {
         '$wrapper:not($wrapperDisabled) &': {
-          color: cssVars.primaryColor,
+          color: token.inputHoverBorderColor,
         },
       },
       '&:first-child': {
-        borderBottom: `1px solid ${cssVars.grey200}`,
+        borderBottom: `1px solid ${token.inputDisabledBorderColor}`,
       },
       '& svg': {
         transform: 'rotate(-90deg)',
@@ -216,11 +217,11 @@ const input: JsStyles<InputClass> = {
     animation: 'so-input-fade .16s ease-in',
     maxWidth: '400px',
     padding: '5px 8px',
-    background: cssVars.grey100,
-    borderRadius: cssVars.inputBorderRadius,
-    boxShadow: `0 0 0 1px ${cssVars.inputBorderColor}`,
+    background: token.inputInfoBackgroundColor,
+    borderRadius: token.inputBorderRadius,
+    boxShadow: `0 0 0 1px ${token.inputBorderColor}`,
     fontSize: '12px',
-    color: '#1261d4',
+    color: token.inputInfoFontColor,
     '&::before': {
       display: 'block',
       position: 'absolute',
@@ -229,17 +230,18 @@ const input: JsStyles<InputClass> = {
       transform: 'rotate(45deg) translateY(3px)',
       width: '6px',
       height: '6px',
-      border: `1px solid ${cssVars.inputBorderColor}`,
+      border: `1px solid ${token.inputBorderColor}`,
       borderWidth: '1px 0 0 1px',
       background: 'inherit',
       content: "'  '",
     },
   },
   infoError: {
-    boxShadow: '0 0 0 1px rgba(255,77,80,.1), 0 2px 8px rgba(0,0,0,.15)',
-    color: cssVars.dangerColor,
+    boxShadow: `0 0 0 1px ${token.inputInfoErrorBorderColor}`,
+    color: token.inputInfoErrorFontColor,
+    background: token.inputInfoErrorBackgroundColor,
     '&::before': {
-      borderColor: 'rgba(255,77,80,.1);',
+      borderColor: token.inputInfoErrorBorderColor,
     },
   },
 };
