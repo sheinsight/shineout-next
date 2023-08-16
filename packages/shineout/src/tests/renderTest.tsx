@@ -1,11 +1,15 @@
 import { act, render } from '@testing-library/react';
 
-const renderImage: any = (Component: JSX.Element) => {
+const renderImage: any = (Component: JSX.Element, error?: boolean) => {
   const img: { onload?: () => void; onerror?: () => void } = {};
   window.Image = jest.fn().mockImplementation(() => img);
   const swapper = render(Component);
   act(() => {
-    img.onload?.();
+    if (error) {
+      img.onerror?.();
+    } else {
+      img.onload?.();
+    }
   });
   return swapper;
 };

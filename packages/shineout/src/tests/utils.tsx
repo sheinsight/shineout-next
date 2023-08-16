@@ -16,6 +16,10 @@ export function attributesTest(element: Element, attr: string, content: string) 
   expect(element.getAttribute(attr)).toBe(content);
 }
 
+export function hasAttributesTest(element: Element, attr: string, bool: boolean = true) {
+  expect(element.hasAttribute(attr)).toBe(bool);
+}
+
 // test component class after excludes in components
 export function componentsClassTest(
   components: NodeListOf<Element>,
@@ -42,7 +46,7 @@ export function styleTest(element: Element, style: string) {
   attributesTest(element, 'style', style);
 }
 
-interface StyleProps {
+export interface StyleProps {
   [key: string]: string;
 }
 interface BaseTestProps {
@@ -50,7 +54,7 @@ interface BaseTestProps {
   className?: string;
   children?: JSX.Element;
 }
-type ReactComponentType = React.ComponentType<BaseTestProps>;
+export type ReactComponentType = React.ComponentType<BaseTestProps>;
 export function baseTest(
   Component: ReactComponentType,
   selector: string,
