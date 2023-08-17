@@ -32,5 +32,6 @@ export * from './components/use-check';
 export * from './components/use-button';
 export * from './components/use-popup';
 export * from './components/use-image';
+export * from './components/use-tabs';
 
 export default {};
