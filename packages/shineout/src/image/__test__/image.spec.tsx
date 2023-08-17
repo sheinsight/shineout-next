@@ -1,4 +1,4 @@
-import { cleanup, screen, waitFor, render, fireEvent } from '@testing-library/react';
+import { cleanup, screen, waitFor, render, fireEvent, act } from '@testing-library/react';
 import Image from '..';
 import mountTest from '../../tests/mountTest';
 import renderImage, { imageSnapshotTest } from '../../tests/renderTest';
@@ -12,10 +12,9 @@ import {
 } from '../../tests/utils';
 import ImageBase from '../__example__/s-001-base';
 import ImageGroup from '../__example__/s-007-group-2';
+import ImgaeLazy from '../__example__/s-008-lazy-1';
 
 const SO_PREFIX = 'image';
-const imageUrl =
-  'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png';
 const imageClassName = `.${SO_PREFIX}-image-0-2-6`;
 const imageImgClassName = `${SO_PREFIX}-img-0-2-7`;
 const imageInnerClassName = `.${SO_PREFIX}-inner-0-2-8`;
@@ -36,6 +35,7 @@ const imageGroupPileItemClassName = `.${SO_PREFIX}-groupPileItem-0-2-35`;
 const imageGroupCountClassName = `.${SO_PREFIX}-groupCount-0-2-36`;
 const imageGalleryClassName = `${SO_PREFIX}-gallery-0-2-26`;
 const imageDefaultErrorClassName = `.${SO_PREFIX}-defaultError-0-2-21`;
+const imageErrorClassName = `.${SO_PREFIX}-error-0-2-22`;
 const imgFitArray = ['center', 'stretch'];
 const divFitArray = ['fill', 'fit'];
 const shapeArray = ['rounded', 'circle', 'thumbnail'];
@@ -43,6 +43,8 @@ const targetNoPreArray = ['_blank', '_self'];
 const targetArray = ['_modal', '_download', ...targetNoPreArray];
 const height = 128;
 const width = 128;
+const imageUrl =
+  'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png';
 const images = [
   'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png',
   'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png',
@@ -107,10 +109,18 @@ describe('Image[Base]', () => {
       );
     });
   });
-  // TODO: error
-  test('should render when image load error', async () => {
-    renderImage(<Image fit='fill' width={128} height={128} src='error'></Image>, true);
-    await waitFor(() => {});
+  test('should render when image load error (only set error alt)', async () => {
+    const img: { onload?: () => void; onerror?: () => void } = {};
+    window.Image = jest.fn().mockImplementation(() => img);
+    const { container } = renderImage(
+      <Image fit='fill' width={128} height={128} alt='error'></Image>,
+      true,
+    );
+    await waitFor(() => {
+      const image = container.querySelector(imageClassName);
+      expect(image.querySelector(imageDefaultErrorClassName)).toBeTruthy();
+      classLengthTest(image, 'svg', 1);
+    });
   });
   test('should render default placeholder', () => {
     const { container } = render(
@@ -247,6 +257,23 @@ describe('Image[Target]', () => {
 });
 describe('Image[Group]', () => {
   imageSnapshotTest(<ImageGroup />, 'about group');
+  const RenderImageGroup = (props?: any) => (
+    <Image.Group fit='fill' target='_modal'>
+      {images.map((item, index) => {
+        return (
+          <Image
+            key={index}
+            width={128}
+            height={128}
+            src={item}
+            href={item}
+            target='_self'
+            {...props}
+          ></Image>
+        );
+      })}
+    </Image.Group>
+  );
   test('should wrap image use group', async () => {
     const { container } = renderImage(<ImageGroup />);
     await waitFor(() => {
@@ -254,34 +281,42 @@ describe('Image[Group]', () => {
     });
   });
   test('should wrap image use group when set target in children', async () => {
-    const { container } = renderImage(
-      <Image.Group fit='fill' target='_modal'>
-        {images.map((item, index) => {
-          return (
-            <Image
-              key={index}
-              width={128}
-              height={128}
-              src={item}
-              href={item}
-              target='_self'
-            ></Image>
-          );
-        })}
-      </Image.Group>,
-    );
+    const { container } = renderImage(<RenderImageGroup />);
     await waitFor(() => {
       container.querySelectorAll('a').forEach((a: Element) => {
         attributesTest(a, 'target', '_modal');
       });
     });
   });
+  test('should render when set style and className in group', async () => {
+    const className = 'demo';
+    const styleRender: string = 'background-color: red; width: 128px; padding-bottom: 128px;';
+    const { container } = renderImage(
+      <RenderImageGroup className={className} style={{ backgroundColor: 'red' }} />,
+    );
+    await waitFor(() => {
+      const groups = container.querySelectorAll(imageClassName);
+      groups.forEach((image: Element) => {
+        classTest(image, className);
+        styleTest(image, styleRender);
+      });
+    });
+  });
 });
 describe('Image[Pile]', () => {
-  const imageGroup = (showCount: boolean = true, target?: string) => (
+  const imageGroup = (showCount: boolean = true, target?: string, onClick?: () => void) => (
     <Image.Group fit='fill' pile showCount={showCount} target={target} lazy>
       {images.map((item, index) => {
-        return <Image key={index} width={128} height={128} src={item} href={item}></Image>;
+        return (
+          <Image
+            key={index}
+            width={128}
+            height={128}
+            src={item}
+            href={item}
+            onClick={onClick}
+          ></Image>
+        );
       })}
     </Image.Group>
   );
@@ -300,6 +335,16 @@ describe('Image[Pile]', () => {
       attributesTest(a, 'target', '_modal');
       classLengthTest(a, imagePreviewMaskClassName, 1);
       classLengthTest(container, imageGroupPileItemClassName, 2);
+    });
+  });
+  test('should render when click pile', async () => {
+    const clickFn = jest.fn();
+    const { container } = renderImage(imageGroup(true, '_modal', clickFn));
+    await waitFor(() => {
+      const pre = container.querySelector(imageClassName)!;
+      fireEvent.click(pre);
+      expect(document.getElementsByClassName(imageGalleryClassName).length).toBe(1);
+      expect(clickFn.mock.calls.length).toBe(1);
     });
   });
   test('should render when set showCount', async () => {
@@ -321,9 +366,12 @@ describe('Image[Pile]', () => {
 describe('Image[Title]', () => {
   test('should set title', async () => {
     const title = 'Hello';
-    renderImage(<Image title={title} src={imageUrl} />);
+    const { container } = renderImage(<Image title={title} alt={'error'} />, true);
     await waitFor(() => {
-      screen.debug();
+      const image = container.querySelector(imageClassName);
+      expect(image.querySelector(imageDefaultErrorClassName)).toBeTruthy();
+      classLengthTest(image, 'svg', 0);
+      textContentTest(image, 'Hello');
     });
   });
 });
@@ -357,7 +405,94 @@ describe('Image[Href]', () => {
     });
   });
 });
+describe('Image[OnError]', () => {
+  test('should render when set onError', async () => {
+    const errorFn = jest.fn();
+    renderImage(<Image onError={errorFn} alt={'error'} />, true);
+    await waitFor(() => {
+      expect(errorFn.mock.calls.length).toBe(1);
+    });
+  });
+});
+describe('Image[Error]', () => {
+  test('should render when set error', async () => {
+    const errorText = 'error';
+    const { container } = renderImage(<Image error={errorText} alt={'error'} />, true);
+    await waitFor(() => {
+      const error = container.querySelector(imageErrorClassName);
+      expect(error).toBeTruthy();
+      textContentTest(error, errorText);
+    });
+  });
+});
+describe('Image[AutoSSL]', () => {
+  test('should render when set autoSSL', async () => {
+    const img: { onload?: () => void; src?: string } = {};
+    window.Image = jest.fn().mockImplementation(() => img);
+    render(<Image fit='center' width={128} height={128} src={imageUrl} autoSSL={true}></Image>);
+    act(() => {
+      img.onload?.();
+    });
+    await waitFor(() => {
+      expect(img.src).toBe(imageUrl.slice(6));
+    });
+  });
+});
 // TODO: lazy
 describe('Image[Lazy]', () => {
-  test('should render when set lazy', () => {});
+  const mockFn = jest.fn();
+  beforeAll(() => {
+    Object.defineProperty(global.Image.prototype, 'src', {
+      set: mockFn,
+    });
+    HTMLElement.prototype.getBoundingClientRect = () =>
+      ({
+        bottom: -10,
+      } as DOMRect);
+  });
+  test('should render when set lazy', async () => {
+    const img: { onload?: () => void; onerror?: () => void } = {};
+    window.Image = jest.fn().mockImplementation(() => img);
+    const { container } = render(<ImgaeLazy />);
+    act(() => {
+      img.onload?.();
+    });
+    HTMLElement.prototype.getBoundingClientRect = () =>
+      ({
+        bottom: 10,
+      } as DOMRect);
+    // simulate scroll event
+    const event = new UIEvent('scroll');
+    event.initUIEvent('scroll', false, true);
+    document.dispatchEvent(event);
+    await waitFor(() => {
+      classLengthTest(container, imageClassName, 4);
+    });
+  });
+});
+describe('Image[Container]', () => {
+  test('should set container', async () => {
+    const { container } = renderImage(
+      <div id='container'>
+        <Image lazy src={imageUrl} container='#container' />
+      </div>,
+    );
+    await waitFor(() => {
+      classLengthTest(container, imageInnerClassName, 1);
+    });
+  });
+});
+describe('Image[NoImgDrag]', () => {
+  test('should render default', async () => {
+    const { container } = renderImage(<Image src={imageUrl} />);
+    await waitFor(() => {
+      attributesTest(container.querySelector('img'), 'draggable', 'true');
+    });
+  });
+  test('should render when set noImgDrag', async () => {
+    const { container } = renderImage(<Image src={imageUrl} noImgDrag />);
+    await waitFor(() => {
+      attributesTest(container.querySelector('img'), 'draggable', 'false');
+    });
+  });
 });
