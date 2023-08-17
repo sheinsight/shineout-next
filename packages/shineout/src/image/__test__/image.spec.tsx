@@ -52,6 +52,9 @@ const images = [
   'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png',
   'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png',
 ];
+type ImageShapeType = 'rounded' | 'circle' | 'thumbnail';
+type ImageFitType = 'fill' | 'center' | 'fit' | 'stretch';
+type ImageTargetType = '_self' | '_blank' | '_modal' | '_download';
 
 afterEach(cleanup);
 describe('Image[Base]', () => {
@@ -60,7 +63,7 @@ describe('Image[Base]', () => {
   imageSnapshotTest(<ImageBase />);
   imgFitArray.forEach((fit) => {
     test(`should render correct dom structure when set fit is ${fit}`, async () => {
-      const { container } = renderImage(<Image fit={fit} src={imageUrl}></Image>);
+      const { container } = renderImage(<Image fit={fit as ImageFitType} src={imageUrl}></Image>);
       await waitFor(() => {
         const img = container.querySelector(imageClassName);
         expect(screen.getByRole('img')).toBeTruthy();
@@ -78,7 +81,7 @@ describe('Image[Base]', () => {
   });
   divFitArray.forEach((fit) => {
     test(`should render correct dom structure when set fit is ${fit}`, async () => {
-      const { container } = renderImage(<Image fit={fit} src={imageUrl}></Image>);
+      const { container } = renderImage(<Image fit={fit as ImageFitType} src={imageUrl}></Image>);
       await waitFor(() => {
         const img = container.querySelector(imageClassName);
         const imgContent = img.querySelector(imageInnerClassName);
@@ -166,12 +169,24 @@ describe('Image[Base]', () => {
 describe('Image[Shape]', () => {
   shapeArray.forEach((shape) => {
     imageSnapshotTest(
-      <Image shape={shape} fit='fill' width={width} height={height} src={imageUrl}></Image>,
+      <Image
+        shape={shape as ImageShapeType}
+        fit='fill'
+        width={width}
+        height={height}
+        src={imageUrl}
+      ></Image>,
       `about shape is ${shape}`,
     );
     test(`should render when set shape is ${shape}`, async () => {
       const { container } = renderImage(
-        <Image shape={shape} fit='fill' width={width} height={height} src={imageUrl}></Image>,
+        <Image
+          shape={shape as ImageShapeType}
+          fit='fill'
+          width={width}
+          height={height}
+          src={imageUrl}
+        ></Image>,
       );
       await waitFor(() => {
         classContentTest(container.querySelector(imageClassName), shape);
@@ -195,7 +210,7 @@ describe('Image[Target]', () => {
       fit='fill'
       width={128}
       height={128}
-      target={target}
+      target={target as ImageTargetType}
       src={imageUrl}
       href={imageUrl}
       onClick={clickFn}
@@ -302,10 +317,24 @@ describe('Image[Group]', () => {
       });
     });
   });
+  test('should render when set children in group', async () => {
+    const children = <div>demo</div>;
+    const { container } = renderImage(
+      <Image.Group fit='fill' target='_modal'>
+        {children}
+      </Image.Group>,
+    );
+    await waitFor(() => {
+      textContentTest(container.querySelector(imageGroupClassName), 'demo');
+      const content = screen.getByText('demo');
+      attributesTest(content, 'fit', 'fill');
+      attributesTest(content, 'target', '_modal');
+    });
+  });
 });
 describe('Image[Pile]', () => {
   const imageGroup = (showCount: boolean = true, target?: string, onClick?: () => void) => (
-    <Image.Group fit='fill' pile showCount={showCount} target={target} lazy>
+    <Image.Group fit='fill' pile showCount={showCount} target={target as ImageTargetType} lazy>
       {images.map((item, index) => {
         return (
           <Image
