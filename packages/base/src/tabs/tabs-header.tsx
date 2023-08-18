@@ -1,11 +1,13 @@
 import classNames from 'classnames';
-import { useTabsHeader, TabsContextProps } from '@sheinx/hooks';
-import { TabsHeaderProps, TabsHeaderWidthContextProps } from './tabs-header.type';
+import { useTabsContext } from '@sheinx/hooks';
+import { TabsHeaderProps } from './tabs-header.type';
 import { TabsClasses } from './tabs.type';
 import Tab from './tab';
 
-const TabsHeader = (props: TabsHeaderWidthContextProps) => {
-  const { tabs, jssStyle, shape = 'card' } = props;
+const TabsHeader = (props: TabsHeaderProps) => {
+  const { tabs, jssStyle } = props;
+  const { shape = 'card' } = useTabsContext();
+
   const headerStyle = jssStyle?.tabs || ({} as TabsClasses);
   const headerClass = classNames(headerStyle.header, headerStyle[shape]);
   const renderTab = () => {
@@ -27,17 +29,4 @@ const TabsHeader = (props: TabsHeaderWidthContextProps) => {
   return renderTab();
 };
 
-// Provider 接收器，接点 Tabs 散播的共享数据
-const TabsHeaderWidthContext = (props: TabsHeaderProps) => {
-  const { Consumer } = useTabsHeader();
-
-  return (
-    <Consumer>
-      {(value: TabsContextProps) => {
-        return <TabsHeader {...props} {...value}></TabsHeader>;
-      }}
-    </Consumer>
-  );
-};
-
-export default TabsHeaderWidthContext;
+export default TabsHeader;

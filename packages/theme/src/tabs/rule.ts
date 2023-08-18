@@ -7,7 +7,12 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const tabsRules = {
-  size: [[''], ['font-size']],
+  status: [
+    ['', 'active', 'hover', 'disabled', 'click'],
+    ['font-color', 'background-color', 'border-color'],
+  ],
+  size: [['tab'], ['padding-x', 'padding-y', 'font-size', 'border-radius']],
+  extra: [['nearly'], ['margin']],
 };
 
 module.exports = {

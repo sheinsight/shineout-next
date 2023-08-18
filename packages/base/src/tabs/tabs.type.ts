@@ -10,6 +10,15 @@ export interface TabsClasses {
   vertical: string;
   verticalLeft: string;
   verticalRight: string;
+  button: string;
+  line: string;
+  bordered: string;
+  card: string;
+  dash: string;
+
+  active: string;
+  disabled: string;
+  show: string;
 }
 
 export type TabsAlignType = 'left' | 'right' | 'bottom' | 'vertical-left' | 'vertical-right';
@@ -18,6 +27,7 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
   jssStyle: {
     tabs: TabsClasses;
   };
+  lazy?: boolean;
   shape?: TabsShapeType;
   children?: React.ReactNode;
   align?: TabsAlignType;

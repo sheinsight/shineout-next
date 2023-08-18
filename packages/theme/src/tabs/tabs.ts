@@ -3,6 +3,20 @@
 
 import { TabsTokens } from './type';
 
-const tabsTokens: TabsTokens = {};
+const tabsTokens: TabsTokens = {
+  tabsFontColor: 'Neutral-text-5',
+  tabsBackgroundColor: 'Neutral-fill-2',
+  tabsBorderColor: 'Neutral-border-1',
+  tabsActiveFontColor: 'Brand-6',
+  tabsActiveBackgroundColor: 'Neutral-fill-1',
+  tabsHoverBackgroundColor: 'Neutral-fill-3',
+  tabsDisabledFontColor: 'Neutral-text-2',
+  tabsClickBackgroundColor: 'Neutral-fill-4',
+  tabsTabPaddingX: 'Padding-16',
+  tabsTabPaddingY: 'Padding-9',
+  tabsTabFontSize: '14/regular',
+  tabsTabBorderRadius: 'Radius-4',
+  tabsNearlyMargin: 'Margin-4',
+};
 
 export default tabsTokens;

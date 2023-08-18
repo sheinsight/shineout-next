@@ -8,8 +8,8 @@ import TabsPanel from './tabs-panel';
 import TabsHeader from './tabs-header';
 
 const Tabs = (props: TabsProps) => {
-  const { jssStyle, align, children, shape, ...rest } = props;
-  const { Provider, active } = useTabs(rest);
+  const { jssStyle, align, children, shape, lazy = true, ...rest } = props;
+  const { Provider, active, onChange } = useTabs(rest);
 
   const isVertical = align === 'vertical-left' || align === 'vertical-right';
   const tabsStyle = jssStyle?.tabs || ({} as TabsClasses);
@@ -22,6 +22,7 @@ const Tabs = (props: TabsProps) => {
   const renderContent = () => {
     return Children.toArray(children).map((child, index) => {
       const Chlid = child as React.ReactElement<TabsPanelProps>;
+
       return cloneElement<TabsPanelProps>(Chlid, {
         id: Chlid.props.id !== undefined ? Chlid.props.id : index,
         active,
@@ -46,7 +47,7 @@ const Tabs = (props: TabsProps) => {
   };
 
   return (
-    <Provider value={{ active, shape, isVertical }}>
+    <Provider value={{ active, shape, isVertical, onChange, lazy }}>
       <div className={rootClass}>
         {align !== 'vertical-right' && align !== 'bottom' && renderHeader()}
         {renderContent()}

@@ -3,7 +3,7 @@ import { Provider } from './context';
 import { BaseTabsProps } from './use-tabs.type';
 
 const useTabs = (props: BaseTabsProps) => {
-  const { active } = props;
+  const { active, onChange } = props;
   const [activeTabs, setActiveTabs] = useState(active);
 
   const getActive = () => {
@@ -15,6 +15,7 @@ const useTabs = (props: BaseTabsProps) => {
 
   const handleChange = (key: string | number) => {
     setActiveTabs(key);
+    onChange?.(key);
   };
 
   useEffect(() => {
