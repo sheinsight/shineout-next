@@ -12,7 +12,11 @@ const tabsRules = {
     ['font-color', 'background-color', 'border-color'],
   ],
   size: [['tab'], ['padding-x', 'padding-y', 'font-size', 'border-radius']],
-  extra: [['nearly'], ['margin']],
+  extra_nearly: [['nearly'], ['margin']],
+  extra_line: [
+    ['line', 'line-inner', 'fill', 'fill-inner'],
+    ['padding-x', 'padding-y'],
+  ],
 };
 
 module.exports = {

@@ -8,16 +8,30 @@ import TabsPanel from './tabs-panel';
 import TabsHeader from './tabs-header';
 
 const Tabs = (props: TabsProps) => {
-  const { jssStyle, align, children, shape, lazy = true, ...rest } = props;
+  const { jssStyle, align, children, shape = 'card', position, lazy = true, ...rest } = props;
   const { Provider, active, onChange } = useTabs(rest);
 
   const isVertical = align === 'vertical-left' || align === 'vertical-right';
   const tabsStyle = jssStyle?.tabs || ({} as TabsClasses);
   const rootClass = classNames(tabsStyle.tabs, {
-    [tabsStyle.vertical]: isVertical,
-    [tabsStyle.verticalLeft]: align === 'vertical-left',
-    [tabsStyle.verticalRight]: align === 'vertical-right',
+    // [tabsStyle[shape]]: shape,
   });
+
+  const getDataProps = () => {
+    const positionProps = [];
+    if (position) {
+      positionProps.push(position);
+    } else {
+      if (align === 'vertical-left') positionProps.push('left-top');
+      if (align === 'vertical-right') positionProps.push('right-top');
+      if (align === 'bottom') positionProps.push('bottom-left');
+    }
+
+    return {
+      'data-soui-position': positionProps.join(' '),
+      'data-soui-shape': shape,
+    };
+  };
 
   const renderContent = () => {
     return Children.toArray(children).map((child, index) => {
@@ -43,15 +57,17 @@ const Tabs = (props: TabsProps) => {
         jssStyle,
       });
     });
-    return <TabsHeader tabs={tabs} jssStyle={jssStyle}></TabsHeader>;
+    return (
+      <TabsHeader tabs={tabs} jssStyle={jssStyle} position={position} align={align}></TabsHeader>
+    );
   };
 
   return (
     <Provider value={{ active, shape, isVertical, onChange, lazy }}>
-      <div className={rootClass}>
+      <div className={rootClass} {...getDataProps()}>
         {align !== 'vertical-right' && align !== 'bottom' && renderHeader()}
         {renderContent()}
-        {align === 'vertical-right' && renderHeader()}
+        {(align === 'vertical-right' || align === 'bottom') && renderHeader()}
       </div>
     </Provider>
   );

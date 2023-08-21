@@ -11,6 +11,9 @@ const tabsTokenDescription = {
   tab: '页签',
   nearly: '相邻之间的',
   click: '鼠标按下时的',
+  inner: '内部容器的',
+  line: '下划模式',
+  fill: '填充模式',
 };
 
 /**
@@ -38,6 +41,14 @@ const tabsTokenValue = {
     border: { radius: 'Radius-4' },
   },
   nearly: { margin: 'Margin-4' },
+  line: {
+    padding: { x: 'Padding-8', y: 'Padding-5' },
+    inner: { padding: { x: 'Padding-8', y: 'Padding-3' } },
+  },
+  fill: {
+    padding: { x: 'Padding-4', y: 'Padding-4' },
+    inner: { padding: { x: 'Padding-16', y: 'Padding-5' } },
+  },
 };
 
 const tabsTokenExtraValue = {};

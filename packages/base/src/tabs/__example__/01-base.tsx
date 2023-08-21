@@ -25,11 +25,20 @@ export default () => {
 
   return (
     <div>
-      <Tabs jssStyle={{ tabs: tabsStyle }} onChange={handleChange} active={active}>
+      <Tabs
+        jssStyle={{ tabs: tabsStyle }}
+        onChange={handleChange}
+        active={active}
+        shape='fill'
+        position='top-left'
+        // position='right-top'
+        // position='top-left'
+        // position='bottom-left'
+      >
         {tabs.map((tab, index) => {
           return (
             <Tabs.Panel key={index} tab={tab.title} jssStyle={{ tabs: tabsStyle }}>
-              {tab.content}
+              <div style={{ padding: 5 }}>{tab.content}</div>
             </Tabs.Panel>
           );
         })}

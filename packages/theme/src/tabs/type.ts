@@ -80,4 +80,52 @@ export interface TabsTokens {
    * @description 标签页相邻之间的外边距
    */
   tabsNearlyMargin: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 标签页下划模式内边距（水平方向）
+   */
+  tabsLinePaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-5
+   * @description 标签页下划模式内边距（垂直方向）
+   */
+  tabsLinePaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 标签页下划模式内部容器的内边距（水平方向）
+   */
+  tabsLineInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-3
+   * @description 标签页下划模式内部容器的内边距（垂直方向）
+   */
+  tabsLineInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 标签页填充模式内边距（水平方向）
+   */
+  tabsFillPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 标签页填充模式内边距（垂直方向）
+   */
+  tabsFillPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description 标签页填充模式内部容器的内边距（水平方向）
+   */
+  tabsFillInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-5
+   * @description 标签页填充模式内部容器的内边距（垂直方向）
+   */
+  tabsFillInnerPaddingY: string;
 }

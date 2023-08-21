@@ -5,8 +5,8 @@ import { useTabsContext } from '@sheinx/hooks';
 import { TabsPanelProps } from './tabs-panel.type';
 
 const TabsPanel = (props: TabsPanelProps) => {
-  const { children, lazy, id, jssStyle } = props;
-  const { active } = useTabsContext();
+  const { children, id, jssStyle } = props;
+  const { active, lazy } = useTabsContext();
   const isActive = active === id;
   const keekAlive = useRef(false);
   if (!isActive && lazy && !keekAlive.current) {

@@ -1,4 +1,4 @@
-import { TabsClasses } from './tabs.type';
+import { TabsClasses, TabsPositionType, TabsAlignType } from './tabs.type';
 import { TabData } from './tab.type';
 
 export interface TabsHeaderProps {
@@ -6,4 +6,6 @@ export interface TabsHeaderProps {
     tabs: TabsClasses;
   };
   tabs: TabData[];
+  position?: TabsPositionType;
+  align?: TabsAlignType;
 }

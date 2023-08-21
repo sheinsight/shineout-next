@@ -17,6 +17,14 @@ const tabsTokens: TabsTokens = {
   tabsTabFontSize: '14/regular',
   tabsTabBorderRadius: 'Radius-4',
   tabsNearlyMargin: 'Margin-4',
+  tabsLinePaddingX: 'Padding-8',
+  tabsLinePaddingY: 'Padding-5',
+  tabsLineInnerPaddingX: 'Padding-8',
+  tabsLineInnerPaddingY: 'Padding-3',
+  tabsFillPaddingX: 'Padding-4',
+  tabsFillPaddingY: 'Padding-4',
+  tabsFillInnerPaddingX: 'Padding-16',
+  tabsFillInnerPaddingY: 'Padding-5',
 };
 
 export default tabsTokens;
