@@ -316,28 +316,3 @@ exports[`Checkbox[HtmlValue] should render correctly about htmlValue 1`] = `
   </span>
 </div>
 `;
-
-exports[`Checkbox[Inputable] should render correctly about inputable 1`] = `
-<div
-  class="checkbox-wrapper-0-2-1"
->
-  <input
-    style="display: none;"
-    tabindex="0"
-    type="checkbox"
-  />
-  <div
-    class="checkbox-indicatorWrapper-0-2-6"
-  >
-    <i
-      class="checkbox-indicator-0-2-7"
-      tabindex="1"
-    />
-  </div>
-  <span
-    class="checkbox-desc-0-2-8"
-  >
-    more...
-  </span>
-</div>
-`;

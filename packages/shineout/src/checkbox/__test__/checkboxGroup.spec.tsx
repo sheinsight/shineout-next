@@ -3,7 +3,15 @@ import { render, cleanup, screen, fireEvent, waitFor } from '@testing-library/re
 import Checkbox from '..';
 import { Form } from 'shineout';
 import mountTest from '../../tests/mountTest';
-import { classTest, snapshotTest, componentsClassTest } from '../../tests/utils';
+import {
+  classTest,
+  snapshotTest,
+  componentsClassTest,
+  textContentTest,
+  styleTest,
+  classContentTest,
+  childrenTest,
+} from '../../tests/utils';
 import CheckboxRawgroup from '../__example__/004-rawgroup';
 import CheckboxGroup from '../__example__/005-group';
 import CheckboxBlock from '../__example__/006-block';
@@ -15,6 +23,7 @@ const checkboxClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
 const checkedClassName = `${SO_PREFIX}-wrapperChecked-0-2-3`;
 const checkboxGroupClassName = `.${SO_PREFIX}-group-0-2-9`;
 const checkboxDisabledClassName = `${SO_PREFIX}-wrapperDisabled-0-2-5`;
+const checkboxGroupBlockClassName = `${SO_PREFIX}-groupBlock-0-2-10`;
 
 const dataRender: string[] = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
 interface dataObjProps {
@@ -34,6 +43,7 @@ const dataObj: dataObjProps[] = [
 afterEach(cleanup);
 describe('CheckboxGroup[Base]', () => {
   mountTest(Checkbox.Group as React.ComponentType);
+  childrenTest(Checkbox.Group, checkboxGroupClassName);
   snapshotTest(<CheckboxRawgroup />, 'by CheckboxRawgroup');
   test('should render structor in CheckboxRawgroup', () => {
     const { container } = render(<CheckboxRawgroup />);
@@ -41,7 +51,7 @@ describe('CheckboxGroup[Base]', () => {
 
     expect(checkboxs.length).toBe(dataObj.length);
     checkboxs.forEach((checkbox, index) => {
-      expect(checkbox.textContent).toBe(dataObj[index].color);
+      textContentTest(checkbox, dataObj[index].color);
       if (![3, 5].includes(index + 1)) return;
       classTest(checkbox, checkedClassName);
     });
@@ -56,7 +66,8 @@ describe('CheckboxGroup[Base]', () => {
     const checkboxs = container.querySelectorAll(checkboxClassName);
     expect(checkboxs.length).toBe(dataRender.length);
     checkboxs.forEach((checkbox, index) => {
-      expect(screen.getByText(dataRender[index]).getAttribute('style')).toBe(
+      styleTest(
+        screen.getByText(dataRender[index]),
         `border-bottom: 1px solid ${dataRender[index]};`,
       );
       if (!['blue', 'cyan'].includes(dataRender[index])) return;
@@ -74,7 +85,7 @@ describe('CheckboxGroup[Base]', () => {
         style={{ marginTop: 32, display: 'inline-block' }}
       />,
     );
-    classTest(container.querySelector(checkboxGroupClassName)!, `${SO_PREFIX}-groupBlock-0-2-10`);
+    classTest(container.querySelector(checkboxGroupClassName)!, checkboxGroupBlockClassName);
   });
   test('should render when set className and style', () => {
     const { container } = render(
@@ -87,7 +98,7 @@ describe('CheckboxGroup[Base]', () => {
     );
     const checkboxGroup = container.querySelector(checkboxGroupClassName);
     classTest(checkboxGroup!, 'demo');
-    expect(checkboxGroup?.getAttribute('style')).toBe('margin-top: 32px; display: inline-block;');
+    styleTest(checkboxGroup!, 'margin-top: 32px; display: inline-block;');
   });
 });
 describe('CheckboxGroup[Value]', () => {
@@ -171,29 +182,29 @@ describe('Checkbox[Format]', () => {
     };
     const { container } = render(<RenderTemp />);
     fireEvent.click(container.querySelectorAll(checkboxClassName)[2]);
-    expect(container.querySelector('.render')?.textContent).toBe('yellow!');
+    textContentTest(container.querySelector('.render')!, 'yellow!');
   });
   test('should render when set format by string in obj data', () => {
     const { container } = render(<RenderDemo format='id' />);
     fireEvent.click(container.querySelectorAll(checkboxClassName)[2]);
-    expect(container.querySelector('.render')?.textContent).toBe('3');
+    textContentTest(container.querySelector('.render')!, '3');
   });
   test('should render when set format value is not in object keys', () => {
     const { container } = render(<RenderDemo format={'name' as 'id'} />);
     fireEvent.click(container.querySelectorAll(checkboxClassName)[2]);
-    expect(container.querySelector('.render')?.textContent).toBe('');
+    textContentTest(container.querySelector('.render')!, '');
   });
   test('should render when set format bu function in obj data', () => {
     const { container } = render(<RenderDemo format={(e: dataObjProps) => e.id} />);
     fireEvent.click(container.querySelectorAll(checkboxClassName)[2]);
-    expect(container.querySelector('.render')?.textContent).toBe('3');
+    textContentTest(container.querySelector('.render')!, '3');
   });
 });
 describe('Checkbox[RenderItem]', () => {
   test('should render when set renderItem is string', () => {
     const { container } = render(<Checkbox.Group data={dataObj} keygen='id' renderItem='color' />);
     container.querySelectorAll(checkboxClassName).forEach((checkbox, index) => {
-      expect(checkbox.textContent).toBe(dataObj[index].color);
+      textContentTest(checkbox, dataObj[index].color);
     });
   });
   test('should render when set renderItem is function', () => {
@@ -201,7 +212,7 @@ describe('Checkbox[RenderItem]', () => {
       <Checkbox.Group data={dataObj} keygen='id' renderItem={(e: dataObjProps) => e.color + '!'} />,
     );
     container.querySelectorAll(checkboxClassName).forEach((checkbox, index) => {
-      expect(checkbox.textContent).toBe(dataObj[index].color + '!');
+      textContentTest(checkbox, dataObj[index].color + '!');
     });
   });
   test('should render when set renderItem is function that return undefined', () => {
@@ -209,7 +220,7 @@ describe('Checkbox[RenderItem]', () => {
       <Checkbox.Group data={dataObj} keygen='id' renderItem={() => undefined} />,
     );
     container.querySelectorAll(checkboxClassName).forEach((checkbox) => {
-      expect(checkbox.textContent).toBe('');
+      textContentTest(checkbox, '');
     });
   });
 });
@@ -238,7 +249,7 @@ describe('Checkbox[Form]', () => {
     const { container } = render(<FormDemo />);
     fireEvent.click(screen.getByText('red'));
     await waitFor(() => {
-      expect(container.querySelector('.render')?.textContent).toBe('1');
+      textContentTest(container.querySelector('.render')!, '1');
     });
   });
   test('should render in form when set value and name in checkbox', async () => {
@@ -247,11 +258,11 @@ describe('Checkbox[Form]', () => {
       container.querySelectorAll(checkboxClassName) ||
       container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-16`);
     checkboxs.forEach((checkbox) => {
-      expect(checkbox.getAttribute('class')?.includes('checked')).toBeFalsy();
+      classContentTest(checkbox, 'checked', false);
     });
     fireEvent.click(screen.getByText('red'));
     await waitFor(() => {
-      expect(container.querySelector('.render')?.textContent).toBe('1');
+      textContentTest(container.querySelector('.render')!, '1');
     });
   });
 });
@@ -275,8 +286,8 @@ describe('Checkbox[Onchange/BeforeChange]', () => {
       );
     };
     const { container } = render(<RenderDemo />);
-    fireEvent.click(container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`)[2]);
-    expect(container.querySelector('.render')?.textContent).toBe('31');
+    fireEvent.click(container.querySelectorAll(checkboxClassName)[2]);
+    textContentTest(container.querySelector('.render')!, '31');
   });
 });
 describe('Checkbox[separator]', () => {
@@ -299,8 +310,8 @@ describe('Checkbox[separator]', () => {
       );
     };
     const { container } = render(<RenderDemo />);
-    fireEvent.click(container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`)[2]);
-    expect(container.querySelector('.render')?.textContent).toBe('1-3');
+    fireEvent.click(container.querySelectorAll(checkboxClassName)[2]);
+    textContentTest(container.querySelector('.render')!, '1-3');
   });
 });
 describe('Checkbox[Prediction]', () => {
@@ -324,13 +335,13 @@ describe('Checkbox[Prediction]', () => {
     };
     const { container } = render(<RenderDemo />);
     const excludes = ['red'];
-    const checkboxs = container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`);
+    const checkboxs = container.querySelectorAll(checkboxClassName);
     const componentsClassTestByBool = () => {
       componentsClassTest(checkboxs, true, checkedClassName, excludes);
       componentsClassTest(checkboxs, !false, checkedClassName, excludes);
     };
     componentsClassTestByBool();
-    fireEvent.click(container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`)[2]);
+    fireEvent.click(container.querySelectorAll(checkboxClassName)[2]);
     componentsClassTestByBool();
   });
 });
