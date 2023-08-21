@@ -1,9 +1,15 @@
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import Checkbox from '..';
 import mountTest from '../../tests/mountTest';
-import structureTest, { inputTest } from '../../tests/structureTest';
+import structureTest, { inputTest, classLengthTest } from '../../tests/structureTest';
 import disabledTest, { componentProps } from '../../tests/disabledTest';
-import { classTest, snapshotTest } from '../../tests/utils';
+import {
+  classTest,
+  snapshotTest,
+  hasAttributesTest,
+  attributesTest,
+  textContentTest,
+} from '../../tests/utils';
 import CheckboxBase from '../__example__/001-base';
 import CheckboxStatus from '../__example__/002-checked-1';
 import CheckboxIndeterminate from '../__example__/002-checked-2';
@@ -17,6 +23,8 @@ const checkboxCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-3`;
 const checkboxDisabledClassName = `${SO_PREFIX}-wrapperDisabled-0-2-5`;
 const checkboxIndeterminateClassName = `${SO_PREFIX}-wrapperIndeterminate-0-2-4`;
 const checkboxInputClassName = `.${SO_PREFIX}-input-0-2-2`;
+const checkboxGroupClassName = `.${SO_PREFIX}-group-0-2-9`;
+const checkboxWrapperCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-3`;
 
 const attributes = [
   {
@@ -36,10 +44,11 @@ const attributes = [
 const checkTest = (container: HTMLElement, status: boolean) => {
   const checkbox = container.querySelector(checkboxClassName)!;
   classTest(checkbox, checkboxCheckedClassName, status);
-  expect(checkbox.querySelector('input')?.hasAttribute('checked')).toBe(status);
+  const input = checkbox.querySelector('input')!;
+  hasAttributesTest(input, 'checked', status);
   fireEvent.click(checkbox);
   classTest(checkbox, checkboxCheckedClassName, status);
-  expect(checkbox.querySelector('input')?.hasAttribute('checked')).toBe(status);
+  hasAttributesTest(input, 'checked', status);
 };
 
 afterEach(cleanup);
@@ -65,8 +74,8 @@ describe('Checkbox[Base]', () => {
     ];
     inputTest(renderContent, inputAttributes);
     const { container } = render(renderContent);
-    expect(container.querySelector('i')?.getAttribute('tabindex')).toBe('1');
-    expect(container.querySelector('span')?.textContent).toBe('Checkbox');
+    attributesTest(container.querySelector('i')!, 'tabindex', '1');
+    textContentTest(container.querySelector('span')!, 'Checkbox');
   });
   test('should render when click', () => {
     const clickFn = jest.fn();
@@ -96,14 +105,13 @@ describe('Checkbox[Checked, disabled]', () => {
       [1, 1],
       [0, 1],
     ];
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-1`).forEach((checkbox, index) => {
+    container.querySelectorAll(checkboxClassName).forEach((checkbox, index) => {
       classTest(checkbox, checkboxCheckedClassName, statusMap[index][0] === 1 ? true : false);
-      expect(checkbox.querySelector('input')?.hasAttribute('checked')).toBe(
-        statusMap[index][0] === 1 ? true : false,
-      );
+      const input = checkbox.querySelector('input')!;
+      hasAttributesTest(input, 'checked', statusMap[index][0] === 1 ? true : false);
       classTest(checkbox, checkboxIndeterminateClassName, statusMap[index][0] === 0 ? true : false);
       classTest(checkbox, checkboxDisabledClassName, !!statusMap[index][1]);
-      expect(checkbox.querySelector('input')?.hasAttribute('disabled')).toBe(!!statusMap[index][1]);
+      hasAttributesTest(input, 'disabled', !!statusMap[index][1]);
     });
   });
   test('should render when set checked', () => {
@@ -140,7 +148,7 @@ describe('Checkbox[Checked, disabled]', () => {
     const { container } = render(<CheckboxIndeterminate />);
     const checkboxAll = container.querySelectorAll(checkboxClassName)[0];
     const checkboxs = container
-      .querySelector(`.${SO_PREFIX}-group-0-2-9`)
+      .querySelector(checkboxGroupClassName)
       ?.querySelectorAll(checkboxClassName) as NodeListOf<Element>;
     const checkboxAllTest = (iStatus: boolean, cStatus: boolean) => {
       classTest(checkboxAll, checkboxIndeterminateClassName, iStatus);
@@ -165,8 +173,8 @@ describe('Checkbox[Checked, disabled]', () => {
   test('should render when set disabled', () => {
     disabledTest(
       Checkbox as React.FC<componentProps>,
-      `.${SO_PREFIX}-wrapper-0-2-1`,
-      `${SO_PREFIX}-wrapperChecked-0-2-3`,
+      checkboxClassName,
+      checkboxWrapperCheckedClassName,
     );
   });
 });
@@ -188,7 +196,6 @@ describe('Checkbox[HtmlValue]', () => {
 });
 describe('Checkbox[Inputable]', () => {
   snapshotTest(<CheckboxInputable />, 'about inputable');
-  // TODO: 有bug
   test('should show input while selected', () => {
     const clickFn = jest.fn();
     const { container } = render(
@@ -196,22 +203,22 @@ describe('Checkbox[Inputable]', () => {
         more...
       </Checkbox>,
     );
-    expect(container.querySelectorAll(checkboxInputClassName).length).toBe(0);
+    classLengthTest(container, checkboxInputClassName, 0);
     const checkbox = container.querySelector(checkboxClassName)!;
     fireEvent.click(checkbox);
 
     expect(clickFn.mock.calls.length).toBe(1);
-    const input = container.querySelector(checkboxInputClassName);
-    expect(container.querySelectorAll(checkboxInputClassName).length).toBe(1);
-    expect(input?.querySelectorAll('input').length).toBe(1);
-    expect(input?.querySelector('input')?.getAttribute('value')).toBe('');
+    const input = container.querySelector(checkboxInputClassName)!;
+    classLengthTest(container, checkboxInputClassName, 1);
+    classLengthTest(input, 'input', 1);
+    attributesTest(input?.querySelector('input') as Element, 'value', '');
 
     fireEvent.change(input?.querySelector('input') as HTMLInputElement, {
       target: {
         value: 'no',
       },
     });
-    expect(input?.querySelector('input')?.getAttribute('value')).toBe('no');
+    attributesTest(input?.querySelector('input') as Element, 'value', 'no');
   });
   test('should show input while selected by htmlValue', () => {
     const { container } = render(
@@ -243,10 +250,10 @@ describe('Checkbox[Click]', () => {
   test('should render when click', () => {
     const { container } = render(<CheckboxClick />);
     const checkbox = container.querySelector(checkboxClassName)!;
-    expect(checkbox?.textContent).toBe('Click Me 0 Times!');
+    textContentTest(checkbox, 'Click Me 0 Times!');
     fireEvent.click(checkbox);
-    expect(checkbox?.textContent).toBe('Click Me 1 Times!');
+    textContentTest(checkbox, 'Click Me 1 Times!');
     fireEvent.click(checkbox);
-    expect(checkbox?.textContent).toBe('Click Me 2 Times!');
+    textContentTest(checkbox, 'Click Me 2 Times!');
   });
 });
