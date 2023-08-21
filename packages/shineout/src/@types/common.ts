@@ -8,7 +8,7 @@ export interface ExtendsFieldProps<T>
 }
 
 export interface TipProps {
-  popover?: boolean;
+  popover?: boolean | string;
   tip?: React.ReactNode;
 }
 

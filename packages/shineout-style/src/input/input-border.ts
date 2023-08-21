@@ -31,6 +31,7 @@ export default <T extends string>(
     disabledBackgroundColor: string;
 
     focusShadow: string;
+    errorFocusShadow: string;
   } = {} as any,
 ) => {
   return {
@@ -65,7 +66,7 @@ export default <T extends string>(
     },
     [`${name}Focus`]: {
       borderColor: token.focusBorderColor,
-      boxShadow: token.focusShadow,
+      boxShadow: `0 0 0 2px ${token.focusShadow}`,
       '&:hover': {
         borderColor: token.focusBorderColor,
       },
@@ -74,6 +75,9 @@ export default <T extends string>(
       borderColor: token.errorBorderColor,
       '&:hover': {
         borderColor: token.errorBorderColor,
+      },
+      [`&$${name}Focus`]: {
+        boxShadow: `0 0 0 2px ${token.errorFocusShadow}`,
       },
     } as CSSProperties,
     [`${name}Disabled`]: {
@@ -95,11 +99,13 @@ export default <T extends string>(
         borderRightColor: 'transparent',
         borderTopColor: 'transparent',
         borderRadius: 0,
+        boxShadow: 'none',
       },
     },
     [`${name}NoBorder`]: {
       '&&': {
         borderColor: 'transparent',
+        boxShadow: 'none',
       },
     },
     [`${name}InGroup`]: {

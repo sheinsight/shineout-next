@@ -118,7 +118,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         style.transform = 'translateY(-100%)';
       } else {
         // 居中对齐
-        style.top = rect.top + rect.height / 2;
+        style.top = rect.top + containerScroll.top + rect.height / 2;
         style.transform = 'translateY(-50%)';
       }
       if (h === 'right') {

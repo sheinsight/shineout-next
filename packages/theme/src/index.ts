@@ -1,3 +1,5 @@
+import InitTheme from './utils/document-style';
+
 import Button from './button';
 import { ButtonTokens } from './button/type';
 
@@ -66,5 +68,9 @@ const Token: ThemeTokens = {
   ...Tag,
   ...Textarea,
 };
+
+InitTheme();
+
+export { InitTheme };
 
 export default Token;
