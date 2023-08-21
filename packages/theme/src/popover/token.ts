@@ -15,7 +15,14 @@ const popoverTokenDescription = { popover: 'xxx' };
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 popoverRules 强关联，非 popoverRules 规则内的 token 需手动增加或删减。
  */
-const popoverTokenValue = { font: { size: 'regular/14' } };
+const popoverTokenValue = {
+  font: { size: 'regular/14', color: 'Neutral-text-5' },
+  padding: { x: 'Padding-8', y: 'Padding-3' },
+  radius: 'Radius-4',
+  border: { width: 'Border-1', color: 'Neutral-border-1' },
+  background: { color: 'Neutral-fill-1' },
+  shadow: 'Shadow-2',
+};
 
 const popoverTokenExtraValue = {};
 

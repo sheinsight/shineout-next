@@ -42,10 +42,12 @@ export interface AbsoluteListProps {
    * @cn 弹出层距离目标元素的间距
    * @default 2
    */
-  listMargin?: number;
+  popupGap?: number;
 
   scrollElement?: HTMLElement;
   scrollLeft?: number;
   scrollTop?: number;
   popupEl?: HTMLElement | null;
+  // 隐藏后是否卸载
+  destroy?: boolean;
 }

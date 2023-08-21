@@ -16,6 +16,8 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     focus,
     popupEl,
     updateKey,
+    popupGap,
+    destroy = false,
   } = props;
 
   const { getRoot, getContainer } = useContainer({
@@ -32,6 +34,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     visibleEl: scrollElement,
     popupEl,
     updateKey,
+    popupGap,
   });
   const childStyle = children.props.style;
   const newStyle = useMemo(() => {
@@ -44,6 +47,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
   if (React.isValidElement(children) === false) return null;
 
   const styledChild = React.cloneElement(children, { style: newStyle });
+  if (destroy && !focus) return null;
   if (absolute) {
     const root = getRoot();
     root.className = props.rootClass || '';

@@ -16,9 +16,6 @@ export const cssvar = (str: string, value: string, size?: string) => {
     const sizeReg = /(?<=Size-)\d+/;
     const sizeNum = sizeReg.exec(str);
     if (sizeNum) {
-      console.log(
-        `var(${cssvarFlag}${replaceNonAlphanumeric(str)},${Number(sizeNum[0]) * Number(size)}px)`,
-      );
       return `var(${cssvarFlag}${replaceNonAlphanumeric(str)},${
         Number(sizeNum[0]) * Number(size)
       }px)`;
