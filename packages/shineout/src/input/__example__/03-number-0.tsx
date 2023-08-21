@@ -1,8 +1,14 @@
 /**
- * cn - 数字数据
- *    -- 设置 type 属性为 number 后，将支持数字数据的处理。通过设置 numType、integerLimit、autoFix、digits 属性来定制不同的数值处理结果。
- * en - Numerical data
- *    -- After setting the type attribute to "number", it enables the handling of numerical data. You can customize different numerical processing results by using the numType, integerLimit, autoFix, and digits attributes.
+ * cn - 数字
+ *    -- 设置 `type` 为 number，输入时会做一次校验，禁止输入非数字类型字符
+ *    -- 设置 `digits` 限制小数位数
+ *    -- 设置 `integerLimit` 限制整数位数
+ *    -- 设置 `numType` 限制数字格式, 支持 'positive' 和 'non-negative'
+ * en - Number
+ *    -- Set `type` to number, the input will be verified once when inputting, and non-numeric characters are not allowed to be entered
+ *    -- Set `digits` to limit the number of decimal places
+ *    -- Set `integerLimit` to limit the number of integers
+ *    -- Set `numType` to limit the number format, support 'positive' and 'non-negative'
  */
 
 import React from 'react';
@@ -12,7 +18,7 @@ const style: React.CSSProperties = { marginBottom: 12 };
 
 const App: React.FC = () => (
   <div style={{ width: 300 }}>
-    <Input style={style} type='tel' placeholder='digits undefined' />
+    <Input style={style} type='number' placeholder='digits undefined' />
     <Input style={style} digits={0} type='number' placeholder='digits 0' clearable />
     <Input style={style} digits={1} type='number' placeholder='digits 1' clearable />
     <Input style={style} digits={2} type='number' placeholder='digits 2' clearable />

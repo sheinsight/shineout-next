@@ -12,7 +12,12 @@ export default () => {
   const popoverStyle = usePopoverStyle();
   return (
     <div>
-      <Popover jssStyle={{ popover: popoverStyle }} />
+      <button type={'button'} style={{ background: 'red' }}>
+        哈哈哈哈哈
+        <Popover onVisibleChange={console.log} jssStyle={{ popover: popoverStyle }}>
+          嘿嘿嘿
+        </Popover>
+      </button>
     </div>
   );
 };

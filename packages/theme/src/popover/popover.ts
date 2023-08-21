@@ -5,6 +5,14 @@ import { PopoverTokens } from './type';
 
 const popoverTokens: PopoverTokens = {
   popoverFontSize: 'regular/14',
+  popoverPaddingX: 'Padding-8',
+  popoverPaddingY: 'Padding-3',
+  popoverRadius: 'Radius-4',
+  popoverBorderWidth: 'Border-1',
+  popoverFontColor: 'Neutral-text-5',
+  popoverBackgroundColor: 'Neutral-fill-1',
+  popoverShadow: 'Shadow-2',
+  popoverBorderColor: 'Neutral-border-1',
 };
 
 export default popoverTokens;
