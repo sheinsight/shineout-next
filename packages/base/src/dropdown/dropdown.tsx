@@ -48,6 +48,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
     disabled,
     trigger,
     position: props.position,
+    autoMode: 'menu',
+    priorityDirection: 'vertical',
+    mouseLeaveDelay: 200,
   });
   // buttonProps
   let { type, text, outline, mode } = props;

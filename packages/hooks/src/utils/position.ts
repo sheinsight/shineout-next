@@ -10,7 +10,9 @@ type MenuPosition =
   | 'left-bottom'
   | 'right-top'
   | 'right-bottom';
-export const getMenuPosition = (
+
+type PopoverPosition = MenuPosition | 'top' | 'bottom' | 'left' | 'right';
+const getMenuPosition = (
   target: HTMLElement | null,
   priorityDirection = 'vertical',
 ): MenuPosition => {
@@ -47,8 +49,8 @@ export const getMenuPosition = (
   return position as MenuPosition;
 };
 
-export const getPopoverPosition = (target: HTMLElement, priorityDirection = 'vertical') => {
-  let position = 'bottom-left';
+const getPopoverPosition = (target: HTMLElement | null, priorityDirection = 'vertical') => {
+  let position = 'bottom-left' as PopoverPosition;
   if (!target) return position;
   const rect = target.getBoundingClientRect();
   let tempPriorityDirection = priorityDirection;
@@ -78,9 +80,18 @@ export const getPopoverPosition = (target: HTMLElement, priorityDirection = 'ver
       position += '-left';
     }
   }
-  return position;
+  return position as PopoverPosition;
 };
 
+export const getPosition = (
+  target: HTMLElement | null,
+  priorityDirection: 'vertical' | 'horizontal' | 'auto' = 'vertical',
+  mode: 'popover' | 'menu',
+) => {
+  if (mode === 'popover') return getPopoverPosition(target, priorityDirection);
+  if (mode === 'menu') return getMenuPosition(target, priorityDirection);
+  return 'bottom-left' as MenuPosition;
+};
 // export const getListPosition = (target: HTMLElement) => {
 //   let position = 'drop-down';
 //   if (!target) return position;

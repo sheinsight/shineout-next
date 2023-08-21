@@ -4,6 +4,9 @@ import { ButtonTokens } from './button/type';
 import Checkbox from './checkbox';
 import { CheckboxTokens } from './checkbox/type';
 
+import Image from './image';
+import { ImageTokens } from './image/type';
+
 import Common from './common';
 import { CommonTokens } from './common/type';
 
@@ -28,6 +31,9 @@ import { SwitchTokens } from './switch/type';
 import Textarea from './textarea';
 import { TextareaTokens } from './textarea/type';
 
+import Tag from './tag';
+import { TagTokens } from './Tag/type';
+
 export type ThemeTokens = ButtonTokens &
   CheckboxTokens &
   CommonTokens &
@@ -37,7 +43,9 @@ export type ThemeTokens = ButtonTokens &
   PopoverTokens &
   RadioTokens &
   SwitchTokens &
-  TextareaTokens;
+  TextareaTokens &
+  ImageTokens &
+  TagTokens;
 
 const Token: ThemeTokens = {
   ...Button,
@@ -50,6 +58,8 @@ const Token: ThemeTokens = {
   ...Radio,
   ...Switch,
   ...Textarea,
+  ...Image,
+  ...Tag,
 };
 
 export default Token;

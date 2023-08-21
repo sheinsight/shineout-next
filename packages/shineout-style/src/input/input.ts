@@ -97,7 +97,7 @@ const groupSpace = (gap: string) => ({
 });
 
 const input: JsStyles<InputClass> = {
-  ...inputBorder,
+  // ...inputBorder,
   wrapper: {
     display: 'inline-flex',
     width: '100%',

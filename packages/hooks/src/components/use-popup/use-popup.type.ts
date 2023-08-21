@@ -1,4 +1,4 @@
-export type MenuPosition =
+export type PositionType =
   | 'left-top'
   | 'left-bottom'
   | 'right-top'
@@ -17,5 +17,9 @@ export interface BasePopupProps {
   open?: boolean;
   onCollapse?: (open: boolean) => void;
   disabled?: boolean;
-  position?: MenuPosition | 'auto';
+  position?: PositionType | 'auto';
+  mouseEnterDelay?: number;
+  mouseLeaveDelay?: number;
+  autoMode?: 'menu' | 'popover';
+  priorityDirection?: 'vertical' | 'horizontal' | 'auto';
 }
