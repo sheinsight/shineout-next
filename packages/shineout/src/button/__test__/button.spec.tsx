@@ -163,7 +163,7 @@ describe('Button[Loading]', () => {
   // TODO: 未开发spin，当前onClick不受loading控制
   // test('should can not click when set loading', () => {
   //   const handleFn = jest.fn()
-  //   const { container } = render(<Button type='success' loading onClick={handleFn}>button</Button>)
+  //   const { container } = render(<Button type='primary' loading onClick={handleFn}>button</Button>)
   //   screen.debug()
   //   fireEvent.click(container.querySelector('button') as HTMLButtonElement)
   //   console.log('121', handleFn.mock.calls)
