@@ -34,5 +34,5 @@ export interface PopoverProps
   children?: React.ReactNode | ((close: () => void) => React.ReactNode);
   getPopupContainer?: () => HTMLElement | null;
   useTextStyle?: boolean;
-  //...
+  type?: 'info' | 'success' | 'warning' | 'danger' | 'error';
 }

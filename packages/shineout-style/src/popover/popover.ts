@@ -20,11 +20,11 @@ const popoverStyle: JsStyles<PopoverClass> = {
       position: 'absolute',
       content: '" "',
       display: 'block',
-      border: `${token.popoverBorderWidth} solid ${token.popoverBorderColor}`,
+      border: `inherit`,
       width: '8.4px',
       height: '8.4px',
       boxSizing: 'content-box',
-      background: token.popoverBackgroundColor,
+      background: 'inherit',
       borderLeft: 'none',
       borderBottom: 'none',
     },
@@ -108,6 +108,26 @@ const popoverStyle: JsStyles<PopoverClass> = {
     '&&[data-soui-position$="-right"]::before': { right: arrowMargin, left: 'auto' },
     '&&[data-soui-position$="-top"]::before': { top: arrowMargin, bottom: 'auto' },
     '&&[data-soui-position$="-bottom"]::before': { bottom: arrowMargin, top: 'auto' },
+
+    '&[data-soui-type="danger"],  &[data-soui-type="error"]': {
+      borderColor: 'rgba(255, 77, 80, 0.1)',
+      backgroundColor: '#ffeded',
+    },
+    '&[data-soui-type="info"]': {
+      borderColor: 'rgba(25, 122, 250, 0.1)',
+      backgroundColor: '#e8f1fe',
+    },
+    '&[data-soui-type="warning"]': {
+      borderColor: 'rgba(255, 140, 0, 0.1)',
+      backgroundColor: '#fff3e5',
+    },
+    '&[data-soui-type="success"]': {
+      borderColor: 'rgba(82, 196, 26, 0.1)',
+      backgroundColor: '#edf9e8',
+    },
+    '&[data-soui-type="error"] $content': {
+      color: '#cc3d3a',
+    },
   },
   wrapperOpen: {
     display: 'block',

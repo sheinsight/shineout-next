@@ -4,7 +4,7 @@
 import { PopoverTokens } from './type';
 
 const popoverTokens: PopoverTokens = {
-  popoverFontSize: 'regular/14',
+  popoverFontSize: '14/regular',
   popoverPaddingX: 'Padding-8',
   popoverPaddingY: 'Padding-3',
   popoverRadius: 'Radius-4',
