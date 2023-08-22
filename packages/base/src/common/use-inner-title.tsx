@@ -35,6 +35,9 @@ const useInnerTitle = (props: InnerTitleProps) => {
           size === 'small' && jssStyle?.innerTitle?.wrapperSmall,
           size === 'large' && jssStyle?.innerTitle?.wrapperLarge,
         )}
+        onMouseDown={(e) => {
+          e.preventDefault();
+        }}
       >
         <div className={jssStyle?.innerTitle?.title}>{innerTitle}</div>
         <div className={classNames(jssStyle?.innerTitle?.title, jssStyle?.innerTitle?.place)}>

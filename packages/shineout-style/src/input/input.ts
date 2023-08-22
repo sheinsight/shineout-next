@@ -31,8 +31,8 @@ const inputBorderToken = {
   backgroundColor: token.inputBackgroundColor,
   disabledBackgroundColor: token.inputDisabledBackgroundColor,
 
-  focusShadow: `#bde2ff`,
-  errorFocusShadow: `${token.inputErrorBorderColor}`,
+  focusShadow: token.inputFocusShadow,
+  errorFocusShadow: token.inputErrorFocusShadow,
 };
 const inputBorder = border('wrapper', inputBorderToken);
 const groupBorder = border('group', inputBorderToken);
@@ -48,7 +48,6 @@ export type InputClass =
   | 'wrapperError'
   | 'wrapperDisabled'
   | 'wrapperUnderline'
-  | 'wrapperInGroup'
   | 'wrapperNoBorder'
   | 'paddingBox'
   | 'clearWrapper'
@@ -63,6 +62,7 @@ export type InputClass =
   | 'groupUnderline'
   | 'wrapperNumber'
   | 'numberStep'
+  | 'passwordToggle'
   | 'info'
   | 'infoError';
 
@@ -97,7 +97,6 @@ const groupSpace = (gap: string) => ({
 });
 
 const input: JsStyles<InputClass> = {
-  // ...inputBorder,
   wrapper: {
     display: 'inline-flex',
     width: '100%',
@@ -156,7 +155,7 @@ const input: JsStyles<InputClass> = {
       right: token.inputLargePaddingX,
     },
   },
-  // todo button select cascader datepicker 等组件的样式覆盖问题
+
   group: {
     ...group,
     display: 'flex',
@@ -207,6 +206,21 @@ const input: JsStyles<InputClass> = {
         transform: 'rotate(-90deg)',
       },
     },
+  },
+  passwordToggle: {
+    display: 'flex',
+    alignItems: 'center',
+    width: token.inputIconSize,
+    height: token.inputIconSize,
+    color: token.inputToggleColor,
+    cursor: 'pointer',
+    '& > svg': {
+      width: token.inputIconSize,
+      height: token.inputIconSize,
+      cursor: 'pointer',
+      pointerEvents: 'none',
+    },
+    marginRight: token.inputPaddingX,
   },
   info: {
     position: 'absolute',

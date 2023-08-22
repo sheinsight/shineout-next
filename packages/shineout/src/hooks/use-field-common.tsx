@@ -20,6 +20,7 @@ const useFieldCommon = <Props extends FiledItemCommonProps, Value>(
     rules: props.rules,
     onError: props.onError,
     bind: props.bind,
+    onChange: props.onChange,
   };
 
   const forwardProps = util.removeProps(props, { ...FieldParams });

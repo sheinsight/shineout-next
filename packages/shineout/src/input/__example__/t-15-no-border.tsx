@@ -8,5 +8,5 @@
 import { Input } from 'shineout';
 
 export default () => {
-  return <Input placeholder='input something' border={false} />;
+  return <Input style={{ backgroundColor: '#eee' }} placeholder='input something' border={false} />;
 };

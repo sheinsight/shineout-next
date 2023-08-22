@@ -47,6 +47,19 @@ export default <T extends string>(
       '&:hover': {
         borderColor: token.hoverBorderColor,
       },
+      '[data-soui-type="input-group"] &': {
+        '&': {
+          borderWidth: 0,
+          borderRadius: 0,
+          boxShadow: 'none',
+          backgroundColor: 'transparent',
+          flex: 1,
+          minWidth: 0,
+        },
+        '& + &': {
+          borderLeftWidth: '1px',
+        },
+      },
     },
     paddingBox: {
       padding: `${token.paddingY} ${token.paddingX}`,
@@ -108,19 +121,6 @@ export default <T extends string>(
         boxShadow: 'none',
       },
     },
-    [`${name}InGroup`]: {
-      '&': {
-        borderWidth: 0,
-        borderRadius: 0,
-        boxShadow: 'none',
-        backgroundColor: 'transparent',
-        flex: 1,
-        minWidth: 0,
-      },
-      '& + &': {
-        borderLeftWidth: '1px',
-      },
-    },
   } as Record<
     | 'paddingBox'
     | `${T}`
@@ -130,8 +130,7 @@ export default <T extends string>(
     | `${T}Small`
     | `${T}Large`
     | `${T}Underline`
-    | `${T}NoBorder`
-    | `${T}InGroup`,
+    | `${T}NoBorder`,
     any
   >;
 };

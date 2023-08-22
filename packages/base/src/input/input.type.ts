@@ -42,6 +42,9 @@ export interface InputClasses {
   // number
   wrapperNumber: string;
   numberStep: string;
+
+  //password
+  passwordToggle: string;
 }
 
 export interface InputStyle {
@@ -63,10 +66,6 @@ export interface SimpleInputProps
    * @default: true
    */
   border?: boolean;
-  /**
-   * @default: false
-   */
-  inGroup?: boolean;
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
   showClear?: boolean;
   renderInput?: (inputEl: React.ReactElement) => React.ReactElement;

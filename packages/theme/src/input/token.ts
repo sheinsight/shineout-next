@@ -35,7 +35,8 @@ const inputTokenValue = {
   placeholder: { color: 'Neutral-text-2' },
   background: { color: 'Neutral-fill-1' },
   shadow: '',
-  clear: { color: 'Neutral-text-2' },
+  clear: { color: 'Neutral-text-4' },
+  toggle: { color: 'Neutral-text-4' },
   hover: {
     font: { color: '' },
     placeholder: { color: '' },
@@ -43,14 +44,16 @@ const inputTokenValue = {
     background: { color: '' },
     shadow: '',
     clear: { color: 'Brand-6' },
+    toggle: { color: '' },
   },
   focus: {
     font: { color: '' },
     placeholder: { color: '' },
     border: { color: 'Brand-7' },
     background: { color: '' },
-    shadow: 'Brand-1',
+    shadow: 'Brand-2',
     clear: { color: '' },
+    toggle: { color: '' },
   },
   disabled: {
     font: { color: 'Neutral-text-2' },
@@ -59,6 +62,7 @@ const inputTokenValue = {
     background: { color: 'Neutral-fill-2' },
     shadow: '',
     clear: { color: '' },
+    toggle: { color: '' },
     hover: {
       font: { color: '' },
       placeholder: { color: '' },
@@ -66,6 +70,7 @@ const inputTokenValue = {
       background: { color: '' },
       shadow: '',
       clear: { color: '' },
+      toggle: { color: '' },
     },
     focus: {
       font: { color: '' },
@@ -74,6 +79,7 @@ const inputTokenValue = {
       background: { color: '' },
       shadow: '',
       clear: { color: '' },
+      toggle: { color: '' },
     },
   },
   error: {
@@ -83,6 +89,7 @@ const inputTokenValue = {
     background: { color: '' },
     shadow: '',
     clear: { color: '' },
+    toggle: { color: '' },
     hover: {
       font: { color: '' },
       placeholder: { color: '' },
@@ -90,6 +97,7 @@ const inputTokenValue = {
       background: { color: '' },
       shadow: '',
       clear: { color: '' },
+      toggle: { color: '' },
     },
     focus: {
       font: { color: '' },
@@ -98,6 +106,7 @@ const inputTokenValue = {
       background: { color: '' },
       shadow: 'Danger-1',
       clear: { color: '' },
+      toggle: { color: '' },
     },
   },
   info: {
@@ -109,6 +118,18 @@ const inputTokenValue = {
       background: { color: 'Danger-1' },
       border: { color: 'Danger-6' },
     },
+  },
+  inner: {
+    padding: { x: 'Padding-8', y: 'Padding-1' },
+    font: { size: '12/regular', color: 'Neutral-text-4' },
+    small: {
+      padding: {
+        x: 'Padding-8',
+        y: 'Padding-1',
+      },
+      font: { size: '12/regular' },
+    },
+    large: { padding: { x: 'Padding-12', y: 'Padding-3' }, font: { size: '14/regular' } },
   },
 };
 

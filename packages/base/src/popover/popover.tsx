@@ -65,6 +65,7 @@ const Popover = (props: PopoverProps) => {
         ref={(el) => {
           if (!el) return;
           const targetEl = el.parentElement as HTMLDivElement;
+          if (targetRef.current === targetEl) return;
           targetRef.current = targetEl;
           bindEvents();
           render();

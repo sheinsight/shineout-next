@@ -3,14 +3,24 @@ import { useInputPassword, util } from '@sheinx/hooks';
 import useInputCommon from './use-input-common';
 
 import { InputPasswordProps } from './input-password.type';
+import icons from '../icons';
+
 export default (props: InputPasswordProps) => {
   const commonProps = useInputCommon<InputPasswordProps['value'], InputPasswordProps>(props);
 
   const inputPasswordParams = {
     point: props.point,
+    // 是否显示切换密码可见状态的按钮
+    visibilityToggle: props.visibilityToggle,
+    // 是否显示密码
+    visibility: props.visibility,
+    // 初始状态是否显示密码
+    defaultVisibility: props.defaultVisibility,
+    // 切换密码可见状态的按钮的图标
+    onVisibilityChange: props.onVisibilityChange,
   };
 
-  const inputFormatProps = useInputPassword({
+  const { inputProps, toggleProps, visibility, visibilityToggle } = useInputPassword({
     value: commonProps.value,
     onChange: commonProps.onChange,
     ...inputPasswordParams,
@@ -20,7 +30,16 @@ export default (props: InputPasswordProps) => {
     ...inputPasswordParams,
   });
 
-  return (
-    <SimpleInput {...forwardProps} {...inputFormatProps} value={inputFormatProps.value || ''} />
+  const suffix = (
+    <>
+      {props.suffix}
+      {visibilityToggle ? (
+        <span {...toggleProps} className={props.jssStyle?.input?.passwordToggle}>
+          {visibility ? icons.Hide : icons.Show}
+        </span>
+      ) : null}
+    </>
   );
+
+  return <SimpleInput {...forwardProps} {...inputProps} suffix={suffix} />;
 };

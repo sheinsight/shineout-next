@@ -56,4 +56,70 @@ export interface PopoverTokens {
    * @description xxx边框颜色
    */
   popoverBorderColor: string;
+  /**
+   * @type {string}
+   * @token #edf9e8
+   * @description xxx成功色背景颜色
+   */
+  popoverSuccessBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token rgba(82, 196, 26, 0.1)
+   * @description xxx成功色边框颜色
+   */
+  popoverSuccessBorderColor: string;
+  /**
+   * @type {string}
+   * @token #fff3e5
+   * @description xxx警告色背景颜色
+   */
+  popoverWarningBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token rgba(255, 140, 0, 0.1)
+   * @description xxx警告色边框颜色
+   */
+  popoverWarningBorderColor: string;
+  /**
+   * @type {string}
+   * @token #e8f1fe
+   * @description xxxundefined背景颜色
+   */
+  popoverInfoBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token rgba(25, 122, 250, 0.1)
+   * @description xxxundefined边框颜色
+   */
+  popoverInfoBorderColor: string;
+  /**
+   * @type {string}
+   * @token #ffeded
+   * @description xxx危险色背景颜色
+   */
+  popoverDangerBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token rgba(255, 77, 80, 0.1)
+   * @description xxx危险色边框颜色
+   */
+  popoverDangerBorderColor: string;
+  /**
+   * @type {string}
+   * @token Danger-7
+   * @description xxx错误状态的字体颜色
+   */
+  popoverErrorFontColor: string;
+  /**
+   * @type {string}
+   * @token Danger-1
+   * @description xxx错误状态的背景颜色
+   */
+  popoverErrorBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-1
+   * @description xxx错误状态的边框颜色
+   */
+  popoverErrorBorderColor: string;
 }
