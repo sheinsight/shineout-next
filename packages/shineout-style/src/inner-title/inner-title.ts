@@ -30,6 +30,7 @@ const innerTitle: JsStyles<Class> = {
     height: 'initial',
     lineHeight: token.lineHeightDynamic,
     fontSize: token.inputInnerFontSize,
+    color: token.inputInnerFontColor,
     '$wrapperSmall &': {
       fontSize: token.inputInnerSmallFontSize,
     },

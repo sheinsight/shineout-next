@@ -1,8 +1,8 @@
 /**
- * cn - 无边框模式
- *    -- 开启 border 属性后，Input 组件将不再显示边框。
+ * cn - border
+ *    -- 设置 `border` false ，Input 组件将不再显示边框。
  * en - Borderless mode
- *    -- After enabling the border attribute, the Input component will no longer display a border.
+ *    -- Set `border` false, the Input component will no longer display the border.
  */
 
 import { Input } from 'shineout';

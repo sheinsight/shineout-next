@@ -1,8 +1,8 @@
 /**
  * cn - 键盘事件
- *    -- Input 组件支持 onKeyUp（键盘弹起）、onKeyDown（键盘按下）、onEnterPress（回车） 事件。
+ *    -- Input 组件支持 `onKeyUp`（键盘弹起）、`onKeyDown`（键盘按下）、`onEnterPress`（回车） 事件。
  * en - Keyboard events
- *    -- The Input component supports the onKeyUp (key up), onKeyDown (key down), and onEnterPress (enter key) events.
+ *    -- The Input component supports the `onKeyUp` (key up), `onKeyDown` (key down), and `onEnterPress` (enter key) events.
  */
 
 import React, { useState } from 'react';
