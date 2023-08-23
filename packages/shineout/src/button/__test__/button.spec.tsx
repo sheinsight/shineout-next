@@ -2,6 +2,16 @@ import { render, screen, cleanup, fireEvent } from '@testing-library/react';
 import Button from '..';
 // import { Form } from 'shineout';
 import mountTest from '../../tests/mountTest';
+import {
+  classContentTest,
+  classTest,
+  snapshotTest,
+  styleTest,
+  baseTest,
+  textContentTest,
+  attributesTest,
+} from '../../tests/utils';
+import { classLengthTest } from '../../tests/structureTest';
 import ButtonBase from '../__example__/s-001-base';
 import ButtonIcon from '../__example__/s-002-icon';
 import ButtonShape from '../__example__/s-003-shape';
@@ -9,26 +19,39 @@ import ButtonSize from '../__example__/s-004-size';
 import ButtonStatus from '../__example__/s-005-status';
 import ButtonDisbled from '../__example__/s-006-disabled';
 import ButtonLoading from '../__example__/s-007-loading';
+import ButtonGroup from '../__example__/s-008-group';
 import { useState } from 'react';
 
 const SO_PREFIX = 'button';
+const buttonClassName = `${SO_PREFIX}-button-0-2-1`;
+const buttonSecondary = `${SO_PREFIX}-secondary-0-2-6`;
+const buttonOutline = `${SO_PREFIX}-outline-0-2-11`;
+const buttonDefault = `${SO_PREFIX}-default-0-2-4`;
+const buttonText = `${SO_PREFIX}-text-0-2-13`;
+const buttonDisabled = `${SO_PREFIX}-disabled-0-2-18`;
+const buttonLoading = `${SO_PREFIX}-loading-0-2-19`;
+const buttonHref = `${SO_PREFIX}-href-0-2-14`;
+
 afterEach(cleanup);
 describe('Button[Base]', () => {
   mountTest(Button);
-  test('should render correctly', () => {
-    const { container } = render(<ButtonBase />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
+  baseTest(Button, 'button');
+  snapshotTest(<ButtonBase />);
+  snapshotTest(<ButtonIcon />, 'about icon');
+  snapshotTest(<ButtonShape />, 'about shape');
+  snapshotTest(<ButtonSize />, 'about size');
+  snapshotTest(<ButtonStatus />, 'about status');
+  snapshotTest(<ButtonDisbled />, 'about disbled');
+  snapshotTest(<ButtonLoading />, 'about loading');
+  snapshotTest(<ButtonGroup />, 'about group');
   test('should render className in a button', () => {
     const { container } = render(<ButtonBase />);
     const buttons = container.querySelectorAll('button');
     expect(buttons.length).toBe(5);
     buttons.forEach((button) => {
-      expect(button.getAttribute('style')).toBe('margin: 0px;');
-      expect(button.classList.contains(`${SO_PREFIX}-button-0-2-1`)).toBeTruthy();
-      expect(
-        button.getAttribute('class')?.includes(button.textContent?.toLocaleLowerCase() as string),
-      ).toBeTruthy();
+      styleTest(button, 'margin: 0px;');
+      classTest(button, buttonClassName);
+      classContentTest(button, button.textContent?.toLocaleLowerCase() as string);
     });
   });
   test('should render className about type and mode', () => {
@@ -38,30 +61,22 @@ describe('Button[Base]', () => {
       </Button>,
     );
     const button = container.querySelector('button');
-    expect(button?.classList.contains(`${SO_PREFIX}-secondary-0-2-6`)).toBeTruthy();
-    expect(button?.classList.contains(`${SO_PREFIX}-outline-0-2-11`)).toBeTruthy();
+    expect(button?.classList.contains(buttonSecondary)).toBeTruthy();
+    expect(button?.classList.contains(buttonOutline)).toBeTruthy();
   });
   test('should render when default', () => {
     const { container } = render(<Button>button</Button>);
-    expect(
-      container.querySelector('button')?.classList.contains(`${SO_PREFIX}-default-0-2-4`),
-    ).toBeTruthy();
-  });
-  test('should render when set className', () => {
-    const { container } = render(<Button className='button'>className</Button>);
-    expect(container.querySelector('button')?.classList.contains('button')).toBeTruthy();
+    classTest(container.querySelector('button')!, buttonDefault);
   });
   test('should render when set icon', () => {
     const { container } = render(<ButtonIcon />);
     container.querySelectorAll('button').forEach((button) => {
-      expect(button.querySelectorAll('svg').length).toBe(1);
+      classLengthTest(button, 'svg', 1);
     });
   });
   test('should render when set outline or text', () => {
     const { container } = render(<Button outline>button</Button>);
-    expect(
-      container.querySelector('button')?.classList.contains(`${SO_PREFIX}-outline-0-2-11`),
-    ).toBeTruthy();
+    classTest(container.querySelector('button')!, buttonOutline);
   });
   test('should render mode first when set mode and text or outline', () => {
     const { container } = render(
@@ -69,9 +84,9 @@ describe('Button[Base]', () => {
         button
       </Button>,
     );
-    const button = container.querySelector('button');
-    expect(button?.classList.contains(`${SO_PREFIX}-outline-0-2-11`)).toBeTruthy();
-    expect(button?.classList.contains(`${SO_PREFIX}-text-0-2-13`)).toBeFalsy();
+    const button = container.querySelector('button')!;
+    classTest(button, buttonOutline);
+    classTest(button, buttonText, false);
   });
   test('should render when set shape', () => {
     const shape = ['square', 'circle', 'round'];
@@ -91,9 +106,9 @@ describe('Button[Base]', () => {
   });
   test('should render space in text when set space', () => {
     const { container } = render(<Button space>测试</Button>);
-    const button = container.querySelector('button');
+    const button = container.querySelector('button')!;
     expect(button?.textContent).not.toBe('测试');
-    expect(button?.textContent).toBe('测 试');
+    textContentTest(button, '测 试');
   });
 });
 describe('Button[Status]', () => {
@@ -113,7 +128,7 @@ describe('Button[Disabled]', () => {
       expect(
         button.classList[0].includes(button.textContent?.toLocaleLowerCase() as string),
       ).toBeTruthy();
-      expect(button.classList.contains(`${SO_PREFIX}-disabled-0-2-18`)).toBeTruthy();
+      classTest(button, buttonDisabled);
     });
   });
   test('can not click when set disabled', () => {
@@ -142,13 +157,13 @@ describe('Button[Loading]', () => {
   test('should render when set loading', () => {
     const { container } = render(<ButtonLoading />);
     container.querySelectorAll('button').forEach((button) => {
-      expect(button.classList.contains(`${SO_PREFIX}-loading-0-2-19`)).toBeTruthy();
+      expect(button.classList.contains(buttonLoading)).toBeTruthy();
     });
   });
   // TODO: 未开发spin，当前onClick不受loading控制
   // test('should can not click when set loading', () => {
   //   const handleFn = jest.fn()
-  //   const { container } = render(<Button type='success' loading onClick={handleFn}>button</Button>)
+  //   const { container } = render(<Button type='primary' loading onClick={handleFn}>button</Button>)
   //   screen.debug()
   //   fireEvent.click(container.querySelector('button') as HTMLButtonElement)
   //   console.log('121', handleFn.mock.calls)
@@ -176,13 +191,9 @@ describe('Button[Loading]', () => {
     };
     const { container } = render(<ButtonLoadingStatus />);
     fireEvent.click(container.querySelectorAll('button')[0]);
-    expect(
-      container.querySelectorAll('button')[1].classList.contains(`${SO_PREFIX}-loading-0-2-19`),
-    ).toBeTruthy();
+    classTest(container.querySelectorAll('button')[1]!, buttonLoading);
     fireEvent.click(container.querySelectorAll('button')[0]);
-    expect(
-      container.querySelectorAll('button')[1].classList.contains(`${SO_PREFIX}-loading-0-2-19`),
-    ).toBeFalsy();
+    classTest(container.querySelectorAll('button')[1]!, buttonLoading, false);
   });
 });
 // TODO: have warning about onRef when set href in button
@@ -194,13 +205,12 @@ describe('Button[Href]', () => {
         href
       </Button>,
     );
-    const href = container.querySelector('a');
-    expect(container.querySelectorAll('a').length).toBe(1);
-    expect(href?.classList.contains(`${SO_PREFIX}-href-0-2-14`)).toBeTruthy();
-    expect(href?.getAttribute('href')).toBe('aaa');
+    const href = container.querySelector('a')!;
+    classLengthTest(container, 'a', 1);
+    classTest(href, buttonHref);
+    attributesTest(href, 'href', 'aaa');
     fireEvent.click(href as HTMLAnchorElement);
-    // TODO:useButton href 两次click
-    // expect(handleFn.mock.calls.length).toBe(1)
+    expect(handleFn.mock.calls.length).toBe(1);
   });
   test('should render when set href and target', () => {
     const { container } = render(
@@ -217,10 +227,11 @@ describe('Button[Href]', () => {
 });
 describe('Button[HtmlType]', () => {
   const htmlTypes = ['button', 'reset', 'submit'];
+  type htmlTypesProp = 'button' | 'submit' | 'reset' | undefined;
   htmlTypes.forEach((htmlType) => {
     test(`should render when set htmlType is ${htmlType}`, () => {
-      const { container } = render(<Button htmlType={htmlType}>Test</Button>);
-      expect(container.querySelector('button')?.getAttribute('htmltype')).toBe(htmlType);
+      const { container } = render(<Button htmlType={htmlType as htmlTypesProp}>Test</Button>);
+      attributesTest(container.querySelector('button')!, 'htmltype', htmlType);
     });
   });
 });
@@ -249,13 +260,13 @@ describe('Button[onClick]', () => {
     };
     const { container } = render(<ButtonClick />);
     screen.debug();
-    const testData = container.querySelector('.testData');
+    const testData = container.querySelector('.testData')!;
     const button = container.querySelector('button') as HTMLButtonElement;
-    expect(testData?.textContent).toBe('0');
+    textContentTest(testData, '0');
     fireEvent.click(button);
-    expect(testData?.textContent).toBe('1');
+    textContentTest(testData, '1');
     fireEvent.click(button);
-    expect(testData?.textContent).toBe('2');
+    textContentTest(testData, '2');
   });
 });
 // TODO: onRef

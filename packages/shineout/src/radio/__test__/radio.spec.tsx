@@ -1,19 +1,46 @@
+import { RefAttributes } from 'react';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import Radio from '..';
 import { Form } from 'shineout';
 import mountTest from '../../tests/mountTest';
-import RadioBase from '../__example__/002-group-0';
-import RadioGroup from '../__example__/002-group-1';
+import {
+  snapshotTest,
+  textContentTest,
+  classTest,
+  attributesTest,
+  hasAttributesTest,
+  baseTest,
+  childrenTest,
+} from '../../tests/utils';
+import { classLengthTest, inputTest } from '../../tests/structureTest';
+import RadioBase from '../__example__/001-base-0';
+import RadioStatus from '../__example__/001-base-1';
+import RadioGroup from '../__example__/002-group-0';
+import RadioGroupByChildren from '../__example__/002-group-1';
 import RadioBlock from '../__example__/003-block';
+import RadioCancel from '../__example__/003-cancel';
 import RadioButton from '../__example__/004-button';
 import RadioButtonOutline from '../__example__/005-button-outline';
 import RadioSize from '../__example__/006-button-size';
 import RadioDisabled from '../__example__/007-disabled';
-import RadioCancel from '../__example__/003-cancel';
+import RadioDisabledFunc from '../__example__/008-disabled-func';
 import { RadioGroupProps } from '../group.type';
-import { RefAttributes } from 'react';
 
 const SO_PREFIX = 'radio';
+const radioClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
+const radioCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-2`;
+const radioIndicatorWrapper = `.${SO_PREFIX}-indicatorWrapper-0-2-4`;
+const radioDescClassName = `.${SO_PREFIX}-desc-0-2-6`;
+const radioBaseCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-2`;
+const radioGroupClassName = `.${SO_PREFIX}-group-0-2-7`;
+const radioBlockClassName = `${SO_PREFIX}-groupBlock-0-2-8`;
+const radioGroupButtonClassName = `${SO_PREFIX}-groupButton-0-2-9`;
+const buttonGroupClassName = 'button-group-0-2-30';
+const radioDisabledClassName = `${SO_PREFIX}-wrapperDisabled-0-2-3`;
+const radioOutlineClassName = 'button-outline-0-2-20';
+const buttonSmallClassName = 'button-small-0-2-11';
+const buttonLargeClassName = 'button-large-0-2-12';
+
 const renderData = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
 const preData = [
   { id: 1, name: 'a' },
@@ -31,32 +58,65 @@ describe('Radio[Base]', () => {
   const defaultValue = 'blue';
   mountTest(Radio);
   mountTest(Radio.Group as React.ComponentType);
-  test('should render correctly', () => {
-    const { container } = render(<Radio className='customized'>Test</Radio>);
-    expect(container.firstChild).toMatchSnapshot();
+  baseTest(Radio, radioClassName);
+  baseTest(Radio.Group as React.ComponentType, radioGroupClassName);
+  childrenTest(Radio, radioClassName);
+  childrenTest(Radio.Group as React.ComponentType, radioGroupClassName);
+  snapshotTest(<RadioBase />);
+  snapshotTest(<RadioStatus />, 'about status');
+  snapshotTest(<RadioGroup />, 'about group');
+  snapshotTest(<RadioGroupByChildren />, 'about group children');
+  snapshotTest(<RadioBlock />, 'about block');
+  snapshotTest(<RadioCancel />, 'about cancel');
+  snapshotTest(<RadioButton />, 'about button');
+  snapshotTest(<RadioButtonOutline />, 'about button outline');
+  snapshotTest(<RadioSize />, 'about size');
+  snapshotTest(<RadioDisabled />, 'about disabled');
+  snapshotTest(<RadioDisabledFunc />, 'about disabled func');
+  test('should render base', () => {
+    const attributes = [
+      {
+        attribute: 'style',
+        value: 'display: none;',
+      },
+      {
+        attribute: 'type',
+        value: 'radio',
+      },
+    ];
+    const { container } = render(<RadioBase />);
+    classLengthTest(container, 'input', 1);
+    inputTest(<RadioBase />, attributes);
+    classLengthTest(container, radioIndicatorWrapper, 1);
+    classLengthTest(container, radioDescClassName, 1);
+    textContentTest(container.querySelector(radioDescClassName)!, 'Option');
+    fireEvent.click(container.querySelector(radioClassName)!);
+    classTest(container.querySelector(radioClassName)!, radioBaseCheckedClassName);
   });
   test('should render radios while through data', () => {
-    const { container } = render(<RadioBase />);
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio, index) => {
-      expect(radio.querySelectorAll('input').length).toBe(1);
-      expect(radio.textContent).toBe(renderData[index]);
-      expect(
-        screen.getByText(renderData[index]).getAttribute('style')?.indexOf(renderData[index]),
-      ).toBeTruthy();
+    const { container } = render(<RadioGroup />);
+    screen.debug();
+    container.querySelectorAll(radioClassName).forEach((radio, index) => {
+      classLengthTest(radio, 'input', 1);
+      textContentTest(radio, renderData[index]);
       if (radio.textContent === defaultValue) return;
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeFalsy();
+      classTest(radio, radioCheckedClassName, false);
     });
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio) => {
+    container.querySelectorAll(radioClassName).forEach((radio) => {
       if (radio.textContent !== defaultValue) return;
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeTruthy();
+      classTest(radio, radioCheckedClassName);
+    });
+    container.querySelectorAll(radioClassName).forEach((radio) => {
+      fireEvent.click(radio);
+      classTest(radio, radioCheckedClassName);
     });
   });
   test('should call onChange', () => {
     const changeFn = jest.fn();
     const { container } = render(<Radio.Group keygen data={renderData} onChange={changeFn} />);
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio) => {
+    container.querySelectorAll(radioClassName).forEach((radio) => {
       fireEvent.click(radio);
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeTruthy();
+      classTest(radio, radioCheckedClassName);
     });
     changeFn.mock.calls.forEach((call, index) => {
       expect(call[0]).toBe(renderData[index]);
@@ -81,75 +141,79 @@ describe('Radio[Raw]', () => {
         ))}
       </Radio.Group>,
     );
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio, index) => {
-      expect(radio.querySelectorAll('input').length).toBe(1);
-      expect(radio.textContent).toBe(renderData[index]);
+    container.querySelectorAll(radioClassName).forEach((radio, index) => {
+      classLengthTest(radio, 'input', 1);
+      textContentTest(radio, renderData[index]);
       if (radio.textContent === defaultValue) return;
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeFalsy();
+      classTest(radio, radioCheckedClassName, false);
     });
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio) => {
+    container.querySelectorAll(radioClassName).forEach((radio) => {
       if (radio.textContent !== defaultValue) return;
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeTruthy();
+      classTest(radio, radioCheckedClassName);
     });
-  });
-  test('should render radios while through data', () => {
-    const { container, unmount } = render(<RadioGroup />);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-group-0-2-10`).length).toBe(2);
-    unmount();
-    expect(container.querySelectorAll(`.${SO_PREFIX}-group-0-2-10`).length).toBe(0);
   });
 });
 describe('Radio[Block]', () => {
   test('should render radios as block', () => {
     const { container } = render(<RadioBlock />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-group-0-2-10`)
-        ?.classList.contains(`${SO_PREFIX}-groupBlock-0-2-11`),
-    ).toBeTruthy();
+    screen.debug();
+    const radios = container.querySelectorAll(radioGroupClassName);
+    classTest(radios[1], radioBlockClassName);
   });
 });
 describe('Radio[Button]', () => {
   test('should render radios when set button', () => {
     const { container } = render(<RadioButton />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-group-0-2-10`)
-        ?.classList.contains(`${SO_PREFIX}-groupButton-0-2-12`),
-    ).toBeTruthy();
+    screen.debug();
+    const radios = container.querySelectorAll(radioGroupClassName);
+    radios.forEach((radio) => {
+      classTest(radio, radioGroupButtonClassName);
+      classTest(radio, buttonGroupClassName);
+    });
+    radios[0].querySelectorAll('button').forEach((button) => {
+      classLengthTest(button, 'input', 1);
+      fireEvent.click(button);
+      classTest(button, radioCheckedClassName);
+    });
+    radios[1].querySelectorAll('button').forEach((button) => {
+      classLengthTest(button, 'input', 1);
+      attributesTest(button, 'disabled', '');
+      classTest(button, radioDisabledClassName);
+      fireEvent.click(button);
+      if (button.textContent === 'Wednesday') return;
+      classTest(button, radioCheckedClassName, false);
+    });
   });
 });
 describe('Radio[ButtonOutline]', () => {
   test('should render radios when set ontline', () => {
     const { container } = render(<RadioButtonOutline />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-group-0-2-10`)
-        ?.classList.contains(`${SO_PREFIX}-groupButton-0-2-12`),
-    ).toBeTruthy();
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-group-0-2-10`)
-        ?.classList.contains(`${SO_PREFIX}-groupOutline-0-2-13`),
-    ).toBeTruthy();
+    screen.debug();
+    container.querySelectorAll('button').forEach((button) => {
+      classTest(button, radioOutlineClassName);
+    });
   });
 });
 describe('Radio[ButtonSize]', () => {
   test('should render radios when set different size', () => {
     const { container } = render(<RadioSize />);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-groupSmall-0-2-14`).length).toBe(1);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-groupLarge-0-2-15`).length).toBe(1);
+    screen.debug();
+    const radios = container.querySelectorAll(radioGroupClassName)!;
+    radios[0].querySelectorAll('button').forEach((button) => {
+      classTest(button, buttonSmallClassName);
+    });
+    radios[2].querySelectorAll('button').forEach((button) => {
+      classTest(button, buttonLargeClassName);
+    });
   });
 });
 describe('Radio[Disabled]', () => {
   test('should disabled on each input', () => {
     const { container } = render(<RadioDisabled />);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapperDisabled-0-2-7`).length).toBe(
-      renderData.length,
-    );
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio) => {
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperDisabled-0-2-7`)).toBeTruthy();
-      expect(radio.querySelector('input')?.hasAttribute('disabled')).toBeTruthy();
+    screen.debug();
+    container.querySelectorAll(radioClassName).forEach((radio) => {
+      classTest(radio, radioDisabledClassName);
+      attributesTest(radio.querySelector('input')!, 'disabled', '');
     });
   });
   test('should not call onClick', () => {
@@ -164,10 +228,10 @@ describe('Radio[Disabled]', () => {
         defaultValue='hello'
       />,
     );
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio) => {
+    container.querySelectorAll(radioClassName).forEach((radio) => {
       fireEvent.click(radio);
       if (radio.textContent === defaultValue) return;
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeFalsy();
+      classTest(radio, radioCheckedClassName, false);
     });
     expect(changeFn.mock.calls.length).toBe(0);
   });
@@ -177,10 +241,9 @@ describe('Radio[DisabledFunc]', () => {
     const { container } = render(
       <Radio.Group keygen data={renderData} disabled={(d: any) => d === 'yellow'} />,
     );
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapperDisabled-0-2-7`).length).toBe(1);
-    expect(container.querySelector(`.${SO_PREFIX}-wrapperDisabled-0-2-7`)?.textContent).toBe(
-      'yellow',
-    );
+    screen.debug();
+    expect(container.querySelectorAll('.' + radioDisabledClassName).length).toBe(1);
+    expect(container.querySelector('.' + radioDisabledClassName)?.textContent).toBe('yellow');
   });
 });
 describe('Radio[Cancel]', () => {
@@ -189,57 +252,46 @@ describe('Radio[Cancel]', () => {
     const { container } = render(
       createRadioGroup({ data: renderData, onChange: changeFn, keygen: true, defaultValue: 'red' }),
     );
-    const radios = container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`);
+    const radios = container.querySelectorAll(radioClassName);
     fireEvent.click(radios[0]);
     expect(changeFn.mock.calls.length).toBe(0);
   });
   test('should render while set cancel function', () => {
     const { container } = render(<RadioCancel />);
     const defaultValue = 'red';
-    expect(container.querySelector(`.${SO_PREFIX}-wrapperChecked-0-2-3`)?.textContent).toBe('red');
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio) => {
+    screen.debug();
+    textContentTest(container.querySelector('.' + radioCheckedClassName)!, 'red');
+    container.querySelectorAll(radioClassName).forEach((radio) => {
       if (defaultValue === radio.textContent) return;
       fireEvent.click(radio);
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeTruthy();
+      classTest(radio, radioCheckedClassName);
       fireEvent.click(radio);
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeFalsy();
+      classTest(radio, radioCheckedClassName, false);
     });
   });
 });
 describe('Radio[Checked]', () => {
   test('should checked', () => {
     const { container } = render(<Radio checked />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-2`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`),
-    ).toBeTruthy();
-    expect(container.querySelectorAll('input').length).toBe(1);
-    expect(container.querySelector('input')?.hasAttribute('checked')).toBeTruthy();
-    fireEvent.click(container.querySelector(`.${SO_PREFIX}-wrapper-0-2-2`) as Element);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-2`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`),
-    ).toBeTruthy();
-    expect(container.querySelector('input')?.hasAttribute('checked')).toBeTruthy();
+    const radio = container.querySelector(radioClassName)!;
+    classTest(radio, radioCheckedClassName);
+    const inputs = container.querySelectorAll('input')!;
+    expect(inputs.length).toBe(1);
+    hasAttributesTest(container.querySelector('input')!, 'checked');
+    fireEvent.click(container.querySelector(radioClassName) as Element);
+    classTest(radio, radioCheckedClassName);
+    hasAttributesTest(container.querySelector('input')!, 'checked');
   });
   test('should not checked', () => {
     const { container } = render(<Radio checked={false} />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-2`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`),
-    ).toBeFalsy();
-    expect(container.querySelectorAll('input').length).toBe(1);
-    expect(container.querySelector('input')?.hasAttribute('checked')).toBeFalsy();
-    fireEvent.click(container.querySelector(`.${SO_PREFIX}-wrapper-0-2-2`) as Element);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-2`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`),
-    ).toBeFalsy();
-    expect(container.querySelector('input')?.hasAttribute('checked')).toBeFalsy();
+    const radio = container.querySelector(radioClassName)!;
+    classTest(radio, radioCheckedClassName, false);
+    const inputs = container.querySelectorAll('input')!;
+    expect(inputs.length).toBe(1);
+    hasAttributesTest(container.querySelector('input')!, 'checked', false);
+    fireEvent.click(container.querySelector(radioClassName) as Element);
+    classTest(radio, radioCheckedClassName, false);
+    hasAttributesTest(container.querySelector('input')!, 'checked', false);
   });
 });
 describe('Radio[HtmlValue]', () => {
@@ -247,8 +299,8 @@ describe('Radio[HtmlValue]', () => {
     const handleChange = jest.fn();
     const htmlValue = 'Hello';
     const { container } = render(<Radio htmlValue={htmlValue} onChange={handleChange} />);
-    expect(container.querySelectorAll('input').length).toBe(1);
-    fireEvent.click(container.querySelector(`.${SO_PREFIX}-wrapper-0-2-2`) as Element);
+    classLengthTest(container, 'input', 1);
+    fireEvent.click(container.querySelector(radioClassName) as Element);
     expect(handleChange).toBeCalled();
     expect(handleChange.mock.calls[0][0]).toBe(htmlValue);
   });
@@ -268,8 +320,8 @@ describe('Radio[RenderItem]', () => {
         onChange={handleChange}
       />,
     );
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio, index) => {
-      expect(radio.textContent).toBe(data[index].name);
+    container.querySelectorAll(radioClassName).forEach((radio, index) => {
+      textContentTest(radio, data[index].name);
       fireEvent.click(radio);
       expect(handleChange.mock.calls[index][0]['id']).toBe(data[index].id);
     });
@@ -288,8 +340,8 @@ describe('Radio[RenderItem]', () => {
         onChange={handleChange}
       />,
     );
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio, index) => {
-      expect(radio.textContent).toBe(data[index].name);
+    container.querySelectorAll(radioClassName).forEach((radio, index) => {
+      textContentTest(radio, data[index].name);
       fireEvent.click(radio);
       expect(handleChange.mock.calls[index][0]['id']).toBe(data[index].id);
     });
@@ -311,7 +363,7 @@ describe('Radio[Format]', () => {
         format='age'
       />,
     );
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio, index) => {
+    container.querySelectorAll(radioClassName).forEach((radio, index) => {
       fireEvent.click(radio);
       expect(handleChange.mock.calls[index][0]).toBe(data[index]['age']);
     });
@@ -331,7 +383,7 @@ describe('Radio[Format]', () => {
         format={(d: any) => d.id + 1}
       />,
     );
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio, index) => {
+    container.querySelectorAll(radioClassName).forEach((radio, index) => {
       fireEvent.click(radio);
       expect(handleChange.mock.calls[index][0]).toBe(data[index].id + 1);
     });
@@ -358,8 +410,8 @@ describe('Radio[Form]', () => {
       </Form>,
     );
     fireEvent.click(
-      (container.querySelector(`.${SO_PREFIX}-wrapper-0-2-4`) as Element) ||
-        (container.querySelector(`.${SO_PREFIX}-wrapper-0-2-2`) as Element),
+      (container.querySelector(`.${SO_PREFIX}-wrapper-0-2-3`) as Element) ||
+        (container.querySelector(radioClassName) as Element),
     );
     expect(handleChange.mock.calls.length).toBe(0);
   });
@@ -368,29 +420,27 @@ describe('Radio[Value]', () => {
   test(`should render when data is undefined`, () => {
     const tempData = undefined;
     const { container, rerender } = render(<Radio.Group keygen data={renderData} />);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).length).toBe(
-      renderData.length,
-    );
+    classLengthTest(container, radioClassName, renderData.length);
     rerender(<Radio.Group keygen data={tempData} />);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).length).toBe(0);
+    classLengthTest(container, radioClassName, 0);
   });
   test(`should render when value is undefined`, () => {
     const tempData = undefined;
     const { container } = render(<Radio.Group keygen data={renderData} value={tempData} />);
-    const radios = container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapperChecked-0-2-3`).length).toBe(0);
+    const radios = container.querySelectorAll(radioClassName);
+    classLengthTest(container, radioCheckedClassName, 0);
     fireEvent.click(radios[0]);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapperChecked-0-2-3`).length).toBe(0);
+    classLengthTest(container, radioCheckedClassName, 0);
   });
   test('use `defaultValue` when `value` is undefined', () => {
     const tempData = undefined;
     const { container } = render(
       <Radio.Group keygen data={renderData} value={tempData} defaultValue='red' />,
     );
-    const radios = container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapperChecked-0-2-3`).length).toBe(0);
+    const radios = container.querySelectorAll(radioClassName);
+    classLengthTest(container, radioCheckedClassName, 0);
     fireEvent.click(radios[0]);
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapperChecked-0-2-3`).length).toBe(0);
+    classLengthTest(container, radioCheckedClassName, 0);
   });
   test('should render when the type of value is array', () => {
     const changeFn = jest.fn();
@@ -398,10 +448,9 @@ describe('Radio[Value]', () => {
     const { container } = render(
       <Radio.Group keygen data={renderData} onChange={changeFn} value={defaultValue} />,
     );
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapperChecked-0-2-3`).length).toBe(
-      defaultValue.length,
-    );
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio) => {
+    screen.debug();
+    classLengthTest(container, '.' + radioCheckedClassName, defaultValue.length);
+    container.querySelectorAll(radioClassName).forEach((radio) => {
       if (!radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)) return;
       expect(defaultValue.includes(radio.textContent as string)).toBeTruthy();
     });
@@ -412,17 +461,17 @@ describe('Radio[Value]', () => {
     const { container } = render(
       <Radio.Group keygen data={renderData} onChange={changeFn} value={defaultValue} />,
     );
-    container.querySelectorAll(`.${SO_PREFIX}-wrapper-0-2-2`).forEach((radio) => {
-      if (radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)) return;
+    container.querySelectorAll(radioClassName).forEach((radio) => {
+      if (radio.classList.contains(radioCheckedClassName)) return;
       fireEvent.click(radio);
-      expect(radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)).toBeFalsy();
+      classTest(radio, radioCheckedClassName, false);
     });
   });
   test('should render when set value and defaultValue', () => {
     const { container } = render(
       <Radio.Group keygen data={renderData} value='red' defaultValue='yellow' />,
     );
-    expect(container.querySelectorAll(`.${SO_PREFIX}-wrapperChecked-0-2-3`).length).toBe(1);
-    expect(container.querySelector(`.${SO_PREFIX}-wrapperChecked-0-2-3`)?.textContent).toBe('red');
+    classLengthTest(container, '.' + radioCheckedClassName, 1);
+    textContentTest(container.querySelector('.' + radioCheckedClassName)!, 'red');
   });
 });
