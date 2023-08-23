@@ -15,6 +15,7 @@ export * from './switch';
 export * from './tabs';
 export * from './tag';
 export * from './textarea';
+export * from './spin';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';
