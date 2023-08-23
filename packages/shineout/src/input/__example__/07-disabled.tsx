@@ -1,8 +1,8 @@
 /**
  * cn - 禁用
- *    -- 开启 disabled 属性后，组件将禁止输入。
+ *    -- 开启 `disabled` 属性后，组件将禁止输入。
  * en - disabled
- *    -- When the disabled attribute is enabled, the component will prevent input.
+ *    -- When the `disabled` attribute is enabled, the component will prevent input.
  */
 
 import React from 'react';

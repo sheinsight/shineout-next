@@ -10,7 +10,7 @@ import { Form, Input } from 'shineout';
 
 const App: React.FC = () => (
   <Form>
-    <Input.Password name={'password'} placeholder='input password' />
+    <Input.Password name={'password'} placeholder='input password' visibilityToggle />
   </Form>
 );
 

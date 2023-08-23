@@ -1,4 +1,5 @@
 import { FormFieldProps } from '@sheinx/base';
+import { PopoverProps } from '../popover/popover.type';
 import React from 'react';
 
 export interface ExtendsFieldProps<T>
@@ -8,8 +9,9 @@ export interface ExtendsFieldProps<T>
 }
 
 export interface TipProps {
-  popover?: boolean | string;
+  popover?: boolean | PopoverProps['position'];
   tip?: React.ReactNode;
+  popoverProps?: PopoverProps;
 }
 
 export interface CommonType {

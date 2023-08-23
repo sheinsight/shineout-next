@@ -7,6 +7,7 @@ export interface FieldControlProps<T> {
   onChange?: (value: T, ...rest: any) => void;
   status?: 'error';
   disabled?: boolean;
+  error?: { message?: string } | string;
 }
 
 export type FormFieldChildrenFunc<T> = (props: FieldControlProps<T>) => React.ReactElement;

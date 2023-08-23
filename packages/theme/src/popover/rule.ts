@@ -8,7 +8,10 @@
  */
 const popoverRules = {
   size: [[''], ['font-size', 'padding-x', 'padding-y', 'radius', 'border-width']],
-  color: [[''], ['font-color', 'background-color', 'shadow', 'border-color']],
+  color: [
+    ['', 'success', 'warning', 'info', 'danger', 'error'],
+    ['font-color', 'background-color', 'shadow', 'border-color'],
+  ],
 };
 
 module.exports = {

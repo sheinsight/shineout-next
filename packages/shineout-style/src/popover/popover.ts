@@ -20,11 +20,11 @@ const popoverStyle: JsStyles<PopoverClass> = {
       position: 'absolute',
       content: '" "',
       display: 'block',
-      border: `${token.popoverBorderWidth} solid ${token.popoverBorderColor}`,
+      border: `inherit`,
       width: '8.4px',
       height: '8.4px',
       boxSizing: 'content-box',
-      background: token.popoverBackgroundColor,
+      background: 'inherit',
       borderLeft: 'none',
       borderBottom: 'none',
     },
@@ -108,6 +108,28 @@ const popoverStyle: JsStyles<PopoverClass> = {
     '&&[data-soui-position$="-right"]::before': { right: arrowMargin, left: 'auto' },
     '&&[data-soui-position$="-top"]::before': { top: arrowMargin, bottom: 'auto' },
     '&&[data-soui-position$="-bottom"]::before': { bottom: arrowMargin, top: 'auto' },
+
+    '&[data-soui-type="danger"]': {
+      borderColor: token.popoverDangerBorderColor,
+      backgroundColor: token.popoverDangerBackgroundColor,
+    },
+    '&[data-soui-type="info"]': {
+      borderColor: token.popoverInfoBorderColor,
+      backgroundColor: token.popoverInfoBackgroundColor,
+    },
+    '&[data-soui-type="warning"]': {
+      borderColor: token.popoverWarningBorderColor,
+      backgroundColor: token.popoverWarningBackgroundColor,
+    },
+    '&[data-soui-type="success"]': {
+      borderColor: token.popoverSuccessBorderColor,
+      backgroundColor: token.popoverSuccessBackgroundColor,
+    },
+    '&[data-soui-type="error"]': {
+      borderColor: token.popoverErrorBorderColor,
+      backgroundColor: token.popoverErrorBackgroundColor,
+      '& $content': { color: token.popoverErrorFontColor },
+    },
   },
   wrapperOpen: {
     display: 'block',

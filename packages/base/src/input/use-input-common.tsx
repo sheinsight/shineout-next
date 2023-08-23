@@ -6,6 +6,7 @@ import classNames from 'classnames';
 
 import { InputCommonProps } from './input.type';
 import useWithFormConfig from '../common/use-with-form-config';
+import Popover from '../popover';
 
 const defaultInfo = (num: number, msg: any) => {
   if (!msg || msg.length === 0) return null;
@@ -33,10 +34,15 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     width,
     delay,
     onBlur,
+    tip,
+    error,
+    popover,
+    popoverProps,
     ...rest
   } = props;
 
   const { size, disabled } = useWithFormConfig(props);
+  const rootRef = React.useRef<HTMLElement>(null);
 
   const [focused, setFocused] = React.useState(false);
 
@@ -91,10 +97,36 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     );
   };
 
+  const getTip = () => {
+    if (!tip) return null;
+    const styles =
+      popoverProps?.style && popoverProps?.style?.width
+        ? popoverProps?.style
+        : Object.assign({ minWidth: 200, maxWidth: 400 }, popoverProps?.style || {});
+    let errorMessage = typeof error === 'string' ? error : (error as any)?.message;
+    if ((tip && focused) || (popover && errorMessage)) {
+      return (
+        <Popover
+          jssStyle={props.jssStyle}
+          getPopupContainer={() => rootRef.current}
+          {...popoverProps}
+          style={styles}
+          visible
+          position={popoverProps?.position || 'bottom-left'}
+          type={errorMessage ? 'error' : undefined}
+        >
+          {errorMessage || tip}
+        </Popover>
+      );
+    }
+    return null;
+  };
+
   const mergeSuffix = (
     <React.Fragment>
       {suffix}
       {getInfo()}
+      {getTip()}
     </React.Fragment>
   );
 
@@ -127,6 +159,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     getStatus: onStatusChange,
     disabled,
     size,
+    rootRef,
   };
 };
 

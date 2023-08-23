@@ -13,7 +13,7 @@ export type PositionType =
   | 'bottom';
 
 export interface BasePopupProps {
-  trigger?: 'click' | 'hover';
+  trigger?: 'click' | 'hover' | 'none';
   open?: boolean;
   onCollapse?: (open: boolean) => void;
   disabled?: boolean;
