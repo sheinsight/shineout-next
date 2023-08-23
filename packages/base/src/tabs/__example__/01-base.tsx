@@ -28,7 +28,7 @@ export default () => {
         onChange={handleChange}
         active={active}
         shape='card'
-        autoFill
+        // autoFill
         collapsible
         // hideSplit
         style={{ height: 200 }}
@@ -40,7 +40,7 @@ export default () => {
         {tabs.map((tab, index) => {
           return (
             <Tabs.Panel key={index} tab={tab.title} jssStyle={{ tabs: tabsStyle }}>
-              <div style={{ padding: 5, height: '100%' }}>{tab.content}</div>
+              <div style={{ padding: 5, height: '100%', background: '#ebebeb' }}>{tab.content}</div>
             </Tabs.Panel>
           );
         })}

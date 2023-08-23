@@ -302,17 +302,17 @@ const tabsStyle: JsStyles<TabsClass> = {
     width: 'auto',
     height: 'auto',
     overflow: 'hidden',
-    transition: 'height .2s ease-out',
+    transition: 'all .2s ease-out',
   },
   panel: {
     display: 'none',
   },
   autoFill: {
     '& $panelWrapper': {
-      flex: 'auto',
+      flex: 1,
     },
     '& $panel': {
-      height: 'auto',
+      height: '100%',
     },
   },
   tab: {

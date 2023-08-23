@@ -83,14 +83,31 @@ const Tabs = (props: TabsProps) => {
     if (!panelRef.current) return;
     if (collapsible) {
       if (collapse) {
-        setPanelStyle({ height: panelRef.current.clientHeight });
         panelHeight.current = panelRef.current.clientHeight;
-        setTimeout(() => {
-          setPanelStyle({ height: 0, flex: 'none' });
-        });
+        if (autoFill) {
+          setPanelStyle({ height: panelRef.current.clientHeight, flex: 1 });
+          setTimeout(() => {
+            setPanelStyle({ height: 0, flex: 0 });
+          }, 10);
+        } else {
+          setPanelStyle({ height: panelRef.current.clientHeight });
+          setTimeout(() => {
+            setPanelStyle({ height: 0 });
+          }, 10);
+        }
       } else {
         if (panelHeight.current === 0) return;
-        setPanelStyle({ height: panelHeight.current, flex: 'auto' });
+        if (autoFill) {
+          setPanelStyle({ height: panelHeight.current, flex: 1 });
+          setTimeout(() => {
+            setPanelStyle({ height: 'auto', flex: 1 });
+          }, 200);
+        } else {
+          setPanelStyle({ height: panelHeight.current });
+          setTimeout(() => {
+            setPanelStyle({ height: 'auto' });
+          }, 200);
+        }
       }
     }
   }, [collapse]);
