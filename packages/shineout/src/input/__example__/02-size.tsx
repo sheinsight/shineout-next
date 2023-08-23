@@ -1,8 +1,8 @@
 /**
  * cn - 尺寸大小
- *    -- 设置 size 属性改变输入框组件的尺寸大小。内置三种尺寸：small、default（默认）、large。
+ *    -- 设置 `size` 属性改变输入框组件的尺寸大小。内置三种尺寸：small、default、large。
  * en - Size
- *    -- Set the size property to change the size of the input box component. There are three built-in sizes available: small, default (default), and large.
+ *    -- Set the size property to change the size of the input box component. There are three built-in sizes available: small, default, and large.
  */
 
 import React from 'react';

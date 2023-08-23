@@ -1,1 +1,1 @@
-export type { switchProps as Props } from './input.type';
+export type { SwitchProps as Props } from './switch.type';

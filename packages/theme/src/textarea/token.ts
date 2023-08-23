@@ -31,7 +31,7 @@ const textareaTokenValue = {
   },
   placeholder: { color: 'Neutral-text-2' },
   background: { color: 'Neutral-fill-1' },
-  shadow: 'Shadow-1',
+  shadow: '',
   hover: {
     font: { color: '' },
     placeholder: { color: '' },
@@ -44,7 +44,7 @@ const textareaTokenValue = {
     placeholder: { color: '' },
     border: { color: 'Brand-7' },
     background: { color: '' },
-    shadow: '',
+    shadow: 'Shadow-1',
   },
   disabled: {
     font: { color: 'Neutral-text-2' },

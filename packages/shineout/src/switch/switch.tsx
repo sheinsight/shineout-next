@@ -1,16 +1,17 @@
-import { Switch } from '@sheinx/base';
+import { useMemo } from 'react';
+import { Switch as UnStyleSwitch } from '@sheinx/base';
 import { useSwitchStyle } from '@sheinx/shineout-style';
-import { SwitchProps } from './switch.type';
+import { BaseSwitchProps, SwitchProps } from './switch.type';
+import useFieldCommon from '../hooks/use-field-common';
 
-export default (props: SwitchProps) => {
+const BaseSwitch = (props: BaseSwitchProps) => {
   const {} = props;
   const switchStyle = useSwitchStyle();
   const jssStyle = useMemo(() => ({ switch: switchStyle }), [switchStyle]);
 
-  return (
-    <Switch
-      jssStyle={jssStyle}
-      // ...
-    />
-  );
+  return <UnStyleSwitch jssStyle={jssStyle} {...props} />;
+};
+
+export default (props: SwitchProps) => {
+  return useFieldCommon<BaseSwitchProps, BaseSwitchProps['value']>(props, BaseSwitch);
 };

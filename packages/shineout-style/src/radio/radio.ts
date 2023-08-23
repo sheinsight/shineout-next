@@ -101,18 +101,18 @@ const radioStyle: JsStyles<RadioClass> = {
       borderRadius: '50%',
     },
     '$wrapperChecked &': {
-      borderColor: token.radioIconActiveBorderColor,
-      backgroundColor: token.radioIconActiveBackgroundColor,
-      color: token.radioIconActiveColor,
+      borderColor: token.radioIconCheckedBorderColor,
+      backgroundColor: token.radioIconCheckedBackgroundColor,
+      color: token.radioIconCheckedColor,
     },
     '$wrapperDisabled &': {
       borderColor: token.radioIconDisabledBorderColor,
       backgroundColor: token.radioIconDisabledBackgroundColor,
     },
     '$wrapperDisabled$wrapperChecked &, $wrapperDisabled$wrapperIndeterminate &': {
-      borderColor: token.radioIconActivedisabledBorderColor,
-      backgroundColor: token.radioIconActivedisabledBackgroundColor,
-      color: token.radioIconActivedisabledColor,
+      borderColor: token.radioIconCheckedDisabledBorderColor,
+      backgroundColor: token.radioIconCheckedDisabledBackgroundColor,
+      color: token.radioIconCheckedDisabledColor,
     },
   },
   desc: {

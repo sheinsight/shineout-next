@@ -7,7 +7,15 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const switchRules = {
-  size: [[''], ['font-size']],
+  size: [
+    ['', 'small', 'large'],
+    ['font-size', 'padding-x', 'padding-y', 'circle-size', 'width'],
+  ],
+  color: [
+    ['', 'checked'],
+    ['', 'disabled', 'loading'],
+    ['background-color', 'circle-fill', 'circle-shadow', 'font-color'],
+  ],
 };
 
 module.exports = {

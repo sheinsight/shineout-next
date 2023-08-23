@@ -13,6 +13,16 @@ export * from './textarea';
 export * from './animation-list';
 export * from './dropdown';
 export * from './button';
+export * from './icon';
+export * from './image';
+export * from './animation-list';
+export * from './dropdown';
+export * from './button';
+export * from './tag';
+export * from './icon';
+export * from './animation-list';
+export * from './dropdown';
+export * from './button';
 export * from './spin';
 export * from './icon';
 

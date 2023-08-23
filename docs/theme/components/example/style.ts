@@ -25,7 +25,9 @@ export default createUseStyles({
       border: '1px solid rgba(232, 235, 240, 1)',
     },
     '& .action': {
-      position: 'relative',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start',
       width: '100%',
       minHeight: 48,
       boxSizing: 'border-box',
@@ -35,13 +37,13 @@ export default createUseStyles({
       fontSize: 12,
       color: 'rgba(20, 23, 55, 1)',
       '& .btn': {
-        position: 'absolute',
+        marginLeft: 8,
         right: 16,
         top: 16,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        gap: 24,
+        gap: 12,
       },
     },
     '& .describe': {
@@ -49,6 +51,7 @@ export default createUseStyles({
       display: 'flex',
       alignItems: 'center',
       flexWrap: 'wrap',
+      marginBottom: 4,
     },
     '& .icon': {
       width: 16,
@@ -81,7 +84,7 @@ export default createUseStyles({
     margin: '0 5px',
     padding: '2px 5px',
     color: '#5d5d5d',
-    background: '#efefef',
+    background: '#F4F5F8',
     borderRadius: 2,
   },
 });

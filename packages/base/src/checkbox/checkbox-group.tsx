@@ -64,7 +64,7 @@ const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem
   };
   const groupClass = classNames(
     className,
-    jssStyle.checkbox?.group,
+    jssStyle?.checkbox?.group,
     !!block && jssStyle?.checkbox?.groupBlock,
   );
   if (props.data === undefined) {

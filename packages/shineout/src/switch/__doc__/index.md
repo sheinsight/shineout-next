@@ -5,7 +5,7 @@ group: Form
 
 # Title
 
-Switch 开关
+开关 Switch
 Switch
 
 # Describe

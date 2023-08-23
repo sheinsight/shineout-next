@@ -1,8 +1,13 @@
+import InitTheme from './utils/document-style';
+
 import Button from './button';
 import { ButtonTokens } from './button/type';
 
 import Checkbox from './checkbox';
 import { CheckboxTokens } from './checkbox/type';
+
+import Image from './image';
+import { ImageTokens } from './image/type';
 
 import Common from './common';
 import { CommonTokens } from './common/type';
@@ -28,6 +33,9 @@ import { SwitchTokens } from './switch/type';
 import Textarea from './textarea';
 import { TextareaTokens } from './textarea/type';
 
+import Tag from './tag';
+import { TagTokens } from './Tag/type';
+
 import Spin from './spin';
 import { SpinTokens } from './spin/type';
 
@@ -41,6 +49,8 @@ export type ThemeTokens = ButtonTokens &
   RadioTokens &
   SwitchTokens &
   TextareaTokens &
+  ImageTokens &
+  TagTokens &
   SpinTokens;
 
 const Token: ThemeTokens = {
@@ -54,7 +64,13 @@ const Token: ThemeTokens = {
   ...Radio,
   ...Switch,
   ...Textarea,
+  ...Image,
+  ...Tag,
   ...Spin,
 };
+
+InitTheme();
+
+export { InitTheme };
 
 export default Token;

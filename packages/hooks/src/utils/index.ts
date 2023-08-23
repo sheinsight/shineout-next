@@ -11,3 +11,6 @@ export * from './uid';
 export * from './document';
 export * from './position';
 export * from './render';
+export * from './lazyload';
+export * from './react-render';
+export * from './style-unit';

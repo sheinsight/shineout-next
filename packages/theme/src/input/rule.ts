@@ -9,12 +9,21 @@
 const inputRules = {
   size: [
     ['', 'small', 'large'],
-    ['font-size', 'border-radius', 'padding-x', 'padding-y'],
+    ['font-size', 'border-radius', 'padding-x', 'padding-y', 'icon-size'],
   ],
   color: [
-    ['', 'hover', 'focus', 'disabled', 'error'],
-    ['font-color', 'placeholder-color', 'border-color', 'background-color', 'shadow'],
+    ['', 'disabled', 'error'],
+    ['', 'hover', 'focus'],
+    [
+      'font-color',
+      'placeholder-color',
+      'border-color',
+      'background-color',
+      'shadow',
+      'clear-color',
+    ],
   ],
+  infoColor: [['info'], ['', 'error'], ['font-color', 'background-color', 'border-color']],
 };
 
 module.exports = {

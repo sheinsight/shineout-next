@@ -4,5 +4,8 @@ export * as Radio from './radio/interface';
 export * as Checkbox from './checkbox/interface';
 export * as Textarea from './textarea/interface';
 export * as Dropdown from './dropdown/interface';
+export * as Image from './image/interface';
 export * as Spin from './spin/interface';
 export * as Icon from './icon/interface';
+export * as Switch from './switch/interface';
+export * as Popover from './popover/interface';
