@@ -36,6 +36,9 @@ import { TextareaTokens } from './textarea/type';
 import Tag from './tag';
 import { TagTokens } from './Tag/type';
 
+import Spin from './spin';
+import { SpinTokens } from './spin/type';
+
 export type ThemeTokens = ButtonTokens &
   CheckboxTokens &
   CommonTokens &
@@ -47,7 +50,8 @@ export type ThemeTokens = ButtonTokens &
   SwitchTokens &
   TextareaTokens &
   ImageTokens &
-  TagTokens;
+  TagTokens &
+  SpinTokens;
 
 const Token: ThemeTokens = {
   ...Button,
@@ -62,6 +66,7 @@ const Token: ThemeTokens = {
   ...Textarea,
   ...Image,
   ...Tag,
+  ...Spin,
 };
 
 InitTheme();

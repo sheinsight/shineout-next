@@ -16,7 +16,7 @@ export default createUseStyles({
     display: 'flex',
     backgroundColor: '#ffffff',
     borderBottom: '1px solid rgb(229,230,235)',
-    zIndex: 1,
+    zIndex: 2,
     '& .entry': {
       gap: 20,
       width: '100%',
