@@ -9,11 +9,14 @@ const TabsPanel = (props: TabsPanelProps) => {
   const { active, lazy } = useTabsContext();
   const isActive = active === id;
   const keekAlive = useRef(false);
+
   if (!isActive && lazy && !keekAlive.current) {
     return null;
   }
+
   // 首次不加载，一旦加载后常驻
   keekAlive.current = true;
+
   const panelStyle = jssStyle?.tabs || ({} as TabsClasses);
   const panelClass = classNames(panelStyle.panel, {
     [panelStyle.show]: isActive,

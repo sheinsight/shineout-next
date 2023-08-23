@@ -6,6 +6,7 @@ export interface TabsContextProps {
   isVertical?: boolean;
   lazy?: boolean;
   onChange?: (key: string | number) => void;
+  onCollapsible?: () => void;
 }
 
 export interface TabsProviderProps {

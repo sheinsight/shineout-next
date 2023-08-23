@@ -14,7 +14,7 @@ const Doc = (props: DocProps) => {
 
   return (
     <div style={{ display: 'flex' }}>
-      <div className='examples' style={{ flex: 1 }}>
+      <div className='examples' style={{ flex: 1, overflow: 'hidden' }}>
         {examples.map((example, index) => {
           return <Example key={index} {...example} index={index}></Example>;
         })}

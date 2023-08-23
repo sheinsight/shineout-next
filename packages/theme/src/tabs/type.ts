@@ -34,7 +34,7 @@ export interface TabsTokens {
   tabsActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-3
+   * @token Neutral-fill-2
    * @description 标签页鼠标移入时的背景颜色
    */
   tabsHoverBackgroundColor: string;
@@ -46,7 +46,7 @@ export interface TabsTokens {
   tabsDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-4
+   * @token Neutral-fill-3
    * @description 标签页鼠标按下时的背景颜色
    */
   tabsClickBackgroundColor: string;
@@ -128,4 +128,34 @@ export interface TabsTokens {
    * @description 标签页填充模式内部容器的内边距（垂直方向）
    */
   tabsFillInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-2
+   * @description 标签页分割线边框颜色
+   */
+  tabsSplitBorderColor: string;
+  /**
+   * @type {string}
+   * @token Padding-7
+   * @description 标签页操作按钮undefined内边距（水平方向）
+   */
+  tabsActionVerticalPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 标签页操作按钮undefined内边距（垂直方向）
+   */
+  tabsActionVerticalPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-7
+   * @description 标签页操作按钮undefined内边距（水平方向）
+   */
+  tabsActionHorizontalPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-10
+   * @description 标签页操作按钮undefined内边距（垂直方向）
+   */
+  tabsActionHorizontalPaddingY: string;
 }

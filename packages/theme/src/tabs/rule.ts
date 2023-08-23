@@ -17,6 +17,8 @@ const tabsRules = {
     ['line', 'line-inner', 'fill', 'fill-inner'],
     ['padding-x', 'padding-y'],
   ],
+  extra_split: [['split'], ['border-color']],
+  extra_prev_next: [['action'], ['vertical', 'horizontal'], ['padding-x', 'padding-y']],
 };
 
 module.exports = {

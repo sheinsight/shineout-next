@@ -14,6 +14,8 @@ const tabsTokenDescription = {
   inner: '内部容器的',
   line: '下划模式',
   fill: '填充模式',
+  split: '分割线',
+  action: '操作按钮',
 };
 
 /**
@@ -32,9 +34,9 @@ const tabsTokenValue = {
     background: { color: 'Neutral-fill-1' },
     border: { color: '' },
   },
-  hover: { font: { color: '' }, background: { color: 'Neutral-fill-3' }, border: { color: '' } },
+  hover: { font: { color: '' }, background: { color: 'Neutral-fill-2' }, border: { color: '' } },
   disabled: { font: { color: 'Neutral-text-2' }, background: { color: '' }, border: { color: '' } },
-  click: { font: { color: '' }, background: { color: 'Neutral-fill-4' }, border: { color: '' } },
+  click: { font: { color: '' }, background: { color: 'Neutral-fill-3' }, border: { color: '' } },
   tab: {
     padding: { x: 'Padding-16', y: 'Padding-9' },
     font: { size: '14/regular' },
@@ -48,6 +50,11 @@ const tabsTokenValue = {
   fill: {
     padding: { x: 'Padding-4', y: 'Padding-4' },
     inner: { padding: { x: 'Padding-16', y: 'Padding-5' } },
+  },
+  split: { border: { color: 'Neutral-border-2' } },
+  action: {
+    vertical: { padding: { x: 'Padding-7', y: 'Padding-4' } },
+    horizontal: { padding: { x: 'Padding-7', y: 'Padding-10' } },
   },
 };
 

@@ -6,7 +6,11 @@ export interface TabsClasses {
   tabs: string;
   tab: string;
   panel: string;
+  panelWrapper: string;
+  headerWrapper: string;
+  headerScroll: string;
   header: string;
+  hideHeaderLine: string;
   vertical: string;
   verticalLeft: string;
   verticalRight: string;
@@ -14,6 +18,9 @@ export interface TabsClasses {
   button: string;
   line: string;
   lineInner: string;
+  fillInner: string;
+  iconInner: string;
+  autoFill: string;
   bordered: string;
   card: string;
   dash: string;
@@ -21,6 +28,10 @@ export interface TabsClasses {
   active: string;
   disabled: string;
   show: string;
+
+  prev: string;
+  next: string;
+  collapsible: string;
 }
 
 export type TabsAlignType = 'left' | 'right' | 'bottom' | 'vertical-left' | 'vertical-right';
@@ -50,6 +61,8 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    * - align="vertical-right" => position="right-top"
    */
   align?: TabsAlignType;
+  hideSplit?: boolean;
+  collapsible?: boolean;
   autoFill?: boolean;
   position?: TabsPositionType;
   onChange?: (key: string | number) => void;

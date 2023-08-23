@@ -11,13 +11,11 @@ import { useTabsStyle } from '@sheinx/shineout-style';
 export default () => {
   const [active, setActive] = useState(0);
   const tabsStyle = useTabsStyle();
-  const tabs = [
-    { title: '选项卡 1', content: 'Content of Tab 1' },
-    { title: '选项卡 2', content: 'Content of Tab 2' },
-    { title: '选项卡 3', content: 'Content of Tab 3' },
-    { title: '选项卡 4', content: 'Content of Tab 4' },
-    { title: '选项卡 5', content: 'Content of Tab 5' },
-  ];
+  const tabs = [];
+
+  for (let i = 0; i < 20; i++) {
+    tabs.push({ title: `选项卡 ${i + 1}`, content: `Content of Tab ${i + 1}` });
+  }
 
   const handleChange = (v: any) => {
     setActive(v);
@@ -29,16 +27,20 @@ export default () => {
         jssStyle={{ tabs: tabsStyle }}
         onChange={handleChange}
         active={active}
-        shape='fill'
+        shape='card'
+        autoFill
+        collapsible
+        // hideSplit
+        style={{ height: 200 }}
         position='top-left'
+        // position='left-top'
         // position='right-top'
-        // position='top-left'
         // position='bottom-left'
       >
         {tabs.map((tab, index) => {
           return (
             <Tabs.Panel key={index} tab={tab.title} jssStyle={{ tabs: tabsStyle }}>
-              <div style={{ padding: 5 }}>{tab.content}</div>
+              <div style={{ padding: 5, height: '100%' }}>{tab.content}</div>
             </Tabs.Panel>
           );
         })}

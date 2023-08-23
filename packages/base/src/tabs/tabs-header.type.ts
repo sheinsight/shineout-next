@@ -8,4 +8,6 @@ export interface TabsHeaderProps {
   tabs: TabData[];
   position?: TabsPositionType;
   align?: TabsAlignType;
+  hideSplit?: boolean;
+  collapsible?: boolean;
 }
