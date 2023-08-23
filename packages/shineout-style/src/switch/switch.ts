@@ -22,7 +22,7 @@ const animation = {
     },
   },
 };
-const transition = '0.36s cubic-bezier(.78, .14, .15, .86)';
+const transition = '.2s cubic-bezier(.34,.69,.1,1)';
 const switchStyle: JsStyles<SwitchClass> = {
   ...animation,
   wrapper: {
