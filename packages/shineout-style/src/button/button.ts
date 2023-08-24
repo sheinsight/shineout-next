@@ -196,7 +196,6 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
     transition: 'all 0.15s ease-in-out',
     fontFamily: 'inherit',
-
     height: Token.buttonHeight,
 
     '& + &': {
@@ -204,7 +203,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     },
 
     '[class*="button-group"] > & + &': {
-      marginLeft: 0,
+      margin: 0,
     },
 
     '&:active': {
