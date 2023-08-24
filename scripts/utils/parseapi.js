@@ -183,7 +183,7 @@ function parseApi(pack, filePath) {
             .flat(),
         );
         if (!propertyJsDocTags.cn) {
-          if (!propertyJsDocTags.inner) lost.push(property.getName());
+          if (!propertyJsDocTags.private) lost.push(property.getName());
           return;
         }
 
