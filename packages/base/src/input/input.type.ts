@@ -57,6 +57,10 @@ export interface SimpleInputProps
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
   jssStyle: InputStyle;
   clearIcon?: React.ReactNode;
+  /**
+   * @en prefix
+   * @cn 前缀
+   */
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;

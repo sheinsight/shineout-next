@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { guideLoader, markdownLoader } = require('./markdown-loader');
 const { writeTemplate } = require('./write-template');
+const { parseApi } = require('./parseapi');
 
 const docDirName = '__doc__';
 
@@ -51,6 +52,13 @@ function compile(dirPath = shineoutDir) {
       guides.en = guideLoader(guide, dir);
     }
 
+    // 读取 dir下面的 **.type.ts 文件
+    const types = fs.readdirSync(path.join(dirPath, dir)).filter((i) => i.endsWith('.type.ts'));
+    const apis = types.reduce((acc, type) => {
+      const api = parseApi(chunkModuleName, `./src/${dir}/${type}`);
+      return [...acc, ...api];
+    }, []);
+
     writeTemplate({
       templatePath,
       targetPath: `${chunkDir}/${chunkModuleName}`,
@@ -63,6 +71,7 @@ function compile(dirPath = shineoutDir) {
         componentDir: dir,
         source: mdPath,
         chunkModuleName,
+        api: apis,
       },
     });
   });
