@@ -31,6 +31,7 @@ export default createUseStyles({
     padding: 4,
     boxSizing: 'border-box',
     background: 'rgba(244, 245, 248, 1)',
+    whiteSpace: 'nowrap',
   },
   tab: {
     height: 32,
