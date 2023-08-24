@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import { TabProps } from './tab.type';
 import { TabsClasses } from './tabs.type';
+import { ButtonClasses } from '../button/button.type';
+import Button from '../button';
 import { useTabsContext } from '@sheinx/hooks';
 
 const Tab = (props: TabProps) => {
@@ -14,10 +16,8 @@ const Tab = (props: TabProps) => {
   } = useTabsContext();
 
   const tabsStyle = jssStyle?.tabs || ({} as TabsClasses);
-  const tabClass = classNames(tabsStyle.tab, {
-    // [tabsStyle.disabled]: disabled,
-    // [tabsStyle.active]: active === id,
-  });
+  const tabClass = classNames(tabsStyle.tab, {});
+  const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
   const isActive = active === id;
 
@@ -61,6 +61,20 @@ const Tab = (props: TabProps) => {
   if (inactiveBackground && !isActive) {
     style.background = inactiveBackground;
   }
+
+  if (shape === 'button')
+    return (
+      <Button
+        className={tabClass}
+        jssStyle={{ button: buttonStyle }}
+        {...getStateProps()}
+        style={style}
+        type={isActive ? 'primary' : 'secondary'}
+        onClick={handleClick}
+      >
+        {tab}
+      </Button>
+    );
 
   return (
     <div className={tabClass} {...getStateProps()} style={style} onClick={handleClick}>

@@ -6,14 +6,16 @@
  */
 import { useState } from 'react';
 import { Tabs } from '@sheinx/base';
-import { useTabsStyle } from '@sheinx/shineout-style';
+import { useTabsStyle, useButtonStyle } from '@sheinx/shineout-style';
 
 export default () => {
   const [active, setActive] = useState(3);
   const tabsStyle = useTabsStyle();
+  const buttonStyle = useButtonStyle();
+
   const tabs = [];
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 25; i++) {
     tabs.push({ title: `选项卡 ${i + 1}`, content: `Content of Tab ${i + 1}` });
   }
 
@@ -22,12 +24,12 @@ export default () => {
   };
 
   return (
-    <div style={{ height: 500 }}>
+    <div style={{ height: 200 }}>
       <Tabs
-        jssStyle={{ tabs: tabsStyle }}
+        jssStyle={{ tabs: tabsStyle, button: buttonStyle }}
         onChange={handleChange}
         active={active}
-        shape='card'
+        shape='button'
         autoFill
         defaultActive={2}
         // splitColor='red'
@@ -37,8 +39,8 @@ export default () => {
         // position='top-left'
         // tabBarStyle={{ color: 'red' }}
         // position='left-top'
-        position='left-bottom'
-        // position='right-top'
+        // position='left-bottom'
+        position='right-top'
         // position='right-bottom'
         // position='bottom-right'
         // position='bottom-left'
@@ -47,7 +49,11 @@ export default () => {
       >
         {tabs.map((tab, index) => {
           return (
-            <Tabs.Panel key={index} tab={tab.title} jssStyle={{ tabs: tabsStyle }}>
+            <Tabs.Panel
+              key={index}
+              tab={tab.title}
+              jssStyle={{ tabs: tabsStyle, button: buttonStyle }}
+            >
               <div style={{ padding: 5, height: '100%' }}>{tab.content}</div>
             </Tabs.Panel>
           );

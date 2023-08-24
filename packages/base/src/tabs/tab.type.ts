@@ -1,3 +1,4 @@
+import { ButtonClasses } from '../button/button.type';
 import { TabsClasses } from './tabs.type';
 
 export interface TabData {
@@ -7,6 +8,7 @@ export interface TabData {
 
   jssStyle: {
     tabs: TabsClasses;
+    button: ButtonClasses;
   };
 }
 

@@ -179,6 +179,12 @@ const getFillStyle = () => {
   };
 };
 
+const getButtonStyle = () => {
+  return {
+    '&[data-soui-shape="button"]': {},
+  };
+};
+
 const getHeaderStyle = () => {
   return {
     ...getHeaderPositionStyle('top', { top: 'auto', bottom: 0, right: 0, left: 0, height: 1 }),
@@ -218,7 +224,7 @@ const tabsStyle: JsStyles<TabsClass> = {
       '& $tab + $tab': {
         marginLeft: Token.tabsNearlyMargin,
       },
-      '&[data-soui-shape="fill"]': {
+      '&[data-soui-shape="fill"],&[data-soui-shape="button"]': {
         '& $tab + $tab': {
           margin: 0,
         },
@@ -284,7 +290,6 @@ const tabsStyle: JsStyles<TabsClass> = {
     },
 
     '&[data-soui-position^="bottom-right"],&[data-soui-position^="top-right"]': {
-      // '& $header': { justifyContent: 'flex-start' },
       '& $header': { display: 'block', textAlign: 'right' },
       '& $headerScroll': { display: 'inline-block' },
     },
@@ -293,12 +298,12 @@ const tabsStyle: JsStyles<TabsClass> = {
     },
     '&[data-soui-position="left-bottom"],&[data-soui-position="right-bottom"]': {
       '& $header': { alignItems: 'flex-start' },
-      '& $headerScroll': { display: 'flex', flexDirection: 'column' },
     },
     ...getCardStyle(),
     ...getLineStyle(),
     ...getDashStyle(),
     ...getFillStyle(),
+    ...getButtonStyle(),
     ...getHeaderStyle(),
   },
   panelWrapper: {
@@ -371,6 +376,19 @@ const tabsStyle: JsStyles<TabsClass> = {
     },
     // fill 同 line
     '& $prev[data-soui-shape="fill"],$next[data-soui-shape="fill"]': {
+      '&:not([data-soui-state="disabled"]):hover': {
+        '& $iconInner': {
+          background: Token.tabsHoverBackgroundColor,
+        },
+      },
+      '&:not([data-soui-state="disabled"]):hover:active': {
+        '& $iconInner': {
+          background: Token.tabsClickBackgroundColor,
+        },
+      },
+    },
+    // button 同 line
+    '& $prev[data-soui-shape="button"],$next[data-soui-shape="button"]': {
       '&:not([data-soui-state="disabled"]):hover': {
         '& $iconInner': {
           background: Token.tabsHoverBackgroundColor,

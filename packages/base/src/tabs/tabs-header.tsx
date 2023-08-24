@@ -2,9 +2,11 @@ import { useRef } from 'react';
 import classNames from 'classnames';
 import { TabsHeaderProps } from './tabs-header.type';
 import { TabsClasses } from './tabs.type';
+import { ButtonClasses } from '../button/button.type';
 import { useTabsContext, useTransform } from '@sheinx/hooks';
 import Tab from './tab';
 import Icon from '../icons';
+import Button from '../button';
 
 const TabsHeader = (props: TabsHeaderProps) => {
   const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle } = props;
@@ -30,8 +32,9 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const headerStyle = jssStyle?.tabs || ({} as TabsClasses);
   const headerClass = classNames(headerStyle.header, {});
-
   const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
+
+  const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
   const getDataProps = (options?: { 'data-soui-state'?: string }) => {
     return {
@@ -59,9 +62,13 @@ const TabsHeader = (props: TabsHeaderProps) => {
           onWheel={handleTransform}
           style={transformStyle}
         >
-          {tabs.map((tab, index) => {
-            return <Tab key={index} {...tab}></Tab>;
-          })}
+          {shape === 'button' && (
+            <Button.Group jssStyle={{ button: buttonStyle }}>
+              {tabs.map((tab, index) => {
+                return <Tab key={index} {...tab}></Tab>;
+              })}
+            </Button.Group>
+          )}
         </div>
       </div>
     );

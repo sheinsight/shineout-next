@@ -1,5 +1,6 @@
 // import React from 'react';
 import { CommonType } from '../common/type';
+import { ButtonClasses } from '../button/button.type';
 import { BaseTabsProps, TabsShapeType } from '@sheinx/hooks';
 
 export interface TabsClasses {
@@ -52,6 +53,7 @@ export type TabsPositionType =
 export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' | 'style'> {
   jssStyle: {
     tabs: TabsClasses;
+    button: ButtonClasses;
   };
   lazy?: boolean;
   shape?: TabsShapeType;
