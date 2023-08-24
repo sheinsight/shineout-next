@@ -7,7 +7,7 @@ import Tab from './tab';
 import Icon from '../icons';
 
 const TabsHeader = (props: TabsHeaderProps) => {
-  const { tabs, jssStyle, hideSplit, collapsible } = props;
+  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle } = props;
 
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -31,9 +31,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const headerStyle = jssStyle?.tabs || ({} as TabsClasses);
   const headerClass = classNames(headerStyle.header, {});
 
-  const headerWrapperClass = classNames(headerStyle.headerWrapper, {
-    [headerStyle.hideHeaderLine]: hideSplit,
-  });
+  const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
 
   const getDataProps = (options?: { 'data-soui-state'?: string }) => {
     return {
@@ -69,7 +67,9 @@ const TabsHeader = (props: TabsHeaderProps) => {
     );
   };
 
-  // const renderExtra = () => {};
+  const renderExtra = () => {
+    return <div className={headerStyle.extra}>{extra}</div>;
+  };
 
   const renderPrevButton = () => {
     return (
@@ -111,12 +111,23 @@ const TabsHeader = (props: TabsHeaderProps) => {
     );
   };
 
+  const renderHr = () => {
+    const style: { background?: string } = {};
+
+    if (splitColor) {
+      style.background = splitColor;
+    }
+    return <div className={headerStyle.hr} style={style}></div>;
+  };
+
   return (
-    <div className={headerWrapperClass}>
+    <div className={headerWrapperClass} style={tabBarStyle}>
       {collapsible && renderCollapsibleButton()}
       {shouldScroll && renderPrevButton()}
       {renderTab()}
       {shouldScroll && renderNextButton()}
+      {extra && renderExtra()}
+      {!hideSplit && renderHr()}
     </div>
   );
 };

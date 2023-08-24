@@ -9,5 +9,8 @@ export interface TabsHeaderProps {
   position?: TabsPositionType;
   align?: TabsAlignType;
   hideSplit?: boolean;
+  extra?: React.ReactNode;
+  splitColor?: string;
   collapsible?: boolean;
+  tabBarStyle?: React.CSSProperties;
 }

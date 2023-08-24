@@ -3,7 +3,7 @@ import { Provider } from './context';
 import { BaseTabsProps } from './use-tabs.type';
 
 const useTabs = (props: BaseTabsProps) => {
-  const { active, onChange } = props;
+  const { defaultActive, active = defaultActive, onChange } = props;
   const [activeTabs, setActiveTabs] = useState(active);
 
   const getActive = () => {

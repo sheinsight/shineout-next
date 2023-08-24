@@ -5,7 +5,13 @@ import { useTabsContext } from '@sheinx/hooks';
 
 const Tab = (props: TabProps) => {
   const { jssStyle, tab, disabled, id } = props;
-  const { active, shape = 'card', onChange } = useTabsContext();
+  const {
+    active,
+    shape = 'card',
+    onChange,
+    activeBackground,
+    inactiveBackground,
+  } = useTabsContext();
 
   const tabsStyle = jssStyle?.tabs || ({} as TabsClasses);
   const tabClass = classNames(tabsStyle.tab, {
@@ -13,9 +19,11 @@ const Tab = (props: TabProps) => {
     // [tabsStyle.active]: active === id,
   });
 
+  const isActive = active === id;
+
   const getStateProps = () => {
     const stateProps = [];
-    if (active === id) stateProps.push('active');
+    if (isActive) stateProps.push('active');
     if (disabled) stateProps.push('disabled');
 
     return {
@@ -44,8 +52,18 @@ const Tab = (props: TabProps) => {
     return <div className={tabsStyle.fillInner}>{tab}</div>;
   };
 
+  const style: { background?: string } = {};
+
+  if (activeBackground && isActive) {
+    style.background = activeBackground;
+  }
+
+  if (inactiveBackground && !isActive) {
+    style.background = inactiveBackground;
+  }
+
   return (
-    <div className={tabClass} {...getStateProps()} onClick={handleClick}>
+    <div className={tabClass} {...getStateProps()} style={style} onClick={handleClick}>
       {shape === 'card' && renderCardTab()}
       {shape === 'line' && renderLineTab()}
       {shape === 'dash' && renderDashTab()}

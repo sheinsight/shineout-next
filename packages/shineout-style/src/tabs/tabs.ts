@@ -7,7 +7,7 @@ export type TabsClass =
   | 'panel'
   | 'tab'
   | 'header'
-  | 'hideHeaderLine'
+  | 'hr'
   | 'headerWrapper'
   | 'headerScroll'
   | 'button'
@@ -23,7 +23,9 @@ export type TabsClass =
   | 'disabled'
   | 'prev'
   | 'next'
+  | 'extra'
   | 'collapsible'
+  | 'collapsed'
   | 'autoFill';
 
 interface AfterOptions {
@@ -42,7 +44,6 @@ const active = (options: AfterOptions) => {
       '&:after': {
         position: 'absolute',
         content: '""',
-        zIndex: 1,
         left: 'auto',
         right: 'auto',
         top: 'auto',
@@ -74,50 +75,28 @@ const getCardStyle = () => {
       '& $tab,& $next,& $prev': {
         borderRadius: `${Token.tabsTabBorderRadius} 0 0 ${Token.tabsTabBorderRadius}`,
       },
-      '& $next,& $prev': {
-        '&:after': {
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 1,
-        },
-      },
+      '& $hr': { right: 0, width: 1, height: '100%' },
       ...active({ top: 0, bottom: 0, right: -1, width: 1, background: '#FFFFFF' }),
     },
     '&[data-soui-position^="right-"][data-soui-shape="card"]': {
       '& $tab,& $next,& $prev': {
         borderRadius: `0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0`,
       },
+      '& $hr': { left: 0, width: 1, height: '100%' },
       ...active({ top: 0, bottom: 0, left: -1, width: 1, background: '#FFFFFF' }),
     },
     '&[data-soui-position^="top-"][data-soui-shape="card"]': {
       '& $tab,& $next,& $prev': {
         borderRadius: `${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0 0`,
       },
-      '& $next,& $prev': {
-        borderBottom: 'none',
-        '&:after': {
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 1,
-        },
-      },
+      '& $hr': { bottom: 0, height: 1, width: '100%' },
       ...active({ bottom: -1, left: 0, right: 0, height: 1, background: '#FFFFFF' }),
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="card"]': {
       '& $tab,& $next,& $prev': {
         borderRadius: `0 0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius}`,
       },
-      '& $next,& $prev': {
-        borderTop: 'none',
-        '&:after': {
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 1,
-        },
-      },
+      '& $hr': { top: 0, height: 1, width: '100%' },
       ...active({ top: -1, left: 0, right: 0, height: 1, background: '#FFFFFF' }),
     },
   };
@@ -126,15 +105,19 @@ const getCardStyle = () => {
 const getLineStyle = () => {
   return {
     '&[data-soui-position^="left-"][data-soui-shape="line"]': {
+      '& $hr': { right: 0, width: 1, height: '100%' },
       ...active({ top: 0, bottom: 0, right: 0, width: 3 }),
     },
     '&[data-soui-position^="right-"][data-soui-shape="line"]': {
+      '& $hr': { left: 0, width: 1, height: '100%' },
       ...active({ top: 0, bottom: 0, left: 0, width: 3 }),
     },
     '&[data-soui-position^="top-"][data-soui-shape="line"]': {
+      '& $hr': { bottom: 0, height: 1, width: '100%' },
       ...active({ bottom: 0, left: 0, right: 0, height: 3 }),
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="line"]': {
+      '& $hr': { top: 0, height: 1, width: '100%' },
       ...active({ top: 0, left: 0, right: 0, height: 3 }),
     },
   };
@@ -174,16 +157,21 @@ const getFillStyle = () => {
         '&:not([data-soui-state="active"]):active $fillInner': {
           background: Token.tabsClickBackgroundColor,
         },
+
+        '&:before': {
+          content: '""',
+          position: 'absolute',
+          left: 0,
+          top: 'calc(50% - 7px)',
+          width: 1,
+          height: 14,
+          background: 'transparent',
+          transition: 'all .15s ease-out',
+        },
       },
       '& $tab:not([data-soui-state="active"]):not(:hover) + $tab:not([data-soui-state="active"]):not(:hover)':
         {
           '&:before': {
-            content: '""',
-            position: 'absolute',
-            left: 0,
-            top: 'calc(50% - 7px)',
-            width: 1,
-            height: 14,
             background: Token.tabsSplitBorderColor,
           },
         },
@@ -235,6 +223,9 @@ const tabsStyle: JsStyles<TabsClass> = {
           margin: 0,
         },
       },
+      '& $headerWrapper': {
+        alignItems: 'center',
+      },
       '& $header': {
         width: '100%',
         alignItems: 'center',
@@ -285,12 +276,24 @@ const tabsStyle: JsStyles<TabsClass> = {
       },
       '& $header': {
         height: '100%',
-        alignItems: 'flex-start',
       },
       '& $panel': {
         width: 'auto',
         height: '100%',
       },
+    },
+
+    '&[data-soui-position^="bottom-right"],&[data-soui-position^="top-right"]': {
+      // '& $header': { justifyContent: 'flex-start' },
+      '& $header': { display: 'block', textAlign: 'right' },
+      '& $headerScroll': { display: 'inline-block' },
+    },
+    '&[data-soui-position="left-top"],&[data-soui-position="right-top"]': {
+      '& $header': { alignItems: 'flex-start' },
+    },
+    '&[data-soui-position="left-bottom"],&[data-soui-position="right-bottom"]': {
+      '& $header': { alignItems: 'flex-start' },
+      '& $headerScroll': { display: 'flex', flexDirection: 'column' },
     },
     ...getCardStyle(),
     ...getLineStyle(),
@@ -308,6 +311,7 @@ const tabsStyle: JsStyles<TabsClass> = {
     display: 'none',
   },
   autoFill: {
+    height: '100%',
     '& $panelWrapper': {
       flex: 1,
     },
@@ -330,6 +334,10 @@ const tabsStyle: JsStyles<TabsClass> = {
       },
     },
   },
+  hr: {
+    position: 'absolute',
+    background: Token.tabsBorderColor,
+  },
   headerWrapper: {
     display: 'flex',
     overflow: 'hidden',
@@ -348,13 +356,21 @@ const tabsStyle: JsStyles<TabsClass> = {
       '&:not([data-soui-state="disabled"]):hover:active': {
         background: Token.tabsClickBackgroundColor,
       },
-      '&:after': {
-        content: '""',
-        position: 'absolute',
-        background: Token.tabsBorderColor,
-      },
     },
     '& $prev[data-soui-shape="line"],$next[data-soui-shape="line"]': {
+      '&:not([data-soui-state="disabled"]):hover': {
+        '& $iconInner': {
+          background: Token.tabsHoverBackgroundColor,
+        },
+      },
+      '&:not([data-soui-state="disabled"]):hover:active': {
+        '& $iconInner': {
+          background: Token.tabsClickBackgroundColor,
+        },
+      },
+    },
+    // fill 同 line
+    '& $prev[data-soui-shape="fill"],$next[data-soui-shape="fill"]': {
       '&:not([data-soui-state="disabled"]):hover': {
         '& $iconInner': {
           background: Token.tabsHoverBackgroundColor,
@@ -394,15 +410,9 @@ const tabsStyle: JsStyles<TabsClass> = {
         width: 14,
       },
     },
-
-    '&:after': {
-      content: '""',
-      position: 'absolute',
-      background: Token.tabsBorderColor,
-      zIndex: -1,
-    },
   },
   headerScroll: {
+    zIndex: 1,
     transition: 'all .15s ease-out',
   },
   header: {
@@ -412,7 +422,6 @@ const tabsStyle: JsStyles<TabsClass> = {
     position: 'relative',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-
     '&[data-soui-shape="card"]': {
       '& $tab': {
         position: 'relative',
@@ -471,11 +480,6 @@ const tabsStyle: JsStyles<TabsClass> = {
       },
     },
   },
-  hideHeaderLine: {
-    '&:after': {
-      display: 'none',
-    },
-  },
   button: {},
   line: {},
   lineInner: {
@@ -507,22 +511,28 @@ const tabsStyle: JsStyles<TabsClass> = {
 
   prev: {
     textAlign: 'center',
+    lineHeight: Token.lineHeightDynamic,
     '&[data-soui-shape="card"]': {
       marginRight: Token.tabsNearlyMargin,
     },
   },
   next: {
     textAlign: 'center',
+    lineHeight: Token.lineHeightDynamic,
     '&[data-soui-shape="card"]': {
       marginLeft: Token.tabsNearlyMargin,
     },
   },
+  extra: {},
   collapsible: {
     padding: `${Token.tabsActionHorizontalPaddingY} ${Token.tabsActionHorizontalPaddingX}`,
     marginRight: Token.tabsNearlyMargin,
     cursor: 'pointer',
     borderLeft: `1px solid transparent`,
     borderRight: `1px solid transparent`,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     '&:hover': {
       color: Token.tabsActiveFontColor,
     },
@@ -530,6 +540,14 @@ const tabsStyle: JsStyles<TabsClass> = {
       width: 14,
       textAlign: 'center',
       transform: 'rotate(-90deg)',
+      transition: 'transform .2s',
+    },
+  },
+  collapsed: {
+    '& $collapsible': {
+      '& svg': {
+        transform: 'rotate(-180deg)',
+      },
     },
   },
 };

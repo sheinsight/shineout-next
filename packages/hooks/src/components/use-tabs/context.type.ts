@@ -5,6 +5,8 @@ export interface TabsContextProps {
   shape?: TabsShapeType;
   isVertical?: boolean;
   lazy?: boolean;
+  activeBackground?: string;
+  inactiveBackground?: string;
   onChange?: (key: string | number) => void;
   onCollapsible?: () => void;
 }

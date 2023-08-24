@@ -18,35 +18,67 @@ const Tabs = (props: TabsProps) => {
     autoFill,
     hideSplit,
     collapsible,
+    defaultCollapsed = false,
     onChange: onChangeProps,
+    extra,
+    border,
+    splitColor,
+    tabBarExtraContent,
+    background,
+    activeBackground,
+    inactiveBackground,
+    defaultActive,
+    tabBarStyle,
     ...rest
   } = props;
-  const { Provider, active, onChange } = useTabs({ ...rest, onChange: onChangeProps });
+  const { Provider, active, onChange } = useTabs({
+    ...rest,
+    defaultActive,
+    onChange: onChangeProps,
+  });
 
   const [panelStyle, setPanelStyle] = useState<React.CSSProperties | undefined>();
-  const [collapse, setCollapse] = useState(false);
+  const [collapse, setCollapse] = useState(defaultCollapsed);
 
   const isVertical =
-    align === 'vertical-left' ||
-    align === 'vertical-right' ||
-    position === 'left-top' ||
-    position === 'left-bottom' ||
-    position === 'right-top' ||
-    position === 'right-bottom';
+    (align === 'vertical-left' ||
+      align === 'vertical-right' ||
+      position === 'left-top' ||
+      position === 'left-bottom' ||
+      position === 'right-top' ||
+      position === 'right-bottom') &&
+    shape !== 'button' &&
+    shape !== 'fill';
 
   const panelRef = useRef<HTMLDivElement>(null);
   const panelHeight = useRef<number>(0);
   const tabsStyle = jssStyle?.tabs || ({} as TabsClasses);
   const rootClass = classNames(tabsStyle.tabs, {
     [tabsStyle.autoFill]: autoFill,
+    [tabsStyle.collapsed]: collapse,
   });
 
   const getRootProps = () => {
     return rest;
   };
 
+  const getExtra = () => {
+    return tabBarExtraContent || extra;
+  };
+
+  const getSplitColor = () => {
+    return splitColor || border;
+  };
+
+  const getActiveBackground = () => {
+    return activeBackground || background;
+  };
+
   const getPosition = () => {
-    let realPosition = 'left-top';
+    let realPosition = 'top-left';
+    if (collapsible) {
+      return realPosition;
+    }
     if (align) {
       if (align === 'vertical-left') realPosition = 'left-top';
       if (align === 'vertical-right') realPosition = 'right-top';
@@ -54,7 +86,7 @@ const Tabs = (props: TabsProps) => {
       if (align === 'left') realPosition = 'left-top';
       if (align === 'right') realPosition = 'right-top';
     } else {
-      realPosition = position || 'left-top';
+      realPosition = position || 'top-left';
     }
 
     if (shape === 'button' || shape === 'fill') {
@@ -76,7 +108,8 @@ const Tabs = (props: TabsProps) => {
   };
 
   const handleCollapsible = () => {
-    setCollapse(!collapse);
+    const nextCollapse = !collapse;
+    setCollapse(nextCollapse);
   };
 
   useEffect(() => {
@@ -84,30 +117,16 @@ const Tabs = (props: TabsProps) => {
     if (collapsible) {
       if (collapse) {
         panelHeight.current = panelRef.current.clientHeight;
-        if (autoFill) {
-          setPanelStyle({ height: panelRef.current.clientHeight, flex: 1 });
-          setTimeout(() => {
-            setPanelStyle({ height: 0, flex: 0 });
-          }, 10);
-        } else {
-          setPanelStyle({ height: panelRef.current.clientHeight });
-          setTimeout(() => {
-            setPanelStyle({ height: 0 });
-          }, 10);
-        }
+        setPanelStyle({ height: panelRef.current.clientHeight });
+        setTimeout(() => {
+          setPanelStyle({ height: 0, flex: autoFill ? 0 : 'none' });
+        }, 10);
       } else {
         if (panelHeight.current === 0) return;
-        if (autoFill) {
-          setPanelStyle({ height: panelHeight.current, flex: 1 });
-          setTimeout(() => {
-            setPanelStyle({ height: 'auto', flex: 1 });
-          }, 200);
-        } else {
-          setPanelStyle({ height: panelHeight.current });
-          setTimeout(() => {
-            setPanelStyle({ height: 'auto' });
-          }, 200);
-        }
+        setPanelStyle({ height: panelHeight.current });
+        setTimeout(() => {
+          setPanelStyle({ height: 'auto' });
+        }, 200);
       }
     }
   }, [collapse]);
@@ -147,7 +166,10 @@ const Tabs = (props: TabsProps) => {
         jssStyle={jssStyle}
         position={position}
         hideSplit={hideSplit}
+        extra={getExtra()}
+        splitColor={getSplitColor()}
         collapsible={collapsible}
+        tabBarStyle={tabBarStyle}
       ></TabsHeader>
     );
   };
@@ -185,7 +207,16 @@ const Tabs = (props: TabsProps) => {
 
   return (
     <Provider
-      value={{ active, shape, isVertical, onChange, onCollapsible: handleCollapsible, lazy }}
+      value={{
+        lazy,
+        active,
+        shape,
+        onChange,
+        isVertical,
+        inactiveBackground,
+        onCollapsible: handleCollapsible,
+        activeBackground: getActiveBackground(),
+      }}
     >
       <div {...getRootProps()} className={rootClass} {...getDataProps()}>
         {renderTabs()}

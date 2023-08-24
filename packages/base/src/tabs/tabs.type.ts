@@ -11,6 +11,7 @@ export interface TabsClasses {
   headerScroll: string;
   header: string;
   hideHeaderLine: string;
+  hr: string;
   vertical: string;
   verticalLeft: string;
   verticalRight: string;
@@ -31,7 +32,10 @@ export interface TabsClasses {
 
   prev: string;
   next: string;
+  extra: string;
+
   collapsible: string;
+  collapsed: string;
 }
 
 export type TabsAlignType = 'left' | 'right' | 'bottom' | 'vertical-left' | 'vertical-right';
@@ -61,9 +65,32 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    * - align="vertical-right" => position="right-top"
    */
   align?: TabsAlignType;
+
+  /**
+   * @deprecated 即将弃用，请使用 extra 替代
+   */
+  tabBarExtraContent?: React.ReactNode;
+
+  /**
+   * @deprecated 即将弃用，请使用 splitColor 替代
+   */
+  border?: string;
+  extra?: React.ReactNode;
+  splitColor?: string;
   hideSplit?: boolean;
   collapsible?: boolean;
+  defaultCollapsed?: boolean;
   autoFill?: boolean;
+  switchToTop?: boolean;
+  sticky?: boolean;
   position?: TabsPositionType;
+
+  /**
+   * @deprecated 即将弃用，请使用 activeBackground 替代
+   */
+  background?: string;
+  activeBackground?: string;
+  inactiveBackground?: string;
+  tabBarStyle?: React.CSSProperties;
   onChange?: (key: string | number) => void;
 }

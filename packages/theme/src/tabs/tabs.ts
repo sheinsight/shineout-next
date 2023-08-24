@@ -9,9 +9,9 @@ const tabsTokens: TabsTokens = {
   tabsBorderColor: 'Neutral-border-1',
   tabsActiveFontColor: 'Brand-6',
   tabsActiveBackgroundColor: 'Neutral-fill-1',
-  tabsHoverBackgroundColor: 'Neutral-fill-2',
+  tabsHoverBackgroundColor: 'Neutral-fill-3',
   tabsDisabledFontColor: 'Neutral-text-2',
-  tabsClickBackgroundColor: 'Neutral-fill-3',
+  tabsClickBackgroundColor: 'Neutral-fill-4',
   tabsTabPaddingX: 'Padding-16',
   tabsTabPaddingY: 'Padding-9',
   tabsTabFontSize: '14/regular',
@@ -29,7 +29,7 @@ const tabsTokens: TabsTokens = {
   tabsActionVerticalPaddingX: 'Padding-7',
   tabsActionVerticalPaddingY: 'Padding-4',
   tabsActionHorizontalPaddingX: 'Padding-7',
-  tabsActionHorizontalPaddingY: 'Padding-10',
+  tabsActionHorizontalPaddingY: 'Padding-8',
 };
 
 export default tabsTokens;
