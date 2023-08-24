@@ -16,12 +16,42 @@ const popoverTokenDescription = { popover: 'xxx' };
  * 注意，该映射表的内容不与 popoverRules 强关联，非 popoverRules 规则内的 token 需手动增加或删减。
  */
 const popoverTokenValue = {
-  font: { size: 'regular/14', color: 'Neutral-text-5' },
+  font: { size: '14/regular', color: 'Neutral-text-5' },
   padding: { x: 'Padding-8', y: 'Padding-3' },
   radius: 'Radius-4',
   border: { width: 'Border-1', color: 'Neutral-border-1' },
   background: { color: 'Neutral-fill-1' },
   shadow: 'Shadow-2',
+  success: {
+    font: { color: '' },
+    background: { color: '#edf9e8' },
+    shadow: '',
+    border: { color: 'rgba(82, 196, 26, 0.1)' },
+  },
+  warning: {
+    font: { color: '' },
+    background: { color: '#fff3e5' },
+    shadow: '',
+    border: { color: 'rgba(255, 140, 0, 0.1)' },
+  },
+  info: {
+    font: { color: '' },
+    background: { color: '#e8f1fe' },
+    shadow: '',
+    border: { color: 'rgba(25, 122, 250, 0.1)' },
+  },
+  danger: {
+    font: { color: '' },
+    background: { color: '#ffeded' },
+    shadow: '',
+    border: { color: 'rgba(255, 77, 80, 0.1)' },
+  },
+  error: {
+    font: { color: 'Danger-7' },
+    background: { color: 'Danger-1' },
+    shadow: '',
+    border: { color: 'Danger-1' },
+  },
 };
 
 const popoverTokenExtraValue = {};

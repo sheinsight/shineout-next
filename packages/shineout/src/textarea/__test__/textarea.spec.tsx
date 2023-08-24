@@ -3,55 +3,72 @@ import React from 'react';
 import Textarea from '..';
 import { Form } from 'shineout';
 import mountTest from '../../tests/mountTest';
-import TextareaBase from '../__example__/s-001-base';
-import TextareaAutosize from '../__example__/s-003-autosize';
-import TextareaInfoFunction from '../__example__/s-005-custom';
+import {
+  attributesTest,
+  classTest,
+  hasAttributesTest,
+  snapshotTest,
+  styleTest,
+  textContentTest,
+} from '../../tests/utils';
+import { classLengthTest } from '../../tests/structureTest';
+import TextareaBase from '../__example__/01-base';
+import TextareaSize from '../__example__/02-size';
+import TextareaAutosize from '../__example__/03-autosize';
+import TextareaInfo from '../__example__/04-info';
+import TextareaInfoFunction from '../__example__/05-custom';
+import TextareaFooter from '../__example__/06-footer';
 
 const SO_PREFIX = 'textarea';
+const textareaClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
+const textareaFocusClassName = `${SO_PREFIX}-wrapperFocus-0-2-5`;
+const textareaSmallClassName = `${SO_PREFIX}-wrapperSmall-0-2-3`;
+const textareaShadowClassName = `${SO_PREFIX}-shadow-0-2-15`;
+const textareaInfoClassName = `.${SO_PREFIX}-info-0-2-13`;
+const textareaInfoErrorClassName = `${SO_PREFIX}-infoError-0-2-14`;
+const textareaFooterClassName = `.${SO_PREFIX}-footer-0-2-16`;
+const textareaUnderlineClassName = `${SO_PREFIX}-wrapperUnderline-0-2-8`;
+const textareaNoBorderClassName = `${SO_PREFIX}-wrapperNoBorder-0-2-9`;
+
 afterEach(cleanup);
 describe('Textarea[Base]', () => {
   mountTest(Textarea);
-
-  test('should render correctly', () => {
-    const { container } = render(<Textarea className='customized' />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
+  snapshotTest(<TextareaBase />);
+  snapshotTest(<TextareaSize />, 'about size');
+  snapshotTest(<TextareaAutosize />, 'about autosize');
+  snapshotTest(<TextareaInfo />, 'about info');
+  snapshotTest(<TextareaInfoFunction />, 'about info by function');
+  snapshotTest(<TextareaFooter />, 'about footer');
   test('should render textarea element', () => {
     const { container } = render(<TextareaBase />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperFocus-0-2-5`),
-    ).toBeTruthy();
-    expect(container.querySelectorAll('textarea').length).toBe(1);
+    classTest(container.querySelector(textareaClassName)!, textareaFocusClassName);
+    classLengthTest(container, 'textarea', 1);
   });
   test('should render default value', () => {
     const value = 'test';
     const { container } = render(<Textarea rows={6} defaultValue={value} />);
-    const textarea = container.querySelector('textarea');
-    expect(textarea?.textContent).toBe(value);
-    expect(textarea?.getAttribute('rows')).toBe('6');
+    const textarea = container.querySelector('textarea')!;
+    textContentTest(textarea, value);
+    attributesTest(textarea, 'rows', '6');
   });
   test('should render value', () => {
     const value = 'test';
     const { container } = render(<Textarea rows={6} value={value} />);
-    const textarea = container.querySelector('textarea');
-    expect(textarea?.textContent).toBe(value);
-    expect(textarea?.getAttribute('rows')).toBe('6');
+    const textarea = container.querySelector('textarea')!;
+    textContentTest(textarea, value);
+    attributesTest(textarea, 'rows', '6');
   });
   test('should render value when set value and defaultValue', () => {
     const value = 'test';
     const defaultValue = 'demo';
     const { container } = render(<Textarea defaultValue={defaultValue} value={value} />);
-    const textarea = container.querySelector('textarea');
-    expect(textarea?.textContent).toBe(value);
+    const textarea = container.querySelector('textarea')!;
+    textContentTest(textarea, value);
   });
   test('should render when set width', () => {
     const value = 'test';
     const { container } = render(<Textarea value={value} width={300} />);
-    expect(container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)?.getAttribute('style')).toBe(
-      'width: 300px;',
-    );
+    styleTest(container.querySelector(textareaClassName)!, 'width: 300px;');
   });
   test('should call onChange', () => {
     jest.useFakeTimers();
@@ -67,7 +84,8 @@ describe('Textarea[Base]', () => {
   test('should render when set style', () => {
     const style: React.CSSProperties = { width: 120, marginInlineEnd: 12 };
     const { container } = render(<Textarea size='small' style={style} placeholder='small size' />);
-    expect(container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)?.getAttribute('style')).toBe(
+    styleTest(
+      container.querySelector(textareaClassName)!,
       'width: 120px; margin-inline-end: 12px;',
     );
   });
@@ -75,11 +93,7 @@ describe('Textarea[Base]', () => {
 describe('Textarea[Size]', () => {
   test('should render small size', () => {
     const { container } = render(<Textarea size='small' placeholder='small size' />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperSmall-0-2-3`),
-    ).toBeTruthy();
+    classTest(container.querySelector(textareaClassName)!, textareaSmallClassName);
   });
 });
 describe('Textarea[Autosize]', () => {
@@ -87,15 +101,13 @@ describe('Textarea[Autosize]', () => {
     const { container } = render(<TextareaAutosize />);
     const textareas = container.querySelectorAll('textarea');
     expect(textareas.length).toBe(2);
-    expect(textareas[1].classList.contains(`${SO_PREFIX}-shadow-0-2-15`)).toBeTruthy();
-    expect(textareas[0].getAttribute('style')).toBe(
-      'overflow: auto; max-height: 150px; height: 0px;',
-    );
+    classTest(textareas[1], textareaShadowClassName);
+    styleTest(textareas[0], 'overflow: auto; max-height: 150px; height: 0px;');
     fireEvent.change(textareas[0] as HTMLTextAreaElement, {
       target: { value: 'test' },
     });
     textareas.forEach((textarea) => {
-      expect(textarea.textContent).toBe('test');
+      textContentTest(textarea, 'test');
     });
   });
   test('should render with maxHeight', () => {
@@ -125,22 +137,18 @@ describe('Textarea[Info:function]', () => {
     fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
       target: { value: 'test' },
     });
-    expect(container.querySelectorAll(`.${SO_PREFIX}-info-0-2-13`).length).toBe(1);
+    classLengthTest(container, textareaInfoClassName, 1);
   });
   test('should render tip we want', () => {
     const { container } = render(<TextareaInfoFunction />);
     fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
       target: { value: 'test' },
     });
-    expect(container.querySelector(`.${SO_PREFIX}-info-0-2-13`)?.textContent).toBe('total is  4');
+    textContentTest(container.querySelector(textareaInfoClassName)!, 'total is  4');
     fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
       target: { value: 'testtesttesttesttesttest' },
     });
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-info-0-2-13`)
-        ?.classList.contains(`${SO_PREFIX}-infoError-0-2-14`),
-    ).toBeTruthy();
+    classTest(container.querySelector(textareaInfoClassName)!, textareaInfoErrorClassName);
   });
 });
 describe('Textarea[Info:number]', () => {
@@ -153,8 +161,8 @@ describe('Textarea[Info:number]', () => {
   test('should render when not set value', () => {
     const { container } = render(<Textarea info={20} />);
     expect(
-      container.querySelectorAll(`.${SO_PREFIX}-info-0-2-13`).length ||
-        container.querySelectorAll(`.${SO_PREFIX}-infoError-0-2-14`).length,
+      container.querySelectorAll(textareaInfoClassName).length ||
+        container.querySelectorAll('.' + textareaInfoErrorClassName).length,
     ).toBe(0);
   });
   test('should render tip', () => {
@@ -162,14 +170,14 @@ describe('Textarea[Info:number]', () => {
     fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
       target: { value: 'test' },
     });
-    expect(container.querySelector(`.${SO_PREFIX}-info-0-2-13`)?.textContent).toBe('4 / 20');
+    textContentTest(container.querySelector(textareaInfoClassName)!, '4 / 20');
   });
   test('should render error', () => {
     const { container } = render(<Textarea info={20} />);
     fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
       target: { value: '1234456789012345678901' },
     });
-    expect(container.querySelector(`.${SO_PREFIX}-infoError-0-2-14`)?.textContent).toBe('22 / 20');
+    textContentTest(container.querySelector('.' + textareaInfoErrorClassName)!, '22 / 20');
   });
 });
 describe('Textarea[Trim]', () => {
@@ -192,7 +200,7 @@ describe('Textarea[Disabled]', () => {
     fireEvent.focus(container.querySelector('textarea') as HTMLTextAreaElement, {
       target: { value: 'test' },
     });
-    expect(container.querySelector('textarea')?.textContent).toBe('default');
+    textContentTest(container.querySelector('textarea')!, 'default');
     expect(handleFn.mock.calls.length).toBe(0);
   });
 });
@@ -204,7 +212,7 @@ describe('Textarea[Form Disabled]', () => {
         <Textarea disabled={false} onChange={handleFn} />
       </Form>,
     );
-    expect(container.querySelector('form')?.hasAttribute('disabled')).toBeTruthy();
+    hasAttributesTest(container.querySelector('form')!, 'disabled');
     fireEvent.focus(container.querySelector('textarea') as HTMLTextAreaElement, {
       target: { value: 'test' },
     });
@@ -246,34 +254,30 @@ describe('Textarea[onEnterPress]', () => {
 describe('Textarea[placeholderm, rows, className, style, footer, underline]', () => {
   test('should render placeholder and rows', () => {
     const { container } = render(<Textarea placeholder='input something' rows={6} />);
-    const textarea = container.querySelector('textarea');
-    expect(textarea?.getAttribute('rows')).toBe('6');
-    expect(textarea?.getAttribute('placeholder')).toBe('input something');
+    const textarea = container.querySelector('textarea')!;
+    attributesTest(textarea, 'rows', '6');
+    attributesTest(textarea, 'placeholder', 'input something');
   });
   test('should render className and style', () => {
     const style = { color: 'blue' };
     const className = 'class-name-test';
     const { container } = render(<Textarea style={style} className={className} />);
-    const textarea = container.querySelector(`.${SO_PREFIX}-wrapper-0-2-1`);
+    const textarea = container.querySelector(textareaClassName)!;
     expect(textarea).toBeTruthy();
-    expect(textarea?.classList.contains(className)).toBe(true);
-    expect(textarea?.getAttribute('style')).toBe('color: blue;');
+    classTest(textarea, className);
+    styleTest(textarea, 'color: blue;');
   });
   test('should renderFooter', () => {
     const { container } = render(
       <Textarea placeholder='input something' renderFooter={() => <span>hello world</span>} />,
     );
-    expect(container.querySelector(`.${SO_PREFIX}-footer-0-2-16`)?.textContent).toBe('hello world');
+    textContentTest(container.querySelector(textareaFooterClassName)!, 'hello world');
   });
 });
 describe('Textarea[underline]', () => {
   test('should render underline', () => {
     const { container } = render(<Textarea placeholder='input something' underline />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperUnderline-0-2-8`),
-    ).toBeTruthy();
+    classTest(container.querySelector(textareaClassName)!, textareaUnderlineClassName);
   });
 });
 describe('Textarea[BeforeChange]', () => {
@@ -283,17 +287,14 @@ describe('Textarea[BeforeChange]', () => {
     fireEvent.change(container.querySelector('textarea') as HTMLTextAreaElement, {
       target: { value: '1' },
     });
-    expect(container.querySelector('textarea')?.textContent).toBe('11');
+    textContentTest(container.querySelector('textarea')!, '11');
+    expect(hanldFn.mock.calls.length).toBe(1);
   });
 });
 describe('Textarea[Border]', () => {
   test('should render when set border is false', () => {
     const { container } = render(<Textarea placeholder='input something' border={false} />);
-    expect(
-      container
-        .querySelector(`.${SO_PREFIX}-wrapper-0-2-1`)
-        ?.classList.contains(`${SO_PREFIX}-wrapperNoBorder-0-2-9`),
-    ).toBeTruthy();
+    classTest(container.querySelector(textareaClassName)!, textareaNoBorderClassName);
   });
 });
 describe('Textarea[Popover]', () => {

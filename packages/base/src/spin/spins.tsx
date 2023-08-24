@@ -169,7 +169,6 @@ const Ring = (props: SpinProps) => {
     borderTopColor: color,
     fontSize: value / 10 + unit,
   };
-  console.log(style);
   return (
     <BaseSpin
       {...props}

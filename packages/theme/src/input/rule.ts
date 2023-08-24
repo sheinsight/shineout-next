@@ -21,9 +21,12 @@ const inputRules = {
       'background-color',
       'shadow',
       'clear-color',
+      'toggle-color',
     ],
   ],
   infoColor: [['info'], ['', 'error'], ['font-color', 'background-color', 'border-color']],
+  innerSize: [['inner'], ['', 'small', 'large'], ['padding-x', 'padding-y', 'font-size']],
+  innerColor: [['inner'], ['font-color']],
 };
 
 module.exports = {

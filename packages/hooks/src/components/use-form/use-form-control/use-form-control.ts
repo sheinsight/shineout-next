@@ -15,14 +15,17 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     bind: props.bind,
   });
 
+  const [errorState, setErrorState] = React.useState<Error | undefined>(undefined);
+
   let value: T | undefined;
-  let error: Error | undefined = undefined;
+  let error: Error | undefined = errorState;
   let inForm = false;
 
   const { value: formValue = {}, formFunc, errors, disabled } = React.useContext(FormContext);
   const { updateError } = React.useContext(FormItemContext);
 
   const getValue = () => {
+    if (!name) return undefined;
     if (isArray(name)) {
       return name.map((n) => deepGet(formValue, n)) as T;
     }
@@ -30,6 +33,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   };
 
   const getError = () => {
+    if (!name) return undefined;
     if (isArray(name)) {
       for (let i = 0; i < name.length; i++) {
         const err = (errors ?? {})[name[i]] as Error;
@@ -41,43 +45,52 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     }
   };
 
-  if (!name) {
-    console.error('[Form.Filed] name is required');
-  } else {
-    if (formFunc) {
-      inForm = true;
-      value = getValue();
-      error = getError();
-    } else {
-      console.error('[Form Field] should render in Form');
-    }
+  if (name && formFunc) {
+    inForm = true;
+    value = getValue();
+    error = getError();
   }
 
   const validateFiled = usePersistFn((name, v, formV, config = {}) => {
-    const bindValidate = () => {
-      if (!config.ignoreBind && isArray(bind)) {
-        formFunc?.validateFields(bind, { ignoreBind: true }).catch(() => {});
-      }
-    };
-    const fullRules = formFunc?.combineRules(name, rules || []) || [];
-    return validate(v, formV, fullRules, {})
-      .then((res) => {
-        const err = res === true ? undefined : res;
-        formFunc?.setError(name, err);
-        onError?.(err);
-        bindValidate();
-        return res;
-      })
-      .catch((e) => {
-        formFunc?.setError(name, e);
-        onError?.(e);
-        bindValidate();
-        return e;
-      });
+    if (inForm) {
+      const bindValidate = () => {
+        if (!config.ignoreBind && isArray(bind)) {
+          formFunc?.validateFields(bind, { ignoreBind: true }).catch(() => {});
+        }
+      };
+      const fullRules = formFunc?.combineRules(name, rules || []) || [];
+      return validate(v, formV, fullRules, {})
+        .then((res) => {
+          const err = res === true ? undefined : res;
+          formFunc?.setError(name, err);
+          onError?.(err);
+          bindValidate();
+          return res;
+        })
+        .catch((e) => {
+          formFunc?.setError(name, e);
+          onError?.(e);
+          bindValidate();
+          return e;
+        });
+    } else {
+      return validate(v, {}, rules || [], {})
+        .then((res) => {
+          const err = res === true ? undefined : res;
+          setErrorState(err);
+          onError?.(err);
+          return res;
+        })
+        .catch((e) => {
+          setErrorState(e);
+          onError?.(e);
+          return e;
+        });
+    }
   });
 
   useEffect(() => {
-    if (formFunc) {
+    if (inForm && formFunc) {
       if (isArray(name)) {
         const dv = isArray(defaultValue) ? defaultValue : [];
         name.forEach((n, index) => {
@@ -88,7 +101,7 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       }
     }
     return () => {
-      if (formFunc) {
+      if (inForm && formFunc) {
         if (isArray(name)) {
           name.forEach((n) => {
             formFunc.unbind(n, reservable);
@@ -99,13 +112,13 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       }
     };
   }, [name]);
-
+  // todo 校验的时候需要假如 props
   useEffect(() => {
     updateError(isArray(name) ? name.join('|') : name, error);
   }, [error]);
 
   const onChange = usePersistFn((v: T, ...other: any[]) => {
-    if (formFunc) {
+    if (inForm && formFunc) {
       if (isArray(name)) {
         const arrV = isArray(v) ? v : [];
         const objetcV = name.reduce((result, name, index) => {
@@ -116,8 +129,11 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       } else {
         formFunc.setValue({ [name]: v }, { validate: true });
       }
+    } else {
+      validateFiled('', v, undefined);
     }
     if (onChangePo) onChangePo(v, ...other);
   });
+
   return { value, onChange, error, inForm, disabled };
 }

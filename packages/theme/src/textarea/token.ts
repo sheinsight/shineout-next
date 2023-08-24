@@ -44,7 +44,7 @@ const textareaTokenValue = {
     placeholder: { color: '' },
     border: { color: 'Brand-7' },
     background: { color: '' },
-    shadow: 'Shadow-1',
+    shadow: 'Brand-2',
   },
   disabled: {
     font: { color: 'Neutral-text-2' },
@@ -52,6 +52,20 @@ const textareaTokenValue = {
     border: { color: 'Neutral-border-2' },
     background: { color: 'Neutral-fill-2' },
     shadow: '',
+    hover: {
+      font: { color: '' },
+      placeholder: { color: '' },
+      border: { color: '' },
+      background: { color: '' },
+      shadow: '',
+    },
+    focus: {
+      font: { color: '' },
+      placeholder: { color: '' },
+      border: { color: '' },
+      background: { color: '' },
+      shadow: '',
+    },
   },
   error: {
     font: { color: '' },
@@ -59,6 +73,20 @@ const textareaTokenValue = {
     border: { color: 'Danger-6' },
     background: { color: '' },
     shadow: '',
+    hover: {
+      font: { color: '' },
+      placeholder: { color: '' },
+      border: { color: '' },
+      background: { color: '' },
+      shadow: '',
+    },
+    focus: {
+      font: { color: '' },
+      placeholder: { color: '' },
+      border: { color: '' },
+      background: { color: '' },
+      shadow: 'Danger-1',
+    },
   },
   info: {
     font: { color: 'Brand-6' },

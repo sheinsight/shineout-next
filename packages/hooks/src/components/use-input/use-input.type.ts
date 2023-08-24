@@ -11,13 +11,17 @@ export interface InputPropsOwn {
   onFocus?: React.FocusEventHandler;
   onClick?: React.MouseEventHandler;
   disabled?: boolean;
+  // 是否可以清除
   clearable?: boolean;
   /**
    * focus后自动全选数据
    */
   autoSelect?: boolean;
   inputRef?: React.Ref<HTMLInputElement>;
+  rootRef?: React.Ref<HTMLElement>;
+  // 点击清空回调
   onClear?: () => void;
+  // 否显示清除按钮(受控)
   showClear?: boolean;
 }
 

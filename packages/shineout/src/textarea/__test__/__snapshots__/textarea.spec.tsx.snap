@@ -1,13 +1,122 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Textarea[Base] should render correctly 1`] = `
+exports[`Textarea[Base] should render correctly  1`] = `
 <div
-  class="textarea-wrapper-0-2-1 customized"
+  class="textarea-wrapper-0-2-1 textarea-wrapperFocus-0-2-5"
   data-type="so-input"
 >
   <textarea
     class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    placeholder="input something"
     rows="4"
   />
+</div>
+`;
+
+exports[`Textarea[Base] should render correctly about autosize 1`] = `
+<div
+  class="textarea-wrapper-0-2-1"
+  data-type="so-input"
+>
+  <textarea
+    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    placeholder="Please enter content, the height can be automatically adjusted"
+    rows="2"
+    style="overflow: auto; max-height: 150px; height: 0px;"
+  />
+  <textarea
+    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11 textarea-shadow-0-2-15"
+    placeholder="Please enter content, the height can be automatically adjusted"
+    rows="2"
+  />
+</div>
+`;
+
+exports[`Textarea[Base] should render correctly about footer 1`] = `
+<div
+  class="textarea-wrapper-0-2-1"
+  data-type="so-input"
+>
+  <textarea
+    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    placeholder="input something"
+    rows="3"
+  />
+  <div
+    class="textarea-paddingBox-0-2-2 textarea-footer-0-2-16"
+  >
+    <div
+      style="text-align: right;"
+    >
+      <span>
+        0
+      </span>
+       / 20
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Textarea[Base] should render correctly about info 1`] = `
+<div
+  class="textarea-wrapper-0-2-1"
+  data-type="so-input"
+>
+  <textarea
+    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    placeholder="input something"
+    rows="4"
+  />
+</div>
+`;
+
+exports[`Textarea[Base] should render correctly about info by function 1`] = `
+<div
+  class="textarea-wrapper-0-2-1"
+  data-type="so-input"
+>
+  <textarea
+    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    placeholder="input something"
+    rows="4"
+  />
+</div>
+`;
+
+exports[`Textarea[Base] should render correctly about size 1`] = `
+<div>
+  <div
+    class="textarea-wrapper-0-2-1 textarea-wrapperSmall-0-2-3"
+    data-type="so-input"
+    style="width: 120px; margin-inline-end: 12px;"
+  >
+    <textarea
+      class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+      placeholder="small size"
+      rows="3"
+    />
+  </div>
+  <div
+    class="textarea-wrapper-0-2-1"
+    data-type="so-input"
+    style="width: 120px; margin-inline-end: 12px;"
+  >
+    <textarea
+      class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+      placeholder="default size"
+      rows="3"
+    />
+  </div>
+  <div
+    class="textarea-wrapper-0-2-1 textarea-wrapperLarge-0-2-4"
+    data-type="so-input"
+    style="width: 120px; margin-inline-end: 12px;"
+  >
+    <textarea
+      class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+      placeholder="large size"
+      rows="3"
+    />
+  </div>
 </div>
 `;

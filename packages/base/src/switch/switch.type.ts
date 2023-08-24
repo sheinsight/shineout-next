@@ -13,6 +13,7 @@ export interface SwitchClasses {
   content: string;
   wrapperChecked: string;
   wrapperDisabled: string;
+  loading: string;
 }
 
 export interface SwitchProps

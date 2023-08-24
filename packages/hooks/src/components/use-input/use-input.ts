@@ -3,9 +3,9 @@ import * as React from 'react';
 import { extractEventHandlers } from '../../utils';
 import {
   BaseInputProps,
+  UseInputClearProps,
   UseInputRootSlotProps,
   UseInputSlotProps,
-  UseInputClearProps,
 } from './use-input.type';
 import { HandlerType, ObjectType } from '../../common/type';
 
@@ -23,6 +23,7 @@ import { HandlerType, ObjectType } from '../../common/type';
 const useInput = (params: BaseInputProps) => {
   const {
     inputRef: inputRefPo,
+    rootRef,
     value,
     onChange,
     onFocus,
@@ -56,6 +57,7 @@ const useInput = (params: BaseInputProps) => {
       ...externalProps,
       ...externalEventHandlers,
       onClick: handleClick(externalEventHandlers),
+      ref: rootRef,
     };
   };
 

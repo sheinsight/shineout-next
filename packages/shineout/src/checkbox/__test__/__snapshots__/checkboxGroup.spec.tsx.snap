@@ -1,0 +1,852 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
+<div
+  class="checkbox-group-0-2-9"
+>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
+<div
+  class="checkbox-group-0-2-9"
+>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      <span
+        style="border-bottom: 1px solid red;"
+      >
+        red
+      </span>
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      <span
+        style="border-bottom: 1px solid orange;"
+      >
+        orange
+      </span>
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      <span
+        style="border-bottom: 1px solid yellow;"
+      >
+        yellow
+      </span>
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      <span
+        style="border-bottom: 1px solid green;"
+      >
+        green
+      </span>
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      <span
+        style="border-bottom: 1px solid cyan;"
+      >
+        cyan
+      </span>
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      <span
+        style="border-bottom: 1px solid blue;"
+      >
+        blue
+      </span>
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      <span
+        style="border-bottom: 1px solid violet;"
+      >
+        violet
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
+<div
+  class="checkbox-group-0-2-9"
+>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
+<div
+  class="checkbox-group-0-2-9"
+>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
+<div
+  class="checkbox-group-0-2-9"
+>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperDisabled-0-2-5"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1 checkbox-wrapperChecked-0-2-3"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="checkbox-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="checkbox-indicatorWrapper-0-2-6"
+    >
+      <i
+        class="checkbox-indicator-0-2-7"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="checkbox-desc-0-2-8"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;

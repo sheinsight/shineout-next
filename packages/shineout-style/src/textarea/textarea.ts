@@ -31,6 +31,7 @@ const inputBorder = border('wrapper', {
   disabledBackgroundColor: token.textareaDisabledBackgroundColor,
 
   focusShadow: token.textareaFocusShadow,
+  errorFocusShadow: token.textareaErrorFocusShadow,
 });
 const { wrapper, ...resetWrapper } = inputBorder;
 

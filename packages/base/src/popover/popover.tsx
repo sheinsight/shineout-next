@@ -1,12 +1,22 @@
-import { usePopup, util } from '@sheinx/hooks';
+import { usePopup, useRender, util } from '@sheinx/hooks';
 import AbsoluteList from '../absolute-list';
 import React from 'react';
 import { PopoverProps } from './popover.type';
 import classNames from 'classnames';
 
 const Popover = (props: PopoverProps) => {
-  const { children, jssStyle, className, style, priorityDirection, trigger = 'hover' } = props;
+  const {
+    children,
+    jssStyle,
+    className,
+    style,
+    priorityDirection,
+    trigger = 'hover',
+    type,
+  } = props;
   const { current: context } = React.useRef({ rendered: false });
+
+  const render = useRender();
 
   const { open, position, getTargetProps, targetRef, popupRef, closePop } = usePopup({
     open: props.visible,
@@ -48,14 +58,17 @@ const Popover = (props: PopoverProps) => {
   }, []);
 
   const noRender = !open && !context.rendered;
+
   if (!targetRef.current || !children || noRender) {
     return (
       <noscript
         ref={(el) => {
           if (!el) return;
           const targetEl = el.parentElement as HTMLDivElement;
+          if (targetRef.current === targetEl) return;
           targetRef.current = targetEl;
           bindEvents();
+          render();
         }}
       />
     );
@@ -80,6 +93,7 @@ const Popover = (props: PopoverProps) => {
           open && jssStyle?.popover?.wrapperOpen,
         )}
         data-soui-position={position}
+        data-soui-type={type}
         ref={popupRef}
         onMouseLeave={events.onMouseLeave}
       >

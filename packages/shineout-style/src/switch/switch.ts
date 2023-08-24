@@ -9,10 +9,22 @@ export type SwitchClass =
   | 'wrapperSmall'
   | 'wrapperLarge'
   | 'indicator'
+  | 'loading'
   | 'content';
 
-const transition = '0.36s cubic-bezier(.78, .14, .15, .86)';
+const animation = {
+  '@keyframes ring': {
+    '0%': {
+      transform: 'rotateZ(0deg)',
+    },
+    '100%': {
+      transform: 'rotateZ(359deg)',
+    },
+  },
+};
+const transition = '.2s cubic-bezier(.34,.69,.1,1)';
 const switchStyle: JsStyles<SwitchClass> = {
+  ...animation,
   wrapper: {
     transition: `background-color ${transition}`,
     border: '0',
@@ -27,10 +39,7 @@ const switchStyle: JsStyles<SwitchClass> = {
       backgroundColor: token.switchDisabledBackgroundColor,
       color: token.switchDisabledFontColor,
     },
-    // '$wrapperLoading&': {
-    //   backgroundColor: token.switchLoadingBackgroundColor,
-    //   color: token.switchLoadingFontColor,
-    // },
+
     '$wrapperChecked&': {
       backgroundColor: token.switchCheckedBackgroundColor,
       color: token.switchCheckedFontColor,
@@ -121,9 +130,23 @@ const switchStyle: JsStyles<SwitchClass> = {
   wrapperDisabled: {
     cursor: 'not-allowed',
   },
-  // wrapperLoading: {
-  //   cursor: 'not-allowed',
-  // },
+  loading: {
+    position: 'absolute',
+    top: '12%',
+    left: '12%',
+    right: '12%',
+    bottom: '12%',
+    borderRadius: '50%',
+    border: '1px solid',
+    borderColor: token.switchDisabledBackgroundColor,
+    borderTopColor: 'transparent',
+    animation: `$ring 1s ease-in-out infinite`,
+
+    '$wrapperChecked &': {
+      borderColor: token.switchCheckedDisabledBackgroundColor,
+      borderTopColor: 'transparent',
+    },
+  },
 };
 
 export default switchStyle;
