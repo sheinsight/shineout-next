@@ -7,7 +7,7 @@ const useTabs = (props: BaseTabsProps) => {
   const [activeTabs, setActiveTabs] = useState(active);
 
   const getActive = () => {
-    if (active === undefined) {
+    if (props.active === undefined) {
       return activeTabs;
     }
     return active;

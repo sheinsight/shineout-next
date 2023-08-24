@@ -79,7 +79,6 @@ const useTransform = <T>(props: UseTransformProps) => {
         if (!containerDimension || !targetDimension) return;
         if (targetDimension <= containerDimension) {
           setShouldScroll(false);
-          console.log(targetDimension, containerDimension);
         } else {
           setShouldScroll(true);
         }

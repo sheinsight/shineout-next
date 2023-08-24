@@ -11,12 +11,7 @@ export interface TabsClasses {
   headerWrapper: string;
   headerScroll: string;
   header: string;
-  hideHeaderLine: string;
   hr: string;
-  vertical: string;
-  verticalLeft: string;
-  verticalRight: string;
-  bottom: string;
   button: string;
   line: string;
   lineInner: string;

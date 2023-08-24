@@ -321,6 +321,7 @@ const tabsStyle: JsStyles<TabsClass> = {
       flex: 1,
     },
     '& $panel': {
+      overflow: 'auto',
       height: '100%',
     },
   },

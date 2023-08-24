@@ -69,6 +69,11 @@ const TabsHeader = (props: TabsHeaderProps) => {
               })}
             </Button.Group>
           )}
+
+          {shape !== 'button' &&
+            tabs.map((tab, index) => {
+              return <Tab key={index} {...tab}></Tab>;
+            })}
         </div>
       </div>
     );

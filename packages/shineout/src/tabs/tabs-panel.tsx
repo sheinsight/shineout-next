@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import { Tabs as UnStyleTabs } from '@sheinx/base';
+import { TabsPanel as UnStyleTabsPanel } from '@sheinx/base';
 import { useTabsStyle, useButtonStyle } from '@sheinx/shineout-style';
-import { TabsProps } from './tabs.type';
+import { TabsPanelProps } from '@sheinx/base';
 
-export default (props: TabsProps) => {
+export default (props: TabsPanelProps) => {
   const tabsStyle = useTabsStyle();
   const buttonStyle = useButtonStyle();
   const jssStyle = useMemo(
@@ -11,5 +11,5 @@ export default (props: TabsProps) => {
     [tabsStyle, buttonStyle],
   );
 
-  return <UnStyleTabs jssStyle={jssStyle} {...props} />;
+  return <UnStyleTabsPanel jssStyle={jssStyle} {...props} />;
 };
