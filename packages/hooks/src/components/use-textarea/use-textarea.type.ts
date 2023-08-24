@@ -11,6 +11,7 @@ export interface TextAreaPropsOwn {
   onClick?: React.MouseEventHandler;
   disabled?: boolean;
   textareaRef?: React.Ref<HTMLTextAreaElement>;
+  rootRef?: React.Ref<HTMLElement>;
 }
 
 export interface BaseTextareaProps

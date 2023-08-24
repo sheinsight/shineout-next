@@ -12,7 +12,8 @@ const textareaRules = {
     ['font-size', 'border-radius', 'padding-x', 'padding-y'],
   ],
   color: [
-    ['', 'hover', 'focus', 'disabled', 'error'],
+    ['', 'disabled', 'error'],
+    ['', 'hover', 'focus'],
     ['font-color', 'placeholder-color', 'border-color', 'background-color', 'shadow'],
   ],
   infoColor: [['info'], ['', 'error'], ['font-color', 'background-color', 'border-color']],

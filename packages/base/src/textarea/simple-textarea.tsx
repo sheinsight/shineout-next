@@ -23,6 +23,7 @@ const Textarea = (props: SimpleTextareaProps) => {
   const { getRootProps, getTextAreaProps, focused, disabled } = useTextarea({
     ...rest,
   });
+
   const rootClass = classNames(
     className,
     jssStyle?.textarea?.wrapper,

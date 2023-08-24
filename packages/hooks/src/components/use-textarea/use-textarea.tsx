@@ -13,8 +13,17 @@ import useForkRef from '../../common/use-fork-ref';
 // 逻辑
 //  1. 点击聚焦
 const useTextarea = (props: BaseTextareaProps) => {
-  const { onClick, onChange, onBlur, value, disabled, onFocus, textareaRef, ...propsToForward } =
-    props;
+  const {
+    onClick,
+    onChange,
+    onBlur,
+    value,
+    disabled,
+    onFocus,
+    textareaRef,
+    rootRef,
+    ...propsToForward
+  } = props;
   const [focused, setFocused] = React.useState(false);
   const textRef = React.useRef<HTMLTextAreaElement>(null);
 
@@ -34,6 +43,7 @@ const useTextarea = (props: BaseTextareaProps) => {
       ...externalProps,
       ...externalEventHandlers,
       onClick: handleClick(externalEventHandlers),
+      ref: rootRef,
     };
   };
 
