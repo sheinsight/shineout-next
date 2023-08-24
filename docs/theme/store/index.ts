@@ -28,12 +28,11 @@ interface State {
   env: Env;
 }
 
-const regex = /(?<=\/\w+\/component\/)\w+/;
-
+const regex = new RegExp(`component/(.*?)/`, 'i');
 const state: State = {
   menu: [],
   locales: 'cn',
-  doc: (window.location.hash.match(regex)?.[0] as Doc) || 'shineout',
+  doc: (window.location.hash.match(regex)?.[1] as Doc) || 'shineout',
   doctab: 'examples',
   rtl: false,
   env: 'SHEIN',
