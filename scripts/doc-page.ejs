@@ -3,7 +3,7 @@ import MarkDown from '../../theme/components/markdown/index.tsx'
 
 const source = require('<%= chunkModuleName %>/<%= componentDir %>/<%= docDir %>/index.md')
 
-export const api = []
+const api = '<%- JSON.stringify(api)%>';
 
 export const header = {
   name: '<%= header.name %>',
