@@ -14,6 +14,7 @@ export interface AlertClasses {
   warning: string;
   danger: string;
   pending: string;
+  noBordered: string;
 }
 
 export type AlertType = 'success' | 'info' | 'warning' | 'danger';
@@ -37,5 +38,6 @@ export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
    * @description onClose 属性即将不再支持 boolean 值，请使用 closable 控制是否显示关闭按钮
    */
   onClose?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  bordered?: boolean;
   children?: React.ReactNode;
 }

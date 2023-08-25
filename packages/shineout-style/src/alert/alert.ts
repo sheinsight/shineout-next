@@ -3,6 +3,7 @@ import { JsStyles } from '../jss-style';
 
 export type AlertClass =
   | 'alert'
+  | 'noBordered'
   | 'content'
   | 'widthTitle'
   | 'title'
@@ -112,6 +113,9 @@ const alertStyle: JsStyles<AlertClass> = {
     '& $icon': {
       color: Token.alertDangerFontColor,
     },
+  },
+  noBordered: {
+    borderColor: 'transparent',
   },
   icon: {
     width: 16,

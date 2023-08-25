@@ -18,7 +18,9 @@ const Alert = (props: AlertProps) => {
     iconSize,
     closable,
     hideClose,
+    bordered,
     onClose,
+    ...rest
   } = props;
   const [dismiss, setDismiss] = useState(SHOW);
 
@@ -33,8 +35,12 @@ const Alert = (props: AlertProps) => {
     [alertStyle[type]]: true,
     [alertStyle.widthTitle]: title,
     [alertStyle.pending]: dismiss === PENDING,
+    [alertStyle.noBordered]: bordered === false,
   });
 
+  const getRootProps = () => {
+    return rest;
+  };
   // 兼容 onClose 允许开启关闭按钮
   const getCloseable = () => {
     if ('closable' in props && closable !== undefined) return closable;
@@ -132,7 +138,7 @@ const Alert = (props: AlertProps) => {
   }
 
   return (
-    <div className={rootClass}>
+    <div className={rootClass} {...getRootProps()}>
       <Row>
         {icon && renderIcon()}
         {renderChildren()}
