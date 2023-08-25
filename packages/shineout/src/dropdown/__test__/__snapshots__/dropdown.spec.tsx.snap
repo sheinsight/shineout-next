@@ -95,3 +95,3937 @@ exports[`Dropdown[Base] should render correctly  1`] = `
   </div>
 </div>
 `;
+
+exports[`Dropdown[Base] should render correctly about absolute 1`] = `
+<div
+  style="background: rgb(238, 238, 238); padding: 20px; border-radius: 10px; overflow: hidden;"
+>
+  <div
+    class="dropdown-wrapper-0-2-1"
+    data-position="bottom-left"
+  >
+    <button
+      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36"
+    >
+      <span
+        class="dropdown-content-0-2-8"
+      >
+        Absolute
+      </span>
+      <span
+        class="dropdown-caret-0-2-7"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div
+    class="dropdown-wrapper-0-2-1"
+    data-position="bottom-left"
+    style="margin-inline-start: 24px;"
+  >
+    <button
+      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36"
+    >
+      <span
+        class="dropdown-content-0-2-8"
+      >
+        Default
+      </span>
+      <span
+        class="dropdown-caret-0-2-7"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      style="display: none;"
+    >
+      <div
+        class="dropdown-wrapper-0-2-1"
+        data-position="right-top"
+      >
+        <a
+          class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+          data-role="item"
+        >
+          <span
+            class="dropdown-content-0-2-8"
+          >
+            Submenu
+          </span>
+          <span
+            class="dropdown-caret-0-2-7"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+              />
+            </svg>
+          </span>
+        </a>
+        <div
+          class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+          data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+          style="display: none;"
+        >
+          <a
+            class="dropdown-item-0-2-10"
+            href="https://google.com"
+            target="_blank"
+          >
+            Link to Google
+          </a>
+          <a
+            class="dropdown-item-0-2-10"
+            disabled=""
+          >
+            Disabled
+          </a>
+        </div>
+      </div>
+      <a
+        class="dropdown-item-0-2-10"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        Message
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about button 1`] = `
+<div
+  style="display: flex; gap: 24px;"
+>
+  <div
+    style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Default
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Default
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-danger-0-2-32 button-button-0-2-26"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Default
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-warning-0-2-33 button-button-0-2-26"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Default
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-success-0-2-34 button-button-0-2-26"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Default
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Outline
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-outline-0-2-36"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Outline
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-danger-0-2-32 button-button-0-2-26 button-outline-0-2-36"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Outline
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-warning-0-2-33 button-button-0-2-26 button-outline-0-2-36"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Outline
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-success-0-2-34 button-button-0-2-26 button-outline-0-2-36"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Outline
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Text
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Text
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-danger-0-2-32 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Text
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-warning-0-2-33 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Text
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-success-0-2-34 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Text
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about children 1`] = `
+<div
+  class="dropdown-wrapper-0-2-1"
+  data-position="bottom-left"
+>
+  <button
+    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+  >
+    <span
+      class="dropdown-content-0-2-8"
+    >
+      Click me
+    </span>
+    <span
+      class="dropdown-caret-0-2-7"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="display: none;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="right-top"
+    >
+      <a
+        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        data-role="item"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          item0
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </a>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item0-0
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item0-1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item0-2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item0-3
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item0-4
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="right-top"
+    >
+      <a
+        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        data-role="item"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          item1
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </a>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1-0
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1-1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1-2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1-3
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item1-4
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="right-top"
+    >
+      <a
+        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        data-role="item"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          item2
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </a>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2-0
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2-1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2-2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2-3
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item2-4
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="right-top"
+    >
+      <a
+        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        data-role="item"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          item3
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </a>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3-0
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3-1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3-2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3-3
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item3-4
+        </a>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="right-top"
+    >
+      <a
+        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        data-role="item"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          item4
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </a>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item4-0
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item4-1
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item4-2
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item4-3
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+        >
+          item4-4
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about columns 1`] = `
+<div
+  class="dropdown-wrapper-0-2-1"
+  data-position="bottom-left"
+>
+  <button
+    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+  >
+    <span
+      class="dropdown-content-0-2-8"
+    >
+      Tiling Menu
+    </span>
+    <span
+      class="dropdown-caret-0-2-7"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    class="dropdown-list-0-2-3 dropdown-boxList-0-2-6 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 dropdown-boxList-0-2-6 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="width: 500px; grid-template-columns: repeat(5, 1fr); display: none;"
+  >
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item0
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item1
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item2
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item3
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item4
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item5
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item6
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item7
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item8
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item9
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item10
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item11
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item12
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item13
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item14
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item15
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item16
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item17
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item18
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item19
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item20
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item21
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item22
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item23
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item24
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item25
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item26
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item27
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item28
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item29
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about divider 1`] = `
+<div
+  class="dropdown-wrapper-0-2-1"
+  data-position="bottom-left"
+>
+  <button
+    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+  >
+    <span
+      class="dropdown-content-0-2-8"
+    >
+      Dividing Line
+    </span>
+    <span
+      class="dropdown-caret-0-2-7"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="display: none;"
+  >
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      First
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      Second
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      Third
+    </a>
+    <div
+      class="dropdown-optionDivider-0-2-13"
+    />
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      Fourth
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about group 1`] = `
+<div
+  class="dropdown-wrapper-0-2-1"
+  data-position="bottom-left"
+>
+  <button
+    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+  >
+    <span
+      class="dropdown-content-0-2-8"
+    >
+      Group Menu
+    </span>
+    <span
+      class="dropdown-caret-0-2-7"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="display: none;"
+  >
+    <div
+      class="dropdown-optionGroup-0-2-12"
+    >
+      group0
+    </div>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item0
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item1
+    </a>
+    <div
+      class="dropdown-optionGroup-0-2-12"
+    >
+      group1
+    </div>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item2
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      item3
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about hover 1`] = `
+<div
+  class="dropdown-wrapper-0-2-1"
+  data-position="bottom-left"
+>
+  <button
+    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+  >
+    <span
+      class="dropdown-content-0-2-8"
+    >
+      Click me
+    </span>
+    <span
+      class="dropdown-caret-0-2-7"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="display: none;"
+  >
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      America
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      Germany
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      United Kingdom
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      France
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      Russia
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about icon 1`] = `
+<div
+  class="dropdown-wrapper-0-2-1"
+  data-position="bottom-left"
+>
+  <button
+    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+  >
+    <span
+      class="dropdown-content-0-2-8"
+    >
+      Icon Menu
+    </span>
+    <span
+      class="dropdown-caret-0-2-7"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="display: none;"
+  >
+    <div
+      class="dropdown-item-0-2-10"
+    >
+      <i
+        class="icon-wrapper-0-2-47 fa-user-o"
+        style="font-family: FontAwesome;"
+      />
+       
+      <span
+        style="margin-inline-start: 4px;"
+      >
+        item0
+      </span>
+    </div>
+    <div
+      class="dropdown-item-0-2-10"
+    >
+      <i
+        class="icon-wrapper-0-2-47 fa-user-o"
+        style="font-family: FontAwesome;"
+      />
+       
+      <span
+        style="margin-inline-start: 4px;"
+      >
+        item1
+      </span>
+    </div>
+    <div
+      class="dropdown-item-0-2-10"
+    >
+      <i
+        class="icon-wrapper-0-2-47 fa-user-o"
+        style="font-family: FontAwesome;"
+      />
+       
+      <span
+        style="margin-inline-start: 4px;"
+      >
+        item2
+      </span>
+    </div>
+    <div
+      class="dropdown-item-0-2-10"
+    >
+      <i
+        class="icon-wrapper-0-2-47 fa-user-o"
+        style="font-family: FontAwesome;"
+      />
+       
+      <span
+        style="margin-inline-start: 4px;"
+      >
+        item3
+      </span>
+    </div>
+    <div
+      class="dropdown-item-0-2-10"
+    >
+      <i
+        class="icon-wrapper-0-2-47 fa-user-o"
+        style="font-family: FontAwesome;"
+      />
+       
+      <span
+        style="margin-inline-start: 4px;"
+      >
+        item4
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about position 1`] = `
+<div
+  style="display: inline-flex; flex-direction: column; gap: 12px;"
+>
+  <div
+    style="display: flex; justify-content: center; gap: 12px; padding: 0px 120px;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Bottom left
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-top"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-top"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="right-top"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Bottom
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="right"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="bottom-right"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Bottom right
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left-top"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left-top"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="left-top"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="display: flex; justify-content: space-between;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="right-top"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Right Top
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-top"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-top"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="right-top"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="left-top"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Left Top
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left-top"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left-top"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="left-top"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="display: flex; justify-content: space-between;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="right"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Right
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="right"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Left
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="left"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="display: flex; justify-content: space-between;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="right-bottom"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Right Bottom
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="right-bottom"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="left-bottom"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Left Bottom
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="left-bottom"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="display: flex; justify-content: center; gap: 12px;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="top-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Top Left
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="right-bottom"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="top-left"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Top
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="right-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="right-bottom"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="top-right"
+    >
+      <button
+        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Top right
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              First
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link1
+            </a>
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link2
+            </a>
+          </div>
+        </div>
+        <div
+          class="dropdown-wrapper-0-2-1"
+          data-position="left-bottom"
+        >
+          <a
+            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            data-role="item"
+          >
+            <span
+              class="dropdown-caret-0-2-7"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                />
+              </svg>
+            </span>
+            <span
+              class="dropdown-content-0-2-8"
+            >
+              Second
+            </span>
+          </a>
+          <div
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="display: none;"
+          >
+            <a
+              class="dropdown-item-0-2-10"
+            >
+              link3
+            </a>
+            <div
+              class="dropdown-wrapper-0-2-1"
+              data-position="left-bottom"
+            >
+              <a
+                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                data-role="item"
+              >
+                <span
+                  class="dropdown-caret-0-2-7"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="dropdown-content-0-2-8"
+                >
+                  link4
+                </span>
+              </a>
+              <div
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="display: none;"
+              >
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link5
+                </a>
+                <a
+                  class="dropdown-item-0-2-10"
+                >
+                  link6
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about size 1`] = `
+<div>
+  <div
+    class="dropdown-wrapper-0-2-1"
+    data-position="bottom-left"
+    style="margin-inline-end: 24px;"
+  >
+    <button
+      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36 button-small-0-2-27"
+    >
+      <span
+        class="dropdown-content-0-2-8"
+      >
+        Dropdown
+      </span>
+      <span
+        class="dropdown-caret-0-2-7"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="dropdown-list-0-2-3 dropdown-listSmall-0-2-4 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      data-class="dropdown-list-0-2-3 dropdown-listSmall-0-2-4 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      style="display: none;"
+    >
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item0
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item1
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item2
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item3
+      </a>
+    </div>
+  </div>
+  <div
+    class="dropdown-wrapper-0-2-1"
+    data-position="bottom-left"
+    style="margin-inline-end: 24px;"
+  >
+    <button
+      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36"
+    >
+      <span
+        class="dropdown-content-0-2-8"
+      >
+        Dropdown
+      </span>
+      <span
+        class="dropdown-caret-0-2-7"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      style="display: none;"
+    >
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item0
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item1
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item2
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item3
+      </a>
+    </div>
+  </div>
+  <div
+    class="dropdown-wrapper-0-2-1"
+    data-position="bottom-left"
+    style="margin-inline-end: 24px;"
+  >
+    <button
+      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36 button-large-0-2-28"
+    >
+      <span
+        class="dropdown-content-0-2-8"
+      >
+        Dropdown
+      </span>
+      <span
+        class="dropdown-caret-0-2-7"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="dropdown-list-0-2-3 dropdown-listLarge-0-2-5 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      data-class="dropdown-list-0-2-3 dropdown-listLarge-0-2-5 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      style="display: none;"
+    >
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item0
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item1
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item2
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        item3
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown[Base] should render correctly about split 1`] = `
+<div
+  class="button-group-0-2-46"
+  style="display: inline-block; margin-inline-end: 24px;"
+>
+  <button
+    class="button-secondary-0-2-31 button-button-0-2-26 button-outline-0-2-36"
+  >
+    <span>
+      Option
+    </span>
+  </button>
+  <button
+    class="button-secondary-0-2-31 button-button-0-2-26 button-outline-0-2-36"
+  >
+    <span>
+      Option
+    </span>
+  </button>
+  <div
+    class="dropdown-wrapper-0-2-1"
+    data-position="bottom-right"
+  >
+    <button
+      class="dropdown-button-0-2-9 dropdown-splitButton-0-2-15 button-secondary-0-2-31 button-button-0-2-26 button-outline-0-2-36"
+    >
+      <span
+        class="dropdown-content-0-2-8"
+      />
+      <span
+        class="dropdown-caret-0-2-7"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      style="display: none;"
+    >
+      <a
+        class="dropdown-item-0-2-10"
+      >
+        First
+      </a>
+      <a
+        class="dropdown-item-0-2-10"
+        href="http://www.google.com"
+        target="_blank"
+      >
+        Second
+      </a>
+    </div>
+  </div>
+</div>
+`;
