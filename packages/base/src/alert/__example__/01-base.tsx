@@ -12,7 +12,7 @@ export default () => {
   const alertStyle = useAlertStyle();
   return (
     <div>
-      <Alert jssStyle={{ alert: alertStyle }} />
+      <Alert jssStyle={{ alert: alertStyle }}>23333</Alert>
     </div>
   );
 };

@@ -7,7 +7,14 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const alertRules = {
-  size: [[''], ['font-size']],
+  color: [
+    ['info', 'success', 'warning', 'danger'],
+    ['background-color', 'border-color', 'font-color'],
+  ],
+  size: [['font-size', 'font-color', 'padding-x', 'padding-y', 'border-radius']],
+  extra_margin: [['nearly'], ['margin']],
+  extra_title: [['title'], ['font-size']],
+  extra_close: [['close'], ['font-color']],
 };
 
 module.exports = {

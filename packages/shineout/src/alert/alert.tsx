@@ -8,10 +8,5 @@ export default (props: AlertProps) => {
   const alertStyle = useAlertStyle();
   const jssStyle = useMemo(() => ({ alert: alertStyle }), [alertStyle]);
 
-  return (
-    <Alert
-      jssStyle={jssStyle}
-      // ...
-    />
-  );
+  return <Alert jssStyle={jssStyle} />;
 };
