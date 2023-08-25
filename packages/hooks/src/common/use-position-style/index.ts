@@ -57,7 +57,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     visibleEl,
     updateKey,
   } = config || {};
-  const [style, setStyle] = useState<React.CSSProperties>({ display: 'none' });
+  // 初次渲染无样式的时候， 隐藏展示
+  const [style, setStyle] = useState<React.CSSProperties>({ opacity: 0, pointerEvents: 'none' });
   const { current: context } = React.useRef({
     element: null as HTMLDivElement | null,
     containerRect: { left: 0, width: 0 } as DOMRect,
@@ -204,7 +205,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       setStyle(newStyle);
     }
   });
-  // todo 存在问题 先show再计算样式 导致闪烁， 需要内部维护一个display
 
   useEffect(updateStyle, [show, position, absolute, parentEl, visibleEl, updateKey]);
 

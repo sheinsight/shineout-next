@@ -1,9 +1,10 @@
 import React from 'react'
 import MarkDown from '../../theme/components/markdown/index.tsx'
+import api from './api/<%= componentDir %>.ts'
+
 
 const source = require('<%= chunkModuleName %>/<%= componentDir %>/<%= docDir %>/index.md')
 
-const api = '<%- JSON.stringify(api)%>';
 
 export const header = {
   name: '<%= header.name %>',
