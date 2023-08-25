@@ -1,15 +1,12 @@
 ## When to use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+It is used to display critical information or important reminders. This component is usually placed at the top of the relevant module in the page and is statically displayed. It does not disappear automatically, nor does it interrupt the user's current operation.
 
-## Related to layout
+## Layout Related
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+![Statically displayed at the top of the relevant module in the page](01)
 
-## Component combination
+## Recommended/Not Recommended Examples
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
-
-## Recommended/Use with caution examples
-
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![1. When multiple warnings are needed on a single page, it is recommended to use a combination prompt box with titles.](02)
+![2. The wording should match the color theme.](03)
