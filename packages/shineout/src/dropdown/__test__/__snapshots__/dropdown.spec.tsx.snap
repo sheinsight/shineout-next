@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown[Base] should render correctly  1`] = `
+<div
+  class="dropdown-wrapper-0-2-1"
+  data-position="bottom-left"
+>
+  <button
+    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+  >
+    <span
+      class="dropdown-content-0-2-8"
+    >
+      Dropdown
+    </span>
+    <span
+      class="dropdown-caret-0-2-7"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="display: none;"
+  >
+    <div
+      class="dropdown-wrapper-0-2-1"
+      data-position="right-top"
+    >
+      <a
+        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        data-role="item"
+      >
+        <span
+          class="dropdown-content-0-2-8"
+        >
+          Submenu
+        </span>
+        <span
+          class="dropdown-caret-0-2-7"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+            />
+          </svg>
+        </span>
+      </a>
+      <div
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="display: none;"
+      >
+        <a
+          class="dropdown-item-0-2-10"
+          href="https://google.com"
+          target="_blank"
+        >
+          Link to Google
+        </a>
+        <a
+          class="dropdown-item-0-2-10"
+          disabled=""
+        >
+          Disabled
+        </a>
+      </div>
+    </div>
+    <a
+      class="dropdown-item-0-2-10"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      class="dropdown-item-0-2-10"
+    >
+      Message
+    </a>
+  </div>
+</div>
+`;

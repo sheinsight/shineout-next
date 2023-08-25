@@ -2,7 +2,8 @@ import { render, cleanup, screen } from '@testing-library/react';
 import Dropdown from '..';
 import { TYPE } from 'shineout';
 import mountTest from '../../tests/mountTest';
-import { baseTest } from '../../tests/utils';
+import { baseTest, snapshotTest } from '../../tests/utils';
+import DropdownBase from '../__example__/001-base';
 
 const SO_PREFIX = 'dropdown';
 const dropdownClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
@@ -39,7 +40,6 @@ mountTest(Dropdown);
 describe('Dropdown[Base]', () => {
   //TODO: 没有displayname
   // displayTest(Dropdown, '')
-  // baseTest(Dropdown, dropdownClassName, undefined, undefined, undefined, data)
   baseTest(
     <Dropdown
       placeholder='Dropdown'
@@ -49,9 +49,7 @@ describe('Dropdown[Base]', () => {
     />,
     dropdownClassName,
   );
-  // test('should show', () => {
-  //   const { container } = render()
-  // })
+  snapshotTest(<DropdownBase />);
   test('should render', () => {
     const clickFn = jest.fn();
     render(<Dropdown placeholder='Dropdown' data={data} onClick={clickFn} />);
