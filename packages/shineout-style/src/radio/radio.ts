@@ -3,6 +3,8 @@ import token from '@sheinx/theme';
 
 export type RadioClass =
   | 'wrapper'
+  | 'wrapperSmall'
+  | 'wrapperLarge'
   | 'wrapperDisabled'
   | 'wrapperChecked'
   | 'indicatorWrapper'
@@ -11,9 +13,6 @@ export type RadioClass =
   | 'group'
   | 'groupBlock'
   | 'groupButton';
-
-const iconSize = '14px';
-const circleSize = '5px';
 
 const radioStyle: JsStyles<RadioClass> = {
   // '@keyframes so-checkinput-focus': {
@@ -35,6 +34,8 @@ const radioStyle: JsStyles<RadioClass> = {
     boxSizing: 'border-box',
     marginRight: token.radioGap,
   },
+  wrapperSmall: {},
+  wrapperLarge: {},
   wrapperChecked: {},
   wrapperDisabled: {
     cursor: 'not-allowed',
@@ -43,8 +44,16 @@ const radioStyle: JsStyles<RadioClass> = {
     display: 'inline-block',
     position: 'relative',
     boxSizing: 'border-box',
-    width: iconSize,
-    height: iconSize,
+    width: token.radioIconWidth,
+    height: token.radioIconWidth,
+    '$wrapperSmall &': {
+      width: token.radioSmallIconWidth,
+      height: token.radioSmallIconWidth,
+    },
+    '$wrapperLarge &': {
+      width: token.radioLargeIconWidth,
+      height: token.radioLargeIconWidth,
+    },
     marginRight: token.radioIconGap,
     verticalAlign: 'middle',
     '&::before': {
@@ -52,7 +61,7 @@ const radioStyle: JsStyles<RadioClass> = {
       display: 'block',
       width: '100%',
       height: '100%',
-      padding: circleSize,
+      padding: token.radioIconWrapperPadding,
       position: 'absolute',
       top: '50%',
       left: '50%',
@@ -63,11 +72,10 @@ const radioStyle: JsStyles<RadioClass> = {
     },
     '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &': {
       '&::before': {
-        background: token.radioIconCircleFill,
+        background: token.radioIconWrapperFill,
       },
       '& $indicator': {
-        borderColor: token.radioIconHoverBorderColor,
-        backgroundColor: token.radioIconHoverBackgroundColor,
+        backgroundColor: token.radioIconWrapperFill,
       },
     },
   },
@@ -79,38 +87,24 @@ const radioStyle: JsStyles<RadioClass> = {
     width: '100%',
     height: '100%',
     borderRadius: '50%',
-    borderStyle: 'solid',
-    borderWidth: token.radioIconBorderWidth,
-    borderColor: token.radioIconBorderColor,
-    backgroundColor: token.radioIconBackgroundColor,
-    color: 'transparent',
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    '$wrapperChecked &::after': {
-      content: '" "',
-      position: 'absolute',
-      display: 'block',
-      background: 'currentColor',
-      left: '0px',
-      right: '0px',
-      top: '0px',
-      bottom: '0px',
-      margin: 'auto',
-      width: '4px',
-      height: '4px',
-      borderRadius: '50%',
+    display: 'inline-flex',
+    alignItems: 'center',
+    '& > svg': {
+      width: '100%',
+      height: '100%',
     },
+    color: token.radioIconColor,
+    backgroundColor: token.radioIconBackgroundColor,
+
     '$wrapperChecked &': {
-      borderColor: token.radioIconCheckedBorderColor,
       backgroundColor: token.radioIconCheckedBackgroundColor,
       color: token.radioIconCheckedColor,
     },
     '$wrapperDisabled &': {
-      borderColor: token.radioIconDisabledBorderColor,
       backgroundColor: token.radioIconDisabledBackgroundColor,
+      color: token.radioIconDisabledColor,
     },
     '$wrapperDisabled$wrapperChecked &, $wrapperDisabled$wrapperIndeterminate &': {
-      borderColor: token.radioIconCheckedDisabledBorderColor,
       backgroundColor: token.radioIconCheckedDisabledBackgroundColor,
       color: token.radioIconCheckedDisabledColor,
     },
@@ -119,6 +113,12 @@ const radioStyle: JsStyles<RadioClass> = {
     verticalAlign: 'middle',
     boxSizing: 'border-box',
     fontSize: token.radioLabelFontSize,
+    '$wrapperSmall &': {
+      fontSize: token.radioSmallLabelFontSize,
+    },
+    '$wrapperLarge &': {
+      fontSize: token.radioLargeLabelFontSize,
+    },
   },
   group: {
     // padding: '5px 0',

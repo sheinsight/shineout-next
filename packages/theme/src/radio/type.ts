@@ -4,78 +4,6 @@
 export interface RadioTokens {
   /**
    * @type {string}
-   * @token Neutral-border-1
-   * @description 单选框图标边框颜色
-   */
-  radioIconBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 单选框图标背景颜色
-   */
-  radioIconBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-border-1
-   * @description 单选框图标禁用时的边框颜色
-   */
-  radioIconDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-2
-   * @description 单选框图标禁用时的背景颜色
-   */
-  radioIconDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-border-2
-   * @description 单选框图标鼠标移入时的边框颜色
-   */
-  radioIconHoverBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 单选框图标鼠标移入时的背景颜色
-   */
-  radioIconHoverBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-6
-   * @description 单选框图标undefined边框颜色
-   */
-  radioIconCheckedBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 单选框图标undefined背景颜色
-   */
-  radioIconCheckedBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-6
-   * @description 单选框图标undefined颜色
-   */
-  radioIconCheckedColor: string;
-  /**
-   * @type {string}
-   * @token Brand-3
-   * @description 单选框图标undefined禁用时的边框颜色
-   */
-  radioIconCheckedDisabledBorderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-fill-1
-   * @description 单选框图标undefined禁用时的背景颜色
-   */
-  radioIconCheckedDisabledBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token Brand-3
-   * @description 单选框图标undefined禁用时的颜色
-   */
-  radioIconCheckedDisabledColor: string;
-  /**
-   * @type {string}
    * @token Margin-24
    * @description 单选框undefined
    */
@@ -86,6 +14,12 @@ export interface RadioTokens {
    * @description 单选框undefinedundefined
    */
   radioBlockGap: string;
+  /**
+   * @type {string}
+   * @token Size-7
+   * @description 单选框图标宽度
+   */
+  radioIconWidth: string;
   /**
    * @type {string}
    * @token Margin-8
@@ -100,10 +34,118 @@ export interface RadioTokens {
   radioIconBorderWidth: string;
   /**
    * @type {string}
-   * @token Neutral-fill-2
-   * @description 单选框图标圆形undefined
+   * @token Size-3
+   * @description 单选框图标内嵌字号
    */
-  radioIconCircleFill: string;
+  radioIconInnerSize: string;
+  /**
+   * @type {string}
+   * @token Size-6
+   * @description 单选框小尺寸图标宽度
+   */
+  radioSmallIconWidth: string;
+  /**
+   * @type {string}
+   * @token Border-1
+   * @description 单选框小尺寸图标边框宽度
+   */
+  radioSmallIconBorderWidth: string;
+  /**
+   * @type {string}
+   * @token Size-3
+   * @description 单选框小尺寸图标内嵌字号
+   */
+  radioSmallIconInnerSize: string;
+  /**
+   * @type {string}
+   * @token Size-8
+   * @description 单选框大尺寸图标宽度
+   */
+  radioLargeIconWidth: string;
+  /**
+   * @type {string}
+   * @token Border-2
+   * @description 单选框大尺寸图标边框宽度
+   */
+  radioLargeIconBorderWidth: string;
+  /**
+   * @type {string}
+   * @token Size-3.5
+   * @description 单选框大尺寸图标内嵌字号
+   */
+  radioLargeIconInnerSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 单选框图标背景颜色
+   */
+  radioIconBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 单选框图标颜色
+   */
+  radioIconColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 单选框图标禁用时的背景颜色
+   */
+  radioIconDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 单选框图标禁用时的颜色
+   */
+  radioIconDisabledColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 单选框图标鼠标移入时的背景颜色
+   */
+  radioIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 单选框图标鼠标移入时的颜色
+   */
+  radioIconHoverColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 单选框图标undefined背景颜色
+   */
+  radioIconCheckedBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 单选框图标undefined颜色
+   */
+  radioIconCheckedColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 单选框图标undefined禁用时的背景颜色
+   */
+  radioIconCheckedDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 单选框图标undefined禁用时的颜色
+   */
+  radioIconCheckedDisabledColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 单选框图标undefinedundefined
+   */
+  radioIconWrapperFill: string;
+  /**
+   * @type {string}
+   * @token Size-3
+   * @description 单选框图标undefined内边距
+   */
+  radioIconWrapperPadding: string;
   /**
    * @type {string}
    * @token Neutral-text-5
@@ -122,4 +164,16 @@ export interface RadioTokens {
    * @description 单选框undefined字体字号
    */
   radioLabelFontSize: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 单选框小尺寸undefined字体字号
+   */
+  radioSmallLabelFontSize: string;
+  /**
+   * @type {string}
+   * @token 16/regular
+   * @description 单选框大尺寸undefined字体字号
+   */
+  radioLargeLabelFontSize: string;
 }
