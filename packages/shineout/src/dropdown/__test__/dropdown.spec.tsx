@@ -459,3 +459,97 @@ describe('Dropdown[Close]', () => {
     });
   });
 });
+describe('Dropdown[Hover]', () => {
+  test('should render when set hover', async () => {
+    const { container } = render(<Dropdown trigger='hover' placeholder='Hover me' data={menu} />);
+    const dropdown = container.querySelector(dropdownClassName)!;
+    const list = dropdown.querySelector(dropdownListClassName)!;
+    styleTest(list, 'display: none;');
+    fireEvent.mouseEnter(dropdown);
+    await waitFor(() => {
+      classTest(dropdown, dropdownOpen);
+      expect(list.getAttribute('style')).not.toBe('display: none;');
+    });
+  });
+});
+describe('Dropdown[position]', () => {
+  const DropdownPositionDemo: React.FC = () => (
+    <div style={{ display: 'inline-flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 12, padding: '0 120px' }}>
+        <Dropdown placeholder='Bottom left' position='bottom-left' data={menu} />
+        <Dropdown placeholder='Bottom' position='bottom' data={menu} />
+        <Dropdown placeholder='Bottom right' position='bottom-right' data={menu} />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Dropdown placeholder='Right Top' position='right-top' data={menu} />
+        <Dropdown placeholder='Left Top' position='left-top' data={menu} />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Dropdown placeholder='Right' position='right' data={menu} />
+        <Dropdown placeholder='Left' position='left' data={menu} />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Dropdown placeholder='Right Bottom' position='right-bottom' data={menu} />
+        <Dropdown placeholder='Left Bottom' position='left-bottom' data={menu} />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: 12 }}>
+        <Dropdown placeholder='Top Left' position='top-left' data={menu} />
+        <Dropdown placeholder='Top' position='top' data={menu} />
+        <Dropdown placeholder='Top right' position='top-right' data={menu} />
+      </div>
+    </div>
+  );
+  test('should render when set different position', () => {
+    const { container } = render(<DropdownPositionDemo />);
+    container.querySelectorAll(dropdownClassName).forEach((dropdown) => {
+      attributesTest(
+        dropdown,
+        dataPosition,
+        dropdown.textContent
+          ?.split('AmericaGermany')[0]
+          ?.toLocaleLowerCase()
+          .split(' ')
+          .join('-') as string,
+      );
+    });
+  });
+});
+describe('Dropdown[Button]', () => {
+  const DropdownButtonDemo: React.FC = () => (
+    <div>
+      <div className='type'>
+        <Dropdown data={menu} type={'primary'} placeholder={'primary'} />
+        <Dropdown data={menu} type={'secondary'} placeholder={'secondary'} />
+        <Dropdown data={menu} type={'danger'} placeholder={'danger'} />
+        <Dropdown data={menu} type={'warning'} placeholder={'warning'} />
+        <Dropdown data={menu} type={'success'} placeholder={'success'} />
+      </div>
+      <div className='other'>
+        <Dropdown data={menu} type={'primary'} placeholder={'Outline'} outline />
+        <Dropdown data={menu} type={'primary'} placeholder={'Text'} text />
+      </div>
+    </div>
+  );
+  test('should render when set button', () => {
+    const { container } = render(<DropdownButtonDemo />);
+    const type = container.querySelector('.type');
+    const dropdowns = type?.querySelectorAll(dropdownClassName);
+    dropdowns?.forEach((dropdown) => {
+      classContentTest(
+        dropdown.querySelector('button')!,
+        dropdown.textContent?.split('AmericaGermany')[0] as string,
+      );
+    });
+  });
+  test('should render when set different type', () => {
+    const { container } = render(<DropdownButtonDemo />);
+    const other = container.querySelector('.other');
+    const dropdowns = other?.querySelectorAll(dropdownClassName);
+    dropdowns?.forEach((dropdown) => {
+      classContentTest(
+        dropdown.querySelector('button')!,
+        dropdown.textContent?.split('AmericaGermany')[0].toLocaleLowerCase() as string,
+      );
+    });
+  });
+});
