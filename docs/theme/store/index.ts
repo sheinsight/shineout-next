@@ -28,12 +28,11 @@ interface State {
   env: Env;
 }
 
-const regex = /(?<=\/\w+\/component\/)\w+/;
-
+const regex = new RegExp(`component/(.*?)/`, 'i');
 const state: State = {
   menu: [],
   locales: 'cn',
-  doc: (window.location.hash.match(regex)?.[0] as Doc) || 'shineout',
+  doc: (window.location.hash.match(regex)?.[1] as Doc) || 'shineout',
   doctab: 'examples',
   rtl: false,
   env: 'SHEIN',
@@ -47,27 +46,29 @@ export const dispatch = {
 
     const context = require(`chunk/${proxyState.doc}/index.ts`);
     const files = context.files as string[];
-    files.forEach((file) => {
-      const menu: Menu = {
-        name: '',
-        title: {
-          en: '',
-          cn: '',
-        },
-      };
-      const component = require(`chunk/${proxyState.doc}/${file}`);
-      const group = menus.find((item) => item.group === component.header.group);
-      if (!group) {
-        menus.push({
-          group: component.header.group,
-          components: [],
-        });
-      }
-      menu.group = component.header.group;
-      menu.name = component.header.name;
-      menu.title = component.title;
-      menus.find((item) => item.group === component.header.group)?.components.push(menu);
-    });
+    files
+      .filter((f) => f !== 'api')
+      .forEach((file) => {
+        const menu: Menu = {
+          name: '',
+          title: {
+            en: '',
+            cn: '',
+          },
+        };
+        const component = require(`chunk/${proxyState.doc}/${file}`);
+        const group = menus.find((item) => item.group === component.header.group);
+        if (!group) {
+          menus.push({
+            group: component.header.group,
+            components: [],
+          });
+        }
+        menu.group = component.header.group;
+        menu.name = component.header.name;
+        menu.title = component.title;
+        menus.find((item) => item.group === component.header.group)?.components.push(menu);
+      });
     proxyState.menu = menus;
   },
   setLocales: (locales: Locales) => {

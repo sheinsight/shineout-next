@@ -5,4 +5,7 @@ export interface BaseInputProps extends Omit<UnStyledInputProps, 'jssStyle'> {
   value?: string;
 }
 
+/**
+ * @title Input
+ */
 export type InputProps = GetWithFieldProps<BaseInputProps, BaseInputProps['value']>;

@@ -27,6 +27,7 @@ class Item extends React.PureComponent<ItemProps> {
   handleClick(e: React.MouseEvent) {
     const data = (this.props.data || {}) as DropdownNode;
     this.props.handleBlur();
+    e.stopPropagation();
     if (data.disabled) {
       e.preventDefault();
       return;

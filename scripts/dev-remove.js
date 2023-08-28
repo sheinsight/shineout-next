@@ -13,10 +13,10 @@ const shineoutStyleDir = path.join(__dirname, '../packages', 'shineout-style', '
 const themeDir = path.join(__dirname, '../packages', 'theme', 'src');
 
 const whiteList = {
-  shineout: ['@types', 'hooks', 'index.ts', 'tests', 'type.ts'],
-  'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts', 'cssvar'],
-  base: ['types', 'icons', 'index.ts', 'common'],
-  theme: ['index.ts', 'config.ts', 'utils', 'token'],
+  shineout: ['@types', 'hooks', 'index.ts', 'tests', 'type.ts', '.DS_Store'],
+  'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts', 'cssvar', '.DS_Store'],
+  base: ['types', 'icons', 'index.ts', 'common', '.DS_Store'],
+  theme: ['index.ts', 'config.ts', 'utils', 'token', '.DS_Store'],
 };
 
 if (!component) {
