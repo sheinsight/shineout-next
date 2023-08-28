@@ -1,11 +1,12 @@
 import React from 'react';
 
-function icon(paths: string[]) {
+function icon(paths: (string | JSX.Element)[]) {
   return (
     <svg viewBox='0 0 24 24' focusable='false' fill='currentColor' aria-hidden='true'>
-      {paths.map((p, i) => (
-        <path key={i} d={p} />
-      ))}
+      {paths.map((p, i) => {
+        if (typeof p === 'string') return <path key={i} d={p} />;
+        return p;
+      })}
     </svg>
   );
 }
@@ -74,9 +75,30 @@ const alertClose = [
   'M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z',
 ];
 
+const radioChecked = [
+  <path
+    key={'radioChecked'}
+    fillRule='evenodd'
+    clipRule='evenodd'
+    d='M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z'
+  />,
+];
+
+const radioUnChecked = [
+  <path
+    key={'radioUnChecked'}
+    fillRule='evenodd'
+    clipRule='evenodd'
+    d='M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z'
+  />,
+];
+
 const Icons = {
   AngleLeft: icon(angleLeft),
   AngleRight: icon(angleRight),
+
+  RadioUnChecked: icon(radioUnChecked),
+  RadioChecked: icon(radioChecked),
 
   Show: icon(show),
   Hide: icon(hide),
