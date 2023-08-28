@@ -22,4 +22,9 @@ export interface BasePopupProps {
   mouseLeaveDelay?: number;
   autoMode?: 'menu' | 'popover';
   priorityDirection?: 'vertical' | 'horizontal' | 'auto';
+  targetEvents?: {
+    onClick?: (e: { target: EventTarget | null }) => void;
+    onMouseEnter?: (e: { target: EventTarget | null }) => void;
+    onMouseLeave?: (e: { target: EventTarget | null }) => void;
+  };
 }

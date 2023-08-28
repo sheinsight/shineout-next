@@ -1,20 +1,63 @@
-import token from '@sheinx/theme';
+// import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import token from '@sheinx/theme';
 
-export type PopoverClass = 'wrapper' | 'wrapperOpen' | 'arrow' | 'content' | 'text';
+export type TooltipClass = 'wrapper' | 'wrapperOpen' | 'content' | 'target';
 
 const arrowGap = 12;
 const arrowMargin = '8px';
 
-const popoverStyle: JsStyles<PopoverClass> = {
+const animation = {
+  '@keyframes fadeIn': {
+    '0%': {
+      opacity: '0',
+    },
+    '100%': {
+      opacity: '1',
+    },
+  },
+  '@keyframes moveRight': {
+    '0%': {
+      marginLeft: '0',
+    },
+    '100%': {
+      marginLeft: '9px',
+    },
+  },
+  '@keyframes moveLeft': {
+    '0%': {
+      marginLeft: '0',
+    },
+    '100%': {
+      marginLeft: '-9px',
+    },
+  },
+  '@keyframes moveTop': {
+    '0%': {
+      marginTop: '0',
+    },
+    '100%': {
+      marginTop: '-9px',
+    },
+  },
+  '@keyframes moveBottom': {
+    '0%': {
+      marginTop: '0',
+    },
+    '100%': {
+      marginTop: '9px',
+    },
+  },
+};
+const tooltipStyle: JsStyles<TooltipClass> = {
+  ...animation,
   wrapper: {
     display: 'none',
     cursor: 'pointer',
     position: 'absolute',
-    boxShadow: token.popoverShadow,
-    backgroundColor: token.popoverBackgroundColor,
-    borderRadius: token.popoverRadius,
-    border: `1px solid ${token.popoverBorderColor}`,
+    backgroundColor: token.tooltipBackgroundColor,
+    borderRadius: token.tooltipBorderRadius,
+    // border: `1px solid ${token.tooltipBorderColor}`,
     '&::before': {
       'z-index': 1,
       position: 'absolute',
@@ -69,7 +112,7 @@ const popoverStyle: JsStyles<PopoverClass> = {
     '&[data-soui-position^="left"]': {
       marginLeft: (arrowGap - 2) * -1,
       '&::before': {
-        right: token.popoverBorderWidth,
+        right: 0,
         transform: 'translate(50%, 0) rotate(45deg)',
         top: '0',
         bottom: '0',
@@ -108,46 +151,30 @@ const popoverStyle: JsStyles<PopoverClass> = {
     '&&[data-soui-position$="-right"]::before': { right: arrowMargin, left: 'auto' },
     '&&[data-soui-position$="-top"]::before': { top: arrowMargin, bottom: 'auto' },
     '&&[data-soui-position$="-bottom"]::before': { bottom: arrowMargin, top: 'auto' },
-
-    '&[data-soui-type="danger"]': {
-      borderColor: token.popoverDangerBorderColor,
-      backgroundColor: token.popoverDangerBackgroundColor,
-    },
-    '&[data-soui-type="info"]': {
-      borderColor: token.popoverInfoBorderColor,
-      backgroundColor: token.popoverInfoBackgroundColor,
-    },
-    '&[data-soui-type="warning"]': {
-      borderColor: token.popoverWarningBorderColor,
-      backgroundColor: token.popoverWarningBackgroundColor,
-    },
-    '&[data-soui-type="success"]': {
-      borderColor: token.popoverSuccessBorderColor,
-      backgroundColor: token.popoverSuccessBackgroundColor,
-    },
-    '&[data-soui-type="error"]': {
-      borderColor: token.popoverErrorBorderColor,
-      backgroundColor: token.popoverErrorBackgroundColor,
-      '& $content': { color: token.popoverErrorFontColor },
-    },
   },
   wrapperOpen: {
     display: 'block',
+    '&[data-soui-position^="bottom"]': {
+      animation: '$fadeIn .3s ease, $moveBottom .3s cubic-bezier(.71,1.7,.77,1.24);',
+    },
+    '&[data-soui-position^="top"]': {
+      animation: '$fadeIn .3s ease, $moveTop .3s cubic-bezier(.71,1.7,.77,1.24);',
+    },
+    '&[data-soui-position^="left"]': {
+      animation: '$fadeIn .3s ease, $moveLeft .3s cubic-bezier(.71,1.7,.77,1.24);',
+    },
+    '&[data-soui-position^="right"]': {
+      animation: '$fadeIn .3s ease, $moveRight .3s cubic-bezier(.71,1.7,.77,1.24);',
+    },
   },
-  arrow: {},
-  content: {
-    position: 'relative',
-    zIndex: 2,
-    fontSize: token.popoverFontSize,
-    color: token.popoverFontColor,
-    background: 'inherit',
-    borderRadius: 'inherit',
-  },
-  text: {
+  target: {
     display: 'inline-block',
-    maxWidth: '320px',
-    padding: `${token.popoverPaddingY} ${token.popoverPaddingX}`,
+  },
+  content: {
+    color: token.tooltipColor,
+    padding: `${token.tooltipPaddingY} ${token.tooltipPaddingX}`,
+    fontSize: token.tooltipFontSize,
   },
 };
 
-export default popoverStyle;
+export default tooltipStyle;

@@ -40,6 +40,9 @@ import { TagTokens } from './tag/type';
 import Textarea from './textarea';
 import { TextareaTokens } from './textarea/type';
 
+import Tooltip from './tooltip';
+import { TooltipTokens } from './tooltip/type';
+
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CheckboxTokens &
@@ -53,7 +56,8 @@ export type ThemeTokens = AlertTokens &
   SpinTokens &
   SwitchTokens &
   TagTokens &
-  TextareaTokens;
+  TextareaTokens &
+  TooltipTokens;
 
 const Token: ThemeTokens = {
   ...Alert,
@@ -70,6 +74,7 @@ const Token: ThemeTokens = {
   ...Switch,
   ...Tag,
   ...Textarea,
+  ...Tooltip,
 };
 
 export default Token;

@@ -11,6 +11,7 @@ const usePopup = (props: BasePopupProps) => {
     mouseEnterDelay = 0,
     autoMode = 'popover',
     mouseLeaveDelay,
+    targetEvents,
   } = props;
   const [openState, setOpenState] = useState(false);
   const { current: context } = useRef({
@@ -54,6 +55,7 @@ const usePopup = (props: BasePopupProps) => {
   };
 
   const handleClickToggle = usePersistFn((e: { target: EventTarget | null }) => {
+    targetEvents?.onClick?.(e);
     if (disabled) return;
     if (trigger !== 'click') return;
     if (popupRef.current?.contains(e.target as Node)) return;
@@ -74,12 +76,14 @@ const usePopup = (props: BasePopupProps) => {
     }
   };
 
-  const handleMouseEnter = usePersistFn(() => {
+  const handleMouseEnter = usePersistFn((e: { target: EventTarget | null }) => {
+    targetEvents?.onMouseEnter?.(e);
     if (trigger !== 'hover') return;
     handleHoverToggle(true);
   });
 
   const handleMouseLeave = usePersistFn((e: { target: EventTarget | null }) => {
+    targetEvents?.onMouseLeave?.(e);
     if (trigger !== 'hover') return;
     // @ts-ignore
     if (e.relatedTarget instanceof HTMLElement && popupRef.current?.contains(e.relatedTarget)) {
