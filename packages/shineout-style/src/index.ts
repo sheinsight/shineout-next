@@ -15,6 +15,7 @@ export * from './switch';
 export * from './tag';
 export * from './textarea';
 export * from './tooltip';
+export * from './tree';
 
 export { styled, StyleProvider } from './jss-style';
 export * as mixins from './mixin';
