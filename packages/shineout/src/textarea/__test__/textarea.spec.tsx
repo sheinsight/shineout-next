@@ -10,6 +10,7 @@ import {
   snapshotTest,
   styleTest,
   textContentTest,
+  displayTest,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 import TextareaBase from '../__example__/01-base';
@@ -33,6 +34,7 @@ const textareaNoBorderClassName = `${SO_PREFIX}-wrapperNoBorder-0-2-9`;
 afterEach(cleanup);
 describe('Textarea[Base]', () => {
   mountTest(Textarea);
+  displayTest(Textarea, 'ShineoutTextarea');
   snapshotTest(<TextareaBase />);
   snapshotTest(<TextareaSize />, 'about size');
   snapshotTest(<TextareaAutosize />, 'about autosize');
