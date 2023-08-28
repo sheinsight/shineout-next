@@ -1,3 +1,6 @@
+import Alert from './alert';
+import { AlertTokens } from './alert/type';
+
 import Button from './button';
 import { ButtonTokens } from './button/type';
 
@@ -40,7 +43,8 @@ import { TextareaTokens } from './textarea/type';
 import Tooltip from './tooltip';
 import { TooltipTokens } from './tooltip/type';
 
-export type ThemeTokens = ButtonTokens &
+export type ThemeTokens = AlertTokens &
+  ButtonTokens &
   CheckboxTokens &
   CommonTokens &
   DropdownTokens &
@@ -56,6 +60,7 @@ export type ThemeTokens = ButtonTokens &
   TooltipTokens;
 
 const Token: ThemeTokens = {
+  ...Alert,
   ...Button,
   ...Checkbox,
   ...Common,
