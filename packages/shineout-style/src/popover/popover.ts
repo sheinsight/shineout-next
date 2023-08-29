@@ -1,7 +1,15 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 
-export type PopoverClass = 'wrapper' | 'wrapperOpen' | 'arrow' | 'content' | 'text';
+export type PopoverClass =
+  | 'wrapper'
+  | 'wrapperOpen'
+  | 'arrow'
+  | 'content'
+  | 'text'
+  | 'confirm'
+  | 'mention'
+  | 'footer';
 
 const arrowGap = 12;
 const arrowMargin = '8px';
@@ -147,6 +155,21 @@ const popoverStyle: JsStyles<PopoverClass> = {
     display: 'inline-block',
     maxWidth: '320px',
     padding: `${token.popoverPaddingY} ${token.popoverPaddingX}`,
+  },
+
+  confirm: {
+    padding: `${token.popoverConfirmPaddingY} ${token.popoverConfirmPaddingX}`,
+  },
+  mention: {
+    '$confirm &': {
+      backgroundColor: 'transparent',
+      border: 0,
+      padding: 0,
+      marginBottom: token.popoverConfirmPaddingY,
+    },
+  },
+  footer: {
+    textAlign: 'right',
   },
 };
 

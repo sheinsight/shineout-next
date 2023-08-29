@@ -14,12 +14,7 @@ export default () => {
     <div>
       <button type={'button'}>
         哈哈哈哈哈
-        <Popover
-          type={'danger'}
-          visible
-          onVisibleChange={console.log}
-          jssStyle={{ popover: popoverStyle }}
-        >
+        <Popover type={'danger'} onVisibleChange={console.log} jssStyle={{ popover: popoverStyle }}>
           嘿嘿嘿
         </Popover>
       </button>

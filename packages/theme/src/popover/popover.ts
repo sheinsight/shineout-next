@@ -24,6 +24,9 @@ const popoverTokens: PopoverTokens = {
   popoverErrorFontColor: 'Danger-7',
   popoverErrorBackgroundColor: 'Danger-1',
   popoverErrorBorderColor: 'Danger-1',
+  popoverConfirmPaddingX: 'Padding-16',
+  popoverConfirmPaddingY: 'Padding-16',
+  popoverConfirmBackgroundColor: 'transparent',
 };
 
 export default popoverTokens;

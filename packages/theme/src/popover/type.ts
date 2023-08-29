@@ -122,4 +122,22 @@ export interface PopoverTokens {
    * @description xxx错误状态的边框颜色
    */
   popoverErrorBorderColor: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description xxxundefined内边距（水平方向）
+   */
+  popoverConfirmPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description xxxundefined内边距（垂直方向）
+   */
+  popoverConfirmPaddingY: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description xxxundefined背景颜色
+   */
+  popoverConfirmBackgroundColor: string;
 }

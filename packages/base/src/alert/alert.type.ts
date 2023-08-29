@@ -1,5 +1,6 @@
 // import React from 'react';
 import { CommonType } from '../common/type';
+
 // import { BaseAlertProps } from '@sheinx/hooks';
 
 export interface AlertClasses {
@@ -21,7 +22,7 @@ export type AlertType = 'success' | 'info' | 'warning' | 'danger';
 
 export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
-    alert: AlertClasses;
+    alert?: AlertClasses;
   };
   type?: AlertType;
   closeItem?: React.ReactNode;

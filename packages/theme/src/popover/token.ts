@@ -52,6 +52,11 @@ const popoverTokenValue = {
     shadow: '',
     border: { color: 'Danger-1' },
   },
+  confirm: {
+    font: { size: '' },
+    padding: { x: 'Padding-16', y: 'Padding-16' },
+    background: { color: 'transparent' },
+  },
 };
 
 const popoverTokenExtraValue = {};
