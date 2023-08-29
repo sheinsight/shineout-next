@@ -46,6 +46,10 @@ export function styleTest(element: Element, style: string) {
   attributesTest(element, 'style', style);
 }
 
+export function styleContentTest(element: Element, name: string, bool: boolean = true) {
+  expect(element.getAttribute('style')?.includes(name)).toBe(bool);
+}
+
 export interface StyleProps {
   [key: string]: string;
 }
@@ -103,3 +107,10 @@ export function displayTest(Component: React.FC, displayName: string) {
     expect(Component.displayName).toBe(displayName);
   });
 }
+
+export const delay: (time: number) => Promise<void> = (time) =>
+  new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
