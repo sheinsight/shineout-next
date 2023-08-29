@@ -464,7 +464,7 @@ describe('Dropdown[Hover]', () => {
     const { container } = render(<Dropdown trigger='hover' placeholder='Hover me' data={menu} />);
     const dropdown = container.querySelector(dropdownClassName)!;
     const list = dropdown.querySelector(dropdownListClassName)!;
-    styleTest(list, 'display: none;');
+    styleTest(list, closeStyle);
     fireEvent.mouseEnter(dropdown);
     await waitFor(() => {
       classTest(dropdown, dropdownOpen);
@@ -505,11 +505,7 @@ describe('Dropdown[position]', () => {
       attributesTest(
         dropdown,
         dataPosition,
-        dropdown.textContent
-          ?.split('AmericaGermany')[0]
-          ?.toLocaleLowerCase()
-          .split(' ')
-          .join('-') as string,
+        textSplit(dropdown)?.toLocaleLowerCase().split(' ').join('-') as string,
       );
     });
   });
@@ -535,10 +531,7 @@ describe('Dropdown[Button]', () => {
     const type = container.querySelector('.type');
     const dropdowns = type?.querySelectorAll(dropdownClassName);
     dropdowns?.forEach((dropdown) => {
-      classContentTest(
-        dropdown.querySelector('button')!,
-        dropdown.textContent?.split('AmericaGermany')[0] as string,
-      );
+      classContentTest(dropdown.querySelector('button')!, textSplit(dropdown) as string);
     });
   });
   test('should render when set different type', () => {
@@ -548,8 +541,228 @@ describe('Dropdown[Button]', () => {
     dropdowns?.forEach((dropdown) => {
       classContentTest(
         dropdown.querySelector('button')!,
-        dropdown.textContent?.split('AmericaGermany')[0].toLocaleLowerCase() as string,
+        dropdown.textContent?.split('AmericaGermany')[0] as string,
       );
+    });
+  });
+});
+describe('Dropdown[Button]', () => {
+  const DropdownButtonDemo: React.FC = () => (
+    <div>
+      <div className='type'>
+        <Dropdown data={menu} type={'primary'} placeholder={'primary'} />
+        <Dropdown data={menu} type={'secondary'} placeholder={'secondary'} />
+        <Dropdown data={menu} type={'danger'} placeholder={'danger'} />
+        <Dropdown data={menu} type={'warning'} placeholder={'warning'} />
+        <Dropdown data={menu} type={'success'} placeholder={'success'} />
+      </div>
+      <div className='other'>
+        <Dropdown data={menu} type={'primary'} placeholder={'Outline'} outline />
+        <Dropdown data={menu} type={'primary'} placeholder={'Text'} text />
+      </div>
+    </div>
+  );
+  test('should render when set button', () => {
+    const { container } = render(<DropdownButtonDemo />);
+    const type = container.querySelector('.type');
+    const dropdowns = type?.querySelectorAll(dropdownClassName);
+    dropdowns?.forEach((dropdown) => {
+      classContentTest(dropdown.querySelector('button')!, textSplit(dropdown) as string);
+    });
+  });
+  test('should render when set different type', () => {
+    const { container } = render(<DropdownButtonDemo />);
+    const other = container.querySelector('.other');
+    const dropdowns = other?.querySelectorAll(dropdownClassName);
+    dropdowns?.forEach((dropdown) => {
+      classContentTest(
+        dropdown.querySelector('button')!,
+        textSplit(dropdown)?.toLocaleLowerCase() as string,
+      );
+    });
+  });
+});
+describe('Dropdown[Children]', () => {
+  test('should render when set group in children', () => {
+    const { container } = render(<DropdownGroup />);
+    const list = container.querySelector(dropdownListClassName)!;
+    const groups = list.querySelectorAll(dropdownGroupClassName)!;
+    const items = list.querySelectorAll('a')!;
+    expect(groups.length).toBe(items.length / 2);
+    for (let i = 0; i < groups.length; i++) {
+      textContentTest(groups[i], 'group' + i);
+      expect(groups[i]).toBeInTheDocument();
+      expect(items[i * 2]).toBeInTheDocument();
+      expect(items[i * 2 + 1]).toBeInTheDocument();
+    }
+  });
+  test('should render when set divider in children', () => {
+    const { container } = render(<DropdownDivider />);
+    const list = container.querySelector(dropdownListClassName)!;
+    expect(list.querySelector(dropdownDividerClassName)).toBeInTheDocument();
+  });
+});
+describe('Dropdown[Columns]', () => {
+  const width = 500;
+  const columns = 5;
+  const DropdownColumsDemo = ({ c, w }: { c?: number; w?: number }) => {
+    const menu = new Array(30).fill(null).map((_, index) => ({
+      id: `${index}`,
+      content: `item${index}`,
+    }));
+    return <Dropdown placeholder='Tiling Menu' width={w} columns={c} data={menu} />;
+  };
+  test('should render when set columns', () => {
+    const { container } = render(<DropdownColumsDemo c={columns} w={width} />);
+    const list = container.querySelector(dropdownListClassName)!;
+    styleContentTest(list, `width: ${width}px; grid-template-columns: repeat(${columns}, 1fr);`);
+  });
+  test('should render when set columns without width', () => {
+    const { container } = render(<DropdownColumsDemo c={columns} />);
+    const list = container.querySelector(dropdownListClassName)!;
+    styleContentTest(list, `grid-template-columns: repeat(${columns}, 1fr);`);
+  });
+});
+describe('Dropdown[Icon]', () => {
+  test('should render when set icon', () => {
+    const { container } = render(<DropdownIcon />);
+    const list = container.querySelector(dropdownListClassName)!;
+    list.querySelectorAll(dropdownItemClassName).forEach((item) => {
+      classLengthTest(item, 'i', 1);
+      classTest(item.querySelector('i')!, 'fa-user-o');
+    });
+  });
+});
+describe('Dropdown[Size]', () => {
+  const buttonClassNames = [buttonSmallClassName, '', buttonLargeClassName];
+  const listClassNames = [dropdownListSmallClassName, '', dropdownListLargeClassName];
+  test('should render when set size', () => {
+    const { container } = render(<DropdownSize />);
+    container.querySelectorAll('button').forEach((button, index) => {
+      if (index === 1) return;
+      classTest(button, buttonClassNames[index]);
+    });
+    container.querySelectorAll(dropdownListClassName).forEach((list, index) => {
+      if (index === 1) return;
+      classTest(list, listClassNames[index]);
+    });
+  });
+});
+describe('Dropdown[Split]', () => {
+  test('should render in group', () => {
+    const { container } = render(<DropdownSplit />);
+    container.querySelectorAll(dropdownClassNameOtherClassName).forEach((item) => {
+      classTest(item.querySelector('button')!, dropdownSplitButtonClassName);
+    });
+  });
+});
+describe('Dropdown[absolute]', () => {
+  test('should render when set absolute', async () => {
+    jest.useRealTimers();
+    const { container, rerender } = render(
+      <Dropdown type={'primary'} placeholder='Absolute' data={menu} />,
+    );
+    const dropdown = container.querySelector(dropdownClassName)!;
+    expect(dropdown.querySelector(dropdownListClassName)).toBeTruthy();
+    rerender(<Dropdown type={'primary'} absolute placeholder='Absolute' data={menu} />);
+    expect(dropdown.querySelector(dropdownListClassName)).toBeFalsy();
+    expect(document.querySelector(dropdownListClassName)).toBeTruthy();
+    styleTest(document.querySelector(dropdownListClassName)!, 'display: none;');
+    fireEvent.click(dropdown);
+    await waitFor(async () => {
+      await delay(200);
+      styleTest(
+        document.querySelector(dropdownListClassName)!,
+        'position: absolute; min-width: 0; left: 0px; top: 2px;',
+      );
+    });
+  });
+});
+describe('Dropdown[Animation]', () => {
+  // TODO: Animation属性遗漏
+});
+describe('Dropdown[OnClick]', () => {
+  test('should render when set onClick', async () => {
+    const clickFn = jest.fn();
+    const { container } = render(<Dropdown onClick={clickFn} data={menu} placeholder='Dropdown' />);
+    const dropdown = container.querySelector(dropdownClassName)!;
+    fireEvent.click(dropdown);
+    await waitFor(async () => {
+      await delay(200);
+      fireEvent.click(dropdown.querySelectorAll('a')[0]!);
+      expect(clickFn.mock.calls.length).toBe(1);
+    });
+  });
+  test('should render when have onClick in data', async () => {
+    const clickFn = jest.fn();
+    const clickChildrenFn = jest.fn();
+    const menu: DropdownItem[] = [
+      { content: 'America', onClick: clickChildrenFn },
+      { content: 'Germany' },
+    ];
+    const { container } = render(<Dropdown onClick={clickFn} data={menu} placeholder='Dropdown' />);
+    const dropdown = container.querySelector(dropdownClassName)!;
+    fireEvent.click(dropdown);
+    await waitFor(async () => {
+      await delay(200);
+      fireEvent.click(dropdown.querySelectorAll('a')[0]!);
+      expect(clickFn.mock.calls.length).toBe(0);
+      expect(clickChildrenFn.mock.calls.length).toBe(1);
+    });
+  });
+});
+describe('Dropdown[renderItem]', () => {
+  const dropData = [
+    {
+      id: 0,
+      content: 'a',
+    },
+    {
+      id: 1,
+      content: 'b',
+    },
+  ];
+  test('should render when set renderItem is string', () => {
+    const { container } = render(
+      <Dropdown renderItem='id' data={dropData} placeholder='Dropdown' />,
+    );
+    container.querySelectorAll('a').forEach((item, index) => {
+      textContentTest(item, String(dropData[index].id));
+    });
+  });
+  test('should render when set renderItem is function', () => {
+    const { container } = render(
+      <Dropdown renderItem={(d) => `id ${d.id}`} data={dropData} placeholder='Dropdown' />,
+    );
+    container.querySelectorAll('a').forEach((item, index) => {
+      textContentTest(item, 'id ' + dropData[index].id);
+    });
+  });
+});
+describe('Dropdown[Open]', () => {
+  test('should render when set open', () => {
+    const { container } = render(<Dropdown open data={menu} placeholder='Dropdown' />);
+    const dropdown = container.querySelector(dropdownClassName)!;
+    const list = dropdown.querySelector(dropdownListClassName)!;
+    classTest(dropdown, dropdownOpenClassName);
+    classTest(list, dropdownListShowClassName);
+    styleTest(list, 'display: block;');
+  });
+});
+describe('Dropdown[OnCollapse]', () => {
+  test('should render when set onCollapes', async () => {
+    const collapseFn = jest.fn();
+    const { container } = render(
+      <Dropdown open data={menu} placeholder='Dropdown' onCollapse={collapseFn} />,
+    );
+    const dropdown = container.querySelector(dropdownClassName)!;
+    fireEvent.click(dropdown);
+    await waitFor(async () => {
+      await delay(200);
+      expect(collapseFn.mock.calls.length).toBe(1);
+      fireEvent.click(dropdown);
+      await delay(200);
+      expect(collapseFn.mock.calls.length).toBe(2);
     });
   });
 });
