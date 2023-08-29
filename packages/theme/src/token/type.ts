@@ -2,297 +2,73 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#F1FAEB'
+   * @default '#E9F5FE'
    * @description 浅色背景
    */
-  'Success-1': string;
+  'Brand-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#DFF6C3'
+   * @default '#BDE2FF'
    * @description 聚焦
    */
-  'Success-2': string;
+  'Brand-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#C2E999'
+   * @default '#001D61'
+   * @description -10
+   */
+  'Brand-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#94CDFF'
    * @description 禁用
    */
-  'Success-3': string;
+  'Brand-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#90D959'
+   * @default '#6BB5FF'
+   * @description -4
+   */
+  'Brand-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#429AFF'
    * @description 悬浮
    */
-  'Success-4': string;
+  'Brand-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#74D13D'
+   * @default '#197AFA'
    * @description 常规
    */
-  'Success-5': string;
+  'Brand-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#62B237'
+   * @default '#0B5BD4'
    * @description 点击
    */
-  'Success-6': string;
+  'Brand-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FFF6EB'
-   * @description 浅色背景
+   * @default '#0040AD'
+   * @description -8
    */
-  'Warning-1': string;
+  'Brand-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDE5B5'
-   * @description 聚焦
+   * @default '#002D87'
+   * @description -9
    */
-  'Warning-2': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FDD18B'
-   * @description 禁用
-   */
-  'Warning-3': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FDA344'
-   * @description 悬浮
-   */
-  'Warning-4': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#F7862A'
-   * @description 常规
-   */
-  'Warning-5': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#CC641F'
-   * @description 点击
-   */
-  'Warning-6': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FFEDED'
-   * @description 浅色背景
-   */
-  'Danger-1': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FFD7CF'
-   * @description 聚焦
-   */
-  'Danger-2': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FFBBB1'
-   * @description 禁用
-   */
-  'Danger-3': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FF7A71'
-   * @description 悬浮
-   */
-  'Danger-4': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FF7A71'
-   * @description 常规
-   */
-  'Danger-5': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FF4D50'
-   * @description 点击
-   */
-  'Danger-6': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FFF0E5'
-   * @description 浅色背景
-   */
-  'Tangerine-1': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FED4B9'
-   * @description 聚焦
-   */
-  'Tangerine-2': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FDB58F'
-   * @description 禁用
-   */
-  'Tangerine-3': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FD7445'
-   * @description 悬浮
-   */
-  'Tangerine-4': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#F75229'
-   * @description 常规
-   */
-  'Tangerine-5': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#CD3A1D'
-   * @description 点击
-   */
-  'Tangerine-6': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#FCF1F6'
-   * @description 浅色背景
-   */
-  'Magenta-1': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#F8D8E6'
-   * @description 聚焦
-   */
-  'Magenta-2': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#F3B1D0'
-   * @description 禁用
-   */
-  'Magenta-3': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#E564A8'
-   * @description 悬浮
-   */
-  'Magenta-4': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#D84293'
-   * @description 常规
-   */
-  'Magenta-5': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#B4317D'
-   * @description 点击
-   */
-  'Magenta-6': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#F8EEFE'
-   * @description 浅色背景
-   */
-  'Purple-1': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#EDD6FE'
-   * @description 聚焦
-   */
-  'Purple-2': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#CFA3F3'
-   * @description 禁用
-   */
-  'Purple-3': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#8B48D5'
-   * @description 悬浮
-   */
-  'Purple-4': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#8B48D5'
-   * @description 常规
-   */
-  'Purple-5': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#6C23C6'
-   * @description 点击
-   */
-  'Purple-6': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#EEF2FE'
-   * @description 浅色背景
-   */
-  'Roxo-azulado-1': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#D7DDFF'
-   * @description 聚焦
-   */
-  'Roxo-azulado-2': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#ABB4FB'
-   * @description 禁用
-   */
-  'Roxo-azulado-3': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#6972F6'
-   * @description 悬浮
-   */
-  'Roxo-azulado-4': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#4446F7'
-   * @description 常规
-   */
-  'Roxo-azulado-5': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#3431CD'
-   * @description 点击
-   */
-  'Roxo-azulado-6': string;
+  'Brand-9': string;
   /**
    * @type {string}
    * @categoty color
@@ -300,6 +76,13 @@ export interface Tokens {
    * @description 浅色背景
    */
   'Cyan-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#051F24'
+   * @description -10
+   */
+  'Cyan-10': string;
   /**
    * @type {string}
    * @categoty color
@@ -317,150 +100,465 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#54D4CC'
+   * @description -4
+   */
+  'Cyan-4': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#34C6C1'
    * @description 悬浮
    */
-  'Cyan-4': string;
+  'Cyan-5': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#1DB8B9'
    * @description 常规
    */
-  'Cyan-5': string;
+  'Cyan-6': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#158B90'
    * @description 点击
    */
-  'Cyan-6': string;
+  'Cyan-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#0D6169'
+   * @description -8
+   */
+  'Cyan-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#093D45'
+   * @description -9
+   */
+  'Cyan-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FFEDED'
+   * @description 浅色背景
+   */
+  'Danger-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#46080D'
+   * @description -10
+   */
+  'Danger-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FFD7CF'
+   * @description 聚焦
+   */
+  'Danger-2': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FFBBB1'
+   * @description 禁用
+   */
+  'Danger-3': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FF9C91'
+   * @description -4
+   */
+  'Danger-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FF7A71'
+   * @description 悬浮
+   */
+  'Danger-5': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FF4D50'
+   * @description 常规
+   */
+  'Danger-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#CC3D3A'
+   * @description 点击
+   */
+  'Danger-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#A62B29'
+   * @description -8
+   */
+  'Danger-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#801B1C'
+   * @description -9
+   */
+  'Danger-9': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#EEF2FE'
-   * @description
+   * @description 浅色背景
    */
   'Indigo-1': string;
   /**
    * @type {string}
    * @categoty color
+   * @default '#170F69'
+   * @description -10
+   */
+  'Indigo-10': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#D7DDFF'
-   * @description
+   * @description 聚焦
    */
   'Indigo-2': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#ABB4FB'
-   * @description
+   * @description 禁用
    */
   'Indigo-3': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#848FF9'
-   * @description
+   * @description -4
    */
   'Indigo-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#3431CD'
-   * @description
+   * @default '#6972F6'
+   * @description 悬浮
    */
   'Indigo-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#6972F6'
-   * @description
+   * @default '#4446F7'
+   * @description 常规
    */
   'Indigo-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FBFFE4'
-   * @description 浅色背景
-   */
-  'Neon-1': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#F0FFB3'
-   * @description 聚焦
-   */
-  'Neon-2': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#E4FF8B'
-   * @description 禁用
-   */
-  'Neon-3': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#AEE341'
-   * @description 悬浮
-   */
-  'Neon-4': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#92D42C'
-   * @description 常规
-   */
-  'Neon-5': string;
-  /**
-   * @type {string}
-   * @categoty color
-   * @default '#6EAA21'
+   * @default '#3431CD'
    * @description 点击
    */
-  'Neon-6': string;
+  'Indigo-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDFFE4'
+   * @default '#2822A6'
+   * @description -8
+   */
+  'Indigo-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#1E1782'
+   * @description -9
+   */
+  'Indigo-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FEFFE8'
    * @description 浅色背景
    */
   'Lemon-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDFFB4'
+   * @default '#5D4813'
+   * @description -10
+   */
+  'Lemon-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FFFFC0'
    * @description 聚焦
    */
   'Lemon-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FCFC8B'
+   * @default '#FEFB9D'
    * @description 禁用
    */
   'Lemon-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FCEB49'
-   * @description 悬浮
+   * @default '#FDF57D'
+   * @description -4
    */
   'Lemon-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#F6D833'
-   * @description 常规
+   * @default '#FCED61'
+   * @description 悬浮
    */
   'Lemon-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#D9B62A'
-   * @description 点击
+   * @default '#F5DC4D'
+   * @description 常规
    */
   'Lemon-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#CEB23C'
+   * @description 点击
+   */
+  'Lemon-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#A88C2D'
+   * @description -8
+   */
+  'Lemon-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#826920'
+   * @description -9
+   */
+  'Lemon-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FCF1F6'
+   * @description 浅色背景
+   */
+  'Magenta-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#4B0C37'
+   * @description -10
+   */
+  'Magenta-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#F8D8E6'
+   * @description 聚焦
+   */
+  'Magenta-2': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#F3B1D0'
+   * @description 禁用
+   */
+  'Magenta-3': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#EF8BBE'
+   * @description -4
+   */
+  'Magenta-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#E564A8'
+   * @description 悬浮
+   */
+  'Magenta-5': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#D84293'
+   * @description 常规
+   */
+  'Magenta-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#B4317D'
+   * @description 点击
+   */
+  'Magenta-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#912266'
+   * @description -8
+   */
+  'Magenta-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#6E164E'
+   * @description -9
+   */
+  'Magenta-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FDFFE8'
+   * @description 浅色背景
+   */
+  'Neon-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#2B3F0D'
+   * @description -10
+   */
+  'Neon-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#F6FFC0'
+   * @description 聚焦
+   */
+  'Neon-2': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#EEFE9D'
+   * @description 禁用
+   */
+  'Neon-3': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#D9F177'
+   * @description -4
+   */
+  'Neon-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#C3E559'
+   * @description 悬浮
+   */
+  'Neon-5': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#ACD746'
+   * @description 常规
+   */
+  'Neon-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#88B236'
+   * @description 点击
+   */
+  'Neon-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#668B28'
+   * @description -8
+   */
+  'Neon-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#48651A'
+   * @description -9
+   */
+  'Neon-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#000000'
+   * @description 浅色背景
+   */
+  'Neutral-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#020B18'
+   * @description -10
+   */
+  'Neutral-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#F4F5F8'
+   * @description 聚焦
+   */
+  'Neutral-2': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#E8EBF0'
+   * @description 禁用
+   */
+  'Neutral-3': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#CCCFD7'
+   * @description -4
+   */
+  'Neutral-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#B3B7C1'
+   * @description 悬浮
+   */
+  'Neutral-5': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#999DA8'
+   * @description 常规
+   */
+  'Neutral-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#666C7C'
+   * @description 点击
+   */
+  'Neutral-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#333E59'
+   * @description -8
+   */
+  'Neutral-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#141737'
+   * @description -9
+   */
+  'Neutral-9': string;
   /**
    * @type {string}
    * @categoty color
@@ -468,6 +566,13 @@ export interface Tokens {
    * @description 浅色背景
    */
   'Orange-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#552F0B'
+   * @description -10
+   */
+  'Orange-10': string;
   /**
    * @type {string}
    * @categoty color
@@ -485,94 +590,318 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FCC045'
+   * @default '#FCD365'
    * @description 悬浮
    */
   'Orange-4': string;
   /**
    * @type {string}
    * @categoty color
+   * @default '#FCC045'
+   * @description 悬浮
+   */
+  'Orange-5': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#F7A72D'
    * @description 常规
    */
-  'Orange-5': string;
+  'Orange-6': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#CC8021'
    * @description 点击
    */
-  'Orange-6': string;
+  'Orange-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#E9F5FE'
+   * @default '#A26019'
+   * @description -8
+   */
+  'Orange-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#7B4612'
+   * @description -9
+   */
+  'Orange-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#F8EEFE'
    * @description 浅色背景
    */
-  'Brand-1': string;
+  'Purple-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#BDE2FF'
+   * @default '#150530'
+   * @description -10
+   */
+  'Purple-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#EDD6FE'
    * @description 聚焦
    */
-  'Brand-2': string;
+  'Purple-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#94CDFF'
+   * @default '#CFA3F3'
    * @description 禁用
    */
-  'Brand-3': string;
+  'Purple-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#6BB5FF'
+   * @default '#AD72E4'
+   * @description -4
+   */
+  'Purple-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#8B48D5'
    * @description 悬浮
    */
-  'Brand-4': string;
+  'Purple-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#429AFF'
+   * @default '#6C23C6'
    * @description 常规
    */
-  'Brand-5': string;
+  'Purple-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#197AFA'
+   * @default '#4E159E'
    * @description 点击
    */
-  'Brand-6': string;
+  'Purple-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#0B5BD4'
+   * @default '#360C77'
+   * @description -8
+   */
+  'Purple-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#220652'
+   * @description -9
+   */
+  'Purple-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#F1FAEB'
+   * @description 浅色背景
+   */
+  'Success-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#173307'
+   * @description -10
+   */
+  'Success-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#C2E999'
+   * @description 禁用
+   */
+  'Success-3': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#A5DC74'
+   * @description -4
+   */
+  'Success-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#90D959'
+   * @description 悬浮
+   */
+  'Success-5': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#74D13D'
+   * @description 常规
+   */
+  'Success-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#62B237'
    * @description 点击
    */
-  'Brand-7': string;
+  'Success-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#0040AD'
-   * @description
+   * @default '#4F992B'
+   * @description -8
    */
-  'Brand-8': string;
+  'Success-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#002D87'
-   * @description
+   * @default '#377319'
+   * @description -9
    */
-  'Brand-9': string;
+  'Success-9': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#001D61'
-   * @description
+   * @default '#FFF0E5'
+   * @description 浅色背景
    */
-  'Brand-10': string;
+  'Tangerine-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#56130A'
+   * @description -10
+   */
+  'Tangerine-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FED4B9'
+   * @description 聚焦
+   */
+  'Tangerine-2': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FDB58F'
+   * @description 禁用
+   */
+  'Tangerine-3': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FD9568'
+   * @description -4
+   */
+  'Tangerine-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FD7445'
+   * @description 悬浮
+   */
+  'Tangerine-5': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#F75229'
+   * @description 常规
+   */
+  'Tangerine-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#CD3A1D'
+   * @description 点击
+   */
+  'Tangerine-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#A22614'
+   * @description -8
+   */
+  'Tangerine-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#7B1B0E'
+   * @description -9
+   */
+  'Tangerine-9': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FFF6EB'
+   * @description 浅色背景
+   */
+  'Warning-1': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#562409'
+   * @description -10
+   */
+  'Warning-10': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FDE5B5'
+   * @description 聚焦
+   */
+  'Warning-2': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FDD18B'
+   * @description 禁用
+   */
+  'Warning-3': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FDBB66'
+   * @description -4
+   */
+  'Warning-4': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#FDA344'
+   * @description 悬浮
+   */
+  'Warning-5': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#F7862A'
+   * @description 常规
+   */
+  'Warning-6': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#CC641F'
+   * @description 点击
+   */
+  'Warning-7': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#A24916'
+   * @description -8
+   */
+  'Warning-8': string;
+  /**
+   * @type {string}
+   * @categoty color
+   * @default '#7B3410'
+   * @description -9
+   */
+  'Warning-9': string;
   /**
    * @type {string}
    * @categoty color
