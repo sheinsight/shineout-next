@@ -667,19 +667,22 @@ describe('Dropdown[absolute]', () => {
     rerender(<Dropdown type={'primary'} absolute placeholder='Absolute' data={menu} />);
     expect(dropdown.querySelector(dropdownListClassName)).toBeFalsy();
     expect(document.querySelector(dropdownListClassName)).toBeTruthy();
-    styleTest(document.querySelector(dropdownListClassName)!, 'display: none;');
+    styleTest(document.querySelector(dropdownListClassName)!, closeStyle);
     fireEvent.click(dropdown);
     await waitFor(async () => {
       await delay(200);
       styleTest(
         document.querySelector(dropdownListClassName)!,
-        'position: absolute; min-width: 0; left: 0px; top: 2px;',
+        'display: block; position: absolute; min-width: 0; left: 0px; top: 2px;',
       );
     });
   });
 });
 describe('Dropdown[Animation]', () => {
-  // TODO: Animation属性遗漏
+  test('should render when set animation is false', () => {
+    const { container } = render(<Dropdown animation={false} data={menu} placeholder='Dropdown' />);
+    classTest(container.querySelector(dropdownListClassName)!, animationList, false);
+  });
 });
 describe('Dropdown[OnClick]', () => {
   test('should render when set onClick', async () => {
@@ -746,7 +749,7 @@ describe('Dropdown[Open]', () => {
     const list = dropdown.querySelector(dropdownListClassName)!;
     classTest(dropdown, dropdownOpenClassName);
     classTest(list, dropdownListShowClassName);
-    styleTest(list, 'display: block;');
+    styleTest(list, 'opacity: 0; pointer-events: none; display: block;');
   });
 });
 describe('Dropdown[OnCollapse]', () => {
@@ -763,6 +766,25 @@ describe('Dropdown[OnCollapse]', () => {
       fireEvent.click(dropdown);
       await delay(200);
       expect(collapseFn.mock.calls.length).toBe(2);
+    });
+  });
+});
+describe('Dropdown[Close]', () => {
+  test('should close when click button', async () => {
+    jest.useFakeTimers();
+    const { container } = render(<Dropdown absolute data={menu} placeholder='Dropdown' />);
+    const dropdown = container.querySelector(dropdownClassName)!;
+    const list = document.querySelector(dropdownListClassName)!;
+    styleContentTest(list, 'display: none;');
+    fireEvent.click(dropdown);
+    await waitFor(async () => {
+      await delay(200);
+      styleContentTest(list, 'display: block;');
+    });
+    fireEvent.click(dropdown);
+    await waitFor(async () => {
+      await delay(200);
+      styleContentTest(list, 'display: none;');
     });
   });
 });
