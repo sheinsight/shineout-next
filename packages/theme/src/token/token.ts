@@ -102,6 +102,7 @@ const Token: Tokens = {
   'Purple-8': '#360C77',
   'Purple-9': '#220652',
   'Success-1': '#F1FAEB',
+  'Success-2': '#DFF6C3',
   'Success-10': '#173307',
   'Success-3': '#C2E999',
   'Success-4': '#A5DC74',
