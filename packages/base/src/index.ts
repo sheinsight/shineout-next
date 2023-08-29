@@ -1,5 +1,4 @@
-export * from './absolute-list';
-export * from './animation-list';
+export * from './alert';
 export * from './button';
 export * from './checkbox';
 export * from './config';
@@ -11,10 +10,13 @@ export * from './input';
 export * from './popover';
 export * from './radio';
 export * from './rule';
+export * from './spin';
 export * from './switch';
+export * from './tag';
 export * from './tabs';
 export * from './tag';
 export * from './textarea';
+export * from './tooltip';
 export * from './spin';
 
 export type { ObjectType } from '@sheinx/hooks';

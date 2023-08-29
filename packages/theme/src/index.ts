@@ -1,4 +1,5 @@
-import InitTheme from './utils/document-style';
+import Alert from './alert';
+import { AlertTokens } from './alert/type';
 
 import Button from './button';
 import { ButtonTokens } from './button/type';
@@ -27,6 +28,9 @@ import { PopoverTokens } from './popover/type';
 import Radio from './radio';
 import { RadioTokens } from './radio/type';
 
+import Spin from './spin';
+import { SpinTokens } from './spin/type';
+
 import Switch from './switch';
 import { SwitchTokens } from './switch/type';
 
@@ -39,10 +43,11 @@ import { TagTokens } from './tag/type';
 import Textarea from './textarea';
 import { TextareaTokens } from './textarea/type';
 
-import Spin from './spin';
-import { SpinTokens } from './spin/type';
+import Tooltip from './tooltip';
+import { TooltipTokens } from './tooltip/type';
 
-export type ThemeTokens = ButtonTokens &
+export type ThemeTokens = AlertTokens &
+  ButtonTokens &
   CheckboxTokens &
   CommonTokens &
   DropdownTokens &
@@ -51,13 +56,15 @@ export type ThemeTokens = ButtonTokens &
   InputTokens &
   PopoverTokens &
   RadioTokens &
-  SwitchTokens &
-  TabsTokens &
-  TagTokens &
   SpinTokens &
-  TextareaTokens;
+  SwitchTokens &
+  TagTokens &
+  TabsTokens &
+  TextareaTokens &
+  TooltipTokens;
 
 const Token: ThemeTokens = {
+  ...Alert,
   ...Button,
   ...Checkbox,
   ...Common,
@@ -67,15 +74,13 @@ const Token: ThemeTokens = {
   ...Input,
   ...Popover,
   ...Radio,
+  ...Spin,
   ...Switch,
+  ...Tag,
   ...Tabs,
   ...Tag,
   ...Textarea,
-  ...Spin,
+  ...Tooltip,
 };
-
-InitTheme();
-
-export { InitTheme };
 
 export default Token;

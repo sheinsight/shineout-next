@@ -72,5 +72,28 @@ export default createUseStyles({
       boxSizing: 'border-box',
     },
   },
-  api: {},
+  apiTable: {
+    width: '100%',
+    border: '1px solid  #ddd',
+    background: '#fff',
+    borderCollapse: 'collapse',
+    borderSpacing: 0,
+    emptyCells: 'show',
+    whiteSpace: 'pre-wrap',
+
+    '& th': {
+      background: '#f5f5f5',
+      textAlign: 'left',
+      whiteSpace: 'nowrap',
+    },
+
+    '& td, & th': {
+      overflow: 'visible',
+      padding: '12px 20px',
+      margin: '0',
+      border: '1px solid #ddd',
+      borderWidth: '0 0 1px 1px',
+      fontSize: 'inherit',
+    },
+  },
 });

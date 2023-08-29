@@ -20,7 +20,7 @@ const Switch = (props: SwitchProps) => {
     if (props.checked !== undefined) {
       return props.checked;
     }
-    return value;
+    return !!value;
   };
 
   const { getInputProps, getRootProps, checked } = useCheck({
