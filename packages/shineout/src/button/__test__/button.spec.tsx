@@ -10,6 +10,7 @@ import {
   baseTest,
   textContentTest,
   attributesTest,
+  displayTest,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 import ButtonBase from '../__example__/s-001-base';
@@ -36,6 +37,7 @@ afterEach(cleanup);
 describe('Button[Base]', () => {
   mountTest(Button);
   baseTest(Button, 'button');
+  displayTest(Button, 'ShineoutButton');
   snapshotTest(<ButtonBase />);
   snapshotTest(<ButtonIcon />, 'about icon');
   snapshotTest(<ButtonShape />, 'about shape');

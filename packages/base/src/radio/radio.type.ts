@@ -8,6 +8,14 @@ export interface RadioClasses {
    */
   wrapper: string;
   /**
+   * 最外层class
+   */
+  wrapperSmall: string;
+  /**
+   * 最外层class
+   */
+  wrapperLarge: string;
+  /**
    * 当 input 禁用时最外层class
    */
   wrapperDisabled: string;
@@ -23,7 +31,7 @@ export interface RadioClasses {
 
 export interface SimpleRadioProps
   extends Omit<BaseCheckProps, 'defaultChecked'>,
-    Pick<CommonType, 'style' | 'className'> {
+    Pick<CommonType, 'style' | 'className' | 'size'> {
   jssStyle?: {
     radio?: RadioClasses;
   };
