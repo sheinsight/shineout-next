@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { addResizeObserver } from '../../utils/dom/element';
 import { UseTransformProps } from './use-transform.type';
 
 const useTransform = <T>(props: UseTransformProps) => {
@@ -67,27 +68,26 @@ const useTransform = <T>(props: UseTransformProps) => {
     setTransform(dimension + delta);
   };
 
+  const handleResize = () => {
+    const { targetDimension, containerDimension } = getDimension();
+    if (!containerDimension || !targetDimension) return;
+    if (targetDimension <= containerDimension) {
+      setShouldScroll(false);
+    } else {
+      setShouldScroll(true);
+    }
+  };
+
   useEffect(() => {
     if (!container || !target) return;
     if (delta === 0 && atStart === false) {
       setAtStart(true);
     }
-
+    let removeWheelListener: () => void;
     if (autoScroll) {
-      const observer = new ResizeObserver(() => {
-        const { targetDimension, containerDimension } = getDimension();
-        if (!containerDimension || !targetDimension) return;
-        if (targetDimension <= containerDimension) {
-          setShouldScroll(false);
-        } else {
-          setShouldScroll(true);
-        }
-      });
-
-      observer.observe(container);
-
+      removeWheelListener = addResizeObserver(container, handleResize);
       return () => {
-        observer.unobserve(container);
+        removeWheelListener?.();
       };
     }
   }, [container, target]);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Provider } from './context';
 import { BaseTabsProps } from './use-tabs.type';
 
@@ -17,12 +17,6 @@ const useTabs = (props: BaseTabsProps) => {
     setActiveTabs(key);
     onChange?.(key);
   };
-
-  useEffect(() => {
-    if (active !== undefined) {
-      setActiveTabs(active);
-    }
-  }, [active]);
 
   return {
     active: getActive(),
