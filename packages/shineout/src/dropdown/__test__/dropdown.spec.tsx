@@ -1,4 +1,4 @@
-import { render, cleanup, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Dropdown from '..';
 import { TYPE } from 'shineout';
@@ -48,6 +48,7 @@ const buttonLargeClassName = 'button-large-0-2-28';
 const dropdownClassNameOtherClassName = `.${SO_PREFIX}-wrapper-0-2-22`;
 const dropdownSplitButtonClassName = `${SO_PREFIX}-splitButton-0-2-36`;
 const dropdownListShowClassName = 'animation-list-show-0-2-22';
+const animationList = 'animation-list-fade-animation-240-0-2-19';
 
 type DropdownItem = TYPE.Dropdown.Item;
 const data: DropdownItem[] = [
@@ -77,6 +78,7 @@ const data: DropdownItem[] = [
 ];
 const menu: DropdownItem[] = [{ content: 'America' }, { content: 'Germany' }];
 const dataPosition = 'data-position';
+const closeStyle = 'opacity: 0; pointer-events: none; display: none;';
 
 const textSplit = (e: Element) => e.textContent?.split('AmericaGermany')[0];
 
@@ -118,7 +120,7 @@ describe('Dropdown[Base]', () => {
     const caret = button.querySelector(dropdownCaretClassName)!;
     classLengthTest(caret, 'svg', 1);
     const list = dropdown.querySelector(dropdownListClassName)!;
-    styleTest(list, 'display: none;');
+    styleTest(list, closeStyle);
     const listDropdown = list.querySelector(dropdownClassName)!;
     attributesTest(listDropdown, dataPosition, 'right-top');
     classTest(listDropdown.querySelector('.' + dropdownButtonClassName)!, dropdownItemClassName);
@@ -130,10 +132,9 @@ describe('Dropdown[Base]', () => {
     fireEvent.click(dropdown);
     await waitFor(async () => {
       await delay(200);
-      screen.debug();
       classTest(container.querySelectorAll(dropdownClassName)[0]!, dropdownOpenClassName);
       classTest(list, dropdownListShowClassName);
-      expect(list.getAttribute('style')).not.toBe('display: none;');
+      expect(list.getAttribute('style')).not.toBe(closeStyle);
     });
   });
   test('should render when set disabled is true', () => {
@@ -163,7 +164,6 @@ describe('Dropdown[Base]', () => {
     hasAttributesTest(item, 'disabled');
     fireEvent.click(item);
     expect(clickFn.mock.calls.length).toBe(0);
-    screen.debug();
   });
 });
 describe('Dropdown[Hover]', () => {
@@ -171,11 +171,11 @@ describe('Dropdown[Hover]', () => {
     const { container } = render(<Dropdown trigger='hover' placeholder='Hover me' data={menu} />);
     const dropdown = container.querySelector(dropdownClassName)!;
     const list = dropdown.querySelector(dropdownListClassName)!;
-    styleTest(list, 'display: none;');
+    styleTest(list, closeStyle);
     fireEvent.mouseEnter(dropdown);
     await waitFor(() => {
       classTest(dropdown, dropdownOpenClassName);
-      expect(list.getAttribute('style')).not.toBe('display: none;');
+      expect(list.getAttribute('style')).not.toBe(closeStyle);
     });
   });
 });
@@ -338,19 +338,22 @@ describe('Dropdown[absolute]', () => {
     rerender(<Dropdown type={'primary'} absolute placeholder='Absolute' data={menu} />);
     expect(dropdown.querySelector(dropdownListClassName)).toBeFalsy();
     expect(document.querySelector(dropdownListClassName)).toBeTruthy();
-    styleTest(document.querySelector(dropdownListClassName)!, 'display: none;');
+    styleTest(document.querySelector(dropdownListClassName)!, closeStyle);
     fireEvent.click(dropdown);
     await waitFor(async () => {
       await delay(200);
       styleTest(
         document.querySelector(dropdownListClassName)!,
-        'position: absolute; min-width: 0; left: 0px; top: 2px;',
+        'display: block; position: absolute; min-width: 0; left: 0px; top: 2px;',
       );
     });
   });
 });
 describe('Dropdown[Animation]', () => {
-  // TODO: Animation属性遗漏
+  test('should render when set animation is false', () => {
+    const { container } = render(<Dropdown animation={false} data={menu} placeholder='Dropdown' />);
+    classTest(container.querySelector(dropdownListClassName)!, animationList, false);
+  });
 });
 describe('Dropdown[OnClick]', () => {
   test('should render when set onClick', async () => {
@@ -417,7 +420,7 @@ describe('Dropdown[Open]', () => {
     const list = dropdown.querySelector(dropdownListClassName)!;
     classTest(dropdown, dropdownOpenClassName);
     classTest(list, dropdownListShowClassName);
-    styleTest(list, 'display: block;');
+    styleTest(list, 'opacity: 0; pointer-events: none; display: block;');
   });
 });
 describe('Dropdown[OnCollapse]', () => {
@@ -434,6 +437,25 @@ describe('Dropdown[OnCollapse]', () => {
       fireEvent.click(dropdown);
       await delay(200);
       expect(collapseFn.mock.calls.length).toBe(2);
+    });
+  });
+});
+describe('Dropdown[Close]', () => {
+  test('should close when click button', async () => {
+    jest.useFakeTimers();
+    const { container } = render(<Dropdown absolute data={menu} placeholder='Dropdown' />);
+    const dropdown = container.querySelector(dropdownClassName)!;
+    const list = document.querySelector(dropdownListClassName)!;
+    styleContentTest(list, 'display: none;');
+    fireEvent.click(dropdown);
+    await waitFor(async () => {
+      await delay(200);
+      styleContentTest(list, 'display: block;');
+    });
+    fireEvent.click(dropdown);
+    await waitFor(async () => {
+      await delay(200);
+      styleContentTest(list, 'display: none;');
     });
   });
 });
