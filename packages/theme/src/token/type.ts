@@ -709,6 +709,13 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#DFF6C3'
+   * @description 聚焦
+   */
+  'Success-2': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#173307'
    * @description -10
    */
