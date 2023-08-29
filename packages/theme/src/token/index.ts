@@ -616,6 +616,12 @@ const Tokens = {
     value: '#F1FAEB',
     describe: '浅色背景',
   },
+  'Success-2': {
+    type: 'color',
+    name: '成功色-2',
+    value: '#DFF6C3',
+    describe: '聚焦',
+  },
   'Success-10': {
     type: 'color',
     name: '成功色-10',
