@@ -141,6 +141,16 @@ const outlineBeforeLine = (type: ButtonType, styles: ButtonStyleType) => ({
         background: Token[`button${type}${styles}BorderColor`],
       },
     },
+    '&:disabled': {
+      '&::before': {
+        background: Token[`button${type}${styles}DisabledBorderColor`],
+      },
+      '& + :not(&)': {
+        '&::before': {
+          background: Token[`button${type}${styles}DisabledBorderColor`],
+        },
+      },
+    },
   },
 });
 
