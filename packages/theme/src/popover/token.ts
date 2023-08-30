@@ -6,7 +6,13 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const popoverTokenDescription = { popover: 'xxx' };
+const popoverTokenDescription = {
+  popover: '气泡',
+  warning: '警告',
+  info: '提示',
+  error: '错误',
+  confirm: '确认',
+};
 
 /**
  * token 值映射表
@@ -51,6 +57,11 @@ const popoverTokenValue = {
     background: { color: 'Danger-1' },
     shadow: '',
     border: { color: 'Danger-1' },
+  },
+  confirm: {
+    font: { size: '' },
+    padding: { x: 'Padding-16', y: 'Padding-16' },
+    background: { color: 'transparent' },
   },
 };
 

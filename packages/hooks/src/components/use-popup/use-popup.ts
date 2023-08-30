@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { BasePopupProps, PositionType } from './use-popup.type';
 import useClickAway from '../../common/use-click-away';
 import { getPosition } from '../../utils/position';
 import usePersistFn from '../../common/use-persist-fn';
+import popupContext from './popup-context';
 
 const usePopup = (props: BasePopupProps) => {
   const {
@@ -12,10 +13,26 @@ const usePopup = (props: BasePopupProps) => {
     autoMode = 'popover',
     mouseLeaveDelay,
     targetEvents,
+    defaultOpen = false,
   } = props;
-  const [openState, setOpenState] = useState(false);
+
+  const [openState, setOpenState] = useState(defaultOpen);
+  const { bindChild, removeChild } = useContext(popupContext);
+
+  const targetRef = useRef<HTMLDivElement | null>(null);
+  const popupRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    bindChild(popupRef);
+    return () => {
+      removeChild(popupRef);
+    };
+  }, []);
+
   const { current: context } = useRef({
     triggerTimer: null as NodeJS.Timeout | null,
+    // 记录所有的子popup 点击子 popup 不关闭弹窗
+    chain: [targetRef, popupRef] as React.MutableRefObject<HTMLElement | null>[],
   });
   const open = props.open !== undefined ? props.open : openState;
   const changeOpen = (openIn: boolean, delay?: number) => {
@@ -37,12 +54,9 @@ const usePopup = (props: BasePopupProps) => {
 
   const position = (isPositionControl ? props.position : positionState) as PositionType;
 
-  const targetRef = useRef<HTMLDivElement | null>(null);
-  const popupRef = useRef<HTMLDivElement | null>(null);
-
   const handleFocus = (delay?: number) => {
     if (!isPositionControl) {
-      if (props.position === 'auto') {
+      if (props.position === 'auto' || !props.position) {
         const newPosition = getPosition(targetRef.current, 'vertical', autoMode);
         if (newPosition !== position) setPositionState(newPosition);
       }
@@ -111,9 +125,24 @@ const usePopup = (props: BasePopupProps) => {
 
   useClickAway({
     onClickAway: () => handleBlur(),
-    target: [targetRef, popupRef],
+    target: context.chain,
     effect: open,
   });
+
+  const providerValue = useMemo(
+    () => ({
+      bindChild: (elRef: React.MutableRefObject<HTMLElement | null>) => {
+        context.chain.push(elRef);
+      },
+      removeChild: (elRef: React.MutableRefObject<HTMLElement | null>) => {
+        const index = context.chain.findIndex((item) => item === elRef);
+        if (index > -1) {
+          context.chain.splice(index, 1);
+        }
+      },
+    }),
+    [],
+  );
 
   return {
     open,
@@ -123,6 +152,8 @@ const usePopup = (props: BasePopupProps) => {
     getTargetProps,
     openPop,
     closePop,
+    Provider: popupContext.Provider,
+    providerValue,
   };
 };
 
