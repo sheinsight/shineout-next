@@ -1,5 +1,6 @@
 import { CommonType } from '../common/type';
 import { BaseButtonProps, ButtonMode, ButtonType } from '@sheinx/hooks';
+import { SpinClasses } from '../spin/spin.type';
 import React from 'react';
 
 export interface ButtonClasses {
@@ -30,6 +31,8 @@ export interface ButtonClasses {
   link: string;
   dashed: string;
   outline: string;
+
+  spin: string;
 }
 
 export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'> {
@@ -41,6 +44,7 @@ export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'>
   disabled?: boolean;
   jssStyle?: {
     button?: ButtonClasses;
+    spin?: SpinClasses;
   };
 }
 
@@ -50,6 +54,7 @@ export interface ButtonBaseProps
     Omit<React.TextareaHTMLAttributes<HTMLButtonElement>, 'onClick'> {
   jssStyle?: {
     button?: ButtonClasses;
+    spin?: SpinClasses;
   };
   children?: React.ReactNode;
   renderButton?: (buttonEl: React.ReactNode) => React.ReactElement;
@@ -67,6 +72,7 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
   children: React.ReactNode;
   jssStyle?: {
     button?: ButtonClasses;
+    spin?: SpinClasses;
   };
 }
 

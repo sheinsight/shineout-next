@@ -1952,4 +1952,10 @@ export interface ButtonTokens {
    * @description 按钮相邻之间的外边距
    */
   buttonNearlyMargin: string;
+  /**
+   * @type {string}
+   * @token Margin-4
+   * @description 按钮undefined外边距
+   */
+  buttonSpinMargin: string;
 }

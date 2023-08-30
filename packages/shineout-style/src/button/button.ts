@@ -22,7 +22,8 @@ type ButtonClass =
   | 'small'
   | 'large'
   | 'group'
-  | 'groupItem';
+  | 'groupItem'
+  | 'spin';
 
 type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 
@@ -196,7 +197,8 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     userSelect: 'none',
     textAlign: 'center',
     whiteSpace: 'nowrap',
-    display: 'inline-block',
+    display: 'inline-flex',
+    alignItems: 'center',
     backgroundImage: 'none',
     verticalAlign: 'middle',
     border: '1px solid transparent',
@@ -509,6 +511,15 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     '&$dashed': {
       position: 'relative',
       borderStyle: 'none',
+    },
+  },
+
+  spin: {
+    display: 'inline-block',
+    marginRight: Token.buttonSpinMargin,
+    '& div': {
+      borderColor: 'inherit',
+      borderTopColor: 'transparent',
     },
   },
 };
