@@ -12,6 +12,8 @@ const popoverRules = {
     ['', 'success', 'warning', 'info', 'danger', 'error'],
     ['font-color', 'background-color', 'shadow', 'border-color'],
   ],
+  confirmSize: [['confirm'], ['font-size', 'padding-x', 'padding-y']],
+  confirmColor: [['confirm'], ['background-color']],
 };
 
 module.exports = {
