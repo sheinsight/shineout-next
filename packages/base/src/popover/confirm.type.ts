@@ -4,7 +4,7 @@ import { ButtonProps } from '../button/button.type';
 import { AlertProps } from '../alert/alert.type';
 
 export type ButtonType = ButtonProps['type'];
-export interface ConfirmProps extends PopoverProps {
+export interface PopoverConfirmProps extends PopoverProps {
   /**
    * @en button text
    * @cn 按钮文字

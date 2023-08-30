@@ -15,6 +15,7 @@ export type PositionType =
 export interface BasePopupProps {
   trigger?: 'click' | 'hover' | 'none';
   open?: boolean;
+  defaultOpen?: boolean;
   onCollapse?: (open: boolean) => void;
   disabled?: boolean;
   position?: PositionType | 'auto';

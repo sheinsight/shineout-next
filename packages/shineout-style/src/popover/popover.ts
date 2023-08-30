@@ -9,6 +9,8 @@ export type PopoverClass =
   | 'text'
   | 'confirm'
   | 'mention'
+  | 'mentionTitle'
+  | 'mentionContent'
   | 'footer';
 
 const arrowGap = 12;
@@ -23,7 +25,7 @@ const popoverStyle: JsStyles<PopoverClass> = {
     backgroundColor: token.popoverBackgroundColor,
     borderRadius: token.popoverRadius,
     border: `1px solid ${token.popoverBorderColor}`,
-    '&::before': {
+    '& $arrow': {
       'z-index': 1,
       position: 'absolute',
       content: '" "',
@@ -38,7 +40,7 @@ const popoverStyle: JsStyles<PopoverClass> = {
     },
     '&[data-soui-position^="bottom"]': {
       marginTop: arrowGap - 2,
-      '&::before': {
+      '& $arrow': {
         top: '0',
         transform: 'translate(0, -50%) rotate(-45deg)',
         left: '0',
@@ -57,7 +59,7 @@ const popoverStyle: JsStyles<PopoverClass> = {
     },
     '&[data-soui-position^="top"]': {
       marginTop: (arrowGap - 2) * -1,
-      '&::before': {
+      '& $arrow': {
         bottom: '0',
         transform: 'translate(0, 50%) rotate(135deg)',
         left: '0',
@@ -76,7 +78,7 @@ const popoverStyle: JsStyles<PopoverClass> = {
     },
     '&[data-soui-position^="left"]': {
       marginLeft: (arrowGap - 2) * -1,
-      '&::before': {
+      '& $arrow': {
         right: token.popoverBorderWidth,
         transform: 'translate(50%, 0) rotate(45deg)',
         top: '0',
@@ -95,7 +97,7 @@ const popoverStyle: JsStyles<PopoverClass> = {
     },
     '&[data-soui-position^="right"]': {
       marginLeft: arrowGap - 2,
-      '&::before': {
+      '& $arrow': {
         left: '0',
         transform: 'translate(-50%, 0) rotate(-135deg)',
         top: '0',
@@ -112,10 +114,10 @@ const popoverStyle: JsStyles<PopoverClass> = {
         position: 'absolute',
       },
     },
-    '&&[data-soui-position$="-left"]::before': { left: arrowMargin, right: 'auto' },
-    '&&[data-soui-position$="-right"]::before': { right: arrowMargin, left: 'auto' },
-    '&&[data-soui-position$="-top"]::before': { top: arrowMargin, bottom: 'auto' },
-    '&&[data-soui-position$="-bottom"]::before': { bottom: arrowMargin, top: 'auto' },
+    '&&[data-soui-position$="-left"] $arrow': { left: arrowMargin, right: 'auto' },
+    '&&[data-soui-position$="-right"] $arrow': { right: arrowMargin, left: 'auto' },
+    '&&[data-soui-position$="-top"] $arrow': { top: arrowMargin, bottom: 'auto' },
+    '&&[data-soui-position$="-bottom"] $arrow': { bottom: arrowMargin, top: 'auto' },
 
     '&[data-soui-type="danger"]': {
       borderColor: token.popoverDangerBorderColor,
@@ -168,6 +170,8 @@ const popoverStyle: JsStyles<PopoverClass> = {
       marginBottom: token.popoverConfirmPaddingY,
     },
   },
+  mentionTitle: {},
+  mentionContent: {},
   footer: {
     textAlign: 'right',
   },

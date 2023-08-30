@@ -3,9 +3,9 @@ import Popover from './popover';
 import Alert from '../alert';
 import Button from '../button';
 import { getLocale, useConfig } from '../config';
-import { ConfirmProps } from './confirm.type';
+import { PopoverConfirmProps } from './confirm.type';
 
-const Confirm = (props: ConfirmProps) => {
+const Confirm = (props: PopoverConfirmProps) => {
   const [ok, setOk] = useState(false);
   const [cancel, setCancel] = useState(false);
   const { locale } = useConfig();
@@ -60,11 +60,11 @@ const Confirm = (props: ConfirmProps) => {
             <Alert
               jssStyle={jssStyle}
               type={type as any}
-              title={title}
+              title={<div className={jssStyle?.popover?.mentionTitle}>{title}</div>}
               icon={icon}
               className={jssStyle?.popover?.mention}
             >
-              {children}
+              <div className={jssStyle?.popover?.mentionContent}>{children}</div>
             </Alert>
           </div>
 
