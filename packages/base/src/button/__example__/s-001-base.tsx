@@ -7,43 +7,22 @@
 
 import React from 'react';
 import { Button } from '@sheinx/base';
-import { useButtonStyle } from '@sheinx/shineout-style';
+import { useButtonStyle, useSpinStyle } from '@sheinx/shineout-style';
 // import Icon from '../../icons';
 
 export default () => {
   const buttonStyle = useButtonStyle();
+  const spinStyle = useSpinStyle();
   const jssStyle = {
     button: buttonStyle,
-    // buttonGroup: buttonGroupStyle,
+    spin: spinStyle,
   };
 
   return (
     <div>
-      <Button.Group jssStyle={jssStyle} type='secondary'>
-        <Button jssStyle={jssStyle}>123</Button>
-        <Button jssStyle={jssStyle} disabled>
-          123
-        </Button>
-        <Button jssStyle={jssStyle} type='primary'>
-          123
-        </Button>
-        <Button jssStyle={jssStyle}>123</Button>
-        <Button jssStyle={jssStyle}>123</Button>
-      </Button.Group>
-      <Button.Group jssStyle={jssStyle} type='danger' mode='outline'>
-        <Button jssStyle={jssStyle}>123</Button>
-        <Button jssStyle={jssStyle}>123</Button>
-        <Button jssStyle={jssStyle}>123</Button>
-        <Button jssStyle={jssStyle}>123</Button>
-      </Button.Group>
-      <Button.Group jssStyle={jssStyle} type='secondary' mode='dashed'>
-        <Button jssStyle={jssStyle}>123</Button>
-        <Button jssStyle={jssStyle} disabled>
-          123
-        </Button>
-        <Button jssStyle={jssStyle}>123</Button>
-        <Button jssStyle={jssStyle}>123</Button>
-      </Button.Group>
+      <Button size='large' jssStyle={jssStyle} loading type='primary'>
+        123
+      </Button>
     </div>
   );
 };
