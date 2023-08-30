@@ -220,6 +220,9 @@ const input: JsStyles<InputClass> = {
       cursor: 'pointer',
       pointerEvents: 'none',
     },
+    '&:hover svg': {
+      color: token.inputHoverToggleColor,
+    },
     marginRight: token.inputPaddingX,
   },
   info: {
