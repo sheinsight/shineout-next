@@ -1,7 +1,18 @@
-import { ObjectType, KeygenType } from '../../common/type';
+import { ObjectType, StructKeygenType, KeygenResult } from '../../common/type';
+
+export type CheckedStatusType = 0 | 1 | 2;
+
+export interface TreePathType {
+  children: KeygenResult[];
+  path: (number | string)[];
+  isDisabled: boolean;
+  indexPath: number[];
+  index: number;
+}
 
 export interface BaseTreeProps<DataItem = ObjectType> {
   data: DataItem[];
-  keygen: KeygenType<DataItem>;
-  childrenKey?: string;
+  disabled?: boolean | ((item: DataItem) => boolean);
+  keygen: StructKeygenType<DataItem>;
+  childrenKey: keyof DataItem;
 }
