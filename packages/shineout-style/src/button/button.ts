@@ -362,6 +362,9 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     width: `32px`,
     height: `32px`,
     borderRadius: Token.buttonSquareBorderRadius,
+    '& $spin': {
+      margin: 0,
+    },
   },
   disabled: {
     cursor: 'not-allowed',
