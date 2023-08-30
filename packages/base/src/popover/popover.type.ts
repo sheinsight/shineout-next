@@ -20,8 +20,6 @@ export interface PopoverClasses {
    */
   confirm: string;
   mention: string;
-  mentionTitle: string;
-  mentionContent: string;
   footer: string;
 }
 

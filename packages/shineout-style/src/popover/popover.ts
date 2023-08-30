@@ -9,8 +9,6 @@ export type PopoverClass =
   | 'text'
   | 'confirm'
   | 'mention'
-  | 'mentionTitle'
-  | 'mentionContent'
   | 'footer';
 
 const arrowGap = 12;
@@ -170,8 +168,6 @@ const popoverStyle: JsStyles<PopoverClass> = {
       marginBottom: token.popoverConfirmPaddingY,
     },
   },
-  mentionTitle: {},
-  mentionContent: {},
   footer: {
     textAlign: 'right',
   },
