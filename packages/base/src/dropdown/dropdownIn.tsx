@@ -40,6 +40,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     style,
     className,
     size,
+    animation
   } = props;
 
   const { open, position, targetRef, popupRef, getTargetProps, closePop, openPop } = usePopup({
@@ -203,6 +204,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           duration={'fast'}
           show={open}
           onRef={popupRef as any}
+          animation={animation}
         >
           {renderList()}
         </AnimationList>

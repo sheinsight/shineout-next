@@ -11,6 +11,7 @@ import {
   styleTest,
   classContentTest,
   childrenTest,
+  displayTest,
 } from '../../tests/utils';
 import CheckboxRawgroup from '../__example__/004-rawgroup';
 import CheckboxGroup from '../__example__/005-group';
@@ -44,6 +45,7 @@ afterEach(cleanup);
 describe('CheckboxGroup[Base]', () => {
   mountTest(Checkbox.Group as React.ComponentType);
   childrenTest(Checkbox.Group, checkboxGroupClassName);
+  displayTest(Checkbox.Group as React.FC, 'ShineoutCheckboxGroup');
   snapshotTest(<CheckboxRawgroup />, 'by CheckboxRawgroup');
   test('should render structor in CheckboxRawgroup', () => {
     const { container } = render(<CheckboxRawgroup />);

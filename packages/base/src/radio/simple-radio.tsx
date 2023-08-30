@@ -2,9 +2,10 @@ import { useCheck } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
 import { SimpleRadioProps } from './radio.type';
+import icons from '../icons';
 
 const Radio = (props: SimpleRadioProps) => {
-  const { jssStyle, className, style, children, renderRadio, ...rest } = props;
+  const { jssStyle, className, style, children, renderRadio, size, ...rest } = props;
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
   });
@@ -13,6 +14,8 @@ const Radio = (props: SimpleRadioProps) => {
     className,
     !!disabled && jssStyle?.radio?.wrapperDisabled,
     !!checked && jssStyle?.radio?.wrapperChecked,
+    size === 'small' && jssStyle?.radio?.wrapperSmall,
+    size === 'large' && jssStyle?.radio?.wrapperLarge,
   ]);
 
   const inputProps = getInputProps();
@@ -26,7 +29,9 @@ const Radio = (props: SimpleRadioProps) => {
     <div {...rootProps}>
       <input {...inputProps} type='radio' />
       <div className={jssStyle?.radio?.indicatorWrapper}>
-        <i {...indicatorProps} className={jssStyle?.radio?.indicator} />
+        <span {...indicatorProps} className={jssStyle?.radio?.indicator}>
+          {checked ? icons.RadioChecked : icons.RadioUnChecked}
+        </span>
       </div>
       <span className={jssStyle?.radio?.desc}>{children}</span>
     </div>

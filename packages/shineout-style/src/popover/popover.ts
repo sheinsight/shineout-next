@@ -14,7 +14,7 @@ const popoverStyle: JsStyles<PopoverClass> = {
     boxShadow: token.popoverShadow,
     backgroundColor: token.popoverBackgroundColor,
     borderRadius: token.popoverRadius,
-    border: '1px solid #e8ebf0',
+    border: `1px solid ${token.popoverBorderColor}`,
     '&::before': {
       'z-index': 1,
       position: 'absolute',

@@ -11,6 +11,7 @@ import {
   textContentTest,
   childrenTest,
   baseTest,
+  displayTest,
 } from '../../tests/utils';
 import CheckboxBase from '../__example__/001-base';
 import CheckboxStatus from '../__example__/002-checked-1';
@@ -59,6 +60,7 @@ describe('Checkbox[Base]', () => {
   baseTest(Checkbox, checkboxClassName);
   structureTest(<Checkbox>Checkbox</Checkbox>, attributes);
   childrenTest(Checkbox, checkboxClassName);
+  displayTest(Checkbox, 'ShineoutCheckbox');
   snapshotTest(<CheckboxBase />);
   test('should render about class when not set attribute', () => {
     const renderContent = <Checkbox>Checkbox</Checkbox>;

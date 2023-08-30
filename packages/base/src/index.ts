@@ -1,6 +1,4 @@
-export * from './absolute-list';
 export * from './alert';
-export * from './animation-list';
 export * from './button';
 export * from './checkbox';
 export * from './config';
@@ -16,6 +14,7 @@ export * from './spin';
 export * from './switch';
 export * from './tag';
 export * from './textarea';
+export * from './tooltip';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';
