@@ -3,6 +3,7 @@ export * from './animation-list';
 export * from './button';
 export * from './checkbox';
 export * from './dropdown';
+export * from './editable-area';
 export * from './form';
 export * from './icon';
 export * from './image';

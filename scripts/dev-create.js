@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const componentNameReg = /^[a-zA-Z]*$/;
+const componentNameReg = /^[a-zA-Z-]*$/;
 const { writeTemplate } = require('./utils/write-template');
-const { updatePackages } = require('./dev-remove');
+const { updatePackages, getComponentName } = require('./dev-remove');
 // const { compile } = require('./utils/compile');
 const component = process.argv.slice(2)?.[0].trim().toLowerCase();
 const { glob } = require('glob');
@@ -51,6 +51,7 @@ function createPublicFilesByEjs(dir) {
       const targetPath = path.join(componentPath);
       const templatePath = path.join(__dirname, `./ejs/${module}`, template);
       const fileName = template.replace('.ejs', '').replace('component', component);
+      const componentName = getComponentName(component);
       writeTemplate({
         fileName,
         targetPath,
@@ -58,8 +59,9 @@ function createPublicFilesByEjs(dir) {
         needPrettier: false,
         prettierWhiteList: ['.md'],
         ejsVars: {
-          component,
-          Component: component.charAt(0).toUpperCase() + component.slice(1),
+          file: component,
+          component: componentName.charAt(0).toLowerCase() + componentName.slice(1),
+          Component: componentName,
         },
       });
     });
