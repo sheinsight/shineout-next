@@ -406,7 +406,7 @@ describe('Dropdown[renderItem]', () => {
   });
   test('should render when set renderItem is function', () => {
     const { container } = render(
-      <Dropdown renderItem={(d) => `id ${d.id}`} data={dropData} placeholder='Dropdown' />,
+      <Dropdown renderItem={(d: any) => `id ${d.id}`} data={dropData} placeholder='Dropdown' />,
     );
     container.querySelectorAll('a').forEach((item, index) => {
       textContentTest(item, 'id ' + dropData[index].id);
