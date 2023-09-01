@@ -1,13 +1,14 @@
+import { BaseTreeProps } from '@sheinx/hooks';
+
 export interface TreeClasses {
   tree: string;
   line: string;
 }
 
-export interface TreeProps {
+export interface TreeProps extends BaseTreeProps {
   jssStyle?: {
     tree: TreeClasses;
   };
   data: any[];
-  childrenKey?: string;
   active?: string | number;
 }

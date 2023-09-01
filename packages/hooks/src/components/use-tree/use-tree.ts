@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { BaseTreeProps, TreePathType, CheckedStatusType } from './use-tree.type';
+import { BaseTreeProps, TreePathType, CheckedStatusType, TreeContext } from './use-tree.type';
 import { KeygenResult } from '../../common/type';
 import { isFunc, isString, isNumber } from '../../utils/is';
 
@@ -12,12 +12,20 @@ export const MODE = {
 };
 
 const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
-  const { data, childrenKey, keygen, disabled: disabledProps } = props;
+  const {
+    // value,
+    data = [],
+    childrenKey = 'children' as keyof DataItem,
+    keygen,
+    mode,
+    disabled: disabledProps,
+  } = props;
 
-  const { current: context } = useRef({
+  const { current: context } = useRef<TreeContext<DataItem>>({
     pathMap: new Map<KeygenResult, TreePathType>(),
     dataMap: new Map<KeygenResult, DataItem>(),
     valueMap: new Map<KeygenResult, CheckedStatusType>(),
+    disabled: false,
   });
 
   const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
@@ -31,6 +39,14 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
     // 降级处理
     return id + (id ? ',' : '') + index;
+  };
+
+  const getDisabled = () => {
+    if (isFunc(disabledProps)) {
+      return disabledProps;
+    }
+
+    return () => !!disabledProps;
   };
 
   const initData = (
@@ -54,8 +70,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
       let isDisabled = !!disabled;
 
-      if (isDisabled === false && isFunc(disabledProps)) {
-        isDisabled = disabledProps(item);
+      if (isDisabled === false && isFunc(context.disabled)) {
+        isDisabled = context.disabled(item);
       }
 
       ids.push(id);
@@ -67,11 +83,12 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         const _children = initData(
           item[childrenKey] as DataItem[],
           [...path, id],
-          isDisabled,
+          mode === MODE.MODE_4 ? disabled : isDisabled,
           indexPath,
         );
         if (_children) children = _children;
       }
+
       context.pathMap.set(id, {
         index: i,
         path,
@@ -84,18 +101,41 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return ids;
   };
 
-  //   const setData = () => {
-  //     if (!data) return;
+  // const initValue = (ids: KeygenResult[] = [], forceCheck?: boolean) => {
+  //   if (data || value) {
+  //     return undefined;
+  //   }
 
-  //     context.pathMap = new Map();
-  //     context.dataMap = new Map();
-  //     context.valueMap = new Map();
-  //   };
+  //   if (ids.length === 0) {
+  //     context.pathMap.forEach((path, index) => {
+  //       if (path.path.length === 0) {
+  //         ids.push(index);
+  //       }
+  //     });
+  //   }
 
-  //   const setValue = () => {};
+  //   for (let i = 0; i < ids.length; i++) {
+  //     const { children } = context.pathMap.get(ids[i]);
+
+  //     console.log(children)
+  //   }
+  // };
+
+  const setData = () => {
+    if (!data) return;
+
+    context.pathMap = new Map();
+    context.dataMap = new Map();
+    context.valueMap = new Map();
+    context.disabled = getDisabled();
+  };
+
+  // const setValue = () => {};
 
   useEffect(() => {
+    setData();
     initData(data, []);
+    console.log(context);
   }, []);
 
   return {};
