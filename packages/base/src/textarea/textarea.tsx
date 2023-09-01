@@ -15,7 +15,8 @@ const defaultInfo = (num: number, msg: any) => {
   return new Error(text);
 };
 export default (props: TextareaProps) => {
-  const { info, suffix, renderFooter, width, style, jssStyle, onBlur, ...resetProps } = props;
+  const { info, suffix, renderFooter, width, style, jssStyle, onBlur, status, ...resetProps } =
+    props;
   const rootRef = useRef<HTMLElement>(null);
 
   const { disabled, size } = useWithFormConfig(props);
@@ -160,6 +161,7 @@ export default (props: TextareaProps) => {
       {...forwardProps}
       {...formatProps}
       renderTextarea={renderTextarea}
+      status={tipProps.error ? 'error' : status}
       value={inputAbleProps.value || ''}
       suffix={mergeSuffix}
       style={mergeStyle}

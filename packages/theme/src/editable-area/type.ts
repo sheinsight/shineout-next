@@ -2,10 +2,10 @@
 // This file was generated automatically by a script. Please do not modify it directly.
 
 export interface EditableAreaTokens {
-    /**
-    * @type {string}
-    * @token regular/14
-    * @description xxx字体字号
-    */
-    popoverFontSize: string;
+  /**
+   * @type {string}
+   * @token regular/14
+   * @description xxx字体字号
+   */
+  editableAreaFontSize: string;
 }

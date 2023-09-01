@@ -1,13 +1,192 @@
-// import { } from '@sheinx/hooks';
-// import classNames from 'classnames';
-import React from 'react';
-import {EditableAreaProps} from './editable-area.type';
+import React, { useEffect, useState } from 'react';
+import { Textarea } from '../textarea';
+import { EditableAreaProps } from './editable-area.type';
+import AbsoluteList from '../absolute-list';
+import { useInputAble, usePersistFn } from '@sheinx/hooks';
+import classNames from 'classnames';
+import classnames from 'classnames';
+import Icons from '../icons';
+import useInnerTitle from '../common/use-inner-title';
+
+interface Context {
+  wrapper: HTMLDivElement | null;
+  textarea: HTMLTextAreaElement | null;
+}
+
+function formatShowValue(value: unknown, renderResult?: (value: string) => React.ReactNode) {
+  if (typeof renderResult === 'function') return renderResult(value as string);
+  if (!value && value !== 0) return '';
+  const arr = String(value).split('\n');
+  const len = arr.length;
+  if (len > 1) return `${arr[0]}...`;
+  return String(value);
+}
 
 const EditableArea = (props: EditableAreaProps) => {
-  const {} = props;
-  // ...
+  const {
+    jssStyle,
+    delay,
+    trim,
+    disabled,
+    className,
+    style,
+    placeholder,
+    error,
+    clearable,
+    width,
+    maxHeight,
+    onFocus,
+    getPopupContainer,
+    renderFooter,
+    renderResult,
+    innerTitle,
+    placeTitle,
+    bordered = false,
+  } = props;
 
-  return <>EditableArea.tsx</>;
+  const editableAreaStyle = jssStyle?.editableArea;
+
+  const status = error ? 'error' : props.status;
+
+  const { current: context } = React.useRef<Context>({
+    wrapper: null,
+    textarea: null,
+  });
+
+  const { value, onChange } = useInputAble({
+    control: 'value' in props,
+    value: props.value,
+    defaultValue: props.defaultValue,
+    onChange: props.onChange,
+    beforeChange: props.beforeChange,
+    delay: 0,
+  });
+
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    if (show && context.textarea) {
+      setTimeout(() => {
+        if (show && context.textarea) context.textarea.focus();
+      });
+    }
+  }, [show]);
+
+  const updateShowTextarea = (flag: boolean) => {
+    if (flag === show || disabled) return;
+    setShow(flag);
+    props.onShowTextareaChange?.(flag);
+  };
+
+  const renderInput = useInnerTitle({
+    innerTitle,
+    placeTitle,
+    open: !!value,
+    // size: props.size,
+    jssStyle: props.jssStyle,
+  });
+
+  const renderPlaceholder = () => {
+    const defaultContent =
+      !show && value ? (
+        formatShowValue(value)
+      ) : (
+        <span className={editableAreaStyle?.placeholder}>{placeholder}</span>
+      );
+    const content = (
+      <div className={classnames(editableAreaStyle?.paddingBox)}>
+        {typeof renderResult === 'function' ? renderResult(value as string) : defaultContent}
+      </div>
+    );
+    return (
+      <div
+        tabIndex={disabled ? undefined : 0}
+        onFocus={() => {
+          updateShowTextarea(true);
+        }}
+        onClick={() => {
+          updateShowTextarea(true);
+        }}
+        className={classNames(editableAreaStyle?.place)}
+      >
+        {renderInput(content)}
+      </div>
+    );
+  };
+
+  const handleBlur = usePersistFn((e: React.FocusEvent) => {
+    updateShowTextarea(false);
+    props.onBlur?.(e);
+  });
+
+  const renderPopup = () => {
+    return (
+      <AbsoluteList
+        absolute={getPopupContainer || true}
+        focus={show}
+        parentElement={context.wrapper}
+        fixedWidth={true}
+        position={'cover'}
+      >
+        <Textarea
+          jssStyle={jssStyle}
+          textareaRef={(el) => {
+            context.textarea = el;
+          }}
+          status={status}
+          placeholder={placeholder}
+          className={classNames(editableAreaStyle?.popup, show && editableAreaStyle?.popupShow)}
+          trim={trim}
+          delay={delay}
+          rows={1}
+          autosize
+          value={value}
+          onChange={onChange}
+          onBlur={handleBlur}
+          onFocus={onFocus}
+          maxHeight={maxHeight}
+          renderFooter={renderFooter}
+          innerTitle={innerTitle}
+          placeTitle={placeTitle}
+        />
+      </AbsoluteList>
+    );
+  };
+
+  const renderClear = () => {
+    if (!clearable || !value) return null;
+    return (
+      <span
+        onClick={() => {
+          onChange('');
+          updateShowTextarea(true);
+        }}
+        className={jssStyle?.editableArea?.clear}
+      >
+        {Icons.CloseCircle}
+      </span>
+    );
+  };
+
+  return (
+    <div
+      className={classNames(
+        className,
+        editableAreaStyle?.wrapper,
+        status === 'error' && editableAreaStyle?.wrapperError,
+        disabled && editableAreaStyle?.wrapperDisabled,
+        !bordered && editableAreaStyle?.wrapperNoBorder,
+      )}
+      style={{ ...style, width }}
+      ref={(el) => {
+        context.wrapper = el;
+      }}
+    >
+      {renderPlaceholder()}
+      {renderClear()}
+      {renderPopup()}
+    </div>
+  );
 };
 
 export default EditableArea;
