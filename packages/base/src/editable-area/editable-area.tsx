@@ -13,8 +13,7 @@ interface Context {
   textarea: HTMLTextAreaElement | null;
 }
 
-function formatShowValue(value: unknown, renderResult?: (value: string) => React.ReactNode) {
-  if (typeof renderResult === 'function') return renderResult(value as string);
+function formatShowValue(value: unknown) {
   if (!value && value !== 0) return '';
   const arr = String(value).split('\n');
   const len = arr.length;

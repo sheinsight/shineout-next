@@ -31,7 +31,7 @@ export interface EditableAreaProps extends Pick<CommonType, 'className' | 'style
 
   beforeChange?: (value: string) => void | string;
   /**
-   * @inner 内部属性
+   * @private 内部属性
    */
   error?: Error;
   /**
@@ -82,7 +82,7 @@ export interface EditableAreaProps extends Pick<CommonType, 'className' | 'style
   getPopupContainer?: () => HTMLElement;
 
   /**
-   * @inner 内部属性
+   * @private 内部属性
    */
   onShowTextareaChange?: (value: boolean) => void;
 
