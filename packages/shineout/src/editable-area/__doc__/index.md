@@ -1,11 +1,11 @@
 ---
 name: EditableArea
-group: Other
+group: Form
 ---
 
 # Title
 
-EditableArea 标题
+EditableArea 可编辑域
 EditableArea
 
 # Describe
