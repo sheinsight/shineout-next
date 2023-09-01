@@ -3,7 +3,7 @@ import { CommonType } from '../common/type';
 import { BaseTextareaProps } from '@sheinx/hooks';
 import { BaseTipProps } from '../common/use-tip';
 import { PopoverClasses } from '../popover/popover.type';
-import { InnerTitleClass } from '../common/use-inner-title';
+import { InnerTitleClasses } from '../common/use-inner-title';
 
 export interface TextareaClasses {
   /**
@@ -66,7 +66,6 @@ export interface TextareaProps
       | 'jssStyle'
       | 'getStatus'
       | 'rootRef'
-      | 'textareaRef'
       | 'renderTextarea'
     > {
   innerTitle?: React.ReactNode;
@@ -74,7 +73,7 @@ export interface TextareaProps
   jssStyle?: {
     textarea?: TextareaClasses;
     popover?: PopoverClasses;
-    innerTitle?: InnerTitleClass;
+    innerTitle?: InnerTitleClasses;
   };
   autosize?: boolean;
   info?: number | ((value: string | undefined) => React.ReactNode | Error);

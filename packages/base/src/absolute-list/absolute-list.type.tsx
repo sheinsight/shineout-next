@@ -21,7 +21,7 @@ export interface AbsoluteListProps {
   focus: boolean;
   parentElement: HTMLElement | null;
   fixedWidth: 'min' | boolean; // same width with parentElement
-  position: ListPosition | HorizontalPosition | VerticalPosition;
+  position: ListPosition | HorizontalPosition | VerticalPosition | 'cover';
   updateKey?: number | string;
   /**
    * @en When it is true, the pop-up layer of option append into document.body; When it is a function, the return value is used as the popup layer container

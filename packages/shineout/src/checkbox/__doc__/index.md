@@ -5,7 +5,7 @@ group: Form
 
 # Title
 
-复选框 Checkbox
+Checkbox 复选框
 Checkbox
 
 # Describe
