@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const componentNameReg = /^[a-zA-Z]*$/;
+const componentNameReg = /^[a-zA-Z-]*$/;
 const { rmrf } = require('./utils/rmrf');
 const { compile } = require('./utils/compile');
 const { writeTemplate } = require('./utils/write-template');
@@ -34,6 +34,13 @@ function rmTheme() {
   updateTheme();
 }
 
+function getComponentName(fileName) {
+  return fileName
+    .split('-')
+    .map((i) => i[0].toUpperCase() + i.slice(1))
+    .join('');
+}
+
 function updateTheme() {
   const fileName = 'index.ts';
   const targetPath = path.join(__dirname, '../packages', 'theme', 'src');
@@ -46,6 +53,7 @@ function updateTheme() {
     templatePath,
     ejsVars: {
       files,
+      getComponentName,
     },
     needPrettier: true,
   });
@@ -74,6 +82,7 @@ function updateBase() {
     targetPath,
     templatePath,
     ejsVars: {
+      getComponentName,
       files,
     },
     needPrettier: true,
@@ -104,6 +113,7 @@ function updateShineout() {
     templatePath,
     ejsVars: {
       files,
+      getComponentName,
     },
     needPrettier: true,
   });
@@ -133,6 +143,7 @@ function updateShineoutStyle() {
     templatePath,
     ejsVars: {
       files,
+      getComponentName,
     },
     needPrettier: true,
   });
@@ -168,4 +179,5 @@ module.exports = {
   updateShineout,
   updateShineoutStyle,
   updatePackages,
+  getComponentName,
 };

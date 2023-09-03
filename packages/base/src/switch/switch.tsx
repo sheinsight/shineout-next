@@ -4,7 +4,7 @@ import React from 'react';
 import { SwitchProps } from './switch.type';
 
 const Switch = (props: SwitchProps) => {
-  const { jssStyle, content, size, loading } = props;
+  const { jssStyle, content, size, loading, className, style } = props;
 
   const disabled = props.disabled || props.loading;
 
@@ -34,6 +34,7 @@ const Switch = (props: SwitchProps) => {
   const [checkedContent, unCheckedContent] = content || [];
 
   const rootClassName = classNames(
+    className,
     jssStyle?.switch?.wrapper,
     !!checked && jssStyle?.switch?.wrapperChecked,
     disabled && jssStyle?.switch?.wrapperDisabled,
@@ -41,11 +42,11 @@ const Switch = (props: SwitchProps) => {
     size === 'large' && jssStyle?.switch?.wrapperLarge,
   );
 
-  const rootProps = getRootProps({ className: rootClassName });
+  const rootProps = getRootProps({ className: rootClassName, style });
   const inputProps = getInputProps();
 
   return (
-    <button type={'button'} role={'switch'} {...rootProps}>
+    <button type={'button'} role={'switch'} {...rootProps} >
       <input {...inputProps} type={'checkbox'} />
       <div className={jssStyle?.switch?.indicator}>
         {loading ? <div className={jssStyle?.switch?.loading} /> : null}

@@ -13,6 +13,9 @@ import { CommonTokens } from './common/type';
 import Dropdown from './dropdown';
 import { DropdownTokens } from './dropdown/type';
 
+import EditableArea from './editable-area';
+import { EditableAreaTokens } from './editable-area/type';
+
 import Icon from './icon';
 import { IconTokens } from './icon/type';
 
@@ -48,6 +51,7 @@ export type ThemeTokens = AlertTokens &
   CheckboxTokens &
   CommonTokens &
   DropdownTokens &
+  EditableAreaTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
@@ -65,6 +69,7 @@ const Token: ThemeTokens = {
   ...Checkbox,
   ...Common,
   ...Dropdown,
+  ...EditableArea,
   ...Icon,
   ...Image,
   ...Input,
