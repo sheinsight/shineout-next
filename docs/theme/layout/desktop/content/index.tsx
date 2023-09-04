@@ -16,7 +16,6 @@ const Content = () => {
       .replace(/([A-Z])/g, '-$1')
       ?.toLowerCase()
       ?.replace(/^-/, '');
-    console.log(paths, moduleName, componentName);
     if (!componentName) return;
     try {
       return require(`../../../../chunk/${moduleName}/${componentName}.tsx`).default();

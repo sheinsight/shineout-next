@@ -2,6 +2,7 @@ import { BaseTreeProps } from '@sheinx/hooks';
 
 export interface TreeClasses {
   tree: string;
+  root: string;
   line: string;
 }
 
