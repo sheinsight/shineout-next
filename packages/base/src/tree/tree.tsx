@@ -12,7 +12,7 @@ const Tree = (props: TreeProps) => {
   const rootClass = classNames(treeStyle.tree);
   return (
     <div className={rootClass}>
-      <RootTree></RootTree>
+      <RootTree jssStyle={jssStyle}></RootTree>
     </div>
   );
 };
