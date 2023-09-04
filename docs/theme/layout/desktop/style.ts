@@ -51,6 +51,7 @@ export default createUseStyles(
 
     menu: {
       position: 'sticky',
+      overflow: 'auto',
       float: 'left',
       top: 60,
       width: 259,
