@@ -18,10 +18,18 @@ const Anchor = () => {
     if (target) target.scrollIntoView();
   };
 
+  const toKebabCase = (str?: string) => {
+    const newStr = str?.replace(/([A-Z])/g, '-$1').toLowerCase();
+    if (newStr?.startsWith('-')) {
+      return newStr?.slice(1);
+    }
+    return newStr;
+  };
+
   useEffect(() => {
     if (location.pathname.indexOf('/component') === -1) return;
 
-    const chunk = location.pathname.split('/').at(-1);
+    const chunk = toKebabCase(location.pathname.split('/').at(-1));
     if (chunk) {
       let component;
       try {
