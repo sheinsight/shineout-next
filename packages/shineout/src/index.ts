@@ -1,6 +1,7 @@
 export { default as Alert } from './alert';
 export { default as Button } from './button';
 export { default as Checkbox } from './checkbox';
+export { default as DatePicker } from './date-picker';
 export { default as Dropdown } from './dropdown';
 export { default as EditableArea } from './editable-area';
 export { default as Form } from './form';

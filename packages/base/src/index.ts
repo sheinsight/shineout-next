@@ -2,6 +2,7 @@ export * from './alert';
 export * from './button';
 export * from './checkbox';
 export * from './config';
+export * from './date-picker';
 export * from './dropdown';
 export * from './editable-area';
 export * from './form';
