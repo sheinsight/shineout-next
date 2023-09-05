@@ -17,6 +17,11 @@ export type KeygenType<DataItem> =
   | ObjectKey<DataItem>
   | ((data: DataItem, index?: number) => KeygenResult)
   | true;
+
 export type StructKeygenType<DataItem> =
   | ObjectKey<DataItem>
   | ((data: DataItem, index?: number) => KeygenResult);
+
+export type StructKeygenStringType<DataItem> =
+  | ObjectKey<DataItem>
+  | ((data: DataItem, index: string) => KeygenResult);

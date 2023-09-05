@@ -41,7 +41,7 @@ export default () => {
 
   return (
     <div>
-      <Tree jssStyle={{ tree: tooltipStyle }} data={data}></Tree>
+      <Tree jssStyle={{ tree: tooltipStyle }} data={data} renderItem='name'></Tree>
     </div>
   );
 };

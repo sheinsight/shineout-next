@@ -3,14 +3,21 @@ import { TreeRootProps } from './tree-root.type';
 import { TreeClasses } from './tree.type';
 import TreeList from './tree-list';
 
-const Root = (props: TreeRootProps) => {
-  const { jssStyle } = props;
+const Root = <DataItem,>(props: TreeRootProps<DataItem>) => {
+  const { jssStyle, ...rest } = props;
 
   const treeStyle = jssStyle?.tree || ({} as TreeClasses);
   const rootClass = classNames(treeStyle.root);
 
-  // return <div className={rootClass}>Root</div>;
-  return <TreeList className={rootClass} expanded></TreeList>;
+  return (
+    <TreeList
+      {...rest}
+      expanded
+      active={false}
+      className={rootClass}
+      jssStyle={jssStyle}
+    ></TreeList>
+  );
 };
 
 export default Root;
