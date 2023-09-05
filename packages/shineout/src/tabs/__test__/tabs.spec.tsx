@@ -42,7 +42,7 @@ afterEach(cleanup);
 describe('Tabs[Base]', () => {
   mountTest(<TabsDemo />);
   displayTest(Tabs, 'ShineoutTabs');
-  displayTest(Tabs.Panel, 'ShineoutTabsPanel');
+  displayTest(Tabs.Panel as React.FC, 'ShineoutTabsPanel');
   snapshotTest(<TabsBase />);
   snapshotTest(<TabsShape />, 'about shape');
   snapshotTest(<TabsPositon />, 'about position');
