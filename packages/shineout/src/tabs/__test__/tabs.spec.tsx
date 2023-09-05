@@ -28,12 +28,15 @@ const tabsHeaderScrollClassName = `.${SO_PREFIX}-headerScroll-0-2-8`;
 const tabsHrClassName = `.${SO_PREFIX}-hr-0-2-6`;
 const tabsPanelWrapperClassName = `.${SO_PREFIX}-panelWrapper-0-2-2`;
 const tabsTabClassName = `.${SO_PREFIX}-tab-0-2-5`;
+const tabsTabOtherClassName = `.${SO_PREFIX}-tab-0-2-37`;
 const tabsPanelClassName = `.${SO_PREFIX}-panel-0-2-3`;
 const tabsShowClassName = `.${SO_PREFIX}-show-0-2-20`;
 const tabsLineInnerClassName = `${SO_PREFIX}-lineInner-0-2-12`;
 const tabsFillInnerClassName = `${SO_PREFIX}-fillInner-0-2-13`;
 const tabsCollapsibleClassName = `.${SO_PREFIX}-collapsible-0-2-24`;
 const tabsCollapsedClassName = `${SO_PREFIX}-collapsed-0-2-25`;
+const tabsAutoFillClassName = `${SO_PREFIX}-autoFill-0-2-4`;
+const tabsExtraClassName = `.${SO_PREFIX}-extra-0-2-23`;
 
 const TabsDemo = ({
   className,
@@ -44,6 +47,8 @@ const TabsDemo = ({
   collapsible,
   defaultCollapsed,
   defaultActive = 0,
+  active,
+  onChange,
 }: {
   className?: string;
   style?: { [k: string]: string };
@@ -53,6 +58,8 @@ const TabsDemo = ({
   collapsible?: boolean;
   defaultCollapsed?: boolean;
   defaultActive?: number;
+  active?: string | number;
+  onChange?: any;
 }) => {
   const tabs = [];
   for (let i = 0; i < 3; i++) {
@@ -68,6 +75,8 @@ const TabsDemo = ({
       align={align}
       collapsible={collapsible}
       defaultCollapsed={defaultCollapsed}
+      active={active}
+      onChange={onChange}
     >
       {tabs.map((tab, index) => {
         return (
@@ -259,7 +268,7 @@ describe('Tabs[Align]', () => {
     attributesTest(tabs, 'data-soui-position', alignMap[align]);
   });
 });
-describe('Tabs[Collapsible]', () => {
+describe('Tabs[Collapsible/defaultCollapsed]', () => {
   test('should render when set position and collapsible', () => {
     [
       'right-top',
@@ -314,7 +323,7 @@ describe('Tabs[Children]', () => {
   });
 });
 describe('Tabs[Active/DefaultActive]', () => {
-  test('should render when set active', () => {
+  test('should render when set defaultActive', () => {
     const { container } = render(<TabsDemo defaultActive={1} />);
     const tabs = container.querySelectorAll(tabsTabClassName)!;
     attributesTest(tabs[1], 'data-soui-state', 'active');
@@ -322,5 +331,251 @@ describe('Tabs[Active/DefaultActive]', () => {
       if (index === 1) return;
       attributesTest(item, 'data-soui-state', '');
     });
+    fireEvent.click(tabs[0]);
+    attributesTest(tabs[0], 'data-soui-state', 'active');
+    tabs.forEach((item, index) => {
+      if (index === 0) return;
+      attributesTest(item, 'data-soui-state', '');
+    });
   });
+  test('should render when set active', () => {
+    const { container } = render(<TabsDemo active={1} />);
+    const tabs = container.querySelectorAll(tabsTabClassName)!;
+    attributesTest(tabs[1], 'data-soui-state', 'active');
+    tabs.forEach((item, index) => {
+      if (index === 1) return;
+      attributesTest(item, 'data-soui-state', '');
+    });
+    fireEvent.click(tabs[0]);
+    attributesTest(tabs[1], 'data-soui-state', 'active');
+    tabs.forEach((item, index) => {
+      if (index === 1) return;
+      attributesTest(item, 'data-soui-state', '');
+    });
+  });
+  test('should render when set active and defaultActive', () => {
+    const { container } = render(<TabsDemo active={1} defaultActive={0} />);
+    const tabs = container.querySelectorAll(tabsTabClassName)!;
+    attributesTest(tabs[1], 'data-soui-state', 'active');
+    tabs.forEach((item, index) => {
+      if (index === 1) return;
+      attributesTest(item, 'data-soui-state', '');
+    });
+  });
+  test('should render when tabs is control', () => {
+    const { container } = render(<TabsControl />);
+    screen.debug();
+    const radiosOther = container.querySelectorAll('.radio-wrapper-0-2-1')!;
+    const radios =
+      radiosOther.length !== 0 ? radiosOther : container.querySelectorAll('.radio-wrapper-0-2-47')!;
+    const tabOther = container.querySelectorAll(tabsTabOtherClassName)!;
+    const tabs = tabOther.length !== 0 ? tabOther : container.querySelectorAll(tabsTabClassName)!;
+    attributesTest(tabs[1], 'data-soui-state', 'active');
+    tabs.forEach((item, index) => {
+      if (index === 1) return;
+      attributesTest(item, 'data-soui-state', '');
+    });
+    fireEvent.click(radios[0]);
+    attributesTest(tabs[0], 'data-soui-state', 'active');
+    tabs.forEach((item, index) => {
+      if (index === 0) return;
+      attributesTest(item, 'data-soui-state', '');
+    });
+  });
+});
+describe('Tabs[AutoFill]', () => {
+  test('should render when set autoFill', () => {
+    const { container } = render(
+      <div style={{ height: 500 }}>
+        <Tabs defaultActive={1} autoFill>
+          <Tabs.Panel tab='Home'>Test</Tabs.Panel>
+        </Tabs>
+      </div>,
+    );
+    const tabs = container.querySelector(tabsClassName)!;
+    classTest(tabs, tabsAutoFillClassName);
+  });
+});
+describe('Tabs[Extra/TabBarExtraContent]', () => {
+  test('should render when set extra', () => {
+    const { container, rerender } = render(
+      <Tabs defaultActive={1}>
+        <Tabs.Panel tab='Home'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    classLengthTest(container, tabsExtraClassName, 0);
+    rerender(
+      <Tabs defaultActive={1} extra='demo'>
+        <Tabs.Panel tab='Home'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    classLengthTest(container, tabsExtraClassName, 1);
+  });
+  test('should render when set tabBarExtraContent', () => {
+    const { container, rerender } = render(
+      <Tabs defaultActive={1}>
+        <Tabs.Panel tab='Home'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    classLengthTest(container, tabsExtraClassName, 0);
+    rerender(
+      <Tabs defaultActive={1} tabBarExtraContent='demo'>
+        <Tabs.Panel tab='Home'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    classLengthTest(container, tabsExtraClassName, 1);
+  });
+  test('should render when set tabBarExtraContent and extra', () => {
+    const { container } = render(
+      <Tabs defaultActive={1} tabBarExtraContent='demo' extra='demoA'>
+        <Tabs.Panel tab='Home'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    textContentTest(container.querySelector(tabsExtraClassName)!, 'demo');
+  });
+});
+describe('Tabs[Background]', () => {
+  const activeBackground = 'blue';
+  const inactiveBackgroud = 'red';
+  test('should render when set background', () => {
+    const { container } = render(
+      <Tabs defaultActive={1} background={activeBackground}>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const tabs = container.querySelectorAll(tabsTabClassName)!;
+    attributesTest(tabs[1], 'data-soui-state', 'active');
+    styleTest(tabs[1], 'background: blue;');
+  });
+  test('should render when set activeBackground and inactiveBackground', () => {
+    const { container } = render(
+      <Tabs
+        defaultActive={1}
+        activeBackground={activeBackground}
+        inactiveBackground={inactiveBackgroud}
+      >
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const tabs = container.querySelectorAll(tabsTabClassName)!;
+    attributesTest(tabs[1], 'data-soui-state', 'active');
+    styleTest(tabs[1], 'background: blue;');
+    tabs.forEach((item, index) => {
+      if (index === 1) return;
+      attributesTest(item, 'data-soui-state', '');
+      styleTest(item, 'background: red;');
+    });
+  });
+  test('should render when set activeBackground and background', () => {
+    const { container } = render(
+      <Tabs defaultActive={1} background={activeBackground} activeBackground={inactiveBackgroud}>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const tabs = container.querySelectorAll(tabsTabClassName)!;
+    styleTest(tabs[1], 'background: red;');
+  });
+});
+describe('Tabs[Border/splitColor/hideSplit]', () => {
+  test('should render when set border', () => {
+    const { container } = render(
+      <Tabs defaultActive={1} border='red'>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const hr = container.querySelector(tabsHrClassName)!;
+    styleTest(hr, 'background: red;');
+  });
+  test('should render when set splitColor', () => {
+    const { container } = render(
+      <Tabs defaultActive={1} splitColor='red'>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const hr = container.querySelector(tabsHrClassName)!;
+    styleTest(hr, 'background: red;');
+  });
+  test('should render when set splitColor and border', () => {
+    const { container } = render(
+      <Tabs defaultActive={1} splitColor='red' border='blue'>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const hr = container.querySelector(tabsHrClassName)!;
+    styleTest(hr, 'background: red;');
+  });
+  test('should render when set hideSplit', () => {
+    const { container, rerender } = render(
+      <Tabs defaultActive={1}>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    classLengthTest(container, tabsHrClassName, 1);
+    rerender(
+      <Tabs defaultActive={1} hideSplit>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    classLengthTest(container, tabsHrClassName, 0);
+  });
+});
+// TODO: don`t have color
+describe('Tabs[Lazy]', () => {
+  test('should render when set lazy is false', () => {
+    const { container } = render(
+      <Tabs defaultActive={1} lazy={false}>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const tabs = container.querySelectorAll(tabsTabClassName)!;
+    const panels = container.querySelectorAll(tabsPanelClassName);
+    expect(tabs.length).toBe(panels.length);
+  });
+  test('should render when set lazy', () => {
+    const { container } = render(
+      <Tabs defaultActive={1} lazy>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const tabs = container.querySelectorAll(tabsTabClassName)!;
+    expect(container.querySelectorAll(tabsPanelClassName).length).toBe(1);
+    tabs.forEach((item) => {
+      fireEvent.click(item);
+    });
+    expect(container.querySelectorAll(tabsPanelClassName).length).toBe(3);
+  });
+});
+describe('Tabs[onChange]', () => {
+  test('should render when set onChange', () => {
+    const changeFn = jest.fn();
+    const { container } = render(
+      <Tabs defaultActive={1} onChange={changeFn}>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const tabs = container.querySelectorAll(tabsTabClassName)!;
+    fireEvent.click(tabs[0]);
+    expect(changeFn.mock.calls.length).toBe(1);
+  });
+});
+describe('Tabs[switchToTop]', () => {
+  test('should render when set switchToTop', () => {});
 });
