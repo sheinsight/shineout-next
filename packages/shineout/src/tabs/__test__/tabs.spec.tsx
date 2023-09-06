@@ -312,6 +312,7 @@ describe('Tabs[Children]', () => {
         <div className='demo'>demoB</div>
       </Tabs>,
     );
+    screen.debug();
     classLengthTest(container, tabsTabClassName, 2);
     container.querySelectorAll(tabsTabClassName).forEach((item) => {
       attributesTest(item, 'data-soui-state', '');
@@ -320,6 +321,17 @@ describe('Tabs[Children]', () => {
     container.querySelectorAll('.demo').forEach((item, index) => {
       attributesTest(item, 'id', String(index));
     });
+    classLengthTest(container, tabsPanelClassName, 0);
+  });
+  test('should render when set children is panel', () => {
+    const { container } = render(
+      <Tabs defaultActive={1}>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    classLengthTest(container, tabsPanelClassName, 1);
   });
 });
 describe('Tabs[Active/DefaultActive]', () => {
@@ -397,7 +409,7 @@ describe('Tabs[AutoFill]', () => {
   });
 });
 describe('Tabs[Extra/TabBarExtraContent]', () => {
-  test('should render when set extra', () => {
+  test('should render when set extra is string', () => {
     const { container, rerender } = render(
       <Tabs defaultActive={1}>
         <Tabs.Panel tab='Home'>Test</Tabs.Panel>
@@ -411,7 +423,17 @@ describe('Tabs[Extra/TabBarExtraContent]', () => {
     );
     classLengthTest(container, tabsExtraClassName, 1);
   });
-  test('should render when set tabBarExtraContent', () => {
+  test('should render when set extra is reactNode', () => {
+    const tabBarExtraContent = <div className='hello'>Hello</div>;
+    const { container } = render(
+      <Tabs defaultActive={1} extra={tabBarExtraContent}>
+        <Tabs.Panel tab='Home'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    classLengthTest(container, tabsExtraClassName, 1);
+    classLengthTest(container.querySelector(tabsExtraClassName)!, '.hello', 1);
+  });
+  test('should render when set tabBarExtraContent is string', () => {
     const { container, rerender } = render(
       <Tabs defaultActive={1}>
         <Tabs.Panel tab='Home'>Test</Tabs.Panel>
@@ -425,6 +447,16 @@ describe('Tabs[Extra/TabBarExtraContent]', () => {
     );
     classLengthTest(container, tabsExtraClassName, 1);
   });
+  test('should render when set tabBarExtraContent is reactNode', () => {
+    const tabBarExtraContent = <div className='hello'>Hello</div>;
+    const { container } = render(
+      <Tabs defaultActive={1} tabBarExtraContent={tabBarExtraContent}>
+        <Tabs.Panel tab='Home'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    classLengthTest(container, tabsExtraClassName, 1);
+    classLengthTest(container.querySelector(tabsExtraClassName)!, '.hello', 1);
+  });
   test('should render when set tabBarExtraContent and extra', () => {
     const { container } = render(
       <Tabs defaultActive={1} tabBarExtraContent='demo' extra='demoA'>
@@ -432,6 +464,20 @@ describe('Tabs[Extra/TabBarExtraContent]', () => {
       </Tabs>,
     );
     textContentTest(container.querySelector(tabsExtraClassName)!, 'demo');
+  });
+});
+describe('Tabs[tabBarStyle]', () => {
+  test('shoul render when set tabBarStyle', () => {
+    const tabBarStyle = 'red';
+    const { container } = render(
+      <Tabs defaultActive={1} tabBarStyle={{ color: tabBarStyle }}>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    const header = container.querySelector(tabsHeaderWrapperClassName)!;
+    styleTest(header, 'color: red;');
   });
 });
 describe('Tabs[Background]', () => {
@@ -576,6 +622,24 @@ describe('Tabs[onChange]', () => {
     expect(changeFn.mock.calls.length).toBe(1);
   });
 });
-describe('Tabs[switchToTop]', () => {
-  test('should render when set switchToTop', () => {});
+// TODO: switchToTop
+describe('Tabs[SwitchToTop/Sticky]', () => {
+  test('should render when set switchToTop', () => {
+    render(
+      <Tabs defaultActive={1} sticky>
+        <Tabs.Panel tab='A'>Test</Tabs.Panel>
+        <Tabs.Panel tab='B'>Test</Tabs.Panel>
+        <Tabs.Panel tab='C'>Test</Tabs.Panel>
+      </Tabs>,
+    );
+    screen.debug();
+  });
+});
+// TODO: scroll
+describe('Tabs[Scroll]', () => {
+  test('should render when set scroll', () => {
+    const { container } = render(<TabsScroll />);
+    screen.debug();
+    classLengthTest(container, tabsTabClassName, 100);
+  });
 });
