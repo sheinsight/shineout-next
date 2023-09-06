@@ -74,7 +74,7 @@ describe('Tabs.Panel[Disabled]', () => {
 describe('Tabs.Panel[Tab]', () => {
   const Demo = ({ pannel }: any) => (
     <Tabs defaultActive={1}>
-      {pannel.map((i) => (
+      {pannel.map((i: any) => (
         <Tabs.Panel key={i.id} tab={i.tab} id={i.id}>
           Test
         </Tabs.Panel>
