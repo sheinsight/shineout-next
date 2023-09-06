@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tabs from '..';
 import mountTest from '../../tests/mountTest';
@@ -6,6 +6,7 @@ import { classLengthTest } from '../../tests/structureTest';
 import {
   attributesTest,
   classTest,
+  delay,
   displayTest,
   snapshotTest,
   styleTest,
@@ -637,9 +638,21 @@ describe('Tabs[SwitchToTop/Sticky]', () => {
 });
 // TODO: scroll
 describe('Tabs[Scroll]', () => {
-  test('should render when set scroll', () => {
-    const { container } = render(<TabsScroll />);
-    screen.debug();
+  const clientWidth = 100;
+  const clientWidthScroll = 200;
+  test('should render when set scroll', async () => {
+    const { container, rerender } = render(<TabsScroll />);
+    jest
+      .spyOn(container.querySelector(tabsHeaderClassName)!, 'clientWidth', 'get')
+      .mockImplementation(() => clientWidth);
+    jest
+      .spyOn(container.querySelector(tabsHeaderScrollClassName)!, 'clientWidth', 'get')
+      .mockImplementation(() => clientWidthScroll);
+    rerender(<TabsScroll />);
+    await waitFor(async () => {
+      await delay(200);
+      screen.debug();
+    });
     classLengthTest(container, tabsTabClassName, 100);
   });
 });

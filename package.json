@@ -20,7 +20,8 @@
     "lint": "npm run lint:es",
     "lint:es": "eslint \"packages/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && npm run build",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "authors": ["chenlihao@shein.com"],
   "license": "MIT",
