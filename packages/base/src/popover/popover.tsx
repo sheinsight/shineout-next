@@ -118,6 +118,7 @@ const Popover = (props: PopoverProps) => {
     <AbsoluteList
       focus={open}
       parentElement={targetRef.current}
+      popupEl={popupRef.current}
       absolute={typeof props.getPopupContainer === 'function' ? props.getPopupContainer : true}
       position={position}
       fixedWidth={false}

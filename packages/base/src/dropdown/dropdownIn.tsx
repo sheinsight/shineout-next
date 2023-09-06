@@ -40,7 +40,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     style,
     className,
     size,
-    animation
+    animation,
   } = props;
 
   const { open, position, targetRef, popupRef, getTargetProps, closePop, openPop } = usePopup({
@@ -48,7 +48,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     onCollapse: props.onCollapse,
     disabled,
     trigger,
-    position: props.position,
+    position: props.position || 'bottom-left',
     autoMode: 'menu',
     priorityDirection: 'vertical',
     mouseLeaveDelay: 200,
@@ -151,7 +151,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           renderItem={renderItem}
           columns={columns}
           width={width}
-          handleBlur={isSub ? props.closePop : closePop}
+          handleBlur={isSub && props.closePop ? props.closePop : closePop}
         />
       );
       return (
@@ -186,10 +186,10 @@ const Dropdown = (props: SimpleDropdownProps) => {
         absolute={absolute}
         fixedWidth={'min'}
         popupEl={popupRef.current}
+        adjust={!isSub}
       >
         <AnimationList
           display={columns ? 'grid' : 'block'}
-          jssStyle={jssStyle}
           className={classNames(
             jssStyle?.dropdown?.list,
             columns !== undefined && columns > 1 && jssStyle?.dropdown?.boxList,

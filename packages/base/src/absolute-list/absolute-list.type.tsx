@@ -14,14 +14,13 @@ export type VerticalPosition =
   | 'top-right'
   | 'top'
   | 'bottom';
-export type ListPosition = 'drop-down' | 'drop-up';
 
 export interface AbsoluteListProps {
   children: React.ReactElement;
   focus: boolean;
   parentElement: HTMLElement | null;
   fixedWidth: 'min' | boolean; // same width with parentElement
-  position: ListPosition | HorizontalPosition | VerticalPosition | 'cover';
+  position: HorizontalPosition | VerticalPosition | 'cover';
   updateKey?: number | string;
   /**
    * @en When it is true, the pop-up layer of option append into document.body; When it is a function, the return value is used as the popup layer container
@@ -50,4 +49,6 @@ export interface AbsoluteListProps {
   popupEl?: HTMLElement | null;
   // 隐藏后是否卸载
   destroy?: boolean;
+  // 自动调整位置来适应容器大小
+  adjust?: boolean;
 }

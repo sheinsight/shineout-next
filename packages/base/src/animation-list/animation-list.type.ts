@@ -14,7 +14,7 @@ export interface AnimationListClass {
   collapse: string;
   'scale-y': string;
 }
-export interface AnimationListProps {
+export interface AnimationListProps extends React.HTMLAttributes<HTMLDivElement> {
   type: ListAnimationType | ListAnimationType[];
   duration: 'fast' | 'slow' | 'default';
   show: boolean;
@@ -22,9 +22,6 @@ export interface AnimationListProps {
   children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  jssStyle?: {
-    animationList?: AnimationListClass;
-  };
   onRef?: React.Ref<HTMLDivElement | null>;
   animation?: boolean;
 }

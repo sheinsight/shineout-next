@@ -39,7 +39,6 @@ const animationList: JsStyles<animationListClass> = {
     },
   },
   fade: {
-    opacity: 0,
     '$show&': {
       opacity: 1,
     },

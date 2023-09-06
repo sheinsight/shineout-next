@@ -104,8 +104,8 @@ export interface ItemProps {
 
 export interface SimpleDropdownProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
-  Pick<AbsoluteListProps, 'absolute'>,
-  Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode'> {
+    Pick<AbsoluteListProps, 'absolute'>,
+    Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode'> {
   jssStyle?: {
     animationList?: AnimationListClass;
     dropdown?: DropdownClass;
@@ -118,7 +118,7 @@ export interface SimpleDropdownProps
   /**
    * @private 内部属性
    */
-  closePop: () => void;
+  closePop?: () => void;
   /**
    * @en Display multiple elements on the page. This property depends on the width attribute. Please set the number of columns and width appropriately.
    * @cn 页面多元素展示,此属性需要依赖width属性,请合理的设置列数和宽度
@@ -175,7 +175,7 @@ export interface SimpleDropdownProps
   /**
    * @en Set position property can control the direction and position of the drop-down menu
    * @cn 弹出的方向和位置
-   * @default 'auto'
+   * @default 'bottom-left'
    */
   position?: MenuPosition | 'auto';
 
