@@ -41,7 +41,12 @@ export default () => {
 
   return (
     <div>
-      <Tree jssStyle={{ tree: tooltipStyle }} data={data} renderItem='name'></Tree>
+      <Tree
+        jssStyle={{ tree: tooltipStyle }}
+        parentClickExpand
+        data={data}
+        renderItem='name'
+      ></Tree>
     </div>
   );
 };

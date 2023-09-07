@@ -3,7 +3,23 @@ import TreeNode from './tree-node';
 import { TreeListProps } from './tree-list.type';
 
 const List = <DataItem,>(props: TreeListProps<DataItem>) => {
-  const { className, data, id = '', keygen, expanded, active, renderItem, jssStyle } = props;
+  const {
+    jssStyle,
+    className,
+    data,
+    id = '',
+    keygen,
+    expanded,
+    active,
+    line,
+    renderItem,
+    childrenKey,
+    onNodeClick,
+    registerUpdate,
+    parentClickExpand,
+  } = props;
+
+  if (!expanded) return null;
 
   const rootClass = classNames(className);
 
@@ -25,9 +41,15 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         data={node}
         index={index}
         active={active}
+        childrenKey={childrenKey}
         renderItem={renderItem}
+        registerUpdate={registerUpdate}
         expanded={expanded}
+        parentClickExpand={parentClickExpand}
         keygen={keygen}
+        onNodeClick={onNodeClick}
+        line={line}
+        listComponent={List}
       ></TreeNode>
     );
   };

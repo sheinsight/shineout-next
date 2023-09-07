@@ -46,6 +46,9 @@ import { TextareaTokens } from './textarea/type';
 import Tooltip from './tooltip';
 import { TooltipTokens } from './tooltip/type';
 
+import Tree from './tree';
+import { TreeTokens } from './tree/type';
+
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CheckboxTokens &
@@ -61,7 +64,8 @@ export type ThemeTokens = AlertTokens &
   SwitchTokens &
   TagTokens &
   TextareaTokens &
-  TooltipTokens;
+  TooltipTokens &
+  TreeTokens;
 
 const Token: ThemeTokens = {
   ...Alert,
@@ -80,6 +84,7 @@ const Token: ThemeTokens = {
   ...Tag,
   ...Textarea,
   ...Tooltip,
+  ...Tree,
 };
 
 export default Token;

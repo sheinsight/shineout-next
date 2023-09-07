@@ -1,5 +1,11 @@
 import { useEffect, useRef } from 'react';
-import { BaseTreeProps, TreePathType, CheckedStatusType, TreeContext } from './use-tree.type';
+import {
+  BaseTreeProps,
+  TreePathType,
+  CheckedStatusType,
+  TreeContext,
+  UpdateFunc,
+} from './use-tree.type';
 import { KeygenResult } from '../../common/type';
 import { isFunc, isString, isNumber } from '../../utils/is';
 
@@ -27,6 +33,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     childrenKey = 'children' as keyof DataItem,
     keygen,
     mode,
+    active,
+    expanded,
+    defaultExpanded,
+    defaultExpandAll,
     disabled: disabledProps,
   } = props;
 
@@ -34,8 +44,22 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     pathMap: new Map<KeygenResult, TreePathType>(),
     dataMap: new Map<KeygenResult, DataItem>(),
     valueMap: new Map<KeygenResult, CheckedStatusType>(),
+    updateMap: new Map<KeygenResult, UpdateFunc>(),
     disabled: false,
   });
+
+  // 注册节点
+  const registerUpdate = (id: KeygenResult, update: UpdateFunc) => {
+    context.updateMap.set(id, update);
+
+    const isActive = active === id;
+    const expandeds = expanded || defaultExpanded;
+
+    if (defaultExpandAll) {
+      return { active: isActive, expanded: true };
+    }
+    return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
+  };
 
   const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
     if (isFunc(keygen)) {
@@ -50,7 +74,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return id + (id ? ',' : '') + index;
   };
 
-  // 注册禁用方法
   const getDisabled = () => {
     if (isFunc(disabledProps)) {
       return disabledProps;
@@ -196,6 +219,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,
+    registerUpdate,
   };
 };
 

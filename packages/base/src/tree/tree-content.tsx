@@ -1,18 +1,63 @@
 import classNames from 'classnames';
+import { util } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeContextProps } from './tree-content.type';
-import { util } from '@sheinx/hooks';
+import Icons from '../icons';
+// import Spin from '../spin';
 
 const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
-  const { jssStyle, id, active, data, renderItem, expanded, onDragOver } = props;
-  console.log(id, active, data, renderItem, expanded);
+  const {
+    jssStyle,
+    id,
+    active,
+    data,
+    // line,
+    renderItem,
+    expanded,
+    childrenKey,
+    parentClickExpand,
+    onToggle,
+    onDragOver,
+    onNodeClick,
+  } = props;
+
   const contentStyle = jssStyle?.tree || ({} as TreeClasses);
   const rootClass = classNames(contentStyle.contentWrapper);
   const contentClass = classNames(contentStyle.content);
   const textClass = classNames(contentStyle.text);
 
+  const handleIndicatorClick = () => {
+    onToggle();
+  };
+
+  const handleClick = () => {
+    const children = data[childrenKey] as DataItem[];
+    if (parentClickExpand && children && children.length > 0) {
+      handleIndicatorClick();
+    } else {
+      onNodeClick(data, id);
+    }
+  };
+  const handleNodeExpand = () => {};
+
+  // const renderLoading = () => {
+  //   return <Spin name="ring" size={12} jssStyle={jssStyle}></Spin>
+  // };
+
   const renderIndicator = () => {
-    return null;
+    const children = data[childrenKey] as DataItem[];
+
+    if (!children || children.length === 0) {
+      return null;
+    }
+
+    return (
+      <span className={contentStyle.iconWrapper} data-expanded={expanded}>
+        <span className={contentStyle.icon} onClick={handleIndicatorClick}>
+          {Icons.TreeArrow}
+        </span>
+      </span>
+    );
   };
 
   const renderCheckbox = () => {
@@ -29,7 +74,9 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
       {renderIndicator()}
       <div className={contentClass}>
         {renderCheckbox()}
-        <div className={textClass}>{renderNode()}</div>
+        <div className={textClass} onClick={handleClick} onDoubleClick={handleNodeExpand}>
+          {renderNode()}
+        </div>
       </div>
     </div>
   );

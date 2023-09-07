@@ -1,4 +1,5 @@
 import { BaseTreeProps, ObjectKey, KeygenResult } from '@sheinx/hooks';
+import { SpinClasses } from '../spin/spin.type';
 
 export interface TreeClasses {
   tree: string;
@@ -8,6 +9,8 @@ export interface TreeClasses {
   contentWrapper: string;
   text: string;
   list: string;
+  iconWrapper: string;
+  icon: string;
   node: string;
 }
 export type TreeRenderItemType<DataItem> =
@@ -17,7 +20,12 @@ export type TreeRenderItemType<DataItem> =
 export interface TreeProps<DataItem> extends BaseTreeProps<DataItem> {
   jssStyle?: {
     tree: TreeClasses;
+    spin: SpinClasses;
   };
-  renderItem: TreeRenderItemType<DataItem>;
+  line?: boolean;
+  onDrop?: (data: DataItem[], key: KeygenResult, targetKey: KeygenResult, position: number) => void;
   active?: string | number;
+  parentClickExpand?: boolean;
+  onExpand?: (value: KeygenResult[]) => void;
+  renderItem: TreeRenderItemType<DataItem>;
 }

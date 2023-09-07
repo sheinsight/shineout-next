@@ -93,6 +93,10 @@ const radioUnChecked = [
   />,
 ];
 
+const treeArrow = [
+  'M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z',
+];
+
 const Icons = {
   AngleLeft: icon(angleLeft),
   AngleRight: icon(angleRight),
@@ -131,6 +135,7 @@ const Icons = {
   ImageError: icon(imageError),
   ImageDownload: icon(imageDownload),
   ImagePreview: icon(imagePreview),
+  TreeArrow: icon(treeArrow),
 };
 
 export default Icons;

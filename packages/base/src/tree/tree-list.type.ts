@@ -1,15 +1,21 @@
-import { BaseTreeProps, KeygenResult } from '@sheinx/hooks';
+import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { TreeClasses, TreeRenderItemType } from './tree.type';
+import { SpinClasses } from '../spin/spin.type';
 
 export interface TreeListProps<DataItem>
-  extends BaseTreeProps<DataItem>,
+  extends Omit<BaseTreeProps<DataItem>, 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className'> {
   jssStyle?: {
     tree: TreeClasses;
+    spin: SpinClasses;
   };
   id?: KeygenResult;
-  active: boolean;
+  line: boolean;
+  expanded?: boolean;
+  childrenKey: keyof DataItem;
+  parentClickExpand?: boolean;
+  registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
+  onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
-  expanded: boolean;
 }
