@@ -12,8 +12,8 @@ export default () => {
     tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });
   }
   return (
-    <div style={{ height: 100, width: 100 }}>
-      <Tabs shape='line' defaultActive={0} style={{ width: 100 }}>
+    <div style={{ height: 100 }}>
+      <Tabs shape='line' defaultActive={0}>
         {tabs.map((tab, index) => {
           return (
             <Tabs.Panel key={index} tab={tab.title}>
