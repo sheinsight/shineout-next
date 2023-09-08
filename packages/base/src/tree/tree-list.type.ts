@@ -16,6 +16,7 @@ export interface TreeListProps<DataItem>
   childrenKey: keyof DataItem;
   parentClickExpand?: boolean;
   registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
-  onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
+  onNodeClick: (data: DataItem, id: KeygenResult) => void;
+  onChange?: (value: KeygenResult[]) => void;
 }

@@ -16,6 +16,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     keygen,
     childrenKey,
     registerUpdate,
+    onChange,
     onNodeClick,
     listComponent: List,
   } = props;
@@ -25,7 +26,9 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
   const hasChildren = children && children.length > 0;
 
   const contentStyle = jssStyle?.tree || ({} as TreeClasses);
-  const rootClass = classNames(contentStyle.node);
+  const rootClass = classNames(contentStyle.node, {
+    [contentStyle.leaf]: !hasChildren,
+  });
 
   const rootProps = getRootProps();
 
@@ -39,6 +42,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       expanded,
       line,
       data: children,
+      onChange,
       onNodeClick,
       registerUpdate,
     };
@@ -63,6 +67,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         childrenKey={childrenKey}
         renderItem={renderItem}
         parentClickExpand={parentClickExpand}
+        onChange={onChange}
         onFetch={handleFetch}
         onNodeClick={onNodeClick}
         onDragOver={handleDragOver}

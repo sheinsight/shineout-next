@@ -15,6 +15,7 @@ export interface TreeContextProps<DataItem>
   line: boolean;
   active: boolean;
   expanded: boolean;
+  expandIcons?: [React.ReactNode, React.ReactNode];
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
   registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
@@ -23,4 +24,5 @@ export interface TreeContextProps<DataItem>
   onFetch: () => void;
   onDragOver: () => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
+  onChange?: (value: KeygenResult[]) => void;
 }

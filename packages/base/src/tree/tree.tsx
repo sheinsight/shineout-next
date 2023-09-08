@@ -12,13 +12,19 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     keygen,
     renderItem,
     parentClickExpand,
+    onChange,
   } = props;
 
-  const { registerUpdate } = useTree({ data, childrenKey: childrenKey as keyof DataItem, keygen });
+  const { registerUpdate } = useTree({
+    data,
+    childrenKey: childrenKey as keyof DataItem,
+    keygen,
+  });
 
   const treeStyle = jssStyle?.tree || ({} as TreeClasses);
   const rootClass = classNames(treeStyle.tree, {
     [treeStyle.line]: line,
+    [treeStyle.noline]: !line,
   });
 
   const handleNodeClick = (node, id) => {
@@ -32,6 +38,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
         data={data}
         line={line}
         keygen={keygen}
+        onChange={onChange}
         registerUpdate={registerUpdate}
         childrenKey={childrenKey as keyof DataItem}
         onNodeClick={handleNodeClick}

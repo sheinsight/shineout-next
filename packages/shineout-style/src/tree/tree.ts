@@ -4,14 +4,18 @@ import { JsStyles } from '../jss-style';
 export type TreeClass =
   | 'tree'
   | 'line'
+  | 'noline'
   | 'small'
   | 'large'
   | 'root'
   | 'contentWrapper'
   | 'content'
+  | 'checkbox'
   | 'text'
   | 'list'
   | 'node'
+  | 'leaf'
+  | 'childnode'
   | 'iconWrapper'
   | 'icon'
   | 'children';
@@ -20,10 +24,10 @@ const treeStyle: JsStyles<TreeClass> = {
   tree: {},
   line: {
     '& $node': {
+      // paddingLeft: 28,
       '&::before': {
         content: '""',
         position: 'absolute',
-        // top: -18,
         left: 0,
         height: '100%',
         width: 1,
@@ -40,18 +44,48 @@ const treeStyle: JsStyles<TreeClass> = {
       },
     },
 
-    '& $node:first-child': {
-      '&::before': {},
-    },
+    '& $node:first-child': {},
 
     '& $node:last-child': {
       '&::before': {
         top: 0,
-        height: 'calc(100% - 18px)',
+        height: 18,
+      },
+    },
+
+    '& $contentWrapper': {},
+
+    '& $iconWrapper': {
+      left: 12,
+      width: 28,
+      '& $icon': {
+        width: 16,
+      },
+    },
+    '& $childnode': {
+      marginLeft: 12,
+    },
+  },
+  noline: {
+    '& $icon': {
+      transform: 'rotate(-90deg)',
+    },
+    '& $iconWrapper[data-expanded^="true"]': {
+      '& $icon': {
+        transform: 'rotate(0deg)',
       },
     },
   },
-  root: {},
+  root: {
+    '& > :first-child$node': {
+      '&::before': {
+        top: 18,
+      },
+    },
+    '& > :last-child$node': {
+      '&::before': {},
+    },
+  },
   small: {},
   large: {},
   contentWrapper: {
@@ -61,12 +95,20 @@ const treeStyle: JsStyles<TreeClass> = {
   },
   content: {
     flex: 1,
+    display: 'flex',
+    alignItems: 'center',
     cursor: 'pointer',
     lineHeight: '26px',
     padding: `0 ${Token.treePaddingX}`,
     borderRadius: Token.treeContentBorderRadius,
     '&:hover': {
       background: Token.treeContentHoverBackgroundColor,
+    },
+  },
+  checkbox: {
+    '&[class*="checkbox-wrapper"]': {
+      height: 26,
+      marginRight: 0,
     },
   },
   text: {
@@ -77,13 +119,21 @@ const treeStyle: JsStyles<TreeClass> = {
   node: {
     position: 'relative',
     paddingLeft: 24,
+    '&$leaf': {
+      paddingLeft: 36,
+      '&::after': {
+        width: 30,
+      },
+    },
   },
+  leaf: {},
+  childnode: {},
   iconWrapper: {
-    // opacity: 0,
     position: 'absolute',
     left: 0,
     display: 'inline-flex',
     alignItems: 'center',
+    justifyContent: 'center',
     '&[data-expanded^="true"]': {
       '& $icon': {
         transform: 'rotate(0deg)',
@@ -97,15 +147,13 @@ const treeStyle: JsStyles<TreeClass> = {
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: '50%',
-    transform: 'rotate(-90deg)',
     transition: 'all 0.2s ease',
     color: Token.treeItemFontColor,
     cursor: 'pointer',
-    // hover
+    // transform: 'rotate(-90deg)',
     '&:hover': {
       background: Token.treeItemHoverBackgroundColor,
     },
-    // active
     '&:active': {
       background: Token.treeItemActiveBackgroundColor,
     },

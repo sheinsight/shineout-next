@@ -6,10 +6,12 @@
  */
 import React from 'react';
 import { Tree } from '@sheinx/base';
-import { useTreeStyle } from '@sheinx/shineout-style';
+import { useTreeStyle, useCheckboxStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const tooltipStyle = useTreeStyle();
+  const treeStyle = useTreeStyle();
+  const checkboxStyle = useCheckboxStyle();
+
   const data = [
     {
       id: '1',
@@ -19,7 +21,14 @@ export default () => {
           id: '1-1',
           name: 'node 1-1',
           children: [
-            { id: '1-1-1', name: 'node 1-1-1' },
+            {
+              id: '1-1-1',
+              name: 'node 1-1-1',
+              children: [
+                { id: '1-1-1-1', name: 'node 1-1-1-1' },
+                { id: '1-1-1-2', name: 'node 1-1-1-2' },
+              ],
+            },
             { id: '1-1-2', name: 'node 1-1-2' },
           ],
         },
@@ -39,12 +48,16 @@ export default () => {
     { id: '5', name: 'node 5', children: [{ id: '5-1', name: 'node 5-1' }] },
   ];
 
+  // const handleChange = () => {};
+
   return (
     <div>
       <Tree
-        jssStyle={{ tree: tooltipStyle }}
+        jssStyle={{ tree: treeStyle, checkbox: checkboxStyle }}
         parentClickExpand
+        // onChange={handleChange}
         data={data}
+        // line={false}
         renderItem='name'
       ></Tree>
     </div>

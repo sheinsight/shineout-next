@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { util } from '@sheinx/hooks';
 import TreeNode from './tree-node';
 import { TreeListProps } from './tree-list.type';
 
@@ -12,6 +13,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     expanded,
     active,
     line,
+    onChange,
     renderItem,
     childrenKey,
     onNodeClick,
@@ -49,10 +51,15 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         keygen={keygen}
         onNodeClick={onNodeClick}
         line={line}
+        onChange={onChange}
         listComponent={List}
       ></TreeNode>
     );
   };
+
+  if (!data || !util.isArray(data)) {
+    return null;
+  }
 
   return <div className={rootClass}>{data.map(renderNode)}</div>;
 };

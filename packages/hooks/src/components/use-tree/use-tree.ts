@@ -61,6 +61,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
 
+  const get = (id: KeygenResult) => {
+    return context.valueMap.get(id);
+  };
+
   const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
     if (isFunc(keygen)) {
       return keygen(item, index);
@@ -74,12 +78,22 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return id + (id ? ',' : '') + index;
   };
 
+  const getValue = () => {
+    const value: KeygenResult[] = [];
+
+    return value;
+  };
+
   const getDisabled = () => {
     if (isFunc(disabledProps)) {
       return disabledProps;
     }
 
     return () => !!disabledProps;
+  };
+
+  const set = (id: KeygenResult, checked: CheckedStatusType) => {
+    console.log(id, checked);
   };
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
@@ -207,18 +221,30 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.disabled = getDisabled();
   };
 
+  const getChecked = (id: KeygenResult) => {
+    const value = get(id);
+    let checked: boolean | 'indeterminate' = value === 1;
+    if (value === 2) checked = 'indeterminate';
+    return checked;
+  };
+
+  // const handleDrop = () => {};
+
   useEffect(() => {
     setData();
     initData(data, []);
     initValue();
     setValue();
-    console.log(context.valueMap);
   }, []);
 
   return {
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,
+    get,
+    set,
+    getValue,
+    getChecked,
     registerUpdate,
   };
 };

@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeContextProps } from './tree-content.type';
+import Checkbox from './tree-checkbox';
 import Icons from '../icons';
 // import Spin from '../spin';
 
@@ -11,18 +12,22 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     id,
     active,
     data,
-    // line,
+    line,
+    // expandIcons,
     renderItem,
     expanded,
     childrenKey,
     parentClickExpand,
+    onChange,
     onToggle,
     onDragOver,
     onNodeClick,
   } = props;
 
   const contentStyle = jssStyle?.tree || ({} as TreeClasses);
-  const rootClass = classNames(contentStyle.contentWrapper);
+  const rootClass = classNames(contentStyle.contentWrapper, {
+    [contentStyle.childnode]: data[childrenKey] && data[childrenKey]?.length > 0,
+  });
   const contentClass = classNames(contentStyle.content);
   const textClass = classNames(contentStyle.text);
 
@@ -38,6 +43,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
       onNodeClick(data, id);
     }
   };
+
   const handleNodeExpand = () => {};
 
   // const renderLoading = () => {
@@ -51,6 +57,18 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
       return null;
     }
 
+    // const icon = expandIcons || Icons.TreeArrow;
+
+    if (line) {
+      return (
+        <span style={{ position: 'absolute', left: 12, top: 6 }} data-expanded={expanded}>
+          <span className={contentStyle.icon} onClick={handleIndicatorClick}>
+            {expanded ? Icons.TreeMinus : Icons.TreePlus}
+          </span>
+        </span>
+      );
+    }
+
     return (
       <span className={contentStyle.iconWrapper} data-expanded={expanded}>
         <span className={contentStyle.icon} onClick={handleIndicatorClick}>
@@ -61,7 +79,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   };
 
   const renderCheckbox = () => {
-    return null;
+    return <Checkbox jssStyle={jssStyle} className={contentStyle.checkbox}></Checkbox>;
   };
 
   const renderNode = () => {
@@ -73,7 +91,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     <div className={rootClass} onDragOver={onDragOver}>
       {renderIndicator()}
       <div className={contentClass}>
-        {renderCheckbox()}
+        {onChange && renderCheckbox()}
         <div className={textClass} onClick={handleClick} onDoubleClick={handleNodeExpand}>
           {renderNode()}
         </div>

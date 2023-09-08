@@ -13,4 +13,5 @@ export interface TreeRootProps<DataItem> extends Omit<BaseTreeProps<DataItem>, '
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
+  onChange?: (value: KeygenResult[]) => void;
 }
