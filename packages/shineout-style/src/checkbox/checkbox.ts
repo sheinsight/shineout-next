@@ -17,9 +17,9 @@ const iconSize = '14px';
 const circleSize = '5px';
 const checkboxStyle: JsStyles<CheckboxClass> = {
   wrapper: {
-    display: 'inline-block',
+    display: 'inline-flex',
     position: 'relative',
-    verticalAlign: 'middle',
+    alignItems: 'center',
     cursor: 'pointer',
     boxSizing: 'border-box',
     marginRight: token.checkboxGap,
@@ -35,7 +35,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     cursor: 'not-allowed',
   },
   indicatorWrapper: {
-    display: 'inline-block',
+    display: 'block',
     position: 'relative',
     boxSizing: 'border-box',
     width: iconSize,
@@ -80,7 +80,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     borderColor: token.checkboxIconBorderColor,
     backgroundColor: token.checkboxIconBackgroundColor,
     color: token.checkboxIconColor,
-    display: 'inline-block',
+    display: 'block',
     verticalAlign: 'middle',
     '$wrapperChecked &::after': {
       content: '" "',
@@ -130,13 +130,14 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     verticalAlign: 'middle',
     boxSizing: 'border-box',
     fontSize: token.checkboxLabelFontSize,
+    lineHeight: token.lineHeightDynamic,
   },
   group: {
     padding: '5px 0',
   },
   groupBlock: {
     '& $wrapper': {
-      display: 'block',
+      display: 'flex',
       marginBottom: token.checkboxBlockGap,
     },
   },

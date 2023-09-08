@@ -28,11 +28,11 @@ const Radio = (props: SimpleRadioProps) => {
   const simpleRadio = (
     <div {...rootProps}>
       <input {...inputProps} type='radio' />
-      <div className={jssStyle?.radio?.indicatorWrapper}>
+      <span className={jssStyle?.radio?.indicatorWrapper}>
         <span {...indicatorProps} className={jssStyle?.radio?.indicator}>
           {checked ? icons.RadioChecked : icons.RadioUnChecked}
         </span>
-      </div>
+      </span>
       <span className={jssStyle?.radio?.desc}>{children}</span>
     </div>
   );
