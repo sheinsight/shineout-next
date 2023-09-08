@@ -28,9 +28,9 @@ const Checkbox = (props: SimpleCheckboxProps) => {
       })}
     >
       <input {...inputProps} type='checkbox' />
-      <div className={jssStyle?.checkbox?.indicatorWrapper}>
+      <span className={jssStyle?.checkbox?.indicatorWrapper}>
         <i {...getIndicatorProps()} className={jssStyle?.checkbox?.indicator} />
-      </div>
+      </span>
       <span className={jssStyle?.checkbox?.desc}>{children}</span>
       {typeof renderFooter === 'function' ? renderFooter(checked) : null}
     </div>
