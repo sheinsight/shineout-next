@@ -27,9 +27,9 @@ const radioStyle: JsStyles<RadioClass> = {
   //   },
   // },
   wrapper: {
-    display: 'inline-block',
+    display: 'inline-flex',
     position: 'relative',
-    verticalAlign: 'middle',
+    alignItems: 'center',
     cursor: 'pointer',
     boxSizing: 'border-box',
     marginRight: token.radioGap,
@@ -41,7 +41,7 @@ const radioStyle: JsStyles<RadioClass> = {
     cursor: 'not-allowed',
   },
   indicatorWrapper: {
-    display: 'inline-block',
+    display: 'block',
     position: 'relative',
     boxSizing: 'border-box',
     width: token.radioIconWidth,
@@ -113,6 +113,7 @@ const radioStyle: JsStyles<RadioClass> = {
     verticalAlign: 'middle',
     boxSizing: 'border-box',
     fontSize: token.radioLabelFontSize,
+    lineHeight: token.lineHeightDynamic,
     '$wrapperSmall &': {
       fontSize: token.radioSmallLabelFontSize,
     },
@@ -125,7 +126,7 @@ const radioStyle: JsStyles<RadioClass> = {
   },
   groupBlock: {
     '& $wrapper': {
-      display: 'block',
+      display: 'flex',
       marginBottom: token.radioBlockGap,
     },
   },
