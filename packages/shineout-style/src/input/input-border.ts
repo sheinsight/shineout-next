@@ -31,6 +31,7 @@ export default <T extends string>(
     disabledBackgroundColor: string;
 
     focusShadow: string;
+    errorFocusShadow: string;
   } = {} as any,
 ) => {
   return {
@@ -45,6 +46,19 @@ export default <T extends string>(
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
         borderColor: token.hoverBorderColor,
+      },
+      '[data-soui-type="input-group"] &': {
+        '&': {
+          borderWidth: 0,
+          borderRadius: 0,
+          boxShadow: 'none',
+          backgroundColor: 'transparent',
+          flex: 1,
+          minWidth: 0,
+        },
+        '& + &': {
+          borderLeftWidth: '1px',
+        },
       },
     },
     paddingBox: {
@@ -65,7 +79,7 @@ export default <T extends string>(
     },
     [`${name}Focus`]: {
       borderColor: token.focusBorderColor,
-      boxShadow: token.focusShadow,
+      boxShadow: `0 0 0 2px ${token.focusShadow}`,
       '&:hover': {
         borderColor: token.focusBorderColor,
       },
@@ -74,6 +88,9 @@ export default <T extends string>(
       borderColor: token.errorBorderColor,
       '&:hover': {
         borderColor: token.errorBorderColor,
+      },
+      [`&$${name}Focus`]: {
+        boxShadow: `0 0 0 2px ${token.errorFocusShadow}`,
       },
     } as CSSProperties,
     [`${name}Disabled`]: {
@@ -95,24 +112,13 @@ export default <T extends string>(
         borderRightColor: 'transparent',
         borderTopColor: 'transparent',
         borderRadius: 0,
+        boxShadow: 'none',
       },
     },
     [`${name}NoBorder`]: {
       '&&': {
         borderColor: 'transparent',
-      },
-    },
-    [`${name}InGroup`]: {
-      '&': {
-        borderWidth: 0,
-        borderRadius: 0,
         boxShadow: 'none',
-        backgroundColor: 'transparent',
-        flex: 1,
-        minWidth: 0,
-      },
-      '& + &': {
-        borderLeftWidth: '1px',
       },
     },
   } as Record<
@@ -124,8 +130,7 @@ export default <T extends string>(
     | `${T}Small`
     | `${T}Large`
     | `${T}Underline`
-    | `${T}NoBorder`
-    | `${T}InGroup`,
+    | `${T}NoBorder`,
     any
   >;
 };

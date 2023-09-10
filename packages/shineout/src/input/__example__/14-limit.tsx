@@ -1,8 +1,8 @@
 /**
  * cn - 输入限制
- *    -- 通过设置 min（最小值）、 max（最大值）、 maxLength（最大长度）来限制 Input 组件的输入内容。
+ *    -- 通过设置 `min`（最小值）、 `max`（最大值）、 `maxLength`（最大长度）来限制 Input 组件的输入内容。
  * en - Input restriction
- *    -- Set min (minimum value), max (maximum value), and maxLength (maximum length) to restrict the input content of the Input component.
+ *    -- Set `min` (minimum value), `max` (maximum value), and `maxLength` (maximum length) to restrict the input content of the Input component.
  */
 
 import React from 'react';
@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
       <Input.Group style={style}>
         <b className='maxLength'>maxLength</b>
-        <Input placeholder='5' maxLength={5} step={3} />
+        <Input placeholder='5' maxLength={5} />
       </Input.Group>
     </div>
   );

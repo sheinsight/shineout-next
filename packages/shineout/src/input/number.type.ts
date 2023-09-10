@@ -5,4 +5,7 @@ export interface BaseNumberProps extends Omit<UnStyledInputNumberProps, 'jssStyl
   value?: string;
 }
 
+/**
+ * @title Input.Number
+ */
 export type InputNumberProps = GetWithFieldProps<BaseNumberProps, BaseNumberProps['value']>;

@@ -1,82 +1,110 @@
-import React, { useRef, useState } from 'react';
-import { BasePopupProps, MenuPosition } from './use-popup.type';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { BasePopupProps, PositionType } from './use-popup.type';
 import useClickAway from '../../common/use-click-away';
-import { getMenuPosition } from '../../utils';
+import { getPosition } from '../../utils/position';
+import usePersistFn from '../../common/use-persist-fn';
+import popupContext from './popup-context';
 
 const usePopup = (props: BasePopupProps) => {
-  const { disabled, trigger } = props;
-  const [openState, setOpenState] = useState(false);
+  const {
+    disabled,
+    trigger = 'click',
+    mouseEnterDelay = 0,
+    autoMode = 'popover',
+    mouseLeaveDelay,
+    targetEvents,
+    defaultOpen = false,
+  } = props;
+
+  const [openState, setOpenState] = useState(defaultOpen);
+  const { bindChild, removeChild } = useContext(popupContext);
+
+  const targetRef = useRef<HTMLDivElement | null>(null);
+  const popupRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    bindChild(popupRef);
+    return () => {
+      removeChild(popupRef);
+    };
+  }, []);
+
+  const { current: context } = useRef({
+    triggerTimer: null as NodeJS.Timeout | null,
+    // 记录所有的子popup 点击子 popup 不关闭弹窗
+    chain: [targetRef, popupRef] as React.MutableRefObject<HTMLElement | null>[],
+  });
   const open = props.open !== undefined ? props.open : openState;
-  const changeOpen = (open: boolean) => {
-    props.onCollapse?.(open);
-    if (props.open === undefined) {
-      setOpenState(open);
-    }
+  const changeOpen = (openIn: boolean, delay?: number) => {
+    if (context.triggerTimer) clearTimeout(context.triggerTimer);
+    context.triggerTimer = setTimeout(() => {
+      if (open === openIn) return;
+      props.onCollapse?.(openIn);
+      if (props.open === undefined) {
+        setOpenState(openIn);
+      }
+    }, delay);
   };
 
   const isPositionControl = props.position && props.position !== 'auto';
 
-  const [positionState, setPositionState] = useState<MenuPosition>(
-    isPositionControl ? (props.position as MenuPosition) : 'bottom-left',
+  const [positionState, setPositionState] = useState<PositionType>(
+    isPositionControl ? (props.position as PositionType) : 'bottom-left',
   );
 
-  const position = (isPositionControl ? props.position : positionState) as MenuPosition;
+  const position = (isPositionControl ? props.position : positionState) as PositionType;
 
-  const { current: context } = useRef({
-    closeTimer: null as NodeJS.Timeout | null,
-  });
-  const targetRef = useRef<HTMLDivElement | null>(null);
-  const popupRef = useRef<HTMLDivElement | null>(null);
-
-  const handleFocus = () => {
-    if (context.closeTimer) clearTimeout(context.closeTimer);
+  const handleFocus = (delay?: number) => {
     if (!isPositionControl) {
-      if (props.position === 'auto') {
-        const newPosition = getMenuPosition(targetRef.current);
+      if (props.position === 'auto' || !props.position) {
+        const newPosition = getPosition(targetRef.current, 'vertical', autoMode);
         if (newPosition !== position) setPositionState(newPosition);
       }
     }
-    if (open) return;
-    changeOpen(true);
+    changeOpen(true, delay);
   };
 
   const handleBlur = (delay = 0) => {
-    console.log('handleBlur', popupRef);
-    if (!open) return;
-    if (context.closeTimer) clearTimeout(context.closeTimer);
-    context.closeTimer = setTimeout(() => {
-      changeOpen(false);
-    }, delay);
+    changeOpen(false, delay);
   };
 
-  const handleClickToggle = (e: React.MouseEvent) => {
+  const handleClickToggle = usePersistFn((e: { target: EventTarget | null }) => {
+    targetEvents?.onClick?.(e);
     if (disabled) return;
-    if (trigger === 'hover') return;
+    if (trigger !== 'click') return;
     if (popupRef.current?.contains(e.target as Node)) return;
     if (open) {
       handleBlur();
     } else {
       handleFocus();
     }
-  };
+  });
 
   const handleHoverToggle = (show: boolean) => {
     if (disabled) return;
-    if (trigger === 'click') return;
+    if (trigger !== 'hover') return;
     if (show) {
-      handleFocus();
+      handleFocus(mouseEnterDelay);
     } else {
-      handleBlur(200);
+      handleBlur(mouseLeaveDelay);
     }
   };
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = usePersistFn((e: { target: EventTarget | null }) => {
+    targetEvents?.onMouseEnter?.(e);
+    if (trigger !== 'hover') return;
     handleHoverToggle(true);
-  };
+  });
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = usePersistFn((e: { target: EventTarget | null }) => {
+    targetEvents?.onMouseLeave?.(e);
+    if (trigger !== 'hover') return;
+    // @ts-ignore
+    if (e.relatedTarget instanceof HTMLElement && popupRef.current?.contains(e.relatedTarget)) {
+      return;
+    }
     handleHoverToggle(false);
-  };
+  });
 
   // 点击触发弹窗的元素
   const getTargetProps = () => {
@@ -87,11 +115,34 @@ const usePopup = (props: BasePopupProps) => {
     };
   };
 
+  const openPop = usePersistFn(() => {
+    handleFocus();
+  });
+
+  const closePop = usePersistFn(() => {
+    handleBlur();
+  });
+
   useClickAway({
     onClickAway: () => handleBlur(),
-    target: [targetRef, popupRef],
+    target: context.chain,
     effect: open,
   });
+
+  const providerValue = useMemo(
+    () => ({
+      bindChild: (elRef: React.MutableRefObject<HTMLElement | null>) => {
+        context.chain.push(elRef);
+      },
+      removeChild: (elRef: React.MutableRefObject<HTMLElement | null>) => {
+        const index = context.chain.findIndex((item) => item === elRef);
+        if (index > -1) {
+          context.chain.splice(index, 1);
+        }
+      },
+    }),
+    [],
+  );
 
   return {
     open,
@@ -99,8 +150,10 @@ const usePopup = (props: BasePopupProps) => {
     targetRef,
     popupRef,
     getTargetProps,
-    closePop: handleBlur,
-    openPop: handleFocus,
+    openPop,
+    closePop,
+    Provider: popupContext.Provider,
+    providerValue,
   };
 };
 

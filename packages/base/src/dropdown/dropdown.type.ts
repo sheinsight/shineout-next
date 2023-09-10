@@ -112,9 +112,13 @@ export interface SimpleDropdownProps
     button?: ButtonClasses;
   };
   /**
-   * @inner 内部属性
+   * @private 内部属性
    */
   isSub?: boolean;
+  /**
+   * @private 内部属性
+   */
+  closePop: () => void;
   /**
    * @en Display multiple elements on the page. This property depends on the width attribute. Please set the number of columns and width appropriately.
    * @cn 页面多元素展示,此属性需要依赖width属性,请合理的设置列数和宽度
@@ -197,7 +201,7 @@ export interface SimpleDropdownProps
 /**
  * @title DropDown
  */
-export type DropdownProps = SimpleDropdownProps;
+export type DropdownProps = Omit<SimpleDropdownProps, 'isSub' | 'closePop'>;
 
 export declare class DropdownComp extends React.Component<DropdownProps> {
   render(): JSX.Element;

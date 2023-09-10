@@ -24,8 +24,6 @@ const useListSelect = <DataItem, Value extends string | any[]>(
     valueArr = (props.value as ValueItem[]) || [];
   }
 
-  console.log('valueArr', valueArr);
-
   const { current: context } = React.useRef({
     lastValue: undefined as Value | undefined,
     valueMap: new Map<ValueItem, boolean>(),

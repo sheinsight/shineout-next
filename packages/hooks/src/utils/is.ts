@@ -18,6 +18,7 @@ export const isDate = (val: unknown): boolean => val instanceof Date;
 export const isError = (val: unknown): boolean => val instanceof Error;
 export const isNumber = (n: unknown): n is number => typeof n === 'number';
 export const isRegexp = (val: unknown): boolean => val instanceof RegExp;
+export const isString = (s: unknown): s is string => typeof s === 'string';
 export const isMap = nameIs('Map');
 export const isSet = nameIs('Set');
 export const isBuffer = (val: unknown): boolean => {
@@ -44,6 +45,9 @@ export const isMergeable = (val: unknown): boolean => {
 };
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const isFunc = (f: unknown): f is Function => typeof f === 'function';
+
+export const isPromise = (p: unknown) =>
+  p && (nameIs('Promise')(p) || isFunc((p as Promise<unknown>).then));
 
 // eslint-disable-next-line no-self-compare
 export const isNan = (a: unknown): boolean => a !== a;

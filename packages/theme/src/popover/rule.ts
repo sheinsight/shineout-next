@@ -7,7 +7,13 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const popoverRules = {
-  size: [[''], ['font-size']],
+  size: [[''], ['font-size', 'padding-x', 'padding-y', 'radius', 'border-width']],
+  color: [
+    ['', 'success', 'warning', 'info', 'danger', 'error'],
+    ['font-color', 'background-color', 'shadow', 'border-color'],
+  ],
+  confirmSize: [['confirm'], ['font-size', 'padding-x', 'padding-y']],
+  confirmColor: [['confirm'], ['background-color']],
 };
 
 module.exports = {

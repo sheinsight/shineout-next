@@ -2,11 +2,12 @@ import { util } from '@sheinx/hooks';
 import { proxy, subscribe, useSnapshot } from 'valtio';
 import { CaretType } from '../icons/caret.type';
 import { INTERNAL_Snapshot as Snapshot } from 'valtio/vanilla';
+import { LanType } from './locale/Props';
 
 export interface ConfigOption {
   // cssModule: boolean;
   // prefix: string;
-  // locale: LanType;
+  locale: LanType;
   // autoSSL: boolean;
   // delay?: number;
   // scrollRatio?: number;
@@ -16,9 +17,17 @@ export interface ConfigOption {
   // direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
-let config: ConfigOption = {
+
+let processEnv: Record<string, any> = {};
+try {
+  processEnv = process?.env;
+} catch (error) {
+  processEnv = {};
+}
+export let config: ConfigOption = {
   popupContainer: undefined,
   caret: 'line',
+  locale: (processEnv.LOCALE as LanType) || 'en-US',
   // prefix: 'so',
 };
 
@@ -53,3 +62,5 @@ export const setConfig = (option: ConfigOption) => {
     }
   }
 };
+
+export { setLocale, getLocale } from './locale/index';

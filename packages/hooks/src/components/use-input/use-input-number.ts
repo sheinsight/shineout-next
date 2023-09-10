@@ -52,11 +52,18 @@ const useNumberFormat = (props: InputNumberProps) => {
     const target = e.target as HTMLInputElement;
     const newValue = target.value;
 
+    // 没有输入值
+    if (newValue === '' && value === undefined) {
+      onBlur?.(e);
+      return;
+    }
+
     if (newValue === '' && allowNull) {
       onChange?.(null);
       onBlur?.(e);
       return;
     }
+
     let num;
     num = parseFloat(newValue);
     if (isNaN(num)) {

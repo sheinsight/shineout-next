@@ -88,12 +88,6 @@ export interface TextareaTokens {
   textareaBackgroundColor: string;
   /**
    * @type {string}
-   * @token Shadow-1
-   * @description undefinedundefined
-   */
-  textareaShadow: string;
-  /**
-   * @type {string}
    * @token Brand-6
    * @description undefined鼠标移入时的边框颜色
    */
@@ -104,6 +98,12 @@ export interface TextareaTokens {
    * @description undefined鼠标聚焦时的边框颜色
    */
   textareaFocusBorderColor: string;
+  /**
+   * @type {string}
+   * @token Brand-2
+   * @description undefined鼠标聚焦时的undefined
+   */
+  textareaFocusShadow: string;
   /**
    * @type {string}
    * @token Neutral-text-2
@@ -134,6 +134,12 @@ export interface TextareaTokens {
    * @description undefined错误状态的边框颜色
    */
   textareaErrorBorderColor: string;
+  /**
+   * @type {string}
+   * @token Danger-1
+   * @description undefined错误状态的鼠标聚焦时的undefined
+   */
+  textareaErrorFocusShadow: string;
   /**
    * @type {string}
    * @token Brand-6

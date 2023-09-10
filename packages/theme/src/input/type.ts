@@ -28,16 +28,16 @@ export interface InputTokens {
   inputPaddingY: string;
   /**
    * @type {string}
+   * @token Size-7
+   * @description 输入框图标字号
+   */
+  inputIconSize: string;
+  /**
+   * @type {string}
    * @token 12/regular
    * @description 输入框小尺寸字体字号
    */
   inputSmallFontSize: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 输入框小尺寸边框圆角
-   */
-  inputSmallBorderRadius: string;
   /**
    * @type {string}
    * @token Padding-8
@@ -56,12 +56,6 @@ export interface InputTokens {
    * @description 输入框大尺寸字体字号
    */
   inputLargeFontSize: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 输入框大尺寸边框圆角
-   */
-  inputLargeBorderRadius: string;
   /**
    * @type {string}
    * @token Padding-12
@@ -100,22 +94,16 @@ export interface InputTokens {
   inputBackgroundColor: string;
   /**
    * @type {string}
-   * @token Shadow-1
-   * @description 输入框undefined
+   * @token Neutral-text-3
+   * @description 输入框清除颜色
    */
-  inputShadow: string;
+  inputClearColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 输入框鼠标移入时的字体颜色
+   * @token Neutral-text-4
+   * @description 输入框undefined颜色
    */
-  inputHoverFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 输入框鼠标移入时的undefined颜色
-   */
-  inputHoverPlaceholderColor: string;
+  inputToggleColor: string;
   /**
    * @type {string}
    * @token Brand-6
@@ -124,28 +112,16 @@ export interface InputTokens {
   inputHoverBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 输入框鼠标移入时的背景颜色
+   * @token Neutral-text-4
+   * @description 输入框鼠标移入时的清除颜色
    */
-  inputHoverBackgroundColor: string;
+  inputHoverClearColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 输入框鼠标移入时的undefined
+   * @token Neutral-text-5
+   * @description 输入框鼠标移入时的undefined颜色
    */
-  inputHoverShadow: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 输入框鼠标聚焦时的字体颜色
-   */
-  inputFocusFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 输入框鼠标聚焦时的undefined颜色
-   */
-  inputFocusPlaceholderColor: string;
+  inputHoverToggleColor: string;
   /**
    * @type {string}
    * @token Brand-7
@@ -154,13 +130,7 @@ export interface InputTokens {
   inputFocusBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 输入框鼠标聚焦时的背景颜色
-   */
-  inputFocusBackgroundColor: string;
-  /**
-   * @type {string}
-   * @token
+   * @token Brand-2
    * @description 输入框鼠标聚焦时的undefined
    */
   inputFocusShadow: string;
@@ -190,38 +160,110 @@ export interface InputTokens {
   inputDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 输入框禁用时的undefined
-   */
-  inputDisabledShadow: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 输入框错误状态的字体颜色
-   */
-  inputErrorFontColor: string;
-  /**
-   * @type {string}
-   * @token
-   * @description 输入框错误状态的undefined颜色
-   */
-  inputErrorPlaceholderColor: string;
-  /**
-   * @type {string}
    * @token Danger-6
    * @description 输入框错误状态的边框颜色
    */
   inputErrorBorderColor: string;
   /**
    * @type {string}
-   * @token
-   * @description 输入框错误状态的背景颜色
+   * @token Danger-1
+   * @description 输入框错误状态的鼠标聚焦时的undefined
    */
-  inputErrorBackgroundColor: string;
+  inputErrorFocusShadow: string;
   /**
    * @type {string}
-   * @token
-   * @description 输入框错误状态的undefined
+   * @token Brand-6
+   * @description 输入框undefined字体颜色
    */
-  inputErrorShadow: string;
+  inputInfoFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 输入框undefined背景颜色
+   */
+  inputInfoBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-2
+   * @description 输入框undefined边框颜色
+   */
+  inputInfoBorderColor: string;
+  /**
+   * @type {string}
+   * @token Danger-6
+   * @description 输入框undefined错误状态的字体颜色
+   */
+  inputInfoErrorFontColor: string;
+  /**
+   * @type {string}
+   * @token Danger-1
+   * @description 输入框undefined错误状态的背景颜色
+   */
+  inputInfoErrorBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Danger-6
+   * @description 输入框undefined错误状态的边框颜色
+   */
+  inputInfoErrorBorderColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 输入框内嵌内边距（水平方向）
+   */
+  inputInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-1
+   * @description 输入框内嵌内边距（垂直方向）
+   */
+  inputInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 输入框内嵌字体字号
+   */
+  inputInnerFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 输入框内嵌小尺寸内边距（水平方向）
+   */
+  inputInnerSmallPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-1
+   * @description 输入框内嵌小尺寸内边距（垂直方向）
+   */
+  inputInnerSmallPaddingY: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 输入框内嵌小尺寸字体字号
+   */
+  inputInnerSmallFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description 输入框内嵌大尺寸内边距（水平方向）
+   */
+  inputInnerLargePaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-3
+   * @description 输入框内嵌大尺寸内边距（垂直方向）
+   */
+  inputInnerLargePaddingY: string;
+  /**
+   * @type {string}
+   * @token 14/regular
+   * @description 输入框内嵌大尺寸字体字号
+   */
+  inputInnerLargeFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 输入框内嵌字体颜色
+   */
+  inputInnerFontColor: string;
 }

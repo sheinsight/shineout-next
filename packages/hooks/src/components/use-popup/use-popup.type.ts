@@ -1,4 +1,4 @@
-export type MenuPosition =
+export type PositionType =
   | 'left-top'
   | 'left-bottom'
   | 'right-top'
@@ -13,9 +13,19 @@ export type MenuPosition =
   | 'bottom';
 
 export interface BasePopupProps {
-  trigger?: 'click' | 'hover';
+  trigger?: 'click' | 'hover' | 'none';
   open?: boolean;
+  defaultOpen?: boolean;
   onCollapse?: (open: boolean) => void;
   disabled?: boolean;
-  position?: MenuPosition | 'auto';
+  position?: PositionType | 'auto';
+  mouseEnterDelay?: number;
+  mouseLeaveDelay?: number;
+  autoMode?: 'menu' | 'popover';
+  priorityDirection?: 'vertical' | 'horizontal' | 'auto';
+  targetEvents?: {
+    onClick?: (e: { target: EventTarget | null }) => void;
+    onMouseEnter?: (e: { target: EventTarget | null }) => void;
+    onMouseLeave?: (e: { target: EventTarget | null }) => void;
+  };
 }

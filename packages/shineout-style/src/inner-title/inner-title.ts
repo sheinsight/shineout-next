@@ -1,5 +1,5 @@
 import { JsStyles } from '../jss-style';
-import cssvar from '../cssvar';
+import token from '@sheinx/theme';
 
 export type Class =
   | 'wrapper'
@@ -13,17 +13,15 @@ export type Class =
 const innerTitle: JsStyles<Class> = {
   wrapper: {
     width: '100%',
-    padding: `${cssvar.innerTitlePaddingY} ${cssvar.innerTitlePaddingX}`,
+    boxSizing: 'border-box',
+    padding: `${token.inputInnerPaddingY} ${token.inputInnerPaddingX}`,
     position: 'relative',
   },
   wrapperSmall: {
-    padding: `${cssvar.innerTitlePaddingYSmall} ${cssvar.innerTitlePaddingXSmall}`,
+    padding: `${token.inputInnerSmallPaddingY} ${token.inputInnerSmallPaddingX}`,
   },
   wrapperLarge: {
-    padding: `${cssvar.innerTitlePaddingYLarge} ${cssvar.innerTitlePaddingXLarge}`,
-    '& $content  > input, & $content > div, & $title': {
-      lineHeight: '1.5',
-    },
+    padding: `${token.inputInnerLargePaddingY} ${token.inputInnerLargePaddingX}`,
   },
   wrapperOpen: {
     display: 'block',
@@ -31,7 +29,15 @@ const innerTitle: JsStyles<Class> = {
   title: {
     visibility: 'hidden',
     height: 'initial',
-    padding: 'inherit',
+    lineHeight: token.lineHeightDynamic,
+    fontSize: token.inputInnerFontSize,
+    color: token.inputInnerFontColor,
+    '$wrapperSmall &': {
+      fontSize: token.inputInnerSmallFontSize,
+    },
+    '$wrapperLarge &': {
+      fontSize: token.inputInnerLargeFontSize,
+    },
   },
   place: {
     pointerEvents: 'none',
@@ -41,26 +47,34 @@ const innerTitle: JsStyles<Class> = {
     top: `50%`,
     transform: 'translateY(-50%)',
     left: '0',
-    width: '100%',
+    right: '0',
+    padding: 'inherit',
     '$wrapperOpen &': {
-      top: cssvar.innerTitlePaddingY,
+      top: '0',
       transform: 'translateY(0%)',
     },
-    '$wrapperSmall$wrapperOpen &': {
-      top: cssvar.innerTitlePaddingYSmall,
-    },
-    '$wrapperLarge$wrapperOpen &': {
-      top: cssvar.innerTitlePaddingYLarge,
+    '$wrapper:not($wrapperOpen) &': {
+      fontSize: 'inherit',
     },
   },
   content: {
     opacity: '0',
+
     '$wrapperOpen &': {
       opacity: '1',
     },
-    display: 'block',
-    '&& > input, && > div': {
+    display: 'flex',
+    '&& > input, && > div, && > textarea': {
       padding: '0',
+      '&::after': {
+        content: '',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        right: '-10px',
+        width: '10px',
+        backgroundColor: '#eee',
+      },
     },
   },
 };

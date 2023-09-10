@@ -16,7 +16,6 @@ const Input = (props: SimpleInputProps) => {
     suffix,
     underline,
     border = true,
-    inGroup = false,
     onEnterPress,
     getStatus,
     renderInput,
@@ -35,7 +34,6 @@ const Input = (props: SimpleInputProps) => {
     size === 'large' && jssStyle?.input?.wrapperLarge,
     !!underline && jssStyle?.input?.wrapperUnderline,
     !border && jssStyle?.input?.wrapperNoBorder,
-    !!inGroup && jssStyle?.input?.wrapperInGroup,
   );
 
   const keyHandler = useKeyEvent({

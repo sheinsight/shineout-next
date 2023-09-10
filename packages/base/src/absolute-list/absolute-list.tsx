@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { usePositionStyle } from '@sheinx/hooks';
 import ReactDOM from 'react-dom';
 import { AbsoluteListProps } from './absolute-list.type';
@@ -12,10 +12,12 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     parentElement,
     scrollElement,
     fixedWidth,
-    zIndex,
+    zIndex = 1051,
     focus,
     popupEl,
     updateKey,
+    popupGap,
+    destroy = false,
   } = props;
 
   const { getRoot, getContainer } = useContainer({
@@ -32,18 +34,18 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     visibleEl: scrollElement,
     popupEl,
     updateKey,
+    popupGap,
   });
   const childStyle = children.props.style;
-  const newStyle = useMemo(() => {
-    return {
-      ...childStyle,
-      ...style,
-    };
-  }, [childStyle, style]);
+  const newStyle = {
+    ...childStyle,
+    ...style,
+  };
 
   if (React.isValidElement(children) === false) return null;
 
   const styledChild = React.cloneElement(children, { style: newStyle });
+  if (destroy && !focus) return null;
   if (absolute) {
     const root = getRoot();
     root.className = props.rootClass || '';

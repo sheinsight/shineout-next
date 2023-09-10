@@ -32,6 +32,15 @@ export interface Guides {
   en: Guide[];
 }
 
+// name: property.getName(),
+//   tag: {
+//   cn: convertQuotes(propertyJsDocTags.cn),
+//     en: convertQuotes(propertyJsDocTags.en),
+// default: convertQuotes(propertyJsDocTags.default),
+//     version: convertQuotes(propertyJsDocTags.version),
+// },
+// required: !optional,
+//   type: convertQuotes(typeText),
 export interface MarkdownProps {
   header: {
     name: string;
@@ -41,4 +50,22 @@ export interface MarkdownProps {
   describe: Local;
   examples: Example[];
   guides: Guides;
+  api: Array<{
+    title: string;
+    cn: string;
+    en: string;
+    subTitle: string;
+    isDetail: boolean;
+    properties: Array<{
+      name: string;
+      type: string;
+      required?: boolean;
+      tag: {
+        cn: string;
+        en: string;
+        default: string;
+        version: string;
+      };
+    }>;
+  }>;
 }

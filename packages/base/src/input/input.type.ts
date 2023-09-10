@@ -1,7 +1,9 @@
 import React from 'react';
 import { CommonType } from '../common/type';
-import { InnerTitleClass } from '../common/use-inner-title';
+import { InnerTitleClasses } from '../common/use-inner-title';
+import { BaseTipProps } from '../common/use-tip';
 import { BaseInputProps, InputFormatProps } from '@sheinx/hooks';
+import { PopoverClasses } from '../popover/popover.type';
 
 export interface InputClasses {
   /**
@@ -27,7 +29,6 @@ export interface InputClasses {
   wrapperSmall: string;
   wrapperUnderline: string;
   wrapperNoBorder: string;
-  wrapperInGroup: string;
   paddingBox: string;
   info: string;
   infoError: string;
@@ -40,11 +41,15 @@ export interface InputClasses {
   // number
   wrapperNumber: string;
   numberStep: string;
+
+  //password
+  passwordToggle: string;
 }
 
 export interface InputStyle {
   input?: InputClasses;
-  innerTitle?: InnerTitleClass;
+  innerTitle?: InnerTitleClasses;
+  popover?: PopoverClasses;
 }
 
 export interface SimpleInputProps
@@ -52,6 +57,10 @@ export interface SimpleInputProps
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
   jssStyle: InputStyle;
   clearIcon?: React.ReactNode;
+  /**
+   * @en prefix
+   * @cn 前缀
+   */
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;
@@ -60,16 +69,12 @@ export interface SimpleInputProps
    * @default: true
    */
   border?: boolean;
-  /**
-   * @default: false
-   */
-  inGroup?: boolean;
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
   showClear?: boolean;
   renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
 }
 
-export interface InputCommonProps<V> {
+export interface InputCommonProps<V> extends BaseTipProps {
   suffix?: SimpleInputProps['suffix'];
   className?: SimpleInputProps['className'];
   forwardRef?: SimpleInputProps['inputRef'];
@@ -91,6 +96,7 @@ export interface InputCommonProps<V> {
   disabled?: boolean;
   delay?: number;
   onBlur?: React.FocusEventHandler;
+  status?: CommonType['status'];
 }
 
 export type GetCommonProps<Props, V> = Omit<
@@ -101,10 +107,13 @@ export type GetCommonProps<Props, V> = Omit<
   | 'clearable'
   | 'onClear'
   | 'name'
-  | 'inputRef'
   | 'step'
   | 'min'
   | 'max'
+  | 'rootRef'
+  | 'inputRef'
+  | 'getStatus'
+  | 'renderInput'
 > &
   InputCommonProps<V>;
 

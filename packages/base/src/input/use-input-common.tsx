@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useInputAble, usePersistFn } from '@sheinx/hooks';
 import useClear from '../common/use-clear';
 import useInnerTitle from '../common/use-inner-title';
+import useTip from '../common/use-tip';
 import classNames from 'classnames';
 
 import { InputCommonProps } from './input.type';
@@ -33,23 +34,36 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     width,
     delay,
     onBlur,
+    tip,
+    error,
+    popover,
+    popoverProps,
+    status,
     ...rest
   } = props;
 
   const { size, disabled } = useWithFormConfig(props);
+  const rootRef = React.useRef<HTMLElement>(null);
 
   const [focused, setFocused] = React.useState(false);
 
-  const inputAbleParams = {
-    value: value,
-    onChange: onChange,
-    defaultValue: defaultValue,
-    beforeChange: beforeChange,
-    delay: delay,
-  };
+  const tipNode = useTip({
+    popover,
+    popoverProps,
+    error,
+    tip,
+    focused,
+    rootRef,
+    jssStyle: props.jssStyle,
+  });
+
   const inputAbleProps = useInputAble({
     control: 'value' in props,
-    ...inputAbleParams,
+    value,
+    onChange,
+    defaultValue,
+    beforeChange,
+    delay,
   });
   const hasValue = (value: any) => value === 0 || (value && value.length);
 
@@ -95,6 +109,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     <React.Fragment>
       {suffix}
       {getInfo()}
+      {tipNode}
     </React.Fragment>
   );
 
@@ -119,14 +134,16 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     onChange: inputAbleProps.onChange,
     onBlur: handleBlur,
     ...clearProps,
-    inputRef: forwardRef,
     name: htmlName,
     style: mergeStyle,
     suffix: mergeSuffix,
-    renderInput: renderInput,
-    getStatus: onStatusChange,
+    status: error ? 'error' : status,
     disabled,
     size,
+    rootRef,
+    inputRef: forwardRef,
+    renderInput: renderInput,
+    getStatus: onStatusChange,
   };
 };
 

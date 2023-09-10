@@ -22,7 +22,8 @@ type ButtonClass =
   | 'small'
   | 'large'
   | 'group'
-  | 'groupItem';
+  | 'groupItem'
+  | 'spin';
 
 type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 
@@ -141,6 +142,16 @@ const outlineBeforeLine = (type: ButtonType, styles: ButtonStyleType) => ({
         background: Token[`button${type}${styles}BorderColor`],
       },
     },
+    '&:disabled': {
+      '&::before': {
+        background: Token[`button${type}${styles}DisabledBorderColor`],
+      },
+      '& + :not(&)': {
+        '&::before': {
+          background: Token[`button${type}${styles}DisabledBorderColor`],
+        },
+      },
+    },
   },
 });
 
@@ -184,9 +195,11 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     fontWeight: 400,
     cursor: 'pointer',
     userSelect: 'none',
-    textAlign: 'center',
+    // textAlign: 'center',
     whiteSpace: 'nowrap',
-    display: 'inline-block',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundImage: 'none',
     verticalAlign: 'middle',
     border: '1px solid transparent',
@@ -196,7 +209,6 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
     transition: 'all 0.15s ease-in-out',
     fontFamily: 'inherit',
-
     height: Token.buttonHeight,
 
     '& + &': {
@@ -204,7 +216,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     },
 
     '[class*="button-group"] > & + &': {
-      marginLeft: 0,
+      margin: 0,
     },
 
     '&:active': {
@@ -350,6 +362,9 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     width: `32px`,
     height: `32px`,
     borderRadius: Token.buttonSquareBorderRadius,
+    '& $spin': {
+      margin: 0,
+    },
   },
   disabled: {
     cursor: 'not-allowed',
@@ -500,6 +515,15 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     '&$dashed': {
       position: 'relative',
       borderStyle: 'none',
+    },
+  },
+
+  spin: {
+    display: 'inline-block',
+    marginRight: Token.buttonSpinMargin,
+    '& div': {
+      borderColor: 'inherit',
+      borderTopColor: 'transparent',
     },
   },
 };

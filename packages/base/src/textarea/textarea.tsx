@@ -1,10 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import SimpleTextarea from './simple-textarea';
 import { useInputAble, usePersistFn, useTextareaFormat, util } from '@sheinx/hooks';
 import { TextareaProps } from './textarea.type';
 import useAutoSize from './use-auto-size';
 import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
+import useTip from '../common/use-tip';
+import useInnerTitle from '../common/use-inner-title';
 
 const defaultInfo = (num: number, msg: any) => {
   if (!msg || msg.length === 0) return null;
@@ -13,22 +15,46 @@ const defaultInfo = (num: number, msg: any) => {
   return new Error(text);
 };
 export default (props: TextareaProps) => {
-  const { info, suffix, renderFooter, width, style, jssStyle, onBlur, ...resetProps } = props;
+  const { info, suffix, renderFooter, width, style, jssStyle, onBlur, status, ...resetProps } =
+    props;
+  const rootRef = useRef<HTMLElement>(null);
 
   const { disabled, size } = useWithFormConfig(props);
   resetProps.disabled = disabled;
   resetProps.size = size;
+
+  const [focused, setFocused] = React.useState(false);
+
+  const onStatusChange = usePersistFn((status: { focused?: boolean }) => {
+    setFocused(!!status.focused);
+  });
+
+  const tipProps = {
+    popover: resetProps.popover,
+    popoverProps: resetProps.popoverProps,
+    error: resetProps.error,
+    tip: resetProps.tip,
+  };
+
+  const tipNode = useTip({
+    ...tipProps,
+    focused,
+    rootRef,
+    jssStyle,
+  });
 
   // inputAble
   const inputAbleParams = {
     value: resetProps.value,
     onChange: resetProps.onChange,
     beforeChange: resetProps.beforeChange,
-    control: 'value' in resetProps,
     defaultValue: resetProps.defaultValue,
     delay: resetProps.delay,
   };
-  const inputAbleProps = useInputAble(inputAbleParams);
+  const inputAbleProps = useInputAble({
+    ...inputAbleParams,
+    control: 'value' in resetProps,
+  });
 
   const handleBlur = usePersistFn((e: React.FocusEvent<HTMLInputElement>) => {
     onBlur?.(e);
@@ -38,28 +64,52 @@ export default (props: TextareaProps) => {
   // format
   const formatParams = {
     trim: resetProps.trim,
+  };
+
+  const formatProps = useTextareaFormat({
+    ...formatParams,
     value: inputAbleProps.value,
     onChange: inputAbleProps.onChange,
     onBlur: handleBlur,
-  };
-  const formatProps = useTextareaFormat(formatParams);
+  });
 
   // autosize
   const autosizeParams = {
     autosize: resetProps.autosize,
     maxHeight: resetProps.maxHeight,
   };
-  const renderTextarea = useAutoSize({
+
+  const renderAutoSize = useAutoSize({
     ...autosizeParams,
     value: inputAbleProps.value,
     jssStyle: jssStyle,
+  });
+
+  const innerTitleProps = {
+    innerTitle: resetProps.innerTitle,
+    placeTitle: resetProps.placeTitle,
+  };
+
+  const hasValue = (value: any) => value === 0 || (value && value.length);
+
+  const renderInnerTitle = useInnerTitle({
+    ...innerTitleProps,
+    open: focused || hasValue(inputAbleProps.value),
+    size: resetProps.size,
+    jssStyle,
+  });
+
+  const renderTextarea = usePersistFn((textareaEl: React.ReactElement) => {
+    return renderInnerTitle(renderAutoSize(textareaEl));
   });
 
   // forwardProps
   const forwardProps = util.removeProps(resetProps, {
     ...inputAbleParams,
     ...autosizeParams,
+    ...tipProps,
     ...formatParams,
+    ...innerTitleProps,
   });
 
   const getInfo = () => {
@@ -86,6 +136,7 @@ export default (props: TextareaProps) => {
     <React.Fragment>
       {suffix}
       {getInfo()}
+      {tipNode}
       {util.isFunc(renderFooter) && (
         <div
           onMouseDown={(e) => {
@@ -110,9 +161,12 @@ export default (props: TextareaProps) => {
       {...forwardProps}
       {...formatProps}
       renderTextarea={renderTextarea}
+      status={tipProps.error ? 'error' : status}
       value={inputAbleProps.value || ''}
       suffix={mergeSuffix}
       style={mergeStyle}
+      getStatus={onStatusChange}
+      rootRef={rootRef}
     />
   );
 };

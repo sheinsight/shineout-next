@@ -25,6 +25,9 @@ const useButton = (props: BaseButtonProps = {}) => {
   const handleClick =
     (otherHandlers: HandlerType) =>
     (event: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => {
+      if (disabled || loading) {
+        return;
+      }
       onClick?.(event);
       otherHandlers?.onClick?.(event);
     };
@@ -69,6 +72,7 @@ const useButton = (props: BaseButtonProps = {}) => {
       onRef,
       onClick: handleClick(externalEventHandlers),
     };
+
     return {
       ...mergedEventHandlers,
       ref: handleButtonRef,

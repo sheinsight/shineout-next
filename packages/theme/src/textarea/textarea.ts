@@ -3,7 +3,7 @@
 
 import { TextareaTokens } from './type';
 
-const textarea: TextareaTokens = {
+const textareaTokens: TextareaTokens = {
   textareaFontSize: '14/regular',
   textareaBorderRadius: 'Radius-4',
   textareaPaddingX: 'Padding-8',
@@ -18,14 +18,15 @@ const textarea: TextareaTokens = {
   textareaPlaceholderColor: 'Neutral-text-2',
   textareaBorderColor: 'Neutral-border-2',
   textareaBackgroundColor: 'Neutral-fill-1',
-  textareaShadow: 'Shadow-1',
   textareaHoverBorderColor: 'Brand-6',
   textareaFocusBorderColor: 'Brand-7',
+  textareaFocusShadow: 'Brand-2',
   textareaDisabledFontColor: 'Neutral-text-2',
   textareaDisabledPlaceholderColor: 'Neutral-text-2',
   textareaDisabledBorderColor: 'Neutral-border-2',
   textareaDisabledBackgroundColor: 'Neutral-fill-2',
   textareaErrorBorderColor: 'Danger-6',
+  textareaErrorFocusShadow: 'Danger-1',
   textareaInfoFontColor: 'Brand-6',
   textareaInfoBackgroundColor: 'Neutral-fill-1',
   textareaInfoBorderColor: 'Neutral-border-2',
@@ -34,4 +35,4 @@ const textarea: TextareaTokens = {
   textareaInfoErrorBorderColor: 'Danger-6',
 };
 
-export default textarea;
+export default textareaTokens;

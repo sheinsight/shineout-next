@@ -13,14 +13,11 @@ function replaceNonAlphanumeric(str: string) {
 export const cssvar = (str: string, value: string, size?: string) => {
   if (str.indexOf('Size-') > -1) {
     // 正则提取出Size-后面的数字
-    const sizeReg = /(?<=Size-)\d+/;
+    const sizeReg = /Size-(\d+)/;
     const sizeNum = sizeReg.exec(str);
     if (sizeNum) {
-      console.log(
-        `var(${cssvarFlag}${replaceNonAlphanumeric(str)},${Number(sizeNum[0]) * Number(size)}px)`,
-      );
       return `var(${cssvarFlag}${replaceNonAlphanumeric(str)},${
-        Number(sizeNum[0]) * Number(size)
+        Number(sizeNum[1]) * Number(size)
       }px)`;
     }
   }

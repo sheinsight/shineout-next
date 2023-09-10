@@ -31,7 +31,7 @@ const horizontalPosition = [
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right', 'bottom', 'top'];
 
 export interface PositionStyleConfig {
-  position: HorizontalPosition | VerticalPosition | ListPosition | undefined;
+  position: HorizontalPosition | VerticalPosition | ListPosition | 'cover' | undefined;
   absolute: boolean;
   show: boolean;
   parentEl: HTMLElement | null | undefined;
@@ -57,7 +57,13 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     visibleEl,
     updateKey,
   } = config || {};
-  const [style, setStyle] = useState<React.CSSProperties>({});
+  // 初次渲染无样式的时候， 隐藏展示
+  const [style, setStyle] = useState<React.CSSProperties>({
+    opacity: 0,
+    pointerEvents: 'none',
+    position: 'absolute',
+    zIndex,
+  });
   const { current: context } = React.useRef({
     element: null as HTMLDivElement | null,
     containerRect: { left: 0, width: 0 } as DOMRect,
@@ -118,7 +124,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         style.transform = 'translateY(-100%)';
       } else {
         // 居中对齐
-        style.top = rect.top + rect.height / 2;
+        style.top = rect.top + containerScroll.top + rect.height / 2;
         style.transform = 'translateY(-50%)';
       }
       if (h === 'right') {
@@ -127,6 +133,9 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         style.left = rect.left - containerRect.left + containerScroll.left - popupGap;
         style.transform += ' translateX(-100%)';
       }
+    } else if (position === 'cover') {
+      style.top = rect.top - containerRect.top + containerScroll.top;
+      style.left = rect.left - containerRect.left + containerScroll.left;
     }
     return style;
   };
@@ -187,15 +196,19 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     return style;
   };
 
-  const updateStyle = usePersistFn(() => {
-    const { position, absolute } = config || {};
-    if (!show || !position || !parentEl) return;
+  const getStyle = () => {
     let newStyle: React.CSSProperties = {};
+    const { position, absolute } = config || {};
+    if (!position || !show || !parentEl) return style;
     if (!absolute) {
       newStyle = getPositionStyle(position, { popupGap });
     } else {
       newStyle = getAbsoluteStyle()!;
     }
+    return newStyle;
+  };
+  const updateStyle = usePersistFn(() => {
+    const newStyle = getStyle();
     if (newStyle && !shallowEqual(style, newStyle)) {
       setStyle(newStyle);
     }

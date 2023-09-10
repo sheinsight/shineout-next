@@ -1,22 +1,1348 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio[Base] should render correctly 1`] = `
+exports[`Radio[Base] should render correctly  1`] = `
 <div
-  class="radio-wrapper-0-2-2 customized"
+  class="radio-wrapper-0-2-1"
 >
   <input
     style="display: none;"
     tabindex="0"
     type="radio"
   />
-  <i
-    class="radio-indicator-0-2-8"
-    tabindex="1"
-  />
-  <span
-    class="radio-desc-0-2-9"
+  <div
+    class="radio-indicatorWrapper-0-2-4"
   >
-    Test
+    <i
+      class="radio-indicator-0-2-5"
+      tabindex="1"
+    />
+  </div>
+  <span
+    class="radio-desc-0-2-6"
+  >
+    Option
+  </span>
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about block 1`] = `
+<div
+  class="radio-group-0-2-7"
+>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about button 1`] = `
+<div
+  class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Monday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Tuesday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Wednesday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Thursday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Friday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Saturday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Sunday
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about button outline 1`] = `
+<div
+  class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Monday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Tuesday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Wednesday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Thursday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Friday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Saturday
+    </span>
+  </button>
+  <button
+    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span>
+      Sunday
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about cancel 1`] = `
+<div
+  class="radio-group-0-2-7"
+>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about disabled 1`] = `
+<div
+  class="radio-group-0-2-7"
+>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3 radio-wrapperChecked-0-2-2"
+  >
+    <input
+      checked=""
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about disabled func 1`] = `
+<div
+  class="radio-group-0-2-7"
+>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="-1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about group 1`] = `
+<div
+  class="radio-group-0-2-7"
+>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about group children 1`] = `
+<div
+  class="radio-group-0-2-7"
+>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      red
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      orange
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      yellow
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      green
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      cyan
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      blue
+    </span>
+  </div>
+  <div
+    class="radio-wrapper-0-2-1"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <div
+      class="radio-indicatorWrapper-0-2-4"
+    >
+      <i
+        class="radio-indicator-0-2-5"
+        tabindex="1"
+      />
+    </div>
+    <span
+      class="radio-desc-0-2-6"
+    >
+      violet
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about size 1`] = `
+<div>
+  <div
+    class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+  >
+    <button
+      class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10 button-small-0-2-11"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        red
+      </span>
+    </button>
+    <button
+      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20 button-small-0-2-11"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        orange
+      </span>
+    </button>
+    <button
+      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20 button-small-0-2-11"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        yellow
+      </span>
+    </button>
+  </div>
+  <br />
+  <div
+    class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+    style="margin-top: 24px;"
+  >
+    <button
+      class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        red
+      </span>
+    </button>
+    <button
+      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        orange
+      </span>
+    </button>
+    <button
+      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        yellow
+      </span>
+    </button>
+  </div>
+  <br />
+  <div
+    class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+    style="margin-top: 24px;"
+  >
+    <button
+      class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10 button-large-0-2-12"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        red
+      </span>
+    </button>
+    <button
+      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20 button-large-0-2-12"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        orange
+      </span>
+    </button>
+    <button
+      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20 button-large-0-2-12"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span>
+        yellow
+      </span>
+    </button>
+  </div>
+  <br />
+</div>
+`;
+
+exports[`Radio[Base] should render correctly about status 1`] = `
+<div
+  class="radio-wrapper-0-2-1"
+>
+  <input
+    style="display: none;"
+    tabindex="0"
+    type="radio"
+  />
+  <div
+    class="radio-indicatorWrapper-0-2-4"
+  >
+    <i
+      class="radio-indicator-0-2-5"
+      tabindex="1"
+    />
+  </div>
+  <span
+    class="radio-desc-0-2-6"
+  >
+    OptionA
   </span>
 </div>
 `;

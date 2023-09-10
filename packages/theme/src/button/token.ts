@@ -673,6 +673,7 @@ const buttonTokenValue = {
   circle: { border: { radius: 'Radius-50%' } },
   square: { border: { radius: 'Radius-4' } },
   nearly: { margin: 'Margin-8' },
+  spin: { margin: 'Margin-4' },
 };
 
 const buttonTokenExtraValue = {};

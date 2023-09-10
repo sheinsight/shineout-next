@@ -3,7 +3,7 @@ import { usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CommonType } from './type';
 
-export interface InnerTitleClass {
+export interface InnerTitleClasses {
   wrapper: string;
   wrapperOpen: string;
   wrapperSmall: string;
@@ -19,7 +19,7 @@ export interface InnerTitleProps {
   open?: boolean;
   size?: CommonType['size'];
   jssStyle?: {
-    innerTitle?: InnerTitleClass;
+    innerTitle?: InnerTitleClasses;
   };
 }
 
@@ -37,7 +37,13 @@ const useInnerTitle = (props: InnerTitleProps) => {
         )}
       >
         <div className={jssStyle?.innerTitle?.title}>{innerTitle}</div>
-        <div className={classNames(jssStyle?.innerTitle?.title, jssStyle?.innerTitle?.place)}>
+        <div
+          onMouseDown={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          className={classNames(jssStyle?.innerTitle?.title, jssStyle?.innerTitle?.place)}
+        >
           {placeTitle || innerTitle}
         </div>
         <div className={jssStyle?.innerTitle?.content}>{el}</div>

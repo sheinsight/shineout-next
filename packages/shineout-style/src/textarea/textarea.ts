@@ -31,6 +31,7 @@ const inputBorder = border('wrapper', {
   disabledBackgroundColor: token.textareaDisabledBackgroundColor,
 
   focusShadow: token.textareaFocusShadow,
+  errorFocusShadow: token.textareaErrorFocusShadow,
 });
 const { wrapper, ...resetWrapper } = inputBorder;
 
@@ -74,6 +75,7 @@ const input: JsStyles<InputClass> = {
     lineHeight: 'inherit',
     color: 'inherit',
     fontSize: 'inherit',
+    fontFamily: 'inherit',
     outline: 'none',
     backgroundColor: 'transparent',
     resize: 'none',

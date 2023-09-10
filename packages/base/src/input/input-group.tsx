@@ -15,12 +15,6 @@ export default (props: InputGroupProps) => {
   const { size, disabled } = useWithFormConfig(props);
 
   const getProps = (child: React.ReactElement) => {
-    if (
-      !['ShineoutInput', 'ShineoutInputNumber', 'ShineoutInputPassword'].includes(
-        (child?.type as any)?.displayName,
-      )
-    )
-      return {};
     ref.current.propsMap.set(child, {
       onFocus: child.props.onFocus,
       onBlur: child.props.onBlur,
@@ -35,7 +29,6 @@ export default (props: InputGroupProps) => {
           setFocus(false);
           ref.current.propsMap.get(child)?.onBlur?.(args);
         },
-        inGroup: true,
       });
     }
     return ref.current.eventMap.get(child) || {};
@@ -51,7 +44,7 @@ export default (props: InputGroupProps) => {
     !!focus && jssStyle?.input?.groupFocus,
   );
   return (
-    <div className={rootClass} style={style}>
+    <div className={rootClass} style={style} data-soui-type={'input-group'}>
       {Children.toArray(children).map((child, i) => {
         if (typeof child === 'string') {
           return <span key={i}>{child}</span>;

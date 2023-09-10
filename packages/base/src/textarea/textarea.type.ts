@@ -1,6 +1,9 @@
 import React from 'react';
 import { CommonType } from '../common/type';
 import { BaseTextareaProps } from '@sheinx/hooks';
+import { BaseTipProps } from '../common/use-tip';
+import { PopoverClasses } from '../popover/popover.type';
+import { InnerTitleClasses } from '../common/use-inner-title';
 
 export interface TextareaClasses {
   /**
@@ -54,9 +57,24 @@ export interface SimpleTextareaProps
 type TextareaValueType = string;
 
 export interface TextareaProps
-  extends Omit<SimpleTextareaProps, 'value' | 'onChange' | 'defaultValue'> {
+  extends BaseTipProps,
+    Omit<
+      SimpleTextareaProps,
+      | 'value'
+      | 'onChange'
+      | 'defaultValue'
+      | 'jssStyle'
+      | 'getStatus'
+      | 'rootRef'
+      | 'renderTextarea'
+    > {
   innerTitle?: React.ReactNode;
   placeTitle?: React.ReactNode;
+  jssStyle?: {
+    textarea?: TextareaClasses;
+    popover?: PopoverClasses;
+    innerTitle?: InnerTitleClasses;
+  };
   autosize?: boolean;
   info?: number | ((value: string | undefined) => React.ReactNode | Error);
   value?: TextareaValueType;
