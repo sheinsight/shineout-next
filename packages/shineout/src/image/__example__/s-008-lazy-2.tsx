@@ -1,6 +1,6 @@
 /**
  * cn -
- *    -- 通过配置 `container` 对指定容器下的 Image 进行懒加载。
+ *    -- 通过配置 `container` 对指定容器下的 Image 进行懒加载
  * en -
  *    -- Set `container` to lazy load Image in the specified container.
  */

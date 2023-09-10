@@ -1,8 +1,8 @@
 /**
  * cn -
  *    -- 支持自定义渲染不同状态下的内容：
- *    -- 1、通过设置 `error` 属性自定义渲染加载失败时的内容。
- *    -- 2、通过设置 `placeholder` 属性用于自定义渲染加载中时的占位符内容。
+ *    -- 1、通过设置 `error` 属性自定义渲染加载失败时的内容
+ *    -- 2、通过设置 `placeholder` 属性用于自定义渲染加载中时的占位符内容
  * en -
  *    -- Custom rendering of content in different states:
  *    -- 1. `error` is used to customize the content when loading fails.

@@ -1,6 +1,6 @@
 /**
  * cn - 基本用法
- *    --基础 Image 用法。
+ *    --基础 Image 用法
  * en - Base
  *    --Base Image
  */
