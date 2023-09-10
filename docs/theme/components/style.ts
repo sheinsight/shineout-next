@@ -26,7 +26,7 @@ export default createUseStyles(
       height: 40,
       marginTop: 24,
       borderRadius: 4,
-      marginBottom: 32,
+      marginBottom: 40,
       display: 'flex',
       alignItems: 'center',
       padding: 4,
@@ -68,6 +68,7 @@ export default createUseStyles(
       '& .image': {
         padding: '0 40px',
         width: 'calc(100% - 272px)',
+        maxWidth: 908,
         marginTop: 16,
         marginBottom: 32,
         boxSizing: 'border-box',
