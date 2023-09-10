@@ -46,7 +46,7 @@ export default () => {
         }}
       >
         <div>{renderIcon()}</div>
-        <div>☹️ Oops!</div>
+        <div>Error</div>
       </div>
     );
   };
