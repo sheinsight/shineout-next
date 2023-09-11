@@ -16,35 +16,32 @@ const radioTokenDescription = { radio: '单选框', button: '按钮模式', outl
  * 注意，该映射表的内容不与 radioRules 强关联，非 radioRules 规则内的 token 需手动增加或删减。
  */
 const radioTokenValue = {
-  icon: {
-    border: { color: 'Neutral-border-1', width: 'Border-2' },
-    background: { color: 'Neutral-fill-1' },
-    color: '',
-    disabled: {
-      border: { color: 'Neutral-border-1' },
-      background: { color: 'Neutral-fill-2' },
-      color: '',
-    },
-    hover: {
-      border: { color: 'Neutral-border-2' },
-      background: { color: 'Neutral-fill-1' },
-      color: '',
-    },
-    checked: {
-      border: { color: 'Brand-6' },
-      background: { color: 'Neutral-fill-1' },
-      color: 'Brand-6',
-      disabled: {
-        border: { color: 'Brand-3' },
-        background: { color: 'Neutral-fill-1' },
-        color: 'Brand-3',
-      },
-    },
-    gap: 'Margin-8',
-    circle: { fill: 'Neutral-fill-2' },
-  },
   gap: 'Margin-24',
   block: { gap: 'Margin-12' },
+  icon: {
+    width: 'Size-7',
+    gap: 'Margin-8',
+    border: { width: 'Border-2' },
+    inner: { size: 'Size-3' },
+    background: { color: 'Neutral-fill-1' },
+    color: 'Neutral-text-3',
+    disabled: { background: { color: 'Neutral-fill-2' }, color: 'Neutral-border-1' },
+    hover: { background: { color: 'Neutral-fill-1' }, color: 'Neutral-text-3' },
+    checked: {
+      background: { color: 'Neutral-fill-1' },
+      color: 'Brand-6',
+      disabled: { background: { color: 'Neutral-fill-1' }, color: 'Brand-3' },
+    },
+    wrapper: { fill: 'Neutral-fill-2', padding: 'Size-3' },
+  },
+  small: {
+    icon: { width: 'Size-6', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },
+    label: { font: { size: '12/regular' } },
+  },
+  large: {
+    icon: { width: 'Size-8', gap: '', border: { width: 'Border-2' }, inner: { size: 'Size-3.5' } },
+    label: { font: { size: '16/regular' } },
+  },
   label: {
     font: { color: 'Neutral-text-5', size: '14/regular' },
     disabled: { font: { color: 'Neutral-text-2' } },

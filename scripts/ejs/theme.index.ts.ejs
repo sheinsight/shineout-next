@@ -1,6 +1,6 @@
 <% const tokens = [] -%>
 <% files.forEach(function (file, i) { -%>
-    <% const Comp= file.charAt(0).toUpperCase() + file.slice(1) -%>
+    <% const Comp= getComponentName(file) -%>
     import <%- Comp %> from './<%= file %>';
     import {  <%- Comp %>Tokens } from './<%= file %>/type';
 
@@ -10,7 +10,7 @@ export type ThemeTokens = <%- tokens.join(' & ') %>;
 
 const Token: ThemeTokens = {
 <% files.forEach(function (file, i) { -%>
-    <% const Comp= file.charAt(0).toUpperCase() + file.slice(1) -%>
+    <% const Comp= getComponentName(file) -%>
     ...<%- Comp -%>,
 <% }) -%>
 };

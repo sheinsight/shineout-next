@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { ButtonClasses, ButtonProps } from './button.type';
 import ButtonGroup from './button-group';
+import Spin from '../spin';
 
 const Button = (props: ButtonProps) => {
   const {
@@ -25,6 +26,7 @@ const Button = (props: ButtonProps) => {
     ...rest
   } = props;
   const { getButtonProps, getSpaceChildren, getAnchorProps, disabled } = useButton({
+    loading,
     ...rest,
   });
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
@@ -51,6 +53,16 @@ const Button = (props: ButtonProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { type: buttonType, onRef, ...buttonProps } = rootProps;
 
+  const getSpinSize = () => {
+    if (size === 'small') {
+      return 10;
+    }
+    if (size === 'large') {
+      return 14;
+    }
+    return 12;
+  };
+
   const childrenEl = getSpaceChildren(children, space);
 
   let buttonInnerEl: React.ReactNode = childrenEl;
@@ -59,10 +71,13 @@ const Button = (props: ButtonProps) => {
     buttonInnerEl = renderInnerWrapper(childrenEl);
   }
 
-  let loadingEl: React.ReactNode = <span>Spin</span>;
+  let loadingEl: React.ReactNode = (
+    <span className={buttonStyle.spin}>
+      <Spin name='ring' size={getSpinSize()} jssStyle={jssStyle}></Spin>
+    </span>
+  );
 
   if (renderLoading) {
-    // Spin 组件，待实现后替换
     loadingEl = renderLoading(loadingEl);
   }
 
@@ -79,7 +94,6 @@ const Button = (props: ButtonProps) => {
       </a>
     );
   }
-
   return (
     // eslint-disable-next-line react/button-has-type
     <button {...buttonProps} ref={onRef as any} className={rootClass} style={style}>

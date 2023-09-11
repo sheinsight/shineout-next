@@ -3,6 +3,7 @@ export * from './animation-list';
 export * from './button';
 export * from './checkbox';
 export * from './dropdown';
+export * from './editable-area';
 export * from './form';
 export * from './icon';
 export * from './image';
@@ -14,6 +15,7 @@ export * from './spin';
 export * from './switch';
 export * from './tag';
 export * from './textarea';
+export * from './tooltip';
 
 export { styled, StyleProvider } from './jss-style';
 export * as mixins from './mixin';

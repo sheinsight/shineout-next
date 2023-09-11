@@ -13,6 +13,9 @@ import { CommonTokens } from './common/type';
 import Dropdown from './dropdown';
 import { DropdownTokens } from './dropdown/type';
 
+import EditableArea from './editable-area';
+import { EditableAreaTokens } from './editable-area/type';
+
 import Icon from './icon';
 import { IconTokens } from './icon/type';
 
@@ -40,11 +43,15 @@ import { TagTokens } from './tag/type';
 import Textarea from './textarea';
 import { TextareaTokens } from './textarea/type';
 
+import Tooltip from './tooltip';
+import { TooltipTokens } from './tooltip/type';
+
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CheckboxTokens &
   CommonTokens &
   DropdownTokens &
+  EditableAreaTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
@@ -53,7 +60,8 @@ export type ThemeTokens = AlertTokens &
   SpinTokens &
   SwitchTokens &
   TagTokens &
-  TextareaTokens;
+  TextareaTokens &
+  TooltipTokens;
 
 const Token: ThemeTokens = {
   ...Alert,
@@ -61,6 +69,7 @@ const Token: ThemeTokens = {
   ...Checkbox,
   ...Common,
   ...Dropdown,
+  ...EditableArea,
   ...Icon,
   ...Image,
   ...Input,
@@ -70,6 +79,7 @@ const Token: ThemeTokens = {
   ...Switch,
   ...Tag,
   ...Textarea,
+  ...Tooltip,
 };
 
 export default Token;

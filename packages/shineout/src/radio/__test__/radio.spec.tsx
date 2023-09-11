@@ -1,4 +1,4 @@
-import { RefAttributes } from 'react';
+import React, { RefAttributes } from 'react';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import Radio from '..';
 import { Form } from 'shineout';
@@ -11,6 +11,7 @@ import {
   hasAttributesTest,
   baseTest,
   childrenTest,
+  displayTest,
 } from '../../tests/utils';
 import { classLengthTest, inputTest } from '../../tests/structureTest';
 import RadioBase from '../__example__/001-base-0';
@@ -62,6 +63,8 @@ describe('Radio[Base]', () => {
   baseTest(Radio.Group as React.ComponentType, radioGroupClassName);
   childrenTest(Radio, radioClassName);
   childrenTest(Radio.Group as React.ComponentType, radioGroupClassName);
+  displayTest(Radio, 'ShineoutRadio');
+  displayTest(Radio.Group as React.FC, 'ShineoutRadioGroup');
   snapshotTest(<RadioBase />);
   snapshotTest(<RadioStatus />, 'about status');
   snapshotTest(<RadioGroup />, 'about group');

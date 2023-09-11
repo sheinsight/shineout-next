@@ -35,7 +35,7 @@ const inputTokenValue = {
   placeholder: { color: 'Neutral-text-2' },
   background: { color: 'Neutral-fill-1' },
   shadow: '',
-  clear: { color: 'Neutral-text-4' },
+  clear: { color: 'Neutral-text-3' },
   toggle: { color: 'Neutral-text-4' },
   hover: {
     font: { color: '' },
@@ -43,8 +43,8 @@ const inputTokenValue = {
     border: { color: 'Brand-6' },
     background: { color: '' },
     shadow: '',
-    clear: { color: 'Brand-6' },
-    toggle: { color: '' },
+    clear: { color: 'Neutral-text-4' },
+    toggle: { color: 'Neutral-text-5' },
   },
   focus: {
     font: { color: '' },

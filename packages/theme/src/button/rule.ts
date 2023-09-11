@@ -18,6 +18,7 @@ const buttonRules = {
   ],
   shape: [['', 'small', 'large'], ['round', 'circle', 'square'], ['border-radius']],
   extra_nearly_margin: [['nearly-margin']],
+  extra_nearly_spin_margin: [['spin-margin']],
 };
 
 module.exports = {

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { usePositionStyle } from '@sheinx/hooks';
 import ReactDOM from 'react-dom';
 import { AbsoluteListProps } from './absolute-list.type';
@@ -12,7 +12,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     parentElement,
     scrollElement,
     fixedWidth,
-    zIndex,
+    zIndex = 1051,
     focus,
     popupEl,
     updateKey,
@@ -37,12 +37,10 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     popupGap,
   });
   const childStyle = children.props.style;
-  const newStyle = useMemo(() => {
-    return {
-      ...childStyle,
-      ...style,
-    };
-  }, [childStyle, style]);
+  const newStyle = {
+    ...childStyle,
+    ...style,
+  };
 
   if (React.isValidElement(children) === false) return null;
 

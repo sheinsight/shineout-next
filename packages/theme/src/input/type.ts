@@ -94,7 +94,7 @@ export interface InputTokens {
   inputBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-3
    * @description 输入框清除颜色
    */
   inputClearColor: string;
@@ -112,10 +112,16 @@ export interface InputTokens {
   inputHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Neutral-text-4
    * @description 输入框鼠标移入时的清除颜色
    */
   inputHoverClearColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 输入框鼠标移入时的undefined颜色
+   */
+  inputHoverToggleColor: string;
   /**
    * @type {string}
    * @token Brand-7

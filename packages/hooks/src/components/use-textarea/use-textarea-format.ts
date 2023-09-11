@@ -2,7 +2,7 @@ import React from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 import { InputFormatProps } from './use-textarea-format.type';
 
-const useInputFormat = (props: InputFormatProps) => {
+const useTextareaFormat = (props: InputFormatProps) => {
   const { trim, onChange, onBlur } = props;
 
   const handleBlur = usePersistFn((e: React.FocusEvent) => {
@@ -34,4 +34,4 @@ const useInputFormat = (props: InputFormatProps) => {
   };
 };
 
-export default useInputFormat;
+export default useTextareaFormat;

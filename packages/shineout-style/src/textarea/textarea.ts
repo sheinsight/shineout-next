@@ -75,6 +75,7 @@ const input: JsStyles<InputClass> = {
     lineHeight: 'inherit',
     color: 'inherit',
     fontSize: 'inherit',
+    fontFamily: 'inherit',
     outline: 'none',
     backgroundColor: 'transparent',
     resize: 'none',

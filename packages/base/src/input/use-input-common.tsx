@@ -38,6 +38,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     error,
     popover,
     popoverProps,
+    status,
     ...rest
   } = props;
 
@@ -136,6 +137,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     name: htmlName,
     style: mergeStyle,
     suffix: mergeSuffix,
+    status: error ? 'error' : status,
     disabled,
     size,
     rootRef,

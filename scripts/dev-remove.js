@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const componentNameReg = /^[a-zA-Z]*$/;
+const componentNameReg = /^[a-zA-Z-]*$/;
 const { rmrf } = require('./utils/rmrf');
 const { compile } = require('./utils/compile');
 const { writeTemplate } = require('./utils/write-template');
-const component = process.argv.slice(2)?.[0].trim().toLowerCase();
+const component = (process.argv.slice(2)?.[0] || '').trim().toLowerCase();
 
 const chunkDir = path.join(__dirname, '../docs', 'chunk');
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
@@ -13,9 +13,9 @@ const shineoutStyleDir = path.join(__dirname, '../packages', 'shineout-style', '
 const themeDir = path.join(__dirname, '../packages', 'theme', 'src');
 
 const whiteList = {
-  shineout: ['@types', 'hooks', 'index.ts', 'tests', 'type.ts', '.DS_Store'],
-  'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts', 'cssvar', '.DS_Store'],
-  base: ['types', 'icons', 'index.ts', 'common', '.DS_Store'],
+  shineout: ['icon'],
+  'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts', 'cssvar'],
+  base: ['rule', 'config'],
   theme: ['index.ts', 'config.ts', 'utils', 'token', '.DS_Store'],
 };
 
@@ -34,6 +34,13 @@ function rmTheme() {
   updateTheme();
 }
 
+function getComponentName(fileName) {
+  return fileName
+    .split('-')
+    .map((i) => i[0].toUpperCase() + i.slice(1))
+    .join('');
+}
+
 function updateTheme() {
   const fileName = 'index.ts';
   const targetPath = path.join(__dirname, '../packages', 'theme', 'src');
@@ -46,6 +53,7 @@ function updateTheme() {
     templatePath,
     ejsVars: {
       files,
+      getComponentName,
     },
     needPrettier: true,
   });
@@ -60,13 +68,21 @@ function updateBase() {
   const fileName = 'index.ts';
   const targetPath = path.join(__dirname, '../packages', 'base', 'src');
   const templatePath = path.join(__dirname, `./ejs/base.index.ts.ejs`);
-  const files = fs.readdirSync(targetPath, 'utf-8').filter((i) => !whiteList.base.includes(i));
+  const files = fs.readdirSync(targetPath, 'utf-8').filter((i) => {
+    if (whiteList.base.includes(i)) return true;
+    const isDir = fs.statSync(path.join(targetPath, i)).isDirectory();
+    if (!isDir) return false;
+    const hasDoc = fs.existsSync(path.join(targetPath, i, '__doc__'));
+    if (!hasDoc) return false;
+    return true;
+  });
 
   writeTemplate({
     fileName,
     targetPath,
     templatePath,
     ejsVars: {
+      getComponentName,
       files,
     },
     needPrettier: true,
@@ -82,7 +98,14 @@ function updateShineout() {
   const fileName = 'index.ts';
   const targetPath = path.join(__dirname, '../packages', 'shineout', 'src');
   const templatePath = path.join(__dirname, `./ejs/shineout.index.ts.ejs`);
-  const files = fs.readdirSync(targetPath, 'utf-8').filter((i) => !whiteList.shineout.includes(i));
+  const files = fs.readdirSync(targetPath, 'utf-8').filter((i) => {
+    if (whiteList.shineout.includes(i)) return true;
+    const isDir = fs.statSync(path.join(targetPath, i)).isDirectory();
+    if (!isDir) return false;
+    const hasDoc = fs.existsSync(path.join(targetPath, i, '__doc__'));
+    if (!hasDoc) return false;
+    return true;
+  });
 
   writeTemplate({
     fileName,
@@ -90,6 +113,7 @@ function updateShineout() {
     templatePath,
     ejsVars: {
       files,
+      getComponentName,
     },
     needPrettier: true,
   });
@@ -119,6 +143,7 @@ function updateShineoutStyle() {
     templatePath,
     ejsVars: {
       files,
+      getComponentName,
     },
     needPrettier: true,
   });
@@ -154,4 +179,5 @@ module.exports = {
   updateShineout,
   updateShineoutStyle,
   updatePackages,
+  getComponentName,
 };
