@@ -1,10 +1,14 @@
+import { useEffect } from 'react';
 import classnames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store, { dispatch, DocType } from '../../store';
+import { useNavigate, useLocation } from 'react-router-dom';
 import useStyles from '../style';
 
 const Tabs = () => {
   const state = useSnapshot(store);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const classes = useStyles();
   const tabs: { name: string; path: DocType }[] = [
@@ -16,7 +20,21 @@ const Tabs = () => {
 
   const handleChangeTab = (tab: DocType) => {
     dispatch.setDoctab(tab);
+
+    navigate({
+      search: `?tab=${tab}`,
+    });
   };
+
+  useEffect(() => {
+    if (location.search) {
+      const searchParams = new URLSearchParams(location.search);
+      const params = searchParams.get('tab');
+      if (params) {
+        dispatch.setDoctab(params as DocType);
+      }
+    }
+  }, []);
 
   return (
     <div className={classes.tabs}>
