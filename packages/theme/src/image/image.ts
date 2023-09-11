@@ -3,7 +3,7 @@
 
 import { ImageTokens } from './type';
 
-const image: ImageTokens = {
+const imageTokens: ImageTokens = {
   imageCircleBorderRadius: 'Radius-50%',
   imageCircleBorderColor: 'Neutral-border-1',
   imageRoundedBorderRadius: 'Radius-4',
@@ -19,4 +19,4 @@ const image: ImageTokens = {
   imageBackgroundColor: 'Neutral-fill-2',
 };
 
-export default image;
+export default imageTokens;

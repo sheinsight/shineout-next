@@ -1,5 +1,5 @@
-// 此文件受脚本控制，修改后将自动同步 type.ts editable-area.ts 的内容
-// This file is script-controlled and any changes made will be automatically synchronized with the type.ts and editable-area.ts files.
+// 此文件受脚本控制，修改后将自动同步 type.ts editableArea.ts 的内容
+// This file is script-controlled and any changes made will be automatically synchronized with the type.ts and editableArea.ts files.
 
 /**
  * 描述词典
