@@ -157,8 +157,9 @@ const compileToken = (filePath) => {
   const pattern = new RegExp(`src(.*?)token`, 'i');
   const match = filePath.match(pattern);
   if (!match?.[1]) return;
-  const component = toCamelCase(match[1].replace(/\//g, ''));
-  const componentPath = path.resolve(srcPath, component);
+  const fileName = match[1].replace(/\//g, '');
+  const component = toCamelCase(fileName);
+  const componentPath = path.resolve(srcPath, fileName);
   const hasRuleFile = fs.existsSync(path.resolve(componentPath, 'rule.ts'));
   if (!hasRuleFile) return;
 
@@ -191,7 +192,7 @@ const compileToken = (filePath) => {
     ...prettierOptions,
   });
 
-  fs.writeFileSync(path.resolve(srcPath, component, 'type.ts'), render);
+  fs.writeFileSync(path.resolve(srcPath, fileName, 'type.ts'), render);
 
   const componentTemplateContext = ejs.compile(fs.readFileSync(componentTemplatePath, 'utf-8'));
   let componentRender = componentTemplateContext({
@@ -204,7 +205,7 @@ const compileToken = (filePath) => {
     filepath: path.join(__dirname, '../../.prettierrc.js'),
     ...prettierOptions,
   });
-  fs.writeFileSync(path.resolve(srcPath, component, `${component}.ts`), componentRender);
+  fs.writeFileSync(path.resolve(srcPath, fileName, `${fileName}.ts`), componentRender);
 };
 
 compileToken();
