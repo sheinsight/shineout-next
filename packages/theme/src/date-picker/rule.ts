@@ -8,6 +8,8 @@
  */
 const datePickerRules = {
   size: [[''], ['font-size']],
+  pickerColor: [['picker'], ['color', 'background-color', 'shadow']],
+  dayPickerSize: ['day', ['', 'small', 'large'], ['padding-x', 'padding-y']],
 };
 
 module.exports = {

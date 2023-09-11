@@ -2,7 +2,9 @@
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 
-// import { BaseDatePickerProps } from '@sheinx/hooks';
+export type DateTimeType = Date | number | string | undefined;
+
+export type DatePickerValue = DateTimeType | DateTimeType[];
 
 export interface DatePickerClasses {
   /**
@@ -12,16 +14,39 @@ export interface DatePickerClasses {
   wrapperFocus: string;
   wrapperDisabled: string;
   wrapperError: string;
+  wrapperRange: string;
   paddingBox: string;
+  pickerBox: string;
   picker: string;
   pickerOpen: string;
   result: string;
+  resultAlignRight: string;
+  resultAlignLeft: string;
+  resultAlignCenter: string;
+  resultTextWrapper: string;
+  resultText: string;
+  resultSeparator: string;
+  icon: string;
+  clear: string;
+
+  // 日
+  dayPicker: string;
+  dayPickerHeader: string;
+  dayPickerIcon: string;
+  dayPickerTitle: string;
+  dayPickerBody: string;
+  dayPickerRow: string;
+  dayPickerCell: string;
+  dayPickerCellActive: string;
+  dayPickerCellDisabled: string;
+  dayPickerCellToday: string;
+  dayPickerCellCurrentMonth: string;
   //...
 }
 
 export type DisabledType = 'start' | 'end';
 
-export interface DatePickerProps
+export interface DatePickerProps<Value extends DatePickerValue>
   extends Pick<CommonType, 'className' | 'style' | 'size' | 'status'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle?: {
@@ -46,6 +71,7 @@ export interface DatePickerProps
    */
   onCollapse?: (collapse: boolean) => void;
 
+  align?: 'left' | 'right' | 'center';
   /**
    * @en Set the default time zone, the format is /^([+-]\\d{2})$/ Support '-12' to '+13'
    * @cn 设置默认时区,格式为/^([+-]\\d{2})$/ 支持 '-12' 到 '+13'
@@ -56,4 +82,31 @@ export interface DatePickerProps
    * @cn 弹出框位置
    */
   position?: 'left-top' | 'left-bottom' | 'right-top' | 'right-bottom';
+  /**
+   * @en type of datepicker
+   * @cn 时间类型
+   * @default 'date'
+   */
+  type?: 'date' | 'time' | 'datetime' | 'month' | 'week' | 'quarter' | 'year';
+  format?: string;
+  range?: boolean;
+  value?: Value;
+  defaultValue?: Value;
+  // todo quickSelect
+  onChange?: (value: Value extends any[] ? string[] : string) => void;
+  beforeChange?: (
+    value: Value extends any[] ? string[] : string,
+  ) => (Value extends any[] ? string[] : string) | undefined | void;
+  /**
+   * @en If clearable is true, show clear value icon
+   * @cn  是否显示清除数据图标
+   * @default true
+   */
+  clearable?: boolean;
+  /**
+   * @en onChange get undefined while clear
+   * @cn 清空值时抛出 undefined
+   * @default false
+   */
+  clearWithUndefined?: boolean;
 }

@@ -6,7 +6,7 @@ import usePersistFn from '../../common/use-persist-fn';
 
 interface Context {
   cachedDate?: Date;
-  cachedDays?: Date[];
+  cachedDays: Date[];
 }
 const useDate = (props: UseDateProps) => {
   const { options, type } = props;
@@ -34,7 +34,7 @@ const useDate = (props: UseDateProps) => {
   };
 
   const getDays = () => {
-    if (!current) return context.cachedDate;
+    if (!current) return context.cachedDays;
     const date = utils.clearHMS(current, options);
     if (
       context.cachedDate &&
@@ -112,8 +112,13 @@ const useDate = (props: UseDateProps) => {
     props.onChange?.(date);
   });
 
+  const currentYear = utils.getDateInfo(current, 'year', options);
+  const currentMonth = utils.getDateInfo(current, 'month', options) + 1;
+
   return {
     current,
+    currentYear,
+    currentMonth,
     func: {
       handleNextYear,
       handleNextMonth,

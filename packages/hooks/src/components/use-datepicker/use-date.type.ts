@@ -7,9 +7,10 @@ export interface UseDateProps {
   min?: Date;
   max?: Date;
   type?: 'date' | 'week';
-  disabled?: (date: Date) => boolean;
+  clearWithUndefined?: boolean;
+  disabled?: boolean | ((date: Date) => boolean);
   options: {
     timeZone?: string;
-    startOfWeek?: string;
+    weekStartsOn?: number;
   };
 }
