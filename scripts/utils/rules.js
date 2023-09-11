@@ -2,13 +2,19 @@ const path = require('path');
 const { writeTemplate } = require('./write-template');
 const templatePath = path.resolve(__dirname, '../ejs/token.ejs');
 
-function getComponentName(fileName) {
-  return fileName
-    .split('-')
-    .map((i) => i[0].toUpperCase() + i.slice(1))
-    .join('')
-    .toLowerCase();
-}
+const toCamelCase = (str) => {
+  return str.replace(/-([a-z])/g, (match, letter) => {
+    return letter.toUpperCase();
+  });
+};
+
+// function getComponentName(fileName) {
+//   return fileName
+//     .split('-')
+//     .map((i) => i[0].toUpperCase() + i.slice(1))
+//     .join('')
+//     .toLowerCase();
+// }
 
 function keysToLowerCase(obj) {
   const result = {};
@@ -149,7 +155,7 @@ const compileRule = (filePath) => {
   const match = filePath.match(pattern);
   if (!match?.[1]) return;
   // 组件名
-  const component = getComponentName(removeFirstAndLastCharacter(match[1]));
+  const component = toCamelCase(removeFirstAndLastCharacter(match[1]));
   // 清除缓存
   delete require.cache[require.resolve(filePath)];
   // 获取 rule
