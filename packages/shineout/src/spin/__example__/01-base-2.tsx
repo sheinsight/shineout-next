@@ -8,30 +8,37 @@ import React from 'react';
 import { Spin } from 'shineout';
 
 export default () => {
-  const names = [
-    'default',
+  const names1 = [
+    // 'default',
     'chasing-dots',
     'cube-grid',
     'double-bounce',
     'fading-circle',
     'four-dots',
     'plane',
-    'pulse',
-    'ring',
-    'scale-circle',
-    'three-bounce',
-    'wave',
-    'chasing-ring',
   ];
+
+  const names2 = ['pulse', 'ring', 'scale-circle', 'three-bounce', 'wave', 'chasing-ring'];
 
   const renderTip = (name: string) => {
     return <span style={{ fontSize: 12, fontWeight: 300 }}>{name}</span>;
   };
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 65 }}>
-      {names.map((name, index) => (
-        <Spin key={index} name={name as any} size={16} tip={renderTip(name)} />
-      ))}
+    <div>
+      <div style={{ display: 'flex', flexWrap: 'nowrap', gap: 65, marginBottom: 32 }}>
+        {names1.map((name, index) => (
+          <div key={index} style={{ width: '16%' }}>
+            <Spin name={name as any} size={16} tip={renderTip(name)} />
+          </div>
+        ))}
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'nowrap', gap: 65 }}>
+        {names2.map((name, index) => (
+          <div key={index} style={{ width: '16%' }}>
+            <Spin key={index} name={name as any} size={16} tip={renderTip(name)} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
