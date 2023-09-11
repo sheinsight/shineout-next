@@ -104,8 +104,8 @@ export interface ItemProps {
 
 export interface SimpleDropdownProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
-  Pick<AbsoluteListProps, 'absolute'>,
-  Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode'> {
+    Pick<AbsoluteListProps, 'absolute'>,
+    Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode'> {
   jssStyle?: {
     animationList?: AnimationListClass;
     dropdown?: DropdownClass;

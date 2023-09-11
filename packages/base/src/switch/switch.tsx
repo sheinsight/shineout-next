@@ -46,7 +46,7 @@ const Switch = (props: SwitchProps) => {
   const inputProps = getInputProps();
 
   return (
-    <button type={'button'} role={'switch'} {...rootProps} >
+    <button type={'button'} role={'switch'} {...rootProps}>
       <input {...inputProps} type={'checkbox'} />
       <div className={jssStyle?.switch?.indicator}>
         {loading ? <div className={jssStyle?.switch?.loading} /> : null}

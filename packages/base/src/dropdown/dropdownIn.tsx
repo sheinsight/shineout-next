@@ -40,7 +40,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     style,
     className,
     size,
-    animation
+    animation,
   } = props;
 
   const { open, position, targetRef, popupRef, getTargetProps, closePop, openPop } = usePopup({
