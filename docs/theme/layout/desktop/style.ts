@@ -34,16 +34,19 @@ export default createUseStyles(
         },
       },
       '& .entry': {
-        gap: 12,
+        // gap: 12,
         width: '100%',
         fontWeight: '700',
         display: 'flex',
         listStyle: 'none',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        padding: '0 20px',
+        padding: '0 16px',
         '& li': {
           cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           '&:hover': {
             color: '#999999',
           },
