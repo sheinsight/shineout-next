@@ -1,6 +1,6 @@
 /**
  * cn - 按钮形状
- *    -- 按钮分为 方形、圆形、全圆角、矩形四种
+ *    -- 按钮分为方形、圆形、全圆角、矩形四种
  * en - Button shape
  *    -- Button is divided into square, circle, round, and rectangle.
  */

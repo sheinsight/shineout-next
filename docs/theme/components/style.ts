@@ -4,7 +4,7 @@ export default createUseStyles(
   {
     pages: {},
     header: {
-      color: 'rgba(20, 23, 55, 1)',
+      color: '#141737',
       padding: '0 56px',
       borderBottom: '1px solid rgba(232, 235, 240, 1)',
       '& .title': {
@@ -26,7 +26,7 @@ export default createUseStyles(
       height: 40,
       marginTop: 24,
       borderRadius: 4,
-      marginBottom: 32,
+      marginBottom: 40,
       display: 'flex',
       alignItems: 'center',
       padding: 4,
@@ -55,22 +55,29 @@ export default createUseStyles(
         fontSize: 20,
         marginTop: 48,
         fontWeight: 500,
-        marginBottom: 0,
+        marginBottom: 16,
         padding: '0 40px',
       },
       '& .paragraph': {
         padding: '0 40px',
         fontSize: 14,
         fontWeight: 400,
-        marginTop: 16,
+        marginTop: 0,
         marginBottom: 0,
       },
       '& .image': {
         padding: '0 40px',
         width: 'calc(100% - 272px)',
+        maxWidth: 908,
         marginTop: 16,
         marginBottom: 32,
         boxSizing: 'border-box',
+      },
+      '& .guide > div': {
+        // last child
+        '&:last-child img': {
+          marginBottom: 0,
+        },
       },
     },
     apiTable: {

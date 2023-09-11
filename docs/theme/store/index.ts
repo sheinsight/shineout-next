@@ -26,6 +26,7 @@ interface State {
   doctab: DocType;
   rtl: boolean;
   env: Env;
+  scroll: boolean;
 }
 
 const regex = new RegExp(`component/(.*?)/`, 'i');
@@ -36,6 +37,7 @@ const state: State = {
   doctab: 'examples',
   rtl: false,
   env: 'SHEIN',
+  scroll: false,
 };
 
 const proxyState = proxy(state);
