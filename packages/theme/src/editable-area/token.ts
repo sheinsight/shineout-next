@@ -1,5 +1,5 @@
-// 此文件受脚本控制，修改后将自动同步 type.ts editable-area.ts 的内容
-// This file is script-controlled and any changes made will be automatically synchronized with the type.ts and editable-area.ts files.
+// 此文件受脚本控制，修改后将自动同步 type.ts editableArea.ts 的内容
+// This file is script-controlled and any changes made will be automatically synchronized with the type.ts and editableArea.ts files.
 
 /**
  * 描述词典
@@ -15,7 +15,7 @@ const editableAreaTokenDescription = { editableArea: 'xxx' };
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 editableAreaRules 强关联，非 editableAreaRules 规则内的 token 需手动增加或删减。
  */
-const editableAreaTokenValue = { font: { size: '14/regular' }}
+const editableAreaTokenValue = { font: { size: '14/regular' } };
 
 const editableAreaTokenExtraValue = {};
 

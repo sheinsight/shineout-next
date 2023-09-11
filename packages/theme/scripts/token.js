@@ -157,7 +157,7 @@ const compileToken = (filePath) => {
   const pattern = new RegExp(`src(.*?)token`, 'i');
   const match = filePath.match(pattern);
   if (!match?.[1]) return;
-  const component = match[1].replace(/\//g, '');
+  const component = toCamelCase(match[1].replace(/\//g, ''));
   const componentPath = path.resolve(srcPath, component);
   const hasRuleFile = fs.existsSync(path.resolve(componentPath, 'rule.ts'));
   if (!hasRuleFile) return;

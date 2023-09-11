@@ -17,7 +17,7 @@ const Guide = (props: GuideProps) => {
     <div className={classes.guide}>
       {guides[state.locales].map((guide, index) => {
         return (
-          <div key={index}>
+          <div className='guide' key={index}>
             <h2 className='title'>{guide.title}</h2>
             {guide.paragraphs.map((p, idx) => {
               return (
