@@ -16,17 +16,11 @@ export default () => {
 
   return (
     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', flexDirection: 'column' }}>
-      <Button.Group>
-        <Button type='primary' mode='outline'>
-          Publish
-        </Button>
-        <Button type='secondary' mode='outline'>
-          Publish
-        </Button>
-        <Button type='secondary' mode='outline'>
-          Publish
-        </Button>
-        <Button type='secondary' mode='outline' disabled>
+      <Button.Group mode='text'>
+        <Button type='primary'>Publish</Button>
+        <Button type='secondary'>Publish</Button>
+        <Button type='secondary'>Publish</Button>
+        <Button type='secondary' disabled>
           Publish
         </Button>
       </Button.Group>

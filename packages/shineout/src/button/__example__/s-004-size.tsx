@@ -1,6 +1,6 @@
 /**
  * cn - 按钮尺寸
- *    -- 按钮分为 小、中、大，三种尺寸，推荐及默认为尺寸「中」，可在不同场景及不同业务需求选择适合尺寸
+ *    -- 按钮分为小、中、大三种尺寸，推荐及默认为尺寸「中」，可在不同场景及不同业务需求选择适合尺寸
  * en - Button size
  *    -- Button is divided into small, medium, and large. The recommended and default size is medium. You can choose the appropriate size in different scenarios and different business needs.
  */
