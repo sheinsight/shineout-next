@@ -4,6 +4,6 @@ export default {
   borderStyle: 'solid',
   borderColor: '#197AFA',
   borderRadius: '50%',
-  animation: '$ring 1s ease-in-out infinite',
+  animation: '$ring 1s linear infinite',
   borderTopColor: 'transparent',
 };
