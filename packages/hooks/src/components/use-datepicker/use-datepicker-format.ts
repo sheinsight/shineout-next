@@ -62,10 +62,11 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
   const { value, onChange, type, options = {}, range } = props;
   const format = getFormat(props.format, type);
   const getCurrentArr = () => {
-    const dateArr = convertValueToDateArr(value, format, options);
-    if (!dateArr[0]) dateArr[0] = new Date();
-    if (range && !dateArr[1]) dateArr[1] = new Date();
-    return dateArr as Date[];
+    const arr = convertValueToDateArr(value, format, options);
+    const currentArr = convertValueToDateArr(props.defaultCurrent, 'YYYY-MM-DD', options);
+    if (!arr[0]) arr[0] = currentArr[0] || new Date();
+    if (range && !arr[1]) arr[1] = currentArr[1] || new Date();
+    return arr as Date[];
   };
 
   const [currentArr, setCurrentArr] = useState(getCurrentArr());
@@ -112,9 +113,11 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
 
   const finishEdit = (...args: any) => {
     setEdit(false);
-    // todo 清空后结果优化
     const formatValue = getFormatValueArr(stateDate);
     const v = range ? formatValue : formatValue[0];
+    if (range && (!stateDate[0] || !stateDate[1]) && !props.allowSingle) {
+      return;
+    }
     if (!shallowEqual(v, value)) {
       onChange?.(v as FormatValueType, ...args);
     }

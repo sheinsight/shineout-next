@@ -7,9 +7,24 @@
  * 规则变量名称为 组件名称 + Rules。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const datePickerRules = {
-  size: [[''], ['font-size']],
+  size: [
+    ['', 'small', 'large'],
+    ['font-size', 'border-radius', 'padding-x', 'padding-y', 'icon-size'],
+  ],
+  color: [
+    ['', 'disabled', 'error'],
+    ['', 'hover', 'focus'],
+    [
+      'font-color',
+      'placeholder-color',
+      'border-color',
+      'background-color',
+      'shadow',
+      'clear-color',
+    ],
+  ],
   pickerColor: [['picker'], ['color', 'background-color', 'shadow']],
-  dayPickerSize: ['day', ['', 'small', 'large'], ['padding-x', 'padding-y']],
+  dayPickerSize: [['day'], ['', 'small', 'large'], ['padding-x', 'padding-y']],
 };
 
 module.exports = {

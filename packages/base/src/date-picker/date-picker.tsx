@@ -11,7 +11,7 @@ import Icons from '../icons';
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
 const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>) => {
   const { locale } = useConfig();
-  const { disabled, jssStyle, range, type = 'date' } = props;
+  const { disabled, jssStyle, range, type = 'date', border = true } = props;
   const disabledAll = disabled && typeof disabled !== 'function';
   const [focused, setFocused] = React.useState(false);
   let listPosition = props.position || 'bottom-left';
@@ -52,6 +52,8 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
     options,
     clearWithUndefined: props.clearWithUndefined,
     onClear: undefined,
+    allowSingle: props.allowSingle,
+    defaultCurrent: props.defaultPickerValue || props.defaultRangeMonth,
   });
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
@@ -114,6 +116,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
         disabledAll && jssStyle?.datePicker?.wrapperDisabled,
         props.status === 'error' && jssStyle?.datePicker?.wrapperError,
         range && jssStyle?.datePicker?.wrapperRange,
+        !border && jssStyle?.datePicker?.wrapperNoBorder,
       )}
       {...util.getDataAttribute({ type })}
     >

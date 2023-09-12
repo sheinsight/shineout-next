@@ -13,9 +13,17 @@ const Picker = (props: PickerProps) => {
     setDateArr((arr) => {
       const newArr = [...arr];
       newArr[index] = date;
+      if (range && index === 0 && newArr[1]) {
+        if (date.getTime() > newArr[1]!.getTime()) {
+          newArr[1] = undefined;
+        }
+      }
+      if (!range) closePop();
+      if (range && newArr[1 - index] !== undefined) {
+        closePop();
+      }
       return newArr;
     });
-    if (!range) closePop();
   };
 
   const setCurrent = (index: number, date: Date) => {
@@ -44,6 +52,11 @@ const Picker = (props: PickerProps) => {
 
   const renderPicker = (position?: string) => {
     const index = position === 'end' ? 1 : 0;
+    let min: Date | undefined = undefined;
+    if (position === 'end') {
+      min = dateArr[0];
+    }
+
     const commonProps = {
       key: position,
       setMode,
@@ -54,6 +67,7 @@ const Picker = (props: PickerProps) => {
       setCurrent: position === 'end' ? setCurrentEnd : setCurrentStart,
       type: props.type as any,
       disabled: props.disabled,
+      min,
       jssStyle,
     };
     if (mode === 'year') {

@@ -14,6 +14,7 @@ export interface DatePickerClasses {
   wrapperFocus: string;
   wrapperDisabled: string;
   wrapperError: string;
+  wrapperNoBorder: string;
   wrapperRange: string;
   paddingBox: string;
   pickerBox: string;
@@ -109,4 +110,26 @@ export interface DatePickerProps<Value extends DatePickerValue>
    * @default false
    */
   clearWithUndefined?: boolean;
+  /**
+   * @en allow single select, only in range can set
+   * @cn 是否允许单选, 仅在 range 模式下有效
+   * @default false
+   */
+  allowSingle?: boolean;
+  /**
+   * @deprecated
+   */
+  border?: boolean;
+  /**
+   * @deprecated
+   * @en use defaultPickerValue instead
+   * @cn 使用 defaultPickerValue 代替
+   */
+  defaultRangeMonth?: Array<DateTimeType>;
+
+  /**
+   * @en default date of panel，work under has no value
+   * @cn 面板默认时间，在未选择日期时生效
+   */
+  defaultPickerValue?: DateTimeType | DateTimeType[];
 }

@@ -7,6 +7,7 @@ export type DatePickerClass =
   | 'wrapperFocus'
   | 'wrapperDisabled'
   | 'wrapperError'
+  | 'wrapperNoBorder'
   | 'wrapperRange'
   | 'paddingBox'
   | 'pickerBox'
@@ -92,22 +93,22 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
   resultTextWrapper: {
     display: 'flex',
     flex: '1',
+    textAlign: 'left',
   },
   resultAlignLeft: {
     '& $resultTextWrapper': {
-      '& $resultText': { flex: 'unset' },
-      justifyContent: 'flex-start',
+      textAlign: 'left',
     },
   },
   resultAlignRight: {
     '& $resultTextWrapper': {
-      '& $resultText': { flex: 'unset' },
-      justifyContent: 'flex-end',
+      textAlign: 'right',
     },
   },
   resultAlignCenter: {
-    justifyContent: 'center',
-    textAlign: 'center',
+    '& $resultTextWrapper': {
+      textAlign: 'center',
+    },
   },
   resultText: {
     display: 'inline-block',
@@ -119,6 +120,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
   },
   resultSeparator: {
     display: 'inline-block',
+    padding: '0 10px',
   },
   icon: {
     display: 'inline-flex',
@@ -203,7 +205,9 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
   dayPickerCellActive: {
     color: 'green',
   },
-  dayPickerCellDisabled: {},
+  dayPickerCellDisabled: {
+    backgroundColor: '#eee',
+  },
 };
 
 export default datePickerStyle;

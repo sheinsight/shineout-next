@@ -15,10 +15,12 @@ export default () => {
     <div>
       <DatePicker
         value={value}
+        allowSingle
         range
+        align={'left'}
         jssStyle={{ datePicker: datePickerStyle }}
+        defaultPickerValue={['2021-12-02', '2021-12-03']}
         onChange={(v) => {
-          console.log('change', v);
           setValue(v);
         }}
       />
