@@ -1,3 +1,4 @@
+import React from 'react';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tabs from '..';
@@ -638,34 +639,50 @@ describe('Tabs[SwitchToTop/Sticky]', () => {
 // TODO: scroll
 describe('Tabs[Scroll]', () => {
   // beforeAll(() => {
+  //   // jest.spyOn(React, 'useRef').mockReturnValue({
+  //   //   current: {
+  //   //     clientWidth: 300
+  //   //   },
+  //   // });
   //   Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
   //     get() {
   //       if (this.classList.contains('tabs-header-0-2-9')) {
-  //         return '100px'
+  //         return 100
   //       }
-  //       return undefined
+  //       return 300
   //     }
   //   })
   // })
-  // test('should render when set scroll', async () => {
-  //   const tabs = [];
-  //   for (let i = 0; i < 100; i++) {
-  //     tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });
-  //   }
-  //   const { container } = render(
-  //     <Tabs shape='line' defaultActive={0}>
-  //       {tabs.map((tab, index) => {
-  //         return (
-  //           <Tabs.Panel key={index} tab={tab.title}>
-  //             <div style={{ padding: 5, height: '100%' }}>{tab.content}</div>
-  //           </Tabs.Panel>
-  //         );
-  //       })}
-  //     </Tabs>
-  //   );
-  //   console.log('121', container.querySelector(tabsHeaderClassName)?.clientWidth)
-  //   console.log('1212', window.getComputedStyle(container.querySelector(tabsHeaderScrollClassName)!).width)
-  //   screen.debug()
-  //   // classLengthTest(container, tabsTabClassName, 100);
-  // });
+  test('should render when set scroll', async () => {
+    jest.mock('react', () => {
+      const originReact = jest.requireActual('react');
+      const mUseRef = jest.fn();
+      return {
+        ...originReact,
+        useRef: mUseRef,
+      };
+    });
+    const mRef = { current: { clientWidth: 300 } };
+    Object.defineProperty(mRef, 'current', {
+      get: jest.fn(() => ({ clientWidth: 300 })),
+      set: jest.fn(() => null),
+    });
+    jest.spyOn(React, 'useRef').mockReturnValue(mRef);
+    const tabs = [];
+    for (let i = 0; i < 30; i++) {
+      tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });
+    }
+    const { container } = render(
+      <Tabs shape='line' defaultActive={0}>
+        {tabs.map((tab, index) => {
+          return (
+            <Tabs.Panel key={index} tab={tab.title}>
+              <div style={{ padding: 5, height: '100%' }}>{tab.content}</div>
+            </Tabs.Panel>
+          );
+        })}
+      </Tabs>,
+    );
+    classLengthTest(container, tabsTabClassName, 30);
+  });
 });
