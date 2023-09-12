@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
-import store from '../../../store';
+import store, { dispatch } from '../../../store';
 import useStyles from '../style';
 
 const Anchor = () => {
@@ -10,12 +10,14 @@ const Anchor = () => {
   const state = useSnapshot(store);
 
   const [anchor, setAnchor] = useState([]);
-  const [hash, setHash] = useState('');
+  const [, setHash] = useState('');
 
   const handleClick = (e: any) => {
     const hash = e.target.hash.split('#')?.at(-1);
-    const target = document.getElementById(decodeURIComponent(hash));
+    const activeAnchor = decodeURIComponent(hash);
+    const target = document.getElementById(activeAnchor);
     if (target) target.scrollIntoView();
+    dispatch.setActiveAnchor(activeAnchor);
   };
 
   const toKebabCase = (str?: string) => {
@@ -66,8 +68,12 @@ const Anchor = () => {
     <ul className={classes.anchor}>
       {anchor.map((item, index) => {
         return (
-          <li key={index}>
-            <Link to={`#${item}`} onClick={handleClick} className={item === hash ? 'active' : ''}>
+          <li key={index} className='anchor-item'>
+            <Link
+              to={`#${item}`}
+              onClick={handleClick}
+              className={item === state.activeAnchor ? 'active' : ''}
+            >
               {item}
             </Link>
           </li>

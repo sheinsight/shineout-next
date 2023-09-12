@@ -148,7 +148,16 @@ export default createUseStyles(
       listStyle: 'none',
       margin: 0,
       padding: 0,
-      borderLeft: '1px solid rgba(232, 235, 240, 1)',
+      '&::after': {
+        content: '" "',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: 1,
+        height: '100%',
+        backgroundColor: '#E8EBF0',
+        zIndex: 0,
+      },
       '& a': {
         position: 'relative',
         display: 'block',
@@ -164,11 +173,11 @@ export default createUseStyles(
         // overflow: 'hidden',
         '&.active': {
           color: '#197AFA',
-          // before
           '&::before': {
             content: '" "',
             position: 'absolute',
-            left: -1,
+            zIndex: 1,
+            left: 0,
             top: 0,
             width: 1,
             height: 28,
