@@ -108,6 +108,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
 
   const startEdit = () => {
     setEdit(true);
+    setCurrentArr(getCurrentArr());
     setStateDate(context.cachedDateArr);
   };
 

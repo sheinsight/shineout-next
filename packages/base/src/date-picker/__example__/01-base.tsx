@@ -14,12 +14,12 @@ export default () => {
   return (
     <div>
       <DatePicker
+        range
+        placeholder={['开始日期', '结束日期']}
         value={value}
         allowSingle
-        range
         align={'left'}
         jssStyle={{ datePicker: datePickerStyle }}
-        defaultPickerValue={['2021-12-02', '2021-12-03']}
         onChange={(v) => {
           setValue(v);
         }}

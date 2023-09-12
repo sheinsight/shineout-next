@@ -10,9 +10,6 @@ export type DatePickerClass =
   | 'wrapperNoBorder'
   | 'wrapperRange'
   | 'paddingBox'
-  | 'pickerBox'
-  | 'picker'
-  | 'pickerOpen'
   | 'result'
   | 'resultAlignRight'
   | 'resultAlignLeft'
@@ -20,50 +17,56 @@ export type DatePickerClass =
   | 'resultText'
   | 'resultTextWrapper'
   | 'resultSeparator'
+  | 'placeholder'
   | 'icon'
   | 'clear'
+  | 'pickerWrapper'
+  | 'pickerBox'
+  | 'pickerWrapperOpen'
+  | 'picker'
   | 'dayPicker'
-  | 'dayPickerHeader'
-  | 'dayPickerIcon'
-  | 'dayPickerTitle'
-  | 'dayPickerBody'
-  | 'dayPickerRow'
-  | 'dayPickerCell'
-  | 'dayPickerCellActive'
-  | 'dayPickerCellDisabled'
-  | 'dayPickerCellToday'
-  | 'dayPickerCellCurrentMonth';
+  | 'pickerHeader'
+  | 'pickerIcon'
+  | 'pickerTitle'
+  | 'pickerBody'
+  | 'pickerRow'
+  | 'pickerCell'
+  | 'pickerCellContent'
+  | 'pickerCellActive'
+  | 'pickerCellDisabled'
+  | 'pickerCellToday'
+  | 'pickerCellCurrentMonth';
 
 const inputBorderToken = {
   lineHeightDynamic: token.lineHeightDynamic,
-  borderRadius: token.inputBorderRadius,
+  borderRadius: token.datePickerBorderRadius,
 
-  fontSize: token.inputFontSize,
-  smallFontSize: token.inputSmallFontSize,
-  largeFontSize: token.inputLargeFontSize,
+  fontSize: token.datePickerFontSize,
+  smallFontSize: token.datePickerSmallFontSize,
+  largeFontSize: token.datePickerLargeFontSize,
 
-  paddingY: token.inputPaddingY,
-  smallPaddingY: token.inputSmallPaddingY,
-  largePaddingY: token.inputLargePaddingY,
+  paddingY: token.datePickerPaddingY,
+  smallPaddingY: token.datePickerSmallPaddingY,
+  largePaddingY: token.datePickerLargePaddingY,
 
-  paddingX: token.inputPaddingX,
-  smallPaddingX: token.inputSmallPaddingX,
-  largePaddingX: token.inputLargePaddingX,
+  paddingX: token.datePickerPaddingX,
+  smallPaddingX: token.datePickerSmallPaddingX,
+  largePaddingX: token.datePickerLargePaddingX,
 
-  borderColor: token.inputBorderColor,
-  focusBorderColor: token.inputFocusBorderColor,
-  hoverBorderColor: token.inputHoverBorderColor,
-  disabledBorderColor: token.inputDisabledBorderColor,
-  errorBorderColor: token.inputErrorBorderColor,
+  borderColor: token.datePickerBorderColor,
+  focusBorderColor: token.datePickerFocusBorderColor,
+  hoverBorderColor: token.datePickerHoverBorderColor,
+  disabledBorderColor: token.datePickerDisabledBorderColor,
+  errorBorderColor: token.datePickerErrorBorderColor,
 
-  fontColor: token.inputFontColor,
-  disabledFontColor: token.inputDisabledFontColor,
+  fontColor: token.datePickerFontColor,
+  disabledFontColor: token.datePickerDisabledFontColor,
 
-  backgroundColor: token.inputBackgroundColor,
-  disabledBackgroundColor: token.inputDisabledBackgroundColor,
+  backgroundColor: token.datePickerBackgroundColor,
+  disabledBackgroundColor: token.datePickerDisabledBackgroundColor,
 
-  focusShadow: token.inputFocusShadow,
-  errorFocusShadow: token.inputErrorFocusShadow,
+  focusShadow: token.datePickerFocusShadow,
+  errorFocusShadow: token.datePickerErrorFocusShadow,
 };
 const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, ...resetWrapper } = inputBorder;
@@ -72,12 +75,18 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
   wrapper: {
     display: 'inline-block',
     position: 'relative',
-    width: '150px',
+    width: token.datePickerDateWidth,
+    '&[data-soui-type="datetime"]': {
+      width: token.datePickerDatetimeWidth,
+    },
     ...wrapper,
   },
   wrapperRange: {
-    width: '300px',
     textAlign: 'center',
+    width: token.datePickerDateRangeWidth,
+    '&[data-soui-type="datetime"]': {
+      width: token.datePickerDatetimeRangeWidth,
+    },
   },
   ...resetWrapper,
   result: {
@@ -89,6 +98,9 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
       '& $clear': { display: 'inline-flex' },
       '& $clear + $icon': { display: 'none' },
     },
+  },
+  placeholder: {
+    color: token.datePickerPlaceholderColor,
   },
   resultTextWrapper: {
     display: 'flex',
@@ -125,56 +137,60 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
   icon: {
     display: 'inline-flex',
     alignItems: 'center',
+    color: token.datePickerIconColor,
     '& svg': {
-      width: '14px',
-      height: '14px',
+      width: token.datePickerIconSize,
+      height: token.datePickerIconSize,
     },
   },
   clear: {
     display: 'none',
     alignItems: 'center',
+    color: token.datePickerClearColor,
+    '&: hover': {
+      color: token.datePickerHoverClearColor,
+    },
     '& svg': {
-      width: '14px',
-      height: '14px',
+      width: token.datePickerIconSize,
+      height: token.datePickerIconSize,
     },
     cursor: 'pointer',
   },
-  picker: {
+  pickerWrapper: {
     position: 'absolute',
-    backgroundColor: '#fff',
-    boxShadow:
-      '0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
-    borderRadius: '4px',
+    backgroundColor: token.datePickerPickerBackgroundColor,
+    boxShadow: token.datePickerPickerShadow,
+    // boxShadow:
+    //   '0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
+    borderRadius: token.datePickerPickerRadius,
   },
   pickerBox: {
     display: 'flex',
-    padding: '10px 10px',
-    '$wrapperRange &': {},
   },
-  pickerOpen: {},
-  dayPicker: {},
-  dayPickerHeader: {
+  picker: {},
+  pickerWrapperOpen: {},
+  pickerHeader: {
     padding: '14px 18px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     borderBottom: '1px solid #eee',
   },
-  dayPickerIcon: {
+  pickerIcon: {
     display: 'flex',
     gap: '12px',
-    '&> span': {
+    '& > span': {
       display: 'inline-flex',
       alignItems: 'center',
       cursor: 'pointer',
       '& svg': {
-        width: '14px',
-        height: '14px',
+        width: token.datePickerIconSize,
+        height: token.datePickerIconSize,
       },
     },
   },
 
-  dayPickerTitle: {
+  pickerTitle: {
     display: 'flex',
     alignItems: 'center',
     gap: '4px',
@@ -182,31 +198,80 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
       cursor: 'pointer',
     },
   },
-  dayPickerBody: {
-    padding: '16px',
-    textAlign: 'center',
-    '& thead td': {
-      color: '#989898',
+  pickerBody: {
+    fontSize: token.datePickerPickerBodyFontSize,
+    padding: `${token.datePickerPickerBodyPaddingX} ${token.datePickerPickerBodyPaddingY}`,
+    '& table': {
+      textAlign: 'center',
+      borderCollapse: 'collapse',
+      border: 0,
+      width: '100%',
+      tableLayout: 'fixed',
+      boxSizing: 'border-box',
+    },
+    '& th, & td': {
+      boxSizing: 'border-box',
+      padding: 0,
+      fontWeight: 'normal',
+    },
+    '& th': { color: token.datePickerCellHeaderColor },
+  },
+  pickerRow: {},
+  pickerCell: {
+    color: token.datePickerCellColor,
+    '&:not($pickerCellCurrentMonth)': {
+      color: token.datePickerCellOtherColor,
     },
   },
-  dayPickerRow: {},
-  dayPickerCell: {
-    padding: '5px 8px',
-    fontSize: '14px',
+  pickerCellContent: {
+    marginTop: token.datePickerCellMarginY,
     cursor: 'pointer',
-    color: '#ccc',
+    position: 'relative',
   },
-  dayPickerCellCurrentMonth: {
-    color: '#000',
+  pickerCellCurrentMonth: {},
+  pickerCellToday: {
+    '& $pickerCellContent::before': {
+      content: '""',
+      width: token.datePickerCellMarginY,
+      height: token.datePickerCellMarginY,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      margin: 'auto',
+      borderRadius: '50%',
+      position: 'absolute',
+      transform: 'translateY(100%)',
+      backgroundColor: token.datePickerCellActiveBackgroundColor,
+    },
   },
-  dayPickerCellToday: {
-    color: 'blue',
+  pickerCellActive: {
+    color: token.datePickerCellActiveColor,
+    '&  span': {
+      backgroundColor: token.datePickerCellActiveBackgroundColor,
+    },
   },
-  dayPickerCellActive: {
-    color: 'green',
+  pickerCellDisabled: {
+    color: token.datePickerCellDisabledColor,
+    '& > $pickerCellContent': {
+      backgroundColor: '#eee',
+    },
   },
-  dayPickerCellDisabled: {
-    backgroundColor: '#eee',
+  dayPicker: {
+    '& th': {
+      height: token.datePickerDayCellSize,
+      width: token.datePickerDayCellSize,
+    },
+    '& $pickerCellContent': {
+      height: token.datePickerDayCellSize,
+      lineHeight: token.datePickerDayCellSize,
+      '& span': {
+        display: 'inline-block',
+        minWidth: token.datePickerDayCellHotSize,
+        height: token.datePickerDayCellHotSize,
+        lineHeight: token.datePickerDayCellHotSize,
+        borderRadius: token.datePickerDayCellHotSize,
+      },
+    },
   },
 };
 

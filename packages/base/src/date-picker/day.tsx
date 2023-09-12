@@ -29,16 +29,18 @@ const Day = (props: DayProps) => {
     return (
       <td
         className={classNames(
-          jssStyle?.datePicker?.dayPickerCell,
-          isActive && jssStyle?.datePicker?.dayPickerCellActive,
-          isCurrentMonth && jssStyle?.datePicker?.dayPickerCellCurrentMonth,
-          isDisabled && jssStyle?.datePicker?.dayPickerCellDisabled,
-          isToday && jssStyle?.datePicker?.dayPickerCellToday,
+          jssStyle?.datePicker?.pickerCell,
+          isActive && jssStyle?.datePicker?.pickerCellActive,
+          isCurrentMonth && jssStyle?.datePicker?.pickerCellCurrentMonth,
+          isDisabled && jssStyle?.datePicker?.pickerCellDisabled,
+          isToday && jssStyle?.datePicker?.pickerCellToday,
         )}
         key={index}
         onClick={() => func.handleDayClick(item)}
       >
-        {func.getDayStr(item)}
+        <div className={jssStyle?.datePicker?.pickerCellContent}>
+          <span>{func.getDayStr(item)}</span>
+        </div>
       </td>
     );
   };
@@ -49,42 +51,44 @@ const Day = (props: DayProps) => {
     return weeks[num];
   });
   return (
-    <div className={jssStyle?.datePicker?.dayPicker}>
-      <div className={jssStyle?.datePicker?.dayPickerHeader}>
-        <div className={jssStyle?.datePicker.dayPickerIcon}>
+    <div className={classNames(jssStyle?.datePicker?.dayPicker, jssStyle?.datePicker?.picker)}>
+      <div className={jssStyle?.datePicker?.pickerHeader}>
+        <div className={jssStyle?.datePicker.pickerIcon}>
           <span onClick={func.handlePrevYear}>{Icons.AngleDoubleLeft}</span>
           <span onClick={func.handlePrevMonth}>{Icons.AngleLeft}</span>
         </div>
-        <div className={jssStyle?.datePicker?.dayPickerTitle}>
+        <div className={jssStyle?.datePicker?.pickerTitle}>
           <span>{currentYear}</span>
           <span>-</span>
           <span>{currentMonth}</span>
         </div>
-        <div className={jssStyle?.datePicker.dayPickerIcon}>
+        <div className={jssStyle?.datePicker.pickerIcon}>
           <span onClick={func.handleNextMonth}>{Icons.AngleRight}</span>
           <span onClick={func.handleNextYear}>{Icons.AngleDoubleRight}</span>
         </div>
       </div>
-      <table className={jssStyle?.datePicker?.dayPickerBody}>
-        <thead>
-          <tr>
-            {weekDays.map((item, index) => {
-              return <td key={index}>{item}</td>;
+      <div className={jssStyle?.datePicker?.pickerBody}>
+        <table>
+          <thead>
+            <tr>
+              {weekDays.map((item, index) => {
+                return <th key={index}>{item}</th>;
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {Array.from({ length: len }).map((_, index) => {
+              return (
+                <tr key={index} className={jssStyle?.datePicker?.pickerRow}>
+                  {days.slice(index * 7, (index + 1) * 7).map((item, index) => {
+                    return renderDay(item, index);
+                  })}
+                </tr>
+              );
             })}
-          </tr>
-        </thead>
-        <tbody>
-          {Array.from({ length: len }).map((_, index) => {
-            return (
-              <tr key={index} className={jssStyle?.datePicker?.dayPickerRow}>
-                {days.slice(index * 7, (index + 1) * 7).map((item, index) => {
-                  return renderDay(item, index);
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

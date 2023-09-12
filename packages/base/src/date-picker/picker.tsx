@@ -15,7 +15,7 @@ const Picker = (props: PickerProps) => {
       newArr[index] = date;
       if (range && index === 0 && newArr[1]) {
         if (date.getTime() > newArr[1]!.getTime()) {
-          newArr[1] = undefined;
+          newArr[1] = new Date(date);
         }
       }
       if (!range) closePop();
@@ -30,6 +30,17 @@ const Picker = (props: PickerProps) => {
     props.setCurrentArr((arr: Date[]) => {
       const newArr = [...arr];
       newArr[index] = date;
+      if (range && index === 0 && newArr[1]) {
+        if (date.getTime() > newArr[1]!.getTime()) {
+          newArr[1] = new Date(date);
+        }
+      }
+      if (range && index === 1 && newArr[0]) {
+        if (date.getTime() < newArr[0]!.getTime()) {
+          newArr[0] = new Date(date);
+        }
+      }
+
       return newArr;
     });
   };

@@ -11,8 +11,10 @@ import Icons from '../icons';
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
 const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>) => {
   const { locale } = useConfig();
-  const { disabled, jssStyle, range, type = 'date', border = true } = props;
+  const { disabled, jssStyle, range, type = 'date', border = true, placeholder } = props;
   const disabledAll = disabled && typeof disabled !== 'function';
+  const placeholderArr = Array.isArray(placeholder) ? placeholder : [placeholder, placeholder];
+  const styles = jssStyle?.datePicker;
   const [focused, setFocused] = React.useState(false);
   let listPosition = props.position || 'bottom-left';
   if (!verticalPosition.includes(listPosition)) {
@@ -77,11 +79,11 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
     return (
       <div
         className={classNames(
-          jssStyle?.datePicker?.result,
-          jssStyle?.datePicker?.paddingBox,
-          props.align === 'right' && jssStyle?.datePicker?.resultAlignRight,
-          props.align === 'center' && jssStyle?.datePicker?.resultAlignCenter,
-          props.align === 'left' && jssStyle?.datePicker?.resultAlignLeft,
+          styles?.result,
+          styles?.paddingBox,
+          props.align === 'right' && styles?.resultAlignRight,
+          props.align === 'center' && styles?.resultAlignCenter,
+          props.align === 'left' && styles?.resultAlignLeft,
         )}
         onClick={openPop}
         ref={targetRef}
@@ -93,17 +95,23 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
           setFocused(false);
         }}
       >
-        <div className={jssStyle?.datePicker?.resultTextWrapper}>
-          <div className={jssStyle?.datePicker?.resultText}>{resultArr[0]}</div>
-          {range && <div className={jssStyle?.datePicker?.resultSeparator}>{'~'}</div>}
-          {range && <div className={jssStyle?.datePicker?.resultText}>{resultArr[1]}</div>}
+        <div className={styles?.resultTextWrapper}>
+          <div className={styles?.resultText}>
+            {resultArr[0] || <span className={styles?.placeholder}>{placeholderArr[0]}</span>}
+          </div>
+          {range && <div className={styles?.resultSeparator}>{'~'}</div>}
+          {range && (
+            <div className={styles?.resultText}>
+              {resultArr[1] || <span className={styles?.placeholder}>{placeholderArr[1]}</span>}
+            </div>
+          )}
         </div>
         {!isEmpty && (
-          <div className={jssStyle?.datePicker?.clear} onClick={handleClear}>
+          <div className={styles?.clear} onClick={handleClear}>
             {Icons.CloseCircle}
           </div>
         )}
-        <div className={jssStyle?.datePicker?.icon}>{Icons.Calendar}</div>
+        <div className={styles?.icon}>{Icons.Calendar}</div>
       </div>
     );
   };
@@ -111,12 +119,12 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
   return (
     <div
       className={classNames(
-        jssStyle?.datePicker?.wrapper,
-        focused && jssStyle?.datePicker?.wrapperFocus,
-        disabledAll && jssStyle?.datePicker?.wrapperDisabled,
-        props.status === 'error' && jssStyle?.datePicker?.wrapperError,
-        range && jssStyle?.datePicker?.wrapperRange,
-        !border && jssStyle?.datePicker?.wrapperNoBorder,
+        styles?.wrapper,
+        focused && styles?.wrapperFocus,
+        disabledAll && styles?.wrapperDisabled,
+        props.status === 'error' && styles?.wrapperError,
+        range && styles?.wrapperRange,
+        !border && styles?.wrapperNoBorder,
       )}
       {...util.getDataAttribute({ type })}
     >
@@ -134,7 +142,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
       >
         <AnimationList
           onRef={popupRef}
-          className={classNames(jssStyle?.datePicker?.picker)}
+          className={classNames(styles?.pickerWrapper)}
           display={'block'}
           type={'fade'}
           duration={'fast'}

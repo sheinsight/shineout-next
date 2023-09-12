@@ -19,7 +19,7 @@ const datePickerTokenValue = {
   font: { size: '14/regular', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
   padding: { x: 'Padding-8', y: 'Padding-4' },
-  icon: { size: 'Size-7' },
+  icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
     font: { size: '12/regular' },
     border: { radius: '' },
@@ -32,6 +32,8 @@ const datePickerTokenValue = {
     padding: { x: 'Padding-12', y: 'Padding-7' },
     icon: { size: '' },
   },
+  date: { width: 'Size-120', range: { width: 'Size-140' } },
+  datetime: { width: 'Size-120', range: { width: 'Size-210' } },
   placeholder: { color: 'Neutral-text-2' },
   background: { color: 'Neutral-fill-1' },
   shadow: '',
@@ -43,6 +45,7 @@ const datePickerTokenValue = {
     background: { color: '' },
     shadow: '',
     clear: { color: 'Neutral-text-4' },
+    icon: { color: '' },
   },
   focus: {
     font: { color: '' },
@@ -51,6 +54,7 @@ const datePickerTokenValue = {
     background: { color: '' },
     shadow: 'Brand-2',
     clear: { color: '' },
+    icon: { color: '' },
   },
   disabled: {
     font: { color: 'Neutral-text-2' },
@@ -59,6 +63,7 @@ const datePickerTokenValue = {
     background: { color: 'Neutral-fill-2' },
     shadow: '',
     clear: { color: '' },
+    icon: { color: '' },
     hover: {
       font: { color: '' },
       placeholder: { color: '' },
@@ -66,6 +71,7 @@ const datePickerTokenValue = {
       background: { color: '' },
       shadow: '',
       clear: { color: '' },
+      icon: { color: '' },
     },
     focus: {
       font: { color: '' },
@@ -74,6 +80,7 @@ const datePickerTokenValue = {
       background: { color: '' },
       shadow: '',
       clear: { color: '' },
+      icon: { color: '' },
     },
   },
   error: {
@@ -83,6 +90,7 @@ const datePickerTokenValue = {
     background: { color: '' },
     shadow: '',
     clear: { color: '' },
+    icon: { color: '' },
     hover: {
       font: { color: '' },
       placeholder: { color: '' },
@@ -90,6 +98,7 @@ const datePickerTokenValue = {
       background: { color: '' },
       shadow: '',
       clear: { color: '' },
+      icon: { color: '' },
     },
     focus: {
       font: { color: '' },
@@ -98,14 +107,27 @@ const datePickerTokenValue = {
       background: { color: '' },
       shadow: 'Danger-1',
       clear: { color: '' },
+      icon: { color: '' },
     },
   },
-  picker: { color: '', background: { color: '' }, shadow: '' },
-  day: {
-    padding: { x: '', y: '' },
-    small: { padding: { x: '', y: '' } },
-    large: { padding: { x: '', y: '' } },
+  picker: {
+    color: 'Neutral-text-5',
+    background: { color: 'Neutral-fill-1' },
+    shadow: 'Shadow-2',
+    radius: 'Radius-4',
+    body: { padding: { x: 'Padding-16', y: 'Padding-16' }, font: { size: '14/regular' } },
   },
+  cell: {
+    color: 'Neutral-text-5',
+    background: { color: 'transparent' },
+    hover: { color: 'Neutral-text-5', background: { color: 'Brand-1' } },
+    active: { color: 'Neutral-text-1', background: { color: 'Brand-6' } },
+    disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-2' } },
+    other: { color: 'Neutral-text-2' },
+    header: { color: 'Neutral-text-4' },
+    margin: { y: 'Margin-4' },
+  },
+  day: { cell: { size: 'Size-16', hot: { size: 'Size-12' } } },
 };
 
 const datePickerTokenExtraValue = {};

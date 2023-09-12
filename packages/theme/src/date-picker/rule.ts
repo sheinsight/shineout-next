@@ -11,6 +11,7 @@ const datePickerRules = {
     ['', 'small', 'large'],
     ['font-size', 'border-radius', 'padding-x', 'padding-y', 'icon-size'],
   ],
+  type: [['date', 'datetime'], ['', 'range'], ['width']],
   color: [
     ['', 'disabled', 'error'],
     ['', 'hover', 'focus'],
@@ -21,10 +22,16 @@ const datePickerRules = {
       'background-color',
       'shadow',
       'clear-color',
+      'icon-color',
     ],
   ],
-  pickerColor: [['picker'], ['color', 'background-color', 'shadow']],
-  dayPickerSize: [['day'], ['', 'small', 'large'], ['padding-x', 'padding-y']],
+  pickerCommon: [['picker'], ['color', 'background-color', 'shadow', 'radius']],
+  pickerBodyCommon: [['picker-body'], ['padding-x', 'padding-y', 'font-size']],
+  cellColor: [['cell'], ['', 'hover', 'active', 'disabled'], ['color', 'background-color']],
+  cellColor2: [['cell'], ['other'], ['color']],
+  cellColorCommon: [['cell'], ['header'], ['color']],
+  cellSize: [['cell'], ['margin-y']],
+  dayCellSize: [['day-cell'], ['size', 'hot-size']],
 };
 
 module.exports = {

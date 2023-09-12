@@ -17,9 +17,6 @@ export interface DatePickerClasses {
   wrapperNoBorder: string;
   wrapperRange: string;
   paddingBox: string;
-  pickerBox: string;
-  picker: string;
-  pickerOpen: string;
   result: string;
   resultAlignRight: string;
   resultAlignLeft: string;
@@ -27,22 +24,29 @@ export interface DatePickerClasses {
   resultTextWrapper: string;
   resultText: string;
   resultSeparator: string;
+  placeholder: string;
   icon: string;
   clear: string;
 
+  // 选择器
+  pickerWrapper: string;
+  pickerWrapperOpen: string;
+  pickerBox: string;
+  picker: string;
+  pickerHeader: string;
+  pickerIcon: string;
+  pickerTitle: string;
+  pickerBody: string;
+  pickerRow: string;
+  pickerCell: string;
+  pickerCellContent: string;
+  pickerCellActive: string;
+  pickerCellDisabled: string;
+  pickerCellToday: string;
+  pickerCellCurrentMonth: string;
+
   // 日
   dayPicker: string;
-  dayPickerHeader: string;
-  dayPickerIcon: string;
-  dayPickerTitle: string;
-  dayPickerBody: string;
-  dayPickerRow: string;
-  dayPickerCell: string;
-  dayPickerCellActive: string;
-  dayPickerCellDisabled: string;
-  dayPickerCellToday: string;
-  dayPickerCellCurrentMonth: string;
-  //...
 }
 
 export type DisabledType = 'start' | 'end';
@@ -132,4 +136,9 @@ export interface DatePickerProps<Value extends DatePickerValue>
    * @cn 面板默认时间，在未选择日期时生效
    */
   defaultPickerValue?: DateTimeType | DateTimeType[];
+  /**
+   * @en placeholder text. When the range property is not empty, it is an array of length 2.
+   * @cn 占位文字。range 属性不为空时，为长度为2的数组
+   */
+  placeholder?: string | string[];
 }
