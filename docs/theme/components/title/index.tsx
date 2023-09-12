@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import { useSnapshot } from 'valtio';
 import useStyles from '../style';
 import store from '../../store';
@@ -9,13 +10,17 @@ const Header = (props: HeaderProps) => {
   const state = useSnapshot(store);
 
   const { describe, title } = props;
-
+  const headerClasses = classnames(classes.header, {
+    [classes.stickyHeader]: state.scroll,
+  });
   return (
-    <div className={classes.header}>
-      <h1 className='title'>{title[state.locales]}</h1>
-      <p className='subtitle'>{describe[state.locales]}</p>
-      <Tabs></Tabs>
-    </div>
+    <>
+      <div className={headerClasses}>
+        <h1 className={classnames('title')}>{title[state.locales]}</h1>
+        <p className='subtitle'>{describe[state.locales]}</p>
+        <Tabs></Tabs>
+      </div>
+    </>
   );
 };
 

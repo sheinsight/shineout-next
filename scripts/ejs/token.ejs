@@ -17,7 +17,7 @@ const <%= component %>TokenDescription = <%- JSON.stringify(description) %>
  */
 const <%= component %>TokenValue = <%- JSON.stringify(values) %>
 
-const <%= component %>TokenExtraValue = {};
+const <%= component %>TokenExtraValue = <%- JSON.stringify(extra) %>;
   
 module.exports = {
 <%= component %>TokenValue,
