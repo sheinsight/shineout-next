@@ -53,7 +53,7 @@ export default createUseStyles(
       height: 40,
       marginTop: 24,
       borderRadius: 4,
-      marginBottom: 40,
+      marginBottom: 32,
       display: 'flex',
       alignItems: 'center',
       padding: 4,

@@ -139,15 +139,15 @@ export default createUseStyles(
     anchor: {
       position: 'fixed',
       right: 20,
-      top: 240,
+      top: 305,
       minWidth: 180,
       width: 180,
-      height: 170,
+      height: 'calc(100% - 345px)',
       overflow: 'auto',
-      marginTop: 80,
       listStyle: 'none',
       margin: 0,
       padding: 0,
+      transition: 'all ease 0.3s',
       '&::after': {
         content: '" "',
         position: 'absolute',
@@ -188,6 +188,11 @@ export default createUseStyles(
           color: '#197AFA',
         },
       },
+    },
+
+    stickyAnchor: {
+      top: 220,
+      height: 'calc(100% - 260px)',
     },
 
     relative: {

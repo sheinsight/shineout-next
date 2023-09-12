@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
@@ -11,6 +12,10 @@ const Anchor = () => {
 
   const [anchor, setAnchor] = useState([]);
   const [, setHash] = useState('');
+
+  const anchorClasses = classnames(classes.anchor, {
+    [classes.stickyAnchor]: state.scroll,
+  });
 
   const handleClick = (e: any) => {
     const hash = e.target.hash.split('#')?.at(-1);
@@ -65,7 +70,7 @@ const Anchor = () => {
   }, [location, state.locales]);
 
   return (
-    <ul className={classes.anchor}>
+    <ul className={anchorClasses}>
       {anchor.map((item, index) => {
         return (
           <li key={index} className='anchor-item'>
