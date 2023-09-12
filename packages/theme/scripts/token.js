@@ -14,6 +14,35 @@ const toCamelCase = (str) => {
   });
 };
 
+function objectKeysToLower(obj) {
+  const result = {};
+  Object.keys(obj).forEach((key) => {
+    const newKey = key.charAt(0).toLowerCase() + key.slice(1);
+    const value = obj[key];
+    result[newKey] = typeof value === 'object' ? objectKeysToLower(value) : value;
+  });
+  return result;
+}
+
+function generateExtra(obj, parent = '', paths = {}) {
+  // eslint-disable-next-line guard-for-in
+  for (let key in obj) {
+    const path = parent === '' ? key : `${parent}.${key}`;
+    if (typeof obj[key] === 'object') {
+      generateExtra(obj[key], path, paths);
+    } else {
+      const pathCamelCase = path
+        .replace(/(\.\w)/g, function (match) {
+          return match[1].toUpperCase();
+        })
+        .replace(/^\w/, (c) => c.toUpperCase());
+      paths[pathCamelCase] = obj[key];
+    }
+  }
+
+  return paths;
+}
+
 function generatePaths(arrays) {
   function helper(arrays, index, current, result) {
     if (index === arrays.length) {
@@ -100,8 +129,8 @@ function getTokenValue(obj, keys) {
 }
 let token = [];
 
-function generateToken(rule, componentName, tokenMap) {
-  const data = [];
+function generateToken(rule, componentName, tokenMap, extra = []) {
+  const data = [...extra];
   const result = [];
   const describeMap = {};
   const arrays = getRulePath(rule);
@@ -123,7 +152,6 @@ function generateToken(rule, componentName, tokenMap) {
       data.push(toCamelCase(`${componentName}-${res}`));
     });
   });
-
   data.forEach((item) => {
     const split = splitCamelCase(item);
     let desc = '';
@@ -132,6 +160,7 @@ function generateToken(rule, componentName, tokenMap) {
     });
     describeMap[item] = desc;
   });
+
   return describeMap;
 }
 
@@ -171,9 +200,10 @@ const compileToken = (filePath) => {
   const token = require(path.resolve(componentPath, 'token.ts'));
   const componentDescriptionMap = token[`${component}TokenDescription`];
   const describeMap = { ...tokenDescriptionMap, ...componentDescriptionMap };
-  const valueMap = token[`${component}TokenValue`];
-  const result = generateToken(rules, component, describeMap);
-
+  const extraValueMap = token[`${component}TokenExtraValue`];
+  const valueMap = { ...token[`${component}TokenValue`], ...extraValueMap };
+  const extraDescribe = objectKeysToLower(generateExtra(extraValueMap));
+  const result = generateToken(rules, component, describeMap, Object.keys(extraDescribe));
   prop = [];
 
   const Component = component.charAt(0).toUpperCase() + component.slice(1);
