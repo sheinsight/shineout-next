@@ -8,7 +8,9 @@ export interface NodeState {
   fetching: boolean;
 }
 
-export interface BaseTreeNodeProps {
+export interface BaseTreeNodeProps<DataItem> {
   id: KeygenResult;
+  data: DataItem;
+  childrenClass: ((data: DataItem) => string) | string;
   registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
 }

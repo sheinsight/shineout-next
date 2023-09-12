@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   BaseTreeProps,
   TreePathType,
@@ -33,7 +33,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     childrenKey = 'children' as keyof DataItem,
     keygen,
     mode,
-    active,
+    active: activeProp,
     expanded,
     defaultExpanded,
     defaultExpandAll,
@@ -48,11 +48,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     disabled: false,
   });
 
+  const [active] = useState(null);
+
   // 注册节点
   const registerUpdate = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
 
-    const isActive = active === id;
+    const isActive = activeProp === id;
     const expandeds = expanded || defaultExpanded;
 
     if (defaultExpandAll) {
@@ -82,6 +84,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     const value: KeygenResult[] = [];
 
     return value;
+  };
+
+  const getActive = () => {
+    return activeProp === undefined ? active : activeProp;
   };
 
   const getDisabled = () => {
@@ -244,6 +250,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     get,
     set,
     getValue,
+    getActive,
     getChecked,
     registerUpdate,
   };

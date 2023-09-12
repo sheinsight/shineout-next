@@ -18,6 +18,7 @@ export interface TreeContextProps<DataItem>
   expandIcons?: [React.ReactNode, React.ReactNode];
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
+  childrenClass?: ((data: DataItem) => string) | string;
   registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
 
   onToggle: () => void;

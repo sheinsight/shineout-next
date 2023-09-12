@@ -28,6 +28,7 @@ export interface TreeProps<DataItem> extends BaseTreeProps<DataItem> {
     checkbox: CheckboxClasses;
   };
   line?: boolean;
+  childrenClass?: ((data: DataItem) => string) | string;
   onDrop?: (data: DataItem[], key: KeygenResult, targetKey: KeygenResult, position: number) => void;
   active?: string | number;
   doubleClickExpand?: boolean;

@@ -11,6 +11,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     data,
     keygen,
     renderItem,
+    childrenClass,
     parentClickExpand,
     onChange,
   } = props;
@@ -39,6 +40,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
         line={line}
         keygen={keygen}
         onChange={onChange}
+        childrenClass={childrenClass}
         registerUpdate={registerUpdate}
         childrenKey={childrenKey as keyof DataItem}
         onNodeClick={handleNodeClick}

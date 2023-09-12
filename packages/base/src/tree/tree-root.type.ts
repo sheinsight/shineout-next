@@ -8,6 +8,7 @@ export interface TreeRootProps<DataItem> extends Omit<BaseTreeProps<DataItem>, '
     spin: SpinClasses;
   };
   line: boolean;
+  childrenClass?: ((data: DataItem) => string) | string;
   registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
