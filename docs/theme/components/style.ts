@@ -4,29 +4,56 @@ export default createUseStyles(
   {
     pages: {},
     header: {
+      position: 'sticky',
+      top: 60,
+      zIndex: 1,
       color: '#141737',
       padding: '0 56px',
+      background: '#fff',
       borderBottom: '1px solid rgba(232, 235, 240, 1)',
+      transition: 'all 0.15s ease',
       '& .title': {
         fontSize: 36,
         fontWeight: 500,
         marginBottom: 0,
-        marginTop: 32,
+        marginTop: 0,
+        paddingTop: 32,
+        transition: 'all 0.3s ease',
+        lineHeight: 'calc(1em + 8px)',
       },
 
       '& .subtitle': {
         fontSize: 14,
+        height: 20,
+        opacity: 1,
         marginBottom: 0,
         marginTop: 12,
         color: 'rgb(78,89,105)',
+        transition: 'all 0.3s ease',
       },
     },
+    stickyHeader: {
+      '& .title': {
+        paddingTop: 16,
+        fontSize: 24,
+      },
+      '& .subtitle': {
+        height: 0,
+        opacity: 0,
+        marginTop: 0,
+      },
+      '& $tabs': {
+        marginTop: 16,
+        marginBottom: 16,
+      },
+    },
+    hiddenHeader: {},
     tabs: {
       width: 462,
       height: 40,
       marginTop: 24,
       borderRadius: 4,
-      marginBottom: 40,
+      marginBottom: 32,
       display: 'flex',
       alignItems: 'center',
       padding: 4,

@@ -14,6 +14,8 @@ export interface Menus {
   components: Menu[];
 }
 
+export type ScrollType = 'visible' | 'hidden' | 'sticky';
+
 export type Doc = 'shineout' | 'base';
 export type Locales = 'cn' | 'en';
 export type Env = 'GitHub' | 'SHEIN';
@@ -27,6 +29,7 @@ interface State {
   rtl: boolean;
   env: Env;
   scroll: boolean;
+  activeAnchor: string;
 }
 
 const regex = new RegExp(`component/(.*?)/`, 'i');
@@ -38,6 +41,7 @@ const state: State = {
   rtl: false,
   env: 'SHEIN',
   scroll: false,
+  activeAnchor: '',
 };
 
 const proxyState = proxy(state);
@@ -87,6 +91,12 @@ export const dispatch = {
   },
   setDoctab: (doctab: DocType) => {
     proxyState.doctab = doctab;
+  },
+  setScroll: (scroll: boolean) => {
+    proxyState.scroll = scroll;
+  },
+  setActiveAnchor: (anchor: string) => {
+    proxyState.activeAnchor = anchor;
   },
 };
 

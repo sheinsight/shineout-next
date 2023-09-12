@@ -139,16 +139,25 @@ export default createUseStyles(
     anchor: {
       position: 'fixed',
       right: 20,
-      top: 240,
+      top: 305,
       minWidth: 180,
       width: 180,
-      height: 170,
+      height: 'calc(100% - 345px)',
       overflow: 'auto',
-      marginTop: 80,
       listStyle: 'none',
       margin: 0,
       padding: 0,
-      borderLeft: '1px solid rgba(232, 235, 240, 1)',
+      transition: 'all ease 0.3s',
+      '&::after': {
+        content: '" "',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: 1,
+        height: '100%',
+        backgroundColor: '#E8EBF0',
+        zIndex: 0,
+      },
       '& a': {
         position: 'relative',
         display: 'block',
@@ -164,11 +173,11 @@ export default createUseStyles(
         // overflow: 'hidden',
         '&.active': {
           color: '#197AFA',
-          // before
           '&::before': {
             content: '" "',
             position: 'absolute',
-            left: -1,
+            zIndex: 1,
+            left: 0,
             top: 0,
             width: 1,
             height: 28,
@@ -179,6 +188,11 @@ export default createUseStyles(
           color: '#197AFA',
         },
       },
+    },
+
+    stickyAnchor: {
+      top: 220,
+      height: 'calc(100% - 260px)',
     },
 
     relative: {

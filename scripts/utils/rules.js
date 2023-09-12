@@ -171,6 +171,7 @@ const compileRule = (filePath) => {
   // 获取 token
   const values = token[`${component}TokenValue`];
   const description = token[`${component}TokenDescription`];
+  const extra = token[`${component}TokenExtraValue`];
 
   // 根据 rule 生成空模板
   const templateTokenValue = createTemplateTokenValue(rules);
@@ -186,6 +187,7 @@ const compileRule = (filePath) => {
       values: newValues,
       component,
       description,
+      extra,
     },
   });
 
