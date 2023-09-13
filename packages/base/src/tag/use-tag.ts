@@ -1,5 +1,6 @@
 import { util } from '@sheinx/hooks';
 import { useState, useEffect } from 'react';
+import { BaseTagProps } from './tag.type';
 
 const Done = 2;
 const Finish = 0;
@@ -7,7 +8,7 @@ const Pendding = 1;
 
 const { isEmpty, isPromise, isString, isFunc } = util;
 
-const useTag = (props) => {
+const useTag = (props: BaseTagProps) => {
   const { onClose, disabled, onCompleted, onClick, children } = props;
 
   const [dismiss, setDismiss] = useState(Finish);
@@ -41,7 +42,7 @@ const useTag = (props) => {
       callback = onClose(e);
       if (isPromise(callback)) {
         setDismiss(Pendding);
-        callback
+        (callback as Promise<any>)
           .then(() => {
             setDismiss(Done);
           })
