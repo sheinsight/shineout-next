@@ -170,6 +170,7 @@ const Tabs = (props: TabsProps) => {
         splitColor={getSplitColor()}
         collapsible={collapsible}
         tabBarStyle={tabBarStyle}
+        getPosition={getPosition()}
       ></TabsHeader>
     );
   };

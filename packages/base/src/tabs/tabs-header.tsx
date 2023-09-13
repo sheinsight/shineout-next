@@ -9,7 +9,8 @@ import Icon from '../icons';
 import Button from '../button';
 
 const TabsHeader = (props: TabsHeaderProps) => {
-  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle } = props;
+  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition } =
+    props;
 
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -44,6 +45,30 @@ const TabsHeader = (props: TabsHeaderProps) => {
       if (!currentTab) return 0;
       const currentOffest = getRectDiff(currentTab, headerRef.current);
       const scrollOffest = getRectDiff(scrollRef.current, headerRef.current);
+      if (['top-right', 'bottom-right'].includes(getPosition!)) {
+        let nextOffset = scrollOffest.right;
+        const startOffset = scrollOffest.right - currentOffest.left;
+        if (currentOffest.left < 0 || currentOffest.right > 0) {
+          nextOffset = startOffset;
+        }
+        return -nextOffset;
+      }
+      if (['left-top', 'right-top'].includes(getPosition!)) {
+        let nextOffset = -scrollOffest.top;
+        const startOffset = -scrollOffest.top + currentOffest.top;
+        if (currentOffest.top < 0 || currentOffest.bottom > 0) {
+          nextOffset = startOffset;
+        }
+        return nextOffset;
+      }
+      if (['left-bottom', 'right-bottom'].includes(getPosition!)) {
+        let nextOffset = scrollOffest.bottom;
+        const startOffset = scrollOffest.bottom - currentOffest.top;
+        if (currentOffest.top < 0 || currentOffest.bottom > 0) {
+          nextOffset = startOffset;
+        }
+        return -nextOffset;
+      }
       let nextOffset = -scrollOffest.left;
       const startOffset = -scrollOffest.left + currentOffest.left;
       if (currentOffest.left < 0 || currentOffest.right > 0) {
@@ -52,7 +77,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
       return nextOffset;
     };
     setTransform(getActiveTabOffest());
-  }, [active]);
+  }, [active, tabRef, headerRef, scrollRef, shouldScroll]);
 
   const getDataProps = (options?: { 'data-soui-state'?: string }) => {
     return {
