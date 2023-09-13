@@ -1,3 +1,4 @@
+import React from 'react';
 import classNames from 'classnames';
 import { TabProps } from './tab.type';
 import { TabsClasses } from './tabs.type';
@@ -5,7 +6,7 @@ import { ButtonClasses } from '../button/button.type';
 import Button from '../button';
 import { useTabsContext } from '@sheinx/hooks';
 
-const Tab = (props: TabProps) => {
+const Tab = (props: TabProps, ref: any) => {
   const { jssStyle, tab, disabled, id } = props;
   const {
     active,
@@ -77,7 +78,7 @@ const Tab = (props: TabProps) => {
     );
 
   return (
-    <div className={tabClass} {...getStateProps()} style={style} onClick={handleClick}>
+    <div className={tabClass} {...getStateProps()} style={style} onClick={handleClick} ref={ref}>
       {shape === 'card' && renderCardTab()}
       {shape === 'line' && renderLineTab()}
       {shape === 'dash' && renderDashTab()}
@@ -86,4 +87,4 @@ const Tab = (props: TabProps) => {
   );
 };
 
-export default Tab;
+export default React.forwardRef(Tab);

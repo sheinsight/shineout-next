@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { TabsHeaderProps } from './tabs-header.type';
 import { TabsClasses } from './tabs.type';
@@ -13,7 +13,8 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const { shape, isVertical, onCollapsible } = useTabsContext();
+  const tabRef = useRef<Record<string | number, HTMLDivElement>>({});
+  const { shape, isVertical, onCollapsible, active } = useTabsContext();
 
   const {
     delta,
@@ -23,6 +24,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
     shouldScroll,
     handleTransform,
     setTransform,
+    getRectDiff,
   } = useTransform({
     autoScroll: true,
     direction: isVertical ? 'Y' : 'X',
@@ -35,6 +37,22 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
 
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
+  useEffect(() => {
+    if (!shouldScroll) return;
+    const getActiveTabOffest = () => {
+      const currentTab = tabRef.current[active];
+      if (!currentTab) return 0;
+      const currentOffest = getRectDiff(currentTab, headerRef.current);
+      const scrollOffest = getRectDiff(scrollRef.current, headerRef.current);
+      let nextOffset = -scrollOffest.left;
+      const startOffset = -scrollOffest.left + currentOffest.left;
+      if (currentOffest.left < 0 || currentOffest.right > 0) {
+        nextOffset = startOffset;
+      }
+      return nextOffset;
+    };
+    setTransform(getActiveTabOffest());
+  }, [active]);
 
   const getDataProps = (options?: { 'data-soui-state'?: string }) => {
     return {
@@ -52,7 +70,6 @@ const TabsHeader = (props: TabsHeaderProps) => {
     if (!headerRef.current) return;
     setTransform(delta + headerRef.current.clientWidth);
   };
-
   const renderTab = () => {
     return (
       <div ref={headerRef} className={headerClass} {...getDataProps()}>
@@ -65,14 +82,30 @@ const TabsHeader = (props: TabsHeaderProps) => {
           {shape === 'button' && (
             <Button.Group jssStyle={{ button: buttonStyle }}>
               {tabs.map((tab, index) => {
-                return <Tab key={index} {...tab}></Tab>;
+                return (
+                  <Tab
+                    key={index}
+                    {...tab}
+                    ref={(node: any) => {
+                      tabRef.current[tab.id] = node;
+                    }}
+                  ></Tab>
+                );
               })}
             </Button.Group>
           )}
 
           {shape !== 'button' &&
             tabs.map((tab, index) => {
-              return <Tab key={index} {...tab}></Tab>;
+              return (
+                <Tab
+                  key={index}
+                  {...tab}
+                  ref={(node: any) => {
+                    tabRef.current[tab.id] = node;
+                  }}
+                ></Tab>
+              );
             })}
         </div>
       </div>
