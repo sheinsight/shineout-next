@@ -36,6 +36,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
 
   const getChildrenListProps = () => {
     return {
+      id,
       keygen,
       jssStyle,
       renderItem,

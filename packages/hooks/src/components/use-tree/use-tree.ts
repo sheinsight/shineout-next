@@ -32,7 +32,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     data = [],
     childrenKey = 'children' as keyof DataItem,
     keygen,
-    mode,
+    mode = 0,
     active: activeProp,
     expanded,
     dataUpdate,
@@ -40,8 +40,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     defaultExpandAll,
     disabled: disabledProps,
   } = props;
-
-  console.log(dataUpdate);
 
   const { current: context } = useRef<TreeContext<DataItem>>({
     pathMap: new Map<KeygenResult, TreePathType>(),
@@ -61,7 +59,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
     const isActive = activeProp === id;
     const expandeds = expanded || defaultExpanded;
-    console.log(id);
     if (defaultExpandAll) {
       return { active: isActive, expanded: true };
     }
@@ -74,7 +71,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
     if (isFunc(keygen)) {
-      return keygen(item, index);
+      return keygen(item, id);
     }
 
     if (keygen && (isString(keygen) || isNumber(keygen))) {
@@ -122,7 +119,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
       const id = getKey(item, path[path.length - 1], i);
-
       // 重复 id 警告
       if (context.dataMap.get(id)) {
         return;
@@ -159,7 +155,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         indexPath,
       });
     }
-
     return ids;
   };
 
@@ -181,14 +176,16 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
     // 递归处理每个节点的选中状态
     for (let i = 0; i < ids.length; i++) {
-      const { children } = context.pathMap.get(ids[i])!;
+      const item = ids[i];
+      const { children } = context.pathMap.get(item)!;
+
       if (forceCheck) {
-        setValueMap(ids[i], 1);
+        setValueMap(item, 1);
         initValue(children, forceCheck);
         return;
       }
 
-      let childChecked: CheckedStatusType = value!.indexOf(ids[i]) >= 0 ? 1 : 0;
+      let childChecked: CheckedStatusType = value!.indexOf(item) >= 0 ? 1 : 0;
 
       // 选中且非 mode 1 和 mode 4，则需要将其子选项统统强制选中
       if (childChecked === 1 && mode !== MODE.MODE_1 && mode !== MODE.MODE_4) {
@@ -197,17 +194,15 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       // mode 2 mode 3 mode 的情况下，需要根据 children 内容来决定是否选中
       else if (children.length > 0) {
         const res: CheckedStatusType = initValue(children)!;
-        if (mode !== MODE.MODE_4) {
-          childChecked = res;
-        }
+        childChecked = mode === MODE.MODE_4 ? childChecked : res;
       }
       // 没有子节点的情况下，需要根据 value 来决定是否选中
       else {
-        childChecked = value.indexOf(ids[i]) >= 0 ? 1 : 0;
+        childChecked = value.indexOf(item) >= 0 ? 1 : 0;
       }
 
       // 同步状态至 map 中
-      setValueMap(ids[i], childChecked);
+      setValueMap(item, childChecked);
 
       if (checked === undefined) {
         checked = childChecked;
@@ -231,8 +226,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.valueMap = new Map();
     context.disabled = getDisabled();
 
-    if (!data) return;
-
     initData(data, []);
     initValue();
     setValue();
@@ -248,7 +241,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   // const handleDrop = () => {};
 
   useEffect(() => {
-    console.log(999);
     setData(data);
     setTimeout(() => {
       firstRender.current = false;
