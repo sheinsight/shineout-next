@@ -38,6 +38,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
 
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
+
   useEffect(() => {
     if (!shouldScroll) return;
     const getActiveTabOffest = () => {
@@ -77,7 +78,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
       return nextOffset;
     };
     setTransform(getActiveTabOffest());
-  }, [active, tabRef, headerRef, scrollRef, shouldScroll]);
+  }, [active, tabRef.current, headerRef.current, scrollRef.current, shouldScroll]);
 
   const getDataProps = (options?: { 'data-soui-state'?: string }) => {
     return {
@@ -95,6 +96,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
     if (!headerRef.current) return;
     setTransform(delta + headerRef.current.clientWidth);
   };
+
   const renderTab = () => {
     return (
       <div ref={headerRef} className={headerClass} {...getDataProps()}>

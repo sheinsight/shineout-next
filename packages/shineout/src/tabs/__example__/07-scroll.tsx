@@ -4,19 +4,16 @@
  * en - Scroll
  *    -- When there are too many Tabs, the scroll function will be automatically enabled.
  */
-import { useState } from 'react';
-import { Tabs, Button } from 'shineout';
+import { Tabs } from 'shineout';
 
 export default () => {
   const tabs = [];
   for (let i = 0; i < 100; i++) {
     tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });
   }
-  const [tc, setTc] = useState(16);
   return (
     <div style={{ height: 100 }}>
-      <Button onClick={() => setTc(1)}>+</Button>
-      <Tabs shape='line' active={tc} onChange={(e) => setTc(e)}>
+      <Tabs shape='line' defaultActive={0}>
         {tabs.map((tab, index) => {
           return (
             <Tabs.Panel key={index} tab={tab.title}>
