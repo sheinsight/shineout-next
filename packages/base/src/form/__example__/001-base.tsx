@@ -12,6 +12,12 @@ export default () => {
   const formStyle = useFormStyle();
   const itemStyle = useFormItemStyle();
   const innerTitleStyle = useInnerTitleStyle();
+  const jssStyle = {
+    input: inputStyle,
+    form: formStyle,
+    item: itemStyle,
+    innerTitle: innerTitleStyle,
+  };
   return (
     <div>
       <Form
@@ -45,12 +51,7 @@ export default () => {
               console.log('input change', v);
             }}
           >
-            <Input
-              jssStyle={inputStyle}
-              innerTitleJssStyle={innerTitleStyle}
-              clearable
-              placeholder='please input name'
-            />
+            <Input jssStyle={jssStyle} clearable placeholder='please input name' />
           </FormField>
         </FormItem>
         <FormItem label={'Email'} tip={'输入公司邮箱'} jssStyle={itemStyle}>
@@ -64,8 +65,7 @@ export default () => {
               <Input
                 value={value}
                 onChange={onChange}
-                jssStyle={inputStyle}
-                innerTitleJssStyle={innerTitleStyle}
+                jssStyle={jssStyle}
                 clearable
                 placeholder='please input email'
               />
