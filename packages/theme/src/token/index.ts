@@ -1264,7 +1264,7 @@ export const tokenToVars = <T extends {}>(
 
   Object.keys(componentToken).forEach((key) => {
     const Key = key as keyof T & string;
-    const tokenKey = componentToken[Key] as string;
+    const tokenKey = componentToken[Key] as keyof typeof TOKEN & string;
     token[Key] = cssvar(tokenKey, TOKEN[tokenKey]?.value || tokenKey, SIZE);
   });
 
