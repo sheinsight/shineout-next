@@ -9,9 +9,6 @@ export default () => {
       <Radio jssStyle={{ radio: radioStyle }} disabled>
         red
       </Radio>
-      <Radio jssStyle={{ radio: radioStyle }} disabled defaultChecked>
-        green
-      </Radio>
     </div>
   );
 };

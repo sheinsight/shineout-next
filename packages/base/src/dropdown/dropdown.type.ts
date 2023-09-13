@@ -118,7 +118,7 @@ export interface SimpleDropdownProps
   /**
    * @private 内部属性
    */
-  closePop: () => void;
+  closePop?: () => void;
   /**
    * @en Display multiple elements on the page. This property depends on the width attribute. Please set the number of columns and width appropriately.
    * @cn 页面多元素展示,此属性需要依赖width属性,请合理的设置列数和宽度
