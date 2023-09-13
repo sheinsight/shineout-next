@@ -20,8 +20,10 @@ const Anchor = () => {
   const handleClick = (e: any) => {
     const hash = e.target.hash.split('#')?.at(-1);
     const activeAnchor = decodeURIComponent(hash);
-    const target = document.getElementById(activeAnchor);
-    if (target) target.scrollIntoView();
+    location.hash = activeAnchor;
+    const layout = document.getElementById('layout');
+    const target = document.getElementById(`anchor-${activeAnchor}`);
+    layout?.scrollTo(0, target?.offsetTop - 200);
     dispatch.setActiveAnchor(activeAnchor);
   };
 
@@ -65,8 +67,11 @@ const Anchor = () => {
       return;
     }
     setHash(hash);
-    const target = document.getElementById(hash);
-    if (target) target.scrollIntoView();
+    const target = document.getElementById(`anchor-${hash}`);
+    const layout = document.getElementById('layout');
+    if (target && layout) {
+      layout?.scrollTo(0, target?.offsetTop - 200);
+    }
   }, [location, state.locales]);
 
   return (

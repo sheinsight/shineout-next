@@ -68,7 +68,7 @@ const Desktop = () => {
       const titleElements = document.querySelectorAll('.anchor-title');
       let newActive = '';
       titleElements.forEach((item) => {
-        if ((item as HTMLElement).offsetTop <= top) newActive = item.id;
+        if ((item as HTMLElement).offsetTop <= top) newActive = item.id.split('-')[1];
       });
       if (newActive) {
         dispatch.setActiveAnchor(newActive);
