@@ -73,7 +73,7 @@ export interface BaseTagProps
   children?: React.ReactNode;
   onCompleted?: (value: string) => void;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
-  onClose?: boolean | ((e: React.MouseEvent<HTMLDivElement>) => void);
+  onClose?: boolean | ((e: React.MouseEvent<HTMLDivElement>) => void | Promise<any>);
   onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   onEnterPress?: (value: string, e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
