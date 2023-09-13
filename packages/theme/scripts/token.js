@@ -14,12 +14,14 @@ const toCamelCase = (str) => {
   });
 };
 
-function objectKeysToLower(obj) {
+function addPrefix(component, obj) {
   const result = {};
   Object.keys(obj).forEach((key) => {
-    const newKey = key.charAt(0).toLowerCase() + key.slice(1);
-    const value = obj[key];
-    result[newKey] = typeof value === 'object' ? objectKeysToLower(value) : value;
+    const newKey = `${component}${key}`;
+    result[newKey] = obj[key];
+    // const newKey = key.charAt(0).toLowerCase() + key.slice(1);
+    // const value = obj[key];
+    // result[newKey] = typeof value === 'object' ? addPrefix(value) : value;
   });
   return result;
 }
@@ -202,7 +204,7 @@ const compileToken = (filePath) => {
   const describeMap = { ...tokenDescriptionMap, ...componentDescriptionMap };
   const extraValueMap = token[`${component}TokenExtraValue`];
   const valueMap = { ...token[`${component}TokenValue`], ...extraValueMap };
-  const extraDescribe = objectKeysToLower(generateExtra(extraValueMap));
+  const extraDescribe = addPrefix(component, generateExtra(extraValueMap));
   const result = generateToken(rules, component, describeMap, Object.keys(extraDescribe));
   prop = [];
 
