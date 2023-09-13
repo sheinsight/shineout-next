@@ -15,9 +15,11 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     parentClickExpand,
     keygen,
     childrenKey,
+    childrenClass,
     registerUpdate,
     onChange,
     onNodeClick,
+    // className,
     listComponent: List,
   } = props;
 
@@ -45,6 +47,8 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       onChange,
       onNodeClick,
       registerUpdate,
+      childrenClass,
+      childrenClassName: childrenClass(data),
     };
   };
 

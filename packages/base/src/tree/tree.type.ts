@@ -1,3 +1,4 @@
+import { CommonType } from '../common/type';
 import { BaseTreeProps, ObjectKey, KeygenResult } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
@@ -15,13 +16,16 @@ export interface TreeClasses {
   iconWrapper: string;
   icon: string;
   node: string;
+  children: string;
   leaf: string;
 }
 export type TreeRenderItemType<DataItem> =
   | ((item: DataItem, expanded: boolean, active: boolean, id: KeygenResult) => React.ReactNode)
   | ObjectKey<DataItem>;
 
-export interface TreeProps<DataItem> extends BaseTreeProps<DataItem> {
+export interface TreeProps<DataItem>
+  extends BaseTreeProps<DataItem>,
+    Pick<CommonType, 'className'> {
   jssStyle?: {
     tree: TreeClasses;
     spin: SpinClasses;

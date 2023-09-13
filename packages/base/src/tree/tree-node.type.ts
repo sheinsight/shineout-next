@@ -1,10 +1,12 @@
+import { CommonType } from '../common/type';
 import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
 import { TreeClasses, TreeRenderItemType } from './tree.type';
 import { TreeListProps } from './tree-list.type';
 import { SpinClasses } from '../spin/spin.type';
 
 export interface TreeNodeProps<DataItem>
-  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'> {
+  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'>,
+    Pick<CommonType, 'className'> {
   jssStyle?: {
     tree: TreeClasses;
     spin: SpinClasses;
@@ -17,9 +19,9 @@ export interface TreeNodeProps<DataItem>
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
   onChange?: (value: KeygenResult[]) => void;
-  childrenClass?: ((data: DataItem) => string) | string;
+  childrenClass: (data: DataItem) => string | undefined;
   registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
-  listComponent: (props: TreeListProps<DataItem>) => JSX.Element;
+  listComponent: (props: TreeListProps<DataItem>) => JSX.Element | null;
 }

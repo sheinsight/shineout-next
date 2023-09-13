@@ -9,15 +9,7 @@ const Root = <DataItem,>(props: TreeRootProps<DataItem>) => {
   const treeStyle = jssStyle?.tree || ({} as TreeClasses);
   const rootClass = classNames(treeStyle.root);
 
-  return (
-    <TreeList
-      {...rest}
-      expanded
-      active={false}
-      className={rootClass}
-      jssStyle={jssStyle}
-    ></TreeList>
-  );
+  return <TreeList {...rest} expanded className={rootClass} jssStyle={jssStyle}></TreeList>;
 };
 
 export default Root;

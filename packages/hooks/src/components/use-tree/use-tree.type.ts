@@ -33,4 +33,5 @@ export interface BaseTreeProps<DataItem = ObjectType> {
   keygen: StructKeygenStringType<DataItem>;
   childrenKey?: keyof DataItem;
   mode?: TreeModeType;
+  dataUpdate?: boolean;
 }

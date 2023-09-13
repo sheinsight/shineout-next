@@ -35,10 +35,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     mode,
     active: activeProp,
     expanded,
+    dataUpdate,
     defaultExpanded,
     defaultExpandAll,
     disabled: disabledProps,
   } = props;
+
+  console.log(dataUpdate);
 
   const { current: context } = useRef<TreeContext<DataItem>>({
     pathMap: new Map<KeygenResult, TreePathType>(),
@@ -48,6 +51,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     disabled: false,
   });
 
+  const firstRender = useRef(true);
+
   const [active] = useState(null);
 
   // 注册节点
@@ -56,7 +61,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
     const isActive = activeProp === id;
     const expandeds = expanded || defaultExpanded;
-
+    console.log(id);
     if (defaultExpandAll) {
       return { active: isActive, expanded: true };
     }
@@ -218,13 +223,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     initValue();
   };
 
-  const setData = () => {
+  const setData = (data?: DataItem[]) => {
     if (!data) return;
 
     context.pathMap = new Map();
     context.dataMap = new Map();
     context.valueMap = new Map();
     context.disabled = getDisabled();
+
+    if (!data) return;
+
+    initData(data, []);
+    initValue();
+    setValue();
   };
 
   const getChecked = (id: KeygenResult) => {
@@ -237,11 +248,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   // const handleDrop = () => {};
 
   useEffect(() => {
-    setData();
-    initData(data, []);
-    initValue();
-    setValue();
+    console.log(999);
+    setData(data);
+    setTimeout(() => {
+      firstRender.current = false;
+    });
   }, []);
+
+  useEffect(() => {
+    if (firstRender.current) return;
+    if (dataUpdate) {
+      setData(data);
+    }
+  }, [dataUpdate, data]);
 
   return {
     pathMap: context.pathMap,
