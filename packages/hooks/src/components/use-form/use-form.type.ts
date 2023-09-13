@@ -57,7 +57,7 @@ export type FormContext = {
   defaultValues: ObjectType;
   rules: ObjectType;
   removeArr: Set<string>;
-  removeTimer?: number;
+  removeTimer?: number | NodeJS.Timeout;
   names: Set<string>;
   submitLock: boolean;
   lastValue: ObjectType | undefined;
