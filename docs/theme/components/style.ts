@@ -102,6 +102,7 @@ export default createUseStyles(
       '& .paragraph': {
         padding: '0 40px',
         fontSize: 14,
+        lineHeight: '22px',
         fontWeight: 400,
         marginTop: 0,
         marginBottom: 0,

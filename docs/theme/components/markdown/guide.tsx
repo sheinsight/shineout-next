@@ -27,7 +27,15 @@ const Guide = (props: GuideProps) => {
               {guide.paragraphs.map((p, idx) => {
                 return (
                   <div key={idx}>
-                    <p className='paragraph'>{p.paragraph}</p>
+                    {/* <p className='paragraph'>{p.paragraph}</p> */}
+                    {p.paragraph &&
+                      p.paragraph.split('\n').map((p, idx) => {
+                        return (
+                          <p key={idx} className='paragraph'>
+                            {p}
+                          </p>
+                        );
+                      })}
                     {p.image && <img className='image' src={p.image} alt='' />}
                   </div>
                 );
