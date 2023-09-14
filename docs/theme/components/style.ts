@@ -8,7 +8,7 @@ export default createUseStyles(
       top: 60,
       zIndex: 1,
       color: '#141737',
-      padding: '0 56px',
+      padding: '0 40px',
       background: '#fff',
       borderBottom: '1px solid rgba(232, 235, 240, 1)',
       transition: 'all 0.15s ease',

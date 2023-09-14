@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React, { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
@@ -14,7 +15,7 @@ const Example = (props: ExampleProps) => {
   const state = useSnapshot(store);
   const [open, setOpen] = useState(false);
 
-  const { propName, propDescribe, component, code } = props;
+  const { propName, propDescribe, component, code, className } = props;
 
   const defaultName = '';
 
@@ -51,11 +52,16 @@ const Example = (props: ExampleProps) => {
   };
 
   return (
-    <div className={classes.example}>
+    <div className={classnames(classes.example, className)}>
       <div className='header'>
-        <h2 className='title anchor-title' id={`example-${propName[state.locales] || defaultName}`}>
-          {propName[state.locales] || defaultName}
-        </h2>
+        {(propName[state.locales] || defaultName) && (
+          <h2
+            className='title anchor-title'
+            id={`example-${propName[state.locales] || defaultName}`}
+          >
+            {propName[state.locales] || defaultName}
+          </h2>
+        )}
       </div>
       <div className='demo'>{Example && <Example></Example>}</div>
       <div className='action'>

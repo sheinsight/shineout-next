@@ -5,6 +5,9 @@ export default createUseStyles(
     example: {
       padding: '0 40px',
       marginBottom: 40,
+      '&.nearly': {
+        marginBottom: 32,
+      },
       '& .head': {},
       '& .title': {
         fontSize: 20,
@@ -53,6 +56,10 @@ export default createUseStyles(
         alignItems: 'center',
         flexWrap: 'wrap',
         marginBottom: 4,
+      },
+      // 非第一个和最后一个 describe
+      '& .describe:last-child': {
+        marginBottom: 0,
       },
       '& .icon': {
         width: 16,

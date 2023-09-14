@@ -47,7 +47,14 @@ const Doc = (props: DocProps) => {
     <div className={classes.doc}>
       <div className='examples'>
         {examples.map((example, index) => {
-          return <Example key={index} {...example} index={index}></Example>;
+          return (
+            <Example
+              className={examples[index + 1]?.propName[state.locales] ? '' : 'nearly'}
+              key={index}
+              {...example}
+              index={index}
+            ></Example>
+          );
         })}
       </div>
       <div className='anchor'>
