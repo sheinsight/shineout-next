@@ -75,9 +75,23 @@ export default createUseStyles(
         background: '#fff',
       },
     },
+    doc: {
+      display: 'flex',
+      '& .examples': {
+        flex: 1,
+      },
+      '& .anchor': {
+        width: 192,
+      },
+    },
     guide: {
-      color: '#141737',
-
+      display: 'flex',
+      '& .guides': {
+        flex: 1,
+      },
+      '& .anchor': {
+        width: 192,
+      },
       '& .title': {
         fontSize: 20,
         marginTop: 48,

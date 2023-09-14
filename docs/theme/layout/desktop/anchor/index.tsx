@@ -1,17 +1,19 @@
 import classnames from 'classnames';
-import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
 
-const Anchor = () => {
+interface AnchorProps {
+  anchorName: string;
+  data: string[];
+}
+
+const Anchor = (props: AnchorProps) => {
+  const { anchorName, data } = props;
   const classes = useStyles();
   const location = useLocation();
   const state = useSnapshot(store);
-
-  const [anchor, setAnchor] = useState([]);
-  const [, setHash] = useState('');
 
   const anchorClasses = classnames(classes.anchor, {
     [classes.stickyAnchor]: state.scroll,
@@ -22,61 +24,21 @@ const Anchor = () => {
     const activeAnchor = decodeURIComponent(hash);
     location.hash = activeAnchor;
     const layout = document.getElementById('layout');
-    const target = document.getElementById(`anchor-${activeAnchor}`);
-    layout?.scrollTo(0, target?.offsetTop - 200);
-    dispatch.setActiveAnchor(activeAnchor);
+    const target = document.getElementById(`${anchorName}-${activeAnchor}`);
+
+    layout?.scrollTo(0, (target?.offsetTop as number) - 200);
+    dispatch.setActiveAnchor(activeAnchor, true);
+    setTimeout(() => {
+      dispatch.setLocked(false);
+    });
   };
-
-  const toKebabCase = (str?: string) => {
-    const newStr = str?.replace(/([A-Z])/g, '-$1').toLowerCase();
-    if (newStr?.startsWith('-')) {
-      return newStr?.slice(1);
-    }
-    return newStr;
-  };
-
-  useEffect(() => {
-    if (location.pathname.indexOf('/component') === -1) return;
-
-    const chunk = toKebabCase(location.pathname.split('/').at(-1));
-    if (chunk) {
-      let component;
-      try {
-        component = require(`../../../../chunk/${state.doc}/${chunk.toLocaleLowerCase()}`);
-      } catch (error) {
-        component = null;
-        setAnchor([]);
-        setHash('');
-        return;
-      }
-
-      if (component && component.examples) {
-        const anchorNames = component.examples
-          .filter((item: { propName: any }) => item.propName[state.locales])
-          .map((item: { propName: any }) => {
-            return item.propName[state.locales];
-          });
-
-        setAnchor(anchorNames);
-      }
-    }
-
-    const hash = decodeURIComponent(location.hash)?.replace('#', '');
-    if (!hash) {
-      setHash('');
-      return;
-    }
-    setHash(hash);
-    const target = document.getElementById(`anchor-${hash}`);
-    const layout = document.getElementById('layout');
-    if (target && layout) {
-      layout?.scrollTo(0, target?.offsetTop - 200);
-    }
-  }, [location, state.locales]);
 
   return (
     <ul className={anchorClasses}>
-      {anchor.map((item, index) => {
+      {data.map((item, index) => {
+        if (!item) {
+          return null;
+        }
         return (
           <li key={index} className='anchor-item'>
             <Link
