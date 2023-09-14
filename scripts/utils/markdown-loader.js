@@ -45,11 +45,9 @@ const getParagraph = (tokens, index, component) => {
   const result = paragraphs.map((p) => {
     return {
       paragraph: p.children?.[0]?.content,
-      // image: p.children?.[0]?.attrs?.[0]?.[1],
       image: getStaticUrl(component, p.children?.[0]?.attrs?.[0]?.[1]),
     };
   });
-
   return result;
 };
 
