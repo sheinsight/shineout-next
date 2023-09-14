@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { addResizeObserver } from '../../utils/dom/element';
+import { banOverScrollx } from '../../utils/dom/scrollBehavior';
 import { UseTransformProps } from './use-transform.type';
 
 const useTransform = <T>(props: UseTransformProps) => {
@@ -98,12 +99,14 @@ const useTransform = <T>(props: UseTransformProps) => {
     }
     let removeWheelListener: () => void;
     if (autoScroll) {
+      const removeMouse = shouldScroll ? banOverScrollx(container) : null;
       removeWheelListener = addResizeObserver(container, handleResize);
       return () => {
+        removeMouse?.();
         removeWheelListener?.();
       };
     }
-  }, [container, target]);
+  }, [container, target, shouldScroll]);
 
   return {
     atStart,
