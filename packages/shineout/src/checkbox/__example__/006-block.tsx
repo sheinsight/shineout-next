@@ -17,7 +17,7 @@ const App: React.FC = () => (
       data={data}
       defaultValue={['blue', 'cyan']}
       block
-      style={{ marginTop: 32, display: 'inline-block' }}
+      style={{ marginTop: 24, display: 'inline-block' }}
     />
   </>
 );

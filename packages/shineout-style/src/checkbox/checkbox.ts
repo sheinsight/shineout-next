@@ -3,6 +3,8 @@ import { JsStyles } from '../jss-style';
 
 export type CheckboxClass =
   | 'wrapper'
+  | 'wrapperSmall'
+  | 'wrapperLarge'
   | 'wrapperDisabled'
   | 'wrapperChecked'
   | 'wrapperIndeterminate'
@@ -13,7 +15,6 @@ export type CheckboxClass =
   | 'group'
   | 'groupBlock';
 
-const iconSize = '14px';
 const circleSize = '5px';
 const checkboxStyle: JsStyles<CheckboxClass> = {
   wrapper: {
@@ -28,6 +29,8 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       marginLeft: token.checkboxIconGap,
     },
   },
+  wrapperSmall: {},
+  wrapperLarge: {},
   input: {},
   wrapperChecked: {},
   wrapperIndeterminate: {},
@@ -38,8 +41,16 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     display: 'block',
     position: 'relative',
     boxSizing: 'border-box',
-    width: iconSize,
-    height: iconSize,
+    width: token.checkboxIconSize,
+    height: token.checkboxIconSize,
+    '$wrapperSmall &': {
+      width: token.checkboxSmallIconSize,
+      height: token.checkboxSmallIconSize,
+    },
+    '$wrapperLarge &': {
+      width: token.checkboxLargeIconSize,
+      height: token.checkboxLargeIconSize,
+    },
     marginRight: token.checkboxIconGap,
     verticalAlign: 'middle',
     '&::before': {
@@ -61,7 +72,6 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
         background: token.checkboxIconCircleFill,
       },
       '& $indicator': {
-        borderColor: token.checkboxIconHoverBorderColor,
         backgroundColor: token.checkboxIconHoverBackgroundColor,
         color: token.checkboxIconHoverColor,
       },
@@ -72,8 +82,8 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     boxSizing: 'border-box',
     top: '0',
     left: '0',
-    width: '100%',
-    height: '100%',
+    bottom: '0',
+    right: '0',
     borderRadius: token.checkboxIconBorderRadius,
     borderStyle: 'solid',
     borderWidth: token.checkboxIconBorderWidth,
@@ -82,32 +92,11 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     color: token.checkboxIconColor,
     display: 'block',
     verticalAlign: 'middle',
-    '$wrapperChecked &::after': {
-      content: '" "',
-      position: 'relative',
-      display: 'block',
-      border: '2px solid transparent',
-      borderWidth: '0 0 2px 2px',
-      transform: 'translate(-50%, -65%) rotate(-45deg)',
-      borderColor: 'currentColor',
+    '& > svg': {
+      position: 'absolute',
       top: '50%',
       left: '50%',
-      width: '9px',
-      height: '5px',
-      boxSizing: 'border-box',
-    },
-    '$wrapperIndeterminate &::after': {
-      content: '" "',
-      position: 'relative',
-      display: 'block',
-      border: '2px solid transparent',
-      height: '0px',
-      width: '10px',
-      borderWidth: '0 0 2px 0px',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      borderColor: 'currentColor',
+      transform: 'translateY(-50%) translateX(-50%)',
     },
     '$wrapperChecked &, $wrapperIndeterminate &': {
       borderColor: token.checkboxIconCheckedBorderColor,
@@ -130,10 +119,20 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     verticalAlign: 'middle',
     boxSizing: 'border-box',
     fontSize: token.checkboxLabelFontSize,
+    '$wrapperSmall &': {
+      fontSize: token.checkboxSmallLabelFontSize,
+    },
+    '$wrapperLarge &': {
+      fontSize: token.checkboxLargeLabelFontSize,
+    },
     lineHeight: token.lineHeightDynamic,
+    color: token.checkboxLabelFontColor,
+    '$wrapperDisabled &': {
+      color: token.checkboxLabelDisabledFontColor,
+    },
   },
   group: {
-    padding: '5px 0',
+    // padding: '5px 0',
   },
   groupBlock: {
     '& $wrapper': {

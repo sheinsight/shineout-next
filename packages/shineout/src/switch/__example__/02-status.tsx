@@ -10,8 +10,6 @@ import { Switch } from 'shineout';
 const App: React.FC = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row', gap: 24 }}>
-      <Switch value={true} />
-      <Switch value={false} />
       <Switch value={true} disabled />
       <Switch value={false} disabled />
     </div>

@@ -1,6 +1,6 @@
 ## When to use
 
-When you need to represent the state of a switch or toggle between only two states; when you need instant application of changes.
+When you need to represent the state of a switch or toggle between only two states;\nwhen you need instant application of changes.
 
 ## Component pairing
 
@@ -8,4 +8,4 @@ When you need to represent the state of a switch or toggle between only two stat
 
 ## Recommended/Not recommended examples
 
-![Switch text should be accurate and concise, expressing only the content that is being controlled, avoiding logical phrases or content that contradicts the action of the switch.](02)
+![Switch text should be accurate and concise, expressing only the content that is being controlled, avoiding logical phrases or content that contradicts the action of the switch.](02-en)
