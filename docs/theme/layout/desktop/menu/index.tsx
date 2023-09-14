@@ -12,8 +12,10 @@ const MenuComponent = () => {
   const location = useLocation();
 
   const handleClick = (component: Menu) => {
+    dispatch.setDoctab('examples');
     navigate({
       pathname: `/${state.locales}/component/${state.doc}/${component.name}`,
+      search: `?tab=${state.doctab}`,
     });
   };
 

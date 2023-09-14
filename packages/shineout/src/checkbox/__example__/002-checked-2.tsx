@@ -30,7 +30,13 @@ const App: React.FC = () => {
       >
         {getChecked(value, data.length) === true ? 'UnCheckAll' : 'CheckAll'}
       </Checkbox>
-      <Checkbox.Group data={data} keygen value={value} onChange={setValue} />
+      <Checkbox.Group
+        style={{ marginTop: 12 }}
+        data={data}
+        keygen
+        value={value}
+        onChange={setValue}
+      />
     </div>
   );
 };

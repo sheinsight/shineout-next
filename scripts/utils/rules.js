@@ -2,6 +2,20 @@ const path = require('path');
 const { writeTemplate } = require('./write-template');
 const templatePath = path.resolve(__dirname, '../ejs/token.ejs');
 
+const toCamelCase = (str) => {
+  return str.replace(/-([a-z])/g, (match, letter) => {
+    return letter.toUpperCase();
+  });
+};
+
+// function getComponentName(fileName) {
+//   return fileName
+//     .split('-')
+//     .map((i) => i[0].toUpperCase() + i.slice(1))
+//     .join('')
+//     .toLowerCase();
+// }
+
 function keysToLowerCase(obj) {
   const result = {};
   // eslint-disable-next-line guard-for-in
@@ -141,7 +155,7 @@ const compileRule = (filePath) => {
   const match = filePath.match(pattern);
   if (!match?.[1]) return;
   // 组件名
-  const component = removeFirstAndLastCharacter(match[1]);
+  const component = toCamelCase(removeFirstAndLastCharacter(match[1]));
   // 清除缓存
   delete require.cache[require.resolve(filePath)];
   // 获取 rule
@@ -157,6 +171,7 @@ const compileRule = (filePath) => {
   // 获取 token
   const values = token[`${component}TokenValue`];
   const description = token[`${component}TokenDescription`];
+  const extra = token[`${component}TokenExtraValue`];
 
   // 根据 rule 生成空模板
   const templateTokenValue = createTemplateTokenValue(rules);
@@ -172,6 +187,7 @@ const compileRule = (filePath) => {
       values: newValues,
       component,
       description,
+      extra,
     },
   });
 

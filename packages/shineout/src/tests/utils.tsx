@@ -46,30 +46,40 @@ export function styleTest(element: Element, style: string) {
   attributesTest(element, 'style', style);
 }
 
+export function styleContentTest(element: Element, name: string, bool: boolean = true) {
+  expect(element.getAttribute('style')?.includes(name)).toBe(bool);
+}
+
 export interface StyleProps {
   [key: string]: string;
 }
 interface BaseTestProps {
   style?: StyleProps;
   className?: string;
-  children?: JSX.Element;
+  children?: React.ReactNode;
+  data?: any;
 }
 export type ReactComponentType = React.ComponentType<BaseTestProps>;
 export function baseTest(
-  Component: ReactComponentType,
+  Component: ReactComponentType | JSX.Element,
   selector: string,
-  style: StyleProps = { backgroundColor: 'red' },
+  styleV: StyleProps = { backgroundColor: 'red' },
   styleRender: string = 'background-color: red;',
   className = 'demo',
+  data?: any,
 ) {
   test('should render when set style and className', () => {
-    const { container } = render(
-      React.isValidElement(Component) ? (
-        Component
-      ) : (
-        <Component style={style} className={className} />
-      ),
-    );
+    let renderedComponent: React.ReactNode;
+
+    if (React.isValidElement(Component)) {
+      // 如果传递的是 JSX 元素
+      renderedComponent = React.cloneElement(Component);
+    } else {
+      // 如果传递的是 React 组件类型
+      const ComponentType = Component as ReactComponentType;
+      renderedComponent = <ComponentType style={styleV} className={className} data={data} />;
+    }
+    const { container } = render(renderedComponent);
     const component = container.querySelector(selector)!;
     classTest(component, className);
     styleTest(component, styleRender);
@@ -97,3 +107,10 @@ export function displayTest(Component: React.FC, displayName: string) {
     expect(Component.displayName).toBe(displayName);
   });
 }
+
+export const delay: (time: number) => Promise<void> = (time) =>
+  new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });

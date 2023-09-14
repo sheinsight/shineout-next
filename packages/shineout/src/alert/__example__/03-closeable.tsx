@@ -5,13 +5,31 @@
  * en - Basic
  *    -- The basic usage of Alert, used to display important prompt information in the page.
  */
-import React from 'react';
-import { Alert } from 'shineout';
+import React, { useState } from 'react';
+import { Alert, Button } from 'shineout';
 
 export default () => {
+  const [reset, setReset] = useState(true);
+  const handleReset = () => {
+    setReset(true);
+  };
+
+  const handleClose = () => {
+    setTimeout(() => {
+      setReset(false);
+    }, 300);
+  };
+
   return (
-    <Alert icon closable type='info'>
-      This is informative text.
-    </Alert>
+    <div>
+      <Button onClick={handleReset} mode='text' type='primary' style={{ marginBottom: 12 }}>
+        重置
+      </Button>
+      {reset && (
+        <Alert icon closable type='info' onClose={handleClose}>
+          This is informative text.
+        </Alert>
+      )}
+    </div>
   );
 };

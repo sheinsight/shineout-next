@@ -441,7 +441,7 @@ const ImageStyle: JsStyles<ImageClass> = {
     '& > span': {
       fontSize: 12,
       color: '#fff',
-      marginLeft: 5,
+      marginLeft: 4,
     },
 
     // icon

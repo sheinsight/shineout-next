@@ -1,90 +1,100 @@
 import { createUseStyles } from 'react-jss';
 
-export default createUseStyles({
-  example: {
-    padding: '0 40px',
-    marginBottom: 40,
-    '& .head': {},
-    '& .title': {
-      fontSize: 20,
-      marginTop: 48,
-      marginBottom: 12,
-      '& a': {
-        color: '#000000',
-        textDecoration: 'none',
+export default createUseStyles(
+  {
+    example: {
+      padding: '0 40px',
+      marginBottom: 40,
+      '&.nearly': {
+        marginBottom: 32,
       },
-    },
-    '& .subtitle': {
-      fontSize: 14,
-      color: 'rgb(78,89,105)',
-    },
-    '& .demo': {
-      position: 'relative',
-      marginTop: 24,
-      padding: 32,
-      border: '1px solid rgba(232, 235, 240, 1)',
-    },
-    '& .action': {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start',
-      width: '100%',
-      minHeight: 48,
-      boxSizing: 'border-box',
-      borderTop: 'none',
-      padding: '14px 16px',
-      border: '1px solid rgba(232, 235, 240, 1)',
-      fontSize: 12,
-      color: 'rgba(20, 23, 55, 1)',
-      '& .btn': {
-        marginLeft: 8,
-        right: 16,
-        top: 16,
+      '& .head': {},
+      '& .title': {
+        fontSize: 20,
+        marginTop: 48,
+        marginBottom: 12,
+        '& a': {
+          color: '#000000',
+          textDecoration: 'none',
+        },
+      },
+      '& .subtitle': {
+        fontSize: 14,
+        color: 'rgb(78,89,105)',
+      },
+      '& .demo': {
+        position: 'relative',
+        marginTop: 24,
+        padding: 32,
+        border: '1px solid rgba(232, 235, 240, 1)',
+      },
+      '& .action': {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        width: '100%',
+        minHeight: 48,
+        boxSizing: 'border-box',
+        borderTop: 'none',
+        padding: '14px 16px',
+        border: '1px solid rgba(232, 235, 240, 1)',
+        fontSize: 12,
+        color: 'rgba(20, 23, 55, 1)',
+        '& .btn': {
+          marginLeft: 8,
+          right: 16,
+          top: 16,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          gap: 12,
+        },
+      },
+      '& .describe': {
+        margin: 0,
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'flex-end',
-        gap: 12,
+        flexWrap: 'wrap',
+        marginBottom: 4,
+      },
+      // 非第一个和最后一个 describe
+      '& .describe:last-child': {
+        marginBottom: 0,
+      },
+      '& .icon': {
+        width: 16,
+        height: 16,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '50%',
+        cursor: 'pointer',
+      },
+      '& .prop': {
+        position: 'absolute',
+        top: -7,
+        left: 20,
+        display: 'inline-block',
+        height: 14,
+        lineHeight: '14px',
+        background: '#ffffff',
+        padding: '0 10px',
+        color: 'rgb(134 142 152)',
+      },
+      '& .foot': {
+        marginTop: '20px',
       },
     },
-    '& .describe': {
-      margin: 0,
-      display: 'flex',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-      marginBottom: 4,
-    },
-    '& .icon': {
-      width: 16,
-      height: 16,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: '50%',
-      cursor: 'pointer',
-    },
-    '& .prop': {
-      position: 'absolute',
-      top: -7,
-      left: 20,
+    tip: {
       display: 'inline-block',
       height: 14,
       lineHeight: '14px',
-      background: '#ffffff',
-      padding: '0 10px',
-      color: 'rgb(134 142 152)',
-    },
-    '& .foot': {
-      marginTop: '20px',
+      margin: '0 5px',
+      padding: '2px 5px',
+      color: '#5d5d5d',
+      background: '#F4F5F8',
+      borderRadius: 2,
     },
   },
-  tip: {
-    display: 'inline-block',
-    height: 14,
-    lineHeight: '14px',
-    margin: '0 5px',
-    padding: '2px 5px',
-    color: '#5d5d5d',
-    background: '#F4F5F8',
-    borderRadius: 2,
-  },
-});
+  { name: 'doc-example' },
+);

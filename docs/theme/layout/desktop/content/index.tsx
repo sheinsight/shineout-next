@@ -12,11 +12,16 @@ const Content = () => {
     const componentFlagIndex = paths.findIndex((item) => item === 'component');
     if (componentFlagIndex === -1) return;
     const moduleName = paths[componentFlagIndex + 1]?.toLocaleLowerCase();
-    const componentName = paths[componentFlagIndex + 2]?.toLocaleLowerCase();
+    const componentName = (paths[componentFlagIndex + 2] || '')
+      .replace(/([A-Z])/g, '-$1')
+      ?.toLowerCase()
+      ?.replace(/^-/, '');
+
     if (!componentName) return;
     try {
       return require(`../../../../chunk/${moduleName}/${componentName}.tsx`).default();
     } catch (error) {
+      console.log(error);
       return <div>Error</div>;
     }
   }, [location.pathname]);

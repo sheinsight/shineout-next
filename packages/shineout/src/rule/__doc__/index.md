@@ -5,7 +5,7 @@ group: Form
 
 # Title
 
-校验规则 Rule
+Rule 校验规则
 Rule
 
 # Describe

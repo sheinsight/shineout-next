@@ -1,7 +1,7 @@
 /**
  * cn - 打开方式
  *    -- Image 通过配置 `target` 属性实现四种打开方式：
- *    -- _modal 通过弹层打开预览、_blank 通过新窗口打开预览、_self 通过当前窗口打开预览、_download 下载图片。
+ *    -- _modal 通过弹层打开预览、_blank 通过新窗口打开预览、_self 通过当前窗口打开预览、_download 下载图片
  * en - Target
  *    -- Image has four open modes: _modal open preview through layer, _blank open preview through new window, _self open preview through current window, _download download image.
  */

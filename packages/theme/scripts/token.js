@@ -14,6 +14,37 @@ const toCamelCase = (str) => {
   });
 };
 
+function addPrefix(component, obj) {
+  const result = {};
+  Object.keys(obj).forEach((key) => {
+    const newKey = `${component}${key}`;
+    result[newKey] = obj[key];
+    // const newKey = key.charAt(0).toLowerCase() + key.slice(1);
+    // const value = obj[key];
+    // result[newKey] = typeof value === 'object' ? addPrefix(value) : value;
+  });
+  return result;
+}
+
+function generateExtra(obj, parent = '', paths = {}) {
+  // eslint-disable-next-line guard-for-in
+  for (let key in obj) {
+    const path = parent === '' ? key : `${parent}.${key}`;
+    if (typeof obj[key] === 'object') {
+      generateExtra(obj[key], path, paths);
+    } else {
+      const pathCamelCase = path
+        .replace(/(\.\w)/g, function (match) {
+          return match[1].toUpperCase();
+        })
+        .replace(/^\w/, (c) => c.toUpperCase());
+      paths[pathCamelCase] = obj[key];
+    }
+  }
+
+  return paths;
+}
+
 function generatePaths(arrays) {
   function helper(arrays, index, current, result) {
     if (index === arrays.length) {
@@ -100,8 +131,8 @@ function getTokenValue(obj, keys) {
 }
 let token = [];
 
-function generateToken(rule, componentName, tokenMap) {
-  const data = [];
+function generateToken(rule, componentName, tokenMap, extra = []) {
+  const data = [...extra];
   const result = [];
   const describeMap = {};
   const arrays = getRulePath(rule);
@@ -123,7 +154,6 @@ function generateToken(rule, componentName, tokenMap) {
       data.push(toCamelCase(`${componentName}-${res}`));
     });
   });
-
   data.forEach((item) => {
     const split = splitCamelCase(item);
     let desc = '';
@@ -132,6 +162,7 @@ function generateToken(rule, componentName, tokenMap) {
     });
     describeMap[item] = desc;
   });
+
   return describeMap;
 }
 
@@ -157,8 +188,9 @@ const compileToken = (filePath) => {
   const pattern = new RegExp(`src(.*?)token`, 'i');
   const match = filePath.match(pattern);
   if (!match?.[1]) return;
-  const component = match[1].replace(/\//g, '');
-  const componentPath = path.resolve(srcPath, component);
+  const fileName = match[1].replace(/\//g, '');
+  const component = toCamelCase(fileName);
+  const componentPath = path.resolve(srcPath, fileName);
   const hasRuleFile = fs.existsSync(path.resolve(componentPath, 'rule.ts'));
   if (!hasRuleFile) return;
 
@@ -170,9 +202,10 @@ const compileToken = (filePath) => {
   const token = require(path.resolve(componentPath, 'token.ts'));
   const componentDescriptionMap = token[`${component}TokenDescription`];
   const describeMap = { ...tokenDescriptionMap, ...componentDescriptionMap };
-  const valueMap = token[`${component}TokenValue`];
-  const result = generateToken(rules, component, describeMap);
-
+  const extraValueMap = token[`${component}TokenExtraValue`];
+  const valueMap = { ...token[`${component}TokenValue`], ...extraValueMap };
+  const extraDescribe = addPrefix(component, generateExtra(extraValueMap));
+  const result = generateToken(rules, component, describeMap, Object.keys(extraDescribe));
   prop = [];
 
   const Component = component.charAt(0).toUpperCase() + component.slice(1);
@@ -191,7 +224,7 @@ const compileToken = (filePath) => {
     ...prettierOptions,
   });
 
-  fs.writeFileSync(path.resolve(srcPath, component, 'type.ts'), render);
+  fs.writeFileSync(path.resolve(srcPath, fileName, 'type.ts'), render);
 
   const componentTemplateContext = ejs.compile(fs.readFileSync(componentTemplatePath, 'utf-8'));
   let componentRender = componentTemplateContext({
@@ -204,7 +237,7 @@ const compileToken = (filePath) => {
     filepath: path.join(__dirname, '../../.prettierrc.js'),
     ...prettierOptions,
   });
-  fs.writeFileSync(path.resolve(srcPath, component, `${component}.ts`), componentRender);
+  fs.writeFileSync(path.resolve(srcPath, fileName, `${fileName}.ts`), componentRender);
 };
 
 compileToken();

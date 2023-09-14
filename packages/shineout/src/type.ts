@@ -10,3 +10,4 @@ export * as Icon from './icon/interface';
 export * as Switch from './switch/interface';
 export * as Popover from './popover/interface';
 export * as Tooltip from './tooltip/interface';
+export * as EditableArea from './editable-area/interface';

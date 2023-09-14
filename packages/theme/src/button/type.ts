@@ -550,13 +550,13 @@ export interface ButtonTokens {
   buttonSuccessFontColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-6
    * @description 按钮成功色背景颜色
    */
   buttonSuccessBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-6
    * @description 按钮成功色边框颜色
    */
   buttonSuccessBorderColor: string;
@@ -586,13 +586,13 @@ export interface ButtonTokens {
   buttonSuccessHoverFontColor: string;
   /**
    * @type {string}
-   * @token Success-4
+   * @token Success-5
    * @description 按钮成功色鼠标移入时的背景颜色
    */
   buttonSuccessHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-4
+   * @token Success-5
    * @description 按钮成功色鼠标移入时的边框颜色
    */
   buttonSuccessHoverBorderColor: string;
@@ -604,13 +604,13 @@ export interface ButtonTokens {
   buttonSuccessActiveFontColor: string;
   /**
    * @type {string}
-   * @token Success-6
+   * @token Success-7
    * @description 按钮成功色鼠标点击时的背景颜色
    */
   buttonSuccessActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-6
+   * @token Success-7
    * @description 按钮成功色鼠标点击时的边框颜色
    */
   buttonSuccessActiveBorderColor: string;
@@ -622,19 +622,19 @@ export interface ButtonTokens {
   buttonSuccessFocusFontColor: string;
   /**
    * @type {string}
-   * @token Success-4
+   * @token Success-5
    * @description 按钮成功色鼠标聚焦时的背景颜色
    */
   buttonSuccessFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-4
+   * @token Success-5
    * @description 按钮成功色鼠标聚焦时的边框颜色
    */
   buttonSuccessFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-6
    * @description 按钮成功色线框模式字体颜色
    */
   buttonSuccessOutlineFontColor: string;
@@ -646,7 +646,7 @@ export interface ButtonTokens {
   buttonSuccessOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-6
    * @description 按钮成功色线框模式边框颜色
    */
   buttonSuccessOutlineBorderColor: string;
@@ -670,7 +670,7 @@ export interface ButtonTokens {
   buttonSuccessOutlineDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token Success-4
+   * @token Success-5
    * @description 按钮成功色线框模式鼠标移入时的字体颜色
    */
   buttonSuccessOutlineHoverFontColor: string;
@@ -682,13 +682,13 @@ export interface ButtonTokens {
   buttonSuccessOutlineHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-4
+   * @token Success-5
    * @description 按钮成功色线框模式鼠标移入时的边框颜色
    */
   buttonSuccessOutlineHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Success-6
+   * @token Success-7
    * @description 按钮成功色线框模式鼠标点击时的字体颜色
    */
   buttonSuccessOutlineActiveFontColor: string;
@@ -700,13 +700,13 @@ export interface ButtonTokens {
   buttonSuccessOutlineActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-6
+   * @token Success-7
    * @description 按钮成功色线框模式鼠标点击时的边框颜色
    */
   buttonSuccessOutlineActiveBorderColor: string;
   /**
    * @type {string}
-   * @token Success-4
+   * @token Success-5
    * @description 按钮成功色线框模式鼠标聚焦时的字体颜色
    */
   buttonSuccessOutlineFocusFontColor: string;
@@ -718,13 +718,13 @@ export interface ButtonTokens {
   buttonSuccessOutlineFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-4
+   * @token Success-5
    * @description 按钮成功色线框模式鼠标聚焦时的边框颜色
    */
   buttonSuccessOutlineFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-6
    * @description 按钮成功色文本模式字体颜色
    */
   buttonSuccessTextFontColor: string;
@@ -778,7 +778,7 @@ export interface ButtonTokens {
   buttonSuccessTextHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Success-5
+   * @token Success-7
    * @description 按钮成功色文本模式鼠标点击时的字体颜色
    */
   buttonSuccessTextActiveFontColor: string;
@@ -820,13 +820,13 @@ export interface ButtonTokens {
   buttonWarningFontColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-6
    * @description 按钮警告色背景颜色
    */
   buttonWarningBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-6
    * @description 按钮警告色边框颜色
    */
   buttonWarningBorderColor: string;
@@ -856,13 +856,13 @@ export interface ButtonTokens {
   buttonWarningHoverFontColor: string;
   /**
    * @type {string}
-   * @token Warning-4
+   * @token Warning-5
    * @description 按钮警告色鼠标移入时的背景颜色
    */
   buttonWarningHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-4
+   * @token Warning-5
    * @description 按钮警告色鼠标移入时的边框颜色
    */
   buttonWarningHoverBorderColor: string;
@@ -874,13 +874,13 @@ export interface ButtonTokens {
   buttonWarningActiveFontColor: string;
   /**
    * @type {string}
-   * @token Warning-6
+   * @token Warning-7
    * @description 按钮警告色鼠标点击时的背景颜色
    */
   buttonWarningActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-6
+   * @token Warning-7
    * @description 按钮警告色鼠标点击时的边框颜色
    */
   buttonWarningActiveBorderColor: string;
@@ -892,19 +892,19 @@ export interface ButtonTokens {
   buttonWarningFocusFontColor: string;
   /**
    * @type {string}
-   * @token Warning-4
+   * @token Warning-5
    * @description 按钮警告色鼠标聚焦时的背景颜色
    */
   buttonWarningFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-4
+   * @token Warning-5
    * @description 按钮警告色鼠标聚焦时的边框颜色
    */
   buttonWarningFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-6
    * @description 按钮警告色线框模式字体颜色
    */
   buttonWarningOutlineFontColor: string;
@@ -916,7 +916,7 @@ export interface ButtonTokens {
   buttonWarningOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-6
    * @description 按钮警告色线框模式边框颜色
    */
   buttonWarningOutlineBorderColor: string;
@@ -940,7 +940,7 @@ export interface ButtonTokens {
   buttonWarningOutlineDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token Warning-4
+   * @token Warning-5
    * @description 按钮警告色线框模式鼠标移入时的字体颜色
    */
   buttonWarningOutlineHoverFontColor: string;
@@ -952,13 +952,13 @@ export interface ButtonTokens {
   buttonWarningOutlineHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-4
+   * @token Warning-5
    * @description 按钮警告色线框模式鼠标移入时的边框颜色
    */
   buttonWarningOutlineHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Warning-6
+   * @token Warning-7
    * @description 按钮警告色线框模式鼠标点击时的字体颜色
    */
   buttonWarningOutlineActiveFontColor: string;
@@ -970,13 +970,13 @@ export interface ButtonTokens {
   buttonWarningOutlineActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-6
+   * @token Warning-7
    * @description 按钮警告色线框模式鼠标点击时的边框颜色
    */
   buttonWarningOutlineActiveBorderColor: string;
   /**
    * @type {string}
-   * @token Warning-4
+   * @token Warning-5
    * @description 按钮警告色线框模式鼠标聚焦时的字体颜色
    */
   buttonWarningOutlineFocusFontColor: string;
@@ -988,13 +988,13 @@ export interface ButtonTokens {
   buttonWarningOutlineFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-4
+   * @token Warning-5
    * @description 按钮警告色线框模式鼠标聚焦时的边框颜色
    */
   buttonWarningOutlineFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-6
    * @description 按钮警告色文本模式字体颜色
    */
   buttonWarningTextFontColor: string;
@@ -1048,7 +1048,7 @@ export interface ButtonTokens {
   buttonWarningTextHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Warning-5
+   * @token Warning-7
    * @description 按钮警告色文本模式鼠标点击时的字体颜色
    */
   buttonWarningTextActiveFontColor: string;
@@ -1090,13 +1090,13 @@ export interface ButtonTokens {
   buttonDangerFontColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-6
    * @description 按钮危险色背景颜色
    */
   buttonDangerBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-6
    * @description 按钮危险色边框颜色
    */
   buttonDangerBorderColor: string;
@@ -1126,13 +1126,13 @@ export interface ButtonTokens {
   buttonDangerHoverFontColor: string;
   /**
    * @type {string}
-   * @token Danger-4
+   * @token Danger-5
    * @description 按钮危险色鼠标移入时的背景颜色
    */
   buttonDangerHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-4
+   * @token Danger-5
    * @description 按钮危险色鼠标移入时的边框颜色
    */
   buttonDangerHoverBorderColor: string;
@@ -1144,13 +1144,13 @@ export interface ButtonTokens {
   buttonDangerActiveFontColor: string;
   /**
    * @type {string}
-   * @token Danger-6
+   * @token Danger-7
    * @description 按钮危险色鼠标点击时的背景颜色
    */
   buttonDangerActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-6
+   * @token Danger-7
    * @description 按钮危险色鼠标点击时的边框颜色
    */
   buttonDangerActiveBorderColor: string;
@@ -1162,19 +1162,19 @@ export interface ButtonTokens {
   buttonDangerFocusFontColor: string;
   /**
    * @type {string}
-   * @token Danger-4
+   * @token Danger-5
    * @description 按钮危险色鼠标聚焦时的背景颜色
    */
   buttonDangerFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-4
+   * @token Danger-5
    * @description 按钮危险色鼠标聚焦时的边框颜色
    */
   buttonDangerFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-6
    * @description 按钮危险色线框模式字体颜色
    */
   buttonDangerOutlineFontColor: string;
@@ -1186,7 +1186,7 @@ export interface ButtonTokens {
   buttonDangerOutlineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-6
    * @description 按钮危险色线框模式边框颜色
    */
   buttonDangerOutlineBorderColor: string;
@@ -1210,7 +1210,7 @@ export interface ButtonTokens {
   buttonDangerOutlineDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token Danger-4
+   * @token Danger-5
    * @description 按钮危险色线框模式鼠标移入时的字体颜色
    */
   buttonDangerOutlineHoverFontColor: string;
@@ -1222,13 +1222,13 @@ export interface ButtonTokens {
   buttonDangerOutlineHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-4
+   * @token Danger-5
    * @description 按钮危险色线框模式鼠标移入时的边框颜色
    */
   buttonDangerOutlineHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Danger-6
+   * @token Danger-7
    * @description 按钮危险色线框模式鼠标点击时的字体颜色
    */
   buttonDangerOutlineActiveFontColor: string;
@@ -1240,13 +1240,13 @@ export interface ButtonTokens {
   buttonDangerOutlineActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-6
+   * @token Danger-7
    * @description 按钮危险色线框模式鼠标点击时的边框颜色
    */
   buttonDangerOutlineActiveBorderColor: string;
   /**
    * @type {string}
-   * @token Danger-4
+   * @token Danger-5
    * @description 按钮危险色线框模式鼠标聚焦时的字体颜色
    */
   buttonDangerOutlineFocusFontColor: string;
@@ -1258,13 +1258,13 @@ export interface ButtonTokens {
   buttonDangerOutlineFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-4
+   * @token Danger-5
    * @description 按钮危险色线框模式鼠标聚焦时的边框颜色
    */
   buttonDangerOutlineFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-6
    * @description 按钮危险色文本模式字体颜色
    */
   buttonDangerTextFontColor: string;
@@ -1318,7 +1318,7 @@ export interface ButtonTokens {
   buttonDangerTextHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Danger-5
+   * @token Danger-7
    * @description 按钮危险色文本模式鼠标点击时的字体颜色
    */
   buttonDangerTextActiveFontColor: string;
@@ -1952,4 +1952,10 @@ export interface ButtonTokens {
    * @description 按钮相邻之间的外边距
    */
   buttonNearlyMargin: string;
+  /**
+   * @type {string}
+   * @token Margin-4
+   * @description 按钮undefined外边距
+   */
+  buttonSpinMargin: string;
 }

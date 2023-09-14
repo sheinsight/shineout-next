@@ -110,6 +110,7 @@ const input: JsStyles<InputClass> = {
   input: {
     width: '100%',
     background: 'transparent',
+    fontFamily: 'inherit',
     border: '0',
     margin: '0',
     lineHeight: 'inherit',
@@ -135,7 +136,6 @@ const input: JsStyles<InputClass> = {
 
   clear: {
     position: 'absolute',
-    right: token.inputPaddingX,
     top: '0',
     bottom: '0',
     margin: 'auto',
@@ -148,6 +148,7 @@ const input: JsStyles<InputClass> = {
     '&:hover svg': {
       color: token.inputHoverClearColor,
     },
+    right: token.inputPaddingX,
     '$wrapperSmall &': {
       right: token.inputSmallPaddingX,
     },
@@ -219,6 +220,9 @@ const input: JsStyles<InputClass> = {
       height: token.inputIconSize,
       cursor: 'pointer',
       pointerEvents: 'none',
+    },
+    '&:hover svg': {
+      color: token.inputHoverToggleColor,
     },
     marginRight: token.inputPaddingX,
   },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CommonType } from '../common/type';
-import { InnerTitleClass } from '../common/use-inner-title';
+import { InnerTitleClasses } from '../common/use-inner-title';
 import { BaseTipProps } from '../common/use-tip';
 import { BaseInputProps, InputFormatProps } from '@sheinx/hooks';
 import { PopoverClasses } from '../popover/popover.type';
@@ -48,7 +48,7 @@ export interface InputClasses {
 
 export interface InputStyle {
   input?: InputClasses;
-  innerTitle?: InnerTitleClass;
+  innerTitle?: InnerTitleClasses;
   popover?: PopoverClasses;
 }
 
@@ -96,6 +96,7 @@ export interface InputCommonProps<V> extends BaseTipProps {
   disabled?: boolean;
   delay?: number;
   onBlur?: React.FocusEventHandler;
+  status?: CommonType['status'];
 }
 
 export type GetCommonProps<Props, V> = Omit<

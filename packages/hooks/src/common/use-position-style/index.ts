@@ -31,7 +31,7 @@ const horizontalPosition = [
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right', 'bottom', 'top'];
 
 export interface PositionStyleConfig {
-  position: HorizontalPosition | VerticalPosition | ListPosition | undefined;
+  position: HorizontalPosition | VerticalPosition | ListPosition | 'cover' | undefined;
   absolute: boolean;
   show: boolean;
   parentEl: HTMLElement | null | undefined;
@@ -58,7 +58,12 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     updateKey,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
-  const [style, setStyle] = useState<React.CSSProperties>({ opacity: 0, pointerEvents: 'none' });
+  const [style, setStyle] = useState<React.CSSProperties>({
+    opacity: 0,
+    pointerEvents: 'none',
+    position: 'absolute',
+    zIndex,
+  });
   const { current: context } = React.useRef({
     element: null as HTMLDivElement | null,
     containerRect: { left: 0, width: 0 } as DOMRect,
@@ -128,6 +133,9 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         style.left = rect.left - containerRect.left + containerScroll.left - popupGap;
         style.transform += ' translateX(-100%)';
       }
+    } else if (position === 'cover') {
+      style.top = rect.top - containerRect.top + containerScroll.top;
+      style.left = rect.left - containerRect.left + containerScroll.left;
     }
     return style;
   };

@@ -313,8 +313,8 @@ const buttonTokenValue = {
   },
   success: {
     font: { color: 'Neutral-text-1' },
-    background: { color: 'Success-5' },
-    border: { color: 'Success-5' },
+    background: { color: 'Success-6' },
+    border: { color: 'Success-6' },
     disabled: {
       font: { color: 'Neutral-text-1' },
       background: { color: 'Success-3' },
@@ -322,42 +322,42 @@ const buttonTokenValue = {
     },
     hover: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Success-4' },
-      border: { color: 'Success-4' },
+      background: { color: 'Success-5' },
+      border: { color: 'Success-5' },
     },
     active: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Success-6' },
-      border: { color: 'Success-6' },
+      background: { color: 'Success-7' },
+      border: { color: 'Success-7' },
     },
     focus: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Success-4' },
-      border: { color: 'Success-4' },
+      background: { color: 'Success-5' },
+      border: { color: 'Success-5' },
     },
     outline: {
-      font: { color: 'Success-5' },
+      font: { color: 'Success-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Success-5' },
+      border: { color: 'Success-6' },
       disabled: {
         font: { color: 'Success-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Success-3' },
       },
       hover: {
-        font: { color: 'Success-4' },
+        font: { color: 'Success-5' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Success-4' },
+        border: { color: 'Success-5' },
       },
       active: {
-        font: { color: 'Success-6' },
+        font: { color: 'Success-7' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Success-6' },
+        border: { color: 'Success-7' },
       },
       focus: {
-        font: { color: 'Success-4' },
+        font: { color: 'Success-5' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Success-4' },
+        border: { color: 'Success-5' },
       },
       split: {
         background: { color: 'Success-5' },
@@ -368,7 +368,7 @@ const buttonTokenValue = {
       },
     },
     text: {
-      font: { color: 'Success-5' },
+      font: { color: 'Success-6' },
       background: { color: 'Transparent' },
       border: { color: 'Transparent' },
       disabled: {
@@ -382,7 +382,7 @@ const buttonTokenValue = {
         border: { color: 'Neutral-fill-2' },
       },
       active: {
-        font: { color: 'Success-5' },
+        font: { color: 'Success-7' },
         background: { color: 'Neutral-fill-3' },
         border: { color: 'Neutral-fill-3' },
       },
@@ -425,8 +425,8 @@ const buttonTokenValue = {
   },
   warning: {
     font: { color: 'Neutral-text-1' },
-    background: { color: 'Warning-5' },
-    border: { color: 'Warning-5' },
+    background: { color: 'Warning-6' },
+    border: { color: 'Warning-6' },
     disabled: {
       font: { color: 'Neutral-text-1' },
       background: { color: 'Warning-3' },
@@ -434,42 +434,42 @@ const buttonTokenValue = {
     },
     hover: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Warning-4' },
-      border: { color: 'Warning-4' },
+      background: { color: 'Warning-5' },
+      border: { color: 'Warning-5' },
     },
     active: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Warning-6' },
-      border: { color: 'Warning-6' },
+      background: { color: 'Warning-7' },
+      border: { color: 'Warning-7' },
     },
     focus: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Warning-4' },
-      border: { color: 'Warning-4' },
+      background: { color: 'Warning-5' },
+      border: { color: 'Warning-5' },
     },
     outline: {
-      font: { color: 'Warning-5' },
+      font: { color: 'Warning-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Warning-5' },
+      border: { color: 'Warning-6' },
       disabled: {
         font: { color: 'Warning-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Warning-3' },
       },
       hover: {
-        font: { color: 'Warning-4' },
+        font: { color: 'Warning-5' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Warning-4' },
+        border: { color: 'Warning-5' },
       },
       active: {
-        font: { color: 'Warning-6' },
+        font: { color: 'Warning-7' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Warning-6' },
+        border: { color: 'Warning-7' },
       },
       focus: {
-        font: { color: 'Warning-4' },
+        font: { color: 'Warning-5' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Warning-4' },
+        border: { color: 'Warning-5' },
       },
       split: {
         background: { color: 'Warning-5' },
@@ -480,7 +480,7 @@ const buttonTokenValue = {
       },
     },
     text: {
-      font: { color: 'Warning-5' },
+      font: { color: 'Warning-6' },
       background: { color: 'Transparent' },
       border: { color: 'Transparent' },
       disabled: {
@@ -494,7 +494,7 @@ const buttonTokenValue = {
         border: { color: 'Neutral-fill-2' },
       },
       active: {
-        font: { color: 'Warning-5' },
+        font: { color: 'Warning-7' },
         background: { color: 'Neutral-fill-3' },
         border: { color: 'Neutral-fill-3' },
       },
@@ -537,8 +537,8 @@ const buttonTokenValue = {
   },
   danger: {
     font: { color: 'Neutral-text-1' },
-    background: { color: 'Danger-5' },
-    border: { color: 'Danger-5' },
+    background: { color: 'Danger-6' },
+    border: { color: 'Danger-6' },
     disabled: {
       font: { color: 'Neutral-text-1' },
       background: { color: 'Danger-3' },
@@ -546,42 +546,42 @@ const buttonTokenValue = {
     },
     hover: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Danger-4' },
-      border: { color: 'Danger-4' },
+      background: { color: 'Danger-5' },
+      border: { color: 'Danger-5' },
     },
     active: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Danger-6' },
-      border: { color: 'Danger-6' },
+      background: { color: 'Danger-7' },
+      border: { color: 'Danger-7' },
     },
     focus: {
       font: { color: 'Neutral-text-1' },
-      background: { color: 'Danger-4' },
-      border: { color: 'Danger-4' },
+      background: { color: 'Danger-5' },
+      border: { color: 'Danger-5' },
     },
     outline: {
-      font: { color: 'Danger-5' },
+      font: { color: 'Danger-6' },
       background: { color: 'Neutral-fill-1' },
-      border: { color: 'Danger-5' },
+      border: { color: 'Danger-6' },
       disabled: {
         font: { color: 'Danger-3' },
         background: { color: 'Neutral-fill-1' },
         border: { color: 'Danger-3' },
       },
       hover: {
-        font: { color: 'Danger-4' },
+        font: { color: 'Danger-5' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Danger-4' },
+        border: { color: 'Danger-5' },
       },
       active: {
-        font: { color: 'Danger-6' },
+        font: { color: 'Danger-7' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Danger-6' },
+        border: { color: 'Danger-7' },
       },
       focus: {
-        font: { color: 'Danger-4' },
+        font: { color: 'Danger-5' },
         background: { color: 'Neutral-fill-1' },
-        border: { color: 'Danger-4' },
+        border: { color: 'Danger-5' },
       },
       split: {
         background: { color: 'Danger-5' },
@@ -592,7 +592,7 @@ const buttonTokenValue = {
       },
     },
     text: {
-      font: { color: 'Danger-5' },
+      font: { color: 'Danger-6' },
       background: { color: 'Transparent' },
       border: { color: 'Transparent' },
       disabled: {
@@ -606,7 +606,7 @@ const buttonTokenValue = {
         border: { color: 'Neutral-fill-2' },
       },
       active: {
-        font: { color: 'Danger-5' },
+        font: { color: 'Danger-7' },
         background: { color: 'Neutral-fill-3' },
         border: { color: 'Neutral-fill-3' },
       },
@@ -673,6 +673,7 @@ const buttonTokenValue = {
   circle: { border: { radius: 'Radius-50%' } },
   square: { border: { radius: 'Radius-4' } },
   nearly: { margin: 'Margin-8' },
+  spin: { margin: 'Margin-4' },
 };
 
 const buttonTokenExtraValue = {};
