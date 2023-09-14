@@ -30,6 +30,7 @@ interface State {
   env: Env;
   scroll: boolean;
   activeAnchor: string;
+  locked: boolean;
 }
 
 const regex = new RegExp(`component/(.*?)/`, 'i');
@@ -42,6 +43,7 @@ const state: State = {
   env: 'SHEIN',
   scroll: false,
   activeAnchor: '',
+  locked: false,
 };
 
 const proxyState = proxy(state);
@@ -95,7 +97,16 @@ export const dispatch = {
   setScroll: (scroll: boolean) => {
     proxyState.scroll = scroll;
   },
-  setActiveAnchor: (anchor: string) => {
+  setLocked: (locked: boolean) => {
+    proxyState.locked = locked;
+  },
+  setActiveAnchor: (anchor: string, lock: boolean = false) => {
+    if (lock) {
+      proxyState.locked = true;
+    }
+    if (proxyState.locked === true && lock === false) {
+      return;
+    }
     proxyState.activeAnchor = anchor;
   },
 };

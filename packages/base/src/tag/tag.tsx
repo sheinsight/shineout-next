@@ -29,6 +29,7 @@ const Tag = (props: TagProps) => {
 
   const { dismiss, showInput, value, handleClose, handleClick, handleBlur, handleInputChange } =
     useTag({
+      jssStyle,
       onClose,
       onClick,
       disabled,

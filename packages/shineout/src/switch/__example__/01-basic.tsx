@@ -1,8 +1,8 @@
 /**
  * cn - 基本用法
- *    -- 最基础的 Switch
+ *    -- 最基础的用法
  * en - Base
- *    -- Simple Switch
+ *    -- The basic usage.
  */
 import React from 'react';
 import { Switch } from 'shineout';

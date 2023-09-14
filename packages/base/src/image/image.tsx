@@ -187,6 +187,7 @@ const Image = (props: ImageProps) => {
   const Tag = href ? 'a' : 'div';
 
   return (
+    // @ts-ignore
     <Tag {...rootProps} className={rootClass}>
       {renderImage()}
       {(shouldPreview || shouldDownload) && renderMask()}

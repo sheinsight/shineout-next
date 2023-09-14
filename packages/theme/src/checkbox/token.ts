@@ -20,9 +20,12 @@ const checkboxTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 checkboxRules 强关联，非 checkboxRules 规则内的 token 需手动增加或删减。
  */
-const checkboxTokenValue = {
+const checkboxTokenValue = {};
+
+const checkboxTokenExtraValue = {
   icon: {
-    border: { color: 'Neutral-border-1', radius: 'Radius-2', width: 'Border-2' },
+    size: 'Size-7',
+    border: { color: 'Neutral-text-3', radius: 'Radius-2', width: 'Border-1' },
     background: { color: 'Neutral-fill-1' },
     color: 'transparent',
     disabled: {
@@ -31,7 +34,6 @@ const checkboxTokenValue = {
       color: 'transparent',
     },
     hover: {
-      border: { color: 'Neutral-border-2' },
       background: { color: 'Neutral-fill-1' },
       color: 'transparent',
     },
@@ -54,9 +56,15 @@ const checkboxTokenValue = {
   },
   gap: 'Margin-24',
   block: { gap: 'Margin-12' },
+  small: {
+    icon: { size: 'Size-6' },
+    label: { font: { size: '12/regular' } },
+  },
+  large: {
+    icon: { size: 'Size-8' },
+    label: { font: { size: '16/regular' } },
+  },
 };
-
-const checkboxTokenExtraValue = {};
 
 module.exports = {
   checkboxTokenValue,

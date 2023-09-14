@@ -8,6 +8,8 @@ export interface CheckboxClasses {
    * 最外层class
    */
   wrapper: string;
+  wrapperSmall: string;
+  wrapperLarge: string;
   /**
    * 当 input 禁用时最外层class
    */
@@ -38,6 +40,7 @@ export interface SimpleCheckboxProps
   checked?: boolean | 'indeterminate';
   defaultChecked?: boolean | 'indeterminate';
   renderFooter?: (checked?: boolean) => React.ReactNode;
+  size?: 'small' | 'large';
 }
 
 export interface CheckboxProps<T>

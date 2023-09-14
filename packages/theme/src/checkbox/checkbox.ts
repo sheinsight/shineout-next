@@ -4,13 +4,15 @@
 import { CheckboxTokens } from './type';
 
 const checkboxTokens: CheckboxTokens = {
-  checkboxIconBorderColor: 'Neutral-border-1',
+  checkboxIconSize: 'Size-7',
+  checkboxIconBorderColor: 'Neutral-text-3',
+  checkboxIconBorderRadius: 'Radius-2',
+  checkboxIconBorderWidth: 'Border-1',
   checkboxIconBackgroundColor: 'Neutral-fill-1',
   checkboxIconColor: 'transparent',
   checkboxIconDisabledBorderColor: 'Neutral-border-1',
   checkboxIconDisabledBackgroundColor: 'Neutral-fill-2',
   checkboxIconDisabledColor: 'transparent',
-  checkboxIconHoverBorderColor: 'Neutral-border-2',
   checkboxIconHoverBackgroundColor: 'Neutral-fill-1',
   checkboxIconHoverColor: 'transparent',
   checkboxIconCheckedBorderColor: 'Brand-6',
@@ -19,15 +21,17 @@ const checkboxTokens: CheckboxTokens = {
   checkboxIconCheckedDisabledBorderColor: 'Brand-3',
   checkboxIconCheckedDisabledBackgroundColor: 'Brand-3',
   checkboxIconCheckedDisabledColor: 'Neutral-fill-1',
-  checkboxIconBorderRadius: 'Radius-2',
   checkboxIconGap: 'Margin-8',
-  checkboxIconBorderWidth: 'Border-2',
   checkboxIconCircleFill: 'Neutral-fill-2',
   checkboxLabelFontColor: 'Neutral-text-5',
-  checkboxLabelDisabledFontColor: 'Neutral-text-2',
   checkboxLabelFontSize: '14/regular',
+  checkboxLabelDisabledFontColor: 'Neutral-text-2',
   checkboxGap: 'Margin-24',
   checkboxBlockGap: 'Margin-12',
+  checkboxSmallIconSize: 'Size-6',
+  checkboxSmallLabelFontSize: '12/regular',
+  checkboxLargeIconSize: 'Size-8',
+  checkboxLargeLabelFontSize: '16/regular',
 };
 
 export default checkboxTokens;
