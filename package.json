@@ -21,7 +21,9 @@
     "lint:es": "eslint \"packages/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && npm run build",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --browser chrome"
   },
   "authors": ["chenlihao@shein.com"],
   "license": "MIT",
@@ -54,6 +56,7 @@
     "@babel/preset-typescript": "^7.21.5",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@cypress/code-coverage": "^3.12.1",
     "@jest/types": "^29.5.0",
     "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.0.0",
