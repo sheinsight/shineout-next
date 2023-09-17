@@ -7,7 +7,7 @@ const Descriptions = (props: DescriptionsProps) => {
   const {} = props;
   // ...
 
-  return <>Descriptions.tsx</>;
+  return <div></div>;
 };
 
 export default Descriptions;
