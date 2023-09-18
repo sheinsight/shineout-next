@@ -7,7 +7,7 @@ const renderItem = (props: renderItemProps) => {
   const { jssStyle, index, color, itemStyle } = props;
   const style = Object.assign({ backgroundColor: color }, itemStyle);
   return (
-    <div key={index} className={classNames(jssStyle?.spin.item)}>
+    <div key={index} className={classNames(jssStyle?.spin?.item)}>
       <div style={style}></div>
     </div>
   );
@@ -17,7 +17,7 @@ const renderSvgItem = (props: renderItemProps) => {
   const { jssStyle, index, color, itemClass, itemSize } = props;
 
   return (
-    <div key={index} className={classNames(jssStyle?.spin.item, itemClass)}>
+    <div key={index} className={classNames(jssStyle?.spin?.item, itemClass)}>
       <svg width={itemSize} height={itemSize} viewBox='0 0 100 100'>
         <circle fill={color} cx={50} cy={50} r={50} />
       </svg>
@@ -29,7 +29,7 @@ const renderSimpleItem = (props: renderItemProps) => {
   const { jssStyle, index, color, itemStyle } = props;
   const style = Object.assign({ backgroundColor: color }, itemStyle);
 
-  return <div key={index} style={style} className={jssStyle?.spin.item} />;
+  return <div key={index} style={style} className={jssStyle?.spin?.item} />;
 };
 
 const Default = (props: SpinProps) => {
@@ -40,7 +40,7 @@ const Default = (props: SpinProps) => {
   return (
     <BaseSpin
       {...props}
-      className={classNames(className, jssStyle?.spin.default)}
+      className={classNames(className, jssStyle?.spin?.default)}
       count={12}
       itemStyle={{ width: sizeSet, borderRadius: sizeSet }}
       render={renderItem}
@@ -54,7 +54,7 @@ const ChasingDots = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={2}
-      className={classNames(className, jssStyle?.spin.chasingDots)}
+      className={classNames(className, jssStyle?.spin?.chasingDots)}
       render={renderSvgItem}
     ></BaseSpin>
   );
@@ -67,7 +67,7 @@ const CubeGrid = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={9}
-      className={classNames(className, jssStyle?.spin.cubeGrid)}
+      className={classNames(className, jssStyle?.spin?.cubeGrid)}
       render={renderSimpleItem}
     />
   );
@@ -79,7 +79,7 @@ const DoubleBounce = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={2}
-      className={classNames(className, jssStyle?.spin.doubleBounce)}
+      className={classNames(className, jssStyle?.spin?.doubleBounce)}
       render={renderSimpleItem}
     />
   );
@@ -94,9 +94,9 @@ const FadingCircle = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={12}
-      className={classNames(className, jssStyle?.spin.fadingCircle)}
+      className={classNames(className, jssStyle?.spin?.fadingCircle)}
       itemSize={itemSize}
-      itemClass={classNames(jssStyle?.spin.fade)}
+      itemClass={classNames(jssStyle?.spin?.fade)}
       render={renderSvgItem}
     />
   );
@@ -111,9 +111,9 @@ const ScaleCircle = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={12}
-      className={classNames(className, jssStyle?.spin.fadingCircle)}
+      className={classNames(className, jssStyle?.spin?.fadingCircle)}
       itemSize={itemSize}
-      itemClass={classNames(jssStyle?.spin.scaleCircle)}
+      itemClass={classNames(jssStyle?.spin?.scaleCircle)}
       render={renderSvgItem}
     />
   );
@@ -125,7 +125,7 @@ const FourDots = (props: SpinProps) => {
     <BaseSpin
       {...props}
       count={4}
-      className={classNames(className, jssStyle?.spin.fourDots)}
+      className={classNames(className, jssStyle?.spin?.fourDots)}
       render={renderSvgItem}
     />
   );
@@ -141,7 +141,7 @@ const Plane = (props: SpinProps) => {
       {...props}
       count={0}
       style={style}
-      className={classNames(className, jssStyle?.spin.plane)}
+      className={classNames(className, jssStyle?.spin?.plane)}
     />
   );
 };
@@ -156,7 +156,7 @@ const Pulse = (props: SpinProps) => {
       {...props}
       count={0}
       style={style}
-      className={classNames(className, jssStyle?.spin.pulse)}
+      className={classNames(className, jssStyle?.spin?.pulse)}
     />
   );
 };
@@ -174,7 +174,7 @@ const Ring = (props: SpinProps) => {
       {...props}
       count={0}
       style={style}
-      className={classNames(className, jssStyle?.spin.ring)}
+      className={classNames(className, jssStyle?.spin?.ring)}
     />
   );
 };
@@ -188,7 +188,7 @@ const ThreeBounce = (props: SpinProps) => {
       count={3}
       itemSize={value / 2 + unit}
       style={{ width: value * 2 + unit, height: 'auto' }}
-      className={classNames(className, jssStyle?.spin.threeBounce)}
+      className={classNames(className, jssStyle?.spin?.threeBounce)}
       render={renderSvgItem}
     />
   );
@@ -212,7 +212,7 @@ const Wave = (props: SpinProps) => {
       {...props}
       itemStyle={{ width: width + unit, marginRight: margin }}
       count={5}
-      className={classNames(className, jssStyle?.spin.wave)}
+      className={classNames(className, jssStyle?.spin?.wave)}
       render={renderSimpleItem}
     />
   );
@@ -229,7 +229,7 @@ const ChasingRing = (props: SpinProps) => {
       {...props}
       count={4}
       itemStyle={style}
-      className={classNames(className, jssStyle?.spin.chasingRing)}
+      className={classNames(className, jssStyle?.spin?.chasingRing)}
       render={renderSimpleItem}
     />
   );

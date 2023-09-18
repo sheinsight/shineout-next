@@ -12,6 +12,13 @@ export default () => {
   const formStyle = useFormStyle();
   const itemStyle = useFormItemStyle();
   const innerTitleStyle = useInnerTitleStyle();
+
+  const jssStyle = {
+    input: inputStyle,
+    form: formStyle,
+    item: itemStyle,
+    innerTitle: innerTitleStyle,
+  };
   return (
     <div>
       <Form jssStyle={formStyle} defaultValue={{ email: 'zhangsan@qq.com' }} labelAlign={'top'}>
@@ -22,12 +29,7 @@ export default () => {
               console.log('input change', v);
             }}
           >
-            <Input
-              jssStyle={inputStyle}
-              innerTitleJssStyle={innerTitleStyle}
-              clearable
-              placeholder='please input name'
-            />
+            <Input jssStyle={jssStyle} clearable placeholder='please input name' />
           </FormField>
         </FormItem>
         <FormItem label={'email'} jssStyle={itemStyle}>
@@ -41,8 +43,7 @@ export default () => {
               <Input
                 value={value}
                 onChange={onChange}
-                jssStyle={inputStyle}
-                innerTitleJssStyle={innerTitleStyle}
+                jssStyle={jssStyle}
                 clearable
                 placeholder='please input email'
               />

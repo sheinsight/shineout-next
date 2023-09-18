@@ -8,7 +8,7 @@ export default createUseStyles(
       top: 60,
       // zIndex: 1,
       color: '#141737',
-      padding: '0 56px',
+      padding: '0 40px',
       background: '#fff',
       borderBottom: '1px solid rgba(232, 235, 240, 1)',
       transition: 'all 0.15s ease',
@@ -75,9 +75,23 @@ export default createUseStyles(
         background: '#fff',
       },
     },
+    doc: {
+      display: 'flex',
+      '& .examples': {
+        flex: 1,
+      },
+      '& .anchor': {
+        width: 192,
+      },
+    },
     guide: {
-      color: '#141737',
-
+      display: 'flex',
+      '& .guides': {
+        flex: 1,
+      },
+      '& .anchor': {
+        width: 192,
+      },
       '& .title': {
         fontSize: 20,
         marginTop: 48,
@@ -88,6 +102,7 @@ export default createUseStyles(
       '& .paragraph': {
         padding: '0 40px',
         fontSize: 14,
+        lineHeight: '22px',
         fontWeight: 400,
         marginTop: 0,
         marginBottom: 0,

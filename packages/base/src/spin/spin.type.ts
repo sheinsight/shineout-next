@@ -46,8 +46,8 @@ export interface SpinClasses {
 }
 
 export interface renderItemProps {
-  jssStyle?: {
-    spin: SpinClasses;
+  jssStyle: {
+    spin?: SpinClasses;
   };
   index: number;
   color?: string;
@@ -64,7 +64,7 @@ export interface BaseSpinProps {
   size?: number | string;
   color?: string;
   jssStyle?: {
-    spin: SpinClasses;
+    spin?: SpinClasses;
   };
   render?: any;
   style?: React.CSSProperties;
@@ -77,7 +77,7 @@ export interface BaseSpinProps {
 
 export interface SpinProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
-    spin: SpinClasses;
+    spin?: SpinClasses;
   };
   children?: React.ReactNode;
   tip?: string | React.ReactNode;

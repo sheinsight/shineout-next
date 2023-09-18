@@ -5,7 +5,7 @@ const initTheme = () => {
 
   const innerText = Object.keys(Token)
     .map((value) => {
-      return `--${value.toLocaleLowerCase()}:${Token[value]}`;
+      return `--${value.toLocaleLowerCase()}:${Token[value as keyof typeof Token]}`;
     })
     .join(';');
 

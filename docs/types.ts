@@ -18,6 +18,7 @@ export interface Example {
   component: React.FC;
   code: string;
   index: number;
+  className?: string;
 }
 export interface Guide {
   title: string;

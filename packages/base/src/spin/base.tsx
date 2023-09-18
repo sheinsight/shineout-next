@@ -20,7 +20,7 @@ const Spin = (props: BaseSpinProps) => {
   }
 
   return (
-    <div style={style} className={classNames(className, jssStyle?.spin.spin)}>
+    <div style={style} className={classNames(className, jssStyle?.spin?.spin)}>
       {range(count + 1, 1).map((i) => render({ ...props, index: i }))}
     </div>
   );
