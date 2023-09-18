@@ -13,7 +13,12 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
   const { locale } = useConfig();
   const { disabled, jssStyle, range, type = 'date', border = true, placeholder } = props;
   const disabledAll = disabled && typeof disabled !== 'function';
-  const placeholderArr = Array.isArray(placeholder) ? placeholder : [placeholder, placeholder];
+  const defaultPlaceholder = getLocale(locale, 'pickerTitle');
+  const placeholderArr = placeholder
+    ? Array.isArray(placeholder)
+      ? placeholder
+      : [placeholder, placeholder]
+    : defaultPlaceholder;
   const styles = jssStyle?.datePicker;
   const [focused, setFocused] = React.useState(false);
   let listPosition = props.position || 'bottom-left';
@@ -155,7 +160,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
             dateArr={dateArr}
             setDateArr={setDateArr}
             currentArr={currentArr}
-            range={!!range}
+            range={range}
             setCurrentArr={setCurrentArr}
             mode={mode}
             setMode={setMode}
@@ -164,6 +169,9 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
             disabled={disabled}
             jssStyle={jssStyle}
             closePop={closePop}
+            defaultTime={props.defaultTime}
+            min={props.min}
+            max={props.max}
           />
         </AnimationList>
       </AbsoluteList>

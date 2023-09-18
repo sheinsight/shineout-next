@@ -1,16 +1,15 @@
-import { DatePickerProps, DateTimeType } from './date-picker.type';
+import { DatePickerProps } from './date-picker.type';
 
-export interface DayProps {
+export interface YearProps {
   current: Date;
   setMode: (mode: string) => void;
   rangeDate: Array<Date | undefined>;
-  defaultTime: DateTimeType;
   setCurrent: (date: Date) => void;
   value: Date | undefined;
   onChange: (date: Date) => void;
   min?: Date;
   max?: Date;
-  type: 'date' | 'week';
+  type?: string;
   jssStyle: DatePickerProps<any>['jssStyle'];
   disabled: DatePickerProps<any>['disabled'];
   position?: 'start' | 'end';

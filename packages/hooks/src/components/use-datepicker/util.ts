@@ -163,6 +163,11 @@ function isSameQuarter(date1: Date, date2: Date, options: DateOptions) {
   return date1 && date2 && format(date1, 'YYYY Q', options) === format(date2, 'YYYY Q', options);
 }
 
+function isSameYear(date1: Date, date2: Date, options: DateOptions) {
+  if (!date1 || !date2) return false;
+  return date1 && date2 && format(date1, 'YYYY', options) === format(date2, 'YYYY', options);
+}
+
 function isValid(date: DateTimeType) {
   if (!date) return false;
   if (!(date instanceof Date)) return false;
@@ -335,7 +340,7 @@ function setTime(date: Date, old: Date, options?: DateOptions) {
   return ud;
 }
 
-function cloneTime(date: Date, old: Date, fmt?: string, options?: DateOptions) {
+function cloneTime(date: Date, old: DateTimeType, fmt?: string, options?: DateOptions) {
   if (!date) return date;
   const oldDate = toDateWithFormat(old, fmt, undefined, options);
   if (isInvalid(oldDate)) return date;
@@ -406,6 +411,10 @@ function formatted(
   return format(date, fmt, options);
 }
 
+function getStartYear(date: Date, options: DateOptions) {
+  return Math.floor(getDateInfo(date, 'year', options) / 10) * 10;
+}
+
 export default {
   clearHMS,
   addDays,
@@ -424,6 +433,7 @@ export default {
   isSameDay,
   isSameMonth,
   isSameWeek,
+  isSameYear,
   isSameQuarter,
   isValid,
   newDate,
@@ -440,4 +450,5 @@ export default {
   getDateInfo,
   compatibleFmt,
   transDateWithZone,
+  getStartYear,
 };

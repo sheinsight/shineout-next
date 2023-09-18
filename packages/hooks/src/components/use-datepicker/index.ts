@@ -1,3 +1,6 @@
 export { default as useDatePickerFormat } from './use-datepicker-format';
 export { default as useDatePick } from './use-date';
+export { default as useYearPick } from './use-year';
+export { default as useMonthPick } from './use-month';
+export { default as useDatePickerRange } from './use-datepicker-range';
 export type { UseDatePickerFormatProps } from './use-datepicker-format.type';

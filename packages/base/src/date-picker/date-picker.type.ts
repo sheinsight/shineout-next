@@ -34,8 +34,11 @@ export interface DatePickerClasses {
   pickerBox: string;
   picker: string;
   pickerHeader: string;
-  pickerIcon: string;
-  pickerTitle: string;
+  pickerHeaderLeft: string;
+  pickerHeaderRight: string;
+  pickerHeaderMid: string;
+  pickerHeaderIcon: string;
+  pickerHeaderInfo: string;
   pickerBody: string;
   pickerRow: string;
   pickerCell: string;
@@ -43,10 +46,17 @@ export interface DatePickerClasses {
   pickerCellActive: string;
   pickerCellDisabled: string;
   pickerCellToday: string;
-  pickerCellCurrentMonth: string;
+  pickerCellBound: string;
+  pickerCellInRange: string;
+  pickerCellInRangeStart: string;
+  pickerCellInRangeEnd: string;
 
   // 日
   dayPicker: string;
+  // 年
+  yearPicker: string;
+  // 月
+  monthPicker: string;
 }
 
 export type DisabledType = 'start' | 'end';
@@ -94,7 +104,11 @@ export interface DatePickerProps<Value extends DatePickerValue>
    */
   type?: 'date' | 'time' | 'datetime' | 'month' | 'week' | 'quarter' | 'year';
   format?: string;
-  range?: boolean;
+  /**
+   * @en range span，unit: **second**，When it is true, selection scope is not limited.
+   * @cn 范围跨度，单位 **秒**，为 true 时表示不限制选择范围。
+   */
+  range?: boolean | number;
   value?: Value;
   defaultValue?: Value;
   // todo quickSelect
@@ -141,4 +155,20 @@ export interface DatePickerProps<Value extends DatePickerValue>
    * @cn 占位文字。range 属性不为空时，为长度为2的数组
    */
   placeholder?: string | string[];
+  /**
+   * @en Default time when selecting a date, the format is: 'HH:mm:ss'
+   * @cn 选择日期时默认的时间, 格式为: 'HH:mm:ss'
+   */
+  defaultTime?: DatePickerValue;
+  /**
+   * @en option min value
+   * @cn 可选最小值
+   */
+  min?: DateTimeType;
+
+  /**
+   * @en option max value
+   * @cn 可选最大值
+   */
+  max?: DateTimeType;
 }

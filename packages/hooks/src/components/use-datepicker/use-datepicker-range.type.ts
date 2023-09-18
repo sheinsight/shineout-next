@@ -1,11 +1,12 @@
 import { Dispatch, SetStateAction } from 'react';
-import { DatePickerProps, DateTimeType } from './date-picker.type';
 
-export interface PickerProps {
-  jssStyle: DatePickerProps<any>['jssStyle'];
-  defaultTime: DatePickerProps<any>['defaultTime'];
+type DateType = string | number | Date | undefined;
+export interface useRangeProps {
+  defaultTime: Array<DateType> | DateType;
   type: string;
-  range: DatePickerProps<any>['range'];
+  range: boolean | undefined | number;
+  min: DateType;
+  max: DateType;
   dateArr: Array<Date | undefined>;
   setDateArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   currentArr: Date[];
@@ -17,16 +18,5 @@ export interface PickerProps {
     timeZone?: string;
     weekStartsOn: number;
   };
-  closePop: () => void;
-  /**
-   * @en option min value
-   * @cn 可选最小值
-   */
-  min?: DateTimeType;
-
-  /**
-   * @en option max value
-   * @cn 可选最大值
-   */
-  max?: DateTimeType;
+  close: () => void;
 }

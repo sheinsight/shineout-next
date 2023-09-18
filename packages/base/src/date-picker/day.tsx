@@ -2,11 +2,15 @@ import React from 'react';
 import { useDatePick } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
+import { useConfig, getLocale } from '../config';
 
 import type { DayProps } from './day.type';
 
 const Day = (props: DayProps) => {
   const { jssStyle } = props;
+  const { locale } = useConfig();
+
+  const styles = jssStyle?.datePicker;
   const { func, currentYear, currentMonth } = useDatePick({
     current: props.current,
     onCurrentChange: props.setCurrent,
@@ -17,6 +21,8 @@ const Day = (props: DayProps) => {
     type: props.type,
     disabled: props.disabled,
     options: props.options,
+    rangeDate: props.rangeDate,
+    defaultTime: props.defaultTime,
   });
   const days = func.getDays();
   const len = days.length / 7;
@@ -26,48 +32,77 @@ const Day = (props: DayProps) => {
     const isCurrentMonth = func.isCurrentMonth(item);
     const isDisabled = func.isDisabled(item);
     const isToday = func.isToday(item);
+    const isInRange = func.isInRange(item);
     return (
       <td
         className={classNames(
-          jssStyle?.datePicker?.pickerCell,
-          isActive && jssStyle?.datePicker?.pickerCellActive,
-          isCurrentMonth && jssStyle?.datePicker?.pickerCellCurrentMonth,
-          isDisabled && jssStyle?.datePicker?.pickerCellDisabled,
-          isToday && jssStyle?.datePicker?.pickerCellToday,
+          styles?.pickerCell,
+          isActive && styles?.pickerCellActive,
+          !isCurrentMonth && styles?.pickerCellBound,
+          isDisabled && styles?.pickerCellDisabled,
+          isToday && styles?.pickerCellToday,
+          isInRange && styles?.pickerCellInRange,
+          (isInRange === 'start' || isInRange === 'start-end') &&
+            props.position === 'start' &&
+            styles?.pickerCellInRangeStart,
+          (isInRange === 'end' || isInRange === 'start-end') &&
+            props.position === 'end' &&
+            styles?.pickerCellInRangeEnd,
         )}
         key={index}
         onClick={() => func.handleDayClick(item)}
       >
-        <div className={jssStyle?.datePicker?.pickerCellContent}>
+        <div className={styles?.pickerCellContent}>
           <span>{func.getDayStr(item)}</span>
         </div>
       </td>
     );
   };
-  // todo getLocale
-  const weeks = ['日', '一', '二', '三', '四', '五', '六'];
+  const weeks = getLocale(locale, 'weekdayValues.narrow');
   const weekDays = Array.from({ length: 7 }).map((_, index) => {
     const num = (props.options.weekStartsOn + index) % 7;
     return weeks[num];
   });
   return (
-    <div className={classNames(jssStyle?.datePicker?.dayPicker, jssStyle?.datePicker?.picker)}>
-      <div className={jssStyle?.datePicker?.pickerHeader}>
-        <div className={jssStyle?.datePicker.pickerIcon}>
-          <span onClick={func.handlePrevYear}>{Icons.AngleDoubleLeft}</span>
-          <span onClick={func.handlePrevMonth}>{Icons.AngleLeft}</span>
+    <div className={classNames(styles?.dayPicker, styles?.picker)}>
+      <div className={styles?.pickerHeader}>
+        <div className={styles?.pickerHeaderLeft}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevYear}>
+            {Icons.AngleDoubleLeft}
+          </span>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevMonth}>
+            {Icons.AngleLeft}
+          </span>
         </div>
-        <div className={jssStyle?.datePicker?.pickerTitle}>
-          <span>{currentYear}</span>
-          <span>-</span>
-          <span>{currentMonth}</span>
+        <div className={styles?.pickerHeaderMid}>
+          <span
+            className={styles?.pickerHeaderInfo}
+            onClick={() => {
+              props.setMode('year');
+            }}
+          >
+            {currentYear}
+          </span>
+          <i>-</i>
+          <span
+            className={styles?.pickerHeaderInfo}
+            onClick={() => {
+              props.setMode('month');
+            }}
+          >
+            {currentMonth}
+          </span>
         </div>
-        <div className={jssStyle?.datePicker.pickerIcon}>
-          <span onClick={func.handleNextMonth}>{Icons.AngleRight}</span>
-          <span onClick={func.handleNextYear}>{Icons.AngleDoubleRight}</span>
+        <div className={styles?.pickerHeaderRight}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handleNextMonth}>
+            {Icons.AngleRight}
+          </span>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handleNextYear}>
+            {Icons.AngleDoubleRight}
+          </span>
         </div>
       </div>
-      <div className={jssStyle?.datePicker?.pickerBody}>
+      <div className={styles?.pickerBody}>
         <table>
           <thead>
             <tr>
@@ -79,7 +114,7 @@ const Day = (props: DayProps) => {
           <tbody>
             {Array.from({ length: len }).map((_, index) => {
               return (
-                <tr key={index} className={jssStyle?.datePicker?.pickerRow}>
+                <tr key={index} className={styles?.pickerRow}>
                   {days.slice(index * 7, (index + 1) * 7).map((item, index) => {
                     return renderDay(item, index);
                   })}

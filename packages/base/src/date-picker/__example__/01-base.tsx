@@ -10,17 +10,18 @@ import { useDatePickerStyle } from '@sheinx/shineout-style';
 
 export default () => {
   const datePickerStyle = useDatePickerStyle();
-  const [value, setValue] = React.useState(['2021-02-02', '2021-02-03']);
+  const [value, setValue] = React.useState(['2021-02-02 10:10:10', '2021-02-03']);
   return (
     <div>
       <DatePicker
         range
-        placeholder={['开始日期', '结束日期']}
         value={value}
+        type={'datetime'}
         allowSingle
         align={'left'}
         jssStyle={{ datePicker: datePickerStyle }}
         onChange={(v) => {
+          console.log('handleChange', v);
           setValue(v);
         }}
       />

@@ -2,18 +2,19 @@ import { useRef, useState } from 'react';
 
 import { UseDateProps } from './use-date.type';
 import utils from './util';
+import useLatestObj from '../../common/use-latest-obj';
+import dateUtil from './util';
 import usePersistFn from '../../common/use-persist-fn';
 
 interface Context {
-  cachedDate?: Date;
+  cachedMonth?: Date;
   cachedDays: Date[];
 }
 const useDate = (props: UseDateProps) => {
   const { options, type } = props;
   const [currentState, setCurrentState] = useState(props.defaultCurrent || new Date());
-
   const { current: context } = useRef<Context>({
-    cachedDate: undefined,
+    cachedMonth: undefined,
     cachedDays: [],
   });
 
@@ -37,14 +38,14 @@ const useDate = (props: UseDateProps) => {
     if (!current) return context.cachedDays;
     const date = utils.clearHMS(current, options);
     if (
-      context.cachedDate &&
-      utils.isSameMonth(context.cachedDate, date, options) &&
-      context.cachedDays
+      context.cachedMonth &&
+      utils.isSameMonth(context.cachedMonth, date, options) &&
+      context.cachedDays.length
     ) {
       return context.cachedDays;
     }
     context.cachedDays = utils.getDaysOfMonth(date, options);
-    context.cachedDate = date;
+    context.cachedMonth = date;
 
     return context.cachedDays;
   };
@@ -101,15 +102,51 @@ const useDate = (props: UseDateProps) => {
     return utils.getDateInfo(date, 'date', options);
   };
 
-  const handleDayClick = usePersistFn((date: Date) => {
+  const handleDayClick = (date: Date) => {
     const { min, max } = props;
     if (isDisabled(date)) return;
-    let newDate: Date | string = utils.setTime(utils.toDate(date), current, options);
+
+    // set hour minute second
+    const timeDate =
+      props.value ||
+      (props.defaultTime && utils.cloneTime(date, props.defaultTime, utils.TIME_FORMAT, options));
+
+    let newDate = utils.toDate(date);
+    if (timeDate) {
+      newDate = utils.setTime(newDate, timeDate, options);
+    }
     // only can select day with the same day of min/max
     if (min && utils.compareAsc(newDate, min) < 0) newDate = utils.setTime(newDate, min, options);
     if (max && utils.compareAsc(newDate, max) > 0) newDate = utils.setTime(newDate, max, options);
+    props.onChange?.(newDate);
     setCurrent(newDate);
-    props.onChange?.(date);
+  };
+
+  const isInRange = (date: Date) => {
+    const [start, end] = props.rangeDate || [];
+    if (!start || !end) return false;
+    const compareStart = dateUtil.compareDay(date, start, 0, options);
+    const compareEnd = dateUtil.compareDay(date, end, 0, options);
+    if (compareStart === 0 && compareEnd === 0) return 'start-end';
+    if (compareStart === 0) return 'start';
+    if (compareEnd === 0) return 'end';
+    if (compareStart > 0 && compareEnd < 0) return 'in';
+    return false;
+  };
+
+  const func = useLatestObj({
+    handleNextYear,
+    handleNextMonth,
+    handlePrevYear,
+    handlePrevMonth,
+    getDays,
+    isToday,
+    isDisabled,
+    isActive,
+    isInRange,
+    isCurrentMonth,
+    handleDayClick,
+    getDayStr,
   });
 
   const currentYear = utils.getDateInfo(current, 'year', options);
@@ -119,19 +156,7 @@ const useDate = (props: UseDateProps) => {
     current,
     currentYear,
     currentMonth,
-    func: {
-      handleNextYear,
-      handleNextMonth,
-      handlePrevYear,
-      handlePrevMonth,
-      getDays,
-      isToday,
-      isDisabled,
-      isActive,
-      isCurrentMonth,
-      handleDayClick,
-      getDayStr,
-    },
+    func,
   };
 };
 

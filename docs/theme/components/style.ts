@@ -6,7 +6,7 @@ export default createUseStyles(
     header: {
       position: 'sticky',
       top: 60,
-      zIndex: 1,
+      // zIndex: 1,
       color: '#141737',
       padding: '0 56px',
       background: '#fff',

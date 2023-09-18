@@ -10,10 +10,22 @@ export interface DatePickerTokens {
   datePickerFontSize: string;
   /**
    * @type {string}
+   * @token Neutral-text-5
+   * @description undefinedundefined字体颜色
+   */
+  datePickerFontColor: string;
+  /**
+   * @type {string}
    * @token Radius-4
    * @description undefinedundefined边框圆角
    */
   datePickerBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-2
+   * @description undefinedundefined边框颜色
+   */
+  datePickerBorderColor: string;
   /**
    * @type {string}
    * @token Padding-8
@@ -32,6 +44,12 @@ export interface DatePickerTokens {
    * @description undefinedundefined图标字号
    */
   datePickerIconSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description undefinedundefined图标颜色
+   */
+  datePickerIconColor: string;
   /**
    * @type {string}
    * @token 12/regular
@@ -94,22 +112,10 @@ export interface DatePickerTokens {
   datePickerDatetimeRangeWidth: string;
   /**
    * @type {string}
-   * @token Neutral-text-5
-   * @description undefinedundefined字体颜色
-   */
-  datePickerFontColor: string;
-  /**
-   * @type {string}
    * @token Neutral-text-2
    * @description undefinedundefinedundefined颜色
    */
   datePickerPlaceholderColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-border-2
-   * @description undefinedundefined边框颜色
-   */
-  datePickerBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
@@ -122,12 +128,6 @@ export interface DatePickerTokens {
    * @description undefinedundefined清除颜色
    */
   datePickerClearColor: string;
-  /**
-   * @type {string}
-   * @token Neutral-text-4
-   * @description undefinedundefined图标颜色
-   */
-  datePickerIconColor: string;
   /**
    * @type {string}
    * @token Brand-6
@@ -214,6 +214,54 @@ export interface DatePickerTokens {
   datePickerPickerRadius: string;
   /**
    * @type {string}
+   * @token Padding-12
+   * @description undefinedundefinedundefinedundefined内边距（水平方向）
+   */
+  datePickerPickerHeaderPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description undefinedundefinedundefinedundefined内边距（垂直方向）
+   */
+  datePickerPickerHeaderPaddingY: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description undefinedundefinedundefinedundefined边框颜色
+   */
+  datePickerPickerHeaderBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description undefinedundefinedundefinedundefined图标颜色
+   */
+  datePickerPickerHeaderIconColor: string;
+  /**
+   * @type {string}
+   * @token Size-7
+   * @description undefinedundefinedundefinedundefined图标宽度
+   */
+  datePickerPickerHeaderIconWidth: string;
+  /**
+   * @type {string}
+   * @token Size-13
+   * @description undefinedundefinedundefinedundefined图标undefined宽度
+   */
+  datePickerPickerHeaderIconHotWidth: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description undefinedundefinedundefinedundefined图标鼠标移入时的背景颜色
+   */
+  datePickerPickerHeaderIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description undefinedundefinedundefinedundefined标题模式内边距（水平方向）
+   */
+  datePickerPickerHeaderTitlePaddingX: string;
+  /**
+   * @type {string}
    * @token Padding-16
    * @description undefinedundefinedundefinedundefined内边距（水平方向）
    */
@@ -238,10 +286,16 @@ export interface DatePickerTokens {
   datePickerCellColor: string;
   /**
    * @type {string}
-   * @token transparent
-   * @description undefinedundefinedundefined背景颜色
+   * @token Size-12
+   * @description undefinedundefinedundefinedundefined高度
    */
-  datePickerCellBackgroundColor: string;
+  datePickerCellHotHeight: string;
+  /**
+   * @type {string}
+   * @token Size-16
+   * @description undefinedundefinedundefined高度
+   */
+  datePickerCellHeight: string;
   /**
    * @type {string}
    * @token Neutral-text-5
@@ -250,7 +304,7 @@ export interface DatePickerTokens {
   datePickerCellHoverColor: string;
   /**
    * @type {string}
-   * @token Brand-1
+   * @token Neutral-fill-2
    * @description undefinedundefinedundefined鼠标移入时的背景颜色
    */
   datePickerCellHoverBackgroundColor: string;
@@ -280,6 +334,12 @@ export interface DatePickerTokens {
   datePickerCellDisabledBackgroundColor: string;
   /**
    * @type {string}
+   * @token Brand-1
+   * @description undefinedundefinedundefinedundefined背景颜色
+   */
+  datePickerCellRangeBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-2
    * @description undefinedundefinedundefinedundefined颜色
    */
@@ -298,14 +358,38 @@ export interface DatePickerTokens {
   datePickerCellMarginY: string;
   /**
    * @type {string}
-   * @token Size-16
-   * @description undefinedundefinedundefinedundefined字号
+   * @token Size-124
+   * @description undefinedundefinedundefinedundefined宽度
    */
-  datePickerDayCellSize: string;
+  datePickerDayPickerWidth: string;
   /**
    * @type {string}
    * @token Size-12
-   * @description undefinedundefinedundefinedundefinedundefined字号
+   * @description undefinedundefinedundefinedundefinedundefined宽度
    */
-  datePickerDayCellHotSize: string;
+  datePickerDayCellHotWidth: string;
+  /**
+   * @type {string}
+   * @token Size-124
+   * @description undefinedundefinedundefinedundefined宽度
+   */
+  datePickerYearPickerWidth: string;
+  /**
+   * @type {string}
+   * @token Size-32
+   * @description undefinedundefinedundefinedundefinedundefined宽度
+   */
+  datePickerYearCellHotWidth: string;
+  /**
+   * @type {string}
+   * @token Size-124
+   * @description undefinedundefinedundefinedundefined宽度
+   */
+  datePickerMonthPickerWidth: string;
+  /**
+   * @type {string}
+   * @token Size-32
+   * @description undefinedundefinedundefinedundefinedundefined宽度
+   */
+  datePickerMonthCellHotWidth: string;
 }

@@ -30,6 +30,8 @@ const getFormat = (format: string | undefined, type: string) => {
       return 'HH:mm:ss';
     case 'week':
       return 'GGGG WW';
+    case 'year':
+      return 'YYYY';
     default:
       return 'YYYY-MM-DD';
   }
@@ -53,7 +55,7 @@ const getDefaultMode = (type: string) => {
     default:
       mode = 'day';
   }
-  return mode;
+  return [mode, mode];
 };
 
 const useDatePickerFormat = <Value extends DatePickerValue>(
@@ -69,8 +71,8 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
     return arr as Date[];
   };
 
-  const [currentArr, setCurrentArr] = useState(getCurrentArr());
   const [mode, setMode] = useState(getDefaultMode(type));
+  const [currentArr, setCurrentArr] = useState(getCurrentArr());
 
   const { current: context } = useRef({
     cachedDateArr: convertValueToDateArr(value, format, options),
@@ -94,7 +96,6 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
     context.cachedDateArr = dateArr;
     setStateDate(dateArr);
     const formatValue = getFormatValueArr(dateArr);
-    console.log(formatValue);
     const v = range ? formatValue : formatValue[0];
     if (!shallowEqual(v, value)) {
       onChange?.(v as FormatValueType);
@@ -110,6 +111,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
     setEdit(true);
     setCurrentArr(getCurrentArr());
     setStateDate(context.cachedDateArr);
+    setMode(getDefaultMode(type));
   };
 
   const finishEdit = (...args: any) => {

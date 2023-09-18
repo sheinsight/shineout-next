@@ -1,4 +1,4 @@
-export interface UseDateProps {
+export interface UseYearProps {
   current?: Date;
   rangeDate?: Array<Date | undefined>;
   defaultCurrent?: Date;
@@ -7,9 +7,8 @@ export interface UseDateProps {
   onChange?: (date: Date) => void;
   min?: Date;
   max?: Date;
-  type?: 'date' | 'week';
+  // type?: string;
   disabled?: boolean | ((date: Date) => boolean);
-  defaultTime?: string | number | Date;
   options: {
     timeZone?: string;
     weekStartsOn?: number;
