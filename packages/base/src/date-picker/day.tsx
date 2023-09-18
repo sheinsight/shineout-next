@@ -2,7 +2,7 @@ import React from 'react';
 import { useDatePick } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
-import { useConfig, getLocale } from '../config';
+import { getLocale, useConfig } from '../config';
 
 import type { DayProps } from './day.type';
 
@@ -121,7 +121,7 @@ const Day = (props: DayProps) => {
         <table>
           <thead>
             <tr>
-              {props.type === 'week' && <th></th>}
+              {props.type === 'week' && <th>{getLocale(locale, 'weekShort')}</th>}
               {weekDays.map((item, index) => {
                 return <th key={index}>{item}</th>;
               })}

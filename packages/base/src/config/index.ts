@@ -27,7 +27,7 @@ try {
 export let config: ConfigOption = {
   popupContainer: undefined,
   caret: 'line',
-  locale: (processEnv.LOCALE as LanType) || 'en-US',
+  locale: (processEnv.LOCALE as LanType) || 'zh-CN',
   // prefix: 'so',
 };
 

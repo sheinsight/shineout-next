@@ -121,8 +121,7 @@ function addYears(date: Date, offset: number, options: DateOptions) {
 
 function changeDate(date: Date, type: DateMode, num: number, options: DateOptions) {
   const zd = transDateWithZone(date, options);
-  // type is year month ...
-  const d = (dayjs(zd) as any)[type](num).toDate();
+  const d = (dayjs(zd) as any).locale(getDayJsLocate(options))[type](num).toDate();
   const ud = transDateWithZone(d, options, true);
   return ud;
 }
@@ -315,8 +314,12 @@ function compareMonth(dateLeft: Date, dateRight: Date, pad = 0, options: DateOpt
 
 function compareWeek(dateLeft: Date, dateRight: Date, pad = 0, options: DateOptions) {
   if (!dateLeft || !dateRight) return 0;
-  const left = dayjs(transDateWithZone(dateLeft, options)).startOf('week').toDate();
+  const left = dayjs(transDateWithZone(dateLeft, options))
+    .locale(getDayJsLocate(options))
+    .startOf('week')
+    .toDate();
   const right = dayjs(transDateWithZone(dateRight, options))
+    .locale(getDayJsLocate(options))
     .startOf('week')
     .add(pad, 'week')
     .toDate();

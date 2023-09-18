@@ -7,7 +7,6 @@ export interface UseMonthProps {
   onChange?: (date: Date) => void;
   min?: Date;
   max?: Date;
-  // type?: string;
   disabled?: boolean | ((date: Date) => boolean);
   options: {
     timeZone?: string;
