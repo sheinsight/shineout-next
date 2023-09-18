@@ -5,12 +5,12 @@ group: Other
 
 # Title
 
-Descriptions 标题
+Descriptions 详情
 Descriptions
 
 # Describe
 
-Descriptions 描述
+Descriptions 详情
 Descriptions Describe
 
 # Example

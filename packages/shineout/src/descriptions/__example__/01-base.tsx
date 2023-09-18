@@ -19,6 +19,7 @@ const data = [
   {
     label: 'Residence',
     value: 'Beijing',
+    span: 6,
   },
   {
     label: 'Hometown',
@@ -33,7 +34,7 @@ const data = [
 export default () => {
   return (
     <div>
-      <Descriptions item={data} />
+      <Descriptions item={data} title='demo' extra='hello' />
     </div>
   );
 };
