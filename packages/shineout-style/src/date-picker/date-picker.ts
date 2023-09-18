@@ -33,6 +33,7 @@ export type DatePickerClass =
   | 'pickerHeaderInfo'
   | 'pickerBody'
   | 'pickerRow'
+  | 'pickerRowWeek'
   | 'pickerCell'
   | 'pickerCellContent'
   | 'pickerCellActive'
@@ -239,16 +240,64 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     },
   },
   pickerRow: {},
+  pickerRowWeek: {
+    '& $pickerCell:nth-child(2)': {
+      '& $pickerCellContent': {
+        paddingLeft: token.datePickerCellMarginY,
+      },
+    },
+    '& $pickerCell:nth-child(8)': {
+      '& $pickerCellContent': {
+        paddingRight: token.datePickerCellMarginY,
+      },
+    },
+    '& $pickerCell:not(:nth-child(2))': {
+      '& $pickerCellContent >span': {
+        borderTopLeftRadius: '0',
+        borderBottomLeftRadius: '0',
+      },
+    },
+    '& $pickerCell:not(:nth-child(8))': {
+      '& $pickerCellContent >span': {
+        borderTopRightRadius: '0',
+        borderBottomRightRadius: '0',
+      },
+    },
+    '& $pickerCellContent > span': { width: '100%' },
+    '&:hover': {
+      '& :not($pickerCellActive):not($pickerCellDisabled) $pickerCellContent > span': {
+        backgroundColor: token.datePickerCellHoverBackgroundColor,
+        color: token.datePickerCellHoverColor,
+      },
+      '& $pickerCellInRange:not($pickerCellActive):not($pickerCellDisabled) $pickerCellContent > span':
+        {
+          backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
+        },
+
+      '& $pickerCellActive $pickerCellContent': {
+        backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
+      },
+    },
+  },
   pickerCell: {
     color: token.datePickerCellColor,
     '&$pickerCellBound': {
       color: token.datePickerCellOtherColor,
     },
+
     '&:not($pickerCellDisabled):not($pickerCellActive):hover': {
       '&  span': {
         backgroundColor: token.datePickerCellHoverBackgroundColor,
         color: token.datePickerCellHoverColor,
       },
+    },
+    '&$pickerCellInRange:not($pickerCellActive):not($pickerCellDisabled):hover': {
+      '&  span': {
+        backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
+      },
+    },
+    '&$pickerCellActive:hover $pickerCellContent': {
+      backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
     },
   },
   pickerCellContent: {

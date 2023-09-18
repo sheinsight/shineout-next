@@ -63,6 +63,21 @@ const Day = (props: DayProps) => {
     const num = (props.options.weekStartsOn + index) % 7;
     return weeks[num];
   });
+
+  const renderWeek = (item: Date) => {
+    if (props.type !== 'week') {
+      return;
+    }
+    return (
+      <th
+        onClick={() => func.handleDayClick(item)}
+        className={classNames(styles?.pickerCell, styles?.pickerCellBound)}
+        key={'week'}
+      >
+        <div className={styles?.pickerCellContent}>{func.getWeekStr(item)}</div>
+      </th>
+    );
+  };
   return (
     <div className={classNames(styles?.dayPicker, styles?.picker)}>
       <div className={styles?.pickerHeader}>
@@ -106,6 +121,7 @@ const Day = (props: DayProps) => {
         <table>
           <thead>
             <tr>
+              {props.type === 'week' && <th></th>}
               {weekDays.map((item, index) => {
                 return <th key={index}>{item}</th>;
               })}
@@ -113,9 +129,17 @@ const Day = (props: DayProps) => {
           </thead>
           <tbody>
             {Array.from({ length: len }).map((_, index) => {
+              const start = index * 7;
               return (
-                <tr key={index} className={styles?.pickerRow}>
-                  {days.slice(index * 7, (index + 1) * 7).map((item, index) => {
+                <tr
+                  key={index}
+                  className={classNames(
+                    styles?.pickerRow,
+                    props.type === 'week' && styles?.pickerRowWeek,
+                  )}
+                >
+                  {renderWeek(days[start + 3])}
+                  {days.slice(start, start + 7).map((item, index) => {
                     return renderDay(item, index);
                   })}
                 </tr>

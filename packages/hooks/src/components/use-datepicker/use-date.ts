@@ -102,6 +102,10 @@ const useDate = (props: UseDateProps) => {
     return utils.getDateInfo(date, 'date', options);
   };
 
+  const getWeekStr = (date: Date) => {
+    return utils.getDateInfo(date, 'week', options);
+  };
+
   const handleDayClick = (date: Date) => {
     const { min, max } = props;
     if (isDisabled(date)) return;
@@ -123,8 +127,16 @@ const useDate = (props: UseDateProps) => {
   };
 
   const isInRange = (date: Date) => {
-    const [start, end] = props.rangeDate || [];
+    let [start, end] = props.rangeDate || [];
     if (!start || !end) return false;
+    if (type === 'week') {
+      if (start) {
+        start = dateUtil.changeDate(start, 'weekday', 0, options);
+      }
+      if (end) {
+        end = dateUtil.changeDate(end, 'weekday', 6, options);
+      }
+    }
     const compareStart = dateUtil.compareDay(date, start, 0, options);
     const compareEnd = dateUtil.compareDay(date, end, 0, options);
     if (compareStart === 0 && compareEnd === 0) return 'start-end';
@@ -147,6 +159,7 @@ const useDate = (props: UseDateProps) => {
     isCurrentMonth,
     handleDayClick,
     getDayStr,
+    getWeekStr,
   });
 
   const currentYear = utils.getDateInfo(current, 'year', options);

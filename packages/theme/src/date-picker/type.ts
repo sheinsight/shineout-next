@@ -322,6 +322,12 @@ export interface DatePickerTokens {
   datePickerCellActiveBackgroundColor: string;
   /**
    * @type {string}
+   * @token Brand-2
+   * @description undefinedundefinedundefined鼠标点击时的鼠标移入时的背景颜色
+   */
+  datePickerCellActiveHoverBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-2
    * @description undefinedundefinedundefined禁用时的颜色
    */

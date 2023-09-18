@@ -29,7 +29,7 @@ const getFormat = (format: string | undefined, type: string) => {
     case 'time':
       return 'HH:mm:ss';
     case 'week':
-      return 'GGGG WW';
+      return 'gggg ww';
     case 'year':
       return 'YYYY';
     default:
@@ -63,6 +63,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
 ) => {
   const { value, onChange, type, options = {}, range } = props;
   const format = getFormat(props.format, type);
+  const [control, setControl] = useState(false);
   const getCurrentArr = () => {
     const arr = convertValueToDateArr(value, format, options);
     const currentArr = convertValueToDateArr(props.defaultCurrent, 'YYYY-MM-DD', options);
@@ -103,7 +104,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
   };
 
   const getDateArr = () => {
-    if (edit) return stateDate;
+    if (!control) return stateDate;
     return context.cachedDateArr;
   };
 
@@ -141,6 +142,10 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
   useEffect(() => {
     handlePropsValueChange(value);
   }, [value]);
+
+  useEffect(() => {
+    setControl(!edit);
+  }, [edit]);
 
   const dateArr = getDateArr();
   const resultArr = getFormatValueArr(dateArr);

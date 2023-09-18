@@ -16,7 +16,7 @@ export default () => {
       <DatePicker
         range
         value={value}
-        type={'datetime'}
+        type={'week'}
         allowSingle
         align={'left'}
         jssStyle={{ datePicker: datePickerStyle }}

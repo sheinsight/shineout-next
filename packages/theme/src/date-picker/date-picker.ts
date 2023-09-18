@@ -57,6 +57,7 @@ const datePickerTokens: DatePickerTokens = {
   datePickerCellHoverBackgroundColor: 'Neutral-fill-2',
   datePickerCellActiveColor: 'Neutral-text-1',
   datePickerCellActiveBackgroundColor: 'Brand-6',
+  datePickerCellActiveHoverBackgroundColor: 'Brand-2',
   datePickerCellDisabledColor: 'Neutral-text-2',
   datePickerCellDisabledBackgroundColor: 'Neutral-fill-2',
   datePickerCellRangeBackgroundColor: 'Brand-1',

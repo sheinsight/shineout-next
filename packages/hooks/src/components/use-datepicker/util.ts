@@ -12,8 +12,17 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import enLocale from 'dayjs/locale/en';
 
 export type DateTimeType = Date | number | string | undefined;
-export type Mode = 'year' | 'month' | 'quarter' | 'time' | 'day' | 'minute' | 'second' | 'hour';
-export type DateMode = Mode | 'date';
+export type Mode =
+  | 'year'
+  | 'month'
+  | 'quarter'
+  | 'time'
+  | 'day'
+  | 'minute'
+  | 'second'
+  | 'hour'
+  | 'week';
+export type DateMode = Mode | 'date' | 'weekday';
 
 // import { DateTimeType } from './Props';
 // import { DateMode } from './Props';
@@ -49,7 +58,7 @@ export const compatibleFmt = (fmt?: string) => {
     a: 'A',
     t: 'X',
     T: 'x',
-    RRRR: 'GGGG',
+    RRRR: 'gggg',
     I: 'W',
   };
   let result = fmt;
@@ -193,6 +202,19 @@ function parse(d: string, fmt?: string, options?: DateOptions) {
       .toDate();
     return transDateWithZone(result, options, true);
   }
+
+  // handle IOS Year Week
+  const yearIndex = fmt2.indexOf('gggg');
+  if (yearIndex >= 0 && typeof date === 'string') {
+    const year = date.slice(yearIndex, yearIndex + 5);
+    const weekIndex = fmt2.indexOf('ww');
+    const week = weekIndex >= 0 ? date.slice(weekIndex, weekIndex + 3) : 1;
+    const result = dayjs(`${year}-06-15`, 'YYYY-MM-DD')
+      .locale(getDayJsLocate(options))
+      .week(Number(week))
+      .toDate();
+    return transDateWithZone(result, options, true);
+  }
   // handle Quarter
   const quarterIndex = fmt2.indexOf('Q');
   if (quarterIndex >= 0 && typeof date === 'string') {
@@ -293,9 +315,9 @@ function compareMonth(dateLeft: Date, dateRight: Date, pad = 0, options: DateOpt
 
 function compareWeek(dateLeft: Date, dateRight: Date, pad = 0, options: DateOptions) {
   if (!dateLeft || !dateRight) return 0;
-  const left = dayjs(transDateWithZone(dateLeft, options)).startOf('isoWeek').toDate();
+  const left = dayjs(transDateWithZone(dateLeft, options)).startOf('week').toDate();
   const right = dayjs(transDateWithZone(dateRight, options))
-    .startOf('isoWeek')
+    .startOf('week')
     .add(pad, 'week')
     .toDate();
   return compareAsc(left, right);
@@ -378,7 +400,7 @@ function compareDateArray(arr1: Date[], arr2: Date[], type = 'date', options: Da
   return arr1.every((v, i) => {
     if (!v || !arr2[i]) return false;
     if (type === 'week')
-      return format(v, 'GGGG WW', options) === format(arr2[i], 'GGGG WW', options);
+      return format(v, 'gggg ww', options) === format(arr2[i], 'gggg ww', options);
     return v.getTime() === arr2[i].getTime();
   });
 }

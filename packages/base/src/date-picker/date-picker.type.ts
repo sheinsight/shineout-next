@@ -41,6 +41,7 @@ export interface DatePickerClasses {
   pickerHeaderInfo: string;
   pickerBody: string;
   pickerRow: string;
+  pickerRowWeek: string;
   pickerCell: string;
   pickerCellContent: string;
   pickerCellActive: string;

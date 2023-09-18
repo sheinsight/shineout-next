@@ -65,7 +65,11 @@ const datePickerTokenExtraValue = {
     hot: { height: 'Size-12' },
     height: 'Size-16',
     hover: { color: 'Neutral-text-5', background: { color: 'Neutral-fill-2' } },
-    active: { color: 'Neutral-text-1', background: { color: 'Brand-6' } },
+    active: {
+      color: 'Neutral-text-1',
+      background: { color: 'Brand-6' },
+      hover: { background: { color: 'Brand-2' } },
+    },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-2' } },
     range: { background: { color: 'Brand-1' } },
     other: { color: 'Neutral-text-2' },
