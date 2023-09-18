@@ -7,8 +7,14 @@ export interface DescriptionsClasses {
    * 最外层class
    */
   wrapper: string;
-
-  //...
+  header: string;
+  title: string;
+  extra: string;
+  body: string;
+  table: string;
+  row: string;
+  label: string;
+  value: string;
 }
 
 export interface DescriptionsProps
@@ -16,14 +22,6 @@ export interface DescriptionsProps
     BaseDescriptionsProps {
   jssStyle?: {
     descriptions: DescriptionsClasses;
-    header: DescriptionsClasses;
-    title: DescriptionsClasses;
-    extra: DescriptionsClasses;
-    body: DescriptionsClasses;
-    table: DescriptionsClasses;
-    row: DescriptionsClasses;
-    label: DescriptionsClasses;
-    value: DescriptionsClasses;
   };
   border?: boolean;
   extra?: ReactNode;

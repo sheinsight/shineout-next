@@ -13,22 +13,22 @@ const Descriptions = (props: DescriptionsProps) => {
   const rootClassName = classNames(className, jssStyle?.descriptions.wrapper);
 
   const Header = () => (
-    <div className={jssStyle?.header.wrapper}>
-      {title && <div className={jssStyle?.title.wrapper}>{title}</div>}
-      {extra && <div className={jssStyle?.extra.wrapper}>{extra}</div>}
+    <div className={jssStyle?.descriptions.header}>
+      {title && <div className={jssStyle?.descriptions.title}>{title}</div>}
+      {extra && <div className={jssStyle?.descriptions.extra}>{extra}</div>}
     </div>
   );
 
   const renderHorizontal = (d: DescriptionsItemProps[], i: number) => (
-    <tr key={i} className={jssStyle?.row.wrapper}>
+    <tr key={i} className={jssStyle?.descriptions.row}>
       {d.map((_d, _i) => {
         return (
           <Fragment key={_d.key || _i}>
-            <td className={jssStyle?.label.wrapper} style={_d.labelStyle}>
+            <td className={jssStyle?.descriptions.label} style={_d.labelStyle}>
               {_d.label}
               {colon}
             </td>
-            <td className={jssStyle?.value.wrapper} style={_d.valueStyle}>
+            <td className={jssStyle?.descriptions.value} style={_d.valueStyle}>
               {_d.value}
             </td>
           </Fragment>
@@ -44,8 +44,8 @@ const Descriptions = (props: DescriptionsProps) => {
   return (
     <div className={rootClassName} style={style}>
       <Header />
-      <div className={jssStyle?.body.wrapper}>
-        <table className={jssStyle?.table.wrapper} cellPadding={0} cellSpacing={0}>
+      <div className={jssStyle?.descriptions.body}>
+        <table className={jssStyle?.descriptions.table} cellPadding={0} cellSpacing={0}>
           <tbody>{renderItem.map((d, i) => renderHandle(d, i))}</tbody>
         </table>
       </div>
