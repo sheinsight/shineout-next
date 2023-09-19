@@ -148,16 +148,6 @@ export default createUseStyles(
       margin: 0,
       padding: 0,
       transition: 'all ease 0.3s',
-      '&::after': {
-        content: '" "',
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        width: 1,
-        height: '100%',
-        backgroundColor: '#E8EBF0',
-        zIndex: 0,
-      },
       '& a': {
         position: 'relative',
         display: 'block',
@@ -186,6 +176,15 @@ export default createUseStyles(
         },
         '&:hover': {
           color: '#197AFA',
+        },
+        '&::after': {
+          content: '" "',
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: 1,
+          height: 28,
+          backgroundColor: '#E8EBF0',
         },
       },
     },
