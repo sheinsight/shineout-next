@@ -16,6 +16,8 @@ export interface TreeListProps<DataItem>
   childrenKey: keyof DataItem;
   parentClickExpand?: boolean;
   childrenClassName?: string;
+  iconClass?: string;
+  leafClass?: string;
   childrenClass: (data: DataItem) => string | undefined;
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   renderItem: TreeRenderItemType<DataItem>;

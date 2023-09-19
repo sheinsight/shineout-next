@@ -13,7 +13,8 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     active,
     data,
     line,
-    // expandIcons,
+    iconClass,
+    expandIcons,
     renderItem,
     expanded,
     childrenKey,
@@ -31,6 +32,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   });
   const contentClass = classNames(contentStyle.content);
   const textClass = classNames(contentStyle.text);
+  const hasExpandIcons = expandIcons !== undefined;
 
   const handleIndicatorClick = () => {
     onToggle();
@@ -55,7 +57,6 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   // const renderLoading = () => {
   //   return <Spin name="ring" size={12} jssStyle={jssStyle}></Spin>
   // };
-
   const renderIndicator = () => {
     const children = data[childrenKey] as DataItem[];
 
@@ -63,22 +64,34 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
       return null;
     }
 
-    // const icon = expandIcons || Icons.TreeArrow;
+    const icon = expandIcons
+      ? expandIcons[expanded ? 1 : 0]
+      : expanded
+      ? Icons.TreeMinus
+      : Icons.TreePlus;
 
     if (line) {
       return (
-        <span style={{ position: 'absolute', left: 12, top: 6 }} data-expanded={expanded}>
-          <span className={contentStyle.icon} onClick={handleIndicatorClick}>
-            {expanded ? Icons.TreeMinus : Icons.TreePlus}
+        <span
+          style={{ position: 'absolute', left: 12, top: 6 }}
+          data-expanded={expanded}
+          data-icon={hasExpandIcons}
+        >
+          <span className={classNames(contentStyle.icon, iconClass)} onClick={handleIndicatorClick}>
+            {util.isFunc(icon) ? icon(data) : icon}
           </span>
         </span>
       );
     }
 
     return (
-      <span className={contentStyle.iconWrapper} data-expanded={expanded}>
-        <span className={contentStyle.icon} onClick={handleIndicatorClick}>
-          {Icons.TreeArrow}
+      <span
+        className={contentStyle.iconWrapper}
+        data-expanded={expanded}
+        data-icon={hasExpandIcons}
+      >
+        <span className={classNames(contentStyle.icon, iconClass)} onClick={handleIndicatorClick}>
+          {util.isFunc(icon) ? icon(data) : hasExpandIcons ? icon : Icons.TreeArrow}
         </span>
       </span>
     );

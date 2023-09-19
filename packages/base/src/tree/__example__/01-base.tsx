@@ -75,9 +75,16 @@ export default () => {
         change data
       </button>
       <Tree
+        mode={1}
+        // line={false}
         expanded={expand}
         value={value}
-        mode={0}
+        keygen='id'
+        doubleClickExpand
+        // parentClickExpand
+        // iconClass='aaaaaa-wwwwwwww'
+        // expandIcons={['😄', '🥹']}
+        // leafClass='bbbb-ccccc'
         onExpand={handleExpand}
         onChange={handleChange}
         jssStyle={{ tree: treeStyle, checkbox: checkboxStyle }}

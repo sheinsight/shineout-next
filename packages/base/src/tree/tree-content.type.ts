@@ -16,7 +16,9 @@ export interface TreeContextProps<DataItem>
   line: boolean;
   active: boolean;
   expanded: boolean;
-  expandIcons?: [React.ReactNode, React.ReactNode];
+  iconClass?: string;
+  leafClass?: string;
+  expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
   childrenClass?: ((data: DataItem) => string) | string;

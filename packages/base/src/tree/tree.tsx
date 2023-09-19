@@ -13,13 +13,18 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     mode,
     keygen,
     expanded,
+    expandIcons,
+    iconClass,
+    leafClass,
     renderItem,
+    defaultValue,
     dataUpdate = true,
     childrenClass,
     defaultExpandAll,
     defaultExpanded,
     parentClickExpand,
     doubleClickExpand,
+    dragImageSelector,
     // onClick,
     onExpand,
     onChange,
@@ -30,6 +35,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     data,
     dataUpdate,
     expanded,
+    defaultValue,
     defaultExpandAll,
     defaultExpanded,
     childrenKey: childrenKey as keyof DataItem,
@@ -42,10 +48,13 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     [treeStyle.noline]: !line,
   });
 
-  const handleNodeClick = (node: DataItem, id: KeygenResult) => {
-    console.log('node', node);
-    console.log('id', id);
+  const getDragImageSelector = (data?: DataItem) => {
+    if (util.isFunc(dragImageSelector)) return dragImageSelector(data);
+    return dragImageSelector;
   };
+
+  const handleNodeClick = () => {};
+  // const handleNodeClick = (node: DataItem, id: KeygenResult) => {};
 
   const handleToggle = (id: KeygenResult) => {
     let newExpanded;
@@ -77,6 +86,9 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           line={line}
           keygen={keygen}
           onChange={onChange}
+          iconClass={iconClass}
+          leafClass={leafClass}
+          expandIcons={expandIcons}
           childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}
           bindNode={func.bindNode}
           childrenKey={childrenKey as keyof DataItem}
@@ -85,6 +97,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           onToggle={onToggle}
           parentClickExpand={parentClickExpand}
           doubleClickExpand={doubleClickExpand}
+          dragImageSelector={getDragImageSelector}
         ></RootTree>
       </Provider>
     </div>

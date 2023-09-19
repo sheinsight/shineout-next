@@ -20,6 +20,9 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     style,
     onChange,
     renderItem,
+    iconClass,
+    leafClass,
+    expandIcons,
     childrenKey,
     onNodeClick,
     onToggle,
@@ -27,6 +30,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     childrenClass,
     childrenClassName,
     parentClickExpand,
+    doubleClickExpand,
   } = props;
 
   if (!expanded && !hasExpanded.current) return null;
@@ -59,8 +63,12 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         childrenClass={childrenClass}
         childrenKey={childrenKey}
         renderItem={renderItem}
+        iconClass={iconClass}
+        leafClass={leafClass}
+        expandIcons={expandIcons}
         bindNode={bindNode}
         parentClickExpand={parentClickExpand}
+        doubleClickExpand={doubleClickExpand}
         onNodeClick={onNodeClick}
         onToggle={onToggle}
         onChange={onChange}

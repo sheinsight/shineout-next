@@ -14,6 +14,10 @@ export interface TreeRootProps<DataItem> extends Omit<BaseTreeProps<DataItem>, '
   doubleClickExpand?: boolean;
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
+  iconClass?: string;
+  leafClass?: string;
+  expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
+  dragImageSelector: (data?: DataItem) => string | undefined;
   onToggle?: (id: KeygenResult, expanded: boolean) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   onChange?: (value: KeygenResult[]) => void;

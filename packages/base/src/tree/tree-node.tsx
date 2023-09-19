@@ -14,9 +14,14 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     line,
     renderItem,
     parentClickExpand,
+    doubleClickExpand,
+    iconClass,
+    leafClass,
+    expandIcons,
     keygen,
     mode,
     childrenKey,
+    dragImageSelector,
     childrenClass,
     bindNode,
     onChange,
@@ -24,14 +29,21 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     onToggle,
     listComponent: List,
   } = props;
-
   const { getChecked } = useTreeContext();
-  const { active, expanded, getRootProps } = useTreeNode({ id, bindNode, onToggle });
+  const { expanded, getRootProps, isLeaf } = useTreeNode({
+    id,
+    data,
+    bindNode,
+    onToggle,
+    childrenKey,
+    dragImageSelector,
+  });
+
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
 
   const contentStyle = jssStyle?.tree || ({} as TreeClasses);
-  const rootClass = classNames(contentStyle.node, {
+  const rootClass = classNames(contentStyle.node, isLeaf() && leafClass, {
     [contentStyle.leaf]: !hasChildren,
   });
 
@@ -43,7 +55,10 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       keygen,
       jssStyle,
       renderItem,
+      expandIcons,
       childrenKey,
+      iconClass,
+      leafClass,
       parentClickExpand,
       expanded,
       line,
@@ -72,12 +87,15 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         line={line}
         data={data}
         mode={mode}
-        active={active}
         keygen={keygen}
         bindNode={bindNode}
         childrenKey={childrenKey}
         renderItem={renderItem}
+        iconClass={iconClass}
+        leafClass={leafClass}
+        expandIcons={expandIcons}
         parentClickExpand={parentClickExpand}
+        doubleClickExpand={doubleClickExpand}
         onChange={onChange}
         onFetch={handleFetch}
         onNodeClick={onNodeClick}

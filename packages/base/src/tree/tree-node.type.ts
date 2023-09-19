@@ -16,13 +16,21 @@ export interface TreeNodeProps<DataItem>
   index: number;
   line: boolean;
   expanded?: boolean;
+  doubleClickExpand?: boolean;
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
   onChange?: (value: KeygenResult[]) => void;
   onToggle?: (id: KeygenResult, expanded: boolean) => void;
+  iconClass?: string;
+  leafClass?: string;
+  expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass: (data: DataItem) => string | undefined;
-  bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
+  bindNode: (
+    id: 'expanded' | 'active' | 'fetching',
+    update: UpdateFunc,
+  ) => { expanded: boolean; active: boolean };
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
   listComponent: (props: TreeListProps<DataItem>) => JSX.Element | null;
+  dragImageSelector: (data?: DataItem) => string | undefined;
 }

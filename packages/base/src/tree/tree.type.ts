@@ -33,11 +33,15 @@ export interface TreeProps<DataItem>
     checkbox: CheckboxClasses;
   };
   line?: boolean;
+  iconClass?: string;
+  leafClass?: string;
+  expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass?: ((data: DataItem) => string) | string;
   onDrop?: (data: DataItem[], key: KeygenResult, targetKey: KeygenResult, position: number) => void;
   active?: string | number;
   doubleClickExpand?: boolean;
   parentClickExpand?: boolean;
+  dragImageSelector?: ((data?: DataItem) => string) | string;
   onExpand?: (value: KeygenResult[]) => void;
   renderItem: TreeRenderItemType<DataItem>;
   onChange?: (value: KeygenResult[]) => void;

@@ -67,10 +67,12 @@ const treeStyle: JsStyles<TreeClass> = {
     },
   },
   noline: {
-    '& $icon': {
-      transform: 'rotate(-90deg)',
+    '& $iconWrapper[data-expanded="false"][data-icon="false"]': {
+      '& $icon': {
+        transform: 'rotate(-90deg)',
+      },
     },
-    '& $iconWrapper[data-expanded^="true"]': {
+    '& $iconWrapper[data-expanded="true"][data-icon="false"]': {
       '& $icon': {
         transform: 'rotate(0deg)',
       },
@@ -134,7 +136,7 @@ const treeStyle: JsStyles<TreeClass> = {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    '&[data-expanded^="true"]': {
+    '&[data-expanded="true"][data-icon="false"]': {
       '& $icon': {
         transform: 'rotate(0deg)',
       },
