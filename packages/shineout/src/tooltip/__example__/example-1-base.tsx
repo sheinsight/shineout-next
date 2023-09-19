@@ -13,7 +13,7 @@ const fontStyle = { fontSize: 20, lineHeight: 1, margin: 4 };
 
 const App: React.FC = () => (
   <div>
-    <Tooltip tip='Some text.' position='left'>
+    <Tooltip tip='Some text.' position='left-bottom'>
       <span style={fontStyle}>left</span>
     </Tooltip>
     <Tooltip tip='Some text.' position='top'>

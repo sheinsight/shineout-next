@@ -1,5 +1,5 @@
 import React, { RefAttributes } from 'react';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import Radio from '..';
 import { Form } from 'shineout';
 import mountTest from '../../tests/mountTest';
@@ -29,18 +29,17 @@ import { RadioGroupProps } from '../group.type';
 
 const SO_PREFIX = 'radio';
 const radioClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
-const radioCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-2`;
-const radioIndicatorWrapper = `.${SO_PREFIX}-indicatorWrapper-0-2-4`;
-const radioDescClassName = `.${SO_PREFIX}-desc-0-2-6`;
-const radioBaseCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-2`;
-const radioGroupClassName = `.${SO_PREFIX}-group-0-2-7`;
-const radioBlockClassName = `${SO_PREFIX}-groupBlock-0-2-8`;
-const radioGroupButtonClassName = `${SO_PREFIX}-groupButton-0-2-9`;
-const buttonGroupClassName = 'button-group-0-2-30';
-const radioDisabledClassName = `${SO_PREFIX}-wrapperDisabled-0-2-3`;
-const radioOutlineClassName = 'button-outline-0-2-20';
-const buttonSmallClassName = 'button-small-0-2-11';
-const buttonLargeClassName = 'button-large-0-2-12';
+const radioCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-4`;
+const radioIndicatorWrapper = `.${SO_PREFIX}-indicatorWrapper-0-2-6`;
+const radioDescClassName = `.${SO_PREFIX}-desc-0-2-8`;
+const radioGroupClassName = `.${SO_PREFIX}-group-0-2-9`;
+const radioBlockClassName = `${SO_PREFIX}-groupBlock-0-2-10`;
+const radioGroupButtonClassName = `${SO_PREFIX}-groupButton-0-2-11`;
+const buttonGroupClassName = 'button-group-0-2-32';
+const radioDisabledClassName = `${SO_PREFIX}-wrapperDisabled-0-2-5`;
+const radioOutlineClassName = 'button-outline-0-2-22';
+const buttonSmallClassName = 'button-small-0-2-13';
+const buttonLargeClassName = 'button-large-0-2-14';
 
 const renderData = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
 const preData = [
@@ -54,6 +53,12 @@ function createRadioGroup<DataItem, Value>(
   return <Radio.Group data={data} keygen={keygen} {...other} />;
 }
 // const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
+beforeAll(() => {
+  jest.useFakeTimers();
+});
+afterAll(() => {
+  jest.runAllTimers();
+});
 afterEach(cleanup);
 describe('Radio[Base]', () => {
   const defaultValue = 'blue';
@@ -94,11 +99,10 @@ describe('Radio[Base]', () => {
     classLengthTest(container, radioDescClassName, 1);
     textContentTest(container.querySelector(radioDescClassName)!, 'Option');
     fireEvent.click(container.querySelector(radioClassName)!);
-    classTest(container.querySelector(radioClassName)!, radioBaseCheckedClassName);
+    classTest(container.querySelector(radioClassName)!, radioCheckedClassName);
   });
   test('should render radios while through data', () => {
     const { container } = render(<RadioGroup />);
-    screen.debug();
     container.querySelectorAll(radioClassName).forEach((radio, index) => {
       classLengthTest(radio, 'input', 1);
       textContentTest(radio, renderData[index]);
@@ -159,7 +163,6 @@ describe('Radio[Raw]', () => {
 describe('Radio[Block]', () => {
   test('should render radios as block', () => {
     const { container } = render(<RadioBlock />);
-    screen.debug();
     const radios = container.querySelectorAll(radioGroupClassName);
     classTest(radios[1], radioBlockClassName);
   });
@@ -167,7 +170,6 @@ describe('Radio[Block]', () => {
 describe('Radio[Button]', () => {
   test('should render radios when set button', () => {
     const { container } = render(<RadioButton />);
-    screen.debug();
     const radios = container.querySelectorAll(radioGroupClassName);
     radios.forEach((radio) => {
       classTest(radio, radioGroupButtonClassName);
@@ -191,7 +193,6 @@ describe('Radio[Button]', () => {
 describe('Radio[ButtonOutline]', () => {
   test('should render radios when set ontline', () => {
     const { container } = render(<RadioButtonOutline />);
-    screen.debug();
     container.querySelectorAll('button').forEach((button) => {
       classTest(button, radioOutlineClassName);
     });
@@ -200,7 +201,6 @@ describe('Radio[ButtonOutline]', () => {
 describe('Radio[ButtonSize]', () => {
   test('should render radios when set different size', () => {
     const { container } = render(<RadioSize />);
-    screen.debug();
     const radios = container.querySelectorAll(radioGroupClassName)!;
     radios[0].querySelectorAll('button').forEach((button) => {
       classTest(button, buttonSmallClassName);
@@ -213,7 +213,6 @@ describe('Radio[ButtonSize]', () => {
 describe('Radio[Disabled]', () => {
   test('should disabled on each input', () => {
     const { container } = render(<RadioDisabled />);
-    screen.debug();
     container.querySelectorAll(radioClassName).forEach((radio) => {
       classTest(radio, radioDisabledClassName);
       attributesTest(radio.querySelector('input')!, 'disabled', '');
@@ -244,7 +243,6 @@ describe('Radio[DisabledFunc]', () => {
     const { container } = render(
       <Radio.Group keygen data={renderData} disabled={(d: any) => d === 'yellow'} />,
     );
-    screen.debug();
     expect(container.querySelectorAll('.' + radioDisabledClassName).length).toBe(1);
     expect(container.querySelector('.' + radioDisabledClassName)?.textContent).toBe('yellow');
   });
@@ -262,7 +260,6 @@ describe('Radio[Cancel]', () => {
   test('should render while set cancel function', () => {
     const { container } = render(<RadioCancel />);
     const defaultValue = 'red';
-    screen.debug();
     textContentTest(container.querySelector('.' + radioCheckedClassName)!, 'red');
     container.querySelectorAll(radioClassName).forEach((radio) => {
       if (defaultValue === radio.textContent) return;
@@ -451,7 +448,6 @@ describe('Radio[Value]', () => {
     const { container } = render(
       <Radio.Group keygen data={renderData} onChange={changeFn} value={defaultValue} />,
     );
-    screen.debug();
     classLengthTest(container, '.' + radioCheckedClassName, defaultValue.length);
     container.querySelectorAll(radioClassName).forEach((radio) => {
       if (!radio.classList.contains(`${SO_PREFIX}-wrapperChecked-0-2-3`)) return;

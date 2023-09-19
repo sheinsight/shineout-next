@@ -265,10 +265,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -315,10 +314,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -365,10 +363,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -415,10 +412,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -465,10 +461,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -519,10 +514,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -569,10 +563,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -619,10 +612,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -669,10 +661,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -719,10 +710,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -773,10 +763,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -823,10 +812,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -873,10 +861,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -923,10 +910,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -973,10 +959,9 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -1028,10 +1013,9 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
     </span>
   </button>
   <div
-    class="so-dropdown-list"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="opacity: 0; pointer-events: none; display: none;"
   >
     <div
       class="so-dropdown-wrapper"
@@ -1062,10 +1046,9 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -1123,10 +1106,9 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -1184,10 +1166,9 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -1245,10 +1226,9 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -1306,10 +1286,9 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <a
           class="so-dropdown-item"
@@ -1371,10 +1350,9 @@ exports[`Dropdown[Base] should render correctly about columns 1`] = `
     </span>
   </button>
   <div
-    class="so-dropdown-list so-dropdown-box-list"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; width: 500px; grid-template-columns: repeat(5, 1fr); display: none; opacity: 1;"
+    class="dropdown-list-0-2-3 dropdown-boxList-0-2-6 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 dropdown-boxList-0-2-6 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="width: 500px; grid-template-columns: repeat(5, 1fr); opacity: 0; pointer-events: none; display: none;"
   >
     <a
       class="so-dropdown-item"
@@ -1559,10 +1537,9 @@ exports[`Dropdown[Base] should render correctly about divider 1`] = `
     </span>
   </button>
   <div
-    class="so-dropdown-list"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="opacity: 0; pointer-events: none; display: none;"
   >
     <a
       class="so-dropdown-item"
@@ -1620,10 +1597,9 @@ exports[`Dropdown[Base] should render correctly about group 1`] = `
     </span>
   </button>
   <div
-    class="so-dropdown-list"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="opacity: 0; pointer-events: none; display: none;"
   >
     <div
       class="so-dropdown-option-group"
@@ -1688,10 +1664,9 @@ exports[`Dropdown[Base] should render correctly about hover 1`] = `
     </span>
   </button>
   <div
-    class="so-dropdown-list"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="opacity: 0; pointer-events: none; display: none;"
   >
     <a
       class="so-dropdown-item"
@@ -1751,10 +1726,9 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
     </span>
   </button>
   <div
-    class="so-dropdown-list"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+    style="opacity: 0; pointer-events: none; display: none;"
   >
     <div
       class="so-dropdown-item"
@@ -1865,10 +1839,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -1899,10 +1872,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -1945,10 +1917,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -1984,10 +1955,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -2033,10 +2003,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -2067,10 +2036,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2113,10 +2081,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2152,10 +2119,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -2201,10 +2167,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -2235,10 +2200,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2281,10 +2245,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2320,10 +2283,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -2373,10 +2335,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -2407,10 +2368,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2453,10 +2413,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2492,10 +2451,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -2541,10 +2499,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -2575,10 +2532,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2621,10 +2577,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2660,10 +2615,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -2713,10 +2667,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -2747,10 +2700,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2793,10 +2745,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2832,10 +2783,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -2881,10 +2831,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -2915,10 +2864,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -2961,10 +2909,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3000,10 +2947,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -3053,10 +2999,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -3087,10 +3032,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3133,10 +3077,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3172,10 +3115,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -3221,10 +3163,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -3255,10 +3196,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3301,10 +3241,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3340,10 +3279,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -3393,10 +3331,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -3427,10 +3364,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3473,10 +3409,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3512,10 +3447,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -3561,10 +3495,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -3595,10 +3528,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3641,10 +3573,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3680,10 +3611,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -3729,10 +3659,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="so-dropdown-list"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+        style="opacity: 0; pointer-events: none; display: none;"
       >
         <div
           class="so-dropdown-wrapper"
@@ -3763,10 +3692,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3809,10 +3737,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="so-dropdown-list"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+            style="opacity: 0; pointer-events: none; display: none;"
           >
             <a
               class="so-dropdown-item"
@@ -3848,10 +3775,9 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="so-dropdown-list"
-                data-sheinx-animation-duration="fast"
-                data-sheinx-animation-type="fade"
-                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+                style="opacity: 0; pointer-events: none; display: none;"
               >
                 <a
                   class="so-dropdown-item"
@@ -3904,10 +3830,9 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <div
-      class="so-dropdown-list so-dropdown-list-small"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="fade"
-      style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+      class="dropdown-list-0-2-3 dropdown-listSmall-0-2-4 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      data-class="dropdown-list-0-2-3 dropdown-listSmall-0-2-4 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      style="opacity: 0; pointer-events: none; display: none;"
     >
       <a
         class="so-dropdown-item"
@@ -3960,10 +3885,9 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <div
-      class="so-dropdown-list"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="fade"
-      style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+      class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      style="opacity: 0; pointer-events: none; display: none;"
     >
       <a
         class="so-dropdown-item"
@@ -4016,10 +3940,9 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <div
-      class="so-dropdown-list so-dropdown-list-large"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="fade"
-      style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+      class="dropdown-list-0-2-3 dropdown-listLarge-0-2-5 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      data-class="dropdown-list-0-2-3 dropdown-listLarge-0-2-5 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      style="opacity: 0; pointer-events: none; display: none;"
     >
       <a
         class="so-dropdown-item"
@@ -4091,10 +4014,9 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
       </span>
     </button>
     <div
-      class="so-dropdown-list"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="fade"
-      style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
+      class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
+      style="opacity: 0; pointer-events: none; display: none;"
     >
       <a
         class="so-dropdown-item"
