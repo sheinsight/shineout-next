@@ -32,6 +32,8 @@ const getFormat = (format: string | undefined, type: string) => {
       return 'gggg ww';
     case 'year':
       return 'YYYY';
+    case 'quarter':
+      return 'YYYY-[Q]Q';
     default:
       return 'YYYY-MM-DD';
   }

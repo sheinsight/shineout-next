@@ -3,6 +3,7 @@ import { PickerProps } from './picker.type';
 import Day from './day';
 import Month from './month';
 import Year from './year';
+import Quarter from './quarter';
 import { useDatePickerRange } from '@sheinx/hooks';
 
 const Picker = (props: PickerProps) => {
@@ -44,6 +45,9 @@ const Picker = (props: PickerProps) => {
       jssStyle,
       position,
     };
+    if (mode === 'quarter') {
+      return <Quarter {...commonProps} />;
+    }
 
     if (mode === 'year') {
       return <Year {...commonProps} />;

@@ -1,6 +1,6 @@
 import { DatePickerProps } from './date-picker.type';
 
-export interface MonthProps {
+export interface QuarterProps {
   current: Date;
   setMode: (mode: string) => void;
   rangeDate: Array<Date | undefined>;

@@ -370,10 +370,10 @@ export interface DatePickerTokens {
   datePickerDayPickerWidth: string;
   /**
    * @type {string}
-   * @token Size-12
-   * @description undefinedundefinedundefinedundefinedundefined宽度
+   * @token Size-142
+   * @description undefinedundefinedundefinedundefined宽度
    */
-  datePickerDayCellHotWidth: string;
+  datePickerWeekPickerWidth: string;
   /**
    * @type {string}
    * @token Size-124
@@ -398,4 +398,16 @@ export interface DatePickerTokens {
    * @description undefinedundefinedundefinedundefinedundefined宽度
    */
   datePickerMonthCellHotWidth: string;
+  /**
+   * @type {string}
+   * @token Size-124
+   * @description undefinedundefinedundefinedundefined宽度
+   */
+  datePickerQuarterPickerWidth: string;
+  /**
+   * @type {string}
+   * @token Size-28
+   * @description undefinedundefinedundefinedundefinedundefined宽度
+   */
+  datePickerQuarterCellHotWidth: string;
 }

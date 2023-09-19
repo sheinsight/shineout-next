@@ -1,34 +1,32 @@
-import { YearProps } from './year.type';
-import { usePersistFn, useYearPick } from '@sheinx/hooks';
+import { QuarterProps } from './quarter.type';
+import { useQuarterPick } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import React from 'react';
 
-const Year = (props: YearProps) => {
+const Quarter = (props: QuarterProps) => {
   const { jssStyle } = props;
   const styles = jssStyle?.datePicker;
-  const shouldChange = props.type === 'year';
-  const changeMode = usePersistFn(() => {
-    props.setMode('month');
-  });
-  const { currentStart, currentEnd, func } = useYearPick({
+  const { currentYear, func } = useQuarterPick({
     current: props.current,
-    rangeDate: shouldChange ? props.rangeDate : undefined,
+    rangeDate: props.rangeDate,
     onCurrentChange: props.setCurrent,
-    value: shouldChange ? props.value : undefined,
-    onChange: shouldChange ? props.onChange : changeMode,
+    value: props.value,
+    onChange: props.onChange,
     min: props.min,
     max: props.max,
-    disabled: shouldChange ? props.disabled : undefined,
+    disabled: props.disabled,
     options: props.options,
   });
 
-  const years = func.getYears();
-  const colNum = 3;
-  const rowNum = years.length / colNum;
+  const quarter = func.getQuarters();
+  const colNum = 4;
+  const rowNum = 1;
 
-  const renderYear = (item: Date, index: number) => {
+  // console.log('quarter', quarter);
+  const renderQuarter = (item: Date, index: number) => {
     const isInRange = func.isInRange(item);
+
     return (
       <td
         className={classNames(
@@ -50,17 +48,17 @@ const Year = (props: YearProps) => {
         <div
           className={jssStyle?.datePicker?.pickerCellContent}
           onClick={() => {
-            func.handleYearClick(item);
+            func.handleQuarterClick(item);
           }}
         >
-          <span>{func.getYearStr(item)}</span>
+          <span>Q{func.getQuarterStr(item)}</span>
         </div>
       </td>
     );
   };
 
   return (
-    <div className={classNames(jssStyle?.datePicker?.yearPicker, jssStyle?.datePicker?.picker)}>
+    <div className={classNames(jssStyle?.datePicker?.quarterPicker, jssStyle?.datePicker?.picker)}>
       <div className={jssStyle?.datePicker?.pickerHeader}>
         <div className={jssStyle?.datePicker?.pickerHeaderLeft}>
           <span className={jssStyle?.datePicker?.pickerHeaderIcon} onClick={func.handlePrev}>
@@ -68,9 +66,14 @@ const Year = (props: YearProps) => {
           </span>
         </div>
         <div className={jssStyle?.datePicker?.pickerHeaderMid}>
-          <span>{currentStart}</span>
-          <i>-</i>
-          <span>{currentEnd}</span>
+          <span
+            className={styles?.pickerHeaderInfo}
+            onClick={() => {
+              props.setMode('year');
+            }}
+          >
+            {currentYear}
+          </span>
         </div>
         <div className={jssStyle?.datePicker.pickerHeaderRight}>
           <span className={jssStyle?.datePicker?.pickerHeaderIcon} onClick={func.handleNext}>
@@ -84,8 +87,8 @@ const Year = (props: YearProps) => {
             {Array.from({ length: rowNum }).map((_, index) => {
               return (
                 <tr key={index} className={jssStyle?.datePicker?.pickerRow}>
-                  {years.slice(index * colNum, (index + 1) * colNum).map((item, i) => {
-                    return renderYear(item, index * colNum + i);
+                  {quarter.slice(index * colNum, (index + 1) * colNum).map((item, i) => {
+                    return renderQuarter(item, index * colNum + i);
                   })}
                 </tr>
               );
@@ -97,4 +100,4 @@ const Year = (props: YearProps) => {
   );
 };
 
-export default Year;
+export default Quarter;

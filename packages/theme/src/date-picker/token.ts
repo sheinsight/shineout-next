@@ -78,9 +78,9 @@ const datePickerTokenExtraValue = {
   },
   day: {
     picker: { width: 'Size-124' },
-    cell: {
-      hot: { width: 'Size-12' },
-    },
+  },
+  week: {
+    picker: { width: 'Size-142' },
   },
   year: {
     picker: { width: 'Size-124' },
@@ -92,6 +92,12 @@ const datePickerTokenExtraValue = {
     picker: { width: 'Size-124' },
     cell: {
       hot: { width: 'Size-32' },
+    },
+  },
+  quarter: {
+    picker: { width: 'Size-124' },
+    cell: {
+      hot: { width: 'Size-28' },
     },
   },
 };

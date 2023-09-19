@@ -54,10 +54,12 @@ export interface DatePickerClasses {
 
   // 日
   dayPicker: string;
+  weekPicker: string;
   // 年
   yearPicker: string;
   // 月
   monthPicker: string;
+  quarterPicker: string;
 }
 
 export type DisabledType = 'start' | 'end';

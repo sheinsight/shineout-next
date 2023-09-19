@@ -1,10 +1,10 @@
-import { YearProps } from './year.type';
+import { MonthProps } from './month.type';
 import { usePersistFn, useMonthPick } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import React from 'react';
 
-const Day = (props: YearProps) => {
+const Month = (props: MonthProps) => {
   const { jssStyle } = props;
   const styles = jssStyle?.datePicker;
   const shouldChange = props.type === 'month';
@@ -102,4 +102,4 @@ const Day = (props: YearProps) => {
   );
 };
 
-export default Day;
+export default Month;

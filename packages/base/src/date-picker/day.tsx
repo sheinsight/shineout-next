@@ -79,7 +79,12 @@ const Day = (props: DayProps) => {
     );
   };
   return (
-    <div className={classNames(styles?.dayPicker, styles?.picker)}>
+    <div
+      className={classNames(
+        props.type === 'week' ? styles?.weekPicker : styles?.dayPicker,
+        styles?.picker,
+      )}
+    >
       <div className={styles?.pickerHeader}>
         <div className={styles?.pickerHeaderLeft}>
           <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevYear}>

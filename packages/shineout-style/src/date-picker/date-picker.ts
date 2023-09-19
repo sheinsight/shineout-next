@@ -44,7 +44,9 @@ export type DatePickerClass =
   | 'pickerCellInRangeEnd'
   | 'pickerCellBound'
   | 'yearPicker'
-  | 'monthPicker';
+  | 'weekPicker'
+  | 'monthPicker'
+  | 'quarterPicker';
 const inputBorderToken = {
   lineHeightDynamic: token.lineHeightDynamic,
   borderRadius: token.datePickerBorderRadius,
@@ -379,6 +381,19 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     },
     '& $pickerCellContent span': {
       minWidth: token.datePickerMonthCellHotWidth,
+    },
+  },
+  quarterPicker: {
+    '& table': {
+      width: token.datePickerQuarterPickerWidth,
+    },
+    '& $pickerCellContent span': {
+      minWidth: token.datePickerQuarterCellHotWidth,
+    },
+  },
+  weekPicker: {
+    '& table': {
+      width: token.datePickerWeekPickerWidth,
     },
   },
 };

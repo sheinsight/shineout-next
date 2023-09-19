@@ -65,11 +65,13 @@ const datePickerTokens: DatePickerTokens = {
   datePickerCellHeaderColor: 'Neutral-text-4',
   datePickerCellMarginY: 'Margin-4',
   datePickerDayPickerWidth: 'Size-124',
-  datePickerDayCellHotWidth: 'Size-12',
+  datePickerWeekPickerWidth: 'Size-142',
   datePickerYearPickerWidth: 'Size-124',
   datePickerYearCellHotWidth: 'Size-32',
   datePickerMonthPickerWidth: 'Size-124',
   datePickerMonthCellHotWidth: 'Size-32',
+  datePickerQuarterPickerWidth: 'Size-124',
+  datePickerQuarterCellHotWidth: 'Size-28',
 };
 
 export default datePickerTokens;
