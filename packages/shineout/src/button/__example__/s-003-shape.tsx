@@ -1,6 +1,6 @@
 /**
  * cn - 按钮形状
- *    -- 按钮分为方形、圆形、全圆角、矩形四种
+ *    -- 按钮分为矩形、全圆角、方形、圆形四种
  * en - Button shape
  *    -- Button is divided into square, circle, round, and rectangle.
  */
@@ -22,6 +22,12 @@ export default () => {
 
   return (
     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+      <Button type='primary' style={buttonStyle}>
+        Primary
+      </Button>
+      <Button type='primary' shape='round' style={buttonStyle}>
+        Primary
+      </Button>
       <Button type='primary' shape='square' style={buttonStyle}>
         <span style={iconWarpperStyle}>
           <Icon01></Icon01>
@@ -31,12 +37,6 @@ export default () => {
         <span style={iconWarpperStyle}>
           <Icon01></Icon01>
         </span>
-      </Button>
-      <Button type='primary' shape='round' style={buttonStyle}>
-        Primary
-      </Button>
-      <Button type='primary' style={buttonStyle}>
-        Primary
       </Button>
     </div>
   );

@@ -392,13 +392,13 @@ const ImageStyle: JsStyles<ImageClass> = {
   groupPile: {
     position: 'relative',
     '& $image:nth-child(1)': {
-      zIndex: 3,
+      // zIndex: 3,
     },
     '& $groupPileItem:nth-child(2)': {
       position: 'absolute',
       borderWidth: 0,
       top: 1,
-      zIndex: 2,
+      zIndex: -1,
       marginLeft: 0,
       transform: 'scale(0.9375)',
       background: '#CCCFD7',
@@ -409,7 +409,7 @@ const ImageStyle: JsStyles<ImageClass> = {
       position: 'absolute',
       borderWidth: 0,
       top: 1,
-      zIndex: 1,
+      zIndex: -2,
       marginLeft: 0,
       transform: 'scale(0.875)',
       background: '#E8EBF0',
@@ -430,7 +430,6 @@ const ImageStyle: JsStyles<ImageClass> = {
     height: 20,
     backgroundColor: 'rgba(2, 11, 24, 0.3)',
     borderRadius: '4px 0 4px 0',
-    zIndex: 4,
     padding: 4,
     boxSizing: 'border-box',
     display: 'flex',

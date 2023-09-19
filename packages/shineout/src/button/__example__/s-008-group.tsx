@@ -1,6 +1,6 @@
 /**
  * cn - 组合按钮
- *    -- 可用在同级多项操作，以按钮组合方式出现。
+ *    -- 可用在同级多项操作，以按钮组合方式出现
  * en - Group
  *    -- Can be used in the same level of multiple operations, in the form of button group.
  */
@@ -38,13 +38,6 @@ export default () => {
         <Button>Publish</Button>
         <Button>Publish</Button>
       </Button.Group>
-
-      <div>
-        <Button type='primary'>Primary</Button>
-        <Button type='secondary'>Secondary</Button>
-        <Button type='secondary'>Secondary</Button>
-        <Button type='secondary'>Secondary</Button>
-      </div>
 
       <div style={{ display: 'flex', gap: 24 }}>
         <Button.Group type='primary'>
