@@ -9,6 +9,7 @@ export interface TreeClasses {
   line: string;
   noline: string;
   content: string;
+  childnode: string;
   checkbox: string;
   contentWrapper: string;
   text: string;

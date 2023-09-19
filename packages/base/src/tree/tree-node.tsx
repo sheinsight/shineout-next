@@ -1,8 +1,9 @@
-import { createElement } from 'react';
+import { useMemo, createElement } from 'react';
 import classNames from 'classnames';
 import { TreeClasses } from './tree.type';
 import { TreeNodeProps } from './tree-node.type';
 import TreeContent from './tree-content';
+import { useTreeContext } from './tree-context';
 import { useTreeNode } from '@sheinx/hooks';
 
 const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
@@ -14,16 +15,18 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     renderItem,
     parentClickExpand,
     keygen,
+    mode,
     childrenKey,
     childrenClass,
-    registerUpdate,
+    bindNode,
     onChange,
     onNodeClick,
-    // className,
+    onToggle,
     listComponent: List,
   } = props;
 
-  const { active, expanded, getRootProps } = useTreeNode({ id, registerUpdate });
+  const { getChecked } = useTreeContext();
+  const { active, expanded, getRootProps } = useTreeNode({ id, bindNode, onToggle });
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
 
@@ -45,9 +48,11 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       expanded,
       line,
       data: children,
+      mode,
       onChange,
+      onToggle,
       onNodeClick,
-      registerUpdate,
+      bindNode,
       childrenClass,
       childrenClassName: childrenClass(data),
     };
@@ -55,20 +60,21 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
 
   const handleFetch = () => {};
 
-  // const handleToggle = () => {};
-
   const handleDragOver = () => {};
 
-  return (
-    <div className={rootClass}>
+  const checked = getChecked(id);
+
+  const renderContent = useMemo(() => {
+    return (
       <TreeContent
         jssStyle={jssStyle}
         id={id}
         line={line}
         data={data}
+        mode={mode}
         active={active}
         keygen={keygen}
-        registerUpdate={registerUpdate}
+        bindNode={bindNode}
         childrenKey={childrenKey}
         renderItem={renderItem}
         parentClickExpand={parentClickExpand}
@@ -78,6 +84,12 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         onDragOver={handleDragOver}
         {...rootProps}
       ></TreeContent>
+    );
+  }, [checked, expanded]);
+
+  return (
+    <div className={rootClass}>
+      {renderContent}
       {hasChildren && createElement(List, getChildrenListProps())}
     </div>
   );

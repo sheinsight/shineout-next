@@ -11,6 +11,7 @@ export interface TreeContextProps<DataItem>
 
   id: KeygenResult;
   parentClickExpand?: boolean;
+  doubleClickExpand?: boolean;
   data: DataItem;
   line: boolean;
   active: boolean;
@@ -19,7 +20,7 @@ export interface TreeContextProps<DataItem>
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
   childrenClass?: ((data: DataItem) => string) | string;
-  registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
+  bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
 
   onToggle: () => void;
   onFetch: () => void;

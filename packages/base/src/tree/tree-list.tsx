@@ -11,16 +11,19 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     jssStyle,
     className,
     data,
+    mode,
     id = '',
     keygen,
     expanded,
     active,
     line,
+    style,
     onChange,
     renderItem,
     childrenKey,
     onNodeClick,
-    registerUpdate,
+    onToggle,
+    bindNode,
     childrenClass,
     childrenClassName,
     parentClickExpand,
@@ -43,22 +46,24 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
 
     return (
       <TreeNode
-        key={id}
         jssStyle={jssStyle}
         id={id}
         data={node}
+        mode={mode}
         index={index}
+        key={id}
+        line={line}
+        keygen={keygen}
+        listComponent={List}
         active={active}
         childrenClass={childrenClass}
         childrenKey={childrenKey}
         renderItem={renderItem}
-        registerUpdate={registerUpdate}
+        bindNode={bindNode}
         parentClickExpand={parentClickExpand}
-        keygen={keygen}
         onNodeClick={onNodeClick}
-        line={line}
+        onToggle={onToggle}
         onChange={onChange}
-        listComponent={List}
       ></TreeNode>
     );
   };
@@ -66,8 +71,13 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
   if (!data || !util.isArray(data)) {
     return null;
   }
+  const newStyle = Object.assign({}, style, { display: expanded ? 'block' : 'none' });
 
-  return <div className={rootClass}>{data.map(renderNode)}</div>;
+  return (
+    <div style={newStyle} className={rootClass}>
+      {data.map(renderNode)}
+    </div>
+  );
 };
 
 export default List;

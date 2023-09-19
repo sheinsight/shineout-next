@@ -55,23 +55,32 @@ export default () => {
   ];
 
   const [data, setData] = useState(data1);
-  // const [value, setValue] = useState([]);
-  // const handleChange = () => {};
+  const [value, setValue] = useState([]);
+  const [expand, setExpand] = useState(['1']);
 
   const handleClick = () => {
     setData(data2);
   };
-  // const handleChange = () => {};
+  const handleChange = (v) => {
+    setValue(v);
+  };
+
+  const handleExpand = (v) => {
+    setExpand(v);
+  };
+
   return (
     <div>
       <button type='button' onClick={handleClick}>
         change data
       </button>
       <Tree
-        // value={value}
-        // onChange={handleChange}
+        expanded={expand}
+        value={value}
+        mode={0}
+        onExpand={handleExpand}
+        onChange={handleChange}
         jssStyle={{ tree: treeStyle, checkbox: checkboxStyle }}
-        parentClickExpand
         data={data}
         renderItem='name'
       ></Tree>

@@ -19,8 +19,9 @@ export interface TreeNodeProps<DataItem>
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
   onChange?: (value: KeygenResult[]) => void;
+  onToggle?: (id: KeygenResult, expanded: boolean) => void;
   childrenClass: (data: DataItem) => string | undefined;
-  registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
+  bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
   listComponent: (props: TreeListProps<DataItem>) => JSX.Element | null;

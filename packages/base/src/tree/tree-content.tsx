@@ -18,6 +18,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     expanded,
     childrenKey,
     parentClickExpand,
+    doubleClickExpand,
     onChange,
     onToggle,
     onDragOver,
@@ -26,7 +27,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
 
   const contentStyle = jssStyle?.tree || ({} as TreeClasses);
   const rootClass = classNames(contentStyle.contentWrapper, {
-    [contentStyle.childnode]: data[childrenKey] && data[childrenKey]?.length > 0,
+    [contentStyle.childnode]: data[childrenKey] && (data[childrenKey] as DataItem[]).length > 0,
   });
   const contentClass = classNames(contentStyle.content);
   const textClass = classNames(contentStyle.text);
@@ -35,7 +36,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     onToggle();
   };
 
-  const handleClick = () => {
+  const handleNodeClick = () => {
     const children = data[childrenKey] as DataItem[];
     if (parentClickExpand && children && children.length > 0) {
       handleIndicatorClick();
@@ -44,7 +45,12 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     }
   };
 
-  const handleNodeExpand = () => {};
+  const handleNodeExpand = () => {
+    if (!doubleClickExpand) return;
+    const children = data[childrenKey] as DataItem[];
+    const hasChildren = children && children.length > 0;
+    if (hasChildren) handleIndicatorClick();
+  };
 
   // const renderLoading = () => {
   //   return <Spin name="ring" size={12} jssStyle={jssStyle}></Spin>
@@ -79,7 +85,14 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   };
 
   const renderCheckbox = () => {
-    return <Checkbox jssStyle={jssStyle} className={contentStyle.checkbox}></Checkbox>;
+    return (
+      <Checkbox
+        jssStyle={jssStyle}
+        id={id}
+        className={contentStyle.checkbox}
+        onChange={onChange}
+      ></Checkbox>
+    );
   };
 
   const renderNode = () => {
@@ -92,7 +105,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
       {renderIndicator()}
       <div className={contentClass}>
         {onChange && renderCheckbox()}
-        <div className={textClass} onClick={handleClick} onDoubleClick={handleNodeExpand}>
+        <div className={textClass} onClick={handleNodeClick} onDoubleClick={handleNodeExpand}>
           {renderNode()}
         </div>
       </div>

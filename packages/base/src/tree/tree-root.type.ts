@@ -9,10 +9,12 @@ export interface TreeRootProps<DataItem> extends Omit<BaseTreeProps<DataItem>, '
   };
   line: boolean;
   childrenClass: (data: DataItem) => string | undefined;
-  registerUpdate: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
+  bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   parentClickExpand?: boolean;
+  doubleClickExpand?: boolean;
   childrenKey: keyof DataItem;
   renderItem: TreeRenderItemType<DataItem>;
+  onToggle?: (id: KeygenResult, expanded: boolean) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   onChange?: (value: KeygenResult[]) => void;
 }

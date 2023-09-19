@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import useLatestObj from '../../common/use-latest-obj';
 import {
   BaseTreeProps,
   TreePathType,
@@ -10,35 +11,47 @@ import { KeygenResult } from '../../common/type';
 import { isFunc, isString, isNumber } from '../../utils/is';
 
 export const MODE = {
-  // 返回全选数据，包含父节点和子节点
+  /**
+   * 返回全选数据，包含父节点和子节点
+   */
   MODE_0: 0,
 
-  // 返回子节点和选中的父节点，不包含半选的父节点
+  /**
+   * 返回子节点和选中的父节点，不包含半选的父节点
+   */
   MODE_1: 1,
 
-  // 返回子节点，不包含父节点
+  /**
+   * 返回子节点，不包含父节点
+   */
   MODE_2: 2,
 
-  // 返回父亲节点，前提是子已经全选了
+  /**
+   * 返回父亲节点，前提是子已经全选了
+   */
   MODE_3: 3,
 
-  // 所选即所得，与父子关系无关
+  /**
+   * 所选即所得，与父子关系无关
+   */
   MODE_4: 4,
 };
 
 const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const {
-    value = [],
+    defaultValue = [],
+    value = defaultValue,
     data = [],
     childrenKey = 'children' as keyof DataItem,
     keygen,
-    mode = 0,
+    mode,
     active: activeProp,
     expanded,
     dataUpdate,
     defaultExpanded,
     defaultExpandAll,
     disabled: disabledProps,
+    // onClick,
   } = props;
 
   const { current: context } = useRef<TreeContext<DataItem>>({
@@ -54,7 +67,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const [active] = useState(null);
 
   // 注册节点
-  const registerUpdate = (id: KeygenResult, update: UpdateFunc) => {
+  const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
 
     const isActive = activeProp === id;
@@ -84,7 +97,37 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const getValue = () => {
     const value: KeygenResult[] = [];
-
+    context.valueMap.forEach((checked, id) => {
+      switch (mode) {
+        case MODE.MODE_0:
+        case MODE.MODE_4:
+          if (checked === 1) value.push(id);
+          break;
+        case MODE.MODE_1:
+          if (checked >= 1) value.push(id);
+          break;
+        case MODE.MODE_2:
+          if (checked === 1) {
+            const info = context.pathMap.get(id);
+            if (info && info.children.length === 0) value.push(id);
+          }
+          break;
+        case MODE.MODE_3:
+          if (checked === 1) {
+            const parentChecked = (() => {
+              const info = context.pathMap.get(id);
+              if (!info) return false;
+              const { path } = info;
+              const pid = path[path.length - 1];
+              if (!pid && pid !== 0) return false;
+              return context.valueMap.get(pid) === 1;
+            })();
+            if (!parentChecked) value.push(id);
+          }
+          break;
+        default:
+      }
+    });
     return value;
   };
 
@@ -100,9 +143,17 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return () => !!disabledProps;
   };
 
-  const set = (id: KeygenResult, checked: CheckedStatusType) => {
-    console.log(id, checked);
+  const getChecked = (id: KeygenResult) => {
+    const value = get(id);
+    let checked: boolean | 'indeterminate' = value === 1;
+    if (value === 2) checked = 'indeterminate';
+    return checked;
   };
+
+  // const getDataById = (id: KeygenResult) => {
+  //   const oroginData = context.dataMap.get(id);
+  //   if (oroginData) return oroginData;
+  // };
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
@@ -214,6 +265,24 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return checked!;
   };
 
+  const isDisabled = (id: KeygenResult) => {
+    const node = context.pathMap.get(id);
+    if (node) return node.isDisabled;
+    return false;
+  };
+
+  type CheckedStatus = 0 | 1 | 2;
+
+  const checkStatusStack = (stack: CheckedStatus[], defaultStatus: CheckedStatus) => {
+    if (!stack || stack.length <= 0) return defaultStatus;
+    if (stack.filter((d) => d === 0).length === stack.length) return 0;
+
+    const s = stack.filter((d) => d === 0 || d === 2);
+
+    if (s.length <= 0) return defaultStatus;
+    return 2;
+  };
+
   const setValue = () => {
     initValue();
   };
@@ -231,14 +300,52 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     setValue();
   };
 
-  const getChecked = (id: KeygenResult) => {
-    const value = get(id);
-    let checked: boolean | 'indeterminate' = value === 1;
-    if (value === 2) checked = 'indeterminate';
-    return checked;
+  const set = (id: KeygenResult, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
+    if (!isDisabled(id)) setValueMap(id, checked);
+
+    // const data = getDataById(id);
+
+    if (mode === MODE.MODE_4) {
+      return 0;
+    }
+
+    const { path, children } = context.pathMap.get(id)!;
+
+    const childrenStack: CheckedStatusType[] = [];
+    if (direction !== 'asc') {
+      children.forEach((cid) => {
+        childrenStack.push(set(cid, checked, 'desc'));
+      });
+    }
+
+    let current = context.valueMap.get(id)!;
+
+    const status = checkStatusStack(childrenStack, current);
+
+    if (status !== current) {
+      setValueMap(id, status);
+      current = status;
+    }
+
+    if (direction !== 'desc' && path.length > 0) {
+      const parentId = path[path.length - 1];
+      let parentChecked = current;
+      context.pathMap.get(parentId)!.children.forEach((cid) => {
+        if (parentChecked !== context.valueMap.get(cid)) {
+          parentChecked = 2;
+        }
+      });
+      set(parentId, parentChecked, 'asc');
+    }
+    return current;
   };
 
-  // const handleDrop = () => {};
+  const handleExpanded = (expanded?: KeygenResult[]) => {
+    const temp = new Set(expanded);
+    context.updateMap.forEach((update, id) => {
+      update('expanded', temp.has(id));
+    });
+  };
 
   useEffect(() => {
     setData(data);
@@ -254,16 +361,25 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     }
   }, [dataUpdate, data]);
 
-  return {
-    pathMap: context.pathMap,
-    dataMap: context.dataMap,
-    valueMap: context.valueMap,
+  useEffect(() => {
+    handleExpanded(expanded);
+  }, [expanded]);
+
+  const func = useLatestObj({
     get,
     set,
     getValue,
     getActive,
     getChecked,
-    registerUpdate,
+    isDisabled,
+    bindNode,
+  });
+
+  return {
+    func,
+    pathMap: context.pathMap,
+    dataMap: context.dataMap,
+    valueMap: context.valueMap,
   };
 };
 
