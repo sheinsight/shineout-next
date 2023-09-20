@@ -4,7 +4,7 @@ import { DescriptionsProps } from './descriptions.type';
 import { useDescriptions, type DescriptionsItemProps } from '@sheinx/hooks';
 
 const Descriptions = (props: DescriptionsProps) => {
-  const { className, jssStyle, style, title, extra, column, item, colon } = props;
+  const { className, jssStyle, style, title, extra, column = 3, item, colon } = props;
   const { renderItem } = useDescriptions({
     item,
     column,
