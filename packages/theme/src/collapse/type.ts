@@ -4,7 +4,7 @@
 export interface CollapseTokens {
   /**
    * @type {string}
-   * @token regular/14
+   * @token 14/regular
    * @description xxx字体字号
    */
   collapseFontSize: string;
