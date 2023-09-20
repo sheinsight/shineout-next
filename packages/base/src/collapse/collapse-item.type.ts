@@ -6,6 +6,8 @@ export interface CollapseItemClasses {
    * 最外层class
    */
   wrapper: string;
+  header: string;
+  active: string;
 }
 
 export interface CollapseItemProps extends Pick<CommonType, 'className' | 'style'> {
