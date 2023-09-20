@@ -5,6 +5,7 @@ export * from './card';
 export * from './card-group';
 export * from './carousel';
 export * from './checkbox';
+export * from './collapse';
 export * from './config';
 export * from './date-picker';
 export * from './descriptions';
