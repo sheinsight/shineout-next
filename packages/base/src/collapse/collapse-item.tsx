@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import classNames from 'classnames';
 import type { CollapseItemProps } from './collapse-item.type';
 import groupContext from './group-context';
@@ -18,6 +18,9 @@ const CollapseItem = (props: CollapseItemProps) => {
     title,
     extra,
   } = props;
+  // const [panelStyle, setPanelStyle] = useState<CSSProperties | undefined>()
+  // const panelRef = useRef<HTMLDivElement>(null)
+  // const panelHeight = useRef<number>(0)
 
   const judgeExpanded = usePersistFn(() => active.indexOf(name) > -1);
 
@@ -35,6 +38,8 @@ const CollapseItem = (props: CollapseItemProps) => {
     if (regionKey === triggerKey || (triggerRegion === 'header' && [0, 1].includes(regionKey)))
       onChange(name, e);
   });
+
+  useEffect(() => {}, [judgeExpanded]);
 
   const collapseItemClassName = classNames(className, jssStyle?.collapseItem.wrapper);
   const collapseItemHeaderClassName = classNames(
