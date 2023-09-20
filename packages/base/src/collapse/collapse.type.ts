@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { CommonType } from '../common/type';
-// import { BaseCollapseProps } from '@sheinx/hooks';
+import type { BaseCollapseProps } from '@sheinx/hooks';
+import { CollapseItemProps } from './collapse-item.type';
 
 export interface CollapseClasses {
   /**
@@ -9,20 +10,16 @@ export interface CollapseClasses {
   wrapper: string;
 }
 
-export interface CollapseProps extends Pick<CommonType, 'className' | 'style'> {
+export interface CollapseProps
+  extends Pick<CommonType, 'className' | 'style'>,
+    Pick<CollapseItemProps, 'destroyOnHide' | 'expandContent'>,
+    BaseCollapseProps {
   jssStyle?: {
     collapse: CollapseClasses;
   };
-  accordion?: boolean;
   border?: boolean;
-  expandContent?: ReactNode;
   expandContentPosition?: 'left' | 'right';
-  active?: string | string[];
-  defaultActive?: string | string[];
   triggerRegion?: 'icon' | 'header' | 'disabled';
   lazyload?: boolean;
-  destroyonHide?: boolean;
-  onChange?: (key?: string, keys?: string[]) => void;
-  // TODO: children必须为符合collapseItemProps类型的item
   children?: ReactNode;
 }
