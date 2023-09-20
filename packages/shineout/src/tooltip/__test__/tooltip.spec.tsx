@@ -1,8 +1,8 @@
 import { render, cleanup, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tooltip from '..';
-import Button from '../../button';
 import mountTest from '../../tests/mountTest';
+import { classLengthTest } from '../../tests/structureTest';
 import {
   StyleProps,
   attributesTest,
@@ -221,15 +221,44 @@ describe('Tooltip[Base]', () => {
   // TODO: animation is lose
   test('should render when set animation is false', () => {
     render(<TooltipDemo animation={false} />);
-    screen.debug();
   });
-  test('should render when set priorityDirection', () => {});
-  test('should render when set disable', () => {
-    const handleClick = jest.fn();
+  test('should render when set priorityDirection', async () => {
+    render(<TooltipDemo priorityDirection='vertical' position='left' />);
+    fireEvent.mouseEnter(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+      styleTest(
+        document.querySelector(tooltipClassName)!,
+        'position: absolute; z-index: 1051; top: 0px; transform: translateY(-50%) translateX(-100%); left: 0px;',
+      );
+    });
+  });
+  test('should render when set disable', async () => {
+    render(<TooltipDemo disabled />);
+    const wrapper = document.querySelector(tooltipClassName)!;
+    fireEvent.mouseLeave(screen.getByText('demo'));
+    await waitFor(async () => {
+      await delay(200);
+      classContentTest(wrapper, tooltipWrapperOpenClassName, false);
+    });
+  });
+  test('should render when tip is lose', () => {
     render(
-      <Tooltip disabled tip={<Button onClick={handleClick}>hello</Button>}>
+      // @ts-ignore
+      <Tooltip>
         <span>demo</span>
       </Tooltip>,
     );
+    classLengthTest(document, tooltipClassName, 0);
+  });
+  test('should render when children is lose', () => {
+    const spyError = jest.spyOn(console, 'error').mockImplementation(() => {});
+    render(
+      // @ts-ignore
+      <Tooltip tip='hello'></Tooltip>,
+    );
+    expect(spyError).toHaveBeenCalled();
+    classLengthTest(document, tooltipClassName, 0);
+    spyError.mockRestore();
   });
 });
