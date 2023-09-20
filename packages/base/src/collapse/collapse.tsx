@@ -2,12 +2,17 @@
 // import classNames from 'classnames';
 import React from 'react';
 import { CollapseProps } from './collapse.type';
+import groupContext from './group-context';
 
 const Collapse = (props: CollapseProps) => {
-  const {} = props;
+  const { children } = props;
   // ...
-
-  return <>Collapse.tsx</>;
+  const providerValue = {};
+  return (
+    <groupContext.Provider value={providerValue}>
+      <div>{children}</div>
+    </groupContext.Provider>
+  );
 };
 
 export default Collapse;
