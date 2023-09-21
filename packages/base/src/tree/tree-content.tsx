@@ -20,6 +20,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     childrenKey,
     parentClickExpand,
     doubleClickExpand,
+    bindContent,
     onChange,
     onToggle,
     onDragOver,
@@ -116,7 +117,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   return (
     <div className={rootClass} onDragOver={onDragOver}>
       {renderIndicator()}
-      <div className={contentClass}>
+      <div ref={bindContent} className={contentClass}>
         {onChange && renderCheckbox()}
         <div className={textClass} onClick={handleNodeClick} onDoubleClick={handleNodeExpand}>
           {renderNode()}

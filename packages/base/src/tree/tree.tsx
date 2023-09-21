@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { TreeProps, TreeClasses } from './tree.type';
 import { KeygenResult, useTree, util } from '@sheinx/hooks';
 import RootTree from './tree-root';
+import { produce } from 'immer';
 import { Provider } from './tree-context';
 
 const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
@@ -25,12 +26,16 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     parentClickExpand,
     doubleClickExpand,
     dragImageSelector,
+    dragImageStyle,
+    dragSibling,
+    dragHoverExpand,
     // onClick,
+    onDrop,
     onExpand,
     onChange,
   } = props;
 
-  const { func } = useTree({
+  const { func, updateMap } = useTree({
     mode,
     data,
     dataUpdate,
@@ -74,6 +79,62 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     if (onExpand) onExpand(newExpanded);
   };
 
+  const handleDrop = (id: KeygenResult, targetId: KeygenResult, position: number) => {
+    let targetIdCopy = targetId;
+    let positionCopy = position;
+
+    const current = func.getPath(id);
+    const target = func.getPath(targetIdCopy);
+    if (!current || !target) return;
+    const newData = produce(data, (draft) => {
+      let node: any = draft;
+      let temp: DataItem[];
+      let removeNode: () => void = () => {};
+      let offset = 0;
+      current.indexPath.forEach((p, i) => {
+        if (i < current.indexPath.length - 1) {
+          node = node[p][childrenKey] as DataItem[];
+        } else {
+          temp = node;
+          removeNode = () => temp.splice(p, 1)[0];
+          node = node[p];
+        }
+      });
+
+      let tnode: any = draft;
+      target.indexPath.forEach((p, i) => {
+        if (i < target.indexPath.length - 1) {
+          tnode = tnode[p][childrenKey];
+        } else if (tnode === temp) {
+          // same parent
+          removeNode();
+          if (current.index <= target.index) {
+            offset = -1;
+          }
+          removeNode = () => {};
+        }
+      });
+
+      if (positionCopy === -1) {
+        tnode = tnode[target.index + offset];
+        if (!Array.isArray(tnode[childrenKey])) tnode[childrenKey] = [];
+        tnode[childrenKey].push(node);
+        positionCopy = tnode[childrenKey].length - 1;
+        const update = updateMap.get(targetIdCopy);
+        if (update) update('expanded', true);
+      } else {
+        tnode.splice(positionCopy + offset, 0, node);
+        targetIdCopy = target.path[target.path.length - 1];
+      }
+
+      removeNode();
+    });
+
+    if (onDrop) {
+      onDrop(newData, id, targetId, position);
+    }
+  };
+
   const onToggle = onExpand ? handleToggle : undefined;
 
   return (
@@ -95,9 +156,13 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           onNodeClick={handleNodeClick}
           renderItem={renderItem}
           onToggle={onToggle}
+          onDrop={onDrop && handleDrop}
+          dragSibling={dragSibling}
+          dragHoverExpand={dragHoverExpand}
           parentClickExpand={parentClickExpand}
           doubleClickExpand={doubleClickExpand}
           dragImageSelector={getDragImageSelector}
+          dragImageStyle={dragImageStyle}
         ></RootTree>
       </Provider>
     </div>

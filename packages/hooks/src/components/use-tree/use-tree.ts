@@ -135,6 +135,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return activeProp === undefined ? active : activeProp;
   };
 
+  const getPath = (id: KeygenResult) => {
+    return context.pathMap.get(id);
+  };
+
   const getDisabled = () => {
     if (isFunc(disabledProps)) {
       return disabledProps;
@@ -368,6 +372,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const func = useLatestObj({
     get,
     set,
+    getPath,
     getValue,
     getActive,
     getChecked,
@@ -380,6 +385,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,
+    updateMap: context.updateMap,
   };
 };
 

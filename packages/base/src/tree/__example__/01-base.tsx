@@ -48,49 +48,38 @@ export default () => {
     { id: '5', name: 'node 5', children: [{ id: '5-1', name: 'node 5-1' }] },
   ];
 
-  const data2 = [
-    { id: '3', name: 'node 3', children: [{ id: '3-1', name: 'node 3-1' }] },
-    { id: '4', name: 'node 4', children: [{ id: '4-1', name: 'node 4-1' }] },
-    { id: '5', name: 'node 5', children: [{ id: '5-1', name: 'node 5-1' }] },
-  ];
-
   const [data, setData] = useState(data1);
-  const [value, setValue] = useState([]);
-  const [expand, setExpand] = useState(['1']);
+  // const [value, setValue] = useState([]);
+  // const [expand, setExpand] = useState([]);
 
-  const handleClick = () => {
-    setData(data2);
-  };
-  const handleChange = (v) => {
-    setValue(v);
-  };
+  // const handleClick = () => {
+  //   setData(data2);
+  // };
+  // const handleChange = (v) => {
+  //   setValue(v);
+  // };
 
-  const handleExpand = (v) => {
-    setExpand(v);
+  // const handleExpand = (v) => {
+  //   setExpand(v);
+  // };
+
+  const handleDrop = (d) => {
+    setData(d);
   };
 
   return (
     <div>
-      <button type='button' onClick={handleClick}>
+      {/* <button type='button' onClick={handleClick}>
         change data
-      </button>
+      </button> */}
       <Tree
-        mode={1}
-        // line={false}
-        expanded={expand}
-        value={value}
-        keygen='id'
-        doubleClickExpand
-        // parentClickExpand
-        // iconClass='aaaaaa-wwwwwwww'
-        // expandIcons={['😄', '🥹']}
-        // leafClass='bbbb-ccccc'
-        onExpand={handleExpand}
-        onChange={handleChange}
         jssStyle={{ tree: treeStyle, checkbox: checkboxStyle }}
         data={data}
+        keygen='id'
+        defaultExpanded={['2']}
+        onDrop={handleDrop}
         renderItem='name'
-      ></Tree>
+      />
     </div>
   );
 };

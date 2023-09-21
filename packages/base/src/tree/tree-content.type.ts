@@ -23,7 +23,7 @@ export interface TreeContextProps<DataItem>
   renderItem: TreeRenderItemType<DataItem>;
   childrenClass?: ((data: DataItem) => string) | string;
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
-
+  bindContent: React.RefObject<HTMLDivElement>;
   onToggle: () => void;
   onFetch: () => void;
   onDragOver: () => void;

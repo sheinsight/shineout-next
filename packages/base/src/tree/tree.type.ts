@@ -19,6 +19,7 @@ export interface TreeClasses {
   node: string;
   children: string;
   leaf: string;
+  placement: string;
 }
 export type TreeRenderItemType<DataItem> =
   | ((item: DataItem, expanded: boolean, active: boolean, id: KeygenResult) => React.ReactNode)
@@ -45,4 +46,7 @@ export interface TreeProps<DataItem>
   onExpand?: (value: KeygenResult[]) => void;
   renderItem: TreeRenderItemType<DataItem>;
   onChange?: (value: KeygenResult[]) => void;
+  dragImageStyle?: React.CSSProperties;
+  dragSibling?: boolean;
+  dragHoverExpand?: boolean;
 }

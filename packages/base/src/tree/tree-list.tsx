@@ -26,7 +26,12 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     childrenKey,
     onNodeClick,
     onToggle,
+    onDrop,
     bindNode,
+    dragImageSelector,
+    dragSibling,
+    dragHoverExpand,
+    dragImageStyle,
     childrenClass,
     childrenClassName,
     parentClickExpand,
@@ -43,6 +48,10 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     if (typeof keygen === 'function') return keygen(data, id as string);
     if (keygen) return data[keygen];
     return id + (id ? ',' : '') + index;
+  };
+
+  const empty = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
   };
 
   const renderNode = (node: DataItem, index: number) => {
@@ -67,11 +76,16 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         leafClass={leafClass}
         expandIcons={expandIcons}
         bindNode={bindNode}
+        dragImageSelector={dragImageSelector}
+        dragImageStyle={dragImageStyle}
+        dragSibling={dragSibling}
+        dragHoverExpand={dragHoverExpand}
         parentClickExpand={parentClickExpand}
         doubleClickExpand={doubleClickExpand}
         onNodeClick={onNodeClick}
         onToggle={onToggle}
         onChange={onChange}
+        onDrop={onDrop}
       ></TreeNode>
     );
   };
@@ -82,7 +96,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
   const newStyle = Object.assign({}, style, { display: expanded ? 'block' : 'none' });
 
   return (
-    <div style={newStyle} className={rootClass}>
+    <div onDrop={empty} onDragOver={empty} style={newStyle} className={rootClass}>
       {data.map(renderNode)}
     </div>
   );

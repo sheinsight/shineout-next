@@ -6,6 +6,7 @@ export interface TreeContextProps {
   getValue: () => KeygenResult[];
   getActive: () => KeygenResult | null;
   getChecked: (id: KeygenResult) => boolean | 'indeterminate';
+  getPath: (id: KeygenResult) => any;
 }
 
 export interface TreeProviderProps {

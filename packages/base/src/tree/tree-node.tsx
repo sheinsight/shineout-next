@@ -1,10 +1,16 @@
-import { useMemo, createElement } from 'react';
+import { useMemo, useRef, createElement } from 'react';
 import classNames from 'classnames';
 import { TreeClasses } from './tree.type';
 import { TreeNodeProps } from './tree-node.type';
 import TreeContent from './tree-content';
 import { useTreeContext } from './tree-context';
-import { useTreeNode } from '@sheinx/hooks';
+import { useTreeNode, ObjectType } from '@sheinx/hooks';
+
+const placeElement = document.createElement('div');
+const innerPlaceElement = document.createElement('div');
+placeElement.appendChild(innerPlaceElement);
+const placeInfo = { start: '', target: '' };
+let dragLock = false;
 
 const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
   const {
@@ -12,6 +18,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     id,
     data,
     line,
+    index,
     renderItem,
     parentClickExpand,
     doubleClickExpand,
@@ -21,22 +28,40 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     keygen,
     mode,
     childrenKey,
+    dragSibling,
+    dragHoverExpand,
     dragImageSelector,
+    dragImageStyle,
     childrenClass,
     bindNode,
     onChange,
     onNodeClick,
     onToggle,
+    onDrop,
     listComponent: List,
   } = props;
-  const { getChecked } = useTreeContext();
-  const { expanded, getRootProps, isLeaf } = useTreeNode({
+
+  const element = useRef<HTMLDivElement>(null);
+  const content = useRef<HTMLDivElement>(null);
+  // const dragLock = useRef(false);
+  const dragImage = useRef<null | HTMLElement>(null);
+
+  const { getChecked, getPath } = useTreeContext();
+  const {
+    active,
+    expanded,
+    onToggle: handleToggle,
+    isLeaf,
+  } = useTreeNode({
     id,
     data,
     bindNode,
     onToggle,
     childrenKey,
+    element,
+    content: content.current,
     dragImageSelector,
+    dragImageStyle,
   });
 
   const children = data[childrenKey] as DataItem[];
@@ -47,7 +72,111 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     [contentStyle.leaf]: !hasChildren,
   });
 
-  const rootProps = getRootProps();
+  placeElement.className = contentStyle.placement;
+
+  const handleFetch = () => {};
+
+  const handleDragOver = (e: React.DragEvent) => {
+    if (!dragLock) return;
+    const current = getPath(placeInfo.start);
+    const target = getPath(id);
+
+    if (!current || !target) return;
+
+    const currentPathStr = current.path.join('/');
+    const targetPathStr = target.path.join('/');
+
+    if (dragSibling && targetPathStr !== currentPathStr) return;
+    if (dragHoverExpand && !expanded) {
+      handleToggle();
+    }
+    const hover = element.current as HTMLDivElement;
+    const rect = hover.getBoundingClientRect();
+    const clientHeight = (e.target as HTMLDivElement).getBoundingClientRect().height || 20;
+    const hoverMiddleY = (rect.bottom - rect.top) / 2;
+    const hoverClientY = e.clientY - rect.top;
+
+    let position = index;
+
+    innerPlaceElement.style.height = '0px';
+
+    if (hoverClientY < hoverMiddleY + clientHeight * 0.2) {
+      hover.parentNode!.insertBefore(placeElement, hover);
+      if (hoverClientY > clientHeight * 0.3) {
+        if (!dragSibling) {
+          position = -1;
+          innerPlaceElement.style.height = `${rect.height}px`;
+        } else {
+          position += 1;
+          hover.parentNode!.insertBefore(placeElement, hover.nextElementSibling);
+        }
+      }
+    } else {
+      position += 1;
+      hover.parentNode!.insertBefore(placeElement, hover.nextElementSibling);
+    }
+    placeInfo.target = id;
+    // @ts-ignore
+    placeElement.setAttribute('data-position', position);
+  };
+
+  const handleDragStart = (event: React.DragEvent) => {
+    if (dragLock) return;
+    dragLock = true;
+
+    event.dataTransfer.effectAllowed = 'copyMove';
+    event.dataTransfer.setData('text/plain', id as string);
+    placeInfo.start = id;
+
+    const el = document.querySelector(dragImageSelector(data)!) as HTMLDivElement;
+    const dragEl = (el || content.current) as HTMLDivElement;
+    const rect = dragEl.getBoundingClientRect();
+    dragImage.current = dragEl.cloneNode(true) as HTMLDivElement;
+
+    document.body.appendChild(dragImage.current);
+
+    dragImage.current.style.position = 'absolute';
+    dragImage.current.style.top = '-1000px';
+    dragImage.current.style.left = '-1000px';
+    dragImage.current.style.width = `${rect.width}px`;
+    dragImage.current.style.background = '#fff';
+    dragImage.current.style.boxShadow = '0 0 5px 0 rgba(0, 0, 0, 0.1)';
+
+    if (dragImageStyle) {
+      Object.keys(dragImageStyle).forEach((k) => {
+        const styleKey = k as keyof typeof dragImageStyle;
+        (dragImage.current?.style as ObjectType)[styleKey] = dragImageStyle[styleKey];
+      });
+    }
+
+    event.dataTransfer.setDragImage(
+      dragImage.current,
+      event.clientX - rect.left,
+      event.clientY - rect.top,
+    );
+
+    setTimeout(() => {
+      (element.current as HTMLElement).style.display = 'none';
+    }, 0);
+  };
+
+  const handleDragEnd = () => {
+    (element.current as HTMLDivElement).style.display = '';
+    if (!dragLock) return;
+
+    dragLock = false;
+
+    if (!placeElement.parentNode) return;
+    if (dragImage.current && dragImage.current.parentNode)
+      dragImage.current.parentNode.removeChild(dragImage.current);
+    const position = parseInt(placeElement.getAttribute('data-position') || '', 10);
+    const { target } = placeInfo;
+
+    placeElement.parentNode.removeChild(placeElement);
+    if (onDrop && (target !== id || index !== position)) {
+      onDrop(id, target, position);
+    }
+  };
 
   const getChildrenListProps = () => {
     return {
@@ -64,18 +193,34 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       line,
       data: children,
       mode,
+      index,
+      onDrop,
       onChange,
       onToggle,
       onNodeClick,
       bindNode,
       childrenClass,
+      dragSibling,
+      dragHoverExpand,
+      dragImageStyle,
+      dragImageSelector,
       childrenClassName: childrenClass(data),
     };
   };
 
-  const handleFetch = () => {};
+  const getDropProps = () => {
+    const dropEvents = {};
 
-  const handleDragOver = () => {};
+    if (onDrop) {
+      Object.assign(dropEvents, {
+        draggable: true,
+        onDragStart: handleDragStart,
+        onDragEnd: handleDragEnd,
+      });
+    }
+
+    return dropEvents;
+  };
 
   const checked = getChecked(id);
 
@@ -87,8 +232,11 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         line={line}
         data={data}
         mode={mode}
+        active={active}
+        expanded={expanded}
         keygen={keygen}
         bindNode={bindNode}
+        bindContent={content}
         childrenKey={childrenKey}
         renderItem={renderItem}
         iconClass={iconClass}
@@ -100,13 +248,13 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         onFetch={handleFetch}
         onNodeClick={onNodeClick}
         onDragOver={handleDragOver}
-        {...rootProps}
+        onToggle={handleToggle}
       ></TreeContent>
     );
   }, [checked, expanded]);
 
   return (
-    <div className={rootClass}>
+    <div {...getDropProps()} ref={element} className={rootClass}>
       {renderContent}
       {hasChildren && createElement(List, getChildrenListProps())}
     </div>

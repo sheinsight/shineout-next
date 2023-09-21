@@ -20,6 +20,7 @@ export interface TreeNodeProps<DataItem>
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
   onChange?: (value: KeygenResult[]) => void;
+  onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   onToggle?: (id: KeygenResult, expanded: boolean) => void;
   iconClass?: string;
   leafClass?: string;
@@ -33,4 +34,7 @@ export interface TreeNodeProps<DataItem>
   renderItem: TreeRenderItemType<DataItem>;
   listComponent: (props: TreeListProps<DataItem>) => JSX.Element | null;
   dragImageSelector: (data?: DataItem) => string | undefined;
+  dragImageStyle?: React.CSSProperties;
+  dragSibling?: boolean;
+  dragHoverExpand?: boolean;
 }

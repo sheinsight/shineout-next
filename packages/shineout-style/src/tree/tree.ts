@@ -18,7 +18,8 @@ export type TreeClass =
   | 'childnode'
   | 'iconWrapper'
   | 'icon'
-  | 'children';
+  | 'children'
+  | 'placement';
 
 const treeStyle: JsStyles<TreeClass> = {
   tree: {},
@@ -165,6 +166,16 @@ const treeStyle: JsStyles<TreeClass> = {
     },
   },
   children: {},
+  placement: {
+    position: 'relative',
+    zIndex: 0,
+    width: '100%',
+    height: 0,
+    '& div': {
+      border: '1px dashed #ccc',
+      background: 'rgba(0,0,0,0.1)',
+    },
+  },
 };
 
 export default treeStyle;
