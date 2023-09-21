@@ -4,6 +4,8 @@ import { DatePickerProps, DateTimeType } from './date-picker.type';
 export interface PickerProps {
   jssStyle: DatePickerProps<any>['jssStyle'];
   defaultTime: DatePickerProps<any>['defaultTime'];
+  format: string;
+  disabledTime: DatePickerProps<any>['disabledTime'];
   type: string;
   range: DatePickerProps<any>['range'];
   dateArr: Array<Date | undefined>;
@@ -29,4 +31,7 @@ export interface PickerProps {
    * @cn 可选最大值
    */
   max?: DateTimeType;
+  hourStep?: DatePickerProps<any>['hourStep'];
+  minuteStep?: DatePickerProps<any>['minuteStep'];
+  secondStep?: DatePickerProps<any>['secondStep'];
 }

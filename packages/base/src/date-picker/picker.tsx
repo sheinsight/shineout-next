@@ -4,6 +4,7 @@ import Day from './day';
 import Month from './month';
 import Year from './year';
 import Quarter from './quarter';
+import Time from './time';
 import { useDatePickerRange } from '@sheinx/hooks';
 
 const Picker = (props: PickerProps) => {
@@ -57,6 +58,9 @@ const Picker = (props: PickerProps) => {
     }
     if (mode === 'day') {
       return <Day {...commonProps} defaultTime={defaultTimeArr[index]} />;
+    }
+    if (mode === 'time') {
+      return <Time {...commonProps} format={props.format} disabledTime={props.disabledTime} />;
     }
     return <Day {...commonProps} defaultTime={defaultTimeArr[index]} />;
   };

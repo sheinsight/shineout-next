@@ -100,6 +100,26 @@ const datePickerTokenExtraValue = {
       hot: { width: 'Size-28' },
     },
   },
+  time: {
+    picker: {
+      width: 'Size-115',
+      padding: { x: 'Padding-14', y: 'Padding-14' },
+    },
+    list: {
+      gap: 'Margin-8',
+    },
+    item: {
+      height: 'Size-14',
+      background: { color: 'Neutral-fill-1' },
+      color: 'Neutral-text-5',
+      active: {
+        background: { color: 'Neutral-fill-2' },
+      },
+      disabled: {
+        color: 'Neutral-text-2',
+      },
+    },
+  },
 };
 
 module.exports = {

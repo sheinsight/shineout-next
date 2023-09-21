@@ -60,6 +60,15 @@ export interface DatePickerClasses {
   // 月
   monthPicker: string;
   quarterPicker: string;
+
+  // 时间
+  timePicker: string;
+  timeList: string;
+  timeItem: string;
+  timeItemActive: string;
+  timeItemDisabled: string;
+  timeBase: string;
+  timeBaseItem: string;
 }
 
 export type DisabledType = 'start' | 'end';
@@ -76,6 +85,11 @@ export interface DatePickerProps<Value extends DatePickerValue>
    * @default false
    */
   disabled?: ((date: Date, type?: DisabledType, value0?: Date, value1?: Date) => boolean) | boolean;
+  /**
+   * @en Disable the specified Time.
+   * @cn 禁用指定 Time。
+   */
+  disabledTime?: string | ((time: string) => boolean);
 
   /**
    * @en Set visible of datepicker popup
@@ -174,4 +188,21 @@ export interface DatePickerProps<Value extends DatePickerValue>
    * @cn 可选最大值
    */
   max?: DateTimeType;
+  /**
+   * @en hour step
+   * @cn 小时选项步长
+   */
+  hourStep?: number;
+
+  /**
+   * @en minute step
+   * @cn 分钟选项步长
+   */
+  minuteStep?: number;
+
+  /**
+   * @en second step
+   * @cn 秒选项步长
+   */
+  secondStep?: number;
 }

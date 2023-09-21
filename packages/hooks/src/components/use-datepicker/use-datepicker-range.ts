@@ -13,7 +13,7 @@ const useRangePick = (props: useRangeProps) => {
     Array.isArray(defaultTime) ? props.defaultTime : [props.defaultTime, props.defaultTime]
   ) as Array<number | string | Date>;
 
-  const setDate = (index: number, date: Date) => {
+  const setDate = (index: number, date: Date, noClose: boolean = false) => {
     setDateArr((arr) => {
       const newArr = [...arr];
       newArr[index] = date;
@@ -22,10 +22,13 @@ const useRangePick = (props: useRangeProps) => {
           newArr[1] = new Date(date);
         }
       }
-      if (!range) close();
-      if (range && newArr[1 - index] !== undefined) {
-        close();
+      if (!noClose) {
+        if (!range) close();
+        if (range && newArr[1 - index] !== undefined) {
+          close();
+        }
       }
+
       return newArr;
     });
   };
@@ -69,12 +72,12 @@ const useRangePick = (props: useRangeProps) => {
     setCurrent(1, date);
   });
 
-  const setDateStart = usePersistFn((date: Date) => {
-    setDate(0, date);
+  const setDateStart = usePersistFn((date: Date, noClose?: boolean) => {
+    setDate(0, date, noClose);
   });
 
-  const setDateEnd = usePersistFn((date: Date) => {
-    setDate(1, date);
+  const setDateEnd = usePersistFn((date: Date, noClose?: boolean) => {
+    setDate(1, date, noClose);
   });
 
   const setModeStart = usePersistFn((m) => {

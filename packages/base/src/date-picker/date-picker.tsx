@@ -50,6 +50,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
     setMode,
     handleClear,
     isEmpty,
+    format,
   } = useDatePickerFormat({
     value: inputAbleResult.value,
     range: props.range,
@@ -172,6 +173,8 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
             defaultTime={props.defaultTime}
             min={props.min}
             max={props.max}
+            format={format}
+            disabledTime={props.disabledTime}
           />
         </AnimationList>
       </AbsoluteList>

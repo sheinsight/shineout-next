@@ -46,7 +46,15 @@ export type DatePickerClass =
   | 'yearPicker'
   | 'weekPicker'
   | 'monthPicker'
-  | 'quarterPicker';
+  | 'quarterPicker'
+  | 'timePicker'
+  | 'timeList'
+  | 'timeItem'
+  | 'timeItemActive'
+  | 'timeItemDisabled'
+  | 'timeBase'
+  | 'timeBaseItem';
+
 const inputBorderToken = {
   lineHeightDynamic: token.lineHeightDynamic,
   borderRadius: token.datePickerBorderRadius,
@@ -358,7 +366,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
   pickerCellDisabled: {
     color: token.datePickerCellDisabledColor,
     '& > $pickerCellContent': {
-      backgroundColor: '#eee',
+      backgroundColor: token.datePickerCellDisabledBackgroundColor,
       cursor: 'not-allowed',
     },
   },
@@ -395,6 +403,58 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     '& table': {
       width: token.datePickerWeekPickerWidth,
     },
+  },
+  timePicker: {
+    display: 'flex',
+    width: token.datePickerTimePickerWidth,
+    gap: token.datePickerTimeListGap,
+    padding: `${token.datePickerTimePickerPaddingY} ${token.datePickerTimePickerPaddingX} `,
+    boxSizing: 'border-box',
+    position: 'relative',
+  },
+  timeList: {
+    display: 'flex',
+    flex: '1',
+    flexDirection: 'column',
+    height: `calc(${token.datePickerTimeItemHeight} * 9)`,
+    paddingTop: `calc(${token.datePickerTimeItemHeight} * 4)`,
+    paddingBottom: `calc(${token.datePickerTimeItemHeight} * 4)`,
+    overflow: 'auto',
+    boxSizing: 'border-box',
+    textAlign: 'center',
+    scrollbarWidth: 'none',
+    '&::-webkit-scrollbar': {
+      display: 'none',
+    },
+  },
+  timeItem: {
+    position: 'relative',
+    minHeight: token.datePickerTimeItemHeight,
+    boxSizing: 'border-box',
+    lineHeight: token.datePickerTimeItemHeight,
+    cursor: 'pointer',
+  },
+  timeItemActive: { fontWeight: 'bold' },
+  timeItemDisabled: {
+    color: token.datePickerTimeItemDisabledColor,
+    cursor: 'not-allowed',
+  },
+  timeBase: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: token.datePickerTimePickerPaddingX,
+    right: token.datePickerTimePickerPaddingX,
+    margin: 'auto',
+    display: 'flex',
+    height: token.datePickerTimeItemHeight,
+    gap: token.datePickerTimeListGap,
+  },
+  timeBaseItem: {
+    flex: '1',
+    height: '100%',
+    background: token.datePickerTimeItemActiveBackgroundColor,
+    borderRadius: '4px',
   },
 };
 

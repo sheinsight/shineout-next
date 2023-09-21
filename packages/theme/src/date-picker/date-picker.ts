@@ -72,6 +72,15 @@ const datePickerTokens: DatePickerTokens = {
   datePickerMonthCellHotWidth: 'Size-32',
   datePickerQuarterPickerWidth: 'Size-124',
   datePickerQuarterCellHotWidth: 'Size-28',
+  datePickerTimePickerWidth: 'Size-115',
+  datePickerTimePickerPaddingX: 'Padding-14',
+  datePickerTimePickerPaddingY: 'Padding-14',
+  datePickerTimeListGap: 'Margin-8',
+  datePickerTimeItemHeight: 'Size-14',
+  datePickerTimeItemBackgroundColor: 'Neutral-fill-1',
+  datePickerTimeItemColor: 'Neutral-text-5',
+  datePickerTimeItemActiveBackgroundColor: 'Neutral-fill-2',
+  datePickerTimeItemDisabledColor: 'Neutral-text-2',
 };
 
 export default datePickerTokens;

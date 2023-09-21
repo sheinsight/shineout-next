@@ -410,4 +410,58 @@ export interface DatePickerTokens {
    * @description undefinedundefinedundefinedundefinedundefined宽度
    */
   datePickerQuarterCellHotWidth: string;
+  /**
+   * @type {string}
+   * @token Size-115
+   * @description undefinedundefinedundefinedundefined宽度
+   */
+  datePickerTimePickerWidth: string;
+  /**
+   * @type {string}
+   * @token Padding-14
+   * @description undefinedundefinedundefinedundefined内边距（水平方向）
+   */
+  datePickerTimePickerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-14
+   * @description undefinedundefinedundefinedundefined内边距（垂直方向）
+   */
+  datePickerTimePickerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Margin-8
+   * @description undefinedundefinedundefinedundefinedundefined
+   */
+  datePickerTimeListGap: string;
+  /**
+   * @type {string}
+   * @token Size-14
+   * @description undefinedundefinedundefinedundefined高度
+   */
+  datePickerTimeItemHeight: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description undefinedundefinedundefinedundefined背景颜色
+   */
+  datePickerTimeItemBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description undefinedundefinedundefinedundefined颜色
+   */
+  datePickerTimeItemColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description undefinedundefinedundefinedundefined鼠标点击时的背景颜色
+   */
+  datePickerTimeItemActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description undefinedundefinedundefinedundefined禁用时的颜色
+   */
+  datePickerTimeItemDisabledColor: string;
 }

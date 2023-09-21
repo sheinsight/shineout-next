@@ -167,6 +167,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
     setCurrentArr,
     handleClear,
     isEmpty,
+    format,
   };
 };
 
