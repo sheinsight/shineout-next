@@ -37,6 +37,8 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   const contentClass = classNames(contentStyle.content);
   const textClass = classNames(contentStyle.text);
   const hasExpandIcons = expandIcons !== undefined;
+  const children = data[childrenKey] as DataItem[];
+  const hasChildren = children && children.length > 0;
 
   const handleIndicatorClick = () => {
     onToggle();
@@ -48,8 +50,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   };
 
   const handleNodeClick = () => {
-    const children = data[childrenKey] as DataItem[];
-    if (parentClickExpand && children && children.length > 0) {
+    if (parentClickExpand && hasChildren) {
       handleIndicatorClick();
     } else {
       onNodeClick(data, id);
@@ -58,8 +59,6 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
 
   const handleNodeExpand = () => {
     if (!doubleClickExpand) return;
-    const children = data[childrenKey] as DataItem[];
-    const hasChildren = children && children.length > 0;
     if (hasChildren) handleIndicatorClick();
   };
 
@@ -89,7 +88,8 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     if (line) {
       indicator = (
         <span
-          style={{ position: 'absolute', left: 16, top: 6 }}
+          // style={{ position: 'absolute', left: 16, top: 6 }}
+          className={contentStyle.iconWrapper}
           data-expanded={expanded}
           data-icon={hasExpandIcons}
         >

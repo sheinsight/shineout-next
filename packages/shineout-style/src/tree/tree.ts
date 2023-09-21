@@ -56,10 +56,10 @@ const treeStyle: JsStyles<TreeClass> = {
     '& $contentWrapper': {},
 
     '& $iconWrapper': {
-      left: 12,
-      width: 28,
+      left: 16,
+      width: 24,
       '& $icon': {
-        width: 16,
+        // width: 16,
       },
     },
     '& $childnode': {

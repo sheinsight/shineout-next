@@ -64,7 +64,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const firstRender = useRef(true);
 
-  const [active] = useState(null);
+  const [active, setActive] = useState(null);
 
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
@@ -386,6 +386,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     dataMap: context.dataMap,
     valueMap: context.valueMap,
     updateMap: context.updateMap,
+    setActive,
   };
 };
 

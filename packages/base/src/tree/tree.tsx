@@ -17,6 +17,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     expandIcons,
     iconClass,
     leafClass,
+    nodeClass,
     renderItem,
     defaultValue,
     dataUpdate = true,
@@ -29,14 +30,15 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     dragImageStyle,
     dragSibling,
     dragHoverExpand,
-    // onClick,
+    active,
+    onClick,
     loader,
     onDrop,
     onExpand,
     onChange,
   } = props;
 
-  const { func, updateMap } = useTree({
+  const { func, updateMap, setActive } = useTree({
     mode,
     data,
     dataUpdate,
@@ -59,8 +61,22 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     return dragImageSelector;
   };
 
-  const handleNodeClick = () => {};
-  // const handleNodeClick = (node: DataItem, id: KeygenResult) => {};
+  const handleUpdateActive = (active?: KeygenResult) => {
+    updateMap.forEach((update, id) => {
+      update('active', id === active);
+    });
+  };
+
+  const handleNodeClick = (node: DataItem, id: KeygenResult) => {
+    if (active === undefined) {
+      setActive(id);
+      handleUpdateActive(id);
+    }
+
+    if (onClick) {
+      onClick(node, id, func.getPath(id));
+    }
+  };
 
   const handleToggle = (id: KeygenResult) => {
     let newExpanded;
@@ -150,6 +166,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           onChange={onChange}
           iconClass={iconClass}
           leafClass={leafClass}
+          nodeClass={nodeClass}
           expandIcons={expandIcons}
           childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}
           bindNode={func.bindNode}

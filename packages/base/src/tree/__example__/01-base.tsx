@@ -79,7 +79,7 @@ export default () => {
   return (
     <div>
       <Tree
-        // line={false}
+        line={false}
         jssStyle={{ tree: treeStyle, checkbox: checkboxStyle, spin: spinStyle }}
         data={data}
         keygen={(node, parentKey) => `${parentKey},${node.id}`.replace(/^,/, '')}

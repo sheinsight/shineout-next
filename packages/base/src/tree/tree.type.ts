@@ -35,11 +35,12 @@ export interface TreeProps<DataItem>
   };
   line?: boolean;
   iconClass?: string;
+  nodeClass?: string | ((data: DataItem) => string);
   leafClass?: string;
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass?: ((data: DataItem) => string) | string;
   onDrop?: (data: DataItem[], key: KeygenResult, targetKey: KeygenResult, position: number) => void;
-  active?: string | number;
+  active?: KeygenResult;
   doubleClickExpand?: boolean;
   parentClickExpand?: boolean;
   dragImageSelector?: ((data?: DataItem) => string) | string;

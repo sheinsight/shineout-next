@@ -24,6 +24,7 @@ export interface TreeNodeProps<DataItem>
   onToggle?: (id: KeygenResult, expanded: boolean) => void;
   iconClass?: string;
   leafClass?: string;
+  nodeClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass: (data: DataItem) => string | undefined;
   bindNode: (

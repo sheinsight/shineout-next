@@ -4,7 +4,7 @@ import { TreeClasses } from './tree.type';
 import { TreeNodeProps } from './tree-node.type';
 import TreeContent from './tree-content';
 import { useTreeContext } from './tree-context';
-import { useTreeNode, ObjectType } from '@sheinx/hooks';
+import { useTreeNode, ObjectType, util } from '@sheinx/hooks';
 
 const placeElement = document.createElement('div');
 const innerPlaceElement = document.createElement('div');
@@ -24,6 +24,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     doubleClickExpand,
     iconClass,
     leafClass,
+    nodeClass,
     expandIcons,
     keygen,
     mode,
@@ -72,9 +73,16 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
   const hasChildren = children && children.length > 0;
 
   const contentStyle = jssStyle?.tree || ({} as TreeClasses);
-  const rootClass = classNames(contentStyle.node, isLeaf() && leafClass, {
-    [contentStyle.leaf]: !hasChildren,
-  });
+
+  const rootClass = classNames(
+    contentStyle.node,
+    isLeaf() && leafClass,
+    util.isString(nodeClass) && nodeClass,
+    util.isFunc(nodeClass) && nodeClass(data),
+    {
+      [contentStyle.leaf]: !hasChildren,
+    },
+  );
 
   placeElement.className = contentStyle.placement;
 
@@ -82,6 +90,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
 
   const handleDragOver = (e: React.DragEvent) => {
     if (!dragLock) return;
+
     const current = getPath(placeInfo.start);
     const target = getPath(id);
 
@@ -91,6 +100,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     const targetPathStr = target.path.join('/');
 
     if (dragSibling && targetPathStr !== currentPathStr) return;
+
     if (dragHoverExpand && !expanded) {
       handleToggle();
     }
@@ -192,6 +202,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       childrenKey,
       iconClass,
       leafClass,
+      nodeClass,
       parentClickExpand,
       expanded,
       line,
