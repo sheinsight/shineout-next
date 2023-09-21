@@ -46,6 +46,11 @@ const Picker = (props: PickerProps) => {
       jssStyle,
       position,
     };
+    const timeProps = {
+      format: props.format,
+      disabledTime: props.disabledTime,
+      defaultTime: defaultTimeArr[index],
+    };
     if (mode === 'quarter') {
       return <Quarter {...commonProps} />;
     }
@@ -57,12 +62,12 @@ const Picker = (props: PickerProps) => {
       return <Month {...commonProps} />;
     }
     if (mode === 'day') {
-      return <Day {...commonProps} defaultTime={defaultTimeArr[index]} />;
+      return <Day {...commonProps} {...timeProps} />;
     }
     if (mode === 'time') {
-      return <Time {...commonProps} format={props.format} disabledTime={props.disabledTime} />;
+      return <Time {...commonProps} {...timeProps} />;
     }
-    return <Day {...commonProps} defaultTime={defaultTimeArr[index]} />;
+    return <Day {...commonProps} {...timeProps} />;
   };
   return (
     <div className={jssStyle?.datePicker?.pickerBox}>

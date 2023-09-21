@@ -69,6 +69,8 @@ export interface DatePickerClasses {
   timeItemDisabled: string;
   timeBase: string;
   timeBaseItem: string;
+
+  datetime: string;
 }
 
 export type DisabledType = 'start' | 'end';

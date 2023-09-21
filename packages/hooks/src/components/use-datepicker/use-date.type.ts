@@ -7,7 +7,8 @@ export interface UseDateProps {
   onChange?: (date: Date) => void;
   min?: Date;
   max?: Date;
-  type?: 'date' | 'week';
+  type?: 'date' | 'week' | 'datetime';
+  format?: string;
   disabled?: boolean | ((date: Date) => boolean);
   defaultTime?: string | number | Date;
   options: {

@@ -370,6 +370,18 @@ export interface DatePickerTokens {
   datePickerDayPickerWidth: string;
   /**
    * @type {string}
+   * @token Padding-16
+   * @description undefinedundefinedundefinedundefined内边距（水平方向）
+   */
+  datePickerDayTimePaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-10
+   * @description undefinedundefinedundefinedundefined内边距（垂直方向）
+   */
+  datePickerDayTimePaddingY: string;
+  /**
+   * @type {string}
    * @token Size-142
    * @description undefinedundefinedundefinedundefined宽度
    */

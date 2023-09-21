@@ -65,6 +65,8 @@ const datePickerTokens: DatePickerTokens = {
   datePickerCellHeaderColor: 'Neutral-text-4',
   datePickerCellMarginY: 'Margin-4',
   datePickerDayPickerWidth: 'Size-124',
+  datePickerDayTimePaddingX: 'Padding-16',
+  datePickerDayTimePaddingY: 'Padding-10',
   datePickerWeekPickerWidth: 'Size-142',
   datePickerYearPickerWidth: 'Size-124',
   datePickerYearCellHotWidth: 'Size-32',

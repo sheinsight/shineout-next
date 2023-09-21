@@ -7,12 +7,14 @@ export interface DayProps {
   defaultTime: DateTimeType;
   setCurrent: (date: Date) => void;
   value: Date | undefined;
-  onChange: (date: Date) => void;
+  onChange: (date: Date, noClose: boolean) => void;
   min?: Date;
   max?: Date;
-  type: 'date' | 'week';
+  type: string;
+  format: string;
   jssStyle: DatePickerProps<any>['jssStyle'];
   disabled: DatePickerProps<any>['disabled'];
+  disabledTime: DatePickerProps<any>['disabledTime'];
   position?: 'start' | 'end';
   options: {
     weekStartsOn: number;

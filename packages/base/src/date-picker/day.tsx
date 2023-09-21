@@ -1,8 +1,9 @@
 import React from 'react';
-import { useDatePick } from '@sheinx/hooks';
+import { useDatePick, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import { getLocale, useConfig } from '../config';
+import TimePicker from './time';
 
 import type { DayProps } from './day.type';
 
@@ -11,18 +12,23 @@ const Day = (props: DayProps) => {
   const { locale } = useConfig();
 
   const styles = jssStyle?.datePicker;
+
+  const onChange = usePersistFn((date) => {
+    props.onChange(date, props.type === 'datetime');
+  });
   const { func, currentYear, currentMonth } = useDatePick({
     current: props.current,
     onCurrentChange: props.setCurrent,
     value: props.value,
-    onChange: props.onChange,
+    onChange,
     min: props.min,
     max: props.max,
-    type: props.type,
+    type: props.type as any,
     disabled: props.disabled,
     options: props.options,
     rangeDate: props.rangeDate,
     defaultTime: props.defaultTime,
+    format: props.format,
   });
   const days = func.getDays();
   const len = days.length / 7;
@@ -76,6 +82,20 @@ const Day = (props: DayProps) => {
       >
         <div className={styles?.pickerCellContent}>{func.getWeekStr(item)}</div>
       </th>
+    );
+  };
+
+  const renderFooter = () => {
+    const hasDate = props.rangeDate?.[0] || props.rangeDate?.[1];
+    if (!hasDate) return null;
+    const timeStr = func.getTimeStr();
+    if (!timeStr) return <div className={styles?.datetime} />;
+    return (
+      <div className={styles?.datetime}>
+        <span>{Icons.Clock}</span>
+        <TimePicker {...props} />
+        <span>{timeStr}</span>
+      </div>
     );
   };
   return (
@@ -153,6 +173,7 @@ const Day = (props: DayProps) => {
           </tbody>
         </table>
       </div>
+      {renderFooter()}
     </div>
   );
 };

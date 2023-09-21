@@ -126,6 +126,20 @@ const useDate = (props: UseDateProps) => {
     setCurrent(newDate);
   };
 
+  const getTimeStr = () => {
+    let { format, type } = props;
+    if (!props.value) return '';
+    if (type !== 'datetime' || !format) return '';
+    if (/^[X|x]$/.test(format)) {
+      format = 'HH:mm:ss';
+    } else {
+      const match = format.match(/[H|h].*/);
+      // eslint-disable-next-line
+      if (match) format = match[0];
+    }
+    return dateUtil.format(props.value, format, options);
+  };
+
   const isInRange = (date: Date) => {
     let [start, end] = props.rangeDate || [];
     if (!start || !end) return false;
@@ -160,6 +174,7 @@ const useDate = (props: UseDateProps) => {
     handleDayClick,
     getDayStr,
     getWeekStr,
+    getTimeStr,
   });
 
   const currentYear = utils.getDateInfo(current, 'year', options);

@@ -78,6 +78,9 @@ const datePickerTokenExtraValue = {
   },
   day: {
     picker: { width: 'Size-124' },
+    time: {
+      padding: { x: 'Padding-16', y: 'Padding-10' },
+    },
   },
   week: {
     picker: { width: 'Size-142' },

@@ -16,7 +16,7 @@ export default () => {
       <DatePicker
         range
         value={value}
-        type={'datetime'}
+        type={'time'}
         allowSingle
         jssStyle={{ datePicker: datePickerStyle }}
         onChange={(v) => {

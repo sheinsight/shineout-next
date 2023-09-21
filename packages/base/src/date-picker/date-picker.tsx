@@ -117,7 +117,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
             {Icons.CloseCircle}
           </div>
         )}
-        <div className={styles?.icon}>{Icons.Calendar}</div>
+        <div className={styles?.icon}>{props.type === 'time' ? Icons.Clock : Icons.Calendar}</div>
       </div>
     );
   };
