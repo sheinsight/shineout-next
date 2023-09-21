@@ -8,6 +8,10 @@ export interface CollapseItemClasses {
   wrapper: string;
   header: string;
   active: string;
+  icon: string;
+  title: string;
+  extra: string;
+  content: string;
 }
 
 export interface CollapseItemProps extends Pick<CommonType, 'className' | 'style'> {
@@ -22,4 +26,5 @@ export interface CollapseItemProps extends Pick<CommonType, 'className' | 'style
   extra?: ReactNode;
   title?: ReactNode;
   contentStyle?: CSSProperties;
+  children?: ReactNode;
 }
