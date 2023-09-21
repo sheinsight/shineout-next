@@ -1,17 +1,13 @@
 import { useMemo } from 'react';
-import { Collapse } from '@sheinx/base';
+import { Collapse as UnStyledCollapse } from '@sheinx/base';
 import { useCollapseStyle } from '@sheinx/shineout-style';
 import { CollapseProps } from './collapse.type';
 
-export default (props: CollapseProps) => {
-  const {} = props;
+const Collapse = (props: CollapseProps) => {
   const collapseStyle = useCollapseStyle();
   const jssStyle = useMemo(() => ({ collapse: collapseStyle }), [collapseStyle]);
 
-  return (
-    <Collapse
-      jssStyle={jssStyle}
-      // ...
-    />
-  );
+  return <UnStyledCollapse jssStyle={jssStyle} {...props} />;
 };
+
+export default Collapse;

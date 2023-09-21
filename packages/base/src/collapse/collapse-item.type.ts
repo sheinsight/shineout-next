@@ -12,6 +12,7 @@ export interface CollapseItemClasses {
   title: string;
   extra: string;
   content: string;
+  expanded: string;
 }
 
 export interface CollapseItemProps extends Pick<CommonType, 'className' | 'style'> {

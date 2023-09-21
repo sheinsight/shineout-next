@@ -43,7 +43,8 @@ const CollapseItem = (props: CollapseItemProps) => {
 
   useEffect(() => {
     if (!panelRef.current) return;
-    if (judgeExpanded) {
+    console.log('bool', judgeExpanded);
+    if (!judgeExpanded) {
       panelHeight.current = panelRef.current.clientHeight;
       setPanelStyle({ height: panelRef.current.clientHeight });
       setTimeout(() => {
@@ -51,6 +52,7 @@ const CollapseItem = (props: CollapseItemProps) => {
       }, 10);
     } else {
       if (panelHeight.current === 0) return;
+      console.log(111);
       setPanelStyle({ height: panelHeight.current });
       setTimeout(() => {
         setPanelStyle({ height: 'auto' });
@@ -64,7 +66,10 @@ const CollapseItem = (props: CollapseItemProps) => {
     judgeExpanded && jssStyle?.collapseItem.active,
   );
   const collapseItemIconClassName = classNames(jssStyle?.collapseItem.icon);
-  const collapseItemContentClassName = classNames(jssStyle?.collapseItem.content);
+  const collapseItemContentClassName = classNames(
+    jssStyle?.collapseItem.content,
+    judgeExpanded && jssStyle?.collapseItem.expanded,
+  );
 
   const renderContent = () => (
     <div ref={panelRef} style={panelStyle} className={collapseItemContentClassName}>
