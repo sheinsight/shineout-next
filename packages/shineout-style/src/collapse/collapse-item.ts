@@ -35,6 +35,8 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
   title: {},
   extra: {},
   content: {
+    width: 'auto',
+    height: 'auto',
     display: 'none',
     overflow: 'hidden',
     position: 'relative',
