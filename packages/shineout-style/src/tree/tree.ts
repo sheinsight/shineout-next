@@ -25,7 +25,6 @@ const treeStyle: JsStyles<TreeClass> = {
   tree: {},
   line: {
     '& $node': {
-      // paddingLeft: 28,
       '&::before': {
         content: '""',
         position: 'absolute',
@@ -78,6 +77,12 @@ const treeStyle: JsStyles<TreeClass> = {
         transform: 'rotate(0deg)',
       },
     },
+    '& $node': {
+      paddingLeft: 24,
+      '&$leaf': {
+        paddingLeft: 24,
+      },
+    },
   },
   root: {
     '& > :first-child$node': {
@@ -121,11 +126,11 @@ const treeStyle: JsStyles<TreeClass> = {
   list: {},
   node: {
     position: 'relative',
-    paddingLeft: 24,
+    paddingLeft: 28,
     '&$leaf': {
-      paddingLeft: 36,
+      paddingLeft: 40,
       '&::after': {
-        width: 30,
+        width: 12,
       },
     },
   },
@@ -134,6 +139,8 @@ const treeStyle: JsStyles<TreeClass> = {
   iconWrapper: {
     position: 'absolute',
     left: 0,
+    width: 24,
+    height: 24,
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -172,8 +179,8 @@ const treeStyle: JsStyles<TreeClass> = {
     width: '100%',
     height: 0,
     '& div': {
-      border: '1px dashed #ccc',
-      background: 'rgba(0,0,0,0.1)',
+      borderBottom: `2px solid ${Token.treeDragBorderColor}`,
+      background: Token.treeDragBackgroundColor,
     },
   },
 };

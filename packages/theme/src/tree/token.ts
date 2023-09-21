@@ -6,7 +6,7 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const treeTokenDescription = { tree: '树组件', nearly: '相邻的' };
+const treeTokenDescription = { tree: '树组件', nearly: '相邻的', drag: '拖拽时的' };
 
 /**
  * token 值映射表
@@ -36,6 +36,7 @@ const treeTokenValue = {
     disabled: { background: { color: '' }, font: { color: 'Neutral-text-2' } },
     border: { radius: 'Radius-2' },
   },
+  drag: { border: { color: 'Brand-6' }, background: { color: 'Brand-1' } },
   nearly: { margin: '', small: { margin: '' }, large: { margin: '' } },
 };
 

@@ -118,6 +118,18 @@ export interface TreeTokens {
   treeContentDisabledFontColor: string;
   /**
    * @type {string}
+   * @token Brand-6
+   * @description 树组件拖拽时的边框颜色
+   */
+  treeDragBorderColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description 树组件拖拽时的背景颜色
+   */
+  treeDragBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Radius-2
    * @description 树组件undefined边框圆角
    */

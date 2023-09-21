@@ -4,7 +4,7 @@ import { TreeClasses } from './tree.type';
 import { TreeContextProps } from './tree-content.type';
 import Checkbox from './tree-checkbox';
 import Icons from '../icons';
-// import Spin from '../spin';
+import Spin from '../spin';
 
 const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   const {
@@ -17,10 +17,13 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     expandIcons,
     renderItem,
     expanded,
+    fetching,
     childrenKey,
     parentClickExpand,
     doubleClickExpand,
     bindContent,
+    setFetching,
+    loader,
     onChange,
     onToggle,
     onDragOver,
@@ -37,6 +40,11 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
 
   const handleIndicatorClick = () => {
     onToggle();
+
+    if (data[childrenKey] !== undefined) return;
+
+    setFetching(true);
+    if (loader) loader(id, data);
   };
 
   const handleNodeClick = () => {
@@ -55,15 +63,20 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     if (hasChildren) handleIndicatorClick();
   };
 
-  // const renderLoading = () => {
-  //   return <Spin name="ring" size={12} jssStyle={jssStyle}></Spin>
-  // };
+  const renderLoading = () => {
+    return (
+      <span
+        className={contentStyle.iconWrapper}
+        data-expanded={expanded}
+        data-icon={hasExpandIcons}
+      >
+        <Spin name='ring' size={12} jssStyle={jssStyle}></Spin>
+      </span>
+    );
+  };
+
   const renderIndicator = () => {
     const children = data[childrenKey] as DataItem[];
-
-    if (!children || children.length === 0) {
-      return null;
-    }
 
     const icon = expandIcons
       ? expandIcons[expanded ? 1 : 0]
@@ -71,10 +84,12 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
       ? Icons.TreeMinus
       : Icons.TreePlus;
 
+    let indicator: React.ReactNode;
+
     if (line) {
-      return (
+      indicator = (
         <span
-          style={{ position: 'absolute', left: 12, top: 6 }}
+          style={{ position: 'absolute', left: 16, top: 6 }}
           data-expanded={expanded}
           data-icon={hasExpandIcons}
         >
@@ -83,19 +98,26 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
           </span>
         </span>
       );
+    } else {
+      indicator = (
+        <span
+          className={contentStyle.iconWrapper}
+          data-expanded={expanded}
+          data-icon={hasExpandIcons}
+        >
+          <span className={classNames(contentStyle.icon, iconClass)} onClick={handleIndicatorClick}>
+            {util.isFunc(icon) ? icon(data) : hasExpandIcons ? icon : Icons.TreeArrow}
+          </span>
+        </span>
+      );
     }
 
-    return (
-      <span
-        className={contentStyle.iconWrapper}
-        data-expanded={expanded}
-        data-icon={hasExpandIcons}
-      >
-        <span className={classNames(contentStyle.icon, iconClass)} onClick={handleIndicatorClick}>
-          {util.isFunc(icon) ? icon(data) : hasExpandIcons ? icon : Icons.TreeArrow}
-        </span>
-      </span>
-    );
+    if (children && children.length > 0) return indicator;
+    if (Array.isArray(children) || children === null) return null;
+    if (fetching && !children) return renderLoading();
+    if (loader && !fetching) return indicator;
+
+    return null;
   };
 
   const renderCheckbox = () => {

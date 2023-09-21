@@ -25,4 +25,5 @@ export interface TreeRootProps<DataItem> extends Omit<BaseTreeProps<DataItem>, '
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   onChange?: (value: KeygenResult[]) => void;
   onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
+  loader?: (key: KeygenResult, data: DataItem) => void;
 }

@@ -24,6 +24,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     leafClass,
     expandIcons,
     childrenKey,
+    loader,
     onNodeClick,
     onToggle,
     onDrop,
@@ -76,6 +77,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         leafClass={leafClass}
         expandIcons={expandIcons}
         bindNode={bindNode}
+        loader={loader}
         dragImageSelector={dragImageSelector}
         dragImageStyle={dragImageStyle}
         dragSibling={dragSibling}

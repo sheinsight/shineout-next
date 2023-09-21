@@ -1,4 +1,4 @@
-import { useMemo, useRef, createElement } from 'react';
+import { useRef, createElement } from 'react';
 import classNames from 'classnames';
 import { TreeClasses } from './tree.type';
 import { TreeNodeProps } from './tree-node.type';
@@ -34,6 +34,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     dragImageStyle,
     childrenClass,
     bindNode,
+    loader,
     onChange,
     onNodeClick,
     onToggle,
@@ -46,16 +47,19 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
   // const dragLock = useRef(false);
   const dragImage = useRef<null | HTMLElement>(null);
 
-  const { getChecked, getPath } = useTreeContext();
+  const { getPath } = useTreeContext();
   const {
     active,
     expanded,
-    onToggle: handleToggle,
     isLeaf,
+    fetching,
+    setFetching,
+    onToggle: handleToggle,
   } = useTreeNode({
     id,
     data,
     bindNode,
+    loader,
     onToggle,
     childrenKey,
     element,
@@ -194,6 +198,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       data: children,
       mode,
       index,
+      loader,
       onDrop,
       onChange,
       onToggle,
@@ -222,10 +227,8 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     return dropEvents;
   };
 
-  const checked = getChecked(id);
-
-  const renderContent = useMemo(() => {
-    return (
+  return (
+    <div {...getDropProps()} ref={element} className={rootClass}>
       <TreeContent
         jssStyle={jssStyle}
         id={id}
@@ -233,6 +236,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         data={data}
         mode={mode}
         active={active}
+        fetching={fetching}
         expanded={expanded}
         keygen={keygen}
         bindNode={bindNode}
@@ -244,18 +248,14 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         expandIcons={expandIcons}
         parentClickExpand={parentClickExpand}
         doubleClickExpand={doubleClickExpand}
+        loader={loader}
+        setFetching={setFetching}
         onChange={onChange}
         onFetch={handleFetch}
         onNodeClick={onNodeClick}
         onDragOver={handleDragOver}
         onToggle={handleToggle}
       ></TreeContent>
-    );
-  }, [checked, expanded]);
-
-  return (
-    <div {...getDropProps()} ref={element} className={rootClass}>
-      {renderContent}
       {hasChildren && createElement(List, getChildrenListProps())}
     </div>
   );

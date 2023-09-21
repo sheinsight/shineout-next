@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BaseTreeNodeProps } from './use-tree-node.type';
 
 const useTreeNode = <DataItem>(props: BaseTreeNodeProps<DataItem>) => {
-  const { id, data, bindNode, childrenKey, onToggle } = props;
+  const { id, data, bindNode, childrenKey, loader, onToggle } = props;
   const [active, setActive] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [fetching, setFetching] = useState(false);
@@ -33,7 +33,7 @@ const useTreeNode = <DataItem>(props: BaseTreeNodeProps<DataItem>) => {
     if (Array.isArray(children) || children === null) return true;
 
     if (fetching && !children) return false;
-    // if (loader && !fetching) return false
+    if (loader && !fetching) return false;
 
     return true;
   };
@@ -50,6 +50,7 @@ const useTreeNode = <DataItem>(props: BaseTreeNodeProps<DataItem>) => {
     expanded,
     fetching,
     isLeaf,
+    setFetching,
     onToggle: handleToggle,
   };
 };

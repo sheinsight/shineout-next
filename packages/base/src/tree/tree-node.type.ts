@@ -37,4 +37,5 @@ export interface TreeNodeProps<DataItem>
   dragImageStyle?: React.CSSProperties;
   dragSibling?: boolean;
   dragHoverExpand?: boolean;
+  loader?: (key: KeygenResult, data: DataItem) => void;
 }

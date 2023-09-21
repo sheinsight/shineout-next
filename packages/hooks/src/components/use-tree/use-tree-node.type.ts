@@ -18,6 +18,7 @@ export interface BaseTreeNodeProps<DataItem> {
   dragImageStyle?: React.CSSProperties;
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   content: HTMLDivElement | null;
+  loader?: (key: KeygenResult, data: DataItem) => void;
   onToggle?: (id: KeygenResult, expanded: boolean) => void;
   onDrop?: (data: DataItem[], key: KeygenResult, targetKey: KeygenResult, position: number) => void;
 }

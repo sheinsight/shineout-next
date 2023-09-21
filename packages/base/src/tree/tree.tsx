@@ -30,6 +30,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     dragSibling,
     dragHoverExpand,
     // onClick,
+    loader,
     onDrop,
     onExpand,
     onChange,
@@ -155,6 +156,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           childrenKey={childrenKey as keyof DataItem}
           onNodeClick={handleNodeClick}
           renderItem={renderItem}
+          loader={loader}
           onToggle={onToggle}
           onDrop={onDrop && handleDrop}
           dragSibling={dragSibling}

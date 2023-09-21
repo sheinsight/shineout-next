@@ -24,6 +24,9 @@ export interface TreeContextProps<DataItem>
   childrenClass?: ((data: DataItem) => string) | string;
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   bindContent: React.RefObject<HTMLDivElement>;
+  fetching: boolean;
+  loader?: (key: KeygenResult, data: DataItem) => void;
+  setFetching: (value: boolean) => void;
   onToggle: () => void;
   onFetch: () => void;
   onDragOver: () => void;

@@ -15,6 +15,7 @@ const treeRules = {
   layout: [['padding-x', 'padding-y']],
   item: [['item'], ['', 'hover', 'active', 'disabled'], ['background-color', 'font-color']],
   content: [['content'], ['', 'hover', 'active', 'disabled'], ['background-color', 'font-color']],
+  drag: [['drag'], ['border-color', 'background-color']],
   extra_icon_margin: [['nearly'], ['', 'small', 'large'], ['margin']],
   extra_content: [['content'], ['border-radius']],
 };

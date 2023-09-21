@@ -23,6 +23,8 @@ const treeTokens: TreeTokens = {
   treeContentActiveBackgroundColor: 'Brand-1',
   treeContentActiveFontColor: 'Brand-6',
   treeContentDisabledFontColor: 'Neutral-text-2',
+  treeDragBorderColor: 'Brand-6',
+  treeDragBackgroundColor: 'Brand-1',
   treeContentBorderRadius: 'Radius-2',
 };
 
