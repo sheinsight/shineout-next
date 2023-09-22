@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Icons from '../icons';
 import { getLocale, useConfig } from '../config';
 import TimePicker from './time';
+import Button from '../button';
 
 import type { DayProps } from './day.type';
 
@@ -32,6 +33,11 @@ const Day = (props: DayProps) => {
   });
   const days = func.getDays();
   const len = days.length / 7;
+
+  const selNow = () => {
+    props.setCurrent(new Date());
+    props.onChange(new Date(), true);
+  };
 
   const renderDay = (item: Date, index: number) => {
     const isActive = func.isActive(item);
@@ -86,15 +92,48 @@ const Day = (props: DayProps) => {
   };
 
   const renderFooter = () => {
-    const hasDate = props.rangeDate?.[0] || props.rangeDate?.[1];
-    if (!hasDate) return null;
+    const showLeft = props.type === 'datetime' && (props.rangeDate?.[0] || props.rangeDate?.[1]);
+    const showRight = props.showSelNow;
+
     const timeStr = func.getTimeStr();
-    if (!timeStr) return <div className={styles?.datetime} />;
+    if (!showLeft && !props.showSelNow) return null;
     return (
-      <div className={styles?.datetime}>
-        <span>{Icons.Clock}</span>
-        <TimePicker {...props} />
-        <span>{timeStr}</span>
+      <div className={styles?.pickerFooter}>
+        {props.type === 'datetime' && (
+          <div className={classNames(styles?.pickerFooterLeft, styles?.datetime)}>
+            {timeStr && (
+              <>
+                <span>{Icons.Clock}</span>
+                <TimePicker {...props} showSelNow={false} />
+                <span>{func.getTimeStr()}</span>
+              </>
+            )}
+          </div>
+        )}
+        {showRight && (
+          <div className={styles?.pickerFooterRight}>
+            {props.showSelNow && props.type === 'date' && (
+              <Button
+                size={'small'}
+                jssStyle={jssStyle}
+                className={styles?.pickerFooterBtn}
+                onClick={selNow}
+              >
+                {getLocale(locale, 'now')}
+              </Button>
+            )}
+            {props.showSelNow && props.type === 'datetime' && (
+              <Button
+                size={'small'}
+                jssStyle={jssStyle}
+                className={styles?.pickerFooterBtn}
+                onClick={selNow}
+              >
+                {getLocale(locale, 'current')}
+              </Button>
+            )}
+          </div>
+        )}
       </div>
     );
   };

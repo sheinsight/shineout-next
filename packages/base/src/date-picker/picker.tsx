@@ -5,6 +5,7 @@ import Month from './month';
 import Year from './year';
 import Quarter from './quarter';
 import Time from './time';
+import Quick from './quick';
 import { useDatePickerRange } from '@sheinx/hooks';
 
 const Picker = (props: PickerProps) => {
@@ -45,11 +46,15 @@ const Picker = (props: PickerProps) => {
       max: position === 'end' ? endMax : startMax,
       jssStyle,
       position,
+      showSelNow: props.showSelNow,
     };
     const timeProps = {
       format: props.format,
       disabledTime: props.disabledTime,
       defaultTime: defaultTimeArr[index],
+      hourStep: props.hourStep,
+      minuteStep: props.minuteStep,
+      secondStep: props.secondStep,
     };
     if (mode === 'quarter') {
       return <Quarter {...commonProps} />;
@@ -69,8 +74,21 @@ const Picker = (props: PickerProps) => {
     }
     return <Day {...commonProps} {...timeProps} />;
   };
+
   return (
     <div className={jssStyle?.datePicker?.pickerBox}>
+      {props.quickSelect?.length && (
+        <Quick
+          quickSelect={props.quickSelect}
+          range={props.range}
+          jssStyle={jssStyle}
+          dateArr={dateArr}
+          setDateArr={props.setDateArr}
+          setCurrentArr={props.setCurrentArr}
+          format={props.format}
+          options={props.options}
+        />
+      )}
       {range
         ? ['start', 'end'].map((item) => {
             return renderPicker(item as 'start' | 'end');

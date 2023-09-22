@@ -214,6 +214,12 @@ export interface DatePickerTokens {
   datePickerPickerRadius: string;
   /**
    * @type {string}
+   * @token Margin-24
+   * @description undefinedundefinedundefined外边距
+   */
+  datePickerPickerMargin: string;
+  /**
+   * @type {string}
    * @token Padding-12
    * @description undefinedundefinedundefinedundefined内边距（水平方向）
    */
@@ -278,6 +284,30 @@ export interface DatePickerTokens {
    * @description undefinedundefinedundefinedundefined字体字号
    */
   datePickerPickerBodyFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description undefinedundefinedundefinedundefined内边距（水平方向）
+   */
+  datePickerPickerFooterPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-10
+   * @description undefinedundefinedundefinedundefined内边距（垂直方向）
+   */
+  datePickerPickerFooterPaddingY: string;
+  /**
+   * @type {string}
+   * @token 14/regular
+   * @description undefinedundefinedundefinedundefinedundefined字体字号
+   */
+  datePickerPickerFooterLeftFontSize: string;
+  /**
+   * @type {string}
+   * @token 14/regular
+   * @description undefinedundefinedundefinedundefinedundefined字体字号
+   */
+  datePickerPickerFooterRightFontSize: string;
   /**
    * @type {string}
    * @token Neutral-text-5
@@ -370,18 +400,6 @@ export interface DatePickerTokens {
   datePickerDayPickerWidth: string;
   /**
    * @type {string}
-   * @token Padding-16
-   * @description undefinedundefinedundefinedundefined内边距（水平方向）
-   */
-  datePickerDayTimePaddingX: string;
-  /**
-   * @type {string}
-   * @token Padding-10
-   * @description undefinedundefinedundefinedundefined内边距（垂直方向）
-   */
-  datePickerDayTimePaddingY: string;
-  /**
-   * @type {string}
    * @token Size-142
    * @description undefinedundefinedundefinedundefined宽度
    */
@@ -430,13 +448,13 @@ export interface DatePickerTokens {
   datePickerTimePickerWidth: string;
   /**
    * @type {string}
-   * @token Padding-14
+   * @token Padding-12
    * @description undefinedundefinedundefinedundefined内边距（水平方向）
    */
   datePickerTimePickerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-14
+   * @token Padding-12
    * @description undefinedundefinedundefinedundefined内边距（垂直方向）
    */
   datePickerTimePickerPaddingY: string;
@@ -476,4 +494,46 @@ export interface DatePickerTokens {
    * @description undefinedundefinedundefinedundefined禁用时的颜色
    */
   datePickerTimeItemDisabledColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description undefinedundefinedundefinedundefined内边距（水平方向）
+   */
+  datePickerQuickPickerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description undefinedundefinedundefinedundefined内边距（垂直方向）
+   */
+  datePickerQuickPickerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Margin-8
+   * @description undefinedundefinedundefinedundefinedundefined
+   */
+  datePickerQuickPickerGap: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description undefinedundefinedundefinedundefinedundefined字体字号
+   */
+  datePickerQuickPickerItemFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description undefinedundefinedundefinedundefinedundefined内边距（水平方向）
+   */
+  datePickerQuickPickerItemPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-2
+   * @description undefinedundefinedundefinedundefinedundefined内边距（垂直方向）
+   */
+  datePickerQuickPickerItemPaddingY: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description undefinedundefinedundefinedundefinedundefined鼠标移入时的背景颜色
+   */
+  datePickerQuickPickerItemHoverBackgroundColor: string;
 }

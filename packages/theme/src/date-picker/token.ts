@@ -47,6 +47,7 @@ const datePickerTokenExtraValue = {
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
     radius: 'Radius-4',
+    margin: 'Margin-24',
     header: {
       padding: { x: 'Padding-12', y: 'Padding-8' },
       border: { color: 'Neutral-border-1' },
@@ -59,6 +60,11 @@ const datePickerTokenExtraValue = {
       title: { padding: { x: 'Padding-4' } },
     },
     body: { padding: { x: 'Padding-16', y: 'Padding-16' }, font: { size: '14/regular' } },
+    footer: {
+      padding: { x: 'Padding-16', y: 'Padding-10' },
+      left: { font: { size: '14/regular' } },
+      right: { font: { size: '14/regular' } },
+    },
   },
   cell: {
     color: 'Neutral-text-5',
@@ -78,9 +84,6 @@ const datePickerTokenExtraValue = {
   },
   day: {
     picker: { width: 'Size-124' },
-    time: {
-      padding: { x: 'Padding-16', y: 'Padding-10' },
-    },
   },
   week: {
     picker: { width: 'Size-142' },
@@ -106,7 +109,7 @@ const datePickerTokenExtraValue = {
   time: {
     picker: {
       width: 'Size-115',
-      padding: { x: 'Padding-14', y: 'Padding-14' },
+      padding: { x: 'Padding-12', y: 'Padding-12' },
     },
     list: {
       gap: 'Margin-8',
@@ -120,6 +123,17 @@ const datePickerTokenExtraValue = {
       },
       disabled: {
         color: 'Neutral-text-2',
+      },
+    },
+  },
+  quick: {
+    picker: {
+      padding: { x: 'Padding-8', y: 'Padding-12' },
+      gap: 'Margin-8',
+      item: {
+        font: { size: '12/regular' },
+        padding: { x: 'Padding-12', y: 'Padding-2' },
+        hover: { background: { color: 'Neutral-fill-2' } },
       },
     },
   },

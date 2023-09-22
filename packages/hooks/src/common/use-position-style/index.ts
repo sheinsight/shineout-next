@@ -239,7 +239,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
     const realPosition = adjust ? adjustPosition(position) : position;
     if (!absolute) {
-      newStyle = getPositionStyle(realPosition, { popupGap });
+      newStyle = getPositionStyle(realPosition, { popupGap, zIndex });
     } else {
       newStyle = getAbsoluteStyle(realPosition)!;
     }

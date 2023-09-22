@@ -4,6 +4,8 @@ import { DatePickerProps, DateTimeType } from './date-picker.type';
 export interface PickerProps {
   jssStyle: DatePickerProps<any>['jssStyle'];
   defaultTime: DatePickerProps<any>['defaultTime'];
+  quickSelect: DatePickerProps<any>['quickSelect'];
+  showSelNow: DatePickerProps<any>['showSelNow'];
   format: string;
   disabledTime: DatePickerProps<any>['disabledTime'];
   type: string;

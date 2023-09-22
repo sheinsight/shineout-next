@@ -1,4 +1,4 @@
-import { DatePickerProps } from './date-picker.type';
+import { PickerProps } from './picker.type';
 
 export interface TimeProps {
   setCurrent: (date: Date) => void;
@@ -7,15 +7,12 @@ export interface TimeProps {
   min?: Date;
   max?: Date;
   format: string;
-  jssStyle: DatePickerProps<any>['jssStyle'];
-  disabled: DatePickerProps<any>['disabled'];
-  disabledTime: DatePickerProps<any>['disabledTime'];
-  position?: 'start' | 'end';
-  hourStep?: DatePickerProps<any>['hourStep'];
-  minuteStep?: DatePickerProps<any>['minuteStep'];
-  secondStep?: DatePickerProps<any>['secondStep'];
-  options: {
-    weekStartsOn: number;
-    timeZone?: string;
-  };
+  jssStyle: PickerProps['jssStyle'];
+  disabled: PickerProps['disabled'];
+  disabledTime: PickerProps['disabledTime'];
+  hourStep: PickerProps['hourStep'];
+  minuteStep: PickerProps['minuteStep'];
+  secondStep: PickerProps['secondStep'];
+  showSelNow: PickerProps['showSelNow'];
+  options: PickerProps['options'];
 }

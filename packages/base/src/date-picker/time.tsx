@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { TimeProps } from './time.type';
 import { useTimePick, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
+import Button from '../button';
+import { getLocale, useConfig } from '@sheinx/base';
 
 const TimeScroll = (props: {
   mode: string;
@@ -82,10 +84,15 @@ const TimeScroll = (props: {
 
 const Time = (props: TimeProps) => {
   const styles = props.jssStyle?.datePicker;
+  const { locale } = useConfig();
   const onChange = usePersistFn((date) => {
     props.onChange(date, true);
     props.setCurrent(date);
   });
+
+  const selNow = () => {
+    onChange(new Date());
+  };
   const { func, times } = useTimePick({
     format: props.format,
     options: props.options,
@@ -100,25 +107,50 @@ const Time = (props: TimeProps) => {
     secondStep: props.secondStep,
   });
 
+  const renderFooter = () => {
+    const showRight = props.showSelNow;
+
+    if (!showRight) return null;
+    return (
+      <div className={styles?.pickerFooter}>
+        {showRight && (
+          <div className={styles?.pickerFooterRight}>
+            <Button
+              size={'small'}
+              jssStyle={props.jssStyle}
+              className={styles?.pickerFooterBtn}
+              onClick={selNow}
+            >
+              {getLocale(locale, 'current')}
+            </Button>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
-    <div className={styles?.timePicker}>
-      <div className={styles?.timeBase}>
+    <div className={classNames(styles?.timePicker, styles?.picker)}>
+      <div className={styles?.pickerBody}>
+        <div className={styles?.timeBase}>
+          {times.map((item) => {
+            return <div className={styles?.timeBaseItem} key={item.mode} />;
+          })}
+        </div>
         {times.map((item) => {
-          return <div className={styles?.timeBaseItem} key={item.mode} />;
+          return (
+            <TimeScroll
+              key={item.mode}
+              mode={item.mode}
+              jssStyle={props.jssStyle}
+              times={item.times}
+              currentIndex={item.currentIndex}
+              onChange={func.handleChange}
+            />
+          );
         })}
       </div>
-      {times.map((item) => {
-        return (
-          <TimeScroll
-            key={item.mode}
-            mode={item.mode}
-            jssStyle={props.jssStyle}
-            times={item.times}
-            currentIndex={item.currentIndex}
-            onChange={func.handleChange}
-          />
-        );
-      })}
+      {renderFooter()}
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import { DatePickerProps, DateTimeType } from './date-picker.type';
+import type { DateTimeType } from './date-picker.type';
+import type { PickerProps } from './picker.type';
 
 export interface DayProps {
   current: Date;
@@ -12,12 +13,16 @@ export interface DayProps {
   max?: Date;
   type: string;
   format: string;
-  jssStyle: DatePickerProps<any>['jssStyle'];
-  disabled: DatePickerProps<any>['disabled'];
-  disabledTime: DatePickerProps<any>['disabledTime'];
+  jssStyle: PickerProps['jssStyle'];
+  disabled: PickerProps['disabled'];
+  disabledTime: PickerProps['disabledTime'];
+  hourStep: PickerProps['hourStep'];
+  minuteStep: PickerProps['minuteStep'];
+  secondStep: PickerProps['secondStep'];
   position?: 'start' | 'end';
   options: {
     weekStartsOn: number;
     timeZone?: string;
   };
+  showSelNow: PickerProps['showSelNow'];
 }

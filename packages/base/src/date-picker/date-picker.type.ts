@@ -1,6 +1,7 @@
 // import React from 'react';
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
+import { ButtonClasses } from '../button/button.type';
 
 export type DateTimeType = Date | number | string | undefined;
 
@@ -11,6 +12,8 @@ export interface DatePickerClasses {
    * 最外层class
    */
   wrapper: string;
+  wrapperSmall: string;
+  wrapperLarge: string;
   wrapperFocus: string;
   wrapperDisabled: string;
   wrapperError: string;
@@ -52,6 +55,11 @@ export interface DatePickerClasses {
   pickerCellInRangeStart: string;
   pickerCellInRangeEnd: string;
 
+  pickerFooter: string;
+  pickerFooterBtn: string;
+  pickerFooterLeft: string;
+  pickerFooterRight: string;
+
   // 日
   dayPicker: string;
   weekPicker: string;
@@ -71,6 +79,10 @@ export interface DatePickerClasses {
   timeBaseItem: string;
 
   datetime: string;
+
+  // 快速选择
+  quickPicker: string;
+  quickPickerItem: string;
 }
 
 export type DisabledType = 'start' | 'end';
@@ -80,6 +92,7 @@ export interface DatePickerProps<Value extends DatePickerValue>
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle?: {
     datePicker: DatePickerClasses;
+    button: ButtonClasses;
   };
   /**
    * @en When the value is true, disabled all options; When the value is function, disable the options that this function returns true.
@@ -207,4 +220,19 @@ export interface DatePickerProps<Value extends DatePickerValue>
    * @cn 秒选项步长
    */
   secondStep?: number;
+  /**
+   * @en quick select, only in range can set, name: tip, value: range date
+   * @cn 快速选择, 仅在 range 模式下有效, name: 文字提示, value: 时间范围
+   * @override {name: string, value: Value}[]
+   */
+  quickSelect?: Array<QuickSelectType>;
+  /**
+   * @en quick select, only in range can set, name: tip, value: range date
+   * @cn 是否展示今天或者此刻按钮
+   */
+  showSelNow?: boolean;
+}
+export interface QuickSelectType {
+  name: string;
+  value: DatePickerValue | (() => DatePickerValue);
 }

@@ -148,8 +148,6 @@ const useTime = (props: UseTimeProps) => {
   });
   const times = getTimes();
 
-  console.log('times', times);
-
   return {
     times,
     func,

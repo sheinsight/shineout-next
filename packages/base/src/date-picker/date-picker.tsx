@@ -125,7 +125,10 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
   return (
     <div
       className={classNames(
+        props.className,
         styles?.wrapper,
+        props.size === 'small' && styles?.wrapperSmall,
+        props.size === 'large' && styles?.wrapperLarge,
         focused && styles?.wrapperFocus,
         disabledAll && styles?.wrapperDisabled,
         props.status === 'error' && styles?.wrapperError,
@@ -133,6 +136,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
         !border && styles?.wrapperNoBorder,
       )}
       {...util.getDataAttribute({ type })}
+      style={props.style}
     >
       {renderResult()}
       <AbsoluteList
@@ -175,6 +179,8 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
             max={props.max}
             format={format}
             disabledTime={props.disabledTime}
+            quickSelect={props.quickSelect}
+            showSelNow={props.showSelNow}
           />
         </AnimationList>
       </AbsoluteList>
