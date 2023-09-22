@@ -5,9 +5,15 @@ import groupContext from './group-context';
 import { usePersistFn } from '@sheinx/hooks';
 
 const CollapseItem = (props: CollapseItemProps) => {
-  // TODO: lazyload, destroyOnHide, expandContentPosition,
-  const { active, triggerRegion, expandIcon, onChange, expandContentPosition } =
-    useContext(groupContext);
+  const {
+    active,
+    triggerRegion,
+    expandIcon,
+    onChange,
+    expandContentPosition,
+    lazyload,
+    destroyOnHide: destroyOnHideProps,
+  } = useContext(groupContext);
   const {
     children,
     name,
@@ -15,15 +21,17 @@ const CollapseItem = (props: CollapseItemProps) => {
     jssStyle,
     style,
     disabled,
-    showExpandIcon = 'true',
+    showExpandIcon = true,
     expandContent,
     title,
     extra,
     contentStyle,
+    destroyOnHide = false,
   } = props;
   const [panelStyle, setPanelStyle] = useState<CSSProperties | undefined>();
   const panelRef = useRef<HTMLDivElement>(null);
   const panelHeight = useRef<number>(0);
+  const keepAlive = useRef<boolean>(false);
 
   const judgeExpanded = active.indexOf(name) > -1;
 
@@ -65,26 +73,37 @@ const CollapseItem = (props: CollapseItemProps) => {
     className,
     jssStyle?.collapseItem.wrapper,
     judgeExpanded && jssStyle?.collapseItem.active,
+    disabled && jssStyle?.collapseItem.disabled,
   );
   const collapseItemHeaderClassName = classNames(
     jssStyle?.collapseItem.header,
     !showExpandIcon && jssStyle?.collapseItem.noIcon,
     expandContentPosition === 'right' && jssStyle?.collapseItem.rightIcon,
   );
-  const collapseItemIconClassName = classNames(jssStyle?.collapseItem.icon);
+  const collapseItemIconClassName = classNames(
+    jssStyle?.collapseItem.icon,
+    expandContentPosition === 'right'
+      ? jssStyle?.collapseItem.activeTransformRight
+      : jssStyle?.collapseItem.activeTransform,
+  );
   const collapseItemContentClassName = classNames(
     jssStyle?.collapseItem.content,
     judgeExpanded && jssStyle?.collapseItem.expanded,
   );
   const collapseItemContentMainClassName = classNames(jssStyle?.collapseItem.contentMain);
 
-  const renderContent = () => (
-    <div ref={panelRef} style={panelStyle} className={collapseItemContentClassName}>
-      <div className={collapseItemContentMainClassName} style={contentStyle}>
-        {children}
+  const renderContent = () => {
+    if (!keepAlive.current && !judgeExpanded && lazyload) return null;
+    if ((destroyOnHideProps || destroyOnHide) && !judgeExpanded) return null;
+    keepAlive.current = true;
+    return (
+      <div ref={panelRef} style={panelStyle} className={collapseItemContentClassName}>
+        <div className={collapseItemContentMainClassName} style={contentStyle}>
+          {children}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className={collapseItemClassName} style={style}>

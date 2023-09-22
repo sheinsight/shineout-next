@@ -6,7 +6,6 @@ import Icons from '../icons';
 import { useCollapse } from '@sheinx/hooks';
 
 const Collapse = (props: CollapseProps) => {
-  // TODO: 未实现嵌套
   const {
     children,
     jssStyle,
@@ -17,11 +16,11 @@ const Collapse = (props: CollapseProps) => {
     accordion = false,
     onChange: onChangeProps,
     triggerRegion,
-    lazyload,
-    destroyOnHide,
+    lazyload = true,
+    destroyOnHide = false,
     expandContentPosition = 'left',
     expandContent,
-    border = 'true',
+    border = true,
   } = props;
 
   const { active, onChange } = useCollapse({

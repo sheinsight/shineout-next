@@ -11,13 +11,18 @@ export default () => {
   return (
     <div>
       <Collapse
-        defaultActive={['1', '2']}
+        defaultActive={['1', '3']}
         style={{ maxWidth: 1180 }}
-        accordion
-        triggerRegion='icon'
-        border={false}
-        expandContentPosition='left'
+        triggerRegion='header'
+        expandContentPosition='right'
       >
+        <Collapse.Item title='dads' name='0'>
+          <Collapse style={{ maxWidth: 1180 }} triggerRegion='header' expandContentPosition='left'>
+            <Collapse.Item title='Beijing Toutiao Technology Co., Ltd.' name='1' extra='hello'>
+              Beijing Toutiao Technology Co., Ltd.
+            </Collapse.Item>
+          </Collapse>
+        </Collapse.Item>
         <Collapse.Item title='Beijing Toutiao Technology Co., Ltd.' name='1' extra='hello'>
           Beijing Toutiao Technology Co., Ltd.
         </Collapse.Item>

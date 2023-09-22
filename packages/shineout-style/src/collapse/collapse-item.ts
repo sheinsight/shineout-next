@@ -12,6 +12,8 @@ export type CollapseItemClass =
   | 'contentMain'
   | 'rightIcon'
   | 'disabled'
+  | 'activeTransform'
+  | 'activeTransformRight'
   | 'expanded';
 
 const collapseItemStyle: JsStyles<CollapseItemClass> = {
@@ -37,28 +39,31 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     color: 'black',
     fontSize: '14px',
     lineHeight: '24px',
-    transition: 'border-color 0s ease 0.19s',
+    transition: 'border-color 0s ease 0s',
     borderBottom: '1px solid transparent',
   },
   active: {
-    '& $icon': {
+    '& > $header': {
+      borderColor: 'rgb(201,205,212)',
+    },
+    '& > header > $title': {
+      fontWeight: 500,
+    },
+    '& > $header $activeTransform': {
       '& svg': {
         transform: 'rotate(90deg)',
       },
     },
-    '& $rightIcon $icon svg': {
-      transform: 'rotate(-90deg)',
-    },
-    '& $header': {
-      borderColor: 'rgb(201,205,212)',
-      transition: 'border-color 0s ease 0s',
-    },
-    '& $title': {
-      fontWeight: 500,
+    '& > $header $activeTransformRight': {
+      '& svg': {
+        transform: 'rotate(-90deg)',
+      },
     },
   },
+  activeTransform: {},
+  activeTransformRight: {},
   noIcon: {
-    '& $icon': {
+    '& > $icon': {
       display: 'none',
     },
   },
@@ -95,16 +100,21 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
   },
   rightIcon: {
     flexDirection: 'row-reverse',
-    '& $icon': {
+    '& > $icon': {
       marginRight: '8px',
       marginLeft: 0,
     },
-    '& $extra': {
+    '& > $extra': {
       marginRight: 0,
       marginLeft: '8px',
     },
   },
-  disabled: {},
+  disabled: {
+    '& $header': {
+      cursor: 'not-allowed',
+      color: 'rgb(201,205,212)',
+    },
+  },
   expanded: {
     // display: 'block',
   },

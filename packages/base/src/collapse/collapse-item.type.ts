@@ -16,6 +16,9 @@ export interface CollapseItemClasses {
   contentMain: string;
   noIcon: string;
   rightIcon: string;
+  disabled: string;
+  activeTransform: string;
+  activeTransformRight: string;
 }
 
 export interface CollapseItemProps extends Pick<CommonType, 'className' | 'style'> {
