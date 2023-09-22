@@ -4,7 +4,17 @@ import { DescriptionsProps } from './descriptions.type';
 import { useDescriptions, type DescriptionsItemProps } from '@sheinx/hooks';
 
 const Descriptions = (props: DescriptionsProps) => {
-  const { className, jssStyle, style, title, extra, column = 3, item, colon } = props;
+  const {
+    className,
+    jssStyle,
+    style,
+    title,
+    extra,
+    column = 3,
+    item,
+    colon,
+    layout = 'horizontal',
+  } = props;
   const { renderItem } = useDescriptions({
     item,
     column,
@@ -22,13 +32,14 @@ const Descriptions = (props: DescriptionsProps) => {
   const renderHorizontal = (d: DescriptionsItemProps[], i: number) => (
     <tr key={i} className={jssStyle?.descriptions.row}>
       {d.map((_d, _i) => {
+        const colSpanProps = _d.span > 1 ? { colSpan: _d.span * 2 - 1 } : {};
         return (
           <Fragment key={_d.key || _i}>
             <td className={jssStyle?.descriptions.label} style={_d.labelStyle}>
               {_d.label}
               {colon}
             </td>
-            <td className={jssStyle?.descriptions.value} style={_d.valueStyle}>
+            <td className={jssStyle?.descriptions.value} style={_d.valueStyle} {...colSpanProps}>
               {_d.value}
             </td>
           </Fragment>
@@ -37,8 +48,44 @@ const Descriptions = (props: DescriptionsProps) => {
     </tr>
   );
 
+  const renderVertical = (d: DescriptionsItemProps[], i: number) => (
+    <Fragment key={i}>
+      <tr className={jssStyle?.descriptions.row}>
+        {d.map((_d, _i) => {
+          const colSpanProps = _d.span > 1 ? { colSpan: _d.span } : {};
+          return (
+            <td
+              key={`${_d.key || _i}_k`}
+              className={jssStyle?.descriptions.label}
+              style={_d.labelStyle}
+              {...colSpanProps}
+            >
+              {_d.label}
+              {colon}
+            </td>
+          );
+        })}
+      </tr>
+      <tr className={jssStyle?.descriptions.row}>
+        {d.map((_d, _i) => {
+          const colSpanProps = _d.span > 1 ? { colSpan: _d.span } : {};
+          return (
+            <td
+              key={`${_d.key || _i}_v`}
+              className={jssStyle?.descriptions.value}
+              style={_d.valueStyle}
+              {...colSpanProps}
+            >
+              {_d.value}
+            </td>
+          );
+        })}
+      </tr>
+    </Fragment>
+  );
+
   const renderHandle = (d: DescriptionsItemProps[], i: number) => {
-    return renderHorizontal(d, i);
+    return layout === 'horizontal' ? renderHorizontal(d, i) : renderVertical(d, i);
   };
 
   return (
@@ -46,7 +93,9 @@ const Descriptions = (props: DescriptionsProps) => {
       <Header />
       <div className={jssStyle?.descriptions.body}>
         <table className={jssStyle?.descriptions.table} cellPadding={0} cellSpacing={0}>
-          <tbody>{renderItem.map((d, i) => renderHandle(d, i))}</tbody>
+          <tbody>
+            {renderItem.map((d: DescriptionsItemProps[], i: number) => renderHandle(d, i))}
+          </tbody>
         </table>
       </div>
     </div>
