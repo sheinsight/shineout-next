@@ -44,7 +44,7 @@ const CollapseItem = (props: CollapseItemProps) => {
   const currentDisabled = triggerRegion === 'disabled' || disabled;
 
   const handleClickByRegion = usePersistFn(
-    (e: React.ChangeEvent<Element>, regionKey: 0 | 1 | 2) => {
+    (e: React.MouseEvent<HTMLDivElement, MouseEvent>, regionKey: 0 | 1 | 2) => {
       if (currentDisabled) return;
       const triggerKey = triggerRegion === 'icon' ? 0 : triggerRegion === 'header' ? 1 : 2;
       if (regionKey === triggerKey || (triggerRegion === 'header' && [0, 1].includes(regionKey)))
@@ -90,7 +90,6 @@ const CollapseItem = (props: CollapseItemProps) => {
     jssStyle?.collapseItem.content,
     judgeExpanded && jssStyle?.collapseItem.expanded,
   );
-  const collapseItemContentMainClassName = classNames(jssStyle?.collapseItem.contentMain);
 
   const renderContent = () => {
     if (!keepAlive.current && !judgeExpanded && lazyload) return null;
@@ -98,7 +97,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     keepAlive.current = true;
     return (
       <div ref={panelRef} style={panelStyle} className={collapseItemContentClassName}>
-        <div className={collapseItemContentMainClassName} style={contentStyle}>
+        <div className={jssStyle?.collapseItem.contentMain} style={contentStyle}>
           {children}
         </div>
       </div>

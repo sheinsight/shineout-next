@@ -20,7 +20,7 @@ const useCollapse = (props: BaseCollapseProps) => {
     return currentActive;
   };
 
-  const handleChange = (newActive: string, event: React.ChangeEvent<Element>) => {
+  const handleChange = (newActive: string, event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     let newCurrentActive = [...(getCurrentValue() || [])];
     const key = getCurrentValue().indexOf(newActive);
     if (key > -1) newCurrentActive.splice(key, 1);

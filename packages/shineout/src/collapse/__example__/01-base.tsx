@@ -11,10 +11,14 @@ export default () => {
   return (
     <div>
       <Collapse
-        defaultActive={['1', '3']}
+        defaultActive={['1', '2']}
         style={{ maxWidth: 1180 }}
         triggerRegion='header'
         expandContentPosition='right'
+        border={false}
+        onChange={() => {
+          console.log(1);
+        }}
       >
         <Collapse.Item title='dads' name='0'>
           <Collapse style={{ maxWidth: 1180 }} triggerRegion='header' expandContentPosition='left'>

@@ -90,11 +90,11 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     overflow: 'hidden',
     position: 'relative',
     transition: 'height 0.2s cubic-bezier(0.34, 0.69, 0.1, 1)',
+    color: 'rgb(29,33,41)',
     // display: 'none',
   },
   contentMain: {
     padding: '8px 13px 8px 34px',
-    color: 'rgb(29,33,41)',
     backgroundColor: 'rgb(247,248,250)',
     fontSize: '14px',
   },
@@ -110,7 +110,7 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     },
   },
   disabled: {
-    '& $header': {
+    '& $header, $content': {
       cursor: 'not-allowed',
       color: 'rgb(201,205,212)',
     },
