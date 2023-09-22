@@ -8,6 +8,7 @@ export interface CollapseClasses {
    * 最外层class
    */
   wrapper: string;
+  borderLess: string;
 }
 
 export interface CollapseProps

@@ -23,8 +23,8 @@ const useCollapse = (props: BaseCollapseProps) => {
   const handleChange = (newActive: string, event: React.ChangeEvent<Element>) => {
     let newCurrentActive = [...(getCurrentValue() || [])];
     const key = getCurrentValue().indexOf(newActive);
-    if (accordion) newCurrentActive = [newActive];
-    else if (key > -1) newCurrentActive.splice(key, 1);
+    if (key > -1) newCurrentActive.splice(key, 1);
+    else if (accordion) newCurrentActive = [newActive];
     else newCurrentActive.push(newActive);
     if (active === undefined) setCurrentActive(newCurrentActive);
     if (isFunc(onChange)) onChange?.(newActive, newCurrentActive, event);

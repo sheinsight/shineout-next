@@ -19,8 +19,9 @@ const Collapse = (props: CollapseProps) => {
     triggerRegion,
     lazyload,
     destroyOnHide,
-    expandContentPosition,
+    expandContentPosition = 'left',
     expandContent,
+    border = 'true',
   } = props;
 
   const { active, onChange } = useCollapse({
@@ -30,7 +31,11 @@ const Collapse = (props: CollapseProps) => {
     onChange: onChangeProps,
   });
 
-  const collapseRootClassName = classNames(className, jssStyle?.collapse.wrapper);
+  const collapseRootClassName = classNames(
+    className,
+    jssStyle?.collapse.wrapper,
+    !border && jssStyle?.collapse.borderLess,
+  );
 
   const providerValue = {
     active,
@@ -42,8 +47,8 @@ const Collapse = (props: CollapseProps) => {
       expandContent !== undefined
         ? expandContent
         : expandContentPosition === 'right'
-        ? Icons.AngleRight
-        : Icons.AngleLeft,
+        ? Icons.AngleLeft
+        : Icons.AngleRight,
     onChange,
   };
   return (

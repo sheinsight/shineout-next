@@ -10,8 +10,15 @@ import { Collapse } from 'shineout';
 export default () => {
   return (
     <div>
-      <Collapse defaultActive={['1', '2']} style={{ maxWidth: 1180 }}>
-        <Collapse.Item title='Beijing Toutiao Technology Co., Ltd.' name='1'>
+      <Collapse
+        defaultActive={['1', '2']}
+        style={{ maxWidth: 1180 }}
+        accordion
+        triggerRegion='icon'
+        border={false}
+        expandContentPosition='left'
+      >
+        <Collapse.Item title='Beijing Toutiao Technology Co., Ltd.' name='1' extra='hello'>
           Beijing Toutiao Technology Co., Ltd.
         </Collapse.Item>
 

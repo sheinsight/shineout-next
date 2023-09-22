@@ -6,7 +6,8 @@ import { usePersistFn } from '@sheinx/hooks';
 
 const CollapseItem = (props: CollapseItemProps) => {
   // TODO: lazyload, destroyOnHide, expandContentPosition,
-  const { active, triggerRegion, expandIcon, onChange } = useContext(groupContext);
+  const { active, triggerRegion, expandIcon, onChange, expandContentPosition } =
+    useContext(groupContext);
   const {
     children,
     name,
@@ -14,7 +15,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     jssStyle,
     style,
     disabled,
-    showExpandIcon,
+    showExpandIcon = 'true',
     expandContent,
     title,
     extra,
@@ -34,16 +35,17 @@ const CollapseItem = (props: CollapseItemProps) => {
 
   const currentDisabled = triggerRegion === 'disabled' || disabled;
 
-  const handleClickByRegion = usePersistFn((e, regionKey: 0 | 1 | 2) => {
-    if (currentDisabled) return;
-    const triggerKey = triggerRegion === 'icon' ? 0 : triggerRegion === 'header' ? 1 : 2;
-    if (regionKey === triggerKey || (triggerRegion === 'header' && [0, 1].includes(regionKey)))
-      onChange(name, e);
-  });
+  const handleClickByRegion = usePersistFn(
+    (e: React.ChangeEvent<Element>, regionKey: 0 | 1 | 2) => {
+      if (currentDisabled) return;
+      const triggerKey = triggerRegion === 'icon' ? 0 : triggerRegion === 'header' ? 1 : 2;
+      if (regionKey === triggerKey || (triggerRegion === 'header' && [0, 1].includes(regionKey)))
+        onChange(name, e);
+    },
+  );
 
   useEffect(() => {
     if (!panelRef.current) return;
-    console.log('bool', judgeExpanded);
     if (!judgeExpanded) {
       panelHeight.current = panelRef.current.clientHeight;
       setPanelStyle({ height: panelRef.current.clientHeight });
@@ -52,7 +54,6 @@ const CollapseItem = (props: CollapseItemProps) => {
       }, 10);
     } else {
       if (panelHeight.current === 0) return;
-      console.log(111);
       setPanelStyle({ height: panelHeight.current });
       setTimeout(() => {
         setPanelStyle({ height: 'auto' });
@@ -60,20 +61,28 @@ const CollapseItem = (props: CollapseItemProps) => {
     }
   }, [judgeExpanded]);
 
-  const collapseItemClassName = classNames(className, jssStyle?.collapseItem.wrapper);
+  const collapseItemClassName = classNames(
+    className,
+    jssStyle?.collapseItem.wrapper,
+    judgeExpanded && jssStyle?.collapseItem.active,
+  );
   const collapseItemHeaderClassName = classNames(
     jssStyle?.collapseItem.header,
-    judgeExpanded && jssStyle?.collapseItem.active,
+    !showExpandIcon && jssStyle?.collapseItem.noIcon,
+    expandContentPosition === 'right' && jssStyle?.collapseItem.rightIcon,
   );
   const collapseItemIconClassName = classNames(jssStyle?.collapseItem.icon);
   const collapseItemContentClassName = classNames(
     jssStyle?.collapseItem.content,
     judgeExpanded && jssStyle?.collapseItem.expanded,
   );
+  const collapseItemContentMainClassName = classNames(jssStyle?.collapseItem.contentMain);
 
   const renderContent = () => (
     <div ref={panelRef} style={panelStyle} className={collapseItemContentClassName}>
-      <div style={contentStyle}>{children}</div>
+      <div className={collapseItemContentMainClassName} style={contentStyle}>
+        {children}
+      </div>
     </div>
   );
 
