@@ -96,20 +96,20 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const getValue = () => {
-    const value: KeygenResult[] = [];
+    const values: KeygenResult[] = [];
     context.valueMap.forEach((checked, id) => {
       switch (mode) {
         case MODE.MODE_0:
         case MODE.MODE_4:
-          if (checked === 1) value.push(id);
+          if (checked === 1) values.push(id);
           break;
         case MODE.MODE_1:
-          if (checked >= 1) value.push(id);
+          if (checked >= 1) values.push(id);
           break;
         case MODE.MODE_2:
           if (checked === 1) {
             const info = context.pathMap.get(id);
-            if (info && info.children.length === 0) value.push(id);
+            if (info && info.children.length === 0) values.push(id);
           }
           break;
         case MODE.MODE_3:
@@ -122,13 +122,14 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
               if (!pid && pid !== 0) return false;
               return context.valueMap.get(pid) === 1;
             })();
-            if (!parentChecked) value.push(id);
+            if (!parentChecked) values.push(id);
           }
           break;
         default:
       }
     });
-    return value;
+
+    return values;
   };
 
   const getActive = () => {
@@ -149,6 +150,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const getChecked = (id: KeygenResult) => {
     const value = get(id);
+    console.log(id, value);
     let checked: boolean | 'indeterminate' = value === 1;
     if (value === 2) checked = 'indeterminate';
     return checked;

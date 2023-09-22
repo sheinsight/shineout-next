@@ -46,6 +46,11 @@ const treeStyle: JsStyles<TreeClass> = {
     },
 
     '& $node:first-child': {},
+    '& $node:first-child:last-child': {
+      '&::before,&::after': {
+        display: 'none',
+      },
+    },
 
     '& $node:last-child': {
       '&::before': {
@@ -68,6 +73,10 @@ const treeStyle: JsStyles<TreeClass> = {
     },
   },
   noline: {
+    '& $iconWrapper': {
+      // left: 12,
+    },
+
     '& $iconWrapper[data-expanded="false"][data-icon="false"]': {
       '& $icon': {
         transform: 'rotate(-90deg)',
@@ -144,7 +153,7 @@ const treeStyle: JsStyles<TreeClass> = {
     position: 'absolute',
     left: 0,
     width: 24,
-    height: 24,
+    height: 26,
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',

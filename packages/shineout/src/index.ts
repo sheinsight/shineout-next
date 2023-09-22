@@ -15,6 +15,7 @@ export { default as Switch } from './switch';
 export { default as Tag } from './tag';
 export { default as Textarea } from './textarea';
 export { default as Tooltip } from './tooltip';
+export { default as Tree } from './tree';
 export { setConfig } from '@sheinx/base';
 
 export * as TYPE from './type';
