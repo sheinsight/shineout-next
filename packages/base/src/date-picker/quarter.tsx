@@ -23,9 +23,9 @@ const Quarter = (props: QuarterProps) => {
   const colNum = 4;
   const rowNum = 1;
 
-  // console.log('quarter', quarter);
   const renderQuarter = (item: Date, index: number) => {
     const isInRange = func.isInRange(item);
+    const isDisabled = func.isDisabled(item);
 
     return (
       <td
@@ -33,7 +33,7 @@ const Quarter = (props: QuarterProps) => {
           styles?.pickerCell,
           func.isActive(item) && styles?.pickerCellActive,
           (index === 0 || index === 11) && styles?.pickerCellBound,
-          func.isDisabled(item) && styles?.pickerCellDisabled,
+          isDisabled && styles?.pickerCellDisabled,
           func.isNow(item) && styles?.pickerCellToday,
           isInRange && styles?.pickerCellInRange,
           (isInRange === 'start' || isInRange === 'start-end') &&
@@ -50,6 +50,20 @@ const Quarter = (props: QuarterProps) => {
           onClick={() => {
             func.handleQuarterClick(item);
           }}
+          onMouseEnter={
+            isDisabled
+              ? undefined
+              : () => {
+                  props.setTarget(item);
+                }
+          }
+          onMouseLeave={
+            isDisabled
+              ? undefined
+              : () => {
+                  props.setTarget(undefined);
+                }
+          }
         >
           <span>Q{func.getQuarterStr(item)}</span>
         </div>

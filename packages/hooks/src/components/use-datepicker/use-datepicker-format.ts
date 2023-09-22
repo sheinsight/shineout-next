@@ -76,6 +76,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
 
   const [mode, setMode] = useState(getDefaultMode(type));
   const [currentArr, setCurrentArr] = useState(getCurrentArr());
+  const [targetArr, setTargetArr] = useState<Array<Date | undefined>>([]);
 
   const { current: context } = useRef({
     cachedDateArr: convertValueToDateArr(value, format, options),
@@ -151,10 +152,12 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
 
   const dateArr = getDateArr();
   const resultArr = getFormatValueArr(dateArr);
+  const targetResultArr = getFormatValueArr(targetArr);
   const isEmpty = dateArr.reduce((prev, cur) => prev && dateUtil.isInvalid(cur), true);
 
   return {
     resultArr,
+    targetResultArr,
     mode,
     setMode,
     dateArr: dateArr,
@@ -165,6 +168,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
     finishEdit,
     currentArr,
     setCurrentArr,
+    setTargetArr,
     handleClear,
     isEmpty,
     format,

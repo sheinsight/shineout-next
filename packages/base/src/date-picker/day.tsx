@@ -16,6 +16,7 @@ const Day = (props: DayProps) => {
 
   const onChange = usePersistFn((date) => {
     props.onChange(date, props.type === 'datetime');
+    props.setTarget(undefined);
   });
   const { func, currentYear, currentMonth } = useDatePick({
     current: props.current,
@@ -63,6 +64,20 @@ const Day = (props: DayProps) => {
         )}
         key={index}
         onClick={() => func.handleDayClick(item)}
+        onMouseEnter={
+          isDisabled
+            ? undefined
+            : () => {
+                props.setTarget(item);
+              }
+        }
+        onMouseLeave={
+          isDisabled
+            ? undefined
+            : () => {
+                props.setTarget(undefined);
+              }
+        }
       >
         <div className={styles?.pickerCellContent}>
           <span>{func.getDayStr(item)}</span>

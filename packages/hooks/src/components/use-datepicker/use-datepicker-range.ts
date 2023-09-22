@@ -5,7 +5,7 @@ import utils from './util';
 import { useRef } from 'react';
 
 const useRangePick = (props: useRangeProps) => {
-  const { range, setDateArr, setMode, options, defaultTime, close, min, max } = props;
+  const { range, setDateArr, setTargetArr, setMode, options, defaultTime, close, min, max } = props;
 
   const { current: context } = useRef({ modeCache: props.mode });
 
@@ -80,6 +80,14 @@ const useRangePick = (props: useRangeProps) => {
     setDate(1, date, noClose);
   });
 
+  const setTargetStart = usePersistFn((date: Date) => {
+    setTargetArr([date, undefined]);
+  });
+
+  const setTargetEnd = usePersistFn((date: Date) => {
+    setTargetArr([undefined, date]);
+  });
+
   const setModeStart = usePersistFn((m) => {
     context.modeCache[0] = m;
     setMode((mode) => {
@@ -103,6 +111,8 @@ const useRangePick = (props: useRangeProps) => {
     setDateEnd,
     setCurrentStart,
     setCurrentEnd,
+    setTargetStart,
+    setTargetEnd,
   });
   const minDate = min ? utils.toDate(min, options) : undefined;
   const maxDate = max ? utils.toDate(max, options) : undefined;

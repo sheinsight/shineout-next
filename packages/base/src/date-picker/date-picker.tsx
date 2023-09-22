@@ -40,6 +40,8 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
 
   const {
     resultArr,
+    targetResultArr,
+    setTargetArr,
     dateArr,
     setDateArr,
     startEdit,
@@ -103,12 +105,18 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
       >
         <div className={styles?.resultTextWrapper}>
           <div className={styles?.resultText}>
-            {resultArr[0] || <span className={styles?.placeholder}>{placeholderArr[0]}</span>}
+            {(targetResultArr[0] && (
+              <span className={styles?.placeholder}>{targetResultArr[0]}</span>
+            )) ||
+              resultArr[0] || <span className={styles?.placeholder}>{placeholderArr[0]}</span>}
           </div>
           {range && <div className={styles?.resultSeparator}>{'~'}</div>}
           {range && (
             <div className={styles?.resultText}>
-              {resultArr[1] || <span className={styles?.placeholder}>{placeholderArr[1]}</span>}
+              {(targetResultArr[1] && (
+                <span className={styles?.placeholder}>{targetResultArr[1]}</span>
+              )) ||
+                resultArr[1] || <span className={styles?.placeholder}>{placeholderArr[1]}</span>}
             </div>
           )}
         </div>
@@ -162,6 +170,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
           }}
         >
           <Picker
+            setTargetArr={setTargetArr}
             dateArr={dateArr}
             setDateArr={setDateArr}
             currentArr={currentArr}

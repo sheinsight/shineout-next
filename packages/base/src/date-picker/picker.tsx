@@ -25,6 +25,7 @@ const Picker = (props: PickerProps) => {
     close: props.closePop,
     min: props.min,
     max: props.max,
+    setTargetArr: props.setTargetArr,
   });
 
   const renderPicker = (position?: 'start' | 'end') => {
@@ -40,6 +41,7 @@ const Picker = (props: PickerProps) => {
       onChange: position === 'end' ? func.setDateEnd : func.setDateStart,
       setCurrent: position === 'end' ? func.setCurrentEnd : func.setCurrentStart,
       type: props.type as any,
+      format: props.format,
       disabled: props.disabled,
       rangeDate: dateArr,
       min: position === 'end' ? endMin : startMin,
@@ -47,9 +49,9 @@ const Picker = (props: PickerProps) => {
       jssStyle,
       position,
       showSelNow: props.showSelNow,
+      setTarget: position === 'end' ? func.setTargetEnd : func.setTargetStart,
     };
     const timeProps = {
-      format: props.format,
       disabledTime: props.disabledTime,
       defaultTime: defaultTimeArr[index],
       hourStep: props.hourStep,

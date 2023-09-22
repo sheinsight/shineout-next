@@ -8,6 +8,7 @@ export interface useRangeProps {
   min: DateType;
   max: DateType;
   dateArr: Array<Date | undefined>;
+  setTargetArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   setDateArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   currentArr: Date[];
   setCurrentArr: Dispatch<SetStateAction<Date[]>>;

@@ -29,13 +29,14 @@ const Month = (props: MonthProps) => {
 
   const renderMonth = (item: Date, index: number) => {
     const isInRange = func.isInRange(item);
+    const isDisabled = func.isDisabled(item);
     return (
       <td
         className={classNames(
           styles?.pickerCell,
           func.isActive(item) && styles?.pickerCellActive,
           (index === 0 || index === 11) && styles?.pickerCellBound,
-          func.isDisabled(item) && styles?.pickerCellDisabled,
+          isDisabled && styles?.pickerCellDisabled,
           func.isNow(item) && styles?.pickerCellToday,
           isInRange && styles?.pickerCellInRange,
           (isInRange === 'start' || isInRange === 'start-end') &&
@@ -52,6 +53,20 @@ const Month = (props: MonthProps) => {
           onClick={() => {
             func.handleMonthClick(item);
           }}
+          onMouseEnter={
+            isDisabled
+              ? undefined
+              : () => {
+                  props.setTarget(item);
+                }
+          }
+          onMouseLeave={
+            isDisabled
+              ? undefined
+              : () => {
+                  props.setTarget(undefined);
+                }
+          }
         >
           <span>{func.getMonthStr(item)}</span>
         </div>

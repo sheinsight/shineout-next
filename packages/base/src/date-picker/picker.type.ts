@@ -11,6 +11,7 @@ export interface PickerProps {
   type: string;
   range: DatePickerProps<any>['range'];
   dateArr: Array<Date | undefined>;
+  setTargetArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   setDateArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   currentArr: Date[];
   setCurrentArr: Dispatch<SetStateAction<Date[]>>;
@@ -36,4 +37,26 @@ export interface PickerProps {
   hourStep?: DatePickerProps<any>['hourStep'];
   minuteStep?: DatePickerProps<any>['minuteStep'];
   secondStep?: DatePickerProps<any>['secondStep'];
+}
+
+export interface CommonPickerProps
+  extends Pick<
+    PickerProps,
+    'jssStyle' | 'disabled' | 'options' | 'format' | 'type' | 'showSelNow'
+  > {
+  rangeDate: Array<Date | undefined>;
+  current: Date;
+  setCurrent: (date: Date) => void;
+  setMode: (mode: string) => void;
+  value: Date | undefined;
+  onChange: (date: Date, noClose?: boolean) => void;
+  min?: Date;
+  max?: Date;
+  setTarget: (date?: Date) => void;
+  position?: 'start' | 'end';
+}
+
+export interface CommonTimeProps
+  extends Pick<PickerProps, 'disabledTime' | 'hourStep' | 'minuteStep' | 'secondStep'> {
+  defaultTime: DateTimeType;
 }
