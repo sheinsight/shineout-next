@@ -29,6 +29,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     keygen,
     mode,
     childrenKey,
+    inlineNode,
     dragSibling,
     dragHoverExpand,
     dragImageSelector,
@@ -40,6 +41,10 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     onNodeClick,
     onToggle,
     onDrop,
+    onDragOver,
+    onDragLeave,
+    onDragStart,
+    onDragEnd,
     listComponent: List,
   } = props;
 
@@ -132,14 +137,16 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     placeInfo.target = id;
     // @ts-ignore
     placeElement.setAttribute('data-position', position);
+
+    if (onDragOver) onDragOver(e, data);
   };
 
-  const handleDragStart = (event: React.DragEvent) => {
+  const handleDragStart = (e: React.DragEvent) => {
     if (dragLock) return;
     dragLock = true;
 
-    event.dataTransfer.effectAllowed = 'copyMove';
-    event.dataTransfer.setData('text/plain', id as string);
+    e.dataTransfer.effectAllowed = 'copyMove';
+    e.dataTransfer.setData('text/plain', id as string);
     placeInfo.start = id;
 
     const el = document.querySelector(dragImageSelector(data)!) as HTMLDivElement;
@@ -163,18 +170,16 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       });
     }
 
-    event.dataTransfer.setDragImage(
-      dragImage.current,
-      event.clientX - rect.left,
-      event.clientY - rect.top,
-    );
+    e.dataTransfer.setDragImage(dragImage.current, e.clientX - rect.left, e.clientY - rect.top);
 
     setTimeout(() => {
       (element.current as HTMLElement).style.display = 'none';
     }, 0);
+
+    if (onDragStart) onDragStart(e, data);
   };
 
-  const handleDragEnd = () => {
+  const handleDragEnd = (e: React.DragEvent) => {
     (element.current as HTMLDivElement).style.display = '';
     if (!dragLock) return;
 
@@ -190,6 +195,12 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     if (onDrop && (target !== id || index !== position)) {
       onDrop(id, target, position);
     }
+
+    if (onDragEnd) onDragEnd(e, data);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    if (onDragLeave) onDragLeave(e, data);
   };
 
   const getChildrenListProps = () => {
@@ -210,6 +221,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       mode,
       index,
       loader,
+      inlineNode,
       onDrop,
       onChange,
       onToggle,
@@ -232,6 +244,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         draggable: true,
         onDragStart: handleDragStart,
         onDragEnd: handleDragEnd,
+        onDragLeave: handleDragLeave,
       });
     }
 
@@ -260,6 +273,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         parentClickExpand={parentClickExpand}
         doubleClickExpand={doubleClickExpand}
         loader={loader}
+        inlineNode={inlineNode}
         setFetching={setFetching}
         onChange={onChange}
         onFetch={handleFetch}

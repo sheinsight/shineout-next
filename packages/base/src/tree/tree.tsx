@@ -31,11 +31,16 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     dragSibling,
     dragHoverExpand,
     active,
+    inlineNode,
     onClick,
     loader,
     onDrop,
     onExpand,
     onChange,
+    onDragEnd,
+    onDragLeave,
+    onDragOver,
+    onDragStart,
   } = props;
 
   const { func, updateMap, setActive } = useTree({
@@ -174,8 +179,13 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           onNodeClick={handleNodeClick}
           renderItem={renderItem}
           loader={loader}
+          inlineNode={inlineNode}
           onToggle={onToggle}
           onDrop={onDrop && handleDrop}
+          onDragOver={onDragOver}
+          onDragStart={onDragStart}
+          onDragEnd={onDragEnd}
+          onDragLeave={onDragLeave}
           dragSibling={dragSibling}
           dragHoverExpand={dragHoverExpand}
           parentClickExpand={parentClickExpand}

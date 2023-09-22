@@ -8,7 +8,9 @@ const TreeCheckbox = <DataItem,>(props: TreeCheckboxProps<DataItem>) => {
 
   const handleChange = (_: any, checked: boolean) => {
     set(id, checked ? 1 : 0);
-    onChange(getValue(), id);
+    if (onChange) {
+      onChange(getValue(), id);
+    }
   };
 
   const checkDisabled = () => {

@@ -27,10 +27,7 @@ export interface TreeNodeProps<DataItem>
   nodeClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass: (data: DataItem) => string | undefined;
-  bindNode: (
-    id: 'expanded' | 'active' | 'fetching',
-    update: UpdateFunc,
-  ) => { expanded: boolean; active: boolean };
+  bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
   listComponent: (props: TreeListProps<DataItem>) => JSX.Element | null;
@@ -39,4 +36,9 @@ export interface TreeNodeProps<DataItem>
   dragSibling?: boolean;
   dragHoverExpand?: boolean;
   loader?: (key: KeygenResult, data: DataItem) => void;
+  inlineNode?: boolean;
+  onDragStart?: (e: React.DragEvent, data: DataItem) => void;
+  onDragEnd?: (e: React.DragEvent, data: DataItem) => void;
+  onDragOver?: (e: React.DragEvent, data: DataItem) => void;
+  onDragLeave?: (e: React.DragEvent, data: DataItem) => void;
 }

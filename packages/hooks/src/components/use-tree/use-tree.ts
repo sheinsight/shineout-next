@@ -64,7 +64,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const firstRender = useRef(true);
 
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState<KeygenResult>();
 
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
@@ -84,7 +84,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
     if (isFunc(keygen)) {
-      return keygen(item, id);
+      return keygen(item, id as string);
     }
 
     if (keygen && (isString(keygen) || isNumber(keygen))) {
@@ -259,6 +259,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       // 同步状态至 map 中
       setValueMap(item, childChecked);
 
+      // @ts-ignore
       if (checked === undefined) {
         checked = childChecked;
       } else if (checked !== childChecked) {

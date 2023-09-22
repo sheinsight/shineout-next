@@ -54,10 +54,10 @@ export default () => {
   const createRange = () => Array.from({ length: Math.round(Math.random() * 4) }, (_, i) => i);
 
   const [data, setData] = useState(initData);
-  const [, setValue] = useState([]);
-  const handleChange = (v) => {
-    setValue(v);
-  };
+  // const [, setValue] = useState([]);
+  // const handleChange = (v) => {
+  //   setValue(v);
+  // };
 
   const handleDrop = (d) => {
     setData(d);
@@ -85,7 +85,10 @@ export default () => {
         keygen={(node, parentKey) => `${parentKey},${node.id}`.replace(/^,/, '')}
         loader={handleLoader}
         onDrop={handleDrop}
-        onChange={handleChange}
+        inlineNode
+        parentClickExpand
+        // onChange={handleChange}
+        expandIcons={['😄', '🤔']}
         renderItem={(node) => `node ${node.id}`}
       />
     </div>

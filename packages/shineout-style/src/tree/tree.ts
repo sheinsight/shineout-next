@@ -9,6 +9,7 @@ export type TreeClass =
   | 'large'
   | 'root'
   | 'contentWrapper'
+  | 'inlineContent'
   | 'content'
   | 'checkbox'
   | 'text'
@@ -100,6 +101,9 @@ const treeStyle: JsStyles<TreeClass> = {
     display: 'flex',
     alignItems: 'flex-start',
     padding: '5px 0',
+  },
+  inlineContent: {
+    display: 'inline-flex',
   },
   content: {
     flex: 1,

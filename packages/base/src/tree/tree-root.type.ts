@@ -27,4 +27,9 @@ export interface TreeRootProps<DataItem> extends Omit<BaseTreeProps<DataItem>, '
   onChange?: (value: KeygenResult[]) => void;
   onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   loader?: (key: KeygenResult, data: DataItem) => void;
+  inlineNode?: boolean;
+  onDragStart?: (e: React.DragEvent, data: DataItem) => void;
+  onDragEnd?: (e: React.DragEvent, data: DataItem) => void;
+  onDragOver?: (e: React.DragEvent, data: DataItem) => void;
+  onDragLeave?: (e: React.DragEvent, data: DataItem) => void;
 }

@@ -25,10 +25,15 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     nodeClass,
     expandIcons,
     childrenKey,
+    inlineNode,
     loader,
     onNodeClick,
     onToggle,
     onDrop,
+    onDragEnd,
+    onDragLeave,
+    onDragOver,
+    onDragStart,
     bindNode,
     dragImageSelector,
     dragSibling,
@@ -80,6 +85,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         expandIcons={expandIcons}
         bindNode={bindNode}
         loader={loader}
+        inlineNode={inlineNode}
         dragImageSelector={dragImageSelector}
         dragImageStyle={dragImageStyle}
         dragSibling={dragSibling}
@@ -90,6 +96,10 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         onToggle={onToggle}
         onChange={onChange}
         onDrop={onDrop}
+        onDragOver={onDragOver}
+        onDragStart={onDragStart}
+        onDragEnd={onDragEnd}
+        onDragLeave={onDragLeave}
       ></TreeNode>
     );
   };

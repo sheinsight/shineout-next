@@ -18,6 +18,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     renderItem,
     expanded,
     fetching,
+    inlineNode,
     childrenKey,
     parentClickExpand,
     doubleClickExpand,
@@ -33,6 +34,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   const contentStyle = jssStyle?.tree || ({} as TreeClasses);
   const rootClass = classNames(contentStyle.contentWrapper, {
     [contentStyle.childnode]: data[childrenKey] && (data[childrenKey] as DataItem[]).length > 0,
+    [contentStyle.inlineContent]: inlineNode,
   });
   const contentClass = classNames(contentStyle.content);
   const textClass = classNames(contentStyle.text);

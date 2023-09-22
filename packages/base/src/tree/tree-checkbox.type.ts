@@ -5,12 +5,12 @@ import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { TreeClasses } from './tree.type';
 
 export interface TreeCheckboxProps<DataItem> extends Pick<CommonType, 'className'> {
-  jssStyle: {
-    tree: TreeClasses;
-    spin: SpinClasses;
-    checkbox: CheckboxClasses;
+  jssStyle?: {
+    tree?: TreeClasses;
+    spin?: SpinClasses;
+    checkbox?: CheckboxClasses;
   };
-  id: string;
+  id: KeygenResult;
   disabled?: boolean | ((item: DataItem) => boolean);
-  onChange: (value: KeygenResult[], id: KeygenResult) => void;
+  onChange?: (value: KeygenResult[], id: KeygenResult) => void;
 }

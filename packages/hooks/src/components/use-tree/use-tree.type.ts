@@ -23,7 +23,7 @@ export interface TreePathType {
 }
 
 export interface BaseTreeProps<DataItem = ObjectType> {
-  active?: string | number;
+  active?: KeygenResult;
   value?: KeygenResult[];
   defaultValue?: KeygenResult[];
   data: DataItem[];

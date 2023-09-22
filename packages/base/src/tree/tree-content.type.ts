@@ -29,7 +29,8 @@ export interface TreeContextProps<DataItem>
   setFetching: (value: boolean) => void;
   onToggle: () => void;
   onFetch: () => void;
-  onDragOver: () => void;
+  onDragOver: (e: React.DragEvent) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   onChange?: (value: KeygenResult[]) => void;
+  inlineNode?: boolean;
 }

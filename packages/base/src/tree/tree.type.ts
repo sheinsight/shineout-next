@@ -1,5 +1,5 @@
 import { CommonType } from '../common/type';
-import { BaseTreeProps, ObjectKey, KeygenResult } from '@sheinx/hooks';
+import { BaseTreeProps, ObjectKey, KeygenResult, TreePathType } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 
@@ -12,6 +12,7 @@ export interface TreeClasses {
   childnode: string;
   checkbox: string;
   contentWrapper: string;
+  inlineContent: string;
   text: string;
   list: string;
   iconWrapper: string;
@@ -50,5 +51,11 @@ export interface TreeProps<DataItem>
   dragImageStyle?: React.CSSProperties;
   dragSibling?: boolean;
   dragHoverExpand?: boolean;
+  inlineNode?: boolean;
   loader?: (key: KeygenResult, data: DataItem) => void;
+  onClick?: (data: DataItem, id: KeygenResult, path?: TreePathType) => void;
+  onDragStart?: (e: React.DragEvent, data: DataItem) => void;
+  onDragEnd?: (e: React.DragEvent, data: DataItem) => void;
+  onDragOver?: (e: React.DragEvent, data: DataItem) => void;
+  onDragLeave?: (e: React.DragEvent, data: DataItem) => void;
 }
