@@ -7,8 +7,8 @@ const Checkbox = (props: SimpleCheckboxProps) => {
   const { jssStyle, className, style, children, renderFooter, size, ...rest } = props;
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
-    checked: props.checked === 'indeterminate' ? false : props.checked,
-    defaultChecked: props.defaultChecked === 'indeterminate' ? false : props.defaultChecked,
+    checked: props.checked === 'indeterminate' ? true : props.checked,
+    defaultChecked: props.defaultChecked === 'indeterminate' ? true : props.defaultChecked,
   });
   const rootClass = classNames(
     className,
