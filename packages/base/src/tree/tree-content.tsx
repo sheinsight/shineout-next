@@ -13,6 +13,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     active,
     data,
     line,
+    disabled,
     iconClass,
     expandIcons,
     renderItem,
@@ -127,6 +128,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
       <Checkbox
         jssStyle={jssStyle}
         id={id}
+        disabled={disabled}
         className={contentStyle.checkbox}
         onChange={onChange}
       ></Checkbox>

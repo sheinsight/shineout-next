@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import { Tree } from 'shineout';
+
 export default () => {
   const data = [
     {
@@ -61,6 +62,7 @@ export default () => {
         value={value}
         data={data}
         keygen='id'
+        mode={0}
         defaultExpanded={['0']}
         onChange={handleChange}
         disabled={isDisabled}

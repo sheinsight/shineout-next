@@ -31,6 +31,7 @@ export default () => {
   };
 
   const handleChange = (v) => {
+    console.log(v);
     setValue(v);
   };
 

@@ -47,7 +47,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     mode,
     active: activeProp,
     expanded,
-    dataUpdate,
+    // dataUpdate,
     defaultExpanded,
     defaultExpandAll,
     disabled: disabledProps,
@@ -128,7 +128,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         default:
       }
     });
-
     return values;
   };
 
@@ -150,7 +149,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const getChecked = (id: KeygenResult) => {
     const value = get(id);
-    console.log(id, value);
     let checked: boolean | 'indeterminate' = value === 1;
     if (value === 2) checked = 'indeterminate';
     return checked;
@@ -308,9 +306,11 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const set = (id: KeygenResult, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
-    if (!isDisabled(id)) setValueMap(id, checked);
+    if (!isDisabled(id)) {
+      setValueMap(id, checked);
+    }
 
-    // const data = getDataById(id);
+    // // const data = getDataById(id);
 
     if (mode === MODE.MODE_4) {
       return 0;
@@ -319,16 +319,18 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     const { path, children } = context.pathMap.get(id)!;
 
     const childrenStack: CheckedStatusType[] = [];
+
     if (direction !== 'asc') {
       children.forEach((cid) => {
-        childrenStack.push(set(cid, checked, 'desc'));
+        const v = set(cid, checked, 'desc');
+        childrenStack.push(v);
       });
     }
 
     let current = context.valueMap.get(id)!;
 
     const status = checkStatusStack(childrenStack, current);
-
+    console.log(id, current, status);
     if (status !== current) {
       setValueMap(id, status);
       current = status;
@@ -361,12 +363,12 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     });
   }, []);
 
-  useEffect(() => {
-    if (firstRender.current) return;
-    if (dataUpdate) {
-      setData(data);
-    }
-  }, [dataUpdate, data]);
+  // useEffect(() => {
+  //   if (firstRender.current) return;
+  //   if (dataUpdate) {
+  //     setData(data);
+  //   }
+  // }, [dataUpdate, data]);
 
   useEffect(() => {
     handleExpanded(expanded);
