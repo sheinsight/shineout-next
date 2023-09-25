@@ -15,6 +15,8 @@ export interface DescriptionsClasses {
   row: string;
   label: string;
   value: string;
+  border: string;
+  tableLayoutFixed: string;
 }
 
 export interface DescriptionsProps
@@ -29,5 +31,5 @@ export interface DescriptionsProps
   title?: ReactNode;
   layout?: 'horizontal' | 'vertical';
   colon?: ReactNode;
-  //...
+  tableLayout: 'auto' | 'fixed';
 }

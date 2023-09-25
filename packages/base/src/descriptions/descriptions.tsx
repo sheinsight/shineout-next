@@ -14,13 +14,15 @@ const Descriptions = (props: DescriptionsProps) => {
     item,
     colon,
     layout = 'horizontal',
+    border = false,
+    tableLayout = 'auto',
+    // TODO: with tss
+    // size
   } = props;
   const { renderItem } = useDescriptions({
     item,
     column,
   });
-
-  const rootClassName = classNames(className, jssStyle?.descriptions.wrapper);
 
   const Header = () => (
     <div className={jssStyle?.descriptions.header}>
@@ -88,10 +90,17 @@ const Descriptions = (props: DescriptionsProps) => {
     return layout === 'horizontal' ? renderHorizontal(d, i) : renderVertical(d, i);
   };
 
+  const rootClassName = classNames(className, jssStyle?.descriptions.wrapper);
+  const bodyClassName = classNames(
+    jssStyle?.descriptions.body,
+    border && jssStyle?.descriptions.border,
+    tableLayout === 'fixed' && jssStyle?.descriptions.tableLayoutFixed,
+  );
+
   return (
     <div className={rootClassName} style={style}>
       <Header />
-      <div className={jssStyle?.descriptions.body}>
+      <div className={bodyClassName}>
         <table className={jssStyle?.descriptions.table} cellPadding={0} cellSpacing={0}>
           <tbody>
             {renderItem.map((d: DescriptionsItemProps[], i: number) => renderHandle(d, i))}

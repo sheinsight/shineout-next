@@ -5,6 +5,8 @@ import type { Breakpoint, ScreenMap } from '../..';
 
 const { isObject, isNumber, isArray } = util;
 
+const responsiveArray: Breakpoint[] = ['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
+
 const getLengthByrow = (arr: DescriptionsItemProps[]) =>
   isArray(arr) ? arr.reduce((prev, now) => prev + (now.span || 1), 0) : 0;
 
@@ -12,8 +14,6 @@ const useDescriptions = (props: BaseDescriptionsProps) => {
   const { item, column } = props;
   const [screen, setScreen] = useState<Breakpoint>();
   const responsiveToken = useRef<string>();
-
-  const responsiveArray: Breakpoint[] = ['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
 
   useEffect(() => {
     responsiveToken.current = ResponsiveObserve.subscribe((screens: ScreenMap) => {

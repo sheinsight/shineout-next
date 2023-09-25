@@ -10,7 +10,9 @@ export type DescriptionsClass =
   | 'table'
   | 'row'
   | 'label'
-  | 'value';
+  | 'value'
+  | 'tableLayoutFixed'
+  | 'border';
 
 const descriptionsStyle: JsStyles<DescriptionsClass> = {
   wrapper: {
@@ -27,12 +29,13 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     color: 'black',
     fontWeight: '500',
     lineHeight: 1.5715,
+    flex: 1,
   },
   extra: {},
   body: {},
   table: {
     width: '100%',
-    borderCollapse: 'fixed',
+    borderCollapse: 'collapse',
   },
   row: {},
   label: {
@@ -54,6 +57,37 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     lineHeight: 1.5715,
     color: 'gray',
     fontWeight: '400',
+  },
+  tableLayoutFixed: {
+    '& $table': {
+      tableLayout: 'fixed',
+    },
+    '& $label': {
+      width: 'auto',
+    },
+  },
+  border: {
+    border: '1px solid rgb(229,230,235)',
+    borderRadius: '4px',
+    overflow: 'hidden',
+    '& $row:not(:last-child)': {
+      borderBottom: '1px solid rgb(229,230,235)',
+    },
+    '& $label': {
+      padding: '7px 20px',
+      backgroundColor: 'rgb(247,248,250)',
+      borderRight: '1px solid rgb(229,230,235)',
+    },
+    '& $value': {
+      padding: '7px 20px',
+      borderRight: '1px solid rgb(229,230,235)',
+    },
+    '& $label:last-child': {
+      borderRight: 'none',
+    },
+    '& $value:last-child': {
+      borderRight: 'none',
+    },
   },
 };
 
