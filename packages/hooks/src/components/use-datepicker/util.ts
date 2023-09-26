@@ -182,6 +182,11 @@ function isValid(date: DateTimeType) {
   return dayjs(date).isValid();
 }
 
+function isValidString(date: string, fmt: string) {
+  if (!date) return false;
+  return dayjs(date, fmt, true).isValid();
+}
+
 function parse(d: string, fmt?: string, options?: DateOptions) {
   if (!d) return new Date('');
   // should clear[xxx]
@@ -476,4 +481,5 @@ export default {
   compatibleFmt,
   transDateWithZone,
   getStartYear,
+  isValidString,
 };

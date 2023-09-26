@@ -6,7 +6,7 @@ export default createUseStyles(
     header: {
       position: 'sticky',
       top: 60,
-      // zIndex: 1,
+      zIndex: 1,
       color: '#141737',
       padding: '0 40px',
       background: '#fff',
@@ -79,6 +79,7 @@ export default createUseStyles(
       display: 'flex',
       '& .examples': {
         flex: 1,
+        minWidth: 0,
       },
       '& .anchor': {
         width: 192,

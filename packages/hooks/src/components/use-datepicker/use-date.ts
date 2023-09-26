@@ -106,15 +106,11 @@ const useDate = (props: UseDateProps) => {
     return utils.getDateInfo(date, 'week', options);
   };
 
-  const handleDayClick = (date: Date) => {
+  const getDateWithTime = (date: Date) => {
     const { min, max } = props;
-    if (isDisabled(date)) return;
-
-    // set hour minute second
     const timeDate =
       props.value ||
       (props.defaultTime && utils.cloneTime(date, props.defaultTime, utils.TIME_FORMAT, options));
-
     let newDate = utils.toDate(date);
     if (timeDate) {
       newDate = utils.setTime(newDate, timeDate, options);
@@ -122,6 +118,13 @@ const useDate = (props: UseDateProps) => {
     // only can select day with the same day of min/max
     if (min && utils.compareAsc(newDate, min) < 0) newDate = utils.setTime(newDate, min, options);
     if (max && utils.compareAsc(newDate, max) > 0) newDate = utils.setTime(newDate, max, options);
+    return newDate;
+  };
+
+  const handleDayClick = (date: Date) => {
+    if (isDisabled(date)) return;
+
+    let newDate = getDateWithTime(date);
     props.onChange?.(newDate);
     setCurrent(newDate);
   };
@@ -175,6 +178,7 @@ const useDate = (props: UseDateProps) => {
     getDayStr,
     getWeekStr,
     getTimeStr,
+    getDateWithTime,
   });
 
   const currentYear = utils.getDateInfo(current, 'year', options);

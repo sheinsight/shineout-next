@@ -3,9 +3,21 @@ import { useLatestObj } from '../../common/use-latest-obj';
 import { useRangeProps } from './use-datepicker-range.type';
 import utils from './util';
 import { useRef } from 'react';
+import { isFunc } from '../../utils/is';
 
 const useRangePick = (props: useRangeProps) => {
-  const { range, setDateArr, setTargetArr, setMode, options, defaultTime, close, min, max } = props;
+  const {
+    range,
+    setDateArr,
+    setTargetArr,
+    setMode,
+    options,
+    defaultTime,
+    close,
+    min,
+    max,
+    disabled,
+  } = props;
 
   const { current: context } = useRef({ modeCache: props.mode });
 
@@ -80,11 +92,11 @@ const useRangePick = (props: useRangeProps) => {
     setDate(1, date, noClose);
   });
 
-  const setTargetStart = usePersistFn((date: Date) => {
+  const setTargetStart = usePersistFn((date?: Date) => {
     setTargetArr([date, undefined]);
   });
 
-  const setTargetEnd = usePersistFn((date: Date) => {
+  const setTargetEnd = usePersistFn((date?: Date) => {
     setTargetArr([undefined, date]);
   });
 
@@ -104,6 +116,36 @@ const useRangePick = (props: useRangeProps) => {
       return newMode;
     });
   });
+
+  const startDisabled = usePersistFn((date: Date) => {
+    if (isFunc(disabled)) {
+      return disabled(date, 'start', props.dateArr[0], props.dateArr[1]);
+    }
+    if (Array.isArray(disabled)) {
+      const disabledDate = disabled[0];
+      if (isFunc(disabledDate)) {
+        return disabledDate(date);
+      } else {
+        return !!disabledDate;
+      }
+    }
+    return !!disabled;
+  });
+
+  const endDisabled = usePersistFn((date: Date) => {
+    if (isFunc(disabled)) {
+      return disabled(date, 'end', props.dateArr[0], props.dateArr[1]);
+    }
+    if (Array.isArray(disabled)) {
+      const disabledDate = disabled[1];
+      if (isFunc(disabledDate)) {
+        return disabledDate(date);
+      } else {
+        return !!disabledDate;
+      }
+    }
+    return !!disabled;
+  });
   const func = useLatestObj({
     setModeStart,
     setModeEnd,
@@ -113,19 +155,41 @@ const useRangePick = (props: useRangeProps) => {
     setCurrentEnd,
     setTargetStart,
     setTargetEnd,
+    startDisabled,
+    endDisabled,
   });
   const minDate = min ? utils.toDate(min, options) : undefined;
   const maxDate = max ? utils.toDate(max, options) : undefined;
 
   let endMin = minDate;
-  if (!endMin || (props.dateArr[0] && utils.compareAsc(endMin, props.dateArr[0]) < 0)) {
-    endMin = props.dateArr[0];
-  }
   let endMax = maxDate;
-  if (!maxDate && typeof range === 'number' && props.dateArr[0]) {
-    const rangeDate = utils.addSeconds(props.dateArr[0], range, options);
-    if (utils.compareAsc(endMax, rangeDate) > 0) {
-      endMax = rangeDate;
+
+  const disabledEnd = Array.isArray(disabled) && disabled[1] === true;
+
+  if (props.dateArr[0] && !disabledEnd) {
+    if (!endMin || utils.compareAsc(endMin, props.dateArr[0]) < 0) {
+      endMin = props.dateArr[0];
+    }
+    if (typeof range === 'number') {
+      const rangeDate = utils.addSeconds(props.dateArr[0], range, options);
+      if (!endMax || utils.compareAsc(endMax, rangeDate) > 0) {
+        endMax = rangeDate;
+      }
+    }
+  }
+
+  let startMin = minDate;
+  let startMax = maxDate;
+  if (disabledEnd && props.dateArr[1]) {
+    if (!startMax || utils.compareAsc(startMax, props.dateArr[1]) > 0) {
+      startMax = props.dateArr[1];
+    }
+
+    if (typeof range === 'number') {
+      const rangeDate = utils.addSeconds(props.dateArr[1], -range, options);
+      if (!startMin || utils.compareAsc(startMin, rangeDate) < 0) {
+        startMin = rangeDate;
+      }
     }
   }
 
@@ -133,8 +197,8 @@ const useRangePick = (props: useRangeProps) => {
     defaultTimeArr,
     endMin,
     endMax,
-    startMin: minDate,
-    startMax: maxDate,
+    startMin,
+    startMax,
     func,
   };
 };

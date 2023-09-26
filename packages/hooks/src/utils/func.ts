@@ -13,3 +13,26 @@ export const throttle = function <T extends any[]>(func: (...args: T) => any, wa
       }, wait);
     };
 };
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const debounce = function <T extends (...args: any) => void>(func: T, delay?: number) {
+  const that: {
+    timer?: NodeJS.Timeout | null;
+  } = {};
+  const cleanTimer = () => {
+    if (that.timer) {
+      clearTimeout(that.timer);
+      that.timer = null;
+    }
+  };
+  if (!delay) return [func, cleanTimer];
+  return [
+    ((...args: any) => {
+      cleanTimer();
+      that.timer = setTimeout(() => {
+        func(...args);
+      }, delay);
+    }) as unknown as T,
+    cleanTimer,
+  ];
+};

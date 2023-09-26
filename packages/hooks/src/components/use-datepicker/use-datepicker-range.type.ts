@@ -14,7 +14,11 @@ export interface useRangeProps {
   setCurrentArr: Dispatch<SetStateAction<Date[]>>;
   mode: string[];
   setMode: Dispatch<SetStateAction<string[]>>;
-  disabled: boolean | ((date: Date) => boolean) | undefined;
+  disabled:
+    | boolean
+    | ((date: Date, position?: 'start' | 'end', startDate?: Date, endDate?: Date) => boolean)
+    | Array<boolean | ((date: Date) => boolean)>
+    | undefined;
   options: {
     timeZone?: string;
     weekStartsOn: number;

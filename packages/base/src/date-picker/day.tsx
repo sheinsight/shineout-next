@@ -68,7 +68,7 @@ const Day = (props: DayProps) => {
           isDisabled
             ? undefined
             : () => {
-                props.setTarget(item);
+                props.setTarget(func.getDateWithTime(item));
               }
         }
         onMouseLeave={

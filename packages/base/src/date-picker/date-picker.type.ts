@@ -1,7 +1,7 @@
-// import React from 'react';
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { ButtonClasses } from '../button/button.type';
+import { InnerTitleClasses } from '../common/use-inner-title';
 
 export type DateTimeType = Date | number | string | undefined;
 
@@ -21,11 +21,13 @@ export interface DatePickerClasses {
   wrapperRange: string;
   paddingBox: string;
   result: string;
+  resultWrapper: string;
   resultAlignRight: string;
   resultAlignLeft: string;
   resultAlignCenter: string;
   resultTextWrapper: string;
   resultText: string;
+  resultTextDisabled: string;
   resultSeparator: string;
   placeholder: string;
   icon: string;
@@ -88,18 +90,22 @@ export interface DatePickerClasses {
 export type DisabledType = 'start' | 'end';
 
 export interface DatePickerProps<Value extends DatePickerValue>
-  extends Pick<CommonType, 'className' | 'style' | 'size' | 'status'>,
+  extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'placeTitle'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle?: {
-    datePicker: DatePickerClasses;
-    button: ButtonClasses;
+    datePicker?: DatePickerClasses;
+    button?: ButtonClasses;
+    innerTitle?: InnerTitleClasses;
   };
   /**
    * @en When the value is true, disabled all options; When the value is function, disable the options that this function returns true.
    * @cn 如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项
    * @default false
    */
-  disabled?: ((date: Date, type?: DisabledType, value0?: Date, value1?: Date) => boolean) | boolean;
+  disabled?:
+    | ((date: Date, type?: DisabledType, value0?: Date, value1?: Date) => boolean)
+    | boolean
+    | Array<boolean | ((date: Date) => boolean)>;
   /**
    * @en Disable the specified Time.
    * @cn 禁用指定 Time。
@@ -231,6 +237,12 @@ export interface DatePickerProps<Value extends DatePickerValue>
    * @cn 是否展示今天或者此刻按钮
    */
   showSelNow?: boolean;
+  /**
+   * @en Allow enter something into DatePicker
+   * @cn 可输入
+   * @default false
+   */
+  inputable?: boolean;
 }
 export interface QuickSelectType {
   name: string;

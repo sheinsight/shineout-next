@@ -1,6 +1,31 @@
 export default {
   now: '今天',
   current: '此刻',
+  selectQuarter: '请选择季度',
+  selectYear: '请选择年份',
+  selectMonth: '请选择月份',
+  selectDate: '请选择日期',
+  selectWeek: '请选择周',
+  selectTime: '请选择时间',
+
+  startQuarter: '开始季度',
+  endQuarter: '结束季度',
+
+  startYear: '开始年份',
+  endYear: '结束年份',
+
+  startMonth: '开始月份',
+  endMonth: '结束月份',
+
+  startDate: '开始日期',
+  endDate: '结束日期',
+
+  startWeek: '开始周',
+  endWeek: '结束周',
+
+  startTime: '开始时间',
+  endTime: '结束时间',
+
   weekdayValues: {
     narrow: ['日', '一', '二', '三', '四', '五', '六'],
     short: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],

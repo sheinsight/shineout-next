@@ -42,7 +42,7 @@ const Picker = (props: PickerProps) => {
       setCurrent: position === 'end' ? func.setCurrentEnd : func.setCurrentStart,
       type: props.type as any,
       format: props.format,
-      disabled: props.disabled,
+      disabled: position === 'end' ? func.endDisabled : func.startDisabled,
       rangeDate: dateArr,
       min: position === 'end' ? endMin : startMin,
       max: position === 'end' ? endMax : startMax,

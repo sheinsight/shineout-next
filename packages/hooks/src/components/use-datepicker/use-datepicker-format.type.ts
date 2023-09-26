@@ -16,4 +16,9 @@ export interface UseDatePickerFormatProps<Value extends DatePickerValue> {
   onClear: (() => void) | undefined;
   allowSingle: boolean | undefined;
   defaultCurrent: DatePickerValue;
+  disabled:
+    | boolean
+    | ((date: Date, position?: 'start' | 'end', startDate?: Date, endDate?: Date) => boolean)
+    | Array<boolean | ((date: Date) => boolean)>
+    | undefined;
 }

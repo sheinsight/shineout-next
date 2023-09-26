@@ -7,6 +7,6 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const App: React.FC = () => <DatePicker type='month' placeholder={'请选择周'} />;
+const App: React.FC = () => <DatePicker type='month' />;
 
 export default App;

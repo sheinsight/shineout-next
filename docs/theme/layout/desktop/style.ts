@@ -17,6 +17,7 @@ export default createUseStyles(
       display: 'flex',
       backgroundColor: '#ffffff',
       borderBottom: '1px solid rgb(229,230,235)',
+      zIndex: 2,
       '& .left-nav': {
         display: 'flex',
         alignItems: 'center',

@@ -12,11 +12,13 @@ export type DatePickerClass =
   | 'wrapperNoBorder'
   | 'wrapperRange'
   | 'paddingBox'
+  | 'resultWrapper'
   | 'result'
   | 'resultAlignRight'
   | 'resultAlignLeft'
   | 'resultAlignCenter'
   | 'resultText'
+  | 'resultTextDisabled'
   | 'resultTextWrapper'
   | 'resultSeparator'
   | 'placeholder'
@@ -96,7 +98,7 @@ const inputBorderToken = {
   errorFocusShadow: token.datePickerErrorFocusShadow,
 };
 const inputBorder = border('wrapper', inputBorderToken);
-const { wrapper, ...resetWrapper } = inputBorder;
+const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const datePickerStyle: JsStyles<DatePickerClass> = {
   wrapper: {
@@ -108,30 +110,40 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     },
     ...wrapper,
   },
+  wrapperDisabled: {
+    ...wrapperDisabled,
+    '& $icon': {
+      color: token.datePickerDisabledFontColor,
+    },
+  },
   wrapperRange: {
-    textAlign: 'center',
     width: token.datePickerDateRangeWidth,
     '&[data-soui-type="datetime"]': {
       width: token.datePickerDatetimeRangeWidth,
     },
   },
   ...resetWrapper,
-  result: {
-    outline: 'none',
+  resultWrapper: {
+    width: '100%',
     display: 'flex',
-    alignItems: 'center',
-    lineHeight: token.lineHeightDynamic,
+    position: 'relative',
+    outline: 'none',
     '&:hover': {
       '& $clear': { display: 'inline-flex' },
       '& $clear + $icon': { display: 'none' },
     },
   },
-  placeholder: {
-    color: token.datePickerPlaceholderColor,
+  result: {
+    display: 'flex',
+    flex: '1',
+    minWidth: 0,
+    alignItems: 'center',
+    lineHeight: token.lineHeightDynamic,
   },
   resultTextWrapper: {
     display: 'flex',
     flex: '1',
+    minWidth: 0,
     textAlign: 'left',
   },
   resultAlignLeft: {
@@ -151,16 +163,30 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
   },
   resultText: {
     display: 'inline-block',
-    padding: '0 4px',
+    border: 0,
+    outline: '0',
+    lineHeight: token.lineHeightDynamic,
+    color: 'inherit',
     flex: '1',
+    minWidth: 0,
     '&::before': {
       content: '""',
       display: 'inline-block',
     },
+    '&::placeholder': {
+      color: token.datePickerPlaceholderColor,
+    },
+  },
+  resultTextDisabled: {
+    color: token.datePickerDisabledFontColor,
+    cursor: 'not-allowed',
+  },
+  placeholder: {
+    color: token.datePickerPlaceholderColor,
   },
   resultSeparator: {
     display: 'inline-block',
-    padding: '0 4px',
+    padding: '0 8px',
   },
   icon: {
     display: 'inline-flex',
@@ -170,17 +196,14 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
       width: token.datePickerIconSize,
       height: token.datePickerIconSize,
     },
+    // todo 放入renderInput 组件中
+    marginRight: token.datePickerPaddingX,
   },
   clear: {
     display: 'none',
-    alignItems: 'center',
     color: token.datePickerClearColor,
     '&: hover': {
       color: token.datePickerHoverClearColor,
-    },
-    '& svg': {
-      width: token.datePickerIconSize,
-      height: token.datePickerIconSize,
     },
     cursor: 'pointer',
   },
@@ -194,7 +217,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     display: 'flex',
   },
   picker: {
-    '$pickerWrapper &:last-child': {
+    '&:not(:first-child):last-child': {
       '& $pickerHeader,& $pickerBody,& $pickerFooter': {
         marginLeft: token.datePickerPickerMargin,
       },
@@ -340,7 +363,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
           backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
         },
 
-      '& $pickerCellActive $pickerCellContent': {
+      '& :not($pickerCellDisabled)$pickerCellActive $pickerCellContent': {
         backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
       },
     },
@@ -362,7 +385,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
         backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
       },
     },
-    '&$pickerCellActive:hover $pickerCellContent': {
+    '&$pickerCellActive:not($pickerCellDisabled):hover $pickerCellContent': {
       backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
     },
   },
@@ -533,13 +556,17 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
       position: 'absolute',
       top: 0,
       left: 0,
-      display: 'none',
       transform: 'translateY(-100%)',
       backgroundColor: token.datePickerPickerBackgroundColor,
       boxShadow: token.datePickerPickerShadow,
+      opacity: '0',
+      zIndex: '-1',
+      visibility: 'hidden',
     },
     '&:hover $timePicker': {
-      display: 'block',
+      zIndex: '1',
+      opacity: '1',
+      visibility: 'visible',
     },
   },
   quickPicker: {

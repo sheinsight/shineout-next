@@ -7,6 +7,6 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const App: React.FC = () => <DatePicker type='date' placeholder={'select date'} />;
+const App: React.FC = () => <DatePicker range inputable type='date' />;
 
 export default App;

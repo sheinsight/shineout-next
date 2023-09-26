@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { TimeProps } from './time.type';
-import { useTimePick, usePersistFn } from '@sheinx/hooks';
+import { useTimePick, usePersistFn, useResize } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Button from '../button';
 import { getLocale, useConfig } from '@sheinx/base';
@@ -20,6 +20,7 @@ const TimeScroll = (props: {
   const styles = jssStyle?.datePicker;
   const elRef = useRef<HTMLDivElement>(null);
   const { current: context } = useRef<{ timer: NodeJS.Timer | null }>({ timer: null });
+  const { height } = useResize({ targetRef: elRef });
 
   const scrollToIndex = (index: number) => {
     if (context.timer) clearTimeout(context.timer);
@@ -48,6 +49,10 @@ const TimeScroll = (props: {
   useEffect(() => {
     scrollToIndex(currentIndex);
   }, [currentIndex]);
+
+  useEffect(() => {
+    scrollToIndex(currentIndex);
+  }, [height]);
 
   return (
     <div

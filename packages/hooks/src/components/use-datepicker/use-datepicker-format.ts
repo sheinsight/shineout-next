@@ -3,6 +3,7 @@ import dateUtil from './util';
 import { DatePickerValue, UseDatePickerFormatProps } from './use-datepicker-format.type';
 import shallowEqual from '../../utils/shallowEqual';
 import { usePersistFn } from '../../common/use-persist-fn';
+import useLatestObj from '../../common/use-latest-obj';
 
 const convertValueToDateArr = (
   value: DatePickerValue,
@@ -63,14 +64,23 @@ const getDefaultMode = (type: string) => {
 const useDatePickerFormat = <Value extends DatePickerValue>(
   props: UseDatePickerFormatProps<Value>,
 ) => {
-  const { value, onChange, type, options = {}, range } = props;
+  const { value, onChange, type, options = {}, range, disabled } = props;
   const format = getFormat(props.format, type);
   const [control, setControl] = useState(false);
+
+  let disabledStatus: 'left' | 'right' | 'all' | undefined = undefined;
+  const disabledLeft = Array.isArray(disabled) && disabled[0] && typeof disabled[0] !== 'function';
+  const disabledRight = Array.isArray(disabled) && disabled[1] && typeof disabled[1] !== 'function';
+  const disabledAll = typeof disabled !== 'function' && !Array.isArray(disabled) && disabled;
+  if (disabledAll || (disabledLeft && disabledRight)) disabledStatus = 'all';
+  else if (disabledLeft) disabledStatus = 'left';
+  else if (disabledRight) disabledStatus = 'right';
+
   const getCurrentArr = () => {
     const arr = convertValueToDateArr(value, format, options);
     const currentArr = convertValueToDateArr(props.defaultCurrent, 'YYYY-MM-DD', options);
-    if (!arr[0]) arr[0] = currentArr[0] || new Date();
-    if (range && !arr[1]) arr[1] = currentArr[1] || new Date();
+    if (!arr[0]) arr[0] = arr[1] || currentArr[0] || new Date();
+    if (range && !arr[1]) arr[1] = arr[0] || currentArr[1] || new Date();
     return arr as Date[];
   };
 
@@ -132,14 +142,48 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
 
   const handleClear = usePersistFn((e: React.MouseEvent) => {
     e.stopPropagation();
+    if (disabledStatus === 'all') return;
     if (edit) {
-      setStateDate(range ? [undefined, undefined] : [undefined]);
+      if (range) {
+        if (disabledStatus === 'left') setStateDate((arr) => [arr[0], undefined]);
+        else if (disabledStatus === 'right') setStateDate((arr) => [undefined, arr[1]]);
+        else setStateDate([undefined, undefined]);
+      } else {
+        setStateDate([undefined]);
+      }
     } else {
       const emptyValue = props.clearWithUndefined ? undefined : '';
-      const value = props.range ? [emptyValue, emptyValue] : emptyValue;
-      props.onChange?.(value as FormatValueType);
+      let v: string | undefined | Array<string | undefined> = emptyValue;
+      if (range) {
+        v = [emptyValue, emptyValue];
+        if (Array.isArray(props.value)) {
+          if (props.value[0] && disabledStatus === 'left') {
+            v = [props.value[0] as string, emptyValue];
+          } else if (props.value[1] && disabledStatus === 'right') {
+            v = [emptyValue, props.value[1] as string];
+          }
+        }
+      }
+      props.onChange?.(v as FormatValueType);
     }
     props.onClear?.();
+  });
+
+  const handleInputChange = usePersistFn((str: string, index: number) => {
+    // 比较 日期字符串是否符合format格式, 如果符合返回 true 否则返回 false
+    const isValid = dateUtil.isValidString(str, format);
+    if (!isValid) return;
+    const date = dateUtil.toDateWithFormat(str, format, undefined, options);
+    setStateDate((prev) => {
+      const arr = [...prev];
+      arr[index] = date;
+      return arr;
+    });
+    setCurrentArr((prev) => {
+      const arr = [...prev];
+      arr[index] = date;
+      return arr;
+    });
   });
 
   useEffect(() => {
@@ -154,24 +198,29 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
   const resultArr = getFormatValueArr(dateArr);
   const targetResultArr = getFormatValueArr(targetArr);
   const isEmpty = dateArr.reduce((prev, cur) => prev && dateUtil.isInvalid(cur), true);
-
-  return {
-    resultArr,
-    targetResultArr,
-    mode,
+  const func = useLatestObj({
     setMode,
-    dateArr: dateArr,
     setDateArr: setStateDate,
     // 编辑模式下只会修改内部状态
     startEdit,
     // 结束编辑会触发onChange
     finishEdit,
-    currentArr,
     setCurrentArr,
     setTargetArr,
     handleClear,
+    handleInputChange,
+  });
+
+  return {
+    resultArr,
+    targetResultArr,
+    dateArr: dateArr,
+    disabledStatus,
+    currentArr,
+    mode,
     isEmpty,
     format,
+    func,
   };
 };
 

@@ -7,24 +7,24 @@ import AnimationList from '../animation-list';
 import Picker from './picker';
 import { getLocale, useConfig } from '../config';
 import Icons from '../icons';
+import Result from './result';
+import useInnerTitle from '../common/use-inner-title';
 
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
+const horizontalPosition = ['left-top', 'left-bottom', 'right-top', 'right-bottom'];
 const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>) => {
   const { locale } = useConfig();
-  const { disabled, jssStyle, range, type = 'date', border = true, placeholder } = props;
-  const disabledAll = disabled && typeof disabled !== 'function';
-  const defaultPlaceholder = getLocale(locale, 'pickerTitle');
-  const placeholderArr = placeholder
-    ? Array.isArray(placeholder)
-      ? placeholder
-      : [placeholder, placeholder]
-    : defaultPlaceholder;
+  const { jssStyle, range, type = 'date', border = true } = props;
+
   const styles = jssStyle?.datePicker;
   const [focused, setFocused] = React.useState(false);
   let listPosition = props.position || 'bottom-left';
-  if (!verticalPosition.includes(listPosition)) {
+  if (horizontalPosition.includes(listPosition)) {
+    listPosition = listPosition.split('-').reverse().join('-');
+  } else if (!verticalPosition.includes(listPosition)) {
     listPosition = 'bottom-left';
   }
+
   const options = {
     timeZone: props.timeZone,
     weekStartsOn: getLocale(locale, 'startOfWeek'),
@@ -41,18 +41,13 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
   const {
     resultArr,
     targetResultArr,
-    setTargetArr,
     dateArr,
-    setDateArr,
-    startEdit,
-    finishEdit,
     currentArr,
-    setCurrentArr,
     mode,
-    setMode,
-    handleClear,
     isEmpty,
     format,
+    func,
+    disabledStatus,
   } = useDatePickerFormat({
     value: inputAbleResult.value,
     range: props.range,
@@ -60,6 +55,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
     type: type,
     format: props.format,
     options,
+    disabled: props.disabled!,
     clearWithUndefined: props.clearWithUndefined,
     onClear: undefined,
     allowSingle: props.allowSingle,
@@ -68,9 +64,9 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
     if (isOpen) {
-      startEdit();
+      func.startEdit();
     } else {
-      finishEdit();
+      func.finishEdit();
     }
     props.onCollapse?.(isOpen);
   });
@@ -78,13 +74,25 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
   const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
     open: props.open,
     onCollapse: onCollapse,
-    disabled: disabledAll,
+    disabled: disabledStatus === 'all',
     trigger: 'click',
     position: listPosition as DatePickerProps<Value>['position'],
   });
 
+  const hasValue = Array.isArray(inputAbleResult.value)
+    ? inputAbleResult.value.filter(Boolean).length > 0
+    : !!inputAbleResult.value;
+
+  const renderInnerTitle = useInnerTitle({
+    innerTitle: props.innerTitle,
+    placeTitle: props.placeTitle,
+    open: open || hasValue,
+    size: props.size,
+    jssStyle: jssStyle,
+  });
+
   const renderResult = () => {
-    return (
+    const result = (
       <div
         className={classNames(
           styles?.result,
@@ -93,9 +101,28 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
           props.align === 'center' && styles?.resultAlignCenter,
           props.align === 'left' && styles?.resultAlignLeft,
         )}
-        onClick={openPop}
         ref={targetRef}
-        tabIndex={disabledAll ? -1 : 0}
+      >
+        <Result
+          jssStyle={jssStyle}
+          type={type}
+          range={range}
+          inputable={props.inputable}
+          disabledLeft={disabledStatus === 'left'}
+          disabledRight={disabledStatus === 'right'}
+          placeholder={props.placeholder}
+          focused={open}
+          targetResultArr={targetResultArr}
+          resultArr={resultArr}
+          onChange={func.handleInputChange}
+        />
+      </div>
+    );
+    return (
+      <div
+        className={styles?.resultWrapper}
+        tabIndex={disabledStatus === 'all' ? undefined : 0}
+        onClick={disabledStatus === 'all' ? undefined : openPop}
         onFocus={() => {
           setFocused(true);
         }}
@@ -103,25 +130,9 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
           setFocused(false);
         }}
       >
-        <div className={styles?.resultTextWrapper}>
-          <div className={styles?.resultText}>
-            {(targetResultArr[0] && (
-              <span className={styles?.placeholder}>{targetResultArr[0]}</span>
-            )) ||
-              resultArr[0] || <span className={styles?.placeholder}>{placeholderArr[0]}</span>}
-          </div>
-          {range && <div className={styles?.resultSeparator}>{'~'}</div>}
-          {range && (
-            <div className={styles?.resultText}>
-              {(targetResultArr[1] && (
-                <span className={styles?.placeholder}>{targetResultArr[1]}</span>
-              )) ||
-                resultArr[1] || <span className={styles?.placeholder}>{placeholderArr[1]}</span>}
-            </div>
-          )}
-        </div>
-        {!isEmpty && (
-          <div className={styles?.clear} onClick={handleClear}>
+        {renderInnerTitle(result)}
+        {disabledStatus !== 'all' && !isEmpty && (
+          <div className={classNames(styles?.clear, styles?.icon)} onClick={func.handleClear}>
             {Icons.CloseCircle}
           </div>
         )}
@@ -138,7 +149,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
         props.size === 'small' && styles?.wrapperSmall,
         props.size === 'large' && styles?.wrapperLarge,
         focused && styles?.wrapperFocus,
-        disabledAll && styles?.wrapperDisabled,
+        disabledStatus === 'all' && styles?.wrapperDisabled,
         props.status === 'error' && styles?.wrapperError,
         range && styles?.wrapperRange,
         !border && styles?.wrapperNoBorder,
@@ -170,17 +181,17 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
           }}
         >
           <Picker
-            setTargetArr={setTargetArr}
+            setTargetArr={func.setTargetArr}
             dateArr={dateArr}
-            setDateArr={setDateArr}
+            setDateArr={func.setDateArr}
             currentArr={currentArr}
             range={range}
-            setCurrentArr={setCurrentArr}
+            setCurrentArr={func.setCurrentArr}
             mode={mode}
-            setMode={setMode}
+            setMode={func.setMode}
             type={type}
             options={options}
-            disabled={disabled}
+            disabled={props.disabled}
             jssStyle={jssStyle}
             closePop={closePop}
             defaultTime={props.defaultTime}

@@ -7,8 +7,6 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const Now = Date.now();
-
-const App: React.FC = () => <DatePicker type='week' defaultValue={Now} />;
+const App: React.FC = () => <DatePicker type='week' />;
 
 export default App;

@@ -1,31 +1,77 @@
 /**
- * cn - 范围选择
- *    -- 设置 range 属性可以选择范围，输入和返回的 value 为长度为 2 的数组
- * en - Range
- *    --Set the range property to select range, the input value and return value is an array of length 2.
+ * cn - 快速选择
+ *    -- 可以配置一些快速选择的选项, 日期可以是 Date, 时间戳, 或者字符串,字符串需要和所格式填写的 format 一致
+ * en - Quick select
+ *    -- can configure some options for quick selection. The date can be Date, timestamp, or string. The string needs to be in the same format as the format.
  */
 import React from 'react';
-import { DatePicker, Radio, TYPE } from 'shineout';
+import { DatePicker } from 'shineout';
 
-type DateType = TYPE.DatePicker.Props['type'];
-const types: DateType[] = ['date', 'week', 'month', 'quarter', 'year', 'time', 'datetime'];
+const QuickSelectData = [
+  { name: 'Today', value: () => Date.now() },
+  {
+    name: 'A week later',
+    value: () => {
+      const now = Date.now();
+      return now + 7 * 24 * 60 * 60 * 1000;
+    },
+  },
+  {
+    name: 'A month later',
+    value: () => {
+      const now = Date.now();
+      return now + 30 * 24 * 60 * 60 * 1000;
+    },
+  },
+];
+const QuickSelectDataTime = [
+  {
+    name: 'Next Week',
+    value: () => {
+      const now = Date.now();
+      return [now, now + 7 * 24 * 60 * 60 * 1000];
+    },
+  },
+  {
+    name: 'Last Week',
+    value: () => {
+      const now = Date.now();
+      return [now - 7 * 24 * 60 * 60 * 1000, now];
+    },
+  },
+  {
+    name: 'Next Month',
+    value: () => {
+      const now = Date.now();
+      return [now, now + 30 * 24 * 60 * 60 * 1000];
+    },
+  },
+  {
+    name: 'Last Month',
+    value: () => {
+      const now = Date.now();
+      return [now - 30 * 24 * 60 * 60 * 1000, now];
+    },
+  },
+  {
+    name: 'special date',
+    value: ['2019-01-01 00:00:00', '2019-12-31 23:59:59'],
+  },
+];
 
-const App: React.FC = () => {
-  // todo
-  const [type, setType] = React.useState<DateType>('date');
-  return (
-    <div>
-      <Radio.Group
-        button={'outline'}
-        data={types}
-        value={type}
-        onChange={setType}
-        keygen
-        style={{ marginBottom: 24 }}
-      />
-      <br />
-      <DatePicker type={type} />
-    </div>
-  );
-};
+const App: React.FC = () => (
+  <div>
+    <DatePicker
+      range
+      type='datetime'
+      onChange={(d) => console.log(d)}
+      quickSelect={QuickSelectDataTime}
+      placeholder={['Start datetime', 'End datetime']}
+      style={{ marginBottom: '12px', display: 'block' }}
+    />
+
+    <DatePicker placeholder='Quick Date' quickSelect={QuickSelectData} />
+  </div>
+);
+
 export default App;

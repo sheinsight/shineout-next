@@ -23,7 +23,7 @@ const App: React.FC = () => {
         style={{ marginBottom: 24 }}
       />
       <br />
-      <DatePicker type={type} />
+      <DatePicker type={type} range />
     </div>
   );
 };

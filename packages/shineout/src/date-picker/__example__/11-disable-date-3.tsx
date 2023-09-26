@@ -10,13 +10,14 @@ import { DatePicker } from 'shineout';
 const App: React.FC = () => (
   <div>
     <DatePicker
+      inputable
       type='datetime'
-      defaultValue={Date.now()}
+      defaultValue={'2023-10-12 12:00:00'}
       style={{ marginInlineEnd: 12 }}
       disabled={(d) => {
-        return [0, 5, 6].includes(d.getDay());
+        return d.getDay() === 0 || d.getDay() === 6;
       }}
-      disabledTime='22:22:22'
+      disabledTime={'11:00:00'}
     />
   </div>
 );
