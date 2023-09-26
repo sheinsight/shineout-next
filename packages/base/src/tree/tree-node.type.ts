@@ -37,6 +37,7 @@ export interface TreeNodeProps<DataItem>
   dragHoverExpand?: boolean;
   loader?: (key: KeygenResult, data: DataItem) => void;
   inlineNode?: boolean;
+  highlight?: boolean;
   onDragStart?: (e: React.DragEvent, data: DataItem) => void;
   onDragEnd?: (e: React.DragEvent, data: DataItem) => void;
   onDragOver?: (e: React.DragEvent, data: DataItem) => void;

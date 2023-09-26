@@ -122,7 +122,15 @@ const treeStyle: JsStyles<TreeClass> = {
     lineHeight: '26px',
     padding: `0 ${Token.treePaddingX}`,
     borderRadius: Token.treeContentBorderRadius,
-    '&:hover': {
+
+    '&[data-active="true"]': {
+      background: Token.treeContentActiveBackgroundColor,
+
+      '& $text': {
+        color: Token.treeContentActiveFontColor,
+      },
+    },
+    '&:hover:not([data-active="true"])': {
       background: Token.treeContentHoverBackgroundColor,
     },
   },

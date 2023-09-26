@@ -33,6 +33,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     active,
     disabled,
     inlineNode,
+    highlight,
     onClick,
     loader,
     onDrop,
@@ -182,6 +183,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           renderItem={renderItem}
           loader={loader}
           inlineNode={inlineNode}
+          highlight={highlight}
           onToggle={onToggle}
           onDrop={onDrop && handleDrop}
           onDragOver={onDragOver}

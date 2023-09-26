@@ -34,6 +34,7 @@ export interface TreeListProps<DataItem>
   onToggle?: (id: KeygenResult, expanded: boolean) => void;
   onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   inlineNode?: boolean;
+  highlight?: boolean;
   onDragStart?: (e: React.DragEvent, data: DataItem) => void;
   onDragEnd?: (e: React.DragEvent, data: DataItem) => void;
   onDragOver?: (e: React.DragEvent, data: DataItem) => void;

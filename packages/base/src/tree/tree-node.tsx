@@ -30,6 +30,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     mode,
     childrenKey,
     inlineNode,
+    highlight,
     dragSibling,
     dragHoverExpand,
     dragImageSelector,
@@ -222,6 +223,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       index,
       loader,
       inlineNode,
+      highlight,
       onDrop,
       onChange,
       onToggle,
@@ -274,6 +276,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         doubleClickExpand={doubleClickExpand}
         loader={loader}
         inlineNode={inlineNode}
+        highlight={highlight}
         setFetching={setFetching}
         onChange={onChange}
         onFetch={handleFetch}

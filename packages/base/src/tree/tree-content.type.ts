@@ -25,6 +25,8 @@ export interface TreeContextProps<DataItem>
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   bindContent: React.RefObject<HTMLDivElement>;
   fetching: boolean;
+  inlineNode?: boolean;
+  highlight?: boolean;
   loader?: (key: KeygenResult, data: DataItem) => void;
   setFetching: (value: boolean) => void;
   onToggle: () => void;
@@ -32,5 +34,4 @@ export interface TreeContextProps<DataItem>
   onDragOver: (e: React.DragEvent) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
   onChange?: (value: KeygenResult[]) => void;
-  inlineNode?: boolean;
 }

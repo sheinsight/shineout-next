@@ -24,6 +24,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     parentClickExpand,
     doubleClickExpand,
     bindContent,
+    highlight,
     setFetching,
     loader,
     onChange,
@@ -42,6 +43,17 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   const hasExpandIcons = expandIcons !== undefined;
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
+
+  const contentDataProps = () => {
+    const dataProps: {
+      'data-active'?: boolean;
+    } = {};
+    if (highlight) {
+      dataProps['data-active'] = active;
+    }
+
+    return dataProps;
+  };
 
   const handleIndicatorClick = () => {
     onToggle();
@@ -143,7 +155,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   return (
     <div className={rootClass} onDragOver={onDragOver}>
       {renderIndicator()}
-      <div ref={bindContent} className={contentClass}>
+      <div ref={bindContent} className={contentClass} {...contentDataProps()}>
         {onChange && renderCheckbox()}
         <div className={textClass} onClick={handleNodeClick} onDoubleClick={handleNodeExpand}>
           {renderNode()}

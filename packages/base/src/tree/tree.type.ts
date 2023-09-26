@@ -52,6 +52,7 @@ export interface TreeProps<DataItem>
   dragSibling?: boolean;
   dragHoverExpand?: boolean;
   inlineNode?: boolean;
+  highlight?: boolean;
   loader?: (key: KeygenResult, data: DataItem) => void;
   onClick?: (data: DataItem, id: KeygenResult, path?: TreePathType) => void;
   onDragStart?: (e: React.DragEvent, data: DataItem) => void;
