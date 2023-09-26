@@ -19,6 +19,7 @@ export interface Example {
   code: string;
   index: number;
   className?: string;
+  hash?: string;
 }
 export interface Guide {
   title: string;
