@@ -1,11 +1,14 @@
 import { render, cleanup, screen, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Popover from '..';
-import Button from '../../button';
+import { Button } from 'shineout';
 import mountTest from '../../tests/mountTest';
 import { attributesTest, classTest, delay, displayTest, styleTest } from '../../tests/utils';
 import PopoverBase from '../__example__/01-base';
 import PopoverControll from '../__example__/04-controll';
+import PopoverContainer from '../__example__/06-container';
+import PopoverDisabled from '../__example__/07-disabled';
+import PopoverDestroy from '../__example__/t-01-destroy';
 
 const SO_PREFIX = 'popover';
 const popoverClassName = `.${SO_PREFIX}-wrapper-0-2-65`;
@@ -19,8 +22,6 @@ const popoverArrowBaseClassName = `.${SO_PREFIX}-arrow-0-2-67`;
 const popoverTextClassName = `${SO_PREFIX}-text-0-2-69`;
 const popoverBaseTextClassName = `${SO_PREFIX}-text-0-2-5`;
 
-// const positions = ['bottom-left', 'bottom', 'bottom-right', 'right-top', 'left-top', 'right', 'left', 'right-bottom', 'left-bottom', 'top-left', 'top', 'top-right']
-
 beforeAll(() => {
   jest.useFakeTimers();
 });
@@ -30,11 +31,35 @@ afterAll(() => {
 afterEach(cleanup);
 mountTest(<Popover />);
 
-const PopoverDemo = ({ className, style, trigger, position }: any) => {
+const PopoverDemo = ({
+  className,
+  style,
+  trigger,
+  position,
+  mouseEnterDelay,
+  mouseLeaveDelay,
+  type,
+  onOpen,
+  onClose,
+  visible,
+  defaultVisible,
+}: any) => {
   return (
     <Button>
       Hover
-      <Popover className={className} style={style} trigger={trigger} position={position}>
+      <Popover
+        className={className}
+        style={style}
+        trigger={trigger}
+        position={position}
+        mouseEnterDelay={mouseEnterDelay}
+        mouseLeaveDelay={mouseLeaveDelay}
+        type={type}
+        onOpen={onOpen}
+        onClose={onClose}
+        visible={visible}
+        defaultVisible={defaultVisible}
+      >
         some Text
       </Popover>
     </Button>
@@ -43,6 +68,13 @@ const PopoverDemo = ({ className, style, trigger, position }: any) => {
 
 const getPopoverRoot = () =>
   document.querySelector(popoverClassName)! || document.querySelector(popoverBaseClassName)!;
+
+const getPopoverStatus = (status: boolean) => {
+  expect(
+    getPopoverRoot().classList.contains(popoverOpenClassName) ||
+      getPopoverRoot().classList.contains(popoverOpenBaseClassName),
+  ).toBe(status);
+};
 const getPopoverContent = () =>
   document.querySelector(popoverContentClassName)! ||
   document.querySelector(popoverContentBaseClassName)!;
@@ -88,6 +120,11 @@ describe('Popover[Base]', () => {
           content.classList.contains(popoverBaseTextClassName),
       ).toBeTruthy();
     });
+    fireEvent.mouseLeave(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      getPopoverStatus(false);
+    });
   });
   test('should render when set className and style', async () => {
     const { container } = render(<PopoverDemo className='demo' style={{ color: 'black' }} />);
@@ -113,6 +150,32 @@ describe('Popover[Base]', () => {
     await waitFor(async () => {
       await delay(200);
       expect(getPopoverRoot()).toBeInTheDocument();
+    });
+  });
+
+  test('should close when click double and click outside', async () => {
+    const { container } = render(<PopoverDemo trigger='click' />);
+    expect(getPopoverRoot()).not.toBeInTheDocument();
+    const button = container.querySelector('button')!;
+    fireEvent.click(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).toBeInTheDocument();
+    });
+    fireEvent.click(button);
+    await waitFor(async () => {
+      await delay(200);
+      getPopoverStatus(false);
+    });
+    fireEvent.click(button);
+    await waitFor(async () => {
+      await delay(200);
+      getPopoverStatus(true);
+    });
+    fireEvent.click(document);
+    await waitFor(async () => {
+      await delay(200);
+      getPopoverStatus(false);
     });
   });
 
@@ -149,8 +212,194 @@ describe('Popover[Base]', () => {
       });
     });
   });
-  test('should render that is controll', () => {
-    render(<PopoverControll />);
-    screen.debug();
+});
+
+describe('Popover[Visible]', () => {
+  test('should render when set visible is true', async () => {
+    const { container } = render(<PopoverDemo visible={true} trigger='click' />);
+    expect(getPopoverRoot()).toBeInTheDocument();
+    fireEvent.click(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).toBeInTheDocument();
+    });
+  });
+  test('should render when set visible is false', async () => {
+    const { container } = render(<PopoverDemo visible={false} trigger='click' />);
+    expect(getPopoverRoot()).not.toBeInTheDocument();
+    fireEvent.click(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).not.toBeInTheDocument();
+    });
+  });
+  test('should render that is controll by set visible', async () => {
+    const { container } = render(<PopoverControll />);
+    expect(getPopoverRoot()).not.toBeInTheDocument();
+    const buttons = container.querySelectorAll('button')!;
+    fireEvent.mouseEnter(buttons[1]);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).not.toBeInTheDocument();
+    });
+    fireEvent.click(buttons[0]);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).toBeInTheDocument();
+    });
+  });
+  test('should render when set onVisibleChange', async () => {
+    const changeFn = jest.fn();
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover onVisibleChange={changeFn}>some Text</Popover>
+      </Button>,
+    );
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(changeFn.mock.calls.length).toBe(1);
+    });
+  });
+  test('should render when set defaultVisible', async () => {});
+});
+
+describe('Popover[delay]', () => {
+  test('should render when set delay', async () => {
+    const { container } = render(<PopoverDemo mouseEnterDelay={500} mouseLeaveDelay={500} />);
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).not.toBeInTheDocument();
+    });
+    await waitFor(async () => {
+      await delay(300);
+      expect(getPopoverRoot()).toBeInTheDocument();
+    });
+    fireEvent.mouseLeave(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).toBeInTheDocument();
+      getPopoverStatus(true);
+    });
+    await waitFor(async () => {
+      await delay(300);
+      getPopoverStatus(false);
+    });
+  });
+});
+describe('Popover[Container]', () => {
+  test('should render when set getPopupContainer', async () => {
+    const { container } = render(<PopoverContainer />);
+    const button = container.querySelector('button')!;
+    fireEvent.click(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(
+        container.querySelector(popoverClassName) || container.querySelector(popoverBaseClassName),
+      ).toBeTruthy();
+    });
+  });
+});
+// TODO: have some bug
+describe('Popover[Disabled]', () => {
+  test('should render when set disabled', async () => {
+    const { container } = render(<PopoverDisabled />);
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(500);
+      screen.debug();
+      // expect(getPopoverRoot()).toBeInTheDocument();
+    });
+  });
+});
+describe('Popover[Type]', () => {
+  const types = ['success', 'info', 'warning', 'danger'];
+  types.forEach((item: string) => {
+    test(`should render when set type is ${item}`, async () => {
+      const { container } = render(<PopoverDemo type={item} />);
+      const button = container.querySelector('button')!;
+      fireEvent.mouseEnter(button);
+      await waitFor(async () => {
+        await delay(200);
+        attributesTest(getPopoverRoot(), 'data-soui-type', item);
+      });
+    });
+  });
+});
+describe('Popover[Event]', () => {
+  test('should render when set onOpen and onClose', async () => {
+    const openFn = jest.fn();
+    const closeFn = jest.fn();
+    const { container } = render(<PopoverDemo onOpen={openFn} onClose={closeFn} />);
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(openFn.mock.calls.length).toBe(1);
+    });
+    fireEvent.mouseLeave(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(closeFn.mock.calls.length).toBe(1);
+    });
+  });
+});
+describe('Popover[UseTextStyle]', () => {
+  test('should render when set useTextStyle', async () => {
+    const { container, rerender } = render(
+      <Button>
+        <Popover useTextStyle>
+          <div>hello</div>
+        </Popover>
+        useTextStyle
+      </Button>,
+    );
+    let button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(
+        getPopoverContent().classList.contains(popoverTextClassName) ||
+          getPopoverContent().classList.contains(popoverBaseTextClassName),
+      ).toBeTruthy();
+    });
+    rerender(
+      <Button>
+        <Popover useTextStyle={false}>
+          <div>hello</div>
+        </Popover>
+        useTextStyle
+      </Button>,
+    );
+    button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(
+        getPopoverContent().classList.contains(popoverTextClassName) ||
+          getPopoverContent().classList.contains(popoverBaseTextClassName),
+      ).toBeFalsy();
+    });
+  });
+});
+describe('Popover[Destroy]', () => {
+  test('should render set destroy', async () => {
+    const { container } = render(<PopoverDestroy />);
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).toBeInTheDocument();
+    });
+    fireEvent.mouseLeave(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).not.toBeInTheDocument();
+    });
   });
 });
