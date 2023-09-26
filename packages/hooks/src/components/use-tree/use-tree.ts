@@ -330,7 +330,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     let current = context.valueMap.get(id)!;
 
     const status = checkStatusStack(childrenStack, current);
-    console.log(id, current, status);
     if (status !== current) {
       setValueMap(id, status);
       current = status;

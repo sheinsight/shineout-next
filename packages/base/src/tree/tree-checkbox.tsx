@@ -18,6 +18,7 @@ const TreeCheckbox = <DataItem,>(props: TreeCheckboxProps<DataItem>) => {
 
     return isDisabled(id);
   };
+
   const checked = getChecked(id);
 
   return (

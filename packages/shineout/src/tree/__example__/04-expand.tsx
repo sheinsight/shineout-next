@@ -4,68 +4,48 @@
  * en - expand
  *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes.
  */
-
+import { useState } from 'react';
 import { Tree, Button } from 'shineout';
+import { createNestedArray, getIds } from './utils';
 
 export default () => {
-  const data = [
-    {
-      id: '0',
-      children: [
-        {
-          id: '0-0',
-        },
-      ],
-    },
-    {
-      id: '1',
-      children: [
-        {
-          id: '1-0',
-        },
-      ],
-    },
-    {
-      id: '2',
-      children: [
-        {
-          id: '2-0',
-        },
-      ],
-    },
-    {
-      id: '3',
-      children: [
-        {
-          id: '3-0',
-        },
-      ],
-    },
-    {
-      id: '4',
-      children: [
-        {
-          id: '4-0',
-        },
-      ],
-    },
-  ];
+  const data = createNestedArray([5, 2, 2]);
+  const [expanded, setExpanded] = useState<any[]>([]);
 
   const renderItem = (node: any) => {
     return <span>{`node ${node.id}`}</span>;
   };
 
+  const handleExpandAll = () => {
+    setExpanded(getIds(data));
+  };
+
+  const handleCloseAll = () => {
+    setExpanded([]);
+  };
+
+  const handleExpand = (ids: any[]) => {
+    setExpanded([...ids]);
+  };
+
   return (
     <div>
       <div style={{ marginBottom: 32 }}>
-        <Button size='small' mode='outline' type='secondary'>
+        <Button size='small' mode='outline' type='secondary' onClick={handleExpandAll}>
           Expand all
         </Button>
-        <Button size='small' mode='outline' type='secondary'>
+        <Button size='small' mode='outline' type='secondary' onClick={handleCloseAll}>
           Collapse all
         </Button>
       </div>
-      <Tree line={false} data={data} keygen='id' renderItem={renderItem}></Tree>
+      <Tree
+        line={false}
+        data={data}
+        expanded={expanded}
+        onExpand={handleExpand}
+        keygen='id'
+        renderItem={renderItem}
+      ></Tree>
     </div>
   );
 };
