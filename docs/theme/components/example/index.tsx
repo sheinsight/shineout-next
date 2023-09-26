@@ -1,10 +1,12 @@
-import classnames from 'classnames';
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import classnames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import Code from './code';
 import Copy from './copy';
 import Open from './open';
+import Debug from './debug';
 import Tip from './tip';
 import Codesandbox from './codesandbox';
 import { Example as ExampleProps } from 'docs/types';
@@ -12,6 +14,10 @@ import useStyles from './style';
 
 const Example = (props: ExampleProps) => {
   const classes = useStyles();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const hasDebug = !!searchParams.get('example');
+
   const state = useSnapshot(store);
   const [open, setOpen] = useState(false);
 
@@ -63,7 +69,7 @@ const Example = (props: ExampleProps) => {
           </h2>
         )}
       </div>
-      <div className='demo'>{Example && <Example></Example>}</div>
+      <div className='demo'>{Example && !hasDebug && <Example></Example>}</div>
       <div className='action'>
         <div>
           {describe.map((item, index) => {
@@ -78,6 +84,7 @@ const Example = (props: ExampleProps) => {
           <Codesandbox></Codesandbox>
           <Open onClick={handleOpen}></Open>
           <Copy onCopy={handleCopy}></Copy>
+          <Debug example={Example} name={propName[state.locales] || defaultName}></Debug>
         </div>
       </div>
       {open && (
