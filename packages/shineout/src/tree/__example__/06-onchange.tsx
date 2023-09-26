@@ -83,7 +83,7 @@ export default () => {
           ></Tree>
         </div>
 
-        <pre style={{ flex: 1, margin: 10 }}>{JSON.stringify(value.reverse(), null, 2)}</pre>
+        <pre style={{ flex: 1, margin: 10 }}>{JSON.stringify(value, null, 2)}</pre>
       </div>
     </div>
   );

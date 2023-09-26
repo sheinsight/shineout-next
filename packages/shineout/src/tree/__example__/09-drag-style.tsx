@@ -23,7 +23,7 @@ export default () => {
   return (
     <div>
       <Tree
-        dragImageStyle={{ background: 'pink', border: '2px dashed red' }}
+        dragImageStyle={{ background: '#F1FAEB', border: '2px dashed #74D13D' }}
         line={false}
         data={data}
         keygen='id'
