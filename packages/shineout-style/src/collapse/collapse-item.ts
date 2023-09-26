@@ -14,12 +14,13 @@ export type CollapseItemClass =
   | 'disabled'
   | 'activeTransform'
   | 'activeTransformRight'
-  | 'expanded';
+  | 'expanded'
+  | 'region';
 
 const collapseItemStyle: JsStyles<CollapseItemClass> = {
   wrapper: {
     boxSizing: 'border-box',
-    borderBottom: '1px solid rgb(201,205,212)',
+    borderBottom: '1px solid rgb(229,230,235)',
     '&:last-child': {
       borderBottom: 0,
     },
@@ -31,7 +32,6 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     alignItems: 'center',
     justifyContent: 'space-between',
     boxSizing: 'border-box',
-    cursor: 'pointer',
     overflow: 'hidden',
     paddingTop: '8px',
     paddingBottom: '8px',
@@ -71,6 +71,7 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     display: 'flex',
     alignItems: 'center',
     marginLeft: 8,
+    cursor: 'pointer',
     '& svg': {
       width: 14,
     },
@@ -83,6 +84,7 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
   },
   extra: {
     marginRight: '8px',
+    cursor: 'pointer',
   },
   content: {
     width: 'auto',
@@ -115,8 +117,9 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
       color: 'rgb(201,205,212)',
     },
   },
-  expanded: {
-    // display: 'block',
+  expanded: {},
+  region: {
+    cursor: 'pointer',
   },
 };
 

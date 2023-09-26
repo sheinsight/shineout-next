@@ -79,6 +79,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     jssStyle?.collapseItem.header,
     !showExpandIcon && jssStyle?.collapseItem.noIcon,
     expandContentPosition === 'right' && jssStyle?.collapseItem.rightIcon,
+    triggerRegion === 'header' && jssStyle?.collapseItem.region,
   );
   const collapseItemIconClassName = classNames(
     jssStyle?.collapseItem.icon,

@@ -7,7 +7,7 @@ const collapseStyle: JsStyles<CollapseClass> = {
   wrapper: {
     overflow: 'hidden',
     borderRadius: '4px',
-    border: '1px solid rgb(201,205,212)',
+    border: '1px solid rgb(229,230,235)',
     lineHeight: '1.5715',
   },
   borderLess: {

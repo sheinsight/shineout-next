@@ -19,6 +19,7 @@ export interface CollapseItemClasses {
   disabled: string;
   activeTransform: string;
   activeTransformRight: string;
+  region: string;
 }
 
 export interface CollapseItemProps extends Pick<CommonType, 'className' | 'style'> {
