@@ -1729,7 +1729,7 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       class="dropdown-item-0-2-10"
     >
       <i
-        class="icon-wrapper-0-2-47 fa-user-o"
+        class="icon-wrapper-0-2-48 fa-user-o"
         style="font-family: FontAwesome;"
       />
        
@@ -1743,7 +1743,7 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       class="dropdown-item-0-2-10"
     >
       <i
-        class="icon-wrapper-0-2-47 fa-user-o"
+        class="icon-wrapper-0-2-48 fa-user-o"
         style="font-family: FontAwesome;"
       />
        
@@ -1757,7 +1757,7 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       class="dropdown-item-0-2-10"
     >
       <i
-        class="icon-wrapper-0-2-47 fa-user-o"
+        class="icon-wrapper-0-2-48 fa-user-o"
         style="font-family: FontAwesome;"
       />
        
@@ -1771,7 +1771,7 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       class="dropdown-item-0-2-10"
     >
       <i
-        class="icon-wrapper-0-2-47 fa-user-o"
+        class="icon-wrapper-0-2-48 fa-user-o"
         style="font-family: FontAwesome;"
       />
        
@@ -1785,7 +1785,7 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       class="dropdown-item-0-2-10"
     >
       <i
-        class="icon-wrapper-0-2-47 fa-user-o"
+        class="icon-wrapper-0-2-48 fa-user-o"
         style="font-family: FontAwesome;"
       />
        

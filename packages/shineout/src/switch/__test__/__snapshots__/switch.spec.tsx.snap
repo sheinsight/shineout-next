@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch[Base] should render correctly  1`] = `
+<button
+  class="switch-wrapper-0-2-2"
+  role="switch"
+  type="button"
+>
+  <input
+    style="display: none;"
+    tabindex="0"
+    type="checkbox"
+  />
+  <div
+    class="switch-indicator-0-2-6"
+  />
+  <div
+    class="switch-content-0-2-7"
+  />
+</button>
+`;
+
+exports[`Switch[Base] should render correctly about loading 1`] = `
+<div
+  style="display: flex; flex-direction: row; gap: 24px; align-items: center;"
+>
+  <button
+    class="switch-wrapper-0-2-2 switch-wrapperChecked-0-2-3 switch-wrapperDisabled-0-2-8"
+    role="switch"
+    type="button"
+  >
+    <input
+      checked=""
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="switch-indicator-0-2-6"
+    >
+      <div
+        class="switch-loading-0-2-9"
+      />
+    </div>
+    <div
+      class="switch-content-0-2-7"
+    />
+  </button>
+  <button
+    class="switch-wrapper-0-2-2 switch-wrapperDisabled-0-2-8"
+    role="switch"
+    type="button"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="switch-indicator-0-2-6"
+    >
+      <div
+        class="switch-loading-0-2-9"
+      />
+    </div>
+    <div
+      class="switch-content-0-2-7"
+    />
+  </button>
+</div>
+`;
+
+exports[`Switch[Base] should render correctly about size 1`] = `
+<div
+  style="display: flex; flex-direction: row; gap: 24px; align-items: center;"
+>
+  <button
+    class="switch-wrapper-0-2-2 switch-wrapperSmall-0-2-4"
+    role="switch"
+    type="button"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="switch-indicator-0-2-6"
+    />
+    <div
+      class="switch-content-0-2-7"
+    />
+  </button>
+  <button
+    class="switch-wrapper-0-2-2"
+    role="switch"
+    type="button"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="switch-indicator-0-2-6"
+    />
+    <div
+      class="switch-content-0-2-7"
+    />
+  </button>
+  <button
+    class="switch-wrapper-0-2-2 switch-wrapperLarge-0-2-5"
+    role="switch"
+    type="button"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="switch-indicator-0-2-6"
+    />
+    <div
+      class="switch-content-0-2-7"
+    />
+  </button>
+</div>
+`;
+
+exports[`Switch[Base] should render correctly about status 1`] = `
+<div
+  style="display: flex; flex-direction: row; gap: 24px;"
+>
+  <button
+    class="switch-wrapper-0-2-2 switch-wrapperChecked-0-2-3"
+    role="switch"
+    type="button"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="switch-indicator-0-2-6"
+    />
+    <div
+      class="switch-content-0-2-7"
+    />
+  </button>
+  <button
+    class="switch-wrapper-0-2-2"
+    role="switch"
+    type="button"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="switch-indicator-0-2-6"
+    />
+    <div
+      class="switch-content-0-2-7"
+    />
+  </button>
+  <button
+    class="switch-wrapper-0-2-2 switch-wrapperChecked-0-2-3 switch-wrapperDisabled-0-2-8"
+    role="switch"
+    type="button"
+  >
+    <input
+      checked=""
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="switch-indicator-0-2-6"
+    />
+    <div
+      class="switch-content-0-2-7"
+    />
+  </button>
+  <button
+    class="switch-wrapper-0-2-2 switch-wrapperDisabled-0-2-8"
+    role="switch"
+    type="button"
+  >
+    <input
+      disabled=""
+      style="display: none;"
+      tabindex="0"
+      type="checkbox"
+    />
+    <div
+      class="switch-indicator-0-2-6"
+    />
+    <div
+      class="switch-content-0-2-7"
+    />
+  </button>
+</div>
+`;

@@ -344,7 +344,7 @@ describe('Dropdown[absolute]', () => {
       await delay(200);
       styleTest(
         document.querySelector(dropdownListClassName)!,
-        'display: block; position: absolute; min-width: 0; left: 0px; top: 2px;',
+        'display: block; position: absolute; z-index: 1051; min-width: 0; left: 0px; transform: translateX(-100%); top: 2px;',
       );
     });
   });
@@ -406,7 +406,7 @@ describe('Dropdown[renderItem]', () => {
   });
   test('should render when set renderItem is function', () => {
     const { container } = render(
-      <Dropdown renderItem={(d) => `id ${d.id}`} data={dropData} placeholder='Dropdown' />,
+      <Dropdown renderItem={(d: any) => `id ${d.id}`} data={dropData} placeholder='Dropdown' />,
     );
     container.querySelectorAll('a').forEach((item, index) => {
       textContentTest(item, 'id ' + dropData[index].id);
