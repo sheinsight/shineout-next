@@ -3,11 +3,19 @@ import '@testing-library/jest-dom';
 import Popover from '..';
 import { Button } from 'shineout';
 import mountTest from '../../tests/mountTest';
-import { attributesTest, classTest, delay, displayTest, styleTest } from '../../tests/utils';
+import {
+  attributesTest,
+  classTest,
+  delay,
+  displayTest,
+  styleContentTest,
+  styleTest,
+} from '../../tests/utils';
 import PopoverBase from '../__example__/01-base';
 import PopoverControll from '../__example__/04-controll';
 import PopoverContainer from '../__example__/06-container';
 import PopoverDisabled from '../__example__/07-disabled';
+import PopoverFunc from '../__example__/10-func';
 import PopoverDestroy from '../__example__/t-01-destroy';
 
 const SO_PREFIX = 'popover';
@@ -43,6 +51,12 @@ const PopoverDemo = ({
   onClose,
   visible,
   defaultVisible,
+  background,
+  border,
+  clickToCancelDelay,
+  showArrow,
+  priorityDirection,
+  scrollDismiss,
 }: any) => {
   return (
     <Button>
@@ -59,6 +73,12 @@ const PopoverDemo = ({
         onClose={onClose}
         visible={visible}
         defaultVisible={defaultVisible}
+        background={background}
+        border={border}
+        clickToCancelDelay={clickToCancelDelay}
+        showArrow={showArrow}
+        priorityDirection={priorityDirection}
+        scrollDismiss={scrollDismiss}
       >
         some Text
       </Popover>
@@ -212,6 +232,22 @@ describe('Popover[Base]', () => {
       });
     });
   });
+  test('should render when set background', async () => {
+    const { container } = render(<PopoverDemo background='black' />);
+    fireEvent.mouseEnter(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      styleContentTest(getPopoverRoot(), 'background-color: black;');
+    });
+  });
+  test('should render when set border', async () => {
+    const { container } = render(<PopoverDemo border='black' />);
+    fireEvent.mouseEnter(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      styleContentTest(getPopoverRoot(), 'border-color: black;');
+    });
+  });
 });
 
 describe('Popover[Visible]', () => {
@@ -263,7 +299,15 @@ describe('Popover[Visible]', () => {
       expect(changeFn.mock.calls.length).toBe(1);
     });
   });
-  test('should render when set defaultVisible', async () => {});
+  test('should render when set defaultVisible', async () => {
+    const { container } = render(<PopoverDemo defaultVisible={true} trigger='click' />);
+    expect(getPopoverRoot()).toBeInTheDocument();
+    fireEvent.click(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      getPopoverStatus(false);
+    });
+  });
 });
 
 describe('Popover[delay]', () => {
@@ -400,6 +444,138 @@ describe('Popover[Destroy]', () => {
     await waitFor(async () => {
       await delay(200);
       expect(getPopoverRoot()).not.toBeInTheDocument();
+    });
+  });
+});
+describe('Popover[Children]', () => {
+  test('should render when set children is ReactNode', async () => {
+    const { container } = render(
+      <Button>
+        Hover
+        <Popover>
+          <Button>Hello</Button>
+        </Popover>
+      </Button>,
+    );
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot().querySelector('button')).toBeTruthy();
+    });
+  });
+  test('should render when set children is function', async () => {
+    const { container } = render(<PopoverFunc />);
+    const button = container.querySelector('button')!;
+    fireEvent.click(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot().querySelector('button')).toBeTruthy();
+    });
+    fireEvent.click(getPopoverRoot().querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      getPopoverStatus(false);
+    });
+  });
+});
+describe('Popover[ClickToCancelDelay]', () => {
+  test('should render when set clickToCancelDelay', async () => {
+    const { container } = render(<PopoverDemo clickToCancelDelay={true} mouseEnterDelay={500} />);
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      expect(getPopoverRoot()).not.toBeInTheDocument();
+    });
+    fireEvent.click(button);
+    await waitFor(async () => {
+      await delay(300);
+      expect(getPopoverRoot()).not.toBeInTheDocument();
+    });
+  });
+});
+describe('Popover[ShowArrow]', () => {
+  test('should render when set showArrow is false', async () => {
+    const { container } = render(<PopoverDemo showArrow={false} />);
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      const popover = getPopoverRoot();
+      expect(
+        popover.querySelector(popoverArrowClassName) ||
+          popover.querySelector(popoverArrowBaseClassName),
+      ).toBeFalsy();
+    });
+  });
+});
+describe('Popover[PriorityDirection]', () => {
+  test('should render when set PriorityDirection is horizontal', async () => {
+    const { container } = render(<PopoverDemo priorityDirection='horizontal' />);
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+      styleTest(
+        getPopoverRoot(),
+        'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px;',
+      );
+    });
+  });
+});
+describe('Popover[ScrollDismiss]', () => {
+  test('should render when set scrollDismiss is true', async () => {
+    const { container } = render(<PopoverDemo scrollDismiss={true} />);
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    fireEvent.scroll(document, { target: { scrollY: 100 } });
+    await waitFor(async () => {
+      await delay(200);
+      getPopoverStatus(false);
+    });
+  });
+  test('should render when set scrollDismiss is false', async () => {
+    const { container } = render(<PopoverDemo scrollDismiss={false} />);
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    fireEvent.scroll(document, { target: { scrollY: 100 } });
+    await waitFor(async () => {
+      await delay(200);
+      getPopoverStatus(true);
+    });
+  });
+  test('should render when set scrollDismiss is function', async () => {
+    const targetStyle: React.CSSProperties = {
+      height: 200,
+      overflowY: 'auto',
+      position: 'relative',
+    };
+    const { container } = render(
+      <div id='popup-target' style={targetStyle}>
+        <Button>
+          Scrollable
+          <Popover scrollDismiss={() => document.querySelector('#popup-target')}>
+            render in parent element
+          </Popover>
+        </Button>
+      </div>,
+    );
+    const button = container.querySelector('button')!;
+    fireEvent.mouseEnter(button);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    fireEvent.scroll(document.querySelector('#popup-target')!, { target: { scrollY: 100 } });
+    await waitFor(async () => {
+      await delay(200);
+      getPopoverStatus(false);
     });
   });
 });
