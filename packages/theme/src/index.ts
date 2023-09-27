@@ -37,6 +37,9 @@ import { SpinTokens } from './spin/type';
 import Switch from './switch';
 import { SwitchTokens } from './switch/type';
 
+import Tabs from './tabs';
+import { TabsTokens } from './tabs/type';
+
 import Tag from './tag';
 import { TagTokens } from './tag/type';
 
@@ -60,6 +63,7 @@ export type ThemeTokens = AlertTokens &
   SpinTokens &
   SwitchTokens &
   TagTokens &
+  TabsTokens &
   TextareaTokens &
   TooltipTokens;
 
@@ -77,6 +81,8 @@ const Token: ThemeTokens = {
   ...Radio,
   ...Spin,
   ...Switch,
+  ...Tag,
+  ...Tabs,
   ...Tag,
   ...Textarea,
   ...Tooltip,

@@ -13,6 +13,7 @@ export { default as Rule } from './rule';
 export { default as Spin } from './spin';
 export { default as Switch } from './switch';
 export { default as Tag } from './tag';
+export { default as Tabs } from './tabs';
 export { default as Textarea } from './textarea';
 export { default as Tooltip } from './tooltip';
 export { setConfig } from '@sheinx/base';

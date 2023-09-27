@@ -13,3 +13,29 @@ export const throttle = function <T extends any[]>(func: (...args: T) => any, wa
       }, wait);
     };
 };
+
+// 防抖函数
+export const debounce = (handler: any, timer?: number) => {
+  const that: {
+    timer?: NodeJS.Timeout | null;
+  } = {};
+
+  const cleanTimer = () => {
+    if (that.timer) {
+      clearTimeout(that.timer);
+      that.timer = null;
+    }
+  };
+
+  if (!timer) return [handler, cleanTimer];
+
+  return [
+    (...args: any) => {
+      cleanTimer();
+      that.timer = setTimeout(() => {
+        handler(...args);
+      }, timer);
+    },
+    cleanTimer,
+  ];
+};
