@@ -29,6 +29,8 @@ const Image = (props: ImageProps) => {
     width = '100%',
     height = '100%',
     shape = 'rounded',
+    autoSSL,
+    noImgDrag,
     onClick,
     ...rest
   } = props;
@@ -39,6 +41,8 @@ const Image = (props: ImageProps) => {
     src,
     href,
     lazy,
+    autoSSL,
+    noImgDrag,
     ...rest,
   });
 
