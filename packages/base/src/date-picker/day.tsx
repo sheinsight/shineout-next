@@ -7,6 +7,7 @@ import TimePicker from './time';
 import Button from '../button';
 
 import type { DayProps } from './day.type';
+import PickerTitle from './pickerTitle';
 
 const Day = (props: DayProps) => {
   const { jssStyle } = props;
@@ -119,7 +120,7 @@ const Day = (props: DayProps) => {
             {timeStr && (
               <>
                 <span>{Icons.Clock}</span>
-                <TimePicker {...props} showSelNow={false} />
+                <TimePicker {...props} showSelNow={false} showTitle={false} />
                 <span>{func.getTimeStr()}</span>
               </>
             )}
@@ -158,7 +159,10 @@ const Day = (props: DayProps) => {
         props.type === 'week' ? styles?.weekPicker : styles?.dayPicker,
         styles?.picker,
       )}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
     >
+      <PickerTitle position={props.position} jssStyle={jssStyle} />
       <div className={styles?.pickerHeader}>
         <div className={styles?.pickerHeaderLeft}>
           <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevYear}>

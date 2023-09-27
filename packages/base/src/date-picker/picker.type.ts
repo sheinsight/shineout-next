@@ -28,6 +28,7 @@ export interface PickerProps {
   closePop: () => void;
   min?: DateTimeType;
   max?: DateTimeType;
+  setActiveIndex: (index: number) => void;
 }
 
 export interface CommonPickerProps
@@ -43,6 +44,8 @@ export interface CommonPickerProps
   max?: Date;
   setTarget: (date?: Date) => void;
   position?: 'start' | 'end';
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 export interface CommonTimeProps

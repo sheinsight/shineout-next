@@ -6,7 +6,7 @@ import Year from './year';
 import Quarter from './quarter';
 import Time from './time';
 import Quick from './quick';
-import { useDatePickerRange } from '@sheinx/hooks';
+import { useDatePickerRange, usePersistFn } from '@sheinx/hooks';
 
 const Picker = (props: PickerProps) => {
   const { range, currentArr, dateArr, options, jssStyle } = props;
@@ -26,6 +26,16 @@ const Picker = (props: PickerProps) => {
     min: props.min,
     max: props.max,
     setTargetArr: props.setTargetArr,
+  });
+
+  const handleEnterStart = usePersistFn(() => {
+    props.setActiveIndex(0);
+  });
+  const handleEnterEnd = usePersistFn(() => {
+    props.setActiveIndex(1);
+  });
+  const handleLeave = usePersistFn(() => {
+    props.setActiveIndex(-1);
   });
 
   const renderPicker = (position?: 'start' | 'end') => {
@@ -50,7 +60,13 @@ const Picker = (props: PickerProps) => {
       position,
       showSelNow: props.showSelNow,
       setTarget: position === 'end' ? func.setTargetEnd : func.setTargetStart,
+      onMouseEnter: () => {},
+      onMouseLeave: () => {},
     };
+    if (range) {
+      commonProps['onMouseEnter'] = position === 'end' ? handleEnterEnd : handleEnterStart;
+      commonProps['onMouseLeave'] = handleLeave;
+    }
     const timeProps = {
       disabledTime: props.disabledTime,
       defaultTime: defaultTimeArr[index],

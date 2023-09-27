@@ -13,7 +13,11 @@ export interface EditableAreaClasses {
   wrapperError: string;
   wrapperSmall: string;
   wrapperLarge: string;
-  paddingBox: string;
+  wrapperPaddingBox: string;
+  wrapperInnerTitle: string;
+  wrapperInnerTitleTop: string;
+  wrapperInnerTitleBottom: string;
+  content: string;
   clear: string;
 
   place: string;

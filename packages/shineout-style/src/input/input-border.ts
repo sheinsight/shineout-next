@@ -1,39 +1,44 @@
 import type { CSSProperties } from 'react';
 
-export default <T extends string>(
-  name: T,
-  token: {
-    lineHeightDynamic: string;
-    borderRadius: string;
+interface Token {
+  lineHeight: string;
+  borderRadius: string;
 
-    fontSize: string;
-    smallFontSize: string;
-    largeFontSize: string;
+  fontSize: string;
+  smallFontSize: string;
+  largeFontSize: string;
 
-    paddingY: string;
-    smallPaddingY: string;
-    largePaddingY: string;
+  paddingY: string;
+  smallPaddingY: string;
+  largePaddingY: string;
 
-    paddingX: string;
-    smallPaddingX: string;
-    largePaddingX: string;
+  paddingX: string;
+  smallPaddingX: string;
+  largePaddingX: string;
 
-    borderColor: string;
-    focusBorderColor: string;
-    hoverBorderColor: string;
-    disabledBorderColor: string;
-    errorBorderColor: string;
+  borderColor: string;
+  focusBorderColor: string;
+  hoverBorderColor: string;
+  disabledBorderColor: string;
+  errorBorderColor: string;
 
-    fontColor: string;
-    disabledFontColor: string;
+  fontColor: string;
+  disabledFontColor: string;
 
-    backgroundColor: string;
-    disabledBackgroundColor: string;
+  backgroundColor: string;
+  disabledBackgroundColor: string;
 
-    focusShadow: string;
-    errorFocusShadow: string;
-  } = {} as any,
-) => {
+  focusShadow: string;
+  errorFocusShadow: string;
+
+  innerTitlePaddingY: string;
+  innerTitlePaddingX: string;
+  smallInnerTitlePaddingY: string;
+  smallInnerTitlePaddingX: string;
+  largeInnerTitlePaddingY: string;
+  largeInnerTitlePaddingX: string;
+}
+export default <T extends string>(name: T, token: Token = {} as any) => {
   return {
     [name]: {
       boxSizing: 'border-box',
@@ -41,7 +46,7 @@ export default <T extends string>(
       background: token.backgroundColor,
       border: `1px solid ${token.borderColor}`,
       color: token.fontColor,
-      lineHeight: token.lineHeightDynamic,
+      lineHeight: token.lineHeight,
       fontSize: token.fontSize,
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
@@ -61,21 +66,59 @@ export default <T extends string>(
         },
       },
     },
-    paddingBox: {
-      padding: `${token.paddingY} ${token.paddingX}`,
-      borderRadius: 'inherit',
-    },
-    [`${name}Small`]: {
-      fontSize: token.smallFontSize,
-      '& $paddingBox': {
+    [`${name}PaddingBox`]: {
+      borderRadius: token.borderRadius,
+      [`$${name}:not($${name}InnerTitle) &`]: {
+        padding: `${token.paddingY} ${token.paddingX}`,
+      },
+      [`$${name}Small:not($${name}InnerTitle) &`]: {
         padding: `${token.smallPaddingY} ${token.smallPaddingX}`,
       },
+      [`$${name}Large:not($${name}InnerTitle) &`]: {
+        padding: `${token.largePaddingY} ${token.largePaddingX}`,
+      },
+    },
+    [`${name}InnerTitle`]: {},
+    [`${name}InnerTitleTop`]: {
+      [`$${name}InnerTitle &`]: {
+        paddingTop: token.innerTitlePaddingY,
+        paddingLeft: token.innerTitlePaddingX,
+        paddingRight: token.innerTitlePaddingX,
+      },
+      [`$${name}Small$${name}InnerTitle &`]: {
+        paddingTop: token.smallInnerTitlePaddingY,
+        paddingLeft: token.smallInnerTitlePaddingX,
+        paddingRight: token.smallInnerTitlePaddingX,
+      },
+      [`$${name}Large$${name}InnerTitle &`]: {
+        paddingTop: token.largeInnerTitlePaddingY,
+        paddingLeft: token.largeInnerTitlePaddingX,
+        paddingRight: token.largeInnerTitlePaddingX,
+      },
+    },
+    [`${name}InnerTitleBottom`]: {
+      [`$${name}InnerTitle &`]: {
+        paddingBottom: token.innerTitlePaddingY,
+        paddingLeft: token.innerTitlePaddingX,
+        paddingRight: token.innerTitlePaddingX,
+      },
+      [`$${name}Small$${name}InnerTitle &`]: {
+        paddingBottom: token.smallInnerTitlePaddingY,
+        paddingLeft: token.smallInnerTitlePaddingX,
+        paddingRight: token.smallInnerTitlePaddingX,
+      },
+      [`$${name}Large$${name}InnerTitle &`]: {
+        paddingBottom: token.largeInnerTitlePaddingY,
+        paddingLeft: token.largeInnerTitlePaddingX,
+        paddingRight: token.largeInnerTitlePaddingX,
+      },
+    },
+
+    [`${name}Small`]: {
+      fontSize: token.smallFontSize,
     },
     [`${name}Large`]: {
       fontSize: token.largeFontSize,
-      '& $paddingBox': {
-        padding: `${token.largePaddingY} ${token.largePaddingX}`,
-      },
     },
     [`${name}Focus`]: {
       borderColor: token.focusBorderColor,
@@ -122,8 +165,11 @@ export default <T extends string>(
       },
     },
   } as Record<
-    | 'paddingBox'
     | `${T}`
+    | `${T}PaddingBox`
+    | `${T}InnerTitle`
+    | `${T}InnerTitleTop`
+    | `${T}InnerTitleBottom`
     | `${T}Focus`
     | `${T}Error`
     | `${T}Disabled`

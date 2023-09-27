@@ -15,6 +15,7 @@ const horizontalPosition = ['left-top', 'left-bottom', 'right-top', 'right-botto
 const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>) => {
   const { locale } = useConfig();
   const { jssStyle, range, type = 'date', border = true } = props;
+  const [activeIndex, setActiveIndex] = React.useState(-1);
 
   const styles = jssStyle?.datePicker;
   const [focused, setFocused] = React.useState(false);
@@ -96,7 +97,6 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
       <div
         className={classNames(
           styles?.result,
-          styles?.paddingBox,
           props.align === 'right' && styles?.resultAlignRight,
           props.align === 'center' && styles?.resultAlignCenter,
           props.align === 'left' && styles?.resultAlignLeft,
@@ -105,6 +105,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
       >
         <Result
           jssStyle={jssStyle}
+          activeIndex={activeIndex}
           type={type}
           range={range}
           inputable={props.inputable}
@@ -120,7 +121,12 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
     );
     return (
       <div
-        className={styles?.resultWrapper}
+        className={classNames(
+          styles?.resultWrapper,
+          styles?.wrapperPaddingBox,
+          styles?.wrapperInnerTitleTop,
+          styles?.wrapperInnerTitleBottom,
+        )}
         tabIndex={disabledStatus === 'all' ? undefined : 0}
         onClick={disabledStatus === 'all' ? undefined : openPop}
         onFocus={() => {
@@ -146,6 +152,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
       className={classNames(
         props.className,
         styles?.wrapper,
+        props.innerTitle && styles?.wrapperInnerTitle,
         props.size === 'small' && styles?.wrapperSmall,
         props.size === 'large' && styles?.wrapperLarge,
         focused && styles?.wrapperFocus,
@@ -201,6 +208,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
             disabledTime={props.disabledTime}
             quickSelect={props.quickSelect}
             showSelNow={props.showSelNow}
+            setActiveIndex={setActiveIndex}
           />
         </AnimationList>
       </AbsoluteList>

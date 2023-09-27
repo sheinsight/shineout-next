@@ -43,6 +43,7 @@ interface ResultProps
   onChange: (value: string, index: number) => void;
   disabledLeft?: boolean;
   disabledRight?: boolean;
+  activeIndex?: number;
 }
 const Result = (props: ResultProps) => {
   const {
@@ -57,6 +58,7 @@ const Result = (props: ResultProps) => {
     onChange,
     disabledLeft,
     disabledRight,
+    activeIndex = -1,
   } = props;
   const { locale } = useConfig();
 
@@ -120,37 +122,38 @@ const Result = (props: ResultProps) => {
     index: number;
   }) => {
     const dis = info.index === 1 ? disabledRight : disabledLeft;
-    if (info.inputable) {
-      return (
-        <Input
-          key={info.index}
-          onRef={(el) => {
-            context.inputRefs[info.index] = el;
-          }}
-          disabled={dis}
-          focused={focused}
-          className={classNames(
-            styles?.resultText,
-            info.target && styles?.placeholder,
-            dis && styles?.resultTextDisabled,
+    const className = classNames(
+      styles?.resultText,
+      info.target && styles?.placeholder,
+      dis && styles?.resultTextDisabled,
+      info.index === activeIndex && styles?.resultTextActive,
+    );
+    return (
+      <div className={className}>
+        <div className={styles?.resultTextPadding}>
+          {info.inputable ? (
+            <Input
+              key={info.index}
+              onRef={(el) => {
+                context.inputRefs[info.index] = el;
+              }}
+              disabled={dis}
+              focused={focused}
+              value={info.target || info.value || ''}
+              placeholder={info.place}
+              onChange={(s) => {
+                onChange(s, info.index);
+              }}
+              onMouseDown={() => {
+                context.clickIndex = info.index;
+              }}
+            />
+          ) : (
+            info.target || info.value || <span className={styles?.placeholder}>{info.place}</span>
           )}
-          value={info.target || info.value || ''}
-          placeholder={info.place}
-          onChange={(s) => {
-            onChange(s, info.index);
-          }}
-          onMouseDown={() => {
-            context.clickIndex = info.index;
-          }}
-        />
-      );
-    } else
-      return (
-        <div className={classNames(styles?.resultText, dis && styles?.resultTextDisabled)}>
-          {(info.target && <span className={styles?.placeholder}>{info.target}</span>) ||
-            info.value || <span className={styles?.placeholder}>{info.place}</span>}
         </div>
-      );
+      </div>
+    );
   };
 
   return (

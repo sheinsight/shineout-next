@@ -34,7 +34,7 @@ export default (props: InputNumberProps) => {
     ...numberFormatParams,
   });
 
-  const suffix = (
+  const addEnd = (
     <React.Fragment>
       <div className={jssStyle?.input?.numberStep}>
         <span
@@ -56,7 +56,6 @@ export default (props: InputNumberProps) => {
           {Icons.AngleLeft}
         </span>
       </div>
-      {restProps.suffix}
     </React.Fragment>
   );
   const onKeyDown = usePersistFn((e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -78,7 +77,7 @@ export default (props: InputNumberProps) => {
       value={numberFormatProps.value || ''}
       className={classNames(forwardProps.className, jssStyle?.input?.wrapperNumber)}
       onKeyDown={onKeyDown}
-      suffix={suffix}
+      addEnd={addEnd}
     />
   );
 };

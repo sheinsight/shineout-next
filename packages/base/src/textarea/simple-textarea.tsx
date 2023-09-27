@@ -49,7 +49,8 @@ const Textarea = (props: SimpleTextareaProps) => {
 
   const textareaProps = getTextAreaProps({
     className: classNames(
-      jssStyle?.textarea?.paddingBox,
+      jssStyle?.textarea?.wrapperPaddingBox,
+      jssStyle?.textarea?.wrapperInnerTitleBottom,
       jssStyle?.textarea?.textarea,
       !!resize && jssStyle?.textarea?.resize,
     ),

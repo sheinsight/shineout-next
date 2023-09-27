@@ -4,6 +4,7 @@ import { useTimePick, usePersistFn, useResize } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Button from '../button';
 import { getLocale, useConfig } from '@sheinx/base';
+import PickerTitle from './pickerTitle';
 
 const TimeScroll = (props: {
   mode: string;
@@ -135,7 +136,12 @@ const Time = (props: TimeProps) => {
   };
 
   return (
-    <div className={classNames(styles?.timePicker, styles?.picker)}>
+    <div
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
+      className={classNames(styles?.timePicker, styles?.picker)}
+    >
+      {props.showTitle && <PickerTitle position={props.position} jssStyle={props.jssStyle} />}
       <div className={styles?.pickerBody}>
         <div className={styles?.timeBase}>
           {times.map((item) => {

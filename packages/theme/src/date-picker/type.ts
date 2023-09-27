@@ -178,6 +178,36 @@ export interface DatePickerTokens {
   datePickerDisabledBackgroundColor: string;
   /**
    * @type {string}
+   * @token Radius-4
+   * @description undefinedundefinedundefinedundefined边框圆角
+   */
+  datePickerResultTextBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description undefinedundefinedundefinedundefined内边距（水平方向）
+   */
+  datePickerResultTextPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description undefinedundefinedundefinedundefined小尺寸内边距（水平方向）
+   */
+  datePickerResultTextSmallPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-10
+   * @description undefinedundefinedundefinedundefined大尺寸内边距（水平方向）
+   */
+  datePickerResultTextLargePaddingX: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description undefinedundefinedundefinedundefined鼠标点击时的背景颜色
+   */
+  datePickerResultTextActiveBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Danger-6
    * @description undefinedundefined错误状态的边框颜色
    */
@@ -188,6 +218,18 @@ export interface DatePickerTokens {
    * @description undefinedundefined错误状态的鼠标聚焦时的undefined
    */
   datePickerErrorFocusShadow: string;
+  /**
+   * @type {string}
+   * @token Padding-10
+   * @description undefinedundefinedundefined标题模式内边距undefined
+   */
+  datePickerPickerTitlePaddingTop: string;
+  /**
+   * @type {string}
+   * @token 14/regular
+   * @description undefinedundefinedundefined标题模式字体字号
+   */
+  datePickerPickerTitleFontSize: string;
   /**
    * @type {string}
    * @token Neutral-text-5

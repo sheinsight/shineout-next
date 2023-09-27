@@ -3,6 +3,7 @@ import { usePersistFn, useYearPick } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import React from 'react';
+import PickerTitle from './pickerTitle';
 
 const Year = (props: YearProps) => {
   const { jssStyle } = props;
@@ -76,7 +77,12 @@ const Year = (props: YearProps) => {
   };
 
   return (
-    <div className={classNames(jssStyle?.datePicker?.yearPicker, jssStyle?.datePicker?.picker)}>
+    <div
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
+      className={classNames(jssStyle?.datePicker?.yearPicker, jssStyle?.datePicker?.picker)}
+    >
+      <PickerTitle position={props.position} jssStyle={jssStyle} />
       <div className={jssStyle?.datePicker?.pickerHeader}>
         <div className={jssStyle?.datePicker?.pickerHeaderLeft}>
           <span className={jssStyle?.datePicker?.pickerHeaderIcon} onClick={func.handlePrev}>
@@ -88,7 +94,7 @@ const Year = (props: YearProps) => {
           <i>-</i>
           <span>{currentEnd}</span>
         </div>
-        <div className={jssStyle?.datePicker.pickerHeaderRight}>
+        <div className={jssStyle?.datePicker?.pickerHeaderRight}>
           <span className={jssStyle?.datePicker?.pickerHeaderIcon} onClick={func.handleNext}>
             {Icons.AngleDoubleRight}
           </span>

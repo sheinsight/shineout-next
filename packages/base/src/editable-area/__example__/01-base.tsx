@@ -16,6 +16,7 @@ export default () => {
     <div>
       <EditableArea
         width={200}
+        bordered
         defaultValue={'hello world'}
         clearable
         placeholder={'please input something'}

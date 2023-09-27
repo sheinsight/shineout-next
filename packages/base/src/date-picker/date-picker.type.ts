@@ -19,7 +19,10 @@ export interface DatePickerClasses {
   wrapperError: string;
   wrapperNoBorder: string;
   wrapperRange: string;
-  paddingBox: string;
+  wrapperInnerTitle: string;
+  wrapperInnerTitleTop: string;
+  wrapperInnerTitleBottom: string;
+  wrapperPaddingBox: string;
   result: string;
   resultWrapper: string;
   resultAlignRight: string;
@@ -27,6 +30,8 @@ export interface DatePickerClasses {
   resultAlignCenter: string;
   resultTextWrapper: string;
   resultText: string;
+  resultTextPadding: string;
+  resultTextActive: string;
   resultTextDisabled: string;
   resultSeparator: string;
   placeholder: string;
@@ -38,6 +43,7 @@ export interface DatePickerClasses {
   pickerWrapperOpen: string;
   pickerBox: string;
   picker: string;
+  pickerTitle: string;
   pickerHeader: string;
   pickerHeaderLeft: string;
   pickerHeaderRight: string;

@@ -19,6 +19,7 @@ const Input = (props: SimpleInputProps) => {
     onEnterPress,
     getStatus,
     renderInput,
+    addEnd,
     ...rest
   } = props;
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
@@ -48,7 +49,7 @@ const Input = (props: SimpleInputProps) => {
   });
 
   const inputProps = getInputProps({
-    className: classNames(jssStyle?.input?.input, jssStyle?.input?.paddingBox),
+    className: classNames(jssStyle?.input?.input),
     onKeyUp,
   });
 
@@ -72,14 +73,24 @@ const Input = (props: SimpleInputProps) => {
         style,
       })}
     >
-      {prefix}
-      {inputEl}
-      {(showClear || props.showClear) && (
-        <div className={jssStyle?.input?.clearWrapper} {...getClearProps()}>
-          <span className={jssStyle?.input?.clear}>{clearIcon || Icons.CloseCircle}</span>
-        </div>
-      )}
-      {suffix}
+      <div
+        className={classNames(
+          jssStyle?.input?.wrapperInnerTitleTop,
+          jssStyle?.input?.wrapperInnerTitleBottom,
+          jssStyle?.input?.wrapperPaddingBox,
+          jssStyle?.input?.content,
+        )}
+      >
+        {prefix}
+        {inputEl}
+        {(showClear || props.showClear) && (
+          <div className={jssStyle?.input?.clearWrapper} {...getClearProps()}>
+            <span className={jssStyle?.input?.clear}>{clearIcon || Icons.CloseCircle}</span>
+          </div>
+        )}
+        {suffix}
+      </div>
+      {addEnd}
     </div>
   );
 };

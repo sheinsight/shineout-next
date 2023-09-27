@@ -41,8 +41,21 @@ const datePickerTokenExtraValue = {
     border: { color: 'Neutral-border-2' },
     background: { color: 'Neutral-fill-2' },
   },
+  result: {
+    text: {
+      border: { radius: 'Radius-4' },
+      padding: { x: 'Padding-4' },
+      small: { padding: { x: 'Padding-4' } },
+      large: { padding: { x: 'Padding-10' } },
+      active: { background: { color: 'Brand-1' } },
+    },
+  },
   error: { border: { color: 'Danger-6' }, focus: { shadow: 'Danger-1' } },
   picker: {
+    title: {
+      padding: { top: 'Padding-10' },
+      font: { size: '14/regular' },
+    },
     color: 'Neutral-text-5',
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',

@@ -11,15 +11,20 @@ export type DatePickerClass =
   | 'wrapperError'
   | 'wrapperNoBorder'
   | 'wrapperRange'
-  | 'paddingBox'
+  | 'wrapperPaddingBox'
+  | 'wrapperInnerTitle'
+  | 'wrapperInnerTitleTop'
+  | 'wrapperInnerTitleBottom'
   | 'resultWrapper'
   | 'result'
   | 'resultAlignRight'
   | 'resultAlignLeft'
   | 'resultAlignCenter'
   | 'resultText'
+  | 'resultTextActive'
   | 'resultTextDisabled'
   | 'resultTextWrapper'
+  | 'resultTextPadding'
   | 'resultSeparator'
   | 'placeholder'
   | 'icon'
@@ -29,6 +34,7 @@ export type DatePickerClass =
   | 'pickerWrapperOpen'
   | 'picker'
   | 'dayPicker'
+  | 'pickerTitle'
   | 'pickerHeader'
   | 'pickerHeaderLeft'
   | 'pickerHeaderRight'
@@ -67,7 +73,7 @@ export type DatePickerClass =
   | 'quickPickerItem';
 
 const inputBorderToken = {
-  lineHeightDynamic: token.lineHeightDynamic,
+  lineHeight: token.lineHeightDynamic,
   borderRadius: token.datePickerBorderRadius,
 
   fontSize: token.datePickerFontSize,
@@ -96,6 +102,15 @@ const inputBorderToken = {
 
   focusShadow: token.datePickerFocusShadow,
   errorFocusShadow: token.datePickerErrorFocusShadow,
+
+  innerTitlePaddingY: token.inputInnerPaddingY,
+  innerTitlePaddingX: token.inputInnerPaddingX,
+
+  smallInnerTitlePaddingY: token.inputInnerSmallPaddingY,
+  smallInnerTitlePaddingX: token.inputInnerSmallPaddingX,
+
+  largeInnerTitlePaddingY: token.inputInnerLargePaddingY,
+  largeInnerTitlePaddingX: token.inputInnerLargePaddingX,
 };
 const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
@@ -124,8 +139,9 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
   },
   ...resetWrapper,
   resultWrapper: {
-    width: '100%',
     display: 'flex',
+    flex: 1,
+    minWidth: 0,
     position: 'relative',
     outline: 'none',
     '&:hover': {
@@ -162,19 +178,39 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     },
   },
   resultText: {
-    display: 'inline-block',
-    border: 0,
-    outline: '0',
     lineHeight: token.lineHeightDynamic,
-    color: 'inherit',
+    position: 'relative',
     flex: '1',
     minWidth: 0,
     '&::before': {
       content: '""',
       display: 'inline-block',
     },
-    '&::placeholder': {
-      color: token.datePickerPlaceholderColor,
+  },
+  resultTextPadding: {
+    position: 'absolute',
+    padding: `0 ${token.datePickerResultTextPaddingX}`,
+    left: `calc(-1 * ${token.datePickerResultTextPaddingX})`,
+    right: `calc(-1 * ${token.datePickerResultTextPaddingX})`,
+    top: '0',
+    bottom: '0',
+    borderRadius: token.datePickerResultTextBorderRadius,
+    '& > input': {
+      color: 'inherit',
+      padding: '0',
+      border: '0',
+      outline: '0',
+      lineHeight: token.lineHeightDynamic,
+      backgroundColor: 'transparent',
+      width: '100%',
+      '&::placeholder': {
+        color: token.datePickerPlaceholderColor,
+      },
+    },
+  },
+  resultTextActive: {
+    '& $resultTextPadding': {
+      backgroundColor: token.datePickerResultTextActiveBackgroundColor,
     },
   },
   resultTextDisabled: {
@@ -196,8 +232,8 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
       width: token.datePickerIconSize,
       height: token.datePickerIconSize,
     },
-    // todo 放入renderInput 组件中
-    marginRight: token.datePickerPaddingX,
+    // todo 暂时写死
+    marginLeft: '8px',
   },
   clear: {
     display: 'none',
@@ -250,6 +286,12 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     },
   },
   pickerWrapperOpen: {},
+  pickerTitle: {
+    lineHeight: token.lineHeightDynamic,
+    fontSize: token.datePickerPickerTitleFontSize,
+    paddingTop: token.datePickerPickerTitlePaddingTop,
+    textAlign: 'center',
+  },
   pickerHeader: {
     padding: `${token.datePickerPickerHeaderPaddingY} ${token.datePickerPickerHeaderPaddingX}`,
     display: 'flex',
