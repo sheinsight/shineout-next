@@ -28,7 +28,7 @@ export type TreeRenderItemType<DataItem> =
 
 export interface TreeProps<DataItem>
   extends BaseTreeProps<DataItem>,
-    Pick<CommonType, 'className'> {
+    Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
     tree: TreeClasses;
     spin: SpinClasses;

@@ -11,6 +11,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     line = true,
     childrenKey = 'children',
     data,
+    value,
     mode = 1,
     keygen,
     expanded,
@@ -43,10 +44,12 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     onDragLeave,
     onDragOver,
     onDragStart,
+    ...rest
   } = props;
 
   const { func, updateMap, setActive } = useTree({
     mode,
+    value,
     data,
     dataUpdate,
     expanded,
@@ -163,7 +166,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   const onToggle = onExpand ? handleToggle : undefined;
 
   return (
-    <div className={rootClass}>
+    <div className={rootClass} {...rest}>
       <Provider value={func}>
         <RootTree
           jssStyle={jssStyle}
@@ -175,6 +178,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           iconClass={iconClass}
           leafClass={leafClass}
           nodeClass={nodeClass}
+          expanded={expanded}
           expandIcons={expandIcons}
           childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}
           bindNode={func.bindNode}

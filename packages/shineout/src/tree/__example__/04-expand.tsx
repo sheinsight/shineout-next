@@ -9,7 +9,7 @@ import { Tree, Button } from 'shineout';
 import { createNestedArray, getIds } from './utils';
 
 export default () => {
-  const data = createNestedArray([5, 2, 2]);
+  const data = createNestedArray([2, 2, 2]);
   const [expanded, setExpanded] = useState<any[]>([]);
 
   const renderItem = (node: any) => {

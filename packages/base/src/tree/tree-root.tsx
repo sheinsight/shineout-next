@@ -8,7 +8,6 @@ const Root = <DataItem,>(props: TreeRootProps<DataItem>) => {
 
   const treeStyle = jssStyle?.tree || ({} as TreeClasses);
   const rootClass = classNames(treeStyle.root);
-
   return <TreeList {...rest} expanded className={rootClass} jssStyle={jssStyle}></TreeList>;
 };
 

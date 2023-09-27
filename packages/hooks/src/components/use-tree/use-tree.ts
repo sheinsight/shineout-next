@@ -39,7 +39,7 @@ export const MODE = {
 
 const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const {
-    defaultValue = [],
+    defaultValue,
     value = defaultValue,
     data = [],
     childrenKey = 'children' as keyof DataItem,
@@ -69,7 +69,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
-
     const isActive = activeProp === id;
     const expandeds = expanded || defaultExpanded;
     if (defaultExpandAll) {
@@ -244,7 +243,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
       // 选中且非 mode 1 和 mode 4，则需要将其子选项统统强制选中
       if (childChecked === 1 && mode !== MODE.MODE_1 && mode !== MODE.MODE_4) {
-        initValue(children, true);
+        // initValue(children, true);
       }
       // mode 2 mode 3 mode 的情况下，需要根据 children 内容来决定是否选中
       else if (children.length > 0) {
@@ -288,10 +287,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return 2;
   };
 
-  const setValue = () => {
-    initValue();
-  };
-
   const setData = (data?: DataItem[]) => {
     if (!data) return;
 
@@ -301,8 +296,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.disabled = getDisabled();
 
     initData(data, []);
-    initValue();
-    setValue();
   };
 
   const set = (id: KeygenResult, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
@@ -357,19 +350,14 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   useEffect(() => {
     setData(data);
+    initValue(value);
     setTimeout(() => {
       firstRender.current = false;
     });
   }, []);
 
-  // useEffect(() => {
-  //   if (firstRender.current) return;
-  //   if (dataUpdate) {
-  //     setData(data);
-  //   }
-  // }, [dataUpdate, data]);
-
   useEffect(() => {
+    if (firstRender.current) return;
     handleExpanded(expanded);
   }, [expanded]);
 

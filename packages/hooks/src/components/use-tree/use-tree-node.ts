@@ -10,13 +10,17 @@ const useTreeNode = <DataItem>(props: BaseTreeNodeProps<DataItem>) => {
   const update = (key: string, value: boolean) => {
     switch (key) {
       case 'active':
-        setActive(value);
+        if (value !== active) {
+          setActive(value);
+        }
         break;
       case 'expanded':
         setExpanded(value);
         break;
       case 'fetching':
-        setFetching(value);
+        if (value !== fetching) {
+          setFetching(value);
+        }
         break;
     }
   };
