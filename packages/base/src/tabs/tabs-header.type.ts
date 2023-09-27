@@ -15,4 +15,5 @@ export interface TabsHeaderProps {
   splitColor?: string;
   collapsible?: boolean;
   tabBarStyle?: React.CSSProperties;
+  getPosition?: string;
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { addResizeObserver } from '../../utils/dom/element';
+import { banOverScrollx } from '../../utils/dom/scrollBehavior';
 import { UseTransformProps } from './use-transform.type';
 
 const useTransform = <T>(props: UseTransformProps) => {
@@ -78,6 +79,19 @@ const useTransform = <T>(props: UseTransformProps) => {
     }
   };
 
+  const getRectDiff = (node: HTMLElement, pNode: HTMLElement) => {
+    const nodeRect = node.getBoundingClientRect();
+    const pNodeRect = pNode.getBoundingClientRect();
+    const scaleX = pNode.offsetWidth / pNodeRect.width;
+    const scaleY = pNode.offsetHeight / pNodeRect.height;
+    return {
+      left: (nodeRect.left - pNodeRect.left) * scaleX,
+      right: (nodeRect.right - pNodeRect.right) * scaleX,
+      top: (nodeRect.top - pNodeRect.top) * scaleY,
+      bottom: (nodeRect.bottom - pNodeRect.bottom) * scaleY,
+    };
+  };
+
   useEffect(() => {
     if (!container || !target) return;
     if (delta === 0 && atStart === false) {
@@ -85,12 +99,14 @@ const useTransform = <T>(props: UseTransformProps) => {
     }
     let removeWheelListener: () => void;
     if (autoScroll) {
+      const removeMouse = shouldScroll ? banOverScrollx(container) : null;
       removeWheelListener = addResizeObserver(container, handleResize);
       return () => {
+        removeMouse?.();
         removeWheelListener?.();
       };
     }
-  }, [container, target]);
+  }, [container, target, shouldScroll]);
 
   return {
     atStart,
@@ -100,6 +116,7 @@ const useTransform = <T>(props: UseTransformProps) => {
     shouldScroll,
     setTransform,
     handleTransform,
+    getRectDiff,
   };
 };
 
