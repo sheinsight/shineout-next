@@ -71,7 +71,7 @@ const Textarea = (props: SimpleTextareaProps) => {
 
   return (
     <div
-      data-type='so-input'
+      data-soui-type='input'
       {...getRootProps({
         className: rootClass,
         style,

@@ -19,7 +19,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
 
   const styles = jssStyle?.datePicker;
   const [focused, setFocused] = React.useState(false);
-  let listPosition = props.position || 'bottom-left';
+  let listPosition: string = props.position || 'bottom-left';
   if (horizontalPosition.includes(listPosition)) {
     listPosition = listPosition.split('-').reverse().join('-');
   } else if (!verticalPosition.includes(listPosition)) {
@@ -61,6 +61,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
     onClear: undefined,
     allowSingle: props.allowSingle,
     defaultCurrent: props.defaultPickerValue || props.defaultRangeMonth,
+    formatResult: props.formatResult,
   });
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
@@ -149,6 +150,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
 
   return (
     <div
+      data-soui-type={'input'}
       className={classNames(
         props.className,
         styles?.wrapper,
@@ -209,6 +211,9 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
             quickSelect={props.quickSelect}
             showSelNow={props.showSelNow}
             setActiveIndex={setActiveIndex}
+            hourStep={props.hourStep}
+            minuteStep={props.minuteStep}
+            secondStep={props.secondStep}
           />
         </AnimationList>
       </AbsoluteList>

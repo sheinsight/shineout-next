@@ -98,11 +98,25 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
   const [stateDate, setStateDate] = useState<(Date | undefined)[]>(context.cachedDateArr);
   const [edit, setEdit] = useState(false);
 
-  const getFormatValueArr = (dateArr: (Date | undefined)[]) => {
+  const getFormatValueArr = (dateArr: (Date | undefined)[], fmt?: string) => {
     return dateArr.map((item) => {
       if (!item) return props.clearWithUndefined ? undefined : '';
-      return dateUtil.format(item, format, options);
+      return dateUtil.format(item, fmt || format, options);
     });
+  };
+
+  const getResultValueArr = (dateArr: (Date | undefined)[]) => {
+    if (props.formatResult) {
+      if (typeof props.formatResult === 'string') {
+        return getFormatValueArr(dateArr, props.formatResult);
+      } else {
+        return dateArr.map((item) => {
+          if (!item) return '';
+          return dateUtil.format(item, format, options) || '';
+        });
+      }
+    }
+    return getFormatValueArr(dateArr);
   };
 
   const handlePropsValueChange = (value: DatePickerValue) => {
@@ -195,8 +209,8 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
   }, [edit]);
 
   const dateArr = getDateArr();
-  const resultArr = getFormatValueArr(dateArr);
-  const targetResultArr = getFormatValueArr(targetArr);
+  const resultArr = getResultValueArr(dateArr);
+  const targetResultArr = getResultValueArr(targetArr);
   const isEmpty = dateArr.reduce((prev, cur) => prev && dateUtil.isInvalid(cur), true);
   const func = useLatestObj({
     setMode,

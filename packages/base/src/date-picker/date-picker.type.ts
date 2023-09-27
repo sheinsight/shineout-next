@@ -103,6 +103,7 @@ export interface DatePickerProps<Value extends DatePickerValue>
     button?: ButtonClasses;
     innerTitle?: InnerTitleClasses;
   };
+
   /**
    * @en When the value is true, disabled all options; When the value is function, disable the options that this function returns true.
    * @cn 如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项
@@ -140,18 +141,25 @@ export interface DatePickerProps<Value extends DatePickerValue>
    * @en Set Position can control the different position of DatePicker
    * @cn 弹出框位置
    */
-  position?: 'left-top' | 'left-bottom' | 'right-top' | 'right-bottom';
+  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   /**
    * @en type of datepicker
    * @cn 时间类型
    * @default 'date'
    */
   type?: 'date' | 'time' | 'datetime' | 'month' | 'week' | 'quarter' | 'year';
-  format?: string;
   /**
-   * @en range span，unit: **second**，When it is true, selection scope is not limited.
-   * @cn 范围跨度，单位 **秒**，为 true 时表示不限制选择范围。
+   * @en default values for different types: 'date': 'YYYY-MM-DD'; 'time': 'HH:mm:ss'; 'week': 'GGGG WW'; 'month': 'YYYY-MM'; 'week': 'GGGG WW'; 'quarter': 'YYYY-\\[Q]Q'; 'year': 'YYYY'; 'datetime': 'YYYY-MM-DD HH:mm:ss'
+   * @cn 不同type对应的默认值。'date': 'YYYY-MM-DD'; 'time': 'HH:mm:ss'; 'week': 'GGGG WW'; 'month': 'YYYY-MM'; 'quarter': 'YYYY-\\[Q]Q';  'year': 'YYYY'; 'datetime': 'YYYY-MM-DD HH:mm:ss'
    */
+  format?: string;
+
+  /**
+   * @en Format the selected time
+   * @cn 对选中时间进行格式化
+   * @default props.format
+   */
+  formatResult?: string | ((date: Date) => string);
   range?: boolean | number;
   value?: Value;
   defaultValue?: Value;
