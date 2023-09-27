@@ -355,7 +355,7 @@ describe('Popover[Disabled]', () => {
     const button = container.querySelector('button')!;
     fireEvent.mouseEnter(button);
     await waitFor(async () => {
-      await delay(500);
+      await delay(200);
       screen.debug();
       // expect(getPopoverRoot()).toBeInTheDocument();
     });
