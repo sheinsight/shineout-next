@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { DatePickerProps, DateTimeType } from './date-picker.type';
+import { DatePickerProps, DateTimeType, DatePickerModeType } from './date-picker.type';
 
 export interface PickerProps {
   jssStyle: DatePickerProps<any>['jssStyle'];
@@ -19,8 +19,8 @@ export interface PickerProps {
   setDateArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   currentArr: Date[];
   setCurrentArr: Dispatch<SetStateAction<Date[]>>;
-  mode: string[];
-  setMode: Dispatch<SetStateAction<string[]>>;
+  mode: DatePickerModeType[];
+  setMode: Dispatch<SetStateAction<DatePickerModeType[]>>;
   options: {
     timeZone?: string;
     weekStartsOn: number;
@@ -29,10 +29,18 @@ export interface PickerProps {
   min?: DateTimeType;
   max?: DateTimeType;
   setActiveIndex: (index: number) => void;
+  registerModeDisabled: (
+    position: 'start' | 'end' | undefined,
+    mode: string,
+    disabled: (d: Date) => boolean,
+  ) => void;
 }
 
 export interface CommonPickerProps
-  extends Pick<PickerProps, 'jssStyle' | 'options' | 'format' | 'type' | 'showSelNow'> {
+  extends Pick<
+    PickerProps,
+    'jssStyle' | 'options' | 'format' | 'type' | 'showSelNow' | 'registerModeDisabled'
+  > {
   rangeDate: Array<Date | undefined>;
   current: Date;
   setCurrent: (date: Date) => void;

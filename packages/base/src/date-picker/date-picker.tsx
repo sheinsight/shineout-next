@@ -1,8 +1,8 @@
 import { useDatePickerFormat, useInputAble, usePersistFn, usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { AbsoluteList } from '../absolute-list';
-import React from 'react';
-import { DatePickerProps, DatePickerValue } from './date-picker.type';
+import React, { useEffect } from 'react';
+import { DatePickerProps, DatePickerValueType } from './date-picker.type';
 import AnimationList from '../animation-list';
 import Picker from './picker';
 import { getLocale, useConfig } from '../config';
@@ -12,7 +12,7 @@ import useInnerTitle from '../common/use-inner-title';
 
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
 const horizontalPosition = ['left-top', 'left-bottom', 'right-top', 'right-bottom'];
-const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>) => {
+const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Value>) => {
   const { locale } = useConfig();
   const { jssStyle, range, type = 'date', border = true } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
@@ -109,7 +109,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
           activeIndex={activeIndex}
           type={type}
           range={range}
-          inputable={props.inputable}
+          inputable={props.inputable && !props.formatResult}
           disabledLeft={disabledStatus === 'left'}
           disabledRight={disabledStatus === 'right'}
           placeholder={props.placeholder}
@@ -147,6 +147,12 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
       </div>
     );
   };
+
+  useEffect(() => {
+    if (props.formatResult && props.inputable) {
+      console.warn('formatResult and inputable cannot be used at the same time');
+    }
+  }, []);
 
   return (
     <div
@@ -214,6 +220,7 @@ const DatePicker = <Value extends DatePickerValue>(props: DatePickerProps<Value>
             hourStep={props.hourStep}
             minuteStep={props.minuteStep}
             secondStep={props.secondStep}
+            registerModeDisabled={func.registerModeDisabled}
           />
         </AnimationList>
       </AbsoluteList>

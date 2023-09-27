@@ -200,6 +200,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
       padding: '0',
       border: '0',
       outline: '0',
+      fontSize: 'inherit',
       lineHeight: token.lineHeightDynamic,
       backgroundColor: 'transparent',
       width: '100%',

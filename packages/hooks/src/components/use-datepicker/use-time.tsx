@@ -145,6 +145,7 @@ const useTime = (props: UseTimeProps) => {
 
   const func = useLatestObj({
     handleChange,
+    isDisabled,
   });
   const times = getTimes();
 

@@ -60,6 +60,7 @@ const Picker = (props: PickerProps) => {
       position,
       showSelNow: props.showSelNow,
       setTarget: position === 'end' ? func.setTargetEnd : func.setTargetStart,
+      registerModeDisabled: props.registerModeDisabled,
       onMouseEnter: () => {},
       onMouseLeave: () => {},
     };

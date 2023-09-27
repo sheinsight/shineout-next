@@ -13,6 +13,7 @@ const App: React.FC = () => (
   <div>
     <DatePicker
       type='datetime'
+      inputable
       defaultValue={Now}
       style={{ marginInlineEnd: 12 }}
       disabled={(d) => {

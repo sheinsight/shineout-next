@@ -113,6 +113,8 @@ const Time = (props: TimeProps) => {
     secondStep: props.secondStep,
   });
 
+  props.registerModeDisabled(props.position, 'time', func.isDisabled);
+
   const renderFooter = () => {
     const showRight = props.showSelNow;
 

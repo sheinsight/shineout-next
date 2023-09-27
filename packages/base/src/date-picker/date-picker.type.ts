@@ -3,9 +3,8 @@ import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { ButtonClasses } from '../button/button.type';
 import { InnerTitleClasses } from '../common/use-inner-title';
 
-export type DateTimeType = Date | number | string | undefined;
-
-export type DatePickerValue = DateTimeType | DateTimeType[];
+import type { DateTimeType, DatePickerValueType } from '@sheinx/hooks';
+export type { DateTimeType, DatePickerValueType, DatePickerModeType } from '@sheinx/hooks';
 
 export interface DatePickerClasses {
   /**
@@ -95,7 +94,7 @@ export interface DatePickerClasses {
 
 export type DisabledType = 'start' | 'end';
 
-export interface DatePickerProps<Value extends DatePickerValue>
+export interface DatePickerProps<Value extends DatePickerValueType>
   extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'placeTitle'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle?: {
@@ -211,7 +210,7 @@ export interface DatePickerProps<Value extends DatePickerValue>
    * @en Default time when selecting a date, the format is: 'HH:mm:ss'
    * @cn 选择日期时默认的时间, 格式为: 'HH:mm:ss'
    */
-  defaultTime?: DatePickerValue;
+  defaultTime?: DatePickerValueType;
   /**
    * @en option min value
    * @cn 可选最小值
@@ -260,5 +259,5 @@ export interface DatePickerProps<Value extends DatePickerValue>
 }
 export interface QuickSelectType {
   name: string;
-  value: DatePickerValue | (() => DatePickerValue);
+  value: DatePickerValueType | (() => DatePickerValueType);
 }

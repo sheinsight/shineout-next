@@ -24,6 +24,8 @@ const Month = (props: MonthProps) => {
     options: props.options,
   });
 
+  props.registerModeDisabled(props.position, 'month', func.isDisabled);
+
   const months = func.getMonths();
   const colNum = 3;
   const rowNum = months.length / colNum;

@@ -33,6 +33,8 @@ const Day = (props: DayProps) => {
     defaultTime: props.defaultTime,
     format: props.format,
   });
+
+  props.registerModeDisabled(props.position, 'day', func.isDisabled);
   const days = func.getDays();
   const len = days.length / 7;
 

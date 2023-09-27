@@ -30,7 +30,12 @@ const useRangePick = (props: useRangeProps) => {
       const newArr = [...arr];
       newArr[index] = date;
       if (range && index === 0 && newArr[1]) {
-        if (date.getTime() > newArr[1]!.getTime()) {
+        if (typeof range === 'number') {
+          const rangeMax = utils.addSeconds(date, range, options);
+          if (rangeMax.getTime() < newArr[1].getTime()) {
+            newArr[1] = rangeMax;
+          }
+        } else if (date.getTime() > newArr[1]!.getTime()) {
           newArr[1] = new Date(date);
         }
       }
@@ -86,10 +91,12 @@ const useRangePick = (props: useRangeProps) => {
 
   const setDateStart = usePersistFn((date: Date, noClose?: boolean) => {
     setDate(0, date, noClose);
+    setCurrentStart(date);
   });
 
   const setDateEnd = usePersistFn((date: Date, noClose?: boolean) => {
     setDate(1, date, noClose);
+    setCurrentEnd(date);
   });
 
   const setTargetStart = usePersistFn((date?: Date) => {

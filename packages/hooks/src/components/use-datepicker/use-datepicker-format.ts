@@ -1,12 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import dateUtil from './util';
-import { DatePickerValue, UseDatePickerFormatProps } from './use-datepicker-format.type';
+import type {
+  DatePickerValueType,
+  UseDatePickerFormatProps,
+  DatePickerModeType,
+} from './use-datepicker-format.type';
 import shallowEqual from '../../utils/shallowEqual';
 import { usePersistFn } from '../../common/use-persist-fn';
 import useLatestObj from '../../common/use-latest-obj';
 
 const convertValueToDateArr = (
-  value: DatePickerValue,
+  value: DatePickerValueType,
   format: string,
   options: {
     timeZone?: string;
@@ -40,8 +44,8 @@ const getFormat = (format: string | undefined, type: string) => {
   }
 };
 
-const getDefaultMode = (type: string) => {
-  let mode = '';
+const getTypeMode = (type: string) => {
+  let mode: DatePickerModeType;
   switch (type) {
     case 'year':
       mode = 'year';
@@ -58,10 +62,15 @@ const getDefaultMode = (type: string) => {
     default:
       mode = 'day';
   }
+  return mode;
+};
+
+const getDefaultMode = (type: string) => {
+  const mode = getTypeMode(type);
   return [mode, mode];
 };
 
-const useDatePickerFormat = <Value extends DatePickerValue>(
+const useDatePickerFormat = <Value extends DatePickerValueType>(
   props: UseDatePickerFormatProps<Value>,
 ) => {
   const { value, onChange, type, options = {}, range, disabled } = props;
@@ -90,6 +99,8 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
 
   const { current: context } = useRef({
     cachedDateArr: convertValueToDateArr(value, format, options),
+    modeDisabledStart: {} as Record<string, (d: Date) => boolean>,
+    modeDisabledEnd: {} as Record<string, (d: Date) => boolean>,
   });
 
   type FormatValueType = Value extends any[] ? string[] : string;
@@ -97,6 +108,30 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
   // 当edit 为true时，stateDate 否则返回 props date
   const [stateDate, setStateDate] = useState<(Date | undefined)[]>(context.cachedDateArr);
   const [edit, setEdit] = useState(false);
+
+  // 收集所有的disabled
+  const registerModeDisabled = usePersistFn(
+    (position: 'start' | 'end' | undefined, mode: string, fn: (d: Date) => boolean) => {
+      if (position === 'end') {
+        context.modeDisabledEnd[mode] = fn;
+      } else {
+        context.modeDisabledStart[mode] = fn;
+      }
+    },
+  );
+
+  const isDisabledDate = (date: Date, position: 'start' | 'end' | undefined) => {
+    const mode = getTypeMode(type);
+    const disabled =
+      position === 'end' ? context.modeDisabledEnd[mode] : context.modeDisabledStart[mode];
+    let isDisabled = disabled ? disabled(date) : false;
+    if (type === 'datetime' && !isDisabled) {
+      const disabledTime =
+        position === 'end' ? context.modeDisabledEnd['time'] : context.modeDisabledStart['time'];
+      isDisabled = disabledTime ? disabledTime(date) : false;
+    }
+    return isDisabled;
+  };
 
   const getFormatValueArr = (dateArr: (Date | undefined)[], fmt?: string) => {
     return dateArr.map((item) => {
@@ -119,7 +154,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
     return getFormatValueArr(dateArr);
   };
 
-  const handlePropsValueChange = (value: DatePickerValue) => {
+  const handlePropsValueChange = (value: DatePickerValueType) => {
     const dateArr = convertValueToDateArr(value, format, options);
     context.cachedDateArr = dateArr;
     setStateDate(dateArr);
@@ -188,6 +223,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
     const isValid = dateUtil.isValidString(str, format);
     if (!isValid) return;
     const date = dateUtil.toDateWithFormat(str, format, undefined, options);
+    if (date && isDisabledDate(date, index === 1 ? 'end' : 'start')) return;
     setStateDate((prev) => {
       const arr = [...prev];
       arr[index] = date;
@@ -223,6 +259,7 @@ const useDatePickerFormat = <Value extends DatePickerValue>(
     setTargetArr,
     handleClear,
     handleInputChange,
+    registerModeDisabled,
   });
 
   return {

@@ -23,6 +23,7 @@ const Year = (props: YearProps) => {
     disabled: shouldChange ? props.disabled : undefined,
     options: props.options,
   });
+  props.registerModeDisabled(props.position, 'year', func.isDisabled);
 
   const years = func.getYears();
   const colNum = 3;

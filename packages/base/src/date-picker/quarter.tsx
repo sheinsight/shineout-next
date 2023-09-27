@@ -20,6 +20,8 @@ const Quarter = (props: QuarterProps) => {
     options: props.options,
   });
 
+  props.registerModeDisabled(props.position, 'quarter', func.isDisabled);
+
   const quarter = func.getQuarters();
   const colNum = 4;
   const rowNum = 1;

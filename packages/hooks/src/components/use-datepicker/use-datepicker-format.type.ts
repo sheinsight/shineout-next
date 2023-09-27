@@ -1,6 +1,8 @@
 export type DateTimeType = Date | number | string | undefined;
-export type DatePickerValue = DateTimeType | DateTimeType[];
-export interface UseDatePickerFormatProps<Value extends DatePickerValue> {
+export type DatePickerValueType = DateTimeType | DateTimeType[];
+
+export type DatePickerModeType = 'year' | 'month' | 'quarter' | 'time' | 'day';
+export interface UseDatePickerFormatProps<Value extends DatePickerValueType> {
   type: 'date' | 'datetime' | 'month' | 'time' | 'week' | 'year' | 'quarter';
   format: string | undefined;
   formatResult: string | ((date: Date) => string) | undefined;
@@ -16,7 +18,7 @@ export interface UseDatePickerFormatProps<Value extends DatePickerValue> {
   clearWithUndefined: boolean | undefined;
   onClear: (() => void) | undefined;
   allowSingle: boolean | undefined;
-  defaultCurrent: DatePickerValue;
+  defaultCurrent: DatePickerValueType;
   disabled:
     | boolean
     | ((date: Date, position?: 'start' | 'end', startDate?: Date, endDate?: Date) => boolean)
