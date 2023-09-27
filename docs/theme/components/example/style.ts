@@ -95,6 +95,37 @@ export default createUseStyles(
       background: '#F4F5F8',
       borderRadius: 2,
     },
+    debug: {
+      position: 'fixed',
+      top: 60,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      background: '#ffffff',
+      zIndex: 10000,
+      '& .toolbar': {
+        padding: 5,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        borderBottom: '1px dashed #e8ebee',
+      },
+
+      '& .container': {
+        height: 'calc(100vh - 95px)',
+      },
+      '& .body': {
+        height: '100%',
+      },
+
+      '& .css': {
+        width: 200,
+        color: '#666C7C',
+        position: 'fixed',
+        top: 100,
+        right: 20,
+      },
+    },
   },
   { name: 'doc-example' },
 );

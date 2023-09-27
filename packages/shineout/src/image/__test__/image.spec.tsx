@@ -36,6 +36,7 @@ const imageGroupCountClassName = `.${SO_PREFIX}-groupCount-0-2-36`;
 const imageGalleryClassName = `${SO_PREFIX}-gallery-0-2-26`;
 const imageDefaultErrorClassName = `.${SO_PREFIX}-defaultError-0-2-21`;
 const imageErrorClassName = `.${SO_PREFIX}-error-0-2-22`;
+const imageOverlayClassName = `${SO_PREFIX}-overlay-0-2-23`;
 const imgFitArray = ['center', 'stretch'];
 const divFitArray = ['fill', 'fit'];
 const shapeArray = ['rounded', 'circle', 'thumbnail'];
@@ -522,6 +523,46 @@ describe('Image[NoImgDrag]', () => {
     const { container } = renderImage(<Image src={imageUrl} noImgDrag />);
     await waitFor(() => {
       attributesTest(container.querySelector('img'), 'draggable', 'false');
+    });
+  });
+});
+describe('Image[Onclose]', () => {
+  test('should render when click esc', async () => {
+    const { container } = renderImage(
+      <Image
+        fit='fill'
+        width={128}
+        height={128}
+        target='_modal'
+        src={imageUrl}
+        href={imageUrl}
+      ></Image>,
+    );
+    await waitFor(() => {
+      const pre = container.querySelector('svg')!;
+      fireEvent.click(pre);
+      expect(document.getElementsByClassName(imageGalleryClassName).length).toBe(1);
+      fireEvent.keyDown(document, { keyCode: 27 });
+      expect(document.getElementsByClassName(imageGalleryClassName).length).toBe(0);
+    });
+  });
+  test('should render when click overlay', async () => {
+    const { container } = renderImage(
+      <Image
+        fit='fill'
+        width={128}
+        height={128}
+        target='_modal'
+        src={imageUrl}
+        href={imageUrl}
+      ></Image>,
+    );
+    await waitFor(() => {
+      const pre = container.querySelector('svg')!;
+      fireEvent.click(pre);
+      expect(document.getElementsByClassName(imageGalleryClassName).length).toBe(1);
+      fireEvent.click(document.getElementsByClassName(imageOverlayClassName)[0]);
+      expect(document.getElementsByClassName(imageGalleryClassName).length).toBe(0);
     });
   });
 });
