@@ -1,5 +1,5 @@
 import { MonthProps } from './month.type';
-import { usePersistFn, useMonthPick } from '@sheinx/hooks';
+import { useMonthPick, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import React from 'react';
@@ -12,10 +12,14 @@ const Month = (props: MonthProps) => {
   const changeMode = usePersistFn(() => {
     props.setMode('day');
   });
+
+  const setCurrent = usePersistFn((date) => {
+    props.setCurrent(date, 'month');
+  });
   const { currentYear, func } = useMonthPick({
     current: props.current,
     rangeDate: shouldChange ? props.rangeDate : undefined,
-    onCurrentChange: props.setCurrent,
+    onCurrentChange: setCurrent,
     value: shouldChange ? props.value : undefined,
     onChange: shouldChange ? props.onChange : changeMode,
     min: props.min,

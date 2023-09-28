@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import dateUtil from './util';
 import type {
+  DatePickerModeType,
   DatePickerValueType,
   UseDatePickerFormatProps,
-  DatePickerModeType,
 } from './use-datepicker-format.type';
 import shallowEqual from '../../utils/shallowEqual';
 import { usePersistFn } from '../../common/use-persist-fn';
@@ -96,6 +96,10 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
   const [mode, setMode] = useState(getDefaultMode(type));
   const [currentArr, setCurrentArr] = useState(getCurrentArr());
   const [targetArr, setTargetArr] = useState<Array<Date | undefined>>([]);
+  const [params, setParams] = useState<{ type: any; quick: any }>({
+    type: undefined,
+    quick: undefined,
+  });
 
   const { current: context } = useRef({
     cachedDateArr: convertValueToDateArr(value, format, options),
@@ -117,6 +121,17 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       } else {
         context.modeDisabledStart[mode] = fn;
       }
+    },
+  );
+
+  const setCurrentArrWithParams = usePersistFn(
+    (
+      arg: React.SetStateAction<Date[]>,
+      type: string,
+      quick: { name: string; value: any } | undefined,
+    ) => {
+      setCurrentArr(arg);
+      setParams({ type, quick });
     },
   );
 
@@ -177,7 +192,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     setMode(getDefaultMode(type));
   };
 
-  const finishEdit = (...args: any) => {
+  const finishEdit = () => {
     setEdit(false);
     const formatValue = getFormatValueArr(stateDate);
     const v = range ? formatValue : formatValue[0];
@@ -185,7 +200,8 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
       return;
     }
     if (!shallowEqual(v, value)) {
-      onChange?.(v as FormatValueType, ...args);
+      const { quick } = params;
+      onChange?.(v as FormatValueType, quick);
     }
   };
 
@@ -244,6 +260,13 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     setControl(!edit);
   }, [edit]);
 
+  useEffect(() => {
+    const { type, quick } = params;
+    if (!type) return;
+    const pickerValue = getFormatValueArr(currentArr) as string[];
+    props.onPickerChange?.(range ? pickerValue : pickerValue[0], quick, type);
+  }, [params]);
+
   const dateArr = getDateArr();
   const resultArr = getResultValueArr(dateArr);
   const targetResultArr = getResultValueArr(targetArr);
@@ -260,6 +283,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     handleClear,
     handleInputChange,
     registerModeDisabled,
+    setCurrentArrWithParams,
   });
 
   return {

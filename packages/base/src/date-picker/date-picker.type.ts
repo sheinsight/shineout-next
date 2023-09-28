@@ -3,8 +3,10 @@ import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { ButtonClasses } from '../button/button.type';
 import { InnerTitleClasses } from '../common/use-inner-title';
 
-import type { DateTimeType, DatePickerValueType } from '@sheinx/hooks';
+import type { DatePickerValueType, DateTimeType } from '@sheinx/hooks';
+
 export type { DateTimeType, DatePickerValueType, DatePickerModeType } from '@sheinx/hooks';
+export type AreaType = 'year' | 'month' | 'week' | 'day' | 'time' | 'quick' | 'quarter';
 
 export interface DatePickerClasses {
   /**
@@ -162,7 +164,6 @@ export interface DatePickerProps<Value extends DatePickerValueType>
   range?: boolean | number;
   value?: Value;
   defaultValue?: Value;
-  // todo quickSelect
   onChange?: (value: Value extends any[] ? string[] : string) => void;
   beforeChange?: (
     value: Value extends any[] ? string[] : string,
@@ -256,6 +257,15 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @default false
    */
   inputable?: boolean;
+  /**
+   * @en value onchange callback (every type of date)
+   * @cn 值改变回调，有别于 onChange, onPickerChange会在每项值改变的时候执行
+   */
+  onPickerChange?: (
+    value: DatePickerValueType,
+    quickSelectItem: QuickSelectType | void | undefined,
+    areaType: AreaType,
+  ) => void;
 }
 export interface QuickSelectType {
   name: string;

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { TimeProps } from './time.type';
-import { useTimePick, usePersistFn, useResize } from '@sheinx/hooks';
+import { usePersistFn, useResize, useTimePick } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Button from '../button';
 import { getLocale, useConfig } from '@sheinx/base';
@@ -92,8 +92,8 @@ const Time = (props: TimeProps) => {
   const styles = props.jssStyle?.datePicker;
   const { locale } = useConfig();
   const onChange = usePersistFn((date) => {
+    props.setCurrent(date, 'time');
     props.onChange(date, true);
-    props.setCurrent(date);
   });
 
   const selNow = () => {

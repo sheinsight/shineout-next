@@ -62,6 +62,7 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
     allowSingle: props.allowSingle,
     defaultCurrent: props.defaultPickerValue || props.defaultRangeMonth,
     formatResult: props.formatResult,
+    onPickerChange: props.onPickerChange,
   });
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
@@ -201,7 +202,7 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
             setDateArr={func.setDateArr}
             currentArr={currentArr}
             range={range}
-            setCurrentArr={func.setCurrentArr}
+            setCurrentArr={func.setCurrentArrWithParams}
             mode={mode}
             setMode={func.setMode}
             type={type}

@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { DatePickerModeType } from './use-datepicker-format.type';
+
 type DateType = string | number | Date | undefined;
 export interface useRangeProps {
   defaultTime: Array<DateType> | DateType;
@@ -11,7 +12,7 @@ export interface useRangeProps {
   setTargetArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   setDateArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   currentArr: Date[];
-  setCurrentArr: Dispatch<SetStateAction<Date[]>>;
+  setCurrentArr: (arg: SetStateAction<Date[]>, ...args: any[]) => void;
   mode: DatePickerModeType[];
   setMode: Dispatch<SetStateAction<DatePickerModeType[]>>;
   disabled:

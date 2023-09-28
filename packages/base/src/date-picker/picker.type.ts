@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from 'react';
-import { DatePickerProps, DateTimeType, DatePickerModeType } from './date-picker.type';
+import React, { Dispatch, SetStateAction } from 'react';
+import { DatePickerModeType, DatePickerProps, DateTimeType } from './date-picker.type';
 
 export interface PickerProps {
   jssStyle: DatePickerProps<any>['jssStyle'];
@@ -18,7 +18,16 @@ export interface PickerProps {
   setTargetArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   setDateArr: Dispatch<SetStateAction<Array<Date | undefined>>>;
   currentArr: Date[];
-  setCurrentArr: Dispatch<SetStateAction<Date[]>>;
+  setCurrentArr: (
+    arg: React.SetStateAction<Date[]>,
+    type: string,
+    quick:
+      | {
+          name: string;
+          value: any;
+        }
+      | undefined,
+  ) => void;
   mode: DatePickerModeType[];
   setMode: Dispatch<SetStateAction<DatePickerModeType[]>>;
   options: {
@@ -43,7 +52,7 @@ export interface CommonPickerProps
   > {
   rangeDate: Array<Date | undefined>;
   current: Date;
-  setCurrent: (date: Date) => void;
+  setCurrent: (date: Date, type: string) => void;
   setMode: (mode: string) => void;
   value: Date | undefined;
   disabled: (date: Date) => boolean;

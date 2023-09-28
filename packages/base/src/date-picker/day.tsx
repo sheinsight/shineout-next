@@ -15,13 +15,19 @@ const Day = (props: DayProps) => {
 
   const styles = jssStyle?.datePicker;
 
+  const areaType = props.type === 'week' ? 'week' : 'day';
+
   const onChange = usePersistFn((date) => {
     props.onChange(date, props.type === 'datetime');
     props.setTarget(undefined);
   });
+
+  const setCurrent = usePersistFn((date) => {
+    props.setCurrent(date, areaType);
+  });
   const { func, currentYear, currentMonth } = useDatePick({
     current: props.current,
-    onCurrentChange: props.setCurrent,
+    onCurrentChange: setCurrent,
     value: props.value,
     onChange,
     min: props.min,
@@ -39,7 +45,7 @@ const Day = (props: DayProps) => {
   const len = days.length / 7;
 
   const selNow = () => {
-    props.setCurrent(new Date());
+    props.setCurrent(new Date(), areaType);
     props.onChange(new Date(), true);
   };
 

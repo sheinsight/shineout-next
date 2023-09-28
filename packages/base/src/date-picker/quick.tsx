@@ -1,7 +1,7 @@
 import React from 'react';
 import type { QuickProps } from './quick.type';
 import type { QuickSelectType } from './date-picker.type';
-import { util, dateUtil } from '@sheinx/hooks';
+import { dateUtil, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 
 const Quick = (props: QuickProps) => {
@@ -20,7 +20,7 @@ const Quick = (props: QuickProps) => {
       return dateUtil.toDate(v, options);
     });
     props.setDateArr(dateArr);
-    props.setCurrentArr(dateArr);
+    props.setCurrentArr(dateArr, 'quick', item);
   };
   return (
     <div className={classNames(styles?.quickPicker, styles?.picker)}>

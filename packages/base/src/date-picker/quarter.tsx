@@ -1,5 +1,5 @@
 import { QuarterProps } from './quarter.type';
-import { useQuarterPick } from '@sheinx/hooks';
+import { usePersistFn, useQuarterPick } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import React from 'react';
@@ -8,10 +8,14 @@ import PickerTitle from './pickerTitle';
 const Quarter = (props: QuarterProps) => {
   const { jssStyle } = props;
   const styles = jssStyle?.datePicker;
+
+  const setCurrent = usePersistFn((date) => {
+    props.setCurrent(date, 'quarter');
+  });
   const { currentYear, func } = useQuarterPick({
     current: props.current,
     rangeDate: props.rangeDate,
-    onCurrentChange: props.setCurrent,
+    onCurrentChange: setCurrent,
     value: props.value,
     onChange: props.onChange,
     min: props.min,
