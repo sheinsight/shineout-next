@@ -86,7 +86,24 @@ const Picker = (props: PickerProps) => {
       return <Month {...commonProps} />;
     }
     if (mode === 'day') {
-      return <Day {...commonProps} {...timeProps} />;
+      return (
+        <Day
+          {...commonProps}
+          {...timeProps}
+          onDoubleClick={(item, type) => {
+            // 双击同时设置开始和结束日期
+            if (props.range && props.type === 'datetime') {
+              if (position === 'start') {
+                func.setCurrentEnd(item, type);
+                func.setDateEnd(item, true);
+              } else {
+                func.setCurrentStart(item, type);
+                func.setDateStart(item, true);
+              }
+            }
+          }}
+        />
+      );
     }
     if (mode === 'time') {
       return <Time {...commonProps} {...timeProps} />;

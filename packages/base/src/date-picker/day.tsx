@@ -45,6 +45,8 @@ const Day = (props: DayProps) => {
   const len = days.length / 7;
 
   const selNow = () => {
+    let now = new Date();
+    if (func.isDisabled(now)) return;
     props.setCurrent(new Date(), areaType);
     props.onChange(new Date(), true);
   };
@@ -73,6 +75,9 @@ const Day = (props: DayProps) => {
         )}
         key={index}
         onClick={() => func.handleDayClick(item)}
+        onDoubleClick={() => {
+          props.onDoubleClick?.(item, areaType);
+        }}
         onMouseEnter={
           isDisabled
             ? undefined

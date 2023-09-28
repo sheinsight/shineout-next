@@ -96,9 +96,6 @@ const Time = (props: TimeProps) => {
     props.onChange(date, true);
   });
 
-  const selNow = () => {
-    onChange(new Date());
-  };
   const { func, times } = useTimePick({
     format: props.format,
     options: props.options,
@@ -112,6 +109,11 @@ const Time = (props: TimeProps) => {
     minuteStep: props.minuteStep,
     secondStep: props.secondStep,
   });
+
+  const selNow = () => {
+    if (func.isDisabled(new Date())) return;
+    onChange(new Date());
+  };
 
   props.registerModeDisabled(props.position, 'time', func.isDisabled);
 
