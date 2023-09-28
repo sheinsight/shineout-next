@@ -86,9 +86,8 @@ const Descriptions = (props: DescriptionsProps) => {
     </Fragment>
   );
 
-  const renderHandle = (d: DescriptionsItemProps[], i: number) => {
-    return layout === 'horizontal' ? renderHorizontal(d, i) : renderVertical(d, i);
-  };
+  const renderHandle = (d: DescriptionsItemProps[], i: number) =>
+    layout === 'horizontal' ? renderHorizontal(d, i) : renderVertical(d, i);
 
   const rootClassName = classNames(className, jssStyle?.descriptions.wrapper);
   const bodyClassName = classNames(
