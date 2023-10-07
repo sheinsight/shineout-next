@@ -2,7 +2,15 @@ import React, { CSSProperties } from 'react';
 
 export interface CommonType {
   status?: 'error';
+  /**
+   * @en Custom class name
+   * @cn 自定义类名
+   */
   className?: string;
+  /**
+   * @en Custom style
+   * @cn 自定义样式
+   */
   style?: CSSProperties;
   /**
    * @en There are three built-in size: small、default、large.

@@ -83,10 +83,7 @@ const datePickerTokenExtraValue = {
   },
   error: { border: { color: 'Danger-6' }, focus: { shadow: 'Danger-1' } },
   panel: {
-    title: {
-      padding: { top: 'Padding-10' },
-      font: { size: '14/regular' },
-    },
+    title: { padding: { top: 'Padding-10' }, font: { size: '14/regular' } },
     color: 'Neutral-text-5',
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
@@ -127,48 +124,20 @@ const datePickerTokenExtraValue = {
     header: { color: 'Neutral-text-4' },
     margin: { y: 'Margin-4' },
   },
-  day: {
-    panel: { width: 'Size-124' },
-  },
-  week: {
-    panel: { width: 'Size-142' },
-  },
-  year: {
-    panel: { width: 'Size-124' },
-    cell: {
-      hot: { width: 'Size-32' },
-    },
-  },
-  month: {
-    panel: { width: 'Size-124' },
-    cell: {
-      hot: { width: 'Size-32' },
-    },
-  },
-  quarter: {
-    panel: { width: 'Size-124' },
-    cell: {
-      hot: { width: 'Size-28' },
-    },
-  },
+  day: { panel: { width: 'Size-124' } },
+  week: { panel: { width: 'Size-142' } },
+  year: { panel: { width: 'Size-124' }, cell: { hot: { width: 'Size-32' } } },
+  month: { panel: { width: 'Size-124' }, cell: { hot: { width: 'Size-32' } } },
+  quarter: { panel: { width: 'Size-124' }, cell: { hot: { width: 'Size-28' } } },
   time: {
-    panel: {
-      width: 'Size-115',
-      padding: { x: 'Padding-12', y: 'Padding-12' },
-    },
-    list: {
-      gap: 'Margin-8',
-    },
+    panel: { width: 'Size-115', padding: { x: 'Padding-12', y: 'Padding-12' } },
+    list: { gap: 'Margin-8' },
     item: {
       height: 'Size-14',
       background: { color: 'Neutral-fill-1' },
       color: 'Neutral-text-5',
-      active: {
-        background: { color: 'Neutral-fill-2' },
-      },
-      disabled: {
-        color: 'Neutral-text-2',
-      },
+      active: { background: { color: 'Neutral-fill-2' } },
+      disabled: { color: 'Neutral-text-2' },
     },
   },
   quick: {
