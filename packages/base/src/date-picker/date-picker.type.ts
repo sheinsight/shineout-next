@@ -19,6 +19,7 @@ export interface DatePickerClasses {
   wrapperDisabled: string;
   wrapperError: string;
   wrapperNoBorder: string;
+  wrapperUnderline: string;
   wrapperRange: string;
   wrapperInnerTitle: string;
   wrapperInnerTitleTop: string;
@@ -277,6 +278,17 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @cn focus 事件回调
    */
   onFocus?: (e: any) => void;
+  /**
+   * @en only display border bottom
+   * @cn 是否只展示下边框
+   * @default false
+   */
+  underline?: boolean;
+  /**
+   * @cn 自定义宽度
+   * @en custom width
+   */
+  width?: number | string;
 }
 export interface QuickSelectType {
   name: string;

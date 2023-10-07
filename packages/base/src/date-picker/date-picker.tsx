@@ -198,9 +198,10 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
         props.status === 'error' && styles?.wrapperError,
         range && styles?.wrapperRange,
         !border && styles?.wrapperNoBorder,
+        !!props.underline && styles?.wrapperUnderline,
       )}
       {...util.getDataAttribute({ type })}
-      style={props.style}
+      style={{ width: props.width, ...props.style }}
     >
       {renderResult()}
       <AbsoluteList
