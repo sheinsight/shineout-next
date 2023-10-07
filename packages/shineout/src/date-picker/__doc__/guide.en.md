@@ -1,15 +1,11 @@
 ## When to use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+When you need to input a date;\nWhen you need to input a date range;\nCommonly used for date input in forms or date filtering conditions.
 
 ## Related to layout
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+![Date picker is commonly used in form layout on detail pages, and different types of date selection may cause inconsistent length of the selection box. The layout should be chosen based on the specific type.](01.en)
 
-## Component combination
+## Component pairing
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
-
-## Recommended/Use with caution examples
-
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![Used in combination with selectors, to switch the granularity (year, month, day) of the selection. Commonly used for selecting the type of date picker.](02.en)

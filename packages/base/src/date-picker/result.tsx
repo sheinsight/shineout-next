@@ -1,5 +1,5 @@
 import { DatePickerProps, getLocale, useConfig } from '@sheinx/base';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
 const Input = (props: {
@@ -9,13 +9,15 @@ const Input = (props: {
   onChange: (v: string) => void;
   onRef?: (ref: HTMLInputElement) => void;
   onMouseDown?: (e: React.MouseEvent) => void;
-  focused?: boolean;
+  open?: boolean;
   disabled?: boolean;
+  onFocus?: (e: React.FocusEvent) => void;
+  onBlur?: (e: React.FocusEvent) => void;
 }) => {
   const [value, setValue] = useState(props.value);
   useEffect(() => {
     setValue(props.value);
-  }, [props.value, props.focused]);
+  }, [props.value, props.open]);
   return (
     <input
       ref={props.onRef}
@@ -24,6 +26,11 @@ const Input = (props: {
       autoComplete={'off'}
       value={value}
       disabled={props.disabled}
+      onBlur={props.onBlur}
+      onFocus={props.onFocus}
+      onClick={(e) => {
+        e.currentTarget.focus();
+      }}
       onChange={(e) => {
         setValue(e.target.value);
         props.onChange(e.target.value);
@@ -38,12 +45,15 @@ interface ResultProps
     'jssStyle' | 'type' | 'inputable' | 'range' | 'placeholder'
   > {
   focused: boolean;
+  open: boolean;
   targetResultArr: Array<string | undefined>;
   resultArr: Array<string | undefined>;
   onChange: (value: string, index: number) => void;
   disabledLeft?: boolean;
   disabledRight?: boolean;
   activeIndex?: number;
+  onFocus?: (e: React.FocusEvent) => void;
+  onBlur?: (e: React.FocusEvent) => void;
 }
 const Result = (props: ResultProps) => {
   const {
@@ -51,6 +61,7 @@ const Result = (props: ResultProps) => {
     type,
     inputable,
     focused,
+    open,
     targetResultArr,
     resultArr,
     range,
@@ -69,14 +80,14 @@ const Result = (props: ResultProps) => {
   });
 
   useEffect(() => {
-    if (focused) {
-      context.inputRefs[context.clickIndex]?.focus();
-    } else {
-      context.inputRefs[0]?.blur();
-      context.inputRefs[1]?.blur();
-      context.clickIndex = 0;
+    if (open) {
+      if (context.inputRefs[activeIndex]) {
+        context.inputRefs[activeIndex].focus();
+      } else {
+        context.inputRefs[context.clickIndex]?.focus();
+      }
     }
-  }, [focused]);
+  }, [open, activeIndex]);
 
   const getPlaceHolderArr: () => Array<string> = () => {
     if (Array.isArray(placeholder)) return placeholder;
@@ -128,6 +139,7 @@ const Result = (props: ResultProps) => {
       dis && styles?.resultTextDisabled,
       info.index === activeIndex && styles?.resultTextActive,
     );
+
     return (
       <div className={className}>
         <div className={styles?.resultTextPadding}>
@@ -138,7 +150,7 @@ const Result = (props: ResultProps) => {
                 context.inputRefs[info.index] = el;
               }}
               disabled={dis}
-              focused={focused}
+              open={!!open}
               value={info.target || info.value || ''}
               placeholder={info.place}
               onChange={(s) => {
@@ -146,6 +158,18 @@ const Result = (props: ResultProps) => {
               }}
               onMouseDown={() => {
                 context.clickIndex = info.index;
+              }}
+              onBlur={(e) => {
+                e.stopPropagation();
+                if (e.relatedTarget === context.inputRefs[1 - info.index]) return;
+                props.onBlur?.(e);
+                context.clickIndex = 0;
+              }}
+              onFocus={(e) => {
+                context.clickIndex = info.index;
+                e.stopPropagation();
+                if (focused) return;
+                props.onFocus?.(e);
               }}
             />
           ) : (

@@ -54,27 +54,25 @@ const Month = (props: MonthProps) => {
             styles?.pickerCellInRangeEnd,
         )}
         key={index}
+        onMouseEnter={
+          isDisabled
+            ? undefined
+            : () => {
+                props.setTarget(item);
+              }
+        }
+        onMouseLeave={
+          isDisabled
+            ? undefined
+            : () => {
+                props.setTarget(undefined);
+              }
+        }
+        onClick={() => {
+          func.handleMonthClick(item);
+        }}
       >
-        <div
-          className={jssStyle?.datePicker?.pickerCellContent}
-          onClick={() => {
-            func.handleMonthClick(item);
-          }}
-          onMouseEnter={
-            isDisabled
-              ? undefined
-              : () => {
-                  props.setTarget(item);
-                }
-          }
-          onMouseLeave={
-            isDisabled
-              ? undefined
-              : () => {
-                  props.setTarget(undefined);
-                }
-          }
-        >
+        <div className={jssStyle?.datePicker?.pickerCellContent}>
           <span>{func.getMonthStr(item)}</span>
         </div>
       </td>

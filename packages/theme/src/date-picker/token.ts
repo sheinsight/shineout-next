@@ -6,7 +6,38 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const datePickerTokenDescription = { datePicker: 'xxx' };
+const datePickerTokenDescription = {
+  date: '日期',
+  picker: '选择器',
+  header: '头部',
+  panel: '面板',
+  shadow: '阴影',
+  icon: '图标',
+  hot: '热区',
+  body: '主体',
+  footer: '底部',
+  left: '左侧',
+  right: '右侧',
+  cell: '单元格',
+  range: '范围',
+  other: '边界',
+  week: '周',
+  year: '年',
+  month: '月',
+  quarter: '季度',
+  day: '日',
+  time: '时间',
+  datetime: '日期时间',
+  list: '列表',
+  gap: '间距',
+  item: '项',
+  quick: '快捷选择',
+  placeholder: '占位符',
+  result: '结果',
+  text: '文本',
+  top: '顶部',
+  bottom: '底部',
+};
 
 /**
  * token 值映射表
@@ -51,7 +82,7 @@ const datePickerTokenExtraValue = {
     },
   },
   error: { border: { color: 'Danger-6' }, focus: { shadow: 'Danger-1' } },
-  picker: {
+  panel: {
     title: {
       padding: { top: 'Padding-10' },
       font: { size: '14/regular' },
@@ -62,6 +93,7 @@ const datePickerTokenExtraValue = {
     radius: 'Radius-4',
     margin: 'Margin-24',
     header: {
+      font: { size: '14/regular' },
       padding: { x: 'Padding-12', y: 'Padding-8' },
       border: { color: 'Neutral-border-1' },
       icon: {
@@ -96,31 +128,31 @@ const datePickerTokenExtraValue = {
     margin: { y: 'Margin-4' },
   },
   day: {
-    picker: { width: 'Size-124' },
+    panel: { width: 'Size-124' },
   },
   week: {
-    picker: { width: 'Size-142' },
+    panel: { width: 'Size-142' },
   },
   year: {
-    picker: { width: 'Size-124' },
+    panel: { width: 'Size-124' },
     cell: {
       hot: { width: 'Size-32' },
     },
   },
   month: {
-    picker: { width: 'Size-124' },
+    panel: { width: 'Size-124' },
     cell: {
       hot: { width: 'Size-32' },
     },
   },
   quarter: {
-    picker: { width: 'Size-124' },
+    panel: { width: 'Size-124' },
     cell: {
       hot: { width: 'Size-28' },
     },
   },
   time: {
-    picker: {
+    panel: {
       width: 'Size-115',
       padding: { x: 'Padding-12', y: 'Padding-12' },
     },
@@ -140,7 +172,7 @@ const datePickerTokenExtraValue = {
     },
   },
   quick: {
-    picker: {
+    panel: {
       padding: { x: 'Padding-8', y: 'Padding-12' },
       gap: 'Margin-8',
       item: {

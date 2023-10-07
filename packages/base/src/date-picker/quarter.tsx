@@ -51,27 +51,25 @@ const Quarter = (props: QuarterProps) => {
             styles?.pickerCellInRangeEnd,
         )}
         key={index}
+        onClick={() => {
+          func.handleQuarterClick(item);
+        }}
+        onMouseEnter={
+          isDisabled
+            ? undefined
+            : () => {
+                props.setTarget(item);
+              }
+        }
+        onMouseLeave={
+          isDisabled
+            ? undefined
+            : () => {
+                props.setTarget(undefined);
+              }
+        }
       >
-        <div
-          className={jssStyle?.datePicker?.pickerCellContent}
-          onClick={() => {
-            func.handleQuarterClick(item);
-          }}
-          onMouseEnter={
-            isDisabled
-              ? undefined
-              : () => {
-                  props.setTarget(item);
-                }
-          }
-          onMouseLeave={
-            isDisabled
-              ? undefined
-              : () => {
-                  props.setTarget(undefined);
-                }
-          }
-        >
+        <div className={jssStyle?.datePicker?.pickerCellContent}>
           <span>Q{func.getQuarterStr(item)}</span>
         </div>
       </td>

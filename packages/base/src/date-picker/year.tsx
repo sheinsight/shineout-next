@@ -54,27 +54,25 @@ const Year = (props: YearProps) => {
             styles?.pickerCellInRangeEnd,
         )}
         key={index}
+        onClick={() => {
+          func.handleYearClick(item);
+        }}
+        onMouseEnter={
+          isDisabled
+            ? undefined
+            : () => {
+                props.setTarget(item);
+              }
+        }
+        onMouseLeave={
+          isDisabled
+            ? undefined
+            : () => {
+                props.setTarget(undefined);
+              }
+        }
       >
-        <div
-          className={jssStyle?.datePicker?.pickerCellContent}
-          onClick={() => {
-            func.handleYearClick(item);
-          }}
-          onMouseEnter={
-            isDisabled
-              ? undefined
-              : () => {
-                  props.setTarget(item);
-                }
-          }
-          onMouseLeave={
-            isDisabled
-              ? undefined
-              : () => {
-                  props.setTarget(undefined);
-                }
-          }
-        >
+        <div className={jssStyle?.datePicker?.pickerCellContent}>
           <span>{func.getYearStr(item)}</span>
         </div>
       </td>

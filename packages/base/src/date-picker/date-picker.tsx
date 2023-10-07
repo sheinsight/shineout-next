@@ -12,6 +12,10 @@ import useInnerTitle from '../common/use-inner-title';
 
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
 const horizontalPosition = ['left-top', 'left-bottom', 'right-top', 'right-bottom'];
+
+const preventDefault = (e: React.MouseEvent) => {
+  e.preventDefault();
+};
 const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Value>) => {
   const { locale } = useConfig();
   const { jssStyle, range, type = 'date', border = true } = props;
@@ -94,6 +98,21 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
     jssStyle: jssStyle,
   });
 
+  const handleFocus = usePersistFn((e: React.FocusEvent) => {
+    setFocused(true);
+    props.onFocus?.(e);
+  });
+
+  const handleBlur = usePersistFn((e: React.FocusEvent) => {
+    setFocused(false);
+    props.onBlur?.(e);
+  });
+
+  const handleResultClick = usePersistFn(() => {
+    if (disabledStatus === 'all') return;
+    openPop();
+  });
+
   const renderResult = () => {
     const result = (
       <div
@@ -103,7 +122,6 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
           props.align === 'center' && styles?.resultAlignCenter,
           props.align === 'left' && styles?.resultAlignLeft,
         )}
-        ref={targetRef}
       >
         <Result
           jssStyle={jssStyle}
@@ -114,13 +132,17 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
           disabledLeft={disabledStatus === 'left'}
           disabledRight={disabledStatus === 'right'}
           placeholder={props.placeholder}
-          focused={open}
+          focused={focused}
+          open={open}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           targetResultArr={targetResultArr}
           resultArr={resultArr}
           onChange={func.handleInputChange}
         />
       </div>
     );
+    const canFocus = !(props.inputable || disabledStatus === 'all');
     return (
       <div
         className={classNames(
@@ -129,13 +151,20 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
           styles?.wrapperInnerTitleTop,
           styles?.wrapperInnerTitleBottom,
         )}
-        tabIndex={disabledStatus === 'all' ? undefined : 0}
-        onClick={disabledStatus === 'all' ? undefined : openPop}
-        onFocus={() => {
-          setFocused(true);
-        }}
-        onBlur={() => {
-          setFocused(false);
+        ref={targetRef}
+        tabIndex={canFocus ? 1 : undefined}
+        onClick={handleResultClick}
+        onFocus={canFocus ? handleFocus : undefined}
+        onBlur={canFocus ? handleBlur : undefined}
+        onMouseDown={props.inputable ? preventDefault : undefined}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            if (open) {
+              closePop();
+            } else {
+              openPop();
+            }
+          }
         }}
       >
         {renderInnerTitle(result)}
@@ -192,9 +221,7 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
           type={'fade'}
           duration={'fast'}
           show={open}
-          onMouseDown={(e) => {
-            e.preventDefault();
-          }}
+          onMouseDown={preventDefault}
         >
           <Picker
             setTargetArr={func.setTargetArr}

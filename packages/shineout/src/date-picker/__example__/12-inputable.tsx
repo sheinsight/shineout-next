@@ -7,11 +7,10 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-// todo 输入禁用日期
 const App: React.FC = () => (
   <div>
     <DatePicker inputable style={{ marginBottom: 16 }} /> <br />
-    <DatePicker inputable range />
+    <DatePicker type={'datetime'} inputable range absolute />
   </div>
 );
 

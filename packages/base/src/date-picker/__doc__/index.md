@@ -1,11 +1,11 @@
 ---
 name: DatePicker
-group: Other
+group: Form
 ---
 
 # Title
 
-DatePicker 标题
+DatePicker 日期选择器
 DatePicker
 
 # Describe
@@ -14,15 +14,3 @@ DatePicker 描述
 DatePicker Describe
 
 # Example
-
-# params
-
-value
-mode
-format
-
-# status
-
-open
-current
-value

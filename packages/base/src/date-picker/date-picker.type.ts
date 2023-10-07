@@ -266,6 +266,17 @@ export interface DatePickerProps<Value extends DatePickerValueType>
     quickSelectItem: QuickSelectType | void | undefined,
     areaType: AreaType,
   ) => void;
+
+  /**
+   * @en blur event callback
+   * @cn blur 事件回调
+   */
+  onBlur?: (e: any) => void;
+  /**
+   * @en focus event callback
+   * @cn focus 事件回调
+   */
+  onFocus?: (e: any) => void;
 }
 export interface QuickSelectType {
   name: string;

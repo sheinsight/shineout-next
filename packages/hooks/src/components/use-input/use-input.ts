@@ -57,6 +57,9 @@ const useInput = (params: BaseInputProps) => {
       ...externalProps,
       ...externalEventHandlers,
       onClick: handleClick(externalEventHandlers),
+      onMouseDown: (event: React.MouseEvent<HTMLInputElement>) => {
+        event.preventDefault();
+      },
       ref: rootRef,
     };
   };
