@@ -12,3 +12,4 @@ export * as Popover from './popover/interface';
 export * as Tooltip from './tooltip/interface';
 export * as EditableArea from './editable-area/interface';
 export * as DatePicker from './date-picker/interface';
+export * as Divider from './divider/interface';
