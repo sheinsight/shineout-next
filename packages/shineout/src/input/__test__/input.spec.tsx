@@ -8,7 +8,7 @@ describe('Input[Base]', () => {
     const { container } = render(<Input />);
     screen.debug();
     expect(container.innerHTML).toBe(
-      `<div data-type="so-input" class="${SO_PREFIX}-wrapper-0-2-1"><input class="${SO_PREFIX}-input-0-2-12 ${SO_PREFIX}-paddingBox-0-2-2" value=""></div>`,
+      `<div data-soui-type="input" class="${SO_PREFIX}-wrapper-0-2-1"><input class="${SO_PREFIX}-input-0-2-12 ${SO_PREFIX}-paddingBox-0-2-2" value=""></div>`,
     );
   });
   test('should clear the value', async () => {

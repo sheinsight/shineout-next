@@ -97,6 +97,7 @@ export default (props: TextareaProps) => {
     open: focused || hasValue(inputAbleProps.value),
     size: resetProps.size,
     jssStyle,
+    titleClassName: jssStyle?.textarea?.wrapperInnerTitleTop,
   });
 
   const renderTextarea = usePersistFn((textareaEl: React.ReactElement) => {
@@ -142,7 +143,7 @@ export default (props: TextareaProps) => {
           onMouseDown={(e) => {
             e.preventDefault();
           }}
-          className={classNames(jssStyle?.textarea?.paddingBox, jssStyle?.textarea?.footer)}
+          className={classNames(jssStyle?.textarea?.wrapperPaddingBox, jssStyle?.textarea?.footer)}
         >
           {renderFooter(inputAbleProps.value)}
         </div>
@@ -160,6 +161,10 @@ export default (props: TextareaProps) => {
       jssStyle={jssStyle}
       {...forwardProps}
       {...formatProps}
+      className={classNames(
+        innerTitleProps.innerTitle && jssStyle?.textarea?.wrapperInnerTitle,
+        resetProps.className,
+      )}
       renderTextarea={renderTextarea}
       status={tipProps.error ? 'error' : status}
       value={inputAbleProps.value || ''}

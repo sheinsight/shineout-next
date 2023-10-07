@@ -22,12 +22,15 @@ export interface TextareaClasses {
    * 当 status 为 error 时
    */
   wrapperError: string;
+  wrapperInnerTitle: string;
+  wrapperInnerTitleTop: string;
+  wrapperInnerTitleBottom: string;
+  wrapperPaddingBox: string;
   textarea: string;
   wrapperLarge: string;
   wrapperSmall: string;
   wrapperUnderline: string;
   wrapperNoBorder: string;
-  paddingBox: string;
   resize: string;
   shadow: string;
   info: string;

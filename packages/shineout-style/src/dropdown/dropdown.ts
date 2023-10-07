@@ -46,6 +46,9 @@ const dropdown: JsStyles<DropDownClass> = {
     width: 'max-content',
     boxSizing: 'border-box',
     lineHeight: token.lineHeightDynamic,
+    '$wrapper $wrapper &': {
+      minWidth: 'auto',
+    },
   },
   listSmall: {
     fontSize: token.dropdownListSmallFontSize,

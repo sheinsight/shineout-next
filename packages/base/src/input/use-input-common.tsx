@@ -131,6 +131,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
   return {
     ...rest,
     value: inputAbleProps.value,
+    className: classNames(props.className, innerTitle && props.jssStyle?.input?.wrapperInnerTitle),
     onChange: inputAbleProps.onChange,
     onBlur: handleBlur,
     ...clearProps,

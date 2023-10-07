@@ -1,12 +1,38 @@
 export default {
+  now: '今天',
+  current: '此刻',
+  selectQuarter: '请选择季度',
+  selectYear: '请选择年份',
+  selectMonth: '请选择月份',
+  selectDate: '请选择日期',
+  selectWeek: '请选择周',
+  selectTime: '请选择时间',
+
+  startQuarter: '开始季度',
+  endQuarter: '结束季度',
+
+  startYear: '开始年份',
+  endYear: '结束年份',
+
+  startMonth: '开始月份',
+  endMonth: '结束月份',
+
+  startDate: '开始日期',
+  endDate: '结束日期',
+
+  startWeek: '开始周',
+  endWeek: '结束周',
+
+  startTime: '开始时间',
+  endTime: '结束时间',
+
   weekdayValues: {
-    narrow: ['一', '二', '三', '四', '五', '六', '日'],
-    short: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-    long: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
+    narrow: ['日', '一', '二', '三', '四', '五', '六'],
+    short: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+    long: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
   },
-
+  weekShort: '周',
   startOfWeek: 1,
-
   monthValues: {
     short: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
     long: [

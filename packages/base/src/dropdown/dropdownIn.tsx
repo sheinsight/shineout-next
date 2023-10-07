@@ -48,7 +48,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     onCollapse: props.onCollapse,
     disabled,
     trigger,
-    position: props.position,
+    position: props.position || 'bottom-left',
     autoMode: 'menu',
     priorityDirection: 'vertical',
     mouseLeaveDelay: 200,
@@ -186,10 +186,10 @@ const Dropdown = (props: SimpleDropdownProps) => {
         absolute={absolute}
         fixedWidth={'min'}
         popupEl={popupRef.current}
+        adjust={!isSub}
       >
         <AnimationList
           display={columns ? 'grid' : 'block'}
-          jssStyle={jssStyle}
           className={classNames(
             jssStyle?.dropdown?.list,
             columns !== undefined && columns > 1 && jssStyle?.dropdown?.boxList,

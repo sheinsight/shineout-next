@@ -34,7 +34,7 @@ export default (props: InputGroupProps) => {
     return ref.current.eventMap.get(child) || {};
   };
 
-  const { children, className, style } = props;
+  const { children, className, width, style } = props;
   const rootClass = classNames(
     className,
     jssStyle?.input?.group,
@@ -44,7 +44,7 @@ export default (props: InputGroupProps) => {
     !!focus && jssStyle?.input?.groupFocus,
   );
   return (
-    <div className={rootClass} style={style} data-soui-type={'input-group'}>
+    <div className={rootClass} style={{ width, ...style }} data-soui-type={'input-group'}>
       {Children.toArray(children).map((child, i) => {
         if (typeof child === 'string') {
           return <span key={i}>{child}</span>;

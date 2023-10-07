@@ -14,7 +14,7 @@ const nameIs = (name: unknown) => (val: unknown) => {
 export const isArray = Array.isArray;
 export const isObject = (val: unknown): val is ObjectType =>
   !!val && typeof val === 'object' && !isArray(val);
-export const isDate = (val: unknown): boolean => val instanceof Date;
+export const isDate = (val: unknown): val is Date => val instanceof Date;
 export const isError = (val: unknown): boolean => val instanceof Error;
 export const isNumber = (n: unknown): n is number => typeof n === 'number';
 export const isRegexp = (val: unknown): boolean => val instanceof RegExp;

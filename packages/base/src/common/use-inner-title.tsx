@@ -18,6 +18,7 @@ export interface InnerTitleProps {
   placeTitle?: React.ReactNode;
   open?: boolean;
   size?: CommonType['size'];
+  titleClassName?: string;
   jssStyle?: {
     innerTitle?: InnerTitleClasses;
   };
@@ -36,13 +37,20 @@ const useInnerTitle = (props: InnerTitleProps) => {
           size === 'large' && jssStyle?.innerTitle?.wrapperLarge,
         )}
       >
-        <div className={jssStyle?.innerTitle?.title}>{innerTitle}</div>
+        <div className={classNames(jssStyle?.innerTitle?.title, props.titleClassName)}>
+          {innerTitle}
+        </div>
         <div
           onMouseDown={(e) => {
             e.preventDefault();
             e.stopPropagation();
           }}
-          className={classNames(jssStyle?.innerTitle?.title, jssStyle?.innerTitle?.place)}
+          style={open ? { paddingTop: 0, paddingBottom: 0 } : undefined}
+          className={classNames(
+            jssStyle?.innerTitle?.title,
+            jssStyle?.innerTitle?.place,
+            props.titleClassName,
+          )}
         >
           {placeTitle || innerTitle}
         </div>

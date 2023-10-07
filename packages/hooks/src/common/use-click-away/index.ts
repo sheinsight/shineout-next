@@ -26,9 +26,20 @@ export function useClickAway<T extends Event = Event>(params: {
 
   useEffect(() => {
     if (effect) {
-      // @ts-ignore
       // fix 点击绑定事件后会立马触发事件的问题
-      setTimeout(() => document.addEventListener('click', handleClickAway), 0);
+      setTimeout(
+        () =>
+          document.addEventListener(
+            'click',
+            // @ts-ignore
+            handleClickAway,
+            {
+              // 解决 点击后立刻删除dom导致获取不到元素; contains(target) 为 false 的问题
+              capture: true,
+            },
+          ),
+        0,
+      );
     }
     return () => {
       // @ts-ignore

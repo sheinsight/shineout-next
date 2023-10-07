@@ -3,7 +3,7 @@
 exports[`Textarea[Base] should render correctly  1`] = `
 <div
   class="textarea-wrapper-0-2-1 textarea-wrapperFocus-0-2-5"
-  data-type="so-input"
+  data-soui-type="input"
 >
   <textarea
     class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
@@ -16,7 +16,7 @@ exports[`Textarea[Base] should render correctly  1`] = `
 exports[`Textarea[Base] should render correctly about autosize 1`] = `
 <div
   class="textarea-wrapper-0-2-1"
-  data-type="so-input"
+  data-soui-type="input"
 >
   <textarea
     class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
@@ -35,7 +35,7 @@ exports[`Textarea[Base] should render correctly about autosize 1`] = `
 exports[`Textarea[Base] should render correctly about footer 1`] = `
 <div
   class="textarea-wrapper-0-2-1"
-  data-type="so-input"
+  data-soui-type="input"
 >
   <textarea
     class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
@@ -60,7 +60,7 @@ exports[`Textarea[Base] should render correctly about footer 1`] = `
 exports[`Textarea[Base] should render correctly about info 1`] = `
 <div
   class="textarea-wrapper-0-2-1"
-  data-type="so-input"
+  data-soui-type="input"
 >
   <textarea
     class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
@@ -73,7 +73,7 @@ exports[`Textarea[Base] should render correctly about info 1`] = `
 exports[`Textarea[Base] should render correctly about info by function 1`] = `
 <div
   class="textarea-wrapper-0-2-1"
-  data-type="so-input"
+  data-soui-type="input"
 >
   <textarea
     class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
@@ -87,7 +87,7 @@ exports[`Textarea[Base] should render correctly about size 1`] = `
 <div>
   <div
     class="textarea-wrapper-0-2-1 textarea-wrapperSmall-0-2-3"
-    data-type="so-input"
+    data-soui-type="input"
     style="width: 120px; margin-inline-end: 12px;"
   >
     <textarea
@@ -98,7 +98,7 @@ exports[`Textarea[Base] should render correctly about size 1`] = `
   </div>
   <div
     class="textarea-wrapper-0-2-1"
-    data-type="so-input"
+    data-soui-type="input"
     style="width: 120px; margin-inline-end: 12px;"
   >
     <textarea
@@ -109,7 +109,7 @@ exports[`Textarea[Base] should render correctly about size 1`] = `
   </div>
   <div
     class="textarea-wrapper-0-2-1 textarea-wrapperLarge-0-2-4"
-    data-type="so-input"
+    data-soui-type="input"
     style="width: 120px; margin-inline-end: 12px;"
   >
     <textarea

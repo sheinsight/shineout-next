@@ -10,6 +10,9 @@ import { CheckboxTokens } from './checkbox/type';
 import Common from './common';
 import { CommonTokens } from './common/type';
 
+import DatePicker from './date-picker';
+import { DatePickerTokens } from './date-picker/type';
+
 import Dropdown from './dropdown';
 import { DropdownTokens } from './dropdown/type';
 
@@ -53,6 +56,7 @@ export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CheckboxTokens &
   CommonTokens &
+  DatePickerTokens &
   DropdownTokens &
   EditableAreaTokens &
   IconTokens &
@@ -72,6 +76,7 @@ const Token: ThemeTokens = {
   ...Button,
   ...Checkbox,
   ...Common,
+  ...DatePicker,
   ...Dropdown,
   ...EditableArea,
   ...Icon,
