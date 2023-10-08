@@ -21,6 +21,8 @@ export interface PaginationClasses {
   center: string;
   jumper: string;
   simple: string;
+  small: string;
+  large: string;
 }
 
 export interface TextParams {

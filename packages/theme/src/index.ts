@@ -55,6 +55,9 @@ import { TextareaTokens } from './textarea/type';
 import Tooltip from './tooltip';
 import { TooltipTokens } from './tooltip/type';
 
+import Pagination from './pagination';
+import { PaginationTokens } from './pagination/type';
+
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CheckboxTokens &
@@ -73,7 +76,8 @@ export type ThemeTokens = AlertTokens &
   TabsTokens &
   TagTokens &
   TextareaTokens &
-  TooltipTokens;
+  TooltipTokens &
+  PaginationTokens;
 
 const Token: ThemeTokens = {
   ...Alert,
@@ -95,6 +99,7 @@ const Token: ThemeTokens = {
   ...Tag,
   ...Textarea,
   ...Tooltip,
+  ...Pagination,
 };
 
 export default Token;

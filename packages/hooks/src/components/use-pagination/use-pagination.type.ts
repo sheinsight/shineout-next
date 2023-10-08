@@ -1,5 +1,6 @@
 export interface BasePaginationProps {
-  current: number;
+  current?: number;
+  defaultCurrent?: number;
   total: number;
   pageSize: number;
   span: number;

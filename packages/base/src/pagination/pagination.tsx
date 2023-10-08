@@ -16,7 +16,7 @@ const Pagination = (props: PaginationProps) => {
     total = 0,
     pageSize: pageSizeProp = 10,
     defaultCurrent = 1,
-    current: currentProp = defaultCurrent,
+    current: currentProp,
     span = 5,
     onChange: onChangeProp,
     layout = ['links'],
@@ -30,6 +30,7 @@ const Pagination = (props: PaginationProps) => {
     total,
     span,
     pageSize: pageSizeProp,
+    defaultCurrent,
     current: currentProp,
     onChange: onChangeProp,
   });
@@ -39,6 +40,8 @@ const Pagination = (props: PaginationProps) => {
     [paginationStyle.left]: align === 'left',
     [paginationStyle.center]: align === 'center',
     [paginationStyle.right]: align === 'right',
+    [paginationStyle.small]: size === 'small',
+    [paginationStyle.large]: size === 'large',
   });
 
   if (simple || layout.includes('simple')) {

@@ -4,10 +4,16 @@ import { ObjectType } from '../../common/type';
 import { BasePaginationProps } from './use-pagination.type';
 
 const usePagination = (props: BasePaginationProps) => {
-  const { total: totalProp, pageSize: pageSizeProp, current: currentProp, onChange } = props;
+  const {
+    total: totalProp,
+    pageSize: pageSizeProp,
+    defaultCurrent,
+    current: currentProp,
+    onChange,
+  } = props;
 
   const [total] = useState(totalProp);
-  const [current, setCurrent] = useState(currentProp);
+  const [current, setCurrent] = useState(currentProp !== undefined ? currentProp : defaultCurrent);
   const [pageSize, setPageSize] = useState(pageSizeProp);
 
   const handleChange = (current: number, size?: number) => {
