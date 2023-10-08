@@ -19,6 +19,7 @@ export * from './tag';
 export * from './textarea';
 export * from './tooltip';
 export * from './spin';
+export * from './pagination';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';
