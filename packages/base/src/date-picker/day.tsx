@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDatePick, usePersistFn } from '@sheinx/hooks';
+import { dateUtil, useDatePick, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import { getLocale, useConfig } from '../config';
@@ -126,6 +126,14 @@ const Day = (props: DayProps) => {
 
     const timeStr = func.getTimeStr();
     if (!showLeft && !props.showSelNow) return null;
+    let { format } = props;
+    if (/^[X|x]$/.test(dateUtil.compatibleFmt(format)!)) {
+      format = 'HH:mm:ss';
+    } else {
+      const match = format.match(/[H|h].*/);
+      // eslint-disable-next-line
+      if (match) format = match[0];
+    }
     return (
       <div className={styles?.pickerFooter}>
         {props.type === 'datetime' && (
@@ -133,7 +141,7 @@ const Day = (props: DayProps) => {
             {timeStr && (
               <>
                 <span>{Icons.Clock}</span>
-                <TimePicker {...props} showSelNow={false} showTitle={false} />
+                <TimePicker {...props} showSelNow={false} showTitle={false} format={format} />
                 <span>{func.getTimeStr()}</span>
               </>
             )}
