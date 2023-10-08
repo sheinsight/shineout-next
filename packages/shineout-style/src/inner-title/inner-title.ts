@@ -14,15 +14,10 @@ const innerTitle: JsStyles<Class> = {
   wrapper: {
     width: '100%',
     boxSizing: 'border-box',
-    padding: `${token.inputInnerPaddingY} ${token.inputInnerPaddingX}`,
     position: 'relative',
   },
-  wrapperSmall: {
-    padding: `${token.inputInnerSmallPaddingY} ${token.inputInnerSmallPaddingX}`,
-  },
-  wrapperLarge: {
-    padding: `${token.inputInnerLargePaddingY} ${token.inputInnerLargePaddingX}`,
-  },
+  wrapperSmall: {},
+  wrapperLarge: {},
   wrapperOpen: {
     display: 'block',
   },
@@ -64,18 +59,6 @@ const innerTitle: JsStyles<Class> = {
       opacity: '1',
     },
     display: 'flex',
-    '&& > input, && > div, && > textarea': {
-      padding: '0',
-      '&::after': {
-        content: '',
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        right: '-10px',
-        width: '10px',
-        backgroundColor: '#eee',
-      },
-    },
   },
 };
 

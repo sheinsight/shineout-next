@@ -21,7 +21,12 @@ export interface InputClasses {
   /**
    * 当 status 为 error 时
    */
+  content: string;
   wrapperError: string;
+  wrapperInnerTitle: string;
+  wrapperInnerTitleTop: string;
+  wrapperInnerTitleBottom: string;
+  wrapperPaddingBox: string;
   input: string;
   clear: string;
   clearWrapper: string;
@@ -29,7 +34,6 @@ export interface InputClasses {
   wrapperSmall: string;
   wrapperUnderline: string;
   wrapperNoBorder: string;
-  paddingBox: string;
   info: string;
   infoError: string;
   // group
@@ -63,6 +67,7 @@ export interface SimpleInputProps
    */
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
+  addEnd?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;
   underline?: boolean;
   /**
@@ -114,6 +119,7 @@ export type GetCommonProps<Props, V> = Omit<
   | 'inputRef'
   | 'getStatus'
   | 'renderInput'
+  | 'addEnd'
 > &
   InputCommonProps<V>;
 

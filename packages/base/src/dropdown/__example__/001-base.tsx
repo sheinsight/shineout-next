@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import { Dropdown, DropdownItem } from '@sheinx/base';
-import { useAnimationListStyle, useButtonStyle, useDropdownStyle } from '@sheinx/shineout-style';
+import { useButtonStyle, useDropdownStyle } from '@sheinx/shineout-style';
 
 const data: DropdownItem[] = [
   {
@@ -57,14 +57,12 @@ const data: DropdownItem[] = [
 ];
 
 const App: React.FC = () => {
-  const animationListStyle = useAnimationListStyle();
   const dropdownStyle = useDropdownStyle();
   const buttonStyle = useButtonStyle();
   return (
     <Dropdown
       jssStyle={{
         dropdown: dropdownStyle,
-        animationList: animationListStyle,
         button: buttonStyle,
       }}
       position={'bottom'}

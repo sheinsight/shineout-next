@@ -22,6 +22,7 @@ export * from './common/use-toggle';
 export * from './common/use-position-style';
 export * from './common/use-react-render';
 export * from './common/use-style';
+export * from './common/use-resize';
 export * from './common/use-transform';
 
 //components
@@ -33,6 +34,7 @@ export * from './components/use-check';
 export * from './components/use-button';
 export * from './components/use-popup';
 export * from './components/use-image';
+export * from './components/use-datepicker';
 export * from './components/use-tabs';
 export * from './components/use-pagination';
 

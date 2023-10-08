@@ -17,6 +17,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     popupEl,
     updateKey,
     popupGap,
+    adjust,
     destroy = false,
   } = props;
 
@@ -35,11 +36,12 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     popupEl,
     updateKey,
     popupGap,
+    adjust,
   });
   const childStyle = children.props.style;
   const newStyle = {
-    ...childStyle,
     ...style,
+    ...childStyle,
   };
 
   if (React.isValidElement(children) === false) return null;

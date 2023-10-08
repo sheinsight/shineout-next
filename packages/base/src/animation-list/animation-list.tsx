@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
-import { AnimationListClass, AnimationListProps } from './animation-list.type';
+import { AnimationListProps } from './animation-list.type';
 import { useForkRef } from '@sheinx/hooks';
 
 const getDuration = (duration: AnimationListProps['duration']) => {
@@ -13,15 +12,14 @@ const getDuration = (duration: AnimationListProps['duration']) => {
       return 360;
   }
 };
-
+const mm = 20;
 const AnimationList = (props: AnimationListProps) => {
   const {
     display = 'block',
     children,
     style,
-    jssStyle,
     onRef,
-    show: showPo,
+    show,
     duration,
     type: typePo,
     className: classNamePo,
@@ -29,104 +27,201 @@ const AnimationList = (props: AnimationListProps) => {
     ...forwardProps
   } = props;
 
-  const [show, setShow] = useState(showPo);
-  const { current: context } = useRef({ mounted: false, height: 0, show: showPo });
+  const [innerStyle, setStyle] = useState({
+    display: show ? display : 'none',
+  });
+  const { current: context } = useRef({
+    mounted: false,
+    height: 0,
+    show: show,
+    timer: null as any,
+  });
   const ref = useRef<HTMLDivElement>(null);
   const forkRef = useForkRef(ref, onRef);
   const durationNum = animation ? getDuration(duration) : 0;
   const type = Array.isArray(typePo) ? typePo : [typePo];
-  const needCollapse = type.indexOf('collapse') >= 0;
-  const needTransform = type.indexOf('scale-y') >= 0;
 
   useEffect(() => {
     context.mounted = true;
-    const el = ref.current!;
-    if (showPo || !el) {
-      return;
-    }
-    if (needCollapse) {
-      context.height = el.offsetHeight;
-    }
-    el.style.display = 'none';
-    if (needCollapse) {
-      el.style.overflow = 'hidden';
-      el.style.height = '0px';
-    }
     return () => {
       context.mounted = false;
     };
   }, []);
 
+  const getTransition = () => {
+    let transition = [];
+    if (type.indexOf('fade') >= 0) {
+      transition.push(`opacity ${durationNum}ms ease-in-out`);
+    }
+    if (type.indexOf('scale-y') >= 0) {
+      transition.push(`transform ${durationNum}ms ease-in-out`);
+    }
+    if (type.indexOf('collapse') >= 0) {
+      transition.push(`height ${durationNum}ms ease-in-out`);
+    }
+    return transition.join(' ,');
+  };
+  const transition = getTransition();
+
+  const getElInfo = (el: HTMLDivElement) => {
+    const clone = el.cloneNode(true) as HTMLDivElement;
+    clone.style.height = 'auto';
+    clone.style.opacity = '0';
+    clone.style.display = display;
+    clone.style.pointerEvents = 'none';
+    if (el.parentNode) {
+      el.parentNode!.appendChild(clone);
+      const height = clone.offsetHeight;
+      const width = clone.offsetWidth;
+      el.parentNode!.removeChild(clone);
+      return { height, width };
+    }
+    return { height: 0, width: 0 };
+  };
+
+  const beforeEnter = () => {
+    const newStyle: React.CSSProperties = {
+      display: display,
+    };
+    setStyle((s) => ({
+      ...s,
+      ...newStyle,
+    }));
+    if (type.indexOf('collapse') >= 0) {
+      if (!context.height) {
+        context.height = getElInfo(ref.current!).height;
+      }
+      newStyle.height = '0px';
+      newStyle.overflow = 'hidden';
+    }
+    if (type.includes('fade')) {
+      newStyle.opacity = '0';
+    }
+    if (type.includes('scale-y')) {
+      newStyle.transform = 'scaleY(0)';
+    }
+    setStyle((s) => ({ ...s, ...newStyle }));
+  };
+  const enter = () => {
+    const newStyle: React.CSSProperties = { transition };
+    if (type.indexOf('collapse') >= 0) {
+      newStyle.height = `${context.height}px`;
+    }
+    if (type.includes('fade')) {
+      newStyle.opacity = '1';
+    }
+    if (type.includes('scale-y')) {
+      newStyle.transform = 'scaleY(1)';
+    }
+    setStyle((s) => ({ ...s, ...newStyle }));
+  };
+  const afterEnter = () => {
+    const newStyle: React.CSSProperties = {};
+    if (type.indexOf('collapse') >= 0) {
+      newStyle.height = 'auto';
+    }
+    setStyle((s) => ({ ...s, ...newStyle }));
+  };
+
+  const beforeLeave = () => {
+    const el = ref.current!;
+    const newStyle: React.CSSProperties = {};
+    if (type.indexOf('collapse') >= 0) {
+      context.height = el.offsetHeight;
+      newStyle.height = `${context.height}px`;
+    }
+    if (type.includes('fade')) {
+      newStyle.opacity = '1';
+    }
+    if (type.includes('scale-y')) {
+      newStyle.transform = 'scaleY(1)';
+    }
+    setStyle((s) => ({ ...s, ...newStyle }));
+  };
+  const leave = () => {
+    const newStyle: React.CSSProperties = { transition };
+    if (type.indexOf('collapse') >= 0) {
+      newStyle.height = '0px';
+    }
+    if (type.includes('fade')) {
+      newStyle.opacity = '0';
+    }
+    if (type.includes('scale-y')) {
+      newStyle.transform = 'scaleY(0)';
+    }
+    setStyle((s) => ({ ...s, ...newStyle }));
+  };
+  const afterLeave = () => {
+    const newStyle: React.CSSProperties = {};
+    if (type.indexOf('collapse') >= 0) {
+      newStyle.height = 'auto';
+      newStyle.overflow = '';
+    }
+    if (!context.show) {
+      newStyle.display = 'none';
+    }
+    setStyle((s) => ({ ...s, ...newStyle }));
+  };
+
+  const cleanTimer = () => {
+    clearTimeout(context.timer);
+  };
+
   // 展开
   const showList = () => {
-    const el = ref.current!;
-    if (!el) return;
+    if (!ref.current) return;
     context.show = true;
-    const es = el.style;
-    es.display = display;
-    setTimeout(() => {
-      if (context.mounted) {
-        setShow(true);
-
-        if (needCollapse) {
-          es.overflow = 'hidden';
-          es.height = `${context.height}px`;
-
-          setTimeout(() => {
-            es.height = 'auto';
-            es.overflow = '';
-          }, durationNum);
-        }
-      }
-    }, 10);
+    if (!animation) {
+      setStyle((s) => ({ ...s, display }));
+      return;
+    }
+    beforeEnter();
+    cleanTimer();
+    context.timer = setTimeout(() => {
+      enter();
+      cleanTimer();
+      context.timer = setTimeout(() => {
+        afterEnter();
+      }, durationNum);
+    }, mm);
   };
 
   // 关闭
   const hideList = () => {
     context.show = false;
-    setShow(false);
     if (!ref.current) return;
-    const element = ref.current;
-
-    if (needCollapse) {
-      context.height = element.offsetHeight;
-      element.style.height = `${context.height}px`;
-      element.style.overflow = 'hidden';
-
-      setTimeout(() => {
-        element.style.height = '0px';
-      }, 10);
+    if (!animation) {
+      setStyle((s) => ({ ...s, display: 'none' }));
+      return;
     }
-    setTimeout(() => {
-      if (!context.show && element) {
-        element.style.display = 'none';
-      }
-    }, durationNum);
+    beforeLeave();
+    cleanTimer();
+    context.timer = setTimeout(() => {
+      leave();
+      cleanTimer();
+      context.timer = setTimeout(() => {
+        afterLeave();
+      }, durationNum);
+    }, mm);
   };
 
   useEffect(() => {
-    context.show = true;
-    if (showPo) {
+    if (show) {
       showList();
     } else {
       hideList();
     }
-  }, [showPo]);
-
-  let animationName = durationNum ? `animation-${durationNum}` : '';
-  if (!needTransform) animationName = `fade-${animationName}`;
-  const animationStyle = jssStyle?.animationList || ({} as AnimationListClass);
-  const className = classNames(
-    classNamePo,
-    animationStyle[animationName as keyof AnimationListClass],
-    !!show && animationStyle.show,
-    type.includes('fade') && animationStyle.fade,
-    type.includes('collapse') && animationStyle.collapse,
-    type.includes('scale-y') && animationStyle['scale-y'],
-  );
+  }, [show]);
 
   return (
-    <div ref={forkRef} className={className} data-class={className} style={style} {...forwardProps}>
+    <div
+      ref={forkRef}
+      className={classNamePo}
+      data-sheinx-animation-type={type.join(' ')}
+      data-sheinx-animation-duration={duration}
+      style={{ ...style, ...innerStyle }}
+      {...forwardProps}
+    >
       {children}
     </div>
   );

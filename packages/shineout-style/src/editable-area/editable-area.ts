@@ -10,14 +10,18 @@ export type EditableAreaClass =
   | 'wrapperNoBorder'
   | 'wrapperSmall'
   | 'wrapperLarge'
-  | 'paddingBox'
+  | 'wrapperPaddingBox'
+  | 'wrapperInnerTitle'
+  | 'wrapperInnerTitleTop'
+  | 'wrapperInnerTitleBottom'
+  | 'content'
   | 'clear'
   | 'place'
   | 'placeholder'
   | 'popup'
   | 'popupShow';
 const inputBorder = border('wrapper', {
-  lineHeightDynamic: token.lineHeightDynamic,
+  lineHeight: token.lineHeightDynamic,
   borderRadius: token.textareaBorderRadius,
 
   fontSize: token.textareaFontSize,
@@ -46,15 +50,18 @@ const inputBorder = border('wrapper', {
 
   focusShadow: token.textareaFocusShadow,
   errorFocusShadow: token.textareaErrorFocusShadow,
+
+  innerTitlePaddingY: token.inputInnerPaddingY,
+  innerTitlePaddingX: token.inputInnerPaddingX,
+
+  smallInnerTitlePaddingY: token.inputInnerSmallPaddingY,
+  smallInnerTitlePaddingX: token.inputInnerSmallPaddingX,
+
+  largeInnerTitlePaddingY: token.inputInnerLargePaddingY,
+  largeInnerTitlePaddingX: token.inputInnerLargePaddingX,
 });
 
-const {
-  wrapper,
-  wrapperNoBorder,
-  wrapperFocus: _noFocus,
-  paddingBox,
-  ...resetWrapper
-} = inputBorder;
+const { wrapper, wrapperNoBorder, wrapperFocus: _noFocus, ...resetWrapper } = inputBorder;
 
 const editableAreaStyle: JsStyles<EditableAreaClass> = {
   wrapper: {
@@ -63,8 +70,7 @@ const editableAreaStyle: JsStyles<EditableAreaClass> = {
     ...wrapper,
     whiteSpace: 'nowrap',
   },
-  paddingBox: {
-    ...paddingBox,
+  content: {
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',

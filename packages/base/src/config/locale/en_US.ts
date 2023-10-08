@@ -4,7 +4,7 @@ export default {
     short: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     long: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
   },
-
+  weekShort: 'W',
   startOfWeek: 0,
 
   monthValues: {
