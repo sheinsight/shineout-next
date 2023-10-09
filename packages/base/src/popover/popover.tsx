@@ -19,6 +19,8 @@ const Popover = (props: PopoverProps) => {
   } = props;
   const { current: context } = React.useRef({ rendered: false });
 
+  const popoverStyle = jssStyle?.popover?.();
+
   const render = useRender();
 
   const onVisibleChange = usePersistFn((v: boolean) => {
@@ -48,10 +50,9 @@ const Popover = (props: PopoverProps) => {
   const bindEvents = () => {
     const targetEl = targetRef.current;
     if (!targetEl) return;
-
-    targetEl.addEventListener('mouseenter', events.onMouseEnter);
-    targetEl.addEventListener('mouseleave', events.onMouseLeave);
-    targetEl.addEventListener('click', events.onClick);
+    if (events.onMouseEnter) targetEl.addEventListener('mouseenter', events.onMouseEnter);
+    if (events.onMouseLeave) targetEl.addEventListener('mouseleave', events.onMouseLeave);
+    if (events.onClick) targetEl.addEventListener('click', events.onClick);
     // clickToCancelDelay
     if (trigger === 'hover' && props.clickToCancelDelay && props.mouseEnterDelay) {
       targetEl.addEventListener('click', closePop);
@@ -62,9 +63,9 @@ const Popover = (props: PopoverProps) => {
     const targetEl = targetRef.current;
     if (!targetEl) return;
     const events = getTargetProps();
-    targetEl.removeEventListener('mouseenter', events.onMouseEnter);
-    targetEl.removeEventListener('mouseleave', events.onMouseLeave);
-    targetEl.removeEventListener('click', events.onClick);
+    if (events.onMouseEnter) targetEl.removeEventListener('mouseenter', events.onMouseEnter);
+    if (events.onMouseLeave) targetEl.removeEventListener('mouseleave', events.onMouseLeave);
+    if (events.onClick) targetEl.removeEventListener('click', events.onClick);
     targetEl.removeEventListener('click', closePop);
   };
 
@@ -127,23 +128,19 @@ const Popover = (props: PopoverProps) => {
       zIndex={zIndex}
     >
       <div
-        className={classNames(
-          className,
-          jssStyle?.popover?.wrapper,
-          open && jssStyle?.popover?.wrapperOpen,
-        )}
+        className={classNames(className, popoverStyle?.wrapper, open && popoverStyle?.wrapperOpen)}
         style={colorStyle}
         data-soui-position={position}
         data-soui-type={type}
         ref={popupRef}
         onMouseLeave={events.onMouseLeave}
       >
-        {showArrow && <div className={jssStyle?.popover?.arrow} />}
+        {showArrow && <div className={popoverStyle?.arrow} />}
         <div
           style={style}
           className={classNames(
-            jssStyle?.popover?.content,
-            (typeof childrened === 'string' || props.useTextStyle) && jssStyle?.popover?.text,
+            popoverStyle?.content,
+            (typeof childrened === 'string' || props.useTextStyle) && popoverStyle?.text,
           )}
         >
           <Provider value={providerValue}>{childrened}</Provider>

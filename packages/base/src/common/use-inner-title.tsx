@@ -20,26 +20,25 @@ export interface InnerTitleProps {
   size?: CommonType['size'];
   titleClassName?: string;
   jssStyle?: {
-    innerTitle?: InnerTitleClasses;
+    innerTitle?: () => InnerTitleClasses;
   };
 }
 
 const useInnerTitle = (props: InnerTitleProps) => {
   const { innerTitle, open, placeTitle, size, jssStyle } = props;
+  const innerTitleStyle = jssStyle?.innerTitle?.();
   const renderInput = usePersistFn((el: React.ReactElement) => {
     if (!innerTitle) return el;
     return (
       <div
         className={classNames(
-          jssStyle?.innerTitle?.wrapper,
-          !!open && jssStyle?.innerTitle?.wrapperOpen,
-          size === 'small' && jssStyle?.innerTitle?.wrapperSmall,
-          size === 'large' && jssStyle?.innerTitle?.wrapperLarge,
+          innerTitleStyle?.wrapper,
+          !!open && innerTitleStyle?.wrapperOpen,
+          size === 'small' && innerTitleStyle?.wrapperSmall,
+          size === 'large' && innerTitleStyle?.wrapperLarge,
         )}
       >
-        <div className={classNames(jssStyle?.innerTitle?.title, props.titleClassName)}>
-          {innerTitle}
-        </div>
+        <div className={classNames(innerTitleStyle?.title, props.titleClassName)}>{innerTitle}</div>
         <div
           onMouseDown={(e) => {
             e.preventDefault();
@@ -47,14 +46,14 @@ const useInnerTitle = (props: InnerTitleProps) => {
           }}
           style={open ? { paddingTop: 0, paddingBottom: 0 } : undefined}
           className={classNames(
-            jssStyle?.innerTitle?.title,
-            jssStyle?.innerTitle?.place,
+            innerTitleStyle?.title,
+            innerTitleStyle?.place,
             props.titleClassName,
           )}
         >
           {placeTitle || innerTitle}
         </div>
-        <div className={jssStyle?.innerTitle?.content}>{el}</div>
+        <div className={innerTitleStyle?.content}>{el}</div>
       </div>
     );
   });

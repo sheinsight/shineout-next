@@ -10,6 +10,7 @@ import useInputCommon from './use-input-common';
 export default (props: InputNumberProps) => {
   const commonProps = useInputCommon<InputNumberProps['value'], InputNumberProps>(props);
   const { jssStyle, ...restProps } = commonProps;
+  const inputStyle = jssStyle?.input?.();
 
   const numberFormatParams = {
     onBlur: restProps.onBlur,
@@ -36,7 +37,7 @@ export default (props: InputNumberProps) => {
 
   const addEnd = (
     <React.Fragment>
-      <div className={jssStyle?.input?.numberStep}>
+      <div className={inputStyle?.numberStep}>
         <span
           onMouseDown={(e) => {
             // 阻止默认事件，防止点击按钮时，input失去焦点
@@ -75,7 +76,7 @@ export default (props: InputNumberProps) => {
       {...numberFormatProps}
       jssStyle={jssStyle}
       value={numberFormatProps.value || ''}
-      className={classNames(forwardProps.className, jssStyle?.input?.wrapperNumber)}
+      className={classNames(forwardProps.className, inputStyle?.wrapperNumber)}
       onKeyDown={onKeyDown}
       addEnd={addEnd}
     />

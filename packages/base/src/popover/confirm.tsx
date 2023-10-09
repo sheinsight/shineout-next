@@ -52,12 +52,14 @@ const Confirm = (props: PopoverConfirmProps) => {
     title,
     ...other
   } = props;
+
+  const popoverStyle = jssStyle?.popover?.();
   return (
     <Popover {...other} trigger='click' jssStyle={jssStyle}>
       {(close) => (
-        <div className={jssStyle?.popover?.confirm}>
+        <div className={popoverStyle?.confirm}>
           <Alert
-            className={jssStyle?.popover?.mention}
+            className={popoverStyle?.mention}
             jssStyle={jssStyle}
             type={type as any}
             title={title}
@@ -66,7 +68,7 @@ const Confirm = (props: PopoverConfirmProps) => {
             {children}
           </Alert>
 
-          <div className={jssStyle?.popover?.footer}>
+          <div className={popoverStyle?.footer}>
             <Button
               jssStyle={jssStyle}
               loading={cancel}

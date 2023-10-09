@@ -18,7 +18,7 @@ const TimeScroll = (props: {
   onChange: (date: Date) => void;
 }) => {
   const { mode, jssStyle, times, currentIndex, onChange } = props;
-  const styles = jssStyle?.datePicker;
+  const styles = jssStyle?.datePicker?.();
   const elRef = useRef<HTMLDivElement>(null);
   const { current: context } = useRef<{ timer: NodeJS.Timer | null }>({ timer: null });
   const { height } = useResize({ targetRef: elRef });
@@ -89,7 +89,7 @@ const TimeScroll = (props: {
 };
 
 const Time = (props: TimeProps) => {
-  const styles = props.jssStyle?.datePicker;
+  const styles = props.jssStyle?.datePicker?.();
   const { locale } = useConfig();
   const onChange = usePersistFn((date) => {
     props.setCurrent(date, 'time');

@@ -1,23 +1,15 @@
-import { useMemo } from 'react';
 import { DatePicker } from '@sheinx/base';
-import { useDatePickerStyle, useButtonStyle, useInnerTitleStyle } from '@sheinx/shineout-style';
+import { useButtonStyle, useDatePickerStyle, useInnerTitleStyle } from '@sheinx/shineout-style';
 
 import type { BaseDatePickerProps, DatePickerProps, DatePickerValueType } from './date-picker.type';
 import useFieldCommon from '../hooks/use-field-common';
 
+const jssStyle = {
+  datePicker: useDatePickerStyle,
+  button: useButtonStyle,
+  innerTitle: useInnerTitleStyle,
+};
 const BaseDatePicker = <Value extends DatePickerValueType>(props: BaseDatePickerProps<Value>) => {
-  const datePickerStyle = useDatePickerStyle();
-  const buttonStyle = useButtonStyle();
-  const innerTitleStyle = useInnerTitleStyle();
-  const jssStyle = useMemo(
-    () => ({
-      datePicker: datePickerStyle,
-      button: buttonStyle,
-      innerTitle: innerTitleStyle,
-    }),
-    [datePickerStyle, buttonStyle, innerTitleStyle],
-  );
-
   return <DatePicker jssStyle={jssStyle} {...props} />;
 };
 

@@ -1,9 +1,7 @@
 import { getDefaultContainer } from '../config';
-import { Image } from './image.type';
-import classNames from 'classnames';
+import { Image, ImageProps } from './image.type';
 import ImageGallery from './image-gallery';
 import { util } from '@sheinx/hooks';
-import { ImageClasses } from './image.type';
 
 const { ReactRender, ReactUnmount } = util;
 
@@ -24,23 +22,22 @@ const keyClose = (e: KeyboardEvent) => {
   if (e.keyCode === 27) close();
 };
 
-const getContainer = (classnames: { image?: ImageClasses }) => {
+const getContainer = () => {
   if (container) return container;
   const defaultContainer = getDefaultContainer();
   container = document.createElement('div');
-  container.className = classNames(classnames?.image?.gallery);
   defaultContainer.appendChild(container);
 
   return container;
 };
 
 const showGallery = (
-  jssStyle: { image?: ImageClasses },
+  jssStyle: ImageProps['jssStyle'],
   images: Image | Image[],
   current: number = 0,
 ) => {
   const Images = !Array.isArray(images) ? [images] : images;
-  const container = getContainer(jssStyle);
+  const container = getContainer();
 
   document.addEventListener('keydown', keyClose);
 

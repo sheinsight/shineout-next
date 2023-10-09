@@ -21,7 +21,7 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
   const { jssStyle, range, type = 'date', border = true } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
 
-  const styles = jssStyle?.datePicker;
+  const styles = jssStyle?.datePicker?.();
   const [focused, setFocused] = React.useState(false);
   let listPosition: string = props.position || 'bottom-left';
   if (horizontalPosition.includes(listPosition)) {

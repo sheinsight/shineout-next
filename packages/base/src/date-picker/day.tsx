@@ -13,7 +13,7 @@ const Day = (props: DayProps) => {
   const { jssStyle } = props;
   const { locale } = useConfig();
 
-  const styles = jssStyle?.datePicker;
+  const styles = jssStyle?.datePicker?.();
 
   const areaType = props.type === 'week' ? 'week' : 'day';
 

@@ -28,8 +28,8 @@ export interface CheckboxClasses {
 }
 
 export interface CheckboxStyle {
-  checkbox?: CheckboxClasses;
-  input?: InputClasses;
+  checkbox?: () => CheckboxClasses;
+  input?: () => InputClasses;
 }
 
 export interface SimpleCheckboxProps

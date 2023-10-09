@@ -33,7 +33,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
     target: scrollRef.current,
   });
 
-  const headerStyle = jssStyle?.tabs || ({} as TabsClasses);
+  const headerStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
   const headerClass = classNames(headerStyle.header, {});
   const headerWrapperClass = classNames(headerStyle.headerWrapper, {});
 
@@ -42,8 +42,10 @@ const TabsHeader = (props: TabsHeaderProps) => {
   useEffect(() => {
     if (!shouldScroll) return;
     const getActiveTabOffest = () => {
-      const currentTab = tabRef.current[active];
+      const currentTab = tabRef.current[active!];
       if (!currentTab) return 0;
+      if (!headerRef.current) return 0;
+      if (!scrollRef.current) return 0;
       const currentOffest = getRectDiff(currentTab, headerRef.current);
       const scrollOffest = getRectDiff(scrollRef.current, headerRef.current);
       if (['top-right', 'bottom-right'].includes(getPosition!)) {

@@ -7,7 +7,7 @@ import PickerTitle from './pickerTitle';
 
 const Quarter = (props: QuarterProps) => {
   const { jssStyle } = props;
-  const styles = jssStyle?.datePicker;
+  const styles = jssStyle?.datePicker?.();
 
   const setCurrent = usePersistFn((date) => {
     props.setCurrent(date, 'quarter');
@@ -69,7 +69,7 @@ const Quarter = (props: QuarterProps) => {
               }
         }
       >
-        <div className={jssStyle?.datePicker?.pickerCellContent}>
+        <div className={styles?.pickerCellContent}>
           <span>Q{func.getQuarterStr(item)}</span>
         </div>
       </td>
@@ -80,16 +80,16 @@ const Quarter = (props: QuarterProps) => {
     <div
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
-      className={classNames(jssStyle?.datePicker?.quarterPicker, jssStyle?.datePicker?.picker)}
+      className={classNames(styles?.quarterPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={jssStyle?.datePicker?.pickerHeader}>
-        <div className={jssStyle?.datePicker?.pickerHeaderLeft}>
-          <span className={jssStyle?.datePicker?.pickerHeaderIcon} onClick={func.handlePrev}>
+      <div className={styles?.pickerHeader}>
+        <div className={styles?.pickerHeaderLeft}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrev}>
             {Icons.AngleDoubleLeft}
           </span>
         </div>
-        <div className={jssStyle?.datePicker?.pickerHeaderMid}>
+        <div className={styles?.pickerHeaderMid}>
           <span
             className={styles?.pickerHeaderInfo}
             onClick={() => {
@@ -99,18 +99,18 @@ const Quarter = (props: QuarterProps) => {
             {currentYear}
           </span>
         </div>
-        <div className={jssStyle?.datePicker?.pickerHeaderRight}>
-          <span className={jssStyle?.datePicker?.pickerHeaderIcon} onClick={func.handleNext}>
+        <div className={styles?.pickerHeaderRight}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handleNext}>
             {Icons.AngleDoubleRight}
           </span>
         </div>
       </div>
-      <div className={jssStyle?.datePicker?.pickerBody}>
+      <div className={styles?.pickerBody}>
         <table>
           <tbody>
             {Array.from({ length: rowNum }).map((_, index) => {
               return (
-                <tr key={index} className={jssStyle?.datePicker?.pickerRow}>
+                <tr key={index} className={styles?.pickerRow}>
                   {quarter.slice(index * colNum, (index + 1) * colNum).map((item, i) => {
                     return renderQuarter(item, index * colNum + i);
                   })}

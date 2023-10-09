@@ -25,9 +25,9 @@ export interface PopoverClasses {
 
 export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
-    popover?: PopoverClasses;
-    alert?: AlertClasses;
-    button?: ButtonClasses;
+    popover?: () => PopoverClasses;
+    alert?: () => AlertClasses;
+    button?: () => ButtonClasses;
   };
   position?: BasePopupProps['position'];
   priorityDirection?: BasePopupProps['priorityDirection'];

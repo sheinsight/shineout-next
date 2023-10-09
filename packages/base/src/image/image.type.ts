@@ -54,7 +54,7 @@ export type Image = {
 
 export interface ImageGalleryProps {
   jssStyle: {
-    image?: ImageClasses;
+    image?: () => ImageClasses;
   };
   images: Image[];
   onClose: () => void;
@@ -74,7 +74,7 @@ export interface ImageBaseProps
     Pick<CommonType, 'style' | 'className'>,
     Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'onError' | 'placeholder'> {
   jssStyle: {
-    image?: ImageClasses;
+    image?: () => ImageClasses;
   };
   renderImage?: (imageEl: React.ReactNode) => React.ReactElement;
   renderError?: (errorEl: React.ReactNode) => React.ReactElement;

@@ -8,6 +8,7 @@ import useWithFormConfig from '../common/use-with-form-config';
 export default (props: InputGroupProps) => {
   const [focus, setFocus] = React.useState(false);
   const { jssStyle } = props;
+  const inputStyle = jssStyle?.input?.();
   const ref = useRef({
     eventMap: new WeakMap(),
     propsMap: new WeakMap(),
@@ -37,11 +38,11 @@ export default (props: InputGroupProps) => {
   const { children, className, width, style } = props;
   const rootClass = classNames(
     className,
-    jssStyle?.input?.group,
-    size === 'small' && jssStyle?.input?.groupSmall,
-    size === 'large' && jssStyle?.input?.groupLarge,
-    !!disabled && jssStyle?.input?.groupDisabled,
-    !!focus && jssStyle?.input?.groupFocus,
+    inputStyle?.group,
+    size === 'small' && inputStyle?.groupSmall,
+    size === 'large' && inputStyle?.groupLarge,
+    !!disabled && inputStyle?.groupDisabled,
+    !!focus && inputStyle?.groupFocus,
   );
   return (
     <div className={rootClass} style={{ width, ...style }} data-soui-type={'input-group'}>

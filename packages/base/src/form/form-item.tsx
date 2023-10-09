@@ -6,6 +6,7 @@ import { FormItemProps } from './form-item.type';
 
 export default (props: FormItemProps) => {
   const { children, jssStyle, className, style, label, tip, required, ...rest } = props;
+  const formItemClasses = jssStyle?.formItem?.();
   const { Provider, ProviderValue, labelConfig, errors } = useFormItem();
   const { labelWidth, labelAlign, labelVerticalAlign, inline, keepErrorHeight } = {
     ...labelConfig,
@@ -18,39 +19,42 @@ export default (props: FormItemProps) => {
     <div
       className={classNames(
         className,
-        jssStyle?.wrapper,
-        labelAlign === 'top' && jssStyle?.wrapperLabelTop,
+        formItemClasses?.wrapper,
+        labelAlign === 'top' && formItemClasses?.wrapperLabelTop,
         labelAlign !== 'top' &&
           labelVerticalAlign === 'middle' &&
-          jssStyle?.wrapperLabelVerticalMiddle,
+          formItemClasses?.wrapperLabelVerticalMiddle,
         labelAlign !== 'top' &&
           labelVerticalAlign === 'bottom' &&
-          jssStyle?.wrapperLabelVerticalBottom,
-        inline && jssStyle?.wrapperInline,
-        keepErrorHeight && jssStyle?.wrapperKeepHeight,
-        required && jssStyle?.wrapperRequired,
-        (showError || tip) && jssStyle?.wrapperTip,
+          formItemClasses?.wrapperLabelVerticalBottom,
+        inline && formItemClasses?.wrapperInline,
+        keepErrorHeight && formItemClasses?.wrapperKeepHeight,
+        required && formItemClasses?.wrapperRequired,
+        (showError || tip) && formItemClasses?.wrapperTip,
       )}
       style={style}
     >
       {label !== undefined ? (
         <div
-          className={classNames(jssStyle?.label, labelAlign === 'left' && jssStyle?.labelLeft)}
+          className={classNames(
+            formItemClasses?.label,
+            labelAlign === 'left' && formItemClasses?.labelLeft,
+          )}
           style={{ width: labelWidth }}
         >
           {label}
         </div>
       ) : null}
-      <div className={jssStyle?.control}>
+      <div className={formItemClasses?.control}>
         <Provider value={ProviderValue}>{children}</Provider>
         {showError && (
-          <div className={jssStyle?.error}>
+          <div className={formItemClasses?.error}>
             {errors.map((msg, index) => (
               <div key={index}>{msg}</div>
             ))}
           </div>
         )}
-        {!!tip && !showError && <div className={jssStyle?.tip}>{tip}</div>}
+        {!!tip && !showError && <div className={formItemClasses?.tip}>{tip}</div>}
       </div>
     </div>
   );

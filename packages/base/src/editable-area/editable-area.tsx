@@ -42,7 +42,7 @@ const EditableArea = (props: EditableAreaProps) => {
     bordered = false,
   } = props;
 
-  const editableAreaStyle = jssStyle?.editableArea;
+  const editableAreaStyle = jssStyle?.editableArea?.();
 
   const status = error ? 'error' : props.status;
 
@@ -164,7 +164,7 @@ const EditableArea = (props: EditableAreaProps) => {
           onChange('');
           updateShowTextarea(true);
         }}
-        className={jssStyle?.editableArea?.clear}
+        className={editableAreaStyle?.clear}
       >
         {Icons.CloseCircle}
       </span>

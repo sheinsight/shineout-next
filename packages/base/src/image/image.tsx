@@ -3,7 +3,7 @@ import { getDefaultContainer } from '../config';
 import classNames from 'classnames';
 import React from 'react';
 import showGallery from './image-event';
-import { ImageProps, ImageClasses } from './image.type';
+import { ImageClasses, ImageProps } from './image.type';
 import ImageGroup from './image-group';
 import Icons from '../icons';
 
@@ -46,7 +46,7 @@ const Image = (props: ImageProps) => {
     ...rest,
   });
 
-  const imageStyle = jssStyle.image || ({} as ImageClasses);
+  const imageStyle = jssStyle.image?.() || ({} as ImageClasses);
   const shouldPreview = href && target === '_modal' && status !== ERROR && status !== PLACEHOLDER;
   const shouldDownload = target === '_download';
 

@@ -6,11 +6,13 @@
  */
 import React from 'react';
 import { DatePicker } from '@sheinx/base';
-import { useDatePickerStyle, useButtonStyle } from '@sheinx/shineout-style';
+import { useButtonStyle, useDatePickerStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const datePickerStyle = useDatePickerStyle();
-  const buttonStyle = useButtonStyle();
+  const jssStyle = {
+    datePicker: useDatePickerStyle,
+    button: useButtonStyle,
+  };
   const [value, setValue] = React.useState(['', '']);
   return (
     <div>
@@ -30,7 +32,7 @@ export default () => {
         ]}
         type={'datetime'}
         allowSingle
-        jssStyle={{ datePicker: datePickerStyle, button: buttonStyle }}
+        jssStyle={jssStyle}
         onChange={(v) => {
           setValue(v);
         }}

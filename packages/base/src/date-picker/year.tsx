@@ -7,7 +7,7 @@ import PickerTitle from './pickerTitle';
 
 const Year = (props: YearProps) => {
   const { jssStyle } = props;
-  const styles = jssStyle?.datePicker;
+  const styles = jssStyle?.datePicker?.();
   const shouldChange = props.type === 'year';
   const changeMode = usePersistFn(() => {
     props.setMode('month');
@@ -72,7 +72,7 @@ const Year = (props: YearProps) => {
               }
         }
       >
-        <div className={jssStyle?.datePicker?.pickerCellContent}>
+        <div className={styles?.pickerCellContent}>
           <span>{func.getYearStr(item)}</span>
         </div>
       </td>
@@ -83,32 +83,32 @@ const Year = (props: YearProps) => {
     <div
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
-      className={classNames(jssStyle?.datePicker?.yearPicker, jssStyle?.datePicker?.picker)}
+      className={classNames(styles?.yearPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={jssStyle?.datePicker?.pickerHeader}>
-        <div className={jssStyle?.datePicker?.pickerHeaderLeft}>
-          <span className={jssStyle?.datePicker?.pickerHeaderIcon} onClick={func.handlePrev}>
+      <div className={styles?.pickerHeader}>
+        <div className={styles?.pickerHeaderLeft}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrev}>
             {Icons.AngleDoubleLeft}
           </span>
         </div>
-        <div className={jssStyle?.datePicker?.pickerHeaderMid}>
+        <div className={styles?.pickerHeaderMid}>
           <span>{currentStart}</span>
           <i>-</i>
           <span>{currentEnd}</span>
         </div>
-        <div className={jssStyle?.datePicker?.pickerHeaderRight}>
-          <span className={jssStyle?.datePicker?.pickerHeaderIcon} onClick={func.handleNext}>
+        <div className={styles?.pickerHeaderRight}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handleNext}>
             {Icons.AngleDoubleRight}
           </span>
         </div>
       </div>
-      <div className={jssStyle?.datePicker?.pickerBody}>
+      <div className={styles?.pickerBody}>
         <table>
           <tbody>
             {Array.from({ length: rowNum }).map((_, index) => {
               return (
-                <tr key={index} className={jssStyle?.datePicker?.pickerRow}>
+                <tr key={index} className={styles?.pickerRow}>
                   {years.slice(index * colNum, (index + 1) * colNum).map((item, i) => {
                     return renderYear(item, index * colNum + i);
                   })}

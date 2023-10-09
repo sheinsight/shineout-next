@@ -3,10 +3,9 @@ import { Checkbox } from '@sheinx/base';
 import { useCheckboxStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const style = useCheckboxStyle();
   return (
     <div>
-      <Checkbox jssStyle={{ checkbox: style }}>yellow</Checkbox>
+      <Checkbox jssStyle={{ checkbox: useCheckboxStyle }}>yellow</Checkbox>
     </div>
   );
 };
