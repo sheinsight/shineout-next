@@ -10,6 +10,7 @@ export * from './icon';
 export * from './image';
 export * from './inner-title';
 export * from './input';
+export * from './message';
 export * from './popover';
 export * from './radio';
 export * from './spin';

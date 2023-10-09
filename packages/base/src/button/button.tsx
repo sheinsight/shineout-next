@@ -29,7 +29,7 @@ const Button = (props: ButtonProps) => {
     loading,
     ...rest,
   });
-  const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
+  const buttonStyle = jssStyle?.button?.() || ({} as ButtonClasses);
 
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
 

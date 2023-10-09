@@ -47,8 +47,8 @@ export type TabsPositionType =
 
 export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' | 'style'> {
   jssStyle: {
-    tabs: TabsClasses;
-    button: ButtonClasses;
+    tabs: () => TabsClasses;
+    button: () => ButtonClasses;
   };
   lazy?: boolean;
   shape?: TabsShapeType;

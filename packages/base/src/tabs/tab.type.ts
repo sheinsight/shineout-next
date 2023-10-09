@@ -7,8 +7,8 @@ export interface TabData {
   disabled?: boolean;
 
   jssStyle: {
-    tabs: TabsClasses;
-    button: ButtonClasses;
+    tabs: () => TabsClasses;
+    button: () => ButtonClasses;
   };
 }
 

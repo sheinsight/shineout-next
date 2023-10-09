@@ -5,7 +5,7 @@ import { SwitchProps } from './switch.type';
 
 const Switch = (props: SwitchProps) => {
   const { jssStyle, content, size, loading, className, style } = props;
-
+  const switchClasses = jssStyle?.switch?.();
   const disabled = props.disabled || props.loading;
 
   const { value, onChange } = useInputAble({
@@ -35,11 +35,11 @@ const Switch = (props: SwitchProps) => {
 
   const rootClassName = classNames(
     className,
-    jssStyle?.switch?.wrapper,
-    !!checked && jssStyle?.switch?.wrapperChecked,
-    disabled && jssStyle?.switch?.wrapperDisabled,
-    size === 'small' && jssStyle?.switch?.wrapperSmall,
-    size === 'large' && jssStyle?.switch?.wrapperLarge,
+    switchClasses?.wrapper,
+    !!checked && switchClasses?.wrapperChecked,
+    disabled && switchClasses?.wrapperDisabled,
+    size === 'small' && switchClasses?.wrapperSmall,
+    size === 'large' && switchClasses?.wrapperLarge,
   );
 
   const rootProps = getRootProps({ className: rootClassName, style });
@@ -48,10 +48,10 @@ const Switch = (props: SwitchProps) => {
   return (
     <button type={'button'} role={'switch'} {...rootProps}>
       <input {...inputProps} type={'checkbox'} />
-      <div className={jssStyle?.switch?.indicator}>
-        {loading ? <div className={jssStyle?.switch?.loading} /> : null}
+      <div className={switchClasses?.indicator}>
+        {loading ? <div className={switchClasses?.loading} /> : null}
       </div>
-      <div className={jssStyle?.switch?.content}>{checked ? checkedContent : unCheckedContent}</div>
+      <div className={switchClasses?.content}>{checked ? checkedContent : unCheckedContent}</div>
     </button>
   );
 };

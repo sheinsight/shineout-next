@@ -101,9 +101,9 @@ export interface DatePickerProps<Value extends DatePickerValueType>
   extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'placeTitle'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle?: {
-    datePicker?: DatePickerClasses;
-    button?: ButtonClasses;
-    innerTitle?: InnerTitleClasses;
+    datePicker?: () => DatePickerClasses;
+    button?: () => ButtonClasses;
+    innerTitle?: () => InnerTitleClasses;
   };
 
   /**

@@ -9,6 +9,7 @@ export { default as Form } from './form';
 export { default as Icon } from './icon';
 export { default as Image } from './image';
 export { default as Input } from './input';
+export { default as Message } from './message';
 export { default as Popover } from './popover';
 export { default as Radio } from './radio';
 export { default as Rule } from './rule';

@@ -4,7 +4,7 @@ import { DividerProps } from './divider.type';
 
 const Divider = (props: DividerProps) => {
   const { jssStyle, mode = 'horizontal', children, orientation = 'center' } = props;
-  const styles = jssStyle?.divider;
+  const styles = jssStyle?.divider?.();
   const showText = mode === 'horizontal' && children;
   const mc = classNames(
     styles?.wrapper,

@@ -23,5 +23,7 @@ export interface FormItemProps extends FormLabelConfig, Pick<CommonType, 'classN
   tip?: React.ReactNode;
   required?: boolean;
   children?: React.ReactNode;
-  jssStyle?: FormItemClasses;
+  jssStyle?: {
+    formItem?: () => FormItemClasses;
+  };
 }

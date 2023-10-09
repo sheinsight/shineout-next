@@ -1,16 +1,24 @@
 import { Form, FormField, FormFieldSet, FormItem, Input } from '@sheinx/base';
-import { useFormItemStyle, useFormStyle, useInputStyle } from '@sheinx/shineout-style';
+import {
+  useFormItemStyle,
+  useFormStyle,
+  useInnerTitleStyle,
+  useInputStyle,
+} from '@sheinx/shineout-style';
 import React from 'react';
 
 export default () => {
-  const inputStyle = useInputStyle();
-  const formStyle = useFormStyle();
-  const itemStyle = useFormItemStyle();
+  const jssStyle = {
+    input: useInputStyle,
+    form: useFormStyle,
+    formItem: useFormItemStyle,
+    innerTitle: useInnerTitleStyle,
+  };
   return (
     <div>
       <Form
         labelAlign={'right'}
-        jssStyle={formStyle}
+        jssStyle={jssStyle}
         onSubmit={(v) => {
           console.log('form submit', v);
         }}
@@ -21,22 +29,16 @@ export default () => {
           console.log('form reset');
         }}
       >
-        <FormItem jssStyle={itemStyle} label={'friends'}>
+        <FormItem jssStyle={jssStyle} label={'friends'}>
           <FormFieldSet name={'friends'} defaultValue={[{ name: 'leo', age: 20 }]}>
             {(ii) => {
               return (
-                <FormItem jssStyle={itemStyle} style={{ display: 'flex', marginBottom: '10px' }}>
+                <FormItem jssStyle={jssStyle} style={{ display: 'flex', marginBottom: '10px' }}>
                   <FormField name={'name'} defaultValue={'leo'}>
-                    <Input
-                      jssStyle={{ input: inputStyle }}
-                      style={{ width: 180, marginInlineEnd: 8 }}
-                    />
+                    <Input jssStyle={jssStyle} style={{ width: 180, marginInlineEnd: 8 }} />
                   </FormField>
                   <FormField name={'age'} defaultValue={'18'}>
-                    <Input
-                      jssStyle={{ input: inputStyle }}
-                      style={{ width: 180, marginInlineEnd: 8 }}
-                    />
+                    <Input jssStyle={jssStyle} style={{ width: 180, marginInlineEnd: 8 }} />
                   </FormField>
                   <span
                     onClick={() => {

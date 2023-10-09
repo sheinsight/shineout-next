@@ -9,10 +9,9 @@ import { Divider } from '@sheinx/base';
 import { useDividerStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const dividerStyle = useDividerStyle();
   return (
     <div>
-      <Divider jssStyle={{ divider: dividerStyle }} />
+      <Divider jssStyle={{ divider: useDividerStyle }} />
     </div>
   );
 };

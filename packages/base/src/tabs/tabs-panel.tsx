@@ -6,6 +6,8 @@ import { TabsPanelProps } from './tabs-panel.type';
 
 const TabsPanel = (props: TabsPanelProps) => {
   const { children, id, jssStyle } = props;
+  const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
+
   const { active, lazy } = useTabsContext();
   const isActive = active === id;
   const keekAlive = useRef(false);
@@ -17,7 +19,6 @@ const TabsPanel = (props: TabsPanelProps) => {
   // 首次不加载，一旦加载后常驻
   keekAlive.current = true;
 
-  const panelStyle = jssStyle?.tabs || ({} as TabsClasses);
   const panelClass = classNames(panelStyle.panel, {
     [panelStyle.show]: isActive,
   });

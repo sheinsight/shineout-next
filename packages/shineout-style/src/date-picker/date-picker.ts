@@ -10,6 +10,7 @@ export type DatePickerClass =
   | 'wrapperDisabled'
   | 'wrapperError'
   | 'wrapperNoBorder'
+  | 'wrapperUnderline'
   | 'wrapperRange'
   | 'wrapperPaddingBox'
   | 'wrapperInnerTitle'

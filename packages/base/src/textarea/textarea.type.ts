@@ -42,7 +42,7 @@ export interface SimpleTextareaProps
   extends BaseTextareaProps,
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
   jssStyle?: {
-    textarea?: TextareaClasses;
+    textarea?: () => TextareaClasses;
   };
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
@@ -74,9 +74,9 @@ export interface TextareaProps
   innerTitle?: React.ReactNode;
   placeTitle?: React.ReactNode;
   jssStyle?: {
-    textarea?: TextareaClasses;
-    popover?: PopoverClasses;
-    innerTitle?: InnerTitleClasses;
+    textarea?: () => TextareaClasses;
+    popover?: () => PopoverClasses;
+    innerTitle?: () => InnerTitleClasses;
   };
   autosize?: boolean;
   info?: number | ((value: string | undefined) => React.ReactNode | Error);

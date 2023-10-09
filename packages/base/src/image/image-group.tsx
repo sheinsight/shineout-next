@@ -1,6 +1,6 @@
-import React, { cloneElement, Children } from 'react';
+import React, { Children, cloneElement } from 'react';
 import { ImageGroupProps } from './image-group.type';
-import { ImageProps, Image } from './image.type';
+import { Image, ImageProps } from './image.type';
 import showGallery from './image-event';
 import classNames from 'classnames';
 import { useImageGroup } from '@sheinx/hooks';
@@ -9,12 +9,13 @@ import Icons from '../icons';
 const ImageGroup = (props: ImageGroupProps) => {
   const { jssStyle, children, target = '_modal', pile, showCount = false, ...rest } = props;
   const { getGroupItemProps, getPileProps } = useImageGroup(props);
+  const imageClasses = jssStyle?.image?.();
 
   const targetSet = pile ? '_modal' : target;
   const shouldPreview = targetSet === '_modal';
 
-  const groupClass = classNames(jssStyle?.image.group, {
-    [jssStyle?.image.groupPile]: pile,
+  const groupClass = classNames(imageClasses?.group, {
+    [imageClasses?.groupPile]: pile,
   });
 
   // 图片组成员点击事件
@@ -33,7 +34,7 @@ const ImageGroup = (props: ImageGroupProps) => {
   // 渲染图片总数角标
   const renderGroupCount = () => {
     return (
-      <div className={classNames(jssStyle?.image.groupCount)}>
+      <div className={classNames(imageClasses?.groupCount)}>
         {Icons.ImageCount}
         <span>{Children.count(children)}</span>
       </div>
@@ -48,7 +49,7 @@ const ImageGroup = (props: ImageGroupProps) => {
     if (index > 2) return null;
 
     const pileProps = getPileProps(Child, index, {
-      className: classNames(jssStyle?.image.groupPileItem),
+      className: classNames(imageClasses?.groupPileItem),
     });
     return <div key={index} {...pileProps}></div>;
   };

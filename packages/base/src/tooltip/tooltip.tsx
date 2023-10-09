@@ -16,6 +16,8 @@ const Tooltip = (props: TooltipProps) => {
     style,
   } = props;
 
+  const tooltipClasses = jssStyle?.tooltip?.();
+
   const childrenProps = isValidElement(children)
     ? (children?.props as { [name: string]: any })
     : {};
@@ -38,7 +40,7 @@ const Tooltip = (props: TooltipProps) => {
   if (!tip) return children;
 
   const inner = disabledChild ? (
-    <span className={jssStyle?.tooltip?.target} style={{ cursor: 'not-allowed' }}>
+    <span className={tooltipClasses?.target} style={{ cursor: 'not-allowed' }}>
       {cloneElement(children as React.ReactElement, {
         style: { ...childrenProps.style, pointerEvents: 'none' },
       })}
@@ -73,14 +75,14 @@ const Tooltip = (props: TooltipProps) => {
         <div
           className={classNames(
             className,
-            jssStyle?.tooltip?.wrapper,
-            open && jssStyle?.tooltip?.wrapperOpen,
+            tooltipClasses?.wrapper,
+            open && tooltipClasses?.wrapperOpen,
           )}
           data-soui-position={position}
           ref={popupRef}
           onMouseLeave={events.onMouseLeave}
         >
-          <div style={style} className={classNames(jssStyle?.tooltip?.content)}>
+          <div style={style} className={classNames(tooltipClasses?.content)}>
             {tip}
           </div>
         </div>

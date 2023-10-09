@@ -31,6 +31,9 @@ import { ImageTokens } from './image/type';
 import Input from './input';
 import { InputTokens } from './input/type';
 
+import Message from './message';
+import { MessageTokens } from './message/type';
+
 import Popover from './popover';
 import { PopoverTokens } from './popover/type';
 
@@ -66,6 +69,7 @@ export type ThemeTokens = AlertTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
+  MessageTokens &
   PopoverTokens &
   RadioTokens &
   SpinTokens &
@@ -87,6 +91,7 @@ const Token: ThemeTokens = {
   ...Icon,
   ...Image,
   ...Input,
+  ...Message,
   ...Popover,
   ...Radio,
   ...Spin,

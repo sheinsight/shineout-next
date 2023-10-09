@@ -16,9 +16,10 @@ const Tab = (props: TabProps, ref: any) => {
     inactiveBackground,
   } = useTabsContext();
 
-  const tabsStyle = jssStyle?.tabs || ({} as TabsClasses);
-  const tabClass = classNames(tabsStyle.tab, {});
+  const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
+
+  const tabClass = classNames(tabsStyle.tab, {});
 
   const isActive = active === id;
 

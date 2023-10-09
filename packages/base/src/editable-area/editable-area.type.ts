@@ -28,9 +28,9 @@ export interface EditableAreaClasses {
 
 export interface EditableAreaProps extends Pick<CommonType, 'className' | 'style' | 'status'> {
   jssStyle?: {
-    editableArea: EditableAreaClasses;
-    textarea?: TextareaClasses;
-    innerTitle?: InnerTitleClasses;
+    editableArea: () => EditableAreaClasses;
+    textarea?: () => TextareaClasses;
+    innerTitle?: () => InnerTitleClasses;
   };
 
   beforeChange?: (value: string) => void | string;

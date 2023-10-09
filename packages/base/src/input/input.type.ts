@@ -51,9 +51,9 @@ export interface InputClasses {
 }
 
 export interface InputStyle {
-  input?: InputClasses;
-  innerTitle?: InnerTitleClasses;
-  popover?: PopoverClasses;
+  input?: () => InputClasses;
+  innerTitle?: () => InnerTitleClasses;
+  popover?: () => PopoverClasses;
 }
 
 export interface SimpleInputProps

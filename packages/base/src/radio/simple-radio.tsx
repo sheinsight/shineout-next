@@ -6,16 +6,17 @@ import icons from '../icons';
 
 const Radio = (props: SimpleRadioProps) => {
   const { jssStyle, className, style, children, renderRadio, size, ...rest } = props;
+  const radioClasses = jssStyle?.radio?.();
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
   });
   const rootClass = classNames([
-    jssStyle?.radio?.wrapper,
+    radioClasses?.wrapper,
     className,
-    !!disabled && jssStyle?.radio?.wrapperDisabled,
-    !!checked && jssStyle?.radio?.wrapperChecked,
-    size === 'small' && jssStyle?.radio?.wrapperSmall,
-    size === 'large' && jssStyle?.radio?.wrapperLarge,
+    !!disabled && radioClasses?.wrapperDisabled,
+    !!checked && radioClasses?.wrapperChecked,
+    size === 'small' && radioClasses?.wrapperSmall,
+    size === 'large' && radioClasses?.wrapperLarge,
   ]);
 
   const inputProps = getInputProps();
@@ -28,12 +29,12 @@ const Radio = (props: SimpleRadioProps) => {
   const simpleRadio = (
     <div {...rootProps}>
       <input {...inputProps} type='radio' />
-      <span className={jssStyle?.radio?.indicatorWrapper}>
-        <span {...indicatorProps} className={jssStyle?.radio?.indicator}>
+      <span className={radioClasses?.indicatorWrapper}>
+        <span {...indicatorProps} className={radioClasses?.indicator}>
           {checked ? icons.RadioChecked : icons.RadioUnChecked}
         </span>
       </span>
-      <span className={jssStyle?.radio?.desc}>{children}</span>
+      <span className={radioClasses?.desc}>{children}</span>
     </div>
   );
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { AlertProps, AlertClasses } from './alert.type';
+import { AlertClasses, AlertProps } from './alert.type';
 import Icons from '../icons';
 
 const HIDE = 0;
@@ -30,7 +30,7 @@ const Alert = (props: AlertProps) => {
     warning: Icons.Warning,
     danger: Icons.Danger,
   };
-  const alertStyle = jssStyle?.alert || ({} as AlertClasses);
+  const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
   const rootClass = classNames(className, alertStyle.alert, {
     [alertStyle[type]]: true,
     [alertStyle.widthTitle]: title,
@@ -63,6 +63,7 @@ const Alert = (props: AlertProps) => {
     if (onClose && typeof onClose === 'function') {
       onClose(e);
     }
+    if (closable === 'only') return;
     setDismiss(PENDING);
 
     setTimeout(() => {

@@ -35,6 +35,11 @@ export interface ButtonClasses {
   spin: string;
 }
 
+interface ButtonStyle {
+  button?: () => ButtonClasses;
+  spin?: () => SpinClasses;
+}
+
 export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'> {
   type: ButtonType;
   mode: ButtonMode;
@@ -42,10 +47,7 @@ export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'>
   text?: boolean;
   outline?: boolean;
   disabled?: boolean;
-  jssStyle?: {
-    button?: ButtonClasses;
-    spin?: SpinClasses;
-  };
+  jssStyle?: ButtonStyle;
 }
 
 export interface ButtonBaseProps
@@ -53,8 +55,8 @@ export interface ButtonBaseProps
     Pick<CommonType, 'style' | 'className'>,
     Omit<React.TextareaHTMLAttributes<HTMLButtonElement>, 'onClick'> {
   jssStyle?: {
-    button?: ButtonClasses;
-    spin?: SpinClasses;
+    button?: () => ButtonClasses;
+    spin?: () => SpinClasses;
   };
   children?: React.ReactNode;
   renderButton?: (buttonEl: React.ReactNode) => React.ReactElement;
@@ -70,10 +72,7 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
   mode?: ButtonMode;
   type?: ButtonType;
   children: React.ReactNode;
-  jssStyle?: {
-    button?: ButtonClasses;
-    spin?: SpinClasses;
-  };
+  jssStyle?: ButtonStyle;
 }
 
 export type ButtonProps = ButtonBaseProps;

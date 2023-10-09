@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useImageGallery } from '@sheinx/hooks';
 import Magnify from './image-magnify';
-import { ImageGalleryProps, Image, MagnifyPositionType, ImageClasses } from './image.type';
+import { Image, ImageClasses, ImageGalleryProps, MagnifyPositionType } from './image.type';
 import Icons from '../icons';
 
 const ImageModal = (props: ImageGalleryProps) => {
@@ -19,11 +19,11 @@ const ImageModal = (props: ImageGalleryProps) => {
     images,
   });
 
-  const galleryStyle = jssStyle.image || ({} as ImageClasses);
+  const galleryStyle = jssStyle?.image?.() || ({} as ImageClasses);
 
-  const overlayClass = classNames(jssStyle.image?.overlay);
-  const magnifyClass = classNames(jssStyle.image?.magnify);
-  const closeClass = classNames(jssStyle.image?.close);
+  const overlayClass = classNames(galleryStyle?.overlay);
+  const magnifyClass = classNames(galleryStyle?.magnify);
+  const closeClass = classNames(galleryStyle?.close);
 
   const closeIconProps = getCloseIconProps();
 
@@ -58,9 +58,11 @@ const ImageModal = (props: ImageGalleryProps) => {
     });
 
     return (
-      <div key={image.key} {...galleryProps}>
-        {renderColseIcon()}
-        <Magnify {...magnifyProps}></Magnify>
+      <div className={galleryStyle.gallery}>
+        <div key={image.key} {...galleryProps}>
+          {renderColseIcon()}
+          <Magnify {...magnifyProps}></Magnify>
+        </div>
       </div>
     );
   };
