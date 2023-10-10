@@ -9,7 +9,6 @@ import { Message } from '@sheinx/base';
 import { useAlertStyle, useMessageStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const alertStyle = useAlertStyle();
   return (
     <div>
       <button
@@ -18,7 +17,7 @@ export default () => {
           Message.success('成功', 3, {
             jssStyle: {
               message: useMessageStyle,
-              alert: alertStyle,
+              alert: useAlertStyle,
             },
           });
         }}

@@ -15,14 +15,14 @@ const messageTokenDescription = { message: 'xxx' };
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 messageRules 强关联，非 messageRules 规则内的 token 需手动增加或删减。
  */
-const messageTokenValue = { font: { size: '14/regular' } };
+const messageTokenValue = {};
 
 const messageTokenExtraValue = {
   shadow: 'Shadow-3',
   border: { color: 'Neutral-border-1' },
   background: { color: 'Neutral-fill-1' },
   font: { color: 'Neutral-text-5' },
-  margin: { bottom: 'Margin-20' },
+  margin: { bottom: 'Margin-24' },
 };
 
 module.exports = {

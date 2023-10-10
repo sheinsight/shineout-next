@@ -28,7 +28,7 @@ export interface MessageClasses {
 
 export interface MessageProps {
   jssStyle?: {
-    message: () => MessageClasses;
+    message?: () => MessageClasses;
   };
   onDestroy?: () => void;
   position?: string;

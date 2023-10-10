@@ -3,6 +3,7 @@ import React from 'react';
 import Message from './message';
 import { getDefaultContainer } from '../config';
 import { util } from '@sheinx/hooks';
+import { MessageProps } from './message.type';
 
 let lastContainer: HTMLElement | null = null;
 const elements = {} as { [type: string]: HTMLElement };
@@ -33,22 +34,20 @@ interface Params {
   position: string;
   container?: (() => HTMLElement) | HTMLElement;
   rootClassName?: string;
-  // todo className
-  jssStyle?: any;
+  jssStyle: MessageProps['jssStyle'];
 }
 export function getComponent(params: Params) {
   const { position, container, rootClassName, jssStyle } = params;
   return new Promise<Message>((resolve) => {
-    const component = components[position!];
     const target = getContainer(container);
-    if (lastContainer !== target) {
+    if (lastContainer && lastContainer !== target) {
       destroy(position);
-      lastContainer = target;
     }
+    lastContainer = target;
+    const component = components[position!];
     if (component) {
       resolve(component);
     } else {
-      destroy(position);
       const div = document.createElement('div');
       div.className = rootClassName || '';
       elements[position] = div;
@@ -56,9 +55,11 @@ export function getComponent(params: Params) {
       util.ReactRender(
         <Message
           ref={(comp) => {
+            if (!comp) return;
             components[position] = comp;
             resolve(comp!);
           }}
+          position={position}
           onDestroy={destroy.bind(null, position)}
           jssStyle={jssStyle}
         />,

@@ -76,6 +76,7 @@ const alertStyle: JsStyles<AlertClass> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginLeft: Token.alertNearlyMargin,
   },
   content: {
     wordBreak: 'break-all',
