@@ -20,20 +20,21 @@ const Textarea = (props: SimpleTextareaProps) => {
     renderTextarea,
     ...rest
   } = props;
+  const textareaClasses = jssStyle?.textarea?.();
   const { getRootProps, getTextAreaProps, focused, disabled } = useTextarea({
     ...rest,
   });
 
   const rootClass = classNames(
     className,
-    jssStyle?.textarea?.wrapper,
-    !!focused && jssStyle?.textarea?.wrapperFocus,
-    !!disabled && jssStyle?.textarea?.wrapperDisabled,
-    status === 'error' && jssStyle?.textarea?.wrapperError,
-    size === 'small' && jssStyle?.textarea?.wrapperSmall,
-    size === 'large' && jssStyle?.textarea?.wrapperLarge,
-    !!underline && jssStyle?.textarea?.wrapperUnderline,
-    !border && jssStyle?.textarea?.wrapperNoBorder,
+    textareaClasses?.wrapper,
+    !!focused && textareaClasses?.wrapperFocus,
+    !!disabled && textareaClasses?.wrapperDisabled,
+    status === 'error' && textareaClasses?.wrapperError,
+    size === 'small' && textareaClasses?.wrapperSmall,
+    size === 'large' && textareaClasses?.wrapperLarge,
+    !!underline && textareaClasses?.wrapperUnderline,
+    !border && textareaClasses?.wrapperNoBorder,
   );
 
   const keyHandler = useKeyEvent({
@@ -49,10 +50,10 @@ const Textarea = (props: SimpleTextareaProps) => {
 
   const textareaProps = getTextAreaProps({
     className: classNames(
-      jssStyle?.textarea?.wrapperPaddingBox,
-      jssStyle?.textarea?.wrapperInnerTitleBottom,
-      jssStyle?.textarea?.textarea,
-      !!resize && jssStyle?.textarea?.resize,
+      textareaClasses?.wrapperPaddingBox,
+      textareaClasses?.wrapperInnerTitleBottom,
+      textareaClasses?.textarea,
+      !!resize && textareaClasses?.resize,
     ),
     onKeyUp,
   });

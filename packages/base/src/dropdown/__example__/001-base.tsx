@@ -57,13 +57,11 @@ const data: DropdownItem[] = [
 ];
 
 const App: React.FC = () => {
-  const dropdownStyle = useDropdownStyle();
-  const buttonStyle = useButtonStyle();
   return (
     <Dropdown
       jssStyle={{
-        dropdown: dropdownStyle,
-        button: buttonStyle,
+        dropdown: useDropdownStyle,
+        button: useButtonStyle,
       }}
       position={'bottom'}
       trigger='click'

@@ -9,9 +9,6 @@ import { EditableArea } from '@sheinx/base';
 import { useEditableAreaStyle, useInnerTitleStyle, useTextareaStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const editableAreaStyle = useEditableAreaStyle();
-  const textareaStyle = useTextareaStyle();
-  const innerStyle = useInnerTitleStyle();
   return (
     <div>
       <EditableArea
@@ -22,9 +19,9 @@ export default () => {
         placeholder={'please input something'}
         innerTitle={"I'm inner title"}
         jssStyle={{
-          editableArea: editableAreaStyle,
-          textarea: textareaStyle,
-          innerTitle: innerStyle,
+          editableArea: useEditableAreaStyle,
+          textarea: useTextareaStyle,
+          innerTitle: useInnerTitleStyle,
         }}
       />
     </div>

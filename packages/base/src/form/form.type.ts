@@ -48,7 +48,9 @@ export interface FormRef<Value> {
 export interface FormProps<V extends ObjectType>
   extends Partial<BaseFormProps<V>>,
     Pick<CommonType, 'className' | 'style'> {
-  jssStyle: FormClasses;
+  jssStyle: {
+    form?: () => FormClasses;
+  };
   children?: React.ReactNode;
   scrollToError?: boolean;
   formRef?: ((form: FormRef<V>) => void) | { current?: FormRef<V> };

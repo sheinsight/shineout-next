@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { SpinProps, SpinClasses } from './spin.type';
+import { SpinClasses, SpinProps } from './spin.type';
 import Spins from './spins';
 
 const Spin = (props: SpinProps = {}) => {
@@ -14,7 +14,7 @@ const Spin = (props: SpinProps = {}) => {
     mode = 'vertical',
   } = props;
 
-  const spinStyle = jssStyle?.spin || ({} as SpinClasses);
+  const spinStyle = jssStyle?.spin?.() || ({} as SpinClasses);
 
   const contentClass = classNames(className, spinStyle.content, {
     [spinStyle.vertical]: mode === 'vertical',

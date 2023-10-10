@@ -73,7 +73,7 @@ const Result = (props: ResultProps) => {
   } = props;
   const { locale } = useConfig();
 
-  const styles = jssStyle?.datePicker;
+  const styles = jssStyle?.datePicker?.();
   const { current: context } = useRef<{ inputRefs: Array<HTMLDivElement>; clickIndex: number }>({
     inputRefs: [],
     clickIndex: 0,

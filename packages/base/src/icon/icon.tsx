@@ -15,9 +15,10 @@ function Icon(
   if (type === 'default') {
     type = undefined;
   }
+  const iconClasses = jssStyle?.icon?.();
   const className = classnames(
-    jssStyle?.wrapper,
-    jssStyle?.[type!],
+    iconClasses?.wrapper,
+    iconClasses?.[type!],
     props.className,
     `${prefix}-${name}`,
   );
@@ -34,7 +35,7 @@ function Icon(
   if (ext === 'js') {
     return (
       <i {...otherProps} className={className} style={style}>
-        <svg className={jssStyle?.svg} aria-hidden='true'>
+        <svg className={iconClasses?.svg} aria-hidden='true'>
           <use xlinkHref={`#${prefix}-${name}`} />
         </svg>
       </i>

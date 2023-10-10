@@ -19,7 +19,7 @@ export interface DividerClasses {
  */
 export interface DividerProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
-    divider: DividerClasses;
+    divider: () => DividerClasses;
   };
   /**
    * @en Content, text or react component

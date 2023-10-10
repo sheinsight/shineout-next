@@ -20,7 +20,7 @@ export interface SwitchProps
   extends Omit<BaseCheckProps, 'defaultChecked'>,
     Pick<CommonType, 'style' | 'className' | 'size'> {
   jssStyle?: {
-    switch?: SwitchClasses;
+    switch?: () => SwitchClasses;
   };
   content?: [React.ReactNode, React.ReactNode];
   loading?: boolean;

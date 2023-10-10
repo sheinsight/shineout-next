@@ -9,6 +9,7 @@ import Button from '../button/button';
 
 const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
   const { children, className, button, block, keygen, jssStyle, style } = props;
+  const radioClasses = jssStyle?.radio?.();
   const { size, disabled } = useWithFormConfig(props);
 
   const inputAbleProps = useInputAble({
@@ -93,9 +94,9 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
   }
   const groupClass = classNames(
     className,
-    jssStyle?.radio?.group,
-    !!block && jssStyle?.radio?.groupBlock,
-    !!button && jssStyle?.radio?.groupButton,
+    radioClasses?.group,
+    !!block && radioClasses?.groupBlock,
+    !!button && radioClasses?.groupButton,
   );
 
   const Radios =

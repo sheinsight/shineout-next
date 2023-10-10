@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 const Quick = (props: QuickProps) => {
   const { jssStyle, quickSelect, format, options } = props;
-  const styles = jssStyle?.datePicker;
+  const styles = jssStyle?.datePicker?.();
 
   const handleClick = (item: QuickSelectType) => {
     let itemV = util.isFunc(item.value) ? item.value() : item.value;

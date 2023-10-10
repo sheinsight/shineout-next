@@ -5,6 +5,7 @@ import { SimpleCheckboxProps } from './checkbox.type';
 
 const Checkbox = (props: SimpleCheckboxProps) => {
   const { jssStyle, className, style, children, renderFooter, size, ...rest } = props;
+  const checkboxStyle = jssStyle?.checkbox?.();
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
     checked: props.checked === 'indeterminate' ? false : props.checked,
@@ -12,12 +13,12 @@ const Checkbox = (props: SimpleCheckboxProps) => {
   });
   const rootClass = classNames(
     className,
-    jssStyle?.checkbox?.wrapper,
-    size === 'small' && jssStyle?.checkbox?.wrapperSmall,
-    size === 'large' && jssStyle?.checkbox?.wrapperLarge,
-    !!disabled && jssStyle?.checkbox?.wrapperDisabled,
-    !!checked && jssStyle?.checkbox?.wrapperChecked,
-    props.checked === 'indeterminate' && jssStyle?.checkbox?.wrapperIndeterminate,
+    checkboxStyle?.wrapper,
+    size === 'small' && checkboxStyle?.wrapperSmall,
+    size === 'large' && checkboxStyle?.wrapperLarge,
+    !!disabled && checkboxStyle?.wrapperDisabled,
+    !!checked && checkboxStyle?.wrapperChecked,
+    props.checked === 'indeterminate' && checkboxStyle?.wrapperIndeterminate,
   );
 
   const inputProps = getInputProps();
@@ -30,8 +31,8 @@ const Checkbox = (props: SimpleCheckboxProps) => {
       })}
     >
       <input {...inputProps} type='checkbox' />
-      <span className={jssStyle?.checkbox?.indicatorWrapper}>
-        <i {...getIndicatorProps()} className={jssStyle?.checkbox?.indicator}>
+      <span className={checkboxStyle?.indicatorWrapper}>
+        <i {...getIndicatorProps()} className={checkboxStyle?.indicator}>
           {props.checked === 'indeterminate' ? (
             <svg viewBox='0 0 16 16' fill='currentColor'>
               <path d='M3 8C3 7.44772 3.44772 7 4 7H12C12.5523 7 13 7.44772 13 8V8C13 8.55228 12.5523 9 12 9H4C3.44772 9 3 8.55228 3 8V8Z' />
@@ -44,7 +45,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
           ) : null}
         </i>
       </span>
-      <span className={jssStyle?.checkbox?.desc}>{children}</span>
+      <span className={checkboxStyle?.desc}>{children}</span>
       {typeof renderFooter === 'function' ? renderFooter(checked) : null}
     </div>
   );

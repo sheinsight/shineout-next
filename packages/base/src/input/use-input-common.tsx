@@ -42,6 +42,8 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     ...rest
   } = props;
 
+  const inputStyle = props.jssStyle?.input?.();
+
   const { size, disabled } = useWithFormConfig(props);
   const rootRef = React.useRef<HTMLElement>(null);
 
@@ -95,10 +97,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
       <div
         key='info'
         style={{ minWidth: 'auto' }}
-        className={classNames(
-          props.jssStyle?.input?.info,
-          !!isError && props.jssStyle?.input?.infoError,
-        )}
+        className={classNames(inputStyle?.info, !!isError && inputStyle?.infoError)}
       >
         {text}
       </div>
@@ -131,7 +130,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
   return {
     ...rest,
     value: inputAbleProps.value,
-    className: classNames(props.className, innerTitle && props.jssStyle?.input?.wrapperInnerTitle),
+    className: classNames(props.className, innerTitle && inputStyle?.wrapperInnerTitle),
     onChange: inputAbleProps.onChange,
     onBlur: handleBlur,
     ...clearProps,

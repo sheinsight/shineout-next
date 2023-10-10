@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
-import { TagInputProps, TagClasses } from './tag.type';
+import { TagClasses, TagInputProps } from './tag.type';
 import Input from '../input/simple-input';
 
 const TagInput = (props: TagInputProps) => {
   const { value, onBlur, onChange, onEnterPress, onFocus, onKeyUp, jssStyle } = props;
 
-  const tagStyle = jssStyle?.tag || ({} as TagClasses);
+  const tagStyle = jssStyle?.tag?.() || ({} as TagClasses);
 
   const inputRef = useRef<HTMLInputElement>(null);
 

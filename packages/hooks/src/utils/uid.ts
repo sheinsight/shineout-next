@@ -24,3 +24,8 @@ export function generateUUID() {
     intToHex(uuid[3])
   ).toLowerCase();
 }
+
+export function getUidStr() {
+  // dom id  cannot start with number
+  return `a${generateUUID()}`;
+}

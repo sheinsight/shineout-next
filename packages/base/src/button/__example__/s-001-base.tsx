@@ -11,11 +11,9 @@ import { useButtonStyle, useSpinStyle } from '@sheinx/shineout-style';
 // import Icon from '../../icons';
 
 export default () => {
-  const buttonStyle = useButtonStyle();
-  const spinStyle = useSpinStyle();
   const jssStyle = {
-    button: buttonStyle,
-    spin: spinStyle,
+    button: useButtonStyle,
+    spin: useSpinStyle,
   };
 
   return (

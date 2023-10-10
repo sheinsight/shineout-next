@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { CommonType } from '../common/type';
 
-export interface IconClass {
+export interface IconClasses {
   wrapper: string;
   small: string;
   large: string;
@@ -46,7 +46,9 @@ interface IconArgs {
  * @cn Icon函数创建的图标组件
  */
 export interface IconCompProps extends Pick<CommonType, 'className' | 'style'> {
-  jssStyle?: IconClass;
+  jssStyle?: {
+    icon: () => IconClasses;
+  };
   /**
    * @en The unicode code of the icon.
    * @cn 图标 unicode 编码，和 name 二选一

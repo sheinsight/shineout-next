@@ -22,19 +22,20 @@ const Input = (props: SimpleInputProps) => {
     addEnd,
     ...rest
   } = props;
+  const inputStyle = jssStyle?.input?.();
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
   });
   const rootClass = classNames(
     className,
-    jssStyle?.input?.wrapper,
-    !!focused && jssStyle?.input?.wrapperFocus,
-    !!disabled && jssStyle?.input?.wrapperDisabled,
-    status === 'error' && jssStyle?.input?.wrapperError,
-    size === 'small' && jssStyle?.input?.wrapperSmall,
-    size === 'large' && jssStyle?.input?.wrapperLarge,
-    !!underline && jssStyle?.input?.wrapperUnderline,
-    !border && jssStyle?.input?.wrapperNoBorder,
+    inputStyle?.wrapper,
+    !!focused && inputStyle?.wrapperFocus,
+    !!disabled && inputStyle?.wrapperDisabled,
+    status === 'error' && inputStyle?.wrapperError,
+    size === 'small' && inputStyle?.wrapperSmall,
+    size === 'large' && inputStyle?.wrapperLarge,
+    !!underline && inputStyle?.wrapperUnderline,
+    !border && inputStyle?.wrapperNoBorder,
   );
 
   const keyHandler = useKeyEvent({
@@ -49,7 +50,7 @@ const Input = (props: SimpleInputProps) => {
   });
 
   const inputProps = getInputProps({
-    className: classNames(jssStyle?.input?.input),
+    className: classNames(inputStyle?.input),
     onKeyUp,
   });
 
@@ -75,17 +76,17 @@ const Input = (props: SimpleInputProps) => {
     >
       <div
         className={classNames(
-          jssStyle?.input?.wrapperInnerTitleTop,
-          jssStyle?.input?.wrapperInnerTitleBottom,
-          jssStyle?.input?.wrapperPaddingBox,
-          jssStyle?.input?.content,
+          inputStyle?.wrapperInnerTitleTop,
+          inputStyle?.wrapperInnerTitleBottom,
+          inputStyle?.wrapperPaddingBox,
+          inputStyle?.content,
         )}
       >
         {prefix}
         {inputEl}
         {(showClear || props.showClear) && (
-          <div className={jssStyle?.input?.clearWrapper} {...getClearProps()}>
-            <span className={jssStyle?.input?.clear}>{clearIcon || Icons.CloseCircle}</span>
+          <div className={inputStyle?.clearWrapper} {...getClearProps()}>
+            <span className={inputStyle?.clear}>{clearIcon || Icons.CloseCircle}</span>
           </div>
         )}
         {suffix}
