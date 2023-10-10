@@ -10,6 +10,7 @@ export interface AlertClasses {
   widthTitle: string;
   content: string;
   icon: string;
+  text: string;
   info: string;
   success: string;
   warning: string;
