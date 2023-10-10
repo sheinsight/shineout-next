@@ -5,12 +5,12 @@ import Button from './pagination-button';
 import Icons from '../icons';
 
 const PaginationButtonNext = (props: PaginationActionButtonProps) => {
-  const { jssStyle, disabled, total, pageSize, current, size, mode, onChange } = props;
+  const { jssStyle, disabled, total, pageSize, current, text, size, mode, onChange } = props;
   const paginationStyle = jssStyle?.pagination || ({} as PaginationClasses);
   const rootClasses = classNames(paginationStyle.section);
-
   const max = Math.ceil(total / pageSize);
   const next = current + 1;
+  const hasText = text && text.next;
 
   return (
     <Button
@@ -19,10 +19,11 @@ const PaginationButtonNext = (props: PaginationActionButtonProps) => {
       mode={mode}
       page={next}
       size={size}
+      shape={hasText ? undefined : 'square'}
       disabled={disabled || next > max}
       onClick={onChange}
     >
-      {Icons.AngleRight}
+      {hasText ? text.next : Icons.AngleRight}
     </Button>
   );
 };

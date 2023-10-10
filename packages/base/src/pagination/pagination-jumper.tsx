@@ -70,8 +70,8 @@ const PaginationJumper = (props: PaginationJumperProps) => {
     return (
       <div className={rootClasses}>
         {renderInput()}
-        <span className={paginationStyle.section}>/</span>
-        <span className={paginationStyle.section}>{total}</span>
+        <span className={classNames(paginationStyle.section, paginationStyle.split)}>/</span>
+        <span className={paginationStyle.section}>{getMax()}</span>
       </div>
     );
   }

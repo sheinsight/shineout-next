@@ -75,6 +75,7 @@ const Pagination = (props: PaginationProps) => {
                 mode={mode}
                 size={size}
                 total={total}
+                text={text}
                 current={current}
                 disabled={disabled}
                 pageSize={pageSize}
@@ -112,7 +113,7 @@ const Pagination = (props: PaginationProps) => {
             if (typeof section === 'function') {
               return (
                 <div key={i} className={classNames(paginationStyle.section)}>
-                  <span>{section(props)}</span>
+                  <span>{section({ ...props, current, pageSize })}</span>
                 </div>
               );
             }

@@ -6,6 +6,7 @@ type PaginationClass =
   | 'section'
   | 'buttons'
   | 'jumper'
+  | 'split'
   | 'left'
   | 'right'
   | 'center'
@@ -16,6 +17,7 @@ type PaginationClass =
 const PaginationStyle: JsStyles<PaginationClass> = {
   pagination: {
     display: 'flex',
+    flexWrap: 'wrap',
     alignItems: 'center',
     fontSize: Token.paginationFontSize,
     color: Token.paginationFontColor,
@@ -33,6 +35,11 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     '& + &': {
       marginLeft: Token.paginationNearlyMargin,
     },
+  },
+  split: {
+    width: 23,
+    display: 'inline-block',
+    textAlign: 'center',
   },
   buttons: {},
   jumper: {},

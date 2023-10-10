@@ -20,6 +20,7 @@ export interface PaginationClasses {
   right: string;
   center: string;
   jumper: string;
+  split: string;
   simple: string;
   small: string;
   large: string;

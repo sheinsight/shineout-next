@@ -17,6 +17,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
     total,
     pageSize = 10,
     span = 5,
+    text,
     mode,
     onChange,
   } = props;
@@ -101,6 +102,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
         current={current}
         total={total}
         mode={mode}
+        text={text}
         size={size}
         onChange={onChange}
       ></Prev>
@@ -116,6 +118,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
         current={current}
         total={total}
         mode={mode}
+        text={text}
         size={size}
         onChange={onChange}
       ></Next>

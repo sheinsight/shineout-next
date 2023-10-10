@@ -11,6 +11,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
     size,
     type = 'secondary',
     mode,
+    shape,
     disabled,
     moreType,
     children,
@@ -38,7 +39,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
       'jssStyle' | 'mode' | 'type' | 'size' | 'disabled'
     > & {
       className?: string;
-      shape: ButtonShape;
+      shape?: ButtonShape;
       onClick: () => void;
       onMouseEnter?: () => void;
       onMouseLeave?: () => void;
@@ -46,7 +47,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
       jssStyle,
       disabled,
       className,
-      shape: 'square',
+      shape: shape,
       type,
       size,
       mode,

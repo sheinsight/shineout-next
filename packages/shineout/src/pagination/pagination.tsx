@@ -5,8 +5,8 @@ import { PaginationProps } from './pagination.type';
 
 const Pagination = (props: PaginationProps) => {
   const paginationStyle = usePaginationStyle();
-  const inputStyle = useInputStyle();
-  const buttonStyle = useButtonStyle();
+  const inputStyle = useInputStyle;
+  const buttonStyle = useButtonStyle;
   const jssStyle = useMemo(
     () => ({ pagination: paginationStyle, input: inputStyle, button: buttonStyle }),
     [paginationStyle, inputStyle, buttonStyle],

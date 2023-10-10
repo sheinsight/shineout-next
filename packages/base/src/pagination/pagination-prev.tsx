@@ -5,11 +5,11 @@ import Button from './pagination-button';
 import Icons from '../icons';
 
 const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
-  const { jssStyle, disabled, current, mode, size, onChange } = props;
+  const { jssStyle, disabled, current, mode, text, size, onChange } = props;
   const paginationStyle = jssStyle?.pagination || ({} as PaginationClasses);
   const rootClasses = classNames(paginationStyle.section);
-
   const prev = current - 1;
+  const hasText = text && text.prev;
 
   return (
     <Button
@@ -19,9 +19,10 @@ const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
       disabled={disabled || prev < 1}
       page={prev}
       size={size}
+      shape={hasText ? undefined : 'square'}
       onClick={onChange}
     >
-      {Icons.AngleLeft}
+      {hasText ? text.prev : Icons.AngleLeft}
     </Button>
   );
 };
