@@ -12,9 +12,14 @@ const App: React.FC = () => {
     const close = await Message.success(
       <div>
         I will always show until
-        <a onClick={() => close()}> manually closed</a>
+        <Button mode={'text'} onClick={() => close()}>
+          manually closed
+        </Button>
       </div>,
       0,
+      {
+        title: 'Manual Close',
+      },
     );
   };
 
