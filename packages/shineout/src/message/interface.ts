@@ -1,1 +1,1 @@
-export type { MessageProps as Props } from './message.type';
+export type { MessageOptions as Options } from './message.type';

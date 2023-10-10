@@ -75,9 +75,9 @@ const MessagePure = (props: {
                 icon
                 iconSize={title ? 20 : 14}
                 style={{ top }}
+                title={title}
                 type={type === 'default' ? undefined : type}
               >
-                {title && <h3>{title}</h3>}
                 {content}
               </Alert>
             </div>
@@ -175,7 +175,7 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
         messages={messages}
         jssStyle={jssStyle}
         cachedHeight={this.cachedHeight}
-        position={this.props.position || 'default'}
+        position={this.props.position || 'top'}
         onClose={this.closeMessageForAnimation}
       />
     );
