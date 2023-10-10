@@ -33,7 +33,9 @@ export interface TextParams {
   jumper?: string;
 }
 
-export interface PaginationProps extends Pick<CommonType, 'style' | 'className' | 'size'> {
+export interface PaginationProps
+  extends Pick<CommonType, 'style' | 'className' | 'size'>,
+    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   align?: 'left' | 'center' | 'right';
   pageSize?: number;
   total?: number;

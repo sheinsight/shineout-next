@@ -9,7 +9,6 @@ import { PaginationProps, PaginationClasses } from './pagination.type';
 const Pagination = (props: PaginationProps) => {
   const {
     className,
-    style,
     jssStyle,
     size,
     align = 'left',
@@ -24,6 +23,7 @@ const Pagination = (props: PaginationProps) => {
     simple,
     disabled,
     text = {},
+    ...rest
   } = props;
 
   const { onChange, current, pageSize } = usePagination({
@@ -44,9 +44,15 @@ const Pagination = (props: PaginationProps) => {
     [paginationStyle.large]: size === 'large',
   });
 
+  const getRootProps = () => {
+    return {
+      ...rest,
+    };
+  };
+
   if (simple || layout.includes('simple')) {
     return (
-      <div style={style} className={rootClasses}>
+      <div {...getRootProps()} className={rootClasses}>
         <Simple
           jssStyle={jssStyle}
           mode={mode}
@@ -63,7 +69,7 @@ const Pagination = (props: PaginationProps) => {
   }
 
   return (
-    <div style={style} className={rootClasses}>
+    <div {...getRootProps()} className={rootClasses}>
       {layout.map((section, i) => {
         switch (section) {
           case 'links':
