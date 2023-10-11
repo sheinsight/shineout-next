@@ -123,7 +123,7 @@ function convertCamelToDash(str: string): string {
   return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 }
 
-// 根据jss type自动生成对应的className
+// Automatically generate corresponding className according to jss type
 export const createClassName = (
   componentsName: string,
   originClasses: string[],
