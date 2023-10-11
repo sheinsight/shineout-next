@@ -4,6 +4,9 @@ import { useFormStyle } from '@sheinx/shineout-style';
 import { FormProps } from './form.type';
 import { useInputAble, util } from '@sheinx/hooks';
 
+const jssStyle = {
+  form: useFormStyle,
+};
 export default <T extends ObjectType>(props: FormProps<T>) => {
   const inputAbleParams = {
     value: props.value,
@@ -22,7 +25,7 @@ export default <T extends ObjectType>(props: FormProps<T>) => {
       {...forwardProps}
       {...inputAbleProps}
       defaultValue={props.defaultValue}
-      jssStyle={useFormStyle()}
+      jssStyle={jssStyle}
     />
   );
 };

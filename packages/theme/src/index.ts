@@ -10,11 +10,20 @@ import { CheckboxTokens } from './checkbox/type';
 import Common from './common';
 import { CommonTokens } from './common/type';
 
+import DatePicker from './date-picker';
+import { DatePickerTokens } from './date-picker/type';
+
+import Divider from './divider';
+import { DividerTokens } from './divider/type';
+
 import Dropdown from './dropdown';
 import { DropdownTokens } from './dropdown/type';
 
 import EditableArea from './editable-area';
 import { EditableAreaTokens } from './editable-area/type';
+
+import Empty from './empty';
+import { EmptyTokens } from './empty/type';
 
 import Icon from './icon';
 import { IconTokens } from './icon/type';
@@ -24,6 +33,9 @@ import { ImageTokens } from './image/type';
 
 import Input from './input';
 import { InputTokens } from './input/type';
+
+import Message from './message';
+import { MessageTokens } from './message/type';
 
 import Popover from './popover';
 import { PopoverTokens } from './popover/type';
@@ -53,17 +65,21 @@ export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CheckboxTokens &
   CommonTokens &
+  DatePickerTokens &
+  DividerTokens &
   DropdownTokens &
   EditableAreaTokens &
+  EmptyTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
+  MessageTokens &
   PopoverTokens &
   RadioTokens &
   SpinTokens &
   SwitchTokens &
-  TagTokens &
   TabsTokens &
+  TagTokens &
   TextareaTokens &
   TooltipTokens;
 
@@ -72,16 +88,19 @@ const Token: ThemeTokens = {
   ...Button,
   ...Checkbox,
   ...Common,
+  ...DatePicker,
+  ...Divider,
   ...Dropdown,
   ...EditableArea,
+  ...Empty,
   ...Icon,
   ...Image,
   ...Input,
+  ...Message,
   ...Popover,
   ...Radio,
   ...Spin,
   ...Switch,
-  ...Tag,
   ...Tabs,
   ...Tag,
   ...Textarea,

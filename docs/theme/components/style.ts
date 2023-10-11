@@ -79,6 +79,7 @@ export default createUseStyles(
       display: 'flex',
       '& .examples': {
         flex: 1,
+        minWidth: 0,
       },
       '& .anchor': {
         width: 192,

@@ -13,7 +13,11 @@ export interface EditableAreaClasses {
   wrapperError: string;
   wrapperSmall: string;
   wrapperLarge: string;
-  paddingBox: string;
+  wrapperPaddingBox: string;
+  wrapperInnerTitle: string;
+  wrapperInnerTitleTop: string;
+  wrapperInnerTitleBottom: string;
+  content: string;
   clear: string;
 
   place: string;
@@ -24,9 +28,9 @@ export interface EditableAreaClasses {
 
 export interface EditableAreaProps extends Pick<CommonType, 'className' | 'style' | 'status'> {
   jssStyle?: {
-    editableArea: EditableAreaClasses;
-    textarea?: TextareaClasses;
-    innerTitle?: InnerTitleClasses;
+    editableArea: () => EditableAreaClasses;
+    textarea?: () => TextareaClasses;
+    innerTitle?: () => InnerTitleClasses;
   };
 
   beforeChange?: (value: string) => void | string;

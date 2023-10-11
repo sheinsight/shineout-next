@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "packageManager": "pnpm@8.2.0",
   "scripts": {
-    "start": "npm run dev",
+    "start": "pnpm run dev",
     "clean:cache": "node ./scripts/cleanCache.js",
     "dev": "cross-env NODE_ENV=development CASE_ENV=test NODE_ENV=development  node ./webpack/config.dev.ts",
     "dev:create": "cross-env NODE_ENV=development CASE_ENV=test  node ./scripts/dev-create.js",
@@ -17,7 +17,7 @@
     "build:watch": "pnpm --filter=./packages/* run build:watch",
     "prepare": "husky install",
     "doctor": "father doctor",
-    "lint": "npm run lint:es",
+    "lint": "pnpm run lint:es",
     "lint:es": "eslint \"packages/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && npm run build",
     "test": "jest",

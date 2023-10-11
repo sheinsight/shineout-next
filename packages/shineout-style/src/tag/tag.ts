@@ -176,7 +176,7 @@ const TagStyle: JsStyles<TagClass> = {
     },
   },
   input: {
-    '&[data-type="so-input"]': {
+    '&[data-soui-type="input"]': {
       width: 100,
       '& input': {
         padding: `0 ${Token.tagInputPaddingX}`,

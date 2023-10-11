@@ -8,21 +8,17 @@ import {
 import React from 'react';
 
 export default () => {
-  const inputStyle = useInputStyle();
-  const formStyle = useFormStyle();
-  const itemStyle = useFormItemStyle();
-  const innerTitleStyle = useInnerTitleStyle();
-
   const jssStyle = {
-    input: inputStyle,
-    form: formStyle,
-    item: itemStyle,
-    innerTitle: innerTitleStyle,
+    input: useInputStyle,
+    form: useFormStyle,
+    formItem: useFormItemStyle,
+    innerTitle: useInnerTitleStyle,
   };
+
   return (
     <div>
-      <Form jssStyle={formStyle} defaultValue={{ email: 'zhangsan@qq.com' }} labelAlign={'top'}>
-        <FormItem label={'username'} tip={'请输入用户名'} jssStyle={itemStyle}>
+      <Form jssStyle={jssStyle} defaultValue={{ email: 'zhangsan@qq.com' }} labelAlign={'top'}>
+        <FormItem label={'username'} tip={'请输入用户名'} jssStyle={jssStyle}>
           <FormField
             name={'name'}
             onChange={(v) => {
@@ -32,7 +28,7 @@ export default () => {
             <Input jssStyle={jssStyle} clearable placeholder='please input name' />
           </FormField>
         </FormItem>
-        <FormItem label={'email'} jssStyle={itemStyle}>
+        <FormItem label={'email'} jssStyle={jssStyle}>
           <FormField
             name={'email'}
             onChange={(v?: string) => {

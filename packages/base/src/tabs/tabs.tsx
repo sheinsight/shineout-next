@@ -1,7 +1,7 @@
-import React, { Children, cloneElement, useRef, useState, useEffect } from 'react';
+import React, { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { useTabs } from '@sheinx/hooks';
-import { TabsProps, TabsClasses } from './tabs.type';
+import { TabsClasses, TabsProps } from './tabs.type';
 import { TabData } from './tab.type';
 import { TabsPanelProps } from './tabs-panel.type';
 import TabsPanel from './tabs-panel';
@@ -52,7 +52,7 @@ const Tabs = (props: TabsProps) => {
 
   const panelRef = useRef<HTMLDivElement>(null);
   const panelHeight = useRef<number>(0);
-  const tabsStyle = jssStyle?.tabs || ({} as TabsClasses);
+  const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
   const rootClass = classNames(tabsStyle.tabs, {
     [tabsStyle.autoFill]: autoFill,
     [tabsStyle.collapsed]: collapse,

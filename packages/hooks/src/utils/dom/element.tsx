@@ -27,39 +27,50 @@ export function wrapSpan(children: React.ReactNode, insertSpace = false): React.
     return item;
   });
 }
+type Handler = (this: Window, ev: UIEvent) => any;
 
-interface ResizeOptions {
-  /**
-   * 节流时间，默认 100ms
-   */
-  timer?: number;
-}
-/**
- * 监听元素大小变化兼容性方案
- *
- * @param el 要监听尺寸变化的目标元素
- * @param handler 回调处理函数
- * @param options 配置项
- * @returns 清除监听的方法
- */
-export const addResizeObserver = (el: HTMLElement, handler: any, options: ResizeOptions = {}) => {
-  const { timer = 100 } = options;
-  const [throttleHandler, cleanTimer] = debounce(handler, timer);
-
+export const addResizeObserver = (
+  el: HTMLElement,
+  handler: any,
+  options: { direction?: 'x' | 'y' | boolean; timer?: number } = {},
+) => {
+  const { direction, timer } = options;
+  const [debounceHandler, cleanTimer] = debounce(handler, timer);
+  let h = debounceHandler;
+  let lastWidth: number;
+  let lastHeight: number;
   if (window.ResizeObserver) {
-    let observer: ResizeObserver | null = new ResizeObserver(() => {
-      throttleHandler();
-    });
+    if (direction) {
+      lastWidth = el.clientWidth;
+      lastHeight = el.clientHeight;
+      h = (entry: { contentRect: { width: number; height: number } }[]) => {
+        const { width, height } = entry[0].contentRect;
+        if (width && direction === 'x') {
+          if (lastWidth !== width) {
+            debounceHandler(entry);
+          }
+        } else if (direction === 'y') {
+          if (height && lastHeight !== height) {
+            debounceHandler(entry);
+          }
+        } else if (width && height) {
+          debounceHandler(entry, { x: lastWidth !== width, y: lastHeight !== height });
+        }
+        lastWidth = width;
+        lastHeight = height;
+      };
+    }
+    let observer: ResizeObserver | null = new ResizeObserver(h as ResizeObserverCallback);
     observer.observe(el);
     return () => {
-      observer?.disconnect();
-      cleanTimer();
+      if (observer) {
+        observer.disconnect();
+      }
       cleanTimer(this);
       observer = null;
     };
   }
-  // 降级方案，改用 resize 事件监听页面尺寸变化
-  window.addEventListener('resize', throttleHandler);
+  window.addEventListener('resize', debounceHandler as Handler);
   return () => {
     window.removeEventListener('resize', handler);
     cleanTimer();

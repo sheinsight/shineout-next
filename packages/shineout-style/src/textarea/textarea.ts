@@ -3,7 +3,7 @@ import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 
 const inputBorder = border('wrapper', {
-  lineHeightDynamic: token.lineHeightDynamic,
+  lineHeight: token.lineHeightDynamic,
   borderRadius: token.textareaBorderRadius,
 
   fontSize: token.textareaFontSize,
@@ -32,6 +32,15 @@ const inputBorder = border('wrapper', {
 
   focusShadow: token.textareaFocusShadow,
   errorFocusShadow: token.textareaErrorFocusShadow,
+
+  innerTitlePaddingY: token.inputInnerPaddingY,
+  innerTitlePaddingX: token.inputInnerPaddingX,
+
+  smallInnerTitlePaddingY: token.inputInnerSmallPaddingY,
+  smallInnerTitlePaddingX: token.inputInnerSmallPaddingX,
+
+  largeInnerTitlePaddingY: token.inputInnerLargePaddingY,
+  largeInnerTitlePaddingX: token.inputInnerLargePaddingX,
 });
 const { wrapper, ...resetWrapper } = inputBorder;
 
@@ -44,7 +53,10 @@ export type InputClass =
   | 'wrapperDisabled'
   | 'wrapperUnderline'
   | 'wrapperNoBorder'
-  | 'paddingBox'
+  | 'wrapperPaddingBox'
+  | 'wrapperInnerTitle'
+  | 'wrapperInnerTitleTop'
+  | 'wrapperInnerTitleBottom'
   | 'textarea'
   | 'resize'
   | 'shadow'
@@ -65,6 +77,7 @@ const input: JsStyles<InputClass> = {
   },
   ...resetWrapper,
   textarea: {
+    padding: 0,
     '&::placeholder': {
       color: token.textareaPlaceholderColor,
     },
@@ -133,6 +146,8 @@ const input: JsStyles<InputClass> = {
   footer: {
     borderTop: `1px solid ${token.textareaBorderColor}`,
     borderRadius: 0,
+    width: '100%',
+    boxSizing: 'border-box',
   },
 };
 

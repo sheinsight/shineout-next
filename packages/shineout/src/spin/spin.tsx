@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Spin as UnStyledSpin } from '@sheinx/base';
 import { useSpinStyle } from '@sheinx/shineout-style';
 import { SpinProps } from './spin.type';
 
+const jssStyle = {
+  spin: useSpinStyle,
+};
 export default (props: SpinProps) => {
-  const spinStyle = useSpinStyle();
-  const jssStyle = useMemo(() => ({ spin: spinStyle }), [spinStyle]);
-
   return <UnStyledSpin {...props} jssStyle={jssStyle} />;
 };

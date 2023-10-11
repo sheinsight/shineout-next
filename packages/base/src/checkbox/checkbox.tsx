@@ -17,6 +17,7 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     inputable,
     ...rest
   } = props;
+  const checkboxStyle = jssStyle?.checkbox?.();
 
   const { onChange, value } = useInputAble({
     value: valuePo,
@@ -69,7 +70,7 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
           return (
             <Input
               jssStyle={jssStyle}
-              className={jssStyle?.checkbox?.input}
+              className={checkboxStyle?.input}
               value={inputValue}
               onChange={onInputChange}
               onClick={handleInputClick}

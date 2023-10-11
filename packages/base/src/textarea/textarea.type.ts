@@ -22,12 +22,15 @@ export interface TextareaClasses {
    * 当 status 为 error 时
    */
   wrapperError: string;
+  wrapperInnerTitle: string;
+  wrapperInnerTitleTop: string;
+  wrapperInnerTitleBottom: string;
+  wrapperPaddingBox: string;
   textarea: string;
   wrapperLarge: string;
   wrapperSmall: string;
   wrapperUnderline: string;
   wrapperNoBorder: string;
-  paddingBox: string;
   resize: string;
   shadow: string;
   info: string;
@@ -39,7 +42,7 @@ export interface SimpleTextareaProps
   extends BaseTextareaProps,
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
   jssStyle?: {
-    textarea?: TextareaClasses;
+    textarea?: () => TextareaClasses;
   };
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
@@ -71,9 +74,9 @@ export interface TextareaProps
   innerTitle?: React.ReactNode;
   placeTitle?: React.ReactNode;
   jssStyle?: {
-    textarea?: TextareaClasses;
-    popover?: PopoverClasses;
-    innerTitle?: InnerTitleClasses;
+    textarea?: () => TextareaClasses;
+    popover?: () => PopoverClasses;
+    innerTitle?: () => InnerTitleClasses;
   };
   autosize?: boolean;
   info?: number | ((value: string | undefined) => React.ReactNode | Error);

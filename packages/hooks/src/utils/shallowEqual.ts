@@ -1,4 +1,4 @@
-import deepEqual from 'deep-eql';
+import deepEqual from 'react-fast-compare';
 
 type Options = {
   [x: string]: any;

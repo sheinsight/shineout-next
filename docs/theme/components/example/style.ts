@@ -102,7 +102,7 @@ export default createUseStyles(
       bottom: 0,
       left: 0,
       background: '#ffffff',
-      zIndex: 10000,
+      zIndex: 1,
       '& .toolbar': {
         padding: 5,
         display: 'flex',

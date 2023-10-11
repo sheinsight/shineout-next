@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { TagProps, TagClasses } from './tag.type';
+import { TagClasses, TagProps } from './tag.type';
 import useTag from './use-tag';
 import TagInput from './tag-input';
 
@@ -39,7 +39,7 @@ const Tag = (props: TagProps) => {
 
   const modeSet = mode || 'bright';
   const colorSet = type || color || 'default';
-  const tagStyle = jssStyle?.tag || ({} as TagClasses);
+  const tagStyle = jssStyle?.tag?.() || ({} as TagClasses);
 
   const tagClass = classNames(className, tagStyle.tag, {
     [tagStyle.small]: size === 'small',

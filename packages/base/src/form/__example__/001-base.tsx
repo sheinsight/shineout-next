@@ -8,21 +8,17 @@ import {
 import React from 'react';
 
 export default () => {
-  const inputStyle = useInputStyle();
-  const formStyle = useFormStyle();
-  const itemStyle = useFormItemStyle();
-  const innerTitleStyle = useInnerTitleStyle();
   const jssStyle = {
-    input: inputStyle,
-    form: formStyle,
-    item: itemStyle,
-    innerTitle: innerTitleStyle,
+    input: useInputStyle,
+    form: useFormStyle,
+    formItem: useFormItemStyle,
+    innerTitle: useInnerTitleStyle,
   };
   return (
     <div>
       <Form
         inline
-        jssStyle={formStyle}
+        jssStyle={jssStyle}
         defaultValue={{ email: 'zhangsan@qq.com' }}
         onSubmit={(v) => {
           console.log('form submit', v);
@@ -34,7 +30,7 @@ export default () => {
           console.log('form reset');
         }}
       >
-        <FormItem required label={'Username'} jssStyle={itemStyle}>
+        <FormItem required label={'Username'} jssStyle={jssStyle}>
           <FormField
             name={'name'}
             defaultValue={'zhangsan'}
@@ -54,7 +50,7 @@ export default () => {
             <Input jssStyle={jssStyle} clearable placeholder='please input name' />
           </FormField>
         </FormItem>
-        <FormItem label={'Email'} tip={'输入公司邮箱'} jssStyle={itemStyle}>
+        <FormItem label={'Email'} tip={'输入公司邮箱'} jssStyle={jssStyle}>
           <FormField
             name={'email'}
             onChange={(v?: string) => {

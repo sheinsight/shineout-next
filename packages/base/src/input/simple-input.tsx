@@ -19,21 +19,23 @@ const Input = (props: SimpleInputProps) => {
     onEnterPress,
     getStatus,
     renderInput,
+    addEnd,
     ...rest
   } = props;
+  const inputStyle = jssStyle?.input?.();
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
   });
   const rootClass = classNames(
     className,
-    jssStyle?.input?.wrapper,
-    !!focused && jssStyle?.input?.wrapperFocus,
-    !!disabled && jssStyle?.input?.wrapperDisabled,
-    status === 'error' && jssStyle?.input?.wrapperError,
-    size === 'small' && jssStyle?.input?.wrapperSmall,
-    size === 'large' && jssStyle?.input?.wrapperLarge,
-    !!underline && jssStyle?.input?.wrapperUnderline,
-    !border && jssStyle?.input?.wrapperNoBorder,
+    inputStyle?.wrapper,
+    !!focused && inputStyle?.wrapperFocus,
+    !!disabled && inputStyle?.wrapperDisabled,
+    status === 'error' && inputStyle?.wrapperError,
+    size === 'small' && inputStyle?.wrapperSmall,
+    size === 'large' && inputStyle?.wrapperLarge,
+    !!underline && inputStyle?.wrapperUnderline,
+    !border && inputStyle?.wrapperNoBorder,
   );
 
   const keyHandler = useKeyEvent({
@@ -48,7 +50,7 @@ const Input = (props: SimpleInputProps) => {
   });
 
   const inputProps = getInputProps({
-    className: classNames(jssStyle?.input?.input, jssStyle?.input?.paddingBox),
+    className: classNames(inputStyle?.input),
     onKeyUp,
   });
 
@@ -66,20 +68,30 @@ const Input = (props: SimpleInputProps) => {
 
   return (
     <div
-      data-type='so-input'
+      data-soui-type='input'
       {...getRootProps({
         className: rootClass,
         style,
       })}
     >
-      {prefix}
-      {inputEl}
-      {(showClear || props.showClear) && (
-        <div className={jssStyle?.input?.clearWrapper} {...getClearProps()}>
-          <span className={jssStyle?.input?.clear}>{clearIcon || Icons.CloseCircle}</span>
-        </div>
-      )}
-      {suffix}
+      <div
+        className={classNames(
+          inputStyle?.wrapperInnerTitleTop,
+          inputStyle?.wrapperInnerTitleBottom,
+          inputStyle?.wrapperPaddingBox,
+          inputStyle?.content,
+        )}
+      >
+        {prefix}
+        {inputEl}
+        {(showClear || props.showClear) && (
+          <div className={inputStyle?.clearWrapper} {...getClearProps()}>
+            <span className={inputStyle?.clear}>{clearIcon || Icons.CloseCircle}</span>
+          </div>
+        )}
+        {suffix}
+      </div>
+      {addEnd}
     </div>
   );
 };

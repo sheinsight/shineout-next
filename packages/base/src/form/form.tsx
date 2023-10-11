@@ -5,6 +5,7 @@ import { FormProps } from './form.type';
 
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, formRef, ...rest } = props;
+  const formClasses = jssStyle?.form?.();
   const { value, onChange } = useInputAble({
     value: props.value,
     defaultValue: props.defaultValue,
@@ -23,10 +24,10 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     }
   }, [func]);
   const rootClass = classNames([
-    jssStyle.wrapper,
+    formClasses.wrapper,
     className,
     {
-      [jssStyle.wrapperInline]: props.inline,
+      [formClasses.wrapperInline]: props.inline,
     },
   ]);
 

@@ -1,17 +1,12 @@
 import { docSize } from './document';
 // 根据位置计算合适的 position
 
-type MenuPosition =
-  | 'top-left'
-  | 'top-right'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'left-top'
-  | 'left-bottom'
-  | 'right-top'
-  | 'right-bottom';
+type ListPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+
+type MenuPosition = ListPosition | 'left-top' | 'left-bottom' | 'right-top' | 'right-bottom';
 
 type PopoverPosition = MenuPosition | 'top' | 'bottom' | 'left' | 'right';
+
 const getMenuPosition = (
   target: HTMLElement | null,
   priorityDirection = 'vertical',
@@ -86,22 +81,9 @@ const getPopoverPosition = (target: HTMLElement | null, priorityDirection = 'ver
 export const getPosition = (
   target: HTMLElement | null,
   priorityDirection: 'vertical' | 'horizontal' | 'auto' = 'vertical',
-  mode: 'popover' | 'menu',
+  mode: 'popover' | 'menu' | 'list',
 ) => {
   if (mode === 'popover') return getPopoverPosition(target, priorityDirection);
   if (mode === 'menu') return getMenuPosition(target, priorityDirection);
   return 'bottom-left' as MenuPosition;
 };
-// export const getListPosition = (target: HTMLElement) => {
-//   let position = 'drop-down';
-//   if (!target) return position;
-//   const windowHeight = docSize.height;
-//   const rect = target.getBoundingClientRect();
-//   // 计算时要算上 marginTop/marginBottom 4
-//   const margin = 4;
-//   const bottom = height + rect.bottom + margin;
-//   const canDropUp = rect.top > windowHeight - rect.bottom;
-//   if (bottom > windowHeight && canDropUp) position = 'drop-up';
-//
-//   return position;
-// };

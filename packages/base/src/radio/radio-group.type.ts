@@ -7,8 +7,8 @@ import { ButtonClasses } from '../button/button.type';
 export interface RadioGroupProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'size' | 'style'> {
   jssStyle?: {
-    radio?: RadioClasses;
-    button?: ButtonClasses;
+    radio?: () => RadioClasses;
+    button?: () => ButtonClasses;
   };
   /**
    * @en You can pass in a set of Radio

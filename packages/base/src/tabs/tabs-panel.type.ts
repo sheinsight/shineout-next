@@ -4,8 +4,8 @@ import { TabsClasses } from './tabs.type';
 
 export interface TabsPanelProps extends TabsContextProps {
   jssStyle?: {
-    tabs: TabsClasses;
-    button: ButtonClasses;
+    tabs: () => TabsClasses;
+    button: () => ButtonClasses;
   };
   id?: string | number;
   tab: React.ReactNode;

@@ -6,15 +6,12 @@
  */
 import { useState } from 'react';
 import { Tag } from '@sheinx/base';
-import { useTagStyle, useInputStyle } from '@sheinx/shineout-style';
+import { useInputStyle, useTagStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const tagStyle = useTagStyle();
-  const inputStyle = useInputStyle();
-
   const jssStyle = {
-    tag: tagStyle,
-    input: inputStyle,
+    tag: useTagStyle,
+    input: useInputStyle,
   };
 
   const [tags, setTags] = useState(['Tag 1', 'Tag 2', 'Tag 3']);

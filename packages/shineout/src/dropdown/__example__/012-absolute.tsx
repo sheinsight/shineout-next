@@ -11,7 +11,8 @@ type DropdownItem = TYPE.Dropdown.Item;
 
 const data: DropdownItem[] = [
   {
-    content: 'Submenu',
+    content:
+      'subMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenu',
     children: [
       {
         content: 'Link to Google',
@@ -37,7 +38,15 @@ const data: DropdownItem[] = [
 
 const App: React.FC = () => (
   <div style={{ background: '#eee', padding: 20, borderRadius: 10, overflow: 'hidden' }}>
-    <Dropdown outline type={'primary'} absolute placeholder='Absolute' data={data} />
+    <Dropdown
+      style={{ marginLeft: 800 }}
+      position={'bottom'}
+      outline
+      type={'primary'}
+      absolute
+      placeholder='Absolute'
+      data={data}
+    />
 
     <Dropdown
       outline

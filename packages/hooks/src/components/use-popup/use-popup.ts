@@ -54,6 +54,25 @@ const usePopup = (props: BasePopupProps) => {
 
   const position = (isPositionControl ? props.position : positionState) as PositionType;
 
+  // const getPopUpHeight = () => {
+  //   let height = 0;
+  //   if (popupRef.current) {
+  //     const el = popupRef.current;
+  //     const parent = el?.parentElement;
+  //     let clone = el.cloneNode(true) as HTMLElement;
+  //     clone.style.opacity = '0';
+  //     clone.style.display = '';
+  //     clone.style.visibility = 'visible';
+  //     clone.style.pointerEvents = 'none';
+  //     parent?.appendChild(clone);
+  //     height = clone.offsetHeight;
+  //     parent?.removeChild(clone);
+  //     //@ts-ignore
+  //     clone = null;
+  //   }
+  //   return height;
+  // };
+
   const handleFocus = (delay?: number) => {
     if (!isPositionControl) {
       if (props.position === 'auto' || !props.position) {
@@ -106,15 +125,6 @@ const usePopup = (props: BasePopupProps) => {
     handleHoverToggle(false);
   });
 
-  // 点击触发弹窗的元素
-  const getTargetProps = () => {
-    return {
-      onMouseEnter: handleMouseEnter,
-      onMouseLeave: handleMouseLeave,
-      onClick: handleClickToggle,
-    };
-  };
-
   const openPop = usePersistFn(() => {
     handleFocus();
   });
@@ -123,10 +133,32 @@ const usePopup = (props: BasePopupProps) => {
     handleBlur();
   });
 
+  // 点击触发弹窗的元素
+  const getTargetProps = () => {
+    if (trigger === 'hover')
+      return {
+        onMouseEnter: handleMouseEnter,
+        onMouseLeave: handleMouseLeave,
+      };
+    if (trigger === 'click') {
+      return {
+        onClick: handleClickToggle,
+      };
+    }
+
+    if (trigger === 'focus') {
+      return {
+        onFocus: openPop,
+        onBlur: closePop,
+      };
+    }
+    return {};
+  };
+
   useClickAway({
     onClickAway: () => handleBlur(),
     target: context.chain,
-    effect: open,
+    effect: (trigger === 'click' || trigger === 'hover') && open,
   });
 
   const providerValue = useMemo(
