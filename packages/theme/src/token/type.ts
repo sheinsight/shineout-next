@@ -968,6 +968,13 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#999DA8'
+   * @description
+   */
+  'Neutral-fill-6': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#CCCFD7'
    * @description 悬浮
    */
