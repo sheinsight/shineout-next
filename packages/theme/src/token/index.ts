@@ -838,6 +838,12 @@ const Tokens = {
     value: '#B3B7C1',
     describe: '点击',
   },
+  'Neutral-fill-6': {
+    type: 'color',
+    name: '填充色',
+    value: '#999DA8',
+    describe: '',
+  },
   'Neutral-fill-4': {
     type: 'color',
     name: '填充色',
