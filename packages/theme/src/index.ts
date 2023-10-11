@@ -22,6 +22,9 @@ import { DropdownTokens } from './dropdown/type';
 import EditableArea from './editable-area';
 import { EditableAreaTokens } from './editable-area/type';
 
+import Empty from './empty';
+import { EmptyTokens } from './empty/type';
+
 import Icon from './icon';
 import { IconTokens } from './icon/type';
 
@@ -66,6 +69,7 @@ export type ThemeTokens = AlertTokens &
   DividerTokens &
   DropdownTokens &
   EditableAreaTokens &
+  EmptyTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
@@ -88,6 +92,7 @@ const Token: ThemeTokens = {
   ...Divider,
   ...Dropdown,
   ...EditableArea,
+  ...Empty,
   ...Icon,
   ...Image,
   ...Input,

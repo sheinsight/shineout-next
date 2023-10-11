@@ -57,7 +57,7 @@ export default {
 
   ok: '确定',
   cancel: '取消',
-  noData: '无数据',
+  noData: '暂无数据',
   selectAll: '全选',
   loading: '加载中...',
 
