@@ -6,7 +6,13 @@
  */
 
 import { Transfer } from '@sheinx/base';
+import { useTransferStyle, useButtonStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  return <Transfer></Transfer>;
+  const jssStyle = {
+    transfer: useTransferStyle,
+    button: useButtonStyle,
+  };
+
+  return <Transfer jssStyle={jssStyle}></Transfer>;
 };

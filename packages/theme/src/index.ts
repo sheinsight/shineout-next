@@ -61,6 +61,9 @@ import { TextareaTokens } from './textarea/type';
 import Tooltip from './tooltip';
 import { TooltipTokens } from './tooltip/type';
 
+import Transfer from './transfer';
+import { TransferTokens } from './transfer/type';
+
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CheckboxTokens &
@@ -81,7 +84,8 @@ export type ThemeTokens = AlertTokens &
   TabsTokens &
   TagTokens &
   TextareaTokens &
-  TooltipTokens;
+  TooltipTokens &
+  TransferTokens;
 
 const Token: ThemeTokens = {
   ...Alert,
@@ -105,6 +109,7 @@ const Token: ThemeTokens = {
   ...Tag,
   ...Textarea,
   ...Tooltip,
+  ...Transfer,
 };
 
 export default Token;
