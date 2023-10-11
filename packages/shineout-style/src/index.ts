@@ -6,6 +6,7 @@ export * from './date-picker';
 export * from './divider';
 export * from './dropdown';
 export * from './editable-area';
+export * from './empty';
 export * from './form';
 export * from './icon';
 export * from './image';

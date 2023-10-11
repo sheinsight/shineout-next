@@ -6,6 +6,7 @@ export { default as DatePicker } from './date-picker';
 export { default as Divider } from './divider';
 export { default as Dropdown } from './dropdown';
 export { default as EditableArea } from './editable-area';
+export { default as Empty } from './empty';
 export { default as Form } from './form';
 export { default as Icon } from './icon';
 export { default as Image } from './image';
