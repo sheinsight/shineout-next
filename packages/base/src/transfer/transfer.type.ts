@@ -1,6 +1,7 @@
 import { ButtonClasses } from '../button/button.type';
 
 export type TransferListType = 'source' | 'target';
+
 export interface TransferClasses {
   transfer: string;
   view: string;
