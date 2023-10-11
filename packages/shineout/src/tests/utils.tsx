@@ -114,3 +114,27 @@ export const delay: (time: number) => Promise<void> = (time) =>
       resolve();
     }, time);
   });
+
+type classNamesMapType = {
+  [key: string]: string;
+};
+
+function convertCamelToDash(str: string): string {
+  return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+// 根据jss type自动生成对应的className
+export const createClassName = (
+  componentsName: string,
+  originClasses: string[],
+  originItemClasses: string[],
+): classNamesMapType => {
+  const prefix = `so-${componentsName}-`;
+  const classNamesMap: classNamesMapType = {};
+  const classes = [...originClasses, ...originItemClasses];
+  classes.forEach((item) => {
+    classNamesMap[item] = `${prefix}${convertCamelToDash(item)}`;
+    if (!originItemClasses.includes(item)) classNamesMap[item] = `.${classNamesMap[item]}`;
+  });
+  return classNamesMap;
+};
