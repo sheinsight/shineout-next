@@ -31,7 +31,7 @@ const App: React.FC = () => {
         />
       </div>
 
-      <Carousel style={{ width: 800, height: 280 }} interval={3000} animation={animationType}>
+      <Carousel style={{ width: 600, height: 280 }} interval={3000} animation={animationType}>
         {images.map((src) => (
           <img key={src} src={src} />
         ))}

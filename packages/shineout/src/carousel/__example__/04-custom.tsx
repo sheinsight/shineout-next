@@ -48,7 +48,7 @@ const App: React.FC = () => {
   return (
     <Carousel
       indicatorType={indicatorSwitch}
-      style={{ width: 500, height: 300 }}
+      style={{ width: 600, height: 280 }}
       interval={duration}
     >
       {items.map((item) => (

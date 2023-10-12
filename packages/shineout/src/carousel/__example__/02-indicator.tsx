@@ -44,7 +44,7 @@ const App: React.FC = () => {
       </div>
 
       <Carousel
-        style={{ width: 800, height: 280 }}
+        style={{ width: 600, height: 280 }}
         indicatorPosition={indicatorPosition}
         indicatorType={indicatorType}
       >

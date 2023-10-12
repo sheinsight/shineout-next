@@ -16,7 +16,7 @@ const images = [
 const App: React.FC = () => {
   return (
     <Carousel
-      style={{ width: 800, height: 280 }}
+      style={{ width: 600, height: 280 }}
       showArrow={'hover'}
       interval={5000}
       onMove={console.log}

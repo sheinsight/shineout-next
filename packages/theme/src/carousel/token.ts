@@ -30,67 +30,25 @@ const carouselTokenExtraValue = {
   arrow: {
     margin: 'Margin-18',
     size: 'Size-12',
-    icon: {
-      size: 'Size-10',
-    },
-    background: {
-      color: 'rgba(255, 255, 255, 0.2)',
-    },
-
-    border: {
-      radius: 'Radius-4',
-    },
-    font: {
-      color: 'Neutral-text-1',
-    },
-    hover: {
-      background: {
-        color: 'rgba(255, 255, 255, 0.4)',
-      },
-    },
+    icon: { size: 'Size-10' },
+    background: { color: 'rgba(255, 255, 255, 0.2)' },
+    border: { radius: 'Radius-4' },
+    font: { color: 'Neutral-text-1' },
+    hover: { background: { color: 'rgba(255, 255, 255, 0.4)' } },
   },
   indicator: {
     background: { color: 'Neutral-fill-4' },
-    active: {
-      background: { color: 'Neutral-fill-1' },
-    },
+    active: { background: { color: 'Neutral-fill-1' } },
     wrapper: { height: 'Size-20' },
-    circle: {
-      width: 'Size-3',
-      gap: 'Margin-8',
-    },
-    line: {
-      width: 'Size-6',
-      height: 'Size-2',
-      gap: 'Margin-4',
-    },
-    arrow: {
-      size: 'Size-8',
-      color: 'Neutral-fill-1',
-      hover: {
-        color: 'Neutral-fill-4',
-      },
-    },
-    number: {
-      color: 'Neutral-fill-1',
-      font: {
-        size: '14/regular',
-      },
-    },
+    circle: { width: 'Size-3', gap: 'Margin-8' },
+    line: { width: 'Size-6', height: 'Size-2', gap: 'Margin-4' },
+    arrow: { size: 'Size-8', color: 'Neutral-fill-1', hover: { color: 'Neutral-fill-4' } },
+    number: { color: 'Neutral-fill-1', font: { size: '14/regular' } },
     outer: {
       background: { color: 'Neutral-fill-4' },
-      active: {
-        background: { color: 'Neutral-fill-6' },
-      },
-      arrow: {
-        color: 'Neutral-text-4',
-        hover: {
-          color: 'Neutral-text-2',
-        },
-      },
-      number: {
-        color: 'Neutral-text-4',
-      },
+      active: { background: { color: 'Neutral-fill-6' } },
+      arrow: { color: 'Neutral-text-4', hover: { color: 'Neutral-text-2' } },
+      number: { color: 'Neutral-text-4' },
     },
   },
 };
