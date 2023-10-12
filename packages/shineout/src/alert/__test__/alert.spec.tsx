@@ -46,8 +46,15 @@ const {
   text: textClassName,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
+beforeAll(() => {
+  jest.useFakeTimers();
+});
+afterAll(() => {
+  jest.runAllTimers();
+});
 afterEach(cleanup);
 mountTest(<Alert />);
+
 describe('Alert[Base]', () => {
   displayTest(Alert, 'ShineoutAlert');
   baseTest(Alert, alertClassName);
