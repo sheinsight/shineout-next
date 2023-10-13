@@ -10,6 +10,7 @@ import {
   textContentTest,
 } from '../../tests/utils';
 // import MessageBase from '../__example__/01-base'
+import MessageContainer from '../__example__/06-container';
 
 const SO_PREFIX = 'message';
 const originClasses = ['wrapper', 'item', 'message'];
@@ -229,23 +230,11 @@ describe('Message[Option]', () => {
     });
   });
   test('should render when set container', async () => {
-    const { container } = render(
-      <div className='.demo'>
-        <Button
-          onClick={() => {
-            Message.show('Test', 5, {
-              container: document.querySelector('.demo') as HTMLElement,
-            });
-          }}
-        >
-          Test
-        </Button>
-      </div>,
-    );
+    const { container } = render(<MessageContainer />);
     fireEvent.click(container.querySelector('button')!);
     await waitFor(async () => {
       await delay(200);
-      screen.debug();
+      expect(container.querySelector('#container')?.querySelector(wrapper)).toBeInTheDocument();
     });
   });
 });
