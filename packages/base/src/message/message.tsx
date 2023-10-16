@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Alert from '../alert';
 import { MessageItemType, MessageProps } from './message.type';
 import classNames from 'classnames';
@@ -19,8 +19,17 @@ const MessagePure = (props: {
   onClose: (id: string, duration: number, h: number) => void;
   cachedHeight: { [key: string]: number };
   position: string;
+  timeoutMap: { [key: string]: NodeJS.Timeout };
 }) => {
-  const { messages, jssStyle, position } = props;
+  const { messages, jssStyle, position, timeoutMap } = props;
+
+  const [timeoutByIdMap, setTimeoutByIdMap] = useState<{ [key: string]: NodeJS.Timeout }>(
+    timeoutMap,
+  );
+  useEffect(() => {
+    setTimeoutByIdMap(timeoutMap);
+  }, [Object.keys(timeoutMap).length]);
+
   // hooks
   const styles = jssStyle?.message?.();
   const handleClassName = (position: string | undefined, closeMsg: boolean) => {
@@ -53,11 +62,35 @@ const MessagePure = (props: {
     <div className={styles?.wrapper} {...getDataAttribute({ position })}>
       {[
         messages.map(
-          ({ id, type, content, dismiss, h, title, top, className, position, hideClose }) => (
+          ({
+            id,
+            type,
+            content,
+            dismiss,
+            h,
+            title,
+            top,
+            className,
+            position,
+            hideClose,
+            duration,
+          }) => (
             <div
               key={id}
               className={`${handleClassName(position, !!dismiss)} ${className}`}
               style={handleStyle(!!dismiss, h || 0, position)!}
+              onMouseEnter={() => {
+                clearTimeout(timeoutByIdMap[id]);
+              }}
+              onMouseLeave={() => {
+                const closeTimeDelay = setTimeout(() => {
+                  props.onClose(id, dismissDuration, props.cachedHeight[id]);
+                }, duration * 1000);
+                setTimeoutByIdMap((prev) => ({
+                  ...prev,
+                  [id]: closeTimeDelay,
+                }));
+              }}
               ref={(el) => {
                 if (el && !dismiss) {
                   props.cachedHeight[id] = el.offsetHeight;
@@ -89,13 +122,14 @@ const MessagePure = (props: {
 
 class Message extends React.PureComponent<MessageProps, MessageState> {
   cachedHeight: Record<string, number>;
+  timeoutMap: Record<string, NodeJS.Timeout>;
   constructor(props: MessageProps) {
     super(props);
     this.state = {
       messages: [],
     };
     this.cachedHeight = {};
-
+    this.timeoutMap = {};
     this.removeMessage = this.removeMessage.bind(this);
     this.closeMessageForAnimation = this.closeMessageForAnimation.bind(this);
   }
@@ -110,9 +144,10 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
     console.log('addMessage', msg);
 
     if (msg.duration > 0) {
-      setTimeout(() => {
+      const closeTimeDelay = setTimeout(() => {
         this.closeMessageForAnimation(id, dismissDuration, this.cachedHeight[id]);
       }, msg.duration * 1000);
+      this.timeoutMap[id] = closeTimeDelay;
     }
     return this.closeMessageForAnimation.bind(this, id, dismissDuration, 200);
   }
@@ -174,6 +209,7 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
         messages={messages}
         jssStyle={jssStyle}
         cachedHeight={this.cachedHeight}
+        timeoutMap={this.timeoutMap}
         position={this.props.position || 'top'}
         onClose={this.closeMessageForAnimation}
       />
