@@ -176,11 +176,6 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
   }
 
   closeMessageForAnimation(id: string, duration?: number, msgHeight?: number) {
-    if (!duration) {
-      this.removeMessage(id);
-      return;
-    }
-
     // duration animation duration time
     this.setState(
       produce((state) => {
@@ -195,14 +190,6 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
     setTimeout(() => {
       this.removeMessage(id);
     }, duration);
-  }
-
-  closeEvent(id: string, duration: number) {
-    if (duration === 0) {
-      return this.removeMessage.bind(this, id);
-    }
-
-    return undefined;
   }
 
   render() {
