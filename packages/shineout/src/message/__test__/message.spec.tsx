@@ -165,6 +165,30 @@ describe('Message[Base]', () => {
       expect(document.querySelectorAll(item).length).toBe(0);
     });
   });
+  test('should render when use setOptions', async () => {
+    Message.setOptions({
+      className: 'test',
+    });
+    const { container } = render(
+      <Button
+        onClick={() => {
+          Message.show('Test', 0);
+        }}
+      >
+        Test
+      </Button>,
+    );
+    fireEvent.click(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      classContentTest(document.querySelector(item)!, 'test');
+      fireEvent.click(document.querySelector(closeClassName)!);
+    });
+    await waitFor(async () => {
+      await delay(200);
+      expect(document.querySelector(wrapper)).not.toBeInTheDocument();
+    });
+  });
   test('should render when set duration', async () => {
     const { container, rerender } = render(
       <Button
