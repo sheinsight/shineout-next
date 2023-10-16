@@ -80,16 +80,20 @@ const MessagePure = (props: {
               className={`${handleClassName(position, !!dismiss)} ${className}`}
               style={handleStyle(!!dismiss, h || 0, position)!}
               onMouseEnter={() => {
-                clearTimeout(timeoutByIdMap[id]);
+                if (timeoutByIdMap[id]) {
+                  clearTimeout(timeoutByIdMap[id]);
+                }
               }}
               onMouseLeave={() => {
-                const closeTimeDelay = setTimeout(() => {
-                  props.onClose(id, dismissDuration, props.cachedHeight[id]);
-                }, duration * 1000);
-                setTimeoutByIdMap((prev) => ({
-                  ...prev,
-                  [id]: closeTimeDelay,
-                }));
+                if (duration > 0) {
+                  const closeTimeDelay = setTimeout(() => {
+                    props.onClose(id, dismissDuration, props.cachedHeight[id]);
+                  }, duration * 1000);
+                  setTimeoutByIdMap((prev) => ({
+                    ...prev,
+                    [id]: closeTimeDelay,
+                  }));
+                }
               }}
               ref={(el) => {
                 if (el && !dismiss) {
