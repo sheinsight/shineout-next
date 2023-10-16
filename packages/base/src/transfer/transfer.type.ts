@@ -1,6 +1,6 @@
+import { BaseTransferProps, ObjectKey, KeygenResult } from '@sheinx/hooks';
 import { ButtonClasses } from '../button/button.type';
-
-export type TransferListType = 'source' | 'target';
+import { CheckboxClasses } from '../checkbox/checkbox.type';
 
 export interface TransferClasses {
   transfer: string;
@@ -10,13 +10,21 @@ export interface TransferClasses {
   operations: string;
   left: string;
   right: string;
+  header: string;
+  list: string;
+  footer: string;
+  item: string;
+  empty: string;
 }
 
-export interface TransferProps<DataItem> {
+export interface TransferProps<DataItem, Value> extends BaseTransferProps<DataItem, Value> {
   jssStyle: {
     transfer: () => TransferClasses;
     button: () => ButtonClasses;
+    checkbox: () => CheckboxClasses;
   };
-  data: DataItem[];
-  children?: React.ReactNode;
+  selectedKeys?: KeygenResult[];
+  listHeight?: number;
+  renderItem?: ObjectKey<DataItem> | ((data: DataItem) => React.ReactNode);
+  empty?: React.ReactNode;
 }

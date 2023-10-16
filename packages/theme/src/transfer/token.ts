@@ -21,6 +21,7 @@ const transferTokenValue = {
   large: { font: { size: '16/regular' } },
   border: { color: 'Neutral-border-1', radius: 'Radius-4' },
   header: { background: { color: 'Neutral-fill-2' } },
+  footer: { background: { color: '' } },
 };
 
 const transferTokenExtraValue = {};

@@ -35,5 +35,6 @@ export * from './components/use-popup';
 export * from './components/use-image';
 export * from './components/use-datepicker';
 export * from './components/use-tabs';
+export * from './components/use-transfer';
 
 export default {};
