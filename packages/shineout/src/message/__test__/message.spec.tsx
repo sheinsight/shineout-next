@@ -1,6 +1,7 @@
 import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Message from '..';
+import type { MessageOptions } from '../message.type';
 import { Button } from 'shineout';
 import {
   attributesTest,
@@ -37,10 +38,10 @@ const typeClassNameMap: { [key: string]: string } = {
   error: 'danger',
 };
 
-const MessageTest = () => (
+const MessageTest = ({ options }: { options?: MessageOptions }) => (
   <Button
     onClick={() => {
-      Message.show('Test');
+      Message.show('Test', 5, options);
     }}
   >
     Test
@@ -66,7 +67,6 @@ describe('Message[Base]', () => {
     fireEvent.click(container.querySelector('button')!);
     await waitFor(async () => {
       await delay(200);
-      screen.debug();
       const messageWrapper = document.querySelector(wrapper)!;
       attributesTest(messageWrapper, 'data-soui-position', 'top');
       const messageItem = messageWrapper.querySelector(item)!;
@@ -204,6 +204,31 @@ describe('Message[Base]', () => {
       { timeout: 10000 },
     );
   });
+  test('should hover message when mouseenter', async () => {
+    const { container } = render(<MessageTest />);
+    fireEvent.click(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      screen.debug();
+      expect(document.querySelector(wrapper)).toBeInTheDocument();
+      fireEvent.mouseEnter(document.querySelector(item)!);
+    });
+    await waitFor(
+      async () => {
+        await delay(3200);
+        expect(document.querySelector(wrapper)).toBeInTheDocument();
+        fireEvent.mouseLeave(document.querySelector(item)!);
+      },
+      { timeout: 10000 },
+    );
+    await waitFor(
+      async () => {
+        await delay(3200);
+        expect(document.querySelector(wrapper)).not.toBeInTheDocument();
+      },
+      { timeout: 10000 },
+    );
+  });
 });
 describe('Message[Option]', () => {
   test('should render when set className', async () => {
@@ -235,6 +260,24 @@ describe('Message[Option]', () => {
     await waitFor(async () => {
       await delay(200);
       expect(container.querySelector('#container')?.querySelector(wrapper)).toBeInTheDocument();
+    });
+  });
+  test('should render when set hideClose is true', async () => {
+    const { container } = render(
+      <Button
+        onClick={() => {
+          Message.show('Test', 5, {
+            hideClose: true,
+          });
+        }}
+      >
+        Test
+      </Button>,
+    );
+    fireEvent.click(container.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+      screen.debug();
     });
   });
 });
