@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { CommonType } from '../common/type';
-import type { BaseCollapseProps } from '@sheinx/hooks';
+import type { BaseCollapseProps, BaseCollapseItemContext } from '@sheinx/hooks';
 import { CollapseItemProps } from './collapse-item.type';
 
 export interface CollapseClasses {
@@ -14,13 +14,13 @@ export interface CollapseClasses {
 export interface CollapseProps
   extends Pick<CommonType, 'className' | 'style'>,
     Pick<CollapseItemProps, 'destroyOnHide' | 'expandContent'>,
+    Pick<BaseCollapseItemContext, 'triggerRegion'>,
     BaseCollapseProps {
   jssStyle?: {
     collapse: CollapseClasses;
   };
   border?: boolean;
   expandContentPosition?: 'left' | 'right';
-  triggerRegion?: 'icon' | 'header' | 'disabled';
   lazyload?: boolean;
   children?: ReactNode;
 }

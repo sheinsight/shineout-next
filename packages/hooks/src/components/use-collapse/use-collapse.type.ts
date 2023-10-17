@@ -1,6 +1,6 @@
-export interface BaseCollapseProps {
+import type { BaseCollapseItemContext } from './use-collapse-item.type';
+export interface BaseCollapseProps extends Partial<Pick<BaseCollapseItemContext, 'active'>> {
   defaultActive?: string | string[];
-  active?: string | string[];
   accordion?: boolean;
   onChange?: (
     active: string,

@@ -2,7 +2,7 @@ import React, { CSSProperties, useContext, useEffect, useRef, useState } from 'r
 import classNames from 'classnames';
 import type { CollapseItemProps } from './collapse-item.type';
 import groupContext from './group-context';
-import { usePersistFn } from '@sheinx/hooks';
+import { useCollapseItem } from '@sheinx/hooks';
 
 const CollapseItem = (props: CollapseItemProps) => {
   const {
@@ -33,24 +33,38 @@ const CollapseItem = (props: CollapseItemProps) => {
   const panelHeight = useRef<number>(0);
   const keepAlive = useRef<boolean>(false);
 
-  const judgeExpanded = active.indexOf(name) > -1;
+  const { judgeExpanded, getItemContentProps, getHeaderIconProps, getTitleProps, getExtraProps } =
+    useCollapseItem({
+      active,
+      name,
+      triggerRegion,
+      disabled,
+      onChange,
+    });
+  const headerIconItem = () => {
+    const collapseItemIconClassName = classNames(
+      jssStyle?.collapseItem.icon,
+      expandContentPosition === 'right'
+        ? jssStyle?.collapseItem.activeTransformRight
+        : jssStyle?.collapseItem.activeTransform,
+    );
+    const headerIcon = showExpandIcon
+      ? expandContent !== undefined
+        ? expandContent
+        : expandIcon
+      : null;
+    return (
+      headerIcon && (
+        <div {...getHeaderIconProps({ className: collapseItemIconClassName })}>{headerIcon}</div>
+      )
+    );
+  };
 
-  const headerIcon = showExpandIcon
-    ? expandContent !== undefined
-      ? expandContent
-      : expandIcon
-    : null;
-
-  const currentDisabled = triggerRegion === 'disabled' || disabled;
-
-  const handleClickByRegion = usePersistFn(
-    (e: React.MouseEvent<HTMLDivElement, MouseEvent>, regionKey: 0 | 1 | 2) => {
-      if (currentDisabled) return;
-      const triggerKey = triggerRegion === 'icon' ? 0 : triggerRegion === 'header' ? 1 : 2;
-      if (regionKey === triggerKey || (triggerRegion === 'header' && [0, 1].includes(regionKey)))
-        onChange(name, e);
-    },
-  );
+  const extraItem = () => {
+    return (
+      extra && <div {...getExtraProps({ className: jssStyle?.collapseItem.extra })}>{extra}</div>
+    );
+  };
 
   useEffect(() => {
     if (!panelRef.current) return;
@@ -81,12 +95,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     expandContentPosition === 'right' && jssStyle?.collapseItem.rightIcon,
     triggerRegion === 'header' && jssStyle?.collapseItem.region,
   );
-  const collapseItemIconClassName = classNames(
-    jssStyle?.collapseItem.icon,
-    expandContentPosition === 'right'
-      ? jssStyle?.collapseItem.activeTransformRight
-      : jssStyle?.collapseItem.activeTransform,
-  );
+
   const collapseItemContentClassName = classNames(
     jssStyle?.collapseItem.content,
     judgeExpanded && jssStyle?.collapseItem.expanded,
@@ -107,25 +116,10 @@ const CollapseItem = (props: CollapseItemProps) => {
 
   return (
     <div className={collapseItemClassName} style={style}>
-      <div
-        data-soui-disabled={currentDisabled}
-        tabIndex={currentDisabled ? -1 : 0}
-        className={collapseItemHeaderClassName}
-        onClick={(e) => handleClickByRegion(e, 2)}
-      >
-        {headerIcon && (
-          <div className={collapseItemIconClassName} onClick={(e) => handleClickByRegion(e, 0)}>
-            {headerIcon}
-          </div>
-        )}
-        <div className={jssStyle?.collapseItem.title} onClick={(e) => handleClickByRegion(e, 1)}>
-          {title}
-        </div>
-        {extra && (
-          <div className={jssStyle?.collapseItem.extra} onClick={(e) => e.stopPropagation()}>
-            {extra}
-          </div>
-        )}
+      <div {...getItemContentProps({ className: collapseItemHeaderClassName })}>
+        {headerIconItem()}
+        <div {...getTitleProps({ className: jssStyle?.collapseItem.title })}>{title}</div>
+        {extraItem()}
       </div>
       {renderContent()}
     </div>

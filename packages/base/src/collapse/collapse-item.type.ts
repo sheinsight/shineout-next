@@ -1,5 +1,6 @@
 import { CSSProperties, ReactNode } from 'react';
-import { CommonType } from '../common/type';
+import type { CommonType } from '../common/type';
+import type { BaseCollapseItemProps } from '@sheinx/hooks';
 
 export interface CollapseItemClasses {
   /**
@@ -22,13 +23,13 @@ export interface CollapseItemClasses {
   region: string;
 }
 
-export interface CollapseItemProps extends Pick<CommonType, 'className' | 'style'> {
+export interface CollapseItemProps
+  extends Pick<CommonType, 'className' | 'style'>,
+    BaseCollapseItemProps {
   jssStyle?: {
     collapseItem: CollapseItemClasses;
   };
-  name: string;
   destroyOnHide?: boolean;
-  disabled?: boolean;
   showExpandIcon?: boolean;
   expandContent?: ReactNode;
   extra?: ReactNode;

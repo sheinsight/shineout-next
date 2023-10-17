@@ -21,7 +21,7 @@ export default () => {
         }}
       >
         <Collapse.Item title='dads' name='0'>
-          <Collapse style={{ maxWidth: 1180 }} triggerRegion='header' expandContentPosition='left'>
+          <Collapse style={{ maxWidth: 1180 }} triggerRegion='header' expandContentPosition='right'>
             <Collapse.Item title='Beijing Toutiao Technology Co., Ltd.' name='1' extra='hello'>
               Beijing Toutiao Technology Co., Ltd.
             </Collapse.Item>
