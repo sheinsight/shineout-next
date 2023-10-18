@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Dropdown from '..';
 import { TYPE } from 'shineout';
@@ -16,6 +16,7 @@ import {
   classContentTest,
   styleContentTest,
   delay,
+  createClassName,
 } from '../../tests/utils';
 import DropdownBase from '../__example__/001-base';
 import DropdownHover from '../__example__/002-hover';
@@ -31,24 +32,26 @@ import DropdownSplit from '../__example__/011-split';
 import DropdownAbsolute from '../__example__/012-absolute';
 
 const SO_PREFIX = 'dropdown';
-const dropdownClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
-const dropdownButtonClassName = `${SO_PREFIX}-button-0-2-9`;
-const dropdownContentClassName = `.${SO_PREFIX}-content-0-2-8`;
-const dropdownCaretClassName = `.${SO_PREFIX}-caret-0-2-7`;
-const dropdownListClassName = `.${SO_PREFIX}-list-0-2-3`;
-const dropdownItemClassName = `${SO_PREFIX}-item-0-2-10`;
-const dropdownDisabledClassName = 'button-disabled-0-2-43';
-const dropdownOpenClassName = `${SO_PREFIX}-open-0-2-2`;
-const dropdownGroupClassName = `.${SO_PREFIX}-optionGroup-0-2-12`;
-const dropdownDividerClassName = `.${SO_PREFIX}-optionDivider-0-2-13`;
-const dropdownListSmallClassName = `${SO_PREFIX}-listSmall-0-2-4`;
-const dropdownListLargeClassName = `${SO_PREFIX}-listLarge-0-2-5`;
-const buttonSmallClassName = 'button-small-0-2-27';
-const buttonLargeClassName = 'button-large-0-2-28';
-const dropdownClassNameOtherClassName = `.${SO_PREFIX}-wrapper-0-2-22`;
-const dropdownSplitButtonClassName = `${SO_PREFIX}-splitButton-0-2-36`;
-const dropdownListShowClassName = 'animation-list-show-0-2-22';
-const animationList = 'animation-list-fade-animation-240-0-2-19';
+const originClasses = ['wrapper', 'content', 'caret', 'list', 'optionGroup', 'optionDivider'];
+const originItemClasses = ['button', 'item', 'open', 'listSmall', 'listLarge', 'splitButton'];
+const {
+  wrapper: dropdownClassName,
+  button: dropdownButtonClassName,
+  content: dropdownContentClassName,
+  caret: dropdownCaretClassName,
+  list: dropdownListClassName,
+  item: dropdownItemClassName,
+  open: dropdownOpenClassName,
+  optionGroup: dropdownGroupClassName,
+  optionDivider: dropdownDividerClassName,
+  listSmall: dropdownListSmallClassName,
+  listLarge: dropdownListLargeClassName,
+} = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const dropdownDisabledClassName = 'so-button-disabled';
+const buttonSmallClassName = 'so-button-small';
+const buttonLargeClassName = 'so-button-large';
+const animationList = 'so-animation-list-fade-animation';
 
 type DropdownItem = TYPE.Dropdown.Item;
 const data: DropdownItem[] = [
@@ -78,12 +81,21 @@ const data: DropdownItem[] = [
 ];
 const menu: DropdownItem[] = [{ content: 'America' }, { content: 'Germany' }];
 const dataPosition = 'data-position';
-const closeStyle = 'opacity: 0; pointer-events: none; display: none;';
+const closeStyle =
+  'pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;';
 
 const textSplit = (e: Element) => e.textContent?.split('AmericaGermany')[0];
 
+beforeAll(() => {
+  jest.useFakeTimers();
+});
+afterAll(() => {
+  jest.runAllTimers();
+});
 afterEach(cleanup);
+
 mountTest(<Dropdown data={data} />);
+
 describe('Dropdown[Base]', () => {
   displayTest(Dropdown as React.FC, 'ShineoutDropdown');
   baseTest(
@@ -133,7 +145,8 @@ describe('Dropdown[Base]', () => {
     await waitFor(async () => {
       await delay(200);
       classTest(container.querySelectorAll(dropdownClassName)[0]!, dropdownOpenClassName);
-      classTest(list, dropdownListShowClassName);
+      attributesTest(list, 'data-sheinx-animation-duration', 'fast');
+      attributesTest(list, 'data-sheinx-animation-type', 'fade');
       expect(list.getAttribute('style')).not.toBe(closeStyle);
     });
   });
@@ -309,6 +322,7 @@ describe('Dropdown[Size]', () => {
   const listClassNames = [dropdownListSmallClassName, '', dropdownListLargeClassName];
   test('should render when set size', () => {
     const { container } = render(<DropdownSize />);
+    screen.debug();
     container.querySelectorAll('button').forEach((button, index) => {
       if (index === 1) return;
       classTest(button, buttonClassNames[index]);
@@ -322,8 +336,8 @@ describe('Dropdown[Size]', () => {
 describe('Dropdown[Split]', () => {
   test('should render in group', () => {
     const { container } = render(<DropdownSplit />);
-    container.querySelectorAll(dropdownClassNameOtherClassName).forEach((item) => {
-      classTest(item.querySelector('button')!, dropdownSplitButtonClassName);
+    container.querySelectorAll(dropdownClassName).forEach((item) => {
+      classTest(item.querySelector('button')!, dropdownButtonClassName);
     });
   });
 });
@@ -344,7 +358,7 @@ describe('Dropdown[absolute]', () => {
       await delay(200);
       styleTest(
         document.querySelector(dropdownListClassName)!,
-        'display: block; position: absolute; z-index: 1051; min-width: 0; left: 0px; transform: translateX(-100%); top: 2px;',
+        'position: absolute; z-index: 1051; display: block; opacity: 1; min-width: 0; left: 0px; top: 2px; transition: opacity 240ms ease-in-out;',
       );
     });
   });
@@ -419,8 +433,12 @@ describe('Dropdown[Open]', () => {
     const dropdown = container.querySelector(dropdownClassName)!;
     const list = dropdown.querySelector(dropdownListClassName)!;
     classTest(dropdown, dropdownOpenClassName);
-    classTest(list, dropdownListShowClassName);
-    styleTest(list, 'opacity: 0; pointer-events: none; display: block;');
+    attributesTest(list, 'data-sheinx-animation-duration', 'fast');
+    attributesTest(list, 'data-sheinx-animation-type', 'fade');
+    styleTest(
+      list,
+      'pointer-events: none; position: absolute; z-index: -1000; display: block; opacity: 0;',
+    );
   });
 });
 describe('Dropdown[OnCollapse]', () => {
