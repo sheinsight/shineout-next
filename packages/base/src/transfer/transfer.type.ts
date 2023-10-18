@@ -1,6 +1,7 @@
 import { BaseTransferProps, ObjectKey, KeygenResult } from '@sheinx/hooks';
 import { ButtonClasses } from '../button/button.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
+import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
 
 export interface TransferClasses {
   transfer: string;
@@ -22,6 +23,7 @@ export interface TransferProps<DataItem, Value> extends BaseTransferProps<DataIt
     transfer: () => TransferClasses;
     button: () => ButtonClasses;
     checkbox: () => CheckboxClasses;
+    virtualScroll: () => VirtualScrollClasses;
   };
   selectedKeys?: KeygenResult[];
   listHeight?: number;

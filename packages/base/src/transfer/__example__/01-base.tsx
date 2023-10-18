@@ -11,13 +11,14 @@ import {
   useButtonStyle,
   useCheckboxStyle,
   useEmptyStyle,
+  useVirtualScrollStyle,
 } from '@sheinx/shineout-style';
 
 let key = 0;
 
 const originData = [];
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 100000; i++) {
   originData.push({
     id: i,
     name: `name-${i}`,
@@ -30,6 +31,7 @@ export default () => {
     button: useButtonStyle,
     checkbox: useCheckboxStyle,
     empty: useEmptyStyle,
+    virtualScroll: useVirtualScrollStyle,
   };
 
   const [selectedKeys, setSelectedKeys] = useState<(string | number)[]>([0]);

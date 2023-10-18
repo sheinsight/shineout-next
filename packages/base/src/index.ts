@@ -22,6 +22,7 @@ export * from './tag';
 export * from './textarea';
 export * from './tooltip';
 export * from './transfer';
+export * from './virtual-scroll';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';
