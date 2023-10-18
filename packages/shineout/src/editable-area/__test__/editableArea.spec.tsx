@@ -1,4 +1,4 @@
-import { render, cleanup, screen, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import EditableArea from '..';
 import mountTest from '../../tests/mountTest';
@@ -49,10 +49,21 @@ const {
   popupShow,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
+const textareaFooterClassName = '.so-textarea-footer';
+
 const changeValueHandle = (container: HTMLElement, value: string) => {
   fireEvent.click(container.querySelector(place)!);
   fireEvent.change(document.querySelectorAll('textarea')[0], { target: { value } });
   fireEvent.blur(document.querySelectorAll('textarea')[0]);
+};
+
+const defaultValue: string = 'defaultValue';
+const value: string = 'value';
+
+const testValue = (container: HTMLElement, contentValue: string) => {
+  textContentTest(container.querySelector(content)!, contentValue);
+  textContentTest(document.querySelectorAll('textarea')[0], contentValue);
+  textContentTest(document.querySelectorAll('textarea')[1], contentValue);
 };
 
 afterEach(cleanup);
@@ -112,27 +123,25 @@ describe('EditableArea[Base]', () => {
     const { container } = render(<EditableArea trim />);
     changeValueHandle(container, ' value \n');
     textContentTest(container.querySelector(content)!, 'value');
-    screen.debug();
   });
+  // TODO
   test('should render when set getPopupContainer', () => {
     render(<EditableAreaContainer />);
-    screen.debug();
+    // TODO: should container.querySelectorAll, is a bug, but no problem on the browser
+    expect(document.querySelectorAll('textarea').length).toBe(2);
   });
   test('should render when set maxHeight', () => {
     const maxHeight = 200;
     render(<EditableArea maxHeight={maxHeight} />);
-    screen.debug();
     styleContentTest(document.querySelectorAll('textarea')[0], `max-height: ${maxHeight}px;`);
+  });
+  test('should render when set renderFooter', () => {
+    const { container } = render(<EditableAreaRenderFooter />);
+    fireEvent.click(container.querySelector(place)!);
+    textContentTest(document.querySelector(textareaFooterClassName)!, 'Tip');
   });
 });
 describe('EditableArea[Value]', () => {
-  const defaultValue = 'defaultValue';
-  const value = 'value';
-  const testValue = (container: HTMLElement, contentValue: string) => {
-    textContentTest(container.querySelector(content)!, contentValue);
-    textContentTest(document.querySelectorAll('textarea')[0], contentValue);
-    textContentTest(document.querySelectorAll('textarea')[1], contentValue);
-  };
   test('should render when set defaultValue', () => {
     const { container } = render(<EditableArea defaultValue={defaultValue} />);
     testValue(container, defaultValue);
@@ -143,6 +152,10 @@ describe('EditableArea[Value]', () => {
     changeValueHandle(container, 'test\n');
     testValue(container, value);
   });
+  test('should render when set value and defaultValue at the same time', () => {
+    const { container } = render(<EditableArea defaultValue={defaultValue} value={value} />);
+    testValue(container, value);
+  });
   test('should render when set clearable', () => {
     const { container, rerender } = render(<EditableArea clearable />);
     expect(container.querySelector(clear)).not.toBeInTheDocument();
@@ -150,6 +163,21 @@ describe('EditableArea[Value]', () => {
     expect(container.querySelector(clear)).toBeInTheDocument();
     rerender(<EditableArea clearable value='hello' />);
     expect(container.querySelector(clear)).toBeInTheDocument();
+    fireEvent.click(container.querySelector(clear)!);
+    textContentTest(container.querySelector(content)!, '');
+    classContentTest(document.querySelector(popup)!, popupShow);
+  });
+  test('should render when set renderResult', () => {
+    const { container } = render(<EditableArea renderResult={(v: string) => v + 1} />);
+    changeValueHandle(container, value);
+    textContentTest(container.querySelector(content)!, value + 1);
+    textContentTest(document.querySelectorAll('textarea')[0], value);
+    textContentTest(document.querySelectorAll('textarea')[1], value);
+  });
+  test('should render when is controlled', () => {
+    const { container } = render(<EditableAreaControlled />);
+    changeValueHandle(container, value);
+    testValue(container, value);
   });
 });
 describe('EditableArea[Event]', () => {
@@ -159,5 +187,32 @@ describe('EditableArea[Event]', () => {
     classContentTest(editableArea, wrapperDisabled);
     fireEvent.click(container.querySelector(place)!);
     classContentTest(document.querySelector(popup)!, popupShow, false);
+  });
+  test('should render when set beforeChange', () => {
+    const { container } = render(<EditableArea beforeChange={(v: string) => v + 1} />);
+    changeValueHandle(container, 'value');
+    testValue(container, 'value1');
+  });
+  test('should render when set onChange', () => {
+    const changeFn = jest.fn();
+    const { container } = render(<EditableArea onChange={changeFn} />);
+    changeValueHandle(container, 'value');
+    expect(changeFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set onBlur', () => {
+    const blurFn = jest.fn();
+    const { container } = render(<EditableArea onBlur={blurFn} />);
+    changeValueHandle(container, 'value');
+    expect(blurFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set onFocus', () => {
+    const focusFn = jest.fn();
+    const { container, rerender } = render(<EditableArea onFocus={focusFn} />);
+    fireEvent.click(container.querySelector(place)!);
+    fireEvent.click(document.querySelectorAll('textarea')[0]);
+    expect(focusFn.mock.calls.length).toBe(1);
+    rerender(<EditableArea onFocus={focusFn} />);
+    fireEvent.focus(container.querySelector(place)!);
+    classContentTest(document.querySelector(popup)!, popupShow);
   });
 });
