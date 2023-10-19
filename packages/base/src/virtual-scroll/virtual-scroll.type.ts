@@ -23,6 +23,8 @@ export interface VirtualScrollProps {
    * 固定高度
    */
   lineHeight?: number;
+  width?: number;
+  scrollWidth: number;
   itemsInView?: number;
   translate?: number;
   footer?: React.ReactNode;

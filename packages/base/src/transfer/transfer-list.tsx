@@ -57,7 +57,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   };
 
   const renderList = () => {
-    const items = data.slice(currentIndex, currentIndex + itemsInView);
+    let items = data.slice(currentIndex, currentIndex + itemsInView);
     const scrollHeight = getScrollHeight();
 
     return (

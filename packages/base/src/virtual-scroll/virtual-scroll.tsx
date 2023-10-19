@@ -7,8 +7,10 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   const {
     jssStyle,
     children,
+    // width,
     height,
     scrollHeight: scrollHeightProp,
+    // scrollWidth: scrollWidthProp,
     footer,
     scrollX,
     scrollY,
@@ -16,26 +18,39 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   } = props;
   const rootStyle = jssStyle?.virtualScroll?.() || ({} as VirtualScrollClasses);
   const rootClass = classNames(rootStyle.scroll);
-  const delta = useRef(0);
+  const deltaY = useRef(0);
+  const deltaX = useRef(0);
   const wheelEl = useRef<HTMLDivElement>(null);
   const transformEl = useRef<HTMLDivElement>(null);
   const resizeRef = useRef<HTMLIFrameElement>(null);
+  // const preventLocked = useRef(false);
 
   const scrollHeight = scrollHeightProp || height;
+  // const scrollWidth = scrollWidthProp || width;
+
+  // const handlePrevent = (e) => {
+  //   if (preventLocked.current) return;
+  //   e.preventDefault();
+  // };
 
   const handleResize = () => {
     console.log('resize');
   };
 
   const handleWheel = (e: WheelEvent) => {
-    delta.current += e.deltaY;
-    if (delta.current <= 0) delta.current = 0;
-    if (delta.current >= scrollHeight - height) {
-      delta.current = scrollHeight - height;
+    deltaY.current += e.deltaY;
+    deltaX.current += e.deltaX;
+    if (deltaY.current <= 0) deltaY.current = 0;
+    if (deltaY.current >= scrollHeight - height) {
+      deltaY.current = scrollHeight - height;
     }
-    onScroll(delta.current);
+    // if (deltaX.current <= 0) deltaX.current = 0;
+    // if (deltaX.current >= scrollWidth - width) {
+    //   deltaX.current = scrollWidth - width;
+    // }
+    onScroll(deltaY.current);
     if (transformEl.current) {
-      transformEl.current.style.transform = `translate(0,-${delta.current}px)`;
+      transformEl.current.style.transform = `translate(0,-${deltaY.current}px)`;
     }
   };
 
@@ -78,7 +93,6 @@ const VirtualScroll = (props: VirtualScrollProps) => {
         {renderResizeMonitor()}
         <div className={rootStyle.container}>
           <div ref={transformEl}>{children}</div>
-          {/* <div style={{transform:`translateY(-${delta.current}px)`}} >{children}</div> */}
         </div>
       </div>
       {scrollX && renderBarX()}
