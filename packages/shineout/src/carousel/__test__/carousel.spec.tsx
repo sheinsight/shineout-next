@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Carousel from '..';
 import mountTest from '../../tests/mountTest';
@@ -28,12 +28,17 @@ const originItemClasses = [
   'itemCurrent',
   'indicatorCenter',
   'indicatorTypeCircle',
+  'indicatorTypeNumber',
+  'indicatorTypeLine',
   'arrowHover',
   'arrowLeft',
   'arrowRight',
   'indicatorActive',
   'indicatorLeft',
   'indicatorRight',
+  'animationSlideY',
+  'animationFade',
+  'indicatorTypeSlider',
 ];
 const {
   wrapper,
@@ -45,6 +50,9 @@ const {
   indicatorWrapper,
   indicatorCenter,
   indicatorTypeCircle,
+  indicatorTypeNumber,
+  indicatorTypeLine,
+  indicatorTypeSlider,
   indicator,
   arrowWrapper,
   arrowHover,
@@ -54,6 +62,8 @@ const {
   indicatorActive,
   indicatorLeft,
   indicatorRight,
+  animationSlideY,
+  animationFade,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const images = [
@@ -129,6 +139,10 @@ describe('Carousel[Type]', () => {
     if (type === 'always') return;
     classTest(carouselArrowWrapper, arrowHover);
   });
+  test('should render when set arrowClassName', () => {
+    const { container } = render(<CarouselType showArrow='always' arrowClassName='demo' />);
+    classTest(container.querySelector(arrowWrapper)!, 'demo');
+  });
   test('should render when click arrow', () => {
     const { container } = render(<CarouselType showArrow='always' />);
     const arrowItems = container.querySelectorAll(arrowItem);
@@ -143,12 +157,41 @@ describe('Carousel[Type]', () => {
     classTest(carouselItems[0], itemCurrent);
     classTest(indicators[0], indicatorActive);
   });
-  test('should render when set indicatorPosition is left', () => {
-    const { container } = render(<CarouselType indicatorPosition='left' />);
-    classTest(container.querySelector(indicatorWrapper)!, indicatorLeft);
+  const positionClassNameMap: { [key: string]: string } = {
+    left: indicatorLeft,
+    right: indicatorRight,
+  };
+  test.each(['left', 'right'])('should render when set indicatorPosition is %s', (type) => {
+    const { container } = render(<CarouselType indicatorPosition={type} />);
+    classTest(container.querySelector(indicatorWrapper)!, positionClassNameMap[type]);
   });
-  test('should render when set indicatorPosition is right', () => {
-    const { container } = render(<CarouselType indicatorPosition='right' />);
-    classTest(container.querySelector(indicatorWrapper)!, indicatorRight);
+  const animationClassNameMap: { [key: string]: string } = {
+    'slide-y': animationSlideY,
+    fade: animationFade,
+  };
+  test.each(['slide-y', 'fade'])('should render when set animation is %s', (type) => {
+    const { container } = render(<CarouselType animation={type} />);
+    classTest(container.querySelector(wrapper)!, animationClassNameMap[type]);
+  });
+  const indicatorTypeClassNameMap: { [key: string]: string } = {
+    line: indicatorTypeLine,
+    number: indicatorTypeNumber,
+    slider: indicatorTypeSlider,
+  };
+  test.each(['line', 'number', 'slider'])('should render when set indicatorType is %s', (type) => {
+    const { container } = render(<CarouselType indicatorType={type} />);
+    classTest(container.querySelector(indicatorWrapper)!, indicatorTypeClassNameMap[type]);
+  });
+  test('should render when set indicatorType is function', () => {
+    // const { container } = render(
+    //   <CarouselType indicatorType={(current: number) => (
+    //     <>
+    //       {
+    //         images.map()
+    //       }
+    //     </>
+    //   )} />
+    // )
+    screen.debug();
   });
 });

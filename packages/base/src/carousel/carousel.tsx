@@ -46,6 +46,7 @@ const Carousel = (props: CarouselProps) => {
         className={classNames(
           props.showArrow === 'hover' && carouselClasses?.arrowHover,
           carouselClasses?.arrowWrapper,
+          props.arrowClassName,
         )}
       >
         <div
