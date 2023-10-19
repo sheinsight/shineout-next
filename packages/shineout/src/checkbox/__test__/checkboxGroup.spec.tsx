@@ -12,6 +12,7 @@ import {
   classContentTest,
   childrenTest,
   displayTest,
+  createClassName,
 } from '../../tests/utils';
 import CheckboxRawgroup from '../__example__/004-rawgroup';
 import CheckboxGroup from '../__example__/005-group';
@@ -20,11 +21,15 @@ import CheckboxDisabled from '../__example__/007-disabled-1';
 import CheckboxDisabledByFunc from '../__example__/007-disabled-2';
 
 const SO_PREFIX = 'checkbox';
-const checkboxClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
-const checkedClassName = `${SO_PREFIX}-wrapperChecked-0-2-3`;
-const checkboxGroupClassName = `.${SO_PREFIX}-group-0-2-9`;
-const checkboxDisabledClassName = `${SO_PREFIX}-wrapperDisabled-0-2-5`;
-const checkboxGroupBlockClassName = `${SO_PREFIX}-groupBlock-0-2-10`;
+const originClasses = ['wrapper', 'group'];
+const originItemClasses = ['wrapperChecked', 'wrapperDisabled', 'groupBlock'];
+const {
+  wrapper: checkboxClassName,
+  wrapperChecked: checkedClassName,
+  group: checkboxGroupClassName,
+  wrapperDisabled: checkboxDisabledClassName,
+  groupBlock: checkboxGroupBlockClassName,
+} = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const dataRender: string[] = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
 interface dataObjProps {
@@ -294,6 +299,7 @@ describe('Checkbox[Onchange/BeforeChange]', () => {
 });
 describe('Checkbox[separator]', () => {
   test('should render when set separator', () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
     const RenderDemo = () => {
       const [selected, setSelected] = useState([1]);
       return (
@@ -314,6 +320,10 @@ describe('Checkbox[separator]', () => {
     const { container } = render(<RenderDemo />);
     fireEvent.click(container.querySelectorAll(checkboxClassName)[2]);
     textContentTest(container.querySelector('.render')!, '1-3');
+    // error capture
+    expect(errorSpy).toHaveBeenCalledWith(
+      'use-list-select: separator is string, but value is not string',
+    );
   });
 });
 describe('Checkbox[Prediction]', () => {
