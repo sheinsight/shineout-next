@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Carousel from '..';
 import mountTest from '../../tests/mountTest';
@@ -9,8 +9,12 @@ import {
   classTest,
   createClassName,
   displayTest,
+  snapshotTest,
   styleTest,
 } from '../../tests/utils';
+import CaroselBase from '../__example__/01-base';
+import CarouselIndicator from '../__example__/02-indicator';
+import CarouselAnimation from '../__example__/03-animation';
 
 const SO_PREFIX = 'carousel';
 const originClasses = [
@@ -30,15 +34,16 @@ const originItemClasses = [
   'indicatorTypeCircle',
   'indicatorTypeNumber',
   'indicatorTypeLine',
+  'indicatorTypeSlider',
   'arrowHover',
   'arrowLeft',
   'arrowRight',
   'indicatorActive',
   'indicatorLeft',
   'indicatorRight',
+  'indicatorOuter',
   'animationSlideY',
   'animationFade',
-  'indicatorTypeSlider',
 ];
 const {
   wrapper,
@@ -62,6 +67,7 @@ const {
   indicatorActive,
   indicatorLeft,
   indicatorRight,
+  indicatorOuter,
   animationSlideY,
   animationFade,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
@@ -73,12 +79,6 @@ const images = [
   'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png',
 ];
 
-beforeAll(() => {
-  jest.useFakeTimers();
-});
-afterAll(() => {
-  jest.runAllTimers();
-});
 afterEach(cleanup);
 
 const CarouselType = (props: any) => (
@@ -94,6 +94,9 @@ describe('Carousel[Base]', () => {
   displayTest(Carousel, 'ShineoutCarousel');
   baseTest(Carousel, wrapper, { backgroundColor: 'red' }, 'background-color: red; height: auto;');
   childrenTest(Carousel, wrapper);
+  snapshotTest(<CaroselBase />);
+  snapshotTest(<CarouselIndicator />, 'about indicator');
+  snapshotTest(<CarouselAnimation />, 'about animation');
   test('should render default', () => {
     const { container } = render(<CarouselType />);
     const carouselWrapper = container.querySelector(wrapper)!;
@@ -123,6 +126,72 @@ describe('Carousel[Base]', () => {
     fireEvent.click(indicators[1]);
     classTest(carouselItems[1], itemCurrent);
     classTest(indicators[1], indicatorActive);
+    fireEvent.click(indicators[1]);
+    classTest(carouselItems[1], itemCurrent);
+    classTest(indicators[1], indicatorActive);
+  });
+  test('should render when set onMove', () => {
+    const moveFn = jest.fn();
+    const { container } = render(<CarouselType onMove={moveFn} />);
+    const indicators = container.querySelectorAll(indicator);
+    fireEvent.click(indicators[1]);
+    expect(moveFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set interval > 0', async () => {
+    jest.useFakeTimers();
+    const { container } = render(
+      <Carousel interval={5000}>
+        <div />
+        <div />
+      </Carousel>,
+    );
+    const indicators = container.querySelectorAll(indicator);
+    const carouselItems = container.querySelectorAll(item);
+    classTest(carouselItems[0], itemCurrent);
+    classTest(indicators[0], indicatorActive);
+    await waitFor(
+      () => {
+        jest.advanceTimersByTime(5000);
+      },
+      { timeout: 6000 },
+    );
+
+    await waitFor(() => {
+      classTest(carouselItems[1], itemCurrent);
+      classTest(indicators[1], indicatorActive);
+    });
+    await waitFor(
+      () => {
+        jest.advanceTimersByTime(5000);
+      },
+      { timeout: 6000 },
+    );
+    await waitFor(() => {
+      classTest(carouselItems[0], itemCurrent);
+      classTest(indicators[0], indicatorActive);
+    });
+    fireEvent.mouseEnter(container.querySelector(wrapper)!);
+    await waitFor(
+      () => {
+        jest.advanceTimersByTime(5000);
+      },
+      { timeout: 6000 },
+    );
+    await waitFor(() => {
+      classTest(carouselItems[0], itemCurrent);
+      classTest(indicators[0], indicatorActive);
+    });
+    fireEvent.mouseLeave(container.querySelector(wrapper)!);
+    await waitFor(
+      () => {
+        jest.advanceTimersByTime(5000);
+      },
+      { timeout: 6000 },
+    );
+    await waitFor(() => {
+      classTest(carouselItems[1], itemCurrent);
+      classTest(indicators[1], indicatorActive);
+    });
   });
 });
 describe('Carousel[Type]', () => {
@@ -156,15 +225,28 @@ describe('Carousel[Type]', () => {
     fireEvent.click(arrowItems[0]);
     classTest(carouselItems[0], itemCurrent);
     classTest(indicators[0], indicatorActive);
+    fireEvent.click(arrowItems[0]);
+    classTest(carouselItems[3], itemCurrent);
+    classTest(indicators[3], indicatorActive);
+    fireEvent.click(arrowItems[1]);
+    classTest(carouselItems[0], itemCurrent);
+    classTest(indicators[0], indicatorActive);
+    fireEvent.click(arrowItems[1]);
+    classTest(carouselItems[1], itemCurrent);
+    classTest(indicators[1], indicatorActive);
   });
   const positionClassNameMap: { [key: string]: string } = {
     left: indicatorLeft,
     right: indicatorRight,
+    outer: indicatorOuter,
   };
-  test.each(['left', 'right'])('should render when set indicatorPosition is %s', (type) => {
-    const { container } = render(<CarouselType indicatorPosition={type} />);
-    classTest(container.querySelector(indicatorWrapper)!, positionClassNameMap[type]);
-  });
+  test.each(['left', 'right', 'outer'])(
+    'should render when set indicatorPosition is %s',
+    (type) => {
+      const { container } = render(<CarouselType indicatorPosition={type} />);
+      classTest(container.querySelector(indicatorWrapper)!, positionClassNameMap[type]);
+    },
+  );
   const animationClassNameMap: { [key: string]: string } = {
     'slide-y': animationSlideY,
     fade: animationFade,
@@ -183,15 +265,19 @@ describe('Carousel[Type]', () => {
     classTest(container.querySelector(indicatorWrapper)!, indicatorTypeClassNameMap[type]);
   });
   test('should render when set indicatorType is function', () => {
-    // const { container } = render(
-    //   <CarouselType indicatorType={(current: number) => (
-    //     <>
-    //       {
-    //         images.map()
-    //       }
-    //     </>
-    //   )} />
-    // )
-    screen.debug();
+    const { container } = render(
+      <CarouselType
+        indicatorType={() => (
+          <>
+            {images.map((item, index) => (
+              <div className='demo' key={index}>
+                {index}
+              </div>
+            ))}
+          </>
+        )}
+      />,
+    );
+    classLengthTest(container.querySelector(indicatorWrapper)!, '.demo', 4);
   });
 });
