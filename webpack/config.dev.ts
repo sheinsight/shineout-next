@@ -40,6 +40,10 @@ const webpackConfig = {
         loader: 'raw-loader',
       },
       {
+        test: /\.(css)$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.(tsx|ts)$/,
         exclude: /node_modules/,
         use: {

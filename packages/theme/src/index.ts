@@ -4,6 +4,9 @@ import { AlertTokens } from './alert/type';
 import Button from './button';
 import { ButtonTokens } from './button/type';
 
+import Carousel from './carousel';
+import { CarouselTokens } from './carousel/type';
+
 import Checkbox from './checkbox';
 import { CheckboxTokens } from './checkbox/type';
 
@@ -66,6 +69,7 @@ import { TransferTokens } from './transfer/type';
 
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
+  CarouselTokens &
   CheckboxTokens &
   CommonTokens &
   DatePickerTokens &
@@ -90,6 +94,7 @@ export type ThemeTokens = AlertTokens &
 const Token: ThemeTokens = {
   ...Alert,
   ...Button,
+  ...Carousel,
   ...Checkbox,
   ...Common,
   ...DatePicker,

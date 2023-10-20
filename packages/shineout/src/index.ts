@@ -1,5 +1,6 @@
 export { default as Alert } from './alert';
 export { default as Button } from './button';
+export { default as Carousel } from './carousel';
 export { default as Checkbox } from './checkbox';
 export { default as DatePicker } from './date-picker';
 export { default as Divider } from './divider';

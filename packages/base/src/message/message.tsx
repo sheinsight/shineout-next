@@ -67,8 +67,7 @@ const MessagePure = (props: {
               <Alert
                 className={styles?.message}
                 jssStyle={jssStyle}
-                closable={'only'}
-                hideClose={hideClose}
+                closable={!hideClose && 'only'}
                 onClose={() => {
                   props.onClose(id, dismissDuration, props.cachedHeight[id]);
                 }}
