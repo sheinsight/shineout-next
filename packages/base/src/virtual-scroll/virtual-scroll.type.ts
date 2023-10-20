@@ -31,5 +31,5 @@ export interface VirtualScrollProps {
   scrollY?: boolean;
   scrollX?: boolean;
   children?: React.ReactNode;
-  onScroll: (y: number) => void;
+  onScroll: (x: number, y: number) => void;
 }

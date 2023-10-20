@@ -14,7 +14,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     renderItem,
     footer,
     keygen,
-    listHeight,
+    listHeight = 180,
     lineHeight = 34,
     itemsInView = 20,
     colNum = 1,
@@ -36,7 +36,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     onSelect(key, checked);
   };
 
-  const handleScroll = (y: number) => {
+  const handleScroll = (x: number, y: number) => {
     const current = Math.floor(y / lineHeight);
     if (current !== currentIndex) setcurrentIndex(current);
   };
@@ -57,7 +57,9 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   };
 
   const renderList = () => {
-    let items = data.slice(currentIndex, currentIndex + itemsInView);
+    const start = currentIndex * colNum;
+    const end = (currentIndex + itemsInView) * colNum;
+    let items = data.slice(start, end);
     const scrollHeight = getScrollHeight();
 
     return (
@@ -66,6 +68,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
           <VirtualScroll
             jssStyle={jssStyle}
             height={listHeight}
+            scrollWidth={0}
             scrollHeight={scrollHeight}
             translate={currentIndex * lineHeight}
             onScroll={handleScroll}

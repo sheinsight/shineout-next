@@ -24,7 +24,9 @@ const VirtualScrollStyle: JsStyles<VirtualClass> = {
     height: '100%',
   },
   footer: {},
-  bar: {},
+  bar: {
+    padding: 1,
+  },
 };
 
 export default VirtualScrollStyle;

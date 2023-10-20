@@ -1,7 +1,11 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { VirtualScrollProps, VirtualScrollClasses } from './virtual-scroll.type';
 import Bar from './virtual-bar';
+
+function getElementScrollbarWidth(element: HTMLElement) {
+  return element.offsetWidth - element.clientWidth;
+}
 
 const VirtualScroll = (props: VirtualScrollProps) => {
   const {
@@ -16,13 +20,18 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     scrollY,
     onScroll,
   } = props;
+
   const rootStyle = jssStyle?.virtualScroll?.() || ({} as VirtualScrollClasses);
   const rootClass = classNames(rootStyle.scroll);
-  const deltaY = useRef(0);
-  const deltaX = useRef(0);
+
+  const [deltaY, setDeltaY] = useState(0);
+  const [deltaX, setDeltaX] = useState(0);
+
   const wheelEl = useRef<HTMLDivElement>(null);
   const transformEl = useRef<HTMLDivElement>(null);
   const resizeRef = useRef<HTMLIFrameElement>(null);
+  const barRef = useRef<HTMLDivElement>(null);
+  const wheelLocked = useRef(false);
   // const preventLocked = useRef(false);
 
   const scrollHeight = scrollHeightProp || height;
@@ -38,21 +47,37 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   };
 
   const handleWheel = (e: WheelEvent) => {
-    deltaY.current += e.deltaY;
-    deltaX.current += e.deltaX;
-    if (deltaY.current <= 0) deltaY.current = 0;
-    if (deltaY.current >= scrollHeight - height) {
-      deltaY.current = scrollHeight - height;
-    }
-    // if (deltaX.current <= 0) deltaX.current = 0;
-    // if (deltaX.current >= scrollWidth - width) {
-    //   deltaX.current = scrollWidth - width;
-    // }
-    onScroll(deltaY.current);
-    if (transformEl.current) {
-      transformEl.current.style.transform = `translate(0,-${deltaY.current}px)`;
+    wheelLocked.current = true;
+    let newDeltaY = deltaY + e.deltaY;
+    let newDeltaX = deltaX + e.deltaX;
+
+    if (newDeltaY <= 0) newDeltaY = 0;
+    else if (newDeltaY >= scrollHeight - height) newDeltaY = scrollHeight - height;
+
+    if (newDeltaX <= 0) newDeltaX = 0;
+    else if (newDeltaX >= scrollHeight - height) newDeltaX = scrollHeight - height;
+
+    onScroll(newDeltaX, newDeltaY);
+    setDeltaY(newDeltaY);
+    setDeltaX(newDeltaX);
+    if (barRef.current) {
+      barRef.current.scrollTop = newDeltaY;
     }
   };
+
+  const handleBarScroll = (e) => {
+    if (wheelLocked.current) return;
+    onScroll(deltaX, e.target.scrollTop);
+    setDeltaY(e.target.scrollTop);
+  };
+
+  const handleBarEnter = () => {
+    wheelLocked.current = false;
+  };
+
+  useEffect(() => {
+    if (transformEl.current) transformEl.current.style.transform = `translate(0,-${deltaY}px)`;
+  }, [deltaY]);
 
   // DOM resize 监听器
   const renderResizeMonitor = () => {
@@ -78,19 +103,29 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   useEffect(() => {
     // TODO: 需要做节流处理
     if (resizeRef.current) resizeRef.current.onresize = handleResize;
-    // if (wheelEl.current) {
-    //   wheelEl.current.addEventListener('wheel', handleWheel, { passive: false });
-    // }
-
-    // return () => {
-
-    // };
+    const width = getElementScrollbarWidth(barRef.current);
+    console.log(width);
   }, []);
 
   return (
     <>
       <div ref={wheelEl} className={rootClass} onWheel={handleWheel}>
         {renderResizeMonitor()}
+        <div
+          ref={barRef}
+          onScroll={handleBarScroll}
+          onMouseEnter={handleBarEnter}
+          style={{
+            height: '100%',
+            overflowY: 'auto',
+            position: 'absolute',
+            right: 0,
+            width: 16,
+            zIndex: 1,
+          }}
+        >
+          <div className={rootStyle.bar} style={{ height: scrollHeight }}></div>
+        </div>
         <div className={rootStyle.container}>
           <div ref={transformEl}>{children}</div>
         </div>
