@@ -185,7 +185,9 @@ const Ring = (props: SpinProps) => {
   const { value, unit } = formatSize(size);
   const style = {
     borderWidth: value / 10 + unit,
-    borderTopColor: color,
+    borderLeftColor: color,
+    borderRightColor: color,
+    borderBottomColor: color,
     fontSize: value / 10 + unit,
   };
   return (
