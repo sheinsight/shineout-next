@@ -1,5 +1,6 @@
 export default {
   margin: 'auto',
+  boxSizing: 'border-box',
   position: 'relative',
   borderStyle: 'solid',
   borderColor: '#197AFA',

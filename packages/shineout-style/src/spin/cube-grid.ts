@@ -8,7 +8,7 @@ export default {
     float: 'left',
     animation: '$cube-grid 1.3s infinite ease-in-out',
     background: '#197AFA',
-
+    boxSizing: 'border-box',
     '&:nth-child(1)': { animationDelay: `${delayRange * 0.5}s` },
     '&:nth-child(2)': { animationDelay: `${delayRange * 0.75}s` },
     '&:nth-child(3)': { animationDelay: `${delayRange}s` },
