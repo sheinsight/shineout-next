@@ -57,8 +57,8 @@ const TransferStyle: JsStyles<TransferClass> = {
     borderTop: `1px solid ${Token.transferBorderColor}`,
   },
   item: {
-    height: 32,
-    padding: '1px 11px',
+    // height: 32,
+    padding: '6px 12px',
     borderRadius: Token.transferBorderRadius,
   },
   empty: {

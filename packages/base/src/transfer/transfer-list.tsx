@@ -82,6 +82,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
                   jssStyle={jssStyle}
                   data={d}
                   keygen={keygen}
+                  lineHeight={lineHeight}
                   checked={selectedKeys.has(key)}
                   renderItem={renderItem}
                   onChange={handleChange}

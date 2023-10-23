@@ -18,7 +18,7 @@ let key = 0;
 
 const originData = [];
 
-for (let i = 0; i < 100000; i++) {
+for (let i = 0; i < 20; i++) {
   originData.push({
     id: i,
     name: `name-${i}`,
@@ -50,11 +50,20 @@ export default () => {
   //   setSelectedKeys(select);
   // };
 
+  const renderItem = (item) => {
+    return <div>{item.name}</div>;
+  };
+
   return (
     <div>
       <button type='button' onClick={handleClick}>
         + select
       </button>
+      {/* <div style={{width:200,height:200,overflow:'auto',background:'#ddd'}} >
+        <div style={{width:200,height:300}}>
+          
+        </div>
+      </div> */}
       <Transfer
         data={data}
         value={value}
@@ -63,7 +72,8 @@ export default () => {
         jssStyle={jssStyle}
         onChange={handleChange}
         // onSelectChange={handleSelectChange}
-        renderItem='name'
+        renderItem={renderItem}
+        // renderItem='name'
       ></Transfer>
     </div>
   );

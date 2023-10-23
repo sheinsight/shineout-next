@@ -25,7 +25,8 @@ const VirtualScrollStyle: JsStyles<VirtualClass> = {
   },
   footer: {},
   bar: {
-    padding: 1,
+    width: 1,
+    zIndex: -1,
   },
 };
 

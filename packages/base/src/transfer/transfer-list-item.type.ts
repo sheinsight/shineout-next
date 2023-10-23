@@ -14,6 +14,7 @@ export interface TransferListItemProps<DataItem> {
   disabled?: boolean;
   data: DataItem;
   checked: boolean;
+  lineHeight: number;
   keygen?: KeygenType<DataItem>;
   renderItem: ObjectKey<DataItem> | ((data: DataItem) => React.ReactNode);
   onChange: (value: KeygenResult, checked: boolean) => void;
