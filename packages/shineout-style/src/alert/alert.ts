@@ -11,6 +11,7 @@ export type AlertClass =
   | 'info'
   | 'success'
   | 'warning'
+  | 'confirmwarning'
   | 'danger'
   | 'icon'
   | 'text'
@@ -112,6 +113,13 @@ const alertStyle: JsStyles<AlertClass> = {
     borderColor: Token.alertWarningBorderColor,
     '& $icon': {
       color: Token.alertWarningFontColor,
+    },
+  },
+  confirmwarning: {
+    backgroundColor: Token.alertDangerBackgroundColor,
+    borderColor: Token.alertDangerBorderColor,
+    '& $icon': {
+      color: Token.alertDangerFontColor,
     },
   },
   danger: {
