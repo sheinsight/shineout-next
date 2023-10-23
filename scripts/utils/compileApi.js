@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { writeTemplate } = require('./write-template');
-const { parseApi } = require('./parseapi');
+// const { parseApi } = require('./parseapi');
 
 const docDirName = '__doc__';
 const templateApiPath = path.resolve(__dirname, '../doc-page-api.ejs');
@@ -37,7 +37,9 @@ function compile(dirPath, componentPath) {
     // 读取 dir下面的 **.type.ts 文件
     const types = fs.readdirSync(path.join(dirPath, dir)).filter((i) => i.endsWith('.type.ts'));
     const apis = types.reduce((acc, type) => {
-      const api = parseApi(chunkModuleName, `./src/${dir}/${type}`);
+      console.log('type', type);
+      const api = [];
+      // const api = parseApi(chunkModuleName, `./src/${dir}/${type}`);
       return [...acc, ...api];
     }, []);
 

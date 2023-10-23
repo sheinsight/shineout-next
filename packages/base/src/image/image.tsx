@@ -1,7 +1,7 @@
-import { useImage } from '@sheinx/hooks';
+import { useImage, useLatestObj, usePersistFn } from '@sheinx/hooks';
 import { getDefaultContainer } from '../config';
 import classNames from 'classnames';
-import React from 'react';
+import React, { useEffect } from 'react';
 import showGallery from './image-event';
 import { ImageClasses, ImageProps } from './image.type';
 import ImageGroup from './image-group';
@@ -32,6 +32,7 @@ const Image = (props: ImageProps) => {
     autoSSL,
     noImgDrag,
     onClick,
+    componentRef,
     ...rest
   } = props;
 
@@ -46,7 +47,7 @@ const Image = (props: ImageProps) => {
     ...rest,
   });
 
-  const imageStyle = jssStyle.image?.() || ({} as ImageClasses);
+  const imageStyle = jssStyle?.image?.() || ({} as ImageClasses);
   const shouldPreview = href && target === '_modal' && status !== ERROR && status !== PLACEHOLDER;
   const shouldDownload = target === '_download';
 
@@ -91,6 +92,15 @@ const Image = (props: ImageProps) => {
       showGallery(jssStyle, { thumb: src, src: href || src, key: 'key' });
     }
   };
+
+  const preview = usePersistFn(() => {
+    showGallery(jssStyle, { thumb: src, src: href || src, key: 'key' });
+  });
+
+  const ComponentRef = useLatestObj({ preview });
+  useEffect(() => {
+    componentRef?.(ComponentRef);
+  }, []);
 
   const renderImgeInnerEl = (src?: string) => {
     const imageProps = getImageProps({ src });

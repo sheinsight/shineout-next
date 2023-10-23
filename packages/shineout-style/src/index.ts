@@ -21,6 +21,7 @@ export * from './tabs';
 export * from './tag';
 export * from './textarea';
 export * from './tooltip';
+export * from './upload';
 
 export { styled, StyleProvider } from './jss-style';
 export * as mixins from './mixin';

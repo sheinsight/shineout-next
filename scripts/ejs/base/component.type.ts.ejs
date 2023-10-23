@@ -13,7 +13,7 @@ export interface <%= Component %>Classes {
 
 export interface <%= Component %>Props {
     jssStyle?: {
-        <%= component %>: <%= Component %>Classes;
+        <%= component %>: () => <%= Component %>Classes;
     };
 
     //...

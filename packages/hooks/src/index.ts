@@ -36,5 +36,6 @@ export * from './components/use-image';
 export * from './components/use-datepicker';
 export * from './components/use-tabs';
 export * from './components/use-carousel';
+export * from './components/use-upload';
 
 export default {};
