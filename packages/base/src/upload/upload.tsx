@@ -90,6 +90,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
           <input
             accept={accept}
             multiple={props.multiple}
+            disabled={props.disabled}
             onChange={(e) => {
               func.addFiles(Array.from(e.target.files || []));
             }}
@@ -122,7 +123,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
           message={file.message}
           status={file.status}
           process={file.process}
-          removeAble
+          removeAble={!props.disabled}
         />
       );
     });
@@ -146,7 +147,9 @@ const Upload = <T,>(props: UploadProps<T>) => {
             status={'success'}
             name={!isImage && renderResult(v)}
             src={isImage ? (renderResult(v) as string) : ''}
-            removeAble={util.isFunc(canDelete) ? canDelete(v, index) : canDelete}
+            removeAble={
+              !props.disabled && (util.isFunc(canDelete) ? canDelete(v, index) : canDelete)
+            }
             onRemove={() => {
               func.removeValue(index);
             }}
@@ -173,7 +176,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
           }}
           name={!isImage && renderResult(v)}
           src={isImage ? (renderResult(v) as string) : ''}
-          removeAble={restLength > 0}
+          removeAble={!props.disabled && restLength > 0}
           key={index}
           customImage={
             isImage &&
@@ -192,6 +195,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
       className={classNames(
         uploadClasses?.wrapper,
         isImage && uploadClasses?.wrapperImage,
+        props.disabled && uploadClasses?.wrapperDisabled,
         drop && uploadClasses?.wrapperDrop,
         props.className,
       )}

@@ -4,6 +4,7 @@ import { JsStyles } from '../jss-style';
 export interface UploadClasses {
   wrapper: string;
   wrapperImage: string;
+  wrapperDisabled: string;
   wrapperDrop: string;
   dropItem: string;
   handler: string;
@@ -49,11 +50,17 @@ const uploadStyle: JsStyles<UploadClassType> = {
     flexWrap: 'wrap',
     gap: imageGap,
   },
+  wrapperDisabled: {
+    '& $imageHandler': {
+      cursor: 'not-allowed',
+      opacity: 0.5,
+    },
+  },
   handler: {
     display: 'inline-block',
     cursor: 'pointer',
     boxSizing: 'border-box',
-    '$wrapperDrop &': {
+    '$wrapperDrop:not($wrapperDisabled) &': {
       width: '100%',
       borderRadius: token.uploadImageBorderRadius,
       border: `1px dashed ${token.uploadImageHandlerBorderColor}`,
@@ -158,7 +165,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
     border: `1px dashed ${token.uploadImageHandlerBorderColor}`,
     backgroundColor: token.uploadImageHandlerBackgroundColor,
     color: token.uploadImageHandlerFontColor,
-    '&:hover': {
+    '$wrapper:not($wrapperDisabled) &:hover': {
       borderColor: token.uploadImageHandlerHoverBorderColor,
       color: token.uploadImageHandlerHoverFontColor,
     },
@@ -296,8 +303,8 @@ const uploadStyle: JsStyles<UploadClassType> = {
   },
   wrapperDrop: {},
   dropItem: {
-    '&[data-soui-dragover="true"]': {
-      ' & $handler,& $imageHandler, & $imageResult': {
+    ':not(wrapperDisabled) &[data-soui-dragover="true"]': {
+      '& $handler, & $imageHandler, & $imageResult': {
         borderColor: token.uploadImageHandlerHoverBorderColor,
         borderStyle: 'dashed',
         color: token.uploadImageHandlerHoverFontColor,

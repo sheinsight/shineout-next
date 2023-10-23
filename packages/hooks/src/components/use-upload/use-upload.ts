@@ -211,6 +211,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
   };
 
   const addFiles = async (files: File[]) => {
+    if (props.disabled) return;
     let fileList = files;
     let newFiles = { ...filesState };
     if (props.filesFilter) fileList = props.filesFilter(files);
@@ -300,6 +301,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
   };
 
   const removeValue = (index: number) => {
+    if (props.disabled) return;
     const { recoverAble, disabled, beforeRemove } = props;
     if (disabled) return;
     const current = props.value[index];

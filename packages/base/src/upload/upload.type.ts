@@ -11,6 +11,7 @@ export type { UploadOptions } from '@sheinx/hooks';
 export interface UploadClasses {
   wrapper: string;
   wrapperImage: string;
+  wrapperDisabled: string;
   wrapperDrop: string;
   dropItem: string;
   handler: string;
