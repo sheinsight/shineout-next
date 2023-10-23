@@ -8,9 +8,8 @@ import React from 'react';
 import { Message, Upload } from 'shineout';
 
 const App: React.FC = () => (
-  <Upload
+  <Upload.Image
     action='/api/upload'
-    listType={'image'}
     accept='image/*'
     name='file'
     onSuccess={(_res, _file, data) => ({ data })}

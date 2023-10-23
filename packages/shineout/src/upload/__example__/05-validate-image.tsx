@@ -9,15 +9,13 @@ import { Upload } from 'shineout';
 import { AddIcon } from './static/icon';
 
 const App: React.FC = () => (
-  <Upload
+  <Upload.Image
     action='/api/upload'
     accept='image/*'
     name='file'
     onSuccess={(_res, _file, data) => ({ data })}
-    listType={'image'}
-    imageStyle={{ width: 400, height: 200 }}
-    // width={200}
-    // height={100}
+    width={400}
+    height={200}
     limit={1}
     renderResult={(f) => f.data}
     validator={{
@@ -32,6 +30,6 @@ const App: React.FC = () => (
       <div style={{ marginTop: 16 }}>Upload Image</div>
       <div style={{ marginTop: 16 }}>Allow size 200 * 100</div>
     </div>
-  </Upload>
+  </Upload.Image>
 );
 export default App;

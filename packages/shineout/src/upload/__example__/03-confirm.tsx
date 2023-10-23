@@ -29,10 +29,9 @@ const App: React.FC = () => (
         Upload file
       </Button>
     </Upload>
-    <Upload
+    <Upload.Image
       style={{ marginTop: 24 }}
       defaultValue={df}
-      listType={'image'}
       action='/api/upload'
       renderResult={(d) => d.data}
       onSuccess={(_res, file, data) => ({ data })}

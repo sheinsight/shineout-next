@@ -20,7 +20,11 @@ const Upload = <T,>(props: UploadProps<T>) => {
   } = props;
   const { locale } = useConfig();
   const uploadClasses = props.jssStyle?.upload?.();
-  const imageStyle = { width: 80, height: 80, ...props.imageStyle };
+  const imageStyle = {
+    ...props.imageStyle,
+    width: props.imageStyle?.width || 80,
+    height: props.imageStyle?.height || 80,
+  };
 
   const inputAbleProps = useInputAble({
     value: props.value,

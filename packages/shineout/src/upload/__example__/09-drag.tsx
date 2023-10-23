@@ -9,14 +9,14 @@ import { Upload } from 'shineout';
 import { AddIcon, ImageIcon } from './static/icon';
 
 const DraggerImage: React.FC = () => (
-  <Upload
+  <Upload.Image
     action='/api/upload'
-    listType={'image'}
     multiple
     name='file'
     style={{ width: '100%' }}
     onSuccess={(_res, _file, data) => data}
-    imageStyle={{ width: 230, height: 180 }}
+    width={230}
+    height={180}
     leftHandler
     drop
   >
@@ -24,7 +24,7 @@ const DraggerImage: React.FC = () => (
       <ImageIcon style={{ fontSize: 20 }} />
       <p style={{ margin: '0', fontSize: '14px' }}>Click or drag image to upload</p>
     </div>
-  </Upload>
+  </Upload.Image>
 );
 
 const DraggerFile: React.FC = () => (

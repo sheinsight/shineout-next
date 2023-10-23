@@ -70,7 +70,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
   result: {
     display: 'flex',
     alignItems: 'center',
-    marginTop: token.produceuploadResultMarginY,
+    marginTop: token.uploadResultMarginY,
     gap: token.uploadResultGap,
   },
   icon: {

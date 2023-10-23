@@ -12,10 +12,9 @@ const App: React.FC = () => {
   const [value, setValue] = React.useState<string[]>([]);
 
   return (
-    <Upload
+    <Upload.Image
       action='/api/upload'
       accept='image/*'
-      listType={'image'}
       value={value}
       htmlName='file'
       recoverAble
