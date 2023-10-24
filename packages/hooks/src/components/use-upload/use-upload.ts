@@ -5,7 +5,7 @@ import useLatestObj from '../../common/use-latest-obj';
 import xhrUpload from './xhr';
 import { attrAccept } from '../../utils/accept';
 import { getUidStr } from '../../utils';
-import { util } from '@sheinx/hooks';
+import { usePersistFn, util } from '@sheinx/hooks';
 
 const VALIDATORITEMS: {
   key: 'size' | 'ext' | 'customValidator' | 'imageSize';
@@ -100,6 +100,10 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
     );
   };
 
+  const getCurrent = usePersistFn(() => {
+    return { filesState };
+  });
+
   const uploadFile = (id: string, file: File, data?: string) => {
     const request = props.request || xhrUpload;
     let throttle = false;
@@ -113,21 +117,21 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
       responseType: props.responseType,
       onStart: props.onStart,
       onProgress: (e: ProgressEvent & { percent?: number }, msg?: string) => {
-        const percent = typeof e.percent === 'number' ? e.percent : (e.loaded / e.total) * 100;
         if (throttle) return;
         throttle = true;
         setTimeout(() => {
           throttle = false;
         }, 16);
-        setFiles((pre) => {
-          if (!pre[id]) return pre;
-          return produce(pre, (draft) => {
-            draft[id].process = percent;
-            if (msg) draft[id].message = msg;
-          });
-        });
+
+        const percent = typeof e.percent === 'number' ? e.percent : (e.loaded / e.total) * 100;
+        const { filesState } = getCurrent();
+        const newFiles = { ...filesState };
+        if (!newFiles[id]) return;
+        newFiles[id].process = percent;
+        if (msg) newFiles[id].message = msg;
+        setFiles(newFiles);
         if (typeof props.onProgress === 'function') {
-          props.onProgress(filesState[id]);
+          props.onProgress(newFiles[id]);
         }
       },
       onLoad: (xhr: XhrResult) => {

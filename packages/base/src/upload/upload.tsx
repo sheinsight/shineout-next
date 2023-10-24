@@ -109,6 +109,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
   };
 
   const renderFile = () => {
+    if (!props.showUploadList) return null;
     return Object.keys(files).map((id, index) => {
       const file = files[id];
       return (
@@ -130,6 +131,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
   };
 
   const renderValue = () => {
+    if (!props.showUploadList) return null;
     return value.map((v, index) => {
       return (
         <Drop
@@ -166,6 +168,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
     });
   };
   const renderRecover = () => {
+    if (!props.showUploadList) return null;
     return recycleValues.map((v, index) => {
       return (
         <Result

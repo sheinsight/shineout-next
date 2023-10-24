@@ -5,7 +5,7 @@
  *    --
  */
 import React from 'react';
-import { Button, Upload } from '@sheinx/base';
+import { UploadButton } from '@sheinx/base';
 import { useButtonStyle, useSpinStyle, useUploadStyle } from '@sheinx/shineout-style';
 
 const jssStyle = {
@@ -17,12 +17,8 @@ const jssStyle = {
 export default () => {
   return (
     <div>
-      <Upload
+      <UploadButton
         withCredentials
-        beforeCancel={(f) => {
-          console.log('beforeCancel', f);
-        }}
-        recoverAble
         action={'/api/upload'}
         htmlName={'file'}
         onSuccess={(res, file) => {
@@ -31,11 +27,9 @@ export default () => {
         }}
         jssStyle={jssStyle}
         accept={'image/*'}
-      >
-        <Button jssStyle={jssStyle} size={'small'} mode={'outline'}>
-          上传文件
-        </Button>
-      </Upload>
+        placeholder={'点击上传'}
+        loading={'正在上传...'}
+      />
     </div>
   );
 };

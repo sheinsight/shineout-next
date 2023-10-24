@@ -24,6 +24,7 @@ export interface UploadClasses {
   resultStatusIcon: string;
   values: string;
   recycle: string;
+  // uploadImage
   imageHandler: string;
   imageHandlerIcon: string;
   imageBg: string;
@@ -36,6 +37,12 @@ export interface UploadClasses {
   imageResultTopBtn: string;
   imageResultTip: string;
   customImageBtn: string;
+  // button
+  button: string;
+  buttonUploading: string;
+  buttonCover: string;
+  buttonBg: string;
+  buttonBgSpin: string;
 }
 export type UploadClassType = keyof UploadClasses;
 
@@ -310,6 +317,54 @@ const uploadStyle: JsStyles<UploadClassType> = {
         color: token.uploadImageHandlerHoverFontColor,
       },
     },
+  },
+  button: {
+    position: 'relative',
+    overflow: 'hidden',
+    '& > span': {
+      position: 'relative',
+      zIndex: '1',
+    },
+  },
+  buttonUploading: {
+    '&&': {
+      color: token.buttonSecondaryOutlineFontColor,
+    },
+  },
+  buttonCover: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    background: '#fff',
+  },
+  buttonBg: {
+    overflow: 'hidden',
+    zIndex: '2',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    transition: 'right .2s ease-in-out',
+    color: '#fff',
+    whiteSpace: 'nowrap',
+    paddingLeft: 'inherit',
+    background: 'inherit',
+
+    '& > span': {
+      display: 'flex',
+      padding: 'inherit',
+      height: '100%',
+      position: 'absolute',
+      left: 0,
+      width: '100%',
+      alignItems: 'center',
+    },
+  },
+  buttonBgSpin: {
+    display: 'inline-block',
+    marginRight: '8px',
   },
 };
 

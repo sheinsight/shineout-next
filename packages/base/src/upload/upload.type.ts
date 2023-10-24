@@ -31,6 +31,7 @@ export interface UploadClasses {
   resultStatusIcon: string;
   values: string;
   recycle: string;
+  // image
   imageHandler: string;
   imageHandlerIcon: string;
   imageBg: string;
@@ -43,6 +44,12 @@ export interface UploadClasses {
   imageResultTopBtn: string;
   imageResultTip: string;
   customImageBtn: string;
+  // button
+  button: string;
+  buttonUploading: string;
+  buttonCover: string;
+  buttonBg: string;
+  buttonBgSpin: string;
 }
 
 interface UploadImageProps<T> {
@@ -69,9 +76,10 @@ interface UploadImageProps<T> {
    * @cn 调整间距 同 [Gap](/components/Gap) 属性
    * @default {column: 12, row: 12}
    */
+  // todo
   gapProps?: {
-    column: number;
-    row: number;
+    column?: number;
+    row?: number;
   };
 }
 export interface UploadProps<T>

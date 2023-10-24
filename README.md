@@ -39,3 +39,10 @@ packages
 └── shineout-style shineout 样式包
 
 ## 打包
+
+## 浏览器兼容性
+
+chrome 49+
+Edge 18+
+Firefox 83+
+Safari 13.1+
