@@ -28,12 +28,12 @@ const App: React.FC = () => {
           return 'Upload Fail.';
         }}
       >
-        <Button mode={'outline'} htmlType={'button'}>
+        <Button mode={'outline'}>
           <UploadIcon style={{ marginInlineEnd: 4 }} />
           Upload file
         </Button>
       </Upload>
-      <Button>提交</Button>
+      <Button htmlType={'submit'}>提交</Button>
     </Form>
   );
 };
