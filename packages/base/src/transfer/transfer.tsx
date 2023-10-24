@@ -12,6 +12,7 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
     value,
     keygen,
     empty,
+    simple,
     selectedKeys,
     listHeight = 186,
     onFilter: onFilterProp,
@@ -20,10 +21,16 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
     renderItem = (item: DataItem) => item as React.ReactNode,
   } = props;
 
-  const { source, target, onSelect, onSelectAll, onChange, onFilter } = useTransfer<
-    DataItem,
-    Value
-  >({
+  const {
+    source,
+    target,
+    filterSourceText,
+    filterTargetText,
+    onSelect,
+    onSelectAll,
+    onChange,
+    onFilter,
+  } = useTransfer<DataItem, Value>({
     data,
     keygen,
     value,
@@ -34,7 +41,9 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
   });
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
-  const rootClass = classNames(styles.transfer);
+  const rootClass = classNames(styles.transfer, {
+    [styles.simple]: simple,
+  });
 
   // const handleChange = () => {};
 
@@ -68,12 +77,14 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
   };
 
   const renderList = (listType: TransferListType) => {
+    const isSource = listType === 'source';
     return (
       <TransferList
         jssStyle={jssStyle}
-        info={listType === 'source' ? source : target}
+        info={isSource ? source : target}
         keygen={keygen}
         empty={empty}
+        filterText={isSource ? filterSourceText : filterTargetText}
         listType={listType}
         renderItem={renderItem}
         listHeight={listHeight}

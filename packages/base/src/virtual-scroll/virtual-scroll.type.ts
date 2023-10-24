@@ -7,6 +7,10 @@ export interface VirtualScrollClasses {
   bar: string;
 }
 
+export type VirtualRefType = {
+  reset: () => void;
+};
+
 export interface VirtualScrollProps {
   jssStyle: {
     virtualScroll: () => VirtualScrollClasses;
@@ -31,5 +35,6 @@ export interface VirtualScrollProps {
   scrollY?: boolean;
   scrollX?: boolean;
   children?: React.ReactNode;
+  virtualRef?: ((virtual: VirtualRefType) => void) | { current?: VirtualRefType };
   onScroll: (x: number, y: number) => void;
 }

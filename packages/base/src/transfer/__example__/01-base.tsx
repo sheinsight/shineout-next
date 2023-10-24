@@ -51,6 +51,9 @@ export default () => {
   const handleSelectChange = (target, source, select) => {
     setSelectedKeys(select);
   };
+  const handleFilter = (t, d) => {
+    return d.name.indexOf(t) > -1;
+  };
 
   const renderItem = (item) => {
     return <div>{item.name}</div>;
@@ -75,6 +78,7 @@ export default () => {
         onChange={handleChange}
         onSelectChange={handleSelectChange}
         renderItem={renderItem}
+        onFilter={handleFilter}
         // renderItem='name'
       ></Transfer>
     </div>

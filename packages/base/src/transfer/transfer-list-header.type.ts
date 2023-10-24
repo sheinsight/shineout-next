@@ -1,4 +1,4 @@
-import { KeygenResult, TransferListType } from '@sheinx/hooks';
+import { KeygenResult, TransferListType, KeygenType } from '@sheinx/hooks';
 import { TransferClasses } from './transfer.type';
 import { ButtonClasses } from '../button/button.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
@@ -13,5 +13,6 @@ export interface TransferListHeaderProps<DataItem> {
     virtualScroll: () => VirtualScrollClasses;
   };
   info: ListInfo<DataItem>;
+  keygen?: KeygenType<DataItem>;
   onSelectAll: (keys: KeygenResult[], listType: TransferListType) => void;
 }

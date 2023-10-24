@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util, KeygenResult } from '@sheinx/hooks';
+import { VirtualRefType } from '../virtual-scroll/virtual-scroll.type';
 import { TransferClasses } from './transfer.type';
 import { TransferListProps } from './transfer-list.type';
 import TransferListItem from './transfer-list-item';
@@ -19,16 +20,20 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     keygen,
     listHeight = 180,
     lineHeight = 34,
+    listType,
     itemsInView = 20,
     colNum = 1,
     empty,
-    // onFilter,
+    filterText,
+    onFilter,
     onSelect,
     onSelectAll,
     // onChange,
   } = props;
+
   const { data, selectedKeys, disabledKeys } = info;
-  const [currentIndex, setcurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const virtualRef = useRef<VirtualRefType>();
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.view);
@@ -44,7 +49,11 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
 
   const handleScroll = (x: number, y: number) => {
     const current = Math.floor(y / lineHeight);
-    if (current !== currentIndex) setcurrentIndex(current);
+    setCurrentIndex(current);
+  };
+
+  const handleFilter = (v?: string) => {
+    onFilter(v, listType);
   };
 
   const renderHeader = () => {
@@ -52,6 +61,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
       <TransferListHeader
         jssStyle={jssStyle}
         info={info}
+        keygen={keygen}
         onSelectAll={onSelectAll}
       ></TransferListHeader>
     );
@@ -60,7 +70,14 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   const renderFilterInput = () => {
     return (
       <div className={styles.input}>
-        <Input jssStyle={jssStyle} suffix={Icons.Search}></Input>
+        <Input
+          clearable
+          jssStyle={jssStyle}
+          delay={400}
+          value={filterText}
+          onChange={handleFilter}
+          suffix={Icons.Search}
+        ></Input>
       </div>
     );
   };
@@ -86,6 +103,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
       <div className={styles.list} style={{ height: listHeight }}>
         {items.length > 0 && (
           <VirtualScroll
+            virtualRef={virtualRef}
             jssStyle={jssStyle}
             height={listHeight}
             scrollWidth={0}
@@ -123,6 +141,10 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     }
     return <div className={styles.footer}>Footer</div>;
   };
+
+  useEffect(() => {
+    virtualRef.current?.reset();
+  }, [filterText]);
 
   return (
     <div className={rootClass}>

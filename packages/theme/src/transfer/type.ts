@@ -44,4 +44,10 @@ export interface TransferTokens {
    * @description 穿梭框undefined背景颜色
    */
   transferHeaderBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 穿梭框图标颜色
+   */
+  transferIconColor: string;
 }

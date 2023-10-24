@@ -6,6 +6,7 @@ import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
 
 export interface TransferClasses {
   transfer: string;
+  simple: string;
   view: string;
   source: string;
   target: string;
@@ -33,6 +34,7 @@ export interface TransferProps<DataItem, Value> extends BaseTransferProps<DataIt
   selectedKeys?: KeygenResult[];
   listHeight?: number;
   renderItem?: ObjectKey<DataItem> | ((data: DataItem) => React.ReactNode);
+  simple?: boolean;
   empty?: React.ReactNode;
   onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
 }

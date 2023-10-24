@@ -11,6 +11,7 @@ const transferTokens: TransferTokens = {
   transferFontColor: 'Neutral-text-5',
   transferBorderRadius: 'Radius-4',
   transferHeaderBackgroundColor: 'Neutral-fill-2',
+  transferIconColor: 'Neutral-text-4',
 };
 
 export default transferTokens;

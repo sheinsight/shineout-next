@@ -20,6 +20,7 @@ export interface BaseTransferProps<DataItem, Value> {
   disabled?: boolean | ((data: DataItem) => boolean);
   onChange?: (value: Value, data: DataItem[], checked: boolean) => void;
   onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
+  onSearch?: (text: string, isSource: boolean) => void;
   onSelectChange?: (
     sourceKeys: KeygenResult[],
     targetKeys: KeygenResult[],

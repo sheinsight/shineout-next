@@ -3,6 +3,7 @@ import Token from '@sheinx/theme';
 
 type TransferClass =
   | 'transfer'
+  | 'simple'
   | 'view'
   | 'source'
   | 'target'
@@ -23,6 +24,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     color: Token.transferFontColor,
     fontSize: Token.transferFontSize,
   },
+  simple: {},
   view: {
     minWidth: 200,
     boxSizing: 'border-box',
@@ -42,6 +44,11 @@ const TransferStyle: JsStyles<TransferClass> = {
   },
   input: {
     padding: '6px 12px',
+    '& svg': {
+      width: 14,
+      minWidth: 14,
+      color: Token.transferIconColor,
+    },
   },
   left: {
     marginTop: 12,

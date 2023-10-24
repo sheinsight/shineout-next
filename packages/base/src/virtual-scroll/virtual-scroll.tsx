@@ -12,6 +12,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   const {
     jssStyle,
     children,
+    virtualRef,
     // width,
     height,
     scrollHeight: scrollHeightProp,
@@ -30,9 +31,11 @@ const VirtualScroll = (props: VirtualScrollProps) => {
 
   const wheelEl = useRef<HTMLDivElement>(null);
   const transformEl = useRef<HTMLDivElement>(null);
-  const resizeRef = useRef<HTMLIFrameElement>(null);
+
   const barRef = useRef<HTMLDivElement>(null);
+  const resizeRef = useRef<HTMLIFrameElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
   const wheelLocked = useRef(false);
   const preventLocked = useRef(true);
 
@@ -42,6 +45,12 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   const handlePrevent = usePersistFn((e) => {
     e.preventDefault();
   });
+
+  const handleReset = () => {
+    setDeltaY(0);
+    setDeltaX(0);
+    onScroll(0, 0);
+  };
 
   const handleResize = () => {
     console.log('resize');
@@ -115,6 +124,16 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   };
 
   useEffect(() => {
+    if (virtualRef) {
+      if (typeof virtualRef === 'function') {
+        virtualRef({ reset: handleReset });
+      } else {
+        virtualRef.current = {
+          reset: handleReset,
+        };
+      }
+    }
+
     // TODO: 需要做节流处理
     if (resizeRef.current) resizeRef.current.onresize = handleResize;
     // const width = getElementScrollbarWidth(barRef.current);

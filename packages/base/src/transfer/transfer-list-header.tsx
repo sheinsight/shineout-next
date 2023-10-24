@@ -1,10 +1,11 @@
 import classNames from 'classnames';
+import { util } from '@sheinx/hooks';
 import { TransferClasses } from './transfer.type';
 import { Checkbox } from '../checkbox';
 import { TransferListHeaderProps } from './transfer-list-header.type';
 
 const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>) => {
-  const { jssStyle, info, onSelectAll } = props;
+  const { jssStyle, keygen, info, onSelectAll } = props;
   const { data, selectedKeys, validKeys, listType } = info;
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
@@ -12,8 +13,16 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
 
   const getChecked = () => {
     if (selectedKeys.size === 0) return false;
-    if (selectedKeys.size === data.length) return true;
-    return 'indeterminate';
+    let some = false;
+    const every = data.every((item) => {
+      const has = selectedKeys.get(util.getKey(keygen, item));
+      if (has) some = true;
+      return has;
+    });
+
+    if (every) return true;
+    if (some) return 'indeterminate';
+    return false;
   };
 
   const handleChange = () => {
