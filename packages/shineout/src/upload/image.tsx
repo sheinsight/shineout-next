@@ -7,7 +7,9 @@ import {
   useSpinStyle,
   useUploadStyle,
 } from '@sheinx/shineout-style';
-import { UploadImageProps } from './image.type';
+import { BaseUploadImageProps, UploadImageProps } from './image.type';
+import useFieldCommon from '../hooks/use-field-common';
+import useUploadCommon from './use-upload-common';
 
 const jssStyle = {
   upload: useUploadStyle,
@@ -17,6 +19,15 @@ const jssStyle = {
   button: useButtonStyle,
   image: useImageStyle,
 };
-export default <T,>(props: UploadImageProps<T>) => {
+const BaseUploadImage = <T,>(props: BaseUploadImageProps<T>) => {
   return <UploadImage jssStyle={jssStyle} {...props} />;
+};
+
+export default <T,>(props: UploadImageProps<T>) => {
+  const customProps = useUploadCommon({ rules: props.rules });
+
+  return useFieldCommon<BaseUploadImageProps<T>, BaseUploadImageProps<T>['value']>(
+    { ...props, ...customProps },
+    BaseUploadImage,
+  );
 };

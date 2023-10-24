@@ -89,6 +89,8 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
     const { onHttpError } = props;
 
     let message = xhr.statusText;
+    const onError = (props as any).onError;
+    if (onError) message = onError(xhr, file) || message;
     if (onHttpError) message = onHttpError(xhr, file) || message;
 
     setFiles((files) =>

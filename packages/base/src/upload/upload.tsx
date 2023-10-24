@@ -1,5 +1,5 @@
-import { useInputAble, useUpload, util } from '@sheinx/hooks';
-import React from 'react';
+import { useInputAble, usePersistFn, useUpload, util } from '@sheinx/hooks';
+import React, { useEffect } from 'react';
 import { UploadProps } from './upload.type';
 import Drop from './drop';
 import classNames from 'classnames';
@@ -12,6 +12,7 @@ import { produce } from 'immer';
 const Upload = <T,>(props: UploadProps<T>) => {
   const {
     canDelete = true,
+    showUploadList = true,
     drop = false,
     limit = 100,
     renderResult = (a: any) => a as React.ReactNode,
@@ -47,6 +48,23 @@ const Upload = <T,>(props: UploadProps<T>) => {
     value: value,
     onChange,
   });
+
+  const uploadValidate = usePersistFn(() => {
+    return new Promise((resolve, reject) => {
+      if (Object.keys(files).length > 0) {
+        reject(new Error(''));
+      } else {
+        resolve(true);
+      }
+    });
+  });
+
+  useEffect(() => {
+    const { validateHook } = props as any;
+    if (validateHook && util.isFunc(uploadValidate)) {
+      validateHook(uploadValidate);
+    }
+  }, []);
 
   const handleReplace = (files: File[], index: number) => {
     onChange(
@@ -109,7 +127,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
   };
 
   const renderFile = () => {
-    if (!props.showUploadList) return null;
+    if (!showUploadList) return null;
     return Object.keys(files).map((id, index) => {
       const file = files[id];
       return (
@@ -131,7 +149,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
   };
 
   const renderValue = () => {
-    if (!props.showUploadList) return null;
+    if (!showUploadList) return null;
     return value.map((v, index) => {
       return (
         <Drop
@@ -168,7 +186,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
     });
   };
   const renderRecover = () => {
-    if (!props.showUploadList) return null;
+    if (!showUploadList) return null;
     return recycleValues.map((v, index) => {
       return (
         <Result
