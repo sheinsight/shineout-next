@@ -1,5 +1,5 @@
-import { Tokens } from './token/type';
-import BaseToken from './token/token';
+import { Tokens as TokenType } from './token/type';
+import Token from './token/token';
 
 import Alert from './alert';
 import { AlertTokens } from './alert/type';
@@ -94,7 +94,7 @@ export type ThemeTokens = AlertTokens &
   TooltipTokens &
   TransferTokens;
 
-const Token: ThemeTokens = {
+const Tokens: ThemeTokens = {
   ...Alert,
   ...Button,
   ...Carousel,
@@ -120,7 +120,7 @@ const Token: ThemeTokens = {
   ...Transfer,
 };
 
-export { BaseToken as Token };
-export type TokenType = Tokens;
+export type { TokenType };
+export { Token };
 
-export default Token;
+export default Tokens;
