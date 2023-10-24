@@ -68,7 +68,7 @@ const useButton = (props: BaseButtonProps = {}) => {
       ...propsToForward,
       ...externalProps,
       disabled: disabled || loading,
-      htmltype: htmlType,
+      htmlType,
       onRef,
       onClick: handleClick(externalEventHandlers),
     };
