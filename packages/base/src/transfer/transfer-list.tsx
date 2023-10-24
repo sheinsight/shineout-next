@@ -4,8 +4,11 @@ import { util, KeygenResult } from '@sheinx/hooks';
 import { TransferClasses } from './transfer.type';
 import { TransferListProps } from './transfer-list.type';
 import TransferListItem from './transfer-list-item';
+import TransferListHeader from './transfer-list-header';
 import Empty from '../empty';
+import Input from '../input';
 import VirtualScroll from '../virtual-scroll';
+import Icons from '../icons';
 
 const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   const {
@@ -19,7 +22,10 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     itemsInView = 20,
     colNum = 1,
     empty,
+    // onFilter,
     onSelect,
+    onSelectAll,
+    // onChange,
   } = props;
   const { data, selectedKeys, disabledKeys } = info;
   const [currentIndex, setcurrentIndex] = useState(0);
@@ -42,7 +48,21 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   };
 
   const renderHeader = () => {
-    return <div className={styles.header}>Header</div>;
+    return (
+      <TransferListHeader
+        jssStyle={jssStyle}
+        info={info}
+        onSelectAll={onSelectAll}
+      ></TransferListHeader>
+    );
+  };
+
+  const renderFilterInput = () => {
+    return (
+      <div className={styles.input}>
+        <Input jssStyle={jssStyle} suffix={Icons.Search}></Input>
+      </div>
+    );
   };
 
   const renderEmpty = () => {
@@ -107,6 +127,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   return (
     <div className={rootClass}>
       {renderHeader()}
+      {renderFilterInput()}
       {renderList()}
       {renderFooter()}
     </div>

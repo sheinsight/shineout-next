@@ -10,6 +10,7 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
     data,
     keygen,
     // format: formatProp,
+    // onFilter,
     disabled,
     selectedKeys: selectedKeysProp,
     defaultSelectedKeys,
@@ -37,10 +38,18 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
   //   return value === format(data);
   // };
 
+  const getDisabled = () => {
+    if (typeof disabled === 'boolean') return () => !!disabled;
+    if (typeof disabled === 'function') return disabled;
+
+    return () => false;
+  };
+
   const [source, target, valueMap, dataMap, selectMap] = useMemo(() => {
     const valueMap = new Map();
     const selectMap = new Map();
     const dataMap = new Map();
+    const disabled = getDisabled();
 
     if (value !== undefined) {
       for (let i = 0; i < value.length; i++) valueMap.set(value[i], true);
@@ -69,7 +78,14 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
       const key = getKey(keygen, item) as KeygenResult;
       dataMap.set(key, item);
       const info = valueMap.get(key) ? target : source;
+
       info.data.push(item);
+
+      if (disabled(item)) {
+        info.disabledKeys.push(key);
+      } else {
+        info.validKeys.push(key);
+      }
 
       const selected = selectMap.get(key);
       if (selected) info.selectedKeys.set(key, true);
@@ -78,7 +94,8 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
     return [source, target, valueMap, dataMap, selectMap];
   }, [data, disabled, selectedKeys, value, valueState]);
 
-  const handleChange = (to: TransferListType, keys: Map<KeygenResult, boolean>) => {
+  // const handleChange = (to: TransferListType, keys: Map<KeygenResult, boolean>) => {
+  const handleChange = (to: TransferListType, keys: KeygenResult[]) => {
     const currentData: DataItem[] = [];
 
     const operate = to === 'source' ? 'delete' : 'set';
@@ -119,12 +136,22 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
     onSelectChange?.(targetSelect, sourceSelect, select);
   };
 
+  const handleSelectAll = (keys: KeygenResult[], type: TransferListType) => {
+    console.log(type);
+    setSelectedKeys(keys);
+    onSelectChange([], [], keys);
+  };
+
+  const handleFilter = () => {};
+
   return {
     source,
     target,
     valueMap,
     onSelect: handleSelectChange,
+    onSelectAll: handleSelectAll,
     onChange: handleChange,
+    onFilter: handleFilter,
   };
 };
 

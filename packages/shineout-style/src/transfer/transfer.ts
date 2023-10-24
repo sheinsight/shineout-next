@@ -7,6 +7,7 @@ type TransferClass =
   | 'source'
   | 'target'
   | 'operations'
+  | 'input'
   | 'left'
   | 'right'
   | 'header'
@@ -38,6 +39,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
+  },
+  input: {
+    padding: '6px 12px',
   },
   left: {
     marginTop: 12,

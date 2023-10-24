@@ -1,3 +1,6 @@
+import { Tokens } from './token/type';
+import BaseToken from './token/token';
+
 import Alert from './alert';
 import { AlertTokens } from './alert/type';
 
@@ -116,5 +119,8 @@ const Token: ThemeTokens = {
   ...Tooltip,
   ...Transfer,
 };
+
+export { BaseToken as Token };
+export type TokenType = Tokens;
 
 export default Token;

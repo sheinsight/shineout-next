@@ -14,17 +14,22 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
     empty,
     selectedKeys,
     listHeight = 186,
+    onFilter: onFilterProp,
     onChange: onChangeProp,
     onSelectChange,
     renderItem = (item: DataItem) => item as React.ReactNode,
   } = props;
 
-  const { source, target, onSelect, onChange } = useTransfer<DataItem, Value>({
+  const { source, target, onSelect, onSelectAll, onChange, onFilter } = useTransfer<
+    DataItem,
+    Value
+  >({
     data,
     keygen,
     value,
     selectedKeys,
     onChange: onChangeProp,
+    onFilter: onFilterProp,
     onSelectChange,
   });
 
@@ -73,6 +78,9 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
         renderItem={renderItem}
         listHeight={listHeight}
         onSelect={onSelect}
+        onSelectAll={onSelectAll}
+        onFilter={onFilter}
+        onChange={onChange}
       />
     );
   };

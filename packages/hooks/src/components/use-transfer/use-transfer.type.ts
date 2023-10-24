@@ -19,6 +19,7 @@ export interface BaseTransferProps<DataItem, Value> {
   keygen?: KeygenType<DataItem>;
   disabled?: boolean | ((data: DataItem) => boolean);
   onChange?: (value: Value, data: DataItem[], checked: boolean) => void;
+  onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
   onSelectChange?: (
     sourceKeys: KeygenResult[],
     targetKeys: KeygenResult[],

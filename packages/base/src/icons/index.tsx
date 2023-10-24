@@ -122,6 +122,14 @@ const radioUnChecked = [
   />,
 ];
 
+const search = [
+  <path
+    key={'search'}
+    d='M11 2C15.9706 2 20 6.02944 20 11C20 13.1248 19.2637 15.0776 18.0323 16.6172L21.1213 19.7071C21.5118 20.0976 21.5118 20.7308 21.1213 21.1213C20.7308 21.5118 20.0976 21.5118 19.7071 21.1213L16.6172 18.0323C15.0776 19.2637 13.1248 20 11 20C6.02944 20 2 15.9706 2 11C2 6.02944 6.02944 2 11 2ZM11 4C7.13401 4 4 7.13401 4 11C4 14.866 7.13401 18 11 18C14.866 18 18 14.866 18 11C18 7.13401 14.866 4 11 4Z'
+    fill='currentColor'
+  />,
+];
+
 const Icons = {
   AngleLeft: icon(angleLeft),
   AngleRight: icon(angleRight),
@@ -163,6 +171,7 @@ const Icons = {
   ImageDownload: icon(imageDownload),
   ImagePreview: icon(imagePreview),
   Clock: icon(clock),
+  Search: icon(search),
 };
 
 export default Icons;

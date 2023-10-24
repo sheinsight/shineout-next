@@ -1,8 +1,5 @@
 import { KeygenResult, ObjectKey, KeygenType, TransferListType } from '@sheinx/hooks';
-import { TransferClasses } from './transfer.type';
-import { ButtonClasses } from '../button/button.type';
-import { CheckboxClasses } from '../checkbox/checkbox.type';
-import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
+import { JssStyleType } from './transfer.type';
 
 export interface ListInfo<DataItem> {
   data: DataItem[];
@@ -13,12 +10,7 @@ export interface ListInfo<DataItem> {
 }
 
 export interface TransferListProps<DataItem> {
-  jssStyle: {
-    transfer: () => TransferClasses;
-    button: () => ButtonClasses;
-    checkbox: () => CheckboxClasses;
-    virtualScroll: () => VirtualScrollClasses;
-  };
+  jssStyle: JssStyleType;
   info: ListInfo<DataItem>;
   renderItem: ObjectKey<DataItem> | ((data: DataItem) => React.ReactNode);
   footer?: React.ReactNode;
@@ -30,4 +22,5 @@ export interface TransferListProps<DataItem> {
   colNum?: number;
   empty?: React.ReactNode;
   onSelect: (keys: KeygenResult[], listType: TransferListType) => void;
+  onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
 }

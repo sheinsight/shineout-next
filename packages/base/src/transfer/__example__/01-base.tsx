@@ -11,6 +11,7 @@ import {
   useButtonStyle,
   useCheckboxStyle,
   useEmptyStyle,
+  useInputStyle,
   useVirtualScrollStyle,
 } from '@sheinx/shineout-style';
 
@@ -18,7 +19,7 @@ let key = 0;
 
 const originData = [];
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 200000; i++) {
   originData.push({
     id: i,
     name: `name-${i}`,
@@ -31,10 +32,11 @@ export default () => {
     button: useButtonStyle,
     checkbox: useCheckboxStyle,
     empty: useEmptyStyle,
+    input: useInputStyle,
     virtualScroll: useVirtualScrollStyle,
   };
 
-  const [selectedKeys, setSelectedKeys] = useState<(string | number)[]>([0]);
+  const [selectedKeys, setSelectedKeys] = useState<(string | number)[]>([]);
   const [value, setValue] = useState([]);
   const [data] = useState(originData);
 
@@ -46,9 +48,9 @@ export default () => {
   const handleChange = (v) => {
     setValue(v);
   };
-  // const handleSelectChange = (target, source, select) => {
-  //   setSelectedKeys(select);
-  // };
+  const handleSelectChange = (target, source, select) => {
+    setSelectedKeys(select);
+  };
 
   const renderItem = (item) => {
     return <div>{item.name}</div>;
@@ -67,11 +69,11 @@ export default () => {
       <Transfer
         data={data}
         value={value}
-        // selectedKeys={selectedKeys}
+        selectedKeys={selectedKeys}
         keygen='id'
         jssStyle={jssStyle}
         onChange={handleChange}
-        // onSelectChange={handleSelectChange}
+        onSelectChange={handleSelectChange}
         renderItem={renderItem}
         // renderItem='name'
       ></Transfer>
