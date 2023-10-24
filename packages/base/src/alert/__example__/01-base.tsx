@@ -11,7 +11,13 @@ import { useAlertStyle } from '@sheinx/shineout-style';
 export default () => {
   return (
     <div>
-      <Alert jssStyle={{ alert: useAlertStyle }}>23333</Alert>
+      <Alert jssStyle={{ alert: useAlertStyle }} type='confirmwarning' icon>
+        23333
+      </Alert>
+      <br />
+      <Alert jssStyle={{ alert: useAlertStyle }} type='warning' icon>
+        23333
+      </Alert>
     </div>
   );
 };

@@ -29,6 +29,7 @@ const Alert = (props: AlertProps) => {
     success: Icons.Success,
     warning: Icons.Warning,
     danger: Icons.Danger,
+    confirmwarning: Icons.Warning,
   };
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
   const rootClass = classNames(className, alertStyle.alert, {

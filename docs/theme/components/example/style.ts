@@ -23,7 +23,7 @@ export default createUseStyles(
         color: 'rgb(78,89,105)',
       },
       '& .demo': {
-        position: 'relative',
+        // position: 'relative',
         marginTop: 24,
         padding: 32,
         border: '1px solid rgba(232, 235, 240, 1)',
