@@ -34,9 +34,22 @@ function compile(dirPath, componentPath) {
    * @param dir 文件目录名 如：button
    */
   function makeApi(dir) {
+    if (dir.indexOf('upload') === -1) {
+      writeTemplate({
+        templatePath: templateApiPath,
+        targetPath: `${chunkDir}/${chunkModuleName}/api`,
+        fileName: `${dir}.ts`,
+        needPrettier: false,
+        ejsVars: {
+          api: [],
+        },
+      });
+      return;
+    }
     // 读取 dir下面的 **.type.ts 文件
     const types = fs.readdirSync(path.join(dirPath, dir)).filter((i) => i.endsWith('.type.ts'));
     const apis = types.reduce((acc, type) => {
+      // console.log('type', type);
       const api = parseApi(chunkModuleName, `./src/${dir}/${type}`);
       return [...acc, ...api];
     }, []);

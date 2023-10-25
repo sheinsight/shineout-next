@@ -67,6 +67,9 @@ import { TextareaTokens } from './textarea/type';
 import Tooltip from './tooltip';
 import { TooltipTokens } from './tooltip/type';
 
+import Upload from './upload';
+import { UploadTokens } from './upload/type';
+
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CarouselTokens &
@@ -88,7 +91,8 @@ export type ThemeTokens = AlertTokens &
   TabsTokens &
   TagTokens &
   TextareaTokens &
-  TooltipTokens;
+  TooltipTokens &
+  UploadTokens;
 
 const Tokens: ThemeTokens = {
   ...Alert,
@@ -113,6 +117,7 @@ const Tokens: ThemeTokens = {
   ...Tag,
   ...Textarea,
   ...Tooltip,
+  ...Upload,
 };
 
 export type { TokenType };

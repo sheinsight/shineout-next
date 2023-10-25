@@ -54,10 +54,11 @@ export const useConfig = (): Snapshot<ConfigOption> => {
   return useSnapshot(state) as Snapshot<ConfigOption>;
 };
 
-export const setConfig = (option: ConfigOption) => {
+export const setConfig = (option: Partial<ConfigOption>) => {
   for (const [key, value] of Object.entries(option)) {
-    if (key in state) {
+    if (value && key in state) {
       const k = key as keyof ConfigOption;
+      // @ts-ignore
       state[k] = value;
     }
   }

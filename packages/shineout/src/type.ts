@@ -15,3 +15,4 @@ export * as DatePicker from './date-picker/interface';
 export * as Divider from './divider/interface';
 export * as Message from './message/interface';
 export * as Carousel from './carousel/interface';
+export * as Upload from './upload/interface';
