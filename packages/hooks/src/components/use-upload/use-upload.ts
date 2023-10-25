@@ -235,7 +235,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
       };
       newFiles[id] = fileRecord;
 
-      let error: Error | null | void;
+      let error: Error | null | void = null;
       let imageResult: { src: string; width: number; height: number } | undefined = undefined;
       if (props.isImage) {
         try {

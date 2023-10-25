@@ -37,5 +37,9 @@ export interface BaseFormControlProps<T> {
   reserveAble: boolean | undefined;
   rules: FormItemRule<T> | undefined;
   onError: ((error: Error | undefined) => void) | undefined;
+  /**
+   * @en When the value changes, it will link to verify the fields in the bind, which needs to be used with Form
+   * @cn 当值改变是会联动校验 bind 中的字段, 需要配合 Form 使用
+   */
   bind: string[] | undefined;
 }
