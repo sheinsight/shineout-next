@@ -5,11 +5,8 @@ export interface UploadClasses {
   wrapper: string;
   wrapperImage: string;
   wrapperDisabled: string;
-  wrapperDrop: string;
   dropItem: string;
   handler: string;
-  handlerDisabled: string;
-  files: string;
   icon: string;
   iconHover: string;
   result: string;
@@ -22,9 +19,7 @@ export interface UploadClasses {
   resultDeleted: string;
   resultClose: string;
   resultStatusIcon: string;
-  values: string;
-  recycle: string;
-  // uploadImage
+  // image
   imageHandler: string;
   imageHandlerIcon: string;
   imageBg: string;
@@ -46,7 +41,6 @@ export interface UploadClasses {
 }
 export type UploadClassType = keyof UploadClasses;
 
-const imageGap = 10;
 const uploadStyle: JsStyles<UploadClassType> = {
   wrapper: {
     display: 'block',
@@ -55,7 +49,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'wrap',
-    gap: imageGap,
+    gap: '8px',
   },
   wrapperDisabled: {
     '& $imageHandler': {
@@ -79,8 +73,6 @@ const uploadStyle: JsStyles<UploadClassType> = {
       },
     },
   },
-  handlerDisabled: {},
-  files: {},
   result: {
     display: 'flex',
     alignItems: 'center',
@@ -156,12 +148,6 @@ const uploadStyle: JsStyles<UploadClassType> = {
   resultClose: {
     cursor: 'pointer',
   },
-  values: {
-    display: 'flex',
-    gap: '10px',
-    alignItems: 'center',
-  },
-  recycle: {},
   imageHandler: {
     boxSizing: 'border-box',
     display: 'inline-flex',
@@ -308,7 +294,6 @@ const uploadStyle: JsStyles<UploadClassType> = {
       transform: 'rotate(45deg) translateY(3px)',
     },
   },
-  wrapperDrop: {},
   dropItem: {
     ':not(wrapperDisabled) &[data-soui-dragover="true"]': {
       '& $handler, & $imageHandler, & $imageResult': {

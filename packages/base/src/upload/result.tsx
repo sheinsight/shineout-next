@@ -19,6 +19,9 @@ interface ResultProps {
   imageStyle?: React.CSSProperties;
   listType: UploadProps<any>['listType'];
   customImage?: React.ReactNode;
+  onPreview?: UploadProps<any>['onPreview'];
+  values: any[];
+  index: number;
 }
 const Result = (props: ResultProps) => {
   const uploadClasses = props.jssStyle?.upload?.();
@@ -125,7 +128,13 @@ const Result = (props: ResultProps) => {
               <div
                 className={classNames(uploadClasses?.icon)}
                 onClick={() => {
-                  context.preview();
+                  if (props.onPreview) {
+                    props.onPreview(src, props.values[props.index], props.index, props.values, {
+                      preview: context.preview,
+                    });
+                  } else {
+                    context.preview();
+                  }
                 }}
               >
                 {icons.ImagePreview}

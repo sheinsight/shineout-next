@@ -12,11 +12,8 @@ export interface UploadClasses {
   wrapper: string;
   wrapperImage: string;
   wrapperDisabled: string;
-  wrapperDrop: string;
   dropItem: string;
   handler: string;
-  handlerDisabled: string;
-  files: string;
   icon: string;
   iconHover: string;
   result: string;
@@ -29,8 +26,6 @@ export interface UploadClasses {
   resultDeleted: string;
   resultClose: string;
   resultStatusIcon: string;
-  values: string;
-  recycle: string;
   // image
   imageHandler: string;
   imageHandlerIcon: string;
@@ -70,22 +65,35 @@ interface UploadImageProps<T> {
    * @cn 自定义渲染上传的图片
    */
   renderContent?: (res: any, item: T, index: number, values: T[]) => React.ReactNode;
-  onPreview?: (file: T) => void;
   /**
-   * @en Adjust the spacing to be consistent with the [Gap](/components/Gap) props
-   * @cn 调整间距 同 [Gap](/components/Gap) 属性
-   * @default {column: 12, row: 12}
+   * @en how to preview the image
+   * @cn 自定义预览图片操作，默认为画廊展示
    */
-  // todo
-  gapProps?: {
-    column?: number;
-    row?: number;
-  };
+  onPreview?: (
+    url: string,
+    value: T,
+    index: number,
+    values: T[],
+    fun: { preview: () => void },
+  ) => void;
+  //
+  // gapProps?: {
+  //   column?: number;
+  //   row?: number;
+  // };
 }
+
+/**
+ * @title Upload
+ */
 export interface UploadProps<T>
   extends Omit<UseUploadProps<T>, 'onChange' | 'value' | 'text' | 'isImage'>,
     Pick<CommonType, 'className' | 'style'>,
     UploadImageProps<T> {
+  /**
+   * @en Component style class
+   * @cn 组件样式类
+   */
   jssStyle?: {
     upload?: () => UploadClasses;
     spin?: () => SpinClasses;
@@ -110,15 +118,37 @@ export interface UploadProps<T>
    * @default false
    */
   multiple?: boolean;
+  /**
+   * @en Upload placeholder
+   * @cn 上传占位内容
+   */
   children?: React.ReactNode;
   /**
    * @en The same as the native webkitdirectory tag
    * @cn 同原生 input 标签的 webkitdirectory 属性
    */
   webkitdirectory?: boolean | string;
+  /**
+   * @en default value
+   * @cn 默认值
+   */
   defaultValue?: T[];
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   * @override (value: any) => any
+   */
   beforeChange?: (value: T[]) => T[] | void;
+  /**
+   * @en value
+   * @cn defaultValue 和 value 可以同时设置，defaultValue 会被value覆盖 在 Form 中，value会被表单接管，value 无效
+   * @override any[]
+   */
   value?: T[];
+  /**
+   * @en The callback function when the value is changing(Upload successfully, delete). values: Array, the value is the onSuccess returns
+   * @cn 值改变回调(上传成功，删除)。values: 数组, 其每个值是 onSuccess 的返回值
+   */
   onChange?: (value: T[]) => void;
   /**
    * @en Display results
@@ -142,10 +172,22 @@ export interface UploadProps<T>
     onValueRemove: (index: number) => void;
     onFileRemove: (id: string) => void;
   }>;
+  /**
+   * @en Custom error prompt after forceAccept type verification fails
+   * @cn forceAccept 类型校验失败后自定义错误提示
+   */
   forceAcceptErrorMsg?: string;
+  /**
+   * @en Whether to recover deleted values.
+   * @cn 是否可以恢复已删除的value
+   * @default false
+   */
   recoverAble?: boolean;
+  /**
+   * @en Confirmation before deletion
+   * @cn 是否在删除文件和图片前弹出确认
+   */
   removeConfirm?: string | PopoverConfirmProps;
-  name?: string;
   /**
    * @en The type of display
    * @cn 展示类型

@@ -71,9 +71,16 @@ export interface UseUploadProps<ValueItem = any> {
    */
   request?: (options: UploadOptions<ValueItem>) => XhrResult | void;
   /**
-   * 上传参数
+   * @en params
+   * @cn 上传参数
+   * @override object
    */
   params?: ObjectType;
+  /**
+   * @en Whether to take the cookie
+   * @cn 是否携带 cookie
+   * @default false
+   */
   withCredentials?: boolean;
   /**
    * @en callback when start
@@ -145,6 +152,7 @@ export interface UseUploadProps<ValueItem = any> {
   beforeRemove?: (value: ValueItem) => Promise<any>;
   /**
    * @cn 是否是图片上传
+   * @en Whether it is an image upload
    */
   isImage?: boolean;
   text?: {

@@ -1,6 +1,6 @@
 /**
  * cn - 提交校验
- *    --
+ *    -- 当有文件正在上传或者上传失败的时候会阻止提交
  * en - Form validate
  *    --
 
@@ -33,7 +33,9 @@ const App: React.FC = () => {
           Upload file
         </Button>
       </Upload>
-      <Button htmlType={'submit'}>提交</Button>
+      <Button mode={'outline'} htmlType={'submit'} style={{ marginTop: 8 }}>
+        提交
+      </Button>
     </Form>
   );
 };

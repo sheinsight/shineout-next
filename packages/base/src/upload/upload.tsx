@@ -38,8 +38,10 @@ const Upload = <T,>(props: UploadProps<T>) => {
   const onChange = inputAbleProps.onChange;
   const isImage = listType === 'image';
 
+  const name = (props as any).name;
   const { func, files, recycleValues, accept, restLength } = useUpload({
     ...props,
+    htmlName: props.htmlName || name,
     isImage,
     text: {
       forceAcceptErrorMsg: props.forceAcceptErrorMsg || getLocale(locale, 'invalidAccept'),
@@ -97,7 +99,6 @@ const Upload = <T,>(props: UploadProps<T>) => {
         <span
           className={classNames(
             listType === 'image' ? uploadClasses?.imageHandler : uploadClasses?.handler,
-            props.disabled && uploadClasses?.handlerDisabled,
           )}
           style={listType === 'image' ? imageStyle : undefined}
           {...wrapperProps}
@@ -124,6 +125,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
     listType,
     jssStyle: props.jssStyle,
     imageStyle,
+    onPreview: props.onPreview,
   };
 
   const renderFile = () => {
@@ -133,6 +135,8 @@ const Upload = <T,>(props: UploadProps<T>) => {
       return (
         <Result
           {...commonResultProps}
+          values={Object.values(files)}
+          index={index}
           key={index}
           onRemove={() => {
             func.removeFile(id);
@@ -164,6 +168,8 @@ const Upload = <T,>(props: UploadProps<T>) => {
         >
           <Result
             {...commonResultProps}
+            values={value}
+            index={index}
             status={'success'}
             name={!isImage && renderResult(v)}
             src={isImage ? (renderResult(v) as string) : ''}
@@ -191,6 +197,8 @@ const Upload = <T,>(props: UploadProps<T>) => {
       return (
         <Result
           {...commonResultProps}
+          values={recycleValues}
+          index={index}
           status={'deleted'}
           onRemove={() => {
             func.recoverValue(index);
@@ -217,7 +225,6 @@ const Upload = <T,>(props: UploadProps<T>) => {
         uploadClasses?.wrapper,
         isImage && uploadClasses?.wrapperImage,
         props.disabled && uploadClasses?.wrapperDisabled,
-        drop && uploadClasses?.wrapperDrop,
         props.className,
       )}
     >

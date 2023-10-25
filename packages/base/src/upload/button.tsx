@@ -2,7 +2,7 @@ import React, { isValidElement } from 'react';
 import Upload from './upload';
 import Button from '../button';
 import Spin from '../spin';
-import { UploadButtonProps, ButtonUploadInnerPropsType } from './button.type';
+import { ButtonUploadInnerPropsType, UploadButtonProps } from './button.type';
 import { usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 
@@ -27,7 +27,7 @@ const UploadButton = <T,>(props: UploadButtonProps<T>) => {
   };
 
   const uploadClasses = props.jssStyle?.upload?.();
-  const [process, setProcess] = React.useState(40);
+  const [process, setProcess] = React.useState(-1);
   const onProgress = usePersistFn((file: { process: number }) => {
     setProcess(file.process);
   });
