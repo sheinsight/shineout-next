@@ -6,9 +6,9 @@ import { produce } from 'immer';
 const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   const { children, empty } = props;
   const { current: context } = React.useRef<{ ids: string[] }>({ ids: [] });
-  const { Provider, ProviderValue, value, error, onChange } = useFormFieldSet({
+  const { Provider, ProviderValue, value, error, onChange } = useFormFieldSet<T>({
     name: props.name,
-    reservable: props.reservable,
+    reserveAble: props.reserveAble,
     defaultValue: props.defaultValue,
     rules: props.rules,
     onError: props.onError,

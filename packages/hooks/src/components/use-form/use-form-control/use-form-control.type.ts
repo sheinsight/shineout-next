@@ -34,7 +34,7 @@ export interface BaseFormControlProps<T> {
   name: string | string[];
   defaultValue: T | undefined;
   onChange: ((value: T, ...other: any[]) => void) | undefined;
-  reservable: boolean | undefined;
+  reserveAble: boolean | undefined;
   rules: FormItemRule<T> | undefined;
   onError: ((error: Error | undefined) => void) | undefined;
   bind: string[] | undefined;

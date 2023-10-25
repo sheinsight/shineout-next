@@ -59,7 +59,7 @@ const mapStyle = (style: ObjectType, cloneStyle: ObjectType) => {
   });
 };
 const handleStyle = <T extends ObjectType>(style: T) => {
-  const cloneStyle = {};
+  const cloneStyle = {} as T;
   mapStyle(style, cloneStyle);
   return cloneStyle;
 };

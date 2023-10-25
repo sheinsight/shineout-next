@@ -14,6 +14,7 @@ const App: React.FC = () => {
 
   return (
     <Upload
+      reservable
       action='/api/upload'
       accept='image/*'
       value={value}
