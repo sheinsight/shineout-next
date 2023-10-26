@@ -1,4 +1,4 @@
-import React, { Attributes, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { AlertClasses, AlertProps } from './alert.type';
 import Icons from '../icons';
@@ -30,6 +30,7 @@ const Alert = (props: AlertProps) => {
     success: Icons.Success,
     warning: Icons.Warning,
     danger: Icons.Danger,
+    confirmwarning: Icons.Warning,
   };
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
   const rootClass = classNames(className, alertStyle.alert, {
@@ -90,7 +91,7 @@ const Alert = (props: AlertProps) => {
 
   const renderClose = () => {
     if (React.isValidElement(closeItem))
-      return React.cloneElement(closeItem, { onClick: handleClose } as Attributes);
+      return React.cloneElement(closeItem, { onClick: handleClose } as React.Attributes);
     return (
       <div className={alertStyle.close} onClick={handleClose}>
         {closeItem || Icons.AlertClose}

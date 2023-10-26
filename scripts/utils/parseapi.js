@@ -3,7 +3,7 @@ const { Project } = require('ts-morph');
 const fs = require('fs');
 
 // 不解析的类型
-const noParseNames = ['ObjectKey', 'DropdownNode'];
+const noParseNames = ['ObjectKey', 'DropdownNode', 'XhrResult', 'FileRecord'];
 // 替换类型
 const parseTypes = {
   'boolean | React.ReactChild | React.ReactFragment | React.ReactPortal': 'ReactNode',
@@ -67,7 +67,12 @@ function parseApi(pack, filePath) {
 
   // 获取文件中的某个属性的类型
   function getPathType(pp, name) {
-    const sourceFile = project.addSourceFileAtPath(pp);
+    let sourceFile;
+    try {
+      sourceFile = project.addSourceFileAtPath(pp.replace(/\/dist\/([a-z0-9-])+\//g, '/src/'));
+    } catch (error) {
+      console.log('getPathType 失败', pp, name);
+    }
     const type = sourceFile.getTypeAlias(name) || sourceFile.getInterface(name);
     if (type && type.getTypeNode) {
       return type.getTypeNode().getText();

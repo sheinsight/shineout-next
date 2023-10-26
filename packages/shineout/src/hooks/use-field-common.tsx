@@ -1,6 +1,6 @@
 import React from 'react';
 import { util } from '@sheinx/hooks';
-import { ExtendsFieldProps, TipProps } from '../../dist/cjs/@types/common';
+import { ExtendsFieldProps, TipProps } from '../@types/common';
 import { FormField } from '@sheinx/base';
 
 export interface FiledItemCommonProps {

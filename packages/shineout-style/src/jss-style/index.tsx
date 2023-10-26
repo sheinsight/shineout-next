@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { createUseStyles, JssProvider } from 'react-jss';
 import { JssStyle } from 'jss';
+import handleStyle from './handleStyle';
 
 function camelToDash(str: string): string {
   return str.replace(/([A-Z])/g, '-$1').toLowerCase();
@@ -24,7 +25,6 @@ export type ClassStyle<K extends Record<string, any>> = {
   [P in keyof K]: Record<string, any>;
 };
 export const styled = <C extends string>(style: JsStyles<C>, ns: string) => {
-  // const hoc = createUseStyles(handleRtl(style) as JsStyles<C>, { name: ns });
-  const hoc = createUseStyles(style, { name: ns, generateId: createClassname });
+  const hoc = createUseStyles(handleStyle(style), { name: ns, generateId: createClassname });
   return hoc;
 };

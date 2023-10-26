@@ -73,7 +73,7 @@ export interface ImageBaseProps
   extends BaseImageProps,
     Pick<CommonType, 'style' | 'className'>,
     Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'onError' | 'placeholder'> {
-  jssStyle: {
+  jssStyle?: {
     image?: () => ImageClasses;
   };
   renderImage?: (imageEl: React.ReactNode) => React.ReactElement;
@@ -81,6 +81,7 @@ export interface ImageBaseProps
   renderWrapper?: (wrapperEl: React.ReactNode) => React.ReactElement;
   renderPlaceholder?: (placeholderEl: React.ReactNode) => React.ReactElement;
   renderInnerWrapper?: (innerWrapperEl: React.ReactNode) => React.ReactElement;
+  componentRef?: (instance: { preview: () => void }) => void;
 }
 
 export type ImageProps = ImageBaseProps;
