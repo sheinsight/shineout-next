@@ -145,7 +145,6 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
         state.messages.push(Object.assign({ id }, msg));
       }),
     );
-    console.log('addMessage', msg);
 
     if (msg.duration > 0) {
       const closeTimeDelay = setTimeout(() => {
