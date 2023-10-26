@@ -36,6 +36,7 @@ const en2Locate = {
   ...enLocale,
   name: 'en2',
   weekStart: 1,
+  yearStart: 4,
 };
 
 dayjs.locale(en2Locate, undefined, true);
