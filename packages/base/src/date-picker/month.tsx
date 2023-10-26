@@ -42,7 +42,6 @@ const Month = (props: MonthProps) => {
         className={classNames(
           styles?.pickerCell,
           func.isActive(item) && styles?.pickerCellActive,
-          (index === 0 || index === 11) && styles?.pickerCellBound,
           isDisabled && styles?.pickerCellDisabled,
           func.isNow(item) && styles?.pickerCellToday,
           isInRange && styles?.pickerCellInRange,

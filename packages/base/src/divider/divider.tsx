@@ -3,10 +3,18 @@ import React from 'react';
 import { DividerProps } from './divider.type';
 
 const Divider = (props: DividerProps) => {
-  const { jssStyle, mode = 'horizontal', children, orientation = 'center' } = props;
+  const {
+    jssStyle,
+    mode = 'horizontal',
+    children,
+    orientation = 'center',
+    className,
+    style,
+  } = props;
   const styles = jssStyle?.divider?.();
   const showText = mode === 'horizontal' && children;
   const mc = classNames(
+    className,
     styles?.wrapper,
     mode === 'vertical' && styles?.vertical,
     mode === 'horizontal' && styles?.horizontal,
@@ -16,7 +24,7 @@ const Divider = (props: DividerProps) => {
     showText && orientation === 'right' && styles?.withTextRight,
   );
   return (
-    <div className={mc}>
+    <div className={mc} style={style}>
       {showText ? <span className={styles?.innerText}>{children}</span> : null}
     </div>
   );

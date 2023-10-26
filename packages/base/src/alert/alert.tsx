@@ -19,6 +19,7 @@ const Alert = (props: AlertProps) => {
     closable,
     hideClose,
     bordered,
+    closeItem,
     onClose,
     ...rest
   } = props;
@@ -89,9 +90,11 @@ const Alert = (props: AlertProps) => {
   };
 
   const renderClose = () => {
+    if (React.isValidElement(closeItem))
+      return React.cloneElement(closeItem, { onClick: handleClose } as React.Attributes);
     return (
       <div className={alertStyle.close} onClick={handleClose}>
-        {Icons.AlertClose}
+        {closeItem || Icons.AlertClose}
       </div>
     );
   };

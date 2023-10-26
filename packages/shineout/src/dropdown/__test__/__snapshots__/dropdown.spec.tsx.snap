@@ -2,19 +2,19 @@
 
 exports[`Dropdown[Base] should render correctly  1`] = `
 <div
-  class="dropdown-wrapper-0-2-1"
+  class="so-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+    class="so-dropdown-button so-button-secondary so-button-button so-button-text"
   >
     <span
-      class="dropdown-content-0-2-8"
+      class="so-dropdown-content"
     >
       Dropdown
     </span>
     <span
-      class="dropdown-caret-0-2-7"
+      class="so-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -29,25 +29,26 @@ exports[`Dropdown[Base] should render correctly  1`] = `
     </span>
   </button>
   <div
-    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    style="opacity: 0; pointer-events: none; display: none;"
+    class="so-dropdown-list"
+    data-sheinx-animation-duration="fast"
+    data-sheinx-animation-type="fade"
+    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="right-top"
     >
       <a
-        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        class="so-dropdown-button so-dropdown-item"
         data-role="item"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Submenu
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -62,19 +63,20 @@ exports[`Dropdown[Base] should render correctly  1`] = `
         </span>
       </a>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
           href="https://google.com"
           target="_blank"
         >
           Link to Google
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
           disabled=""
         >
           Disabled
@@ -82,13 +84,13 @@ exports[`Dropdown[Base] should render correctly  1`] = `
       </div>
     </div>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
       href="/"
     >
       Home
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       Message
     </a>
@@ -101,19 +103,20 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
   style="background: rgb(238, 238, 238); padding: 20px; border-radius: 10px; overflow: hidden;"
 >
   <div
-    class="dropdown-wrapper-0-2-1"
-    data-position="bottom-left"
+    class="so-dropdown-wrapper"
+    data-position="bottom"
+    style="margin-left: 800px;"
   >
     <button
-      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36"
+      class="so-dropdown-button so-button-primary so-button-button so-button-outline"
     >
       <span
-        class="dropdown-content-0-2-8"
+        class="so-dropdown-content"
       >
         Absolute
       </span>
       <span
-        class="dropdown-caret-0-2-7"
+        class="so-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -129,20 +132,20 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
     </button>
   </div>
   <div
-    class="dropdown-wrapper-0-2-1"
+    class="so-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-start: 24px;"
   >
     <button
-      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36"
+      class="so-dropdown-button so-button-primary so-button-button so-button-outline"
     >
       <span
-        class="dropdown-content-0-2-8"
+        class="so-dropdown-content"
       >
         Default
       </span>
       <span
-        class="dropdown-caret-0-2-7"
+        class="so-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -157,25 +160,26 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
       </span>
     </button>
     <div
-      class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      style="opacity: 0; pointer-events: none; display: none;"
+      class="so-dropdown-list"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="fade"
+      style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
     >
       <div
-        class="dropdown-wrapper-0-2-1"
+        class="so-dropdown-wrapper"
         data-position="right-top"
       >
         <a
-          class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+          class="so-dropdown-button so-dropdown-item"
           data-role="item"
         >
           <span
-            class="dropdown-content-0-2-8"
+            class="so-dropdown-content"
           >
-            Submenu
+            subMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenu
           </span>
           <span
-            class="dropdown-caret-0-2-7"
+            class="so-dropdown-caret"
           >
             <svg
               aria-hidden="true"
@@ -190,19 +194,20 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
           </span>
         </a>
         <div
-          class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-          data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-          style="opacity: 0; pointer-events: none; display: none;"
+          class="so-dropdown-list"
+          data-sheinx-animation-duration="fast"
+          data-sheinx-animation-type="fade"
+          style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
         >
           <a
-            class="dropdown-item-0-2-10"
+            class="so-dropdown-item"
             href="https://google.com"
             target="_blank"
           >
             Link to Google
           </a>
           <a
-            class="dropdown-item-0-2-10"
+            class="so-dropdown-item"
             disabled=""
           >
             Disabled
@@ -210,13 +215,13 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
         </div>
       </div>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
         href="/"
       >
         Home
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         Message
       </a>
@@ -233,19 +238,19 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26"
+        class="so-dropdown-button so-button-primary so-button-button"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Default
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -260,41 +265,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26"
+        class="so-dropdown-button so-button-secondary so-button-button"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Default
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -309,41 +315,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-danger-0-2-32 button-button-0-2-26"
+        class="so-dropdown-button so-button-danger so-button-button"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Default
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -358,41 +365,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-warning-0-2-33 button-button-0-2-26"
+        class="so-dropdown-button so-button-warning so-button-button"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Default
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -407,41 +415,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-success-0-2-34 button-button-0-2-26"
+        class="so-dropdown-button so-button-success so-button-button"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Default
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -456,22 +465,23 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
@@ -482,19 +492,19 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36"
+        class="so-dropdown-button so-button-primary so-button-button so-button-outline"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -509,41 +519,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-outline-0-2-36"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-outline"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -558,41 +569,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-danger-0-2-32 button-button-0-2-26 button-outline-0-2-36"
+        class="so-dropdown-button so-button-danger so-button-button so-button-outline"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -607,41 +619,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-warning-0-2-33 button-button-0-2-26 button-outline-0-2-36"
+        class="so-dropdown-button so-button-warning so-button-button so-button-outline"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -656,41 +669,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-success-0-2-34 button-button-0-2-26 button-outline-0-2-36"
+        class="so-dropdown-button so-button-success so-button-button so-button-outline"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -705,22 +719,23 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
@@ -731,19 +746,19 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-primary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Text
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -758,41 +773,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Text
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -807,41 +823,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-danger-0-2-32 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-danger so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Text
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -856,41 +873,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-warning-0-2-33 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-warning so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Text
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -905,41 +923,42 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-success-0-2-34 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-success so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Text
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -954,22 +973,23 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3
         </a>
@@ -981,19 +1001,19 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
 
 exports[`Dropdown[Base] should render correctly about children 1`] = `
 <div
-  class="dropdown-wrapper-0-2-1"
+  class="so-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+    class="so-dropdown-button so-button-secondary so-button-button so-button-text"
   >
     <span
-      class="dropdown-content-0-2-8"
+      class="so-dropdown-content"
     >
       Click me
     </span>
     <span
-      class="dropdown-caret-0-2-7"
+      class="so-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -1008,25 +1028,26 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
     </span>
   </button>
   <div
-    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    style="opacity: 0; pointer-events: none; display: none;"
+    class="so-dropdown-list"
+    data-sheinx-animation-duration="fast"
+    data-sheinx-animation-type="fade"
+    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="right-top"
     >
       <a
-        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        class="so-dropdown-button so-dropdown-item"
         data-role="item"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           item0
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1041,52 +1062,53 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item0-0
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item0-1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item0-2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item0-3
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item0-4
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="right-top"
     >
       <a
-        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        class="so-dropdown-button so-dropdown-item"
         data-role="item"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           item1
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1101,52 +1123,53 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1-0
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1-1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1-2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1-3
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item1-4
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="right-top"
     >
       <a
-        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        class="so-dropdown-button so-dropdown-item"
         data-role="item"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           item2
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1161,52 +1184,53 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2-0
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2-1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2-2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2-3
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item2-4
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="right-top"
     >
       <a
-        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        class="so-dropdown-button so-dropdown-item"
         data-role="item"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           item3
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1221,52 +1245,53 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3-0
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3-1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3-2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3-3
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item3-4
         </a>
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="right-top"
     >
       <a
-        class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+        class="so-dropdown-button so-dropdown-item"
         data-role="item"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           item4
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1281,32 +1306,33 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
         </span>
       </a>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item4-0
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item4-1
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item4-2
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item4-3
         </a>
         <a
-          class="dropdown-item-0-2-10"
+          class="so-dropdown-item"
         >
           item4-4
         </a>
@@ -1318,19 +1344,19 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
 
 exports[`Dropdown[Base] should render correctly about columns 1`] = `
 <div
-  class="dropdown-wrapper-0-2-1"
+  class="so-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+    class="so-dropdown-button so-button-secondary so-button-button so-button-text"
   >
     <span
-      class="dropdown-content-0-2-8"
+      class="so-dropdown-content"
     >
       Tiling Menu
     </span>
     <span
-      class="dropdown-caret-0-2-7"
+      class="so-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -1345,157 +1371,158 @@ exports[`Dropdown[Base] should render correctly about columns 1`] = `
     </span>
   </button>
   <div
-    class="dropdown-list-0-2-3 dropdown-boxList-0-2-6 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    data-class="dropdown-list-0-2-3 dropdown-boxList-0-2-6 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    style="width: 500px; grid-template-columns: repeat(5, 1fr); opacity: 0; pointer-events: none; display: none;"
+    class="so-dropdown-list so-dropdown-box-list"
+    data-sheinx-animation-duration="fast"
+    data-sheinx-animation-type="fade"
+    style="pointer-events: none; position: absolute; z-index: -1000; width: 500px; grid-template-columns: repeat(5, 1fr); display: none; opacity: 1;"
   >
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item0
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item1
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item2
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item3
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item4
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item5
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item6
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item7
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item8
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item9
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item10
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item11
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item12
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item13
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item14
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item15
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item16
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item17
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item18
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item19
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item20
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item21
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item22
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item23
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item24
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item25
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item26
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item27
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item28
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item29
     </a>
@@ -1505,19 +1532,19 @@ exports[`Dropdown[Base] should render correctly about columns 1`] = `
 
 exports[`Dropdown[Base] should render correctly about divider 1`] = `
 <div
-  class="dropdown-wrapper-0-2-1"
+  class="so-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+    class="so-dropdown-button so-button-secondary so-button-button so-button-text"
   >
     <span
-      class="dropdown-content-0-2-8"
+      class="so-dropdown-content"
     >
       Dividing Line
     </span>
     <span
-      class="dropdown-caret-0-2-7"
+      class="so-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -1532,30 +1559,31 @@ exports[`Dropdown[Base] should render correctly about divider 1`] = `
     </span>
   </button>
   <div
-    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    style="opacity: 0; pointer-events: none; display: none;"
+    class="so-dropdown-list"
+    data-sheinx-animation-duration="fast"
+    data-sheinx-animation-type="fade"
+    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
   >
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       First
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       Second
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       Third
     </a>
     <div
-      class="dropdown-optionDivider-0-2-13"
+      class="so-dropdown-option-divider"
     />
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       Fourth
     </a>
@@ -1565,19 +1593,19 @@ exports[`Dropdown[Base] should render correctly about divider 1`] = `
 
 exports[`Dropdown[Base] should render correctly about group 1`] = `
 <div
-  class="dropdown-wrapper-0-2-1"
+  class="so-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+    class="so-dropdown-button so-button-secondary so-button-button so-button-text"
   >
     <span
-      class="dropdown-content-0-2-8"
+      class="so-dropdown-content"
     >
       Group Menu
     </span>
     <span
-      class="dropdown-caret-0-2-7"
+      class="so-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -1592,37 +1620,38 @@ exports[`Dropdown[Base] should render correctly about group 1`] = `
     </span>
   </button>
   <div
-    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    style="opacity: 0; pointer-events: none; display: none;"
+    class="so-dropdown-list"
+    data-sheinx-animation-duration="fast"
+    data-sheinx-animation-type="fade"
+    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
   >
     <div
-      class="dropdown-optionGroup-0-2-12"
+      class="so-dropdown-option-group"
     >
       group0
     </div>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item0
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item1
     </a>
     <div
-      class="dropdown-optionGroup-0-2-12"
+      class="so-dropdown-option-group"
     >
       group1
     </div>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item2
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       item3
     </a>
@@ -1632,19 +1661,19 @@ exports[`Dropdown[Base] should render correctly about group 1`] = `
 
 exports[`Dropdown[Base] should render correctly about hover 1`] = `
 <div
-  class="dropdown-wrapper-0-2-1"
+  class="so-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+    class="so-dropdown-button so-button-secondary so-button-button so-button-text"
   >
     <span
-      class="dropdown-content-0-2-8"
+      class="so-dropdown-content"
     >
       Click me
     </span>
     <span
-      class="dropdown-caret-0-2-7"
+      class="so-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -1659,32 +1688,33 @@ exports[`Dropdown[Base] should render correctly about hover 1`] = `
     </span>
   </button>
   <div
-    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    style="opacity: 0; pointer-events: none; display: none;"
+    class="so-dropdown-list"
+    data-sheinx-animation-duration="fast"
+    data-sheinx-animation-type="fade"
+    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
   >
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       America
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       Germany
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       United Kingdom
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       France
     </a>
     <a
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       Russia
     </a>
@@ -1694,19 +1724,19 @@ exports[`Dropdown[Base] should render correctly about hover 1`] = `
 
 exports[`Dropdown[Base] should render correctly about icon 1`] = `
 <div
-  class="dropdown-wrapper-0-2-1"
+  class="so-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+    class="so-dropdown-button so-button-secondary so-button-button so-button-text"
   >
     <span
-      class="dropdown-content-0-2-8"
+      class="so-dropdown-content"
     >
       Icon Menu
     </span>
     <span
-      class="dropdown-caret-0-2-7"
+      class="so-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -1721,15 +1751,16 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
     </span>
   </button>
   <div
-    class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-    style="opacity: 0; pointer-events: none; display: none;"
+    class="so-dropdown-list"
+    data-sheinx-animation-duration="fast"
+    data-sheinx-animation-type="fade"
+    style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
   >
     <div
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       <i
-        class="icon-wrapper-0-2-48 fa-user-o"
+        class="so-icon-wrapper fa-user-o"
         style="font-family: FontAwesome;"
       />
        
@@ -1740,10 +1771,10 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       </span>
     </div>
     <div
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       <i
-        class="icon-wrapper-0-2-48 fa-user-o"
+        class="so-icon-wrapper fa-user-o"
         style="font-family: FontAwesome;"
       />
        
@@ -1754,10 +1785,10 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       </span>
     </div>
     <div
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       <i
-        class="icon-wrapper-0-2-48 fa-user-o"
+        class="so-icon-wrapper fa-user-o"
         style="font-family: FontAwesome;"
       />
        
@@ -1768,10 +1799,10 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       </span>
     </div>
     <div
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       <i
-        class="icon-wrapper-0-2-48 fa-user-o"
+        class="so-icon-wrapper fa-user-o"
         style="font-family: FontAwesome;"
       />
        
@@ -1782,10 +1813,10 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       </span>
     </div>
     <div
-      class="dropdown-item-0-2-10"
+      class="so-dropdown-item"
     >
       <i
-        class="icon-wrapper-0-2-48 fa-user-o"
+        class="so-icon-wrapper fa-user-o"
         style="font-family: FontAwesome;"
       />
        
@@ -1807,19 +1838,19 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: center; gap: 12px; padding: 0px 120px;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Bottom left
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1834,25 +1865,26 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-top"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -1867,37 +1899,38 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-top"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -1912,30 +1945,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="right-top"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -1950,17 +1984,18 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -1971,19 +2006,19 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Bottom
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1998,25 +2033,26 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2031,37 +2067,38 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2076,30 +2113,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="right"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -2114,17 +2152,18 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -2135,19 +2174,19 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="bottom-right"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Bottom right
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2162,20 +2201,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left-top"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2189,38 +2229,39 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left-top"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2234,31 +2275,32 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="left-top"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -2272,23 +2314,24 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                   </svg>
                 </span>
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -2303,19 +2346,19 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="right-top"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Right Top
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2330,25 +2373,26 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-top"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2363,37 +2407,38 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-top"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2408,30 +2453,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="right-top"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -2446,17 +2492,18 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -2467,14 +2514,14 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="left-top"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2488,26 +2535,27 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Left Top
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left-top"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2521,38 +2569,39 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left-top"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2566,31 +2615,32 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="left-top"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -2604,23 +2654,24 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                   </svg>
                 </span>
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -2635,19 +2686,19 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="right"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Right
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2662,25 +2713,26 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2695,37 +2747,38 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2740,30 +2793,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="right"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -2778,17 +2832,18 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -2799,14 +2854,14 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="left"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2820,26 +2875,27 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Left
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2853,38 +2909,39 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -2898,31 +2955,32 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="left"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -2936,23 +2994,24 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                   </svg>
                 </span>
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -2967,19 +3026,19 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="right-bottom"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Right Bottom
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2994,25 +3053,26 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3027,37 +3087,38 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3072,30 +3133,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="right-bottom"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -3110,17 +3172,18 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -3131,14 +3194,14 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="left-bottom"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -3152,26 +3215,27 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Left Bottom
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3185,38 +3249,39 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3230,31 +3295,32 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="left-bottom"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -3268,23 +3334,24 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                   </svg>
                 </span>
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -3299,19 +3366,19 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: center; gap: 12px;"
   >
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="top-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Top Left
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -3326,25 +3393,26 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3359,37 +3427,38 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3404,30 +3473,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="right-bottom"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -3442,17 +3512,18 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -3463,19 +3534,19 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="top-left"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Top
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -3490,25 +3561,26 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3523,37 +3595,38 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="right-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3568,30 +3641,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="right-bottom"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -3606,17 +3680,18 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -3627,19 +3702,19 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
       </div>
     </div>
     <div
-      class="dropdown-wrapper-0-2-1"
+      class="so-dropdown-wrapper"
       data-position="top-right"
     >
       <button
-        class="dropdown-button-0-2-9 button-secondary-0-2-31 button-button-0-2-26 button-text-0-2-38"
+        class="so-dropdown-button so-button-secondary so-button-button so-button-text"
       >
         <span
-          class="dropdown-content-0-2-8"
+          class="so-dropdown-content"
         >
           Top right
         </span>
         <span
-          class="dropdown-caret-0-2-7"
+          class="so-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -3654,20 +3729,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
         </span>
       </button>
       <div
-        class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-        style="opacity: 0; pointer-events: none; display: none;"
+        class="so-dropdown-list"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="fade"
+        style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
       >
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3681,38 +3757,39 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               First
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link1
             </a>
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link2
             </a>
           </div>
         </div>
         <div
-          class="dropdown-wrapper-0-2-1"
+          class="so-dropdown-wrapper"
           data-position="left-bottom"
         >
           <a
-            class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+            class="so-dropdown-button so-dropdown-item"
             data-role="item"
           >
             <span
-              class="dropdown-caret-0-2-7"
+              class="so-dropdown-caret"
             >
               <svg
                 aria-hidden="true"
@@ -3726,31 +3803,32 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
               </svg>
             </span>
             <span
-              class="dropdown-content-0-2-8"
+              class="so-dropdown-content"
             >
               Second
             </span>
           </a>
           <div
-            class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-            style="opacity: 0; pointer-events: none; display: none;"
+            class="so-dropdown-list"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
           >
             <a
-              class="dropdown-item-0-2-10"
+              class="so-dropdown-item"
             >
               link3
             </a>
             <div
-              class="dropdown-wrapper-0-2-1"
+              class="so-dropdown-wrapper"
               data-position="left-bottom"
             >
               <a
-                class="dropdown-button-0-2-9 dropdown-item-0-2-10"
+                class="so-dropdown-button so-dropdown-item"
                 data-role="item"
               >
                 <span
-                  class="dropdown-caret-0-2-7"
+                  class="so-dropdown-caret"
                 >
                   <svg
                     aria-hidden="true"
@@ -3764,23 +3842,24 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
                   </svg>
                 </span>
                 <span
-                  class="dropdown-content-0-2-8"
+                  class="so-dropdown-content"
                 >
                   link4
                 </span>
               </a>
               <div
-                class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-                style="opacity: 0; pointer-events: none; display: none;"
+                class="so-dropdown-list"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="fade"
+                style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
               >
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link5
                 </a>
                 <a
-                  class="dropdown-item-0-2-10"
+                  class="so-dropdown-item"
                 >
                   link6
                 </a>
@@ -3797,20 +3876,20 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
 exports[`Dropdown[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="dropdown-wrapper-0-2-1"
+    class="so-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36 button-small-0-2-27"
+      class="so-dropdown-button so-button-primary so-button-button so-button-outline so-button-small"
     >
       <span
-        class="dropdown-content-0-2-8"
+        class="so-dropdown-content"
       >
         Dropdown
       </span>
       <span
-        class="dropdown-caret-0-2-7"
+        class="so-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -3825,47 +3904,48 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <div
-      class="dropdown-list-0-2-3 dropdown-listSmall-0-2-4 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      data-class="dropdown-list-0-2-3 dropdown-listSmall-0-2-4 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      style="opacity: 0; pointer-events: none; display: none;"
+      class="so-dropdown-list so-dropdown-list-small"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="fade"
+      style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
     >
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item0
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item1
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item2
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item3
       </a>
     </div>
   </div>
   <div
-    class="dropdown-wrapper-0-2-1"
+    class="so-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36"
+      class="so-dropdown-button so-button-primary so-button-button so-button-outline"
     >
       <span
-        class="dropdown-content-0-2-8"
+        class="so-dropdown-content"
       >
         Dropdown
       </span>
       <span
-        class="dropdown-caret-0-2-7"
+        class="so-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -3880,47 +3960,48 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <div
-      class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      style="opacity: 0; pointer-events: none; display: none;"
+      class="so-dropdown-list"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="fade"
+      style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
     >
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item0
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item1
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item2
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item3
       </a>
     </div>
   </div>
   <div
-    class="dropdown-wrapper-0-2-1"
+    class="so-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="dropdown-button-0-2-9 button-primary-0-2-30 button-button-0-2-26 button-outline-0-2-36 button-large-0-2-28"
+      class="so-dropdown-button so-button-primary so-button-button so-button-outline so-button-large"
     >
       <span
-        class="dropdown-content-0-2-8"
+        class="so-dropdown-content"
       >
         Dropdown
       </span>
       <span
-        class="dropdown-caret-0-2-7"
+        class="so-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -3935,27 +4016,28 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <div
-      class="dropdown-list-0-2-3 dropdown-listLarge-0-2-5 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      data-class="dropdown-list-0-2-3 dropdown-listLarge-0-2-5 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      style="opacity: 0; pointer-events: none; display: none;"
+      class="so-dropdown-list so-dropdown-list-large"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="fade"
+      style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
     >
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item0
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item1
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item2
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         item3
       </a>
@@ -3966,35 +4048,35 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
 
 exports[`Dropdown[Base] should render correctly about split 1`] = `
 <div
-  class="button-group-0-2-46"
+  class="so-button-group"
   style="display: inline-block; margin-inline-end: 24px;"
 >
   <button
-    class="button-secondary-0-2-31 button-button-0-2-26 button-outline-0-2-36"
+    class="so-button-secondary so-button-button so-button-outline"
   >
     <span>
       Option
     </span>
   </button>
   <button
-    class="button-secondary-0-2-31 button-button-0-2-26 button-outline-0-2-36"
+    class="so-button-secondary so-button-button so-button-outline"
   >
     <span>
       Option
     </span>
   </button>
   <div
-    class="dropdown-wrapper-0-2-1"
+    class="so-dropdown-wrapper"
     data-position="bottom-right"
   >
     <button
-      class="dropdown-button-0-2-9 dropdown-splitButton-0-2-15 button-secondary-0-2-31 button-button-0-2-26 button-outline-0-2-36"
+      class="so-dropdown-button so-dropdown-split-button so-button-secondary so-button-button so-button-outline"
     >
       <span
-        class="dropdown-content-0-2-8"
+        class="so-dropdown-content"
       />
       <span
-        class="dropdown-caret-0-2-7"
+        class="so-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -4009,17 +4091,18 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
       </span>
     </button>
     <div
-      class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      data-class="dropdown-list-0-2-3 animation-list-fade-animation-240-0-2-19 animation-list-fade-0-2-24"
-      style="opacity: 0; pointer-events: none; display: none;"
+      class="so-dropdown-list"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="fade"
+      style="pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;"
     >
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
       >
         First
       </a>
       <a
-        class="dropdown-item-0-2-10"
+        class="so-dropdown-item"
         href="http://www.google.com"
         target="_blank"
       >

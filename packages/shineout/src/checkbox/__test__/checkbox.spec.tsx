@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent, screen } from '@testing-library/react';
 import Checkbox from '..';
 import mountTest from '../../tests/mountTest';
 import structureTest, { inputTest, classLengthTest } from '../../tests/structureTest';
@@ -12,6 +12,7 @@ import {
   childrenTest,
   baseTest,
   displayTest,
+  createClassName,
 } from '../../tests/utils';
 import CheckboxBase from '../__example__/001-base';
 import CheckboxStatus from '../__example__/002-checked-1';
@@ -21,13 +22,17 @@ import CheckboxHtmlValue from '../__example__/003-value';
 import CheckboxClick from '../__example__/009-click';
 
 const SO_PREFIX = 'checkbox';
-const checkboxClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
-const checkboxCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-3`;
-const checkboxDisabledClassName = `${SO_PREFIX}-wrapperDisabled-0-2-5`;
-const checkboxIndeterminateClassName = `${SO_PREFIX}-wrapperIndeterminate-0-2-4`;
-const checkboxInputClassName = `.${SO_PREFIX}-input-0-2-2`;
-const checkboxGroupClassName = `.${SO_PREFIX}-group-0-2-9`;
-const checkboxWrapperCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-3`;
+const originClasses = ['wrapper', 'input', 'group', 'desc'];
+const originItemClasses = ['wrapperChecked', 'wrapperDisabled', 'wrapperIndeterminate'];
+const {
+  wrapper: checkboxClassName,
+  wrapperChecked: checkboxCheckedClassName,
+  wrapperDisabled: checkboxDisabledClassName,
+  wrapperIndeterminate: checkboxIndeterminateClassName,
+  input: checkboxInputClassName,
+  group: checkboxGroupClassName,
+  desc,
+} = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const attributes = [
   {
@@ -40,7 +45,7 @@ const attributes = [
   },
   {
     attribute: 'span',
-    num: 1,
+    num: 2,
   },
 ];
 
@@ -81,7 +86,8 @@ describe('Checkbox[Base]', () => {
     inputTest(renderContent, inputAttributes);
     const { container } = render(renderContent);
     attributesTest(container.querySelector('i')!, 'tabindex', '1');
-    textContentTest(container.querySelector('span')!, 'Checkbox');
+    screen.debug();
+    textContentTest(container.querySelector(desc)!, 'Checkbox');
   });
   test('should render when click', () => {
     const clickFn = jest.fn();
@@ -177,11 +183,7 @@ describe('Checkbox[Checked, disabled]', () => {
   });
 
   test('should render when set disabled', () => {
-    disabledTest(
-      Checkbox as React.FC<componentProps>,
-      checkboxClassName,
-      checkboxWrapperCheckedClassName,
-    );
+    disabledTest(Checkbox as React.FC<componentProps>, checkboxClassName, checkboxCheckedClassName);
   });
 });
 describe('Checkbox[HtmlValue]', () => {

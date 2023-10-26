@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider[Base] should render correctly  1`] = `
+<div
+  style="font-size: 12px;"
+>
+  <p>
+    A design is a plan or specification for the construction of an object.
+  </p>
+  <div
+    class="so-divider-wrapper so-divider-horizontal"
+  />
+  <p>
+    A design is a plan or specification for the construction of an object.
+  </p>
+</div>
+`;
+
+exports[`Divider[Base] should render correctly about text 1`] = `
+<div
+  style="font-size: 12px;"
+>
+  <p>
+    A design is a plan or specification for the construction of an object.
+  </p>
+  <div
+    class="so-divider-wrapper so-divider-horizontal so-divider-with-text so-divider-with-text-center"
+  >
+    <span
+      class="so-divider-inner-text"
+    >
+      Center
+    </span>
+  </div>
+  <p>
+    A design is a plan or specification for the construction of an object.
+  </p>
+  <div
+    class="so-divider-wrapper so-divider-horizontal so-divider-with-text so-divider-with-text-left"
+  >
+    <span
+      class="so-divider-inner-text"
+    >
+      Left
+    </span>
+  </div>
+  <p>
+    A design is a plan or specification for the construction of an object.
+  </p>
+  <div
+    class="so-divider-wrapper so-divider-horizontal so-divider-with-text so-divider-with-text-right"
+  >
+    <span
+      class="so-divider-inner-text"
+    >
+      Right
+    </span>
+  </div>
+  <p>
+    A design is a plan or specification for the construction of an object.
+  </p>
+</div>
+`;
+
+exports[`Divider[Base] should render correctly about vertical 1`] = `
+<div
+  style="font-size: 12px;"
+>
+  <span>
+    Left
+  </span>
+  <div
+    class="so-divider-wrapper so-divider-vertical"
+  />
+  <span>
+    Center
+  </span>
+  <div
+    class="so-divider-wrapper so-divider-vertical"
+  />
+  <span>
+    Right
+  </span>
+</div>
+`;
