@@ -513,7 +513,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   </div>
                 </td>
                 <td
-                  class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                  class="so-datePicker-picker-cell"
                 >
                   <div
                     class="so-datePicker-picker-cell-content"
@@ -524,7 +524,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   </div>
                 </td>
                 <td
-                  class="so-datePicker-picker-cell"
+                  class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                 >
                   <div
                     class="so-datePicker-picker-cell-content"
@@ -1197,7 +1197,7 @@ exports[`Alert[Base] should render correctly about dateTime 1`] = `
                   </div>
                 </td>
                 <td
-                  class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                  class="so-datePicker-picker-cell"
                 >
                   <div
                     class="so-datePicker-picker-cell-content"
@@ -1208,7 +1208,7 @@ exports[`Alert[Base] should render correctly about dateTime 1`] = `
                   </div>
                 </td>
                 <td
-                  class="so-datePicker-picker-cell"
+                  class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                 >
                   <div
                     class="so-datePicker-picker-cell-content"
@@ -1911,7 +1911,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                    class="so-datePicker-picker-cell"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -1922,7 +1922,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell"
+                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -2580,7 +2580,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                    class="so-datePicker-picker-cell"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -2591,7 +2591,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell"
+                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -3274,7 +3274,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                    class="so-datePicker-picker-cell"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -3285,7 +3285,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell"
+                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -3889,7 +3889,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                    class="so-datePicker-picker-cell"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -3900,7 +3900,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell"
+                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -4583,7 +4583,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                    class="so-datePicker-picker-cell"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -4594,7 +4594,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell"
+                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -5198,7 +5198,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                    class="so-datePicker-picker-cell"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
@@ -5209,7 +5209,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                     </div>
                   </td>
                   <td
-                    class="so-datePicker-picker-cell"
+                    class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                   >
                     <div
                       class="so-datePicker-picker-cell-content"
