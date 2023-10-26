@@ -34,6 +34,12 @@ export interface TransferTokens {
   transferFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 穿梭框图标颜色
+   */
+  transferIconColor: string;
+  /**
+   * @type {string}
    * @token Radius-4
    * @description 穿梭框边框圆角
    */
@@ -46,8 +52,14 @@ export interface TransferTokens {
   transferHeaderBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
-   * @description 穿梭框图标颜色
+   * @token Neutral-fill-3
+   * @description 穿梭框图标背景颜色
    */
-  transferIconColor: string;
+  transferIconBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Margin-8
+   * @description 穿梭框图标相邻外边距
+   */
+  transferIconNearlyMargin: string;
 }

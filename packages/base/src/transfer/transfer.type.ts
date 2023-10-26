@@ -10,11 +10,15 @@ export interface TransferClasses {
   view: string;
   source: string;
   target: string;
+  close: string;
+  removeAll: string;
+  simpleTarget: string;
   operations: string;
   input: string;
   left: string;
   right: string;
   header: string;
+  title: string;
   list: string;
   footer: string;
   item: string;
@@ -36,5 +40,7 @@ export interface TransferProps<DataItem, Value> extends BaseTransferProps<DataIt
   renderItem?: ObjectKey<DataItem> | ((data: DataItem) => React.ReactNode);
   simple?: boolean;
   empty?: React.ReactNode;
+  titles?: [React.ReactNode, React.ReactNode];
+  footers?: [React.ReactNode, React.ReactNode];
   onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
 }

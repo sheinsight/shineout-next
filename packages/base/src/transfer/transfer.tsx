@@ -13,13 +13,24 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
     keygen,
     empty,
     simple,
+    titles,
+    footers,
     selectedKeys,
     listHeight = 186,
+    beforeChange,
     onFilter: onFilterProp,
     onChange: onChangeProp,
-    onSelectChange,
+    // onSelectChange: onSelectChangeProp,
     renderItem = (item: DataItem) => item as React.ReactNode,
   } = props;
+
+  const handleChange = (value, currentData, isTarget) => {
+    console.log('change', value, currentData, isTarget);
+    onChangeProp?.(value, currentData, isTarget);
+  };
+  const handleSelectChange = () => {
+    // console.log('select', v);
+  };
 
   const {
     source,
@@ -28,24 +39,27 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
     filterTargetText,
     onSelect,
     onSelectAll,
+    onRemoveAll,
     onChange,
     onFilter,
   } = useTransfer<DataItem, Value>({
     data,
     keygen,
     value,
+    simple,
+    valueControl: 'value' in props,
+    selectControl: 'selectedKeys' in props,
     selectedKeys,
-    onChange: onChangeProp,
+    beforeChange,
+    onChange: handleChange,
     onFilter: onFilterProp,
-    onSelectChange,
+    onSelectChange: handleSelectChange,
   });
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.transfer, {
     [styles.simple]: simple,
   });
-
-  // const handleChange = () => {};
 
   const renderOperations = () => {
     return (
@@ -78,19 +92,25 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
 
   const renderList = (listType: TransferListType) => {
     const isSource = listType === 'source';
+    const title = isSource ? titles?.[0] : titles?.[1];
+    const footer = isSource ? footers?.[0] : footers?.[1];
     return (
       <TransferList
         jssStyle={jssStyle}
         info={isSource ? source : target}
         keygen={keygen}
         empty={empty}
+        title={title}
+        footer={footer}
         filterText={isSource ? filterSourceText : filterTargetText}
         listType={listType}
         renderItem={renderItem}
         listHeight={listHeight}
+        simple={simple}
         onSelect={onSelect}
         onSelectAll={onSelectAll}
-        onFilter={onFilter}
+        onRemoveAll={onRemoveAll}
+        onFilter={onFilterProp ? onFilter : undefined}
         onChange={onChange}
       />
     );
@@ -99,7 +119,7 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
   return (
     <div className={rootClass}>
       {renderList('source')}
-      {renderOperations()}
+      {!simple && renderOperations()}
       {renderList('target')}
     </div>
   );

@@ -1,37 +1,47 @@
 import { useMemo, useState } from 'react';
 import { getKey } from '../../utils';
 import { KeygenResult } from '../../common/type';
+import { useInputAble } from '../../common/use-input-able';
 import { BaseTransferProps, TransferInfo, TransferListType } from './use-transfer.type';
 // import useFormat from './use-format';
-import useDefaultValue from '../../common/use-default-value';
 
 const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>) => {
   const {
     data,
     keygen,
+    simple,
     // format: formatProp,
     disabled,
-    selectedKeys: selectedKeysProp,
-    defaultSelectedKeys,
+    selectedKeys: selectValue,
+    defaultSelectedKeys: defaultSelectValue,
     value: valueProp,
     defaultValue,
+    valueControl,
+    selectControl,
+    beforeChange,
     onFilter,
-    onChange,
+    onChange: onChangeProp,
     onSearch,
-    onSelectChange,
+    onSelectChange: onSelectChangeProp,
   } = props;
 
   const [filterSourceText, setFilterSourceText] = useState('');
   const [filterTargetText, setFilterTargetText] = useState('');
 
-  const [selectedKeys, setSelectedKeys] = useDefaultValue([], {
-    value: selectedKeysProp,
-    defaultValue: defaultSelectedKeys || [],
+  const { value: selectedKeys, onChange: onSelectChange } = useInputAble({
+    value: selectValue,
+    defaultValue: defaultSelectValue,
+    control: selectControl,
+    beforeChange: undefined,
+    onChange: onSelectChangeProp,
   });
 
-  const [value, setValue, valueState] = useDefaultValue([], {
+  const { value, onChange } = useInputAble({
     value: valueProp,
-    defaultValue: defaultValue || [],
+    defaultValue: defaultValue,
+    control: valueControl,
+    beforeChange: beforeChange,
+    onChange: onChangeProp,
   });
 
   // const format = useFormat(formatProp);
@@ -101,25 +111,21 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
     });
 
     return [source, target, valueMap, dataMap, selectMap];
-  }, [data, disabled, selectedKeys, value, valueState, filterSourceText, filterTargetText]);
+  }, [data, disabled, selectedKeys, value, filterSourceText, filterTargetText]);
 
-  // const handleChange = (to: TransferListType, keys: Map<KeygenResult, boolean>) => {
   const handleChange = (to: TransferListType, keys: KeygenResult[]) => {
     const currentData: DataItem[] = [];
-
-    const operate = to === 'source' ? 'delete' : 'set';
+    const isTarget = to === 'target';
+    const operate = isTarget ? 'set' : 'delete';
 
     keys.forEach((value, key) => {
       currentData.push(dataMap.get(key));
       valueMap[operate](key, value);
       selectMap.delete(key);
     });
-
     const newTargetKeys: KeygenResult[] = Array.from(valueMap.keys());
-    const newSelectedKeys: KeygenResult[] = Array.from(selectMap.keys());
-    setSelectedKeys(newSelectedKeys);
-    setValue(newTargetKeys);
-    onChange?.(newTargetKeys as Value, currentData, to === 'source');
+    onChange?.(newTargetKeys, currentData, isTarget);
+    onSelectChange?.([]);
   };
 
   const handleSelectChange = (key: KeygenResult) => {
@@ -141,14 +147,25 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
         sourceSelect.push(key);
       }
     });
-    setSelectedKeys(select);
-    onSelectChange?.(targetSelect, sourceSelect, select);
+    onSelectChange?.(select);
+    if (simple) {
+      onChange?.(select);
+    }
   };
 
-  const handleSelectAll = (keys: KeygenResult[], type: TransferListType) => {
-    console.log(type);
-    setSelectedKeys(keys);
-    onSelectChange([], [], keys);
+  const handleSelectAll = (keys: KeygenResult[]) => {
+    if (simple) {
+      const validKeys = target.validKeys.concat(source.validKeys);
+      onChange?.(validKeys, [], true);
+      onSelectChange?.(validKeys);
+      return;
+    }
+    onSelectChange?.(keys);
+  };
+
+  const handleRemoveAll = () => {
+    onSelectChange?.([]);
+    onChange?.([], [], false);
   };
 
   const handleFilter = (text: string, type: TransferListType) => {
@@ -164,10 +181,11 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
     valueMap,
     filterSourceText,
     filterTargetText,
-    onSelect: handleSelectChange,
-    onSelectAll: handleSelectAll,
     onChange: handleChange,
     onFilter: handleFilter,
+    onSelect: handleSelectChange,
+    onSelectAll: handleSelectAll,
+    onRemoveAll: handleRemoveAll,
   };
 };
 

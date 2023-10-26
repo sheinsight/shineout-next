@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { TransferListItemProps } from './transfer-list-item.type';
 import { TransferClasses } from './transfer.type';
 import { util, KeygenResult } from '@sheinx/hooks';
-
+import Icons from '../icons';
 import Checkbox from '../checkbox';
 
 const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => {
@@ -14,6 +14,8 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     lineHeight,
     renderItem: renderItemProp,
     checked,
+    simple,
+    listType,
     onChange,
   } = props;
   const listItem = useRef<HTMLDivElement>(null);
@@ -35,21 +37,45 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     onChange(key, checked);
   };
 
+  const handleRemove = () => {
+    const key = util.getKey(keygen, data) as KeygenResult;
+    onChange(key, false);
+  };
+
+  const renderRemove = () => {
+    return (
+      <span className={styles.close} onClick={handleRemove}>
+        {Icons.Close}
+      </span>
+    );
+  };
+
+  const renderCheckbox = () => {
+    if (simple && listType === 'target')
+      return (
+        <span className={styles.simpleTarget}>
+          {renderItem()}
+          {renderRemove()}
+        </span>
+      );
+    return (
+      <Checkbox jssStyle={jssStyle} checked={checked} onChange={handleChange}>
+        {renderItem()}
+      </Checkbox>
+    );
+  };
+
   useEffect(() => {
     if (!listItem.current) return;
     const realHeight = listItem.current.getBoundingClientRect().height;
     if (listItemHeight.current === realHeight) return;
 
     listItemHeight.current = realHeight;
-
-    console.log(listItemHeight.current);
   }, []);
 
   return (
     <div ref={listItem} className={rootClass}>
-      <Checkbox jssStyle={jssStyle} checked={checked} onChange={handleChange}>
-        {renderItem()}
-      </Checkbox>
+      {renderCheckbox()}
     </div>
   );
 };

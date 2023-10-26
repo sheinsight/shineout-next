@@ -13,7 +13,6 @@ export interface TransferListProps<DataItem> {
   jssStyle: JssStyleType;
   info: ListInfo<DataItem>;
   renderItem: ObjectKey<DataItem> | ((data: DataItem) => React.ReactNode);
-  footer?: React.ReactNode;
   listHeight?: number;
   lineHeight?: number;
   itemsInView?: number;
@@ -22,6 +21,9 @@ export interface TransferListProps<DataItem> {
   colNum?: number;
   empty?: React.ReactNode;
   filterText?: string;
+  simple?: boolean;
+  title?: React.ReactNode;
+  footer?: React.ReactNode;
   onSelect: (keys: KeygenResult[], listType: TransferListType) => void;
-  onFilter: (text?: string, listType?: TransferListType) => boolean;
+  onFilter?: (text?: string, listType?: TransferListType) => boolean;
 }

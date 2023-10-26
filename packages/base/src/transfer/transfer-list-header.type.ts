@@ -12,7 +12,10 @@ export interface TransferListHeaderProps<DataItem> {
     checkbox: () => CheckboxClasses;
     virtualScroll: () => VirtualScrollClasses;
   };
+  title?: React.ReactNode;
   info: ListInfo<DataItem>;
   keygen?: KeygenType<DataItem>;
+  simple?: boolean;
+  listType: TransferListType;
   onSelectAll: (keys: KeygenResult[], listType: TransferListType) => void;
 }

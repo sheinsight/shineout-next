@@ -1,4 +1,4 @@
-import { ObjectKey, KeygenType, KeygenResult } from '@sheinx/hooks';
+import { ObjectKey, KeygenType, KeygenResult, TransferListType } from '@sheinx/hooks';
 import { TransferClasses } from './transfer.type';
 import { ButtonClasses } from '../button/button.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
@@ -15,6 +15,8 @@ export interface TransferListItemProps<DataItem> {
   data: DataItem;
   checked: boolean;
   lineHeight: number;
+  simple?: boolean;
+  listType: TransferListType;
   keygen?: KeygenType<DataItem>;
   renderItem: ObjectKey<DataItem> | ((data: DataItem) => React.ReactNode);
   onChange: (value: KeygenResult, checked: boolean) => void;

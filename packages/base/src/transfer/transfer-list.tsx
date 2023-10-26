@@ -16,7 +16,6 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     jssStyle,
     info,
     renderItem,
-    footer,
     keygen,
     listHeight = 180,
     lineHeight = 34,
@@ -24,10 +23,14 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     itemsInView = 20,
     colNum = 1,
     empty,
+    title,
+    footer,
     filterText,
+    simple,
     onFilter,
     onSelect,
     onSelectAll,
+    onRemoveAll,
     // onChange,
   } = props;
 
@@ -36,7 +39,10 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   const virtualRef = useRef<VirtualRefType>();
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
-  const rootClass = classNames(styles.view);
+  const rootClass = classNames(styles.view, {
+    [styles.source]: listType === 'source',
+    [styles.target]: listType === 'target',
+  });
 
   const getScrollHeight = () => {
     const rows = Math.ceil(data.length / colNum);
@@ -62,7 +68,11 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
         jssStyle={jssStyle}
         info={info}
         keygen={keygen}
+        title={title}
+        listType={listType}
+        simple={simple}
         onSelectAll={onSelectAll}
+        onRemoveAll={onRemoveAll}
       ></TransferListHeader>
     );
   };
@@ -119,6 +129,8 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
                   key={key}
                   jssStyle={jssStyle}
                   data={d}
+                  simple={simple}
+                  listType={listType}
                   keygen={keygen}
                   lineHeight={lineHeight}
                   checked={selectedKeys.has(key)}
@@ -139,7 +151,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     if (!footer) {
       return null;
     }
-    return <div className={styles.footer}>Footer</div>;
+    return <div className={styles.footer}>{footer}</div>;
   };
 
   useEffect(() => {
@@ -149,7 +161,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   return (
     <div className={rootClass}>
       {renderHeader()}
-      {renderFilterInput()}
+      {onFilter && renderFilterInput()}
       {renderList()}
       {renderFooter()}
     </div>

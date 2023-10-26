@@ -1,9 +1,9 @@
 const transferRules = {
   size: [['', 'small', 'large'], ['font-size']],
-  color: [['border-color', 'font-color']],
+  color: [['border-color', 'font-color', 'icon-color']],
   radius: [['border-radius']],
-  extra: [['header', 'footer'], ['background-color']],
-  icon: [['icon-color']],
+  extra: [['header', 'footer', 'icon'], ['background-color']],
+  nearly: [['icon'], ['nearly-margin']],
 };
 
 module.exports = {

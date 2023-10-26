@@ -9,9 +9,11 @@ const transferTokens: TransferTokens = {
   transferLargeFontSize: '16/regular',
   transferBorderColor: 'Neutral-border-1',
   transferFontColor: 'Neutral-text-5',
+  transferIconColor: 'Neutral-text-4',
   transferBorderRadius: 'Radius-4',
   transferHeaderBackgroundColor: 'Neutral-fill-2',
-  transferIconColor: 'Neutral-text-4',
+  transferIconBackgroundColor: 'Neutral-fill-3',
+  transferIconNearlyMargin: 'Margin-8',
 };
 
 export default transferTokens;

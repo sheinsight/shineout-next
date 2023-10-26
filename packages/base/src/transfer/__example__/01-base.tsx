@@ -19,7 +19,7 @@ let key = 0;
 
 const originData = [];
 
-for (let i = 0; i < 200000; i++) {
+for (let i = 0; i < 20; i++) {
   originData.push({
     id: i,
     name: `name-${i}`,
@@ -45,12 +45,13 @@ export default () => {
     setSelectedKeys(next);
   };
 
-  const handleChange = (v) => {
+  const handleChange = (v, c) => {
+    console.log(v, c);
     setValue(v);
   };
-  const handleSelectChange = (target, source, select) => {
-    setSelectedKeys(select);
-  };
+  // const handleSelectChange = (target, source, select) => {
+  //   setSelectedKeys(select);
+  // };
   const handleFilter = (t, d) => {
     return d.name.indexOf(t) > -1;
   };
@@ -59,27 +60,28 @@ export default () => {
     return <div>{item.name}</div>;
   };
 
+  const renderFooter = () => {
+    return <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>123</div>;
+  };
+
   return (
     <div>
       <button type='button' onClick={handleClick}>
         + select
       </button>
-      {/* <div style={{width:200,height:200,overflow:'auto',background:'#ddd'}} >
-        <div style={{width:200,height:300}}>
-          
-        </div>
-      </div> */}
       <Transfer
+        // simple
         data={data}
         value={value}
-        selectedKeys={selectedKeys}
+        // selectedKeys={selectedKeys}
         keygen='id'
         jssStyle={jssStyle}
         onChange={handleChange}
-        onSelectChange={handleSelectChange}
+        // onSelectChange={handleSelectChange}
         renderItem={renderItem}
+        titles={['Source', 'Target']}
         onFilter={handleFilter}
-        // renderItem='name'
+        footers={[renderFooter(), renderFooter()]}
       ></Transfer>
     </div>
   );

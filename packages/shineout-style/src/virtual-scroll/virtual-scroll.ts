@@ -1,13 +1,15 @@
 import { JsStyles } from '../jss-style';
 
-type VirtualClass = 'scroll' | 'virtual' | 'iframe' | 'container' | 'footer' | 'bar';
+type VirtualClass = 'scroll' | 'virtual' | 'iframe' | 'container' | 'footer' | 'bar' | 'scrolled';
 
 const VirtualScrollStyle: JsStyles<VirtualClass> = {
   scroll: {
     position: 'relative',
     overflow: 'hidden',
     height: '100%',
+    boxSizing: 'border-box',
   },
+  scrolled: {},
   virtual: {},
   iframe: {
     position: 'absolute',
@@ -26,7 +28,7 @@ const VirtualScrollStyle: JsStyles<VirtualClass> = {
   footer: {},
   bar: {
     width: 1,
-    zIndex: -1,
+    visibility: 'hidden',
   },
 };
 

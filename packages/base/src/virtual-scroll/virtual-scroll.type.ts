@@ -1,5 +1,6 @@
 export interface VirtualScrollClasses {
   scroll: string;
+  scrolled: string;
   virtual: string;
   iframe: string;
   container: string;

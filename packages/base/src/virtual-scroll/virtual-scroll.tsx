@@ -2,11 +2,10 @@ import { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { usePersistFn } from '@sheinx/hooks';
 import { VirtualScrollProps, VirtualScrollClasses } from './virtual-scroll.type';
-import Bar from './virtual-bar';
 
-// function getElementScrollbarWidth(element: HTMLElement) {
-//   return element.offsetWidth - element.clientWidth;
-// }
+function getElementScrollbarWidth(element: HTMLElement) {
+  return element.offsetWidth - element.clientWidth;
+}
 
 const VirtualScroll = (props: VirtualScrollProps) => {
   const {
@@ -18,16 +17,12 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     scrollHeight: scrollHeightProp,
     // scrollWidth: scrollWidthProp,
     footer,
-    scrollX,
-    scrollY,
     onScroll,
   } = props;
 
-  const rootStyle = jssStyle?.virtualScroll?.() || ({} as VirtualScrollClasses);
-  const rootClass = classNames(rootStyle.scroll);
-
   const [deltaY, setDeltaY] = useState(0);
   const [deltaX, setDeltaX] = useState(0);
+  const [scrollBarWidth, setScrollBarWidth] = useState(0);
 
   const wheelEl = useRef<HTMLDivElement>(null);
   const transformEl = useRef<HTMLDivElement>(null);
@@ -35,12 +30,23 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   const barRef = useRef<HTMLDivElement>(null);
   const resizeRef = useRef<HTMLIFrameElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const barMonitorRef = useRef<HTMLDivElement>(null);
 
   const wheelLocked = useRef(false);
   const preventLocked = useRef(true);
 
   const scrollHeight = scrollHeightProp || height;
-  // const scrollWidth = scrollWidthProp || width;
+  // const scrollBarWidth = scrollWidthProp || width;
+  const shouldScroll = scrollHeight > height;
+
+  const rootStyle = jssStyle?.virtualScroll?.() || ({} as VirtualScrollClasses);
+  const rootClass = classNames(rootStyle.scroll, {
+    [rootStyle.scrolled]: scrollBarWidth && shouldScroll,
+  });
+
+  const styles = {
+    paddingRight: scrollBarWidth && shouldScroll ? scrollBarWidth : 0,
+  };
 
   const handlePrevent = usePersistFn((e) => {
     e.preventDefault();
@@ -57,6 +63,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   };
 
   const handleWheel = (e: WheelEvent) => {
+    if (!shouldScroll) return;
     if (deltaY === 0 && e.deltaY < 0) {
       return;
     }
@@ -102,6 +109,10 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     }
   }, [deltaY]);
 
+  useEffect(() => {
+    if (scrollHeight < height) handleReset();
+  }, [scrollHeight]);
+
   // DOM resize 监听器
   const renderResizeMonitor = () => {
     return (
@@ -109,18 +120,46 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     );
   };
 
+  const renderBarMonitor = () => {
+    return (
+      <div
+        ref={barMonitorRef}
+        style={{
+          width: '100%',
+          height: 1,
+          overflow: 'scroll',
+          zIndex: -1,
+          top: -1,
+          position: 'absolute',
+        }}
+      >
+        <div style={{ height: 2, width: 1 }}></div>
+      </div>
+    );
+  };
+
   const renderFooter = () => {
     return <div className={rootStyle.footer}>{footer}</div>;
   };
 
-  // 横向滚动条
-  const renderBarX = () => {
-    return <Bar direction='x' jssStyle={jssStyle}></Bar>;
-  };
-
-  // 纵向滚动条
-  const renderBarY = () => {
-    return <Bar direction='y' jssStyle={jssStyle}></Bar>;
+  const renderBar = () => {
+    return (
+      <div
+        ref={barRef}
+        onScroll={handleBarScroll}
+        onMouseEnter={handleBarEnter}
+        style={{
+          height: '100%',
+          overflowY: 'auto',
+          position: 'absolute',
+          right: 0,
+          width: 16,
+          zIndex: 1,
+        }}
+      >
+        <div className={rootStyle.bar} style={{ height: scrollHeight }}></div>
+      </div>
+    );
   };
 
   useEffect(() => {
@@ -136,7 +175,8 @@ const VirtualScroll = (props: VirtualScrollProps) => {
 
     // TODO: 需要做节流处理
     if (resizeRef.current) resizeRef.current.onresize = handleResize;
-    // const width = getElementScrollbarWidth(barRef.current);
+    const width = getElementScrollbarWidth(barMonitorRef.current);
+    if (width > 0) setScrollBarWidth(width);
     if (wheelEl.current) {
       wheelEl.current.addEventListener('wheel', handlePrevent, { passive: false });
     }
@@ -151,29 +191,14 @@ const VirtualScroll = (props: VirtualScrollProps) => {
 
   return (
     <>
-      <div ref={wheelEl} className={rootClass}>
+      <div ref={wheelEl} className={rootClass} style={styles}>
         {renderResizeMonitor()}
-        <div
-          ref={barRef}
-          onScroll={handleBarScroll}
-          onMouseEnter={handleBarEnter}
-          style={{
-            height: '100%',
-            overflowY: 'auto',
-            position: 'absolute',
-            right: 0,
-            width: 16,
-            zIndex: 1,
-          }}
-        >
-          <div className={rootStyle.bar} style={{ height: scrollHeight }}></div>
-        </div>
+        {renderBarMonitor()}
+        {shouldScroll && renderBar()}
         <div ref={containerRef} className={rootStyle.container} onWheel={handleWheel}>
           <div ref={transformEl}>{children}</div>
         </div>
       </div>
-      {scrollX && renderBarX()}
-      {scrollY && renderBarY()}
       {footer && renderFooter()}
     </>
   );

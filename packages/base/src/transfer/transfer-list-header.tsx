@@ -3,10 +3,11 @@ import { util } from '@sheinx/hooks';
 import { TransferClasses } from './transfer.type';
 import { Checkbox } from '../checkbox';
 import { TransferListHeaderProps } from './transfer-list-header.type';
+import Icons from '../icons';
 
 const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>) => {
-  const { jssStyle, keygen, info, onSelectAll } = props;
-  const { data, selectedKeys, validKeys, listType } = info;
+  const { jssStyle, keygen, listType, simple, info, title, onSelectAll, onRemoveAll } = props;
+  const { data, selectedKeys, validKeys } = info;
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.header);
@@ -26,6 +27,10 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
   };
 
   const handleChange = () => {
+    if (simple) {
+      onSelectAll(validKeys, listType);
+      return;
+    }
     if (selectedKeys.size === 0) {
       onSelectAll(validKeys, listType);
       return;
@@ -40,11 +45,47 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
     }
   };
 
+  const handleRemoveAll = () => {
+    onRemoveAll();
+  };
+
+  const renderCount = () => {
+    return (
+      <span>
+        {selectedKeys.size}/{data.length}
+      </span>
+    );
+  };
+
+  const renderTitle = () => {
+    if (simple && listType === 'target') {
+      return (
+        <span className={styles.title}>
+          <span>{title}</span>
+          <span className={styles.removeAll} onClick={handleRemoveAll}>
+            {Icons.Delete}
+          </span>
+        </span>
+      );
+    }
+
+    return title;
+  };
+
+  const renderCheckbox = () => {
+    if (simple && listType === 'target') return renderCount();
+
+    return (
+      <Checkbox jssStyle={jssStyle} checked={getChecked()} onChange={handleChange}>
+        {renderCount()}
+      </Checkbox>
+    );
+  };
+
   return (
     <div className={rootClass}>
-      <Checkbox jssStyle={jssStyle} checked={getChecked()} onChange={handleChange}>
-        {selectedKeys.size}/{data.length}
-      </Checkbox>
+      {renderCheckbox()}
+      {renderTitle()}
     </div>
   );
 };
