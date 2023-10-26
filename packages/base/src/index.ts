@@ -9,6 +9,7 @@ export * from './dropdown';
 export * from './editable-area';
 export * from './empty';
 export * from './form';
+export * from './gap';
 export * from './icon';
 export * from './image';
 export * from './input';
