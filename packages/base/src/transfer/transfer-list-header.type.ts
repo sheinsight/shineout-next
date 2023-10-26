@@ -17,5 +17,6 @@ export interface TransferListHeaderProps<DataItem> {
   keygen?: KeygenType<DataItem>;
   simple?: boolean;
   listType: TransferListType;
+  onRemoveAll: (listType: TransferListType) => void;
   onSelectAll: (keys: KeygenResult[], listType: TransferListType) => void;
 }

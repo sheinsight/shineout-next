@@ -26,8 +26,8 @@ export interface BaseTransferProps<DataItem, Value> {
   onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
   onSearch?: (text: string, isSource: boolean) => void;
   onSelectChange?: (
-    // sourceKeys: KeygenResult[],
-    // targetKeys: KeygenResult[],
     selectedKeys: KeygenResult[],
+    sourceKeys: KeygenResult[],
+    targetKeys: KeygenResult[],
   ) => void;
 }

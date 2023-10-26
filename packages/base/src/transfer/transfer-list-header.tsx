@@ -15,10 +15,11 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
   const getChecked = () => {
     if (selectedKeys.size === 0) return false;
     let some = false;
-    const every = data.every((item) => {
+    let every = true;
+    data.forEach((item) => {
       const has = selectedKeys.get(util.getKey(keygen, item));
       if (has) some = true;
-      return has;
+      if (!has) every = false;
     });
 
     if (every) return true;
@@ -26,27 +27,34 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
     return false;
   };
 
+  const checked = getChecked();
+
   const handleChange = () => {
     if (simple) {
       onSelectAll(validKeys, listType);
       return;
     }
-    if (selectedKeys.size === 0) {
+
+    if (checked === 'indeterminate') {
+      const currentKeys = Array.from(selectedKeys.keys());
+      const newKeys = currentKeys.concat(validKeys);
+      onSelectAll(newKeys, listType);
+      return;
+    }
+
+    if (checked === true) {
+      onSelectAll([], listType);
+      return;
+    }
+
+    if (checked === false) {
       onSelectAll(validKeys, listType);
-      return;
-    }
-    if (selectedKeys.size < data.length) {
-      onSelectAll([], listType);
-      return;
-    }
-    if (selectedKeys.size === data.length) {
-      onSelectAll([], listType);
       return;
     }
   };
 
   const handleRemoveAll = () => {
-    onRemoveAll();
+    onRemoveAll(listType);
   };
 
   const renderCount = () => {
@@ -76,7 +84,7 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
     if (simple && listType === 'target') return renderCount();
 
     return (
-      <Checkbox jssStyle={jssStyle} checked={getChecked()} onChange={handleChange}>
+      <Checkbox jssStyle={jssStyle} checked={checked} onChange={handleChange}>
         {renderCount()}
       </Checkbox>
     );

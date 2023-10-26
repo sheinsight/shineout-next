@@ -21,7 +21,7 @@ const originData = [];
 
 for (let i = 0; i < 20; i++) {
   originData.push({
-    id: i,
+    id: `id-${i}`,
     name: `name-${i}`,
   });
 }
@@ -45,13 +45,12 @@ export default () => {
     setSelectedKeys(next);
   };
 
-  const handleChange = (v, c) => {
-    console.log(v, c);
+  const handleChange = (v) => {
     setValue(v);
   };
-  // const handleSelectChange = (target, source, select) => {
-  //   setSelectedKeys(select);
-  // };
+  const handleSelectChange = (source, target, select) => {
+    setSelectedKeys(select);
+  };
   const handleFilter = (t, d) => {
     return d.name.indexOf(t) > -1;
   };
@@ -73,11 +72,11 @@ export default () => {
         // simple
         data={data}
         value={value}
-        // selectedKeys={selectedKeys}
+        selectedKeys={selectedKeys}
         keygen='id'
         jssStyle={jssStyle}
         onChange={handleChange}
-        // onSelectChange={handleSelectChange}
+        onSelectChange={handleSelectChange}
         renderItem={renderItem}
         titles={['Source', 'Target']}
         onFilter={handleFilter}

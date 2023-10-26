@@ -115,20 +115,40 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
 
   const handleChange = (to: TransferListType, keys: KeygenResult[]) => {
     const currentData: DataItem[] = [];
-    const isTarget = to === 'target';
-    const operate = isTarget ? 'set' : 'delete';
+    const isToTarget = to === 'target';
+    const operate = isToTarget ? 'set' : 'delete';
 
-    keys.forEach((value, key) => {
+    keys.forEach((key) => {
       currentData.push(dataMap.get(key));
-      valueMap[operate](key, value);
+      valueMap[operate](key, true);
       selectMap.delete(key);
     });
-    const newTargetKeys: KeygenResult[] = Array.from(valueMap.keys());
-    onChange?.(newTargetKeys, currentData, isTarget);
-    onSelectChange?.([]);
+
+    const newValue: KeygenResult[] = Array.from(valueMap.keys());
+    const newSelectedKeys: KeygenResult[] = Array.from(selectMap.keys());
+
+    onChange?.(newValue, currentData, isToTarget);
+    if (!simple) {
+      onSelectChange?.(
+        newSelectedKeys,
+        isToTarget ? [] : newSelectedKeys,
+        isToTarget ? newSelectedKeys : [],
+      );
+    }
   };
 
-  const handleSelectChange = (key: KeygenResult) => {
+  const handleSelectChange = (key: KeygenResult, checked: boolean) => {
+    if (simple) {
+      let values = [];
+
+      if (checked) {
+        values = Array.from(valueMap.keys());
+        values.push(key);
+      }
+      handleChange(checked ? 'target' : 'source', checked ? values : [key]);
+      return;
+    }
+
     if (selectMap.get(key)) {
       selectMap.delete(key);
     } else {
@@ -147,25 +167,30 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
         sourceSelect.push(key);
       }
     });
-    onSelectChange?.(select);
-    if (simple) {
-      onChange?.(select);
-    }
+
+    onSelectChange?.(select, sourceSelect, targetSelect);
   };
 
-  const handleSelectAll = (keys: KeygenResult[]) => {
+  const handleSelectAll = (keys: KeygenResult[], listType: TransferListType) => {
     if (simple) {
       const validKeys = target.validKeys.concat(source.validKeys);
-      onChange?.(validKeys, [], true);
-      onSelectChange?.(validKeys);
+      handleChange('target', validKeys);
       return;
     }
-    onSelectChange?.(keys);
+    const isSource = listType === 'source';
+    const infoKeys = isSource ? target.selectedKeys : source.selectedKeys;
+    const currnetSelectedKeys = Array.from(infoKeys.keys());
+    const newSelectedKeys = keys.concat(currnetSelectedKeys);
+    onSelectChange?.(
+      newSelectedKeys,
+      isSource ? keys : currnetSelectedKeys,
+      isSource ? currnetSelectedKeys : keys,
+    );
   };
 
-  const handleRemoveAll = () => {
-    onSelectChange?.([]);
-    onChange?.([], [], false);
+  // simple 模式下的移除所有 target 数据
+  const handleRemoveAllTarget = () => {
+    handleChange('source', target.validKeys);
   };
 
   const handleFilter = (text: string, type: TransferListType) => {
@@ -185,7 +210,7 @@ const useTransfer = <DataItem, Value>(props: BaseTransferProps<DataItem, Value>)
     onFilter: handleFilter,
     onSelect: handleSelectChange,
     onSelectAll: handleSelectAll,
-    onRemoveAll: handleRemoveAll,
+    onRemoveAll: handleRemoveAllTarget,
   };
 };
 

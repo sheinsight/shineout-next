@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import { TransferProps, TransferClasses } from './transfer.type';
-import { useTransfer, TransferListType } from '@sheinx/hooks';
+import { useTransfer, TransferListType, KeygenResult } from '@sheinx/hooks';
 import TransferList from './transfer-list';
-import Button from '../button';
+import TransferOperate from './transfer-operate';
 import Icon from '../icons';
 
 const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
@@ -20,16 +20,17 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
     beforeChange,
     onFilter: onFilterProp,
     onChange: onChangeProp,
-    // onSelectChange: onSelectChangeProp,
+    onSelectChange: onSelectChangeProp,
     renderItem = (item: DataItem) => item as React.ReactNode,
   } = props;
 
-  const handleChange = (value, currentData, isTarget) => {
-    console.log('change', value, currentData, isTarget);
-    onChangeProp?.(value, currentData, isTarget);
-  };
-  const handleSelectChange = () => {
-    // console.log('select', v);
+  // 2.x 抛出参数包含 source target，此外新增一个二者合并的总 select 项
+  const handleSelectChange = (
+    select: KeygenResult[],
+    source: KeygenResult[],
+    target: KeygenResult[],
+  ) => {
+    onSelectChangeProp?.(source, target, select);
   };
 
   const {
@@ -51,7 +52,7 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
     selectControl: 'selectedKeys' in props,
     selectedKeys,
     beforeChange,
-    onChange: handleChange,
+    onChange: onChangeProp,
     onFilter: onFilterProp,
     onSelectChange: handleSelectChange,
   });
@@ -62,30 +63,29 @@ const Transfer = <DataItem, Value>(props: TransferProps<DataItem, Value>) => {
   });
 
   const renderOperations = () => {
+    const sourceSelectKeys = Array.from(source.selectedKeys.keys());
+    const targetSelectKeys = Array.from(target.selectedKeys.keys());
+
     return (
       <div className={styles.operations}>
-        <span>
-          <Button
-            disabled={source.selectedKeys.size === 0}
-            className={styles.right}
-            jssStyle={jssStyle}
-            shape='square'
-            onClick={() => onChange('target', source.selectedKeys)}
-          >
-            {Icon.AngleRight}
-          </Button>
-        </span>
-        <span>
-          <Button
-            disabled={target.selectedKeys.size === 0}
-            className={styles.left}
-            jssStyle={jssStyle}
-            shape='square'
-            onClick={() => onChange('source', target.selectedKeys)}
-          >
-            {Icon.AngleLeft}
-          </Button>
-        </span>
+        <TransferOperate
+          listType='target'
+          jssStyle={jssStyle}
+          className={styles.right}
+          selectedKeys={sourceSelectKeys}
+          onChange={onChange}
+        >
+          {Icon.AngleRight}
+        </TransferOperate>
+        <TransferOperate
+          listType='source'
+          jssStyle={jssStyle}
+          className={styles.left}
+          selectedKeys={targetSelectKeys}
+          onChange={onChange}
+        >
+          {Icon.AngleLeft}
+        </TransferOperate>
       </div>
     );
   };
