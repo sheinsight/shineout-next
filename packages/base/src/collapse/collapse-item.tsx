@@ -1,19 +1,13 @@
-import React, { CSSProperties, useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
 import type { CollapseItemProps } from './collapse-item.type';
 import groupContext from './group-context';
 import { useCollapseItem } from '@sheinx/hooks';
+import AnimationList from '..//animation-list';
 
 const CollapseItem = (props: CollapseItemProps) => {
-  const {
-    active,
-    triggerRegion,
-    expandIcon,
-    onChange,
-    expandContentPosition,
-    lazyload,
-    destroyOnHide: destroyOnHideProps,
-  } = useContext(groupContext);
+  const { active, triggerRegion, expandIcon, onChange, expandContentPosition } =
+    useContext(groupContext);
   const {
     children,
     name,
@@ -26,12 +20,7 @@ const CollapseItem = (props: CollapseItemProps) => {
     title,
     extra,
     contentStyle,
-    destroyOnHide = false,
   } = props;
-  const [panelStyle, setPanelStyle] = useState<CSSProperties | undefined>();
-  const panelRef = useRef<HTMLDivElement>(null);
-  const panelHeight = useRef<number>(0);
-  const keepAlive = useRef<boolean>(false);
 
   const { judgeExpanded, getItemContentProps, getHeaderIconProps, getTitleProps, getExtraProps } =
     useCollapseItem({
@@ -66,23 +55,6 @@ const CollapseItem = (props: CollapseItemProps) => {
     );
   };
 
-  useEffect(() => {
-    if (!panelRef.current) return;
-    if (!judgeExpanded) {
-      panelHeight.current = panelRef.current.clientHeight;
-      setPanelStyle({ height: panelRef.current.clientHeight });
-      setTimeout(() => {
-        setPanelStyle({ height: 0, flex: 'none' });
-      }, 10);
-    } else {
-      if (panelHeight.current === 0) return;
-      setPanelStyle({ height: panelHeight.current });
-      setTimeout(() => {
-        setPanelStyle({ height: 'auto' });
-      }, 200);
-    }
-  }, [judgeExpanded]);
-
   const collapseItemClassName = classNames(
     className,
     jssStyle?.collapseItem.wrapper,
@@ -102,15 +74,17 @@ const CollapseItem = (props: CollapseItemProps) => {
   );
 
   const renderContent = () => {
-    if (!keepAlive.current && !judgeExpanded && lazyload) return null;
-    if ((destroyOnHideProps || destroyOnHide) && !judgeExpanded) return null;
-    keepAlive.current = true;
     return (
-      <div ref={panelRef} style={panelStyle} className={collapseItemContentClassName}>
+      <AnimationList
+        show={judgeExpanded}
+        type={'collapse'}
+        duration='fast'
+        className={collapseItemContentClassName}
+      >
         <div className={jssStyle?.collapseItem.contentMain} style={contentStyle}>
           {children}
         </div>
-      </div>
+      </AnimationList>
     );
   };
 

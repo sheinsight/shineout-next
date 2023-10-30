@@ -49,5 +49,6 @@ export * from './components/use-slider';
 export * from './components/use-menu';
 export * from './components/use-descriptions';
 export * from './components/use-treeselect';
+export * from './components/use-collapse';
 
 export default {};

@@ -29,7 +29,6 @@ export interface CollapseItemProps
   jssStyle?: {
     collapseItem: CollapseItemClasses;
   };
-  destroyOnHide?: boolean;
   showExpandIcon?: boolean;
   expandContent?: ReactNode;
   extra?: ReactNode;

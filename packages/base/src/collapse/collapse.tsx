@@ -16,8 +16,6 @@ const Collapse = (props: CollapseProps) => {
     accordion = false,
     onChange: onChangeProps,
     triggerRegion,
-    lazyload = true,
-    destroyOnHide = false,
     expandContentPosition = 'left',
     expandContent,
     border = true,
@@ -39,8 +37,6 @@ const Collapse = (props: CollapseProps) => {
   const providerValue = {
     active,
     triggerRegion,
-    lazyload,
-    destroyOnHide,
     expandContentPosition,
     expandIcon:
       expandContent !== undefined

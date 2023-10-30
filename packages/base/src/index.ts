@@ -45,6 +45,7 @@ export * from './transfer';
 export * from './tree';
 export * from './tree-select';
 export * from './upload';
+export * from './collapse';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';

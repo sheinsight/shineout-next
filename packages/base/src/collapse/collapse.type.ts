@@ -13,7 +13,7 @@ export interface CollapseClasses {
 
 export interface CollapseProps
   extends Pick<CommonType, 'className' | 'style'>,
-    Pick<CollapseItemProps, 'destroyOnHide' | 'expandContent'>,
+    Pick<CollapseItemProps, 'expandContent'>,
     Pick<BaseCollapseItemContext, 'triggerRegion'>,
     BaseCollapseProps {
   jssStyle?: {
@@ -21,6 +21,5 @@ export interface CollapseProps
   };
   border?: boolean;
   expandContentPosition?: 'left' | 'right';
-  lazyload?: boolean;
   children?: ReactNode;
 }
