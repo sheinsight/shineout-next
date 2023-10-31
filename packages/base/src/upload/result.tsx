@@ -62,7 +62,7 @@ const Result = (props: ResultProps) => {
             {confirmProps && (
               <PopoverConfirm {...confirmProps} onOk={props.onRemove} jssStyle={props.jssStyle} />
             )}
-            {status === 'deleted' ? icons.Recover : icons.Delete}
+            {status === 'deleted' ? icons.Return : icons.Delete}
           </div>
         )}
       </>
@@ -78,7 +78,7 @@ const Result = (props: ResultProps) => {
         )}
         onClick={props.onRemove}
       >
-        {status === 'deleted' ? icons.RecoverCircle : icons.CloseCircle}
+        {status === 'deleted' ? icons.UndeleteOpaque : icons.CloseOpaqueMultic1}
       </div>
     );
 
@@ -137,7 +137,7 @@ const Result = (props: ResultProps) => {
                   }
                 }}
               >
-                {icons.ImagePreview}
+                {icons.Preview}
               </div>
             )}
             {status === 'success' && props.removeAble && (

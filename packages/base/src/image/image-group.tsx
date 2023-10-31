@@ -35,7 +35,7 @@ const ImageGroup = (props: ImageGroupProps) => {
   const renderGroupCount = () => {
     return (
       <div className={classNames(imageClasses?.groupCount)}>
-        {Icons.ImageCount}
+        {Icons.Pics2}
         <span>{Children.count(children)}</span>
       </div>
     );

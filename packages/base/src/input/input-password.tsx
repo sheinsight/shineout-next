@@ -36,7 +36,7 @@ export default (props: InputPasswordProps) => {
       {props.suffix}
       {visibilityToggle ? (
         <span {...toggleProps} className={inputStyle?.passwordToggle}>
-          {visibility ? icons.Hide : icons.Show}
+          {visibility ? icons.Hide : icons.Display}
         </span>
       ) : null}
     </>

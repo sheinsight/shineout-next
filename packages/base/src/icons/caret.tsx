@@ -3,12 +3,12 @@ import { CaretType } from './caret.type';
 import { useConfig } from '../config';
 
 const caretMap: Record<CaretType, JSX.Element> = {
-  line: icons.CaretLine,
-  fill: icons.CaretFill,
+  line: icons.ArrowDown,
+  fill: icons.PcArrowFillDown,
 };
 
 export default () => {
   const config = useConfig();
   if (config.caret) return caretMap[config.caret];
-  return icons.CaretFill;
+  return icons.PcArrowFillDown;
 };
