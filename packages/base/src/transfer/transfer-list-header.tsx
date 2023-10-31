@@ -1,27 +1,33 @@
 import classNames from 'classnames';
-import { util } from '@sheinx/hooks';
 import { TransferClasses } from './transfer.type';
 import { Checkbox } from '../checkbox';
 import { TransferListHeaderProps } from './transfer-list-header.type';
 import Icons from '../icons';
 
 const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>) => {
-  const { jssStyle, keygen, listType, simple, info, title, onSelectAll, onRemoveAll } = props;
-  const { data, selectedKeys, validKeys } = info;
+  const { jssStyle, value, data, listType, simple, listDatum, title } = props;
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.header);
 
   const getChecked = () => {
-    if (selectedKeys.size === 0) return false;
-    let some = false;
-    let every = true;
-    data.forEach((item) => {
-      const has = selectedKeys.get(util.getKey(keygen, item));
-      if (has) some = true;
-      if (!has) every = false;
-    });
+    if (value.length === 0) {
+      return false;
+    }
 
+    let every = true;
+    let some = false;
+    const vaildData = listDatum.getVaildData();
+
+    if (vaildData.length === 0) return false;
+
+    vaildData.forEach((item: DataItem) => {
+      if (!listDatum.check(item)) {
+        every = false;
+      } else {
+        some = true;
+      }
+    });
     if (every) return true;
     if (some) return 'indeterminate';
     return false;
@@ -30,37 +36,34 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
   const checked = getChecked();
 
   const handleChange = () => {
-    if (simple) {
-      onSelectAll(validKeys, listType);
-      return;
-    }
-
-    if (checked === 'indeterminate') {
-      const currentKeys = Array.from(selectedKeys.keys());
-      const newKeys = currentKeys.concat(validKeys);
-      onSelectAll(newKeys, listType);
-      return;
-    }
-
+    if (data.length === 0) return;
     if (checked === true) {
-      onSelectAll([], listType);
+      listDatum.remove(data);
       return;
     }
 
     if (checked === false) {
-      onSelectAll(validKeys, listType);
+      listDatum.add(data);
+      return;
+    }
+
+    if (checked === 'indeterminate') {
+      const unCheckedItems = data.filter((item: DataItem) => {
+        return listDatum.check(item) === false;
+      });
+      listDatum.add(unCheckedItems);
       return;
     }
   };
 
   const handleRemoveAll = () => {
-    onRemoveAll(listType);
+    listDatum.remove(data);
   };
 
   const renderCount = () => {
     return (
       <span>
-        {selectedKeys.size}/{data.length}
+        {value.length}/{data.length}
       </span>
     );
   };

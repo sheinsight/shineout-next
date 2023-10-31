@@ -25,5 +25,5 @@ export interface TransferListProps<DataItem> {
   title?: React.ReactNode;
   footer?: React.ReactNode;
   onSelect: (key: KeygenResult, checked: boolean) => void;
-  onFilter?: (text?: string, listType?: TransferListType) => boolean;
+  onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
 }

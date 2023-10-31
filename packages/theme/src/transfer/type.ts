@@ -62,4 +62,16 @@ export interface TransferTokens {
    * @description 穿梭框图标相邻外边距
    */
   transferIconNearlyMargin: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 穿梭框选项鼠标移入时的背景颜色
+   */
+  transferItemHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-3
+   * @description 穿梭框undefined鼠标移入时的背景颜色
+   */
+  transferCheckboxHoverBackgroundColor: string;
 }

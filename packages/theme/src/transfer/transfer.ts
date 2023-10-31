@@ -14,6 +14,8 @@ const transferTokens: TransferTokens = {
   transferHeaderBackgroundColor: 'Neutral-fill-2',
   transferIconBackgroundColor: 'Neutral-fill-3',
   transferIconNearlyMargin: 'Margin-8',
+  transferItemHoverBackgroundColor: 'Neutral-fill-2',
+  transferCheckboxHoverBackgroundColor: 'Neutral-fill-3',
 };
 
 export default transferTokens;

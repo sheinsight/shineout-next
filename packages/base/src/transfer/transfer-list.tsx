@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { util, KeygenResult } from '@sheinx/hooks';
+import { util } from '@sheinx/hooks';
 import { VirtualRefType } from '../virtual-scroll/virtual-scroll.type';
 import { TransferClasses } from './transfer.type';
 import { TransferListProps } from './transfer-list.type';
@@ -14,7 +14,10 @@ import Icons from '../icons';
 const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   const {
     jssStyle,
-    info,
+    datum,
+    listDatum,
+    data,
+    value,
     renderItem,
     keygen,
     listHeight = 180,
@@ -28,13 +31,10 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     filterText,
     simple,
     onFilter,
-    onSelect,
     onSelectAll,
     onRemoveAll,
-    // onChange,
   } = props;
 
-  const { data, selectedKeys, disabledKeys } = info;
   const [currentIndex, setCurrentIndex] = useState(0);
   const virtualRef = useRef<VirtualRefType>();
 
@@ -44,13 +44,18 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     [styles.target]: listType === 'target',
   });
 
+  // const getData = () => {
+  //   if (!onFilter || !filterText) {
+  //     return data;
+  //   }
+  //   const isSource = listType === 'source';
+  //   const filterData = data.filter((item: DataItem) => onFilter(filterText, item, isSource));
+  //   return filterData;
+  // };
+
   const getScrollHeight = () => {
     const rows = Math.ceil(data.length / colNum);
     return rows * lineHeight;
-  };
-
-  const handleChange = (key: KeygenResult, checked: boolean) => {
-    onSelect(key, checked);
   };
 
   const handleScroll = (x: number, y: number) => {
@@ -66,9 +71,12 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     return (
       <TransferListHeader
         jssStyle={jssStyle}
-        info={info}
         keygen={keygen}
         title={title}
+        datum={datum}
+        data={data}
+        value={value}
+        listDatum={listDatum}
         listType={listType}
         simple={simple}
         onSelectAll={onSelectAll}
@@ -129,14 +137,14 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
                   key={key}
                   jssStyle={jssStyle}
                   data={d}
+                  datum={datum}
+                  listDatum={listDatum}
                   simple={simple}
                   listType={listType}
                   keygen={keygen}
                   lineHeight={lineHeight}
-                  checked={selectedKeys.has(key)}
                   renderItem={renderItem}
-                  onChange={handleChange}
-                  disabled={disabledKeys.includes(d)}
+                  disabled={datum.disabledCheck(d)}
                 />
               );
             })}

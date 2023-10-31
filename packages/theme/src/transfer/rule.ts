@@ -4,6 +4,7 @@ const transferRules = {
   radius: [['border-radius']],
   extra: [['header', 'footer', 'icon'], ['background-color']],
   nearly: [['icon'], ['nearly-margin']],
+  item: [['item', 'checkbox'], ['hover'], ['background-color']],
 };
 
 module.exports = {

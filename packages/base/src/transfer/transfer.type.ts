@@ -22,6 +22,8 @@ export interface TransferClasses {
   list: string;
   footer: string;
   item: string;
+  itemWrapper: string;
+  checkbox: string;
   empty: string;
 }
 
@@ -33,7 +35,8 @@ export type JssStyleType = {
   input: () => InputClasses;
 };
 
-export interface TransferProps<DataItem, Value> extends BaseTransferProps<DataItem, Value> {
+export interface TransferProps<DataItem, Value>
+  extends Omit<BaseTransferProps<DataItem, Value>, 'valueControl' | 'selectControl'> {
   jssStyle: JssStyleType;
   selectedKeys?: KeygenResult[];
   listHeight?: number;

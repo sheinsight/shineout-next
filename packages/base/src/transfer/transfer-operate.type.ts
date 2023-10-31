@@ -1,11 +1,12 @@
 import { KeygenResult, TransferListType } from '@sheinx/hooks';
 import { JssStyleType } from './transfer.type';
 
-export interface TransferOperateProps {
+export interface TransferOperateProps<DataItem> {
   jssStyle: JssStyleType;
   listType: TransferListType;
-  selectedKeys: KeygenResult[];
+  datum?: any;
   children?: React.ReactNode;
   className?: string;
-  onChange: (listType: TransferListType, keys: KeygenResult[]) => void;
+  value: KeygenResult[];
+  onChange: (value: KeygenResult[], currentData: DataItem | DataItem[], isTarget: boolean) => void;
 }

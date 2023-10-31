@@ -14,6 +14,7 @@ export interface TransferListHeaderProps<DataItem> {
   };
   title?: React.ReactNode;
   info: ListInfo<DataItem>;
+  data: DataItem[];
   keygen?: KeygenType<DataItem>;
   simple?: boolean;
   listType: TransferListType;

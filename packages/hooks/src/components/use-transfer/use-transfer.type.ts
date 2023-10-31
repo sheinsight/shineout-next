@@ -21,13 +21,13 @@ export interface BaseTransferProps<DataItem, Value> {
   disabled?: boolean | ((data: DataItem) => boolean);
   valueControl: boolean;
   selectControl: boolean;
-  beforeChange: (value: KeygenResult[]) => any;
-  onChange?: (value: KeygenResult[], currentData: DataItem[], isTarget: boolean) => void;
+  prediction?: (value: KeygenResult, Data: DataItem) => boolean;
+  beforeChange?: (value: KeygenResult[]) => any;
+  onChange?: (value: KeygenResult[], currentData: DataItem[] | DataItem, isTarget: boolean) => void;
   onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
   onSearch?: (text: string, isSource: boolean) => void;
-  onSelectChange?: (
-    selectedKeys: KeygenResult[],
-    sourceKeys: KeygenResult[],
-    targetKeys: KeygenResult[],
-  ) => void;
+  // ((value: KeygenResult) => void) 这种为内部非受控情况下的类型，非受控内部直接整合 target source
+  onSelectChange?:
+    | ((sourceKeys: KeygenResult[], targetKeys: KeygenResult[]) => void)
+    | ((value: KeygenResult) => void);
 }

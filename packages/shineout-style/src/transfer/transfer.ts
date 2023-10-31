@@ -18,6 +18,8 @@ type TransferClass =
   | 'title'
   | 'list'
   | 'item'
+  | 'checkbox'
+  | 'itemWrapper'
   | 'footer'
   | 'empty';
 
@@ -124,9 +126,26 @@ const TransferStyle: JsStyles<TransferClass> = {
   },
   item: {
     // height: 32,
-    padding: '6px 12px',
-    borderRadius: Token.transferBorderRadius,
+    padding: '1px 4px',
   },
+  itemWrapper: {
+    padding: '5px 8px',
+    borderRadius: Token.transferBorderRadius,
+    cursor: 'pointer',
+    '&:hover': {
+      background: Token.transferItemHoverBackgroundColor,
+    },
+    '& $checkbox': {
+      width: '100%',
+      marginRight: 0,
+      '&:hover': {
+        '& :before': {
+          background: 'red',
+        },
+      },
+    },
+  },
+  checkbox: {},
   empty: {
     height: '100%',
     display: 'flex',

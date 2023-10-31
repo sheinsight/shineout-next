@@ -2,21 +2,20 @@ import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { TransferListItemProps } from './transfer-list-item.type';
 import { TransferClasses } from './transfer.type';
-import { util, KeygenResult } from '@sheinx/hooks';
+import { util } from '@sheinx/hooks';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
 
 const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => {
   const {
     jssStyle,
-    keygen,
     data,
+    datum,
+    listDatum,
     lineHeight,
     renderItem: renderItemProp,
-    checked,
     simple,
     listType,
-    onChange,
   } = props;
   const listItem = useRef<HTMLDivElement>(null);
   const listItemHeight = useRef(lineHeight);
@@ -32,14 +31,18 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     return renderItemProp(data);
   };
 
-  const handleChange = (value: any, checked: boolean) => {
-    const key = util.getKey(keygen, data) as KeygenResult;
-    onChange(key, checked);
+  const handleChange = (_: any, isChecked: boolean) => {
+    const add = simple ? datum.add : listDatum.add;
+    const remove = simple ? datum.remove : listDatum.remove;
+    if (isChecked) {
+      add(data);
+    } else {
+      remove(data);
+    }
   };
 
   const handleRemove = () => {
-    const key = util.getKey(keygen, data) as KeygenResult;
-    onChange(key, false);
+    datum.remove(data);
   };
 
   const renderRemove = () => {
@@ -50,7 +53,11 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     );
   };
 
+  const isChecked = listDatum.check(data);
+
   const renderCheckbox = () => {
+    const disabled = listDatum.disabledCheck(data);
+
     if (simple && listType === 'target')
       return (
         <span className={styles.simpleTarget}>
@@ -59,7 +66,13 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
         </span>
       );
     return (
-      <Checkbox jssStyle={jssStyle} checked={checked} onChange={handleChange}>
+      <Checkbox
+        jssStyle={jssStyle}
+        className={styles.checkbox}
+        checked={isChecked}
+        disabled={disabled}
+        onChange={handleChange}
+      >
         {renderItem()}
       </Checkbox>
     );
@@ -75,7 +88,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
 
   return (
     <div ref={listItem} className={rootClass}>
-      {renderCheckbox()}
+      <div className={styles.itemWrapper}>{renderCheckbox()}</div>
     </div>
   );
 };

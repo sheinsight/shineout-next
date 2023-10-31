@@ -19,7 +19,7 @@ let key = 0;
 
 const originData = [];
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 30; i++) {
   originData.push({
     id: `id-${i}`,
     name: `name-${i}`,
@@ -36,7 +36,7 @@ export default () => {
     virtualScroll: useVirtualScrollStyle,
   };
 
-  const [selectedKeys, setSelectedKeys] = useState<(string | number)[]>([]);
+  const [selectedKeys, setSelectedKeys] = useState<(string | number)[]>(['id-0', 'id-3', 'id-4']);
   const [value, setValue] = useState([]);
   const [data] = useState(originData);
 
@@ -48,9 +48,12 @@ export default () => {
   const handleChange = (v) => {
     setValue(v);
   };
-  const handleSelectChange = (source, target, select) => {
-    setSelectedKeys(select);
+
+  const handleSelectChange = (source, target) => {
+    const value = [...source, ...target];
+    setSelectedKeys(value);
   };
+
   const handleFilter = (t, d) => {
     return d.name.indexOf(t) > -1;
   };
@@ -71,15 +74,18 @@ export default () => {
       <Transfer
         // simple
         data={data}
-        value={value}
-        selectedKeys={selectedKeys}
+        disabled={(d) => d.id === 'id-0' || d.id === 'id-1'}
         keygen='id'
         jssStyle={jssStyle}
+        value={value}
+        selectedKeys={selectedKeys}
         onChange={handleChange}
         onSelectChange={handleSelectChange}
         renderItem={renderItem}
         titles={['Source', 'Target']}
         onFilter={handleFilter}
+        // prediction={(v, d) => v === d.id}
+        // format='name'
         footers={[renderFooter(), renderFooter()]}
       ></Transfer>
     </div>
