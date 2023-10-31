@@ -26,11 +26,11 @@ const Alert = (props: AlertProps) => {
   const [dismiss, setDismiss] = useState(SHOW);
 
   const icons = {
-    info: Icons.Info,
-    success: Icons.Success,
-    warning: Icons.Warning,
-    danger: Icons.Danger,
-    confirmwarning: Icons.Warning,
+    info: Icons.PcInfoCircleFill,
+    success: Icons.PcCheckCircleFill,
+    warning: Icons.PcWarningCircleFill,
+    danger: Icons.PcCloseCircleFill,
+    confirmwarning: Icons.PcWarningCircleFill,
   };
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
   const rootClass = classNames(className, alertStyle.alert, {
