@@ -1,19 +1,15 @@
 // import React from 'react';
-// import { CommonType } from '../common/type';
 // import { Base<%= Component %>Props } from '@sheinx/hooks';
+import { CommonType } from '../common/type';
+
 
 export interface <%= Component %>Classes {
-  /**
-   * 最外层class
-   */
   wrapper: string;
-
-  //...
 }
 
-export interface <%= Component %>Props {
+export interface <%= Component %>Props extends Pick<CommonType, 'className' | 'style'> {
     jssStyle?: {
-        <%= component %>: <%= Component %>Classes;
+        <%= component %>: () => <%= Component %>Classes;
     };
 
     //...

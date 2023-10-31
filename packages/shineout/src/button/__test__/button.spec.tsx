@@ -1,4 +1,4 @@
-import { render, screen, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import Button from '..';
 // import { Form } from 'shineout';
 import mountTest from '../../tests/mountTest';
@@ -11,6 +11,7 @@ import {
   textContentTest,
   attributesTest,
   displayTest,
+  createClassName,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 import ButtonBase from '../__example__/s-001-base';
@@ -24,14 +25,27 @@ import ButtonGroup from '../__example__/s-008-group';
 import { useState } from 'react';
 
 const SO_PREFIX = 'button';
-const buttonClassName = `${SO_PREFIX}-button-0-2-1`;
-const buttonSecondary = `${SO_PREFIX}-secondary-0-2-6`;
-const buttonOutline = `${SO_PREFIX}-outline-0-2-11`;
-const buttonDefault = `${SO_PREFIX}-default-0-2-4`;
-const buttonText = `${SO_PREFIX}-text-0-2-13`;
-const buttonDisabled = `${SO_PREFIX}-disabled-0-2-18`;
-const buttonLoading = `${SO_PREFIX}-loading-0-2-19`;
-const buttonHref = `${SO_PREFIX}-href-0-2-14`;
+const originClasses = [] as string[];
+const originItemClasses = [
+  'button',
+  'secondary',
+  'outline',
+  'default',
+  'text',
+  'disabled',
+  'loading',
+  'href',
+];
+const {
+  button: buttonClassName,
+  secondary: buttonSecondary,
+  outline: buttonOutline,
+  default: buttonDefault,
+  text: buttonText,
+  disabled: buttonDisabled,
+  loading: buttonLoading,
+  href: buttonHref,
+} = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 afterEach(cleanup);
 describe('Button[Base]', () => {
@@ -91,11 +105,11 @@ describe('Button[Base]', () => {
     classTest(button, buttonText, false);
   });
   test('should render when set shape', () => {
-    const shape = ['square', 'circle', 'round'];
+    const shape = ['round', 'square', 'circle'];
     const { container } = render(<ButtonShape />);
     container.querySelectorAll('button').forEach((button, index) => {
-      if (index === 3) return;
-      expect(button.classList[2].includes(shape[index])).toBeTruthy();
+      if (index === 0) return;
+      classContentTest(button, shape[index - 1]);
     });
   });
   test('should render when set size', () => {
@@ -117,9 +131,7 @@ describe('Button[Status]', () => {
   test('should render when set type', () => {
     const { container } = render(<ButtonStatus />);
     container.querySelectorAll('button').forEach((button) => {
-      expect(
-        button.classList[0].includes(button.textContent?.toLocaleLowerCase() as string),
-      ).toBeTruthy();
+      classContentTest(button, button.textContent?.toLocaleLowerCase() as string);
     });
   });
 });
@@ -127,9 +139,7 @@ describe('Button[Disabled]', () => {
   test('should render when set disabled', () => {
     const { container } = render(<ButtonDisbled />);
     container.querySelectorAll('button').forEach((button) => {
-      expect(
-        button.classList[0].includes(button.textContent?.toLocaleLowerCase() as string),
-      ).toBeTruthy();
+      classContentTest(button, button.textContent?.toLocaleLowerCase() as string);
       classTest(button, buttonDisabled);
     });
   });
@@ -163,14 +173,16 @@ describe('Button[Loading]', () => {
     });
   });
   // TODO: 未开发spin，当前onClick不受loading控制
-  // test('should can not click when set loading', () => {
-  //   const handleFn = jest.fn()
-  //   const { container } = render(<Button type='primary' loading onClick={handleFn}>button</Button>)
-  //   screen.debug()
-  //   fireEvent.click(container.querySelector('button') as HTMLButtonElement)
-  //   console.log('121', handleFn.mock.calls)
-  //   expect(handleFn.mock.calls.length).toBe(0)
-  // })
+  test('should can not click when set loading', () => {
+    const handleFn = jest.fn();
+    const { container } = render(
+      <Button type='primary' loading onClick={handleFn}>
+        button
+      </Button>,
+    );
+    fireEvent.click(container.querySelector('button') as HTMLButtonElement);
+    expect(handleFn.mock.calls.length).toBe(0);
+  });
   // TODO: 添加对onClick的测试
   test('should control by other status', () => {
     const ButtonLoadingStatus: React.FC<any> = () => {
@@ -222,7 +234,7 @@ describe('Button[Href]', () => {
     );
     const href = container.querySelector('a');
     expect(container.querySelectorAll('a').length).toBe(1);
-    expect(href?.classList.contains(`${SO_PREFIX}-href-0-2-14`)).toBeTruthy();
+    expect(href?.classList.contains(buttonHref)).toBeTruthy();
     expect(href?.getAttribute('href')).toBe('#home');
     expect(href?.getAttribute('target')).toBe('_blank');
   });
@@ -261,7 +273,6 @@ describe('Button[onClick]', () => {
       );
     };
     const { container } = render(<ButtonClick />);
-    screen.debug();
     const testData = container.querySelector('.testData')!;
     const button = container.querySelector('button') as HTMLButtonElement;
     textContentTest(testData, '0');

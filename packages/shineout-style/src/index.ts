@@ -14,6 +14,7 @@ export * from './inner-title';
 export * from './input';
 export * from './message';
 export * from './popover';
+export * from './progress';
 export * from './radio';
 export * from './spin';
 export * from './switch';
@@ -21,6 +22,7 @@ export * from './tabs';
 export * from './tag';
 export * from './textarea';
 export * from './tooltip';
+export * from './upload';
 export * from './transfer';
 export * from './virtual-scroll';
 

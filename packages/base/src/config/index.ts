@@ -2,7 +2,7 @@ import { util } from '@sheinx/hooks';
 import { proxy, subscribe, useSnapshot } from 'valtio';
 import { CaretType } from '../icons/caret.type';
 import { INTERNAL_Snapshot as Snapshot } from 'valtio/vanilla';
-import { LanType } from './locale/Props';
+import { LanType, Direction } from './locale/Props';
 
 export interface ConfigOption {
   // cssModule: boolean;
@@ -14,7 +14,7 @@ export interface ConfigOption {
   // trim?: boolean;
   // spin?: string;
   caret?: CaretType;
-  // direction: Direction;
+  direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
 
@@ -28,6 +28,7 @@ export let config: ConfigOption = {
   popupContainer: undefined,
   caret: 'line',
   locale: (processEnv.LOCALE as LanType) || 'zh-CN',
+  direction: 'ltr',
   // prefix: 'so',
 };
 
@@ -54,10 +55,11 @@ export const useConfig = (): Snapshot<ConfigOption> => {
   return useSnapshot(state) as Snapshot<ConfigOption>;
 };
 
-export const setConfig = (option: ConfigOption) => {
+export const setConfig = (option: Partial<ConfigOption>) => {
   for (const [key, value] of Object.entries(option)) {
-    if (key in state) {
+    if (value && key in state) {
       const k = key as keyof ConfigOption;
+      // @ts-ignore
       state[k] = value;
     }
   }

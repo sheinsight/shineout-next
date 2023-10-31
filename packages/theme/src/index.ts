@@ -46,6 +46,9 @@ import { MessageTokens } from './message/type';
 import Popover from './popover';
 import { PopoverTokens } from './popover/type';
 
+import Progress from './progress';
+import { ProgressTokens } from './progress/type';
+
 import Radio from './radio';
 import { RadioTokens } from './radio/type';
 
@@ -67,6 +70,9 @@ import { TextareaTokens } from './textarea/type';
 import Tooltip from './tooltip';
 import { TooltipTokens } from './tooltip/type';
 
+import Upload from './upload';
+import { UploadTokens } from './upload/type';
+
 import Transfer from './transfer';
 import { TransferTokens } from './transfer/type';
 
@@ -85,6 +91,7 @@ export type ThemeTokens = AlertTokens &
   InputTokens &
   MessageTokens &
   PopoverTokens &
+  ProgressTokens &
   RadioTokens &
   SpinTokens &
   SwitchTokens &
@@ -92,6 +99,7 @@ export type ThemeTokens = AlertTokens &
   TagTokens &
   TextareaTokens &
   TooltipTokens &
+  UploadTokens &
   TransferTokens;
 
 const Tokens: ThemeTokens = {
@@ -110,6 +118,7 @@ const Tokens: ThemeTokens = {
   ...Input,
   ...Message,
   ...Popover,
+  ...Progress,
   ...Radio,
   ...Spin,
   ...Switch,
@@ -117,6 +126,7 @@ const Tokens: ThemeTokens = {
   ...Tag,
   ...Textarea,
   ...Tooltip,
+  ...Upload,
   ...Transfer,
 };
 

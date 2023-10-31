@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import Tag from '..';
 import {
   snapshotTest,
@@ -10,6 +10,7 @@ import {
   childrenTest,
   inputValueTest,
   displayTest,
+  createClassName,
 } from '../../tests/utils';
 import mountTest from '../../tests/mountTest';
 import structureTest, {
@@ -26,19 +27,23 @@ import TagShape from '../__example__/s-007-shape';
 import { useState } from 'react';
 
 const SO_PREFIX = 'tag';
-const tagClassName = `.${SO_PREFIX}-tag-0-2-1`;
-const tagSmallClassName = `${SO_PREFIX}-small-0-2-5`;
-const tagBrightClassName = `${SO_PREFIX}-bright-0-2-23`;
-const tagDefaultClassName = `${SO_PREFIX}-default-0-2-10`;
-const tagInlineClassName = `.${SO_PREFIX}-inline-0-2-3`;
-const tagCloseClassName = `.${SO_PREFIX}-closeIcon-0-2-7`;
-const tagDisabledClassName = `${SO_PREFIX}-disabled-0-2-6`;
-const tagRoundedClassName = `${SO_PREFIX}-rounded-0-2-26`;
-const tagInputClassName = `.${SO_PREFIX}-input-0-2-2`;
+const originClasses = ['tag', 'inline', 'closeIcon', 'input'];
+const originItemClasses = ['small', 'bright', 'default', 'disabled', 'rounded'];
+const {
+  tag: tagClassName,
+  inline: tagInlineClassName,
+  small: tagSmallClassName,
+  bright: tagBrightClassName,
+  default: tagDefaultClassName,
+  closeIcon: tagCloseClassName,
+  disabled: tagDisabledClassName,
+  rounded: tagRoundedClassName,
+  input: tagInputClassName,
+} = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const TagColorArray = ['default', 'info', 'danger', 'warning', 'success'];
 const TagSizeArray = ['Small', 'Default', 'Large'];
-const TageModeArray = ['bright', 'fill', 'outline', 'brightOutline'];
+const TageModeArray = ['bright', 'fill', 'outline', 'bright-outline'];
 const TagColorMoreArray = [
   'tangerine',
   'magenta',
@@ -100,6 +105,7 @@ describe('Tag[Base]', () => {
     const { container } = render(<TagMode />);
     const tags = container.querySelectorAll(tagClassName)!;
     classLengthTest(container, tagClassName, TagColorArray.length * TageModeArray.length);
+    screen.debug();
     tags.forEach((tag, index) => {
       classContentTest(tag, TageModeArray[Math.floor(index / TagColorArray.length)]);
       classContentTest(tag, TagColorArray[index % TagColorArray.length]);

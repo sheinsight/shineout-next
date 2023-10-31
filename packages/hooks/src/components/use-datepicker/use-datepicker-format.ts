@@ -73,7 +73,7 @@ const getDefaultMode = (type: string) => {
 const useDatePickerFormat = <Value extends DatePickerValueType>(
   props: UseDatePickerFormatProps<Value>,
 ) => {
-  const { value, onChange, type, options = {}, range, disabled } = props;
+  const { value, onChange, type, options = {}, range, disabled, clearable } = props;
   const format = getFormat(props.format, type);
   const [control, setControl] = useState(false);
 
@@ -206,6 +206,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
   };
 
   const handleClear = usePersistFn((e: React.MouseEvent) => {
+    if (!clearable) return;
     e.stopPropagation();
     if (disabledStatus === 'all') return;
     if (edit) {

@@ -1,20 +1,17 @@
-import { useMemo } from 'react';
+import React from 'react';
 import { <%= Component %> } from '@sheinx/base';
 import { use<%= Component %>Style } from '@sheinx/shineout-style';
 import { <%= Component %>Props } from './<%= file %>.type';
 
-export default (props: <%= Component %>Props) => {
-    const {} = props;
-    const <%= component %>Style = use<%= Component %>Style();
-    const jssStyle = useMemo(
-        () => ({ <%= component %>: <%= component %>Style }),
-        [<%= component %>Style],
-    );
 
+const jssStyle = {
+    <%= component %>: use<%= Component %>Style
+}
+export default (props: <%= Component %>Props) => {
     return (
         <<%= Component %>
             jssStyle={jssStyle}
-            // ...
+            ...props
         />
   );
 }

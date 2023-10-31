@@ -5,3 +5,4 @@ dist
 docs/chunk
 .DS_Store
 coverage
+./uploads
