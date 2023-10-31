@@ -29,7 +29,19 @@ import DatePickerTimeOther from '../__example__/07-time-1';
 import DatePickerRange from '../__example__/08-range';
 import DatePickerQuick from '../__example__/09-quick';
 import DatePickerDisable from '../__example__/10-disable';
+import DatePickerDisbaleDateOne from '../__example__/11-disable-date-1';
+import DatePickerDisbaleDateTwo from '../__example__/11-disable-date-2';
+import DatePickerDisbaleDateThree from '../__example__/11-disable-date-3';
+import DatePickerInputable from '../__example__/12-inputable';
+import DatePickerAbsolute from '../__example__/13-absolute';
+import DatePickerInnerTitle from '../__example__/14-innerTitle';
+import DatePickerPosition from '../__example__/14-position';
+import DatePickerTimezone from '../__example__/15-timezone';
 import DatePickerClearableWithUndefine from '../__example__/16-clearable';
+import DatePickerDefaultPicker from '../__example__/17-default-picker';
+import DatePickerAllowSingle from '../__example__/18-allow-single';
+import DatePickerFormat from '../__example__/19-format';
+import DatePickerMinmax from '../__example__/20-minmax';
 import DatePickerControlled from '../__example__/test-001-control';
 import DatePickerOpen from '../__example__/test-003-open';
 
@@ -75,6 +87,9 @@ const originItemClasses = [
   'wrapperDisabled',
   'pickerCellDisabled',
   'timeItemDisabled',
+  'resultAlignRight',
+  'resultAlignLeft',
+  'resultAlignCenter',
 ];
 const {
   wrapper,
@@ -113,6 +128,9 @@ const {
   wrapperDisabled,
   pickerCellDisabled,
   timeItemDisabled,
+  resultAlignRight,
+  resultAlignLeft,
+  resultAlignCenter,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const innerTitleWrapper = '.so-inner-title-wrapper';
@@ -161,6 +179,18 @@ describe('Alert[Base]', () => {
   snapshotTest(<DatePickerRange />, 'about range');
   snapshotTest(<DatePickerQuick />, 'about quick');
   snapshotTest(<DatePickerDisable />, 'about disable');
+  snapshotTest(<DatePickerDisbaleDateOne />, 'about disable one');
+  snapshotTest(<DatePickerDisbaleDateTwo />, 'about disable two');
+  snapshotTest(<DatePickerDisbaleDateThree />, 'about disable three');
+  snapshotTest(<DatePickerInputable />, 'about inputable');
+  snapshotTest(<DatePickerAbsolute />, 'about absolute');
+  snapshotTest(<DatePickerInnerTitle />, 'about innerTitle');
+  snapshotTest(<DatePickerPosition />, 'about position');
+  snapshotTest(<DatePickerTimezone />, 'about timezone');
+  snapshotTest(<DatePickerDefaultPicker />, 'about defaultPicker');
+  snapshotTest(<DatePickerAllowSingle />, 'about allowSingle');
+  snapshotTest(<DatePickerFormat />, 'about format');
+  snapshotTest(<DatePickerMinmax />, 'about minmax');
   test('should render default', async () => {
     const { container } = render(<DatePicker />);
     const datePickerWrapper = container.querySelector(wrapper)!;
@@ -1335,5 +1365,17 @@ describe('DatePicker[Open]', () => {
       await delay(300);
     });
     styleTest(container.querySelector(pickerWrapper)!, styleWithShowOther);
+  });
+});
+describe('DatePicker[Align]', () => {
+  type alignType = 'center' | 'right' | 'left' | undefined;
+  const alignClassNamesMap: { [key: string]: string } = {
+    left: resultAlignLeft,
+    right: resultAlignRight,
+    center: resultAlignCenter,
+  };
+  test.each(['left', 'center', 'right'])('should render when set align is %s', async (type) => {
+    const { container } = render(<DatePicker align={type as alignType} />);
+    classTest(container.querySelector(result)!, alignClassNamesMap[type]);
   });
 });
