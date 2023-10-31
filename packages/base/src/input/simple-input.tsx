@@ -86,7 +86,7 @@ const Input = (props: SimpleInputProps) => {
         {inputEl}
         {(showClear || props.showClear) && (
           <div className={inputStyle?.clearWrapper} {...getClearProps()}>
-            <span className={inputStyle?.clear}>{clearIcon || Icons.CloseCircle}</span>
+            <span className={inputStyle?.clear}>{clearIcon || Icons.CloseOpaqueMultic1}</span>
           </div>
         )}
         {suffix}

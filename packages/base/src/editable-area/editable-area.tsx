@@ -166,7 +166,7 @@ const EditableArea = (props: EditableAreaProps) => {
         }}
         className={editableAreaStyle?.clear}
       >
-        {Icons.CloseCircle}
+        {Icons.CloseOpaqueMultic1}
       </span>
     );
   };

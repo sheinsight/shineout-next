@@ -171,10 +171,10 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
         {renderInnerTitle(result)}
         {disabledStatus !== 'all' && !isEmpty && clearable && (
           <div className={classNames(styles?.clear, styles?.icon)} onClick={func.handleClear}>
-            {Icons.CloseCircle}
+            {Icons.CloseOpaqueMultic1}
           </div>
         )}
-        <div className={styles?.icon}>{props.type === 'time' ? Icons.Clock : Icons.Calendar}</div>
+        <div className={styles?.icon}>{props.type === 'time' ? Icons.Time : Icons.Calendar1}</div>
       </div>
     );
   };

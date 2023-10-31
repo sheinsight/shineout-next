@@ -32,7 +32,7 @@ const radioTokenValue = {
       color: 'Brand-6',
       disabled: { background: { color: 'Neutral-fill-1' }, color: 'Brand-3' },
     },
-    wrapper: { fill: 'Neutral-fill-2', padding: 'Size-3' },
+    wrapper: { fill: 'Neutral-fill-2' },
   },
   small: {
     icon: { width: 'Size-6', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },

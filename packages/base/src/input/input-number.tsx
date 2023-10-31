@@ -45,7 +45,7 @@ export default (props: InputNumberProps) => {
             onPlus();
           }}
         >
-          {Icons.AngleRight}
+          {Icons.ArrowRight}
         </span>
         <span
           onMouseDown={(e) => {
@@ -54,7 +54,7 @@ export default (props: InputNumberProps) => {
             onMinus();
           }}
         >
-          {Icons.AngleLeft}
+          {Icons.ArrowLeft}
         </span>
       </div>
     </React.Fragment>
