@@ -14,6 +14,7 @@ export { default as Image } from './image';
 export { default as Input } from './input';
 export { default as Message } from './message';
 export { default as Popover } from './popover';
+export { default as Progress } from './progress';
 export { default as Radio } from './radio';
 export { default as Rule } from './rule';
 export { default as Spin } from './spin';

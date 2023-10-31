@@ -15,6 +15,7 @@ export * from './image';
 export * from './input';
 export * from './message';
 export * from './popover';
+export * from './progress';
 export * from './radio';
 export * from './rule';
 export * from './spin';

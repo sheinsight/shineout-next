@@ -42,8 +42,8 @@ const Result = (props: ResultProps) => {
           <div className={uploadClasses?.resultTextFooter}>
             <div className={classNames(uploadClasses?.icon, uploadClasses?.resultStatusIcon)}>
               {status === 'uploading' && <Spin jssStyle={props.jssStyle} size={10} name={'ring'} />}
-              {status === 'success' && icons.Success}
-              {status === 'error' && icons.Warning}
+              {status === 'success' && icons.PcCheckCircleFill}
+              {status === 'error' && icons.PcWarningCircleFill}
             </div>
             {status === 'uploading' && props.process !== -1 && (
               <div>{Math.min(99, Math.floor(props.process || 0))}%</div>

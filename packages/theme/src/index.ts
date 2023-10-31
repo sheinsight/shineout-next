@@ -46,6 +46,9 @@ import { MessageTokens } from './message/type';
 import Popover from './popover';
 import { PopoverTokens } from './popover/type';
 
+import Progress from './progress';
+import { ProgressTokens } from './progress/type';
+
 import Radio from './radio';
 import { RadioTokens } from './radio/type';
 
@@ -85,6 +88,7 @@ export type ThemeTokens = AlertTokens &
   InputTokens &
   MessageTokens &
   PopoverTokens &
+  ProgressTokens &
   RadioTokens &
   SpinTokens &
   SwitchTokens &
@@ -110,6 +114,7 @@ const Tokens: ThemeTokens = {
   ...Input,
   ...Message,
   ...Popover,
+  ...Progress,
   ...Radio,
   ...Spin,
   ...Switch,

@@ -178,6 +178,24 @@ const add = [
   'M12.0317 4C12.5445 4.00067 12.9667 4.38727 13.0238 4.88468L13.0303 5.00131L13.022 11H19C19.5523 11 20 11.4477 20 12C20 12.5128 19.614 12.9355 19.1166 12.9933L19 13H13.02L13.012 19.0013C13.0113 19.5536 12.563 20.0007 12.0107 20C11.4979 19.9993 11.0757 19.6127 11.0186 19.1153L11.012 18.9987L11.02 13H5C4.44772 13 4 12.5523 4 12C4 11.4872 4.38604 11.0645 4.88338 11.0067L5 11H11.022L11.0304 4.99869C11.0311 4.44641 11.4794 3.99928 12.0317 4Z',
 ];
 
+const warningSimple = [
+  <path
+    key='warning'
+    fillRule='evenodd'
+    clipRule='evenodd'
+    d='M12 3C11.4477 3 11 3.44772 11 4V16C11 16.5523 11.4477 17 12 17C12.5523 17 13 16.5523 13 16V4C13 3.44772 12.5523 3 12 3ZM12 19C11.4477 19 11 19.4477 11 20C11 20.5523 11.4477 21 12 21C12.5523 21 13 20.5523 13 20C13 19.4477 12.5523 19 12 19Z'
+  />,
+];
+
+const check = [
+  <path
+    key='check'
+    fillRule='evenodd'
+    clipRule='evenodd'
+    d='M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z'
+  />,
+];
+
 const Icons = {
   AngleLeft: icon(angleLeft),
   AngleRight: icon(angleRight),
@@ -198,23 +216,15 @@ const Icons = {
   CaretFill: icon(caretFill),
 
   AlertClose: icon(alertClose),
-  Info: icon(info),
-  Danger: icon(danger),
-  // warning 同 info
-  Warning: icon(info),
-  Success: icon(success),
-  // Delete: icon(del),
-  // Check: icon(check),
-  // Clock: icon(clock),
-  // Close: icon(close),
-  // Error: icon(danger),
-  // SEARCH: icon(search),
-  // Preview: icon(preview),
-  // Confirm: icon(confirm),
-  // Recovery: icon(recovery),
-  // Calendar: icon(calendar),
-  // Confirmwarning: icon(warning),
+  PcInfoCircleFill: icon(info),
+  PcCloseCircleFill: icon(danger),
+  PcWarningCircleFill: icon(info),
+  PcCheckCircleFill: icon(success),
+
+  Warning: icon(warningSimple),
+  Check: icon(check),
   Close: icon(close),
+
   CloseCircle: icon(closeCircle),
   ImageCount: icon(imageCount),
   ImageClose: icon(imageClose),
