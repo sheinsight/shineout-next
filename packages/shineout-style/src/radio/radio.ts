@@ -61,7 +61,7 @@ const radioStyle: JsStyles<RadioClass> = {
       display: 'block',
       width: '100%',
       height: '100%',
-      padding: token.radioIconWrapperPadding,
+      padding: '5px',
       position: 'absolute',
       top: '50%',
       left: '50%',
@@ -89,16 +89,25 @@ const radioStyle: JsStyles<RadioClass> = {
     borderRadius: '50%',
     display: 'inline-flex',
     alignItems: 'center',
+    justifyContent: 'center',
     '& > svg': {
       width: '100%',
       height: '100%',
     },
     color: token.radioIconColor,
     backgroundColor: token.radioIconBackgroundColor,
-
+    border: '1px solid currentColor',
     '$wrapperChecked &': {
       backgroundColor: token.radioIconCheckedBackgroundColor,
       color: token.radioIconCheckedColor,
+      '&::after': {
+        content: '" "',
+        display: 'block',
+        width: '50%',
+        height: '50%',
+        borderRadius: '50%',
+        backgroundColor: 'currentcolor',
+      },
     },
     '$wrapperDisabled &': {
       backgroundColor: token.radioIconDisabledBackgroundColor,
