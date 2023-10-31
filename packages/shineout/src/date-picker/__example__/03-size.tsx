@@ -28,7 +28,7 @@ const App: React.FC = () => {
       <DatePicker size={size} type='date' style={{ marginBottom: 16 }} /> <br />
       <DatePicker size={size} type='datetime' style={{ marginBottom: 16 }} /> <br />
       <DatePicker size={size} type='date' range style={{ marginBottom: 16 }} /> <br />
-      <DatePicker size={size} type='month' range={86400 * 100} style={{ marginBottom: 16 }} />
+      <DatePicker size={size} type='datetime' range style={{ marginBottom: 16 }} />
     </div>
   );
 };
