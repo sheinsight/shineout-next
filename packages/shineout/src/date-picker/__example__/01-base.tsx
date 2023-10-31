@@ -7,6 +7,6 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const App: React.FC = () => <DatePicker showSelNow align='left' />;
+const App: React.FC = () => <DatePicker type='datetime' showSelNow />;
 
 export default App;

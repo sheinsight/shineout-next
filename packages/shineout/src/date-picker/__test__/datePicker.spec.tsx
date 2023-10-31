@@ -141,12 +141,14 @@ const innerTitleWrapperOpen = 'so-inner-title-wrapper-open';
 const Now = Date.now();
 const nowDate = new Date(Now);
 
+const getFormatTime = (time: number) => ('0' + time).slice(-2);
+
 const year = nowDate.getFullYear();
-const month = ('0' + (nowDate.getMonth() + 1)).slice(-2);
-const day = ('0' + nowDate.getDate()).slice(-2);
-const hours = ('0' + nowDate.getHours()).slice(-2);
-const minutes = ('0' + nowDate.getMinutes()).slice(-2);
-const seconds = ('0' + nowDate.getSeconds()).slice(-2);
+const month = getFormatTime(nowDate.getMonth() + 1);
+const day = getFormatTime(nowDate.getDate());
+const hours = getFormatTime(nowDate.getHours());
+const minutes = getFormatTime(nowDate.getMinutes());
+const seconds = getFormatTime(nowDate.getSeconds());
 
 const styleWithoutShow =
   'pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;';
@@ -289,6 +291,14 @@ describe('Alert[Base]', () => {
     const datePickerResult = container.querySelector(result)!;
     textContentTest(datePickerResult, 'hello');
   });
+  test('should render when set placeholder is array', () => {
+    const start = 'start';
+    const end = 'end';
+    const { container } = render(<DatePicker range placeholder={[start, end]} />);
+    const resultTexts = container.querySelectorAll(resultText);
+    textContentTest(resultTexts[0], start);
+    textContentTest(resultTexts[1], end);
+  });
   const sizeClassNamesMap: { [key: string]: string } = {
     small: wrapperSmall,
     large: wrapperLarge,
@@ -298,7 +308,7 @@ describe('Alert[Base]', () => {
     classTest(container.querySelector(wrapper)!, sizeClassNamesMap[type]);
   });
   test('should render when set showSelNow', async () => {
-    const { container } = render(<DatePicker showSelNow />);
+    const { container, rerender } = render(<DatePicker showSelNow />);
     const datePickerPickerWrapper = container.querySelector(pickerWrapper)!;
     const datePickerResultWrapper = container.querySelector(resultWrapper)!;
     const datePickerPickerFooter = datePickerPickerWrapper.querySelector(pickerFooter)!;
@@ -315,6 +325,11 @@ describe('Alert[Base]', () => {
       await delay(300);
       expect(datePickerResultWrapper.querySelector(result)?.textContent).not.toBe('请选择日期');
     });
+    rerender(<DatePicker type='datetime' showSelNow />);
+    textContentTest(
+      container.querySelector(pickerFooter)?.querySelector('button') as Element,
+      '此刻',
+    );
   });
   test('should render when set border is false', () => {
     const { container } = render(<DatePicker border={false} />);
@@ -512,6 +527,48 @@ describe('DatePicker[Event]', () => {
     });
     expect(pickerChangeFn.mock.calls.length).toBe(1);
   });
+  test('should render when doubleClick', async () => {
+    const { container } = render(<DatePicker range type='datetime' />);
+    const datePickerPickerWrapper = container.querySelector(pickerWrapper)!;
+    const datePickerResultWrapper = container.querySelector(resultWrapper)!;
+    const pickers = datePickerPickerWrapper.querySelectorAll(picker)!;
+    fireEvent.focus(datePickerResultWrapper);
+    fireEvent.click(datePickerResultWrapper);
+    fireEvent.blur(datePickerResultWrapper);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    const cell = pickers[0]
+      .querySelector(pickerBody)
+      ?.querySelector('table')
+      ?.querySelector('tbody')
+      ?.querySelectorAll('tr')[3]
+      .querySelectorAll('td')[0] as Element;
+    fireEvent.click(cell);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    const results = datePickerResultWrapper.querySelectorAll(resultText);
+    textContentTest(results[0], `${year}-${month}-${cell.textContent} 00:00:00`);
+    fireEvent.doubleClick(cell);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    textContentTest(results[0], `${year}-${month}-${cell.textContent} 00:00:00`);
+    textContentTest(results[1], `${year}-${month}-${cell.textContent} 00:00:00`);
+    const endCell = pickers[1]
+      .querySelector(pickerBody)
+      ?.querySelector('table')
+      ?.querySelector('tbody')
+      ?.querySelectorAll('tr')[4]
+      .querySelectorAll('td')[0] as Element;
+    fireEvent.doubleClick(endCell);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    textContentTest(results[0], `${year}-${month}-${endCell.textContent} 00:00:00`);
+    textContentTest(results[1], `${year}-${month}-${endCell.textContent} 00:00:00`);
+  });
 });
 describe('DatePicker[Type]', () => {
   test('should render when set type is datetime', async () => {
@@ -589,6 +646,18 @@ describe('DatePicker[Type]', () => {
     expect(headerInfos.length).toBe(2);
     textContentTest(headerInfos[0], `${year}`);
     textContentTest(headerInfos[1], `${month}`);
+    fireEvent.click(headerInfos[1]);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    classLengthTest(
+      container
+        .querySelector(pickerBody)
+        ?.querySelector('table')
+        ?.querySelector('tbody') as Element,
+      'tr',
+      4,
+    );
   });
   test('should render when set type is month', async () => {
     const { container } = render(<DatePicker type='month' />);
@@ -865,7 +934,7 @@ describe('DatePicker[Step]', () => {
   });
 });
 describe('DatePicker[Range]', () => {
-  test('should render when set range', async () => {
+  test('should render when set range is boolean', async () => {
     const { container } = render(<DatePicker type='quarter' range />);
     const datePickerResultWrapper = container.querySelector(resultWrapper)!;
     const datePickerWrapper = container.querySelector(pickerWrapper)!;
@@ -889,6 +958,89 @@ describe('DatePicker[Range]', () => {
     });
     textContentTest(DatePickTexts[0], '2023-Q3');
     textContentTest(DatePickTexts[1], '2023-Q4');
+  });
+  test('should render when set range is number', async () => {
+    const { container } = render(<DatePicker range={86400 * 100} type='month' />);
+    const datePickerResultWrapper = container.querySelector(resultWrapper)!;
+    const datePickerWrapper = container.querySelector(pickerWrapper)!;
+    fireEvent.focus(datePickerResultWrapper);
+    fireEvent.click(datePickerResultWrapper);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    const pickers = datePickerWrapper.querySelectorAll(picker);
+    const cell = pickers[0]
+      .querySelector(pickerBody)
+      ?.querySelectorAll('tr')[0]
+      .querySelectorAll('td')[2] as Element;
+    fireEvent.click(cell);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    const resultTexts = container
+      .querySelector(resultWrapper)
+      ?.querySelectorAll(resultText) as NodeListOf<Element>;
+    textContentTest(resultTexts[0], `${year}-${getFormatTime(Number(cell.textContent))}`);
+    fireEvent.click(
+      pickers[1]
+        .querySelector(pickerBody)
+        ?.querySelectorAll('tr')[2]
+        .querySelectorAll('td')[2] as Element,
+    );
+    await waitFor(async () => {
+      await delay(300);
+    });
+    textContentTest(resultTexts[1], '结束月份');
+    const cellOther = pickers[1]
+      .querySelector(pickerBody)
+      ?.querySelectorAll('tr')[1]
+      .querySelectorAll('td')[2] as Element;
+    fireEvent.click(cellOther);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    textContentTest(resultTexts[1], `${year}-${getFormatTime(Number(cellOther.textContent))}`);
+  });
+  test('should render when set range is number and click order to change', async () => {
+    const { container } = render(<DatePicker range={86400 * 100} type='month' />);
+    const datePickerResultWrapper = container.querySelector(resultWrapper)!;
+    const datePickerWrapper = container.querySelector(pickerWrapper)!;
+    fireEvent.focus(datePickerResultWrapper);
+    fireEvent.click(datePickerResultWrapper);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    const pickers = datePickerWrapper.querySelectorAll(picker);
+    const cell = pickers[1]
+      .querySelector(pickerBody)
+      ?.querySelectorAll('tr')[1]
+      .querySelectorAll('td')[2] as Element;
+    fireEvent.click(cell);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    const resultTexts = container
+      .querySelector(resultWrapper)
+      ?.querySelectorAll(resultText) as NodeListOf<Element>;
+    textContentTest(resultTexts[1], `${year}-${getFormatTime(Number(cell.textContent))}`);
+    fireEvent.click(
+      pickers[0]
+        .querySelector(pickerBody)
+        ?.querySelectorAll('tr')[0]
+        .querySelectorAll('td')[0] as Element,
+    );
+    await waitFor(async () => {
+      await delay(300);
+    });
+    textContentTest(
+      resultTexts[1],
+      `${year}-${getFormatTime(
+        Number(
+          pickers[1].querySelector(pickerBody)?.querySelectorAll('tr')[1].querySelectorAll('td')[0]
+            .textContent,
+        ),
+      )}`,
+    );
   });
 });
 describe('DatePicker[QuickSelect]', () => {
@@ -1217,6 +1369,7 @@ describe('DatePicker[Position]', () => {
     'bottom-right':
       'z-index: 1051; display: block; opacity: 1; transition: opacity 240ms ease-in-out; right: 0px;',
   };
+  const revertPosition = (listPosition: string) => listPosition.split('-').reverse().join('-');
   test.each(['top-left', 'top-right', 'bottom-left', 'bottom-right'])(
     'should render when set position is %s',
     async (type) => {
@@ -1232,6 +1385,35 @@ describe('DatePicker[Position]', () => {
       styleTest(datePickerPickerWrapper, positionStyleMap[type]);
     },
   );
+  test.each(['left-top', 'left-bottom', 'right-top', 'right-bottom'])(
+    'should render when set horizontalPosition',
+    async (type) => {
+      // @ts-ignore
+      const { container } = render(<DatePicker type='date' position={type} />);
+      const datePickerWrapper = container.querySelector(wrapper)!;
+      const datePickerResultWrapper = datePickerWrapper.querySelector(resultWrapper)!;
+      const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
+      fireEvent.focus(datePickerResultWrapper);
+      fireEvent.click(datePickerResultWrapper);
+      await waitFor(async () => {
+        await delay(300);
+      });
+      styleTest(datePickerPickerWrapper, positionStyleMap[revertPosition(type)]);
+    },
+  );
+  test('should render when set position is other', async () => {
+    // @ts-ignore
+    const { container } = render(<DatePicker type='date' position={'top'} />);
+    const datePickerWrapper = container.querySelector(wrapper)!;
+    const datePickerResultWrapper = datePickerWrapper.querySelector(resultWrapper)!;
+    const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
+    fireEvent.focus(datePickerResultWrapper);
+    fireEvent.click(datePickerResultWrapper);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    styleTest(datePickerPickerWrapper, positionStyleMap['bottom-left']);
+  });
 });
 describe('DatePicker[DefaultPickerValue]', () => {
   test('should render when set defaultPickerValue', async () => {
@@ -1366,6 +1548,18 @@ describe('DatePicker[Open]', () => {
     });
     styleTest(container.querySelector(pickerWrapper)!, styleWithShowOther);
   });
+  test('should render when use key down event', async () => {
+    const { container } = render(<DatePicker />);
+    const datePickerWrapper = container.querySelector(wrapper)!;
+    const datePickerResultWrapper = datePickerWrapper.querySelector(resultWrapper)!;
+    const datePickerPickerWrapper = datePickerWrapper.querySelector(pickerWrapper)!;
+    fireEvent.focus(datePickerResultWrapper);
+    fireEvent.keyDown(datePickerResultWrapper, { key: 'Enter', keyCode: 13 });
+    await waitFor(async () => {
+      await delay(300);
+    });
+    styleTest(datePickerPickerWrapper, styleWithShow);
+  });
 });
 describe('DatePicker[Align]', () => {
   type alignType = 'center' | 'right' | 'left' | undefined;
@@ -1377,5 +1571,14 @@ describe('DatePicker[Align]', () => {
   test.each(['left', 'center', 'right'])('should render when set align is %s', async (type) => {
     const { container } = render(<DatePicker align={type as alignType} />);
     classTest(container.querySelector(result)!, alignClassNamesMap[type]);
+  });
+});
+describe('DatePicker[Error/Warn]', () => {
+  test('should render error when set formatResult and inputable', () => {
+    const errorSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    render(<DatePicker formatResult={'YYYY-MM-DD HH:mm:ss'} inputable />);
+    expect(errorSpy).toHaveBeenCalledWith(
+      'formatResult and inputable cannot be used at the same time',
+    );
   });
 });
