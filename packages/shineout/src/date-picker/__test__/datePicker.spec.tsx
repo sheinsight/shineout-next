@@ -416,9 +416,10 @@ describe('DatePicker[Clearable]', () => {
   });
 });
 describe('DatePicker[Event]', () => {
-  test('should render when set onChange', async () => {
+  test('should render when set onChange and beforeChange', async () => {
     const changeFn = jest.fn();
-    const { container } = render(<DatePicker onChange={changeFn} />);
+    const beforeChangeFn = jest.fn();
+    const { container } = render(<DatePicker onChange={changeFn} beforeChange={beforeChangeFn} />);
     const datePickerWrapper = container.querySelector(wrapper)!;
     const datePickerResultWrapper = datePickerWrapper.querySelector(resultWrapper)!;
     const datePickerResult = datePickerResultWrapper.querySelector(result)!;
@@ -441,6 +442,7 @@ describe('DatePicker[Event]', () => {
       await delay(300);
       textContentTest(datePickerResult, `${year}-${month}-${cell.textContent}`);
       expect(changeFn.mock.calls.length).toBe(2);
+      expect(beforeChangeFn.mock.calls.length).toBe(2);
     });
   });
   test('should render when is controlled', async () => {
@@ -1660,3 +1662,4 @@ describe('DatePicker[Error/Warn]', () => {
     );
   });
 });
+// defaultRangeMonth/timeZone/placeTitle

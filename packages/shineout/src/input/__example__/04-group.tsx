@@ -6,16 +6,15 @@
  */
 
 import React from 'react';
-import { Input, Rule } from 'shineout';
+import { Input } from 'shineout';
 
 const style: React.CSSProperties = { width: 300, marginBottom: 12 };
-const rules = Rule();
 
 const App: React.FC = () => (
   <div>
     <Input.Group style={style}>
       <b>http://</b>
-      <Input placeholder='email' rules={[rules.required]} />
+      <Input placeholder='email' />
     </Input.Group>
     <Input.Group style={style}>
       <Input placeholder='email' />
