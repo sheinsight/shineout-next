@@ -3,6 +3,8 @@ import Token from '@sheinx/theme';
 
 type TransferClass =
   | 'transfer'
+  | 'small'
+  | 'large'
   | 'simple'
   | 'view'
   | 'source'
@@ -11,6 +13,7 @@ type TransferClass =
   | 'removeAll'
   | 'simpleTarget'
   | 'operations'
+  | 'operationIcon'
   | 'input'
   | 'left'
   | 'right'
@@ -30,6 +33,8 @@ const TransferStyle: JsStyles<TransferClass> = {
     color: Token.transferFontColor,
     fontSize: Token.transferFontSize,
   },
+  small: {},
+  large: {},
   simple: {
     '& $source': {
       borderRadius: `${Token.transferBorderRadius} 0 0 ${Token.transferBorderRadius}`,
@@ -55,6 +60,8 @@ const TransferStyle: JsStyles<TransferClass> = {
   target: {},
   simpleTarget: {
     display: 'flex',
+    padding: '4px 3px',
+    paddingLeft: 8,
     justifyContent: 'space-between',
     lineHeight: Token.lineHeightDynamic,
   },
@@ -79,19 +86,36 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
   },
   close: {
-    width: 12,
+    width: 24,
+    height: 24,
+    borderRadius: '50%',
     minWidth: 12,
     fontSize: 12,
     cursor: 'pointer',
     color: Token.transferIconColor,
     lineHeight: `calc(${Token.lineHeightDynamic} + 2px)`,
     marginLeft: Token.transferIconNearlyMargin,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    '& svg': {
+      width: 12,
+    },
+    '&:hover': {
+      background: Token.transferIconBackgroundColor,
+    },
   },
   operations: {
     padding: '0 24px',
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
+    '& svg': {
+      width: 14,
+    },
+  },
+  operationIcon: {
+    width: 14,
   },
   input: {
     padding: '6px 12px',
@@ -129,20 +153,15 @@ const TransferStyle: JsStyles<TransferClass> = {
     padding: '1px 4px',
   },
   itemWrapper: {
-    padding: '5px 8px',
     borderRadius: Token.transferBorderRadius,
     cursor: 'pointer',
-    '&:hover': {
-      background: Token.transferItemHoverBackgroundColor,
-    },
     '& $checkbox': {
       width: '100%',
+      padding: '5px 8px',
       marginRight: 0,
-      '&:hover': {
-        '& :before': {
-          background: 'red',
-        },
-      },
+    },
+    '&:hover': {
+      background: Token.transferItemHoverBackgroundColor,
     },
   },
   checkbox: {},

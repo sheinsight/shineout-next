@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import classNames from 'classnames';
 import { TransferProps, TransferClasses } from './transfer.type';
-import { useTransfer, TransferListType, KeygenResult } from '@sheinx/hooks';
+import { useTransfer, TransferListType, KeygenResult, util } from '@sheinx/hooks';
 import TransferList from './transfer-list';
 import TransferOperate from './transfer-operate';
 import Icon from '../icons';
@@ -17,6 +17,8 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
     titles,
     footers,
     disabled,
+    operations,
+    loading,
     format = (item: DataItem) => item,
     prediction,
     selectedKeys,
@@ -75,6 +77,9 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
   // };
 
   const renderOperations = () => {
+    const sourceOperation = operations?.[0];
+    const targetOperation = operations?.[1];
+
     return (
       <div className={styles.operations}>
         <TransferOperate
@@ -82,6 +87,7 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
           jssStyle={jssStyle}
           className={styles.right}
           datum={datum}
+          operation={sourceOperation}
           listDatum={sourceDatum}
           value={sourceSelectedKeys}
           onChange={onChange}
@@ -93,6 +99,7 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
           jssStyle={jssStyle}
           className={styles.left}
           datum={datum}
+          operation={targetOperation}
           listDatum={targetDatum}
           value={targetSelectedKeys}
           onChange={onChange}
@@ -111,6 +118,8 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
     const title = isSource ? titles?.[0] : titles?.[1];
     const footer = isSource ? footers?.[0] : footers?.[1];
     const filterText = isSource ? filterSourceText : filterTargetText;
+    const loadingValue = !!(util.isArray(loading) ? (isSource ? loading[0] : loading[1]) : loading);
+
     if (filterText && onFilterProp) {
       listData = listData.filter((item) => onFilterProp(filterText, item, isSource));
     }
@@ -126,6 +135,7 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
         footer={footer}
         filterText={filterText}
         listType={listType}
+        loading={loadingValue}
         renderItem={renderItem}
         listHeight={listHeight}
         simple={simple}

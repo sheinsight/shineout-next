@@ -13,6 +13,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     children,
     virtualRef,
     // width,
+    style,
     height,
     scrollHeight: scrollHeightProp,
     // scrollWidth: scrollWidthProp,
@@ -45,6 +46,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   });
 
   const styles = {
+    ...style,
     paddingRight: scrollBarWidth && shouldScroll ? scrollBarWidth : 0,
   };
 
@@ -148,6 +150,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
         ref={barRef}
         onScroll={handleBarScroll}
         onMouseEnter={handleBarEnter}
+        onWheel={handleWheel}
         style={{
           height: '100%',
           overflowY: 'auto',

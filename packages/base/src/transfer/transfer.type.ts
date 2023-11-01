@@ -2,6 +2,7 @@ import { BaseTransferProps, ObjectKey, KeygenResult } from '@sheinx/hooks';
 import { ButtonClasses } from '../button/button.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { InputClasses } from '../input/input.type';
+import { SpinClasses } from '../spin/spin.type';
 import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
 
 export interface TransferClasses {
@@ -14,6 +15,7 @@ export interface TransferClasses {
   removeAll: string;
   simpleTarget: string;
   operations: string;
+  operationIcon: string;
   input: string;
   left: string;
   right: string;
@@ -33,6 +35,7 @@ export type JssStyleType = {
   checkbox: () => CheckboxClasses;
   virtualScroll: () => VirtualScrollClasses;
   input: () => InputClasses;
+  spin: () => SpinClasses;
 };
 
 export interface TransferProps<DataItem, Value>
@@ -45,5 +48,7 @@ export interface TransferProps<DataItem, Value>
   empty?: React.ReactNode;
   titles?: [React.ReactNode, React.ReactNode];
   footers?: [React.ReactNode, React.ReactNode];
+  operations?: [React.ReactNode, React.ReactNode];
+  loading?: boolean | [boolean, boolean];
   onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
 }

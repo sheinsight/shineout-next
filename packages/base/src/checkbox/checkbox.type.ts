@@ -21,6 +21,7 @@ export interface CheckboxClasses {
   wrapperIndeterminate: string;
   indicator: string;
   indicatorWrapper: string;
+  darkIndicatorWrapper: string;
   desc: string;
   input: string;
   group: string;
@@ -41,6 +42,7 @@ export interface SimpleCheckboxProps
   defaultChecked?: boolean | 'indeterminate';
   renderFooter?: (checked?: boolean) => React.ReactNode;
   size?: 'small' | 'large';
+  theme?: 'dark';
 }
 
 export interface CheckboxProps<T>

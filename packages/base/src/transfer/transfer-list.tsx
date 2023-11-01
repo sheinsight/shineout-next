@@ -8,6 +8,7 @@ import TransferListItem from './transfer-list-item';
 import TransferListHeader from './transfer-list-header';
 import Empty from '../empty';
 import Input from '../input';
+import Spin from '../spin';
 import VirtualScroll from '../virtual-scroll';
 import Icons from '../icons';
 
@@ -20,6 +21,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     value,
     renderItem,
     keygen,
+    loading,
     listHeight = 180,
     lineHeight = 34,
     listType,
@@ -130,7 +132,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
             onScroll={handleScroll}
           >
             <div style={{ height: currentIndex * lineHeight, gridColumnEnd: '-1' }} />
-            {items.map((d, i) => {
+            {items.map((d: DataItem, i: number) => {
               const key = util.getKey(keygen, d, i);
               return (
                 <TransferListItem
@@ -169,9 +171,11 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   return (
     <div className={rootClass}>
       {renderHeader()}
-      {onFilter && renderFilterInput()}
-      {renderList()}
-      {renderFooter()}
+      <Spin jssStyle={jssStyle} name='ring' loading={loading} size={24}>
+        {onFilter && renderFilterInput()}
+        {renderList()}
+        {renderFooter()}
+      </Spin>
     </div>
   );
 };

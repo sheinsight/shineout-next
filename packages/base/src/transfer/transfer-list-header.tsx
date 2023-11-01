@@ -5,7 +5,7 @@ import { TransferListHeaderProps } from './transfer-list-header.type';
 import Icons from '../icons';
 
 const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>) => {
-  const { jssStyle, value, data, listType, simple, listDatum, title } = props;
+  const { jssStyle, value, data, listType, simple, datum, listDatum, title } = props;
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.header);
@@ -36,6 +36,10 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
   const checked = getChecked();
 
   const handleChange = () => {
+    if (simple) {
+      datum.add(listDatum.getVaildData());
+      return;
+    }
     if (data.length === 0) return;
     if (checked === true) {
       listDatum.remove(data);
@@ -57,7 +61,7 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
   };
 
   const handleRemoveAll = () => {
-    listDatum.remove(data);
+    datum.remove(datum.getVaildData());
   };
 
   const renderCount = () => {
@@ -87,7 +91,7 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
     if (simple && listType === 'target') return renderCount();
 
     return (
-      <Checkbox jssStyle={jssStyle} checked={checked} onChange={handleChange}>
+      <Checkbox jssStyle={jssStyle} theme='dark' checked={checked} onChange={handleChange}>
         {renderCount()}
       </Checkbox>
     );

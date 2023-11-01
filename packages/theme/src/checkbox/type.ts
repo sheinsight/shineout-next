@@ -118,6 +118,12 @@ export interface CheckboxTokens {
   checkboxIconCircleFill: string;
   /**
    * @type {string}
+   * @token Neutral-fill-3
+   * @description 单选框图标圆形深色背景
+   */
+  checkboxIconCircleDark: string;
+  /**
+   * @type {string}
    * @token Neutral-text-5
    * @description 单选框undefined字体颜色
    */

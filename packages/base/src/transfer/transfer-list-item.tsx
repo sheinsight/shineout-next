@@ -67,6 +67,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
       );
     return (
       <Checkbox
+        theme='dark'
         jssStyle={jssStyle}
         className={styles.checkbox}
         checked={isChecked}

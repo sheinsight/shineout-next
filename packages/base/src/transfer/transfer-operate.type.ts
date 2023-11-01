@@ -8,5 +8,6 @@ export interface TransferOperateProps<DataItem> {
   children?: React.ReactNode;
   className?: string;
   value: KeygenResult[];
+  operation?: React.ReactNode;
   onChange: (value: KeygenResult[], currentData: DataItem | DataItem[], isTarget: boolean) => void;
 }

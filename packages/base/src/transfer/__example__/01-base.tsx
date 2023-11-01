@@ -13,6 +13,7 @@ import {
   useEmptyStyle,
   useInputStyle,
   useVirtualScrollStyle,
+  useSpinStyle,
 } from '@sheinx/shineout-style';
 
 let key = 0;
@@ -34,6 +35,7 @@ export default () => {
     empty: useEmptyStyle,
     input: useInputStyle,
     virtualScroll: useVirtualScrollStyle,
+    spin: useSpinStyle,
   };
 
   const [selectedKeys, setSelectedKeys] = useState<(string | number)[]>(['id-0', 'id-3', 'id-4']);
@@ -54,17 +56,17 @@ export default () => {
     setSelectedKeys(value);
   };
 
-  const handleFilter = (t, d) => {
-    return d.name.indexOf(t) > -1;
-  };
+  // const handleFilter = (t, d) => {
+  //   return d.name.indexOf(t) > -1;
+  // };
 
   const renderItem = (item) => {
     return <div>{item.name}</div>;
   };
 
-  const renderFooter = () => {
-    return <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>123</div>;
-  };
+  // const renderFooter = () => {
+  //   return <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>123</div>;
+  // };
 
   return (
     <div>
@@ -73,6 +75,7 @@ export default () => {
       </button>
       <Transfer
         // simple
+        loading={[false, true]}
         data={data}
         disabled={(d) => d.id === 'id-0' || d.id === 'id-1'}
         keygen='id'
@@ -83,10 +86,11 @@ export default () => {
         onSelectChange={handleSelectChange}
         renderItem={renderItem}
         titles={['Source', 'Target']}
-        onFilter={handleFilter}
+        operations={['to right', 'to left']}
+        // onFilter={handleFilter}
         // prediction={(v, d) => v === d.id}
         // format='name'
-        footers={[renderFooter(), renderFooter()]}
+        // footers={[renderFooter(), renderFooter()]}
       ></Transfer>
     </div>
   );

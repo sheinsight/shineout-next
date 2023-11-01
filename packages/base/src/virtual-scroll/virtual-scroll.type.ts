@@ -1,3 +1,4 @@
+import { CommonType } from '../common/type';
 export interface VirtualScrollClasses {
   scroll: string;
   scrolled: string;
@@ -12,7 +13,7 @@ export type VirtualRefType = {
   reset: () => void;
 };
 
-export interface VirtualScrollProps {
+export interface VirtualScrollProps extends Pick<CommonType, 'style'> {
   jssStyle: {
     virtualScroll: () => VirtualScrollClasses;
   };
