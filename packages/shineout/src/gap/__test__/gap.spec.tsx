@@ -35,6 +35,7 @@ describe('Gap[Base]', () => {
   snapshotTest(<GapVertical />, 'about vertical');
   snapshotTest(<GapAlign />, 'about align');
   snapshotTest(<GapSplit />, 'about split');
+  // TODO: should test flex
   test('should render when set className and style', () => {
     const { container } = render(<Gap className='demo' style={{ width: 400 }} />);
     styleTest(container.querySelector('.demo')!, `${baseStyle} width: 400px;`);
@@ -71,5 +72,4 @@ describe('Gap[Base]', () => {
     );
     styleTest(container.querySelector('.demo')!, `${getStyle(-10)} flex-direction: column;`);
   });
-  // TODO: should test flex
 });
