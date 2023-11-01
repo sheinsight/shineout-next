@@ -689,7 +689,12 @@ describe('DatePicker[Type]', () => {
       await delay(300);
       classLengthTest(tbody, 'tr', 4);
       classLengthTest(tbody.querySelector('tr')!, 'td', 3);
-      classTest(tbody.querySelectorAll('tr')[3].querySelectorAll('td')[0], pickerCellToday);
+    });
+    tbody.querySelectorAll('tr').forEach((trs) => {
+      trs.querySelectorAll('td').forEach((td) => {
+        if (td.textContent !== month) return;
+        classTest(td, pickerCellToday);
+      });
     });
     fireEvent.click(tbody.querySelectorAll('tr')[0].querySelectorAll('td')[0]);
     await waitFor(async () => {
@@ -826,7 +831,10 @@ describe('DatePicker[Value/DefaultValue/DefaultTime]', () => {
     const { container } = render(
       <DatePicker defaultValue={Now} value={nowDate.getTime() + 24 * 60 * 60 * 1000} />,
     );
-    textContentTest(container.querySelector(resultText)!, `${year}-${month}-${Number(day) + 1}`);
+    textContentTest(
+      container.querySelector(resultText)!,
+      `${year}-${month}-${getFormatTime(Number(day) + 1)}`,
+    );
   });
   test('should render when set defaultTime', async () => {
     const defaultTime = '10:01:02';
@@ -852,6 +860,7 @@ describe('DatePicker[Value/DefaultValue/DefaultTime]', () => {
 });
 describe('DatePicker[Format]', () => {
   test('should render when set different format', async () => {
+    const errorSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
     const { container, rerender } = render(<DatePicker type='time' format='HH:mm' />);
     const datePickerResultWrapper = container.querySelector(resultWrapper)!;
     const datePickerResult = container.querySelector(result)!;
@@ -878,6 +887,7 @@ describe('DatePicker[Format]', () => {
       await delay(300);
       textContentTest(datePickerResult, '03:00 AM');
     });
+    expect(errorSpy).toHaveBeenCalledWith('invalid datepicker format: hh:mm a please use hh:mm A');
   });
   test('should render when set format and formatResult', async () => {
     const { container, rerender } = render(
@@ -958,6 +968,74 @@ describe('DatePicker[Range]', () => {
     });
     textContentTest(DatePickTexts[0], '2023-Q3');
     textContentTest(DatePickTexts[1], '2023-Q4');
+  });
+  test('should render when set range and type is year', async () => {
+    const { container } = render(<DatePicker type='year' range />);
+    const datePickerResultWrapper = container.querySelector(resultWrapper)!;
+    const results = datePickerResultWrapper.querySelectorAll(resultText);
+    const pickers = container
+      .querySelector(pickerWrapper)
+      ?.querySelectorAll(picker) as NodeListOf<Element>;
+    fireEvent.focus(datePickerResultWrapper);
+    fireEvent.click(datePickerResultWrapper);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    fireEvent.click(
+      pickers[0]
+        .querySelector('tbody')
+        ?.querySelectorAll('tr')[1]
+        .querySelectorAll('td')[2] as Element,
+    );
+    fireEvent.click(
+      pickers[1]
+        .querySelector('tbody')
+        ?.querySelectorAll('tr')[1]
+        .querySelectorAll('td')[2] as Element,
+    );
+    await waitFor(async () => {
+      await delay(300);
+    });
+    textContentTest(
+      results[0],
+      pickers[0].querySelector('tbody')?.querySelectorAll('tr')[1].querySelectorAll('td')[2]
+        .textContent,
+    );
+    textContentTest(
+      results[1],
+      pickers[1].querySelector('tbody')?.querySelectorAll('tr')[1].querySelectorAll('td')[2]
+        .textContent,
+    );
+    fireEvent.focus(datePickerResultWrapper);
+    fireEvent.click(datePickerResultWrapper);
+    await waitFor(async () => {
+      await delay(300);
+    });
+    fireEvent.click(
+      pickers[1]
+        .querySelector('tbody')
+        ?.querySelectorAll('tr')[2]
+        .querySelectorAll('td')[2] as Element,
+    );
+    fireEvent.click(
+      pickers[0]
+        .querySelector('tbody')
+        ?.querySelectorAll('tr')[0]
+        .querySelectorAll('td')[2] as Element,
+    );
+    await waitFor(async () => {
+      await delay(300);
+    });
+    textContentTest(
+      results[0],
+      pickers[0].querySelector('tbody')?.querySelectorAll('tr')[0].querySelectorAll('td')[2]
+        .textContent,
+    );
+    textContentTest(
+      results[1],
+      pickers[1].querySelector('tbody')?.querySelectorAll('tr')[2].querySelectorAll('td')[2]
+        .textContent,
+    );
   });
   test('should render when set range is number', async () => {
     const { container } = render(<DatePicker range={86400 * 100} type='month' />);
