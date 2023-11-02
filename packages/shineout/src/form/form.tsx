@@ -14,7 +14,7 @@ export default <T extends ObjectType>(props: FormProps<T>) => {
     defaultValue: props.defaultValue,
     control: 'value' in props,
     beforeChange: undefined,
-    reservable: false,
+    reserveAble: false,
   };
   const inputAbleProps = useInputAble(inputAbleParams);
   const forwardProps = util.removeProps(props, {

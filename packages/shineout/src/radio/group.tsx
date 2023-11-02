@@ -12,10 +12,7 @@ const BaseRadioGroup = <DataItem, Value>(props: BaseRadioGroupProps<DataItem, Va
 };
 
 const RadioGroupWithField = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
-  return useFieldCommon<
-    BaseRadioGroupProps<DataItem, Value>,
-    BaseRadioGroupProps<DataItem, Value>['value']
-  >(props, BaseRadioGroup);
+  return useFieldCommon(props, BaseRadioGroup<DataItem, Value>);
 };
 
 export default RadioGroupWithField;

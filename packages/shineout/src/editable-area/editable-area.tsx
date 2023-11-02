@@ -13,5 +13,5 @@ const EditableArea = (props: BaseEditableAreaProps) => {
 };
 
 export default (props: EditableAreaProps) => {
-  return useFieldCommon<BaseEditableAreaProps, BaseEditableAreaProps['value']>(props, EditableArea);
+  return useFieldCommon(props, EditableArea);
 };

@@ -26,8 +26,5 @@ const BaseUploadButton = <T,>(props: BaseUploadButtonProps<T>) => {
 export default <T,>(props: UploadButtonProps<T>) => {
   const customProps = useUploadCommon({ rules: props.rules });
 
-  return useFieldCommon<BaseUploadButtonProps<T>, BaseUploadButtonProps<T>['value']>(
-    { ...props, ...customProps },
-    BaseUploadButton,
-  );
+  return useFieldCommon({ ...props, ...customProps }, BaseUploadButton<T>);
 };
