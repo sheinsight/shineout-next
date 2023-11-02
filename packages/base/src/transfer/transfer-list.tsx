@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util, KeygenResult } from '@sheinx/hooks';
+import { getLocale, useConfig } from '../config';
 import { VirtualRefType } from '../virtual-scroll/virtual-scroll.type';
 import { TransferClasses } from './transfer.type';
 import { TransferListProps } from './transfer-list.type';
@@ -37,8 +38,12 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     itemClass,
     filterText,
     simple,
+    disabled,
+    renderFilter: renderFilterProp,
+    searchPlaceholder,
     onFilter,
   } = props;
+  const { locale } = useConfig();
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const virtualRef = useRef<VirtualRefType>();
@@ -88,6 +93,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         datum={datum}
         size={size}
         data={data}
+        loading={loading}
         value={value}
         listDatum={listDatum}
         listType={listType}
@@ -97,7 +103,20 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
-  const renderFilterInput = () => {
+  const renderFilter = () => {
+    if (renderFilterProp) {
+      return (
+        <div className={styles.input}>
+          {renderFilterProp({
+            text: filterText,
+            disabled: disabled === true,
+            onFilter: handleFilter,
+            placeholder: getLocale(locale, 'search'),
+            isSrouce: listType === 'source',
+          })}
+        </div>
+      );
+    }
     return (
       <div className={styles.input}>
         <Input
@@ -106,6 +125,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
           delay={400}
           value={filterText}
           onChange={handleFilter}
+          placeholder={searchPlaceholder || getLocale(locale, 'search')}
           // suffix={Icons.Search}
         ></Input>
       </div>
@@ -184,7 +204,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     <div className={rootClass}>
       {renderHeader()}
       <Spin jssStyle={jssStyle} name='ring' loading={loading} size={24}>
-        {onFilter && renderFilterInput()}
+        {onFilter && renderFilter()}
         {renderList()}
         {renderFooter()}
       </Spin>

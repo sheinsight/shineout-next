@@ -11,8 +11,11 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
 ) => {
   const {
     jssStyle,
+    style,
     data,
     value,
+    defaultValue,
+    defaultSelectedKeys,
     keygen,
     empty,
     size,
@@ -32,11 +35,14 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     selectedKeys,
     listHeight = 186,
     operationIcon = true,
+    searchPlaceholder,
     beforeChange,
+    renderFilter,
+    onSearch,
+    renderItem = (item: DataItem) => item as React.ReactNode,
     onFilter: onFilterProp,
     onChange: onChangeProp,
     onSelectChange,
-    renderItem = (item: DataItem) => item as React.ReactNode,
   } = props;
 
   const {
@@ -54,6 +60,8 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     data,
     keygen,
     value,
+    defaultValue,
+    defaultSelectedKeys,
     simple,
     disabled,
     format,
@@ -64,6 +72,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     beforeChange,
     onChange: onChangeProp,
     onFilter: onFilterProp,
+    onSearch,
     onSelectChange,
   });
 
@@ -117,7 +126,11 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     const footer = isSource ? footers?.[0] : footers?.[1];
     const filterText = isSource ? filterSourceText : filterTargetText;
     const loadingValue = !!(util.isArray(loading) ? (isSource ? loading[0] : loading[1]) : loading);
-
+    const placeholder = util.isArray(searchPlaceholder)
+      ? isSource
+        ? searchPlaceholder[0]
+        : searchPlaceholder[1]
+      : searchPlaceholder;
     if (filterText && onFilterProp) {
       listData = listData.filter((item) => onFilterProp(filterText, item, isSource));
     }
@@ -142,8 +155,11 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
         listHeight={listHeight}
         lineHeight={lineHeight}
         simple={simple}
+        disabled={disabled}
         value={listValue}
         itemClass={itemClass}
+        searchPlaceholder={placeholder}
+        renderFilter={renderFilter}
         onFilter={onFilterProp ? onFilter : undefined}
       />
     );
@@ -151,14 +167,14 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
 
   const renderSourceList = useMemo(() => {
     return renderList('source');
-  }, [source, filterSourceText, sourceSelectedKeys]);
+  }, [source, size, filterSourceText, sourceSelectedKeys]);
 
   const renderTargetList = useMemo(() => {
     return renderList('target');
-  }, [target, filterTargetText, targetSelectedKeys]);
+  }, [target, size, filterTargetText, targetSelectedKeys]);
 
   return (
-    <div className={rootClass}>
+    <div className={rootClass} style={style}>
       {renderSourceList}
       {!simple && renderOperations()}
       {renderTargetList}

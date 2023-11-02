@@ -89,7 +89,7 @@ const useTransfer = <DataItem, Value extends KeygenResult[]>(
       // 受控情况下整合工作交给用户处理
       onSelectChange?.(value, targetSelectedKeys);
     } else {
-      // 非受控内部直接整合 target source
+      // 非受控内部直接整合 source target
       const next = [...value, ...targetSelectedKeys];
       onSelectChange?.(next);
     }
@@ -100,7 +100,7 @@ const useTransfer = <DataItem, Value extends KeygenResult[]>(
       // 受控情况下整合工作交给用户处理
       onSelectChange?.(sourceSelectedKeys, value);
     } else {
-      // 非受控内部直接整合 target source
+      // 非受控内部直接整合 source target
       const next = [...sourceSelectedKeys, ...value];
       onSelectChange?.(next);
     }

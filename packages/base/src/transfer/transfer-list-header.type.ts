@@ -21,5 +21,6 @@ export interface TransferListHeaderProps<DataItem, Value extends KeygenResult[]>
   listDatum: ListDatum<DataItem, Value>;
   keygen?: KeygenType<DataItem>;
   simple?: boolean;
+  loading?: boolean;
   listType: TransferListType;
 }

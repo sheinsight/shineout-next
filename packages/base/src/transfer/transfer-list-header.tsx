@@ -8,7 +8,8 @@ import Icons from '../icons';
 const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
   props: TransferListHeaderProps<DataItem, Value>,
 ) => {
-  const { jssStyle, size, value, data, listType, simple, reset, datum, listDatum, title } = props;
+  const { jssStyle, size, value, data, listType, simple, loading, reset, datum, listDatum, title } =
+    props;
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.header);
@@ -100,6 +101,7 @@ const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
         jssStyle={jssStyle}
         size={size}
         theme='dark'
+        disabled={loading}
         checked={checked}
         onChange={handleChange}
       >

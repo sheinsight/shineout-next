@@ -6,6 +6,7 @@ import { InputClasses } from '../input/input.type';
 import { SpinClasses } from '../spin/spin.type';
 import { EmptyClasses } from '../empty/empty.type';
 import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
+import React from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type ListDatum<DataItem, Value extends KeygenResult[]> = ReturnType<
@@ -49,9 +50,17 @@ export type JssStyleType = {
   empty: () => EmptyClasses;
 };
 
+export interface FilterProps {
+  text?: string;
+  disabled: boolean;
+  onFilter?: (text: string) => void;
+  placeholder?: string;
+  isSrouce?: boolean;
+}
+
 export interface TransferProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTransferProps<DataItem, Value>, 'valueControl' | 'selectControl'>,
-    Pick<CommonType, 'size'> {
+    Pick<CommonType, 'size' | 'style'> {
   jssStyle: JssStyleType;
   selectedKeys?: KeygenResult[];
   listHeight?: number;
@@ -68,5 +77,7 @@ export interface TransferProps<DataItem, Value extends KeygenResult[]>
   operations?: [React.ReactNode, React.ReactNode];
   operationIcon?: boolean;
   loading?: boolean | [boolean, boolean];
+  searchPlaceholder?: string | [string, string];
+  renderFilter?: (filterProps: FilterProps) => React.ReactNode;
   onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
 }
