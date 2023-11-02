@@ -16,8 +16,5 @@ const BaseDatePicker = <Value extends DatePickerValueType>(props: BaseDatePicker
 export default <Value extends DatePickerValueType = DatePickerValueType>(
   props: DatePickerProps<Value>,
 ) => {
-  return useFieldCommon<BaseDatePickerProps<Value>, BaseDatePickerProps<Value>['value']>(
-    props,
-    BaseDatePicker,
-  );
+  return useFieldCommon(props, BaseDatePicker<Value>);
 };

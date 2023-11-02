@@ -13,5 +13,5 @@ const InputPassword = (props: BasePasswordProps) => {
   return <UnStyleInputPassword {...props} jssStyle={jssStyle} />;
 };
 export default (props: InputPasswordProps) => {
-  return useFieldCommon<BasePasswordProps, BasePasswordProps['value']>(props, InputPassword);
+  return useFieldCommon(props, InputPassword);
 };

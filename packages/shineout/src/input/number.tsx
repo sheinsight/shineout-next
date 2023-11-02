@@ -13,5 +13,5 @@ const InputNumber = (props: BaseNumberProps) => {
   return <UnStyledInputNumber {...props} jssStyle={jssStyle} />;
 };
 export default (props: InputNumberProps) => {
-  return useFieldCommon<BaseNumberProps, BaseNumberProps['value']>(props, InputNumber);
+  return useFieldCommon(props, InputNumber);
 };

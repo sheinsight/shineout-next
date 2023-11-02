@@ -1,4 +1,5 @@
 import { RateProps as UnStyledRateProps } from '@sheinx/base';
+import { GetWithFieldProps } from '../hooks/use-field-common';
 
 /**
  * @title RateFunction
@@ -16,10 +17,12 @@ export interface ArgProps {
    * @cn 选中元素背景
    * @override ReactElement | string | Array<string | ReactElement>
    */
-  front: Exclude<RateProps['background'], undefined>;
+  front: Exclude<RateProps['front'], undefined>;
 }
+
+export type BaseRateProps = Omit<UnStyledRateProps, 'jssStyle'>;
 
 /**
  * @title Rate
  */
-export type RateProps = Omit<UnStyledRateProps, 'jssStyle'>;
+export type RateProps = GetWithFieldProps<BaseRateProps, BaseRateProps['value']>;

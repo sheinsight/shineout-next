@@ -12,5 +12,5 @@ const BaseSwitch = (props: BaseSwitchProps) => {
 };
 
 export default (props: SwitchProps) => {
-  return useFieldCommon<BaseSwitchProps, BaseSwitchProps['value']>(props, BaseSwitch);
+  return useFieldCommon(props, BaseSwitch);
 };

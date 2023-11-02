@@ -16,7 +16,7 @@ const useFieldCommon = <Props extends FiledItemCommonProps, Value>(
   const FieldParams = {
     name: props.name!,
     defaultValue: props.defaultValue,
-    reservable: props.reservable,
+    reserveAble: props.reserveAble,
     rules: props.rules,
     onError: props.onError,
     bind: props.bind,
