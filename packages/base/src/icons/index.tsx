@@ -179,6 +179,13 @@ const check = [
   />,
 ];
 
+const pcStarFill = [
+  <path
+    key='star'
+    d='M8.27612 7.825L1.85661 8.7559L1.7429 8.77878C1.00773 8.96968 0.736981 9.90915 1.30105 10.4606L5.95312 15.008L4.84243 21.3268L4.82923 21.4327C4.773 22.2003 5.59427 22.7575 6.29775 22.3824L11.9991 19.343L17.7025 22.3825L17.799 22.4279C18.5106 22.7194 19.2949 22.1128 19.1579 21.3281L18.0541 15.008L22.6998 10.46L22.7781 10.3745C23.2587 9.78723 22.9243 8.86973 22.1444 8.75601L15.7581 7.825L12.8952 2.05544C12.5266 1.31273 11.4662 1.31545 11.1014 2.06004L8.27612 7.825Z'
+  />,
+];
+
 const Icons = {
   ArrowLeft: icon(arrowLeft),
   ArrowRight: icon(arrowRight),
@@ -216,6 +223,7 @@ const Icons = {
   File: icon(file),
   Return: icon(ireturn),
   UndeleteOpaque: icon(recoverCircle),
+  PcStarFill: icon(pcStarFill),
 };
 
 export default Icons;
