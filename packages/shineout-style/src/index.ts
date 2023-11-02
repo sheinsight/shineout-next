@@ -16,6 +16,7 @@ export * from './message';
 export * from './popover';
 export * from './progress';
 export * from './radio';
+export * from './rate';
 export * from './spin';
 export * from './switch';
 export * from './tabs';

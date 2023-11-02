@@ -16,6 +16,7 @@ export { default as Message } from './message';
 export { default as Popover } from './popover';
 export { default as Progress } from './progress';
 export { default as Radio } from './radio';
+export { default as Rate } from './rate';
 export { default as Rule } from './rule';
 export { default as Spin } from './spin';
 export { default as Switch } from './switch';

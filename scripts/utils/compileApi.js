@@ -34,7 +34,7 @@ function compile(dirPath, componentPath) {
    * @param dir 文件目录名 如：button
    */
   function makeApi(dir) {
-    if (dir.indexOf('gap') === -1) {
+    if (dir.indexOf('rate') === -1) {
       writeTemplate({
         templatePath: templateApiPath,
         targetPath: `${chunkDir}/${chunkModuleName}/api`,

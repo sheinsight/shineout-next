@@ -124,6 +124,7 @@ const input: JsStyles<InputClass> = {
     display: 'flex',
     flex: 1,
     minWidth: '0',
+    alignItems: 'center',
   },
   input: {
     width: '100%',

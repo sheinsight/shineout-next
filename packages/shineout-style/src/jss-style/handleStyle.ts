@@ -8,9 +8,11 @@ const handleRule = (key: string, rule: string, target: ObjectType) => {
     valueArr[1] = valueArr[1] || valueArr[0];
     target[key] = rule;
     target['@supports not (gap: 1px)'] = {
+      ...(target['@supports not (gap: 1px)'] || {}),
       marginRight: `calc(-1 * ${valueArr[1]})`,
       marginBottom: `calc(-1 * ${valueArr[0]})`,
       ['& > *']: {
+        ...(target?.['@supports not (gap: 1px)']?.['& > *'] || {}),
         marginRight: valueArr[1],
         marginBottom: valueArr[0],
       },
@@ -24,9 +26,11 @@ const handleRule = (key: string, rule: string, target: ObjectType) => {
     const condition = `@supports (margin-inline-start: 1px)`;
     const condition2 = `@supports not (margin-inline-start: 1px)`;
     target[`${condition}`] = {
+      ...(target[`${condition}`] || {}),
       [newKey]: rule,
     };
     target[`${condition2}`] = {
+      ...(target[`${condition2}`] || {}),
       [key]: rule,
     };
     return;
@@ -36,9 +40,11 @@ const handleRule = (key: string, rule: string, target: ObjectType) => {
     const condition = `@supports (text-align: start)`;
     const condition2 = `@supports not (text-align: start)`;
     target[`${condition}`] = {
+      ...(target[`${condition}`] || {}),
       'text-align': rule === 'left' ? 'start' : 'end',
     };
     target[`${condition2}`] = {
+      ...(target[`${condition2}`] || {}),
       'text-align': rule,
     };
     return;

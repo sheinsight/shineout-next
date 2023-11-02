@@ -27,7 +27,6 @@ const radioTokens: RadioTokens = {
   radioIconCheckedDisabledBackgroundColor: 'Neutral-fill-1',
   radioIconCheckedDisabledColor: 'Brand-3',
   radioIconWrapperFill: 'Neutral-fill-2',
-  radioIconWrapperPadding: 'Size-3',
   radioLabelFontColor: 'Neutral-text-5',
   radioLabelDisabledFontColor: 'Neutral-text-2',
   radioLabelFontSize: '14/regular',
