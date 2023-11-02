@@ -20,6 +20,7 @@ export * from './radio';
 export * from './rate';
 export * from './rule';
 export * from './spin';
+export * from './steps';
 export * from './switch';
 export * from './tabs';
 export * from './tag';

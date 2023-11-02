@@ -18,6 +18,7 @@ export * from './progress';
 export * from './radio';
 export * from './rate';
 export * from './spin';
+export * from './steps';
 export * from './switch';
 export * from './tabs';
 export * from './tag';
