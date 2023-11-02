@@ -6,14 +6,14 @@ import Popup from './line-popup';
 import Icons from '../icons';
 
 const Line = (props: ProgressProps) => {
-  const { shape = 'line', value = 0, type = 'info', iconSize } = props;
+  const { shape = 'line', value = 0, type = 'info', iconSize, popup } = props;
 
   const progressClasses = props.jssStyle?.progress();
 
   const isInner = shape === 'line-inner';
   const isInnerRight = isInner && value < 10;
   const isDefault = shape === 'line' || shape === 'line-pop';
-  const isDefaultPop = shape === 'line-pop';
+  const isDefaultPop = shape === 'line-pop' || popup;
 
   const iconStyle = { width: iconSize, height: iconSize };
 

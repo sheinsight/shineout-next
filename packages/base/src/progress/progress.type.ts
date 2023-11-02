@@ -70,7 +70,7 @@ export interface ProgressProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn 样式
    * @default 'line'
    */
-  shape?: 'line' | 'circle' | 'circle' | 'line-pop' | 'line-inner' | 'line-inner';
+  shape?: 'line' | 'circle' | 'line-pop' | 'line-inner';
 
   /**
    * @en The width and height of 'circle' shape

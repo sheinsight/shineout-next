@@ -1,0 +1,1154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress[Base] should render correctly  1`] = `
+<div
+  class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+  style="width: 400px;"
+>
+  <div
+    class="so-progress-line-bg"
+  >
+    <div
+      class="so-progress-line-front"
+      style="width: 0%;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about animation 1`] = `
+<div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    style="width: 400px;"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 0%;"
+      />
+    </div>
+    <div
+      class="so-progress-content"
+    >
+      <div
+        style="width: 50px;"
+      >
+        0
+      </div>
+    </div>
+  </div>
+  <br />
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-success"
+    style="width: 64px; height: 64px;"
+  >
+    <svg
+      viewBox="0 0 64 64"
+    >
+      <circle
+        class="so-progress-circle-bg"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-dasharray="0,188.49555921538757"
+        stroke-linecap="round"
+        stroke-width="0"
+      />
+    </svg>
+    <div
+      class="so-progress-content"
+    >
+      0%
+    </div>
+  </div>
+  <button
+    class="so-button-default so-button-button"
+    style="margin-inline-start: 80px;"
+    type="button"
+  >
+    <span>
+      Start
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about animation 2`] = `
+<div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    style="width: 400px;"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 1.6662251919773754%;"
+      />
+    </div>
+    <div
+      class="so-progress-content"
+    >
+      <div
+        style="width: 50px;"
+      >
+        2
+      </div>
+    </div>
+  </div>
+  <br />
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-success"
+    style="width: 64px; height: 64px;"
+  >
+    <svg
+      viewBox="0 0 64 64"
+    >
+      <circle
+        class="so-progress-circle-bg"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-dasharray="3.140760493405419,185.35479872198215"
+        stroke-linecap="round"
+        stroke-width="4"
+      />
+    </svg>
+    <div
+      class="so-progress-content"
+    >
+      2%
+    </div>
+  </div>
+  <button
+    class="so-button-default so-button-button"
+    style="margin-inline-start: 80px;"
+    type="button"
+  >
+    <span>
+      Start
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about circle 1`] = `
+<div
+  style="display: flex; gap: 32px;"
+>
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    style="width: 64px; height: 64px;"
+  >
+    <svg
+      viewBox="0 0 64 64"
+    >
+      <circle
+        class="so-progress-circle-bg"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-dasharray="113.09733552923254,75.39822368615503"
+        stroke-linecap="round"
+        stroke-width="4"
+      />
+    </svg>
+    <div
+      class="so-progress-content"
+    >
+       
+      60%
+       
+    </div>
+  </div>
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-warning"
+    style="width: 64px; height: 64px;"
+  >
+    <svg
+      viewBox="0 0 64 64"
+    >
+      <circle
+        class="so-progress-circle-bg"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-dasharray="131.9468914507713,56.54866776461628"
+        stroke-linecap="round"
+        stroke-width="4"
+      />
+    </svg>
+    <div
+      class="so-progress-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12 3C11.4477 3 11 3.44772 11 4V16C11 16.5523 11.4477 17 12 17C12.5523 17 13 16.5523 13 16V4C13 3.44772 12.5523 3 12 3ZM12 19C11.4477 19 11 19.4477 11 20C11 20.5523 11.4477 21 12 21C12.5523 21 13 20.5523 13 20C13 19.4477 12.5523 19 12 19Z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-success"
+    style="width: 64px; height: 64px;"
+  >
+    <svg
+      viewBox="0 0 64 64"
+    >
+      <circle
+        class="so-progress-circle-bg"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-dasharray="150.79644737231007,37.6991118430775"
+        stroke-linecap="round"
+        stroke-width="4"
+      />
+    </svg>
+    <div
+      class="so-progress-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-danger"
+    style="width: 64px; height: 64px;"
+  >
+    <svg
+      viewBox="0 0 64 64"
+    >
+      <circle
+        class="so-progress-circle-bg"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-dasharray="169.64600329384882,18.84955592153875"
+        stroke-linecap="round"
+        stroke-width="4"
+      />
+    </svg>
+    <div
+      class="so-progress-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about color 1`] = `
+<div
+  style="width: 400px;"
+>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 40%;"
+      />
+    </div>
+    <div
+      class="so-progress-content"
+    >
+      40%
+    </div>
+  </div>
+  <br />
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 75%;"
+      >
+        <div
+          class="so-progress-content"
+        >
+          75%
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    style="width: 64px; height: 64px;"
+  >
+    <svg
+      viewBox="0 0 64 64"
+    >
+      <defs>
+        <lineargradient
+          id="progress-linear"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop
+            offset="0%"
+            stop-color="#19A9FA"
+          />
+          <stop
+            offset="100%"
+            stop-color="#7949FF"
+          />
+        </lineargradient>
+      </defs>
+      <circle
+        class="so-progress-circle-bg"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-dasharray="113.09733552923254,75.39822368615503"
+        stroke-linecap="round"
+        stroke-width="4"
+        style="stroke: url('#progress-linear');"
+      />
+    </svg>
+    <div
+      class="so-progress-content"
+    >
+      60%
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about lineInner 1`] = `
+<div
+  style="display: flex; flex-direction: column; gap: 32px;"
+>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner so-progress-line-inner-right"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 0%;"
+      />
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 40%;"
+      >
+        <div
+          class="so-progress-content"
+        >
+          40%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-warning so-progress-line-inner"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 50%;"
+      >
+        <div
+          class="so-progress-content"
+        >
+          50%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-success so-progress-line-inner"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 100%;"
+      >
+        <div
+          class="so-progress-content"
+        >
+          100%
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-progress-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6.34315 13.8284L8.46305 15.9483C9.24511 16.7304 10.5122 16.7304 11.2943 15.9483L17.6569 9.58579C18.0472 9.19546 18.0472 8.5619 17.6569 8.17157C17.2665 7.78125 16.633 7.78125 16.2426 8.17157L10.5872 13.827C10.1962 14.218 9.56119 14.218 9.17016 13.827L7.75736 12.4142C7.36704 12.0239 6.73347 12.0239 6.34315 12.4142C5.95282 12.8045 5.95282 13.4381 6.34315 13.8284Z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-danger so-progress-line-inner"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 60%;"
+      >
+        <div
+          class="so-progress-content"
+        >
+          60%
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-progress-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about linePop 1`] = `
+<div
+  style="width: 400px;"
+>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default so-progress-line-pop"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 0%;"
+      />
+    </div>
+    <div
+      class="so-progress-line-pop-wrapper"
+      style="left: 0%; transform: translateX(-50%) rotate(0deg);"
+    >
+      <span
+        class="so-progress-line-pop-value"
+      >
+        0%
+      </span>
+      <span
+        class="so-progress-line-pop-arrow"
+      />
+    </div>
+    <div
+      class="so-progress-content"
+    >
+      0%
+    </div>
+  </div>
+  <br />
+  <button
+    class="so-button-default so-button-button"
+    type="button"
+  >
+    <span>
+      Start
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about linepop 1`] = `
+<div
+  style="width: 400px;"
+>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default so-progress-line-pop"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 2.852980490946706%;"
+      />
+    </div>
+    <div
+      class="so-progress-line-pop-wrapper"
+      style="left: 2.852980490946706%; transform: translateX(-50%) rotate(0.7132451227366765deg);"
+    >
+      <span
+        class="so-progress-line-pop-value"
+      >
+        2%
+      </span>
+      <span
+        class="so-progress-line-pop-arrow"
+      />
+    </div>
+    <div
+      class="so-progress-content"
+    >
+      2%
+    </div>
+  </div>
+  <br />
+  <button
+    class="so-button-default so-button-button"
+    type="button"
+  >
+    <span>
+      Start
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about size 1`] = `
+<div>
+  <div
+    class="so-radio-group"
+  >
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        small
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        default
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        large
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    style="width: 400px;"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 75%;"
+      />
+    </div>
+    <div
+      class="so-progress-content"
+    >
+      <span>
+        75%
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+    style="width: 400px; margin-top: 24px;"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 40%;"
+      >
+        <div
+          class="so-progress-content"
+        >
+          <span>
+            40%
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    style="width: 64px; height: 64px; margin-top: 24px;"
+  >
+    <svg
+      viewBox="0 0 64 64"
+    >
+      <circle
+        class="so-progress-circle-bg"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="32"
+        cy="32"
+        fill="transparent"
+        r="30"
+        stroke-dasharray="113.09733552923254,75.39822368615503"
+        stroke-linecap="round"
+        stroke-width="4"
+      />
+    </svg>
+    <div
+      class="so-progress-content"
+    >
+      <span>
+        60%
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about size 2`] = `
+<div>
+  <div
+    class="so-radio-group"
+  >
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        small
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        default
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        large
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    style="width: 400px;"
+  >
+    <div
+      class="so-progress-line-bg"
+      style="height: 3px; border-radius: 1.5px;"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 75%; border-radius: 1.5px;"
+      />
+    </div>
+    <div
+      class="so-progress-content"
+    >
+      <span
+        style="font-size: 12px;"
+      >
+        75%
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+    style="width: 400px; margin-top: 24px;"
+  >
+    <div
+      class="so-progress-line-bg"
+      style="height: 16px; border-radius: 8px;"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 40%; border-radius: 8px;"
+      >
+        <div
+          class="so-progress-content"
+        >
+          <span
+            style="font-size: 12px;"
+          >
+            40%
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    style="width: 48px; height: 48px; margin-top: 24px;"
+  >
+    <svg
+      viewBox="0 0 48 48"
+    >
+      <circle
+        class="so-progress-circle-bg"
+        cx="24"
+        cy="24"
+        fill="transparent"
+        r="22"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="24"
+        cy="24"
+        fill="transparent"
+        r="22"
+        stroke-dasharray="82.93804605477052,55.29203070318036"
+        stroke-linecap="round"
+        stroke-width="4"
+      />
+    </svg>
+    <div
+      class="so-progress-content"
+    >
+      <span
+        style="font-size: 12px;"
+      >
+        60%
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about size 3`] = `
+<div>
+  <div
+    class="so-radio-group"
+  >
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        small
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        default
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        large
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    style="width: 400px;"
+  >
+    <div
+      class="so-progress-line-bg"
+      style="height: 8px; border-radius: 4px;"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 75%; border-radius: 4px;"
+      />
+    </div>
+    <div
+      class="so-progress-content"
+    >
+      <span
+        style="font-size: 16px;"
+      >
+        75%
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+    style="width: 400px; margin-top: 24px;"
+  >
+    <div
+      class="so-progress-line-bg"
+      style="height: 24px; border-radius: 12px;"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 40%; border-radius: 12px;"
+      >
+        <div
+          class="so-progress-content"
+        >
+          <span>
+            40%
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    style="width: 80px; height: 80px; margin-top: 24px;"
+  >
+    <svg
+      viewBox="0 0 80 80"
+    >
+      <circle
+        class="so-progress-circle-bg"
+        cx="40"
+        cy="40"
+        fill="transparent"
+        r="38"
+        stroke-width="4"
+      />
+      <circle
+        class="so-progress-circle-front"
+        cx="40"
+        cy="40"
+        fill="transparent"
+        r="38"
+        stroke-dasharray="143.25662500369455,95.50441666912971"
+        stroke-linecap="round"
+        stroke-width="4"
+      />
+    </svg>
+    <div
+      class="so-progress-content"
+    >
+      <span
+        style="font-size: 16px;"
+      >
+        60%
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Progress[Base] should render correctly about type 1`] = `
+<div
+  style="width: 400px;"
+>
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-success so-progress-line-default"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 100%;"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 90%;"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-warning so-progress-line-default"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 80%;"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    class="so-progress-line so-progress-wrapper so-progress-wrapper-danger so-progress-line-default"
+  >
+    <div
+      class="so-progress-line-bg"
+    >
+      <div
+        class="so-progress-line-front"
+        style="width: 70%;"
+      />
+    </div>
+  </div>
+</div>
+`;

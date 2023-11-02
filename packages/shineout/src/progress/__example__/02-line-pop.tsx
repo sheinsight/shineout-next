@@ -33,7 +33,7 @@ const App: React.FC = () => {
 
   return (
     <div style={{ width: 400 }}>
-      <Progress value={value} shape='line-pop'>{`${parseInt(value.toString(), 10)}%`}</Progress>
+      <Progress value={value} popup>{`${parseInt(value.toString(), 10)}%`}</Progress>
 
       <br />
 
