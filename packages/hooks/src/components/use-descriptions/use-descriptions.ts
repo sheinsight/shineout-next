@@ -11,7 +11,7 @@ const getLengthByrow = (arr: DescriptionsItemProps[]) =>
   isArray(arr) ? arr.reduce((prev, now) => prev + (now.span || 1), 0) : 0;
 
 const useDescriptions = (props: BaseDescriptionsProps) => {
-  const { item, column } = props;
+  const { item, column, valueStyle, labelStyle } = props;
   const [screen, setScreen] = useState<Breakpoint>();
   const responsiveToken = useRef<string>();
 
@@ -45,6 +45,8 @@ const useDescriptions = (props: BaseDescriptionsProps) => {
           {
             ...d,
             span: d.span ? (d.span > currentColumn ? currentColumn : d.span) : 1,
+            ItemValueStyle: Object.assign({}, valueStyle, d.ItemValueStyle),
+            ItemLabelStyle: Object.assign({}, labelStyle, d.ItemLabelStyle),
           },
         ]);
       else
@@ -55,6 +57,8 @@ const useDescriptions = (props: BaseDescriptionsProps) => {
               ? currentColumn - lengthRow
               : d.span
             : 1,
+          ItemValueStyle: Object.assign({}, valueStyle, d.ItemValueStyle),
+          ItemLabelStyle: Object.assign({}, labelStyle, d.ItemLabelStyle),
         });
     });
     const lastRenderItem = renderItem[renderItem.length - 1];

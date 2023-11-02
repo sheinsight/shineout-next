@@ -1,15 +1,17 @@
-import React, { CSSProperties, ReactNode } from 'react';
+import React from 'react';
 
 export interface DescriptionsItemProps {
   key?: React.Key;
-  label?: ReactNode;
-  value?: ReactNode;
+  label?: React.ReactNode;
+  value?: React.ReactNode;
   span?: number;
-  labelStyle?: CSSProperties;
-  valueStyle?: CSSProperties;
+  ItemLabelStyle?: React.CSSProperties;
+  ItemValueStyle?: React.CSSProperties;
 }
 export interface BaseDescriptionsProps {
   item?: DescriptionsItemProps[];
+  labelStyle?: React.CSSProperties;
+  valueStyle?: React.CSSProperties;
   column?:
     | number
     | {

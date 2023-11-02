@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
-import { CommonType } from '../common/type';
-import { BaseDescriptionsProps } from '@sheinx/hooks';
+import React from 'react';
+import type { CommonType } from '../common/type';
+import type { BaseDescriptionsProps } from '@sheinx/hooks';
 
 export interface DescriptionsClasses {
   /**
@@ -17,6 +17,10 @@ export interface DescriptionsClasses {
   value: string;
   border: string;
   tableLayoutFixed: string;
+  item: string;
+  labelInline: string;
+  valueInline: string;
+  inlineHorizontal: string;
 }
 
 export interface DescriptionsProps
@@ -26,10 +30,10 @@ export interface DescriptionsProps
     descriptions: DescriptionsClasses;
   };
   border?: boolean;
-  extra?: ReactNode;
+  extra?: React.ReactNode;
   size?: 'default' | 'large' | 'small';
-  title?: ReactNode;
-  layout?: 'horizontal' | 'vertical';
-  colon?: ReactNode;
-  tableLayout: 'auto' | 'fixed';
+  title?: React.ReactNode;
+  layout?: 'horizontal' | 'vertical' | 'inlineHorizontal' | 'inlineVertical';
+  colon?: React.ReactNode;
+  tableLayout?: 'auto' | 'fixed';
 }

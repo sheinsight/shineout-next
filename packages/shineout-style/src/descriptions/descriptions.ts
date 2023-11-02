@@ -12,7 +12,11 @@ export type DescriptionsClass =
   | 'label'
   | 'value'
   | 'tableLayoutFixed'
-  | 'border';
+  | 'border'
+  | 'item'
+  | 'labelInline'
+  | 'valueInline'
+  | 'inlineHorizontal';
 
 const descriptionsStyle: JsStyles<DescriptionsClass> = {
   wrapper: {
@@ -58,6 +62,41 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     color: 'gray',
     fontWeight: '400',
   },
+  item: {
+    padding: '0 4px 12px 0',
+    textAlign: 'left',
+    boxSizing: 'border-box',
+    fontSize: '14px',
+    lineHeight: 1.5715,
+  },
+  labelInline: {
+    textAlign: 'left',
+    boxSizing: 'border-box',
+    fontSize: '14px',
+    lineHeight: 1.5715,
+    color: 'black',
+    fontWeight: '500',
+    marginBottom: '2px',
+  },
+  valueInline: {
+    textAlign: 'left',
+    boxSizing: 'border-box',
+    fontSize: '14px',
+    lineHeight: 1.5715,
+    color: 'gray',
+    fontWeight: '400',
+  },
+  inlineHorizontal: {
+    '& $labelInline': {
+      display: 'inline-block',
+      marginBottom: 0,
+      marginRight: '4px',
+    },
+    '& $valueInline': {
+      display: 'inline-block',
+      marginBottom: 0,
+    },
+  },
   tableLayoutFixed: {
     '& $table': {
       tableLayout: 'fixed',
@@ -82,10 +121,17 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
       padding: '7px 20px',
       borderRight: '1px solid rgb(229,230,235)',
     },
+    '& $item': {
+      padding: '7px 20px',
+      borderRight: '1px solid rgb(229,230,235)',
+    },
     '& $label:last-child': {
       borderRight: 'none',
     },
     '& $value:last-child': {
+      borderRight: 'none',
+    },
+    '& $item:last-child': {
       borderRight: 'none',
     },
   },

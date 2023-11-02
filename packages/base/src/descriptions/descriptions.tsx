@@ -16,12 +16,16 @@ const Descriptions = (props: DescriptionsProps) => {
     layout = 'horizontal',
     border = false,
     tableLayout = 'auto',
+    valueStyle,
+    labelStyle,
     // TODO: with tss
     // size
   } = props;
   const { renderItem } = useDescriptions({
     item,
     column,
+    valueStyle,
+    labelStyle,
   });
 
   const Header = () => (
@@ -37,11 +41,15 @@ const Descriptions = (props: DescriptionsProps) => {
         const colSpanProps = _d.span > 1 ? { colSpan: _d.span * 2 - 1 } : {};
         return (
           <Fragment key={_d.key || _i}>
-            <td className={jssStyle?.descriptions.label} style={_d.labelStyle}>
+            <td className={jssStyle?.descriptions.label} style={_d.ItemLabelStyle}>
               {_d.label}
               {colon}
             </td>
-            <td className={jssStyle?.descriptions.value} style={_d.valueStyle} {...colSpanProps}>
+            <td
+              className={jssStyle?.descriptions.value}
+              style={_d.ItemValueStyle}
+              {...colSpanProps}
+            >
               {_d.value}
             </td>
           </Fragment>
@@ -59,7 +67,7 @@ const Descriptions = (props: DescriptionsProps) => {
             <td
               key={`${_d.key || _i}_k`}
               className={jssStyle?.descriptions.label}
-              style={_d.labelStyle}
+              style={_d.ItemLabelStyle}
               {...colSpanProps}
             >
               {_d.label}
@@ -75,7 +83,7 @@ const Descriptions = (props: DescriptionsProps) => {
             <td
               key={`${_d.key || _i}_v`}
               className={jssStyle?.descriptions.value}
-              style={_d.valueStyle}
+              style={_d.ItemValueStyle}
               {...colSpanProps}
             >
               {_d.value}
@@ -86,14 +94,36 @@ const Descriptions = (props: DescriptionsProps) => {
     </Fragment>
   );
 
-  const renderHandle = (d: DescriptionsItemProps[], i: number) =>
-    layout === 'horizontal' ? renderHorizontal(d, i) : renderVertical(d, i);
+  const renderInline = (d: DescriptionsItemProps[], i: number) => (
+    <tr key={i} className={jssStyle?.descriptions.row}>
+      {d.map((_d, _i) => {
+        const colSpanProps = _d.span > 1 ? { colSpan: _d.span } : {};
+        return (
+          <td key={_d.key || _i} {...colSpanProps} className={jssStyle?.descriptions.item}>
+            <div className={jssStyle?.descriptions.labelInline} style={_d.ItemLabelStyle}>
+              {_d.label}
+              {colon}
+            </div>
+            <div className={jssStyle?.descriptions.valueInline} style={_d.ItemValueStyle}>
+              {_d.value}
+            </div>
+          </td>
+        );
+      })}
+    </tr>
+  );
+
+  const renderHandle = (d: DescriptionsItemProps[], i: number) => {
+    if (layout === 'inlineHorizontal' || layout === 'inlineVertical') return renderInline(d, i);
+    return layout === 'horizontal' ? renderHorizontal(d, i) : renderVertical(d, i);
+  };
 
   const rootClassName = classNames(className, jssStyle?.descriptions.wrapper);
   const bodyClassName = classNames(
     jssStyle?.descriptions.body,
     border && jssStyle?.descriptions.border,
     tableLayout === 'fixed' && jssStyle?.descriptions.tableLayoutFixed,
+    layout === 'inlineHorizontal' && jssStyle?.descriptions.inlineHorizontal,
   );
 
   return (
