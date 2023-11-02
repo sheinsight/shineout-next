@@ -61,7 +61,7 @@ const radioStyle: JsStyles<RadioClass> = {
       display: 'block',
       width: '100%',
       height: '100%',
-      padding: '5px',
+      padding: token.iconCirclePadding,
       position: 'absolute',
       top: '50%',
       left: '50%',
