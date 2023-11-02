@@ -13,14 +13,15 @@ type TransferClass =
   | 'removeAll'
   | 'simpleTarget'
   | 'operations'
-  | 'operationIcon'
   | 'input'
   | 'left'
   | 'right'
   | 'header'
   | 'title'
+  | 'count'
   | 'list'
   | 'item'
+  | 'disabled'
   | 'checkbox'
   | 'itemWrapper'
   | 'footer'
@@ -33,8 +34,22 @@ const TransferStyle: JsStyles<TransferClass> = {
     color: Token.transferFontColor,
     fontSize: Token.transferFontSize,
   },
-  small: {},
-  large: {},
+  small: {
+    '& $operations': { '& svg': { width: 12 } },
+    '& $header': {
+      height: Token.transferSmallHeaderHeight,
+    },
+    '& $title,$count,$simpleTarget,$removeAll': { fontSize: Token.transferSmallFontSize },
+    '& $close': { width: 20 },
+  },
+  large: {
+    '& $operations': { '& svg': { width: 16 } },
+    '& $header': {
+      height: Token.transferLargeHeaderHeight,
+    },
+    '& $title,$count,$simpleTarget,$removeAll': { fontSize: Token.transferLargeFontSize },
+    '& $close': { width: 24 },
+  },
   simple: {
     '& $source': {
       borderRadius: `${Token.transferBorderRadius} 0 0 ${Token.transferBorderRadius}`,
@@ -60,8 +75,9 @@ const TransferStyle: JsStyles<TransferClass> = {
   target: {},
   simpleTarget: {
     display: 'flex',
-    padding: '4px 3px',
+    padding: '5px 3px',
     paddingLeft: 8,
+    fontSize: Token.transferFontSize,
     justifyContent: 'space-between',
     lineHeight: Token.lineHeightDynamic,
   },
@@ -70,7 +86,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     height: 24,
     borderRadius: '50%',
     minWidth: 24,
-    fontSize: 14,
+    fontSize: Token.transfer,
     lineHeight: '14px',
     cursor: 'pointer',
     display: 'flex',
@@ -87,7 +103,6 @@ const TransferStyle: JsStyles<TransferClass> = {
   },
   close: {
     width: 24,
-    height: 24,
     borderRadius: '50%',
     minWidth: 12,
     fontSize: 12,
@@ -114,9 +129,6 @@ const TransferStyle: JsStyles<TransferClass> = {
       width: 14,
     },
   },
-  operationIcon: {
-    width: 14,
-  },
   input: {
     padding: '6px 12px',
     '& svg': {
@@ -130,7 +142,7 @@ const TransferStyle: JsStyles<TransferClass> = {
   },
   right: {},
   header: {
-    height: 46,
+    height: Token.transferHeaderHeight,
     padding: 12,
     display: 'flex',
     alignItems: 'center',
@@ -142,6 +154,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     display: 'flex',
     alignItems: 'center',
   },
+  count: {
+    fontSize: Token.transferFontSize,
+  },
   list: {},
   footer: {
     height: 48,
@@ -149,8 +164,23 @@ const TransferStyle: JsStyles<TransferClass> = {
     borderTop: `1px solid ${Token.transferBorderColor}`,
   },
   item: {
-    // height: 32,
     padding: '1px 4px',
+    '&:not($disabled):hover': {
+      '& $itemWrapper': {
+        background: Token.transferItemHoverBackgroundColor,
+      },
+    },
+  },
+  disabled: {
+    cursor: 'not-allowed',
+    color: Token.transferDisabledFontColor,
+    '& $close': {
+      cursor: 'not-allowed',
+      color: Token.transferDisabledFontColor,
+      '&:hover': {
+        background: 'transparent',
+      },
+    },
   },
   itemWrapper: {
     borderRadius: Token.transferBorderRadius,
@@ -159,9 +189,6 @@ const TransferStyle: JsStyles<TransferClass> = {
       width: '100%',
       padding: '5px 8px',
       marginRight: 0,
-    },
-    '&:hover': {
-      background: Token.transferItemHoverBackgroundColor,
     },
   },
   checkbox: {},

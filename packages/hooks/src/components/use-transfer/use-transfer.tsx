@@ -5,7 +5,7 @@ import { useInputAble } from '../../common/use-input-able';
 import { useListSelect } from '../../common/use-list-select';
 import { BaseTransferProps, TransferListType } from './use-transfer.type';
 
-const useTransfer = <DataItem, Value extends KeygenResult>(
+const useTransfer = <DataItem, Value extends KeygenResult[]>(
   props: BaseTransferProps<DataItem, Value>,
 ) => {
   const {

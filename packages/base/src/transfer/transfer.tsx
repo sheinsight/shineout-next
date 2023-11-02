@@ -6,23 +6,32 @@ import TransferList from './transfer-list';
 import TransferOperate from './transfer-operate';
 import Icon from '../icons';
 
-const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<DataItem, Value>) => {
+const Transfer = <DataItem, Value extends KeygenResult[]>(
+  props: TransferProps<DataItem, Value>,
+) => {
   const {
     jssStyle,
     data,
     value,
     keygen,
     empty,
+    size,
     simple,
     titles,
     footers,
     disabled,
+    itemClass,
     operations,
+    lineHeight,
     loading,
-    format = (item: DataItem) => item,
+    rowsInView,
+    listStyle,
+    listClassName,
+    format,
     prediction,
     selectedKeys,
     listHeight = 186,
+    operationIcon = true,
     beforeChange,
     onFilter: onFilterProp,
     onChange: onChangeProp,
@@ -40,11 +49,8 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
     filterTargetText,
     sourceSelectedKeys,
     targetSelectedKeys,
-    onSelectAll,
-    onRemoveAll,
-    onChange,
     onFilter,
-  } = useTransfer<DataItem, Value>({
+  } = useTransfer({
     data,
     keygen,
     value,
@@ -64,17 +70,9 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.transfer, {
     [styles.simple]: simple,
+    [styles.small]: size === 'small',
+    [styles.large]: size === 'large',
   });
-
-  // const getData = (filterText: string, data: DataItem[], listType: TransferListType) => {
-  //   if (!onFilter || !filterText) {
-  //     return data;
-  //   }
-  //   const isSource = listType === 'source';
-  //   const filterData = data.filter((item: DataItem) => onFilter(filterText, item, isSource));
-
-  //   return filterData;
-  // };
 
   const renderOperations = () => {
     const sourceOperation = operations?.[0];
@@ -83,6 +81,7 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
     return (
       <div className={styles.operations}>
         <TransferOperate
+          size={size}
           listType='source'
           jssStyle={jssStyle}
           className={styles.right}
@@ -90,11 +89,11 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
           operation={sourceOperation}
           listDatum={sourceDatum}
           value={sourceSelectedKeys}
-          onChange={onChange}
         >
-          {Icon.AngleRight}
+          {operationIcon && Icon.AngleRight}
         </TransferOperate>
         <TransferOperate
+          size={size}
           listType='target'
           jssStyle={jssStyle}
           className={styles.left}
@@ -102,9 +101,8 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
           operation={targetOperation}
           listDatum={targetDatum}
           value={targetSelectedKeys}
-          onChange={onChange}
         >
-          {Icon.AngleLeft}
+          {operationIcon && Icon.AngleLeft}
         </TransferOperate>
       </div>
     );
@@ -126,6 +124,7 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
     return (
       <TransferList
         jssStyle={jssStyle}
+        size={size}
         datum={datum}
         listDatum={listDatum}
         data={listData}
@@ -136,15 +135,16 @@ const Transfer = <DataItem, Value extends KeygenResult>(props: TransferProps<Dat
         filterText={filterText}
         listType={listType}
         loading={loadingValue}
+        rowsInView={rowsInView}
         renderItem={renderItem}
+        listStyle={listStyle}
+        listClassName={listClassName}
         listHeight={listHeight}
+        lineHeight={lineHeight}
         simple={simple}
         value={listValue}
-        // onSelect={onSelectChange}
-        onSelectAll={onSelectAll}
-        onRemoveAll={onRemoveAll}
+        itemClass={itemClass}
         onFilter={onFilterProp ? onFilter : undefined}
-        onChange={onChange}
       />
     );
   };

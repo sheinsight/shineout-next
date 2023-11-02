@@ -39,7 +39,7 @@ export default () => {
   };
 
   const [selectedKeys, setSelectedKeys] = useState<(string | number)[]>(['id-0', 'id-3', 'id-4']);
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState(['id-0']);
   const [data] = useState(originData);
 
   const handleClick = () => {
@@ -48,6 +48,7 @@ export default () => {
   };
 
   const handleChange = (v) => {
+    console.log(v);
     setValue(v);
   };
 
@@ -74,11 +75,12 @@ export default () => {
         + select
       </button>
       <Transfer
-        // simple
-        loading={[false, true]}
+        simple
+        // size='large'
         data={data}
         disabled={(d) => d.id === 'id-0' || d.id === 'id-1'}
         keygen='id'
+        format='id'
         jssStyle={jssStyle}
         value={value}
         selectedKeys={selectedKeys}

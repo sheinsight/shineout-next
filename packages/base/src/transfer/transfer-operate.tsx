@@ -1,14 +1,18 @@
+import { KeygenResult } from '@sheinx/hooks';
 import { TransferOperateProps } from './transfer-operate.type';
 import Button from '../button';
 
-const TransferOperate = <DataItem,>(props: TransferOperateProps<DataItem>) => {
-  const { jssStyle, className, listType, datum, listDatum, operation, children, value } = props;
+const TransferOperate = <DataItem, Value extends KeygenResult[]>(
+  props: TransferOperateProps<DataItem, Value>,
+) => {
+  const { jssStyle, className, size, listType, datum, listDatum, operation, children, value } =
+    props;
 
   const handleChange = () => {
     const isToTarget = listType === 'source';
-    const currentData = listDatum
-      .getDataByValues(value)
-      .filter((item: DataItem) => !listDatum.disabledCheck(item));
+    const currentData = (listDatum.getDataByValues(value) as DataItem[]).filter(
+      (item: DataItem) => !listDatum.disabledCheck(item),
+    );
 
     if (isToTarget) {
       datum.add(currentData);
@@ -24,6 +28,7 @@ const TransferOperate = <DataItem,>(props: TransferOperateProps<DataItem>) => {
   return (
     <span>
       <Button
+        size={size}
         disabled={disabled}
         className={className}
         jssStyle={jssStyle}

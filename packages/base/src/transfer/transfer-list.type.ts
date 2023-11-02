@@ -1,5 +1,6 @@
+import { CommonType } from '../common/type';
 import { KeygenResult, ObjectKey, KeygenType, TransferListType } from '@sheinx/hooks';
-import { JssStyleType } from './transfer.type';
+import { JssStyleType, ListDatum } from './transfer.type';
 
 export interface ListInfo<DataItem> {
   data: DataItem[];
@@ -9,14 +10,20 @@ export interface ListInfo<DataItem> {
   selectedKeys: Map<KeygenResult, boolean>;
 }
 
-export interface TransferListProps<DataItem> {
+export interface TransferListProps<DataItem, Value extends KeygenResult[]>
+  extends Pick<CommonType, 'size'> {
   jssStyle: JssStyleType;
-  info: ListInfo<DataItem>;
+  data: DataItem[];
+  value: Value;
   renderItem: ObjectKey<DataItem> | ((data: DataItem) => React.ReactNode);
   listHeight?: number;
   lineHeight?: number;
-  itemsInView?: number;
+  listClassName?: string;
+  listStyle?: React.CSSProperties;
+  rowsInView?: number;
   keygen?: KeygenType<DataItem>;
+  datum: ListDatum<DataItem, Value>;
+  listDatum: ListDatum<DataItem, Value>;
   listType: TransferListType;
   colNum?: number;
   empty?: React.ReactNode;
@@ -25,6 +32,7 @@ export interface TransferListProps<DataItem> {
   title?: React.ReactNode;
   footer?: React.ReactNode;
   loading?: boolean;
-  onSelect: (key: KeygenResult, checked: boolean) => void;
-  onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
+  reset?: () => void;
+  itemClass?: string;
+  onFilter?: (text: string, listType: TransferListType) => void;
 }

@@ -10,16 +10,34 @@ export interface TransferTokens {
   transferFontSize: string;
   /**
    * @type {string}
+   * @token Size-23
+   * @description 穿梭框头部区域的高度
+   */
+  transferHeaderHeight: string;
+  /**
+   * @type {string}
    * @token 12/regular
    * @description 穿梭框小尺寸字体字号
    */
   transferSmallFontSize: string;
   /**
    * @type {string}
+   * @token Size-22
+   * @description 穿梭框小尺寸头部区域的高度
+   */
+  transferSmallHeaderHeight: string;
+  /**
+   * @type {string}
    * @token 16/regular
    * @description 穿梭框大尺寸字体字号
    */
   transferLargeFontSize: string;
+  /**
+   * @type {string}
+   * @token Size-24
+   * @description 穿梭框大尺寸头部区域的高度
+   */
+  transferLargeHeaderHeight: string;
   /**
    * @type {string}
    * @token Neutral-border-1
@@ -40,6 +58,12 @@ export interface TransferTokens {
   transferIconColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-2
+   * @description 穿梭框禁用时的字体颜色
+   */
+  transferDisabledFontColor: string;
+  /**
+   * @type {string}
    * @token Radius-4
    * @description 穿梭框边框圆角
    */
@@ -47,7 +71,7 @@ export interface TransferTokens {
   /**
    * @type {string}
    * @token Neutral-fill-2
-   * @description 穿梭框undefined背景颜色
+   * @description 穿梭框头部区域的背景颜色
    */
   transferHeaderBackgroundColor: string;
   /**

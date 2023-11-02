@@ -5,11 +5,15 @@ import { TransferTokens } from './type';
 
 const transferTokens: TransferTokens = {
   transferFontSize: '14/regular',
+  transferHeaderHeight: 'Size-23',
   transferSmallFontSize: '12/regular',
+  transferSmallHeaderHeight: 'Size-22',
   transferLargeFontSize: '16/regular',
+  transferLargeHeaderHeight: 'Size-24',
   transferBorderColor: 'Neutral-border-1',
   transferFontColor: 'Neutral-text-5',
   transferIconColor: 'Neutral-text-4',
+  transferDisabledFontColor: 'Neutral-text-2',
   transferBorderRadius: 'Radius-4',
   transferHeaderBackgroundColor: 'Neutral-fill-2',
   transferIconBackgroundColor: 'Neutral-fill-3',

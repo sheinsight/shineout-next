@@ -9,19 +9,23 @@ import Checkbox from '../checkbox';
 const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => {
   const {
     jssStyle,
+    size,
     data,
     datum,
     listDatum,
     lineHeight,
     renderItem: renderItemProp,
     simple,
+    itemClass,
     listType,
   } = props;
   const listItem = useRef<HTMLDivElement>(null);
   const listItemHeight = useRef(lineHeight);
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
-  const rootClass = classNames(styles.item);
+  const isChecked = listDatum.check(data);
+  const disabled = listDatum.disabledCheck(data);
+  const rootClass = classNames(styles.item, itemClass, disabled && styles.disabled);
 
   const renderItem = () => {
     if (util.isString(renderItemProp)) {
@@ -42,6 +46,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
   };
 
   const handleRemove = () => {
+    if (disabled) return;
     datum.remove(data);
   };
 
@@ -53,14 +58,10 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     );
   };
 
-  const isChecked = listDatum.check(data);
-
   const renderCheckbox = () => {
-    const disabled = listDatum.disabledCheck(data);
-
     if (simple && listType === 'target')
       return (
-        <span className={styles.simpleTarget}>
+        <span className={classNames(styles.simpleTarget, disabled && styles.disabled)}>
           {renderItem()}
           {renderRemove()}
         </span>
@@ -68,6 +69,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     return (
       <Checkbox
         theme='dark'
+        size={size}
         jssStyle={jssStyle}
         className={styles.checkbox}
         checked={isChecked}

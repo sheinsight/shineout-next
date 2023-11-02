@@ -35,13 +35,12 @@ export interface CheckboxStyle {
 
 export interface SimpleCheckboxProps
   extends Omit<BaseCheckProps, 'checked' | 'defaultChecked'>,
-    Pick<CommonType, 'style' | 'className'> {
+    Pick<CommonType, 'style' | 'className' | 'size'> {
   jssStyle: CheckboxStyle;
   children?: React.ReactNode;
   checked?: boolean | 'indeterminate';
   defaultChecked?: boolean | 'indeterminate';
   renderFooter?: (checked?: boolean) => React.ReactNode;
-  size?: 'small' | 'large';
   theme?: 'dark';
 }
 

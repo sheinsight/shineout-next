@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { util } from '@sheinx/hooks';
+import { util, KeygenResult } from '@sheinx/hooks';
 import { VirtualRefType } from '../virtual-scroll/virtual-scroll.type';
 import { TransferClasses } from './transfer.type';
 import { TransferListProps } from './transfer-list.type';
@@ -10,31 +10,34 @@ import Empty from '../empty';
 import Input from '../input';
 import Spin from '../spin';
 import VirtualScroll from '../virtual-scroll';
-import Icons from '../icons';
 
-const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
+const TransferList = <DataItem, Value extends KeygenResult[]>(
+  props: TransferListProps<DataItem, Value>,
+) => {
   const {
     jssStyle,
     datum,
     listDatum,
     data,
+    size,
     value,
     renderItem,
     keygen,
     loading,
+    listStyle,
+    listClassName,
     listHeight = 180,
-    lineHeight = 34,
+    lineHeight: lineHeightProp,
     listType,
-    itemsInView = 20,
+    rowsInView = 20,
     colNum = 1,
     empty,
     title,
     footer,
+    itemClass,
     filterText,
     simple,
     onFilter,
-    onSelectAll,
-    onRemoveAll,
   } = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,15 +48,22 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
     [styles.source]: listType === 'source',
     [styles.target]: listType === 'target',
   });
+  const listClass = classNames(styles.list, listClassName);
 
-  // const getData = () => {
-  //   if (!onFilter || !filterText) {
-  //     return data;
-  //   }
-  //   const isSource = listType === 'source';
-  //   const filterData = data.filter((item: DataItem) => onFilter(filterText, item, isSource));
-  //   return filterData;
-  // };
+  const getLineHeight = () => {
+    if (lineHeightProp) {
+      return lineHeightProp;
+    }
+    if (size === 'small') {
+      return 32;
+    }
+    if (size === 'large') {
+      return 36;
+    }
+    return 34;
+  };
+
+  const lineHeight = getLineHeight();
 
   const getScrollHeight = () => {
     const rows = Math.ceil(data.length / colNum);
@@ -66,7 +76,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
   };
 
   const handleFilter = (v?: string) => {
-    onFilter(v, listType);
+    onFilter?.(v as string, listType);
   };
 
   const renderHeader = () => {
@@ -76,13 +86,13 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
         keygen={keygen}
         title={title}
         datum={datum}
+        size={size}
         data={data}
         value={value}
         listDatum={listDatum}
         listType={listType}
         simple={simple}
-        onSelectAll={onSelectAll}
-        onRemoveAll={onRemoveAll}
+        reset={virtualRef.current?.reset}
       ></TransferListHeader>
     );
   };
@@ -96,7 +106,7 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
           delay={400}
           value={filterText}
           onChange={handleFilter}
-          suffix={Icons.Search}
+          // suffix={Icons.Search}
         ></Input>
       </div>
     );
@@ -115,12 +125,12 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
 
   const renderList = () => {
     const start = currentIndex * colNum;
-    const end = (currentIndex + itemsInView) * colNum;
+    const end = (currentIndex + rowsInView) * colNum;
     let items = data.slice(start, end);
     const scrollHeight = getScrollHeight();
 
     return (
-      <div className={styles.list} style={{ height: listHeight }}>
+      <div className={listClass} style={{ ...listStyle, height: listHeight }}>
         {items.length > 0 && (
           <VirtualScroll
             virtualRef={virtualRef}
@@ -138,10 +148,12 @@ const TransferList = <DataItem,>(props: TransferListProps<DataItem>) => {
                 <TransferListItem
                   key={key}
                   jssStyle={jssStyle}
+                  size={size}
                   data={d}
                   datum={datum}
                   listDatum={listDatum}
                   simple={simple}
+                  itemClass={itemClass}
                   listType={listType}
                   keygen={keygen}
                   lineHeight={lineHeight}

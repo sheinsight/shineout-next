@@ -1,11 +1,14 @@
 import classNames from 'classnames';
+import { KeygenResult } from '@sheinx/hooks';
 import { TransferClasses } from './transfer.type';
 import { Checkbox } from '../checkbox';
 import { TransferListHeaderProps } from './transfer-list-header.type';
 import Icons from '../icons';
 
-const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>) => {
-  const { jssStyle, value, data, listType, simple, datum, listDatum, title } = props;
+const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
+  props: TransferListHeaderProps<DataItem, Value>,
+) => {
+  const { jssStyle, size, value, data, listType, simple, reset, datum, listDatum, title } = props;
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.header);
@@ -38,6 +41,7 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
   const handleChange = () => {
     if (simple) {
       datum.add(listDatum.getVaildData());
+      reset?.();
       return;
     }
     if (data.length === 0) return;
@@ -61,12 +65,13 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
   };
 
   const handleRemoveAll = () => {
-    datum.remove(datum.getVaildData());
+    datum.remove(listDatum.getVaildData());
+    reset?.();
   };
 
   const renderCount = () => {
     return (
-      <span>
+      <span className={styles.count}>
         {value.length}/{data.length}
       </span>
     );
@@ -84,14 +89,20 @@ const TransferListHeader = <DataItem,>(props: TransferListHeaderProps<DataItem>)
       );
     }
 
-    return title;
+    return <span className={styles.title}>{title}</span>;
   };
 
   const renderCheckbox = () => {
     if (simple && listType === 'target') return renderCount();
 
     return (
-      <Checkbox jssStyle={jssStyle} theme='dark' checked={checked} onChange={handleChange}>
+      <Checkbox
+        jssStyle={jssStyle}
+        size={size}
+        theme='dark'
+        checked={checked}
+        onChange={handleChange}
+      >
         {renderCount()}
       </Checkbox>
     );
