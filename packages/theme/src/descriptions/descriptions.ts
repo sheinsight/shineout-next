@@ -5,6 +5,7 @@ import { DescriptionsTokens } from './type';
 
 const descriptionsTokens: DescriptionsTokens = {
   descriptionsFontSize: '14/regular',
+  descriptionsLabelFontColor: 'Neutral-text-4',
 };
 
 export default descriptionsTokens;

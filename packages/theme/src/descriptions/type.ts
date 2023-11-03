@@ -5,7 +5,13 @@ export interface DescriptionsTokens {
   /**
    * @type {string}
    * @token 14/regular
-   * @description xxx字体字号
+   * @description 描述列表字体字号
    */
   descriptionsFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 描述列表标签的字体颜色
+   */
+  descriptionsLabelFontColor: string;
 }

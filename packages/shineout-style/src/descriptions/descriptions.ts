@@ -1,4 +1,4 @@
-// import token from '@sheinx/theme';
+import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 
 export type DescriptionsClass =
@@ -48,7 +48,7 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     boxSizing: 'border-box',
     fontSize: '14px',
     lineHeight: 1.5715,
-    color: 'black',
+    color: token.descriptionsLabelFontColor,
     fontWeight: '500',
     whiteSpace: 'nowrap',
     width: '1px',

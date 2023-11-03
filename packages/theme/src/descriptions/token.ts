@@ -6,7 +6,7 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const descriptionsTokenDescription = { descriptions: 'xxx' };
+const descriptionsTokenDescription = { descriptions: '描述列表', label: '标签的' };
 
 /**
  * token 值映射表
@@ -15,7 +15,14 @@ const descriptionsTokenDescription = { descriptions: 'xxx' };
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 descriptionsRules 强关联，非 descriptionsRules 规则内的 token 需手动增加或删减。
  */
-const descriptionsTokenValue = { font: { size: '14/regular' } };
+const descriptionsTokenValue = {
+  font: { size: '14/regular' },
+  padding: { x: '', y: '' },
+  small: { font: { size: '' }, padding: { x: '', y: '' } },
+  large: { font: { size: '' }, padding: { x: '', y: '' } },
+  label: { font: { color: 'Neutral-text-4' } },
+  value: { font: { color: '' } },
+};
 
 const descriptionsTokenExtraValue = {};
 
