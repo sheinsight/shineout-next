@@ -27,8 +27,5 @@ const BaseUpload = <T,>(props: BaseUploadProps<T>) => {
 export default <T,>(props: UploadProps<T>) => {
   const customProps = useUploadCommon({ rules: props.rules });
 
-  return useFieldCommon<BaseUploadProps<T>, BaseUploadProps<T>['value']>(
-    { ...props, ...customProps },
-    BaseUpload,
-  );
+  return useFieldCommon({ ...props, ...customProps }, BaseUpload<T>);
 };

@@ -14,5 +14,5 @@ const Input = (props: BaseInputProps) => {
   return <UnStyleInput {...props} jssStyle={jssStyle} />;
 };
 export default (props: InputProps) => {
-  return useFieldCommon<BaseInputProps, BaseInputProps['value']>(props, Input);
+  return useFieldCommon(props, Input);
 };

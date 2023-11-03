@@ -1,25 +1,29 @@
-import React from 'react';
-import { Rate } from '@sheinx/base';
+import { Rate as UnStyleRate } from '@sheinx/base';
 import { useRateStyle } from '@sheinx/shineout-style';
-import { ArgProps, RateProps } from './rate.type';
+import { ArgProps, RateProps, BaseRateProps } from './rate.type';
+import useFieldCommon from '../hooks/use-field-common';
 
 const jssStyle = {
   rate: useRateStyle,
 };
 
-type InnerProps = Omit<RateProps, keyof ArgProps>;
+type InnerProps = Omit<BaseRateProps, keyof ArgProps>;
+
+const BaseRate = (props: BaseRateProps) => {
+  return <UnStyleRate jssStyle={jssStyle} {...props} />;
+};
+
+const Rate = (props: RateProps) => {
+  return useFieldCommon(props, BaseRate);
+};
+
 export default (
   background: ArgProps['background'],
   front: ArgProps['front'],
   opts?: InnerProps,
 ) => {
-  return (props: RateProps) => (
-    <Rate
-      jssStyle={jssStyle}
-      {...props}
-      {...opts}
-      background={background}
-      front={front || background}
-    />
-  );
+  const RateIns = (props: RateProps) => {
+    return <Rate {...opts} background={background} front={front || background} {...props} />;
+  };
+  return RateIns;
 };
