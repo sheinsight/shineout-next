@@ -45,8 +45,8 @@ const useDescriptions = (props: BaseDescriptionsProps) => {
           {
             ...d,
             span: d.span ? (d.span > currentColumn ? currentColumn : d.span) : 1,
-            ItemValueStyle: Object.assign({}, valueStyle, d.ItemValueStyle),
-            ItemLabelStyle: Object.assign({}, labelStyle, d.ItemLabelStyle),
+            ItemValueStyle: Object.assign({}, valueStyle, d?.ItemValueStyle),
+            ItemLabelStyle: Object.assign({}, labelStyle, d?.ItemLabelStyle),
           },
         ]);
       else
@@ -57,8 +57,8 @@ const useDescriptions = (props: BaseDescriptionsProps) => {
               ? currentColumn - lengthRow
               : d.span
             : 1,
-          ItemValueStyle: Object.assign({}, valueStyle, d.ItemValueStyle),
-          ItemLabelStyle: Object.assign({}, labelStyle, d.ItemLabelStyle),
+          ItemValueStyle: Object.assign({}, valueStyle, d?.ItemValueStyle),
+          ItemLabelStyle: Object.assign({}, labelStyle, d?.ItemLabelStyle),
         });
     });
     const lastRenderItem = renderItem[renderItem.length - 1];

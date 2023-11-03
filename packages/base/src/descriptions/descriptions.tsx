@@ -38,11 +38,11 @@ const Descriptions = (props: DescriptionsProps) => {
   const renderHorizontal = (d: DescriptionsItemProps[], i: number) => (
     <tr key={i} className={jssStyle?.descriptions.row}>
       {d.map((_d, _i) => {
-        const colSpanProps = _d.span > 1 ? { colSpan: _d.span * 2 - 1 } : {};
+        const colSpanProps = _d.span && _d.span > 1 ? { colSpan: _d.span * 2 - 1 } : {};
         return (
           <Fragment key={_d.key || _i}>
             <td className={jssStyle?.descriptions.label} style={_d.ItemLabelStyle}>
-              {_d.label}
+              {_d?.label}
               {colon}
             </td>
             <td
@@ -50,7 +50,7 @@ const Descriptions = (props: DescriptionsProps) => {
               style={_d.ItemValueStyle}
               {...colSpanProps}
             >
-              {_d.value}
+              {_d?.value}
             </td>
           </Fragment>
         );
@@ -62,7 +62,7 @@ const Descriptions = (props: DescriptionsProps) => {
     <Fragment key={i}>
       <tr className={jssStyle?.descriptions.row}>
         {d.map((_d, _i) => {
-          const colSpanProps = _d.span > 1 ? { colSpan: _d.span } : {};
+          const colSpanProps = _d.span && _d.span > 1 ? { colSpan: _d.span } : {};
           return (
             <td
               key={`${_d.key || _i}_k`}
@@ -70,7 +70,7 @@ const Descriptions = (props: DescriptionsProps) => {
               style={_d.ItemLabelStyle}
               {...colSpanProps}
             >
-              {_d.label}
+              {_d?.label}
               {colon}
             </td>
           );
@@ -78,7 +78,7 @@ const Descriptions = (props: DescriptionsProps) => {
       </tr>
       <tr className={jssStyle?.descriptions.row}>
         {d.map((_d, _i) => {
-          const colSpanProps = _d.span > 1 ? { colSpan: _d.span } : {};
+          const colSpanProps = _d.span && _d.span > 1 ? { colSpan: _d.span } : {};
           return (
             <td
               key={`${_d.key || _i}_v`}
@@ -86,7 +86,7 @@ const Descriptions = (props: DescriptionsProps) => {
               style={_d.ItemValueStyle}
               {...colSpanProps}
             >
-              {_d.value}
+              {_d?.value}
             </td>
           );
         })}
@@ -97,15 +97,15 @@ const Descriptions = (props: DescriptionsProps) => {
   const renderInline = (d: DescriptionsItemProps[], i: number) => (
     <tr key={i} className={jssStyle?.descriptions.row}>
       {d.map((_d, _i) => {
-        const colSpanProps = _d.span > 1 ? { colSpan: _d.span } : {};
+        const colSpanProps = _d.span && _d.span > 1 ? { colSpan: _d.span } : {};
         return (
           <td key={_d.key || _i} {...colSpanProps} className={jssStyle?.descriptions.item}>
             <div className={jssStyle?.descriptions.labelInline} style={_d.ItemLabelStyle}>
-              {_d.label}
+              {_d?.label}
               {colon}
             </div>
             <div className={jssStyle?.descriptions.valueInline} style={_d.ItemValueStyle}>
-              {_d.value}
+              {_d?.value}
             </div>
           </td>
         );
