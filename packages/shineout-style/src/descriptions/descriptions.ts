@@ -122,7 +122,7 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
       borderRight: '1px solid rgb(229,230,235)',
     },
     '& $item': {
-      padding: '7px 20px',
+      padding: '12px 20px',
       borderRight: '1px solid rgb(229,230,235)',
     },
     '& $label:last-child': {

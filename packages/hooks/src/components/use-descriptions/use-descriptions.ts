@@ -11,9 +11,11 @@ const getLengthByrow = (arr: DescriptionsItemProps[]) =>
   isArray(arr) ? arr.reduce((prev, now) => prev + (now.span || 1), 0) : 0;
 
 const useDescriptions = (props: BaseDescriptionsProps) => {
-  const { item, column, valueStyle, labelStyle } = props;
+  const { items, column, valueStyle, labelStyle } = props;
   const [screen, setScreen] = useState<Breakpoint>();
   const responsiveToken = useRef<string>();
+
+  const renderItem: Array<DescriptionsItemProps[]> = [];
 
   useEffect(() => {
     responsiveToken.current = ResponsiveObserve.subscribe((screens: ScreenMap) => {
@@ -34,10 +36,8 @@ const useDescriptions = (props: BaseDescriptionsProps) => {
   if (column && isObject(column)) currentColumn = column[screen as Breakpoint] || 3;
   if (column && isNumber(column) && column > 0) currentColumn = column;
 
-  const renderItem: Array<DescriptionsItemProps[]> = [];
-
-  if (isArray(item) && item.length && currentColumn) {
-    item.forEach((d: DescriptionsItemProps) => {
+  if (isArray(items) && items.length && currentColumn) {
+    items.forEach((d: DescriptionsItemProps) => {
       const lastRenderItem = renderItem[renderItem.length - 1];
       const lengthRow = getLengthByrow(lastRenderItem);
       if (lengthRow === 0 || lengthRow === currentColumn)

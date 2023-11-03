@@ -11,7 +11,7 @@ const Descriptions = (props: DescriptionsProps) => {
     title,
     extra,
     column = 3,
-    item,
+    items = [],
     colon,
     layout = 'horizontal',
     border = false,
@@ -22,7 +22,7 @@ const Descriptions = (props: DescriptionsProps) => {
     // size
   } = props;
   const { renderItem } = useDescriptions({
-    item,
+    items,
     column,
     valueStyle,
     labelStyle,

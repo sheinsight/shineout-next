@@ -9,7 +9,7 @@ export interface DescriptionsItemProps {
   ItemValueStyle?: React.CSSProperties;
 }
 export interface BaseDescriptionsProps {
-  item?: DescriptionsItemProps[];
+  items?: DescriptionsItemProps[];
   labelStyle?: React.CSSProperties;
   valueStyle?: React.CSSProperties;
   column?:
