@@ -1,8 +1,14 @@
-import { render, cleanup, screen, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Rate from '..';
 import mountTest from '../../tests/mountTest';
-import { classTest, createClassName, snapshotTest, styleTest } from '../../tests/utils';
+import {
+  classTest,
+  createClassName,
+  snapshotTest,
+  styleTest,
+  textContentTest,
+} from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 import RateBase from '../__example__/01-base';
 import Ratehalf from '../__example__/02-half';
@@ -16,9 +22,9 @@ import RateColor from '../__example__/09-color';
 import RateClear from '../__example__/10-clear';
 
 const SO_PREFIX = 'rate';
-const originClasses = ['wrapper', 'inner', 'item', 'itemBg', 'itemFront', 'itemHalf'];
+const originClasses = ['wrapper', 'inner', 'item', 'itemBg', 'itemFront', 'itemHalf', 'text'];
 const originItemClasses = ['itemChecked', 'itemCheckedHalf'];
-const { wrapper, inner, item, itemBg, itemFront, itemChecked, itemCheckedHalf, itemHalf } =
+const { wrapper, inner, item, itemBg, itemFront, itemChecked, itemCheckedHalf, itemHalf, text } =
   createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const star = (
@@ -87,7 +93,6 @@ describe('Rate[Base]', () => {
   test('should render when set allowHalf', () => {
     const { container } = render(<StarRate allowHalf />);
     const rateItems = container.querySelectorAll(item);
-    screen.debug();
     rateItems.forEach((item) => {
       classLengthTest(item.querySelector(itemBg)!, 'svg', 1);
       classLengthTest(item.querySelector(itemFront)!, 'svg', 1);
@@ -101,5 +106,56 @@ describe('Rate[Base]', () => {
     classTest(rateItems[2], itemCheckedHalf);
     fireEvent.mouseEnter(rateItems[2].querySelector(itemFront)!);
     classTest(rateItems[2], itemChecked);
+  });
+  test('should render when set size', () => {
+    const size = 50;
+    const { container } = render(<StarRate size={size} />);
+    const rateItems = container.querySelectorAll(item);
+    rateItems.forEach((item) => {
+      styleTest(item, `font-size: ${size}px; width: ${size}px;`);
+    });
+  });
+  test('should render when set text', () => {
+    const texts = ['poor', 'fair', 'good', 'very good', 'excellent'];
+    const { container } = render(<StarRate text={texts} />);
+    const rateItems = container.querySelectorAll(item);
+    classLengthTest(container, text, 0);
+    fireEvent.click(rateItems[2].querySelector(itemFront)!);
+    classLengthTest(container, text, 1);
+    textContentTest(container.querySelector(text)!, texts[2]);
+    fireEvent.click(rateItems[3].querySelector(itemFront)!);
+    textContentTest(container.querySelector(text)!, texts[3]);
+  });
+  test('should render when set value', () => {
+    const { container } = render(<StarRate value={3} />);
+    const rateItems = container.querySelectorAll(item);
+    rateItems.forEach((item, index) => {
+      if (index > 2) return;
+      classTest(item, itemChecked);
+    });
+  });
+  test('should render when set defaultValue', () => {
+    const { container } = render(<StarRate defaultValue={3} />);
+    const rateItems = container.querySelectorAll(item);
+    rateItems.forEach((item, index) => {
+      if (index > 2) return;
+      classTest(item, itemChecked);
+    });
+  });
+  test('should render when set defaultValue and value', () => {
+    const { container } = render(<StarRate defaultValue={3} value={4} />);
+    const rateItems = container.querySelectorAll(item);
+    rateItems.forEach((item, index) => {
+      if (index > 3) return;
+      classTest(item, itemChecked);
+    });
+  });
+  test('should render when set disabled', () => {
+    const { container } = render(<StarRate disabled />);
+    const rateItems = container.querySelectorAll(item);
+    fireEvent.mouseEnter(rateItems[2].querySelector(itemFront)!);
+    rateItems.forEach((item) => {
+      classTest(item, itemChecked, false);
+    });
   });
 });
