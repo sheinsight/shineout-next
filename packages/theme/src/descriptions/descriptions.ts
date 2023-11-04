@@ -4,8 +4,13 @@
 import { DescriptionsTokens } from './type';
 
 const descriptionsTokens: DescriptionsTokens = {
-  descriptionsFontSize: '14/regular',
+  descriptionsTitleFontSize: '16px',
   descriptionsLabelFontColor: 'Neutral-text-4',
+  descriptionsTitleFontColor: 'Neutral-text-5',
+  descriptionsTitleFontWeight: '500',
+  descriptionsLabelFontWeight: '400',
+  descriptionsTitleLineHeight: '24px',
+  descriptionsTitleHeight: '24px',
 };
 
 export default descriptionsTokens;

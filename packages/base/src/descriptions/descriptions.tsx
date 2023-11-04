@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import { DescriptionsProps } from './descriptions.type';
-import { useDescriptions, type DescriptionsItemProps } from '@sheinx/hooks';
+import { useDescriptions, usePersistFn, type DescriptionsItemProps } from '@sheinx/hooks';
 
 const Descriptions = (props: DescriptionsProps) => {
   const {
@@ -35,10 +35,13 @@ const Descriptions = (props: DescriptionsProps) => {
     </div>
   );
 
+  const getColSpan = usePersistFn((d: DescriptionsItemProps, isHorizontal?: boolean) =>
+    d.span && d.span > 1 ? (isHorizontal ? { colSpan: d.span * 2 - 1 } : { colSpan: d.span }) : {},
+  );
+
   const renderHorizontal = (d: DescriptionsItemProps[], i: number) => (
     <tr key={i} className={jssStyle?.descriptions.row}>
       {d.map((_d, _i) => {
-        const colSpanProps = _d.span && _d.span > 1 ? { colSpan: _d.span * 2 - 1 } : {};
         return (
           <Fragment key={_d.key || _i}>
             <td className={jssStyle?.descriptions.label} style={_d.ItemLabelStyle}>
@@ -48,7 +51,7 @@ const Descriptions = (props: DescriptionsProps) => {
             <td
               className={jssStyle?.descriptions.value}
               style={_d.ItemValueStyle}
-              {...colSpanProps}
+              {...getColSpan(_d, true)}
             >
               {_d?.value}
             </td>
@@ -62,13 +65,12 @@ const Descriptions = (props: DescriptionsProps) => {
     <Fragment key={i}>
       <tr className={jssStyle?.descriptions.row}>
         {d.map((_d, _i) => {
-          const colSpanProps = _d.span && _d.span > 1 ? { colSpan: _d.span } : {};
           return (
             <td
               key={`${_d.key || _i}_k`}
               className={jssStyle?.descriptions.label}
               style={_d.ItemLabelStyle}
-              {...colSpanProps}
+              {...getColSpan(_d)}
             >
               {_d?.label}
               {colon}
@@ -78,13 +80,12 @@ const Descriptions = (props: DescriptionsProps) => {
       </tr>
       <tr className={jssStyle?.descriptions.row}>
         {d.map((_d, _i) => {
-          const colSpanProps = _d.span && _d.span > 1 ? { colSpan: _d.span } : {};
           return (
             <td
               key={`${_d.key || _i}_v`}
               className={jssStyle?.descriptions.value}
               style={_d.ItemValueStyle}
-              {...colSpanProps}
+              {...getColSpan(_d)}
             >
               {_d?.value}
             </td>
@@ -97,9 +98,8 @@ const Descriptions = (props: DescriptionsProps) => {
   const renderInline = (d: DescriptionsItemProps[], i: number) => (
     <tr key={i} className={jssStyle?.descriptions.row}>
       {d.map((_d, _i) => {
-        const colSpanProps = _d.span && _d.span > 1 ? { colSpan: _d.span } : {};
         return (
-          <td key={_d.key || _i} {...colSpanProps} className={jssStyle?.descriptions.item}>
+          <td key={_d.key || _i} {...getColSpan(_d)} className={jssStyle?.descriptions.item}>
             <div className={jssStyle?.descriptions.labelInline} style={_d.ItemLabelStyle}>
               {_d?.label}
               {colon}

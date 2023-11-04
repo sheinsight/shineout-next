@@ -8,10 +8,12 @@
  */
 const descriptionsRules = {
   size: [
-    ['', 'small', 'large'],
+    ['default', 'small', 'large', 'title'],
     ['font-size', 'padding-x', 'padding-y'],
   ],
-  color: [['label', 'value'], ['font-color']],
+  color: [['label', 'value', 'title', 'extra'], ['font-color']],
+  weight: [['title', 'label', 'value'], ['font-weight']],
+  height: [['title'], ['line-height', 'height']],
 };
 
 module.exports = {

@@ -16,12 +16,18 @@ const descriptionsTokenDescription = { descriptions: '描述列表', label: '标
  * 注意，该映射表的内容不与 descriptionsRules 强关联，非 descriptionsRules 规则内的 token 需手动增加或删减。
  */
 const descriptionsTokenValue = {
-  font: { size: '14/regular' },
-  padding: { x: '', y: '' },
+  default: { font: { size: '' }, padding: { x: '', y: '' } },
   small: { font: { size: '' }, padding: { x: '', y: '' } },
   large: { font: { size: '' }, padding: { x: '', y: '' } },
-  label: { font: { color: 'Neutral-text-4' } },
-  value: { font: { color: '' } },
+  title: {
+    font: { size: '16px', color: 'Neutral-text-5', weight: '500' },
+    padding: { x: '', y: '' },
+    line: { height: '24px' },
+    height: '24px',
+  },
+  label: { font: { color: 'Neutral-text-4', weight: '400' } },
+  value: { font: { color: '', weight: '' } },
+  extra: { font: { color: '' } },
 };
 
 const descriptionsTokenExtraValue = {};
