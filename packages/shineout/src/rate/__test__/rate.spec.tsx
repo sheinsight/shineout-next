@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Rate from '..';
 import mountTest from '../../tests/mountTest';
@@ -23,9 +23,19 @@ import RateClear from '../__example__/10-clear';
 
 const SO_PREFIX = 'rate';
 const originClasses = ['wrapper', 'inner', 'item', 'itemBg', 'itemFront', 'itemHalf', 'text'];
-const originItemClasses = ['itemChecked', 'itemCheckedHalf'];
-const { wrapper, inner, item, itemBg, itemFront, itemChecked, itemCheckedHalf, itemHalf, text } =
-  createClassName(SO_PREFIX, originClasses, originItemClasses);
+const originItemClasses = ['itemChecked', 'itemCheckedHalf', 'itemDisabled'];
+const {
+  wrapper,
+  inner,
+  item,
+  itemBg,
+  itemFront,
+  itemChecked,
+  itemCheckedHalf,
+  itemHalf,
+  text,
+  itemDisabled,
+} = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const star = (
   <svg viewBox='0 0 24 24' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
@@ -156,6 +166,16 @@ describe('Rate[Base]', () => {
     fireEvent.mouseEnter(rateItems[2].querySelector(itemFront)!);
     rateItems.forEach((item) => {
       classTest(item, itemChecked, false);
+      classTest(item, itemDisabled);
     });
+  });
+  test('should render when set disabled and set value is decimal', () => {
+    const { container } = render(<StarRate value={3.6} disabled />);
+    const rateItems = container.querySelectorAll(item);
+    rateItems.forEach((item, index) => {
+      if (index > 3) return;
+      classTest(item, itemChecked);
+    });
+    screen.debug();
   });
 });
