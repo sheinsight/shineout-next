@@ -2,14 +2,31 @@
 import { JsStyles } from '../jss-style';
 
 export type StepsClasses = {
-  wrapper: string;
+  steps: string;
+  step: string;
+  disabled: string;
+  title: string;
+  description: string;
+  wait: string;
+  process: string;
+  finish: string;
+  error: string;
+  icon: string;
 };
+
 export type StepsClassType = keyof StepsClasses;
 
 const stepsStyle: JsStyles<StepsClassType> = {
-  wrapper: {
-    display: 'block',
-  },
+  steps: {},
+  step: {},
+  disabled: {},
+  title: {},
+  description: {},
+  wait: {},
+  process: {},
+  finish: {},
+  error: {},
+  icon: {},
 };
 
 export default stepsStyle;

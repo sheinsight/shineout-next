@@ -1,13 +1,13 @@
 // import { } from '@sheinx/hooks';
 // import classNames from 'classnames';
-import React from 'react';
+// import React, { Children } from 'react';
 import { StepsProps } from './steps.type';
 
 const Steps = (props: StepsProps) => {
-  const {} = props;
+  const { children } = props;
   // ...
 
-  return <>Steps.tsx</>;
+  return <div>{children}</div>;
 };
 
 export default Steps;
