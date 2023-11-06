@@ -13,13 +13,12 @@ const Descriptions = (props: DescriptionsProps) => {
     column = 3,
     items = [],
     colon,
-    layout = 'horizontal',
+    layout = 'inlineHorizontal',
     border = false,
     tableLayout = 'auto',
     valueStyle,
     labelStyle,
-    // TODO: with tss
-    // size
+    size = 'default',
   } = props;
   const { renderItem } = useDescriptions({
     items,
@@ -42,6 +41,7 @@ const Descriptions = (props: DescriptionsProps) => {
   const renderHorizontal = (d: DescriptionsItemProps[], i: number) => (
     <tr key={i} className={jssStyle?.descriptions.row}>
       {d.map((_d, _i) => {
+        console.log('112', _d.label, _d.span, getColSpan(_d, true));
         return (
           <Fragment key={_d.key || _i}>
             <td className={jssStyle?.descriptions.label} style={_d.ItemLabelStyle}>
@@ -99,13 +99,15 @@ const Descriptions = (props: DescriptionsProps) => {
     <tr key={i} className={jssStyle?.descriptions.row}>
       {d.map((_d, _i) => {
         return (
-          <td key={_d.key || _i} {...getColSpan(_d)} className={jssStyle?.descriptions.item}>
-            <div className={jssStyle?.descriptions.labelInline} style={_d.ItemLabelStyle}>
-              {_d?.label}
-              {colon}
-            </div>
-            <div className={jssStyle?.descriptions.valueInline} style={_d.ItemValueStyle}>
-              {_d?.value}
+          <td key={_d.key || _i} {...getColSpan(_d)} className={jssStyle?.descriptions.inlineTable}>
+            <div className={jssStyle?.descriptions.item}>
+              <div className={jssStyle?.descriptions.labelInline} style={_d.ItemLabelStyle}>
+                {_d?.label}
+                {colon}
+              </div>
+              <div className={jssStyle?.descriptions.valueInline} style={_d.ItemValueStyle}>
+                {_d?.value}
+              </div>
             </div>
           </td>
         );
@@ -125,6 +127,8 @@ const Descriptions = (props: DescriptionsProps) => {
     tableLayout === 'fixed' && jssStyle?.descriptions.tableLayoutFixed,
     layout === 'inlineHorizontal' && jssStyle?.descriptions.inlineHorizontal,
     layout === 'horizontal' && jssStyle?.descriptions.horizontal,
+    size === 'small' && jssStyle?.descriptions.small,
+    size === 'large' && jssStyle?.descriptions.large,
   );
 
   return (

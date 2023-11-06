@@ -22,17 +22,19 @@ export interface DescriptionsClasses {
   valueInline: string;
   inlineHorizontal: string;
   horizontal: string;
+  inlineTable: string;
+  small: string;
+  large: string;
 }
 
 export interface DescriptionsProps
-  extends Pick<CommonType, 'className' | 'style'>,
+  extends Pick<CommonType, 'className' | 'style' | 'size'>,
     BaseDescriptionsProps {
   jssStyle?: {
     descriptions: DescriptionsClasses;
   };
   border?: boolean;
   extra?: React.ReactNode;
-  size?: 'default' | 'large' | 'small';
   title?: React.ReactNode;
   layout?: 'horizontal' | 'vertical' | 'inlineHorizontal' | 'inlineVertical';
   colon?: React.ReactNode;

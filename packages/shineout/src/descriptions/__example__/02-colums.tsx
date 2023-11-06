@@ -1,7 +1,7 @@
 /**
- * cn - 基本用法
+ * cn - 单列样式
  *    --
- * en - Basic
+ * en - One Colums
  *    --
  */
 import React from 'react';
@@ -33,7 +33,14 @@ const data = [
 export default () => {
   return (
     <div>
-      <Descriptions items={data} title='User Info' colon={` :`} />
+      <Descriptions items={data} title='User Info' layout='horizontal' column={1} />
+      <Descriptions
+        items={data}
+        title='User Info'
+        layout='horizontal'
+        column={1}
+        labelStyle={{ textAlign: 'right' }}
+      />
     </div>
   );
 };

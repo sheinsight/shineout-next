@@ -4,8 +4,7 @@
 import { DescriptionsTokens } from './type';
 
 const descriptionsTokens: DescriptionsTokens = {
-  descriptionsTitleFontSize: '16/medium',
-  descriptionsBorderFontSize: '1px',
+  descriptionsTitlePaddingBottom: 'Padding-12',
   descriptionsBorderPaddingTop: 'Padding-12',
   descriptionsBorderPaddingBottom: 'Padding-12',
   descriptionsBorderPaddingLeft: 'Padding-8',
@@ -13,6 +12,13 @@ const descriptionsTokens: DescriptionsTokens = {
   descriptionsLabelPaddingBottom: 'Padding-12',
   descriptionsLabelPaddingRight: 'Padding-8',
   descriptionsValuePaddingBottom: 'Padding-12',
+  descriptionsTableSmallSize: '12/regular',
+  descriptionsTableDefaultSize: '14/regular',
+  descriptionsTableLargeSize: '16/regular',
+  descriptionsTitleSmallSize: '14/medium',
+  descriptionsTitleDefaultSize: '16/medium',
+  descriptionsTitleLargeSize: '18/medium',
+  descriptionsBorderDefaultSize: '1px',
   descriptionsLabelColor: 'Neutral-text-4',
   descriptionsValueColor: 'Neutral-text-5',
   descriptionsTitleColor: 'Neutral-text-5',

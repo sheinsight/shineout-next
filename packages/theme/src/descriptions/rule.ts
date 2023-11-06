@@ -8,8 +8,12 @@
  */
 const descriptionsRules = {
   size: [
-    ['default', 'title', 'border', 'label', 'value'],
-    ['font-size', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right'],
+    ['title', 'border', 'label', 'value'],
+    ['padding-top', 'padding-bottom', 'padding-left', 'padding-right'],
+  ],
+  font: [
+    ['table', 'title', 'border'],
+    ['small-size', 'default-size', 'large-size'],
   ],
   color: [['label', 'value', 'title', 'extra', 'background', 'border'], ['color']],
   weight: [['title'], ['font-weight']],

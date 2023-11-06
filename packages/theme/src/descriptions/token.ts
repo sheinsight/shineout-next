@@ -16,30 +16,37 @@ const descriptionsTokenDescription = { descriptions: '描述列表', label: '标
  * 注意，该映射表的内容不与 descriptionsRules 强关联，非 descriptionsRules 规则内的 token 需手动增加或删减。
  */
 const descriptionsTokenValue = {
-  default: { font: { size: '' }, padding: { top: '', bottom: '', left: '', right: '' } },
   title: {
-    font: { size: '16/medium', weight: '500' },
-    padding: { top: '', bottom: '', left: '', right: '' },
+    padding: { top: '', bottom: 'Padding-12', left: '', right: '' },
+    small: { size: '14/medium' },
+    default: { size: '16/medium' },
+    large: { size: '18/medium' },
     color: 'Neutral-text-5',
+    font: { weight: '500' },
     gap: 'Size-2',
   },
   border: {
-    font: { size: '1px' },
     padding: { top: 'Padding-12', bottom: 'Padding-12', left: 'Padding-8', right: 'Padding-8' },
+    small: { size: '' },
+    default: { size: '1px' },
+    large: { size: '' },
     color: 'Neutral-border-1',
     radius: 'Size-2',
     right: { size: '0.5px' },
     bottom: { size: '0.5px' },
   },
   label: {
-    font: { size: '' },
     padding: { top: '', bottom: 'Padding-12', left: '', right: 'Padding-8' },
     color: 'Neutral-text-4',
   },
   value: {
-    font: { size: '' },
     padding: { top: '', bottom: 'Padding-12', left: '', right: '' },
     color: 'Neutral-text-5',
+  },
+  table: {
+    small: { size: '12/regular' },
+    default: { size: '14/regular' },
+    large: { size: '16/regular' },
   },
   extra: { color: '' },
   background: { color: 'Neutral-fill-2' },

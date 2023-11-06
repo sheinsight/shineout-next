@@ -14,42 +14,64 @@ export type DescriptionsClass =
   | 'tableLayoutFixed'
   | 'border'
   | 'small'
+  | 'large'
   | 'item'
   | 'labelInline'
   | 'valueInline'
   | 'inlineHorizontal'
-  | 'horizontal';
+  | 'horizontal'
+  | 'inlineTable';
 
 const descriptionsStyle: JsStyles<DescriptionsClass> = {
   wrapper: {
     display: 'block',
-    lineHeight: token.lineHeightDynamic,
+  },
+  small: {
+    '& $title': {
+      fontSize: token.descriptionsTitleSmallSize,
+    },
+    '& $table': {
+      fontSize: token.descriptionsTableSmallSize,
+    },
+  },
+  large: {
+    '& $title': {
+      fontSize: token.descriptionsTitleLargeSize,
+    },
+    '& $table': {
+      fontSize: token.descriptionsTableLargeSize,
+    },
   },
   header: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '0 0 12px 0',
+    padding: `0 0 ${token.descriptionsTitlePaddingBottom} 0`,
+    fontSize: token.descriptionsTitleDefaultSize,
   },
   title: {
-    fontSize: token.descriptionsTitleFontSize,
+    lineHeight: token.lineHeightDynamic,
     color: token.descriptionsTitleColor,
     fontWeight: token.descriptionsTitleFontWeight,
     gap: token.descriptionsTitleGap,
     flex: 1,
   },
-  extra: {},
-  body: {},
+  extra: {
+    lineHeight: token.lineHeightDynamic,
+  },
+  body: {
+    fontSize: token.descriptionsTableDefaultSize,
+  },
   table: {
     width: '100%',
     borderCollapse: 'collapse',
+    lineHeight: token.lineHeightDynamic,
   },
   row: {},
   label: {
     padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
     textAlign: 'left',
     boxSizing: 'border-box',
-    fontSize: '14px',
     color: token.descriptionsLabelColor,
     whiteSpace: 'nowrap',
   },
@@ -57,22 +79,20 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
     textAlign: 'left',
     boxSizing: 'border-box',
-    fontSize: '14px',
     color: token.descriptionsValueColor,
   },
-  small: {
-    fontSize: token.descriptionSmallFontSize,
-  },
-  item: {
+  inlineTable: {
     textAlign: 'left',
     boxSizing: 'border-box',
-    fontSize: '14px',
+    verticalAlign: 'top',
   },
+  item: {},
   labelInline: {
     padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
     textAlign: 'left',
     boxSizing: 'border-box',
     color: token.descriptionsLabelColor,
+    whiteSpace: 'nowrap',
   },
   valueInline: {
     padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
@@ -87,12 +107,15 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     },
   },
   inlineHorizontal: {
-    '& $labelInline': {
-      display: 'inline-block',
-      padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
+    '& $item': {
+      display: 'flex',
+      alignItems: 'center',
     },
-    '& $valueInline': {
-      display: 'inline-block',
+    '& $inlineTable': {
+      verticalAlign: 'middle',
+    },
+    '& $labelInline': {
+      padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
     },
   },
   tableLayoutFixed: {
@@ -104,7 +127,7 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     },
   },
   border: {
-    border: `${token.descriptionsBorderFontSize} solid ${token.descriptionsBorderColor}`,
+    border: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     borderRadius: token.descriptionsBorderRadius,
     overflow: 'hidden',
     '& $row:not(:last-child)': {
@@ -119,12 +142,12 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
       padding: `${token.descriptionsBorderPaddingLeft} ${token.descriptionsBorderPaddingTop}`,
       borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
     },
-    '& $item': {
+    '& $inlineTable': {
       padding: `${token.descriptionsInlineBorderPaddingX} ${token.descriptionsInlineBorderPaddingY}`,
       borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $labelInline': {
-      padding: 0,
+      padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
     },
     '& $valueInline': {
       padding: 0,
