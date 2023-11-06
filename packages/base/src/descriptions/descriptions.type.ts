@@ -21,6 +21,7 @@ export interface DescriptionsClasses {
   labelInline: string;
   valueInline: string;
   inlineHorizontal: string;
+  horizontal: string;
 }
 
 export interface DescriptionsProps

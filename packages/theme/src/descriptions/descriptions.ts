@@ -4,13 +4,27 @@
 import { DescriptionsTokens } from './type';
 
 const descriptionsTokens: DescriptionsTokens = {
-  descriptionsTitleFontSize: '16px',
-  descriptionsLabelFontColor: 'Neutral-text-4',
-  descriptionsTitleFontColor: 'Neutral-text-5',
+  descriptionsTitleFontSize: '16/medium',
+  descriptionsBorderFontSize: '1px',
+  descriptionsBorderPaddingTop: 'Padding-12',
+  descriptionsBorderPaddingBottom: 'Padding-12',
+  descriptionsBorderPaddingLeft: 'Padding-8',
+  descriptionsBorderPaddingRight: 'Padding-8',
+  descriptionsLabelPaddingBottom: 'Padding-12',
+  descriptionsLabelPaddingRight: 'Padding-8',
+  descriptionsValuePaddingBottom: 'Padding-12',
+  descriptionsLabelColor: 'Neutral-text-4',
+  descriptionsValueColor: 'Neutral-text-5',
+  descriptionsTitleColor: 'Neutral-text-5',
+  descriptionsBackgroundColor: 'Neutral-fill-2',
+  descriptionsBorderColor: 'Neutral-border-1',
   descriptionsTitleFontWeight: '500',
-  descriptionsLabelFontWeight: '400',
-  descriptionsTitleLineHeight: '24px',
-  descriptionsTitleHeight: '24px',
+  descriptionsTitleGap: 'Size-2',
+  descriptionsBorderRadius: 'Size-2',
+  descriptionsBorderRightSize: '0.5px',
+  descriptionsBorderBottomSize: '0.5px',
+  descriptionsInlineBorderPaddingX: 'Padding-8',
+  descriptionsInlineBorderPaddingY: 'Padding-12',
 };
 
 export default descriptionsTokens;

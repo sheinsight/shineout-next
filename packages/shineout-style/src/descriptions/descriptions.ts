@@ -13,26 +13,29 @@ export type DescriptionsClass =
   | 'value'
   | 'tableLayoutFixed'
   | 'border'
+  | 'small'
   | 'item'
   | 'labelInline'
   | 'valueInline'
-  | 'inlineHorizontal';
+  | 'inlineHorizontal'
+  | 'horizontal';
 
 const descriptionsStyle: JsStyles<DescriptionsClass> = {
   wrapper: {
     display: 'block',
+    lineHeight: token.lineHeightDynamic,
   },
   header: {
-    marginBottom: '16px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    padding: '0 0 12px 0',
   },
   title: {
     fontSize: token.descriptionsTitleFontSize,
-    color: token.descriptionsTitleFontColor,
+    color: token.descriptionsTitleColor,
     fontWeight: token.descriptionsTitleFontWeight,
-    lineHeight: token.descriptionsTitleLineHeight,
+    gap: token.descriptionsTitleGap,
     flex: 1,
   },
   extra: {},
@@ -43,58 +46,53 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
   },
   row: {},
   label: {
-    padding: '0 4px 12px 0',
+    padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
     textAlign: 'left',
     boxSizing: 'border-box',
     fontSize: '14px',
-    lineHeight: 1.5715,
-    color: token.descriptionsLabelFontColor,
-    fontWeight: '500',
+    color: token.descriptionsLabelColor,
     whiteSpace: 'nowrap',
-    width: '1px',
   },
   value: {
-    padding: '0 4px 12px 0',
+    padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
     textAlign: 'left',
     boxSizing: 'border-box',
     fontSize: '14px',
-    lineHeight: 1.5715,
-    color: 'gray',
-    fontWeight: '400',
+    color: token.descriptionsValueColor,
+  },
+  small: {
+    fontSize: token.descriptionSmallFontSize,
   },
   item: {
-    padding: '0 4px 12px 0',
     textAlign: 'left',
     boxSizing: 'border-box',
     fontSize: '14px',
-    lineHeight: 1.5715,
   },
   labelInline: {
+    padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
     textAlign: 'left',
     boxSizing: 'border-box',
-    fontSize: '14px',
-    lineHeight: 1.5715,
-    color: 'black',
-    fontWeight: '500',
-    marginBottom: '2px',
+    color: token.descriptionsLabelColor,
   },
   valueInline: {
+    padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
     textAlign: 'left',
     boxSizing: 'border-box',
-    fontSize: '14px',
-    lineHeight: 1.5715,
-    color: 'gray',
-    fontWeight: '400',
+    color: token.descriptionsValueColor,
+  },
+  horizontal: {
+    '& $label': {
+      width: '1px',
+      padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
+    },
   },
   inlineHorizontal: {
     '& $labelInline': {
       display: 'inline-block',
-      marginBottom: 0,
-      marginRight: '4px',
+      padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
     },
     '& $valueInline': {
       display: 'inline-block',
-      marginBottom: 0,
     },
   },
   tableLayoutFixed: {
@@ -106,24 +104,30 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     },
   },
   border: {
-    border: '1px solid rgb(229,230,235)',
-    borderRadius: '4px',
+    border: `${token.descriptionsBorderFontSize} solid ${token.descriptionsBorderColor}`,
+    borderRadius: token.descriptionsBorderRadius,
     overflow: 'hidden',
     '& $row:not(:last-child)': {
-      borderBottom: '1px solid rgb(229,230,235)',
+      borderBottom: `${token.descriptionsBorderBottomSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $label': {
-      padding: '7px 20px',
-      backgroundColor: 'rgb(247,248,250)',
-      borderRight: '1px solid rgb(229,230,235)',
+      padding: `${token.descriptionsBorderPaddingLeft} ${token.descriptionsBorderPaddingTop}`,
+      backgroundColor: token.descriptionsBackgroundColor,
+      borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $value': {
-      padding: '7px 20px',
-      borderRight: '1px solid rgb(229,230,235)',
+      padding: `${token.descriptionsBorderPaddingLeft} ${token.descriptionsBorderPaddingTop}`,
+      borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $item': {
-      padding: '12px 20px',
-      borderRight: '1px solid rgb(229,230,235)',
+      padding: `${token.descriptionsInlineBorderPaddingX} ${token.descriptionsInlineBorderPaddingY}`,
+      borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
+    },
+    '& $labelInline': {
+      padding: 0,
+    },
+    '& $valueInline': {
+      padding: 0,
     },
     '& $label:last-child': {
       borderRight: 'none',

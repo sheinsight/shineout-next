@@ -16,18 +16,34 @@ const descriptionsTokenDescription = { descriptions: '描述列表', label: '标
  * 注意，该映射表的内容不与 descriptionsRules 强关联，非 descriptionsRules 规则内的 token 需手动增加或删减。
  */
 const descriptionsTokenValue = {
-  default: { font: { size: '' }, padding: { x: '', y: '' } },
-  small: { font: { size: '' }, padding: { x: '', y: '' } },
-  large: { font: { size: '' }, padding: { x: '', y: '' } },
+  default: { font: { size: '' }, padding: { top: '', bottom: '', left: '', right: '' } },
   title: {
-    font: { size: '16px', color: 'Neutral-text-5', weight: '500' },
-    padding: { x: '', y: '' },
-    line: { height: '24px' },
-    height: '24px',
+    font: { size: '16/medium', weight: '500' },
+    padding: { top: '', bottom: '', left: '', right: '' },
+    color: 'Neutral-text-5',
+    gap: 'Size-2',
   },
-  label: { font: { color: 'Neutral-text-4', weight: '400' } },
-  value: { font: { color: '', weight: '' } },
-  extra: { font: { color: '' } },
+  border: {
+    font: { size: '1px' },
+    padding: { top: 'Padding-12', bottom: 'Padding-12', left: 'Padding-8', right: 'Padding-8' },
+    color: 'Neutral-border-1',
+    radius: 'Size-2',
+    right: { size: '0.5px' },
+    bottom: { size: '0.5px' },
+  },
+  label: {
+    font: { size: '' },
+    padding: { top: '', bottom: 'Padding-12', left: '', right: 'Padding-8' },
+    color: 'Neutral-text-4',
+  },
+  value: {
+    font: { size: '' },
+    padding: { top: '', bottom: 'Padding-12', left: '', right: '' },
+    color: 'Neutral-text-5',
+  },
+  extra: { color: '' },
+  background: { color: 'Neutral-fill-2' },
+  inline: { border: { padding: { x: 'Padding-8', y: 'Padding-12' } } },
 };
 
 const descriptionsTokenExtraValue = {};

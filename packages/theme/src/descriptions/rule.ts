@@ -8,12 +8,15 @@
  */
 const descriptionsRules = {
   size: [
-    ['default', 'small', 'large', 'title'],
-    ['font-size', 'padding-x', 'padding-y'],
+    ['default', 'title', 'border', 'label', 'value'],
+    ['font-size', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right'],
   ],
-  color: [['label', 'value', 'title', 'extra'], ['font-color']],
-  weight: [['title', 'label', 'value'], ['font-weight']],
-  height: [['title'], ['line-height', 'height']],
+  color: [['label', 'value', 'title', 'extra', 'background', 'border'], ['color']],
+  weight: [['title'], ['font-weight']],
+  gap: [['title'], ['gap']],
+  radius: [['border'], ['radius']],
+  border: [['border-right', 'border-bottom'], ['size']],
+  Inline: [['inline-border'], ['padding-x', 'padding-y']],
 };
 
 module.exports = {

@@ -34,7 +34,14 @@ const data = [
 export default () => {
   return (
     <div>
-      <Descriptions items={data} title='demo' extra='hello' border />
+      <Descriptions
+        items={data}
+        title='demo'
+        extra='hello'
+        layout='inlineVertical'
+        colon={` :`}
+        border
+      />
     </div>
   );
 };

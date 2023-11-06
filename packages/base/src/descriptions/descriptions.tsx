@@ -124,6 +124,7 @@ const Descriptions = (props: DescriptionsProps) => {
     border && jssStyle?.descriptions.border,
     tableLayout === 'fixed' && jssStyle?.descriptions.tableLayoutFixed,
     layout === 'inlineHorizontal' && jssStyle?.descriptions.inlineHorizontal,
+    layout === 'horizontal' && jssStyle?.descriptions.horizontal,
   );
 
   return (
