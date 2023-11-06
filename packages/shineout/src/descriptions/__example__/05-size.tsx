@@ -1,7 +1,7 @@
 /**
- * cn - 基本用法
+ * cn - 不同尺寸
  *    --
- * en - Basic
+ * en - Different Size
  *    --
  */
 import React from 'react';
