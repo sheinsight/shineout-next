@@ -16,25 +16,30 @@ export default () => {
   const [current, setCurrent] = useState(0);
 
   const handleClick = () => {
-    if (current + 1 > 4) {
+    if (current + 1 > 3) {
       setCurrent(0);
       return;
     }
     setCurrent(current + 1);
   };
 
+  const description = '这是描述信息这是描述信息';
+  // const description =
+  //   '这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息';
   return (
     <div>
       <button type='button' onClick={handleClick}>
         next
       </button>
-      <Steps jssStyle={jssStyle} current={current}>
-        <Steps.Step title='第0步'></Steps.Step>
-        <Steps.Step title='第1步'></Steps.Step>
-        <Steps.Step title='第2步' disabled></Steps.Step>
-        <Steps.Step title='第3步'></Steps.Step>
-        <Steps.Step title='第4步'></Steps.Step>
-      </Steps>
+      <div style={{ maxWidth: 500 }}>
+        <Steps jssStyle={jssStyle} current={current}>
+          <Steps.Step description={description} title='第1步'></Steps.Step>
+          <Steps.Step description={description} title='第2步'></Steps.Step>
+          <Steps.Step description={description} title='第3步'></Steps.Step>
+          {/* <Steps.Step description='这是描述信息' title='第4步'></Steps.Step>
+          <Steps.Step description='这是描述信息' title='第5步'></Steps.Step> */}
+        </Steps>
+      </div>
     </div>
   );
 };

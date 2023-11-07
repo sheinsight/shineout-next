@@ -1,5 +1,5 @@
 // import React from 'react';
-// import { BaseStepsProps } from '@sheinx/hooks';
+import { BaseStepProps, StepProps } from './step.type';
 import { CommonType } from '../common/type';
 import { StepsClasses } from '@sheinx/shineout-style';
 
@@ -20,4 +20,8 @@ export interface StepsProps extends Pick<CommonType, 'className' | 'style' | 'si
   onChange?: (index: number) => void;
 }
 
-export type StepStyleProps = Pick<StepsProps, 'type' | 'size' | 'status'>;
+export interface StepStyleProps
+  extends Pick<BaseStepProps, 'jssStyle' | 'size' | 'status' | 'title' | 'description' | 'icon'>,
+    Pick<StepProps, 'labelPlacement' | 'direction'> {
+  index: number;
+}
