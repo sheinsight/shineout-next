@@ -1,8 +1,9 @@
-import { render, cleanup, fireEvent, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Rate from '..';
 import mountTest from '../../tests/mountTest';
 import {
+  attributesTest,
   classTest,
   createClassName,
   snapshotTest,
@@ -116,6 +117,8 @@ describe('Rate[Base]', () => {
     classTest(rateItems[2], itemCheckedHalf);
     fireEvent.mouseEnter(rateItems[2].querySelector(itemFront)!);
     classTest(rateItems[2], itemChecked);
+    fireEvent.mouseEnter(rateItems[3].querySelector(itemHalf)!);
+    classTest(rateItems[3], itemCheckedHalf);
   });
   test('should render when set size', () => {
     const size = 50;
@@ -176,6 +179,74 @@ describe('Rate[Base]', () => {
       if (index > 3) return;
       classTest(item, itemChecked);
     });
-    screen.debug();
+  });
+  test('should render when set different background and icon', () => {
+    const { container } = render(<RateLevel />);
+    const rateItems = container.querySelectorAll(item);
+    fireEvent.mouseEnter(rateItems[2].querySelector(itemFront)!);
+    rateItems.forEach((item, index) => {
+      if (index > 3) return;
+      classTest(item.querySelector(itemFront)?.querySelector('i') as Element, 'icon-sleeping');
+    });
+    fireEvent.mouseEnter(rateItems[3].querySelector(itemFront)!);
+    rateItems.forEach((item, index) => {
+      if (index > 3) return;
+      classTest(item.querySelector(itemFront)?.querySelector('i') as Element, 'icon-happy');
+    });
+  });
+  test('should render when set repeat is false', () => {
+    const diffIcon = ['A', 'B', 'C', 'D', 'E'];
+    const { container } = render(<RateRepeat />);
+    const rateItems = container.querySelectorAll(wrapper)[0].querySelectorAll(item);
+    rateItems.forEach((item, index) => {
+      textContentTest(item.querySelector(itemBg)!, diffIcon[index]);
+      textContentTest(item.querySelector(itemFront)!, diffIcon[index]);
+    });
+  });
+  test('should render when set max', () => {
+    const { container } = render(<StarRate max={10} />);
+    const rateItems = container.querySelectorAll(item);
+    expect(rateItems.length).toBe(10);
+  });
+  test('should render when set color', () => {
+    const bgColor = 'currentColor';
+    const frontColor = '#ff4d4f';
+    const { container } = render(<RateColor />);
+    const rateItems = container.querySelectorAll(item);
+    rateItems.forEach((item) => {
+      attributesTest(item.querySelector(itemBg)?.querySelector('svg') as Element, 'fill', bgColor);
+      attributesTest(
+        item.querySelector(itemFront)?.querySelector('svg') as Element,
+        'fill',
+        frontColor,
+      );
+    });
+  });
+  test('should render when set clearable', () => {
+    const { container } = render(<StarRate clearable />);
+    const rateItems = container.querySelectorAll(item);
+    fireEvent.click(rateItems[3].querySelector(itemFront)!);
+    rateItems.forEach((item, index) => {
+      if (index > 3) return;
+      classTest(item, itemChecked);
+    });
+    fireEvent.click(rateItems[3].querySelector(itemFront)!);
+    rateItems.forEach((item) => {
+      classTest(item, itemChecked, false);
+    });
+  });
+  test('should render when set onChange', () => {
+    const changeFn = jest.fn();
+    const { container } = render(<StarRate onChange={changeFn} />);
+    const rateItems = container.querySelectorAll(item);
+    fireEvent.click(rateItems[3].querySelector(itemFront)!);
+    expect(changeFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set beforeChange', () => {
+    const beforeChangeFn = jest.fn();
+    const { container } = render(<StarRate beforeChange={beforeChangeFn} />);
+    const rateItems = container.querySelectorAll(item);
+    fireEvent.click(rateItems[3].querySelector(itemFront)!);
+    expect(beforeChangeFn.mock.calls.length).toBe(1);
   });
 });
