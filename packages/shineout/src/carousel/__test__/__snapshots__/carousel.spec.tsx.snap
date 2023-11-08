@@ -1,0 +1,600 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel[Base] should render correctly  1`] = `
+<div
+  class="so-carousel-wrapper so-carousel-animation-slide so-carousel-direction-stop"
+  style="width: 600px; height: auto;"
+>
+  <div
+    class="so-carousel-slider"
+    style="height: 280px;"
+  >
+    <div
+      class="so-carousel-item so-carousel-item-current"
+    >
+      <img
+        src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
+      />
+    </div>
+    <div
+      class="so-carousel-item"
+    >
+      <img
+        src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
+      />
+    </div>
+    <div
+      class="so-carousel-item"
+    >
+      <img
+        src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png"
+      />
+    </div>
+    <div
+      class="so-carousel-item"
+    >
+      <img
+        src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png"
+      />
+    </div>
+  </div>
+  <div
+    class="so-carousel-indicator-wrapper so-carousel-indicator-center so-carousel-indicator-type-circle"
+  >
+    <div
+      class="so-carousel-indicator so-carousel-indicator-active"
+    />
+    <div
+      class="so-carousel-indicator"
+    />
+    <div
+      class="so-carousel-indicator"
+    />
+    <div
+      class="so-carousel-indicator"
+    />
+  </div>
+  <div
+    class="so-carousel-arrow-hover so-carousel-arrow-wrapper"
+  >
+    <div
+      class="so-carousel-arrow-left so-carousel-arrow-item"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+        />
+      </svg>
+    </div>
+    <div
+      class="so-carousel-arrow-right so-carousel-arrow-item"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel[Base] should render correctly about animation 1`] = `
+<div>
+  <div
+    style="display: flex; margin-bottom: 16px; align-items: center;"
+  >
+    <div
+      style="width: 150px;"
+    >
+      animation type:
+    </div>
+    <div
+      class="so-radio-group"
+    >
+      <div
+        class="so-radio-wrapper so-radio-wrapper-checked"
+      >
+        <input
+          checked=""
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          slide
+        </span>
+      </div>
+      <div
+        class="so-radio-wrapper"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          slide-y
+        </span>
+      </div>
+      <div
+        class="so-radio-wrapper"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          fade
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-carousel-wrapper so-carousel-animation-slide so-carousel-direction-stop"
+    style="width: 600px; height: auto;"
+  >
+    <div
+      class="so-carousel-slider"
+      style="height: 280px;"
+    >
+      <div
+        class="so-carousel-item so-carousel-item-current"
+      >
+        <img
+          src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
+        />
+      </div>
+      <div
+        class="so-carousel-item"
+      >
+        <img
+          src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
+        />
+      </div>
+      <div
+        class="so-carousel-item"
+      >
+        <img
+          src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png"
+        />
+      </div>
+      <div
+        class="so-carousel-item"
+      >
+        <img
+          src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png"
+        />
+      </div>
+    </div>
+    <div
+      class="so-carousel-indicator-wrapper so-carousel-indicator-center so-carousel-indicator-type-circle"
+    >
+      <div
+        class="so-carousel-indicator so-carousel-indicator-active"
+      />
+      <div
+        class="so-carousel-indicator"
+      />
+      <div
+        class="so-carousel-indicator"
+      />
+      <div
+        class="so-carousel-indicator"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel[Base] should render correctly about indicator 1`] = `
+<div>
+  <div
+    style="display: flex; margin-bottom: 16px; align-items: center;"
+  >
+    <div
+      style="width: 150px;"
+    >
+      indicator position:
+    </div>
+    <div
+      class="so-radio-group"
+    >
+      <div
+        class="so-radio-wrapper"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          left
+        </span>
+      </div>
+      <div
+        class="so-radio-wrapper so-radio-wrapper-checked"
+      >
+        <input
+          checked=""
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          center
+        </span>
+      </div>
+      <div
+        class="so-radio-wrapper"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          right
+        </span>
+      </div>
+      <div
+        class="so-radio-wrapper"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          outer
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    style="display: flex; margin-bottom: 16px; align-items: center;"
+  >
+    <div
+      style="width: 150px;"
+    >
+      indicator type:
+    </div>
+    <div
+      class="so-radio-group"
+    >
+      <div
+        class="so-radio-wrapper so-radio-wrapper-checked"
+      >
+        <input
+          checked=""
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          circle
+        </span>
+      </div>
+      <div
+        class="so-radio-wrapper"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          line
+        </span>
+      </div>
+      <div
+        class="so-radio-wrapper"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="so-radio-indicator-wrapper"
+        >
+          <span
+            class="so-radio-indicator"
+            tabindex="1"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </span>
+        <span
+          class="so-radio-desc"
+        >
+          number
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-carousel-wrapper so-carousel-animation-slide so-carousel-direction-stop"
+    style="width: 600px; height: auto;"
+  >
+    <div
+      class="so-carousel-slider"
+      style="height: 280px;"
+    >
+      <div
+        class="so-carousel-item so-carousel-item-current"
+      >
+        <img
+          src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
+        />
+      </div>
+      <div
+        class="so-carousel-item"
+      >
+        <img
+          src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
+        />
+      </div>
+      <div
+        class="so-carousel-item"
+      >
+        <img
+          src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png"
+        />
+      </div>
+      <div
+        class="so-carousel-item"
+      >
+        <img
+          src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png"
+        />
+      </div>
+    </div>
+    <div
+      class="so-carousel-indicator-wrapper so-carousel-indicator-center so-carousel-indicator-type-circle"
+    >
+      <div
+        class="so-carousel-indicator so-carousel-indicator-active"
+      />
+      <div
+        class="so-carousel-indicator"
+      />
+      <div
+        class="so-carousel-indicator"
+      />
+      <div
+        class="so-carousel-indicator"
+      />
+    </div>
+  </div>
+</div>
+`;

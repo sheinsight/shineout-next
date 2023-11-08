@@ -1,8 +1,8 @@
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
-import { Input, Dropdown } from 'shineout';
+import { Dropdown, Input } from 'shineout';
 
 const Nav = () => {
   const classes = useStyles();
@@ -101,7 +101,7 @@ const Nav = () => {
   const renderPrefix = () => {
     return (
       <svg
-        style={{ marginLeft: 8 }}
+        style={{ marginRight: 8 }}
         width='14'
         height='14'
         viewBox='0 0 14 14'

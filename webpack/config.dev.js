@@ -1,6 +1,7 @@
 const path = require('path');
 const Webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
+const multer = require('multer');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 require('../scripts/dev-doc.js');
@@ -40,6 +41,10 @@ const webpackConfig = {
         loader: 'raw-loader',
       },
       {
+        test: /\.(css)$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.(tsx|ts)$/,
         exclude: /node_modules/,
         use: {
@@ -69,10 +74,23 @@ const webpackConfig = {
 
 const compiler = Webpack(webpackConfig);
 
+const upload = multer({ dest: 'uploads/' });
 const server = new WebpackDevServer(
   {
     open: false,
     compress: true,
+    onBeforeSetupMiddleware: (server) => {
+      // mock upload api
+      server.app.all('/api/upload', upload.any(), (req, res) => {
+        // 读取请求中的formData 数据的file 字段
+        console.log(req.files);
+        res.json({ code: 0, data: req.files });
+      });
+      server.app.all('/api/upload/error', upload.any(), (req, res) => {
+        // 读取请求中的formData 数据的file 字段
+        res.error('上传失败');
+      });
+    },
   },
   compiler,
 );

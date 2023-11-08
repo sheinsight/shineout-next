@@ -18,7 +18,7 @@ const preventDefault = (e: React.MouseEvent) => {
 };
 const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Value>) => {
   const { locale } = useConfig();
-  const { jssStyle, range, type = 'date', border = true } = props;
+  const { jssStyle, range, type = 'date', border = true, clearable = true } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
 
   const styles = jssStyle?.datePicker?.();
@@ -60,6 +60,7 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
     type: type,
     format: props.format,
     options,
+    clearable,
     disabled: props.disabled!,
     clearWithUndefined: props.clearWithUndefined,
     onClear: undefined,
@@ -168,12 +169,12 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
         }}
       >
         {renderInnerTitle(result)}
-        {disabledStatus !== 'all' && !isEmpty && (
+        {disabledStatus !== 'all' && !isEmpty && clearable && (
           <div className={classNames(styles?.clear, styles?.icon)} onClick={func.handleClear}>
-            {Icons.CloseCircle}
+            {Icons.CloseOpaqueMultic1}
           </div>
         )}
-        <div className={styles?.icon}>{props.type === 'time' ? Icons.Clock : Icons.Calendar}</div>
+        <div className={styles?.icon}>{props.type === 'time' ? Icons.Time : Icons.Calendar1}</div>
       </div>
     );
   };

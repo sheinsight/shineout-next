@@ -15,6 +15,7 @@ export interface UseDatePickerFormatProps<Value extends DatePickerValueType> {
         weekStartsOn?: number;
       }
     | undefined;
+  clearable: boolean | undefined;
   clearWithUndefined: boolean | undefined;
   onClear: (() => void) | undefined;
   allowSingle: boolean | undefined;

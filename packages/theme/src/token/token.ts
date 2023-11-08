@@ -139,6 +139,7 @@ const Token: Tokens = {
   'Neutral-border-2': '#CCCFD7',
   'Neutral-border-1': '#E8EBF0',
   'Neutral-fill-5': '#B3B7C1',
+  'Neutral-fill-6': '#999DA8',
   'Neutral-fill-4': '#CCCFD7',
   'Neutral-fill-3': '#E8EBF0',
   'Neutral-fill-2': '#F4F5F8',

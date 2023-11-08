@@ -1,6 +1,6 @@
 import React from 'react';
 import { util } from '@sheinx/hooks';
-import { ExtendsFieldProps, TipProps } from '../../dist/cjs/@types/common';
+import { ExtendsFieldProps, TipProps } from '../@types/common';
 import { FormField } from '@sheinx/base';
 
 export interface FiledItemCommonProps {
@@ -16,7 +16,7 @@ const useFieldCommon = <Props extends FiledItemCommonProps, Value>(
   const FieldParams = {
     name: props.name!,
     defaultValue: props.defaultValue,
-    reservable: props.reservable,
+    reserveAble: props.reserveAble,
     rules: props.rules,
     onError: props.onError,
     bind: props.bind,

@@ -11,7 +11,7 @@ export const useFormFieldSet = <T>(props: BaseFormFieldSetProps<T>) => {
   const { inForm, error, value, onChange } = useFormControl({
     name,
     defaultValue: props.defaultValue,
-    reservable: props.reservable,
+    reserveAble: props.reserveAble,
     rules: props.rules,
     onError: props.onError,
     bind,

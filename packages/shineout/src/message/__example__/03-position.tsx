@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const [position, setPosition] = useState<MessageOptions['position']>('top-right');
 
   const show = () => {
-    Message.info(<div style={{ width: 240 }}>some message.</div>, 0, {
+    Message.info(<div style={{ width: 240 }}>some message.</div>, 3, {
       position,
       title: 'notify title',
     });
@@ -21,14 +21,16 @@ const App: React.FC = () => {
 
   return (
     <div>
-      position:
-      <Radio.Group
-        keygen
-        value={position}
-        onChange={setPosition}
-        style={{ margin: '0 20px' }}
-        data={['top', 'middle', 'top-left', 'top-right', 'bottom-left', 'bottom-right']}
-      />
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>
+        position:
+        <Radio.Group
+          keygen
+          value={position}
+          onChange={setPosition}
+          style={{ margin: '0 20px' }}
+          data={['top', 'middle', 'top-left', 'top-right', 'bottom-left', 'bottom-right']}
+        />
+      </div>
       <Button onClick={show}>Show message.</Button>
     </div>
   );

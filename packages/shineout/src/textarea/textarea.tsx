@@ -13,5 +13,5 @@ const BaseTextarea = (props: BaseTextareaProps) => {
 };
 
 export default (props: TextareaProps) => {
-  return useFieldCommon<BaseTextareaProps, BaseTextareaProps['value']>(props, BaseTextarea);
+  return useFieldCommon(props, BaseTextarea);
 };

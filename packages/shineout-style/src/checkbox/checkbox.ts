@@ -15,7 +15,6 @@ export type CheckboxClass =
   | 'group'
   | 'groupBlock';
 
-const circleSize = '5px';
 const checkboxStyle: JsStyles<CheckboxClass> = {
   wrapper: {
     display: 'inline-flex',
@@ -58,7 +57,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       display: 'block',
       width: '100%',
       height: '100%',
-      padding: circleSize,
+      padding: token.iconCirclePadding,
       position: 'absolute',
       top: '50%',
       left: '50%',

@@ -9,7 +9,7 @@ import { BaseFormControlProps } from './use-form-control.type';
 import { ObjectType } from '../../../common/type';
 
 export default function useFormControl<T>(props: BaseFormControlProps<T>) {
-  const { onChange: onChangePo, reservable, defaultValue, rules, onError } = props;
+  const { onChange: onChangePo, reserveAble, defaultValue, rules, onError } = props;
   const { name, bind } = useFieldSetConsumer({
     name: props.name,
     bind: props.bind,
@@ -104,10 +104,10 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       if (inForm && formFunc) {
         if (isArray(name)) {
           name.forEach((n) => {
-            formFunc.unbind(n, reservable);
+            formFunc.unbind(n, reserveAble);
           });
         } else {
-          formFunc.unbind(name, reservable);
+          formFunc.unbind(name, reserveAble);
         }
       }
     };

@@ -15,6 +15,7 @@ const Default = (count = 12) => {
     height: 54,
     margin: 'auto',
     position: 'relative',
+    boxSizing: 'border-box',
     '& $item': {
       position: 'absolute',
       top: 0,

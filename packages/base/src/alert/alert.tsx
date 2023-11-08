@@ -19,16 +19,18 @@ const Alert = (props: AlertProps) => {
     closable,
     hideClose,
     bordered,
+    closeItem,
     onClose,
     ...rest
   } = props;
   const [dismiss, setDismiss] = useState(SHOW);
 
   const icons = {
-    info: Icons.Info,
-    success: Icons.Success,
-    warning: Icons.Warning,
-    danger: Icons.Danger,
+    info: Icons.PcInfoCircleFill,
+    success: Icons.PcCheckCircleFill,
+    warning: Icons.PcWarningCircleFill,
+    danger: Icons.PcCloseCircleFill,
+    confirmwarning: Icons.PcWarningCircleFill,
   };
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
   const rootClass = classNames(className, alertStyle.alert, {
@@ -88,9 +90,11 @@ const Alert = (props: AlertProps) => {
   };
 
   const renderClose = () => {
+    if (React.isValidElement(closeItem))
+      return React.cloneElement(closeItem, { onClick: handleClose } as React.Attributes);
     return (
       <div className={alertStyle.close} onClick={handleClose}>
-        {Icons.AlertClose}
+        {closeItem || Icons.Close}
       </div>
     );
   };

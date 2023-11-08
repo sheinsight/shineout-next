@@ -140,7 +140,7 @@ const Day = (props: DayProps) => {
           <div className={classNames(styles?.pickerFooterLeft, styles?.datetime)}>
             {timeStr && (
               <>
-                <span>{Icons.Clock}</span>
+                <span>{Icons.Time}</span>
                 <TimePicker {...props} showSelNow={false} showTitle={false} format={format} />
                 <span>{func.getTimeStr()}</span>
               </>
@@ -190,7 +190,7 @@ const Day = (props: DayProps) => {
             {Icons.AngleDoubleLeft}
           </span>
           <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevMonth}>
-            {Icons.AngleLeft}
+            {Icons.ArrowLeft}
           </span>
         </div>
         <div className={styles?.pickerHeaderMid}>
@@ -214,7 +214,7 @@ const Day = (props: DayProps) => {
         </div>
         <div className={styles?.pickerHeaderRight}>
           <span className={styles?.pickerHeaderIcon} onClick={func.handleNextMonth}>
-            {Icons.AngleRight}
+            {Icons.ArrowRight}
           </span>
           <span className={styles?.pickerHeaderIcon} onClick={func.handleNextYear}>
             {Icons.AngleDoubleRight}
