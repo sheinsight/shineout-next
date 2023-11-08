@@ -1,0 +1,283 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for shineout/src/tabs/__example__/08-collapsible.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">shineout/src/tabs/__example__</a> 08-collapsible.tsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>66/66</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>2/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>66/66</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * cn - 折叠
+ *    -- 通过设置 `collapsible` 属性折叠面板区域。
+ * en - Collapsible
+ *    -- Set the `collapsible` property to collapse the panel area.
+ */
+import { Tabs } from 'shineout';
+&nbsp;
+export default () =&gt; {
+  const renderIcon = () =&gt; {
+    return (
+      &lt;svg
+        style={{ marginRight: 8 }}
+        width='14'
+        height='14'
+        viewBox='0 0 14 14'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      &gt;
+        &lt;path
+          d='M9.33333 0.583374C9.88789 0.583374 10.4468 1.11488 10.4964 1.67055L10.5 1.75004V2.33337H11.0833C11.6379 2.33337 12.1968 2.86488 12.2464 3.42055L12.25 3.50004V12.8334C12.25 13.2408 11.8466 13.5155 11.4748 13.3844L11.4132 13.3587L7.875 11.6515L4.33683 13.3587C3.99148 13.5254 3.59669 13.3191 3.51518 12.9676L3.50366 12.9L3.5 12.8334V11.168L2.58683 11.6087C2.24148 11.7754 1.84669 11.5691 1.76518 11.2176L1.75366 11.15L1.75 11.0834V1.75004C1.75 1.209 2.31633 0.637838 2.84192 0.587033L2.91667 0.583374H9.33333ZM10.7917 3.50004H4.95833C4.81515 3.50004 4.69606 3.60322 4.67137 3.73928L4.66667 3.79171V11.4396C4.66667 11.4834 4.67657 11.5268 4.69564 11.5663C4.75786 11.6953 4.90254 11.7577 5.03582 11.7208L5.08508 11.7022L7.47075 10.5508L7.6215 10.4785C7.7359 10.4233 7.86383 10.4075 7.98596 10.4312L8.05839 10.4501L8.11974 10.4749L8.13701 10.4826L10.298 11.525L10.6649 11.7022C10.7045 11.7213 10.7478 11.7312 10.7917 11.7312C10.9349 11.7312 11.0539 11.628 11.0786 11.492L11.0833 11.4396V3.79171C11.0833 3.63062 10.9527 3.50004 10.7917 3.50004ZM9.04167 1.75004H3.20833C3.06515 1.75004 2.94606 1.85322 2.92137 1.98928L2.91667 2.04171V9.68956C2.91667 9.73345 2.92657 9.77677 2.94564 9.8163C3.00787 9.94526 3.15254 10.0077 3.28582 9.9708L3.33508 9.95225L3.5 9.87237V3.50004C3.5 2.96452 4.05684 2.38834 4.59063 2.33707L4.66667 2.33337H9.33333V2.04171C9.33333 1.89852 9.23016 1.77944 9.09409 1.75474L9.04167 1.75004Z'
+          fill='#666C7C'
+        /&gt;
+      &lt;/svg&gt;
+    );
+  };
+&nbsp;
+  return (
+    &lt;div&gt;
+      &lt;Tabs shape='line' defaultActive={0} collapsible&gt;
+        &lt;Tabs.Panel tab='Tab 1'&gt;
+          &lt;div
+            style={{
+              padding: 5,
+              height: '100%',
+              fontWeight: 300,
+              fontSize: 14,
+              lineHeight: '20px',
+            }}
+          &gt;
+            Joy in living comes from having fine emotions, trusting them, giving them the freedom of
+            a bird in the open. Joy in living can never be assumed as a pose, or put on from the
+            outside as a mask. People who have this joy do not need to talk about it; they radiate
+            it. They just live out their joy and let it splash its sunlight and glow into other
+            lives as naturally as bird sings. We can never get it by working for it directly. It
+            comes, like happiness, to those who are aiming at something higher. It is a byproduct of
+            great, simple living. The joy of living comes from what we put into living, not from
+            what we seek to get from it. As you travel through life there are always those times
+            when decisions just have to be made when the choices are hard, and solutions seem scarce
+            and the rain seems to soak your parade!
+          &lt;/div&gt;
+        &lt;/Tabs.Panel&gt;
+        &lt;Tabs.Panel
+          tab={&lt;span style={{ display: 'flex', alignItems: 'center' }}&gt;{renderIcon()}Tab 2&lt;/span&gt;}
+        &gt;
+          Content of Tab 2
+        &lt;/Tabs.Panel&gt;
+        &lt;Tabs.Panel
+          tab={&lt;span style={{ display: 'flex', alignItems: 'center' }}&gt;{renderIcon()}Tab 3&lt;/span&gt;}
+        &gt;
+          Content of Tab 3
+        &lt;/Tabs.Panel&gt;
+      &lt;/Tabs&gt;
+    &lt;/div&gt;
+  );
+};
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2023-12-29T08:33:24.763Z
+            </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    
