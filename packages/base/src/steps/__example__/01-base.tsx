@@ -23,7 +23,7 @@ export default () => {
     setCurrent(current + 1);
   };
 
-  const description = '';
+  const description = '这是描述内容';
   // const description =
   //   '这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息';
   return (
@@ -32,12 +32,12 @@ export default () => {
         next
       </button>
       <div>
-        <Steps jssStyle={jssStyle} type='default' current={current} labelPlacement='vertical'>
+        <Steps jssStyle={jssStyle} size='large' type='default' current={current}>
           <Steps.Step description={description} title='第1步'></Steps.Step>
           <Steps.Step description={description} title='第2步'></Steps.Step>
           <Steps.Step description={description} title='第3步'></Steps.Step>
-          <Steps.Step description={description} title='第4步'></Steps.Step>
-          <Steps.Step description={description} title='第5步'></Steps.Step>
+          {/* <Steps.Step description={description} title='第4步'></Steps.Step>
+          <Steps.Step description={description} title='第5步'></Steps.Step> */}
         </Steps>
       </div>
     </div>
