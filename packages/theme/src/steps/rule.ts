@@ -13,6 +13,7 @@ const stepsRules = {
     ['wait', 'process', 'finish', 'error'],
     ['font-color', 'background-color'],
   ],
+  arrow: [['', 'small', 'large'], ['arrow'], ['padding-x', 'padding-y', 'height']],
   color: [['tail'], ['', 'finish'], ['background-color']],
   extra_nearly: [['nearly'], ['content', 'describe'], ['margin']],
 };

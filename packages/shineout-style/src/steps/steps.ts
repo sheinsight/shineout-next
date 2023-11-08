@@ -36,14 +36,60 @@ const stepsStyle: JsStyles<StepsClassType> = {
         display: 'none',
       },
     },
-    // '& $step:last-child $title::after': {
-    //   display: 'none',
-    // },
   },
   small: {
     fontSize: Token.stepsIconFontSize,
+    '&$arrow': {
+      '& $step:not(:last-child)': {
+        '&:after': {
+          top: `calc((100% - ${Token.stepsSmallArrowHeight})/2)`,
+          width: Token.stepsSmallArrowHeight,
+          height: Token.stepsSmallArrowHeight,
+        },
+        '&:before': {
+          top: `calc((100% - ${Token.stepsSmallArrowHeight})/2)`,
+          width: Token.stepsSmallArrowHeight,
+          height: Token.stepsSmallArrowHeight,
+        },
+      },
+      '& $content': {
+        padding: `${Token.stepsSmallArrowPaddingY} ${Token.stepsSmallArrowPaddingX}`,
+        boxSizing: 'border-box',
+      },
+    },
+    '& $title': {
+      fontSize: Token.stepsSmallTitleFontSize,
+    },
+    '& $description': {
+      fontSize: Token.stepsSmallDescriptionFontSize,
+    },
   },
-  large: {},
+  large: {
+    '&$arrow': {
+      '& $step:not(:last-child)': {
+        '&:after': {
+          top: `calc((100% - ${Token.stepsLargeArrowHeight})/2)`,
+          width: Token.stepsLargeArrowHeight,
+          height: Token.stepsLargeArrowHeight,
+        },
+        '&:before': {
+          top: `calc((100% - ${Token.stepsLargeArrowHeight})/2)`,
+          width: Token.stepsLargeArrowHeight,
+          height: Token.stepsLargeArrowHeight,
+        },
+      },
+      '& $content': {
+        padding: `${Token.stepsLargeArrowPaddingY} ${Token.stepsLargeArrowPaddingX}`,
+        boxSizing: 'border-box',
+      },
+    },
+    '& $title': {
+      fontSize: Token.stepsLargeTitleFontSize,
+    },
+    '& $description': {
+      fontSize: Token.stepsLargeDescriptionFontSize,
+    },
+  },
   vertical: {
     flexDirection: 'column',
     '& $content': {
@@ -59,8 +105,6 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $tail': {
       width: 1,
       height: '100%',
-      paddingTop: 32,
-      paddingBottom: 4,
       left: 14,
       '&:after': {
         position: 'relative',
@@ -73,10 +117,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $tail': {
       width: '100%',
       height: 1,
-      left: 'calc(50% + 18px)',
-      top: '14px',
       '&:after': {
-        width: 'calc(100% - 26px)',
         height: '100%',
       },
     },
@@ -150,8 +191,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '&:after': {
       content: '""',
       display: 'block',
-      background: Token.stepsTailBackgroundColor,
       position: 'absolute',
+      background: Token.stepsTailBackgroundColor,
     },
   },
   description: {
@@ -174,7 +215,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
       backgroundColor: Token.stepsProcessBackgroundColor,
       fontWeight: 500,
     },
-    '& $title': {},
+    '& $title': {
+      fontWeight: 500,
+    },
   },
   finish: {
     '& $iconWrapper': {
@@ -205,13 +248,156 @@ const stepsStyle: JsStyles<StepsClassType> = {
     borderRadius: '50%',
   },
   dot: {
+    '&$vertical': {
+      '& $icon': {
+        lineHeight: 0,
+        padding: 10,
+      },
+      '& $tail': {
+        paddingTop: 28,
+        '&:after': {
+          width: 1,
+        },
+      },
+    },
+    '&$horizontal': {
+      '& $icon': {
+        lineHeight: 0,
+        marginLeft: 76,
+      },
+      '& $tail': {
+        top: 11,
+        left: '50%',
+        paddingLeft: 8,
+        paddingRight: 8,
+        '&:after': {
+          left: 8,
+          right: -4,
+        },
+      },
+    },
     '& $iconWrapper': {
       width: 8,
       height: 8,
     },
+    '& $tail': {
+      boxSizing: 'border-box',
+    },
+    '& $finish': {
+      '& $iconWrapper': {
+        backgroundColor: Token.stepsProcessBackgroundColor,
+      },
+      '& $title': {},
+    },
   },
-  arrow: {},
+  arrow: {
+    '&$steps': {
+      overflow: 'hidden',
+    },
+    '& $step': {},
+    '&$horizontal': {
+      '& $horizontalLabel $title:after': {
+        display: 'none',
+      },
+    },
+    '& $step:last-child': {
+      marginRight: 0,
+    },
+    '& $step:not(:last-child)': {
+      marginRight: 4,
+      overflow: 'visible',
+      position: 'relative',
+      '&:after': {
+        zIndex: 1,
+        content: '""',
+        width: Token.stepsArrowHeight,
+        height: Token.stepsArrowHeight,
+        borderRadius: 4,
+        display: 'block',
+        position: 'absolute',
+        top: `calc((100% - ${Token.stepsArrowHeight})/2)`,
+        right: -30,
+        transform: 'rotate(45deg)',
+      },
+      '&:before': {
+        zIndex: 2,
+        content: '""',
+        height: Token.stepsArrowHeight,
+        width: Token.stepsArrowHeight,
+        borderRadius: 4,
+        display: 'block',
+        position: 'absolute',
+        top: `calc((100% - ${Token.stepsArrowHeight})/2)`,
+        right: -26,
+        transform: 'rotate(45deg)',
+      },
+    },
+    '& $step:not(:first-child)': {
+      paddingLeft: 30,
+    },
+    '& $description': {
+      paddingRight: 0,
+      height: 20,
+      whiteSpace: 'nowrap',
+    },
+    '& $content': {
+      padding: `${Token.stepsArrowPaddingY} ${Token.stepsArrowPaddingX}`,
+      boxSizing: 'border-box',
+    },
+    '& $finish': {
+      backgroundColor: Token.stepsFinishBackgroundColor,
+      '&:after': {
+        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,#fff 50% 75%,#fff 75%)`,
+      },
+      '&:before': {
+        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,${Token.stepsFinishBackgroundColor} 50% 75%,${Token.stepsFinishBackgroundColor} 75%)`,
+      },
+    },
+    '& $process': {
+      color: Token.stepsProcessFontColor,
+      backgroundColor: Token.stepsProcessBackgroundColor,
+      '& $description': {
+        color: Token.stepsProcessFontColor,
+      },
+      '&:after': {
+        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,#fff 50% 75%,#fff 75%)`,
+      },
+      '&:before': {
+        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,${Token.stepsProcessBackgroundColor} 50% 75%,${Token.stepsProcessBackgroundColor} 75%)`,
+      },
+    },
+    '& $wait': {
+      color: Token.stepsWaitFontColor,
+      backgroundColor: Token.stepsWaitBackgroundColor,
+      '&:after': {
+        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,#fff 50% 75%,#fff 75%)`,
+      },
+      '&:before': {
+        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,${Token.stepsWaitBackgroundColor} 50% 75%,${Token.stepsWaitBackgroundColor} 75%)`,
+      },
+    },
+  },
   default: {
+    '&$vertical': {
+      '& $tail': {
+        left: 14,
+        paddingTop: 32,
+        paddingBottom: 4,
+        '&:after': {
+          width: 1,
+        },
+      },
+    },
+    '&$horizontal': {
+      '& $tail': {
+        left: 'calc(50% + 18px)',
+        top: '14px',
+        '&:after': {
+          width: 'calc(100% - 26px)',
+        },
+      },
+    },
+
     '& $iconWrapper': {
       lineHeight: Token.stepsIconFontSize,
       width: Token.stepsIconFontSize,

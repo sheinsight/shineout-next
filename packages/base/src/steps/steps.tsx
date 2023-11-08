@@ -13,11 +13,19 @@ const Steps = (props: StepsProps) => {
     type = 'default',
     size,
     status,
-    direction = 'horizontal',
+    direction: directionProp = 'horizontal',
     labelPlacement = 'horizontal',
     current = 0,
     onChange,
   } = props;
+  const getDirection = () => {
+    // arrow 类型只支持 horizontal direction
+    if (type === 'arrow') return 'horizontal';
+    return directionProp;
+  };
+
+  const direction = getDirection();
+
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = classNames(styles.steps, {
     [styles[type]]: type,

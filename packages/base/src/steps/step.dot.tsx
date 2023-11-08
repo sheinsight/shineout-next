@@ -3,7 +3,7 @@ import { StepsClasses } from '@sheinx/shineout-style';
 import { StepStyleProps } from './steps.type';
 
 const DotStep = (props: StepStyleProps) => {
-  const { jssStyle, title, description, direction, status } = props;
+  const { jssStyle, title, description, direction, status, labelPlacement } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = styles.dot;
   const iconClass = classNames(styles.icon, {
@@ -13,7 +13,7 @@ const DotStep = (props: StepStyleProps) => {
     [styles.wait]: status === 'wait',
   });
 
-  const showTail = direction === 'vertical' || false;
+  const showTail = direction === 'vertical' || labelPlacement === 'vertical';
 
   const renderTail = () => {
     return <div className={styles.tail}> </div>;

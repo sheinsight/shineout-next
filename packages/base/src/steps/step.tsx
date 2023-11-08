@@ -5,7 +5,7 @@ import { StepsStatusType } from './steps.type';
 import StepsContext from './steps-context';
 import DefaultStep from './step.default';
 import DotStep from './step.dot';
-// import ArrowStep from './step.arrow';
+import ArrowStep from './step.arrow';
 
 const Step = (props: StepProps) => {
   const {
@@ -24,10 +24,10 @@ const Step = (props: StepProps) => {
     direction,
   } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
-
   const getLabelPlacement = () => {
     // dot 类型只支持 vertical labelPlacement
     if (type === 'dot') {
+      if (direction === 'vertical') return 'horizontal';
       return 'vertical';
     }
     return labelPlacementProp;
@@ -45,6 +45,7 @@ const Step = (props: StepProps) => {
 
   const status = getStatus();
   const labelPlacement = getLabelPlacement();
+
   const rootClass = classNames(styles.step, styles[status], {
     [styles.disabled]: disabled,
     // 即便是指定 status 也需要考虑是否为 finish 状态
@@ -59,6 +60,8 @@ const Step = (props: StepProps) => {
       Component = DefaultStep;
     } else if (type === 'dot') {
       Component = DotStep;
+    } else if (type === 'arrow') {
+      Component = ArrowStep;
     }
 
     return (

@@ -70,6 +70,30 @@ export interface StepsTokens {
   stepsTitleFontSize: string;
   /**
    * @type {string}
+   * @token 14/medium
+   * @description 步骤条小尺寸标题模式字体字号
+   */
+  stepsSmallTitleFontSize: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 步骤条小尺寸描述信息字体字号
+   */
+  stepsSmallDescriptionFontSize: string;
+  /**
+   * @type {string}
+   * @token 18/medium
+   * @description 步骤条大尺寸标题模式字体字号
+   */
+  stepsLargeTitleFontSize: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 步骤条大尺寸描述信息字体字号
+   */
+  stepsLargeDescriptionFontSize: string;
+  /**
+   * @type {string}
    * @token Neutral-text-4
    * @description 步骤条等待状态中的字体颜色
    */
@@ -116,6 +140,60 @@ export interface StepsTokens {
    * @description 步骤条错误状态的的背景颜色
    */
   stepsErrorBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description 步骤条箭头形状的内边距（水平方向）
+   */
+  stepsArrowPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 步骤条箭头形状的内边距（垂直方向）
+   */
+  stepsArrowPaddingY: string;
+  /**
+   * @type {string}
+   * @token Size-32
+   * @description 步骤条箭头形状的高度
+   */
+  stepsArrowHeight: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description 步骤条小尺寸箭头形状的内边距（水平方向）
+   */
+  stepsSmallArrowPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-5
+   * @description 步骤条小尺寸箭头形状的内边距（垂直方向）
+   */
+  stepsSmallArrowPaddingY: string;
+  /**
+   * @type {string}
+   * @token Size-28
+   * @description 步骤条小尺寸箭头形状的高度
+   */
+  stepsSmallArrowHeight: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description 步骤条大尺寸箭头形状的内边距（水平方向）
+   */
+  stepsLargeArrowPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-11
+   * @description 步骤条大尺寸箭头形状的内边距（垂直方向）
+   */
+  stepsLargeArrowPaddingY: string;
+  /**
+   * @type {string}
+   * @token Size-36
+   * @description 步骤条大尺寸箭头形状的高度
+   */
+  stepsLargeArrowHeight: string;
   /**
    * @type {string}
    * @token Neutral-border-1
