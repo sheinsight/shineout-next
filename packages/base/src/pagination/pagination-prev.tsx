@@ -22,7 +22,7 @@ const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
       shape={hasText ? undefined : 'square'}
       onClick={onChange}
     >
-      {hasText ? text.prev : Icons.AngleLeft}
+      {hasText ? text.prev : Icons.ArrowLeft}
     </Button>
   );
 };

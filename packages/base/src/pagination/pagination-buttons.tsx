@@ -127,14 +127,14 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
 
   const renderMore = (type: PaginationMoreTypes) => {
     if (type === 'prev' && showPrevMore) {
-      return Icons.PaginationLeftArrow;
+      return Icons.ArrowLeftDouble;
     }
 
     if (type === 'next' && showNextMore) {
-      return Icons.PaginationRightArrow;
+      return Icons.ArrowRightDouble;
     }
 
-    return Icons.PaginationMore;
+    return Icons.More;
   };
 
   const renderButtons = () => {
