@@ -99,7 +99,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
           listDatum={sourceDatum}
           value={sourceSelectedKeys}
         >
-          {operationIcon && Icon.AngleRight}
+          {operationIcon && Icon.ArrowRight}
         </TransferOperate>
         <TransferOperate
           size={size}
@@ -111,7 +111,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
           listDatum={targetDatum}
           value={targetSelectedKeys}
         >
-          {operationIcon && Icon.AngleLeft}
+          {operationIcon && Icon.ArrowLeft}
         </TransferOperate>
       </div>
     );
