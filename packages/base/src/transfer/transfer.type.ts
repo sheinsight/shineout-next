@@ -58,6 +58,18 @@ export interface FilterProps {
   isSrouce?: boolean;
 }
 
+export interface CustomRenderProps<Value extends KeygenResult[]> {
+  onSelected: (data: KeygenResult[]) => void;
+  /**
+   * @deprecated 请使用 listType 属性判断是否为源或目标列表
+   */
+  direction: 'left' | 'right';
+  listType: 'source' | 'target';
+  selectedKeys: KeygenResult[];
+  value: Value;
+  filterText?: string;
+}
+
 export interface TransferProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTransferProps<DataItem, Value>, 'valueControl' | 'selectControl'>,
     Pick<CommonType, 'size' | 'style'> {
@@ -80,4 +92,5 @@ export interface TransferProps<DataItem, Value extends KeygenResult[]>
   searchPlaceholder?: string | [string, string];
   renderFilter?: (filterProps: FilterProps) => React.ReactNode;
   onFilter?: (text: string, data: DataItem, isSource: boolean) => boolean;
+  children?: (props: CustomRenderProps<Value>) => React.ReactNode;
 }

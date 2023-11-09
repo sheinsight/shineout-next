@@ -39,9 +39,12 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     filterText,
     simple,
     disabled,
+    selectedKeys,
     renderFilter: renderFilterProp,
     searchPlaceholder,
+    customRender,
     onFilter,
+    onSelectChange,
   } = props;
   const { locale } = useConfig();
 
@@ -144,6 +147,17 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderList = () => {
+    if (util.isFunc(customRender)) {
+      const custom = customRender({
+        direction: listType === 'source' ? 'left' : 'right',
+        listType,
+        selectedKeys: selectedKeys!,
+        value,
+        onSelected: onSelectChange,
+      });
+      if (custom) return custom;
+    }
+
     const start = currentIndex * colNum;
     const end = (currentIndex + rowsInView) * colNum;
     let items = data.slice(start, end);

@@ -31,6 +31,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     listStyle,
     listClassName,
     format,
+    children,
     prediction,
     selectedKeys,
     listHeight = 186,
@@ -42,20 +43,21 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     renderItem = (item: DataItem) => item as React.ReactNode,
     onFilter: onFilterProp,
     onChange: onChangeProp,
-    onSelectChange,
+    onSelectChange: onSelectChangeProp,
   } = props;
 
   const {
+    source,
+    target,
     datum,
     sourceDatum,
     targetDatum,
-    source,
-    target,
     filterSourceText,
     filterTargetText,
     sourceSelectedKeys,
     targetSelectedKeys,
     onFilter,
+    onSelectChange,
   } = useTransfer({
     data,
     keygen,
@@ -73,7 +75,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     onChange: onChangeProp,
     onFilter: onFilterProp,
     onSearch,
-    onSelectChange,
+    onSelectChange: onSelectChangeProp,
   });
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
@@ -121,7 +123,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     const isSource = listType === 'source';
     const listDatum = isSource ? sourceDatum : targetDatum;
     let listData = isSource ? source : target;
-    const listValue = isSource ? sourceSelectedKeys : targetSelectedKeys;
+    const listValue = (isSource ? sourceSelectedKeys : targetSelectedKeys) as Value;
     const title = isSource ? titles?.[0] : titles?.[1];
     const footer = isSource ? footers?.[0] : footers?.[1];
     const filterText = isSource ? filterSourceText : filterTargetText;
@@ -157,10 +159,13 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
         simple={simple}
         disabled={disabled}
         value={listValue}
+        selectedKeys={selectedKeys}
         itemClass={itemClass}
+        customRender={children}
         searchPlaceholder={placeholder}
         renderFilter={renderFilter}
         onFilter={onFilterProp ? onFilter : undefined}
+        onSelectChange={onSelectChange}
       />
     );
   };
