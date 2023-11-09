@@ -32,7 +32,7 @@ export default () => {
         next
       </button>
       <div>
-        <Steps jssStyle={jssStyle} size='large' type='default' current={current}>
+        <Steps jssStyle={jssStyle} type='dot' current={current} direction='vertical' size='small'>
           <Steps.Step description={description} title='第1步'></Steps.Step>
           <Steps.Step description={description} title='第2步'></Steps.Step>
           <Steps.Step description={description} title='第3步'></Steps.Step>

@@ -57,6 +57,11 @@ const stepsStyle: JsStyles<StepsClassType> = {
         boxSizing: 'border-box',
       },
     },
+    '&$dot': {
+      '& $tail': {
+        top: 11,
+      },
+    },
     '& $title': {
       fontSize: Token.stepsSmallTitleFontSize,
     },
@@ -163,7 +168,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $tail': {
       width: 1,
       height: '100%',
-      left: 14,
+      left: 13.5,
       '&:after': {
         position: 'relative',
         width: 1,
@@ -322,18 +327,30 @@ const stepsStyle: JsStyles<StepsClassType> = {
       },
     },
     '&$horizontal': {
+      '& $description': {
+        marginTop: 4,
+      },
       '& $icon': {
         lineHeight: 0,
         marginLeft: 76,
       },
       '& $tail': {
-        top: 11,
+        top: 7,
         left: '50%',
-        paddingLeft: 8,
-        paddingRight: 8,
+        marginLeft: 4,
+        paddingLeft: 4,
+        overflow: 'hidden',
         '&:after': {
-          left: 8,
-          right: -4,
+          width: '100%',
+        },
+      },
+      '& $process': {
+        '& $icon': {
+          marginLeft: 75,
+        },
+        '& $iconWrapper': {
+          width: 10,
+          height: 10,
         },
       },
     },
@@ -341,6 +358,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
       width: 8,
       height: 8,
     },
+
     '& $tail': {
       boxSizing: 'border-box',
     },
@@ -441,7 +459,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
   default: {
     '&$vertical': {
       '& $tail': {
-        left: 14,
+        left: 13.5,
         paddingTop: 32,
         paddingBottom: 4,
         '&:after': {
@@ -452,7 +470,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '&$horizontal': {
       '& $tail': {
         left: `calc(50% + ${Token.stepsIconWidth}/2 + 4px)`,
-        top: '14px',
+        top: 13.5,
         '&:after': {
           width: `calc(100% - ${Token.stepsIconWidth} + 4px)`,
         },
