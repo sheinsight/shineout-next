@@ -3,7 +3,7 @@ import { render, cleanup, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Transfer from '..';
 import mountTest from '../../tests/mountTest';
-import { createClassName, displayTest, snapshotTest } from '../../tests/utils';
+import { createClassName, displayTest, snapshotTest, textContentTest } from '../../tests/utils';
 import TransferBase from '../__example__/01-base';
 import TransferSize from '../__example__/02-size';
 import TransferSimple from '../__example__/03-simple';
@@ -24,6 +24,8 @@ const {
   // left,
   // large
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const { container: containerClassName } = createClassName('spin', ['container'], ['']);
 
 const data: { id: string; name: string }[] = [];
 
@@ -54,6 +56,18 @@ describe('Transfer[Base]', () => {
   snapshotTest(<TransferControl />, 'about control');
   snapshotTest(<TransferSelected />, 'about seleced');
   snapshotTest(<TranSsferBigData />, 'about bigdata');
+  test('should render when set children', () => {
+    const { container } = render(
+      <Transfer data={data} keygen='id' renderItem={'name'}>
+        {() => <div>{'test'}</div>}
+      </Transfer>,
+    );
+    const containers = container.querySelectorAll(containerClassName);
+    expect(containers.length).toBe(2);
+    containers.forEach((item) => {
+      textContentTest(item, 'test');
+    });
+  });
   test('should render when set className and style', () => {
     render(<TransferTest className='demo' style={{ backgroundColor: 'red' }} />);
     screen.debug();

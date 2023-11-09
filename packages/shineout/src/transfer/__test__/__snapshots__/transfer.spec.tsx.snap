@@ -396,14 +396,36 @@ exports[`Transfer[Base] should render correctly  1`] = `
         class="so-transfer-right so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
     <span>
       <button
         class="so-transfer-left so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
   </div>
   <div
@@ -1359,14 +1381,36 @@ exports[`Transfer[Base] should render correctly about bigdata 1`] = `
         class="so-transfer-right so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
     <span>
       <button
         class="so-transfer-left so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
   </div>
   <div
@@ -2023,14 +2067,36 @@ exports[`Transfer[Base] should render correctly about control 1`] = `
           class="so-transfer-right so-button-default so-button-button so-button-disabled so-button-square"
           disabled=""
           type="button"
-        />
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </button>
       </span>
       <span>
         <button
           class="so-transfer-left so-button-default so-button-button so-button-disabled so-button-square"
           disabled=""
           type="button"
-        />
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            />
+          </svg>
+        </button>
       </span>
     </div>
     <div
@@ -2710,6 +2776,16 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
         <span>
           to right
         </span>
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
       </button>
     </span>
     <span>
@@ -2722,6 +2798,16 @@ exports[`Transfer[Base] should render correctly about custom render 1`] = `
         <span>
           to left
         </span>
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+          />
+        </svg>
       </button>
     </span>
   </div>
@@ -3418,14 +3504,36 @@ exports[`Transfer[Base] should render correctly about customFilter 1`] = `
         class="so-transfer-right so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
     <span>
       <button
         class="so-transfer-left so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
   </div>
   <div
@@ -4121,14 +4229,36 @@ exports[`Transfer[Base] should render correctly about filter 1`] = `
         class="so-transfer-right so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
     <span>
       <button
         class="so-transfer-left so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
   </div>
   <div
@@ -4811,14 +4941,36 @@ exports[`Transfer[Base] should render correctly about loading 1`] = `
         class="so-transfer-right so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
     <span>
       <button
         class="so-transfer-left so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
   </div>
   <div
@@ -5492,14 +5644,36 @@ exports[`Transfer[Base] should render correctly about loading control 1`] = `
         class="so-transfer-right so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
     <span>
       <button
         class="so-transfer-left so-button-default so-button-button so-button-disabled so-button-square"
         disabled=""
         type="button"
-      />
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+          />
+        </svg>
+      </button>
     </span>
   </div>
   <div
@@ -6156,14 +6330,36 @@ exports[`Transfer[Base] should render correctly about seleced 1`] = `
           class="so-transfer-right so-button-default so-button-button so-button-disabled so-button-square"
           disabled=""
           type="button"
-        />
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </button>
       </span>
       <span>
         <button
           class="so-transfer-left so-button-default so-button-button so-button-disabled so-button-square"
           disabled=""
           type="button"
-        />
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            />
+          </svg>
+        </button>
       </span>
     </div>
     <div
@@ -7348,14 +7544,36 @@ exports[`Transfer[Base] should render correctly about size 1`] = `
           class="so-transfer-right so-button-default so-button-button so-button-disabled so-button-square so-button-small"
           disabled=""
           type="button"
-        />
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </button>
       </span>
       <span>
         <button
           class="so-transfer-left so-button-default so-button-button so-button-disabled so-button-square so-button-small"
           disabled=""
           type="button"
-        />
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+            />
+          </svg>
+        </button>
       </span>
     </div>
     <div
