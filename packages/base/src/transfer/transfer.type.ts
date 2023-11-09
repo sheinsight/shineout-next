@@ -72,7 +72,7 @@ export interface CustomRenderProps<Value extends KeygenResult[]> {
 
 export interface TransferProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTransferProps<DataItem, Value>, 'valueControl' | 'selectControl'>,
-    Pick<CommonType, 'size' | 'style'> {
+    Pick<CommonType, 'size' | 'style' | 'className'> {
   jssStyle: JssStyleType;
   selectedKeys?: KeygenResult[];
   listHeight?: number;
