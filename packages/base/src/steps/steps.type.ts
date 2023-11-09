@@ -21,7 +21,10 @@ export interface StepsProps extends Pick<CommonType, 'className' | 'style' | 'si
 }
 
 export interface StepStyleProps
-  extends Pick<BaseStepProps, 'jssStyle' | 'size' | 'status' | 'title' | 'description' | 'icon'>,
+  extends Pick<
+      BaseStepProps,
+      'jssStyle' | 'size' | 'status' | 'title' | 'description' | 'renderIcon'
+    >,
     Pick<StepProps, 'labelPlacement' | 'direction'> {
   index: number;
 }

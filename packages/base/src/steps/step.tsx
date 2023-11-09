@@ -15,7 +15,7 @@ const Step = (props: StepProps) => {
     type,
     current = 0,
     index = 0,
-    icon,
+    renderIcon,
     description,
     labelPlacement: labelPlacementProp = 'horizontal',
     status: statusProp,
@@ -67,7 +67,7 @@ const Step = (props: StepProps) => {
     return (
       <Component
         jssStyle={jssStyle}
-        icon={icon}
+        renderIcon={renderIcon}
         status={status}
         size={size}
         index={index}

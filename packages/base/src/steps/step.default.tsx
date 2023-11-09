@@ -4,7 +4,16 @@ import { StepStyleProps } from './steps.type';
 import Icons from '../icons';
 
 const DefaultStep = (props: StepStyleProps) => {
-  const { jssStyle, title, description, direction, index, status, icon, labelPlacement } = props;
+  const {
+    jssStyle,
+    title,
+    description,
+    direction,
+    index,
+    status,
+    labelPlacement,
+    renderIcon: renderIconProp,
+  } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = styles.default;
   const iconClass = classNames(styles.icon, {
@@ -29,7 +38,12 @@ const DefaultStep = (props: StepStyleProps) => {
   };
 
   const renderIcon = () => {
-    if (icon) return icon;
+    if (renderIconProp)
+      return (
+        <div className={iconClass}>
+          <span className={styles.iconWrapper}>{renderIconProp(index, status)}</span>
+        </div>
+      );
 
     let iconComponent;
     if (status === 'finish') {

@@ -23,6 +23,22 @@ export default () => {
     setCurrent(current + 1);
   };
 
+  const renderIcon = (index, status) => {
+    return (
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          background: status === 'finish' ? 'black' : 'orange',
+          color: '#fff',
+          borderRadius: '50%',
+        }}
+      >
+        哈
+      </div>
+    );
+  };
+
   const description = '这是描述内容';
   // const description =
   //   '这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息这是描述信息';
@@ -32,12 +48,12 @@ export default () => {
         next
       </button>
       <div>
-        <Steps jssStyle={jssStyle} type='dot' current={current} direction='vertical' size='small'>
-          <Steps.Step description={description} title='第1步'></Steps.Step>
+        <Steps jssStyle={jssStyle} current={current}>
+          <Steps.Step description={description} title='第1步' renderIcon={renderIcon}></Steps.Step>
           <Steps.Step description={description} title='第2步'></Steps.Step>
           <Steps.Step description={description} title='第3步'></Steps.Step>
-          {/* <Steps.Step description={description} title='第4步'></Steps.Step>
-          <Steps.Step description={description} title='第5步'></Steps.Step> */}
+          <Steps.Step description={description} title='第4步'></Steps.Step>
+          {/* <Steps.Step description={description} title='第5步'></Steps.Step> */}
         </Steps>
       </div>
     </div>

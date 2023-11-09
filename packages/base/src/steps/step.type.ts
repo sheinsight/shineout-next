@@ -9,7 +9,7 @@ export interface BaseStepProps extends Pick<CommonType, 'className' | 'style' | 
    */
   id?: any;
   status?: StepsStatusType;
-  icon?: React.ReactNode;
+  renderIcon?: (index: number, status?: StepsStatusType) => React.ReactNode;
   title?: React.ReactNode;
   className?: string;
   disabled?: boolean | ((index: number) => boolean);

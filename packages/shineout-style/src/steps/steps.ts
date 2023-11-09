@@ -58,8 +58,13 @@ const stepsStyle: JsStyles<StepsClassType> = {
       },
     },
     '&$dot': {
-      '& $tail': {
-        top: 11,
+      '&$vertical': {
+        '& $tail': {},
+      },
+      '&$horizontal': {
+        '& $tail': {
+          top: 11,
+        },
       },
     },
     '& $title': {
@@ -70,10 +75,10 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
     '&$default $iconWrapper': {
       fontSize: Token.stepsSmallTitleFontSize,
-      lineHeight: Token.stepsSmallIconFontSize,
-      width: Token.stepsSmallIconFontSize,
-      height: Token.stepsSmallIconFontSize,
-      padding: 5,
+      lineHeight: Token.stepsSmallIconHeight,
+      width: Token.stepsSmallIconWidth,
+      height: Token.stepsSmallIconHeight,
+      padding: 0,
     },
     '&$default': {
       '&$horizontal': {
@@ -85,16 +90,49 @@ const stepsStyle: JsStyles<StepsClassType> = {
           },
         },
       },
-    },
-    '& $horizontalLabel': {
+      '&$vertical': {
+        '& $title': {
+          lineHeight: Token.stepsSmallIconHeight,
+        },
+        '& $description': {
+          marginTop: 4,
+        },
+        '& $tail': {
+          paddingTop: 28,
+          left: 12,
+        },
+      },
+      '& $verticalLabel': {
+        '& $title': {
+          lineHeight: Token.lineHeightDynamic,
+        },
+      },
       '& $title': {
-        marginTop: 2,
+        lineHeight: Token.stepsSmallIconHeight,
       },
     },
-    '& $horizontalLabel:not(:last-child)': {
-      minWidth: 150,
-      '& $description': {
-        marginTop: 0,
+    '& $horizontal': {
+      '& $horizontalLabel': {
+        '& $title': {
+          marginTop: 2,
+        },
+      },
+      '& $horizontalLabel:not(:last-child)': {
+        minWidth: 150,
+        '& $description': {
+          marginTop: 0,
+        },
+      },
+    },
+    '& $vertical ': {
+      '& $horizontalLabel': {
+        '& $title': {
+          marginTop: 2,
+        },
+      },
+      '& $horizontalLabel:not(:last-child)': {
+        minWidth: 150,
+        '& $description': {},
       },
     },
   },
@@ -125,10 +163,10 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
     '&$default $iconWrapper': {
       fontSize: Token.stepsLargeTitleFontSize,
-      lineHeight: Token.stepsLargeIconFontSize,
-      width: Token.stepsLargeIconFontSize,
-      height: Token.stepsLargeIconFontSize,
-      padding: 7,
+      width: `calc(${Token.stepsLargeIconFontSize} + 14px)`,
+      height: `calc(${Token.stepsLargeIconFontSize} + 14px)`,
+      lineHeight: `calc(${Token.stepsLargeIconFontSize} + 14px)`,
+      padding: 0,
     },
     '&$default': {
       '&$horizontal': {
@@ -140,12 +178,33 @@ const stepsStyle: JsStyles<StepsClassType> = {
           },
         },
       },
-    },
-    '& $horizontalLabel': {
+      '&$vertical': {
+        '& $title': {
+          lineHeight: Token.stepsLargeIconHeight,
+        },
+        '& $description': {
+          marginTop: 7,
+        },
+        '& $tail': {
+          left: 16,
+          paddingTop: 36,
+        },
+      },
+      '& $verticalLabel': {
+        '& $title': {
+          lineHeight: Token.lineHeightDynamic,
+        },
+      },
       '& $title': {
-        marginTop: 3,
+        lineHeight: Token.stepsLargeIconHeight,
       },
     },
+    '&$horizontal': {
+      '& $title': {
+        lineHeight: Token.stepsLargeIconHeight,
+      },
+    },
+    '& $horizontalLabel': {},
     '& $horizontalLabel:not(:last-child)': {
       minWidth: 170,
       '& $description': {
@@ -315,12 +374,23 @@ const stepsStyle: JsStyles<StepsClassType> = {
   },
   dot: {
     '&$vertical': {
+      '& $title': {
+        marginTop: 0,
+      },
+      '& $description': {
+        marginTop: 4,
+      },
       '& $icon': {
         lineHeight: 0,
         padding: 10,
       },
+      '& $process': {
+        '& $icon': {
+          padding: 9,
+        },
+      },
       '& $tail': {
-        paddingTop: 28,
+        paddingTop: 27,
         '&:after': {
           width: 1,
         },
@@ -348,10 +418,12 @@ const stepsStyle: JsStyles<StepsClassType> = {
         '& $icon': {
           marginLeft: 75,
         },
-        '& $iconWrapper': {
-          width: 10,
-          height: 10,
-        },
+      },
+    },
+    '& $process': {
+      '& $iconWrapper': {
+        width: 10,
+        height: 10,
       },
     },
     '& $iconWrapper': {
@@ -459,7 +531,6 @@ const stepsStyle: JsStyles<StepsClassType> = {
   default: {
     '&$vertical': {
       '& $tail': {
-        left: 13.5,
         paddingTop: 32,
         paddingBottom: 4,
         '&:after': {
@@ -476,12 +547,27 @@ const stepsStyle: JsStyles<StepsClassType> = {
         },
       },
     },
-
+    '& $verticalLabel': {
+      '& $title': {
+        lineHeight: Token.lineHeightDynamic,
+      },
+      '& $description': {
+        marginTop: 4,
+      },
+    },
     '& $iconWrapper': {
-      lineHeight: Token.stepsIconFontSize,
-      width: Token.stepsIconFontSize,
-      height: Token.stepsIconFontSize,
+      lineHeight: Token.stepsIconHeight,
+      width: Token.stepsIconWidth,
+      height: Token.stepsIconHeight,
+    },
+    '& $title': {
+      lineHeight: Token.stepsIconHeight,
+    },
+    '& $icon svg': {
       padding: 6,
+    },
+    '& $horizontalLabel:not(:last-child)': {
+      minWidth: 160,
     },
   },
 };
