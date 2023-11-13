@@ -13,6 +13,7 @@ const DefaultStep = (props: StepStyleProps) => {
     status,
     labelPlacement,
     renderIcon: renderIconProp,
+    onChange,
   } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = styles.default;
@@ -40,7 +41,7 @@ const DefaultStep = (props: StepStyleProps) => {
   const renderIcon = () => {
     if (renderIconProp)
       return (
-        <div className={iconClass}>
+        <div className={iconClass} onClick={onChange}>
           <span className={styles.iconWrapper}>{renderIconProp(index, status)}</span>
         </div>
       );
@@ -54,7 +55,7 @@ const DefaultStep = (props: StepStyleProps) => {
       iconComponent = index + 1;
     }
     return (
-      <div className={iconClass}>
+      <div className={iconClass} onClick={onChange}>
         <span className={styles.iconWrapper}>{iconComponent}</span>
       </div>
     );

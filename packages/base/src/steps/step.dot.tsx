@@ -3,7 +3,7 @@ import { StepsClasses } from '@sheinx/shineout-style';
 import { StepStyleProps } from './steps.type';
 
 const DotStep = (props: StepStyleProps) => {
-  const { jssStyle, title, description, direction, status, labelPlacement } = props;
+  const { jssStyle, title, description, direction, status, labelPlacement, onChange } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = styles.dot;
   const iconClass = classNames(styles.icon, {
@@ -37,7 +37,7 @@ const DotStep = (props: StepStyleProps) => {
 
   const renderContent = () => {
     return (
-      <div className={styles.content}>
+      <div className={styles.content} onClick={onChange}>
         {renderTitle()}
         {description && renderDescription()}
       </div>
@@ -45,7 +45,7 @@ const DotStep = (props: StepStyleProps) => {
   };
 
   return (
-    <div className={rootClass}>
+    <div className={rootClass} onClick={onChange}>
       {showTail && renderTail()}
       {renderIcon()}
       {renderContent()}

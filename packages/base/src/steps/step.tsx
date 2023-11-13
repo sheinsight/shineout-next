@@ -22,6 +22,7 @@ const Step = (props: StepProps) => {
     currentStatus,
     disabled,
     direction,
+    onChange,
   } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const getLabelPlacement = () => {
@@ -54,6 +55,10 @@ const Step = (props: StepProps) => {
     [styles.verticalLabel]: labelPlacement === 'vertical',
   });
 
+  const handleChange = () => {
+    onChange?.(index);
+  };
+
   const renderStep = () => {
     let Component = DefaultStep;
     if (type === 'default') {
@@ -75,6 +80,7 @@ const Step = (props: StepProps) => {
         direction={direction}
         labelPlacement={labelPlacement}
         description={description}
+        onChange={handleChange}
       ></Component>
     );
   };

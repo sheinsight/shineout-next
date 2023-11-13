@@ -28,4 +28,5 @@ export interface StepStyleProps
     >,
     Pick<StepProps, 'labelPlacement' | 'direction'> {
   index: number;
+  onChange?: () => void;
 }

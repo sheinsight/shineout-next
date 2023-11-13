@@ -48,7 +48,15 @@ export default () => {
         next
       </button>
       <div>
-        <Steps jssStyle={jssStyle} current={current}>
+        <Steps
+          type='arrow'
+          jssStyle={jssStyle}
+          current={current}
+          onChange={(i) => {
+            console.log(i);
+            setCurrent(i);
+          }}
+        >
           <Steps.Step description={description} title='第1步' renderIcon={renderIcon}></Steps.Step>
           <Steps.Step description={description} title='第2步'></Steps.Step>
           <Steps.Step description={description} title='第3步'></Steps.Step>

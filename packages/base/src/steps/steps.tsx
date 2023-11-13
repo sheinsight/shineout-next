@@ -44,6 +44,7 @@ const Steps = (props: StepsProps) => {
     [styles.large]: size === 'large',
     [styles.vertical]: direction === 'vertical',
     [styles.horizontal]: direction === 'horizontal',
+    [styles.click]: onChange !== undefined,
   });
 
   const renderStep = () => {

@@ -3,7 +3,7 @@ import { StepsClasses } from '@sheinx/shineout-style';
 import { StepStyleProps } from './steps.type';
 
 const ArrowStep = (props: StepStyleProps) => {
-  const { jssStyle, title, description } = props;
+  const { jssStyle, title, description, onChange } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = classNames(styles.arrow);
 
@@ -24,7 +24,11 @@ const ArrowStep = (props: StepStyleProps) => {
     );
   };
 
-  return <div className={rootClass}>{renderContent()}</div>;
+  return (
+    <div className={rootClass} onClick={onChange}>
+      {renderContent()}
+    </div>
+  );
 };
 
 export default ArrowStep;

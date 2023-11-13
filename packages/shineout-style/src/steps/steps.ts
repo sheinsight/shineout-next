@@ -24,6 +24,7 @@ export type StepsClasses = {
   dot: string;
   arrow: string;
   default: string;
+  click: string;
 };
 
 export type StepsClassType = keyof StepsClasses;
@@ -34,6 +35,16 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $step:last-child ': {
       '& $tail,$title::after': {
         display: 'none',
+      },
+    },
+  },
+  click: {
+    '& $icon': {
+      cursor: 'pointer',
+    },
+    '&$arrow': {
+      '& $step': {
+        cursor: 'pointer',
       },
     },
   },
