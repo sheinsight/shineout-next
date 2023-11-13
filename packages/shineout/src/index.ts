@@ -18,6 +18,7 @@ export { default as Progress } from './progress';
 export { default as Radio } from './radio';
 export { default as Rate } from './rate';
 export { default as Rule } from './rule';
+export { default as Select } from './select';
 export { default as Spin } from './spin';
 export { default as Switch } from './switch';
 export { default as Tabs } from './tabs';

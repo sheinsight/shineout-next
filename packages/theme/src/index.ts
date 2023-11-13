@@ -55,6 +55,9 @@ import { RadioTokens } from './radio/type';
 import Rate from './rate';
 import { RateTokens } from './rate/type';
 
+import Select from './select';
+import { SelectTokens } from './select/type';
+
 import Spin from './spin';
 import { SpinTokens } from './spin/type';
 
@@ -94,6 +97,7 @@ export type ThemeTokens = AlertTokens &
   ProgressTokens &
   RadioTokens &
   RateTokens &
+  SelectTokens &
   SpinTokens &
   SwitchTokens &
   TabsTokens &
@@ -121,6 +125,7 @@ const Tokens: ThemeTokens = {
   ...Progress,
   ...Radio,
   ...Rate,
+  ...Select,
   ...Spin,
   ...Switch,
   ...Tabs,
