@@ -10,14 +10,17 @@ const Steps = (props: StepsProps) => {
   const {
     jssStyle,
     children,
+    style,
     type = 'default',
     size,
     status,
     direction: directionProp = 'horizontal',
-    labelPlacement = 'horizontal',
+    labelPlacement: labelPlacementProp = 'vertical',
     current = 0,
+    renderIcon,
     onChange,
   } = props;
+
   const getDirection = () => {
     // arrow 类型只支持 horizontal direction
     if (type === 'arrow') return 'horizontal';
@@ -25,6 +28,14 @@ const Steps = (props: StepsProps) => {
   };
 
   const direction = getDirection();
+
+  const getLabelPlacement = () => {
+    // 布局为 vertical 只支持 horizontal labelPlacement
+    if (direction === 'vertical') return 'horizontal';
+    return labelPlacementProp;
+  };
+
+  const labelPlacement = getLabelPlacement();
 
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = classNames(styles.steps, {
@@ -41,12 +52,13 @@ const Steps = (props: StepsProps) => {
       return cloneElement(Child, {
         id: 'id' in Child.props ? Child.props.id : index,
         index,
+        renderIcon,
       });
     });
   };
 
   return (
-    <div className={rootClass}>
+    <div className={rootClass} style={style}>
       <StepsContext.Provider
         value={{
           jssStyle,

@@ -1,8 +1,8 @@
 /**
  * cn - 基本用法
- *    --
+ *    -- 步骤条基础用法
  * en - Basic
- *    --
+ *    -- Basic steps
  */
 import React from 'react';
 import { Steps } from 'shineout';
@@ -10,10 +10,10 @@ import { Steps } from 'shineout';
 export default () => {
   return (
     <div style={{ width: 500 }}>
-      <Steps labelPlacement='vertical' current={1}>
-        <Steps.Step title='Succeeded' description='这是描述内容' />
-        <Steps.Step title='Processing' description='这是描述内容' />
-        <Steps.Step title='Pending' description='这是描述内容' />
+      <Steps current={1}>
+        <Steps.Step title='Succeeded' />
+        <Steps.Step title='Processing' />
+        <Steps.Step title='Pending' />
       </Steps>
     </div>
   );

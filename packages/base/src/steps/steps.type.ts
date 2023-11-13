@@ -17,6 +17,7 @@ export interface StepsProps extends Pick<CommonType, 'className' | 'style' | 'si
   labelPlacement?: 'horizontal' | 'vertical';
   status?: StepsStatusType;
   current?: number;
+  renderIcon?: (index: number, status?: StepsStatusType) => React.ReactNode;
   onChange?: (index: number) => void;
 }
 

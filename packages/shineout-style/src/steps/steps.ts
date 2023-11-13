@@ -61,17 +61,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '&$vertical': {
         '& $tail': {},
       },
-      '&$horizontal': {
-        '& $tail': {
-          top: 11,
-        },
-      },
     },
     '& $title': {
       fontSize: Token.stepsSmallTitleFontSize,
-    },
-    '& $description': {
-      fontSize: Token.stepsSmallDescriptionFontSize,
     },
     '&$default $iconWrapper': {
       fontSize: Token.stepsSmallTitleFontSize,
@@ -83,17 +75,15 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '&$default': {
       '&$horizontal': {
         '& $tail': {
-          left: `calc(50% + ${Token.stepsSmallIconWidth}/2 + 2px)`,
+          left: 94,
           top: `calc(${Token.stepsSmallIconWidth}/2)`,
+          width: `calc(100% - 20px)`,
           '&:after': {
-            width: `calc(100% - ${Token.stepsSmallIconWidth} + 4px)`,
+            width: '100%',
           },
         },
       },
       '&$vertical': {
-        '& $title': {
-          lineHeight: Token.stepsSmallIconHeight,
-        },
         '& $description': {
           marginTop: 4,
         },
@@ -158,9 +148,6 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $title': {
       fontSize: Token.stepsLargeTitleFontSize,
     },
-    '& $description': {
-      fontSize: Token.stepsLargeDescriptionFontSize,
-    },
     '&$default $iconWrapper': {
       fontSize: Token.stepsLargeTitleFontSize,
       width: `calc(${Token.stepsLargeIconFontSize} + 14px)`,
@@ -169,9 +156,12 @@ const stepsStyle: JsStyles<StepsClassType> = {
       padding: 0,
     },
     '&$default': {
+      '& $title': {
+        lineHeight: Token.stepsLargeIconHeight,
+      },
       '&$horizontal': {
         '& $tail': {
-          left: `calc(50% + ${Token.stepsLargeIconWidth}/2 + 6px)`,
+          left: 102,
           top: `calc(${Token.stepsLargeIconWidth}/2)`,
           '&:after': {
             width: `calc(100% - ${Token.stepsLargeIconWidth} + 4px)`,
@@ -179,12 +169,6 @@ const stepsStyle: JsStyles<StepsClassType> = {
         },
       },
       '&$vertical': {
-        '& $title': {
-          lineHeight: Token.stepsLargeIconHeight,
-        },
-        '& $description': {
-          marginTop: 7,
-        },
         '& $tail': {
           left: 16,
           paddingTop: 36,
@@ -195,21 +179,10 @@ const stepsStyle: JsStyles<StepsClassType> = {
           lineHeight: Token.lineHeightDynamic,
         },
       },
-      '& $title': {
-        lineHeight: Token.stepsLargeIconHeight,
-      },
-    },
-    '&$horizontal': {
-      '& $title': {
-        lineHeight: Token.stepsLargeIconHeight,
-      },
     },
     '& $horizontalLabel': {},
     '& $horizontalLabel:not(:last-child)': {
       minWidth: 170,
-      '& $description': {
-        marginTop: 0,
-      },
     },
   },
   vertical: {
@@ -218,11 +191,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
       minHeight: 64,
     },
     '& $description': {
-      marginTop: 6,
+      marginTop: 4,
       paddingBottom: 12,
-    },
-    '& $title': {
-      lineHeight: Token.stepsIconHeight,
     },
     '& $tail': {
       width: 1,
@@ -234,8 +204,18 @@ const stepsStyle: JsStyles<StepsClassType> = {
         height: '100%',
       },
     },
+    '&dot': {
+      '& $description': {
+        marginTop: 4,
+      },
+    },
   },
   horizontal: {
+    '&dot': {
+      '& $description': {
+        marginTop: 4,
+      },
+    },
     '& $tail': {
       width: '100%',
       height: 1,
@@ -333,6 +313,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
       color: Token.stepsWaitFontColor,
       backgroundColor: Token.stepsWaitBackgroundColor,
     },
+    '& $title': {
+      color: Token.stepsWaitFontColor,
+    },
   },
   process: {
     '& $iconWrapper': {
@@ -377,9 +360,6 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $title': {
         marginTop: 0,
       },
-      '& $description': {
-        marginTop: 4,
-      },
       '& $icon': {
         lineHeight: 0,
         padding: 10,
@@ -390,6 +370,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
         },
       },
       '& $tail': {
+        top: 7,
         paddingTop: 27,
         '&:after': {
           width: 1,
@@ -405,18 +386,19 @@ const stepsStyle: JsStyles<StepsClassType> = {
         marginLeft: 76,
       },
       '& $tail': {
-        top: 7,
-        left: '50%',
-        marginLeft: 4,
-        paddingLeft: 4,
+        left: 88,
         overflow: 'hidden',
+        width: 'calc(100% - 8px)',
         '&:after': {
           width: '100%',
         },
       },
+      '& $title': {
+        whiteSpace: 'normal',
+      },
       '& $process': {
         '& $icon': {
-          marginLeft: 75,
+          marginLeft: 73,
         },
       },
     },
@@ -431,7 +413,11 @@ const stepsStyle: JsStyles<StepsClassType> = {
       height: 8,
     },
 
+    '& $description': {
+      fontSize: Token.stepsSmallDescriptionFontSize,
+    },
     '& $tail': {
+      top: 10.5,
       boxSizing: 'border-box',
     },
     '& $finish': {
@@ -490,10 +476,12 @@ const stepsStyle: JsStyles<StepsClassType> = {
       paddingRight: 0,
       height: 20,
       whiteSpace: 'nowrap',
+      fontSize: Token.stepsSmallDescriptionFontSize,
     },
     '& $content': {
       padding: `${Token.stepsArrowPaddingY} ${Token.stepsArrowPaddingX}`,
       boxSizing: 'border-box',
+      marginTop: 0,
     },
     '& $finish': {
       backgroundColor: Token.stepsFinishBackgroundColor,
@@ -529,6 +517,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
   },
   default: {
+    lineHeight: 0,
     '&$vertical': {
       '& $tail': {
         paddingTop: 32,
@@ -540,7 +529,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
     '&$horizontal': {
       '& $tail': {
-        left: `calc(50% + ${Token.stepsIconWidth}/2 + 4px)`,
+        // left: `calc(50% + ${Token.stepsIconWidth}/2 + 4px)`,
+        left: 98,
         top: 13.5,
         '&:after': {
           width: `calc(100% - ${Token.stepsIconWidth} + 4px)`,
@@ -560,8 +550,14 @@ const stepsStyle: JsStyles<StepsClassType> = {
       width: Token.stepsIconWidth,
       height: Token.stepsIconHeight,
     },
+    '& $icon': {
+      lineHeight: 0,
+    },
     '& $title': {
       lineHeight: Token.stepsIconHeight,
+    },
+    '& $description': {
+      fontSize: Token.stepsSmallDescriptionFontSize,
     },
     '& $icon svg': {
       padding: 6,
