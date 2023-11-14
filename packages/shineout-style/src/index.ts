@@ -24,6 +24,8 @@ export * from './tag';
 export * from './textarea';
 export * from './tooltip';
 export * from './upload';
+export * from './transfer';
+export * from './virtual-scroll';
 
 export { styled, StyleProvider } from './jss-style';
 export * as mixins from './mixin';
