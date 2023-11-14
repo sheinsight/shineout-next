@@ -1,15 +1,14 @@
 import React from 'react';
-import { ObjectKey } from '@sheinx/hooks';
+import { KeygenResult, ObjectKey } from '../../common/type';
 
 export type TableColumnOrder = 'asc' | 'desc';
 export type TableColumnFix = 'left' | 'right';
 export type TableColumnType = 'expand' | 'row-expand' | 'checkbox';
 
-export type KeyType = string | number;
 export interface SortItem {
   order: 'desc' | 'asc';
   weight?: number;
-  key: KeyType;
+  key: KeygenResult;
   manual: boolean;
 }
 export interface BaseTableProps<Item> {
@@ -36,7 +35,7 @@ export interface BaseTableProps<Item> {
    */
   onSortCancel?: (
     preType: 'asc' | 'desc',
-    key: KeyType,
+    key: KeygenResult,
     orders: SortItem[],
     sorter: string,
   ) => void;

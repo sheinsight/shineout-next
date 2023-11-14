@@ -14,7 +14,7 @@ const jssStyle = {
 };
 
 // mock 1000 rows 学生数据
-const data = Array(100)
+const data = Array(10)
   .fill(0)
   .map((_, i) => ({
     id: i,
@@ -40,6 +40,10 @@ const columns = [
     width: 20,
     fixed: 'left',
     sorter: 'age',
+    rowSpan: (data: any, nextData: any) => data.age === nextData.age,
+    colSpan: (data: any) => {
+      return data.age % 2 === 0 ? 2 : 1;
+    },
   },
   {
     title: 'Name',

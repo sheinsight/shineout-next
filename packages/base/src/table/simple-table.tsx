@@ -10,11 +10,11 @@ import Tfoot from './tfoot';
 
 // 功能清单
 // - 表头分组
-//  合并列 合并行 高亮
+// - 合并列 合并行 高亮
 // - 固定表头 列宽同步 滚动同步
-//  排序
-// 可伸缩列
-// 固定列 sticky
+// - 排序
+//   可伸缩列
+// - 固定列 sticky
 // 可展开
 // 可选择
 // 数形状数据
@@ -38,7 +38,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const { colgroup, isScrollY, isScrollX, func, scrollBarWidth, floatLeft, floatRight } =
     useTableLayout({
-      columns: columns,
       theadRef: theadRef,
       tbodyRef: tbodyRef,
       tfootRef: tfootRef,

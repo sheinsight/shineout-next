@@ -1,21 +1,18 @@
 import React, { useEffect, useRef, useLayoutEffect } from 'react';
 import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
-import { split, range } from '../../utils/number';
-import { TableFormatColumn } from './use-table.type';
 import { addResizeObserver } from '../../utils/dom/element';
 
 function setElScrollLeft(target: HTMLElement | null, scrollLeft: number) {
   if (target && target.scrollLeft !== scrollLeft) target.scrollLeft = scrollLeft;
 }
 
-const useTableScroll = (props: {
-  columns: TableFormatColumn<any>[];
+const useTableLayout = (props: {
   theadRef: React.RefObject<HTMLElement>;
   tbodyRef: React.RefObject<HTMLElement>;
   tfootRef: React.RefObject<HTMLElement>;
 }) => {
-  const { theadRef, tbodyRef, tfootRef, columns = [] } = props;
+  const { theadRef, tbodyRef, tfootRef } = props;
   const { current: context } = useRef({ checkNum: 0 });
   const [isScrollX, setIsScrollX] = React.useState(false);
   const [isScrollY, setIsScrollY] = React.useState(false);
@@ -52,23 +49,14 @@ const useTableScroll = (props: {
 
   const getColgroup = usePersistFn(() => {
     if (!tbodyRef.current) return;
-    const tr = tbodyRef.current.querySelector('tr');
+    const tr = tbodyRef.current.querySelector('colgroup');
     if (!tr) return;
-    const tds = tr.querySelectorAll('td');
+    const tds = tr.querySelectorAll('col');
 
     const colgroup: number[] = [];
     for (let i = 0, count = tds.length; i < count; i++) {
       const { width } = tds[i].getBoundingClientRect();
-      const colSpan = parseInt(tds[i].getAttribute('colspan') || '', 10);
-      if (colSpan > 1) {
-        split(
-          width,
-          range(colSpan).map((j: number) => columns[i + j].width || 0),
-        ).forEach((w) => colgroup.push(w));
-        colgroup.push(width);
-      } else {
-        colgroup.push(width);
-      }
+      colgroup.push(width);
     }
     setColgroup(colgroup);
   });
@@ -134,4 +122,4 @@ const useTableScroll = (props: {
   };
 };
 
-export default useTableScroll;
+export default useTableLayout;

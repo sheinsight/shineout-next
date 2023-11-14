@@ -2,8 +2,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import { usePersistFn } from '@sheinx/hooks';
 import { TableColumnItem, TableFormatColumn, BaseTableProps } from './use-table.type';
 import { isObject, isFunc } from '../../utils/is';
-
-export type KeyType = string | number;
+import { KeygenResult } from '../../common/type';
 
 export interface UseTableSorterProps<Item = any>
   extends Pick<BaseTableProps<Item>, 'onSortCancel' | 'sorter' | 'data'> {
@@ -54,7 +53,7 @@ const useTableSort = <Item = any>(props: UseTableSorterProps<Item>) => {
 
   const onSorterChange = usePersistFn(
     (
-      columnKey: KeyType,
+      columnKey: KeygenResult,
       /**
        *  null means cancel sort
        */
