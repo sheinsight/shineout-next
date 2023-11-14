@@ -11,6 +11,7 @@ const checkboxTokenDescription = {
   button: '按钮模式',
   outline: '线框模式',
   gap: '间距',
+  dark: '深色背景',
 };
 
 /**
@@ -48,7 +49,7 @@ const checkboxTokenExtraValue = {
       },
     },
     gap: 'Margin-8',
-    circle: { fill: 'Neutral-fill-2' },
+    circle: { fill: 'Neutral-fill-2', dark: 'Neutral-fill-3' },
   },
   label: {
     font: { color: 'Neutral-text-5', size: '14/regular' },
