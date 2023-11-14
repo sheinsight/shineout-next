@@ -31,6 +31,8 @@ const originClasses = [
   'content',
   'title',
   'description',
+  'dot',
+  'arrow',
 ];
 const originItemClasses = [
   'default',
@@ -41,6 +43,7 @@ const originItemClasses = [
   'small',
   'large',
   'finish',
+  'error',
 ];
 const {
   steps,
@@ -59,6 +62,9 @@ const {
   large,
   description,
   finish,
+  error: errorClassName,
+  dot,
+  arrow,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const StepsTest = (props: any) => (
@@ -94,7 +100,6 @@ describe('Steps[Base]', () => {
   });
   test('should render default', () => {
     const { container } = render(<StepsTest />);
-    screen.debug();
     const stepsWrapper = container.querySelector(steps)!;
     classTest(stepsWrapper, defaultClassName);
     classTest(stepsWrapper, horizontal);
@@ -143,4 +148,68 @@ describe('Steps[Base]', () => {
     classTest(stepWrapper[1], process);
     classTest(stepWrapper[2], wait);
   });
+  test('should render when set status in steps', () => {
+    const statusClassNameMap: { [key: string]: string } = {
+      wait: wait,
+      process: process,
+      finish: finish,
+      error: errorClassName,
+    };
+    Object.keys(statusClassNameMap).forEach((type) => {
+      const { container } = render(<StepsTest status={type} />);
+      const stepsWrapper = container.querySelector(steps)!;
+      const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+      classTest(stepWrapper[0], statusClassNameMap[type]);
+      classTest(stepWrapper[0].querySelector(icon)!, statusClassNameMap[type]);
+    });
+  });
+  test('should render when set status in steps and step at the same time', () => {
+    const { container } = render(
+      <Steps current={1} status='finish'>
+        <Steps.Step title='Succeeded' />
+        <Steps.Step title='Processing' status='error' />
+        <Steps.Step title='Pending' />
+      </Steps>,
+    );
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    classTest(stepWrapper[1], errorClassName);
+    classTest(stepWrapper[1].querySelector(icon)!, errorClassName);
+  });
+  test('should render when set renderIcon', () => {
+    const { container } = render(<StepsTest renderIcon={() => <div className='demo'>1</div>} />);
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    stepWrapper.forEach((item) => {
+      classLengthTest(item.querySelector(iconWrapper)!, '.demo', 1);
+    });
+  });
+  test('should render when set type is dot', () => {
+    const { container } = render(<StepsTest type='dot' />);
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    stepWrapper.forEach((item) => {
+      expect(item.querySelector(dot)).toBeInTheDocument();
+    });
+  });
+  test('should render when set type is dot and renderIcon', () => {
+    const { container } = render(
+      <StepsTest type='dot' renderIcon={() => <div className='demo'>1</div>} />,
+    );
+    screen.debug();
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    stepWrapper.forEach((item) => {
+      classLengthTest(item.querySelector(iconWrapper)!, '.demo', 0);
+    });
+  });
+  test('should render when set type is arrow', () => {
+    const { container } = render(<StepsTest type='arrow' />);
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    stepWrapper.forEach((item) => {
+      expect(item.querySelector(arrow)).toBeInTheDocument();
+    });
+  });
 });
+describe('Steps[Direction/LabelPlacement]', () => {});
