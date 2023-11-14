@@ -16,7 +16,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     jssStyle,
     className,
     size,
-    // data,
+    data,
     // value,
     // treeData,
     innerTitle,
@@ -30,6 +30,8 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     height = 250,
     open: openProp,
     position: positionProp = 'bottom-left',
+    lineHeight,
+    itemsInView,
     // onFocus,
     // onBlur,
   } = props;
@@ -106,9 +108,12 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
 
   const renderList = () => {
     const listProps = {
+      data,
       width,
       height,
       optionWidth,
+      lineHeight,
+      itemsInView,
     };
     if ((typeof columns === 'number' && columns! >= 1) || columns === -1) {
       return <ColumnsList {...listProps}></ColumnsList>;

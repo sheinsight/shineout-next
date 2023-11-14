@@ -4,16 +4,18 @@ import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { InnerTitleClasses } from '../common/use-inner-title';
+import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
 
 export type JssStyleType = {
   select: () => SelectClasses;
   innerTitle?: () => InnerTitleClasses;
+  virtualScroll: () => VirtualScrollClasses;
 };
 
 export interface BaseListProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
-    'jssStyle' | 'data' | 'height' | 'width' | 'optionWidth' | 'header' | 'loading'
+    'jssStyle' | 'data' | 'height' | 'width' | 'optionWidth' | 'header' | 'loading' | 'lineHeight'
   > {
   customHeader?: React.ReactNode;
 }
@@ -95,6 +97,20 @@ export interface SelectProps<DataItem, Value>
    * @default 100%
    */
   optionWidth?: number | string;
+
+  /**
+   * @en The maximum number of rows for a single render. Select uses lazy render to optimize performance under large amounts of data. If your table displays more than 10 rows, you can change the value of itemsInView.
+   * @cn 单次 render 的最大行数。Select 采用了lazy render 的方式来优化在大量数据下的性能，如果你的表格显示的高度超出了 10 条，可以调整 itemsInView
+   * @default 10
+   */
+  itemsInView?: number;
+
+  /**
+   * @en Option height. List items are rendered using virtual lists, and when the option height changes, the correct height should be specified via lineHeight
+   * @cn 选项高度。列表项使用虚拟列表渲染，当选项高度改变时，应该通过 lineHeight 来指定正确高度
+   * @default 32
+   */
+  lineHeight?: number;
 
   /**
    * @en Set Position can control the different position of DatePicker
