@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import classNames from 'classnames';
 import { TransferListItemProps } from './transfer-list-item.type';
 import { TransferClasses } from './transfer.type';
@@ -13,14 +13,14 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     data,
     datum,
     listDatum,
-    lineHeight,
+    // lineHeight,
     renderItem: renderItemProp,
     simple,
     itemClass,
     listType,
   } = props;
   const listItem = useRef<HTMLDivElement>(null);
-  const listItemHeight = useRef(lineHeight);
+  // const listItemHeight = useRef(lineHeight);
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const isChecked = listDatum.check(data);
@@ -81,13 +81,13 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
     );
   };
 
-  useEffect(() => {
-    if (!listItem.current) return;
-    const realHeight = listItem.current.getBoundingClientRect().height;
-    if (listItemHeight.current === realHeight) return;
+  // useEffect(() => {
+  //   if (!listItem.current) return;
+  //   const realHeight = listItem.current.getBoundingClientRect().height;
+  //   if (listItemHeight.current === realHeight) return;
 
-    listItemHeight.current = realHeight;
-  }, []);
+  //   listItemHeight.current = realHeight;
+  // }, []);
 
   return (
     <div ref={listItem} className={rootClass}>
