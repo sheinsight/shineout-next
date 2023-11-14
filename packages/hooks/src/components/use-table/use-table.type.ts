@@ -1,0 +1,250 @@
+import React from 'react';
+import { ObjectKey } from '@sheinx/hooks';
+
+export type TableColumnOrder = 'asc' | 'desc';
+export type TableColumnFix = 'left' | 'right';
+export type TableColumnType = 'expand' | 'row-expand' | 'checkbox';
+
+export type KeyType = string | number;
+export interface SortItem {
+  order: 'desc' | 'asc';
+  weight?: number;
+  key: KeyType;
+  manual: boolean;
+}
+export interface BaseTableProps<Item> {
+  data?: Item[];
+  /**
+   * @en the method of table sort，args are Column.sorter and order
+   * Multi-column sorting is supported. The sorter passes in the object {rule: string | function, weight: number}, where rule is a sorting rule, which refers to the use of single-column sorting when it is a string, weight is the weight, indicating the priority of the order
+   * When sorting on multiple columns, sortedList returns information about all fields involved in sorting
+   *
+   * @cn 表格统一排序函数，参数分别为 Column.sorter 和 排序方式;
+   * 支持多列排序，sorter传入对象{ rule: string | function, weight: number }, rule为排序规则，为字符串时参考单列排序的用法, weight 为权重，指明排序的优先级。
+   * 多列排序时，sortedList 返回所有参与排序的字段信息
+   *
+   * @default alphaSort(Column.sorter, sorter)
+   */
+  sorter?: (
+    sortName: string,
+    sorter: 'asc' | 'desc',
+    sortedList: Array<TableSorterInfo>,
+  ) => undefined | void | ((a: Item, b: Item) => number);
+  /**
+   * @en sort cancel event
+   * @cn 排序取消事件
+   */
+  onSortCancel?: (
+    preType: 'asc' | 'desc',
+    key: KeyType,
+    orders: SortItem[],
+    sorter: string,
+  ) => void;
+}
+export interface TableSorterInfo {
+  order: TableColumnOrder;
+  /**
+   * @cn 如果是 defaultOrder 触发的排序, manual 为 false
+   */
+  manual: boolean;
+  /**
+   * @cn 列 key
+   */
+  key: string | number;
+  /**
+   * @cn 设置的权重
+   */
+  weight?: number;
+}
+export interface TableColumnSorter {
+  rule: string | ((sorter: TableSorterInfo[]) => void);
+  weight: number;
+}
+export interface ColumnRenderFunc<DataItem> {
+  (data: DataItem, index: number, checkInstance?: React.ReactComponentElement<any>):
+    | React.ReactNode
+    | (() => React.ReactNode);
+}
+
+/**
+ * @title TableColumn
+ */
+export interface TableColumnItem<DataItem> {
+  /**
+   * @en cell align
+   * @cn 单元格内容排布方式
+   * @default 'left'
+   * @override union
+   */
+  align?: 'left' | 'center' | 'right';
+
+  /**
+   * @en The function for controlling to merge columns. The return value is an integer indicating the number of columns that need to be merged。
+   * @cn 合并列控制函数，row为单行数据，返回值一个整数，标明需要合并的列数
+   */
+  colSpan?: (row: DataItem, index: number) => number;
+
+  /**
+   * @en default sort
+   * @cn 默认排序规则
+   */
+  defaultOrder?: TableColumnOrder;
+
+  /**
+   * @en Fixed columns. If multiple adjacent columns need to be locked, specify only the outermost column
+   * @cn 固定列,如果相邻的多列需要锁定，只需指定最外侧的 column 即可
+   */
+  fixed?: TableColumnFix;
+
+  /**
+   * @en The group of header column.
+   * @cn 表头分组，相邻的相同 group 会生成一个新的表头
+   */
+  group?: string | React.ReactNode | Array<string | React.ReactNode>;
+
+  /**
+   * @en hide the column, only work on row-expand column
+   * @cn 只针对行展开列有效，表示是否隐藏该列
+   */
+  hide?: boolean;
+
+  /**
+   * @en The key of the column
+   * @cn 列的key，默认使用 index
+   */
+  key?: string | number;
+
+  /**
+   * @en min width
+   * @cn 最小列宽
+   */
+  minWidth?: number;
+
+  /**
+   * @en max width
+   * @cn 最大可拖动列宽
+   */
+  maxWidth?: number;
+
+  /**
+   * @en Select All to screen data. Valid only if type="checkbox"
+   * @cn 全选时用来筛除数据，仅当 type="checkbox" 时有效
+   */
+  filterAll?: (data: DataItem[]) => DataItem[];
+
+  /**
+   * @en The generation function for Table content.d: the data of the current row. i: the index of the current row .For ease of use, you can pass in the key of a data, such as 'id', which is equivalent to (d) => { return d.id }
+   * @cn 表格内容生成函数，返回渲染的内容,  data 当前行的数据，index 当前索引，instance 当 type="checkbox" 时会传入 Checkbox 实例
+   * 为了使用方便，可以传入一个数据的key，如 'id'，相当于 (d) => { return d.id }
+   * @override ObjectKey<DataItem> | function(d, id, instance)
+   */
+  render?: ObjectKey<DataItem> | ColumnRenderFunc<DataItem>;
+
+  /**
+   * @en According to the result (boolean) returned by the function to determine whether to merge rows, a and b are two adjacent rows of data
+   * @cn 根据函数返回的结果（boolean）判断是否合并行，a、b为相邻的两行数据。
+   */
+  rowSpan?: ((prevRowData: DataItem, nextRowData: DataItem) => boolean) | boolean;
+
+  /**
+   * @en When the sorter is not empty, the sort icon appears in this column. the value of order: ['asc', 'desc']
+   * Indicate the sort key string, will pass to table sorter method.
+   * Front-end sorting returns a sort function, refer to Array.sort.
+   * Server-side sorting, do not return values and handle it itself.
+   *
+   * @cn sorter 不为空时，这一列会出现排序 icon。order的值为['asc', 'desc']
+   * 字符串表示排序依据字段，作为第一个参数传入Table.sorter
+   * 为 Sorter 对象
+   * 前端排序，返回一个排序函数，参考 Array.sort。(旧用法)
+   * 服务端排序，不要返回值，自行处理即可。(旧用法)
+   */
+  sorter?:
+    | ((
+        order: TableColumnOrder,
+      ) => ((prevRowData: DataItem, nextRowData: DataItem) => number) | void)
+    | string
+    | TableColumnSorter;
+
+  /**
+   * @en The content of the header
+   * @cn 表头显示内容
+   */
+  title?: string | React.ReactNode | ((rowData: DataItem[]) => React.ReactNode);
+
+  /**
+   * @en tree table children-data name
+   * @cn 树形表格子数据字段名
+   */
+  treeColumnsName?: ObjectKey<DataItem>;
+
+  /**
+   * @en indent of each level
+   * @cn 每一层缩进宽度
+   * @default 25
+   */
+  treeIndent?: number;
+
+  /**
+   * @en Special column
+   * expand: Expand the column. When the render function returns a function, it means that the row can be expanded and the content  is the result returned by this function.
+   * row-expand: Similar to expand. The difference is that clicking on the entire row triggers the expand event.
+   * checkbox: Select column for scenes with only fixed selection columns
+   *
+   * @cn 特殊用途列
+   * expand: 行展开列，render 函数返回函数时，表示此行可以展开，内容为此函数返回结果。
+   * row-expand: 同 expand。不同为点击行内空白区域也可以折叠/展开行。
+   * checkbox: 选择列，仅用于固定选择列的场景
+   */
+  type?: TableColumnType;
+
+  /**
+   * @en width
+   * @cn 列宽
+   */
+  width?: number;
+
+  /**
+   * @cn 列对应的类名
+   * @en classname of column
+   */
+  className?: string;
+
+  /**
+   * @cn td 样式
+   * @en style of td
+   */
+  style?: React.CSSProperties;
+
+  /**
+   * @cn 列点击事件
+   * @en Click event of column
+   */
+  onClick?: (d: DataItem, isExpand: boolean) => void;
+
+  /**
+   * @cn 单独设置某一列不可拖动
+   * @en Separately set a column not to be draggable
+   */
+  columnResizable?: false;
+}
+
+export interface TableFormatColumn<DataItem> extends TableColumnItem<DataItem> {
+  index: number;
+  key: string | number;
+  lastFixed?: boolean;
+  firstFixed?: boolean;
+}
+
+export interface TableGroupColumn {
+  name: React.ReactNode;
+  key: string | number;
+  colSpan: number;
+  level: number;
+  fixed?: TableColumnFix;
+  firstFixed?: boolean;
+  columns: TableHeadColumn[];
+  lastFixed?: boolean;
+  index: number;
+}
+
+export type TableHeadColumn = TableGroupColumn | TableFormatColumn<any>;

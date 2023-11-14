@@ -20,6 +20,7 @@ export { default as Rate } from './rate';
 export { default as Rule } from './rule';
 export { default as Spin } from './spin';
 export { default as Switch } from './switch';
+export { default as Table } from './table';
 export { default as Tabs } from './tabs';
 export { default as Tag } from './tag';
 export { default as Textarea } from './textarea';

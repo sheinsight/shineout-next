@@ -19,6 +19,7 @@ export * from './radio';
 export * from './rate';
 export * from './spin';
 export * from './switch';
+export * from './table';
 export * from './tabs';
 export * from './tag';
 export * from './textarea';

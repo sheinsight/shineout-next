@@ -5,7 +5,7 @@ import type {
   DatePickerValueType,
   UseDatePickerFormatProps,
 } from './use-datepicker-format.type';
-import shallowEqual from '../../utils/shallowEqual';
+import shallowEqual from '../../utils/shallow-equal';
 import { usePersistFn } from '../../common/use-persist-fn';
 import useLatestObj from '../../common/use-latest-obj';
 

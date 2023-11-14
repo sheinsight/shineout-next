@@ -21,6 +21,7 @@ export * from './rate';
 export * from './rule';
 export * from './spin';
 export * from './switch';
+export * from './table';
 export * from './tabs';
 export * from './tag';
 export * from './textarea';
