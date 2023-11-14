@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen } from '@testing-library/react';
+import { render, cleanup, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Steps from '..';
 import { classLengthTest } from '../../tests/structureTest';
@@ -44,6 +44,9 @@ const originItemClasses = [
   'large',
   'finish',
   'error',
+  'vertical',
+  'horizontalLabel',
+  'disabled',
 ];
 const {
   steps,
@@ -65,6 +68,9 @@ const {
   error: errorClassName,
   dot,
   arrow,
+  vertical,
+  horizontalLabel,
+  disabled,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const StepsTest = (props: any) => (
@@ -93,10 +99,21 @@ describe('Steps[Base]', () => {
     expect(Steps.Step.displayName).toBe('ShineoutStep');
   });
   test('should render when set style and className', () => {
-    const { container } = render(<StepsTest className={'demo'} style={{ color: 'red' }} />);
+    const { container, rerender } = render(
+      <StepsTest className={'demo'} style={{ color: 'red' }} />,
+    );
     const wrapper = container.querySelector(steps)!;
     classTest(wrapper, 'demo');
     styleTest(wrapper, 'color: red;');
+    rerender(
+      <Steps>
+        <Steps.Step title='Succeeded' className='demo' />
+        <Steps.Step title='Processing' />
+        <Steps.Step title='Pending' />
+      </Steps>,
+    );
+    screen.debug();
+    classTest(container.querySelectorAll(step)[0], 'demo');
   });
   test('should render default', () => {
     const { container } = render(<StepsTest />);
@@ -196,7 +213,6 @@ describe('Steps[Base]', () => {
     const { container } = render(
       <StepsTest type='dot' renderIcon={() => <div className='demo'>1</div>} />,
     );
-    screen.debug();
     const stepsWrapper = container.querySelector(steps)!;
     const stepWrapper = stepsWrapper.querySelectorAll(step)!;
     stepWrapper.forEach((item) => {
@@ -212,4 +228,120 @@ describe('Steps[Base]', () => {
     });
   });
 });
-describe('Steps[Direction/LabelPlacement]', () => {});
+describe('Steps[Direction/LabelPlacement]', () => {
+  test('should render when set direction', () => {
+    const { container } = render(<StepsTest direction={'vertical'} />);
+    classTest(container.querySelector(steps)!, vertical);
+  });
+  test('should render when set direction and labelPlacement is vertical at the same', () => {
+    const { container } = render(<StepsTest direction={'vertical'} labelPlacement={'vertical'} />);
+    classTest(container.querySelector(steps)!, vertical);
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    stepWrapper.forEach((item) => {
+      classTest(item, horizontalLabel);
+    });
+  });
+  test('should render when set direction is vertical in arrow', () => {
+    const { container } = render(<StepsTest direction={'vertical'} type='arrow' />);
+    classTest(container.querySelector(steps)!, horizontal);
+  });
+  test('should render when set labelPlacement', () => {
+    const { container } = render(<StepsTest labelPlacement={'horizontal'} />);
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    stepWrapper.forEach((item) => {
+      classTest(item, horizontalLabel);
+    });
+  });
+  test('should render when set direction and labelPlacement is horizontal or vertical at the same time in dot', () => {
+    const { container, rerender } = render(
+      <StepsTest direction={'horizontal'} type='dot' labelPlacement={'horizontal'} />,
+    );
+    classTest(container.querySelector(steps)!, horizontal);
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    stepWrapper.forEach((item) => {
+      classTest(item, verticalLabel);
+    });
+    rerender(<StepsTest direction={'vertical'} type='dot' labelPlacement={'vertical'} />);
+    classTest(container.querySelector(steps)!, vertical);
+    stepWrapper.forEach((item) => {
+      classTest(item, horizontalLabel);
+    });
+  });
+});
+describe('Steps[Disabled]', () => {
+  test('should render when set disabled is boolean', () => {
+    const { container } = render(
+      <Steps current={1} status='finish'>
+        <Steps.Step title='Succeeded' disabled />
+        <Steps.Step title='Processing' status='error' />
+        <Steps.Step title='Pending' />
+      </Steps>,
+    );
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    classTest(stepWrapper[0], disabled);
+    stepWrapper.forEach((item, index) => {
+      if (index === 0) return;
+      classTest(item, disabled, false);
+    });
+  });
+  test('should render when set disabled is function', () => {
+    const { container } = render(
+      <Steps current={1} status='finish'>
+        <Steps.Step title='Succeeded' disabled={() => true} />
+        <Steps.Step title='Processing' status='error' />
+        <Steps.Step title='Pending' />
+      </Steps>,
+    );
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    classTest(stepWrapper[0], disabled);
+    stepWrapper.forEach((item, index) => {
+      if (index === 0) return;
+      classTest(item, disabled, false);
+    });
+  });
+});
+describe('Steps[OnClick/OnChange]', () => {
+  test('should render when set onClick', () => {
+    const clickFn = jest.fn();
+    const { container } = render(
+      <Steps>
+        <Steps.Step title='Succeeded' />
+        <Steps.Step title='Processing' onClick={clickFn} />
+        <Steps.Step title='Pending' />
+      </Steps>,
+    );
+    screen.debug();
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    fireEvent.click(stepWrapper[1].querySelector(icon)!);
+    expect(clickFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set onChange', () => {
+    const ChangeSteps = () => {
+      const [current, setCurrent] = React.useState<number>(0);
+      const changeFn = (index: number) => {
+        setCurrent(index);
+      };
+      return (
+        <Steps current={current} onChange={changeFn}>
+          <Steps.Step title='Succeeded' />
+          <Steps.Step title='Processing' />
+          <Steps.Step title='Pending' />
+        </Steps>
+      );
+    };
+    const { container } = render(<ChangeSteps />);
+    const stepsWrapper = container.querySelector(steps)!;
+    const stepWrapper = stepsWrapper.querySelectorAll(step)!;
+    classTest(stepWrapper[0], process);
+    classTest(stepWrapper[1], wait);
+    fireEvent.click(stepWrapper[1].querySelector(icon)!);
+    classTest(stepWrapper[0], finish);
+    classTest(stepWrapper[1], process);
+  });
+});

@@ -9,10 +9,12 @@ import ArrowStep from './step.arrow';
 
 const Step = (props: StepProps) => {
   const {
+    id,
     jssStyle,
     title,
     size,
     type,
+    className,
     current = 0,
     index = 0,
     renderIcon,
@@ -22,6 +24,7 @@ const Step = (props: StepProps) => {
     currentStatus,
     disabled,
     direction,
+    onClick,
     onChange,
   } = props;
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
@@ -47,7 +50,7 @@ const Step = (props: StepProps) => {
   const status = getStatus();
   const labelPlacement = getLabelPlacement();
 
-  const rootClass = classNames(styles.step, styles[status], {
+  const rootClass = classNames(styles.step, className, styles[status], {
     [styles.disabled]: disabled,
     // 即便是指定 status 也需要考虑是否为 finish 状态
     [styles.finish]: current > index,
@@ -55,7 +58,8 @@ const Step = (props: StepProps) => {
     [styles.verticalLabel]: labelPlacement === 'vertical',
   });
 
-  const handleChange = () => {
+  const handleChange = (e: React.MouseEvent<HTMLElement>) => {
+    onClick?.(e, index, id);
     onChange?.(index);
   };
 
