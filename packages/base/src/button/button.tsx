@@ -21,15 +21,17 @@ const Button = (props: ButtonProps) => {
     space,
     target,
     mode,
+    htmlType: htmlTypeProp = 'button',
     renderInnerWrapper,
     renderLoading,
     ...rest
   } = props;
   const { getButtonProps, getSpaceChildren, getAnchorProps, disabled } = useButton({
     loading,
+    htmlType: htmlTypeProp,
     ...rest,
   });
-  const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
+  const buttonStyle = jssStyle?.button?.() || ({} as ButtonClasses);
 
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
 
@@ -50,8 +52,8 @@ const Button = (props: ButtonProps) => {
     size === 'large' && buttonStyle.large,
   );
   const rootProps = getButtonProps();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { type: buttonType, onRef, ...buttonProps } = rootProps;
+
+  const { htmlType, onRef, ...buttonProps } = rootProps;
 
   const getSpinSize = () => {
     if (size === 'small') {
@@ -94,9 +96,10 @@ const Button = (props: ButtonProps) => {
       </a>
     );
   }
+
   return (
     // eslint-disable-next-line react/button-has-type
-    <button {...buttonProps} ref={onRef as any} className={rootClass} style={style}>
+    <button {...buttonProps} type={htmlType} ref={onRef as any} className={rootClass} style={style}>
       {loading && loadingEl}
       {buttonInnerEl}
     </button>

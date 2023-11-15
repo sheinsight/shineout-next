@@ -1,12 +1,10 @@
-import { useMemo } from 'react';
 import { Popover } from '@sheinx/base';
 import { usePopoverStyle } from '@sheinx/shineout-style';
 import { PopoverProps } from './popover.type';
 
+const jssStyle = {
+  popover: usePopoverStyle,
+};
 export default (props: PopoverProps) => {
-  const {} = props;
-  const popoverStyle = usePopoverStyle();
-  const jssStyle = useMemo(() => ({ popover: popoverStyle }), [popoverStyle]);
-
   return <Popover jssStyle={jssStyle} {...props} />;
 };

@@ -8,6 +8,7 @@ import useWithFormConfig from '../common/use-with-form-config';
 
 const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem, Value>) => {
   const { children, className, block, keygen, jssStyle, style } = props;
+  const checkboxStyle = jssStyle?.checkbox?.();
   const { disabled } = useWithFormConfig(props);
 
   const inputAbleProps = useInputAble({
@@ -64,8 +65,8 @@ const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem
   };
   const groupClass = classNames(
     className,
-    jssStyle?.checkbox?.group,
-    !!block && jssStyle?.checkbox?.groupBlock,
+    checkboxStyle?.group,
+    !!block && checkboxStyle?.groupBlock,
   );
   if (props.data === undefined) {
     return (

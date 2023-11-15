@@ -58,8 +58,8 @@ export interface BaseTagProps
   extends Pick<CommonType, 'style' | 'className' | 'size'>,
     React.HTMLAttributes<HTMLDivElement> {
   jssStyle: {
-    tag: TagClasses;
-    input: InputClasses;
+    tag: () => TagClasses;
+    input: () => InputClasses;
   };
   mode?: TagModeType;
   /**
@@ -80,8 +80,8 @@ export interface BaseTagProps
 
 export interface BaseTagInputProps extends Pick<CommonType, 'style' | 'className' | 'size'> {
   jssStyle: {
-    tag: TagClasses;
-    input: InputClasses;
+    tag: () => TagClasses;
+    input: () => InputClasses;
   };
   onBlur?: (value: string, e: React.FocusEvent<HTMLInputElement>) => void;
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;

@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableArea[Base] should render correctly  1`] = `
+<div
+  class="so-editableArea-wrapper"
+>
+  <div
+    class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+    tabindex="0"
+  >
+    <div
+      class="so-editableArea-content"
+    >
+      <span
+        class="so-editableArea-placeholder"
+      >
+        input something
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EditableArea[Base] should render correctly  2`] = `
+<div
+  class="so-editableArea-wrapper"
+  style="width: 400px;"
+>
+  <div
+    class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+    tabindex="0"
+  >
+    <div
+      class="so-editableArea-content"
+    >
+      <span
+        class="so-editableArea-placeholder"
+      >
+        Input something
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EditableArea[Base] should render correctly  3`] = `
+<div
+  id="popup-target"
+  style="height: 200px; overflow: auto; position: relative; padding: 10px;"
+>
+  <div
+    style="height: 100px;"
+  />
+  <div
+    class="so-editableArea-wrapper"
+  >
+    <div
+      class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+      tabindex="0"
+    >
+      <div
+        class="so-editableArea-content"
+      >
+        <span
+          class="so-editableArea-placeholder"
+        >
+          scroll in container
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    style="height: 140px;"
+  />
+</div>
+`;
+
+exports[`EditableArea[Base] should render correctly  4`] = `
+<div>
+  <div
+    class="so-editableArea-wrapper"
+  >
+    <div
+      class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+      tabindex="0"
+    >
+      <div
+        class="so-editableArea-content"
+      >
+        <span
+          class="so-editableArea-placeholder"
+        >
+          input something
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EditableArea[Base] should render correctly  5`] = `
+<div>
+  <div
+    class="so-editableArea-wrapper"
+  >
+    <div
+      class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+      tabindex="0"
+    >
+      <div
+        class="so-editableArea-content"
+      >
+        <div>
+          Guessing what I inputed ?
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

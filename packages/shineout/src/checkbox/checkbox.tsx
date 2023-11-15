@@ -1,16 +1,19 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Checkbox as UnStyledCheckbox } from '@sheinx/base';
 import { useCheckboxStyle, useInputStyle } from '@sheinx/shineout-style';
-import { CheckboxProps } from './checkbox.type';
+import { BaseCheckboxProps, CheckboxProps } from './checkbox.type';
+import useFieldCommon from '../hooks/use-field-common';
+
+const jssStyle = {
+  checkbox: useCheckboxStyle,
+  input: useInputStyle,
+};
+const BaseCheckbox = <T,>(props: BaseCheckboxProps<T>) => {
+  return <UnStyledCheckbox {...props} jssStyle={jssStyle} />;
+};
 
 const Checkbox = <T,>(props: CheckboxProps<T>) => {
-  const checkboxStyle = useCheckboxStyle();
-  const inputStyle = useInputStyle();
-  const jssStyle = useMemo(
-    () => ({ checkbox: checkboxStyle, input: inputStyle }),
-    [checkboxStyle, inputStyle],
-  );
-  return <UnStyledCheckbox {...props} jssStyle={jssStyle} />;
+  return useFieldCommon(props, BaseCheckbox<T>);
 };
 
 export default Checkbox;

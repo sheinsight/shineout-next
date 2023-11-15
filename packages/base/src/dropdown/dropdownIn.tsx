@@ -42,13 +42,14 @@ const Dropdown = (props: SimpleDropdownProps) => {
     size,
     animation,
   } = props;
+  const dropdownClasses = jssStyle?.dropdown?.();
 
   const { open, position, targetRef, popupRef, getTargetProps, closePop, openPop } = usePopup({
     open: props.open,
     onCollapse: props.onCollapse,
     disabled,
     trigger,
-    position: props.position,
+    position: props.position || 'bottom-left',
     autoMode: 'menu',
     priorityDirection: 'vertical',
     mouseLeaveDelay: 200,
@@ -64,12 +65,12 @@ const Dropdown = (props: SimpleDropdownProps) => {
 
   const renderButton = () => {
     const caret = (
-      <span key={'caret'} className={jssStyle?.dropdown?.caret}>
+      <span key={'caret'} className={dropdownClasses?.caret}>
         <Caret />
       </span>
     );
     const child = [
-      <span key='text' className={jssStyle?.dropdown?.content}>
+      <span key='text' className={dropdownClasses?.content}>
         {placeholder}
       </span>,
       caret,
@@ -82,10 +83,10 @@ const Dropdown = (props: SimpleDropdownProps) => {
         <a
           key='button'
           className={classNames(
-            jssStyle?.dropdown?.button,
-            jssStyle?.dropdown?.item,
-            !!disabled && jssStyle?.dropdown?.itemDisabled,
-            !!open && jssStyle?.dropdown?.itemActive,
+            dropdownClasses?.button,
+            dropdownClasses?.item,
+            !!disabled && dropdownClasses?.itemDisabled,
+            !!open && dropdownClasses?.itemActive,
           )}
           data-role='item'
         >
@@ -99,8 +100,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
         jssStyle={jssStyle}
         outline={outline}
         className={classNames(
-          jssStyle?.dropdown?.button,
-          !placeholder && jssStyle?.dropdown?.splitButton,
+          dropdownClasses?.button,
+          !placeholder && dropdownClasses?.splitButton,
         )}
         mode={mode}
         type={type}
@@ -121,12 +122,12 @@ const Dropdown = (props: SimpleDropdownProps) => {
       const renderPlaceholder = util.render(renderItem || 'content', d);
       const { children } = d;
       const group = d.group ? (
-        <div key={'group'} className={jssStyle?.dropdown?.optionGroup}>
+        <div key={'group'} className={dropdownClasses?.optionGroup}>
           {d.group}
         </div>
       ) : null;
       const divider = d.divider ? (
-        <div key={'divider'} className={jssStyle?.dropdown?.optionDivider} />
+        <div key={'divider'} className={dropdownClasses?.optionDivider} />
       ) : null;
       const context = children ? (
         <Dropdown
@@ -147,7 +148,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           data={d}
           key={index}
           onClick={d.onClick || onClick}
-          itemClassName={classNames(jssStyle?.dropdown?.item)}
+          itemClassName={classNames(dropdownClasses?.item)}
           renderItem={renderItem}
           columns={columns}
           width={width}
@@ -169,8 +170,8 @@ const Dropdown = (props: SimpleDropdownProps) => {
     <div
       className={classNames(
         className,
-        jssStyle?.dropdown?.wrapper,
-        !isSub && open && jssStyle?.dropdown?.open,
+        dropdownClasses?.wrapper,
+        !isSub && open && dropdownClasses?.open,
       )}
       style={style}
       data-position={position}
@@ -186,15 +187,15 @@ const Dropdown = (props: SimpleDropdownProps) => {
         absolute={absolute}
         fixedWidth={'min'}
         popupEl={popupRef.current}
+        adjust={!isSub}
       >
         <AnimationList
           display={columns ? 'grid' : 'block'}
-          jssStyle={jssStyle}
           className={classNames(
-            jssStyle?.dropdown?.list,
-            columns !== undefined && columns > 1 && jssStyle?.dropdown?.boxList,
-            size === 'small' && jssStyle?.dropdown?.listSmall,
-            size === 'large' && jssStyle?.dropdown?.listLarge,
+            dropdownClasses?.list,
+            columns !== undefined && columns > 1 && dropdownClasses?.boxList,
+            size === 'small' && dropdownClasses?.listSmall,
+            size === 'large' && dropdownClasses?.listLarge,
           )}
           style={{
             width: width,

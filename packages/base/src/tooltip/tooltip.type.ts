@@ -33,7 +33,7 @@ export interface TooltipProps
     >,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
-    tooltip?: TooltipClasses;
+    tooltip?: () => TooltipClasses;
   };
   // visible?: BasePopupProps['open'];
   // onVisibleChange?: BasePopupProps['onCollapse'];

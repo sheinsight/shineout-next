@@ -7,10 +7,11 @@ const useAutoSize = (props: {
   maxHeight?: number | string;
   value?: string;
   jssStyle?: {
-    textarea?: TextareaClasses;
+    textarea?: () => TextareaClasses;
   };
 }) => {
   const { autosize, maxHeight, value, jssStyle } = props || {};
+  const textareaClasses = jssStyle?.textarea?.() || ({} as TextareaClasses);
   const [height, setHeight] = useState<number>();
   const shadowRef = useRef<HTMLTextAreaElement>();
 
@@ -41,7 +42,7 @@ const useAutoSize = (props: {
             },
           })}
           {cloneElement(el, {
-            className: classNames(el.props.className, jssStyle?.textarea?.shadow),
+            className: classNames(el.props.className, textareaClasses?.shadow),
             ref: shadowRef,
             key: 'shadow',
           })}

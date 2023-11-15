@@ -8,11 +8,14 @@ import React from 'react';
 import { <%= Component %> } from '@sheinx/base';
 import { use<%= Component %>Style } from '@sheinx/shineout-style';
 
+const jssStyle = {
+  <%= component %>: use<%= Component %>Style
+}
+
 export default () => {
-  const <%= component %>Style = use<%= Component %>Style();
   return (
     <div>
-      <<%= Component %> jssStyle={{ <%= component %>: <%= component %>Style }} />
+      <<%= Component %> jssStyle={jssStyle} />
     </div>
   );
 };

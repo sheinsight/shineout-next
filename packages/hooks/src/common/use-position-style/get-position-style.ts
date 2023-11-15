@@ -6,35 +6,30 @@ const ReverseDir: Record<string, string> = {
   top: 'bottom',
   bottom: 'top',
 };
-export const getPositionStyle = (position: string, config?: { popupGap?: number }) => {
+export const getPositionStyle = (
+  position: string,
+  config?: { popupGap?: number; zIndex?: number },
+) => {
   const { popupGap = 0 } = config || {};
   const mainMargin = `calc(100% + ${popupGap}px`;
   const halfMargin = `calc(50% + ${popupGap}px`;
-  let newStyle: React.CSSProperties = {};
+  let newStyle: React.CSSProperties = { zIndex: config?.zIndex };
   if (position === 'drop-down') {
-    newStyle = {
-      top: mainMargin,
-      left: 0,
-    };
+    newStyle.top = mainMargin;
+    newStyle.left = 0;
   } else if (position === 'drop-up') {
-    newStyle = {
-      bottom: mainMargin,
-      left: 0,
-    };
+    newStyle.bottom = mainMargin;
+    newStyle.left = 0;
   } else {
     const positionArr = (position || '').split('-');
     if (positionArr.length === 2) {
       let [m, n] = positionArr;
 
-      newStyle = {
-        [ReverseDir[m]]: mainMargin,
-        [n]: 0,
-      };
+      newStyle[ReverseDir[m] as 'margin'] = mainMargin;
+      newStyle[n as 'top'] = 0;
     } else {
       const [m] = positionArr;
-      newStyle = {
-        [ReverseDir[m]]: mainMargin,
-      };
+      newStyle[ReverseDir[m] as 'margin'] = mainMargin;
       if (m === 'left' || m === 'right') {
         newStyle.top = halfMargin;
         newStyle.transform = 'translateY(-50%)';

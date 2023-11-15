@@ -1,16 +1,24 @@
 import { Form, FormField, FormFieldSet, FormItem, Input } from '@sheinx/base';
-import { useFormItemStyle, useFormStyle, useInputStyle } from '@sheinx/shineout-style';
+import {
+  useFormItemStyle,
+  useFormStyle,
+  useInnerTitleStyle,
+  useInputStyle,
+} from '@sheinx/shineout-style';
 import React from 'react';
 
 export default () => {
-  const inputStyle = useInputStyle();
-  const formStyle = useFormStyle();
-  const itemStyle = useFormItemStyle();
+  const jssStyle = {
+    input: useInputStyle,
+    form: useFormStyle,
+    formItem: useFormItemStyle,
+    innerTitle: useInnerTitleStyle,
+  };
   return (
     <div>
       <Form
         inline
-        jssStyle={formStyle}
+        jssStyle={jssStyle}
         defaultValue={{ email: 'zhangsan@qq.com' }}
         onSubmit={(v) => {
           console.log('form submit', v);
@@ -22,7 +30,7 @@ export default () => {
           console.log('form reset');
         }}
       >
-        <FormItem jssStyle={itemStyle} label={'Email'} tip={'输入公司邮箱'}>
+        <FormItem jssStyle={jssStyle} label={'Email'} tip={'输入公司邮箱'}>
           <FormFieldSet
             name={'super'}
             rules={[
@@ -48,7 +56,7 @@ export default () => {
                 },
               ]}
             >
-              <Input jssStyle={{ input: inputStyle }} clearable placeholder='please input email' />
+              <Input jssStyle={jssStyle} clearable placeholder='please input email' />
             </FormField>
           </FormFieldSet>
         </FormItem>

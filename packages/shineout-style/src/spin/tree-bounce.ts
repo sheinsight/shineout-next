@@ -1,7 +1,7 @@
 export default {
   margin: 'auto',
   textAlign: 'center',
-
+  boxSizing: 'border-box',
   '& $item': {
     display: 'inline-block',
     '& div': {

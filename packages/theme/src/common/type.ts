@@ -13,4 +13,11 @@ export interface CommonTokens {
    * @description 较粗边框宽度
    */
   defaultBorder: string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '4px'
+   * @description icon 悬浮后的圆形背景边距
+   */
+  iconCirclePadding: string;
 }

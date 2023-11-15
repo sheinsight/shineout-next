@@ -5,7 +5,7 @@ export default {
   margin: 'auto',
   textAlign: 'center',
   animation: `$chasing-dots-1 ${duration}s linear infinite`,
-
+  boxSizing: 'border-box',
   '& $item': {
     position: 'absolute',
     top: 0,

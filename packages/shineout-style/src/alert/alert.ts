@@ -11,17 +11,21 @@ export type AlertClass =
   | 'info'
   | 'success'
   | 'warning'
+  | 'confirmwarning'
   | 'danger'
   | 'icon'
+  | 'text'
   | 'pending';
 
 const alertStyle: JsStyles<AlertClass> = {
   alert: {
-    display: 'table',
+    // display: 'table',
+    display: 'flex',
     width: '100%',
+    lineHeight: '1em',
     boxSizing: 'border-box',
     position: 'relative',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     color: Token.alertFontColor,
     padding: `${Token.alertPaddingY} ${Token.alertPaddingX}`,
     borderRadius: Token.alertBorderRadius,
@@ -44,20 +48,17 @@ const alertStyle: JsStyles<AlertClass> = {
       fontSize: Token.alertFontSize,
       lineHeight: Token.lineHeightDynamic,
     },
-    '& [data-soui-icon="true"],[data-soui-close="true"]': {
-      width: 0,
-      verticalAlign: 'middle',
-    },
-    '&$widthTitle': {
-      '& [data-soui-layout="cell"]': {
-        verticalAlign: 'middle',
-      },
-    },
+    '&$widthTitle': {},
     '& $icon': {},
   },
   widthTitle: {
     '& $icon': {
-      marginBottom: Token.alertNearlyMargin,
+      // marginBottom: Token.alertNearlyMargin,
+      width: 20,
+      height: 24,
+    },
+    '& $title': {
+      lineHeight: '24px',
     },
     '& $close': {
       marginBottom: Token.alertNearlyMargin,
@@ -66,19 +67,26 @@ const alertStyle: JsStyles<AlertClass> = {
   title: {
     fontSize: Token.alertTitleFontSize,
     fontWeight: 500,
-    marginBottom: Token.alertNearlyMargin,
-    lineHeight: Token.lineHeightDynamic,
+    marginBottom: 4,
+    overflowWrap: 'anywhere',
+    lineHeight: Token.alertTitleFontSize,
+  },
+  text: {
+    overflowWrap: 'anywhere',
+    fontSize: Token.alertFontSize,
   },
   close: {
     cursor: 'pointer',
     width: Token.alertFontSize,
     color: Token.alertCloseFontColor,
+    flex: '0 0 auto',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginLeft: Token.alertNearlyMargin,
   },
   content: {
-    wordBreak: 'break-all',
+    flex: '1 1 0',
   },
   pending: {
     opacity: 0,
@@ -107,6 +115,13 @@ const alertStyle: JsStyles<AlertClass> = {
       color: Token.alertWarningFontColor,
     },
   },
+  confirmwarning: {
+    backgroundColor: Token.alertDangerBackgroundColor,
+    borderColor: Token.alertDangerBorderColor,
+    '& $icon': {
+      color: Token.alertDangerFontColor,
+    },
+  },
   danger: {
     backgroundColor: Token.alertDangerBackgroundColor,
     borderColor: Token.alertDangerBorderColor,
@@ -120,6 +135,7 @@ const alertStyle: JsStyles<AlertClass> = {
   icon: {
     width: 16,
     display: 'flex',
+    flex: '0 0 auto',
     alignItems: 'center',
     marginRight: Token.alertNearlyMargin,
   },

@@ -10,10 +10,9 @@ const rule = Rule();
 export default () => {
   return (
     <Textarea
-      rows={3}
+      rows={1}
       innerTitle={'hello world'}
       rules={[rule.required('必填')]}
-      tip={'input something'}
       placeholder='input something'
     />
   );

@@ -1,12 +1,13 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { TagInput as UnStyledTagInput } from '@sheinx/base';
-import { useTagStyle, useInputStyle } from '@sheinx/shineout-style';
+import { useInputStyle, useTagStyle } from '@sheinx/shineout-style';
 import { TagInputProps } from './tag.type';
 
+const jssStyle = {
+  tag: useTagStyle,
+  input: useInputStyle,
+};
 const TagInput = (props: TagInputProps) => {
-  const tagStyle = useTagStyle();
-  const inputStyle = useInputStyle();
-  const jssStyle = useMemo(() => ({ tag: tagStyle, input: inputStyle }), [tagStyle]);
   return <UnStyledTagInput {...props} jssStyle={jssStyle}></UnStyledTagInput>;
 };
 

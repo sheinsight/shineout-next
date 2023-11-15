@@ -9,7 +9,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     name: props.name,
     defaultValue: props.defaultValue,
     onChange: props.onChange,
-    reservable: props.reservable,
+    reserveAble: props.reserveAble,
     rules: props.rules,
     onError: props.onError,
     bind: props.bind,

@@ -15,13 +15,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "deep-eql": "^4.1.3"
+    "date-fns-tz": "^2.0.0",
+    "dayjs": "^1.11.9",
+    "react-fast-compare": "^3.2.2"
   },
   "devDependencies": {
     "@types/deep-eql": "^4.0.0"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "immer": ">=10"
+    "immer": ">=10",
+    "react": ">=16.8"
   }
 }

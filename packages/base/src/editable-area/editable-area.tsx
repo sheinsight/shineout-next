@@ -4,7 +4,6 @@ import { EditableAreaProps } from './editable-area.type';
 import AbsoluteList from '../absolute-list';
 import { useInputAble, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
-import classnames from 'classnames';
 import Icons from '../icons';
 import useInnerTitle from '../common/use-inner-title';
 
@@ -43,7 +42,7 @@ const EditableArea = (props: EditableAreaProps) => {
     bordered = false,
   } = props;
 
-  const editableAreaStyle = jssStyle?.editableArea;
+  const editableAreaStyle = jssStyle?.editableArea?.();
 
   const status = error ? 'error' : props.status;
 
@@ -93,7 +92,7 @@ const EditableArea = (props: EditableAreaProps) => {
         <span className={editableAreaStyle?.placeholder}>{placeholder}</span>
       );
     const content = (
-      <div className={classnames(editableAreaStyle?.paddingBox)}>
+      <div className={editableAreaStyle?.content}>
         {typeof renderResult === 'function' ? renderResult(value as string) : defaultContent}
       </div>
     );
@@ -106,7 +105,12 @@ const EditableArea = (props: EditableAreaProps) => {
         onClick={() => {
           updateShowTextarea(true);
         }}
-        className={classNames(editableAreaStyle?.place)}
+        className={classNames(
+          editableAreaStyle?.place,
+          editableAreaStyle?.wrapperPaddingBox,
+          editableAreaStyle?.wrapperInnerTitleTop,
+          editableAreaStyle?.wrapperInnerTitleBottom,
+        )}
       >
         {renderInput(content)}
       </div>
@@ -160,9 +164,9 @@ const EditableArea = (props: EditableAreaProps) => {
           onChange('');
           updateShowTextarea(true);
         }}
-        className={jssStyle?.editableArea?.clear}
+        className={editableAreaStyle?.clear}
       >
-        {Icons.CloseCircle}
+        {Icons.CloseOpaqueMultic1}
       </span>
     );
   };
@@ -175,6 +179,7 @@ const EditableArea = (props: EditableAreaProps) => {
         status === 'error' && editableAreaStyle?.wrapperError,
         disabled && editableAreaStyle?.wrapperDisabled,
         !bordered && editableAreaStyle?.wrapperNoBorder,
+        !!props.innerTitle && editableAreaStyle?.wrapperInnerTitle,
       )}
       style={{ ...style, width }}
       ref={(el) => {

@@ -23,7 +23,7 @@ export default createUseStyles(
         color: 'rgb(78,89,105)',
       },
       '& .demo': {
-        position: 'relative',
+        // position: 'relative',
         marginTop: 24,
         padding: 32,
         border: '1px solid rgba(232, 235, 240, 1)',
@@ -102,7 +102,7 @@ export default createUseStyles(
       bottom: 0,
       left: 0,
       background: '#ffffff',
-      zIndex: 10000,
+      zIndex: 1,
       '& .toolbar': {
         padding: 5,
         display: 'flex',

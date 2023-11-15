@@ -1,15 +1,16 @@
 // import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 
-export type <%= Component %>Class =
-  | 'wrapper'
-  | 'wrapperDisabled';
+export type <%= Component %>Classes =
+  {
+    wrapper: string;
+  };
+export type <%= Component %>ClassType = keyof <%= Component %>Classes;
 
-const <%= component %>Style: JsStyles<<%= Component %>Class> = {
+const <%= component %>Style: JsStyles<<%= Component %>ClassType> = {
   wrapper: {
     display: 'block',
   },
-  wrapperDisabled: {},
 };
 
 export default <%= component %>Style;

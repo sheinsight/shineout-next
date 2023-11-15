@@ -9,10 +9,15 @@ import { Alert } from '@sheinx/base';
 import { useAlertStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const alertStyle = useAlertStyle();
   return (
     <div>
-      <Alert jssStyle={{ alert: alertStyle }}>23333</Alert>
+      <Alert jssStyle={{ alert: useAlertStyle }} type='confirmwarning' icon>
+        23333
+      </Alert>
+      <br />
+      <Alert jssStyle={{ alert: useAlertStyle }} type='warning' icon>
+        23333
+      </Alert>
     </div>
   );
 };

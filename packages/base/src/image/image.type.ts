@@ -54,7 +54,7 @@ export type Image = {
 
 export interface ImageGalleryProps {
   jssStyle: {
-    image?: ImageClasses;
+    image?: () => ImageClasses;
   };
   images: Image[];
   onClose: () => void;
@@ -73,14 +73,15 @@ export interface ImageBaseProps
   extends BaseImageProps,
     Pick<CommonType, 'style' | 'className'>,
     Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'onError' | 'placeholder'> {
-  jssStyle: {
-    image?: ImageClasses;
+  jssStyle?: {
+    image?: () => ImageClasses;
   };
   renderImage?: (imageEl: React.ReactNode) => React.ReactElement;
   renderError?: (errorEl: React.ReactNode) => React.ReactElement;
   renderWrapper?: (wrapperEl: React.ReactNode) => React.ReactElement;
   renderPlaceholder?: (placeholderEl: React.ReactNode) => React.ReactElement;
   renderInnerWrapper?: (innerWrapperEl: React.ReactNode) => React.ReactElement;
+  componentRef?: (instance: { preview: () => void }) => void;
 }
 
 export type ImageProps = ImageBaseProps;

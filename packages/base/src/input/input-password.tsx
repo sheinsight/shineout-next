@@ -7,6 +7,7 @@ import icons from '../icons';
 
 export default (props: InputPasswordProps) => {
   const commonProps = useInputCommon<InputPasswordProps['value'], InputPasswordProps>(props);
+  const inputStyle = props.jssStyle?.input?.();
 
   const inputPasswordParams = {
     point: props.point,
@@ -34,8 +35,8 @@ export default (props: InputPasswordProps) => {
     <>
       {props.suffix}
       {visibilityToggle ? (
-        <span {...toggleProps} className={props.jssStyle?.input?.passwordToggle}>
-          {visibility ? icons.Hide : icons.Show}
+        <span {...toggleProps} className={inputStyle?.passwordToggle}>
+          {visibility ? icons.Hide : icons.Display}
         </span>
       ) : null}
     </>

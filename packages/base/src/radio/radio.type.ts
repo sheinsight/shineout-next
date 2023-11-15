@@ -33,7 +33,7 @@ export interface SimpleRadioProps
   extends Omit<BaseCheckProps, 'defaultChecked'>,
     Pick<CommonType, 'style' | 'className' | 'size'> {
   jssStyle?: {
-    radio?: RadioClasses;
+    radio?: () => RadioClasses;
   };
   children?: React.ReactNode;
   /**

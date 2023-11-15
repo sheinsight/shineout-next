@@ -10,9 +10,8 @@ import { Image } from '@sheinx/base';
 import { useImageStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const imageStyle = useImageStyle();
   const jssStyle = {
-    image: imageStyle,
+    image: useImageStyle,
   };
   return (
     <div id='ddd'>

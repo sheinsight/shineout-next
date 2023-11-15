@@ -16,7 +16,6 @@ const radioRules = {
     ['background-color', 'color'],
   ],
   iconWrapperColor: [['icon'], ['wrapper'], ['fill']],
-  iconWrapperSize: [['icon'], ['wrapper'], ['padding']],
   labelColor: [['label'], ['', 'disabled'], ['font-color']],
   labelSize: [['', 'small', 'large'], ['label'], ['font-size']],
 };

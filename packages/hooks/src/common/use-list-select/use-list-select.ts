@@ -41,6 +41,14 @@ const useListSelect = <DataItem, Value extends string | any[]>(
     if (typeof props.format === 'function') return props.format(data);
     return data as ValueItem;
   };
+
+  const getVaildData = () => {
+    const vaildData = props.data.filter((item: DataItem) => {
+      return !disabledCheck(item);
+    });
+    return vaildData;
+  };
+
   const getDataMap = () => {
     if (props.data === context.lastData) return context.valueMap;
 
@@ -178,6 +186,8 @@ const useListSelect = <DataItem, Value extends string | any[]>(
     add,
     remove,
     check,
+    getVaildData,
+    getValueMap,
     getDataByValues,
     isUnMatchedData,
     disabledCheck,

@@ -10,12 +10,12 @@ export type CheckboxClass =
   | 'wrapperIndeterminate'
   | 'indicator'
   | 'indicatorWrapper'
+  | 'darkIndicatorWrapper'
   | 'desc'
   | 'input'
   | 'group'
   | 'groupBlock';
 
-const circleSize = '5px';
 const checkboxStyle: JsStyles<CheckboxClass> = {
   wrapper: {
     display: 'inline-flex',
@@ -58,7 +58,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       display: 'block',
       width: '100%',
       height: '100%',
-      padding: circleSize,
+      padding: token.iconCirclePadding,
       position: 'absolute',
       top: '50%',
       left: '50%',
@@ -77,13 +77,20 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       },
     },
   },
+  darkIndicatorWrapper: {
+    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &': {
+      '&::before': {
+        background: token.checkboxIconCircleDark,
+      },
+    },
+  },
   indicator: {
     position: 'absolute',
     boxSizing: 'border-box',
     top: '0',
     left: '0',
-    bottom: '0',
-    right: '0',
+    width: '100%',
+    height: '100%',
     borderRadius: token.checkboxIconBorderRadius,
     borderStyle: 'solid',
     borderWidth: token.checkboxIconBorderWidth,
@@ -94,12 +101,14 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     verticalAlign: 'middle',
     '& > svg': {
       position: 'absolute',
+      width: '80%',
       top: '50%',
       left: '50%',
       transform: 'translateY(-50%) translateX(-50%)',
     },
     '$wrapperChecked &, $wrapperIndeterminate &': {
       borderColor: token.checkboxIconCheckedBorderColor,
+      borderWidth: 0,
       backgroundColor: token.checkboxIconCheckedBackgroundColor,
       color: token.checkboxIconCheckedColor,
     },

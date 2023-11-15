@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { AlertProps, AlertClasses } from './alert.type';
+import { AlertClasses, AlertProps } from './alert.type';
 import Icons from '../icons';
 
 const HIDE = 0;
@@ -19,18 +19,20 @@ const Alert = (props: AlertProps) => {
     closable,
     hideClose,
     bordered,
+    closeItem,
     onClose,
     ...rest
   } = props;
   const [dismiss, setDismiss] = useState(SHOW);
 
   const icons = {
-    info: Icons.Info,
-    success: Icons.Success,
-    warning: Icons.Warning,
-    danger: Icons.Danger,
+    info: Icons.PcInfoCircleFill,
+    success: Icons.PcCheckCircleFill,
+    warning: Icons.PcWarningCircleFill,
+    danger: Icons.PcCloseCircleFill,
+    confirmwarning: Icons.PcWarningCircleFill,
   };
-  const alertStyle = jssStyle?.alert || ({} as AlertClasses);
+  const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
   const rootClass = classNames(className, alertStyle.alert, {
     [alertStyle[type]]: true,
     [alertStyle.widthTitle]: title,
@@ -51,18 +53,11 @@ const Alert = (props: AlertProps) => {
     }
   };
 
-  const Row = (props?: { children?: React.ReactNode }) => {
-    return <div data-soui-layout='row' {...props}></div>;
-  };
-
-  const Cell = (props?: { children?: React.ReactNode }) => {
-    return <div data-soui-layout='cell' {...props}></div>;
-  };
-
   const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
     if (onClose && typeof onClose === 'function') {
       onClose(e);
     }
+    if (closable === 'only') return;
     setDismiss(PENDING);
 
     setTimeout(() => {
@@ -77,43 +72,31 @@ const Alert = (props: AlertProps) => {
     }
     if (icon === true) {
       return (
-        <Cell data-soui-icon>
-          <div className={alertStyle.icon} style={style}>
-            {icons[type]}
-          </div>
-        </Cell>
+        <div className={alertStyle.icon} style={style}>
+          {icons[type]}
+        </div>
       );
     }
 
     return (
-      <Cell data-soui-icon>
-        <div className={alertStyle.icon} style={style}>
-          {icon}
-        </div>
-      </Cell>
+      <div className={alertStyle.icon} style={style}>
+        {icon}
+      </div>
     );
   };
 
   const renderTitle = () => {
-    return (
-      <Cell>
-        <div className={alertStyle.title}>{title}</div>
-      </Cell>
-    );
+    return <div className={alertStyle.title}>{title}</div>;
   };
 
   const renderClose = () => {
+    if (React.isValidElement(closeItem))
+      return React.cloneElement(closeItem, { onClick: handleClose } as React.Attributes);
     return (
-      <Cell data-soui-close>
-        <div className={alertStyle.close} onClick={handleClose}>
-          {Icons.AlertClose}
-        </div>
-      </Cell>
+      <div className={alertStyle.close} onClick={handleClose}>
+        {closeItem || Icons.Close}
+      </div>
     );
-  };
-
-  const renderChildren = () => {
-    return <Cell data-soui-children>{children}</Cell>;
   };
 
   if (dismiss === HIDE) {
@@ -122,28 +105,25 @@ const Alert = (props: AlertProps) => {
 
   if ('title' in props && title !== undefined) {
     return (
-      <div className={rootClass}>
-        <Row>
-          {icon && renderIcon()}
+      <div className={rootClass} {...getRootProps()}>
+        {icon && renderIcon()}
+        <div className={alertStyle.content}>
           {renderTitle()}
-          {getCloseable() && renderClose()}
-        </Row>
+          <div className={alertStyle.text}>{children}</div>
+        </div>
 
-        <Row>
-          {icon && Cell()}
-          {renderChildren()}
-        </Row>
+        {getCloseable() && renderClose()}
       </div>
     );
   }
 
   return (
     <div className={rootClass} {...getRootProps()}>
-      <Row>
-        {icon && renderIcon()}
-        {renderChildren()}
-        {getCloseable() && renderClose()}
-      </Row>
+      {icon && renderIcon()}
+      <div className={alertStyle.content}>
+        <div className={alertStyle.text}>{children}</div>
+      </div>
+      {getCloseable() && renderClose()}
     </div>
   );
 };

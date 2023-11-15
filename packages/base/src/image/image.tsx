@@ -1,9 +1,9 @@
-import { useImage } from '@sheinx/hooks';
+import { useImage, useLatestObj, usePersistFn } from '@sheinx/hooks';
 import { getDefaultContainer } from '../config';
 import classNames from 'classnames';
-import React from 'react';
+import React, { useEffect } from 'react';
 import showGallery from './image-event';
-import { ImageProps, ImageClasses } from './image.type';
+import { ImageClasses, ImageProps } from './image.type';
 import ImageGroup from './image-group';
 import Icons from '../icons';
 
@@ -29,7 +29,10 @@ const Image = (props: ImageProps) => {
     width = '100%',
     height = '100%',
     shape = 'rounded',
+    autoSSL,
+    noImgDrag,
     onClick,
+    componentRef,
     ...rest
   } = props;
 
@@ -39,10 +42,12 @@ const Image = (props: ImageProps) => {
     src,
     href,
     lazy,
+    autoSSL,
+    noImgDrag,
     ...rest,
   });
 
-  const imageStyle = jssStyle.image || ({} as ImageClasses);
+  const imageStyle = jssStyle?.image?.() || ({} as ImageClasses);
   const shouldPreview = href && target === '_modal' && status !== ERROR && status !== PLACEHOLDER;
   const shouldDownload = target === '_download';
 
@@ -87,6 +92,15 @@ const Image = (props: ImageProps) => {
       showGallery(jssStyle, { thumb: src, src: href || src, key: 'key' });
     }
   };
+
+  const preview = usePersistFn(() => {
+    showGallery(jssStyle, { thumb: src, src: href || src, key: 'key' });
+  });
+
+  const ComponentRef = useLatestObj({ preview });
+  useEffect(() => {
+    componentRef?.(ComponentRef);
+  }, []);
 
   const renderImgeInnerEl = (src?: string) => {
     const imageProps = getImageProps({ src });
@@ -146,7 +160,7 @@ const Image = (props: ImageProps) => {
 
   // 默认错误图
   const renderDefaultError = () => {
-    return <div className={defaultErrorClass}>{title || Icons.ImageError}</div>;
+    return <div className={defaultErrorClass}>{title || Icons.LoadingError2}</div>;
   };
 
   // 错误图
@@ -177,8 +191,8 @@ const Image = (props: ImageProps) => {
   const renderMask = () => {
     return (
       <span className={maskClass} onClick={handleOpenGallery}>
-        {shouldDownload && Icons.ImageDownload}
-        {shouldPreview && Icons.ImagePreview}
+        {shouldDownload && Icons.Download}
+        {shouldPreview && Icons.Preview}
       </span>
     );
   };

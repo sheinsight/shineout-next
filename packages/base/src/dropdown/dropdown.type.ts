@@ -1,6 +1,5 @@
 import React from 'react';
 import { CommonType } from '../common/type';
-import { AnimationListClass } from '../animation-list/animation-list.type';
 import { ButtonClasses, ButtonProps } from '../button/button.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 
@@ -107,9 +106,8 @@ export interface SimpleDropdownProps
     Pick<AbsoluteListProps, 'absolute'>,
     Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode'> {
   jssStyle?: {
-    animationList?: AnimationListClass;
-    dropdown?: DropdownClass;
-    button?: ButtonClasses;
+    dropdown?: () => DropdownClass;
+    button?: () => ButtonClasses;
   };
   /**
    * @private 内部属性
@@ -175,7 +173,7 @@ export interface SimpleDropdownProps
   /**
    * @en Set position property can control the direction and position of the drop-down menu
    * @cn 弹出的方向和位置
-   * @default 'auto'
+   * @default 'bottom-left'
    */
   position?: MenuPosition | 'auto';
 

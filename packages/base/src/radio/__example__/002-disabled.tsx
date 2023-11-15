@@ -3,10 +3,9 @@ import { Radio } from '@sheinx/base';
 import { useRadioStyle } from '@sheinx/shineout-style';
 
 export default () => {
-  const radioStyle = useRadioStyle();
   return (
     <div>
-      <Radio jssStyle={{ radio: radioStyle }} disabled>
+      <Radio jssStyle={{ radio: useRadioStyle }} disabled>
         red
       </Radio>
     </div>

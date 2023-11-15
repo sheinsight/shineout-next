@@ -5,31 +5,31 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;"
 >
   <div
-    class="button-group-group-0-2-1 button-group-secondary-0-2-8 button-group-text-0-2-13"
+    class="so-button-group"
   >
     <button
-      class="button-primary-0-2-19 button-button-0-2-15 button-text-0-2-27"
+      class="so-button-primary so-button-button so-button-text"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15 button-text-0-2-27"
+      class="so-button-secondary so-button-button so-button-text"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15 button-text-0-2-27"
+      class="so-button-secondary so-button-button so-button-text"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15 button-disabled-0-2-32 button-text-0-2-27"
+      class="so-button-secondary so-button-button so-button-disabled so-button-text"
       disabled=""
     >
       <span>
@@ -38,31 +38,31 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
   </div>
   <div
-    class="button-group-group-0-2-1 button-group-secondary-0-2-8"
+    class="so-button-group"
   >
     <button
-      class="button-primary-0-2-19 button-button-0-2-15"
+      class="so-button-primary so-button-button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15"
+      class="so-button-secondary so-button-button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15"
+      class="so-button-secondary so-button-button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15"
+      class="so-button-secondary so-button-button"
     >
       <span>
         Publish
@@ -70,64 +70,34 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
   </div>
   <div
-    class="button-group-group-0-2-1 button-group-secondary-0-2-8 button-group-outline-0-2-12"
+    class="so-button-group"
   >
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15 button-outline-0-2-25"
+      class="so-button-secondary so-button-button so-button-outline"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15 button-outline-0-2-25"
+      class="so-button-secondary so-button-button so-button-outline"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15 button-outline-0-2-25"
+      class="so-button-secondary so-button-button so-button-outline"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-20 button-button-0-2-15 button-outline-0-2-25"
+      class="so-button-secondary so-button-button so-button-outline"
     >
       <span>
         Publish
-      </span>
-    </button>
-  </div>
-  <div>
-    <button
-      class="button-primary-0-2-19 button-button-0-2-15"
-    >
-      <span>
-        Primary
-      </span>
-    </button>
-    <button
-      class="button-secondary-0-2-20 button-button-0-2-15"
-    >
-      <span>
-        Secondary
-      </span>
-    </button>
-    <button
-      class="button-secondary-0-2-20 button-button-0-2-15"
-    >
-      <span>
-        Secondary
-      </span>
-    </button>
-    <button
-      class="button-secondary-0-2-20 button-button-0-2-15"
-    >
-      <span>
-        Secondary
       </span>
     </button>
   </div>
@@ -135,20 +105,20 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     style="display: flex; gap: 24px;"
   >
     <div
-      class="button-group-group-0-2-1 button-group-primary-0-2-7"
+      class="so-button-group"
     >
       <button
-        class="button-primary-0-2-19 button-button-0-2-15"
+        class="so-button-primary so-button-button"
       >
         <span>
           Publish
         </span>
       </button>
       <button
-        class="button-primary-0-2-19 button-button-0-2-15"
+        class="so-button-primary so-button-button"
       >
         <span
-          style="display: flex; align-items: center; justify-content: center; gap: 4px;"
+          style="display: inline-flex; line-height: 22px;"
         >
           <svg
             fill="none"
@@ -166,20 +136,20 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </button>
     </div>
     <div
-      class="button-group-group-0-2-1 button-group-secondary-0-2-8"
+      class="so-button-group"
     >
       <button
-        class="button-secondary-0-2-20 button-button-0-2-15"
+        class="so-button-secondary so-button-button"
       >
         <span>
           Publish
         </span>
       </button>
       <button
-        class="button-secondary-0-2-20 button-button-0-2-15"
+        class="so-button-secondary so-button-button"
       >
         <span
-          style="display: flex; align-items: center; justify-content: center; gap: 4px;"
+          style="display: inline-flex; line-height: 22px;"
         >
           <svg
             fill="none"

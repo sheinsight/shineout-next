@@ -17,6 +17,10 @@ export type SpinNameType =
   | 'wave'
   | 'chasing-ring';
 
+interface SpinStyle {
+  spin?: () => SpinClasses;
+}
+
 export interface SpinClasses {
   spin: string;
   default: string;
@@ -46,9 +50,7 @@ export interface SpinClasses {
 }
 
 export interface renderItemProps {
-  jssStyle: {
-    spin?: SpinClasses;
-  };
+  jssStyle: SpinStyle;
   index: number;
   color?: string;
   size?: number | string;
@@ -63,9 +65,7 @@ export interface BaseSpinProps {
   wrapperStyle?: React.CSSProperties;
   size?: number | string;
   color?: string;
-  jssStyle?: {
-    spin?: SpinClasses;
-  };
+  jssStyle?: SpinStyle;
   render?: any;
   style?: React.CSSProperties;
   count?: number;
@@ -76,9 +76,7 @@ export interface BaseSpinProps {
 }
 
 export interface SpinProps extends Pick<CommonType, 'className' | 'style'> {
-  jssStyle?: {
-    spin?: SpinClasses;
-  };
+  jssStyle?: SpinStyle;
   children?: React.ReactNode;
   tip?: string | React.ReactNode;
   size?: number | string;

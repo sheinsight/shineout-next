@@ -4,7 +4,7 @@ import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 
 const inputBorderToken = {
-  lineHeightDynamic: token.lineHeightDynamic,
+  lineHeight: token.lineHeightDynamic,
   borderRadius: token.inputBorderRadius,
 
   fontSize: token.inputFontSize,
@@ -33,6 +33,15 @@ const inputBorderToken = {
 
   focusShadow: token.inputFocusShadow,
   errorFocusShadow: token.inputErrorFocusShadow,
+
+  innerTitlePaddingY: token.inputInnerPaddingY,
+  innerTitlePaddingX: token.inputInnerPaddingX,
+
+  smallInnerTitlePaddingY: token.inputInnerSmallPaddingY,
+  smallInnerTitlePaddingX: token.inputInnerSmallPaddingX,
+
+  largeInnerTitlePaddingY: token.inputInnerLargePaddingY,
+  largeInnerTitlePaddingX: token.inputInnerLargePaddingX,
 };
 const inputBorder = border('wrapper', inputBorderToken);
 const groupBorder = border('group', inputBorderToken);
@@ -49,8 +58,12 @@ export type InputClass =
   | 'wrapperDisabled'
   | 'wrapperUnderline'
   | 'wrapperNoBorder'
-  | 'paddingBox'
+  | 'wrapperInnerTitle'
+  | 'wrapperInnerTitleTop'
+  | 'wrapperInnerTitleBottom'
+  | 'wrapperPaddingBox'
   | 'clearWrapper'
+  | 'content'
   | 'input'
   | 'clear'
   | 'group'
@@ -107,10 +120,17 @@ const input: JsStyles<InputClass> = {
   },
   ...resetWrapper,
   wrapperNumber: {},
+  content: {
+    display: 'flex',
+    flex: 1,
+    minWidth: '0',
+    alignItems: 'center',
+  },
   input: {
     width: '100%',
     background: 'transparent',
     fontFamily: 'inherit',
+    padding: '0',
     border: '0',
     margin: '0',
     lineHeight: 'inherit',
@@ -148,13 +168,7 @@ const input: JsStyles<InputClass> = {
     '&:hover svg': {
       color: token.inputHoverClearColor,
     },
-    right: token.inputPaddingX,
-    '$wrapperSmall &': {
-      right: token.inputSmallPaddingX,
-    },
-    '$wrapperLarge &': {
-      right: token.inputLargePaddingX,
-    },
+    right: '0',
   },
 
   group: {

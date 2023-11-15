@@ -10,19 +10,21 @@ export interface AlertClasses {
   widthTitle: string;
   content: string;
   icon: string;
+  text: string;
   info: string;
   success: string;
   warning: string;
+  confirmwarning: string;
   danger: string;
   pending: string;
   noBordered: string;
 }
 
-export type AlertType = 'success' | 'info' | 'warning' | 'danger';
+export type AlertType = 'success' | 'info' | 'warning' | 'danger' | 'confirmwarning';
 
 export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
-    alert?: AlertClasses;
+    alert?: () => AlertClasses;
   };
   type?: AlertType;
   closeItem?: React.ReactNode;
@@ -33,7 +35,7 @@ export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
   icon?: React.ReactNode | boolean;
   iconSize?: number;
   title?: React.ReactNode;
-  closable?: boolean;
+  closable?: boolean | 'only';
 
   /**
    * @description onClose 属性即将不再支持 boolean 值，请使用 closable 控制是否显示关闭按钮
