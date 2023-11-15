@@ -40,6 +40,14 @@ const selectTokens: SelectTokens = {
   selectPanelBackgroundColor: 'Neutral-fill-1',
   selectPanelShadow: 'Shadow-2',
   selectPanelRadius: 'Radius-4',
+  selectOptionHeight: 'Size-16',
+  selectOptionPaddingX: 'Padding-8',
+  selectOptionPaddingY: 'Padding-5',
+  selectOptionActiveColor: 'Brand-6',
+  selectOptionActiveBackgroundColor: 'Brand-1',
+  selectOptionHoverBackgroundColor: 'Neutral-fill-2',
+  selectOptionDisabledColor: 'Neutral-text-2',
+  selectOptionDisabledBackgroundColor: 'Neutral-fill-1',
 };
 
 export default selectTokens;

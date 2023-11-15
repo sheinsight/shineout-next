@@ -50,7 +50,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         <div style={{ height: currentIndex * lineHeight, gridColumnEnd: '-1' }} />
         {items.map((d: DataItem, i: number) => {
           const key = util.getKey(keygen, d, i);
-          return <React.Fragment key={key}>{renderItem(d, i, key)}</React.Fragment>;
+          return <React.Fragment key={key}>{renderItem(d, currentIndex + i, key)}</React.Fragment>;
         })}
       </VirtualScroll>
     );

@@ -27,6 +27,12 @@ export type SelectClasses = {
   resultTextPadding: string;
   placeholder: string;
   pickerWrapper: string;
+  option: string;
+  optionHover: string;
+  optionActive: string;
+  optionDisabled: string;
+  optionGroup: string;
+  optionGroupTitle: string;
 };
 export type SelectClassType = keyof SelectClasses;
 
@@ -177,6 +183,30 @@ const selectStyle: JsStyles<SelectClassType> = {
     boxShadow: token.selectPanelShadow,
     borderRadius: token.selectPanelRadius,
   },
+  option: {
+    fontSize: token.selectFontSize,
+    lineHeight: token.lineHeightDynamic,
+    padding: `${token.selectOptionPaddingY} ${token.selectOptionPaddingX}`,
+    // not disabled
+    '&:not($optionDisabled)': {
+      cursor: 'pointer',
+    },
+    // hover
+    '&:hover': {
+      backgroundColor: token.selectOptionHoverBackgroundColor,
+    },
+  },
+  optionHover: {},
+  optionActive: {
+    color: token.selectOptionActiveColor,
+    backgroundColor: token.selectOptionActiveBackgroundColor,
+  },
+  optionDisabled: {
+    color: token.selectOptionDisabledColor,
+    backgroundColor: token.selectOptionDisabledBackgroundColor,
+  },
+  optionGroup: {},
+  optionGroupTitle: {},
 };
 
 export default selectStyle;

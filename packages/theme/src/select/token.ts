@@ -60,6 +60,16 @@ const selectTokenExtraValue = {
     shadow: 'Shadow-2',
     radius: 'Radius-4',
   },
+  option: {
+    height: 'Size-16',
+    padding: { x: 'Padding-8', y: 'Padding-5' },
+    active: {
+      color: 'Brand-6',
+      background: { color: 'Brand-1' },
+    },
+    hover: { background: { color: 'Neutral-fill-2' } },
+    disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
+  },
 };
 
 module.exports = {

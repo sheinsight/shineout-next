@@ -1,5 +1,5 @@
 // import React from 'react';
-// import { BaseSelectProps } from '@sheinx/hooks';
+import { BaseSelectProps, KeygenType, useListSelect } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { SelectClasses } from '@sheinx/shineout-style';
@@ -12,21 +12,37 @@ export type JssStyleType = {
   virtualScroll: () => VirtualScrollClasses;
 };
 
+export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
+
 export interface BaseListProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
-    'jssStyle' | 'data' | 'height' | 'width' | 'optionWidth' | 'header' | 'loading' | 'lineHeight'
+    | 'jssStyle'
+    | 'data'
+    | 'width'
+    | 'optionWidth'
+    | 'header'
+    | 'keygen'
+    | 'loading'
+    | 'lineHeight'
+    | 'itemsInView'
+    | 'renderItem'
   > {
   customHeader?: React.ReactNode;
+  height: number | string;
+  datum: DatumType<DataItem, Value>;
 }
 
 export interface SelectProps<DataItem, Value>
-  extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
+  extends Omit<BaseSelectProps<DataItem, Value>, 'control'>,
+    Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
-  jssStyle?: JssStyleType;
+  jssStyle: JssStyleType;
   data: DataItem[];
+  keygen: KeygenType<DataItem>;
   treeData?: DataItem[];
   value?: Value;
+
   /**
    * @en Allow enter something into DatePicker
    * @cn 可输入
@@ -125,6 +141,8 @@ export interface SelectProps<DataItem, Value>
    * @default 1
    */
   columns?: number;
+
+  renderItem: (data: DataItem, index?: number) => React.ReactNode;
 
   /**
    * @en blur event callback

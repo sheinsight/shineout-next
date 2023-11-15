@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { getKey } from '../../utils';
 import { KeygenResult } from '../../common/type';
 import { useInputAble } from '../../common/use-input-able';
-import { useListSelect } from '../../common/use-list-select';
+import { useListSelectMultiple } from '../../common/use-list-select';
 import { BaseTransferProps, TransferListType } from './use-transfer.type';
 
 const useTransfer = <DataItem, Value extends KeygenResult[]>(
@@ -46,7 +46,7 @@ const useTransfer = <DataItem, Value extends KeygenResult[]>(
     onChange: onChangeProp,
   });
 
-  const datum = useListSelect({
+  const datum = useListSelectMultiple({
     data,
     format,
     value: value,
@@ -106,7 +106,7 @@ const useTransfer = <DataItem, Value extends KeygenResult[]>(
     }
   };
 
-  const sourceDatum = useListSelect({
+  const sourceDatum = useListSelectMultiple({
     value: sourceSelectedKeys,
     data: source,
     disabled,
@@ -114,7 +114,7 @@ const useTransfer = <DataItem, Value extends KeygenResult[]>(
     onChange: handleSourceSelectedChange,
   });
 
-  const targetDatum = useListSelect({
+  const targetDatum = useListSelectMultiple({
     value: targetSelectedKeys,
     data: target,
     disabled,

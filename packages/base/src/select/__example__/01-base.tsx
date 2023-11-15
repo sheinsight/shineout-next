@@ -18,11 +18,14 @@ export default () => {
   // const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
   const data = [];
   for (let i = 0; i < 100; i++) {
-    data.push(`id-${i}`);
+    data.push({
+      id: `id-${i}`,
+      name: `name-${i}`,
+    });
   }
   return (
     <div>
-      <Select data={data} jssStyle={jssStyle} />
+      <Select data={data} multiple keygen='id' jssStyle={jssStyle} renderItem={(d) => d.name} />
     </div>
   );
 };

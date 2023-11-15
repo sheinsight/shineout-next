@@ -1,4 +1,4 @@
-import useListSelect from './use-list-select';
+import useListSelectMultiple from './use-list-select-multiple';
 import { UseListSingleProps } from './use-list.type';
 import usePersistFn from '../use-persist-fn';
 import { isArray } from '../../utils';
@@ -12,7 +12,7 @@ const useListSelectSingle = <DataItem, Value>(props: UseListSingleProps<DataItem
     if (isArray(v)) return v;
     return [v];
   };
-  const list = useListSelect<DataItem, Value[]>({
+  const list = useListSelectMultiple<DataItem, Value[]>({
     ...props,
     value: getValue(props.value),
     onChange,

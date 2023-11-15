@@ -218,4 +218,52 @@ export interface SelectTokens {
    * @description 选择器undefined圆角
    */
   selectPanelRadius: string;
+  /**
+   * @type {string}
+   * @token Size-16
+   * @description 选择器undefined高度
+   */
+  selectOptionHeight: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器undefined内边距（水平方向）
+   */
+  selectOptionPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-5
+   * @description 选择器undefined内边距（垂直方向）
+   */
+  selectOptionPaddingY: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 选择器undefined鼠标点击时的颜色
+   */
+  selectOptionActiveColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description 选择器undefined鼠标点击时的背景颜色
+   */
+  selectOptionActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 选择器undefined鼠标移入时的背景颜色
+   */
+  selectOptionHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 选择器undefined禁用时的颜色
+   */
+  selectOptionDisabledColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 选择器undefined禁用时的背景颜色
+   */
+  selectOptionDisabledBackgroundColor: string;
 }

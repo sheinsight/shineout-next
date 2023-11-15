@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { usePersistFn, usePopup } from '@sheinx/hooks';
+import { usePersistFn, usePopup, useSelect } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { SelectProps } from './select.type';
 import { AbsoluteList } from '../absolute-list';
@@ -9,7 +9,7 @@ import AnimationList from '../animation-list';
 import Result from './result';
 import List from './list';
 import TreeList from './list-tree';
-import ColumnsList from './list-columns';
+// import ColumnsList from './list-columns';
 
 const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   const {
@@ -17,23 +17,26 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     className,
     size,
     data,
-    // value,
-    // treeData,
+    format,
+    value,
+    defaultValue,
+    prediction,
     innerTitle,
     underline,
     border = true,
-    // clearable = true,
     status,
-    columns,
     width,
+    multiple,
+    keygen,
     optionWidth = '100%',
     height = 250,
     open: openProp,
     position: positionProp = 'bottom-left',
     lineHeight,
     itemsInView,
-    // onFocus,
-    // onBlur,
+    renderItem,
+    beforeChange,
+    onChange,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
 
@@ -49,6 +52,18 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   );
 
   // const [, setFocused] = React.useState(false);
+
+  const { datum } = useSelect<DataItem, Value>({
+    value,
+    data,
+    multiple,
+    defaultValue,
+    control: 'value' in props,
+    format,
+    prediction,
+    beforeChange,
+    onChange,
+  });
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
     console.log(isOpen);
@@ -109,15 +124,21 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   const renderList = () => {
     const listProps = {
       data,
+      datum,
+      keygen,
       width,
       height,
+      jssStyle,
       optionWidth,
       lineHeight,
       itemsInView,
+      renderItem,
     };
-    if ((typeof columns === 'number' && columns! >= 1) || columns === -1) {
-      return <ColumnsList {...listProps}></ColumnsList>;
-    }
+    // 自定义列
+    // if ((typeof columns === 'number' && columns! >= 1) || columns === -1) {
+    //   return <ColumnsList {...listProps}></ColumnsList>;
+    // }
+
     return <List {...listProps}></List>;
   };
 
