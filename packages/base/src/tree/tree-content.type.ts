@@ -1,14 +1,9 @@
 import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
-import { TreeClasses, TreeRenderItemType } from './tree.type';
-import { SpinClasses } from '../spin/spin.type';
+import { JsstyleType, TreeRenderItemType } from './tree.type';
 
 export interface TreeContextProps<DataItem>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded' | 'active'> {
-  jssStyle?: {
-    tree: TreeClasses;
-    spin: SpinClasses;
-  };
-
+  jssStyle: JsstyleType;
   id: KeygenResult;
   parentClickExpand?: boolean;
   doubleClickExpand?: boolean;

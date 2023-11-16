@@ -26,14 +26,16 @@ export type TreeRenderItemType<DataItem> =
   | ((item: DataItem, expanded: boolean, active: boolean, id: KeygenResult) => React.ReactNode)
   | ObjectKey<DataItem>;
 
+export type JsstyleType = {
+  tree: () => TreeClasses;
+  spin: () => SpinClasses;
+  checkbox: () => CheckboxClasses;
+};
+
 export interface TreeProps<DataItem>
   extends BaseTreeProps<DataItem>,
     Pick<CommonType, 'className' | 'style'> {
-  jssStyle?: {
-    tree: TreeClasses;
-    spin: SpinClasses;
-    checkbox: CheckboxClasses;
-  };
+  jssStyle: JsstyleType;
   line?: boolean;
   iconClass?: string;
   nodeClass?: string | ((data: DataItem) => string);

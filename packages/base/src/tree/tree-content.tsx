@@ -33,7 +33,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     onNodeClick,
   } = props;
 
-  const contentStyle = jssStyle?.tree || ({} as TreeClasses);
+  const contentStyle = jssStyle?.tree() || ({} as TreeClasses);
   const rootClass = classNames(contentStyle.contentWrapper, {
     [contentStyle.childnode]: data[childrenKey] && (data[childrenKey] as DataItem[]).length > 0,
     [contentStyle.inlineContent]: inlineNode,

@@ -4,9 +4,9 @@ import { useTreeStyle, useSpinStyle, useCheckboxStyle } from '@sheinx/shineout-s
 import { TreeProps } from './tree.type';
 
 const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
-  const treeStyle = useTreeStyle();
-  const spinStyle = useSpinStyle();
-  const checkboxStyle = useCheckboxStyle();
+  const treeStyle = useTreeStyle;
+  const spinStyle = useSpinStyle;
+  const checkboxStyle = useCheckboxStyle;
   const jssStyle = useMemo(
     () => ({ tree: treeStyle, spin: spinStyle, checkbox: checkboxStyle }),
     [treeStyle, spinStyle],

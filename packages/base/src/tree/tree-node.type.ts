@@ -1,16 +1,12 @@
 import { CommonType } from '../common/type';
 import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
-import { TreeClasses, TreeRenderItemType } from './tree.type';
+import { JsstyleType, TreeRenderItemType } from './tree.type';
 import { TreeListProps } from './tree-list.type';
-import { SpinClasses } from '../spin/spin.type';
 
 export interface TreeNodeProps<DataItem>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className'> {
-  jssStyle?: {
-    tree: TreeClasses;
-    spin: SpinClasses;
-  };
+  jssStyle: JsstyleType;
   id: string;
   data: DataItem;
   index: number;
