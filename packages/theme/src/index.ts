@@ -82,6 +82,9 @@ import { UploadTokens } from './upload/type';
 import Transfer from './transfer';
 import { TransferTokens } from './transfer/type';
 
+import Tree from './tree';
+import { TreeTokens } from './tree/type';
+
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CarouselTokens &
@@ -108,7 +111,8 @@ export type ThemeTokens = AlertTokens &
   TextareaTokens &
   TooltipTokens &
   UploadTokens &
-  TransferTokens;
+  TransferTokens &
+  TreeTokens;
 
 const Tokens: ThemeTokens = {
   ...Alert,
@@ -138,6 +142,7 @@ const Tokens: ThemeTokens = {
   ...Tooltip,
   ...Upload,
   ...Transfer,
+  ...Tree,
 };
 
 export type { TokenType };
