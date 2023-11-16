@@ -71,6 +71,12 @@ const tableStyle: JsStyles<TableClassType> = {
           background: '#e8e8e8',
         },
       },
+      '& th': {
+        background: token.tableTheadBackgroundColor,
+        color: token.tableTheadFontColor,
+        fontWeight: 'bold',
+        boxSizing: 'border-box',
+      },
     },
   },
   bordered: {
@@ -81,12 +87,6 @@ const tableStyle: JsStyles<TableClassType> = {
     overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTheadBackgroundColor,
-    '& th': {
-      background: token.tableTheadBackgroundColor,
-      color: token.tableTheadFontColor,
-      fontWeight: 'bold',
-      boxSizing: 'border-box',
-    },
   },
   tbody: {
     overflow: 'auto',
@@ -189,6 +189,9 @@ const tableStyle: JsStyles<TableClassType> = {
     cursor: 'ew-resize',
     '$wrapper th:hover &': {
       opacity: 1,
+    },
+    '$cellIgnoreBorder &': {
+      display: 'none',
     },
     '&::before, &::after': {
       borderWidth: '3px',

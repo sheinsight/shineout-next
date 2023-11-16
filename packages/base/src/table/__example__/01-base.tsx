@@ -14,7 +14,7 @@ const jssStyle = {
 };
 
 // mock 1000 rows 学生数据
-const data = Array(100)
+const data = Array(10000)
   .fill(0)
   .map((_, i) => ({
     id: i,
@@ -110,7 +110,7 @@ export default () => {
           return orderFunc(order);
         }}
         width={1200}
-        style={{ height: 400 }}
+        style={{ height: '' }}
         keygen='id'
         jssStyle={jssStyle}
         data={data}

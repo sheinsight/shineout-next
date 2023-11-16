@@ -29,11 +29,11 @@ export interface UseTableLayoutProps
   columns: TableFormatColumn<any>[];
   theadRef: React.RefObject<HTMLElement>;
   tbodyRef: React.RefObject<HTMLElement>;
-  tfootRef: React.RefObject<HTMLElement>;
+  scrollRef: React.RefObject<HTMLElement>;
 }
 
 const useTableLayout = (props: UseTableLayoutProps) => {
-  const { theadRef, tbodyRef, tfootRef } = props;
+  const { theadRef, tbodyRef, scrollRef } = props;
   const preColumns = usePrevious(props.columns);
   const preData = usePrevious(props.data);
   const { current: context } = useRef({
@@ -52,17 +52,17 @@ const useTableLayout = (props: UseTableLayoutProps) => {
 
   // 检查滚动状态
   const checkScroll = usePersistFn(() => {
-    const tbody = tbodyRef.current;
-    if (!tbody) return;
+    const scrollEl = scrollRef.current;
+    if (!scrollEl) return;
     if (context.checkNum > 10) {
       // 防止死循环
       setIsScrollY(true);
       return;
     }
-    const overHeight = tbody.scrollHeight > tbody.clientHeight;
-    const overWidth = tbody.scrollWidth > tbody.clientWidth;
+    const overHeight = scrollEl.scrollHeight > scrollEl.clientHeight;
+    const overWidth = scrollEl.scrollWidth > scrollEl.clientWidth;
 
-    const newScrollBarWidth = overHeight ? tbody.offsetWidth - tbody.clientWidth : 0;
+    const newScrollBarWidth = overHeight ? scrollEl.offsetWidth - scrollEl.clientWidth : 0;
     if (newScrollBarWidth !== scrollBarWidth) setScrollBarWidth(newScrollBarWidth);
 
     if (overWidth !== isScrollX) setIsScrollX(overWidth);
@@ -77,9 +77,9 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const dragCol = usePersistFn((index: number, deltaX: number) => {
     const col = props.columns[index];
     if (!colgroup) return;
-    const thead = theadRef.current;
-    if (!thead) return;
-    const colEl = thead.querySelector(`colgroup col:nth-child(${col.index + 1})`) as HTMLElement;
+    const table = theadRef.current || tbodyRef.current;
+    if (!table) return;
+    const colEl = table.querySelector(`colgroup col:nth-child(${col.index + 1})`) as HTMLElement;
     if (!colEl) return;
     let oWidth = parseInt(colEl.style.width, 10);
     if (Number.isNaN(oWidth) || oWidth === 0) {
@@ -150,24 +150,25 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   });
 
   const checkFloat = usePersistFn(() => {
-    const tbody = tbodyRef.current!;
-    const max = tbody.scrollWidth - tbody.clientWidth;
+    const scrollEl = scrollRef.current!;
+    const max = scrollEl.scrollWidth - scrollEl.clientWidth;
     const min = 0;
-    const left = tbody.scrollLeft;
+    const left = scrollEl.scrollLeft;
     setFloatRight(left !== max);
     setFloatLeft(left !== min);
   });
 
-  const setScrollLeft = usePersistFn((num: number) => {
-    const tbody = tbodyRef.current!;
-    const max = tbody.scrollWidth - tbody.clientWidth;
+  const setScrollLeft = usePersistFn((num: number, syncELArr: Array<HTMLElement | null>) => {
+    const scrollEl = scrollRef.current!;
+    const max = scrollEl.scrollWidth - scrollEl.clientWidth;
     const min = 0;
 
     const left = Math.min(Math.max(num, min), max);
-
-    setElScrollLeft(theadRef.current!, left);
-    setElScrollLeft(tbody, left);
-    setElScrollLeft(tfootRef.current!, left);
+    syncELArr.forEach((v) => {
+      if (v) {
+        setElScrollLeft(v!, left);
+      }
+    });
     checkFloat();
   });
 
@@ -208,13 +209,13 @@ const useTableLayout = (props: UseTableLayoutProps) => {
 
   useEffect(() => {
     let cancelFunc: () => void | undefined;
-    if (tbodyRef.current) {
-      cancelFunc = addResizeObserver(tbodyRef.current, handleResize, { direction: true });
+    if (scrollRef.current) {
+      cancelFunc = addResizeObserver(scrollRef.current, handleResize, { direction: true });
     }
     return () => {
       cancelFunc?.();
     };
-  }, [tbodyRef.current]);
+  }, [scrollRef.current]);
 
   useLayoutEffect(() => {
     if (resetFlag) {

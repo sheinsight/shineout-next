@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { useTableLayout, useTableColumns, useTableSort, usePersistFn } from '@sheinx/hooks';
 import { TableProps } from './table.type';
@@ -6,7 +6,7 @@ import { TableProps } from './table.type';
 import Colgroup from './colgroup';
 import Thead from './thead';
 import Tbody from './tbody';
-import Tfoot from './tfoot';
+// import Tfoot from './tfoot';
 
 // 功能清单
 // - 表头分组
@@ -20,9 +20,9 @@ import Tfoot from './tfoot';
 // 数形状数据
 export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableClasses = props?.jssStyle?.table?.();
-  const tbodyRef = useRef<HTMLDivElement | null>(null);
-  const theadRef = useRef<HTMLDivElement | null>(null);
-  const tfootRef = useRef<HTMLDivElement | null>(null);
+  const tbodyRef = useRef<HTMLTableElement | null>(null);
+  const theadRef = useRef<HTMLTableElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const { columns } = useTableColumns({
     columns: props.columns,
@@ -48,7 +48,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   } = useTableLayout({
     theadRef: theadRef,
     tbodyRef: tbodyRef,
-    tfootRef: tfootRef,
+    scrollRef: scrollRef,
     columns: columns,
     data: props.data,
     dataChangeResize: !!props.dataChangeResize,
@@ -57,68 +57,105 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     width: props.width,
   });
 
-  const handleScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
+  const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
     if (!target) return;
-    layoutFunc.setScrollLeft(target!.scrollLeft);
+    let thead = theadRef?.current;
+    const theadScroll = thead ? thead?.parentElement : null;
+    layoutFunc.setScrollLeft(target!.scrollLeft, [theadScroll]);
   });
 
-  const renderColgroup = () => {
+  const handleHeaderWheel = usePersistFn((e: any) => {
+    e.preventDefault();
+    const target = e.currentTarget as HTMLDivElement;
+    if (!target) return;
+    const scrollLeft = target.scrollLeft + e.deltaX;
+    layoutFunc.setScrollLeft(scrollLeft, [target, scrollRef.current]);
+  });
+
+  const Group = (
+    <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
+  );
+
+  const Header = (
+    <Thead
+      jssStyle={props.jssStyle}
+      columns={columns}
+      data={sortedData}
+      colgroup={colgroup}
+      sortInfo={sortInfo}
+      onSorterChange={onSorterChange}
+      dragCol={layoutFunc.dragCol}
+      resizeCol={layoutFunc.resizeCol}
+      onColumnResize={props.onColumnResize}
+      columnResizable={props.columnResizable}
+    />
+  );
+
+  const Body = (
+    <Tbody
+      jssStyle={props.jssStyle}
+      columns={columns}
+      data={sortedData}
+      colgroup={colgroup}
+      isScrollX={isScrollX}
+    />
+  );
+
+  const renderTable = () => {
+    if (!isScrollY)
+      return (
+        <div ref={scrollRef} className={tableClasses?.tbody}>
+          <table style={{ width }} ref={tbodyRef}>
+            {Group}
+            {Header}
+            {Body}
+          </table>
+        </div>
+      );
     return (
-      <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
+      <>
+        <div className={classNames(tableClasses?.thead)}>
+          <table style={{ width }} ref={theadRef}>
+            {Group}
+            {Header}
+          </table>
+        </div>
+        <div ref={scrollRef} className={tableClasses?.tbody} onScroll={handleBodyScroll}>
+          <table style={{ width }} ref={tbodyRef}>
+            {Group}
+            {Body}
+          </table>
+        </div>
+      </>
     );
   };
 
-  const renderHeader = () => {
-    return (
-      <div ref={theadRef} className={classNames(tableClasses?.thead)}>
-        <table style={{ width }}>
-          {renderColgroup()}
-          <Thead
-            jssStyle={props.jssStyle}
-            columns={columns}
-            data={sortedData}
-            colgroup={colgroup}
-            sortInfo={sortInfo}
-            onSorterChange={onSorterChange}
-            dragCol={layoutFunc.dragCol}
-            resizeCol={layoutFunc.resizeCol}
-            onColumnResize={props.onColumnResize}
-            columnResizable={props.columnResizable}
-          />
-        </table>
-      </div>
-    );
-  };
+  // const renderFooter = () => {
+  //   if (!props.summary || !props.summary.length) return null;
+  //   return (
+  //     <div ref={tfootRef} className={classNames(tableClasses?.tfoot)} onScroll={handleScroll}>
+  //       <table style={{ width }}>
+  //         {renderColgroup()}
+  //         <Tfoot />
+  //       </table>
+  //     </div>
+  //   );
+  // };
 
-  const renderBody = () => {
-    return (
-      <div ref={tbodyRef} className={tableClasses?.tbody} onScroll={handleScroll}>
-        <table style={{ width }}>
-          {renderColgroup()}
-          <Tbody
-            jssStyle={props.jssStyle}
-            columns={columns}
-            data={sortedData}
-            colgroup={colgroup}
-            isScrollX={isScrollX}
-          />
-        </table>
-      </div>
-    );
-  };
-
-  const renderFooter = () => {
-    if (!props.summary || !props.summary.length) return null;
-    return (
-      <div ref={tfootRef} className={classNames(tableClasses?.tfoot)} onScroll={handleScroll}>
-        <table style={{ width }}>
-          {renderColgroup()}
-          <Tfoot />
-        </table>
-      </div>
-    );
-  };
+  useEffect(() => {
+    // 绑定 wheel 事件
+    if (theadRef.current && theadRef.current.parentElement) {
+      theadRef.current.parentElement.addEventListener('wheel', handleHeaderWheel, {
+        passive: false,
+      });
+    }
+    return () => {
+      if (theadRef.current && theadRef.current.parentElement) {
+        theadRef.current.parentElement.removeEventListener('wheel', handleHeaderWheel);
+      }
+    };
+  }, [theadRef.current, isScrollY]);
 
   return (
     <div
@@ -132,9 +169,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       )}
       style={props.style}
     >
-      {renderHeader()}
-      {renderBody()}
-      {renderFooter()}
+      {renderTable()}
     </div>
   );
 };
