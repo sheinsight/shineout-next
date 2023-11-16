@@ -8,6 +8,7 @@ export type TableClasses = {
   floatLeft: string;
   floatRight: string;
   bordered: string;
+  sticky: string;
 
   thead: string;
   tbody: string;
@@ -30,7 +31,7 @@ export type TableClasses = {
 const cellBaseIndex = 4;
 const sorterIndex = 10;
 const fixedIndex = 8;
-// const headerIndex = 10;
+const headerIndex = 12;
 
 export type TableClassType = keyof TableClasses;
 
@@ -87,10 +88,14 @@ const tableStyle: JsStyles<TableClassType> = {
     overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTheadBackgroundColor,
+    '$sticky > &': {
+      zIndex: headerIndex,
+    },
   },
   tbody: {
     overflow: 'auto',
     boxSizing: 'border-box',
+
     '& td': {
       backgroundColor: token.tableTbodyBackgroundColor,
       color: token.tableTbodyFontColor,
@@ -220,6 +225,7 @@ const tableStyle: JsStyles<TableClassType> = {
       display: 'none',
     },
   },
+  sticky: {},
 };
 
 export default tableStyle;

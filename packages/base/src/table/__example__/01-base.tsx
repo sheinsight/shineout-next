@@ -14,7 +14,7 @@ const jssStyle = {
 };
 
 // mock 1000 rows 学生数据
-const data = Array(10000)
+const data = Array(1000)
   .fill(0)
   .map((_, i) => ({
     id: i,
@@ -102,6 +102,7 @@ export default () => {
         />
       </div>
       <Table
+        sticky={{ top: 180 }}
         columnResizable
         bordered={!!bordered}
         sorter={(key: string, order: 'asc' | 'desc', list: any) => {

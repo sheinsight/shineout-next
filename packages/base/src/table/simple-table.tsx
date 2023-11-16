@@ -103,7 +103,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   );
 
   const renderTable = () => {
-    if (!isScrollY)
+    if (!isScrollY && !props.sticky)
       return (
         <div ref={scrollRef} className={tableClasses?.tbody}>
           <table style={{ width }} ref={tbodyRef}>
@@ -113,9 +113,14 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           </table>
         </div>
       );
+
+    const sticky = props.sticky === true ? { top: 0 } : props.sticky || { top: undefined };
+    const top = sticky.top;
+    let stickyStyle =
+      top !== undefined ? ({ top, position: 'sticky' } as React.CSSProperties) : undefined;
     return (
       <>
-        <div className={classNames(tableClasses?.thead)}>
+        <div className={classNames(tableClasses?.thead)} style={stickyStyle}>
           <table style={{ width }} ref={theadRef}>
             {Group}
             {Header}
@@ -166,6 +171,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         floatRight && tableClasses?.floatRight,
         isScrollY && tableClasses?.scrollY,
         props.bordered && tableClasses?.bordered,
+        props.sticky && tableClasses?.sticky,
       )}
       style={props.style}
     >

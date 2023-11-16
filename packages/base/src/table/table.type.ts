@@ -14,6 +14,7 @@ export interface TableClasses {
   floatLeft: string;
   floatRight: string;
   bordered: string;
+  sticky: string;
 
   thead: string;
   tbody: string;
@@ -154,7 +155,7 @@ export interface TableProps<DataItem, Value>
    * @cn 表头是否附着顶部，为 true 时距离顶部为0，为对象时属性值参考 [Sticky](/components/Sticky) 组件
    *  todo sticky
    */
-  // sticky?: boolean | StickyProps
+  sticky?: boolean | { top: number };
   /**
    * @en Table instance (please use with caution: only fixed Table)
    * @cn Table 实例（请谨慎使用：仅固定表格）
