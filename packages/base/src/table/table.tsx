@@ -4,7 +4,7 @@ import React from 'react';
 import { TableProps } from './table.type';
 import SimpleTable from './simple-table';
 
-const Table = <DataItem,>(props: TableProps<DataItem>) => {
+const Table = <DataItem, Value>(props: TableProps<DataItem, Value>) => {
   const {} = props;
   // ...
 

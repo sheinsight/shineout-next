@@ -1,7 +1,7 @@
 interface ColgroupProps {
-  colgroup?: number[];
+  colgroup?: (number | undefined)[];
   columns?: { key: string | number; width?: number }[];
-  adjustScrollY?: number;
+  shouldLastColAuto: boolean;
 }
 const Colgroup = (props: ColgroupProps) => {
   const { colgroup = [], columns = [] } = props;
@@ -9,9 +9,15 @@ const Colgroup = (props: ColgroupProps) => {
   if (useColgroup) {
     return (
       <colgroup>
-        {colgroup?.map((item: number, index: number) => (
-          <col key={columns[index].key} style={{ width: item }} />
-        ))}
+        {colgroup?.map((item, index) => {
+          const isLast = index === colgroup.length - 1;
+          return (
+            <col
+              key={columns[index].key}
+              style={{ width: isLast && props.shouldLastColAuto ? undefined : item }}
+            />
+          );
+        })}
       </colgroup>
     );
   }

@@ -1,6 +1,6 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
-import { hideScrollBar } from '../mixin';
+import { hideScrollBar, customScrollBar } from '../mixin';
 
 export type TableClasses = {
   wrapper: string;
@@ -22,7 +22,15 @@ export type TableClasses = {
   sorterActive: string;
   sorterAsc: string;
   sorterDesc: string;
+
+  resizeSpanner: string;
+  cellIgnoreBorder: string;
 };
+
+const cellBaseIndex = 4;
+const sorterIndex = 10;
+const fixedIndex = 8;
+// const headerIndex = 10;
 
 export type TableClassType = keyof TableClasses;
 
@@ -35,13 +43,14 @@ const tableStyle: JsStyles<TableClassType> = {
     zIndex: 0,
     fontSize: token.tableFontSize,
     '& table': {
-      textAlign: 'center',
+      textAlign: 'left',
       minWidth: '100%',
       boxSizing: 'border-box',
       tableLayout: 'fixed',
       borderCollapse: 'separate',
       borderSpacing: 0,
       '& th, & td': {
+        wordBreak: 'break-all',
         position: 'relative',
         borderBottom: `1px solid ${token.tableCellBorderColor}`,
         boxSizing: 'border-box',
@@ -49,12 +58,12 @@ const tableStyle: JsStyles<TableClassType> = {
         lineHeight: token.lineHeightDynamic,
         '&$cellFixedLeft, &$cellFixedRight': {
           position: 'sticky',
-          zIndex: 2,
+          zIndex: fixedIndex,
         },
         '$bordered&::after': {
           content: '""',
           position: 'absolute',
-          zIndex: 1,
+          zIndex: cellBaseIndex,
           top: 0,
           right: 0,
           bottom: 0,
@@ -66,14 +75,12 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   bordered: {
     border: `1px solid ${token.tableCellBorderColor}`,
-    borderRight: 'none',
-    borderBottom: 'none',
   },
   thead: {
     flex: '0 0 auto',
-    overflowX: 'auto',
+    overflow: 'hidden',
     boxSizing: 'border-box',
-    ...hideScrollBar(),
+    background: token.tableTheadBackgroundColor,
     '& th': {
       background: token.tableTheadBackgroundColor,
       color: token.tableTheadFontColor,
@@ -98,15 +105,16 @@ const tableStyle: JsStyles<TableClassType> = {
     ...hideScrollBar(),
   },
   scrollY: {
-    paddingRight: '15px',
+    '& $thead': {
+      overflowY: 'scroll',
+      ...customScrollBar({ background: 'transparent' }),
+    },
   },
   cellFixedLeft: {
     position: 'sticky',
-    zIndex: 2,
   },
   cellFixedRight: {
     position: 'sticky',
-    zIndex: 2,
   },
   cellFixedLast: {},
   floatLeft: {
@@ -167,6 +175,48 @@ const tableStyle: JsStyles<TableClassType> = {
   },
 
   sorterActive: {},
+  resizeSpanner: {
+    zIndex: sorterIndex,
+    position: 'absolute',
+    opacity: 0,
+    right: '-1px',
+    top: 0,
+    bottom: 0,
+    width: '3px',
+    boxSizing: 'border-box',
+    background: '#19718a',
+    transition: 'opacity 0.3s',
+    cursor: 'ew-resize',
+    '$wrapper th:hover &': {
+      opacity: 1,
+    },
+    '&::before, &::after': {
+      borderWidth: '3px',
+      content: '""',
+      position: 'absolute',
+      width: 0,
+      height: 0,
+      margin: 'auto',
+      bottom: 0,
+      top: 0,
+    },
+
+    '&::after': {
+      borderStyle: 'dashed solid dashed dashed',
+      borderColor: 'transparent #19718a transparent transparent',
+      right: '4px',
+    },
+    '&::before': {
+      borderStyle: 'dashed dashed dashed solid',
+      borderColor: 'transparent transparent transparent #19718a',
+      left: '4px',
+    },
+  },
+  cellIgnoreBorder: {
+    '&::after': {
+      display: 'none',
+    },
+  },
 };
 
 export default tableStyle;

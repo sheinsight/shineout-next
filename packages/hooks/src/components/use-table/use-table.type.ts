@@ -39,6 +39,29 @@ export interface BaseTableProps<Item> {
     orders: SortItem[],
     sorter: string,
   ) => void;
+
+  /**
+   * @en Set columnResizable to true to make all columns scalable
+   * @cn 设置 columnResizable 为 true，使所有列可伸缩
+   */
+  columnResizable?: boolean;
+  /**
+   * @en columns resize callback
+   * @cn 列宽伸缩后的回调
+   * @override  (columns: TableColumn[]) => void
+   */
+  onColumnResize?: (columns: TableColumnItem<Item>[]) => void;
+  /**
+   * @en Recalculate columns width while data change
+   * @cn 数据发生变化后是否重新计算列宽
+   * @default false
+   */
+  dataChangeResize?: boolean;
+  /**
+   * @en TThe total width of the table, which defaults to the container width, must not be less than the sum of width set in columns
+   * @cn 表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和
+   */
+  width?: number;
 }
 export interface TableSorterInfo {
   order: TableColumnOrder;

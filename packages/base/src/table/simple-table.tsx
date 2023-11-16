@@ -13,7 +13,7 @@ import Tfoot from './tfoot';
 // - 合并列 合并行 高亮
 // - 固定表头 列宽同步 滚动同步
 // - 排序
-//   可伸缩列
+// - 可伸缩列
 // - 固定列 sticky
 // 可展开
 // 可选择
@@ -36,38 +36,44 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     columns: columns,
   });
 
-  const { colgroup, isScrollY, isScrollX, func, scrollBarWidth, floatLeft, floatRight } =
-    useTableLayout({
-      theadRef: theadRef,
-      tbodyRef: tbodyRef,
-      tfootRef: tfootRef,
-    });
-  const htScrollAttr = {
-    style: isScrollY
-      ? ({
-          overflowY: 'scroll',
-          paddingRight: scrollBarWidth,
-        } as React.CSSProperties)
-      : undefined,
-  };
+  const {
+    func: layoutFunc,
+    colgroup,
+    isScrollY,
+    isScrollX,
+    floatLeft,
+    floatRight,
+    width,
+    shouldLastColAuto,
+  } = useTableLayout({
+    theadRef: theadRef,
+    tbodyRef: tbodyRef,
+    tfootRef: tfootRef,
+    columns: columns,
+    data: props.data,
+    dataChangeResize: !!props.dataChangeResize,
+    columnResizable: props.columnResizable,
+    onColumnResize: props.onColumnResize,
+    width: props.width,
+  });
 
   const handleScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
     if (!target) return;
-    func.setScrollLeft(target!.scrollLeft);
+    layoutFunc.setScrollLeft(target!.scrollLeft);
   });
+
+  const renderColgroup = () => {
+    return (
+      <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
+    );
+  };
 
   const renderHeader = () => {
     return (
-      <div
-        {...htScrollAttr}
-        style={{ ...htScrollAttr.style, position: 'sticky', top: 180, zIndex: 10 }}
-        ref={theadRef}
-        className={classNames(tableClasses?.thead, isScrollY && tableClasses?.scrollY)}
-        onScroll={handleScroll}
-      >
-        <table style={{ width: props.width }}>
-          <Colgroup colgroup={colgroup} columns={columns} />
+      <div ref={theadRef} className={classNames(tableClasses?.thead)}>
+        <table style={{ width }}>
+          {renderColgroup()}
           <Thead
             jssStyle={props.jssStyle}
             columns={columns}
@@ -75,6 +81,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             colgroup={colgroup}
             sortInfo={sortInfo}
             onSorterChange={onSorterChange}
+            dragCol={layoutFunc.dragCol}
+            resizeCol={layoutFunc.resizeCol}
+            onColumnResize={props.onColumnResize}
+            columnResizable={props.columnResizable}
           />
         </table>
       </div>
@@ -84,8 +94,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const renderBody = () => {
     return (
       <div ref={tbodyRef} className={tableClasses?.tbody} onScroll={handleScroll}>
-        <table style={{ width: props.width }}>
-          <Colgroup colgroup={colgroup} columns={columns} />
+        <table style={{ width }}>
+          {renderColgroup()}
           <Tbody
             jssStyle={props.jssStyle}
             columns={columns}
@@ -101,14 +111,9 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const renderFooter = () => {
     if (!props.summary || !props.summary.length) return null;
     return (
-      <div
-        {...htScrollAttr}
-        ref={tfootRef}
-        className={classNames(tableClasses?.tfoot)}
-        onScroll={handleScroll}
-      >
-        <table style={{ width: props.width }}>
-          <Colgroup colgroup={colgroup} columns={columns} />
+      <div ref={tfootRef} className={classNames(tableClasses?.tfoot)} onScroll={handleScroll}>
+        <table style={{ width }}>
+          {renderColgroup()}
           <Tfoot />
         </table>
       </div>

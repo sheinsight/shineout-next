@@ -13,7 +13,7 @@ interface TrProps extends Pick<TableProps<any, any>, 'jssStyle' | 'rowClassName'
   rowIndex: number;
   columns: TableFormatColumn<any>[];
   isScrollX: boolean;
-  colgroup: number[];
+  colgroup: (number | undefined)[];
   rawData: any;
 }
 
@@ -23,14 +23,16 @@ const Tr = (props: TrProps) => {
     const index = column.index;
     if (!props.isScrollX) return;
     if (column.fixed === 'left') {
-      const left = props.colgroup.slice(0, index).reduce((a, b) => a + b, 0);
+      const left = props.colgroup.slice(0, index).reduce((a, b) => (a || 0) + (b || 0), 0);
       return {
         ...column.style,
         left: left,
       } as React.CSSProperties;
     }
     if (column.fixed === 'right') {
-      const right = props.colgroup.slice(index + 1 + colSpan).reduce((a, b) => a + b, 0);
+      const right = props.colgroup
+        .slice(index + 1 + colSpan)
+        .reduce((a, b) => (a || 0) + (b || 0), 0);
       return {
         ...column.style,
         right: right,
@@ -42,14 +44,16 @@ const Tr = (props: TrProps) => {
   const renderContent = (cols: TrProps['columns'], data: TrProps['row']) => {
     const tds: React.ReactNode[] = [];
     let skip = 0;
+    const lastRowIndex = data.length - 1;
     for (let i = 0; i < cols.length; i++) {
       if (skip > 0) {
         skip--;
         continue;
       }
       const col = cols[i];
-      const last = cols[i + (data[i].colSpan || 1) - 1];
       if (col.render && data[i]) {
+        const last = cols[i + (data[i].colSpan || 1) - 1] || {};
+
         const td = (
           <td
             key={col.key}
@@ -60,9 +64,11 @@ const Tr = (props: TrProps) => {
               col.fixed === 'left' && tableClasses?.cellFixedLeft,
               col.fixed === 'right' && tableClasses?.cellFixedRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
+              lastRowIndex === i && tableClasses?.cellIgnoreBorder,
             )}
             style={getTdStyle(col, data[i].colSpan)}
           >
+            {/* todo 展开行  选择行 */}
             {util.render(col.render as any, data[i].data, col.index)}
           </td>
         );

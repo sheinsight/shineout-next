@@ -28,6 +28,9 @@ export interface TableClasses {
   sorterActive: string;
   sorterAsc: string;
   sorterDesc: string;
+
+  resizeSpanner: string;
+  cellIgnoreBorder: string;
 }
 
 export interface TableRef {
@@ -52,12 +55,6 @@ export interface TableProps<DataItem, Value>
    */
   width?: number;
   columns: ColumnItem<DataItem>[];
-  /**
-   * @en Recalculate columns width while data change
-   * @cn 数据发生变化后是否重新计算列宽
-   * @default false
-   */
-  dataChangeResize?: boolean;
   /**
    * @en controlled expand rows
    * @cn 展开行受控
@@ -131,11 +128,6 @@ export interface TableProps<DataItem, Value>
    */
   bordered?: boolean;
   /**
-   * @en Set columnResizable to true to make all columns scalable
-   * @cn 设置 columnResizable 为 true，使所有列可伸缩
-   */
-  columnResizable?: boolean;
-  /**
    * @en check children data while select all
    * @cn 全选时是否将子孙数据选中
    * @default false
@@ -157,11 +149,6 @@ export interface TableProps<DataItem, Value>
    * @cn 底部信息可用于总结
    */
   summary?: SummaryItem[][] | SummaryItem[];
-  /**
-   * @en
-   * @cn
-   */
-  onResize?: (index: number, width: number, colgroup?: number[]) => void;
   /**
    * @en sticky header, When it is true, the distance from the top is 0. When it is an object, the attribute value reference [Sticky component](/components/Sticky)
    * @cn 表头是否附着顶部，为 true 时距离顶部为0，为对象时属性值参考 [Sticky](/components/Sticky) 组件

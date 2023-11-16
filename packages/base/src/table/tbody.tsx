@@ -7,7 +7,7 @@ import Tr from './tr';
 interface TbodyProps extends Pick<TableProps<any, any>, 'data' | 'jssStyle' | 'rowClassName'> {
   columns: TableFormatColumn<any>[];
   data: TableProps<any, any>['data'];
-  colgroup: number[];
+  colgroup: (number | undefined)[];
   isScrollX: boolean;
   currentIndex?: number;
 }

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { TheadProps } from './thead.type';
-import { useTableGroup } from '@sheinx/hooks';
+import { useTableGroup, useDragMock, usePersistFn } from '@sheinx/hooks';
 import type { TableFormatColumn, TableHeadColumn, TableGroupColumn } from '@sheinx/hooks';
 import classNames from 'classnames';
 
@@ -16,6 +16,21 @@ export default (props: TheadProps) => {
   const { groupColumns, columnLevel } = useTableGroup({
     columns: props.columns,
     bordered: props.bordered,
+  });
+
+  const { current: context } = useRef({ dragIndex: -1 });
+
+  const handleDragMove = usePersistFn((deltaX: number) => {
+    props?.dragCol(context.dragIndex, deltaX);
+  });
+
+  const handleDragEnd = usePersistFn((deltaX: number) => {
+    props?.resizeCol(context.dragIndex, deltaX);
+  });
+
+  const { handleMouseDown: startDrag } = useDragMock({
+    onDragmove: handleDragMove,
+    onDragEnd: handleDragEnd,
   });
 
   const renderTitle = (title: TableFormatColumn<any>['title']) => {
@@ -84,26 +99,44 @@ export default (props: TheadProps) => {
     );
   };
 
+  const renderDrag = (index: number) => {
+    if (!props.columnResizable) return null;
+    return (
+      <div
+        className={tableClasses?.resizeSpanner}
+        onMouseDown={(e) => {
+          context.dragIndex = index;
+          startDrag(e);
+        }}
+      />
+    );
+  };
+
   const getFixedStyle = (
     fixed: 'left' | 'right' | undefined,
     index: number,
     colSpan: number,
   ): React.CSSProperties | undefined => {
     if (fixed === 'left') {
-      const left = colgroup.slice(0, index).reduce((a, b) => a + b, 0);
+      const left = colgroup.slice(0, index).reduce((a, b) => (a || 0) + (b || 0), 0);
       return {
         left: left,
       } as React.CSSProperties;
     }
     if (fixed === 'right') {
-      const right = colgroup.slice(index + colSpan).reduce((a, b) => a + b, 0);
+      const right = colgroup.slice(index + colSpan).reduce((a, b) => (a || 0) + (b || 0), 0);
       return {
         right: right,
       } as React.CSSProperties;
     }
   };
 
-  const createTh = (trs: React.ReactElement[][], col: TableHeadColumn, level: number) => {
+  const createTh = (
+    trs: React.ReactElement[][],
+    col: TableHeadColumn,
+    level: number,
+    isLast: boolean,
+  ) => {
     const colTemp = col as TableFormatColumn<any>;
     const colTemp2 = col as TableGroupColumn;
 
@@ -113,6 +146,7 @@ export default (props: TheadProps) => {
       col.fixed === 'left' && tableClasses?.cellFixedLeft,
       col.fixed === 'right' && tableClasses?.cellFixedRight,
       (col.lastFixed || col.firstFixed) && tableClasses?.cellFixedLast,
+      isLast && tableClasses?.cellIgnoreBorder,
     );
 
     if (colTemp.title) {
@@ -127,6 +161,7 @@ export default (props: TheadProps) => {
           <div className={classNames(sorter && tableClasses?.hasSorter)}>
             {renderTitle(colTemp.title)}
             {renderSort(colTemp)}
+            {renderDrag(colTemp.index)}
           </div>
         </th>,
       );
@@ -151,14 +186,17 @@ export default (props: TheadProps) => {
       </th>,
     );
     if (colTemp2.columns) {
-      colTemp2.columns.forEach((c) => createTh(trs, c, level + 1));
+      colTemp2.columns.forEach((c, index) =>
+        createTh(trs, c, level + 1, isLast && colTemp2.columns.length - 1 === index),
+      );
     }
   };
 
   const renderTrs = () => {
     const trs: React.ReactElement[][] = Array.from({ length: columnLevel + 1 }).map(() => []);
-    groupColumns.forEach((col) => {
-      createTh(trs, col, 0);
+    groupColumns.forEach((col, index) => {
+      const isLast = index === groupColumns.length - 1;
+      createTh(trs, col, 0, isLast);
     });
     return trs.map((tr, i) => <tr key={i}>{tr}</tr>);
   };

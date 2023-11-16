@@ -1,8 +1,8 @@
-export default function hideScrollBar() {
+export default function customScrollBar(info: { background: string }) {
   return {
-    scrollbarWidth: `none`,
+    'scrollbar-color': info.background,
     '&::-webkit-scrollbar': {
-      display: `none`,
+      background: info.background,
     },
   };
 }

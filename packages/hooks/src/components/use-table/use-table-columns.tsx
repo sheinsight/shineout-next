@@ -1,5 +1,4 @@
 import { TableColumnItem, TableFormatColumn } from './use-table.type';
-import deepEqual from 'fast-deep-equal';
 import { produce } from 'immer';
 import { useRef } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
@@ -10,6 +9,7 @@ export interface UseColumnsProps<Data> {
 
 const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
   const { columns: propsColumns = [] } = props;
+
   const { current: context } = useRef<{
     cachedColumns: TableFormatColumn<Data>[] | null;
     oldColumns: TableColumnItem<Data>[] | null;
@@ -21,7 +21,7 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
   });
 
   const getColumns = usePersistFn((columnsA: TableColumnItem<Data>[]) => {
-    if (deepEqual(columnsA, context.oldColumns)) {
+    if (columnsA === context.oldColumns) {
       return context.cachedColumns;
     }
     let columns = columnsA.filter((c) => typeof c === 'object');

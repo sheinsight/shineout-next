@@ -14,7 +14,7 @@ const jssStyle = {
 };
 
 // mock 1000 rows 学生数据
-const data = Array(10)
+const data = Array(100)
   .fill(0)
   .map((_, i) => ({
     id: i,
@@ -29,16 +29,21 @@ const columns = [
     title: 'ID2',
     render: 'id',
     width: 20,
-    fixed: 'left',
     sorter: (order: 'asc' | 'desc') => (a: any, b: any) =>
       order === 'asc' ? a.id - b.id : b.id - a.id,
     defaultOrder: 'asc',
   },
   {
+    title: 'age2',
+    render: 'age',
+    width: 40,
+    sorter: (order: 'asc' | 'desc') => (a: any, b: any) =>
+      order === 'asc' ? a.age - b.age : b.age - a.age,
+  },
+  {
     title: 'age',
     render: 'age',
-    width: 20,
-    fixed: 'left',
+    width: 40,
     sorter: 'age',
     rowSpan: (data: any, nextData: any) => data.age === nextData.age,
     colSpan: (data: any) => {
@@ -49,7 +54,6 @@ const columns = [
     title: 'Name',
     render: 'name',
     width: 80,
-    fixed: 'left',
     sorter: 'name',
   },
   {
@@ -61,6 +65,7 @@ const columns = [
   {
     title: 'Address',
     render: 'address',
+    group: ['group1', 'group2'],
     width: 100,
   },
   {
@@ -97,6 +102,7 @@ export default () => {
         />
       </div>
       <Table
+        columnResizable
         bordered={!!bordered}
         sorter={(key: string, order: 'asc' | 'desc', list: any) => {
           console.log(key, order, list);
@@ -104,6 +110,7 @@ export default () => {
           return orderFunc(order);
         }}
         width={1200}
+        style={{ height: 400 }}
         keygen='id'
         jssStyle={jssStyle}
         data={data}
