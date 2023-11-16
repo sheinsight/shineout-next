@@ -6,7 +6,7 @@ import TreeList from './tree-list';
 const Root = <DataItem,>(props: TreeRootProps<DataItem>) => {
   const { jssStyle, ...rest } = props;
 
-  const treeStyle = jssStyle?.tree || ({} as TreeClasses);
+  const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
   const rootClass = classNames(treeStyle.root);
   return <TreeList {...rest} expanded className={rootClass} jssStyle={jssStyle}></TreeList>;
 };

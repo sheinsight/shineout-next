@@ -78,7 +78,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
 
-  const contentStyle = jssStyle?.tree || ({} as TreeClasses);
+  const contentStyle = jssStyle?.tree() || ({} as TreeClasses);
 
   const rootClass = classNames(
     contentStyle.node,

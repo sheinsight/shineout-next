@@ -7,6 +7,7 @@ import { TreeListProps } from './tree-list.type';
 
 const List = <DataItem,>(props: TreeListProps<DataItem>) => {
   const hasExpanded = useRef(false);
+
   const {
     jssStyle,
     className,
@@ -45,12 +46,11 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     parentClickExpand,
     doubleClickExpand,
   } = props;
+  const listClass = jssStyle?.tree() || ({} as TreeClasses);
+  const rootClass = classNames(className || listClass.children, childrenClassName);
 
   if (!expanded && !hasExpanded.current) return null;
   hasExpanded.current = true;
-
-  const listClass = jssStyle?.tree || ({} as TreeClasses);
-  const rootClass = classNames(className || listClass.children, childrenClassName);
 
   const getKey = (data: DataItem, index: number) => {
     if (typeof keygen === 'function') return keygen(data, id as string);
