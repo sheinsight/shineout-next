@@ -6,6 +6,7 @@ export interface BaseSelectProps<DataItem, Value> {
   defaultValue?: Value;
   control: boolean;
   multiple?: boolean;
+  disabled?: boolean | ((data: DataItem) => boolean);
   prediction?: (value: Value, Data: DataItem) => boolean;
   format?: ((data: DataItem) => Value extends (infer U)[] ? U : Value) | ObjectKey<DataItem>;
   beforeChange?: (value: Value) => any;

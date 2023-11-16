@@ -34,6 +34,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     position: positionProp = 'bottom-left',
     lineHeight,
     itemsInView,
+    disabled,
     renderItem,
     beforeChange,
     onChange,
@@ -49,6 +50,9 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     status === 'error' && styles?.wrapperError,
     !border && styles?.wrapperNoBorder,
     !!underline && styles?.wrapperUnderline,
+    {
+      [styles?.multiple]: multiple,
+    },
   );
 
   // const [, setFocused] = React.useState(false);
@@ -60,6 +64,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     defaultValue,
     control: 'value' in props,
     format,
+    disabled,
     prediction,
     beforeChange,
     onChange,
@@ -129,6 +134,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       width,
       height,
       jssStyle,
+      multiple,
       optionWidth,
       lineHeight,
       itemsInView,

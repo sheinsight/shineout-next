@@ -27,6 +27,7 @@ export interface BaseListProps<DataItem, Value>
     | 'lineHeight'
     | 'itemsInView'
     | 'renderItem'
+    | 'multiple'
   > {
   customHeader?: React.ReactNode;
   height: number | string;

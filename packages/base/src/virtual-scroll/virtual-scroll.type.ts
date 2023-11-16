@@ -30,6 +30,8 @@ export interface VirtualScrollProps extends Pick<CommonType, 'style'> {
    * 固定高度
    */
   lineHeight?: number;
+  tag?: React.ReactElement['type'];
+  tagClassName?: string;
   width?: number;
   scrollWidth: number;
   itemsInView?: number;
@@ -44,7 +46,7 @@ export interface VirtualScrollProps extends Pick<CommonType, 'style'> {
 
 export interface VirtualListProps<DataItem>
   extends Pick<CommonType, 'className'>,
-    Pick<VirtualScrollProps, 'jssStyle'> {
+    Pick<VirtualScrollProps, 'jssStyle' | 'tag' | 'tagClassName'> {
   data: DataItem[];
   listStyle?: React.CSSProperties;
   keygen?: KeygenType<DataItem>;

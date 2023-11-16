@@ -11,6 +11,9 @@ const selectTokenDescription = {
   placeholder: '占位符',
   result: '结果',
   text: '文本',
+  option: '选项',
+  right: '(右侧)',
+  inner: '内部容器的',
 };
 
 /**
@@ -62,10 +65,14 @@ const selectTokenExtraValue = {
   },
   option: {
     height: 'Size-16',
-    padding: { x: 'Padding-8', y: 'Padding-5' },
+    padding: { x: 'Padding-4', y: 'Padding-1' },
     active: {
       color: 'Brand-6',
       background: { color: 'Brand-1' },
+    },
+    inner: {
+      padding: { x: 'Padding-8', y: 'Padding-5', right: 'Size-15' },
+      border: { radius: 'Radius-2' },
     },
     hover: { background: { color: 'Neutral-fill-2' } },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },

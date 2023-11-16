@@ -1,5 +1,6 @@
 import React from 'react';
 import { KeygenResult } from '@sheinx/hooks';
+import { SelectClasses } from '@sheinx/shineout-style';
 import { BaseListProps } from './select.type';
 import VirtualList from '../virtual-scroll/virtual-list';
 import ListOption from './list-option';
@@ -13,15 +14,18 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     header,
     keygen,
     datum,
+    multiple,
     itemsInView = 10,
-    lineHeight = 32,
+    lineHeight = 34,
     loading,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
   } = props;
+
   const style = {
     width: optionWidth,
     height,
   };
+  const styles = jssStyle?.select?.() as SelectClasses;
 
   const renderLoading = () => {
     return <div>loading</div>;
@@ -39,6 +43,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
           jssStyle={jssStyle}
           index={index}
           data={item}
+          multiple={multiple}
           renderItem={renderItemProp}
         ></ListOption>
       </React.Fragment>
@@ -53,6 +58,8 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         jssStyle={jssStyle}
         data={data}
         keygen={keygen}
+        tag={'ul'}
+        tagClassName={styles.virtualList}
         height={height}
         lineHeight={lineHeight}
         rowsInView={itemsInView}
@@ -62,7 +69,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   };
 
   return (
-    <div style={style}>
+    <div className={styles.list} style={style}>
       {header && renderHeader()}
       {renderList()}
     </div>

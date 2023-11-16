@@ -11,6 +11,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     defaultValue,
     beforeChange,
     format,
+    disabled,
     multiple,
     prediction,
     value: valueProp,
@@ -30,6 +31,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     format,
     value,
     multiple,
+    disabled,
     onChange,
     prediction,
   });

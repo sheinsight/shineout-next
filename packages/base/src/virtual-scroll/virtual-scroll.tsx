@@ -18,6 +18,8 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     scrollHeight: scrollHeightProp,
     // scrollWidth: scrollWidthProp,
     footer,
+    tag = 'ul',
+    tagClassName,
     onScroll,
   } = props;
 
@@ -26,7 +28,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   const [scrollBarWidth, setScrollBarWidth] = useState(0);
 
   const wheelEl = useRef<HTMLDivElement>(null);
-  const transformEl = useRef<HTMLDivElement>(null);
+  const transformEl = useRef<HTMLElement>(null);
 
   const barRef = useRef<HTMLDivElement>(null);
   const resizeRef = useRef<HTMLIFrameElement>(null);
@@ -192,6 +194,8 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     };
   }, []);
 
+  const Tag = tag;
+
   return (
     <>
       <div ref={wheelEl} className={rootClass} style={styles}>
@@ -199,7 +203,9 @@ const VirtualScroll = (props: VirtualScrollProps) => {
         {renderBarMonitor()}
         {shouldScroll && renderBar()}
         <div ref={containerRef} className={rootStyle.container} onWheel={handleWheel}>
-          <div ref={transformEl}>{children}</div>
+          <Tag ref={transformEl} className={tagClassName}>
+            {children}
+          </Tag>
         </div>
       </div>
       {footer && renderFooter()}

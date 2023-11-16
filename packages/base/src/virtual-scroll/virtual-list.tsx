@@ -15,6 +15,8 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     rowsInView,
     colNum = 1,
     renderItem,
+    tag,
+    tagClassName,
   } = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,6 +44,8 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         virtualRef={virtualRef}
         jssStyle={jssStyle}
         height={height}
+        tag={tag}
+        tagClassName={tagClassName}
         scrollWidth={0}
         scrollHeight={scrollHeight}
         translate={currentIndex * lineHeight}

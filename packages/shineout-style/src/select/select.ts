@@ -27,7 +27,12 @@ export type SelectClasses = {
   resultTextPadding: string;
   placeholder: string;
   pickerWrapper: string;
+  multiple: string;
+  checkedIcon: string;
+  list: string;
+  virtualList: string;
   option: string;
+  optionInner: string;
   optionHover: string;
   optionActive: string;
   optionDisabled: string;
@@ -183,7 +188,29 @@ const selectStyle: JsStyles<SelectClassType> = {
     boxShadow: token.selectPanelShadow,
     borderRadius: token.selectPanelRadius,
   },
+  multiple: {
+    '& $optionInner': {
+      paddingRight: token.selectOptionInnerPaddingRight,
+    },
+  },
+  checkedIcon: {
+    right: 8,
+    top: 9,
+    position: 'absolute',
+    display: 'inline-flex',
+    width: token.selectFontSize,
+    fontSize: token.selectFontSize,
+  },
+  list: {
+    paddingTop: 3,
+    paddingBottom: 3,
+  },
+  virtualList: {
+    margin: 0,
+    padding: 0,
+  },
   option: {
+    listStyle: 'none',
     fontSize: token.selectFontSize,
     lineHeight: token.lineHeightDynamic,
     padding: `${token.selectOptionPaddingY} ${token.selectOptionPaddingX}`,
@@ -193,8 +220,15 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     // hover
     '&:hover': {
-      backgroundColor: token.selectOptionHoverBackgroundColor,
+      '& $optionInner': {
+        backgroundColor: token.selectOptionHoverBackgroundColor,
+      },
     },
+  },
+  optionInner: {
+    position: 'relative',
+    padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
+    borderRadius: token.selectOptionInnerBorderRadius,
   },
   optionHover: {},
   optionActive: {

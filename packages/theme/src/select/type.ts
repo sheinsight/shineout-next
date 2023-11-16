@@ -221,49 +221,73 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Size-16
-   * @description 选择器undefined高度
+   * @description 选择器选项高度
    */
   selectOptionHeight: string;
   /**
    * @type {string}
-   * @token Padding-8
-   * @description 选择器undefined内边距（水平方向）
+   * @token Padding-4
+   * @description 选择器选项内边距（水平方向）
    */
   selectOptionPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
-   * @description 选择器undefined内边距（垂直方向）
+   * @token Padding-1
+   * @description 选择器选项内边距（垂直方向）
    */
   selectOptionPaddingY: string;
   /**
    * @type {string}
    * @token Brand-6
-   * @description 选择器undefined鼠标点击时的颜色
+   * @description 选择器选项鼠标点击时的颜色
    */
   selectOptionActiveColor: string;
   /**
    * @type {string}
    * @token Brand-1
-   * @description 选择器undefined鼠标点击时的背景颜色
+   * @description 选择器选项鼠标点击时的背景颜色
    */
   selectOptionActiveBackgroundColor: string;
   /**
    * @type {string}
+   * @token Padding-8
+   * @description 选择器选项内部容器的内边距（水平方向）
+   */
+  selectOptionInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-5
+   * @description 选择器选项内部容器的内边距（垂直方向）
+   */
+  selectOptionInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Size-15
+   * @description 选择器选项内部容器的内边距(右侧)
+   */
+  selectOptionInnerPaddingRight: string;
+  /**
+   * @type {string}
+   * @token Radius-2
+   * @description 选择器选项内部容器的边框圆角
+   */
+  selectOptionInnerBorderRadius: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
-   * @description 选择器undefined鼠标移入时的背景颜色
+   * @description 选择器选项鼠标移入时的背景颜色
    */
   selectOptionHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-2
-   * @description 选择器undefined禁用时的颜色
+   * @description 选择器选项禁用时的颜色
    */
   selectOptionDisabledColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 选择器undefined禁用时的背景颜色
+   * @description 选择器选项禁用时的背景颜色
    */
   selectOptionDisabledBackgroundColor: string;
 }
