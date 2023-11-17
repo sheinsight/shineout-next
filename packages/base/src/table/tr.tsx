@@ -3,6 +3,8 @@ import { util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { TableProps } from './table.type';
+import { TbodyProps } from './tbody.type';
+import Icons from '../icons';
 
 interface TrProps extends Pick<TableProps<any, any>, 'jssStyle' | 'rowClassName'> {
   row: {
@@ -15,6 +17,10 @@ interface TrProps extends Pick<TableProps<any, any>, 'jssStyle' | 'rowClassName'
   isScrollX: boolean;
   colgroup: (number | undefined)[];
   rawData: any;
+  expanded: boolean;
+  expandCol: TbodyProps['expandHideCol'] | undefined;
+  rowClickExpand: boolean;
+  handleExpandClick: (col: TableFormatColumn<any>, data: any, index: number) => void;
 }
 
 const Tr = (props: TrProps) => {
@@ -41,7 +47,18 @@ const Tr = (props: TrProps) => {
     return column.style;
   };
 
-  const renderContent = (cols: TrProps['columns'], data: TrProps['row']) => {
+  const renderContent = (col: TrProps['columns'][number], data: any, index: number) => {
+    if (col.type === 'expand' || col.type === 'row-expand') {
+      return (
+        <div className={tableClasses?.expandIcon}>
+          {props.expanded ? Icons.Expand : Icons.OdecShrink}
+        </div>
+      );
+    }
+    return util.render(col.render as any, data, index);
+  };
+
+  const renderTds = (cols: TrProps['columns'], data: TrProps['row']) => {
     const tds: React.ReactNode[] = [];
     let skip = 0;
     const lastRowIndex = data.length - 1;
@@ -68,8 +85,7 @@ const Tr = (props: TrProps) => {
             )}
             style={getTdStyle(col, data[i].colSpan)}
           >
-            {/* todo 展开行  选择行 */}
-            {util.render(col.render as any, data[i].data, col.index)}
+            {renderContent(col, data[i].data, col.index)}
           </td>
         );
         tds.push(td);
@@ -79,10 +95,45 @@ const Tr = (props: TrProps) => {
     return tds;
   };
 
+  const renderExpand = () => {
+    if (!props.expanded) return null;
+    const expandCol = props.expandCol;
+    if (expandCol && typeof expandCol.render === 'function') {
+      const renderFunc = expandCol.render(props.rawData, props.rowIndex);
+      if (typeof renderFunc === 'function') {
+        return (
+          <tr>
+            <td
+              className={tableClasses?.cellIgnoreBorder}
+              colSpan={props.columns.length}
+              style={{ padding: 0 }}
+            >
+              {renderFunc()}
+            </td>
+          </tr>
+        );
+      }
+    }
+  };
+
   return (
-    <tr className={props?.rowClassName?.(props.rawData, props.rowIndex)}>
-      {renderContent(props.columns, props.row)}
-    </tr>
+    <>
+      <tr
+        className={props?.rowClassName?.(props.rawData, props.rowIndex)}
+        onClick={() => {
+          if (props.rowClickExpand) {
+            props.handleExpandClick(
+              props.expandCol as TableFormatColumn<any>,
+              props.rawData,
+              props.rowIndex,
+            );
+          }
+        }}
+      >
+        {renderTds(props.columns, props.row)}
+      </tr>
+      {renderExpand()}
+    </>
   );
 };
 

@@ -26,9 +26,10 @@ export default (props: TheadProps) => {
 
   const handleDragEnd = usePersistFn((deltaX: number) => {
     props?.resizeCol(context.dragIndex, deltaX);
+    context.dragIndex = -1;
   });
 
-  const { handleMouseDown: startDrag } = useDragMock({
+  const { handleMouseDown: startDrag, isDragging } = useDragMock({
     onDragmove: handleDragMove,
     onDragEnd: handleDragEnd,
   });
@@ -103,7 +104,11 @@ export default (props: TheadProps) => {
     if (!props.columnResizable) return null;
     return (
       <div
-        className={tableClasses?.resizeSpanner}
+        className={classNames(
+          tableClasses?.resizeSpanner,
+          isDragging && context.dragIndex === index && tableClasses?.resizeSpannerActive,
+          isDragging && context.dragIndex !== index && tableClasses?.resizeSpannerInactive,
+        )}
         onMouseDown={(e) => {
           context.dragIndex = index;
           startDrag(e);
@@ -148,8 +153,9 @@ export default (props: TheadProps) => {
       (col.lastFixed || col.firstFixed) && tableClasses?.cellFixedLast,
       isLast && tableClasses?.cellIgnoreBorder,
     );
+    const isExpand = colTemp.type === 'expand' || colTemp.type === 'row-expand';
 
-    if (colTemp.title) {
+    if (colTemp.title || isExpand) {
       const sorter = renderSort(colTemp);
       trs[level].push(
         <th

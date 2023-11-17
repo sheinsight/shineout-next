@@ -28,10 +28,17 @@ const columns = [
   {
     title: 'ID2',
     render: 'id',
-    width: 20,
+    width: 40,
     sorter: (order: 'asc' | 'desc') => (a: any, b: any) =>
       order === 'asc' ? a.id - b.id : b.id - a.id,
     defaultOrder: 'asc',
+  },
+  {
+    type: 'row-expand',
+    width: 20,
+    render: () => () => {
+      return <div style={{ padding: '12px' }}>123213</div>;
+    },
   },
   {
     title: 'age2',

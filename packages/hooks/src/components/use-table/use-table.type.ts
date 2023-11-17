@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeygenResult, ObjectKey } from '../../common/type';
+import { KeygenResult, ObjectKey, StructKeygenType } from '../../common/type';
 
 export type TableColumnOrder = 'asc' | 'desc';
 export type TableColumnFix = 'left' | 'right';
@@ -62,6 +62,21 @@ export interface BaseTableProps<Item> {
    * @cn 表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和
    */
   width?: number;
+  /**
+   * @en controlled expand rows
+   * @cn 展开行受控
+   */
+  expandKeys?: KeygenResult[];
+  /**
+   * @cn 生成每一项key的辅助方法
+   * 为函数时，使用此函数返回值
+   * 为string时，使用这个string对应的数据值。如 'id'，相当于 (d => d.id)
+   * @en Generate a auxiliary method for each key
+   * If not filled, index will be used (not recommended, in some cases there may be problems)
+   * When it is a function, use its return value.
+   * When it is a string，ues the value of the string.For example, 'id' is the same thing as (d) => d.id .
+   */
+  keygen: StructKeygenType<Item>;
 }
 export interface TableSorterInfo {
   order: TableColumnOrder;

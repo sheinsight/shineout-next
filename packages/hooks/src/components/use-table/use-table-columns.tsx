@@ -7,6 +7,23 @@ export interface UseColumnsProps<Data> {
   showCheckbox?: boolean;
 }
 
+const getHideExpandCol = (cols: UseColumnsProps<any>['columns']) => {
+  const expandCol = cols.find(
+    (col) => col.hide && (col.type === 'expand' || col.type === 'row-expand'),
+  );
+  if (expandCol) {
+    return expandCol;
+  }
+  return null;
+};
+
+export type RxpandHideColType = {
+  hide?: boolean;
+  type: 'expand' | 'row-expand';
+  render?: (data: any, index: number) => (() => React.ReactNode) | undefined;
+  onClick?: (data: any, expand: boolean) => void;
+} | null;
+
 const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
   const { columns: propsColumns = [] } = props;
 
@@ -14,17 +31,24 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
     cachedColumns: TableFormatColumn<Data>[] | null;
     oldColumns: TableColumnItem<Data>[] | null;
     groupLevel: number;
+    expandHideCol: RxpandHideColType;
   }>({
     cachedColumns: null,
     oldColumns: null,
     groupLevel: 0,
+    expandHideCol: null as RxpandHideColType,
   });
+
+  // 隐藏的展开列
 
   const getColumns = usePersistFn((columnsA: TableColumnItem<Data>[]) => {
     if (columnsA === context.oldColumns) {
       return context.cachedColumns;
     }
-    let columns = columnsA.filter((c) => typeof c === 'object');
+    context.expandHideCol = getHideExpandCol(columnsA) as RxpandHideColType;
+    let columns = columnsA
+      .filter((c) => typeof c === 'object')
+      .filter((c) => c !== context.expandHideCol);
     let left = -1;
     let right = -1;
     columns.forEach((c, i) => {
@@ -60,8 +84,11 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
   });
 
   if (context.cachedColumns === null) getColumns(propsColumns);
+
+  const columns = getColumns(propsColumns) || [];
   return {
-    columns: getColumns(propsColumns) || [],
+    columns,
+    expandHideCol: context.expandHideCol,
   };
 };
 

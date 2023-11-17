@@ -15,6 +15,7 @@ import Tbody from './tbody';
 // - 排序
 // - 可伸缩列
 // - 固定列 sticky
+// - 表头 sticky
 // 可展开
 // 可选择
 // 数形状数据
@@ -24,7 +25,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const theadRef = useRef<HTMLTableElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const { columns } = useTableColumns({
+  const { columns, expandHideCol } = useTableColumns({
     columns: props.columns,
     showCheckbox: typeof props.onRowSelect === 'function',
   });
@@ -99,6 +100,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       data={sortedData}
       colgroup={colgroup}
       isScrollX={isScrollX}
+      expandHideCol={expandHideCol}
+      keygen={props.keygen}
+      rowClassName={props.rowClassName}
+      expandKeys={props.expandKeys}
     />
   );
 

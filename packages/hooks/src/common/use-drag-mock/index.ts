@@ -1,11 +1,12 @@
 import { usePersistFn } from '../use-persist-fn';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const useDragMock = (props: {
   onDragStart?: () => void;
   onDragmove?: (deltaX: number, deltaY: number) => void;
   onDragEnd?: (deltaX: number, deltaY: number) => void;
 }) => {
+  const [isDragging, setIsDragging] = useState(false);
   const { current: dragInfo } = useRef({
     startX: 0,
     startY: 0,
@@ -22,6 +23,7 @@ const useDragMock = (props: {
   });
 
   const handleMouseUp = usePersistFn((event: MouseEvent) => {
+    setIsDragging(false);
     const deltaX = event.clientX - dragInfo.startX;
     const deltaY = event.clientY - dragInfo.startY;
     props.onDragEnd?.(deltaX, deltaY);
@@ -30,6 +32,7 @@ const useDragMock = (props: {
   });
 
   const handleMouseDown = (event: React.MouseEvent) => {
+    setIsDragging(true);
     dragInfo.lastX = event.clientX;
     dragInfo.lastY = event.clientY;
     dragInfo.startX = event.clientX;
@@ -41,6 +44,7 @@ const useDragMock = (props: {
 
   return {
     handleMouseDown,
+    isDragging,
   };
 };
 

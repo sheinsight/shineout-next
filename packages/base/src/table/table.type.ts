@@ -1,12 +1,6 @@
 import React from 'react';
 import { CommonType } from '../common/type';
-import type {
-  KeygenResult,
-  StructKeygenType,
-  ObjectType,
-  TableColumnItem,
-  BaseTableProps,
-} from '@sheinx/hooks';
+import type { ObjectType, TableColumnItem, BaseTableProps } from '@sheinx/hooks';
 
 export interface TableClasses {
   wrapper: string;
@@ -31,7 +25,12 @@ export interface TableClasses {
   sorterDesc: string;
 
   resizeSpanner: string;
+  resizeSpannerActive: string;
+  resizeSpannerInactive: string;
+
   cellIgnoreBorder: string;
+
+  expandIcon: string;
 }
 
 export interface TableRef {
@@ -56,21 +55,6 @@ export interface TableProps<DataItem, Value>
    */
   width?: number;
   columns: ColumnItem<DataItem>[];
-  /**
-   * @en controlled expand rows
-   * @cn 展开行受控
-   */
-  expandKeys?: KeygenResult[];
-  /**
-   * @cn 生成每一项key的辅助方法
-   * 为函数时，使用此函数返回值
-   * 为string时，使用这个string对应的数据值。如 'id'，相当于 (d => d.id)
-   * @en Generate a auxiliary method for each key
-   * If not filled, index will be used (not recommended, in some cases there may be problems)
-   * When it is a function, use its return value.
-   * When it is a string，ues the value of the string.For example, 'id' is the same thing as (d) => d.id .
-   */
-  keygen: StructKeygenType<DataItem>;
   /**
    * @en When the value is true, disabled all checkboxes; When the value is function, disable the checkbox that this function returns true.
    * @cn 如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项

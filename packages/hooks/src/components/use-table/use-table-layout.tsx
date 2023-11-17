@@ -142,10 +142,13 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     const cols = group.querySelectorAll('col');
 
     const colgroup: number[] = [];
+    let sum = 0;
     for (let i = 0, count = cols.length; i < count; i++) {
       const { width } = cols[i].getBoundingClientRect();
+      sum += width;
       colgroup.push(width);
     }
+    setDeltaXSum(sum - (props.width || 0));
     setColgroup(colgroup);
   });
 
@@ -154,8 +157,10 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     const max = scrollEl.scrollWidth - scrollEl.clientWidth;
     const min = 0;
     const left = scrollEl.scrollLeft;
-    setFloatRight(left !== max);
-    setFloatLeft(left !== min);
+    const l = left !== min;
+    const r = left !== max;
+    if (l !== floatLeft) setFloatLeft(l);
+    if (r !== floatRight) setFloatRight(r);
   });
 
   const setScrollLeft = usePersistFn((num: number, syncELArr: Array<HTMLElement | null>) => {

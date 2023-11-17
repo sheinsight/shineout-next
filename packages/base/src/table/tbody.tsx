@@ -1,18 +1,16 @@
 import React from 'react';
-import { useTableRow } from '@sheinx/hooks';
-import { TableProps } from './table.type';
-import type { TableFormatColumn } from '@sheinx/hooks';
+import { useTableRow, useTableExpand } from '@sheinx/hooks';
 import Tr from './tr';
+import { TbodyProps } from './tbody.type';
 
-interface TbodyProps extends Pick<TableProps<any, any>, 'data' | 'jssStyle' | 'rowClassName'> {
-  columns: TableFormatColumn<any>[];
-  data: TableProps<any, any>['data'];
-  colgroup: (number | undefined)[];
-  isScrollX: boolean;
-  currentIndex?: number;
-}
 export default (props: TbodyProps) => {
   const { columns = [], data = [], currentIndex = 0 } = props;
+  const { isRowExpand, handleExpandClick } = useTableExpand({
+    columns: props.columns,
+    data: props.data,
+    expandKeys: props.expandKeys,
+    keygen: props.keygen,
+  });
 
   const { rowData } = useTableRow({
     columns: props.columns,
@@ -21,9 +19,15 @@ export default (props: TbodyProps) => {
   });
 
   const renderRow = (item: any, index: number) => {
+    const rowIndex = index + currentIndex;
+
+    const expandCol = (props.expandHideCol ||
+      columns.find(
+        (col) => col.type === 'expand' || col.type === 'row-expand',
+      )) as typeof props.expandHideCol;
     return (
       <Tr
-        key={index + currentIndex}
+        key={rowIndex}
         row={rowData[index]}
         columns={columns}
         isScrollX={props.isScrollX}
@@ -31,7 +35,11 @@ export default (props: TbodyProps) => {
         colgroup={props.colgroup}
         rowClassName={props.rowClassName}
         rawData={item}
-        rowIndex={index + currentIndex}
+        rowIndex={rowIndex}
+        expandCol={expandCol}
+        rowClickExpand={!!expandCol && (expandCol.hide || expandCol.type === 'row-expand')}
+        handleExpandClick={handleExpandClick}
+        expanded={isRowExpand(item, rowIndex)}
       />
     );
   };

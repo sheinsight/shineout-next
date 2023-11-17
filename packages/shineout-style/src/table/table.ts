@@ -25,7 +25,12 @@ export type TableClasses = {
   sorterDesc: string;
 
   resizeSpanner: string;
+  resizeSpannerActive: string;
+  resizeSpannerInactive: string;
+
   cellIgnoreBorder: string;
+
+  expandIcon: string;
 };
 
 const cellBaseIndex = 4;
@@ -220,12 +225,28 @@ const tableStyle: JsStyles<TableClassType> = {
       left: '4px',
     },
   },
+  resizeSpannerActive: {
+    opacity: 1,
+  },
+  resizeSpannerInactive: {
+    opacity: 0,
+    '$wrapper th:hover &': {
+      opacity: 0,
+    },
+  },
   cellIgnoreBorder: {
     '&::after': {
       display: 'none',
     },
   },
   sticky: {},
+  expandIcon: {
+    width: '14px',
+    height: '14px',
+    lineHeight: 1,
+    cursor: 'pointer',
+    color: '#b3b7c1',
+  },
 };
 
 export default tableStyle;

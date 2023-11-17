@@ -3,6 +3,7 @@ export { default as useTableColumns } from './use-table-columns';
 export { default as useTableGroup } from './use-table-group';
 export { default as useTableSort } from './use-table-sort';
 export { default as useTableRow } from './use-table-row';
+export { default as useTableExpand } from './use-table-expand';
 
 export type {
   TableFormatColumn,
