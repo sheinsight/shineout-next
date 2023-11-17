@@ -1,0 +1,191 @@
+import { useMemo } from 'react';
+import classNames from 'classnames';
+import { TransferProps, TransferClasses } from './transfer.type';
+import { useTransfer, TransferListType, KeygenResult, util } from '@sheinx/hooks';
+import TransferList from './transfer-list';
+import TransferOperate from './transfer-operate';
+import Icon from '../icons';
+
+const Transfer = <DataItem, Value extends KeygenResult[]>(
+  props: TransferProps<DataItem, Value>,
+) => {
+  const {
+    jssStyle,
+    className,
+    style,
+    data,
+    value,
+    defaultValue,
+    defaultSelectedKeys,
+    keygen,
+    empty,
+    size,
+    simple,
+    titles,
+    footers,
+    disabled,
+    itemClass,
+    operations,
+    lineHeight,
+    loading,
+    rowsInView,
+    listStyle,
+    listClassName,
+    format,
+    children,
+    prediction,
+    selectedKeys,
+    listHeight = 186,
+    operationIcon = true,
+    searchPlaceholder,
+    beforeChange,
+    renderFilter,
+    onSearch,
+    renderItem = (item: DataItem) => item as React.ReactNode,
+    onFilter: onFilterProp,
+    onChange: onChangeProp,
+    onSelectChange: onSelectChangeProp,
+  } = props;
+
+  const {
+    source,
+    target,
+    datum,
+    sourceDatum,
+    targetDatum,
+    filterSourceText,
+    filterTargetText,
+    sourceSelectedKeys,
+    targetSelectedKeys,
+    onFilter,
+    onSelectChange,
+  } = useTransfer({
+    data,
+    keygen,
+    value,
+    defaultValue,
+    defaultSelectedKeys,
+    simple,
+    disabled,
+    format,
+    prediction,
+    valueControl: 'value' in props,
+    selectControl: 'selectedKeys' in props,
+    selectedKeys,
+    beforeChange,
+    onChange: onChangeProp,
+    onFilter: onFilterProp,
+    onSearch,
+    onSelectChange: onSelectChangeProp,
+  });
+
+  const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
+  const rootClass = classNames(styles.transfer, className, {
+    [styles.simple]: simple,
+    [styles.small]: size === 'small',
+    [styles.large]: size === 'large',
+  });
+
+  const renderOperations = () => {
+    const sourceOperation = operations?.[0];
+    const targetOperation = operations?.[1];
+
+    return (
+      <div className={styles.operations}>
+        <TransferOperate
+          size={size}
+          listType='source'
+          jssStyle={jssStyle}
+          className={styles.right}
+          datum={datum}
+          operation={sourceOperation}
+          listDatum={sourceDatum}
+          value={sourceSelectedKeys}
+        >
+          {operationIcon && Icon.ArrowRight}
+        </TransferOperate>
+        <TransferOperate
+          size={size}
+          listType='target'
+          jssStyle={jssStyle}
+          className={styles.left}
+          datum={datum}
+          operation={targetOperation}
+          listDatum={targetDatum}
+          value={targetSelectedKeys}
+        >
+          {operationIcon && Icon.ArrowLeft}
+        </TransferOperate>
+      </div>
+    );
+  };
+
+  const renderList = (listType: TransferListType) => {
+    const isSource = listType === 'source';
+    const listDatum = isSource ? sourceDatum : targetDatum;
+    let listData = isSource ? source : target;
+    const listValue = (isSource ? sourceSelectedKeys : targetSelectedKeys) as Value;
+    const title = isSource ? titles?.[0] : titles?.[1];
+    const footer = isSource ? footers?.[0] : footers?.[1];
+    const filterText = isSource ? filterSourceText : filterTargetText;
+    const loadingValue = !!(util.isArray(loading) ? (isSource ? loading[0] : loading[1]) : loading);
+    const placeholder = util.isArray(searchPlaceholder)
+      ? isSource
+        ? searchPlaceholder[0]
+        : searchPlaceholder[1]
+      : searchPlaceholder;
+    if (filterText && onFilterProp) {
+      listData = listData.filter((item) => onFilterProp(filterText, item, isSource));
+    }
+    return (
+      <TransferList
+        jssStyle={jssStyle}
+        size={size}
+        datum={datum}
+        listDatum={listDatum}
+        data={listData}
+        keygen={keygen}
+        empty={empty}
+        title={title}
+        footer={footer}
+        filterText={filterText}
+        listType={listType}
+        loading={loadingValue}
+        rowsInView={rowsInView}
+        renderItem={renderItem}
+        listStyle={listStyle}
+        listClassName={listClassName}
+        listHeight={listHeight}
+        lineHeight={lineHeight}
+        simple={simple}
+        disabled={disabled}
+        value={listValue}
+        selectedKeys={selectedKeys}
+        itemClass={itemClass}
+        customRender={children}
+        searchPlaceholder={placeholder}
+        renderFilter={renderFilter}
+        onFilter={onFilterProp ? onFilter : undefined}
+        onSelectChange={onSelectChange}
+      />
+    );
+  };
+
+  const renderSourceList = useMemo(() => {
+    return renderList('source');
+  }, [source, size, filterSourceText, sourceSelectedKeys]);
+
+  const renderTargetList = useMemo(() => {
+    return renderList('target');
+  }, [target, size, filterTargetText, targetSelectedKeys]);
+
+  return (
+    <div className={rootClass} style={style}>
+      {renderSourceList}
+      {!simple && renderOperations()}
+      {renderTargetList}
+    </div>
+  );
+};
+
+export default Transfer;

@@ -10,6 +10,7 @@ export type CheckboxClass =
   | 'wrapperIndeterminate'
   | 'indicator'
   | 'indicatorWrapper'
+  | 'darkIndicatorWrapper'
   | 'desc'
   | 'input'
   | 'group'
@@ -72,6 +73,13 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       '& $indicator': {
         backgroundColor: token.checkboxIconHoverBackgroundColor,
         color: token.checkboxIconHoverColor,
+      },
+    },
+  },
+  darkIndicatorWrapper: {
+    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &': {
+      '&::before': {
+        background: token.checkboxIconCircleDark,
       },
     },
   },
