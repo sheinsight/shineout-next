@@ -35,6 +35,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     disabled,
     inlineNode,
     highlight,
+    className,
     onClick,
     loader,
     onDrop,
@@ -62,7 +63,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
-  const rootClass = classNames(treeStyle.tree, {
+  const rootClass = classNames(treeStyle.tree, className, {
     [treeStyle.line]: line,
     [treeStyle.noline]: !line,
   });
