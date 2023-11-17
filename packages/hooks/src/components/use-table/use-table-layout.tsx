@@ -39,6 +39,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const { current: context } = useRef({
     checkNum: 0,
     cachedWidth: null as Map<KeygenResult, number> | null,
+    dragWidth: 0,
   });
 
   const [isScrollX, setIsScrollX] = React.useState(false);
@@ -95,15 +96,17 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       w = Math.min(w, col.maxWidth);
     }
     colEl.style.width = `${w}px`;
+    context.dragWidth = w;
   });
 
   // 完成拖拽
-  const resizeCol = usePersistFn((index, deltaX: number) => {
+  const resizeCol = usePersistFn((index) => {
     if (!props.columnResizable) return;
     if (!colgroup) return;
+    const deltaX = context.dragWidth - colgroup[index]!;
 
     const newColgroup = [...colgroup];
-    newColgroup[index] = (newColgroup[index] || 0) + deltaX;
+    newColgroup[index] = context.dragWidth;
     if (isFunc(props.onColumnResize)) {
       const newColumns = props.columns.map((item) => ({ ...item, width: newColgroup[index] }));
       props.onColumnResize(newColumns);
