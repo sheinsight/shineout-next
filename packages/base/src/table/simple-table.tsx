@@ -16,14 +16,17 @@ import Tbody from './tbody';
 // - 可伸缩列
 // - 固定列 sticky
 // - 表头 sticky
-// 可展开
-// 可选择
-// 数形状数据
+// - 可展开
+//   可选择
+//   数形状数据
+//   行点击 和行事件 支持拖拽
 export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableClasses = props?.jssStyle?.table?.();
   const tbodyRef = useRef<HTMLTableElement | null>(null);
   const theadRef = useRef<HTMLTableElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const { verticalAlign = 'top' } = props;
 
   const { columns, expandHideCol } = useTableColumns({
     columns: props.columns,
@@ -177,6 +180,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         isScrollY && tableClasses?.scrollY,
         props.bordered && tableClasses?.bordered,
         props.sticky && tableClasses?.sticky,
+        verticalAlign === 'top' && tableClasses?.verticalAlignTop,
+        verticalAlign === 'middle' && tableClasses?.verticalAlignMiddle,
       )}
       style={props.style}
     >

@@ -3,6 +3,7 @@ import { TheadProps } from './thead.type';
 import { useTableGroup, useDragMock, usePersistFn } from '@sheinx/hooks';
 import type { TableFormatColumn, TableHeadColumn, TableGroupColumn } from '@sheinx/hooks';
 import classNames from 'classnames';
+import Checkbox from '../checkbox';
 
 // 表头分组
 // table 渲染
@@ -11,7 +12,7 @@ import classNames from 'classnames';
 // 固定列样式
 
 export default (props: TheadProps) => {
-  const { colgroup = [], sortInfo, onSorterChange } = props;
+  const { colgroup = [], sortInfo, onSorterChange, showSelectAll = true } = props;
   const tableClasses = props.jssStyle?.table?.();
   const { groupColumns, columnLevel } = useTableGroup({
     columns: props.columns,
@@ -177,10 +178,12 @@ export default (props: TheadProps) => {
     if (colTemp.type === 'checkbox') {
       trs[level].push(
         <th className={cellClassName} key='checkbox' rowSpan={trs.length} style={fixedStyle}>
-          <div>
-            {/* todo render checkbox */}
-            <span>checkbox</span>
-          </div>
+          {showSelectAll && (
+            <div style={{ lineHeight: 1, verticalAlign: 'middle' }}>
+              <Checkbox jssStyle={props.jssStyle} style={{ margin: 0 }} />
+            </div>
+          )}
+          {renderDrag(colTemp.index)}
         </th>,
       );
       return;

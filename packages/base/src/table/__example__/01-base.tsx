@@ -6,11 +6,12 @@
  */
 import React from 'react';
 import { Table, RadioGroup } from '@sheinx/base';
-import { useTableStyle, useRadioStyle } from '@sheinx/shineout-style';
+import { useTableStyle, useRadioStyle, useCheckboxStyle } from '@sheinx/shineout-style';
 
 const jssStyle = {
   table: useTableStyle,
   radio: useRadioStyle,
+  checkbox: useCheckboxStyle,
 };
 
 // mock 1000 rows 学生数据
@@ -18,7 +19,7 @@ const data = Array(1000)
   .fill(0)
   .map((_, i) => ({
     id: i,
-    name: `Edward King ${i}`,
+    name: `Edward King Edward King Edward King Edward King ${i}`,
     age: Math.floor(Math.random() * 100),
     address: `London, Park Lane no. ${i}`,
     sex: i % 2 === 0 ? 'man' : 'femail',
@@ -26,19 +27,23 @@ const data = Array(1000)
 
 const columns = [
   {
+    type: 'checkbox',
+    width: 20,
+  },
+  {
+    type: 'expand',
+    width: 20,
+    render: () => () => {
+      return <div style={{ padding: '12px' }}>123213</div>;
+    },
+  },
+  {
     title: 'ID2',
     render: 'id',
     width: 40,
     sorter: (order: 'asc' | 'desc') => (a: any, b: any) =>
       order === 'asc' ? a.id - b.id : b.id - a.id,
     defaultOrder: 'asc',
-  },
-  {
-    type: 'row-expand',
-    width: 20,
-    render: () => () => {
-      return <div style={{ padding: '12px' }}>123213</div>;
-    },
   },
   {
     title: 'age2',
@@ -95,6 +100,7 @@ const sorters = {
 
 export default () => {
   const [bordered, setBordered] = React.useState(1);
+  const [va, setVa] = React.useState<'top' | 'string'>('top');
   return (
     <div>
       <div>
@@ -106,6 +112,15 @@ export default () => {
           onChange={(d) => setBordered(d)}
           keygen
           renderItem={(d) => (!!d ? 'true' : 'false')}
+        />
+        <span>vertical:</span>
+        <RadioGroup
+          jssStyle={jssStyle}
+          data={['middle', 'top']}
+          value={va}
+          onChange={(d) => setVa(d)}
+          keygen
+          renderItem={(d) => d}
         />
       </div>
       <Table
@@ -120,6 +135,7 @@ export default () => {
         width={1200}
         style={{ height: '' }}
         keygen='id'
+        verticalAlign={va}
         jssStyle={jssStyle}
         data={data}
         columns={columns}

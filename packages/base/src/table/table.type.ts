@@ -1,6 +1,7 @@
 import React from 'react';
 import { CommonType } from '../common/type';
 import type { ObjectType, TableColumnItem, BaseTableProps } from '@sheinx/hooks';
+import { CheckboxClasses } from '../checkbox/checkbox.type';
 
 export interface TableClasses {
   wrapper: string;
@@ -9,6 +10,8 @@ export interface TableClasses {
   floatRight: string;
   bordered: string;
   sticky: string;
+  verticalAlignTop: string;
+  verticalAlignMiddle: string;
 
   thead: string;
   tbody: string;
@@ -17,6 +20,7 @@ export interface TableClasses {
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
+  cellIcon: string;
 
   hasSorter: string;
   sorterContainer: string;
@@ -31,6 +35,7 @@ export interface TableClasses {
   cellIgnoreBorder: string;
 
   expandIcon: string;
+  icon: string;
 }
 
 export interface TableRef {
@@ -42,8 +47,15 @@ export interface TableProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'style'>,
     BaseTableProps<DataItem> {
   jssStyle?: {
-    table: () => TableClasses;
+    table?: () => TableClasses;
+    checkbox?: () => CheckboxClasses;
   };
+  /**
+   * @en vertical align with content
+   * @cn 单元格内容垂直对齐方式
+   * @default 'top'
+   */
+  verticalAlign?: 'top' | 'middle';
   /**
    * @en Pass in the native tr td, using styles only
    * @cn 传入原生 tr td, 只使用样式

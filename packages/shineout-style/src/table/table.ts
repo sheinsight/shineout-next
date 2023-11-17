@@ -9,6 +9,8 @@ export type TableClasses = {
   floatRight: string;
   bordered: string;
   sticky: string;
+  verticalAlignTop: string;
+  verticalAlignMiddle: string;
 
   thead: string;
   tbody: string;
@@ -17,6 +19,7 @@ export type TableClasses = {
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
+  cellIcon: string;
 
   hasSorter: string;
   sorterContainer: string;
@@ -31,6 +34,7 @@ export type TableClasses = {
   cellIgnoreBorder: string;
 
   expandIcon: string;
+  icon: string;
 };
 
 const cellBaseIndex = 4;
@@ -55,6 +59,9 @@ const tableStyle: JsStyles<TableClassType> = {
       tableLayout: 'fixed',
       borderCollapse: 'separate',
       borderSpacing: 0,
+      '& th': {
+        verticalAlign: 'middle',
+      },
       '& th, & td': {
         wordBreak: 'break-all',
         position: 'relative',
@@ -243,9 +250,36 @@ const tableStyle: JsStyles<TableClassType> = {
   expandIcon: {
     width: '14px',
     height: '14px',
-    lineHeight: 1,
     cursor: 'pointer',
     color: '#b3b7c1',
+    '&>svg': {
+      cursor: 'pointer',
+    },
+  },
+
+  verticalAlignTop: {
+    '& td': {
+      verticalAlign: 'top',
+    },
+  },
+  verticalAlignMiddle: {
+    '& td': {
+      verticalAlign: 'middle',
+    },
+  },
+  cellIcon: {
+    '$verticalAlignMiddle &': {
+      lineHeight: '1',
+    },
+  },
+  icon: {
+    display: 'inline-flex',
+    '$verticalAlignMiddle &': {
+      verticalAlign: 'middle',
+    },
+    '$verticalAlignTop &': {
+      verticalAlign: 'text-bottom',
+    },
   },
 };
 

@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { TableProps } from './table.type';
 import { TbodyProps } from './tbody.type';
 import Icons from '../icons';
+import Checkbox from '../checkbox';
 
 interface TrProps extends Pick<TableProps<any, any>, 'jssStyle' | 'rowClassName'> {
   row: {
@@ -49,9 +50,25 @@ const Tr = (props: TrProps) => {
 
   const renderContent = (col: TrProps['columns'][number], data: any, index: number) => {
     if (col.type === 'expand' || col.type === 'row-expand') {
+      const clickEvent =
+        col.type === 'expand'
+          ? () => {
+              props.handleExpandClick(col, props.rawData, props.rowIndex);
+            }
+          : undefined;
       return (
-        <div className={tableClasses?.expandIcon}>
+        <div
+          className={classNames(tableClasses?.expandIcon, tableClasses?.icon)}
+          onClick={clickEvent}
+        >
           {props.expanded ? Icons.Expand : Icons.OdecShrink}
+        </div>
+      );
+    }
+    if (col.type === 'checkbox') {
+      return (
+        <div className={tableClasses?.icon}>
+          <Checkbox jssStyle={props.jssStyle} style={{ margin: 0 }} />
         </div>
       );
     }
@@ -68,7 +85,7 @@ const Tr = (props: TrProps) => {
         continue;
       }
       const col = cols[i];
-      if (col.render && data[i]) {
+      if (data[i]) {
         const last = cols[i + (data[i].colSpan || 1) - 1] || {};
 
         const td = (
@@ -82,6 +99,8 @@ const Tr = (props: TrProps) => {
               col.fixed === 'right' && tableClasses?.cellFixedRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
+              (col.type === 'checkbox' || col.type === 'expand' || col.type === 'row-expand') &&
+                tableClasses?.cellIcon,
             )}
             style={getTdStyle(col, data[i].colSpan)}
           >

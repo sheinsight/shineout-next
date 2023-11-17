@@ -50,7 +50,6 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       width: token.checkboxLargeIconSize,
       height: token.checkboxLargeIconSize,
     },
-    marginRight: token.checkboxIconGap,
     verticalAlign: 'middle',
     '&::before': {
       content: '" "',
@@ -119,6 +118,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
   desc: {
     verticalAlign: 'middle',
     boxSizing: 'border-box',
+    marginLeft: token.checkboxIconGap,
     fontSize: token.checkboxLabelFontSize,
     '$wrapperSmall &': {
       fontSize: token.checkboxSmallLabelFontSize,

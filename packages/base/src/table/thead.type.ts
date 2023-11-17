@@ -7,7 +7,7 @@ export type UseTableLayoutResultFunc = ReturnType<typeof useTableLayout>['func']
 export interface TheadProps
   extends Pick<
       OptionalToRequired<TableProps<any, any>>,
-      'data' | 'jssStyle' | 'onColumnResize' | 'columnResizable'
+      'data' | 'jssStyle' | 'onColumnResize' | 'columnResizable' | 'showSelectAll'
     >,
     Pick<ReturnType<typeof useTableSort<any>>, 'sortInfo' | 'onSorterChange'>,
     Pick<UseTableLayoutResultFunc, 'dragCol' | 'resizeCol'> {
