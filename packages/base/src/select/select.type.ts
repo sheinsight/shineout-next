@@ -2,11 +2,13 @@
 import { BaseSelectProps, KeygenType, useListSelect } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
+import { TagClasses } from '../tag/tag.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { InnerTitleClasses } from '../common/use-inner-title';
 import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
 
 export type JssStyleType = {
+  tag: () => TagClasses;
   select: () => SelectClasses;
   innerTitle?: () => InnerTitleClasses;
   virtualScroll: () => VirtualScrollClasses;
@@ -143,7 +145,16 @@ export interface SelectProps<DataItem, Value>
    */
   columns?: number;
 
+  noCache?: boolean;
+  trim?: boolean;
+  maxLength?: number;
+  separator?: string;
+  compressed?: boolean;
+  compressedBound?: number;
+  resultClassName?: ((value: DataItem) => string) | string;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
+  renderResult?: (data: DataItem, index?: number) => React.ReactNode;
+  renderUnmatched?: (value: Value extends (infer U)[] ? U : Value) => React.ReactNode;
 
   /**
    * @en blur event callback
@@ -156,4 +167,12 @@ export interface SelectProps<DataItem, Value>
    * @cn focus 事件回调
    */
   onFocus?: (e: any) => void;
+
+  /**
+   * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering.
+   * @cn onFilter 不为空时，可以输入过滤数据。onFilter 如果返回一个函数，使用这个函数做前端过滤。如果不返回，可以自行做后端过滤
+   */
+  onFilter?: (text: string, from?: string) => ((data: DataItem) => boolean) | void | undefined;
+
+  onCreate?: boolean | ((input: Value) => Value);
 }

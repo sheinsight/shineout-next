@@ -169,7 +169,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     index: number[] = [],
   ) => {
     const ids: KeygenResult[] = [];
-
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
       const id = getKey(item, path[path.length - 1], i);
@@ -294,7 +293,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     context.dataMap = new Map();
     context.valueMap = new Map();
     context.disabled = getDisabled();
-
+    console.log('setData');
     initData(data, []);
   };
 
@@ -354,7 +353,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     setTimeout(() => {
       firstRender.current = false;
     });
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     if (firstRender.current) return;

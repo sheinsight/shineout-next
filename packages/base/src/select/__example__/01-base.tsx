@@ -6,9 +6,15 @@
  */
 // import React, { useState } from 'react';
 import { Select } from '@sheinx/base';
-import { useSelectStyle, useInnerTitleStyle, useVirtualScrollStyle } from '@sheinx/shineout-style';
+import {
+  useSelectStyle,
+  useInnerTitleStyle,
+  useVirtualScrollStyle,
+  useTagStyle,
+} from '@sheinx/shineout-style';
 
 const jssStyle = {
+  tag: useTagStyle,
   select: useSelectStyle,
   innerTitle: useInnerTitleStyle,
   virtualScroll: useVirtualScrollStyle,
@@ -34,14 +40,16 @@ export default () => {
     <div>
       <Select
         data={data}
-        multiple
+        // multiple
+        // innerTitle='innerTitle'
         // value={value}
         // onChange={handleChange}
         keygen='id'
         // format='id'
+        prediction={(v, d) => v === d}
         // disabled={(d) => d.id.indexOf('1') > -1}
         jssStyle={jssStyle}
-        renderItem={(d) => <div>{d.name}</div>}
+        renderItem={(d) => d.name}
       />
     </div>
   );

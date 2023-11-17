@@ -18,7 +18,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     size,
     data,
     format,
-    value,
+    value: valueProp,
     defaultValue,
     prediction,
     innerTitle,
@@ -35,8 +35,13 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     lineHeight,
     itemsInView,
     disabled,
-    renderItem,
     beforeChange,
+    compressed,
+    compressedBound,
+    renderItem,
+    renderResult: renderResultProp,
+    renderUnmatched,
+    resultClassName,
     onChange,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -55,10 +60,8 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     },
   );
 
-  // const [, setFocused] = React.useState(false);
-
-  const { datum } = useSelect<DataItem, Value>({
-    value,
+  const { datum, value } = useSelect<DataItem, Value>({
+    value: valueProp,
     data,
     multiple,
     defaultValue,
@@ -82,31 +85,44 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     position: positionProp,
   });
 
-  // const handleFocus = usePersistFn((e: React.FocusEvent) => {
-  //   setFocused(true);
-  //   onFocus?.(e);
-  // });
-
-  // const handleBlur = usePersistFn((e: React.FocusEvent) => {
-  //   setFocused(false);
-  //   onBlur?.(e);
-  // });
-
   const handleResultClick = usePersistFn(() => {
     openPop();
   });
 
   const renderInnerTitle = useInnerTitle({
     open,
-    size: size,
-    jssStyle: jssStyle,
-    innerTitle: innerTitle,
+    size,
+    jssStyle,
+    innerTitle,
   });
+
+  const getRenderResult = (data: DataItem, index?: number) => {
+    if (!renderResultProp) return renderItem(data, index);
+    return typeof renderResultProp === 'function'
+      ? renderResultProp(data, index)
+      : data[renderResultProp];
+  };
 
   const renderResult = () => {
     const result = (
       <div className={classNames(styles?.result)}>
-        <Result jssStyle={jssStyle}></Result>
+        <Result
+          jssStyle={jssStyle}
+          datum={datum}
+          value={value}
+          data={data}
+          focus={open}
+          keygen={keygen}
+          disabled={disabled}
+          compressed={compressed}
+          compressedBound={compressedBound}
+          multiple={multiple}
+          prediction={prediction}
+          renderItem={renderItem}
+          renderResult={getRenderResult}
+          resultClassName={resultClassName}
+          renderUnmatched={renderUnmatched}
+        ></Result>
       </div>
     );
 

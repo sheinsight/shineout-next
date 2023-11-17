@@ -27,6 +27,7 @@ export type SelectClasses = {
   resultTextPadding: string;
   placeholder: string;
   pickerWrapper: string;
+  ellipsis: string;
   multiple: string;
   checkedIcon: string;
   list: string;
@@ -187,6 +188,12 @@ const selectStyle: JsStyles<SelectClassType> = {
     backgroundColor: token.selectPanelBackgroundColor,
     boxShadow: token.selectPanelShadow,
     borderRadius: token.selectPanelRadius,
+  },
+  ellipsis: {
+    display: 'block',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
   },
   multiple: {
     '& $optionInner': {

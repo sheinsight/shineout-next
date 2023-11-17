@@ -20,7 +20,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
 
   const { value, onChange } = useInputAble({
     value: valueProp,
-    control: control,
+    control,
     defaultValue,
     beforeChange,
     onChange: onChangeProp,
@@ -37,6 +37,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
   });
 
   return {
+    value,
     datum,
   };
 };

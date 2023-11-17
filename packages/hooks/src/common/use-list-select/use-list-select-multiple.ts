@@ -51,7 +51,6 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
 
   const getDataMap = () => {
     if (props.data === context.lastData) return context.valueMap;
-
     const map = new Map<ValueItem, DataItem>();
     for (let i = 0; i < props.data.length; i++) {
       const item = props.data[i];
@@ -154,6 +153,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     if (!props.prediction) {
       if (!values || !values.length) return [];
       const map = getDataMap();
+
       for (let i = 0; i < values.length; i++) {
         const item = map.get(values[i]);
         if (item) {
@@ -186,6 +186,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     add,
     remove,
     check,
+    format: formatData,
     getVaildData,
     getValueMap,
     getDataByValues,
