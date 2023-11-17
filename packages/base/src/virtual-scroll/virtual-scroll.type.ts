@@ -1,4 +1,5 @@
 import { CommonType } from '../common/type';
+import { KeygenType } from '@sheinx/hooks';
 export interface VirtualScrollClasses {
   scroll: string;
   scrolled: string;
@@ -29,6 +30,8 @@ export interface VirtualScrollProps extends Pick<CommonType, 'style'> {
    * 固定高度
    */
   lineHeight?: number;
+  tag?: React.ReactElement['type'];
+  tagClassName?: string;
   width?: number;
   scrollWidth: number;
   itemsInView?: number;
@@ -39,4 +42,17 @@ export interface VirtualScrollProps extends Pick<CommonType, 'style'> {
   children?: React.ReactNode;
   virtualRef?: ((virtual: VirtualRefType) => void) | { current?: VirtualRefType };
   onScroll: (x: number, y: number) => void;
+}
+
+export interface VirtualListProps<DataItem>
+  extends Pick<CommonType, 'className'>,
+    Pick<VirtualScrollProps, 'jssStyle' | 'tag' | 'tagClassName'> {
+  data: DataItem[];
+  listStyle?: React.CSSProperties;
+  keygen?: KeygenType<DataItem>;
+  height: number;
+  lineHeight: number;
+  rowsInView: number;
+  colNum?: number;
+  renderItem: any;
 }

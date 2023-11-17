@@ -19,6 +19,7 @@ export * from './progress';
 export * from './radio';
 export * from './rate';
 export * from './rule';
+export * from './select';
 export * from './spin';
 export * from './switch';
 export * from './table';
@@ -29,6 +30,7 @@ export * from './tooltip';
 export * from './transfer';
 export * from './virtual-scroll';
 export * from './upload';
+export * from './tree';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';

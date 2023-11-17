@@ -11,6 +11,7 @@ const Header = (props: HeaderProps) => {
 
   const { describe, title } = props;
   const headerClasses = classnames(classes.header, {
+    // [classes.stickyHeader]: state.scroll,
     [classes.stickyHeader]: true,
   });
   return (

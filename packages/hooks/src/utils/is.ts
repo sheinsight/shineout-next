@@ -1,4 +1,5 @@
 import { ObjectType } from '../common/type';
+import { UnMatchedData } from '../common/use-list-select/use-list.type';
 
 export function isBrowser() {
   return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
@@ -33,7 +34,9 @@ export const isBuffer = (val: unknown): boolean => {
   }
   return false;
 };
-
+export const isUnMatchedData = (val: unknown): val is UnMatchedData => {
+  return isObject(val) && val.IS_NOT_MATCHED_VALUE;
+};
 export const isMergeable = (val: unknown): boolean => {
   if (!isObject(val)) return false;
   const fns = [isDate, isError, isRegexp, isMap, isSet, isBuffer];

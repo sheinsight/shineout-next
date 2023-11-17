@@ -31,3 +31,7 @@ export type OptionalToRequired<T> = {
 } & {
   [P in Exclude<keyof T, OptionalKeys<T>>]: T[P];
 };
+
+export type StructKeygenStringType<DataItem> =
+  | ObjectKey<DataItem>
+  | ((data: DataItem, index: string) => KeygenResult);
