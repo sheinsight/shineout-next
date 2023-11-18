@@ -19,7 +19,7 @@ const close = () => {
 };
 
 const keyClose = (e: KeyboardEvent) => {
-  if (e.keyCode === 27) close();
+  if (e.key === 'Escape' || e.keyCode === 27) close();
 };
 
 const getContainer = () => {
@@ -42,7 +42,7 @@ const showGallery = (
   document.addEventListener('keydown', keyClose);
 
   ReactRender(
-    <ImageGallery jssStyle={jssStyle} onClose={close} current={current} images={Images} />,
+    <ImageGallery jssStyle={jssStyle!} onClose={close} current={current} images={Images} />,
     container,
   );
 };
