@@ -21,7 +21,9 @@
     "lint:es": "eslint \"packages/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && npm run build",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "cypress:open": "cross-env NODE_ENV=development cypress open",
+    "cypress:run": "cross-env NODE_ENV=development cypress run --browser chrome"
   },
   "authors": ["chenlihao@shein.com"],
   "license": "MIT",
