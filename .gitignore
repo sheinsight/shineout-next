@@ -6,3 +6,6 @@ docs/chunk
 .DS_Store
 coverage
 ./uploads
+cypress/videos
+cypress/screenshots
+cypress/downloads
