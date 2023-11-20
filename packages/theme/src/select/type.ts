@@ -34,7 +34,7 @@ export interface SelectTokens {
   selectPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-2
    * @description 选择器内边距（垂直方向）
    */
   selectPaddingY: string;

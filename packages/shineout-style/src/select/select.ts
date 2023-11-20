@@ -200,6 +200,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     '& $optionInner': {
       paddingRight: token.selectOptionInnerPaddingRight,
     },
+    '& $resultTextWrapper': {
+      flexWrap: 'wrap',
+    },
   },
   checkedIcon: {
     right: 8,

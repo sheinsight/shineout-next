@@ -9,7 +9,7 @@ const selectTokens: SelectTokens = {
   selectBorderRadius: 'Radius-4',
   selectBorderColor: 'Neutral-border-2',
   selectPaddingX: 'Padding-8',
-  selectPaddingY: 'Padding-4',
+  selectPaddingY: 'Padding-2',
   selectIconSize: 'Size-7',
   selectIconColor: 'Neutral-text-4',
   selectSmallFontSize: '12/regular',
