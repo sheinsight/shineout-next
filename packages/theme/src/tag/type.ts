@@ -1432,7 +1432,7 @@ export interface TagTokens {
   tagPaddingY: string;
   /**
    * @type {string}
-   * @token Size-12
+   * @token Size-11
    * @description 标签高度
    */
   tagHeight: string;

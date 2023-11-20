@@ -40,7 +40,7 @@ export default () => {
     <div>
       <Select
         data={data}
-        // multiple
+        multiple
         // innerTitle='innerTitle'
         // value={value}
         // onChange={handleChange}
@@ -49,6 +49,7 @@ export default () => {
         prediction={(v, d) => v === d}
         // disabled={(d) => d.id.indexOf('1') > -1}
         jssStyle={jssStyle}
+        placeholder='请选择'
         renderItem={(d) => d.name}
       />
     </div>

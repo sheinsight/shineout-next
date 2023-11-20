@@ -3,7 +3,7 @@
 
 import { TagTokens } from './type';
 
-const tag: TagTokens = {
+const tagTokens: TagTokens = {
   tagInfoFontColor: 'Brand-6',
   tagInfoBackgroundColor: 'Brand-1',
   tagInfoBorderColor: 'Brand-1',
@@ -242,7 +242,7 @@ const tag: TagTokens = {
   tagBorderRadius: 'Radius-3',
   tagPaddingX: 'Padding-6',
   tagPaddingY: 'Padding-2',
-  tagHeight: 'Size-12',
+  tagHeight: 'Size-11',
   tagSmallFontSize: '12/regular',
   tagSmallBorderRadius: 'Radius-2',
   tagSmallPaddingX: 'Padding-4',
@@ -292,4 +292,4 @@ const tag: TagTokens = {
   tagTangerineIconHoverBackgroundColor: 'Tangerine-2',
 };
 
-export default tag;
+export default tagTokens;

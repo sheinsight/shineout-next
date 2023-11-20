@@ -31,6 +31,7 @@ export type SelectClasses = {
   multiple: string;
   checkedIcon: string;
   list: string;
+  tag: string;
   virtualList: string;
   option: string;
   optionInner: string;
@@ -211,6 +212,12 @@ const selectStyle: JsStyles<SelectClassType> = {
   list: {
     paddingTop: 3,
     paddingBottom: 3,
+  },
+  tag: {
+    '&$tag + &$tag': {
+      marginLeft: 0,
+    },
+    marginRight: 4,
   },
   virtualList: {
     margin: 0,

@@ -170,7 +170,7 @@ const TagStyle: JsStyles<TagClass> = {
     borderRadius: Token.tagBorderRadius,
     cursor: 'pointer',
     boxSizing: 'border-box',
-    lineHeight: `calc(${Token.tagFontSize} + 6px)`,
+    lineHeight: `calc(${Token.tagFontSize} + 4px)`,
     '& + &': {
       marginLeft: 8,
     },

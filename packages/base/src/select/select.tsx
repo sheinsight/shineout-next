@@ -38,6 +38,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     beforeChange,
     compressed,
     compressedBound,
+    placeholder,
     renderItem,
     renderResult: renderResultProp,
     renderUnmatched,
@@ -117,6 +118,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           compressed={compressed}
           compressedBound={compressedBound}
           multiple={multiple}
+          placeholder={placeholder}
           prediction={prediction}
           renderItem={renderItem}
           renderResult={getRenderResult}

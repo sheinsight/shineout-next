@@ -763,7 +763,7 @@ const tagTokenValue = {
   font: { size: '12/regular' },
   border: { radius: 'Radius-3' },
   padding: { x: 'Padding-6', y: 'Padding-2' },
-  height: 'Size-12',
+  height: 'Size-11',
   small: {
     font: { size: '12/regular' },
     border: { radius: 'Radius-2' },
