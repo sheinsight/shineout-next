@@ -19,7 +19,7 @@ const close = () => {
 };
 
 const keyClose = (e: KeyboardEvent) => {
-  if (e.keyCode === 27) close();
+  if (e.key === 'Escape' || e.keyCode === 27) close();
 };
 
 const getContainer = () => {

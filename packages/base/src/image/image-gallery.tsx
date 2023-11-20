@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import { useImageGallery } from '@sheinx/hooks';
+import { ImageClasses } from '@sheinx/shineout-style';
 import Magnify from './image-magnify';
-import { Image, ImageClasses, ImageGalleryProps, MagnifyPositionType } from './image.type';
+import { Image, ImageGalleryProps, MagnifyPositionType } from './image.type';
 import Icons from '../icons';
 
 const ImageModal = (props: ImageGalleryProps) => {
