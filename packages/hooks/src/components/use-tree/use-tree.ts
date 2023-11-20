@@ -60,6 +60,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     valueMap: new Map<KeygenResult, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
     disabled: false,
+    value: [],
+    data: [],
+    cachedValue: [],
   });
 
   const firstRender = useRef(true);
@@ -169,7 +172,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     index: number[] = [],
   ) => {
     const ids: KeygenResult[] = [];
-
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
       const id = getKey(item, path[path.length - 1], i);
@@ -192,13 +194,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       let children: KeygenResult[] = [];
 
       if (Array.isArray(item[childrenKey])) {
-        const _children = initData(
+        children = initData(
           item[childrenKey] as DataItem[],
           [...path, id],
           mode === MODE.MODE_4 ? disabled : isDisabled,
           indexPath,
         );
-        if (_children) children = _children;
+        // if (_children) children = _children;
       }
 
       context.pathMap.set(id, {
@@ -212,12 +214,14 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return ids;
   };
 
-  const initValue = (ids: KeygenResult[] = [], forceCheck?: boolean) => {
+  const initValue = (ids_outer?: KeygenResult[], forceCheck?: boolean) => {
+    let ids = ids_outer;
     if (!data || !value) {
       return undefined;
     }
 
-    if (ids.length === 0) {
+    if (!ids) {
+      ids = [];
       context.pathMap.forEach((path, index) => {
         if (path.path.length === 0) {
           ids.push(index);
@@ -269,6 +273,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return checked!;
   };
 
+  const setValue = (value?: KeygenResult[]) => {
+    context.value = value;
+    if (value && value !== context.cachedValue) {
+      initValue();
+    }
+  };
+
   const isDisabled = (id: KeygenResult) => {
     const node = context.pathMap.get(id);
     if (node) return node.isDisabled;
@@ -288,14 +299,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const setData = (data?: DataItem[]) => {
-    if (!data) return;
-
+    const prevValue: any[] = context.value || [];
+    context.cachedValue = [];
     context.pathMap = new Map();
     context.dataMap = new Map();
     context.valueMap = new Map();
     context.disabled = getDisabled();
+    context.data = data;
+
+    if (!data) return;
 
     initData(data, []);
+    initValue();
+    setValue(prevValue);
   };
 
   const set = (id: KeygenResult, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
@@ -349,12 +365,12 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   useEffect(() => {
+    setValue(value);
     setData(data);
-    initValue(value);
     setTimeout(() => {
       firstRender.current = false;
     });
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     if (firstRender.current) return;
