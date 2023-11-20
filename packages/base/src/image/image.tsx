@@ -1,9 +1,10 @@
 import { useImage, useLatestObj, usePersistFn } from '@sheinx/hooks';
+import { ImageClasses } from '@sheinx/shineout-style';
 import { getDefaultContainer } from '../config';
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import showGallery from './image-event';
-import { ImageClasses, ImageProps } from './image.type';
+import { ImageProps } from './image.type';
 import ImageGroup from './image-group';
 import Icons from '../icons';
 
