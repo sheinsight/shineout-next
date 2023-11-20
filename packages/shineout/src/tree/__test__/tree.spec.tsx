@@ -498,3 +498,22 @@ describe('Tree[Checkbox]', () => {
     fireEvent.click(treeContents[2].querySelector(checkbox)!);
   });
 });
+describe('Tree[Drag]', () => {
+  const DragTree = (props: any) => {
+    const [value, setValue] = React.useState([]);
+    const handleChange = (v: any) => {
+      setValue(v);
+    };
+    return (
+      <TreeTest defaultExpandAll value={value} onChange={handleChange} renderItem='id' {...props} />
+    );
+  };
+  test('should render when set onDragEnter', () => {
+    const onDragEnter = jest.fn();
+    const { container } = render(<DragTree onDragEnter={onDragEnter} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
+    fireEvent.dragEnter(treeRootNode);
+    expect(onDragEnter.mock.calls.length).toBe(1);
+  });
+});

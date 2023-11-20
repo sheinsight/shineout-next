@@ -224,7 +224,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       ids = [];
       context.pathMap.forEach((path, index) => {
         if (path.path.length === 0) {
-          ids.push(index);
+          ids!.push(index);
         }
       });
     }
