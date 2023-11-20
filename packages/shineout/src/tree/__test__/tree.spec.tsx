@@ -95,16 +95,16 @@ const data = [
   },
 ];
 
-const getIdsLength = (data: any[]) => {
+const getIdsLength = (datas: any[], attr = 'children') => {
   let count = 0;
-
-  data.forEach((item) => {
+  if (!datas || !datas.length) return count;
+  datas.forEach((item) => {
     if (item.id) {
       count++;
     }
 
-    if (item.children) {
-      count += getIdsLength(item.children);
+    if (item[attr]) {
+      count += getIdsLength(item[attr], attr);
     }
   });
 
@@ -185,10 +185,98 @@ describe('Tree[Base]', () => {
     const treeWrapper = container.querySelector(treeClassName)!;
     classTest(treeWrapper, noline);
   });
-  test('should render checkbox when set onChange', () => {
-    const { container } = render(<CheckboxTree />);
-    const treeContentWapper = container.querySelector(contentClassName)!;
-    classLengthTest(treeContentWapper, checkbox, 1);
+  test('should render when set childrenClass is string', () => {
+    const { container } = render(<TreeTest childrenClass='test' defaultExpandAll />);
+    const treeChildrens = container.querySelectorAll(childrenClassName)!;
+    treeChildrens.forEach((item) => {
+      classTest(item, 'test');
+    });
+  });
+  test('should render when set childrenClass is function', () => {
+    const { container } = render(
+      <TreeTest childrenClass={(node: any) => (node.id === '0-0' ? 'test' : 'test2')} />,
+    );
+    const treeChildrens = container.querySelectorAll(childrenClassName)!;
+    treeChildrens.forEach((item) => {
+      if (item.querySelector(text)?.textContent !== `node 0-0`) return;
+      classTest(item, 'test');
+    });
+  });
+  test('should render when set iconClass', () => {
+    const { container } = render(<TreeTest iconClass='test' defaultExpandAll />);
+    const treeIcons = container.querySelectorAll(icon)!;
+    treeIcons.forEach((item) => {
+      classTest(item, 'test');
+    });
+  });
+  test('should render when set leafClass', () => {
+    const { container } = render(<TreeTest leafClass='test' defaultExpandAll />);
+    const treeLeafs = container.querySelectorAll(`.${leaf}`)!;
+    treeLeafs.forEach((item) => {
+      classTest(item, 'test');
+    });
+  });
+  test('should render when set nodeClass', () => {
+    const { container } = render(<TreeTest nodeClass='test' defaultExpandAll />);
+    const treeNodes = container.querySelectorAll(nodeClassName)!;
+    treeNodes.forEach((item) => {
+      classTest(item, 'test');
+    });
+  });
+  test('should render when set childrenKey', () => {
+    const newData = [
+      {
+        id: '0',
+        item: [
+          {
+            id: '0-0',
+            item: [
+              {
+                id: '0-0-0',
+              },
+              {
+                id: '0-0-1',
+                item: [
+                  {
+                    id: '0-0-1-0',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: '0-1',
+            item: [
+              {
+                id: '0-1-0',
+              },
+            ],
+          },
+        ],
+      },
+    ];
+    const { container } = render(
+      <Tree
+        data={newData}
+        keygen={'id'}
+        renderItem={renderItem}
+        childrenKey='item'
+        defaultExpandAll
+      />,
+    );
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+    expect(treeRootNodeAll.length).toBe(getIdsLength(newData, 'item'));
+  });
+  test('should render when set renderItem is string', () => {
+    const { container } = render(<TreeTest renderItem='id' />);
+    textContentTest(container.querySelector(text)!, data[0].id);
+  });
+  test('should render when set keygen is function', () => {
+    const { container } = render(
+      <TreeTest keygen={(node: any) => `A${node.id}`} active='A0' highlight />,
+    );
+    attributesTest(container.querySelector(contentClassName)!, 'data-active', 'true');
   });
 });
 describe('Tree[Disabled]', () => {
@@ -197,9 +285,6 @@ describe('Tree[Disabled]', () => {
   };
   const DisabledTree = (props: any) => {
     const [value, setValue] = React.useState([]);
-    const renderItem = (node: any) => {
-      return <span>{`node ${node.id}`}</span>;
-    };
     const handleChange = (keys: any) => {
       setValue(keys);
     };
@@ -299,6 +384,30 @@ describe('Tree[Expand]', () => {
     fireEvent.click(treeRootNode.querySelector(text)!);
     attributesTest(treeRootNode.querySelector(iconWrapperClassName)!, 'data-expanded', 'true');
   });
+  test('should render when set onExpand', () => {
+    const expandFn = jest.fn();
+    const { container } = render(<TreeTest parentClickExpand onExpand={expandFn} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
+    fireEvent.click(treeRootNode.querySelector(text)!);
+    expect(expandFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set onClick', () => {
+    const clickFn = jest.fn();
+    const { container } = render(<TreeTest onClick={clickFn} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
+    fireEvent.click(treeRootNode.querySelector(text)!);
+    expect(clickFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set onClick when set parentClickExpand', () => {
+    const clickFn = jest.fn();
+    const { container } = render(<TreeTest onClick={clickFn} parentClickExpand />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
+    fireEvent.click(treeRootNode.querySelector(text)!);
+    expect(clickFn.mock.calls.length).toBe(0);
+  });
   // TODO: dragHoverExpand
 });
 describe('Tree[Active]', () => {
@@ -315,5 +424,77 @@ describe('Tree[Active]', () => {
     const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
     fireEvent.click(treeRootNode.querySelector(text)!);
     attributesTest(treeRootNode.querySelector(contentClassName)!, 'data-active', 'true');
+  });
+});
+describe('Tree[Checkbox]', () => {
+  const ModeTree = (props: any) => {
+    const [value, setValue] = React.useState([]);
+    const handleChange = (v: any) => {
+      setValue(v);
+    };
+    return (
+      <div>
+        <div className='show'>{value.join(' ')}</div>
+        <TreeTest
+          defaultExpandAll
+          value={value}
+          onChange={handleChange}
+          renderItem='id'
+          {...props}
+        />
+      </div>
+    );
+  };
+  const modeTestMain = (container: HTMLElement) => {
+    const treeContents = container.querySelectorAll(contentClassName);
+    const getText = (n: number) => treeContents[n].querySelector(text)?.textContent;
+    const show = container.querySelector('.show')!;
+    return {
+      treeContents,
+      getText,
+      show,
+    };
+  };
+  test('should render checkbox when set onChange', () => {
+    const { container } = render(<CheckboxTree />);
+    const treeContentWapper = container.querySelector(contentClassName)!;
+    classLengthTest(treeContentWapper, checkbox, 1);
+    // TODO: should test checkbox onchang event
+  });
+  test('should render when set mode is 0', () => {
+    const { container } = render(<ModeTree mode={0} />);
+    const { treeContents, getText, show } = modeTestMain(container);
+    fireEvent.click(treeContents[3].querySelector(checkbox)!);
+    textContentTest(show, `${getText(3)} ${getText(4)}`);
+    fireEvent.click(treeContents[2].querySelector(checkbox)!);
+    textContentTest(show, `${getText(3)} ${getText(4)} ${getText(1)} ${getText(2)}`);
+  });
+  test('should render when set mode is 1', () => {
+    const { container } = render(<ModeTree mode={1} />);
+    const { treeContents, getText, show } = modeTestMain(container);
+    fireEvent.click(treeContents[3].querySelector(checkbox)!);
+    textContentTest(show, `${getText(4)} ${getText(3)} ${getText(1)} ${getText(0)}`);
+  });
+  test('should render when set mode is 2', () => {
+    const { container } = render(<ModeTree mode={2} />);
+    const { treeContents, getText, show } = modeTestMain(container);
+    fireEvent.click(treeContents[1].querySelector(checkbox)!);
+    screen.debug();
+    textContentTest(show, `${getText(2)} ${getText(4)}`);
+  });
+  test('should render when set mode is 3', () => {
+    const { container } = render(<ModeTree mode={3} />);
+    const { treeContents, getText, show } = modeTestMain(container);
+    fireEvent.click(treeContents[1].querySelector(checkbox)!);
+    textContentTest(show, `${getText(1)}`);
+    fireEvent.click(treeContents[5].querySelector(checkbox)!);
+    textContentTest(show, `${getText(0)}`);
+  });
+  test('should render when set mode is 4', () => {
+    const { container } = render(<ModeTree mode={4} />);
+    const { treeContents, getText, show } = modeTestMain(container);
+    fireEvent.click(treeContents[1].querySelector(checkbox)!);
+    textContentTest(show, `${getText(1)}`);
+    fireEvent.click(treeContents[2].querySelector(checkbox)!);
   });
 });
