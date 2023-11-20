@@ -20,6 +20,7 @@ const TreeCheckbox = <DataItem,>(props: TreeCheckboxProps<DataItem>) => {
   };
 
   const checked = getChecked(id);
+  console.log('checked', checked, id);
 
   return (
     <Checkbox

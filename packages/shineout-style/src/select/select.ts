@@ -27,6 +27,8 @@ export type SelectClasses = {
   resultTextPadding: string;
   placeholder: string;
   pickerWrapper: string;
+  clearable: string;
+  clearIcon: string;
   ellipsis: string;
   multiple: string;
   checkedIcon: string;
@@ -91,13 +93,13 @@ const selectStyle: JsStyles<SelectClassType> = {
   wrapper: {
     display: 'inline-block',
     position: 'relative',
-    width: token.datePickerDateWidth,
+    width: token.selectWidth,
     ...wrapper,
   },
   wrapperDisabled: {
     ...wrapperDisabled,
     '& $icon': {
-      color: token.datePickerDisabledFontColor,
+      color: token.selectDisabledFontColor,
     },
   },
   ...resetWrapper,
@@ -152,12 +154,12 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   resultTextPadding: {
     position: 'absolute',
-    padding: `0 ${token.datePickerResultTextPaddingX}`,
-    left: `calc(-1 * ${token.datePickerResultTextPaddingX})`,
-    right: `calc(-1 * ${token.datePickerResultTextPaddingX})`,
+    padding: `0 ${token.selectResultTextPaddingX}`,
+    left: `calc(-1 * ${token.selectResultTextPaddingX})`,
+    right: `calc(-1 * ${token.selectResultTextPaddingX})`,
     top: '0',
     bottom: '0',
-    borderRadius: token.datePickerResultTextBorderRadius,
+    borderRadius: token.selectResultTextBorderRadius,
     '& > input': {
       color: 'inherit',
       padding: '0',
@@ -168,27 +170,36 @@ const selectStyle: JsStyles<SelectClassType> = {
       backgroundColor: 'transparent',
       width: '100%',
       '&::placeholder': {
-        color: token.datePickerPlaceholderColor,
+        color: token.selectPlaceholderColor,
       },
     },
   },
   resultTextActive: {
     '& $resultTextPadding': {
-      backgroundColor: token.datePickerResultTextActiveBackgroundColor,
+      backgroundColor: token.selectResultTextActiveBackgroundColor,
     },
   },
   resultTextDisabled: {
-    color: token.datePickerDisabledFontColor,
+    color: token.selectDisabledFontColor,
     cursor: 'not-allowed',
   },
   placeholder: {
-    color: token.datePickerPlaceholderColor,
+    color: token.selectPlaceholderColor,
   },
   pickerWrapper: {
     position: 'absolute',
     backgroundColor: token.selectPanelBackgroundColor,
     boxShadow: token.selectPanelShadow,
     borderRadius: token.selectPanelRadius,
+  },
+  clearable: {},
+  clearIcon: {
+    cursor: 'pointer',
+    width: token.selectFontSize,
+    paddingLeft: token.selectClearPadding,
+    lineHeight: 0,
+    color: token.selectClearColor,
+    verticalAlign: 'middle',
   },
   ellipsis: {
     display: 'block',
@@ -202,6 +213,12 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     '& $resultTextWrapper': {
       flexWrap: 'wrap',
+      paddingTop: 1,
+      paddingBottom: 1,
+    },
+    '& $placeholder': {
+      marginTop: 1,
+      marginBottom: 1,
     },
   },
   checkedIcon: {
@@ -221,6 +238,8 @@ const selectStyle: JsStyles<SelectClassType> = {
       marginLeft: 0,
     },
     marginRight: 4,
+    marginTop: 1,
+    marginBottom: 1,
   },
   virtualList: {
     margin: 0,

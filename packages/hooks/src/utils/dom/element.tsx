@@ -76,3 +76,5 @@ export const addResizeObserver = (
     cleanTimer();
   };
 };
+
+export const parsePxToNumber = (str: string) => Number(str.replace(/\s+|px/gi, ''));

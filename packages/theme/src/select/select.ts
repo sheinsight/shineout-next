@@ -4,6 +4,7 @@
 import { SelectTokens } from './type';
 
 const selectTokens: SelectTokens = {
+  selectWidth: 'Size-120',
   selectFontSize: '14/regular',
   selectFontColor: 'Neutral-text-5',
   selectBorderRadius: 'Radius-4',
@@ -21,6 +22,7 @@ const selectTokens: SelectTokens = {
   selectPlaceholderColor: 'Neutral-text-2',
   selectBackgroundColor: 'Neutral-fill-1',
   selectClearColor: 'Neutral-text-3',
+  selectClearPadding: 'Padding-8',
   selectHoverBorderColor: 'Brand-6',
   selectHoverClearColor: 'Neutral-text-4',
   selectFocusBorderColor: 'Brand-7',

@@ -4,6 +4,12 @@
 export interface SelectTokens {
   /**
    * @type {string}
+   * @token Size-120
+   * @description 选择器宽度
+   */
+  selectWidth: string;
+  /**
+   * @type {string}
    * @token 14/regular
    * @description 选择器字体字号
    */
@@ -101,9 +107,15 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Neutral-text-3
-   * @description 选择器清除颜色
+   * @description 选择器清除按钮的颜色
    */
   selectClearColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器清除按钮的内边距
+   */
+  selectClearPadding: string;
   /**
    * @type {string}
    * @token Brand-6
@@ -113,7 +125,7 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Neutral-text-4
-   * @description 选择器鼠标移入时的清除颜色
+   * @description 选择器鼠标移入时的清除按钮的颜色
    */
   selectHoverClearColor: string;
   /**

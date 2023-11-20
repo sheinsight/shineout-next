@@ -1,31 +1,37 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
 import { ResultProps, ResultType } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 // import { Input } from '../date-picker/result';
+// import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
 
-const { isObject, isEmpty } = util;
+const { isObject, isEmpty, getKey, isNumber } = util;
 
 const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const {
     jssStyle,
     multiple,
-    compressed,
     datum,
+    keygen,
     // data,
     value,
     // noCache,
     focus,
     placeholder,
     filterText,
+    compressed,
+    compressedBound,
     renderUnmatched,
     renderResult: renderResultProp,
     // onCreate,
     onFilter,
   } = props;
+
+  const [more] = useState(-1);
+  const resultRef = useRef<HTMLDivElement>(null);
 
   // const { current: resultCache } = useRef(new Map<Value, ResultType<Value> | DataItem>());
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -35,6 +41,19 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   //   const createFn = typeof onCreate === 'boolean' ? (t: Value) => t : onCreate;
   //   return createFn?.(text);
   // };
+
+  const isCompressedBound = () => {
+    return compressedBound && isNumber(compressedBound) && compressedBound >= 1;
+  };
+
+  const getCompressedBound = () => {
+    if (isCompressedBound()) {
+      return compressedBound;
+    }
+    return more;
+  };
+
+  // const handleResetMore = () => {};
 
   const renderInput = (text: React.ReactNode) => {
     console.log(text);
@@ -50,9 +69,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return renderResultProp(data as DataItem);
   };
 
-  const renderItem = (item: DataItem, index: number) => {
+  const renderItem = (item: DataItem, index: number): React.ReactNode => {
+    const handleClose = () => {
+      datum.remove(item);
+    };
+    const key = getKey(keygen, item, index);
     return (
-      <Tag key={index} className={styles.tag} jssStyle={jssStyle}>
+      <Tag key={key} className={styles.tag} onClose={handleClose} jssStyle={jssStyle}>
         {renderResultContent(item)}
       </Tag>
     );
@@ -102,7 +125,18 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderMultipleResultMore = () => {
-    return <More></More>;
+    if (!value) return null;
+    const result = datum.getDataByValues(value).map(renderItem);
+    const moreNumber = getCompressedBound();
+    return (
+      <More
+        jssStyle={jssStyle}
+        data={result}
+        more={moreNumber}
+        compressed={compressed}
+        showNum={moreNumber}
+      ></More>
+    );
   };
 
   const renderResult = () => {
@@ -118,7 +152,21 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return showPlaceholder ? renderPlaceholder() : result;
   };
 
-  return <div className={rootClass}>{renderResult()}</div>;
+  // useEffect(() => {
+  //   if (!resultRef.current) return;
+  //   const newMore = getResetMore(
+  //     onFilter,
+  //     resultRef.current,
+  //     resultRef.current.querySelectorAll(`.${styles.tag}`),
+  //   );
+  //   setMore(newMore);
+  // }, [value]);
+
+  return (
+    <div ref={resultRef} className={rootClass}>
+      {renderResult()}
+    </div>
+  );
 };
 
 export default Result;

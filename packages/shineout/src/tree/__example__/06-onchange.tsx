@@ -1,5 +1,5 @@
 /**
- * cn - 可选择树 & 数据模式
+ * cn - data
  *    -- 配置 `onChange` 以及 `value` 属性开启数据选择功能
  *    -- 配置 `mode` 属性返回不同结构的数据：
  *    -- 模式为 0 时，返回完全选中的节点，包含父节点
@@ -38,16 +38,17 @@ export default () => {
       value: 4,
     },
   ];
-  const data = createNestedArray([5, 1, 2]);
+  const data = createNestedArray([1, 1, 1]);
 
   const [value, setValue] = useState([]);
-  const [mode, setMode] = useState<0 | 1 | 2 | 3 | 4>(0);
+  const [mode, setMode] = useState<0 | 1 | 2 | 3 | 4>(2);
 
   const renderItem = (node: any) => {
     return <span>{`node ${node.id}`}</span>;
   };
 
   const handleChange = (v) => {
+    console.log(v);
     setValue(v);
   };
 

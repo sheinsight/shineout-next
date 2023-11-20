@@ -23,7 +23,7 @@ const data: { id: string; name: string }[] = [];
 for (let i = 0; i < 100; i++) {
   data.push({
     id: `id-${i}`,
-    name: `name-${i}`,
+    name: `${i}`,
   });
 }
 
@@ -41,6 +41,7 @@ export default () => {
       <Select
         data={data}
         multiple
+        compressed
         // innerTitle='innerTitle'
         // value={value}
         // onChange={handleChange}

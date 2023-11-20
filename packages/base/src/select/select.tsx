@@ -9,6 +9,7 @@ import AnimationList from '../animation-list';
 import Result from './result';
 import List from './list';
 import TreeList from './list-tree';
+import Icons from '../icons';
 // import ColumnsList from './list-columns';
 
 const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
@@ -35,6 +36,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     lineHeight,
     itemsInView,
     disabled,
+    clearable = true,
     beforeChange,
     compressed,
     compressedBound,
@@ -54,6 +56,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
     status === 'error' && styles?.wrapperError,
+    clearable && styles?.clearable,
     !border && styles?.wrapperNoBorder,
     !!underline && styles?.wrapperUnderline,
     {
@@ -104,6 +107,10 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       : data[renderResultProp];
   };
 
+  const renderClearable = () => {
+    return <span className={styles.clearIcon}>{Icons.PcCloseCircleFill}</span>;
+  };
+
   const renderResult = () => {
     const result = (
       <div className={classNames(styles?.result)}>
@@ -125,6 +132,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
         ></Result>
+        {clearable && renderClearable()}
       </div>
     );
 
