@@ -53,6 +53,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     value,
     data,
     dataUpdate,
+    active,
     expanded,
     disabled,
     defaultValue,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tree from '..';
 import mountTest from '../../tests/mountTest';
@@ -9,7 +9,6 @@ import {
   baseTest,
   classTest,
   createClassName,
-  delay,
   displayTest,
   snapshotTest,
   styleTest,
@@ -58,6 +57,12 @@ const {
   checkbox,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
+const { wrapperDisabled } = createClassName('checkbox', [''], ['wrapperDisabled']);
+
+const renderItem = (node: any) => {
+  return <span>{`node ${node.id}`}</span>;
+};
+
 const data = [
   {
     id: '0',
@@ -90,13 +95,24 @@ const data = [
   },
 ];
 
+const getIdsLength = (data: any[]) => {
+  let count = 0;
+
+  data.forEach((item) => {
+    if (item.id) {
+      count++;
+    }
+
+    if (item.children) {
+      count += getIdsLength(item.children);
+    }
+  });
+
+  return count;
+};
+
 const TreeTest = (props: any) => (
-  <Tree
-    data={data}
-    keygen={'id'}
-    renderItem={(node: any) => <span>{`node ${node.id}`}</span>}
-    {...props}
-  />
+  <Tree data={data} keygen={'id'} renderItem={renderItem} {...props} />
 );
 const CheckboxTree = (props: any) => {
   const [value, setValue] = React.useState([]);
@@ -176,13 +192,13 @@ describe('Tree[Base]', () => {
   });
 });
 describe('Tree[Disabled]', () => {
-  const DisabledTree = () => {
+  const isDisabled = (node: any) => {
+    return node.id === '0-0';
+  };
+  const DisabledTree = (props: any) => {
     const [value, setValue] = React.useState([]);
     const renderItem = (node: any) => {
       return <span>{`node ${node.id}`}</span>;
-    };
-    const isDisabled = (node: any) => {
-      return node.id === '0-0';
     };
     const handleChange = (keys: any) => {
       setValue(keys);
@@ -197,30 +213,107 @@ describe('Tree[Disabled]', () => {
           mode={0}
           defaultExpanded={['0']}
           onChange={handleChange}
-          disabled={isDisabled}
           renderItem={renderItem}
+          {...props}
         ></Tree>
       </div>
     );
   };
+  test('should render when set disabled is boolean', () => {
+    const { container } = render(<DisabledTree disabled />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeNodes = treeWrapper.querySelectorAll(nodeClassName)!;
+    treeNodes.forEach((item) => {
+      classTest(item.querySelector(checkbox)!, wrapperDisabled);
+    });
+  });
   test('should render when set disabled is function', () => {
-    render(<DisabledTree />);
-    // const treeWrapper = container.querySelector(treeClassName)!
-    screen.debug();
-    // classTest(treeWrapper, 'disabled')
+    const { container } = render(<DisabledTree disabled={isDisabled} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeNodes = treeWrapper.querySelectorAll(nodeClassName)!;
+    treeNodes.forEach((item) => {
+      if (item.querySelector(text)?.textContent !== `node 0-0`) return;
+      classTest(item.querySelector(checkbox)!, wrapperDisabled);
+    });
   });
 });
 describe('Tree[Expand]', () => {
+  test('should render when set defaultExpanded', async () => {
+    const { container } = render(<TreeTest defaultExpanded={['0']} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeNodes = treeWrapper.querySelectorAll(nodeClassName)[0];
+    attributesTest(treeNodes.querySelector(iconWrapperClassName)!, 'data-expanded', 'true');
+  });
+  // can`t expand when set defaultExpanded in deep children
+  test('should render when set defaultExpanded in deep children', async () => {
+    const { container } = render(<TreeTest defaultExpanded={['0-0']} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeNodes = treeWrapper.querySelectorAll(nodeClassName)[0];
+    attributesTest(treeNodes.querySelector(iconWrapperClassName)!, 'data-expanded', 'false');
+  });
   test('should render when set expanded and onExpand', async () => {
+    const TreeExpand = () => {
+      const [expanded, setExpanded] = React.useState([]);
+      const handleExpand = (keys: any) => {
+        setExpanded(keys);
+      };
+      return <TreeTest expanded={expanded} onExpand={handleExpand} />;
+    };
     const { container } = render(<TreeExpand />);
-    const buttons = container.querySelectorAll('button');
-    const treeNode = container.querySelectorAll(nodeClassName);
-    fireEvent.click(treeNode[0].querySelector(icon)!);
-    attributesTest(treeNode[0].querySelector(iconWrapperClassName)!, 'data-expanded', 'true');
-    fireEvent.click(buttons[1]);
-    await waitFor(async () => {
-      await delay(500);
-    });
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
+    const treeRootNodeIcon = treeRootNode.querySelector(icon)!;
+    fireEvent.click(treeRootNodeIcon);
+    attributesTest(treeRootNode.querySelector(iconWrapperClassName)!, 'data-expanded', 'true');
+  });
+  test('should render when set doubleClickExpand', () => {
+    const { container } = render(<TreeTest doubleClickExpand />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
+    attributesTest(treeRootNode.querySelector(iconWrapperClassName)!, 'data-expanded', 'false');
+    fireEvent.dblClick(treeRootNode.querySelector(text)!);
+    attributesTest(treeRootNode.querySelector(iconWrapperClassName)!, 'data-expanded', 'true');
+  });
+  test('should render when set defaultExpandAll', () => {
+    const { container } = render(<TreeTest defaultExpandAll />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+    expect(treeRootNodeAll.length).toBe(getIdsLength(data));
+  });
+  test('should render when set expandIcons', () => {
+    const { container } = render(
+      <TreeTest expandIcons={[() => <span>+</span>, () => <span>-</span>]} />,
+    );
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
+    const treeRootNodeIcon = treeRootNode.querySelector(icon)!;
+    textContentTest(treeRootNodeIcon, '+');
+    fireEvent.click(treeRootNodeIcon);
+    textContentTest(treeRootNodeIcon, '-');
+  });
+  test('should render when set parentClickExpand', () => {
+    const { container } = render(<TreeTest parentClickExpand />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
+    attributesTest(treeRootNode.querySelector(iconWrapperClassName)!, 'data-expanded', 'false');
+    fireEvent.click(treeRootNode.querySelector(text)!);
+    attributesTest(treeRootNode.querySelector(iconWrapperClassName)!, 'data-expanded', 'true');
+  });
+  // TODO: dragHoverExpand
+});
+describe('Tree[Active]', () => {
+  test('should render when set active', () => {
+    const { container } = render(<TreeTest highlight active={'0'} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
     screen.debug();
+    attributesTest(treeRootNode.querySelector(contentClassName)!, 'data-active', 'true');
+  });
+  test('should render when set highlight', () => {
+    const { container } = render(<TreeTest highlight />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
+    fireEvent.click(treeRootNode.querySelector(text)!);
+    attributesTest(treeRootNode.querySelector(contentClassName)!, 'data-active', 'true');
   });
 });
