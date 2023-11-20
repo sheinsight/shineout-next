@@ -473,7 +473,7 @@ describe('Tree[Checkbox]', () => {
     const { container } = render(<ModeTree mode={1} />);
     const { treeContents, getText, show } = modeTestMain(container);
     fireEvent.click(treeContents[3].querySelector(checkbox)!);
-    textContentTest(show, `${getText(4)} ${getText(3)} ${getText(1)} ${getText(0)}`);
+    textContentTest(show, `${getText(3)} ${getText(4)} ${getText(1)} ${getText(0)}`);
   });
   test('should render when set mode is 2', () => {
     const { container } = render(<ModeTree mode={2} />);
@@ -496,6 +496,7 @@ describe('Tree[Checkbox]', () => {
     fireEvent.click(treeContents[1].querySelector(checkbox)!);
     textContentTest(show, `${getText(1)}`);
     fireEvent.click(treeContents[2].querySelector(checkbox)!);
+    textContentTest(show, `${getText(1)} ${getText(2)}`);
   });
 });
 describe('Tree[Drag]', () => {
