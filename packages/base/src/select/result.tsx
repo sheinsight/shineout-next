@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
 import { ResultProps, ResultType } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 // import { Input } from '../date-picker/result';
-// import { getResetMore } from './result-more';
+import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
 
@@ -30,12 +30,12 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onFilter,
   } = props;
 
-  const [more] = useState(-1);
+  const [more, setMore] = useState(-1);
   const resultRef = useRef<HTMLDivElement>(null);
 
   // const { current: resultCache } = useRef(new Map<Value, ResultType<Value> | DataItem>());
   const styles = jssStyle?.select?.() as SelectClasses;
-  const rootClass = classNames(styles?.resultTextWrapper);
+  const rootClass = classNames(styles.resultTextWrapper, compressed && styles.compressedWrapper);
 
   // const handleCreate = (text: Value) => {
   //   const createFn = typeof onCreate === 'boolean' ? (t: Value) => t : onCreate;
@@ -144,7 +144,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
     if (multiple) {
       result = compressed ? renderMultipleResultMore() : renderMultipleResult();
-      if (compressed) return renderMultipleResultMore();
     } else {
       result = renderSingleResult();
     }
@@ -152,15 +151,15 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return showPlaceholder ? renderPlaceholder() : result;
   };
 
-  // useEffect(() => {
-  //   if (!resultRef.current) return;
-  //   const newMore = getResetMore(
-  //     onFilter,
-  //     resultRef.current,
-  //     resultRef.current.querySelectorAll(`.${styles.tag}`),
-  //   );
-  //   setMore(newMore);
-  // }, [value]);
+  useEffect(() => {
+    if (!resultRef.current) return;
+    const newMore = getResetMore(
+      onFilter,
+      resultRef.current,
+      resultRef.current.querySelectorAll(`.${styles.tag}`),
+    );
+    setMore(newMore);
+  }, [value]);
 
   return (
     <div ref={resultRef} className={rootClass}>

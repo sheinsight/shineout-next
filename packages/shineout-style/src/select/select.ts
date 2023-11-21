@@ -25,6 +25,7 @@ export type SelectClasses = {
   resultTextDisabled: string;
   resultTextWrapper: string;
   resultTextPadding: string;
+  compressedWrapper: string;
   placeholder: string;
   pickerWrapper: string;
   clearable: string;
@@ -183,6 +184,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     color: token.selectDisabledFontColor,
     cursor: 'not-allowed',
   },
+  compressedWrapper: {},
   placeholder: {
     color: token.selectPlaceholderColor,
   },
@@ -216,6 +218,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       paddingTop: 1,
       paddingBottom: 1,
     },
+    '& $compressedWrapper': {
+      flexWrap: 'nowrap',
+    },
     '& $placeholder': {
       marginTop: 1,
       marginBottom: 1,
@@ -240,6 +245,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginRight: 4,
     marginTop: 1,
     marginBottom: 1,
+    textWrap: 'nowrap',
   },
   virtualList: {
     margin: 0,

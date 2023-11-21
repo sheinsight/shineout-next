@@ -18,7 +18,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     scrollHeight: scrollHeightProp,
     // scrollWidth: scrollWidthProp,
     footer,
-    tag = 'ul',
+    tag = 'div',
     tagClassName,
     onScroll,
   } = props;
@@ -63,7 +63,9 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   };
 
   const handleResize = () => {
-    console.log('resize');
+    setDeltaY(deltaY);
+    setDeltaX(deltaX);
+    onScroll(deltaX, deltaY);
   };
 
   const handleWheel = (e: WheelEvent) => {

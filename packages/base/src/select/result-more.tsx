@@ -11,6 +11,7 @@ export function getResetMore(
 ) {
   if (!container || !doms || !doms.length) return -1;
   const items = Array.from(doms);
+  console.log(items);
   const style = getComputedStyle(container);
   const { clientWidth } = container;
   const paddingLeft = parsePxToNumber(style.paddingLeft);
@@ -38,7 +39,6 @@ export function getResetMore(
   if (sumWidth <= contentWidth) {
     num = -1;
   } else {
-    console.log(23);
     let len = 0;
     for (let i = 0; i < itemWidthArr.length; i++) {
       const itemLen = itemWidthArr[i];
@@ -99,21 +99,12 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
     );
   }
 
-  // useEffect(() => {
-  //   if (!resultRef.current) return;
-  //   const newMore = getResetMore(
-  //     onFilter,
-  //     resultRef.current,
-  //     resultRef.current.querySelectorAll(`.${styles.tag}`),
-  //   );
-  //   setMore(newMore);
-  // }, [value]);
-
   const before = new Array(showNum).fill(undefined).map((_item, index) => data[index]);
   const after = new Array(data.length - showNum!)
     .fill(undefined)
     .map((_item, index) => data[showNum! + index]);
   const itemsLength = after.length;
+
   return (
     <React.Fragment>
       {before}
