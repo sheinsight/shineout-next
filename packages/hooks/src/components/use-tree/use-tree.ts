@@ -80,9 +80,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
 
-  const get = (id: KeygenResult) => {
+  function get(id: KeygenResult) {
     return context.valueMap.get(id);
-  };
+  }
 
   const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
     if (isFunc(keygen)) {
@@ -194,13 +194,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       let children: KeygenResult[] = [];
 
       if (Array.isArray(item[childrenKey])) {
-        children = initData(
+        const _children = initData(
           item[childrenKey] as DataItem[],
           [...path, id],
           mode === MODE.MODE_4 ? disabled : isDisabled,
           indexPath,
         );
-        // if (_children) children = _children;
+        if (_children) children = _children;
       }
 
       context.pathMap.set(id, {
