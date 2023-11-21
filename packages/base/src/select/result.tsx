@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { util } from '@sheinx/hooks';
+import { util, addResizeObserver } from '@sheinx/hooks';
 import { ResultProps, ResultType } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 // import { Input } from '../date-picker/result';
@@ -32,6 +32,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const [more, setMore] = useState(-1);
   const resultRef = useRef<HTMLDivElement>(null);
+  const shouldResetMore = useRef(false);
 
   // const { current: resultCache } = useRef(new Map<Value, ResultType<Value> | DataItem>());
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -52,8 +53,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     }
     return more;
   };
-
-  // const handleResetMore = () => {};
 
   const renderInput = (text: React.ReactNode) => {
     console.log(text);
@@ -151,14 +150,37 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return showPlaceholder ? renderPlaceholder() : result;
   };
 
+  const handleResetMore = () => {
+    if (!compressed) return;
+    shouldResetMore.current = true;
+    setMore(-1);
+  };
+
   useEffect(() => {
     if (!resultRef.current) return;
-    const newMore = getResetMore(
-      onFilter,
-      resultRef.current,
-      resultRef.current.querySelectorAll(`.${styles.tag}`),
-    );
-    setMore(newMore);
+    const cancelObserver = addResizeObserver(resultRef.current, handleResetMore, {
+      direction: 'x',
+    });
+
+    return () => {
+      cancelObserver();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!resultRef.current) return;
+    if (!compressed) return;
+    if (isCompressedBound()) return;
+
+    if (shouldResetMore.current && ((value as Value[]) || []).length) {
+      shouldResetMore.current = false;
+      const newMore = getResetMore(
+        onFilter,
+        resultRef.current,
+        resultRef.current.querySelectorAll(`.${styles.tag}`),
+      );
+      setMore(newMore);
+    }
   }, [value]);
 
   return (
