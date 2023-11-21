@@ -1,4 +1,5 @@
-import { UseListProps } from './use-list.type';
+import { useMemo } from 'react';
+import { UseListMultipleProps, UseListProps } from './use-list.type';
 import usePersistFn from '../use-persist-fn';
 import useListSelectMultiple from './use-list-select-multiple';
 
@@ -30,20 +31,24 @@ const useListSelect = <DataItem, Value>(props: UseListProps<DataItem, Value>) =>
     ...props,
     value: value,
     onChange: onChange,
+    prediction: props.prediction as UseListMultipleProps<DataItem, MultipleValue>['prediction'],
   });
 
   const add = usePersistFn((data: DataItem) => {
     datum.add(data, { overwrite: true });
   });
 
-  if (!multiple) {
-    return {
-      ...datum,
-      add,
-    };
-  }
+  const result = useMemo(() => {
+    if (!multiple) {
+      return {
+        ...datum,
+        add,
+      };
+    }
+    return datum;
+  }, Object.values(props));
 
-  return datum;
+  return result;
 };
 
 export default useListSelect;

@@ -1,5 +1,6 @@
 import { isArray, isObject } from '../../utils';
-import React from 'react';
+import React, { useMemo } from 'react';
+import usePersistFn from '../use-persist-fn';
 
 import { UnMatchedData, UseListMultipleProps } from './use-list.type';
 
@@ -30,26 +31,26 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     lastData: [] as DataItem[],
     dataMap: new Map<ValueItem, DataItem>(),
   });
-  const disabledCheck = (data: DataItem) => {
+  const disabledCheck = usePersistFn((data: DataItem) => {
     if (typeof props.disabled === 'boolean') return props.disabled;
     if (typeof props.disabled === 'function') return props.disabled(data);
     return false;
-  };
+  });
 
-  const formatData = (data: DataItem): ValueItem => {
+  const formatData = usePersistFn((data: DataItem): ValueItem => {
     if (typeof props.format === 'string' && isObject(data)) return data[props.format];
     if (typeof props.format === 'function') return props.format(data);
     return data as ValueItem;
-  };
+  });
 
-  const getVaildData = () => {
+  const getVaildData = usePersistFn(() => {
     const vaildData = props.data.filter((item: DataItem) => {
       return !disabledCheck(item);
     });
     return vaildData;
-  };
+  });
 
-  const getDataMap = () => {
+  const getDataMap = usePersistFn(() => {
     if (props.data === context.lastData) return context.valueMap;
     const map = new Map<ValueItem, DataItem>();
     for (let i = 0; i < props.data.length; i++) {
@@ -59,7 +60,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     context.dataMap = map;
     context.lastData = props.data;
     return map;
-  };
+  });
 
   const getValueMap = () => {
     if (props.value === context.lastValue) return context.valueMap;
@@ -73,29 +74,32 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     return map;
   };
 
-  const add = (
-    data: DataItem[] | DataItem,
-    config: { unshift?: boolean; overwrite?: boolean } = {},
-  ) => {
-    if (data === null || data === undefined) return;
+  const add = usePersistFn(
+    (data: DataItem[] | DataItem, config: { unshift?: boolean; overwrite?: boolean } = {}) => {
+      if (data === null || data === undefined) return;
 
-    const values = [] as ValueItem[];
-    const raws = isArray(data) ? data : [data];
-    for (let i = 0; i < raws.length; i++) {
-      if (!disabledCheck(raws[i])) {
-        values.push(formatData(raws[i]));
+      const values = [] as ValueItem[];
+      const raws = isArray(data) ? data : [data];
+      for (let i = 0; i < raws.length; i++) {
+        if (!disabledCheck(raws[i])) {
+          values.push(formatData(raws[i]));
+        }
       }
-    }
-    const before = (config.overwrite ? [] : valueArr || []) as ValueItem[];
-    if (values.length) {
-      const newValue = config.unshift ? values.concat(before) : before.concat(values);
-      const valueResult = props.separator ? newValue.join(props.separator) : newValue;
-      props.onChange(valueResult as Value, data, true);
-    }
-  };
+      const before = (config.overwrite ? [] : valueArr || []) as ValueItem[];
+      if (values.length) {
+        const newValue = config.unshift ? values.concat(before) : before.concat(values);
+        const valueResult = props.separator ? newValue.join(props.separator) : newValue;
+        props.onChange(valueResult as Value, data, true);
+      }
+    },
+  );
+
+  const removeAll = usePersistFn(() => {
+    props.onChange([] as unknown as Value, undefined as DataItem, false);
+  });
 
   // 删除数据
-  const remove = (data: (DataItem | UnMatchedData) | (DataItem | UnMatchedData)[]) => {
+  const remove = usePersistFn((data: (DataItem | UnMatchedData) | (DataItem | UnMatchedData)[]) => {
     if (data === null || data === undefined) return;
     const values = [];
     const raws = isArray(data) ? data : [data];
@@ -137,8 +141,9 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     }
     const valueResult = props.separator ? values.join(props.separator) : values;
     props.onChange(valueResult as Value, data as DataItem, false);
-  };
-  const check = (raw: DataItem) => {
+  });
+
+  const check = usePersistFn((raw: DataItem) => {
     if (props.prediction) {
       for (let i = 0, count = valueArr.length; i < count; i++) {
         if (props.prediction(valueArr[i], raw)) return true;
@@ -146,9 +151,9 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
       return false;
     }
     return !!getValueMap().get(formatData(raw));
-  };
+  });
 
-  const getDataByValues = (values: ValueItem[]) => {
+  const getDataByValues = usePersistFn((values: ValueItem[]) => {
     const result = [];
     if (!props.prediction) {
       if (!values || !values.length) return [];
@@ -180,19 +185,31 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     }
 
     return result;
-  };
+  });
 
-  return {
-    add,
-    remove,
-    check,
-    format: formatData,
-    getVaildData,
-    getValueMap,
-    getDataByValues,
-    isUnMatchedData,
-    disabledCheck,
-  };
+  const getCheckedStatus = usePersistFn(() => {
+    if (valueArr.length === 0) return false;
+    if (valueArr.length === props.data.length) return true;
+    return 'indeterminate';
+  });
+
+  const func = useMemo(() => {
+    return {
+      add,
+      remove,
+      removeAll,
+      check,
+      format: formatData,
+      getVaildData,
+      getValueMap,
+      getDataByValues,
+      isUnMatchedData,
+      disabledCheck,
+      getCheckedStatus,
+    };
+  }, Object.values(props));
+
+  return func;
 };
 
 export default useListSelectMultiple;

@@ -4,6 +4,7 @@ export { default as useTableGroup } from './use-table-group';
 export { default as useTableSort } from './use-table-sort';
 export { default as useTableRow } from './use-table-row';
 export { default as useTableExpand } from './use-table-expand';
+export { default as useTableTree } from './use-table-tree';
 
 export type {
   TableFormatColumn,

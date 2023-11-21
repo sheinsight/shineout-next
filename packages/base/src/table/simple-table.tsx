@@ -1,6 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
-import { useTableLayout, useTableColumns, useTableSort, usePersistFn } from '@sheinx/hooks';
+import {
+  useTableLayout,
+  useTableColumns,
+  useTableSort,
+  useTableTree,
+  usePersistFn,
+  useListSelect,
+  useInputAble,
+} from '@sheinx/hooks';
 import { TableProps } from './table.type';
 
 import Colgroup from './colgroup';
@@ -17,7 +25,8 @@ import Tbody from './tbody';
 // - 固定列 sticky
 // - 表头 sticky
 // - 可展开
-//   可选择
+// -  可选择
+// - 虚拟列表
 //   数形状数据
 //   行点击 和行事件 支持拖拽
 export default <Item, Value>(props: TableProps<Item, Value>) => {
@@ -27,17 +36,26 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const { verticalAlign = 'top' } = props;
+  const inputableData = useInputAble({
+    value: props.value,
+    defaultValue: undefined,
+    onChange: props.onRowSelect,
+    control: 'value' in props,
+    beforeChange: undefined,
+  });
+
+  const datum = useListSelect({
+    data: props.data,
+    value: inputableData.value,
+    multiple: !props.radio,
+    prediction: props.prediction,
+    format: props.format,
+    onChange: inputableData.onChange,
+  });
 
   const { columns, expandHideCol } = useTableColumns({
     columns: props.columns,
     showCheckbox: typeof props.onRowSelect === 'function',
-  });
-
-  const { sortedData, sortInfo, onSorterChange } = useTableSort({
-    data: props.data,
-    sorter: props.sorter,
-    onSortCancel: props.onSortCancel,
-    columns: columns,
   });
 
   const {
@@ -59,6 +77,31 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     columnResizable: props.columnResizable,
     onColumnResize: props.onColumnResize,
     width: props.width,
+  });
+
+  const { sortedData, sortInfo, onSorterChange } = useTableSort({
+    data: props.data,
+    sorter: props.sorter,
+    onSortCancel: props.onSortCancel,
+    columns: columns,
+  });
+
+  const treeColumnsName = columns.find((item) => item.treeColumnsName)?.treeColumnsName;
+
+  const {
+    func: treeFunc,
+    data: treeData,
+    isEmptyTree,
+    // changedByExpand,
+    treeExpandLevel,
+  } = useTableTree({
+    data: sortedData,
+    treeColumnsName,
+    treeExpandKeys: props.treeExpandKeys,
+    defaultTreeExpandKeys: props.defaultTreeExpandKeys,
+    keygen: props.keygen,
+    onTreeExpand: props.onTreeExpand,
+    treeCheckAll: props.treeCheckAll,
   });
 
   const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
@@ -85,7 +128,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     <Thead
       jssStyle={props.jssStyle}
       columns={columns}
-      data={sortedData}
+      data={props.data}
       colgroup={colgroup}
       sortInfo={sortInfo}
       onSorterChange={onSorterChange}
@@ -93,6 +136,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       resizeCol={layoutFunc.resizeCol}
       onColumnResize={props.onColumnResize}
       columnResizable={props.columnResizable}
+      showSelectAll={props.showSelectAll}
+      datum={datum}
     />
   );
 
@@ -100,13 +145,19 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     <Tbody
       jssStyle={props.jssStyle}
       columns={columns}
-      data={sortedData}
+      data={treeData}
+      treeExpandLevel={treeExpandLevel}
+      treeFunc={treeFunc}
       colgroup={colgroup}
       isScrollX={isScrollX}
       expandHideCol={expandHideCol}
       keygen={props.keygen}
       rowClassName={props.rowClassName}
       expandKeys={props.expandKeys}
+      datum={datum}
+      treeEmptyExpand={props.treeEmptyExpand}
+      isEmptyTree={isEmptyTree}
+      treeColumnsName={treeColumnsName}
     />
   );
 

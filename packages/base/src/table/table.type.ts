@@ -1,7 +1,11 @@
 import React from 'react';
 import { CommonType } from '../common/type';
-import type { ObjectType, TableColumnItem, BaseTableProps } from '@sheinx/hooks';
+import type { ObjectType, TableColumnItem, BaseTableProps, ObjectKey } from '@sheinx/hooks';
+import { useListSelect, useTableTree } from '@sheinx/hooks';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
+
+export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
+export type UseTreeResult = ReturnType<typeof useTableTree>;
 
 export interface TableClasses {
   wrapper: string;
@@ -20,7 +24,6 @@ export interface TableClasses {
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
-  cellIcon: string;
 
   hasSorter: string;
   sorterContainer: string;
@@ -35,7 +38,9 @@ export interface TableClasses {
   cellIgnoreBorder: string;
 
   expandIcon: string;
-  icon: string;
+  iconWrapper: string;
+
+  expandWrapper: string;
 }
 
 export interface TableRef {
@@ -43,13 +48,42 @@ export interface TableRef {
   [key: string]: any;
 }
 
+export interface TableSelectProps<DataItem, Value> {
+  value: Value;
+  /**
+   * @en Select row. Rows is the selected data.
+   * @cn 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
+   */
+  onRowSelect?: (rows: Value) => void;
+  /**
+   * @en Format value. The defaule value is return the original data. When it is a string, the value is fetched from the original data as a key equivalent to (d) => d\\[format] When it is a function, use its return value.
+   * @cn 格式化 value, 默认值，返回原始数据。 为 string 时，会作为 key 从原始数据中获取值，相当于 (d) => d\\[format]; 为函数时，以函数返回结果作为 value。
+   * @default d => d
+   */
+  format?: ObjectKey<DataItem> | ((data: DataItem) => Value extends (infer U)[] ? U : Value);
+  /**
+   * @en By default, the result of the format function is used to compare whether it matches. In some cases (for example, whe an object that returns the original data is updated, an different option with the same value  is generated), the prediction function needs to be used to determine whether match
+   * @cn 默认使用 format 函数执行的结果来比较是否匹配，在某些情况下（例如返回原始数据的对象，更新数据时，生成了一个值相同，非同一个对象的选项），需要借助 prediction 函数来判断是否匹配
+   * @default (val, d) => val===format(d)
+   */
+  prediction?: (value: Value extends (infer U)[] ? U : Value, data: DataItem) => boolean;
+  disabled?: boolean | ((d: DataItem) => boolean);
+}
+
 export interface TableProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'style'>,
-    BaseTableProps<DataItem> {
+    BaseTableProps<DataItem>,
+    TableSelectProps<DataItem, Value> {
   jssStyle?: {
     table?: () => TableClasses;
     checkbox?: () => CheckboxClasses;
   };
+  /**
+   * @en is Radio
+   * @cn 是否为单选
+   * @default false
+   */
+  radio?: boolean;
   /**
    * @en vertical align with content
    * @cn 单元格内容垂直对齐方式

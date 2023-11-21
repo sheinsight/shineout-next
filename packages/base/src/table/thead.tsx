@@ -180,7 +180,18 @@ export default (props: TheadProps) => {
         <th className={cellClassName} key='checkbox' rowSpan={trs.length} style={fixedStyle}>
           {showSelectAll && (
             <div style={{ lineHeight: 1, verticalAlign: 'middle' }}>
-              <Checkbox jssStyle={props.jssStyle} style={{ margin: 0 }} />
+              <Checkbox
+                checked={props.datum.getCheckedStatus}
+                onChange={(_value, checked) => {
+                  if (checked) {
+                    props.datum.add(props.data);
+                  } else {
+                    props.datum.remove(props.data);
+                  }
+                }}
+                jssStyle={props.jssStyle}
+                style={{ margin: 0 }}
+              />
             </div>
           )}
           {renderDrag(colTemp.index)}

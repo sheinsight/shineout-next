@@ -12,6 +12,32 @@ export interface SortItem {
   manual: boolean;
 }
 export interface BaseTableProps<Item> {
+  /**
+   * @en check children data while select all
+   * @cn 全选时是否将子孙数据选中
+   * @default false
+   */
+  treeCheckAll?: boolean;
+  /**
+   * @en Default expanded row keys
+   * @cn 默认展开行(非受控)
+   */
+  defaultTreeExpandKeys?: KeygenResult[];
+  /**
+   * @en When treeExpandKeys is set, the callback is triggered when the row is expanded. Keys is expanded row key
+   * @cn 当设置 treeExpandKeys 后，展开行时会触发该回调，keys 为展开的行
+   */
+  onTreeExpand?: (openKeys: KeygenResult[], data: Item, expand: boolean, index: number) => void;
+  /**
+   * @en Tree Table expanded row keys
+   * @cn 树形数据展开行，受控
+   */
+  treeExpandKeys?: KeygenResult[];
+  /**
+   * @en data
+   * @cn 数据
+   * @override object[]
+   */
   data?: Item[];
   /**
    * @en the method of table sort，args are Column.sorter and order

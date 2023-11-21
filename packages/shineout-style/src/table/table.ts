@@ -19,7 +19,6 @@ export type TableClasses = {
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
-  cellIcon: string;
 
   hasSorter: string;
   sorterContainer: string;
@@ -34,7 +33,9 @@ export type TableClasses = {
   cellIgnoreBorder: string;
 
   expandIcon: string;
-  icon: string;
+  iconWrapper: string;
+
+  expandWrapper: string;
 };
 
 const cellBaseIndex = 4;
@@ -59,9 +60,6 @@ const tableStyle: JsStyles<TableClassType> = {
       tableLayout: 'fixed',
       borderCollapse: 'separate',
       borderSpacing: 0,
-      '& th': {
-        verticalAlign: 'middle',
-      },
       '& th, & td': {
         wordBreak: 'break-all',
         position: 'relative',
@@ -81,10 +79,14 @@ const tableStyle: JsStyles<TableClassType> = {
           right: 0,
           bottom: 0,
           width: '1px',
-          background: '#e8e8e8',
+          //  left: '0',
+          //  height: '1px',
+          //  margin: 'auto',
+          background: token.tableCellBorderColor,
         },
       },
       '& th': {
+        verticalAlign: 'middle',
         background: token.tableTheadBackgroundColor,
         color: token.tableTheadFontColor,
         fontWeight: 'bold',
@@ -248,8 +250,9 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   sticky: {},
   expandIcon: {
-    width: '14px',
-    height: '14px',
+    display: 'inline-block',
+    width: '15px',
+    height: '15px',
     cursor: 'pointer',
     color: '#b3b7c1',
     '&>svg': {
@@ -267,19 +270,17 @@ const tableStyle: JsStyles<TableClassType> = {
       verticalAlign: 'middle',
     },
   },
-  cellIcon: {
-    '$verticalAlignMiddle &': {
-      lineHeight: '1',
+
+  expandWrapper: {
+    '& $iconWrapper': {
+      marginRight: '8px',
     },
   },
-  icon: {
-    display: 'inline-flex',
-    '$verticalAlignMiddle &': {
-      verticalAlign: 'middle',
-    },
-    '$verticalAlignTop &': {
-      verticalAlign: 'text-bottom',
-    },
+  iconWrapper: {
+    display: 'inline-block',
+    verticalAlign: 'top',
+    lineHeight: '1.85',
+    height: '14px',
   },
 };
 

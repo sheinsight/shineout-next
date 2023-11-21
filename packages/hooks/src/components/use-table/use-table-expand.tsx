@@ -3,8 +3,7 @@ import { TableFormatColumn, BaseTableProps } from './use-table.type';
 import usePersistFn from '../../common/use-persist-fn';
 import { getKey } from '../..//utils/render';
 
-export interface UseTableExpandProps
-  extends Pick<BaseTableProps<any>, 'data' | 'expandKeys' | 'keygen'> {
+export interface UseTableExpandProps extends Pick<BaseTableProps<any>, 'expandKeys' | 'keygen'> {
   columns: TableFormatColumn<any>[];
 }
 

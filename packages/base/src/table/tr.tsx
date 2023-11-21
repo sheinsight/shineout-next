@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import classNames from 'classnames';
-import { TableProps } from './table.type';
-import { TbodyProps } from './tbody.type';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
+import { TbodyProps } from './tbody.type';
 
-interface TrProps extends Pick<TableProps<any, any>, 'jssStyle' | 'rowClassName'> {
+interface TrProps
+  extends Pick<
+    TbodyProps,
+    | 'jssStyle'
+    | 'rowClassName'
+    | 'datum'
+    | 'treeFunc'
+    | 'treeExpandLevel'
+    | 'treeEmptyExpand'
+    | 'isEmptyTree'
+  > {
   row: {
     data: any[];
     colSpan: number;
@@ -22,9 +31,12 @@ interface TrProps extends Pick<TableProps<any, any>, 'jssStyle' | 'rowClassName'
   expandCol: TbodyProps['expandHideCol'] | undefined;
   rowClickExpand: boolean;
   handleExpandClick: (col: TableFormatColumn<any>, data: any, index: number) => void;
+  treeColumnsName?: string;
+  originKey?: string | number;
 }
 
 const Tr = (props: TrProps) => {
+  const { treeFunc } = props;
   const tableClasses = props.jssStyle?.table?.();
   const getTdStyle = (column: TableFormatColumn<any>, colSpan: number) => {
     const index = column.index;
@@ -48,6 +60,41 @@ const Tr = (props: TrProps) => {
     return column.style;
   };
 
+  const renderTreeExpand = (content: ReactNode, treeIndent: number = 20) => {
+    const level = props.treeExpandLevel.get(props.originKey) || 0;
+    const className = tableClasses?.expandWrapper;
+    const children = props.rawData[props.treeColumnsName!];
+    const isExpanded = props.treeFunc.isTreeExpanded(props.rawData, props.rowIndex);
+    if (!children || (children.length === 0 && !props.treeEmptyExpand)) {
+      return (
+        <span
+          className={className}
+          style={{
+            marginLeft: level * treeIndent,
+            paddingLeft: props.isEmptyTree ? 0 : 22,
+          }}
+        >
+          {content}
+        </span>
+      );
+    }
+    return (
+      <span className={className} style={{ marginLeft: level * treeIndent }}>
+        <div className={classNames(tableClasses?.iconWrapper)}>
+          <span
+            className={tableClasses?.expandIcon}
+            onClick={() => {
+              treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
+            }}
+          >
+            {isExpanded ? Icons.Expand : Icons.OdecShrink}
+          </span>
+        </div>
+        {content}
+      </span>
+    );
+  };
+
   const renderContent = (col: TrProps['columns'][number], data: any, index: number) => {
     if (col.type === 'expand' || col.type === 'row-expand') {
       const clickEvent =
@@ -57,22 +104,39 @@ const Tr = (props: TrProps) => {
             }
           : undefined;
       return (
-        <div
-          className={classNames(tableClasses?.expandIcon, tableClasses?.icon)}
-          onClick={clickEvent}
-        >
-          {props.expanded ? Icons.Expand : Icons.OdecShrink}
+        <div className={classNames(tableClasses?.iconWrapper)} onClick={clickEvent}>
+          <span className={tableClasses?.expandIcon}>
+            {props.expanded ? Icons.Expand : Icons.OdecShrink}
+          </span>
         </div>
       );
     }
     if (col.type === 'checkbox') {
       return (
-        <div className={tableClasses?.icon}>
-          <Checkbox jssStyle={props.jssStyle} style={{ margin: 0 }} />
+        <div className={tableClasses?.iconWrapper}>
+          <Checkbox
+            jssStyle={props.jssStyle}
+            style={{ margin: 0 }}
+            checked={props.datum.check(data)}
+            onChange={(_value, check) => {
+              if (check) {
+                props.datum.add(data);
+              } else {
+                props.datum.remove(data);
+              }
+            }}
+          />
         </div>
       );
     }
-    return util.render(col.render as any, data, index);
+
+    const content = util.render(col.render as any, data, index);
+
+    if (col.treeColumnsName) {
+      return renderTreeExpand(content, col.treeIndent);
+    }
+
+    return content;
   };
 
   const renderTds = (cols: TrProps['columns'], data: TrProps['row']) => {
@@ -99,8 +163,6 @@ const Tr = (props: TrProps) => {
               col.fixed === 'right' && tableClasses?.cellFixedRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
-              (col.type === 'checkbox' || col.type === 'expand' || col.type === 'row-expand') &&
-                tableClasses?.cellIcon,
             )}
             style={getTdStyle(col, data[i].colSpan)}
           >

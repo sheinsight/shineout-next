@@ -2,6 +2,7 @@ import useListSelectMultiple from './use-list-select-multiple';
 import { UseListSingleProps } from './use-list.type';
 import usePersistFn from '../use-persist-fn';
 import { isArray } from '../../utils';
+import { useMemo } from 'react';
 
 const useListSelectSingle = <DataItem, Value>(props: UseListSingleProps<DataItem, Value>) => {
   const onChange = usePersistFn((value: Value[], data: DataItem | DataItem[], checked: boolean) => {
@@ -20,10 +21,14 @@ const useListSelectSingle = <DataItem, Value>(props: UseListSingleProps<DataItem
   const add = usePersistFn((data: DataItem) => {
     list.add(data, { overwrite: true });
   });
-  return {
-    ...list,
-    add,
-  };
+
+  const result = useMemo(() => {
+    return {
+      ...list,
+      add,
+    };
+  }, Object.values(props));
+  return result;
 };
 
 export default useListSelectSingle;

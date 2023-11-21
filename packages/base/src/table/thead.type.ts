@@ -1,4 +1,4 @@
-import { TableProps } from './table.type';
+import { TableProps, ListDatum } from './table.type';
 import { useTableSort, useTableLayout } from '@sheinx/hooks';
 import type { TableFormatColumn, OptionalToRequired } from '@sheinx/hooks';
 
@@ -15,4 +15,5 @@ export interface TheadProps
   isScrollY?: boolean;
   bordered?: boolean;
   colgroup: (number | undefined)[];
+  datum: ListDatum;
 }

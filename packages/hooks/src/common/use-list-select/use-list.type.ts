@@ -12,7 +12,7 @@ export interface UseListProps<DataItem, Value> {
   disabled?: boolean | ((data: DataItem) => boolean);
   separator?: string;
   format?: ObjectKey<DataItem> | ((data: DataItem) => Value extends (infer U)[] ? U : Value);
-  prediction?: (value: Value, Data: DataItem) => boolean;
+  prediction?: (value: Value extends (infer U)[] ? U : Value, Data: DataItem) => boolean;
   onChange?: (value: Value, data: DataItem | DataItem[], checked: boolean) => void;
 }
 
@@ -24,7 +24,7 @@ export interface UseListMultipleProps<DataItem, Value extends string | any[]>
   prediction?: (value: Value[number], Data: DataItem) => boolean;
 }
 
-export interface UseListSingleProps<DataItem, Value extends any[]>
+export interface UseListSingleProps<DataItem, Value>
   extends Omit<UseListMultipleProps<DataItem, Value[]>, 'value' | 'onChange'> {
   value?: Value;
   onChange?: (value: Value, data: DataItem, checked: boolean) => void;

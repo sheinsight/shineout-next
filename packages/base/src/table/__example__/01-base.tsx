@@ -14,15 +14,30 @@ const jssStyle = {
   checkbox: useCheckboxStyle,
 };
 
-// mock 1000 rows 学生数据
-const data = Array(1000)
-  .fill(0)
-  .map((_, i) => ({
-    id: i,
+let maxChild = 0;
+let id = 0;
+
+const mockData = (i: number) => {
+  const childNum = Math.floor(Math.random() * 10);
+  const item = {
+    id: id++,
     name: `Edward King Edward King Edward King Edward King ${i}`,
     age: Math.floor(Math.random() * 100),
     address: `London, Park Lane no. ${i}`,
     sex: i % 2 === 0 ? 'man' : 'femail',
+    children: [] as any[],
+  };
+  if (maxChild < 10) {
+    maxChild++;
+    item.children = Array.from({ length: childNum }).map((_, j) => mockData(j));
+  }
+  return item;
+};
+// mock 1000 rows 学生数据
+const data = Array(1000)
+  .fill(0)
+  .map((_, i) => ({
+    ...mockData(i),
   }));
 
 const columns = [
@@ -41,6 +56,7 @@ const columns = [
     title: 'ID2',
     render: 'id',
     width: 40,
+    treeColumnsName: 'children',
     sorter: (order: 'asc' | 'desc') => (a: any, b: any) =>
       order === 'asc' ? a.id - b.id : b.id - a.id,
     defaultOrder: 'asc',
@@ -88,6 +104,7 @@ const columns = [
   },
 ];
 
+console.log(data);
 type DataItem = typeof data[0];
 const sorters = {
   id: (order: 'asc' | 'desc') => (a: DataItem, b: DataItem) =>
@@ -100,7 +117,7 @@ const sorters = {
 
 export default () => {
   const [bordered, setBordered] = React.useState(1);
-  const [va, setVa] = React.useState<'top' | 'string'>('top');
+  const [va, setVa] = React.useState<'top' | 'middle'>('top');
   return (
     <div>
       <div>
@@ -138,7 +155,11 @@ export default () => {
         verticalAlign={va}
         jssStyle={jssStyle}
         data={data}
+        format={'id'}
         columns={columns}
+        onRowSelect={(value) => {
+          console.log(value);
+        }}
       />
     </div>
   );
