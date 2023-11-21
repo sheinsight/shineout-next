@@ -437,7 +437,6 @@ describe('Tree[Expand]', () => {
     fireEvent.click(treeRootNode.querySelector(text)!);
     expect(clickFn.mock.calls.length).toBe(0);
   });
-  // TODO: dragHoverExpand
 });
 describe('Tree[Active]', () => {
   test('should render when set active', () => {
@@ -691,3 +690,4 @@ describe('Tree[Drag]', () => {
     styleTest(elements[elements.length - 1], `${originCopyNodeStyle} color: red;`);
   });
 });
+// dataUpdate/dragHoverExpand/dragImageSelector/dragSibling
