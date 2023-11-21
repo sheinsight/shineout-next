@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen, fireEvent } from '@testing-library/react';
+import { render, cleanup, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tree from '..';
 import mountTest from '../../tests/mountTest';
@@ -9,6 +9,7 @@ import {
   baseTest,
   classTest,
   createClassName,
+  delay,
   displayTest,
   snapshotTest,
   styleTest,
@@ -57,7 +58,14 @@ const {
   checkbox,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const { wrapperDisabled } = createClassName('checkbox', [''], ['wrapperDisabled']);
+const { wrapperDisabled, wrapperChecked, wrapperIndeterminate } = createClassName(
+  'checkbox',
+  [''],
+  ['wrapperDisabled', 'wrapperChecked', 'wrapperIndeterminate'],
+);
+
+const originCopyNodeStyle =
+  'position: absolute; top: -1000px; left: -1000px; width: 0px; background: rgb(255, 255, 255); box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);';
 
 const renderItem = (node: any) => {
   return <span>{`node ${node.id}`}</span>;
@@ -278,6 +286,27 @@ describe('Tree[Base]', () => {
     );
     attributesTest(container.querySelector(contentClassName)!, 'data-active', 'true');
   });
+  test('should render when set loader', async () => {
+    const { container } = render(<TreeLoader />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNode = treeWrapper.querySelectorAll(nodeClassName);
+    classTest(treeRootNode[1], leaf);
+    fireEvent.click(treeRootNode[1].querySelector(icon)!);
+    await waitFor(
+      async () => {
+        await delay(500);
+      },
+      { timeout: 2000 },
+    );
+    classLengthTest(treeRootNode[1], icon, 0);
+    await waitFor(
+      async () => {
+        await delay(1000);
+      },
+      { timeout: 2000 },
+    );
+    classTest(treeRootNode[1], leaf, false);
+  });
 });
 describe('Tree[Disabled]', () => {
   const isDisabled = (node: any) => {
@@ -461,60 +490,204 @@ describe('Tree[Checkbox]', () => {
     classLengthTest(treeContentWapper, checkbox, 1);
     // TODO: should test checkbox onchang event
   });
+  // Return fully selected node when set mode is 0
   test('should render when set mode is 0', () => {
     const { container } = render(<ModeTree mode={0} />);
     const { treeContents, getText, show } = modeTestMain(container);
     fireEvent.click(treeContents[3].querySelector(checkbox)!);
-    textContentTest(show, `${getText(3)} ${getText(4)}`);
+    textContentTest(show, `${getText(4)} ${getText(3)}`);
+    classTest(treeContents[0].querySelector(checkbox)!, wrapperIndeterminate);
+    classTest(treeContents[1].querySelector(checkbox)!, wrapperIndeterminate);
+    classTest(treeContents[3].querySelector(checkbox)!, wrapperChecked);
+    classTest(treeContents[4].querySelector(checkbox)!, wrapperChecked);
     fireEvent.click(treeContents[2].querySelector(checkbox)!);
-    textContentTest(show, `${getText(3)} ${getText(4)} ${getText(1)} ${getText(2)}`);
+    textContentTest(show, `${getText(2)} ${getText(4)} ${getText(3)} ${getText(1)}`);
+    classTest(treeContents[1].querySelector(checkbox)!, wrapperChecked);
   });
+  // Return fully and half selected node when set mode is 1
   test('should render when set mode is 1', () => {
     const { container } = render(<ModeTree mode={1} />);
     const { treeContents, getText, show } = modeTestMain(container);
     fireEvent.click(treeContents[3].querySelector(checkbox)!);
-    textContentTest(show, `${getText(3)} ${getText(4)} ${getText(1)} ${getText(0)}`);
+    textContentTest(show, `${getText(4)} ${getText(3)} ${getText(1)} ${getText(0)}`);
   });
+  // Return leaf node when set mode is 2
   test('should render when set mode is 2', () => {
     const { container } = render(<ModeTree mode={2} />);
     const { treeContents, getText, show } = modeTestMain(container);
     fireEvent.click(treeContents[1].querySelector(checkbox)!);
-    screen.debug();
     textContentTest(show, `${getText(2)} ${getText(4)}`);
+    classTest(treeContents[0].querySelector(checkbox)!, wrapperIndeterminate);
+    classTest(treeContents[1].querySelector(checkbox)!, wrapperChecked);
+    classTest(treeContents[2].querySelector(checkbox)!, wrapperChecked);
+    classTest(treeContents[3].querySelector(checkbox)!, wrapperChecked);
+    classTest(treeContents[4].querySelector(checkbox)!, wrapperChecked);
+    fireEvent.click(treeContents[2].querySelector(checkbox)!);
+    classTest(treeContents[1].querySelector(checkbox)!, wrapperIndeterminate);
   });
+  // Return fully select parent node when set mode is 3
   test('should render when set mode is 3', () => {
     const { container } = render(<ModeTree mode={3} />);
     const { treeContents, getText, show } = modeTestMain(container);
     fireEvent.click(treeContents[1].querySelector(checkbox)!);
     textContentTest(show, `${getText(1)}`);
+    classTest(treeContents[0].querySelector(checkbox)!, wrapperIndeterminate);
+    classTest(treeContents[1].querySelector(checkbox)!, wrapperChecked);
+    classTest(treeContents[2].querySelector(checkbox)!, wrapperChecked);
+    classTest(treeContents[3].querySelector(checkbox)!, wrapperChecked);
+    classTest(treeContents[4].querySelector(checkbox)!, wrapperChecked);
     fireEvent.click(treeContents[5].querySelector(checkbox)!);
     textContentTest(show, `${getText(0)}`);
   });
+  // Return only select node when set mode is 4
   test('should render when set mode is 4', () => {
     const { container } = render(<ModeTree mode={4} />);
     const { treeContents, getText, show } = modeTestMain(container);
     fireEvent.click(treeContents[1].querySelector(checkbox)!);
     textContentTest(show, `${getText(1)}`);
     fireEvent.click(treeContents[2].querySelector(checkbox)!);
-    textContentTest(show, `${getText(1)} ${getText(2)}`);
+    textContentTest(show, `${getText(2)} ${getText(1)}`);
+  });
+  test('should render when set defaultValue', () => {
+    const changeFn = jest.fn();
+    const { container } = render(
+      <TreeTest defaultValue={['0-0']} defaultExpandAll onChange={changeFn} mode='4' />,
+    );
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+    treeRootNodeAll.forEach((item) => {
+      if (item.querySelector(text)?.textContent !== `node 0-0`) return;
+      classTest(item.querySelector(checkbox)!, wrapperChecked);
+    });
+  });
+  test('should render when set value and defaultValue at the same time', () => {
+    const changeFn = jest.fn();
+    const { container } = render(
+      <TreeTest
+        defaultValue={['0-0']}
+        value={['0']}
+        defaultExpandAll
+        onChange={changeFn}
+        mode='4'
+      />,
+    );
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+    treeRootNodeAll.forEach((item) => {
+      if (item.querySelector(text)?.textContent === `node 0`) return;
+      classTest(item.querySelector(checkbox)!, wrapperChecked, false);
+    });
+    screen.debug();
+    classTest(treeRootNodeAll[0].querySelector(checkbox)!, wrapperChecked);
   });
 });
 describe('Tree[Drag]', () => {
-  const DragTree = (props: any) => {
-    const [value, setValue] = React.useState([]);
-    const handleChange = (v: any) => {
-      setValue(v);
-    };
-    return (
-      <TreeTest defaultExpandAll value={value} onChange={handleChange} renderItem='id' {...props} />
-    );
-  };
-  test('should render when set onDragEnter', () => {
-    const onDragEnter = jest.fn();
-    const { container } = render(<DragTree onDragEnter={onDragEnter} />);
+  class MockDataTransfer {
+    dropEffect = '';
+    effectAllowed = '';
+    files: any[] = [];
+    items: any[] = [];
+    types: any[] = [];
+    setData() {}
+    getData() {
+      return '';
+    }
+    clearData() {}
+    setDragImage() {}
+  }
+  test('should render when set onDrop', async () => {
+    const dropFn = jest.fn();
+    const { container } = render(<TreeTest onDrop={dropFn} defaultExpandAll />);
     const treeWrapper = container.querySelector(treeClassName)!;
-    const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
-    fireEvent.dragEnter(treeRootNode);
-    expect(onDragEnter.mock.calls.length).toBe(1);
+    const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+    treeRootNodeAll.forEach((item) => {
+      attributesTest(item, 'draggable', 'true');
+    });
+    expect(document.querySelectorAll(contentClassName).length).toBe(7);
+    const firstNode = treeRootNodeAll[1];
+    fireEvent.dragStart(firstNode, {
+      dataTransfer: new MockDataTransfer(),
+    });
+    const elements = document.querySelectorAll(contentClassName)!;
+    expect(elements.length).toBe(8);
+    styleTest(elements[elements.length - 1], originCopyNodeStyle);
+    textContentTest(elements[elements.length - 1], 'node 0-0');
+    await waitFor(async () => {
+      await delay(100);
+    });
+    treeRootNodeAll.forEach((item) => {
+      if (item.textContent !== 'node 0-0') return;
+      styleTest(item, 'display: none;');
+    });
+
+    fireEvent.dragOver(firstNode.querySelector(contentClassName)!, {
+      clientY: 20,
+      target: {
+        getBoundingClientRect: () => ({
+          height: 20,
+        }),
+      },
+    });
+    fireEvent.dragEnd(firstNode);
+
+    treeRootNodeAll.forEach((item) => {
+      if (item.textContent !== 'node 0-0') return;
+      styleTest(item, '');
+    });
+    expect(document.querySelectorAll(contentClassName).length).toBe(7);
+    expect(dropFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set onDragStart/onDragEnd/onDragOver/onDragLeave', async () => {
+    const dropFn = jest.fn();
+    const dragStartFn = jest.fn();
+    const dragEndFn = jest.fn();
+    const dragLeaveFn = jest.fn();
+    const dragOver = jest.fn();
+    const { container } = render(
+      <TreeTest
+        onDragStart={dragStartFn}
+        onDragEnd={dragEndFn}
+        onDragLeave={dragLeaveFn}
+        onDragOver={dragOver}
+        onDrop={dropFn}
+        defaultExpandAll
+      />,
+    );
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+    const firstNode = treeRootNodeAll[1];
+    fireEvent.dragStart(firstNode, {
+      dataTransfer: new MockDataTransfer(),
+    });
+    fireEvent.dragOver(firstNode.querySelector(contentClassName)!, {
+      clientY: 20,
+      target: {
+        getBoundingClientRect: () => ({
+          top: 50,
+          bottom: 70,
+        }),
+      },
+    });
+    fireEvent.dragEnd(firstNode);
+    fireEvent.dragLeave(firstNode);
+    expect(dragStartFn.mock.calls.length).toBe(1);
+    expect(dragEndFn.mock.calls.length).toBe(1);
+    expect(dragOver.mock.calls.length).toBe(1);
+    expect(dragLeaveFn.mock.calls.length).toBe(2);
+  });
+  test('should render when set dragImageStyle', () => {
+    const dropFn = jest.fn();
+    const { container } = render(
+      <TreeTest dragImageStyle={{ color: 'red' }} defaultExpandAll onDrop={dropFn} />,
+    );
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+    const firstNode = treeRootNodeAll[1];
+    fireEvent.dragStart(firstNode, {
+      dataTransfer: new MockDataTransfer(),
+    });
+    screen.debug();
+    const elements = document.querySelectorAll(contentClassName)!;
+    styleTest(elements[elements.length - 1], `${originCopyNodeStyle} color: red;`);
   });
 });
