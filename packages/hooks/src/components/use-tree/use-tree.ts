@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import useLatestObj from '../../common/use-latest-obj';
 import {
   BaseTreeProps,
@@ -67,8 +67,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const firstRender = useRef(true);
 
-  const [active, setActive] = useState<KeygenResult>();
-
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
@@ -131,10 +129,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       }
     });
     return values;
-  };
-
-  const getActive = () => {
-    return activeProp === undefined ? active : activeProp;
   };
 
   const getPath = (id: KeygenResult) => {
@@ -382,7 +376,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     set,
     getPath,
     getValue,
-    getActive,
     getChecked,
     isDisabled,
     bindNode,
@@ -394,7 +387,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     dataMap: context.dataMap,
     valueMap: context.valueMap,
     updateMap: context.updateMap,
-    setActive,
   };
 };
 

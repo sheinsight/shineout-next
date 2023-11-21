@@ -48,7 +48,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     ...rest
   } = props;
 
-  const { func, updateMap, setActive } = useTree({
+  const { func, updateMap } = useTree({
     mode,
     value,
     data,
@@ -82,7 +82,6 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
 
   const handleNodeClick = (node: DataItem, id: KeygenResult) => {
     if (active === undefined) {
-      setActive(id);
       handleUpdateActive(id);
     }
 
