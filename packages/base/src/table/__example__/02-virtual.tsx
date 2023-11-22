@@ -1,7 +1,7 @@
 /**
- * cn - 基本用法
+ * cn - 虚拟列表
  *    --
- * en - Basic
+ * en - virtual
  *    --
  */
 import React from 'react';
@@ -34,7 +34,7 @@ const mockData = (i: number) => {
   return item;
 };
 // mock 1000 rows 学生数据
-const data = Array(100)
+const data = Array(1000)
   .fill(0)
   .map((_, i) => ({
     ...mockData(i),
@@ -149,7 +149,7 @@ export default () => {
           const orderFunc = sorters[key as unknown as keyof typeof sorters];
           return orderFunc(order);
         }}
-        width={1000}
+        width={1200}
         style={{ height: '' }}
         keygen='id'
         verticalAlign={va}

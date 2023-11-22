@@ -40,6 +40,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     checkNum: 0,
     cachedWidth: null as Map<KeygenResult, number> | null,
     dragWidth: 0,
+    clientWidth: 0,
   });
 
   const [isScrollX, setIsScrollX] = React.useState(false);
@@ -49,7 +50,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const [floatRight, setFloatRight] = React.useState(false);
   const [scrollBarWidth, setScrollBarWidth] = React.useState(0);
   const [colgroup, setColgroup] = React.useState(props.columns.map((v) => v.width));
-  const [resetFlag, setResetFlag] = React.useState(true);
+  const [adjust, setAdjust] = React.useState<boolean | 'drag'>(true);
 
   // 检查滚动状态
   const checkScroll = usePersistFn(() => {
@@ -60,9 +61,9 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       setIsScrollY(true);
       return;
     }
+    context.clientWidth = scrollEl.clientWidth;
     const overHeight = scrollEl.scrollHeight > scrollEl.clientHeight;
-    const overWidth = scrollEl.scrollWidth > scrollEl.clientWidth;
-
+    const overWidth = scrollEl.scrollWidth > context.clientWidth;
     const newScrollBarWidth = overHeight ? scrollEl.offsetWidth - scrollEl.clientWidth : 0;
     if (newScrollBarWidth !== scrollBarWidth) setScrollBarWidth(newScrollBarWidth);
 
@@ -99,6 +100,11 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     context.dragWidth = w;
   });
 
+  const changeColGroup = (cols: Array<number | undefined>, adjust: boolean | 'drag') => {
+    setColgroup(cols);
+    setAdjust(adjust);
+  };
+
   // 完成拖拽
   const resizeCol = usePersistFn((index) => {
     if (!props.columnResizable) return;
@@ -112,13 +118,8 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       props.onColumnResize(newColumns);
       return;
     }
-    context.cachedWidth = new Map<KeygenResult, number>();
-    for (let i = 0; i < props.columns.length; i++) {
-      context.cachedWidth.set(props.columns[i].key, newColgroup[i] || 0);
-    }
-    setColgroup(newColgroup);
-    setResetFlag(true);
     setDeltaXSum((x) => x + deltaX);
+    changeColGroup(newColgroup, 'drag');
   });
 
   // 根据column的宽度计算colgroup
@@ -126,33 +127,52 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     const columnLengthChange = preColumns && preColumns.length !== props.columns.length;
     // 当支持拖拽列 并且有缓存 并且 column 的数量没有发生变化的时候， 从缓存中获取宽度
     const useCache = props.columnResizable && context.cachedWidth && !columnLengthChange;
-    setResetFlag(false);
-    setColgroup(
-      props.columns.map((v) => {
-        if (useCache && context.cachedWidth && context.cachedWidth.has(v.key)) {
-          return context.cachedWidth.get(v.key);
-        }
-        return v.width;
-      }),
-    );
+    const newColgroup = props.columns.map((v) => {
+      if (useCache && context.cachedWidth && context.cachedWidth.has(v.key)) {
+        return context.cachedWidth.get(v.key);
+      }
+      return v.width;
+    });
+    changeColGroup(newColgroup, true);
   });
 
   // 根据渲染内容计算colgroup
-  const getColgroup = usePersistFn(() => {
+  const getColgroup = usePersistFn((fromDrag) => {
     if (!tbodyRef.current) return;
     const group = tbodyRef.current.querySelector('colgroup');
     if (!group) return;
     const cols = group.querySelectorAll('col');
 
-    const colgroup: number[] = [];
+    const newCols: number[] = [];
     let sum = 0;
     for (let i = 0, count = cols.length; i < count; i++) {
       const { width } = cols[i].getBoundingClientRect();
       sum += width;
-      colgroup.push(width);
+      newCols.push(width);
     }
-    setDeltaXSum(sum - (props.width || 0));
-    setColgroup(colgroup);
+
+    if (fromDrag && props.columnResizable) {
+      const widthArr = [...newCols];
+      if (typeof props.width === 'number') {
+        const maxWidth = Math.max(context.clientWidth, props.width + deltaXSum);
+
+        // 当宽带超过的时候会出现滚动条
+        if (sum > maxWidth) {
+          newCols.forEach((v, i) => {
+            newCols[i] = (v * maxWidth) / sum;
+          });
+        }
+        const rate = (props.width + deltaXSum) / sum;
+        widthArr.forEach((v, i) => {
+          widthArr[i] = v * rate;
+        });
+      }
+      context.cachedWidth = new Map<KeygenResult, number>();
+      for (let i = 0; i < props.columns.length; i++) {
+        context.cachedWidth.set(props.columns[i].key, widthArr[i] || 0);
+      }
+    }
+    changeColGroup(newCols, false);
   });
 
   const checkFloat = usePersistFn(() => {
@@ -181,12 +201,11 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   });
 
   // 页面resize
-  const handleResize = usePersistFn((_, dir: { x: boolean; y: boolean }) => {
+  const handleResize = usePersistFn((_, dir: { x: boolean; y: boolean; sX: boolean }) => {
     checkScroll();
     if (dir.x) {
-      checkFloat();
       //table 宽度发生变化的时候, 需要同步 colgroup 宽度 给拖拽列或者固定列使用
-      getColgroup();
+      resetColGroup();
     }
   });
 
@@ -226,11 +245,12 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   }, [scrollRef.current]);
 
   useLayoutEffect(() => {
-    if (resetFlag) {
-      getColgroup();
+    if (adjust) {
+      getColgroup(adjust === 'drag');
+      setAdjust(false);
+    } else {
       checkFloat();
       checkScroll();
-      setResetFlag(false);
     }
   }, [colgroup]);
 
@@ -243,7 +263,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     colgroup: colgroup ? colgroup : [],
     func,
     width: typeof props.width === 'number' ? props.width + deltaXSum : props.width,
-    shouldLastColAuto: props.columnResizable && !resetFlag,
+    shouldLastColAuto: props.columnResizable && !adjust,
   };
 };
 
