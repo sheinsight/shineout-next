@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tree from '..';
 import mountTest from '../../tests/mountTest';
@@ -443,7 +443,6 @@ describe('Tree[Active]', () => {
     const { container } = render(<TreeTest highlight active={'0'} />);
     const treeWrapper = container.querySelector(treeClassName)!;
     const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
-    screen.debug();
     attributesTest(treeRootNode.querySelector(contentClassName)!, 'data-active', 'true');
   });
   test('should render when set highlight', () => {
@@ -576,7 +575,6 @@ describe('Tree[Checkbox]', () => {
       if (item.querySelector(text)?.textContent === `node 0`) return;
       classTest(item.querySelector(checkbox)!, wrapperChecked, false);
     });
-    screen.debug();
     classTest(treeRootNodeAll[0].querySelector(checkbox)!, wrapperChecked);
   });
 });
@@ -685,7 +683,6 @@ describe('Tree[Drag]', () => {
     fireEvent.dragStart(firstNode, {
       dataTransfer: new MockDataTransfer(),
     });
-    screen.debug();
     const elements = document.querySelectorAll(contentClassName)!;
     styleTest(elements[elements.length - 1], `${originCopyNodeStyle} color: red;`);
   });

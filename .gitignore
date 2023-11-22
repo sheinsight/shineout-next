@@ -9,3 +9,6 @@ coverage
 cypress/videos
 cypress/screenshots
 cypress/downloads
+.nyc_output
+cypress-coverage
+jest-coverage

@@ -1,5 +1,5 @@
 const { execSync } = require('child_process');
-const fs = require('fs');
+const fs = require('fs-extra');
 
 const REPORTS_FOLDER = 'reports';
 const FINAL_OUTPUT_FOLDER = 'coverage';
