@@ -35,6 +35,7 @@ export type SelectClasses = {
   checkedIcon: string;
   list: string;
   tag: string;
+  moreWrapper: string;
   virtualList: string;
   option: string;
   optionInner: string;
@@ -184,7 +185,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     color: token.selectDisabledFontColor,
     cursor: 'not-allowed',
   },
-  compressedWrapper: {},
+  compressedWrapper: {
+    width: 0,
+    overflow: 'hidden',
+  },
   placeholder: {
     color: token.selectPlaceholderColor,
   },
@@ -222,8 +226,8 @@ const selectStyle: JsStyles<SelectClassType> = {
       flexWrap: 'nowrap',
     },
     '& $placeholder': {
-      marginTop: 1,
-      marginBottom: 1,
+      marginTop: 2,
+      marginBottom: 2,
     },
   },
   checkedIcon: {
@@ -243,9 +247,12 @@ const selectStyle: JsStyles<SelectClassType> = {
       marginLeft: 0,
     },
     marginRight: 4,
-    marginTop: 1,
-    marginBottom: 1,
+    marginTop: 2,
+    marginBottom: 2,
     textWrap: 'nowrap',
+  },
+  moreWrapper: {
+    padding: `${token.selectMorePaddingY} ${token.selectMorePaddingX}`,
   },
   virtualList: {
     margin: 0,

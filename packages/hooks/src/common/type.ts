@@ -25,3 +25,13 @@ export type StructKeygenType<DataItem> =
 export type StructKeygenStringType<DataItem> =
   | ObjectKey<DataItem>
   | ((data: DataItem, index: string) => KeygenResult);
+
+export type OptionalKeys<T> = {
+  [K in keyof T]: undefined extends T[K] ? K : never;
+}[keyof T];
+
+export type OptionalToRequired<T> = {
+  [P in OptionalKeys<T>]: T[P] | undefined;
+} & {
+  [P in Exclude<keyof T, OptionalKeys<T>>]: T[P];
+};

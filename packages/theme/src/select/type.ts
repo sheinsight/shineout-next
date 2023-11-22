@@ -40,7 +40,7 @@ export interface SelectTokens {
   selectPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Padding-1
    * @description 选择器内边距（垂直方向）
    */
   selectPaddingY: string;
@@ -302,4 +302,16 @@ export interface SelectTokens {
    * @description 选择器选项禁用时的背景颜色
    */
   selectOptionDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description 选择器折叠内容的内边距（水平方向）
+   */
+  selectMorePaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-14
+   * @description 选择器折叠内容的内边距（垂直方向）
+   */
+  selectMorePaddingY: string;
 }

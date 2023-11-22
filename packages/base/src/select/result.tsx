@@ -172,16 +172,23 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (!compressed) return;
     if (isCompressedBound()) return;
 
-    if (shouldResetMore.current && ((value as Value[]) || []).length) {
-      shouldResetMore.current = false;
-      const newMore = getResetMore(
-        onFilter,
-        resultRef.current,
-        resultRef.current.querySelectorAll(`.${styles.tag}`),
-      );
-      setMore(newMore);
-    }
+    handleResetMore();
   }, [value]);
+
+  useEffect(() => {
+    if (!resultRef.current) return;
+    if (more === -1) {
+      if (shouldResetMore.current && ((value as Value[]) || []).length) {
+        shouldResetMore.current = false;
+        const newMore = getResetMore(
+          onFilter,
+          resultRef.current,
+          resultRef.current.querySelectorAll(`.${styles.tag}`),
+        );
+        setMore(newMore);
+      }
+    }
+  }, [value, more]);
 
   return (
     <div ref={resultRef} className={rootClass}>

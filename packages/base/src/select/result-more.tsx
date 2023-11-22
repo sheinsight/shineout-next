@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { ReultMoreProps } from './result-more.type';
 import { parsePxToNumber } from '@sheinx/hooks';
 import Tag from '../tag';
+import Popover from '../popover';
 
 export function getResetMore(
   onFilter: ((...args: any) => void) | undefined,
@@ -11,7 +12,6 @@ export function getResetMore(
 ) {
   if (!container || !doms || !doms.length) return -1;
   const items = Array.from(doms);
-  console.log(items);
   const style = getComputedStyle(container);
   const { clientWidth } = container;
   const paddingLeft = parsePxToNumber(style.paddingLeft);
@@ -35,7 +35,6 @@ export function getResetMore(
     sumWidth += itemLen;
     return itemLen;
   });
-
   if (sumWidth <= contentWidth) {
     num = -1;
   } else {
@@ -74,41 +73,58 @@ export function getResetMore(
 
 const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
   const { jssStyle, data, showNum } = props;
+  const [visible, setVisible] = useState(false);
 
   const styles = jssStyle?.select?.() as SelectClasses;
 
-  if (showNum! < 0 || showNum! >= data.length) {
-    return (
-      <React.Fragment>
-        {data}
-        <Tag
-          className={styles.tag}
-          jssStyle={jssStyle}
-          style={{
-            position: 'absolute',
-            zIndex: -100,
-            userSelect: 'none',
-            msUserSelect: 'none',
-            contain: 'layout',
-          }}
-          key='hidden'
-        >
-          +
-        </Tag>
-      </React.Fragment>
-    );
-  }
+  const shouldShowMore = showNum! < 0 || showNum! >= data.length;
+  let before: React.ReactNode[] = [];
+  let after: React.ReactNode[] = [];
+  let itemsLength = 0;
+  let tagStlye: React.CSSProperties = shouldShowMore
+    ? {
+        position: 'absolute',
+        zIndex: -100,
+        userSelect: 'none',
+        msUserSelect: 'none',
+        contain: 'layout',
+      }
+    : {};
 
-  const before = new Array(showNum).fill(undefined).map((_item, index) => data[index]);
-  const after = new Array(data.length - showNum!)
-    .fill(undefined)
-    .map((_item, index) => data[showNum! + index]);
-  const itemsLength = after.length;
+  if (!shouldShowMore) {
+    before = new Array(showNum!).fill(undefined).map((_item, index) => data[index]);
+    after = new Array(data.length - showNum!)
+      .fill(undefined)
+      .map((_item, index) => data[showNum! + index]);
+    itemsLength = after.length;
+  }
 
   return (
     <React.Fragment>
-      {before}
-      <Tag className={styles.tag} jssStyle={jssStyle} key='more'>{`+${itemsLength}`}</Tag>
+      {shouldShowMore ? data : before}
+      <span>
+        <Tag
+          className={styles.tag}
+          jssStyle={jssStyle}
+          key='more'
+          style={tagStlye}
+          mode={visible ? 'fill' : 'bright'}
+          color={visible ? 'info' : 'default'}
+        >
+          {shouldShowMore ? '+' : `+${itemsLength}`}
+        </Tag>
+        <Popover
+          jssStyle={jssStyle}
+          visible={visible}
+          onVisibleChange={setVisible}
+          showArrow={false}
+          position='bottom-left'
+        >
+          <div className={styles.moreWrapper} style={{ width: 280 }}>
+            {after}
+          </div>
+        </Popover>
+      </span>
     </React.Fragment>
   );
 };

@@ -15,6 +15,7 @@ const selectTokenDescription = {
   right: '(右侧)',
   inner: '内部容器的',
   clear: '清除按钮的',
+  more: '折叠内容的',
 };
 
 /**
@@ -30,7 +31,7 @@ const selectTokenExtraValue = {
   width: 'Size-120',
   font: { size: '14/regular', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
-  padding: { x: 'Padding-8', y: 'Padding-2' },
+  padding: { x: 'Padding-8', y: 'Padding-1' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
     font: { size: '12/regular' },
@@ -78,6 +79,12 @@ const selectTokenExtraValue = {
     },
     hover: { background: { color: 'Neutral-fill-2' } },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
+  },
+  more: {
+    padding: {
+      x: 'Padding-16',
+      y: 'Padding-14',
+    },
   },
 };
 

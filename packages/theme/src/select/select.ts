@@ -10,7 +10,7 @@ const selectTokens: SelectTokens = {
   selectBorderRadius: 'Radius-4',
   selectBorderColor: 'Neutral-border-2',
   selectPaddingX: 'Padding-8',
-  selectPaddingY: 'Padding-2',
+  selectPaddingY: 'Padding-1',
   selectIconSize: 'Size-7',
   selectIconColor: 'Neutral-text-4',
   selectSmallFontSize: '12/regular',
@@ -54,6 +54,8 @@ const selectTokens: SelectTokens = {
   selectOptionHoverBackgroundColor: 'Neutral-fill-2',
   selectOptionDisabledColor: 'Neutral-text-2',
   selectOptionDisabledBackgroundColor: 'Neutral-fill-1',
+  selectMorePaddingX: 'Padding-16',
+  selectMorePaddingY: 'Padding-14',
 };
 
 export default selectTokens;

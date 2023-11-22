@@ -6,7 +6,7 @@ import { TreeListProps } from './tree-list.type';
 export interface TreeNodeProps<DataItem>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className'> {
-  jssStyle: JsstyleType;
+  jssStyle?: JsstyleType;
   id: string;
   data: DataItem;
   index: number;

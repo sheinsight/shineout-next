@@ -6,12 +6,14 @@ import { TagClasses } from '../tag/tag.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { InnerTitleClasses } from '../common/use-inner-title';
 import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
+import { PopoverClasses } from '../popover/popover.type';
 
 export type JssStyleType = {
   tag: () => TagClasses;
   select: () => SelectClasses;
   innerTitle?: () => InnerTitleClasses;
   virtualScroll: () => VirtualScrollClasses;
+  popover?: () => PopoverClasses;
 };
 
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
