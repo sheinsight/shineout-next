@@ -184,6 +184,8 @@ describe('Tree[Base]', () => {
       if (index === 1) return;
       classTest(item, leaf);
       classLengthTest(item, iconWrapperClassName, 0);
+      fireEvent.click(iconWrapper);
+      attributesTest(treeIconWrapper, 'data-expanded', 'false');
     });
   });
   // TODO: size
@@ -379,6 +381,8 @@ describe('Tree[Expand]', () => {
     const treeRootNodeIcon = treeRootNode.querySelector(icon)!;
     fireEvent.click(treeRootNodeIcon);
     attributesTest(treeRootNode.querySelector(iconWrapperClassName)!, 'data-expanded', 'true');
+    fireEvent.click(treeRootNodeIcon);
+    attributesTest(treeRootNode.querySelector(iconWrapperClassName)!, 'data-expanded', 'false');
   });
   test('should render when set doubleClickExpand', () => {
     const { container } = render(<TreeTest doubleClickExpand />);
@@ -436,6 +440,22 @@ describe('Tree[Expand]', () => {
     const treeRootNode = treeWrapper.querySelector(nodeClassName)!;
     fireEvent.click(treeRootNode.querySelector(text)!);
     expect(clickFn.mock.calls.length).toBe(0);
+  });
+  test('should render when click icon that expand default', () => {
+    const { container } = render(<TreeTest expanded={['0']} />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+    attributesTest(
+      treeRootNodeAll[0].querySelector(iconWrapperClassName)!,
+      'data-expanded',
+      'true',
+    );
+    fireEvent.click(treeRootNodeAll[0].querySelector(icon)!);
+    attributesTest(
+      treeRootNodeAll[0].querySelector(iconWrapperClassName)!,
+      'data-expanded',
+      'false',
+    );
   });
 });
 describe('Tree[Active]', () => {
