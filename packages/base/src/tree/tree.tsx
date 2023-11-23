@@ -10,6 +10,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     jssStyle,
     line = true,
     childrenKey = 'children',
+    // data: dataProps,
     data,
     value,
     mode = 1,
@@ -47,6 +48,13 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     onDragStart,
     ...rest
   } = props;
+
+  // [TODO] - Props: dataUpdate
+  // [TODO] - This is a workaround for the issue of data not updating when dataProps changes.
+  // const [data, setData] = useState<DataItem[]>(dataProps);
+  // useEffect(() => {
+  //   if (dataProps !== data && dataUpdate) setData(dataProps);
+  // }, [dataProps])
 
   const { func, updateMap } = useTree({
     mode,

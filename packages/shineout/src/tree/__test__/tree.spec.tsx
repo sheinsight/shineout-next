@@ -2,6 +2,7 @@ import React from 'react';
 import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tree from '..';
+import { Button } from 'shineout';
 import mountTest from '../../tests/mountTest';
 import { classLengthTest } from '../../tests/structureTest';
 import {
@@ -354,6 +355,23 @@ describe('Tree[Disabled]', () => {
   });
 });
 describe('Tree[Expand]', () => {
+  test('should render when expanded is control', async () => {
+    const { getByText } = render(<TreeExpand />);
+    await waitFor(async () => {
+      await delay(100);
+    });
+    const buttonExpand = getByText('Expand all');
+    const buttonCollapse = getByText('Collapse all');
+    fireEvent.click(buttonExpand);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    fireEvent.click(buttonCollapse);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    // TODO: can`t collapse
+  });
   test('should render when set defaultExpanded', async () => {
     const { container } = render(<TreeTest defaultExpanded={['0']} />);
     const treeWrapper = container.querySelector(treeClassName)!;
@@ -706,5 +724,68 @@ describe('Tree[Drag]', () => {
     const elements = document.querySelectorAll(contentClassName)!;
     styleTest(elements[elements.length - 1], `${originCopyNodeStyle} color: red;`);
   });
+});
+describe('Tree[Data]', () => {
+  const TreeData = (props: any) => {
+    const [item, setItem] = React.useState(data);
+    const handleItem = () => {
+      setItem([
+        {
+          id: '1',
+          children: [
+            {
+              id: '1-0',
+              children: [
+                {
+                  id: '1-0-0',
+                },
+                {
+                  id: '1-0-1',
+                  children: [
+                    {
+                      id: '1-0-1-0',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: '1-1',
+              children: [
+                {
+                  id: '1-1-0',
+                },
+              ],
+            },
+          ],
+        },
+      ]);
+    };
+    return (
+      <div>
+        <Button onClick={handleItem}>changeItem</Button>
+        <TreeTest data={item} {...props} />
+      </div>
+    );
+  };
+  test('should render when data is control', () => {
+    const { container } = render(<TreeData />);
+    const treeWrapper = container.querySelector(treeClassName)!;
+    const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+    const buttonItem = container.querySelector('button')!;
+    textContentTest(treeRootNodeAll[0].querySelector(text)!, 'node 0');
+    fireEvent.click(buttonItem);
+    textContentTest(treeWrapper.querySelectorAll(nodeClassName)[0].querySelector(text)!, 'node 1');
+  });
+  // TODO: dataUpdate
+  // test('should render when set dataUpdate is false and data is control', () => {
+  //   const { container } = render(<TreeData dataUpdate={false} />);
+  //   const treeWrapper = container.querySelector(treeClassName)!;
+  //   const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
+  //   const buttonItem = container.querySelector('button')!;
+  //   textContentTest(treeRootNodeAll[0].querySelector(text)!, 'node 0');
+  //   fireEvent.click(buttonItem);
+  //   textContentTest(treeWrapper.querySelectorAll(nodeClassName)[0].querySelector(text)!, 'node 0');
+  // })
 });
 // dataUpdate/dragHoverExpand/dragImageSelector/dragSibling
