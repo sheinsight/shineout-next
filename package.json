@@ -22,6 +22,7 @@
     "prepublishOnly": "father doctor && npm run build",
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "test:merge": "cross-env NODE_ENV=test node ./scripts/merge-coverage.js",
     "cypress:open": "cross-env NODE_ENV=test cypress open",
     "cypress:run": "cross-env NODE_ENV=test cypress run --browser chrome"
   },
