@@ -14,11 +14,9 @@ const jssStyle = {
   checkbox: useCheckboxStyle,
 };
 
-let maxChild = 0;
 let id = 0;
 
 const mockData = (i: number) => {
-  const childNum = Math.floor(Math.random() * 10);
   const item = {
     id: id++,
     name: `Edward King Edward King Edward King Edward King ${i}`,
@@ -27,14 +25,10 @@ const mockData = (i: number) => {
     sex: i % 2 === 0 ? 'man' : 'femail',
     children: [] as any[],
   };
-  if (maxChild < 10) {
-    maxChild++;
-    item.children = Array.from({ length: childNum }).map((_, j) => mockData(j));
-  }
   return item;
 };
 // mock 1000 rows 学生数据
-const data = Array(100)
+const data = Array(10)
   .fill(0)
   .map((_, i) => ({
     ...mockData(i),
@@ -104,7 +98,6 @@ const columns = [
   },
 ];
 
-console.log(data);
 type DataItem = typeof data[0];
 const sorters = {
   id: (order: 'asc' | 'desc') => (a: DataItem, b: DataItem) =>

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import classNames from 'classnames';
@@ -16,6 +16,7 @@ interface TrProps
     | 'treeExpandLevel'
     | 'treeEmptyExpand'
     | 'isEmptyTree'
+    | 'setRowHeight'
   > {
   row: {
     data: any[];
@@ -38,6 +39,7 @@ interface TrProps
 const Tr = (props: TrProps) => {
   const { treeFunc } = props;
   const tableClasses = props.jssStyle?.table?.();
+  const trRef = useRef<HTMLTableRowElement>(null);
   const getTdStyle = (column: TableFormatColumn<any>, colSpan: number) => {
     const index = column.index;
     if (!props.isScrollX) return;
@@ -60,7 +62,13 @@ const Tr = (props: TrProps) => {
     return column.style;
   };
 
-  const renderTreeExpand = (content: ReactNode, treeIndent: number = 20) => {
+  useEffect(() => {
+    if (props.setRowHeight && trRef.current) {
+      props.setRowHeight(props.rowIndex, trRef.current.offsetHeight);
+    }
+  }, []);
+
+  const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 20) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
     const className = tableClasses?.expandWrapper;
     const children = props.rawData[props.treeColumnsName!];
@@ -200,6 +208,7 @@ const Tr = (props: TrProps) => {
   return (
     <>
       <tr
+        ref={trRef}
         className={props?.rowClassName?.(props.rawData, props.rowIndex)}
         onClick={() => {
           if (props.rowClickExpand) {

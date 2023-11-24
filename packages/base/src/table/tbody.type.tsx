@@ -20,4 +20,5 @@ export interface TbodyProps
   treeExpandLevel: UseTreeResult['treeExpandLevel'];
   isEmptyTree: boolean | undefined;
   treeColumnsName: string | undefined;
+  setRowHeight?: (index: number, height: number) => void;
 }

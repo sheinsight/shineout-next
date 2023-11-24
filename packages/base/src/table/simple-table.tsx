@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Scroll from '../virtual-scroll/scroll';
 import classNames from 'classnames';
 import {
   useTableLayout,
@@ -8,6 +9,7 @@ import {
   usePersistFn,
   useListSelect,
   useInputAble,
+  useTableVirtual,
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
 
@@ -67,6 +69,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     floatRight,
     width,
     shouldLastColAuto,
+    scrollWidth,
   } = useTableLayout({
     theadRef: theadRef,
     tbodyRef: tbodyRef,
@@ -102,6 +105,14 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     keygen: props.keygen,
     onTreeExpand: props.onTreeExpand,
     treeCheckAll: props.treeCheckAll,
+  });
+
+  const virtualInfo = useTableVirtual({
+    data: sortedData,
+    rowsInView: 20,
+    rowHeight: 40,
+    scrollRef: scrollRef,
+    innerRef: tbodyRef,
   });
 
   const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
@@ -141,27 +152,62 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     />
   );
 
-  const Body = (
-    <Tbody
-      jssStyle={props.jssStyle}
-      columns={columns}
-      data={treeData}
-      treeExpandLevel={treeExpandLevel}
-      treeFunc={treeFunc}
-      colgroup={colgroup}
-      isScrollX={isScrollX}
-      expandHideCol={expandHideCol}
-      keygen={props.keygen}
-      rowClassName={props.rowClassName}
-      expandKeys={props.expandKeys}
-      datum={datum}
-      treeEmptyExpand={props.treeEmptyExpand}
-      isEmptyTree={isEmptyTree}
-      treeColumnsName={treeColumnsName}
-    />
-  );
+  const bodyCommonProps = {
+    jssStyle: props.jssStyle,
+    columns: columns,
+    data: treeData,
+    treeExpandLevel: treeExpandLevel,
+    treeFunc: treeFunc,
+    colgroup: colgroup,
+    isScrollX: isScrollX,
+    expandHideCol: expandHideCol,
+    keygen: props.keygen,
+    rowClassName: props.rowClassName,
+    expandKeys: props.expandKeys,
+    datum: datum,
+    treeEmptyExpand: props.treeEmptyExpand,
+    isEmptyTree: isEmptyTree,
+    treeColumnsName: treeColumnsName,
+  };
+
+  const Body = <Tbody {...bodyCommonProps} />;
 
   const renderTable = () => {
+    if (props.fixed) {
+      return (
+        <>
+          <div className={classNames(tableClasses?.thead)}>
+            <table style={{ width }} ref={theadRef}>
+              {Group}
+              {Header}
+            </table>
+          </div>
+          <Scroll
+            style={{ flex: 1, minHeight: 0 }}
+            wrapperRef={scrollRef}
+            scrollWidth={scrollWidth}
+            scrollHeight={virtualInfo.scrollHeight}
+            onScroll={virtualInfo.handleScroll}
+          >
+            <table
+              style={{
+                width,
+                transform: virtualInfo.getTranslate(),
+              }}
+              ref={tbodyRef}
+            >
+              {Group}
+              <Tbody
+                {...bodyCommonProps}
+                currentIndex={virtualInfo.startIndex}
+                data={virtualInfo.data}
+                setRowHeight={virtualInfo.setRowHeight}
+              />
+            </table>
+          </Scroll>
+        </>
+      );
+    }
     if (!isScrollY && !props.sticky)
       return (
         <div ref={scrollRef} className={tableClasses?.tbody}>

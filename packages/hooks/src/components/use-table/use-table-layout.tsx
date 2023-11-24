@@ -49,6 +49,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const [floatLeft, setFloatLeft] = React.useState(false);
   const [floatRight, setFloatRight] = React.useState(false);
   const [scrollBarWidth, setScrollBarWidth] = React.useState(0);
+  const [scrollWidth, setScrollWidth] = React.useState(0);
   const [colgroup, setColgroup] = React.useState(props.columns.map((v) => v.width));
   const [adjust, setAdjust] = React.useState<boolean | 'drag'>(true);
 
@@ -200,9 +201,16 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     checkFloat();
   });
 
+  const syncScrollWidth = usePersistFn(() => {
+    const scrollEl = scrollRef.current!;
+    const w = scrollEl.scrollWidth;
+    if (w !== scrollWidth) setScrollWidth(w);
+  });
+
   // 页面resize
   const handleResize = usePersistFn((_, dir: { x: boolean; y: boolean; sX: boolean }) => {
     checkScroll();
+    syncScrollWidth();
     if (dir.x) {
       //table 宽度发生变化的时候, 需要同步 colgroup 宽度 给拖拽列或者固定列使用
       resetColGroup();
@@ -236,6 +244,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
 
   useEffect(() => {
     let cancelFunc: () => void | undefined;
+    syncScrollWidth();
     if (scrollRef.current) {
       cancelFunc = addResizeObserver(scrollRef.current, handleResize, { direction: true });
     }
@@ -264,6 +273,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     func,
     width: typeof props.width === 'number' ? props.width + deltaXSum : props.width,
     shouldLastColAuto: props.columnResizable && !adjust,
+    scrollWidth,
   };
 };
 

@@ -15,7 +15,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     rowsInView,
     colNum = 1,
     renderItem,
-    tag,
+    tag = 'div',
     tagClassName,
   } = props;
 

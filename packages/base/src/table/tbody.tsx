@@ -48,6 +48,7 @@ export default (props: TbodyProps) => {
         treeEmptyExpand={props.treeEmptyExpand}
         isEmptyTree={props.isEmptyTree}
         treeColumnsName={props.treeColumnsName}
+        setRowHeight={props.setRowHeight}
       />
     );
   };

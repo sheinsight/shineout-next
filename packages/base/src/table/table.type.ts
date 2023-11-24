@@ -78,6 +78,7 @@ export interface TableProps<DataItem, Value>
     table?: () => TableClasses;
     checkbox?: () => CheckboxClasses;
   };
+  fixed?: boolean | TableFix;
   /**
    * @en is Radio
    * @cn 是否为单选

@@ -5,6 +5,7 @@ export { default as useTableSort } from './use-table-sort';
 export { default as useTableRow } from './use-table-row';
 export { default as useTableExpand } from './use-table-expand';
 export { default as useTableTree } from './use-table-tree';
+export { default as useTableVirtual } from './use-table-virtual';
 
 export type {
   TableFormatColumn,
