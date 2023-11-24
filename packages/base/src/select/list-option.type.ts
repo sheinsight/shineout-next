@@ -6,4 +6,5 @@ export interface ListOptionProps<DataItem, Value>
   index: number;
   data: DataItem;
   datum: DatumType<DataItem, Value>;
+  closePop: () => void;
 }

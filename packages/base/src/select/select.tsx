@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { usePersistFn, usePopup, useSelect } from '@sheinx/hooks';
+import { usePersistFn, usePopup, useSelect, useFilter } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { SelectProps } from './select.type';
 import { AbsoluteList } from '../absolute-list';
@@ -10,7 +10,7 @@ import Result from './result';
 import List from './list';
 import TreeList from './list-tree';
 import Icons from '../icons';
-// import ColumnsList from './list-columns';
+import ColumnsList from './list-columns';
 
 const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   const {
@@ -26,6 +26,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     underline,
     border = true,
     status,
+    columns,
     width,
     multiple,
     keygen,
@@ -46,8 +47,10 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     renderUnmatched,
     resultClassName,
     onChange,
+    onFilter: onFilterProp,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const rootClass = classNames(
     className,
@@ -63,6 +66,8 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       [styles?.multiple]: multiple,
     },
   );
+
+  const { filterText, filterData, onFilter } = useFilter({ data, onFilter: onFilterProp });
 
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
@@ -81,7 +86,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     console.log(isOpen);
   });
 
-  const { open, position, targetRef, popupRef, openPop } = usePopup({
+  const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
     disabled: false,
@@ -91,6 +96,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
 
   const handleResultClick = usePersistFn(() => {
     openPop();
+    inputRef.current?.focus();
   });
 
   const renderInnerTitle = useInnerTitle({
@@ -118,7 +124,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           jssStyle={jssStyle}
           datum={datum}
           value={value}
-          data={data}
+          data={filterData}
           focus={open}
           keygen={keygen}
           disabled={disabled}
@@ -131,6 +137,10 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           renderResult={getRenderResult}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
+          allowOnFilter={'onFilter' in props}
+          filterText={filterText}
+          onFilter={onFilter}
+          onRef={inputRef}
         ></Result>
         {clearable && renderClearable()}
       </div>
@@ -154,7 +164,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
 
   const renderList = () => {
     const listProps = {
-      data,
+      data: filterData,
       datum,
       keygen,
       width,
@@ -165,11 +175,12 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       lineHeight,
       itemsInView,
       renderItem,
+      closePop,
     };
     // 自定义列
-    // if ((typeof columns === 'number' && columns! >= 1) || columns === -1) {
-    //   return <ColumnsList {...listProps}></ColumnsList>;
-    // }
+    if ((typeof columns === 'number' && columns! >= 1) || columns === -1) {
+      return <ColumnsList columns={columns} {...listProps}></ColumnsList>;
+    }
 
     return <List {...listProps}></List>;
   };
@@ -184,6 +195,12 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     }
     return renderList();
   };
+
+  useEffect(() => {
+    if (open && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [open]);
 
   return (
     <div data-soui-type={'input'} className={rootClass}>

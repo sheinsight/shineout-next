@@ -19,6 +19,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     lineHeight = 34,
     loading,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
+    closePop,
   } = props;
 
   const style = {
@@ -40,6 +41,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
       <React.Fragment key={key}>
         <ListOption
           datum={datum}
+          closePop={closePop}
           jssStyle={jssStyle}
           index={index}
           data={item}

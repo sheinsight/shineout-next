@@ -32,10 +32,12 @@ export interface BaseListProps<DataItem, Value>
     | 'itemsInView'
     | 'renderItem'
     | 'multiple'
+    | 'columns'
   > {
   customHeader?: React.ReactNode;
   height: number | string;
   datum: DatumType<DataItem, Value>;
+  closePop: () => void;
 }
 
 export interface SelectProps<DataItem, Value>

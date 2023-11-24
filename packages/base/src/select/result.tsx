@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { util, addResizeObserver } from '@sheinx/hooks';
 import { ResultProps, ResultType } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
-// import { Input } from '../date-picker/result';
+import { Input } from '../date-picker/result';
 import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
@@ -27,14 +27,20 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     renderUnmatched,
     renderResult: renderResultProp,
     // onCreate,
+    allowOnFilter,
+    onRef,
     onFilter,
   } = props;
 
   const [more, setMore] = useState(-1);
+  const [text, setText] = useState('');
+  const [inputWidth] = useState(12);
   const resultRef = useRef<HTMLDivElement>(null);
+  const mirrorRef = useRef<HTMLSpanElement>(null);
+  // const inputWidthRef = useRef<number>(12);
+  const inputRef = useRef<HTMLInputElement>(null);
   const shouldResetMore = useRef(false);
 
-  // const { current: resultCache } = useRef(new Map<Value, ResultType<Value> | DataItem>());
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootClass = classNames(styles.resultTextWrapper, compressed && styles.compressedWrapper);
 
@@ -54,9 +60,23 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return more;
   };
 
-  const renderInput = (text: React.ReactNode) => {
-    console.log(text);
-    return <div>input</div>;
+  const renderInput = () => {
+    return (
+      <React.Fragment key='input'>
+        <Input
+          onRef={(el) => {
+            onRef.current = el;
+            inputRef.current = el;
+          }}
+          style={{ width: inputWidth }}
+          value={text as string}
+          onChange={onFilter}
+        ></Input>
+        <span className={styles.inputMirror} ref={mirrorRef}>
+          {filterText}
+        </span>
+      </React.Fragment>
+    );
   };
 
   const renderResultContent = (data: DataItem | ResultType<Value>) => {
@@ -97,8 +117,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const showPlaceholder = isEmptyResult();
 
   const renderPlaceholder = () => {
-    if (focus && onFilter && showPlaceholder) {
-      return renderInput(multiple ? filterText : '');
+    if (focus && allowOnFilter && showPlaceholder) {
+      return renderInput();
     }
 
     return (
@@ -114,7 +134,11 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     const result = datum.getDataByValues([value]);
     const content = renderResultContent(result[0]);
 
-    return <span className={styles.ellipsis}>{content}</span>;
+    return (
+      <span key='single' className={styles.ellipsis}>
+        {content}
+      </span>
+    );
   };
 
   const renderMultipleResult = () => {
@@ -139,12 +163,19 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderResult = () => {
-    let result = null;
+    let result = [];
 
     if (multiple) {
-      result = compressed ? renderMultipleResultMore() : renderMultipleResult();
+      result.push(compressed ? renderMultipleResultMore() : renderMultipleResult());
+      if (allowOnFilter) {
+        result.push(renderInput());
+      }
     } else {
-      result = renderSingleResult();
+      if (allowOnFilter) {
+        result = [renderInput()];
+      } else {
+        result.push(renderSingleResult());
+      }
     }
 
     return showPlaceholder ? renderPlaceholder() : result;
@@ -167,7 +198,30 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     };
   }, []);
 
+  // focus 或 输入值 text 变化时，更新 input 宽度
   useEffect(() => {
+    if (!mirrorRef.current) return;
+    const input = inputRef.current as HTMLInputElement;
+    input.style.width = `${mirrorRef.current.offsetWidth}px`;
+  }, [filterText, focus]);
+
+  // focus 变化且为 true 时，聚焦 input
+  useEffect(() => {
+    if (!focus || !allowOnFilter) return;
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [focus]);
+
+  useEffect(() => {
+    if (!multiple && allowOnFilter && value) {
+      const result = datum.getDataByValues([value]);
+      const content = renderResultContent(result[0]);
+      if (!isEmpty(content)) {
+        setText(content as string);
+      }
+    }
+
     if (!resultRef.current) return;
     if (!compressed) return;
     if (isCompressedBound()) return;
@@ -176,12 +230,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   }, [value]);
 
   useEffect(() => {
+    if (!compressed) return;
     if (!resultRef.current) return;
     if (more === -1) {
       if (shouldResetMore.current && ((value as Value[]) || []).length) {
         shouldResetMore.current = false;
         const newMore = getResetMore(
-          onFilter,
+          allowOnFilter,
           resultRef.current,
           resultRef.current.querySelectorAll(`.${styles.tag}`),
         );

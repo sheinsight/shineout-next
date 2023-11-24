@@ -23,10 +23,13 @@ export interface ResultProps<DataItem, Value>
     | 'renderItem'
     | 'renderUnmatched'
     | 'onCreate'
-    | 'onFilter'
+    // | 'onFilter'
   > {
   datum: DatumType<DataItem, Value>;
   focus: boolean;
   renderResult: (data: DataItem, index?: number) => React.ReactNode;
   filterText?: string;
+  onRef: React.RefObject<HTMLInputElement>;
+  allowOnFilter: boolean;
+  onFilter: (text: string) => void;
 }

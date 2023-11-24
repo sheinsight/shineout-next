@@ -35,6 +35,7 @@ export type SelectClasses = {
   checkedIcon: string;
   list: string;
   tag: string;
+  inputMirror: string;
   moreWrapper: string;
   virtualList: string;
   option: string;
@@ -128,6 +129,29 @@ const selectStyle: JsStyles<SelectClassType> = {
     flex: '1',
     minWidth: 0,
     textAlign: 'left',
+    // marginTop: 3,
+    // marginBottom: 3,
+    '& > input': {
+      marginTop: 2,
+      marginBottom: 2,
+      color: 'inherit',
+      padding: 0,
+      border: 0,
+      outline: 0,
+      fontSize: 'inherit',
+      lineHeight: token.lineHeightDynamic,
+      backgroundColor: 'transparent',
+      minWidth: 12,
+      maxWidth: '100%',
+      // flex: 1,
+      width: 12,
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
+      '&::placeholder': {
+        color: token.selectPlaceholderColor,
+      },
+    },
   },
   resultAlignLeft: {
     '& $resultTextWrapper': {
@@ -250,6 +274,12 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginTop: 2,
     marginBottom: 2,
     textWrap: 'nowrap',
+  },
+  inputMirror: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    visibility: 'hidden',
   },
   moreWrapper: {
     padding: `${token.selectMorePaddingY} ${token.selectMorePaddingX}`,

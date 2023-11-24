@@ -6,7 +6,7 @@ import Tag from '../tag';
 import Popover from '../popover';
 
 export function getResetMore(
-  onFilter: ((...args: any) => void) | undefined,
+  onFilter: boolean,
   container: HTMLElement,
   doms: NodeListOf<HTMLElement>,
 ) {
@@ -117,10 +117,10 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
           jssStyle={jssStyle}
           visible={visible}
           onVisibleChange={setVisible}
-          showArrow={false}
-          position='bottom-left'
+          // showArrow={false}
+          // position='bottom-left'
         >
-          <div className={styles.moreWrapper} style={{ width: 280 }}>
+          <div className={styles.moreWrapper} style={{ width: 248 }}>
             {after}
           </div>
         </Popover>

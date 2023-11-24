@@ -6,6 +6,7 @@ export const Input = (props: {
   className?: string;
   value: string;
   placeholder?: string;
+  style?: React.CSSProperties;
   onChange: (v: string) => void;
   onRef?: (ref: HTMLInputElement) => void;
   onMouseDown?: (e: React.MouseEvent) => void;
@@ -21,6 +22,7 @@ export const Input = (props: {
   return (
     <input
       ref={props.onRef}
+      style={props.style}
       className={props.className}
       placeholder={props.placeholder}
       autoComplete={'off'}
