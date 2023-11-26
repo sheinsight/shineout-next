@@ -6,13 +6,30 @@ const { markdownLoader, guideLoader } = require('./utils/markdown-loader');
 const docDirName = '__doc__';
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const baseDir = path.join(__dirname, '../packages', 'base', 'src');
+const baseUrl = '';
 
-const formatContent = (contentProps) => {
+const capitalizeFirstLetter = (str) =>
+  str.length === 0 ? '' : str[0].toUpperCase() + str.slice(1);
+
+// format content for suitable gpt
+const formatApi = (contentProps) => {
   if (!contentProps) return;
-  // TODO: dont need possible
-  const content = Array.isArray(contentProps) ? contentProps : [contentProps];
   // TODO: format content
-  return content;
+  return Object.entries(contentProps)
+    .filter(([_, value]) => Array.isArray(value) && value.length > 0)
+    .flatMap(([key, value]) =>
+      value.flatMap(({ title, properties }) =>
+        properties.map(({ name, tag }) => {
+          const capitalizeKey = capitalizeFirstLetter(key);
+          return {
+            title: `Shineout3-${capitalizeKey}组件-${title}-${name}`,
+            content: tag.cn,
+            url: `${baseUrl}/${capitalizeKey}?tab=api`,
+            category: capitalizeKey,
+          };
+        }),
+      ),
+    );
 };
 
 const matchFn = (dirPath) => {
@@ -24,10 +41,9 @@ const matchFn = (dirPath) => {
 /**
  * Extract api from .type.ts files
  * @param {*} dirPath
- * @param {*} componentPath
  * @returns
  */
-const compileApi = (dirPath, componentPath) => {
+const compileApi = (dirPath) => {
   const chunkModuleName = matchFn(dirPath);
   if (!chunkModuleName) return;
 
@@ -39,13 +55,42 @@ const compileApi = (dirPath, componentPath) => {
     }, []);
     return apis;
   };
+  return fs
+    .readdirSync(dirPath)
+    .filter((dir) => !!fs.existsSync(path.join(dirPath, dir, docDirName, 'index.md')))
+    .reduce(
+      (acc, dir) => ({
+        ...acc,
+        [dir]: makeApi(dir),
+      }),
+      {},
+    );
+};
 
-  return !componentPath
-    ? fs
-        .readdirSync(dirPath)
-        .filter((dir) => !!fs.existsSync(path.join(dirPath, dir, docDirName, 'index.md')))
-        .map((dir) => makeApi(dir))
-    : makeApi(componentPath);
+const formatContent = (contentProps) => {
+  if (!contentProps) return;
+
+  return [].concat(contentProps).flatMap(({ header, title, describe, examples, guides }) => [
+    {
+      title: `Shineout3-${header.name}-${title.cn}`,
+      content: describe.cn,
+      url: `${baseUrl}/${header.name}`,
+      category: header.group,
+    },
+    {
+      title: `Shineout3-${header.name}-${title.cn}-guide`,
+      // TODO: cn of guides is array
+      content: guides.cn,
+      url: `${baseUrl}/${header.name}?tab=guide`,
+      category: header.name,
+    },
+    ...examples.map(({ propName, propDescribe }) => ({
+      title: `Shineout3-${header.name}-${title.cn}-${propName.cn}`,
+      content: propDescribe.cn.join('/'),
+      url: `${baseUrl}/${header.name}?tab=examples`,
+      category: header.name,
+    })),
+  ]);
 };
 
 /**
@@ -82,7 +127,12 @@ const compileContent = (dirPath) => {
 
 // TODO: dont have api and data structure for send to gpt
 const sendToGpt = () => {
-  return [...formatContent(compileApi(baseDir)), ...formatContent(compileContent(shineoutDir))];
+  const apiCompilation = compileApi(baseDir);
+  const contentCompilation = compileContent(shineoutDir);
+  if (!apiCompilation || !contentCompilation) return;
+  const content = [...formatApi(apiCompilation), ...formatContent(contentCompilation)];
+  // post request to gpt
+  return content;
 };
 
 module.exports = {

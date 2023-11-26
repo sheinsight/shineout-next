@@ -308,8 +308,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
 
   const removeValue = (index: number) => {
     if (props.disabled) return;
-    const { recoverAble, disabled, beforeRemove } = props;
-    if (disabled) return;
+    const { recoverAble, beforeRemove } = props;
     const current = props.value[index];
     const startRemove =
       typeof beforeRemove === 'function' ? beforeRemove(current) : Promise.resolve();
