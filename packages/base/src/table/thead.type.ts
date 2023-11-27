@@ -16,4 +16,6 @@ export interface TheadProps
   bordered?: boolean;
   colgroup: (number | undefined)[];
   datum: ListDatum;
+  fixLeftNum?: number;
+  fixRightNum?: number;
 }

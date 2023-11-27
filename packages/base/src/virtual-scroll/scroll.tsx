@@ -41,7 +41,7 @@ const Scroll = (props: scrollProps) => {
 
   const placeStyle = {
     marginTop: Math.max(0, scrollHeight - height),
-    marginRight: Math.max(0, scrollWidth - width),
+    marginRight: scrollWidth,
     height: 0,
   };
 

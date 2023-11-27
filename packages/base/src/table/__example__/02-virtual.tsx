@@ -56,6 +56,7 @@ const columns = [
     title: 'ID2',
     render: 'id',
     width: 40,
+    fixed: 'left',
   },
   {
     title: 'age2',
@@ -90,7 +91,7 @@ const columns = [
     title: 'Sex',
     render: 'sex',
     width: 50,
-    // fixed: 'right',
+    fixed: 'right',
   },
 ];
 
@@ -99,7 +100,7 @@ export default () => {
     <div>
       <Table
         sticky={{ top: 180 }}
-        // width={1200}
+        width={1200}
         style={{ height: '500px' }}
         keygen='id'
         fixed

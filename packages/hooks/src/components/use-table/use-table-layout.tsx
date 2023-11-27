@@ -9,10 +9,6 @@ import { isFunc, isNumber } from '../../utils/is';
 
 const MIN_RESIZABLE_WIDTH = 20;
 
-function setElScrollLeft(target: HTMLElement | null, scrollLeft: number) {
-  if (target && target.scrollLeft !== scrollLeft) target.scrollLeft = scrollLeft;
-}
-
 function compareColumnWidth(curCols: TableFormatColumn<any>[], preCols: TableFormatColumn<any>[]) {
   if (curCols.length !== preCols.length) return false;
   for (let i = 0, count = curCols.length; i < count; i++) {
@@ -187,20 +183,6 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     if (r !== floatRight) setFloatRight(r);
   });
 
-  const setScrollLeft = usePersistFn((num: number, syncELArr: Array<HTMLElement | null>) => {
-    const scrollEl = scrollRef.current!;
-    const max = scrollEl.scrollWidth - scrollEl.clientWidth;
-    const min = 0;
-
-    const left = Math.min(Math.max(num, min), max);
-    syncELArr.forEach((v) => {
-      if (v) {
-        setElScrollLeft(v!, left);
-      }
-    });
-    checkFloat();
-  });
-
   const syncScrollWidth = usePersistFn(() => {
     const scrollEl = scrollRef.current!;
     const w = scrollEl.scrollWidth;
@@ -219,10 +201,10 @@ const useTableLayout = (props: UseTableLayoutProps) => {
 
   const func = useLatestObj({
     scrollCheck: checkScroll,
-    setScrollLeft,
     resetColGroup,
     resizeCol,
     dragCol,
+    checkFloat,
   });
 
   useEffect(() => {
@@ -274,6 +256,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     width: typeof props.width === 'number' ? props.width + deltaXSum : props.width,
     shouldLastColAuto: props.columnResizable && !adjust,
     scrollWidth,
+    maxScrollLeft: scrollWidth - context.clientWidth,
   };
 };
 

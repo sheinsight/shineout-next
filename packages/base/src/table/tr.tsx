@@ -17,6 +17,8 @@ interface TrProps
     | 'treeEmptyExpand'
     | 'isEmptyTree'
     | 'setRowHeight'
+    | 'fixLeftNum'
+    | 'fixRightNum'
   > {
   row: {
     data: any[];
@@ -40,26 +42,44 @@ const Tr = (props: TrProps) => {
   const { treeFunc } = props;
   const tableClasses = props.jssStyle?.table?.();
   const trRef = useRef<HTMLTableRowElement>(null);
-  const getTdStyle = (column: TableFormatColumn<any>, colSpan: number) => {
-    const index = column.index;
+
+  const getFixedStyle = (fixed: 'left' | 'right' | undefined, index: number, colSpan: number) => {
     if (!props.isScrollX) return;
-    if (column.fixed === 'left') {
+    if (fixed === 'left') {
+      if (props.fixLeftNum !== undefined) {
+        return {
+          transform: `translate3d(${props.fixLeftNum}px, 0, 0)`,
+        } as React.CSSProperties;
+      }
       const left = props.colgroup.slice(0, index).reduce((a, b) => (a || 0) + (b || 0), 0);
       return {
-        ...column.style,
-        left: left,
+        position: 'sticky',
+        left,
       } as React.CSSProperties;
     }
-    if (column.fixed === 'right') {
+    if (fixed === 'right') {
+      if (props.fixRightNum !== undefined) {
+        return {
+          transform: `translate3d(-${props.fixRightNum}px, 0, 0)`,
+        } as React.CSSProperties;
+      }
       const right = props.colgroup
         .slice(index + 1 + colSpan)
         .reduce((a, b) => (a || 0) + (b || 0), 0);
       return {
-        ...column.style,
-        right: right,
+        position: 'sticky',
+        right,
       } as React.CSSProperties;
     }
-    return column.style;
+    return {} as React.CSSProperties;
+  };
+  const getTdStyle = (column: TableFormatColumn<any>, colSpan: number) => {
+    const index = column.index;
+    const fixedStyle = getFixedStyle(column.fixed, index, colSpan);
+    return {
+      ...column.style,
+      ...fixedStyle,
+    } as React.CSSProperties;
   };
 
   useEffect(() => {

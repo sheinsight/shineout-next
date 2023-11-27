@@ -17,9 +17,9 @@ export interface TableClasses {
   verticalAlignTop: string;
   verticalAlignMiddle: string;
 
-  thead: string;
-  tbody: string;
-  tfoot: string;
+  headWrapper: string;
+  bodyWrapper: string;
+  footWrapper: string;
 
   cellFixedLeft: string;
   cellFixedRight: string;

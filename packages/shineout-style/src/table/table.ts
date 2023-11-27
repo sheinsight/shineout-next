@@ -12,9 +12,9 @@ export type TableClasses = {
   verticalAlignTop: string;
   verticalAlignMiddle: string;
 
-  thead: string;
-  tbody: string;
-  tfoot: string;
+  headWrapper: string;
+  bodyWrapper: string;
+  footWrapper: string;
 
   cellFixedLeft: string;
   cellFixedRight: string;
@@ -68,7 +68,6 @@ const tableStyle: JsStyles<TableClassType> = {
         padding: `${token.tableCellPaddingY} ${token.tableCellPaddingX}`,
         lineHeight: token.lineHeightDynamic,
         '&$cellFixedLeft, &$cellFixedRight': {
-          position: 'sticky',
           zIndex: fixedIndex,
         },
         '$bordered&::after': {
@@ -79,11 +78,14 @@ const tableStyle: JsStyles<TableClassType> = {
           right: 0,
           bottom: 0,
           width: '1px',
-          //  left: '0',
-          //  height: '1px',
-          //  margin: 'auto',
           background: token.tableCellBorderColor,
         },
+      },
+
+      '& td': {
+        verticalAlign: 'middle',
+        background: token.tableTbodyBackgroundColor,
+        color: token.tableTbodyFontColor,
       },
       '& th': {
         verticalAlign: 'middle',
@@ -97,7 +99,7 @@ const tableStyle: JsStyles<TableClassType> = {
   bordered: {
     border: `1px solid ${token.tableCellBorderColor}`,
   },
-  thead: {
+  headWrapper: {
     flex: '0 0 auto',
     overflow: 'hidden',
     boxSizing: 'border-box',
@@ -106,17 +108,11 @@ const tableStyle: JsStyles<TableClassType> = {
       zIndex: headerIndex,
     },
   },
-  tbody: {
+  bodyWrapper: {
     overflow: 'auto',
     boxSizing: 'border-box',
-
-    '& td': {
-      backgroundColor: token.tableTbodyBackgroundColor,
-      color: token.tableTbodyFontColor,
-      boxSizing: 'border-box',
-    },
   },
-  tfoot: {
+  footWrapper: {
     '&  td': {
       width: '100%',
       boxSizing: 'border-box',
@@ -124,7 +120,7 @@ const tableStyle: JsStyles<TableClassType> = {
     ...hideScrollBar(),
   },
   scrollY: {
-    '& $thead': {
+    '& $bodyWrapper': {
       overflowY: 'scroll',
       ...customScrollBar({ background: 'transparent' }),
     },
