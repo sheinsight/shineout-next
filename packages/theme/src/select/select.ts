@@ -56,6 +56,8 @@ const selectTokens: SelectTokens = {
   selectOptionDisabledBackgroundColor: 'Neutral-fill-1',
   selectMorePaddingX: 'Padding-16',
   selectMorePaddingY: 'Padding-14',
+  selectHeaderPadding: 'Padding-8',
+  selectHeaderBorderColor: 'Neutral-border-1',
 };
 
 export default selectTokens;

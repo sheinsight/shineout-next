@@ -16,6 +16,7 @@ const selectTokenDescription = {
   inner: '内部容器的',
   clear: '清除按钮的',
   more: '折叠内容的',
+  header: '列表头部的',
 };
 
 /**
@@ -84,6 +85,12 @@ const selectTokenExtraValue = {
     padding: {
       x: 'Padding-16',
       y: 'Padding-14',
+    },
+  },
+  header: {
+    padding: 'Padding-8',
+    border: {
+      color: 'Neutral-border-1',
     },
   },
 };

@@ -11,6 +11,8 @@ import {
   useInnerTitleStyle,
   useVirtualScrollStyle,
   useTagStyle,
+  useCheckboxStyle,
+  useRadioStyle,
   usePopoverStyle,
 } from '@sheinx/shineout-style';
 
@@ -20,6 +22,8 @@ const jssStyle = {
   innerTitle: useInnerTitleStyle,
   virtualScroll: useVirtualScrollStyle,
   popover: usePopoverStyle,
+  checkbox: useCheckboxStyle,
+  radio: useRadioStyle,
 };
 const data: { id: string; name: string }[] = [];
 const v = [];
@@ -55,16 +59,16 @@ export default () => {
       <Select
         data={data}
         multiple
-        // compressed
-        // compressedBound={2}
+        compressed
+        compressedBound={2}
         // innerTitle='innerTitle'
         value={value}
-        columns={2}
+        columns={4}
         onChange={handleChange}
         keygen='id'
         format='id'
         prediction={(v, d) => v === d.id}
-        // disabled={(d) => d.id.indexOf('1') > -1}
+        disabled={(d) => d.id.indexOf('1') > -1}
         jssStyle={jssStyle}
         placeholder='请选择'
         onFilter={handleFilter}

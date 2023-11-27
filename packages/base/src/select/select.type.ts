@@ -7,6 +7,8 @@ import { SelectClasses } from '@sheinx/shineout-style';
 import { InnerTitleClasses } from '../common/use-inner-title';
 import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
 import { PopoverClasses } from '../popover/popover.type';
+import { CheckboxClasses } from '../checkbox/checkbox.type';
+import { RadioClasses } from '../radio/radio.type';
 
 export type JssStyleType = {
   tag: () => TagClasses;
@@ -14,6 +16,8 @@ export type JssStyleType = {
   innerTitle?: () => InnerTitleClasses;
   virtualScroll: () => VirtualScrollClasses;
   popover?: () => PopoverClasses;
+  checkbox?: () => CheckboxClasses;
+  radio?: () => RadioClasses;
 };
 
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
@@ -22,6 +26,7 @@ export interface BaseListProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
     | 'jssStyle'
+    | 'value'
     | 'data'
     | 'width'
     | 'optionWidth'
@@ -33,11 +38,13 @@ export interface BaseListProps<DataItem, Value>
     | 'renderItem'
     | 'multiple'
     | 'columns'
+    | 'columnWidth'
   > {
   customHeader?: React.ReactNode;
   height: number | string;
   datum: DatumType<DataItem, Value>;
   closePop: () => void;
+  originalData: DataItem[];
 }
 
 export interface SelectProps<DataItem, Value>
@@ -151,6 +158,7 @@ export interface SelectProps<DataItem, Value>
 
   noCache?: boolean;
   trim?: boolean;
+  columnWidth?: number;
   maxLength?: number;
   separator?: string;
   compressed?: boolean;

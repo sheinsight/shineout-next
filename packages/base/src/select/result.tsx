@@ -16,7 +16,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     multiple,
     datum,
     keygen,
-    // data,
     value,
     // noCache,
     focus,
@@ -153,6 +152,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     const moreNumber = getCompressedBound();
     return (
       <More
+        key='more'
         jssStyle={jssStyle}
         data={result}
         more={moreNumber}

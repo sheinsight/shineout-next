@@ -2,8 +2,11 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": "./",
     "paths": {
-      "@sheinx/theme": ["../theme/src/index"]
+      "@sheinx/hooks": ["./src/index"]
     }
   }
 }

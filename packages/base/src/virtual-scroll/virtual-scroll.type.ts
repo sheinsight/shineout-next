@@ -47,12 +47,12 @@ export interface VirtualScrollProps extends Pick<CommonType, 'style'> {
 export interface VirtualListProps<DataItem>
   extends Pick<CommonType, 'className'>,
     Pick<VirtualScrollProps, 'jssStyle' | 'tag' | 'tagClassName'> {
-  data: DataItem[];
+  data: DataItem[] | DataItem[][];
   listStyle?: React.CSSProperties;
   keygen?: KeygenType<DataItem>;
   height: number;
   lineHeight: number;
   rowsInView: number;
   colNum?: number;
-  renderItem: any;
+  renderItem: (item: DataItem | DataItem[], index: number) => React.ReactNode;
 }

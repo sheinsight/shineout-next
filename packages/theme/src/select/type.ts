@@ -314,4 +314,16 @@ export interface SelectTokens {
    * @description 选择器折叠内容的内边距（垂直方向）
    */
   selectMorePaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器列表头部的内边距
+   */
+  selectHeaderPadding: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 选择器列表头部的边框颜色
+   */
+  selectHeaderBorderColor: string;
 }

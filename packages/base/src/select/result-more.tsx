@@ -120,9 +120,7 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
           // showArrow={false}
           // position='bottom-left'
         >
-          <div className={styles.moreWrapper} style={{ width: 248 }}>
-            {after}
-          </div>
+          <div className={styles.moreWrapper}>{after}</div>
         </Popover>
       </span>
     </React.Fragment>

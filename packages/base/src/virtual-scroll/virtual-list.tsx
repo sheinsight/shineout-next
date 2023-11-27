@@ -13,7 +13,6 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     lineHeight,
     height,
     rowsInView,
-    colNum = 1,
     renderItem,
     tag,
     tagClassName,
@@ -23,7 +22,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   const virtualRef = useRef<VirtualRefType>();
 
   const getScrollHeight = () => {
-    const rows = Math.ceil(data.length / colNum);
+    const rows = Math.ceil(data.length);
     return rows * lineHeight;
   };
 
@@ -35,8 +34,9 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   const scrollHeight = getScrollHeight();
 
   const renderList = () => {
-    const start = currentIndex * colNum;
-    const end = (currentIndex + rowsInView) * colNum;
+    const start = currentIndex;
+    const end = currentIndex + rowsInView;
+
     let items = data.slice(start, end);
 
     return (
@@ -48,13 +48,12 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         tagClassName={tagClassName}
         scrollWidth={0}
         scrollHeight={scrollHeight}
-        translate={currentIndex * lineHeight}
         onScroll={handleScroll}
       >
         <div style={{ height: currentIndex * lineHeight, gridColumnEnd: '-1' }} />
-        {items.map((d: DataItem, i: number) => {
-          const key = util.getKey(keygen, d, i);
-          return <React.Fragment key={key}>{renderItem(d, currentIndex + i, key)}</React.Fragment>;
+        {items.map((d: DataItem | DataItem[], i: number) => {
+          const key = util.getKey(keygen, d as DataItem, i);
+          return <React.Fragment key={key}>{renderItem(d, start + i)}</React.Fragment>;
         })}
       </VirtualScroll>
     );

@@ -26,7 +26,8 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     underline,
     border = true,
     status,
-    columns,
+    columns = 1,
+    columnWidth = 160,
     width,
     multiple,
     keygen,
@@ -166,6 +167,8 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     const listProps = {
       data: filterData,
       datum,
+      value,
+      originalData: data,
       keygen,
       width,
       height,
@@ -173,12 +176,13 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       multiple,
       optionWidth,
       lineHeight,
+      columnWidth,
       itemsInView,
       renderItem,
       closePop,
     };
     // 自定义列
-    if ((typeof columns === 'number' && columns! >= 1) || columns === -1) {
+    if (('columns' in props && typeof columns === 'number' && columns! >= 1) || columns === -1) {
       return <ColumnsList columns={columns} {...listProps}></ColumnsList>;
     }
 
@@ -223,7 +227,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           display={'block'}
           type={'fade'}
           duration={'fast'}
-          style={{ width: '100%' }}
+          style={{ width: columns > 1 ? columns * columnWidth : '100%' }}
         >
           {renderOptions()}
         </AnimationList>

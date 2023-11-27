@@ -45,6 +45,10 @@ export type SelectClasses = {
   optionDisabled: string;
   optionGroup: string;
   optionGroupTitle: string;
+  header: string;
+  customHeader: string;
+  columns: string;
+  columnsOption: string;
 };
 export type SelectClassType = keyof SelectClasses;
 
@@ -282,6 +286,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
+    width: 248,
+    height: 72,
+    overflow: 'auto',
     padding: `${token.selectMorePaddingY} ${token.selectMorePaddingX}`,
   },
   virtualList: {
@@ -320,6 +327,24 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   optionGroup: {},
   optionGroupTitle: {},
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    boxSizing: 'border-box',
+    height: 32,
+    padding: token.selectHeaderPadding,
+    borderBottom: `1px solid ${token.selectHeaderBorderColor}`,
+  },
+  customHeader: {},
+  columns: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  columnsOption: {
+    flex: 1,
+    paddingLeft: 8,
+    paddingRight: 8,
+  },
 };
 
 export default selectStyle;
