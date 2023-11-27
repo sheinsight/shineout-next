@@ -41,9 +41,9 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
   const restLength = limit - value.length - Object.keys(filesState).length;
 
   const text = {
-    ...props.text,
     forceAcceptErrorMsg: 'invalidAccept',
     invalidImage: 'invalidImage',
+    ...props.text,
   };
 
   const validateFile = async (blob: File, image?: { width: number; height: number }) => {
