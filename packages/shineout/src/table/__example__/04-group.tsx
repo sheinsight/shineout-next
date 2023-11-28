@@ -1,8 +1,8 @@
 /**
- * cn - 基本用法
- *    -- 基础的表格用法。推荐 columns 写为常量，以提升性能。
- * en - Base
- *    -- Basic table usage.
+ * cn - 表头分组
+ *    -- Table 会自动合并相邻相同 group 的表头
+ * en - Column group
+ *    -- Table automatically merges headers with adjacent and identical groups.
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';
@@ -20,7 +20,6 @@ interface TableRowData {
   lastName: string;
   firstName: string;
 }
-
 type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
 
 const data: TableRowData[] = [
@@ -78,17 +77,23 @@ const data: TableRowData[] = [
   },
 ];
 
+const name = (
+  <span style={{ background: '#ccc', display: 'block', lineHeight: '40px', color: '#fff' }}>
+    Name
+  </span>
+);
+
+const other = <span>Other</span>;
+
 const columns: TableColumnItem[] = [
-  { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },
+  { title: 'First Name', render: 'firstName', group: [name, 'True Name'] },
+  { title: 'Last Name', render: 'lastName', group: [name, 'True Name'] },
+  { title: 'Nick Name', render: () => 'nickname', group: name },
   { title: 'Country', render: 'country' },
-  { title: 'Position', render: 'position' },
-  { title: 'Office', render: 'office' },
+  { title: 'Office', render: 'office', group: other },
+  { title: 'Position', render: 'position', group: other },
 ];
 
-export default () => {
-  return (
-    <div>
-      <Table keygen='id' columns={columns} data={data} />
-    </div>
-  );
-};
+const App: React.FC = () => <Table bordered keygen='id' columns={columns} data={data} />;
+
+export default App;

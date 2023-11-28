@@ -23,10 +23,26 @@ const tableTokenExtraValue = {
   },
   cell: {
     padding: {
-      x: 'Padding-8',
-      y: 'Padding-4',
+      x: 'Padding-12',
+      y: 'Padding-8',
     },
     border: { color: 'Neutral-border-1' },
+  },
+  small: {
+    cell: {
+      padding: {
+        x: 'Padding-8',
+        y: 'Padding-4',
+      },
+    },
+  },
+  large: {
+    cell: {
+      padding: {
+        x: 'Padding-16',
+        y: 'Padding-12',
+      },
+    },
   },
 
   thead: {
@@ -35,7 +51,14 @@ const tableTokenExtraValue = {
   },
   tbody: {
     background: { color: 'Neutral-fill-1' },
+    striped: { background: { color: 'Neutral-fill-2' } },
+    hover: { background: { color: 'Brand-1' } },
     font: { color: 'Neutral-text-5' },
+  },
+  sorter: {
+    color: 'Neutral-text-3',
+    hover: { color: 'Neutral-text-4' },
+    active: { color: 'Brand-6' },
   },
 };
 

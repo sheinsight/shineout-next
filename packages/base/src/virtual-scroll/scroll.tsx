@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { usePersistFn, useResize } from '@sheinx/hooks';
+import { usePersistFn, useResize, util } from '@sheinx/hooks';
 
 interface scrollProps {
   scrollHeight: number;
@@ -15,6 +15,7 @@ interface scrollProps {
   }) => void;
   className?: string;
   style?: React.CSSProperties;
+  scrollerStyle?: React.CSSProperties;
 }
 
 const Scroll = (props: scrollProps) => {
@@ -26,7 +27,7 @@ const Scroll = (props: scrollProps) => {
   const { width, height } = useResize({ targetRef: containerRef });
   const { scrollHeight = 0, scrollWidth = 0 } = props;
 
-  const scrollerStyle = {
+  const scrollerStyle = props.scrollerStyle || {
     height: '100%',
     width: '100%',
     overflow: 'auto',
@@ -77,12 +78,17 @@ const Scroll = (props: scrollProps) => {
   return (
     <div className={props.className} style={props.style}>
       <div
+        {...util.getDataAttribute({ type: 'scroll' })}
         style={scrollerStyle}
         onScroll={handleScroll}
         ref={props.wrapperRef}
         onWheel={handleWheel}
       >
-        <div style={containerStyle} ref={containerRef}>
+        <div
+          {...util.getDataAttribute({ type: 'scroll-container' })}
+          style={containerStyle}
+          ref={containerRef}
+        >
           {props.children}
         </div>
         <div style={placeStyle}>&nbsp;</div>

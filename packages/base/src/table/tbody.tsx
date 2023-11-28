@@ -51,6 +51,7 @@ export default (props: TbodyProps) => {
         setRowHeight={props.setRowHeight}
         fixLeftNum={props.fixLeftNum}
         fixRightNum={props.fixRightNum}
+        striped={props.striped}
       />
     );
   };

@@ -19,6 +19,7 @@ interface TrProps
     | 'setRowHeight'
     | 'fixLeftNum'
     | 'fixRightNum'
+    | 'striped'
   > {
   row: {
     data: any[];
@@ -229,7 +230,10 @@ const Tr = (props: TrProps) => {
     <>
       <tr
         ref={trRef}
-        className={props?.rowClassName?.(props.rawData, props.rowIndex)}
+        className={classNames(
+          props?.rowClassName?.(props.rawData, props.rowIndex),
+          props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
+        )}
         onClick={() => {
           if (props.rowClickExpand) {
             props.handleExpandClick(

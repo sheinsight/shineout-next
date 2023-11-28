@@ -1,8 +1,8 @@
 /**
- * cn - 基本用法
- *    -- 基础的表格用法。推荐 columns 写为常量，以提升性能。
- * en - Base
- *    -- Basic table usage.
+ * cn - 边框和底纹
+ *    -- 通过 striped 显示交错底纹；通过 bordered 显示边框。
+ * en - Style
+ *    -- Set striped to add zebra-striping; Set bordered to add borders.
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';
@@ -88,7 +88,7 @@ const columns: TableColumnItem[] = [
 export default () => {
   return (
     <div>
-      <Table keygen='id' columns={columns} data={data} />
+      <Table keygen='id' columns={columns} data={data} bordered striped />
     </div>
   );
 };

@@ -1,11 +1,11 @@
 /**
- * cn - 基本用法
- *    -- 基础的表格用法。推荐 columns 写为常量，以提升性能。
- * en - Base
- *    -- Basic table usage.
+ * cn - 尺寸类型
+ *    -- 设置 size 为 small 显示紧凑表格，large 为显示松散表格
+ * en - Size
+ *    -- Set size to small to display compact table, large to display loose table.
  */
 import React from 'react';
-import { Table, TYPE } from 'shineout';
+import { Radio, Table } from 'shineout';
 
 interface TableRowData {
   id: number;
@@ -85,10 +85,19 @@ const columns: TableColumnItem[] = [
   { title: 'Office', render: 'office' },
 ];
 
+const sizeList = ['small', 'default', 'large'];
 export default () => {
+  const [size, setSize] = React.useState<'small' | 'large' | 'default'>('default');
   return (
     <div>
-      <Table keygen='id' columns={columns} data={data} />
+      <Radio.Group
+        keygen
+        data={sizeList}
+        value={size}
+        onChange={setSize}
+        style={{ marginBottom: 24 }}
+      />
+      <Table keygen='id' size={size} columns={columns} data={data} />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Scroll from '../virtual-scroll/scroll';
 import classNames from 'classnames';
+import Spin from '../spin';
 import {
   useTableLayout,
   useTableColumns,
@@ -16,6 +17,10 @@ import { TableProps } from './table.type';
 import Colgroup from './colgroup';
 import Thead from './thead';
 import Tbody from './tbody';
+
+const emptyArr: any[] = [];
+const virtualScrollerStyle = { flex: 1, minWidth: 0, minHeight: 0, overflow: 'auto' };
+const scrollWrapperStyle = { flex: 1, minHeight: 0, minWidth: 0, display: 'flex' };
 // import Tfoot from './tfoot';
 
 // 功能清单
@@ -37,7 +42,9 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const theadRef = useRef<HTMLTableElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const { verticalAlign = 'top' } = props;
+  const virtual = !!props.virtual || !!props.fixed;
+
+  const { verticalAlign = 'top', size = 'default' } = props;
   const inputableData = useInputAble({
     value: props.value,
     defaultValue: undefined,
@@ -71,6 +78,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     shouldLastColAuto,
     scrollWidth,
     maxScrollLeft,
+    scrollBarWidth,
   } = useTableLayout({
     theadRef,
     tbodyRef,
@@ -109,8 +117,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   });
 
   const virtualInfo = useTableVirtual({
-    data: sortedData,
-    rowsInView: 20,
+    data: virtual ? sortedData : emptyArr,
+    rowsInView: props.rowsInView || 20,
     rowHeight: 40,
     scrollRef: scrollRef,
     innerRef: tbodyRef,
@@ -120,7 +128,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const setLeft = usePersistFn((left: number) => {
     let thead = theadRef?.current;
     if (thead) {
-      thead.style.transform = `translate3d(-${left}px, 0, 0)`;
+      if (virtual) {
+        thead.style.transform = `translate3d(-${left}px, 0, 0)`;
+      } else {
+        thead.parentElement!.scrollLeft = left;
+      }
     }
     layoutFunc.checkFloat();
   });
@@ -176,6 +188,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       treeEmptyExpand: props.treeEmptyExpand,
       isEmptyTree: isEmptyTree,
       treeColumnsName: treeColumnsName,
+      striped: props.striped,
     };
 
     const headCommonProps = {
@@ -192,7 +205,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       showSelectAll: props.showSelectAll,
       datum: datum,
     };
-    if (props.fixed) {
+    if (virtual) {
       return (
         <>
           <div className={classNames(tableClasses?.headWrapper)}>
@@ -209,7 +222,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             </table>
           </div>
           <Scroll
-            style={{ flex: 1, minHeight: 0 }}
+            style={scrollWrapperStyle}
+            scrollerStyle={virtualScrollerStyle}
             wrapperRef={scrollRef}
             scrollWidth={scrollWidth}
             scrollHeight={virtualInfo.scrollHeight}
@@ -247,7 +261,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       top !== undefined ? ({ top, position: 'sticky' } as React.CSSProperties) : undefined;
     return (
       <>
-        <div className={classNames(tableClasses?.headWrapper)} style={stickyStyle}>
+        <div
+          className={classNames(tableClasses?.headWrapper, scrollBarWidth && tableClasses?.scrollY)}
+          style={stickyStyle}
+        >
           <table style={{ width }} ref={theadRef}>
             {Group}
             {<Thead {...headCommonProps} />}
@@ -260,6 +277,15 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           </table>
         </div>
       </>
+    );
+  };
+
+  const renderLoading = () => {
+    if (!props.loading) return null;
+    return (
+      <div className={classNames(tableClasses?.loading)}>
+        {props.loading === true ? <Spin jssStyle={props.jssStyle} size={24} name='ring' /> : null}
+      </div>
     );
   };
 
@@ -296,15 +322,18 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         tableClasses?.wrapper,
         floatLeft && tableClasses?.floatLeft,
         floatRight && tableClasses?.floatRight,
-        isScrollY && tableClasses?.scrollY,
         props.bordered && tableClasses?.bordered,
         props.sticky && tableClasses?.sticky,
         verticalAlign === 'top' && tableClasses?.verticalAlignTop,
         verticalAlign === 'middle' && tableClasses?.verticalAlignMiddle,
+        size === 'small' && tableClasses?.small,
+        size === 'large' && tableClasses?.large,
+        size === 'default' && tableClasses?.default,
       )}
       style={props.style}
     >
       {renderTable()}
+      {renderLoading()}
     </div>
   );
 };

@@ -224,6 +224,16 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
 
+  packages/mock:
+    dependencies:
+      dayjs:
+        specifier: '>=0.0.0'
+        version: 1.11.9
+    devDependencies:
+      '@types/node':
+        specifier: ^20.4.0
+        version: 20.4.0
+
   packages/shineout:
     dependencies:
       '@sheinx/base':
@@ -245,6 +255,9 @@ importers:
         specifier: '>=16.8'
         version: 18.2.0
     devDependencies:
+      '@sheinx/mock':
+        specifier: workspace:*
+        version: link:../mock
       jszip:
         specifier: ^3.10.1
         version: 3.10.1

@@ -4,6 +4,9 @@ import { hideScrollBar, customScrollBar } from '../mixin';
 
 export type TableClasses = {
   wrapper: string;
+  small: string;
+  large: string;
+  default: string;
   scrollY: string;
   floatLeft: string;
   floatRight: string;
@@ -12,6 +15,8 @@ export type TableClasses = {
   verticalAlignTop: string;
   verticalAlignMiddle: string;
 
+  loading: string;
+
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
@@ -19,6 +24,9 @@ export type TableClasses = {
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
+  cellCenter: string;
+
+  rowStriped: string;
 
   hasSorter: string;
   sorterContainer: string;
@@ -42,6 +50,7 @@ const cellBaseIndex = 4;
 const sorterIndex = 10;
 const fixedIndex = 8;
 const headerIndex = 12;
+const loadingIndex = 16;
 
 export type TableClassType = keyof TableClasses;
 
@@ -65,7 +74,6 @@ const tableStyle: JsStyles<TableClassType> = {
         position: 'relative',
         borderBottom: `1px solid ${token.tableCellBorderColor}`,
         boxSizing: 'border-box',
-        padding: `${token.tableCellPaddingY} ${token.tableCellPaddingX}`,
         lineHeight: token.lineHeightDynamic,
         '&$cellFixedLeft, &$cellFixedRight': {
           zIndex: fixedIndex,
@@ -83,7 +91,6 @@ const tableStyle: JsStyles<TableClassType> = {
       },
 
       '& td': {
-        verticalAlign: 'middle',
         background: token.tableTbodyBackgroundColor,
         color: token.tableTbodyFontColor,
       },
@@ -94,10 +101,50 @@ const tableStyle: JsStyles<TableClassType> = {
         fontWeight: 'bold',
         boxSizing: 'border-box',
       },
+      '& tr:hover td': {
+        background: token.tableTbodyHoverBackgroundColor,
+      },
+    },
+  },
+  loading: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    display: 'flex',
+    overflow: 'hidden',
+    zIndex: loadingIndex,
+    backgroundColor: 'hsla(0,0%,100%,.4)',
+  },
+  default: {
+    '& th, & td': {
+      padding: `${token.tableCellPaddingY} ${token.tableCellPaddingX}`,
+    },
+  },
+  small: {
+    '& th, & td': {
+      padding: `${token.tableSmallCellPaddingY} ${token.tableSmallCellPaddingX}`,
+    },
+  },
+  large: {
+    '& th, & td': {
+      padding: `${token.tableLargeCellPaddingY} ${token.tableLargeCellPaddingX}`,
     },
   },
   bordered: {
     border: `1px solid ${token.tableCellBorderColor}`,
+    borderBottom: 'none',
+    '&::after': {
+      position: 'absolute',
+      content: '""',
+      display: 'block',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: '1px',
+      background: token.tableCellBorderColor,
+    },
   },
   headWrapper: {
     flex: '0 0 auto',
@@ -120,7 +167,7 @@ const tableStyle: JsStyles<TableClassType> = {
     ...hideScrollBar(),
   },
   scrollY: {
-    '& $bodyWrapper': {
+    '&$headWrapper': {
       overflowY: 'scroll',
       ...customScrollBar({ background: 'transparent' }),
     },
@@ -132,6 +179,9 @@ const tableStyle: JsStyles<TableClassType> = {
     position: 'sticky',
   },
   cellFixedLast: {},
+  cellCenter: {
+    textAlign: 'center',
+  },
   floatLeft: {
     '& $cellFixedLast$cellFixedLeft::after': {
       content: '""',
@@ -157,25 +207,32 @@ const tableStyle: JsStyles<TableClassType> = {
 
   hasSorter: {
     display: 'flex',
+    alignItems: 'center',
   },
   sorterContainer: {
-    minWidth: '18px',
-    width: '18px',
+    minWidth: '14px',
+    width: '14px',
     position: 'relative',
     transform: 'translateX(6px)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'stretch',
+    flexDirection: 'column',
     '& $sorterAsc, & $sorterDesc': {
-      position: 'absolute',
       right: 0,
       width: '100%',
-      color: '#666c7c',
+      width: '7px',
+      height: '5px',
+      color: token.tableSorterColor,
       display: 'flex',
       justifyContent: 'center',
       cursor: 'pointer',
-      '& > svg': {
-        width: '8px',
+      '&:hover': {
+        color: token.tableSorterHoverColor,
       },
       '&$sorterActive': {
-        color: '#19718A',
+        color: token.tableSorterActiveColor,
       },
     },
   },
@@ -187,6 +244,7 @@ const tableStyle: JsStyles<TableClassType> = {
   sorterDesc: {
     top: '50%',
     bottom: 0,
+    marginTop: '4px',
   },
 
   sorterActive: {},
@@ -277,6 +335,11 @@ const tableStyle: JsStyles<TableClassType> = {
     verticalAlign: 'top',
     lineHeight: '1.85',
     height: '14px',
+  },
+  rowStriped: {
+    '&& td': {
+      background: token.tableTbodyStripedBackgroundColor,
+    },
   },
 };
 

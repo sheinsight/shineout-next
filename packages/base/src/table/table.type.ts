@@ -3,12 +3,17 @@ import { CommonType } from '../common/type';
 import type { ObjectType, TableColumnItem, BaseTableProps, ObjectKey } from '@sheinx/hooks';
 import { useListSelect, useTableTree } from '@sheinx/hooks';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
+import { RadioClasses } from '../radio/radio.type';
+import { SpinClasses } from '../spin/spin.type';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
 
 export interface TableClasses {
   wrapper: string;
+  small: string;
+  large: string;
+  default: string;
   scrollY: string;
   floatLeft: string;
   floatRight: string;
@@ -17,6 +22,8 @@ export interface TableClasses {
   verticalAlignTop: string;
   verticalAlignMiddle: string;
 
+  loading: string;
+
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
@@ -24,6 +31,9 @@ export interface TableClasses {
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
+  cellCenter: string;
+
+  rowStriped: string;
 
   hasSorter: string;
   sorterContainer: string;
@@ -49,7 +59,12 @@ export interface TableRef {
 }
 
 export interface TableSelectProps<DataItem, Value> {
-  value: Value;
+  /**
+   * @en The current selected value.
+   * @cn 当前选中值，格式和 onRowSelect 返回值一致
+   * @override any
+   */
+  value?: Value;
   /**
    * @en Select row. Rows is the selected data.
    * @cn 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
@@ -77,8 +92,36 @@ export interface TableProps<DataItem, Value>
   jssStyle?: {
     table?: () => TableClasses;
     checkbox?: () => CheckboxClasses;
+    radio?: () => RadioClasses;
+    spin?: () => SpinClasses;
   };
+  /**
+   * @en When it is true, a default [Spin](/components/Spin) component will be displayed, a custom loading icon can be passed in to replace.
+   * @cn 数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替
+   * @default false
+   */
+  loading?: boolean | React.ReactNode;
+  /**
+   * @depressed 虚拟列表使用 virutal 属性替代
+   */
   fixed?: boolean | TableFix;
+  /**
+   *  @en Whether to use virtual list
+   *  @cn 是否使用虚拟列表
+   */
+  virtual?: boolean;
+  /**
+   * @en The maximum number of rows for a single render. Table uses lazy render to optimize performance under large amounts of data. If your table displays more than 20 rows, you can change the value of rowsInView. Value of 0 render all data.
+   * @cn 单次 render的 最大行数。Table 采用了 lazy render 的方式来优化在大量数据下的性能，如果你的表格显示的高度超出了20条，可以调整 rowsInView 的值。为 0 表示单次 render 所有数据。
+   * @default 20
+   */
+  rowsInView?: number;
+  /**
+   * @en size of table
+   * @cn 表格尺寸
+   * @default 'default'
+   */
+  size?: CommonType['size'];
   /**
    * @en is Radio
    * @cn 是否为单选
@@ -184,7 +227,6 @@ export interface TableProps<DataItem, Value>
   /**
    * @en sticky header, When it is true, the distance from the top is 0. When it is an object, the attribute value reference [Sticky component](/components/Sticky)
    * @cn 表头是否附着顶部，为 true 时距离顶部为0，为对象时属性值参考 [Sticky](/components/Sticky) 组件
-   *  todo sticky
    */
   sticky?: boolean | { top: number };
   /**

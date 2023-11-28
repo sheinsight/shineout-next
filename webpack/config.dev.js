@@ -23,6 +23,7 @@ const webpackConfig = {
       '@sheinx/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
       '@sheinx/hooks': path.resolve(__dirname, '../packages/hooks/src'),
       '@sheinx/theme': path.resolve(__dirname, '../packages/theme/src'),
+      '@sheinx/mock': path.resolve(__dirname, '../packages/mock/src'),
     },
   },
   module: {

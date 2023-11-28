@@ -10,13 +10,13 @@ export interface TableTokens {
   tableFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Padding-12
    * @description xxxundefined内边距（水平方向）
    */
   tableCellPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-8
    * @description xxxundefined内边距（垂直方向）
    */
   tableCellPaddingY: string;
@@ -26,6 +26,30 @@ export interface TableTokens {
    * @description xxxundefined边框颜色
    */
   tableCellBorderColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description xxx小尺寸undefined内边距（水平方向）
+   */
+  tableSmallCellPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description xxx小尺寸undefined内边距（垂直方向）
+   */
+  tableSmallCellPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description xxx大尺寸undefined内边距（水平方向）
+   */
+  tableLargeCellPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description xxx大尺寸undefined内边距（垂直方向）
+   */
+  tableLargeCellPaddingY: string;
   /**
    * @type {string}
    * @token Neutral-fill-2
@@ -46,8 +70,38 @@ export interface TableTokens {
   tableTbodyBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-2
+   * @description xxxundefinedundefined背景颜色
+   */
+  tableTbodyStripedBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description xxxundefined鼠标移入时的背景颜色
+   */
+  tableTbodyHoverBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-5
    * @description xxxundefined字体颜色
    */
   tableTbodyFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description xxxundefined颜色
+   */
+  tableSorterColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description xxxundefined鼠标移入时的颜色
+   */
+  tableSorterHoverColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description xxxundefined鼠标点击时的颜色
+   */
+  tableSorterActiveColor: string;
 }

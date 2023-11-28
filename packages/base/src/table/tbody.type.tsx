@@ -7,7 +7,7 @@ export type UseColumnsResult = ReturnType<typeof useTableColumns>;
 export interface TbodyProps
   extends Pick<
     OptionalToRequired<TableProps<any, any>>,
-    'data' | 'jssStyle' | 'rowClassName' | 'expandKeys' | 'keygen' | 'treeEmptyExpand'
+    'data' | 'jssStyle' | 'rowClassName' | 'expandKeys' | 'keygen' | 'treeEmptyExpand' | 'striped'
   > {
   columns: TableFormatColumn<any>[];
   data: any[];
