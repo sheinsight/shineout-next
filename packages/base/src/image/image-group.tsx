@@ -1,15 +1,16 @@
 import React, { Children, cloneElement } from 'react';
+import { useImageGroup } from '@sheinx/hooks';
+import { ImageClasses } from '@sheinx/shineout-style';
 import { ImageGroupProps } from './image-group.type';
 import { Image, ImageProps } from './image.type';
 import showGallery from './image-event';
 import classNames from 'classnames';
-import { useImageGroup } from '@sheinx/hooks';
 import Icons from '../icons';
 
 const ImageGroup = (props: ImageGroupProps) => {
   const { jssStyle, children, target = '_modal', pile, showCount = false, ...rest } = props;
   const { getGroupItemProps, getPileProps } = useImageGroup(props);
-  const imageClasses = jssStyle?.image?.();
+  const imageClasses = jssStyle?.image?.() || ({} as ImageClasses);
 
   const targetSet = pile ? '_modal' : target;
   const shouldPreview = targetSet === '_modal';

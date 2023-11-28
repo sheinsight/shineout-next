@@ -29,6 +29,7 @@ export * from './upload';
 export * from './transfer';
 export * from './virtual-scroll';
 export * from './tree';
+export * from './pagination';
 
 export { styled, StyleProvider } from './jss-style';
 export * as mixins from './mixin';

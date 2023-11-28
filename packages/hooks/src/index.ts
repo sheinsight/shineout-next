@@ -40,6 +40,7 @@ export * from './components/use-tabs';
 export * from './components/use-carousel';
 export * from './components/use-transfer';
 export * from './components/use-upload';
+export * from './components/use-pagination';
 export * from './components/use-table';
 export * from './components/use-tree';
 export * from './components/use-select';

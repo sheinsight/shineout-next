@@ -88,6 +88,9 @@ import { TransferTokens } from './transfer/type';
 import Tree from './tree';
 import { TreeTokens } from './tree/type';
 
+import Pagination from './pagination';
+import { PaginationTokens } from './pagination/type';
+
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CarouselTokens &
@@ -116,7 +119,8 @@ export type ThemeTokens = AlertTokens &
   TooltipTokens &
   UploadTokens &
   TransferTokens &
-  TreeTokens;
+  TreeTokens &
+  PaginationTokens;
 
 const Tokens: ThemeTokens = {
   ...Alert,
@@ -148,6 +152,7 @@ const Tokens: ThemeTokens = {
   ...Upload,
   ...Transfer,
   ...Tree,
+  ...Pagination,
 };
 
 export type { TokenType };
