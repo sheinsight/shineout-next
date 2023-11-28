@@ -27,6 +27,7 @@ export { default as Textarea } from './textarea';
 export { default as Tooltip } from './tooltip';
 export { default as Upload } from './upload';
 export { default as Transfer } from './transfer';
+export { default as Pagination } from './pagination';
 export { default as Tree } from './tree';
 export { setConfig } from '@sheinx/base';
 

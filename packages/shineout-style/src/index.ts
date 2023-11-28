@@ -27,6 +27,7 @@ export * from './tooltip';
 export * from './upload';
 export * from './transfer';
 export * from './virtual-scroll';
+export * from './pagination';
 export * from './tree';
 
 export { styled, StyleProvider } from './jss-style';

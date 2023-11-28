@@ -29,6 +29,7 @@ export * from './tooltip';
 export * from './transfer';
 export * from './virtual-scroll';
 export * from './upload';
+export * from './pagination';
 export * from './tree';
 
 export type { ObjectType } from '@sheinx/hooks';
