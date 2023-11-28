@@ -48,30 +48,42 @@ export default (props: TheadProps) => {
       }
     };
 
+    const isCustomRender = props.renderSorter && typeof props.renderSorter === 'function';
+
     return (
       <div className={tableClasses?.sorterContainer}>
-        <div
-          className={classNames(
-            tableClasses?.sorterAsc,
-            currentOrder === 'asc' && tableClasses?.sorterActive,
-          )}
-          onClick={() => {
-            handleChange(currentOrder === 'asc' ? null : 'asc');
-          }}
-        >
-          {Icons.TableSortIconUp}
-        </div>
-        <div
-          className={classNames(
-            tableClasses?.sorterDesc,
-            currentOrder === 'desc' && tableClasses?.sorterActive,
-          )}
-          onClick={() => {
-            handleChange(currentOrder === 'desc' ? null : 'desc');
-          }}
-        >
-          {Icons.TableSortIconDown}
-        </div>
+        {isCustomRender ? (
+          props.renderSorter!({
+            status: currentOrder,
+            triggerAsc: () => handleChange('asc'),
+            triggerDesc: () => handleChange('desc'),
+          })
+        ) : (
+          <>
+            <div
+              className={classNames(
+                tableClasses?.sorterAsc,
+                currentOrder === 'asc' && tableClasses?.sorterActive,
+              )}
+              onClick={() => {
+                handleChange(currentOrder === 'asc' ? null : 'asc');
+              }}
+            >
+              {Icons.TableSortIconUp}
+            </div>
+            <div
+              className={classNames(
+                tableClasses?.sorterDesc,
+                currentOrder === 'desc' && tableClasses?.sorterActive,
+              )}
+              onClick={() => {
+                handleChange(currentOrder === 'desc' ? null : 'desc');
+              }}
+            >
+              {Icons.TableSortIconDown}
+            </div>
+          </>
+        )}
       </div>
     );
   };

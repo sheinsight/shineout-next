@@ -24,6 +24,7 @@ export * from './common/use-style';
 export * from './common/use-resize';
 export * from './common/use-transform';
 export * from './common/use-drag-mock';
+export * from './common/use-pagination-list';
 
 //components
 export * from './components/use-input';

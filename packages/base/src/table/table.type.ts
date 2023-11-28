@@ -96,6 +96,11 @@ export interface TableProps<DataItem, Value>
     spin?: () => SpinClasses;
   };
   /**
+   * @en Show pagination See [Pagination](/components/Pagination) for details
+   * @cn 展示分页 详见 [Pagination](/components/Pagination)
+   */
+  pagination?: any;
+  /**
    * @en When it is true, a default [Spin](/components/Spin) component will be displayed, a custom loading icon can be passed in to replace.
    * @cn 数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替
    * @default false
@@ -274,7 +279,7 @@ export type TableFix = 'x' | 'y' | 'both';
 export type ColumnType = 'expand' | 'row-expand' | 'checkbox';
 
 export interface RenderSorterParam {
-  status?: 'asc' | 'desc';
+  status?: 'asc' | 'desc' | null;
   triggerAsc: () => void;
   triggerDesc: () => void;
 }

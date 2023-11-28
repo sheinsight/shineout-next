@@ -18,13 +18,10 @@ import { user } from '@sheinx/mock';
 
 interface TableRowData {
   id: number;
-  time: string;
-  start: string;
-  height: number;
+  age: number;
   salary: number;
   office: string;
   country: string;
-  office5: string;
   position: string;
   lastName: string;
   firstName: string;
@@ -35,35 +32,27 @@ type TableColumnOrder = TYPE.Table.ColumnOrder;
 type TableOnSortCancel = TableProps['onSortCancel'];
 type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
 
-const data: TableRowData[] = user.fetchSync(1000);
+const data: TableRowData[] = user.fetchSync(10);
 
 const columns: TableColumnItem[] = [
   {
-    width: 80,
-    title: 'id',
-    render: 'id',
-    sorter: 'id',
-  },
-  {
     title: 'Name',
     fixed: 'left',
-    width: 160,
     sorter: 'firstName',
     defaultOrder: 'asc',
     render: (d) => `${d.firstName} ${d.lastName}`,
   },
-  { title: 'Country', render: 'country' },
+  { title: 'Age', render: 'age', sorter: 'age' },
   { title: 'Position', render: 'position' },
-  { title: 'Office', render: 'office' },
-  { title: 'Start Date', render: 'start' },
+  { title: 'Salary($)', render: 'salary' },
 ];
 
 const App: React.FC = () => {
   const sorter: {
     [x: string]: any;
   } = {
-    id: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>
-      order === 'asc' ? a.id - b.id : b.id - a.id,
+    age: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>
+      order === 'asc' ? a.age - b.age : b.age - a.age,
     firstName: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>
       order === 'asc'
         ? a.firstName.localeCompare(b.firstName)
@@ -81,12 +70,8 @@ const App: React.FC = () => {
       striped
       data={data}
       keygen='id'
-      fixed='both'
-      width={1200}
-      rowsInView={10}
       columns={columns}
       sorter={handleSorter}
-      style={{ maxHeight: 400 }}
       onSortCancel={handleCancel}
     />
   );

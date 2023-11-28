@@ -204,6 +204,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       columnResizable: props.columnResizable,
       showSelectAll: props.showSelectAll,
       datum: datum,
+      renderSorter: props.renderSorter,
     };
     if (virtual) {
       return (

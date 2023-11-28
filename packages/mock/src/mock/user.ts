@@ -26,6 +26,7 @@ let allData: Array<{
   office5: string;
   height: number;
   status?: boolean;
+  age: number;
 }> = [];
 function init() {
   const offset = 5000 * 3600 * 24 * 1000;
@@ -45,6 +46,7 @@ function init() {
       office: one(c30),
       office5: one(c5),
       height: pickNumber(80, 200),
+      age: pickInteger(18, 100),
     });
   }
 

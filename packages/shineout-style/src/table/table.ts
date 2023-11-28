@@ -221,7 +221,6 @@ const tableStyle: JsStyles<TableClassType> = {
     flexDirection: 'column',
     '& $sorterAsc, & $sorterDesc': {
       right: 0,
-      width: '100%',
       width: '7px',
       height: '5px',
       color: token.tableSorterColor,
