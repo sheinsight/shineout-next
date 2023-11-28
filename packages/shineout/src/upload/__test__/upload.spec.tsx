@@ -43,6 +43,7 @@ const originClasses = [
   'resultTextFooter',
   'icon',
   'resultClose',
+  'dropItem',
 ];
 const originItemClasses = [
   'resultUploading',
@@ -50,6 +51,8 @@ const originItemClasses = [
   'iconHover',
   'resultError',
   'resultSuccess',
+  'wrapperDisabled',
+  'resultDeleted',
 ];
 const {
   wrapper,
@@ -65,14 +68,25 @@ const {
   iconHover,
   resultError,
   resultSuccess,
+  dropItem,
+  wrapperDisabled,
+  resultDeleted,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+const {
+  wrapper: popoverWrapper,
+  wrapperOpen: popoverwrapperOpen,
+  footer: popoverFooter,
+  mention: popoverMention,
+} = createClassName('popover', ['wrapper', 'footer', 'mention'], ['wrapperOpen']);
 
 // upload file function
-const uploadFile = (wrapper: Element, options: { name: string }) => {
-  const blob = new File(['content'], options.name, { type: 'text/plain', ...options });
+const uploadFile = (wrapper: Element, options: { name?: string; files?: File[] }) => {
+  const blob = options.name
+    ? [new File(['content'], options.name, { type: 'text/plain', ...options })]
+    : options.files;
   fireEvent.change(wrapper.querySelector('input')!, {
     target: {
-      files: [blob],
+      files: blob,
     },
   });
 };
@@ -85,6 +99,8 @@ const UploadTest = (props: any) => {
     </Upload>
   );
 };
+
+const fileTextName = 'test.txt';
 
 beforeAll(() => {
   jest.useFakeTimers();
@@ -114,7 +130,7 @@ describe('Upload[Base]', () => {
   snapshotTest(<UploadRequestZip />, 'about request zip');
   snapshotTest(<UploadDefaultValue />, 'about default value');
   snapshotTest(<UploadDrag />, 'about drag');
-  const fileTextName = 'test.txt';
+
   test('should render default', () => {
     const { container } = render(<Upload />);
     const uploadWrapper = container.querySelector(wrapper)!;
@@ -148,6 +164,48 @@ describe('Upload[Base]', () => {
       await delay(200);
     });
     classTest(container.querySelector(result)!, resultError);
+  });
+  test('should render when set onHttpError/onErrorRemove', async () => {
+    const errorMsg = 'test error';
+    const errorOriginMsg = 'error';
+    const onErrorFn = jest.fn((x) => {
+      if (!x.statusText) return errorOriginMsg;
+      return '';
+    });
+    const onErrorRemoveFn = jest.fn();
+    const { container } = render(
+      <UploadTest action={'//404'} onHttpError={onErrorFn} onErrorRemove={onErrorRemoveFn} />,
+    );
+    const xhr = mockXhr();
+    uploadFile(container, { name: fileTextName });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // @ts-ignore
+    xhr.onerror({ statusText: errorMsg });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(onErrorFn.mock.calls.length).toBe(1);
+    expect(onErrorFn.mock.calls[0][0].statusText).toBe(errorMsg);
+    textContentTest(container.querySelector(resultTextBody)!, `${fileTextName}(${errorMsg}) `);
+    fireEvent.click(container.querySelector(resultClose)!);
+    expect(onErrorRemoveFn.mock.calls.length).toBe(1);
+    classLengthTest(container, result, 0);
+    const newXhr = mockXhr();
+    uploadFile(container, { name: fileTextName });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // @ts-ignore
+    newXhr.onerror({ statusText: '' });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(
+      container.querySelector(resultTextBody)!,
+      `${fileTextName}(${errorOriginMsg}) `,
+    );
   });
   test('should render when set onSuccess', async () => {
     const successText = 'success';
@@ -201,5 +259,342 @@ describe('Upload[Base]', () => {
       await delay(200);
     });
     textContentTest(container.querySelector(resultTextBody)!, `${fileTextName}(${ErrorMsg}) `);
+  });
+  test('should render when set htmlName/params/responseType/withCredentials/headers', async () => {
+    const { container } = render(
+      <UploadTest
+        headers={{ 'Content-Type': 'application/json' }}
+        htmlName='fill'
+        action='//404'
+        params={{ from: 'test' }}
+        responseType='json'
+        withCredentials
+      />,
+    );
+    const xhr = mockXhr();
+    const files = [new File(['content'], '1.png')];
+    uploadFile(container, { files });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(xhr.setRequestHeader.mock.calls.length).toBe(1);
+    expect(xhr.setRequestHeader.mock.calls[0][0]).toBe('Content-Type');
+    expect(xhr.setRequestHeader.mock.calls[0][1]).toBe('application/json');
+
+    expect(xhr.send.mock.calls.length).toBe(1);
+    expect(xhr.send.mock.calls[0][0].get('from')).toBe('test');
+    expect(xhr.send.mock.calls[0][0].get('fill')).toBeTruthy();
+
+    expect(xhr.withCredentials).toBe(true);
+    // @ts-ignore
+    expect(xhr.responseType).toBe('json');
+  });
+  test('should render when set filesFilter', async () => {
+    const filesFilter = jest.fn((files) =>
+      files.filter((file: File) => file.name.endsWith('.png')),
+    );
+    const onStartFn = jest.fn();
+    const { container } = render(
+      <UploadTest name='file' filesFilter={filesFilter} onStart={onStartFn} />,
+    );
+    const files = [
+      new File(['content'], '1.png'),
+      new File(['content'], '2.png'),
+      new File(['content'], '3.txt'),
+    ];
+    uploadFile(container, { files });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(filesFilter.mock.calls.length).toBe(1);
+    expect(filesFilter.mock.calls[0][0]).toStrictEqual(files);
+    expect(onStartFn.mock.calls.length).toBe(2);
+  });
+  test('should render when set beforeCancel', async () => {
+    const beforeCancel = jest.fn();
+    const { container } = render(
+      <UploadTest name='file' beforeCancel={beforeCancel} forceAccept='image/*' />,
+    );
+    uploadFile(container, { name: 'fool.png' });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    fireEvent.click(container.querySelector(resultClose)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(beforeCancel.mock.calls.length).toBe(1);
+  });
+  test('should render when set showUploadList is false', () => {
+    const { container } = render(
+      <UploadTest action='//404' defaultValue={['a.png']} showUploadList={false} />,
+    );
+    classLengthTest(container, result, 0);
+  });
+});
+describe('Upload[Drop onStart]', () => {
+  test('should render when set drop', () => {
+    const onStart = jest.fn();
+    const { container } = render(<UploadTest name='file' onStart={onStart} drop />);
+    const uploadWrapper = container.querySelector(wrapper)!;
+    attributesTest(uploadWrapper.querySelector(dropItem)!, 'data-soui-dragover', 'false');
+  });
+  test('should upload file when set drop', async () => {
+    const files = new File(['content'], 'test.txt');
+    const onStart = jest.fn();
+    const { container } = render(<UploadTest name='file' onStart={onStart} drop />);
+    const uploadWrapper = container.querySelector(wrapper)!;
+    fireEvent.drop(uploadWrapper.querySelector(dropItem)!, {
+      type: 'drop',
+      dataTransfer: { files: [files] },
+    });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(onStart.mock.calls.length).toBe(1);
+  });
+});
+describe('Upload[Multiple]', () => {
+  test('should render when set multiple', async () => {
+    const { container } = render(<UploadTest name='file' multiple />);
+
+    const file1 = new File(['content'], 'file1.txt');
+    const file2 = new File(['content'], 'file2.txt');
+    uploadFile(container, { files: [file1, file2] });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const uploadInput = container.querySelector('input')!;
+    expect(uploadInput.files).toHaveLength(2);
+    expect(uploadInput.files?.[0]).toBe(file1);
+    expect(uploadInput.files?.[1]).toBe(file2);
+  });
+  test('should render when set beforeUpload', async () => {
+    const beforeUploadFn = jest.fn();
+    const { container } = render(<UploadTest name='file' beforeUpload={beforeUploadFn} />);
+    uploadFile(container, { name: fileTextName });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(beforeUploadFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set customResult', async () => {
+    const CustomResult = ({ value }: any) => <div className='demo'>{value}</div>;
+    const { container } = render(<UploadTest name='file' customResult={CustomResult} />);
+    classLengthTest(container, '.demo', 1);
+  });
+  // TODO: gapProps
+});
+describe('Upload[Value/DefaultValue/OnChange]', () => {
+  test('should render when set value', async () => {
+    const { container } = render(<UploadTest name='file' value={['test.txt', 'demo.txt']} />);
+    const uploadWrapper = container.querySelector(wrapper)!;
+    const uploadResult = uploadWrapper.querySelector(result)!;
+    classTest(uploadResult, resultSuccess);
+    const uploadResultTexts = container.querySelectorAll(resultTextBody);
+    expect(uploadResultTexts.length).toBe(2);
+    textContentTest(uploadResultTexts[0], 'test.txt');
+    textContentTest(uploadResultTexts[1], 'demo.txt');
+  });
+  test('should render when set defaultValue', async () => {
+    const { container } = render(<UploadTest name='file' defaultValue={['test.txt']} />);
+    const uploadWrapper = container.querySelector(wrapper)!;
+    const uploadResult = uploadWrapper.querySelector(result)!;
+    classTest(uploadResult, resultSuccess);
+    textContentTest(uploadResult.querySelector(resultTextBody)!, 'test.txt');
+  });
+  test('should render when simultaneously value and defaultValue', async () => {
+    const { container } = render(
+      <UploadTest name='file' value={['test.txt']} defaultValue={['demo.txt']} />,
+    );
+    const uploadWrapper = container.querySelector(wrapper)!;
+    const uploadResult = uploadWrapper.querySelector(result)!;
+    classTest(uploadResult, resultSuccess);
+    textContentTest(uploadResult.querySelector(resultTextBody)!, 'test.txt');
+  });
+  test('should render when is controlled', async () => {
+    const { container } = render(<UploadBase />);
+    uploadFile(container, { name: fileTextName });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(container.querySelector(resultTextBody)!, fileTextName);
+  });
+});
+describe('Upload[BeforeRemove]', () => {
+  test('should render when set beforeRemove', async () => {
+    let time = 0;
+    const beforeRemove = jest.fn(() => {
+      if (time === 0) {
+        time = 1;
+        return Promise.reject();
+      }
+      return Promise.resolve();
+    });
+    const onChange = jest.fn();
+    const { container } = render(
+      <UploadTest
+        name='file'
+        beforeRemove={beforeRemove}
+        onChange={onChange}
+        defaultValue={['aaa.png']}
+        forceAccept='image/*'
+      />,
+    );
+    const uploadResultClose = container.querySelector(resultClose)!;
+    expect(uploadResultClose).toBeInTheDocument();
+    fireEvent.click(uploadResultClose);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(beforeRemove.mock.calls.length).toBe(1);
+    expect(onChange.mock.calls.length).toBe(0);
+
+    fireEvent.click(uploadResultClose);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(beforeRemove.mock.calls.length).toBe(2);
+    expect(onChange.mock.calls.length).toBe(1);
+    expect(uploadResultClose).not.toBeInTheDocument();
+  });
+});
+describe('Upload[CanDelete]', () => {
+  test('should render when set canDelete is function', () => {
+    const { container } = render(
+      <UploadTest
+        accept='image/*'
+        name='file'
+        canDelete={(value: any) => value === '1.png'}
+        defaultValue={['1.png', '2.png']}
+      />,
+    );
+    classLengthTest(container, resultTextBody, 2);
+    classLengthTest(container, resultClose, 1);
+    const uploadResultTexts = container.querySelectorAll(result);
+    classLengthTest(uploadResultTexts[0], resultClose, 1);
+    classLengthTest(uploadResultTexts[1], resultClose, 0);
+  });
+  test('should render when set canDelete is boolean', () => {
+    const { container } = render(
+      <UploadTest
+        accept='image/*'
+        name='file'
+        canDelete={false}
+        defaultValue={['1.png', '2.png']}
+      />,
+    );
+    classLengthTest(container, resultTextBody, 2);
+    classLengthTest(container, resultClose, 0);
+  });
+});
+describe('Upload[Disabled]', () => {
+  test('should render when set disabled', async () => {
+    const { container } = render(<UploadTest name='file' disabled />);
+    const uploadWrapper = container.querySelector(wrapper)!;
+    classTest(uploadWrapper, wrapperDisabled);
+    const uploadHandler = uploadWrapper.querySelector(handler)!;
+    const uploadInput = uploadHandler.querySelector('input')!;
+    attributesTest(uploadInput, 'disabled', '');
+    uploadFile(container, { name: fileTextName });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classLengthTest(container, result, 0);
+  });
+});
+describe('Upload[Limit]', () => {
+  test('should render when set limit', async () => {
+    const { container } = render(<UploadTest name='file' limit={1} />);
+    const uploadWrapper = container.querySelector(wrapper)!;
+    const uploadHandler = uploadWrapper.querySelector(handler)!;
+    const uploadInput = uploadHandler.querySelector('input')!;
+    expect(uploadInput).toBeInTheDocument();
+    uploadFile(container, { name: fileTextName });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(uploadInput).not.toBeInTheDocument();
+  });
+});
+describe('Upload[RecoverAble/RemoveConfirm]', () => {
+  test('should render when set removeConfirm', async () => {
+    const onChange = jest.fn();
+    const removeConfirmMsg = 'are you sure';
+    const { container } = render(
+      <UploadTest
+        action='//404'
+        defaultValue={['b.jpg']}
+        removeConfirm={removeConfirmMsg}
+        onChange={onChange}
+      />,
+    );
+    fireEvent.click(container.querySelector(resultClose)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const uploadPopoverWrapper = document.querySelector(popoverWrapper)!;
+    classTest(uploadPopoverWrapper, popoverwrapperOpen);
+    textContentTest(uploadPopoverWrapper.querySelector(popoverMention)!, removeConfirmMsg);
+    const popoverButtons = uploadPopoverWrapper
+      .querySelector(popoverFooter)
+      ?.querySelectorAll('button');
+    expect(popoverButtons?.length).toBe(2);
+    fireEvent.click(popoverButtons![1]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(onChange.mock.calls[0][0]).toStrictEqual([]);
+  });
+  test('should render when set recoverAble', async () => {
+    const onChange = jest.fn();
+    const { container } = render(
+      <UploadTest action='//404' defaultValue={['b.jpg']} recoverAble onChange={onChange} />,
+    );
+    fireEvent.click(container.querySelector(resultClose)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classTest(container.querySelector(result)!, resultDeleted);
+    fireEvent.click(container.querySelector(resultClose)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(onChange.mock.calls[1][0]).toStrictEqual(['b.jpg']);
+  });
+});
+describe('Upload[Request/RenderResult/RenderContent]', () => {
+  test('should render when set renderResult', () => {
+    const defaultValueName = 'a.png';
+    const { container } = render(
+      <UploadTest
+        action='//404'
+        defaultValue={[{ name: defaultValueName }]}
+        renderResult={(i: any) => <div className='demo'>{i.name}</div>}
+      />,
+    );
+    textContentTest(container.querySelector('.demo')!, defaultValueName);
+  });
+  // TODO: renderContent test for image
+  // test('should render when set renderContent', async () => {
+  // })
+  test('should render when set request', async () => {
+    const request = jest.fn((options) => {
+      const { file, onLoad } = options;
+      onLoad({ status: 200, response: file.name });
+    });
+    const { container } = render(
+      <Upload
+        accept='image/*'
+        request={request}
+        onSuccess={(dataURL: any, file: any) => ({ name: file.name, src: dataURL })}
+        renderResult={(d) => d.src}
+      />,
+    );
+    uploadFile(container, { name: 'test.doc' });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(request.mock.calls.length).toBe(1);
   });
 });
