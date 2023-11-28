@@ -28,6 +28,7 @@ export * from './tooltip';
 export * from './transfer';
 export * from './virtual-scroll';
 export * from './upload';
+export * from './pagination';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';
