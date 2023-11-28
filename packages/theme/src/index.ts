@@ -76,6 +76,9 @@ import { TooltipTokens } from './tooltip/type';
 import Upload from './upload';
 import { UploadTokens } from './upload/type';
 
+import Transfer from './transfer';
+import { TransferTokens } from './transfer/type';
+
 import Pagination from './pagination';
 import { PaginationTokens } from './pagination/type';
 
@@ -104,6 +107,7 @@ export type ThemeTokens = AlertTokens &
   TextareaTokens &
   TooltipTokens &
   UploadTokens &
+  TransferTokens &
   PaginationTokens;
 
 const Tokens: ThemeTokens = {
@@ -132,6 +136,7 @@ const Tokens: ThemeTokens = {
   ...Textarea,
   ...Tooltip,
   ...Upload,
+  ...Transfer,
   ...Pagination,
 };
 

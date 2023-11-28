@@ -58,6 +58,7 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
   });
 
   const inputValue = typeof value === 'string' ? value : '';
+
   return (
     <SimpleCheckbox
       jssStyle={jssStyle}

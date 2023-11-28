@@ -23,6 +23,7 @@ const checkboxTokens: CheckboxTokens = {
   checkboxIconCheckedDisabledColor: 'Neutral-fill-1',
   checkboxIconGap: 'Margin-8',
   checkboxIconCircleFill: 'Neutral-fill-2',
+  checkboxIconCircleDark: 'Neutral-fill-3',
   checkboxLabelFontColor: 'Neutral-text-5',
   checkboxLabelFontSize: '14/regular',
   checkboxLabelDisabledFontColor: 'Neutral-text-2',

@@ -25,6 +25,8 @@ export * from './tabs';
 export * from './tag';
 export * from './textarea';
 export * from './tooltip';
+export * from './transfer';
+export * from './virtual-scroll';
 export * from './upload';
 export * from './pagination';
 
