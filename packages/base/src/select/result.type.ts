@@ -22,6 +22,7 @@ export interface ResultProps<DataItem, Value>
     | 'resultClassName'
     | 'renderItem'
     | 'renderUnmatched'
+    | 'focusSelected'
     | 'onCreate'
     // | 'onFilter'
   > {
@@ -29,7 +30,8 @@ export interface ResultProps<DataItem, Value>
   focus: boolean;
   renderResult: (data: DataItem, index?: number) => React.ReactNode;
   filterText?: string;
-  onRef: React.RefObject<HTMLInputElement>;
+  onRef: React.MutableRefObject<HTMLInputElement | undefined>;
   allowOnFilter: boolean;
   onFilter: (text: string) => void;
+  onResetFilter: () => void;
 }

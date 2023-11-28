@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import classNames from 'classnames';
 import { usePersistFn, usePopup, useSelect, useFilter } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
@@ -11,6 +11,20 @@ import List from './list';
 import TreeList from './list-tree';
 import Icons from '../icons';
 import ColumnsList from './list-columns';
+
+/**
+ *
+ * 大小尺寸
+ * 禁用状态（全体）
+ * 创建选项
+ * 树选择
+ * 加载中
+ * 自定义下拉列表
+ * 限制字符长度
+ * 可清除
+ * 分组
+ *
+ */
 
 const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   const {
@@ -31,6 +45,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     width,
     multiple,
     keygen,
+    focusSelected = true,
     optionWidth = '100%',
     height = 250,
     open: openProp,
@@ -43,6 +58,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     compressed,
     compressedBound,
     placeholder,
+    groupBy,
     renderItem,
     renderResult: renderResultProp,
     renderUnmatched,
@@ -51,7 +67,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     onFilter: onFilterProp,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>();
 
   const rootClass = classNames(
     className,
@@ -68,7 +84,10 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     },
   );
 
-  const { filterText, filterData, onFilter } = useFilter({ data, onFilter: onFilterProp });
+  const { filterText, filterData, onFilter, onResetFilter } = useFilter({
+    data,
+    onFilter: onFilterProp,
+  });
 
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
@@ -78,6 +97,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     control: 'value' in props,
     format,
     disabled,
+    groupBy,
     prediction,
     beforeChange,
     onChange,
@@ -139,9 +159,11 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
           allowOnFilter={'onFilter' in props}
+          focusSelected={focusSelected}
           filterText={filterText}
           onFilter={onFilter}
           onRef={inputRef}
+          onResetFilter={onResetFilter}
         ></Result>
         {clearable && renderClearable()}
       </div>
@@ -168,6 +190,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       data: filterData,
       datum,
       value,
+      size,
       originalData: data,
       keygen,
       width,
@@ -199,12 +222,6 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     }
     return renderList();
   };
-
-  useEffect(() => {
-    if (open && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [open]);
 
   return (
     <div data-soui-type={'input'} className={rootClass}>

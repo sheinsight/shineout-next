@@ -49,6 +49,8 @@ export type SelectClasses = {
   customHeader: string;
   columns: string;
   columnsOption: string;
+  columnsRadio: string;
+  columnsCheckbox: string;
 };
 export type SelectClassType = keyof SelectClasses;
 
@@ -133,11 +135,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     flex: '1',
     minWidth: 0,
     textAlign: 'left',
-    // marginTop: 3,
-    // marginBottom: 3,
     '& > input': {
-      marginTop: 2,
-      marginBottom: 2,
+      marginTop: 3,
+      marginBottom: 3,
       color: 'inherit',
       padding: 0,
       border: 0,
@@ -219,6 +219,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   placeholder: {
     color: token.selectPlaceholderColor,
+    marginTop: 3,
+    marginBottom: 3,
   },
   pickerWrapper: {
     position: 'absolute',
@@ -249,6 +251,10 @@ const selectStyle: JsStyles<SelectClassType> = {
       flexWrap: 'wrap',
       paddingTop: 1,
       paddingBottom: 1,
+      '& > input': {
+        marginTop: 2,
+        marginBottom: 2,
+      },
     },
     '& $compressedWrapper': {
       flexWrap: 'nowrap',
@@ -341,9 +347,30 @@ const selectStyle: JsStyles<SelectClassType> = {
     alignItems: 'center',
   },
   columnsOption: {
-    flex: 1,
+    // flex: 1,
     paddingLeft: 8,
     paddingRight: 8,
+    lineHeight: 1,
+    boxSizing: 'border-box',
+    overflow: 'hidden',
+  },
+  columnsRadio: {
+    width: '100%',
+    '& :last-child': {
+      flex: 1,
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+    },
+  },
+  columnsCheckbox: {
+    width: '100%',
+    '& :last-child': {
+      flex: 1,
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+    },
   },
 };
 

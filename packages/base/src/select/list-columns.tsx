@@ -16,16 +16,28 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
     datum,
     multiple,
     itemsInView = 10,
-    lineHeight = 34,
+    lineHeight: lineHeightProp,
     loading,
     value,
+    size,
     columns = 1,
     columnWidth,
     renderItem: renderItemProp,
-    // closePop,
+    closePop,
   } = props;
 
   const styles = jssStyle?.select?.() as SelectClasses;
+
+  // columns 模式无上下边距，故而 lineHeight 需要调整
+  const getLineHeight = () => {
+    if (lineHeightProp) return lineHeightProp;
+    if (size === 'small') return 24;
+    if (size === 'default') return 32;
+    if (size === 'large') return 40;
+    return 32;
+  };
+
+  const lineHeight = getLineHeight();
 
   const getChecked = () => {
     if (!value) return false;
@@ -54,7 +66,6 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
   const checked = getChecked();
 
   const handleChange = (isChecked: boolean) => {
-    // const isChecked = data.length === (value || []).length;
     if (!isChecked) {
       const next = data.filter((item) => datum.check(item) && !datum.disabledCheck(item));
       datum.remove(next);
@@ -82,10 +93,12 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
               jssStyle={jssStyle}
               key={key}
               data={item}
+              size={size}
               datum={datum}
               multiple={multiple}
               columnWidth={columnWidth}
               renderItem={renderItemProp}
+              closePop={closePop}
             ></ListColumnsOption>
           );
         })}
@@ -127,7 +140,7 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
 
     return (
       <div className={styles.header}>
-        <Checkbox jssStyle={jssStyle} checked={checked} onChange={handleChange}>
+        <Checkbox size={size} jssStyle={jssStyle} checked={checked} onChange={handleChange}>
           全选
         </Checkbox>
       </div>

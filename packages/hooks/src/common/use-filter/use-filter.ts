@@ -25,10 +25,15 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     setFilterData(nextData);
   };
 
+  const handleResetData = () => {
+    setFilterData(data);
+  };
+
   return {
     filterText,
     filterData,
     onFilter: handleFilter,
+    onResetFilter: handleResetData,
   };
 };
 

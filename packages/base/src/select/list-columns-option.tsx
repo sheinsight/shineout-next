@@ -4,7 +4,16 @@ import Checkbox from '../checkbox/simple-checkbox';
 import Radio from '../radio/simple-radio';
 
 const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataItem, Value>) => {
-  const { jssStyle, data, datum, multiple, columnWidth = 160, renderItem: renderItemProp } = props;
+  const {
+    jssStyle,
+    data,
+    datum,
+    size,
+    multiple,
+    columnWidth = 160,
+    renderItem: renderItemProp,
+    closePop,
+  } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const style = { width: columnWidth };
 
@@ -18,12 +27,16 @@ const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataIt
       return;
     }
     datum.add(data);
+
+    if (!multiple) closePop();
   };
 
   const renderCheckbox = (d: DataItem) => {
     return (
       <Checkbox
+        className={styles.columnsCheckbox}
         jssStyle={jssStyle}
+        size={size}
         checked={isChecked}
         disabled={isDisabled}
         onChange={handleChange}
@@ -35,7 +48,14 @@ const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataIt
 
   const renderRadio = (d: DataItem) => {
     return (
-      <Radio jssStyle={jssStyle} checked={isChecked} disabled={isDisabled} onChange={handleChange}>
+      <Radio
+        className={styles.columnsRadio}
+        jssStyle={jssStyle}
+        size={size}
+        checked={isChecked}
+        disabled={isDisabled}
+        onChange={handleChange}
+      >
         {renderItemProp(d)}
       </Radio>
     );

@@ -11,4 +11,5 @@ export interface BaseSelectProps<DataItem, Value> {
   format?: ((data: DataItem) => Value extends (infer U)[] ? U : Value) | ObjectKey<DataItem>;
   beforeChange?: (value: Value) => any;
   onChange?: (value: Value, data?: DataItem | DataItem[], checked?: boolean) => void;
+  groupBy?: (item: DataItem, index?: number, data?: DataItem[]) => string;
 }

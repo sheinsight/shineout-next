@@ -26,6 +26,7 @@ export interface BaseListProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
     | 'jssStyle'
+    | 'size'
     | 'value'
     | 'data'
     | 'width'
@@ -157,6 +158,7 @@ export interface SelectProps<DataItem, Value>
   columns?: number;
 
   noCache?: boolean;
+  focusSelected?: boolean;
   trim?: boolean;
   columnWidth?: number;
   maxLength?: number;

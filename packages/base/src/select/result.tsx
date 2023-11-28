@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { util, addResizeObserver } from '@sheinx/hooks';
 import { ResultProps, ResultType } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
-import { Input } from '../date-picker/result';
+import Input from './result-input';
 import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
@@ -29,15 +29,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     allowOnFilter,
     onRef,
     onFilter,
+    onResetFilter,
   } = props;
 
   const [more, setMore] = useState(-1);
   const [text, setText] = useState('');
   const [inputWidth] = useState(12);
   const resultRef = useRef<HTMLDivElement>(null);
-  const mirrorRef = useRef<HTMLSpanElement>(null);
-  // const inputWidthRef = useRef<number>(12);
-  const inputRef = useRef<HTMLInputElement>(null);
   const shouldResetMore = useRef(false);
 
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -63,17 +61,18 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return (
       <React.Fragment key='input'>
         <Input
-          onRef={(el) => {
-            onRef.current = el;
-            inputRef.current = el;
-          }}
+          jssStyle={jssStyle}
           style={{ width: inputWidth }}
-          value={text as string}
+          value={text}
+          focus={focus}
+          multiple={multiple}
+          values={value}
+          onRef={onRef}
+          filterText={filterText}
           onChange={onFilter}
+          onFilter={onFilter}
+          onResetFilter={onResetFilter}
         ></Input>
-        <span className={styles.inputMirror} ref={mirrorRef}>
-          {filterText}
-        </span>
       </React.Fragment>
     );
   };
@@ -188,32 +187,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   useEffect(() => {
-    if (!resultRef.current) return;
-    const cancelObserver = addResizeObserver(resultRef.current, handleResetMore, {
-      direction: 'x',
-    });
-
-    return () => {
-      cancelObserver();
-    };
-  }, []);
-
-  // focus 或 输入值 text 变化时，更新 input 宽度
-  useEffect(() => {
-    if (!mirrorRef.current) return;
-    const input = inputRef.current as HTMLInputElement;
-    input.style.width = `${mirrorRef.current.offsetWidth}px`;
-  }, [filterText, focus]);
-
-  // focus 变化且为 true 时，聚焦 input
-  useEffect(() => {
-    if (!focus || !allowOnFilter) return;
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [focus]);
-
-  useEffect(() => {
     if (!multiple && allowOnFilter && value) {
       const result = datum.getDataByValues([value]);
       const content = renderResultContent(result[0]);
@@ -244,6 +217,17 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       }
     }
   }, [value, more]);
+
+  useEffect(() => {
+    if (!resultRef.current) return;
+    const cancelObserver = addResizeObserver(resultRef.current, handleResetMore, {
+      direction: 'x',
+    });
+
+    return () => {
+      cancelObserver();
+    };
+  }, []);
 
   return (
     <div ref={resultRef} className={rootClass}>

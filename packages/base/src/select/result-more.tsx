@@ -113,13 +113,7 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
         >
           {shouldShowMore ? '+' : `+${itemsLength}`}
         </Tag>
-        <Popover
-          jssStyle={jssStyle}
-          visible={visible}
-          onVisibleChange={setVisible}
-          // showArrow={false}
-          // position='bottom-left'
-        >
+        <Popover jssStyle={jssStyle} visible={visible} onVisibleChange={setVisible}>
           <div className={styles.moreWrapper}>{after}</div>
         </Popover>
       </span>
