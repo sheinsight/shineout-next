@@ -16,6 +16,8 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     renderItem,
     tag,
     tagClassName,
+    customKeygen,
+    customRenderItem,
   } = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,6 +54,14 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       >
         <div style={{ height: currentIndex * lineHeight, gridColumnEnd: '-1' }} />
         {items.map((d: DataItem | DataItem[], i: number) => {
+          // 用于自定义渲染无 key 内容
+          if (customKeygen && customRenderItem && d[customKeygen as keyof typeof d]) {
+            return (
+              <React.Fragment key={`__${customKeygen}__${i}__`}>
+                {customRenderItem(d, start + i)}
+              </React.Fragment>
+            );
+          }
           const key = util.getKey(keygen, d as DataItem, i);
           return <React.Fragment key={key}>{renderItem(d, start + i)}</React.Fragment>;
         })}

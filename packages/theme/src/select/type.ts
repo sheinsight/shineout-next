@@ -326,4 +326,28 @@ export interface SelectTokens {
    * @description 选择器列表头部的边框颜色
    */
   selectHeaderBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 选择器分组标题的字体颜色
+   */
+  selectGroupTitleFontColor: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 选择器分组标题的字体字号
+   */
+  selectGroupTitleFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description 选择器分组标题的内边距（水平方向）
+   */
+  selectGroupTitlePaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-7
+   * @description 选择器分组标题的内边距（垂直方向）
+   */
+  selectGroupTitlePaddingY: string;
 }

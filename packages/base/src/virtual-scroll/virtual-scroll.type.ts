@@ -54,5 +54,7 @@ export interface VirtualListProps<DataItem>
   lineHeight: number;
   rowsInView: number;
   colNum?: number;
+  customKeygen?: string;
+  customRenderItem?: (item: DataItem | DataItem[], index: number) => React.ReactNode;
   renderItem: (item: DataItem | DataItem[], index: number) => React.ReactNode;
 }

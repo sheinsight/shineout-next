@@ -22,6 +22,7 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
     size,
     columns = 1,
     columnWidth,
+    groupKey,
     renderItem: renderItemProp,
     closePop,
   } = props;
@@ -83,11 +84,28 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
     return <div>header</div>;
   };
 
+  const renderGroupTitle = (item, key) => {
+    if (item[groupKey]) {
+      return (
+        <div className={styles.optionGroupTitle} key={key}>
+          {item[groupKey]}
+        </div>
+      );
+    }
+    return null;
+  };
+
   const renderItem = (data: DataItem[], currentIndex: number) => {
     return (
       <div className={styles?.columns} key={currentIndex} style={{ height: lineHeight }}>
         {data.map((item, index) => {
+          const isGroupTitleRow = (groupKey && Object.keys(item).length === 0) || item[groupKey];
+          if (isGroupTitleRow) {
+            return renderGroupTitle(item, `__${currentIndex}__${index}__${item[groupKey]}__`);
+          }
+
           const key = util.getKey(keygen, item, currentIndex + index);
+
           return (
             <ListColumnsOption<DataItem, Value>
               jssStyle={jssStyle}
@@ -111,12 +129,23 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
 
     const sliceData = data.reduce((red: DataItem[][], item) => {
       let lastItem: DataItem[] = red[red.length - 1];
+
+      // 如果item有groupKey属性，创建一个新的数组，只包含这个item，剩余位置用空对象填充
+      if (item[groupKey]) {
+        const newItemArray = new Array(columns).fill({});
+        newItemArray[0] = item;
+        red.push(newItemArray);
+        return red;
+      }
+
       if (!lastItem) {
         lastItem = [];
         red.push(lastItem);
       }
       if (lastItem.length >= columns) red.push([item]);
-      else lastItem.push(item);
+      else {
+        lastItem.push(item);
+      }
       return red;
     }, []);
 

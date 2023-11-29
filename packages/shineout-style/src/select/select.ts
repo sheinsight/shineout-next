@@ -332,7 +332,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     backgroundColor: token.selectOptionDisabledBackgroundColor,
   },
   optionGroup: {},
-  optionGroupTitle: {},
+  optionGroupTitle: {
+    fontSize: token.selectGroupTitleFontSize,
+    padding: `${token.selectGroupTitlePaddingY} ${token.selectGroupTitlePaddingX}`,
+    color: token.selectGroupTitleFontColor,
+  },
   header: {
     display: 'flex',
     alignItems: 'center',

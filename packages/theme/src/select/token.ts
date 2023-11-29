@@ -17,6 +17,8 @@ const selectTokenDescription = {
   clear: '清除按钮的',
   more: '折叠内容的',
   header: '列表头部的',
+  group: '分组',
+  title: '标题的',
 };
 
 /**
@@ -91,6 +93,12 @@ const selectTokenExtraValue = {
     padding: 'Padding-8',
     border: {
       color: 'Neutral-border-1',
+    },
+  },
+  group: {
+    title: {
+      font: { color: 'Neutral-text-3', size: '12/regular' },
+      padding: { x: 'Padding-12', y: 'Padding-7' },
     },
   },
 };

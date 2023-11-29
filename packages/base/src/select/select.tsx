@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import classNames from 'classnames';
-import { usePersistFn, usePopup, useSelect, useFilter } from '@sheinx/hooks';
+import { usePersistFn, usePopup, useSelect, useFilter, useGroup } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { SelectProps } from './select.type';
 import { AbsoluteList } from '../absolute-list';
@@ -91,7 +91,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
 
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
-    data,
+    data: filterData,
     multiple,
     defaultValue,
     control: 'value' in props,
@@ -101,6 +101,11 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     prediction,
     beforeChange,
     onChange,
+  });
+
+  const { data: groupData, groupKey } = useGroup({
+    data: filterData,
+    groupBy,
   });
 
   const onCollapse = usePersistFn((isOpen: boolean) => {
@@ -145,7 +150,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           jssStyle={jssStyle}
           datum={datum}
           value={value}
-          data={filterData}
+          data={groupData}
           focus={open}
           keygen={keygen}
           disabled={disabled}
@@ -187,7 +192,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
 
   const renderList = () => {
     const listProps = {
-      data: filterData,
+      data: groupData,
       datum,
       value,
       size,
@@ -198,6 +203,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       jssStyle,
       multiple,
       optionWidth,
+      groupKey,
       lineHeight,
       columnWidth,
       itemsInView,

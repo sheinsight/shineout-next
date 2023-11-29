@@ -15,6 +15,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     keygen,
     datum,
     multiple,
+    groupKey,
     itemsInView = 10,
     lineHeight = 34,
     loading,
@@ -52,6 +53,15 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     );
   };
 
+  const renderGroupTitle = (d) => {
+    const title = d[groupKey];
+    return (
+      <div className={styles.optionGroupTitle} title={title}>
+        {title}
+      </div>
+    );
+  };
+
   const renderList = () => {
     if (loading) return renderLoading();
 
@@ -66,6 +76,8 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         lineHeight={lineHeight}
         rowsInView={itemsInView}
         renderItem={renderItem}
+        customKeygen={groupKey}
+        customRenderItem={renderGroupTitle}
       ></VirtualList>
     );
   };

@@ -27,7 +27,7 @@ const jssStyle = {
 };
 const data: { id: string; name: string }[] = [];
 const v = [];
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 50; i++) {
   data.push({
     id: `id-${i}`,
     name: `标签 ${i}`,
@@ -46,14 +46,14 @@ export default () => {
     setValue(v);
   };
 
-  // const handleFilter = (text) => (d) => {
-  //   return d.name.indexOf(text) > -1;
-  // };
+  const handleFilter = (text) => (d) => {
+    return d.name.indexOf(text) > -1;
+  };
 
   const handleGroup = (d) => {
-    if (d.id.indexOf('1') > -1) return '带 1 的';
-    if (d.id.indexOf('2') > -1) return '带 2 的';
-    return '其他';
+    if (d.id.indexOf('1') > -1) return '带 1 的分组';
+    if (d.id.indexOf('2') > -1) return '带 2 的分组';
+    return '其他分组';
   };
 
   // const handleFilter = (text) => {
@@ -64,23 +64,23 @@ export default () => {
     <div>
       <Select
         data={data}
-        // multiple
-        // compressed
-        // compressedBound={2}
+        multiple
+        compressed
+        compressedBound={2}
         // innerTitle='innerTitle'
-        size='small'
+        // size='small'
         value={value}
-        columns={4}
+        columns={3}
         onChange={handleChange}
         keygen='id'
         format='id'
         itemsInView={15}
         groupBy={handleGroup}
         prediction={(v, d) => v === d.id}
-        disabled={(d) => d.id.indexOf('1') > -1}
+        // disabled={(d) => d.id.indexOf('1') > -1}
         jssStyle={jssStyle}
         placeholder='请选择'
-        // onFilter={handleFilter}
+        onFilter={handleFilter}
         renderItem={(d) => d.name}
       />
     </div>

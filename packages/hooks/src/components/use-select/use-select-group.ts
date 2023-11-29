@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { UseSelectGroupProps } from './use-select-group.type';
 import { getUidStr } from '../../utils';
 
 const UseSelectGroup = <DataItem>(props: UseSelectGroupProps<DataItem>) => {
   const { data: dataProp, groupBy } = props;
   const [data, setData] = useState<DataItem[]>([]);
-  const groupKey = getUidStr();
+  const groupKey = useRef('');
 
   const initGroupData = () => {
     if (typeof groupBy !== 'function') {
@@ -16,23 +16,27 @@ const UseSelectGroup = <DataItem>(props: UseSelectGroupProps<DataItem>) => {
     const groupData: { [group: string]: DataItem[] } = {};
 
     dataProp.forEach((item, index) => {
-      const group = groupBy(item, index, data) as keyof typeof groupData;
+      const group = groupBy(item, index, dataProp) as keyof typeof groupData;
       if (!groupData[group])
-        groupData[group || ''] = (group ? [{ [groupKey]: group }] : []) as DataItem[];
+        groupData[group || ''] = (group ? [{ [groupKey.current]: group }] : []) as DataItem[];
+      groupData[group].push(item);
     });
     const newData = Object.keys(groupData).reduce(
-      (p, v) => (v ? p.concat(groupData[v] as any) : groupData[v].concat(p)),
+      (p, v) => (v ? p.concat(groupData[v]) : groupData[v].concat(p)),
       [],
     );
-    console.log(newData);
+    setData(newData);
   };
 
   useEffect(() => {
+    if (!groupBy) return;
+    groupKey.current = getUidStr();
     initGroupData();
-  }, [data]);
+  }, [dataProp]);
 
   return {
     data,
+    groupKey: groupKey.current,
   };
 };
 

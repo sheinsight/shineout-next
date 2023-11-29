@@ -2,7 +2,6 @@
 // import { KeygenResult } from '../../common/type';
 import { useInputAble } from '../../common/use-input-able';
 import { useListSelect } from '../../common/use-list-select';
-import useSelectGroup from './use-select-group';
 import { BaseSelectProps } from './use-select.type';
 
 const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => {
@@ -15,7 +14,6 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     disabled,
     multiple,
     prediction,
-    groupBy,
     value: valueProp,
     onChange: onChangeProp,
   } = props;
@@ -27,7 +25,6 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     beforeChange,
     onChange: onChangeProp,
   });
-  const {} = useSelectGroup({ data, groupBy });
 
   const datum = useListSelect({
     data,

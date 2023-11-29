@@ -46,6 +46,7 @@ export interface BaseListProps<DataItem, Value>
   datum: DatumType<DataItem, Value>;
   closePop: () => void;
   originalData: DataItem[];
+  groupKey?: string;
 }
 
 export interface SelectProps<DataItem, Value>
