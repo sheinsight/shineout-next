@@ -22,7 +22,7 @@ const usePagination = (props: BasePaginationProps) => {
 
     if (onChange) {
       const sizeChange = pageSize !== size;
-      onChange(current, size, sizeChange);
+      onChange(current, size || pageSize, sizeChange);
     }
   };
 

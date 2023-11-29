@@ -207,7 +207,7 @@ export interface TableColumnItem<DataItem> {
    * @en According to the result (boolean) returned by the function to determine whether to merge rows, a and b are two adjacent rows of data
    * @cn 根据函数返回的结果（boolean）判断是否合并行，a、b为相邻的两行数据。
    */
-  rowSpan?: ((prevRowData: DataItem, nextRowData: DataItem) => boolean) | boolean;
+  rowSpan?: (prevRowData: DataItem, nextRowData: DataItem) => boolean;
 
   /**
    * @en When the sorter is not empty, the sort icon appears in this column. the value of order: ['asc', 'desc']

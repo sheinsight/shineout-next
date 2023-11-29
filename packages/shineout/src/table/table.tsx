@@ -5,6 +5,9 @@ import {
   useCheckboxStyle,
   useRadioStyle,
   useSpinStyle,
+  usePaginationStyle,
+  useInputStyle,
+  useButtonStyle,
 } from '@sheinx/shineout-style';
 import { TableProps } from './table.type';
 
@@ -13,6 +16,9 @@ const jssStyle = {
   checkbox: useCheckboxStyle,
   radio: useRadioStyle,
   spin: useSpinStyle,
+  pagination: usePaginationStyle,
+  input: useInputStyle,
+  button: useButtonStyle,
 };
 export default <DataItem, Value>(props: TableProps<DataItem, Value>) => {
   return <Table jssStyle={jssStyle} {...props} />;

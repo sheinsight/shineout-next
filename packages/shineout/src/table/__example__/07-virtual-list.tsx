@@ -56,7 +56,7 @@ const App: React.FC = () => (
     style={{ height: 600 }}
     columns={columns}
     data={data}
-    rowsInView={10}
+    rowsInView={20}
   />
 );
 

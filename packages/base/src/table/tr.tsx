@@ -4,7 +4,8 @@ import type { TableFormatColumn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import Checkbox from '../checkbox';
-import { TbodyProps } from './tbody.type';
+import Radio from '../radio';
+import { TbodyProps, UseTableRowResult } from './tbody.type';
 
 interface TrProps
   extends Pick<
@@ -20,6 +21,7 @@ interface TrProps
     | 'fixLeftNum'
     | 'fixRightNum'
     | 'striped'
+    | 'radio'
   > {
   row: {
     data: any[];
@@ -36,7 +38,11 @@ interface TrProps
   rowClickExpand: boolean;
   handleExpandClick: (col: TableFormatColumn<any>, data: any, index: number) => void;
   treeColumnsName?: string;
-  originKey?: string | number;
+  originKey: string | number;
+  isCellHover: UseTableRowResult['isCellHover'];
+  handleCellHover: UseTableRowResult['handleCellHover'];
+  hoverIndex: UseTableRowResult['hoverIndex'];
+  isSelect: boolean;
 }
 
 const Tr = (props: TrProps) => {
@@ -141,12 +147,30 @@ const Tr = (props: TrProps) => {
       );
     }
     if (col.type === 'checkbox') {
+      if (props.radio) {
+        return (
+          <div className={tableClasses?.iconWrapper}>
+            <Radio
+              jssStyle={props.jssStyle}
+              style={{ margin: 0 }}
+              checked={props.isSelect}
+              onChange={(value: boolean) => {
+                if (value) {
+                  props.datum.add(data);
+                } else {
+                  props.datum.remove(data);
+                }
+              }}
+            />
+          </div>
+        );
+      }
       return (
         <div className={tableClasses?.iconWrapper}>
           <Checkbox
             jssStyle={props.jssStyle}
             style={{ margin: 0 }}
-            checked={props.datum.check(data)}
+            checked={props.isSelect}
             onChange={(_value, check) => {
               if (check) {
                 props.datum.add(data);
@@ -186,12 +210,19 @@ const Tr = (props: TrProps) => {
             key={col.key}
             colSpan={data[i].colSpan}
             rowSpan={data[i].rowSpan}
+            onMouseEnter={() => {
+              props.handleCellHover(props.rowIndex, data[i].rowSpan);
+            }}
+            onMouseLeave={() => {
+              props.handleCellHover(-1, 0);
+            }}
             className={classNames(
               col.className,
               col.fixed === 'left' && tableClasses?.cellFixedLeft,
               col.fixed === 'right' && tableClasses?.cellFixedRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
+              props.isCellHover(props.rowIndex, data[i].rowSpan) && tableClasses?.cellHover,
             )}
             style={getTdStyle(col, data[i].colSpan)}
           >
@@ -233,6 +264,7 @@ const Tr = (props: TrProps) => {
         className={classNames(
           props?.rowClassName?.(props.rawData, props.rowIndex),
           props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
+          props.isSelect && tableClasses?.rowChecked,
         )}
         onClick={() => {
           if (props.rowClickExpand) {

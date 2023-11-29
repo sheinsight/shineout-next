@@ -5,6 +5,10 @@ import { useListSelect, useTableTree } from '@sheinx/hooks';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { RadioClasses } from '../radio/radio.type';
 import { SpinClasses } from '../spin/spin.type';
+import { PaginationProps } from '../pagination/pagination.type';
+import { PaginationClasses } from '../pagination/pagination.type';
+import { ButtonClasses } from '../button/button.type';
+import { InputClasses } from '../input/input.type';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
@@ -31,9 +35,11 @@ export interface TableClasses {
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
-  cellCenter: string;
+  cellGroup: string;
+  cellHover: string;
 
   rowStriped: string;
+  rowChecked: string;
 
   hasSorter: string;
   sorterContainer: string;
@@ -51,6 +57,8 @@ export interface TableClasses {
   iconWrapper: string;
 
   expandWrapper: string;
+
+  pagination: string;
 }
 
 export interface TableRef {
@@ -94,12 +102,20 @@ export interface TableProps<DataItem, Value>
     checkbox?: () => CheckboxClasses;
     radio?: () => RadioClasses;
     spin?: () => SpinClasses;
+    pagination?: () => PaginationClasses;
+    button?: () => ButtonClasses;
+    input?: () => InputClasses;
   };
+  /**
+   * @en The callback function after scrolling.\nx: Horizontal rolling ratio(0 <= x <= 1)\ny: Vertical scroll ratio(0 <= y <= 1)
+   * @cn 滚动条滚动后回调函数；\nx: 横向滚动比(0 <= x <= 1)\ny: 纵向滚动比(0 <= y <= 1)
+   */
+  onScroll?: (x: number, y: number, left: number) => void;
   /**
    * @en Show pagination See [Pagination](/components/Pagination) for details
    * @cn 展示分页 详见 [Pagination](/components/Pagination)
    */
-  pagination?: any;
+  pagination?: PaginationProps;
   /**
    * @en When it is true, a default [Spin](/components/Spin) component will be displayed, a custom loading icon can be passed in to replace.
    * @cn 数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替
@@ -109,7 +125,7 @@ export interface TableProps<DataItem, Value>
   /**
    * @depressed 虚拟列表使用 virutal 属性替代
    */
-  fixed?: boolean | TableFix;
+  fixed?: TableFix | 'auto';
   /**
    *  @en Whether to use virtual list
    *  @cn 是否使用虚拟列表

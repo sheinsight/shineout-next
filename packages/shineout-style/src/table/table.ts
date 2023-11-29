@@ -24,9 +24,11 @@ export type TableClasses = {
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
-  cellCenter: string;
+  cellGroup: string;
+  cellHover: string;
 
   rowStriped: string;
+  rowChecked: string;
 
   hasSorter: string;
   sorterContainer: string;
@@ -44,6 +46,7 @@ export type TableClasses = {
   iconWrapper: string;
 
   expandWrapper: string;
+  pagination: string;
 };
 
 const cellBaseIndex = 4;
@@ -102,7 +105,7 @@ const tableStyle: JsStyles<TableClassType> = {
         boxSizing: 'border-box',
       },
       '& tr:hover td': {
-        background: token.tableTbodyHoverBackgroundColor,
+        // background: token.tableTbodyHoverBackgroundColor,
       },
     },
   },
@@ -179,8 +182,19 @@ const tableStyle: JsStyles<TableClassType> = {
     position: 'sticky',
   },
   cellFixedLast: {},
-  cellCenter: {
+  cellGroup: {
     textAlign: 'center',
+    '$wrapper &': {
+      borderBottomWidth: 0,
+    },
+    '$wrapper$bordered &': {
+      borderBottomWidth: 1,
+    },
+  },
+  cellHover: {
+    'td&': {
+      background: `${token.tableTbodyHoverBackgroundColor} !important`,
+    },
   },
   floatLeft: {
     '& $cellFixedLast$cellFixedLeft::after': {
@@ -339,6 +353,14 @@ const tableStyle: JsStyles<TableClassType> = {
     '&& td': {
       background: token.tableTbodyStripedBackgroundColor,
     },
+  },
+  rowChecked: {
+    '&& td': {
+      background: token.tableTbodyActiveBackgroundColor,
+    },
+  },
+  pagination: {
+    margin: '12px 0',
   },
 };
 

@@ -82,14 +82,13 @@ const App: React.FC = () => {
 
   return (
     <Table
-      fixed='x'
       keygen='id'
       data={data}
       width={1500}
       columns={columns}
+      // bordered
       pagination={{
         current,
-        align: 'center',
         layout: ['links', 'list'],
         onChange: handlePageChange,
         pageSizeList: [10, 15, 20],

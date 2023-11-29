@@ -1,13 +1,21 @@
-import { useTableColumns } from '@sheinx/hooks';
+import { useTableColumns, useTableRow } from '@sheinx/hooks';
 import { TableProps, ListDatum, UseTreeResult } from './table.type';
 import type { TableFormatColumn, OptionalToRequired } from '@sheinx/hooks';
 
 export type UseColumnsResult = ReturnType<typeof useTableColumns>;
+export type UseTableRowResult = ReturnType<typeof useTableRow>;
 
 export interface TbodyProps
   extends Pick<
     OptionalToRequired<TableProps<any, any>>,
-    'data' | 'jssStyle' | 'rowClassName' | 'expandKeys' | 'keygen' | 'treeEmptyExpand' | 'striped'
+    | 'data'
+    | 'jssStyle'
+    | 'rowClassName'
+    | 'expandKeys'
+    | 'keygen'
+    | 'treeEmptyExpand'
+    | 'striped'
+    | 'radio'
   > {
   columns: TableFormatColumn<any>[];
   data: any[];

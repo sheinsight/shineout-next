@@ -12,11 +12,12 @@ export default (props: TbodyProps) => {
   });
 
   // handle rowSpan colSpan
-  const { rowData } = useTableRow({
-    columns: props.columns,
-    data: props.data,
-    currentIndex,
-  });
+  const { rowData, isCellHover, handleCellHover, hoverIndex, rowSelectMergeStartData } =
+    useTableRow({
+      columns: props.columns,
+      data: props.data,
+      currentIndex,
+    });
 
   const expandCol = (props.expandHideCol ||
     columns.find(
@@ -52,6 +53,12 @@ export default (props: TbodyProps) => {
         fixLeftNum={props.fixLeftNum}
         fixRightNum={props.fixRightNum}
         striped={props.striped}
+        radio={props.radio}
+        isCellHover={isCellHover}
+        isSelect={props.datum.check(rowSelectMergeStartData[index])}
+        handleCellHover={handleCellHover}
+        // to update
+        hoverIndex={hoverIndex}
       />
     );
   };

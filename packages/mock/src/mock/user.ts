@@ -67,7 +67,7 @@ export const all = (delay = 500) =>
 
 interface Sorter {
   name?: string;
-  order?: 'asc' | 'desc';
+  order?: 'asc' | 'desc' | string;
 }
 // eslint-disable-next-line
 export function fetchSync(count = 100, start = 0, sorter: Sorter = {}, un?: string) {
@@ -104,15 +104,16 @@ export const fetch = {
   // eslint-disable-next-line
   get(_src: any, { current = 1, pageSize = 100, sorter = {} as Sorter, username = '' }) {
     const start = (current - 1) * pageSize;
-    return new Promise((resolve) => {
+    const result = {
+      status: 1,
+      data: fetchSync(pageSize, start, sorter, username),
+      current,
+      pageSize,
+      total: allData.length,
+    };
+    return new Promise<typeof result>((resolve) => {
       setTimeout(() => {
-        resolve({
-          status: 1,
-          data: fetchSync(pageSize, start, sorter, username),
-          current,
-          pageSize,
-          total: allData.length,
-        });
+        resolve(result);
       }, pickInteger(500, 300));
     });
   },

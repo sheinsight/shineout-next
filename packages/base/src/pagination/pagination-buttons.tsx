@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 import { ButtonShape } from '@sheinx/hooks';
-import { PaginationClasses } from './pagination.type';
 import { PaginationButtonsProps, PaginationMoreTypes } from './pagination-buttons.type';
 import Icons from '../icons';
 import Button from './pagination-button';
@@ -25,8 +24,8 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
   const [showPrevMore, setShowPrevMore] = useState(false);
   const [showNextMore, setShowNextMore] = useState(false);
 
-  const paginationStyle = jssStyle?.pagination || ({} as PaginationClasses);
-  const rootClasses = classNames(paginationStyle.section, paginationStyle.buttons);
+  const paginationStyle = jssStyle?.pagination?.();
+  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.buttons);
 
   const getLinks = () => {
     if (total === 0) return { buttons: [], max: 0 };

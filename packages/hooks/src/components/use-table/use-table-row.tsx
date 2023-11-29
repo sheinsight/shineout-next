@@ -1,7 +1,8 @@
 import { TableFormatColumn, BaseTableProps } from './use-table.type';
 import { KeygenResult } from '../../common/type';
 import { isObject, isFunc } from '../../utils/is';
-import { useMemo } from 'react';
+import { useMemo, useState, useRef } from 'react';
+import { usePersistFn } from '../../common/use-persist-fn';
 
 export interface TableRowProps extends Pick<BaseTableProps<any>, 'data'> {
   columns: TableFormatColumn<any>[];
@@ -42,9 +43,7 @@ function format<DataItem>(
       }
 
       const isEqual =
-        rowSpan === true
-          ? nextRow[i] && cell.content === nextRow[i]!.content
-          : nextRow[i] && typeof rowSpan === 'function' && rowSpan(data, nextRow[i]!.data);
+        nextRow[i] && typeof rowSpan === 'function' && rowSpan(data, nextRow[i]!.data);
 
       const nextTd = nextRow[i];
       if (isEqual && nextTd && nextTd.colSpan === cell.colSpan) {
@@ -63,13 +62,43 @@ function format<DataItem>(
   return row;
 }
 
+/**
+ * - 处理合并行 合并列
+ * - 处理合并行和列的 hover 状态
+ * - 记录选择行的数据 rowSelectMergeStartData
+ */
 const useTableRow = (props: TableRowProps) => {
   const { currentIndex } = props;
 
+  const { current: context } = useRef({
+    rowSelectMergeStartData: [] as Array<any>,
+  });
+
+  const [hoverIndex, setHoverIndex] = useState<Set<number>>(new Set());
+
+  const handleCellHover = usePersistFn((rowIndex: number, colSpan = 1) => {
+    const hoverIndex = new Set<number>();
+    for (let i = 0; i < colSpan; i++) {
+      hoverIndex.add(rowIndex + i);
+    }
+    setHoverIndex(hoverIndex);
+  });
+
+  const isCellHover = usePersistFn((rowIndex: number, colSpan = 1) => {
+    let isHover = false;
+    for (let i = 0; i < colSpan; i++) {
+      isHover = hoverIndex.has(rowIndex + i);
+      if (isHover) break;
+    }
+    return isHover;
+  });
+
   const rowData = useMemo(() => {
     let rows: Row[][] = [];
+    context.rowSelectMergeStartData = [];
     const data = props.data || [];
     const columns = props.columns || [];
+    const checkCol = columns.find((col) => col.type === 'checkbox');
     for (let i = data.length - 1; i >= 0; i--) {
       const d = data[i];
       rows.unshift(
@@ -78,12 +107,24 @@ const useTableRow = (props: TableRowProps) => {
           return col;
         }),
       );
+
+      context.rowSelectMergeStartData[i] = data[i];
+      if (checkCol && typeof checkCol.rowSpan === 'function') {
+        const nextData = data[i + 1];
+        if (nextData && checkCol.rowSpan(data[i], nextData)) {
+          context.rowSelectMergeStartData[i + 1] = data[i];
+        }
+      }
     }
     return rows;
   }, [props.columns, props.data]);
 
   return {
     rowData,
+    handleCellHover,
+    isCellHover,
+    hoverIndex,
+    rowSelectMergeStartData: context.rowSelectMergeStartData,
   };
 };
 

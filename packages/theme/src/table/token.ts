@@ -52,7 +52,8 @@ const tableTokenExtraValue = {
   tbody: {
     background: { color: 'Neutral-fill-1' },
     striped: { background: { color: 'Neutral-fill-2' } },
-    hover: { background: { color: 'Brand-1' } },
+    hover: { background: { color: 'Indigo-1' } },
+    active: { background: { color: 'Brand-1' } },
     font: { color: 'Neutral-text-5' },
   },
   sorter: {

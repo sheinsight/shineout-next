@@ -3,16 +3,17 @@ import usePersistFn from '../use-persist-fn';
 
 interface ListPaginationProps {
   data: any[];
-  current: number;
-  pageSize: number;
-  defaultCurrent: number;
-  loading: boolean;
-  onChange: (current: number, pageSize: number) => void;
+  current?: number;
+  pageSize?: number;
+  defaultCurrent?: number;
+  onChange?: (current: number, pageSize: number) => void;
+  shouldPage?: boolean;
 }
 
-const useTablePagination = (props: ListPaginationProps) => {
+const usePaginationList = (props: ListPaginationProps) => {
   const [current, setCurrent] = useState<number>(props.defaultCurrent || 1);
   const [pageSize, setPageSize] = useState<number>(props.pageSize || 10);
+  const { shouldPage = true } = props;
 
   const handleChange = usePersistFn((current: number, pageSize: number) => {
     setCurrent(current);
@@ -21,17 +22,18 @@ const useTablePagination = (props: ListPaginationProps) => {
   });
 
   const getPager = (data: any[]) => {
+    if (!shouldPage) return {};
     const total = Array.isArray(data) ? data.length : 0;
     return {
       current: props.current || current,
       pageSize: props.pageSize || pageSize,
       total,
-      disabled: props.loading,
       onChange: handleChange,
     };
   };
 
   const getData = (data: any[], pageSize: number, current: number) => {
+    if (!shouldPage) return props.data;
     if (!Array.isArray(data)) return data;
     if (data.length <= pageSize) return data;
     const start = (current - 1) * pageSize;
@@ -49,6 +51,6 @@ const useTablePagination = (props: ListPaginationProps) => {
   };
 };
 
-export default useTablePagination;
+export default usePaginationList;
 
-export { useTablePagination };
+export { usePaginationList };

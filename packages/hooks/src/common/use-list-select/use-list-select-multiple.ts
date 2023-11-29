@@ -51,7 +51,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
   });
 
   const getDataMap = usePersistFn(() => {
-    if (props.data === context.lastData) return context.valueMap;
+    if (props.data === context.lastData) return context.dataMap;
     const map = new Map<ValueItem, DataItem>();
     for (let i = 0; i < props.data.length; i++) {
       const item = props.data[i];
@@ -102,7 +102,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
   const remove = usePersistFn((data: (DataItem | UnMatchedData) | (DataItem | UnMatchedData)[]) => {
     if (data === null || data === undefined) return;
     const values = [];
-    const raws = isArray(data) ? data : [data];
+    const raws = isArray(data) ? [...data] : [data];
     if (!props.prediction) {
       const rowValueMap = new Map();
       for (let i = 0; i < raws.length; i++) {
@@ -189,7 +189,15 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
 
   const getCheckedStatus = usePersistFn(() => {
     if (valueArr.length === 0) return false;
-    if (valueArr.length === props.data.length) return true;
+    const dataMap = getDataMap();
+    const valueMap = getValueMap();
+    const formatValues = Array.from(dataMap, ([name]) => name);
+    let checkedNum = 0;
+    formatValues.forEach((key) => {
+      if (valueMap.get(key)) checkedNum++;
+    });
+    if (checkedNum === 0) return false;
+    if (checkedNum === formatValues.length) return true;
     return 'indeterminate';
   });
 
@@ -206,6 +214,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
       isUnMatchedData,
       disabledCheck,
       getCheckedStatus,
+      data: props.data,
     };
   }, Object.values(props));
 

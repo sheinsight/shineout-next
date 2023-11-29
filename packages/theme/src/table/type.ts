@@ -76,10 +76,16 @@ export interface TableTokens {
   tableTbodyStripedBackgroundColor: string;
   /**
    * @type {string}
-   * @token Brand-1
+   * @token Indigo-1
    * @description xxxundefined鼠标移入时的背景颜色
    */
   tableTbodyHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description xxxundefined鼠标点击时的背景颜色
+   */
+  tableTbodyActiveBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-5

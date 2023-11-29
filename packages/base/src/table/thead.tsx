@@ -179,18 +179,20 @@ export default (props: TheadProps) => {
         <th className={cellClassName} key='checkbox' rowSpan={trs.length} style={fixedStyle}>
           {showSelectAll && (
             <div style={{ lineHeight: 1, verticalAlign: 'middle' }}>
-              <Checkbox
-                checked={props.datum.getCheckedStatus}
-                onChange={(_value, checked) => {
-                  if (checked) {
-                    props.datum.add(props.data);
-                  } else {
-                    props.datum.remove(props.data);
-                  }
-                }}
-                jssStyle={props.jssStyle}
-                style={{ margin: 0 }}
-              />
+              {props.radio ? null : (
+                <Checkbox
+                  checked={props.datum.getCheckedStatus}
+                  onChange={(_value, checked) => {
+                    if (checked) {
+                      props.datum.add(props.datum.data);
+                    } else {
+                      props.datum.remove(props.datum.data);
+                    }
+                  }}
+                  jssStyle={props.jssStyle}
+                  style={{ margin: 0 }}
+                />
+              )}
             </div>
           )}
           {renderDrag(colTemp.index)}
@@ -201,7 +203,7 @@ export default (props: TheadProps) => {
     const style = typeof colTemp2.name === 'string' ? fixedStyle : { padding: 0, ...fixedStyle };
     trs[level].push(
       <th
-        className={classNames(cellClassName, tableClasses?.cellCenter)}
+        className={classNames(cellClassName, tableClasses?.cellGroup)}
         style={style}
         key={colTemp2.key}
         colSpan={colTemp2.colSpan}

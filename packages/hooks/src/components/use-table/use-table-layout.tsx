@@ -135,8 +135,8 @@ const useTableLayout = (props: UseTableLayoutProps) => {
 
   // 根据渲染内容计算colgroup
   const getColgroup = usePersistFn((fromDrag) => {
-    if (!tbodyRef.current) return;
-    const group = tbodyRef.current.querySelector('colgroup');
+    const target = props?.data?.length ? tbodyRef : theadRef;
+    const group = target.current?.querySelector('colgroup');
     if (!group) return;
     const cols = group.querySelectorAll('col');
 

@@ -9,7 +9,9 @@ interface scrollProps {
   onScroll?: (info: {
     scrollLeft: number;
     scrollTop: number;
-    rate?: number;
+    x: number;
+    y: number;
+    fromDrag: boolean;
     height: number;
     width: number;
   }) => void;
@@ -44,26 +46,26 @@ const Scroll = (props: scrollProps) => {
     marginTop: Math.max(0, scrollHeight - height),
     marginRight: scrollWidth,
     height: 0,
+    width: 0,
   };
 
   const handleScroll = usePersistFn((e: React.UIEvent) => {
-    const target = e.target as HTMLDivElement;
+    const target = e.currentTarget as HTMLDivElement;
     const { scrollLeft, scrollTop } = target;
-    let rate = undefined as number | undefined;
-    const max = target.scrollHeight - target.clientHeight;
-    if (!context.isWheel) {
-      // 拖拽滚动条
-      rate = e.currentTarget.scrollTop / max;
-      rate = Math.min(Math.max(rate, 0), 1);
-    }
+    const maxY = target.scrollHeight - target.clientHeight;
+    const maxX = target.scrollWidth - target.clientWidth;
+    const x = Math.min(scrollLeft / maxX, 1);
+    const y = Math.min(scrollTop / maxY, 1);
 
     if (props.onScroll)
       props.onScroll({
         scrollLeft,
         scrollTop,
-        rate,
+        x,
+        y,
         height,
         width,
+        fromDrag: !context.isWheel,
       });
   });
 

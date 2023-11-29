@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Scroll from '../virtual-scroll/scroll';
 import classNames from 'classnames';
 import Spin from '../spin';
+import Pagination, { PaginationProps } from '../pagination';
 import {
   useTableLayout,
   useTableColumns,
@@ -11,17 +12,24 @@ import {
   useListSelect,
   useInputAble,
   useTableVirtual,
+  usePaginationList,
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
 
 import Colgroup from './colgroup';
 import Thead from './thead';
 import Tbody from './tbody';
+// import Tfoot from './tfoot';
 
 const emptyArr: any[] = [];
-const virtualScrollerStyle = { flex: 1, minWidth: 0, minHeight: 0, overflow: 'auto' };
+const virtualScrollerStyle = {
+  flex: 1,
+  minWidth: 0,
+  minHeight: 0,
+  overflow: 'auto',
+  width: '100%',
+};
 const scrollWrapperStyle = { flex: 1, minHeight: 0, minWidth: 0, display: 'flex' };
-// import Tfoot from './tfoot';
 
 // 功能清单
 // - 表头分组
@@ -34,7 +42,7 @@ const scrollWrapperStyle = { flex: 1, minHeight: 0, minWidth: 0, display: 'flex'
 // - 可展开
 // -  可选择
 // - 虚拟列表
-//   数形状数据
+// - 数形状数据
 //   行点击 和行事件 支持拖拽
 export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableClasses = props?.jssStyle?.table?.();
@@ -42,9 +50,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const theadRef = useRef<HTMLTableElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const virtual = !!props.virtual || !!props.fixed;
+  const virtual =
+    !!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto';
 
-  const { verticalAlign = 'top', size = 'default' } = props;
+  const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
   const inputableData = useInputAble({
     value: props.value,
     defaultValue: undefined,
@@ -53,8 +62,27 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     beforeChange: undefined,
   });
 
+  const getSelectData = () => {
+    const checkboxColumn = props.columns.find((item) => item.type === 'checkbox');
+    let selectData = props.data;
+    if (checkboxColumn && typeof checkboxColumn.rowSpan === 'function') {
+      if (typeof checkboxColumn.filterAll === 'function') {
+        selectData = checkboxColumn.filterAll(selectData);
+      } else {
+        selectData = selectData.filter((item, index) => {
+          if (index > 0) {
+            const before = selectData[index - 1];
+            return !checkboxColumn.rowSpan!(before, item);
+          }
+          return true;
+        });
+      }
+    }
+    return selectData;
+  };
+
   const datum = useListSelect({
-    data: props.data,
+    data: getSelectData(),
     value: inputableData.value,
     multiple: !props.radio,
     prediction: props.prediction,
@@ -98,6 +126,15 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     columns: columns,
   });
 
+  const { data: pagedData, ...paginationInfo } = usePaginationList({
+    data: sortedData,
+    shouldPage: !!props.pagination,
+    current: pagination.current,
+    defaultCurrent: pagination.defaultCurrent,
+    pageSize: pagination.pageSize,
+    onChange: pagination.onChange,
+  });
+
   const treeColumnsName = columns.find((item) => item.treeColumnsName)?.treeColumnsName;
 
   const {
@@ -107,7 +144,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     // changedByExpand,
     treeExpandLevel,
   } = useTableTree({
-    data: sortedData,
+    data: pagedData,
     treeColumnsName,
     treeExpandKeys: props.treeExpandKeys,
     defaultTreeExpandKeys: props.defaultTreeExpandKeys,
@@ -117,7 +154,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   });
 
   const virtualInfo = useTableVirtual({
-    data: virtual ? sortedData : emptyArr,
+    data: virtual ? treeData : emptyArr,
     rowsInView: props.rowsInView || 20,
     rowHeight: 40,
     scrollRef: scrollRef,
@@ -152,18 +189,30 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     const target = e.currentTarget;
     if (!target) return;
     setLeft(target.scrollLeft);
+    if (props.onScroll && typeof props.onScroll === 'function') {
+      const maxWidth = target.scrollWidth - target.clientWidth;
+      const maxHeight = target.scrollHeight - target.clientHeight;
+      const x = Math.min(target.scrollLeft / maxWidth, 1);
+      const y = Math.min(target.scrollTop / maxHeight, 1);
+      props.onScroll(x, y, target.scrollLeft);
+    }
   });
 
   const handleVirtualScroll = usePersistFn(
     (info: {
       scrollLeft: number;
       scrollTop: number;
-      rate?: number;
+      y: number;
+      x: number;
+      fromDrag: boolean;
       height: number;
       width: number;
     }) => {
       virtualInfo.handleScroll(info);
       layoutFunc.checkFloat();
+      if (props.onScroll && typeof props.onScroll === 'function') {
+        props.onScroll(info.x, info.y, info.scrollLeft);
+      }
     },
   );
 
@@ -189,6 +238,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       isEmptyTree: isEmptyTree,
       treeColumnsName: treeColumnsName,
       striped: props.striped,
+      radio: props.radio,
     };
 
     const headCommonProps = {
@@ -205,11 +255,16 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       showSelectAll: props.showSelectAll,
       datum: datum,
       renderSorter: props.renderSorter,
+      radio: props.radio,
     };
+    const headWrapperClass = classNames(
+      tableClasses?.headWrapper,
+      isScrollY && scrollBarWidth && tableClasses?.scrollY,
+    );
     if (virtual) {
       return (
         <>
-          <div className={classNames(tableClasses?.headWrapper)}>
+          <div className={headWrapperClass}>
             <table
               style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
               ref={theadRef}
@@ -247,7 +302,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     }
     if (!isScrollY && !props.sticky)
       return (
-        <div ref={scrollRef} className={tableClasses?.bodyWrapper}>
+        <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
           <table style={{ width }} ref={tbodyRef}>
             {Group}
             {<Thead {...headCommonProps} />}
@@ -262,10 +317,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       top !== undefined ? ({ top, position: 'sticky' } as React.CSSProperties) : undefined;
     return (
       <>
-        <div
-          className={classNames(tableClasses?.headWrapper, scrollBarWidth && tableClasses?.scrollY)}
-          style={stickyStyle}
-        >
+        <div className={headWrapperClass} style={stickyStyle}>
           <table style={{ width }} ref={theadRef}>
             {Group}
             {<Thead {...headCommonProps} />}
@@ -287,6 +339,19 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       <div className={classNames(tableClasses?.loading)}>
         {props.loading === true ? <Spin jssStyle={props.jssStyle} size={24} name='ring' /> : null}
       </div>
+    );
+  };
+
+  const renderPagination = () => {
+    if (!props.pagination) return null;
+    return (
+      <Pagination
+        className={tableClasses?.pagination}
+        jssStyle={props.jssStyle}
+        align='right'
+        {...paginationInfo}
+        {...pagination}
+      />
     );
   };
 
@@ -317,24 +382,27 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   }, [theadRef.current, isScrollY]);
 
   return (
-    <div
-      className={classNames(
-        props.className,
-        tableClasses?.wrapper,
-        floatLeft && tableClasses?.floatLeft,
-        floatRight && tableClasses?.floatRight,
-        props.bordered && tableClasses?.bordered,
-        props.sticky && tableClasses?.sticky,
-        verticalAlign === 'top' && tableClasses?.verticalAlignTop,
-        verticalAlign === 'middle' && tableClasses?.verticalAlignMiddle,
-        size === 'small' && tableClasses?.small,
-        size === 'large' && tableClasses?.large,
-        size === 'default' && tableClasses?.default,
-      )}
-      style={props.style}
-    >
-      {renderTable()}
-      {renderLoading()}
-    </div>
+    <>
+      <div
+        className={classNames(
+          props.className,
+          tableClasses?.wrapper,
+          floatLeft && tableClasses?.floatLeft,
+          floatRight && tableClasses?.floatRight,
+          props.bordered && tableClasses?.bordered,
+          props.sticky && tableClasses?.sticky,
+          verticalAlign === 'top' && tableClasses?.verticalAlignTop,
+          verticalAlign === 'middle' && tableClasses?.verticalAlignMiddle,
+          size === 'small' && tableClasses?.small,
+          size === 'large' && tableClasses?.large,
+          size === 'default' && tableClasses?.default,
+        )}
+        style={props.style}
+      >
+        {renderTable()}
+        {renderLoading()}
+      </div>
+      {renderPagination()}
+    </>
   );
 };

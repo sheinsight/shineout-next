@@ -4,7 +4,7 @@ import Jumper from './pagination-jumper';
 import Buttons from './pagination-buttons';
 import Simple from './pagination-simple';
 import { usePagination } from '@sheinx/hooks';
-import { PaginationProps, PaginationClasses } from './pagination.type';
+import { PaginationProps } from './pagination.type';
 
 const Pagination = (props: PaginationProps) => {
   const {
@@ -23,6 +23,7 @@ const Pagination = (props: PaginationProps) => {
     simple,
     disabled,
     text = {},
+    pageSizeList,
     ...rest
   } = props;
 
@@ -35,14 +36,16 @@ const Pagination = (props: PaginationProps) => {
     onChange: onChangeProp,
   });
 
-  const paginationStyle = jssStyle?.pagination || ({} as PaginationClasses);
-  const rootClasses = classNames(className, paginationStyle.pagination, {
-    [paginationStyle.left]: align === 'left',
-    [paginationStyle.center]: align === 'center',
-    [paginationStyle.right]: align === 'right',
-    [paginationStyle.small]: size === 'small',
-    [paginationStyle.large]: size === 'large',
-  });
+  const paginationStyle = jssStyle?.pagination?.();
+  const rootClasses = classNames(
+    className,
+    paginationStyle?.pagination,
+    align === 'left' && paginationStyle?.left,
+    align === 'center' && paginationStyle?.center,
+    align === 'right' && paginationStyle?.right,
+    size === 'small' && paginationStyle?.small,
+    size === 'large' && paginationStyle?.large,
+  );
 
   const getRootProps = () => {
     return {
@@ -59,7 +62,7 @@ const Pagination = (props: PaginationProps) => {
           size={size}
           text={text}
           total={total}
-          current={current}
+          current={current || 0}
           pageSize={pageSize}
           disabled={disabled}
           onChange={onChange}
@@ -82,7 +85,7 @@ const Pagination = (props: PaginationProps) => {
                 size={size}
                 total={total}
                 text={text}
-                current={current}
+                current={current || 0}
                 disabled={disabled}
                 pageSize={pageSize}
                 onChange={onChange}
@@ -101,7 +104,7 @@ const Pagination = (props: PaginationProps) => {
               />
             );
           case 'list':
-            return <List key={i} {...props} />;
+            return <List key={i} {...props} pageSizeList={pageSizeList} />;
           case 'simple':
             return (
               <Simple
@@ -110,7 +113,7 @@ const Pagination = (props: PaginationProps) => {
                 mode={mode}
                 text={text}
                 total={total}
-                current={current}
+                current={current || 0}
                 pageSize={pageSize}
                 onChange={onChange}
               />
@@ -118,7 +121,7 @@ const Pagination = (props: PaginationProps) => {
           default:
             if (typeof section === 'function') {
               return (
-                <div key={i} className={classNames(paginationStyle.section)}>
+                <div key={i} className={classNames(paginationStyle?.section)}>
                   <span>{section({ ...props, current, pageSize })}</span>
                 </div>
               );
