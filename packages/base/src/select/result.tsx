@@ -16,6 +16,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     multiple,
     datum,
     keygen,
+    size,
     value,
     // noCache,
     focus,
@@ -92,7 +93,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     };
     const key = getKey(keygen, item, index);
     return (
-      <Tag key={key} className={styles.tag} onClose={handleClose} jssStyle={jssStyle}>
+      <Tag key={key} size={size} className={styles.tag} onClose={handleClose} jssStyle={jssStyle}>
         {renderResultContent(item)}
       </Tag>
     );

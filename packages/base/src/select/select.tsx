@@ -15,14 +15,12 @@ import ColumnsList from './list-columns';
 /**
  *
  * 大小尺寸
- * 禁用状态（全体）
  * 创建选项
  * 树选择
  * 加载中
  * 自定义下拉列表
  * 限制字符长度
  * 可清除
- * 分组
  *
  */
 
@@ -72,6 +70,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   const rootClass = classNames(
     className,
     styles?.wrapper,
+    disabled && styles?.wrapperDisabled,
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
@@ -121,6 +120,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   });
 
   const handleResultClick = usePersistFn(() => {
+    if (disabled === true) return;
     openPop();
     inputRef.current?.focus();
   });
@@ -148,6 +148,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       <div className={classNames(styles?.result)}>
         <Result
           jssStyle={jssStyle}
+          size={size}
           datum={datum}
           value={value}
           data={groupBy ? groupData : filterData}

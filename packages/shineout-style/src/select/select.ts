@@ -104,6 +104,29 @@ const selectStyle: JsStyles<SelectClassType> = {
     position: 'relative',
     width: token.selectWidth,
     ...wrapper,
+    '&$wrapperSmall': {
+      '& $wrapperPaddingBox': {
+        paddingTop: 0.5,
+        paddingBottom: 0.5,
+      },
+      '& $placeholder': {
+        marginTop: 0,
+        marginBottom: 0,
+      },
+      '& $resultTextWrapper': {
+        paddingTop: 0,
+        paddingBottom: 0,
+        '& > input': {
+          marginTop: 0,
+          marginBottom: 0,
+        },
+      },
+      '& $tag': {
+        marginTop: 0.5,
+        marginBottom: 0.5,
+      },
+    },
+    '&$wrapperLarge': {},
   },
   wrapperDisabled: {
     ...wrapperDisabled,

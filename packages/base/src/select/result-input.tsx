@@ -41,9 +41,9 @@ const ResultInput = (props: ResultInputProps) => {
 
   // 聚焦时重置 filter
   useEffect(() => {
-    if (focus) {
-      onResetFilter();
-    }
+    // if (focus) {
+    // }
+    onResetFilter();
 
     if (!focus) return;
     if (inputRef.current) {

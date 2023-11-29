@@ -7,6 +7,7 @@ export interface ResultProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
     | 'jssStyle'
+    | 'size'
     | 'multiple'
     | 'trim'
     | 'placeholder'

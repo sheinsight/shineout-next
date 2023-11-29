@@ -65,10 +65,10 @@ export default () => {
       <Select
         data={data}
         multiple
-        compressed
-        compressedBound={2}
+        // compressed
+        // compressedBound={2}
         // innerTitle='innerTitle'
-        // size='small'
+        size='small'
         value={value}
         columns={3}
         onChange={handleChange}
