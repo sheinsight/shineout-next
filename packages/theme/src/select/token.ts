@@ -19,6 +19,7 @@ const selectTokenDescription = {
   header: '列表头部的',
   group: '分组',
   title: '标题的',
+  column: '多列模式下',
 };
 
 /**
@@ -98,7 +99,13 @@ const selectTokenExtraValue = {
   group: {
     title: {
       font: { color: 'Neutral-text-3', size: '12/regular' },
-      padding: { x: 'Padding-12', y: 'Padding-7' },
+      padding: { x: 'Padding-12', y: 'Padding-6' },
+    },
+  },
+  column: {
+    padding: 'Padding-8',
+    option: {
+      margin: 'Margin-8',
     },
   },
 };

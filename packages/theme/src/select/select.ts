@@ -61,7 +61,9 @@ const selectTokens: SelectTokens = {
   selectGroupTitleFontColor: 'Neutral-text-3',
   selectGroupTitleFontSize: '12/regular',
   selectGroupTitlePaddingX: 'Padding-12',
-  selectGroupTitlePaddingY: 'Padding-7',
+  selectGroupTitlePaddingY: 'Padding-6',
+  selectColumnPadding: 'Padding-8',
+  selectColumnOptionMargin: 'Margin-8',
 };
 
 export default selectTokens;

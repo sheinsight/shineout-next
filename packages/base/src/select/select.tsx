@@ -91,7 +91,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
 
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
-    data: filterData,
+    data,
     multiple,
     defaultValue,
     control: 'value' in props,
@@ -150,7 +150,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           jssStyle={jssStyle}
           datum={datum}
           value={value}
-          data={groupData}
+          data={groupBy ? groupData : filterData}
           focus={open}
           keygen={keygen}
           disabled={disabled}
@@ -192,11 +192,12 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
 
   const renderList = () => {
     const listProps = {
-      data: groupData,
+      data: groupBy ? groupData : filterData,
       datum,
       value,
       size,
       originalData: data,
+      filterData,
       keygen,
       width,
       height,

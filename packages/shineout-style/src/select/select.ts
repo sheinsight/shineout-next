@@ -349,17 +349,22 @@ const selectStyle: JsStyles<SelectClassType> = {
   columns: {
     display: 'flex',
     alignItems: 'center',
+    '& $optionGroupTitle': {
+      padding: `0 ${token.selectHeaderPadding}`,
+      marginLeft: token.selectColumnOptionMargin,
+    },
   },
   columnsOption: {
     // flex: 1,
-    paddingLeft: 8,
-    paddingRight: 8,
+    paddingLeft: token.selectColumnPadding,
+    paddingRight: token.selectColumnPadding,
     lineHeight: 1,
     boxSizing: 'border-box',
     overflow: 'hidden',
   },
   columnsRadio: {
     width: '100%',
+    marginLeft: token.selectColumnOptionMargin,
     '& :last-child': {
       flex: 1,
       overflow: 'hidden',
@@ -369,6 +374,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   columnsCheckbox: {
     width: '100%',
+    marginLeft: token.selectColumnOptionMargin,
     '& :last-child': {
       flex: 1,
       overflow: 'hidden',

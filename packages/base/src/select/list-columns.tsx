@@ -53,6 +53,7 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
     if (data.length === 0) return false;
 
     data.forEach((item: DataItem) => {
+      if (groupKey && item[groupKey]) return;
       if (!datum.check(item)) {
         every = false;
       } else {
@@ -68,11 +69,15 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
 
   const handleChange = (isChecked: boolean) => {
     if (!isChecked) {
-      const next = data.filter((item) => datum.check(item) && !datum.disabledCheck(item));
+      const next = data.filter(
+        (item) => !item[groupKey] && datum.check(item) && !datum.disabledCheck(item),
+      );
       datum.remove(next);
       return;
     }
-    const next = data.filter((item) => !datum.check(item) && !datum.disabledCheck(item));
+    const next = data.filter(
+      (item) => !item[groupKey] && !datum.check(item) && !datum.disabledCheck(item),
+    );
     datum.add(next);
   };
 
@@ -169,7 +174,13 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
 
     return (
       <div className={styles.header}>
-        <Checkbox size={size} jssStyle={jssStyle} checked={checked} onChange={handleChange}>
+        <Checkbox
+          className={styles.columnsCheckbox}
+          size={size}
+          jssStyle={jssStyle}
+          checked={checked}
+          onChange={handleChange}
+        >
           全选
         </Checkbox>
       </div>

@@ -346,8 +346,20 @@ export interface SelectTokens {
   selectGroupTitlePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Padding-6
    * @description 选择器分组标题的内边距（垂直方向）
    */
   selectGroupTitlePaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器多列模式下内边距
+   */
+  selectColumnPadding: string;
+  /**
+   * @type {string}
+   * @token Margin-8
+   * @description 选择器多列模式下选项外边距
+   */
+  selectColumnOptionMargin: string;
 }
