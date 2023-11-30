@@ -23,6 +23,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     rateTimer: null as any,
     topTimer: null as any,
     controlScrollRate: null as number | null,
+    heightCallback: null as null | (() => void),
   });
 
   const getTranslate = usePersistFn((left?: number, top?: number) => {
@@ -50,6 +51,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
     if (preIndex && preIndex > startIndex && startIndex === index) {
       // 发生在顶部
+      if (context.heightCallback) return;
       const offset = height - (beforeHeight || props.rowHeight);
       setOffsetY((s) => s + offset);
     }
@@ -132,6 +134,21 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   };
 
+  const scrollToIndex = usePersistFn((index: number) => {
+    if (props.scrollRef.current) {
+      context.shouldUpdateHeight = true;
+      const i = Math.max(0, Math.min(index, props.data.length - 1));
+      const beforeHeight = getContentHeight(i - 1);
+      context.heightCallback = () => {
+        const beforeHeight2 = getContentHeight(i - 1);
+        if (beforeHeight2 !== beforeHeight) {
+          scrollToIndex(index);
+        }
+      };
+      props.scrollRef.current.scrollTop = beforeHeight;
+    }
+  });
+
   useEffect(() => {
     if (offsetY) {
       if (props.scrollRef.current && props.innerRef.current) {
@@ -146,6 +163,14 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     setHeight(getContentHeight(props.data.length - 1));
   }, [props.data.length]);
 
+  useEffect(() => {
+    if (context.heightCallback) {
+      const cb = context.heightCallback;
+      context.heightCallback = null;
+      cb();
+    }
+  }, [scrollHeight]);
+
   const renderData = [...props.data].slice(startIndex, startIndex + props.rowsInView);
 
   return {
@@ -157,6 +182,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     handleScroll,
     setRowHeight,
     getTranslate,
+    scrollToIndex,
   };
 };
 

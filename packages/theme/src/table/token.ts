@@ -56,10 +56,16 @@ const tableTokenExtraValue = {
     active: { background: { color: 'Brand-1' } },
     font: { color: 'Neutral-text-5' },
   },
+  expand: {
+    background: { color: 'Neutral-fill-2' },
+  },
   sorter: {
     color: 'Neutral-text-3',
     hover: { color: 'Neutral-text-4' },
     active: { color: 'Brand-6' },
+  },
+  resize: {
+    color: 'Brand-7',
   },
 };
 

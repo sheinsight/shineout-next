@@ -94,6 +94,12 @@ export interface TableTokens {
   tableTbodyFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-2
+   * @description xxxundefined背景颜色
+   */
+  tableExpandBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-3
    * @description xxxundefined颜色
    */
@@ -110,4 +116,10 @@ export interface TableTokens {
    * @description xxxundefined鼠标点击时的颜色
    */
   tableSorterActiveColor: string;
+  /**
+   * @type {string}
+   * @token Brand-7
+   * @description xxxundefined颜色
+   */
+  tableResizeColor: string;
 }

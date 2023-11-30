@@ -40,6 +40,7 @@ export interface TableClasses {
 
   rowStriped: string;
   rowChecked: string;
+  rowExpand: string;
 
   hasSorter: string;
   sorterContainer: string;
@@ -106,6 +107,11 @@ export interface TableProps<DataItem, Value>
     button?: () => ButtonClasses;
     input?: () => InputClasses;
   };
+  /**
+   * @en height of table, same with style.height
+   * @cn 表格高度，与 style.height 作用相同
+   */
+  height?: number;
   /**
    * @en The callback function after scrolling.\nx: Horizontal rolling ratio(0 <= x <= 1)\ny: Vertical scroll ratio(0 <= y <= 1)
    * @cn 滚动条滚动后回调函数；\nx: 横向滚动比(0 <= x <= 1)\ny: 纵向滚动比(0 <= y <= 1)
@@ -252,7 +258,7 @@ export interface TableProps<DataItem, Value>
   sticky?: boolean | { top: number };
   /**
    * @en Table instance (please use with caution: only fixed Table)
-   * @cn Table 实例（请谨慎使用：仅固定表格）
+   * @cn Table 实例（请谨慎使用：仅虚拟列表支持）
    */
   tableRef?: (table: TableRef) => void;
   /**

@@ -49,6 +49,7 @@ const Tr = (props: TrProps) => {
   const { treeFunc } = props;
   const tableClasses = props.jssStyle?.table?.();
   const trRef = useRef<HTMLTableRowElement>(null);
+  const expandRef = useRef<HTMLTableRowElement>(null);
 
   const getFixedStyle = (fixed: 'left' | 'right' | undefined, index: number, colSpan: number) => {
     if (!props.isScrollX) return;
@@ -91,9 +92,10 @@ const Tr = (props: TrProps) => {
 
   useEffect(() => {
     if (props.setRowHeight && trRef.current) {
-      props.setRowHeight(props.rowIndex, trRef.current.offsetHeight);
+      const expandHeight = expandRef.current ? expandRef.current.offsetHeight : 0;
+      props.setRowHeight(props.rowIndex, trRef.current.offsetHeight + expandHeight);
     }
-  }, []);
+  }, [props.expanded]);
 
   const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 20) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
@@ -132,6 +134,10 @@ const Tr = (props: TrProps) => {
 
   const renderContent = (col: TrProps['columns'][number], data: any, index: number) => {
     if (col.type === 'expand' || col.type === 'row-expand') {
+      const renderResult =
+        typeof col.render === 'function' ? col.render(props.rawData, props.rowIndex) : undefined;
+
+      if (typeof renderResult !== 'function') return null;
       const clickEvent =
         col.type === 'expand'
           ? () => {
@@ -243,7 +249,7 @@ const Tr = (props: TrProps) => {
       const renderFunc = expandCol.render(props.rawData, props.rowIndex);
       if (typeof renderFunc === 'function') {
         return (
-          <tr>
+          <tr className={tableClasses?.rowExpand} ref={expandRef}>
             <td
               className={tableClasses?.cellIgnoreBorder}
               colSpan={props.columns.length}

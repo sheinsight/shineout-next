@@ -26,6 +26,7 @@ export type TableClasses = {
   cellFixedLast: string;
   cellGroup: string;
   cellHover: string;
+  rowExpand: string;
 
   rowStriped: string;
   rowChecked: string;
@@ -270,7 +271,7 @@ const tableStyle: JsStyles<TableClassType> = {
     bottom: 0,
     width: '3px',
     boxSizing: 'border-box',
-    background: '#19718a',
+    background: token.tableResizeColor,
     transition: 'opacity 0.3s',
     cursor: 'ew-resize',
     '$wrapper th:hover &': {
@@ -292,12 +293,12 @@ const tableStyle: JsStyles<TableClassType> = {
 
     '&::after': {
       borderStyle: 'dashed solid dashed dashed',
-      borderColor: 'transparent #19718a transparent transparent',
+      borderColor: `transparent ${token.tableResizeColor} transparent transparent`,
       right: '4px',
     },
     '&::before': {
       borderStyle: 'dashed dashed dashed solid',
-      borderColor: 'transparent transparent transparent #19718a',
+      borderColor: `transparent transparent transparent ${token.tableResizeColor}`,
       left: '4px',
     },
   },
@@ -357,6 +358,11 @@ const tableStyle: JsStyles<TableClassType> = {
   rowChecked: {
     '&& td': {
       background: token.tableTbodyActiveBackgroundColor,
+    },
+  },
+  rowExpand: {
+    '&& td': {
+      background: token.tableExpandBackgroundColor,
     },
   },
   pagination: {

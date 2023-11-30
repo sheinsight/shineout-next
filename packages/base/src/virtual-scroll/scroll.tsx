@@ -23,8 +23,8 @@ interface scrollProps {
 const Scroll = (props: scrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { current: context } = useRef({
-    isWheel: false,
     timer: null as any,
+    isMouseDown: false,
   });
   const { width, height } = useResize({ targetRef: containerRef });
   const { scrollHeight = 0, scrollWidth = 0 } = props;
@@ -47,6 +47,7 @@ const Scroll = (props: scrollProps) => {
     marginRight: scrollWidth,
     height: 0,
     width: 0,
+    overflow: 'hidden',
   };
 
   const handleScroll = usePersistFn((e: React.UIEvent) => {
@@ -54,8 +55,8 @@ const Scroll = (props: scrollProps) => {
     const { scrollLeft, scrollTop } = target;
     const maxY = target.scrollHeight - target.clientHeight;
     const maxX = target.scrollWidth - target.clientWidth;
-    const x = Math.min(scrollLeft / maxX, 1);
-    const y = Math.min(scrollTop / maxY, 1);
+    const x = maxX === 0 ? 0 : Math.min(scrollLeft / maxX, 1);
+    const y = maxY === 0 ? 0 : Math.min(scrollTop / maxY, 1);
 
     if (props.onScroll)
       props.onScroll({
@@ -65,16 +66,8 @@ const Scroll = (props: scrollProps) => {
         y,
         height,
         width,
-        fromDrag: !context.isWheel,
+        fromDrag: context.isMouseDown,
       });
-  });
-
-  const handleWheel = usePersistFn(() => {
-    context.isWheel = true;
-    if (context.timer) clearTimeout(context.timer);
-    context.timer = setTimeout(() => {
-      context.isWheel = false;
-    }, 200);
   });
 
   return (
@@ -84,7 +77,12 @@ const Scroll = (props: scrollProps) => {
         style={scrollerStyle}
         onScroll={handleScroll}
         ref={props.wrapperRef}
-        onWheel={handleWheel}
+        onMouseDown={() => {
+          context.isMouseDown = true;
+        }}
+        onMouseUp={() => {
+          context.isMouseDown = false;
+        }}
       >
         <div
           {...util.getDataAttribute({ type: 'scroll-container' })}

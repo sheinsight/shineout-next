@@ -13,6 +13,7 @@ import {
   useInputAble,
   useTableVirtual,
   usePaginationList,
+  useLatestObj,
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
 
@@ -104,7 +105,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     floatRight,
     width,
     shouldLastColAuto,
-    scrollWidth,
     maxScrollLeft,
     scrollBarWidth,
   } = useTableLayout({
@@ -281,7 +281,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             style={scrollWrapperStyle}
             scrollerStyle={virtualScrollerStyle}
             wrapperRef={scrollRef}
-            scrollWidth={scrollWidth}
+            scrollWidth={width || 1}
             scrollHeight={virtualInfo.scrollHeight}
             onScroll={handleVirtualScroll}
           >
@@ -381,6 +381,16 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
   }, [theadRef.current, isScrollY]);
 
+  const tableFunc = useLatestObj({
+    scrollToIndex: virtualInfo.scrollToIndex,
+  });
+
+  useEffect(() => {
+    if (props.tableRef) {
+      props.tableRef(tableFunc);
+    }
+  }, []);
+
   return (
     <>
       <div
@@ -397,7 +407,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           size === 'large' && tableClasses?.large,
           size === 'default' && tableClasses?.default,
         )}
-        style={props.style}
+        style={{ height: props.height, ...props.style }}
       >
         {renderTable()}
         {renderLoading()}
