@@ -14,15 +14,8 @@ import {
 import { classLengthTest } from '../../tests/structureTest';
 
 const SO_PREFIX = 'upload';
-const originClasses = [
-  'wrapper',
-  'imageHandler',
-  'imageHandlerIcon',
-  'imageResultTip',
-  'icon',
-  'imageResult',
-];
-const originItemClasses = ['wrapperImage', 'resultError', 'resultSuccess'];
+const originClasses = ['wrapper', 'imageHandler', 'imageHandlerIcon', 'imageResultTip', 'icon'];
+const originItemClasses = ['wrapperImage', 'resultError', 'resultSuccess', 'imageResult'];
 const {
   wrapper,
   imageHandler,
@@ -125,7 +118,7 @@ describe('Upload.Image[Base]', () => {
       await delay(200);
     });
     screen.debug();
-    classTest(container.querySelector(imageResult)!, resultError);
+    classTest(container.querySelector(`.${imageResult}`)!, resultError);
   });
   test('should remove image and recover', async () => {
     const onChange = jest.fn();
@@ -166,7 +159,6 @@ describe('Upload.Image[Base]', () => {
     expect(firstChild.className).toBe(`${imageResult} ${resultSuccess}`);
     rerender(<Upload.Image action={'//404'} defaultValue={['aa.png']} leftHandler />);
     const firstChildRender = uploadWrapper.firstChild as Element;
-    expect(firstChildRender.className).toBe(imageHandler);
-    screen.debug();
+    expect(firstChildRender.className).toBe(imageHandler.split('.')[1]);
   });
 });
