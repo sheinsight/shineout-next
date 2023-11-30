@@ -1,3 +1,4 @@
+import React from 'react';
 import { cleanup, render, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Upload from '..';
@@ -15,7 +16,7 @@ import {
   styleTest,
   textContentTest,
 } from '../../tests/utils';
-import { mockXhr } from './util';
+import { mockXhr, uploadFile } from './util';
 import UploadBase from '../__example__/01-base-0';
 import UploadBaseImage from '../__example__/01-base-1-image';
 import UploadBaseButton from '../__example__/01-base-2-button';
@@ -78,18 +79,6 @@ const {
   footer: popoverFooter,
   mention: popoverMention,
 } = createClassName('popover', ['wrapper', 'footer', 'mention'], ['wrapperOpen']);
-
-// upload file function
-const uploadFile = (wrapper: Element, options: { name?: string; files?: File[] }) => {
-  const blob = options.name
-    ? [new File(['content'], options.name, { type: 'text/plain', ...options })]
-    : options.files;
-  fireEvent.change(wrapper.querySelector('input')!, {
-    target: {
-      files: blob,
-    },
-  });
-};
 
 const UploadTest = (props: any) => {
   const { children, ...rest } = props;
@@ -156,14 +145,6 @@ describe('Upload[Base]', () => {
     const uploadResultClose = uploadResult.querySelector(resultClose)!;
     classTest(uploadResultClose, iconHover);
     classLengthTest(uploadResultClose, 'svg', 1);
-  });
-  test('should render when upload error', async () => {
-    const { container } = render(<UploadTest action={'/api/upload'} />);
-    uploadFile(container, { name: fileTextName });
-    await waitFor(async () => {
-      await delay(200);
-    });
-    classTest(container.querySelector(result)!, resultError);
   });
   test('should render when set onHttpError/onErrorRemove', async () => {
     const errorMsg = 'test error';
@@ -369,7 +350,7 @@ describe('Upload[Multiple]', () => {
     expect(uploadInput.files?.[0]).toBe(file1);
     expect(uploadInput.files?.[1]).toBe(file2);
   });
-  test('should render when set beforeUpload', async () => {
+  test('should render when set beforeUpload is function', async () => {
     const beforeUploadFn = jest.fn();
     const { container } = render(<UploadTest name='file' beforeUpload={beforeUploadFn} />);
     uploadFile(container, { name: fileTextName });
@@ -378,6 +359,15 @@ describe('Upload[Multiple]', () => {
     });
     expect(beforeUploadFn.mock.calls.length).toBe(1);
   });
+  test('should render when set beforeUpload is promise(resolve)', async () => {
+    const beforeUploadProFn = jest.fn(() => Promise.resolve({ status: 200 }));
+    const { container } = render(<UploadTest name='file' beforeUpload={beforeUploadProFn} />);
+    uploadFile(container, { name: fileTextName });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(beforeUploadProFn.mock.calls.length).toBe(2);
+  });
   test('should render when set customResult', async () => {
     const CustomResult = ({ value }: any) => <div className='demo'>{value}</div>;
     const { container } = render(<UploadTest name='file' customResult={CustomResult} />);
@@ -385,7 +375,7 @@ describe('Upload[Multiple]', () => {
   });
   // TODO: gapProps
 });
-describe('Upload[Value/DefaultValue/OnChange]', () => {
+describe('Upload[Value/DefaultValue/BeforeChange]', () => {
   test('should render when set value', async () => {
     const { container } = render(<UploadTest name='file' value={['test.txt', 'demo.txt']} />);
     const uploadWrapper = container.querySelector(wrapper)!;
@@ -421,8 +411,8 @@ describe('Upload[Value/DefaultValue/OnChange]', () => {
     textContentTest(container.querySelector(resultTextBody)!, fileTextName);
   });
 });
-describe('Upload[BeforeRemove]', () => {
-  test('should render when set beforeRemove', async () => {
+describe('Upload[BeforeRemove/OnChange/BeforeChange]', () => {
+  test('should render when set beforeRemove, onChange and beforeChange', async () => {
     let time = 0;
     const beforeRemove = jest.fn(() => {
       if (time === 0) {
@@ -431,6 +421,7 @@ describe('Upload[BeforeRemove]', () => {
       }
       return Promise.resolve();
     });
+    const beforeChangeFn = jest.fn();
     const onChange = jest.fn();
     const { container } = render(
       <UploadTest
@@ -439,6 +430,7 @@ describe('Upload[BeforeRemove]', () => {
         onChange={onChange}
         defaultValue={['aaa.png']}
         forceAccept='image/*'
+        beforeChange={beforeChangeFn}
       />,
     );
     const uploadResultClose = container.querySelector(resultClose)!;
@@ -456,6 +448,7 @@ describe('Upload[BeforeRemove]', () => {
     });
     expect(beforeRemove.mock.calls.length).toBe(2);
     expect(onChange.mock.calls.length).toBe(1);
+    expect(beforeChangeFn.mock.calls.length).toBe(1);
     expect(uploadResultClose).not.toBeInTheDocument();
   });
 });
@@ -598,3 +591,128 @@ describe('Upload[Request/RenderResult/RenderContent]', () => {
     expect(request.mock.calls.length).toBe(1);
   });
 });
+describe('Upload[Validator]', () => {
+  test('should render when set validator about size', async () => {
+    const fileName = '1.png';
+    const errorSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+    const { container } = render(<UploadValidateSize />);
+    const fileContent = new Array(100000).join('a');
+    const files = [new File([fileContent], fileName)];
+    uploadFile(container, { files });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(
+      container.querySelector(resultTextBody)!,
+      `${fileName}(max file size is 10KB) `,
+    );
+    expect(errorSpy).toHaveBeenCalledWith(new Error('max file size is 10KB'), expect.anything());
+  });
+  test('should render when set validator about ext', async () => {
+    const fileName = 'demo.txt';
+    const errMsg = 'File extension must be jpg or png';
+    const { container } = render(
+      <UploadTest
+        validator={{
+          ext: (ext: string) => (['jpg', 'png'].includes(ext) ? undefined : new Error(errMsg)),
+        }}
+      />,
+    );
+    const files = [new File(['content'], fileName)];
+    uploadFile(container, { files });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(container.querySelector(resultTextBody)!, `${fileName}(${errMsg}) `);
+  });
+  // test('should render when set validator about imageSize', async () => {
+  //   const errMsg = 'only allow 200px * 100px';
+  //   const { container } = render(<UploadTest validator={{
+  //     imageSize: (img: any) =>
+  //       img.width !== 200 || img.height !== 100 ? new Error(errMsg) : undefined,
+  //   }} />);
+
+  //   // Create a File object with metadata
+  //   const file = new File(['content'], 'test.png', { type: 'image/png' });
+  //   file.width = 300; // Add width property to the File object
+  //   file.height = 100; // Add height property to the File object
+
+  //   uploadFile(container, { files: [file] });
+  //   await waitFor(async () => {
+  //     await delay(200);
+  //   });
+  //   screen.debug()
+  // })
+  test('should render when set customValidator', async () => {
+    const errMsg = 'error';
+    const { container } = render(
+      <UploadTest
+        validator={{
+          customValidator: () => new Error(errMsg),
+        }}
+      />,
+    );
+    const fileName = 'demo.txt';
+    const files = [new File(['content'], fileName)];
+    uploadFile(container, { files });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(container.querySelector(resultTextBody)!, `${fileName}(${errMsg}) `);
+  });
+});
+describe('Upload[Error]', () => {
+  test('should render without action', async () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const { container } = render(<Upload />);
+    const fileName = 'demo.txt';
+    const files = [new File(['content'], fileName)];
+    uploadFile(container, { files });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(errorSpy).toHaveBeenCalledWith(new Error('action is required, but its value is '));
+  });
+  test('should render when load error status', async () => {
+    const xhr = mockXhr();
+    const errMsg = 'error';
+    const onErrorFn = () => errMsg;
+    const { container } = render(<UploadTest onHttpError={onErrorFn} />);
+    const fileName = 'demo.txt';
+    const files = [new File(['content'], fileName)];
+    uploadFile(container, { files });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // @ts-ignore
+    xhr.onload({ currentTarget: { response: 'aaa', status: 300 } });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classTest(container.querySelector(result)!, resultError);
+    textContentTest(container.querySelector(resultTextBody)!, `${fileName}(${errMsg}) `);
+  });
+  test('should render when onload result is error', async () => {
+    const errMsg = 'error from success';
+    const fileName = 'test.doc';
+    const onSuccess = jest.fn(() => new Error(errMsg));
+    const { container } = render(
+      <UploadTest action='//404' params={{ from: 'test' }} withCredentials onSuccess={onSuccess} />,
+    );
+    const xhr = mockXhr();
+    uploadFile(container, { name: fileName });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // @ts-ignore
+    xhr.onload({ currentTarget: { response: 'aaa', status: 200 } });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(container.querySelector(resultTextBody)!, `${fileName}(${errMsg}) `);
+  });
+});
+// describe('Upload[OnProgress]', () => {
+//   test('should render when set onProgress', async () => {})
+// })
+// drop/onPreview/onProgress/validator/validatorHandle
