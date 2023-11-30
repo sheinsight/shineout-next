@@ -12,6 +12,7 @@ import {
   textContentTest,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
+import UploadResultImage from '../__example__/02-result-image';
 
 const SO_PREFIX = 'upload';
 const originClasses = ['wrapper', 'imageHandler', 'imageHandlerIcon', 'imageResultTip', 'icon'];
@@ -161,8 +162,39 @@ describe('Upload.Image[Base]', () => {
     const firstChildRender = uploadWrapper.firstChild as Element;
     expect(firstChildRender.className).toBe(imageHandler.split('.')[1]);
   });
+  test('should rende when set renderContent', () => {
+    const { container } = render(
+      <Upload.Image
+        action={'//404'}
+        defaultValue={['aa.png']}
+        renderContent={() => <div className='demo'>1</div>}
+      />,
+    );
+    const uploadWrapper = container.querySelector(wrapper)!;
+    expect(
+      uploadWrapper.querySelector(`.${imageResult}`)?.querySelector('.demo'),
+    ).toBeInTheDocument();
+  });
+  test('should render resultImage', async () => {
+    const { container } = render(<UploadResultImage />);
+    const xhr = mockXhr();
+    const img = { width: 200, height: 200 };
+    window.Image = jest.fn().mockImplementation(() => img);
+    uploadFile(container, { name: 'test.png' });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // @ts-ignore
+    img.onload();
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // @ts-ignore
+    xhr.onload({ currentTarget: { response: 'aaa.png', status: 200 } });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classLengthTest(container.querySelector(`.${imageResult}`)!, 'img', 1);
+  });
   // ignorePreview
-  // test('should render when set ignorePreview', () => {
-  //   const { container } = render(<Upload.Image action={'//404'} defaultValue={['aa.png']} />)
-  // })
 });

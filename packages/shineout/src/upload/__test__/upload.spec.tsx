@@ -590,9 +590,33 @@ describe('Upload[Request/RenderResult/RenderContent]', () => {
     });
     expect(request.mock.calls.length).toBe(1);
   });
+  test('should render request example', async () => {
+    const { container } = render(<UploadRequest />);
+    uploadFile(container, { name: 'test.doc' });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(container.querySelector(resultTextBody)!, 'test.doc');
+  });
+  test('should render when set requestIgnore exmple', async () => {
+    const { container } = render(<UploadRequestIgnore />);
+    uploadFile(container, { name: 'test.doc' });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(container.querySelector(resultTextBody)!, 'test.doc');
+  });
+  test('should render when set requestZip exmple', async () => {
+    const { container } = render(<UploadRequestZip />);
+    uploadFile(container, { name: 'test.zip' });
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(container.querySelector(resultTextBody)!, 'test.zip(zipping...) ');
+  });
 });
 describe('Upload[Validator]', () => {
-  test('should render when set validator about size', async () => {
+  test('should render when set validator and validatorHandler about size', async () => {
     const fileName = '1.png';
     const errorSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
     const { container } = render(<UploadValidateSize />);
@@ -625,24 +649,6 @@ describe('Upload[Validator]', () => {
     });
     textContentTest(container.querySelector(resultTextBody)!, `${fileName}(${errMsg}) `);
   });
-  // test('should render when set validator about imageSize', async () => {
-  //   const errMsg = 'only allow 200px * 100px';
-  //   const { container } = render(<UploadTest validator={{
-  //     imageSize: (img: any) =>
-  //       img.width !== 200 || img.height !== 100 ? new Error(errMsg) : undefined,
-  //   }} />);
-
-  //   // Create a File object with metadata
-  //   const file = new File(['content'], 'test.png', { type: 'image/png' });
-  //   file.width = 300; // Add width property to the File object
-  //   file.height = 100; // Add height property to the File object
-
-  //   uploadFile(container, { files: [file] });
-  //   await waitFor(async () => {
-  //     await delay(200);
-  //   });
-  //   screen.debug()
-  // })
   test('should render when set customValidator', async () => {
     const errMsg = 'error';
     const { container } = render(
@@ -712,7 +718,3 @@ describe('Upload[Error]', () => {
     textContentTest(container.querySelector(resultTextBody)!, `${fileName}(${errMsg}) `);
   });
 });
-// describe('Upload[OnProgress]', () => {
-//   test('should render when set onProgress', async () => {})
-// })
-// drop/onPreview/onProgress/validator/validatorHandle
