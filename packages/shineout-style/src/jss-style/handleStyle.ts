@@ -2,21 +2,41 @@ interface ObjectType {
   [key: string]: any;
 }
 
+function flexGapSupport() {
+  const flex = document.createElement('div');
+  flex.style.display = 'flex';
+  flex.style.flexDirection = 'column';
+  flex.style.rowGap = '1px';
+
+  flex.appendChild(document.createElement('div'));
+  flex.appendChild(document.createElement('div'));
+
+  document.body.appendChild(flex);
+  const isSupported = flex.scrollHeight === 1;
+  if (flex.parentNode) flex.parentNode.removeChild(flex);
+
+  return isSupported;
+}
+
+let isSupportGap: boolean | null = null;
+
 const handleRule = (key: string, rule: string, target: ObjectType) => {
   if (key === 'gap') {
+    if (isSupportGap === null) {
+      isSupportGap = flexGapSupport();
+    }
     const valueArr = rule.split(' ');
     valueArr[1] = valueArr[1] || valueArr[0];
-    target[key] = rule;
-    target['@supports not (gap: 1px)'] = {
-      ...(target['@supports not (gap: 1px)'] || {}),
-      marginRight: `calc(-1 * ${valueArr[1]})`,
-      marginBottom: `calc(-1 * ${valueArr[0]})`,
-      ['& > *']: {
-        ...(target?.['@supports not (gap: 1px)']?.['& > *'] || {}),
+
+    if (isSupportGap) {
+      target[key] = rule;
+    } else {
+      target['& > *'] = {
+        ...(target?.['& > *'] || {}),
         marginRight: valueArr[1],
         marginBottom: valueArr[0],
-      },
-    };
+      };
+    }
     return;
   }
   const reg = /^(margin|padding|border)(Left|Right)/;

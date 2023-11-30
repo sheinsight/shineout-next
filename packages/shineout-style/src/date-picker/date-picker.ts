@@ -532,13 +532,15 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     '& $pickerBody': {
       display: 'flex',
       width: token.datePickerTimePanelWidth,
-      gap: token.datePickerTimeListGap,
       padding: `${token.datePickerTimePanelPaddingY} ${token.datePickerTimePanelPaddingX} `,
       boxSizing: 'border-box',
       position: 'relative',
     },
   },
   timeList: {
+    '&:not(:first-child)': {
+      marginLeft: token.datePickerTimeListGap,
+    },
     display: 'flex',
     flex: '1',
     flexDirection: 'column',
@@ -574,9 +576,11 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     margin: 'auto',
     display: 'flex',
     height: token.datePickerTimeItemHeight,
-    gap: token.datePickerTimeListGap,
   },
   timeBaseItem: {
+    '&:not(:first-child)': {
+      marginLeft: token.datePickerTimeListGap,
+    },
     flex: '1',
     height: '100%',
     background: token.datePickerTimeItemActiveBackgroundColor,
@@ -618,10 +622,12 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     padding: `${token.datePickerQuickPanelPaddingY} ${token.datePickerQuickPanelPaddingX}`,
     display: 'flex',
     flexDirection: 'column',
-    gap: token.datePickerQuickPanelGap,
     borderRight: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
   },
   quickPickerItem: {
+    '&:not(:first-child)': {
+      marginTop: token.datePickerQuickPanelGap,
+    },
     whiteSpace: 'nowrap',
     textAlign: 'left',
     fontSize: token.datePickerQuickPanelItemFontSize,

@@ -23,11 +23,10 @@ interface TableRowData {
 }
 
 type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
-type TableProps = TYPE.Table.Props<TableRowData, string[]>;
+type TableProps = TYPE.Table.Props<TableRowData, number>;
 type TableOnRowSelect = TableProps['onRowSelect'];
 
 const data: TableRowData[] = user.fetchSync(20);
-const value = [2, 3, 5].map((i) => `${data[i].firstName} ${data[i].lastName}`);
 
 const columns: TableColumnItem[] = [
   {
@@ -41,28 +40,22 @@ const columns: TableColumnItem[] = [
 ];
 
 const App: React.FC = () => {
-  const [selectedValue, setSelectedValue] = useState(value);
+  const [selectedValue, setSelectedValue] = useState(3);
 
   const handelRowSelect: TableOnRowSelect = (v) => {
     setSelectedValue(v);
   };
   return (
-    <div>
-      <Table
-        keygen='id'
-        radio
-        data={data}
-        columns={columns}
-        value={selectedValue}
-        style={{ height: 300 }}
-        onRowSelect={handelRowSelect}
-        format={(d) => `${d.firstName} ${d.lastName}`}
-      />
-      <div style={{ wordBreak: 'break-all', marginTop: 24, fontSize: 14 }}>
-        selected rows:
-        {JSON.stringify(selectedValue)}
-      </div>
-    </div>
+    <Table
+      keygen='id'
+      radio
+      data={data}
+      columns={columns}
+      value={selectedValue}
+      style={{ height: 300 }}
+      onRowSelect={handelRowSelect}
+      format='id'
+    />
   );
 };
 
