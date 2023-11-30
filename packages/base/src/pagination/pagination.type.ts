@@ -21,6 +21,7 @@ export interface PaginationClasses {
   center: string;
   jumper: string;
   split: string;
+  icon: string;
   simple: string;
   small: string;
   large: string;

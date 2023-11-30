@@ -33,7 +33,7 @@ const MenuComponent = () => {
 
   const active = useMemo(() => {
     const paths = location.pathname.split('/');
-    const componentName = paths.at(-1);
+    const componentName = paths[paths.length - 1];
     return componentName;
   }, [location.pathname]);
 
