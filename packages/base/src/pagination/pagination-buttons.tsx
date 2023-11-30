@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 import { ButtonShape } from '@sheinx/hooks';
-import { PaginationClasses } from './pagination.type';
+import { PaginationClasses } from '@sheinx/shineout-style';
 import { PaginationButtonsProps, PaginationMoreTypes } from './pagination-buttons.type';
 import Icons from '../icons';
 import Button from './pagination-button';
@@ -25,8 +25,8 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
   const [showPrevMore, setShowPrevMore] = useState(false);
   const [showNextMore, setShowNextMore] = useState(false);
 
-  const paginationStyle = jssStyle?.pagination || ({} as PaginationClasses);
-  const rootClasses = classNames(paginationStyle.section, paginationStyle.buttons);
+  const styles = jssStyle?.pagination || ({} as PaginationClasses);
+  const rootClasses = classNames(styles.section, styles.buttons);
 
   const getLinks = () => {
     if (total === 0) return { buttons: [], max: 0 };
@@ -171,7 +171,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
           onMouseEnter={handleHoverMore}
           onMouseLeave={handleHoverMore}
         >
-          {renderMore(pageNum as PaginationMoreTypes)}
+          <span className={styles.icon}>{renderMore(pageNum as PaginationMoreTypes)}</span>
         </Button>
       );
     });

@@ -1,18 +1,22 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
 
-type PaginationClass =
-  | 'pagination'
-  | 'section'
-  | 'buttons'
-  | 'jumper'
-  | 'split'
-  | 'left'
-  | 'right'
-  | 'center'
-  | 'simple'
-  | 'small'
-  | 'large';
+export interface PaginationClasses {
+  pagination: string;
+  section: string;
+  buttons: string;
+  left: string;
+  right: string;
+  center: string;
+  jumper: string;
+  split: string;
+  icon: string;
+  simple: string;
+  small: string;
+  large: string;
+}
+
+type PaginationClass = keyof PaginationClasses;
 
 const PaginationStyle: JsStyles<PaginationClass> = {
   pagination: {
@@ -41,11 +45,24 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     display: 'inline-block',
     textAlign: 'center',
   },
+  icon: {
+    lineHeight: 0,
+    display: 'inline-block',
+    width: Token.paginationFontSize,
+  },
   buttons: {},
   jumper: {},
   simple: {},
-  small: {},
-  large: {},
+  small: {
+    '& $icon': {
+      width: Token.paginationSmallFontSize,
+    },
+  },
+  large: {
+    '& $icon': {
+      width: Token.paginationLargeFontSize,
+    },
+  },
 };
 
 export default PaginationStyle;
