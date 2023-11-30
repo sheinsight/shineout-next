@@ -35,7 +35,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const [more, setMore] = useState(-1);
   const [text, setText] = useState('');
-  const [inputWidth] = useState(12);
   const resultRef = useRef<HTMLDivElement>(null);
   const shouldResetMore = useRef(false);
 
@@ -63,7 +62,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       <React.Fragment key='input'>
         <Input
           jssStyle={jssStyle}
-          style={{ width: inputWidth }}
+          style={{ width: 12 }}
           value={text}
           focus={focus}
           multiple={multiple}
@@ -129,7 +128,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const renderSingleResult = () => {
     if (!value) return null;
-
     const result = datum.getDataByValues([value]);
     const content = renderResultContent(result[0]);
 
@@ -164,7 +162,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const renderResult = () => {
     let result = [];
-
     if (multiple) {
       result.push(compressed ? renderMultipleResultMore() : renderMultipleResult());
       if (allowOnFilter) {
@@ -195,17 +192,16 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         setText(content as string);
       }
     }
-
     if (!resultRef.current) return;
     if (!compressed) return;
     if (isCompressedBound()) return;
-
     handleResetMore();
   }, [value]);
 
   useEffect(() => {
     if (!compressed) return;
     if (!resultRef.current) return;
+
     if (more === -1) {
       if (shouldResetMore.current && ((value as Value[]) || []).length) {
         shouldResetMore.current = false;

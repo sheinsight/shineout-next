@@ -57,7 +57,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     compressedBound,
     placeholder,
     groupBy,
-    renderItem,
+    renderItem = (d) => d,
     renderResult: renderResultProp,
     renderUnmatched,
     resultClassName,
@@ -107,9 +107,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     groupBy,
   });
 
-  const onCollapse = usePersistFn((isOpen: boolean) => {
-    console.log(isOpen);
-  });
+  const onCollapse = usePersistFn(() => {});
 
   const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
     open: openProp,

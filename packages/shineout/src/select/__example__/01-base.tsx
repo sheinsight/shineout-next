@@ -8,9 +8,10 @@ import React from 'react';
 import { Select } from 'shineout';
 
 export default () => {
+  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
   return (
     <div>
-      <Select />
+      <Select data={data} keygen renderItem={(d) => d} multiple />
     </div>
   );
 };
