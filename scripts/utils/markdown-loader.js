@@ -192,7 +192,8 @@ const exampleLoader = (tokens, component, module) => {
   fs.readdirSync(exampleDir).forEach((file) => {
     if (file.indexOf('.tsx') === -1) return;
     const context = fs.readFileSync(path.join(exampleDir, file), 'utf-8');
-    const result = exampleReader(context, component, file.split('/')?.at(-1));
+    const files = file.split('/');
+    const result = exampleReader(context, component, files?.[files.length - 1]);
 
     if (!result) return;
 

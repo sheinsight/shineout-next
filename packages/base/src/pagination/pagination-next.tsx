@@ -6,8 +6,8 @@ import Icons from '../icons';
 
 const PaginationButtonNext = (props: PaginationActionButtonProps) => {
   const { jssStyle, disabled, total, pageSize, current, text, size, mode, onChange } = props;
-  const paginationStyle = jssStyle?.pagination || ({} as PaginationClasses);
-  const rootClasses = classNames(paginationStyle.section);
+  const styles = jssStyle?.pagination || ({} as PaginationClasses);
+  const rootClasses = classNames(styles.section);
   const max = Math.ceil(total / pageSize);
   const next = current + 1;
   const hasText = text && text.next;
@@ -23,7 +23,7 @@ const PaginationButtonNext = (props: PaginationActionButtonProps) => {
       disabled={disabled || next > max}
       onClick={onChange}
     >
-      {hasText ? text.next : Icons.ArrowRight}
+      <span className={styles.icon}>{hasText ? text.next : Icons.ArrowRight}</span>
     </Button>
   );
 };

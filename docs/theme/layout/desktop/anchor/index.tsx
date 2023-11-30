@@ -20,7 +20,8 @@ const Anchor = (props: AnchorProps) => {
   });
 
   const handleClick = (e: any) => {
-    const hash = e.target.hash.split('#')?.at(-1);
+    const hashes = e.target.hash.split('#');
+    const hash = hashes?.[hashes.length - 1];
     const activeAnchor = decodeURIComponent(hash);
     location.hash = activeAnchor;
     const layout = document.getElementById('layout');
