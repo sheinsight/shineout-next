@@ -244,12 +244,14 @@ const selectStyle: JsStyles<SelectClassType> = {
     color: token.selectPlaceholderColor,
     marginTop: 3,
     marginBottom: 3,
+    lineHeight: token.lineHeightDynamic,
   },
   pickerWrapper: {
     position: 'absolute',
     backgroundColor: token.selectPanelBackgroundColor,
     boxShadow: token.selectPanelShadow,
     borderRadius: token.selectPanelRadius,
+    transformOrigin: '0 0',
   },
   clearable: {},
   clearIcon: {

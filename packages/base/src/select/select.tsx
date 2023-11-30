@@ -124,7 +124,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   });
 
   const renderInnerTitle = useInnerTitle({
-    open,
+    open: open || !!value,
     size,
     jssStyle,
     innerTitle,
@@ -248,7 +248,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           show={open}
           className={classNames(styles?.pickerWrapper)}
           display={'block'}
-          type={'fade'}
+          type='scale-y'
           duration={'fast'}
           style={{ width: columns > 1 ? columns * columnWidth : '100%' }}
         >

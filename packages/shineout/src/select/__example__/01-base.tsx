@@ -11,7 +11,7 @@ export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
   return (
     <div>
-      <Select data={data} keygen renderItem={(d) => d} multiple />
+      <Select data={data} keygen renderItem={(d) => d} />
     </div>
   );
 };

@@ -112,7 +112,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return !hasValue;
   };
 
-  const showPlaceholder = isEmptyResult();
+  const showPlaceholder = placeholder && isEmptyResult();
 
   const renderPlaceholder = () => {
     if (focus && allowOnFilter && showPlaceholder) {
