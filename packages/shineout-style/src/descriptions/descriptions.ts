@@ -86,7 +86,9 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     boxSizing: 'border-box',
     verticalAlign: 'top',
   },
-  item: {},
+  item: {
+    paddingBottom: token.descriptionsLabelPaddingBottom,
+  },
   labelInline: {
     padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
     textAlign: 'left',
@@ -95,7 +97,7 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     whiteSpace: 'nowrap',
   },
   valueInline: {
-    padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
+    padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
     textAlign: 'left',
     boxSizing: 'border-box',
     color: token.descriptionsValueColor,
@@ -113,9 +115,6 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     },
     '& $inlineTable': {
       verticalAlign: 'middle',
-    },
-    '& $labelInline': {
-      padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
     },
   },
   tableLayoutFixed: {
