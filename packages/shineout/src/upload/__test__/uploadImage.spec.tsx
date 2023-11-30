@@ -161,4 +161,8 @@ describe('Upload.Image[Base]', () => {
     const firstChildRender = uploadWrapper.firstChild as Element;
     expect(firstChildRender.className).toBe(imageHandler.split('.')[1]);
   });
+  // ignorePreview
+  // test('should render when set ignorePreview', () => {
+  //   const { container } = render(<Upload.Image action={'//404'} defaultValue={['aa.png']} />)
+  // })
 });

@@ -237,7 +237,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
 
       let error: Error | null | void = null;
       let imageResult: { src: string; width: number; height: number } | undefined = undefined;
-      if (props.isImage) {
+      if (props.isImage && !props.ignorePreview) {
         try {
           imageResult = await handleImage(blob);
           fileRecord.src = imageResult.src;
