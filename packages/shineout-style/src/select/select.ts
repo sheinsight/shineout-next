@@ -122,8 +122,8 @@ const selectStyle: JsStyles<SelectClassType> = {
         },
       },
       '& $tag': {
-        marginTop: 0.5,
-        marginBottom: 0.5,
+        // marginTop: 0.5,
+        // marginBottom: 0.5,
       },
     },
     '&$wrapperLarge': {},
@@ -158,6 +158,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     flex: '1',
     minWidth: 0,
     textAlign: 'left',
+    gap: '4px',
     '& > input': {
       marginTop: 3,
       marginBottom: 3,
@@ -242,8 +243,6 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   placeholder: {
     color: token.selectPlaceholderColor,
-    marginTop: 3,
-    marginBottom: 3,
     lineHeight: token.lineHeightDynamic,
   },
   pickerWrapper: {
@@ -274,8 +273,6 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     '& $resultTextWrapper': {
       flexWrap: 'wrap',
-      paddingTop: 1,
-      paddingBottom: 1,
       '& > input': {
         marginTop: 2,
         marginBottom: 2,
@@ -284,10 +281,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     '& $compressedWrapper': {
       flexWrap: 'nowrap',
     },
-    '& $placeholder': {
-      marginTop: 2,
-      marginBottom: 2,
-    },
+    '& $placeholder': {},
   },
   checkedIcon: {
     right: 8,
@@ -305,9 +299,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     '&$tag + &$tag': {
       marginLeft: 0,
     },
-    marginRight: 4,
-    marginTop: 2,
-    marginBottom: 2,
+    // marginRight: 4,
+    // marginTop: 2,
+    // marginBottom: 2,
     textWrap: 'nowrap',
   },
   inputMirror: {

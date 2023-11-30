@@ -40,7 +40,7 @@ export interface SelectTokens {
   selectPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Padding-4
    * @description 选择器内边距（垂直方向）
    */
   selectPaddingY: string;
@@ -74,6 +74,18 @@ export interface SelectTokens {
    * @description 选择器小尺寸内边距（垂直方向）
    */
   selectSmallPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器内部容器的内边距（水平方向）
+   */
+  selectInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-5
+   * @description 选择器内部容器的内边距（垂直方向）
+   */
+  selectInnerPaddingY: string;
   /**
    * @type {string}
    * @token 16/regular

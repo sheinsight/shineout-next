@@ -114,6 +114,10 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const showPlaceholder = placeholder && isEmptyResult();
 
+  const renderNbsp = () => {
+    return <React.Fragment key='space'>&nbsp;</React.Fragment>;
+  };
+
   const renderPlaceholder = () => {
     if (focus && allowOnFilter && showPlaceholder) {
       return renderInput();
@@ -127,7 +131,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderSingleResult = () => {
-    if (!value) return null;
+    if (isEmptyResult()) return renderNbsp();
     const result = datum.getDataByValues([value]);
     const content = renderResultContent(result[0]);
 
@@ -139,7 +143,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderMultipleResult = () => {
-    if (!value) return null;
+    if (isEmptyResult()) return renderNbsp();
     const result = datum.getDataByValues(value).map(renderItem);
     return result;
   };
@@ -174,7 +178,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         result.push(renderSingleResult());
       }
     }
-
     return showPlaceholder ? renderPlaceholder() : result;
   };
 
