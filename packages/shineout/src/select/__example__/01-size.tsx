@@ -7,37 +7,82 @@
 import React from 'react';
 import { Select } from 'shineout';
 
+const data = [
+  'red',
+  'orange',
+  'yellow',
+  'green',
+  'cyan',
+  'blue',
+  'violet',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+];
+
 export default () => {
-  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
+  const handleFilter = (text) => (d) => {
+    return d.indexOf(text) > -1;
+  };
+
   return (
     <div>
       <div style={{ display: 'flex', gap: 32, alignItems: 'center' }}>
-        <Select size='small' data={data} keygen renderItem={(d) => d} />
-        <Select data={data} keygen renderItem={(d) => d} />
-        <Select size='large' data={data} keygen renderItem={(d) => d} />
-      </div>
-      <div style={{ display: 'flex', gap: 32, alignItems: 'center', marginTop: 32 }}>
-        <Select size='small' data={data} keygen renderItem={(d) => d} placeholder='placeholder' />
-        <Select data={data} keygen renderItem={(d) => d} placeholder='placeholder' />
-        <Select size='large' data={data} keygen renderItem={(d) => d} placeholder='placeholder' />
-      </div>
-      <div style={{ display: 'flex', gap: 32, alignItems: 'center', marginTop: 32 }}>
-        <Select multiple size='small' data={data} keygen renderItem={(d) => d} />
-        <Select multiple data={data} keygen renderItem={(d) => d} />
-        <Select multiple size='large' data={data} keygen renderItem={(d) => d} />
+        <Select onFilter={handleFilter} size='small' data={data} keygen renderItem={(d) => d} />
+        <Select onFilter={handleFilter} data={data} keygen renderItem={(d) => d} />
+        <Select onFilter={handleFilter} size='large' data={data} keygen renderItem={(d) => d} />
       </div>
       <div style={{ display: 'flex', gap: 32, alignItems: 'center', marginTop: 32 }}>
         <Select
-          multiple
+          onFilter={handleFilter}
           size='small'
           data={data}
           keygen
           renderItem={(d) => d}
           placeholder='placeholder'
         />
-        <Select multiple data={data} keygen renderItem={(d) => d} placeholder='placeholder' />
         <Select
-          multiple
+          onFilter={handleFilter}
+          data={data}
+          keygen
+          renderItem={(d) => d}
+          placeholder='placeholder'
+        />
+        <Select
+          onFilter={handleFilter}
+          size='large'
+          data={data}
+          keygen
+          renderItem={(d) => d}
+          placeholder='placeholder'
+        />
+      </div>
+      <div style={{ display: 'flex', gap: 32, alignItems: 'center', marginTop: 32 }}>
+        <Select onFilter={handleFilter} size='small' data={data} keygen renderItem={(d) => d} />
+        <Select onFilter={handleFilter} data={data} keygen renderItem={(d) => d} />
+        <Select onFilter={handleFilter} size='large' data={data} keygen renderItem={(d) => d} />
+      </div>
+      <div style={{ display: 'flex', gap: 32, alignItems: 'center', marginTop: 32 }}>
+        <Select
+          onFilter={handleFilter}
+          size='small'
+          data={data}
+          keygen
+          renderItem={(d) => d}
+          placeholder='placeholder'
+        />
+        <Select
+          onFilter={handleFilter}
+          data={data}
+          keygen
+          renderItem={(d) => d}
+          placeholder='placeholder'
+        />
+        <Select
+          onFilter={handleFilter}
           size='large'
           data={data}
           keygen

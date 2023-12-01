@@ -35,18 +35,34 @@ const selectTokenExtraValue = {
   width: 'Size-120',
   font: { size: '14/regular', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
-  padding: { x: 'Padding-8', y: 'Padding-4' },
+  padding: { x: 'Padding-8', y: 'Padding-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
     font: { size: '12/regular' },
     border: { radius: '' },
     padding: { x: 'Padding-8', y: 'Padding-1' },
+    option: {
+      inner: {
+        padding: { x: 'Padding-8', y: 'Padding-2' },
+      },
+    },
+  },
+  large: {
+    font: { size: '16/regular' },
+    padding: { x: 'Padding-12', y: 'Padding-3' },
+    option: {
+      inner: {
+        padding: { x: 'Padding-12', y: 'Padding-8' },
+      },
+    },
+    placeholder: {
+      margin: { y: 'Padding-4' },
+    },
   },
   inner: {
     padding: { x: 'Padding-8', y: 'Padding-5' },
   },
-  large: { font: { size: '16/regular' }, padding: { x: 'Padding-12', y: 'Padding-7' } },
-  placeholder: { color: 'Neutral-text-2' },
+  placeholder: { color: 'Neutral-text-2', margin: { y: 'Padding-2' } },
   background: { color: 'Neutral-fill-1' },
   clear: { color: 'Neutral-text-3', padding: 'Padding-8' },
   hover: { border: { color: 'Brand-6' }, clear: { color: 'Neutral-text-4' } },

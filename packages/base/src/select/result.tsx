@@ -115,7 +115,11 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const showPlaceholder = placeholder && isEmptyResult();
 
   const renderNbsp = () => {
-    return <React.Fragment key='space'>&nbsp;</React.Fragment>;
+    return (
+      <React.Fragment key='space'>
+        <div className={styles.space}>&nbsp;</div>
+      </React.Fragment>
+    );
   };
 
   const renderPlaceholder = () => {

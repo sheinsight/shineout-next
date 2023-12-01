@@ -10,6 +10,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     jssStyle,
     data,
     height,
+    size,
     optionWidth,
     header,
     keygen,
@@ -17,7 +18,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     multiple,
     groupKey,
     itemsInView = 10,
-    lineHeight = 34,
+    lineHeight: lineHeightProp,
     loading,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
     closePop,
@@ -28,6 +29,16 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     height,
   };
   const styles = jssStyle?.select?.() as SelectClasses;
+
+  const getLineHeight = () => {
+    if (lineHeightProp) return lineHeightProp;
+    if (size === 'small') return 26;
+    if (size === 'default') return 34;
+    if (size === 'large') return 42;
+    return 34;
+  };
+
+  const lineHeight = getLineHeight();
 
   const renderLoading = () => {
     return <div>loading</div>;

@@ -35,6 +35,7 @@ export type SelectClasses = {
   checkedIcon: string;
   list: string;
   tag: string;
+  space: string;
   inputMirror: string;
   moreWrapper: string;
   virtualList: string;
@@ -105,28 +106,31 @@ const selectStyle: JsStyles<SelectClassType> = {
     width: token.selectWidth,
     ...wrapper,
     '&$wrapperSmall': {
-      '& $wrapperPaddingBox': {
-        paddingTop: 0.5,
-        paddingBottom: 0.5,
+      '& $tag': {
+        height: 18,
+        lineHeight: '16px',
+        marginTop: 1,
+        marginBottom: 1,
       },
-      '& $placeholder': {
+      '& $placeholder,$ellipsis,$space,input': {
         marginTop: 0,
         marginBottom: 0,
       },
-      '& $resultTextWrapper': {
-        paddingTop: 0,
-        paddingBottom: 0,
-        '& > input': {
-          marginTop: 0,
-          marginBottom: 0,
-        },
-      },
-      '& $tag': {
-        // marginTop: 0.5,
-        // marginBottom: 0.5,
+      '& $optionInner': {
+        padding: `${token.selectSmallOptionInnerPaddingY} ${token.selectSmallOptionInnerPaddingX}`,
+        fontSize: token.selectSmallFontSize,
       },
     },
-    '&$wrapperLarge': {},
+    '&$wrapperLarge': {
+      '& $placeholder,$ellipsis,$space,input': {
+        marginTop: token.selectLargePlaceholderMarginY,
+        marginBottom: token.selectLargePlaceholderMarginY,
+      },
+      '& $optionInner': {
+        padding: `${token.selectLargeOptionInnerPaddingY} ${token.selectLargeOptionInnerPaddingX}`,
+        fontSize: token.selectLargeFontSize,
+      },
+    },
   },
   wrapperDisabled: {
     ...wrapperDisabled,
@@ -158,10 +162,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     flex: '1',
     minWidth: 0,
     textAlign: 'left',
-    gap: '4px',
+
     '& > input': {
-      marginTop: 3,
-      marginBottom: 3,
+      marginTop: 2,
+      marginBottom: 2,
       color: 'inherit',
       padding: 0,
       border: 0,
@@ -244,6 +248,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   placeholder: {
     color: token.selectPlaceholderColor,
     lineHeight: token.lineHeightDynamic,
+    marginTop: token.selectPlaceholderMarginY,
+    marginBottom: token.selectPlaceholderMarginY,
   },
   pickerWrapper: {
     position: 'absolute',
@@ -266,6 +272,8 @@ const selectStyle: JsStyles<SelectClassType> = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    marginTop: token.selectPlaceholderMarginY,
+    marginBottom: token.selectPlaceholderMarginY,
   },
   multiple: {
     '& $optionInner': {
@@ -273,10 +281,6 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     '& $resultTextWrapper': {
       flexWrap: 'wrap',
-      '& > input': {
-        marginTop: 2,
-        marginBottom: 2,
-      },
     },
     '& $compressedWrapper': {
       flexWrap: 'nowrap',
@@ -285,7 +289,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   checkedIcon: {
     right: 8,
-    top: 9,
+    top: `calc(50% - 1em/2)`,
     position: 'absolute',
     display: 'inline-flex',
     width: token.selectFontSize,
@@ -299,10 +303,14 @@ const selectStyle: JsStyles<SelectClassType> = {
     '&$tag + &$tag': {
       marginLeft: 0,
     },
-    // marginRight: 4,
-    // marginTop: 2,
-    // marginBottom: 2,
+    marginRight: 4,
+    marginTop: token.selectPlaceholderMarginY,
+    marginBottom: token.selectPlaceholderMarginY,
     textWrap: 'nowrap',
+  },
+  space: {
+    marginTop: token.selectPlaceholderMarginY,
+    marginBottom: token.selectPlaceholderMarginY,
   },
   inputMirror: {
     position: 'absolute',
@@ -322,7 +330,6 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   option: {
     listStyle: 'none',
-    fontSize: token.selectFontSize,
     lineHeight: token.lineHeightDynamic,
     padding: `${token.selectOptionPaddingY} ${token.selectOptionPaddingX}`,
     // not disabled
@@ -338,6 +345,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   optionInner: {
     position: 'relative',
+    fontSize: token.selectFontSize,
     padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
     borderRadius: token.selectOptionInnerBorderRadius,
   },

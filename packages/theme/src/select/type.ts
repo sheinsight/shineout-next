@@ -40,7 +40,7 @@ export interface SelectTokens {
   selectPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-2
    * @description 选择器内边距（垂直方向）
    */
   selectPaddingY: string;
@@ -77,15 +77,15 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Padding-8
-   * @description 选择器内部容器的内边距（水平方向）
+   * @description 选择器小尺寸选项内部容器的内边距（水平方向）
    */
-  selectInnerPaddingX: string;
+  selectSmallOptionInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
-   * @description 选择器内部容器的内边距（垂直方向）
+   * @token Padding-2
+   * @description 选择器小尺寸选项内部容器的内边距（垂直方向）
    */
-  selectInnerPaddingY: string;
+  selectSmallOptionInnerPaddingY: string;
   /**
    * @type {string}
    * @token 16/regular
@@ -100,16 +100,52 @@ export interface SelectTokens {
   selectLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Padding-3
    * @description 选择器大尺寸内边距（垂直方向）
    */
   selectLargePaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description 选择器大尺寸选项内部容器的内边距（水平方向）
+   */
+  selectLargeOptionInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器大尺寸选项内部容器的内边距（垂直方向）
+   */
+  selectLargeOptionInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 选择器大尺寸占位符外边距（垂直方向）
+   */
+  selectLargePlaceholderMarginY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器内部容器的内边距（水平方向）
+   */
+  selectInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-5
+   * @description 选择器内部容器的内边距（垂直方向）
+   */
+  selectInnerPaddingY: string;
   /**
    * @type {string}
    * @token Neutral-text-2
    * @description 选择器占位符颜色
    */
   selectPlaceholderColor: string;
+  /**
+   * @type {string}
+   * @token Padding-2
+   * @description 选择器占位符外边距（垂直方向）
+   */
+  selectPlaceholderMarginY: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
