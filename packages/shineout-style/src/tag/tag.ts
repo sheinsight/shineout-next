@@ -163,7 +163,7 @@ const tag = (type: TagType) => ({
 
 const TagStyle: JsStyles<TagClass> = {
   tag: {
-    display: 'inline-block',
+    display: 'inline-flex',
     height: Token.tagHeight,
     padding: `${Token.tagPaddingY} ${Token.tagPaddingX}`,
     fontSize: Token.tagFontSize,
@@ -185,6 +185,9 @@ const TagStyle: JsStyles<TagClass> = {
   },
   inline: {
     display: 'inline-block',
+    flex: 1,
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
     verticalAlign: 'top',
   },
 

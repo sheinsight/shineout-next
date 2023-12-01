@@ -48,6 +48,7 @@ export type SelectClasses = {
   optionGroupTitle: string;
   header: string;
   customHeader: string;
+  columnsTitle: string;
   columns: string;
   columnsOption: string;
   columnsRadio: string;
@@ -103,7 +104,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   wrapper: {
     display: 'inline-block',
     position: 'relative',
-    width: token.selectWidth,
+    width: '100%',
     ...wrapper,
     '&$wrapperSmall': {
       '& $tag': {
@@ -117,7 +118,11 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginBottom: 0,
       },
       '& $optionInner': {
-        padding: `${token.selectSmallOptionInnerPaddingY} ${token.selectSmallOptionInnerPaddingX}`,
+        paddingTop: token.selectSmallOptionInnerPaddingY,
+        paddingBottom: token.selectSmallOptionInnerPaddingY,
+        paddingLeft: token.selectSmallOptionInnerPaddingX,
+
+        // padding: `${token.selectSmallOptionInnerPaddingY} ${token.selectSmallOptionInnerPaddingX}`,
         fontSize: token.selectSmallFontSize,
       },
     },
@@ -127,7 +132,10 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginBottom: token.selectLargePlaceholderMarginY,
       },
       '& $optionInner': {
-        padding: `${token.selectLargeOptionInnerPaddingY} ${token.selectLargeOptionInnerPaddingX}`,
+        // padding: `${token.selectLargeOptionInnerPaddingY} ${token.selectLargeOptionInnerPaddingX}`,
+        paddingTop: token.selectLargeOptionInnerPaddingY,
+        paddingBottom: token.selectLargeOptionInnerPaddingY,
+        paddingLeft: token.selectLargeOptionInnerPaddingX,
         fontSize: token.selectLargeFontSize,
       },
     },
@@ -145,6 +153,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     minWidth: 0,
     position: 'relative',
     outline: 'none',
+    overflow: 'hidden',
     '&:hover': {
       '& $clear': { display: 'inline-flex' },
       '& $clear + $icon': { display: 'none' },
@@ -303,6 +312,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     '&$tag + &$tag': {
       marginLeft: 0,
     },
+    maxWidth: '80%',
     marginRight: 4,
     marginTop: token.selectPlaceholderMarginY,
     marginBottom: token.selectPlaceholderMarginY,
@@ -345,6 +355,9 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   optionInner: {
     position: 'relative',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
     fontSize: token.selectFontSize,
     padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
     borderRadius: token.selectOptionInnerBorderRadius,
@@ -371,7 +384,13 @@ const selectStyle: JsStyles<SelectClassType> = {
     height: 32,
     padding: token.selectHeaderPadding,
     borderBottom: `1px solid ${token.selectHeaderBorderColor}`,
+
+    '& $columnsCheckbox': {
+      marginRight: 0,
+      width: 'auto',
+    },
   },
+  columnsTitle: {},
   customHeader: {},
   columns: {
     display: 'flex',
@@ -388,6 +407,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     lineHeight: 1,
     boxSizing: 'border-box',
     overflow: 'hidden',
+    '& $columnsCheckbox': {
+      marginRight: 0,
+    },
   },
   columnsRadio: {
     width: '100%',

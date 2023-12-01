@@ -6,7 +6,7 @@ export interface ResultInputProps extends Pick<CommonType, 'style' | 'className'
   value: string;
   focus?: boolean;
   open?: boolean;
-  filterText?: string;
+  inputText?: string;
   values: any;
   multiple?: boolean;
   onChange: (value: string) => void;

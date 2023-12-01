@@ -18,6 +18,7 @@ export interface ResultProps<DataItem, Value>
     | 'noCache'
     | 'compressed'
     | 'compressedBound'
+    | 'compressedClassName'
     | 'disabled'
     | 'prediction'
     | 'resultClassName'
@@ -30,9 +31,9 @@ export interface ResultProps<DataItem, Value>
   datum: DatumType<DataItem, Value>;
   focus: boolean;
   renderResult: (data: DataItem, index?: number) => React.ReactNode;
-  filterText?: string;
+  inputText?: string;
   onRef: React.MutableRefObject<HTMLInputElement | undefined>;
   allowOnFilter: boolean;
-  onFilter: (text: string) => void;
+  onFilter?: (text: string) => void;
   onResetFilter: () => void;
 }

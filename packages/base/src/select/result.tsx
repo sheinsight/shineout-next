@@ -21,13 +21,14 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     // noCache,
     focus,
     placeholder,
-    filterText,
+    inputText,
     compressed,
     compressedBound,
+    compressedClassName,
     renderUnmatched,
     renderResult: renderResultProp,
-    // onCreate,
-    allowOnFilter,
+    onCreate,
+    // allowOnFilter,
     onRef,
     onFilter,
     onResetFilter,
@@ -37,6 +38,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const [text, setText] = useState('');
   const resultRef = useRef<HTMLDivElement>(null);
   const shouldResetMore = useRef(false);
+  const showInput = onFilter || onCreate;
 
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootClass = classNames(styles.resultTextWrapper, compressed && styles.compressedWrapper);
@@ -68,7 +70,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           multiple={multiple}
           values={value}
           onRef={onRef}
-          filterText={filterText}
+          inputText={inputText}
           onChange={onFilter}
           onFilter={onFilter}
           onResetFilter={onResetFilter}
@@ -123,7 +125,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderPlaceholder = () => {
-    if (focus && allowOnFilter && showPlaceholder) {
+    if (focus && showInput && showPlaceholder) {
       return renderInput();
     }
 
@@ -153,7 +155,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderMultipleResultMore = () => {
-    if (!value) return null;
+    if (isEmptyResult()) return renderNbsp();
     const result = datum.getDataByValues(value).map(renderItem);
     const moreNumber = getCompressedBound();
     return (
@@ -161,8 +163,10 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         key='more'
         jssStyle={jssStyle}
         data={result}
+        size={size}
         more={moreNumber}
         compressed={compressed}
+        compressedClassName={compressedClassName}
         showNum={moreNumber}
       ></More>
     );
@@ -172,11 +176,11 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     let result = [];
     if (multiple) {
       result.push(compressed ? renderMultipleResultMore() : renderMultipleResult());
-      if (allowOnFilter) {
+      if (onFilter || onCreate) {
         result.push(renderInput());
       }
     } else {
-      if (allowOnFilter) {
+      if (showInput) {
         result = [renderInput()];
       } else {
         result.push(renderSingleResult());
@@ -192,7 +196,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   useEffect(() => {
-    if (!multiple && allowOnFilter && value) {
+    if (!multiple && showInput && value) {
       const result = datum.getDataByValues([value]);
       const content = renderResultContent(result[0]);
       if (!isEmpty(content)) {
@@ -213,7 +217,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       if (shouldResetMore.current && ((value as Value[]) || []).length) {
         shouldResetMore.current = false;
         const newMore = getResetMore(
-          allowOnFilter,
+          showInput,
           resultRef.current,
           resultRef.current.querySelectorAll(`.${styles.tag}`),
         );

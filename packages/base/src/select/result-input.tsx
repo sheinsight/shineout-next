@@ -8,7 +8,7 @@ const ResultInput = (props: ResultInputProps) => {
     jssStyle,
     value,
     values,
-    filterText,
+    inputText,
     focus,
     multiple,
     onRef,
@@ -30,7 +30,7 @@ const ResultInput = (props: ResultInputProps) => {
     if (!mirrorRef.current) return;
     const input = inputRef.current as HTMLInputElement;
     input.style.width = `${mirrorRef.current.offsetWidth}px`;
-  }, [filterText, focus, value]);
+  }, [inputText, focus, value]);
 
   // 选中结果后，聚焦并全选 input
   useEffect(() => {
@@ -68,7 +68,7 @@ const ResultInput = (props: ResultInputProps) => {
         onChange={onChange}
       ></Input>
       <span className={styles.inputMirror} ref={mirrorRef}>
-        {filterText || value}
+        {inputText || value}
       </span>
     </React.Fragment>
   );

@@ -22,6 +22,7 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
     size,
     columns = 1,
     columnWidth,
+    columnsTitle,
     groupKey,
     renderItem: renderItemProp,
     closePop,
@@ -183,6 +184,7 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
         >
           全选
         </Checkbox>
+        {columnsTitle && <div className={styles.columnsTitle}>{columnsTitle}</div>}
       </div>
     );
   };

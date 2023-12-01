@@ -38,13 +38,15 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     border = true,
     status,
     columns = 1,
+    columnsTitle,
     columnWidth = 160,
     width,
+    style,
     multiple,
     keygen,
     focusSelected = true,
     optionWidth = '100%',
-    height = 250,
+    height,
     open: openProp,
     position: positionProp = 'bottom-left',
     lineHeight,
@@ -54,6 +56,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     beforeChange,
     compressed,
     compressedBound,
+    compressedClassName,
     placeholder,
     autoAdapt,
     groupBy,
@@ -62,28 +65,22 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     renderUnmatched,
     resultClassName,
     onChange,
+    onCreate,
     onFilter: onFilterProp,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
+  const rootStyle: React.CSSProperties = {
+    ...style,
+    width,
+  };
   const inputRef = useRef<HTMLInputElement>();
 
-  const rootClass = classNames(
-    className,
-    styles?.wrapper,
-    disabled && styles?.wrapperDisabled,
-    innerTitle && styles?.wrapperInnerTitle,
-    size === 'small' && styles?.wrapperSmall,
-    size === 'large' && styles?.wrapperLarge,
-    status === 'error' && styles?.wrapperError,
-    clearable && styles?.clearable,
-    !border && styles?.wrapperNoBorder,
-    !!underline && styles?.wrapperUnderline,
-    {
-      [styles?.multiple]: multiple,
-    },
-  );
-
-  const { filterText, filterData, onFilter, onResetFilter } = useFilter({
+  const {
+    filterText: inputText,
+    filterData,
+    onFilter,
+    onResetFilter,
+  } = useFilter({
     data,
     onFilter: onFilterProp,
   });
@@ -116,6 +113,23 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     trigger: 'click',
     position: positionProp,
   });
+
+  const rootClass = classNames(
+    className,
+    styles?.wrapper,
+    disabled && styles?.wrapperDisabled,
+    !!open && styles?.wrapperFocus,
+    innerTitle && styles?.wrapperInnerTitle,
+    size === 'small' && styles?.wrapperSmall,
+    size === 'large' && styles?.wrapperLarge,
+    status === 'error' && styles?.wrapperError,
+    clearable && styles?.clearable,
+    !border && styles?.wrapperNoBorder,
+    !!underline && styles?.wrapperUnderline,
+    {
+      [styles?.multiple]: multiple,
+    },
+  );
 
   const handleResultClick = usePersistFn(() => {
     if (disabled === true) return;
@@ -155,6 +169,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           disabled={disabled}
           compressed={compressed}
           compressedBound={compressedBound}
+          compressedClassName={compressedClassName}
           multiple={multiple}
           placeholder={placeholder}
           prediction={prediction}
@@ -164,9 +179,10 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           renderUnmatched={renderUnmatched}
           allowOnFilter={'onFilter' in props}
           focusSelected={focusSelected}
-          filterText={filterText}
+          inputText={inputText}
           onFilter={onFilter}
           onRef={inputRef}
+          onCreate={onCreate}
           onResetFilter={onResetFilter}
         ></Result>
         {clearable && renderClearable()}
@@ -205,6 +221,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       optionWidth,
       groupKey,
       lineHeight,
+      columnsTitle,
       columnWidth,
       itemsInView,
       renderItem,
@@ -246,7 +263,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   };
 
   return (
-    <div data-soui-type={'input'} className={rootClass}>
+    <div data-soui-type={'input'} className={rootClass} style={rootStyle}>
       {renderResult()}
       <AbsoluteList
         adjust

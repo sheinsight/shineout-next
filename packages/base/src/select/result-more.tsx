@@ -72,7 +72,7 @@ export function getResetMore(
 }
 
 const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
-  const { jssStyle, data, showNum } = props;
+  const { jssStyle, data, showNum, size, compressedClassName } = props;
   const [visible, setVisible] = useState(false);
 
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -102,18 +102,24 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
   return (
     <React.Fragment>
       {shouldShowMore ? data : before}
-      <span>
+      <span style={{ display: 'inline-flex' }}>
         <Tag
           className={styles.tag}
           jssStyle={jssStyle}
           key='more'
+          size={size}
           style={tagStlye}
           mode={visible ? 'fill' : 'bright'}
           color={visible ? 'info' : 'default'}
         >
           {shouldShowMore ? '+' : `+${itemsLength}`}
         </Tag>
-        <Popover jssStyle={jssStyle} visible={visible} onVisibleChange={setVisible}>
+        <Popover
+          jssStyle={jssStyle}
+          className={compressedClassName}
+          visible={visible}
+          onVisibleChange={setVisible}
+        >
           <div className={styles.moreWrapper}>{after}</div>
         </Popover>
       </span>

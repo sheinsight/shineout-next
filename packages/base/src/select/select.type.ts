@@ -40,6 +40,7 @@ export interface BaseListProps<DataItem, Value>
     | 'multiple'
     | 'columns'
     | 'columnWidth'
+    | 'columnsTitle'
   > {
   customHeader?: React.ReactNode;
   height: number | string;
@@ -157,7 +158,7 @@ export interface SelectProps<DataItem, Value>
    * @default 1
    */
   columns?: number;
-
+  columnsTitle?: React.ReactNode;
   noCache?: boolean;
   focusSelected?: boolean;
   trim?: boolean;
@@ -167,6 +168,7 @@ export interface SelectProps<DataItem, Value>
   autoAdapt?: boolean;
   compressed?: boolean;
   compressedBound?: number;
+  compressedClassName?: string;
   resultClassName?: ((value: DataItem) => string) | string;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   renderResult?: (data: DataItem, index?: number) => React.ReactNode;
