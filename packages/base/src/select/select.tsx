@@ -14,7 +14,6 @@ import ColumnsList from './list-columns';
 
 /**
  *
- * 大小尺寸
  * 创建选项
  * 树选择
  * 加载中
@@ -56,6 +55,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     compressed,
     compressedBound,
     placeholder,
+    autoAdapt,
     groupBy,
     renderItem = (d) => d,
     renderResult: renderResultProp,
@@ -229,13 +229,29 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     return renderList();
   };
 
+  const getAutoAdaptStyle = () => {
+    const style: React.CSSProperties = {};
+    if (autoAdapt) {
+      style.minWidth = '100%';
+      return style;
+    } else {
+      if (columns > 1) {
+        style.width = columns * columnWidth;
+      } else {
+        style.width = '100%';
+      }
+    }
+
+    return style;
+  };
+
   return (
     <div data-soui-type={'input'} className={rootClass}>
       {renderResult()}
       <AbsoluteList
         adjust
         focus={open}
-        fixedWidth={false}
+        fixedWidth={autoAdapt ? 'min' : true}
         absolute={props.absolute}
         zIndex={props.zIndex}
         position={position}
@@ -250,7 +266,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
           display={'block'}
           type='scale-y'
           duration={'fast'}
-          style={{ width: columns > 1 ? columns * columnWidth : '100%' }}
+          style={getAutoAdaptStyle()}
         >
           {renderOptions()}
         </AnimationList>

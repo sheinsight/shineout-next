@@ -164,6 +164,7 @@ export interface SelectProps<DataItem, Value>
   columnWidth?: number;
   maxLength?: number;
   separator?: string;
+  autoAdapt?: boolean;
   compressed?: boolean;
   compressedBound?: number;
   resultClassName?: ((value: DataItem) => string) | string;
