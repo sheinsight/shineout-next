@@ -43,7 +43,6 @@ const Descriptions = (props: DescriptionsProps) => {
   const renderHorizontal = (d: DescriptionsItemProps[], i: number) => (
     <tr key={i} className={jssStyle?.row}>
       {d.map((_d, _i) => {
-        console.log('112', _d.label, _d.span, getColSpan(_d, true));
         return (
           <Fragment key={_d.key || _i}>
             <td className={jssStyle?.label} style={_d.ItemLabelStyle}>
