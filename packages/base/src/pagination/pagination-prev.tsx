@@ -21,7 +21,7 @@ const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
       shape={hasText ? undefined : 'square'}
       onClick={onChange}
     >
-      <span className={styles.icon}>{hasText ? text.prev : Icons.ArrowLeft}</span>
+      <span className={paginationStyle?.icon}>{hasText ? text.prev : Icons.ArrowLeft}</span>
     </Button>
   );
 };
