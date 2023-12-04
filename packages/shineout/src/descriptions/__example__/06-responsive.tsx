@@ -1,7 +1,7 @@
 /**
- * cn - 单列样式
+ * cn - 响应式排列
  *    --
- * en - One Colums
+ * en - Responsive
  *    --
  */
 import React from 'react';
@@ -36,16 +36,17 @@ export default () => {
       <Descriptions
         items={data}
         title='User Info'
+        border
         layout='horizontal'
-        column={1}
-        style={{ marginBottom: '24px' }}
-      />
-      <Descriptions
-        items={data}
-        title='User Info'
-        layout='horizontal'
-        column={1}
         labelStyle={{ textAlign: 'right' }}
+        column={{
+          xs: 1,
+          sm: 2,
+          md: 2,
+          lg: 2,
+          xl: 3,
+          xxl: 4,
+        }}
       />
     </div>
   );

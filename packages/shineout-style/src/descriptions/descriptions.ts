@@ -160,6 +160,9 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     '& $item:last-child': {
       borderRight: 'none',
     },
+    '& $item': {
+      paddingBottom: 0,
+    },
   },
 };
 

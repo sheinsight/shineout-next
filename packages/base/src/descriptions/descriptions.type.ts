@@ -31,7 +31,7 @@ export interface DescriptionsProps
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     BaseDescriptionsProps {
   jssStyle?: {
-    descriptions: DescriptionsClasses;
+    descriptions: () => DescriptionsClasses;
   };
   border?: boolean;
   extra?: React.ReactNode;

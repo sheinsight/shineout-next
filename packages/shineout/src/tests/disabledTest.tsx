@@ -6,6 +6,7 @@ export type componentProps = React.HTMLAttributes<any> & {
   disabled: boolean;
   children: React.ReactNode;
 };
+
 export default function disabledTest(
   Component: React.FC<componentProps>,
   containerName: string,

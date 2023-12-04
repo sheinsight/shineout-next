@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+
 export default function mountTest(Component: React.ComponentType | JSX.Element) {
   let renderedComponent: JSX.Element;
   if (React.isValidElement(Component)) {
@@ -10,6 +11,7 @@ export default function mountTest(Component: React.ComponentType | JSX.Element) 
     const ComponentType = Component as React.ComponentType;
     renderedComponent = <ComponentType />;
   }
+
   describe('mount and unmount', () => {
     test('component should be mount without errors', () => {
       expect(() => render(renderedComponent)).not.toThrow();

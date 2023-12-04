@@ -1,7 +1,7 @@
 /**
- * cn - 单列样式
+ * cn - 标签文本对齐
  *    --
- * en - One Colums
+ * en - Label text alignment
  *    --
  */
 import React from 'react';
@@ -21,12 +21,12 @@ const data = [
     value: 'Yingdu Building,Zhichun Road,Beijing',
   },
   {
-    label: 'Mobile',
-    value: '187-2323-9834',
-  },
-  {
     label: 'Hometown',
     value: 'Beijing',
+  },
+  {
+    label: 'Mobile',
+    value: '187-2323-9834',
   },
 ];
 
@@ -37,16 +37,16 @@ export default () => {
         items={data}
         title='User Info'
         layout='horizontal'
-        column={1}
         style={{ marginBottom: '24px' }}
       />
       <Descriptions
         items={data}
         title='User Info'
         layout='horizontal'
-        column={1}
         labelStyle={{ textAlign: 'right' }}
+        style={{ marginBottom: '24px' }}
       />
+      <Descriptions items={data} title='User Info' layout='vertical' />
     </div>
   );
 };
