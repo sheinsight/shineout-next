@@ -67,12 +67,15 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     onChange,
     onCreate,
     onFilter: onFilterProp,
+    onBlur,
+    onEnterExpand,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootStyle: React.CSSProperties = {
     ...style,
     width,
   };
+  // const [controlTyle, setControlTyle] = useState('');
   const inputRef = useRef<HTMLInputElement>();
 
   const {
@@ -143,6 +146,31 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     jssStyle,
     innerTitle,
   });
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    console.log(e.code, e.keyCode);
+    // 回车或下箭头可打开下拉列表
+    if (
+      (e.keyCode === 13 || e.code === 'Enter' || e.keyCode === 13 || e.code === 'ArrowDown') &&
+      !open
+    ) {
+      if (typeof onEnterExpand === 'function') {
+        const canOpen = onEnterExpand(e);
+        if (canOpen === false) return;
+      }
+    }
+
+    // tab 可关闭下拉列表
+    if (e.keyCode === 9 || e.code === 'Tab') {
+      onBlur?.(e);
+      if (open) closePop();
+      return;
+    }
+
+    if (!open) return;
+  };
+
+  const handleKeyUp = () => {};
 
   const getRenderResult = (data: DataItem, index?: number) => {
     if (!renderResultProp) return renderItem(data, index);
@@ -263,7 +291,13 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
   };
 
   return (
-    <div data-soui-type={'input'} className={rootClass} style={rootStyle}>
+    <div
+      data-soui-type={'input'}
+      className={rootClass}
+      style={rootStyle}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
+    >
       {renderResult()}
       <AbsoluteList
         adjust
