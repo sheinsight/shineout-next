@@ -5,7 +5,6 @@ import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { InputClasses } from '../input/input.type';
 import { SpinClasses } from '../spin/spin.type';
 import { EmptyClasses } from '../empty/empty.type';
-import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
 import React from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -44,7 +43,6 @@ export type JssStyleType = {
   transfer: () => TransferClasses;
   button: () => ButtonClasses;
   checkbox: () => CheckboxClasses;
-  virtualScroll: () => VirtualScrollClasses;
   input: () => InputClasses;
   spin: () => SpinClasses;
   empty: () => EmptyClasses;

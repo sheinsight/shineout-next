@@ -5,7 +5,7 @@ import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { TagClasses } from '../tag/tag.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { InnerTitleClasses } from '../common/use-inner-title';
-import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
+import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll-list.type';
 
 export type JssStyleType = {
   tag: () => TagClasses;

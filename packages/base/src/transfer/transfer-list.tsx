@@ -1,8 +1,6 @@
-import { useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util, KeygenResult } from '@sheinx/hooks';
 import { getLocale, useConfig } from '../config';
-import { VirtualRefType } from '../virtual-scroll/virtual-scroll.type';
 import { TransferClasses } from './transfer.type';
 import { TransferListProps } from './transfer-list.type';
 import TransferListItem from './transfer-list-item';
@@ -10,7 +8,7 @@ import TransferListHeader from './transfer-list-header';
 import Empty from '../empty';
 import Input from '../input';
 import Spin from '../spin';
-import VirtualList from '../virtual-scroll/virtual-list';
+import VirtualList from '../virtual-scroll/virtual-scroll-list';
 
 const TransferList = <DataItem, Value extends KeygenResult[]>(
   props: TransferListProps<DataItem, Value>,
@@ -47,8 +45,6 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     onSelectChange,
   } = props;
   const { locale } = useConfig();
-
-  const virtualRef = useRef<VirtualRefType>();
 
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.view, {
@@ -90,7 +86,6 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         listDatum={listDatum}
         listType={listType}
         simple={simple}
-        reset={virtualRef.current?.reset}
       ></TransferListHeader>
     );
   };
@@ -176,12 +171,11 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     }
     return (
       <VirtualList
-        jssStyle={jssStyle}
         className={listClass}
         data={data}
         colNum={colNum}
         keygen={keygen}
-        listStyle={listStyle}
+        style={listStyle}
         lineHeight={getLineHeight()}
         height={listHeight}
         rowsInView={rowsInView}
@@ -196,10 +190,6 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     }
     return <div className={styles.footer}>{footer}</div>;
   };
-
-  useEffect(() => {
-    virtualRef.current?.reset();
-  }, [filterText]);
 
   return (
     <div className={rootClass}>

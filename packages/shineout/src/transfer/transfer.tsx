@@ -10,7 +10,6 @@ import {
   useButtonStyle,
   useTransferStyle,
   useCheckboxStyle,
-  useVirtualScrollStyle,
 } from '@sheinx/shineout-style';
 
 const jssStyle = {
@@ -19,7 +18,6 @@ const jssStyle = {
   checkbox: useCheckboxStyle,
   empty: useEmptyStyle,
   input: useInputStyle,
-  virtualScroll: useVirtualScrollStyle,
   spin: useSpinStyle,
 };
 
