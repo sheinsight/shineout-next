@@ -170,7 +170,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
           onMouseEnter={handleHoverMore}
           onMouseLeave={handleHoverMore}
         >
-          {renderMore(pageNum as PaginationMoreTypes)}
+          <span className={styles.icon}>{renderMore(pageNum as PaginationMoreTypes)}</span>
         </Button>
       );
     });
