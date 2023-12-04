@@ -21,14 +21,15 @@ export { default as Rule } from './rule';
 export { default as Select } from './select';
 export { default as Spin } from './spin';
 export { default as Switch } from './switch';
+export { default as Table } from './table';
 export { default as Tabs } from './tabs';
 export { default as Tag } from './tag';
 export { default as Textarea } from './textarea';
 export { default as Tooltip } from './tooltip';
 export { default as Upload } from './upload';
 export { default as Transfer } from './transfer';
-export { default as Pagination } from './pagination';
 export { default as Tree } from './tree';
+export { default as Pagination } from './pagination';
 export { setConfig } from '@sheinx/base';
 
 export * as TYPE from './type';

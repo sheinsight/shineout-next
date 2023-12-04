@@ -42,9 +42,11 @@ const rateStyle: JsStyles<RateClassType> = {
   inner: {
     display: 'flex',
     alignItems: 'center',
-    gap: token.rateGap,
   },
   item: {
+    '&:not(:first-child)': {
+      marginLeft: token.rateGap,
+    },
     position: 'relative',
     display: 'flex',
     boxSizing: 'border-box',

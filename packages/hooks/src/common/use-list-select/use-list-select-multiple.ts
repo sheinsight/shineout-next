@@ -1,5 +1,6 @@
 import { isArray, isObject } from '../../utils';
-import React from 'react';
+import React, { useMemo } from 'react';
+import usePersistFn from '../use-persist-fn';
 
 import { UnMatchedData, UseListMultipleProps } from './use-list.type';
 
@@ -30,36 +31,74 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     lastData: [] as DataItem[],
     dataMap: new Map<ValueItem, DataItem>(),
   });
-  const disabledCheck = (data: DataItem) => {
+  const disabledCheck = usePersistFn((data: DataItem) => {
     if (typeof props.disabled === 'boolean') return props.disabled;
     if (typeof props.disabled === 'function') return props.disabled(data);
     return false;
-  };
+  });
 
-  const formatData = (data: DataItem): ValueItem => {
+  const formatData = usePersistFn((data: DataItem): ValueItem => {
     if (typeof props.format === 'string' && isObject(data)) return data[props.format];
     if (typeof props.format === 'function') return props.format(data);
     return data as ValueItem;
-  };
+  });
 
-  const getVaildData = () => {
+  const getVaildData = usePersistFn(() => {
     const vaildData = props.data.filter((item: DataItem) => {
       return !disabledCheck(item);
     });
     return vaildData;
-  };
+  });
 
-  const getDataMap = () => {
+  const getFlatDataValue = usePersistFn((data: (DataItem | UnMatchedData)[], childrenKey) => {
+    const values = [] as ValueItem[];
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      if (isUnMatchedData(item)) {
+        values.push(item.value);
+        continue;
+      }
+      if (disabledCheck(item)) continue;
+      values.push(formatData(item));
+      if (childrenKey && item && (item as any)[childrenKey]) {
+        const children = (item as any)[childrenKey];
+        if (children.length) {
+          values.push(...getFlatDataValue(children, childrenKey));
+        }
+      }
+    }
+    return values;
+  });
+
+  const getFlatData = usePersistFn((data: (DataItem | UnMatchedData)[], childrenKey) => {
+    const dataArr = [] as (DataItem | UnMatchedData)[];
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      dataArr.push(item);
+      if (isUnMatchedData(item)) continue;
+      if (childrenKey && item && (item as any)[childrenKey]) {
+        const children = (item as any)[childrenKey];
+        if (children.length) {
+          dataArr.push(...getFlatData(children, childrenKey));
+        }
+      }
+    }
+    return dataArr;
+  });
+
+  const getDataMap = usePersistFn((childrenKey?: string) => {
+    // data 对应 value
     if (props.data === context.lastData) return context.dataMap;
     const map = new Map<ValueItem, DataItem>();
-    for (let i = 0; i < props.data.length; i++) {
-      const item = props.data[i];
+    const data = getFlatData(props.data, childrenKey);
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i] as DataItem;
       map.set(formatData(item), item);
     }
     context.dataMap = map;
     context.lastData = props.data;
     return map;
-  };
+  });
 
   const getValueMap = () => {
     if (props.value === context.lastValue) return context.valueMap;
@@ -73,72 +112,77 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     return map;
   };
 
-  const add = (
-    data: DataItem[] | DataItem,
-    config: { unshift?: boolean; overwrite?: boolean } = {},
-  ) => {
-    if (data === null || data === undefined) return;
+  const add = usePersistFn(
+    (
+      data: DataItem[] | DataItem,
+      config: {
+        unshift?: boolean;
+        overwrite?: boolean;
+        childrenKey?: string;
+        ignoreChange?: boolean;
+      } = {},
+    ) => {
+      if (data === null || data === undefined) return;
+      const { childrenKey } = config;
 
-    const values = [] as ValueItem[];
-    const raws = isArray(data) ? data : [data];
-    for (let i = 0; i < raws.length; i++) {
-      if (!disabledCheck(raws[i])) {
-        values.push(formatData(raws[i]));
+      const values = getFlatDataValue(isArray(data) ? data : [data], childrenKey);
+      const before = (config.overwrite ? [] : valueArr || []) as ValueItem[];
+      if (values.length) {
+        const newValue = config.unshift ? values.concat(before) : before.concat(values);
+        const valueResult = props.separator ? newValue.join(props.separator) : newValue;
+        props.onChange(valueResult as Value, data, true);
       }
-    }
-    const before = (config.overwrite ? [] : valueArr || []) as ValueItem[];
-    if (values.length) {
-      const newValue = config.unshift ? values.concat(before) : before.concat(values);
-      const valueResult = props.separator ? newValue.join(props.separator) : newValue;
-      props.onChange(valueResult as Value, data, true);
-    }
-  };
+    },
+  );
+
+  const removeAll = usePersistFn(() => {
+    props.onChange([] as unknown as Value, undefined as DataItem, false);
+  });
 
   // 删除数据
-  const remove = (data: (DataItem | UnMatchedData) | (DataItem | UnMatchedData)[]) => {
-    if (data === null || data === undefined) return;
-    const values = [];
-    const raws = isArray(data) ? data : [data];
-    if (!props.prediction) {
-      const rowValueMap = new Map();
-      for (let i = 0; i < raws.length; i++) {
-        const item = raws[i];
-        if (isUnMatchedData(item)) {
-          rowValueMap.set(item.value, true);
-        } else {
-          if (disabledCheck(item)) {
-            continue;
-          }
-          rowValueMap.set(formatData(item), true);
-        }
-      }
 
-      for (let i = 0; i < valueArr.length; i++) {
-        const val = valueArr[i];
-        if (!rowValueMap.get(val)) {
+  const remove = usePersistFn(
+    (
+      data: (DataItem | UnMatchedData) | (DataItem | UnMatchedData)[],
+      config: { childrenKey?: string } = {},
+    ) => {
+      if (data === null || data === undefined) return;
+      const { childrenKey } = config;
+      const values = [];
+      const raws = isArray(data) ? [...data] : [data];
+
+      if (!props.prediction) {
+        const removeValue = getFlatDataValue(raws, childrenKey);
+        const rowValueSet = new Set(removeValue);
+        for (let i = 0; i < valueArr.length; i++) {
+          const val = valueArr[i];
+          if (!rowValueSet.has(val)) {
+            values.push(val);
+          }
+        }
+      } else {
+        const { prediction } = props;
+        outer: for (const val of valueArr) {
+          const flatDataArr = getFlatData(raws, childrenKey);
+          for (let j = 0; j < flatDataArr.length; j++) {
+            const item = flatDataArr[j];
+            const isSame = isUnMatchedData(item)
+              ? item.value === val
+              : disabledCheck(item) || prediction(val, item);
+            if (isSame) {
+              flatDataArr.splice(j, 1);
+              continue outer;
+            }
+          }
           values.push(val);
         }
       }
-    } else {
-      const { prediction } = props;
-      outer: for (const val of valueArr) {
-        for (let j = 0; j < raws.length; j++) {
-          const item = raws[j];
-          const isSame = isUnMatchedData(item)
-            ? item.value === val
-            : disabledCheck(item) || prediction(val, item);
-          if (isSame) {
-            raws.splice(j, 1);
-            continue outer;
-          }
-        }
-        values.push(val);
-      }
-    }
-    const valueResult = props.separator ? values.join(props.separator) : values;
-    props.onChange(valueResult as Value, data as DataItem, false);
-  };
-  const check = (raw: DataItem) => {
+      const valueResult = props.separator ? values.join(props.separator) : values;
+      props.onChange(valueResult as Value, data as DataItem, false);
+    },
+  );
+
+  const check = usePersistFn((raw: DataItem) => {
     if (props.prediction) {
       for (let i = 0, count = valueArr.length; i < count; i++) {
         if (props.prediction(valueArr[i], raw)) return true;
@@ -146,52 +190,75 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
       return false;
     }
     return !!getValueMap().get(formatData(raw));
-  };
+  });
 
-  const getDataByValues = (values: ValueItem[]) => {
-    const result = [];
-    if (!props.prediction) {
-      if (!values || !values.length) return [];
-      const map = getDataMap();
-      for (let i = 0; i < values.length; i++) {
-        const item = map.get(values[i]);
-        if (item) {
-          result.push(item);
-        } else {
-          result.push({ IS_NOT_MATCHED_VALUE: true, value: values[i] });
-        }
-      }
-    } else {
-      const raws = [...props.data];
-      outer: for (let i = 0; i < values.length; i++) {
-        for (let j = 0; j < raws.length; j++) {
-          const item = raws[j];
-          if (props.prediction(values[i], item)) {
+  const getDataByValues = usePersistFn(
+    (values: ValueItem[], info: { childrenKey?: string } = {}) => {
+      const result = [];
+      if (!props.prediction) {
+        if (!values || !values.length) return [];
+        const map = getDataMap(info.childrenKey);
+        for (let i = 0; i < values.length; i++) {
+          const item = map.get(values[i]);
+          if (item) {
             result.push(item);
-            raws.splice(j, 1);
-            continue outer;
-          }
-          if (j === raws.length - 1) {
+          } else {
             result.push({ IS_NOT_MATCHED_VALUE: true, value: values[i] });
           }
         }
+      } else {
+        const raws = [...props.data];
+        outer: for (let i = 0; i < values.length; i++) {
+          for (let j = 0; j < raws.length; j++) {
+            const item = raws[j];
+            if (props.prediction(values[i], item)) {
+              result.push(item);
+              raws.splice(j, 1);
+              continue outer;
+            }
+            if (j === raws.length - 1) {
+              result.push({ IS_NOT_MATCHED_VALUE: true, value: values[i] });
+            }
+          }
+        }
       }
-    }
 
-    return result;
-  };
+      return result;
+    },
+  );
 
-  return {
-    add,
-    remove,
-    check,
-    format: formatData,
-    getVaildData,
-    getValueMap,
-    getDataByValues,
-    isUnMatchedData,
-    disabledCheck,
-  };
+  const getCheckedStatus = usePersistFn((childrenKey?: string) => {
+    if (valueArr.length === 0) return false;
+    const dataMap = getDataMap(childrenKey);
+    const valueMap = getValueMap();
+    const formatValues = Array.from(dataMap, ([name]) => name);
+    let checkedNum = 0;
+    formatValues.forEach((key) => {
+      if (valueMap.get(key)) checkedNum++;
+    });
+    if (checkedNum === 0) return false;
+    if (checkedNum === formatValues.length) return true;
+    return 'indeterminate';
+  });
+
+  const func = useMemo(() => {
+    return {
+      add,
+      remove,
+      removeAll,
+      check,
+      format: formatData,
+      getVaildData,
+      getValueMap,
+      getDataByValues,
+      isUnMatchedData,
+      disabledCheck,
+      getCheckedStatus,
+      data: props.data,
+    };
+  }, Object.values(props));
+
+  return func;
 };
 
 export default useListSelectMultiple;

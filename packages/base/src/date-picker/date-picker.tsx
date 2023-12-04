@@ -157,7 +157,14 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
         onClick={handleResultClick}
         onFocus={canFocus ? handleFocus : undefined}
         onBlur={canFocus ? handleBlur : undefined}
-        onMouseDown={props.inputable ? preventDefault : undefined}
+        onMouseDown={
+          props.inputable
+            ? (e) => {
+                if ((e.target as HTMLInputElement).tagName === 'INPUT') return;
+                e.preventDefault();
+              }
+            : undefined
+        }
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             if (open) {

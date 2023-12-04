@@ -64,6 +64,9 @@ import { SpinTokens } from './spin/type';
 import Switch from './switch';
 import { SwitchTokens } from './switch/type';
 
+import Table from './table';
+import { TableTokens } from './table/type';
+
 import Tabs from './tabs';
 import { TabsTokens } from './tabs/type';
 
@@ -82,11 +85,11 @@ import { UploadTokens } from './upload/type';
 import Transfer from './transfer';
 import { TransferTokens } from './transfer/type';
 
-import Pagination from './pagination';
-import { PaginationTokens } from './pagination/type';
-
 import Tree from './tree';
 import { TreeTokens } from './tree/type';
+
+import Pagination from './pagination';
+import { PaginationTokens } from './pagination/type';
 
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
@@ -109,14 +112,15 @@ export type ThemeTokens = AlertTokens &
   SelectTokens &
   SpinTokens &
   SwitchTokens &
+  TableTokens &
   TabsTokens &
   TagTokens &
   TextareaTokens &
   TooltipTokens &
   UploadTokens &
   TransferTokens &
-  PaginationTokens &
-  TreeTokens;
+  TreeTokens &
+  PaginationTokens;
 
 const Tokens: ThemeTokens = {
   ...Alert,
@@ -140,14 +144,15 @@ const Tokens: ThemeTokens = {
   ...Select,
   ...Spin,
   ...Switch,
+  ...Table,
   ...Tabs,
   ...Tag,
   ...Textarea,
   ...Tooltip,
   ...Upload,
   ...Transfer,
-  ...Pagination,
   ...Tree,
+  ...Pagination,
 };
 
 export type { TokenType };

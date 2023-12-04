@@ -71,3 +71,7 @@ export const isEmpty = (val: unknown): boolean => {
 
   return false;
 };
+
+export const isMacOS = (): boolean => /macintosh|mac os x/i.test(navigator.userAgent);
+
+export const isFirefox = (): boolean => navigator.userAgent.toLowerCase().indexOf('firefox') > -1;

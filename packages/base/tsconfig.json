@@ -12,5 +12,5 @@
       "@sheinx/theme": ["../theme/src/index"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "../mock/src/mock"]
 }

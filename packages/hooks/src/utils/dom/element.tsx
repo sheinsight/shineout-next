@@ -77,4 +77,25 @@ export const addResizeObserver = (
   };
 };
 
+export function getParent(el: HTMLElement | null | Element, target?: string | HTMLElement) {
+  if (!target) {
+    return null;
+  }
+
+  let temp: HTMLElement | Element | null = el;
+  while (temp) {
+    if (typeof target === 'string') {
+      if (temp.matches && temp.matches(target)) {
+        return temp;
+      }
+    } else if (temp === target) {
+      return temp;
+    }
+
+    temp = temp.parentElement;
+  }
+
+  return null;
+}
+
 export const parsePxToNumber = (str: string) => Number(str.replace(/\s+|px/gi, ''));

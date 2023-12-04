@@ -14,7 +14,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     height,
     rowsInView,
     renderItem,
-    tag,
+    tag = 'div',
     tagClassName,
     customKeygen,
     customRenderItem,

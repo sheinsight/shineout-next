@@ -6,29 +6,6 @@ export function range(end: number, start = 0) {
   return Array.from({ length: end - start }, (_v, k) => k + start);
 }
 
-export function split(total: number, nums: number[]) {
-  if (typeof total !== 'number' || total === 0) {
-    console.error(new Error('total mast be a number(not equal 0)'));
-  }
-  let remain = 1;
-  let nilCount = 0;
-  const ratios = nums.map((n) => {
-    if (n) {
-      const r = n / total;
-      remain -= n;
-      return r;
-    }
-    nilCount += 1;
-    return null;
-  });
-
-  return ratios.map((v) => {
-    let r = v;
-    if (!r) r = remain / nilCount;
-    return total * r;
-  });
-}
-
 export function toPrecision(num: number, precision = 12) {
   return +parseFloat(num.toPrecision(precision));
 }

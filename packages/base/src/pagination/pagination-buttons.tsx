@@ -25,8 +25,8 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
   const [showPrevMore, setShowPrevMore] = useState(false);
   const [showNextMore, setShowNextMore] = useState(false);
 
-  const styles = jssStyle?.pagination || ({} as PaginationClasses);
-  const rootClasses = classNames(styles.section, styles.buttons);
+  const styles = jssStyle?.pagination?.() as PaginationClasses;
+  const rootClasses = classNames(styles?.section, styles?.buttons);
 
   const getLinks = () => {
     if (total === 0) return { buttons: [], max: 0 };
