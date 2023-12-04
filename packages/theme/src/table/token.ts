@@ -44,7 +44,9 @@ const tableTokenExtraValue = {
       },
     },
   },
-
+  fixed: {
+    shadow: 'rgba(2,11,24,.1)',
+  },
   thead: {
     background: { color: 'Neutral-fill-2' },
     font: { color: 'Neutral-text-5' },
@@ -61,6 +63,10 @@ const tableTokenExtraValue = {
     font: { color: 'Neutral-text-5' },
   },
   expand: {
+    icon: {
+      size: 'Size-7',
+      color: 'Neutral-text-4',
+    },
     background: { color: 'Neutral-fill-2' },
   },
   sorter: {
@@ -73,6 +79,11 @@ const tableTokenExtraValue = {
   },
   selection: {
     border: { color: 'Brand-6' },
+  },
+  pagination: {
+    margin: {
+      y: 'Margin-12',
+    },
   },
 };
 

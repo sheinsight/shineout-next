@@ -233,8 +233,8 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   cellHover: {
-    'td&': {
-      background: `${token.tableTbodyHoverBackgroundColor} !important`,
+    'table tbody td&&': {
+      background: `${token.tableTbodyHoverBackgroundColor}`,
     },
   },
   floatLeft: {
@@ -245,7 +245,7 @@ const tableStyle: JsStyles<TableClassType> = {
       bottom: 0,
       width: '5px',
       right: '-5px',
-      background: 'linear-gradient(90deg,rgba(2,11,24,.1), transparent)',
+      background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
     },
   },
   floatRight: {
@@ -253,7 +253,7 @@ const tableStyle: JsStyles<TableClassType> = {
       content: '""',
       width: '5px',
       left: '-5px',
-      background: 'linear-gradient(270deg,rgba(2,11,24,.1),transparent)',
+      background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
       top: 0,
       bottom: 0,
       position: 'absolute',
@@ -359,10 +359,10 @@ const tableStyle: JsStyles<TableClassType> = {
   sticky: {},
   expandIcon: {
     display: 'inline-block',
-    width: '15px',
-    height: '15px',
+    width: token.tableExpandIconSize,
+    height: token.tableExpandIconSize,
     cursor: 'pointer',
-    color: '#b3b7c1',
+    color: token.tableExpandIconColor,
     '&>svg': {
       cursor: 'pointer',
     },
@@ -406,7 +406,7 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   pagination: {
-    margin: '12px 0',
+    margin: `${token.tablePaginationMarginY} 0`,
   },
   striped: {
     '& table tr:nth-child(even) td': {

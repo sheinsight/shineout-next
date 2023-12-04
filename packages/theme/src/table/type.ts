@@ -52,6 +52,12 @@ export interface TableTokens {
   tableLargeCellPaddingY: string;
   /**
    * @type {string}
+   * @token rgba(2,11,24,.1)
+   * @description xxxundefinedundefined
+   */
+  tableFixedShadow: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description xxxundefined背景颜色
    */
@@ -106,6 +112,18 @@ export interface TableTokens {
   tableTfootFontColor: string;
   /**
    * @type {string}
+   * @token Size-7
+   * @description xxxundefined图标字号
+   */
+  tableExpandIconSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description xxxundefined图标颜色
+   */
+  tableExpandIconColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description xxxundefined背景颜色
    */
@@ -140,4 +158,10 @@ export interface TableTokens {
    * @description xxxundefined边框颜色
    */
   tableSelectionBorderColor: string;
+  /**
+   * @type {string}
+   * @token Margin-12
+   * @description xxxundefined外边距（垂直方向）
+   */
+  tablePaginationMarginY: string;
 }
