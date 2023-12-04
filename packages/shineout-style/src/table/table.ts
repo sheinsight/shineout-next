@@ -1,6 +1,6 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
-import { hideScrollBar, customScrollBar } from '../mixin';
+import { customScrollBar } from '../mixin';
 
 export type TableClasses = {
   wrapper: string;
@@ -127,8 +127,9 @@ const tableStyle: JsStyles<TableClassType> = {
         fontWeight: 'bold',
         boxSizing: 'border-box',
       },
-      '& tr:hover td': {
-        // background: token.tableTbodyHoverBackgroundColor,
+      '& tfoot td': {
+        background: token.tableTfootBackgroundColor,
+        color: token.tableTfootFontColor,
       },
     },
   },
@@ -186,14 +187,13 @@ const tableStyle: JsStyles<TableClassType> = {
     boxSizing: 'border-box',
   },
   footWrapper: {
-    '&  td': {
-      width: '100%',
-      boxSizing: 'border-box',
-    },
-    ...hideScrollBar(),
+    flex: '0 0 auto',
+    overflow: 'hidden',
+    boxSizing: 'border-box',
+    background: token.tableTfootBackgroundColor,
   },
   scrollY: {
-    '&$headWrapper': {
+    '&$headWrapper, &$footWrapper': {
       overflowY: 'scroll',
       ...customScrollBar({ background: 'transparent' }),
     },

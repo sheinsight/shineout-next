@@ -19,6 +19,8 @@ const tableTokens: TableTokens = {
   tableTbodyHoverBackgroundColor: 'Indigo-1',
   tableTbodyActiveBackgroundColor: 'Brand-1',
   tableTbodyFontColor: 'Neutral-text-5',
+  tableTfootBackgroundColor: 'Neutral-fill-2',
+  tableTfootFontColor: 'Neutral-text-5',
   tableExpandBackgroundColor: 'Neutral-fill-2',
   tableSorterColor: 'Neutral-text-3',
   tableSorterHoverColor: 'Neutral-text-4',

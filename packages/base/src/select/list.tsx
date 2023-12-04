@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { KeygenResult } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { BaseListProps } from './select.type';
-import VirtualList from '../virtual-scroll/virtual-list';
+import { VirtualScrollList } from '../virtual-scroll';
 import ListOption from './list-option';
 
 const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
@@ -16,7 +16,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     keygen,
     datum,
     multiple,
-    groupKey,
+    // groupKey,
     itemsInView = 10,
     lineHeight: lineHeightProp,
     loading,
@@ -74,21 +74,20 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     );
   };
 
-  const renderGroupTitle = (d) => {
-    const title = d[groupKey];
-    return (
-      <div className={styles.optionGroupTitle} title={title}>
-        {title}
-      </div>
-    );
-  };
+  // const renderGroupTitle = (d) => {
+  //   const title = d[groupKey];
+  //   return (
+  //     <div className={styles.optionGroupTitle} title={title}>
+  //       {title}
+  //     </div>
+  //   );
+  // };
 
   const renderList = () => {
     if (loading) return renderLoading();
 
     return (
-      <VirtualList
-        jssStyle={jssStyle}
+      <VirtualScrollList
         data={data}
         keygen={keygen}
         tag={'ul'}
@@ -97,9 +96,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         lineHeight={lineHeight}
         rowsInView={itemsInView}
         renderItem={renderItem}
-        customKeygen={groupKey}
-        customRenderItem={renderGroupTitle}
-      ></VirtualList>
+      ></VirtualScrollList>
     );
   };
 

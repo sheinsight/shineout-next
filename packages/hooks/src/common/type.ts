@@ -21,7 +21,6 @@ export type StructKeygenType<DataItem> =
   | ObjectKey<DataItem>
   | ((data: DataItem, index?: number) => KeygenResult);
 
-// 将可选属性转化为必选属性但是可以是undefined
 type OptionalKeys<T> = {
   [K in keyof T]: T extends Record<K, T[K]> ? never : K;
 }[keyof T];
@@ -33,7 +32,6 @@ export type OptionalToRequired<T> = {
 } & {
   [K in RequiredKeys<T>]: T[K];
 };
-
 export type StructKeygenStringType<DataItem> =
   | ObjectKey<DataItem>
   | ((data: DataItem, index: string) => KeygenResult);
