@@ -97,6 +97,18 @@ export interface TableTokens {
    * @token Neutral-fill-2
    * @description xxxundefined背景颜色
    */
+  tableTfootBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description xxxundefined字体颜色
+   */
+  tableTfootFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description xxxundefined背景颜色
+   */
   tableExpandBackgroundColor: string;
   /**
    * @type {string}

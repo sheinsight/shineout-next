@@ -11,7 +11,6 @@ export default (props: TbodyProps) => {
     keygen: props.keygen,
   });
 
-  // handle rowSpan colSpan
   const { rowData, isCellHover, handleCellHover, hoverIndex, rowSelectMergeStartData } =
     useTableRow({
       columns: props.columns,
@@ -61,6 +60,7 @@ export default (props: TbodyProps) => {
         hoverIndex={hoverIndex}
         rowClickAttr={props.rowClickAttr}
         onRowClick={props.onRowClick}
+        rowEvents={props.rowEvents}
       />
     );
   };

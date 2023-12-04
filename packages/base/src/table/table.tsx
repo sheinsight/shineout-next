@@ -21,7 +21,7 @@ import useTableSelect from './use-table-select';
 import Colgroup from './colgroup';
 import Thead from './thead';
 import Tbody from './tbody';
-// import Tfoot from './tfoot';
+import Tfoot from './tfoot';
 
 const emptyArr: any[] = [];
 const virtualScrollerStyle = {
@@ -37,6 +37,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableClasses = props?.jssStyle?.table?.();
   const tbodyRef = useRef<HTMLTableElement | null>(null);
   const theadRef = useRef<HTMLTableElement | null>(null);
+  const tfootRef = useRef<HTMLTableElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const virtual =
@@ -157,13 +158,17 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   // simple table sync left to head and foot
   const setLeft = usePersistFn((left: number) => {
     let thead = theadRef?.current;
-    if (thead) {
-      if (virtual) {
-        thead.style.transform = `translate3d(-${left}px, 0, 0)`;
-      } else {
-        thead.parentElement!.scrollLeft = left;
+    let tfoot = tfootRef?.current;
+    [thead, tfoot].forEach((el) => {
+      if (el) {
+        if (virtual) {
+          el.style.transform = `translate3d(-${left}px, 0, 0)`;
+        } else {
+          el.parentElement!.scrollLeft = left;
+        }
       }
-    }
+    });
+
     layoutFunc.checkFloat();
   });
 
@@ -234,6 +239,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       striped: props.striped,
       radio: props.radio,
       onRowClick: props.onRowClick,
+      rowEvents: props.rowEvents,
     };
 
     const headCommonProps = {
@@ -253,8 +259,20 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       radio: props.radio,
       treeColumnsName,
     };
+
+    const footCommonProps = {
+      summary: props.summary,
+      columns: columns,
+      jssStyle: props.jssStyle,
+      colgroup: colgroup,
+    };
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
+      isScrollY && scrollBarWidth && tableClasses?.scrollY,
+    );
+
+    const footWrapperClass = classNames(
+      tableClasses?.footWrapper,
       isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
     if (virtual) {
@@ -293,6 +311,19 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
               />
             </table>
           </Scroll>
+          <div className={footWrapperClass}>
+            <table
+              style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
+              ref={tfootRef}
+            >
+              {Group}
+              <Tfoot
+                {...footCommonProps}
+                fixLeftNum={virtualInfo.innerLeft}
+                fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
+              />
+            </table>
+          </div>
         </>
       );
     }
@@ -303,6 +334,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {Group}
             {<Thead {...headCommonProps} />}
             {<Tbody {...bodyCommonProps} />}
+            {<Tfoot {...footCommonProps} />}
           </table>
         </div>
       );
@@ -323,6 +355,12 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           <table style={{ width }} ref={tbodyRef}>
             {Group}
             {<Tbody {...bodyCommonProps} />}
+          </table>
+        </div>
+        <div className={footWrapperClass}>
+          <table style={{ width }} ref={tfootRef}>
+            {Group}
+            {<Tfoot {...footCommonProps} />}
           </table>
         </div>
       </>
@@ -354,8 +392,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   // const renderFooter = () => {
   //   if (!props.summary || !props.summary.length) return null;
   //   return (
-  //     <div ref={tfootRef} className={classNames(tableClasses?.tfoot)} onScroll={handleScroll}>
-  //       <table style={{ width }}>
+  //     <div  className={classNames(tableClasses?.footWrapper)} onScroll={handleScroll}>
+  //       <table style={{ width }} ref={tfootRef}>
   //         {renderColgroup()}
   //         <Tfoot />
   //       </table>
@@ -370,9 +408,18 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         passive: false,
       });
     }
+    if (tfootRef.current && tfootRef.current.parentElement) {
+      tfootRef.current.parentElement.addEventListener('wheel', handleHeaderWheel, {
+        passive: false,
+      });
+    }
+
     return () => {
       if (theadRef.current && theadRef.current.parentElement) {
         theadRef.current.parentElement.removeEventListener('wheel', handleHeaderWheel);
+      }
+      if (tfootRef.current && tfootRef.current.parentElement) {
+        tfootRef.current.parentElement.removeEventListener('wheel', handleHeaderWheel);
       }
     };
   }, [theadRef.current, isScrollY]);

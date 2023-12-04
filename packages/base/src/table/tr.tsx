@@ -24,6 +24,7 @@ interface TrProps
     | 'radio'
     | 'onRowClick'
     | 'rowClickAttr'
+    | 'rowEvents'
   > {
   row: {
     data: any[];
@@ -301,6 +302,7 @@ const Tr = (props: TrProps) => {
           props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
           props.isSelect && tableClasses?.rowChecked,
         )}
+        {...props.rowEvents}
         onClick={handleRowClick}
       >
         {renderTds(props.columns, props.row)}

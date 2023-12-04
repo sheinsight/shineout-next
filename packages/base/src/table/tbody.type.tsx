@@ -18,6 +18,7 @@ export interface TbodyProps
     | 'radio'
     | 'onRowClick'
     | 'rowClickAttr'
+    | 'rowEvents'
   > {
   columns: TableFormatColumn<any>[];
   data: any[];
