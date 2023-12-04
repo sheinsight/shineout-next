@@ -46,6 +46,7 @@ interface TrProps
   handleCellHover: UseTableRowResult['handleCellHover'];
   hoverIndex: UseTableRowResult['hoverIndex'];
   isSelect: boolean;
+  disabled?: boolean;
 }
 
 const Tr = (props: TrProps) => {
@@ -163,6 +164,7 @@ const Tr = (props: TrProps) => {
               jssStyle={props.jssStyle}
               style={{ margin: 0 }}
               checked={props.isSelect}
+              disabled={props.disabled}
               onChange={(value: boolean) => {
                 if (value) {
                   props.datum.add(data);
@@ -178,6 +180,7 @@ const Tr = (props: TrProps) => {
         <div className={tableClasses?.iconWrapper}>
           <Checkbox
             jssStyle={props.jssStyle}
+            disabled={props.disabled}
             style={{ margin: 0 }}
             checked={props.isSelect}
             onChange={(_value, check) => {
@@ -229,6 +232,8 @@ const Tr = (props: TrProps) => {
               col.className,
               col.fixed === 'left' && tableClasses?.cellFixedLeft,
               col.fixed === 'right' && tableClasses?.cellFixedRight,
+              col.align === 'center' && tableClasses?.cellAlignCenter,
+              col.align === 'right' && tableClasses?.cellAlignRight,
               (col.lastFixed || col.firstFixed || last.lastFixed) && tableClasses?.cellFixedLast,
               lastRowIndex === i && tableClasses?.cellIgnoreBorder,
               props.isCellHover(props.rowIndex, data[i].rowSpan) && tableClasses?.cellHover,

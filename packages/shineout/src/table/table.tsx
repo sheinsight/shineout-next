@@ -8,6 +8,7 @@ import {
   usePaginationStyle,
   useInputStyle,
   useButtonStyle,
+  useEmptyStyle,
 } from '@sheinx/shineout-style';
 import { TableProps } from './table.type';
 
@@ -19,6 +20,7 @@ const jssStyle = {
   pagination: usePaginationStyle,
   input: useInputStyle,
   button: useButtonStyle,
+  empty: useEmptyStyle,
 };
 export default <DataItem, Value>(props: TableProps<DataItem, Value>) => {
   return <Table jssStyle={jssStyle} {...props} />;

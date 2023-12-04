@@ -8,6 +8,7 @@ interface UseTableVirtualProps {
   rowHeight: number;
   scrollRef: React.RefObject<HTMLDivElement>;
   innerRef: React.RefObject<HTMLDivElement>;
+  scrollLeft?: number;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerLeft, setLeft] = useState(0);
@@ -16,6 +17,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const [startIndex, setStartIndex] = useState(0);
   const preIndex = usePrevious(startIndex);
   const [offsetY, setOffsetY] = useState(0);
+
+  const sleft = props.scrollLeft !== undefined ? props.scrollLeft : innerLeft;
 
   const { current: context } = useRef({
     cachedHeight: [] as Array<number>,
@@ -27,7 +30,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   });
 
   const getTranslate = usePersistFn((left?: number, top?: number) => {
-    const l = left === undefined ? innerLeft : left;
+    const l = left === undefined ? sleft : left;
     const t = top === undefined ? innerTop + offsetY : top;
     return `translate3d(-${l}px, -${t}px, 0)`;
   });
@@ -176,7 +179,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   return {
     scrollHeight,
     startIndex,
-    innerLeft,
+    innerLeft: sleft,
     innerTop: innerTop + offsetY,
     data: renderData,
     handleScroll,

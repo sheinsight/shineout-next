@@ -9,6 +9,7 @@ import { PaginationProps } from '../pagination/pagination.type';
 import { PaginationClasses } from '../pagination/pagination.type';
 import { ButtonClasses } from '../button/button.type';
 import { InputClasses } from '../input/input.type';
+import { EmptyClasses } from '../empty/empty.type';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
@@ -34,7 +35,10 @@ export interface TableClasses {
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
+  emptyWrapper: string;
 
+  cellAlignRight: string;
+  cellAlignCenter: string;
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
@@ -109,7 +113,31 @@ export interface TableProps<DataItem, Value>
     pagination?: () => PaginationClasses;
     button?: () => ButtonClasses;
     input?: () => InputClasses;
+    empty?: () => EmptyClasses;
   };
+  /**
+   * @en which takes effect when the virtual list is enabled
+   * @cn 当开启虚拟列表时生效
+   */
+  scrollLeft?: number;
+  /**
+   * @en The expected height of a one-line table is just a rough estimate to show the scroll bar.
+   * @cn 单行表格的预期高度，只是一个大概的估值，用来展示滚动条
+   * @default 40
+   */
+  rowHeight?: number;
+  /**
+   * @en row hover highlight
+   * @cn 数据行鼠标悬浮高亮效果
+   * @default true
+   */
+  hover?: boolean;
+  /**
+   * @en empty text
+   * @cn 空数据文案
+   * @default getLocale("Data not found")
+   */
+  empty?: React.ReactNode;
   /**
    * @en whether to enable ctrl/cmd + click check
    * @cn 是否启用 ctrl/cmd + click 选中单元格

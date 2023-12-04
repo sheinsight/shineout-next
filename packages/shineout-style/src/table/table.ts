@@ -23,7 +23,10 @@ export type TableClasses = {
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
+  emptyWrapper: string;
 
+  cellAlignRight: string;
+  cellAlignCenter: string;
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
@@ -185,12 +188,25 @@ const tableStyle: JsStyles<TableClassType> = {
   bodyWrapper: {
     overflow: 'auto',
     boxSizing: 'border-box',
+    flexGrow: 1,
+    minHeight: '0',
   },
   footWrapper: {
     flex: '0 0 auto',
     overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTfootBackgroundColor,
+  },
+  emptyWrapper: {
+    minHeight: '150px',
+    width: '100%',
+    height: '100%',
+    position: 'sticky',
+    left: 0,
+    top: 0,
+    justifyContent: 'center',
+    display: 'flex',
+    alignItems: 'center',
   },
   scrollY: {
     '&$headWrapper, &$footWrapper': {
@@ -204,6 +220,8 @@ const tableStyle: JsStyles<TableClassType> = {
   cellFixedRight: {
     position: 'sticky',
   },
+  cellAlignCenter: { textAlign: 'center' },
+  cellAlignRight: { textAlign: 'right' },
   cellFixedLast: {},
   cellGroup: {
     textAlign: 'center',
