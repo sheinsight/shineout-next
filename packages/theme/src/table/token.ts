@@ -67,6 +67,9 @@ const tableTokenExtraValue = {
   resize: {
     color: 'Brand-7',
   },
+  selection: {
+    border: { color: 'Brand-6' },
+  },
 };
 
 module.exports = {

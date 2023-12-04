@@ -184,6 +184,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   });
 
   const syncScrollWidth = usePersistFn(() => {
+    if (!scrollRef.current) return;
     const scrollEl = scrollRef.current!;
     const w = scrollEl.scrollWidth;
     if (w !== scrollWidth) setScrollWidth(w);

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { util } from '@sheinx/hooks';
+import { usePersistFn, util } from '@sheinx/hooks';
 import type { TableFormatColumn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
@@ -22,6 +22,8 @@ interface TrProps
     | 'fixRightNum'
     | 'striped'
     | 'radio'
+    | 'onRowClick'
+    | 'rowClickAttr'
   > {
   row: {
     data: any[];
@@ -95,7 +97,7 @@ const Tr = (props: TrProps) => {
       const expandHeight = expandRef.current ? expandRef.current.offsetHeight : 0;
       props.setRowHeight(props.rowIndex, trRef.current.offsetHeight + expandHeight);
     }
-  }, [props.expanded]);
+  }, [props.expanded, props.rowIndex]);
 
   const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 20) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
@@ -179,9 +181,9 @@ const Tr = (props: TrProps) => {
             checked={props.isSelect}
             onChange={(_value, check) => {
               if (check) {
-                props.datum.add(data);
+                props.datum.add(data, { childrenKey: props.treeColumnsName });
               } else {
-                props.datum.remove(data);
+                props.datum.remove(data, { childrenKey: props.treeColumnsName });
               }
             }}
           />
@@ -263,6 +265,33 @@ const Tr = (props: TrProps) => {
     }
   };
 
+  const handleRowClick = usePersistFn((e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    const { rowClickAttr, onRowClick } = props;
+    if (onRowClick && rowClickAttr) {
+      if (rowClickAttr === true || rowClickAttr === '*') {
+        onRowClick(props.rawData, props.rowIndex);
+      } else {
+        const arrts = (
+          Array.isArray(rowClickAttr)
+            ? rowClickAttr
+            : [rowClickAttr].filter((item) => typeof item === 'string')
+        ) as string[];
+        const isMatch = arrts.some((attr) => attr === '*' || target.hasAttribute(attr));
+        if (isMatch) {
+          onRowClick(props.rawData, props.rowIndex);
+        }
+      }
+    }
+    if (props.rowClickExpand) {
+      props.handleExpandClick(
+        props.expandCol as TableFormatColumn<any>,
+        props.rawData,
+        props.rowIndex,
+      );
+    }
+  });
+
   return (
     <>
       <tr
@@ -272,15 +301,7 @@ const Tr = (props: TrProps) => {
           props.striped && props.rowIndex % 2 === 1 && tableClasses?.rowStriped,
           props.isSelect && tableClasses?.rowChecked,
         )}
-        onClick={() => {
-          if (props.rowClickExpand) {
-            props.handleExpandClick(
-              props.expandCol as TableFormatColumn<any>,
-              props.rawData,
-              props.rowIndex,
-            );
-          }
-        }}
+        onClick={handleRowClick}
       >
         {renderTds(props.columns, props.row)}
       </tr>

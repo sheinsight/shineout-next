@@ -24,6 +24,7 @@ const tableTokens: TableTokens = {
   tableSorterHoverColor: 'Neutral-text-4',
   tableSorterActiveColor: 'Brand-6',
   tableResizeColor: 'Brand-7',
+  tableSelectionBorderColor: 'Brand-6',
 };
 
 export default tableTokens;

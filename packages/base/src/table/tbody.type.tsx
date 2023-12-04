@@ -16,6 +16,8 @@ export interface TbodyProps
     | 'treeEmptyExpand'
     | 'striped'
     | 'radio'
+    | 'onRowClick'
+    | 'rowClickAttr'
   > {
   columns: TableFormatColumn<any>[];
   data: any[];

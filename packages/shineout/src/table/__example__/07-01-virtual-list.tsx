@@ -50,7 +50,7 @@ for (let i = 0; i < 50; i++) {
 const App: React.FC = () => (
   <Table
     verticalAlign='top'
-    fixed='both'
+    virtual
     keygen='id'
     width={6400}
     style={{ height: 600 }}

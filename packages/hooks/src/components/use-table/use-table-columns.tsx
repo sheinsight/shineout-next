@@ -3,11 +3,11 @@ import { produce } from 'immer';
 import { useRef } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 export interface UseColumnsProps<Data> {
-  columns: TableColumnItem<Data>[];
+  columns?: TableColumnItem<Data>[];
   showCheckbox?: boolean;
 }
 
-const getHideExpandCol = (cols: UseColumnsProps<any>['columns']) => {
+const getHideExpandCol = (cols: UseColumnsProps<any>['columns'] = []) => {
   const expandCol = cols.find(
     (col) => col.hide && (col.type === 'expand' || col.type === 'row-expand'),
   );

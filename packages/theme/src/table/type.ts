@@ -122,4 +122,10 @@ export interface TableTokens {
    * @description xxxundefined颜色
    */
   tableResizeColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description xxxundefined边框颜色
+   */
+  tableSelectionBorderColor: string;
 }

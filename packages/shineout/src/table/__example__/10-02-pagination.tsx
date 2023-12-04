@@ -85,7 +85,7 @@ const App: React.FC = () => {
   return (
     <Table
       bordered
-      fixed='y'
+      virtual
       keygen='id'
       data={data}
       loading={loading}

@@ -16,6 +16,7 @@ import {
   useLatestObj,
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
+import useTableSelect from './use-table-select';
 
 import Colgroup from './colgroup';
 import Thead from './thead';
@@ -32,19 +33,6 @@ const virtualScrollerStyle = {
 };
 const scrollWrapperStyle = { flex: 1, minHeight: 0, minWidth: 0, display: 'flex' };
 
-// 功能清单
-// - 表头分组
-// - 合并列 合并行 高亮
-// - 固定表头 列宽同步 滚动同步
-// - 排序
-// - 可伸缩列
-// - 固定列 sticky
-// - 表头 sticky
-// - 可展开
-// -  可选择
-// - 虚拟列表
-// - 数形状数据
-//   行点击 和行事件 支持拖拽
 export default <Item, Value>(props: TableProps<Item, Value>) => {
   const tableClasses = props?.jssStyle?.table?.();
   const tbodyRef = useRef<HTMLTableElement | null>(null);
@@ -55,6 +43,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     !!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto';
 
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
+
+  const selection = useTableSelect({
+    cellSelectable: props.cellSelectable,
+  });
+
   const inputableData = useInputAble({
     value: props.value,
     defaultValue: undefined,
@@ -64,8 +57,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   });
 
   const getSelectData = () => {
-    const checkboxColumn = props.columns.find((item) => item.type === 'checkbox');
-    let selectData = props.data;
+    const checkboxColumn = (props.columns || emptyArr).find((item) => item.type === 'checkbox');
+    let selectData = props.data || emptyArr;
     if (checkboxColumn && typeof checkboxColumn.rowSpan === 'function') {
       if (typeof checkboxColumn.filterAll === 'function') {
         selectData = checkboxColumn.filterAll(selectData);
@@ -222,6 +215,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     );
 
     const bodyCommonProps = {
+      rowClickAttr: props.rowClickAttr,
       jssStyle: props.jssStyle,
       columns: columns,
       data: treeData,
@@ -239,12 +233,13 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       treeColumnsName: treeColumnsName,
       striped: props.striped,
       radio: props.radio,
+      onRowClick: props.onRowClick,
     };
 
     const headCommonProps = {
       jssStyle: props.jssStyle,
       columns: columns,
-      data: props.data,
+      data: pagedData,
       colgroup: colgroup,
       sortInfo: sortInfo,
       onSorterChange: onSorterChange,
@@ -256,6 +251,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       datum: datum,
       renderSorter: props.renderSorter,
       radio: props.radio,
+      treeColumnsName,
     };
     const headWrapperClass = classNames(
       tableClasses?.headWrapper,
@@ -391,26 +387,46 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     }
   }, []);
 
+  const tableWrapperClass = classNames(
+    props.className,
+    tableClasses?.wrapper,
+    props.bordered && tableClasses?.bordered,
+    verticalAlign === 'top' && tableClasses?.verticalAlignTop,
+    verticalAlign === 'middle' && tableClasses?.verticalAlignMiddle,
+    size === 'small' && tableClasses?.small,
+    size === 'large' && tableClasses?.large,
+    size === 'default' && tableClasses?.default,
+  );
+
+  if (!props.columns || columns.length === 0)
+    return (
+      <div
+        className={classNames(
+          tableWrapperClass,
+          tableClasses?.simple,
+          props.striped && tableClasses?.striped,
+        )}
+        style={{ height: props.height, ...props.style }}
+      >
+        <table style={{ width }}>{props.children}</table>
+      </div>
+    );
+
   return (
     <>
       <div
         className={classNames(
-          props.className,
-          tableClasses?.wrapper,
+          tableWrapperClass,
           floatLeft && tableClasses?.floatLeft,
           floatRight && tableClasses?.floatRight,
-          props.bordered && tableClasses?.bordered,
           props.sticky && tableClasses?.sticky,
-          verticalAlign === 'top' && tableClasses?.verticalAlignTop,
-          verticalAlign === 'middle' && tableClasses?.verticalAlignMiddle,
-          size === 'small' && tableClasses?.small,
-          size === 'large' && tableClasses?.large,
-          size === 'default' && tableClasses?.default,
         )}
         style={{ height: props.height, ...props.style }}
+        {...selection.getTableProps()}
       >
         {renderTable()}
         {renderLoading()}
+        {props.children}
       </div>
       {renderPagination()}
     </>

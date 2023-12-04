@@ -1,6 +1,6 @@
 /**
- * cn - 滚动
- *    -- 虚拟列表表格提供了一个 scrollToIndex 方法滚动到指定行。
+ * cn - 虚拟滚动
+ *    -- 虚拟列表提供了一个 scrollToIndex 方法滚动到指定行。
  * en - scrollToIndex
  *    -- The virtual list table provides a scrollToIndex method to scroll to the specified row.
  */
@@ -79,7 +79,7 @@ const App: React.FC = () => {
       <Table
         keygen='id'
         data={data}
-        fixed='both'
+        virtual
         width={1400}
         rowsInView={5}
         columns={columns}

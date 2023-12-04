@@ -15,6 +15,9 @@ export type TableClasses = {
   verticalAlignTop: string;
   verticalAlignMiddle: string;
 
+  simple: string;
+  striped: string;
+
   loading: string;
 
   headWrapper: string;
@@ -58,7 +61,16 @@ const loadingIndex = 16;
 
 export type TableClassType = keyof TableClasses;
 
+const globalStyle = {
+  '@global': {
+    'body[data-soui-table-selection] *::selection': {
+      backgroundColor: 'transparent',
+    },
+  },
+};
+
 const tableStyle: JsStyles<TableClassType> = {
+  ...globalStyle,
   wrapper: {
     display: 'flex',
     flexDirection: 'column',
@@ -97,6 +109,16 @@ const tableStyle: JsStyles<TableClassType> = {
       '& td': {
         background: token.tableTbodyBackgroundColor,
         color: token.tableTbodyFontColor,
+        '&[data-soui-table-selection]::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          border: `1px solid ${token.tableSelectionBorderColor}`,
+          boxSizing: 'border-box',
+        },
       },
       '& th': {
         verticalAlign: 'middle',
@@ -367,6 +389,16 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   pagination: {
     margin: '12px 0',
+  },
+  striped: {
+    '& table tr:nth-child(even) td': {
+      background: `${token.tableTbodyStripedBackgroundColor}`,
+    },
+  },
+  simple: {
+    '& table tr:hover td': {
+      background: `${token.tableTbodyHoverBackgroundColor}`,
+    },
   },
 };
 

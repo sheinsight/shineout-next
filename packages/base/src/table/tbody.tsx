@@ -59,6 +59,8 @@ export default (props: TbodyProps) => {
         handleCellHover={handleCellHover}
         // to update
         hoverIndex={hoverIndex}
+        rowClickAttr={props.rowClickAttr}
+        onRowClick={props.onRowClick}
       />
     );
   };

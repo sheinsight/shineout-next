@@ -32,7 +32,7 @@ export default (props: TheadProps) => {
 
   const renderTitle = (title: TableFormatColumn<any>['title']) => {
     if (typeof title === 'function') {
-      return title(props.data);
+      return title(props.data || []);
     }
     return <span>{title}</span>;
   };
@@ -181,12 +181,12 @@ export default (props: TheadProps) => {
             <div style={{ lineHeight: 1, verticalAlign: 'middle' }}>
               {props.radio ? null : (
                 <Checkbox
-                  checked={props.datum.getCheckedStatus}
+                  checked={props.datum.getCheckedStatus(props.treeColumnsName)}
                   onChange={(_value, checked) => {
                     if (checked) {
-                      props.datum.add(props.datum.data);
+                      props.datum.add(props.datum.data, { childrenKey: props.treeColumnsName });
                     } else {
-                      props.datum.remove(props.datum.data);
+                      props.datum.remove(props.datum.data, { childrenKey: props.treeColumnsName });
                     }
                   }}
                   jssStyle={props.jssStyle}

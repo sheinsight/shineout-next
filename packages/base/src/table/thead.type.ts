@@ -24,4 +24,5 @@ export interface TheadProps
   datum: ListDatum;
   fixLeftNum?: number;
   fixRightNum?: number;
+  treeColumnsName: string | undefined;
 }

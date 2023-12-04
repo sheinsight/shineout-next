@@ -1,6 +1,7 @@
 export * from './is';
 export { default as extractEventHandlers } from './extract-event-handlers';
 export * from './clone';
+export * from './dom';
 export * from './object';
 export * from './string';
 export * from './func';

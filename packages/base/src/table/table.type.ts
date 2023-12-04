@@ -26,6 +26,9 @@ export interface TableClasses {
   verticalAlignTop: string;
   verticalAlignMiddle: string;
 
+  simple: string;
+  striped: string;
+
   loading: string;
 
   headWrapper: string;
@@ -108,6 +111,12 @@ export interface TableProps<DataItem, Value>
     input?: () => InputClasses;
   };
   /**
+   * @en whether to enable ctrl/cmd + click check
+   * @cn 是否启用 ctrl/cmd + click 选中单元格
+   * @default false
+   */
+  cellSelectable?: boolean;
+  /**
    * @en height of table, same with style.height
    * @cn 表格高度，与 style.height 作用相同
    */
@@ -129,7 +138,7 @@ export interface TableProps<DataItem, Value>
    */
   loading?: boolean | React.ReactNode;
   /**
-   * @depressed 虚拟列表使用 virutal 属性替代
+   * @deprecated 虚拟列表使用 virutal 属性替代
    */
   fixed?: TableFix | 'auto';
   /**
@@ -171,7 +180,7 @@ export interface TableProps<DataItem, Value>
    * @cn 表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和
    */
   width?: number;
-  columns: ColumnItem<DataItem>[];
+  columns?: ColumnItem<DataItem>[];
   /**
    * @en When the value is true, disabled all checkboxes; When the value is function, disable the checkbox that this function returns true.
    * @cn 如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项
@@ -216,7 +225,7 @@ export interface TableProps<DataItem, Value>
    * @cn 数据
    * @override object[]
    */
-  data: DataItem[];
+  data?: DataItem[];
   /**
    * @en Whether to show being fully selected.
    * @cn 是否显示全选
