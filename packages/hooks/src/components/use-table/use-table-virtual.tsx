@@ -83,9 +83,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const updateRateScroll = usePersistFn((rate: number) => {
     const { scrollRef } = props;
     const sumHeight = getContentHeight(props.data.length - 1);
-    setHeight(sumHeight);
-    if (scrollRef && scrollRef.current) {
-      setTimeout(() => {
+    context.shouldUpdateHeight = true;
+    context.heightCallback = () => {
+      if (scrollRef && scrollRef.current) {
         const scrollHeight = scrollRef.current!.scrollHeight;
         const clientHeight = scrollRef.current!.clientHeight;
         const nowTop = scrollRef.current!.scrollTop;
@@ -97,8 +97,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
           context.controlScrollRate = rate;
           scrollRef.current!.scrollTop = top;
         }
-      });
-    }
+      }
+    };
+    setHeight(sumHeight);
   });
 
   const handleScroll = (info: {
@@ -110,7 +111,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   }) => {
     const { scrollLeft, height, y, fromDrag } = info;
     let { scrollTop } = info;
-
     setLeft(scrollLeft);
     context.shouldUpdateHeight = !fromDrag;
     const sumHeight = getContentHeight(props.data.length - 1);
