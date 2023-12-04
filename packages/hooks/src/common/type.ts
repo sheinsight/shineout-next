@@ -23,13 +23,15 @@ export type StructKeygenType<DataItem> =
 
 // 将可选属性转化为必选属性但是可以是undefined
 type OptionalKeys<T> = {
-  [K in keyof T]: undefined extends T[K] ? K : never;
+  [K in keyof T]: T extends Record<K, T[K]> ? never : K;
 }[keyof T];
 
+type RequiredKeys<T> = Exclude<keyof T, OptionalKeys<T>>;
+
 export type OptionalToRequired<T> = {
-  [P in OptionalKeys<T>]: T[P] | undefined;
+  [K in OptionalKeys<T>]-?: T[K] | undefined;
 } & {
-  [P in Exclude<keyof T, OptionalKeys<T>>]: T[P];
+  [K in RequiredKeys<T>]: T[K];
 };
 
 export type StructKeygenStringType<DataItem> =

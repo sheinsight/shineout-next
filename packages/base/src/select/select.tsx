@@ -1,8 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import classNames from 'classnames';
-import { usePersistFn, usePopup, useSelect, useFilter, useGroup } from '@sheinx/hooks';
+import {
+  usePersistFn,
+  usePopup,
+  useSelect,
+  useFilter,
+  useGroup,
+  OptionalToRequired,
+} from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
-import { SelectProps } from './select.type';
+import { SelectProps, OptionListRefType } from './select.type';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
@@ -23,7 +30,7 @@ import ColumnsList from './list-columns';
  *
  */
 
-const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
+const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem, Value>>) => {
   const {
     jssStyle,
     className,
@@ -75,8 +82,9 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     ...style,
     width,
   };
-  // const [controlTyle, setControlTyle] = useState('');
+  const [controlType, setControlType] = useState<'mouse' | 'keyboard'>();
   const inputRef = useRef<HTMLInputElement>();
+  const optionListRef = useRef<OptionListRefType>();
 
   const {
     filterText: inputText,
@@ -140,6 +148,13 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     inputRef.current?.focus();
   });
 
+  const handleEnter = () => {};
+
+  const handleDelete = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!multiple) return;
+    console.log(e);
+  };
+
   const renderInnerTitle = useInnerTitle({
     open: open || !!value,
     size,
@@ -168,6 +183,30 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
     }
 
     if (!open) return;
+
+    setControlType('keyboard');
+
+    switch (e.keyCode) {
+      case 38:
+        // if (this.optionList.hoverMove) this.optionList.hoverMove(-1)
+        if (optionListRef.current?.hoverMove) optionListRef.current?.hoverMove(-1);
+        e.preventDefault();
+        break;
+      // case 40:
+      //   if (this.optionList.hoverMove) this.optionList.hoverMove(1)
+      //   e.preventDefault()
+      //   break
+      case 13:
+        handleEnter();
+        e.preventDefault();
+        e.stopPropagation();
+        break;
+      case 8:
+        handleDelete(e);
+        break;
+      // default:
+      //   this.lastChangeIsOptionClick = false
+    }
   };
 
   const handleKeyUp = () => {};
@@ -253,6 +292,7 @@ const Select = <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
       columnWidth,
       itemsInView,
       renderItem,
+      controlType,
       closePop,
     };
     // 自定义列

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver } from '@sheinx/hooks';
+import { util, addResizeObserver, OptionalToRequired } from '@sheinx/hooks';
 import { ResultProps, ResultType } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import Input from './result-input';
@@ -10,7 +10,7 @@ import Tag from '../tag';
 
 const { isObject, isEmpty, getKey, isNumber } = util;
 
-const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
+const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem, Value>>) => {
   const {
     jssStyle,
     multiple,

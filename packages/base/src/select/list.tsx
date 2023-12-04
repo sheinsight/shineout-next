@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { KeygenResult } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { BaseListProps } from './select.type';
@@ -20,6 +20,8 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     itemsInView = 10,
     lineHeight: lineHeightProp,
     loading,
+    controlType,
+    hideCreateOption,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
     closePop,
   } = props;
@@ -29,6 +31,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     height,
   };
   const styles = jssStyle?.select?.() as SelectClasses;
+  const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
 
   const getLineHeight = () => {
     if (lineHeightProp) return lineHeightProp;
@@ -36,6 +39,12 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     if (size === 'default') return 34;
     if (size === 'large') return 42;
     return 34;
+  };
+
+  const handleHover = (index: number, force?: boolean) => {
+    if ((controlType === 'mouse' || force) && hoverIndex !== index) {
+      setHoverIndex(index);
+    }
   };
 
   const lineHeight = getLineHeight();
@@ -58,6 +67,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
           index={index}
           data={item}
           multiple={multiple}
+          onHover={handleHover}
           renderItem={renderItemProp}
         ></ListOption>
       </React.Fragment>

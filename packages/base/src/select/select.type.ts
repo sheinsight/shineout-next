@@ -21,6 +21,9 @@ export type JssStyleType = {
 };
 
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
+export type OptionListRefType = {
+  hoverMove: (index: number) => void;
+};
 
 export interface BaseListProps<DataItem, Value>
   extends Pick<
@@ -41,6 +44,7 @@ export interface BaseListProps<DataItem, Value>
     | 'columns'
     | 'columnWidth'
     | 'columnsTitle'
+    | 'hideCreateOption'
   > {
   customHeader?: React.ReactNode;
   height: number | string;
@@ -48,6 +52,7 @@ export interface BaseListProps<DataItem, Value>
   closePop: () => void;
   originalData: DataItem[];
   groupKey?: string;
+  controlType?: 'mouse' | 'keyboard';
 }
 
 export interface SelectProps<DataItem, Value>
@@ -169,6 +174,7 @@ export interface SelectProps<DataItem, Value>
   compressed?: boolean;
   compressedBound?: number;
   compressedClassName?: string;
+  hideCreateOption?: boolean;
   resultClassName?: ((value: DataItem) => string) | string;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   renderResult?: (data: DataItem, index?: number) => React.ReactNode;

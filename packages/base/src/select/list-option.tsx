@@ -4,7 +4,7 @@ import { ListOptionProps } from './list-option.type';
 import Icons from '../icons';
 
 const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) => {
-  const { jssStyle, datum, index, data, multiple, closePop, renderItem } = props;
+  const { jssStyle, datum, index, data, multiple, closePop, renderItem, onHover } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const isChecked = datum.check(data);
   const isDisabled = datum.disabledCheck(data);
@@ -15,6 +15,10 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     [styles?.optionActive]: isChecked,
     [styles?.optionDisabled]: isDisabled,
   });
+
+  const handleEnter = () => {
+    onHover(index);
+  };
 
   const handleClick = () => {
     if (isChecked) {
@@ -31,10 +35,20 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     return <span className={styles.checkedIcon}>{Icons.Check}</span>;
   };
 
+  const result = renderItem(data);
+  // [TODO] title 可能是 ReactNode，这种情况无法展示 title
+  const title = typeof result === 'string' ? result : '';
+
   return (
-    <li className={rootClass} onClick={handleClick}>
+    <li
+      tabIndex={-1}
+      className={rootClass}
+      title={title}
+      onClick={handleClick}
+      onMouseEnter={handleEnter}
+    >
       <div className={innerClass}>
-        {renderItem(data)}
+        {result}
         {multiple && isChecked && renderCheckedIcon()}
       </div>
     </li>
