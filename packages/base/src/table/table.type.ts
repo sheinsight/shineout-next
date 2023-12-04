@@ -208,6 +208,12 @@ export interface TableProps<DataItem, Value>
    * @cn 表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和
    */
   width?: number;
+  /**
+   * @en array，see TableColumn
+   * @cn 数组，见 TableColumn
+   * @override TableColumn[]
+   * @default []
+   */
   columns?: ColumnItem<DataItem>[];
   /**
    * @en When the value is true, disabled all checkboxes; When the value is function, disable the checkbox that this function returns true.
@@ -299,11 +305,8 @@ export interface TableProps<DataItem, Value>
    */
   tableRef?: (table: TableRef) => void;
   /**
-   * Select row. Rows is the selected data.
-   *
-   * 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
-   *
-   * default: none
+   * @en Select row. Rows is the selected data.
+   * @cn 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
    */
   onRowSelect?: (rows: Value) => void;
 }
