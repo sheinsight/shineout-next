@@ -44,7 +44,10 @@ const columns: TableColumnItem[] = [
   },
   { title: 'Age', render: 'age', sorter: 'age' },
   { title: 'Position', render: 'position' },
-  { title: 'Salary($)', render: 'salary' },
+  {
+    title: 'Salary($)',
+    render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
+  },
 ];
 
 const App: React.FC = () => {

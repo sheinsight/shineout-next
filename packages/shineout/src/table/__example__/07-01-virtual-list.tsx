@@ -42,8 +42,8 @@ const columns: TableColumnItem[] = [
 
 for (let i = 0; i < 50; i++) {
   columns.push({
-    title: `${i + 1}`,
-    render: (d) => `$${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
+    title: `${i + 1}($)`,
+    render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
   });
 }
 

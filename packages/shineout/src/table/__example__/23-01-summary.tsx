@@ -54,8 +54,8 @@ const columns: TableColumnItem[] = [
   { title: 'Name', render: (d) => `${d.firstName} ${d.lastName}` },
   { title: 'height', render: 'height' },
   {
-    title: 'Salary',
-    render: (d) => `$${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
+    title: 'Salary($)',
+    render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
   },
 ];
 

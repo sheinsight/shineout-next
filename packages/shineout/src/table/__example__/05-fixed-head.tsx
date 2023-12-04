@@ -33,8 +33,8 @@ const columns: TableColumnItem[] = [
   { title: 'Office', render: 'office' },
   { title: 'Start Date', render: 'start' },
   {
-    title: 'Salary',
-    render: (d) => `$${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
+    title: 'Salary($)',
+    render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
   },
 ];
 
