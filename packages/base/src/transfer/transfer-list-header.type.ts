@@ -3,7 +3,6 @@ import { KeygenResult, TransferListType, KeygenType } from '@sheinx/hooks';
 import { TransferClasses, ListDatum } from './transfer.type';
 import { ButtonClasses } from '../button/button.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
-import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll.type';
 
 export interface TransferListHeaderProps<DataItem, Value extends KeygenResult[]>
   extends Pick<CommonType, 'size'> {
@@ -11,7 +10,6 @@ export interface TransferListHeaderProps<DataItem, Value extends KeygenResult[]>
     transfer: () => TransferClasses;
     button: () => ButtonClasses;
     checkbox: () => CheckboxClasses;
-    virtualScroll: () => VirtualScrollClasses;
   };
   title?: React.ReactNode;
   value: Value;

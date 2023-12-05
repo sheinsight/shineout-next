@@ -1,13 +1,12 @@
 import classNames from 'classnames';
 import { useState, useEffect } from 'react';
 import Input from '../input';
-import { PaginationClasses } from './pagination.type';
 import { PaginationJumperProps } from './pagination-jumper.type';
 
 const PaginationJumper = (props: PaginationJumperProps) => {
   const { jssStyle, simple, size, total, pageSize, disabled, current, text, onChange } = props;
-  const paginationStyle = jssStyle?.pagination || ({} as PaginationClasses);
-  const rootClasses = classNames(paginationStyle.section, paginationStyle.jumper);
+  const paginationStyle = jssStyle?.pagination?.();
+  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.jumper);
 
   let txt: string[] | React.ReactNode[] = text.jumper ? text.jumper.split('{input}') : [];
   const [value, setValue] = useState(String(current));
@@ -40,7 +39,7 @@ const PaginationJumper = (props: PaginationJumperProps) => {
     return (
       <Input
         jssStyle={jssStyle}
-        className={paginationStyle.section}
+        className={paginationStyle?.section}
         width={56}
         value={value}
         digits={0}
@@ -55,11 +54,11 @@ const PaginationJumper = (props: PaginationJumperProps) => {
   };
 
   const renderPrefixText = () => {
-    return txt[0] ? <span className={paginationStyle.section}>{txt[0]}</span> : undefined;
+    return txt[0] ? <span className={paginationStyle?.section}>{txt[0]}</span> : undefined;
   };
 
   const renderSuffixText = () => {
-    return txt[1] ? <span className={paginationStyle.section}>{txt[1]}</span> : undefined;
+    return txt[1] ? <span className={paginationStyle?.section}>{txt[1]}</span> : undefined;
   };
 
   useEffect(() => {
@@ -70,8 +69,8 @@ const PaginationJumper = (props: PaginationJumperProps) => {
     return (
       <div className={rootClasses}>
         {renderInput()}
-        <span className={classNames(paginationStyle.section, paginationStyle.split)}>/</span>
-        <span className={paginationStyle.section}>{getMax()}</span>
+        <span className={classNames(paginationStyle?.section, paginationStyle?.split)}>/</span>
+        <span className={paginationStyle?.section}>{getMax()}</span>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-const PaginationSizeList = () => {
+const PaginationSizeList = (_props: any) => {
   return <div>PaginationSizeList</div>;
 };
 

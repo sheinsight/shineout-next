@@ -18,13 +18,10 @@ export default () => {
   const layout: LayoutType = [info, 'links', 'jumper'];
   // const layout: LayoutType = ['simple'];
 
-  const paginationStyle = usePaginationStyle();
-  const buttonStyle = useButtonStyle();
-  const inputStyle = useInputStyle();
   const jssStyle = {
-    input: inputStyle,
-    button: buttonStyle,
-    pagination: paginationStyle,
+    input: useInputStyle,
+    button: useButtonStyle,
+    pagination: usePaginationStyle,
   };
 
   const text = {

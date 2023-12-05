@@ -47,13 +47,13 @@ export interface PaginationProps
 
   layout?: LayoutType;
   mode?: 'outline' | 'text';
-  onChange?: (current: number, pageSize?: number, sizeChange?: boolean) => void;
+  onChange?: (current: number, pageSize: number, sizeChange?: boolean) => void;
   pageSizeList?: number[];
   text?: TextParams;
   simple?: boolean;
-  jssStyle: {
-    input?: InputClasses;
-    button?: ButtonClasses;
-    pagination?: PaginationClasses;
+  jssStyle?: {
+    input?: () => InputClasses;
+    button?: () => ButtonClasses;
+    pagination?: () => PaginationClasses;
   };
 }

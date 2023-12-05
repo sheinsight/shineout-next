@@ -55,11 +55,17 @@ import { RadioTokens } from './radio/type';
 import Rate from './rate';
 import { RateTokens } from './rate/type';
 
+import Select from './select';
+import { SelectTokens } from './select/type';
+
 import Spin from './spin';
 import { SpinTokens } from './spin/type';
 
 import Switch from './switch';
 import { SwitchTokens } from './switch/type';
+
+import Table from './table';
+import { TableTokens } from './table/type';
 
 import Tabs from './tabs';
 import { TabsTokens } from './tabs/type';
@@ -78,6 +84,9 @@ import { UploadTokens } from './upload/type';
 
 import Transfer from './transfer';
 import { TransferTokens } from './transfer/type';
+
+import Tree from './tree';
+import { TreeTokens } from './tree/type';
 
 import Pagination from './pagination';
 import { PaginationTokens } from './pagination/type';
@@ -100,14 +109,17 @@ export type ThemeTokens = AlertTokens &
   ProgressTokens &
   RadioTokens &
   RateTokens &
+  SelectTokens &
   SpinTokens &
   SwitchTokens &
+  TableTokens &
   TabsTokens &
   TagTokens &
   TextareaTokens &
   TooltipTokens &
   UploadTokens &
   TransferTokens &
+  TreeTokens &
   PaginationTokens;
 
 const Tokens: ThemeTokens = {
@@ -129,14 +141,17 @@ const Tokens: ThemeTokens = {
   ...Progress,
   ...Radio,
   ...Rate,
+  ...Select,
   ...Spin,
   ...Switch,
+  ...Table,
   ...Tabs,
   ...Tag,
   ...Textarea,
   ...Tooltip,
   ...Upload,
   ...Transfer,
+  ...Tree,
   ...Pagination,
 };
 

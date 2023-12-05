@@ -4,5 +4,5 @@ export interface BasePaginationProps {
   total: number;
   pageSize: number;
   span: number;
-  onChange?: (current: number, pageSize?: number, sizeChange?: boolean) => void;
+  onChange?: (current: number, pageSize: number, sizeChange?: boolean) => void;
 }

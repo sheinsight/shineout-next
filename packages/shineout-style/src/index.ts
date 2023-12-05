@@ -17,8 +17,10 @@ export * from './popover';
 export * from './progress';
 export * from './radio';
 export * from './rate';
+export * from './select';
 export * from './spin';
 export * from './switch';
+export * from './table';
 export * from './tabs';
 export * from './tag';
 export * from './textarea';
@@ -26,6 +28,7 @@ export * from './tooltip';
 export * from './upload';
 export * from './transfer';
 export * from './virtual-scroll';
+export * from './tree';
 export * from './pagination';
 
 export { styled, StyleProvider } from './jss-style';

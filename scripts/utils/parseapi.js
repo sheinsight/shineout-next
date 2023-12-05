@@ -188,7 +188,8 @@ function parseApi(pack, filePath) {
             .flat(),
         );
         if (!propertyJsDocTags.cn) {
-          if (!propertyJsDocTags.private) lost.push(property.getName());
+          if (!propertyJsDocTags.private && !propertyJsDocTags.deprecated)
+            lost.push(property.getName());
           return;
         }
 

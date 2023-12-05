@@ -6,10 +6,10 @@ import { PaginationMoreTypes } from './pagination-buttons.type';
 import { PaginationClasses } from '../pagination/pagination.type';
 
 export interface PaginationButtonProps extends Pick<CommonType, 'size' | 'className'> {
-  jssStyle: {
-    input?: InputClasses;
-    button?: ButtonClasses;
-    pagination?: PaginationClasses;
+  jssStyle?: {
+    input?: () => InputClasses;
+    button?: () => ButtonClasses;
+    pagination?: () => PaginationClasses;
   };
   page: number;
   disabled?: boolean;

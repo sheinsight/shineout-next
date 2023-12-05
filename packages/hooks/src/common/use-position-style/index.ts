@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getPositionStyle } from './get-position-style';
-import shallowEqual from '../../utils/shallowEqual';
+import shallowEqual from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { docSize } from '../../utils';
 

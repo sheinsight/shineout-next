@@ -3,7 +3,7 @@ import { isObject } from '../is';
 import required from './required';
 import length from './length';
 import type from './type';
-import regExp from './regExp';
+import regExp from './regexp';
 import {
   MessageType,
   RuleCommonResult,

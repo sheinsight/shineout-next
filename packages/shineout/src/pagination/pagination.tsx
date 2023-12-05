@@ -1,16 +1,14 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Pagination as UnStyledPagination } from '@sheinx/base';
 import { usePaginationStyle, useInputStyle, useButtonStyle } from '@sheinx/shineout-style';
 import { PaginationProps } from './pagination.type';
 
+const jssStyle = {
+  input: useInputStyle,
+  button: useButtonStyle,
+  pagination: usePaginationStyle,
+};
 const Pagination = (props: PaginationProps) => {
-  const paginationStyle = usePaginationStyle();
-  const inputStyle = useInputStyle;
-  const buttonStyle = useButtonStyle;
-  const jssStyle = useMemo(
-    () => ({ pagination: paginationStyle, input: inputStyle, button: buttonStyle }),
-    [paginationStyle, inputStyle, buttonStyle],
-  );
   return <UnStyledPagination {...props} jssStyle={jssStyle}></UnStyledPagination>;
 };
 

@@ -13,6 +13,7 @@ export const getPositionStyle = (
   const { popupGap = 0 } = config || {};
   const mainMargin = `calc(100% + ${popupGap}px`;
   const halfMargin = `calc(50% + ${popupGap}px`;
+
   let newStyle: React.CSSProperties = { zIndex: config?.zIndex };
   if (position === 'drop-down') {
     newStyle.top = mainMargin;

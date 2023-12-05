@@ -1,13 +1,12 @@
 import classNames from 'classnames';
 import { PaginationActionButtonProps } from './pagination-buttons.type';
-import { PaginationClasses } from './pagination.type';
 import Button from './pagination-button';
 import Icons from '../icons';
 
 const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
   const { jssStyle, disabled, current, mode, text, size, onChange } = props;
-  const styles = jssStyle?.pagination || ({} as PaginationClasses);
-  const rootClasses = classNames(styles.section);
+  const paginationStyle = jssStyle?.pagination?.();
+  const rootClasses = classNames(paginationStyle?.section);
   const prev = current - 1;
   const hasText = text && text.prev;
 
@@ -22,7 +21,7 @@ const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
       shape={hasText ? undefined : 'square'}
       onClick={onChange}
     >
-      <span className={styles.icon}>{hasText ? text.prev : Icons.ArrowLeft}</span>
+      <span className={paginationStyle?.icon}>{hasText ? text.prev : Icons.ArrowLeft}</span>
     </Button>
   );
 };

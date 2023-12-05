@@ -1,2 +1,2 @@
-export { default, default as VirtualScroll } from './virtual-scroll';
-export type { VirtualScrollProps } from './virtual-scroll.type';
+export { default as Scroll } from './scroll';
+export { default as VirtualScrollList } from './virtual-scroll-list';

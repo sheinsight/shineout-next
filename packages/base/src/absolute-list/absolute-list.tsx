@@ -24,6 +24,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
   const { getRoot, getContainer } = useContainer({
     container: typeof absolute === 'function' ? absolute : undefined,
   });
+
   const style = usePositionStyle({
     getContainer: getContainer,
     position,
