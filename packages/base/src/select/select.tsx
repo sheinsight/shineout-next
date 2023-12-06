@@ -82,7 +82,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     ...style,
     width,
   };
-  const [controlType, setControlType] = useState<'mouse' | 'keyboard'>();
+  const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('mouse');
   const inputRef = useRef<HTMLInputElement>();
   const optionListRef = useRef<OptionListRefType>();
 
@@ -163,7 +163,6 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
   });
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    console.log(e.code, e.keyCode);
     // 回车或下箭头可打开下拉列表
     if (
       (e.keyCode === 13 || e.code === 'Enter' || e.keyCode === 13 || e.code === 'ArrowDown') &&
@@ -188,14 +187,13 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
 
     switch (e.keyCode) {
       case 38:
-        // if (this.optionList.hoverMove) this.optionList.hoverMove(-1)
-        if (optionListRef.current?.hoverMove) optionListRef.current?.hoverMove(-1);
+        if (optionListRef.current?.hoverMove) optionListRef.current?.hoverHover(-1);
         e.preventDefault();
         break;
-      // case 40:
-      //   if (this.optionList.hoverMove) this.optionList.hoverMove(1)
-      //   e.preventDefault()
-      //   break
+      case 40:
+        if (optionListRef.current?.hoverMove) optionListRef.current?.hoverHover(1);
+        e.preventDefault();
+        break;
       case 13:
         handleEnter();
         e.preventDefault();
@@ -293,7 +291,9 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       itemsInView,
       renderItem,
       controlType,
+      onControlTypeChange: setControlType,
       closePop,
+      optionListRef,
     };
     // 自定义列
     if (('columns' in props && typeof columns === 'number' && columns! >= 1) || columns === -1) {

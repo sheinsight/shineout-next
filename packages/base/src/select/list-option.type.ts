@@ -6,6 +6,7 @@ export interface ListOptionProps<DataItem, Value>
   index: number;
   data: DataItem;
   datum: DatumType<DataItem, Value>;
+  isHover: boolean;
   closePop: () => void;
   onHover: (index: number, force?: boolean) => void;
 }

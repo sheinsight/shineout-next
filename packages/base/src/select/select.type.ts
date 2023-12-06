@@ -23,6 +23,7 @@ export type JssStyleType = {
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
 export type OptionListRefType = {
   hoverMove: (index: number) => void;
+  hoverHover: (index: number) => void;
 };
 
 export interface BaseListProps<DataItem, Value>
@@ -53,6 +54,8 @@ export interface BaseListProps<DataItem, Value>
   originalData: DataItem[];
   groupKey?: string;
   controlType?: 'mouse' | 'keyboard';
+  optionListRef: React.MutableRefObject<OptionListRefType>;
+  onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
 }
 
 export interface SelectProps<DataItem, Value>

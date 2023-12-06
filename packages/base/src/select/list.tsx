@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { KeygenResult } from '@sheinx/hooks';
+import React, { useRef, useState, useEffect } from 'react';
+import { KeygenResult, usePersistFn } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { BaseListProps } from './select.type';
 import { VirtualScrollList } from '../virtual-scroll';
 import ListOption from './list-option';
+import { VirtualListType } from '../virtual-scroll/virtual-scroll-list.type';
 
 const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   const {
@@ -22,8 +23,10 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     loading,
     controlType,
     hideCreateOption,
+    optionListRef,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
     closePop,
+    onControlTypeChange,
   } = props;
 
   const style = {
@@ -32,6 +35,9 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   };
   const styles = jssStyle?.select?.() as SelectClasses;
   const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
+  const virtualRef = useRef<VirtualListType>({
+    scrollByStep: undefined,
+  });
 
   const getLineHeight = () => {
     if (lineHeightProp) return lineHeightProp;
@@ -41,11 +47,20 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     return 34;
   };
 
-  const handleHover = (index: number, force?: boolean) => {
+  const handleHover = usePersistFn((index: number, force?: boolean) => {
     if ((controlType === 'mouse' || force) && hoverIndex !== index) {
       setHoverIndex(index);
     }
-  };
+  });
+
+  const handleHoverByStep = usePersistFn((step: number) => {
+    const next = hoverIndex + step;
+    handleHover(next, true);
+  });
+
+  const handleMove = usePersistFn((step: number) => {
+    virtualRef.current?.scrollByStep(step);
+  });
 
   const lineHeight = getLineHeight();
 
@@ -66,6 +81,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
           jssStyle={jssStyle}
           index={index}
           data={item}
+          isHover={hoverIndex === index}
           multiple={multiple}
           onHover={handleHover}
           renderItem={renderItemProp}
@@ -88,6 +104,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
 
     return (
       <VirtualScrollList
+        virtualRef={virtualRef}
         data={data}
         keygen={keygen}
         tag={'ul'}
@@ -96,9 +113,19 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         lineHeight={lineHeight}
         rowsInView={itemsInView}
         renderItem={renderItem}
+        onControlTypeChange={onControlTypeChange}
       ></VirtualScrollList>
     );
   };
+
+  useEffect(() => {
+    if (optionListRef) {
+      optionListRef.current = {
+        hoverMove: handleMove,
+        hoverHover: handleHoverByStep,
+      };
+    }
+  }, []);
 
   return (
     <div className={styles.list} style={style}>

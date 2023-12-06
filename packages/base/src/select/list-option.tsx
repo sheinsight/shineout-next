@@ -4,12 +4,14 @@ import { ListOptionProps } from './list-option.type';
 import Icons from '../icons';
 
 const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) => {
-  const { jssStyle, datum, index, data, multiple, closePop, renderItem, onHover } = props;
+  const { jssStyle, datum, index, data, multiple, isHover, closePop, renderItem, onHover } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const isChecked = datum.check(data);
   const isDisabled = datum.disabledCheck(data);
 
-  const rootClass = classNames(styles?.option, `option-${index}`, {});
+  const rootClass = classNames(styles?.option, `option-${index}`, {
+    [styles?.optionHover]: isHover,
+  });
 
   const innerClass = classNames(styles?.optionInner, {
     [styles?.optionActive]: isChecked,

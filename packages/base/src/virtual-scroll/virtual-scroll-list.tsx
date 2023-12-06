@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { util } from '@sheinx/hooks';
+import React, { useState, useEffect } from 'react';
+import { util, usePersistFn } from '@sheinx/hooks';
 import Scroll from './scroll';
 import { VirtualListProps } from './virtual-scroll-list.type';
 
@@ -16,6 +16,8 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     renderItem,
     tag = 'div',
     tagClassName,
+    virtualRef,
+    onControlTypeChange,
   } = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,6 +27,11 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     const rows = Math.ceil(data.length / colNum);
     return rows * lineHeight;
   };
+
+  const handleScrollByStep = usePersistFn((step: number) => {
+    const next = currentIndex + step;
+    setCurrentIndex(next);
+  });
 
   const handleScroll = (info: {
     scrollLeft: number;
@@ -56,6 +63,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         scrollWidth={0}
         scrollHeight={scrollHeight}
         onScroll={handleScroll}
+        onControlTypeChange={onControlTypeChange}
       >
         <Tag className={tagClassName} style={{ transform: `translate3d(0, -${top}px, 0)` }}>
           {items.map((d: DataItem, i: number) => {
@@ -68,6 +76,12 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       </Scroll>
     );
   };
+
+  useEffect(() => {
+    if (virtualRef) {
+      virtualRef.current.scrollByStep = handleScrollByStep;
+    }
+  }, []);
 
   return renderList();
 };

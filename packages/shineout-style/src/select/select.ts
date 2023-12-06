@@ -347,11 +347,11 @@ const selectStyle: JsStyles<SelectClassType> = {
       cursor: 'pointer',
     },
     // hover
-    '&:hover': {
-      '& $optionInner': {
-        backgroundColor: token.selectOptionHoverBackgroundColor,
-      },
-    },
+    // '&:hover': {
+    //   '& $optionInner': {
+    //     backgroundColor: token.selectOptionHoverBackgroundColor,
+    //   },
+    // },
   },
   optionInner: {
     position: 'relative',
@@ -362,7 +362,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
     borderRadius: token.selectOptionInnerBorderRadius,
   },
-  optionHover: {},
+  optionHover: {
+    '& $optionInner': {
+      backgroundColor: token.selectOptionHoverBackgroundColor,
+    },
+  },
   optionActive: {
     color: token.selectOptionActiveColor,
     backgroundColor: token.selectOptionActiveBackgroundColor,

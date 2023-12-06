@@ -1,6 +1,6 @@
 import React from 'react';
 import { util } from '@sheinx/hooks';
-import VirtualList from '../virtual-scroll/virtual-list';
+import { VirtualScrollList } from '../virtual-scroll';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { BaseListProps } from './select.type';
 import ListColumnsOption from './list-columns-option';
@@ -156,7 +156,7 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
     }, []);
 
     return (
-      <VirtualList
+      <VirtualScrollList
         jssStyle={jssStyle}
         data={sliceData}
         tag={'ul'}
@@ -166,7 +166,7 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
         lineHeight={lineHeight}
         rowsInView={itemsInView}
         renderItem={renderItem}
-      ></VirtualList>
+      ></VirtualScrollList>
     );
   };
 

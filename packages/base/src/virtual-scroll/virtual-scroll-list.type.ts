@@ -12,4 +12,10 @@ export interface VirtualListProps<DataItem> extends Pick<CommonType, 'className'
   renderItem: any;
   tag?: React.ReactElement['type'];
   tagClassName?: string;
+  virtualRef?: React.MutableRefObject<VirtualListType | undefined>;
+  onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
 }
+
+export type VirtualListType = {
+  scrollByStep?: (step: number) => void;
+};
