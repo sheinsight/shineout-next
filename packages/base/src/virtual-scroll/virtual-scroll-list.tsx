@@ -35,6 +35,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     height: number;
     width: number;
   }) => {
+    if (props.onScroll) props.onScroll(info);
     const current = Math.floor(info.scrollTop / lineHeight);
     const top = info.scrollTop - current * lineHeight;
     setTop(top);
@@ -56,6 +57,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         scrollWidth={0}
         scrollHeight={scrollHeight}
         onScroll={handleScroll}
+        scrollerStyle={props.scrollerStyle}
       >
         <Tag className={tagClassName} style={{ transform: `translate3d(0, -${top}px, 0)` }}>
           {items.map((d: DataItem, i: number) => {

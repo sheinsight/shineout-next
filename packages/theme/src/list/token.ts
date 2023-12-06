@@ -15,9 +15,25 @@ const listTokenDescription = { list: 'xxx' };
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 listRules 强关联，非 listRules 规则内的 token 需手动增加或删减。
  */
-const listTokenValue = { font: { size: '14/regular' } };
+const listTokenValue = {};
 
-const listTokenExtraValue = {};
+const listTokenExtraValue = {
+  font: { size: '14/regular', color: 'Neutral-text-5' },
+  border: { color: 'Neutral-border-1', radius: 'Radius-2' },
+  item: {
+    padding: { y: 'Padding-12', x: 'Padding-16' },
+  },
+  small: {
+    item: { padding: { y: 'Padding-8', x: 'Padding-12' } },
+  },
+  large: {
+    item: { padding: { y: 'Padding-16', x: 'Padding-20' } },
+  },
+  pagination: {
+    margin: { y: 'Margin-12' },
+  },
+  striped: { background: { color: 'Neutral-fill-2' } },
+};
 
 module.exports = {
   listTokenValue,

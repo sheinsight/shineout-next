@@ -57,6 +57,7 @@ const App: React.FC = () => (
     columns={columns}
     data={data}
     rowsInView={20}
+    bordered
   />
 );
 

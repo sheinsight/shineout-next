@@ -12,6 +12,12 @@ export type LayoutType = (
   | ((props: PaginationProps) => React.ReactNode)
 )[];
 
+export interface PaginationJssStyle {
+  input?: () => InputClasses;
+  button?: () => ButtonClasses;
+  pagination?: () => PaginationClasses;
+}
+
 export interface PaginationClasses {
   pagination: string;
   section: string;
@@ -44,16 +50,11 @@ export interface PaginationProps
   span?: number;
   defaultCurrent?: number;
   disabled?: boolean;
-
   layout?: LayoutType;
   mode?: 'outline' | 'text';
   onChange?: (current: number, pageSize: number, sizeChange?: boolean) => void;
   pageSizeList?: number[];
   text?: TextParams;
   simple?: boolean;
-  jssStyle?: {
-    input?: () => InputClasses;
-    button?: () => ButtonClasses;
-    pagination?: () => PaginationClasses;
-  };
+  jssStyle?: PaginationJssStyle;
 }

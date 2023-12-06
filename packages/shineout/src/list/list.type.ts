@@ -1,3 +1,6 @@
 import { ListProps as UnStyledListProps } from '@sheinx/base';
 
-export type ListProps = Omit<UnStyledListProps, 'jssStyle'>;
+/**
+ * @title List
+ */
+export type ListProps<DataItem, Value> = Omit<UnStyledListProps<DataItem, Value>, 'jssStyle'>;

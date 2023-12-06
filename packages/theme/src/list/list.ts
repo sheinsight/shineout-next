@@ -5,6 +5,17 @@ import { ListTokens } from './type';
 
 const listTokens: ListTokens = {
   listFontSize: '14/regular',
+  listFontColor: 'Neutral-text-5',
+  listBorderColor: 'Neutral-border-1',
+  listBorderRadius: 'Radius-2',
+  listItemPaddingY: 'Padding-12',
+  listItemPaddingX: 'Padding-16',
+  listSmallItemPaddingY: 'Padding-8',
+  listSmallItemPaddingX: 'Padding-12',
+  listLargeItemPaddingY: 'Padding-16',
+  listLargeItemPaddingX: 'Padding-20',
+  listPaginationMarginY: 'Margin-12',
+  listStripedBackgroundColor: 'Neutral-fill-2',
 };
 
 export default listTokens;
