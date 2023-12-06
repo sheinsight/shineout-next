@@ -5,7 +5,7 @@ import { CommonType } from '../common/type';
 
 export type MagnifyPositionType = 'left' | 'right' | 'center';
 
-export type JssStyleType = {
+export type ImageJssStyleType = {
   image?: () => ImageClasses;
 };
 
@@ -20,7 +20,7 @@ export type Image = {
 };
 
 export interface ImageGalleryProps {
-  jssStyle?: JssStyleType;
+  jssStyle?: ImageJssStyleType;
   images: Image[];
   onClose: () => void;
   current: number;
@@ -38,7 +38,7 @@ export interface ImageBaseProps
   extends BaseImageProps,
     Pick<CommonType, 'style' | 'className'>,
     Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick' | 'onError' | 'placeholder'> {
-  jssStyle?: JssStyleType;
+  jssStyle?: ImageJssStyleType;
   renderImage?: (imageEl: React.ReactNode) => React.ReactElement;
   renderError?: (errorEl: React.ReactNode) => React.ReactElement;
   renderWrapper?: (wrapperEl: React.ReactNode) => React.ReactElement;

@@ -12,4 +12,14 @@ export interface VirtualListProps<DataItem> extends Pick<CommonType, 'className'
   renderItem: any;
   tag?: React.ReactElement['type'];
   tagClassName?: string;
+  scrollerStyle?: React.CSSProperties;
+  onScroll?: (info: {
+    scrollLeft: number;
+    scrollTop: number;
+    x: number;
+    y: number;
+    fromDrag: boolean;
+    height: number;
+    width: number;
+  }) => void;
 }
