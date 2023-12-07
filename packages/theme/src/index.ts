@@ -43,6 +43,9 @@ import { InputTokens } from './input/type';
 import Message from './message';
 import { MessageTokens } from './message/type';
 
+import Pagination from './pagination';
+import { PaginationTokens } from './pagination/type';
+
 import Popover from './popover';
 import { PopoverTokens } from './popover/type';
 
@@ -57,6 +60,9 @@ import { RateTokens } from './rate/type';
 
 import Select from './select';
 import { SelectTokens } from './select/type';
+
+import Slider from './slider';
+import { SliderTokens } from './slider/type';
 
 import Spin from './spin';
 import { SpinTokens } from './spin/type';
@@ -79,17 +85,14 @@ import { TextareaTokens } from './textarea/type';
 import Tooltip from './tooltip';
 import { TooltipTokens } from './tooltip/type';
 
-import Upload from './upload';
-import { UploadTokens } from './upload/type';
-
 import Transfer from './transfer';
 import { TransferTokens } from './transfer/type';
 
 import Tree from './tree';
 import { TreeTokens } from './tree/type';
 
-import Pagination from './pagination';
-import { PaginationTokens } from './pagination/type';
+import Upload from './upload';
+import { UploadTokens } from './upload/type';
 
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
@@ -105,11 +108,13 @@ export type ThemeTokens = AlertTokens &
   ImageTokens &
   InputTokens &
   MessageTokens &
+  PaginationTokens &
   PopoverTokens &
   ProgressTokens &
   RadioTokens &
   RateTokens &
   SelectTokens &
+  SliderTokens &
   SpinTokens &
   SwitchTokens &
   TableTokens &
@@ -117,10 +122,9 @@ export type ThemeTokens = AlertTokens &
   TagTokens &
   TextareaTokens &
   TooltipTokens &
-  UploadTokens &
   TransferTokens &
   TreeTokens &
-  PaginationTokens;
+  UploadTokens;
 
 const Tokens: ThemeTokens = {
   ...Alert,
@@ -137,11 +141,13 @@ const Tokens: ThemeTokens = {
   ...Image,
   ...Input,
   ...Message,
+  ...Pagination,
   ...Popover,
   ...Progress,
   ...Radio,
   ...Rate,
   ...Select,
+  ...Slider,
   ...Spin,
   ...Switch,
   ...Table,
@@ -149,10 +155,9 @@ const Tokens: ThemeTokens = {
   ...Tag,
   ...Textarea,
   ...Tooltip,
-  ...Upload,
   ...Transfer,
   ...Tree,
-  ...Pagination,
+  ...Upload,
 };
 
 export type { TokenType };
