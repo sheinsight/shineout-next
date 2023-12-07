@@ -12,6 +12,7 @@ export { default as Gap } from './gap';
 export { default as Icon } from './icon';
 export { default as Image } from './image';
 export { default as Input } from './input';
+export { default as List } from './list';
 export { default as Message } from './message';
 export { default as Pagination } from './pagination';
 export { default as Popover } from './popover';

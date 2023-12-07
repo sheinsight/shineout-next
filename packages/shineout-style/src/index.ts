@@ -12,6 +12,7 @@ export * from './icon';
 export * from './image';
 export * from './inner-title';
 export * from './input';
+export * from './list';
 export * from './message';
 export * from './pagination';
 export * from './popover';

@@ -131,7 +131,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       if (context.rateTimer) clearTimeout(context.rateTimer);
       context.rateTimer = setTimeout(() => {
         updateRateScroll(y);
-      }, 50);
+      }, 120);
     } else {
       updateIndexAndTopFromTop(scrollTop);
     }

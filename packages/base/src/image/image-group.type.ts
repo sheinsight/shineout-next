@@ -1,8 +1,8 @@
 import { ImageFitType, ImageShapeType, ImageTargetType } from '@sheinx/hooks';
-import { JssStyleType } from './image.type';
+import { ImageJssStyleType } from './image.type';
 
 export interface ImageGroupProps {
-  jssStyle?: JssStyleType;
+  jssStyle?: ImageJssStyleType;
   showCount?: boolean;
   target?: ImageTargetType;
   shape?: ImageShapeType;

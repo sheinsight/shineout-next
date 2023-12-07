@@ -13,6 +13,7 @@ export * from './gap';
 export * from './icon';
 export * from './image';
 export * from './input';
+export * from './list';
 export * from './message';
 export * from './pagination';
 export * from './popover';

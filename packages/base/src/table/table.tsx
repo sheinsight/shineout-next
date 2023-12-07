@@ -130,6 +130,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     defaultCurrent: pagination.defaultCurrent,
     pageSize: pagination.pageSize,
     onChange: pagination.onChange,
+    loading: !!props.loading,
   });
 
   const treeColumnsName = columns.find((item) => item.treeColumnsName)?.treeColumnsName;
