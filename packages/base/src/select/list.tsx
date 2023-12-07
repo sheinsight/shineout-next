@@ -17,7 +17,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     keygen,
     datum,
     multiple,
-    // groupKey,
+    groupKey,
     itemsInView = 10,
     lineHeight: lineHeightProp,
     loading,
@@ -59,7 +59,23 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   });
 
   const handleMove = usePersistFn((step: number) => {
-    virtualRef.current?.scrollByStep(step);
+    const max = data.length;
+
+    let nextHoverIndex = hoverIndex;
+    const currentHoverData = data[hoverIndex];
+    // 遇到 group item 数据时，跳过
+    if (currentHoverData && currentHoverData[groupKey as keyof DataItem]) {
+      if (step > 0) nextHoverIndex += 1;
+      else nextHoverIndex -= 1;
+    }
+
+    nextHoverIndex = nextHoverIndex + step;
+    if (nextHoverIndex >= max) {
+      nextHoverIndex = 0;
+    }
+    if (nextHoverIndex < 0) nextHoverIndex = max;
+
+    setHoverIndex(nextHoverIndex);
   });
 
   const lineHeight = getLineHeight();

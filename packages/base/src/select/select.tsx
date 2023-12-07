@@ -21,6 +21,7 @@ import ColumnsList from './list-columns';
 
 /**
  *
+ * 键盘控制
  * 创建选项
  * 树选择
  * 加载中
@@ -187,11 +188,11 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
 
     switch (e.keyCode) {
       case 38:
-        if (optionListRef.current?.hoverMove) optionListRef.current?.hoverHover(-1);
+        if (optionListRef.current?.hoverHover) optionListRef.current?.hoverMove(-1);
         e.preventDefault();
         break;
       case 40:
-        if (optionListRef.current?.hoverMove) optionListRef.current?.hoverHover(1);
+        if (optionListRef.current?.hoverHover) optionListRef.current?.hoverMove(1);
         e.preventDefault();
         break;
       case 13:
