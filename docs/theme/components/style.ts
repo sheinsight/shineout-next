@@ -131,7 +131,7 @@ export default createUseStyles(
       borderSpacing: 0,
       emptyCells: 'show',
       whiteSpace: 'pre-wrap',
-
+      fontSize: 14,
       '& th': {
         background: '#f5f5f5',
         textAlign: 'left',

@@ -1,11 +1,16 @@
 import React from 'react';
 import { Slider } from '@sheinx/base';
 import { useSliderStyle } from '@sheinx/shineout-style';
-import { SliderProps } from './slider.type';
+import { BaseSliderProps, SliderProps, SliderValueType } from './slider.type';
+import useFieldCommon from '../hooks/use-field-common';
 
 const jssStyle = {
   slider: useSliderStyle,
 };
-export default <Value extends number | number[]>(props: SliderProps<Value>) => {
+const BaseSlider = <Value extends SliderValueType>(props: BaseSliderProps<Value>) => {
   return <Slider jssStyle={jssStyle} {...props} />;
+};
+
+export default <Value extends SliderValueType>(props: SliderProps<Value>) => {
+  return useFieldCommon(props, BaseSlider<Value>);
 };
