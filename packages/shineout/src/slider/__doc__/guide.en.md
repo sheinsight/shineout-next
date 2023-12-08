@@ -12,9 +12,8 @@ Use when you need to provide real-time visual data ratio feedback during the pro
 
 ![When used in combination with a numeric input box, it can help users to input numbers accurately and adjust quickly](03)
 
-![When used in combination with a bubble, it can provide real-time prompts for the specific numerical value at the slider's position](04)
-
 ## Recommended/Cautious examples
 
-![When the slider width is too small, it is recommended to add an input box](05)
-![When the optional numerical range is large, it is recommended to add an input box to avoid dense scales causing visual recognition and operational difficulties](06)
+![When the slider width is too small, it is recommended to add an input box](04)
+
+![When the optional numerical range is large, it is recommended to add an input box to avoid dense scales causing visual recognition and operational difficulties](05)
