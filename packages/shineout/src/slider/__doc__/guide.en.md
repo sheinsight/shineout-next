@@ -1,15 +1,20 @@
 ## When to use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+Use when you need to provide real-time visual data ratio feedback during the process of numerical input.
 
-## Related to layout
+## Related to page layout
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+![Use in forms, usually laid out within the form, associated with other form items for data input](01)
 
-## Component combination
+![Use across the entire page, usually laid out at the bottom of the page content area, controlling the content area by adjusting the slider](02)
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+## Component combinations
 
-## Recommended/Use with caution examples
+![When used in combination with a numeric input box, it can help users to input numbers accurately and adjust quickly](03)
 
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![When used in combination with a bubble, it can provide real-time prompts for the specific numerical value at the slider's position](04)
+
+## Recommended/Cautious examples
+
+![When the slider width is too small, it is recommended to add an input box](05)
+![When the optional numerical range is large, it is recommended to add an input box to avoid dense scales causing visual recognition and operational difficulties](06)
