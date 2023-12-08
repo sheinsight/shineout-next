@@ -69,7 +69,7 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
   },
   row: {},
   label: {
-    padding: `0 ${token.descriptionsLabelPaddingRight} 0 0`,
+    padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
     textAlign: 'left',
     boxSizing: 'border-box',
     color: token.descriptionsLabelColor,
@@ -105,7 +105,6 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
   horizontal: {
     '& $label': {
       width: '1px',
-      padding: `0 ${token.descriptionsLabelPaddingRight} ${token.descriptionsLabelPaddingBottom} 0`,
     },
   },
   inlineHorizontal: {

@@ -40,55 +40,40 @@ const Descriptions = (props: DescriptionsProps) => {
     d.span && d.span > 1 ? (isHorizontal ? { colSpan: d.span * 2 - 1 } : { colSpan: d.span }) : {},
   );
 
+  const renderTd = (
+    d: DescriptionsItemProps,
+    i: number,
+    type: 'label' | 'value',
+    isHorizontal: boolean,
+    isColSpan?: boolean,
+  ) => {
+    const style = type === 'label' ? d.ItemLabelStyle : d.ItemValueStyle;
+    const content = type === 'label' ? d.label : d.value;
+    const className = type === 'label' ? jssStyle?.label : jssStyle?.value;
+    const colSpanProps = !isColSpan ? getColSpan(d, isHorizontal) : {};
+    return (
+      <td key={`${d.key || i}_${type}`} className={className} style={style} {...colSpanProps}>
+        {content}
+        {type === 'label' && colon}
+      </td>
+    );
+  };
+
   const renderHorizontal = (d: DescriptionsItemProps[], i: number) => (
     <tr key={i} className={jssStyle?.row}>
-      {d.map((_d, _i) => {
-        return (
-          <Fragment key={_d.key || _i}>
-            <td className={jssStyle?.label} style={_d.ItemLabelStyle}>
-              {_d?.label}
-              {colon}
-            </td>
-            <td className={jssStyle?.value} style={_d.ItemValueStyle} {...getColSpan(_d, true)}>
-              {_d?.value}
-            </td>
-          </Fragment>
-        );
-      })}
+      {d.map((_d, _i) => (
+        <Fragment key={_d.key || _i}>
+          {renderTd(_d, _i, 'label', false, true)}
+          {renderTd(_d, _i, 'value', true)}
+        </Fragment>
+      ))}
     </tr>
   );
 
   const renderVertical = (d: DescriptionsItemProps[], i: number) => (
     <Fragment key={i}>
-      <tr className={jssStyle?.row}>
-        {d.map((_d, _i) => {
-          return (
-            <td
-              key={`${_d.key || _i}_k`}
-              className={jssStyle?.label}
-              style={_d.ItemLabelStyle}
-              {...getColSpan(_d)}
-            >
-              {_d?.label}
-              {colon}
-            </td>
-          );
-        })}
-      </tr>
-      <tr className={jssStyle?.row}>
-        {d.map((_d, _i) => {
-          return (
-            <td
-              key={`${_d.key || _i}_v`}
-              className={jssStyle?.value}
-              style={_d.ItemValueStyle}
-              {...getColSpan(_d)}
-            >
-              {_d?.value}
-            </td>
-          );
-        })}
-      </tr>
+      <tr className={jssStyle?.row}>{d.map((_d, _i) => renderTd(_d, _i, 'label', false))}</tr>
+      <tr className={jssStyle?.row}>{d.map((_d, _i) => renderTd(_d, _i, 'value', false))}</tr>
     </Fragment>
   );
 

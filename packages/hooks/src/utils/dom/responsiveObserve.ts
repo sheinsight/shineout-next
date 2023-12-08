@@ -36,23 +36,29 @@ const responsiveObserve: {
     return true;
   },
   register() {
-    Object.keys(responsiveMap).forEach((screen) => {
-      const content = responsiveMap[screen as Breakpoint]!;
-      const listener = ({ matches }: { matches: boolean }) =>
+    const listener =
+      (screen: Breakpoint) =>
+      ({ matches }: { matches: boolean }) =>
         this.dispatch(
           {
             ...screens,
             [screen]: matches,
           },
-          screen as Breakpoint,
+          screen,
         );
+    Object.keys(responsiveMap).forEach((screen) => {
+      const content = responsiveMap[screen as Breakpoint]!;
       const status = window.matchMedia(content);
-      status.addListener(listener);
+      try {
+        status.addEventListener('change', listener(screen as Breakpoint));
+      } catch (e) {
+        status.addListener(listener(screen as Breakpoint));
+      }
       this.matchHandlers[content] = {
         status,
-        listener,
+        listener: listener(screen as Breakpoint),
       };
-      listener(status);
+      listener(screen as Breakpoint)(status);
     });
   },
   subscribe(func: SubscribeFunc) {

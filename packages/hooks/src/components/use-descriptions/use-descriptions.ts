@@ -7,7 +7,7 @@ const { isObject, isNumber, isArray } = util;
 
 const responsiveArray: Breakpoint[] = ['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
 
-const getLengthByrow = (arr: DescriptionsItemProps[]) =>
+const getLengthByRow = (arr: DescriptionsItemProps[]) =>
   isArray(arr) ? arr.reduce((prev, now) => prev + (now.span || 1), 0) : 0;
 
 const useDescriptions = (props: BaseDescriptionsProps) => {
@@ -39,33 +39,29 @@ const useDescriptions = (props: BaseDescriptionsProps) => {
   if (isArray(items) && items.length && currentColumn) {
     items.forEach((d: DescriptionsItemProps) => {
       const lastRenderItem = renderItem[renderItem.length - 1];
-      const lengthRow = getLengthByrow(lastRenderItem);
-      if (lengthRow === 0 || lengthRow === currentColumn)
-        renderItem.push([
-          {
-            ...d,
-            span: d.span ? (d.span > currentColumn ? currentColumn : d.span) : 1,
-            ItemValueStyle: Object.assign({}, valueStyle, d?.ItemValueStyle),
-            ItemLabelStyle: Object.assign({}, labelStyle, d?.ItemLabelStyle),
-          },
-        ]);
+      const lengthRow = getLengthByRow(lastRenderItem);
+      const span = d.span ? (d.span > currentColumn ? currentColumn : d.span) : 1;
+      const newItem = {
+        ...d,
+        span,
+        ItemValueStyle: Object.assign({}, valueStyle, d?.ItemValueStyle),
+        ItemLabelStyle: Object.assign({}, labelStyle, d?.ItemLabelStyle),
+      };
+      if (lengthRow === 0 || lengthRow === currentColumn) renderItem.push([newItem]);
       else
         lastRenderItem.push({
-          ...d,
+          ...newItem,
           span: d.span
             ? d.span > currentColumn - lengthRow
               ? currentColumn - lengthRow
               : d.span
             : 1,
-          ItemValueStyle: Object.assign({}, valueStyle, d?.ItemValueStyle),
-          ItemLabelStyle: Object.assign({}, labelStyle, d?.ItemLabelStyle),
         });
     });
     const lastRenderItem = renderItem[renderItem.length - 1];
-    const lengthRow = getLengthByrow(lastRenderItem);
+    const lengthRow = getLengthByRow(lastRenderItem);
     if (lengthRow < currentColumn)
-      lastRenderItem[lastRenderItem.length - 1].span =
-        lastRenderItem[lastRenderItem.length - 1].span! + currentColumn - lengthRow;
+      lastRenderItem[lastRenderItem.length - 1].span! += currentColumn - lengthRow;
   }
   return {
     renderItem,
