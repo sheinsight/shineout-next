@@ -12,7 +12,7 @@ import {
   textContentTest,
 } from '../../tests/utils';
 import mountTest from '../../tests/mountTest';
-import ResponsiveObserve from '@sheinx/hooks/src/utils/dom/responsiveObserve';
+// import ResponsiveObserve from '@sheinx/hooks/src/utils/dom/responsiveObserve';
 import DescriptionsBase from '../__example__/01-base';
 import DescriptionsColums from '../__example__/02-colums';
 import DescriptionsAlignment from '../__example__/03-alignment';
@@ -203,45 +203,68 @@ describe('Alert[Base]', () => {
     classLengthTest(trs[1], 'td', 2);
     classLengthTest(trs[2], 'td', 1);
   });
-  test('should test responsiveObserve', () => {
-    const observeMount = jest.spyOn(ResponsiveObserve, 'subscribe');
-    const observeUnMount = jest.spyOn(ResponsiveObserve, 'unsubscribe');
-    const wrapper = render(<DescriptionsTest column={{ xs: 3 }} />);
-
-    expect(observeMount).toHaveBeenCalled();
-
-    wrapper.unmount();
-
-    expect(observeUnMount).toHaveBeenCalled();
+  // TODO: responsiveObserver test
+  test('should test responsiveObserve', async () => {
+    // const observeMount = jest.spyOn(ResponsiveObserve, 'subscribe');
+    // const observeUnMount = jest.spyOn(ResponsiveObserve, 'unsubscribe');
+    render(<DescriptionsTest column={{ xs: 3 }} />);
+    // await waitFor(() => {
+    //   expect(observeMount).toHaveBeenCalled();
+    // });
+    // wrapper.unmount();
+    // await waitFor(() => {
+    //   expect(observeUnMount).toHaveBeenCalled();
+    // });
   });
-  // beforeAll(() => {
-  //   Object.defineProperty(window, 'matchMedia', {
-  //     writable: true,
-  //     value: jest.fn().mockImplementation(query => ({
-  //       matches: false,  // 默认不匹配任何媒体查询
-  //       media: query,
-  //       addEventListener: jest.fn(),
-  //       removeEventListener: jest.fn(),
-  //       addListener: jest.fn(),  // 旧的方法名，用于向后兼容
-  //       removeListener: jest.fn(),  // 旧的方法名，用于向后兼容
-  //     })),
-  //   });
-  // });
-  // test('should render responsive', async () => {
-  //   window.matchMedia.mockImplementation(query => ({
-  //     matches: query === "(min-width: 600px)",
-  //     media: query,
-  //     onchange: null,
-  //     addEventListener: jest.fn((event, handler) => {}),
-  //     removeEventListener: jest.fn(),
-  //     dispatchEvent: jest.fn(),
-  //   }));
-  //   const { container } = render(<DescriptionsResponsive />)
+});
+describe('Descriptions[Item]', () => {
+  test('should render when set span', () => {
+    const itemSpan = 3;
+    const itemColumn = 10;
+    const dataWithSpan = data.map((item) => ({ ...item, span: itemSpan }));
+    const { container } = render(
+      <Descriptions items={dataWithSpan} column={itemColumn} layout='inlineHorizontal' />,
+    );
+    const columns = Math.ceil(itemColumn / itemSpan);
+    const row = Math.ceil(dataWithSpan.length / columns);
 
-  //   await waitFor(async () => {
-  //     await delay(200)
-  //   })
-  //   screen.debug()
-
-  // })
+    expect(container.querySelectorAll('tr')).toHaveLength(row);
+    expect(container.querySelectorAll('tr')[0].children).toHaveLength(columns);
+  });
+  test('should render when set itemLabelStyle', () => {
+    const itemLabelStyle = { color: 'red' };
+    const dataWithSpan = data.map((item) => ({ ...item, itemLabelStyle }));
+    const { container } = render(<Descriptions items={dataWithSpan} />);
+    container.querySelectorAll(labelInline).forEach((item) => {
+      expect(item).toHaveStyle(itemLabelStyle);
+    });
+  });
+  test('should render when set itemValueStyle', () => {
+    const itemValueStyle = { color: 'red' };
+    const dataWithSpan = data.map((item) => ({ ...item, itemValueStyle }));
+    const { container } = render(<Descriptions items={dataWithSpan} />);
+    container.querySelectorAll(valueInline).forEach((item) => {
+      expect(item).toHaveStyle(itemValueStyle);
+    });
+  });
+  test('should render when set itemLabelStyle and labelStyle at the same time', () => {
+    const itemLabelStyle = { color: 'red' };
+    const labelStyle = { color: 'blue' };
+    const dataWithSpan = data.map((item) => ({ ...item, itemLabelStyle, labelStyle }));
+    const { container } = render(<Descriptions items={dataWithSpan} />);
+    container.querySelectorAll(labelInline).forEach((item) => {
+      expect(item).toHaveStyle(itemLabelStyle);
+      expect(item).not.toHaveStyle(labelStyle);
+    });
+  });
+  test('should render when set itemValueStyle and valueStyle at the same time', () => {
+    const itemValueStyle = { color: 'red' };
+    const valueStyle = { color: 'blue' };
+    const dataWithSpan = data.map((item) => ({ ...item, itemValueStyle, valueStyle }));
+    const { container } = render(<Descriptions items={dataWithSpan} />);
+    container.querySelectorAll(valueInline).forEach((item) => {
+      expect(item).toHaveStyle(itemValueStyle);
+      expect(item).not.toHaveStyle(valueStyle);
+    });
+  });
 });

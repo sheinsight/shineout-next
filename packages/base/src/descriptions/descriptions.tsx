@@ -47,7 +47,7 @@ const Descriptions = (props: DescriptionsProps) => {
     isHorizontal: boolean,
     isColSpan?: boolean,
   ) => {
-    const style = type === 'label' ? d.ItemLabelStyle : d.ItemValueStyle;
+    const style = type === 'label' ? d.itemLabelStyle : d.itemValueStyle;
     const content = type === 'label' ? d.label : d.value;
     const className = type === 'label' ? jssStyle?.label : jssStyle?.value;
     const colSpanProps = !isColSpan ? getColSpan(d, isHorizontal) : {};
@@ -83,11 +83,11 @@ const Descriptions = (props: DescriptionsProps) => {
         return (
           <td key={_d.key || _i} {...getColSpan(_d)} className={jssStyle?.inlineTable}>
             <div className={jssStyle?.item}>
-              <div className={jssStyle?.labelInline} style={_d.ItemLabelStyle}>
+              <div className={jssStyle?.labelInline} style={_d.itemLabelStyle}>
                 {_d?.label}
                 {colon}
               </div>
-              <div className={jssStyle?.valueInline} style={_d.ItemValueStyle}>
+              <div className={jssStyle?.valueInline} style={_d.itemValueStyle}>
                 {_d?.value}
               </div>
             </div>

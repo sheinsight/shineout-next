@@ -5,8 +5,8 @@ export interface DescriptionsItemProps {
   label?: React.ReactNode;
   value?: React.ReactNode;
   span?: number;
-  ItemLabelStyle?: React.CSSProperties;
-  ItemValueStyle?: React.CSSProperties;
+  itemLabelStyle?: React.CSSProperties;
+  itemValueStyle?: React.CSSProperties;
 }
 export interface BaseDescriptionsProps {
   items?: DescriptionsItemProps[];

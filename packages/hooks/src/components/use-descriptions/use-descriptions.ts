@@ -44,8 +44,8 @@ const useDescriptions = (props: BaseDescriptionsProps) => {
       const newItem = {
         ...d,
         span,
-        ItemValueStyle: Object.assign({}, valueStyle, d?.ItemValueStyle),
-        ItemLabelStyle: Object.assign({}, labelStyle, d?.ItemLabelStyle),
+        itemValueStyle: Object.assign({}, valueStyle, d?.itemValueStyle),
+        itemLabelStyle: Object.assign({}, labelStyle, d?.itemLabelStyle),
       };
       if (lengthRow === 0 || lengthRow === currentColumn) renderItem.push([newItem]);
       else
