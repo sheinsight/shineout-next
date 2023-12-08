@@ -40,7 +40,7 @@ const tableTokenExtraValue = {
     cell: {
       padding: {
         x: 'Padding-16',
-        y: 'Padding-12',
+        y: 'Padding-16',
       },
     },
   },
