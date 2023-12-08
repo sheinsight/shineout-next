@@ -44,5 +44,6 @@ export * from './components/use-pagination';
 export * from './components/use-table';
 export * from './components/use-tree';
 export * from './components/use-select';
+export * from './components/use-slider';
 
 export default {};

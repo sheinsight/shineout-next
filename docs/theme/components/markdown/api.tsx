@@ -64,7 +64,7 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
 const Api = (props: { api: MarkdownProps['api'] }) => {
   const api = props.api || [];
   return (
-    <div>
+    <div style={{ padding: 24 }}>
       {api.map((item, index) => {
         return <SingleAPi key={index} {...item}></SingleAPi>;
       })}

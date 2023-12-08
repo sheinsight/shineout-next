@@ -64,6 +64,9 @@ import { RateTokens } from './rate/type';
 import Select from './select';
 import { SelectTokens } from './select/type';
 
+import Slider from './slider';
+import { SliderTokens } from './slider/type';
+
 import Spin from './spin';
 import { SpinTokens } from './spin/type';
 
@@ -115,6 +118,7 @@ export type ThemeTokens = AlertTokens &
   RadioTokens &
   RateTokens &
   SelectTokens &
+  SliderTokens &
   SpinTokens &
   SwitchTokens &
   TableTokens &
@@ -148,6 +152,7 @@ const Tokens: ThemeTokens = {
   ...Radio,
   ...Rate,
   ...Select,
+  ...Slider,
   ...Spin,
   ...Switch,
   ...Table,
