@@ -1,19 +1,31 @@
-// import React from 'react';
-// import { BaseSliderProps } from '@sheinx/hooks';
-import { CommonType } from '../common/type';
+import { CommonType, CommonChangeType } from '../common/type';
 
 export interface SliderClasses {
   wrapper: string;
-  trunck: string;
-  trunckInner: string;
+  track: string;
+  trackInner: string;
   indicator: string;
+  indicatorStart: string;
+  indicatorEnd: string;
+  indicatorActive: string;
+  scaleWrapper: string;
+  scale: string;
+  label: string;
+  value: string;
+  startValue: string;
+  endValue: string;
+  autoHide: string;
+  disabled: string;
+  vertical: string;
 }
 
 export interface SliderJssStyle {
   slider?: () => SliderClasses;
 }
 
-export interface SliderProps<Value> extends Pick<CommonType, 'className' | 'style'> {
+export interface SliderProps<Value>
+  extends Pick<CommonType, 'className' | 'style'>,
+    CommonChangeType<Value> {
   jssStyle?: SliderJssStyle;
   /**
    * @en Automatically hides the current value and scale
@@ -47,7 +59,7 @@ export interface SliderProps<Value> extends Pick<CommonType, 'className' | 'styl
    * @en The callback function when the value is changing.
    * @cn 值改变时回调函数
    */
-  onChange: (value: Value) => void;
+  onChange?: (value: Value) => void;
 
   /**
    * @en Value range. An array whose length is greater than 2.

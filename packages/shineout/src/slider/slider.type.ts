@@ -1,3 +1,6 @@
 import { SliderProps as UnStyledSliderProps } from '@sheinx/base';
 
-export type SliderProps = Omit<UnStyledSliderProps, 'jssStyle'>;
+export type SliderProps<Value extends number | number[]> = Omit<
+  UnStyledSliderProps<Value>,
+  'jssStyle'
+>;

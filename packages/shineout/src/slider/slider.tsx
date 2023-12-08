@@ -6,6 +6,6 @@ import { SliderProps } from './slider.type';
 const jssStyle = {
   slider: useSliderStyle,
 };
-export default (props: SliderProps) => {
+export default <Value extends number | number[]>(props: SliderProps<Value>) => {
   return <Slider jssStyle={jssStyle} {...props} />;
 };

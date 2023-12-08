@@ -1,7 +1,9 @@
 export interface UseSliderProps<Value extends number | number[]> {
-  range: boolean;
-  value: Value;
+  value: Value | undefined;
   onChange: (value: Value) => void;
-  scale?: number[];
-  step?: number;
+  range: boolean;
+  scale: number[];
+  step: number;
+  vertical: boolean;
+  onIncrease: (() => void) | undefined;
 }
