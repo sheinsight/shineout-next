@@ -164,6 +164,15 @@ const sliderStyle: JsStyles<SliderClassType> = {
       borderWidth: '4px',
       borderColor: `${token.sliderValueHoverBakgroundColor} transparent transparent transparent`,
     },
+    '$vertical &': {
+      '&::after': {
+        top: '50%',
+        right: '100%',
+        left: 'unset',
+        transform: 'translate(0, -50%)',
+        borderColor: `transparent ${token.sliderValueHoverBakgroundColor} transparent transparent `,
+      },
+    },
     '$indicator:hover + &, $indicatorActive  + &': {
       opacity: 1,
     },
