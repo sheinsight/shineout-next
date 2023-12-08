@@ -7,7 +7,7 @@ const defaultScale = [0, 100];
 const Slider = <Value extends number | number[]>(props: SliderProps<Value>) => {
   const sliderClasses = props.jssStyle?.slider?.();
 
-  const { scale = defaultScale, step = 1, height = 200 } = props;
+  const { scale = defaultScale, step = 1, height = 200, valueTipType: tipType = 'always' } = props;
 
   const inputAbleInfo = useInputAble({
     value: props.value,
@@ -35,7 +35,17 @@ const Slider = <Value extends number | number[]>(props: SliderProps<Value>) => {
       formated = props.formatValue(value);
     }
     const c = position === 0 ? sliderClasses?.startValue : sliderClasses?.endValue;
-    return <div className={classNames(c, sliderClasses?.value)}>{formated}</div>;
+    return (
+      <div
+        className={classNames(
+          c,
+          sliderClasses?.value,
+          tipType === 'hover' && sliderClasses?.valueHover,
+        )}
+      >
+        {formated}
+      </div>
+    );
   };
 
   const renderIndicator = (position: 0 | 1) => {

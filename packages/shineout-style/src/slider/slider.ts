@@ -13,6 +13,7 @@ export type SliderClasses = {
   label: string;
   indicatorActive: string;
   startValue: string;
+  valueHover: string;
   endValue: string;
   autoHide: string;
   disabled: string;
@@ -140,6 +141,31 @@ const sliderStyle: JsStyles<SliderClassType> = {
       left: '100%',
       transform: 'translate(10px, -50%)',
       padding: '1px 4px',
+    },
+  },
+  valueHover: {
+    backgroundColor: token.sliderValueHoverBakgroundColor,
+    color: token.sliderValueHoverFontColor,
+    padding: `${token.sliderValueHoverPaddingY} ${token.sliderValueHoverPaddingX}`,
+    lineHeight: token.lineHeightDynamic,
+    borderRadius: token.sliderValueHoverRadius,
+    opacity: 0,
+    transition: 'opacity 0.2s',
+    // 下方三角
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: '100%',
+      left: '50%',
+      transform: 'translate(-50%, 0)',
+      width: 0,
+      height: 0,
+      borderStyle: 'solid',
+      borderWidth: '4px',
+      borderColor: `${token.sliderValueHoverBakgroundColor} transparent transparent transparent`,
+    },
+    '$indicator:hover + &, $indicatorActive  + &': {
+      opacity: 1,
     },
   },
   endValue: {
