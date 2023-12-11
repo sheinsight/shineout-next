@@ -82,6 +82,36 @@ export interface SliderTokens {
   sliderValueBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-9
+   * @description xxxundefined鼠标移入时的undefined颜色
+   */
+  sliderValueHoverBakgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description xxxundefined鼠标移入时的字体颜色
+   */
+  sliderValueHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Radius-2
+   * @description xxxundefined鼠标移入时的圆角
+   */
+  sliderValueHoverRadius: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description xxxundefined鼠标移入时的内边距（水平方向）
+   */
+  sliderValueHoverPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-3
+   * @description xxxundefined鼠标移入时的内边距（垂直方向）
+   */
+  sliderValueHoverPaddingY: string;
+  /**
+   * @type {string}
    * @token Size-3
    * @description xxxundefined行字号
    */

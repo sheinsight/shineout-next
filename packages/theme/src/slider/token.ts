@@ -45,6 +45,15 @@ const sliderTokenExtraValue = {
   },
   value: {
     background: { color: 'Neutral-fill-1' },
+    hover: {
+      bakground: { color: 'Neutral-fill-9' },
+      font: { color: 'Neutral-text-1' },
+      radius: 'Radius-2',
+      padding: {
+        x: 'Padding-8',
+        y: 'Padding-3',
+      },
+    },
   },
   scale: {
     line: {

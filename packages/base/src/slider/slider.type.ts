@@ -12,6 +12,7 @@ export interface SliderClasses {
   scale: string;
   label: string;
   value: string;
+  valueHover: string;
   startValue: string;
   endValue: string;
   autoHide: string;
@@ -26,6 +27,12 @@ export interface SliderJssStyle {
 export interface SliderProps<Value>
   extends Pick<CommonType, 'className' | 'style'>,
     CommonChangeType<Value> {
+  /**
+   * @cn 展示当前值的方式,默认为常驻展示
+   * @en The way to show the current value, the default is always displayed
+   * @default 'always'
+   */
+  valueTipType?: 'always' | 'hover';
   jssStyle?: SliderJssStyle;
   /**
    * @en Automatically hides the current value and scale
