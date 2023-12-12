@@ -62,10 +62,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const getSelectData = () => {
     const checkboxColumn = (props.columns || emptyArr).find((item) => item.type === 'checkbox');
     let selectData = props.data || emptyArr;
-    if (checkboxColumn && typeof checkboxColumn.rowSpan === 'function') {
+    if (checkboxColumn) {
       if (typeof checkboxColumn.filterAll === 'function') {
         selectData = checkboxColumn.filterAll(selectData);
-      } else {
+      } else if (typeof checkboxColumn.rowSpan === 'function') {
         selectData = selectData.filter((item, index) => {
           if (index > 0) {
             const before = selectData[index - 1];
