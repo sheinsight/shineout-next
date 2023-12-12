@@ -17,6 +17,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     tag = 'div',
     tagClassName,
     virtualRef,
+    wrapperRef,
     onControlTypeChange,
   } = props;
 
@@ -27,6 +28,10 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     const rows = Math.ceil(data.length / colNum);
     return rows * lineHeight;
   };
+
+  const getCurrentIndex = usePersistFn(() => {
+    return currentIndex;
+  });
 
   const handleScrollByStep = usePersistFn((step: number) => {
     const next = currentIndex + step;
@@ -62,6 +67,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         style={{ height, ...style }}
         scrollWidth={0}
         scrollHeight={scrollHeight}
+        wrapperRef={wrapperRef}
         onScroll={handleScroll}
         onControlTypeChange={onControlTypeChange}
       >
@@ -78,8 +84,9 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   };
 
   useEffect(() => {
-    if (virtualRef) {
+    if (virtualRef?.current) {
       virtualRef.current.scrollByStep = handleScrollByStep;
+      virtualRef.current.getCurrentIndex = getCurrentIndex;
     }
   }, []);
 

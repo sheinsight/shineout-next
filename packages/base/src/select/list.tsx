@@ -37,7 +37,9 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
   const virtualRef = useRef<VirtualListType>({
     scrollByStep: undefined,
+    getCurrentIndex: undefined,
   });
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const getLineHeight = () => {
     if (lineHeightProp) return lineHeightProp;
@@ -46,6 +48,8 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     if (size === 'large') return 42;
     return 34;
   };
+
+  const lineHeight = getLineHeight();
 
   const handleHover = usePersistFn((index: number, force?: boolean) => {
     if ((controlType === 'mouse' || force) && hoverIndex !== index) {
@@ -60,7 +64,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
 
   const handleMove = usePersistFn((step: number) => {
     const max = data.length;
-
+    const listHeight = height as number;
     let nextHoverIndex = hoverIndex;
     const currentHoverData = data[hoverIndex];
     // 遇到 group item 数据时，跳过
@@ -73,12 +77,25 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     if (nextHoverIndex >= max) {
       nextHoverIndex = 0;
     }
+
     if (nextHoverIndex < 0) nextHoverIndex = max;
 
     setHoverIndex(nextHoverIndex);
-  });
+    const currentIndex = virtualRef.current.getCurrentIndex?.() as number;
+    const maxViewCount = Math.floor(listHeight / lineHeight);
 
-  const lineHeight = getLineHeight();
+    // 向上滚动一格
+    if (nextHoverIndex < currentIndex) {
+      virtualRef.current.scrollByStep?.(-1);
+    }
+
+    // 向下滚动一格
+    if (maxViewCount && listHeight % lineHeight !== 0 && listHeight % lineHeight !== listHeight) {
+      if (nextHoverIndex > currentIndex + maxViewCount) {
+        virtualRef.current.scrollByStep?.(1);
+      }
+    }
+  });
 
   const renderLoading = () => {
     return <div>loading</div>;
@@ -121,6 +138,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     return (
       <VirtualScrollList
         virtualRef={virtualRef}
+        wrapperRef={wrapperRef}
         data={data}
         keygen={keygen}
         tag={'ul'}
