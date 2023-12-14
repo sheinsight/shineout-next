@@ -3,11 +3,12 @@ import usePersistFn from '../use-persist-fn';
 
 interface ListPaginationProps {
   data: any[];
-  current?: number;
-  pageSize?: number;
-  defaultCurrent?: number;
-  onChange?: (current: number, pageSize: number) => void;
-  shouldPage?: boolean;
+  current: number | undefined;
+  pageSize?: number | undefined;
+  defaultCurrent: number | undefined;
+  onChange: ((current: number, pageSize: number) => void) | undefined;
+  shouldPage: boolean;
+  loading: boolean;
 }
 
 const usePaginationList = (props: ListPaginationProps) => {
@@ -28,6 +29,7 @@ const usePaginationList = (props: ListPaginationProps) => {
       current: props.current || current,
       pageSize: props.pageSize || pageSize,
       total,
+      disabled: !!props.loading,
       onChange: handleChange,
     };
   };
@@ -42,7 +44,7 @@ const usePaginationList = (props: ListPaginationProps) => {
 
   const page = getPager(props.data);
   const data = useMemo(
-    () => getData(props.data, page.pageSize, page.current),
+    () => getData(props.data, page.pageSize!, page.current!),
     [props.data, page.pageSize, page.current],
   );
   return {

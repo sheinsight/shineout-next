@@ -14,6 +14,7 @@ export interface TheadProps
       | 'showSelectAll'
       | 'renderSorter'
       | 'radio'
+      | 'disabled'
     >,
     Pick<ReturnType<typeof useTableSort<any>>, 'sortInfo' | 'onSorterChange'>,
     Pick<UseTableLayoutResultFunc, 'dragCol' | 'resizeCol'> {

@@ -78,6 +78,7 @@ const App: React.FC = () => {
 
       <Table
         keygen='id'
+        bordered
         data={data}
         virtual
         width={1400}

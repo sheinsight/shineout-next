@@ -13,7 +13,7 @@ export interface EmptyProps
   extends Pick<CommonType, 'className' | 'style'>,
     React.HTMLAttributes<HTMLDivElement> {
   jssStyle?: {
-    empty: () => EmptyClasses;
+    empty?: () => EmptyClasses;
   };
   imgSrc?: string;
   icon?: React.ReactNode;

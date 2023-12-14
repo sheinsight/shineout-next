@@ -9,6 +9,7 @@ import { PaginationProps } from '../pagination/pagination.type';
 import { PaginationClasses } from '../pagination/pagination.type';
 import { ButtonClasses } from '../button/button.type';
 import { InputClasses } from '../input/input.type';
+import { EmptyClasses } from '../empty/empty.type';
 
 export type ListDatum = ReturnType<typeof useListSelect<any, any>>;
 export type UseTreeResult = ReturnType<typeof useTableTree>;
@@ -34,7 +35,10 @@ export interface TableClasses {
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
+  emptyWrapper: string;
 
+  cellAlignRight: string;
+  cellAlignCenter: string;
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
@@ -109,7 +113,31 @@ export interface TableProps<DataItem, Value>
     pagination?: () => PaginationClasses;
     button?: () => ButtonClasses;
     input?: () => InputClasses;
+    empty?: () => EmptyClasses;
   };
+  /**
+   * @en which takes effect when the virtual list is enabled
+   * @cn 当开启虚拟列表时生效
+   */
+  scrollLeft?: number;
+  /**
+   * @en The expected height of a one-line table is just a rough estimate to show the scroll bar.
+   * @cn 单行表格的预期高度，只是一个大概的估值，用来展示滚动条
+   * @default 40
+   */
+  rowHeight?: number;
+  /**
+   * @en row hover highlight
+   * @cn 数据行鼠标悬浮高亮效果
+   * @default true
+   */
+  hover?: boolean;
+  /**
+   * @en empty text
+   * @cn 空数据文案
+   * @default getLocale("Data not found")
+   */
+  empty?: React.ReactNode;
   /**
    * @en whether to enable ctrl/cmd + click check
    * @cn 是否启用 ctrl/cmd + click 选中单元格
@@ -180,6 +208,12 @@ export interface TableProps<DataItem, Value>
    * @cn 表格总宽度，默认为容器宽度，不可小于 columns 中设置的 width 之和
    */
   width?: number;
+  /**
+   * @en array，see TableColumn
+   * @cn 数组，见 TableColumn
+   * @override TableColumn[]
+   * @default []
+   */
   columns?: ColumnItem<DataItem>[];
   /**
    * @en When the value is true, disabled all checkboxes; When the value is function, disable the checkbox that this function returns true.
@@ -271,11 +305,8 @@ export interface TableProps<DataItem, Value>
    */
   tableRef?: (table: TableRef) => void;
   /**
-   * Select row. Rows is the selected data.
-   *
-   * 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
-   *
-   * default: none
+   * @en Select row. Rows is the selected data.
+   * @cn 选择行。rows为选中的数据。如果需要数据需要格式化的处理，建议配置 format 和 prediction
    */
   onRowSelect?: (rows: Value) => void;
 }

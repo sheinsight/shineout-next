@@ -8,6 +8,7 @@ interface UseTableVirtualProps {
   rowHeight: number;
   scrollRef: React.RefObject<HTMLDivElement>;
   innerRef: React.RefObject<HTMLDivElement>;
+  scrollLeft?: number;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerLeft, setLeft] = useState(0);
@@ -16,6 +17,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const [startIndex, setStartIndex] = useState(0);
   const preIndex = usePrevious(startIndex);
   const [offsetY, setOffsetY] = useState(0);
+
+  const sleft = props.scrollLeft !== undefined ? props.scrollLeft : innerLeft;
 
   const { current: context } = useRef({
     cachedHeight: [] as Array<number>,
@@ -27,7 +30,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   });
 
   const getTranslate = usePersistFn((left?: number, top?: number) => {
-    const l = left === undefined ? innerLeft : left;
+    const l = left === undefined ? sleft : left;
     const t = top === undefined ? innerTop + offsetY : top;
     return `translate3d(-${l}px, -${t}px, 0)`;
   });
@@ -80,9 +83,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const updateRateScroll = usePersistFn((rate: number) => {
     const { scrollRef } = props;
     const sumHeight = getContentHeight(props.data.length - 1);
-    setHeight(sumHeight);
-    if (scrollRef && scrollRef.current) {
-      setTimeout(() => {
+    context.shouldUpdateHeight = true;
+    context.heightCallback = () => {
+      if (scrollRef && scrollRef.current) {
         const scrollHeight = scrollRef.current!.scrollHeight;
         const clientHeight = scrollRef.current!.clientHeight;
         const nowTop = scrollRef.current!.scrollTop;
@@ -94,8 +97,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
           context.controlScrollRate = rate;
           scrollRef.current!.scrollTop = top;
         }
-      });
-    }
+      }
+    };
+    setHeight(sumHeight);
   });
 
   const handleScroll = (info: {
@@ -107,7 +111,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   }) => {
     const { scrollLeft, height, y, fromDrag } = info;
     let { scrollTop } = info;
-
     setLeft(scrollLeft);
     context.shouldUpdateHeight = !fromDrag;
     const sumHeight = getContentHeight(props.data.length - 1);
@@ -128,7 +131,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       if (context.rateTimer) clearTimeout(context.rateTimer);
       context.rateTimer = setTimeout(() => {
         updateRateScroll(y);
-      }, 50);
+      }, 120);
     } else {
       updateIndexAndTopFromTop(scrollTop);
     }
@@ -176,7 +179,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   return {
     scrollHeight,
     startIndex,
-    innerLeft,
+    innerLeft: sleft,
     innerTop: innerTop + offsetY,
     data: renderData,
     handleScroll,

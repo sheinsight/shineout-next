@@ -4,7 +4,7 @@ import Tr from './tr';
 import { TbodyProps } from './tbody.type';
 
 export default (props: TbodyProps) => {
-  const { columns = [], currentIndex = 0 } = props;
+  const { columns = [], currentIndex = 0, hover = true } = props;
   const { isRowExpand, handleExpandClick } = useTableExpand({
     columns: props.columns,
     expandKeys: props.expandKeys,
@@ -16,6 +16,7 @@ export default (props: TbodyProps) => {
       columns: props.columns,
       data: props.data,
       currentIndex,
+      hover,
     });
 
   const expandCol = (props.expandHideCol ||
@@ -61,6 +62,7 @@ export default (props: TbodyProps) => {
         rowClickAttr={props.rowClickAttr}
         onRowClick={props.onRowClick}
         rowEvents={props.rowEvents}
+        disabled={props.datum.disabledCheck(item)}
       />
     );
   };

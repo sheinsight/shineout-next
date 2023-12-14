@@ -18,12 +18,9 @@ interface scrollProps {
   className?: string;
   style?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
-  onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
 }
 
 const Scroll = (props: scrollProps) => {
-  const { onControlTypeChange } = props;
-
   const containerRef = useRef<HTMLDivElement>(null);
   const { current: context } = useRef({
     timer: null as any,
@@ -72,10 +69,6 @@ const Scroll = (props: scrollProps) => {
       });
   });
 
-  const handleMouseMove = () => {
-    onControlTypeChange('mouse');
-  };
-
   return (
     <div className={props.className} style={props.style}>
       <div
@@ -89,7 +82,6 @@ const Scroll = (props: scrollProps) => {
         onMouseUp={() => {
           context.isMouseDown = false;
         }}
-        onMouseMove={handleMouseMove}
       >
         <div
           {...util.getDataAttribute({ type: 'scroll-container' })}

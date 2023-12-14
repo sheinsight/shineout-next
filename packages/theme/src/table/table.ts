@@ -12,6 +12,7 @@ const tableTokens: TableTokens = {
   tableSmallCellPaddingY: 'Padding-4',
   tableLargeCellPaddingX: 'Padding-16',
   tableLargeCellPaddingY: 'Padding-12',
+  tableFixedShadow: 'rgba(2,11,24,.1)',
   tableTheadBackgroundColor: 'Neutral-fill-2',
   tableTheadFontColor: 'Neutral-text-5',
   tableTbodyBackgroundColor: 'Neutral-fill-1',
@@ -21,12 +22,15 @@ const tableTokens: TableTokens = {
   tableTbodyFontColor: 'Neutral-text-5',
   tableTfootBackgroundColor: 'Neutral-fill-2',
   tableTfootFontColor: 'Neutral-text-5',
+  tableExpandIconSize: 'Size-7',
+  tableExpandIconColor: 'Neutral-text-4',
   tableExpandBackgroundColor: 'Neutral-fill-2',
   tableSorterColor: 'Neutral-text-3',
   tableSorterHoverColor: 'Neutral-text-4',
   tableSorterActiveColor: 'Brand-6',
   tableResizeColor: 'Brand-7',
   tableSelectionBorderColor: 'Brand-6',
+  tablePaginationMarginY: 'Margin-12',
 };
 
 export default tableTokens;

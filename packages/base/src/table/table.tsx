@@ -3,6 +3,7 @@ import Scroll from '../virtual-scroll/scroll';
 import classNames from 'classnames';
 import Spin from '../spin';
 import Pagination, { PaginationProps } from '../pagination';
+import Empty from '../empty';
 import {
   useTableLayout,
   useTableColumns,
@@ -41,7 +42,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const virtual =
-    !!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto';
+    props.data?.length &&
+    (!!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto');
 
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
 
@@ -83,6 +85,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     prediction: props.prediction,
     format: props.format,
     onChange: inputableData.onChange,
+    disabled: props.disabled,
   });
 
   const { columns, expandHideCol } = useTableColumns({
@@ -127,6 +130,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     defaultCurrent: pagination.defaultCurrent,
     pageSize: pagination.pageSize,
     onChange: pagination.onChange,
+    loading: !!props.loading,
   });
 
   const treeColumnsName = columns.find((item) => item.treeColumnsName)?.treeColumnsName;
@@ -150,9 +154,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const virtualInfo = useTableVirtual({
     data: virtual ? treeData : emptyArr,
     rowsInView: props.rowsInView || 20,
-    rowHeight: 40,
+    rowHeight: props.rowHeight || 40,
     scrollRef: scrollRef,
     innerRef: tbodyRef,
+    scrollLeft: props.scrollLeft,
   });
 
   // simple table sync left to head and foot
@@ -214,12 +219,23 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     },
   );
 
+  const renderEmpty = () => {
+    if (props.data?.length) return null;
+    return (
+      <div className={tableClasses?.emptyWrapper}>
+        {props.empty || <Empty jssStyle={props.jssStyle} />}
+      </div>
+    );
+  };
+
   const renderTable = () => {
     const Group = (
       <Colgroup colgroup={colgroup} columns={columns} shouldLastColAuto={!!shouldLastColAuto} />
     );
 
     const bodyCommonProps = {
+      hover: props.hover,
+      disabled: props.disabled,
       rowClickAttr: props.rowClickAttr,
       jssStyle: props.jssStyle,
       columns: columns,
@@ -243,6 +259,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     };
 
     const headCommonProps = {
+      disabled: props.disabled,
       jssStyle: props.jssStyle,
       columns: columns,
       data: pagedData,
@@ -278,19 +295,21 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     if (virtual) {
       return (
         <>
-          <div className={headWrapperClass}>
-            <table
-              style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
-              ref={theadRef}
-            >
-              {Group}
-              <Thead
-                {...headCommonProps}
-                fixLeftNum={virtualInfo.innerLeft}
-                fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
-              />
-            </table>
-          </div>
+          {!props.hideHeader && (
+            <div className={headWrapperClass}>
+              <table
+                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
+                ref={theadRef}
+              >
+                {Group}
+                <Thead
+                  {...headCommonProps}
+                  fixLeftNum={virtualInfo.innerLeft}
+                  fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
+                />
+              </table>
+            </div>
+          )}
           <Scroll
             style={scrollWrapperStyle}
             scrollerStyle={virtualScrollerStyle}
@@ -327,12 +346,12 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         </>
       );
     }
-    if (!isScrollY && !props.sticky)
+    if (!isScrollY && !props.sticky && props.data?.length)
       return (
         <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
           <table style={{ width }} ref={tbodyRef}>
             {Group}
-            {<Thead {...headCommonProps} />}
+            {!props.hideHeader && <Thead {...headCommonProps} />}
             {<Tbody {...bodyCommonProps} />}
             {<Tfoot {...footCommonProps} />}
           </table>
@@ -345,17 +364,25 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       top !== undefined ? ({ top, position: 'sticky' } as React.CSSProperties) : undefined;
     return (
       <>
-        <div className={headWrapperClass} style={stickyStyle}>
-          <table style={{ width }} ref={theadRef}>
-            {Group}
-            {<Thead {...headCommonProps} />}
-          </table>
-        </div>
-        <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
+        {!props.hideHeader && (
+          <div className={headWrapperClass} style={stickyStyle}>
+            <table style={{ width }} ref={theadRef}>
+              {Group}
+              {<Thead {...headCommonProps} />}
+            </table>
+          </div>
+        )}
+        <div
+          ref={scrollRef}
+          className={tableClasses?.bodyWrapper}
+          onScroll={handleBodyScroll}
+          style={{ height: '100%' }}
+        >
           <table style={{ width }} ref={tbodyRef}>
             {Group}
             {<Tbody {...bodyCommonProps} />}
           </table>
+          {renderEmpty()}
         </div>
         <div className={footWrapperClass}>
           <table style={{ width }} ref={tfootRef}>
@@ -388,18 +415,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       />
     );
   };
-
-  // const renderFooter = () => {
-  //   if (!props.summary || !props.summary.length) return null;
-  //   return (
-  //     <div  className={classNames(tableClasses?.footWrapper)} onScroll={handleScroll}>
-  //       <table style={{ width }} ref={tfootRef}>
-  //         {renderColgroup()}
-  //         <Tfoot />
-  //       </table>
-  //     </div>
-  //   );
-  // };
 
   useEffect(() => {
     // 绑定 wheel 事件

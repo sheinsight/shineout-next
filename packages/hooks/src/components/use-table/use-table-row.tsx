@@ -7,6 +7,7 @@ import { usePersistFn } from '../../common/use-persist-fn';
 export interface TableRowProps extends Pick<BaseTableProps<any>, 'data'> {
   columns: TableFormatColumn<any>[];
   currentIndex: number;
+  hover: boolean;
 }
 
 export interface Row {
@@ -77,6 +78,7 @@ const useTableRow = (props: TableRowProps) => {
   const [hoverIndex, setHoverIndex] = useState<Set<number>>(new Set());
 
   const handleCellHover = usePersistFn((rowIndex: number, colSpan = 1) => {
+    if (!props.hover) return;
     const hoverIndex = new Set<number>();
     for (let i = 0; i < colSpan; i++) {
       hoverIndex.add(rowIndex + i);
@@ -85,6 +87,7 @@ const useTableRow = (props: TableRowProps) => {
   });
 
   const isCellHover = usePersistFn((rowIndex: number, colSpan = 1) => {
+    if (!props.hover) return false;
     let isHover = false;
     for (let i = 0; i < colSpan; i++) {
       isHover = hoverIndex.has(rowIndex + i);

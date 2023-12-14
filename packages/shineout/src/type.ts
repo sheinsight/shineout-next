@@ -18,3 +18,5 @@ export * as Carousel from './carousel/interface';
 export * as Upload from './upload/interface';
 export * as Gap from './gap/interface';
 export * as Table from './table/interface';
+export * as List from './list/interface';
+export * as Slider from './slider/interface';

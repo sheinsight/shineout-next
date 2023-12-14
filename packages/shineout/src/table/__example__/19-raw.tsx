@@ -31,7 +31,7 @@ const App: React.FC = () => (
         <th>Name</th>
         <th>Office</th>
         <th>Start Date</th>
-        <th>Salary</th>
+        <th>Salary($)</th>
       </tr>
     </thead>
     <tbody>
@@ -40,7 +40,7 @@ const App: React.FC = () => (
           <td>{`${d.firstName} ${d.lastName}`}</td>
           <td>{d.office}</td>
           <td>{d.start}</td>
-          <td>{`$${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`}</td>
+          <td>{`${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`}</td>
         </tr>
       ))}
     </tbody>

@@ -1,18 +1,21 @@
 import { useMemo } from 'react';
 import { UseListMultipleProps, UseListProps } from './use-list.type';
 import usePersistFn from '../use-persist-fn';
-import { isArray } from '../../utils';
 import useListSelectMultiple from './use-list-select-multiple';
 
 const useListSelect = <DataItem, Value>(props: UseListProps<DataItem, Value>) => {
   const { multiple } = props;
   type MultipleValue = Value extends any[] ? Value : Value[];
 
-  const getValue = (v: any) => {
-    if (v === undefined || v === null) return v;
-    if (isArray(v)) return v;
-    return [v];
-  };
+  let value: MultipleValue = props.value as MultipleValue;
+
+  if (!multiple) {
+    if (props.value === undefined || props.value === null) {
+      value = props.value as MultipleValue;
+    } else {
+      value = [props.value] as MultipleValue;
+    }
+  }
 
   const onChange = usePersistFn(
     (value: MultipleValue, data: DataItem | DataItem[], checked: boolean) => {
@@ -26,7 +29,7 @@ const useListSelect = <DataItem, Value>(props: UseListProps<DataItem, Value>) =>
 
   const datum = useListSelectMultiple<DataItem, MultipleValue>({
     ...props,
-    value: getValue(props.value),
+    value: value,
     onChange: onChange,
     prediction: props.prediction as UseListMultipleProps<DataItem, MultipleValue>['prediction'],
   });

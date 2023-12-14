@@ -148,8 +148,11 @@ export default (props: TheadProps) => {
     const fixedStyle = getFixedStyle(col.fixed, col.index, colTemp2.colSpan || 1);
 
     const cellClassName = classNames(
+      colTemp.className,
       col.fixed === 'left' && tableClasses?.cellFixedLeft,
       col.fixed === 'right' && tableClasses?.cellFixedRight,
+      colTemp.align === 'center' && tableClasses?.cellAlignCenter,
+      colTemp.align === 'right' && tableClasses?.cellAlignRight,
       (col.lastFixed || col.firstFixed) && tableClasses?.cellFixedLast,
       isLast && tableClasses?.cellIgnoreBorder,
     );
@@ -167,7 +170,7 @@ export default (props: TheadProps) => {
           <div className={classNames(sorter && tableClasses?.hasSorter)}>
             {renderTitle(colTemp.title)}
             {renderSort(colTemp)}
-            {renderDrag(colTemp.index)}
+            {colTemp.columnResizable !== false && renderDrag(colTemp.index)}
           </div>
         </th>,
       );
@@ -181,6 +184,7 @@ export default (props: TheadProps) => {
             <div style={{ lineHeight: 1, verticalAlign: 'middle' }}>
               {props.radio ? null : (
                 <Checkbox
+                  disabled={props.disabled === true}
                   checked={props.datum.getCheckedStatus(props.treeColumnsName)}
                   onChange={(_value, checked) => {
                     if (checked) {

@@ -10,7 +10,11 @@ function replaceNonAlphanumeric(str: string) {
   return result;
 }
 
-export const cssvar = (str: string, value: string, size?: string) => {
+function camelCaseToDash(str: string) {
+  return str.replace(/([A-Z])/g, '-$1').toLowerCase();
+}
+
+export const cssvar = (str: string, value: string, key: string, size?: string) => {
   if (str.indexOf('Size-') > -1) {
     // 正则提取出Size-后面的数字
     const sizeReg = /Size-(\d+)/;
@@ -21,5 +25,5 @@ export const cssvar = (str: string, value: string, size?: string) => {
       }px)`;
     }
   }
-  return `var(${cssvarFlag}${replaceNonAlphanumeric(str)},${value})`;
+  return `var(--${camelCaseToDash(key)},var(${cssvarFlag}${replaceNonAlphanumeric(str)},${value}))`;
 };

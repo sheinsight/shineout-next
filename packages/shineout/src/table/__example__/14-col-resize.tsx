@@ -32,10 +32,10 @@ const columns: TableColumnItem[] = [
   { title: 'Country', render: 'country' },
   { title: 'Position', render: 'position' },
   { title: 'Office', render: 'office' },
-  { title: 'Start Date', render: 'start' },
+  { title: 'Start Date', render: 'start', columnResizable: false },
   {
-    title: 'Salary',
-    render: (d) => `$${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
+    title: 'Salary($)',
+    render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
   },
 ];
 

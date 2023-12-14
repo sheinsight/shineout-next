@@ -23,7 +23,10 @@ export type TableClasses = {
   headWrapper: string;
   bodyWrapper: string;
   footWrapper: string;
+  emptyWrapper: string;
 
+  cellAlignRight: string;
+  cellAlignCenter: string;
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
@@ -185,12 +188,25 @@ const tableStyle: JsStyles<TableClassType> = {
   bodyWrapper: {
     overflow: 'auto',
     boxSizing: 'border-box',
+    flexGrow: 1,
+    minHeight: '0',
   },
   footWrapper: {
     flex: '0 0 auto',
     overflow: 'hidden',
     boxSizing: 'border-box',
     background: token.tableTfootBackgroundColor,
+  },
+  emptyWrapper: {
+    minHeight: '150px',
+    width: '100%',
+    height: '100%',
+    position: 'sticky',
+    left: 0,
+    top: 0,
+    justifyContent: 'center',
+    display: 'flex',
+    alignItems: 'center',
   },
   scrollY: {
     '&$headWrapper, &$footWrapper': {
@@ -204,6 +220,8 @@ const tableStyle: JsStyles<TableClassType> = {
   cellFixedRight: {
     position: 'sticky',
   },
+  cellAlignCenter: { textAlign: 'center' },
+  cellAlignRight: { textAlign: 'right' },
   cellFixedLast: {},
   cellGroup: {
     textAlign: 'center',
@@ -215,8 +233,8 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   cellHover: {
-    'td&': {
-      background: `${token.tableTbodyHoverBackgroundColor} !important`,
+    'table tbody td&&': {
+      background: `${token.tableTbodyHoverBackgroundColor}`,
     },
   },
   floatLeft: {
@@ -227,7 +245,7 @@ const tableStyle: JsStyles<TableClassType> = {
       bottom: 0,
       width: '5px',
       right: '-5px',
-      background: 'linear-gradient(90deg,rgba(2,11,24,.1), transparent)',
+      background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
     },
   },
   floatRight: {
@@ -235,7 +253,7 @@ const tableStyle: JsStyles<TableClassType> = {
       content: '""',
       width: '5px',
       left: '-5px',
-      background: 'linear-gradient(270deg,rgba(2,11,24,.1),transparent)',
+      background: `linear-gradient(270deg, ${token.tableFixedShadow},transparent)`,
       top: 0,
       bottom: 0,
       position: 'absolute',
@@ -341,10 +359,10 @@ const tableStyle: JsStyles<TableClassType> = {
   sticky: {},
   expandIcon: {
     display: 'inline-block',
-    width: '15px',
-    height: '15px',
+    width: token.tableExpandIconSize,
+    height: token.tableExpandIconSize,
     cursor: 'pointer',
-    color: '#b3b7c1',
+    color: token.tableExpandIconColor,
     '&>svg': {
       cursor: 'pointer',
     },
@@ -388,7 +406,7 @@ const tableStyle: JsStyles<TableClassType> = {
     },
   },
   pagination: {
-    margin: '12px 0',
+    margin: `${token.tablePaginationMarginY} 0`,
   },
   striped: {
     '& table tr:nth-child(even) td': {

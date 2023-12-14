@@ -5,7 +5,7 @@
  *    -- Set size to small to display compact table, large to display loose table.
  */
 import React from 'react';
-import { Radio, Table } from 'shineout';
+import { Radio, Table, TYPE } from 'shineout';
 
 interface TableRowData {
   id: number;

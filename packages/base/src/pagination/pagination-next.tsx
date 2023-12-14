@@ -1,13 +1,12 @@
 import classNames from 'classnames';
 import { PaginationActionButtonProps } from './pagination-buttons.type';
-import { PaginationClasses } from '@sheinx/shineout-style';
 import Button from './pagination-button';
 import Icons from '../icons';
 
 const PaginationButtonNext = (props: PaginationActionButtonProps) => {
   const { jssStyle, disabled, total, pageSize, current, text, size, mode, onChange } = props;
-  const styles = jssStyle?.pagination?.() as PaginationClasses;
-  const rootClasses = classNames(styles?.section);
+  const paginationStyle = jssStyle?.pagination?.();
+  const rootClasses = classNames(paginationStyle?.section);
   const max = Math.ceil(total / pageSize);
   const next = current + 1;
   const hasText = text && text.next;
@@ -23,7 +22,7 @@ const PaginationButtonNext = (props: PaginationActionButtonProps) => {
       disabled={disabled || next > max}
       onClick={onChange}
     >
-      <span className={styles.icon}>{hasText ? text.next : Icons.ArrowRight}</span>
+      <span className={paginationStyle?.icon}>{hasText ? text.next : Icons.ArrowRight}</span>
     </Button>
   );
 };

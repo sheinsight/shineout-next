@@ -127,6 +127,7 @@ const columns: TableColumnItem[] = [
 const App: React.FC = () => (
   <Table
     bordered
+    defaultTreeExpandKeys={[1]}
     keygen='id'
     format='id'
     data={data}

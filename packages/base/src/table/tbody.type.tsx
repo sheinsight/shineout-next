@@ -19,6 +19,8 @@ export interface TbodyProps
     | 'onRowClick'
     | 'rowClickAttr'
     | 'rowEvents'
+    | 'disabled'
+    | 'hover'
   > {
   columns: TableFormatColumn<any>[];
   data: any[];
