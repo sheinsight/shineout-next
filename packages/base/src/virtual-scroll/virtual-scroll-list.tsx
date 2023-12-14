@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { util } from '@sheinx/hooks';
+import React, { useState, useEffect } from 'react';
+import { util, usePersistFn } from '@sheinx/hooks';
 import Scroll from './scroll';
 import { VirtualListProps } from './virtual-scroll-list.type';
 
@@ -16,6 +16,9 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     renderItem,
     tag = 'div',
     tagClassName,
+    virtualRef,
+    wrapperRef,
+    onControlTypeChange,
   } = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,6 +29,15 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     return rows * lineHeight;
   };
 
+  const getCurrentIndex = usePersistFn(() => {
+    return currentIndex;
+  });
+
+  const handleScrollByStep = usePersistFn((step: number) => {
+    const next = currentIndex + step;
+    setCurrentIndex(next);
+  });
+
   const handleScroll = (info: {
     scrollLeft: number;
     scrollTop: number;
@@ -35,7 +47,6 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     height: number;
     width: number;
   }) => {
-    if (props.onScroll) props.onScroll(info);
     const current = Math.floor(info.scrollTop / lineHeight);
     const top = info.scrollTop - current * lineHeight;
     setTop(top);
@@ -56,8 +67,9 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         style={{ height, ...style }}
         scrollWidth={0}
         scrollHeight={scrollHeight}
+        wrapperRef={wrapperRef}
         onScroll={handleScroll}
-        scrollerStyle={props.scrollerStyle}
+        onControlTypeChange={onControlTypeChange}
       >
         <Tag className={tagClassName} style={{ transform: `translate3d(0, -${top}px, 0)` }}>
           {items.map((d: DataItem, i: number) => {
@@ -70,6 +82,13 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       </Scroll>
     );
   };
+
+  useEffect(() => {
+    if (virtualRef?.current) {
+      virtualRef.current.scrollByStep = handleScrollByStep;
+      virtualRef.current.getCurrentIndex = getCurrentIndex;
+    }
+  }, []);
 
   return renderList();
 };
