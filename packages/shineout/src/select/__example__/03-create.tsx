@@ -20,14 +20,21 @@ export default () => {
   return (
     <div>
       <Select
+        // multiple
         width={300}
         data={data}
-        onCreate
+        onCreate={(d) => {
+          return {
+            id: `customId-${d}`,
+            name: d,
+          };
+        }}
+        onChange={(v) => console.log(v)}
         height={250}
         keygen='id'
         placeholder='Select Color'
         renderItem={(d) => d.name}
-        // onFilter={(text) => (d) => d.indexOf(text) > -1}
+        onFilter={(text) => (d) => d.name.indexOf(text) > -1}
       />
     </div>
   );

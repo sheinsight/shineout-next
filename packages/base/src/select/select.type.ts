@@ -24,6 +24,7 @@ export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataIte
 export type OptionListRefType = {
   hoverMove: (index: number) => void;
   hoverHover: (index: number) => void;
+  getHoverIndex: () => number;
 };
 
 export interface BaseListProps<DataItem, Value>
@@ -178,6 +179,7 @@ export interface SelectProps<DataItem, Value>
   compressedBound?: number;
   compressedClassName?: string;
   hideCreateOption?: boolean;
+  filterSingleSelect?: boolean;
   resultClassName?: ((value: DataItem) => string) | string;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   renderResult?: (data: DataItem, index?: number) => React.ReactNode;

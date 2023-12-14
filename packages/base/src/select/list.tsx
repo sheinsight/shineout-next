@@ -38,8 +38,13 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   const virtualRef = useRef<VirtualListType>({
     scrollByStep: undefined,
     getCurrentIndex: undefined,
+    getHoverIndex: undefined,
   });
   // const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const getHoverIndex = usePersistFn(() => {
+    return hoverIndex;
+  });
 
   const getLineHeight = () => {
     if (lineHeightProp) return lineHeightProp;
@@ -179,6 +184,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
       optionListRef.current = {
         hoverMove: handleMove,
         hoverHover: handleHoverByStep,
+        getHoverIndex: getHoverIndex,
       };
     }
   }, []);

@@ -22,6 +22,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     focus,
     placeholder,
     inputText,
+    // filterText,
     compressed,
     compressedBound,
     compressedClassName,
@@ -31,6 +32,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     // allowOnFilter,
     onRef,
     onFilter,
+    onInputBlur,
     onResetFilter,
   } = props;
 
@@ -72,7 +74,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
           onRef={onRef}
           inputText={inputText}
           onChange={onFilter}
-          onFilter={onFilter}
+          onInputBlur={onInputBlur}
           onResetFilter={onResetFilter}
         ></Input>
       </React.Fragment>

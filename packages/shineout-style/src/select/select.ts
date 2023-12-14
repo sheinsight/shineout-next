@@ -105,6 +105,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     display: 'inline-block',
     position: 'relative',
     width: '100%',
+    outline: 'none',
     ...wrapper,
     '&$wrapperSmall': {
       '& $tag': {

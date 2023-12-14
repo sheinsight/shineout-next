@@ -14,6 +14,7 @@ const ResultInput = (props: ResultInputProps) => {
     onRef,
     onChange,
     onBindInput,
+    onInputBlur,
     onResetFilter,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -22,6 +23,10 @@ const ResultInput = (props: ResultInputProps) => {
 
   const bindInputRef = (ref: HTMLInputElement) => {
     inputRef.current = ref;
+  };
+
+  const handleBlur = () => {
+    onInputBlur?.(inputText);
   };
 
   // 设置 input 宽度
@@ -66,6 +71,7 @@ const ResultInput = (props: ResultInputProps) => {
         style={{ width: multiple ? 12 : '100%' }}
         value={value}
         onChange={onChange}
+        onBlur={handleBlur}
       ></Input>
       <span className={styles.inputMirror} ref={mirrorRef}>
         {inputText || value}
