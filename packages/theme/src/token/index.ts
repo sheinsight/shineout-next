@@ -1262,7 +1262,6 @@ const Tokens = {
     describe: '尺寸基数，以乘积形式生成所有尺寸，比如：Size * 4px = 8px',
   },
 };
-
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const tokenToVars = <T extends {}>(
   componentToken: T,
@@ -1277,7 +1276,7 @@ export const tokenToVars = <T extends {}>(
   Object.keys(componentToken).forEach((key) => {
     const Key = key as keyof T & string;
     const tokenKey = componentToken[Key] as keyof typeof TOKEN & string;
-    token[Key] = cssvar(tokenKey, TOKEN[tokenKey]?.value || tokenKey, SIZE);
+    token[Key] = cssvar(tokenKey, TOKEN[tokenKey]?.value || tokenKey, key, SIZE);
   });
 
   return token as T;
