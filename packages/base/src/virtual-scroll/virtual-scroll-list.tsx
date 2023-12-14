@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { util, usePersistFn } from '@sheinx/hooks';
 import Scroll from './scroll';
 import { VirtualListProps } from './virtual-scroll-list.type';
@@ -17,12 +17,13 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     tag = 'div',
     tagClassName,
     virtualRef,
-    wrapperRef,
+    // wrapperRef,
     onControlTypeChange,
   } = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [top, setTop] = useState(0);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const getScrollHeight = () => {
     const rows = Math.ceil(data.length / colNum);
@@ -33,9 +34,13 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     return currentIndex;
   });
 
-  const handleScrollByStep = usePersistFn((step: number) => {
+  const getTop = usePersistFn(() => {
+    return top;
+  });
+
+  const handleScrollByStep = usePersistFn((step: number, top?: number) => {
     const next = currentIndex + step;
-    setCurrentIndex(next);
+    wrapperRef.current?.scrollTo({ top: next * lineHeight + (top || 0) });
   });
 
   const handleScroll = (info: {
@@ -87,6 +92,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     if (virtualRef?.current) {
       virtualRef.current.scrollByStep = handleScrollByStep;
       virtualRef.current.getCurrentIndex = getCurrentIndex;
+      virtualRef.current.getTop = getTop;
     }
   }, []);
 

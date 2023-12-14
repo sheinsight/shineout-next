@@ -8,7 +8,7 @@ import React from 'react';
 import { Select } from 'shineout';
 
 const data: { id: string; name: string }[] = [];
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 15; i++) {
   data.push({
     id: `id-${i}`,
     name: `标签 ${i}`,

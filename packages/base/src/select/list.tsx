@@ -39,7 +39,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     scrollByStep: undefined,
     getCurrentIndex: undefined,
   });
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  // const wrapperRef = useRef<HTMLDivElement>(null);
 
   const getLineHeight = () => {
     if (lineHeightProp) return lineHeightProp;
@@ -82,17 +82,39 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
 
     setHoverIndex(nextHoverIndex);
     const currentIndex = virtualRef.current.getCurrentIndex?.() as number;
+    // 列表中，能容纳完整高度项的个数
     const maxViewCount = Math.floor(listHeight / lineHeight);
+    // 列表中，未完全展示的那一项被遮挡部分的高度
+    const overViewHeight = Math.ceil(listHeight / lineHeight) * lineHeight - listHeight;
+
+    const top = virtualRef.current.getTop?.() as number;
+
+    // 触底，回到顶部
+    if (nextHoverIndex === 0) {
+      virtualRef.current.scrollByStep?.(-currentIndex, 0);
+      return;
+    }
+
+    if (nextHoverIndex === max) {
+      virtualRef.current.scrollByStep?.(nextHoverIndex, overViewHeight);
+      return;
+    }
 
     // 向上滚动一格
-    if (nextHoverIndex < currentIndex) {
-      virtualRef.current.scrollByStep?.(-1);
+    if (nextHoverIndex <= currentIndex) {
+      virtualRef.current.scrollByStep?.(
+        nextHoverIndex === currentIndex ? 0 : -1,
+        top !== 0 ? 0 : undefined,
+      );
     }
 
     // 向下滚动一格
     if (maxViewCount && listHeight % lineHeight !== 0 && listHeight % lineHeight !== listHeight) {
-      if (nextHoverIndex > currentIndex + maxViewCount) {
-        virtualRef.current.scrollByStep?.(1);
+      if (nextHoverIndex >= currentIndex + maxViewCount) {
+        virtualRef.current.scrollByStep?.(
+          nextHoverIndex === currentIndex + maxViewCount ? 0 : 1,
+          overViewHeight,
+        );
       }
     }
   });
@@ -138,7 +160,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     return (
       <VirtualScrollList
         virtualRef={virtualRef}
-        wrapperRef={wrapperRef}
+        // wrapperRef={wrapperRef}
         data={data}
         keygen={keygen}
         tag={'ul'}
