@@ -17,6 +17,9 @@ for (let i = 0; i < 15; i++) {
 
 export default () => {
   // const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
+  const handleFilterWidthCreate = (data, createdData) => {
+    return data.name.indexOf(createdData.name) > -1;
+  };
   return (
     <div>
       <Select
@@ -35,6 +38,7 @@ export default () => {
         placeholder='Select Color'
         renderItem={(d) => d.name}
         onFilter={(text) => (d) => d.name.indexOf(text) > -1}
+        onFilterWidthCreate={handleFilterWidthCreate}
       />
     </div>
   );

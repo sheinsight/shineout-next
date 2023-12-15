@@ -57,6 +57,7 @@ export interface BaseListProps<DataItem, Value>
   controlType?: 'mouse' | 'keyboard';
   optionListRef: React.MutableRefObject<OptionListRefType>;
   onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
+  onOptionClick: (data: DataItem, index: number) => void;
 }
 
 export interface SelectProps<DataItem, Value>
@@ -204,4 +205,10 @@ export interface SelectProps<DataItem, Value>
   onFilter?: (text: string, from?: string) => ((data: DataItem) => boolean) | void | undefined;
   onCreate?: boolean | ((input: Value) => Value);
   onEnterExpand?: (e: React.KeyboardEvent<HTMLDivElement>) => boolean;
+  onCollapse?: (collapse: boolean) => void;
+
+  /**
+   * 新增 api ，开启 onFilter 和 onCreate 时，用于比对是否已经存在相同的数据，默认用输入的值和 keygen 值比对
+   */
+  onFilterWidthCreate?: (data: DataItem, createdData: DataItem, key: string | number) => boolean;
 }

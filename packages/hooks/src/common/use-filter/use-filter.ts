@@ -1,19 +1,26 @@
 import { useState } from 'react';
-import { isFunc } from '../../utils';
+import { isFunc, getKey } from '../../utils';
 import { UseFilterProps } from './use-filter.type';
 
 const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataItem, Value>) => {
-  const { data, groupKey, hideCreateOption, onFilter, onCreate } = props;
+  const { data, groupKey, keygen, hideCreateOption, onFilter, onCreate, onFilterWidthCreate } =
+    props;
 
   const [filterData, setFilterData] = useState<DataItem[]>(data);
   const [filterText, setFilterText] = useState<string | undefined>('');
   const [inputText, setInputText] = useState('');
   const [createdData, setCreatedData] = useState<string>();
 
+  const filterFn =
+    onFilterWidthCreate ||
+    ((item: DataItem, createdData: DataItem, key: string | number) => getKey(keygen, item) === key);
+
   const getData = () => {
     const newData = filterData;
     if (createdData && !hideCreateOption) {
-      return [createdData, ...newData] as DataItem[];
+      const newKey = getKey(keygen, createdData as DataItem);
+      const sameItem = newData.find((item) => filterFn(item, createdData as DataItem, newKey));
+      if (!sameItem) return [createdData, ...newData] as DataItem[];
     }
 
     return newData;

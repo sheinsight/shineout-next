@@ -65,11 +65,16 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     const end = (currentIndex + rowsInView) * colNum;
     let items = data.slice(start, end);
     const Tag = tag;
+    const shouldScroll = items.length * lineHeight > (height as number);
+    const nextStyle = {
+      ...style,
+    };
+    if (shouldScroll) nextStyle.height = height;
 
     return (
       <Scroll
         className={className}
-        style={{ height, ...style }}
+        style={nextStyle}
         scrollWidth={0}
         scrollHeight={scrollHeight}
         wrapperRef={wrapperRef}

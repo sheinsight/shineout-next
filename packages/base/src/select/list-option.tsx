@@ -4,7 +4,18 @@ import { ListOptionProps } from './list-option.type';
 import Icons from '../icons';
 
 const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) => {
-  const { jssStyle, datum, index, data, multiple, isHover, closePop, renderItem, onHover } = props;
+  const {
+    jssStyle,
+    datum,
+    index,
+    data,
+    multiple,
+    isHover,
+    closePop,
+    renderItem,
+    onHover,
+    onOptionClick,
+  } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const isChecked = datum.check(data);
   const isDisabled = datum.disabledCheck(data);
@@ -31,6 +42,7 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     if (!multiple) {
       closePop();
     }
+    onOptionClick(data, index);
   };
 
   const renderCheckedIcon = () => {

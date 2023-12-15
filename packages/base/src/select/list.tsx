@@ -27,11 +27,12 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     renderItem: renderItemProp = (d) => d as React.ReactNode,
     closePop,
     onControlTypeChange,
+    onOptionClick,
   } = props;
 
   const style = {
     width: optionWidth,
-    height,
+    // height,
   };
   const styles = jssStyle?.select?.() as SelectClasses;
   const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
@@ -143,8 +144,9 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
           data={item}
           isHover={hoverIndex === index}
           multiple={multiple}
-          onHover={handleHover}
           renderItem={renderItemProp}
+          onHover={handleHover}
+          onOptionClick={onOptionClick}
         ></ListOption>
       </React.Fragment>
     );

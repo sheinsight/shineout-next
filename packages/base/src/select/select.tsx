@@ -80,7 +80,9 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     onFilter: onFilterProp,
     onBlur,
     onFocus,
+    onCollapse: onCollapseProp,
     onEnterExpand,
+    onFilterWidthCreate,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootStyle: React.CSSProperties = {
@@ -91,6 +93,8 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
   const [focused, setFocused] = useState(false);
 
   const isKeydown = useRef(false);
+  const isPreventBlur = useRef(false);
+  const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
   const selectRef = useRef<HTMLDivElement>();
   const optionListRef = useRef<OptionListRefType>();
@@ -106,8 +110,10 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     onClearCreatedData,
   } = useFilter({
     data,
+    keygen,
     onCreate: onCreateProp,
     onFilter: onFilterProp,
+    onFilterWidthCreate,
   });
 
   const { datum, value } = useSelect<DataItem, Value>({
@@ -129,7 +135,19 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     groupBy,
   });
 
-  const onCollapse = usePersistFn(() => {});
+  const onCollapse = usePersistFn((collapse: boolean) => {
+    onCollapseProp?.(collapse);
+
+    if (isPreventBlur.current) {
+      isPreventBlur.current = false;
+      return;
+    }
+
+    if (blurEvent.current && !collapse) {
+      blurEvent.current();
+      blurEvent.current = null;
+    }
+  });
 
   const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
     open: openProp,
@@ -220,6 +238,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
   };
 
   // input blur 时的处理方法
+  // 注意，在点击 option 的时候也会触发 blur 事件，此时要规避点击 option 后的 blur 事件
   const handleInputBlur = (text: string) => {
     if (onFilterProp && text && filterSingleSelect && data.length === 1) {
       handleChange(data[0]);
@@ -231,7 +250,16 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       isKeydown.current = false;
       return;
     }
-    handleChange(createdData as DataItem);
+    // 防止点击 option 后触发 blur 事件，先把要做的事情存起来，后面再看要不要执行
+    blurEvent.current = () => {
+      handleChange(createdData as DataItem);
+      onClearCreatedData();
+    };
+  };
+
+  const handleOptionClick = () => {
+    isPreventBlur.current = true;
+    onClearCreatedData();
   };
 
   const handleDelete = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -383,6 +411,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       onControlTypeChange: setControlType,
       closePop,
       optionListRef,
+      onOptionClick: handleOptionClick,
     };
     // 自定义列
     if (('columns' in props && typeof columns === 'number' && columns! >= 1) || columns === -1) {
