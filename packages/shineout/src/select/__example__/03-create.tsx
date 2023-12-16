@@ -34,6 +34,9 @@ export default () => {
         }}
         onChange={(v) => console.log(v)}
         height={250}
+        prediction={(v, d) => {
+          return d.id === v.id;
+        }}
         keygen='id'
         placeholder='Select Color'
         renderItem={(d) => d.name}

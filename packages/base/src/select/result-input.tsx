@@ -25,7 +25,8 @@ const ResultInput = (props: ResultInputProps) => {
     inputRef.current = ref;
   };
 
-  const handleBlur = () => {
+  const handleBlur = (e: React.FocusEvent) => {
+    if (e.target.value === inputText) return;
     onInputBlur?.(inputText);
   };
 

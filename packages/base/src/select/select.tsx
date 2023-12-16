@@ -199,7 +199,8 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       return;
     }
 
-    datum.add(item);
+    const checked = datum.check(item);
+    if (!checked) datum.add(item);
 
     // 关闭后聚焦外层容器，以便继续键盘操作
     if (selectRef.current) {
