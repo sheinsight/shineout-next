@@ -6,31 +6,6 @@ const { markdownLoader, guideLoader } = require('./utils/markdown-loader');
 const docDirName = '__doc__';
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const baseDir = path.join(__dirname, '../packages', 'base', 'src');
-// const baseUrl = '';
-
-// const capitalizeFirstLetter = (str) =>
-//   str.length === 0 ? '' : str[0].toUpperCase() + str.slice(1);
-
-// format content for suitable gpt
-// const formatApi = (contentProps) => {
-//   if (!contentProps) return;
-//   // TODO: format content
-//   return Object.entries(contentProps)
-//     .filter(([_, value]) => Array.isArray(value) && value.length > 0)
-//     .flatMap(([key, value]) =>
-//       value.flatMap(({ title, properties }) =>
-//         properties.map(({ name, tag }) => {
-//           const capitalizeKey = capitalizeFirstLetter(key);
-//           return {
-//             title: `Shineout3-${capitalizeKey}组件-${title}-${name}`,
-//             content: tag.cn,
-//             url: `${baseUrl}/${capitalizeKey}?tab=api`,
-//             category: capitalizeKey,
-//           };
-//         }),
-//       ),
-//     );
-// };
 
 const matchFn = (dirPath) => {
   const pattern = new RegExp(`packages/(.*?)/`, 'i');
@@ -38,11 +13,6 @@ const matchFn = (dirPath) => {
   return match[1] ?? null;
 };
 
-/**
- * Extract api from .type.ts files
- * @param {*} dirPath
- * @returns
- */
 const compileApi = (dirPath) => {
   const chunkModuleName = matchFn(dirPath);
   if (!chunkModuleName) return;
@@ -68,16 +38,10 @@ const compileApi = (dirPath) => {
       {},
     );
 };
-// console.log(compileApi(baseDir))
 
-/**
- * Extract content from .md files
- * @param {*} dirPath
- * @returns
- */
 const compileContent = (dirPath) => {
   let fromApiMap = compileApi(baseDir);
-  if (!matchFn(dirPath)) return;
+  if (!matchFn(dirPath) || !fromApiMap) return;
 
   const guidePathFn = (dirPath, dir, docDirName, type) => {
     const guidePath = path.join(dirPath, dir, docDirName, `guide.${type}.md`);
@@ -87,7 +51,6 @@ const compileContent = (dirPath) => {
   fs.readdirSync(dirPath)
     .filter((dir) => fs.existsSync(path.join(dirPath, dir, docDirName, 'index.md')))
     .forEach((dir) => {
-      console.log(dir);
       const mdPath = path.join(dirPath, dir, docDirName, 'index.md');
       const md = fs.readFileSync(mdPath, 'utf8');
       const doc = markdownLoader(md, dir, dirPath);
@@ -109,24 +72,73 @@ const compileContent = (dirPath) => {
     });
   return fromApiMap;
 };
-console.log(compileContent(shineoutDir));
 
-// const compileComponent = (dirPath) => {
-//   const chunkModuleName = matchFn(dirPath);
-//   if (!chunkModuleName) return;
+const getExampleContent = (pathUrl, fileName) =>
+  fs.readFileSync(path.resolve(shineoutDir, `${pathUrl}/__example__/${fileName}`)).toString();
 
-// }
+const format = () => {
+  const conpomentMap = compileContent(shineoutDir);
+  if (!conpomentMap) return;
 
-// TODO: dont have api and data structure for send to gpt
-// const sendToGpt = () => {
-//   const apiCompilation = compileApi(baseDir);
-//   const contentCompilation = compileContent(shineoutDir);
-//   if (!apiCompilation || !contentCompilation) return;
-//   const content = [...formatApi(apiCompilation), ...formatContent(contentCompilation)];
-//   // post request to gpt
-//   return content;
-// };
+  const result = [];
 
-// module.exports = {
-//   sendToGpt,
-// };
+  Object.entries(conpomentMap).forEach(([key, value]) => {
+    const api = value.api;
+    const { describe = {}, examples = [], guides = {} } = value.content || {};
+    const apiResult = [];
+    const examplesResult = [];
+    if (api && api.length > 0) {
+      api.forEach((item) => {
+        const { title, properties } = item;
+        const apiChild = [];
+        properties.forEach(({ name, tag }) => {
+          apiChild.push(
+            `
+#### ${name}
+${tag.cn}
+`,
+          );
+        });
+        apiResult.push(
+          `
+### ${title}
+${apiChild.join('\n')}
+`,
+        );
+      });
+    }
+    examples.forEach(({ fileName, propName, propDescribe }) => {
+      const exampleContent = '```tsx\n' + getExampleContent(key, fileName) + '\n```';
+      examplesResult.push(
+        `
+### ${propName.cn}
+${propDescribe.cn.join('/')}
+${exampleContent}
+`,
+      );
+    });
+    result.push(
+      `
+# ${key}
+${describe?.cn}
+## API
+${apiResult.join('\n')}
+## Example
+${examplesResult.join('\n')}
+## Guide
+${guides?.cn}
+`,
+    );
+  });
+  return result.join('\n');
+};
+
+const init = () => {
+  const formatResult = format();
+  fs.writeFile('./index.md', formatResult, (err) => {
+    if (err) throw err;
+    console.log('文件已成功写入');
+  });
+};
+
+init();
