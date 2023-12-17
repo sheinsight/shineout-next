@@ -38,4 +38,5 @@ export interface ResultProps<DataItem, Value>
   onFilter?: (text: string) => void;
   onInputBlur: (text?: string) => void;
   onResetFilter: () => void;
+  onClearCreatedData: () => void;
 }

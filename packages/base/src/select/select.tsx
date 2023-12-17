@@ -251,6 +251,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       isKeydown.current = false;
       return;
     }
+    onClearCreatedData();
     // 防止点击 option 后触发 blur 事件，先把要做的事情存起来，后面再看要不要执行
     blurEvent.current = () => {
       handleChange(createdData as DataItem);
@@ -367,6 +368,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
           onCreate={onCreate}
           onInputBlur={handleInputBlur}
           onResetFilter={onResetFilter}
+          onClearCreatedData={onClearCreatedData}
         ></Result>
         {clearable && renderClearable()}
       </div>

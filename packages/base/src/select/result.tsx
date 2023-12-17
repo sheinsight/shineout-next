@@ -34,6 +34,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     onFilter,
     onInputBlur,
     onResetFilter,
+    onClearCreatedData,
   } = props;
 
   const [more, setMore] = useState(-1);
@@ -76,6 +77,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
           onChange={onFilter}
           onInputBlur={onInputBlur}
           onResetFilter={onResetFilter}
+          onClearCreatedData={onClearCreatedData}
         ></Input>
       </React.Fragment>
     );

@@ -22,7 +22,6 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
       const sameItem = newData.find((item) => filterFn(item, createdData as DataItem, newKey));
       if (!sameItem) return [createdData, ...newData] as DataItem[];
     }
-
     return newData;
   };
 
@@ -39,7 +38,7 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
     setInputText(text);
     if (!text) {
       setFilterData(data);
-      setCreatedData(undefined);
+      handleClearCreatedData();
       return;
     }
 
