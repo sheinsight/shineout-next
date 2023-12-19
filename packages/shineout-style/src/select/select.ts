@@ -264,7 +264,9 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   controlKeyboard: {
     '& $optionHover': {
-      backgroundColor: token.selectOptionHoverBackgroundColor,
+      '& $optionInner': {
+        backgroundColor: token.selectOptionHoverBackgroundColor,
+      },
     },
   },
   placeholder: {

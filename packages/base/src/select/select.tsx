@@ -89,7 +89,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     ...style,
     width,
   };
-  const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('mouse');
+  const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('keyboard');
   const [focused, setFocused] = useState(false);
 
   const isKeydown = useRef(false);
