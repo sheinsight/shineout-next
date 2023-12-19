@@ -30,6 +30,7 @@ export interface ResultProps<DataItem, Value>
   > {
   datum: DatumType<DataItem, Value>;
   focus: boolean;
+  resultRef: React.MutableRefObject<{ resetInput: () => void }>;
   renderResult: (data: DataItem, index?: number) => React.ReactNode;
   inputText?: string;
   filterText?: string;

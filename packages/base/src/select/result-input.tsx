@@ -16,7 +16,6 @@ const ResultInput = (props: ResultInputProps) => {
     onBindInput,
     onInputBlur,
     onResetFilter,
-    onClearCreatedData,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const mirrorRef = useRef<HTMLSpanElement>(null);
@@ -25,9 +24,9 @@ const ResultInput = (props: ResultInputProps) => {
   const bindInputRef = (ref: HTMLInputElement) => {
     inputRef.current = ref;
   };
+
   const handleBlur = (e: React.FocusEvent) => {
-    if (e.target.value === value) {
-      onClearCreatedData();
+    if ((e.target as HTMLInputElement).value === inputText) {
       return;
     }
     onInputBlur?.(inputText);
@@ -46,7 +45,7 @@ const ResultInput = (props: ResultInputProps) => {
     if (!inputRef.current || !multiple) return;
     inputRef.current.focus();
     inputRef.current.select();
-  }, [value, values]);
+  }, [values]);
 
   // 聚焦时重置 filter
   useEffect(() => {
@@ -71,7 +70,7 @@ const ResultInput = (props: ResultInputProps) => {
       <Input
         onRef={bindInputRef}
         style={{ width: multiple ? 12 : '100%' }}
-        value={value}
+        value={inputText}
         onChange={onChange}
         onBlur={handleBlur}
       ></Input>

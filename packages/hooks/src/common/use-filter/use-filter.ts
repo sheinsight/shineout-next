@@ -27,6 +27,7 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
 
   const handleClearCreatedData = () => {
     setCreatedData(undefined);
+    setInputText('');
   };
 
   const handleCreate = (text: Value) => {
@@ -36,9 +37,12 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
 
   const handleFilter = (text: string) => {
     setInputText(text);
+
     if (!text) {
       setFilterData(data);
       handleClearCreatedData();
+      // 没有 text 时触发一次 onFilter 以便外部重置数据
+      if (onFilter) onFilter(text);
       return;
     }
 
@@ -54,12 +58,14 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
     const next = onFilter(text);
 
     if (!isFunc(next)) return;
+
     const nextData = data.filter((item) => {
       if (!groupKey) return next(item);
       // 剔除分组项
       if (item[groupKey as keyof typeof item]) return item;
       return next(item);
     });
+
     setFilterData(nextData);
   };
 
@@ -72,6 +78,7 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
     filterText,
     filterData: getData(),
     createdData,
+    setInputText,
     onCreate: onCreate ? handleCreate : undefined,
     onFilter: handleFilter,
     onResetFilter: handleResetData,

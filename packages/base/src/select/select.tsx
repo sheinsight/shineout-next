@@ -98,12 +98,16 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
   const inputRef = useRef<HTMLInputElement>();
   const selectRef = useRef<HTMLDivElement>();
   const optionListRef = useRef<OptionListRefType>();
+  const resultRef = useRef<{ resetInput?: () => void }>({
+    resetInput: undefined,
+  });
 
   const {
     filterText,
     inputText,
     filterData,
     createdData,
+    setInputText,
     onFilter,
     onResetFilter,
     onCreate,
@@ -196,13 +200,14 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
         if (checked) datum.remove(item);
         else datum.add(item);
       }
+      resultRef.current?.resetInput?.();
       return;
     }
 
     const checked = datum.check(item);
     if (!checked) datum.add(item);
 
-    // 关闭后聚焦外层容器，以便继续键盘操作
+    // 单选模式下，关闭列表后需要聚焦外层容器，以便继续键盘操作
     if (selectRef.current) {
       selectRef.current.focus();
     }
@@ -233,8 +238,10 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       isKeydown.current = true;
       handleChange(currentDataItem);
       inputRef.current?.blur();
-      if (!multiple) closePop();
-      onClearCreatedData();
+      if (!multiple) {
+        closePop();
+        onClearCreatedData();
+      }
     }
   };
 
@@ -251,16 +258,21 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       isKeydown.current = false;
       return;
     }
-    onClearCreatedData();
+    // onClearCreatedData();
+    // if (resultRef.current) resultRef.current.resetInput();
     // 防止点击 option 后触发 blur 事件，先把要做的事情存起来，后面再看要不要执行
     blurEvent.current = () => {
-      handleChange(createdData as DataItem);
+      if (createdData) {
+        handleChange(createdData as DataItem);
+      }
       onClearCreatedData();
     };
   };
 
   const handleOptionClick = () => {
     isPreventBlur.current = true;
+    if (multiple) return;
+    // 单选结束后需要清除创建项
     onClearCreatedData();
   };
 
@@ -341,6 +353,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     const result = (
       <div className={classNames(styles?.result)}>
         <Result
+          resultRef={resultRef}
           jssStyle={jssStyle}
           size={size}
           datum={datum}
@@ -363,6 +376,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
           focusSelected={focusSelected}
           inputText={inputText}
           filterText={filterText}
+          setInputText={setInputText}
           onFilter={onFilter}
           onRef={inputRef}
           onCreate={onCreate}

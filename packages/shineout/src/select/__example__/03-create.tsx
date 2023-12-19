@@ -23,7 +23,7 @@ export default () => {
   return (
     <div>
       <Select
-        // multiple
+        multiple
         width={300}
         data={data}
         onCreate={(d) => {
@@ -42,6 +42,42 @@ export default () => {
         renderItem={(d) => d.name}
         onFilter={(text) => (d) => d.name.indexOf(text) > -1}
         onFilterWidthCreate={handleFilterWidthCreate}
+      />
+      <br />
+
+      <Select
+        width={300}
+        data={data}
+        onCreate={(d) => {
+          return {
+            id: `customId-${d}`,
+            name: d,
+          };
+        }}
+        onChange={(v) => console.log(v)}
+        height={250}
+        prediction={(v, d) => {
+          return d.id === v.id;
+        }}
+        keygen='id'
+        placeholder='Select Color'
+        renderItem={(d) => d.name}
+        onFilter={(text) => (d) => d.name.indexOf(text) > -1}
+        onFilterWidthCreate={handleFilterWidthCreate}
+      />
+      <br />
+
+      <Select
+        width={300}
+        data={data}
+        onChange={(v) => console.log(v)}
+        height={250}
+        prediction={(v, d) => {
+          return d.id === v.id;
+        }}
+        keygen='id'
+        placeholder='Select Color'
+        renderItem={(d) => d.name}
       />
     </div>
   );
