@@ -23,12 +23,10 @@ import ColumnsList from './list-columns';
 
 /**
  *
- * 创建选项
  * 树选择
  * 加载中
  * 自定义下拉列表
  * 限制字符长度
- * 可清除
  *
  */
 
@@ -79,7 +77,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     onCreate: onCreateProp,
     onFilter: onFilterProp,
     onBlur,
-    onFocus,
+    // onFocus,
     onCollapse: onCollapseProp,
     onEnterExpand,
     onFilterWidthCreate,
@@ -91,6 +89,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
   };
   const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('keyboard');
   const [focused, setFocused] = useState(false);
+  const [enter, setEnter] = useState(false);
 
   const isKeydown = useRef(false);
   const isPreventBlur = useRef(false);
@@ -115,6 +114,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
   } = useFilter({
     data,
     keygen,
+    hideCreateOption,
     onCreate: onCreateProp,
     onFilter: onFilterProp,
     onFilterWidthCreate,
@@ -180,10 +180,10 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     },
   );
 
-  const handleFocus = usePersistFn((e: React.FocusEvent) => {
-    setFocused(true);
-    onFocus?.(e);
-  });
+  // const handleFocus = usePersistFn((e: React.FocusEvent) => {
+  //   setFocused(true);
+  //   onFocus?.(e);
+  // });
 
   const handleBlur = usePersistFn((e: React.FocusEvent) => {
     setFocused(false);
@@ -208,6 +208,13 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     const checked = datum.check(item);
     if (!checked) datum.add(item);
 
+    inputRef.current?.blur();
+
+    if (!multiple) {
+      closePop();
+      onClearCreatedData();
+    }
+
     // 单选模式下，关闭列表后需要聚焦外层容器，以便继续键盘操作
     if (selectRef.current) {
       selectRef.current.focus();
@@ -229,8 +236,9 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
   // 回车时的处理方法
   const handleEnter = () => {
     const hoverIndex = optionListRef.current?.getHoverIndex() || 0;
-    if (onCreate && hideCreateOption && hoverIndex === -1) {
+    if (onCreate && hideCreateOption && createdData) {
       handleHideOption();
+
       return;
     }
 
@@ -238,11 +246,6 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     if (currentDataItem && !currentDataItem[groupKey as keyof typeof currentDataItem]) {
       isKeydown.current = true;
       handleChange(currentDataItem);
-      inputRef.current?.blur();
-      if (!multiple) {
-        closePop();
-        onClearCreatedData();
-      }
     }
   };
 
@@ -275,7 +278,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       optionListRef.current?.hoverMove(0, true);
     }
     if (hideCreate) {
-      optionListRef.current?.hoverMove(filterData.length - 1, true);
+      // optionListRef.current?.hoverMove(filterData.length - 1, true);
     }
 
     onFilter(text);
@@ -301,6 +304,14 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     if (last) {
       datum.remove(last);
     }
+  };
+
+  const handleMouseEnter = () => {
+    setEnter(true);
+  };
+
+  const handleMouseLeave = () => {
+    setEnter(false);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -350,6 +361,15 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
 
   const handleKeyUp = () => {};
 
+  const handleClear = (e) => {
+    e.stopPropagation();
+    datum.removeAll();
+    setInputText('');
+    resultRef.current?.resetInput?.();
+
+    if (open) closePop();
+  };
+
   const getRenderResult = (data: DataItem, index?: number) => {
     if (!renderResultProp) return renderItem(data, index);
     return typeof renderResultProp === 'function'
@@ -366,7 +386,16 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
   });
 
   const renderClearable = () => {
-    return <span className={styles.clearIcon}>{Icons.PcCloseCircleFill}</span>;
+    return (
+      <span className={styles.clearIcon} onClick={handleClear}>
+        {Icons.PcCloseCircleFill}
+      </span>
+    );
+  };
+
+  const renderIcon = () => {
+    if ((clearable && value && open) || (clearable && value && enter)) return renderClearable();
+    return null;
   };
 
   const renderResult = () => {
@@ -404,7 +433,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
           onResetFilter={onResetFilter}
           onClearCreatedData={onClearCreatedData}
         ></Result>
-        {clearable && renderClearable()}
+        {renderIcon()}
       </div>
     );
 
@@ -492,9 +521,11 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       data-soui-type={'input'}
       className={rootClass}
       style={rootStyle}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
-      onFocus={handleFocus}
+      // onFocus={handleFocus}
       onBlur={handleBlur}
     >
       {renderResult()}

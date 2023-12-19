@@ -128,6 +128,9 @@ const selectStyle: JsStyles<SelectClassType> = {
         // padding: `${token.selectSmallOptionInnerPaddingY} ${token.selectSmallOptionInnerPaddingX}`,
         fontSize: token.selectSmallFontSize,
       },
+      '& $clearIcon': {
+        right: token.selectSmallPaddingX,
+      },
     },
     '&$wrapperLarge': {
       '& $placeholder,$ellipsis,$space,input': {
@@ -140,6 +143,9 @@ const selectStyle: JsStyles<SelectClassType> = {
         paddingBottom: token.selectLargeOptionInnerPaddingY,
         paddingLeft: token.selectLargeOptionInnerPaddingX,
         fontSize: token.selectLargeFontSize,
+      },
+      '& $clearIcon': {
+        right: token.selectLargePaddingX,
       },
     },
   },
@@ -168,6 +174,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     minWidth: 0,
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
+    paddingRight: `calc(${token.selectSmallFontSize} + ${token.selectClearPadding})`,
   },
   resultTextWrapper: {
     display: 'flex',
@@ -284,9 +291,10 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   clearable: {},
   clearIcon: {
+    position: 'absolute',
+    right: token.selectPaddingX,
     cursor: 'pointer',
     width: token.selectFontSize,
-    paddingLeft: token.selectClearPadding,
     lineHeight: 0,
     color: token.selectClearColor,
     verticalAlign: 'middle',
