@@ -18,6 +18,7 @@ interface scrollProps {
   className?: string;
   style?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
+  onMouseMove?: () => void;
 }
 
 const Scroll = (props: scrollProps) => {
@@ -70,7 +71,7 @@ const Scroll = (props: scrollProps) => {
   });
 
   return (
-    <div className={props.className} style={props.style}>
+    <div className={props.className} style={props.style} onMouseMove={props.onMouseMove}>
       <div
         {...util.getDataAttribute({ type: 'scroll' })}
         style={scrollerStyle}

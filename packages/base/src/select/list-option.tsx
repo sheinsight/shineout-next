@@ -19,7 +19,6 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   const styles = jssStyle?.select?.() as SelectClasses;
   const isChecked = datum.check(data);
   const isDisabled = datum.disabledCheck(data);
-
   const rootClass = classNames(styles?.option, `option-${index}`, {
     [styles?.optionHover]: isHover,
   });

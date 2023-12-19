@@ -43,6 +43,10 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     wrapperRef.current?.scrollTo({ top: next * lineHeight + (top || 0) });
   });
 
+  const handleMouseMove = () => {
+    onControlTypeChange?.('mouse');
+  };
+
   const handleScroll = (info: {
     scrollLeft: number;
     scrollTop: number;
@@ -79,7 +83,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
         scrollHeight={scrollHeight}
         wrapperRef={wrapperRef}
         onScroll={handleScroll}
-        onControlTypeChange={onControlTypeChange}
+        onMouseMove={handleMouseMove}
       >
         <Tag className={tagClassName} style={{ transform: `translate3d(0, -${top}px, 0)` }}>
           {items.map((d: DataItem, i: number) => {

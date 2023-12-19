@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import classNames from 'classnames';
 import { KeygenResult, usePersistFn } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { BaseListProps } from './select.type';
@@ -35,6 +36,10 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     // height,
   };
   const styles = jssStyle?.select?.() as SelectClasses;
+  const rootClass = classNames(styles.list, {
+    [styles.controlMouse]: controlType === 'mouse',
+    [styles.controlKeyboard]: controlType === 'keyboard',
+  });
   const [hoverIndex, setHoverIndex] = useState(hideCreateOption ? -1 : 0);
   const virtualRef = useRef<VirtualListType>({
     scrollByStep: undefined,
@@ -192,7 +197,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   }, []);
 
   return (
-    <div className={styles.list} style={style}>
+    <div className={rootClass} style={style}>
       {header && renderHeader()}
       {renderList()}
     </div>

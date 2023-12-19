@@ -26,6 +26,8 @@ export type SelectClasses = {
   resultTextWrapper: string;
   resultTextPadding: string;
   compressedWrapper: string;
+  controlMouse: string;
+  controlKeyboard: string;
   placeholder: string;
   pickerWrapper: string;
   clearable: string;
@@ -255,6 +257,16 @@ const selectStyle: JsStyles<SelectClassType> = {
     width: 0,
     overflow: 'hidden',
   },
+  controlMouse: {
+    '& $optionInner:hover': {
+      backgroundColor: token.selectOptionHoverBackgroundColor,
+    },
+  },
+  controlKeyboard: {
+    '& $optionHover': {
+      backgroundColor: token.selectOptionHoverBackgroundColor,
+    },
+  },
   placeholder: {
     color: token.selectPlaceholderColor,
     lineHeight: token.lineHeightDynamic,
@@ -364,9 +376,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     borderRadius: token.selectOptionInnerBorderRadius,
   },
   optionHover: {
-    '& $optionInner': {
-      backgroundColor: token.selectOptionHoverBackgroundColor,
-    },
+    // backgroundColor: token.selectOptionHoverBackgroundColor,
+    // '& $optionInner:hover': {
+    //   backgroundColor: token.selectOptionHoverBackgroundColor,
+    // },
   },
   optionActive: {
     color: token.selectOptionActiveColor,
