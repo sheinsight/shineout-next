@@ -79,6 +79,7 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
     filterData: getData(),
     createdData,
     setInputText,
+    setFilterText,
     onCreate: onCreate ? handleCreate : undefined,
     onFilter: handleFilter,
     onResetFilter: handleResetData,

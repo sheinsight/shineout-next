@@ -22,7 +22,7 @@ export type JssStyleType = {
 
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
 export type OptionListRefType = {
-  hoverMove: (index: number) => void;
+  hoverMove: (index: number, force?: boolean) => void;
   hoverHover: (index: number) => void;
   getHoverIndex: () => number;
 };

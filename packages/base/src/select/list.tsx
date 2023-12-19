@@ -73,7 +73,12 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     handleHover(next, true);
   });
 
-  const handleMove = usePersistFn((step: number) => {
+  const handleMove = usePersistFn((step: number, force?: boolean) => {
+    if (force) {
+      setHoverIndex(step);
+      virtualRef.current.scrollByStep(step);
+      return;
+    }
     const max = data.length;
     const listHeight = height as number;
     let nextHoverIndex = hoverIndex;

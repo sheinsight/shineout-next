@@ -151,6 +151,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       blurEvent.current();
       blurEvent.current = null;
     }
+    onClearCreatedData();
   });
 
   const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
@@ -258,8 +259,6 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       isKeydown.current = false;
       return;
     }
-    // onClearCreatedData();
-    // if (resultRef.current) resultRef.current.resetInput();
     // 防止点击 option 后触发 blur 事件，先把要做的事情存起来，后面再看要不要执行
     blurEvent.current = () => {
       if (createdData) {
@@ -269,6 +268,19 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     };
   };
 
+  const handleFilter = (text: string) => {
+    const hideCreate = onCreate && hideCreateOption;
+
+    if (onCreate && !hideCreateOption) {
+      optionListRef.current?.hoverMove(0, true);
+    }
+    if (hideCreate) {
+      optionListRef.current?.hoverMove(filterData.length - 1, true);
+    }
+
+    onFilter(text);
+  };
+
   const handleOptionClick = () => {
     isPreventBlur.current = true;
     if (multiple) return;
@@ -276,9 +288,19 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
     onClearCreatedData();
   };
 
+  // 退格键可删除选项，仅在多选模式下生效
   const handleDelete = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (!multiple) return;
-    console.log(e);
+    if (inputText) return;
+    e.preventDefault();
+
+    const raws = Array.isArray(value) ? value : [value];
+    const values = [...raws];
+    const last = values.pop();
+
+    if (last) {
+      datum.remove(last);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -323,8 +345,6 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       case 8 || 'Backspace':
         handleDelete(e);
         break;
-      // default:
-      //   this.lastChangeIsOptionClick = false
     }
   };
 
@@ -377,7 +397,7 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
           inputText={inputText}
           filterText={filterText}
           setInputText={setInputText}
-          onFilter={onFilter}
+          onFilter={handleFilter}
           onRef={inputRef}
           onCreate={onCreate}
           onInputBlur={handleInputBlur}

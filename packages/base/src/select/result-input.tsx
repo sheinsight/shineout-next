@@ -73,6 +73,7 @@ const ResultInput = (props: ResultInputProps) => {
         value={inputText}
         onChange={onChange}
         onBlur={handleBlur}
+        open={focus}
       ></Input>
       <span className={styles.inputMirror} ref={mirrorRef}>
         {inputText || value}
