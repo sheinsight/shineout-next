@@ -46,6 +46,9 @@ import { ListTokens } from './list/type';
 import Message from './message';
 import { MessageTokens } from './message/type';
 
+import Modal from './modal';
+import { ModalTokens } from './modal/type';
+
 import Pagination from './pagination';
 import { PaginationTokens } from './pagination/type';
 
@@ -112,6 +115,7 @@ export type ThemeTokens = AlertTokens &
   InputTokens &
   ListTokens &
   MessageTokens &
+  ModalTokens &
   PaginationTokens &
   PopoverTokens &
   ProgressTokens &
@@ -146,6 +150,7 @@ const Tokens: ThemeTokens = {
   ...Input,
   ...List,
   ...Message,
+  ...Modal,
   ...Pagination,
   ...Popover,
   ...Progress,

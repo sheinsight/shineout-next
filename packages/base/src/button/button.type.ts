@@ -35,7 +35,7 @@ export interface ButtonClasses {
   spin: string;
 }
 
-interface ButtonStyle {
+export interface ButtonJssStyle {
   button?: () => ButtonClasses;
   spin?: () => SpinClasses;
 }
@@ -47,7 +47,7 @@ export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'>
   text?: boolean;
   outline?: boolean;
   disabled?: boolean;
-  jssStyle?: ButtonStyle;
+  jssStyle?: ButtonJssStyle;
 }
 
 export interface ButtonBaseProps
@@ -72,7 +72,7 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
   mode?: ButtonMode;
   type?: ButtonType;
   children: React.ReactNode;
-  jssStyle?: ButtonStyle;
+  jssStyle?: ButtonJssStyle;
 }
 
 export type ButtonProps = ButtonBaseProps;

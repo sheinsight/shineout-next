@@ -16,16 +16,23 @@ export interface AlertClasses {
   warning: string;
   confirmwarning: string;
   danger: string;
+  infoIcon: string;
+  successIcon: string;
+  warningIcon: string;
+  confirmwarningIcon: string;
+  dangerIcon: string;
   pending: string;
   noBordered: string;
 }
 
-export type AlertType = 'success' | 'info' | 'warning' | 'danger' | 'confirmwarning';
+export interface AlertJssStyle {
+  alert?: () => AlertClasses;
+}
+
+export type AlertType = 'success' | 'info' | 'warning' | 'danger' | 'confirmwarning' | 'error';
 
 export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
-  jssStyle?: {
-    alert?: () => AlertClasses;
-  };
+  jssStyle?: AlertJssStyle;
   type?: AlertType;
   closeItem?: React.ReactNode;
   /**

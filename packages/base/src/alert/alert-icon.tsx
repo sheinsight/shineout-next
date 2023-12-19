@@ -1,0 +1,43 @@
+import Icons from '../icons';
+import type { CommonType } from '../common/type';
+import { AlertJssStyle } from './alert.type';
+import classNames from 'classnames';
+export interface AlertIconProps {
+  type: CommonType['iconType'] | undefined;
+  jssStyle?: AlertJssStyle;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const icons = {
+  info: Icons.PcInfoCircleFill,
+  success: Icons.PcCheckCircleFill,
+  warning: Icons.PcWarningCircleFill,
+  danger: Icons.PcCloseCircleFill,
+  confirmwarning: Icons.PcWarningCircleFill,
+  error: Icons.PcCloseCircleFill,
+  confirm: Icons.PcHelpCircleFill,
+};
+
+const AlertIcon = (props: AlertIconProps) => {
+  const AlertClasses = props.jssStyle?.alert?.();
+  let { type } = props;
+  if (type === 'error') type = 'danger';
+  if (!type) return null;
+  const Icon = icons[type];
+  if (!Icon) return null;
+  return (
+    <span
+      style={props.style}
+      className={classNames(
+        props.className,
+        AlertClasses?.icon,
+        AlertClasses && AlertClasses[(type + 'Icon') as keyof AlertJssStyle],
+      )}
+    >
+      {Icon}
+    </span>
+  );
+};
+
+export default AlertIcon;

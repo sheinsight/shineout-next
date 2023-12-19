@@ -20,3 +20,4 @@ export * as Gap from './gap/interface';
 export * as Table from './table/interface';
 export * as List from './list/interface';
 export * as Slider from './slider/interface';
+export * as Modal from './modal/interface';
