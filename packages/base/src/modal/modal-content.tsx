@@ -29,7 +29,17 @@ const Modal = (props: ModalContentProps) => {
   const modalClasses = props.jssStyle?.modal?.();
   const panelRef = useRef<HTMLDivElement>(null);
 
-  const { events = {}, width = 500, maskCloseAble = true, esc = true, top = '10vh' } = props;
+  const isPositionX = ['left', 'right'].includes(props.position || '');
+  const isPositionY = ['top', 'bottom'].includes(props.position || '');
+
+  const defaultWidth = isPositionX ? 'auto' : 500;
+  const {
+    events = {},
+    width = defaultWidth,
+    maskCloseAble = true,
+    esc = true,
+    top = '10vh',
+  } = props;
   const [origin, setOrigin] = useState('');
   const { current: context } = useRef({
     renderEd: false,
@@ -55,10 +65,6 @@ const Modal = (props: ModalContentProps) => {
       context.isMask = true;
       hasMask = true;
     }
-    if (!visible && context.isMask) {
-      hasMask = false;
-      context.isMask = false;
-    }
   };
 
   handleMaskVisible();
@@ -82,6 +88,10 @@ const Modal = (props: ModalContentProps) => {
     setAnimation(false);
     if (props.zoom && !visible) {
       setOrigin('');
+    }
+    if (!visible && context.isMask) {
+      hasMask = false;
+      context.isMask = false;
     }
   });
 
@@ -208,6 +218,15 @@ const Modal = (props: ModalContentProps) => {
     top: props.fullScreen ? undefined : top,
     ...props.style,
   };
+
+  if (isPositionX) {
+    panelStyle.top = undefined;
+    panelStyle.height = undefined;
+  }
+  if (isPositionY) {
+    panelStyle.top = undefined;
+    panelStyle.width = undefined;
+  }
   if (props.moveable) {
     panelStyle.transform = `translate(${moveInfo.pos.x}px, ${moveInfo.pos.y}px)`;
   }
@@ -225,6 +244,11 @@ const Modal = (props: ModalContentProps) => {
           props.moveable && modalClasses?.wrapperMoveable,
           props.hideMask && modalClasses?.wrapperHideMask,
           props.zoom && !props.moveable && modalClasses?.wrapperZoom,
+          (isPositionX || isPositionY) && modalClasses?.wrapperDrawer,
+          props.position === 'left' && modalClasses?.wrapperDrawerLeft,
+          props.position === 'right' && modalClasses?.wrapperDrawerRight,
+          props.position === 'top' && modalClasses?.wrapperDrawerTop,
+          props.position === 'bottom' && modalClasses?.wrapperDrawerBottom,
         )}
         onAnimationEnd={handleAnimationEnd}
         style={{ background: props.maskBackground, zIndex: props.zIndex }}

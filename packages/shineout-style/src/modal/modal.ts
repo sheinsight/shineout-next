@@ -14,6 +14,11 @@ export type ModalClasses = {
   wrapperZoom: string;
   wrapperIsMask: string;
   wrapperHideMask: string;
+  wrapperDrawer: string;
+  wrapperDrawerLeft: string;
+  wrapperDrawerRight: string;
+  wrapperDrawerTop: string;
+  wrapperDrawerBottom: string;
 
   mask: string;
   panel: string;
@@ -96,6 +101,77 @@ const animationStyle = {
       transform: 'scale(.2)',
     },
   },
+
+  '@keyframes drawerTopIn': {
+    from: {
+      transform: 'translate(0, -100%)',
+    },
+    to: {
+      transform: 'translate(0, 0)',
+    },
+  },
+  '@keyframes drawerTopOut': {
+    from: {
+      transform: 'translate(0, 0)',
+    },
+    to: {
+      transform: 'translate(0, -100%)',
+    },
+  },
+
+  '@keyframes drawerBottomIn': {
+    from: {
+      transform: 'translate(0, 100%)',
+    },
+    to: {
+      transform: 'translate(0, 0)',
+    },
+  },
+
+  '@keyframes drawerBottomOut': {
+    from: {
+      transform: 'translate(0, 0)',
+    },
+    to: {
+      transform: 'translate(0, 100%)',
+    },
+  },
+
+  '@keyframes drawerLeftIn': {
+    from: {
+      transform: 'translate(-100%, 0)',
+    },
+    to: {
+      transform: 'translate(0, 0)',
+    },
+  },
+
+  '@keyframes drawerLeftOut': {
+    from: {
+      transform: 'translate(0, 0)',
+    },
+    to: {
+      transform: 'translate(-100%, 0)',
+    },
+  },
+
+  '@keyframes drawerRightIn': {
+    from: {
+      transform: 'translate(100%, 0)',
+    },
+    to: {
+      transform: 'translate(0, 0)',
+    },
+  },
+
+  '@keyframes drawerRightOut': {
+    from: {
+      transform: 'translate(0, 0)',
+    },
+    to: {
+      transform: 'translate(100%, 0)',
+    },
+  },
 };
 
 const modalStyle: JsStyles<ModalClassType> = {
@@ -138,20 +214,44 @@ const modalStyle: JsStyles<ModalClassType> = {
   wrapperAnimation: {
     '&$wrapperShow': {
       animation: `$fadeIn .3s ${zoomIn}`,
-      '&:not($wrapperZoom) $mask': {
+      '&:not($wrapperZoom):not($wrapperDrawer) $mask': {
         animation: `$topIn .3s ${zoomIn}`,
       },
       '&$wrapperZoom $panel': {
         animation: `$zoomIn .3s ${zoomIn}`,
       },
+      '&$wrapperDrawerTop $mask': {
+        animation: `$drawerTopIn .3s ${zoomIn}`,
+      },
+      '&$wrapperDrawerBottom $mask': {
+        animation: `$drawerBottomIn .3s ${zoomIn}`,
+      },
+      '&$wrapperDrawerLeft $mask': {
+        animation: `$drawerLeftIn .3s ${zoomIn}`,
+      },
+      '&$wrapperDrawerRight $mask': {
+        animation: `$drawerRightIn .3s ${zoomIn}`,
+      },
     },
     '&$wrapperHide': {
       animation: `$fadeOut .3s ${zoomOut}`,
-      '&:not($wrapperZoom) $mask': {
+      '&:not($wrapperZoom):not($wrapperDrawer) $mask': {
         animation: `$topOut .3s ${zoomOut}`,
       },
       '&$wrapperZoom $panel': {
         animation: `$zoomOut .3s ${zoomOut}`,
+      },
+      '&$wrapperDrawerTop $mask': {
+        animation: `$drawerTopOut .3s ${zoomOut}`,
+      },
+      '&$wrapperDrawerBottom $mask': {
+        animation: `$drawerBottomOut .3s ${zoomOut}`,
+      },
+      '&$wrapperDrawerLeft $mask': {
+        animation: `$drawerLeftOut .3s ${zoomOut}`,
+      },
+      '&$wrapperDrawerRight $mask': {
+        animation: `$drawerRightOut .3s ${zoomOut}`,
       },
     },
   },
@@ -162,6 +262,39 @@ const modalStyle: JsStyles<ModalClassType> = {
     opacity: 0,
     '&:not($wrapperAnimation)': {
       display: 'none',
+    },
+  },
+
+  wrapperDrawer: {
+    '& $panel': {
+      borderRadius: 0,
+      position: 'absolute',
+    },
+  },
+  wrapperDrawerLeft: {
+    '& $panel': {
+      left: 0,
+      height: '100vh',
+    },
+  },
+  wrapperDrawerRight: {
+    '& $panel': {
+      right: 0,
+      height: '100vh',
+    },
+  },
+  wrapperDrawerTop: {
+    '& $panel': {
+      top: 0,
+      left: 0,
+      width: '100vw',
+    },
+  },
+  wrapperDrawerBottom: {
+    '& $panel': {
+      bottom: 0,
+      left: 0,
+      width: '100vw',
     },
   },
   mask: {

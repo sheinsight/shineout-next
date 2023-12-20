@@ -15,6 +15,11 @@ export interface ModalClasses {
   wrapperZoom: string;
   wrapperIsMask: string;
   wrapperHideMask: string;
+  wrapperDrawer: string;
+  wrapperDrawerLeft: string;
+  wrapperDrawerRight: string;
+  wrapperDrawerTop: string;
+  wrapperDrawerBottom: string;
 
   mask: string;
   panel: string;
