@@ -13,7 +13,7 @@ export interface ResultProps<DataItem, Value>
     | 'placeholder'
     | 'innerTitle'
     | 'keygen'
-    | 'data'
+    // | 'data'
     | 'value'
     | 'noCache'
     | 'compressed'

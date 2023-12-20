@@ -3,9 +3,8 @@ import { BaseSelectProps, KeygenType, useListSelect } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { TagClasses } from '../tag/tag.type';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
 import { InnerTitleClasses } from '../common/use-inner-title';
-import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll-list.type';
 import { PopoverClasses } from '../popover/popover.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { RadioClasses } from '../radio/radio.type';
@@ -33,7 +32,6 @@ export interface BaseListProps<DataItem, Value>
     | 'jssStyle'
     | 'size'
     | 'value'
-    | 'data'
     | 'width'
     | 'optionWidth'
     | 'header'
@@ -50,6 +48,7 @@ export interface BaseListProps<DataItem, Value>
   > {
   customHeader?: React.ReactNode;
   height: number | string;
+  data: DataItem[];
   datum: DatumType<DataItem, Value>;
   closePop: () => void;
   originalData: DataItem[];
@@ -60,33 +59,17 @@ export interface BaseListProps<DataItem, Value>
   onOptionClick: (data: DataItem, index: number) => void;
 }
 
-export interface SelectDataProps<DataItem> {
-  data: DataItem[];
-}
-
-type TreeData<T, K extends keyof T & string> = TreeDataItem<T, K>[];
-
-type TreeDataItem<T, K extends keyof T & string> = T & {
-  [P in K]?: TreeData<T, K>[];
-};
-
-export interface SelectTreeDataProps<DataItem> {
-  /**
-   * @en Tree data
-   * @cn 树形数据
-   */
-  // treeData: TreeData<DataItem, keyof DataItem & string>;
-  treeData: DataItem[];
-  childrenKey?: keyof DataItem & string;
-}
-
-export interface BaseProps<DataItem, Value>
+export interface SelectPropsBase<DataItem, Value>
   extends Omit<BaseSelectProps<DataItem, Value>, 'control'>,
     Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle: JssStyleType;
-  // data: DataItem[];
-  // treeData?: DataItem[];
+
+  // data treeData 的类型交给重载去实现
+  data?: DataItem[];
+  treeData?: DataItem[];
+  childrenKey?: keyof DataItem;
+
   keygen: KeygenType<DataItem>;
   value?: Value;
 
@@ -234,12 +217,24 @@ export interface BaseProps<DataItem, Value>
 }
 
 export interface SelectPropsA<DataItem, Value>
-  extends BaseProps<DataItem, Value>,
-    SelectDataProps<DataItem> {}
+  extends Omit<SelectPropsBase<DataItem, Value>, 'treeData' | 'childrenKey'> {
+  data: DataItem[];
+}
 
 export interface SelectPropsB<DataItem, Value>
-  extends BaseProps<DataItem, Value>,
-    SelectTreeDataProps<DataItem> {}
+  extends Omit<SelectPropsBase<DataItem, Value>, 'data'> {
+  /**
+   * @en treeData
+   * @cn 树形数据
+   */
+  treeData: DataItem[];
+  /**
+   * @en Children key
+   * @cn 子节点的 key
+   */
+  childrenKey?: keyof DataItem;
+}
 
-export type SelectProps<DataItem, Value> = SelectPropsA<DataItem, Value> &
-  SelectPropsB<DataItem, Value>;
+export type SelectProps<DataItem, Value> =
+  | SelectPropsA<DataItem, Value>
+  | SelectPropsB<DataItem, Value>;

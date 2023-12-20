@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from '@sheinx/base';
+import { Select as BaseSelect } from '@sheinx/base';
 import {
   useSelectStyle,
   useInnerTitleStyle,
@@ -9,7 +9,7 @@ import {
   useRadioStyle,
   usePopoverStyle,
 } from '@sheinx/shineout-style';
-import { SelectProps } from './select.type';
+import { SelectProps, SelectPropsA, SelectPropsB } from './select.type';
 
 const jssStyle = {
   tag: useTagStyle,
@@ -20,6 +20,11 @@ const jssStyle = {
   checkbox: useCheckboxStyle,
   radio: useRadioStyle,
 };
-export default <DataItem, Value>(props: SelectProps<DataItem, Value>) => {
-  return <Select jssStyle={jssStyle} {...props} />;
-};
+
+function Select<DataItem, Value>(props: SelectPropsA<DataItem, Value>): JSX.Element;
+function Select<DataItem, Value>(props: SelectPropsB<DataItem, Value>): JSX.Element;
+function Select<DataItem, Value>(props: SelectProps<DataItem, Value>) {
+  return <BaseSelect jssStyle={jssStyle} {...props} />;
+}
+
+export default Select;

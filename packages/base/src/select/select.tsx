@@ -7,11 +7,10 @@ import {
   useSelect,
   useFilter,
   useGroup,
-  OptionalToRequired,
   UnMatchedData,
 } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
-import { SelectProps, OptionListRefType } from './select.type';
+import { SelectPropsBase, OptionListRefType } from './select.type';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
@@ -30,12 +29,13 @@ import ColumnsList from './list-columns';
  *
  */
 
-const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem, Value>>) => {
+function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   const {
     jssStyle,
     className,
     size,
     data,
+    // treeData,
     format,
     value: valueProp,
     defaultValue,
@@ -554,6 +554,6 @@ const Select = <DataItem, Value>(props: OptionalToRequired<SelectProps<DataItem,
       </AbsoluteList>
     </div>
   );
-};
+}
 
 export default Select;

@@ -7,8 +7,14 @@
 import React from 'react';
 import { Select } from 'shineout';
 
+type DataItem = {
+  id: string;
+  title: string;
+  children?: DataItem[];
+};
+
 export default () => {
-  const data = [
+  const treeData: DataItem[] = [
     {
       id: '1',
       title: '1',
@@ -39,8 +45,8 @@ export default () => {
     <div>
       <Select
         width={300}
-        childrenKey='id'
-        treeData={data}
+        childrenKey='children'
+        treeData={treeData}
         keygen='id'
         placeholder='Select Color'
         renderItem={(d) => d.title}
