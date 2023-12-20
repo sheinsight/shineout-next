@@ -33,13 +33,25 @@ const modalTokenExtraValue = {
     font: { size: '14/regular' },
   },
   header: {
-    icon: { margin: { end: 'Margin-8', top: '2px' }, size: '20px' },
+    icon: { margin: { end: 'Margin-8', top: 'Size-1' }, size: 'Size-10' },
     close: {
-      margin: { start: 'Margin-16' },
-      size: '16px',
-      top: '4px',
+      margin: { x: { start: 'Margin-16' } },
+      size: 'Size-8',
+      top: 'Size-2',
     },
     font: { size: '16/regular' },
+  },
+  drawer: {
+    title: {
+      padding: { y: 'Padding-12', x: 'Padding-16' },
+      background: { color: 'Neutral-fill-2' },
+    },
+    body: {
+      padding: { y: 'Padding-16', x: 'Padding-16' },
+    },
+    footer: {
+      padding: { y: 'Padding-16', x: 'Padding-16' },
+    },
   },
 };
 

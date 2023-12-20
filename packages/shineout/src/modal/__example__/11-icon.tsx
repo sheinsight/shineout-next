@@ -42,7 +42,13 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Radio.Group data={typeList} value={type} keygen onChange={setType} />
+      <Radio.Group
+        style={{ marginBottom: 24 }}
+        data={typeList}
+        value={type}
+        keygen
+        onChange={setType}
+      />
 
       <Button mode='outline' onClick={show}>
         click me

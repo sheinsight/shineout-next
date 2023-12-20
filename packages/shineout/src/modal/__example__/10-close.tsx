@@ -42,8 +42,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBlock: 12 }}>
-        <div style={{ lineHeight: '22px', fontSize: '14px' }}>maskCloseAble:</div>
+      <div style={{ display: 'flex', alignItems: 'center', marginBlock: 24 }}>
         <Radio.Group
           data={list}
           keygen='title'

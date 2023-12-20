@@ -37,7 +37,7 @@ const App: React.FC = () => {
         value={position}
         data={positionList}
         onChange={(p) => setPosition(p)}
-        style={{ marginBottom: 12 }}
+        style={{ marginBottom: 24 }}
       />
 
       <Button onClick={() => toggle(true)}>click me</Button>

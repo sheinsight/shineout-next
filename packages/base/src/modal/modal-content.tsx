@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useRef, useEffect, useState } from 'react';
-import AlertIcon from '../alert/alert-icon';
+import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
 import { usePersistFn } from '@sheinx/hooks';
 import { ModalFormProvider } from './modal-context';
@@ -164,10 +164,20 @@ const Modal = (props: ModalContentProps) => {
   }, []);
 
   // render
+
+  const renderIcon = () => {
+    return (
+      <AlertIcon jssStyle={props.jssStyle} type={props.type} className={modalClasses?.headerIcon} />
+    );
+  };
   const renderHeader = () => {
     const showCloseIcon = maskCloseAble === null || !!maskCloseAble;
     return (
-      <div className={modalClasses?.header}>
+      <div
+        className={modalClasses?.header}
+        onMouseDown={props.moveable ? moveInfo.handleMouseDown : undefined}
+      >
+        {renderIcon()}
         <div className={modalClasses?.headerTitle}>{props.title}</div>
         {showCloseIcon && !props.hideClose && (
           <div className={modalClasses?.headerClose} onClick={handleClose}>
@@ -180,7 +190,13 @@ const Modal = (props: ModalContentProps) => {
 
   const renderBody = () => {
     return (
-      <div className={modalClasses?.body} style={props.bodyStyle}>
+      <div
+        className={classNames(
+          modalClasses?.body,
+          props.type && !!AlertIconMap[props.type] && modalClasses?.bodyWithIcon,
+        )}
+        style={props.bodyStyle}
+      >
         {props.children}
       </div>
     );
@@ -188,12 +204,6 @@ const Modal = (props: ModalContentProps) => {
 
   const renderFooter = () => {
     return <div className={modalClasses?.footer}>{props.footer}</div>;
-  };
-
-  const renderIcon = () => {
-    return (
-      <AlertIcon jssStyle={props.jssStyle} type={props.type} className={modalClasses?.headerIcon} />
-    );
   };
 
   const renderResize = () => {
@@ -266,16 +276,8 @@ const Modal = (props: ModalContentProps) => {
             className={classNames(modalClasses?.panel, props.className)}
             style={panelStyle}
           >
-            <div
-              className={modalClasses?.top}
-              onMouseDown={props.moveable ? moveInfo.handleMouseDown : undefined}
-            >
-              <div className={modalClasses?.topLeft}>{renderIcon()}</div>
-              <div className={modalClasses?.topRight}>
-                {renderHeader()}
-                {renderBody()}
-              </div>
-            </div>
+            {renderHeader()}
+            {renderBody()}
             {renderFooter()}
             {renderResize()}
           </div>

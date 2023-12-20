@@ -23,14 +23,12 @@ export interface ModalClasses {
 
   mask: string;
   panel: string;
-  top: string;
-  topLeft: string;
-  topRight: string;
   header: string;
   headerIcon: string;
   headerTitle: string;
   headerClose: string;
   body: string;
+  bodyWithIcon: string;
   footer: string;
   resizeX: string;
   resizeY: string;

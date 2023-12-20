@@ -39,5 +39,5 @@ const AlertIcon = (props: AlertIconProps) => {
     </span>
   );
 };
-
+export const AlertIconMap = icons;
 export default AlertIcon;

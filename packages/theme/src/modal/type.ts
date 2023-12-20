@@ -64,31 +64,31 @@ export interface ModalTokens {
   modalHeaderIconMarginEnd: string;
   /**
    * @type {string}
-   * @token 2px
+   * @token Size-1
    * @description xxxundefined图标外边距undefined
    */
   modalHeaderIconMarginTop: string;
   /**
    * @type {string}
-   * @token 20px
+   * @token Size-10
    * @description xxxundefined图标字号
    */
   modalHeaderIconSize: string;
   /**
    * @type {string}
    * @token Margin-16
-   * @description xxxundefinedundefined外边距undefined
+   * @description xxxundefinedundefined外边距（水平方向）undefined
    */
-  modalHeaderCloseMarginStart: string;
+  modalHeaderCloseMarginXStart: string;
   /**
    * @type {string}
-   * @token 16px
+   * @token Size-8
    * @description xxxundefinedundefined字号
    */
   modalHeaderCloseSize: string;
   /**
    * @type {string}
-   * @token 4px
+   * @token Size-2
    * @description xxxundefinedundefinedundefined
    */
   modalHeaderCloseTop: string;
@@ -98,6 +98,48 @@ export interface ModalTokens {
    * @description xxxundefined字体字号
    */
   modalHeaderFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description xxxundefined标题模式内边距（垂直方向）
+   */
+  modalDrawerTitlePaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description xxxundefined标题模式内边距（水平方向）
+   */
+  modalDrawerTitlePaddingX: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description xxxundefined标题模式背景颜色
+   */
+  modalDrawerTitleBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description xxxundefinedundefined内边距（垂直方向）
+   */
+  modalDrawerBodyPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description xxxundefinedundefined内边距（水平方向）
+   */
+  modalDrawerBodyPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description xxxundefinedundefined内边距（垂直方向）
+   */
+  modalDrawerFooterPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description xxxundefinedundefined内边距（水平方向）
+   */
+  modalDrawerFooterPaddingX: string;
   /**
    * @type {string}
    * @token 14/regular

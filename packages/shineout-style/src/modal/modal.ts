@@ -22,14 +22,12 @@ export type ModalClasses = {
 
   mask: string;
   panel: string;
-  top: string;
-  topLeft: string;
-  topRight: string;
   header: string;
   headerIcon: string;
   headerTitle: string;
   headerClose: string;
   body: string;
+  bodyWithIcon: string;
   footer: string;
   resizeX: string;
   resizeY: string;
@@ -183,6 +181,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     left: 0,
     overflow: 'auto',
     width: '100%',
+    boxSizing: 'border-box',
     height: '100%',
     textAlign: 'center',
     lineHeight: token.lineHeightDynamic,
@@ -269,6 +268,20 @@ const modalStyle: JsStyles<ModalClassType> = {
     '& $panel': {
       borderRadius: 0,
       position: 'absolute',
+      padding: 0,
+      '& $header': {
+        padding: `${token.modalDrawerTitlePaddingY} ${token.modalDrawerTitlePaddingX}`,
+        background: token.modalDrawerTitleBackgroundColor,
+      },
+      '& $body': {
+        padding: `${token.modalDrawerBodyPaddingY} ${token.modalDrawerBodyPaddingX}`,
+      },
+      '& $bodyWithIcon': {
+        paddingLeft: `calc(${token.modalHeaderIconMarginEnd} + ${token.modalHeaderIconSize} + ${token.modalDrawerBodyPaddingX})`,
+      },
+      '& $footer': {
+        padding: `${token.modalDrawerFooterPaddingY} ${token.modalDrawerFooterPaddingX}`,
+      },
     },
   },
   wrapperDrawerLeft: {
@@ -303,6 +316,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     left: 0,
     width: '100%',
     minHeight: '100%',
+    boxSizing: 'border-box',
   },
   panel: {
     pointerEvents: 'all',
@@ -317,18 +331,6 @@ const modalStyle: JsStyles<ModalClassType> = {
     fontSize: token.modalPanelFontSize,
     boxSizing: 'border-box',
     boxShadow: token.modalPanelShadow,
-  },
-  top: {
-    flex: '1',
-    minHeight: '1px',
-    display: 'flex',
-  },
-  topLeft: {},
-  topRight: {
-    flex: '1',
-    minWidth: 0,
-    display: 'flex',
-    flexDirection: 'column',
   },
   header: {
     display: 'flex',
@@ -352,7 +354,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     fontSize: token.modalHeaderFontSize,
   },
   headerClose: {
-    marginLeft: token.modalHeaderCloseMarginStart,
+    marginLeft: token.modalHeaderCloseMarginXStart,
     marginTop: token.modalHeaderCloseTop,
     width: token.modalHeaderCloseSize,
     height: token.modalHeaderCloseSize,
@@ -364,8 +366,12 @@ const modalStyle: JsStyles<ModalClassType> = {
     minHeight: '1px',
     overflow: 'auto',
   },
+  bodyWithIcon: {
+    paddingLeft: `calc(${token.modalHeaderIconMarginEnd} + ${token.modalHeaderIconSize})`,
+  },
   footer: {
     width: '100%',
+    boxSizing: 'border-box',
     textAlign: 'right',
     marginTop: token.modalPanelGap,
   },
