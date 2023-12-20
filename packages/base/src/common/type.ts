@@ -29,6 +29,11 @@ export interface CommonType {
    * @cn 占位标题，需要配合 innerTitle 一起使用
    */
   placeTitle?: React.ReactNode;
+  /**
+   * @cn 样式类型
+   * @en style type
+   */
+  iconType: 'success' | 'info' | 'warning' | 'danger' | 'confirmwarning' | 'error' | 'confirm';
 }
 
 export interface CommonChangeType<T> {

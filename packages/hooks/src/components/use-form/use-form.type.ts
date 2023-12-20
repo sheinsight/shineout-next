@@ -43,7 +43,7 @@ export interface BaseFormProps<T> extends FormCommonConfig {
    * @default true
    */
   removeUndefined?: boolean;
-  rules?: FormRuleObject<T>;
+  rules?: FormRuleObject<any>;
   /**
    * @cn ms, 两次提交间隔时长（防止重复提交)
    * @default 1000
