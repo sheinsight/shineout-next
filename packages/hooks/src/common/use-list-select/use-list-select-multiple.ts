@@ -30,6 +30,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     valueMap: new Map<ValueItem, boolean>(),
     lastData: [] as DataItem[],
     dataMap: new Map<ValueItem, DataItem>(),
+    flatDataCache: new Map<any, DataItem[]>(),
   });
   const disabledCheck = usePersistFn((data: DataItem) => {
     if (typeof props.disabled === 'boolean') return props.disabled;
@@ -194,10 +195,10 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
 
   const getDataByValues = usePersistFn(
     (values: ValueItem[], info: { childrenKey?: string } = {}) => {
+      const map = getDataMap(info.childrenKey);
       const result = [];
       if (!props.prediction) {
         if (!values || !values.length) return [];
-        const map = getDataMap(info.childrenKey);
         for (let i = 0; i < values.length; i++) {
           const item = map.get(values[i]);
           if (item) {
@@ -207,10 +208,11 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
           }
         }
       } else {
-        const raws = [...props.data];
+        // 获取map value 数组
+        const raws = Array.from(map.values());
         outer: for (let i = 0; i < values.length; i++) {
           for (let j = 0; j < raws.length; j++) {
-            const item = raws[j];
+            const item = raws[j] as DataItem;
             if (props.prediction(values[i], item)) {
               result.push(item);
               raws.splice(j, 1);
