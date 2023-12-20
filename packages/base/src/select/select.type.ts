@@ -7,6 +7,7 @@ import { SelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
 import { InnerTitleClasses } from '../common/use-inner-title';
 import { PopoverClasses } from '../popover/popover.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
+import { TreeClasses } from '../tree/tree.type';
 import { RadioClasses } from '../radio/radio.type';
 
 export type JssStyleType = {
@@ -17,6 +18,7 @@ export type JssStyleType = {
   popover?: () => PopoverClasses;
   checkbox?: () => CheckboxClasses;
   radio?: () => RadioClasses;
+  tree?: () => TreeClasses;
 };
 
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;

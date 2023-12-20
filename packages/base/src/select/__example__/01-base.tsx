@@ -14,6 +14,7 @@ import {
   useCheckboxStyle,
   useRadioStyle,
   usePopoverStyle,
+  useTreeStyle,
 } from '@sheinx/shineout-style';
 
 const jssStyle = {
@@ -24,6 +25,7 @@ const jssStyle = {
   popover: usePopoverStyle,
   checkbox: useCheckboxStyle,
   radio: useRadioStyle,
+  tree: useTreeStyle,
 };
 const data: { id: string; name: string }[] = [];
 const v = [];

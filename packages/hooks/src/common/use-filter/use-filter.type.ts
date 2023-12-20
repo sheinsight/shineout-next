@@ -1,7 +1,7 @@
 import { KeygenType } from '../type';
 
 export interface UseFilterProps<DataItem, Value> {
-  data: DataItem[];
+  data?: DataItem[];
   delay?: number;
   keygen: KeygenType<DataItem>;
   groupKey?: string;

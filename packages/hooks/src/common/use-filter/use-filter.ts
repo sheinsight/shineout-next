@@ -6,7 +6,7 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
   const { data, groupKey, keygen, hideCreateOption, onFilter, onCreate, onFilterWidthCreate } =
     props;
 
-  const [filterData, setFilterData] = useState<DataItem[]>(data);
+  const [filterData, setFilterData] = useState<DataItem[] | undefined>(data);
   const [filterText, setFilterText] = useState<string | undefined>('');
   const [inputText, setInputText] = useState('');
   const [createdData, setCreatedData] = useState<string>();
@@ -19,8 +19,8 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
     const newData = filterData;
     if (createdData && !hideCreateOption) {
       const newKey = getKey(keygen, createdData as DataItem);
-      const sameItem = newData.find((item) => filterFn(item, createdData as DataItem, newKey));
-      if (!sameItem) return [createdData, ...newData] as DataItem[];
+      const sameItem = newData?.find((item) => filterFn(item, createdData as DataItem, newKey));
+      if (!sameItem) return [createdData, ...[newData || []]] as DataItem[];
     }
     return newData;
   };
@@ -59,7 +59,7 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
 
     if (!isFunc(next)) return;
 
-    const nextData = data.filter((item) => {
+    const nextData = data?.filter((item) => {
       if (!groupKey) return next(item);
       // 剔除分组项
       if (item[groupKey as keyof typeof item]) return item;

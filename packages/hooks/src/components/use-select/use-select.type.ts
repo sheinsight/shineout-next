@@ -2,7 +2,7 @@ import { ObjectKey } from '../../common/type';
 
 export interface BaseSelectProps<DataItem, Value> {
   value?: Value;
-  // data: DataItem[];
+  data: DataItem[];
   // treeData?: DataItem[];
   defaultValue?: Value;
   control: boolean;

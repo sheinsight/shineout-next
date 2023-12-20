@@ -36,6 +36,7 @@ export type SelectClasses = {
   multiple: string;
   checkedIcon: string;
   list: string;
+  tree: string;
   tag: string;
   space: string;
   inputMirror: string;
@@ -330,6 +331,9 @@ const selectStyle: JsStyles<SelectClassType> = {
   list: {
     paddingTop: 3,
     paddingBottom: 3,
+  },
+  tree: {
+    padding: 4,
   },
   tag: {
     '&$tag + &$tag': {

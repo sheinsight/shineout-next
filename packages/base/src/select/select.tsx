@@ -35,7 +35,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     className,
     size,
     data,
-    // treeData,
+    treeData,
     format,
     value: valueProp,
     defaultValue,
@@ -488,7 +488,14 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   };
 
   const renderTreeList = () => {
-    return <TreeList></TreeList>;
+    return (
+      <TreeList
+        jssStyle={jssStyle}
+        data={treeData}
+        keygen={keygen}
+        renderItem={renderItem}
+      ></TreeList>
+    );
   };
 
   const renderOptions = () => {
