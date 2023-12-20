@@ -23,7 +23,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={confirm}>confirm</Button>
+      <Button onClick={confirm} mode='outline'>
+        confirm
+      </Button>
     </div>
   );
 };

@@ -34,7 +34,11 @@ const App: React.FC = () => {
   const [selected, setSelected] = useState(list[0]);
   const [visible, setVisible] = useState<ModalVisible>(false);
 
-  const footer = (): ModalFooter => <Button onClick={() => setVisible(false)}>Close</Button>;
+  const footer = (): ModalFooter => (
+    <Button mode='outline' onClick={() => setVisible(false)}>
+      Close
+    </Button>
+  );
 
   return (
     <div>
@@ -51,7 +55,9 @@ const App: React.FC = () => {
         />
       </div>
 
-      <Button onClick={() => setVisible(true)}>Open</Button>
+      <Button mode='outline' onClick={() => setVisible(true)}>
+        Open
+      </Button>
 
       <Modal
         width={400}

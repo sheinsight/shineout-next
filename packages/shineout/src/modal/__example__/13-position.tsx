@@ -24,7 +24,9 @@ const App: React.FC = () => {
 
   const footer = (): ModalFooter => (
     <div>
-      <Button onClick={() => toggle(false)}>Cancel</Button>
+      <Button mode='outline' onClick={() => toggle(false)}>
+        Cancel
+      </Button>
       <Modal.Submit>Submit</Modal.Submit>
     </div>
   );

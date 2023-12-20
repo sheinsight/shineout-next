@@ -29,7 +29,9 @@ const App: React.FC = () => {
 
   return (
     <div ref={bindElement}>
-      <Button onClick={show}>click me</Button>
+      <Button onClick={show} mode='outline'>
+        click me
+      </Button>
       <Modal
         container={wrapper}
         visible={visible}

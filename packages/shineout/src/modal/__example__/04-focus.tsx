@@ -28,8 +28,12 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={() => confirm('cancel')}>cancel</Button>
-      <Button onClick={() => confirm('ok')}>ok</Button>
+      <Button onClick={() => confirm('cancel')} mode='outline'>
+        cancel
+      </Button>
+      <Button onClick={() => confirm('ok')} mode='outline'>
+        ok
+      </Button>
     </div>
   );
 };

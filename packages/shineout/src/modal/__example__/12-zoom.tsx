@@ -25,7 +25,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={() => setVisible(true)}>Open</Button>
+      <Button mode='outline' onClick={() => setVisible(true)}>
+        Open
+      </Button>
 
       <Modal
         zoom

@@ -91,7 +91,7 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
   maskCloseAble?: null | boolean;
 
   /**
-   * @deprecated
+   * @deprecated use maskBackground
    */
   maskOpacity?: number;
 
@@ -217,11 +217,6 @@ export interface ModalProps extends Pick<CommonType, 'className' | 'style'> {
    * @default false
    */
   resizable?: boolean;
-
-  /**
-   * @inner 内部属性
-   */
-  drawer?: boolean;
 
   /**
    * @en pop-up children

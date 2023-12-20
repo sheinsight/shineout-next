@@ -44,7 +44,9 @@ const App: React.FC = () => {
     <div>
       <Radio.Group data={typeList} value={type} keygen onChange={setType} />
 
-      <Button onClick={show}>click me</Button>
+      <Button mode='outline' onClick={show}>
+        click me
+      </Button>
 
       <Modal
         type={type}

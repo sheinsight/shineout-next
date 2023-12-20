@@ -42,7 +42,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={show}>click me</Button>
+      <Button mode='outline' onClick={show}>
+        click me
+      </Button>
       <Modal
         width={400}
         visible={visible}

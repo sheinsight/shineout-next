@@ -44,8 +44,10 @@ const App: React.FC = () => {
 
   const footer = (): ModalFooter => (
     <div>
-      <Button onClick={handleClose}>Cancel</Button>
-      <Modal.Submit>Submit</Modal.Submit>
+      <Button onClick={handleClose} mode='outline'>
+        Cancel
+      </Button>
+      <Modal.Submit type='primary'>Submit</Modal.Submit>
     </div>
   );
 
@@ -56,7 +58,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={show}>Modal Form</Button>
+      <Button mode='outline' onClick={show}>
+        Modal Form
+      </Button>
 
       <Modal visible={visible} width={456} title='Form' onClose={handleClose} footer={footer()}>
         <Form

@@ -13,11 +13,17 @@ type ModalFooter = ModalProps['footer'];
 const App: React.FC = () => {
   const [show, setShow] = useState(false);
 
-  const footer = (): ModalFooter => <Button onClick={() => setShow(false)}>Confirm</Button>;
+  const footer = (): ModalFooter => (
+    <Button type='primary' onClick={() => setShow(false)}>
+      Confirm
+    </Button>
+  );
 
   return (
     <div>
-      <Button onClick={() => setShow(true)}>Moveable modal</Button>
+      <Button mode='outline' onClick={() => setShow(true)}>
+        Moveable modal
+      </Button>
       <Modal
         moveable
         resizable

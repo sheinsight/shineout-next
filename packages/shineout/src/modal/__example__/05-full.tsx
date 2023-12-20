@@ -31,7 +31,9 @@ const App: React.FC = () => {
       <Modal title='Profile' fullScreen visible={visible} onClose={cancel} footer={footer()}>
         <Content></Content>
       </Modal>
-      <Button onClick={() => setVisible(true)}>Full Screen</Button>
+      <Button mode='outline' onClick={() => setVisible(true)}>
+        Full Screen
+      </Button>
     </div>
   );
 };

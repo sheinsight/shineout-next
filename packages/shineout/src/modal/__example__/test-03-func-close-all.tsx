@@ -20,7 +20,9 @@ const App: React.FC = () => {
       },
       footer: (
         <div>
-          <Button onClick={() => Modal.closeAll()}>close all</Button>
+          <Button mode='outline' onClick={() => Modal.closeAll()}>
+            close all
+          </Button>
           <Button onClick={open}> open ${uid} </Button>
         </div>
       ),
@@ -29,7 +31,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={open}>confirm</Button>
+      <Button mode='outline' onClick={open}>
+        confirm
+      </Button>
     </div>
   );
 };

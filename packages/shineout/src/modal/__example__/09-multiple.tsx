@@ -35,11 +35,17 @@ const App: React.FC = () => {
 
   const show = (v: number) => setCurrent(v);
 
-  const footer = (i: number): ModalFooter => <Button onClick={() => show(i)}>Close</Button>;
+  const footer = (i: number): ModalFooter => (
+    <Button mode='outline' onClick={() => show(i)}>
+      Close
+    </Button>
+  );
 
   return (
     <div>
-      <Button onClick={() => show(1)}>click me</Button>
+      <Button mode='outline' onClick={() => show(1)}>
+        click me
+      </Button>
 
       {range(11, 1).map((i) => (
         <Modal

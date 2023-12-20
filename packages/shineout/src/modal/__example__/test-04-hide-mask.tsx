@@ -33,7 +33,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={show}>click me</Button>
+      <Button mode='outline' onClick={show}>
+        click me
+      </Button>
       <Modal
         width={400}
         visible={visible}
@@ -42,7 +44,7 @@ const App: React.FC = () => {
         onClose={handleCancel}
         hideMask
         footer={[
-          <Button key='cancel' onClick={handleCancel}>
+          <Button mode='outline' key='cancel' onClick={handleCancel}>
             Cancel
           </Button>,
           <Button key='ok' type='primary' onClick={handleOk}>

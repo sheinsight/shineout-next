@@ -45,11 +45,21 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button onClick={show}>show</Button>
-      <Button onClick={info}>info</Button>
-      <Button onClick={error}>error</Button>
-      <Button onClick={success}>success</Button>
-      <Button onClick={warning}>warning</Button>
+      <Button onClick={show} mode='outline'>
+        show
+      </Button>
+      <Button onClick={info} mode='outline'>
+        info
+      </Button>
+      <Button onClick={error} mode='outline'>
+        error
+      </Button>
+      <Button onClick={success} mode='outline'>
+        success
+      </Button>
+      <Button onClick={warning} mode='outline'>
+        warning
+      </Button>
     </div>
   );
 };
