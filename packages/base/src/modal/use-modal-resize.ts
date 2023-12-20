@@ -9,6 +9,7 @@ export const useModalResize = (props: {
   const [pos, setPos] = useState({ width: props.defaultWidth, height: props.defaultHeight });
   const { current: context } = useRef({
     direction: 'xy',
+    position: 'none',
   });
   const handleDragStart = usePersistFn(() => {
     const target = props.panelRef.current as HTMLElement;
@@ -21,12 +22,18 @@ export const useModalResize = (props: {
 
   const handleDragMove = usePersistFn((deltaX, deltaY) => {
     setPos((pre) => {
-      let { width, height } = pre;
+      let { width, height } = pre as { width: number; height: number };
       if (context.direction === 'x' || context.direction === 'xy') {
-        width = pre.width + deltaX;
+        width = width + deltaX;
+      }
+      if (context.direction === 'x-r') {
+        width = width - deltaX;
       }
       if (context.direction === 'y' || context.direction === 'xy') {
         height = pre.height + deltaY;
+      }
+      if (context.direction === 'y-r') {
+        height = height - deltaY;
       }
       return {
         width,
@@ -40,11 +47,13 @@ export const useModalResize = (props: {
   });
 
   const handleXMouseDown = usePersistFn((e: React.MouseEvent) => {
-    context.direction = 'x';
+    const position = e.currentTarget.getAttribute('data-position');
+    context.direction = position === 'right' ? 'x-r' : 'x';
     handleMouseDown(e);
   });
   const handleYMouseDown = usePersistFn((e: React.MouseEvent) => {
-    context.direction = 'y';
+    const position = e.currentTarget.getAttribute('data-position');
+    context.direction = position === 'bottom' ? 'y-r' : 'y';
     handleMouseDown(e);
   });
 

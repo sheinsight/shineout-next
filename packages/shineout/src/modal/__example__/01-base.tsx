@@ -7,15 +7,11 @@
  *    -- The basic usage for component.
  */
 import React, { useState } from 'react';
-import { Modal, Button, TYPE } from 'shineout';
-
-type ModalProps = TYPE.Modal.Props;
-type ModalVisible = ModalProps['visible'];
-type ModalOnClose = ModalProps['onClose'];
+import { Modal, Button } from 'shineout';
 
 const App: React.FC = () => {
   const [content, setContent] = useState(1);
-  const [visible, setVisible] = useState<ModalVisible>(false);
+  const [visible, setVisible] = useState(false);
 
   const show = () => {
     setVisible(true);
@@ -27,7 +23,7 @@ const App: React.FC = () => {
     console.log('clicked ok!');
   };
 
-  const handleCancel: ModalOnClose = () => {
+  const handleCancel = () => {
     setVisible(false);
     setContent(content + 1);
     console.log('clicked cancel');

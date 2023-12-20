@@ -5,15 +5,12 @@
  *    -- set moveable mark modal move by header, set resizable to resize modal
  */
 import React, { useState } from 'react';
-import { Modal, Button, TYPE } from 'shineout';
-
-type ModalProps = TYPE.Modal.Props;
-type ModalFooter = ModalProps['footer'];
+import { Modal, Button } from 'shineout';
 
 const App: React.FC = () => {
   const [show, setShow] = useState(false);
 
-  const footer = (): ModalFooter => (
+  const footer = () => (
     <Button type='primary' onClick={() => setShow(false)}>
       Confirm
     </Button>

@@ -5,19 +5,14 @@
  *    -- Set the zoom property to enable zoom animation
  */
 import React, { useState } from 'react';
-import { Modal, Button, TYPE } from 'shineout';
-
-type ModalProps = TYPE.Modal.Props;
-type ModalFooter = ModalProps['footer'];
-type ModalVisible = ModalProps['visible'];
-type ModalOnClose = ModalProps['onClose'];
+import { Modal, Button } from 'shineout';
 
 const App: React.FC = () => {
-  const [visible, setVisible] = useState<ModalVisible>(false);
+  const [visible, setVisible] = useState(false);
 
-  const handleClose: ModalOnClose = () => setVisible(false);
+  const handleClose = () => setVisible(false);
 
-  const footer = (): ModalFooter => (
+  const footer = () => (
     <Button key='ok' type='primary' onClick={() => setVisible(false)}>
       Ok
     </Button>

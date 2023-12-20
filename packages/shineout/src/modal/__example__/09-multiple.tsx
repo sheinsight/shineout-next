@@ -5,10 +5,7 @@
  *    -- Multi-layer Modal
  */
 import React, { useState, Fragment } from 'react';
-import { Modal, Button, TYPE } from 'shineout';
-
-type ModalProps = TYPE.Modal.Props;
-type ModalFooter = ModalProps['footer'];
+import { Modal, Button } from 'shineout';
 
 const pickNumber = (ma = 65555, mi = 0, fixed = 2) => {
   let max = ma;
@@ -35,7 +32,7 @@ const App: React.FC = () => {
 
   const show = (v: number) => setCurrent(v);
 
-  const footer = (i: number): ModalFooter => (
+  const footer = (i: number) => (
     <Button mode='outline' onClick={() => show(i)}>
       Close
     </Button>

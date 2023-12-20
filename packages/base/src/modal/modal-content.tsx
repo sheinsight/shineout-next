@@ -210,9 +210,23 @@ const Modal = (props: ModalContentProps) => {
     if (!props.resizable) return null;
     return (
       <>
-        <div className={modalClasses?.resizeX} onMouseDown={resizeInfo.handleXMouseDown}></div>
-        <div className={modalClasses?.resizeY} onMouseDown={resizeInfo.handleYMouseDown}></div>
-        <div className={modalClasses?.resizeXY} onMouseDown={resizeInfo.handleXYMouseDown}></div>
+        {!isPositionY && (
+          <div
+            className={modalClasses?.resizeX}
+            data-position={props.position}
+            onMouseDown={resizeInfo.handleXMouseDown}
+          ></div>
+        )}
+        {!isPositionX && (
+          <div
+            className={modalClasses?.resizeY}
+            data-position={props.position}
+            onMouseDown={resizeInfo.handleYMouseDown}
+          ></div>
+        )}
+        {!isPositionX && !isPositionY && (
+          <div className={modalClasses?.resizeXY} onMouseDown={resizeInfo.handleXYMouseDown}></div>
+        )}
       </>
     );
   };

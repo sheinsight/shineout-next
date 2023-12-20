@@ -1,20 +1,20 @@
 /**
- * cn - 位置（抽屉）
- *    -- 通过 position 可设置 Modal 弹出的位置，这时 Modal 就如 Drawer 一样。现支持 top、right、bottom 和 left 四个位置配置。
+ * cn - 位置
+ *    -- 通过 position 可设置 Drawer 弹出的位置, 现支持 top、right、bottom 和 left 四个位置配置。
  * en - Position
  *    -- Set position property to specify the pop-up position.
  */
 import React, { useState } from 'react';
-import { Modal, Button, Form, Input, Radio, TYPE } from 'shineout';
+import { Drawer, Button, Form, Input, Radio, TYPE } from 'shineout';
 
-type ModalProps = TYPE.Modal.Props;
-type ModalPosition = ModalProps['position'];
+type DrawerProps = TYPE.Drawer.Props;
+type DrawerPosition = DrawerProps['position'];
 
-const positionList: ModalPosition[] = ['top', 'right', 'bottom', 'left'];
+const positionList: DrawerPosition[] = ['right', 'top', 'bottom', 'left'];
 
 const App: React.FC = () => {
   const [visible, setVisible] = useState(false);
-  const [position, setPosition] = useState<ModalPosition>('right');
+  const [position, setPosition] = useState<DrawerPosition>('right');
 
   const toggle = (v: boolean) => {
     setVisible(v);
@@ -25,7 +25,7 @@ const App: React.FC = () => {
       <Button mode='outline' onClick={() => toggle(false)}>
         Cancel
       </Button>
-      <Modal.Submit>Submit</Modal.Submit>
+      <Drawer.Submit>Submit</Drawer.Submit>
     </div>
   );
   return (
@@ -40,7 +40,7 @@ const App: React.FC = () => {
 
       <Button onClick={() => toggle(true)}>click me</Button>
 
-      <Modal
+      <Drawer
         title='Form'
         key={position}
         footer={footer()}
@@ -62,7 +62,7 @@ const App: React.FC = () => {
             <Input name='password' type='password' />
           </Form.Item>
         </Form>
-      </Modal>
+      </Drawer>
     </div>
   );
 };

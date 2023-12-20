@@ -5,11 +5,7 @@
  *    -- destroy
  */
 import React, { useEffect, useState } from 'react';
-import { Modal, Button, TYPE, Message } from 'shineout';
-
-type ModalProps = TYPE.Modal.Props;
-type ModalVisible = ModalProps['visible'];
-type ModalOnClose = ModalProps['onClose'];
+import { Modal, Button, Message } from 'shineout';
 
 const Hello = () => {
   const [content, setContent] = useState(1);
@@ -24,7 +20,7 @@ const Hello = () => {
 };
 
 const App: React.FC = () => {
-  const [visible, setVisible] = useState<ModalVisible>(false);
+  const [visible, setVisible] = useState(false);
 
   const show = () => {
     setVisible(true);
@@ -35,7 +31,7 @@ const App: React.FC = () => {
     console.log('clicked ok!');
   };
 
-  const handleCancel: ModalOnClose = () => {
+  const handleCancel = () => {
     setVisible(false);
     console.log('clicked cancel');
   };

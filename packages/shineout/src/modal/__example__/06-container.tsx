@@ -4,20 +4,12 @@
  * en - Target
  *    -- set container to render target node
  */
-import React, { useState } from 'react';
-import { Modal, Button, TYPE } from 'shineout';
-
-type ModalProps = TYPE.Modal.Props;
-type ModalVisible = ModalProps['visible'];
-type ModalContainer = ModalProps['container'];
+import React, { useRef, useState } from 'react';
+import { Modal, Button } from 'shineout';
 
 const App: React.FC = () => {
-  const [wrapper, setWrapper] = useState<ModalContainer>();
-  const [visible, setVisible] = useState<ModalVisible>(false);
-
-  const bindElement: React.LegacyRef<HTMLDivElement> = (ref) => {
-    setWrapper(ref!);
-  };
+  const [visible, setVisible] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   const show = () => {
     setVisible(true);
@@ -28,12 +20,12 @@ const App: React.FC = () => {
   };
 
   return (
-    <div ref={bindElement}>
+    <div ref={wrapperRef}>
       <Button onClick={show} mode='outline'>
         click me
       </Button>
       <Modal
-        container={wrapper}
+        container={wrapperRef.current || undefined}
         visible={visible}
         width={400}
         title='Modal Title'

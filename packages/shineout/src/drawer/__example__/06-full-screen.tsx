@@ -1,11 +1,11 @@
 /**
  * cn - 全屏
- *    -- 使用 fullScreen 属性来使对话框全屏展示
+ *    -- 使用 fullScreen 属性来使抽屉全屏展示
  * en - Full Screen
- *    -- Use the fullScreen property to display the modal in full screen
+ *    -- Use the fullScreen property to display the Drawer in full screen
  */
 import React, { useState, useCallback } from 'react';
-import { Modal, Button } from 'shineout';
+import { Drawer, Button } from 'shineout';
 import Content from '../../form/__example__/001-base';
 
 const App: React.FC = () => {
@@ -23,9 +23,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Modal title='Profile' fullScreen visible={visible} onClose={cancel} footer={footer()}>
+      <Drawer title='Profile' fullScreen visible={visible} onClose={cancel} footer={footer()}>
         <Content></Content>
-      </Modal>
+      </Drawer>
       <Button mode='outline' onClick={() => setVisible(true)}>
         Full Screen
       </Button>

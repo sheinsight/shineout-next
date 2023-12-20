@@ -272,6 +272,7 @@ const modalStyle: JsStyles<ModalClassType> = {
       '& $header': {
         padding: `${token.modalDrawerTitlePaddingY} ${token.modalDrawerTitlePaddingX}`,
         background: token.modalDrawerTitleBackgroundColor,
+        marginBottom: 0,
       },
       '& $body': {
         padding: `${token.modalDrawerBodyPaddingY} ${token.modalDrawerBodyPaddingX}`,
@@ -281,6 +282,7 @@ const modalStyle: JsStyles<ModalClassType> = {
       },
       '& $footer': {
         padding: `${token.modalDrawerFooterPaddingY} ${token.modalDrawerFooterPaddingX}`,
+        marginTop: 0,
       },
     },
   },
@@ -385,6 +387,11 @@ const modalStyle: JsStyles<ModalClassType> = {
     zIndex: 11,
     background: 'transparent',
     touchAction: 'none',
+    '$wrapperDrawerRight &': {
+      left: '-4px',
+      right: 'auto',
+      cursor: 'w-resize',
+    },
   },
   resizeY: {
     cursor: 's-resize',
@@ -396,6 +403,11 @@ const modalStyle: JsStyles<ModalClassType> = {
     zIndex: 11,
     background: 'transparent',
     touchAction: 'none',
+    '$wrapperDrawerBottom &': {
+      top: '-4px',
+      bottom: 'auto',
+      cursor: 'n-resize',
+    },
   },
   resizeXY: {
     cursor: 'se-resize',

@@ -9,7 +9,7 @@
  *    -- Set maskCloseAbel to null to disable the function that click mask to close and the close icon in the upper right corner will be preserved.
  */
 import React, { useState } from 'react';
-import { Modal, Button, Radio } from 'shineout';
+import { Drawer, Button, Radio } from 'shineout';
 
 const list: { title: string; value: boolean | null }[] = [
   {
@@ -54,7 +54,7 @@ const App: React.FC = () => {
         Open
       </Button>
 
-      <Modal
+      <Drawer
         width={400}
         visible={visible}
         footer={footer()}
@@ -67,7 +67,7 @@ const App: React.FC = () => {
         .
         <br />
         You must click the button to close the Modal.
-      </Modal>
+      </Drawer>
     </div>
   );
 };

@@ -15,6 +15,7 @@ const ModalSubmit = (props: ButtonProps) => {
   return (
     <Button
       htmlType='button'
+      type='primary'
       loading={modalFormContext?.formStats === 'pending'}
       disabled={modalFormContext?.formStats === 'disabled'}
       {...props}

@@ -5,15 +5,15 @@
  *    -- use type display type icon
  */
 import React, { useState } from 'react';
-import { Modal, Button, Radio, TYPE } from 'shineout';
+import { Drawer, Button, Radio, TYPE } from 'shineout';
 
-type ModalProps = TYPE.Modal.Props;
-type ModalType = ModalProps['type'];
+type DrawerProps = TYPE.Drawer.Props;
+type DrawerType = DrawerProps['type'];
 
-const typeList: ModalType[] = ['info', 'success', 'warning', 'error'];
+const typeList: DrawerType[] = ['info', 'success', 'warning', 'error'];
 
 const App: React.FC = () => {
-  const [type, setType] = useState<ModalType>('success');
+  const [type, setType] = useState<DrawerType>('success');
   const [visible, setVisible] = useState(false);
 
   const handleOk = () => {
@@ -52,17 +52,17 @@ const App: React.FC = () => {
         click me
       </Button>
 
-      <Modal
+      <Drawer
         type={type}
         width={500}
         visible={visible}
         footer={footer()}
         onClose={handleCancel}
-        title={`Modal Title with ${type} Icon`}
+        title={`Drawer Title with ${type} Icon`}
       >
-        <span>Modal type: </span>
+        <span>Drawer type: </span>
         <b>{type}</b>
-      </Modal>
+      </Drawer>
     </div>
   );
 };
