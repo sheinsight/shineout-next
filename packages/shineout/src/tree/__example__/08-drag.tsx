@@ -8,7 +8,7 @@
  */
 
 import { useState } from 'react';
-import { Tree } from 'shineout';
+import { Tree } from '../../../dist/cjs';
 import { createNestedArray } from './utils';
 
 export default () => {

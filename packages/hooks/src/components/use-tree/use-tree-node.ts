@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BaseTreeNodeProps } from './use-tree-node.type';
+import usePersistFn from '../../common/use-persist-fn';
 
 const useTreeNode = <DataItem>(props: BaseTreeNodeProps<DataItem>) => {
   const { id, data, bindNode, childrenKey, loader, onToggle } = props;
@@ -7,7 +8,7 @@ const useTreeNode = <DataItem>(props: BaseTreeNodeProps<DataItem>) => {
   const [expanded, setExpanded] = useState(false);
   const [fetching, setFetching] = useState(false);
 
-  const update = (key: string, value: boolean) => {
+  const update = usePersistFn((key: string, value: boolean) => {
     switch (key) {
       case 'active':
         if (value !== active) {
@@ -23,7 +24,7 @@ const useTreeNode = <DataItem>(props: BaseTreeNodeProps<DataItem>) => {
         }
         break;
     }
-  };
+  });
 
   const handleToggle = () => {
     const newExpand = !expanded;

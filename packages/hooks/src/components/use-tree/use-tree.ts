@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import useLatestObj from '../../common/use-latest-obj';
 import {
   BaseTreeProps,
@@ -67,8 +67,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const firstRender = useRef(true);
 
-  const [active, setActive] = useState<KeygenResult>();
-
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
@@ -80,9 +78,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
 
-  const get = (id: KeygenResult) => {
+  function get(id: KeygenResult) {
     return context.valueMap.get(id);
-  };
+  }
 
   const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
     if (isFunc(keygen)) {
@@ -131,10 +129,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       }
     });
     return values;
-  };
-
-  const getActive = () => {
-    return activeProp === undefined ? active : activeProp;
   };
 
   const getPath = (id: KeygenResult) => {
@@ -194,13 +188,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       let children: KeygenResult[] = [];
 
       if (Array.isArray(item[childrenKey])) {
-        children = initData(
+        const _children = initData(
           item[childrenKey] as DataItem[],
           [...path, id],
           mode === MODE.MODE_4 ? disabled : isDisabled,
           indexPath,
         );
-        // if (_children) children = _children;
+        if (_children) children = _children;
       }
 
       context.pathMap.set(id, {
@@ -224,7 +218,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       ids = [];
       context.pathMap.forEach((path, index) => {
         if (path.path.length === 0) {
-          ids.push(index);
+          ids!.push(index);
         }
       });
     }
@@ -382,7 +376,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     set,
     getPath,
     getValue,
-    getActive,
     getChecked,
     isDisabled,
     bindNode,
@@ -394,7 +387,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     dataMap: context.dataMap,
     valueMap: context.valueMap,
     updateMap: context.updateMap,
-    setActive,
   };
 };
 

@@ -41,9 +41,9 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
   const restLength = limit - value.length - Object.keys(filesState).length;
 
   const text = {
-    ...props.text,
     forceAcceptErrorMsg: 'invalidAccept',
     invalidImage: 'invalidImage',
+    ...props.text,
   };
 
   const validateFile = async (blob: File, image?: { width: number; height: number }) => {
@@ -237,7 +237,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
 
       let error: Error | null | void = null;
       let imageResult: { src: string; width: number; height: number } | undefined = undefined;
-      if (props.isImage) {
+      if (props.isImage && !props.ignorePreview) {
         try {
           imageResult = await handleImage(blob);
           fileRecord.src = imageResult.src;
@@ -308,8 +308,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
 
   const removeValue = (index: number) => {
     if (props.disabled) return;
-    const { recoverAble, disabled, beforeRemove } = props;
-    if (disabled) return;
+    const { recoverAble, beforeRemove } = props;
     const current = props.value[index];
     const startRemove =
       typeof beforeRemove === 'function' ? beforeRemove(current) : Promise.resolve();
