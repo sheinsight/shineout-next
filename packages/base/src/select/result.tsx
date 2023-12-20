@@ -29,6 +29,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     onCreate,
     allowOnFilter,
     setInputText,
+    childrenKey,
     onRef,
     onFilter,
     onInputBlur,
@@ -107,7 +108,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
     if (values.length <= 0) return true;
     const hasValue =
-      datum.getDataByValues(values).findIndex((item) => {
+      datum.getDataByValues(values, { childrenKey }).findIndex((item) => {
         const cur = renderResultContent(item);
         return !isEmpty(cur);
       }) >= 0;
@@ -139,7 +140,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
   const renderSingleResult = () => {
     if (isEmptyResult()) return renderNbsp();
-    const result = datum.getDataByValues([value]);
+    const result = datum.getDataByValues([value], { childrenKey });
     const content = renderResultContent(result[0]);
 
     return (
@@ -151,13 +152,13 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
   const renderMultipleResult = () => {
     if (isEmptyResult()) return renderNbsp();
-    const result = datum.getDataByValues(value).map(renderItem);
+    const result = datum.getDataByValues(value, { childrenKey }).map(renderItem);
     return result;
   };
 
   const renderMultipleResultMore = () => {
     if (isEmptyResult()) return renderNbsp();
-    const result = datum.getDataByValues(value).map(renderItem);
+    const result = datum.getDataByValues(value, { childrenKey }).map(renderItem);
     const moreNumber = getCompressedBound();
     return (
       <More
@@ -198,7 +199,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
   useEffect(() => {
     if (!multiple && showInput && value) {
-      const result = datum.getDataByValues([value]);
+      const result = datum.getDataByValues([value], { childrenKey });
       const content = renderResultContent(result[0]);
       if (!isEmpty(content)) {
         setText(content as string);

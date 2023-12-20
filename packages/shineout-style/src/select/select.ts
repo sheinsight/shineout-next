@@ -334,6 +334,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   tree: {
     padding: 4,
+    overflow: 'auto',
   },
   tag: {
     '&$tag + &$tag': {

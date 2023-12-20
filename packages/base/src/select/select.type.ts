@@ -1,5 +1,5 @@
 // import React from 'react';
-import { BaseSelectProps, KeygenType, useListSelect } from '@sheinx/hooks';
+import { BaseSelectProps, KeygenType, useListSelect, KeygenResult } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { TagClasses } from '../tag/tag.type';
@@ -186,6 +186,11 @@ export interface SelectPropsBase<DataItem, Value>
   compressedClassName?: string;
   hideCreateOption?: boolean;
   filterSingleSelect?: boolean;
+
+  // Tree 组件同款属性
+  defaultExpanded?: KeygenResult[];
+  defaultExpandAll?: boolean;
+
   resultClassName?: ((value: DataItem) => string) | string;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
   renderResult?: (data: DataItem, index?: number) => React.ReactNode;
@@ -211,6 +216,7 @@ export interface SelectPropsBase<DataItem, Value>
   onCreate?: boolean | ((input: Value) => Value);
   onEnterExpand?: (e: React.KeyboardEvent<HTMLDivElement>) => boolean;
   onCollapse?: (collapse: boolean) => void;
+  onExpand?: (value: KeygenResult[]) => void;
 
   /**
    * 新增 api ，开启 onFilter 和 onCreate 时，用于比对是否已经存在相同的数据，默认用输入的值和 keygen 值比对

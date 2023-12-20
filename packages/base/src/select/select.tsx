@@ -53,7 +53,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     keygen,
     focusSelected = true,
     optionWidth = '100%',
-    height,
+    height = 250,
     open: openProp,
     position: positionProp = 'bottom-left',
     lineHeight,
@@ -73,6 +73,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     resultClassName,
     hideCreateOption,
     filterSingleSelect,
+    childrenKey,
     onChange,
     onCreate: onCreateProp,
     onFilter: onFilterProp,
@@ -123,6 +124,8 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
     data,
+    treeData,
+    childrenKey,
     multiple,
     defaultValue,
     control: 'value' in props,
@@ -418,6 +421,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
           placeholder={placeholder}
           prediction={prediction}
           renderItem={renderItem}
+          childrenKey={childrenKey}
           renderResult={getRenderResult}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
@@ -492,7 +496,10 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
       <TreeList
         jssStyle={jssStyle}
         data={treeData}
+        datum={datum}
         keygen={keygen}
+        height={height}
+        childrenKey={childrenKey}
         renderItem={renderItem}
       ></TreeList>
     );

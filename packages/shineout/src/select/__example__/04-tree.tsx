@@ -33,10 +33,6 @@ export default () => {
     {
       id: '2',
       title: 'node 2',
-      //   children: [
-      //     { id: '2-1', title: 'node 2-1' },
-      //     { id: '2-2', title: 'node 2-2' },
-      //   ],
     },
     { id: '3', title: 'node 3', children: [{ id: '3-1', title: 'node 3-1' }] },
     { id: '4', title: 'node 4' },
@@ -46,10 +42,13 @@ export default () => {
     <div>
       <Select
         width={260}
+        multiple
         childrenKey='children'
         treeData={treeData}
         keygen='id'
+        format='id'
         placeholder='Select Color'
+        prediction={(v, d) => v === d.id}
         renderItem={(d) => d.title}
       />
     </div>

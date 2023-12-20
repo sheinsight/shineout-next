@@ -1,12 +1,12 @@
-// import { getKey } from '../../utils';
-// import { KeygenResult } from '../../common/type';
 import { useInputAble } from '../../common/use-input-able';
 import { useListSelect } from '../../common/use-list-select';
 import { BaseSelectProps } from './use-select.type';
 
 const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => {
   const {
-    data,
+    // data,
+    treeData,
+    // childrenKey,
     control,
     defaultValue,
     beforeChange,
@@ -27,7 +27,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
   });
 
   const datum = useListSelect({
-    data,
+    data: treeData,
     format,
     value,
     multiple,
