@@ -10,7 +10,7 @@ const PENDING = 2;
 const Alert = (props: AlertProps) => {
   const {
     jssStyle,
-    type = 'warning',
+    type: typeProp = 'warning',
     className,
     children,
     icon,
@@ -24,6 +24,14 @@ const Alert = (props: AlertProps) => {
     ...rest
   } = props;
   const [dismiss, setDismiss] = useState(SHOW);
+  const getType = () => {
+    if (typeProp === 'error') {
+      return 'danger';
+    }
+    return typeProp;
+  };
+
+  const type = getType();
 
   const icons = {
     info: Icons.PcInfoCircleFill,

@@ -20,7 +20,7 @@ export interface AlertClasses {
   noBordered: string;
 }
 
-export type AlertType = 'success' | 'info' | 'warning' | 'danger' | 'confirmwarning';
+export type AlertType = 'success' | 'info' | 'warning' | 'danger' | 'confirmwarning' | 'error';
 
 export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
