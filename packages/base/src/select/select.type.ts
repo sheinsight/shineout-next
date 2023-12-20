@@ -60,14 +60,34 @@ export interface BaseListProps<DataItem, Value>
   onOptionClick: (data: DataItem, index: number) => void;
 }
 
-export interface SelectProps<DataItem, Value>
+export interface SelectDataProps<DataItem> {
+  data: DataItem[];
+}
+
+type TreeData<T, K extends keyof T & string> = TreeDataItem<T, K>[];
+
+type TreeDataItem<T, K extends keyof T & string> = T & {
+  [P in K]?: TreeData<T, K>[];
+};
+
+export interface SelectTreeDataProps<DataItem> {
+  /**
+   * @en Tree data
+   * @cn 树形数据
+   */
+  // treeData: TreeData<DataItem, keyof DataItem & string>;
+  treeData: DataItem[];
+  childrenKey?: keyof DataItem & string;
+}
+
+export interface BaseProps<DataItem, Value>
   extends Omit<BaseSelectProps<DataItem, Value>, 'control'>,
     Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle: JssStyleType;
-  data: DataItem[];
+  // data: DataItem[];
+  // treeData?: DataItem[];
   keygen: KeygenType<DataItem>;
-  treeData?: DataItem[];
   value?: Value;
 
   /**
@@ -212,3 +232,14 @@ export interface SelectProps<DataItem, Value>
    */
   onFilterWidthCreate?: (data: DataItem, createdData: DataItem, key: string | number) => boolean;
 }
+
+export interface SelectPropsA<DataItem, Value>
+  extends BaseProps<DataItem, Value>,
+    SelectDataProps<DataItem> {}
+
+export interface SelectPropsB<DataItem, Value>
+  extends BaseProps<DataItem, Value>,
+    SelectTreeDataProps<DataItem> {}
+
+export type SelectProps<DataItem, Value> = SelectPropsA<DataItem, Value> &
+  SelectPropsB<DataItem, Value>;
