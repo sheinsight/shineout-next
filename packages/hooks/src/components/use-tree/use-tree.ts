@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import useLatestObj from '../../common/use-latest-obj';
 import {
   BaseTreeProps,
@@ -60,11 +60,12 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     valueMap: new Map<KeygenResult, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
     disabled: false,
+    value: [],
+    data: [],
+    cachedValue: [],
   });
 
   const firstRender = useRef(true);
-
-  const [active, setActive] = useState<KeygenResult>();
 
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
@@ -77,9 +78,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
 
-  const get = (id: KeygenResult) => {
+  function get(id: KeygenResult) {
     return context.valueMap.get(id);
-  };
+  }
 
   const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
     if (isFunc(keygen)) {
@@ -128,10 +129,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       }
     });
     return values;
-  };
-
-  const getActive = () => {
-    return activeProp === undefined ? active : activeProp;
   };
 
   const getPath = (id: KeygenResult) => {
@@ -211,15 +208,17 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return ids;
   };
 
-  const initValue = (ids: KeygenResult[] = [], forceCheck?: boolean) => {
+  const initValue = (ids_outer?: KeygenResult[], forceCheck?: boolean) => {
+    let ids = ids_outer;
     if (!data || !value) {
       return undefined;
     }
 
-    if (ids.length === 0) {
+    if (!ids) {
+      ids = [];
       context.pathMap.forEach((path, index) => {
         if (path.path.length === 0) {
-          ids.push(index);
+          ids!.push(index);
         }
       });
     }
@@ -268,6 +267,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return checked!;
   };
 
+  const setValue = (value?: KeygenResult[]) => {
+    context.value = value;
+    if (value && value !== context.cachedValue) {
+      initValue();
+    }
+  };
+
   const isDisabled = (id: KeygenResult) => {
     const node = context.pathMap.get(id);
     if (node) return node.isDisabled;
@@ -287,14 +293,19 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const setData = (data?: DataItem[]) => {
-    if (!data) return;
-
+    const prevValue: any[] = context.value || [];
+    context.cachedValue = [];
     context.pathMap = new Map();
     context.dataMap = new Map();
     context.valueMap = new Map();
     context.disabled = getDisabled();
-    console.log('setData');
+    context.data = data;
+
+    if (!data) return;
+
     initData(data, []);
+    initValue();
+    setValue(prevValue);
   };
 
   const set = (id: KeygenResult, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
@@ -348,8 +359,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   useEffect(() => {
+    setValue(value);
     setData(data);
-    initValue(value);
     setTimeout(() => {
       firstRender.current = false;
     });
@@ -365,7 +376,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     set,
     getPath,
     getValue,
-    getActive,
     getChecked,
     isDisabled,
     bindNode,
@@ -377,7 +387,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     dataMap: context.dataMap,
     valueMap: context.valueMap,
     updateMap: context.updateMap,
-    setActive,
   };
 };
 
