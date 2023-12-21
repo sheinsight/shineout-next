@@ -17,6 +17,7 @@ export interface TreeListProps<DataItem>
   iconClass?: string;
   leafClass?: string;
   nodeClass?: string | ((data: DataItem) => string);
+  contentClass?: string | ((data: DataItem) => string);
   dragImageSelector: (data?: DataItem) => string | undefined;
   dragImageStyle?: React.CSSProperties;
   dragSibling?: boolean;

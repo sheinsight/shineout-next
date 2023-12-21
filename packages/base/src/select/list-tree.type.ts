@@ -4,12 +4,13 @@ import { JssStyleType, SelectProps, DatumType } from './select.type';
 export interface ListTreeProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
-    'renderItem' | 'defaultExpandAll' | 'defaultExpanded' | 'onExpand'
+    'multiple' | 'renderItem' | 'defaultExpandAll' | 'defaultExpanded' | 'onExpand'
   > {
   jssStyle?: JssStyleType;
-  value: Value;
   height: number;
   data: DataItem[];
   keygen: KeygenType<DataItem>;
+  childrenKey: keyof DataItem;
   datum: DatumType<DataItem, Value>;
+  closePop: () => void;
 }

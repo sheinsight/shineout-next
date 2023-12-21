@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { ReactNode, useRef, useState } from 'react';
 import classNames from 'classnames';
 import {
   util,
@@ -67,13 +67,16 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     placeholder,
     autoAdapt,
     groupBy,
-    renderItem = (d) => d,
+    renderItem = (d) => d as ReactNode,
     renderResult: renderResultProp,
     renderUnmatched,
     resultClassName,
     hideCreateOption,
     filterSingleSelect,
     childrenKey,
+    defaultExpanded,
+    defaultExpandAll,
+    onExpand,
     onChange,
     onCreate: onCreateProp,
     onFilter: onFilterProp,
@@ -168,7 +171,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   const rootClass = classNames(
     className,
     styles?.wrapper,
-    disabled && styles?.wrapperDisabled,
+    disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,
     focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
@@ -398,7 +401,11 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
 
   const renderIcon = () => {
     if ((clearable && value && open) || (clearable && value && enter)) return renderClearable();
-    return null;
+    return (
+      <span className={classNames(styles.arrowIcon, open && styles.arrowIconOpen)}>
+        {Icons.ArrowDown}
+      </span>
+    );
   };
 
   const renderResult = () => {
@@ -493,13 +500,18 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
 
   const renderTreeList = () => {
     return (
-      <TreeList
+      <TreeList<DataItem, Value>
         jssStyle={jssStyle}
-        data={treeData}
+        data={treeData as DataItem[]}
         datum={datum}
+        multiple={multiple}
         keygen={keygen}
-        height={height}
-        childrenKey={childrenKey}
+        height={height as number}
+        defaultExpandAll={defaultExpandAll}
+        defaultExpanded={defaultExpanded}
+        onExpand={onExpand}
+        childrenKey={childrenKey as keyof DataItem}
+        closePop={closePop}
         renderItem={renderItem}
       ></TreeList>
     );

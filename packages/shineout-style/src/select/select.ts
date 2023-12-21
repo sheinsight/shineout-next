@@ -32,11 +32,14 @@ export type SelectClasses = {
   pickerWrapper: string;
   clearable: string;
   clearIcon: string;
+  arrowIconOpen: string;
+  arrowIcon: string;
   ellipsis: string;
   multiple: string;
   checkedIcon: string;
   list: string;
   tree: string;
+  treeOption: string;
   tag: string;
   space: string;
   inputMirror: string;
@@ -300,6 +303,19 @@ const selectStyle: JsStyles<SelectClassType> = {
     color: token.selectClearColor,
     verticalAlign: 'middle',
   },
+  arrowIcon: {
+    position: 'absolute',
+    right: token.selectPaddingX,
+    verticalAlign: 'middle',
+    width: token.selectFontSize,
+    lineHeight: 0,
+    color: token.selectIconColor,
+    transition: 'transform 0.3s',
+  },
+  arrowIconOpen: {
+    transform: 'rotate(180deg)',
+    color: token.selectHoverBorderColor,
+  },
   ellipsis: {
     display: 'block',
     overflow: 'hidden',
@@ -335,6 +351,14 @@ const selectStyle: JsStyles<SelectClassType> = {
   tree: {
     padding: 4,
     overflow: 'auto',
+  },
+  treeOption: {
+    '& $optionDisabled': {
+      cursor: 'not-allowed',
+      '&:hover:not([data-active="true"])': {
+        backgroundColor: `${token.selectOptionDisabledBackgroundColor}`,
+      },
+    },
   },
   tag: {
     '&$tag + &$tag': {
@@ -399,10 +423,19 @@ const selectStyle: JsStyles<SelectClassType> = {
   optionActive: {
     color: token.selectOptionActiveColor,
     backgroundColor: token.selectOptionActiveBackgroundColor,
+    '&>div': {
+      color: token.selectOptionActiveColor,
+    },
   },
   optionDisabled: {
+    cursor: 'not-allowed',
     color: token.selectOptionDisabledColor,
     backgroundColor: token.selectOptionDisabledBackgroundColor,
+    '&>div': {
+      cursor: 'not-allowed',
+      color: token.selectOptionDisabledColor,
+      backgroundColor: token.selectOptionDisabledBackgroundColor,
+    },
   },
   optionGroup: {},
   optionGroupTitle: {

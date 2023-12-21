@@ -4,7 +4,7 @@ import { BaseSelectProps } from './use-select.type';
 
 const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => {
   const {
-    // data,
+    data,
     treeData,
     // childrenKey,
     control,
@@ -27,7 +27,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
   });
 
   const datum = useListSelect({
-    data: treeData,
+    data: data || treeData,
     format,
     value,
     multiple,

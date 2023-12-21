@@ -20,6 +20,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     iconClass,
     leafClass,
     nodeClass,
+    contentClass,
     renderItem,
     defaultValue,
     dataUpdate = true,
@@ -173,7 +174,6 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   };
 
   const onToggle = onExpand ? handleToggle : undefined;
-
   return (
     <div className={rootClass} {...rest}>
       <Provider value={func}>
@@ -187,6 +187,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           iconClass={iconClass}
           leafClass={leafClass}
           nodeClass={nodeClass}
+          contentClass={contentClass}
           expanded={expanded}
           expandIcons={expandIcons}
           childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}

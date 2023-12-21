@@ -24,6 +24,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     iconClass,
     leafClass,
     nodeClass,
+    contentClass,
     expandIcons,
     childrenKey,
     inlineNode,
@@ -80,6 +81,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         iconClass={iconClass}
         leafClass={leafClass}
         nodeClass={nodeClass}
+        contentClass={contentClass}
         expandIcons={expandIcons}
         bindNode={bindNode}
         loader={loader}

@@ -25,6 +25,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     iconClass,
     leafClass,
     nodeClass,
+    contentClass,
     expandIcons,
     keygen,
     mode,
@@ -214,6 +215,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       iconClass,
       leafClass,
       nodeClass,
+      contentClass,
       parentClickExpand,
       expanded,
       line,
@@ -260,6 +262,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         line={line}
         data={data}
         mode={mode}
+        contentClass={contentClass}
         active={active}
         fetching={fetching}
         expanded={expanded}

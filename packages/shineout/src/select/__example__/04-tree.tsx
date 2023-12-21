@@ -42,7 +42,6 @@ export default () => {
     <div>
       <Select
         width={260}
-        multiple
         childrenKey='children'
         treeData={treeData}
         keygen='id'

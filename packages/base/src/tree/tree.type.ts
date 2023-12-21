@@ -39,6 +39,7 @@ export interface TreeProps<DataItem>
   line?: boolean;
   iconClass?: string;
   nodeClass?: string | ((data: DataItem) => string);
+  contentClass?: string | ((data: DataItem) => string);
   leafClass?: string;
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass?: ((data: DataItem) => string) | string;

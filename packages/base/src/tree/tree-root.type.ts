@@ -13,6 +13,7 @@ export interface TreeRootProps<DataItem> extends Omit<BaseTreeProps<DataItem>, '
   iconClass?: string;
   leafClass?: string;
   nodeClass?: string | ((data: DataItem) => string);
+  contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   dragImageSelector: (data?: DataItem) => string | undefined;
   dragImageStyle?: React.CSSProperties;
