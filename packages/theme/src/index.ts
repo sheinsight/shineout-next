@@ -40,8 +40,17 @@ import { ImageTokens } from './image/type';
 import Input from './input';
 import { InputTokens } from './input/type';
 
+import List from './list';
+import { ListTokens } from './list/type';
+
 import Message from './message';
 import { MessageTokens } from './message/type';
+
+import Modal from './modal';
+import { ModalTokens } from './modal/type';
+
+import Pagination from './pagination';
+import { PaginationTokens } from './pagination/type';
 
 import Popover from './popover';
 import { PopoverTokens } from './popover/type';
@@ -55,11 +64,20 @@ import { RadioTokens } from './radio/type';
 import Rate from './rate';
 import { RateTokens } from './rate/type';
 
+import Select from './select';
+import { SelectTokens } from './select/type';
+
+import Slider from './slider';
+import { SliderTokens } from './slider/type';
+
 import Spin from './spin';
 import { SpinTokens } from './spin/type';
 
 import Switch from './switch';
 import { SwitchTokens } from './switch/type';
+
+import Table from './table';
+import { TableTokens } from './table/type';
 
 import Tabs from './tabs';
 import { TabsTokens } from './tabs/type';
@@ -73,14 +91,14 @@ import { TextareaTokens } from './textarea/type';
 import Tooltip from './tooltip';
 import { TooltipTokens } from './tooltip/type';
 
-import Upload from './upload';
-import { UploadTokens } from './upload/type';
-
 import Transfer from './transfer';
 import { TransferTokens } from './transfer/type';
 
 import Tree from './tree';
 import { TreeTokens } from './tree/type';
+
+import Upload from './upload';
+import { UploadTokens } from './upload/type';
 
 export type ThemeTokens = AlertTokens &
   ButtonTokens &
@@ -95,20 +113,26 @@ export type ThemeTokens = AlertTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
+  ListTokens &
   MessageTokens &
+  ModalTokens &
+  PaginationTokens &
   PopoverTokens &
   ProgressTokens &
   RadioTokens &
   RateTokens &
+  SelectTokens &
+  SliderTokens &
   SpinTokens &
   SwitchTokens &
+  TableTokens &
   TabsTokens &
   TagTokens &
   TextareaTokens &
   TooltipTokens &
-  UploadTokens &
   TransferTokens &
-  TreeTokens;
+  TreeTokens &
+  UploadTokens;
 
 const Tokens: ThemeTokens = {
   ...Alert,
@@ -124,20 +148,26 @@ const Tokens: ThemeTokens = {
   ...Icon,
   ...Image,
   ...Input,
+  ...List,
   ...Message,
+  ...Modal,
+  ...Pagination,
   ...Popover,
   ...Progress,
   ...Radio,
   ...Rate,
+  ...Select,
+  ...Slider,
   ...Spin,
   ...Switch,
+  ...Table,
   ...Tabs,
   ...Tag,
   ...Textarea,
   ...Tooltip,
-  ...Upload,
   ...Transfer,
   ...Tree,
+  ...Upload,
 };
 
 export type { TokenType };

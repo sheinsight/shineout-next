@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
-import { util } from '@sheinx/hooks';
+// import { util } from '@sheinx/hooks';
 import TreeNode from './tree-node';
 import { TreeClasses } from './tree.type';
 import { TreeListProps } from './tree-list.type';
@@ -48,9 +48,6 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
   } = props;
   const listClass = jssStyle?.tree() || ({} as TreeClasses);
   const rootClass = classNames(className || listClass.children, childrenClassName);
-
-  if (!expanded && !hasExpanded.current) return null;
-  hasExpanded.current = true;
 
   const getKey = (data: DataItem, index: number) => {
     if (typeof keygen === 'function') return keygen(data, id as string);
@@ -106,11 +103,13 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     );
   };
 
-  if (!data || !util.isArray(data)) {
-    return null;
-  }
-  const newStyle = Object.assign({}, style, { display: expanded ? 'block' : 'none' });
+  if (!expanded && !hasExpanded.current) return null;
+  hasExpanded.current = true;
 
+  // if (!data || !util.isArray(data)) {
+  //   return null;
+  // }
+  const newStyle = Object.assign({}, style, { display: expanded ? 'block' : 'none' });
   return (
     <div onDrop={empty} onDragOver={empty} style={newStyle} className={rootClass}>
       {data.map(renderNode)}

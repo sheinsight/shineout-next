@@ -1,8 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util, KeygenResult } from '@sheinx/hooks';
 import { getLocale, useConfig } from '../config';
-import { VirtualRefType } from '../virtual-scroll/virtual-scroll.type';
 import { TransferClasses } from './transfer.type';
 import { TransferListProps } from './transfer-list.type';
 import TransferListItem from './transfer-list-item';
@@ -10,7 +8,7 @@ import TransferListHeader from './transfer-list-header';
 import Empty from '../empty';
 import Input from '../input';
 import Spin from '../spin';
-import VirtualScroll from '../virtual-scroll';
+import VirtualList from '../virtual-scroll/virtual-scroll-list';
 
 const TransferList = <DataItem, Value extends KeygenResult[]>(
   props: TransferListProps<DataItem, Value>,
@@ -22,7 +20,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     data,
     size,
     value,
-    renderItem,
+    renderItem: renderItemProp,
     keygen,
     loading,
     listStyle,
@@ -48,9 +46,6 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   } = props;
   const { locale } = useConfig();
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const virtualRef = useRef<VirtualRefType>();
-
   const styles = jssStyle?.transfer?.() || ({} as TransferClasses);
   const rootClass = classNames(styles.view, {
     [styles.source]: listType === 'source',
@@ -73,16 +68,6 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
 
   const lineHeight = getLineHeight();
 
-  const getScrollHeight = () => {
-    const rows = Math.ceil(data.length / colNum);
-    return rows * lineHeight;
-  };
-
-  const handleScroll = (x: number, y: number) => {
-    const current = Math.floor(y / lineHeight);
-    setCurrentIndex(current);
-  };
-
   const handleFilter = (v?: string) => {
     onFilter?.(v as string, listType);
   };
@@ -101,7 +86,6 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         listDatum={listDatum}
         listType={listType}
         simple={simple}
-        reset={virtualRef.current?.reset}
       ></TransferListHeader>
     );
   };
@@ -146,6 +130,26 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     return <div className={styles.empty}>{empty}</div>;
   };
 
+  const renderItem = (item: DataItem, index: number, key: KeygenResult) => {
+    return (
+      <TransferListItem
+        key={key}
+        jssStyle={jssStyle}
+        size={size}
+        data={item}
+        datum={datum}
+        listDatum={listDatum}
+        simple={simple}
+        itemClass={itemClass}
+        listType={listType}
+        keygen={keygen}
+        lineHeight={lineHeight}
+        renderItem={renderItemProp}
+        disabled={datum.disabledCheck(item)}
+      />
+    );
+  };
+
   const renderList = () => {
     if (util.isFunc(customRender)) {
       const custom = customRender({
@@ -158,48 +162,25 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
       if (custom) return custom;
     }
 
-    const start = currentIndex * colNum;
-    const end = (currentIndex + rowsInView) * colNum;
-    let items = data.slice(start, end);
-    const scrollHeight = getScrollHeight();
-
+    if (data && data.length === 0) {
+      return (
+        <div className={listClass} style={{ ...listStyle, height: listHeight }}>
+          {renderEmpty()}
+        </div>
+      );
+    }
     return (
-      <div className={listClass} style={{ ...listStyle, height: listHeight }}>
-        {items.length > 0 && (
-          <VirtualScroll
-            virtualRef={virtualRef}
-            jssStyle={jssStyle}
-            height={listHeight}
-            scrollWidth={0}
-            scrollHeight={scrollHeight}
-            translate={currentIndex * lineHeight}
-            onScroll={handleScroll}
-          >
-            <div style={{ height: currentIndex * lineHeight, gridColumnEnd: '-1' }} />
-            {items.map((d: DataItem, i: number) => {
-              const key = util.getKey(keygen, d, i);
-              return (
-                <TransferListItem
-                  key={key}
-                  jssStyle={jssStyle}
-                  size={size}
-                  data={d}
-                  datum={datum}
-                  listDatum={listDatum}
-                  simple={simple}
-                  itemClass={itemClass}
-                  listType={listType}
-                  keygen={keygen}
-                  lineHeight={lineHeight}
-                  renderItem={renderItem}
-                  disabled={datum.disabledCheck(d)}
-                />
-              );
-            })}
-          </VirtualScroll>
-        )}
-        {data && data.length === 0 && renderEmpty()}
-      </div>
+      <VirtualList
+        className={listClass}
+        data={data}
+        colNum={colNum}
+        keygen={keygen}
+        style={listStyle}
+        lineHeight={getLineHeight()}
+        height={listHeight}
+        rowsInView={rowsInView}
+        renderItem={renderItem}
+      ></VirtualList>
     );
   };
 
@@ -209,10 +190,6 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
     }
     return <div className={styles.footer}>{footer}</div>;
   };
-
-  useEffect(() => {
-    virtualRef.current?.reset();
-  }, [filterText]);
 
   return (
     <div className={rootClass}>

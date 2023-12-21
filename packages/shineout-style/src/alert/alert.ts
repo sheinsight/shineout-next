@@ -13,6 +13,12 @@ export type AlertClass =
   | 'warning'
   | 'confirmwarning'
   | 'danger'
+  | 'infoIcon'
+  | 'successIcon'
+  | 'warningIcon'
+  | 'confirmwarningIcon'
+  | 'confirmIcon'
+  | 'dangerIcon'
   | 'icon'
   | 'text'
   | 'pending';
@@ -97,38 +103,29 @@ const alertStyle: JsStyles<AlertClass> = {
   info: {
     backgroundColor: Token.alertInfoBackgroundColor,
     borderColor: Token.alertInfoBorderColor,
-    '& $icon': {
-      color: Token.alertInfoFontColor,
-    },
   },
   success: {
     backgroundColor: Token.alertSuccessBackgroundColor,
     borderColor: Token.alertSuccessBorderColor,
-    '& $icon': {
-      color: Token.alertSuccessFontColor,
-    },
   },
   warning: {
     backgroundColor: Token.alertWarningBackgroundColor,
     borderColor: Token.alertWarningBorderColor,
-    '& $icon': {
-      color: Token.alertWarningFontColor,
-    },
   },
   confirmwarning: {
     backgroundColor: Token.alertDangerBackgroundColor,
     borderColor: Token.alertDangerBorderColor,
-    '& $icon': {
-      color: Token.alertDangerFontColor,
-    },
   },
   danger: {
     backgroundColor: Token.alertDangerBackgroundColor,
     borderColor: Token.alertDangerBorderColor,
-    '& $icon': {
-      color: Token.alertDangerFontColor,
-    },
   },
+  infoIcon: { color: Token.alertInfoFontColor },
+  successIcon: { color: Token.alertSuccessFontColor },
+  warningIcon: { color: Token.alertWarningFontColor },
+  confirmwarningIcon: { color: Token.alertDangerFontColor },
+  dangerIcon: { color: Token.alertDangerFontColor },
+  confirmIcon: { color: Token.alertWarningFontColor },
   noBordered: {
     borderColor: 'transparent',
   },

@@ -8,11 +8,13 @@
  */
 
 import { useState } from 'react';
-import { Tree } from '../../../dist/cjs';
+import { Tree } from 'shineout';
 import { createNestedArray } from './utils';
 
+const d = createNestedArray([4, 1, 1]);
+
 export default () => {
-  const [data, setData] = useState(createNestedArray([5, 2, 2]));
+  const [data, setData] = useState(d);
 
   const renderItem = (node: any) => {
     return <span>{`node ${node.id}`}</span>;

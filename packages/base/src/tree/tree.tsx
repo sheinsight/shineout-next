@@ -10,7 +10,6 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     jssStyle,
     line = true,
     childrenKey = 'children',
-    // data: dataProps,
     data,
     value,
     mode = 1,
@@ -36,7 +35,6 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     disabled,
     inlineNode,
     highlight,
-    className,
     onClick,
     loader,
     onDrop,
@@ -49,19 +47,11 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     ...rest
   } = props;
 
-  // [TODO] - Props: dataUpdate
-  // [TODO] - This is a workaround for the issue of data not updating when dataProps changes.
-  // const [data, setData] = useState<DataItem[]>(dataProps);
-  // useEffect(() => {
-  //   if (dataProps !== data && dataUpdate) setData(dataProps);
-  // }, [dataProps])
-
-  const { func, updateMap } = useTree({
+  const { func, updateMap, setActive } = useTree({
     mode,
     value,
     data,
     dataUpdate,
-    active,
     expanded,
     disabled,
     defaultValue,
@@ -72,7 +62,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
-  const rootClass = classNames(treeStyle.tree, className, {
+  const rootClass = classNames(treeStyle.tree, {
     [treeStyle.line]: line,
     [treeStyle.noline]: !line,
   });
@@ -90,6 +80,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
 
   const handleNodeClick = (node: DataItem, id: KeygenResult) => {
     if (active === undefined) {
+      setActive(id);
       handleUpdateActive(id);
     }
 

@@ -17,10 +17,10 @@ const Button = (props: ButtonProps) => {
     outline,
     shape,
     size,
-    type,
+    type: typeProp = 'default',
     space,
     target,
-    mode,
+    mode: modeProp,
     htmlType: htmlTypeProp = 'button',
     renderInnerWrapper,
     renderLoading,
@@ -33,6 +33,18 @@ const Button = (props: ButtonProps) => {
   });
   const buttonStyle = jssStyle?.button?.() || ({} as ButtonClasses);
 
+  const getType = () => {
+    if (typeProp === 'default') return 'secondary';
+    return typeProp;
+  };
+
+  const getMode = () => {
+    if (typeProp === 'default' && modeProp === undefined) return 'outline';
+    return modeProp;
+  };
+
+  const mode = getMode();
+  const type = getType();
   const modeSetted = mode || (text ? 'text' : outline ? 'outline' : undefined);
 
   const rootClass = classNames(

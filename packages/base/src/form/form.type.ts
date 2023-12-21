@@ -54,5 +54,9 @@ export interface FormProps<V extends ObjectType>
   children?: React.ReactNode;
   scrollToError?: boolean;
   formRef?: ((form: FormRef<V>) => void) | { current?: FormRef<V> };
+  /**
+   * @deprecated
+   */
+  pending?: boolean;
 }
 export default {};

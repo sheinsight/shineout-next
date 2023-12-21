@@ -59,7 +59,7 @@ export interface InputStyle {
 export interface SimpleInputProps
   extends BaseInputProps,
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
-  jssStyle: InputStyle;
+  jssStyle?: InputStyle;
   clearIcon?: React.ReactNode;
   /**
    * @en prefix
@@ -85,7 +85,7 @@ export interface InputCommonProps<V> extends BaseTipProps {
   forwardRef?: SimpleInputProps['inputRef'];
   getStatus?: SimpleInputProps['getStatus'];
   size?: SimpleInputProps['size'];
-  jssStyle: SimpleInputProps['jssStyle'];
+  jssStyle?: SimpleInputProps['jssStyle'];
   innerTitle?: React.ReactNode;
   placeTitle?: React.ReactNode;
   htmlName?: string;

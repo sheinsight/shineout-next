@@ -1,4 +1,4 @@
-import Transfer from './Transfer';
+import Transfer from './transfer';
 
 type RefTransfer = typeof Transfer;
 

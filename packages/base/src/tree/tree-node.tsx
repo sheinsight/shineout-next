@@ -74,7 +74,6 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     dragImageSelector,
     dragImageStyle,
   });
-
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
 
@@ -230,10 +229,6 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       onNodeClick,
       bindNode,
       childrenClass,
-      onDragOver,
-      onDragLeave,
-      onDragStart,
-      onDragEnd,
       dragSibling,
       dragHoverExpand,
       dragImageStyle,

@@ -15,7 +15,7 @@ const App: React.FC = () => (
   <div>
     <DatePicker style={style} type='time' defaultValue={now} showSelNow /> <br />
     <DatePicker style={style} type='time' format='HH:mm' defaultValue={now} /> <br />
-    <DatePicker style={style} type='time' format='hh:mm a' defaultValue={now} />
+    <DatePicker style={style} type='time' format='hh:mm A' defaultValue={now} />
   </div>
 );
 
