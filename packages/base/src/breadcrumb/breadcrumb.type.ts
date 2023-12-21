@@ -1,20 +1,32 @@
 import React from 'react';
-import { CommonType } from '../common/type';
-
+import type { CommonType } from '../common/type';
 import type { ReactNode } from 'react';
 import type { KeygenType } from '@sheinx/hooks';
 
-export type StructureArray<T> = Array<T | StructureArray<T>>;
+import type { PopoverJssStyle } from '../popover/popover.type';
+
+export type StructureArray<T> = Array<T | T[]>;
 
 export interface BreadcrumbClasses {
   wrapper: string;
+  down: string;
+  downOpen: string;
+  dropdownItem: string;
+  separator: string;
+  content: string;
+  item: string;
+  itemWithDrop: string;
+  dropdown: string;
+  ellipsis: string;
+}
+
+export interface BreadcrumbJssStyle extends PopoverJssStyle {
+  breadcrumb?: () => BreadcrumbClasses;
 }
 
 export interface BreadcrumbProps<Item = BreadcrumbDataType>
   extends Pick<CommonType, 'className' | 'style'> {
-  jssStyle?: {
-    breadcrumb: () => BreadcrumbClasses;
-  };
+  jssStyle?: BreadcrumbJssStyle;
 
   /**
    * @en The array of breadcrumb objects, see data
@@ -43,6 +55,11 @@ export interface BreadcrumbProps<Item = BreadcrumbDataType>
    * @cn 自定义渲染
    */
   renderItem?: (value: Item) => ReactNode;
+  /**
+   * @cn 最大显示个数
+   * @en Maximum number of displays
+   */
+  max?: number;
 }
 
 /**

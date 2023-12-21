@@ -23,6 +23,11 @@ export interface PopoverClasses {
   footer: string;
 }
 
+export interface PopoverJssStyle {
+  popover?: () => PopoverClasses;
+  alert?: () => AlertClasses;
+  button?: () => ButtonClasses;
+}
 export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
     popover?: () => PopoverClasses;

@@ -5,6 +5,18 @@ import { BreadcrumbTokens } from './type';
 
 const breadcrumbTokens: BreadcrumbTokens = {
   breadcrumbFontSize: '14/regular',
+  breadcrumbFontColor: 'Neutral-text-5',
+  breadcrumbLinkColor: 'Neutral-text-3',
+  breadcrumbLinkHoverColor: 'Brand-5',
+  breadcrumbListBackgroundColor: 'Neutral-fill-1',
+  breadcrumbListShadow: 'Shadow-1',
+  breadcrumbListBorderColor: '#f4f5f8',
+  breadcrumbListPaddingY: 'Padding-4',
+  breadcrumbListItemPaddingX: 'Padding-8',
+  breadcrumbListItemPaddingY: 'Padding-5',
+  breadcrumbListItemHoverBackgroundColor: 'Neutral-fill-2',
+  breadcrumbListItemHoverFontColor: 'Neutral-text-3',
+  breadcrumbSeparatorMarginX: 'Padding-8',
 };
 
 export default breadcrumbTokens;

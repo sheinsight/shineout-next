@@ -1,8 +1,8 @@
 /**
- * cn - 基本用法
- *    -- 组件调用通过 json 数据配置
- * en - Base
- *    -- The basic usage.
+ * cn - 带有下拉
+ *    -- dataItem 为数组时，会渲染为下拉
+ * en - Dropdown
+ *    -- When dataItem is an array, it will be rendered as a dropdown.
  */
 
 import React from 'react';
@@ -16,7 +16,17 @@ type BreadcrumbProps<data> = TYPE.Breadcrumb.Props<data>;
 const data: BreadcrumbProps<BreadcrumbData>['data'] = [
   { title: 'Home', url: '/' },
   { title: <Link to='/cn/components/shineout/button'>Button</Link> },
-  { title: 'Handler', onClick: () => Message.info('clicked') },
+  [
+    {
+      title: 'Dropdown',
+      onClick: () => {
+        Message.info('Dropdown');
+      },
+    },
+    { title: 'Menu', url: window.location.href },
+    { title: 'Pagination' },
+    { title: 'Table' },
+  ],
   { title: 'Self' },
 ];
 const App: React.FC = () => <Breadcrumb data={data} />;

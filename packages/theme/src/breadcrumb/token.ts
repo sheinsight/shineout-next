@@ -15,9 +15,35 @@ const breadcrumbTokenDescription = { breadcrumb: 'xxx' };
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 breadcrumbRules 强关联，非 breadcrumbRules 规则内的 token 需手动增加或删减。
  */
-const breadcrumbTokenValue = { font: { size: '14/regular' } };
+const breadcrumbTokenValue = {};
 
-const breadcrumbTokenExtraValue = {};
+const breadcrumbTokenExtraValue = {
+  font: { size: '14/regular', color: 'Neutral-text-5' },
+  link: {
+    color: 'Neutral-text-3',
+    hover: {
+      color: 'Brand-5',
+    },
+  },
+  list: {
+    background: { color: 'Neutral-fill-1' },
+    shadow: 'Shadow-1',
+    border: { color: '#f4f5f8' },
+    padding: { y: 'Padding-4' },
+    item: {
+      padding: { x: 'Padding-8', y: 'Padding-5' },
+      hover: {
+        background: { color: 'Neutral-fill-2' },
+        font: { color: 'Neutral-text-3' },
+      },
+    },
+  },
+  separator: {
+    margin: {
+      x: 'Padding-8',
+    },
+  },
+};
 
 module.exports = {
   breadcrumbTokenValue,

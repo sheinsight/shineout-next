@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { isFunc } from '../../utils';
 import useRender from '../use-render';
 import usePersistFn from '../use-persist-fn';
@@ -9,14 +9,24 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
   const { value: valuePo, onChange, control, beforeChange, delay } = props;
 
   const [stateValue, changeStateValue] = useState<T | undefined>(props.value || props.defaultValue);
+
   const render = useRender(() => {
     if (control && stateValue !== valuePo) changeStateValue(valuePo);
   });
+
   const { current: context } = useRef<{
     timer: NodeJS.Timeout | null;
     delayChange: null | (() => void);
   }>({ timer: null, delayChange: null });
   const value = control && !context.timer ? valuePo : stateValue;
+
+  useEffect(() => {
+    if (context.timer) {
+      clearTimeout(context.timer);
+      context.timer = null;
+      render();
+    }
+  }, [props.value]);
 
   const forceDelayChange = usePersistFn(() => {
     if (context.timer && context.delayChange) {
