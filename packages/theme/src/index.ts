@@ -4,6 +4,9 @@ import Token from './token/token';
 import Alert from './alert';
 import { AlertTokens } from './alert/type';
 
+import Breadcrumb from './breadcrumb';
+import { BreadcrumbTokens } from './breadcrumb/type';
+
 import Button from './button';
 import { ButtonTokens } from './button/type';
 
@@ -101,6 +104,7 @@ import Upload from './upload';
 import { UploadTokens } from './upload/type';
 
 export type ThemeTokens = AlertTokens &
+  BreadcrumbTokens &
   ButtonTokens &
   CarouselTokens &
   CheckboxTokens &
@@ -136,6 +140,7 @@ export type ThemeTokens = AlertTokens &
 
 const Tokens: ThemeTokens = {
   ...Alert,
+  ...Breadcrumb,
   ...Button,
   ...Carousel,
   ...Checkbox,

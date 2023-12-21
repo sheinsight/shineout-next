@@ -1,11 +1,12 @@
 export { default as Alert } from './alert';
+export { default as Breadcrumb } from './breadcrumb';
 export { default as Button } from './button';
 export { default as Carousel } from './carousel';
 export { default as Checkbox } from './checkbox';
 export { default as DatePicker } from './date-picker';
 export { default as Divider } from './divider';
-export { default as Dropdown } from './dropdown';
 export { default as Drawer } from './drawer';
+export { default as Dropdown } from './dropdown';
 export { default as EditableArea } from './editable-area';
 export { default as Empty } from './empty';
 export { default as Form } from './form';
