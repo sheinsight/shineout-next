@@ -83,8 +83,6 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
     return context.cachedColumns;
   });
 
-  if (context.cachedColumns === null) getColumns(propsColumns);
-
   const columns = getColumns(propsColumns) || [];
   return {
     columns,

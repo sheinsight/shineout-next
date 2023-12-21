@@ -217,11 +217,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     //  当存在某列没有设置宽度的时候， 宽度会跟随内容的变化而变化， 这个时候当 data 改变需要重新计算宽度
     const hasNoWith = props.columns.find((v) => v.width === undefined);
     if (hasNoWith && preData && props.data && props.data.length !== preData.length) {
-      if (preData.length === 0) {
-        resetColGroup();
-      } else if (props.dataChangeResize) {
-        resetColGroup();
-      }
+      if (preData.length === 0 || props.dataChangeResize) resetColGroup();
     }
   }, [props.columns, props.data, props.dataChangeResize]);
 

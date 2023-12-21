@@ -12,6 +12,9 @@ export interface TreeContext<DataItem> {
   valueMap: Map<KeygenResult, CheckedStatusType>;
   updateMap: Map<KeygenResult, UpdateFunc>;
   disabled: boolean | ((item: DataItem) => boolean);
+  value?: KeygenResult[];
+  cachedValue: KeygenResult[];
+  data?: DataItem[];
 }
 
 export interface TreePathType {

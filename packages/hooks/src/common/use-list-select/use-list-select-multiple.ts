@@ -30,6 +30,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     valueMap: new Map<ValueItem, boolean>(),
     lastData: [] as DataItem[],
     dataMap: new Map<ValueItem, DataItem>(),
+    flatDataCache: new Map<any, DataItem[]>(),
   });
   const disabledCheck = usePersistFn((data: DataItem) => {
     if (typeof props.disabled === 'boolean') return props.disabled;

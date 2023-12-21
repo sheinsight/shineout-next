@@ -1,5 +1,5 @@
 /**
- * cn - 可选择树 & 数据模式
+ * cn - 可选择树
  *    -- 配置 `onChange` 以及 `value` 属性开启数据选择功能
  *    -- 配置 `mode` 属性返回不同结构的数据：
  *    -- 模式为 0 时，返回完全选中的节点，包含父节点
@@ -14,6 +14,8 @@
 import { useState } from 'react';
 import { Tree, Radio } from 'shineout';
 import { createNestedArray } from './utils';
+
+const data = createNestedArray([5, 1, 2]);
 
 export default () => {
   const radio = [
@@ -38,7 +40,6 @@ export default () => {
       value: 4,
     },
   ];
-  const data = createNestedArray([5, 1, 2]);
 
   const [value, setValue] = useState([]);
   const [mode, setMode] = useState<0 | 1 | 2 | 3 | 4>(0);

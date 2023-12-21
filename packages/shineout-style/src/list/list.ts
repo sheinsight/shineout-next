@@ -90,7 +90,7 @@ const listStyle: JsStyles<ListClassType> = {
     lineHeight: token.lineHeightDynamic,
     color: token.listFontColor,
     display: 'flex',
-    flexDirection: 'cloumn',
+    flexDirection: 'column',
     flexWrap: 'nowrap',
     alignItems: 'center',
     boxSizing: 'border-box',
