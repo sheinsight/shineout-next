@@ -26,6 +26,7 @@ export * from './rule';
 export * from './select';
 export * from './slider';
 export * from './spin';
+export * from './sticky';
 export * from './switch';
 export * from './table';
 export * from './tabs';
@@ -35,7 +36,6 @@ export * from './tooltip';
 export * from './transfer';
 export * from './tree';
 export * from './upload';
-export * from './tree';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';
