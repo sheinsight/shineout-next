@@ -38,7 +38,14 @@ interface TableRowData {
 type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
 
 const SO_PREFIX = 'table';
-const originClasses = ['wrapper', 'bodyWrapper', 'emptyWrapper', 'headWrapper', 'footWrapper'];
+const originClasses = [
+  'wrapper',
+  'bodyWrapper',
+  'emptyWrapper',
+  'headWrapper',
+  'footWrapper',
+  'iconWrapper',
+];
 const originItemClasses = [
   'default',
   'verticalAlignTop',
@@ -63,6 +70,7 @@ const {
   small: tableSmall,
   cellHover,
   verticalAlignMiddle,
+  iconWrapper,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const columns: TableColumnItem[] = [
@@ -447,5 +455,56 @@ describe('Table[Event]', () => {
     const trs = tbody.querySelectorAll('tr');
     fireEvent.click(trs[0]);
     expect(rowClickFn.mock.calls.length).toBe(1);
+  });
+});
+describe('Table[DataChangeResize', () => {
+  // testing-library can`t get component instance, so can`t test variety of state
+  test('should render when set dataChangeResize', () => {
+    const changeValue = 'Hello';
+    const tempData = [...renderData];
+    const ResizeRender = () => {
+      const [data, setData] = React.useState<TableRowData[]>(tempData);
+      const handleClick = () => {
+        tempData[0].name = changeValue;
+        setData([...tempData]);
+      };
+      return (
+        <div>
+          <Button onClick={handleClick}>change</Button>
+          <Table keygen={'id'} columns={columns} data={data} dataChangeResize />
+        </div>
+      );
+    };
+    const { container } = render(<ResizeRender />);
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    textContentTest(tbody.querySelectorAll('tr')[0].querySelectorAll('td')[1], tempData[0].name);
+    fireEvent.click(container.querySelector('button')!);
+    textContentTest(tbody.querySelectorAll('tr')[0].querySelectorAll('td')[1], changeValue);
+  });
+});
+describe('Table[Expand]', () => {
+  const expandColumns: TableColumnItem[] = [
+    {
+      type: 'row-expand',
+      render: (d: any) => {
+        if (d.salary < 300000) return undefined;
+        return () => (
+          <div style={{ padding: '10px 30px', wordBreak: 'break-all' }}>{JSON.stringify(d)}</div>
+        );
+      },
+    },
+    ...columns,
+  ];
+  test('should render when set expand', () => {
+    const { container } = render(<Table keygen={'id'} columns={expandColumns} data={renderData} />);
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    trs.forEach((item) => {
+      classLengthTest(item, 'td', 3);
+      classLengthTest(item, iconWrapper, 1);
+    });
+    screen.debug();
   });
 });
