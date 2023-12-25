@@ -230,6 +230,20 @@ const fixedData = [
     age: 3,
   },
 ];
+const renderDataA: TableRowData[] = [
+  {
+    id: 1,
+    name: 'test1',
+  },
+  {
+    id: 2,
+    name: 'test2',
+  },
+  {
+    id: 3,
+    name: 'test3',
+  },
+];
 
 const dataGenerate = (sum: number = 20) => {
   const data: TableRowData[] = [];
