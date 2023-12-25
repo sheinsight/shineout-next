@@ -53,14 +53,35 @@ const Sticky = (props: StickyProps) => {
     return getFirstScrollParent(elementRef.current!);
   };
 
+  const updateStyle = usePersistFn(() => {
+    if (context.div && !context.isTop && show) {
+      const shouldFixed = context.target === document.body;
+      const scrollRect = context.target!.getBoundingClientRect();
+      const targetRect = elementRef.current!.getBoundingClientRect();
+      const targetLeft = targetRect.left;
+      const { width, height } = targetRect;
+      if (typeof bottom === 'number') {
+        const outRootRect = context.target!.getBoundingClientRect();
+        const style: React.CSSProperties = {
+          position: shouldFixed ? 'fixed' : 'absolute',
+          width: `${width}px`,
+          height: `${height}px`,
+          top: `${scrollRect.bottom - (props.bottom || 0) - outRootRect.top}px`,
+          left: `${targetLeft - outRootRect.left}px`,
+          transform: 'translateY(-100%)',
+        };
+        setStyle(style);
+      }
+    }
+  });
+
   const handlePosition: IntersectionObserverCallback = usePersistFn((entries) => {
     const entry = entries[0];
-    // console.log(entry);
     const scrollRect = entry.rootBounds;
     const targetRect = entry.boundingClientRect;
     const shouldFixed = context.target === document.body;
     if (!entry.isIntersecting) {
-      const targetLeft = entry.target.getBoundingClientRect().left;
+      const targetLeft = targetRect.left;
       const outRootRect = shouldFixed
         ? { top: 0, bottom: 0, left: 0, right: 0 }
         : context.div!.getBoundingClientRect();
@@ -68,8 +89,6 @@ const Sticky = (props: StickyProps) => {
 
       if (scrollRect && targetRect.bottom < scrollRect.bottom) {
         // top in
-        // console.log('top in');
-        // console.log(scrollRect, outRootRect);
         context.isTop = true;
         if (typeof top === 'number') {
           setShow(true);
@@ -84,8 +103,6 @@ const Sticky = (props: StickyProps) => {
         }
       } else if (scrollRect) {
         // bottom in
-        // console.log('bottom in');
-        // console.log(scrollRect, outRootRect);
         context.isTop = false;
         if (typeof bottom === 'number') {
           setShow(true);
@@ -113,7 +130,6 @@ const Sticky = (props: StickyProps) => {
       setParentVisible(true);
     } else {
       setParentVisible(false);
-      // setStyle({display: 'none'})
     }
   });
 
@@ -126,6 +142,7 @@ const Sticky = (props: StickyProps) => {
       context.parentObserver.disconnect();
       context.parentObserver = null;
     }
+    window.removeEventListener('resize', updateStyle);
   };
 
   const createObserver = () => {
@@ -172,6 +189,7 @@ const Sticky = (props: StickyProps) => {
   useEffect(() => {
     if (!css) {
       createObserver();
+      window.addEventListener('resize', updateStyle);
     }
     return () => {
       cleanEvents();

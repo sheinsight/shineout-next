@@ -1,5 +1,3 @@
-// import React from 'react';
-// import { BaseStickyProps } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 
 export interface StickyClasses {
@@ -41,8 +39,8 @@ export interface StickyProps extends Pick<CommonType, 'className' | 'style'> {
 
   /**
    * @en use css position:sticky while target is ordered
-   * @cn 在指定 target 下，是否采用 css 方式实现附着效果
-   * @default true
+   * @cn 是否采用 css 方式实现附着效果
+   * @default false
    */
   css?: boolean;
   /**
@@ -56,9 +54,4 @@ export interface StickyProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn 子元素
    */
   children?: React.ReactNode;
-
-  /**
-   * @inner 内部使用
-   */
-  needResetPostion?: boolean;
 }
