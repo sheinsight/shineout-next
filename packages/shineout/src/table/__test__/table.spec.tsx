@@ -47,6 +47,7 @@ const originItemClasses = [
   'rowStriped',
   'small',
   'cellHover',
+  'verticalAlignMiddle',
 ];
 const {
   wrapper,
@@ -61,6 +62,7 @@ const {
   rowStriped,
   small: tableSmall,
   cellHover,
+  verticalAlignMiddle,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const columns: TableColumnItem[] = [
@@ -92,6 +94,20 @@ const renderData: TableRowData[] = [
   {
     id: 2,
     name: 'test2',
+  },
+];
+const renderDataA: TableRowData[] = [
+  {
+    id: 1,
+    name: 'test1',
+  },
+  {
+    id: 2,
+    name: 'test2',
+  },
+  {
+    id: 3,
+    name: 'test3',
   },
 ];
 
@@ -319,6 +335,73 @@ describe('Table[Base]', () => {
     fireEvent.mouseEnter(trs[0].querySelectorAll('td')[0]);
     trs[0].querySelectorAll('td').forEach((item) => {
       classTest(item, cellHover, false);
+    });
+  });
+  test('should render when set width', () => {
+    const tableWidth = 1000;
+    const { container } = render(
+      <Table keygen={'id'} columns={columns} data={renderData} width={tableWidth} />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    styleTest(tableWrapper.querySelector('table')!, `width: ${tableWidth}px;`);
+  });
+  test('should render when set cellSelectable', () => {
+    const { container } = render(
+      <Table keygen={'id'} columns={columns} data={renderData} cellSelectable />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    const firstTd = trs[1].querySelectorAll('td')[1];
+    const secondTd = trs[0].querySelectorAll('td')[1];
+    fireEvent.keyDown(document, { key: 'c', ctrlKey: true });
+    fireEvent.mouseDown(firstTd, { ctrlKey: true });
+    fireEvent.mouseUp(firstTd, { ctrlKey: true });
+    attributesTest(firstTd, 'data-soui-table-selection', 'true');
+    attributesTest(document.querySelector('body')!, 'data-soui-table-selection', 'true');
+    fireEvent.mouseDown(secondTd, { ctrlKey: true });
+    fireEvent.mouseUp(secondTd, { ctrlKey: true });
+    attributesTest(secondTd, 'data-soui-table-selection', 'true');
+    fireEvent.click(secondTd);
+    expect(secondTd.hasAttribute('data-soui-table-selection')).toBeFalsy();
+    expect(firstTd.hasAttribute('data-soui-table-selection')).toBeFalsy();
+  });
+  test('should render when set cellSelectable and move', () => {
+    const { container } = render(
+      <Table keygen='id' cellSelectable columns={columns} data={renderDataA} />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    const firstCell = trs[0].querySelectorAll('td')[0]!;
+    const lastCell = trs[0].querySelector('td:last-child')!;
+
+    fireEvent.keyDown(document, { key: 'c', ctrlKey: true });
+    fireEvent.mouseDown(firstCell, { ctrlKey: true });
+    fireEvent.mouseMove(lastCell, { ctrlKey: true });
+    fireEvent.mouseUp(lastCell, { ctrlKey: true });
+
+    trs[0].querySelectorAll('td').forEach((item) => {
+      attributesTest(item, 'data-soui-table-selection', 'true');
+    });
+  });
+  test('should render when set verticalAlign', () => {
+    const { container } = render(
+      <Table keygen={'id'} columns={columns} data={renderData} verticalAlign={'middle'} />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    classTest(tableWrapper, verticalAlignMiddle);
+  });
+  test('should render when set rowClassName', () => {
+    const rowClassName = () => 'test';
+    const { container } = render(
+      <Table keygen={'id'} columns={columns} data={renderData} rowClassName={rowClassName} />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    trs.forEach((item: any) => {
+      classTest(item, rowClassName());
     });
   });
 });
