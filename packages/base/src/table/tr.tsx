@@ -273,7 +273,7 @@ const Tr = (props: TrProps) => {
 
   const handleRowClick = usePersistFn((e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
-    const { rowClickAttr, onRowClick } = props;
+    const { rowClickAttr = ['*'], onRowClick } = props;
     if (onRowClick && rowClickAttr) {
       if (rowClickAttr === true || rowClickAttr === '*') {
         onRowClick(props.rawData, props.rowIndex);
