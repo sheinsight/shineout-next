@@ -5,9 +5,10 @@ interface UseResizeProps {
   targetRef: {
     current: HTMLElement | null;
   };
+  timer?: number;
 }
 export const useResize = (props: UseResizeProps) => {
-  const { targetRef } = props;
+  const { targetRef, timer = 100 } = props;
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   useEffect(() => {
@@ -25,7 +26,7 @@ export const useResize = (props: UseResizeProps) => {
         setHeight(height);
       },
       {
-        timer: 100,
+        timer,
         direction: false,
       },
     );

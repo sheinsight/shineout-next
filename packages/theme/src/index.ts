@@ -76,6 +76,9 @@ import { SliderTokens } from './slider/type';
 import Spin from './spin';
 import { SpinTokens } from './spin/type';
 
+import Sticky from './sticky';
+import { StickyTokens } from './sticky/type';
+
 import Switch from './switch';
 import { SwitchTokens } from './switch/type';
 
@@ -128,6 +131,7 @@ export type ThemeTokens = AlertTokens &
   SelectTokens &
   SliderTokens &
   SpinTokens &
+  StickyTokens &
   SwitchTokens &
   TableTokens &
   TabsTokens &
@@ -164,6 +168,7 @@ const Tokens: ThemeTokens = {
   ...Select,
   ...Slider,
   ...Spin,
+  ...Sticky,
   ...Switch,
   ...Table,
   ...Tabs,
