@@ -886,3 +886,4 @@ describe('Table[Checked]', () => {
     classLengthTest(ths[0], 'input', 0);
   });
 });
+describe('Table[Sort]', () => {});
