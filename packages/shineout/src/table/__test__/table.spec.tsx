@@ -47,6 +47,10 @@ const originClasses = [
   'footWrapper',
   'iconWrapper',
   'expandWrapper',
+  'hasSorter',
+  'sorterContainer',
+  'sorterAsc',
+  'sorterDesc',
 ];
 const originItemClasses = [
   'default',
@@ -59,6 +63,7 @@ const originItemClasses = [
   'verticalAlignMiddle',
   'rowExpand',
   'rowChecked',
+  'sorterActive',
 ];
 const {
   wrapper,
@@ -78,6 +83,11 @@ const {
   rowExpand,
   expandWrapper,
   rowChecked,
+  hasSorter,
+  sorterContainer,
+  sorterAsc,
+  sorterDesc,
+  sorterActive,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const {
@@ -137,6 +147,55 @@ const renderDataA: TableRowData[] = [
     name: 'test3',
   },
 ];
+interface ExpandTreeData {
+  id: number;
+  name: string;
+  children?: ExpandTreeData[];
+}
+
+const expandColumns: TYPE.Table.ColumnItem<ExpandTreeData>[] = [
+  {
+    type: 'row-expand',
+    treeColumnsName: 'children',
+    render: (d: any) => {
+      if (d.salary < 300000) return undefined;
+      return () => (
+        <div style={{ padding: '10px 30px', wordBreak: 'break-all' }}>{JSON.stringify(d)}</div>
+      );
+    },
+  },
+  ...columns,
+];
+
+const expandTreeData: ExpandTreeData[] = [
+  {
+    id: 1,
+    name: 'test1',
+    children: [
+      {
+        id: 2,
+        name: 'test2',
+        children: [
+          {
+            id: 3,
+            name: 'test3',
+          },
+        ],
+      },
+    ],
+  },
+];
+
+const dataGenerate = (sum: number = 20) => {
+  const data: TableRowData[] = [];
+  for (let i = 0; i < sum; i++) {
+    data.push({
+      id: i,
+      name: `test${i}`,
+    });
+  }
+  return data;
+};
 
 afterEach(cleanup);
 mountTest(<Table keygen={'id'} />);
@@ -468,11 +527,42 @@ describe('Table[Event]', () => {
     const { container } = render(
       <Table keygen={'id'} columns={columns} data={renderData} onRowClick={rowClickFn} />,
     );
-    screen.debug();
     const tableWrapper = container.querySelector(wrapper)!;
     const tbody = tableWrapper.querySelector('tbody')!;
     const trs = tbody.querySelectorAll('tr');
     fireEvent.click(trs[0]);
+    expect(rowClickFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set rowClickAttr', () => {
+    const rowClickFn = jest.fn();
+    const columnsByOperation = [
+      ...columns,
+      {
+        title: 'Operation',
+        render: () => (
+          <span>
+            <Button data-info size='small'>
+              <span data-info>info</span>
+            </Button>
+          </span>
+        ),
+      },
+    ];
+    const { container } = render(
+      <Table
+        keygen={'id'}
+        columns={columnsByOperation}
+        data={renderData}
+        rowClickAttr={['data-info']}
+        onRowClick={rowClickFn}
+      />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    fireEvent.click(trs[0]);
+    expect(rowClickFn.mock.calls.length).toBe(0);
+    fireEvent.click(trs[0].querySelector('button')!);
     expect(rowClickFn.mock.calls.length).toBe(1);
   });
   test('should render when set onScroll', () => {
@@ -480,7 +570,6 @@ describe('Table[Event]', () => {
     const { container } = render(
       <Table keygen={'id'} columns={columns} data={renderData} onScroll={scrollFn} />,
     );
-    screen.debug();
     const tableWrapper = container.querySelector(bodyWrapper)!;
     fireEvent.scroll(tableWrapper, { target: { scrollY: 100 } });
     expect(scrollFn.mock.calls.length).toBe(1);
@@ -524,45 +613,6 @@ describe('Table[Expand]', () => {
     }
     return result;
   };
-
-  interface ExpandTreeData {
-    id: number;
-    name: string;
-    children?: ExpandTreeData[];
-  }
-
-  const expandTreeData: ExpandTreeData[] = [
-    {
-      id: 1,
-      name: 'test1',
-      children: [
-        {
-          id: 2,
-          name: 'test2',
-          children: [
-            {
-              id: 3,
-              name: 'test3',
-            },
-          ],
-        },
-      ],
-    },
-  ];
-
-  const expandColumns: TYPE.Table.ColumnItem<ExpandTreeData>[] = [
-    {
-      type: 'row-expand',
-      treeColumnsName: 'children',
-      render: (d: any) => {
-        if (d.salary < 300000) return undefined;
-        return () => (
-          <div style={{ padding: '10px 30px', wordBreak: 'break-all' }}>{JSON.stringify(d)}</div>
-        );
-      },
-    },
-    ...columns,
-  ];
 
   test('should render when set expand', () => {
     const { container } = render(<Table keygen={'id'} columns={expandColumns} data={renderData} />);
@@ -885,5 +935,169 @@ describe('Table[Checked]', () => {
       ?.querySelectorAll('th') as NodeListOf<HTMLTableCellElement>;
     classLengthTest(ths[0], 'input', 0);
   });
+  test('should render when set treeCheckAll', () => {
+    const handleRowSelect = jest.fn();
+    const { container } = render(
+      <Table
+        keygen={'id'}
+        data={expandTreeData}
+        columns={expandColumns}
+        onRowSelect={handleRowSelect}
+        treeCheckAll
+        defaultTreeExpandKeys={[1, 2]}
+      />,
+    );
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    fireEvent.click(trs[0].querySelector('input')!);
+    trs.forEach((item) => {
+      classTest(item, rowChecked);
+    });
+  });
+  test('should render when set checkbox and rowSpan', () => {
+    const checkboxRowspan: TableColumnItem[] = [
+      {
+        type: 'checkbox',
+        rowSpan: (d: any) => d.id === 1,
+      },
+      ...columns,
+    ];
+    const { container } = render(
+      <Table keygen={'id'} data={renderData} columns={checkboxRowspan} />,
+    );
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    classLengthTest(trs[0], 'td', 3);
+    classLengthTest(trs[1], 'td', 2);
+    classLengthTest(trs[0], iconWrapper, 1);
+    classLengthTest(trs[1], iconWrapper, 0);
+    fireEvent.click(trs[0].querySelector('input')!);
+    trs.forEach((item) => {
+      classTest(item, rowChecked);
+    });
+  });
 });
-describe('Table[Sort]', () => {});
+describe('Table[Sort]', () => {
+  const sorterColumns: TableColumnItem[] = [
+    {
+      title: 'id',
+      render: 'id',
+      sorter: 'id',
+    },
+    {
+      title: 'name',
+      render: 'name',
+    },
+  ];
+  const TableSorter = (props: any) => {
+    type TableColumnOrder = TYPE.Table.ColumnOrder;
+    type TableProps = TYPE.Table.Props<TableRowData, TableRowData>;
+    type TableSorter = TableProps['sorter'];
+    const sorter: {
+      [x: string]: any;
+    } = {
+      id: (order: TableColumnOrder) => (a: TableRowData, b: TableRowData) =>
+        order === 'asc' ? a.id - b.id : b.id - a.id,
+    };
+    const handleSorter: TableSorter = (name, order) => sorter[name](order);
+    return (
+      <Table
+        keygen={'id'}
+        columns={sorterColumns}
+        data={renderData}
+        sorter={handleSorter}
+        {...props}
+      />
+    );
+  };
+  test('should render when set sorter', () => {
+    const onSortCancelFn = jest.fn();
+    const { container } = render(<TableSorter onSortCancel={onSortCancelFn} />);
+    const thead = container.querySelector('thead')!;
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    const th = thead.querySelectorAll('th')[0];
+    const tableSorter = th.querySelector(hasSorter)!;
+    const sorterContainerWrapper = tableSorter.querySelector(sorterContainer)!;
+    const sorterAscWrapper = sorterContainerWrapper.querySelector(sorterAsc)!;
+    expect(sorterAscWrapper).toBeInTheDocument();
+    const sorterDescWrapper = sorterContainerWrapper.querySelector(sorterDesc)!;
+    expect(sorterDescWrapper).toBeInTheDocument();
+    textContentTest(trs[0].querySelectorAll('td')[0], renderData[0].id.toString());
+    textContentTest(trs[1].querySelectorAll('td')[0], renderData[1].id.toString());
+    fireEvent.click(sorterDescWrapper);
+    classTest(sorterDescWrapper, sorterActive);
+    const newTrs = tbody.querySelectorAll('tr');
+    textContentTest(newTrs[0].querySelectorAll('td')[0], renderData[1].id.toString());
+    textContentTest(newTrs[1].querySelectorAll('td')[0], renderData[0].id.toString());
+    fireEvent.click(sorterDescWrapper);
+    const oldTrs = tbody.querySelectorAll('tr');
+    textContentTest(oldTrs[0].querySelectorAll('td')[0], renderData[0].id.toString());
+    textContentTest(oldTrs[1].querySelectorAll('td')[0], renderData[1].id.toString());
+    expect(onSortCancelFn.mock.calls.length).toBe(1);
+    classTest(sorterDescWrapper, sorterActive, false);
+  });
+  test('should render when set defaultSorter', () => {
+    const sorterColumns: TableColumnItem[] = [
+      {
+        title: 'id',
+        render: 'id',
+        sorter: 'id',
+        defaultOrder: 'desc',
+      },
+      {
+        title: 'name',
+        render: 'name',
+      },
+    ];
+    const { container } = render(<TableSorter columns={sorterColumns} />);
+    const thead = container.querySelector('thead')!;
+    classTest(thead.querySelector(sorterDesc)!, sorterActive);
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    textContentTest(trs[0].querySelectorAll('td')[0], renderData[1].id.toString());
+    textContentTest(trs[1].querySelectorAll('td')[0], renderData[0].id.toString());
+    fireEvent.click(thead.querySelector(sorterAsc)!);
+    const newTrs = tbody.querySelectorAll('tr');
+    textContentTest(newTrs[0].querySelectorAll('td')[0], renderData[0].id.toString());
+    textContentTest(newTrs[1].querySelectorAll('td')[0], renderData[1].id.toString());
+  });
+  test('should render when set renderSorter', () => {
+    const { container } = render(
+      <TableSorter renderSorter={() => <div className='test'>test</div>} />,
+    );
+    const thead = container.querySelector('thead')!;
+    const tableSorter = thead.querySelector(sorterContainer)!;
+    expect(tableSorter.querySelector('.test')).toBeInTheDocument();
+  });
+  // TODO: don`t have changedByExpand
+});
+describe('Table[RowsInView]', () => {
+  test('should render when set rowsInView without virtual', () => {
+    const tempData = dataGenerate(30);
+    const { container } = render(<Table keygen={'id'} columns={columns} data={tempData} />);
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    expect(trs.length).toBe(30);
+  });
+  test('should render when set rowsInView with virtual', () => {
+    const tempData = dataGenerate(30);
+    console.log(tempData.length);
+    const { container, rerender } = render(
+      <Table keygen={'id'} columns={columns} data={tempData} virtual />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    expect(trs.length).toBe(20);
+    rerender(<Table keygen={'id'} columns={columns} data={tempData} virtual rowsInView={10} />);
+    expect(tbody.querySelectorAll('tr').length).toBe(10);
+    // TODO: rowsInview = 0 should render all data
+    rerender(<Table keygen={'id'} columns={columns} data={tempData} virtual rowsInView={0} />);
+    expect(tbody.querySelectorAll('tr').length).toBe(20);
+  });
+});
+describe('Table[Virtual]', () => {});
+
+describe('Table[Pagination]', () => {});
