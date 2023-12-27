@@ -11,6 +11,7 @@ import {
   createClassName,
   displayTest,
   snapshotTest,
+  styleContentTest,
   styleTest,
   textContentTest,
 } from '../../tests/utils';
@@ -45,6 +46,7 @@ const originClasses = [
   'headWrapper',
   'footWrapper',
   'iconWrapper',
+  'expandWrapper',
 ];
 const originItemClasses = [
   'default',
@@ -55,6 +57,8 @@ const originItemClasses = [
   'small',
   'cellHover',
   'verticalAlignMiddle',
+  'rowExpand',
+  'rowChecked',
 ];
 const {
   wrapper,
@@ -71,7 +75,22 @@ const {
   cellHover,
   verticalAlignMiddle,
   iconWrapper,
+  rowExpand,
+  expandWrapper,
+  rowChecked,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const {
+  wrapper: checkbox,
+  wrapperChecked,
+  wrapperDisabled,
+} = createClassName('checkbox', ['wrapper'], ['wrapperChecked', 'wrapperDisabled']);
+
+const { wrapper: radio, wrapperChecked: radioWrapperChecked } = createClassName(
+  'radio',
+  ['wrapper'],
+  ['wrapperChecked'],
+);
 
 const columns: TableColumnItem[] = [
   {
@@ -456,8 +475,18 @@ describe('Table[Event]', () => {
     fireEvent.click(trs[0]);
     expect(rowClickFn.mock.calls.length).toBe(1);
   });
+  test('should render when set onScroll', () => {
+    const scrollFn = jest.fn();
+    const { container } = render(
+      <Table keygen={'id'} columns={columns} data={renderData} onScroll={scrollFn} />,
+    );
+    screen.debug();
+    const tableWrapper = container.querySelector(bodyWrapper)!;
+    fireEvent.scroll(tableWrapper, { target: { scrollY: 100 } });
+    expect(scrollFn.mock.calls.length).toBe(1);
+  });
 });
-describe('Table[DataChangeResize', () => {
+describe('Table[DataChangeResize]', () => {
   // testing-library can`t get component instance, so can`t test variety of state
   test('should render when set dataChangeResize', () => {
     const changeValue = 'Hello';
@@ -484,9 +513,47 @@ describe('Table[DataChangeResize', () => {
   });
 });
 describe('Table[Expand]', () => {
-  const expandColumns: TableColumnItem[] = [
+  const getExpandKeys = (tree: any, defaultExpand: number[], result: number[] = []) => {
+    if (tree) {
+      tree.forEach((i: any) => {
+        result.push(i.id);
+        if (defaultExpand.includes(i.id) && i.children) {
+          getExpandKeys(i.children, defaultExpand, result);
+        }
+      });
+    }
+    return result;
+  };
+
+  interface ExpandTreeData {
+    id: number;
+    name: string;
+    children?: ExpandTreeData[];
+  }
+
+  const expandTreeData: ExpandTreeData[] = [
+    {
+      id: 1,
+      name: 'test1',
+      children: [
+        {
+          id: 2,
+          name: 'test2',
+          children: [
+            {
+              id: 3,
+              name: 'test3',
+            },
+          ],
+        },
+      ],
+    },
+  ];
+
+  const expandColumns: TYPE.Table.ColumnItem<ExpandTreeData>[] = [
     {
       type: 'row-expand',
+      treeColumnsName: 'children',
       render: (d: any) => {
         if (d.salary < 300000) return undefined;
         return () => (
@@ -496,15 +563,326 @@ describe('Table[Expand]', () => {
     },
     ...columns,
   ];
+
   test('should render when set expand', () => {
     const { container } = render(<Table keygen={'id'} columns={expandColumns} data={renderData} />);
     const tableWrapper = container.querySelector(wrapper)!;
     const tbody = tableWrapper.querySelector('tbody')!;
     const trs = tbody.querySelectorAll('tr');
+    expect(trs.length).toBe(2);
     trs.forEach((item) => {
       classLengthTest(item, 'td', 3);
       classLengthTest(item, iconWrapper, 1);
     });
+    fireEvent.click(trs[0].querySelector(iconWrapper)!);
+    const newTrs = tbody.querySelectorAll('tr');
+    expect(newTrs.length).toBe(3);
+    classTest(newTrs[1], rowExpand);
+    attributesTest(newTrs[1].querySelector('td')!, 'colSpan', '3');
+    textContentTest(newTrs[1].querySelector('td')!, JSON.stringify(renderData[0]));
+    fireEvent.click(trs[0].querySelector(iconWrapper)!);
+    expect(tbody.querySelectorAll('tr').length).toBe(2);
+  });
+  test('should render when set expandKeys', () => {
+    const expandKeys = [1];
+    const { container } = render(
+      <Table keygen={'id'} columns={expandColumns} data={renderData} expandKeys={expandKeys} />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    expect(trs.length).toBe(renderData.length + expandKeys.length);
+    fireEvent.click(trs[0].querySelector(iconWrapper)!);
+    expect(tbody.querySelectorAll('tr').length).toBe(renderData.length + expandKeys.length);
+  });
+  test('should render when set expandKeys is controlled', () => {
+    const beforeExpandKeys = [1];
+    const afterExpandKeys = [1, 2];
+    const ExpandKeysCont = () => {
+      const [expandKeys, setExpandKeys] = React.useState<number[]>(beforeExpandKeys);
+      return (
+        <div>
+          <Button
+            onClick={() => {
+              setExpandKeys(afterExpandKeys);
+            }}
+          >
+            setExpandKeys
+          </Button>
+          <Table keygen={'id'} columns={expandColumns} data={renderData} expandKeys={expandKeys} />
+        </div>
+      );
+    };
+    const { container } = render(<ExpandKeysCont />);
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    expect(trs.length).toBe(renderData.length + beforeExpandKeys.length);
+    fireEvent.click(container.querySelector('button')!);
+    expect(tbody.querySelectorAll('tr').length).toBe(renderData.length + afterExpandKeys.length);
+  });
+  test('should render when set defaultTreeExpandKeys is not nested arrays', () => {
+    const defaultTreeExpandKeys = [1];
+    const { container } = render(
+      <Table
+        keygen={'id'}
+        columns={expandColumns}
+        data={renderData}
+        defaultTreeExpandKeys={defaultTreeExpandKeys}
+      />,
+    );
+    const result = getExpandKeys(renderData, defaultTreeExpandKeys);
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    expect(trs.length).toBe(result.length);
+  });
+  test('should render when set defaultTreeExpandKeys is nested arrays', () => {
+    const defaultTreeExpandKeys = [1, 2];
+    const { container } = render(
+      <Table
+        keygen={'id'}
+        columns={expandColumns}
+        data={expandTreeData}
+        defaultTreeExpandKeys={defaultTreeExpandKeys}
+      />,
+    );
     screen.debug();
+    const result = getExpandKeys(expandTreeData, defaultTreeExpandKeys);
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    expect(trs.length).toBe(result.length);
+  });
+  test('should render when set treeIndent', () => {
+    const defaultTreeExpandKeys = [1, 2];
+    const treeIndent = 50;
+    const expandColumnsWithIndent: TYPE.Table.ColumnItem<ExpandTreeData>[] = [
+      {
+        title: 'id',
+        treeColumnsName: 'children',
+        treeIndent: treeIndent,
+        render: 'id',
+        width: 50,
+      },
+      {
+        title: 'Name',
+        render: 'name',
+        width: 100,
+      },
+    ];
+    const { container } = render(
+      <Table
+        keygen={'id'}
+        columns={expandColumnsWithIndent}
+        data={expandTreeData}
+        defaultTreeExpandKeys={defaultTreeExpandKeys}
+      />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    screen.debug();
+    styleContentTest(trs[1].querySelector(expandWrapper)!, `margin-left: ${treeIndent}px;`);
+    styleContentTest(trs[2].querySelector(expandWrapper)!, `margin-left: ${treeIndent * 2}px;`);
+  });
+  test('should render when set treeExpandKeys and onTreeExpand', () => {
+    const App = () => {
+      const [treeExpandKeys, setTreeExpandKeys] = React.useState<(number | string)[]>([]);
+      const handleTreeExpand: any = (keys: number[]) => {
+        setTreeExpandKeys(keys);
+      };
+      return (
+        <Table
+          keygen={'id'}
+          columns={expandColumns}
+          data={expandTreeData}
+          treeExpandKeys={treeExpandKeys}
+          onTreeExpand={handleTreeExpand}
+        />
+      );
+    };
+    const { container } = render(<App />);
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    expect(trs.length).toBe(1);
+    fireEvent.click(trs[0].querySelector(iconWrapper)!);
+    expect(tbody.querySelectorAll('tr').length).toBe(2);
+  });
+  test('should render when set treeEmptyExpand', () => {
+    const { container } = render(
+      <Table keygen={'id'} columns={expandColumns} data={renderData} treeEmptyExpand />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    trs.forEach((item) => {
+      const tds = item.querySelectorAll('td');
+      expect(tds.length).toBe(3);
+      expect(tds[0].querySelector(iconWrapper)).toBeInTheDocument();
+    });
+  });
+  // TODO: treeCheckAll
+});
+describe('Table[Checked]', () => {
+  test('should render when set onRowSelect', () => {
+    const onRowSelectFn = jest.fn();
+    const { container } = render(
+      <Table keygen={'id'} columns={columns} data={renderData} onRowSelect={onRowSelectFn} />,
+    );
+    const thead = container.querySelector('thead')!;
+    const tbody = container.querySelector('tbody')!;
+    const ths = thead
+      .querySelector('tr')
+      ?.querySelectorAll('th') as NodeListOf<HTMLTableCellElement>;
+    const trs = tbody.querySelectorAll('tr');
+    expect(ths?.length).toBe(renderData.length + 1);
+    trs.forEach((item) => {
+      const tds = item.querySelectorAll('td');
+      expect(tds.length).toBe(renderData.length + 1);
+    });
+    fireEvent.click(ths[0].querySelector('input')!);
+    classTest(ths[0].querySelector(checkbox)!, wrapperChecked);
+    trs.forEach((item) => {
+      classTest(item, rowChecked);
+      const tds = item.querySelectorAll('td');
+      classTest(tds[0].querySelector(checkbox)!, wrapperChecked);
+    });
+  });
+  test('should render when set disabled is boolean', () => {
+    const onRowSelectFn = jest.fn();
+    const { container } = render(
+      <Table
+        keygen={'id'}
+        columns={columns}
+        data={renderData}
+        onRowSelect={onRowSelectFn}
+        disabled
+      />,
+    );
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    trs.forEach((item) => {
+      const tds = item.querySelectorAll('td');
+      classTest(tds[0].querySelector(checkbox)!, wrapperDisabled);
+    });
+    fireEvent.click(trs[0].querySelector('input')!);
+    expect(onRowSelectFn.mock.calls.length).toBe(0);
+  });
+  test('should render when set disabled is function', () => {
+    const onRowSelectFn = jest.fn();
+    const { container } = render(
+      <Table
+        keygen={'id'}
+        columns={columns}
+        data={renderData}
+        onRowSelect={onRowSelectFn}
+        disabled={(d) => d.id === 1}
+      />,
+    );
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    trs.forEach((item) => {
+      const tds = item.querySelectorAll('td');
+      if (tds[1].textContent === '1') {
+        classTest(tds[0].querySelector(checkbox)!, wrapperDisabled);
+      }
+    });
+  });
+
+  const TableByValue = (props: any) => {
+    const [value, setValue] = React.useState<number[]>([]);
+    const handleRowSelect = (keys: number[]) => {
+      setValue(keys);
+    };
+    return (
+      <Table
+        keygen={'id'}
+        columns={columns}
+        data={renderData}
+        value={value}
+        onRowSelect={handleRowSelect}
+        {...props}
+      />
+    );
+  };
+
+  test('should render controlled when set value and onRowSelect', () => {
+    const { container } = render(<TableByValue />);
+    const thead = container.querySelector('thead')!;
+    const ths = thead
+      .querySelector('tr')
+      ?.querySelectorAll('th') as NodeListOf<HTMLTableCellElement>;
+    fireEvent.click(ths[0].querySelector('input')!);
+    classTest(ths[0].querySelector(checkbox)!, wrapperChecked);
+  });
+
+  const FormatTest = ({ format }: any) => {
+    const [value, setValue] = React.useState<number[]>([]);
+    const handleRowSelect = (keys: number[]) => {
+      setValue(keys);
+    };
+    return (
+      <div>
+        <Table
+          keygen={'id'}
+          columns={columns}
+          data={renderData}
+          value={value}
+          onRowSelect={handleRowSelect}
+          format={format}
+        />
+        <div className='demo'>{JSON.stringify(value)}</div>
+      </div>
+    );
+  };
+
+  test('should render when set format is string', () => {
+    const { container } = render(<FormatTest format='name' />);
+    const thead = container.querySelector('thead')!;
+    const ths = thead
+      .querySelector('tr')
+      ?.querySelectorAll('th') as NodeListOf<HTMLTableCellElement>;
+    fireEvent.click(ths[0].querySelector('input')!);
+    textContentTest(
+      container.querySelector('.demo')!,
+      JSON.stringify(renderData.map((item) => item.name)),
+    );
+  });
+  test('should render when set format is function', () => {
+    const { container } = render(<FormatTest format={(d: any) => `${d.name}s`} />);
+    const thead = container.querySelector('thead')!;
+    const ths = thead
+      .querySelector('tr')
+      ?.querySelectorAll('th') as NodeListOf<HTMLTableCellElement>;
+    fireEvent.click(ths[0].querySelector('input')!);
+    textContentTest(
+      container.querySelector('.demo')!,
+      JSON.stringify(renderData.map((item) => `${item.name}s`)),
+    );
+  });
+  test('should render when set radio', () => {
+    const { container } = render(<TableByValue radio />);
+    const thead = container.querySelector('thead')!;
+    const ths = thead
+      .querySelector('tr')
+      ?.querySelectorAll('th') as NodeListOf<HTMLTableCellElement>;
+    classLengthTest(ths[0], 'input', 0);
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    fireEvent.click(trs[0].querySelector('input')!);
+    classTest(trs[0].querySelector(radio)!, radioWrapperChecked);
+    fireEvent.click(trs[1].querySelector('input')!);
+    classTest(trs[1].querySelector(radio)!, radioWrapperChecked);
+    classTest(trs[0].querySelector(radio)!, radioWrapperChecked, false);
+  });
+  test('should render when set showSelectAll is false', () => {
+    const { container } = render(<TableByValue showSelectAll={false} />);
+    const thead = container.querySelector('thead')!;
+    const ths = thead
+      .querySelector('tr')
+      ?.querySelectorAll('th') as NodeListOf<HTMLTableCellElement>;
+    classLengthTest(ths[0], 'input', 0);
   });
 });
