@@ -1,4 +1,4 @@
-// import React from 'react';
+import type { UseMenuItemProps } from '@sheinx/hooks';
 import { KeygenResult, KeygenType, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 
@@ -6,6 +6,28 @@ export type MenuMode = 'inline' | 'vertical' | 'horizontal' | 'vertical-auto';
 
 export interface MenuClasses {
   wrapper: string;
+  wrapperInline: string;
+  wrapperVertical: string;
+  wrapperHorizontal: string;
+  wrapperVerticalAuto: string;
+  wrapperHasExpand: string;
+  root: string;
+  children: string;
+  item: string;
+  itemActive: string;
+  itemDisabled: string;
+  itemOpen: string;
+  itemInPath: string;
+  itemHasChildren: string;
+  itemContent: string;
+  itemContentFront: string;
+  itemContentBack: string;
+  title: string;
+  expand: string;
+  expandFront: string;
+  expandBack: string;
+  expandHover: string;
+  indent: string;
 }
 
 /**
@@ -22,7 +44,7 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @cn 菜单样式
    * @default 'inline'
    */
-  mode: MenuMode;
+  mode?: MenuMode;
   /**
    * @en Menu items data
    * @cn 需要渲染成菜单的数据
@@ -139,4 +161,21 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    * @default 'title'
    */
   renderItem?: ((data: DataItem, index: number) => React.ReactNode) | ObjectKey<DataItem>;
+}
+
+export interface MenuItemProps
+  extends UseMenuItemProps,
+    Pick<
+      MenuProps<any, any>,
+      | 'renderItem'
+      | 'keygen'
+      | 'linkKey'
+      | 'frontCaret'
+      | 'frontCaretType'
+      | 'caretColor'
+      | 'jssStyle'
+      | 'inlineIndent'
+    > {
+  index: number;
+  level: number;
 }

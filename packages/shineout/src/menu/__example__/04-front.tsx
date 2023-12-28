@@ -1,10 +1,11 @@
 /**
- * cn - 基本用法
- *    -- Menu 通过数据来生成菜单项
- * en - Base
- *    -- Menu generates menu items through data.
+ * cn - 前置展开符
+ *    -- 使用 frontCaret 来前置展开符
+ *    -- 使用 frontCaretType 来设置展开图标类型
+ * en - put the expander in front
+ *    -- use frontCaret to put the expander in front
+ *    -- Use frontCaretType to set the Icon type
  */
-
 import React, { useState } from 'react';
 import { Menu, TYPE } from 'shineout';
 
@@ -64,10 +65,6 @@ const data: MenuItem[] = [
     id: '2',
     title: 'Navigation Four',
   },
-  {
-    id: '11',
-    title: 'This is a very very very very long menu title',
-  },
 ];
 
 const App: React.FC = () => {
@@ -80,9 +77,34 @@ const App: React.FC = () => {
   const checkActive: MenuActive = (d: MenuItem) => active === d.id;
 
   return (
-    <div>
+    <div style={{ display: 'flex', gap: 20 }}>
       <Menu
         keygen='id'
+        frontCaret
+        frontCaretType='solid'
+        data={data}
+        inlineIndent={24}
+        active={checkActive}
+        onClick={handleClick}
+        style={{ width: 256, border: '1px solid #e8ebf0' }}
+        renderItem={renderItem}
+      />
+      <Menu
+        keygen='id'
+        frontCaret
+        frontCaretType='hollow'
+        data={data}
+        inlineIndent={24}
+        active={checkActive}
+        onClick={handleClick}
+        style={{ width: 256, border: '1px solid #e8ebf0' }}
+        renderItem={renderItem}
+      />
+      <Menu
+        keygen='id'
+        frontCaret
+        frontCaretType='hollow'
+        caretColor='green'
         data={data}
         inlineIndent={24}
         active={checkActive}

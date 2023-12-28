@@ -1,20 +1,22 @@
 /**
- * cn - 基本用法
- *    -- Menu 通过数据来生成菜单项
- * en - Base
- *    -- Menu generates menu items through data.
+ * cn - 禁用菜单
+ *    -- 通过 disabled 属性可以禁用选项
+ * en - Disabled
+ *    --Disable the option by the disabled property.
  */
-
 import React, { useState } from 'react';
 import { Menu, TYPE } from 'shineout';
 
 interface MenuItem {
   id: string;
   title: string;
+  disabled?: boolean;
   children?: MenuItem[];
 }
 type MenuProps = TYPE.Menu.Props<MenuItem, string>;
 type MenuActive = MenuProps['active'];
+type MenuOnClick = MenuProps['onClick'];
+type MenuDisabled = MenuProps['disabled'];
 type MenuRenderItem = MenuProps['renderItem'];
 
 const data: MenuItem[] = [
@@ -25,6 +27,7 @@ const data: MenuItem[] = [
   {
     id: '3',
     title: 'Navigation Two',
+    disabled: true,
     children: [
       {
         id: '4',
@@ -63,34 +66,33 @@ const data: MenuItem[] = [
   {
     id: '2',
     title: 'Navigation Four',
-  },
-  {
-    id: '11',
-    title: 'This is a very very very very long menu title',
+    disabled: true,
   },
 ];
 
 const App: React.FC = () => {
-  const [active, setActive] = useState('1');
-
-  const handleClick = (d: MenuItem) => setActive(d.id);
+  const [active, setActive] = useState(['1']);
 
   const renderItem: MenuRenderItem = (d: MenuItem) => d.title;
 
-  const checkActive: MenuActive = (d: MenuItem) => active === d.id;
+  const checkDisabled: MenuDisabled = (d: MenuItem) => !!d.disabled;
+
+  const handleClick: MenuOnClick = (d: MenuItem) => setActive([d.id]);
+
+  const checkActive: MenuActive = (d: MenuItem) => active.includes(d.id);
 
   return (
-    <div>
-      <Menu
-        keygen='id'
-        data={data}
-        inlineIndent={24}
-        active={checkActive}
-        onClick={handleClick}
-        style={{ width: 256, border: '1px solid #e8ebf0' }}
-        renderItem={renderItem}
-      />
-    </div>
+    <Menu
+      data={data}
+      keygen='id'
+      mode='inline'
+      inlineIndent={24}
+      active={checkActive}
+      onClick={handleClick}
+      style={{ width: 256, border: '1px solid #e8ebf0' }}
+      renderItem={renderItem}
+      disabled={checkDisabled}
+    />
   );
 };
 

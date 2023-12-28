@@ -15,9 +15,42 @@ const menuTokenDescription = { menu: 'xxx' };
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 menuRules 强关联，非 menuRules 规则内的 token 需手动增加或删减。
  */
-const menuTokenValue = { font: { size: '14/regular' } };
+const menuTokenValue = {};
 
-const menuTokenExtraValue = {};
+const menuTokenExtraValue = {
+  font: { size: '14/regular', color: 'Neutral-text-5' },
+  item: {
+    background: { color: 'Neutral-fill-1' },
+    font: { color: 'Neutral-text-5' },
+    hover: {
+      background: { color: 'Neutral-fill-2' },
+      font: { color: 'Neutral-text-5' },
+    },
+    active: {
+      background: { color: 'Brand-1' },
+      font: { color: 'Brand-6' },
+    },
+    disabled: {
+      background: { color: 'Neutral-fill-1' },
+      font: { color: 'Neutral-text-2' },
+    },
+  },
+  title: {
+    padding: { x: '16px', y: '9px' },
+  },
+  expand: {
+    width: '46px',
+    size: '14px',
+    hover: {
+      background: { color: 'Brand-2' },
+    },
+  },
+  children: {
+    box: {
+      shadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+    },
+  },
+};
 
 module.exports = {
   menuTokenValue,

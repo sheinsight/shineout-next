@@ -1,5 +1,6 @@
 import { ObjectType } from '../common/type';
 import { UnMatchedData } from '../common/use-list-select/use-list.type';
+import React from 'react';
 
 export function isBrowser() {
   return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
@@ -68,6 +69,17 @@ export const isEmpty = (val: unknown): boolean => {
   if (val instanceof Date) return false;
 
   if (typeof val === 'object') return Object.keys(val).length === 0;
+
+  return false;
+};
+
+export const isLink = (el: unknown): el is React.ReactElement => {
+  if (typeof el === 'object') {
+    if (!React.isValidElement(el)) return false;
+    if (!el.type) return false;
+    if (el.type === 'a') return true;
+    if (el.props && (el as React.ReactElement).props.to) return true;
+  }
 
   return false;
 };

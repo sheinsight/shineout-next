@@ -1,10 +1,9 @@
 /**
- * cn - 基本用法
- *    -- Menu 通过数据来生成菜单项
- * en - Base
- *    -- Menu generates menu items through data.
+ * cn - 水平布局
+ *    -- 设置 mode 为 "horizontal"，显示为水平布局（子菜单在右侧弹出）
+ * en - Horizontal
+ *    -- Set mode to "horizontal" to display it as horizontal layout (submenu pops up on the right).
  */
-
 import React, { useState } from 'react';
 import { Menu, TYPE } from 'shineout';
 
@@ -13,8 +12,9 @@ interface MenuItem {
   title: string;
   children?: MenuItem[];
 }
-type MenuProps = TYPE.Menu.Props<MenuItem, string>;
+type MenuProps = TYPE.Menu.Props<MenuItem, any>;
 type MenuActive = MenuProps['active'];
+type MenuOnClick = MenuProps['onClick'];
 type MenuRenderItem = MenuProps['renderItem'];
 
 const data: MenuItem[] = [
@@ -47,16 +47,6 @@ const data: MenuItem[] = [
       {
         id: '8',
         title: 'Option 4',
-        children: [
-          {
-            id: '9',
-            title: 'Optic 1',
-          },
-          {
-            id: '10',
-            title: 'Optic 2',
-          },
-        ],
       },
     ],
   },
@@ -64,33 +54,27 @@ const data: MenuItem[] = [
     id: '2',
     title: 'Navigation Four',
   },
-  {
-    id: '11',
-    title: 'This is a very very very very long menu title',
-  },
 ];
 
 const App: React.FC = () => {
-  const [active, setActive] = useState('1');
-
-  const handleClick = (d: MenuItem) => setActive(d.id);
+  const [active, setActive] = useState(['1']);
 
   const renderItem: MenuRenderItem = (d: MenuItem) => d.title;
 
-  const checkActive: MenuActive = (d: MenuItem) => active === d.id;
+  const handleClick: MenuOnClick = (d: MenuItem) => setActive([d.id]);
+
+  const checkActive: MenuActive = (d: MenuItem) => active.includes(d.id);
 
   return (
-    <div>
-      <Menu
-        keygen='id'
-        data={data}
-        inlineIndent={24}
-        active={checkActive}
-        onClick={handleClick}
-        style={{ width: 256, border: '1px solid #e8ebf0' }}
-        renderItem={renderItem}
-      />
-    </div>
+    <Menu
+      data={data}
+      keygen='id'
+      mode='horizontal'
+      inlineIndent={24}
+      active={checkActive}
+      onClick={handleClick}
+      renderItem={renderItem}
+    />
   );
 };
 

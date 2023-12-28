@@ -1,10 +1,9 @@
 /**
- * cn - 基本用法
- *    -- Menu 通过数据来生成菜单项
- * en - Base
- *    -- Menu generates menu items through data.
+ * cn - 受控
+ *    -- active 参数控制选中选项
+ * en - Controlled
+ *    -- Set active property to control the actived option.
  */
-
 import React, { useState } from 'react';
 import { Menu, TYPE } from 'shineout';
 
@@ -15,6 +14,7 @@ interface MenuItem {
 }
 type MenuProps = TYPE.Menu.Props<MenuItem, string>;
 type MenuActive = MenuProps['active'];
+type MenuOnClick = MenuProps['onClick'];
 type MenuRenderItem = MenuProps['renderItem'];
 
 const data: MenuItem[] = [
@@ -64,34 +64,29 @@ const data: MenuItem[] = [
     id: '2',
     title: 'Navigation Four',
   },
-  {
-    id: '11',
-    title: 'This is a very very very very long menu title',
-  },
 ];
 
 const App: React.FC = () => {
-  const [active, setActive] = useState('1');
-
-  const handleClick = (d: MenuItem) => setActive(d.id);
+  const [active, setActive] = useState(['1']);
 
   const renderItem: MenuRenderItem = (d: MenuItem) => d.title;
 
-  const checkActive: MenuActive = (d: MenuItem) => active === d.id;
+  const handleClick: MenuOnClick = (d: MenuItem) => setActive([d.id]);
+
+  const checkActive: MenuActive = (d: MenuItem) => active.includes(d.id);
 
   return (
-    <div>
-      <Menu
-        keygen='id'
-        data={data}
-        inlineIndent={24}
-        active={checkActive}
-        onClick={handleClick}
-        style={{ width: 256, border: '1px solid #e8ebf0' }}
-        renderItem={renderItem}
-      />
-    </div>
+    <Menu
+      data={data}
+      keygen='id'
+      mode='inline'
+      inlineIndent={24}
+      active={checkActive}
+      onClick={handleClick}
+      style={{ width: 256, border: '1px solid #e8ebf0' }}
+      defaultOpenKeys={['3']}
+      renderItem={renderItem}
+    />
   );
 };
-
 export default App;
