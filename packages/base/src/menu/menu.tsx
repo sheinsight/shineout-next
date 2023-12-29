@@ -53,7 +53,10 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         hasOpen && classes?.wrapperHasOpen,
         theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
       )}
-      style={props.style}
+      style={{
+        height: props.height,
+        ...props.style,
+      }}
     >
       <div className={classes?.scrollbox} ref={scrollRef}>
         <ul className={classes?.root} style={listStyle}>

@@ -30,8 +30,6 @@ export interface MenuClasses {
   expandFront: string;
   expandBack: string;
   expandHover: string;
-  indent: string;
-
   scrollbar: string;
   scrollbarX: string;
   scrollbarY: string;
@@ -106,7 +104,7 @@ export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
    */
   looseChildren?: boolean;
   /**
-   * @inner 内部属性
+   * @private 内部属性
    */
   toggleDuration?: number;
   /**

@@ -19,15 +19,14 @@ export type MenuClasses = {
   itemOpen: string;
   itemInPath: string;
   itemHasChildren: string;
-  title: string;
-  expand: string;
-  expandHover: string;
-  expandFront: string;
-  expandBack: string;
   itemContent: string;
   itemContentFront: string;
   itemContentBack: string;
-
+  title: string;
+  expand: string;
+  expandFront: string;
+  expandBack: string;
+  expandHover: string;
   scrollbar: string;
   scrollbarX: string;
   scrollbarY: string;

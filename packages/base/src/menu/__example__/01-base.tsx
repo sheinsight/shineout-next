@@ -15,7 +15,7 @@ const jssStyle = {
 export default () => {
   return (
     <div>
-      <Menu jssStyle={jssStyle} />
+      <Menu keygen jssStyle={jssStyle} />
     </div>
   );
 };
