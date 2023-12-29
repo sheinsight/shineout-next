@@ -86,7 +86,7 @@ const App: React.FC = () => {
       inlineIndent={24}
       active={checkActive}
       onClick={handleClick}
-      style={{ width: 256 }}
+      style={{ width: 256, border: '1px solid #e8ebf0' }}
       defaultOpenKeys={['3']}
       renderItem={renderItem}
     />

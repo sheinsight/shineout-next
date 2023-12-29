@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 
 const useDragMock = (props: {
   onDragStart?: (e: React.MouseEvent) => void;
-  onDragmove?: (deltaX: number, deltaY: number) => void;
+  onDragMove?: (deltaX: number, deltaY: number) => void;
   onDragEnd?: (deltaX: number, deltaY: number) => void;
 }) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -12,6 +12,7 @@ const useDragMock = (props: {
     startY: 0,
     lastX: 0,
     lastY: 0,
+    cachedSelected: '',
   });
 
   const handleMouseMove = usePersistFn((event: MouseEvent) => {
@@ -19,11 +20,12 @@ const useDragMock = (props: {
     const deltaY = event.clientY - dragInfo.lastY;
     dragInfo.lastX = event.clientX;
     dragInfo.lastY = event.clientY;
-    props.onDragmove?.(deltaX, deltaY);
+    props.onDragMove?.(deltaX, deltaY);
   });
 
   const handleMouseUp = usePersistFn((event: MouseEvent) => {
     setIsDragging(false);
+    document.body.style.userSelect = dragInfo.cachedSelected;
     const deltaX = event.clientX - dragInfo.startX;
     const deltaY = event.clientY - dragInfo.startY;
     props.onDragEnd?.(deltaX, deltaY);
@@ -33,6 +35,8 @@ const useDragMock = (props: {
 
   const handleMouseDown = (event: React.MouseEvent) => {
     setIsDragging(true);
+    dragInfo.cachedSelected = document.body.style.userSelect;
+    document.body.style.userSelect = 'none';
     dragInfo.lastX = event.clientX;
     dragInfo.lastY = event.clientY;
     dragInfo.startX = event.clientX;

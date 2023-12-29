@@ -132,7 +132,7 @@ const App: React.FC = () => {
       active={checkActive}
       onClick={handleClick}
       renderItem={renderItem}
-      style={{ width: 256, height: 300 }}
+      style={{ width: 256, height: 300, border: '1px solid #e8ebf0' }}
     />
   );
 };

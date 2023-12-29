@@ -9,8 +9,8 @@ export interface MenuClasses {
   wrapperInline: string;
   wrapperVertical: string;
   wrapperHorizontal: string;
-  wrapperVerticalAuto: string;
   wrapperHasExpand: string;
+  wrapperHasOpen: string;
   root: string;
   children: string;
   item: string;
@@ -28,16 +28,24 @@ export interface MenuClasses {
   expandBack: string;
   expandHover: string;
   indent: string;
+
+  scrollbar: string;
+  scrollbarX: string;
+  scrollbarY: string;
+  scrollbarDragging: string;
+  scrolbarHandler: string;
+  scrollbox: string;
 }
 
+export type MenuJssStyle = {
+  menu?: () => MenuClasses;
+};
 /**
  * @title Menu
  */
 export interface MenuProps<DataItem, Key extends KeygenResult = KeygenResult>
   extends Pick<CommonType, 'className' | 'style'> {
-  jssStyle?: {
-    menu: () => MenuClasses;
-  };
+  jssStyle?: MenuJssStyle;
 
   /**
    * @en style of menu

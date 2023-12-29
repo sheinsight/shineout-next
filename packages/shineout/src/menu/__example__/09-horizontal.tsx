@@ -29,6 +29,16 @@ const data: MenuItem[] = [
       {
         id: '4',
         title: 'Option 1',
+        children: [
+          {
+            id: '9',
+            title: 'Optic 1',
+          },
+          {
+            id: '10',
+            title: 'Optic 2',
+          },
+        ],
       },
       {
         id: '5',

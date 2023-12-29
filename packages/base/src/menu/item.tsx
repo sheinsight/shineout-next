@@ -56,9 +56,10 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       title = <a {...linkProps}>{util.wrapSpan(item)}</a>;
     }
 
-    const indent = props.level ? (
-      <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
-    ) : null;
+    const indent =
+      props.mode === 'inline' && props.level ? (
+        <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
+      ) : null;
 
     if (props.frontCaret) {
       return (

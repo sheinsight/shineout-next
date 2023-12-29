@@ -52,6 +52,7 @@ const useMenu = (props: UseMenuProps) => {
 
   const checkInPath = usePersistFn((id: string) => {
     if (!context.activeId || !id) return false;
+    if (context.activeId === id) return false;
     return context.activeId.indexOf(id) >= 0;
   });
 
