@@ -1,0 +1,641 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb[Base] should render correctly 1`] = `
+<div
+  class="so-breadcrumb-wrapper"
+>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <a
+      class="so-breadcrumb-content"
+      href="/"
+    >
+      Home
+    </a>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <a
+      href="/cn/components/shineout/button"
+    >
+      Button
+    </a>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <a
+      class="so-breadcrumb-content"
+    >
+      Handler
+    </a>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <span
+      class="so-breadcrumb-content"
+    >
+      Self
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
+<div
+  class="so-breadcrumb-wrapper"
+>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <a
+      class="so-breadcrumb-content"
+      href="/"
+    >
+      Home
+    </a>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <a
+      href="/cn/components/shineout/button"
+    >
+      Button
+    </a>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <div
+      class="so-breadcrumb-item-with-drop"
+    >
+      <a
+        class="so-breadcrumb-content"
+      >
+        Dropdown
+      </a>
+      <div
+        class="so-breadcrumb-down"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <span
+      class="so-breadcrumb-content"
+    >
+      Self
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
+<div>
+  <div
+    class="so-breadcrumb-wrapper"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+        href="#home"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.01274 1.16681L7.03514 1.16772C7.0439 1.16825 7.05266 1.16898 7.0614 1.1699C7.07268 1.1711 7.08397 1.17262 7.09523 1.17449C7.10701 1.17643 7.11888 1.17878 7.13068 1.18149C7.14282 1.18428 7.15483 1.18745 7.16674 1.19101C7.19155 1.19842 7.21609 1.20757 7.24007 1.21843L7.3038 1.25224L7.36391 1.29449L13.1886 5.96116C13.7766 6.43231 13.1102 7.30323 12.5163 6.91255L12.4608 6.87217L12.1404 6.61535C12.0902 6.57505 12.0167 6.58314 11.9764 6.63341C11.9599 6.65411 11.9508 6.67985 11.9508 6.70639L11.951 11.6667C11.951 12.5142 11.4084 12.8363 10.854 12.8294L10.7861 12.8333H3.214C2.60798 12.8333 2.04907 12.25 2.04907 11.6667L2.04887 6.70649C2.04887 6.64205 1.99663 6.58982 1.9322 6.58982C1.90566 6.58982 1.8799 6.59888 1.8592 6.61549L1.53923 6.87217C0.951171 7.34333 0.249058 6.50097 0.76001 6.00645L0.811506 5.96116L6.63618 1.29449L6.69628 1.25224C6.69778 1.25132 6.69929 1.2504 6.7008 1.24949L6.63618 1.29449C6.66273 1.27322 6.69068 1.2546 6.71968 1.23864C6.73531 1.23003 6.75127 1.22219 6.76748 1.21511C6.77705 1.21094 6.78672 1.20703 6.79646 1.20339C6.81078 1.19804 6.82523 1.19329 6.83981 1.18912C6.84847 1.18664 6.85721 1.18436 6.86598 1.18229C6.8821 1.17847 6.89843 1.17535 6.91484 1.17292C6.92268 1.17177 6.93045 1.17078 6.93823 1.16995C6.95674 1.16797 6.97546 1.16689 6.99419 1.16667C7.00028 1.16667 7.00651 1.16667 7.01274 1.16681ZM6.81767 2.64277L3.32311 5.44243C3.25401 5.49778 3.2138 5.58153 3.2138 5.67006L3.21399 11.375C3.21401 11.5361 3.34459 11.6667 3.50567 11.6667H4.66953C4.83061 11.6667 4.96119 11.5361 4.96121 11.375L4.96141 8.16667C4.96141 7.86751 5.18626 7.62096 5.47595 7.58726L5.53547 7.58382C5.54107 7.5835 5.54668 7.58333 5.55229 7.58333H8.45621C8.7779 7.58333 9.03868 7.8445 9.03868 8.16667L9.03848 11.375C9.03846 11.5361 9.16903 11.6667 9.33012 11.6667C9.33011 11.6667 9.33012 11.6667 9.33012 11.6667L10.4944 11.6667C10.6555 11.6667 10.7861 11.5361 10.7861 11.375V5.67005C10.7861 5.58152 10.7459 5.49779 10.6768 5.44243L7.1824 2.64278C7.07582 2.55738 6.92426 2.55738 6.81767 2.64277ZM7.29041 8.75H6.70967C6.38751 8.75 6.12634 9.01117 6.12634 9.33333V11.375C6.12634 11.5361 6.25692 11.6667 6.41801 11.6667H7.58207C7.74316 11.6667 7.87374 11.5361 7.87374 11.375V9.33333C7.87374 9.01117 7.61257 8.75 7.29041 8.75Z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+        href="https://www.google.com"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.16628 1.16766L11.5316 1.30638C12.1216 1.3307 12.6004 1.79199 12.6466 2.38066L12.925 5.92253C12.9517 6.26273 12.8282 6.59759 12.5869 6.83889L6.82038 12.6054C6.36477 13.061 5.62608 13.061 5.17047 12.6054L1.50833 8.94323C1.05272 8.48762 1.05272 7.74893 1.50833 7.29332L7.29327 1.50838C7.52387 1.27778 7.84045 1.15423 8.16628 1.16766ZM8.11823 2.33334L2.74577 7.70579C2.51797 7.9336 2.51797 8.30295 2.74577 8.53075L5.58295 11.3679C5.81075 11.5957 6.1801 11.5957 6.40791 11.3679L11.7619 6.01393L11.5038 2.72997C11.4923 2.58281 11.3726 2.46749 11.2251 2.46141L8.11823 2.33334ZM8.97477 3.40479C9.78019 3.40479 10.4331 4.05771 10.4331 4.86312C10.4331 5.66854 9.78019 6.32145 8.97477 6.32145C8.16936 6.32145 7.51644 5.66854 7.51644 4.86312C7.51644 4.05771 8.16936 3.40479 8.97477 3.40479ZM8.97477 4.57145C8.81369 4.57145 8.6831 4.70204 8.6831 4.86312C8.6831 5.0242 8.81369 5.15479 8.97477 5.15479C9.13585 5.15479 9.26644 5.0242 9.26644 4.86312C9.26644 4.70204 9.13585 4.57145 8.97477 4.57145Z"
+            fill="currentColor"
+          />
+        </svg>
+         
+        Custom
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <span
+        class="so-breadcrumb-content"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.16628 1.16766L11.5316 1.30638C12.1216 1.3307 12.6004 1.79199 12.6466 2.38066L12.925 5.92253C12.9517 6.26273 12.8282 6.59759 12.5869 6.83889L6.82038 12.6054C6.36477 13.061 5.62608 13.061 5.17047 12.6054L1.50833 8.94323C1.05272 8.48762 1.05272 7.74893 1.50833 7.29332L7.29327 1.50838C7.52387 1.27778 7.84045 1.15423 8.16628 1.16766ZM8.11823 2.33334L2.74577 7.70579C2.51797 7.9336 2.51797 8.30295 2.74577 8.53075L5.58295 11.3679C5.81075 11.5957 6.1801 11.5957 6.40791 11.3679L11.7619 6.01393L11.5038 2.72997C11.4923 2.58281 11.3726 2.46749 11.2251 2.46141L8.11823 2.33334ZM8.97477 3.40479C9.78019 3.40479 10.4331 4.05771 10.4331 4.86312C10.4331 5.66854 9.78019 6.32145 8.97477 6.32145C8.16936 6.32145 7.51644 5.66854 7.51644 4.86312C7.51644 4.05771 8.16936 3.40479 8.97477 3.40479ZM8.97477 4.57145C8.81369 4.57145 8.6831 4.70204 8.6831 4.86312C8.6831 5.0242 8.81369 5.15479 8.97477 5.15479C9.13585 5.15479 9.26644 5.0242 9.26644 4.86312C9.26644 4.70204 9.13585 4.57145 8.97477 4.57145Z"
+            fill="currentColor"
+          />
+        </svg>
+         
+        Demo
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-wrapper"
+  >
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        href="#home"
+        style="display: flex; align-items: center;"
+      >
+        Home 
+        <svg
+          fill="none"
+          height="1em"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.01274 1.16681L7.03514 1.16772C7.0439 1.16825 7.05266 1.16898 7.0614 1.1699C7.07268 1.1711 7.08397 1.17262 7.09523 1.17449C7.10701 1.17643 7.11888 1.17878 7.13068 1.18149C7.14282 1.18428 7.15483 1.18745 7.16674 1.19101C7.19155 1.19842 7.21609 1.20757 7.24007 1.21843L7.3038 1.25224L7.36391 1.29449L13.1886 5.96116C13.7766 6.43231 13.1102 7.30323 12.5163 6.91255L12.4608 6.87217L12.1404 6.61535C12.0902 6.57505 12.0167 6.58314 11.9764 6.63341C11.9599 6.65411 11.9508 6.67985 11.9508 6.70639L11.951 11.6667C11.951 12.5142 11.4084 12.8363 10.854 12.8294L10.7861 12.8333H3.214C2.60798 12.8333 2.04907 12.25 2.04907 11.6667L2.04887 6.70649C2.04887 6.64205 1.99663 6.58982 1.9322 6.58982C1.90566 6.58982 1.8799 6.59888 1.8592 6.61549L1.53923 6.87217C0.951171 7.34333 0.249058 6.50097 0.76001 6.00645L0.811506 5.96116L6.63618 1.29449L6.69628 1.25224C6.69778 1.25132 6.69929 1.2504 6.7008 1.24949L6.63618 1.29449C6.66273 1.27322 6.69068 1.2546 6.71968 1.23864C6.73531 1.23003 6.75127 1.22219 6.76748 1.21511C6.77705 1.21094 6.78672 1.20703 6.79646 1.20339C6.81078 1.19804 6.82523 1.19329 6.83981 1.18912C6.84847 1.18664 6.85721 1.18436 6.86598 1.18229C6.8821 1.17847 6.89843 1.17535 6.91484 1.17292C6.92268 1.17177 6.93045 1.17078 6.93823 1.16995C6.95674 1.16797 6.97546 1.16689 6.99419 1.16667C7.00028 1.16667 7.00651 1.16667 7.01274 1.16681ZM6.81767 2.64277L3.32311 5.44243C3.25401 5.49778 3.2138 5.58153 3.2138 5.67006L3.21399 11.375C3.21401 11.5361 3.34459 11.6667 3.50567 11.6667H4.66953C4.83061 11.6667 4.96119 11.5361 4.96121 11.375L4.96141 8.16667C4.96141 7.86751 5.18626 7.62096 5.47595 7.58726L5.53547 7.58382C5.54107 7.5835 5.54668 7.58333 5.55229 7.58333H8.45621C8.7779 7.58333 9.03868 7.8445 9.03868 8.16667L9.03848 11.375C9.03846 11.5361 9.16903 11.6667 9.33012 11.6667C9.33011 11.6667 9.33012 11.6667 9.33012 11.6667L10.4944 11.6667C10.6555 11.6667 10.7861 11.5361 10.7861 11.375V5.67005C10.7861 5.58152 10.7459 5.49779 10.6768 5.44243L7.1824 2.64278C7.07582 2.55738 6.92426 2.55738 6.81767 2.64277ZM7.29041 8.75H6.70967C6.38751 8.75 6.12634 9.01117 6.12634 9.33333V11.375C6.12634 11.5361 6.25692 11.6667 6.41801 11.6667H7.58207C7.74316 11.6667 7.87374 11.5361 7.87374 11.375V9.33333C7.87374 9.01117 7.61257 8.75 7.29041 8.75Z"
+            fill="currentColor"
+          />
+        </svg>
+         
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        href="https://www.google.com"
+        style="display: flex; align-items: center;"
+      >
+        Custom 
+        <svg
+          fill="none"
+          height="1em"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.16628 1.16766L11.5316 1.30638C12.1216 1.3307 12.6004 1.79199 12.6466 2.38066L12.925 5.92253C12.9517 6.26273 12.8282 6.59759 12.5869 6.83889L6.82038 12.6054C6.36477 13.061 5.62608 13.061 5.17047 12.6054L1.50833 8.94323C1.05272 8.48762 1.05272 7.74893 1.50833 7.29332L7.29327 1.50838C7.52387 1.27778 7.84045 1.15423 8.16628 1.16766ZM8.11823 2.33334L2.74577 7.70579C2.51797 7.9336 2.51797 8.30295 2.74577 8.53075L5.58295 11.3679C5.81075 11.5957 6.1801 11.5957 6.40791 11.3679L11.7619 6.01393L11.5038 2.72997C11.4923 2.58281 11.3726 2.46749 11.2251 2.46141L8.11823 2.33334ZM8.97477 3.40479C9.78019 3.40479 10.4331 4.05771 10.4331 4.86312C10.4331 5.66854 9.78019 6.32145 8.97477 6.32145C8.16936 6.32145 7.51644 5.66854 7.51644 4.86312C7.51644 4.05771 8.16936 3.40479 8.97477 3.40479ZM8.97477 4.57145C8.81369 4.57145 8.6831 4.70204 8.6831 4.86312C8.6831 5.0242 8.81369 5.15479 8.97477 5.15479C9.13585 5.15479 9.26644 5.0242 9.26644 4.86312C9.26644 4.70204 9.13585 4.57145 8.97477 4.57145Z"
+            fill="currentColor"
+          />
+        </svg>
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <span
+        style="display: flex; align-items: center;"
+      >
+        Custom 
+        <svg
+          fill="none"
+          height="1em"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.16628 1.16766L11.5316 1.30638C12.1216 1.3307 12.6004 1.79199 12.6466 2.38066L12.925 5.92253C12.9517 6.26273 12.8282 6.59759 12.5869 6.83889L6.82038 12.6054C6.36477 13.061 5.62608 13.061 5.17047 12.6054L1.50833 8.94323C1.05272 8.48762 1.05272 7.74893 1.50833 7.29332L7.29327 1.50838C7.52387 1.27778 7.84045 1.15423 8.16628 1.16766ZM8.11823 2.33334L2.74577 7.70579C2.51797 7.9336 2.51797 8.30295 2.74577 8.53075L5.58295 11.3679C5.81075 11.5957 6.1801 11.5957 6.40791 11.3679L11.7619 6.01393L11.5038 2.72997C11.4923 2.58281 11.3726 2.46749 11.2251 2.46141L8.11823 2.33334ZM8.97477 3.40479C9.78019 3.40479 10.4331 4.05771 10.4331 4.86312C10.4331 5.66854 9.78019 6.32145 8.97477 6.32145C8.16936 6.32145 7.51644 5.66854 7.51644 4.86312C7.51644 4.05771 8.16936 3.40479 8.97477 3.40479ZM8.97477 4.57145C8.81369 4.57145 8.6831 4.70204 8.6831 4.86312C8.6831 5.0242 8.81369 5.15479 8.97477 5.15479C9.13585 5.15479 9.26644 5.0242 9.26644 4.86312C9.26644 4.70204 9.13585 4.57145 8.97477 4.57145Z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Breadcrumb[Base] should render correctly about max 1`] = `
+<div
+  class="so-breadcrumb-wrapper"
+>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <a
+      class="so-breadcrumb-content"
+      href="/"
+    >
+      Home
+    </a>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <span
+      class="so-breadcrumb-content so-breadcrumb-ellipsis"
+    >
+      ...
+    </span>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <a
+      class="so-breadcrumb-content"
+    >
+      Table
+    </a>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <span
+      class="so-breadcrumb-content"
+    >
+      Self
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Breadcrumb[Base] should render correctly about renderItem 1`] = `
+<div
+  class="so-breadcrumb-wrapper"
+>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <a
+      href="#home"
+    >
+      home
+    </a>
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    menu
+    <div
+      class="so-breadcrumb-separator"
+    >
+      /
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-item"
+  >
+    <a
+      href="https://www.google.com"
+    >
+      self
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
+<div>
+  <div
+    class="so-breadcrumb-wrapper"
+  >
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+        href="/"
+      >
+        Home
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        |
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <span
+        class="so-breadcrumb-content"
+      >
+        Self
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-wrapper"
+  >
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+        href="/"
+      >
+        Home
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        <span>
+          ~
+        </span>
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <span
+        class="so-breadcrumb-content"
+      >
+        Self
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Breadcrumb[Base] should render correctly about size 1`] = `
+<div>
+  <div
+    class="so-breadcrumb-wrapper"
+    style="font-size: 12px;"
+  >
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+        href="/"
+      >
+        Home
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        href="/cn/components/shineout/button"
+      >
+        Button
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+      >
+        Handler
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <span
+        class="so-breadcrumb-content"
+      >
+        Self
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-wrapper"
+    style="font-size: 14px; margin-top: 24px;"
+  >
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+        href="/"
+      >
+        Home
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        href="/cn/components/shineout/button"
+      >
+        Button
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+      >
+        Handler
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <span
+        class="so-breadcrumb-content"
+      >
+        Self
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-breadcrumb-wrapper"
+    style="font-size: 16px; margin-top: 24px;"
+  >
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+        href="/"
+      >
+        Home
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        href="/cn/components/shineout/button"
+      >
+        Button
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <a
+        class="so-breadcrumb-content"
+      >
+        Handler
+      </a>
+      <div
+        class="so-breadcrumb-separator"
+      >
+        /
+      </div>
+    </div>
+    <div
+      class="so-breadcrumb-item"
+    >
+      <span
+        class="so-breadcrumb-content"
+      >
+        Self
+      </span>
+    </div>
+  </div>
+</div>
+`;
