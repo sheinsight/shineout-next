@@ -98,4 +98,70 @@ export interface MenuTokens {
    * @description xxxundefinedundefinedundefined
    */
   menuChildrenBoxShadow: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description xxxundefined字体颜色
+   */
+  menuDarkFontColor: string;
+  /**
+   * @type {string}
+   * @token #020B18
+   * @description xxxundefinedundefined背景颜色
+   */
+  menuDarkItemBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description xxxundefinedundefined字体颜色
+   */
+  menuDarkItemFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-9
+   * @description xxxundefinedundefined鼠标移入时的背景颜色
+   */
+  menuDarkItemHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description xxxundefinedundefined鼠标移入时的字体颜色
+   */
+  menuDarkItemHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description xxxundefinedundefined鼠标点击时的背景颜色
+   */
+  menuDarkItemActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description xxxundefinedundefined鼠标点击时的字体颜色
+   */
+  menuDarkItemActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-9
+   * @description xxxundefinedundefinedundefined背景颜色
+   */
+  menuDarkItemOpenBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description xxxundefinedundefinedundefined字体颜色
+   */
+  menuDarkItemOpenFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-10
+   * @description xxxundefinedundefined禁用时的背景颜色
+   */
+  menuDarkItemDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description xxxundefinedundefined禁用时的字体颜色
+   */
+  menuDarkItemDisabledFontColor: string;
 }

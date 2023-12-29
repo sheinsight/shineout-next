@@ -11,6 +11,8 @@ export interface MenuClasses {
   wrapperHorizontal: string;
   wrapperHasExpand: string;
   wrapperHasOpen: string;
+  wrapperLight: string;
+  wrapperDark: string;
   root: string;
   children: string;
   childrenUp: string;

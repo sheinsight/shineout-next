@@ -20,6 +20,17 @@ const menuTokens: MenuTokens = {
   menuExpandSize: '14px',
   menuExpandHoverBackgroundColor: 'Brand-2',
   menuChildrenBoxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+  menuDarkFontColor: 'Neutral-text-1',
+  menuDarkItemBackgroundColor: '#020B18',
+  menuDarkItemFontColor: 'Neutral-text-1',
+  menuDarkItemHoverBackgroundColor: 'Brand-9',
+  menuDarkItemHoverFontColor: 'Neutral-text-1',
+  menuDarkItemActiveBackgroundColor: 'Brand-6',
+  menuDarkItemActiveFontColor: 'Neutral-text-1',
+  menuDarkItemOpenBackgroundColor: 'Neutral-fill-9',
+  menuDarkItemOpenFontColor: 'Neutral-text-1',
+  menuDarkItemDisabledBackgroundColor: 'Neutral-fill-10',
+  menuDarkItemDisabledFontColor: 'Neutral-text-4',
 };
 
 export default menuTokens;

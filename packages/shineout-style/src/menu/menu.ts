@@ -8,6 +8,8 @@ export type MenuClasses = {
   wrapperHorizontal: string;
   wrapperHasExpand: string;
   wrapperHasOpen: string;
+  wrapperLight: string;
+  wrapperDark: string;
   root: string;
   children: string;
   childrenUp: string;
@@ -37,6 +39,8 @@ export type MenuClassType = keyof MenuClasses;
 
 const menuStyle: JsStyles<MenuClassType> = {
   wrapper: {},
+  wrapperLight: {},
+  wrapperDark: {},
   scrollbox: {
     '$wrapperVertical &': {
       overflow: 'hidden',
@@ -130,15 +134,44 @@ const menuStyle: JsStyles<MenuClassType> = {
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
-    backgroundColor: token.menuItemBackgroundColor,
-    '&:hover': {
-      color: token.menuItemHoverFontColor,
-      backgroundColor: token.menuItemHoverBackgroundColor,
+    position: 'relative',
+    '$wrapperLight &': {
+      color: token.menuItemFontColor,
+      backgroundColor: token.menuItemBackgroundColor,
+      '&:hover': {
+        color: token.menuItemHoverFontColor,
+        backgroundColor: token.menuItemHoverBackgroundColor,
+      },
+    },
+
+    '$wrapperDark &': {
+      color: token.menuDarkFontColor,
+      backgroundColor: token.menuDarkItemBackgroundColor,
+      '&:hover': {
+        color: token.menuDarkItemHoverFontColor,
+        backgroundColor: token.menuDarkItemHoverBackgroundColor,
+      },
+    },
+    '$wrapperDark $itemOpen > &': {
+      color: token.menuDarkItemOpenFontColor,
+      backgroundColor: token.menuDarkItemOpenBackgroundColor,
     },
 
     '$itemInPath > &': {
-      color: token.menuItemActiveFontColor,
-      '$wrapperVertical &': {
+      '$wrapperLight &': {
+        color: token.menuItemActiveFontColor,
+      },
+
+      '$wrapperDark$wrapperInline &::before, $wrapperDark$wrapperVertical &::before': {
+        content: '""',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        bottom: 0,
+        width: '3px',
+        backgroundColor: token.menuDarkItemActiveBackgroundColor,
+      },
+      '$wrapperLight$wrapperVertical &': {
         '&::before': {
           display: 'block',
           content: '""',
@@ -154,26 +187,31 @@ const menuStyle: JsStyles<MenuClassType> = {
       },
     },
     '$itemActive > &': {
-      color: token.menuItemActiveFontColor,
-      backgroundColor: token.menuItemActiveBackgroundColor,
-      position: 'relative',
-      '$wrapperInline &,  $wrapperHorizontal &': {
+      '$wrapperLight &': {
+        color: token.menuItemActiveFontColor,
+        backgroundColor: token.menuItemActiveBackgroundColor,
+      },
+      '$wrapperDark &': {
+        color: token.menuDarkItemActiveFontColor,
+        backgroundColor: token.menuDarkItemActiveBackgroundColor,
+      },
+      '$wrapperLight$wrapperInline &,  $wrapperLight$wrapperHorizontal &': {
         '&::before': {
           content: '""',
           position: 'absolute',
           display: 'block',
           top: 0,
           right: 0,
-          width: '2px',
+          width: '3px',
           height: '100%',
           backgroundColor: token.menuItemActiveFontColor,
         },
       },
-      '$wrapperHorizontal $root > &::before': {
+      '$wrapperLight$wrapperHorizontal $root > &::before': {
         display: 'none',
       },
     },
-    '$itemDisabled > &': {
+    '$wrapperLight $itemDisabled > &': {
       cursor: 'not-allowed',
       color: token.menuItemDisabledFontColor,
       backgroundColor: token.menuItemDisabledBackgroundColor,

@@ -50,6 +50,30 @@ const menuTokenExtraValue = {
       shadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
     },
   },
+  // todo: #020B18 改成 Neutral-fill-10
+  dark: {
+    font: { color: 'Neutral-text-1' },
+    item: {
+      background: { color: '#020B18' },
+      font: { color: 'Neutral-text-1' },
+      hover: {
+        background: { color: 'Brand-9' },
+        font: { color: 'Neutral-text-1' },
+      },
+      active: {
+        background: { color: 'Brand-6' },
+        font: { color: 'Neutral-text-1' },
+      },
+      open: {
+        background: { color: 'Neutral-fill-9' },
+        font: { color: 'Neutral-text-1' },
+      },
+      disabled: {
+        background: { color: 'Neutral-fill-10' },
+        font: { color: 'Neutral-text-4' },
+      },
+    },
+  },
 };
 
 module.exports = {

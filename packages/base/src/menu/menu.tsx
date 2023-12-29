@@ -9,7 +9,7 @@ import type { KeygenResult } from '@sheinx/hooks';
 
 const emptyArray: any[] = [];
 const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key>) => {
-  const { data = emptyArray, mode = 'inline' } = props;
+  const { data = emptyArray, mode = 'inline', theme = 'light' } = props;
   const classes = props.jssStyle?.menu?.();
   const isVertical = mode === 'vertical' || mode === 'vertical-auto';
   const isHorizontal = mode === 'horizontal';
@@ -51,6 +51,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         mode === 'horizontal' && classes?.wrapperHorizontal,
         hasExpand && classes?.wrapperHasExpand,
         hasOpen && classes?.wrapperHasOpen,
+        theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
       )}
       style={props.style}
     >
