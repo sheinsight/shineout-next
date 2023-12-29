@@ -64,15 +64,18 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
       {data &&
         getRenderData().map((d, index) => {
           const itemFirst = Array.isArray(d) ? d[0] : d;
+          const isLastItem = index === data.length - 1;
+          const shouldRenderSeparator =
+            !props.max || (props.max && index + data.length - props.max - 1 !== data.length - 1);
           return (
             <div
               className={breadcrumbClasses?.item}
               key={props.keygen ? getKey(props.keygen, itemFirst as Item, index) : index}
             >
               {Array.isArray(d) ? renderArray(d) : renderItem(d as Item)}
-              {index !== data.length - 1 ? (
+              {!isLastItem && shouldRenderSeparator && (
                 <div className={breadcrumbClasses?.separator}>{separator}</div>
-              ) : null}
+              )}
             </div>
           );
         })}
