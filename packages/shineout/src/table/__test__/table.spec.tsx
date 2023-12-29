@@ -285,7 +285,7 @@ const expandTreeData: ExpandTreeData[] = [
 
 const dataGenerate = (sum: number = 20) => {
   const data: TableRowData[] = [];
-  for (let i = 0; i < sum; i++) {
+  for (let i = 1; i <= sum; i++) {
     data.push({
       id: i,
       name: `test${i}`,
