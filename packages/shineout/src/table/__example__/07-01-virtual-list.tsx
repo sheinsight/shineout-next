@@ -24,7 +24,7 @@ interface TableRowData {
 }
 type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
 
-const data: TableRowData[] = user.fetchSync(50);
+const data: TableRowData[] = user.fetchSync(10000);
 
 const columns: TableColumnItem[] = [
   { title: 'id', render: 'id', width: 80 },
@@ -56,7 +56,7 @@ const App: React.FC = () => (
     style={{ height: 600 }}
     columns={columns}
     data={data}
-    rowsInView={0}
+    rowsInView={20}
     bordered
   />
 );
