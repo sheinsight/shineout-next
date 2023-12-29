@@ -18,6 +18,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     isInPath,
     isOpen,
     expandAble,
+    isUp,
     handleExpandClick,
     handleItemClick,
     handleMouseEnter,
@@ -37,8 +38,8 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     toggleDuration: props.toggleDuration,
     disabled: props.disabled,
     mode: props.mode,
+    scrollRef: props.scrollRef,
   });
-
   const renderItem = () => {
     const item = util.render(props.renderItem, props.dataItem, props.index);
     const link = props.linkKey
@@ -122,7 +123,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     >
       {renderItem()}
       {children.length > 0 && (
-        <ul className={classes?.children}>
+        <ul className={classNames(classes?.children, isUp && classes?.childrenUp)}>
           {children.map((item: any, index: number) => {
             const key = util.getKey(props.keygen, item, index);
             return (

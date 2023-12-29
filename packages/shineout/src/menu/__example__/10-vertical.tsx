@@ -127,7 +127,7 @@ const App: React.FC = () => {
     <Menu
       data={data}
       keygen='id'
-      mode='vertical'
+      mode='vertical-auto'
       inlineIndent={24}
       active={checkActive}
       onClick={handleClick}

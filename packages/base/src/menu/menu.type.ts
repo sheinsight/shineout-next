@@ -13,6 +13,7 @@ export interface MenuClasses {
   wrapperHasOpen: string;
   root: string;
   children: string;
+  childrenUp: string;
   item: string;
   itemActive: string;
   itemDisabled: string;
@@ -186,4 +187,5 @@ export interface MenuItemProps
     > {
   index: number;
   level: number;
+  scrollRef: React.MutableRefObject<HTMLDivElement | null>;
 }

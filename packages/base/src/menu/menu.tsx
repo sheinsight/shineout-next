@@ -85,6 +85,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
                 frontCaretType={props.frontCaretType}
                 caretColor={props.caretColor}
                 inlineIndent={props.inlineIndent}
+                scrollRef={scrollRef}
               />
             );
           })}

@@ -23,6 +23,7 @@ export interface UseMenuItemProps {
   disabled?: boolean | ((dataItem: any) => boolean);
   onClick?: (dataItem: any) => void;
   toggleDuration?: number;
+  scrollRef?: React.MutableRefObject<HTMLDivElement | null>;
 }
 
 export type UpdateFunc = (

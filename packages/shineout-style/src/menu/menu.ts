@@ -10,6 +10,7 @@ export type MenuClasses = {
   wrapperHasOpen: string;
   root: string;
   children: string;
+  childrenUp: string;
   item: string;
   itemActive: string;
   itemDisabled: string;
@@ -105,8 +106,13 @@ const menuStyle: JsStyles<MenuClassType> = {
       right: '-2px',
       transform: 'translateX(100%)',
       minWidth: 'auto',
+      '&$childrenUp': {
+        top: 'auto',
+        bottom: 0,
+      },
     },
   },
+  childrenUp: {},
   item: {
     listStyle: 'none',
     flexShrink: 0,

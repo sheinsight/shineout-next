@@ -8,6 +8,7 @@ const useMenuItem = (props: UseMenuItemProps) => {
   const { current: context } = useRef({
     id: '',
     timer: null as NodeJS.Timeout | null,
+    isUp: false,
   });
   const { parentId = '', dataItem, toggleDuration = 200 } = props;
   if (!context.id) {
@@ -89,12 +90,22 @@ const useMenuItem = (props: UseMenuItemProps) => {
     }
   });
 
-  const handleMouseEnter = usePersistFn(() => {
+  const handleMouseEnter = usePersistFn((e: React.MouseEvent) => {
     if (expandAble && props.mode !== 'inline') {
       if (context.timer) {
         clearTimeout(context.timer);
         context.timer = null;
       }
+      let isUp = false;
+      if (props.mode === 'vertical-auto' && props.scrollRef?.current) {
+        const target = e.currentTarget as HTMLElement;
+        const rect = target.getBoundingClientRect();
+        const scrollRect = props.scrollRef.current?.getBoundingClientRect();
+        const topLine = scrollRect?.top;
+        const bottomLine = scrollRect?.bottom;
+        isUp = rect.bottom - topLine > (bottomLine - topLine) / 2;
+      }
+      context.isUp = isUp;
       props.onOpenChange((before) => {
         const openKeySet = new Set(before);
         openKeySet.add(props.keyResult);
@@ -118,6 +129,7 @@ const useMenuItem = (props: UseMenuItemProps) => {
     isOpen: gopenKeySet.has(props.keyResult),
     isDisabled,
     expandAble,
+    isUp: context.isUp,
     handleItemClick,
     handleMouseEnter,
     handleMouseLeave,
