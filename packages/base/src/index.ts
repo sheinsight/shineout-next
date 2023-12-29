@@ -15,6 +15,7 @@ export * from './icon';
 export * from './image';
 export * from './input';
 export * from './list';
+export * from './menu';
 export * from './message';
 export * from './modal';
 export * from './pagination';

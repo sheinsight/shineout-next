@@ -46,6 +46,9 @@ import { InputTokens } from './input/type';
 import List from './list';
 import { ListTokens } from './list/type';
 
+import Menu from './menu';
+import { MenuTokens } from './menu/type';
+
 import Message from './message';
 import { MessageTokens } from './message/type';
 
@@ -121,6 +124,7 @@ export type ThemeTokens = AlertTokens &
   ImageTokens &
   InputTokens &
   ListTokens &
+  MenuTokens &
   MessageTokens &
   ModalTokens &
   PaginationTokens &
@@ -158,6 +162,7 @@ const Tokens: ThemeTokens = {
   ...Image,
   ...Input,
   ...List,
+  ...Menu,
   ...Message,
   ...Modal,
   ...Pagination,

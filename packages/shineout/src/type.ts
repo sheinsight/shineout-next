@@ -24,3 +24,4 @@ export * as Modal from './modal/interface';
 export * as Drawer from './drawer/interface';
 export * as Breadcrumb from './breadcrumb/interface';
 export * as Sticky from './sticky/interface';
+export * as Menu from './menu/interface';

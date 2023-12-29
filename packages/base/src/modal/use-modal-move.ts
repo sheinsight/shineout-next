@@ -40,7 +40,7 @@ export const useModalMove = () => {
   });
   const { handleMouseDown, isDragging } = useDragMock({
     onDragStart: handleDragStart,
-    onDragmove: handleDragMove,
+    onDragMove: handleDragMove,
   });
 
   return {
