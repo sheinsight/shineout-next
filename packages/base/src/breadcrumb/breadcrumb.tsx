@@ -65,8 +65,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
         getRenderData().map((d, index) => {
           const itemFirst = Array.isArray(d) ? d[0] : d;
           const isLastItem = index === data.length - 1;
-          const shouldRenderSeparator =
-            !props.max || (props.max && index + data.length - props.max - 1 !== data.length - 1);
+          const shouldRenderSeparator = !props.max || (props.max && index !== props.max);
           return (
             <div
               className={breadcrumbClasses?.item}
