@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver, OptionalToRequired } from '@sheinx/hooks';
+import { util, addResizeObserver, OptionalToRequired, UnMatchedData } from '@sheinx/hooks';
 import { ResultProps, ResultType } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import Input from './result-input';
@@ -14,7 +14,6 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
   const {
     jssStyle,
     multiple,
-    // resultRef: resultRefProp,
     datum,
     size,
     value,
@@ -30,7 +29,6 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     compressedClassName,
     renderUnmatched,
     renderResult: renderResultProp,
-    // onCreate,
     allowOnFilter,
     setInputText,
     childrenKey,
@@ -74,7 +72,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
           values={value}
           onRef={onRef}
           inputText={inputText}
-          onChange={onFilter}
+          onChange={onFilter!}
           onInputBlur={onInputBlur}
           onResetFilter={onResetFilter}
           onClearCreatedData={onClearCreatedData}
@@ -92,17 +90,17 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     return renderResultProp(data as DataItem);
   };
 
-  const renderItem = (item: DataItem, index: number): React.ReactNode => {
+  const renderItem = (item: DataItem | UnMatchedData, index: number): React.ReactNode => {
     const handleClose = () => {
       datum.remove(item);
     };
     let isDisabled;
     if (util.isFunc(disabled)) {
-      isDisabled = disabled(item);
+      isDisabled = disabled(item as DataItem);
     } else {
       isDisabled = disabled;
     }
-    const key = getKey(keygen, item, index);
+    const key = getKey(keygen, item as DataItem, index);
     return (
       <Tag
         key={key}
@@ -110,7 +108,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
         size={size}
         className={styles.tag}
         onClose={handleClose}
-        jssStyle={jssStyle}
+        jssStyle={jssStyle as any}
       >
         {renderResultContent(item)}
       </Tag>
@@ -167,13 +165,13 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
   const renderMultipleResult = () => {
     if (isEmptyResult()) return renderNbsp();
-    const result = datum.getDataByValues(value, { childrenKey }).map(renderItem);
+    const result = datum.getDataByValues(value as Value[], { childrenKey }).map(renderItem);
     return result;
   };
 
   const renderMultipleResultMore = () => {
     if (isEmptyResult()) return renderNbsp();
-    const result = datum.getDataByValues(value, { childrenKey }).map(renderItem);
+    const result = datum.getDataByValues(value as Value[], { childrenKey }).map(renderItem);
     const moreNumber = getCompressedBound();
     return (
       <More

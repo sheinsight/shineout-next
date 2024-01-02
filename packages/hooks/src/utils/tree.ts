@@ -25,7 +25,7 @@ export const getFlattenTree = <T>(
 
 export const getFilterTree = <DataItem, K extends (node: DataItem) => KeygenResult>(
   treeNodes: DataItem[] | undefined,
-  filterFunc: (data: DataItem) => boolean,
+  filterFunc: undefined | ((data: DataItem) => boolean),
   filterExpandKeys: KeygenResult[] | undefined,
   keyFunc: K,
   childrenKey = 'children' as keyof DataItem,
@@ -40,7 +40,7 @@ export const getFilterTree = <DataItem, K extends (node: DataItem) => KeygenResu
   const mapFilteredNodeToData = (node: DataItem): DataItem | null => {
     if (!node) return null;
     let match = false;
-    if (filterFunc(node)) {
+    if (filterFunc && filterFunc(node)) {
       if (firstMatchNode) firstMatchNode(node);
       match = true;
     }

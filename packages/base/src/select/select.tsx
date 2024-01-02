@@ -107,7 +107,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   const isPreventBlur = useRef(false);
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
-  const selectRef = useRef<HTMLDivElement>();
+  const selectRef = useRef<any>();
   const optionListRef = useRef<OptionListRefType>();
 
   const {
@@ -196,7 +196,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     },
   );
 
-  const getRenderItem = (data: DataItem, index: number) => {
+  const getRenderItem = (data: DataItem, index?: number) => {
     return typeof renderItemProp === 'function'
       ? renderItemProp(data, index)
       : (data[renderItemProp] as ReactNode);
@@ -265,7 +265,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
       return;
     }
 
-    const currentDataItem = filterData[hoverIndex];
+    const currentDataItem = filterData?.[hoverIndex];
     if (currentDataItem && !currentDataItem[groupKey as keyof typeof currentDataItem]) {
       isKeydown.current = true;
       handleChange(currentDataItem);
@@ -274,8 +274,8 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
 
   // input blur 时的处理方法
   // 注意，在点击 option 的时候也会触发 blur 事件，此时要规避点击 option 后的 blur 事件
-  const handleInputBlur = (text: string) => {
-    if (onFilterProp && text && filterSingleSelect && data.length === 1) {
+  const handleInputBlur = (text?: string) => {
+    if (onFilterProp && text && filterSingleSelect && data?.length === 1) {
       handleChange(data[0]);
       return;
     }
@@ -384,7 +384,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
 
   const handleKeyUp = () => {};
 
-  const handleClear = (e) => {
+  const handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
     datum.removeAll();
     setInputText('');
@@ -449,12 +449,12 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   const renderResult = () => {
     const result = (
       <div className={classNames(styles?.result)}>
-        <Result
+        <Result<DataItem, Value>
           jssStyle={jssStyle}
           size={size}
           datum={datum}
           value={value}
-          data={groupBy ? groupData : filterData}
+          data={(groupBy ? groupData : filterData) as DataItem[]}
           focus={open}
           keygen={keygen}
           disabled={disabled}
@@ -503,7 +503,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
 
   const renderList = () => {
     const listProps = {
-      data: groupBy ? groupData : filterData,
+      data: (groupBy ? groupData : filterData) as DataItem[],
       datum,
       value,
       size,

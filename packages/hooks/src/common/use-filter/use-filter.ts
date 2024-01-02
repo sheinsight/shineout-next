@@ -3,7 +3,7 @@ import { isFunc, getKey, getFilterTree } from '../../utils';
 import { UseFilterProps } from './use-filter.type';
 import { KeygenResult } from '../type';
 
-const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataItem, Value>) => {
+const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   const {
     data,
     groupKey,
@@ -64,7 +64,7 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
     setCreatedData(undefined);
   };
 
-  const handleCreate = (text: Value) => {
+  const handleCreate = (text: string) => {
     const createFn = typeof onCreate === 'boolean' ? (t: string) => t : onCreate;
     return createFn?.(text);
   };
@@ -89,7 +89,7 @@ const useFilter = <DataItem, Value extends string>(props: UseFilterProps<DataIte
     }
 
     if (onCreate) {
-      const innerData = handleCreate(text as Value);
+      const innerData = handleCreate(text);
       setCreatedData(innerData);
     }
 

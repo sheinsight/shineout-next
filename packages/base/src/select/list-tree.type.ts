@@ -4,7 +4,7 @@ import { JssStyleType, SelectProps, DatumType } from './select.type';
 export interface ListTreeProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
-    'multiple' | 'renderItem' | 'defaultExpandAll' | 'defaultExpanded' | 'onExpand' | 'expanded'
+    'multiple' | 'defaultExpandAll' | 'defaultExpanded' | 'onExpand' | 'expanded'
   > {
   jssStyle?: JssStyleType;
   height: number;
@@ -13,4 +13,5 @@ export interface ListTreeProps<DataItem, Value>
   childrenKey: keyof DataItem;
   datum: DatumType<DataItem, Value>;
   closePop: () => void;
+  renderItem: (data: DataItem, index?: number) => React.ReactNode;
 }

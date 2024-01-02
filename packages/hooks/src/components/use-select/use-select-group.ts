@@ -3,7 +3,7 @@ import { UseSelectGroupProps } from './use-select-group.type';
 import { getUidStr } from '../../utils';
 
 const UseSelectGroup = <DataItem>(props: UseSelectGroupProps<DataItem>) => {
-  const { data: dataProp, groupBy } = props;
+  const { data: dataProp = [], groupBy } = props;
   const [data, setData] = useState<DataItem[]>([]);
   const groupKey = useRef('');
 
@@ -22,7 +22,7 @@ const UseSelectGroup = <DataItem>(props: UseSelectGroupProps<DataItem>) => {
       groupData[group].push(item);
     });
     const newData = Object.keys(groupData).reduce(
-      (p, v) => (v ? p.concat(groupData[v]) : groupData[v].concat(p)),
+      (p: DataItem[], v) => (v ? p.concat(groupData[v]) : groupData[v].concat(p)),
       [],
     );
     setData(newData);

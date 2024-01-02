@@ -71,7 +71,7 @@ const ResultInput = (props: ResultInputProps) => {
       <Input
         onRef={bindInputRef}
         style={{ width: multiple ? 12 : '100%' }}
-        value={inputText}
+        value={inputText as string}
         maxLength={maxLength}
         onChange={onChange}
         onBlur={handleBlur}

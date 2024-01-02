@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { SelectClasses } from '@sheinx/shineout-style';
+import { StructKeygenStringType } from '@sheinx/hooks';
 import { ListTreeProps } from './list-tree.type';
 import Tree from '../tree';
 
@@ -52,22 +53,27 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
     }
   };
 
+  // tree 的 renderItem 与 list 的 renderItem 不同，需要转换，且 tree 无 index 返回
+  const renderItem = (item: DataItem) => {
+    return renderItemProp(item);
+  };
+
   return (
     <div className={rootClass} style={style}>
       <Tree
         line={false}
-        jssStyle={jssStyle}
+        jssStyle={jssStyle as any}
         onClick={handleClick}
         data={data}
         expanded={expanded}
-        keygen={keygen}
+        keygen={keygen as StructKeygenStringType<DataItem>}
         defaultExpanded={defaultExpanded}
         defaultExpandAll={defaultExpandAll}
         childrenKey={childrenKey}
         onExpand={onExpand}
         nodeClass={classNames(styles.treeOption)}
         contentClass={getContentClass}
-        renderItem={renderItemProp}
+        renderItem={renderItem}
       ></Tree>
     </div>
   );

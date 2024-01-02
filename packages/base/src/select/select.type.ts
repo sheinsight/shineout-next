@@ -1,5 +1,5 @@
 // import React from 'react';
-import { BaseSelectProps, KeygenType, useListSelect, KeygenResult } from '@sheinx/hooks';
+import { BaseSelectProps, KeygenType, useListSelect, KeygenResult, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { TagClasses } from '../tag/tag.type';
@@ -10,6 +10,7 @@ import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { TreeClasses } from '../tree/tree.type';
 import { RadioClasses } from '../radio/radio.type';
 import { SpinClasses } from '../spin/spin.type';
+import { InputClasses } from '../input/input.type';
 
 export type JssStyleType = {
   tag: () => TagClasses;
@@ -21,6 +22,7 @@ export type JssStyleType = {
   radio?: () => RadioClasses;
   tree?: () => TreeClasses;
   spin?: () => SpinClasses;
+  input?: () => InputClasses;
 };
 
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
@@ -43,7 +45,6 @@ export interface BaseListProps<DataItem, Value>
     | 'loading'
     | 'lineHeight'
     | 'itemsInView'
-    | 'renderItem'
     | 'multiple'
     | 'columns'
     | 'columnWidth'
@@ -53,12 +54,13 @@ export interface BaseListProps<DataItem, Value>
   customHeader?: React.ReactNode;
   height: number | string;
   data: DataItem[];
-  datum: DatumType<DataItem, Value>;
+  datum: any;
+  renderItem: (data: DataItem, index?: number) => React.ReactNode;
   closePop: () => void;
-  originalData: DataItem[];
+  originalData: any;
   groupKey?: string;
   controlType?: 'mouse' | 'keyboard';
-  optionListRef: React.MutableRefObject<OptionListRefType>;
+  optionListRef: React.MutableRefObject<OptionListRefType | undefined>;
   onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
   onOptionClick: (data: DataItem, index: number) => void;
 }
@@ -72,7 +74,7 @@ export interface SelectPropsBase<DataItem, Value>
   // data treeData 的类型交给重载去实现
   data?: DataItem[];
   treeData?: DataItem[];
-  childrenKey?: keyof DataItem;
+  childrenKey?: keyof DataItem & string;
 
   keygen: KeygenType<DataItem>;
   value?: Value;
@@ -121,7 +123,10 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 自定义渲染下拉列表
    * @en Custom render dropdown
    */
-  renderOptionList?: (list: React.ReactNode, info: { loading?: boolean }) => React.ReactNode;
+  renderOptionList?: (
+    list: React.ReactNode,
+    info: { loading?: boolean | React.ReactNode },
+  ) => React.ReactNode;
 
   /**
    * @deprecated
@@ -213,7 +218,7 @@ export interface SelectPropsBase<DataItem, Value>
   showHitDescendants?: boolean;
 
   resultClassName?: ((value: DataItem) => string) | string;
-  renderItem: ((data: DataItem, index?: number) => React.ReactNode) | KeygenResult;
+  renderItem: ((data: DataItem, index?: number) => React.ReactNode) | ObjectKey<DataItem>;
   renderResult?: (data: DataItem, index?: number) => React.ReactNode;
   renderUnmatched?: (value: Value extends (infer U)[] ? U : Value) => React.ReactNode;
 
@@ -234,7 +239,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn onFilter 不为空时，可以输入过滤数据。onFilter 如果返回一个函数，使用这个函数做前端过滤。如果不返回，可以自行做后端过滤
    */
   onFilter?: (text: string, from?: string) => ((data: DataItem) => boolean) | void | undefined;
-  onCreate?: boolean | ((input: Value) => Value);
+  onCreate?: ((input: string | DataItem) => DataItem | string) | boolean;
   onEnterExpand?: (e: React.KeyboardEvent<HTMLDivElement>) => boolean;
   onCollapse?: (collapse: boolean) => void;
   onExpand?: (value: KeygenResult[]) => void;
@@ -261,7 +266,7 @@ export interface SelectPropsB<DataItem, Value>
    * @en Children key
    * @cn 子节点的 key
    */
-  childrenKey?: keyof DataItem;
+  childrenKey?: keyof DataItem & string;
 }
 
 export type SelectProps<DataItem, Value> =

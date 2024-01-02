@@ -6,7 +6,7 @@ import { BaseListProps } from './select.type';
 import ListColumnsOption from './list-columns-option';
 import Checkbox from '../checkbox/simple-checkbox';
 
-const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, Value>) => {
+const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   const {
     jssStyle,
     data,
@@ -23,11 +23,12 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
     columns = 1,
     columnWidth,
     columnsTitle,
-    groupKey,
+    groupKey: groupKeyProp,
     renderItem: renderItemProp,
     closePop,
   } = props;
 
+  const groupKey = groupKeyProp as keyof DataItem;
   const styles = jssStyle?.select?.() as SelectClasses;
 
   // columns 模式无上下边距，故而 lineHeight 需要调整
@@ -44,7 +45,7 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
   const getChecked = () => {
     if (!value) return false;
 
-    if (value.length === 0) {
+    if (util.isArray(value) && value.length === 0) {
       return false;
     }
 
@@ -90,11 +91,11 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
     return <div>header</div>;
   };
 
-  const renderGroupTitle = (item, key) => {
+  const renderGroupTitle = (item: DataItem, key: string) => {
     if (item[groupKey]) {
       return (
         <div className={styles.optionGroupTitle} key={key}>
-          {item[groupKey]}
+          {item[groupKey] as string}
         </div>
       );
     }
@@ -105,7 +106,8 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
     return (
       <div className={styles?.columns} key={currentIndex} style={{ height: lineHeight }}>
         {data.map((item, index) => {
-          const isGroupTitleRow = (groupKey && Object.keys(item).length === 0) || item[groupKey];
+          const isGroupTitleRow =
+            (groupKey && Object.keys(item as object).length === 0) || item[groupKey];
           if (isGroupTitleRow) {
             return renderGroupTitle(item, `__${currentIndex}__${index}__${item[groupKey]}__`);
           }
@@ -156,11 +158,10 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
 
     return (
       <VirtualScrollList
-        jssStyle={jssStyle}
-        data={sliceData}
+        data={sliceData as DataItem[]}
         tag={'ul'}
         keygen={keygen}
-        groupKey={groupKey}
+        groupKey={groupKey as string}
         tagClassName={styles.virtualList}
         height={height as number}
         colNum={columns}

@@ -105,7 +105,7 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
       <span style={{ display: 'inline-flex' }}>
         <Tag
           className={styles.tag}
-          jssStyle={jssStyle}
+          jssStyle={jssStyle as any}
           key='more'
           size={size}
           style={tagStlye}

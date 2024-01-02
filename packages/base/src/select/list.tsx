@@ -13,7 +13,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     data,
     height,
     size,
-    // optionWidth,
     header,
     keygen,
     datum,
@@ -42,7 +41,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     getCurrentIndex: undefined,
     getHoverIndex: undefined,
   });
-  // const wrapperRef = useRef<HTMLDivElement>(null);
 
   const getHoverIndex = usePersistFn(() => {
     return hoverIndex;
@@ -72,7 +70,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   const handleMove = usePersistFn((step: number, force?: boolean) => {
     if (force) {
       setHoverIndex(step);
-      virtualRef.current.scrollByStep(step);
+      virtualRef.current?.scrollByStep?.(step);
       return;
     }
     const max = data.length;
@@ -158,8 +156,8 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     );
   };
 
-  const renderGroupTitle = (d) => {
-    const title = d[groupKey];
+  const renderGroupTitle = (d: { [key: string]: string }) => {
+    const title = d[groupKey as keyof typeof d];
     return (
       <div className={styles.optionGroupTitle} title={title}>
         {title}
@@ -173,7 +171,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     return (
       <VirtualScrollList
         virtualRef={virtualRef}
-        // wrapperRef={wrapperRef}
         data={data}
         keygen={keygen}
         tag={'ul'}
