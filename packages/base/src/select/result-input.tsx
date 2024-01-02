@@ -10,6 +10,7 @@ const ResultInput = (props: ResultInputProps) => {
     values,
     inputText,
     focus,
+    trim,
     maxLength,
     multiple,
     onRef,
@@ -29,6 +30,9 @@ const ResultInput = (props: ResultInputProps) => {
   const handleBlur = (e: React.FocusEvent) => {
     if ((e.target as HTMLInputElement).value === inputText) {
       return;
+    }
+    if (trim) {
+      return onInputBlur?.(inputText?.trim());
     }
     onInputBlur?.(inputText);
   };

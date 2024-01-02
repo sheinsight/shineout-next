@@ -8,6 +8,7 @@ export interface ResultInputProps extends Pick<CommonType, 'style' | 'className'
   open?: boolean;
   inputText?: string;
   filterText?: string;
+  trim?: boolean;
   values: any;
   multiple?: boolean;
   maxLength?: number;

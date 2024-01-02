@@ -51,6 +51,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     columnsTitle,
     columnWidth = 160,
     width,
+    trim,
     maxLength,
     style,
     multiple,
@@ -306,7 +307,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
       // optionListRef.current?.hoverMove(filterData.length - 1, true);
     }
 
-    onFilter(text);
+    onFilter(trim ? text.trim() : text);
   };
 
   const handleOptionClick = () => {
@@ -453,6 +454,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     const result = (
       <div className={classNames(styles?.result)}>
         <Result<DataItem, Value>
+          trim={trim}
           jssStyle={jssStyle}
           size={size}
           datum={datum}

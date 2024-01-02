@@ -21,6 +21,7 @@ export interface ResultProps<DataItem, Value>
     | 'renderUnmatched'
     | 'focusSelected'
     | 'maxLength'
+    | 'trim'
   > {
   data: DataItem[];
   datum: DatumType<DataItem, Value>;

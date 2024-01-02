@@ -20,6 +20,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     focus,
     keygen,
     disabled,
+    trim,
     maxLength,
     placeholder,
     filterText,
@@ -66,6 +67,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
           jssStyle={jssStyle}
           style={{ width: 12 }}
           value={filterText}
+          trim={trim}
           focus={focus}
           multiple={multiple}
           maxLength={maxLength}
