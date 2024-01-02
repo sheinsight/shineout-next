@@ -13,7 +13,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     data,
     height,
     size,
-    optionWidth,
+    // optionWidth,
     header,
     keygen,
     datum,
@@ -31,10 +31,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     onOptionClick,
   } = props;
 
-  const style = {
-    width: optionWidth,
-    // height,
-  };
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootClass = classNames(styles.list, {
     [styles.controlMouse]: controlType === 'mouse',
@@ -162,14 +158,14 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
     );
   };
 
-  // const renderGroupTitle = (d) => {
-  //   const title = d[groupKey];
-  //   return (
-  //     <div className={styles.optionGroupTitle} title={title}>
-  //       {title}
-  //     </div>
-  //   );
-  // };
+  const renderGroupTitle = (d) => {
+    const title = d[groupKey];
+    return (
+      <div className={styles.optionGroupTitle} title={title}>
+        {title}
+      </div>
+    );
+  };
 
   const renderList = () => {
     if (loading) return renderLoading();
@@ -181,11 +177,13 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
         data={data}
         keygen={keygen}
         tag={'ul'}
+        groupKey={groupKey}
         tagClassName={styles.virtualList}
         height={height}
         lineHeight={lineHeight}
         rowsInView={itemsInView}
         renderItem={renderItem}
+        customRenderItem={renderGroupTitle}
         onControlTypeChange={onControlTypeChange}
       ></VirtualScrollList>
     );
@@ -202,7 +200,7 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   }, []);
 
   return (
-    <div className={rootClass} style={style}>
+    <div className={rootClass}>
       {header && renderHeader()}
       {renderList()}
     </div>

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver, OptionalToRequired, usePersistFn } from '@sheinx/hooks';
+import { util, addResizeObserver, OptionalToRequired } from '@sheinx/hooks';
 import { ResultProps, ResultType } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import Input from './result-input';
@@ -8,25 +8,29 @@ import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
 
-const { isObject, isEmpty, isNumber } = util;
+const { isObject, isEmpty, isNumber, getKey } = util;
 
 const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem, Value>>) => {
   const {
     jssStyle,
     multiple,
-    resultRef: resultRefProp,
+    // resultRef: resultRefProp,
     datum,
     size,
     value,
     focus,
+    keygen,
+    disabled,
+    maxLength,
     placeholder,
     filterText,
+    inputText,
     compressed,
     compressedBound,
     compressedClassName,
     renderUnmatched,
     renderResult: renderResultProp,
-    onCreate,
+    // onCreate,
     allowOnFilter,
     setInputText,
     childrenKey,
@@ -38,10 +42,10 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
   } = props;
 
   const [more, setMore] = useState(-1);
-  const [text, setText] = useState('');
+
   const resultRef = useRef<HTMLDivElement>(null);
   const shouldResetMore = useRef(false);
-  const showInput = allowOnFilter || onCreate;
+  const showInput = allowOnFilter;
 
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootClass = classNames(styles.resultTextWrapper, compressed && styles.compressedWrapper);
@@ -57,10 +61,6 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     return more;
   };
 
-  const handleResetInput = usePersistFn(() => {
-    setText('');
-  });
-
   const renderInput = () => {
     return (
       <React.Fragment key='input'>
@@ -70,9 +70,10 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
           value={filterText}
           focus={focus}
           multiple={multiple}
+          maxLength={maxLength}
           values={value}
           onRef={onRef}
-          inputText={text}
+          inputText={inputText}
           onChange={onFilter}
           onInputBlur={onInputBlur}
           onResetFilter={onResetFilter}
@@ -95,8 +96,22 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     const handleClose = () => {
       datum.remove(item);
     };
+    let isDisabled;
+    if (util.isFunc(disabled)) {
+      isDisabled = disabled(item);
+    } else {
+      isDisabled = disabled;
+    }
+    const key = getKey(keygen, item, index);
     return (
-      <Tag key={index} size={size} className={styles.tag} onClose={handleClose} jssStyle={jssStyle}>
+      <Tag
+        key={key}
+        disabled={isDisabled}
+        size={size}
+        className={styles.tag}
+        onClose={handleClose}
+        jssStyle={jssStyle}
+      >
         {renderResultContent(item)}
       </Tag>
     );
@@ -162,6 +177,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     const moreNumber = getCompressedBound();
     return (
       <More
+        keygen={keygen}
         key='more'
         jssStyle={jssStyle}
         data={result}
@@ -178,8 +194,10 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     let result = [];
     if (multiple) {
       result.push(compressed ? renderMultipleResultMore() : renderMultipleResult());
-      if (onFilter || onCreate) {
+      if (showInput) {
         result.push(renderInput());
+      } else if (result.length === 0) {
+        result.push(renderNbsp());
       }
     } else {
       if (showInput) {
@@ -202,15 +220,15 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
       const result = datum.getDataByValues([value], { childrenKey });
       const content = renderResultContent(result[0]);
       if (!isEmpty(content)) {
-        setText(content as string);
         setInputText(content as string);
       }
     }
     if (!resultRef.current) return;
     if (!compressed) return;
     if (isCompressedBound()) return;
+
     handleResetMore();
-  }, [value]);
+  }, [value, focus]);
 
   useEffect(() => {
     if (!compressed) return;
@@ -230,9 +248,6 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
   }, [value, more]);
 
   useEffect(() => {
-    if (resultRefProp.current) {
-      resultRefProp.current.resetInput = handleResetInput;
-    }
     if (!resultRef.current) return;
 
     const cancelObserver = addResizeObserver(resultRef.current, handleResetMore, {

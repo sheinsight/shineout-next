@@ -10,6 +10,8 @@ export interface VirtualListProps<DataItem> extends Pick<CommonType, 'className'
   rowsInView: number;
   colNum?: number;
   renderItem: any;
+  customRenderItem?: any;
+  groupKey?: string;
   tag?: React.ReactElement['type'];
   tagClassName?: string;
   scrollerStyle?: React.CSSProperties;

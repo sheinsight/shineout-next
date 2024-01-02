@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { util, usePersistFn } from '@sheinx/hooks';
+import { usePersistFn } from '@sheinx/hooks';
 import Scroll from './scroll';
 import { VirtualListProps } from './virtual-scroll-list.type';
 
@@ -7,13 +7,13 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   const {
     rowsInView,
     data = [],
-    keygen,
+    groupKey,
     style,
     className,
     lineHeight,
     height,
-    colNum = 1,
     renderItem,
+    customRenderItem,
     tag = 'div',
     tagClassName,
     virtualRef,
@@ -26,7 +26,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const getScrollHeight = () => {
-    const rows = Math.ceil(data.length / colNum);
+    const rows = Math.ceil(data.length);
     return rows * lineHeight;
   };
 
@@ -65,8 +65,8 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   const scrollHeight = getScrollHeight();
 
   const renderList = () => {
-    const start = currentIndex * colNum;
-    const end = (currentIndex + rowsInView) * colNum;
+    const start = currentIndex;
+    const end = currentIndex + rowsInView;
     let items = data.slice(start, end);
     const Tag = tag;
     const shouldScroll = items.length * lineHeight > (height as number);
@@ -87,10 +87,12 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
       >
         <Tag className={tagClassName} style={{ transform: `translate3d(0, -${top}px, 0)` }}>
           {items.map((d: DataItem, i: number) => {
-            const key = util.getKey(keygen, d, i);
-            return (
-              <React.Fragment key={key}>{renderItem(d, currentIndex + i, key)}</React.Fragment>
-            );
+            if (d[groupKey as keyof DataItem]) {
+              return (
+                <React.Fragment key={i}>{customRenderItem(d, currentIndex + i, i)}</React.Fragment>
+              );
+            }
+            return <React.Fragment key={i}>{renderItem(d, currentIndex + i, i)}</React.Fragment>;
           })}
         </Tag>
       </Scroll>

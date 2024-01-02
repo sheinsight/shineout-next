@@ -36,6 +36,7 @@ export type SelectClasses = {
   arrowIcon: string;
   ellipsis: string;
   multiple: string;
+  loading: string;
   checkedIcon: string;
   list: string;
   tree: string;
@@ -297,6 +298,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   clearIcon: {
     position: 'absolute',
     right: token.selectPaddingX,
+    top: `calc(50% - 1em/2)`,
     cursor: 'pointer',
     width: token.selectFontSize,
     lineHeight: 0,
@@ -306,6 +308,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   arrowIcon: {
     position: 'absolute',
     right: token.selectPaddingX,
+    top: `calc(50% - 1em/2)`,
     verticalAlign: 'middle',
     width: token.selectFontSize,
     lineHeight: 0,
@@ -335,6 +338,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       flexWrap: 'nowrap',
     },
     '& $placeholder': {},
+  },
+  loading: {
+    padding: 10,
   },
   checkedIcon: {
     right: 8,
@@ -456,6 +462,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       width: 'auto',
     },
   },
+  footer: {},
   columnsTitle: {},
   customHeader: {},
   columns: {

@@ -57,7 +57,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   //   if (dataProps !== data && dataUpdate) setData(dataProps);
   // }, [dataProps])
 
-  const { func, updateMap } = useTree({
+  const { datum, updateMap } = useTree({
     mode,
     value,
     data,
@@ -95,7 +95,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     }
 
     if (onClick) {
-      onClick(node, id, func.getPath(id));
+      onClick(node, id, datum.getPath(id));
     }
   };
 
@@ -121,8 +121,8 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     let targetIdCopy = targetId;
     let positionCopy = position;
 
-    const current = func.getPath(id);
-    const target = func.getPath(targetIdCopy);
+    const current = datum.getPath(id);
+    const target = datum.getPath(targetIdCopy);
     if (!current || !target) return;
     const newData = produce(data, (draft) => {
       let node: any = draft;
@@ -176,7 +176,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   const onToggle = onExpand ? handleToggle : undefined;
   return (
     <div className={rootClass} {...rest}>
-      <Provider value={func}>
+      <Provider value={datum}>
         <RootTree
           jssStyle={jssStyle}
           data={data}
@@ -191,7 +191,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           expanded={expanded}
           expandIcons={expandIcons}
           childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}
-          bindNode={func.bindNode}
+          bindNode={datum.bindNode}
           childrenKey={childrenKey as keyof DataItem}
           onNodeClick={handleNodeClick}
           renderItem={renderItem}

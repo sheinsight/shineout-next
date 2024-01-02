@@ -12,6 +12,7 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
     height,
     renderItem: renderItemProp,
     datum,
+    expanded,
     childrenKey,
     defaultExpanded,
     defaultExpandAll,
@@ -58,6 +59,7 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
         jssStyle={jssStyle}
         onClick={handleClick}
         data={data}
+        expanded={expanded}
         keygen={keygen}
         defaultExpanded={defaultExpanded}
         defaultExpandAll={defaultExpandAll}

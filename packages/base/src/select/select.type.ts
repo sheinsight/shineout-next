@@ -9,6 +9,7 @@ import { PopoverClasses } from '../popover/popover.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 import { TreeClasses } from '../tree/tree.type';
 import { RadioClasses } from '../radio/radio.type';
+import { SpinClasses } from '../spin/spin.type';
 
 export type JssStyleType = {
   tag: () => TagClasses;
@@ -19,6 +20,7 @@ export type JssStyleType = {
   checkbox?: () => CheckboxClasses;
   radio?: () => RadioClasses;
   tree?: () => TreeClasses;
+  spin?: () => SpinClasses;
 };
 
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
@@ -110,6 +112,18 @@ export interface SelectPropsBase<DataItem, Value>
   header?: React.ReactNode;
 
   /**
+   * @en Custom render option list header
+   * @cn 自定义渲染列表底部内容
+   */
+  footer?: React.ReactNode;
+
+  /**
+   * @cn 自定义渲染下拉列表
+   * @en Custom render dropdown
+   */
+  renderOptionList?: (list: React.ReactNode, info: { loading?: boolean }) => React.ReactNode;
+
+  /**
    * @deprecated
    */
   border?: boolean;
@@ -190,9 +204,16 @@ export interface SelectPropsBase<DataItem, Value>
   // Tree 组件同款属性
   defaultExpanded?: KeygenResult[];
   defaultExpandAll?: boolean;
+  expanded?: KeygenResult[];
+  /**
+   * @en Whether to show the descendant nodes of the hit node after filtering
+   * @cn 筛选后是否展示命中节点的后代节点
+   * @default false
+   */
+  showHitDescendants?: boolean;
 
   resultClassName?: ((value: DataItem) => string) | string;
-  renderItem: (data: DataItem, index?: number) => React.ReactNode;
+  renderItem: ((data: DataItem, index?: number) => React.ReactNode) | KeygenResult;
   renderResult?: (data: DataItem, index?: number) => React.ReactNode;
   renderUnmatched?: (value: Value extends (infer U)[] ? U : Value) => React.ReactNode;
 

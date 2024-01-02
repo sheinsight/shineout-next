@@ -132,7 +132,6 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
 
   const renderList = () => {
     if (loading) return renderLoading();
-
     const sliceData = data.reduce((red: DataItem[][], item) => {
       let lastItem: DataItem[] = red[red.length - 1];
 
@@ -160,6 +159,8 @@ const ColumnsList = <DataItem extends [], Value>(props: BaseListProps<DataItem, 
         jssStyle={jssStyle}
         data={sliceData}
         tag={'ul'}
+        keygen={keygen}
+        groupKey={groupKey}
         tagClassName={styles.virtualList}
         height={height as number}
         colNum={columns}

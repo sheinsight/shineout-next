@@ -14,6 +14,7 @@ import { SelectPropsBase, OptionListRefType } from './select.type';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
+import Spin from '../spin';
 import Result from './result';
 import List from './list';
 import TreeList from './list-tree';
@@ -36,6 +37,8 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     size,
     data,
     treeData,
+    header,
+    footer,
     format,
     value: valueProp,
     defaultValue,
@@ -48,14 +51,16 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     columnsTitle,
     columnWidth = 160,
     width,
+    maxLength,
     style,
     multiple,
+    loading,
     keygen,
     focusSelected = true,
     optionWidth = '100%',
     height = 250,
     open: openProp,
-    position: positionProp = 'bottom-left',
+    position: positionProp = 'auto',
     lineHeight,
     itemsInView,
     disabled,
@@ -67,15 +72,18 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     placeholder,
     autoAdapt,
     groupBy,
-    renderItem = (d) => d as ReactNode,
+    renderItem: renderItemProp = (d) => d as ReactNode,
     renderResult: renderResultProp,
     renderUnmatched,
     resultClassName,
     hideCreateOption,
     filterSingleSelect,
     childrenKey,
+    expanded: expandedProp,
     defaultExpanded,
     defaultExpandAll,
+    showHitDescendants,
+    renderOptionList,
     onExpand,
     onChange,
     onCreate: onCreateProp,
@@ -101,15 +109,13 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   const inputRef = useRef<HTMLInputElement>();
   const selectRef = useRef<HTMLDivElement>();
   const optionListRef = useRef<OptionListRefType>();
-  const resultRef = useRef<{ resetInput?: () => void }>({
-    resetInput: undefined,
-  });
 
   const {
     filterText,
     inputText,
     filterData,
     createdData,
+    expanded,
     setInputText,
     onFilter,
     onResetFilter,
@@ -117,7 +123,11 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     onClearCreatedData,
   } = useFilter({
     data,
+    treeData,
     keygen,
+    childrenKey,
+    expanded: expandedProp,
+    showHitDescendants,
     hideCreateOption,
     onCreate: onCreateProp,
     onFilter: onFilterProp,
@@ -186,6 +196,14 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     },
   );
 
+  const getRenderItem = (data: DataItem, index: number) => {
+    return typeof renderItemProp === 'function'
+      ? renderItemProp(data, index)
+      : (data[renderItemProp] as ReactNode);
+  };
+
+  const renderItem = getRenderItem;
+
   // const handleFocus = usePersistFn((e: React.FocusEvent) => {
   //   setFocused(true);
   //   onFocus?.(e);
@@ -207,7 +225,6 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
         if (checked) datum.remove(item);
         else datum.add(item);
       }
-      resultRef.current?.resetInput?.();
       return;
     }
 
@@ -371,7 +388,6 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     e.stopPropagation();
     datum.removeAll();
     setInputText('');
-    resultRef.current?.resetInput?.();
 
     if (open) closePop();
   };
@@ -381,6 +397,18 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     return typeof renderResultProp === 'function'
       ? renderResultProp(data, index)
       : data[renderResultProp];
+  };
+
+  const renderLoading = () => {
+    if (loading !== true) {
+      return loading;
+    }
+
+    return (
+      <div className={styles?.loading}>
+        <Spin jssStyle={jssStyle} size={14} name='ring'></Spin>
+      </div>
+    );
   };
 
   // innerTitle 模式
@@ -400,10 +428,20 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   };
 
   const renderIcon = () => {
-    if ((clearable && value && open) || (clearable && value && enter)) return renderClearable();
+    let isEmpty;
+    if (multiple) {
+      isEmpty = !value || (Array.isArray(value) && value.length === 0);
+    } else {
+      isEmpty = util.isEmpty(value);
+    }
+
+    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && enter && disabled !== true)) {
+      return renderClearable();
+    }
+    const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
     return (
-      <span className={classNames(styles.arrowIcon, open && styles.arrowIconOpen)}>
-        {Icons.ArrowDown}
+      <span className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}>
+        {defaultIcon}
       </span>
     );
   };
@@ -412,7 +450,6 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     const result = (
       <div className={classNames(styles?.result)}>
         <Result
-          resultRef={resultRef}
           jssStyle={jssStyle}
           size={size}
           datum={datum}
@@ -421,6 +458,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
           focus={open}
           keygen={keygen}
           disabled={disabled}
+          maxLength={maxLength}
           compressed={compressed}
           compressedBound={compressedBound}
           compressedClassName={compressedClassName}
@@ -432,7 +470,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
           renderResult={getRenderResult}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
-          allowOnFilter={'onFilter' in props}
+          allowOnFilter={'onFilter' in props || 'onCreate' in props}
           focusSelected={focusSelected}
           inputText={inputText}
           filterText={filterText}
@@ -444,7 +482,6 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
           onResetFilter={onResetFilter}
           onClearCreatedData={onClearCreatedData}
         ></Result>
-        {renderIcon()}
       </div>
     );
 
@@ -502,13 +539,14 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     return (
       <TreeList<DataItem, Value>
         jssStyle={jssStyle}
-        data={treeData as DataItem[]}
+        data={filterData as DataItem[]}
         datum={datum}
         multiple={multiple}
         keygen={keygen}
         height={height as number}
         defaultExpandAll={defaultExpandAll}
         defaultExpanded={defaultExpanded}
+        expanded={expanded}
         onExpand={onExpand}
         childrenKey={childrenKey as keyof DataItem}
         closePop={closePop}
@@ -518,22 +556,43 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   };
 
   const renderOptions = () => {
-    if ('treeData' in props) {
-      return renderTreeList();
+    if (loading) return renderLoading();
+
+    const options = 'treeData' in props ? renderTreeList() : renderList();
+    if (renderOptionList) {
+      return renderOptionList(options, { loading: loading });
     }
-    return renderList();
+
+    return options;
   };
 
-  const getAutoAdaptStyle = () => {
+  const renderHeader = () => {
+    if (!header) return null;
+    return header;
+  };
+
+  const renderFooter = () => {
+    if (!footer) return null;
+    return footer;
+  };
+
+  const getListStyle = () => {
     const style: React.CSSProperties = {};
+    if (position.indexOf('top') > -1) {
+      style.transformOrigin = '0 100%';
+    }
     if (autoAdapt) {
-      style.minWidth = '100%';
+      if (width) {
+        style.minWidth = width || 'auto';
+      } else {
+        style.width = width || 'auto';
+      }
       return style;
     } else {
       if (columns > 1) {
         style.width = columns * columnWidth;
       } else {
-        style.width = '100%';
+        style.width = ('optionWidth' in props ? optionWidth : undefined) || width || '100%';
       }
     }
 
@@ -551,10 +610,10 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
       onMouseLeave={handleMouseLeave}
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
-      // onFocus={handleFocus}
       onBlur={handleBlur}
     >
       {renderResult()}
+      {renderIcon()}
       <AbsoluteList
         adjust
         focus={open}
@@ -573,9 +632,11 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
           display={'block'}
           type='scale-y'
           duration={'fast'}
-          style={getAutoAdaptStyle()}
+          style={getListStyle()}
         >
+          {renderHeader()}
           {renderOptions()}
+          {renderFooter()}
         </AnimationList>
       </AbsoluteList>
     </div>

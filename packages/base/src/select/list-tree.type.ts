@@ -4,7 +4,7 @@ import { JssStyleType, SelectProps, DatumType } from './select.type';
 export interface ListTreeProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
-    'multiple' | 'renderItem' | 'defaultExpandAll' | 'defaultExpanded' | 'onExpand'
+    'multiple' | 'renderItem' | 'defaultExpandAll' | 'defaultExpanded' | 'onExpand' | 'expanded'
   > {
   jssStyle?: JssStyleType;
   height: number;

@@ -108,9 +108,6 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
   if (!expanded && !hasExpanded.current) return null;
   hasExpanded.current = true;
 
-  // if (!data || !util.isArray(data)) {
-  //   return null;
-  // }
   const newStyle = Object.assign({}, style, { display: expanded ? 'block' : 'none' });
   return (
     <div onDrop={empty} onDragOver={empty} style={newStyle} className={rootClass}>

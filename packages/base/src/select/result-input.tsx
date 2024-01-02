@@ -10,6 +10,7 @@ const ResultInput = (props: ResultInputProps) => {
     values,
     inputText,
     focus,
+    maxLength,
     multiple,
     onRef,
     onChange,
@@ -42,7 +43,7 @@ const ResultInput = (props: ResultInputProps) => {
 
   // 选中结果后，聚焦并全选 input
   useEffect(() => {
-    if (!inputRef.current || !multiple) return;
+    if (!inputRef.current || !multiple || !focus) return;
     inputRef.current.focus();
     inputRef.current.select();
   }, [values]);
@@ -71,6 +72,7 @@ const ResultInput = (props: ResultInputProps) => {
         onRef={bindInputRef}
         style={{ width: multiple ? 12 : '100%' }}
         value={inputText}
+        maxLength={maxLength}
         onChange={onChange}
         onBlur={handleBlur}
         open={focus}
