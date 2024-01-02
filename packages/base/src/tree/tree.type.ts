@@ -35,10 +35,11 @@ export type JsstyleType = {
 export interface TreeProps<DataItem>
   extends BaseTreeProps<DataItem>,
     Pick<CommonType, 'className' | 'style'> {
-  jssStyle: JsstyleType;
+  jssStyle?: JsstyleType;
   line?: boolean;
   iconClass?: string;
   nodeClass?: string | ((data: DataItem) => string);
+  contentClass?: string | ((data: DataItem) => string);
   leafClass?: string;
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass?: ((data: DataItem) => string) | string;

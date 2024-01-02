@@ -6,6 +6,8 @@ export const Input = (props: {
   className?: string;
   value: string;
   placeholder?: string;
+  style?: React.CSSProperties;
+  maxLength?: number;
   onChange: (v: string) => void;
   onRef?: (ref: HTMLInputElement) => void;
   onMouseDown?: (e: React.MouseEvent) => void;
@@ -21,10 +23,12 @@ export const Input = (props: {
   return (
     <input
       ref={props.onRef}
+      style={props.style}
       className={props.className}
       placeholder={props.placeholder}
       autoComplete={'off'}
       value={value}
+      maxLength={props.maxLength}
       disabled={props.disabled}
       onBlur={props.onBlur}
       onFocus={props.onFocus}

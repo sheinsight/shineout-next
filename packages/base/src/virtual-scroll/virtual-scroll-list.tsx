@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { util } from '@sheinx/hooks';
+import React, { useState, useEffect, useRef } from 'react';
+import { usePersistFn } from '@sheinx/hooks';
 import Scroll from './scroll';
 import { VirtualListProps } from './virtual-scroll-list.type';
 
@@ -7,23 +7,44 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   const {
     rowsInView,
     data = [],
-    keygen,
+    groupKey,
     style,
     className,
     lineHeight,
     height,
-    colNum = 1,
     renderItem,
+    customRenderItem,
     tag = 'div',
     tagClassName,
+    virtualRef,
+    // wrapperRef,
+    onControlTypeChange,
   } = props;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [top, setTop] = useState(0);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const getScrollHeight = () => {
-    const rows = Math.ceil(data.length / colNum);
+    const rows = Math.ceil(data.length);
     return rows * lineHeight;
+  };
+
+  const getCurrentIndex = usePersistFn(() => {
+    return currentIndex;
+  });
+
+  const getTop = usePersistFn(() => {
+    return top;
+  });
+
+  const handleScrollByStep = usePersistFn((step: number, top?: number) => {
+    const next = currentIndex + step;
+    wrapperRef.current?.scrollTo({ top: next * lineHeight + (top || 0) });
+  });
+
+  const handleMouseMove = () => {
+    onControlTypeChange?.('mouse');
   };
 
   const handleScroll = (info: {
@@ -35,7 +56,6 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     height: number;
     width: number;
   }) => {
-    if (props.onScroll) props.onScroll(info);
     const current = Math.floor(info.scrollTop / lineHeight);
     const top = info.scrollTop - current * lineHeight;
     setTop(top);
@@ -45,31 +65,47 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   const scrollHeight = getScrollHeight();
 
   const renderList = () => {
-    const start = currentIndex * colNum;
-    const end = (currentIndex + rowsInView) * colNum;
+    const start = currentIndex;
+    const end = currentIndex + rowsInView;
     let items = data.slice(start, end);
     const Tag = tag;
+    const shouldScroll = items.length * lineHeight > (height as number);
+    const nextStyle = {
+      ...style,
+    };
+    if (shouldScroll) nextStyle.height = height;
 
     return (
       <Scroll
         className={className}
-        style={{ height, ...style }}
+        style={nextStyle}
         scrollWidth={0}
         scrollHeight={scrollHeight}
+        wrapperRef={wrapperRef}
         onScroll={handleScroll}
-        scrollerStyle={props.scrollerStyle}
+        onMouseMove={handleMouseMove}
       >
         <Tag className={tagClassName} style={{ transform: `translate3d(0, -${top}px, 0)` }}>
           {items.map((d: DataItem, i: number) => {
-            const key = util.getKey(keygen, d, i);
-            return (
-              <React.Fragment key={key}>{renderItem(d, currentIndex + i, key)}</React.Fragment>
-            );
+            if (d[groupKey as keyof DataItem]) {
+              return (
+                <React.Fragment key={i}>{customRenderItem(d, currentIndex + i, i)}</React.Fragment>
+              );
+            }
+            return <React.Fragment key={i}>{renderItem(d, currentIndex + i, i)}</React.Fragment>;
           })}
         </Tag>
       </Scroll>
     );
   };
+
+  useEffect(() => {
+    if (virtualRef?.current) {
+      virtualRef.current.scrollByStep = handleScrollByStep;
+      virtualRef.current.getCurrentIndex = getCurrentIndex;
+      virtualRef.current.getTop = getTop;
+    }
+  }, []);
 
   return renderList();
 };

@@ -5,7 +5,7 @@ import { JsstyleType, TreeRenderItemType } from './tree.type';
 export interface TreeListProps<DataItem>
   extends Omit<BaseTreeProps<DataItem>, 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className' | 'style'> {
-  jssStyle: JsstyleType;
+  jssStyle?: JsstyleType;
   id?: KeygenResult;
   line: boolean;
   expanded?: boolean;
@@ -17,6 +17,7 @@ export interface TreeListProps<DataItem>
   iconClass?: string;
   leafClass?: string;
   nodeClass?: string | ((data: DataItem) => string);
+  contentClass?: string | ((data: DataItem) => string);
   dragImageSelector: (data?: DataItem) => string | undefined;
   dragImageStyle?: React.CSSProperties;
   dragSibling?: boolean;

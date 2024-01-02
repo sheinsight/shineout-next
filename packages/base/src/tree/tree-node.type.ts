@@ -21,6 +21,7 @@ export interface TreeNodeProps<DataItem>
   iconClass?: string;
   leafClass?: string;
   nodeClass?: string | ((data: DataItem) => string);
+  contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass: (data: DataItem) => string | undefined;
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };

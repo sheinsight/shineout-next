@@ -38,4 +38,5 @@ export interface BaseTreeProps<DataItem = ObjectType> {
   childrenKey?: keyof DataItem;
   mode?: TreeModeType;
   dataUpdate?: boolean;
+  unmatch?: boolean;
 }

@@ -24,6 +24,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     iconClass,
     leafClass,
     nodeClass,
+    contentClass,
     expandIcons,
     childrenKey,
     inlineNode,
@@ -80,6 +81,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         iconClass={iconClass}
         leafClass={leafClass}
         nodeClass={nodeClass}
+        contentClass={contentClass}
         expandIcons={expandIcons}
         bindNode={bindNode}
         loader={loader}
@@ -106,9 +108,6 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
   if (!expanded && !hasExpanded.current) return null;
   hasExpanded.current = true;
 
-  // if (!data || !util.isArray(data)) {
-  //   return null;
-  // }
   const newStyle = Object.assign({}, style, { display: expanded ? 'block' : 'none' });
   return (
     <div onDrop={empty} onDragOver={empty} style={newStyle} className={rootClass}>

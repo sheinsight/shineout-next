@@ -98,8 +98,8 @@ const tagTokenValue = {
     border: { color: 'Neutral-fill-2' },
     disabled: {
       font: { color: 'Neutral-text-2' },
-      background: { color: 'Neutral-fill-2' },
-      border: { color: 'Neutral-fill-2' },
+      background: { color: 'Neutral-fill-3' },
+      border: { color: 'Neutral-fill-3' },
     },
     outline: {
       font: { color: 'Neutral-text-4' },
@@ -763,7 +763,7 @@ const tagTokenValue = {
   font: { size: '12/regular' },
   border: { radius: 'Radius-3' },
   padding: { x: 'Padding-6', y: 'Padding-2' },
-  height: 'Size-12',
+  height: 'Size-11',
   small: {
     font: { size: '12/regular' },
     border: { radius: 'Radius-2' },

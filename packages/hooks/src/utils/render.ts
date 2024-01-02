@@ -13,7 +13,6 @@ function $getKey<T>(gen: KeygenType<T> | undefined, d: T, index?: number) {
   if (gen === true) return d;
   if (typeof gen === 'string') return d[gen];
   if (typeof gen === 'function') return gen(d, index);
-
   return index;
 }
 export function getKey<T>(gen: KeygenType<T> | undefined, d: T, index?: number) {

@@ -26,6 +26,7 @@ export * from './rate';
 export * from './rule';
 export * from './select';
 export * from './slider';
+export * from './select';
 export * from './spin';
 export * from './sticky';
 export * from './switch';

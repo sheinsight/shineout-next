@@ -4,6 +4,12 @@
 export interface SelectTokens {
   /**
    * @type {string}
+   * @token Size-120
+   * @description 选择器宽度
+   */
+  selectWidth: string;
+  /**
+   * @type {string}
    * @token 14/regular
    * @description 选择器字体字号
    */
@@ -34,7 +40,7 @@ export interface SelectTokens {
   selectPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-2
    * @description 选择器内边距（垂直方向）
    */
   selectPaddingY: string;
@@ -70,6 +76,18 @@ export interface SelectTokens {
   selectSmallPaddingY: string;
   /**
    * @type {string}
+   * @token Padding-8
+   * @description 选择器小尺寸选项内部容器的内边距（水平方向）
+   */
+  selectSmallOptionInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-2
+   * @description 选择器小尺寸选项内部容器的内边距（垂直方向）
+   */
+  selectSmallOptionInnerPaddingY: string;
+  /**
+   * @type {string}
    * @token 16/regular
    * @description 选择器大尺寸字体字号
    */
@@ -82,16 +100,52 @@ export interface SelectTokens {
   selectLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Padding-3
    * @description 选择器大尺寸内边距（垂直方向）
    */
   selectLargePaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description 选择器大尺寸选项内部容器的内边距（水平方向）
+   */
+  selectLargeOptionInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器大尺寸选项内部容器的内边距（垂直方向）
+   */
+  selectLargeOptionInnerPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 选择器大尺寸占位符外边距（垂直方向）
+   */
+  selectLargePlaceholderMarginY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器内部容器的内边距（水平方向）
+   */
+  selectInnerPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-5
+   * @description 选择器内部容器的内边距（垂直方向）
+   */
+  selectInnerPaddingY: string;
   /**
    * @type {string}
    * @token Neutral-text-2
    * @description 选择器占位符颜色
    */
   selectPlaceholderColor: string;
+  /**
+   * @type {string}
+   * @token Padding-2
+   * @description 选择器占位符外边距（垂直方向）
+   */
+  selectPlaceholderMarginY: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
@@ -101,9 +155,15 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Neutral-text-3
-   * @description 选择器清除颜色
+   * @description 选择器清除按钮的颜色
    */
   selectClearColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器清除按钮的内边距
+   */
+  selectClearPadding: string;
   /**
    * @type {string}
    * @token Brand-6
@@ -113,7 +173,7 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Neutral-text-4
-   * @description 选择器鼠标移入时的清除颜色
+   * @description 选择器鼠标移入时的清除按钮的颜色
    */
   selectHoverClearColor: string;
   /**
@@ -290,4 +350,64 @@ export interface SelectTokens {
    * @description 选择器选项禁用时的背景颜色
    */
   selectOptionDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Padding-16
+   * @description 选择器折叠内容的内边距（水平方向）
+   */
+  selectMorePaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-14
+   * @description 选择器折叠内容的内边距（垂直方向）
+   */
+  selectMorePaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器列表头部的内边距
+   */
+  selectHeaderPadding: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 选择器列表头部的边框颜色
+   */
+  selectHeaderBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-3
+   * @description 选择器分组标题的字体颜色
+   */
+  selectGroupTitleFontColor: string;
+  /**
+   * @type {string}
+   * @token 12/regular
+   * @description 选择器分组标题的字体字号
+   */
+  selectGroupTitleFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description 选择器分组标题的内边距（水平方向）
+   */
+  selectGroupTitlePaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-6
+   * @description 选择器分组标题的内边距（垂直方向）
+   */
+  selectGroupTitlePaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器多列模式下内边距
+   */
+  selectColumnPadding: string;
+  /**
+   * @type {string}
+   * @token Margin-8
+   * @description 选择器多列模式下选项外边距
+   */
+  selectColumnOptionMargin: string;
 }

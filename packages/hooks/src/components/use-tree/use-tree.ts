@@ -51,6 +51,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     defaultExpanded,
     defaultExpandAll,
     disabled: disabledProps,
+    unmatch,
     // onClick,
   } = props;
 
@@ -150,10 +151,12 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return checked;
   };
 
-  // const getDataById = (id: KeygenResult) => {
-  //   const oroginData = context.dataMap.get(id);
-  //   if (oroginData) return oroginData;
-  // };
+  const getDataById = (id: KeygenResult) => {
+    const oroginData = context.dataMap.get(id);
+    if (oroginData) return oroginData;
+    if (!unmatch) return null;
+    return { IS_NOT_MATCHED_VALUE: true, value: id };
+  };
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
@@ -371,7 +374,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     handleExpanded(expanded);
   }, [expanded]);
 
-  const func = useLatestObj({
+  const datum = useLatestObj({
     get,
     set,
     getPath,
@@ -382,7 +385,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   return {
-    func,
+    datum,
+    getKey,
+    getDataById,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,

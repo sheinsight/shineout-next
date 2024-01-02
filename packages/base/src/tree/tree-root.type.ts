@@ -2,7 +2,7 @@ import { JsstyleType, TreeRenderItemType } from './tree.type';
 import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
 
 export interface TreeRootProps<DataItem> extends Omit<BaseTreeProps<DataItem>, 'chilrdrenKey'> {
-  jssStyle: JsstyleType;
+  jssStyle?: JsstyleType;
   line: boolean;
   childrenClass: (data: DataItem) => string | undefined;
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
@@ -13,6 +13,7 @@ export interface TreeRootProps<DataItem> extends Omit<BaseTreeProps<DataItem>, '
   iconClass?: string;
   leafClass?: string;
   nodeClass?: string | ((data: DataItem) => string);
+  contentClass?: string | ((data: DataItem) => string);
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   dragImageSelector: (data?: DataItem) => string | undefined;
   dragImageStyle?: React.CSSProperties;

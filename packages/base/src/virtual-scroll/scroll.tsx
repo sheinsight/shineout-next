@@ -18,6 +18,7 @@ interface scrollProps {
   className?: string;
   style?: React.CSSProperties;
   scrollerStyle?: React.CSSProperties;
+  onMouseMove?: () => void;
 }
 
 const Scroll = (props: scrollProps) => {
@@ -57,7 +58,6 @@ const Scroll = (props: scrollProps) => {
     const maxX = target.scrollWidth - target.clientWidth;
     const x = maxX === 0 ? 0 : Math.min(scrollLeft / maxX, 1);
     const y = maxY === 0 ? 0 : Math.min(scrollTop / maxY, 1);
-
     if (props.onScroll)
       props.onScroll({
         scrollLeft,
@@ -71,7 +71,7 @@ const Scroll = (props: scrollProps) => {
   });
 
   return (
-    <div className={props.className} style={props.style}>
+    <div className={props.className} style={props.style} onMouseMove={props.onMouseMove}>
       <div
         {...util.getDataAttribute({ type: 'scroll' })}
         style={scrollerStyle}
