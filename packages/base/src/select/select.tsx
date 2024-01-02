@@ -63,6 +63,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     position: positionProp = 'auto',
     lineHeight,
     itemsInView,
+    showArrow = true,
     disabled,
     clearable = true,
     beforeChange,
@@ -439,6 +440,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     if ((clearable && !isEmpty && open) || (clearable && !isEmpty && enter && disabled !== true)) {
       return renderClearable();
     }
+    if (!multiple && !showArrow) return null;
     const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
     return (
       <span className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}>

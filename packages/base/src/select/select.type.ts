@@ -194,6 +194,7 @@ export interface SelectPropsBase<DataItem, Value>
   columns?: number;
   columnsTitle?: React.ReactNode;
   noCache?: boolean;
+  showArrow?: boolean;
   focusSelected?: boolean;
   trim?: boolean;
   columnWidth?: number;
