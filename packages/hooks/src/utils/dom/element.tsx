@@ -98,4 +98,16 @@ export function getParent(el: HTMLElement | null | Element, target?: string | HT
   return null;
 }
 
+export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {
+  const element = document.createElement('div');
+  if (attr in element.style) {
+    if (attr !== 'length' && attr !== 'parentRule') {
+      const attrs = element.style[attr];
+      element.style[attr] = value as keyof typeof attrs;
+    }
+    return element.style[attr] === value;
+  }
+  return false;
+}
+
 export const parsePxToNumber = (str: string) => Number(str.replace(/\s+|px/gi, ''));

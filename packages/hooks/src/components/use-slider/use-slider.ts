@@ -104,7 +104,7 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
 
   const dragInfo = useDragMock({
     onDragStart: handleDragStart,
-    onDragmove: handleDragMove,
+    onDragMove: handleDragMove,
     onDragEnd: handleDragEnd,
   });
 

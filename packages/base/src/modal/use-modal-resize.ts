@@ -43,7 +43,7 @@ export const useModalResize = (props: {
   });
   const { handleMouseDown, isDragging } = useDragMock({
     onDragStart: handleDragStart,
-    onDragmove: handleDragMove,
+    onDragMove: handleDragMove,
   });
 
   const handleXMouseDown = usePersistFn((e: React.MouseEvent) => {

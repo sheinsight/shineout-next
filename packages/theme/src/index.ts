@@ -4,6 +4,9 @@ import Token from './token/token';
 import Alert from './alert';
 import { AlertTokens } from './alert/type';
 
+import Breadcrumb from './breadcrumb';
+import { BreadcrumbTokens } from './breadcrumb/type';
+
 import Button from './button';
 import { ButtonTokens } from './button/type';
 
@@ -43,6 +46,9 @@ import { InputTokens } from './input/type';
 import List from './list';
 import { ListTokens } from './list/type';
 
+import Menu from './menu';
+import { MenuTokens } from './menu/type';
+
 import Message from './message';
 import { MessageTokens } from './message/type';
 
@@ -73,6 +79,9 @@ import { SliderTokens } from './slider/type';
 import Spin from './spin';
 import { SpinTokens } from './spin/type';
 
+import Sticky from './sticky';
+import { StickyTokens } from './sticky/type';
+
 import Switch from './switch';
 import { SwitchTokens } from './switch/type';
 
@@ -101,6 +110,7 @@ import Upload from './upload';
 import { UploadTokens } from './upload/type';
 
 export type ThemeTokens = AlertTokens &
+  BreadcrumbTokens &
   ButtonTokens &
   CarouselTokens &
   CheckboxTokens &
@@ -114,6 +124,7 @@ export type ThemeTokens = AlertTokens &
   ImageTokens &
   InputTokens &
   ListTokens &
+  MenuTokens &
   MessageTokens &
   ModalTokens &
   PaginationTokens &
@@ -124,6 +135,7 @@ export type ThemeTokens = AlertTokens &
   SelectTokens &
   SliderTokens &
   SpinTokens &
+  StickyTokens &
   SwitchTokens &
   TableTokens &
   TabsTokens &
@@ -136,6 +148,7 @@ export type ThemeTokens = AlertTokens &
 
 const Tokens: ThemeTokens = {
   ...Alert,
+  ...Breadcrumb,
   ...Button,
   ...Carousel,
   ...Checkbox,
@@ -149,6 +162,7 @@ const Tokens: ThemeTokens = {
   ...Image,
   ...Input,
   ...List,
+  ...Menu,
   ...Message,
   ...Modal,
   ...Pagination,
@@ -159,6 +173,7 @@ const Tokens: ThemeTokens = {
   ...Select,
   ...Slider,
   ...Spin,
+  ...Sticky,
   ...Switch,
   ...Table,
   ...Tabs,

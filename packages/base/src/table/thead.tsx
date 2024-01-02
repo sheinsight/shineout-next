@@ -26,7 +26,7 @@ export default (props: TheadProps) => {
   });
 
   const { handleMouseDown: startDrag, isDragging } = useDragMock({
-    onDragmove: handleDragMove,
+    onDragMove: handleDragMove,
     onDragEnd: handleDragEnd,
   });
 
