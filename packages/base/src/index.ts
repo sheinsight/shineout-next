@@ -36,6 +36,7 @@ export * from './textarea';
 export * from './tooltip';
 export * from './transfer';
 export * from './tree';
+export * from './tree-select';
 export * from './upload';
 
 export type { ObjectType } from '@sheinx/hooks';

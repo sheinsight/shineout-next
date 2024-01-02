@@ -106,6 +106,9 @@ import { TransferTokens } from './transfer/type';
 import Tree from './tree';
 import { TreeTokens } from './tree/type';
 
+import TreeSelect from './tree-select';
+import { TreeSelectTokens } from './tree-select/type';
+
 import Upload from './upload';
 import { UploadTokens } from './upload/type';
 
@@ -144,6 +147,7 @@ export type ThemeTokens = AlertTokens &
   TooltipTokens &
   TransferTokens &
   TreeTokens &
+  TreeSelectTokens &
   UploadTokens;
 
 const Tokens: ThemeTokens = {
@@ -182,6 +186,7 @@ const Tokens: ThemeTokens = {
   ...Tooltip,
   ...Transfer,
   ...Tree,
+  ...TreeSelect,
   ...Upload,
 };
 
