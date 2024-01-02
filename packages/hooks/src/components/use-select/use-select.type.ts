@@ -6,6 +6,7 @@ export interface BaseSelectProps<DataItem, Value> {
   treeData?: DataItem[];
   defaultValue?: Value;
   control: boolean;
+  separator?: string;
   multiple?: boolean;
   childrenKey?: keyof DataItem;
   disabled?: boolean | ((data: DataItem) => boolean);

@@ -6,6 +6,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
   const {
     data,
     treeData,
+    separator,
     // childrenKey,
     control,
     defaultValue,
@@ -28,6 +29,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
 
   const datum = useListSelect({
     data: data || treeData,
+    separator,
     format,
     value,
     multiple,

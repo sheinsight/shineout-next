@@ -15,12 +15,14 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     jssStyle,
     multiple,
     datum,
+
     size,
     value,
     focus,
     keygen,
     disabled,
     trim,
+    separator,
     maxLength,
     placeholder,
     filterText,
@@ -167,7 +169,12 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
   const renderMultipleResult = () => {
     if (isEmptyResult()) return renderNbsp();
-    const result = datum.getDataByValues(value as Value[], { childrenKey }).map(renderItem);
+    // [TODO] separator 处理逻辑后续交给 hooks 处理，此处临时处理
+    let nextValue = value as Value[];
+    if (separator && util.isString(value)) {
+      nextValue = value.split(separator) as Value[];
+    }
+    const result = datum.getDataByValues(nextValue as Value[], { childrenKey }).map(renderItem);
     return result;
   };
 

@@ -66,6 +66,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     itemsInView,
     showArrow = true,
     disabled,
+    separator,
     clearable = true,
     beforeChange,
     compressed,
@@ -140,6 +141,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   const { datum, value } = useSelect<DataItem, Value>({
     value: valueProp,
     data,
+    separator,
     treeData,
     childrenKey,
     multiple,
@@ -457,6 +459,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
           trim={trim}
           jssStyle={jssStyle}
           size={size}
+          separator={separator}
           datum={datum}
           value={value}
           data={(groupBy ? groupData : filterData) as DataItem[]}

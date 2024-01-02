@@ -22,6 +22,7 @@ export interface ResultProps<DataItem, Value>
     | 'focusSelected'
     | 'maxLength'
     | 'trim'
+    | 'separator'
   > {
   data: DataItem[];
   datum: DatumType<DataItem, Value>;
