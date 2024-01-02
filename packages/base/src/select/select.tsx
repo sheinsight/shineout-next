@@ -94,6 +94,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     onEnterExpand,
     onFilterWidthCreate,
   } = props;
+
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootStyle: React.CSSProperties = {
     ...style,

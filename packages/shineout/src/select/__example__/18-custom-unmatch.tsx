@@ -1,32 +1,26 @@
 /**
- * cn - 创建选项
- *    --
- * en - Create option
- *    --
+ * cn - 渲染未匹配值
+ *    -- 通过`renderUnmatched`属性可以渲染未匹配的值
+ * en - renderUnmatched
+ *    -- The unmatched value can be rendered through the `renderUnmatched` property.
  */
 import React from 'react';
 import { Select } from 'shineout';
 
-const data: { id: string; name: string }[] = [];
-for (let i = 0; i < 15; i++) {
-  data.push({
-    id: `id-${i}`,
-    name: `标签 ${i}`,
-  });
-}
-
 export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
+
+  const renderUnmatched = (v: string) => {
+    return `I am ${v} color`;
+  };
+
   return (
     <div>
       <Select
-        multiple
-        hideCreateOption
         width={300}
+        defaultValue='redddd'
+        renderUnmatched={renderUnmatched}
         data={data}
-        onCreate
-        onChange={(v) => console.log(v)}
-        height={250}
         keygen
         placeholder='Select Color'
         renderItem={(d) => d}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Select as BaseSelect } from '@sheinx/base';
+import useFieldCommon from '../hooks/use-field-common';
 import {
   useSelectStyle,
   useInnerTitleStyle,
@@ -25,10 +26,14 @@ const jssStyle = {
   spin: useSpinStyle,
 };
 
+function SelectComponent<DataItem, Value>(props: SelectProps<DataItem, Value>) {
+  return <BaseSelect jssStyle={jssStyle} {...props} />;
+}
+
 function Select<DataItem, Value>(props: SelectPropsA<DataItem, Value>): JSX.Element;
 function Select<DataItem, Value>(props: SelectPropsB<DataItem, Value>): JSX.Element;
 function Select<DataItem, Value>(props: SelectProps<DataItem, Value>) {
-  return <BaseSelect jssStyle={jssStyle} {...props} />;
+  return useFieldCommon(props, SelectComponent<DataItem, Value>);
 }
 
 export default Select;
