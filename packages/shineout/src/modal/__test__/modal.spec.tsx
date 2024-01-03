@@ -1,12 +1,13 @@
 import React from 'react';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Modal, Button } from 'shineout';
+import { Modal, Button, Form, Input } from 'shineout';
 import mountTest from '../../tests/mountTest';
 import { classLengthTest } from '../../tests/structureTest';
 import {
   classTest,
   createClassName,
+  delay,
   displayTest,
   styleContentTest,
   styleTest,
@@ -350,6 +351,9 @@ describe('Modal[Base]', () => {
     fireEvent.click(container.querySelector('button')!);
     const modalWrappers = document.querySelector(wrapper)!;
     classTest(modalWrappers, wrapperZoom);
+    fireEvent.animationStart(modalWrappers.querySelector(mask)!);
+    fireEvent.animationEnd(modalWrappers);
+    screen.debug();
   });
   test('should render when set zIndex', () => {
     const zIndex = 100;
@@ -421,6 +425,26 @@ describe('Modal[Base]', () => {
       const modalWrappersAfterClose = document.querySelectorAll(wrapper);
       return modalWrappersAfterClose.length === 0;
     });
+  });
+});
+describe('Modal[Form]', () => {
+  test('should render when set form and submit', async () => {
+    const submitFn = jest.fn();
+    const footer = () => <Modal.Submit type='primary'>Submit</Modal.Submit>;
+    render(
+      <Modal visible footer={footer()}>
+        <Form onSubmit={submitFn}>
+          <Form.Item required label='Name'>
+            <Input name='name' />
+          </Form.Item>
+        </Form>
+      </Modal>,
+    );
+    fireEvent.click(document.querySelector('button')!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(submitFn.mock.calls.length).toBe(1);
   });
 });
 describe('Modal[Moveable/Resizable]', () => {
@@ -499,8 +523,22 @@ describe('Modal[Position]', () => {
         {content}
       </Modal>,
     );
-    screen.debug();
     styleContentTest(document.querySelector(panel)!, 'height', false);
+  });
+  test('should render when set postion and moveable', () => {
+    const startClientX = 20;
+    const endClientX = 10;
+    const position = 'right';
+    render(
+      <Modal title={title} position={position} visible resizable>
+        {content}
+      </Modal>,
+    );
+    const modalResizeX = document.querySelector(resizeX)!;
+    fireEvent.mouseDown(modalResizeX, { clientX: startClientX });
+    fireEvent.mouseMove(document, { clientX: endClientX });
+    fireEvent.mouseUp(document);
+    styleContentTest(document.querySelector(panel)!, `width: ${startClientX - endClientX}px;`);
   });
 });
 describe('Modal[Mask]', () => {
