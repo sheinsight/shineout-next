@@ -1,6 +1,6 @@
 import React from 'react';
 import { TreeClasses } from '../tree/tree.type';
-import { KeygenResult, ObjectKey } from '@sheinx/hooks';
+import { KeygenResult, ObjectKey, UnMatchedData } from '@sheinx/hooks';
 import { TreeSelectClasses, SelectClasses } from '@sheinx/shineout-style';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
@@ -12,6 +12,18 @@ export type JssStyleType = {
 };
 
 export type TreeModeType = 0 | 1 | 2 | 3 | 4;
+
+export type ResultItem<DataItem> = DataItem | UnMatchedData;
+
+export interface ComponentRef<DataItem, Value> {
+  /**
+   * @en Get the data corresponding to the value
+   * @cn 获取 value 对应的 data
+   */
+  getDataByValues: (
+    values: Value,
+  ) => Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
+}
 
 export interface TreeSelectProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
@@ -58,9 +70,9 @@ export interface TreeSelectProps<DataItem, Value>
    * @en Some methods of getting components Currently only support getDataByValue
    * @cn 获取组件的一些方法 目前只支持 getDataByValues
    */
-  // getComponentRef?:
-  //   | ((ref: ComponentRef<DataItem, Value>) => void)
-  //   | { current?: ComponentRef<DataItem, Value> };
+  getComponentRef?:
+    | ((ref: ComponentRef<DataItem, Value>) => void)
+    | { current?: ComponentRef<DataItem, Value> };
   onFilter?: (text: string) => void;
   /**
    * @en Placeholder content when there is no data

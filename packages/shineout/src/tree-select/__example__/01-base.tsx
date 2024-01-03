@@ -45,7 +45,7 @@ export default () => {
   return (
     <div>
       <TreeSelect
-        // multiple
+        multiple
         mode={1}
         width={300}
         data={data}
@@ -53,7 +53,7 @@ export default () => {
         value={value}
         placeholder='TreeSelect'
         onChange={(v) => {
-          // console.log(v);
+          console.log(v);
           setValue(v);
         }}
         renderItem={renderItem}

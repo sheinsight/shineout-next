@@ -52,6 +52,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     renderUnmatched,
     resultClassName,
     compressed,
+    // getComponentRef,
     onChange: onChangeProp,
     compressedBound,
     compressedClassName,
@@ -214,7 +215,6 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     if (!datum.current) return;
     const nextValue = datum.current.getValue();
     if (multiple) return nextValue;
-    console.log(nextValue);
     return nextValue.length ? nextValue[0] : '';
   };
 
@@ -224,10 +224,10 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     if (isDisabled) {
       return classNames(styles.optionDisabled);
     }
-    // const isCheck = datum.current?.getChecked(key);
-    // if (isCheck) {
-    //   return classNames(styles.optionActive);
-    // }
+    const isCheck = datum.current?.getChecked(key);
+    if (isCheck) {
+      return classNames(styles.optionActive);
+    }
     return '';
   };
 
@@ -241,7 +241,6 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     const currentData = datum.current?.getDataByValues(id);
     if (!multiple) {
       datum.current.setValue([]);
-      console.log('datum.current.getKey(item)', datum.current.getKey(item));
       datum.current.set(datum.current.getKey(item), 1);
     }
 
@@ -348,7 +347,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     } else {
       treeProps.onClick = handleChange;
       treeProps.renderItem = renderActive;
-      treeProps.active = valueProp;
+      treeProps.active = value;
     }
 
     return (
@@ -356,6 +355,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
         <Tree
           jssStyle={jssStyle}
           onRef={bindTreeDatum}
+          renderItem={renderItem}
           {...treeProps}
           line={false}
           mode={mode}
