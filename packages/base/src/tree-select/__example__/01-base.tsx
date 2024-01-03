@@ -15,7 +15,7 @@ const jssStyle = {
 export default () => {
   return (
     <div>
-      <TreeSelect jssStyle={jssStyle} />
+      <TreeSelect width={300} jssStyle={jssStyle} />
     </div>
   );
 };

@@ -40,4 +40,8 @@ export interface ResultProps<DataItem, Value>
   onInputBlur: (text?: string) => void;
   onResetFilter: () => void;
   onClearCreatedData: () => void;
+  // crud
+  getDataByValues: (values: (Value | undefined)[]) => (DataItem | UnMatchedData)[];
+  checkUnMatched: (item: DataItem | UnMatchedData) => boolean;
+  onRemove: (item: DataItem | UnMatchedData, index?: number) => void;
 }

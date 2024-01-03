@@ -404,6 +404,17 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
       : data[renderResultProp];
   };
 
+  const getDataByValues = (values: (Value | undefined)[]) => {
+    return datum.getDataByValues(values, { childrenKey });
+  };
+
+  const checkUnMatched = (item: DataItem | UnMatchedData): item is UnMatchedData => {
+    return datum.isUnMatchedData(item);
+  };
+  const handleRemove = (item: DataItem | UnMatchedData) => {
+    return datum.remove(item);
+  };
+
   const renderLoading = () => {
     if (loading !== true) {
       return loading;
@@ -489,6 +500,9 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
           onInputBlur={handleInputBlur}
           onResetFilter={onResetFilter}
           onClearCreatedData={onClearCreatedData}
+          getDataByValues={getDataByValues}
+          checkUnMatched={checkUnMatched}
+          onRemove={handleRemove}
         ></Result>
       </div>
     );

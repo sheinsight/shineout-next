@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, OptionalToRequired, UnMatchedData } from '@sheinx/hooks';
-import { ResultProps, ResultType } from './result.type';
+import { ResultProps } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import Input from './result-input';
 import { getResetMore } from './result-more';
@@ -14,10 +14,8 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
   const {
     jssStyle,
     multiple,
-    datum,
-
     size,
-    value,
+    value: valueProp,
     focus,
     keygen,
     disabled,
@@ -34,13 +32,18 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     renderResult: renderResultProp,
     allowOnFilter,
     setInputText,
-    childrenKey,
     onRef,
     onFilter,
     onInputBlur,
     onResetFilter,
     onClearCreatedData,
+    // crud
+    getDataByValues,
+    checkUnMatched,
+    onRemove,
   } = props;
+
+  const value = multiple ? (valueProp as Value[]) : [valueProp];
 
   const [more, setMore] = useState(-1);
 
@@ -85,10 +88,11 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     );
   };
 
-  const renderResultContent = (data: DataItem | ResultType<Value>) => {
-    if (datum.isUnMatchedData(data)) {
-      if (typeof renderUnmatched === 'function') return renderUnmatched(data.value);
-      return isObject(data.value) ? renderResultProp(data.value as DataItem) : data.value;
+  const renderResultContent = (data: DataItem | UnMatchedData) => {
+    if (checkUnMatched(data)) {
+      const _data = data as UnMatchedData;
+      if (typeof renderUnmatched === 'function') return renderUnmatched(_data.value);
+      return isObject(_data.value) ? renderResultProp(_data.value as DataItem) : _data.value;
     }
 
     return renderResultProp(data as DataItem);
@@ -96,7 +100,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
   const renderItem = (item: DataItem | UnMatchedData, index: number): React.ReactNode => {
     const handleClose = () => {
-      datum.remove(item);
+      onRemove(item);
     };
     let isDisabled;
     if (util.isFunc(disabled)) {
@@ -121,11 +125,11 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
   const isEmptyResult = () => {
     if (!value) return true;
-    const values = (multiple ? value : [value]) as Value[];
+    // const values = (multiple ? value : [value]) as Value[];
 
-    if (values.length <= 0) return true;
+    if (value.length <= 0) return true;
     const hasValue =
-      datum.getDataByValues(values, { childrenKey }).findIndex((item) => {
+      getDataByValues(value).findIndex((item) => {
         const cur = renderResultContent(item);
         return !isEmpty(cur);
       }) >= 0;
@@ -157,7 +161,8 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
   const renderSingleResult = () => {
     if (isEmptyResult()) return renderNbsp();
-    const result = datum.getDataByValues([value], { childrenKey });
+    // const values = [value];
+    const result = getDataByValues(value);
     const content = renderResultContent(result[0]);
 
     return (
@@ -170,17 +175,17 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
   const renderMultipleResult = () => {
     if (isEmptyResult()) return renderNbsp();
     // [TODO] separator 处理逻辑后续交给 hooks 处理，此处临时处理
-    let nextValue = value as Value[];
-    if (separator && util.isString(value)) {
-      nextValue = value.split(separator) as Value[];
+    let nextValue = value;
+    if (separator && util.isString(valueProp)) {
+      nextValue = valueProp.split(separator) as Value[];
     }
-    const result = datum.getDataByValues(nextValue as Value[], { childrenKey }).map(renderItem);
+    const result = getDataByValues(nextValue).map(renderItem);
     return result;
   };
 
   const renderMultipleResultMore = () => {
     if (isEmptyResult()) return renderNbsp();
-    const result = datum.getDataByValues(value as Value[], { childrenKey }).map(renderItem);
+    const result = getDataByValues(value as Value[]).map(renderItem);
     const moreNumber = getCompressedBound();
     return (
       <More
@@ -224,7 +229,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
 
   useEffect(() => {
     if (!multiple && showInput && value) {
-      const result = datum.getDataByValues([value], { childrenKey });
+      const result = getDataByValues(value);
       const content = renderResultContent(result[0]);
       if (!isEmpty(content)) {
         setInputText(content as string);
@@ -242,7 +247,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     if (!resultRef.current) return;
 
     if (more === -1) {
-      if (shouldResetMore.current && ((value as Value[]) || []).length) {
+      if (shouldResetMore.current && (value || []).length) {
         shouldResetMore.current = false;
         const newMore = getResetMore(
           showInput,

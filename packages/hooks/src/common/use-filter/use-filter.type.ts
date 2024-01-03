@@ -4,7 +4,7 @@ export interface UseFilterProps<DataItem> {
   data?: DataItem[];
   treeData?: DataItem[];
   delay?: number;
-  childrenKey?: keyof DataItem;
+  childrenKey?: keyof DataItem & string;
   keygen: KeygenType<DataItem>;
   showHitDescendants?: boolean;
   expanded?: KeygenResult[];

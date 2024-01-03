@@ -10,7 +10,7 @@ import { TreeSelect } from 'shineout';
 export default () => {
   return (
     <div>
-      <TreeSelect />
+      <TreeSelect width={300} />
     </div>
   );
 };
