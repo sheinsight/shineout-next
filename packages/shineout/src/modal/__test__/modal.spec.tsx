@@ -688,6 +688,7 @@ describe('Modal[Function(Type)]', () => {
     fireEvent.click(document.querySelector(mask)!);
   });
 });
+
 // usePortal
 // maskOpacity
 // noPadding
