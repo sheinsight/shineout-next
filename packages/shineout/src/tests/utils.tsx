@@ -120,7 +120,10 @@ type classNamesMapType = {
 };
 
 function convertCamelToDash(str: string): string {
-  return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+  return str
+    .replace(/([A-Z])/g, '-$1')
+    .replace(/^-/, '')
+    .toLowerCase();
 }
 
 // Automatically generate corresponding className according to jss type
