@@ -8,7 +8,7 @@ import {
   UpdateFunc,
 } from './use-tree.type';
 import { KeygenResult } from '../../common/type';
-import { isFunc, isString, isNumber } from '../../utils/is';
+import { isFunc, isString, isNumber, isArray } from '../../utils/is';
 
 export const MODE = {
   /**
@@ -79,9 +79,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
 
-  function get(id: KeygenResult) {
+  const get = (id: KeygenResult) => {
     return context.valueMap.get(id);
-  }
+  };
 
   const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
     if (isFunc(keygen)) {
@@ -156,6 +156,14 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     if (oroginData) return oroginData;
     if (!unmatch) return null;
     return { IS_NOT_MATCHED_VALUE: true, value: id };
+  };
+
+  const getDataByValues = (values: KeygenResult[] | KeygenResult) => {
+    if (isArray(values)) {
+      return values.map(getDataById);
+    }
+
+    return getDataById(values);
   };
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
@@ -316,7 +324,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       setValueMap(id, checked);
     }
 
-    // // const data = getDataById(id);
+    // const data = getDataById(id);
 
     if (mode === MODE.MODE_4) {
       return 0;
@@ -380,6 +388,9 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     getPath,
     getValue,
     getChecked,
+    getKey,
+    getDataByValues,
+    setValue,
     isDisabled,
     bindNode,
   });

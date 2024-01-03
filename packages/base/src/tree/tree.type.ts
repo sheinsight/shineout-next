@@ -2,6 +2,7 @@ import { CommonType } from '../common/type';
 import { BaseTreeProps, ObjectKey, KeygenResult, TreePathType } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
+import { TreeContextProps } from './tree-context.type';
 
 export interface TreeClasses {
   tree: string;
@@ -57,6 +58,7 @@ export interface TreeProps<DataItem>
   inlineNode?: boolean;
   highlight?: boolean;
   loader?: (key: KeygenResult, data: DataItem) => void;
+  onRef?: (datum: TreeContextProps) => void;
   onClick?: (data: DataItem, id: KeygenResult, path?: TreePathType) => void;
   onDragStart?: (e: React.DragEvent, data: DataItem) => void;
   onDragEnd?: (e: React.DragEvent, data: DataItem) => void;

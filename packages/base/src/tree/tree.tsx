@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import classNames from 'classnames';
 import { TreeProps, TreeClasses } from './tree.type';
 import { KeygenResult, useTree, util } from '@sheinx/hooks';
@@ -40,6 +41,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     className,
     onClick,
     loader,
+    onRef,
     onDrop,
     onExpand,
     onChange,
@@ -174,6 +176,11 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   };
 
   const onToggle = onExpand ? handleToggle : undefined;
+
+  useEffect(() => {
+    if (onRef) onRef(datum);
+  }, []);
+
   return (
     <div className={rootClass} {...rest}>
       <Provider value={datum}>

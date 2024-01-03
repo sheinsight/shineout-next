@@ -1,4 +1,4 @@
-import { UnMatchedData } from '@sheinx/hooks';
+import { KeygenResult, UnMatchedData } from '@sheinx/hooks';
 import { SelectProps, DatumType } from './select.type';
 
 export type ResultType<Value> = UnMatchedData | Value;
@@ -43,5 +43,5 @@ export interface ResultProps<DataItem, Value>
   // crud
   getDataByValues: (values: (Value | undefined)[]) => (DataItem | UnMatchedData)[];
   checkUnMatched: (item: DataItem | UnMatchedData) => boolean;
-  onRemove: (item: DataItem | UnMatchedData, index?: number) => void;
+  onRemove: (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => void;
 }

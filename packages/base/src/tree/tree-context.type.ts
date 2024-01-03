@@ -4,9 +4,11 @@ export interface TreeContextProps {
   set: (id: KeygenResult, checked: CheckedStatusType) => void;
   get: (id: KeygenResult) => CheckedStatusType | undefined;
   getValue: () => KeygenResult[];
-  getActive: () => KeygenResult | undefined;
+  getKey: (item: any, id?: KeygenResult, index?: number) => KeygenResult;
   getChecked: (id: KeygenResult) => boolean | 'indeterminate';
   getPath: (id: KeygenResult) => any;
+  getDataByValues: (values: KeygenResult[] | KeygenResult) => any[];
+  setValue: (value?: KeygenResult[]) => void;
   isDisabled: (id: KeygenResult) => boolean;
 }
 

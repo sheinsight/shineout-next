@@ -99,8 +99,9 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
   };
 
   const renderItem = (item: DataItem | UnMatchedData, index: number): React.ReactNode => {
+    const key = getKey(keygen, item as DataItem, index);
     const handleClose = () => {
-      onRemove(item);
+      onRemove(item, key, index);
     };
     let isDisabled;
     if (util.isFunc(disabled)) {
@@ -108,7 +109,6 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     } else {
       isDisabled = disabled;
     }
-    const key = getKey(keygen, item as DataItem, index);
     return (
       <Tag
         key={key}

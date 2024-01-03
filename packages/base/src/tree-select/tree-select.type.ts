@@ -1,10 +1,13 @@
 import React from 'react';
-import { TreeSelectClasses } from '@sheinx/shineout-style';
+import { TreeClasses } from '../tree/tree.type';
+import { TreeSelectClasses, SelectClasses } from '@sheinx/shineout-style';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
 
 export type JssStyleType = {
   treeSelect?: () => TreeSelectClasses;
+  select?: () => SelectClasses;
+  tree?: () => TreeClasses;
 };
 
 export type TreeModeType = 0 | 1 | 2 | 3 | 4;
@@ -118,7 +121,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @en Popup Position
    * @cn 弹出位置
    */
-  position?: 'drop-up' | 'drop-down';
+  position?: 'auto' | 'bottom-left' | 'top-left';
   /**
    * @en Expand option list while enter press
    * @cn 回车触发下拉框展开的时候调用
