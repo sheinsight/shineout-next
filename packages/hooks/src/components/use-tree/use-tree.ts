@@ -129,6 +129,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         default:
       }
     });
+    context.cachedValue = values;
     return values;
   };
 
@@ -248,11 +249,11 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
         return;
       }
 
-      let childChecked: CheckedStatusType = value!.indexOf(item) >= 0 ? 1 : 0;
+      let childChecked: CheckedStatusType = context.value!.indexOf(item) >= 0 ? 1 : 0;
 
       // 选中且非 mode 1 和 mode 4，则需要将其子选项统统强制选中
       if (childChecked === 1 && mode !== MODE.MODE_1 && mode !== MODE.MODE_4) {
-        // initValue(children, true);
+        initValue(children, true);
       }
       // mode 2 mode 3 mode 的情况下，需要根据 children 内容来决定是否选中
       else if (children.length > 0) {
@@ -261,7 +262,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       }
       // 没有子节点的情况下，需要根据 value 来决定是否选中
       else {
-        childChecked = value.indexOf(item) >= 0 ? 1 : 0;
+        childChecked = context.value!.indexOf(item) >= 0 ? 1 : 0;
       }
 
       // 同步状态至 map 中
