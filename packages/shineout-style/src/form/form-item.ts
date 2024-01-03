@@ -1,4 +1,4 @@
-import cssVars from '../cssvar';
+import token from '@sheinx/theme';
 
 import { JsStyles } from '../jss-style';
 
@@ -21,24 +21,27 @@ const formItemStyle: JsStyles<FormItemClass> = {
   wrapper: {
     display: 'flex',
     alignItems: 'flex-start',
-    marginBottom: cssVars.formItemMarginBottom,
-    fontSize: cssVars.fontSize,
-    lineHeight: cssVars.commonLineHeight,
-    color: cssVars,
+    marginBottom: token.formItemMarginYEnd,
+    fontSize: token.formItemFontSize,
+    color: token.formItemFontColor,
+    boxSizing: 'border-box',
   },
   wrapperTip: {},
   label: {
-    width: '140px',
-    padding: '5px 6px',
+    width: token.formItemLabelWidth,
+    padding: `${token.formItemLabelPaddingY} 0`,
+    lineHeight: token.lineHeightDynamic,
+    marginRight: token.formItemLabelMarginXEnd,
     wordBreak: 'break-word',
     textAlign: 'end',
+    boxSizing: 'border-box',
   },
   labelLeft: {
     textAlign: 'start',
   },
   wrapperInline: {
     display: 'inline-flex',
-    marginRight: cssVars.formItemMarginRight,
+    marginRight: token.formItemMarginXEnd,
   },
   wrapperLabelTop: {
     flexFlow: 'column nowrap',
@@ -47,6 +50,7 @@ const formItemStyle: JsStyles<FormItemClass> = {
       textAlign: 'start',
       width: 'auto',
       paddingTop: '0',
+      margin: '0',
     },
   },
   wrapperLabelVerticalMiddle: {
@@ -63,36 +67,45 @@ const formItemStyle: JsStyles<FormItemClass> = {
   wrapperRequired: {
     '& $label::before': {
       marginRight: '4px',
-      color: cssVars.dangerColor,
+      color: token.formItemDangerColor,
       content: '"*"',
       fontFamily: 'SimSun',
+      position: 'relative',
+      top: '2px',
     },
   },
   wrapperKeepHeight: {
-    marginBottom: cssVars.formItemTipGap,
+    marginBottom: token.formItemTipMinHeight,
     '&$wrapperTip': {
       marginBottom: '0',
     },
   },
   control: {
     minWidth: '0',
-    padding: '0 6px',
+    fontSize: token.formItemFontSize,
+    minHeight: `calc(${token.lineHeightDynamic} + ${token.formItemLabelPaddingY} * 2)`,
+    display: 'flex',
+    flexFlow: 'row wrap',
+    alignItems: 'center',
     flex: '1',
-    fontSize: '14px',
-    lineHeight: cssVars.commonLineHeight,
+    lineHeight: token.lineHeightDynamic,
     '$wrapperInline &': {
       padding: 0,
     },
   },
   error: {
-    color: cssVars.dangerColor,
-    minHeight: cssVars.formItemTipGap,
-    fontSize: '14px',
+    color: token.formItemDangerColor,
+    lineHeight: token.lineHeightDynamic,
+    minHeight: token.formItemTipMinHeight,
+    fontSize: token.formItemTipFontSize,
+    width: '100%',
   },
   tip: {
-    color: '#999da8',
-    minHeight: cssVars.formItemTipGap,
-    fontSize: '14px',
+    color: token.formItemTipFontColor,
+    fontSize: token.formItemTipFontSize,
+    lineHeight: token.lineHeightDynamic,
+    minHeight: token.formItemTipMinHeight,
+    width: '100%',
   },
 };
 

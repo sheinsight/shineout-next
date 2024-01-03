@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseFormControlProps, FormItemRule } from '@sheinx/hooks';
+import { BaseFormControlProps, FormItemRule, ObjectType } from '@sheinx/hooks';
 
 // 子元素需要有的数据线
 export interface FieldControlProps<T> {
@@ -35,4 +35,8 @@ export interface FormFieldProps<T> extends Partial<BaseFormControlProps<T>> {
    * @cn rules 校验回调
    */
   onError?: (error?: Error) => void;
+  /**
+   * @private 内部属性 for validate
+   */
+  getValidateProps?: () => ObjectType;
 }

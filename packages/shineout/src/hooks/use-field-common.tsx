@@ -1,5 +1,5 @@
 import React from 'react';
-import { util } from '@sheinx/hooks';
+import { util, usePersistFn } from '@sheinx/hooks';
 import { ExtendsFieldProps, TipProps } from '../@types/common';
 import { FormField } from '@sheinx/base';
 
@@ -12,7 +12,9 @@ export type GetWithFieldProps<Props, Value> = Props & ExtendsFieldProps<Value> &
 const useFieldCommon = <Props extends FiledItemCommonProps, Value>(
   props: GetWithFieldProps<Props, Value>,
   Origin: React.ComponentType<Props>,
+  type?: 'number' | 'string' | 'array',
 ) => {
+  const getValidateProps = usePersistFn(() => ({ type, ...props }));
   const FieldParams = {
     name: props.name!,
     defaultValue: props.defaultValue,
@@ -21,6 +23,7 @@ const useFieldCommon = <Props extends FiledItemCommonProps, Value>(
     onError: props.onError,
     bind: props.bind,
     onChange: props.onChange,
+    getValidateProps,
   };
 
   const forwardProps = util.removeProps(props, { ...FieldParams });

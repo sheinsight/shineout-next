@@ -3,6 +3,7 @@ import type { FormItemContextValueType } from './form-item-context';
 import { FormItemContext } from './form-item-context';
 import { useFormConfig } from '../form-config-context';
 import usePersistFn from '../../../common/use-persist-fn';
+import { getDataAttribute } from '../../../utils/attribute';
 import { produce } from 'immer';
 
 const UseFormItem = () => {
@@ -22,14 +23,11 @@ const UseFormItem = () => {
     }
   });
 
-  const msg = Object.keys(errors)
-    .map((name) => {
-      const err = errors[name];
-      if (err instanceof Error) return err.message;
-      return err;
-    })
-    .filter(Boolean);
+  const msg = Object.values(errors).filter(Boolean);
 
+  const showError = msg && msg.length > 0;
+
+  const attributes = getDataAttribute({ status: showError ? 'error' : 'default' });
   const ProviderValue = useMemo<FormItemContextValueType>(() => {
     return {
       updateError: handlerErrorUpdate,
@@ -41,6 +39,8 @@ const UseFormItem = () => {
     ProviderValue,
     errors: msg,
     labelConfig: formConfig,
+    attributes,
+    showError,
   };
 };
 

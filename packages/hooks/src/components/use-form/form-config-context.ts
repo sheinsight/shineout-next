@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ObjectType } from '../../common/type';
+import { FormCommonConfig } from './use-form.type';
 
-export const FormConfigContext = React.createContext<ObjectType>({});
+export const FormConfigContext = React.createContext<FormCommonConfig>({});
 export const useFormConfig = () => React.useContext(FormConfigContext);

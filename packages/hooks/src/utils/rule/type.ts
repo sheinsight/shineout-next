@@ -3,7 +3,7 @@ import { ObjectType } from '../../common/type';
 import { MessageType } from './rule.type';
 
 export const typeMessage = (props: ObjectType) => {
-  return props.title ? 'rules.type' : 'rules.reg';
+  return props.title ? '$rules.type' : '$rules.reg';
 };
 
 const options = { skipUndefined: true };

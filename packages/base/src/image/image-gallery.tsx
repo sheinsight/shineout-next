@@ -69,18 +69,13 @@ const ImageModal = (props: ImageGalleryProps) => {
   };
 
   const renderResult = () => {
-    const result = [];
-
-    result.push(renderImage(images[current], 'center'));
-
-    if (images[current - 1]) {
-      result.push(renderImage(images[current - 1], 'left'));
-    }
-
-    if (images[current + 1]) {
-      result.push(renderImage(images[current + 1], 'right'));
-    }
-    return result;
+    return (
+      <>
+        {renderImage(images[current], 'center')}
+        {images[current - 1] && renderImage(images[current - 1], 'left')}
+        {images[current + 1] && renderImage(images[current + 1], 'right')}
+      </>
+    );
   };
 
   const overlayProps = getOverlayProps(rest);

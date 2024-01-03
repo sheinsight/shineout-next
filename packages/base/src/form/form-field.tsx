@@ -5,6 +5,11 @@ import { FieldControlProps, FormFieldProps } from './form-field.type';
 const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
   const { children } = props;
 
+  const getValidateProps = usePersistFn(() => {
+    if (props.getValidateProps) return props.getValidateProps();
+    return props;
+  });
+
   const formControl = useFormControl<T>({
     name: props.name,
     defaultValue: props.defaultValue,
@@ -13,6 +18,7 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     rules: props.rules,
     onError: props.onError,
     bind: props.bind,
+    getValidateProps,
   });
 
   const handleChange = usePersistFn((value: T) => {

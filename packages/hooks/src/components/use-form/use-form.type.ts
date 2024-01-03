@@ -1,12 +1,37 @@
 import { ReactNode } from 'react';
 
 import { AddNoProps, ObjectType } from '../../common/type';
-import { FormContextValueType } from './use-form-control/use-form-control.type';
 import { FormItemRule } from '../../utils/rule/rule.type';
 
+export interface FormContextValueType {
+  errors?: ObjectType<Error>;
+  value?: ObjectType;
+  serverErrors?: ObjectType;
+  func?: {
+    unbind: (n: string, reserveAble?: boolean) => void;
+    bind: (
+      n: string,
+      df: any,
+      validate: (
+        name: string,
+        value: any,
+        formData: ObjectType,
+        config: {
+          ignoreBind?: boolean;
+        },
+      ) => void,
+    ) => void;
+    combineRules: <ValueItem>(
+      name: string,
+      propRules: FormItemRule<ValueItem>,
+    ) => FormItemRule<ValueItem>;
+  };
+  disabled?: boolean;
+}
 export interface ProviderProps {
   formConfig: FormCommonConfig;
   formValue: FormContextValueType;
+  formFunc: FormFunc;
   children?: ReactNode;
 }
 
@@ -20,6 +45,24 @@ export interface FormLabelConfig {
 export interface FormCommonConfig extends FormLabelConfig {
   disabled?: boolean;
   size?: 'small' | 'default' | 'large';
+}
+
+export interface FormFunc {
+  setValue: (
+    vals: {
+      [key: string]: any;
+    },
+    option?: {
+      validate?: boolean;
+    },
+  ) => void;
+  getValue: () => any;
+  submit: (withValidate?: boolean) => void;
+  reset: () => void;
+  setError: (name: string, e: Error | undefined) => void;
+  getErrors: () => ObjectType<Error | undefined>;
+  clearErrors: () => void;
+  validateFields: (fields?: string | string[], config?: { ignoreBind?: boolean }) => Promise<true>;
 }
 
 interface FormRuleObject<T> {
@@ -36,7 +79,7 @@ export interface BaseFormProps<T> extends FormCommonConfig {
   initValidate?: boolean;
   onSubmit?: (value: T) => void;
   onReset?: () => void;
-  scrollToError?: boolean;
+  scrollToError?: boolean | number;
   onError?: (error: Error) => void;
   /**
    * @cn 是否删除值为 undefined 的字段
@@ -49,6 +92,15 @@ export interface BaseFormProps<T> extends FormCommonConfig {
    * @default 1000
    */
   throttle?: number;
+  /**
+   * @cn 滚动的父元素，用于滚动到错误位置增加偏移量
+   * @en The parent element of the scroll, used to scroll to the error position to increase the offset
+   */
+  scrollParent?: () => HTMLElement | null;
+  /**
+   * @private 内部属性
+   */
+  error?: ObjectType<string | Error>;
 }
 
 export type UseFormProps<T> = BaseFormProps<T>;

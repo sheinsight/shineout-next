@@ -16,6 +16,7 @@ export const useFormFieldSet = <T>(props: BaseFormFieldSetProps<T>) => {
     onError: props.onError,
     bind,
     onChange: emptyFunc,
+    getValidateProps: props.getValidateProps,
   });
   if (!inForm) {
     console.error('[FieldSet] should render in Form');

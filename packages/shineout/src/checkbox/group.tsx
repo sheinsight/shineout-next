@@ -16,7 +16,7 @@ const BaseCheckboxGroup = <DataItem, Value extends any[]>(
 const CheckboxGroupWithField = <DataItem, Value extends any[]>(
   props: CheckboxGroupProps<DataItem, Value>,
 ) => {
-  return useFieldCommon(props, BaseCheckboxGroup<DataItem, Value>);
+  return useFieldCommon(props, BaseCheckboxGroup<DataItem, Value>, 'array');
 };
 
 export default CheckboxGroupWithField;

@@ -1,4 +1,4 @@
-import { useForm, useInputAble } from '@sheinx/hooks';
+import { useForm, useInputAble, useLatestObj, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { ModalFormContext } from '../modal/modal-context';
 import React, { useContext, useEffect } from 'react';
@@ -20,17 +20,33 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     beforeChange: undefined,
   });
 
-  const { Provider, ProviderProps, getFormProps, func } = useForm({ ...rest, value, onChange });
+  const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange });
+
+  const validate = usePersistFn(() => {
+    return formFunc.validateFields();
+  });
+  const validateFields = usePersistFn((fileds: string | string[]) => {
+    return formFunc.validateFields(fileds).catch(() => {});
+  });
+  const formRefObj = useLatestObj({
+    clearValidate: formFunc.clearErrors,
+    getValue: formFunc.getValue,
+    reset: formFunc.reset,
+    submit: formFunc.submit,
+    validate,
+    validateFields,
+    validateFieldsWithError: formFunc.validateFields,
+  });
 
   React.useEffect(() => {
     if (formRef) {
       if (typeof formRef === 'function') {
-        formRef(func);
+        formRef(formRefObj);
       } else {
-        formRef.current = func;
+        formRef.current = formRefObj;
       }
     }
-  }, [func]);
+  }, [formRefObj]);
 
   const handleFormModalInfo = () => {
     let status: 'disabled' | 'pending' | undefined = undefined;
@@ -43,7 +59,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     if (status !== modalFormContext?.formStats) {
       modalFormContext?.setFormStats(status);
     }
-    modalFormContext?.setFormInfo(func);
+    modalFormContext?.setFormInfo(formRefObj);
   };
   useEffect(() => {
     handleFormModalInfo();

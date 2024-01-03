@@ -1,8 +1,8 @@
 /**
  * cn - 联动校验
- *    --
- * en - 联动校验
- *    --
+ *    -- 使用 `bind` 属性进行联动校验
+ * en - Bind validate
+ *    -- Use the `bind` property for bind validate
  */
 import { Form, Input } from 'shineout';
 import React from 'react';
@@ -62,8 +62,10 @@ export default () => {
           />
         </Form.Item>
 
-        <button type={'submit'}>提交</button>
-        <button type={'reset'}>重置</button>
+        <Form.Item label=''>
+          <Form.Submit>提交</Form.Submit>
+          <Form.Reset>重置</Form.Reset>
+        </Form.Item>
       </Form>
     </div>
   );

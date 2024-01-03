@@ -15,7 +15,9 @@ const radioTokenDescription = { radio: '单选框', button: '按钮模式', outl
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 radioRules 强关联，非 radioRules 规则内的 token 需手动增加或删减。
  */
-const radioTokenValue = {
+const radioTokenValue = {};
+
+const radioTokenExtraValue = {
   gap: 'Margin-24',
   block: { gap: 'Margin-12' },
   icon: {
@@ -34,21 +36,22 @@ const radioTokenValue = {
     },
     wrapper: { fill: 'Neutral-fill-2' },
   },
+  padding: { y: 'Padding-4' },
   small: {
     icon: { width: 'Size-6', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },
     label: { font: { size: '12/regular' } },
+    padding: { y: 'Padding-1' },
   },
   large: {
     icon: { width: 'Size-8', gap: '', border: { width: 'Border-2' }, inner: { size: 'Size-3.5' } },
     label: { font: { size: '16/regular' } },
+    padding: { y: 'Padding-7' },
   },
   label: {
     font: { color: 'Neutral-text-5', size: '14/regular' },
     disabled: { font: { color: 'Neutral-text-2' } },
   },
 };
-
-const radioTokenExtraValue = {};
 
 module.exports = {
   radioTokenValue,

@@ -3,7 +3,10 @@ import { PopoverProps } from '../popover/popover.type';
 import React from 'react';
 
 export interface ExtendsFieldProps<T>
-  extends Omit<FormFieldProps<T>, 'value' | 'defaultValue' | 'children' | 'onChange' | 'name'> {
+  extends Omit<
+    FormFieldProps<T>,
+    'value' | 'defaultValue' | 'children' | 'onChange' | 'name' | 'getProps'
+  > {
   /**
    * @en The key access data in the Form
    * @cn Form 内存取数据的 key
@@ -31,6 +34,10 @@ export interface TipProps {
    * @type PopoverProps
    */
   popoverProps?: PopoverProps;
+  /**
+   * @private for rule
+   */
+  title?: string;
 }
 
 export interface CommonType {
