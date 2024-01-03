@@ -20,7 +20,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @en placeholder when value is empty
    * @cn value 为空时的占位符
    */
-  placeholder?: React.ReactNode;
+  placeholder?: string;
   /**
    * @en when compressed is True,the comptessedBound can limit the numbers of multiple selected item's label
    * @cn 开启多选后，指定允许展示标签数量，超过后将折叠
