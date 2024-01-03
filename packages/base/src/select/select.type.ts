@@ -201,7 +201,7 @@ export interface SelectPropsBase<DataItem, Value>
   maxLength?: number;
   separator?: string;
   autoAdapt?: boolean;
-  compressed?: boolean;
+  compressed?: boolean | 'no-repeat';
   compressedBound?: number;
   compressedClassName?: string;
   hideCreateOption?: boolean;

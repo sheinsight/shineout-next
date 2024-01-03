@@ -72,7 +72,7 @@ export function getResetMore(
 }
 
 const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
-  const { jssStyle, data, showNum, size, compressedClassName } = props;
+  const { jssStyle, data, showNum, size, compressed, compressedClassName } = props;
   const [visible, setVisible] = useState(false);
 
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -120,7 +120,10 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
           visible={visible}
           onVisibleChange={setVisible}
         >
-          <div className={styles.moreWrapper}>{after}</div>
+          <div className={styles.moreWrapper}>
+            {compressed === 'no-repeat' ? null : before}
+            {after}
+          </div>
         </Popover>
       </span>
     </React.Fragment>
