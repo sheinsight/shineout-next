@@ -12,8 +12,6 @@ import {
   styleTest,
   textContentTest,
 } from '../../tests/utils';
-// import ModalBase from '../__example__/01-base';
-// import ModalType from '../__example__/02-type';
 
 const SO_PREFIX = 'modal';
 const originClasses = [
@@ -652,7 +650,6 @@ describe('Modal[Function(Type)]', () => {
     fireEvent.click(document.querySelector(mask)!);
   });
 });
-
 // usePortal
 // maskOpacity
 // noPadding

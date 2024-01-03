@@ -1,0 +1,751 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal[SnapShot] should render correctly  1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 400px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <span
+          class="so-modal-header-icon so-alert-icon so-alert-success-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6.34315 13.8284L8.46305 15.9483C9.24511 16.7304 10.5122 16.7304 11.2943 15.9483L17.6569 9.58579C18.0472 9.19546 18.0472 8.5619 17.6569 8.17157C17.2665 7.78125 16.633 7.78125 16.2426 8.17157L10.5872 13.827C10.1962 14.218 9.56119 14.218 9.17016 13.827L7.75736 12.4142C7.36704 12.0239 6.73347 12.0239 6.34315 12.4142C5.95282 12.8045 5.95282 13.4381 6.34315 13.8284Z"
+            />
+          </svg>
+        </span>
+        <div
+          class="so-modal-header-title"
+        >
+          Modal Title
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body so-modal-body-with-icon"
+      >
+        you are visited 1
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-secondary so-button-button so-button-outline"
+          type="button"
+        >
+          <span>
+            Cancel
+          </span>
+        </button>
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            Ok
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about close 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about container 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about focus 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about form 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about full 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about icon 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about move 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about position 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about type 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal[SnapShot] should render correctly about zoom 1`] = `
+<div
+  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask"
+>
+  <div
+    class="so-modal-mask"
+  >
+    <div
+      class="so-modal-panel"
+      style="width: 500px; top: 10vh;"
+    >
+      <div
+        class="so-modal-header"
+      >
+        <div
+          class="so-modal-header-title"
+        >
+          This is a message
+        </div>
+        <div
+          class="so-modal-header-close"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-modal-body"
+      >
+        this is show information
+      </div>
+      <div
+        class="so-modal-footer"
+      >
+        <button
+          class="so-button-primary so-button-button"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
