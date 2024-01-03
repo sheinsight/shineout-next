@@ -1,5 +1,6 @@
 import React from 'react';
 import { TreeClasses } from '../tree/tree.type';
+import { KeygenResult, ObjectKey } from '@sheinx/hooks';
 import { TreeSelectClasses, SelectClasses } from '@sheinx/shineout-style';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
@@ -163,4 +164,12 @@ export interface TreeSelectProps<DataItem, Value>
   showArrow?: boolean;
   childrenKey: keyof DataItem & string;
   focusSelected?: boolean;
+  renderItem:
+    | ObjectKey<DataItem>
+    | ((
+        data: DataItem,
+        expanded?: boolean,
+        active?: boolean,
+        id?: KeygenResult,
+      ) => React.ReactNode);
 }

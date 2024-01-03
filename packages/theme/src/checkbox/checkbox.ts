@@ -5,7 +5,7 @@ import { CheckboxTokens } from './type';
 
 const checkboxTokens: CheckboxTokens = {
   checkboxIconSize: 'Size-7',
-  checkboxIconBorderColor: 'Neutral-text-3',
+  checkboxIconBorderColor: 'Neutral-border-2',
   checkboxIconBorderRadius: 'Radius-2',
   checkboxIconBorderWidth: 'Border-1',
   checkboxIconBackgroundColor: 'Neutral-fill-1',

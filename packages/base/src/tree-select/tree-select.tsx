@@ -138,19 +138,22 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     datum.current = treeDatum;
   };
 
-  const getRenderItem = (data: DataItem, index?: number) => {
+  const getRenderItem = (
+    data: DataItem,
+    expanded?: boolean,
+    active?: boolean,
+    id?: KeygenResult,
+  ) => {
     return typeof renderItemProp === 'function'
-      ? renderItemProp(data, index)
+      ? renderItemProp(data, expanded, active, id)
       : (data[renderItemProp] as React.ReactNode);
   };
 
   const renderItem = getRenderItem;
 
-  const getRenderResult = (data: DataItem, index?: number) => {
-    if (!renderResultProp) return renderItem(data, index);
-    return typeof renderResultProp === 'function'
-      ? renderResultProp(data, index)
-      : data[renderResultProp];
+  const getRenderResult = (data: DataItem) => {
+    if (!renderResultProp) return renderItem(data);
+    return typeof renderResultProp === 'function' ? renderResultProp(data) : data[renderResultProp];
   };
 
   const handleClear = (e: React.MouseEvent) => {
@@ -211,6 +214,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     if (!datum.current) return;
     const nextValue = datum.current.getValue();
     if (multiple) return nextValue;
+    console.log(nextValue);
     return nextValue.length ? nextValue[0] : '';
   };
 
@@ -220,10 +224,10 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     if (isDisabled) {
       return classNames(styles.optionDisabled);
     }
-    const isCheck = datum.current?.getChecked(key);
-    if (isCheck) {
-      return classNames(styles.optionActive);
-    }
+    // const isCheck = datum.current?.getChecked(key);
+    // if (isCheck) {
+    //   return classNames(styles.optionActive);
+    // }
     return '';
   };
 
@@ -237,11 +241,11 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     const currentData = datum.current?.getDataByValues(id);
     if (!multiple) {
       datum.current.setValue([]);
+      console.log('datum.current.getKey(item)', datum.current.getKey(item));
       datum.current.set(datum.current.getKey(item), 1);
     }
 
     const nextValue = getValue();
-
     if (onChange) {
       onChange(nextValue, currentData, id ? (datum.current.getPath(id) || {}).path : undefined);
     }
@@ -330,19 +334,34 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     );
   };
 
+  const renderActive = (item: DataItem) => {
+    const items = renderItem(item);
+
+    return <span>{items}</span>;
+  };
+
   const renderList = () => {
+    const treeProps = {};
+
+    if (multiple) {
+      treeProps.onChange = handleChange;
+    } else {
+      treeProps.onClick = handleChange;
+      treeProps.renderItem = renderActive;
+      treeProps.active = valueProp;
+    }
+
     return (
       <div className={classNames(styles.tree)}>
         <Tree
           jssStyle={jssStyle}
           onRef={bindTreeDatum}
+          {...treeProps}
           line={false}
           mode={mode}
           data={data}
           keygen={keygen}
-          renderItem={renderItemProp}
           value={value}
-          onChange={onChange}
           contentClass={getContentClass}
         ></Tree>
       </div>

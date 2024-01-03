@@ -10,7 +10,7 @@ export interface CheckboxTokens {
   checkboxIconSize: string;
   /**
    * @type {string}
-   * @token Neutral-text-3
+   * @token Neutral-border-2
    * @description 单选框图标边框颜色
    */
   checkboxIconBorderColor: string;
