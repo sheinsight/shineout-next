@@ -38,6 +38,12 @@ const originItemClasses = [
   'bodyWithIcon',
   'wrapperFullScreen',
   'wrapperMoveable',
+  'wrapperDrawer',
+  'wrapperDrawerTop',
+  'wrapperDrawerLeft',
+  'wrapperDrawerRight',
+  'wrapperDrawerBottom',
+  'wrapperZoom',
 ];
 const {
   wrapper,
@@ -59,6 +65,12 @@ const {
   resizeX,
   resizeY,
   resizeXY,
+  wrapperDrawer,
+  wrapperDrawerTop,
+  wrapperDrawerLeft,
+  wrapperDrawerRight,
+  wrapperDrawerBottom,
+  wrapperZoom,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const defaultStyle = 'width: 500px; top: 10vh;';
@@ -143,6 +155,12 @@ describe('Modal[Base]', () => {
     const modalPanel = document.querySelector(panel)!;
     styleContentTest(modalPanel, `width: ${width}px;`);
   });
+  test('should render when set height', () => {
+    const height = 100;
+    render(<Modal height={height} visible={true} />);
+    const modalPanel = document.querySelector(panel)!;
+    styleContentTest(modalPanel, `height: ${height}px;`);
+  });
   test('should render when set title and footer', () => {
     const okFn = jest.fn();
     const footers = [
@@ -163,6 +181,15 @@ describe('Modal[Base]', () => {
     textContentTest(tableWrapper.querySelector(body)!, content);
     const tableFooter = tableWrapper.querySelector(footer)!;
     expect(tableFooter.querySelectorAll('button').length).toBe(2);
+  });
+  test('should render when set hideClose', () => {
+    render(
+      <Modal title={title} hideClose visible>
+        {content}
+      </Modal>,
+    );
+    const tableWrapper = document.querySelector(wrapper)!;
+    classLengthTest(tableWrapper, headerClose, 0);
   });
   test('should render when set fullScreen', () => {
     render(
@@ -301,6 +328,102 @@ describe('Modal[Base]', () => {
     fireEvent.keyDown(document, { key: 'Escape', code: 'Escape' });
     classTest(modalWrappers[0], wrapperShow);
   });
+  test('should render when set padding', () => {
+    const padding = 20;
+    render(
+      <Modal title={title} padding={padding} visible>
+        {content}
+      </Modal>,
+    );
+    screen.debug();
+    styleContentTest(document.querySelector(body)!, `padding: ${padding}px;`);
+  });
+  test('should render when set zoom', () => {
+    const App = () => {
+      const [visible, setVisible] = React.useState(false);
+      return (
+        <div>
+          <Button onClick={() => setVisible(true)}>show</Button>
+          <Modal visible={visible} onClose={() => setVisible(false)} zoom />
+        </div>
+      );
+    };
+    const { container } = render(<App />);
+    fireEvent.click(container.querySelector('button')!);
+    const modalWrappers = document.querySelector(wrapper)!;
+    classTest(modalWrappers, wrapperZoom);
+  });
+  test('should render when set zIndex', () => {
+    const zIndex = 100;
+    render(
+      <Modal title={title} zIndex={zIndex} visible>
+        {content}
+      </Modal>,
+    );
+    const modalWrapper = document.querySelector(wrapper)!;
+    styleContentTest(modalWrapper, `z-index: ${zIndex};`);
+  });
+  test('should render when set events', () => {
+    const dbClickFn = jest.fn();
+    const events = {
+      onDoubleClick: dbClickFn,
+    };
+    render(
+      <Modal title={title} visible events={events}>
+        {content}
+      </Modal>,
+    );
+    const modalWrapper = document.querySelector(wrapper)!;
+    fireEvent.doubleClick(modalWrapper.querySelector(mask)!);
+    expect(dbClickFn.mock.calls.length).toBe(1);
+  });
+  test.each(['info', 'success', 'warning', 'error'])(
+    'should render when set type is %s',
+    (type) => {
+      type ModalType = 'error' | 'info' | 'warning' | 'success';
+      const typesMap = {
+        success: 'success',
+        info: 'info',
+        warning: 'warning',
+        error: 'danger',
+      };
+      render(
+        <Modal title={title} visible type={type as ModalType}>
+          {content}
+        </Modal>,
+      );
+      const modalHeaderIcon = document.querySelector(
+        `.so-alert-${typesMap[type as ModalType]}-icon`,
+      );
+      expect(modalHeaderIcon).toBeInTheDocument();
+    },
+  );
+  test('should render when set modal.closeAll', async () => {
+    const App = () => {
+      const [visible, setVisible] = React.useState(false);
+      const [visibleSec, setVisibleSec] = React.useState(false);
+      return (
+        <div>
+          <Button onClick={() => setVisible(true)}>show</Button>
+          <Modal visible={visible} onClose={() => setVisible(false)}>
+            <Button onClick={() => setVisibleSec(true)}>show</Button>
+            <Modal visible={visibleSec} onClose={() => setVisibleSec(false)}>
+              <Button onClick={() => Modal.closeAll()}>closeAll</Button>
+            </Modal>
+          </Modal>
+        </div>
+      );
+    };
+    const { container } = render(<App />);
+    fireEvent.click(container.querySelector('button')!);
+    const modalBody = document.querySelector(body)!;
+    fireEvent.click(modalBody.querySelector('button')!);
+    fireEvent.click(document.querySelectorAll(body)[1].querySelector('button')!);
+    await waitFor(() => {
+      const modalWrappersAfterClose = document.querySelectorAll(wrapper);
+      return modalWrappersAfterClose.length === 0;
+    });
+  });
 });
 describe('Modal[Moveable/Resizable]', () => {
   test('should render when set moveable', () => {
@@ -313,19 +436,22 @@ describe('Modal[Moveable/Resizable]', () => {
     classTest(modalWrapper, wrapperMoveable);
     styleContentTest(modalWrapper.querySelector(panel)!, 'transform: translate(0px, 0px);');
     const modalHeader = modalWrapper.querySelector(header)!;
-    fireEvent.mouseDown(modalHeader, { clientX: 0, clientY: 0 });
-    fireEvent.mouseMove(document, { clientX: 50, clientY: 50 });
+    fireEvent.mouseDown(modalHeader);
+    fireEvent.mouseMove(document, { clientX: 50 });
     fireEvent.mouseUp(document);
     // TODO： not work
     screen.debug();
   });
   test('should render when set resizable', () => {
+    const startClientX = 20;
+    const endClientX = 90;
+    const startClientY = 0;
+    const endClientY = 30;
     render(
-      <Modal title={title} visible width={400} resizable>
+      <Modal title={title} visible resizable>
         {content}
       </Modal>,
     );
-
     const modalWrapper = document.querySelector(wrapper)!;
     const resizeXWrapper = modalWrapper.querySelector(resizeX)!;
     const resizeYWrapper = modalWrapper.querySelector(resizeY)!;
@@ -333,11 +459,124 @@ describe('Modal[Moveable/Resizable]', () => {
     expect(resizeXWrapper).toBeInTheDocument();
     expect(resizeYWrapper).toBeInTheDocument();
     expect(resizeXYWrapper).toBeInTheDocument();
-    fireEvent.mouseDown(resizeXWrapper, { clientX: 0, clientY: 0 });
-    fireEvent.mouseMove(document, { clientX: 50, clientY: 50 });
+    fireEvent.mouseDown(resizeXWrapper, { clientX: startClientX });
+    fireEvent.mouseMove(document, { clientX: endClientX });
     fireEvent.mouseUp(document);
-
+    styleContentTest(document.querySelector(panel)!, `width: ${endClientX - startClientX}px;`);
+    fireEvent.mouseDown(resizeYWrapper, { clientY: startClientY });
+    fireEvent.mouseMove(document, { clientY: endClientY });
+    fireEvent.mouseUp(document);
+    styleContentTest(document.querySelector(panel)!, `height: ${endClientY - startClientY}px;`);
+    fireEvent.mouseDown(resizeXYWrapper, { clientX: startClientY, clientY: startClientY });
+    fireEvent.mouseMove(document, { clientX: endClientY, clientY: endClientY });
+    fireEvent.mouseUp(document);
+    styleContentTest(document.querySelector(panel)!, `width: ${endClientY - startClientY}px;`);
+    styleContentTest(document.querySelector(panel)!, `height: ${endClientY - startClientY}px;`);
+  });
+});
+describe('Modal[Position]', () => {
+  const positionMaps: { [key: string]: string } = {
+    top: wrapperDrawerTop,
+    left: wrapperDrawerLeft,
+    right: wrapperDrawerRight,
+    bottom: wrapperDrawerBottom,
+  };
+  test.each(['top', 'left', 'right', 'bottom'])(
+    'should render when set position is %s',
+    (position) => {
+      render(
+        <Modal title={title} position={position as 'top' | 'left' | 'right' | 'bottom'} visible>
+          {content}
+        </Modal>,
+      );
+      const modalWrapper = document.querySelector(wrapper)!;
+      classTest(modalWrapper, wrapperDrawer);
+      classTest(modalWrapper, positionMaps[position]);
+    },
+  );
+  test('should render when set height and position', () => {
+    const position = 'left';
+    render(
+      <Modal title={title} position={position} visible height={100}>
+        {content}
+      </Modal>,
+    );
     screen.debug();
+    styleContentTest(document.querySelector(panel)!, 'height', false);
+  });
+});
+describe('Modal[Mask]', () => {
+  test('should render when set hideMask', () => {
+    const { container } = render(<Modal hideMask visible />);
+    expect(container.querySelector(mask)).not.toBeInTheDocument();
+  });
+  test('should render when set maskBackground', () => {
+    const maskBackground = 'red';
+    render(<Modal maskBackground={maskBackground} visible />);
+    const modalWrapper = document.querySelector(wrapper)!;
+    classTest(modalWrapper, wrapperIsMask);
+    styleTest(modalWrapper, 'background: red;');
+  });
+  test('should render when set maskCloseAble is false', () => {
+    const App = () => {
+      const [visible, setVisible] = React.useState(false);
+      return (
+        <div>
+          <Button onClick={() => setVisible(true)}>show</Button>
+          <Modal visible={visible} onClose={() => setVisible(false)} maskCloseAble={false} />
+        </div>
+      );
+    };
+    const { container } = render(<App />);
+    fireEvent.click(container.querySelector('button')!);
+    const modalWrapper = document.querySelector(wrapper)!;
+    fireEvent.click(modalWrapper.querySelector(mask)!);
+    classTest(modalWrapper, wrapperShow);
+    classLengthTest(modalWrapper, headerClose, 0);
+  });
+  test('should render when set maskCloseAble is null', () => {
+    const App = () => {
+      const [visible, setVisible] = React.useState(false);
+      return (
+        <div>
+          <Button onClick={() => setVisible(true)}>show</Button>
+          <Modal visible={visible} onClose={() => setVisible(false)} maskCloseAble={null} />
+        </div>
+      );
+    };
+    const { container } = render(<App />);
+    fireEvent.click(container.querySelector('button')!);
+    const modalWrapper = document.querySelector(wrapper)!;
+    fireEvent.click(modalWrapper.querySelector(mask)!);
+    classTest(modalWrapper, wrapperShow);
+    classLengthTest(modalWrapper, headerClose, 1);
+    fireEvent.click(modalWrapper.querySelector(headerClose)!);
+    classTest(modalWrapper, wrapperHide);
+  });
+  test('should render when set forceMask', () => {
+    const App = () => {
+      const [visible, setVisible] = React.useState(false);
+      const [visibleSec, setVisibleSec] = React.useState(false);
+      return (
+        <div>
+          <Button onClick={() => setVisible(true)}>show</Button>
+          <Modal visible={visible} onClose={() => setVisible(false)}>
+            <Button onClick={() => setVisibleSec(true)}>show</Button>
+            <Modal visible={visibleSec} onClose={() => setVisibleSec(false)} forceMask>
+              Demo
+            </Modal>
+          </Modal>
+        </div>
+      );
+    };
+    const { container } = render(<App />);
+    fireEvent.click(container.querySelector('button')!);
+    const modalBody = document.querySelector(body)!;
+    fireEvent.click(modalBody.querySelector('button')!);
+    const modalWrappers = document.querySelectorAll(wrapper);
+    modalWrappers.forEach((item) => {
+      classTest(item, wrapperIsMask);
+    });
   });
 });
 describe('Modal[Confirm]', () => {
@@ -413,5 +652,7 @@ describe('Modal[Function(Type)]', () => {
     fireEvent.click(document.querySelector(mask)!);
   });
 });
+
 // usePortal
 // maskOpacity
+// noPadding
