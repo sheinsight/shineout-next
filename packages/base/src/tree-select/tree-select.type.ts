@@ -160,6 +160,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 选中的 key （受控），多选时必须为array
    */
   value?: Value;
+  defaultValue?: Value;
   /**
    * @en Merges selected values; the repeat value will not appear in the Popover when it is'no-repeat'.
    * @cn 将选中值合并，只在多选模式下有效；为 'no-repeat' 时弹出框中不重复展示值

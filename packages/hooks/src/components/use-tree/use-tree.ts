@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import useLatestObj from '../../common/use-latest-obj';
+import { useInputAble } from '../../common/use-input-able';
 import {
   BaseTreeProps,
   TreePathType,
@@ -46,14 +47,22 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     keygen,
     mode,
     active: activeProp,
-    expanded,
+    expanded: expandedProp,
     // dataUpdate,
     defaultExpanded,
     defaultExpandAll,
     disabled: disabledProps,
     unmatch,
-    // onClick,
+    onExpand: onExpandProp,
   } = props;
+
+  const { value: expanded, onChange: onExpand } = useInputAble({
+    value: expandedProp,
+    defaultValue: defaultExpanded,
+    control: expandedProp !== undefined,
+    onChange: onExpandProp,
+    beforeChange: undefined,
+  });
 
   const { current: context } = useRef<TreeContext<DataItem>>({
     pathMap: new Map<KeygenResult, TreePathType>(),
@@ -72,7 +81,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
-    const expandeds = expanded || defaultExpanded;
+    const expandeds = expanded;
     if (defaultExpandAll) {
       return { active: isActive, expanded: true };
     }
@@ -376,7 +385,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     setTimeout(() => {
       firstRender.current = false;
     });
-  }, [data]);
+  }, []);
 
   useEffect(() => {
     if (firstRender.current) return;
@@ -400,6 +409,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     datum,
     getKey,
     getDataById,
+    expanded,
+    onExpand,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,

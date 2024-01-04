@@ -29,6 +29,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     data,
     multiple,
     mode,
+    line = false,
     innerTitle,
     clearable = true,
     border = true,
@@ -41,6 +42,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     disabled,
     style,
     width,
+    height = 250,
     childrenKey,
     keygen,
     trim,
@@ -57,8 +59,9 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     compressedBound,
     compressedClassName,
     expanded: expandedProp,
-    // defaultExpanded,
-    // defaultExpandAll,
+    defaultExpanded,
+    defaultExpandAll,
+    parentClickExpand,
     showHitDescendants,
     onFilter: onFilterProp,
     onChangeAddition,
@@ -72,6 +75,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
   const datum = useRef<TreeContextProps>();
   const blurEvent = useRef<(() => void) | null>();
   const treeSelectRef = useRef<any>();
+  const inputRef = useRef<HTMLInputElement>();
 
   const { value, onChange } = useTreeSelect({
     value: valueProp,
@@ -84,15 +88,13 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     filterText,
     inputText,
     filterData,
-    // createdData,
-    // expanded,
+    expanded,
     setInputText,
-    // onFilter,
+    onFilter,
     onResetFilter,
-    // onCreate,
     onClearCreatedData,
   } = useFilter({
-    data,
+    treeData: data,
     keygen,
     childrenKey,
     expanded: expandedProp,
@@ -219,20 +221,34 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
   };
 
   const getContentClass = (data: DataItem) => {
-    const key = datum.current?.getKey(data);
+    if (!datum.current) return '';
+
+    const key = datum.current.getKey(data);
     const isDisabled = datum.current?.isDisabled(key);
+    const isCheck = datum.current?.getChecked(key);
+
     if (isDisabled) {
       return classNames(styles.optionDisabled);
     }
-    const isCheck = datum.current?.getChecked(key);
-    if (isCheck) {
-      return classNames(styles.optionActive);
+
+    if (multiple) {
+      return isCheck ? classNames(styles.optionActive) : '';
     }
+
+    if (!util.isArray(value)) {
+      const currentData = datum.current.getDataByValues(value);
+      return currentData === data ? classNames(styles.optionActive) : '';
+    }
+
     return '';
   };
 
   const checkUnMatched = (item: any) => {
     return util.isUnMatchedData(item);
+  };
+
+  const handleFilter = (text: string) => {
+    onFilter(trim ? text.trim() : text);
   };
 
   const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
@@ -245,6 +261,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     }
 
     const nextValue = getValue();
+
     if (onChange) {
       onChange(nextValue, currentData, id ? (datum.current.getPath(id) || {}).path : undefined);
     }
@@ -258,11 +275,21 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     }
   };
 
+  const handleTreeChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
+    handleChange(item, id);
+    if (!multiple) closePop();
+  };
+
   const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => {
     if (!datum.current) return;
+
     const dataKey = util.isUnMatchedData(item)
       ? item.value
       : datum.current.getKey(item, key, index);
+
+    const isDisabled = datum.current.isDisabled(dataKey);
+
+    if (isDisabled) return;
 
     datum.current.set(dataKey, 0);
     handleChange(item, datum.current.getKey(item, key, index));
@@ -295,7 +322,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           multiple={multiple}
           placeholder={placeholder}
           prediction={prediction}
-          renderItem={renderItem}
+          renderItem={renderItemProp}
           childrenKey={childrenKey}
           renderResult={getRenderResult}
           resultClassName={resultClassName}
@@ -305,8 +332,8 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           inputText={inputText}
           filterText={filterText}
           setInputText={setInputText}
-          // onFilter={handleFilter}
-          // onRef={inputRef}
+          onFilter={handleFilter}
+          onRef={inputRef}
           // onInputBlur={handleInputBlur}
           onResetFilter={onResetFilter}
           checkUnMatched={checkUnMatched}
@@ -343,25 +370,29 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     const treeProps = {};
 
     if (multiple) {
-      treeProps.onChange = handleChange;
+      treeProps.onChange = handleTreeChange;
     } else {
-      treeProps.onClick = handleChange;
+      treeProps.onClick = handleTreeChange;
       treeProps.renderItem = renderActive;
       treeProps.active = value;
     }
-
     return (
-      <div className={classNames(styles.tree)}>
+      <div className={classNames(styles.tree)} style={{ maxHeight: height }}>
         <Tree
           jssStyle={jssStyle}
           onRef={bindTreeDatum}
           renderItem={renderItem}
           {...treeProps}
-          line={false}
+          line={line}
           mode={mode}
-          data={data}
+          data={filterData}
           keygen={keygen}
-          value={value}
+          value={valueProp}
+          expanded={expanded}
+          disabled={disabled}
+          parentClickExpand={parentClickExpand}
+          defaultExpanded={defaultExpanded}
+          defaultExpandAll={defaultExpandAll}
           contentClass={getContentClass}
         ></Tree>
       </div>

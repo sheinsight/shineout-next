@@ -218,6 +218,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
         result.push(renderSingleResult());
       }
     }
+
     return showPlaceholder ? renderPlaceholder() : result;
   };
 

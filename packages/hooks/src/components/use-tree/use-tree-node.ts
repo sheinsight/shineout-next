@@ -7,7 +7,6 @@ const useTreeNode = <DataItem>(props: BaseTreeNodeProps<DataItem>) => {
   const [active, setActive] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [fetching, setFetching] = useState(false);
-
   const update = usePersistFn((key: string, value: boolean) => {
     switch (key) {
       case 'active':

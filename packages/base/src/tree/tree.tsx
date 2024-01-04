@@ -16,7 +16,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     value,
     mode = 1,
     keygen,
-    expanded,
+    expanded: expandedProp,
     expandIcons,
     iconClass,
     leafClass,
@@ -43,7 +43,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     loader,
     onRef,
     onDrop,
-    onExpand,
+    onExpand: onExpandProp,
     onChange,
     onDragEnd,
     onDragLeave,
@@ -58,20 +58,20 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   // useEffect(() => {
   //   if (dataProps !== data && dataUpdate) setData(dataProps);
   // }, [dataProps])
-
-  const { datum, updateMap } = useTree({
+  const { datum, updateMap, expanded, onExpand } = useTree({
     mode,
     value,
     data,
     dataUpdate,
     active,
-    expanded,
+    expanded: expandedProp,
     disabled,
     defaultValue,
     defaultExpandAll,
     defaultExpanded,
     childrenKey: childrenKey as keyof DataItem,
     keygen,
+    onExpand: onExpandProp,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);

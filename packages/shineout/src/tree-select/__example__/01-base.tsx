@@ -42,6 +42,12 @@ export default () => {
     return <span>{`node ${node.id}`}</span>;
   };
 
+  // const renderResult = (node: any) => {
+  //   return <span>node:{node.title}</span>;
+  // };
+
+  const handleFilter = (v: string) => (d: any) => d.title.indexOf(v) >= 0;
+
   return (
     <div>
       <TreeSelect
@@ -56,6 +62,7 @@ export default () => {
           console.log(v);
           setValue(v);
         }}
+        onFilter={handleFilter}
         renderItem={renderItem}
       ></TreeSelect>
     </div>
