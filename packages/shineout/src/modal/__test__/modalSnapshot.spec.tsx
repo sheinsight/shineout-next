@@ -1,5 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';
-import { createClassName } from '../../tests/utils';
+import { createClassName, snapshotTestByClick as snapshotTest } from '../../tests/utils';
 import ModalBase from '../__example__/01-base';
 import ModalType from '../__example__/02-type';
 import ModalConfirm from '../__example__/03-confirm';
@@ -17,11 +16,7 @@ import ModalPosition from '../__example__/13-position';
 const { wrapper } = createClassName('modal', ['wrapper'], []);
 
 const snapshotTestByClick = (component: JSX.Element, testName: string = '') => {
-  test(`should render correctly ${testName}`, () => {
-    const { container } = render(component);
-    fireEvent.click(container.querySelector('button')!);
-    expect(document.querySelector(wrapper)).toMatchSnapshot();
-  });
+  snapshotTest(component, testName, wrapper);
 };
 
 describe('Modal[SnapShot]', () => {
