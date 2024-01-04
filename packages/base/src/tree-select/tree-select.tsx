@@ -46,6 +46,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     childrenKey,
     keygen,
     trim,
+    loader,
     renderResult: renderResultProp,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
     prediction,
@@ -171,6 +172,11 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
       });
     }
     if (open) closePop();
+  };
+
+  const handleExpand = (exp) => {
+    console.log(exp);
+    // onExpanded(exp);
   };
 
   // 点击 Select 结果框的处理方法
@@ -389,12 +395,14 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           data={filterData}
           keygen={keygen}
           value={valueProp}
+          loader={loader}
           expanded={expanded}
           disabled={disabled}
           parentClickExpand={parentClickExpand}
           defaultExpanded={defaultExpanded}
           defaultExpandAll={defaultExpandAll}
           contentClass={getContentClass}
+          onExpand={handleExpand}
         ></Tree>
       </div>
     );

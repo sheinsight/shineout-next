@@ -58,12 +58,14 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   // useEffect(() => {
   //   if (dataProps !== data && dataUpdate) setData(dataProps);
   // }, [dataProps])
+
   const { datum, updateMap, expanded, onExpand } = useTree({
     mode,
     value,
     data,
     dataUpdate,
     active,
+    isControlled: 'expanded' in props,
     expanded: expandedProp,
     disabled,
     defaultValue,

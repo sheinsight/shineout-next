@@ -111,6 +111,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
   hasExpanded.current = true;
 
   const newStyle = Object.assign({}, style, { display: expanded ? 'block' : 'none' });
+
   return (
     <div onDrop={empty} onDragOver={empty} style={newStyle} className={rootClass}>
       {data.map(renderNode)}

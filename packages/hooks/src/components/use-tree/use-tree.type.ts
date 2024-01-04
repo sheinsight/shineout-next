@@ -26,6 +26,7 @@ export interface TreePathType {
 }
 
 export interface BaseTreeProps<DataItem = ObjectType> {
+  isControlled: boolean;
   active?: KeygenResult;
   value?: KeygenResult[];
   defaultValue?: KeygenResult[];

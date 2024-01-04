@@ -38,7 +38,6 @@ export default () => {
   const [value, setValue] = useState([]);
 
   const renderItem = (node: any) => {
-    if (!node) return null;
     return <span>{`node ${node.id}`}</span>;
   };
 
