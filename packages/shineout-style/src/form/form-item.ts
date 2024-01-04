@@ -25,6 +25,9 @@ const formItemStyle: JsStyles<FormItemClass> = {
     fontSize: token.formItemFontSize,
     color: token.formItemFontColor,
     boxSizing: 'border-box',
+    '$control > &:not($wrapperInline)': {
+      minWidth: '100%',
+    },
   },
   wrapperTip: {},
   label: {
@@ -35,6 +38,10 @@ const formItemStyle: JsStyles<FormItemClass> = {
     wordBreak: 'break-word',
     textAlign: 'end',
     boxSizing: 'border-box',
+    '&:empty::before': {
+      content: '" "',
+      display: 'inline-block',
+    },
   },
   labelLeft: {
     textAlign: 'start',

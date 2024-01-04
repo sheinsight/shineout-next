@@ -54,7 +54,7 @@ const App: React.FC = () => (
     </Form.Item>
 
     <Form.Item label=''>
-      <button type='submit'>Submit</button>
+      <Form.Submit>Submit</Form.Submit>
     </Form.Item>
   </Form>
 );

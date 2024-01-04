@@ -8,9 +8,15 @@ export interface FiledItemCommonProps {
   onChange?: (...args: any) => void;
 }
 
-export type GetWithFieldProps<Props, Value> = Props & ExtendsFieldProps<Value> & TipProps;
-const useFieldCommon = <Props extends FiledItemCommonProps, Value>(
-  props: GetWithFieldProps<Props, Value>,
+export type GetWithFieldProps<Props, Value, Name = string> = Props &
+  ExtendsFieldProps<Value, Name> &
+  TipProps;
+const useFieldCommon = <
+  Props extends FiledItemCommonProps,
+  Value,
+  Name extends string | string[] = string,
+>(
+  props: GetWithFieldProps<Props, Value, Name>,
   Origin: React.ComponentType<Props>,
   type?: 'number' | 'string' | 'array',
 ) => {

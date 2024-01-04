@@ -9,4 +9,8 @@ export type BaseDatePickerProps<Value extends DatePickerValueType> = Omit<
 >;
 
 export type DatePickerProps<Value extends DatePickerValueType = DatePickerValueType> =
-  GetWithFieldProps<BaseDatePickerProps<Value>, BaseDatePickerProps<Value>['value']>;
+  GetWithFieldProps<
+    BaseDatePickerProps<Value>,
+    BaseDatePickerProps<Value>['value'],
+    string | string[]
+  >;

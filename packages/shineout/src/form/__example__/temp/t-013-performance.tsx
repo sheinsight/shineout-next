@@ -7,10 +7,8 @@
 import React, { useState } from 'react';
 import { Form, Input } from 'shineout';
 import { Rule } from '@sheinx/hooks';
-const MemoInput = React.memo(Input);
 const rules = Rule();
-const r = [rules.required];
-const arr = Array(10).fill(0);
+const arr = Array(5000).fill(0);
 
 const App: React.FC = () => {
   const [value, setValue] = useState<any>({});
@@ -37,13 +35,7 @@ const App: React.FC = () => {
         {arr.map((_, i) => {
           return (
             <Form.Item label={`sku-${i}`} key={i}>
-              <MemoInput
-                delay={300}
-                title={`sku-${i}`}
-                name={`name-${i}`}
-                // rules={[{ required: true }]}
-                rules={r}
-              />
+              <Input delay={300} title={`sku-${i}`} name={`name-${i}`} rules={[rules.required]} />
             </Form.Item>
           );
         })}

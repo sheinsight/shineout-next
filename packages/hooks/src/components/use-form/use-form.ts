@@ -356,7 +356,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   // 默认值更新
   React.useEffect(() => {
-    // initValidate 字段改变后自动校验对应的值
+    context.value = (props.value || emptyObj) as T;
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
         const oldValue = deepGet(context.lastValue || emptyObj, key);
@@ -365,10 +365,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       });
       validateFields(keys).catch(() => {});
     }
-    context.resetTime = 0;
-    context.value = (props.value || emptyObj) as T;
-    context.lastValue = props.value;
     update();
+    context.lastValue = props.value;
+    context.resetTime = 0;
   }, [props.value]);
 
   return {
