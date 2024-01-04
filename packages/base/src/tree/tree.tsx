@@ -103,7 +103,6 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
 
   const handleToggle = (id: KeygenResult) => {
     let newExpanded;
-
     if (!expanded && onExpand) {
       onExpand([id]);
       return;
@@ -116,6 +115,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     } else {
       newExpanded = [...expandedArr, id];
     }
+
     if (onExpand) onExpand(newExpanded);
   };
 
@@ -175,8 +175,6 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     }
   };
 
-  const onToggle = onExpand ? handleToggle : undefined;
-
   useEffect(() => {
     if (onRef) onRef(datum);
   }, []);
@@ -205,7 +203,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           loader={loader}
           inlineNode={inlineNode}
           highlight={highlight}
-          onToggle={onToggle}
+          onToggle={handleToggle}
           onDrop={onDrop && handleDrop}
           onDragOver={onDragOver}
           onDragStart={onDragStart}

@@ -63,7 +63,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   };
 
   const handleIndicatorClick = () => {
-    onToggle();
+    onToggle(id);
 
     if (data[childrenKey] !== undefined) return;
 

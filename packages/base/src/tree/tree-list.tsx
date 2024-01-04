@@ -16,6 +16,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     id = '',
     keygen,
     expanded,
+    expandedProp,
     active,
     line,
     style,
@@ -93,6 +94,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         dragHoverExpand={dragHoverExpand}
         parentClickExpand={parentClickExpand}
         doubleClickExpand={doubleClickExpand}
+        expanded={expandedProp}
         onNodeClick={onNodeClick}
         onToggle={onToggle}
         onChange={onChange}

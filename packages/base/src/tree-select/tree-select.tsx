@@ -376,6 +376,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
       treeProps.renderItem = renderActive;
       treeProps.active = value;
     }
+
     return (
       <div className={classNames(styles.tree)} style={{ maxHeight: height }}>
         <Tree

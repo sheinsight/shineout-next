@@ -29,6 +29,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     expandIcons,
     keygen,
     mode,
+    expanded,
     childrenKey,
     inlineNode,
     highlight,
@@ -56,14 +57,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
   const dragImage = useRef<null | HTMLElement>(null);
 
   const { getPath } = useTreeContext();
-  const {
-    active,
-    expanded,
-    isLeaf,
-    fetching,
-    setFetching,
-    onToggle: handleToggle,
-  } = useTreeNode({
+  const { active, isLeaf, fetching, setFetching } = useTreeNode({
     id,
     data,
     bindNode,
@@ -108,7 +102,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     if (dragSibling && targetPathStr !== currentPathStr) return;
 
     if (dragHoverExpand && !expanded) {
-      handleToggle();
+      onToggle(id);
     }
     const hover = element.current as HTMLDivElement;
     const rect = hover.getBoundingClientRect();
@@ -217,7 +211,8 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       nodeClass,
       contentClass,
       parentClickExpand,
-      expanded,
+      expanded: expanded.indexOf(id) >= 0,
+      expandedProp: expanded,
       line,
       data: children,
       mode,
@@ -265,7 +260,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         contentClass={contentClass}
         active={active}
         fetching={fetching}
-        expanded={expanded}
+        expanded={expanded.indexOf(id) >= 0}
         keygen={keygen}
         bindNode={bindNode}
         bindContent={content}
@@ -284,7 +279,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
         onFetch={handleFetch}
         onNodeClick={onNodeClick}
         onDragOver={handleDragOver}
-        onToggle={handleToggle}
+        onToggle={onToggle}
       ></TreeContent>
       {hasChildren && createElement(List, getChildrenListProps())}
     </div>

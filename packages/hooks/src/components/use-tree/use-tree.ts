@@ -49,7 +49,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     active: activeProp,
     expanded: expandedProp,
     // dataUpdate,
-    defaultExpanded,
+    defaultExpanded = [],
     defaultExpandAll,
     disabled: disabledProps,
     unmatch,
@@ -59,7 +59,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const { value: expanded, onChange: onExpand } = useInputAble({
     value: expandedProp,
     defaultValue: defaultExpanded,
-    control: expandedProp !== undefined,
+    // control: expandedProp !== undefined,
+    control: false,
     onChange: onExpandProp,
     beforeChange: undefined,
   });
