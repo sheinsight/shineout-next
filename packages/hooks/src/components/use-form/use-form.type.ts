@@ -4,9 +4,6 @@ import { AddNoProps, ObjectType } from '../../common/type';
 import { FormItemRule } from '../../utils/rule/rule.type';
 
 export interface FormContextValueType {
-  errors?: ObjectType<Error>;
-  value?: ObjectType;
-  serverErrors?: ObjectType;
   func?: {
     unbind: (n: string, reserveAble?: boolean) => void;
     bind: (
@@ -19,6 +16,11 @@ export interface FormContextValueType {
         config: {
           ignoreBind?: boolean;
         },
+      ) => void,
+      update: (
+        formValue: ObjectType,
+        errors: ObjectType<Error>,
+        serverErrors: ObjectType<Error>,
       ) => void,
     ) => void;
     combineRules: <ValueItem>(
@@ -71,7 +73,7 @@ interface FormRuleObject<T> {
 
 export interface BaseFormProps<T> extends FormCommonConfig {
   value: T | undefined;
-  onChange: (value: T) => void;
+  onChange?: (value: T) => void;
   defaultValue?: T;
   /**
    * @cn 设置 value 后是否自动校验
@@ -107,7 +109,7 @@ export type UseFormProps<T> = BaseFormProps<T>;
 
 export type FormContext = {
   defaultValues: ObjectType;
-  rules: ObjectType;
+  validateMap: ObjectType;
   removeArr: Set<string>;
   removeTimer?: number | NodeJS.Timeout;
   names: Set<string>;
@@ -115,6 +117,10 @@ export type FormContext = {
   lastValue: ObjectType | undefined;
   resetTime: number;
   mounted: boolean;
+  updateMap: ObjectType;
+  value: ObjectType;
+  errors: ObjectType<Error | undefined>;
+  serverErrors: ObjectType<Error | undefined>;
 };
 
 export type UseFormSlotOwnProps = {

@@ -3,11 +3,35 @@ import { useFormFunc } from '../form-func-context';
 import { useFormBind } from '../form-bind-context';
 import { FormItemContext } from '../use-form-item/form-item-context';
 import { useFieldSetConsumer } from '../use-form-fieldset/fieldset-context';
-import { deepGet, isArray, validate } from '../../../utils';
+import { isArray } from '../../../utils/is';
+import { validate } from '../../../utils/validate';
+import { deepGet } from '../../../utils/object';
+import { shallowEqual } from '../../../utils/shallow-equal';
 import usePersistFn from '../../../common/use-persist-fn';
 
 import { BaseFormControlProps } from './use-form-control.type';
 import { ObjectType } from '../../../common/type';
+
+const getValue = (name: string | string[], formValue: ObjectType) => {
+  if (!name) return undefined;
+  if (isArray(name)) {
+    return name.map((n) => deepGet(formValue, n));
+  }
+  return deepGet(formValue, name);
+};
+
+const getError = (name: string | string[], errors: ObjectType, serverErrors: ObjectType) => {
+  if (!name) return undefined;
+  if (isArray(name)) {
+    for (let i = 0; i < name.length; i++) {
+      const err = ((errors ?? {})[name[i]] || (serverErrors ?? {})[name[i]]) as Error;
+      if (err) return err;
+    }
+    return;
+  } else {
+    return ((errors ?? {})[name] || (serverErrors ?? {})[name]) as Error;
+  }
+};
 
 export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const {
@@ -24,47 +48,37 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   });
 
   const [errorState, setErrorState] = React.useState<Error | undefined>(undefined);
+  const [valueState, setValueState] = React.useState<T | undefined>(undefined);
 
   let value: T | undefined;
   let error: Error | undefined = errorState;
   let inForm = false;
 
-  const {
-    value: formValue = {},
-    func: controlFunc,
-    errors,
-    disabled,
-    serverErrors,
-  } = useFormBind();
+  const { func: controlFunc, disabled } = useFormBind();
   const formFunc = useFormFunc();
   const { updateError } = React.useContext(FormItemContext);
 
-  const getValue = () => {
-    if (!name) return undefined;
-    if (isArray(name)) {
-      return name.map((n) => deepGet(formValue, n)) as T;
-    }
-    return deepGet(formValue, name) as T;
-  };
-
-  const getError = () => {
-    if (!name) return undefined;
-    if (isArray(name)) {
-      for (let i = 0; i < name.length; i++) {
-        const err = ((errors ?? {})[name[i]] || (serverErrors ?? {})[name[i]]) as Error;
-        if (err) return err;
-      }
-      return;
-    } else {
-      return ((errors ?? {})[name] || (serverErrors ?? {})[name]) as Error;
-    }
-  };
-
   if (name && formFunc) {
     inForm = true;
-    value = getValue();
-    error = getError();
+    value = valueState;
+    if (isArray(name) && !isArray(value)) {
+      value = [] as T;
+    }
   }
+
+  const update = usePersistFn(
+    (formValue: ObjectType = {}, errors: ObjectType, severErrors: ObjectType) => {
+      if (!name) return;
+      const value = getValue(name, formValue) as T;
+      const error = getError(name, errors, severErrors);
+      if (error !== errorState) {
+        setErrorState(error);
+      }
+      if (!shallowEqual(value, valueState)) {
+        setValueState(value);
+      }
+    },
+  );
 
   const validateFiled = usePersistFn((name, v, formV, config = {}) => {
     const validateProps = getValidateProps?.() || {};
@@ -105,33 +119,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     }
   });
 
-  useEffect(() => {
-    if (inForm && controlFunc) {
-      if (isArray(name)) {
-        const dv = isArray(defaultValue) ? defaultValue : [];
-        name.forEach((n, index) => {
-          controlFunc.bind(n, dv[index], validateFiled);
-        });
-      } else {
-        controlFunc.bind(name, defaultValue, validateFiled);
-      }
-    }
-    return () => {
-      if (inForm && controlFunc) {
-        if (isArray(name)) {
-          name.forEach((n) => {
-            controlFunc.unbind(n, reserveAble);
-          });
-        } else {
-          controlFunc.unbind(name, reserveAble);
-        }
-      }
-    };
-  }, [name]);
-  useEffect(() => {
-    updateError(isArray(name) ? name.join('|') : name, error);
-  }, [error]);
-
   const onChange = usePersistFn((v: T, ...other: any[]) => {
     if (inForm && formFunc) {
       if (isArray(name)) {
@@ -149,6 +136,33 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     }
     if (onChangePo) onChangePo(v, ...other);
   });
+
+  useEffect(() => {
+    if (inForm && controlFunc) {
+      if (isArray(name)) {
+        const dv = isArray(defaultValue) ? defaultValue : [];
+        name.forEach((n, index) => {
+          controlFunc.bind(n, dv[index], validateFiled, update);
+        });
+      } else {
+        controlFunc.bind(name, defaultValue, validateFiled, update);
+      }
+    }
+    return () => {
+      if (inForm && controlFunc) {
+        if (isArray(name)) {
+          name.forEach((n) => {
+            controlFunc.unbind(n, reserveAble);
+          });
+        } else {
+          controlFunc.unbind(name, reserveAble);
+        }
+      }
+    };
+  }, [name]);
+  useEffect(() => {
+    updateError(isArray(name) ? name.join('|') : name, error);
+  }, [error]);
 
   return { value, onChange, error, inForm, disabled };
 }

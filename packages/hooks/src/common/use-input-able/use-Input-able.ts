@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { isFunc } from '../../utils';
-import useRender from '../use-render';
 import usePersistFn from '../use-persist-fn';
+import { useLatestObj } from '../use-latest-obj';
+import { useRender } from '../use-render';
 
 import { ChangeType, InputAbleProps } from './use-Input-able.type';
 
@@ -10,23 +11,32 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
 
   const [stateValue, changeStateValue] = useState<T | undefined>(props.value || props.defaultValue);
 
-  const render = useRender(() => {
-    if (control && stateValue !== valuePo) changeStateValue(valuePo);
-  });
-
   const { current: context } = useRef<{
     timer: NodeJS.Timeout | null;
     delayChange: null | (() => void);
   }>({ timer: null, delayChange: null });
-  const value = control && !context.timer ? valuePo : stateValue;
+
+  const latest = useLatestObj({ valuePo, stateValue });
+
+  const syncValue = usePersistFn(() => {
+    if (control && latest.stateValue !== latest.valuePo) {
+      changeStateValue(latest.valuePo);
+    }
+  });
+
+  const render = useRender(syncValue);
+
+  const value = delay ? stateValue : valuePo;
 
   useEffect(() => {
     if (context.timer) {
       clearTimeout(context.timer);
       context.timer = null;
-      render();
     }
-  }, [props.value]);
+    if (delay && props.value !== stateValue) {
+      changeStateValue(props.value);
+    }
+  }, [props.value, delay]);
 
   const forceDelayChange = usePersistFn(() => {
     if (context.timer && context.delayChange) {
@@ -43,14 +53,16 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
       const temp = beforeChange(v);
       vv = temp === undefined ? vv : temp;
     }
-    changeStateValue(vv);
+    if (delay) {
+      changeStateValue(vv);
+    }
 
     if (!isFunc(onChange)) return;
 
     context.delayChange = () => {
-      onChange(vv, ...other);
       context.timer = null;
       context.delayChange = null;
+      onChange(vv, ...other);
       render();
     };
     if (!delay) {

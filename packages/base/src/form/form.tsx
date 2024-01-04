@@ -1,4 +1,4 @@
-import { useForm, useInputAble, useLatestObj, usePersistFn } from '@sheinx/hooks';
+import { useForm, useLatestObj, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { ModalFormContext } from '../modal/modal-context';
 import React, { useContext, useEffect } from 'react';
@@ -12,13 +12,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
 
   const modalFormContext = useContext(ModalFormContext);
 
-  const { value, onChange } = useInputAble({
-    value: props.value,
-    defaultValue: props.defaultValue,
-    control: 'value' in props,
-    onChange: props.onChange,
-    beforeChange: undefined,
-  });
+  const { value = props.defaultValue, onChange } = props;
 
   const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange });
 

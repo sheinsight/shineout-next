@@ -2,9 +2,23 @@
  * cn - delay
  *    -- delay=300
  */
-
+import { useState } from 'react';
 import { Input } from 'shineout';
 
 export default () => {
-  return <Input placeholder='input something' delay={300} onChange={(d) => console.log(d)} />;
+  const [v, setV] = useState('');
+  return (
+    <>
+      <span>{v}</span>
+      <Input
+        value={v}
+        placeholder='input something'
+        delay={300}
+        onChange={(d) => {
+          console.log(d);
+          setV(d || '');
+        }}
+      />
+    </>
+  );
 };
