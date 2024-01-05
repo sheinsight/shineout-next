@@ -1,6 +1,6 @@
 import React from 'react';
 import { TreeClasses } from '../tree/tree.type';
-import { KeygenResult, ObjectKey, UnMatchedData } from '@sheinx/hooks';
+import { KeygenResult, ObjectKey, UnMatchedData, TreeKeygenType } from '@sheinx/hooks';
 import { TreeSelectClasses, SelectClasses } from '@sheinx/shineout-style';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
@@ -66,6 +66,8 @@ export interface TreeSelectProps<DataItem, Value>
    * @default []
    */
   data?: DataItem[];
+
+  keygen: TreeKeygenType<DataItem>;
   /**
    * @en Some methods of getting components Currently only support getDataByValue
    * @cn 获取组件的一些方法 目前只支持 getDataByValues
@@ -177,6 +179,15 @@ export interface TreeSelectProps<DataItem, Value>
   showArrow?: boolean;
   childrenKey: keyof DataItem & string;
   focusSelected?: boolean;
+  resultClassName?: ((value: DataItem) => string) | string;
+  loader?: (key: KeygenResult, data: DataItem) => void;
+  maxLength?: number;
+  // Tree 组件同款属性
+  defaultExpanded?: KeygenResult[];
+  defaultExpandAll?: boolean;
+  parentClickExpand?: boolean;
+  expanded?: KeygenResult[];
+  trim?: boolean;
   renderItem:
     | ObjectKey<DataItem>
     | ((

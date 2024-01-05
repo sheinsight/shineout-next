@@ -45,12 +45,11 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     height = 250,
     childrenKey,
     keygen,
-    trim,
     loader,
     renderResult: renderResultProp,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
-    prediction,
     maxLength,
+    trim = false,
     placeholder,
     renderUnmatched,
     resultClassName,
@@ -327,7 +326,6 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           compressedClassName={compressedClassName}
           multiple={multiple}
           placeholder={placeholder}
-          prediction={prediction}
           renderItem={renderItemProp}
           childrenKey={childrenKey}
           renderResult={getRenderResult}

@@ -17,9 +17,14 @@ export type KeygenType<DataItem> =
   | ObjectKey<DataItem>
   | ((data: DataItem, index?: number) => KeygenResult)
   | true;
+
 export type StructKeygenType<DataItem> =
   | ObjectKey<DataItem>
   | ((data: DataItem, index?: number) => KeygenResult);
+
+export type TreeKeygenType<DataItem> =
+  | ObjectKey<DataItem>
+  | ((data: DataItem, parentKey: KeygenResult) => KeygenResult);
 
 type OptionalKeys<T> = {
   [K in keyof T]: T extends Record<K, T[K]> ? never : K;
