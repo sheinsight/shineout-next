@@ -4,6 +4,7 @@ import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
 import { getDataAttributeName } from '../../utils/attribute';
 
+const globalKey = '__global__&&@@';
 import { current, produce } from 'immer';
 import {
   deepGet,
@@ -54,13 +55,14 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     defaultValues: {},
     validateMap: {},
     updateMap: {},
+    flowMap: {},
     removeArr: new Set<string>(),
     names: new Set<string>(),
     submitLock: false,
-    value: {},
+    value: props.value || emptyObj,
     errors: {},
     serverErrors: {},
-    lastValue: props.value,
+    lastValue: props.value || emptyObj,
     resetTime: 0,
     mounted: false,
   });
@@ -70,12 +72,23 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       Object.keys(context.updateMap).forEach((key) => {
         context.updateMap[key]?.(context.value, context.errors, context.serverErrors);
       });
+      Object.keys(context.flowMap).forEach((key) => {
+        context.flowMap[key].forEach((update) => {
+          update();
+        });
+      });
     } else {
       const names = isArray(name) ? name : [name];
       names.forEach((key) => {
         context.updateMap[key]?.(context.value, context.errors, context.serverErrors);
+        context.flowMap[key]?.forEach((update) => {
+          update();
+        });
       });
     }
+    context.flowMap[globalKey]?.forEach((update) => {
+      update();
+    });
   };
 
   const handleSubmitError = (err: Error) => {
@@ -103,7 +116,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   };
 
   const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
-    context.value = typeof change === 'function' ? produce(context.value, change) : change;
+    const newValue = typeof change === 'function' ? produce(context.value, change) : change;
+
+    context.value = newValue;
     props.onChange?.(context.value as T);
   });
 
@@ -149,7 +164,12 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     context.removeTimer = setTimeout(remove);
   };
 
-  const getValue = usePersistFn(() => context.value as T);
+  const getValue = usePersistFn((name?: string) => {
+    if (name) {
+      return deepGet(context.value, name);
+    }
+    return context.value;
+  });
 
   const setValue = usePersistFn(
     (vals: { [key: string]: any }, option: { validate?: boolean } = { validate: false }) => {
@@ -259,7 +279,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         formValue: ObjectType,
         config: { ignoreBind?: boolean },
       ) => void,
-      update: (
+      updateFn: (
         formValue: ObjectType,
         errors: ObjectType<Error>,
         serverErrors: ObjectType<Error>,
@@ -271,13 +291,14 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       }
       context.names.add(n);
       context.validateMap[n] = validate;
-      context.updateMap[n] = update;
+      context.updateMap[n] = updateFn;
       context.removeArr.delete(n);
       if (df !== undefined && deepGet(context.value, n) === undefined) {
         if (!context.mounted) context.defaultValues[n] = df;
         onChange((v) => {
           deepSet(v, n, df, deepSetOptions);
         });
+        update(n);
       }
     },
     unbind: (n: string, reserveAble?: boolean) => {
@@ -298,6 +319,21 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         newRules = newRules.concat(propRules);
       }
       return newRules;
+    },
+    watch: (names: string[] = [globalKey], update: () => void) => {
+      names.forEach((name) => {
+        context.flowMap[name] = context.flowMap[name] || new Set();
+        context.flowMap[name].add(update);
+      });
+    },
+    unWatch: (names: string[] = [globalKey], update?: () => void) => {
+      names.forEach((name) => {
+        if (update) {
+          context.flowMap[name].delete(update);
+        } else {
+          delete context.flowMap[name];
+        }
+      });
     },
   });
 
@@ -334,10 +370,6 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   );
 
   React.useEffect(() => {
-    context.mounted = true;
-  }, []);
-
-  React.useEffect(() => {
     // 服务端错误更新
     if (!props.error) context.serverErrors = {};
     else {
@@ -356,6 +388,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   // 默认值更新
   React.useEffect(() => {
+    if (props.value === context.lastValue) return;
     context.value = (props.value || emptyObj) as T;
     if (initValidate && !context.resetTime) {
       const keys = Object.keys(context.validateMap).filter((key) => {
@@ -369,6 +402,10 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     context.lastValue = props.value;
     context.resetTime = 0;
   }, [props.value]);
+
+  React.useEffect(() => {
+    context.mounted = true;
+  }, []);
 
   return {
     getFormProps,

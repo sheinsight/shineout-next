@@ -1,14 +1,29 @@
 import React from 'react';
-import { util, usePersistFn } from '@sheinx/hooks';
-import { ExtendsFieldProps, TipProps } from '../@types/common';
+import { util, usePersistFn, useFormDatum } from '@sheinx/hooks';
+import { TipProps } from '../@types/common';
 import { FormField } from '@sheinx/base';
+import type { FormFieldProps } from '@sheinx/base';
 
+export interface ExtendsFieldProps<T, Name = string>
+  extends Omit<
+    FormFieldProps<T>,
+    'value' | 'defaultValue' | 'children' | 'onChange' | 'name' | 'getProps'
+  > {
+  /**
+   * @en The key access data in the Form
+   * @cn Form 内存取数据的 key
+   */
+  name?: Name;
+  defaultValue?: T;
+  beforeChange?: (value: T) => T | undefined | void;
+}
 export interface FiledItemCommonProps {
   defaultValue?: any;
   onChange?: (...args: any) => void;
+  beforeChange?: (value: any) => any;
 }
 
-export type GetWithFieldProps<Props, Value, Name = string> = Props &
+export type GetWithFieldProps<Props, Value, Name = string> = Omit<Props, 'beforeChange'> &
   ExtendsFieldProps<Value, Name> &
   TipProps;
 const useFieldCommon = <
@@ -21,6 +36,11 @@ const useFieldCommon = <
   type?: 'number' | 'string' | 'array',
 ) => {
   const getValidateProps = usePersistFn(() => ({ type, ...props }));
+  const datum = useFormDatum();
+  const beforeChange = usePersistFn((value: any) => {
+    // @ts-ignore 兼容历史版本 ts 不暴露
+    return props.beforeChange?.(value, datum);
+  });
   const FieldParams = {
     name: props.name!,
     defaultValue: props.defaultValue,
@@ -36,7 +56,11 @@ const useFieldCommon = <
 
   return (
     <FormField {...FieldParams}>
-      <Origin {...(forwardProps as Props)} defaultValue={props.defaultValue} />
+      <Origin
+        {...(forwardProps as Props)}
+        defaultValue={props.defaultValue}
+        beforeChange={beforeChange}
+      />
     </FormField>
   );
 };

@@ -1,19 +1,5 @@
-import { FormFieldProps } from '@sheinx/base';
 import { PopoverProps } from '../popover/popover.type';
 import React from 'react';
-
-export interface ExtendsFieldProps<T, Name = string>
-  extends Omit<
-    FormFieldProps<T>,
-    'value' | 'defaultValue' | 'children' | 'onChange' | 'name' | 'getProps'
-  > {
-  /**
-   * @en The key access data in the Form
-   * @cn Form 内存取数据的 key
-   */
-  name?: Name;
-  defaultValue?: T;
-}
 
 export interface TipProps {
   /**

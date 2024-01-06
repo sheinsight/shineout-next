@@ -76,7 +76,7 @@ const usePopup = (props: BasePopupProps) => {
   const handleFocus = (delay?: number) => {
     if (!isPositionControl) {
       if (props.position === 'auto' || !props.position) {
-        const newPosition = getPosition(targetRef.current, 'vertical', autoMode);
+        const newPosition = getPosition(targetRef.current, props.priorityDirection, autoMode);
         if (newPosition !== position) setPositionState(newPosition);
       }
     }

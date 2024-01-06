@@ -27,6 +27,8 @@ export interface FormContextValueType {
       name: string,
       propRules: FormItemRule<ValueItem>,
     ) => FormItemRule<ValueItem>;
+    watch: (names: string[] | undefined, update: () => void) => void;
+    unWatch: (names: string[] | undefined, update: () => void) => void;
   };
   disabled?: boolean;
 }
@@ -58,7 +60,7 @@ export interface FormFunc {
       validate?: boolean;
     },
   ) => void;
-  getValue: () => any;
+  getValue: (name?: string) => any;
   submit: (withValidate?: boolean) => void;
   reset: () => void;
   setError: (name: string, e: Error | undefined) => void;
@@ -110,14 +112,20 @@ export type UseFormProps<T> = BaseFormProps<T>;
 export type FormContext = {
   defaultValues: ObjectType;
   validateMap: ObjectType;
+  // 删除字段队列
   removeArr: Set<string>;
+  // 防抖间隔
   removeTimer?: number | NodeJS.Timeout;
   names: Set<string>;
   submitLock: boolean;
   lastValue: ObjectType | undefined;
+  // 记录上次重置点击
   resetTime: number;
   mounted: boolean;
+  // 更新队列
   updateMap: ObjectType;
+  // flow 队列
+  flowMap: ObjectType<Set<() => void>>;
   value: ObjectType;
   errors: ObjectType<Error | undefined>;
   serverErrors: ObjectType<Error | undefined>;

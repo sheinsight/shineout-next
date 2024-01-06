@@ -25,8 +25,9 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
   });
 
   const render = useRender(syncValue);
+  const shouldUseState = delay || !control;
 
-  const value = delay ? stateValue : valuePo;
+  const value = shouldUseState ? stateValue : valuePo;
 
   useEffect(() => {
     if (context.timer) {
@@ -53,7 +54,7 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
       const temp = beforeChange(v);
       vv = temp === undefined ? vv : temp;
     }
-    if (delay) {
+    if (shouldUseState) {
       changeStateValue(vv);
     }
 

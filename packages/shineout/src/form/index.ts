@@ -2,6 +2,7 @@ import IForm from './form';
 import IFormItem from './form-item';
 import IFormField from './form-field';
 import IFormFieldSet from './form-fieldset';
+import IFormFlow from './form-flow';
 import { Button as IButton, Submit as ISubmit, Reset as IRest } from './form-button';
 
 type RefForm = typeof IForm;
@@ -24,6 +25,9 @@ Field.displayName = 'ShineoutField';
 const FieldSet = IFormFieldSet as typeof IFormFieldSet & { displayName: string };
 FieldSet.displayName = 'ShineoutFieldSet';
 
+const FormFlow = IFormFlow as typeof IFormFlow & { displayName: string };
+FormFlow.displayName = 'ShineoutFormFlow';
+
 export interface FormComponent extends RefForm {
   Item: typeof Item;
   Field: typeof Field;
@@ -31,6 +35,7 @@ export interface FormComponent extends RefForm {
   Button: typeof Button;
   Submit: typeof Submit;
   Reset: typeof Reset;
+  Flow: typeof FormFlow;
 }
 
 const FormComp: FormComponent = IForm as FormComponent;
@@ -41,5 +46,6 @@ FormComp.FieldSet = FieldSet;
 FormComp.Button = Button;
 FormComp.Submit = Submit;
 FormComp.Reset = Reset;
+FormComp.Flow = FormFlow;
 
 export default FormComp;

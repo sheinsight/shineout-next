@@ -13,7 +13,7 @@ export interface FormRef<Value> {
    * @en return form value
    * @cn 返回表单的值
    */
-  getValue: () => Value;
+  getValue: (name?: string) => any | Value;
   /**
    * @en Validate form
    * @cn 校验表单
