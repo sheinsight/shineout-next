@@ -66,6 +66,8 @@ const originItemClasses = [
   'rowExpand',
   'rowChecked',
   'sorterActive',
+  'cellFixedLeft',
+  'cellFixedLast',
 ];
 const {
   wrapper,
@@ -91,6 +93,8 @@ const {
   sorterDesc,
   sorterActive,
   resizeSpanner,
+  cellFixedLeft,
+  cellFixedLast,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const {
@@ -1247,7 +1251,66 @@ describe('Table[Fixed]', () => {
     );
     classLengthTest(container, 'table', 1);
   });
-  test('should render when set fixed in columns', () => {});
+  test('should render when set fixed in columns', () => {
+    const defaultFixedStyle = 'left: 0px; position: sticky;';
+    const fixedColumns: any[] = [
+      {
+        title: 'id',
+        render: 'id',
+      },
+      {
+        title: 'name',
+        render: 'name',
+        fixed: 'left',
+      },
+      {
+        title: 'age',
+        render: 'age',
+      },
+    ];
+    const fixedData = [
+      {
+        id: 1,
+        name: 'test1',
+        age: 1,
+      },
+      {
+        id: 2,
+        name: 'test2',
+        age: 2,
+      },
+      {
+        id: 3,
+        name: 'test3',
+        age: 3,
+      },
+    ];
+    const { container } = render(<Table keygen={'id'} columns={fixedColumns} data={fixedData} />);
+    const thead = container.querySelector('thead')!;
+    const tbody = container.querySelector('tbody')!;
+    const ths = thead.querySelectorAll('th');
+    ths.forEach((item, index) => {
+      if (index <= 1) {
+        styleTest(item, defaultFixedStyle);
+        classTest(item, cellFixedLeft);
+      }
+      if (index === 1) {
+        classTest(item, cellFixedLast);
+      }
+    });
+    const trs = tbody.querySelectorAll('tr');
+    trs.forEach((item) => {
+      const tds = item.querySelectorAll('td');
+      tds.forEach((td, index) => {
+        if (index <= 1) {
+          classTest(td, cellFixedLeft);
+        }
+        if (index === 1) {
+          classTest(td, cellFixedLast);
+        }
+      });
+    });
+  });
 });
 describe('Table[Resizable]', () => {
   test('should render when set resizable and onColumnResize in table', () => {
@@ -1317,6 +1380,29 @@ describe('Table[Rowspan]', () => {
     classLengthTest(trs[1], 'td', 2);
     attributesTest(trs[0].querySelectorAll('td')[0], 'colSpan', '2');
   });
+});
+describe('Table[Foot]', () => {
+  test('should render when set summary', () => {
+    const colSpan = 2;
+    const summary = [
+      [
+        {
+          render: () => <span>Summary</span>,
+          colSpan,
+        },
+      ],
+    ];
+    const { container } = render(
+      <Table keygen={'id'} columns={columns} data={renderData} summary={summary} />,
+    );
+    const tfoot = container.querySelector('tfoot')!;
+    const trs = tfoot.querySelectorAll('tr');
+    expect(trs?.length).toBe(summary.length);
+    const tds = trs[0].querySelectorAll('td');
+    expect(tds?.length).toBe(summary[0].length);
+    attributesTest(tds[0], 'colSpan', colSpan.toString());
+  });
+  test('should render when set fixed', () => {});
 });
 describe('Table[Pagination]', () => {});
 describe('Table[RowEvents]', () => {
