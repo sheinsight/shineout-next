@@ -35,6 +35,7 @@ exports[`Alert[Base] should render correctly about closeable 1`] = `
   <button
     class="so-button-primary so-button-button so-button-text"
     style="margin-bottom: 12px;"
+    type="button"
   >
     <span>
       重置

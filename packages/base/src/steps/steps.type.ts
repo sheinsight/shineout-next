@@ -28,5 +28,5 @@ export interface StepStyleProps
     >,
     Pick<StepProps, 'labelPlacement' | 'direction'> {
   index: number;
-  onChange?: () => void;
+  onChange?: (e: React.MouseEvent<HTMLElement>) => void;
 }
