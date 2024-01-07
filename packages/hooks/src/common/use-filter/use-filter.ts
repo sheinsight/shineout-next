@@ -70,7 +70,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   };
 
   const handleFilter = (text: string) => {
-    // setInputText(text);
+    setInputText(text);
     if (!text) {
       if (data) {
         setFilterData(data);

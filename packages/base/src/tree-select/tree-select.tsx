@@ -223,7 +223,6 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     if (!datum.current) return;
     const nextValue = datum.current.getValue();
     if (multiple) return nextValue;
-    console.log('nextValue', nextValue);
     return nextValue.length ? nextValue[0] : '';
   };
 
@@ -259,7 +258,6 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
   };
 
   const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
-    console.log('item', item);
     if (!datum.current) return;
     if (disabled === true || datum.current?.isDisabled(id)) return;
     const currentData = datum.current?.getDataByValues(id);

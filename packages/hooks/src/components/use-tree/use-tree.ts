@@ -179,6 +179,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
+    // const update = context.updateMap.get(id)
+    // update()
   };
 
   const initData = (
@@ -232,14 +234,14 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const initValue = (ids_outer?: KeygenResult[], forceCheck?: boolean) => {
     let ids = ids_outer;
-    if (!data || !value) {
+    if (!context.data || !context.value) {
       return undefined;
     }
 
     if (!ids) {
       ids = [];
-      context.pathMap.forEach((path, index) => {
-        if (path.path.length === 0) {
+      context.pathMap.forEach((item, index) => {
+        if (item.path.length === 0) {
           ids!.push(index);
         }
       });

@@ -55,12 +55,14 @@ export default () => {
       <TreeSelect
         width={300}
         onFilter={handleFilter}
+        mode={1}
         value={value}
         onChange={handleChange}
         clearable
         keygen='id'
         renderItem={(node) => `node ${node?.title}`}
         data={data}
+        placeholder='Please select content'
       />
     </div>
   );

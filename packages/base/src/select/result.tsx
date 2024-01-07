@@ -230,8 +230,10 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
   useEffect(() => {
     if (!multiple && showInput && valueProp) {
       const result = getDataByValues(value);
+      // 获取合法的 content
       const content = renderResultContent(result[0]);
-      if (!isEmpty(content)) {
+      // 仅在关闭下拉框时，将输入框的值设置为合法的s选中的值
+      if (!isEmpty(content) && focus === false) {
         setInputText(content as string);
       }
     }
