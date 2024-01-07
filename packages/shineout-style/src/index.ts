@@ -26,6 +26,7 @@ export * from './select';
 export * from './slider';
 export * from './spin';
 export * from './sticky';
+export * from './steps';
 export * from './switch';
 export * from './table';
 export * from './tabs';

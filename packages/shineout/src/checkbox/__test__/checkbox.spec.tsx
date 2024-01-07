@@ -30,7 +30,7 @@ const {
   wrapperDisabled: checkboxDisabledClassName,
   wrapperIndeterminate: checkboxIndeterminateClassName,
   input: checkboxInputClassName,
-  group: checkboxGroupClassName,
+  // group: checkboxGroupClassName,
   desc,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
