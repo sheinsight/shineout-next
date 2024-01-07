@@ -12,5 +12,5 @@ const BaseSlider = <Value extends SliderValueType>(props: BaseSliderProps<Value>
 };
 
 export default <Value extends SliderValueType>(props: SliderProps<Value>) => {
-  return useFieldCommon(props, BaseSlider<Value>);
+  return useFieldCommon(props, BaseSlider<Value>, 'number');
 };

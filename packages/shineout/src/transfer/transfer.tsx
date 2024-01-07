@@ -31,5 +31,5 @@ export default <DataItem, Value extends KeygenResult[]>(props: TransferProps<Dat
   return useFieldCommon<
     BaseTransferProps<DataItem, Value>,
     BaseTransferProps<DataItem, Value>['value']
-  >(props, Transfer);
+  >(props, Transfer, 'array');
 };

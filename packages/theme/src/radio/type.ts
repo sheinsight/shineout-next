@@ -40,42 +40,6 @@ export interface RadioTokens {
   radioIconInnerSize: string;
   /**
    * @type {string}
-   * @token Size-6
-   * @description 单选框小尺寸图标宽度
-   */
-  radioSmallIconWidth: string;
-  /**
-   * @type {string}
-   * @token Border-1
-   * @description 单选框小尺寸图标边框宽度
-   */
-  radioSmallIconBorderWidth: string;
-  /**
-   * @type {string}
-   * @token Size-3
-   * @description 单选框小尺寸图标内嵌字号
-   */
-  radioSmallIconInnerSize: string;
-  /**
-   * @type {string}
-   * @token Size-8
-   * @description 单选框大尺寸图标宽度
-   */
-  radioLargeIconWidth: string;
-  /**
-   * @type {string}
-   * @token Border-2
-   * @description 单选框大尺寸图标边框宽度
-   */
-  radioLargeIconBorderWidth: string;
-  /**
-   * @type {string}
-   * @token Size-3.5
-   * @description 单选框大尺寸图标内嵌字号
-   */
-  radioLargeIconInnerSize: string;
-  /**
-   * @type {string}
    * @token Neutral-fill-1
    * @description 单选框图标背景颜色
    */
@@ -142,22 +106,28 @@ export interface RadioTokens {
   radioIconWrapperFill: string;
   /**
    * @type {string}
-   * @token Neutral-text-5
-   * @description 单选框undefined字体颜色
+   * @token Padding-4
+   * @description 单选框内边距（垂直方向）
    */
-  radioLabelFontColor: string;
+  radioPaddingY: string;
   /**
    * @type {string}
-   * @token Neutral-text-2
-   * @description 单选框undefined禁用时的字体颜色
+   * @token Size-6
+   * @description 单选框小尺寸图标宽度
    */
-  radioLabelDisabledFontColor: string;
+  radioSmallIconWidth: string;
   /**
    * @type {string}
-   * @token 14/regular
-   * @description 单选框undefined字体字号
+   * @token Border-1
+   * @description 单选框小尺寸图标边框宽度
    */
-  radioLabelFontSize: string;
+  radioSmallIconBorderWidth: string;
+  /**
+   * @type {string}
+   * @token Size-3
+   * @description 单选框小尺寸图标内嵌字号
+   */
+  radioSmallIconInnerSize: string;
   /**
    * @type {string}
    * @token 12/regular
@@ -166,8 +136,56 @@ export interface RadioTokens {
   radioSmallLabelFontSize: string;
   /**
    * @type {string}
+   * @token Padding-1
+   * @description 单选框小尺寸内边距（垂直方向）
+   */
+  radioSmallPaddingY: string;
+  /**
+   * @type {string}
+   * @token Size-8
+   * @description 单选框大尺寸图标宽度
+   */
+  radioLargeIconWidth: string;
+  /**
+   * @type {string}
+   * @token Border-2
+   * @description 单选框大尺寸图标边框宽度
+   */
+  radioLargeIconBorderWidth: string;
+  /**
+   * @type {string}
+   * @token Size-3.5
+   * @description 单选框大尺寸图标内嵌字号
+   */
+  radioLargeIconInnerSize: string;
+  /**
+   * @type {string}
    * @token 16/regular
    * @description 单选框大尺寸undefined字体字号
    */
   radioLargeLabelFontSize: string;
+  /**
+   * @type {string}
+   * @token Padding-7
+   * @description 单选框大尺寸内边距（垂直方向）
+   */
+  radioLargePaddingY: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 单选框undefined字体颜色
+   */
+  radioLabelFontColor: string;
+  /**
+   * @type {string}
+   * @token 14/regular
+   * @description 单选框undefined字体字号
+   */
+  radioLabelFontSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 单选框undefined禁用时的字体颜色
+   */
+  radioLabelDisabledFontColor: string;
 }

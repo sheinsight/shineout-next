@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Input as UnStyleInput } from '@sheinx/base';
 import { useInnerTitleStyle, useInputStyle, usePopoverStyle } from '@sheinx/shineout-style';
 
@@ -13,6 +13,6 @@ const jssStyle = {
 const Input = (props: BaseInputProps) => {
   return <UnStyleInput {...props} jssStyle={jssStyle} />;
 };
-export default (props: InputProps) => {
+export default memo((props: InputProps) => {
   return useFieldCommon(props, Input);
-};
+});

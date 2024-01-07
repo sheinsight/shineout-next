@@ -3,6 +3,7 @@ import { ObjectType } from '../../common/type';
 import nullable from './nullable';
 import { isEmpty } from '../is';
 import typeOf from './type';
+import { FormError } from './error';
 
 export default function getRule<Value>(
   rule: FormItemRule<Value>[number],
@@ -14,16 +15,14 @@ export default function getRule<Value>(
     if ((rulePo as RuleResultValue).isInnerValidator) rulePo = (rulePo as RuleResultValue)();
     else return rulePo as ValidFunc;
   }
-  if (typeof props === 'string') {
-    po = { type: props };
-  }
   const { type = props.type, message, regExp, func, required, min, max } = rulePo;
-  po = Object.assign({}, po);
+
+  po = Object.assign({}, po, { min, max });
   po.message = typeof message === 'function' ? message(po) : message;
   let cb: ValidFunc<Value> = () => {};
   if (func) {
-    cb = (value, formData, callback, p) => {
-      func(value, formData, callback, p);
+    cb = (value, formData, callback) => {
+      return func(value, formData, callback, po);
     };
   } else if (required !== undefined) {
     //必填
@@ -34,7 +33,7 @@ export default function getRule<Value>(
       }
       // eslint-disable-next-line eqeqeq
       if ((value as any) == null || (value as any[]).length === 0) {
-        callback(new Error(po.message));
+        callback(new FormError(po.message, po));
         return;
       } else {
         callback(true);
@@ -45,14 +44,14 @@ export default function getRule<Value>(
     cb = (value, _formData, callback) => {
       const reg = typeof regExp === 'string' ? new RegExp(regExp) : regExp;
       if (!reg) {
-        callback(new Error(po.message));
+        callback(new FormError(po.message, po));
         return;
       }
       if (reg.global) reg.lastIndex = 0;
       if (typeof value === 'string' && reg.test(value)) {
         callback(true);
       } else {
-        callback(new Error(po.message));
+        callback(new FormError(po.message, po));
         return;
       }
       callback(true);
@@ -70,13 +69,12 @@ export default function getRule<Value>(
         const val = parseFloat(String(value));
 
         if (Number.isNaN(val)) {
-          // console.error(new Error(`Can not convert value '${value}' to Number, validate failed.`))
-          callback(new Error(po.message));
+          callback(new FormError(po.message, po));
           return;
         }
 
         if ((typeof min === 'number' && val < min) || (typeof max === 'number' && val > max)) {
-          callback(new Error(po.message));
+          callback(new FormError(po.message, po));
         } else {
           callback(true);
         }
@@ -84,7 +82,7 @@ export default function getRule<Value>(
     } else {
       // 长度 min max
       cb = (value, _formData, callback) => {
-        const error = new Error(po.message);
+        const error = new FormError(po.message, po);
 
         if (isEmpty(value)) {
           if (min) callback(error);
@@ -107,7 +105,7 @@ export default function getRule<Value>(
   } else if (type) {
     cb = typeOf(type, po.message);
   } else {
-    const err = new Error(`Rule ${JSON.stringify(rule)} is not valid.`);
+    const err = new FormError(`Rule ${JSON.stringify(rule)} is not valid.`, po);
     console.error(err);
     throw err;
   }

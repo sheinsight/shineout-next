@@ -7,7 +7,7 @@ import { InputNumberProps } from './input-number.type';
 import classNames from 'classnames';
 import useInputCommon from './use-input-common';
 
-export default (props: InputNumberProps) => {
+const InputNumber = (props: InputNumberProps) => {
   const commonProps = useInputCommon<InputNumberProps['value'], InputNumberProps>(props);
   const { jssStyle, ...restProps } = commonProps;
   const inputStyle = jssStyle?.input?.();
@@ -82,3 +82,5 @@ export default (props: InputNumberProps) => {
     />
   );
 };
+
+export default React.memo(InputNumber);

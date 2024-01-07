@@ -3,11 +3,11 @@ import { useSafeState } from '../use-safe-state';
 import { useEffect } from 'react';
 
 export function useRender(callback?: () => void) {
-  const [count, setCount] = useSafeState(0);
+  const [count, setCount] = useSafeState(undefined as number | undefined);
   useEffect(() => {
-    if (callback && count) callback();
+    if (callback && count !== undefined) callback();
   }, [count]);
-  return usePersistFn(() => setCount((count) => (count + 1) % 1_000_000));
+  return usePersistFn(() => setCount((count) => ((count || 0) + 1) % 1_000_000));
 }
 
 export default useRender;

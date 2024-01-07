@@ -1,4 +1,4 @@
-import { CommonType } from '../common/type';
+import { CommonType, CommonChangeType } from '../common/type';
 import { BaseCheckProps } from '@sheinx/hooks';
 import { InputClasses } from '../input/input.type';
 import React from 'react';
@@ -45,7 +45,8 @@ export interface SimpleCheckboxProps
 }
 
 export interface CheckboxProps<T>
-  extends Omit<SimpleCheckboxProps, 'onChange' | 'checked' | 'renderFooter'> {
+  extends CommonChangeType<T>,
+    Omit<SimpleCheckboxProps, 'onChange' | 'checked' | 'renderFooter'> {
   /**
    * 选中后返回的值默认为 true
    */
