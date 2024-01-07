@@ -18,6 +18,7 @@ export type TreeModeType = 0 | 1 | 2 | 3 | 4;
 export type ResultItem<DataItem> = DataItem | UnMatchedData;
 
 export interface ComponentRef<DataItem, Value> {
+  jssStyle: JssStyleType;
   /**
    * @en Get the data corresponding to the value
    * @cn 获取 value 对应的 data

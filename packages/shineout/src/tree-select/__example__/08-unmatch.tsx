@@ -1,8 +1,8 @@
 /**
- * cn - 禁用
- *      -- 设置`disabled`属性禁用组件
- * en - Disabled
- *     -- Set the disabled property to disable the component
+ * cn - 渲染未匹配值
+ *    -- 通过`renderUnmatched`属性可以渲染未匹配的值
+ * en - renderUnmatched
+ *    -- The unmatched value can be rendered through the `renderUnmatched` property.
  */
 import React from 'react';
 import { TreeSelect } from 'shineout';
@@ -31,39 +31,26 @@ const data = [
       { id: '2-2', title: '2-2' },
     ],
   },
-  {
-    id: '3',
-    title: '3',
-    children: [
-      { id: '3-1', title: '3-1' },
-      { id: '3-2', title: '3-2' },
-    ],
-  },
+  { id: '3', title: '3', children: [{ id: '3-1', title: '3-1' }] },
 ];
+
 export default () => {
+  const renderUnmatched = (item: any) => {
+    return `I'm unmatched ${item}`;
+  };
+
   return (
     <div>
       <TreeSelect
         width={300}
-        disabled
-        clearable
-        style={{ width: 250 }}
-        keygen='id'
-        renderItem={(node) => `node ${node.title}`}
         data={data}
-        placeholder='Please select content'
-      />
-
-      <TreeSelect
-        style={{ marginLeft: 32 }}
-        width={300}
-        disabled={(v) => v.title.startsWith('2-')}
+        defaultValue='item'
         clearable
         keygen='id'
         renderItem={(node) => `node ${node.title}`}
-        data={data}
+        renderUnmatched={renderUnmatched}
         placeholder='Please select content'
-      />
+      ></TreeSelect>
     </div>
   );
 };
