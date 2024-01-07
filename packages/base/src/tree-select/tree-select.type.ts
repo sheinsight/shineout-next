@@ -146,7 +146,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @en value is your picker now
    * @cn 参数 为 当前选中值
    */
-  onChange: (value: Value, selected?: DataItem, path?: (string | number)[]) => void;
+  onChange?: (value: Value, selected?: DataItem, path?: (string | number)[]) => void;
 
   /**
    * @en onChange additional parameters (current is the data of the clicked node, data is the currently selected data, checked is whether it is selected or canceled in the multi-select state)
