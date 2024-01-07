@@ -40,4 +40,5 @@ export interface BaseTreeProps<DataItem = ObjectType> {
   mode?: TreeModeType;
   dataUpdate?: boolean;
   unmatch?: boolean;
+  onExpand?: (value: KeygenResult[]) => void;
 }

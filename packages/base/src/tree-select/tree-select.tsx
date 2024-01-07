@@ -36,7 +36,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     underline,
     showArrow = true,
     focusSelected = true,
-    position: positionProp,
+    position: positionProp = 'bottom-left',
     open: openProp,
     onCollapse: onCollapseProp,
     disabled,
@@ -54,6 +54,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     renderUnmatched,
     resultClassName,
     compressed,
+    unmatch = true,
     // getComponentRef,
     onChange: onChangeProp,
     compressedBound,
@@ -222,6 +223,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     if (!datum.current) return;
     const nextValue = datum.current.getValue();
     if (multiple) return nextValue;
+    console.log('nextValue', nextValue);
     return nextValue.length ? nextValue[0] : '';
   };
 
@@ -257,6 +259,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
   };
 
   const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
+    console.log('item', item);
     if (!datum.current) return;
     if (disabled === true || datum.current?.isDisabled(id)) return;
     const currentData = datum.current?.getDataByValues(id);
@@ -326,7 +329,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           compressedClassName={compressedClassName}
           multiple={multiple}
           placeholder={placeholder}
-          renderItem={renderItemProp}
+          // renderItem={renderItem}
           childrenKey={childrenKey}
           renderResult={getRenderResult}
           resultClassName={resultClassName}
@@ -371,7 +374,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
   };
 
   const renderList = () => {
-    const treeProps = {};
+    const treeProps: any = {};
 
     if (multiple) {
       treeProps.onChange = handleTreeChange;
@@ -379,6 +382,9 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
       treeProps.onClick = handleTreeChange;
       treeProps.renderItem = renderActive;
       treeProps.active = value;
+    }
+    if ('expanded' in props) {
+      treeProps.expanded = expanded;
     }
 
     return (
@@ -392,9 +398,9 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           mode={mode}
           data={filterData}
           keygen={keygen}
+          unmatch={unmatch}
           value={valueProp}
           loader={loader}
-          expanded={expanded}
           disabled={disabled}
           parentClickExpand={parentClickExpand}
           defaultExpanded={defaultExpanded}
@@ -404,17 +410,6 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
         ></Tree>
       </div>
     );
-  };
-
-  const getListStyle = () => {
-    const style: React.CSSProperties = {};
-    if (position.indexOf('top') > -1) {
-      style.transformOrigin = '0 100%';
-    }
-
-    style.width = width || '100%';
-
-    return style;
   };
 
   return (
@@ -445,7 +440,9 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           display={'block'}
           type='scale-y'
           duration={'fast'}
-          style={getListStyle()}
+          style={{
+            width: width || '100%',
+          }}
         >
           {renderList()}
         </AnimationList>

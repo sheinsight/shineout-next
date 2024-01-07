@@ -20,6 +20,6 @@ const jssStyle = {
   popover: usePopoverStyle,
   treeSelect: useTreeSelectStyle,
 };
-export default (props: TreeSelectProps) => {
+export default <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) => {
   return <TreeSelect jssStyle={jssStyle} {...props} />;
 };

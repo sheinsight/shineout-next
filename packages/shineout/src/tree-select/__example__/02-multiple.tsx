@@ -1,12 +1,9 @@
 /**
- * cn - 基本用法
- *    -- 基础的 TreeSelect 用法
- *    -- 默认`childrenKey`属性值为 'children'
- *    -- 单选模式下 TreeSelect 遵循`mode`属性规则，详见mode属性说明
- * en - Basic
- *    -- Basic usage of TreeSelect
- *    -- The default value of the `childrenKey` property is 'children'
- *    -- In single selection `mode`, TreeSelect follows the mode attribute rules, see the mode attribute description for details
+ * cn - 多选
+ *    -- 开启`multiple`属性后，可以选择多个节点
+ *    -- 注意，开启多选模式后，最终数据结果遵循`mode`属性规则，详见mode属性说明
+ * en - Multiple
+ *    -- Set `multiple` to true, you can select multiple nodes.
  */
 import React, { useState } from 'react';
 import { TreeSelect } from 'shineout';
@@ -48,6 +45,7 @@ export default () => {
   return (
     <div>
       <TreeSelect
+        multiple
         width={300}
         value={value}
         onChange={handleChange}

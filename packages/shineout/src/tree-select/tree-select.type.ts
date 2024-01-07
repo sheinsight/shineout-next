@@ -1,3 +1,6 @@
 import { TreeSelectProps as UnStyledTreeSelectProps } from '@sheinx/base';
 
-export type TreeSelectProps = Omit<UnStyledTreeSelectProps, 'jssStyle'>;
+export type TreeSelectProps<DataItem, Value> = Omit<
+  UnStyledTreeSelectProps<DataItem, Value>,
+  'jssStyle'
+>;

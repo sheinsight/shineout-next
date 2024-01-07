@@ -94,7 +94,6 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
       if (typeof renderUnmatched === 'function') return renderUnmatched(_data.value);
       return isObject(_data.value) ? renderResultProp(_data.value as DataItem) : _data.value;
     }
-
     return renderResultProp(data as DataItem);
   };
 
@@ -229,7 +228,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
   };
 
   useEffect(() => {
-    if (!multiple && showInput && value) {
+    if (!multiple && showInput && valueProp) {
       const result = getDataByValues(value);
       const content = renderResultContent(result[0]);
       if (!isEmpty(content)) {

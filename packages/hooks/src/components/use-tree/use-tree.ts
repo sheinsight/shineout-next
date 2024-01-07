@@ -386,7 +386,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     setTimeout(() => {
       firstRender.current = false;
     });
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     if (firstRender.current) return;

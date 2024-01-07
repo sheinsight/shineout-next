@@ -91,12 +91,12 @@ export interface TreeSelectProps<DataItem, Value>
    * @en callback function of blur event
    * @cn blur 事件回调函数
    */
-  onBlur: (e?: any) => void;
+  onBlur?: (e?: any) => void;
   /**
    * @en callback function of focus event
    * @cn focus 事件回调函数
    */
-  onFocus: (e?: any) => void;
+  onFocus?: (e?: any) => void;
   /**
    * @en When it is true, all nodes disable the selection; when it is a function, it determines whether it is disabled according to the return result of the function.
    * @cn 为 true 时，所有节点禁用选择，为函数时，根据函数返回结果确定是否禁用
@@ -177,7 +177,7 @@ export interface TreeSelectProps<DataItem, Value>
   underline?: boolean;
   border?: boolean;
   showArrow?: boolean;
-  childrenKey: keyof DataItem & string;
+  childrenKey?: keyof DataItem & string;
   focusSelected?: boolean;
   resultClassName?: ((value: DataItem) => string) | string;
   loader?: (key: KeygenResult, data: DataItem) => void;
@@ -188,6 +188,7 @@ export interface TreeSelectProps<DataItem, Value>
   parentClickExpand?: boolean;
   expanded?: KeygenResult[];
   trim?: boolean;
+  unmatch?: boolean;
   renderItem:
     | ObjectKey<DataItem>
     | ((

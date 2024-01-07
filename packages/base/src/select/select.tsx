@@ -61,7 +61,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     optionWidth = '100%',
     height = 250,
     open: openProp,
-    position: positionProp = 'auto',
+    position: positionProp = 'bottom-left',
     lineHeight,
     itemsInView,
     showArrow = true,
@@ -600,9 +600,6 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
 
   const getListStyle = () => {
     const style: React.CSSProperties = {};
-    if (position.indexOf('top') > -1) {
-      style.transformOrigin = '0 100%';
-    }
     if (autoAdapt) {
       if (width) {
         style.minWidth = width || 'auto';
