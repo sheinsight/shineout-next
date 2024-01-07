@@ -5,3 +5,7 @@ export const getDataAttribute = (attrs: Record<string, string>) => {
     return acc;
   }, {} as Record<string, string>);
 };
+
+export const getDataAttributeName = (name: string) => {
+  return `data-soui-${name}`;
+};

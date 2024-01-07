@@ -4,8 +4,8 @@
 export interface EditableAreaTokens {
   /**
    * @type {string}
-   * @token regular/14
-   * @description xxx字体字号
+   * @token 14/regular
+   * @description undefinedundefined字体字号
    */
   editableAreaFontSize: string;
 }

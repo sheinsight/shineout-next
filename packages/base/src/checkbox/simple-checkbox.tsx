@@ -4,13 +4,14 @@ import React from 'react';
 import { SimpleCheckboxProps } from './checkbox.type';
 
 const Checkbox = (props: SimpleCheckboxProps) => {
-  const { jssStyle, className, style, children, renderFooter, size, ...rest } = props;
+  const { jssStyle, className, style, children, renderFooter, size, theme, ...rest } = props;
   const checkboxStyle = jssStyle?.checkbox?.();
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
-    checked: props.checked === 'indeterminate' ? false : props.checked,
-    defaultChecked: props.defaultChecked === 'indeterminate' ? false : props.defaultChecked,
+    checked: props.checked === 'indeterminate' ? true : props.checked,
+    defaultChecked: props.defaultChecked === 'indeterminate' ? true : props.defaultChecked,
   });
+
   const rootClass = classNames(
     className,
     checkboxStyle?.wrapper,
@@ -19,6 +20,11 @@ const Checkbox = (props: SimpleCheckboxProps) => {
     !!disabled && checkboxStyle?.wrapperDisabled,
     !!checked && checkboxStyle?.wrapperChecked,
     props.checked === 'indeterminate' && checkboxStyle?.wrapperIndeterminate,
+  );
+
+  const indicatorClass = classNames(
+    checkboxStyle?.indicatorWrapper,
+    theme === 'dark' && checkboxStyle?.darkIndicatorWrapper,
   );
 
   const inputProps = getInputProps();
@@ -31,7 +37,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
       })}
     >
       <input {...inputProps} type='checkbox' />
-      <span className={checkboxStyle?.indicatorWrapper}>
+      <span className={indicatorClass}>
         <i {...getIndicatorProps()} className={checkboxStyle?.indicator}>
           {props.checked === 'indeterminate' ? (
             <svg viewBox='0 0 16 16' fill='currentColor'>

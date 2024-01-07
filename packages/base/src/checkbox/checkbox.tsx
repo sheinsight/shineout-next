@@ -24,7 +24,7 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     defaultValue: defaultValuePo,
     onChange: onChangePo,
     control: 'value' in props,
-    beforeChange: undefined,
+    beforeChange: props.beforeChange,
   });
 
   // 兼容历史版本的inputable
@@ -58,6 +58,7 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
   });
 
   const inputValue = typeof value === 'string' ? value : '';
+
   return (
     <SimpleCheckbox
       jssStyle={jssStyle}

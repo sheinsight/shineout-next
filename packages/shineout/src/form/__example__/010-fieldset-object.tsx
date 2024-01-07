@@ -52,7 +52,6 @@ const App: React.FC = () => {
               </Input.Group>
             </Form.FieldSet>
           </Form.Item>
-
           <Form.Item label='Age'>
             <Input
               name='age'
@@ -65,9 +64,12 @@ const App: React.FC = () => {
           </Form.Item>
         </Form.FieldSet>
       </Form.Item>
+      {/* <Form.Item label='333'>
+        <Input name="333"></Input>
+      </Form.Item> */}
       <Form.Item label=''>
-        <button type='submit'>Submit</button>
-        <button type='reset'>Reset</button>
+        <Form.Submit>Submit</Form.Submit>
+        <Form.Reset>Reset</Form.Reset>
       </Form.Item>
     </Form>
   );

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { addResizeObserver } from '../../utils/dom/element';
-import { banOverScrollx } from '../../utils/dom/scrollBehavior';
+import { banOverScrollx } from '../../utils/dom/scroll-behavior';
 import { UseTransformProps } from './use-transform.type';
 
 const useTransform = <T>(props: UseTransformProps) => {

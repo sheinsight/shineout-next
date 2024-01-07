@@ -2,8 +2,9 @@ import SimpleInputInput from './simple-input';
 import { useInputFormat, util } from '@sheinx/hooks';
 import { InputProps } from './input.type';
 import useInputCommon from './use-input-common';
+import React from 'react';
 
-export default (props: InputProps) => {
+const Input = (props: InputProps) => {
   const commonProps = useInputCommon<InputProps['value'], InputProps>(props);
 
   const inputFormatParams = {
@@ -35,3 +36,5 @@ export default (props: InputProps) => {
     />
   );
 };
+
+export default React.memo(Input);

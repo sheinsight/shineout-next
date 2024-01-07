@@ -70,7 +70,7 @@ const radioStyle: JsStyles<RadioClass> = {
       background: 'transparent',
       borderRadius: '50%',
     },
-    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &': {
+    '$wrapper:not($wrapperChecked):not($wrapperDisabled):hover &': {
       '&::before': {
         background: token.radioIconWrapperFill,
       },
@@ -113,7 +113,7 @@ const radioStyle: JsStyles<RadioClass> = {
       backgroundColor: token.radioIconDisabledBackgroundColor,
       color: token.radioIconDisabledColor,
     },
-    '$wrapperDisabled$wrapperChecked &, $wrapperDisabled$wrapperIndeterminate &': {
+    '$wrapperDisabled$wrapperChecked &, $wrapperDisabled &': {
       backgroundColor: token.radioIconCheckedDisabledBackgroundColor,
       color: token.radioIconCheckedDisabledColor,
     },
@@ -130,9 +130,7 @@ const radioStyle: JsStyles<RadioClass> = {
       fontSize: token.radioLargeLabelFontSize,
     },
   },
-  group: {
-    // padding: '5px 0',
-  },
+  group: {},
   groupBlock: {
     '& $wrapper': {
       display: 'flex',

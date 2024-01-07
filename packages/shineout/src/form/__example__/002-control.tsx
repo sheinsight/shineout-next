@@ -5,7 +5,7 @@
  *    -- You can use formRef to get some methods of the form, including validation, clear validation, submission, etc.
  */
 import React, { useEffect, useRef, useState } from 'react';
-import { Form, Input, TYPE } from 'shineout';
+import { Form, Input, TYPE, Button } from 'shineout';
 
 type ValueType = {
   name?: string;
@@ -32,14 +32,9 @@ const App: React.FC = () => {
       }}
     >
       <div style={{ margin: '20px 0' }}>
-        <button type='button' onClick={() => form.current?.reset()}>
-          reset
-        </button>
-        <button type='button' onClick={() => form.current?.submit()}>
-          submit
-        </button>
-        <button
-          type='button'
+        <Button onClick={() => form.current?.reset()}>reset</Button>
+        <Button onClick={() => form.current?.submit()}>submit</Button>
+        <Button
           onClick={() =>
             form.current?.validate().catch((e) => {
               console.error(e);
@@ -47,23 +42,17 @@ const App: React.FC = () => {
           }
         >
           validate
-        </button>
-        <button type='button' onClick={() => form.current?.clearValidate()}>
-          clear validate
-        </button>
-        <button type='button' onClick={() => console.log(form.current?.getValue())}>
-          get value
-        </button>
-        <button type='button' onClick={() => form.current?.submit(false)}>
-          submit without validate
-        </button>
+        </Button>
+        <Button onClick={() => form.current?.clearValidate()}>clear validate</Button>
+        <Button onClick={() => console.log(form.current?.getValue())}>get value</Button>
+        <Button onClick={() => form.current?.submit(false)}>submit without validate</Button>
       </div>
 
-      <Form.Item label='name'>
+      <Form.Item label='name' required>
         <Input name='name' rules={[{ required: true, message: 'name is required' }]} />
       </Form.Item>
 
-      <Form.Item label='Password'>
+      <Form.Item label='Password' required>
         <Input.Password
           name='password'
           rules={[{ required: true, message: 'password is required' }]}
@@ -71,8 +60,8 @@ const App: React.FC = () => {
       </Form.Item>
 
       <Form.Item label=''>
-        <button type='submit'>Submit</button>
-        <button type='reset'>Reset</button>
+        <Form.Submit>Submit</Form.Submit>
+        <Form.Reset>Reset</Form.Reset>
       </Form.Item>
     </Form>
   );

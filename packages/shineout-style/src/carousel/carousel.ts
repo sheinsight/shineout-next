@@ -229,20 +229,22 @@ const carouselStyle: JsStyles<CarouselClassType> = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  indicatorTypeNumber: {
-    gap: '8px',
-  },
+  indicatorTypeNumber: {},
   indicatorTypeCircle: {
-    gap: token.carouselIndicatorCircleGap,
     '& $indicator': {
+      '&:not(:first-child)': {
+        marginLeft: token.carouselIndicatorCircleGap,
+      },
       width: token.carouselIndicatorCircleWidth,
       height: token.carouselIndicatorCircleWidth,
       borderRadius: '50%',
     },
   },
   indicatorTypeLine: {
-    gap: token.carouselIndicatorLineGap,
     '& $indicator': {
+      '&:not(:first-child)': {
+        marginLeft: token.carouselIndicatorLineGap,
+      },
       width: token.carouselIndicatorLineWidth,
       height: token.carouselIndicatorLineHeight,
       borderRadius: '100px',
@@ -272,6 +274,7 @@ const carouselStyle: JsStyles<CarouselClassType> = {
     },
   },
   indicatorNumber: {
+    margin: '0 8px',
     fontSize: token.carouselIndicatorNumberFontSize,
     lineHeight: 1,
     color: token.carouselIndicatorNumberColor,

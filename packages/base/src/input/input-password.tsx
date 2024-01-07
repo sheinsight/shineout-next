@@ -1,3 +1,4 @@
+import React from 'react';
 import SimpleInput from './simple-input';
 import { useInputPassword, util } from '@sheinx/hooks';
 import useInputCommon from './use-input-common';
@@ -5,7 +6,7 @@ import useInputCommon from './use-input-common';
 import { InputPasswordProps } from './input-password.type';
 import icons from '../icons';
 
-export default (props: InputPasswordProps) => {
+const Password = (props: InputPasswordProps) => {
   const commonProps = useInputCommon<InputPasswordProps['value'], InputPasswordProps>(props);
   const inputStyle = props.jssStyle?.input?.();
 
@@ -44,3 +45,5 @@ export default (props: InputPasswordProps) => {
 
   return <SimpleInput {...forwardProps} {...inputProps} suffix={suffix} />;
 };
+
+export default React.memo(Password);

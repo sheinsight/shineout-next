@@ -10,16 +10,24 @@ function replaceNonAlphanumeric(str: string) {
   return result;
 }
 
-export const cssvar = (str: string, value: string, size?: string) => {
+function camelCaseToDash(str: string) {
+  return str.replace(/([A-Z])/g, '-$1').toLowerCase();
+}
+
+export const cssvar = (str: string, value: string, key: string, size?: string) => {
   if (str.indexOf('Size-') > -1) {
     // 正则提取出Size-后面的数字
     const sizeReg = /Size-(\d+)/;
+    // 正则提取出以px结尾的数字
     const sizeNum = sizeReg.exec(str);
     if (sizeNum) {
-      return `var(${cssvarFlag}${replaceNonAlphanumeric(str)},${
-        Number(sizeNum[1]) * Number(size)
-      }px)`;
+      return `${Number(sizeNum[1]) * Number(size)}px`;
     }
   }
-  return `var(${cssvarFlag}${replaceNonAlphanumeric(str)},${value})`;
+  const pxReg = /(\d+)px/;
+  const pxNum = pxReg.exec(str);
+  if (pxNum) {
+    return `${Number(pxNum[1])}px`;
+  }
+  return `var(--${camelCaseToDash(key)},var(${cssvarFlag}${replaceNonAlphanumeric(str)},${value}))`;
 };

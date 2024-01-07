@@ -1,5 +1,5 @@
 import { CheckboxGroupProps } from './checkbox-group.type';
-import { useInputAble, useListSelect, usePersistFn, util } from '@sheinx/hooks';
+import { useInputAble, useListSelectMultiple, usePersistFn, util } from '@sheinx/hooks';
 import groupContext from './group-context';
 import Checkbox from './checkbox';
 import React from 'react';
@@ -30,7 +30,7 @@ const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem
     data: props.data || ([] as DataItem[]),
   };
 
-  const datum = useListSelect<DataItem, Value>(useListParams);
+  const datum = useListSelectMultiple<DataItem, Value>(useListParams);
 
   const handleItemChange = usePersistFn(
     (_: DataItem | undefined, checked: boolean, raw: DataItem) => {

@@ -1,4 +1,6 @@
 import { ObjectType } from '../common/type';
+import { UnMatchedData } from '../common/use-list-select/use-list.type';
+import React from 'react';
 
 export function isBrowser() {
   return !!(typeof window !== 'undefined' && window.document && window.document.createElement);
@@ -19,6 +21,7 @@ export const isError = (val: unknown): boolean => val instanceof Error;
 export const isNumber = (n: unknown): n is number => typeof n === 'number';
 export const isRegexp = (val: unknown): boolean => val instanceof RegExp;
 export const isString = (s: unknown): s is string => typeof s === 'string';
+export const isUndefined = (obj: any): obj is undefined => obj === undefined;
 export const isMap = nameIs('Map');
 export const isSet = nameIs('Set');
 export const isBuffer = (val: unknown): boolean => {
@@ -32,7 +35,9 @@ export const isBuffer = (val: unknown): boolean => {
   }
   return false;
 };
-
+export const isUnMatchedData = (val: unknown): val is UnMatchedData => {
+  return isObject(val) && val.IS_NOT_MATCHED_VALUE;
+};
 export const isMergeable = (val: unknown): boolean => {
   if (!isObject(val)) return false;
   const fns = [isDate, isError, isRegexp, isMap, isSet, isBuffer];
@@ -67,3 +72,18 @@ export const isEmpty = (val: unknown): boolean => {
 
   return false;
 };
+
+export const isLink = (el: unknown): el is React.ReactElement => {
+  if (typeof el === 'object') {
+    if (!React.isValidElement(el)) return false;
+    if (!el.type) return false;
+    if (el.type === 'a') return true;
+    if (el.props && (el as React.ReactElement).props.to) return true;
+  }
+
+  return false;
+};
+
+export const isMacOS = (): boolean => /macintosh|mac os x/i.test(navigator.userAgent);
+
+export const isFirefox = (): boolean => navigator.userAgent.toLowerCase().indexOf('firefox') > -1;

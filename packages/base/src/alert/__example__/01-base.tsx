@@ -18,6 +18,14 @@ export default () => {
       <Alert jssStyle={{ alert: useAlertStyle }} type='warning' icon>
         23333
       </Alert>
+      <br />
+      <Alert jssStyle={{ alert: useAlertStyle }} type='danger' icon>
+        23333
+      </Alert>
+      <br />
+      <Alert jssStyle={{ alert: useAlertStyle }} type='error' icon>
+        23333
+      </Alert>
     </div>
   );
 };

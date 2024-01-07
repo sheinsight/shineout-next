@@ -10,8 +10,8 @@ Form
 
 # Describe
 
-高性能表单控件，自带数据域管理。包含数据录入、校验以及对应样式。
-Users can input or edit text in the text box.
+用以收集、校验和提交数据，一般由输入框、单选框、复选框、选择器等控件组成。
+It is used to collect, verify and submit data, and is generally composed of input boxes, radio boxes, check boxes, selectors and other controls
 
 # Example
 

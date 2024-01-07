@@ -9,16 +9,29 @@ exports[`Radio[Base] should render correctly  1`] = `
     tabindex="0"
     type="radio"
   />
-  <div
-    class="radio-indicatorWrapper-0-2-4"
-  >
-    <i
-      class="radio-indicator-0-2-5"
-      tabindex="1"
-    />
-  </div>
   <span
-    class="radio-desc-0-2-6"
+    class="radio-indicatorWrapper-0-2-6"
+  >
+    <span
+      class="radio-indicator-0-2-7"
+      tabindex="1"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+  </span>
+  <span
+    class="radio-desc-0-2-8"
   >
     Option
   </span>
@@ -27,7 +40,7 @@ exports[`Radio[Base] should render correctly  1`] = `
 
 exports[`Radio[Base] should render correctly about block 1`] = `
 <div
-  class="radio-group-0-2-7"
+  class="radio-group-0-2-9"
 >
   <div
     class="radio-wrapper-0-2-1"
@@ -37,16 +50,29 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       red
     </span>
@@ -59,22 +85,35 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       orange
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4"
   >
     <input
       checked=""
@@ -82,16 +121,29 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       yellow
     </span>
@@ -104,16 +156,29 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       green
     </span>
@@ -126,16 +191,29 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       cyan
     </span>
@@ -148,16 +226,29 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       blue
     </span>
@@ -170,16 +261,29 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       violet
     </span>
@@ -189,10 +293,10 @@ exports[`Radio[Base] should render correctly about block 1`] = `
 
 exports[`Radio[Base] should render correctly about button 1`] = `
 <div
-  class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+  class="radio-group-0-2-9 radio-groupButton-0-2-11 button-group-0-2-32"
 >
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -204,7 +308,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -216,7 +320,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10"
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4 button-primary-0-2-16 button-button-0-2-12"
   >
     <input
       checked=""
@@ -229,7 +333,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -241,7 +345,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -253,7 +357,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -265,7 +369,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -281,10 +385,10 @@ exports[`Radio[Base] should render correctly about button 1`] = `
 
 exports[`Radio[Base] should render correctly about button outline 1`] = `
 <div
-  class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+  class="radio-group-0-2-9 radio-groupButton-0-2-11 button-group-0-2-32"
 >
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -296,7 +400,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -308,7 +412,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4 button-primary-0-2-16 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       checked=""
@@ -321,7 +425,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -333,7 +437,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -345,7 +449,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -357,7 +461,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+    class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
   >
     <input
       style="display: none;"
@@ -373,10 +477,10 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
 
 exports[`Radio[Base] should render correctly about cancel 1`] = `
 <div
-  class="radio-group-0-2-7"
+  class="radio-group-0-2-9"
 >
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4"
   >
     <input
       checked=""
@@ -384,16 +488,29 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       red
     </span>
@@ -406,16 +523,29 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       orange
     </span>
@@ -428,16 +558,29 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       yellow
     </span>
@@ -450,16 +593,29 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       green
     </span>
@@ -472,16 +628,29 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       cyan
     </span>
@@ -494,16 +663,29 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       blue
     </span>
@@ -516,16 +698,29 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       violet
     </span>
@@ -535,10 +730,10 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
 
 exports[`Radio[Base] should render correctly about disabled 1`] = `
 <div
-  class="radio-group-0-2-7"
+  class="radio-group-0-2-9"
 >
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-5"
   >
     <input
       disabled=""
@@ -546,22 +741,35 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="-1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       red
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-5"
   >
     <input
       disabled=""
@@ -569,22 +777,35 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="-1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       orange
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-5"
   >
     <input
       disabled=""
@@ -592,22 +813,35 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="-1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       yellow
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-5"
   >
     <input
       disabled=""
@@ -615,22 +849,35 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="-1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       green
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-5"
   >
     <input
       disabled=""
@@ -638,22 +885,35 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="-1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       cyan
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3 radio-wrapperChecked-0-2-2"
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-5 radio-wrapperChecked-0-2-4"
   >
     <input
       checked=""
@@ -662,22 +922,35 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="-1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       blue
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-5"
   >
     <input
       disabled=""
@@ -685,16 +958,29 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="-1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       violet
     </span>
@@ -704,7 +990,7 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
 
 exports[`Radio[Base] should render correctly about disabled func 1`] = `
 <div
-  class="radio-group-0-2-7"
+  class="radio-group-0-2-9"
 >
   <div
     class="radio-wrapper-0-2-1"
@@ -714,16 +1000,29 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       red
     </span>
@@ -736,22 +1035,35 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       orange
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-3"
+    class="radio-wrapper-0-2-1 radio-wrapperDisabled-0-2-5"
   >
     <input
       disabled=""
@@ -759,16 +1071,29 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="-1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       yellow
     </span>
@@ -781,16 +1106,29 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       green
     </span>
@@ -803,22 +1141,35 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       cyan
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4"
   >
     <input
       checked=""
@@ -826,16 +1177,29 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       blue
     </span>
@@ -848,16 +1212,29 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       violet
     </span>
@@ -867,7 +1244,7 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
 
 exports[`Radio[Base] should render correctly about group 1`] = `
 <div
-  class="radio-group-0-2-7"
+  class="radio-group-0-2-9"
 >
   <div
     class="radio-wrapper-0-2-1"
@@ -877,16 +1254,29 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       red
     </span>
@@ -899,16 +1289,29 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       orange
     </span>
@@ -921,16 +1324,29 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       yellow
     </span>
@@ -943,16 +1359,29 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       green
     </span>
@@ -965,22 +1394,35 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       cyan
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4"
   >
     <input
       checked=""
@@ -988,16 +1430,29 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       blue
     </span>
@@ -1010,16 +1465,29 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       violet
     </span>
@@ -1029,7 +1497,7 @@ exports[`Radio[Base] should render correctly about group 1`] = `
 
 exports[`Radio[Base] should render correctly about group children 1`] = `
 <div
-  class="radio-group-0-2-7"
+  class="radio-group-0-2-9"
 >
   <div
     class="radio-wrapper-0-2-1"
@@ -1039,16 +1507,29 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       red
     </span>
@@ -1061,22 +1542,35 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       orange
     </span>
   </div>
   <div
-    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2"
+    class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4"
   >
     <input
       checked=""
@@ -1084,16 +1578,29 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       yellow
     </span>
@@ -1106,16 +1613,29 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       green
     </span>
@@ -1128,16 +1648,29 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       cyan
     </span>
@@ -1150,16 +1683,29 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       blue
     </span>
@@ -1172,16 +1718,29 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       tabindex="0"
       type="radio"
     />
-    <div
-      class="radio-indicatorWrapper-0-2-4"
-    >
-      <i
-        class="radio-indicator-0-2-5"
-        tabindex="1"
-      />
-    </div>
     <span
-      class="radio-desc-0-2-6"
+      class="radio-indicatorWrapper-0-2-6"
+    >
+      <span
+        class="radio-indicator-0-2-7"
+        tabindex="1"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="radio-desc-0-2-8"
     >
       violet
     </span>
@@ -1192,10 +1751,10 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
 exports[`Radio[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+    class="radio-group-0-2-9 radio-groupButton-0-2-11 button-group-0-2-32"
   >
     <button
-      class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10 button-small-0-2-11"
+      class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4 button-primary-0-2-16 button-button-0-2-12 button-small-0-2-13"
     >
       <input
         checked=""
@@ -1208,7 +1767,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20 button-small-0-2-11"
+      class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22 button-small-0-2-13"
     >
       <input
         style="display: none;"
@@ -1220,7 +1779,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20 button-small-0-2-11"
+      class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22 button-small-0-2-13"
     >
       <input
         style="display: none;"
@@ -1234,11 +1793,11 @@ exports[`Radio[Base] should render correctly about size 1`] = `
   </div>
   <br />
   <div
-    class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+    class="radio-group-0-2-9 radio-groupButton-0-2-11 button-group-0-2-32"
     style="margin-top: 24px;"
   >
     <button
-      class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10"
+      class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4 button-primary-0-2-16 button-button-0-2-12"
     >
       <input
         checked=""
@@ -1251,7 +1810,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+      class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
     >
       <input
         style="display: none;"
@@ -1263,7 +1822,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20"
+      class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22"
     >
       <input
         style="display: none;"
@@ -1277,11 +1836,11 @@ exports[`Radio[Base] should render correctly about size 1`] = `
   </div>
   <br />
   <div
-    class="radio-group-0-2-7 radio-groupButton-0-2-9 button-group-0-2-30"
+    class="radio-group-0-2-9 radio-groupButton-0-2-11 button-group-0-2-32"
     style="margin-top: 24px;"
   >
     <button
-      class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-2 button-primary-0-2-14 button-button-0-2-10 button-large-0-2-12"
+      class="radio-wrapper-0-2-1 radio-wrapperChecked-0-2-4 button-primary-0-2-16 button-button-0-2-12 button-large-0-2-14"
     >
       <input
         checked=""
@@ -1294,7 +1853,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20 button-large-0-2-12"
+      class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22 button-large-0-2-14"
     >
       <input
         style="display: none;"
@@ -1306,7 +1865,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="radio-wrapper-0-2-1 button-secondary-0-2-15 button-button-0-2-10 button-outline-0-2-20 button-large-0-2-12"
+      class="radio-wrapper-0-2-1 button-secondary-0-2-17 button-button-0-2-12 button-outline-0-2-22 button-large-0-2-14"
     >
       <input
         style="display: none;"
@@ -1331,16 +1890,29 @@ exports[`Radio[Base] should render correctly about status 1`] = `
     tabindex="0"
     type="radio"
   />
-  <div
-    class="radio-indicatorWrapper-0-2-4"
-  >
-    <i
-      class="radio-indicator-0-2-5"
-      tabindex="1"
-    />
-  </div>
   <span
-    class="radio-desc-0-2-6"
+    class="radio-indicatorWrapper-0-2-6"
+  >
+    <span
+      class="radio-indicator-0-2-7"
+      tabindex="1"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+  </span>
+  <span
+    class="radio-desc-0-2-8"
   >
     OptionA
   </span>

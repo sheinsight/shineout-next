@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import { AlertClasses, AlertProps } from './alert.type';
 import Icons from '../icons';
+import AlertIcon from './alert-icon';
 
 const HIDE = 0;
 const SHOW = 1;
@@ -10,7 +11,7 @@ const PENDING = 2;
 const Alert = (props: AlertProps) => {
   const {
     jssStyle,
-    type = 'warning',
+    type: typeProp = 'warning',
     className,
     children,
     icon,
@@ -24,14 +25,15 @@ const Alert = (props: AlertProps) => {
     ...rest
   } = props;
   const [dismiss, setDismiss] = useState(SHOW);
-
-  const icons = {
-    info: Icons.PcInfoCircleFill,
-    success: Icons.PcCheckCircleFill,
-    warning: Icons.PcWarningCircleFill,
-    danger: Icons.PcCloseCircleFill,
-    confirmwarning: Icons.PcWarningCircleFill,
+  const getType = () => {
+    if (typeProp === 'error') {
+      return 'danger';
+    }
+    return typeProp;
   };
+
+  const type = getType();
+
   const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
   const rootClass = classNames(className, alertStyle.alert, {
     [alertStyle[type]]: true,
@@ -71,11 +73,7 @@ const Alert = (props: AlertProps) => {
       style.width = iconSize;
     }
     if (icon === true) {
-      return (
-        <div className={alertStyle.icon} style={style}>
-          {icons[type]}
-        </div>
-      );
+      return <AlertIcon jssStyle={props.jssStyle} style={style} type={props.type} />;
     }
 
     return (

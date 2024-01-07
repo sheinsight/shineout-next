@@ -1,4 +1,4 @@
-import { CommonType } from '../common/type';
+import { CommonType, CommonChangeType } from '../common/type';
 import { BaseCheckProps } from '@sheinx/hooks';
 import { InputClasses } from '../input/input.type';
 import React from 'react';
@@ -21,6 +21,7 @@ export interface CheckboxClasses {
   wrapperIndeterminate: string;
   indicator: string;
   indicatorWrapper: string;
+  darkIndicatorWrapper: string;
   desc: string;
   input: string;
   group: string;
@@ -34,17 +35,18 @@ export interface CheckboxStyle {
 
 export interface SimpleCheckboxProps
   extends Omit<BaseCheckProps, 'checked' | 'defaultChecked'>,
-    Pick<CommonType, 'style' | 'className'> {
-  jssStyle: CheckboxStyle;
+    Pick<CommonType, 'style' | 'className' | 'size'> {
+  jssStyle?: CheckboxStyle;
   children?: React.ReactNode;
   checked?: boolean | 'indeterminate';
   defaultChecked?: boolean | 'indeterminate';
   renderFooter?: (checked?: boolean) => React.ReactNode;
-  size?: 'small' | 'large';
+  theme?: 'dark';
 }
 
 export interface CheckboxProps<T>
-  extends Omit<SimpleCheckboxProps, 'onChange' | 'checked' | 'renderFooter'> {
+  extends CommonChangeType<T>,
+    Omit<SimpleCheckboxProps, 'onChange' | 'checked' | 'renderFooter'> {
   /**
    * 选中后返回的值默认为 true
    */

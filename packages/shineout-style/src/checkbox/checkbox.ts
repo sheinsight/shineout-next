@@ -10,6 +10,7 @@ export type CheckboxClass =
   | 'wrapperIndeterminate'
   | 'indicator'
   | 'indicatorWrapper'
+  | 'darkIndicatorWrapper'
   | 'desc'
   | 'input'
   | 'group'
@@ -50,7 +51,6 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       width: token.checkboxLargeIconSize,
       height: token.checkboxLargeIconSize,
     },
-    marginRight: token.checkboxIconGap,
     verticalAlign: 'middle',
     '&::before': {
       content: '" "',
@@ -73,6 +73,13 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       '& $indicator': {
         backgroundColor: token.checkboxIconHoverBackgroundColor,
         color: token.checkboxIconHoverColor,
+      },
+    },
+  },
+  darkIndicatorWrapper: {
+    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &': {
+      '&::before': {
+        background: token.checkboxIconCircleDark,
       },
     },
   },
@@ -119,6 +126,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
   desc: {
     verticalAlign: 'middle',
     boxSizing: 'border-box',
+    marginLeft: token.checkboxIconGap,
     fontSize: token.checkboxLabelFontSize,
     '$wrapperSmall &': {
       fontSize: token.checkboxSmallLabelFontSize,

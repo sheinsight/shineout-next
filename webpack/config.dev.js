@@ -23,6 +23,7 @@ const webpackConfig = {
       '@sheinx/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
       '@sheinx/hooks': path.resolve(__dirname, '../packages/hooks/src'),
       '@sheinx/theme': path.resolve(__dirname, '../packages/theme/src'),
+      '@sheinx/mock': path.resolve(__dirname, '../packages/mock/src'),
     },
   },
   module: {
@@ -49,9 +50,6 @@ const webpackConfig = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
-          },
         },
       },
     ],

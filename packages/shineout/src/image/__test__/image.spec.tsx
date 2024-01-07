@@ -57,6 +57,12 @@ type ImageShapeType = 'rounded' | 'circle' | 'thumbnail';
 type ImageFitType = 'fill' | 'center' | 'fit' | 'stretch';
 type ImageTargetType = '_self' | '_blank' | '_modal' | '_download';
 
+beforeAll(() => {
+  jest.useFakeTimers();
+});
+afterAll(() => {
+  jest.runAllTimers();
+});
 afterEach(cleanup);
 describe('Image[Base]', () => {
   mountTest(Image);

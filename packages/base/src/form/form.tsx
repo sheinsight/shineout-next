@@ -1,34 +1,68 @@
-import { ObjectType, useForm, useInputAble } from '@sheinx/hooks';
+import { useForm, useLatestObj, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
-import * as React from 'react';
-import { FormProps } from './form.type';
+import { ModalFormContext } from '../modal/modal-context';
+import React, { useContext, useEffect } from 'react';
+
+import type { FormProps } from './form.type';
+import type { ObjectType } from '@sheinx/hooks';
 
 const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, formRef, ...rest } = props;
   const formClasses = jssStyle?.form?.();
-  const { value, onChange } = useInputAble({
-    value: props.value,
-    defaultValue: props.defaultValue,
-    control: 'value' in props,
-    onChange: props.onChange,
-    beforeChange: undefined,
+
+  const modalFormContext = useContext(ModalFormContext);
+
+  const { value = props.defaultValue, onChange } = props;
+
+  const { Provider, ProviderProps, getFormProps, formFunc } = useForm({ ...rest, value, onChange });
+
+  const validate = usePersistFn(() => {
+    return formFunc.validateFields();
   });
-  const { Provider, ProviderProps, getFormProps, func } = useForm({ ...rest, value, onChange });
+  const validateFields = usePersistFn((fileds: string | string[]) => {
+    return formFunc.validateFields(fileds).catch(() => {});
+  });
+  const formRefObj = useLatestObj({
+    clearValidate: formFunc.clearErrors,
+    getValue: formFunc.getValue,
+    reset: formFunc.reset,
+    submit: formFunc.submit,
+    validate,
+    validateFields,
+    validateFieldsWithError: formFunc.validateFields,
+  });
+
   React.useEffect(() => {
     if (formRef) {
       if (typeof formRef === 'function') {
-        formRef(func);
+        formRef(formRefObj);
       } else {
-        formRef.current = func;
+        formRef.current = formRefObj;
       }
     }
-  }, [func]);
+  }, [formRefObj]);
+
+  const handleFormModalInfo = () => {
+    let status: 'disabled' | 'pending' | undefined = undefined;
+    if (props.disabled) {
+      status = 'disabled';
+    }
+    if (props.pending) {
+      status = 'pending';
+    }
+    if (status !== modalFormContext?.formStats) {
+      modalFormContext?.setFormStats(status);
+    }
+    modalFormContext?.setFormInfo(formRefObj);
+  };
+  useEffect(() => {
+    handleFormModalInfo();
+  }, [props.disabled, props.pending]);
+
   const rootClass = classNames([
-    formClasses.wrapper,
+    formClasses?.wrapper,
     className,
-    {
-      [formClasses.wrapperInline]: props.inline,
-    },
+    props.inline && formClasses?.wrapperInline,
   ]);
 
   return (

@@ -76,3 +76,36 @@ export const addResizeObserver = (
     cleanTimer();
   };
 };
+
+export function getParent(el: HTMLElement | null | Element, target?: string | HTMLElement) {
+  if (!target) {
+    return null;
+  }
+
+  let temp: HTMLElement | Element | null = el;
+  while (temp) {
+    if (typeof target === 'string') {
+      if (temp.matches && temp.matches(target)) {
+        return temp;
+      }
+    } else if (temp === target) {
+      return temp;
+    }
+
+    temp = temp.parentElement;
+  }
+
+  return null;
+}
+
+export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {
+  const element = document.createElement('div');
+  if (attr in element.style) {
+    if (attr !== 'length' && attr !== 'parentRule') {
+      const attrs = element.style[attr];
+      element.style[attr] = value as keyof typeof attrs;
+    }
+    return element.style[attr] === value;
+  }
+  return false;
+}

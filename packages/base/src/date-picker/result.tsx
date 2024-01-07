@@ -2,7 +2,7 @@ import { DatePickerProps, getLocale, useConfig } from '@sheinx/base';
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
-const Input = (props: {
+export const Input = (props: {
   className?: string;
   value: string;
   placeholder?: string;

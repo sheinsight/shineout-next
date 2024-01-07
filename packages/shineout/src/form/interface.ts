@@ -10,3 +10,5 @@ export type {
   FormFieldProps as FieldProps,
   FormFieldSetProps as FieldSetProps,
 } from './form.type';
+
+export type { ButtonProps as SubmitProps, ButtonProps as ResetProps } from '../button/button.type';

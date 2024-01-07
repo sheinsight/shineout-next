@@ -14,7 +14,7 @@ const BaseRate = (props: BaseRateProps) => {
 };
 
 const Rate = (props: RateProps) => {
-  return useFieldCommon(props, BaseRate);
+  return useFieldCommon(props, BaseRate, 'number');
 };
 
 export default (

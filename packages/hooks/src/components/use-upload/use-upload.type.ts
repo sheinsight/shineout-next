@@ -155,6 +155,11 @@ export interface UseUploadProps<ValueItem = any> {
    * @en Whether it is an image upload
    */
   isImage?: boolean;
+  /**
+   * @en ignore image preview
+   * @cn 是否忽略上传图片预览
+   */
+  ignorePreview?: boolean;
   text?: {
     forceAcceptErrorMsg: string;
     invalidImage: string;

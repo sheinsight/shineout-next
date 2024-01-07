@@ -19,7 +19,7 @@ const Debug = (props: CopyProps) => {
   const [relative, setRelative] = useState(true);
   const [scroll, setScroll] = useState(false);
   const [reload, setReload] = useState(false);
-  const [flexCenter, setFlexCenter] = useState(true);
+  const [flexCenter, setFlexCenter] = useState(false);
   const [y, setY] = useState(0);
   const searchParams = new URLSearchParams(location.search);
 
