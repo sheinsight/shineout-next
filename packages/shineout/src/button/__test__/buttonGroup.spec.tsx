@@ -1,4 +1,4 @@
-import { render, screen, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import Button from '..';
 import { classTest, createClassName } from '../../tests/utils';
 import ButtonGroup from '../__example__/s-008-group';
@@ -42,7 +42,6 @@ describe('ButtonGroup[Base]', () => {
         <Button type='success'>success</Button>
       </Button.Group>,
     );
-    screen.debug();
     container.querySelectorAll('button').forEach((button) => {
       expect(button.classList[0].includes(button.textContent as string)).toBeTruthy();
     });
@@ -90,7 +89,6 @@ describe('ButtonGroup[Base]', () => {
         <div>test</div>
       </Button.Group>,
     );
-    screen.debug();
     expect(container.querySelector(group)?.classList.contains(round)).toBeTruthy();
   });
   test('should not click when set click in button group', () => {

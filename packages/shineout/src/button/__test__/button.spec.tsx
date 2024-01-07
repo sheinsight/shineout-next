@@ -47,6 +47,12 @@ const {
   href: buttonHref,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
+beforeAll(() => {
+  jest.useFakeTimers();
+});
+afterAll(() => {
+  jest.runAllTimers();
+});
 afterEach(cleanup);
 describe('Button[Base]', () => {
   mountTest(Button);
