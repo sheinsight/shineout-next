@@ -4,11 +4,13 @@ import { KeygenResult, ObjectKey, UnMatchedData, TreeKeygenType } from '@sheinx/
 import { TreeSelectClasses, SelectClasses } from '@sheinx/shineout-style';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
+import { InnerTitleClasses } from '../common/use-inner-title';
 
 export type JssStyleType = {
   treeSelect?: () => TreeSelectClasses;
   select?: () => SelectClasses;
   tree?: () => TreeClasses;
+  innerTitle?: () => InnerTitleClasses;
 };
 
 export type TreeModeType = 0 | 1 | 2 | 3 | 4;

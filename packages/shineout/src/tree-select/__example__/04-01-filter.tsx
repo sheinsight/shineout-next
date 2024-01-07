@@ -1,6 +1,7 @@
 /**
  * cn - 过滤数据（本地）
  *    -- 设置`onFilter`属性且返回内容为函数时，会根据返回的过滤函数对本地数据进行过滤
+ *    -- 如果`onFilter`不返回函数，可根据输入内容自行进行远程查询数据
  * en - Filter data (local)
  *    -- Set the `onFilter` property and return the content as a function, the local data will be filtered according to the returned filter function
  */

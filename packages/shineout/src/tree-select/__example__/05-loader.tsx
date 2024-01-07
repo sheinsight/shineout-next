@@ -1,8 +1,8 @@
 /**
- * cn - 过滤数据（服务端）
- *    -- 设置`onFilter`属性且不返回内容时，可以根据输入的内容自行进行过滤，并根据后端接口返回的数据重新设置data
- * en - Filter data (server)
- *    -- Set the `onFilter` property and do not return the content, you can filter according to the input content, and reset the data according to the data returned by the backend interface
+ * cn - 动态加载
+ *    -- 通过设置`loader`函数实现动态加载节点
+ * en - Loader
+ *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes.
  */
 import React from 'react';
 import { produce } from 'immer';

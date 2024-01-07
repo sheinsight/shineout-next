@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import {
   util,
   usePersistFn,
@@ -55,7 +55,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     resultClassName,
     compressed,
     unmatch = true,
-    // getComponentRef,
+    getComponentRef,
     onChange: onChangeProp,
     compressedBound,
     compressedClassName,
@@ -174,8 +174,8 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     if (open) closePop();
   };
 
-  const handleExpand = (exp) => {
-    console.log(exp);
+  const handleExpand = () => {
+    // console.log(exp);
     // onExpanded(exp);
   };
 
@@ -409,6 +409,14 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
       </div>
     );
   };
+
+  useEffect(() => {
+    if (typeof getComponentRef === 'function') {
+      getComponentRef({ getDataByValues });
+    } else if (getComponentRef) {
+      getComponentRef.current = { getDataByValues };
+    }
+  }, []);
 
   return (
     <div
