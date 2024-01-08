@@ -4,7 +4,7 @@ import { setConfig } from 'shineout';
 
 const app = document.getElementById('app');
 setConfig({
-  popupContainer: () => document.getElementById('app'),
+  popupContainer: () => document.getElementById('layout'),
 });
 
 if (app) {

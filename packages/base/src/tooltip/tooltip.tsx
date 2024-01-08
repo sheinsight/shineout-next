@@ -14,6 +14,7 @@ const Tooltip = (props: TooltipProps) => {
     jssStyle,
     className,
     style,
+    type = 'default',
   } = props;
 
   const tooltipClasses = jssStyle?.tooltip?.();
@@ -25,10 +26,8 @@ const Tooltip = (props: TooltipProps) => {
   const { open, position, getTargetProps, targetRef, popupRef } = usePopup({
     position: props.position,
     trigger: trigger,
-    disabled: props.disabled,
     autoMode: 'popover',
     priorityDirection,
-    mouseEnterDelay: props.delay,
     targetEvents: disabledChild ? {} : childrenProps,
   });
 
@@ -79,6 +78,7 @@ const Tooltip = (props: TooltipProps) => {
             open && tooltipClasses?.wrapperOpen,
           )}
           data-soui-position={position}
+          data-soui-type={type}
           ref={popupRef}
           onMouseLeave={events.onMouseLeave}
         >

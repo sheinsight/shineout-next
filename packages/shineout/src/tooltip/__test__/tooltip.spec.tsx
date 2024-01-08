@@ -13,9 +13,9 @@ import {
   styleTest,
   textContentTest,
 } from '../../tests/utils';
-import TooltipBase from '../__example__/example-1-base';
-import TooltipClick from '../__example__/example-2-click';
-import TooltipDisabled from '../__example__/example-3-disabled-inner';
+import TooltipBase from '../__example__/example-01-base';
+import TooltipClick from '../__example__/example-03-01-click';
+import TooltipDisabled from '../__example__/example-04-disabled-inner';
 
 const SO_PREFIX = 'tooltip';
 const tooltipClassName = `.${SO_PREFIX}-wrapper-0-2-6`;

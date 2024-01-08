@@ -1,4 +1,3 @@
-// import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 
@@ -57,7 +56,29 @@ const tooltipStyle: JsStyles<TooltipClass> = {
     position: 'absolute',
     backgroundColor: token.tooltipBackgroundColor,
     borderRadius: token.tooltipBorderRadius,
-    // border: `1px solid ${token.tooltipBorderColor}`,
+    boxShadow: token.tooltipShadow,
+    color: token.tooltipColor,
+    '&[data-soui-type^="light"]': {
+      backgroundColor: token.tooltipLightBackgroundColor,
+      color: token.tooltipLightColor,
+      border: `1px solid ${token.tooltipLightBorderColor}`,
+    },
+    '&[data-soui-type^="primary"]': {
+      backgroundColor: token.tooltipPrimaryBackgroundColor,
+      color: token.tooltipPrimaryColor,
+    },
+    '&[data-soui-type^="success"]': {
+      backgroundColor: token.tooltipSuccessBackgroundColor,
+      color: token.tooltipSuccessColor,
+    },
+    '&[data-soui-type^="warning"]': {
+      backgroundColor: token.tooltipWarningBackgroundColor,
+      color: token.tooltipWarningColor,
+    },
+    '&[data-soui-type^="danger"]': {
+      backgroundColor: token.tooltipDangerBackgroundColor,
+      color: token.tooltipDangerColor,
+    },
     '&::before': {
       'z-index': 1,
       position: 'absolute',
@@ -171,7 +192,6 @@ const tooltipStyle: JsStyles<TooltipClass> = {
     display: 'inline-block',
   },
   content: {
-    color: token.tooltipColor,
     padding: `${token.tooltipPaddingY} ${token.tooltipPaddingX}`,
     fontSize: token.tooltipFontSize,
   },

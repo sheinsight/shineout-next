@@ -6,7 +6,7 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const tooltipTokenDescription = { tooltip: 'xxx' };
+const tooltipTokenDescription = { tooltip: '文字提示' };
 
 /**
  * token 值映射表
@@ -16,16 +16,37 @@ const tooltipTokenDescription = { tooltip: 'xxx' };
  * 注意，该映射表的内容不与 tooltipRules 强关联，非 tooltipRules 规则内的 token 需手动增加或删减。
  */
 
-// todo black 改成 Neutral-fill-10
-const tooltipTokenValue = {
+const tooltipTokenValue = {};
+
+const tooltipTokenExtraValue = {
   font: { size: '14/regular' },
   padding: { x: 'Padding-8', y: 'Padding-5' },
-  border: { radius: 'Border-2' },
+  border: { radius: 'Radius-2' },
   color: 'Neutral-text-1',
-  background: { color: 'black' },
+  shadow: 'Shadow-1',
+  background: { color: 'Neutral-fill-9' },
+  light: {
+    color: 'Neutral-text-5',
+    background: { color: 'Neutral-fill-1' },
+    border: { color: 'Neutral-border-1' },
+  },
+  primary: {
+    color: 'Brand-1',
+    background: { color: 'Brand-6' },
+  },
+  success: {
+    color: 'Success-1',
+    background: { color: 'Success-7' },
+  },
+  warning: {
+    color: 'Warning-1',
+    background: { color: 'Warning-7' },
+  },
+  danger: {
+    color: 'Danger-1',
+    background: { color: 'Danger-7' },
+  },
 };
-
-const tooltipTokenExtraValue = {};
 
 module.exports = {
   tooltipTokenValue,
