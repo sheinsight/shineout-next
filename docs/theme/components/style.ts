@@ -49,12 +49,11 @@ export default createUseStyles(
     },
     hiddenHeader: {},
     tabs: {
-      width: 462,
       height: 40,
       marginTop: 24,
       borderRadius: 4,
       marginBottom: 32,
-      display: 'flex',
+      display: 'inline-flex',
       alignItems: 'center',
       padding: 4,
       boxSizing: 'border-box',

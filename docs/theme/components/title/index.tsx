@@ -9,17 +9,18 @@ const Header = (props: HeaderProps) => {
   const classes = useStyles();
   const state = useSnapshot(store);
 
-  const { describe, title } = props;
+  const { describe, title, guides } = props;
   const headerClasses = classnames(classes.header, {
-    // [classes.stickyHeader]: state.scroll,
-    [classes.stickyHeader]: true,
+    [classes.stickyHeader]: state.scroll,
+    // [classes.stickyHeader]: true,
   });
+  const showGuide = guides && guides[state.locales] && guides[state.locales].length > 0;
   return (
     <>
       <div className={headerClasses}>
         <h1 className={classnames('title')}>{title[state.locales]}</h1>
         <p className='subtitle'>{describe[state.locales]}</p>
-        <Tabs></Tabs>
+        <Tabs showGuide={showGuide}></Tabs>
       </div>
     </>
   );
