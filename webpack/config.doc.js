@@ -26,6 +26,7 @@ module.exports = {
       store: path.resolve(__dirname, '../docs/theme/store'),
       chunk: path.resolve(__dirname, '../docs/chunk'),
       docs: path.resolve(__dirname, '../docs'),
+      '@sheinx/mock': path.resolve(__dirname, '../packages/mock/src'),
       '@sheinx/base': path.resolve(__dirname, '../packages/base/src'),
       '@sheinx/shineout-style': path.resolve(__dirname, '../packages/shineout-style/src'),
       '@sheinx/hooks': path.resolve(__dirname, '../packages/hooks/src'),
