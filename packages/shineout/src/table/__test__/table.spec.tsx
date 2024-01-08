@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Table, Button, TYPE } from 'shineout';
+import { Table, Button, TYPE, Form, Input } from 'shineout';
 
 import {
   attributesTest,
@@ -22,12 +22,13 @@ import TableBase from '../__example__/01-base';
 import TableBorder from '../__example__/02-border';
 import TableSize from '../__example__/03-size';
 import TableGroup from '../__example__/04-group';
+
 // import TableVirtualList from '../__example__/07-01-virtual-list'
 // import TableVirtualScroll from '../__example__/07-02-virtual-scroll'
 // import TableLoading from '../__example__/08-loading'
 // import TableSorter from '../__example__/09-01-sorter'
 // import TableSorterRender from '../__example__/09-02-sorter-render'
-// import TableSorterWeight from '../__example__/09-03-sorter-weight'
+import TableSorterWeight from '../__example__/09-03-sorter-weight';
 // import TablePaginationCopy from '../__example__/10-01-pagination copy'
 // import TablePagination from '../__example__/10-02-pagination'
 // import TableScroll from '../__example__/11-scroll'
@@ -53,6 +54,7 @@ const originClasses = [
   'sorterAsc',
   'sorterDesc',
   'resizeSpanner',
+  'expandIcon',
 ];
 const originItemClasses = [
   'default',
@@ -97,6 +99,7 @@ const {
   cellFixedLeft,
   cellFixedLast,
   cellFixedRight,
+  expandIcon,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const {
@@ -152,6 +155,16 @@ const expandColumns: TYPE.Table.ColumnItem<ExpandTreeData>[] = [
   ...columns,
 ];
 
+const treeColumns: any[] = [
+  {
+    title: 'id',
+    render: 'id',
+    width: 50,
+    treeColumnsName: 'children',
+  },
+  ...columns,
+];
+
 const expandTreeData: ExpandTreeData[] = [
   {
     id: 1,
@@ -184,6 +197,21 @@ const fixedColumns: any[] = [
   {
     title: 'age',
     render: 'age',
+  },
+];
+const fixedColumnsByRight: any[] = [
+  {
+    title: 'id',
+    render: 'id',
+  },
+  {
+    title: 'name',
+    render: 'name',
+  },
+  {
+    title: 'age',
+    render: 'age',
+    fixed: 'right',
   },
 ];
 const fixedData = [
@@ -492,6 +520,29 @@ describe('Table[Base]', () => {
       attributesTest(item, 'data-soui-table-selection', 'true');
     });
   });
+  test('should render when set cellSelectable and copy', () => {
+    Object.defineProperty(document, 'execCommand', {
+      value: jest.fn(),
+    });
+    const { container } = render(
+      <Table keygen={'id'} cellSelectable columns={columns} data={renderData} />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    const firstTd = trs[1].querySelectorAll('td')[1];
+    // fireEvent.keyDown(document, { key: 'c', ctrlKey: true });
+    fireEvent.mouseDown(firstTd, { ctrlKey: true });
+    fireEvent.mouseUp(firstTd, { ctrlKey: true });
+    // Create a new event
+    const event = new KeyboardEvent('keydown', {
+      ctrlKey: true,
+      keyCode: 67,
+    });
+    document.dispatchEvent(event);
+    expect(document.execCommand).toHaveBeenCalledWith('copy');
+    screen.debug();
+  });
   test('should render when set verticalAlign', () => {
     const { container } = render(
       <Table keygen={'id'} columns={columns} data={renderData} verticalAlign={'middle'} />,
@@ -718,12 +769,20 @@ describe('Table[Expand]', () => {
         defaultTreeExpandKeys={defaultTreeExpandKeys}
       />,
     );
-    screen.debug();
     const result = getExpandKeys(expandTreeData, defaultTreeExpandKeys);
     const tableWrapper = container.querySelector(wrapper)!;
     const tbody = tableWrapper.querySelector('tbody')!;
     const trs = tbody.querySelectorAll('tr');
     expect(trs.length).toBe(result.length);
+  });
+  test('should render when click expandIcon', () => {
+    const { container } = render(
+      <Table keygen={'id'} columns={treeColumns} data={expandTreeData} />,
+    );
+    const tbody = container.querySelector('tbody')!;
+    classLengthTest(tbody, 'tr', 1);
+    fireEvent.click(tbody.querySelector(expandIcon)!);
+    classLengthTest(tbody, 'tr', 2);
   });
   test('should render when set treeIndent', () => {
     const defaultTreeExpandKeys = [1, 2];
@@ -766,7 +825,7 @@ describe('Table[Expand]', () => {
       return (
         <Table
           keygen={'id'}
-          columns={expandColumns}
+          columns={treeColumns}
           data={expandTreeData}
           treeExpandKeys={treeExpandKeys}
           onTreeExpand={handleTreeExpand}
@@ -778,7 +837,7 @@ describe('Table[Expand]', () => {
     const tbody = tableWrapper.querySelector('tbody')!;
     const trs = tbody.querySelectorAll('tr');
     expect(trs.length).toBe(1);
-    fireEvent.click(trs[0].querySelector(iconWrapper)!);
+    fireEvent.click(trs[0].querySelector(expandIcon)!);
     expect(tbody.querySelectorAll('tr').length).toBe(2);
   });
   test('should render when set treeEmptyExpand', () => {
@@ -1091,7 +1150,61 @@ describe('Table[Sort]', () => {
     const tableSorter = thead.querySelector(sorterContainer)!;
     expect(tableSorter.querySelector('.test')).toBeInTheDocument();
   });
+  test('should render when set sort is function in columns', () => {
+    const sorterColumnsByFunction: TableColumnItem[] = [
+      {
+        title: 'id',
+        render: 'id',
+        sorter: (order) => (a: TableRowData, b: TableRowData) =>
+          order === 'asc' ? a.id - b.id : b.id - a.id,
+      },
+      {
+        title: 'name',
+        render: 'name',
+      },
+    ];
+    const { container } = render(
+      <Table keygen={'id'} columns={sorterColumnsByFunction} data={renderData} />,
+    );
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    textContentTest(trs[0].querySelectorAll('td')[0], renderData[0].id.toString());
+    textContentTest(trs[1].querySelectorAll('td')[0], renderData[1].id.toString());
+    fireEvent.click(container.querySelector(sorterDesc)!);
+    const newTrs = tbody.querySelectorAll('tr');
+    textContentTest(newTrs[0].querySelectorAll('td')[0], renderData[1].id.toString());
+    textContentTest(newTrs[1].querySelectorAll('td')[0], renderData[0].id.toString());
+  });
+  test('should render when set sort is object in columns', () => {
+    const sortFn = jest.fn();
+    const sorterColumnsByObject: TableColumnItem[] = [
+      {
+        title: 'id',
+        render: 'id',
+        sorter: {
+          rule: sortFn,
+          weight: 100,
+        },
+      },
+      {
+        title: 'name',
+        render: 'name',
+      },
+    ];
+    const { container } = render(
+      <Table keygen={'id'} columns={sorterColumnsByObject} data={renderData} />,
+    );
+    fireEvent.click(container.querySelector(sorterDesc)!);
+    expect(sortFn.mock.calls.length).toBe(1);
+  });
   // TODO: don`t have changedByExpand
+  test('should render when set sort and weight', () => {
+    const { container } = render(<TableSorterWeight />);
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    textContentTest(trs[0].querySelectorAll('td')[3], '396,093');
+    textContentTest(trs[1].querySelectorAll('td')[3], '115,777');
+  });
 });
 describe('Table[RowsInView]', () => {
   test('should render when set rowsInView without virtual', () => {
@@ -1141,6 +1254,38 @@ describe('Table[Virtual]', () => {
     styleTest(tableHead.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
     styleTest(tableFoot.querySelector('table')!, 'transform: translate3d(-10px, 0, 0);');
     expect(onScrollfn.mock.calls.length).toBe(2);
+  });
+  test('should render when mouseDown', async () => {
+    const onScrollfn = jest.fn();
+    const tempData = dataGenerate(30);
+    const newData = dataGenerate(40);
+    const App = () => {
+      const [value, setValue] = React.useState(tempData);
+      return (
+        <div>
+          <Button onClick={() => setValue(newData)}></Button>
+          <Table keygen={'id'} columns={columns} data={value} virtual onScroll={onScrollfn} />
+        </div>
+      );
+    };
+    const { container } = render(<App />);
+    const tableHead = container.querySelector(headWrapper)!;
+    const tableBody = tableHead.nextElementSibling;
+    const tableSroll = tableBody?.firstElementChild as Element;
+    fireEvent.mouseDown(tableSroll);
+    fireEvent.scroll(tableSroll, { target: { scrollTop: 100 } });
+    fireEvent.mouseUp(tableSroll);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    fireEvent.click(container.querySelector('button')!);
+    fireEvent.mouseDown(tableSroll);
+    fireEvent.scroll(tableSroll, { target: { scrollTop: 100 } });
+    fireEvent.mouseUp(tableSroll);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    // should expect
   });
   test('should render when set scrollLeft is fixed value', () => {
     const scrollLeft = 10;
@@ -1210,11 +1355,26 @@ describe('Table[Virtual]', () => {
   });
   test('should render when set scrollToIndex', async () => {
     const App = () => {
-      const tempData = dataGenerate(30);
+      const columns: any[] = [
+        { title: 'id', render: 'id', width: 80 },
+        {
+          title: 'Name',
+          fixed: 'left',
+          render: (d: any) => (
+            <div id={`name_${d.id}`} style={{ height: d.height }}>
+              {`${d.name}`}
+            </div>
+          ),
+          width: 160,
+        },
+      ];
+      const tempData = dataGenerate(40);
       const [table, setTable] = React.useState<any>();
+
       const [state, setState] = React.useState({
         index: 25,
       });
+
       const handleScroll = () => {
         if (table)
           table.scrollToIndex(state.index - 1, () => {
@@ -1224,25 +1384,32 @@ describe('Table[Virtual]', () => {
             }
           });
       };
+
+      const handleIndexChange = ({ index }: { index: number }) => {
+        setState({ index });
+      };
+
       React.useEffect(() => {
         setTimeout(handleScroll);
       }, [state]);
+
       return (
         <div>
-          <Button
-            onClick={() => {
-              setState({ index: 6 });
-            }}
-          >
-            scrollToIndex
-          </Button>
+          <Form defaultValue={state} inline onSubmit={handleIndexChange}>
+            <Input.Number min={1} max={10000} width={100} name='index' />
+            <Button htmlType='submit'>Scroll</Button>
+          </Form>
+
           <Table
-            keygen={'id'}
-            columns={columns}
+            keygen='id'
+            bordered
             data={tempData}
             virtual
-            tableRef={(t) => setTable(t)}
+            width={1400}
             rowsInView={5}
+            columns={columns}
+            style={{ height: 500 }}
+            tableRef={(t) => setTable(t)}
           />
         </div>
       );
@@ -1255,12 +1422,6 @@ describe('Table[Virtual]', () => {
     screen.debug();
   });
   // TODO: scrollToIndex
-  test('should render virtual when click expand', () => {
-    // const { container } = render(<Table keygen={'id'} columns={expandColumns} data={expandTreeData} rowsInView={5} virtual />);
-    // const tableWrapper = container.querySelector(wrapper)!;
-    // screen.debug()
-  });
-  // expand
 });
 describe('Table[Fixed]', () => {
   test('should render when set fixed in table for virtual', () => {
@@ -1314,6 +1475,54 @@ describe('Table[Fixed]', () => {
       });
     });
   });
+  test('should render when isScrollX is true', () => {
+    const trsDefaultStyleByLeft = 'position: sticky; left: 0px;';
+    const trsDefaultStyleByRight = 'position: sticky; right: 0px;';
+    const trsVirtualStyleByLeft = 'transform: translate3d(20px, 0, 0);';
+    const trsVirtualStyleByRight = 'transform: translate3d(-80px, 0, 0);';
+    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 300 });
+    Object.defineProperty(HTMLElement.prototype, 'clientWidth', { configurable: true, value: 200 });
+    const { container, rerender } = render(
+      <Table keygen={'id'} columns={fixedColumns} data={fixedData} />,
+    );
+    const tbody = container.querySelector('tbody')!;
+    const trs = tbody.querySelectorAll('tr');
+    trs.forEach((item) => {
+      const tds = item.querySelectorAll('td');
+      styleTest(tds[0], trsDefaultStyleByLeft);
+      styleTest(tds[1], trsDefaultStyleByLeft);
+    });
+    rerender(<Table keygen={'id'} columns={fixedColumnsByRight} data={fixedData} />);
+    const trsByRight = tbody.querySelectorAll('tr');
+    trsByRight.forEach((item) => {
+      const tds = item.querySelectorAll('td');
+      styleTest(tds[2], trsDefaultStyleByRight);
+    });
+    rerender(
+      <Table keygen={'id'} columns={fixedColumns} data={fixedData} virtual scrollLeft={20} />,
+    );
+    const tbodyVirtual = container.querySelector('tbody')!;
+    const trsVirtual = tbodyVirtual.querySelectorAll('tr');
+    trsVirtual.forEach((item) => {
+      const tds = item.querySelectorAll('td');
+      styleTest(tds[0], trsVirtualStyleByLeft);
+      styleTest(tds[1], trsVirtualStyleByLeft);
+    });
+    rerender(
+      <Table
+        keygen={'id'}
+        columns={fixedColumnsByRight}
+        data={fixedData}
+        virtual
+        scrollLeft={20}
+      />,
+    );
+    const trsVirtualByRight = tbodyVirtual.querySelectorAll('tr');
+    trsVirtualByRight.forEach((item) => {
+      const tds = item.querySelectorAll('td');
+      styleTest(tds[2], trsVirtualStyleByRight);
+    });
+  });
 });
 describe('Table[Resizable]', () => {
   test('should render when set resizable and onColumnResize in table', () => {
@@ -1338,6 +1547,31 @@ describe('Table[Resizable]', () => {
     fireEvent.mouseMove(resizeSpannerWrapper, { clientX: 100 });
     fireEvent.mouseUp(resizeSpannerWrapper);
     expect(onColumnResizeFn.mock.calls.length).toBe(1);
+  });
+  test('should render when only set resizable', () => {
+    const originWidth = 200;
+    const deltaX = 100;
+    const { container } = render(
+      <Table
+        keygen={'id'}
+        columns={columns}
+        data={renderData}
+        columnResizable
+        width={originWidth}
+      />,
+    );
+    styleTest(container.querySelector('table')!, `width: ${originWidth}px;`);
+    const tableWrapper = container.querySelector(wrapper)!;
+    const thead = tableWrapper.querySelector('thead')!;
+    const ths = thead.querySelectorAll('th');
+    ths.forEach((item) => {
+      classLengthTest(item, resizeSpanner, 1);
+    });
+    const resizeSpannerWrapper = ths[0].querySelector(resizeSpanner)!;
+    fireEvent.mouseDown(resizeSpannerWrapper);
+    fireEvent.mouseMove(resizeSpannerWrapper, { clientX: deltaX });
+    fireEvent.mouseUp(resizeSpannerWrapper);
+    styleTest(container.querySelector('table')!, `width: ${originWidth + deltaX}px;`);
   });
 });
 describe('Table[Rowspan]', () => {
@@ -1394,6 +1628,17 @@ describe('Table[Foot]', () => {
       },
     ],
   ];
+  const summaryByRight = [
+    [
+      {
+        render: () => <span>Summary</span>,
+        colSpan,
+      },
+      {
+        render: () => <span>SummaryByRight</span>,
+      },
+    ],
+  ];
   test('should render when set summary', () => {
     const { container } = render(
       <Table keygen={'id'} columns={columns} data={renderData} summary={summary} />,
@@ -1406,32 +1651,6 @@ describe('Table[Foot]', () => {
     attributesTest(tds[0], 'colSpan', colSpan.toString());
   });
   test('should render when set fixed about foot', () => {
-    const fixedColumnsByRight: any[] = [
-      {
-        title: 'id',
-        render: 'id',
-      },
-      {
-        title: 'name',
-        render: 'name',
-      },
-      {
-        title: 'age',
-        render: 'age',
-        fixed: 'right',
-      },
-    ];
-    const summaryByRight = [
-      [
-        {
-          render: () => <span>Summary</span>,
-          colSpan,
-        },
-        {
-          render: () => <span>SummaryByRight</span>,
-        },
-      ],
-    ];
     const { container, rerender } = render(
       <Table keygen={'id'} columns={fixedColumns} data={fixedData} summary={summary} />,
     );
@@ -1451,6 +1670,37 @@ describe('Table[Foot]', () => {
     classTest(tdByRight, cellFixedRight);
     classTest(tdByRight, cellFixedLast);
   });
+  test('should render when set scrollLeft and virtual', () => {
+    const { container, rerender } = render(
+      <Table
+        keygen={'id'}
+        columns={fixedColumns}
+        data={fixedData}
+        summary={summary}
+        virtual
+        scrollLeft={20}
+      />,
+    );
+    const tables = container.querySelectorAll('table');
+    tables.forEach((item, index) => {
+      if (index === 1) styleTest(item, 'transform: translate3d(-20px, -0px, 0);');
+      else styleTest(item, 'transform: translate3d(-20px, 0, 0);');
+    });
+    rerender(
+      <Table
+        keygen={'id'}
+        columns={fixedColumnsByRight}
+        data={fixedData}
+        summary={summaryByRight}
+        virtual
+        scrollLeft={20}
+      />,
+    );
+    tables.forEach((item, index) => {
+      if (index === 1) styleTest(item, 'transform: translate3d(-20px, -0px, 0);');
+      else styleTest(item, 'transform: translate3d(-20px, 0, 0);');
+    });
+  });
 });
 describe('Table[Pagination]', () => {});
 describe('Table[RowEvents]', () => {
@@ -1468,6 +1718,8 @@ describe('Table[RowEvents]', () => {
 });
 // sticky
 // loading
+
+// TODO: TableColumn
 
 // rowsInview=0
 // innerScrollAttr
