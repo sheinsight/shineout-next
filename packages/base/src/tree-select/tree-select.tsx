@@ -214,16 +214,16 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     );
   };
 
-  const getDataByValues = (values: (Value | undefined)[]) => {
+  const getDataByValues = (values?: Value | Value[]): DataItem[] | DataItem => {
     if (!datum.current) return [];
-    return datum.current.getDataByValues(values);
+    return datum.current.getDataByValues(values as KeygenResult[]);
   };
 
   const getValue = () => {
     if (!datum.current) return;
     const nextValue = datum.current.getValue();
-    if (multiple) return nextValue;
-    return nextValue.length ? nextValue[0] : '';
+    if (multiple) return nextValue as Value;
+    return (nextValue.length ? nextValue[0] : '') as Value;
   };
 
   const getContentClass = (data: DataItem) => {
@@ -242,7 +242,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     }
 
     if (!util.isArray(value)) {
-      const currentData = datum.current.getDataByValues(value);
+      const currentData = getDataByValues(value);
       return currentData === data ? classNames(styles.optionActive) : '';
     }
 
@@ -257,16 +257,16 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     onFilter(trim ? text.trim() : text);
   };
 
-  const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
+  const handleChange = (item: DataItem | UnMatchedData, id: Value) => {
     if (!datum.current) return;
     if (disabled === true || datum.current?.isDisabled(id)) return;
-    const currentData = datum.current?.getDataByValues(id);
+    const currentData = getDataByValues(id);
     if (!multiple) {
       datum.current.setValue([]);
       datum.current.set(datum.current.getKey(item), 1);
     }
 
-    const nextValue = getValue();
+    const nextValue = getValue()!;
 
     if (onChange) {
       onChange(nextValue, currentData, id ? (datum.current.getPath(id) || {}).path : undefined);
@@ -274,7 +274,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
 
     if (typeof onChangeAddition === 'function') {
       onChangeAddition({
-        data: datum.current.getDataByValues(nextValue),
+        data: getDataByValues(nextValue),
         checked: multiple ? datum.current.get(id) : undefined,
         current: currentData,
       });

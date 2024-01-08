@@ -31,10 +31,7 @@ export interface ComponentRef<DataItem, Value> {
 export interface TreeSelectProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
-  jssStyle?: {
-    treeSelect?: () => TreeSelectClasses;
-  };
-
+  jssStyle?: JssStyleType;
   /**
    * @en placeholder when value is empty
    * @cn value 为空时的占位符

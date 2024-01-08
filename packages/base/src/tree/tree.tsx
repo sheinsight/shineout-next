@@ -6,7 +6,7 @@ import RootTree from './tree-root';
 import { produce } from 'immer';
 import { Provider } from './tree-context';
 
-const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
+const Tree = <DataItem, Value>(props: TreeProps<DataItem, Value>) => {
   const {
     jssStyle,
     line = true,

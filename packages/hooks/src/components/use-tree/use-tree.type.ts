@@ -1,4 +1,4 @@
-import { ObjectType, StructKeygenStringType, KeygenResult } from '../../common/type';
+import { StructKeygenStringType, KeygenResult } from '../../common/type';
 
 export type CheckedStatusType = 0 | 1 | 2;
 
@@ -6,10 +6,10 @@ export type TreeModeType = 0 | 1 | 2 | 3 | 4;
 
 export type UpdateFunc = (name: string, active: boolean) => void;
 
-export interface TreeContext<DataItem> {
+export interface TreeContext<DataItem, Value> {
   pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
-  valueMap: Map<KeygenResult, CheckedStatusType>;
+  valueMap: Map<Value, CheckedStatusType>;
   updateMap: Map<KeygenResult, UpdateFunc>;
   disabled: boolean | ((item: DataItem) => boolean);
   value?: KeygenResult[];
@@ -25,10 +25,10 @@ export interface TreePathType {
   index: number;
 }
 
-export interface BaseTreeProps<DataItem = ObjectType> {
+export interface BaseTreeProps<DataItem, Value> {
   isControlled: boolean;
   active?: KeygenResult;
-  value?: KeygenResult[];
+  value?: Value;
   defaultValue?: KeygenResult[];
   data: DataItem[];
   expanded?: KeygenResult[];

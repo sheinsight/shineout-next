@@ -33,8 +33,8 @@ export type JsstyleType = {
   checkbox: () => CheckboxClasses;
 };
 
-export interface TreeProps<DataItem>
-  extends BaseTreeProps<DataItem>,
+export interface TreeProps<DataItem, Value>
+  extends BaseTreeProps<DataItem, Value>,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: JsstyleType;
   line?: boolean;

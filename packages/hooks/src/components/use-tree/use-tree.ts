@@ -38,7 +38,7 @@ export const MODE = {
   MODE_4: 4,
 };
 
-const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
+const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<DataItem, Value>) => {
   const {
     defaultValue,
     value = defaultValue,
@@ -65,10 +65,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     beforeChange: undefined,
   });
 
-  const { current: context } = useRef<TreeContext<DataItem>>({
+  const { current: context } = useRef<TreeContext<DataItem, Value>>({
     pathMap: new Map<KeygenResult, TreePathType>(),
     dataMap: new Map<KeygenResult, DataItem>(),
-    valueMap: new Map<KeygenResult, CheckedStatusType>(),
+    valueMap: new Map<Value, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
     disabled: false,
     value: [],
@@ -89,7 +89,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
 
-  const get = (id: KeygenResult) => {
+  const get = (id: Value) => {
     return context.valueMap.get(id);
   };
 
@@ -155,7 +155,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return () => !!disabledProps;
   };
 
-  const getChecked = (id: KeygenResult) => {
+  const getChecked = (id: Value) => {
     const value = get(id);
     let checked: boolean | 'indeterminate' = value === 1;
     if (value === 2) checked = 'indeterminate';
@@ -177,7 +177,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return getDataById(values);
   };
 
-  const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
+  const setValueMap = (id: Value, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
     // const update = context.updateMap.get(id)
     // update()
@@ -291,7 +291,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return checked!;
   };
 
-  const setValue = (value?: KeygenResult[]) => {
+  const setValue = (value?: Value) => {
     context.value = value;
     if (value && value !== context.cachedValue) {
       initValue();
@@ -317,7 +317,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const setData = (data?: DataItem[]) => {
-    const prevValue: any[] = context.value || [];
+    const prevValue = context.value || [];
     context.cachedValue = [];
     context.pathMap = new Map();
     context.dataMap = new Map();
