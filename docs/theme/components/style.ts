@@ -76,6 +76,7 @@ export default createUseStyles(
     },
     doc: {
       display: 'flex',
+      position: 'relative',
       '& .examples': {
         flex: 1,
         minWidth: 0,
