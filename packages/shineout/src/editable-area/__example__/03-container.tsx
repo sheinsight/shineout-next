@@ -12,12 +12,13 @@ const App: React.FC = () => {
   return (
     <div
       id='popup-target'
-      style={{ height: 200, overflow: 'auto', position: 'relative', padding: 10 }}
+      style={{ height: 100, overflow: 'auto', position: 'relative', padding: 10, marginLeft: -10 }}
     >
-      <div style={{ height: 100 }} />
+      <div style={{ height: 50 }} />
 
       <EditableArea
         bordered
+        width={300}
         maxHeight={100}
         placeholder='scroll in container'
         getPopupContainer={container}

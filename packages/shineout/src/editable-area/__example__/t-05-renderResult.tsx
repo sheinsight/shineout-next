@@ -16,7 +16,12 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <EditableArea bordered renderResult={renderResult} placeholder='input something' />
+      <EditableArea
+        width={300}
+        bordered
+        renderResult={renderResult}
+        placeholder='input something'
+      />
     </div>
   );
 };
