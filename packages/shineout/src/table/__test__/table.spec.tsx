@@ -68,6 +68,7 @@ const originItemClasses = [
   'sorterActive',
   'cellFixedLeft',
   'cellFixedLast',
+  'cellFixedRight',
 ];
 const {
   wrapper,
@@ -95,6 +96,7 @@ const {
   resizeSpanner,
   cellFixedLeft,
   cellFixedLast,
+  cellFixedRight,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const {
@@ -166,6 +168,39 @@ const expandTreeData: ExpandTreeData[] = [
         ],
       },
     ],
+  },
+];
+
+const fixedColumns: any[] = [
+  {
+    title: 'id',
+    render: 'id',
+  },
+  {
+    title: 'name',
+    render: 'name',
+    fixed: 'left',
+  },
+  {
+    title: 'age',
+    render: 'age',
+  },
+];
+const fixedData = [
+  {
+    id: 1,
+    name: 'test1',
+    age: 1,
+  },
+  {
+    id: 2,
+    name: 'test2',
+    age: 2,
+  },
+  {
+    id: 3,
+    name: 'test3',
+    age: 3,
   },
 ];
 
@@ -1253,38 +1288,6 @@ describe('Table[Fixed]', () => {
   });
   test('should render when set fixed in columns', () => {
     const defaultFixedStyle = 'left: 0px; position: sticky;';
-    const fixedColumns: any[] = [
-      {
-        title: 'id',
-        render: 'id',
-      },
-      {
-        title: 'name',
-        render: 'name',
-        fixed: 'left',
-      },
-      {
-        title: 'age',
-        render: 'age',
-      },
-    ];
-    const fixedData = [
-      {
-        id: 1,
-        name: 'test1',
-        age: 1,
-      },
-      {
-        id: 2,
-        name: 'test2',
-        age: 2,
-      },
-      {
-        id: 3,
-        name: 'test3',
-        age: 3,
-      },
-    ];
     const { container } = render(<Table keygen={'id'} columns={fixedColumns} data={fixedData} />);
     const thead = container.querySelector('thead')!;
     const tbody = container.querySelector('tbody')!;
@@ -1382,16 +1385,16 @@ describe('Table[Rowspan]', () => {
   });
 });
 describe('Table[Foot]', () => {
+  const colSpan = 2;
+  const summary = [
+    [
+      {
+        render: () => <span>Summary</span>,
+        colSpan,
+      },
+    ],
+  ];
   test('should render when set summary', () => {
-    const colSpan = 2;
-    const summary = [
-      [
-        {
-          render: () => <span>Summary</span>,
-          colSpan,
-        },
-      ],
-    ];
     const { container } = render(
       <Table keygen={'id'} columns={columns} data={renderData} summary={summary} />,
     );
@@ -1402,7 +1405,52 @@ describe('Table[Foot]', () => {
     expect(tds?.length).toBe(summary[0].length);
     attributesTest(tds[0], 'colSpan', colSpan.toString());
   });
-  test('should render when set fixed', () => {});
+  test('should render when set fixed about foot', () => {
+    const fixedColumnsByRight: any[] = [
+      {
+        title: 'id',
+        render: 'id',
+      },
+      {
+        title: 'name',
+        render: 'name',
+      },
+      {
+        title: 'age',
+        render: 'age',
+        fixed: 'right',
+      },
+    ];
+    const summaryByRight = [
+      [
+        {
+          render: () => <span>Summary</span>,
+          colSpan,
+        },
+        {
+          render: () => <span>SummaryByRight</span>,
+        },
+      ],
+    ];
+    const { container, rerender } = render(
+      <Table keygen={'id'} columns={fixedColumns} data={fixedData} summary={summary} />,
+    );
+    const tfoot = container.querySelector('tfoot')!;
+    const td = tfoot.querySelector('td')!;
+    classTest(td, cellFixedLeft);
+    classTest(td, cellFixedLast);
+    rerender(
+      <Table
+        keygen={'id'}
+        columns={fixedColumnsByRight}
+        data={fixedData}
+        summary={summaryByRight}
+      />,
+    );
+    const tdByRight = tfoot.querySelectorAll('td')[1];
+    classTest(tdByRight, cellFixedRight);
+    classTest(tdByRight, cellFixedLast);
+  });
 });
 describe('Table[Pagination]', () => {});
 describe('Table[RowEvents]', () => {
