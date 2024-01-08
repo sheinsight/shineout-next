@@ -12,11 +12,13 @@ type EditableAreaProps = TYPE.EditableArea.Props;
 type EditableAreaValue = EditableAreaProps['value'];
 
 const App: React.FC = () => {
-  const [value, setValue] = useState<EditableAreaValue>('');
+  const [value, setValue] = useState<EditableAreaValue>(
+    'i am a long text, i am a long text, i am a long text',
+  );
 
   return (
     <EditableArea
-      width={400}
+      width={300}
       bordered
       value={value}
       placeholder='Input something'
