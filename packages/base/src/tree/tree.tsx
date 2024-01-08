@@ -6,12 +6,11 @@ import RootTree from './tree-root';
 import { produce } from 'immer';
 import { Provider } from './tree-context';
 
-const Tree = <DataItem, Value>(props: TreeProps<DataItem, Value>) => {
+const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, Value>) => {
   const {
     jssStyle,
     line = true,
     childrenKey = 'children',
-    // data: dataProps,
     data,
     value,
     mode = 1,
@@ -95,7 +94,7 @@ const Tree = <DataItem, Value>(props: TreeProps<DataItem, Value>) => {
     });
   };
 
-  const handleNodeClick = (node: DataItem, id: KeygenResult) => {
+  const handleNodeClick = (node: DataItem, id: Value) => {
     if (active === undefined) {
       handleUpdateActive(id);
     }
@@ -123,7 +122,7 @@ const Tree = <DataItem, Value>(props: TreeProps<DataItem, Value>) => {
     if (onExpand) onExpand(newExpanded);
   };
 
-  const handleDrop = (id: KeygenResult, targetId: KeygenResult, position: number) => {
+  const handleDrop = (id: Value, targetId: Value, position: number) => {
     let targetIdCopy = targetId;
     let positionCopy = position;
 
@@ -187,6 +186,7 @@ const Tree = <DataItem, Value>(props: TreeProps<DataItem, Value>) => {
     <div className={rootClass} {...rest}>
       <Provider value={datum}>
         <RootTree
+          isControlled={'expanded' in props}
           jssStyle={jssStyle}
           data={data}
           mode={mode}

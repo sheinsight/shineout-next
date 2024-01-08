@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BaseTreeNodeProps } from './use-tree-node.type';
 import usePersistFn from '../../common/use-persist-fn';
 
-const useTreeNode = <DataItem>(props: BaseTreeNodeProps<DataItem>) => {
+const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>) => {
   const { id, data, bindNode, childrenKey, loader } = props;
   const [active, setActive] = useState(false);
   // const [expanded, setExpanded] = useState(false);

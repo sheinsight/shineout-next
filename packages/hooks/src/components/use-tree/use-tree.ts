@@ -38,7 +38,7 @@ export const MODE = {
   MODE_4: 4,
 };
 
-const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<DataItem, Value>) => {
+const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<DataItem, Value>) => {
   const {
     defaultValue,
     value = defaultValue,
@@ -66,7 +66,7 @@ const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<Da
   });
 
   const { current: context } = useRef<TreeContext<DataItem, Value>>({
-    pathMap: new Map<KeygenResult, TreePathType>(),
+    pathMap: new Map<Value, TreePathType<Value>>(),
     dataMap: new Map<KeygenResult, DataItem>(),
     valueMap: new Map<Value, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
@@ -93,21 +93,21 @@ const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<Da
     return context.valueMap.get(id);
   };
 
-  const getKey = (item: DataItem, id: KeygenResult = '', index?: number) => {
+  const getKey = (item: DataItem, id: KeygenResult = '', index?: number): Value => {
     if (isFunc(keygen)) {
-      return keygen(item, id as string);
+      return keygen(item, id as string) as Value;
     }
 
     if (keygen && (isString(keygen) || isNumber(keygen))) {
-      return item[keygen] as KeygenResult;
+      return item[keygen] as Value;
     }
 
     // 降级处理
-    return id + (id ? ',' : '') + index;
+    return (id + (id ? ',' : '') + index) as Value;
   };
 
   const getValue = () => {
-    const values: KeygenResult[] = [];
+    const values = [] as Value[];
     context.valueMap.forEach((checked, id) => {
       switch (mode) {
         case MODE.MODE_0:
@@ -143,7 +143,7 @@ const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<Da
     return values;
   };
 
-  const getPath = (id: KeygenResult) => {
+  const getPath = (id: Value) => {
     return context.pathMap.get(id);
   };
 
@@ -169,7 +169,7 @@ const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<Da
     return { IS_NOT_MATCHED_VALUE: true, value: id };
   };
 
-  const getDataByValues = (values: KeygenResult[] | KeygenResult) => {
+  const getDataByValues = (values: Value[] | Value) => {
     if (isArray(values)) {
       return values.map(getDataById);
     }
@@ -185,14 +185,14 @@ const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<Da
 
   const initData = (
     data: DataItem[],
-    path: KeygenResult[],
+    path: Value[],
     disabled?: boolean,
     index: number[] = [],
-  ) => {
-    const ids: KeygenResult[] = [];
+  ): Value[] | undefined => {
+    const ids: Value[] = [];
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
-      const id = getKey(item, path[path.length - 1], i);
+      const id = getKey(item, path[path.length - 1], i) as Value;
       // 重复 id 警告
       if (context.dataMap.get(id)) {
         return;
@@ -209,7 +209,7 @@ const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<Da
       ids.push(id);
 
       const indexPath = [...index, i];
-      let children: KeygenResult[] = [];
+      let children: Value[] = [];
 
       if (Array.isArray(item[childrenKey])) {
         const _children = initData(
@@ -232,7 +232,7 @@ const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<Da
     return ids;
   };
 
-  const initValue = (ids_outer?: KeygenResult[], forceCheck?: boolean) => {
+  const initValue = (ids_outer?: Value[], forceCheck?: boolean) => {
     let ids = ids_outer;
     if (!context.data || !context.value) {
       return undefined;
@@ -291,14 +291,14 @@ const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<Da
     return checked!;
   };
 
-  const setValue = (value?: Value) => {
+  const setValue = (value?: Value[]) => {
     context.value = value;
     if (value && value !== context.cachedValue) {
       initValue();
     }
   };
 
-  const isDisabled = (id: KeygenResult) => {
+  const isDisabled = (id: Value) => {
     const node = context.pathMap.get(id);
     if (node) return node.isDisabled;
     return false;
@@ -332,7 +332,7 @@ const useTree = <DataItem, Value extends KeygenResult[]>(props: BaseTreeProps<Da
     setValue(prevValue);
   };
 
-  const set = (id: KeygenResult, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
+  const set = (id: Value, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
     if (!isDisabled(id)) {
       setValueMap(id, checked);
     }

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { util } from '@sheinx/hooks';
+import { util, KeygenResult } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeContextProps } from './tree-content.type';
 import Checkbox from './tree-checkbox';
@@ -7,7 +7,9 @@ import { useTreeContext } from './tree-context';
 import Icons from '../icons';
 import Spin from '../spin';
 
-const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
+const NodeContent = <DataItem, Value extends KeygenResult>(
+  props: TreeContextProps<DataItem, Value>,
+) => {
   const {
     jssStyle,
     id,
@@ -63,7 +65,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   };
 
   const handleIndicatorClick = () => {
-    onToggle(id);
+    onToggle?.(id);
 
     if (data[childrenKey] !== undefined) return;
 

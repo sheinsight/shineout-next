@@ -1,8 +1,7 @@
 import { CommonType } from '../common/type';
-import { BaseTreeProps, ObjectKey, KeygenResult, TreePathType } from '@sheinx/hooks';
+import { BaseTreeProps, ObjectKey, KeygenResult, TreePathType, useTree } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
-import { TreeContextProps } from './tree-context.type';
 
 export interface TreeClasses {
   tree: string;
@@ -33,7 +32,11 @@ export type JsstyleType = {
   checkbox: () => CheckboxClasses;
 };
 
-export interface TreeProps<DataItem, Value>
+export type DatumType<DataItem, Value extends KeygenResult> = ReturnType<
+  typeof useTree<DataItem, Value>
+>;
+
+export interface TreeProps<DataItem, Value extends KeygenResult>
   extends BaseTreeProps<DataItem, Value>,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: JsstyleType;
@@ -58,8 +61,8 @@ export interface TreeProps<DataItem, Value>
   inlineNode?: boolean;
   highlight?: boolean;
   loader?: (key: KeygenResult, data: DataItem) => void;
-  onRef?: (datum: TreeContextProps) => void;
-  onClick?: (data: DataItem, id: KeygenResult, path?: TreePathType) => void;
+  onRef?: (datum: DatumType<DataItem, Value>['datum']) => void;
+  onClick?: (data: DataItem, id: KeygenResult, path?: TreePathType<Value>) => void;
   onDragStart?: (e: React.DragEvent, data: DataItem) => void;
   onDragEnd?: (e: React.DragEvent, data: DataItem) => void;
   onDragOver?: (e: React.DragEvent, data: DataItem) => void;

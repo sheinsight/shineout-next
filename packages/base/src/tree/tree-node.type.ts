@@ -3,21 +3,21 @@ import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
 import { JsstyleType, TreeRenderItemType } from './tree.type';
 import { TreeListProps } from './tree-list.type';
 
-export interface TreeNodeProps<DataItem>
-  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'>,
+export interface TreeNodeProps<DataItem, Value extends KeygenResult>
+  extends Omit<BaseTreeProps<DataItem, Value>, 'data' | 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className'> {
-  jssStyle: JsstyleType;
-  id: string;
+  jssStyle?: JsstyleType;
+  id: Value;
   data: DataItem;
   index: number;
   line: boolean;
-  expanded?: boolean;
+  expanded: KeygenResult[];
   doubleClickExpand?: boolean;
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
   onChange?: (value: KeygenResult[]) => void;
-  onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
-  onToggle?: (id: KeygenResult, expanded: boolean) => void;
+  onDrop?: (id: Value, targetId: Value, position: number) => void;
+  onToggle?: (id: Value, expanded?: boolean) => void;
   iconClass?: string;
   leafClass?: string;
   nodeClass?: string | ((data: DataItem) => string);
@@ -25,9 +25,9 @@ export interface TreeNodeProps<DataItem>
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass: (data: DataItem) => string | undefined;
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
-  onNodeClick: (data: DataItem, id: KeygenResult) => void;
+  onNodeClick: (data: DataItem, id: Value) => void;
   renderItem: TreeRenderItemType<DataItem>;
-  listComponent: (props: TreeListProps<DataItem>) => JSX.Element | null;
+  listComponent: (props: TreeListProps<DataItem, Value>) => JSX.Element | null;
   dragImageSelector: (data?: DataItem) => string | undefined;
   dragImageStyle?: React.CSSProperties;
   dragSibling?: boolean;

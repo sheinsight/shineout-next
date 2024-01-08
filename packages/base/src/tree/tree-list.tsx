@@ -1,11 +1,12 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
 // import { util } from '@sheinx/hooks';
+import { KeygenResult } from '@sheinx/hooks';
 import TreeNode from './tree-node';
 import { TreeClasses } from './tree.type';
 import { TreeListProps } from './tree-list.type';
 
-const List = <DataItem,>(props: TreeListProps<DataItem>) => {
+const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataItem, Value>) => {
   const hasExpanded = useRef(false);
 
   const {
@@ -19,6 +20,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
     expandedProp,
     active,
     line,
+    isControlled,
     style,
     onChange,
     renderItem,
@@ -62,12 +64,13 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
   };
 
   const renderNode = (node: DataItem, index: number) => {
-    const id = getKey(node, index) as string;
+    const id = getKey(node, index) as Value;
 
     return (
-      <TreeNode
+      <TreeNode<DataItem, Value>
         jssStyle={jssStyle}
         id={id}
+        isControlled={isControlled}
         data={node}
         mode={mode}
         index={index}
@@ -94,7 +97,7 @@ const List = <DataItem,>(props: TreeListProps<DataItem>) => {
         dragHoverExpand={dragHoverExpand}
         parentClickExpand={parentClickExpand}
         doubleClickExpand={doubleClickExpand}
-        expanded={expandedProp}
+        expanded={expandedProp!}
         onNodeClick={onNodeClick}
         onToggle={onToggle}
         onChange={onChange}

@@ -4,20 +4,21 @@ import { TreeClasses } from './tree.type';
 import { TreeNodeProps } from './tree-node.type';
 import TreeContent from './tree-content';
 import { useTreeContext } from './tree-context';
-import { useTreeNode, ObjectType, util } from '@sheinx/hooks';
+import { useTreeNode, ObjectType, util, KeygenResult } from '@sheinx/hooks';
 
 const placeElement = document.createElement('div');
 const innerPlaceElement = document.createElement('div');
 placeElement.appendChild(innerPlaceElement);
-const placeInfo = { start: '', target: '' };
+const placeInfo: any = { start: '', target: '' };
 let dragLock = false;
 
-const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
+const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataItem, Value>) => {
   const {
     jssStyle,
     id,
     data,
     line,
+    isControlled,
     index,
     renderItem,
     parentClickExpand,
@@ -102,7 +103,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     if (dragSibling && targetPathStr !== currentPathStr) return;
 
     if (dragHoverExpand && !expanded) {
-      onToggle(id);
+      onToggle?.(id);
     }
     const hover = element.current as HTMLDivElement;
     const rect = hover.getBoundingClientRect();
@@ -209,6 +210,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       iconClass,
       leafClass,
       nodeClass,
+      isControlled,
       contentClass,
       parentClickExpand,
       expanded: expanded.indexOf(id) >= 0,
@@ -253,6 +255,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     <div {...getDropProps()} ref={element} className={rootClass}>
       <TreeContent
         jssStyle={jssStyle}
+        isControlled={isControlled}
         id={id}
         line={line}
         data={data}
