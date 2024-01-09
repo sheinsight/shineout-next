@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Alert from '..';
 import mountTest from '../../tests/mountTest';
@@ -73,7 +73,12 @@ describe('Alert[Base]', () => {
     textContentTest(content.querySelector(textClassName) as Element, 'Demo');
   });
   test('should render when set icon', () => {
-    const { container } = render(<Alert icon>Demo</Alert>);
+    const { container } = render(
+      <Alert icon type='info'>
+        Demo
+      </Alert>,
+    );
+    screen.debug();
     const alert = container.querySelector(alertClassName)!;
     const icon = alert.querySelector(iconClassName)!;
     expect(icon).toBeInTheDocument();
@@ -81,7 +86,7 @@ describe('Alert[Base]', () => {
   });
   test('should render when set iconSize', () => {
     const { container } = render(
-      <Alert icon iconSize={20}>
+      <Alert icon iconSize={20} type='info'>
         Demo
       </Alert>,
     );
@@ -94,7 +99,7 @@ describe('Alert[Base]', () => {
     const icon = alert.querySelector(iconClassName)!;
     classLengthTest(icon, 'i', 1);
   });
-  test('should render when set bordered is fasle', () => {
+  test('should render when set bordered is false', () => {
     const { container } = render(<Alert bordered={false}>Demo</Alert>);
     const alert = container.querySelector(alertClassName)!;
     classTest(alert, noBorderedClassName);
