@@ -1,25 +1,37 @@
-import { render, cleanup, screen } from '@testing-library/react';
+import React from 'react';
+import { render, cleanup, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { List, TYPE } from 'shineout';
 import mountTest from '../../tests/mountTest';
-import { classTest, createClassName, displayTest, styleTest } from '../../tests/utils';
-import React from 'react';
+import {
+  attributesTest,
+  classTest,
+  createClassName,
+  displayTest,
+  styleTest,
+  textContentTest,
+} from '../../tests/utils';
+import { classLengthTest } from '../../tests/structureTest';
 
 const SO_PREFIX = 'list';
-const originClasses = ['wrapper'];
-const originItemClasses = [''];
-const { wrapper } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+const originClasses = ['wrapper', 'scrollContainer', 'row', 'item', 'empty'];
+const originItemClasses = ['wrapperBordered', 'wrapperLarge', 'wrapperSmall', 'wrapperStriped'];
+const {
+  wrapper,
+  scrollContainer,
+  row,
+  item: itemClassName,
+  wrapperBordered,
+  wrapperLarge,
+  wrapperSmall,
+  empty: emptyClassName,
+  wrapperStriped,
+} = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const defaultStyle = 'width: 100%;';
 
 interface ListItem {
   id: number;
-  time: string;
-  start: string;
-  height: number;
-  salary: number;
-  office: string;
-  country: string;
-  office5: string;
-  position: string;
   lastName: string;
   firstName: string;
 }
@@ -28,60 +40,19 @@ type ListProps = TYPE.List.Props<ListItem, ListItem>;
 type ListData = ListProps['data'];
 type ListRenderItem = ListProps['renderItem'];
 
-const data: ListData = [
-  {
-    id: 1,
-    firstName: 'Ephraim',
-    lastName: 'Wisozk',
-    position: 'Marketing Designer',
-    start: '2012-01-29',
-    time: '01:42',
-    salary: 115777,
-    country: 'Reunion',
-    office: 'Miami',
-    office5: 'Istanbul',
-    height: 113.74,
-  },
-  {
-    id: 2,
-    firstName: 'Osvaldo',
-    lastName: 'Beer',
-    position: 'Financial Controller',
-    start: '2007-09-04',
-    time: '03:26',
-    salary: 396093,
-    country: 'Syrian Arab Republic',
-    office: 'San Paulo',
-    office5: 'Shenzhen',
-    height: 82.13,
-  },
-  {
-    id: 3,
-    firstName: 'Dylan',
-    lastName: 'Ratke',
-    position: 'Development Lead',
-    start: '2009-10-16',
-    time: '01:45',
-    salary: 236064,
-    country: 'Peru',
-    office: 'Boston',
-    office5: 'Delhi',
-    height: 179.53,
-  },
-  {
-    id: 4,
-    firstName: 'Shaniya',
-    lastName: 'Jacobs',
-    position: 'Developer',
-    start: '2014-06-30',
-    time: '02:17',
-    salary: 338985,
-    country: 'Peru',
-    office: 'Chengdu',
-    office5: 'Dallas-Fort Worth',
-    height: 190.11,
-  },
-];
+const createMoreData = (num: number) => {
+  const result: ListData = [];
+  for (let i = 1; i <= num; i++) {
+    result.push({
+      id: i,
+      firstName: 'test',
+      lastName: `${i}`,
+    });
+  }
+  return result;
+};
+
+const data: ListData = createMoreData(4);
 
 const renderItem: ListRenderItem = (rowData) => (
   <div>{`Name: ${rowData.firstName}-${rowData.lastName}`}</div>
@@ -106,7 +77,88 @@ describe('List[Base]', () => {
     styleTest(list, sytleRender);
   });
   test('should render default', () => {
-    render(<RenderList />);
+    const { container } = render(<RenderList />);
+    const list = container.querySelector(wrapper)!;
+    const listScrollContainer = list.querySelector(scrollContainer)!;
+    const listRow = listScrollContainer.querySelectorAll(row);
+    expect(listRow.length).toBe(data.length);
+    listRow.forEach((i, index) => {
+      const item = i.querySelector(itemClassName)!;
+      styleTest(item, defaultStyle);
+      textContentTest(item, `Name: ${data[index].firstName}-${data[index].lastName}`);
+    });
+  });
+  test('should render without renderItem', () => {
+    const dataWithoutRenderItem = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
+    const { container } = render(<List data={dataWithoutRenderItem} keygen />);
+    const list = container.querySelector(wrapper)!;
+    const rows = list.querySelectorAll(row);
+    rows.forEach((item, index) => {
+      textContentTest(item, dataWithoutRenderItem[index]);
+    });
+  });
+  test('should render when set keygen is true with data item is object', () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    render(<RenderList keygen />);
+    expect(
+      JSON.stringify(errorSpy.mock.calls).indexOf(
+        'Error: keygen result expect a string or a number, get',
+      ),
+    ).toBeTruthy();
+  });
+  test('should render when set bordered', () => {
+    const { container } = render(<RenderList bordered />);
+    const list = container.querySelector(wrapper)!;
+    classTest(list, wrapperBordered);
+  });
+  test('should render when set size is large', () => {
+    const { container } = render(<RenderList size='large' />);
+    const list = container.querySelector(wrapper)!;
+    classTest(list, wrapperLarge);
+  });
+  test('should render when set size is small', () => {
+    const { container } = render(<RenderList size='small' />);
+    const list = container.querySelector(wrapper)!;
+    classTest(list, wrapperSmall);
+  });
+  test('should render when set height', () => {
+    const height = 300;
+    const { container } = render(<RenderList height={height} />);
+    const list = container.querySelector(wrapper)!;
+    styleTest(list, `height: ${height}px;`);
+  });
+  test('should render when set data is empty', () => {
+    const emptyData: ListData = [];
+    const { container } = render(<RenderList data={emptyData} />);
+    const list = container.querySelector(wrapper)!;
+    classLengthTest(list, emptyClassName, 1);
+    classLengthTest(list.querySelector(emptyClassName)!, 'svg', 1);
+  });
+  test('should render when set empty', () => {
+    const emptyContainer = 'none';
+    const emptyData: ListData = [];
+    const { container } = render(<RenderList data={emptyData} empty={emptyContainer} />);
+    const listEmpty = container.querySelector(emptyClassName)!;
+    textContentTest(listEmpty, emptyContainer);
+  });
+  test('should render when set striped', () => {
+    const { container } = render(<RenderList striped />);
+    const list = container.querySelector(wrapper)!;
+    classTest(list, wrapperStriped);
+  });
+});
+describe('List[Fixed]', () => {
+  const virtualData = createMoreData(30);
+  test('should render when set fixed', () => {
+    const { container } = render(<RenderList data={virtualData} fixed />);
+    const list = container.querySelector(wrapper)!;
+    const listScroll = list.firstElementChild?.firstElementChild as Element;
+    const listScrollContainer = listScroll.firstElementChild as Element;
+    const listScrollMain = listScrollContainer.firstElementChild as Element;
+    attributesTest(listScroll, 'data-soui-type', 'scroll');
+    attributesTest(listScrollContainer, 'data-soui-type', 'scroll-container');
+    styleTest(listScrollMain, 'transform: translate3d(0, -0px, 0);');
+    fireEvent.scroll(listScroll, { target: { scrollTop: 50 } });
     screen.debug();
   });
 });

@@ -74,7 +74,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
         key={key}
         className={classNames(listClasses?.item, rowClass)}
         style={{
-          height: props.fixed ? props.lineHeight : '',
+          height: props.fixed ? lineHeight : '',
           width: `${100 / colNum}%`,
           ...props.itemStyle,
         }}
