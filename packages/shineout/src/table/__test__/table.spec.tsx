@@ -231,69 +231,6 @@ const fixedData = [
     age: 3,
   },
 ];
-const renderDataA: TableRowData[] = [
-  {
-    id: 1,
-    name: 'test1',
-  },
-  {
-    id: 2,
-    name: 'test2',
-  },
-  {
-    id: 3,
-    name: 'test3',
-  },
-];
-interface ExpandTreeData {
-  id: number;
-  name: string;
-  children?: ExpandTreeData[];
-}
-
-const expandColumns: TYPE.Table.ColumnItem<ExpandTreeData>[] = [
-  {
-    type: 'row-expand',
-    treeColumnsName: 'children',
-    render: (d: any) => {
-      if (d.salary < 300000) return undefined;
-      return () => (
-        <div style={{ padding: '10px 30px', wordBreak: 'break-all' }}>{JSON.stringify(d)}</div>
-      );
-    },
-  },
-  ...columns,
-];
-
-const expandTreeData: ExpandTreeData[] = [
-  {
-    id: 1,
-    name: 'test1',
-    children: [
-      {
-        id: 2,
-        name: 'test2',
-        children: [
-          {
-            id: 3,
-            name: 'test3',
-          },
-        ],
-      },
-    ],
-  },
-];
-
-const dataGenerate = (sum: number = 20) => {
-  const data: TableRowData[] = [];
-  for (let i = 1; i <= sum; i++) {
-    data.push({
-      id: i,
-      name: `test${i}`,
-    });
-  }
-  return data;
-};
 
 const dataGenerate = (sum: number = 20) => {
   const data: TableRowData[] = [];

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Modal, Button, Form, Input } from 'shineout';
 import mountTest from '../../tests/mountTest';
@@ -334,7 +334,6 @@ describe('Modal[Base]', () => {
         {content}
       </Modal>,
     );
-    screen.debug();
     styleContentTest(document.querySelector(body)!, `padding: ${padding}px;`);
   });
   test('should render when set zoom', () => {
@@ -353,7 +352,6 @@ describe('Modal[Base]', () => {
     classTest(modalWrappers, wrapperZoom);
     fireEvent.animationStart(modalWrappers.querySelector(mask)!);
     fireEvent.animationEnd(modalWrappers);
-    screen.debug();
   });
   test('should render when set zIndex', () => {
     const zIndex = 100;
@@ -462,7 +460,6 @@ describe('Modal[Moveable/Resizable]', () => {
     fireEvent.mouseMove(document, { clientX: 50 });
     fireEvent.mouseUp(document);
     // TODO： not work
-    screen.debug();
   });
   test('should render when set resizable', () => {
     const startClientX = 20;
@@ -631,7 +628,6 @@ describe('Modal[Confirm]', () => {
     };
     const { container } = render(<Button onClick={confirm} />);
     fireEvent.click(container.querySelector('button')!);
-    screen.debug();
     const modalWrapper = document.querySelector(wrapper)!;
     expect(document.querySelector('.so-alert-confirm-icon')!).toBeInTheDocument();
     const tableButtons = modalWrapper.querySelectorAll('button');
