@@ -13,10 +13,10 @@ import { SpinClasses } from '../spin/spin.type';
 import { InputClasses } from '../input/input.type';
 
 export type JssStyleType = {
-  tag: () => TagClasses;
-  select: () => SelectClasses;
+  tag?: () => TagClasses;
+  select?: () => SelectClasses;
   innerTitle?: () => InnerTitleClasses;
-  virtualScroll: () => VirtualScrollClasses;
+  virtualScroll?: () => VirtualScrollClasses;
   popover?: () => PopoverClasses;
   checkbox?: () => CheckboxClasses;
   radio?: () => RadioClasses;
@@ -69,7 +69,7 @@ export interface SelectPropsBase<DataItem, Value>
   extends Omit<BaseSelectProps<DataItem, Value>, 'control'>,
     Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
-  jssStyle: JssStyleType;
+  jssStyle?: JssStyleType;
 
   // data treeData 的类型交给重载去实现
   data?: DataItem[];

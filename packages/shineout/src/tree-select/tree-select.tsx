@@ -1,5 +1,6 @@
 import React from 'react';
 import { TreeSelect } from '@sheinx/base';
+import { KeygenResult } from '@sheinx/hooks';
 import {
   useTagStyle,
   useTreeSelectStyle,
@@ -22,6 +23,6 @@ const jssStyle = {
   treeSelect: useTreeSelectStyle,
   innerTitle: useInnerTitleStyle,
 };
-export default <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) => {
+export default <DataItem, Value extends KeygenResult>(props: TreeSelectProps<DataItem, Value>) => {
   return <TreeSelect jssStyle={jssStyle} {...props} />;
 };

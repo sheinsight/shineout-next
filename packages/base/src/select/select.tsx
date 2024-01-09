@@ -471,7 +471,6 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
           jssStyle={jssStyle}
           size={size}
           separator={separator}
-          datum={datum}
           value={value}
           data={(groupBy ? groupData : filterData) as DataItem[]}
           focus={open}
@@ -483,7 +482,6 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
           compressedClassName={compressedClassName}
           multiple={multiple}
           placeholder={placeholder}
-          prediction={prediction}
           renderItem={renderItem}
           childrenKey={childrenKey}
           renderResult={getRenderResult}

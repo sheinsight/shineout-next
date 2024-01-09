@@ -1,5 +1,5 @@
 import { KeygenResult, UnMatchedData } from '@sheinx/hooks';
-import { SelectProps, DatumType } from './select.type';
+import { SelectProps } from './select.type';
 
 export type ResultType<Value> = UnMatchedData | Value;
 
@@ -16,7 +16,6 @@ export interface ResultProps<DataItem, Value>
     | 'compressedBound'
     | 'compressedClassName'
     | 'disabled'
-    | 'prediction'
     | 'resultClassName'
     | 'renderUnmatched'
     | 'focusSelected'
@@ -25,7 +24,6 @@ export interface ResultProps<DataItem, Value>
     | 'separator'
   > {
   data: DataItem[];
-  datum: DatumType<DataItem, Value>;
   focus: boolean;
   childrenKey?: keyof DataItem & string;
   renderResult: (data: DataItem, index?: number) => React.ReactNode;
@@ -37,11 +35,11 @@ export interface ResultProps<DataItem, Value>
   setInputText: (text: string) => void;
   onCreate?: (text: string) => string | DataItem | undefined;
   onFilter?: (text: string) => void;
-  onInputBlur: (text?: string) => void;
+  onInputBlur?: (text?: string) => void;
   onResetFilter: () => void;
   onClearCreatedData: () => void;
   // crud
-  getDataByValues: (values: (Value | undefined)[]) => (DataItem | UnMatchedData)[];
+  getDataByValues: (values: Value[]) => (DataItem | UnMatchedData)[];
   checkUnMatched: (item: DataItem | UnMatchedData) => boolean;
   onRemove: (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => void;
 }

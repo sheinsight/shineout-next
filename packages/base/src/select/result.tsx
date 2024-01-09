@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver, OptionalToRequired, UnMatchedData } from '@sheinx/hooks';
+import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import Input from './result-input';
@@ -10,7 +10,7 @@ import Tag from '../tag';
 
 const { isObject, isEmpty, isNumber, getKey } = util;
 
-const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem, Value>>) => {
+const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const {
     jssStyle,
     multiple,
@@ -43,7 +43,7 @@ const Result = <DataItem, Value>(props: OptionalToRequired<ResultProps<DataItem,
     onRemove,
   } = props;
 
-  const value = multiple ? (valueProp as Value[]) : [valueProp];
+  const value = (multiple ? valueProp : [valueProp]) as Value[];
 
   const [more, setMore] = useState(-1);
 

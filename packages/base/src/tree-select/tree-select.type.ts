@@ -1,12 +1,15 @@
 import React from 'react';
 import { TreeClasses } from '../tree/tree.type';
 import { KeygenResult, ObjectKey, UnMatchedData, TreeKeygenType } from '@sheinx/hooks';
-import { TreeSelectClasses, SelectClasses } from '@sheinx/shineout-style';
+import { TreeSelectClasses, SelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
+import { TagClasses } from '../tag/tag.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
 import { InnerTitleClasses } from '../common/use-inner-title';
 
 export type JssStyleType = {
+  virtualScroll?: () => VirtualScrollClasses;
+  tag?: () => TagClasses;
   treeSelect?: () => TreeSelectClasses;
   select?: () => SelectClasses;
   tree?: () => TreeClasses;
@@ -18,17 +21,20 @@ export type TreeModeType = 0 | 1 | 2 | 3 | 4;
 export type ResultItem<DataItem> = DataItem | UnMatchedData;
 
 export interface ComponentRef<DataItem, Value> {
-  jssStyle: JssStyleType;
   /**
    * @en Get the data corresponding to the value
    * @cn 获取 value 对应的 data
    */
-  getDataByValues: (
-    values: Value,
-  ) => Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
+  // getDataByValues: (
+  //   values: Value | Value[],
+  // ) => Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
+  getDataByValues: {
+    (values: Value): ResultItem<DataItem>;
+    (values: Value[]): ResultItem<DataItem>[];
+  };
 }
 
-export interface TreeSelectProps<DataItem, Value>
+export interface TreeSelectProps<DataItem, Value extends KeygenResult>
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle?: JssStyleType;
@@ -72,9 +78,9 @@ export interface TreeSelectProps<DataItem, Value>
    * @en Some methods of getting components Currently only support getDataByValue
    * @cn 获取组件的一些方法 目前只支持 getDataByValues
    */
-  getComponentRef?:
-    | ((ref: ComponentRef<DataItem, Value>) => void)
-    | { current?: ComponentRef<DataItem, Value> };
+  getComponentRef?: ((ref: ComponentRef<DataItem, Value>) => void) & {
+    current?: ComponentRef<DataItem, Value>;
+  };
   onFilter?: (text: string) => void;
   /**
    * @en Placeholder content when there is no data
@@ -146,16 +152,20 @@ export interface TreeSelectProps<DataItem, Value>
    * @en value is your picker now
    * @cn 参数 为 当前选中值
    */
-  onChange?: (value: Value, selected?: DataItem, path?: (string | number)[]) => void;
+  onChange?: (
+    value: Value | Value[],
+    selected?: ResultItem<DataItem>,
+    path?: (string | number)[],
+  ) => void;
 
   /**
    * @en onChange additional parameters (current is the data of the clicked node, data is the currently selected data, checked is whether it is selected or canceled in the multi-select state)
    * @cn onChange 额外参数 (current 为点击的节点的数据， data 为当前选中的数据， checked 为多选状态下是选中还是取消)
    */
   onChangeAddition?: (params: {
-    current?: DataItem;
+    current?: DataItem | DataItem[];
     checked?: 0 | 1 | 2;
-    data?: DataItem[] | DataItem | null;
+    data?: ResultItem<DataItem>[] | ResultItem<DataItem> | null;
   }) => void;
   /**
    * @en In the Form, the value will be taken over by the form and the value will be invalid.

@@ -9,7 +9,7 @@ import {
   KeygenResult,
 } from '@sheinx/hooks';
 import classNames from 'classnames';
-import { TreeSelectProps } from './tree-select.type';
+import { TreeSelectProps, ResultItem } from './tree-select.type';
 import { TreeSelectClasses } from '@sheinx/shineout-style';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
@@ -19,7 +19,9 @@ import Result from '../select/result';
 import Icons from '../icons';
 import Tree from '../tree';
 
-const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) => {
+const TreeSelect = <DataItem, Value extends KeygenResult>(
+  props: TreeSelectProps<DataItem, Value>,
+) => {
   const {
     jssStyle,
     className,
@@ -73,7 +75,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     width,
   };
 
-  const datum = useRef<TreeContextProps>();
+  const datum = useRef<TreeContextProps<DataItem, Value>>();
   const blurEvent = useRef<(() => void) | null>();
   const treeSelectRef = useRef<any>();
   const inputRef = useRef<HTMLInputElement>();
@@ -96,7 +98,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     onClearCreatedData,
   } = useFilter({
     treeData: data,
-    keygen,
+    keygen: keygen as any,
     childrenKey,
     expanded: expandedProp,
     showHitDescendants,
@@ -138,7 +140,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     },
   );
 
-  const bindTreeDatum = (treeDatum: TreeContextProps) => {
+  const bindTreeDatum = (treeDatum: TreeContextProps<DataItem, Value>) => {
     datum.current = treeDatum;
   };
 
@@ -214,15 +216,15 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     );
   };
 
-  const getDataByValues = (values?: Value | Value[]): DataItem[] | DataItem => {
-    if (!datum.current) return [];
-    return datum.current.getDataByValues(values as KeygenResult[]);
+  const getDataByValues = (values?: Value | Value[]): ResultItem<DataItem>[] => {
+    if (!datum.current || !values) return [];
+    return datum.current.getDataByValues(values as Value[]);
   };
 
   const getValue = () => {
     if (!datum.current) return;
     const nextValue = datum.current.getValue();
-    if (multiple) return nextValue as Value;
+    if (multiple) return nextValue;
     return (nextValue.length ? nextValue[0] : '') as Value;
   };
 
@@ -260,7 +262,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
   const handleChange = (item: DataItem | UnMatchedData, id: Value) => {
     if (!datum.current) return;
     if (disabled === true || datum.current?.isDisabled(id)) return;
-    const currentData = getDataByValues(id);
+    const currentData = getDataByValues(id) as DataItem;
     if (!multiple) {
       datum.current.setValue([]);
       datum.current.set(datum.current.getKey(item), 1);
@@ -281,7 +283,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
     }
   };
 
-  const handleTreeChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
+  const handleTreeChange = (item: DataItem | UnMatchedData, id: Value) => {
     handleChange(item, id);
     if (!multiple) closePop();
   };
@@ -291,14 +293,14 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
 
     const dataKey = util.isUnMatchedData(item)
       ? item.value
-      : datum.current.getKey(item, key, index);
+      : datum.current.getKey(item, key as Value, index);
 
     const isDisabled = datum.current.isDisabled(dataKey);
 
     if (isDisabled) return;
 
     datum.current.set(dataKey, 0);
-    handleChange(item, datum.current.getKey(item, key, index));
+    handleChange(item, datum.current.getKey(item, key as Value, index));
   };
 
   // innerTitle 模式
@@ -319,7 +321,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           value={value}
           data={filterData as DataItem[]}
           focus={open}
-          keygen={keygen}
+          keygen={keygen as any}
           disabled={disabled}
           maxLength={maxLength}
           compressed={compressed}
@@ -327,7 +329,7 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           compressedClassName={compressedClassName}
           multiple={multiple}
           placeholder={placeholder}
-          // renderItem={renderItem}
+          renderItem={renderItem as any}
           childrenKey={childrenKey}
           renderResult={getRenderResult}
           resultClassName={resultClassName}
@@ -339,7 +341,6 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
           setInputText={setInputText}
           onFilter={handleFilter}
           onRef={inputRef}
-          // onInputBlur={handleInputBlur}
           onResetFilter={onResetFilter}
           checkUnMatched={checkUnMatched}
           onClearCreatedData={onClearCreatedData}
@@ -411,10 +412,10 @@ const TreeSelect = <DataItem, Value>(props: TreeSelectProps<DataItem, Value>) =>
   };
 
   useEffect(() => {
-    if (typeof getComponentRef === 'function') {
-      getComponentRef({ getDataByValues });
-    } else if (getComponentRef) {
-      getComponentRef.current = { getDataByValues };
+    if (util.isFunc(getComponentRef) && datum.current) {
+      getComponentRef({ getDataByValues: datum.current.getDataByValues });
+    } else if (getComponentRef && datum.current) {
+      getComponentRef.current = { getDataByValues: datum.current?.getDataByValues };
     }
   }, []);
 
