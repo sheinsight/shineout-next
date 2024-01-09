@@ -9,7 +9,7 @@ import { Button, Tooltip } from 'shineout';
 
 const App: React.FC = () => (
   <div>
-    <Tooltip tip='Some text.' position='left' disabledChild>
+    <Tooltip tip='Some text.' disabledChild>
       <Button disabled>Disabled</Button>
     </Tooltip>
   </div>

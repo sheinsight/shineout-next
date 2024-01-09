@@ -1,15 +1,13 @@
 ## When to use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+No need for permanent display, when the mouse needs to be moved in to display text explanations
 
-## Related to layout
+## Common usage of components
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+![Used in forms or in advanced searches, usually after the field title](01)
 
-## Component combination
+![Prompts with less text content use a black text arrow prompt box by default. The scene has a hover display of helpful question icons and a hover display of truncated text](02)
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+## Recommended/use with caution examples
 
-## Recommended/Use with caution examples
-
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![Text prompt information should not be too much, generally no more than three lines. When there is a lot of prompt content, it is more suitable to use the bubble component](03)

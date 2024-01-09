@@ -1,8 +1,8 @@
 /**
  * cn - 完全受控
- *    -- 通过封装实现完全受控
- * en - 完全受控
- *    -- 通过封装实现完全受控
+ *    -- value onChange
+ * en - controlled
+ *    -- value onChange
  */
 import React from 'react';
 import { DatePicker } from 'shineout';

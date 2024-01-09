@@ -26,7 +26,7 @@ const checkboxTokenValue = {};
 const checkboxTokenExtraValue = {
   icon: {
     size: 'Size-7',
-    border: { color: 'Neutral-text-3', radius: 'Radius-2', width: 'Border-1' },
+    border: { color: 'Neutral-border-2', radius: 'Radius-2', width: 'Border-1' },
     background: { color: 'Neutral-fill-1' },
     color: 'transparent',
     disabled: {

@@ -22,16 +22,14 @@ export interface TooltipClasses {
 }
 
 export interface TooltipProps
-  extends Pick<
-      BasePopupProps,
-      | 'trigger'
-      | 'disabled'
-      | 'position'
-      | 'priorityDirection'
-      | 'mouseEnterDelay'
-      | 'mouseLeaveDelay'
-    >,
+  extends Pick<BasePopupProps, 'trigger' | 'position' | 'priorityDirection'>,
     Pick<CommonType, 'className' | 'style'> {
+  /**
+   * @en Pop-up type
+   * @cn 弹出方式
+   * @default "hover"
+   */
+  trigger: 'hover' | 'click' | 'focus';
   jssStyle?: {
     tooltip?: () => TooltipClasses;
   };
@@ -66,5 +64,10 @@ export interface TooltipProps
    * @cn 弹出文字
    */
   tip: React.ReactNode;
-  // type?: 'info' | 'success' | 'warning' | 'danger' | 'error';
+  /**
+   * @cn 样式
+   * @en style
+   * @default default
+   */
+  type?: 'default' | 'light' | 'primary' | 'success' | 'warning' | 'danger';
 }
