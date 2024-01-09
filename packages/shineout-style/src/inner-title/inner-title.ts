@@ -38,15 +38,18 @@ const innerTitle: JsStyles<Class> = {
     pointerEvents: 'none',
     position: 'absolute',
     visibility: 'visible',
-    transition: 'all 150ms ease-in-out',
+    transition: 'top 150ms linear 50ms, transform 150ms linear 50ms, font-size 150ms linear 50ms',
+    '$wrapperLarge &': {
+      transition: 'top 120ms linear 50ms, transform 120ms linear 50ms, font-size 120ms linear 50ms',
+    },
     top: `50%`,
-    transform: 'translateY(-50%)',
+    transform: 'translate3d(0, -50%, 0)',
     left: '0',
     right: '0',
     padding: 'inherit',
     '$wrapperOpen &': {
       top: '0',
-      transform: 'translateY(0%)',
+      transform: 'translate3d(0, 0%, 0)',
     },
     '$wrapper:not($wrapperOpen) &': {
       fontSize: 'inherit',
@@ -54,7 +57,6 @@ const innerTitle: JsStyles<Class> = {
   },
   content: {
     opacity: '0',
-
     '$wrapperOpen &': {
       opacity: '1',
     },

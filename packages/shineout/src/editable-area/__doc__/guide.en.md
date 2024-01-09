@@ -1,15 +1,19 @@
 ## When to use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+This function is usually used in the web page navigation menu and other function usage scenarios with many tool menus and options
 
-## Related to layout
+## Related to the layout
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+![The drop-down menu supports different layout methods according to the layout position in the page](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/001.png?raw=true)
 
-## Component combination
+## Recommended Use
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+![1. It can be used as a navigation menu for websites or applications. Users can click on options in the drop-down menu to access specific pages or perform operations](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/002.png?raw=true)
 
-## Recommended/Use with caution examples
+![2. Operation menu: used to perform operations on a certain data item, such as the context menu popped up by the right mouse button](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/003.png?raw=true)
 
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+## Example with caution
+
+![1. Simplify the interaction. When there are only 2 or 1 options, it is not recommended to use the drop-down menu. Please let the user choose directly](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/004.png?raw=true)
+
+![2. When there are too many menu items, it is recommended to group or classify them](https://github.com/sheinsight/shineout-static/blob/main/shineout-next/images/dropdown/005.png?raw=true)

@@ -1,15 +1,15 @@
-## When to use
+When to use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+When the user needs more additional information; \n When the user needs to confirm twice.
 
 ## Related to layout
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+! [The location of the bubble confirmation box can be arranged according to the specific needs of the current page, and the location should avoid blocking the page information or being blocked.](01)
 
-## Component combination
+## Recommended
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+! [Popover bubbles and Tooltip tips both have the function of displaying additional information, bubbles can carry titles, paragraph text, links, buttons, etc., so in the selection of components, if you need to operate on additional information elements, it is recommended to use the Popover bubble component.](02)
 
-## Recommended/Use with caution examples
+## Examples recommended/used with caution
 
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+! [When multiple buttons are used in combination, there must be a certain interval between each button, and it is not recommended to connect together](03)

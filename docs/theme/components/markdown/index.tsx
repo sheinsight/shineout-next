@@ -15,7 +15,7 @@ const Markdown = (props: MarkdownProps) => {
   const state = useSnapshot(store);
   return (
     <div className={classes.pages}>
-      <Title title={title} describe={describe}></Title>
+      <Title title={title} describe={describe} guides={guides}></Title>
       {state.doctab === 'examples' && <Doc examples={examples}></Doc>}
       {state.doctab === 'api' && <Api api={api}></Api>}
       {state.doctab === 'guide' && <Guide guides={guides}></Guide>}

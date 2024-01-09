@@ -2,7 +2,9 @@ import * as React from 'react';
 import { Provider } from './Provider';
 import useLatestObj from '../../common/use-latest-obj';
 import usePersistFn from '../../common/use-persist-fn';
-import useFuncChange from '../../common/use-func-change';
+import { getDataAttributeName } from '../../utils/attribute';
+
+const globalKey = '__global__&&@@';
 import { current, produce } from 'immer';
 import {
   deepGet,
@@ -15,6 +17,8 @@ import {
   shallowEqual,
   wrapFormError,
 } from '../../utils';
+
+const emptyObj = {};
 
 import { FormContext, ProviderProps, UseFormProps, UseFormSlotProps } from './use-form.type';
 import { HandlerType, ObjectType } from '../../common/type';
@@ -37,6 +41,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     rules,
     throttle = 1000,
     size,
+    scrollParent,
   } = props;
 
   const deepSetOptions = {
@@ -44,50 +49,87 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     forceSet: true,
   };
 
-  const { value, onChange } = useFuncChange({
-    value: props.value || ({} as T),
-    onChange: props.onChange,
-  });
-
   const formRef = React.useRef<HTMLFormElement>();
 
-  const handleSubmitError = (err: Error) => {
-    onError?.(err);
-    if (!props.scrollToError) return;
-    const el = formRef.current?.querySelector('.shineout-form-error');
-    if (el) {
-      el.scrollIntoView();
-    }
-    if (typeof scrollToError === 'number' && scrollToError !== 0) {
-      docScroll.top -= scrollToError;
-    }
-  };
-
-  const context = React.useRef<FormContext>({
+  const { current: context } = React.useRef<FormContext>({
     defaultValues: {},
-    rules: {},
+    validateMap: {},
+    updateMap: {},
+    flowMap: {},
     removeArr: new Set<string>(),
     names: new Set<string>(),
     submitLock: false,
-    lastValue: value,
+    value: props.value || emptyObj,
+    errors: {},
+    serverErrors: {},
+    lastValue: props.value || emptyObj,
     resetTime: 0,
     mounted: false,
   });
 
-  React.useEffect(() => {
-    context.current.mounted = true;
-  }, []);
+  const update = (name?: string | string[]) => {
+    if (!name) {
+      Object.keys(context.updateMap).forEach((key) => {
+        context.updateMap[key]?.(context.value, context.errors, context.serverErrors);
+      });
+      Object.keys(context.flowMap).forEach((key) => {
+        context.flowMap[key].forEach((update) => {
+          update();
+        });
+      });
+    } else {
+      const names = isArray(name) ? name : [name];
+      names.forEach((key) => {
+        context.updateMap[key]?.(context.value, context.errors, context.serverErrors);
+        context.flowMap[key]?.forEach((update) => {
+          update();
+        });
+      });
+    }
+    context.flowMap[globalKey]?.forEach((update) => {
+      update();
+    });
+  };
 
-  const [errors, setErrors] = React.useState<ObjectType>({});
+  const handleSubmitError = (err: Error) => {
+    onError?.(err);
+    if (!props.scrollToError) return;
+    setTimeout(() => {
+      const selector = `[${getDataAttributeName('status')}="error"]`;
+
+      const el = formRef.current?.querySelector(selector);
+      if (el) {
+        el.scrollIntoView();
+        const focusableSelectors = 'textarea, input,[tabindex]:not([tabindex="-1"])';
+        const focusEl = el.querySelector(focusableSelectors) as HTMLElement;
+        if (focusEl && focusEl.focus) focusEl.focus();
+      }
+      if (typeof scrollToError === 'number' && scrollToError !== 0) {
+        const scrollEl = scrollParent?.();
+        if (scrollEl) {
+          scrollEl.scrollTop -= scrollToError;
+        } else {
+          docScroll.top -= scrollToError;
+        }
+      }
+    });
+  };
+
+  const onChange = usePersistFn((change: T | ((v: T) => void | T)) => {
+    const newValue = typeof change === 'function' ? produce(context.value, change) : change;
+
+    context.value = newValue;
+    props.onChange?.(context.value as T);
+  });
 
   const validateFields = usePersistFn((fields?: string | string[], config = {}): Promise<true> => {
     return new Promise((resolve, reject) => {
       const files2 = fields
-        ? (isArray(fields) ? fields : [fields]).filter((key) => context.current.rules[key])
-        : Object.keys(context.current.rules);
+        ? (isArray(fields) ? fields : [fields]).filter((key) => context.validateMap[key])
+        : Object.keys(context.validateMap);
       const validates = files2.map((key) => {
-        const f = context.current.rules[key];
-        return f(key, deepGet(value, key), value, config);
+        const validateField = context.validateMap[key];
+        return validateField(key, deepGet(context.value, key), context.value, config);
       });
       Promise.all(validates)
         .then((results) => {
@@ -104,127 +146,80 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     });
   });
 
-  // 默认值更新
-  React.useEffect(() => {
-    // initValidate 字段改变后自动校验对应的值
-    if (initValidate && !context.current.resetTime) {
-      const keys = Object.keys(context.current.rules).filter((key) => {
-        const oldValue = deepGet(context.current.lastValue || {}, key);
-        const newValue = deepGet(value || {}, key);
-        return !shallowEqual(oldValue, newValue);
-      });
-      validateFields(keys).catch(() => {});
-    }
-    context.current.resetTime = 0;
-    context.current.lastValue = value;
-  }, [value]);
-
   const remove = () => {
-    if (!context.current.removeArr.size) return;
+    if (!context.removeArr.size) return;
     onChange((v) => {
-      context.current.removeArr.forEach((n) => {
+      context.removeArr.forEach((n) => {
         deepRemove(v, n);
-        context.current.removeArr.delete(n);
+        context.removeArr.delete(n);
       });
     });
   };
 
   const addRemove = (name: string) => {
-    context.current.removeArr.add(name);
-    if (context.current.removeTimer) {
-      clearTimeout(context.current.removeTimer);
+    context.removeArr.add(name);
+    if (context.removeTimer) {
+      clearTimeout(context.removeTimer);
     }
-    context.current.removeTimer = setTimeout(remove);
+    context.removeTimer = setTimeout(remove);
   };
 
-  const formFunc: FormContextType['formFunc'] = useLatestObj({
-    bind: (
-      n: string,
-      df: any,
-      validate: (
-        name: string,
-        v: any,
-        formValue: ObjectType,
-        config: { ignoreBind?: boolean },
-      ) => void,
-    ) => {
-      if (context.current.names.has(n)) {
-        console.error(`name "${n}" already exist`);
-        return;
-      }
-      context.current.names.add(n);
-      context.current.rules[n] = validate;
-      context.current.removeArr.delete(n);
-      if (df !== undefined && deepGet(value, n) === undefined) {
-        if (!context.current.mounted) context.current.defaultValues[n] = df;
-        onChange((v) => {
-          deepSet(v, n, df, deepSetOptions);
-        });
-      }
-    },
-    unbind: (n: string, reserveAble?: boolean) => {
-      delete context.current.rules[n];
-      delete context.current.defaultValues[n];
-      context.current.names.delete(n);
-      if (!reserveAble) {
-        addRemove(n);
-      }
-    },
+  const getValue = usePersistFn((name?: string) => {
+    if (name) {
+      return deepGet(context.value, name);
+    }
+    return context.value;
+  });
 
-    setValue: (
-      vals: { [key: string]: any },
-      option: { validate?: boolean } = { validate: false },
-    ) => {
+  const setValue = usePersistFn(
+    (vals: { [key: string]: any }, option: { validate?: boolean } = { validate: false }) => {
       onChange((draft) => {
         Object.keys(vals).forEach((key) => {
           deepSet(draft, key, vals[key], deepSetOptions);
           if (option.validate) {
-            context.current.rules[key]?.(key, vals[key], current(draft));
+            context.validateMap[key]?.(key, vals[key], current(draft));
           }
         });
       });
+      const keys = Object.keys(vals);
+      keys.forEach((key) => {
+        delete context.serverErrors[key];
+      });
+      update(keys);
     },
+  );
 
-    setError(n: string, e: Error | undefined) {
-      setErrors((prev) => ({ ...prev, [n]: e }));
-    },
-
-    clearErrors() {
-      setErrors({});
-    },
-
-    combineRules<ItemValue>(name: string, propRules: FormItemRule<ItemValue>) {
-      let newRules: FormItemRule<ItemValue> = [];
-      if (isObject(rules) && name) {
-        newRules = (deepGet(rules, name) || []) as FormItemRule<ItemValue>;
-      }
-      if (isArray(propRules)) {
-        newRules = newRules.concat(propRules);
-      }
-      return newRules;
-    },
-
-    validateFields,
+  const getErrors = usePersistFn(() => context.errors);
+  const clearErrors = usePersistFn(() => {
+    const keys = Object.keys(context.errors);
+    context.errors = {};
+    context.serverErrors = {};
+    update(keys);
   });
 
-  const submit = usePersistFn((withValidate = true) => {
+  const setError = usePersistFn((name: string, e: Error | undefined) => {
+    context.errors[name] = e;
+    update(name);
+  });
+
+  const submit = usePersistFn((withValidate: boolean = true) => {
     if (disabled) return;
-    if (context.current.submitLock) {
+    if (context.submitLock) {
       return;
     }
-    context.current.submitLock = true;
+    context.submitLock = true;
     setTimeout(() => {
       // 防止连续点击
-      context.current.submitLock = false;
+      context.submitLock = false;
     }, throttle);
     (async () => {
       if (!withValidate) {
-        props.onSubmit?.(value ?? ({} as T));
+        props.onSubmit?.((context.value as T) ?? ({} as T));
         return;
       }
       const result = await validateFields(undefined, { ignoreBind: true }).catch((e) => e);
       if (result === true) {
-        props.onSubmit?.(value ?? ({} as T));
+        props.onSubmit?.((context.value as T) ?? ({} as T));
       } else {
         handleSubmitError(result);
         return;
@@ -240,19 +235,20 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const getDefaultValue = () => {
     const v = produce(defaultValue, (draft) => {
-      Object.keys(context.current.defaultValues).forEach((key) => {
-        const df = context.current.defaultValues[key];
+      Object.keys(context.defaultValues).forEach((key) => {
+        const df = context.defaultValues[key];
         if (deepGet(draft, key) === undefined) deepSet(draft, key, df, deepSetOptions);
       });
     });
-    return v;
+    return v as T;
   };
 
   const handleReset = (other: HandlerType) => (e: React.FormEventHandler<HTMLFormElement>) => {
     if (disabled) return;
     onChange(getDefaultValue());
-    formFunc?.clearErrors?.();
-    context.current.resetTime = 1;
+    clearErrors();
+    update();
+    context.resetTime = 1;
     props.onReset?.();
     other?.onReset?.(e);
   };
@@ -271,15 +267,95 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     };
   };
 
+  const reset = usePersistFn(() => handleReset({})(undefined as any));
+
+  const controlFunc: FormContextType['func'] = useLatestObj({
+    bind: (
+      n: string,
+      df: any,
+      validate: (
+        name: string,
+        v: any,
+        formValue: ObjectType,
+        config: { ignoreBind?: boolean },
+      ) => void,
+      updateFn: (
+        formValue: ObjectType,
+        errors: ObjectType<Error>,
+        serverErrors: ObjectType<Error>,
+      ) => void,
+    ) => {
+      if (context.names.has(n)) {
+        console.error(`name "${n}" already exist`);
+        return;
+      }
+      context.names.add(n);
+      context.validateMap[n] = validate;
+      context.updateMap[n] = updateFn;
+      context.removeArr.delete(n);
+      if (df !== undefined && deepGet(context.value, n) === undefined) {
+        if (!context.mounted) context.defaultValues[n] = df;
+        onChange((v) => {
+          deepSet(v, n, df, deepSetOptions);
+        });
+        update(n);
+      }
+    },
+    unbind: (n: string, reserveAble?: boolean) => {
+      delete context.validateMap[n];
+      delete context.defaultValues[n];
+      delete context.updateMap[n];
+      context.names.delete(n);
+      if (!reserveAble) {
+        addRemove(n);
+      }
+    },
+    combineRules<ItemValue>(name: string, propRules: FormItemRule<ItemValue>) {
+      let newRules: FormItemRule<ItemValue> = [];
+      if (isObject(rules) && name) {
+        newRules = (deepGet(rules, name) || []) as FormItemRule<ItemValue>;
+      }
+      if (isArray(propRules)) {
+        newRules = newRules.concat(propRules);
+      }
+      return newRules;
+    },
+    watch: (names: string[] = [globalKey], update: () => void) => {
+      names.forEach((name) => {
+        context.flowMap[name] = context.flowMap[name] || new Set();
+        context.flowMap[name].add(update);
+      });
+    },
+    unWatch: (names: string[] = [globalKey], update?: () => void) => {
+      names.forEach((name) => {
+        if (update) {
+          context.flowMap[name].delete(update);
+        } else {
+          delete context.flowMap[name];
+        }
+      });
+    },
+  });
+
   const formValue: FormContextType = React.useMemo(
     () => ({
-      errors,
-      value,
-      formFunc,
+      func: controlFunc,
       disabled: !!disabled,
     }),
-    [errors, value, formFunc],
+    [!!disabled],
   );
+
+  const formFunc = useLatestObj({
+    setValue,
+    getValue,
+    submit,
+    reset,
+    setError,
+    getErrors,
+    clearErrors,
+    validateFields,
+  });
+
   const formConfig: ProviderProps['formConfig'] = React.useMemo(
     () => ({
       labelWidth,
@@ -293,25 +369,43 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     [labelWidth, labelAlign, labelVerticalAlign, keepErrorHeight, inline, disabled, size],
   );
 
-  const getValue = usePersistFn(() => value);
-  const reset = usePersistFn(() => handleReset({})(undefined as any));
-  const clearValidate = usePersistFn(formFunc.clearErrors);
-  const validate = usePersistFn(() => validateFields());
-  const validateFieldsFunc = usePersistFn((fields: string | string[]) =>
-    validateFields(fields).catch(() => {}),
-  );
-  const validateFieldsWithError = usePersistFn((fields: string | string[]) =>
-    validateFields(fields),
-  );
-  const func = useLatestObj({
-    submit,
-    getValue,
-    reset,
-    clearValidate,
-    validate,
-    validateFields: validateFieldsFunc,
-    validateFieldsWithError,
-  });
+  React.useEffect(() => {
+    // 服务端错误更新
+    if (!props.error) context.serverErrors = {};
+    else {
+      const errors = Object.keys(props.error).reduce((prev, cur) => {
+        const item = props.error![cur];
+        const error = item instanceof Error ? item : new Error(item);
+        return {
+          ...prev,
+          [cur]: error,
+        };
+      }, {});
+      context.serverErrors = errors;
+    }
+    update();
+  }, [props.error]);
+
+  // 默认值更新
+  React.useEffect(() => {
+    if (props.value === context.lastValue) return;
+    context.value = (props.value || emptyObj) as T;
+    if (initValidate && !context.resetTime) {
+      const keys = Object.keys(context.validateMap).filter((key) => {
+        const oldValue = deepGet(context.lastValue || emptyObj, key);
+        const newValue = deepGet(context.value || emptyObj, key);
+        return !shallowEqual(oldValue, newValue);
+      });
+      validateFields(keys).catch(() => {});
+    }
+    update();
+    context.lastValue = props.value;
+    context.resetTime = 0;
+  }, [props.value]);
+
+  React.useEffect(() => {
+    context.mounted = true;
+  }, []);
 
   return {
     getFormProps,
@@ -319,8 +413,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     ProviderProps: {
       formValue,
       formConfig,
+      formFunc,
     },
-    func,
+    formFunc,
   };
 };
 

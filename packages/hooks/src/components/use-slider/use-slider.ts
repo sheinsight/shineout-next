@@ -59,6 +59,8 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
 
   const { current: context } = useRef({
     dragIndex: -1,
+    clickLock: false,
+    clickLockTimer: null as NodeJS.Timeout | null,
   });
 
   const trackRef = useRef<HTMLDivElement>(null);
@@ -66,7 +68,16 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
   const handleDragStart = usePersistFn(() => {
     setRate([getRateFromValue(startValue, scale), getRateFromValue(endValue, scale)]);
   });
+
+  const lockClick = usePersistFn(() => {
+    context.clickLock = true;
+    if (context.clickLockTimer) clearTimeout(context.clickLockTimer);
+    context.clickLockTimer = setTimeout(() => {
+      context.clickLock = false;
+    }, 100);
+  });
   const handleDragEnd = usePersistFn(() => {
+    lockClick();
     const start = getValueFromRate(rate[0], scale, step);
     const end = getValueFromRate(rate[1], scale, step);
     context.dragIndex = -1;
@@ -118,6 +129,7 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
   };
 
   const handleTrackClick = usePersistFn((e: React.MouseEvent) => {
+    if (context.clickLock) return;
     const target = e.currentTarget as HTMLDivElement;
     const rect = target.getBoundingClientRect();
     const rate = !props.vertical

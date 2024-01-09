@@ -1,6 +1,6 @@
 ---
 name: Divider
-group: Other
+group: Layout
 ---
 
 # Title

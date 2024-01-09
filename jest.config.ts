@@ -26,7 +26,11 @@ function createTesterConfig(namespace: string): Config.InitialOptions {
     // modulePathIgnorePatterns: [
     //   '<rootDir>/packages-infra/compiled-utils/compiled/',
     // ],
-    transformIgnorePatterns: [`<rootDir>/${namespace}/node_modules/`, `<rootDir>/*/dist/`],
+    transformIgnorePatterns: [
+      `<rootDir>/${namespace}/node_modules/`,
+      `<rootDir>/*/dist/`,
+      'node_modules/',
+    ],
     // moduleNameMapper: {
     //   '^(\\.{1,2}/.*)\\.js$': '$1',
     // },

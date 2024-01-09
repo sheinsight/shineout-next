@@ -1,4 +1,4 @@
-import { useFormFieldSet, util } from '@sheinx/hooks';
+import { useFormFieldSet, util, usePersistFn } from '@sheinx/hooks';
 import React from 'react';
 import { FormFieldSetProps } from './form-fieldset.type';
 import { produce } from 'immer';
@@ -6,12 +6,15 @@ import { produce } from 'immer';
 const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   const { children, empty } = props;
   const { current: context } = React.useRef<{ ids: string[] }>({ ids: [] });
+
+  const getValidateProps = usePersistFn(() => props);
   const { Provider, ProviderValue, value, error, onChange } = useFormFieldSet<T>({
     name: props.name,
     reserveAble: props.reserveAble,
     defaultValue: props.defaultValue,
     rules: props.rules,
     onError: props.onError,
+    getValidateProps,
   });
   if (typeof children !== 'function') {
     return <Provider value={ProviderValue}>{children}</Provider>;

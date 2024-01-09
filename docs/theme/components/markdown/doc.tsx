@@ -44,7 +44,7 @@ const Doc = (props: DocProps) => {
   }, [location]);
 
   return (
-    <div className={classes.doc}>
+    <div className={classes.doc} id='doc'>
       <div className='examples'>
         {examples.map((example, index) => {
           return (

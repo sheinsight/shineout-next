@@ -14,7 +14,7 @@ const defaultInfo = (num: number, msg: any) => {
   if (msg.length <= num) return text;
   return new Error(text);
 };
-export default (props: TextareaProps) => {
+const Textarea = (props: TextareaProps) => {
   const { info, suffix, renderFooter, width, style, jssStyle, onBlur, status, ...resetProps } =
     props;
   const textareaClasses = jssStyle?.textarea?.();
@@ -176,3 +176,5 @@ export default (props: TextareaProps) => {
     />
   );
 };
+
+export default React.memo(Textarea);

@@ -5,5 +5,11 @@ dist
 docs/chunk
 .DS_Store
 coverage
-/uploads
-.history
+uploads
+cypress/videos
+cypress/screenshots
+cypress/downloads
+.nyc_output
+reports
+cypress-coverage
+jest-coverage

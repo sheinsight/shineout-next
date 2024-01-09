@@ -87,9 +87,7 @@ const radioStyle: JsStyles<RadioClass> = {
     width: '100%',
     height: '100%',
     borderRadius: '50%',
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: 'inline-block',
     '& > svg': {
       width: '100%',
       height: '100%',
@@ -107,6 +105,10 @@ const radioStyle: JsStyles<RadioClass> = {
         height: '50%',
         borderRadius: '50%',
         backgroundColor: 'currentcolor',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
       },
     },
     '$wrapperDisabled &': {
@@ -130,9 +132,7 @@ const radioStyle: JsStyles<RadioClass> = {
       fontSize: token.radioLargeLabelFontSize,
     },
   },
-  group: {
-    // padding: '5px 0',
-  },
+  group: {},
   groupBlock: {
     '& $wrapper': {
       display: 'flex',

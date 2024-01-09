@@ -10,6 +10,7 @@ export interface Locals {
 export interface Header {
   title: Local;
   describe: Local;
+  guides: Guides;
 }
 
 export interface Example {

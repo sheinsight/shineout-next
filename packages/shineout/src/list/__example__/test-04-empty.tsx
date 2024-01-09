@@ -62,7 +62,7 @@ const App: React.FC = () => {
     </div>
   );
 
-  return <List keygen='id' bordered data={[]} empty={'没了'} renderItem={renderItem} />;
+  return <List keygen='id' bordered data={[]} empty={'no data'} renderItem={renderItem} />;
 };
 
 export default App;

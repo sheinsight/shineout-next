@@ -2,25 +2,38 @@
  * cn -
  *    -- 当 label 文字存在换行时，可使用 labelVerticalAlign 来控制垂直方向对齐方式
  * en -
- *    --
+ *    -- When the label text has a line break, you can use labelVerticalAlign to control the vertical alignment
  */
 
-import { Form, Input } from 'shineout';
+import { useState } from 'react';
+import { Form, Input, TYPE, Radio, Textarea } from 'shineout';
+
+type FormProps = TYPE.Form.Props<any>;
+
+const alignArr: FormProps['labelVerticalAlign'][] = ['bottom', 'top', 'middle'];
 
 export default () => {
+  const [align, setAlign] = useState<FormProps['labelVerticalAlign']>('middle');
   return (
-    <Form labelWidth={100} labelVerticalAlign='middle' style={{ maxWidth: 300 }}>
-      <Form.Item label='Your Email Address'>
-        <Input name='email' />
-      </Form.Item>
+    <>
+      <div style={{ marginBottom: 24 }}>
+        <Radio.Group value={align} data={alignArr} keygen onChange={setAlign} />
+      </div>
+      <Form labelWidth={65} labelVerticalAlign={align} style={{ maxWidth: 500 }}>
+        <Form.Item label='Your Email'>
+          <Input name='email' />
+        </Form.Item>
 
-      <Form.Item label='Password'>
-        <Input name='password' type='password' />
-      </Form.Item>
-
-      <Form.Item label=''>
-        <button type={'submit'}>Submit</button>
-      </Form.Item>
-    </Form>
+        <Form.Item label='Password'>
+          <Input name='password' type='password' />
+        </Form.Item>
+        <Form.Item label='Your Address'>
+          <Textarea name='address' />
+        </Form.Item>
+        <Form.Item label=''>
+          <Form.Submit>Submit</Form.Submit>
+        </Form.Item>
+      </Form>
+    </>
   );
 };

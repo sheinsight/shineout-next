@@ -189,13 +189,17 @@ const Modal = (props: ModalContentProps) => {
   };
 
   const renderBody = () => {
+    const bodyStyle = {
+      padding: props.padding,
+      ...props.bodyStyle,
+    };
     return (
       <div
         className={classNames(
           modalClasses?.body,
           props.type && !!AlertIconMap[props.type] && modalClasses?.bodyWithIcon,
         )}
-        style={props.bodyStyle}
+        style={bodyStyle}
       >
         {props.children}
       </div>

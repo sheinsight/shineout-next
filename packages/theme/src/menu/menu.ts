@@ -21,7 +21,7 @@ const menuTokens: MenuTokens = {
   menuExpandHoverBackgroundColor: 'Brand-2',
   menuChildrenBoxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
   menuDarkFontColor: 'Neutral-text-1',
-  menuDarkItemBackgroundColor: '#020B18',
+  menuDarkItemBackgroundColor: 'Neutral-fill-10',
   menuDarkItemFontColor: 'Neutral-text-1',
   menuDarkItemHoverBackgroundColor: 'Brand-9',
   menuDarkItemHoverFontColor: 'Neutral-text-1',

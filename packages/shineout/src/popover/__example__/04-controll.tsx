@@ -20,6 +20,7 @@ const App: React.FC = () => {
       </div>
       <Button>
         <Popover
+          position='right'
           visible={visible}
           onVisibleChange={(v) => {
             console.log('onVisibleChange', v);

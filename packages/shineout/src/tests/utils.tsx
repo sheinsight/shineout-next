@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 export function classTest(element: Element, className: string, bool: boolean = true) {
   expect(element?.classList.contains(className)).toBe(bool);
@@ -9,6 +9,18 @@ export function snapshotTest(component: JSX.Element, testName: string = '') {
   test(`should render correctly ${testName}`, () => {
     const { container } = render(component);
     expect(container.firstChild).toMatchSnapshot();
+  });
+}
+
+export function snapshotTestByClick(
+  component: JSX.Element,
+  testName: string = '',
+  wrapper: string,
+) {
+  test(`should render correctly ${testName}`, () => {
+    const { container } = render(component);
+    fireEvent.click(container.querySelector('button')!);
+    expect(document.querySelector(wrapper)).toMatchSnapshot();
   });
 }
 
@@ -120,7 +132,10 @@ type classNamesMapType = {
 };
 
 function convertCamelToDash(str: string): string {
-  return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+  return str
+    .replace(/([A-Z])/g, '-$1')
+    .replace(/^-/, '')
+    .toLowerCase();
 }
 
 // Automatically generate corresponding className according to jss type

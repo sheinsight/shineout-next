@@ -21,7 +21,6 @@ export const useModalMove = () => {
       let y = pre.y + deltaY;
       const moveX = x - context.startPostion.x;
       const moveY = y - context.startPostion.y;
-      console.log(deltaX, moveX);
 
       if (
         context.rect.left + moveX > util.docSize.width - DIS_LIMIT ||

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-export function classLengthTest(container: Element, name: string, nums: number) {
+export function classLengthTest(container: Element | Document, name: string, nums: number) {
   expect(container.querySelectorAll(name).length).toBe(nums);
 }
 interface attributeProps {

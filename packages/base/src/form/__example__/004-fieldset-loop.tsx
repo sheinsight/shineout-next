@@ -5,7 +5,6 @@ import {
   useInnerTitleStyle,
   useInputStyle,
 } from '@sheinx/shineout-style';
-import React from 'react';
 
 export default () => {
   const jssStyle = {

@@ -5,7 +5,7 @@ import { GapProps } from './gap.type';
 let supportFlexGap: boolean | undefined = undefined;
 const Gap = (props: GapProps) => {
   if (supportFlexGap === undefined) supportFlexGap = support();
-  const { column = 8, row = 8, style, className, children } = props;
+  const { column = 8, row = 8, style, className, children, itemStyle: itemStyleProps } = props;
 
   const extendStyle = (
     supportFlexGap
@@ -25,6 +25,7 @@ const Gap = (props: GapProps) => {
   const itemStyle = supportFlexGap
     ? undefined
     : {
+        ...itemStyleProps,
         marginBottom: row,
         marginRight: column,
       };

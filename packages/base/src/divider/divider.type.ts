@@ -14,9 +14,7 @@ export interface DividerClasses {
   withTextRight: string;
   innerText: string;
 }
-/**
- * @title Divider
- */
+
 export interface DividerProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: {
     divider: () => DividerClasses;

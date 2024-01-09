@@ -5,7 +5,7 @@ import store, { dispatch, DocType } from '../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
 import useStyles from '../style';
 
-const Tabs = () => {
+const Tabs = (props: { showGuide: boolean }) => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
@@ -39,6 +39,7 @@ const Tabs = () => {
   return (
     <div className={classes.tabs}>
       {tabs.map((tab, index) => {
+        if (tab.path === 'guide' && !props.showGuide) return null;
         return (
           <span
             key={index}

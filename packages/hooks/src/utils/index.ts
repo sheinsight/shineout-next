@@ -17,4 +17,5 @@ export * from './react-render';
 export * from './style-unit';
 export * from './attribute';
 export * from './accept';
+export * from './array';
 export * from './tree';

@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio';
 import { Guides } from 'docs/types';
 import Anchor from 'docs/theme/layout/desktop/anchor';
 
-interface GuideProps {
+export interface GuideProps {
   guides: Guides;
 }
 

@@ -7,7 +7,7 @@ export interface ValidFunc<T = any> {
     value: T | undefined,
     formValue: ObjectType,
     cb: (cbArgs: Error | true) => void,
-    props?: ObjectType,
+    props: any,
   ): void | Promise<any>;
 }
 

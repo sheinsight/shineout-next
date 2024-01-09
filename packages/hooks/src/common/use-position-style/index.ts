@@ -153,7 +153,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         if (adjust) overLeft = containerRect.left - (rect.right - context.popUpWidth);
       } else {
         // 居中对齐
-        style.left = rect.left + rect.width / 2;
+        style.left = rect.left + rect.width / 2 - containerRect.left + containerScroll.left;
         style.transform = 'translateX(-50%)';
         if (adjust) {
           overRight =
@@ -192,7 +192,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         style.transform = 'translateY(-100%)';
       } else {
         // 居中对齐
-        style.top = rect.top + containerScroll.top + rect.height / 2;
+        style.top = rect.top - containerRect.top + containerScroll.top + rect.height / 2;
         style.transform = 'translateY(-50%)';
       }
       if (h === 'right') {

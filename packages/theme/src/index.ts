@@ -82,6 +82,9 @@ import { SpinTokens } from './spin/type';
 import Sticky from './sticky';
 import { StickyTokens } from './sticky/type';
 
+import Steps from './steps';
+import { StepsTokens } from './steps/type';
+
 import Switch from './switch';
 import { SwitchTokens } from './switch/type';
 
@@ -112,6 +115,9 @@ import { TreeSelectTokens } from './tree-select/type';
 import Upload from './upload';
 import { UploadTokens } from './upload/type';
 
+import Form from './form';
+import { FormTokens } from './form/type';
+
 export type ThemeTokens = AlertTokens &
   BreadcrumbTokens &
   ButtonTokens &
@@ -139,6 +145,7 @@ export type ThemeTokens = AlertTokens &
   SliderTokens &
   SpinTokens &
   StickyTokens &
+  StepsTokens &
   SwitchTokens &
   TableTokens &
   TabsTokens &
@@ -147,6 +154,7 @@ export type ThemeTokens = AlertTokens &
   TooltipTokens &
   TransferTokens &
   TreeTokens &
+  FormTokens &
   TreeSelectTokens &
   UploadTokens;
 
@@ -178,6 +186,7 @@ const Tokens: ThemeTokens = {
   ...Slider,
   ...Spin,
   ...Sticky,
+  ...Steps,
   ...Switch,
   ...Table,
   ...Tabs,
@@ -188,6 +197,7 @@ const Tokens: ThemeTokens = {
   ...Tree,
   ...TreeSelect,
   ...Upload,
+  ...Form,
 };
 
 export type { TokenType };

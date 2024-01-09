@@ -20,21 +20,29 @@ const App: React.FC = () => {
       />
 
       <Gap
-        style={{ width: 150, marginTop: 16, background: '#ddd', alignItems: align, padding: 12 }}
+        style={{
+          width: 190,
+          marginTop: 16,
+          border: '1px solid #e8ebf0',
+          borderRadius: '4px',
+          alignItems: align,
+          padding: 12,
+        }}
         row={20}
       >
-        <Button type='primary'>Item1</Button>
+        <span>Item1</span>
+        <Button type='primary'>Item2</Button>
         <div
           style={{
             fontSize: 14,
-            background: '#fff',
+            background: '#f4f5f8',
             height: 120,
             lineHeight: '24px',
             borderRadius: '4px',
             padding: '12px',
           }}
         >
-          Item2
+          Item3
         </div>
       </Gap>
     </>
