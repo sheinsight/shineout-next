@@ -48,16 +48,16 @@ const App: React.FC = () => {
       <Button onClick={show} mode='outline'>
         show
       </Button>
-      <Button onClick={info} mode='outline'>
+      <Button type='primary' onClick={info}>
         info
       </Button>
-      <Button onClick={error} mode='outline'>
+      <Button type='danger' onClick={error}>
         error
       </Button>
-      <Button onClick={success} mode='outline'>
+      <Button type='success' onClick={success}>
         success
       </Button>
-      <Button onClick={warning} mode='outline'>
+      <Button type='warning' onClick={warning}>
         warning
       </Button>
     </div>

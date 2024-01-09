@@ -20,10 +20,12 @@ const App: React.FC = () => (
       onClick={() => {
         Message.info('This is a message of info.');
       }}
+      type='primary'
     >
       Info
     </Button>
     <Button
+      type='success'
       onClick={() => {
         Message.success('This is a message of success.');
       }}
@@ -31,6 +33,7 @@ const App: React.FC = () => (
       Success
     </Button>
     <Button
+      type='warning'
       onClick={() => {
         Message.warn('This is a message of warning.');
       }}
@@ -38,6 +41,7 @@ const App: React.FC = () => (
       Warn
     </Button>
     <Button
+      type='danger'
       onClick={() => {
         Message.error('This is a message of error.');
       }}

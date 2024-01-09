@@ -50,11 +50,10 @@ const menuTokenExtraValue = {
       shadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
     },
   },
-  // todo: #020B18 改成 Neutral-fill-10
   dark: {
     font: { color: 'Neutral-text-1' },
     item: {
-      background: { color: '#020B18' },
+      background: { color: 'Neutral-fill-10' },
       font: { color: 'Neutral-text-1' },
       hover: {
         background: { color: 'Brand-9' },

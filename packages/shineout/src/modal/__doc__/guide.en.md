@@ -10,4 +10,4 @@ When you need to display operation feedback or prompt information; when you need
 
 ![3. It is recommended that the number of pop-up windows does not exceed 2](03)
 
-![4. The width and height of the dialog box can be customized, but when the content exceeds the maximum area and a scrollbar appears, it is recommended that the title and buttons remain fixed](03)
+![4. The width and height of the dialog box can be customized, but when the content exceeds the maximum area and a scrollbar appears, it is recommended that the title and buttons remain fixed](04)

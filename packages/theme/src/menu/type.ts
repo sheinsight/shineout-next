@@ -106,7 +106,7 @@ export interface MenuTokens {
   menuDarkFontColor: string;
   /**
    * @type {string}
-   * @token #020B18
+   * @token Neutral-fill-10
    * @description xxxundefinedundefined背景颜色
    */
   menuDarkItemBackgroundColor: string;
