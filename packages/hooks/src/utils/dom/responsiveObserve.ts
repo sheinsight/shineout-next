@@ -62,7 +62,6 @@ const responsiveObserve: {
     });
   },
   subscribe(func: SubscribeFunc) {
-    console.log(1);
     if (subscribers.length === 0) this.register();
     const token = (++subUid).toString();
     subscribers.push({
