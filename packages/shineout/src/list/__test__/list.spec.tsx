@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { List, TYPE, Button } from 'shineout';
 import mountTest from '../../tests/mountTest';
@@ -23,8 +23,24 @@ const originClasses = [
   'empty',
   'pagination',
   'checkContent',
+  'loading',
+  'baseItem',
+  'baseItemMeta',
+  'baseItemExtra',
+  'baseItemMetaAvatar',
+  'baseItemMetaMeta',
+  'baseItemMetaContent',
+  'baseItemMetaContainer',
+  'baseItemMetaTitle',
+  'baseItemMetaDesc',
 ];
-const originItemClasses = ['wrapperBordered', 'wrapperLarge', 'wrapperSmall', 'wrapperStriped'];
+const originItemClasses = [
+  'wrapperBordered',
+  'wrapperLarge',
+  'wrapperSmall',
+  'wrapperStriped',
+  'baseItemMetaIncludes',
+];
 const {
   wrapper,
   scrollContainer,
@@ -36,11 +52,31 @@ const {
   empty: emptyClassName,
   wrapperStriped,
   pagination,
-  // checkContent
+  checkContent,
+  loading: loadingClassName,
+  baseItem,
+  baseItemMeta,
+  baseItemExtra,
+  baseItemMetaAvatar,
+  baseItemMetaMeta,
+  baseItemMetaContent,
+  baseItemMetaContainer,
+  baseItemMetaIncludes,
+  baseItemMetaTitle,
+  baseItemMetaDesc,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const {
+  wrapper: checkboxWrapper,
+  wrapperChecked,
+  wrapperDisabled,
+} = createClassName('checkbox', ['wrapper'], ['wrapperChecked', 'wrapperDisabled']);
 
 const defaultStyle = 'width: 100%;';
 const defaultLineHeight = 32;
+
+const image =
+  'https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-06.png';
 
 interface ListItem {
   id: number;
@@ -302,15 +338,158 @@ describe('List[Pagination]', () => {
   });
 });
 describe('List[Select]', () => {
-  test('should render when set value and select', () => {
-    const App = () => {
-      const [value, setValue] = React.useState<ListItem[]>([]);
-      const handleChange = (v: ListItem[]) => {
-        setValue(v);
-      };
-      return <RenderList value={value} onChange={handleChange} />;
+  const App = (props: any) => {
+    const [value, setValue] = React.useState<ListItem[]>([]);
+    const handleChange = (v: ListItem[]) => {
+      setValue(v);
     };
-    render(<App />);
-    screen.debug();
+    return <RenderList value={value} onChange={handleChange} {...props} />;
+  };
+  test('should render when set value and select', () => {
+    const { container } = render(<App />);
+    const rows = container.querySelectorAll(row);
+    rows.forEach((item) => {
+      classLengthTest(item, checkboxWrapper, 1);
+      classLengthTest(item, checkContent, 1);
+    });
+    const checkbox = rows[0].querySelector(checkboxWrapper)!;
+    fireEvent.click(checkbox.querySelector('input')!);
+    classTest(checkbox, wrapperChecked);
+    fireEvent.click(checkbox.querySelector('input')!);
+    classTest(checkbox, wrapperChecked, false);
+  });
+  test('should render when set disabled', () => {
+    const { container } = render(<App disabled />);
+    const rows = container.querySelectorAll(row);
+    rows.forEach((item) => {
+      classTest(item.querySelector(checkboxWrapper)!, wrapperDisabled);
+    });
+    const checkbox = rows[0].querySelector(checkboxWrapper)!;
+    fireEvent.click(checkbox.querySelector('input')!);
+    classTest(checkbox, wrapperChecked, false);
+  });
+});
+describe('List[Loading]', () => {
+  test('should render when set loading', () => {
+    const { container } = render(<RenderList loading />);
+    const list = container.querySelector(wrapper)!;
+    classLengthTest(list, loadingClassName, 1);
+  });
+});
+describe('List[BaseItem]', () => {
+  const { BaseItem } = List;
+  test('should render when use BaseItem', () => {
+    const renderItemByBase = (rowData: ListItem) => (
+      <BaseItem
+        avatar={image}
+        content={rowData.firstName}
+        desc={rowData.lastName}
+        extra={[<Button key={'edit'}>edit</Button>]}
+        title='title'
+      />
+    );
+    const { container } = render(<List data={data} keygen='id' renderItem={renderItemByBase} />);
+    const rows = container.querySelectorAll(row);
+    rows.forEach((item, index) => {
+      const baseItemWrapper = item.querySelector(baseItem)!;
+      const baseItemMetaWrapper = baseItemWrapper.querySelector(baseItemMeta)!;
+      const baseItemExtraWrapper = baseItemWrapper.querySelector(baseItemExtra)!;
+      classLengthTest(baseItemExtraWrapper, 'button', 1);
+      textContentTest(baseItemExtraWrapper, 'edit');
+      const baseItemMetaContainerWrapper =
+        baseItemMetaWrapper.querySelector(baseItemMetaContainer)!;
+      const baseItemMetaContentWrapper = baseItemMetaWrapper.querySelector(baseItemMetaContent)!;
+      textContentTest(baseItemMetaContentWrapper, data[index].firstName);
+      const baseItemMetaMetaWrapper = baseItemMetaContainerWrapper.querySelector(baseItemMetaMeta)!;
+      textContentTest(
+        baseItemMetaMetaWrapper.querySelector(baseItemMetaDesc)!,
+        data[index].lastName,
+      );
+      textContentTest(baseItemMetaMetaWrapper.querySelector(baseItemMetaTitle)!, 'title');
+      classLengthTest(baseItemMetaContainerWrapper, baseItemMetaAvatar, 1);
+    });
+  });
+  test('should render when use BaseItem by function', () => {
+    const renderItemByBase = (rowData: ListItem) => (
+      <BaseItem
+        avatar={() => image}
+        content={() => rowData.firstName}
+        desc={rowData.lastName}
+        extra={[<Button key={'edit'}>edit</Button>]}
+      />
+    );
+    const { container } = render(<List data={data} keygen='id' renderItem={renderItemByBase} />);
+    const rows = container.querySelectorAll(row);
+    rows.forEach((item, index) => {
+      const baseItemWrapper = item.querySelector(baseItem)!;
+      const baseItemMetaWrapper = baseItemWrapper.querySelector(baseItemMeta)!;
+      const baseItemMetaContainerWrapper =
+        baseItemMetaWrapper.querySelector(baseItemMetaContainer)!;
+      const baseItemMetaContentWrapper = baseItemMetaWrapper.querySelector(baseItemMetaContent)!;
+      textContentTest(baseItemMetaContentWrapper, data[index].firstName);
+      textContentTest(
+        baseItemMetaContainerWrapper.querySelector(baseItemMetaMeta)!,
+        data[index].lastName,
+      );
+      classLengthTest(baseItemMetaContainerWrapper, baseItemMetaAvatar, 1);
+    });
+  });
+  test('should render when use BaseItem without content and desc', () => {
+    const renderItemByBase = () => (
+      <BaseItem avatar={() => image} extra={[<Button key={'edit'}>edit</Button>]} />
+    );
+    const { container } = render(<List data={data} keygen='id' renderItem={renderItemByBase} />);
+    const rows = container.querySelectorAll(row);
+    rows.forEach((item) => {
+      const baseItemWrapper = item.querySelector(baseItem)!;
+      const baseItemMetaWrapper = baseItemWrapper.querySelector(baseItemMeta)!;
+      classLengthTest(baseItemMetaWrapper, baseItemMetaContent, 0);
+      classLengthTest(baseItemMetaWrapper, baseItemMetaContainer, 0);
+      classLengthTest(baseItemMetaWrapper, baseItemMetaMeta, 0);
+    });
+  });
+  test('should render when use BaseItem without desc', () => {
+    const renderItemByBase = (rowData: ListItem) => (
+      <BaseItem
+        avatar={() => image}
+        content={() => rowData.firstName}
+        extra={[<Button key={'edit'}>edit</Button>]}
+      />
+    );
+    const { container } = render(<List data={data} keygen='id' renderItem={renderItemByBase} />);
+    const rows = container.querySelectorAll(row);
+    rows.forEach((item) => {
+      const baseItemWrapper = item.querySelector(baseItem)!;
+      const baseItemMetaWrapper = baseItemWrapper.querySelector(baseItemMeta)!;
+      classLengthTest(baseItemMetaWrapper, baseItemMetaContent, 1);
+      classLengthTest(baseItemMetaWrapper, baseItemMetaContainer, 0);
+      classLengthTest(baseItemMetaWrapper, baseItemMetaMeta, 0);
+      classTest(baseItemMetaWrapper, baseItemMetaIncludes);
+    });
+  });
+  test('should render when set avatar is element', () => {
+    const renderItemByBase = (rowData: ListItem) => (
+      <BaseItem
+        avatar={<div className='demo'>img</div>}
+        content={rowData.firstName}
+        desc={rowData.lastName}
+        extra={[<Button key={'edit'}>edit</Button>]}
+        title='title'
+      />
+    );
+    const { container } = render(<List data={data} keygen='id' renderItem={renderItemByBase} />);
+    const rows = container.querySelectorAll(row);
+    rows.forEach((item) => {
+      const baseItemMetaAvatarWrapper = item.querySelector(baseItemMetaAvatar)!;
+      classLengthTest(baseItemMetaAvatarWrapper, '.demo', 1);
+    });
+  });
+  test('should render when set className in BaseItem', () => {
+    const renderItemByBase = () => <BaseItem className='demo' />;
+    const { container } = render(<List data={data} keygen='id' renderItem={renderItemByBase} />);
+    const rows = container.querySelectorAll(row);
+    rows.forEach((item) => {
+      classTest(item.querySelector(baseItemMeta)!, 'demo');
+    });
   });
 });
