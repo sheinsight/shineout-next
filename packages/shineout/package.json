@@ -10,7 +10,7 @@
   "module": "./dist/esm/index.js",
   "typings": "./dist/cjs/index.d.ts",
   "scripts": {
-    "build": "father build",
+    "build": "node ./build.js",
     "build:watch": "father dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,7 +22,8 @@
   "peerDependencies": {
     "classnames": ">=2",
     "immer": ">=10",
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "devDependencies": {
     "jszip": "^3.10.1",

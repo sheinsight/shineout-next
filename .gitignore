@@ -13,3 +13,4 @@ cypress/downloads
 reports
 cypress-coverage
 jest-coverage
+packages/shineout/.fatherrc.ts

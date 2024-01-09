@@ -270,6 +270,9 @@ importers:
       react:
         specifier: '>=16.8'
         version: 18.2.0
+      react-dom:
+        specifier: '>=16.8'
+        version: 18.2.0(react@18.2.0)
     devDependencies:
       '@sheinx/mock':
         specifier: workspace:*
