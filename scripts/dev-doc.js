@@ -3,6 +3,7 @@ const path = require('path');
 const chokidar = require('chokidar');
 const { compile } = require('./utils/compile');
 const { compileToken } = require('../packages/theme/scripts/token');
+const { compileFigma } = require('../packages/theme/scripts/build-token');
 const { compileRule } = require('./utils/rules');
 const { rmrf } = require('./utils/rmrf');
 const { compileApi } = require('./utils/compileApi');
@@ -31,6 +32,10 @@ watcher.on('change', (filePath) => {
   if (!match?.[1]) return;
   const chunkModuleName = match[1];
   const isType = filePath.endsWith('.type.ts');
+
+  if (filePath.indexOf('theme') > -1 && filePath.indexOf('figma') > -1) {
+    compileFigma();
+  }
 
   if (filePath.indexOf(shineoutDir) > -1) {
     if (isType) {
