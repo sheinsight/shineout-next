@@ -1,15 +1,11 @@
 ## When to use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+When you need to import or upload files
 
-## Related to layout
+## Common usage
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+![Clear upload status needs to be presented, including initial status, drag and drop status, upload process, upload success and upload failure, etc.](01)
 
-## Component combination
+## Recommended/use with caution examples
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
-
-## Recommended/Use with caution examples
-
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![It is recommended to always keep the upload image button on the left](02)

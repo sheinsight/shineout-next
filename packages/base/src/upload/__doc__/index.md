@@ -10,7 +10,7 @@ Upload
 
 # Describe
 
-用户可传输文件或提交相应的内容
-Users can transfer files or submit corresponding content
+用户可上传文件或提交相应的内容
+Users can upload files or submit corresponding content
 
 # Example
