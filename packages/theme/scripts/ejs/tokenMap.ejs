@@ -1,0 +1,9 @@
+import { Tokens } from './type';
+
+const Token:Tokens = {
+<% tokens.forEach(function (item, i) { -%>
+  '<%= item.token %>': '<%= item.value %>',
+<% }) -%>
+}
+
+export default Token;

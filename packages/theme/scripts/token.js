@@ -3,8 +3,8 @@ const path = require('path');
 const ejs = require('ejs');
 const { tokenDescriptionMap } = require('../src/token/map.ts');
 const srcPath = path.resolve(__dirname, '../src');
-const templatePath = path.resolve(__dirname, './token.ejs');
-const componentTemplatePath = path.resolve(__dirname, './component.ejs');
+const templatePath = path.resolve(__dirname, './ejs/token.ejs');
+const componentTemplatePath = path.resolve(__dirname, './ejs/component.ejs');
 const prettier = require('prettier');
 const prettierOptions = prettier.resolveConfig.sync(path.join(__dirname, '../../.prettierrc.js'));
 
