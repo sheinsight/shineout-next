@@ -1,4 +1,3 @@
-//
 export default function flexGapSupport() {
   const flex = document.createElement('div');
   flex.style.display = 'flex';

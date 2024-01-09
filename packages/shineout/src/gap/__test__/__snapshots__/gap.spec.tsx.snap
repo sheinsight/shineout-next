@@ -1,0 +1,487 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gap[Base] should render correctly  1`] = `
+<div
+  style="margin-bottom: -8px; margin-right: -8px; width: 400px;"
+>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      0
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      1
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      2
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      3
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      4
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      5
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      6
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      7
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      8
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      9
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Gap[Base] should render correctly about align 1`] = `
+<div
+  class="so-radio-group"
+>
+  <div
+    class="so-radio-wrapper so-radio-wrapper-checked"
+  >
+    <input
+      checked=""
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span
+      class="so-radio-indicator-wrapper"
+    >
+      <span
+        class="so-radio-indicator"
+        tabindex="1"
+      />
+    </span>
+    <span
+      class="so-radio-desc"
+    >
+      flex-start
+    </span>
+  </div>
+  <div
+    class="so-radio-wrapper"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span
+      class="so-radio-indicator-wrapper"
+    >
+      <span
+        class="so-radio-indicator"
+        tabindex="1"
+      />
+    </span>
+    <span
+      class="so-radio-desc"
+    >
+      center
+    </span>
+  </div>
+  <div
+    class="so-radio-wrapper"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span
+      class="so-radio-indicator-wrapper"
+    >
+      <span
+        class="so-radio-indicator"
+        tabindex="1"
+      />
+    </span>
+    <span
+      class="so-radio-desc"
+    >
+      flex-end
+    </span>
+  </div>
+  <div
+    class="so-radio-wrapper"
+  >
+    <input
+      style="display: none;"
+      tabindex="0"
+      type="radio"
+    />
+    <span
+      class="so-radio-indicator-wrapper"
+    >
+      <span
+        class="so-radio-indicator"
+        tabindex="1"
+      />
+    </span>
+    <span
+      class="so-radio-desc"
+    >
+      baseline
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Gap[Base] should render correctly about custom 1`] = `
+<div
+  style="margin-bottom: -12px; margin-right: -20px; width: 400px;"
+>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      0
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      1
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      2
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      3
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      4
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      5
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      6
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      7
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      8
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 12px; margin-right: 20px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      9
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Gap[Base] should render correctly about split 1`] = `
+<div
+  style="margin-bottom: -8px; margin-right: -8px; width: 400px; align-items: center;"
+>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button so-button-text"
+      type="button"
+    >
+      <span>
+        tag0
+      </span>
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <div
+      class="so-divider-wrapper so-divider-vertical"
+    />
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button so-button-text"
+      type="button"
+    >
+      <span>
+        tag1
+      </span>
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <div
+      class="so-divider-wrapper so-divider-vertical"
+    />
+  </div>
+  <div
+    style="margin-bottom: 8px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button so-button-text"
+      type="button"
+    >
+      <span>
+        tag2
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Gap[Base] should render correctly about vertical 1`] = `
+<div
+  style="margin-bottom: -10px; margin-right: -8px; width: 400px; flex-direction: column;"
+>
+  <div
+    style="margin-bottom: 10px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      0
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 10px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      1
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 10px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      2
+    </button>
+  </div>
+  <div
+    style="margin-bottom: 10px; margin-right: 8px;"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Item
+      </span>
+      3
+    </button>
+  </div>
+</div>
+`;
