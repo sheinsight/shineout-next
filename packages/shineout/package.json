@@ -18,8 +18,8 @@
     "@sheinx/base": "workspace:*",
     "@sheinx/hooks": "workspace:*",
     "@sheinx/shineout-style": "workspace:*",
-    "classnames": ">=2",
-    "immer": ">=10"
+    "classnames": "^2.0.0",
+    "immer": "^10.0.0"
   },
   "peerDependencies": {
     "react": ">=16.8",

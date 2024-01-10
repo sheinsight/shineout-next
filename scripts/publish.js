@@ -27,6 +27,11 @@ const buildJason = (name) => {
   pkg.version = version;
   delete pkg.scripts;
   delete pkg.devDependencies;
+  ['main', 'module', 'typings'].forEach((item) => {
+    if (pkg[item]) {
+      pkg[item] = pkg[item].replace(/^\.\/dist\//, './');
+    }
+  });
   if (pkg.dependencies) {
     Object.keys(pkg.dependencies).forEach((item) => {
       if (pkg.dependencies[item].startsWith('workspace')) {

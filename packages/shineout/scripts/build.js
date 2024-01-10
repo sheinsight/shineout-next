@@ -51,11 +51,11 @@ build(fatherBundless, () => {
     build(fatherrcProd, () => {
       // 将dist/umd1 和 dist/umd2 的内容拷贝到 dist/umd
       // 拷贝文件
-      if (!fs.existsSync('dist/umd')) {
-        fs.mkdirSync('dist/umd');
+      if (!fs.existsSync('dist/dist')) {
+        fs.mkdirSync('dist/dist');
       }
-      copyFiles('dist/umd1', 'dist/umd');
-      copyFiles('dist/umd2', 'dist/umd');
+      copyFiles('dist/umd1', 'dist/dist');
+      copyFiles('dist/umd2', 'dist/dist');
 
       // 删除目录
       deleteDirectory('dist/umd1');

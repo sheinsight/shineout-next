@@ -16,8 +16,9 @@
   },
   "dependencies": {
     "@sheinx/hooks": "workspace:*",
-    "immer": ">=10",
-    "classnames": ">=2"
+    "immer": "^10.0.0",
+    "classnames": "^2.0.0",
+    "valtio": "^1.13.0"
   },
   "devDependencies": {
     "@sheinx/shineout-style": "workspace:*"
