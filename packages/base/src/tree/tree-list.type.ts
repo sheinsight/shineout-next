@@ -8,8 +8,7 @@ export interface TreeListProps<DataItem, Value extends KeygenResult>
   jssStyle?: JsstyleType;
   id?: Value;
   line: boolean;
-  expanded?: boolean;
-  expandedProp?: KeygenResult[];
+  expanded: boolean;
   childrenKey: keyof DataItem;
   parentClickExpand?: boolean;
   doubleClickExpand?: boolean;

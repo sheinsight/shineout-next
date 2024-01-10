@@ -30,7 +30,6 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
     expandIcons,
     keygen,
     mode,
-    expanded,
     childrenKey,
     inlineNode,
     highlight,
@@ -58,7 +57,7 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
   const dragImage = useRef<null | HTMLElement>(null);
 
   const { getPath } = useTreeContext();
-  const { active, isLeaf, fetching, setFetching } = useTreeNode({
+  const { active, isLeaf, fetching, expanded, setFetching, setExpanded } = useTreeNode({
     id,
     data,
     bindNode,
@@ -88,6 +87,12 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
   placeElement.className = contentStyle.placement;
 
   const handleFetch = () => {};
+
+  const handleToggle = () => {
+    const nextExpanded = !expanded;
+    setExpanded(nextExpanded);
+    if (onToggle) onToggle(id, nextExpanded);
+  };
 
   const handleDragOver = (e: React.DragEvent) => {
     if (!dragLock) return;
@@ -213,8 +218,7 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
       isControlled,
       contentClass,
       parentClickExpand,
-      expanded: expanded.indexOf(id) >= 0,
-      expandedProp: expanded,
+      expanded: expanded,
       line,
       data: children,
       mode,
@@ -263,7 +267,7 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
         contentClass={contentClass}
         active={active}
         fetching={fetching}
-        expanded={expanded.indexOf(id) >= 0}
+        expanded={expanded}
         keygen={keygen}
         bindNode={bindNode}
         bindContent={content}
@@ -282,7 +286,7 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
         onFetch={handleFetch}
         onNodeClick={onNodeClick}
         onDragOver={handleDragOver}
-        onToggle={onToggle}
+        onToggle={handleToggle}
       ></TreeContent>
       {hasChildren && createElement(List, getChildrenListProps())}
     </div>

@@ -11,7 +11,7 @@ export interface TreeNodeProps<DataItem, Value extends KeygenResult>
   data: DataItem;
   index: number;
   line: boolean;
-  expanded: KeygenResult[];
+  expanded: boolean;
   doubleClickExpand?: boolean;
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;

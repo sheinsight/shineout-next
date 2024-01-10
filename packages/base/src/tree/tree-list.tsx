@@ -17,7 +17,6 @@ const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataIte
     id = '',
     keygen,
     expanded,
-    expandedProp,
     active,
     line,
     isControlled,
@@ -97,7 +96,7 @@ const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataIte
         dragHoverExpand={dragHoverExpand}
         parentClickExpand={parentClickExpand}
         doubleClickExpand={doubleClickExpand}
-        expanded={expandedProp!}
+        expanded={expanded}
         onNodeClick={onNodeClick}
         onToggle={onToggle}
         onChange={onChange}

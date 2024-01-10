@@ -5,7 +5,7 @@ import usePersistFn from '../../common/use-persist-fn';
 const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>) => {
   const { id, data, bindNode, childrenKey, loader } = props;
   const [active, setActive] = useState(false);
-  // const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const [fetching, setFetching] = useState(false);
   const update = usePersistFn((key: string, value: boolean) => {
     switch (key) {
@@ -15,7 +15,7 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
         }
         break;
       case 'expanded':
-        // setExpanded(value);
+        setExpanded(value);
         break;
       case 'fetching':
         if (value !== fetching) {
@@ -45,16 +45,17 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
   useEffect(() => {
     const { active } = bindNode(id, update);
     setActive(active);
-    // setExpanded(expanded);
+    setExpanded(expanded);
   }, []);
 
   return {
     update,
     active,
-    // expanded,
+    expanded,
     fetching,
     isLeaf,
     setFetching,
+    setExpanded,
     onToggle: handleToggle,
   };
 };
