@@ -16,7 +16,7 @@
     "build": "pnpm run build:pkg && pnpm run build:doc",
     "build:pkg": "pnpm --filter=./packages/* run build",
     "build:watch": "pnpm --filter=./packages/* run build:watch",
-    "pub": "node ./scripts/publish.js",
+    "release": "node ./scripts/publish.js",
     "prepare": "husky install",
     "doctor": "father doctor",
     "lint": "pnpm run lint:es",

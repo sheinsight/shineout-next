@@ -3,23 +3,21 @@ const packages = ['hooks', 'base', 'shineout-style', 'theme', 'shineout'];
 const fs = require('fs');
 const { exec } = require('child_process');
 
-//获取命令行参数
-const argv = process.argv;
-// 获取 --tag xxx 中的 xxx
-const tagIndex = argv.findIndex((item) => item.includes('--tag'));
-const tag = tagIndex > -1 ? argv[tagIndex + 1] : undefined;
-
 const version = require(path.resolve(__dirname, '../package.json')).version;
 
-// 如果版本中包含字母
-const versionHasAlpha = /[a-zA-Z]/.test(version);
-
-console.log('version', version);
-
-if (versionHasAlpha && !tag) {
-  console.error('请输入tag');
+// 获取version中的 tag 比如 3.0.0-alpha.1 中的 alpha
+let tag = (version.split('-')[1] || '').split('.')[0] || 'latest';
+if (tag === 'rc') {
+  tag = 'next';
+}
+const mainVersion = version.split('.')[0];
+if (mainVersion !== '3') {
+  console.error('version 不是 3.x.x');
   process.exit(1);
 }
+
+console.log('version', version);
+console.log('tag', tag);
 
 const buildJason = (name) => {
   const packagePath = path.resolve(__dirname, `../packages/${name}/package.json`);

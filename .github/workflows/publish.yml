@@ -1,8 +1,9 @@
 name: test
 
 on:
-  pull_request:
-    branches: [ main, 'dev' ]
+  push:
+    tags:
+      - 'version-*'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,7 +12,7 @@ jobs:
       matrix:
         node-version: [16.16.0]
     steps:
-    - name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
@@ -25,5 +26,15 @@ jobs:
       - name: dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Component Test
-        run: pnpm run test
+      - name: build
+        run: pnpm run build
+
+      - name: set token
+        run: echo -e //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.SHINED_NPM_PUBLISH_TOKEN }}
+
+      - name: publish
+        run: pnpm run release
+
+
