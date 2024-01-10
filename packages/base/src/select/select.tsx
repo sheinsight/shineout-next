@@ -21,15 +21,6 @@ import TreeList from './list-tree';
 import Icons from '../icons';
 import ColumnsList from './list-columns';
 
-/**
- *
- * 树选择
- * 加载中
- * 自定义下拉列表
- * 限制字符长度
- *
- */
-
 function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   const {
     jssStyle,
