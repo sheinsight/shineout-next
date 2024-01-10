@@ -27,7 +27,7 @@ export const cssvar = (str: string, value: string, key: string, size?: string) =
   const pxReg = /(\d+)px/;
   const pxNum = pxReg.exec(str);
   if (pxNum) {
-    return `${Number(pxNum[1])}px`;
+    return `${Number(str.split('px')[0])}px`;
   }
   return `var(--${camelCaseToDash(key)},var(${cssvarFlag}${replaceNonAlphanumeric(str)},${value}))`;
 };
