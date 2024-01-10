@@ -9,6 +9,8 @@ export type AddNoProps<A, B> = Omit<B, keyof A> & A;
 
 export type ValueOf<T> = T[keyof T];
 
+export type ValueItem<Value> = Value extends (infer U)[] ? U : Value;
+
 export type ObjectKey<T = any> = T extends ObjectType ? keyof T & string : never;
 
 export type KeygenResult = string | number;

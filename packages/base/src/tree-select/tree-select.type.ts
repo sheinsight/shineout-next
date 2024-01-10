@@ -1,6 +1,6 @@
 import React from 'react';
 import { TreeClasses } from '../tree/tree.type';
-import { KeygenResult, ObjectKey, UnMatchedData, TreeKeygenType } from '@sheinx/hooks';
+import { KeygenResult, ObjectKey, UnMatchedData, ValueItem } from '@sheinx/hooks';
 import { TreeSelectClasses, SelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
 import { TagClasses } from '../tag/tag.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
@@ -25,16 +25,13 @@ export interface ComponentRef<DataItem, Value> {
    * @en Get the data corresponding to the value
    * @cn 获取 value 对应的 data
    */
-  // getDataByValues: (
-  //   values: Value | Value[],
-  // ) => Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
   getDataByValues: {
     (values: Value): ResultItem<DataItem>;
     (values: Value[]): ResultItem<DataItem>[];
   };
 }
 
-export interface TreeSelectProps<DataItem, Value extends KeygenResult>
+export interface TreeSelectProps<DataItem, Value>
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle?: JssStyleType;
@@ -60,7 +57,7 @@ export interface TreeSelectProps<DataItem, Value extends KeygenResult>
    * @en ender unmatched value
    * @cn 渲染未匹配值的方式
    */
-  renderUnmatched?: (value: Value extends (infer U)[] ? U : Value) => React.ReactNode;
+  renderUnmatched?: (data: ValueItem<Value>) => React.ReactNode;
   /**
    * @en inner title
    * @cn 内嵌标题
@@ -73,7 +70,7 @@ export interface TreeSelectProps<DataItem, Value extends KeygenResult>
    */
   data?: DataItem[];
 
-  keygen: TreeKeygenType<DataItem>;
+  keygen: ObjectKey<DataItem> | ((data: DataItem, parentKey: KeygenResult) => string | number);
   /**
    * @en Some methods of getting components Currently only support getDataByValue
    * @cn 获取组件的一些方法 目前只支持 getDataByValues
@@ -152,11 +149,7 @@ export interface TreeSelectProps<DataItem, Value extends KeygenResult>
    * @en value is your picker now
    * @cn 参数 为 当前选中值
    */
-  onChange?: (
-    value: Value | Value[],
-    selected?: ResultItem<DataItem>,
-    path?: (string | number)[],
-  ) => void;
+  onChange?: (value: Value, selected?: DataItem, path?: (string | number)[]) => void;
 
   /**
    * @en onChange additional parameters (current is the data of the clicked node, data is the currently selected data, checked is whether it is selected or canceled in the multi-select state)
@@ -187,7 +180,7 @@ export interface TreeSelectProps<DataItem, Value extends KeygenResult>
   underline?: boolean;
   border?: boolean;
   showArrow?: boolean;
-  childrenKey?: keyof DataItem & string;
+  childrenKey?: ObjectKey<DataItem>;
   focusSelected?: boolean;
   resultClassName?: ((value: DataItem) => string) | string;
   loader?: (key: KeygenResult, data: DataItem) => void;
@@ -201,13 +194,7 @@ export interface TreeSelectProps<DataItem, Value extends KeygenResult>
   unmatch?: boolean;
   renderItem:
     | ObjectKey<DataItem>
-    | ((
-        data: DataItem,
-        expanded?: boolean,
-        active?: boolean,
-        id?: KeygenResult,
-      ) => React.ReactNode);
-
+    | ((data: DataItem, expanded: boolean, active: boolean, id: KeygenResult) => React.ReactNode);
   /**
    * @en In the advanced filter mode, you can switch between the filter results and the original data for the current level by pressing the button
    * @cn 高级筛选模式，可针对当前层级在筛选结果和原始数据间切换

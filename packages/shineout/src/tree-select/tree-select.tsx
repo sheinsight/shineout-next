@@ -1,6 +1,7 @@
-import React from 'react';
-import { TreeSelect } from '@sheinx/base';
+import React, { memo } from 'react';
+import { TreeSelect as UnStyleTreeSelect } from '@sheinx/base';
 import { KeygenResult } from '@sheinx/hooks';
+import useFieldCommon from '../hooks/use-field-common';
 import {
   useTagStyle,
   useTreeSelectStyle,
@@ -23,6 +24,17 @@ const jssStyle = {
   treeSelect: useTreeSelectStyle,
   innerTitle: useInnerTitleStyle,
 };
-export default <DataItem, Value extends KeygenResult>(props: TreeSelectProps<DataItem, Value>) => {
-  return <TreeSelect jssStyle={jssStyle} {...props} />;
+
+const TreeSelectComponent = <DataItem, Value extends KeygenResult>(
+  props: TreeSelectProps<DataItem, Value>,
+) => {
+  return <UnStyleTreeSelect jssStyle={jssStyle} {...props} />;
 };
+
+const TreeSelect = <DataItem, Value extends KeygenResult>(
+  props: TreeSelectProps<DataItem, Value>,
+) => {
+  return useFieldCommon(props, TreeSelectComponent<DataItem, Value>);
+};
+
+export default memo(TreeSelect) as typeof TreeSelect;
