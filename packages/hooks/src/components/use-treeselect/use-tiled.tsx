@@ -14,6 +14,7 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
     rawData,
     onFilter,
     filterText,
+    originIcon,
     onAdvancedFilter,
   } = props;
 
@@ -33,7 +34,6 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
     const index = nextTileds.indexOf(key);
     if (index >= 0) nextTileds.splice(index, 1);
     else nextTileds.push(key);
-
     setTileds(nextTileds);
   };
 
@@ -43,7 +43,6 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
   };
 
   const getIcon = (item: DataItem) => {
-    const originIcon = <span>1</span>;
     const key = getRawKey(item);
     const rawDataItem = getRawDataById(key) as DataItem;
 
@@ -53,7 +52,6 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
       item[childrenKey] &&
       rawDataItem[childrenKey] &&
       (item[childrenKey] as DataItem[]).length === (rawDataItem[childrenKey] as DataItem[]).length;
-
     if (expanded.indexOf(key) === -1) return originIcon;
 
     const handleClick = (e: React.MouseEvent) => {
@@ -61,14 +59,18 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
     };
 
     return (
-      <span className={classNames(sameCount && 'full')} onClick={handleClick}>
-        <span />
+      <span
+        style={{ display: 'inline-block', width: '100%', height: '100%' }}
+        className={classNames(sameCount && 'full')}
+        onClick={handleClick}
+      >
+        {/* <span /> */}
+        {originIcon}
       </span>
     );
   };
 
   if (!filterText || !onAdvancedFilter) {
-    console.log(2333);
     return {
       data,
       onFilter,

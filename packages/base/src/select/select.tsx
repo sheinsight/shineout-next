@@ -87,6 +87,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     defaultExpandAll,
     showHitDescendants,
     renderOptionList,
+    // onAdvancedFilter,
     onExpand,
     onChange,
     onCreate: onCreateProp,
@@ -133,6 +134,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     expanded: expandedProp,
     showHitDescendants,
     hideCreateOption,
+    onAdvancedFilter: 'onAdvancedFilter' in props,
     onCreate: onCreateProp,
     onFilter: onFilterProp,
     onFilterWidthCreate,
@@ -309,7 +311,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
       // optionListRef.current?.hoverMove(filterData.length - 1, true);
     }
 
-    onFilter(trim ? text.trim() : text);
+    onFilter?.(trim ? text.trim() : text);
   };
 
   const handleOptionClick = () => {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { TreeKeygenType, KeygenResult } from '../../common/type';
 
 export interface UseTiledProps<DataItem> {
@@ -8,5 +9,6 @@ export interface UseTiledProps<DataItem> {
   childrenKey?: keyof DataItem & string;
   expanded?: KeygenResult[];
   filterText?: string;
+  originIcon: React.ReactNode;
   onAdvancedFilter?: (text: string) => (data: DataItem) => boolean;
 }

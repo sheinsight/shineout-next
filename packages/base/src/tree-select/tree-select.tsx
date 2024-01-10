@@ -105,6 +105,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     childrenKey,
     expanded: expandedProp,
     showHitDescendants,
+    onAdvancedFilter: 'onAdvancedFilter' in props,
     onFilter: onAdvancedFilter || onFilterProp,
   });
 
@@ -117,8 +118,9 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     filterText,
     onAdvancedFilter,
     keygen,
+    originIcon: Icons.More,
     childrenKey,
-    expanded: expandedProp,
+    expanded,
     rawData: rawData!,
     onFilter,
   });
@@ -274,7 +276,6 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
   };
 
   const handleFilter = (text: string) => {
-    console.log(88, onTiledFilter);
     onTiledFilter?.(trim ? text.trim() : text);
   };
 
@@ -419,6 +420,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
           unmatch={unmatch}
           value={valueProp}
           loader={loader}
+          expanded={expanded}
           expandIcons={tiledExpandIcons}
           disabled={disabled}
           parentClickExpand={parentClickExpand}
