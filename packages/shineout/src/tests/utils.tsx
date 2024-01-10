@@ -65,13 +65,16 @@ export function styleContentTest(element: Element, name: string, bool: boolean =
 export interface StyleProps {
   [key: string]: string;
 }
+
 interface BaseTestProps {
   style?: StyleProps;
   className?: string;
   children?: React.ReactNode;
   data?: any;
 }
+
 export type ReactComponentType = React.ComponentType<BaseTestProps>;
+
 export function baseTest(
   Component: ReactComponentType | JSX.Element,
   selector: string,

@@ -24,6 +24,8 @@ import { DatePickerTokens } from './date-picker/type';
 
 import Divider from './divider';
 import { DividerTokens } from './divider/type';
+import Descriptions from './descriptions';
+import { DescriptionsTokens } from './descriptions/type';
 
 import Dropdown from './dropdown';
 import { DropdownTokens } from './dropdown/type';
@@ -123,6 +125,7 @@ export type ThemeTokens = AlertTokens &
   CommonTokens &
   DatePickerTokens &
   DividerTokens &
+  DescriptionsTokens &
   DropdownTokens &
   EditableAreaTokens &
   EmptyTokens &
@@ -163,6 +166,7 @@ const Tokens: ThemeTokens = {
   ...Common,
   ...DatePicker,
   ...Divider,
+  ...Descriptions,
   ...Dropdown,
   ...EditableArea,
   ...Empty,

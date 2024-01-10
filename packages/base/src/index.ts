@@ -38,6 +38,7 @@ export * from './tooltip';
 export * from './transfer';
 export * from './tree';
 export * from './upload';
+export * from './descriptions';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';

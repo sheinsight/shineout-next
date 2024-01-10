@@ -38,6 +38,7 @@ export { default as Tooltip } from './tooltip';
 export { default as Transfer } from './transfer';
 export { default as Tree } from './tree';
 export { default as Upload } from './upload';
+export { default as Descriptions } from './descriptions';
 export { setConfig } from '@sheinx/base';
 
 export * as TYPE from './type';
