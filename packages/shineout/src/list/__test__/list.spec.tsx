@@ -8,11 +8,18 @@ import {
   classTest,
   createClassName,
   displayTest,
+  snapshotTest,
   styleContentTest,
   styleTest,
   textContentTest,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
+import ListBase from '../__example__/01-01-base';
+import ListSize from '../__example__/01-02-size';
+import ListBorder from '../__example__/01-03-border';
+import ListStriped from '../__example__/05-striped';
+import ListColNum from '../__example__/test-02-colNum';
+import ListEmpty from '../__example__/test-04-empty';
 
 const SO_PREFIX = 'list';
 const originClasses = [
@@ -116,6 +123,12 @@ mountTest(<RenderList />);
 
 describe('List[Base]', () => {
   displayTest(List as React.FC<any>, 'ShineoutList');
+  snapshotTest(<ListBase />);
+  snapshotTest(<ListSize />, 'about size');
+  snapshotTest(<ListBorder />, 'about border');
+  snapshotTest(<ListStriped />, 'about striped');
+  snapshotTest(<ListColNum />, 'about colNum');
+  snapshotTest(<ListEmpty />, 'about empty');
   test('should render when set className and style', () => {
     const style = { backgroundColor: 'red' };
     const sytleRender = 'background-color: red;';
