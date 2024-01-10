@@ -1,0 +1,29 @@
+name: test
+
+on:
+  pull_request:
+    branches: [ main, 'dev' ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.16.0]
+    steps:
+    - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          ref: ${{ github.event.release.tag_name}}
+
+      - name: Use Pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.2.0
+
+      - name: dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Component Test
+        run: pnpm run test
