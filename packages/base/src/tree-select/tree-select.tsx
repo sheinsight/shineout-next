@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import {
   util,
   usePersistFn,
@@ -67,9 +67,12 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     defaultExpandAll,
     parentClickExpand,
     showHitDescendants,
+    onBlur,
+    onFocus,
     onAdvancedFilter,
     onFilter: onFilterProp,
     onChangeAddition,
+    onEnterExpand,
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = {
@@ -81,6 +84,8 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
   const blurEvent = useRef<(() => void) | null>();
   const treeSelectRef = useRef<any>();
   const inputRef = useRef<HTMLInputElement>();
+  const [focused, setFocused] = useState(false);
+  const [enter, setEnter] = useState(false);
 
   const { value, onChange } = useTreeSelect({
     value: valueProp,
@@ -152,7 +157,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,
-    // focused && styles?.wrapperFocus,
+    focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
@@ -187,6 +192,42 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     return typeof renderResultProp === 'function' ? renderResultProp(data) : data[renderResultProp];
   };
 
+  // 点击 Select 结果框的处理方法
+  const handleResultClick = usePersistFn(() => {
+    if (disabled === true) return;
+    openPop();
+    // inputRef.current?.focus();
+  });
+
+  const handleMouseEnter = () => {
+    setEnter(true);
+  };
+
+  const handleMouseLeave = () => {
+    setEnter(false);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    // 回车或下箭头可打开下拉列表
+    if (e.keyCode === 13 || e.code === 'Enter') {
+      if (!open) {
+        if (typeof onEnterExpand === 'function') {
+          const canOpen = onEnterExpand(e);
+          if (canOpen === false) return;
+        }
+        handleResultClick();
+        return;
+      }
+    }
+
+    // tab 可关闭下拉列表
+    if (e.keyCode === 9 || e.code === 'Tab') {
+      onBlur?.(e);
+      if (open) closePop();
+      return;
+    }
+  };
+
   const handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (!datum.current) return;
@@ -206,13 +247,6 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     // onExpanded(exp);
   };
 
-  // 点击 Select 结果框的处理方法
-  const handleResultClick = usePersistFn(() => {
-    if (disabled === true) return;
-    openPop();
-    // inputRef.current?.focus();
-  });
-
   const renderClearable = () => {
     return (
       <span className={styles.clearIcon} onClick={handleClear}>
@@ -229,7 +263,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
       isEmpty = util.isEmpty(value);
     }
 
-    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && disabled !== true)) {
+    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && enter && disabled !== true)) {
       return renderClearable();
     }
     if (!multiple && !showArrow) return null;
@@ -279,6 +313,16 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
   const checkUnMatched = (item: any) => {
     return util.isUnMatchedData(item);
   };
+
+  const handleFocus = usePersistFn((e: React.FocusEvent) => {
+    setFocused(true);
+    onFocus?.(e);
+  });
+
+  const handleBlur = usePersistFn((e: React.FocusEvent) => {
+    setFocused(false);
+    onBlur?.(e);
+  });
 
   const handleFilter = (text: string) => {
     onTiledFilter?.(trim ? text.trim() : text);
@@ -453,6 +497,11 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
       data-soui-type={'input'}
       className={rootClass}
       style={rootStyle}
+      onBlur={handleBlur}
+      onFocus={handleFocus}
+      onKeyDown={handleKeyDown}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {renderResult()}
       {renderIcon()}

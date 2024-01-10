@@ -93,7 +93,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     onCreate: onCreateProp,
     onFilter: onFilterProp,
     onBlur,
-    // onFocus,
+    onFocus,
     onCollapse: onCollapseProp,
     onEnterExpand,
     onFilterWidthCreate,
@@ -211,10 +211,10 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
 
   const renderItem = getRenderItem;
 
-  // const handleFocus = usePersistFn((e: React.FocusEvent) => {
-  //   setFocused(true);
-  //   onFocus?.(e);
-  // });
+  const handleFocus = usePersistFn((e: React.FocusEvent) => {
+    setFocused(true);
+    onFocus?.(e);
+  });
 
   const handleBlur = usePersistFn((e: React.FocusEvent) => {
     setFocused(false);
@@ -630,6 +630,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
       onBlur={handleBlur}
+      onFocus={handleFocus}
     >
       {renderResult()}
       {renderIcon()}
