@@ -1,4 +1,4 @@
-import { render, cleanup, screen } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Descriptions from '..';
 import { classLengthTest } from '../../tests/structureTest';
@@ -17,8 +17,9 @@ import DescriptionsBase from '../__example__/01-base';
 import DescriptionsColums from '../__example__/02-colums';
 import DescriptionsAlignment from '../__example__/03-alignment';
 import DescriptionsBorder from '../__example__/04-border';
-import DescriptionsSize from '../__example__/05-size';
-import DescriptionsResponsive from '../__example__/06-responsive';
+import DescriptionArrangement from '../__example__/05-arrangement';
+import DescriptionsSize from '../__example__/06-size';
+import DescriptionsResponsive from '../__example__/07-responsive';
 
 const SO_PREFIX = 'descriptions';
 const originClasses = [
@@ -96,6 +97,7 @@ describe('Alert[Base]', () => {
   snapshotTest(<DescriptionsColums />, 'about colums');
   snapshotTest(<DescriptionsAlignment />, 'about alignment');
   snapshotTest(<DescriptionsBorder />, 'about border');
+  snapshotTest(<DescriptionArrangement />, 'about arrangement');
   snapshotTest(<DescriptionsSize />, 'about size');
   snapshotTest(<DescriptionsResponsive />, 'about responsive');
   test('should render default', () => {
@@ -126,7 +128,6 @@ describe('Alert[Base]', () => {
     classLengthTest(trs[1], 'td', 3);
     classLengthTest(trs[2], 'td', 2);
     classLengthTest(trs[3], 'td', 2);
-    screen.debug();
   });
   test('should render when ser layout is inlineHorizontal', () => {
     const { container } = render(<DescriptionsTest layout='inlineHorizontal' />);

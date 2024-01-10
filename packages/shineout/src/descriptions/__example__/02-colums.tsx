@@ -13,19 +13,11 @@ const data = [
     value: 'Mai Mai',
   },
   {
-    label: 'Residence',
-    value: 'Beijing',
-  },
-  {
-    label: 'Address',
-    value: 'Yingdu Building,Zhichun Road,Beijing',
-  },
-  {
     label: 'Mobile',
     value: '187-2323-9834',
   },
   {
-    label: 'Hometown',
+    label: 'Residence',
     value: 'Beijing',
   },
 ];

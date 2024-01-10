@@ -79,7 +79,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                 <div
                   class="so-descriptions-value-inline"
                 >
-                  Yingdu Building,Zhichun Road,Beijing
+                  Yingdu Building
                 </div>
               </div>
             </td>
@@ -165,6 +165,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Name
+               :
             </td>
             <td
               class="so-descriptions-value"
@@ -175,6 +176,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Residence
+               :
             </td>
             <td
               class="so-descriptions-value"
@@ -185,11 +187,12 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Address
+               :
             </td>
             <td
               class="so-descriptions-value"
             >
-              Yingdu Building,Zhichun Road,Beijing
+              Yingdu Building
             </td>
           </tr>
           <tr
@@ -199,6 +202,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Hometown
+               :
             </td>
             <td
               class="so-descriptions-value"
@@ -209,6 +213,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Mobile
+               :
             </td>
             <td
               class="so-descriptions-value"
@@ -251,6 +256,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Name
+               :
             </td>
             <td
               class="so-descriptions-value"
@@ -262,6 +268,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Residence
+               :
             </td>
             <td
               class="so-descriptions-value"
@@ -273,11 +280,12 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Address
+               :
             </td>
             <td
               class="so-descriptions-value"
             >
-              Yingdu Building,Zhichun Road,Beijing
+              Yingdu Building
             </td>
           </tr>
           <tr
@@ -288,6 +296,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Hometown
+               :
             </td>
             <td
               class="so-descriptions-value"
@@ -299,6 +308,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Mobile
+               :
             </td>
             <td
               class="so-descriptions-value"
@@ -339,16 +349,19 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Name
+               :
             </td>
             <td
               class="so-descriptions-label"
             >
               Residence
+               :
             </td>
             <td
               class="so-descriptions-label"
             >
               Address
+               :
             </td>
           </tr>
           <tr
@@ -367,7 +380,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
             <td
               class="so-descriptions-value"
             >
-              Yingdu Building,Zhichun Road,Beijing
+              Yingdu Building
             </td>
           </tr>
           <tr
@@ -377,12 +390,14 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Hometown
+               :
             </td>
             <td
               class="so-descriptions-label"
               colspan="2"
             >
               Mobile
+               :
             </td>
           </tr>
           <tr
@@ -398,6 +413,715 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               colspan="2"
             >
               187-2323-9834
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Alert[Base] should render correctly about arrangement 1`] = `
+<div>
+  <div
+    class="so-descriptions-wrapper"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-descriptions-header"
+    >
+      <div
+        class="so-descriptions-title"
+      >
+        User Info
+      </div>
+    </div>
+    <div
+      class="so-descriptions-body so-descriptions-table-layout-fixed so-descriptions-horizontal"
+    >
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        class="so-descriptions-table"
+      >
+        <tbody>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-label"
+              style="text-align: right;"
+            >
+              Name
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+            >
+              Mai Mai
+            </td>
+            <td
+              class="so-descriptions-label"
+              style="text-align: right;"
+            >
+              Residence
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+            >
+              Beijing
+            </td>
+            <td
+              class="so-descriptions-label"
+              style="text-align: right;"
+            >
+              Address
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+            >
+              Yingdu Building
+            </td>
+          </tr>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-label"
+              style="text-align: right;"
+            >
+              Mobile
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+            >
+              187-2323-9834
+            </td>
+            <td
+              class="so-descriptions-label"
+              style="text-align: right;"
+            >
+              Hometown
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+              colspan="3"
+            >
+              Beijing
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    class="so-descriptions-wrapper"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-descriptions-header"
+    >
+      <div
+        class="so-descriptions-title"
+      >
+        User Info
+      </div>
+    </div>
+    <div
+      class="so-descriptions-body so-descriptions-table-layout-fixed so-descriptions-horizontal"
+    >
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        class="so-descriptions-table"
+      >
+        <tbody>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-label"
+            >
+              Name
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+            >
+              Mai Mai
+            </td>
+            <td
+              class="so-descriptions-label"
+            >
+              Residence
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+            >
+              Beijing
+            </td>
+            <td
+              class="so-descriptions-label"
+            >
+              Address
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+            >
+              Yingdu Building
+            </td>
+          </tr>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-label"
+            >
+              Mobile
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+            >
+              187-2323-9834
+            </td>
+            <td
+              class="so-descriptions-label"
+            >
+              Hometown
+               :
+            </td>
+            <td
+              class="so-descriptions-value"
+              colspan="3"
+            >
+              Beijing
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    class="so-descriptions-wrapper"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-descriptions-header"
+    >
+      <div
+        class="so-descriptions-title"
+      >
+        User Info
+      </div>
+    </div>
+    <div
+      class="so-descriptions-body so-descriptions-table-layout-fixed so-descriptions-inline-horizontal"
+    >
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        class="so-descriptions-table"
+      >
+        <tbody>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Name
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Mai Mai
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Residence
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Beijing
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Address
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Yingdu Building
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Mobile
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  187-2323-9834
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+              colspan="2"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Hometown
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Beijing
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    class="so-descriptions-wrapper"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-descriptions-header"
+    >
+      <div
+        class="so-descriptions-title"
+      >
+        User Info
+      </div>
+    </div>
+    <div
+      class="so-descriptions-body so-descriptions-table-layout-fixed"
+    >
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        class="so-descriptions-table"
+      >
+        <tbody>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Name
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Mai Mai
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Residence
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Beijing
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Address
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Yingdu Building
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Mobile
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  187-2323-9834
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+              colspan="2"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Hometown
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Beijing
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    class="so-descriptions-wrapper"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-descriptions-header"
+    >
+      <div
+        class="so-descriptions-title"
+      >
+        User Info
+      </div>
+    </div>
+    <div
+      class="so-descriptions-body so-descriptions-border so-descriptions-inline-horizontal"
+    >
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        class="so-descriptions-table"
+      >
+        <tbody>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Name
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Mai Mai
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Residence
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Beijing
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Address
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Yingdu Building
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Mobile
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  187-2323-9834
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+              colspan="2"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Hometown
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Beijing
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    class="so-descriptions-wrapper"
+  >
+    <div
+      class="so-descriptions-header"
+    >
+      <div
+        class="so-descriptions-title"
+      >
+        User Info
+      </div>
+    </div>
+    <div
+      class="so-descriptions-body so-descriptions-border"
+    >
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        class="so-descriptions-table"
+      >
+        <tbody>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Name
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Mai Mai
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Residence
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Beijing
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Address
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Yingdu Building
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="so-descriptions-row"
+          >
+            <td
+              class="so-descriptions-inline-table"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Mobile
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  187-2323-9834
+                </div>
+              </div>
+            </td>
+            <td
+              class="so-descriptions-inline-table"
+              colspan="2"
+            >
+              <div
+                class="so-descriptions-item"
+              >
+                <div
+                  class="so-descriptions-label-inline"
+                >
+                  Hometown
+                   :
+                </div>
+                <div
+                  class="so-descriptions-value-inline"
+                >
+                  Beijing
+                </div>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -623,6 +1347,11 @@ exports[`Alert[Base] should render correctly about border 1`] = `
             >
               Address
             </td>
+            <td
+              class="so-descriptions-label"
+            >
+              Mobile
+            </td>
           </tr>
           <tr
             class="so-descriptions-row"
@@ -642,18 +1371,18 @@ exports[`Alert[Base] should render correctly about border 1`] = `
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
+            <td
+              class="so-descriptions-value"
+            >
+              187-2323-9834
+            </td>
           </tr>
           <tr
             class="so-descriptions-row"
           >
             <td
               class="so-descriptions-label"
-            >
-              Mobile
-            </td>
-            <td
-              class="so-descriptions-label"
-              colspan="2"
+              colspan="4"
             >
               Hometown
             </td>
@@ -663,12 +1392,7 @@ exports[`Alert[Base] should render correctly about border 1`] = `
           >
             <td
               class="so-descriptions-value"
-            >
-              187-2323-9834
-            </td>
-            <td
-              class="so-descriptions-value"
-              colspan="2"
+              colspan="4"
             >
               Beijing
             </td>
@@ -724,34 +1448,6 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
             <td
               class="so-descriptions-label"
             >
-              Residence
-            </td>
-            <td
-              class="so-descriptions-value"
-            >
-              Beijing
-            </td>
-          </tr>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-label"
-            >
-              Address
-            </td>
-            <td
-              class="so-descriptions-value"
-            >
-              Yingdu Building,Zhichun Road,Beijing
-            </td>
-          </tr>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-label"
-            >
               Mobile
             </td>
             <td
@@ -766,7 +1462,7 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
             <td
               class="so-descriptions-label"
             >
-              Hometown
+              Residence
             </td>
             <td
               class="so-descriptions-value"
@@ -821,36 +1517,6 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
               class="so-descriptions-label"
               style="text-align: right;"
             >
-              Residence
-            </td>
-            <td
-              class="so-descriptions-value"
-            >
-              Beijing
-            </td>
-          </tr>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-label"
-              style="text-align: right;"
-            >
-              Address
-            </td>
-            <td
-              class="so-descriptions-value"
-            >
-              Yingdu Building,Zhichun Road,Beijing
-            </td>
-          </tr>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-label"
-              style="text-align: right;"
-            >
               Mobile
             </td>
             <td
@@ -866,7 +1532,7 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
               class="so-descriptions-label"
               style="text-align: right;"
             >
-              Hometown
+              Residence
             </td>
             <td
               class="so-descriptions-value"

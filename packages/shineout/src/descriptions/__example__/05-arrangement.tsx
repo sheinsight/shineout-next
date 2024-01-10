@@ -1,7 +1,7 @@
 /**
- * cn - 带边框展示
+ * cn - 不同排列模式
  *    --
- * en - Show With Border
+ * en - Arrangement
  *    --
  */
 import React from 'react';
@@ -18,7 +18,7 @@ const data = [
   },
   {
     label: 'Address',
-    value: 'Yingdu Building,Zhichun Road,Beijing',
+    value: 'Yingdu Building',
   },
   {
     label: 'Mobile',
@@ -36,28 +36,43 @@ export default () => {
       <Descriptions
         items={data}
         title='User Info'
-        layout='horizontal'
-        border
-        tableLayout='fixed'
-        style={{ marginBottom: '20px' }}
-      />
-      <Descriptions
-        items={data}
-        title='User Info'
-        layout='horizontal'
-        border
-        tableLayout='fixed'
+        colon={` :`}
         labelStyle={{ textAlign: 'right' }}
-        style={{ marginBottom: '20px' }}
+        layout='horizontal'
+        tableLayout='fixed'
+        style={{ marginBottom: '24px' }}
       />
       <Descriptions
         items={data}
         title='User Info'
-        layout='vertical'
-        border
+        layout='horizontal'
+        colon={` :`}
         tableLayout='fixed'
-        column={4}
+        style={{ marginBottom: '24px' }}
       />
+      <Descriptions
+        items={data}
+        title='User Info'
+        colon={` :`}
+        tableLayout='fixed'
+        style={{ marginBottom: '24px' }}
+      />
+      <Descriptions
+        items={data}
+        title='User Info'
+        colon={` :`}
+        layout='inlineVertical'
+        tableLayout='fixed'
+        style={{ marginBottom: '24px' }}
+      />
+      <Descriptions
+        items={data}
+        title='User Info'
+        colon={` :`}
+        border
+        style={{ marginBottom: '24px' }}
+      />
+      <Descriptions items={data} title='User Info' colon={` :`} layout='inlineVertical' border />
     </div>
   );
 };

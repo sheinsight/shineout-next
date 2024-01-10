@@ -18,7 +18,7 @@ const data = [
   },
   {
     label: 'Address',
-    value: 'Yingdu Building,Zhichun Road,Beijing',
+    value: 'Yingdu Building',
   },
   {
     label: 'Mobile',
