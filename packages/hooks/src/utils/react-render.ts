@@ -1,12 +1,11 @@
 import type * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import type { Root } from 'react-dom/client';
-import { createRoot as createRootOrigin } from 'react-dom/client';
 
 const fullClone = {
   ...ReactDOM,
 } as typeof ReactDOM & {
-  createRoot?: CreateRoot;
+  createRoot: CreateRoot;
 };
 
 const MARK = '__sheinout_root__';
@@ -24,7 +23,7 @@ let createRoot: CreateRoot;
 try {
   const mainVersion = Number((version || '').split('.')[0]);
   if (mainVersion >= 18) {
-    createRoot = createRootOrigin;
+    ({ createRoot } = fullClone);
   }
 } catch (e) {
   // Nothing;
