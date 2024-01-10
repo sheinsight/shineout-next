@@ -391,9 +391,15 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
   }, [data]);
 
   useEffect(() => {
-    if (firstRender.current) return;
+    if (expanded && expanded.length === 0) {
+      return;
+    }
+    if (firstRender.current) {
+      handleExpanded(expanded);
+      return;
+    }
+
     handleExpanded(expanded);
-    console.log(expanded);
   }, [expanded]);
 
   const datum = useLatestObj({

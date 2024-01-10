@@ -49,8 +49,6 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
     setExpanded(expanded);
   }, []);
 
-  useEffect(() => {}, []);
-
   return {
     update,
     active,
