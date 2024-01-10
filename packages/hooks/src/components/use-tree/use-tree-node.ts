@@ -7,6 +7,7 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
   const [active, setActive] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [fetching, setFetching] = useState(false);
+
   const update = usePersistFn((key: string, value: boolean) => {
     switch (key) {
       case 'active':
@@ -47,6 +48,8 @@ const useTreeNode = <DataItem, Value>(props: BaseTreeNodeProps<DataItem, Value>)
     setActive(active);
     setExpanded(expanded);
   }, []);
+
+  useEffect(() => {}, []);
 
   return {
     update,

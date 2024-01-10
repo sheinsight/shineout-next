@@ -56,8 +56,9 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
   // const dragLock = useRef(false);
   const dragImage = useRef<null | HTMLElement>(null);
 
+  // const [expanded, setExpanded] = useState(false)
   const { getPath } = useTreeContext();
-  const { active, isLeaf, fetching, expanded, setFetching, setExpanded } = useTreeNode({
+  const { active, isLeaf, fetching, setFetching, expanded, setExpanded } = useTreeNode({
     id,
     data,
     bindNode,
@@ -218,7 +219,7 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
       isControlled,
       contentClass,
       parentClickExpand,
-      expanded: expanded,
+      expanded,
       line,
       data: children,
       mode,

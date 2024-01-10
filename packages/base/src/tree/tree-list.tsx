@@ -49,6 +49,7 @@ const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataIte
     parentClickExpand,
     doubleClickExpand,
   } = props;
+
   const listClass = jssStyle?.tree() || ({} as TreeClasses);
   const rootClass = classNames(className || listClass.children, childrenClassName);
 
