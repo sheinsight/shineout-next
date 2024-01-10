@@ -975,6 +975,13 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
+   * @default '#020B18'
+   * @description
+   */
+  'Neutral-fill-10': string;
+  /**
+   * @type {string}
+   * @categoty color
    * @default '#999DA8'
    * @description
    */

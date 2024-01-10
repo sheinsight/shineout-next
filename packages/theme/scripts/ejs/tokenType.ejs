@@ -1,0 +1,11 @@
+export interface Tokens {
+    <% tokens.forEach(function (item, i) { -%>
+        /**
+        * @type {string}
+        * @categoty <%= item.type %>
+        * @default '<%= item.value %>'
+        * @description <%= item.describe %>
+        */
+        '<%= item.token %>': string;
+    <% }) -%>
+    }
