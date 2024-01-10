@@ -29,7 +29,7 @@ function deleteDirectory(dir) {
 }
 
 const build = (config, cb) => {
-  fs.writeFile('./.fatherrc.ts', config, (err) => {
+  fs.writeFile(path.resolve(__dirname, '../.fatherrc.ts'), config, (err) => {
     if (err) {
       console.error(err);
     }

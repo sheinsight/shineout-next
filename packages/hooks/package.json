@@ -1,6 +1,6 @@
 {
   "name": "@sheinx/hooks",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "keywords": [],
   "license": "ISC",
@@ -17,13 +17,11 @@
   "dependencies": {
     "date-fns-tz": "^2.0.0",
     "dayjs": "^1.11.9",
-    "react-fast-compare": "^3.2.2"
-  },
-  "devDependencies": {
-    "@types/deep-eql": "^4.0.0"
+    "react-fast-compare": "^3.2.2",
+    "immer": ">=10"
   },
   "peerDependencies": {
-    "immer": ">=10",
-    "react": ">=16.8"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   }
 }

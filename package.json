@@ -1,7 +1,7 @@
 {
   "name": "sheinx",
   "private": true,
-  "version": "0.0.1",
+  "version": "3.0.0-alpha.1",
   "description": "A react library developed with sheinx",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,6 +16,7 @@
     "build": "pnpm run build:pkg && pnpm run build:doc",
     "build:pkg": "pnpm --filter=./packages/* run build",
     "build:watch": "pnpm --filter=./packages/* run build:watch",
+    "pub": "node ./scripts/publish.js",
     "prepare": "husky install",
     "doctor": "father doctor",
     "lint": "pnpm run lint:es",

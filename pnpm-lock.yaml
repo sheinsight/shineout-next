@@ -235,10 +235,6 @@ importers:
       react-fast-compare:
         specifier: ^3.2.2
         version: 3.2.2
-    devDependencies:
-      '@types/deep-eql':
-        specifier: ^4.0.0
-        version: 4.0.0
 
   packages/mock:
     dependencies:
@@ -3489,10 +3485,6 @@ packages:
     resolution: {integrity: sha512-/vPO1EPOs306Cvhwv7KfVfYvOJqA/S/AXjaHQiJboCZzcNDb+TIJFN9/2C9DZ//ijSKWioNyUxD792QmDJ+HKQ==}
     dependencies:
       '@types/ms': 0.7.31
-    dev: true
-
-  /@types/deep-eql@4.0.0:
-    resolution: {integrity: sha512-UkfTYLA64vGUyR4ez8ybIC01wtilS/ydOqKL1fSHOvnX1sVm1sI5btr7Q+bqpdaPGD+QNhOgBXq1HGjO+99e1A==}
     dev: true
 
   /@types/eslint-scope@3.7.4:

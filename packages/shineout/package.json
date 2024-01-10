@@ -1,6 +1,6 @@
 {
   "name": "shineout",
-  "version": "3.0.0",
+  "version": "0.0.0",
   "description": "A components library for React",
   "keywords": [],
   "license": "ISC",
@@ -10,18 +10,18 @@
   "module": "./dist/esm/index.js",
   "typings": "./dist/cjs/index.d.ts",
   "scripts": {
-    "build": "node ./build.js",
+    "build": "node ./scripts/build.js",
     "build:watch": "father dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@sheinx/base": "workspace:*",
     "@sheinx/hooks": "workspace:*",
-    "@sheinx/shineout-style": "workspace:*"
+    "@sheinx/shineout-style": "workspace:*",
+    "classnames": ">=2",
+    "immer": ">=10"
   },
   "peerDependencies": {
-    "classnames": ">=2",
-    "immer": ">=10",
     "react": ">=16.8",
     "react-dom": ">=16.8"
   },
