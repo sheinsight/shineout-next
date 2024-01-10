@@ -57,6 +57,7 @@ export default () => {
       <TreeSelect
         width={300}
         showHitDescendants
+        placeholder='Please select content'
         onAdvancedFilter={(text) => (d) => d.value.indexOf(text) > -1}
         clearable
         keygen='value'

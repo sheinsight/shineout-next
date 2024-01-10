@@ -38,6 +38,7 @@ export type TreeSelectClasses = {
   multiple: string;
   loading: string;
   checkedIcon: string;
+  moreIcon: string;
   list: string;
   tree: string;
   treeOption: string;
@@ -349,6 +350,13 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     display: 'inline-flex',
     width: token.selectFontSize,
     fontSize: token.selectFontSize,
+  },
+  moreIcon: {
+    display: 'inline-flex',
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   list: {
     paddingTop: 3,

@@ -10,5 +10,6 @@ export interface UseTiledProps<DataItem> {
   expanded?: KeygenResult[];
   filterText?: string;
   originIcon: React.ReactNode;
+  moreIcon: () => React.ReactNode;
   onAdvancedFilter?: (text: string) => (data: DataItem) => boolean;
 }

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import classNames from 'classnames';
 import { KeygenResult } from '../../common/type';
 import { useTree } from '../use-tree';
 import { UseTiledProps } from './use-tiled.type';
@@ -15,6 +14,7 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
     onFilter,
     filterText,
     originIcon,
+    moreIcon,
     onAdvancedFilter,
   } = props;
 
@@ -48,10 +48,10 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
 
     if (!item || !rawDataItem) return originIcon;
 
-    const sameCount =
-      item[childrenKey] &&
-      rawDataItem[childrenKey] &&
-      (item[childrenKey] as DataItem[]).length === (rawDataItem[childrenKey] as DataItem[]).length;
+    // const sameCount =
+    //   item[childrenKey] &&
+    //   rawDataItem[childrenKey] &&
+    //   (item[childrenKey] as DataItem[]).length === (rawDataItem[childrenKey] as DataItem[]).length;
     if (expanded.indexOf(key) === -1) return originIcon;
 
     const handleClick = (e: React.MouseEvent) => {
@@ -61,11 +61,10 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
     return (
       <span
         style={{ display: 'inline-block', width: '100%', height: '100%' }}
-        className={classNames(sameCount && 'full')}
         onClick={handleClick}
       >
         {/* <span /> */}
-        {originIcon}
+        {moreIcon()}
       </span>
     );
   };

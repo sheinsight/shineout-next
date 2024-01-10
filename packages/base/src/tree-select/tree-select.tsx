@@ -71,7 +71,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     onFilter: onFilterProp,
     onChangeAddition,
   } = props;
-  const styles = jssStyle?.select?.() as TreeSelectClasses;
+  const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = {
     ...style,
     width,
@@ -109,6 +109,10 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     onFilter: onAdvancedFilter || onFilterProp,
   });
 
+  const renderMoreIcon = () => {
+    return <span className={styles.moreIcon}>{Icons.More}</span>;
+  };
+
   const {
     data: tiledData,
     onFilter: onTiledFilter,
@@ -119,6 +123,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     onAdvancedFilter,
     keygen,
     originIcon: Icons.More,
+    moreIcon: renderMoreIcon,
     childrenKey,
     expanded,
     rawData: rawData!,
