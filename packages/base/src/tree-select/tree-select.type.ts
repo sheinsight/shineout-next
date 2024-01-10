@@ -207,4 +207,10 @@ export interface TreeSelectProps<DataItem, Value extends KeygenResult>
         active?: boolean,
         id?: KeygenResult,
       ) => React.ReactNode);
+
+  /**
+   * @en In the advanced filter mode, you can switch between the filter results and the original data for the current level by pressing the button
+   * @cn 高级筛选模式，可针对当前层级在筛选结果和原始数据间切换
+   */
+  onAdvancedFilter?: (text: string) => (data: DataItem) => boolean;
 }

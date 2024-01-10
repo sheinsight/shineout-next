@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import {
   util,
   usePersistFn,
+  useTiled,
   usePopup,
   useTreeSelect,
   useFilter,
@@ -66,6 +67,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     defaultExpandAll,
     parentClickExpand,
     showHitDescendants,
+    onAdvancedFilter,
     onFilter: onFilterProp,
     onChangeAddition,
   } = props;
@@ -92,6 +94,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     inputText,
     filterData,
     expanded,
+    rawData,
     setInputText,
     onFilter,
     onResetFilter,
@@ -102,7 +105,22 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     childrenKey,
     expanded: expandedProp,
     showHitDescendants,
-    onFilter: onFilterProp,
+    onFilter: onAdvancedFilter || onFilterProp,
+  });
+
+  const {
+    data: tiledData,
+    onFilter: onTiledFilter,
+    expandIcons: tiledExpandIcons,
+  } = useTiled<DataItem>({
+    data: filterData!,
+    filterText,
+    onAdvancedFilter,
+    keygen,
+    childrenKey,
+    expanded: expandedProp,
+    rawData: rawData!,
+    onFilter,
   });
 
   const onCollapse = usePersistFn((collapse: boolean) => {
@@ -256,7 +274,8 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
   };
 
   const handleFilter = (text: string) => {
-    onFilter(trim ? text.trim() : text);
+    console.log(88, onTiledFilter);
+    onTiledFilter?.(trim ? text.trim() : text);
   };
 
   const handleChange = (item: DataItem | UnMatchedData, id: Value) => {
@@ -319,7 +338,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
           jssStyle={jssStyle}
           size={size}
           value={value}
-          data={filterData as DataItem[]}
+          data={tiledData as DataItem[]}
           focus={open}
           keygen={keygen as any}
           disabled={disabled}
@@ -334,7 +353,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
           renderResult={getRenderResult}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
-          allowOnFilter={'onFilter' in props || 'onCreate' in props}
+          allowOnFilter={'onFilter' in props || 'onAdvancedFilter' in props}
           focusSelected={focusSelected}
           inputText={inputText}
           filterText={filterText}
@@ -395,11 +414,12 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
           {...treeProps}
           line={line}
           mode={mode}
-          data={filterData}
+          data={tiledData}
           keygen={keygen}
           unmatch={unmatch}
           value={valueProp}
           loader={loader}
+          expandIcons={tiledExpandIcons}
           disabled={disabled}
           parentClickExpand={parentClickExpand}
           defaultExpanded={defaultExpanded}

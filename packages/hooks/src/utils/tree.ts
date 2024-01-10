@@ -1,4 +1,6 @@
+import { produce } from 'immer';
 import { KeygenResult } from '../common/type';
+import { deepClone } from './clone';
 
 export const getFlattenTree = <T>(
   data: T[],
@@ -58,4 +60,37 @@ export const getFilterTree = <DataItem, K extends (node: DataItem) => KeygenResu
     return null;
   };
   return treeNodes!.map(mapFilteredNodeToData).filter((node) => node);
+};
+
+type FilterDatum<DataItem> = {
+  data: DataItem[];
+  childrenKey: any;
+  getKey: (node: DataItem) => KeygenResult;
+  getDataById: (id: KeygenResult) => DataItem;
+};
+
+export const mergeFilteredTree = (
+  filterDatum: FilterDatum<any>,
+  rawDatum: FilterDatum<any>,
+  tiledId: KeygenResult[],
+) => {
+  const filterData = filterDatum.data;
+  const { childrenKey } = filterDatum;
+  if (tiledId.length === 0) return filterData;
+  const recursion = (node: { [x: string]: any }) => {
+    const nodeKey = filterDatum.getKey(node);
+    if (tiledId.indexOf(nodeKey) >= 0) {
+      node[childrenKey] = deepClone(rawDatum.getDataById(nodeKey)[childrenKey] || []);
+    } else {
+      const item = filterDatum.getDataById(nodeKey);
+      if (item && item[childrenKey]) {
+        node[childrenKey] = deepClone(item[childrenKey] || []);
+      }
+    }
+    const children = node[childrenKey] || [];
+    children.map(recursion);
+  };
+  return produce(filterData, (draft) => {
+    draft.map(recursion);
+  });
 };

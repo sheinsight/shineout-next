@@ -72,7 +72,7 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
     defaultValue,
     defaultExpandAll,
     defaultExpanded,
-    childrenKey: childrenKey as keyof DataItem,
+    childrenKey: childrenKey as keyof DataItem & string,
     keygen,
     onExpand: onExpandProp,
   });
@@ -184,7 +184,7 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
 
   return (
     <div className={rootClass} {...rest}>
-      <Provider value={datum}>
+      <Provider value={datum as any}>
         <RootTree
           isControlled={'expanded' in props}
           jssStyle={jssStyle}

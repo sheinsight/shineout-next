@@ -43,7 +43,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     defaultValue,
     value = defaultValue,
     data = [],
-    childrenKey = 'children' as keyof DataItem,
+    childrenKey = 'children' as keyof DataItem & string,
     keygen,
     mode,
     active: activeProp,
@@ -398,6 +398,8 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
   const datum = useLatestObj({
     get,
     set,
+    childrenKey,
+    data,
     getPath,
     getValue,
     getChecked,
@@ -406,6 +408,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     setValue,
     isDisabled,
     bindNode,
+    getDataById,
   });
 
   return {

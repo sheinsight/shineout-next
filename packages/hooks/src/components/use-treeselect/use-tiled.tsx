@@ -3,26 +3,28 @@ import classNames from 'classnames';
 import { KeygenResult } from '../../common/type';
 import { useTree } from '../use-tree';
 import { UseTiledProps } from './use-tiled.type';
-// import { getKey } from '../../utils';
+import { mergeFilteredTree } from '../../utils/tree';
 
-const useTiled = <DataItem, Value>(props: UseTiledProps<DataItem, Value>) => {
+const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
   const {
-    // data,
+    data,
     keygen,
-    childrenKey = 'children' as keyof DataItem,
+    childrenKey = 'children' as keyof DataItem & string,
     expanded = [],
     rawData,
     onFilter,
+    filterText,
+    onAdvancedFilter,
   } = props;
 
   const [tileds, setTileds] = useState<KeygenResult[]>([]);
 
-  //   const { datum } = useTree({ data, childrenKey, keygen });
+  const { datum } = useTree({ data, childrenKey, keygen, isControlled: false });
   const {
-    // datum: rawDatum,
+    datum: rawDatum,
     getKey: getRawKey,
     getDataById: getRawDataById,
-  } = useTree({ data: rawData, childrenKey, keygen });
+  } = useTree({ data: rawData, childrenKey, keygen, isControlled: false });
 
   const handleToggle = (e: React.MouseEvent, key: KeygenResult) => {
     e.stopPropagation();
@@ -65,7 +67,18 @@ const useTiled = <DataItem, Value>(props: UseTiledProps<DataItem, Value>) => {
     );
   };
 
+  if (!filterText || !onAdvancedFilter) {
+    console.log(2333);
+    return {
+      data,
+      onFilter,
+    };
+  }
+
+  const nextData = mergeFilteredTree(datum, rawDatum, tileds);
+
   return {
+    data: nextData,
     onFilter: handleFilter,
     expandIcons: [getIcon, getIcon],
   };

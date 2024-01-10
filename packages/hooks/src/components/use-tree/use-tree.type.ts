@@ -36,7 +36,7 @@ export interface BaseTreeProps<DataItem, Value extends KeygenResult> {
   defaultExpandAll?: boolean;
   disabled?: boolean | ((item: DataItem) => boolean);
   keygen: StructKeygenStringType<DataItem>;
-  childrenKey?: keyof DataItem;
+  childrenKey?: keyof DataItem & string;
   mode?: TreeModeType;
   dataUpdate?: boolean;
   unmatch?: boolean;
