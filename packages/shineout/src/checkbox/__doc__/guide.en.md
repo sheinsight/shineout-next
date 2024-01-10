@@ -1,6 +1,6 @@
 ## When to use
 
-When you need to select multiple options from a data set;\nwhen you need to switch between two states (selected or unselected, open or closed), you can use the multi-selection box alone;\nyou need a marker control, which will only take effect after triggering the action button
+When you need to select multiple options from a data set\nwhen you need to switch between two states (selected or unselected, open or closed), you can use the multi-selection box alone\nyou need a marker control, which will only take effect after triggering the action button
 
 ## Common usage
 

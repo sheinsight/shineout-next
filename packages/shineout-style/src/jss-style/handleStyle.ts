@@ -39,7 +39,7 @@ const handleRule = (key: string, rule: string, target: ObjectType) => {
     }
     return;
   }
-  const reg = /^(margin|padding|border)(Left|Right)/;
+  const reg = /^(margin|padding|border)(Left|Right)([\s\S]*)/;
   if (reg.test(key)) {
     const [_, kind, direction, end] = key.match(reg)!;
     const newKey = `${kind}${direction === 'Left' ? 'InlineStart' : 'InlineEnd'}${end || ''}`;

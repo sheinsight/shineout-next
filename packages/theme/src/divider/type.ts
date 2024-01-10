@@ -40,7 +40,7 @@ export interface DividerTokens {
   dividerHorizontalTextMarginY: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Margin-12
    * @description 分割线垂直模式外边距（水平方向）
    */
   dividerVerticalMarginX: string;
