@@ -37,16 +37,18 @@ export default () => {
         items={data}
         title='User Info'
         layout='horizontal'
+        colon={` :`}
         style={{ marginBottom: '24px' }}
       />
       <Descriptions
         items={data}
         title='User Info'
         layout='horizontal'
+        colon={` :`}
         labelStyle={{ textAlign: 'right' }}
         style={{ marginBottom: '24px' }}
       />
-      <Descriptions items={data} title='User Info' layout='vertical' />
+      <Descriptions items={data} title='User Info' layout='vertical' colon={` :`} />
     </div>
   );
 };
