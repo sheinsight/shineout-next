@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Menu, TYPE } from 'shineout';
 import {
@@ -7,8 +7,10 @@ import {
   baseTest,
   classTest,
   createClassName,
+  delay,
   displayTest,
   snapshotTest,
+  styleContentTest,
   styleTest,
   textContentTest,
 } from '../../tests/utils';
@@ -27,7 +29,14 @@ import MenuVertical from '../__example__/10-vertical';
 import MenuDark from '../__example__/11-dark';
 
 const SO_PREFIX = 'menu';
-const originClasses = ['wrapper', 'scrollbox', 'itemContent', 'expand'];
+const originClasses = [
+  'wrapper',
+  'scrollbox',
+  'itemContent',
+  'expand',
+  'scrollbar',
+  'scrolbarHandler',
+];
 const originItemClasses = [
   'wrapperInline',
   'wrapperLight',
@@ -46,6 +55,11 @@ const originItemClasses = [
   'itemContentFront',
   'expandFront',
   'itemDisabled',
+  'wrapperDark',
+  'wrapperHorizontal',
+  'wrapperVertical',
+  'scrollbarY',
+  'scrollbarX',
 ];
 const {
   wrapper,
@@ -69,6 +83,13 @@ const {
   itemContentFront,
   expandFront,
   itemDisabled,
+  wrapperDark,
+  wrapperHorizontal,
+  wrapperVertical,
+  scrollbar,
+  scrolbarHandler,
+  scrollbarY,
+  scrollbarX,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 interface MenuItem {
@@ -81,27 +102,31 @@ interface MenuLinkItem extends MenuItem {
   link?: string;
 }
 
+interface MenuDisabledItem extends MenuItem {
+  disabled?: boolean;
+}
+
 type MenuProps = TYPE.Menu.Props<MenuItem, string>;
 type MenuRenderItem = MenuProps['renderItem'];
 
-const testDataWithoutChild: MenuItem[] = [
-  {
-    id: '1',
-    title: '1',
-  },
-  {
-    id: '2',
-    title: '2',
-  },
-  {
-    id: '3',
-    title: '3',
-  },
-];
+const createMoreData = (num: number) => {
+  const result: MenuItem[] = [];
+  for (let i = 1; i <= num; i++) {
+    result.push({
+      id: `${i}`,
+      title: `${i}`,
+    });
+  }
+  return result;
+};
+
+const testDataWithoutChild: MenuItem[] = createMoreData(3);
+
+const link = 'https://www.github.com';
 
 const testDataWithLink: MenuLinkItem[] = testDataWithoutChild.map((item) => ({
   ...item,
-  link: 'https://www.github.com',
+  link,
 }));
 
 const testData: MenuItem[] = [
@@ -130,6 +155,11 @@ const testData: MenuItem[] = [
     title: '3',
   },
 ];
+
+const testDataDisabled: MenuDisabledItem[] = testData.map((item) => ({
+  ...item,
+  disabled: true,
+}));
 
 const renderItem: MenuRenderItem = (d: MenuItem) => d.title;
 
@@ -211,6 +241,17 @@ describe('Menu[Base]', () => {
       attributesTest(title, 'href', testDataWithLink[index].link!);
     });
   });
+  test('should render when set link is element', () => {
+    const { container } = render(
+      <MenuTest data={testDataWithoutChild} renderItem={() => <a href={link}></a>} />,
+    );
+    const menuWrapper = container.querySelector(wrapper)!;
+    const items = menuWrapper.querySelectorAll('li');
+    items.forEach((item) => {
+      const title = item.querySelector('a')!;
+      attributesTest(title, 'href', link);
+    });
+  });
   test('should render when set parentSelectable', () => {
     const { container } = render(<MenuTest parentSelectable />);
     const items = container.querySelectorAll(`.${root} > li`);
@@ -227,7 +268,6 @@ describe('Menu[Base]', () => {
   });
   test('should render when set frontCaret', () => {
     const { container, rerender } = render(<MenuTest frontCaret />);
-    screen.debug();
     const items = container.querySelectorAll(`.${root} > li`);
     items.forEach((item, index) => {
       if (!testData[index]?.children) return;
@@ -269,5 +309,244 @@ describe('Menu[Base]', () => {
     fireEvent.click(items[2].querySelector(itemContent)!);
     classTest(items[2], itemActive, false);
   });
-  test('should render when set disable is function', () => {});
+  test('should render when set disable is function', () => {
+    const { container } = render(
+      <MenuTest data={testDataDisabled} disabled={(d: MenuDisabledItem) => !!d.disabled} />,
+    );
+    const items = container.querySelectorAll(`.${root} > li`);
+    items.forEach((item) => {
+      classTest(item, itemDisabled);
+    });
+    fireEvent.click(items[2].querySelector(itemContent)!);
+    classTest(items[2], itemActive, false);
+    fireEvent.click(items[0].querySelector(itemContent)!);
+    classTest(items[0], itemOpen);
+    const itemChild = items[0].querySelector('ul')!;
+    fireEvent.click(itemChild.querySelector(itemContent)!);
+    classTest(itemChild.querySelector('li')!, itemActive);
+  });
+  test('should render when set multiple choice by active is array', () => {
+    const App = () => {
+      const [activeId, setActiveId] = React.useState<string[]>(['1']);
+      const checkActive = (d: MenuItem) => activeId.includes(d.id);
+      return (
+        <MenuTest
+          active={checkActive}
+          onClick={(d: MenuItem) => setActiveId([...activeId, d.id])}
+          data={testDataWithoutChild}
+        />
+      );
+    };
+    const { container } = render(<App />);
+    const items = container.querySelectorAll('li');
+    classTest(items[0], itemActive);
+    fireEvent.click(items[1].querySelector(itemContent)!);
+    classTest(items[0], itemActive);
+    classTest(items[1], itemActive);
+  });
+  test('should render when set inlineIndent', () => {
+    const inlineIndent = 48;
+    const { container } = render(<MenuTest inlineIndent={inlineIndent} />);
+    const items = container.querySelectorAll(`.${root} > li`);
+    items.forEach((item, index) => {
+      if (!testData[index]?.children) return;
+      const itemChild = item.querySelector('ul')!;
+      const itemChildContent = itemChild.querySelector(itemContent)!;
+      styleContentTest(itemChildContent.firstElementChild as Element, `width: ${inlineIndent}px;`);
+    });
+  });
+  test('should render when set onClick in data', () => {
+    const onClick = jest.fn();
+    const { container } = render(
+      <MenuTest data={testDataWithoutChild.map((item) => ({ ...item, onClick }))} />,
+    );
+    const items = container.querySelectorAll('li');
+    fireEvent.click(items[0].querySelector(itemContent)!);
+    expect(onClick.mock.calls.length).toBe(1);
+  });
+  test('should render when set theme is dark', () => {
+    const { container } = render(<MenuTest theme='dark' />);
+    const menuWrapper = container.querySelector(wrapper)!;
+    classTest(menuWrapper, wrapperDark);
+  });
+  test('should render when set caretColor', () => {
+    const caretColor = 'red';
+    const { container } = render(<MenuTest caretColor={caretColor} />);
+    const expands = container.querySelectorAll(expand);
+    expands.forEach((expand) => {
+      styleTest(expand, `color: ${caretColor};`);
+    });
+  });
+  test('should render when set height', () => {
+    const height = 200;
+    const { container } = render(<MenuTest height={height} />);
+    const menuWrapper = container.querySelector(wrapper)!;
+    styleTest(menuWrapper, `height: ${height}px;`);
+  });
+  test('should render when set defaultOpenKeys', () => {
+    const defaultOpenKeys = ['1'];
+    const { container } = render(<MenuTest defaultOpenKeys={defaultOpenKeys} />);
+    const items = container.querySelectorAll(`.${root} > li`);
+    classTest(items[0], itemOpen);
+  });
+  test('should render when set looseChildren', () => {
+    const { container } = render(
+      <MenuTest
+        looseChildren
+        data={testDataWithoutChild.map((item) => ({ ...item, children: [] }))}
+      />,
+    );
+    const menuWrapper = container.querySelector(wrapper)!;
+    classTest(menuWrapper, wrapperHasExpand);
+    const items = container.querySelectorAll(`.${root} > li`);
+    fireEvent.click(items[0].querySelector(itemContent)!);
+    classTest(items[0], itemOpen);
+  });
+  test('should render when set openKeys and onOpenChange', () => {
+    const App = () => {
+      const [openKeys, setOpenKeys] = React.useState<string[]>([]);
+      return <MenuTest openKeys={openKeys} onOpenChange={(keys: any[]) => setOpenKeys(keys)} />;
+    };
+    const { container } = render(<App />);
+    const items = container.querySelectorAll(`.${root} > li`);
+    fireEvent.click(items[0].querySelector(itemContent)!);
+    classTest(items[0], itemOpen);
+    fireEvent.click(items[1].querySelector(itemContent)!);
+    classTest(items[0], itemOpen);
+    classTest(items[1], itemOpen);
+  });
+  test('should render when set openKeys and defaultOpenKeys at the same time', () => {
+    const openKeys = ['1'];
+    const defaultOpenKeys = ['2'];
+    const { container } = render(
+      <MenuTest defaultOpenKeys={defaultOpenKeys} openKeys={openKeys} />,
+    );
+    const items = container.querySelectorAll(`.${root} > li`);
+    classTest(items[0], itemOpen);
+    classTest(items[1], itemOpen, false);
+  });
+});
+describe('Menu[Mode]', () => {
+  beforeAll(() => {
+    jest.useFakeTimers();
+  });
+  afterAll(() => {
+    jest.runAllTimers();
+  });
+  test('should render when set mode is horizontal', async () => {
+    const { container } = render(<MenuTest mode='horizontal' />);
+    const menuWrapper = container.querySelector(wrapper)!;
+    classTest(menuWrapper, wrapperHorizontal);
+    const items = container.querySelectorAll(`.${root} > li`);
+    fireEvent.mouseEnter(items[0]);
+    classTest(items[0], itemOpen);
+    fireEvent.mouseLeave(items[0]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classTest(items[0], itemOpen, false);
+  });
+  test('should render when set mode is vertical', async () => {
+    const { container } = render(<MenuTest mode='vertical' />);
+    const menuWrapper = container.querySelector(wrapper)!;
+    classTest(menuWrapper, wrapperVertical);
+    const items = container.querySelectorAll(`.${root} > li`);
+    fireEvent.mouseEnter(items[0]);
+    classTest(items[0], itemOpen);
+    fireEvent.mouseLeave(items[0]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classTest(items[0], itemOpen, false);
+  });
+  test('should render when set mode is vertical-auto', () => {
+    const { container } = render(<MenuTest mode='vertical-auto' />);
+    const menuWrapper = container.querySelector(wrapper)!;
+    classTest(menuWrapper, wrapperVertical);
+    const items = container.querySelectorAll(`.${root} > li`);
+    fireEvent.mouseEnter(items[0]);
+    classTest(items[0], itemOpen);
+  });
+});
+describe('Menu[ScrollY]', () => {
+  const moreData = createMoreData(20);
+  beforeAll(() => {
+    Object.defineProperty(HTMLElement.prototype, 'scrollHeight', {
+      configurable: true,
+      value: 300,
+    });
+    Object.defineProperty(HTMLElement.prototype, 'clientHeight', {
+      configurable: true,
+      value: 200,
+    });
+  });
+  test('should render when mouserMove and mouseDown in y', async () => {
+    const clientY = 50;
+    const { container } = render(<MenuTest data={moreData} mode='vertical' />);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const scrollbarWrapper = container.querySelector(scrollbar)!;
+    const scrollbarHandlerWrapper = scrollbarWrapper.querySelector(scrolbarHandler)!;
+    classTest(scrollbarWrapper, scrollbarY);
+    styleContentTest(scrollbarHandlerWrapper, `top: ${0}px;`);
+    fireEvent.mouseDown(scrollbarHandlerWrapper);
+    fireEvent.mouseMove(document, { clientY });
+    fireEvent.mouseUp(document);
+    styleContentTest(scrollbarHandlerWrapper, `top: ${clientY}px;`);
+  });
+  test('should render when set wheel in x', async () => {
+    const { container } = render(<MenuTest data={moreData} mode='vertical' />);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const scrollbarWrapper = container.querySelector(scrollbar)!;
+    const scrollbarHandlerWrapper = scrollbarWrapper.querySelector(scrolbarHandler)!;
+    const scrollBoxWrapper = container.querySelector(scrollbox)!;
+    styleContentTest(scrollbarHandlerWrapper, `top: ${0}px;`);
+    fireEvent.wheel(scrollBoxWrapper, { deltaY: 20 });
+    styleContentTest(scrollbarHandlerWrapper, `top: ${6.666666666666666}px;`);
+  });
+  test('should render when click scrollbar', async () => {
+    const { container } = render(<MenuTest data={moreData} mode='vertical' />);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const scrollbarWrapper = container.querySelector(scrollbar)!;
+    fireEvent.click(scrollbarWrapper);
+  });
+});
+describe('Menu[ScrollX]', () => {
+  const moreData = createMoreData(20);
+  beforeAll(() => {
+    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 300 });
+    Object.defineProperty(HTMLElement.prototype, 'clientWidth', { configurable: true, value: 200 });
+  });
+  test('should render when mouserMove and mouseDown in x', async () => {
+    const clientX = 10;
+    const { container } = render(<MenuTest data={moreData} mode='horizontal' />);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const scrollbarWrapper = container.querySelector(scrollbar)!;
+    const scrollbarHandlerWrapper = scrollbarWrapper.querySelector(scrolbarHandler)!;
+    classTest(scrollbarWrapper, scrollbarX);
+    styleContentTest(scrollbarHandlerWrapper, `left: ${0}px;`);
+    fireEvent.mouseDown(scrollbarHandlerWrapper);
+    fireEvent.mouseMove(document, { clientX });
+    fireEvent.mouseUp(document);
+    styleContentTest(scrollbarHandlerWrapper, `left: ${clientX}px;`);
+  });
+  test('should render when set wheel in y', async () => {
+    const { container } = render(<MenuTest data={moreData} mode='horizontal' />);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    const scrollbarWrapper = container.querySelector(scrollbar)!;
+    const scrollbarHandlerWrapper = scrollbarWrapper.querySelector(scrolbarHandler)!;
+    const scrollBoxWrapper = container.querySelector(scrollbox)!;
+    styleContentTest(scrollbarHandlerWrapper, `left: ${0}px;`);
+    fireEvent.wheel(scrollBoxWrapper, { deltaX: 10 });
+    styleContentTest(scrollbarHandlerWrapper, `left: ${3.333333333333333}px;`);
+  });
 });
