@@ -1,5 +1,5 @@
 /**
- * cn - 进环形进度条
+ * cn - 环形进度条
  *    -- 设置 shape 为 'circle' 展示环形进度条
  * en - Circle
  *    -- set shape to 'circle' to show circle progress

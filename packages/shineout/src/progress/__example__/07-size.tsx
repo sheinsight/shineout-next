@@ -17,7 +17,13 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Radio.Group keygen data={sizeList} value={size} onChange={setSize} />
+      <Radio.Group
+        keygen
+        data={sizeList}
+        value={size}
+        onChange={setSize}
+        style={{ marginBottom: 24 }}
+      />
       {size === 'small' && (
         <>
           <Progress style={{ width: 400 }} strokeWidth={3} value={75}>
