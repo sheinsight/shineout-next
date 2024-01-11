@@ -10,6 +10,9 @@ import { BreadcrumbTokens } from './breadcrumb/type';
 import Button from './button';
 import { ButtonTokens } from './button/type';
 
+import Card from './card';
+import { CardTokens } from './card/type';
+
 import Carousel from './carousel';
 import { CarouselTokens } from './carousel/type';
 
@@ -22,10 +25,11 @@ import { CommonTokens } from './common/type';
 import DatePicker from './date-picker';
 import { DatePickerTokens } from './date-picker/type';
 
-import Divider from './divider';
-import { DividerTokens } from './divider/type';
 import Descriptions from './descriptions';
 import { DescriptionsTokens } from './descriptions/type';
+
+import Divider from './divider';
+import { DividerTokens } from './divider/type';
 
 import Dropdown from './dropdown';
 import { DropdownTokens } from './dropdown/type';
@@ -35,6 +39,9 @@ import { EditableAreaTokens } from './editable-area/type';
 
 import Empty from './empty';
 import { EmptyTokens } from './empty/type';
+
+import Form from './form';
+import { FormTokens } from './form/type';
 
 import Icon from './icon';
 import { IconTokens } from './icon/type';
@@ -81,11 +88,11 @@ import { SliderTokens } from './slider/type';
 import Spin from './spin';
 import { SpinTokens } from './spin/type';
 
-import Sticky from './sticky';
-import { StickyTokens } from './sticky/type';
-
 import Steps from './steps';
 import { StepsTokens } from './steps/type';
+
+import Sticky from './sticky';
+import { StickyTokens } from './sticky/type';
 
 import Switch from './switch';
 import { SwitchTokens } from './switch/type';
@@ -114,21 +121,20 @@ import { TreeTokens } from './tree/type';
 import Upload from './upload';
 import { UploadTokens } from './upload/type';
 
-import Form from './form';
-import { FormTokens } from './form/type';
-
 export type ThemeTokens = AlertTokens &
   BreadcrumbTokens &
   ButtonTokens &
+  CardTokens &
   CarouselTokens &
   CheckboxTokens &
   CommonTokens &
   DatePickerTokens &
-  DividerTokens &
   DescriptionsTokens &
+  DividerTokens &
   DropdownTokens &
   EditableAreaTokens &
   EmptyTokens &
+  FormTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
@@ -144,8 +150,8 @@ export type ThemeTokens = AlertTokens &
   SelectTokens &
   SliderTokens &
   SpinTokens &
-  StickyTokens &
   StepsTokens &
+  StickyTokens &
   SwitchTokens &
   TableTokens &
   TabsTokens &
@@ -154,22 +160,23 @@ export type ThemeTokens = AlertTokens &
   TooltipTokens &
   TransferTokens &
   TreeTokens &
-  FormTokens &
   UploadTokens;
 
 const Tokens: ThemeTokens = {
   ...Alert,
   ...Breadcrumb,
   ...Button,
+  ...Card,
   ...Carousel,
   ...Checkbox,
   ...Common,
   ...DatePicker,
-  ...Divider,
   ...Descriptions,
+  ...Divider,
   ...Dropdown,
   ...EditableArea,
   ...Empty,
+  ...Form,
   ...Icon,
   ...Image,
   ...Input,
@@ -185,8 +192,8 @@ const Tokens: ThemeTokens = {
   ...Select,
   ...Slider,
   ...Spin,
-  ...Sticky,
   ...Steps,
+  ...Sticky,
   ...Switch,
   ...Table,
   ...Tabs,
@@ -196,7 +203,6 @@ const Tokens: ThemeTokens = {
   ...Transfer,
   ...Tree,
   ...Upload,
-  ...Form,
 };
 
 export type { TokenType };
