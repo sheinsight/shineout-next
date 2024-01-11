@@ -93,7 +93,7 @@ const progressStyle: JsStyles<ProgressClassType> = {
       color: token.progressLineInnerFontColor,
     },
     '$lineInnerRight &&': {
-      marginLeft: token.progressLineInnerPaddingX,
+      // marginLeft: token.progressLineInnerPaddingX,
       position: 'absolute',
       left: '100%',
       color: token.progressLineInnerRightFontColor,

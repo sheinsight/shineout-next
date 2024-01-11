@@ -1,6 +1,6 @@
 ## When to use
 
-When you need an additional panel to supplement the content of the page; when you need to insert temporary operation tasks in the current task flow.
+When you need an additional panel to supplement the content of the page\nwhen you need to insert temporary operation tasks in the current task flow.
 
 ## Related to page layout
 

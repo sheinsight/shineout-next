@@ -11,10 +11,8 @@ const App: React.FC = () => {
   const msg = async () => {
     const close = await Message.success(
       <div>
-        I will always show until
-        <Button mode={'text'} onClick={() => close()}>
-          manually closed
-        </Button>
+        I will always show until &nbsp;
+        <a onClick={() => close()}>manually closed</a>
       </div>,
       0,
       {

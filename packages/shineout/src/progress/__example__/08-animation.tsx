@@ -1,5 +1,5 @@
 /**
- * cn - 动态示例
+ * cn - 动态进度条
  *    -- value 变更时动画效果演示
  * en - Animation
  *    -- The animation for changing value.
@@ -32,17 +32,18 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Progress style={{ width: 400 }} value={value}>
-        <div style={{ width: 50 }}>{value.toFixed(0)}</div>
-      </Progress>
+      <div>
+        <Progress style={{ width: 400 }} value={value}>
+          <div style={{ width: 50 }}>{`${value.toFixed(0)}%`}</div>
+        </Progress>
+      </div>
+      <div style={{ marginTop: 24 }}>
+        <Progress shape='circle' type='success' value={value}>
+          {`${value.toFixed(0)}%`}
+        </Progress>
+      </div>
 
-      <br />
-
-      <Progress shape='circle' type='success' value={value}>
-        {`${value.toFixed(0)}%`}
-      </Progress>
-
-      <Button style={{ marginInlineStart: 80 }} onClick={() => handleClick(0)}>
+      <Button onClick={() => handleClick(0)} style={{ marginTop: 24 }}>
         Start
       </Button>
     </div>

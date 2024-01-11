@@ -7,6 +7,7 @@
 import React from 'react';
 import { Button, Message } from 'shineout';
 
+const commonStyle = { marginInlineStart: '24px' };
 const App: React.FC = () => (
   <div>
     <Button
@@ -17,6 +18,7 @@ const App: React.FC = () => (
       Show
     </Button>
     <Button
+      style={commonStyle}
       onClick={() => {
         Message.info('This is a message of info.');
       }}
@@ -26,6 +28,7 @@ const App: React.FC = () => (
     </Button>
     <Button
       type='success'
+      style={commonStyle}
       onClick={() => {
         Message.success('This is a message of success.');
       }}
@@ -33,6 +36,7 @@ const App: React.FC = () => (
       Success
     </Button>
     <Button
+      style={commonStyle}
       type='warning'
       onClick={() => {
         Message.warn('This is a message of warning.');
@@ -42,6 +46,7 @@ const App: React.FC = () => (
     </Button>
     <Button
       type='danger'
+      style={commonStyle}
       onClick={() => {
         Message.error('This is a message of error.');
       }}
@@ -50,6 +55,7 @@ const App: React.FC = () => (
     </Button>
 
     <Button
+      style={commonStyle}
       onClick={() => {
         Message.close();
       }}

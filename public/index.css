@@ -8,6 +8,15 @@ html,
   overflow: hidden;
 }
 
+a {
+  color: #197afa;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #429aff;
+}
+
 body {
   font-family: var(
     --common-body-font-family,

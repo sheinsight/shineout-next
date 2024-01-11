@@ -14,6 +14,7 @@ export interface SwitchClasses {
   wrapperChecked: string;
   wrapperDisabled: string;
   loading: string;
+  textPadding: string;
 }
 
 export interface SwitchProps
