@@ -22,7 +22,6 @@ const App: React.FC = () => {
   return (
     <div>
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>
-        position:
         <Radio.Group
           keygen
           value={position}

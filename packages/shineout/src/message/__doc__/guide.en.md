@@ -1,6 +1,6 @@
 ## When to use
 
-When an operation command needs to be triggered by the user click to initiate corresponding business logic.
+Used to provide feedback information such as success, warning and error\nA lightweight prompt method that does not interrupt user operations
 
 ## Related to layout
 
