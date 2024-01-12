@@ -21,11 +21,15 @@ const useCollapse = (props: BaseCollapseProps) => {
   };
 
   const handleChange = (newActive: string, event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    let newCurrentActive = [...(getCurrentValue() || [])];
-    const key = getCurrentValue().indexOf(newActive);
-    if (key > -1) newCurrentActive.splice(key, 1);
-    else if (accordion) newCurrentActive = [newActive];
-    else newCurrentActive.push(newActive);
+    const currentActive = getCurrentValue() || [];
+    const isActive = currentActive.includes(newActive);
+
+    const newCurrentActive = isActive
+      ? currentActive.filter((item) => item !== newActive)
+      : accordion
+      ? [newActive]
+      : [...currentActive, newActive];
+
     if (active === undefined) setCurrentActive(newCurrentActive);
     if (isFunc(onChange)) onChange?.(newActive, newCurrentActive, event);
   };
