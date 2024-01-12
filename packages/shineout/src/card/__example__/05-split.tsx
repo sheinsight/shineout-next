@@ -1,8 +1,8 @@
 /**
- * cn - 基本用法
- *    -- Card 内部由 Header, Body, Footer 三个自组件组成，可以组合或单独使用
- * en - Base
- *    -- The card is composed of three components: Header, Body, and Footer. It can be combined or used separately.
+ * cn - 无分割线
+ *    -- 通过设置 `split` = false 属性，可以去掉卡片的分割线
+ * en - No split
+ *    -- Set `split` = false to remove the split line of the card.
  */
 import React from 'react';
 import { Card, TYPE, Button } from 'shineout';
@@ -26,7 +26,7 @@ const iconStyle = {
 
 const App: React.FC = () => (
   <div>
-    <Card style={cardStyle} split>
+    <Card style={cardStyle} split={false}>
       <Card.Header
         extra={
           <Button mode='text' type='primary'>

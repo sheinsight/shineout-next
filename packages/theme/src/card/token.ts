@@ -17,7 +17,33 @@ const cardTokenDescription = { card: 'xxx' };
  */
 const cardTokenValue = { font: { size: '14/regular' } };
 
-const cardTokenExtraValue = {};
+const cardTokenExtraValue = {
+  background: {
+    color: 'Neutral-fill-1',
+  },
+  shadow: 'Shadow-2',
+  border: {
+    color: 'Neutral-border-1',
+    radius: 'Radius-4',
+  },
+  font: {
+    color: 'Neutral-text-5',
+    size: '14/regular',
+  },
+  padding: { x: 'Padding-16', y: 'Padding-12' },
+  title: {
+    font: {
+      size: '16/medium',
+    },
+  },
+  header: {
+    gap: '12px',
+  },
+  indicator: {
+    size: 'Size-7',
+  },
+  body: {},
+};
 
 module.exports = {
   cardTokenValue,
