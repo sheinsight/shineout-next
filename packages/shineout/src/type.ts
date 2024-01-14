@@ -27,3 +27,4 @@ export * as Sticky from './sticky/interface';
 export * as Menu from './menu/interface';
 export * as Rule from './rule/interface';
 export * as Card from './card/interface';
+export * as CardGroup from './card-group/interface';

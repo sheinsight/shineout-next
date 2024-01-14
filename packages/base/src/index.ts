@@ -2,6 +2,7 @@ export * from './alert';
 export * from './breadcrumb';
 export * from './button';
 export * from './card';
+export * from './card-group';
 export * from './carousel';
 export * from './checkbox';
 export * from './config';

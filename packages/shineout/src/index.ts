@@ -2,6 +2,7 @@ export { default as Alert } from './alert';
 export { default as Breadcrumb } from './breadcrumb';
 export { default as Button } from './button';
 export { default as Card } from './card';
+export { default as CardGroup } from './card-group';
 export { default as Carousel } from './carousel';
 export { default as Checkbox } from './checkbox';
 export { default as DatePicker } from './date-picker';
