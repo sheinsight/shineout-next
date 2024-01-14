@@ -1,8 +1,7 @@
 import React from 'react';
-import { Modal, ModalMethods, ModalSubmit } from '@sheinx/base';
+import { Modal, ModalMethods } from '@sheinx/base';
 import { useModalStyle, useButtonStyle, useAlertStyle } from '@sheinx/shineout-style';
 import { ModalProps } from './modal.type';
-import { ButtonProps } from '../button/button.type';
 
 const jssStyle = {
   modal: useModalStyle,
@@ -18,10 +17,6 @@ export const methods = {
   confirm: ModalMethods.type('confirm', jssStyle),
   show: ModalMethods.type('show', jssStyle),
   closeAll: ModalMethods.closeAll,
-};
-
-export const Submit = (props: ButtonProps) => {
-  return <ModalSubmit jssStyle={jssStyle} {...props} />;
 };
 
 export default (props: ModalProps) => {

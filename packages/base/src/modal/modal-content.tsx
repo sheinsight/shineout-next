@@ -2,10 +2,8 @@ import classNames from 'classnames';
 import React, { useRef, useEffect, useState } from 'react';
 import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
-import { usePersistFn } from '@sheinx/hooks';
-import { ModalFormProvider } from './modal-context';
-import { useModalMove } from './use-modal-move';
-import { useModalResize } from './use-modal-resize';
+import { useDragMove, useDragResize, usePersistFn } from '@sheinx/hooks';
+import { FormFooterProvider } from '../form/form-footer-context';
 
 import type { ModalContentProps } from './modal-content.type';
 
@@ -33,13 +31,10 @@ const Modal = (props: ModalContentProps) => {
   const isPositionY = ['top', 'bottom'].includes(props.position || '');
 
   const defaultWidth = isPositionX ? 'auto' : 500;
-  const {
-    events = {},
-    width = defaultWidth,
-    maskCloseAble = true,
-    esc = true,
-    top = '10vh',
-  } = props;
+  const { events = {}, maskCloseAble = true, esc = true, top = '10vh', style = {} } = props;
+
+  const width = style.width || props.width || defaultWidth;
+  const height = style.height || props.height;
   const [origin, setOrigin] = useState('');
   const { current: context } = useRef({
     renderEd: false,
@@ -51,10 +46,11 @@ const Modal = (props: ModalContentProps) => {
   const [animation, setAnimation] = useState(props.visible || props.autoShow);
   const [visible, setVisible] = useState(props.visible || props.autoShow);
 
-  const moveInfo = useModalMove();
-  const resizeInfo = useModalResize({
+  const moveInfo = useDragMove();
+
+  const resizeInfo = useDragResize({
     defaultWidth: width,
-    defaultHeight: props.height,
+    defaultHeight: height,
     panelRef,
   });
 
@@ -70,6 +66,7 @@ const Modal = (props: ModalContentProps) => {
   handleMaskVisible();
 
   const updateOrigin = () => {
+    // 更新transform-origin
     if (props.position || props.moveable || !props.zoom) return;
     if (!props.visible) return;
     if (!panelRef.current) return;
@@ -239,13 +236,17 @@ const Modal = (props: ModalContentProps) => {
 
   context.renderEd = true;
 
-  const panelStyle = {
-    width: props.fullScreen ? undefined : resizeInfo.width,
-    height: resizeInfo.height,
+  const panelStyle: React.CSSProperties = {
     transformOrigin: origin,
     top: props.fullScreen ? undefined : top,
     ...props.style,
+    width,
+    height,
   };
+  if (props.resizable) {
+    panelStyle.width = resizeInfo.width;
+    panelStyle.height = resizeInfo.height;
+  }
 
   if (isPositionX) {
     panelStyle.top = undefined;
@@ -260,7 +261,7 @@ const Modal = (props: ModalContentProps) => {
   }
 
   return (
-    <ModalFormProvider>
+    <FormFooterProvider>
       <div
         className={classNames(
           props.rootClassName,
@@ -301,7 +302,7 @@ const Modal = (props: ModalContentProps) => {
           </div>
         </div>
       </div>
-    </ModalFormProvider>
+    </FormFooterProvider>
   );
 };
 
