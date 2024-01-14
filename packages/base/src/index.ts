@@ -14,6 +14,7 @@ export * from './editable-area';
 export * from './empty';
 export * from './form';
 export * from './gap';
+export * from './grid';
 export * from './icon';
 export * from './image';
 export * from './input';

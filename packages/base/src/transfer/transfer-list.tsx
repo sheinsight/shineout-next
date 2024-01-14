@@ -109,11 +109,9 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         <Input
           clearable
           jssStyle={jssStyle}
-          delay={400}
           value={filterText}
           onChange={handleFilter}
           placeholder={searchPlaceholder || getLocale(locale, 'search')}
-          // suffix={Icons.Search}
         ></Input>
       </div>
     );

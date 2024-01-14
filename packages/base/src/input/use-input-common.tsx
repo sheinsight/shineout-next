@@ -7,6 +7,7 @@ import classNames from 'classnames';
 
 import { InputCommonProps } from './input.type';
 import useWithFormConfig from '../common/use-with-form-config';
+import { useConfig } from '../config';
 
 const defaultInfo = (num: number, msg: any) => {
   if (!msg || msg.length === 0) return null;
@@ -16,6 +17,7 @@ const defaultInfo = (num: number, msg: any) => {
 };
 
 const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Props) => {
+  const config = useConfig();
   const {
     forwardRef,
     htmlName,
@@ -32,15 +34,19 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     innerTitle,
     placeTitle,
     width,
-    delay,
+    delay: delayProps,
     onBlur,
     tip,
     error,
     popover,
     popoverProps,
     status,
+    trim: trimProps,
     ...rest
   } = props;
+
+  const trim = trimProps ?? config.trim ?? false;
+  const delay = delayProps ?? config.delay ?? 0;
 
   const inputStyle = props.jssStyle?.input?.();
 
@@ -142,6 +148,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     size,
     rootRef,
     inputRef: forwardRef,
+    trim,
     renderInput: renderInput,
     getStatus: onStatusChange,
   };

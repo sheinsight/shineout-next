@@ -102,6 +102,7 @@ export interface InputCommonProps<V> extends BaseTipProps {
   delay?: number;
   onBlur?: React.FocusEventHandler;
   status?: CommonType['status'];
+  trim?: boolean;
 }
 
 export type GetCommonProps<Props, V> = Omit<

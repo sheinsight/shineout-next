@@ -14,6 +14,7 @@ export { default as EditableArea } from './editable-area';
 export { default as Empty } from './empty';
 export { default as Form } from './form';
 export { default as Gap } from './gap';
+export { default as Grid } from './grid';
 export { default as Icon } from './icon';
 export { default as Image } from './image';
 export { default as Input } from './input';

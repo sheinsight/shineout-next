@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { SpinClasses, SpinProps } from './spin.type';
 import Spins from './spins';
+import { useConfig } from '../config';
 
 const Spin = (props: SpinProps = {}) => {
   const {
@@ -8,11 +9,15 @@ const Spin = (props: SpinProps = {}) => {
     className,
     children,
     loading = true,
-    name = 'default',
+    name: nameProps,
     tip,
     color,
     mode = 'vertical',
   } = props;
+
+  const config = useConfig();
+
+  const name = nameProps ?? config.spin ?? 'default';
 
   const spinStyle = jssStyle?.spin?.() || ({} as SpinClasses);
 
