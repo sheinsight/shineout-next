@@ -1,4 +1,5 @@
 import { JsStyles } from '../jss-style';
+import Token from '@sheinx/theme';
 
 export type CollapseItemClass =
   | 'wrapper'
@@ -10,22 +11,29 @@ export type CollapseItemClass =
   | 'extra'
   | 'content'
   | 'contentMain'
-  | 'rightIcon'
   | 'disabled'
   | 'activeTransform'
   | 'activeTransformRight'
   | 'expanded'
+  | 'borderLess'
   | 'region';
 
 const collapseItemStyle: JsStyles<CollapseItemClass> = {
   wrapper: {
     boxSizing: 'border-box',
-    borderBottom: '1px solid rgb(229,230,235)',
+    borderBottom: `${Token.collapseWrapperBorderSize} solid ${Token.collapseWrapperBorderColor}`,
     '&:last-child': {
       borderBottom: 0,
     },
+
+    gap: Token.collapseWrapperGap,
+    backgroundColor: Token.collapseWrapperBackgroundColor,
+    color: Token.collapseWrapperColor,
     height: 'auto',
     width: 'auto',
+  },
+  borderLess: {
+    borderBottom: 'none',
   },
   header: {
     display: 'flex',
@@ -33,19 +41,14 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     justifyContent: 'space-between',
     boxSizing: 'border-box',
     overflow: 'hidden',
-    paddingTop: '8px',
-    paddingBottom: '8px',
-    backgroundColor: '#fff',
-    color: 'black',
-    fontSize: '14px',
-    lineHeight: '24px',
-    transition: 'border-color 0s ease 0s',
-    borderBottom: '1px solid transparent',
+    gap: Token.collapseHeaderGap,
+    fontSize: Token.collapseHeaderFontSize,
+    fontWeight: Token.collapseHeaderWeight,
+    color: Token.collapseHeaderColor,
+    lineHeight: Token.collapseHeaderLineHeight,
+    padding: `${Token.collapseWrapperPaddingY} ${Token.collapseWrapperPaddingX}`,
   },
   active: {
-    '& > $header': {
-      borderColor: 'rgb(201,205,212)',
-    },
     '& > header > $title': {
       fontWeight: 500,
     },
@@ -70,51 +73,34 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
   icon: {
     display: 'flex',
     alignItems: 'center',
-    marginLeft: 8,
     cursor: 'pointer',
     '& svg': {
-      width: 14,
+      width: Token.collapseHeaderIconWidth,
     },
   },
   title: {
-    display: 'inline',
-    marginLeft: 8,
-    marginRight: 8,
     flex: 1,
   },
   extra: {
-    marginRight: '8px',
     cursor: 'pointer',
+    gap: Token.collapseHeaderExtraGap,
   },
   content: {
-    width: 'auto',
-    height: 'auto',
     overflow: 'hidden',
-    position: 'relative',
-    transition: 'height 0.2s cubic-bezier(0.34, 0.69, 0.1, 1)',
-    color: 'rgb(29,33,41)',
-    // display: 'none',
   },
   contentMain: {
-    padding: '8px 13px 8px 34px',
-    backgroundColor: 'rgb(247,248,250)',
-    fontSize: '14px',
-  },
-  rightIcon: {
-    flexDirection: 'row-reverse',
-    '& > $icon': {
-      marginRight: '8px',
-      marginLeft: 0,
-    },
-    '& > $extra': {
-      marginRight: 0,
-      marginLeft: '8px',
-    },
+    fontSize: Token.collapseContentFontSize,
+    color: Token.collapseContentColor,
+    fontWeight: Token.collapseContentWeight,
+    lineHeight: Token.collapseContentLineHeight,
+    padding: `${Token.collapseContentPaddingY} ${Token.collapseContentPaddingRight} ${Token.collapseContentPaddingY} ${Token.collapseContentPaddingLeft}`,
+    backgroundColor: Token.collapseContentBackgroundColor,
+    gap: Token.collapseContentGap,
   },
   disabled: {
-    '& $header, $content': {
+    '& $header, $content, $extra, $icon': {
       cursor: 'not-allowed',
-      color: 'rgb(201,205,212)',
+      color: Token.collapseDisabledColor,
     },
   },
   expanded: {},

@@ -15,9 +15,10 @@ const Collapse = (props: CollapseProps) => {
     active: activeProps,
     accordion = false,
     onChange: onChangeProps,
-    triggerRegion,
-    expandContentPosition = 'left',
-    expandContent,
+    triggerRegion = 'header',
+    expandIconPosition = 'left',
+    extraPosition = 'right',
+    expandIcon,
     border = true,
   } = props;
 
@@ -37,11 +38,13 @@ const Collapse = (props: CollapseProps) => {
   const providerValue = {
     active,
     triggerRegion,
-    expandContentPosition,
+    expandIconPosition,
+    extraPosition,
+    border,
     expandIcon:
-      expandContent !== undefined
-        ? expandContent
-        : expandContentPosition === 'right'
+      expandIcon !== undefined
+        ? expandIcon
+        : expandIconPosition === 'right'
         ? Icons.AngleLeft
         : Icons.AngleRight,
     onChange,

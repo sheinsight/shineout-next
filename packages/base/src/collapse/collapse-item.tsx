@@ -6,17 +6,24 @@ import { useCollapseItem } from '@sheinx/hooks';
 import AnimationList from '..//animation-list';
 
 const CollapseItem = (props: CollapseItemProps) => {
-  const { active, triggerRegion, expandIcon, onChange, expandContentPosition } =
-    useContext(groupContext);
+  const {
+    active,
+    triggerRegion,
+    expandIcon: parentExpandIcon,
+    onChange,
+    expandIconPosition,
+    extraPosition,
+    border,
+  } = useContext(groupContext);
   const {
     children,
-    name,
+    keygen,
     className,
     jssStyle,
     style,
     disabled,
     showExpandIcon = true,
-    expandContent,
+    expandIcon,
     title,
     extra,
     contentStyle,
@@ -25,7 +32,7 @@ const CollapseItem = (props: CollapseItemProps) => {
   const { judgeExpanded, getItemContentProps, getHeaderIconProps, getTitleProps, getExtraProps } =
     useCollapseItem({
       active,
-      name,
+      keygen,
       triggerRegion,
       disabled,
       onChange,
@@ -33,14 +40,14 @@ const CollapseItem = (props: CollapseItemProps) => {
   const headerIconItem = () => {
     const collapseItemIconClassName = classNames(
       jssStyle?.collapseItem.icon,
-      expandContentPosition === 'right'
+      expandIconPosition === 'right'
         ? jssStyle?.collapseItem.activeTransformRight
         : jssStyle?.collapseItem.activeTransform,
     );
     const headerIcon = showExpandIcon
-      ? expandContent !== undefined
-        ? expandContent
-        : expandIcon
+      ? expandIcon !== undefined
+        ? expandIcon
+        : parentExpandIcon
       : null;
     return (
       headerIcon && (
@@ -59,12 +66,12 @@ const CollapseItem = (props: CollapseItemProps) => {
     className,
     jssStyle?.collapseItem.wrapper,
     judgeExpanded && jssStyle?.collapseItem.active,
-    disabled && jssStyle?.collapseItem.disabled,
+    (disabled || triggerRegion === 'disabled') && jssStyle?.collapseItem.disabled,
+    !border && jssStyle?.collapseItem.borderLess,
   );
   const collapseItemHeaderClassName = classNames(
     jssStyle?.collapseItem.header,
     !showExpandIcon && jssStyle?.collapseItem.noIcon,
-    expandContentPosition === 'right' && jssStyle?.collapseItem.rightIcon,
     triggerRegion === 'header' && jssStyle?.collapseItem.region,
   );
 
@@ -91,9 +98,11 @@ const CollapseItem = (props: CollapseItemProps) => {
   return (
     <div className={collapseItemClassName} style={style}>
       <div {...getItemContentProps({ className: collapseItemHeaderClassName })}>
-        {headerIconItem()}
+        {expandIconPosition === 'left' && headerIconItem()}
+        {extraPosition === 'left' && extraItem()}
         <div {...getTitleProps({ className: jssStyle?.collapseItem.title })}>{title}</div>
-        {extraItem()}
+        {extraPosition === 'right' && extraItem()}
+        {expandIconPosition === 'right' && headerIconItem()}
       </div>
       {renderContent()}
     </div>

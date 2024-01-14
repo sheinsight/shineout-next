@@ -5,7 +5,7 @@ export interface BaseCollapseItemContext {
 }
 
 export interface BaseCollapseItemProps {
-  name: string;
+  keygen: string;
   disabled?: boolean;
 }
 

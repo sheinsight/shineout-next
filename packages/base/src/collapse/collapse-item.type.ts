@@ -16,11 +16,11 @@ export interface CollapseItemClasses {
   expanded: string;
   contentMain: string;
   noIcon: string;
-  rightIcon: string;
   disabled: string;
   activeTransform: string;
   activeTransformRight: string;
   region: string;
+  borderLess: string;
 }
 
 export interface CollapseItemProps
@@ -30,7 +30,7 @@ export interface CollapseItemProps
     collapseItem: CollapseItemClasses;
   };
   showExpandIcon?: boolean;
-  expandContent?: ReactNode;
+  expandIcon?: ReactNode;
   extra?: ReactNode;
   title?: ReactNode;
   contentStyle?: CSSProperties;

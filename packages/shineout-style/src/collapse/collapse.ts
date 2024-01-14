@@ -1,4 +1,4 @@
-// import token from '@sheinx/theme';
+import Token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 
 export type CollapseClass = 'wrapper' | 'borderLess';
@@ -6,9 +6,9 @@ export type CollapseClass = 'wrapper' | 'borderLess';
 const collapseStyle: JsStyles<CollapseClass> = {
   wrapper: {
     overflow: 'hidden',
-    borderRadius: '4px',
-    border: '1px solid rgb(229,230,235)',
-    lineHeight: '1.5715',
+    borderRadius: Token.collapseWrapperBorderRadius,
+    border: `${Token.collapseWrapperBorderSize} solid ${Token.collapseWrapperBorderColor}`,
+    color: Token.collapseWrapperColor,
   },
   borderLess: {
     border: 'none',

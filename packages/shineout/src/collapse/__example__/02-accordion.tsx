@@ -1,7 +1,7 @@
 /**
- * cn - 基本用法
+ * cn - 手风琴模式
  *    --
- * en - Basic
+ * en - accordion
  *    --
  */
 import React from 'react';
@@ -10,7 +10,7 @@ import { Collapse } from 'shineout';
 export default () => {
   return (
     <div>
-      <Collapse defaultActive={['1', '3']} style={{ maxWidth: 1180 }}>
+      <Collapse accordion style={{ maxWidth: 1180 }}>
         <Collapse.Item title='This is panel header 1' keygen='0'>
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a
           bird in the open. Joy in living can never be assumed as a pose, or put on from the outside
@@ -26,7 +26,7 @@ export default () => {
           naturally as bird sings.
         </Collapse.Item>
 
-        <Collapse.Item title='This is panel header 3' keygen='2' disabled>
+        <Collapse.Item title='This is panel header 3' keygen='2'>
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a
           bird in the open. Joy in living can never be assumed as a pose, or put on from the outside
           as a mask. People who have this joy do not need to talk about it; they radiate it. They
@@ -34,7 +34,7 @@ export default () => {
           naturally as bird sings.
         </Collapse.Item>
 
-        <Collapse.Item title='This is panel header 4' keygen='3' disabled>
+        <Collapse.Item title='This is panel header 4' keygen='3'>
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a
           bird in the open. Joy in living can never be assumed as a pose, or put on from the outside
           as a mask. People who have this joy do not need to talk about it; they radiate it. They

@@ -3,8 +3,8 @@ import type { ObjectType } from '../../common/type';
 import type { BaseCollapseType } from './use-collapse-item.type';
 
 const useCollapseItem = (props: BaseCollapseType) => {
-  const { active, name, triggerRegion, disabled, onChange } = props;
-  const judgeExpanded = active.indexOf(name) > -1;
+  const { active, keygen, triggerRegion, disabled, onChange } = props;
+  const judgeExpanded = active.indexOf(keygen) > -1;
   const currentDisabled = triggerRegion === 'disabled' || disabled;
 
   type clickByReginType = React.MouseEvent<HTMLDivElement, MouseEvent>;
@@ -12,7 +12,7 @@ const useCollapseItem = (props: BaseCollapseType) => {
     if (currentDisabled) return;
     const triggerKey = triggerRegion === 'icon' ? 0 : triggerRegion === 'header' ? 1 : 2;
     if (regionKey === triggerKey || (triggerRegion === 'header' && [0, 1].includes(regionKey)))
-      onChange(name, e);
+      onChange(keygen, e);
   });
 
   const getItemContentProps = <TOther extends ObjectType>(

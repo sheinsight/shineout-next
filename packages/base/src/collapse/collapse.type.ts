@@ -13,13 +13,14 @@ export interface CollapseClasses {
 
 export interface CollapseProps
   extends Pick<CommonType, 'className' | 'style'>,
-    Pick<CollapseItemProps, 'expandContent'>,
+    Pick<CollapseItemProps, 'expandIcon'>,
     Pick<BaseCollapseItemContext, 'triggerRegion'>,
     BaseCollapseProps {
   jssStyle?: {
     collapse: CollapseClasses;
   };
   border?: boolean;
-  expandContentPosition?: 'left' | 'right';
+  expandIconPosition?: 'left' | 'right';
+  extraPosition?: 'left' | 'right';
   children?: ReactNode;
 }
