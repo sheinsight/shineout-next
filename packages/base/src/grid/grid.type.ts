@@ -1,15 +1,47 @@
-// import React from 'react';
-// import { BaseGridProps } from '@sheinx/hooks';
+import { ReactNode } from 'react';
 import { CommonType } from '../common/type';
 
-export interface GridClasses {
-  wrapper: string;
-}
+export type ResponsiveType = 'sm' | 'md' | 'lg' | 'xl';
 
 export interface GridProps extends Pick<CommonType, 'className' | 'style'> {
-  jssStyle?: {
-    grid: () => GridClasses;
-  };
+  /**
+   * @en Spacing between grids
+   * @cn 栅格之间间距
+   */
+  gutter?: number;
 
-  //...
+  /**
+   * @en Left offset percentage, 0 <= offset < 1
+   * @cn 左偏移百分比，0 <= offset < 1
+   * @default 0
+   */
+  offset?: number;
+
+  /**
+   * @en Percentage of width, 0 < number <= 1
+   * @cn 宽度百分比，0 < number <= 1
+   * @default 1
+   */
+  width?: number;
+
+  /**
+   * @en The min size of responsive: sm: 568px; md: 768px; lg: 992px; xl: 1200px
+   * @cn 激活响应式的最小尺寸。sm: 568px; md: 768px; lg: 992px; xl: 1200px;
+   * 例如：设置为 sm 时，屏幕尺寸若低于568px，栅格系统的响应性将不会生效。
+   *
+   * @default 'md'
+   */
+  responsive?: ResponsiveType;
+
+  /**
+   * @en Stretch full height of content
+   * @cn 是否撑满容器高度
+   */
+  stretch?: boolean;
+
+  /**
+   * @en children
+   * @cn 子元素
+   */
+  children?: ReactNode;
 }

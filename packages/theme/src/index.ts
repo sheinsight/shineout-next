@@ -46,9 +46,6 @@ import { EmptyTokens } from './empty/type';
 import Form from './form';
 import { FormTokens } from './form/type';
 
-import Grid from './grid';
-import { GridTokens } from './grid/type';
-
 import Icon from './icon';
 import { IconTokens } from './icon/type';
 
@@ -142,7 +139,6 @@ export type ThemeTokens = AlertTokens &
   EditableAreaTokens &
   EmptyTokens &
   FormTokens &
-  GridTokens &
   IconTokens &
   ImageTokens &
   InputTokens &
@@ -186,7 +182,6 @@ const Tokens: ThemeTokens = {
   ...EditableArea,
   ...Empty,
   ...Form,
-  ...Grid,
   ...Icon,
   ...Image,
   ...Input,
