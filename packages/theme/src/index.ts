@@ -13,6 +13,9 @@ import { ButtonTokens } from './button/type';
 import Card from './card';
 import { CardTokens } from './card/type';
 
+import CardGroup from './card-group';
+import { CardGroupTokens } from './card-group/type';
+
 import Carousel from './carousel';
 import { CarouselTokens } from './carousel/type';
 
@@ -125,6 +128,7 @@ export type ThemeTokens = AlertTokens &
   BreadcrumbTokens &
   ButtonTokens &
   CardTokens &
+  CardGroupTokens &
   CarouselTokens &
   CheckboxTokens &
   CommonTokens &
@@ -167,6 +171,7 @@ const Tokens: ThemeTokens = {
   ...Breadcrumb,
   ...Button,
   ...Card,
+  ...CardGroup,
   ...Carousel,
   ...Checkbox,
   ...Common,
