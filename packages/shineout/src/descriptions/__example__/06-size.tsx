@@ -1,8 +1,8 @@
 /**
  * cn - 不同尺寸
- *    --
+ *    -- 展示不同尺寸下的描述列表
  * en - Different Size
- *    --
+ *    -- Show Descriptions of different sizes
  */
 import React from 'react';
 import { Descriptions, Radio } from 'shineout';
@@ -38,7 +38,6 @@ export default () => {
   return (
     <div>
       <Radio.Group
-        button={'outline'}
         data={Size}
         value={size}
         onChange={setSize}

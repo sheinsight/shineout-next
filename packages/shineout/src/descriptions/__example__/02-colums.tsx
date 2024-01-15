@@ -1,8 +1,8 @@
 /**
  * cn - 单列样式
- *    --
+ *    -- 单列的描述列表样式
  * en - One Colums
- *    --
+ *    -- One colums style of Descriptions
  */
 import React from 'react';
 import { Descriptions } from 'shineout';
