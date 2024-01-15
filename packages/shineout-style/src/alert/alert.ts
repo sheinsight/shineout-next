@@ -80,11 +80,14 @@ const alertStyle: JsStyles<AlertClass> = {
   text: {
     overflowWrap: 'anywhere',
     fontSize: Token.alertFontSize,
+    lineHeight: Token.lineHeightDynamic,
   },
   close: {
     cursor: 'pointer',
     width: Token.alertFontSize,
     color: Token.alertCloseFontColor,
+    fontSize: Token.alertFontSize,
+    height: Token.lineHeightDynamic,
     flex: '0 0 auto',
     display: 'flex',
     alignItems: 'center',
@@ -131,7 +134,9 @@ const alertStyle: JsStyles<AlertClass> = {
   },
   icon: {
     width: 16,
-    display: 'flex',
+    display: 'inline-flex',
+    fontSize: Token.alertFontSize,
+    height: Token.lineHeightDynamic,
     flex: '0 0 auto',
     alignItems: 'center',
     marginRight: Token.alertNearlyMargin,
