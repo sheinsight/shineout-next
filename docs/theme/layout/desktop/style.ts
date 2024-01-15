@@ -83,15 +83,23 @@ export default createUseStyles(
       boxSizing: 'border-box',
       '& .group': {
         height: 40,
-        padding: '0 20px',
+        padding: '0 16px',
+        fontSize: 12,
         lineHeight: '40px',
+        marginTop: 24,
+        '&.first': {
+          marginTop: 16,
+        },
       },
       '& .doc': {
         height: 40,
-        padding: '0 20px',
+        padding: '0 16px',
         lineHeight: '40px',
         display: 'flex',
         alignItems: 'center',
+        fontSize: 12,
+        color: '#666C7C',
+        marginTop: 12,
         justifyContent: 'space-between',
         '& span': {
           display: 'inline-block',
@@ -118,13 +126,15 @@ export default createUseStyles(
           padding: '0 16px',
           cursor: 'pointer',
           borderRadius: 4,
+          marginTop: 4,
+          marginBottom: 4,
           '&.active': {
             color: '#197AFA',
             fontWeight: 500,
             backgroundColor: '#E9F5FE',
           },
           '&:hover': {
-            backgroundColor: '#E9F5FE',
+            backgroundColor: '#F4F5F8',
           },
         },
       },

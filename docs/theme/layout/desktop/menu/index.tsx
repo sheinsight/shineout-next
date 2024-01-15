@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react';
+import classnames from 'classnames';
 import { useSnapshot } from 'valtio';
-import store, { Menu, Doc, dispatch } from '../../../store';
+import store, { Menu, dispatch } from '../../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import useStyles from '../style';
@@ -19,13 +20,13 @@ const MenuComponent = () => {
     });
   };
 
-  const handleChangeDoc = (doc: Doc) => {
-    const currentDoc: Doc = doc === 'shineout' ? 'base' : 'shineout';
-    const nextPath = location.pathname.replace(`/${currentDoc}`, `/${doc}`);
-    dispatch.setDoc(doc);
-    dispatch.setMenu();
-    navigate(nextPath);
-  };
+  // const handleChangeDoc = (doc: Doc) => {
+  //   const currentDoc: Doc = doc === 'shineout' ? 'base' : 'shineout';
+  //   const nextPath = location.pathname.replace(`/${currentDoc}`, `/${doc}`);
+  //   dispatch.setDoc(doc);
+  //   dispatch.setMenu();
+  //   navigate(nextPath);
+  // };
 
   useEffect(() => {
     dispatch.setMenu();
@@ -39,24 +40,11 @@ const MenuComponent = () => {
 
   return (
     <ul className={classes.menu}>
-      <li className='doc'>
-        <span
-          className={state.doc === 'shineout' ? 'active' : ''}
-          onClick={() => handleChangeDoc('shineout')}
-        >
-          SHINEOUT
-        </span>
-        <span
-          className={state.doc === 'base' ? 'active' : ''}
-          onClick={() => handleChangeDoc('base')}
-        >
-          BASE
-        </span>
-      </li>
+      <li className='doc'>使用指南</li>
       {state.menu.map((item, index) => {
         return (
           <li key={index}>
-            <div className='group'>{item.group}</div>
+            <div className={classnames('group', index === 0 ? 'first' : '')}>{item.group}</div>
             <ul>
               {item.components.map((component, index) => {
                 return (

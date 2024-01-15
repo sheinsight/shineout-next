@@ -74,9 +74,9 @@ const Example = (props: ExampleProps) => {
         <div>
           {describe.map((item, index) => {
             return (
-              <p className='describe' key={index}>
+              <div className='describe' key={index}>
                 {renderDescribe(item)}
-              </p>
+              </div>
             );
           })}
         </div>

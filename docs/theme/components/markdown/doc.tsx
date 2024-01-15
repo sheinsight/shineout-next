@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import classnames from 'classnames';
 import Example from '../example';
 import store, { dispatch } from '../../store';
 import { useLocation } from 'react-router-dom';
@@ -49,7 +50,10 @@ const Doc = (props: DocProps) => {
         {examples.map((example, index) => {
           return (
             <Example
-              className={examples[index + 1]?.propName[state.locales] ? '' : 'nearly'}
+              className={classnames(
+                examples[index + 1]?.propName[state.locales] ? '' : 'nearly',
+                index === 0 ? 'first' : '',
+              )}
               key={index}
               {...example}
               index={index}

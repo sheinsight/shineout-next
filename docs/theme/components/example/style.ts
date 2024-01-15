@@ -18,6 +18,11 @@ export default createUseStyles(
           textDecoration: 'none',
         },
       },
+      '&.first': {
+        '& .title': {
+          marginTop: 40,
+        },
+      },
       '& .subtitle': {
         fontSize: 14,
         color: 'rgb(78,89,105)',
