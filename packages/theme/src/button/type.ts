@@ -4,6 +4,18 @@
 export interface ButtonTokens {
   /**
    * @type {string}
+   * @token #ffffff
+   * @description 按钮按钮组分割线填充模式背景颜色
+   */
+  buttonSplitlineFullBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-2
+   * @description 按钮按钮组分割线线框模式背景颜色
+   */
+  buttonSplitlineOutlineBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-1
    * @description 按钮主要色字体颜色
    */
@@ -274,7 +286,7 @@ export interface ButtonTokens {
   buttonPrimaryTextFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 按钮次要色字体颜色
    */
   buttonSecondaryFontColor: string;
@@ -310,7 +322,7 @@ export interface ButtonTokens {
   buttonSecondaryDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 按钮次要色鼠标移入时的字体颜色
    */
   buttonSecondaryHoverFontColor: string;
@@ -328,7 +340,7 @@ export interface ButtonTokens {
   buttonSecondaryHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 按钮次要色鼠标点击时的字体颜色
    */
   buttonSecondaryActiveFontColor: string;
@@ -346,7 +358,7 @@ export interface ButtonTokens {
   buttonSecondaryActiveBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 按钮次要色鼠标聚焦时的字体颜色
    */
   buttonSecondaryFocusFontColor: string;
@@ -364,7 +376,7 @@ export interface ButtonTokens {
   buttonSecondaryFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 按钮次要色线框模式字体颜色
    */
   buttonSecondaryOutlineFontColor: string;
@@ -454,7 +466,7 @@ export interface ButtonTokens {
   buttonSecondaryOutlineFocusBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 按钮次要色文本模式字体颜色
    */
   buttonSecondaryTextFontColor: string;
@@ -490,7 +502,7 @@ export interface ButtonTokens {
   buttonSecondaryTextDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 按钮次要色文本模式鼠标移入时的字体颜色
    */
   buttonSecondaryTextHoverFontColor: string;
@@ -508,7 +520,7 @@ export interface ButtonTokens {
   buttonSecondaryTextHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 按钮次要色文本模式鼠标点击时的字体颜色
    */
   buttonSecondaryTextActiveFontColor: string;
@@ -526,7 +538,7 @@ export interface ButtonTokens {
   buttonSecondaryTextActiveBorderColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-5
    * @description 按钮次要色文本模式鼠标聚焦时的字体颜色
    */
   buttonSecondaryTextFocusFontColor: string;
@@ -1564,7 +1576,7 @@ export interface ButtonTokens {
   buttonSecondarySplitFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-1
+   * @token Neutral-border-2
    * @description 按钮次要色线框模式分割线背景颜色
    */
   buttonSecondaryOutlineSplitBackgroundColor: string;
