@@ -13,6 +13,8 @@ const buttonTokenDescription = {
   text: '文本模式',
   nearly: '相邻之间的',
   split: '分割线',
+  full: '填充模式',
+  splitline: '按钮组分割线',
 };
 
 /**
@@ -209,17 +211,17 @@ const buttonTokenValue = {
       border: { color: 'Neutral-fill-2' },
     },
     hover: {
-      font: { color: 'Neutral-text-4' },
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-4' },
       border: { color: 'Neutral-fill-4' },
     },
     active: {
-      font: { color: 'Neutral-text-4' },
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-5' },
       border: { color: 'Neutral-fill-5' },
     },
     focus: {
-      font: { color: 'Neutral-text-4' },
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-4' },
       border: { color: 'Neutral-fill-4' },
     },
@@ -265,17 +267,17 @@ const buttonTokenValue = {
         border: { color: 'Transparent' },
       },
       hover: {
-        font: { color: 'Neutral-text-4' },
+        font: { color: 'Neutral-text-5' },
         background: { color: 'Neutral-fill-2' },
         border: { color: 'Neutral-fill-2' },
       },
       active: {
-        font: { color: 'Neutral-text-4' },
+        font: { color: 'Neutral-text-5' },
         background: { color: 'Neutral-fill-3' },
         border: { color: 'Neutral-fill-3' },
       },
       focus: {
-        font: { color: 'Neutral-text-4' },
+        font: { color: 'Neutral-text-5' },
         background: { color: 'Neutral-fill-2' },
         border: { color: 'Neutral-fill-2' },
       },
@@ -676,7 +678,20 @@ const buttonTokenValue = {
   spin: { margin: 'Margin-4' },
 };
 
-const buttonTokenExtraValue = {};
+const buttonTokenExtraValue = {
+  splitline: {
+    full: {
+      background: {
+        color: '#ffffff',
+      },
+    },
+    outline: {
+      background: {
+        color: 'Neutral-border-2',
+      },
+    },
+  },
+};
 
 module.exports = {
   buttonTokenValue,
