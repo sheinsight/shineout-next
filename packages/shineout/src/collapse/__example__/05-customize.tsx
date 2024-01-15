@@ -6,11 +6,16 @@
  */
 import React from 'react';
 import { Collapse } from 'shineout';
+import { Icons } from '@sheinx/base';
 
 export default () => {
   return (
     <div>
-      <Collapse defaultActive={['1']} style={{ maxWidth: 1180 }} expandIcon={'1'}>
+      <Collapse
+        defaultActive={['1']}
+        style={{ maxWidth: 1180 }}
+        expandIcon={Icons.AngleDoubleRight}
+      >
         <Collapse.Item title='This is panel header 1' keygen='0'>
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a
           bird in the open. Joy in living can never be assumed as a pose, or put on from the outside
