@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import store from '../../store';
 import useStyles from '../style';
 import { useSnapshot } from 'valtio';
@@ -21,7 +22,10 @@ const Guide = (props: GuideProps) => {
         {guides[state.locales].map((guide, index) => {
           return (
             <div className='guide' key={index}>
-              <h2 className='title anchor-title' id={`guide-${guide.title}`}>
+              <h2
+                className={classNames('title', 'anchor-title', index === 0 ? 'first' : '')}
+                id={`guide-${guide.title}`}
+              >
                 {guide.title}
               </h2>
               {guide.paragraphs.map((p, idx) => {
