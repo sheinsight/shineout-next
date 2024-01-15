@@ -46,5 +46,6 @@ const Gird = (props: GridProps) => {
     </div>
   );
 };
+Gird.isGrid = true;
 
 export default Gird;
