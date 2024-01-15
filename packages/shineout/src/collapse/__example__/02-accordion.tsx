@@ -1,8 +1,8 @@
 /**
  * cn - 手风琴模式
- *    --
+ *    -- 手风琴模式，每次只能展开一个面板
  * en - accordion
- *    --
+ *    -- Accordion mode, only one panel can be expanded at a time
  */
 import React from 'react';
 import { Collapse } from 'shineout';

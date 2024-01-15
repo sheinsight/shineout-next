@@ -1,8 +1,8 @@
 /**
  * cn - 基本用法
- *    --
+ *    -- 基础折叠面板，可自定义面板内容
  * en - Basic
- *    --
+ *    -- Basic collapse, you can customize the content of the panel
  */
 import React from 'react';
 import { Collapse } from 'shineout';

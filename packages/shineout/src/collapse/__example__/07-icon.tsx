@@ -1,8 +1,8 @@
 /**
  * cn - 展开图标位置
- *    --
+ *    -- 可设置是否显示展开图标以及图标展示的位置
  * en - Icon position
- *    --
+ *    -- You can set whether to display the expand icon and the position of the icon
  */
 import React from 'react';
 import { Collapse, Radio } from 'shineout';

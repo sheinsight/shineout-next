@@ -1,8 +1,8 @@
 /**
  * cn - 简洁面板
- *    --
+ *    -- 无边框的简洁模式
  * en - Simple panel
- *    --
+ *    -- Simple mode without border
  */
 import React from 'react';
 import { Collapse } from 'shineout';

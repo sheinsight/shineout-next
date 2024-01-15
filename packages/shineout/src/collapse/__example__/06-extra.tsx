@@ -1,8 +1,8 @@
 /**
  * cn - 额外操作
- *    --
+ *    -- 自定义渲染每个面板的扩容内容
  * en - Extra
- *    --
+ *    -- Customize the extra content of each panel
  */
 import React from 'react';
 import { Collapse, Checkbox } from 'shineout';

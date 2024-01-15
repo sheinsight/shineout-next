@@ -1,8 +1,8 @@
 /**
  * cn - 嵌套面板
- *    --
+ *    -- 嵌套面板
  * en - Nested panels
- *    --
+ *    -- Nested panels
  */
 import React from 'react';
 import { Collapse } from 'shineout';
