@@ -53,6 +53,7 @@ const Doc = (props: DocProps) => {
               className={classnames(
                 examples[index + 1]?.propName[state.locales] ? '' : 'nearly',
                 index === 0 ? 'first' : '',
+                index === examples.length - 1 ? 'last' : '',
               )}
               key={index}
               {...example}

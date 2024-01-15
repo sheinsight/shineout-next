@@ -28,7 +28,7 @@ export default createUseStyles(
         opacity: 1,
         marginBottom: 0,
         marginTop: 12,
-        color: 'rgb(78,89,105)',
+        color: '#141737',
         transition: 'all 0.3s ease',
       },
     },
@@ -61,18 +61,7 @@ export default createUseStyles(
       whiteSpace: 'nowrap',
     },
     tab: {
-      height: 32,
-      lineHeight: '24px',
-      fontSize: 14,
-      display: 'inline-block',
-      boxSizing: 'border-box',
-      padding: '5px 40px',
-      cursor: 'pointer',
-      borderRadius: 4,
-      '&.active': {
-        color: '#197AFA',
-        background: '#fff',
-      },
+      padding: '0 20px',
     },
     doc: {
       display: 'flex',
@@ -89,6 +78,13 @@ export default createUseStyles(
       display: 'flex',
       '& .guides': {
         flex: 1,
+        // '&:last-child': {
+        //   marginBottom: 40,
+        // },
+        // 最后一个元素
+        '& > .guide:last-child': {
+          marginBottom: 40,
+        },
       },
       '& .anchor': {
         width: 192,
@@ -99,6 +95,9 @@ export default createUseStyles(
         fontWeight: 500,
         marginBottom: 16,
         padding: '0 40px',
+        '&.first': {
+          marginTop: 40,
+        },
       },
       '& .paragraph': {
         padding: '0 40px',
