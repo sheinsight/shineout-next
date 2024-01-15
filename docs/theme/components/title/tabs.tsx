@@ -3,9 +3,10 @@ import classnames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store, { dispatch, DocType } from '../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Tabs } from 'shineout';
 import useStyles from '../style';
 
-const Tabs = (props: { showGuide: boolean }) => {
+const DocTabs = (props: { showGuide: boolean }) => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,6 +27,10 @@ const Tabs = (props: { showGuide: boolean }) => {
     });
   };
 
+  const renderTab = (name: string) => {
+    return <div className={classnames(classes.tab)}>{name}</div>;
+  };
+
   useEffect(() => {
     if (location.search) {
       const searchParams = new URLSearchParams(location.search);
@@ -38,20 +43,15 @@ const Tabs = (props: { showGuide: boolean }) => {
 
   return (
     <div className={classes.tabs}>
-      {tabs.map((tab, index) => {
-        if (tab.path === 'guide' && !props.showGuide) return null;
-        return (
-          <span
-            key={index}
-            onClick={() => handleChangeTab(tab.path)}
-            className={classnames(classes.tab, tab.path === state.doctab && 'active')}
-          >
-            {tab.name}
-          </span>
-        );
-      })}
+      <Tabs shape='fill' autoFill defaultActive={state.doctab} onChange={handleChangeTab}>
+        {tabs.map((tab, index) => {
+          if (tab.path === 'guide' && !props.showGuide) return null;
+
+          return <Tabs.Panel key={index} tab={renderTab(tab.name)} id={tab.path}></Tabs.Panel>;
+        })}
+      </Tabs>
     </div>
   );
 };
 
-export default Tabs;
+export default DocTabs;

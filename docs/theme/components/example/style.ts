@@ -8,6 +8,9 @@ export default createUseStyles(
       '&.nearly': {
         marginBottom: 32,
       },
+      '&.last': {
+        marginBottom: 40,
+      },
       '& .head': {},
       '& .title': {
         fontSize: 20,
@@ -16,6 +19,16 @@ export default createUseStyles(
         '& a': {
           color: '#000000',
           textDecoration: 'none',
+        },
+      },
+      '& .footer': {
+        borderLeft: '1px solid #E8EBF0',
+        borderRight: '1px solid #E8EBF0',
+        borderBottom: '1px solid #E8EBF0',
+      },
+      '&.first': {
+        '& .title': {
+          marginTop: 40,
         },
       },
       '& .subtitle': {
@@ -47,7 +60,7 @@ export default createUseStyles(
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'flex-end',
-          gap: 12,
+          gap: 24,
         },
       },
       '& .describe': {
@@ -62,6 +75,7 @@ export default createUseStyles(
         marginBottom: 0,
       },
       '& .icon': {
+        position: 'relative',
         width: 16,
         height: 16,
         display: 'flex',
@@ -69,6 +83,15 @@ export default createUseStyles(
         justifyContent: 'center',
         borderRadius: '50%',
         cursor: 'pointer',
+        '&:hover:after': {
+          content: '""',
+          position: 'absolute',
+          width: 32,
+          height: 32,
+          borderRadius: 4,
+          background: '#F4F5F8',
+          zIndex: -1,
+        },
       },
       '& .prop': {
         position: 'absolute',
