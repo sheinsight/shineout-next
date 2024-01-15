@@ -10,14 +10,18 @@ export default () => {
   const TagColor = ['default', 'info', 'danger', 'warning', 'success'];
   const TagMode = ['bright', 'fill', 'outline', 'brightOutline'];
 
+  const capitalizeFirstLetter = (str: string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   return (
     <div>
       {TagMode.map((mode, midx) => {
         return (
-          <div key={midx} style={{ marginBottom: 8 }}>
+          <div key={midx} style={{ marginBottom: midx === TagMode.length - 1 ? 0 : 24 }}>
             {TagColor.map((color, cidx) => (
               <Tag mode={mode as any} key={cidx} color={color as any}>
-                {color}
+                {capitalizeFirstLetter(color)}
               </Tag>
             ))}
           </div>
