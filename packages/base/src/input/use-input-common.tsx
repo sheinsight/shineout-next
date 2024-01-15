@@ -41,11 +41,9 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     popover,
     popoverProps,
     status,
-    trim: trimProps,
     ...rest
   } = props;
 
-  const trim = trimProps ?? config.trim ?? false;
   const delay = delayProps ?? config.delay ?? 0;
 
   const inputStyle = props.jssStyle?.input?.();
@@ -148,7 +146,6 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     size,
     rootRef,
     inputRef: forwardRef,
-    trim,
     renderInput: renderInput,
     getStatus: onStatusChange,
   };

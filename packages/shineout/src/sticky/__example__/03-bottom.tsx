@@ -1,14 +1,14 @@
 /**
- * cn - 位置
+ * cn - 底部固定
  *    -- 附着在底部
- * en - Position
+ * en - Bottom
  *    -- Sticky to bottom
  */
 import React, { useRef } from 'react';
 import { Alert, Sticky } from 'shineout';
 
 const App: React.FC = () => {
-  const elRef = useRef(null);
+  const elRef = useRef<HTMLDivElement | null>(null);
   return (
     <div
       ref={elRef}

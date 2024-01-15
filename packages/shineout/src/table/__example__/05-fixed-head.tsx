@@ -34,12 +34,13 @@ const columns: TableColumnItem[] = [
   { title: 'Start Date', render: 'start' },
   {
     title: 'Salary($)',
+    align: 'right',
     render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
   },
 ];
 
 const App: React.FC = () => (
-  <Table bordered keygen='id' style={{ height: 300 }} columns={columns} data={data} width={1500} />
+  <Table keygen='id' style={{ height: 300 }} columns={columns} data={data} width={1500} />
 );
 
 export default App;

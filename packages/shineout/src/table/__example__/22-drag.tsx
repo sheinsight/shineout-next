@@ -10,6 +10,9 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles(
   {
+    exampleDragable: {
+      cursor: 'move',
+    },
     exampleDragIn: {
       '& td': {
         borderBottom: '2px dashed #197AFA !important',
@@ -99,6 +102,7 @@ const columns: TableColumnItem[] = [
   { title: 'Start Date', render: 'start' },
   {
     title: 'Salary($)',
+    align: 'right',
     render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
   },
 ];
@@ -173,7 +177,9 @@ const App: React.FC = () => {
       keygen='id'
       cellSelectable
       columns={columns}
-      rowClassName={(_row, index) => (index === target ? classes.exampleDragIn : '')}
+      rowClassName={(_row, index) =>
+        `${index === target ? classes.exampleDragIn : ''} ${classes.exampleDragable}`
+      }
       rowEvents={{
         draggable: true,
         onDrop: dropHandler,

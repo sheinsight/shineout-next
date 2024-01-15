@@ -46,7 +46,7 @@ export interface TableTokens {
   tableLargeCellPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Padding-16
    * @description xxx大尺寸undefined内边距（垂直方向）
    */
   tableLargeCellPaddingY: string;
@@ -118,7 +118,7 @@ export interface TableTokens {
   tableExpandIconSize: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-2
    * @description xxxundefined图标颜色
    */
   tableExpandIconColor: string;

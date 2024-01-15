@@ -30,8 +30,8 @@ const App: React.FC = () => {
         }}
         row={20}
       >
-        <span>Item1</span>
-        <Button type='primary'>Item2</Button>
+        <span>start</span>
+        <Button type='primary'>Button</Button>
         <div
           style={{
             fontSize: 14,
@@ -42,7 +42,7 @@ const App: React.FC = () => {
             padding: '12px',
           }}
         >
-          Item3
+          end
         </div>
       </Gap>
     </>

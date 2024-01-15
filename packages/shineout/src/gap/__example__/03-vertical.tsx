@@ -11,8 +11,7 @@ const App: React.FC = () => (
   <Gap style={{ width: 400, flexDirection: 'column' }} row={10}>
     {Array.from({ length: 4 }).map((_, i) => (
       <Button key={i} type='primary'>
-        Item
-        {i}
+        Button
       </Button>
     ))}
   </Gap>

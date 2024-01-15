@@ -78,7 +78,7 @@ const data: TableRowData[] = [
 ];
 
 const name = (
-  <span style={{ background: '#ccc', display: 'block', lineHeight: '40px', color: '#fff' }}>
+  <span style={{ background: '#E8EBF0', display: 'block', lineHeight: '40px', color: '#fff' }}>
     Name
   </span>
 );

@@ -2,11 +2,12 @@ import SimpleInputInput from './simple-input';
 import { useInputFormat, util } from '@sheinx/hooks';
 import { InputProps } from './input.type';
 import useInputCommon from './use-input-common';
+import { useConfig } from '../config';
 import React from 'react';
 
 const Input = (props: InputProps) => {
   const commonProps = useInputCommon<InputProps['value'], InputProps>(props);
-
+  const config = useConfig();
   const inputFormatParams = {
     coin: commonProps.coin,
     autoFix: commonProps.autoFix,
@@ -16,7 +17,7 @@ const Input = (props: InputProps) => {
     digits: commonProps.digits,
     integerLimit: commonProps.integerLimit,
     numType: commonProps.numType,
-    trim: commonProps.trim,
+    trim: commonProps.trim ?? config.trim ?? false,
   };
   const inputFormatProps = useInputFormat({
     value: commonProps.value,

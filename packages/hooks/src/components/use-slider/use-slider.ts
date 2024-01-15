@@ -95,7 +95,7 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
       const v = context.dragIndex === 0 ? r[0] : r[1];
 
       const max = props.vertical ? target.clientHeight : target.clientWidth;
-      const delta = props.vertical ? deltaY : deltaX;
+      const delta = props.vertical ? deltaY * -1 : deltaX;
       let rate = Math.max(v + delta / max, 0);
       if (rate > 1) {
         rate = 1;
@@ -134,7 +134,7 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
     const rect = target.getBoundingClientRect();
     const rate = !props.vertical
       ? (e.clientX - rect.left) / rect.width
-      : (e.clientY - rect.top) / rect.height;
+      : (rect.bottom - e.clientY) / rect.height;
     const value = getValueFromRate(rate, scale, step);
     if (props.range) {
       let start = startValue;
@@ -155,8 +155,8 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
   const getTrackInnerStyle = (start: number, end: number) => {
     if (props.vertical)
       return {
-        top: start * 100 + '%',
-        bottom: (1 - end) * 100 + '%',
+        bottom: start * 100 + '%',
+        top: (1 - end) * 100 + '%',
       };
     return {
       left: start * 100 + '%',

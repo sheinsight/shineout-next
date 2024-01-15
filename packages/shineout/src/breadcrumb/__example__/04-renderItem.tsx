@@ -10,8 +10,8 @@ import { Breadcrumb, TYPE } from 'shineout';
 
 const data = [
   { name: 'home', link: '#home' },
-  { name: 'menu' },
-  { name: 'self', link: 'https://www.google.com' },
+  { name: 'menu', link: 'https://www.google.com' },
+  { name: 'self' },
 ];
 type BreadcrumbProps = TYPE.Breadcrumb.Props<typeof data[0]>;
 

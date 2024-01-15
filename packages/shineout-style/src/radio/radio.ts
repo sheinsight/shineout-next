@@ -125,6 +125,10 @@ const radioStyle: JsStyles<RadioClass> = {
     boxSizing: 'border-box',
     fontSize: token.radioLabelFontSize,
     lineHeight: token.lineHeightDynamic,
+    color: token.radioLabelFontColor,
+    '$wrapperDisabled &': {
+      color: token.radioLabelDisabledFontColor,
+    },
     '$wrapperSmall &': {
       fontSize: token.radioSmallLabelFontSize,
     },

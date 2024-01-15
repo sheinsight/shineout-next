@@ -49,13 +49,19 @@ const App: React.FC = () => {
     { title: 'Start Date', render: 'start' },
     {
       title: 'Salary($)',
+      align: 'right',
       render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
     },
   ];
 
   return (
     <div>
-      <Checkbox.Group keygen='id' value={expandKeys} onChange={setExpandKeys}>
+      <Checkbox.Group
+        style={{ marginBottom: 24 }}
+        keygen='id'
+        value={expandKeys}
+        onChange={setExpandKeys}
+      >
         {[1, 2, 3, 4, 5].map((d) => (
           <Checkbox key={d} htmlValue={d}>{`展开第 ${d} 行`}</Checkbox>
         ))}

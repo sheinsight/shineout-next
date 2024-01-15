@@ -48,6 +48,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       color: token.fontColor,
       lineHeight: token.lineHeight,
       fontSize: token.fontSize,
+      verticalAlign: 'top',
       transition: `border-color .15s ease-in-out,box-shadow .15s ease-in-out;`,
       '&:hover': {
         borderColor: token.hoverBorderColor,

@@ -14,6 +14,7 @@ const sliderTokens: SliderTokens = {
   sliderIndicatorBorderColor: 'Brand-6',
   sliderIndicatorBorderSize: 'Border-2',
   sliderIndicatorActiveBackgroundColor: 'Brand-6',
+  sliderIndicatorActiveShadow: 'Shadow-1',
   sliderIndicatorDisabledBorderColor: 'Neutral-border-2',
   sliderIndicatorDisabledBackgroundColor: 'Neutral-fill-1',
   sliderValueBackgroundColor: 'Neutral-fill-1',

@@ -65,7 +65,7 @@ const tableTokenExtraValue = {
   expand: {
     icon: {
       size: 'Size-7',
-      color: 'Neutral-text-4',
+      color: 'Neutral-text-2',
     },
     background: { color: 'Neutral-fill-2' },
   },
