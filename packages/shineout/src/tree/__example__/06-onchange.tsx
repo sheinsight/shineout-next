@@ -61,7 +61,6 @@ export default () => {
     <div>
       <Radio.Group
         size='small'
-        button='outline'
         keygen='value'
         prediction={(item, v) => item === v.value}
         value={mode}

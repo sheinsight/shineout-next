@@ -13,6 +13,7 @@ export type TreeClass =
   | 'content'
   | 'checkbox'
   | 'text'
+  | 'textDisabled'
   | 'list'
   | 'node'
   | 'leaf'
@@ -30,7 +31,8 @@ const treeStyle: JsStyles<TreeClass> = {
         content: '""',
         position: 'absolute',
         left: 0,
-        height: '100%',
+        top: -6,
+        height: 'calc(100% + 6px)',
         width: 1,
         background: '#ebebeb',
       },
@@ -40,7 +42,7 @@ const treeStyle: JsStyles<TreeClass> = {
         top: 18,
         left: 0,
         height: 1,
-        width: 12,
+        width: 16,
         background: '#ebebeb',
       },
     },
@@ -119,7 +121,6 @@ const treeStyle: JsStyles<TreeClass> = {
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
-    lineHeight: '26px',
     padding: `0 ${Token.treePaddingX}`,
     borderRadius: Token.treeContentBorderRadius,
 
@@ -137,12 +138,18 @@ const treeStyle: JsStyles<TreeClass> = {
   checkbox: {
     '&[class*="checkbox-wrapper"]': {
       height: 26,
-      marginRight: 0,
+      marginRight: Token.treeCheckboxMarginX,
     },
   },
   text: {
     fontSize: Token.treeFontSize,
+    lineHeight: Token.lineHeightDynamic,
     color: Token.treeFontColor,
+    paddingTop: Token.treeTextPaddingY,
+    paddingBottom: Token.treeTextPaddingY,
+  },
+  textDisabled: {
+    color: Token.treeItemDisabledFontColor,
   },
   list: {},
   node: {

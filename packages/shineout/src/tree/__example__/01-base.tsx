@@ -40,7 +40,8 @@ export default () => {
   ];
 
   const renderItem = (node: any) => {
-    return <span>{`node ${node.id}`}</span>;
+    // return <span>{`node ${node.id}`}</span>;
+    return `node ${node.id}`;
   };
 
   return (

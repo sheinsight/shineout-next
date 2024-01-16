@@ -4,6 +4,8 @@
 import { TreeTokens } from './type';
 
 const treeTokens: TreeTokens = {
+  treeTextPaddingY: 'Padding-2',
+  treeCheckboxMarginX: 'Margin-8',
   treeFontSize: '14/regular',
   treeLineHeight: 'Size-18',
   treeSmallFontSize: '12/regular',

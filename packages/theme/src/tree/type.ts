@@ -4,6 +4,18 @@
 export interface TreeTokens {
   /**
    * @type {string}
+   * @token Padding-2
+   * @description 树组件undefined内边距（垂直方向）
+   */
+  treeTextPaddingY: string;
+  /**
+   * @type {string}
+   * @token Margin-8
+   * @description 树组件undefined外边距（水平方向）
+   */
+  treeCheckboxMarginX: string;
+  /**
+   * @type {string}
    * @token 14/regular
    * @description 树组件字体字号
    */
