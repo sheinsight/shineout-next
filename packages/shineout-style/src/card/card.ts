@@ -23,6 +23,8 @@ export type CardClasses = {
   resizeY: string;
   resizeXY: string;
   bodyCollapse: string;
+  center: string;
+  right: string;
 };
 export type CardClassType = keyof CardClasses;
 
@@ -85,6 +87,12 @@ const cardStyle: JsStyles<CardClassType> = {
     flex: 1,
     minWidth: 0,
   },
+  center: {
+    textAlign: 'center',
+  },
+  right: {
+    textAlign: 'right',
+  },
   headerExtra: {},
   indicator: {
     display: 'flex',
@@ -117,7 +125,6 @@ const cardStyle: JsStyles<CardClassType> = {
       borderTop: `1px solid ${token.cardBorderColor}`,
     },
     padding: `${token.cardPaddingY} ${token.cardPaddingX}`,
-    textAlign: 'right',
     boxSizing: 'border-box',
   },
   resizeX: {
