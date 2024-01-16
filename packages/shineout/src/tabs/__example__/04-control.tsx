@@ -24,14 +24,14 @@ export default () => {
         value={active}
         renderItem={(v) => `Tab ${v + 1}`}
         onChange={setActive}
-        style={{ marginBottom: 32 }}
+        style={{ marginBottom: 24 }}
       />
       <div style={{ height: 100 }}>
         <Tabs shape='line' active={active} onChange={setActive}>
           {tabs.map((tab, index) => {
             return (
               <Tabs.Panel key={index} tab={tab.title}>
-                <div style={{ padding: 5, height: '100%' }}>{tab.content}</div>
+                <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>
               </Tabs.Panel>
             );
           })}

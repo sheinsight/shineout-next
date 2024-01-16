@@ -104,7 +104,10 @@ const TabsHeader = (props: TabsHeaderProps) => {
       <div ref={headerRef} className={headerClass} {...getDataProps()}>
         <div
           ref={scrollRef}
-          className={headerStyle.headerScroll}
+          className={classNames(
+            headerStyle.headerScroll,
+            shape === 'card' ? headerStyle.cardHr : '',
+          )}
           onWheel={handleTransform}
           style={transformStyle}
         >
@@ -196,12 +199,12 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   return (
     <div className={headerWrapperClass} style={tabBarStyle}>
+      {!hideSplit && shape !== 'card' && renderHr()}
       {collapsible && renderCollapsibleButton()}
       {shouldScroll && renderPrevButton()}
       {renderTab()}
       {shouldScroll && renderNextButton()}
       {extra && renderExtra()}
-      {!hideSplit && renderHr()}
     </div>
   );
 };

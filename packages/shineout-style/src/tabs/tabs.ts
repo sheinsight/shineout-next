@@ -8,6 +8,7 @@ export type TabsClass =
   | 'tab'
   | 'header'
   | 'hr'
+  | 'cardHr'
   | 'headerWrapper'
   | 'headerScroll'
   | 'button'
@@ -106,19 +107,19 @@ const getLineStyle = () => {
   return {
     '&[data-soui-position^="left-"][data-soui-shape="line"]': {
       '& $hr': { right: 0, width: 1, height: '100%' },
-      ...active({ top: 0, bottom: 0, right: 0, width: 3 }),
+      ...active({ top: 0, bottom: 0, right: 0, width: 2 }),
     },
     '&[data-soui-position^="right-"][data-soui-shape="line"]': {
       '& $hr': { left: 0, width: 1, height: '100%' },
-      ...active({ top: 0, bottom: 0, left: 0, width: 3 }),
+      ...active({ top: 0, bottom: 0, left: 0, width: 2 }),
     },
     '&[data-soui-position^="top-"][data-soui-shape="line"]': {
       '& $hr': { bottom: 0, height: 1, width: '100%' },
-      ...active({ bottom: 0, left: 0, right: 0, height: 3 }),
+      ...active({ bottom: 0, left: 0, right: 0, height: 2 }),
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="line"]': {
       '& $hr': { top: 0, height: 1, width: '100%' },
-      ...active({ top: 0, left: 0, right: 0, height: 3 }),
+      ...active({ top: 0, left: 0, right: 0, height: 2 }),
     },
   };
 };
@@ -126,16 +127,16 @@ const getLineStyle = () => {
 const getDashStyle = () => {
   return {
     '&[data-soui-position^="left-"][data-soui-shape="dash"]': {
-      ...active({ top: `calc(50% - 12px)`, width: 3, height: 24, right: 0 }),
+      ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, right: 0 }),
     },
     '&[data-soui-position^="right-"][data-soui-shape="dash"]': {
-      ...active({ top: `calc(50% - 12px)`, width: 3, height: 24, left: 0 }),
+      ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, left: 0 }),
     },
     '&[data-soui-position^="top-"][data-soui-shape="dash"]': {
-      ...active({ bottom: 0, left: `calc(50% - 12px)`, width: 24, height: 3 }),
+      ...active({ bottom: 0, left: `calc(50% - 12px)`, width: 24, height: 2 }),
     },
     '&[data-soui-position^="bottom-"][data-soui-shape="dash"]': {
-      ...active({ top: 0, left: `calc(50% - 12px)`, width: 24, height: 3 }),
+      ...active({ top: 0, left: `calc(50% - 12px)`, width: 24, height: 2 }),
     },
   };
 };
@@ -151,10 +152,11 @@ const getFillStyle = () => {
           },
         },
 
-        '&:not([data-soui-state="active"]):hover $fillInner': {
-          background: Token.tabsHoverBackgroundColor,
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $fillInner': {
+          // background: Token.tabsHoverBackgroundColor,
+          background: Token.tabsExtraFillHoverBackgroundColor,
         },
-        '&:not([data-soui-state="active"]):active $fillInner': {
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active $fillInner': {
           background: Token.tabsClickBackgroundColor,
         },
 
@@ -166,7 +168,7 @@ const getFillStyle = () => {
           width: 1,
           height: 14,
           background: 'transparent',
-          transition: 'all .15s ease-out',
+          transition: 'background .15s ease-out',
         },
       },
       '& $tab:not([data-soui-state="active"]):not(:hover) + $tab:not([data-soui-state="active"]):not(:hover)':
@@ -195,13 +197,16 @@ const getHeaderStyle = () => {
     '&[data-soui-shape="fill"] $header': {
       '& $tab': {
         background: Token.tabsBackgroundColor,
-        padding: `${Token.tabsFillPaddingY} ${Token.tabsFillPaddingX}`,
+        // padding: `${Token.tabsFillPaddingY} ${Token.tabsFillPaddingX}`,
+        padding: `${Token.tabsFillPaddingY} 0`,
       },
       '& $tab:first-child': {
         borderRadius: `${Token.tabsTabBorderRadius} 0 0 ${Token.tabsTabBorderRadius}`,
+        paddingLeft: Token.tabsFillPaddingX,
       },
       '& $tab:last-child': {
         borderRadius: `0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0`,
+        paddingRight: Token.tabsFillPaddingX,
       },
     },
 
@@ -332,7 +337,6 @@ const tabsStyle: JsStyles<TabsClass> = {
     cursor: 'pointer',
     lineHeight: Token.lineHeightDynamic,
     fontSize: Token.tabsTabFontSize,
-    transition: 'all .2s',
 
     '&[data-soui-state="active"]': {
       '&:after': {
@@ -343,6 +347,19 @@ const tabsStyle: JsStyles<TabsClass> = {
   hr: {
     position: 'absolute',
     background: Token.tabsBorderColor,
+  },
+  cardHr: {
+    // aflter
+    '&:after': {
+      position: 'absolute',
+      content: '""',
+      bottom: 0,
+      left: 0,
+      width: '100%',
+      height: 1,
+      zIndex: -1,
+      background: Token.tabsBorderColor,
+    },
   },
   headerWrapper: {
     display: 'flex',
@@ -431,7 +448,6 @@ const tabsStyle: JsStyles<TabsClass> = {
     },
   },
   headerScroll: {
-    zIndex: 1,
     transition: 'all .15s ease-out',
   },
   header: {
@@ -451,14 +467,18 @@ const tabsStyle: JsStyles<TabsClass> = {
         '&[data-soui-state="active"]': {
           color: Token.tabsActiveFontColor,
           background: Token.tabsActiveBackgroundColor,
+          fontWeight: 'bold',
         },
-        '&$disabled': {
+
+        '&[data-soui-state="disabled"]': {
           color: Token.tabsDisabledFontColor,
+          cursor: 'not-allowed',
         },
-        '&:not([data-soui-state="active"]):hover': {
+
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover': {
           background: Token.tabsHoverBackgroundColor,
         },
-        '&:not([data-soui-state="active"]):active': {
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active': {
           background: Token.tabsClickBackgroundColor,
         },
       },
@@ -472,12 +492,18 @@ const tabsStyle: JsStyles<TabsClass> = {
         '&[data-soui-state="active"]': {
           color: Token.tabsActiveFontColor,
           background: Token.tabsActiveBackgroundColor,
+          fontWeight: 'bold',
         },
 
-        '&:not([data-soui-state="active"]):hover $lineInner': {
+        '&[data-soui-state="disabled"]': {
+          color: Token.tabsDisabledFontColor,
+          cursor: 'not-allowed',
+        },
+
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $lineInner': {
           background: Token.tabsHoverBackgroundColor,
         },
-        '&:not([data-soui-state="active"]):active $lineInner': {
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active $lineInner': {
           background: Token.tabsClickBackgroundColor,
         },
       },
@@ -488,13 +514,26 @@ const tabsStyle: JsStyles<TabsClass> = {
         '&[data-soui-state="active"]': {
           color: Token.tabsActiveFontColor,
           background: Token.tabsActiveBackgroundColor,
+          fontWeight: 'bold',
         },
 
-        '&:not([data-soui-state="active"]):hover $lineInner': {
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $lineInner': {
           background: Token.tabsHoverBackgroundColor,
         },
-        '&:not([data-soui-state="active"]):active  $lineInner': {
+        '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active  $lineInner': {
           background: Token.tabsClickBackgroundColor,
+        },
+      },
+    },
+    ['&[data-soui-shape="fill"]']: {
+      '& $tab': {
+        '&[data-soui-state="active"]': {
+          fontWeight: 'bold',
+        },
+
+        '&[data-soui-state="disabled"]': {
+          color: Token.tabsDisabledFontColor,
+          cursor: 'not-allowed',
         },
       },
     },
@@ -502,12 +541,12 @@ const tabsStyle: JsStyles<TabsClass> = {
   button: {},
   line: {},
   lineInner: {
-    transition: 'all .2s',
+    // transition: 'all .2s',
     borderRadius: Token.tabsTabBorderRadius,
     padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
   },
   fillInner: {
-    transition: 'all .2s',
+    // transition: 'all .2s',
     borderRadius: Token.tabsTabBorderRadius,
     padding: `${Token.tabsFillInnerPaddingY} ${Token.tabsFillInnerPaddingX}`,
   },
