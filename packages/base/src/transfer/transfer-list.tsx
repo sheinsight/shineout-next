@@ -8,6 +8,7 @@ import TransferListHeader from './transfer-list-header';
 import Empty from '../empty';
 import Input from '../input';
 import Spin from '../spin';
+import Icon from '../icons';
 import VirtualList from '../virtual-scroll/virtual-scroll-list';
 
 const TransferList = <DataItem, Value extends KeygenResult[]>(
@@ -110,6 +111,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
           clearable
           jssStyle={jssStyle}
           value={filterText}
+          suffix={Icon.Search}
           onChange={handleFilter}
           placeholder={searchPlaceholder || getLocale(locale, 'search')}
         ></Input>

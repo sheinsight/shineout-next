@@ -28,7 +28,7 @@ export default () => {
           boxSizing: 'border-box',
         }}
       >
-        <Button>Button</Button>
+        <Button type='secondary'>Button</Button>
       </div>
     );
   };
@@ -39,7 +39,7 @@ export default () => {
       footers={[renderFooter(), renderFooter()]}
       data={data}
       keygen='id'
-      operations={['to right', 'to left']}
+      operations={['To right', 'To left']}
       listHeight={184}
       renderItem='name'
     ></Transfer>
