@@ -10,6 +10,7 @@ export interface PaginationClasses {
   center: string;
   jumper: string;
   jumperInput: string;
+  sizeList: string;
   split: string;
   icon: string;
   simple: string;
@@ -61,6 +62,7 @@ const PaginationStyle: JsStyles<PaginationClass> = {
       textAlign: 'center',
     },
   },
+  sizeList: {},
   simple: {},
   small: {
     '& $icon': {
