@@ -32,7 +32,7 @@ export default () => {
   const total = 256;
   const layout = ['links', 'jumper', info];
   const text = {
-    prev: 'Prev',
+    prev: 'Previous',
     next: 'Next',
     jumper: 'Go to {input} Page',
   };

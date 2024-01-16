@@ -238,8 +238,8 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
 
     '&$circle,&$square': {
-      width: `28px`,
-      height: `28px`,
+      width: 24,
+      height: 24,
     },
   },
 
@@ -250,8 +250,8 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
 
     '&$circle,&$square': {
-      width: `40px`,
-      height: `40px`,
+      width: 40,
+      height: 40,
     },
   },
 
