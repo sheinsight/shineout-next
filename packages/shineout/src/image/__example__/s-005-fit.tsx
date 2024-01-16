@@ -1,7 +1,7 @@
 /**
  * cn - 填充方式
  *    -- Image 四种不同的图片填充方式：
- *    -- fill 填充整个容器、center 剧中、fit 原图、stretch 拉伸
+ *    -- fill 填充整个容器、center 居中、fit 原图、stretch 拉伸
  * en - Fit
  *    -- Image has four different fill modes:
  *    -- fill, center, fit, stretch.
