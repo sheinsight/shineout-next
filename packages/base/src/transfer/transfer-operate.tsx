@@ -33,6 +33,7 @@ const TransferOperate = <DataItem, Value extends KeygenResult[]>(
         className={className}
         jssStyle={jssStyle}
         style={style}
+        type='secondary'
         shape={operation ? undefined : 'square'}
         onClick={handleChange}
       >
