@@ -5,6 +5,7 @@ export interface UploadClasses {
   wrapper: string;
   wrapperImage: string;
   wrapperDisabled: string;
+  wrapperDrop: string;
   dropItem: string;
   handler: string;
   icon: string;
@@ -57,12 +58,14 @@ const uploadStyle: JsStyles<UploadClassType> = {
       opacity: 0.5,
     },
   },
+  wrapperDrop: {},
   handler: {
     display: 'inline-block',
     cursor: 'pointer',
     boxSizing: 'border-box',
     '$wrapperDrop:not($wrapperDisabled) &': {
       width: '100%',
+      height: '100%',
       borderRadius: token.uploadImageBorderRadius,
       border: `1px dashed ${token.uploadImageHandlerBorderColor}`,
       backgroundColor: token.uploadImageHandlerBackgroundColor,
@@ -167,8 +170,8 @@ const uploadStyle: JsStyles<UploadClassType> = {
     display: 'flex',
     alignItems: 'center',
     '& > svg': {
-      width: 30,
-      height: 30,
+      width: 20,
+      height: 20,
     },
   },
   imageResult: {
@@ -178,6 +181,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
     position: 'relative',
     '$resultError&': {
       borderStyle: 'dashed',
+      borderWidth: '2px',
       borderColor: token.uploadImageHandlerErrorBorderColor,
       color: token.uploadImageHandlerErrorFontColor,
     },
@@ -242,6 +246,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
   imageResultMaskInfo: {
     lineHeight: token.lineHeightDynamic,
     color: token.uploadImageResultMaskIconColor,
+    fontSize: token.uploadImageResultTipFontSize,
   },
   imageResultTopBtn: {
     position: 'absolute',
@@ -299,6 +304,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
       '& $handler, & $imageHandler, & $imageResult': {
         borderColor: token.uploadImageHandlerHoverBorderColor,
         borderStyle: 'dashed',
+        borderWidth: '2px',
         color: token.uploadImageHandlerHoverFontColor,
       },
     },

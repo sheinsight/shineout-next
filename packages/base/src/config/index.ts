@@ -22,11 +22,14 @@ try {
   processEnv = {};
 }
 export let config: ConfigOption = {
-  caret: 'line',
-  locale: (processEnv.LOCALE as LanType) || 'zh-CN',
-  direction: 'ltr',
   prefix: 'so',
+  locale: (processEnv.LOCALE as LanType) || 'zh-CN',
   delay: 0,
+  trim: undefined,
+  spin: undefined,
+  caret: 'line',
+  direction: 'ltr',
+  popupContainer: null,
 };
 
 const state = proxy(config);

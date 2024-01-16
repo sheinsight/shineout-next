@@ -9,10 +9,6 @@ export type ImageJssStyleType = {
   image?: () => ImageClasses;
 };
 
-export interface ImageGroupClasses {
-  group: string;
-}
-
 export type Image = {
   src?: string;
   thumb?: string;

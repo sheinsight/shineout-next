@@ -13,16 +13,15 @@ const DraggerImage: React.FC = () => (
     action='/api/upload'
     multiple
     name='file'
-    style={{ width: '100%' }}
     onSuccess={(_res, _file, data) => data}
-    width={230}
-    height={180}
+    width={200}
+    height={156}
     leftHandler
     drop
   >
-    <div style={{ textAlign: 'center' }}>
-      <ImageIcon style={{ fontSize: 20 }} />
-      <p style={{ margin: '0', fontSize: '14px' }}>Click or drag image to upload</p>
+    <div style={{ textAlign: 'center', padding: '50px 16px', fontSize: 12, lineHeight: '16px' }}>
+      <ImageIcon style={{ fontSize: 20, marginBottom: 16 }} />
+      <p style={{ margin: '0' }}>Click or drag image to upload</p>
     </div>
   </Upload.Image>
 );
@@ -34,14 +33,25 @@ const DraggerFile: React.FC = () => (
     name='file'
     onSuccess={(_res, file) => file.name}
     limit={3}
-    style={{ width: '100%' }}
+    style={{ width: 400 }}
     drop
   >
-    <div style={{ padding: '60px 0', textAlign: 'center' }}>
-      <AddIcon style={{ fontSize: 28 }} />
-      <p style={{ margin: '12px 0 0 0', fontSize: '14px' }}>
-        Click or drag file to this area to upload
-      </p>
+    <div
+      style={{
+        height: 200,
+        boxSizing: 'border-box',
+        padding: '50px 16px',
+        fontSize: 12,
+        lineHeight: '16px',
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <AddIcon style={{ fontSize: 20, marginBottom: 16 }} />
+      <p style={{ margin: '0' }}>Click or drag file to this area to upload</p>
     </div>
   </Upload>
 );
