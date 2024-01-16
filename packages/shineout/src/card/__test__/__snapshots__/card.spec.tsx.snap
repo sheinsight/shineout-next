@@ -33,7 +33,7 @@ exports[`Card[Base] should render correctly  1`] = `
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="so-card-footer"
+      class="so-card-right so-card-footer"
     >
       <div
         style="display: flex;"
@@ -1077,7 +1077,7 @@ exports[`Card[Base] should render correctly about form 1`] = `
     </form>
   </div>
   <div
-    class="so-card-footer"
+    class="so-card-right so-card-footer"
   >
     <button
       class="so-button-primary so-button-button"
@@ -1124,7 +1124,7 @@ exports[`Card[Base] should render correctly about hover 1`] = `
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="so-card-footer"
+      class="so-card-right so-card-footer"
     >
       <div
         style="display: flex;"
@@ -1227,7 +1227,7 @@ exports[`Card[Base] should render correctly about hover 1`] = `
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="so-card-footer"
+      class="so-card-right so-card-footer"
     >
       <div
         style="display: flex;"
@@ -1370,7 +1370,7 @@ exports[`Card[Base] should render correctly about split 1`] = `
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="so-card-footer"
+      class="so-card-right so-card-footer"
     >
       <div
         style="display: flex;"

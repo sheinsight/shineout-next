@@ -1,4 +1,5 @@
-import { render, cleanup, screen } from '@testing-library/react';
+import React from 'react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Card from '..';
 import {
@@ -6,8 +7,11 @@ import {
   childrenTest,
   classTest,
   createClassName,
+  delay,
   displayTest,
   snapshotTest,
+  styleContentTest,
+  styleTest,
   textContentTest,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
@@ -22,8 +26,33 @@ import CardCollpase from '../__example__/07-collpase';
 import CardAccordion from '../__example__/08-accordion';
 
 const SO_PREFIX = 'card';
-const originClasses = ['wrapper', 'header', 'body', 'footer', 'headerContent', 'headerExtra'];
-const originItemClasses = ['wrapperSplit', 'wrapperShadow', 'wrapperHover'];
+const originClasses = [
+  'wrapper',
+  'header',
+  'body',
+  'footer',
+  'headerContent',
+  'headerExtra',
+  'indicator',
+  'indicatorIcon',
+  'bodyCollapse',
+  'accordion',
+  'resizeX',
+  'resizeY',
+  'resizeXY',
+];
+const originItemClasses = [
+  'wrapperSplit',
+  'wrapperShadow',
+  'wrapperHover',
+  'right',
+  'center',
+  'wrapperCollapsible',
+  'wrapperCollapsed',
+  'wrapperInAccordion',
+  'wrapperResizable',
+  'wrapperMoveable',
+];
 const {
   wrapper,
   header,
@@ -34,7 +63,24 @@ const {
   wrapperShadow,
   wrapperHover,
   headerExtra,
+  right,
+  center,
+  wrapperCollapsible,
+  indicator,
+  indicatorIcon,
+  bodyCollapse,
+  accordion,
+  wrapperCollapsed,
+  wrapperInAccordion,
+  resizeX,
+  resizeY,
+  resizeXY,
+  wrapperResizable,
+  wrapperMoveable,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const activeDefaultStyle = 'display: block;';
+const noActiveDefaultStyle = 'display: none;';
 
 const testHeaderContent = 'Header';
 const testBodyContent = 'body';
@@ -53,6 +99,14 @@ const CardHeaderTest = (props: any) => (
     <Card.Header {...props}>{testHeaderContent}</Card.Header>
     <Card.Body>{testBodyContent}</Card.Body>
     <Card.Footer>{testFooterContent}</Card.Footer>
+  </Card>
+);
+
+const CardFooterTest = (props: any) => (
+  <Card>
+    <Card.Header>{testHeaderContent}</Card.Header>
+    <Card.Body>{testBodyContent}</Card.Body>
+    <Card.Footer {...props}>{props.children || testFooterContent}</Card.Footer>
   </Card>
 );
 
@@ -87,6 +141,7 @@ describe('Card[Base]', () => {
     textContentTest(cardHeaderContent, testHeaderContent);
     textContentTest(cardBody, testBodyContent);
     textContentTest(cardFooter, testFooterContent);
+    classTest(cardFooter, right);
   });
   test('should render when set split', () => {
     const { container } = render(<CardTest split />);
@@ -115,9 +170,169 @@ describe('Card[Header]', () => {
     const cardHeaderExtra = cardHeader.querySelector(headerExtra)!;
     classLengthTest(cardHeaderExtra, '.demo', 1);
   });
-  // TODO: align
-  test('should render when set align is center', () => {
-    render(<CardHeaderTest align='center' />);
-    screen.debug();
+  test('should render when set align is center in header', () => {
+    const { container } = render(<CardHeaderTest align='center' />);
+    const cardHeader = container.querySelector(header)!;
+    classTest(cardHeader.querySelector(headerContent)!, center);
+  });
+  test('should render when set align is right in footer', () => {
+    const { container } = render(<CardHeaderTest align='right' />);
+    const cardHeader = container.querySelector(header)!;
+    classTest(cardHeader.querySelector(headerContent)!, right);
+  });
+});
+describe('Card[Footer]', () => {
+  test('should render when set footer only', () => {
+    const { container } = render(<Card.Footer>{testFooterContent}</Card.Footer>);
+    expect(container.querySelector(footer)).toBeInTheDocument();
+  });
+  test('should render when set align is center in footer', () => {
+    const { container } = render(<CardFooterTest align='center' />);
+    const cardFooter = container.querySelector(footer)!;
+    classTest(cardFooter, center);
+  });
+  test('should render when set align is center in left', () => {
+    const { container } = render(<CardFooterTest align='left' />);
+    const cardFooter = container.querySelector(footer)!;
+    classTest(cardFooter, center, false);
+    classTest(cardFooter, right, false);
+  });
+});
+describe('Card[Collapse]', () => {
+  beforeAll(() => {
+    jest.useFakeTimers();
+  });
+  afterAll(() => {
+    jest.runAllTimers();
+  });
+  test('should render when set collapsible is true', async () => {
+    const { container } = render(<CardTest collapsible />);
+    const cardWrapper = container.querySelector(wrapper)!;
+    classTest(cardWrapper, wrapperCollapsible);
+    const cardHeaderWrapper = cardWrapper.querySelector(header)!;
+    const cardIndicatorWrapper = cardHeaderWrapper.querySelector(indicator)!;
+    classLengthTest(cardIndicatorWrapper, indicatorIcon, 1);
+    const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
+    styleTest(cardBodyCollapse, activeDefaultStyle);
+    fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    styleContentTest(cardBodyCollapse, noActiveDefaultStyle);
+    fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    styleContentTest(cardBodyCollapse, activeDefaultStyle);
+  });
+  test('should render when set defaultCollapsed', async () => {
+    const { container } = render(<CardTest collapsible defaultCollapsed />);
+    const cardWrapper = container.querySelector(wrapper)!;
+    const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
+    styleContentTest(cardBodyCollapse, noActiveDefaultStyle);
+    const cardIndicatorWrapper = cardWrapper.querySelector(indicator)!;
+    fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    styleContentTest(cardBodyCollapse, activeDefaultStyle);
+  });
+  test('should render when set collapsed and defaultCollapsed at the same time', () => {
+    const { container } = render(<CardTest collapsible collapsed={false} defaultCollapsed />);
+    const cardWrapper = container.querySelector(wrapper)!;
+    const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
+    styleContentTest(cardBodyCollapse, activeDefaultStyle);
+  });
+  test('should render when set collapsed and onCollapse', async () => {
+    const App = () => {
+      const [collapsed, setCollapsed] = React.useState(false);
+      const onCollapse = (d: boolean) => {
+        setCollapsed(!d);
+      };
+      return <CardTest collapsed={collapsed} onCollapse={onCollapse} collapsible />;
+    };
+    const { container } = render(<App />);
+    const cardWrapper = container.querySelector(wrapper)!;
+    const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
+    const cardIndicatorWrapper = cardWrapper.querySelector(indicator)!;
+    fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    styleContentTest(cardBodyCollapse, activeDefaultStyle);
+  });
+});
+describe('Card[Form/Accordion]', () => {
+  test('should render when set card.submit', () => {
+    const onSubmit = jest.fn();
+    const { container } = render(
+      <CardFooterTest>
+        <Card.Submit onClick={onSubmit} />
+      </CardFooterTest>,
+    );
+    const cardFooter = container.querySelector(footer)!;
+    fireEvent.click(cardFooter.querySelector('button')!);
+    expect(onSubmit.mock.calls.length).toBe(1);
+  });
+  test('should render when is accordion', async () => {
+    const { container } = render(
+      <Card.Accordion>
+        <CardTest />
+        <CardTest />
+        <CardTest />
+      </Card.Accordion>,
+    );
+    const cardAccordion = container.querySelector(accordion)!;
+    const cardWrappers = cardAccordion.querySelectorAll(wrapper)!;
+    cardWrappers.forEach((item) => {
+      classTest(item, wrapperInAccordion);
+      classTest(item, wrapperCollapsed);
+      styleContentTest(item.querySelector(bodyCollapse)!, noActiveDefaultStyle);
+    });
+    fireEvent.click(cardWrappers[0].querySelector(indicatorIcon)!);
+    styleContentTest(cardWrappers[0].querySelector(bodyCollapse)!, activeDefaultStyle);
+    fireEvent.click(cardWrappers[1].querySelector(indicatorIcon)!);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    styleContentTest(cardWrappers[0].querySelector(bodyCollapse)!, noActiveDefaultStyle);
+    styleContentTest(cardWrappers[1].querySelector(bodyCollapse)!, activeDefaultStyle);
+  });
+});
+describe('Card[Resizable/Moveable]', () => {
+  test('should render when set resizable', () => {
+    const wrapperStyle = (height: number, width: number) =>
+      `width: ${width}px; height: ${height}px;`;
+    const { container } = render(<CardTest resizable />);
+    const cardWrapper = container.querySelector(wrapper)!;
+    classTest(cardWrapper, wrapperResizable);
+    const cardResizeX = cardWrapper.querySelector(resizeX)!;
+    const cardResizeY = cardWrapper.querySelector(resizeY)!;
+    const cardResizeXY = cardWrapper.querySelector(resizeXY)!;
+    expect(cardResizeX).toBeInTheDocument();
+    expect(cardResizeY).toBeInTheDocument();
+    expect(cardResizeXY).toBeInTheDocument();
+    fireEvent.mouseDown(cardResizeX);
+    fireEvent.mouseMove(cardResizeX, { clientX: 100 });
+    fireEvent.mouseUp(cardResizeX);
+    styleTest(cardWrapper, wrapperStyle(0, 100));
+    fireEvent.mouseDown(cardResizeY);
+    fireEvent.mouseMove(cardResizeY, { clientY: 100 });
+    fireEvent.mouseUp(cardResizeY);
+    styleTest(cardWrapper, wrapperStyle(100, 0));
+    fireEvent.mouseDown(cardResizeXY);
+    fireEvent.mouseMove(cardResizeXY, { clientX: 100, clientY: 100 });
+    fireEvent.mouseUp(cardResizeXY);
+    styleTest(cardWrapper, wrapperStyle(100, 100));
+  });
+  test('should render when set moveable', () => {
+    const { container } = render(<CardTest moveable />);
+    const cardWrapper = container.querySelector(wrapper)!;
+    classTest(cardWrapper, wrapperMoveable);
+    const cardHeader = cardWrapper.querySelector(header)!;
+    fireEvent.mouseDown(cardHeader);
+    fireEvent.mouseMove(document, { clientY: 1000 });
+    fireEvent.mouseUp(document);
+    // should render
   });
 });
