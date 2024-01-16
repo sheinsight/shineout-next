@@ -40,7 +40,18 @@ const treeTokenValue = {
   nearly: { margin: '', small: { margin: '' }, large: { margin: '' } },
 };
 
-const treeTokenExtraValue = {};
+const treeTokenExtraValue = {
+  text: {
+    padding: {
+      y: 'Padding-2',
+    },
+  },
+  checkbox: {
+    margin: {
+      x: 'Margin-8',
+    },
+  },
+};
 
 module.exports = {
   treeTokenValue,

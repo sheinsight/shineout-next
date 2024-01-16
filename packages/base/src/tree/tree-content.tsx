@@ -48,7 +48,7 @@ const NodeContent = <DataItem, Value extends KeygenResult>(
     util.isString(contentClassProp) && contentClassProp,
     util.isFunc(contentClassProp) && contentClassProp(data),
   );
-  const textClass = classNames(contentStyle.text);
+  const textClass = classNames(contentStyle.text, disabled ? contentStyle.textDisabled : '');
   const hasExpandIcons = expandIcons !== undefined;
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
