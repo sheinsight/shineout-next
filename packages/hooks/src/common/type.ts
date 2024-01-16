@@ -9,6 +9,8 @@ export type AddNoProps<A, B> = Omit<B, keyof A> & A;
 
 export type ValueOf<T> = T[keyof T];
 
+export type ValueItem<Value> = Value extends (infer U)[] ? U : Value;
+
 export type ObjectKey<T = any> = T extends ObjectType ? keyof T & string : never;
 
 export type KeygenResult = string | number;
@@ -21,6 +23,10 @@ export type KeygenType<DataItem> =
 export type StructKeygenType<DataItem> =
   | ObjectKey<DataItem>
   | ((data: DataItem, index?: number) => KeygenResult);
+
+export type TreeKeygenType<DataItem> =
+  | ObjectKey<DataItem>
+  | ((data: DataItem, parentKey: KeygenResult) => KeygenResult);
 
 type OptionalKeys<T> = {
   [K in keyof T]: T extends Record<K, T[K]> ? never : K;

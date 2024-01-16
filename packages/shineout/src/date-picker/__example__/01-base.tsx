@@ -7,6 +7,6 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const App: React.FC = () => <DatePicker showSelNow />;
+const App: React.FC = () => <DatePicker showSelNow onChange={(v) => console.log(v)} />;
 
 export default App;

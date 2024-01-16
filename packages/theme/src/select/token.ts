@@ -14,6 +14,12 @@ const selectTokenDescription = {
   option: '选项',
   right: '(右侧)',
   inner: '内部容器的',
+  clear: '清除按钮的',
+  more: '折叠内容的',
+  header: '列表头部的',
+  group: '分组',
+  title: '标题的',
+  column: '多列模式下',
 };
 
 /**
@@ -26,19 +32,39 @@ const selectTokenDescription = {
 const selectTokenValue = { font: { size: '14/regular' } };
 
 const selectTokenExtraValue = {
+  width: 'Size-120',
   font: { size: '14/regular', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
-  padding: { x: 'Padding-8', y: 'Padding-4' },
+  padding: { x: 'Padding-8', y: 'Padding-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
     font: { size: '12/regular' },
     border: { radius: '' },
     padding: { x: 'Padding-8', y: 'Padding-1' },
+    option: {
+      inner: {
+        padding: { x: 'Padding-8', y: 'Padding-2' },
+      },
+    },
   },
-  large: { font: { size: '16/regular' }, padding: { x: 'Padding-12', y: 'Padding-7' } },
-  placeholder: { color: 'Neutral-text-2' },
+  large: {
+    font: { size: '16/regular' },
+    padding: { x: 'Padding-12', y: 'Padding-3' },
+    option: {
+      inner: {
+        padding: { x: 'Padding-12', y: 'Padding-8' },
+      },
+    },
+    placeholder: {
+      margin: { y: 'Padding-4' },
+    },
+  },
+  inner: {
+    padding: { x: 'Padding-8', y: 'Padding-5' },
+  },
+  placeholder: { color: 'Neutral-text-2', margin: { y: 'Padding-2' } },
   background: { color: 'Neutral-fill-1' },
-  clear: { color: 'Neutral-text-3' },
+  clear: { color: 'Neutral-text-3', padding: 'Padding-8' },
   hover: { border: { color: 'Brand-6' }, clear: { color: 'Neutral-text-4' } },
   focus: { border: { color: 'Brand-7' }, shadow: 'Brand-2' },
   disabled: {
@@ -76,6 +102,30 @@ const selectTokenExtraValue = {
     },
     hover: { background: { color: 'Neutral-fill-2' } },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
+  },
+  more: {
+    padding: {
+      x: 'Padding-16',
+      y: 'Padding-14',
+    },
+  },
+  header: {
+    padding: 'Padding-8',
+    border: {
+      color: 'Neutral-border-1',
+    },
+  },
+  group: {
+    title: {
+      font: { color: 'Neutral-text-3', size: '12/regular' },
+      padding: { x: 'Padding-12', y: 'Padding-6' },
+    },
+  },
+  column: {
+    padding: 'Padding-8',
+    option: {
+      margin: 'Margin-8',
+    },
   },
 };
 

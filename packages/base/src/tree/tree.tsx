@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import classNames from 'classnames';
 import { TreeProps, TreeClasses } from './tree.type';
 import { KeygenResult, useTree, util } from '@sheinx/hooks';
@@ -5,21 +6,21 @@ import RootTree from './tree-root';
 import { produce } from 'immer';
 import { Provider } from './tree-context';
 
-const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
+const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, Value>) => {
   const {
     jssStyle,
     line = true,
     childrenKey = 'children',
-    // data: dataProps,
     data,
     value,
     mode = 1,
     keygen,
-    expanded,
+    expanded: expandedProp,
     expandIcons,
     iconClass,
     leafClass,
     nodeClass,
+    contentClass,
     renderItem,
     defaultValue,
     dataUpdate = true,
@@ -31,6 +32,7 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     dragImageSelector,
     dragImageStyle,
     dragSibling,
+    unmatch,
     dragHoverExpand,
     active,
     disabled,
@@ -39,8 +41,9 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     className,
     onClick,
     loader,
+    onRef,
     onDrop,
-    onExpand,
+    onExpand: onExpandProp,
     onChange,
     onDragEnd,
     onDragLeave,
@@ -56,19 +59,22 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
   //   if (dataProps !== data && dataUpdate) setData(dataProps);
   // }, [dataProps])
 
-  const { func, updateMap } = useTree({
+  const { datum, updateMap, expanded, onExpand } = useTree({
     mode,
     value,
     data,
     dataUpdate,
     active,
-    expanded,
+    unmatch,
+    isControlled: 'expanded' in props,
+    expanded: expandedProp,
     disabled,
     defaultValue,
     defaultExpandAll,
     defaultExpanded,
-    childrenKey: childrenKey as keyof DataItem,
+    childrenKey: childrenKey as keyof DataItem & string,
     keygen,
+    onExpand: onExpandProp,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);
@@ -88,19 +94,18 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     });
   };
 
-  const handleNodeClick = (node: DataItem, id: KeygenResult) => {
+  const handleNodeClick = (node: DataItem, id: Value) => {
     if (active === undefined) {
       handleUpdateActive(id);
     }
 
     if (onClick) {
-      onClick(node, id, func.getPath(id));
+      onClick(node, id, datum.getPath(id));
     }
   };
 
   const handleToggle = (id: KeygenResult) => {
     let newExpanded;
-
     if (!expanded && onExpand) {
       onExpand([id]);
       return;
@@ -113,15 +118,16 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     } else {
       newExpanded = [...expandedArr, id];
     }
+
     if (onExpand) onExpand(newExpanded);
   };
 
-  const handleDrop = (id: KeygenResult, targetId: KeygenResult, position: number) => {
+  const handleDrop = (id: Value, targetId: Value, position: number) => {
     let targetIdCopy = targetId;
     let positionCopy = position;
 
-    const current = func.getPath(id);
-    const target = func.getPath(targetIdCopy);
+    const current = datum.getPath(id);
+    const target = datum.getPath(targetIdCopy);
     if (!current || !target) return;
     const newData = produce(data, (draft) => {
       let node: any = draft;
@@ -172,12 +178,15 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
     }
   };
 
-  const onToggle = onExpand ? handleToggle : undefined;
+  useEffect(() => {
+    if (onRef) onRef(datum);
+  }, []);
 
   return (
     <div className={rootClass} {...rest}>
-      <Provider value={func}>
+      <Provider value={datum as any}>
         <RootTree
+          isControlled={'expanded' in props}
           jssStyle={jssStyle}
           data={data}
           mode={mode}
@@ -187,17 +196,18 @@ const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
           iconClass={iconClass}
           leafClass={leafClass}
           nodeClass={nodeClass}
+          contentClass={contentClass}
           expanded={expanded}
           expandIcons={expandIcons}
           childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}
-          bindNode={func.bindNode}
+          bindNode={datum.bindNode}
           childrenKey={childrenKey as keyof DataItem}
           onNodeClick={handleNodeClick}
           renderItem={renderItem}
           loader={loader}
           inlineNode={inlineNode}
           highlight={highlight}
-          onToggle={onToggle}
+          onToggle={handleToggle}
           onDrop={onDrop && handleDrop}
           onDragOver={onDragOver}
           onDragStart={onDragStart}
