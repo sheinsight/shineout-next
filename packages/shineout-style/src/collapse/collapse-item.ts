@@ -45,7 +45,6 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     fontSize: Token.collapseHeaderFontSize,
     fontWeight: Token.collapseHeaderWeight,
     color: Token.collapseHeaderColor,
-    lineHeight: Token.collapseHeaderLineHeight,
     padding: `${Token.collapseWrapperPaddingY} ${Token.collapseWrapperPaddingX}`,
   },
   active: {
@@ -77,22 +76,25 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     '& svg': {
       width: Token.collapseHeaderIconWidth,
     },
+    lineHeight: Token.lineHeightDynamic,
   },
   title: {
     flex: 1,
+    lineHeight: Token.lineHeightDynamic,
   },
   extra: {
     cursor: 'pointer',
     gap: Token.collapseHeaderExtraGap,
+    lineHeight: Token.lineHeightDynamic,
   },
   content: {
     overflow: 'hidden',
+    fontSize: Token.collapseContentFontSize,
   },
   contentMain: {
-    fontSize: Token.collapseContentFontSize,
     color: Token.collapseContentColor,
     fontWeight: Token.collapseContentWeight,
-    lineHeight: Token.collapseContentLineHeight,
+    lineHeight: Token.lineHeightDynamic,
     padding: `${Token.collapseContentPaddingY} ${Token.collapseContentPaddingRight} ${Token.collapseContentPaddingY} ${Token.collapseContentPaddingLeft}`,
     backgroundColor: Token.collapseContentBackgroundColor,
     gap: Token.collapseContentGap,
