@@ -12,7 +12,6 @@ export const getContainer = (props: ContainerProps) => {
   {
     let container = typeof props.container === 'function' ? props.container() : props.container;
     if (container && util.isInDocument(container)) return container;
-
     return getDefaultContainer();
   }
 };

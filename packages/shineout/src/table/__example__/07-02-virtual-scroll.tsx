@@ -71,9 +71,11 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Form defaultValue={state} inline onSubmit={handleIndexChange}>
+      <Form style={{ marginBottom: 24 }} defaultValue={state} inline onSubmit={handleIndexChange}>
         <Input.Number min={1} max={10000} width={100} name='index' />
-        <Button htmlType='submit'>Scroll</Button>
+        <Button type='primary' htmlType='submit'>
+          Scroll
+        </Button>
       </Form>
 
       <Table

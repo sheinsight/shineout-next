@@ -40,8 +40,8 @@ const AddIcon = (props: IconProps) => (
 
 const ImageIcon = (props: IconProps) => (
   <svg
-    width={props.fontSize || 24}
-    height={props.fontSize || 24}
+    width={props.fontSize || 20}
+    height={props.fontSize || 20}
     style={props.style}
     viewBox='0 0 24 24'
     xmlns='http://www.w3.org/2000/svg'

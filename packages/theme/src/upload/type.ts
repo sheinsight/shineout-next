@@ -106,7 +106,7 @@ export interface UploadTokens {
   uploadImageBorderRadius: string;
   /**
    * @type {string}
-   * @token Neutral-border-2
+   * @token Neutral-border-1
    * @description 上传图片操作区边框颜色
    */
   uploadImageHandlerBorderColor: string;

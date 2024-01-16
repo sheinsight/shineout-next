@@ -16,7 +16,6 @@ const App: React.FC = () => (
     onSuccess={(_res, _file, data) => ({ data })}
     width={400}
     height={200}
-    limit={1}
     renderResult={(f) => f.data}
     validator={{
       imageSize: (img) =>
@@ -25,10 +24,12 @@ const App: React.FC = () => (
         ['jpg', 'png'].includes(ext) ? undefined : new Error('File extension must be jpg or png'),
     }}
   >
-    <div style={{ margin: 'auto', fontSize: 14, textAlign: 'center' }}>
-      <AddIcon />
-      <div style={{ marginTop: 16 }}>Upload Image</div>
-      <div style={{ marginTop: 16 }}>Allow size 200 * 100</div>
+    <div style={{ padding: '50px 16px' }}>
+      <div style={{ margin: 'auto', fontSize: 12, textAlign: 'center', lineHeight: '16px' }}>
+        <AddIcon />
+        <div style={{ marginTop: 16 }}>Upload Image</div>
+        <div style={{ marginTop: 4 }}>Allow size 200 * 100</div>
+      </div>
     </div>
   </Upload.Image>
 );

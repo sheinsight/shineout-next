@@ -44,6 +44,7 @@ export interface TableClasses {
   cellFixedLast: string;
   cellGroup: string;
   cellHover: string;
+  cellCheckbox: string;
 
   rowStriped: string;
   rowChecked: string;

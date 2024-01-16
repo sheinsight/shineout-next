@@ -101,7 +101,7 @@ const Tr = (props: TrProps) => {
     }
   }, [props.expanded, props.rowIndex]);
 
-  const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 20) => {
+  const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;
     const className = tableClasses?.expandWrapper;
     const children = props.rawData[props.treeColumnsName!];
@@ -230,6 +230,7 @@ const Tr = (props: TrProps) => {
             }}
             className={classNames(
               col.className,
+              col.type === 'checkbox' && tableClasses?.cellCheckbox,
               col.fixed === 'left' && tableClasses?.cellFixedLeft,
               col.fixed === 'right' && tableClasses?.cellFixedRight,
               col.align === 'center' && tableClasses?.cellAlignCenter,

@@ -3,6 +3,7 @@ import { JsStyles } from '../jss-style';
 
 export type MessageClass = 'wrapper' | 'item' | 'itemDismissed' | 'itemShow' | 'message';
 const animationDuration = '0.2s';
+const messageMargin = token.messageMarginBottom;
 const animations = {
   '@keyframes left-in': {
     '0%': { transform: 'translateX(-100%)' },
@@ -36,7 +37,7 @@ const messageStyle: JsStyles<MessageClass> = {
     },
     margin: 'auto',
     '&[data-soui-position="top"]': {
-      top: '20px',
+      top: messageMargin,
       left: '50%',
       transform: 'translateX(-50%)',
     },
@@ -46,20 +47,20 @@ const messageStyle: JsStyles<MessageClass> = {
       transform: 'translate(-50%, -50%)',
     },
     '&[data-soui-position="top-left"]': {
-      top: '20px',
-      left: '20px',
+      top: messageMargin,
+      left: messageMargin,
     },
     '&[data-soui-position="top-right"]': {
-      top: '20px',
-      right: '20px',
+      top: messageMargin,
+      right: messageMargin,
     },
     '&[data-soui-position="bottom-left"]': {
       bottom: '0',
-      left: '20px',
+      left: messageMargin,
     },
     '&[data-soui-position="bottom-right"]': {
       bottom: '0',
-      right: '20px',
+      right: messageMargin,
     },
   },
   item: {

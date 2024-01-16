@@ -8,6 +8,7 @@ export type SliderClasses = {
   indicator: string;
   indicatorStart: string;
   indicatorEnd: string;
+  indicatorHover: string;
   scaleWrapper: string;
   scale: string;
   label: string;
@@ -74,28 +75,38 @@ const sliderStyle: JsStyles<SliderClassType> = {
   indicator: {
     position: 'absolute',
     zIndex: 100,
-    width: token.sliderIndicatorSize,
-    height: token.sliderIndicatorSize,
-    backgroundColor: token.sliderIndicatorBackgroundColor,
-    borderRadius: '50%',
-    borderWidth: token.sliderIndicatorBorderSize,
-    boxSizing: 'border-box',
-    borderStyle: 'solid',
-    borderColor: token.sliderIndicatorBorderColor,
-    cursor: 'pointer',
-    '&:hover': {
-      backgroundColor: token.sliderIndicatorActiveBackgroundColor,
+
+    '&::after': {
+      content: '""',
+      display: 'block',
+      width: token.sliderIndicatorSize,
+      height: token.sliderIndicatorSize,
+      backgroundColor: token.sliderIndicatorBackgroundColor,
+      borderRadius: '50%',
+      borderWidth: token.sliderIndicatorBorderSize,
+      boxSizing: 'border-box',
+      borderStyle: 'solid',
+      borderColor: token.sliderIndicatorBorderColor,
+      cursor: 'pointer',
     },
-    '$disabled &': {
+    '&:hover::after, $indicatorActive&::after': {
+      transform: 'scale(1.16666667)',
+      boxShadow: token.sliderIndicatorActiveShadow,
+    },
+    '$disabled &::after': {
       backgroundColor: token.sliderIndicatorDisabledBackgroundColor,
       borderColor: token.sliderIndicatorDisabledBorderColor,
       cursor: 'not-allowed',
     },
+    '$disabled &:not($indicatorHover)::after': {
+      transform: 'scale(1)',
+      boxShadow: 'none',
+    },
   },
   indicatorActive: {
     zIndex: 101,
-    backgroundColor: token.sliderIndicatorActiveBackgroundColor,
   },
+  indicatorHover: {},
   indicatorStart: {
     '$wrapper:not($vertical) &': {
       left: 0,
@@ -104,8 +115,8 @@ const sliderStyle: JsStyles<SliderClassType> = {
     },
     '$vertical &': {
       left: '50%',
-      top: 0,
-      transform: 'translate(-50%, -50%)',
+      bottom: 0,
+      transform: 'translate(-50%, 50%)',
     },
   },
   indicatorEnd: {
@@ -116,8 +127,8 @@ const sliderStyle: JsStyles<SliderClassType> = {
     },
     '$vertical &': {
       left: '50%',
-      bottom: 0,
-      transform: 'translate(-50%, 50%)',
+      top: 0,
+      transform: 'translate(-50%, -50%)',
     },
   },
   value: {
@@ -135,6 +146,19 @@ const sliderStyle: JsStyles<SliderClassType> = {
       left: 0,
       bottom: '100%',
       transform: 'translate(-50%, -10px)',
+    },
+    '$vertical &': {
+      bottom: 0,
+      left: '100%',
+      transform: 'translate(10px, 50%)',
+      padding: '1px 4px',
+    },
+  },
+  endValue: {
+    '$wrapper:not($vertical) &': {
+      right: 0,
+      bottom: '100%',
+      transform: 'translate(50%, -10px)',
     },
     '$vertical &': {
       top: 0,
@@ -177,24 +201,12 @@ const sliderStyle: JsStyles<SliderClassType> = {
       opacity: 1,
     },
   },
-  endValue: {
-    '$wrapper:not($vertical) &': {
-      right: 0,
-      bottom: '100%',
-      transform: 'translate(50%, -10px)',
-    },
-    '$vertical &': {
-      bottom: 0,
-      left: '100%',
-      transform: 'translate(10px, 50%)',
-      padding: '1px 4px',
-    },
-  },
+
   scaleWrapper: {
     display: 'flex',
     justifyContent: 'space-between',
     '$vertical &': {
-      flexDirection: 'column',
+      flexDirection: 'column-reverse',
     },
   },
   scale: {

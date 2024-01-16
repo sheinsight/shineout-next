@@ -21,7 +21,7 @@ const uploadTokens: UploadTokens = {
   uploadResultDeletedFontColor: 'Neutral-text-3',
   uploadResultUploadingIconColor: 'Brand-6',
   uploadImageBorderRadius: 'Radius-4',
-  uploadImageHandlerBorderColor: 'Neutral-border-2',
+  uploadImageHandlerBorderColor: 'Neutral-border-1',
   uploadImageHandlerBackgroundColor: 'Neutral-fill-1',
   uploadImageHandlerFontColor: 'Neutral-text-3',
   uploadImageHandlerHoverBorderColor: 'Brand-6',

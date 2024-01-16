@@ -63,7 +63,7 @@ const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
       type: 'primary' as 'primary',
     } as any;
     const noCheckedProps = {
-      mode: 'outline' as 'outline',
+      mode: button === 'outline' ? 'outline' : undefined,
       type: 'secondary' as 'secondary',
     };
     if (button) {

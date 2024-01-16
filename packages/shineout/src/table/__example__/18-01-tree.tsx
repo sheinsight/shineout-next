@@ -169,7 +169,7 @@ const columns: TableColumnItem[] = [
     title: 'Name',
     render: (d) => `${d.firstName} ${d.lastName}`,
     width: 300,
-    treeIndent: 50,
+    treeIndent: 22,
     treeColumnsName: 'children',
   },
   { title: 'Country', render: 'country' },

@@ -37,6 +37,7 @@ const sliderTokenExtraValue = {
     border: { color: 'Brand-6', size: 'Border-2' },
     active: {
       background: { color: 'Brand-6' },
+      shadow: 'Shadow-1',
     },
     disabled: {
       border: { color: 'Neutral-border-2' },

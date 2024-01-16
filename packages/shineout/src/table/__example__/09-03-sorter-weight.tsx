@@ -91,6 +91,7 @@ const columns: TableColumnItem[] = [
   { title: 'Position', render: 'position' },
   {
     title: 'Salary($)',
+    align: 'right',
     render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,
     sorter: { rule: 'salary', weight: 1 },
     defaultOrder: 'desc',

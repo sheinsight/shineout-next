@@ -1,5 +1,5 @@
 /**
- * cn - 指定元素
+ * cn - 容器内固定
  *    -- 附着在元素内
  * en - Element
  *    -- Sticky to element

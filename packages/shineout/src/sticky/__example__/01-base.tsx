@@ -1,5 +1,5 @@
 /**
- * cn - 基本
+ * cn - 基本用法
  *    -- 附着在顶部 20px
  * en - Basic
  *    -- Sticky 20px to top
@@ -23,10 +23,7 @@ const App: React.FC = () => {
       }}
     >
       <Sticky top={200} parent={elRef.current}>
-        <Alert>
-          <h3>Some content.</h3>
-          Sticky 20px to top.
-        </Alert>
+        <Alert>Sticky 200px to top</Alert>
       </Sticky>
     </div>
   );

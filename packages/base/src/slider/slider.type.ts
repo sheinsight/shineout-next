@@ -8,6 +8,7 @@ export interface SliderClasses {
   indicatorStart: string;
   indicatorEnd: string;
   indicatorActive: string;
+  indicatorHover: string;
   scaleWrapper: string;
   scale: string;
   label: string;

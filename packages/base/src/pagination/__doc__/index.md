@@ -5,7 +5,7 @@ group: Other
 
 # Title
 
-Pagination 标题
+Pagination 分页
 Pagination
 
 # Describe
