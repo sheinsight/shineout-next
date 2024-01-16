@@ -1,8 +1,15 @@
 import { JsStyles } from '../jss-style';
 
-type VirtualClass = 'scroll' | 'virtual' | 'iframe' | 'container' | 'footer' | 'bar' | 'scrolled';
+export type VirtualScrollClasses =
+  | 'scroll'
+  | 'virtual'
+  | 'iframe'
+  | 'container'
+  | 'footer'
+  | 'bar'
+  | 'scrolled';
 
-const VirtualScrollStyle: JsStyles<VirtualClass> = {
+const VirtualScrollStyle: JsStyles<VirtualScrollClasses> = {
   scroll: {
     position: 'relative',
     overflow: 'hidden',

@@ -178,7 +178,6 @@ const treeStyle: JsStyles<TreeClass> = {
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: '50%',
-    transition: 'all 0.2s ease',
     color: Token.treeItemFontColor,
     cursor: 'pointer',
     // transform: 'rotate(-90deg)',

@@ -243,6 +243,10 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     } else {
       newStyle = getAbsoluteStyle(realPosition)!;
     }
+    // for animation
+    if (realPosition.indexOf('top') === 0) {
+      newStyle.transformOrigin = 'center bottom';
+    }
     return newStyle;
   };
 

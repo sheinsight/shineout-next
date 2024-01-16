@@ -10,7 +10,7 @@ export interface NodeState {
   fetching: boolean;
 }
 
-export interface BaseTreeNodeProps<DataItem> {
+export interface BaseTreeNodeProps<DataItem, Value> {
   id: KeygenResult;
   data: DataItem;
   childrenKey: keyof DataItem;
@@ -20,6 +20,6 @@ export interface BaseTreeNodeProps<DataItem> {
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   content: HTMLDivElement | null;
   loader?: (key: KeygenResult, data: DataItem) => void;
-  onToggle?: (id: KeygenResult, expanded: boolean) => void;
+  onToggle?: (id: Value, expanded: boolean) => void;
   onDrop?: (data: DataItem[], key: KeygenResult, targetKey: KeygenResult, position: number) => void;
 }

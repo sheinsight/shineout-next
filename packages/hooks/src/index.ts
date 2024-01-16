@@ -25,6 +25,7 @@ export * from './common/use-resize';
 export * from './common/use-transform';
 export * from './common/use-drag-mock';
 export * from './common/use-pagination-list';
+export * from './common/use-filter';
 
 //components
 export * from './components/use-input';
@@ -47,5 +48,6 @@ export * from './components/use-select';
 export * from './components/use-slider';
 export * from './components/use-menu';
 export * from './components/use-descriptions';
+export * from './components/use-treeselect';
 
 export default {};

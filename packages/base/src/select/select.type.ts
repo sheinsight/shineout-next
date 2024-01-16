@@ -1,26 +1,43 @@
 // import React from 'react';
-import { BaseSelectProps, KeygenType, useListSelect } from '@sheinx/hooks';
+import { BaseSelectProps, KeygenType, useListSelect, KeygenResult, ObjectKey } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { TagClasses } from '../tag/tag.type';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
 import { InnerTitleClasses } from '../common/use-inner-title';
-import { VirtualScrollClasses } from '../virtual-scroll/virtual-scroll-list.type';
+import { PopoverClasses } from '../popover/popover.type';
+import { CheckboxClasses } from '../checkbox/checkbox.type';
+import { TreeClasses } from '../tree/tree.type';
+import { RadioClasses } from '../radio/radio.type';
+import { SpinClasses } from '../spin/spin.type';
+import { InputClasses } from '../input/input.type';
 
 export type JssStyleType = {
-  tag: () => TagClasses;
-  select: () => SelectClasses;
+  tag?: () => TagClasses;
+  select?: () => SelectClasses;
   innerTitle?: () => InnerTitleClasses;
-  virtualScroll: () => VirtualScrollClasses;
+  virtualScroll?: () => VirtualScrollClasses;
+  popover?: () => PopoverClasses;
+  checkbox?: () => CheckboxClasses;
+  radio?: () => RadioClasses;
+  tree?: () => TreeClasses;
+  spin?: () => SpinClasses;
+  input?: () => InputClasses;
 };
 
 export type DatumType<DataItem, Value> = ReturnType<typeof useListSelect<DataItem, Value>>;
+export type OptionListRefType = {
+  hoverMove: (index: number, force?: boolean) => void;
+  hoverHover: (index: number) => void;
+  getHoverIndex: () => number;
+};
 
 export interface BaseListProps<DataItem, Value>
   extends Pick<
     SelectProps<DataItem, Value>,
     | 'jssStyle'
-    | 'data'
+    | 'size'
+    | 'value'
     | 'width'
     | 'optionWidth'
     | 'header'
@@ -28,22 +45,38 @@ export interface BaseListProps<DataItem, Value>
     | 'loading'
     | 'lineHeight'
     | 'itemsInView'
-    | 'renderItem'
     | 'multiple'
+    | 'columns'
+    | 'columnWidth'
+    | 'columnsTitle'
+    | 'hideCreateOption'
   > {
   customHeader?: React.ReactNode;
   height: number | string;
-  datum: DatumType<DataItem, Value>;
+  data: DataItem[];
+  datum: any;
+  renderItem: (data: DataItem, index?: number) => React.ReactNode;
+  closePop: () => void;
+  originalData: any;
+  groupKey?: string;
+  controlType?: 'mouse' | 'keyboard';
+  optionListRef: React.MutableRefObject<OptionListRefType | undefined>;
+  onControlTypeChange: React.Dispatch<React.SetStateAction<'mouse' | 'keyboard'>>;
+  onOptionClick: (data: DataItem, index: number) => void;
 }
 
-export interface SelectProps<DataItem, Value>
+export interface SelectPropsBase<DataItem, Value>
   extends Omit<BaseSelectProps<DataItem, Value>, 'control'>,
     Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
-  jssStyle: JssStyleType;
-  data: DataItem[];
-  keygen: KeygenType<DataItem>;
+  jssStyle?: JssStyleType;
+
+  // data treeData 的类型交给重载去实现
+  data?: DataItem[];
   treeData?: DataItem[];
+  childrenKey?: keyof DataItem & string;
+
+  keygen: KeygenType<DataItem>;
   value?: Value;
 
   /**
@@ -79,6 +112,21 @@ export interface SelectProps<DataItem, Value>
    * @cn 自定义渲染列表头部内容
    */
   header?: React.ReactNode;
+
+  /**
+   * @en Custom render option list header
+   * @cn 自定义渲染列表底部内容
+   */
+  footer?: React.ReactNode;
+
+  /**
+   * @cn 自定义渲染下拉列表
+   * @en Custom render dropdown
+   */
+  renderOptionList?: (
+    list: React.ReactNode,
+    info: { loading?: boolean | React.ReactNode },
+  ) => React.ReactNode;
 
   /**
    * @deprecated
@@ -144,15 +192,34 @@ export interface SelectProps<DataItem, Value>
    * @default 1
    */
   columns?: number;
-
+  columnsTitle?: React.ReactNode;
   noCache?: boolean;
+  showArrow?: boolean;
+  focusSelected?: boolean;
   trim?: boolean;
+  columnWidth?: number;
   maxLength?: number;
   separator?: string;
-  compressed?: boolean;
+  autoAdapt?: boolean;
+  compressed?: boolean | 'no-repeat';
   compressedBound?: number;
+  compressedClassName?: string;
+  hideCreateOption?: boolean;
+  filterSingleSelect?: boolean;
+
+  // Tree 组件同款属性
+  defaultExpanded?: KeygenResult[];
+  defaultExpandAll?: boolean;
+  expanded?: KeygenResult[];
+  /**
+   * @en Whether to show the descendant nodes of the hit node after filtering
+   * @cn 筛选后是否展示命中节点的后代节点
+   * @default false
+   */
+  showHitDescendants?: boolean;
+
   resultClassName?: ((value: DataItem) => string) | string;
-  renderItem: (data: DataItem, index?: number) => React.ReactNode;
+  renderItem: ((data: DataItem, index?: number) => React.ReactNode) | ObjectKey<DataItem>;
   renderResult?: (data: DataItem, index?: number) => React.ReactNode;
   renderUnmatched?: (value: Value extends (infer U)[] ? U : Value) => React.ReactNode;
 
@@ -173,6 +240,36 @@ export interface SelectProps<DataItem, Value>
    * @cn onFilter 不为空时，可以输入过滤数据。onFilter 如果返回一个函数，使用这个函数做前端过滤。如果不返回，可以自行做后端过滤
    */
   onFilter?: (text: string, from?: string) => ((data: DataItem) => boolean) | void | undefined;
+  onCreate?: ((input: string | DataItem) => DataItem | string) | boolean;
+  onEnterExpand?: (e: React.KeyboardEvent<HTMLDivElement>) => boolean;
+  onCollapse?: (collapse: boolean) => void;
+  onExpand?: (value: KeygenResult[]) => void;
 
-  onCreate?: boolean | ((input: Value) => Value);
+  /**
+   * 新增 api ，开启 onFilter 和 onCreate 时，用于比对是否已经存在相同的数据，默认用输入的值和 keygen 值比对
+   */
+  onFilterWidthCreate?: (data: DataItem, createdData: DataItem, key: string | number) => boolean;
 }
+
+export interface SelectPropsA<DataItem, Value>
+  extends Omit<SelectPropsBase<DataItem, Value>, 'treeData' | 'childrenKey'> {
+  data: DataItem[];
+}
+
+export interface SelectPropsB<DataItem, Value>
+  extends Omit<SelectPropsBase<DataItem, Value>, 'data'> {
+  /**
+   * @en treeData
+   * @cn 树形数据
+   */
+  treeData: DataItem[];
+  /**
+   * @en Children key
+   * @cn 子节点的 key
+   */
+  childrenKey?: keyof DataItem & string;
+}
+
+export type SelectProps<DataItem, Value> =
+  | SelectPropsA<DataItem, Value>
+  | SelectPropsB<DataItem, Value>;

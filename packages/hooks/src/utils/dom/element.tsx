@@ -109,3 +109,5 @@ export function cssSupport(attr: keyof CSSStyleDeclaration, value: string) {
   }
   return false;
 }
+
+export const parsePxToNumber = (str: string) => Number(str.replace(/\s+|px/gi, ''));

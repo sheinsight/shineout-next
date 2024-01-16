@@ -4,20 +4,21 @@ import { TreeClasses } from './tree.type';
 import { TreeNodeProps } from './tree-node.type';
 import TreeContent from './tree-content';
 import { useTreeContext } from './tree-context';
-import { useTreeNode, ObjectType, util } from '@sheinx/hooks';
+import { useTreeNode, ObjectType, util, KeygenResult } from '@sheinx/hooks';
 
 const placeElement = document.createElement('div');
 const innerPlaceElement = document.createElement('div');
 placeElement.appendChild(innerPlaceElement);
-const placeInfo = { start: '', target: '' };
+const placeInfo: any = { start: '', target: '' };
 let dragLock = false;
 
-const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
+const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataItem, Value>) => {
   const {
     jssStyle,
     id,
     data,
     line,
+    isControlled,
     index,
     renderItem,
     parentClickExpand,
@@ -25,6 +26,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     iconClass,
     leafClass,
     nodeClass,
+    contentClass,
     expandIcons,
     keygen,
     mode,
@@ -54,15 +56,9 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
   // const dragLock = useRef(false);
   const dragImage = useRef<null | HTMLElement>(null);
 
+  // const [expanded, setExpanded] = useState(false)
   const { getPath } = useTreeContext();
-  const {
-    active,
-    expanded,
-    isLeaf,
-    fetching,
-    setFetching,
-    onToggle: handleToggle,
-  } = useTreeNode({
+  const { active, isLeaf, fetching, setFetching, expanded, setExpanded } = useTreeNode({
     id,
     data,
     bindNode,
@@ -93,6 +89,12 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
 
   const handleFetch = () => {};
 
+  const handleToggle = () => {
+    const nextExpanded = !expanded;
+    setExpanded(nextExpanded);
+    if (onToggle) onToggle(id, nextExpanded);
+  };
+
   const handleDragOver = (e: React.DragEvent) => {
     if (!dragLock) return;
 
@@ -107,7 +109,7 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     if (dragSibling && targetPathStr !== currentPathStr) return;
 
     if (dragHoverExpand && !expanded) {
-      handleToggle();
+      onToggle?.(id);
     }
     const hover = element.current as HTMLDivElement;
     const rect = hover.getBoundingClientRect();
@@ -214,6 +216,8 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
       iconClass,
       leafClass,
       nodeClass,
+      isControlled,
+      contentClass,
       parentClickExpand,
       expanded,
       line,
@@ -256,10 +260,12 @@ const Node = <DataItem,>(props: TreeNodeProps<DataItem>) => {
     <div {...getDropProps()} ref={element} className={rootClass}>
       <TreeContent
         jssStyle={jssStyle}
+        isControlled={isControlled}
         id={id}
         line={line}
         data={data}
         mode={mode}
+        contentClass={contentClass}
         active={active}
         fetching={fetching}
         expanded={expanded}
