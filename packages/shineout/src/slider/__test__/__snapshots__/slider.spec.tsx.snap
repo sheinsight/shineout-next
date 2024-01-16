@@ -1,0 +1,1263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider[Base] should render correctly  1`] = `
+<div
+  class="so-slider-wrapper"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 0%; right: 50%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+      <div
+        class="so-slider-end-value so-slider-value so-slider-value-hover"
+      >
+        50
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-scale-wrapper"
+  >
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        100
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about disabled 1`] = `
+<div
+  class="so-slider-wrapper so-slider-disabled"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 25%; right: 25%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-start"
+      />
+      <div
+        class="so-slider-start-value so-slider-value"
+      >
+        25
+      </div>
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+      <div
+        class="so-slider-end-value so-slider-value"
+      >
+        75
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-scale-wrapper"
+  >
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        100
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about format 1`] = `
+<div
+  class="so-slider-wrapper"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 6.111111111111112%; right: 60%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-start"
+      />
+      <div
+        class="so-slider-start-value so-slider-value"
+      >
+        09:33
+      </div>
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+      <div
+        class="so-slider-end-value so-slider-value"
+      >
+        12:36
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-scale-wrapper"
+  >
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        09:00
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        10:00
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        11:00
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        12:00
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        13:00
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        14:00
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        15:00
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        16:00
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        17:00
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        18:00
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about hider all 1`] = `
+<div
+  class="so-slider-wrapper"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 0%; right: 96%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about hider auto 1`] = `
+<div
+  class="so-slider-wrapper so-slider-auto-hide"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 0%; right: 75%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+      <div
+        class="so-slider-end-value so-slider-value"
+      >
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-scale-wrapper"
+  >
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        3
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        5
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        13
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        21
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        34
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        55
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        89
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        144
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about increase 1`] = `
+<div>
+  <div
+    class="so-slider-wrapper"
+  >
+    <div
+      class="so-slider-track"
+    >
+      <div
+        class="so-slider-track-inner"
+        style="left: 0%; right: 50%;"
+      >
+        <div
+          class="so-slider-indicator so-slider-indicator-end"
+        />
+        <div
+          class="so-slider-end-value so-slider-value"
+        >
+          50
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-slider-scale-wrapper"
+    >
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          100
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-wrapper"
+  >
+    <div
+      class="so-slider-track"
+    >
+      <div
+        class="so-slider-track-inner"
+        style="left: 20%; right: 50%;"
+      >
+        <div
+          class="so-slider-indicator so-slider-indicator-start"
+        />
+        <div
+          class="so-slider-start-value so-slider-value"
+        >
+          20
+        </div>
+        <div
+          class="so-slider-indicator so-slider-indicator-end"
+        />
+        <div
+          class="so-slider-end-value so-slider-value"
+        >
+          50
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-slider-scale-wrapper"
+    >
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          100
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about input 1`] = `
+<div
+  style="display: flex; align-items: center;"
+>
+  <div
+    class="so-slider-wrapper"
+    style="flex: 1; margin-inline-end: 28px;"
+  >
+    <div
+      class="so-slider-track"
+    >
+      <div
+        class="so-slider-track-inner"
+        style="left: 0%; right: 50%;"
+      >
+        <div
+          class="so-slider-indicator so-slider-indicator-end"
+        />
+        <div
+          class="so-slider-end-value so-slider-value"
+        >
+          50
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-slider-scale-wrapper"
+    >
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          100
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-input-wrapper-number so-input-wrapper"
+    data-soui-type="input"
+    style="width: 100px;"
+  >
+    <div
+      class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+    >
+      <input
+        class="so-input-input"
+        type="text"
+        value="50"
+      />
+    </div>
+    <div
+      class="so-input-number-step"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
+      </span>
+      <span>
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about range 1`] = `
+<div
+  class="so-slider-wrapper"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 25%; right: 25%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-start"
+      />
+      <div
+        class="so-slider-start-value so-slider-value"
+      >
+        25
+      </div>
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+      <div
+        class="so-slider-end-value so-slider-value"
+      >
+        75
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-scale-wrapper"
+  >
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        100
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about scale 1`] = `
+<div
+  class="so-slider-wrapper"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 0%; right: 100%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+      <div
+        class="so-slider-end-value so-slider-value"
+      >
+        0
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-scale-wrapper"
+  >
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        10
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        100
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        250
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        500
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        1000
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about step 1`] = `
+<div
+  class="so-slider-wrapper"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 5%; right: 75%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-start"
+      />
+      <div
+        class="so-slider-start-value so-slider-value"
+      >
+        0.05
+      </div>
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+      <div
+        class="so-slider-end-value so-slider-value"
+      >
+        0.25
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-scale-wrapper"
+  >
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        1
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about step zero 1`] = `
+<div
+  class="so-slider-wrapper"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 0%; right: 100%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+      <div
+        class="so-slider-end-value so-slider-value"
+      >
+        0.8
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-scale-wrapper"
+  >
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        0.8
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        1
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        1.2
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        1.4
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        1.7
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        2
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        2.4
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        2.8
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        3.3
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        4
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        4.8
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        5.6
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        6.7
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        8
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        9.5
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        11
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        13
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        16
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about value hover 1`] = `
+<div
+  class="so-slider-wrapper"
+>
+  <div
+    class="so-slider-track"
+  >
+    <div
+      class="so-slider-track-inner"
+      style="left: 0%; right: 50%;"
+    >
+      <div
+        class="so-slider-indicator so-slider-indicator-end"
+      />
+      <div
+        class="so-slider-end-value so-slider-value so-slider-value-hover"
+      >
+        50
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-scale-wrapper"
+  >
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="so-slider-scale"
+    >
+      <div
+        class="so-slider-label"
+      >
+        100
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider[Base] should render correctly about virtual 1`] = `
+<div>
+  <div
+    class="so-slider-wrapper so-slider-vertical"
+    style="height: 200px;"
+  >
+    <div
+      class="so-slider-track"
+    >
+      <div
+        class="so-slider-track-inner"
+        style="top: 0%; bottom: 50%;"
+      >
+        <div
+          class="so-slider-indicator so-slider-indicator-end"
+        />
+        <div
+          class="so-slider-end-value so-slider-value"
+        >
+          50
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-slider-scale-wrapper"
+    >
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          100
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-wrapper so-slider-vertical"
+    style="height: 200px;"
+  >
+    <div
+      class="so-slider-track"
+    >
+      <div
+        class="so-slider-track-inner"
+        style="top: 12%; bottom: 30.000000000000004%;"
+      >
+        <div
+          class="so-slider-indicator so-slider-indicator-start"
+        />
+        <div
+          class="so-slider-start-value so-slider-value"
+        >
+          12
+        </div>
+        <div
+          class="so-slider-indicator so-slider-indicator-end"
+        />
+        <div
+          class="so-slider-end-value so-slider-value"
+        >
+          70
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-slider-scale-wrapper"
+    >
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          100
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-wrapper so-slider-vertical"
+    style="height: 200px;"
+  >
+    <div
+      class="so-slider-track"
+    >
+      <div
+        class="so-slider-track-inner"
+        style="top: 0%; bottom: 77.5%;"
+      >
+        <div
+          class="so-slider-indicator so-slider-indicator-end"
+        />
+      </div>
+    </div>
+    <div
+      class="so-slider-scale-wrapper"
+    >
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          0℃
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          20℃
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          40℃
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          60℃
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          100℃
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-wrapper so-slider-auto-hide so-slider-vertical"
+    style="height: 200px;"
+  >
+    <div
+      class="so-slider-track"
+    >
+      <div
+        class="so-slider-track-inner"
+        style="top: 12%; bottom: 30.000000000000004%;"
+      >
+        <div
+          class="so-slider-indicator so-slider-indicator-start"
+        />
+        <div
+          class="so-slider-start-value so-slider-value"
+        >
+          12
+        </div>
+        <div
+          class="so-slider-indicator so-slider-indicator-end"
+        />
+        <div
+          class="so-slider-end-value so-slider-value"
+        >
+          70
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-slider-scale-wrapper"
+    >
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          100
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-slider-wrapper so-slider-disabled so-slider-vertical"
+    style="height: 200px;"
+  >
+    <div
+      class="so-slider-track"
+    >
+      <div
+        class="so-slider-track-inner"
+        style="top: 12%; bottom: 30.000000000000004%;"
+      >
+        <div
+          class="so-slider-indicator so-slider-indicator-start"
+        />
+        <div
+          class="so-slider-start-value so-slider-value"
+        >
+          12
+        </div>
+        <div
+          class="so-slider-indicator so-slider-indicator-end"
+        />
+        <div
+          class="so-slider-end-value so-slider-value"
+        >
+          70
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-slider-scale-wrapper"
+    >
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          100
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
