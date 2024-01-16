@@ -11,6 +11,6 @@ export default () => {
   const renderTotal = () => {
     return `total ${total}`;
   };
-  const layout = [renderTotal, 'links', 'list'];
+  const layout = [renderTotal, 'links'] as any;
   return <Pagination total={total} layout={layout} defaultCurrent={1} span={3}></Pagination>;
 };

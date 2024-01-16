@@ -30,11 +30,11 @@ export default () => {
     return `${from} to ${to} of ${total} items`;
   };
   const total = 256;
-  const layout = ['links', 'jumper', info];
+  const layout = ['links', 'list', info];
   const text = {
     prev: 'Previous',
     next: 'Next',
-    jumper: 'Go to {input} Page',
+    page: ' / page',
   };
 
   return (

@@ -17,11 +17,11 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
   const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sizeList);
 
   const handleChange = (pageSize: number) => {
-    const start = (current - 1) * pageSize + 1;
+    const start = (current - 1) * props.pageSize + 1;
 
     onChange(Math.ceil(start / pageSize), pageSize);
   };
-
+  console.log(pageSize);
   return (
     <div className={rootClasses}>
       <Select
@@ -31,6 +31,7 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
         autoAdapt
         keygen
         size={size}
+        clearable={false}
         value={pageSize}
         onChange={handleChange}
         data={pageSizeList}
