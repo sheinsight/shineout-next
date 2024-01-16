@@ -4,13 +4,16 @@
 import { TabsTokens } from './type';
 
 const tabsTokens: TabsTokens = {
+  tabsExtraFillHoverBackgroundColor: 'Neutral-fill-3',
+  tabsCardDisabledBackgroundColor: 'Neutral-fill-2',
   tabsFontColor: 'Neutral-text-5',
   tabsBackgroundColor: 'Neutral-fill-2',
   tabsBorderColor: 'Neutral-border-1',
   tabsActiveFontColor: 'Brand-6',
   tabsActiveBackgroundColor: 'Neutral-fill-1',
-  tabsHoverBackgroundColor: 'Neutral-fill-3',
+  tabsHoverBackgroundColor: 'Neutral-fill-2',
   tabsDisabledFontColor: 'Neutral-text-2',
+  tabsDisabledBackgroundColor: 'Neutral-fill-1',
   tabsClickBackgroundColor: 'Neutral-fill-4',
   tabsTabPaddingX: 'Padding-16',
   tabsTabPaddingY: 'Padding-9',
@@ -18,7 +21,7 @@ const tabsTokens: TabsTokens = {
   tabsTabBorderRadius: 'Radius-4',
   tabsNearlyMargin: 'Margin-4',
   tabsLinePaddingX: 'Padding-8',
-  tabsLinePaddingY: 'Padding-5',
+  tabsLinePaddingY: 'Padding-4',
   tabsLineInnerPaddingX: 'Padding-8',
   tabsLineInnerPaddingY: 'Padding-3',
   tabsFillPaddingX: 'Padding-4',

@@ -23,14 +23,14 @@ export default () => {
         data={shapes}
         value={shape}
         onChange={setShape}
-        style={{ marginBottom: 32 }}
+        style={{ marginBottom: 24 }}
       />
       <div style={{ height: 100 }}>
         <Tabs shape={shape as any} defaultActive={0}>
           {tabs.map((tab, index) => {
             return (
               <Tabs.Panel key={index} tab={tab.title}>
-                <div style={{ padding: 5, height: '100%' }}>{tab.content}</div>
+                <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>
               </Tabs.Panel>
             );
           })}

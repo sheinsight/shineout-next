@@ -25,7 +25,13 @@ export default () => {
 
   const tabs = [];
   for (let i = 0; i < 3; i++) {
-    tabs.push({ title: `Tab ${i + 1}`, content: `Content of Tab ${i + 1}` });
+    tabs.push({
+      title: `Tab ${i + 1}`,
+      content:
+        i === 1
+          ? 'Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings. We can never get it by working for it directly. It comes, like happiness, to those who are aiming at something higher. It is a byproduct of great, simple living. The joy of living comes from what we put into living, not from what we seek to get from it. As you travel through life there are always those times when decisions just have to be made when the choices are hard, and solutions seem scarce and the rain seems to soak your parade!Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings. We can never get it by working for it directly. It comes, like happiness, to those who are aiming at something higher. It is a byproduct of great, simple living. The joy of living comes from what we put into living, not from what we seek to get from it. As you travel through life there are always those times when decisions just have to be made when the choices are hard, and solutions seem scarce and the rain seems to soak your parade!'
+          : `Content of Tab ${i + 1}`,
+    });
   }
 
   return (
@@ -35,21 +41,21 @@ export default () => {
         data={shapes}
         value={shape}
         onChange={setShape}
-        style={{ marginBottom: 32 }}
+        style={{ marginBottom: 16 }}
       />
       <Radio.Group
         keygen
         data={positions}
         value={position}
         onChange={setPosition}
-        style={{ marginBottom: 32 }}
+        style={{ marginBottom: 24 }}
       />
       <div style={{ height: 150 }}>
         <Tabs shape={shape as any} position={position as any} autoFill defaultActive={0}>
           {tabs.map((tab, index) => {
             return (
-              <Tabs.Panel key={index} tab={tab.title}>
-                <div style={{ padding: 5, height: '100%' }}>{tab.content}</div>
+              <Tabs.Panel key={index} tab={tab.title} disabled={index === tabs.length - 1}>
+                <div style={{ padding: 16, fontSize: 14 }}>{tab.content}</div>
               </Tabs.Panel>
             );
           })}

@@ -4,6 +4,18 @@
 export interface TabsTokens {
   /**
    * @type {string}
+   * @token Neutral-fill-3
+   * @description 标签页undefined填充模式鼠标移入时的背景颜色
+   */
+  tabsExtraFillHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 标签页undefined禁用时的背景颜色
+   */
+  tabsCardDisabledBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-5
    * @description 标签页字体颜色
    */
@@ -34,7 +46,7 @@ export interface TabsTokens {
   tabsActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-3
+   * @token Neutral-fill-2
    * @description 标签页鼠标移入时的背景颜色
    */
   tabsHoverBackgroundColor: string;
@@ -44,6 +56,12 @@ export interface TabsTokens {
    * @description 标签页禁用时的字体颜色
    */
   tabsDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 标签页禁用时的背景颜色
+   */
+  tabsDisabledBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-4
@@ -88,7 +106,7 @@ export interface TabsTokens {
   tabsLinePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Padding-4
    * @description 标签页下划模式内边距（垂直方向）
    */
   tabsLinePaddingY: string;
