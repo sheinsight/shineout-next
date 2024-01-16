@@ -39,7 +39,7 @@ const PaginationJumper = (props: PaginationJumperProps) => {
     return (
       <Input
         jssStyle={jssStyle}
-        className={paginationStyle?.section}
+        className={classNames(paginationStyle?.section, paginationStyle?.jumperInput)}
         width={56}
         value={value}
         digits={0}
