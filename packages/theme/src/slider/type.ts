@@ -64,6 +64,12 @@ export interface SliderTokens {
   sliderIndicatorActiveBackgroundColor: string;
   /**
    * @type {string}
+   * @token Shadow-1
+   * @description xxxundefined鼠标点击时的undefined
+   */
+  sliderIndicatorActiveShadow: string;
+  /**
+   * @type {string}
    * @token Neutral-border-2
    * @description xxxundefined禁用时的边框颜色
    */

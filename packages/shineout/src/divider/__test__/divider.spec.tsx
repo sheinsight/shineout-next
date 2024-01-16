@@ -12,7 +12,7 @@ import {
   snapshotTest,
   textContentTest,
 } from '../../tests/utils';
-import DividerBase from '../__example__/01-base';
+import DividerBase from '../__example__/01-01-base-solid';
 import DividerText from '../__example__/02-text';
 import DividerVertical from '../__example__/03-vertical';
 

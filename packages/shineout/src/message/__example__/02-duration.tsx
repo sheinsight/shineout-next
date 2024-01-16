@@ -11,10 +11,13 @@ import { Button, Message } from 'shineout';
 const s10 = () => Message.info('This message will close after 10 seconds.', 10);
 const s0 = () => Message.error('This message will not close utill click the close icon.', 0);
 
+const commonStyle = { marginInlineStart: '24px' };
 const App: React.FC = () => (
   <div>
     <Button onClick={s10}>Duration 10 s.</Button>
-    <Button onClick={s0}>Manually close</Button>
+    <Button onClick={s0} style={commonStyle}>
+      Manually close
+    </Button>
   </div>
 );
 

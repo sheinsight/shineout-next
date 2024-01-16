@@ -38,7 +38,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', alignItems: 'center', marginBlock: 24 }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>
         <Radio.Group
           data={list}
           keygen='title'

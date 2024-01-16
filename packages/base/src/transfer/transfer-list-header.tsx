@@ -71,6 +71,10 @@ const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderCount = () => {
+    if (simple) {
+      return <span className={styles.count}>{data.length}</span>;
+    }
+
     return (
       <span className={styles.count}>
         {value.length}/{data.length}

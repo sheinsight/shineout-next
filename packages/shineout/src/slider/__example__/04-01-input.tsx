@@ -1,6 +1,6 @@
 /**
  * cn - 带输入框
- *    -- 和 数组输入框 保持同步
+ *    -- 和数组输入框保持同步
  * en - Input
  *    -- change with number input
  */

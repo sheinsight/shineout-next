@@ -10,7 +10,8 @@ export type SwitchClass =
   | 'wrapperLarge'
   | 'indicator'
   | 'loading'
-  | 'content';
+  | 'content'
+  | 'textPadding';
 
 const animation = {
   '@keyframes ring': {
@@ -73,7 +74,7 @@ const switchStyle: JsStyles<SwitchClass> = {
     },
   },
   wrapperChecked: {},
-  // wrapperLoading: {},
+  textPadding: { display: 'inline-block', padding: `0 ${token.switchTextPaddingX}` },
   wrapperSmall: {},
   wrapperLarge: {},
   indicator: {

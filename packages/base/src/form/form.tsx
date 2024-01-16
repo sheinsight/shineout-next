@@ -1,7 +1,7 @@
 import { useForm, useLatestObj, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
-import { ModalFormContext } from '../modal/modal-context';
-import React, { useContext, useEffect } from 'react';
+import { useFormFooter } from './form-footer-context';
+import React, { useEffect } from 'react';
 
 import type { FormProps } from './form.type';
 import type { ObjectType } from '@sheinx/hooks';
@@ -10,7 +10,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
   const { jssStyle, className, style, children, formRef, ...rest } = props;
   const formClasses = jssStyle?.form?.();
 
-  const modalFormContext = useContext(ModalFormContext);
+  const modalFormContext = useFormFooter();
 
   const { value = props.defaultValue, onChange } = props;
 

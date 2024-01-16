@@ -14,20 +14,31 @@ const App: React.FC = () => {
   const [column, setColumn] = useState(8);
   return (
     <>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
         <div style={{ width: 80 }}>column:</div>
-        <Slider style={{ flex: 1 }} scale={[0, 100]} defaultValue={column} onChange={setColumn} />
+        <Slider
+          style={{ flex: 1 }}
+          scale={[0, 100]}
+          formatScale={false}
+          defaultValue={column}
+          onChange={setColumn}
+        />
       </div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>
         <div style={{ width: 80 }}>row:</div>
-        <Slider style={{ flex: 1 }} scale={[0, 100]} defaultValue={row} onChange={setRow} />
+        <Slider
+          style={{ flex: 1 }}
+          scale={[0, 100]}
+          formatScale={false}
+          defaultValue={row}
+          onChange={setRow}
+        />
       </div>
       <div style={{ width: 500, border: '1px solid #e8ebf0', borderRadius: '4px', padding: 10 }}>
         <Gap row={row} column={column}>
           {Array.from({ length: 10 }).map((_, i) => (
             <Button key={i} type='primary'>
-              Item
-              {i}
+              Button
             </Button>
           ))}
         </Gap>

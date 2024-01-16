@@ -60,7 +60,12 @@ const Result = (props: ResultProps) => {
             onClick={confirmProps ? undefined : props.onRemove}
           >
             {confirmProps && (
-              <PopoverConfirm {...confirmProps} onOk={props.onRemove} jssStyle={props.jssStyle} />
+              <PopoverConfirm
+                position='top'
+                {...confirmProps}
+                onOk={props.onRemove}
+                jssStyle={props.jssStyle}
+              />
             )}
             {status === 'deleted' ? icons.Return : icons.Delete}
           </div>

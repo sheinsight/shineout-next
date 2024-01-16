@@ -6,6 +6,7 @@
     "paths": {
       "shineout": ["./src/index"],
       "@sheinx/base": ["../base/src/index"],
+      "@sheinx/shineout-style": ["../shineout-style/src/index"],
       "@sheinx/hooks": ["../hooks/src/index"],
       "@sheinx/mock": ["../mock/src/index"]
     }

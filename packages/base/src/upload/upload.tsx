@@ -224,6 +224,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
       className={classNames(
         uploadClasses?.wrapper,
         isImage && uploadClasses?.wrapperImage,
+        drop && uploadClasses?.wrapperDrop,
         props.disabled && uploadClasses?.wrapperDisabled,
         props.className,
       )}

@@ -64,7 +64,7 @@ const uploadTokenExtraValue = {
   image: {
     border: { radius: 'Radius-4' },
     handler: {
-      border: { color: 'Neutral-border-2' },
+      border: { color: 'Neutral-border-1' },
       background: { color: 'Neutral-fill-1' },
       font: { color: 'Neutral-text-3' },
       hover: {

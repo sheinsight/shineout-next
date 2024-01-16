@@ -13,6 +13,8 @@ const buttonTokenDescription = {
   text: '文本模式',
   nearly: '相邻之间的',
   split: '分割线',
+  full: '填充模式',
+  splitline: '按钮组分割线',
 };
 
 /**
@@ -200,7 +202,7 @@ const buttonTokenValue = {
     },
   },
   secondary: {
-    font: { color: 'Neutral-text-4' },
+    font: { color: 'Neutral-text-5' },
     background: { color: 'Neutral-fill-2' },
     border: { color: 'Neutral-fill-2' },
     disabled: {
@@ -209,22 +211,22 @@ const buttonTokenValue = {
       border: { color: 'Neutral-fill-2' },
     },
     hover: {
-      font: { color: 'Neutral-text-4' },
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-4' },
       border: { color: 'Neutral-fill-4' },
     },
     active: {
-      font: { color: 'Neutral-text-4' },
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-5' },
       border: { color: 'Neutral-fill-5' },
     },
     focus: {
-      font: { color: 'Neutral-text-4' },
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-4' },
       border: { color: 'Neutral-fill-4' },
     },
     outline: {
-      font: { color: 'Neutral-text-4' },
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Neutral-fill-1' },
       border: { color: 'Neutral-border-2' },
       disabled: {
@@ -248,7 +250,7 @@ const buttonTokenValue = {
         border: { color: 'Brand-5' },
       },
       split: {
-        background: { color: 'Neutral-border-1' },
+        background: { color: 'Neutral-border-2' },
         disabled: { background: { color: 'Brand-3' } },
         hover: { background: { color: 'Brand-5' } },
         active: { background: { color: 'Brand-7' } },
@@ -256,7 +258,7 @@ const buttonTokenValue = {
       },
     },
     text: {
-      font: { color: 'Neutral-text-4' },
+      font: { color: 'Neutral-text-5' },
       background: { color: 'Transparent' },
       border: { color: 'Transparent' },
       disabled: {
@@ -265,17 +267,17 @@ const buttonTokenValue = {
         border: { color: 'Transparent' },
       },
       hover: {
-        font: { color: 'Neutral-text-4' },
+        font: { color: 'Neutral-text-5' },
         background: { color: 'Neutral-fill-2' },
         border: { color: 'Neutral-fill-2' },
       },
       active: {
-        font: { color: 'Neutral-text-4' },
+        font: { color: 'Neutral-text-5' },
         background: { color: 'Neutral-fill-3' },
         border: { color: 'Neutral-fill-3' },
       },
       focus: {
-        font: { color: 'Neutral-text-4' },
+        font: { color: 'Neutral-text-5' },
         background: { color: 'Neutral-fill-2' },
         border: { color: 'Neutral-fill-2' },
       },
@@ -676,7 +678,20 @@ const buttonTokenValue = {
   spin: { margin: 'Margin-4' },
 };
 
-const buttonTokenExtraValue = {};
+const buttonTokenExtraValue = {
+  splitline: {
+    full: {
+      background: {
+        color: '#ffffff',
+      },
+    },
+    outline: {
+      background: {
+        color: 'Neutral-border-2',
+      },
+    },
+  },
+};
 
 module.exports = {
   buttonTokenValue,

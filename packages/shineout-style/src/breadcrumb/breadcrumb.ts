@@ -49,6 +49,13 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
   itemWithDrop: {
     display: 'flex',
     alignItems: 'center',
+    color: token.breadcrumbLinkColor,
+    '&:hover': {
+      '&>a': {
+        color: token.breadcrumbLinkHoverColor,
+      },
+      color: token.breadcrumbLinkHoverColor,
+    },
   },
   down: {
     width: 14,

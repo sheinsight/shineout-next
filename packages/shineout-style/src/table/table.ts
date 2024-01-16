@@ -30,6 +30,7 @@ export type TableClasses = {
   cellFixedLeft: string;
   cellFixedRight: string;
   cellFixedLast: string;
+  cellCheckbox: string;
   cellGroup: string;
   cellHover: string;
   rowExpand: string;
@@ -223,6 +224,9 @@ const tableStyle: JsStyles<TableClassType> = {
   cellAlignCenter: { textAlign: 'center' },
   cellAlignRight: { textAlign: 'right' },
   cellFixedLast: {},
+  cellCheckbox: {
+    width: '0',
+  },
   cellGroup: {
     textAlign: 'center',
     '$wrapper &': {

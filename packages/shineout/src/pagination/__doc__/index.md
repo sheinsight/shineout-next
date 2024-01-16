@@ -5,7 +5,7 @@ group: Other
 
 # Title
 
-Pagination 分页器
+Pagination 分页
 Pagination
 
 # Describe

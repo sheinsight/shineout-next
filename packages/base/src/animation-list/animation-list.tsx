@@ -35,6 +35,7 @@ const AnimationList = (props: AnimationListProps) => {
     height: 0,
     show: show,
     timer: null as any,
+    lastShow: show,
   });
   const ref = useRef<HTMLDivElement>(null);
   const forkRef = useForkRef(ref, onRef);
@@ -119,6 +120,7 @@ const AnimationList = (props: AnimationListProps) => {
     const newStyle: React.CSSProperties = {};
     if (type.indexOf('collapse') >= 0) {
       newStyle.height = 'auto';
+      newStyle.overflow = '';
     }
     setStyle((s) => ({ ...s, ...newStyle }));
   };
@@ -129,6 +131,7 @@ const AnimationList = (props: AnimationListProps) => {
     if (type.indexOf('collapse') >= 0) {
       context.height = el.offsetHeight;
       newStyle.height = `${context.height}px`;
+      newStyle.overflow = 'hidden';
     }
     if (type.includes('fade')) {
       newStyle.opacity = '1';
@@ -206,11 +209,13 @@ const AnimationList = (props: AnimationListProps) => {
   };
 
   useEffect(() => {
+    if (context.lastShow === show) return;
     if (show) {
       showList();
     } else {
       hideList();
     }
+    context.lastShow = show;
   }, [show]);
 
   return (

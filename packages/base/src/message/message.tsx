@@ -109,7 +109,6 @@ const MessagePure = (props: {
                   props.onClose(id, dismissDuration, props.cachedHeight[id]);
                 }}
                 icon={type !== 'default'}
-                iconSize={title ? 20 : 14}
                 style={{ top }}
                 title={title}
                 type={type === 'default' ? undefined : type}

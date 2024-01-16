@@ -12,5 +12,11 @@
       "@sheinx/theme": ["../theme/src/index"]
     }
   },
-  "include": ["src", "../mock/src/mock"]
+  "include": [
+    "src",
+    "../mock/src/mock",
+    "../shineout/src/grid/__example__/02-offset.tsx",
+    "../shineout/src/grid/__example__/03-nested.tsx",
+    "../shineout/src/grid/__example__/04-gutter.tsx"
+  ]
 }

@@ -10,7 +10,7 @@ export default () => {
   const renderIcon = () => {
     return (
       <svg
-        style={{ marginRight: 8 }}
+        style={{ marginLeft: 8 }}
         width='14'
         height='14'
         viewBox='0 0 14 14'
@@ -29,15 +29,7 @@ export default () => {
     <div>
       <Tabs shape='line' defaultActive={0} collapsible>
         <Tabs.Panel tab='Tab 1'>
-          <div
-            style={{
-              padding: 5,
-              height: '100%',
-              fontWeight: 300,
-              fontSize: 14,
-              lineHeight: '20px',
-            }}
-          >
+          <div style={{ padding: 16, fontSize: 14 }}>
             Joy in living comes from having fine emotions, trusting them, giving them the freedom of
             a bird in the open. Joy in living can never be assumed as a pose, or put on from the
             outside as a mask. People who have this joy do not need to talk about it; they radiate
@@ -51,14 +43,20 @@ export default () => {
           </div>
         </Tabs.Panel>
         <Tabs.Panel
-          tab={<span style={{ display: 'flex', alignItems: 'center' }}>{renderIcon()}Tab 2</span>}
+          tab={<div style={{ display: 'flex', alignItems: 'center' }}>Tab2{renderIcon()}</div>}
         >
-          Content of Tab 2
+          <div style={{ padding: 16, fontSize: 14 }}>Content of Tab 2</div>
         </Tabs.Panel>
         <Tabs.Panel
-          tab={<span style={{ display: 'flex', alignItems: 'center' }}>{renderIcon()}Tab 3</span>}
+          tab={
+            <div
+              style={{ display: 'flex', alignItems: 'center', height: '100%', overflow: 'hidden' }}
+            >
+              Tab3
+            </div>
+          }
         >
-          Content of Tab 3
+          <div style={{ padding: 16, fontSize: 14 }}>Content of Tab 3</div>
         </Tabs.Panel>
       </Tabs>
     </div>

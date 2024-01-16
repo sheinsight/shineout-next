@@ -67,7 +67,7 @@ const beforeLine = () => ({
     top: 'calc(25% + 1px)',
     left: -1,
     width: 1,
-    background: '#FFF',
+    background: Token.buttonSplitlineFullBackgroundColor,
   },
   '&:not($disabled):hover': {
     '&::before': {
@@ -164,7 +164,7 @@ const textBeforeLine = () => ({
     top: 'calc(25% + 1px)',
     left: -1,
     width: 1,
-    background: '#E8EBF0',
+    background: Token.buttonSplitlineOutlineBackgroundColor,
   },
 
   '&:not($disabled):hover': {
@@ -238,8 +238,8 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
 
     '&$circle,&$square': {
-      width: `28px`,
-      height: `28px`,
+      width: 24,
+      height: 24,
     },
   },
 
@@ -250,8 +250,8 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
 
     '&$circle,&$square': {
-      width: `40px`,
-      height: `40px`,
+      width: 40,
+      height: 40,
     },
   },
 
@@ -439,7 +439,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
           top: 'calc(25% + 1px)',
           left: -1,
           width: 1,
-          background: '#E8EBF0',
+          background: Token.buttonSplitlineOutlineBackgroundColor,
         },
         '& + :not(&),& + * $button:not(&)': {
           '&::before': {
@@ -488,7 +488,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
           top: 'calc(25% + 1px)',
           left: -1,
           width: 1,
-          background: '#E8EBF0', // Neutral-border-1
+          background: Token.buttonSplitlineOutlineBackgroundColor, // Neutral-border-1
         },
       },
       '&$primary': {

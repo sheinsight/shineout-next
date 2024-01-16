@@ -74,6 +74,7 @@ const App: React.FC = () => {
     { title: 'Start Date', render: 'start' },
     {
       title: 'Salary($)',
+      align: 'right',
       fixed: 'right',
       width: 100,
       render: (d) => `${d.salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,')}`,

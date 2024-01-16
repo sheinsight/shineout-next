@@ -8,6 +8,15 @@ html,
   overflow: hidden;
 }
 
+a {
+  color: #197afa;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #429aff;
+}
+
 body {
   font-family: var(
     --common-body-font-family,
@@ -69,7 +78,7 @@ code[class*='language-'] ::selection {
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1em;
-  margin: 0 0 0.5em;
+  margin: 0;
   overflow: auto;
 }
 

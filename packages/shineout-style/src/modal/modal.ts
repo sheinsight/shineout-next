@@ -185,6 +185,9 @@ const modalStyle: JsStyles<ModalClassType> = {
     height: '100%',
     textAlign: 'center',
     lineHeight: token.lineHeightDynamic,
+    '$wrapperAnimation&': {
+      overflow: 'hidden',
+    },
   },
   wrapperIsMask: {
     background: token.modalMaskBackground,

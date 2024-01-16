@@ -9,6 +9,7 @@ export interface PaginationClasses {
   right: string;
   center: string;
   jumper: string;
+  jumperInput: string;
   split: string;
   icon: string;
   simple: string;
@@ -51,7 +52,15 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     width: Token.paginationFontSize,
   },
   buttons: {},
-  jumper: {},
+  jumper: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  jumperInput: {
+    '& input': {
+      textAlign: 'center',
+    },
+  },
   simple: {},
   small: {
     '& $icon': {

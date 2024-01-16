@@ -3,8 +3,8 @@ import { CommonType } from '../common/type';
 import { UseUploadProps } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
 import { PopoverConfirmProps } from '../popover';
-import { PopoverClasses } from '../popover/popover.type';
-import { ImageClasses } from '../image/image.type';
+import { PopoverJssStyle } from '../popover/popover.type';
+import { ImageJssStyleType } from '../image/image.type';
 
 export type { UploadOptions } from '@sheinx/hooks';
 
@@ -12,6 +12,7 @@ export interface UploadClasses {
   wrapper: string;
   wrapperImage: string;
   wrapperDisabled: string;
+  wrapperDrop: string;
   dropItem: string;
   handler: string;
   icon: string;
@@ -83,6 +84,11 @@ interface UploadImageProps<T> {
   // };
 }
 
+export interface UploadJssStyleType extends ImageJssStyleType, PopoverJssStyle {
+  upload?: () => UploadClasses;
+  spin?: () => SpinClasses;
+}
+
 /**
  * @title Upload
  */
@@ -94,12 +100,7 @@ export interface UploadProps<T>
    * @en Component style class
    * @cn 组件样式类
    */
-  jssStyle?: {
-    upload?: () => UploadClasses;
-    spin?: () => SpinClasses;
-    popover?: () => PopoverClasses;
-    image?: () => ImageClasses;
-  };
+  jssStyle?: UploadJssStyleType;
   /**
    * @en show upload list
    * @cn 是否展示上传列表

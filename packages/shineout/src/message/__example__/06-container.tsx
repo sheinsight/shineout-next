@@ -15,7 +15,14 @@ const App: React.FC = () => {
       <div
         ref={container}
         id='container'
-        style={{ width: 100, height: 100, background: '#ebebeb' }}
+        style={{
+          width: 100,
+          height: 100,
+          background: '#f4f5f8',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
       >
         <Button
           id='button'

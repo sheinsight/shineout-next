@@ -1,6 +1,6 @@
 ## When to use
 
-Separate different items or sections in a form or long list; \n Visually separate different blocks of content on the page; \n Visually separate different topics;
+Separate different items or sections in a form or long list\n Visually separate different blocks of content on the page\n Visually separate different topics
 
 ## Related to layout
 

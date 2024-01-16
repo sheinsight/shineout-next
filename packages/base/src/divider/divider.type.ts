@@ -6,6 +6,7 @@ export interface DividerClasses {
    * 最外层class
    */
   wrapper: string;
+  wrapperDashed: string;
   vertical: string;
   horizontal: string;
   withText: string;
@@ -38,4 +39,11 @@ export interface DividerProps extends Pick<CommonType, 'className' | 'style'> {
    * @default "center"
    */
   orientation?: 'center' | 'left' | 'right';
+
+  /**
+   * @en border type
+   * @cn 线段类型
+   * @default "solid"
+   */
+  type?: 'solid' | 'dashed';
 }

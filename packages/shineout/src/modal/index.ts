@@ -1,4 +1,5 @@
-import Modal, { methods, Submit } from './modal';
+import Modal, { methods } from './modal';
+import Submit from './submit';
 
 type RefModal = typeof Modal;
 type RefModalMethods = typeof methods;

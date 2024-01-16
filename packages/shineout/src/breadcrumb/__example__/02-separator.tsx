@@ -9,7 +9,8 @@ import React from 'react';
 import { Breadcrumb, TYPE } from 'shineout';
 
 function Separator() {
-  return <span>~</span>;
+  const str = '>';
+  return <span>{str}</span>;
 }
 
 type BreadcrumbData = TYPE.Breadcrumb.Data;
@@ -23,7 +24,7 @@ const data: BreadcrumbProps<BreadcrumbData>['data'] = [
 
 const App: React.FC = () => (
   <div>
-    <Breadcrumb data={data} separator='|' />
+    <Breadcrumb data={data} separator='/' />
     <Breadcrumb data={data} separator={<Separator />} />
   </div>
 );

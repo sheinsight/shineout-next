@@ -3,6 +3,7 @@ import token from '@sheinx/theme';
 
 export interface DividerClasses {
   wrapper: string;
+  wrapperDashed: string;
   vertical: string;
   horizontal: string;
   withText: string;
@@ -18,7 +19,11 @@ const dividerStyle: JsStyles<DividerClassesKeys> = {
     margin: 0,
     padding: 0,
     borderTop: `${token.dividerBorderWidth} solid ${token.dividerBorderColor}`,
+    '$wrapperDashed&': {
+      borderTopStyle: 'dashed',
+    },
   },
+  wrapperDashed: {},
   vertical: {
     position: 'relative',
     top: '-0.06em',
@@ -28,6 +33,9 @@ const dividerStyle: JsStyles<DividerClassesKeys> = {
     verticalAlign: 'middle',
     borderTop: 0,
     borderLeft: `${token.dividerBorderWidth} solid ${token.dividerBorderColor}`,
+    '$wrapperDashed&': {
+      borderLeftStyle: 'dashed',
+    },
   },
   horizontal: {
     display: 'flex',
@@ -51,6 +59,9 @@ const dividerStyle: JsStyles<DividerClassesKeys> = {
       borderBottom: 0,
       transform: 'translateY(50%)',
       content: '""',
+      '$wrapperDashed&': {
+        borderTopStyle: 'dashed',
+      },
     },
   },
   withTextCenter: {

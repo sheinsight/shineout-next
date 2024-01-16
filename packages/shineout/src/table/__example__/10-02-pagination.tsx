@@ -95,7 +95,6 @@ const App: React.FC = () => {
         total,
         current,
         pageSize,
-        align: 'center',
         layout: ['links', 'list'],
         onChange: handlePageChange,
         pageSizeList: [10, 15, 20, 100],

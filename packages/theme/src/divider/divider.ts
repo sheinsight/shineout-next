@@ -10,7 +10,7 @@ const dividerTokens: DividerTokens = {
   dividerBorderWidth: 'Border-1',
   dividerHorizontalMarginY: 'Margin-24',
   dividerHorizontalTextMarginY: 'Margin-16',
-  dividerVerticalMarginX: 'Margin-8',
+  dividerVerticalMarginX: 'Margin-12',
   dividerTextPaddingX: '1em',
 };
 

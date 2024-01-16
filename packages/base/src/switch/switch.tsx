@@ -51,7 +51,11 @@ const Switch = (props: SwitchProps) => {
       <div className={switchClasses?.indicator}>
         {loading ? <div className={switchClasses?.loading} /> : null}
       </div>
-      <div className={switchClasses?.content}>{checked ? checkedContent : unCheckedContent}</div>
+      <div className={switchClasses?.content}>
+        <div className={switchClasses?.textPadding}>
+          {checked ? checkedContent : unCheckedContent}
+        </div>
+      </div>
     </button>
   );
 };

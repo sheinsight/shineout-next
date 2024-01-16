@@ -6,6 +6,7 @@ import useAutoSize from './use-auto-size';
 import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
+import { useConfig } from '../config';
 import useInnerTitle from '../common/use-inner-title';
 
 const defaultInfo = (num: number, msg: any) => {
@@ -15,10 +16,25 @@ const defaultInfo = (num: number, msg: any) => {
   return new Error(text);
 };
 const Textarea = (props: TextareaProps) => {
-  const { info, suffix, renderFooter, width, style, jssStyle, onBlur, status, ...resetProps } =
-    props;
+  const {
+    info,
+    suffix,
+    renderFooter,
+    width,
+    style,
+    jssStyle,
+    onBlur,
+    status,
+    trim: trimProps,
+    delay: delayProps,
+    ...resetProps
+  } = props;
+  const config = useConfig();
   const textareaClasses = jssStyle?.textarea?.();
   const rootRef = useRef<HTMLElement>(null);
+
+  const trim = trimProps ?? config.trim ?? false;
+  const delay = delayProps ?? config.delay ?? 0;
 
   const { disabled, size } = useWithFormConfig(props);
   resetProps.disabled = disabled;
@@ -50,7 +66,7 @@ const Textarea = (props: TextareaProps) => {
     onChange: resetProps.onChange,
     beforeChange: resetProps.beforeChange,
     defaultValue: resetProps.defaultValue,
-    delay: resetProps.delay,
+    delay: delay,
   };
   const inputAbleProps = useInputAble({
     ...inputAbleParams,
@@ -64,7 +80,7 @@ const Textarea = (props: TextareaProps) => {
 
   // format
   const formatParams = {
-    trim: resetProps.trim,
+    trim,
   };
 
   const formatProps = useTextareaFormat({

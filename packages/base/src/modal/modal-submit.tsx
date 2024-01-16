@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { usePersistFn } from '@sheinx/hooks';
 
 import Button from '../button/button';
-import { ModalFormContext } from './modal-context';
+import { useFormFooter } from '../form/form-footer-context';
 
 import type { ButtonProps } from '../button/button.type';
 
 const ModalSubmit = (props: ButtonProps) => {
-  const modalFormContext = useContext(ModalFormContext);
+  const modalFormContext = useFormFooter();
   const handleClick = usePersistFn((e: React.MouseEvent) => {
     props.onClick?.(e);
     modalFormContext?.func.submit();

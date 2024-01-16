@@ -1528,6 +1528,12 @@ export interface TagTokens {
   tagLargeInputFontSize: string;
   /**
    * @type {string}
+   * @token Brand-6
+   * @description 标签提示色图标字体颜色
+   */
+  tagInfoIconFontColor: string;
+  /**
+   * @type {string}
    * @token Brand-3
    * @description 标签提示色图标禁用状态的字体颜色
    */
@@ -1558,6 +1564,12 @@ export interface TagTokens {
   tagInfoOutlineIconHoverFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 标签默认尺寸图标字体颜色
+   */
+  tagDefaultIconFontColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-2
    * @description 标签默认尺寸图标禁用状态的字体颜色
    */
@@ -1574,6 +1586,12 @@ export interface TagTokens {
    * @description 标签默认尺寸图标鼠标移入时的字体颜色
    */
   tagDefaultIconHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Success-6
+   * @description 标签成功色图标字体颜色
+   */
+  tagSuccessIconFontColor: string;
   /**
    * @type {string}
    * @token Success-3
@@ -1612,6 +1630,18 @@ export interface TagTokens {
   tagWarningIconHoverBackgroundColor: string;
   /**
    * @type {string}
+   * @token Warning-6
+   * @description 标签警告色undefined图标字体颜色
+   */
+  tagWarningFillIconFontColor: string;
+  /**
+   * @type {string}
+   * @token Danger-6
+   * @description 标签危险色图标字体颜色
+   */
+  tagDangerIconFontColor: string;
+  /**
+   * @type {string}
    * @token Danger-3
    * @description 标签危险色图标禁用状态的字体颜色
    */
@@ -1622,6 +1652,12 @@ export interface TagTokens {
    * @description 标签危险色图标鼠标移入时的背景颜色
    */
   tagDangerIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Magenta-6
+   * @description 标签洋红色图标字体颜色
+   */
+  tagMagentaIconFontColor: string;
   /**
    * @type {string}
    * @token Magenta-3
@@ -1636,6 +1672,12 @@ export interface TagTokens {
   tagMagentaIconHoverBackgroundColor: string;
   /**
    * @type {string}
+   * @token Orange-6
+   * @description 标签橘黄色图标字体颜色
+   */
+  tagOrangeIconFontColor: string;
+  /**
+   * @type {string}
    * @token Orange-3
    * @description 标签橘黄色图标禁用状态的字体颜色
    */
@@ -1646,6 +1688,12 @@ export interface TagTokens {
    * @description 标签橘黄色图标鼠标移入时的背景颜色
    */
   tagOrangeIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Purple-6
+   * @description 标签紫色图标字体颜色
+   */
+  tagPurpleIconFontColor: string;
   /**
    * @type {string}
    * @token Purple-3
@@ -1660,6 +1708,12 @@ export interface TagTokens {
   tagPurpleIconHoverBackgroundColor: string;
   /**
    * @type {string}
+   * @token Indigo-6
+   * @description 标签靛蓝色图标字体颜色
+   */
+  tagIndigoIconFontColor: string;
+  /**
+   * @type {string}
    * @token Indigo-3
    * @description 标签靛蓝色图标禁用状态的字体颜色
    */
@@ -1670,6 +1724,12 @@ export interface TagTokens {
    * @description 标签靛蓝色图标鼠标移入时的背景颜色
    */
   tagIndigoIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Cyan-6
+   * @description 标签青色图标字体颜色
+   */
+  tagCyanIconFontColor: string;
   /**
    * @type {string}
    * @token Cyan-3
@@ -1684,6 +1744,12 @@ export interface TagTokens {
   tagCyanIconHoverBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neon-6
+   * @description 标签荧光色图标字体颜色
+   */
+  tagNeonIconFontColor: string;
+  /**
+   * @type {string}
    * @token Neon-3
    * @description 标签荧光色图标禁用状态的字体颜色
    */
@@ -1696,6 +1762,12 @@ export interface TagTokens {
   tagNeonIconHoverBackgroundColor: string;
   /**
    * @type {string}
+   * @token Lemon-6
+   * @description 标签柠檬色图标字体颜色
+   */
+  tagLemonIconFontColor: string;
+  /**
+   * @type {string}
    * @token Lemon-3
    * @description 标签柠檬色图标禁用状态的字体颜色
    */
@@ -1706,6 +1778,12 @@ export interface TagTokens {
    * @description 标签柠檬色图标鼠标移入时的背景颜色
    */
   tagLemonIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Tangerine-6
+   * @description 标签橘红色图标字体颜色
+   */
+  tagTangerineIconFontColor: string;
   /**
    * @type {string}
    * @token Tangerine-3

@@ -34,8 +34,12 @@ const tabsTokenValue = {
     background: { color: 'Neutral-fill-1' },
     border: { color: '' },
   },
-  hover: { font: { color: '' }, background: { color: 'Neutral-fill-3' }, border: { color: '' } },
-  disabled: { font: { color: 'Neutral-text-2' }, background: { color: '' }, border: { color: '' } },
+  hover: { font: { color: '' }, background: { color: 'Neutral-fill-2' }, border: { color: '' } },
+  disabled: {
+    font: { color: 'Neutral-text-2' },
+    background: { color: 'Neutral-fill-1' },
+    border: { color: '' },
+  },
   click: { font: { color: '' }, background: { color: 'Neutral-fill-4' }, border: { color: '' } },
   tab: {
     padding: { x: 'Padding-16', y: 'Padding-9' },
@@ -44,12 +48,14 @@ const tabsTokenValue = {
   },
   nearly: { margin: 'Margin-4' },
   line: {
-    padding: { x: 'Padding-8', y: 'Padding-5' },
+    padding: { x: 'Padding-8', y: 'Padding-4' },
     inner: { padding: { x: 'Padding-8', y: 'Padding-3' } },
   },
   fill: {
     padding: { x: 'Padding-4', y: 'Padding-4' },
-    inner: { padding: { x: 'Padding-16', y: 'Padding-5' } },
+    inner: {
+      padding: { x: 'Padding-16', y: 'Padding-5' },
+    },
   },
   split: { border: { color: 'Neutral-border-2' } },
   action: {
@@ -58,7 +64,20 @@ const tabsTokenValue = {
   },
 };
 
-const tabsTokenExtraValue = {};
+const tabsTokenExtraValue = {
+  extra: {
+    fill: {
+      hover: {
+        background: { color: 'Neutral-fill-3' },
+      },
+    },
+  },
+  card: {
+    disabled: {
+      background: { color: 'Neutral-fill-2' },
+    },
+  },
+};
 
 module.exports = {
   tabsTokenValue,

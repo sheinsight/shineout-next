@@ -57,6 +57,10 @@ const tag = (type: TagType) => ({
       },
     },
 
+    '& $closeIcon': {
+      fill: Token[`tag${type}IconFontColor`],
+    },
+
     '&$disabled': {
       color: Token[`tag${type}DisabledFontColor`],
       backgroundColor: Token[`tag${type}DisabledBackgroundColor`],
@@ -168,7 +172,7 @@ const TagStyle: JsStyles<TagClass> = {
     padding: `${Token.tagPaddingY} ${Token.tagPaddingX}`,
     fontSize: Token.tagFontSize,
     borderRadius: Token.tagBorderRadius,
-    cursor: 'pointer',
+    // cursor: 'pointer',
     boxSizing: 'border-box',
     lineHeight: `calc(${Token.tagFontSize} + 4px)`,
     '& + &': {
@@ -213,6 +217,9 @@ const TagStyle: JsStyles<TagClass> = {
 
   disabled: {
     cursor: 'not-allowed',
+    '& $closeIcon': {
+      cursor: 'not-allowed',
+    },
   },
 
   closeIcon: {
@@ -220,6 +227,7 @@ const TagStyle: JsStyles<TagClass> = {
     alignItems: 'center',
     height: '100%',
     display: 'inline-flex',
+    cursor: 'pointer',
     '& span': {
       width: 14,
       height: 14,

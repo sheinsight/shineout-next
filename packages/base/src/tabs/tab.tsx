@@ -71,6 +71,7 @@ const Tab = (props: TabProps, ref: any) => {
         jssStyle={{ button: buttonStyle }}
         {...getStateProps()}
         style={style}
+        disabled={disabled}
         type={isActive ? 'primary' : 'secondary'}
         onClick={handleClick}
       >

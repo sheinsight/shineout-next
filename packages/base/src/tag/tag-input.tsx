@@ -4,7 +4,7 @@ import { TagClasses, TagInputProps } from './tag.type';
 import Input from '../input/simple-input';
 
 const TagInput = (props: TagInputProps) => {
-  const { value, onBlur, onChange, onEnterPress, onFocus, onKeyUp, jssStyle } = props;
+  const { value, size, style, onBlur, onChange, onEnterPress, onFocus, onKeyUp, jssStyle } = props;
 
   const tagStyle = jssStyle?.tag?.() || ({} as TagClasses);
 
@@ -45,6 +45,8 @@ const TagInput = (props: TagInputProps) => {
   return (
     <Input
       {...controlProps}
+      size={size}
+      style={style}
       inputRef={inputRef}
       className={classNames(tagStyle.input)}
       jssStyle={jssStyle}

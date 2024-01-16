@@ -5,14 +5,11 @@ import { INTERNAL_Snapshot as Snapshot } from 'valtio/vanilla';
 import { LanType, Direction } from './locale/Props';
 
 export interface ConfigOption {
-  // cssModule: boolean;
-  // prefix: string;
+  prefix: string;
   locale: LanType;
-  // autoSSL: boolean;
-  // delay?: number;
-  // scrollRatio?: number;
-  // trim?: boolean;
-  // spin?: string;
+  delay?: number;
+  trim?: boolean;
+  spin?: string;
   caret?: CaretType;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
@@ -25,11 +22,14 @@ try {
   processEnv = {};
 }
 export let config: ConfigOption = {
-  popupContainer: undefined,
-  caret: 'line',
+  prefix: 'so',
   locale: (processEnv.LOCALE as LanType) || 'zh-CN',
+  delay: 0,
+  trim: undefined,
+  spin: undefined,
+  caret: 'line',
   direction: 'ltr',
-  // prefix: 'so',
+  popupContainer: null,
 };
 
 const state = proxy(config);

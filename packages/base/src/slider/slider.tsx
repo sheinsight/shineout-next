@@ -59,6 +59,7 @@ const Slider = <Value extends number | number[]>(props: SliderProps<Value>) => {
             sliderClasses?.indicator,
             position === 0 ? sliderClasses?.indicatorStart : sliderClasses?.indicatorEnd,
             dragIndex === position && sliderClasses?.indicatorActive,
+            tipType === 'hover' && sliderClasses?.indicatorHover,
           )}
         />
         {renderIndicatorValue(position)}
