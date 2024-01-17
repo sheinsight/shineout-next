@@ -8,5 +8,5 @@
 import { Input } from 'shineout';
 
 export default () => {
-  return <Input placeholder='input something' tip={'please input something'} />;
+  return <Input width={300} placeholder='input something' tip={'please input something'} />;
 };

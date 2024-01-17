@@ -8,6 +8,6 @@
 import React from 'react';
 import { Input } from 'shineout';
 
-const App: React.FC = () => <Input.Number />;
+const App: React.FC = () => <Input.Number width={300} />;
 
 export default App;

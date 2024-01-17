@@ -9,6 +9,6 @@
 import React from 'react';
 import { Input } from 'shineout';
 
-const App: React.FC = () => <Input placeholder='input something' clearable />;
+const App: React.FC = () => <Input width={300} placeholder='input something' clearable />;
 
 export default App;
