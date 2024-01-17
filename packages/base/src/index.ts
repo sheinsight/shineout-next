@@ -5,6 +5,7 @@ export * from './card';
 export * from './card-group';
 export * from './carousel';
 export * from './checkbox';
+export * from './collapse';
 export * from './config';
 export * from './date-picker';
 export * from './descriptions';
@@ -44,6 +45,7 @@ export * from './transfer';
 export * from './tree';
 export * from './tree-select';
 export * from './upload';
+export * from './collapse';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';

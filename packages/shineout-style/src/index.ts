@@ -41,6 +41,7 @@ export * from './tree';
 export * from './tree-select';
 export * from './upload';
 export * from './virtual-scroll';
+export * from './collapse';
 
 export { styled, StyleProvider } from './jss-style';
 export * as mixins from './mixin';
