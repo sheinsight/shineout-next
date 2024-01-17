@@ -9,11 +9,11 @@ import { Form, Input } from 'shineout';
 
 const App: React.FC = () => (
   <Form inline labelWidth={65}>
-    <Form.Item label='Email'>
+    <Form.Item label='Email' style={{ marginBottom: 0 }}>
       <Input name='email' />
     </Form.Item>
 
-    <Form.Item label='password'>
+    <Form.Item label='password' style={{ marginBottom: 0 }}>
       <Input name='password' placeholder='Password' type='password' />
     </Form.Item>
 

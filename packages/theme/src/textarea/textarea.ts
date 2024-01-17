@@ -23,7 +23,7 @@ const textareaTokens: TextareaTokens = {
   textareaFocusShadow: 'Brand-2',
   textareaDisabledFontColor: 'Neutral-text-2',
   textareaDisabledPlaceholderColor: 'Neutral-text-2',
-  textareaDisabledBorderColor: 'Neutral-border-2',
+  textareaDisabledBorderColor: 'Neutral-border-1',
   textareaDisabledBackgroundColor: 'Neutral-fill-2',
   textareaErrorBorderColor: 'Danger-6',
   textareaErrorFocusShadow: 'Danger-1',

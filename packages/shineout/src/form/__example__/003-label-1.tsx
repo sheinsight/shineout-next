@@ -28,7 +28,7 @@ export default () => {
           <Input name='password' type='password' />
         </Form.Item>
 
-        <Form.Item label=''>
+        <Form.Item label='' style={{ marginTop: align === 'top' ? -10 : 32 }}>
           <Form.Submit>Submit</Form.Submit>
         </Form.Item>
       </Form>

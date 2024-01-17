@@ -118,7 +118,7 @@ export interface TextareaTokens {
   textareaDisabledPlaceholderColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-2
+   * @token Neutral-border-1
    * @description undefined禁用时的边框颜色
    */
   textareaDisabledBorderColor: string;

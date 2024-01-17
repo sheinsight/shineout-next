@@ -118,11 +118,13 @@ const App: React.FC = () => {
           keygen={(d) => d}
           data={['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet']}
           defaultValue={[]}
+          renderItem={(d) => <div style={{ width: 40 }}>{d}</div>}
+          style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'space-between' }}
           rules={[rules.required('At least select one favorite color'), rules.min(2), rules.max(3)]}
         />
       </Form.Item>
 
-      <Form.Item label=''>
+      <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
         <Form.Button>Sumbit</Form.Button>
         <Form.Reset>Reset</Form.Reset>
         <Button onClick={validFields}>Validate Some Field</Button>

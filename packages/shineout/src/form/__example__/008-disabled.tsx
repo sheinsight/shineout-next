@@ -34,7 +34,7 @@ const App: React.FC = () => (
     <Form.Item label='address'>
       <Textarea rows={2} name='address' defaultValue='xxx' />
     </Form.Item>
-    <Form.Item label=''>
+    <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
       <Form.Submit loading>Submit</Form.Submit>
       <Form.Reset>Reset</Form.Reset>
     </Form.Item>
