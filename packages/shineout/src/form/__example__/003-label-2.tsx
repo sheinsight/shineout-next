@@ -30,7 +30,7 @@ export default () => {
         <Form.Item label='Your Address'>
           <Textarea name='address' />
         </Form.Item>
-        <Form.Item label=''>
+        <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
           <Form.Submit>Submit</Form.Submit>
         </Form.Item>
       </Form>

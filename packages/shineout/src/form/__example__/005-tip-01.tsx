@@ -13,7 +13,11 @@ const App: React.FC = () => (
       <Input name='email' />
     </Form.Item>
 
-    <Form.Item label='Password' tip='Use at least one letter, one numeral, and seven characters.'>
+    <Form.Item
+      label='Password'
+      tip='Use at least one letter, one numeral, and seven characters.'
+      style={{ marginBottom: 0 }}
+    >
       <Input name='password' type='password' />
     </Form.Item>
   </Form>

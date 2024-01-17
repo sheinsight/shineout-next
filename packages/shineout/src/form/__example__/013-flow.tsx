@@ -92,7 +92,7 @@ const App: React.FC = () => (
       </Form.Flow>
     </Form.Item>
 
-    <Form.Item label=''>
+    <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
       <Form.Button>Sumbit</Form.Button>
     </Form.Item>
   </Form>

@@ -49,7 +49,7 @@ const textareaTokenValue = {
   disabled: {
     font: { color: 'Neutral-text-2' },
     placeholder: { color: 'Neutral-text-2' },
-    border: { color: 'Neutral-border-2' },
+    border: { color: 'Neutral-border-1' },
     background: { color: 'Neutral-fill-2' },
     shadow: '',
     hover: {
