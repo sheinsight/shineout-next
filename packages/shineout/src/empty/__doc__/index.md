@@ -5,12 +5,12 @@ group: Other
 
 # Title
 
-Empty 标题
+Empty 空状态
 Empty
 
 # Describe
 
-Empty 描述
+空状态时的展示占位图
 Empty Describe
 
 # Example

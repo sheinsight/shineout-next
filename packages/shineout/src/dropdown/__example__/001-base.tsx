@@ -37,8 +37,8 @@ const data: DropdownItem[] = [
 const App: React.FC = () => {
   return (
     <>
-      <Dropdown placeholder='Dropdown' data={data} onClick={console.log} />
-      <Dropdown placeholder='Dropdown' data={data} disabled />
+      <Dropdown placeholder='Click me' data={data} onClick={console.log} />
+      <Dropdown placeholder='Click me' data={data} disabled />
     </>
   );
 };

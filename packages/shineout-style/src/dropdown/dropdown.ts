@@ -11,6 +11,7 @@ export type DropDownClass =
   | 'caret'
   | 'content'
   | 'button'
+  | 'itemWrapper'
   | 'item'
   | 'itemDisabled'
   | 'itemActive'
@@ -95,8 +96,12 @@ const dropdown: JsStyles<DropDownClass> = {
       display: 'flex',
     },
   },
+  itemWrapper: {
+    padding: '0 4px',
+  },
   item: {
     display: 'block',
+    borderRadius: 4,
     lineHeight: token.lineHeightDynamic,
     color: token.dropdownOptionFontColor,
     backgroundColor: token.dropdownOptionBackgroundColor,
