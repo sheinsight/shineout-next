@@ -410,7 +410,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
         },
 
       '& :not($pickerCellDisabled)$pickerCellActive $pickerCellContent': {
-        backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
+        // backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
       },
     },
   },
@@ -522,6 +522,9 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     },
     '& $pickerCellContent span': {
       minWidth: token.datePickerQuarterCellHotWidth,
+    },
+    '& $pickerCellContent': {
+      marginTop: 0,
     },
   },
   weekPicker: {
