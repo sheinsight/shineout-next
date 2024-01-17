@@ -22,6 +22,9 @@ import { CarouselTokens } from './carousel/type';
 import Checkbox from './checkbox';
 import { CheckboxTokens } from './checkbox/type';
 
+import Collapse from './collapse';
+import { CollapseTokens } from './collapse/type';
+
 import Common from './common';
 import { CommonTokens } from './common/type';
 
@@ -134,6 +137,7 @@ export type ThemeTokens = AlertTokens &
   CardGroupTokens &
   CarouselTokens &
   CheckboxTokens &
+  CollapseTokens &
   CommonTokens &
   DatePickerTokens &
   DescriptionsTokens &
@@ -178,6 +182,7 @@ const Tokens: ThemeTokens = {
   ...CardGroup,
   ...Carousel,
   ...Checkbox,
+  ...Collapse,
   ...Common,
   ...DatePicker,
   ...Descriptions,

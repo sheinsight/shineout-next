@@ -5,14 +5,22 @@ import { useContext } from 'react';
 import type { CardHeaderProps } from './card-header.type';
 
 const CardHeader = (props: CardHeaderProps) => {
+  const { align = 'right' } = props;
   const cardClasses = props.jssStyle?.card?.();
   const { onCollapse, handleDragMouseDown } = useContext(CardContext);
+
+  const footerClassName = classNames(
+    props.className,
+    align === 'center' && cardClasses?.center,
+    align === 'right' && cardClasses?.right,
+    cardClasses?.footer,
+  );
 
   return (
     <div
       onMouseDown={handleDragMouseDown}
       onClick={onCollapse}
-      className={classNames(props.className, cardClasses?.footer)}
+      className={footerClassName}
       style={props.style}
     >
       {props.children}

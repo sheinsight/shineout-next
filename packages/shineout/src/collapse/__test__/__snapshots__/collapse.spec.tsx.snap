@@ -1,0 +1,1310 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collapse[Base] should render correctly  1`] = `
+<div>
+  <div
+    class="so-collapse-wrapper"
+    style="max-width: 1180px;"
+  >
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 1
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper so-collapseItem-active"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 2
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content so-collapseItem-expanded"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: block;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper so-collapseItem-disabled"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="true"
+        tabindex="-1"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 3
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper so-collapseItem-active so-collapseItem-disabled"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="true"
+        tabindex="-1"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 4
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content so-collapseItem-expanded"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: block;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse[Base] should render correctly about accordion 1`] = `
+<div>
+  <div
+    class="so-collapse-wrapper"
+    style="max-width: 1180px;"
+  >
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 1
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 2
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 3
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 4
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse[Base] should render correctly about customize 1`] = `
+<div>
+  <div
+    class="so-collapse-wrapper"
+    style="max-width: 1180px;"
+  >
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289L18.7071 11.2929L18.7903 11.3871C19.0953 11.7794 19.0676 12.3466 18.7071 12.7071L12.7071 18.7071L12.6129 18.7903C12.2206 19.0953 11.6534 19.0676 11.2929 18.7071L11.2097 18.6129C10.9047 18.2206 10.9324 17.6534 11.2929 17.2929L15.8779 12.7072C16.2683 12.3165 16.2683 11.6835 15.8779 11.2928L11.2929 6.70711L11.2097 6.6129C10.9047 6.22061 10.9324 5.65338 11.2929 5.29289ZM5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12.7071 11.2929L12.7903 11.3871C13.0953 11.7794 13.0676 12.3466 12.7071 12.7071L6.70711 18.7071L6.6129 18.7903C6.22061 19.0953 5.65338 19.0676 5.29289 18.7071L5.2097 18.6129C4.90468 18.2206 4.93241 17.6534 5.29289 17.2929L9.87795 12.7072C10.2683 12.3165 10.2683 11.6835 9.87795 11.2928L5.29289 6.70711L5.2097 6.6129C4.90468 6.22061 4.93241 5.65338 5.29289 5.29289Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 1
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper so-collapseItem-active"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289L18.7071 11.2929L18.7903 11.3871C19.0953 11.7794 19.0676 12.3466 18.7071 12.7071L12.7071 18.7071L12.6129 18.7903C12.2206 19.0953 11.6534 19.0676 11.2929 18.7071L11.2097 18.6129C10.9047 18.2206 10.9324 17.6534 11.2929 17.2929L15.8779 12.7072C16.2683 12.3165 16.2683 11.6835 15.8779 11.2928L11.2929 6.70711L11.2097 6.6129C10.9047 6.22061 10.9324 5.65338 11.2929 5.29289ZM5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12.7071 11.2929L12.7903 11.3871C13.0953 11.7794 13.0676 12.3466 12.7071 12.7071L6.70711 18.7071L6.6129 18.7903C6.22061 19.0953 5.65338 19.0676 5.29289 18.7071L5.2097 18.6129C4.90468 18.2206 4.93241 17.6534 5.29289 17.2929L9.87795 12.7072C10.2683 12.3165 10.2683 11.6835 9.87795 11.2928L5.29289 6.70711L5.2097 6.6129C4.90468 6.22061 4.93241 5.65338 5.29289 5.29289Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 2
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content so-collapseItem-expanded"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: block;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289L18.7071 11.2929L18.7903 11.3871C19.0953 11.7794 19.0676 12.3466 18.7071 12.7071L12.7071 18.7071L12.6129 18.7903C12.2206 19.0953 11.6534 19.0676 11.2929 18.7071L11.2097 18.6129C10.9047 18.2206 10.9324 17.6534 11.2929 17.2929L15.8779 12.7072C16.2683 12.3165 16.2683 11.6835 15.8779 11.2928L11.2929 6.70711L11.2097 6.6129C10.9047 6.22061 10.9324 5.65338 11.2929 5.29289ZM5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12.7071 11.2929L12.7903 11.3871C13.0953 11.7794 13.0676 12.3466 12.7071 12.7071L6.70711 18.7071L6.6129 18.7903C6.22061 19.0953 5.65338 19.0676 5.29289 18.7071L5.2097 18.6129C4.90468 18.2206 4.93241 17.6534 5.29289 17.2929L9.87795 12.7072C10.2683 12.3165 10.2683 11.6835 9.87795 11.2928L5.29289 6.70711L5.2097 6.6129C4.90468 6.22061 4.93241 5.65338 5.29289 5.29289Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 3
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse[Base] should render correctly about extra 1`] = `
+<div>
+  <div
+    class="so-collapse-wrapper"
+    style="max-width: 1180px;"
+  >
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 1
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper so-collapseItem-active"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 2
+        </div>
+        <div
+          class="so-collapseItem-extra"
+        >
+          <div
+            class="so-checkbox-wrapper"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="checkbox"
+            />
+            <span
+              class="so-checkbox-indicator-wrapper"
+            >
+              <i
+                class="so-checkbox-indicator"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="so-checkbox-desc"
+            >
+              checkbox
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content so-collapseItem-expanded"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: block;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 3
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse[Base] should render correctly about icon 1`] = `
+<div>
+  <div
+    class="so-radio-group"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        left
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        right
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        none
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-radio-group"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        header
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        icon
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        disabled
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-collapse-wrapper"
+    style="max-width: 1180px;"
+  >
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 1
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 2
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 3
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse[Base] should render correctly about nested panels 1`] = `
+<div>
+  <div
+    class="so-collapse-wrapper"
+    style="max-width: 1180px;"
+  >
+    <div
+      class="so-collapseItem-wrapper so-collapseItem-active"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 1
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content so-collapseItem-expanded"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: block;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          <div
+            class="so-collapse-wrapper"
+          >
+            <div
+              class="so-collapseItem-wrapper so-collapseItem-active"
+            >
+              <div
+                class="so-collapseItem-header so-collapseItem-region"
+                data-soui-disabled="false"
+                tabindex="0"
+              >
+                <div
+                  class="so-collapseItem-icon so-collapseItem-active-transform"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="so-collapseItem-title"
+                >
+                  This is panel nest header 2
+                </div>
+              </div>
+              <div
+                class="so-collapseItem-content so-collapseItem-expanded"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="collapse"
+                style="display: block;"
+              >
+                <div
+                  class="so-collapseItem-content-main"
+                >
+                  Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+                </div>
+              </div>
+            </div>
+            <div
+              class="so-collapseItem-wrapper"
+            >
+              <div
+                class="so-collapseItem-header so-collapseItem-region"
+                data-soui-disabled="false"
+                tabindex="0"
+              >
+                <div
+                  class="so-collapseItem-icon so-collapseItem-active-transform"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="so-collapseItem-title"
+                >
+                  This is panel nest header 3
+                </div>
+              </div>
+              <div
+                class="so-collapseItem-content"
+                data-sheinx-animation-duration="fast"
+                data-sheinx-animation-type="collapse"
+                style="display: none;"
+              >
+                <div
+                  class="so-collapseItem-content-main"
+                >
+                  Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 2
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 3
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 4
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapse[Base] should render correctly about simple panel 1`] = `
+<div>
+  <div
+    class="so-collapse-wrapper so-collapse-border-less"
+    style="max-width: 1180px;"
+  >
+    <div
+      class="so-collapseItem-wrapper so-collapseItem-active so-collapseItem-border-less"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 1
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content so-collapseItem-expanded"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: block;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper so-collapseItem-border-less"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 2
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+    <div
+      class="so-collapseItem-wrapper so-collapseItem-border-less"
+    >
+      <div
+        class="so-collapseItem-header so-collapseItem-region"
+        data-soui-disabled="false"
+        tabindex="0"
+      >
+        <div
+          class="so-collapseItem-icon so-collapseItem-active-transform"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+        <div
+          class="so-collapseItem-title"
+        >
+          This is panel header 3
+        </div>
+      </div>
+      <div
+        class="so-collapseItem-content"
+        data-sheinx-animation-duration="fast"
+        data-sheinx-animation-type="collapse"
+        style="display: none;"
+      >
+        <div
+          class="so-collapseItem-content-main"
+        >
+          Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
