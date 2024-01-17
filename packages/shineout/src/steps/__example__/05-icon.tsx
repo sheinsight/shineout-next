@@ -28,7 +28,6 @@ export default () => {
         <Steps.Step title='Step2' />
         <Steps.Step title='Step3' />
         <Steps.Step title='Step4' />
-        <Steps.Step title='Step5' />
       </Steps>
     </div>
   );
