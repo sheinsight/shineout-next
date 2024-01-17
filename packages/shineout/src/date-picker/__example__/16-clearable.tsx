@@ -19,11 +19,8 @@ const App: React.FC = () => {
         value={value}
         clearWithUndefined
         onChange={setValue}
-        style={{ marginBottom: 8 }}
+        style={{ marginBottom: 16 }}
       />
-
-      <br />
-
       <Input.Group style={{ width: 150 }} disabled>
         <b>Value</b>
         <Input value={String(value)} />
