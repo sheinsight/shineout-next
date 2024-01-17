@@ -1,5 +1,5 @@
 /**
- * cn - 组合
+ * cn - 组合下拉
  *    -- 在 Button.Group 中组合使用，通常用于隐藏一组按钮中不太常用的选项
  * en - Group
  *    -- Dropdown can be combined with Button used in Button.Group.
@@ -35,11 +35,10 @@ const App: React.FC = () => (
         onClick={(data: any) => console.info(`The Dropdown clicked ${data.content}.`)}
       />
     </Button.Group>
-    <Button.Group outline type={'secondary'} style={{ display: 'inline-block' }}>
-      <Button disabled>Option</Button>
-      <Button disabled>Option</Button>
+    <Button.Group type={'secondary'} style={{ display: 'inline-block' }}>
+      <Button>Option</Button>
+      <Button>Option</Button>
       <Dropdown
-        disabled
         data={menu}
         position='bottom-right'
         onClick={(data: any) => console.info(`The Dropdown clicked ${data.content}.`)}

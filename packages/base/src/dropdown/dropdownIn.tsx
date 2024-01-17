@@ -158,7 +158,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
       return (
         <React.Fragment key={index}>
           {group}
-          {context}
+          <div className={dropdownClasses?.itemWrapper}>{context}</div>
           {divider}
         </React.Fragment>
       );
@@ -186,6 +186,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         parentElement={targetRef.current}
         absolute={absolute}
         fixedWidth={'min'}
+        popupGap={6}
         popupEl={popupRef.current}
         adjust={!isSub}
       >
