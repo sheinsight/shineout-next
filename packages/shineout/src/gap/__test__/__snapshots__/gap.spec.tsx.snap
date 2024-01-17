@@ -235,194 +235,56 @@ exports[`Gap[Base] should render correctly about align 1`] = `
 
 exports[`Gap[Base] should render correctly about custom 1`] = `
 <div
-  style="margin-bottom: -12px; margin-right: -20px; width: 400px;"
+  style="display: flex; align-items: center;"
 >
   <div
-    style="margin-bottom: 12px; margin-right: 20px;"
+    style="width: 80px;"
   >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      0
-    </button>
+    column:
   </div>
   <div
-    style="margin-bottom: 12px; margin-right: 20px;"
-  >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      1
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 12px; margin-right: 20px;"
-  >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      2
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 12px; margin-right: 20px;"
-  >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      3
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 12px; margin-right: 20px;"
-  >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      4
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 12px; margin-right: 20px;"
-  >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      5
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 12px; margin-right: 20px;"
-  >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      6
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 12px; margin-right: 20px;"
-  >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      7
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 12px; margin-right: 20px;"
-  >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      8
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 12px; margin-right: 20px;"
-  >
-    <button
-      class="so-button-primary so-button-button"
-      type="button"
-    >
-      <span>
-        Item
-      </span>
-      9
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Gap[Base] should render correctly about split 1`] = `
-<div
-  style="margin-bottom: -8px; margin-right: -8px; width: 400px; align-items: center;"
->
-  <div
-    style="margin-bottom: 8px; margin-right: 8px;"
-  >
-    <button
-      class="so-button-primary so-button-button so-button-text"
-      type="button"
-    >
-      <span>
-        tag0
-      </span>
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 8px; margin-right: 8px;"
+    class="so-slider-wrapper"
+    style="flex: 1;"
   >
     <div
-      class="so-divider-wrapper so-divider-vertical"
-    />
-  </div>
-  <div
-    style="margin-bottom: 8px; margin-right: 8px;"
-  >
-    <button
-      class="so-button-primary so-button-button so-button-text"
-      type="button"
+      class="so-slider-track"
     >
-      <span>
-        tag1
-      </span>
-    </button>
-  </div>
-  <div
-    style="margin-bottom: 8px; margin-right: 8px;"
-  >
+      <div
+        class="so-slider-track-inner"
+        style="left: 0%; right: 92%;"
+      >
+        <div
+          class="so-slider-indicator so-slider-indicator-end"
+        />
+        <div
+          class="so-slider-end-value so-slider-value"
+        >
+          8
+        </div>
+      </div>
+    </div>
     <div
-      class="so-divider-wrapper so-divider-vertical"
-    />
-  </div>
-  <div
-    style="margin-bottom: 8px; margin-right: 8px;"
-  >
-    <button
-      class="so-button-primary so-button-button so-button-text"
-      type="button"
+      class="so-slider-scale-wrapper"
     >
-      <span>
-        tag2
-      </span>
-    </button>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          0
+        </div>
+      </div>
+      <div
+        class="so-slider-scale"
+      >
+        <div
+          class="so-slider-label"
+        >
+          100
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
