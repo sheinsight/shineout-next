@@ -18,11 +18,10 @@ const StarRate = Rate(star, star);
 
 const App: React.FC = () => (
   <div>
-    <StarRate size={16} />
-    <br />
-    <StarRate size={24} style={{ marginTop: 24 }} />
-    <br />
-    <StarRate size={40} style={{ marginTop: 24 }} />
+    <div style={{ marginBottom: 8 }}>16px</div>
+    <StarRate size={16} style={{ marginBottom: 32 }} />
+    <div style={{ marginBottom: 8 }}>24px</div>
+    <StarRate size={24} />
   </div>
 );
 
