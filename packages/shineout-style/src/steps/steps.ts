@@ -361,6 +361,10 @@ const stepsStyle: JsStyles<StepsClassType> = {
   },
   dot: {
     '&$vertical': {
+      '& $step': {
+        overflow: 'visible',
+      },
+
       '& $title': {
         marginTop: 0,
       },
@@ -374,8 +378,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
         },
       },
       '& $tail': {
-        top: 7,
-        paddingTop: 27,
+        top: 26,
+        paddingTop: 0,
+        paddingBottom: 25,
         '&:after': {
           width: 1,
         },
@@ -436,6 +441,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
       overflow: 'hidden',
     },
     '& $step': {
+      marginRight: 4,
+      paddingLeft: Token.stepsArrowPaddingX,
       // before
       '&:before': {
         content: '""',
@@ -468,16 +475,34 @@ const stepsStyle: JsStyles<StepsClassType> = {
         display: 'none',
       },
     },
-    '& $step:last-child': {
-      '&:after': {
-        display: 'none',
-      },
-    },
     '& $step:first-child': {
+      padding: 0,
       '&:before': {
         display: 'none',
       },
+      '&$widthDescription': {
+        '&:after': {
+          borderLeftWidth: 26,
+          borderTopWidth: 32,
+          borderBottomWidth: 32,
+          right: -26,
+        },
+      },
     },
+    '& $step:last-child': {
+      paddingRight: 0,
+      '&:after': {
+        display: 'none',
+      },
+      '&$widthDescription': {
+        '&:before': {
+          borderLeftWidth: 26,
+          borderTopWidth: 32,
+          borderBottomWidth: 32,
+        },
+      },
+    },
+
     '& $description': {
       paddingRight: 0,
       height: 20,
@@ -493,12 +518,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $finish': {
       backgroundColor: Token.stepsFinishBackgroundColor,
       '&:after': {
-        // borderLeft: `16px solid ${Token.stepsFinishBackgroundColor}`,
-        // borderTop: `20px solid transparent`,
-        // borderBottom: `20px solid transparent`,
-        borderLeftColor: Token.stepsFinishBackgroundColor,
-        borderTopColor: 'transparent',
-        borderBottomColor: 'transparent',
+        borderLeft: `16px solid ${Token.stepsFinishBackgroundColor}`,
+        borderTop: `20px solid transparent`,
+        borderBottom: `20px solid transparent`,
       },
       '&:before': {
         // borderLeft: `16px solid #ffffff`,
@@ -540,17 +562,24 @@ const stepsStyle: JsStyles<StepsClassType> = {
       },
     },
     '& $widthDescription': {
+      '& $content,$description': {
+        textAlign: 'left',
+      },
+
+      '& $title': {
+        marginBottom: Token.stepsDescriptionTitleMarginX,
+      },
       '&$process,$finish,$wait': {
         '&:after': {
-          borderLeftWidth: 24,
-          borderTopWidth: 30,
-          borderBottomWidth: 30,
-          right: -24,
+          borderLeftWidth: 26,
+          borderTopWidth: 32,
+          borderBottomWidth: 32,
+          right: -26,
         },
         '&:before': {
-          borderLeftWidth: 24,
-          borderTopWidth: 30,
-          borderBottomWidth: 30,
+          borderLeftWidth: 26,
+          borderTopWidth: 32,
+          borderBottomWidth: 32,
         },
       },
     },
