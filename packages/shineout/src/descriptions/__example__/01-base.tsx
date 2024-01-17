@@ -1,8 +1,8 @@
 /**
  * cn - 基本用法
- *    --
+ *    -- 描述列表的基本样式
  * en - Basic
- *    --
+ *    -- Basic usage of Descriptions
  */
 import React from 'react';
 import { Descriptions } from 'shineout';

@@ -21,8 +21,8 @@ export interface StickyProps extends Pick<CommonType, 'className' | 'style'> {
   bottom?: number;
 
   /**
-   * @en Attached target. the default is the document.body. You can pass in an HTMLElement or css selector, and the target must be an ancestor node of the Sticky component.
-   * @cn 附着的目标，默认为 document.body。可以传入 HTMLElement 或者 css selector，target 必须为 Sticky 组件的祖先节点
+   * @en Custom attachment target. You can pass in HTMLElement or css selector. The target must be an ancestor node of the Sticky component
+   * @cn 自定义附着的目标。可以传入 HTMLElement 或者 css selector，target 必须为 Sticky 组件的祖先节点
    */
   target?: string | HTMLElement | null;
 

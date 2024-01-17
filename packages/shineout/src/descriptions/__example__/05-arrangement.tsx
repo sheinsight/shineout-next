@@ -1,8 +1,8 @@
 /**
  * cn - 不同排列模式
- *    --
+ *    -- 可以通过tableLayout='fixed'设置等宽，通过layout设置不同的排列方式，设置border是否显示边框
  * en - Arrangement
- *    --
+ *    -- You can set the same width by tableLayout='fixed', and set different arrangement by layout, set border to show border
  */
 import React from 'react';
 import { Descriptions } from 'shineout';
@@ -35,31 +35,30 @@ export default () => {
     <div>
       <Descriptions
         items={data}
-        title='User Info'
+        title='fixed + horizontal'
         colon={` :`}
-        labelStyle={{ textAlign: 'right' }}
         layout='horizontal'
         tableLayout='fixed'
         style={{ marginBottom: '24px' }}
       />
       <Descriptions
         items={data}
-        title='User Info'
-        layout='horizontal'
+        title='fixed + vertical'
+        layout='vertical'
         colon={` :`}
         tableLayout='fixed'
         style={{ marginBottom: '24px' }}
       />
       <Descriptions
         items={data}
-        title='User Info'
+        title='fixed + inlineHorizontal'
         colon={` :`}
         tableLayout='fixed'
         style={{ marginBottom: '24px' }}
       />
       <Descriptions
         items={data}
-        title='User Info'
+        title='fixed + inlineVertical'
         colon={` :`}
         layout='inlineVertical'
         tableLayout='fixed'
@@ -67,12 +66,18 @@ export default () => {
       />
       <Descriptions
         items={data}
-        title='User Info'
+        title='Border + inlineHorizontal'
         colon={` :`}
         border
         style={{ marginBottom: '24px' }}
       />
-      <Descriptions items={data} title='User Info' colon={` :`} layout='inlineVertical' border />
+      <Descriptions
+        items={data}
+        title='Border + inlineVertical'
+        colon={` :`}
+        layout='inlineVertical'
+        border
+      />
     </div>
   );
 };

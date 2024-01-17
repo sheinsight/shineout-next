@@ -23,6 +23,8 @@ export interface CardClasses {
   resizeX: string;
   resizeY: string;
   resizeXY: string;
+  center: string;
+  right: string;
 }
 
 export interface CardJssStyle {

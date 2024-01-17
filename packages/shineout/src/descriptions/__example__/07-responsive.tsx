@@ -1,8 +1,8 @@
 /**
  * cn - 响应式排列
- *    --
+ *    -- 支持响应式排列
  * en - Responsive
- *    --
+ *    -- Responsive arrangement
  */
 import React from 'react';
 import { Descriptions } from 'shineout';
