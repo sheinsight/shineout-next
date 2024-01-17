@@ -39,45 +39,41 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
+  const calculateOffset = (
+    scrollOffsetValue: number,
+    currentOffsetValue: number,
+    currentOffsetValueOther: number,
+    isAdditon: boolean = true,
+  ) => {
+    let nextOffset = scrollOffsetValue;
+    const startOffset = isAdditon
+      ? scrollOffsetValue - currentOffsetValue
+      : scrollOffsetValue + currentOffsetValue;
+    if (currentOffsetValue < 0 || currentOffsetValueOther > 0) {
+      nextOffset = startOffset;
+    }
+    return nextOffset;
+  };
+
   useEffect(() => {
     if (!shouldScroll) return;
     const getActiveTabOffest = () => {
       const currentTab = tabRef.current[active!];
-      if (!currentTab) return 0;
-      if (!headerRef.current) return 0;
-      if (!scrollRef.current) return 0;
+      if (!currentTab || !headerRef.current || !scrollRef.current) return 0;
+
       const currentOffest = getRectDiff(currentTab, headerRef.current);
       const scrollOffest = getRectDiff(scrollRef.current, headerRef.current);
+
       if (['top-right', 'bottom-right'].includes(getPosition!)) {
-        let nextOffset = scrollOffest.right;
-        const startOffset = scrollOffest.right - currentOffest.left;
-        if (currentOffest.left < 0 || currentOffest.right > 0) {
-          nextOffset = startOffset;
-        }
-        return -nextOffset;
+        return -calculateOffset(scrollOffest.right, currentOffest.left, currentOffest.right);
       }
       if (['left-top', 'right-top'].includes(getPosition!)) {
-        let nextOffset = -scrollOffest.top;
-        const startOffset = -scrollOffest.top + currentOffest.top;
-        if (currentOffest.top < 0 || currentOffest.bottom > 0) {
-          nextOffset = startOffset;
-        }
-        return nextOffset;
+        return calculateOffset(-scrollOffest.top, currentOffest.top, currentOffest.bottom, false);
       }
       if (['left-bottom', 'right-bottom'].includes(getPosition!)) {
-        let nextOffset = scrollOffest.bottom;
-        const startOffset = scrollOffest.bottom - currentOffest.top;
-        if (currentOffest.top < 0 || currentOffest.bottom > 0) {
-          nextOffset = startOffset;
-        }
-        return -nextOffset;
+        return -calculateOffset(scrollOffest.bottom, currentOffest.top, currentOffest.bottom);
       }
-      let nextOffset = -scrollOffest.left;
-      const startOffset = -scrollOffest.left + currentOffest.left;
-      if (currentOffest.left < 0 || currentOffest.right > 0) {
-        nextOffset = startOffset;
-      }
-      return nextOffset;
+      return calculateOffset(-scrollOffest.left, currentOffest.left, currentOffest.right, false);
     };
     setTransform(getActiveTabOffest());
   }, [active, tabRef.current, headerRef.current, scrollRef.current, shouldScroll]);

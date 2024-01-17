@@ -6,7 +6,7 @@ import mountTest from '../../tests/mountTest';
 import SliderBase from '../__example__/01-base';
 import SliderRange from '../__example__/02-range';
 import SliderScale from '../__example__/03-scale';
-import SliderInput from '../__example__/04-input';
+import SliderInput from '../__example__/04-01-input';
 import SliderFormat from '../__example__/05-format';
 import SliderStep from '../__example__/06-1-step';
 import SliderStepZero from '../__example__/06-2-step-0';
@@ -45,4 +45,5 @@ describe('Slider[Base]', () => {
     render(<Slider />);
     screen.debug();
   });
+  // valueTipType
 });
