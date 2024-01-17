@@ -842,28 +842,28 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FFF6EB'
+   * @default '#FFF3E2'
    * @description 浅色背景
    */
   'Warning-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#562409'
+   * @default '#4D1600'
    * @description -10
    */
   'Warning-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDE5B5'
+   * @default '#FDDFBA'
    * @description 聚焦
    */
   'Warning-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDD18B'
+   * @default '#FBC68D'
    * @description 禁用
    */
   'Warning-3': string;
@@ -877,35 +877,35 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDA344'
+   * @default '#F78C35'
    * @description 悬浮
    */
   'Warning-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#F7862A'
+   * @default '#F56C0A'
    * @description 常规
    */
   'Warning-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#CC641F'
+   * @default '#CB5206'
    * @description 点击
    */
   'Warning-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#A24916'
+   * @default '#A13A03'
    * @description -8
    */
   'Warning-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#7B3410'
+   * @default '#772601'
    * @description -9
    */
   'Warning-9': string;
