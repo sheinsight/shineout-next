@@ -39,6 +39,7 @@ export default createUseStyles(
         // position: 'relative',
         marginTop: 24,
         padding: 32,
+        overflow: 'auto',
         border: '1px solid rgba(232, 235, 240, 1)',
       },
       '& .action': {

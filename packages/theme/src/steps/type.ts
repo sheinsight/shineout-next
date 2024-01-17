@@ -10,6 +10,12 @@ export interface StepsTokens {
   stepsDescriptionFontColor: string;
   /**
    * @type {string}
+   * @token Margin-4
+   * @description 步骤条描述信息标题模式外边距（水平方向）
+   */
+  stepsDescriptionTitleMarginX: string;
+  /**
+   * @type {string}
    * @token Size-14
    * @description 步骤条图标宽度
    */

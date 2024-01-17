@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { StepsClasses } from '@sheinx/shineout-style';
+import { util } from '@sheinx/hooks';
 import { StepProps, BaseStepProps } from './step.type';
 import { StepsStatusType } from './steps.type';
 import StepsContext from './steps-context';
@@ -56,11 +57,20 @@ const Step = (props: StepProps) => {
     [styles.finish]: current > index,
     [styles.horizontalLabel]: labelPlacement === 'horizontal',
     [styles.verticalLabel]: labelPlacement === 'vertical',
+    [styles.widthDescription]: !!description,
   });
 
   const handleChange = (e: React.MouseEvent<HTMLElement>) => {
     onClick?.(e, index, id);
     onChange?.(index);
+  };
+
+  const renderTitle = () => {
+    if (util.isFunc(title)) {
+      return title(index, status);
+    }
+
+    return title;
   };
 
   const renderStep = () => {
@@ -80,7 +90,7 @@ const Step = (props: StepProps) => {
         status={status}
         size={size}
         index={index}
-        title={title}
+        title={renderTitle()}
         direction={direction}
         labelPlacement={labelPlacement}
         description={description}

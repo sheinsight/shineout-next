@@ -25,7 +25,7 @@ export default () => {
           <Steps.Step title='Pending' description='This is a description' />
         </Steps>
       </div>
-      <div>
+      <div style={{ minWidth: 700 }}>
         <Steps current={1} type='arrow' style={{ marginBottom: 32 }}>
           <Steps.Step title='Succeeded' />
           <Steps.Step title='Complete information' />

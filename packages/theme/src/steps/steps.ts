@@ -5,6 +5,7 @@ import { StepsTokens } from './type';
 
 const stepsTokens: StepsTokens = {
   stepsDescriptionFontColor: 'Neutral-text-3',
+  stepsDescriptionTitleMarginX: 'Margin-4',
   stepsIconWidth: 'Size-14',
   stepsIconHeight: 'Size-14',
   stepsIconFontSize: '16/regular',

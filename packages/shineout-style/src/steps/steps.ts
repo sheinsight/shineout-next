@@ -23,6 +23,7 @@ export type StepsClasses = {
   iconWrapper: string;
   dot: string;
   arrow: string;
+  widthDescription: string;
   default: string;
   click: string;
 };
@@ -139,17 +140,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
   },
   large: {
     '&$arrow': {
-      '& $step:not(:last-child)': {
-        '&:after': {
-          top: `calc((100% - ${Token.stepsLargeArrowHeight})/2)`,
-          width: Token.stepsLargeArrowHeight,
-          height: Token.stepsLargeArrowHeight,
-        },
-        '&:before': {
-          top: `calc((100% - ${Token.stepsLargeArrowHeight})/2)`,
-          width: Token.stepsLargeArrowHeight,
-          height: Token.stepsLargeArrowHeight,
-        },
+      '& $step': {
+        '&:after': {},
+        '&:before': {},
       },
       '& $content': {
         padding: `${Token.stepsLargeArrowPaddingY} ${Token.stepsLargeArrowPaddingX}`,
@@ -199,11 +192,12 @@ const stepsStyle: JsStyles<StepsClassType> = {
   vertical: {
     flexDirection: 'column',
     '& $content': {
-      minHeight: 64,
+      // minHeight: 64,
+      paddingBottom: 24,
     },
     '& $description': {
       marginTop: 4,
-      paddingBottom: 12,
+      // paddingBottom: 12,
     },
     '& $tail': {
       width: 1,
@@ -368,6 +362,10 @@ const stepsStyle: JsStyles<StepsClassType> = {
   },
   dot: {
     '&$vertical': {
+      '& $step': {
+        overflow: 'visible',
+      },
+
       '& $title': {
         marginTop: 0,
       },
@@ -381,8 +379,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
         },
       },
       '& $tail': {
-        top: 7,
-        paddingTop: 27,
+        top: 26,
+        paddingTop: 0,
+        paddingBottom: 25,
         '&:after': {
           width: 1,
         },
@@ -442,47 +441,69 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '&$steps': {
       overflow: 'hidden',
     },
-    '& $step': {},
+    '& $step': {
+      marginRight: 4,
+      paddingLeft: Token.stepsArrowPaddingX,
+      // before
+      '&:before': {
+        content: '""',
+        position: 'absolute',
+        width: 0,
+        height: 0,
+        left: 0,
+        top: 0,
+        borderLeftWidth: 16,
+        borderTopWidth: 20,
+        borderBottomWidth: 20,
+        borderLeftColor: '#ffffff',
+      },
+      // after
+      '&:after': {
+        content: '""',
+        position: 'absolute',
+        width: 0,
+        height: 0,
+        right: -16,
+        top: 0,
+        zIndex: 1,
+        borderLeftWidth: 16,
+        borderTopWidth: 20,
+        borderBottomWidth: 20,
+      },
+    },
     '&$horizontal': {
       '& $horizontalLabel $title:after': {
         display: 'none',
       },
     },
-    '& $step:last-child': {
-      marginRight: 0,
-    },
-    '& $step:not(:last-child)': {
-      marginRight: 4,
-      overflow: 'visible',
-      position: 'relative',
-      '&:after': {
-        zIndex: 1,
-        content: '""',
-        width: Token.stepsArrowHeight,
-        height: Token.stepsArrowHeight,
-        borderRadius: 4,
-        display: 'block',
-        position: 'absolute',
-        top: `calc((100% - ${Token.stepsArrowHeight})/2)`,
-        right: -30,
-        transform: 'rotate(45deg)',
-      },
+    '& $step:first-child': {
+      padding: 0,
       '&:before': {
-        zIndex: 2,
-        content: '""',
-        height: Token.stepsArrowHeight,
-        width: Token.stepsArrowHeight,
-        borderRadius: 4,
-        display: 'block',
-        position: 'absolute',
-        top: `calc((100% - ${Token.stepsArrowHeight})/2)`,
-        right: -26,
-        transform: 'rotate(45deg)',
+        display: 'none',
+      },
+      '&$widthDescription': {
+        '&:after': {
+          borderLeftWidth: 26,
+          borderTopWidth: 32,
+          borderBottomWidth: 32,
+          right: -26,
+        },
       },
     },
-    '& $step:not(:first-child)': {
-      paddingLeft: 30,
+    '& $step:last-child': {
+      paddingRight: 0,
+      '&:after': {
+        display: 'none',
+      },
+      '&$widthDescription': {
+        '&:before': {
+          borderLeftWidth: 26,
+          borderTopWidth: 32,
+          borderBottomWidth: 32,
+        },
+      },
     },
+
     '& $description': {
       paddingRight: 0,
       height: 20,
@@ -493,14 +514,19 @@ const stepsStyle: JsStyles<StepsClassType> = {
       padding: `${Token.stepsArrowPaddingY} ${Token.stepsArrowPaddingX}`,
       boxSizing: 'border-box',
       marginTop: 0,
+      width: '100%',
     },
     '& $finish': {
       backgroundColor: Token.stepsFinishBackgroundColor,
       '&:after': {
-        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,#fff 50% 75%,#fff 75%)`,
+        borderLeft: `16px solid ${Token.stepsFinishBackgroundColor}`,
+        borderTop: `20px solid transparent`,
+        borderBottom: `20px solid transparent`,
       },
       '&:before': {
-        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,${Token.stepsFinishBackgroundColor} 50% 75%,${Token.stepsFinishBackgroundColor} 75%)`,
+        // borderLeft: `16px solid #ffffff`,
+        // borderTop: `20px solid transparent`,
+        // borderBottom: `20px solid transparent`,
       },
     },
     '& $process': {
@@ -510,23 +536,56 @@ const stepsStyle: JsStyles<StepsClassType> = {
         color: Token.stepsProcessFontColor,
       },
       '&:after': {
-        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,#fff 50% 75%,#fff 75%)`,
+        right: -16,
+        borderLeft: `16px solid ${Token.stepsProcessBackgroundColor}`,
+        borderTop: `20px solid transparent`,
+        borderBottom: `20px solid transparent`,
       },
       '&:before': {
-        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,${Token.stepsProcessBackgroundColor} 50% 75%,${Token.stepsProcessBackgroundColor} 75%)`,
+        borderLeft: `16px solid #ffffff`,
+        borderTop: `20px solid transparent`,
+        borderBottom: `20px solid transparent`,
       },
     },
     '& $wait': {
       color: Token.stepsWaitFontColor,
+      // backgroundColor: Token.stepsWaitBackgroundColor,
       backgroundColor: Token.stepsWaitBackgroundColor,
       '&:after': {
-        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,#fff 50% 75%,#fff 75%)`,
+        borderLeft: `16px solid ${Token.stepsWaitBackgroundColor}`,
+        borderTop: `20px solid transparent`,
+        borderBottom: `20px solid transparent`,
       },
       '&:before': {
-        background: `linear-gradient(45deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 25% 50%,${Token.stepsWaitBackgroundColor} 50% 75%,${Token.stepsWaitBackgroundColor} 75%)`,
+        borderLeft: `16px solid #ffffff`,
+        borderTop: `20px solid transparent`,
+        borderBottom: `20px solid transparent`,
+      },
+    },
+    '& $widthDescription': {
+      '& $content,$description': {
+        textAlign: 'left',
+      },
+
+      '& $title': {
+        marginBottom: Token.stepsDescriptionTitleMarginX,
+      },
+      '&$process,$finish,$wait': {
+        '&:after': {
+          borderLeftWidth: 26,
+          borderTopWidth: 32,
+          borderBottomWidth: 32,
+          right: -26,
+        },
+        '&:before': {
+          borderLeftWidth: 26,
+          borderTopWidth: 32,
+          borderBottomWidth: 32,
+        },
       },
     },
   },
+  widthDescription: {},
   default: {
     lineHeight: 0,
     '&$vertical': {

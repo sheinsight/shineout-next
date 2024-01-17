@@ -46,12 +46,17 @@ const stepsTokenValue = {
   process: { font: { color: 'Neutral-text-1' }, background: { color: 'Brand-6' } },
   finish: { font: { color: 'Brand-6' }, background: { color: 'Brand-1' } },
   error: { font: { color: 'Neutral-text-1' }, background: { color: 'Danger-6' } },
-  arrow: { padding: { x: 'Padding-16', y: 'Padding-8' }, height: 'Size-32' },
+  arrow: {
+    padding: { x: 'Padding-16', y: 'Padding-8' },
+    height: 'Size-32',
+  },
   tail: { background: { color: 'Neutral-border-1' }, finish: { background: { color: 'Brand-6' } } },
   nearly: { content: { margin: 'Margin-8' }, describe: { margin: 'Margin-4' } },
 };
 
-const stepsTokenExtraValue = { description: { font: { color: 'Neutral-text-3' } } };
+const stepsTokenExtraValue = {
+  description: { font: { color: 'Neutral-text-3' }, title: { margin: { x: 'Margin-4' } } },
+};
 
 module.exports = {
   stepsTokenValue,
