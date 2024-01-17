@@ -256,7 +256,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     display: 'flex',
   },
   picker: {
-    '&:not(:first-child):last-child': {
+    '&:not(:first-child):not(:nth-child(2)):last-child': {
       '& $pickerHeader,& $pickerBody,& $pickerFooter, & $pickerTitle': {
         marginLeft: token.datePickerPanelMargin,
       },
@@ -410,7 +410,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
         },
 
       '& :not($pickerCellDisabled)$pickerCellActive $pickerCellContent': {
-        backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
+        // backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
       },
     },
   },
@@ -522,6 +522,9 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     },
     '& $pickerCellContent span': {
       minWidth: token.datePickerQuarterCellHotWidth,
+    },
+    '& $pickerCellContent': {
+      marginTop: 0,
     },
   },
   weekPicker: {

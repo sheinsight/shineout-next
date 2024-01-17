@@ -31,7 +31,7 @@ const datePickerTokens: DatePickerTokens = {
   datePickerFocusShadow: 'Brand-2',
   datePickerDisabledFontColor: 'Neutral-text-2',
   datePickerDisabledPlaceholderColor: 'Neutral-text-2',
-  datePickerDisabledBorderColor: 'Neutral-border-2',
+  datePickerDisabledBorderColor: 'Neutral-border-1',
   datePickerDisabledBackgroundColor: 'Neutral-fill-2',
   datePickerResultTextBorderRadius: 'Radius-4',
   datePickerResultTextPaddingX: 'Padding-4',
