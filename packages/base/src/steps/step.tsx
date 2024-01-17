@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { StepsClasses } from '@sheinx/shineout-style';
+import { util } from '@sheinx/hooks';
 import { StepProps, BaseStepProps } from './step.type';
 import { StepsStatusType } from './steps.type';
 import StepsContext from './steps-context';
@@ -64,6 +65,14 @@ const Step = (props: StepProps) => {
     onChange?.(index);
   };
 
+  const renderTitle = () => {
+    if (util.isFunc(title)) {
+      return title(index, status);
+    }
+
+    return title;
+  };
+
   const renderStep = () => {
     let Component = DefaultStep;
     if (type === 'default') {
@@ -81,7 +90,7 @@ const Step = (props: StepProps) => {
         status={status}
         size={size}
         index={index}
-        title={title}
+        title={renderTitle()}
         direction={direction}
         labelPlacement={labelPlacement}
         description={description}

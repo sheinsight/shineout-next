@@ -10,7 +10,9 @@ import { Steps } from 'shineout';
 export default () => {
   return (
     <div>
-      <div style={{ width: 500, display: 'flex', gap: 32, marginBottom: 24 }}>
+      <div
+        style={{ width: 500, display: 'flex', gap: 32, marginBottom: 24, alignItems: 'flex-start' }}
+      >
         <Steps current={1} direction='vertical'>
           <Steps.Step title='Succeeded' />
           <Steps.Step title='Processing' />
@@ -23,7 +25,7 @@ export default () => {
         </Steps>
       </div>
 
-      <div style={{ width: 500, display: 'flex', gap: 32 }}>
+      <div style={{ width: 500, display: 'flex', gap: 32, alignItems: 'flex-start' }}>
         <Steps current={1} type='dot' direction='vertical'>
           <Steps.Step title='Succeeded' />
           <Steps.Step title='Processing' />

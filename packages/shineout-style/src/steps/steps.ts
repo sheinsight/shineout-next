@@ -192,11 +192,12 @@ const stepsStyle: JsStyles<StepsClassType> = {
   vertical: {
     flexDirection: 'column',
     '& $content': {
-      minHeight: 64,
+      // minHeight: 64,
+      paddingBottom: 24,
     },
     '& $description': {
       marginTop: 4,
-      paddingBottom: 12,
+      // paddingBottom: 12,
     },
     '& $tail': {
       width: 1,
