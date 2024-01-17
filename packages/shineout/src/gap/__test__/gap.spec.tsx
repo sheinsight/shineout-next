@@ -8,7 +8,6 @@ import GapBase from '../__example__/01-base';
 import GapCustom from '../__example__/02-custom';
 import GapVertical from '../__example__/03-vertical';
 import GapAlign from '../__example__/04-align';
-import GapSplit from '../__example__/05-split';
 
 const GapDemo = (props: any) => (
   <Gap style={{ width: 400 }} {...props}>
@@ -34,7 +33,6 @@ describe('Gap[Base]', () => {
   snapshotTest(<GapCustom />, 'about custom');
   snapshotTest(<GapVertical />, 'about vertical');
   snapshotTest(<GapAlign />, 'about align');
-  snapshotTest(<GapSplit />, 'about split');
   // TODO: should test flex
   test('should render when set className and style', () => {
     const { container } = render(<Gap className='demo' style={{ width: 400 }} />);

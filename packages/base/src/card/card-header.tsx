@@ -6,7 +6,7 @@ import Icons from '../icons';
 import type { CardHeaderProps } from './card-header.type';
 
 const CardHeader = (props: CardHeaderProps) => {
-  const {} = props;
+  const { align } = props;
   const cardClasses = props.jssStyle?.card?.();
   const { collapsible, onCollapse, handleDragMouseDown } = useContext(CardContext);
 
@@ -19,6 +19,12 @@ const CardHeader = (props: CardHeaderProps) => {
     );
   };
 
+  const headerContentClassName = classNames(
+    cardClasses?.headerContent,
+    align === 'center' && cardClasses?.center,
+    align === 'right' && cardClasses?.right,
+  );
+
   return (
     <div
       onMouseDown={handleDragMouseDown}
@@ -27,7 +33,7 @@ const CardHeader = (props: CardHeaderProps) => {
       style={props.style}
     >
       {renderIndicator()}
-      <div className={cardClasses?.headerContent}>{props.children}</div>
+      <div className={headerContentClassName}>{props.children}</div>
       {props.extra && <div className={cardClasses?.headerExtra}>{props.extra}</div>}
     </div>
   );

@@ -1,8 +1,8 @@
 /**
  * cn - 带边框展示
- *    --
+ *    -- 带边框和背景颜色的列表
  * en - Show With Border
- *    --
+ *    -- List with border and background color
  */
 import React from 'react';
 import { Descriptions } from 'shineout';
