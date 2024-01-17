@@ -9,7 +9,7 @@ import React from 'react';
 import { Input } from 'shineout';
 
 const App: React.FC = () => (
-  <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+  <div style={{ width: 300, display: 'flex', flexDirection: 'column', gap: 24 }}>
     <Input innerTitle='Small title' clearable size={'small'} />
     <Input innerTitle='Medium Title' clearable />
     <Input innerTitle='Large Title' clearable size={'large'} />

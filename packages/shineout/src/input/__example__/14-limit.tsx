@@ -12,7 +12,7 @@ const style: React.CSSProperties = { marginBottom: 12 };
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div style={{ width: 300 }}>
       <Input.Group style={style}>
         <b className='min'>min</b>
         <Input.Number placeholder='100' min={100} />

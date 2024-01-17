@@ -8,13 +8,11 @@
 import React from 'react';
 import { Input } from 'shineout';
 
-const style: React.CSSProperties = { width: 120, marginInlineEnd: 12 };
-
 const App: React.FC = () => (
-  <div>
-    <Input size='small' style={style} placeholder='small size' clearable />
-    <Input style={style} placeholder='default size' clearable />
-    <Input size='large' style={style} placeholder='large size' clearable />
+  <div style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
+    <Input size='small' width={240} placeholder='small size' clearable />
+    <Input width={240} placeholder='default size' clearable />
+    <Input size='large' width={240} placeholder='large size' clearable />
   </div>
 );
 
