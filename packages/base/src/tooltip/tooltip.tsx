@@ -15,6 +15,7 @@ const Tooltip = (props: TooltipProps) => {
     className,
     style,
     type = 'default',
+    position: popsitionProps = 'bottom',
   } = props;
 
   const tooltipClasses = jssStyle?.tooltip?.();
@@ -24,7 +25,7 @@ const Tooltip = (props: TooltipProps) => {
     : {};
 
   const { open, position, getTargetProps, targetRef, popupRef } = usePopup({
-    position: props.position,
+    position: popsitionProps,
     trigger: trigger,
     autoMode: 'popover',
     priorityDirection,

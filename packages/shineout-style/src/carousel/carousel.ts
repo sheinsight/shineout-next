@@ -239,6 +239,14 @@ const carouselStyle: JsStyles<CarouselClassType> = {
       height: token.carouselIndicatorCircleWidth,
       borderRadius: '50%',
     },
+    '&$indicatorLeft, &$indicatorRight': {
+      '& $indicator': {
+        '&:not(:first-child)': {
+          marginTop: token.carouselIndicatorCircleGap,
+          marginLeft: 0,
+        },
+      },
+    },
   },
   indicatorTypeLine: {
     '& $indicator': {
@@ -252,6 +260,10 @@ const carouselStyle: JsStyles<CarouselClassType> = {
     '$indicatorLeft& $indicator, $indicatorRight& $indicator': {
       width: token.carouselIndicatorLineHeight,
       height: token.carouselIndicatorLineWidth,
+      '&:not(:first-child)': {
+        marginTop: token.carouselIndicatorLineGap,
+        marginLeft: 0,
+      },
     },
   },
   indicatorTypeSlider: {},

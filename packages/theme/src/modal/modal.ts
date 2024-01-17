@@ -19,6 +19,7 @@ const modalTokens: ModalTokens = {
   modalHeaderCloseMarginXStart: 'Margin-16',
   modalHeaderCloseSize: 'Size-8',
   modalHeaderCloseTop: 'Size-2',
+  modalHeaderCloseColor: 'Neutral-text-4',
   modalHeaderFontSize: '16/regular',
   modalDrawerTitlePaddingY: 'Padding-12',
   modalDrawerTitlePaddingX: 'Padding-16',

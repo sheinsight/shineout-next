@@ -4,7 +4,7 @@
 import { TooltipTokens } from './type';
 
 const tooltipTokens: TooltipTokens = {
-  tooltipFontSize: '14/regular',
+  tooltipFontSize: '12/regular',
   tooltipPaddingX: 'Padding-8',
   tooltipPaddingY: 'Padding-5',
   tooltipBorderRadius: 'Radius-2',
@@ -14,14 +14,14 @@ const tooltipTokens: TooltipTokens = {
   tooltipLightColor: 'Neutral-text-5',
   tooltipLightBackgroundColor: 'Neutral-fill-1',
   tooltipLightBorderColor: 'Neutral-border-1',
-  tooltipPrimaryColor: 'Brand-1',
-  tooltipPrimaryBackgroundColor: 'Brand-6',
-  tooltipSuccessColor: 'Success-1',
-  tooltipSuccessBackgroundColor: 'Success-7',
-  tooltipWarningColor: 'Warning-1',
-  tooltipWarningBackgroundColor: 'Warning-7',
-  tooltipDangerColor: 'Danger-1',
-  tooltipDangerBackgroundColor: 'Danger-7',
+  tooltipPrimaryColor: 'Brand-6',
+  tooltipPrimaryBackgroundColor: 'Brand-1',
+  tooltipSuccessColor: 'Success-7',
+  tooltipSuccessBackgroundColor: 'Success-1',
+  tooltipWarningColor: 'Warning-7',
+  tooltipWarningBackgroundColor: 'Warning-1',
+  tooltipDangerColor: 'Danger-7',
+  tooltipDangerBackgroundColor: 'Danger-1',
 };
 
 export default tooltipTokens;

@@ -1,8 +1,8 @@
 /**
- * cn - 指示器
+ * cn - 切换方向
  *    -- 轮播组件提供了三种动画过渡方式，可以切换选项查看效果
- * en - Indicator
- *    -- You can set indicator type and position.
+ * en - Animation
+ *    -- The carousel component provides three animation transition modes, you can switch options to see the effect
  */
 import React, { useState } from 'react';
 import { Carousel, Radio, TYPE } from 'shineout';

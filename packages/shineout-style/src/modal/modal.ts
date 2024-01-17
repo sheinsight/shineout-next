@@ -365,6 +365,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     height: token.modalHeaderCloseSize,
     cursor: 'pointer',
     display: 'block',
+    color: token.modalHeaderCloseColor,
   },
   body: {
     flex: '1 1 auto',

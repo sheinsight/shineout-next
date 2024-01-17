@@ -67,9 +67,10 @@ export type DatePickerClass =
   | 'timeItem'
   | 'timeItemActive'
   | 'timeItemDisabled'
-  | 'timeBase'
+  | 'timeItemBox'
+  // | 'timeBase'
+  // | 'timeBaseItem'
   | 'datetime'
-  | 'timeBaseItem'
   | 'quickPicker'
   | 'quickPickerItem';
 
@@ -430,7 +431,7 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
         backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
       },
     },
-    '&$pickerCellActive:not($pickerCellDisabled):hover $pickerCellContent': {
+    '&$pickerCellActive$pickerCellInRange:not($pickerCellDisabled):hover $pickerCellContent': {
       backgroundColor: token.datePickerCellActiveHoverBackgroundColor,
     },
   },
@@ -541,12 +542,13 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
     '&:not(:first-child)': {
       marginLeft: token.datePickerTimeListGap,
     },
+    userSelect: 'none',
     display: 'flex',
     flex: '1',
     flexDirection: 'column',
     height: `calc(${token.datePickerTimeItemHeight} * 9)`,
-    paddingTop: `calc(${token.datePickerTimeItemHeight} * 4)`,
-    paddingBottom: `calc(${token.datePickerTimeItemHeight} * 4)`,
+    // paddingTop: `calc(${token.datePickerTimeItemHeight} * 4)`,
+    paddingBottom: `calc(${token.datePickerTimeItemHeight} * 8)`,
     overflow: 'auto',
     boxSizing: 'border-box',
     textAlign: 'center',
@@ -555,37 +557,56 @@ const datePickerStyle: JsStyles<DatePickerClass> = {
       display: 'none',
     },
   },
-  timeItem: {
-    position: 'relative',
-    minHeight: token.datePickerTimeItemHeight,
+  timeItemBox: {
+    padding: `${token.datePickerTimeItemPaddingY} 0`,
     boxSizing: 'border-box',
-    lineHeight: token.datePickerTimeItemHeight,
-    cursor: 'pointer',
-  },
-  timeItemActive: { fontWeight: 'bold' },
-  timeItemDisabled: {
-    color: token.datePickerTimeItemDisabledColor,
-    cursor: 'not-allowed',
-  },
-  timeBase: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: token.datePickerTimePanelPaddingX,
-    right: token.datePickerTimePanelPaddingX,
-    margin: 'auto',
-    display: 'flex',
     height: token.datePickerTimeItemHeight,
+    display: 'flex',
+    flexShrink: 0,
   },
-  timeBaseItem: {
-    '&:not(:first-child)': {
-      marginLeft: token.datePickerTimeListGap,
-    },
+  timeItem: {
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
     flex: '1',
-    height: '100%',
-    background: token.datePickerTimeItemActiveBackgroundColor,
-    borderRadius: '4px',
+    position: 'relative',
+    borderRadius: token.datePickerTimeItemBorderRadius,
+    '&:not($timeItemDisabled):hover': {
+      backgroundColor: token.datePickerTimeItemHoverBackgroundColor,
+    },
+    '$timeItemDisabled&': {
+      color: token.datePickerTimeItemDisabledColor,
+      cursor: 'not-allowed',
+    },
+    '$timeItemActive&': {
+      color: token.datePickerTimeItemActiveColor,
+      backgroundColor: token.datePickerTimeItemActiveBackgroundColor,
+    },
   },
+
+  timeItemDisabled: {},
+  timeItemActive: {},
+  // timeBase: {
+  //   position: 'absolute',
+  //   top: 0,
+  //   bottom: 0,
+  //   left: token.datePickerTimePanelPaddingX,
+  //   right: token.datePickerTimePanelPaddingX,
+  //   margin: 'auto',
+  //   display: 'flex',
+  //   height: token.datePickerTimeItemHeight,
+  // },
+  // timeBaseItem: {
+  //   '&:not(:first-child)': {
+  //     marginLeft: token.datePickerTimeListGap,
+  //   },
+  //   flex: '1',
+  //   height: '100%',
+  //   background: token.datePickerTimeItemActiveBackgroundColor,
+  //   borderRadius: '4px',
+  // },
   datetime: {
     fontSize: token.datePickerPanelBodyFontSize,
     position: 'relative',

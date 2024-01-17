@@ -75,6 +75,11 @@ const uploadTokenExtraValue = {
         border: { color: 'Danger-6' },
         font: { color: 'Danger-6' },
       },
+      disabled: {
+        border: { color: 'Neutral-border-2' },
+        background: { color: 'Neutral-fill-2' },
+        font: { color: 'Neutral-text-2' },
+      },
     },
     result: {
       border: { color: 'Neutral-border-1' },
