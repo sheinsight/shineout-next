@@ -16,6 +16,12 @@ export interface MenuTokens {
   menuFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description xxx图标颜色
+   */
+  menuIconColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-1
    * @description xxxundefined背景颜色
    */
@@ -88,7 +94,7 @@ export interface MenuTokens {
   menuExpandSize: string;
   /**
    * @type {string}
-   * @token Brand-2
+   * @token Neutral-fill-3
    * @description xxxundefined鼠标移入时的背景颜色
    */
   menuExpandHoverBackgroundColor: string;

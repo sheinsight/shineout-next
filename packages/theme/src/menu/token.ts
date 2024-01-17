@@ -19,6 +19,9 @@ const menuTokenValue = {};
 
 const menuTokenExtraValue = {
   font: { size: '14/regular', color: 'Neutral-text-5' },
+  icon: {
+    color: 'Neutral-text-4',
+  },
   item: {
     background: { color: 'Neutral-fill-1' },
     font: { color: 'Neutral-text-5' },
@@ -42,7 +45,7 @@ const menuTokenExtraValue = {
     width: '46px',
     size: '14px',
     hover: {
-      background: { color: 'Brand-2' },
+      background: { color: 'Neutral-fill-3' },
     },
   },
   children: {

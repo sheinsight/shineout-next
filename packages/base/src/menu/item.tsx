@@ -78,7 +78,11 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
             )}
             onClick={handleExpandClick}
           >
-            {<div>{frontCaretType === 'hollow' ? Icons.ArrowDown : Icons.PcArrowFillDown}</div>}
+            {
+              <div className={classes?.icon}>
+                {frontCaretType === 'hollow' ? Icons.ArrowDown : Icons.PcArrowFillDown}
+              </div>
+            }
           </div>
           {title}
         </div>
@@ -101,7 +105,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
                 props.parentSelectable && classes?.expandHover,
               )}
             >
-              <div>{Icons.ArrowDown}</div>
+              <div className={classes?.icon}>{Icons.ArrowDown}</div>
             </div>
           )}
         </div>

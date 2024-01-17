@@ -100,13 +100,13 @@ export interface CarouselTokens {
   carouselIndicatorArrowSize: string;
   /**
    * @type {string}
-   * @token Neutral-fill-1
+   * @token Neutral-fill-4
    * @description 轮播图指示器箭头颜色
    */
   carouselIndicatorArrowColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-4
+   * @token Neutral-fill-1
    * @description 轮播图指示器箭头鼠标移入时的颜色
    */
   carouselIndicatorArrowHoverColor: string;

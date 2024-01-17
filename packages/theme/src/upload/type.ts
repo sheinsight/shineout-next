@@ -148,6 +148,24 @@ export interface UploadTokens {
   uploadImageHandlerErrorFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-border-2
+   * @description 上传图片操作区禁用时的边框颜色
+   */
+  uploadImageHandlerDisabledBorderColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 上传图片操作区禁用时的背景颜色
+   */
+  uploadImageHandlerDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 上传图片操作区禁用时的字体颜色
+   */
+  uploadImageHandlerDisabledFontColor: string;
+  /**
+   * @type {string}
    * @token Neutral-border-1
    * @description 上传图片结果边框颜色
    */

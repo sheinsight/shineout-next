@@ -97,7 +97,8 @@ div.indicator .indicator-progress > div {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 4px;
+  border-radius: 1000px;
 }
 div.indicator .indicator-progress .bg {
   width: 100%;

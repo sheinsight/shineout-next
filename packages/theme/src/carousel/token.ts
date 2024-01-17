@@ -42,7 +42,7 @@ const carouselTokenExtraValue = {
     wrapper: { height: 'Size-20' },
     circle: { width: 'Size-3', gap: 'Margin-8' },
     line: { width: 'Size-6', height: 'Size-2', gap: 'Margin-4' },
-    arrow: { size: 'Size-8', color: 'Neutral-fill-1', hover: { color: 'Neutral-fill-4' } },
+    arrow: { size: 'Size-8', color: 'Neutral-fill-4', hover: { color: 'Neutral-fill-1' } },
     number: { color: 'Neutral-fill-1', font: { size: '14/regular' } },
     outer: {
       background: { color: 'Neutral-fill-4' },

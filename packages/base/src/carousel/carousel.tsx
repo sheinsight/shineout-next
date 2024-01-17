@@ -79,7 +79,7 @@ const Carousel = (props: CarouselProps) => {
             {Icons.ArrowLeft}
           </div>
           <div className={carouselClasses?.indicatorNumber}>
-            <span>{current}</span>
+            <span>{current + 1}</span>
             <span>/</span>
             <span>{total}</span>
           </div>

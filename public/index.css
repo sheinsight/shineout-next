@@ -8,12 +8,12 @@ html,
   overflow: hidden;
 }
 
-a {
+a:not(a[class]) {
   color: #197afa;
   cursor: pointer;
 }
 
-a:hover {
+a:not(a[class]):hover {
   color: #429aff;
 }
 

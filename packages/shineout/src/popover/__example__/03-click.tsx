@@ -7,13 +7,9 @@
 import React from 'react';
 import { Button, Popover } from 'shineout';
 
-const PopoverStyle: React.CSSProperties = { marginInlineEnd: 12 };
-
 const App: React.FC = () => (
   <Button>
-    <Popover style={PopoverStyle} trigger='click'>
-      hello shineout
-    </Popover>
+    <Popover trigger='click'>hello shineout</Popover>
     Click me
   </Button>
 );

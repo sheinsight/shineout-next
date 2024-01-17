@@ -4,7 +4,7 @@
 export interface TooltipTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token 12/regular
    * @description 文字提示字体字号
    */
   tooltipFontSize: string;
@@ -64,49 +64,49 @@ export interface TooltipTokens {
   tooltipLightBorderColor: string;
   /**
    * @type {string}
-   * @token Brand-1
+   * @token Brand-6
    * @description 文字提示主要色颜色
    */
   tooltipPrimaryColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Brand-1
    * @description 文字提示主要色背景颜色
    */
   tooltipPrimaryBackgroundColor: string;
   /**
    * @type {string}
-   * @token Success-1
+   * @token Success-7
    * @description 文字提示成功色颜色
    */
   tooltipSuccessColor: string;
   /**
    * @type {string}
-   * @token Success-7
+   * @token Success-1
    * @description 文字提示成功色背景颜色
    */
   tooltipSuccessBackgroundColor: string;
   /**
    * @type {string}
-   * @token Warning-1
+   * @token Warning-7
    * @description 文字提示警告色颜色
    */
   tooltipWarningColor: string;
   /**
    * @type {string}
-   * @token Warning-7
+   * @token Warning-1
    * @description 文字提示警告色背景颜色
    */
   tooltipWarningBackgroundColor: string;
   /**
    * @type {string}
-   * @token Danger-1
+   * @token Danger-7
    * @description 文字提示危险色颜色
    */
   tooltipDangerColor: string;
   /**
    * @type {string}
-   * @token Danger-7
+   * @token Danger-1
    * @description 文字提示危险色背景颜色
    */
   tooltipDangerBackgroundColor: string;

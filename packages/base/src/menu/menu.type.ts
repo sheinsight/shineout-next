@@ -36,6 +36,7 @@ export interface MenuClasses {
   scrollbarDragging: string;
   scrolbarHandler: string;
   scrollbox: string;
+  icon: string;
 }
 
 export type MenuJssStyle = {

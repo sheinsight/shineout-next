@@ -12,9 +12,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <div style={{ marginBottom: 12 }}>
+      <div style={{ marginBottom: 24 }}>
         <Switch value={visible} onChange={setVisible} />
-        <span>
+        <span style={{ marginInlineStart: 8, fontSize: 14 }}>
           {!visible ? 'Turn on switch to display popover' : 'Turn off switch to hide popover'}{' '}
         </span>
       </div>

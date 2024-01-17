@@ -20,17 +20,26 @@ const TimeScroll = (props: {
   const { mode, jssStyle, times, currentIndex, onChange } = props;
   const styles = jssStyle?.datePicker?.();
   const elRef = useRef<HTMLDivElement>(null);
-  const { current: context } = useRef<{ timer: NodeJS.Timer | null }>({ timer: null });
+  const { current: context } = useRef<{
+    changeTimer: NodeJS.Timer | null;
+    timer: NodeJS.Timer | null;
+  }>({
+    timer: null,
+    changeTimer: null,
+  });
   const { height } = useResize({ targetRef: elRef });
 
-  const scrollToIndex = (index: number) => {
+  const scrollToIndex = (index: number, immudiate?: boolean) => {
     if (context.timer) clearTimeout(context.timer);
-    context.timer = setTimeout(() => {
-      const el = elRef.current;
-      if (!el) return;
-      const lineHeight = (el.childNodes[0] as HTMLDivElement).clientHeight;
-      el.scrollTop = lineHeight * index;
-    }, 30);
+    context.timer = setTimeout(
+      () => {
+        const el = elRef.current;
+        if (!el) return;
+        const lineHeight = (el.childNodes[0] as HTMLDivElement).clientHeight;
+        el.scrollTop = lineHeight * index;
+      },
+      immudiate ? 0 : 30,
+    );
   };
 
   const changeToIndex = (index: number) => {
@@ -41,18 +50,23 @@ const TimeScroll = (props: {
   };
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
+    if (context.changeTimer) clearTimeout(context.changeTimer);
     const el = e.currentTarget as HTMLDivElement;
-    const lineHeight = (el.childNodes[0] as HTMLDivElement).clientHeight;
-    const index = Math.round(el.scrollTop / lineHeight);
-    changeToIndex(index);
+    context.changeTimer = setTimeout(() => {
+      if (!el) return;
+      const lineHeight = (el.childNodes[0] as HTMLDivElement).clientHeight;
+      const index = Math.round(el.scrollTop / lineHeight);
+      changeToIndex(index);
+      scrollToIndex(index);
+    }, 50);
   };
 
   useEffect(() => {
-    scrollToIndex(currentIndex);
+    scrollToIndex(currentIndex, true);
   }, [currentIndex]);
 
   useEffect(() => {
-    scrollToIndex(currentIndex);
+    scrollToIndex(currentIndex, true);
   }, [height]);
 
   return (
@@ -63,24 +77,22 @@ const TimeScroll = (props: {
       onScroll={(e) => {
         handleScroll(e);
       }}
-      onMouseLeave={() => {
-        scrollToIndex(currentIndex);
-      }}
     >
       {times.map((item, index) => {
         return (
-          <div
-            onClick={() => {
-              changeToIndex(index);
-            }}
-            className={classNames(
-              styles?.timeItem,
-              index === currentIndex && styles?.timeItemActive,
-              item.disabled && styles?.timeItemDisabled,
-            )}
-            key={index}
-          >
-            <span>{item.str}</span>
+          <div key={index} className={styles?.timeItemBox}>
+            <div
+              onClick={() => {
+                changeToIndex(index);
+              }}
+              className={classNames(
+                styles?.timeItem,
+                index === currentIndex && styles?.timeItemActive,
+                item.disabled && styles?.timeItemDisabled,
+              )}
+            >
+              <span>{item.str}</span>
+            </div>
           </div>
         );
       })}
@@ -147,11 +159,6 @@ const Time = (props: TimeProps) => {
     >
       {props.showTitle && <PickerTitle position={props.position} jssStyle={props.jssStyle} />}
       <div className={styles?.pickerBody}>
-        <div className={styles?.timeBase}>
-          {times.map((item) => {
-            return <div className={styles?.timeBaseItem} key={item.mode} />;
-          })}
-        </div>
         {times.map((item) => {
           return (
             <TimeScroll

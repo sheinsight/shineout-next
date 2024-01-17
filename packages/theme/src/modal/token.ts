@@ -38,6 +38,7 @@ const modalTokenExtraValue = {
       margin: { x: { start: 'Margin-16' } },
       size: 'Size-8',
       top: 'Size-2',
+      color: 'Neutral-text-4',
     },
     font: { size: '16/regular' },
   },

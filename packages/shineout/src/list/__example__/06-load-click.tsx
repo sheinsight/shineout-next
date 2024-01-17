@@ -40,7 +40,7 @@ const App: React.FC = () => {
   const fetchData = (c: number) => {
     setLoading(true);
     user.fetch
-      .get('List', { current: c, pageSize: 10, sorter: {}, username: '' })
+      .get('List', { current: c, pageSize: 5, sorter: {}, username: '' })
       .then((_data: { data: ListItem[] }) => {
         setData([...data, ..._data.data]);
         setCurrent(c);
