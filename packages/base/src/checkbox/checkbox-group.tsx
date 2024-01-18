@@ -70,7 +70,7 @@ const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem
   );
   if (props.data === undefined) {
     return (
-      <div className={groupClass}>
+      <div className={groupClass} style={style}>
         <groupContext.Provider value={providerValue}>{children}</groupContext.Provider>
       </div>
     );
