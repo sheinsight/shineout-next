@@ -14,6 +14,7 @@ const cardTokens: CardTokens = {
   cardPaddingY: 'Padding-12',
   cardTitleFontSize: '16/medium',
   cardHeaderGap: '12px',
+  cardHeaderExtraMarginX: 'Margin-16',
   cardIndicatorSize: 'Size-7',
 };
 

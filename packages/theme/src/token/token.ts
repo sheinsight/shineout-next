@@ -200,12 +200,10 @@ const Token: Tokens = {
   'Radius-12': '12px',
   'Radius-1000': '1000px',
   'Radius-50%': '50%',
-  'Shadow-1':
-    '0px 2px 4px -1px rgba(2, 11, 24, 0.12),0px 4px 5px 0px rgba(2, 11, 24, 0.08),0px 1px 10px 0px rgba(2, 11, 24, 0.05)',
-  'Shadow-2':
-    '0px 5px 5px -3px rgba(2, 11, 24, 0.1),0px 8px 10px 1px rgba(2, 11, 24, 0.06),0px 3px 14px 2px rgba(2, 11, 24, 0.05)',
-  'Shadow-3':
-    '0px 8px 10px -5px rgba(2, 11, 24, 0.08),0px 16px 24px 2px rgba(2, 11, 24, 0.04),0px 6px 30px 5px rgba(2, 11, 24, 0.05)',
+  'Shadow-1': '0px 2px 5px rgba(2, 11, 24, 0.1)',
+  'Shadow-2': '0px 4px 10px rgba(2, 11, 24, 0.1)',
+  'Shadow-3': '0px 8px 20px rgba(2, 11, 24, 0.1)',
+  'Shadow-4': '0px -2px 10px rgba(232, 235, 240, 0.8)',
   'Line-height-dynamic': 'calc( 1em + 8px )',
   'Border-1': '1px',
   'Border-2': '2px',

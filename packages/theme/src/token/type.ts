@@ -1395,24 +1395,31 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '0px 2px 4px -1px rgba(2, 11, 24, 0.12),0px 4px 5px 0px rgba(2, 11, 24, 0.08),0px 1px 10px 0px rgba(2, 11, 24, 0.05)'
+   * @default '0px 2px 5px rgba(2, 11, 24, 0.1)'
    * @description 表格拖拽、树组件拖拽
    */
   'Shadow-1': string;
   /**
    * @type {string}
    * @categoty string
-   * @default '0px 5px 5px -3px rgba(2, 11, 24, 0.1),0px 8px 10px 1px rgba(2, 11, 24, 0.06),0px 3px 14px 2px rgba(2, 11, 24, 0.05)'
+   * @default '0px 4px 10px rgba(2, 11, 24, 0.1)'
    * @description 所有下拉组件使用，下拉菜单、气泡确认框、选择器
    */
   'Shadow-2': string;
   /**
    * @type {string}
    * @categoty string
-   * @default '0px 8px 10px -5px rgba(2, 11, 24, 0.08),0px 16px 24px 2px rgba(2, 11, 24, 0.04),0px 6px 30px 5px rgba(2, 11, 24, 0.05)'
+   * @default '0px 8px 20px rgba(2, 11, 24, 0.1)'
    * @description 所有下拉组件使用，下拉菜单、气泡确认框、选择器
    */
   'Shadow-3': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0px -2px 10px rgba(232, 235, 240, 0.8)'
+   * @description 详情页底部按钮模块阴影
+   */
+  'Shadow-4': string;
   /**
    * @type {string}
    * @categoty string

@@ -93,7 +93,9 @@ const cardStyle: JsStyles<CardClassType> = {
   right: {
     textAlign: 'right',
   },
-  headerExtra: {},
+  headerExtra: {
+    marginLeft: token.cardHeaderExtraMarginX,
+  },
   indicator: {
     display: 'flex',
     alignItems: 'center',
