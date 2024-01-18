@@ -64,6 +64,12 @@ export interface CardTokens {
   cardHeaderGap: string;
   /**
    * @type {string}
+   * @token Margin-16
+   * @description xxxundefinedundefined外边距（水平方向）
+   */
+  cardHeaderExtraMarginX: string;
+  /**
+   * @type {string}
    * @token Size-7
    * @description xxxundefined字号
    */

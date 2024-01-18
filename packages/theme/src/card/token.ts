@@ -38,6 +38,9 @@ const cardTokenExtraValue = {
   },
   header: {
     gap: '12px',
+    extra: {
+      margin: { x: 'Margin-16' },
+    },
   },
   indicator: {
     size: 'Size-7',
