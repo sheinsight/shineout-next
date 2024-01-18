@@ -4,6 +4,7 @@
 import { DropdownTokens } from './type';
 
 const dropdownTokens: DropdownTokens = {
+  dropdownCaretMarginLeft: 'Margin-4',
   dropdownListBorderRadius: 'Radius-4',
   dropdownListPaddingY: 'Padding-4',
   dropdownListFontSize: '14/regular',
