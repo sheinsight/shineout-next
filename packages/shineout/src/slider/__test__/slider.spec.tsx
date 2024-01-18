@@ -68,6 +68,7 @@ const {
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const innerStyle = (left: number, right: number) => `left: ${left}%; right: ${right}%;`;
+const innerStyleVertical = (top: number, bottom: number) => `bottom: ${bottom}%; top: ${top}%;`;
 const defaultInnerStyle = innerStyle(0, 100);
 const sliderWidth = 200;
 
@@ -174,6 +175,18 @@ describe('Slider[Base]', () => {
     textContentTest(values[0], `${defaultValue[0] + (leftValue / sliderWidth) * 100}`);
     textContentTest(values[1], `${defaultValue[1] + (rightValue / sliderWidth) * 100}`);
   });
+  test('should render when right < left in range', () => {
+    const defaultValue = [25, 35];
+    const rightValue = -40;
+    const { container } = render(<Slider defaultValue={defaultValue} range />);
+    const indicators = container?.querySelectorAll(indicator) as NodeListOf<Element>;
+    fireEvent.mouseDown(indicators[1]);
+    fireEvent.mouseMove(indicators[1], { clientX: rightValue });
+    fireEvent.mouseUp(indicators[1]);
+    const values = container?.querySelectorAll(value) as NodeListOf<Element>;
+    textContentTest(values[0], `${defaultValue[1] + (rightValue / sliderWidth) * 100}`);
+    textContentTest(values[1], `${defaultValue[0]}`);
+  });
   test('should render when set valueTipType is hover', () => {
     const defaultValue = 50;
     const { container } = render(<Slider defaultValue={defaultValue} valueTipType='hover' />);
@@ -274,6 +287,27 @@ describe('Slider[Base]', () => {
     fireEvent.mouseUp(sliderIndicator);
     textContentTest(sliderWrapper.querySelector(value)!, '0');
   });
+  test('should render when set onIncrease', () => {
+    const clientX = 100;
+    const defaultValue = 100;
+    const deltaStep = 10;
+    const App = () => {
+      const [scale, setScale] = React.useState([0, 100]);
+      const handleIncrease = () => {
+        setScale([0, scale[1] + deltaStep]);
+      };
+      return <Slider scale={scale} defaultValue={defaultValue} onIncrease={handleIncrease} />;
+    };
+    const { container } = render(<App />);
+    const sliderWrapper = container.querySelector(wrapper)!;
+    const sliderIndicator = sliderWrapper?.querySelector(indicator) as Element;
+    const sliderValue = sliderWrapper.querySelector(value)!;
+    textContentTest(sliderValue, `${defaultValue}`);
+    fireEvent.mouseDown(sliderIndicator);
+    fireEvent.mouseMove(sliderIndicator, { clientX });
+    fireEvent.mouseUp(sliderIndicator);
+    textContentTest(sliderValue, `${defaultValue + deltaStep}`);
+  });
 });
 describe('Slider[Click]', () => {
   test('should render when click', () => {
@@ -297,5 +331,54 @@ describe('Slider[Click]', () => {
     fireEvent.click(sliderTrack!, { clientX });
     styleTest(sliderTrackInner, innerStyle(0, 75));
     textContentTest(sliderValue, `${(clientX / sliderWidth) * 100}`);
+  });
+  test('should render when click in range', () => {
+    const clientX = 50;
+    const { container } = render(<Slider range />);
+    const sliderWrapper = container.querySelector(wrapper);
+    const sliderTrack = sliderWrapper?.querySelector(track) as Element;
+    const sliderTrackInner = sliderTrack?.querySelector(trackInner) as Element;
+    const sliderValues = sliderTrackInner?.querySelectorAll(value);
+    sliderTrack.getBoundingClientRect = jest.fn(() => ({
+      left: 0,
+      width: sliderWidth,
+      bottom: 50,
+      height: 200,
+      top: 0,
+      right: 0,
+      x: 0,
+      y: 0,
+      toJSON: () => {},
+    }));
+    fireEvent.click(sliderTrack!, { clientX });
+    screen.debug();
+    styleTest(sliderTrackInner, innerStyle(0, 75));
+    textContentTest(sliderValues[1], `${(clientX / sliderWidth) * 100}`);
+  });
+});
+describe('Slider[Vertical]', () => {
+  beforeEach(() => {
+    Object.defineProperty(HTMLElement.prototype, 'clientHeight', {
+      configurable: true,
+      value: sliderWidth,
+    });
+  });
+  test('should render when set vertical', () => {
+    const clientY = 20;
+    const defaultValue = 50;
+    const { container } = render(<Slider vertical defaultValue={defaultValue} />);
+    const sliderWrapper = container.querySelector(wrapper)!;
+    const sliderIndicator = sliderWrapper?.querySelector(indicator) as Element;
+    fireEvent.mouseDown(sliderIndicator);
+    fireEvent.mouseMove(sliderIndicator, { clientY });
+    fireEvent.mouseUp(sliderIndicator);
+    textContentTest(
+      sliderWrapper.querySelector(value)!,
+      `${defaultValue - (clientY / sliderWidth) * 100}`,
+    );
+    styleTest(
+      sliderWrapper.querySelector(trackInner)!,
+      innerStyleVertical(100 - (defaultValue - (clientY / sliderWidth) * 100), 0),
+    );
   });
 });
