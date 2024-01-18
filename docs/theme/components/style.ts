@@ -55,13 +55,12 @@ export default createUseStyles(
       marginBottom: 32,
       display: 'inline-flex',
       alignItems: 'center',
-      padding: 4,
       boxSizing: 'border-box',
       background: 'rgba(244, 245, 248, 1)',
       whiteSpace: 'nowrap',
     },
     tab: {
-      padding: '0 20px',
+      padding: '0 24px',
     },
     doc: {
       display: 'flex',

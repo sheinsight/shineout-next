@@ -84,7 +84,6 @@ export default createUseStyles(
       margin: 0,
       fontSize: 14,
       padding: '0 16px',
-      color: '#aaaaaa',
       boxSizing: 'border-box',
       '& .group': {
         height: 40,
@@ -92,8 +91,9 @@ export default createUseStyles(
         fontSize: 12,
         lineHeight: '40px',
         marginTop: 24,
+        color: '#666C7C',
         '&.first': {
-          marginTop: 16,
+          marginTop: 12,
         },
       },
       '& .doc': {
@@ -123,8 +123,8 @@ export default createUseStyles(
         listStyle: 'none',
         margin: 0,
         padding: 0,
-        fontSize: 12,
-        color: '#333333',
+        fontSize: 14,
+        color: '#141737',
         '& li': {
           height: 40,
           lineHeight: '40px',
@@ -141,6 +141,9 @@ export default createUseStyles(
           '&:hover': {
             backgroundColor: '#F4F5F8',
           },
+        },
+        '& li:last-child': {
+          marginBottom: 16,
         },
       },
     },
