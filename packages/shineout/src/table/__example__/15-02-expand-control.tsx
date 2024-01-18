@@ -40,7 +40,7 @@ const App: React.FC = () => {
       render: (d) => {
         if (d.id > 5) return undefined;
         return () => (
-          <div style={{ padding: '10px 30px', wordBreak: 'break-all' }}>{JSON.stringify(d)}</div>
+          <div style={{ padding: '8px 12px', wordBreak: 'break-all' }}>{JSON.stringify(d)}</div>
         );
       },
     },
