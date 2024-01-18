@@ -1,7 +1,17 @@
-import { render, cleanup, screen } from '@testing-library/react';
+import React from 'react';
+import { render, cleanup, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Slider from '..';
-import { baseTest, createClassName, displayTest, snapshotTest } from '../../tests/utils';
+import { Slider, Input } from 'shineout';
+import { classLengthTest } from '../../tests/structureTest';
+import {
+  baseTest,
+  classTest,
+  createClassName,
+  displayTest,
+  snapshotTest,
+  styleTest,
+  textContentTest,
+} from '../../tests/utils';
 import mountTest from '../../tests/mountTest';
 import SliderBase from '../__example__/01-base';
 import SliderRange from '../__example__/02-range';
@@ -18,14 +28,59 @@ import SliderIncrease from '../__example__/10-increase';
 import SliderValueHover from '../__example__/11-value-hover';
 
 const SO_PREFIX = 'slider';
-const originClasses = ['wrapper'];
-const originItemClasses = [''];
-const { wrapper } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+const originClasses = [
+  'wrapper',
+  'track',
+  'scaleWrapper',
+  'trackInner',
+  'indicator',
+  'value',
+  'scale',
+  'label',
+];
+const originItemClasses = [
+  'indicatorEnd',
+  'endValue',
+  'indicatorHover',
+  'valueHover',
+  'indicatorStart',
+  'startValue',
+  'autoHide',
+  'disabled',
+];
+const {
+  wrapper,
+  track,
+  scaleWrapper,
+  trackInner,
+  indicator,
+  value,
+  indicatorEnd,
+  endValue,
+  scale,
+  label,
+  indicatorHover,
+  valueHover,
+  indicatorStart,
+  startValue,
+  autoHide,
+  disabled,
+} = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const innerStyle = (left: number, right: number) => `left: ${left}%; right: ${right}%;`;
+const defaultInnerStyle = innerStyle(0, 100);
+const sliderWidth = 200;
 
 afterEach(cleanup);
 mountTest(<Slider />);
 
 describe('Slider[Base]', () => {
+  beforeEach(() => {
+    Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
+      configurable: true,
+      value: sliderWidth,
+    });
+  });
   displayTest(Slider, 'ShineoutSlider');
   baseTest(Slider, wrapper);
   snapshotTest(<SliderBase />);
@@ -42,8 +97,205 @@ describe('Slider[Base]', () => {
   snapshotTest(<SliderIncrease />, 'about increase');
   snapshotTest(<SliderValueHover />, 'about value hover');
   test('should render default', () => {
-    render(<Slider />);
-    screen.debug();
+    const clientX = 100;
+    const { container } = render(<Slider />);
+    const sliderWrapper = container.querySelector(wrapper);
+    const sliderTrack = sliderWrapper?.querySelector(track);
+    const sliderScaleWrapper = sliderWrapper?.querySelector(scaleWrapper);
+    const sliderTrackInner = sliderTrack?.querySelector(trackInner) as Element;
+    styleTest(sliderTrackInner, defaultInnerStyle);
+    const sliderIndicator = sliderTrackInner?.querySelector(indicator) as Element;
+    classTest(sliderIndicator, indicatorEnd);
+    const sliderValue = sliderTrackInner?.querySelector(value) as Element;
+    classTest(sliderValue, endValue);
+    textContentTest(sliderValue, '0');
+    const sliderLabels = sliderScaleWrapper?.querySelectorAll(scale) as NodeListOf<Element>;
+    textContentTest(sliderLabels[0].querySelector(label)!, '0');
+    textContentTest(sliderLabels[1].querySelector(label)!, '100');
+    fireEvent.mouseDown(sliderIndicator);
+    fireEvent.mouseMove(sliderIndicator, { clientX });
+    fireEvent.mouseUp(sliderIndicator);
+    styleTest(sliderTrackInner, innerStyle(0, 50));
+    textContentTest(sliderValue, `${(clientX / sliderWidth) * 100}`);
   });
-  // valueTipType
+  test('should render when set defaultValue', () => {
+    const defaultValue = 50;
+    const { container } = render(<Slider defaultValue={defaultValue} />);
+    const sliderWrapper = container.querySelector(wrapper);
+    textContentTest(sliderWrapper?.querySelector(value) as Element, `${defaultValue}`);
+  });
+  test('should render when set value and onChange', () => {
+    const defaultValue = 50;
+    const inputValue = 75;
+    const App = () => {
+      const [value, setValue] = React.useState(defaultValue);
+      const handleChange = (v: number) => {
+        setValue(v);
+      };
+      return (
+        <div>
+          <Input.Number digits={0} max={100} value={value} onChange={(v: any) => setValue(v)} />
+          <Slider value={value} onChange={handleChange} />
+        </div>
+      );
+    };
+    const { container } = render(<App />);
+    const sliderWrapper = container.querySelector(wrapper);
+    const sliderTrack = sliderWrapper?.querySelector(track);
+    const sliderTrackInner = sliderTrack?.querySelector(trackInner) as Element;
+    const sliderValue = sliderTrackInner?.querySelector(value) as Element;
+    textContentTest(sliderValue, `${defaultValue}`);
+    fireEvent.change(container.querySelector('input')!, { target: { value: inputValue } });
+    styleTest(sliderTrackInner, innerStyle(0, 100 - inputValue));
+    textContentTest(sliderValue, `${inputValue}`);
+  });
+  test('should render when set range', () => {
+    const defaultValue = [25, 75];
+    const leftValue = -20;
+    const rightValue = 20;
+    const { container } = render(<Slider defaultValue={defaultValue} range />);
+    const sliderWrapper = container.querySelector(wrapper);
+    const sliderTrackInner = sliderWrapper?.querySelector(trackInner) as Element;
+    styleTest(sliderTrackInner, innerStyle(defaultValue[0], 100 - defaultValue[1]));
+    const indicators = sliderTrackInner?.querySelectorAll(indicator) as NodeListOf<Element>;
+    const values = sliderTrackInner?.querySelectorAll(value) as NodeListOf<Element>;
+    classTest(indicators[0], indicatorStart);
+    classTest(indicators[1], indicatorEnd);
+    classTest(values[0], startValue);
+    classTest(values[1], endValue);
+    textContentTest(values[0], `${defaultValue[0]}`);
+    textContentTest(values[1], `${defaultValue[1]}`);
+    fireEvent.mouseDown(indicators[0]);
+    fireEvent.mouseMove(indicators[0], { clientX: leftValue });
+    fireEvent.mouseUp(indicators[0]);
+    fireEvent.mouseDown(indicators[1]);
+    fireEvent.mouseMove(indicators[1], { clientX: rightValue });
+    fireEvent.mouseUp(indicators[1]);
+    textContentTest(values[0], `${defaultValue[0] + (leftValue / sliderWidth) * 100}`);
+    textContentTest(values[1], `${defaultValue[1] + (rightValue / sliderWidth) * 100}`);
+  });
+  test('should render when set valueTipType is hover', () => {
+    const defaultValue = 50;
+    const { container } = render(<Slider defaultValue={defaultValue} valueTipType='hover' />);
+    const sliderWrapper = container.querySelector(wrapper);
+    classTest(sliderWrapper?.querySelector(indicator) as Element, indicatorHover);
+    classTest(sliderWrapper?.querySelector(value) as Element, valueHover);
+  });
+  test('should render when set scale', () => {
+    const scaleValues = [0, 10, 100, 250, 500, 1000];
+    const { container } = render(<Slider scale={scaleValues} />);
+    const sliderScale = container.querySelector(scaleWrapper);
+    const scales = sliderScale?.querySelectorAll(scale) as NodeListOf<Element>;
+    expect(scales.length).toBe(scaleValues.length);
+    scales.forEach((scale, index) => {
+      textContentTest(scale.querySelector(label)!, `${scaleValues[index]}`);
+    });
+  });
+  test('should render when set autoHide', () => {
+    const { container } = render(<Slider autoHide />);
+    const sliderWrapper = container.querySelector(wrapper)!;
+    classTest(sliderWrapper, autoHide);
+  });
+  test('should render when set formatScale and FormatValue', () => {
+    const scaleValues = [0, 60, 120, 180, 240, 300, 360, 420, 480, 540];
+    const defaultValue = [33, 216];
+    const pad = (i: number) => (i < 10 ? `0${i}` : i);
+
+    const format: any = (v: number) => {
+      const value = v + 540;
+      const hours = Math.floor(value / 60);
+      return `${pad(hours)}:${pad(value - hours * 60)}`;
+    };
+
+    const { container } = render(
+      <Slider
+        range
+        formatScale={format}
+        formatValue={format}
+        defaultValue={defaultValue}
+        scale={scaleValues}
+      />,
+    );
+    screen.debug();
+    const sliderScale = container.querySelector(scaleWrapper);
+    const scales = sliderScale?.querySelectorAll(scale) as NodeListOf<Element>;
+    scales.forEach((scale, index) => {
+      textContentTest(scale.querySelector(label)!, `${format(scaleValues[index])}`);
+    });
+    const values = container.querySelectorAll(value) as NodeListOf<Element>;
+    values.forEach((value, index) => {
+      textContentTest(value, `${format(defaultValue[index])}`);
+    });
+  });
+  test('should render when set step is not 0', () => {
+    const sliderStep = 10;
+    const sliderScale = [0, 100];
+    const defaultValue = [10, 20];
+    const clientX = 15;
+    const { container } = render(
+      <Slider step={sliderStep} scale={sliderScale} defaultValue={defaultValue} range />,
+    );
+    const indicators = container.querySelectorAll(indicator) as NodeListOf<Element>;
+    const values = container.querySelectorAll(value) as NodeListOf<Element>;
+    fireEvent.mouseDown(indicators[1]);
+    fireEvent.mouseMove(indicators[1], { clientX });
+    fireEvent.mouseUp(indicators[1]);
+    textContentTest(
+      values[1],
+      `${Math.floor((defaultValue[1] + clientX) / sliderStep) * sliderStep}`,
+    );
+  });
+  test('should render when set step is 0', () => {
+    const sliderScales = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+    const clientX = 36;
+    const { container } = render(<Slider step={0} scale={sliderScales} />);
+    const sliderIndicator = container.querySelector(indicator)!;
+    const sliderValue = container.querySelector(value)!;
+    fireEvent.mouseDown(sliderIndicator);
+    fireEvent.mouseMove(sliderIndicator, { clientX });
+    fireEvent.mouseUp(sliderIndicator);
+    textContentTest(sliderValue, `${Math.ceil(((clientX / sliderWidth) * 100) / 10) * 10}`);
+  });
+  test('should render when set formatValue and formatScale is false', () => {
+    const { container } = render(
+      <Slider defaultValue={4} step={1} formatValue={false} formatScale={false} />,
+    );
+    classLengthTest(container, value, 0);
+    classLengthTest(container, scaleWrapper, 0);
+  });
+  test('should render when set disable', () => {
+    const clientX = 100;
+    const { container } = render(<Slider disabled />);
+    const sliderWrapper = container.querySelector(wrapper)!;
+    const sliderIndicator = sliderWrapper?.querySelector(indicator) as Element;
+    classTest(sliderWrapper, disabled);
+    fireEvent.mouseDown(sliderIndicator);
+    fireEvent.mouseMove(sliderIndicator, { clientX });
+    fireEvent.mouseUp(sliderIndicator);
+    textContentTest(sliderWrapper.querySelector(value)!, '0');
+  });
+});
+describe('Slider[Click]', () => {
+  test('should render when click', () => {
+    const clientX = 50;
+    const { container } = render(<Slider />);
+    const sliderWrapper = container.querySelector(wrapper);
+    const sliderTrack = sliderWrapper?.querySelector(track) as Element;
+    const sliderTrackInner = sliderTrack?.querySelector(trackInner) as Element;
+    const sliderValue = sliderTrackInner?.querySelector(value) as Element;
+    sliderTrack.getBoundingClientRect = jest.fn(() => ({
+      left: 0,
+      width: sliderWidth,
+      bottom: 50,
+      height: 200,
+      top: 0,
+      right: 0,
+      x: 0,
+      y: 0,
+      toJSON: () => {},
+    }));
+    fireEvent.click(sliderTrack!, { clientX });
+    styleTest(sliderTrackInner, innerStyle(0, 75));
+    textContentTest(sliderValue, `${(clientX / sliderWidth) * 100}`);
+  });
 });
