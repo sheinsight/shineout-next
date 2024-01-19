@@ -347,18 +347,21 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
           >
             <td
               class="so-descriptions-label"
+              style="padding-bottom: 2px;"
             >
               Name
                :
             </td>
             <td
               class="so-descriptions-label"
+              style="padding-bottom: 2px;"
             >
               Residence
                :
             </td>
             <td
               class="so-descriptions-label"
+              style="padding-bottom: 2px;"
             >
               Address
                :
@@ -388,6 +391,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
           >
             <td
               class="so-descriptions-label"
+              style="padding-bottom: 2px;"
             >
               Hometown
                :
@@ -395,6 +399,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
             <td
               class="so-descriptions-label"
               colspan="2"
+              style="padding-bottom: 2px;"
             >
               Mobile
                :
@@ -425,8 +430,201 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
 exports[`Alert[Base] should render correctly about arrangement 1`] = `
 <div>
   <div
-    class="so-descriptions-wrapper"
+    class="so-radio-group"
     style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        horizontal
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        vertical
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        inlineHorizontal
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        inlineVertical
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-radio-group"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        auto
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        fixed
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-radio-group"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        no border
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        border
+      </span>
+    </div>
+  </div>
+  <div
+    class="so-descriptions-wrapper"
   >
     <div
       class="so-descriptions-header"
@@ -438,7 +636,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-table-layout-fixed so-descriptions-horizontal"
+      class="so-descriptions-body so-descriptions-horizontal"
     >
       <table
         cellpadding="0"
@@ -451,7 +649,6 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
           >
             <td
               class="so-descriptions-label"
-              style="text-align: right;"
             >
               Name
                :
@@ -463,7 +660,6 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
             </td>
             <td
               class="so-descriptions-label"
-              style="text-align: right;"
             >
               Residence
                :
@@ -475,7 +671,6 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
             </td>
             <td
               class="so-descriptions-label"
-              style="text-align: right;"
             >
               Address
                :
@@ -491,98 +686,6 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
           >
             <td
               class="so-descriptions-label"
-              style="text-align: right;"
-            >
-              Mobile
-               :
-            </td>
-            <td
-              class="so-descriptions-value"
-            >
-              187-2323-9834
-            </td>
-            <td
-              class="so-descriptions-label"
-              style="text-align: right;"
-            >
-              Hometown
-               :
-            </td>
-            <td
-              class="so-descriptions-value"
-              colspan="3"
-            >
-              Beijing
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    class="so-descriptions-wrapper"
-    style="margin-bottom: 24px;"
-  >
-    <div
-      class="so-descriptions-header"
-    >
-      <div
-        class="so-descriptions-title"
-      >
-        User Info
-      </div>
-    </div>
-    <div
-      class="so-descriptions-body so-descriptions-table-layout-fixed so-descriptions-horizontal"
-    >
-      <table
-        cellpadding="0"
-        cellspacing="0"
-        class="so-descriptions-table"
-      >
-        <tbody>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-label"
-            >
-              Name
-               :
-            </td>
-            <td
-              class="so-descriptions-value"
-            >
-              Mai Mai
-            </td>
-            <td
-              class="so-descriptions-label"
-            >
-              Residence
-               :
-            </td>
-            <td
-              class="so-descriptions-value"
-            >
-              Beijing
-            </td>
-            <td
-              class="so-descriptions-label"
-            >
-              Address
-               :
-            </td>
-            <td
-              class="so-descriptions-value"
-            >
-              Yingdu Building
-            </td>
-          </tr>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-label"
             >
               Mobile
                :
@@ -603,525 +706,6 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               colspan="3"
             >
               Beijing
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    class="so-descriptions-wrapper"
-    style="margin-bottom: 24px;"
-  >
-    <div
-      class="so-descriptions-header"
-    >
-      <div
-        class="so-descriptions-title"
-      >
-        User Info
-      </div>
-    </div>
-    <div
-      class="so-descriptions-body so-descriptions-table-layout-fixed so-descriptions-inline-horizontal"
-    >
-      <table
-        cellpadding="0"
-        cellspacing="0"
-        class="so-descriptions-table"
-      >
-        <tbody>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Name
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Mai Mai
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Residence
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Beijing
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Address
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Yingdu Building
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Mobile
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  187-2323-9834
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-              colspan="2"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Hometown
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Beijing
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    class="so-descriptions-wrapper"
-    style="margin-bottom: 24px;"
-  >
-    <div
-      class="so-descriptions-header"
-    >
-      <div
-        class="so-descriptions-title"
-      >
-        User Info
-      </div>
-    </div>
-    <div
-      class="so-descriptions-body so-descriptions-table-layout-fixed"
-    >
-      <table
-        cellpadding="0"
-        cellspacing="0"
-        class="so-descriptions-table"
-      >
-        <tbody>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Name
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Mai Mai
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Residence
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Beijing
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Address
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Yingdu Building
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Mobile
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  187-2323-9834
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-              colspan="2"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Hometown
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Beijing
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    class="so-descriptions-wrapper"
-    style="margin-bottom: 24px;"
-  >
-    <div
-      class="so-descriptions-header"
-    >
-      <div
-        class="so-descriptions-title"
-      >
-        User Info
-      </div>
-    </div>
-    <div
-      class="so-descriptions-body so-descriptions-border so-descriptions-inline-horizontal"
-    >
-      <table
-        cellpadding="0"
-        cellspacing="0"
-        class="so-descriptions-table"
-      >
-        <tbody>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Name
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Mai Mai
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Residence
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Beijing
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Address
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Yingdu Building
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Mobile
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  187-2323-9834
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-              colspan="2"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Hometown
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Beijing
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    class="so-descriptions-wrapper"
-  >
-    <div
-      class="so-descriptions-header"
-    >
-      <div
-        class="so-descriptions-title"
-      >
-        User Info
-      </div>
-    </div>
-    <div
-      class="so-descriptions-body so-descriptions-border"
-    >
-      <table
-        cellpadding="0"
-        cellspacing="0"
-        class="so-descriptions-table"
-      >
-        <tbody>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Name
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Mai Mai
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Residence
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Beijing
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Address
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Yingdu Building
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="so-descriptions-row"
-          >
-            <td
-              class="so-descriptions-inline-table"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Mobile
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  187-2323-9834
-                </div>
-              </div>
-            </td>
-            <td
-              class="so-descriptions-inline-table"
-              colspan="2"
-            >
-              <div
-                class="so-descriptions-item"
-              >
-                <div
-                  class="so-descriptions-label-inline"
-                >
-                  Hometown
-                   :
-                </div>
-                <div
-                  class="so-descriptions-value-inline"
-                >
-                  Beijing
-                </div>
-              </div>
             </td>
           </tr>
         </tbody>
@@ -1644,25 +1228,33 @@ exports[`Alert[Base] should render correctly about responsive 1`] = `
 exports[`Alert[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="so-radio-group so-radio-group-button so-button-group"
+    class="so-radio-group"
     style="margin-bottom: 24px;"
   >
-    <button
-      class="so-radio-wrapper so-button-secondary so-button-button so-button-outline"
-      type="button"
+    <div
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <span>
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
         small
       </span>
-    </button>
-    <button
-      class="so-radio-wrapper so-radio-wrapper-checked so-button-primary so-button-button so-button-outline"
-      type="button"
+    </div>
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -1670,23 +1262,42 @@ exports[`Alert[Base] should render correctly about size 1`] = `
         tabindex="0"
         type="radio"
       />
-      <span>
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
         default
       </span>
-    </button>
-    <button
-      class="so-radio-wrapper so-button-secondary so-button-button so-button-outline"
-      type="button"
+    </div>
+    <div
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <span>
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
         large
       </span>
-    </button>
+    </div>
   </div>
   <div
     class="so-descriptions-wrapper"
