@@ -9,6 +9,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
   >
     <button
       class="so-button-primary so-button-button so-button-text"
+      type="button"
     >
       <span>
         Publish
@@ -16,6 +17,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
     <button
       class="so-button-secondary so-button-button so-button-text"
+      type="button"
     >
       <span>
         Publish
@@ -23,6 +25,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
     <button
       class="so-button-secondary so-button-button so-button-text"
+      type="button"
     >
       <span>
         Publish
@@ -31,6 +34,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     <button
       class="so-button-secondary so-button-button so-button-disabled so-button-text"
       disabled=""
+      type="button"
     >
       <span>
         Publish
@@ -42,6 +46,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
   >
     <button
       class="so-button-primary so-button-button"
+      type="button"
     >
       <span>
         Publish
@@ -49,6 +54,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
     <button
       class="so-button-secondary so-button-button"
+      type="button"
     >
       <span>
         Publish
@@ -56,6 +62,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
     <button
       class="so-button-secondary so-button-button"
+      type="button"
     >
       <span>
         Publish
@@ -63,6 +70,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
     <button
       class="so-button-secondary so-button-button"
+      type="button"
     >
       <span>
         Publish
@@ -74,6 +82,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
   >
     <button
       class="so-button-secondary so-button-button so-button-outline"
+      type="button"
     >
       <span>
         Publish
@@ -81,6 +90,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
     <button
       class="so-button-secondary so-button-button so-button-outline"
+      type="button"
     >
       <span>
         Publish
@@ -88,6 +98,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
     <button
       class="so-button-secondary so-button-button so-button-outline"
+      type="button"
     >
       <span>
         Publish
@@ -95,6 +106,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     </button>
     <button
       class="so-button-secondary so-button-button so-button-outline"
+      type="button"
     >
       <span>
         Publish
@@ -109,6 +121,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     >
       <button
         class="so-button-primary so-button-button"
+        type="button"
       >
         <span>
           Publish
@@ -116,6 +129,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </button>
       <button
         class="so-button-primary so-button-button"
+        type="button"
       >
         <span
           style="display: inline-flex; line-height: 22px;"
@@ -140,6 +154,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     >
       <button
         class="so-button-secondary so-button-button"
+        type="button"
       >
         <span>
           Publish
@@ -147,6 +162,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </button>
       <button
         class="so-button-secondary so-button-button"
+        type="button"
       >
         <span
           style="display: inline-flex; line-height: 22px;"
