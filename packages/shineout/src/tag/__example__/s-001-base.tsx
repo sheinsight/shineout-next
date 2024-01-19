@@ -17,7 +17,7 @@ export default () => {
   return (
     <div>
       {TagColor.map((item, index) => (
-        <Tag key={index} size='small' color={item as any}>
+        <Tag key={index} color={item as any}>
           {capitalizeFirstLetter(item)}
         </Tag>
       ))}

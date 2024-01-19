@@ -98,8 +98,8 @@ const tagTokenValue = {
     border: { color: 'Neutral-fill-2' },
     disabled: {
       font: { color: 'Neutral-text-2' },
-      background: { color: 'Neutral-fill-3' },
-      border: { color: 'Neutral-fill-3' },
+      background: { color: 'Neutral-fill-2' },
+      border: { color: 'Neutral-fill-2' },
     },
     outline: {
       font: { color: 'Neutral-text-4' },

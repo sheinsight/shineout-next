@@ -136,13 +136,13 @@ export interface TagTokens {
   tagDefaultDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-3
+   * @token Neutral-fill-2
    * @description 标签默认尺寸禁用状态的背景颜色
    */
   tagDefaultDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-3
+   * @token Neutral-fill-2
    * @description 标签默认尺寸禁用状态的边框颜色
    */
   tagDefaultDisabledBorderColor: string;
