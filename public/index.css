@@ -20,13 +20,13 @@ a:not(a[class]):hover {
 body {
   font-family: var(
     --common-body-font-family,
+    PingFang SC,
     -apple-system,
     BlinkMacSystemFont,
     Segoe UI,
     Roboto,
     Helvetica Neue,
     Helvetica,
-    PingFang SC,
     Hiragino KaKu Gothic Pro,
     Microsoft YaHei,
     Arial,
