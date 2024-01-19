@@ -4,6 +4,12 @@
 export interface CollapseTokens {
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 折叠面板图标颜色
+   */
+  collapseIconColor: string;
+  /**
+   * @type {string}
    * @token Border-1
    * @description 折叠面板undefined边框字号
    */

@@ -21,7 +21,7 @@ export default () => {
         <Collapse.Item
           title='This is panel header 2'
           keygen='1'
-          extra={<Checkbox>checkbox</Checkbox>}
+          extra={<Checkbox style={{ margin: 0 }}>checkbox</Checkbox>}
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a
           bird in the open. Joy in living can never be assumed as a pose, or put on from the outside

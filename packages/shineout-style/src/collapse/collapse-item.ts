@@ -73,6 +73,7 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
+    color: Token.collapseIconColor,
     '& svg': {
       width: Token.collapseHeaderIconWidth,
     },
@@ -86,6 +87,8 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     cursor: 'pointer',
     gap: Token.collapseHeaderExtraGap,
     lineHeight: Token.lineHeightDynamic,
+    display: 'flex',
+    alignItems: 'center',
   },
   content: {
     overflow: 'hidden',
@@ -103,6 +106,11 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     '& $header, $content, $extra, $icon': {
       cursor: 'not-allowed',
       color: Token.collapseDisabledColor,
+    },
+    '& $icon': {
+      '& svg > path': {
+        fill: Token.collapseDisabledColor,
+      },
     },
   },
   expanded: {},

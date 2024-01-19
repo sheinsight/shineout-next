@@ -56,7 +56,9 @@ const collapseTokenValue = {
   disabled: { border: { color: '' }, color: 'Neutral-text-2', background: { color: '' } },
 };
 
-const collapseTokenExtraValue = {};
+const collapseTokenExtraValue = {
+  icon: { color: 'Neutral-text-4' },
+};
 
 module.exports = {
   collapseTokenValue,
