@@ -26,6 +26,8 @@ export type TreeSelectClasses = {
   resultTextWrapper: string;
   resultTextPadding: string;
   compressedWrapper: string;
+  multipleCompressedWrapper: string;
+  multipleResultWrapper: string;
   controlMouse: string;
   controlKeyboard: string;
   placeholder: string;
@@ -66,34 +68,34 @@ export type TreeSelectClassType = keyof TreeSelectClasses;
 
 const inputBorderToken = {
   lineHeight: token.lineHeightDynamic,
-  borderRadius: token.selectBorderRadius,
+  borderRadius: token.treeSelectBorderRadius,
 
-  fontSize: token.selectFontSize,
-  smallFontSize: token.selectSmallFontSize,
-  largeFontSize: token.selectLargeFontSize,
+  fontSize: token.treeSelectFontSize,
+  smallFontSize: token.treeSelectSmallFontSize,
+  largeFontSize: token.treeSelectLargeFontSize,
 
-  paddingY: token.selectPaddingY,
-  smallPaddingY: token.selectSmallPaddingY,
-  largePaddingY: token.selectLargePaddingY,
+  paddingY: token.treeSelectPaddingY,
+  smallPaddingY: token.treeSelectSmallPaddingY,
+  largePaddingY: token.treeSelectLargePaddingY,
 
-  paddingX: token.selectPaddingX,
-  smallPaddingX: token.selectSmallPaddingX,
-  largePaddingX: token.selectLargePaddingX,
+  paddingX: token.treeSelectPaddingX,
+  smallPaddingX: token.treeSelectSmallPaddingX,
+  largePaddingX: token.treeSelectLargePaddingX,
 
-  borderColor: token.selectBorderColor,
-  focusBorderColor: token.selectFocusBorderColor,
-  hoverBorderColor: token.selectHoverBorderColor,
-  disabledBorderColor: token.selectDisabledBorderColor,
-  errorBorderColor: token.selectErrorBorderColor,
+  borderColor: token.treeSelectBorderColor,
+  focusBorderColor: token.treeSelectFocusBorderColor,
+  hoverBorderColor: token.treeSelectHoverBorderColor,
+  disabledBorderColor: token.treeSelectDisabledBorderColor,
+  errorBorderColor: token.treeSelectErrorBorderColor,
 
-  fontColor: token.selectFontColor,
-  disabledFontColor: token.selectDisabledFontColor,
+  fontColor: token.treeSelectFontColor,
+  disabledFontColor: token.treeSelectDisabledFontColor,
 
-  backgroundColor: token.selectBackgroundColor,
-  disabledBackgroundColor: token.selectDisabledBackgroundColor,
+  backgroundColor: token.treeSelectBackgroundColor,
+  disabledBackgroundColor: token.treeSelectDisabledBackgroundColor,
 
-  focusShadow: token.selectFocusShadow,
-  errorFocusShadow: token.selectErrorFocusShadow,
+  focusShadow: token.treeSelectFocusShadow,
+  errorFocusShadow: token.treeSelectErrorFocusShadow,
 
   innerTitlePaddingY: token.inputInnerPaddingY,
   innerTitlePaddingX: token.inputInnerPaddingX,
@@ -114,6 +116,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     position: 'relative',
     width: '100%',
     outline: 'none',
+    cursor: 'pointer',
     ...wrapper,
     '&$wrapperSmall': {
       '& $tag': {
@@ -127,38 +130,38 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
         marginBottom: 0,
       },
       '& $optionInner': {
-        paddingTop: token.selectSmallOptionInnerPaddingY,
-        paddingBottom: token.selectSmallOptionInnerPaddingY,
-        paddingLeft: token.selectSmallOptionInnerPaddingX,
+        paddingTop: token.treeSelectSmallOptionInnerPaddingY,
+        paddingBottom: token.treeSelectSmallOptionInnerPaddingY,
+        paddingLeft: token.treeSelectSmallOptionInnerPaddingX,
 
-        // padding: `${token.selectSmallOptionInnerPaddingY} ${token.selectSmallOptionInnerPaddingX}`,
-        fontSize: token.selectSmallFontSize,
+        // padding: `${token.treeSelectSmallOptionInnerPaddingY} ${token.treeSelectSmallOptionInnerPaddingX}`,
+        fontSize: token.treeSelectSmallFontSize,
       },
       '& $clearIcon': {
-        right: token.selectSmallPaddingX,
+        right: token.treeSelectSmallPaddingX,
       },
     },
     '&$wrapperLarge': {
       '& $placeholder,$ellipsis,$space,input': {
-        marginTop: token.selectLargePlaceholderMarginY,
-        marginBottom: token.selectLargePlaceholderMarginY,
+        marginTop: token.treeSelectLargePlaceholderMarginY,
+        marginBottom: token.treeSelectLargePlaceholderMarginY,
       },
       '& $optionInner': {
-        // padding: `${token.selectLargeOptionInnerPaddingY} ${token.selectLargeOptionInnerPaddingX}`,
-        paddingTop: token.selectLargeOptionInnerPaddingY,
-        paddingBottom: token.selectLargeOptionInnerPaddingY,
-        paddingLeft: token.selectLargeOptionInnerPaddingX,
-        fontSize: token.selectLargeFontSize,
+        // padding: `${token.treeSelectLargeOptionInnerPaddingY} ${token.treeSelectLargeOptionInnerPaddingX}`,
+        paddingTop: token.treeSelectLargeOptionInnerPaddingY,
+        paddingBottom: token.treeSelectLargeOptionInnerPaddingY,
+        paddingLeft: token.treeSelectLargeOptionInnerPaddingX,
+        fontSize: token.treeSelectLargeFontSize,
       },
       '& $clearIcon': {
-        right: token.selectLargePaddingX,
+        right: token.treeSelectLargePaddingX,
       },
     },
   },
   wrapperDisabled: {
     ...wrapperDisabled,
     '& $icon': {
-      color: token.selectDisabledFontColor,
+      color: token.treeSelectDisabledFontColor,
     },
   },
   ...resetWrapper,
@@ -180,7 +183,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     minWidth: 0,
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
-    paddingRight: `calc(${token.selectSmallFontSize} + ${token.selectClearPadding})`,
+    paddingRight: `calc(${token.treeSelectSmallFontSize} + ${token.treeSelectClearPadding})`,
   },
   resultTextWrapper: {
     display: 'flex',
@@ -206,7 +209,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       whiteSpace: 'nowrap',
       textOverflow: 'ellipsis',
       '&::placeholder': {
-        color: token.selectPlaceholderColor,
+        color: token.treeSelectPlaceholderColor,
       },
     },
   },
@@ -237,12 +240,12 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   },
   resultTextPadding: {
     position: 'absolute',
-    padding: `0 ${token.selectResultTextPaddingX}`,
-    left: `calc(-1 * ${token.selectResultTextPaddingX})`,
-    right: `calc(-1 * ${token.selectResultTextPaddingX})`,
+    padding: `0 ${token.treeSelectResultTextPaddingX}`,
+    left: `calc(-1 * ${token.treeSelectResultTextPaddingX})`,
+    right: `calc(-1 * ${token.treeSelectResultTextPaddingX})`,
     top: '0',
     bottom: '0',
-    borderRadius: token.selectResultTextBorderRadius,
+    borderRadius: token.treeSelectResultTextBorderRadius,
     '& > input': {
       color: 'inherit',
       padding: '0',
@@ -253,17 +256,17 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       backgroundColor: 'transparent',
       width: '100%',
       '&::placeholder': {
-        color: token.selectPlaceholderColor,
+        color: token.treeSelectPlaceholderColor,
       },
     },
   },
   resultTextActive: {
     '& $resultTextPadding': {
-      backgroundColor: token.selectResultTextActiveBackgroundColor,
+      backgroundColor: token.treeSelectResultTextActiveBackgroundColor,
     },
   },
   resultTextDisabled: {
-    color: token.selectDisabledFontColor,
+    color: token.treeSelectDisabledFontColor,
     cursor: 'not-allowed',
   },
   compressedWrapper: {
@@ -272,65 +275,65 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   },
   controlMouse: {
     '& $optionInner:hover': {
-      backgroundColor: token.selectOptionHoverBackgroundColor,
+      backgroundColor: token.treeSelectOptionHoverBackgroundColor,
     },
   },
   controlKeyboard: {
     '& $optionHover': {
       '& $optionInner': {
-        backgroundColor: token.selectOptionHoverBackgroundColor,
+        backgroundColor: token.treeSelectOptionHoverBackgroundColor,
       },
     },
   },
   placeholder: {
-    color: token.selectPlaceholderColor,
+    color: token.treeSelectPlaceholderColor,
     lineHeight: token.lineHeightDynamic,
-    marginTop: token.selectPlaceholderMarginY,
-    marginBottom: token.selectPlaceholderMarginY,
+    marginTop: token.treeSelectPlaceholderMarginY,
+    marginBottom: token.treeSelectPlaceholderMarginY,
   },
   pickerWrapper: {
     position: 'absolute',
-    backgroundColor: token.selectPanelBackgroundColor,
-    boxShadow: token.selectPanelShadow,
-    borderRadius: token.selectPanelRadius,
+    backgroundColor: token.treeSelectPanelBackgroundColor,
+    boxShadow: token.treeSelectPanelShadow,
+    borderRadius: token.treeSelectPanelRadius,
     transformOrigin: '0 0',
   },
   clearable: {},
   clearIcon: {
     position: 'absolute',
-    right: token.selectPaddingX,
+    right: token.treeSelectPaddingX,
     top: `calc(50% - 1em/2)`,
     cursor: 'pointer',
-    width: token.selectFontSize,
+    width: token.treeSelectFontSize,
     lineHeight: 0,
-    color: token.selectClearColor,
+    color: token.treeSelectClearColor,
     verticalAlign: 'middle',
   },
   arrowIcon: {
     position: 'absolute',
-    right: token.selectPaddingX,
+    right: token.treeSelectPaddingX,
     top: `calc(50% - 1em/2)`,
     verticalAlign: 'middle',
-    width: token.selectFontSize,
+    width: token.treeSelectFontSize,
     lineHeight: 0,
-    color: token.selectIconColor,
+    color: token.treeSelectIconColor,
     transition: 'transform 0.3s',
   },
   arrowIconOpen: {
     transform: 'rotate(180deg)',
-    color: token.selectHoverBorderColor,
+    color: token.treeSelectHoverBorderColor,
   },
   ellipsis: {
     display: 'block',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    marginTop: token.selectPlaceholderMarginY,
-    marginBottom: token.selectPlaceholderMarginY,
+    marginTop: token.treeSelectPlaceholderMarginY,
+    marginBottom: token.treeSelectPlaceholderMarginY,
   },
   multiple: {
     '& $optionInner': {
-      paddingRight: token.selectOptionInnerPaddingRight,
+      paddingRight: token.treeSelectOptionInnerPaddingRight,
     },
     '& $resultTextWrapper': {
       flexWrap: 'wrap',
@@ -340,6 +343,12 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     },
     '& $placeholder': {},
   },
+  multipleCompressedWrapper: {
+    flexWrap: 'nowrap',
+  },
+  multipleResultWrapper: {
+    flexWrap: 'wrap',
+  },
   loading: {
     padding: 10,
   },
@@ -348,8 +357,8 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     top: `calc(50% - 1em/2)`,
     position: 'absolute',
     display: 'inline-flex',
-    width: token.selectFontSize,
-    fontSize: token.selectFontSize,
+    width: token.treeSelectFontSize,
+    fontSize: token.treeSelectFontSize,
   },
   moreIcon: {
     display: 'inline-flex',
@@ -370,7 +379,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     '& $optionDisabled': {
       cursor: 'not-allowed',
       '&:hover:not([data-active="true"])': {
-        backgroundColor: `${token.selectOptionDisabledBackgroundColor}`,
+        backgroundColor: `${token.treeSelectOptionDisabledBackgroundColor}`,
       },
     },
   },
@@ -380,13 +389,13 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     },
     maxWidth: '80%',
     marginRight: 4,
-    marginTop: token.selectPlaceholderMarginY,
-    marginBottom: token.selectPlaceholderMarginY,
+    marginTop: token.treeSelectPlaceholderMarginY,
+    marginBottom: token.treeSelectPlaceholderMarginY,
     textWrap: 'nowrap',
   },
   space: {
-    marginTop: token.selectPlaceholderMarginY,
-    marginBottom: token.selectPlaceholderMarginY,
+    marginTop: token.treeSelectPlaceholderMarginY,
+    marginBottom: token.treeSelectPlaceholderMarginY,
   },
   inputMirror: {
     position: 'absolute',
@@ -398,7 +407,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     width: 248,
     height: 72,
     overflow: 'auto',
-    padding: `${token.selectMorePaddingY} ${token.selectMorePaddingX}`,
+    padding: `${token.treeSelectMorePaddingY} ${token.treeSelectMorePaddingX}`,
   },
   virtualList: {
     margin: 0,
@@ -407,7 +416,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   option: {
     listStyle: 'none',
     lineHeight: token.lineHeightDynamic,
-    padding: `${token.selectOptionPaddingY} ${token.selectOptionPaddingX}`,
+    padding: `${token.treeSelectOptionPaddingY} ${token.treeSelectOptionPaddingX}`,
     // not disabled
     '&:not($optionDisabled)': {
       cursor: 'pointer',
@@ -415,7 +424,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     // hover
     // '&:hover': {
     //   '& $optionInner': {
-    //     backgroundColor: token.selectOptionHoverBackgroundColor,
+    //     backgroundColor: token.treeSelectOptionHoverBackgroundColor,
     //   },
     // },
   },
@@ -424,46 +433,46 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    fontSize: token.selectFontSize,
-    padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
-    borderRadius: token.selectOptionInnerBorderRadius,
+    fontSize: token.treeSelectFontSize,
+    padding: `${token.treeSelectOptionInnerPaddingY} ${token.treeSelectOptionInnerPaddingX}`,
+    borderRadius: token.treeSelectOptionInnerBorderRadius,
   },
   optionHover: {
-    // backgroundColor: token.selectOptionHoverBackgroundColor,
+    // backgroundColor: token.treeSelectOptionHoverBackgroundColor,
     // '& $optionInner:hover': {
-    //   backgroundColor: token.selectOptionHoverBackgroundColor,
+    //   backgroundColor: token.treeSelectOptionHoverBackgroundColor,
     // },
   },
   optionActive: {
-    color: token.selectOptionActiveColor,
-    backgroundColor: token.selectOptionActiveBackgroundColor,
+    color: token.treeSelectOptionActiveColor,
+    backgroundColor: token.treeSelectOptionActiveBackgroundColor,
     '&>div': {
-      color: token.selectOptionActiveColor,
+      color: token.treeSelectOptionActiveColor,
     },
   },
   optionDisabled: {
     cursor: 'not-allowed',
-    color: token.selectOptionDisabledColor,
-    backgroundColor: token.selectOptionDisabledBackgroundColor,
+    color: token.treeSelectOptionDisabledColor,
+    backgroundColor: token.treeSelectOptionDisabledBackgroundColor,
     '&>div': {
       cursor: 'not-allowed',
-      color: token.selectOptionDisabledColor,
-      backgroundColor: token.selectOptionDisabledBackgroundColor,
+      color: token.treeSelectOptionDisabledColor,
+      backgroundColor: token.treeSelectOptionDisabledBackgroundColor,
     },
   },
   optionGroup: {},
   optionGroupTitle: {
-    fontSize: token.selectGroupTitleFontSize,
-    padding: `${token.selectGroupTitlePaddingY} ${token.selectGroupTitlePaddingX}`,
-    color: token.selectGroupTitleFontColor,
+    fontSize: token.treeSelectGroupTitleFontSize,
+    padding: `${token.treeSelectGroupTitlePaddingY} ${token.treeSelectGroupTitlePaddingX}`,
+    color: token.treeSelectGroupTitleFontColor,
   },
   header: {
     display: 'flex',
     alignItems: 'center',
     boxSizing: 'border-box',
     height: 32,
-    padding: token.selectHeaderPadding,
-    borderBottom: `1px solid ${token.selectHeaderBorderColor}`,
+    padding: token.treeSelectHeaderPadding,
+    borderBottom: `1px solid ${token.treeSelectHeaderBorderColor}`,
 
     '& $columnsCheckbox': {
       marginRight: 0,
@@ -476,14 +485,14 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     display: 'flex',
     alignItems: 'center',
     '& $optionGroupTitle': {
-      padding: `0 ${token.selectHeaderPadding}`,
-      marginLeft: token.selectColumnOptionMargin,
+      padding: `0 ${token.treeSelectHeaderPadding}`,
+      marginLeft: token.treeSelectColumnOptionMargin,
     },
   },
   columnsOption: {
     // flex: 1,
-    paddingLeft: token.selectColumnPadding,
-    paddingRight: token.selectColumnPadding,
+    paddingLeft: token.treeSelectColumnPadding,
+    paddingRight: token.treeSelectColumnPadding,
     lineHeight: 1,
     boxSizing: 'border-box',
     overflow: 'hidden',
@@ -493,7 +502,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   },
   columnsRadio: {
     width: '100%',
-    marginLeft: token.selectColumnOptionMargin,
+    marginLeft: token.treeSelectColumnOptionMargin,
     '& :last-child': {
       flex: 1,
       overflow: 'hidden',
@@ -503,7 +512,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
   },
   columnsCheckbox: {
     width: '100%',
-    marginLeft: token.selectColumnOptionMargin,
+    marginLeft: token.treeSelectColumnOptionMargin,
     '& :last-child': {
       flex: 1,
       overflow: 'hidden',

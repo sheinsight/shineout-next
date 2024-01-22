@@ -24,8 +24,10 @@ export type SelectClasses = {
   resultTextActive: string;
   resultTextDisabled: string;
   resultTextWrapper: string;
+  multipleResultWrapper: string;
   resultTextPadding: string;
   compressedWrapper: string;
+  multipleCompressedWrapper: string;
   controlMouse: string;
   controlKeyboard: string;
   placeholder: string;
@@ -114,6 +116,12 @@ const selectStyle: JsStyles<SelectClassType> = {
     width: '100%',
     outline: 'none',
     ...wrapper,
+    '&$wrapperInnerTitle': {
+      '& $placeholder,$ellipsis,$space,input': {
+        marginTop: 0,
+        marginBottom: 0,
+      },
+    },
     '&$wrapperSmall': {
       '& $tag': {
         height: 18,
@@ -208,6 +216,9 @@ const selectStyle: JsStyles<SelectClassType> = {
         color: token.selectPlaceholderColor,
       },
     },
+  },
+  multipleResultWrapper: {
+    flexWrap: 'wrap',
   },
   resultAlignLeft: {
     '& $resultTextWrapper': {
@@ -331,13 +342,13 @@ const selectStyle: JsStyles<SelectClassType> = {
     '& $optionInner': {
       paddingRight: token.selectOptionInnerPaddingRight,
     },
-    '& $resultTextWrapper': {
-      flexWrap: 'wrap',
-    },
     '& $compressedWrapper': {
       flexWrap: 'nowrap',
     },
     '& $placeholder': {},
+  },
+  multipleCompressedWrapper: {
+    flexWrap: 'nowrap',
   },
   loading: {
     padding: 10,
