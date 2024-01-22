@@ -210,6 +210,9 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     transition: 'all 0.15s ease-in-out',
     fontFamily: 'inherit',
     height: Token.buttonHeight,
+    '& > span,& > a': {
+      height: '100%',
+    },
 
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,

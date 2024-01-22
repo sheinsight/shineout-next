@@ -86,9 +86,9 @@ const Button = (props: ButtonProps) => {
   }
 
   let loadingEl: React.ReactNode = (
-    <span className={buttonStyle.spin}>
+    <div className={buttonStyle.spin}>
       <Spin name='ring' size={getSpinSize()} jssStyle={jssStyle}></Spin>
-    </span>
+    </div>
   );
 
   if (renderLoading) {

@@ -11,6 +11,7 @@ import { Icon02, Icon03 } from './static/icon';
 export default () => {
   const iconWarpperStyle = {
     display: 'inline-flex',
+    alignItems: 'center',
     lineHeight: '22px',
   };
 

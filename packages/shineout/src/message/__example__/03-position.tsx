@@ -26,7 +26,6 @@ const App: React.FC = () => {
           keygen
           value={position}
           onChange={setPosition}
-          style={{ margin: '0 20px' }}
           data={['top', 'middle', 'top-left', 'top-right', 'bottom-left', 'bottom-right']}
         />
       </div>
