@@ -104,7 +104,18 @@ const Pagination = (props: PaginationProps) => {
               />
             );
           case 'list':
-            return <List key={i} {...props} pageSizeList={pageSizeList} />;
+            return (
+              <List
+                key={i}
+                {...props}
+                text={text}
+                size={size}
+                current={current || 0}
+                pageSize={pageSize}
+                pageSizeList={pageSizeList}
+                onChange={onChange}
+              />
+            );
           case 'simple':
             return (
               <Simple
@@ -112,6 +123,7 @@ const Pagination = (props: PaginationProps) => {
                 {...props}
                 mode={mode}
                 text={text}
+                disabled={disabled}
                 total={total}
                 current={current || 0}
                 pageSize={pageSize}

@@ -9,6 +9,7 @@ import {
   useInputStyle,
   useButtonStyle,
   useEmptyStyle,
+  useSelectStyle,
 } from '@sheinx/shineout-style';
 import { TableProps } from './table.type';
 
@@ -21,6 +22,7 @@ const jssStyle = {
   input: useInputStyle,
   button: useButtonStyle,
   empty: useEmptyStyle,
+  select: useSelectStyle,
 };
 export default <DataItem, Value>(props: TableProps<DataItem, Value>) => {
   return <Table jssStyle={jssStyle} {...props} />;

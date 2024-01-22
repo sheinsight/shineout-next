@@ -74,7 +74,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     onChangeAddition,
     onEnterExpand,
   } = props;
-  const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
+  const styles = jssStyle?.select?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = {
     ...style,
     width,
@@ -157,7 +157,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,
-    focused && styles?.wrapperFocus,
+    disabled !== true && focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,

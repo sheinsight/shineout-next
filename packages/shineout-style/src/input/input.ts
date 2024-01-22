@@ -199,25 +199,27 @@ const input: JsStyles<InputClass> = {
     boxSizing: 'border-box',
     flexFlow: 'column noWrap',
     '& > span': {
-      display: 'block',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       minHeight: '0',
       flexGrow: '1',
       boxSizing: 'border-box',
       cursor: 'pointer',
       width: '18px',
-      padding: '0 4px',
-      borderLeft: `1px solid ${token.inputDisabledBorderColor}`,
+      borderLeft: `1px solid ${token.inputBorderColor}`,
       lineHeight: '1',
-      color: token.inputDisabledFontColor,
+      color: token.inputIconColor,
       '&:hover': {
         '$wrapper:not($wrapperDisabled) &': {
           color: token.inputHoverBorderColor,
         },
       },
       '&:first-child': {
-        borderBottom: `1px solid ${token.inputDisabledBorderColor}`,
+        borderBottom: `1px solid ${token.inputBorderColor}`,
       },
       '& svg': {
+        width: 14,
         transform: 'rotate(-90deg)',
       },
     },

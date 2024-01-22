@@ -14,15 +14,32 @@ export default () => {
 
   return (
     <div>
-      <span style={{ fontSize: 14 }}>跳转至</span>
-      <Input.Number
-        min={1}
-        max={10}
-        value={current}
-        onChange={handleCurrentChange}
-        style={{ width: 80, marginBottom: 24, marginLeft: 8 }}
-      />
-
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>
+        <span style={{ fontSize: 14 }}>跳转至</span>
+        <Input.Number
+          min={1}
+          max={10}
+          size='small'
+          value={current}
+          onChange={handleCurrentChange}
+          style={{ width: 80, marginLeft: 8 }}
+        />
+        <Input.Number
+          min={1}
+          max={10}
+          value={current}
+          onChange={handleCurrentChange}
+          style={{ width: 80, marginLeft: 8 }}
+        />
+        <Input.Number
+          min={1}
+          max={10}
+          size='large'
+          value={current}
+          onChange={handleCurrentChange}
+          style={{ width: 80, marginLeft: 8 }}
+        />
+      </div>
       <Pagination total={100} span={3} current={current} onChange={setCurrent} />
     </div>
   );

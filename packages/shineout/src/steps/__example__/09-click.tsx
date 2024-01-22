@@ -19,7 +19,7 @@ export default () => {
   };
 
   return (
-    <div style={{ width: 500 }}>
+    <div style={{ width: '100%', overflow: 'auto' }}>
       <Steps current={current} onChange={setCurrent}>
         <Steps.Step title={renderTitle} />
         <Steps.Step title={renderTitle} />

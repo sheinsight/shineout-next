@@ -5,7 +5,8 @@ export default createUseStyles(
     desktop: {
       width: '100%',
       height: '100%',
-      overflow: 'auto',
+      overflowY: 'auto',
+      overflowX: 'hidden',
       position: 'relative',
     },
 

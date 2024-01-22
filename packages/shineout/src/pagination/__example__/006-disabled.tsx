@@ -13,8 +13,10 @@ export default () => {
   };
   const text = {
     jumper: 'Go to {input} Page',
+    page: ' / page',
   };
-  const layout = [renderTotal, 'links', 'jumper'];
+
+  const layout = [renderTotal, 'links', 'list', 'jumper'];
   return (
     <Pagination
       disabled

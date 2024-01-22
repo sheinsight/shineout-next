@@ -34,14 +34,18 @@ export default () => {
   };
 
   return (
-    <Transfer
-      titles={['Source', 'Target']}
-      footers={[renderFooter(), renderFooter()]}
-      data={data}
-      keygen='id'
-      operations={['To right', 'To left']}
-      listHeight={184}
-      renderItem='name'
-    ></Transfer>
+    <div style={{ width: '100%', overflow: 'auto' }}>
+      <div style={{ minWidth: 530 }}>
+        <Transfer
+          titles={['Source', 'Target']}
+          footers={[renderFooter(), renderFooter()]}
+          data={data}
+          keygen='id'
+          operations={['To right', 'To left']}
+          listHeight={184}
+          renderItem='name'
+        ></Transfer>
+      </div>
+    </div>
   );
 };

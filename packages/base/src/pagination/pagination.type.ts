@@ -1,4 +1,5 @@
 import { ButtonClasses } from '../button/button.type';
+import { SelectClasses } from '@sheinx/shineout-style';
 import { InputClasses } from '../input/input.type';
 import { CommonType } from '../common/type';
 
@@ -14,6 +15,7 @@ export type LayoutType = (
 
 export interface PaginationJssStyle {
   input?: () => InputClasses;
+  select?: () => SelectClasses;
   button?: () => ButtonClasses;
   pagination?: () => PaginationClasses;
 }

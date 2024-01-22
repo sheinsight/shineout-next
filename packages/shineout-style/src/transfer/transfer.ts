@@ -30,7 +30,7 @@ type TransferClass =
 const TransferStyle: JsStyles<TransferClass> = {
   transfer: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'stretch',
     color: Token.transferFontColor,
     fontSize: Token.transferFontSize,
   },
@@ -124,6 +124,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     padding: '0 24px',
     textAlign: 'center',
     display: 'flex',
+    justifyContent: 'center',
     flexDirection: 'column',
     '& svg': {
       width: 14,

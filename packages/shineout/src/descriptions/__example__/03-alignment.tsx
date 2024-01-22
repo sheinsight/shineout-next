@@ -48,7 +48,13 @@ export default () => {
         labelStyle={{ textAlign: 'right' }}
         style={{ marginBottom: '24px' }}
       />
-      <Descriptions items={data} title='User Info' layout='vertical' colon={` :`} />
+      <Descriptions
+        items={data}
+        title='User Info'
+        layout='vertical'
+        colon={` :`}
+        labelStyle={{ paddingBottom: '2px' }}
+      />
     </div>
   );
 };

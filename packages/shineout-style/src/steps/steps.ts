@@ -427,7 +427,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
       fontSize: Token.stepsSmallDescriptionFontSize,
     },
     '& $tail': {
-      top: 10.5,
+      top: 12,
       boxSizing: 'border-box',
     },
     '& $finish': {
