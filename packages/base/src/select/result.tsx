@@ -52,7 +52,12 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const showInput = allowOnFilter;
 
   const styles = jssStyle?.select?.() as SelectClasses;
-  const rootClass = classNames(styles.resultTextWrapper, compressed && styles.compressedWrapper);
+  const rootClass = classNames(
+    styles.resultTextWrapper,
+    compressed && styles.compressedWrapper,
+    multiple && styles.multipleResultWrapper,
+    multiple && compressed && styles.multipleCompressedWrapper,
+  );
 
   const isCompressedBound = () => {
     return compressedBound && isNumber(compressedBound) && compressedBound >= 1;
