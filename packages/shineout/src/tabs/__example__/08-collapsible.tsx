@@ -10,7 +10,6 @@ export default () => {
   const renderIcon = () => {
     return (
       <svg
-        style={{ marginLeft: 8 }}
         width='14'
         height='14'
         viewBox='0 0 14 14'
@@ -43,17 +42,21 @@ export default () => {
           </div>
         </Tabs.Panel>
         <Tabs.Panel
-          tab={<div style={{ display: 'flex', alignItems: 'center' }}>Tab2{renderIcon()}</div>}
+          tab={
+            <span style={{ marginLeft: 4, display: 'flex', alignItems: 'center' }}>
+              <span style={{ marginRight: 4 }}>Tab2</span>
+              {renderIcon()}
+            </span>
+          }
         >
           <div style={{ padding: 16, fontSize: 14 }}>Content of Tab 2</div>
         </Tabs.Panel>
         <Tabs.Panel
           tab={
-            <div
-              style={{ display: 'flex', alignItems: 'center', height: '100%', overflow: 'hidden' }}
-            >
-              Tab3
-            </div>
+            <span style={{ marginLeft: 4, display: 'flex', alignItems: 'center' }}>
+              {renderIcon()}
+              <span style={{ marginLeft: 4 }}>Tab3</span>
+            </span>
           }
         >
           <div style={{ padding: 16, fontSize: 14 }}>Content of Tab 3</div>

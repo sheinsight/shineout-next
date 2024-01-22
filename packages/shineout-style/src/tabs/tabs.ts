@@ -245,6 +245,21 @@ const tabsStyle: JsStyles<TabsClass> = {
         padding: `${Token.tabsActionHorizontalPaddingY} ${Token.tabsActionHorizontalPaddingX}`,
       },
 
+      '& $headerScroll': { display: 'inline-flex' },
+
+      '&[data-soui-position^="top-left"]': {
+        '& $headerScroll': { justifyContent: 'flex-start' },
+      },
+      '&[data-soui-position^="bottom-left"]': {
+        '& $headerScroll': { justifyContent: 'flex-start' },
+      },
+      '&[data-soui-position^="top-right"]': {
+        '& $headerScroll': { justifyContent: 'flex-end' },
+      },
+      '&[data-soui-position^="bottom-right"]': {
+        '& $headerScroll': { justifyContent: 'flex-end' },
+      },
+
       '& $panel': {
         width: '100%',
       },
