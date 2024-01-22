@@ -31,7 +31,7 @@ export default () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', height: 24 }}>
         {tags.map((a) => (
           <Tag key={a} disabled={a === 'Tag 3' ? true : false} onClose={() => remove(a)}>
             {a}
