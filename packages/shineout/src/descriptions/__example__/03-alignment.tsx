@@ -1,8 +1,8 @@
 /**
  * cn - 标签文本对齐
- *    --
+ *    -- 标签文本可以设置左对齐、右对齐，也可以设置垂直的样式排列
  * en - Label text alignment
- *    --
+ *    -- The label text can be set to left-aligned, right-aligned, and can also be set to vertical style arrangement
  */
 import React from 'react';
 import { Descriptions } from 'shineout';
@@ -48,7 +48,13 @@ export default () => {
         labelStyle={{ textAlign: 'right' }}
         style={{ marginBottom: '24px' }}
       />
-      <Descriptions items={data} title='User Info' layout='vertical' colon={` :`} />
+      <Descriptions
+        items={data}
+        title='User Info'
+        layout='vertical'
+        colon={` :`}
+        labelStyle={{ paddingBottom: '2px' }}
+      />
     </div>
   );
 };

@@ -58,6 +58,7 @@ export default () => {
             name='file'
             htmlName='file'
             recoverAble
+            leftHandler
             removeConfirm='Are you sure to delete it ?'
             limit={3}
             onSuccess={(_res, filem, data) => {
@@ -69,7 +70,7 @@ export default () => {
           <Textarea name='address' />
         </Form.Item>
 
-        <Form.Item label=''>
+        <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
           <Form.Submit>Submit</Form.Submit>
           <Form.Reset>Reset</Form.Reset>
         </Form.Item>

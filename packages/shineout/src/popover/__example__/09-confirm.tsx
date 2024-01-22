@@ -20,11 +20,13 @@ const App: React.FC = () => {
   return (
     <Button>
       <Popover.Confirm
+        position='right'
+        title='Tips'
         onCancel={() => console.log('cancel')}
         onOk={onOk}
-        text={{ ok: 'Yes', cancel: 'No' }}
+        text={{ ok: 'Cancel', cancel: 'Ok' }}
       >
-        Are you sure delete ?
+        Are you sure you want to delete this content ?
       </Popover.Confirm>
       Delete
     </Button>

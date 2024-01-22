@@ -28,7 +28,7 @@ const inputTokens: InputTokens = {
   inputFocusShadow: 'Brand-2',
   inputDisabledFontColor: 'Neutral-text-2',
   inputDisabledPlaceholderColor: 'Neutral-text-2',
-  inputDisabledBorderColor: 'Neutral-border-2',
+  inputDisabledBorderColor: 'Neutral-border-1',
   inputDisabledBackgroundColor: 'Neutral-fill-2',
   inputErrorBorderColor: 'Danger-6',
   inputErrorFocusShadow: 'Danger-1',

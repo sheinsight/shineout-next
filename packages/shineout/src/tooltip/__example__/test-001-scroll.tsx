@@ -4,6 +4,7 @@
  * en - 在 Scroll 中滚动会自动Tooltip更新位置
  *    -- Scroll 中滚动
  */
+// todo 参考原来的例子
 // import React from 'react'
 // import { Table, Tooltip, TYPE } from 'shineout'
 // import { fetchSync } from 'doc/data/user'

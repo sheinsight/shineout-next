@@ -19,7 +19,7 @@ const tooltipTokenDescription = { tooltip: '文字提示' };
 const tooltipTokenValue = {};
 
 const tooltipTokenExtraValue = {
-  font: { size: '14/regular' },
+  font: { size: '12/regular' },
   padding: { x: 'Padding-8', y: 'Padding-5' },
   border: { radius: 'Radius-2' },
   color: 'Neutral-text-1',
@@ -31,20 +31,20 @@ const tooltipTokenExtraValue = {
     border: { color: 'Neutral-border-1' },
   },
   primary: {
-    color: 'Brand-1',
-    background: { color: 'Brand-6' },
+    color: 'Brand-6',
+    background: { color: 'Brand-1' },
   },
   success: {
-    color: 'Success-1',
-    background: { color: 'Success-7' },
+    color: 'Success-7',
+    background: { color: 'Success-1' },
   },
   warning: {
-    color: 'Warning-1',
-    background: { color: 'Warning-7' },
+    color: 'Warning-7',
+    background: { color: 'Warning-1' },
   },
   danger: {
-    color: 'Danger-1',
-    background: { color: 'Danger-7' },
+    color: 'Danger-7',
+    background: { color: 'Danger-1' },
   },
 };
 

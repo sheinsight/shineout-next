@@ -69,7 +69,7 @@ const datePickerTokenExtraValue = {
   disabled: {
     font: { color: 'Neutral-text-2' },
     placeholder: { color: 'Neutral-text-2' },
-    border: { color: 'Neutral-border-2' },
+    border: { color: 'Neutral-border-1' },
     background: { color: 'Neutral-fill-2' },
   },
   result: {
@@ -130,14 +130,17 @@ const datePickerTokenExtraValue = {
   month: { panel: { width: 'Size-124' }, cell: { hot: { width: 'Size-32' } } },
   quarter: { panel: { width: 'Size-124' }, cell: { hot: { width: 'Size-28' } } },
   time: {
-    panel: { width: 'Size-115', padding: { x: 'Padding-12', y: 'Padding-12' } },
+    panel: { width: 'Size-115', padding: { x: 'Padding-12', y: 'Padding-7' } },
     list: { gap: 'Margin-8' },
     item: {
-      height: 'Size-14',
+      height: 'Size-15',
+      border: { radius: 'Radius-4' },
+      padding: { y: '2px' },
       background: { color: 'Neutral-fill-1' },
       color: 'Neutral-text-5',
-      active: { background: { color: 'Neutral-fill-2' } },
+      active: { background: { color: 'Brand-1' }, color: 'Brand-6' },
       disabled: { color: 'Neutral-text-2' },
+      hover: { background: { color: 'Neutral-fill-2' } },
     },
   },
   quick: {

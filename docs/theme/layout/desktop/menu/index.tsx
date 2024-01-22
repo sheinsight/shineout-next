@@ -40,7 +40,7 @@ const MenuComponent = () => {
 
   return (
     <ul className={classes.menu}>
-      <li className='doc'>使用指南</li>
+      {/* <li className='doc'>使用指南</li> */}
       {state.menu.map((item, index) => {
         return (
           <li key={index}>

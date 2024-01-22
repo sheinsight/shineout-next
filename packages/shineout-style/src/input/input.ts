@@ -146,7 +146,7 @@ const input: JsStyles<InputClass> = {
   },
   clearWrapper: {
     position: 'relative',
-    flexBasis: `calc(${token.inputIconSize} + 2px)`,
+    flexBasis: `calc(${token.inputIconSize} + 8px)`,
     flexShrink: 0,
     display: 'none',
     '$wrapper:hover &, $wrapperFocus &': {

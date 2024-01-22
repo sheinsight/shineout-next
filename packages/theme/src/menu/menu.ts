@@ -6,6 +6,7 @@ import { MenuTokens } from './type';
 const menuTokens: MenuTokens = {
   menuFontSize: '14/regular',
   menuFontColor: 'Neutral-text-5',
+  menuIconColor: 'Neutral-text-4',
   menuItemBackgroundColor: 'Neutral-fill-1',
   menuItemFontColor: 'Neutral-text-5',
   menuItemHoverBackgroundColor: 'Neutral-fill-2',
@@ -18,7 +19,7 @@ const menuTokens: MenuTokens = {
   menuTitlePaddingY: '9px',
   menuExpandWidth: '46px',
   menuExpandSize: '14px',
-  menuExpandHoverBackgroundColor: 'Brand-2',
+  menuExpandHoverBackgroundColor: 'Neutral-fill-3',
   menuChildrenBoxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
   menuDarkFontColor: 'Neutral-text-1',
   menuDarkItemBackgroundColor: 'Neutral-fill-10',

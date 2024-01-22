@@ -8,7 +8,7 @@
 import React, { useState } from 'react';
 import { Input } from 'shineout';
 
-const style: React.CSSProperties = { marginBottom: 12 };
+const style: React.CSSProperties = { marginBottom: 12, width: 300 };
 
 const App: React.FC = () => {
   const [keyUp, setKeyUp] = useState<number>(0);

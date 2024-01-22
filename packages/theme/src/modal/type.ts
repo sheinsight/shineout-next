@@ -94,6 +94,12 @@ export interface ModalTokens {
   modalHeaderCloseTop: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description xxxundefinedundefined颜色
+   */
+  modalHeaderCloseColor: string;
+  /**
+   * @type {string}
    * @token 16/regular
    * @description xxxundefined字体字号
    */

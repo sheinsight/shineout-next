@@ -62,7 +62,7 @@ export default () => {
           />
         </Form.Item>
 
-        <Form.Item label=''>
+        <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
           <Form.Submit>提交</Form.Submit>
           <Form.Reset>重置</Form.Reset>
         </Form.Item>

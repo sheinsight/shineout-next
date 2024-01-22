@@ -1,0 +1,1446 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card[Base] should render correctly  1`] = `
+<div>
+  <div
+    class="so-card-wrapper so-card-wrapper-split"
+    style="width: 360px;"
+  >
+    <div
+      class="so-card-header"
+    >
+      <div
+        class="so-card-header-content"
+      >
+        Card title
+      </div>
+      <div
+        class="so-card-header-extra"
+      >
+        <button
+          class="so-button-primary so-button-button so-button-text"
+          type="button"
+        >
+          <span>
+            文字按钮
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="so-card-body"
+    >
+      Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
+    </div>
+    <div
+      class="so-card-right so-card-footer"
+    >
+      <div
+        style="display: flex;"
+      >
+        <div
+          style="margin-right: 8px; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6084 4.76308C11.5697 4.75817 11.5308 4.75559 11.4917 4.75534L9.33165 4.74819C9.42966 4.30236 9.48157 3.85177 9.48157 3.43331C9.48157 3.00474 9.43549 2.57319 9.34507 2.14938C9.33827 2.11717 9.3285 2.08568 9.31591 2.05534C9.0814 1.1845 8.32423 0.583313 7.4434 0.583313C6.40039 0.583313 5.61348 1.45653 5.61348 2.61427L5.61289 2.64403C5.61127 2.6823 5.61127 2.72063 5.61289 2.75891C5.56739 3.96546 4.59497 5.01843 3.38338 5.1732L1.67654 5.20117C1.39501 5.17907 1.11723 5.27806 0.910387 5.4742C0.703543 5.67034 0.586463 5.94578 0.587457 6.23391L0.583374 12.3869C0.583374 12.9541 1.03429 13.4166 1.58904 13.4166H3.46213L10.5794 13.4041C10.9737 13.4041 11.2211 13.2911 11.5145 13.097C11.805 12.9041 12.0409 12.6369 12.1987 12.322C12.253 12.2327 12.2932 12.1375 12.3189 12.0381L12.3236 12.0184L13.3841 7.13748C13.4074 7.04224 13.4173 6.94462 13.4133 6.847C13.4372 6.4303 13.3361 6.01604 13.1233 5.6595C12.7891 5.09879 12.2792 4.7976 11.6084 4.76308ZM2.18914 6.2391L2.30975 6.23731C2.63189 6.23254 2.89681 6.49515 2.90149 6.82385C2.90153 6.82673 2.90155 6.82961 2.90155 6.83249V11.7738C2.90155 12.1025 2.64038 12.369 2.31821 12.369H2.19338C1.87121 12.3695 1.61004 12.103 1.61004 11.7743L1.6105 11.7738L1.61426 6.83381C1.61451 6.50862 1.87048 6.24381 2.18914 6.2391ZM12.3831 6.90296L11.3255 11.7714C11.3129 11.7904 11.3016 11.8103 11.2917 11.8309C11.2162 11.989 11.0998 12.123 10.9551 12.2184C10.7672 12.3428 10.713 12.3565 10.5742 12.3565L4.51258 12.3674C4.19041 12.368 3.92879 12.1019 3.92822 11.7732L3.92822 11.7722V6.13272C5.46006 5.7476 6.59581 4.37141 6.63898 2.76367C6.63993 2.74442 6.63954 2.72513 6.63781 2.70593V2.67617L6.63956 2.61367C6.63956 2.12558 6.91548 1.63034 7.4434 1.63034C7.87098 1.63034 8.2379 1.93748 8.3359 2.37736C8.34123 2.40165 8.34825 2.42552 8.3569 2.44879C8.42131 2.77265 8.45394 3.10226 8.45432 3.43272C8.45432 3.95058 8.3499 4.55772 8.16848 5.09939C8.11461 5.25914 8.13966 5.43562 8.23573 5.57322C8.3318 5.71082 8.48708 5.79261 8.65265 5.79284L11.4912 5.80296C11.5087 5.80534 11.5256 5.80712 11.5425 5.80772C11.8791 5.822 12.0891 5.93986 12.2466 6.20355C12.354 6.38442 12.4031 6.59508 12.3872 6.80593C12.3854 6.8321 12.3856 6.85837 12.3877 6.8845L12.3837 6.90236L12.3831 6.90296Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="margin-right: 8px; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6666 1.75C12.311 1.75 12.8333 2.26557 12.8333 2.90155V11.5382C12.8333 11.9313 12.5104 12.25 12.1121 12.25C12.0002 12.25 11.8898 12.2243 11.7897 12.1749L8.41102 11.0839C8.24907 11.004 8.0705 10.9624 7.88944 10.9624H2.33329C1.68896 10.9624 1.16663 10.4468 1.16663 9.81085V2.90155C1.16663 2.26557 1.68896 1.75 2.33329 1.75H11.6666ZM11.0833 2.90155H2.91663C2.59446 2.90155 2.33329 3.15933 2.33329 3.47733V9.23508C2.33329 9.55307 2.59446 9.81085 2.91663 9.81085H7.88944C8.19982 9.81085 8.50655 9.87197 8.79183 9.99006L8.9326 10.0538L11.2947 10.7214C11.4495 10.7652 11.611 10.6767 11.6554 10.5239C11.6628 10.4981 11.6666 10.4714 11.6666 10.4446V3.47733C11.6666 3.15933 11.4055 2.90155 11.0833 2.90155ZM7.5832 6.93198C7.90533 6.93202 8.16645 7.18979 8.16645 7.50775C8.16645 7.82571 7.90533 8.08348 7.5832 8.08353H4.0832C3.76107 8.08348 3.49996 7.82571 3.49996 7.50775C3.49996 7.18979 3.76107 6.93202 4.0832 6.93198H7.5832ZM9.91654 4.62888C10.125 4.62884 10.3176 4.73858 10.4218 4.91674C10.526 5.0949 10.526 5.3144 10.4218 5.49256C10.3176 5.67072 10.125 5.78046 9.91654 5.78043H4.0832C3.76107 5.78038 3.49996 5.52261 3.49996 5.20465C3.49996 4.88669 3.76107 4.62892 4.0832 4.62888H9.91654Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.1513 0.592407C12.2679 0.571526 12.3807 0.587559 12.48 0.6307C12.4836 0.633009 12.4876 0.634808 12.4917 0.636657C12.5519 0.663785 12.6065 0.701338 12.6537 0.746589C12.6566 0.749428 12.6596 0.752341 12.6626 0.755292L12.6712 0.764178C12.7165 0.811346 12.754 0.865931 12.7817 0.925713C12.7831 0.930218 12.7849 0.9343 12.7866 0.938397C12.8418 1.06357 12.8529 1.21109 12.8006 1.36048L12.8119 1.32526C12.8096 1.3333 12.8072 1.34131 12.8046 1.34926L12.8006 1.36048L8.92148 12.4438C8.74695 12.9425 8.05241 12.9708 7.83784 12.488L5.71206 7.70519L0.929811 5.58C0.470019 5.37564 0.473825 4.73594 0.905988 4.52472L0.974021 4.49635L12.0574 0.617187C12.0613 0.615824 12.0651 0.614504 12.069 0.613227C12.0766 0.610661 12.0846 0.608239 12.0926 0.605992C12.1093 0.601251 12.1257 0.597343 12.142 0.594157C12.1436 0.594178 12.1454 0.593853 12.1472 0.593537L12.1513 0.592407ZM10.8547 3.38798L6.84954 7.39315L8.30614 10.6697L10.8547 3.38798ZM10.0305 2.5614L2.74756 5.1111L6.02412 6.56773L10.0305 2.5614Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer; margin-inline-start: auto;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.91667 5.83331C3.561 5.83331 4.08333 6.35565 4.08333 6.99998C4.08333 7.64431 3.561 8.16665 2.91667 8.16665C2.27233 8.16665 1.75 7.64431 1.75 6.99998C1.75 6.35565 2.27233 5.83331 2.91667 5.83331ZM7 5.83331C7.64433 5.83331 8.16667 6.35565 8.16667 6.99998C8.16667 7.64431 7.64433 8.16665 7 8.16665C6.35567 8.16665 5.83333 7.64431 5.83333 6.99998C5.83333 6.35565 6.35567 5.83331 7 5.83331ZM11.0833 5.83331C11.7277 5.83331 12.25 6.35565 12.25 6.99998C12.25 7.64431 11.7277 8.16665 11.0833 8.16665C10.439 8.16665 9.91667 7.64431 9.91667 6.99998C9.91667 6.35565 10.439 5.83331 11.0833 5.83331Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card[Base] should render correctly about accordion 1`] = `
+<div
+  class="so-card-accordion"
+>
+  <div
+    class="so-card-wrapper so-card-wrapper-collapsible so-card-wrapper-collapsed so-card-wrapper-split so-card-wrapper-in-accordion"
+  >
+    <div
+      class="so-card-header"
+    >
+      <div
+        class="so-card-indicator"
+      >
+        <div
+          class="so-card-indicator-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-card-header-content"
+      >
+        Card title 1
+      </div>
+    </div>
+    <div
+      class="so-card-body-collapse"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="collapse"
+      style="display: none;"
+    >
+      <div
+        class="so-card-body"
+        style="background: rgb(244, 245, 248);"
+      >
+        Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-card-wrapper so-card-wrapper-collapsible so-card-wrapper-split so-card-wrapper-in-accordion"
+  >
+    <div
+      class="so-card-header"
+    >
+      <div
+        class="so-card-indicator"
+      >
+        <div
+          class="so-card-indicator-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-card-header-content"
+      >
+        Card title 2
+      </div>
+    </div>
+    <div
+      class="so-card-body-collapse"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="collapse"
+      style="display: block;"
+    >
+      <div
+        class="so-card-body"
+        style="background: rgb(244, 245, 248);"
+      >
+        Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-card-wrapper so-card-wrapper-collapsible so-card-wrapper-collapsed so-card-wrapper-split so-card-wrapper-in-accordion"
+  >
+    <div
+      class="so-card-header"
+    >
+      <div
+        class="so-card-indicator"
+      >
+        <div
+          class="so-card-indicator-icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="so-card-header-content"
+      >
+        Card title 3
+      </div>
+    </div>
+    <div
+      class="so-card-body-collapse"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="collapse"
+      style="display: none;"
+    >
+      <div
+        class="so-card-body"
+        style="background: rgb(244, 245, 248);"
+      >
+        Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card[Base] should render correctly about border 1`] = `
+<div
+  style="padding: 32px; background: rgb(244, 245, 248);"
+>
+  <div
+    class="so-card-wrapper so-card-wrapper-split"
+    style="width: 360px;"
+  >
+    <div
+      class="so-card-header"
+    >
+      <div
+        class="so-card-header-content"
+      >
+        Card title
+      </div>
+      <div
+        class="so-card-header-extra"
+      >
+        <button
+          class="so-button-primary so-button-button so-button-text"
+          type="button"
+        >
+          <span>
+            文字按钮
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="so-card-body"
+    >
+      Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card[Base] should render correctly about collpase 1`] = `
+<div
+  class="so-card-wrapper so-card-wrapper-collapsible"
+>
+  <div
+    class="so-card-header"
+  >
+    <div
+      class="so-card-indicator"
+    >
+      <div
+        class="so-card-indicator-icon"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="so-card-header-content"
+    >
+      Card title
+    </div>
+  </div>
+  <div
+    class="so-card-body-collapse"
+    data-sheinx-animation-duration="fast"
+    data-sheinx-animation-type="collapse"
+    style="display: block;"
+  >
+    <div
+      class="so-card-body"
+    >
+      <div
+        style="height: 100px;"
+      >
+        <div
+          class="so-datePicker-wrapper"
+          data-soui-type="date"
+        >
+          <div
+            class="so-datePicker-result-wrapper so-datePicker-wrapper-padding-box so-datePicker-wrapper-inner-title-top so-datePicker-wrapper-inner-title-bottom"
+            tabindex="1"
+          >
+            <div
+              class="so-datePicker-result"
+            >
+              <div
+                class="so-datePicker-result-text-wrapper"
+              >
+                <div
+                  class="so-datePicker-result-text"
+                >
+                  <div
+                    class="so-datePicker-result-text-padding"
+                  >
+                    <span
+                      class="so-datePicker-placeholder"
+                    >
+                      请选择日期
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="so-datePicker-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M17 1C17.5523 1 18 1.44772 18 2V3H21C22.1046 3 23 3.89543 23 5V20C23 21.1046 22.1046 22 21 22H3C1.89543 22 1 21.1046 1 20V5C1 3.89543 1.89543 3 3 3H6V2C6 1.44772 6.44772 1 7 1C7.55228 1 8 1.44772 8 2V3H16V2C16 1.44772 16.4477 1 17 1ZM21 10H3V20H21V10ZM7 16C7.82843 16 8.5 16.6716 8.5 17.5C8.5 18.3284 7.82843 19 7 19C6.17157 19 5.5 18.3284 5.5 17.5C5.5 16.6716 6.17157 16 7 16ZM12 16C12.8284 16 13.5 16.6716 13.5 17.5C13.5 18.3284 12.8284 19 12 19C11.1716 19 10.5 18.3284 10.5 17.5C10.5 16.6716 11.1716 16 12 16ZM17 16C17.8284 16 18.5 16.6716 18.5 17.5C18.5 18.3284 17.8284 19 17 19C16.1716 19 15.5 18.3284 15.5 17.5C15.5 16.6716 16.1716 16 17 16ZM7 11C7.82843 11 8.5 11.6716 8.5 12.5C8.5 13.3284 7.82843 14 7 14C6.17157 14 5.5 13.3284 5.5 12.5C5.5 11.6716 6.17157 11 7 11ZM12 11C12.8284 11 13.5 11.6716 13.5 12.5C13.5 13.3284 12.8284 14 12 14C11.1716 14 10.5 13.3284 10.5 12.5C10.5 11.6716 11.1716 11 12 11ZM17 11C17.8284 11 18.5 11.6716 18.5 12.5C18.5 13.3284 17.8284 14 17 14C16.1716 14 15.5 13.3284 15.5 12.5C15.5 11.6716 16.1716 11 17 11ZM6 5H3V8H21V5H18C18 5.55228 17.5523 6 17 6C16.4477 6 16 5.55228 16 5H8C8 5.55228 7.55228 6 7 6C6.44772 6 6 5.55228 6 5Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="so-datePicker-picker-wrapper"
+            data-sheinx-animation-duration="fast"
+            data-sheinx-animation-type="fade"
+            style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
+          >
+            <div
+              class="so-datePicker-picker-box"
+            >
+              <div
+                class="so-datePicker-day-picker so-datePicker-picker"
+              >
+                <div
+                  class="so-datePicker-picker-header"
+                >
+                  <div
+                    class="so-datePicker-picker-header-left"
+                  >
+                    <span
+                      class="so-datePicker-picker-header-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M11.3871 5.2097C11.7794 4.90468 12.3466 4.93241 12.7071 5.29289L12.7903 5.3871C13.0953 5.77939 13.0676 6.34662 12.7071 6.70711L8.12205 11.2928C7.7317 11.6835 7.7317 12.3165 8.12205 12.7072L12.7071 17.2929L12.7903 17.3871C13.0953 17.7794 13.0676 18.3466 12.7071 18.7071C12.3166 19.0976 11.6834 19.0976 11.2929 18.7071L5.29289 12.7071L5.2097 12.6129C4.90468 12.2206 4.93241 11.6534 5.29289 11.2929L11.2929 5.29289L11.3871 5.2097ZM17.3871 5.2097C17.7794 4.90468 18.3466 4.93241 18.7071 5.29289L18.7903 5.3871C19.0953 5.77939 19.0676 6.34662 18.7071 6.70711L14.1221 11.2928C13.7317 11.6835 13.7317 12.3165 14.1221 12.7072L18.7071 17.2929L18.7903 17.3871C19.0953 17.7794 19.0676 18.3466 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L11.2929 12.7071L11.2097 12.6129C10.9047 12.2206 10.9324 11.6534 11.2929 11.2929L17.2929 5.29289L17.3871 5.2097Z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="so-datePicker-picker-header-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    class="so-datePicker-picker-header-mid"
+                  >
+                    <span
+                      class="so-datePicker-picker-header-info"
+                    >
+                      2024
+                    </span>
+                    <i>
+                      -
+                    </i>
+                    <span
+                      class="so-datePicker-picker-header-info"
+                    >
+                      1
+                    </span>
+                  </div>
+                  <div
+                    class="so-datePicker-picker-header-right"
+                  >
+                    <span
+                      class="so-datePicker-picker-header-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="so-datePicker-picker-header-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289L18.7071 11.2929L18.7903 11.3871C19.0953 11.7794 19.0676 12.3466 18.7071 12.7071L12.7071 18.7071L12.6129 18.7903C12.2206 19.0953 11.6534 19.0676 11.2929 18.7071L11.2097 18.6129C10.9047 18.2206 10.9324 17.6534 11.2929 17.2929L15.8779 12.7072C16.2683 12.3165 16.2683 11.6835 15.8779 11.2928L11.2929 6.70711L11.2097 6.6129C10.9047 6.22061 10.9324 5.65338 11.2929 5.29289ZM5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12.7071 11.2929L12.7903 11.3871C13.0953 11.7794 13.0676 12.3466 12.7071 12.7071L6.70711 18.7071L6.6129 18.7903C6.22061 19.0953 5.65338 19.0676 5.29289 18.7071L5.2097 18.6129C4.90468 18.2206 4.93241 17.6534 5.29289 17.2929L9.87795 12.7072C10.2683 12.3165 10.2683 11.6835 9.87795 11.2928L5.29289 6.70711L5.2097 6.6129C4.90468 6.22061 4.93241 5.65338 5.29289 5.29289Z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="so-datePicker-picker-body"
+                >
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>
+                          一
+                        </th>
+                        <th>
+                          二
+                        </th>
+                        <th>
+                          三
+                        </th>
+                        <th>
+                          四
+                        </th>
+                        <th>
+                          五
+                        </th>
+                        <th>
+                          六
+                        </th>
+                        <th>
+                          日
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              1
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              2
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              3
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              4
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              5
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              6
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              7
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              8
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              9
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              10
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              11
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              12
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              13
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              14
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              15
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              16
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              17
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              18
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              19
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              20
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              21
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              22
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              23
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              24
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              25
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              26
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              27
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              28
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              29
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              30
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              31
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              1
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              2
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              3
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              4
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              5
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              6
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              7
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              8
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              9
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              10
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              11
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card[Base] should render correctly about form 1`] = `
+<div
+  class="so-card-wrapper"
+  style="width: 360px;"
+>
+  <div
+    class="so-card-header"
+  >
+    <div
+      class="so-card-header-content"
+    >
+      Card title
+    </div>
+  </div>
+  <div
+    class="so-card-body"
+  >
+    <form
+      class="so-form-wrapper"
+    >
+      <div
+        class="so-form-item-wrapper so-form-item-wrapper-label-top"
+        data-soui-status="default"
+      >
+        <div
+          class="so-form-item-label"
+        >
+          User name
+        </div>
+        <div
+          class="so-form-item-control"
+        >
+          <div
+            class="so-input-wrapper"
+            data-soui-type="input"
+          >
+            <div
+              class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+            >
+              <input
+                class="so-input-input"
+                value="user"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-form-item-wrapper so-form-item-wrapper-label-top"
+        data-soui-status="default"
+      >
+        <div
+          class="so-form-item-label"
+        >
+          Email
+        </div>
+        <div
+          class="so-form-item-control"
+        >
+          <div
+            class="so-input-wrapper"
+            data-soui-type="input"
+          >
+            <div
+              class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+            >
+              <input
+                class="so-input-input"
+                value="test@example.com"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div
+    class="so-card-right so-card-footer"
+  >
+    <button
+      class="so-button-primary so-button-button"
+      type="button"
+    >
+      <span>
+        Submit
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Card[Base] should render correctly about hover 1`] = `
+<div>
+  <div
+    class="so-card-wrapper so-card-wrapper-hover so-card-wrapper-split"
+    style="width: 360px; display: inline-flex; margin-inline-end: 32px;"
+  >
+    <div
+      class="so-card-header"
+    >
+      <div
+        class="so-card-header-content"
+      >
+        Card title
+      </div>
+      <div
+        class="so-card-header-extra"
+      >
+        <button
+          class="so-button-primary so-button-button so-button-text"
+          type="button"
+        >
+          <span>
+            文字按钮
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="so-card-body"
+    >
+      Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
+    </div>
+    <div
+      class="so-card-right so-card-footer"
+    >
+      <div
+        style="display: flex;"
+      >
+        <div
+          style="margin-right: 8px; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6084 4.76308C11.5697 4.75817 11.5308 4.75559 11.4917 4.75534L9.33165 4.74819C9.42966 4.30236 9.48157 3.85177 9.48157 3.43331C9.48157 3.00474 9.43549 2.57319 9.34507 2.14938C9.33827 2.11717 9.3285 2.08568 9.31591 2.05534C9.0814 1.1845 8.32423 0.583313 7.4434 0.583313C6.40039 0.583313 5.61348 1.45653 5.61348 2.61427L5.61289 2.64403C5.61127 2.6823 5.61127 2.72063 5.61289 2.75891C5.56739 3.96546 4.59497 5.01843 3.38338 5.1732L1.67654 5.20117C1.39501 5.17907 1.11723 5.27806 0.910387 5.4742C0.703543 5.67034 0.586463 5.94578 0.587457 6.23391L0.583374 12.3869C0.583374 12.9541 1.03429 13.4166 1.58904 13.4166H3.46213L10.5794 13.4041C10.9737 13.4041 11.2211 13.2911 11.5145 13.097C11.805 12.9041 12.0409 12.6369 12.1987 12.322C12.253 12.2327 12.2932 12.1375 12.3189 12.0381L12.3236 12.0184L13.3841 7.13748C13.4074 7.04224 13.4173 6.94462 13.4133 6.847C13.4372 6.4303 13.3361 6.01604 13.1233 5.6595C12.7891 5.09879 12.2792 4.7976 11.6084 4.76308ZM2.18914 6.2391L2.30975 6.23731C2.63189 6.23254 2.89681 6.49515 2.90149 6.82385C2.90153 6.82673 2.90155 6.82961 2.90155 6.83249V11.7738C2.90155 12.1025 2.64038 12.369 2.31821 12.369H2.19338C1.87121 12.3695 1.61004 12.103 1.61004 11.7743L1.6105 11.7738L1.61426 6.83381C1.61451 6.50862 1.87048 6.24381 2.18914 6.2391ZM12.3831 6.90296L11.3255 11.7714C11.3129 11.7904 11.3016 11.8103 11.2917 11.8309C11.2162 11.989 11.0998 12.123 10.9551 12.2184C10.7672 12.3428 10.713 12.3565 10.5742 12.3565L4.51258 12.3674C4.19041 12.368 3.92879 12.1019 3.92822 11.7732L3.92822 11.7722V6.13272C5.46006 5.7476 6.59581 4.37141 6.63898 2.76367C6.63993 2.74442 6.63954 2.72513 6.63781 2.70593V2.67617L6.63956 2.61367C6.63956 2.12558 6.91548 1.63034 7.4434 1.63034C7.87098 1.63034 8.2379 1.93748 8.3359 2.37736C8.34123 2.40165 8.34825 2.42552 8.3569 2.44879C8.42131 2.77265 8.45394 3.10226 8.45432 3.43272C8.45432 3.95058 8.3499 4.55772 8.16848 5.09939C8.11461 5.25914 8.13966 5.43562 8.23573 5.57322C8.3318 5.71082 8.48708 5.79261 8.65265 5.79284L11.4912 5.80296C11.5087 5.80534 11.5256 5.80712 11.5425 5.80772C11.8791 5.822 12.0891 5.93986 12.2466 6.20355C12.354 6.38442 12.4031 6.59508 12.3872 6.80593C12.3854 6.8321 12.3856 6.85837 12.3877 6.8845L12.3837 6.90236L12.3831 6.90296Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="margin-right: 8px; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6666 1.75C12.311 1.75 12.8333 2.26557 12.8333 2.90155V11.5382C12.8333 11.9313 12.5104 12.25 12.1121 12.25C12.0002 12.25 11.8898 12.2243 11.7897 12.1749L8.41102 11.0839C8.24907 11.004 8.0705 10.9624 7.88944 10.9624H2.33329C1.68896 10.9624 1.16663 10.4468 1.16663 9.81085V2.90155C1.16663 2.26557 1.68896 1.75 2.33329 1.75H11.6666ZM11.0833 2.90155H2.91663C2.59446 2.90155 2.33329 3.15933 2.33329 3.47733V9.23508C2.33329 9.55307 2.59446 9.81085 2.91663 9.81085H7.88944C8.19982 9.81085 8.50655 9.87197 8.79183 9.99006L8.9326 10.0538L11.2947 10.7214C11.4495 10.7652 11.611 10.6767 11.6554 10.5239C11.6628 10.4981 11.6666 10.4714 11.6666 10.4446V3.47733C11.6666 3.15933 11.4055 2.90155 11.0833 2.90155ZM7.5832 6.93198C7.90533 6.93202 8.16645 7.18979 8.16645 7.50775C8.16645 7.82571 7.90533 8.08348 7.5832 8.08353H4.0832C3.76107 8.08348 3.49996 7.82571 3.49996 7.50775C3.49996 7.18979 3.76107 6.93202 4.0832 6.93198H7.5832ZM9.91654 4.62888C10.125 4.62884 10.3176 4.73858 10.4218 4.91674C10.526 5.0949 10.526 5.3144 10.4218 5.49256C10.3176 5.67072 10.125 5.78046 9.91654 5.78043H4.0832C3.76107 5.78038 3.49996 5.52261 3.49996 5.20465C3.49996 4.88669 3.76107 4.62892 4.0832 4.62888H9.91654Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.1513 0.592407C12.2679 0.571526 12.3807 0.587559 12.48 0.6307C12.4836 0.633009 12.4876 0.634808 12.4917 0.636657C12.5519 0.663785 12.6065 0.701338 12.6537 0.746589C12.6566 0.749428 12.6596 0.752341 12.6626 0.755292L12.6712 0.764178C12.7165 0.811346 12.754 0.865931 12.7817 0.925713C12.7831 0.930218 12.7849 0.9343 12.7866 0.938397C12.8418 1.06357 12.8529 1.21109 12.8006 1.36048L12.8119 1.32526C12.8096 1.3333 12.8072 1.34131 12.8046 1.34926L12.8006 1.36048L8.92148 12.4438C8.74695 12.9425 8.05241 12.9708 7.83784 12.488L5.71206 7.70519L0.929811 5.58C0.470019 5.37564 0.473825 4.73594 0.905988 4.52472L0.974021 4.49635L12.0574 0.617187C12.0613 0.615824 12.0651 0.614504 12.069 0.613227C12.0766 0.610661 12.0846 0.608239 12.0926 0.605992C12.1093 0.601251 12.1257 0.597343 12.142 0.594157C12.1436 0.594178 12.1454 0.593853 12.1472 0.593537L12.1513 0.592407ZM10.8547 3.38798L6.84954 7.39315L8.30614 10.6697L10.8547 3.38798ZM10.0305 2.5614L2.74756 5.1111L6.02412 6.56773L10.0305 2.5614Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer; margin-inline-start: auto;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.91667 5.83331C3.561 5.83331 4.08333 6.35565 4.08333 6.99998C4.08333 7.64431 3.561 8.16665 2.91667 8.16665C2.27233 8.16665 1.75 7.64431 1.75 6.99998C1.75 6.35565 2.27233 5.83331 2.91667 5.83331ZM7 5.83331C7.64433 5.83331 8.16667 6.35565 8.16667 6.99998C8.16667 7.64431 7.64433 8.16665 7 8.16665C6.35567 8.16665 5.83333 7.64431 5.83333 6.99998C5.83333 6.35565 6.35567 5.83331 7 5.83331ZM11.0833 5.83331C11.7277 5.83331 12.25 6.35565 12.25 6.99998C12.25 7.64431 11.7277 8.16665 11.0833 8.16665C10.439 8.16665 9.91667 7.64431 9.91667 6.99998C9.91667 6.35565 10.439 5.83331 11.0833 5.83331Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="custom-card-customCard-0-2-1 so-card-wrapper so-card-wrapper-hover so-card-wrapper-split"
+    style="width: 360px; display: inline-flex; margin-inline-end: 32px;"
+  >
+    <div
+      class="so-card-header"
+    >
+      <div
+        class="so-card-header-content"
+      >
+        Card title
+      </div>
+      <div
+        class="so-card-header-extra"
+      >
+        <button
+          class="so-button-primary so-button-button so-button-text"
+          type="button"
+        >
+          <span>
+            文字按钮
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="so-card-body"
+    >
+      Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
+    </div>
+    <div
+      class="so-card-right so-card-footer"
+    >
+      <div
+        style="display: flex;"
+      >
+        <div
+          style="margin-right: 8px; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6084 4.76308C11.5697 4.75817 11.5308 4.75559 11.4917 4.75534L9.33165 4.74819C9.42966 4.30236 9.48157 3.85177 9.48157 3.43331C9.48157 3.00474 9.43549 2.57319 9.34507 2.14938C9.33827 2.11717 9.3285 2.08568 9.31591 2.05534C9.0814 1.1845 8.32423 0.583313 7.4434 0.583313C6.40039 0.583313 5.61348 1.45653 5.61348 2.61427L5.61289 2.64403C5.61127 2.6823 5.61127 2.72063 5.61289 2.75891C5.56739 3.96546 4.59497 5.01843 3.38338 5.1732L1.67654 5.20117C1.39501 5.17907 1.11723 5.27806 0.910387 5.4742C0.703543 5.67034 0.586463 5.94578 0.587457 6.23391L0.583374 12.3869C0.583374 12.9541 1.03429 13.4166 1.58904 13.4166H3.46213L10.5794 13.4041C10.9737 13.4041 11.2211 13.2911 11.5145 13.097C11.805 12.9041 12.0409 12.6369 12.1987 12.322C12.253 12.2327 12.2932 12.1375 12.3189 12.0381L12.3236 12.0184L13.3841 7.13748C13.4074 7.04224 13.4173 6.94462 13.4133 6.847C13.4372 6.4303 13.3361 6.01604 13.1233 5.6595C12.7891 5.09879 12.2792 4.7976 11.6084 4.76308ZM2.18914 6.2391L2.30975 6.23731C2.63189 6.23254 2.89681 6.49515 2.90149 6.82385C2.90153 6.82673 2.90155 6.82961 2.90155 6.83249V11.7738C2.90155 12.1025 2.64038 12.369 2.31821 12.369H2.19338C1.87121 12.3695 1.61004 12.103 1.61004 11.7743L1.6105 11.7738L1.61426 6.83381C1.61451 6.50862 1.87048 6.24381 2.18914 6.2391ZM12.3831 6.90296L11.3255 11.7714C11.3129 11.7904 11.3016 11.8103 11.2917 11.8309C11.2162 11.989 11.0998 12.123 10.9551 12.2184C10.7672 12.3428 10.713 12.3565 10.5742 12.3565L4.51258 12.3674C4.19041 12.368 3.92879 12.1019 3.92822 11.7732L3.92822 11.7722V6.13272C5.46006 5.7476 6.59581 4.37141 6.63898 2.76367C6.63993 2.74442 6.63954 2.72513 6.63781 2.70593V2.67617L6.63956 2.61367C6.63956 2.12558 6.91548 1.63034 7.4434 1.63034C7.87098 1.63034 8.2379 1.93748 8.3359 2.37736C8.34123 2.40165 8.34825 2.42552 8.3569 2.44879C8.42131 2.77265 8.45394 3.10226 8.45432 3.43272C8.45432 3.95058 8.3499 4.55772 8.16848 5.09939C8.11461 5.25914 8.13966 5.43562 8.23573 5.57322C8.3318 5.71082 8.48708 5.79261 8.65265 5.79284L11.4912 5.80296C11.5087 5.80534 11.5256 5.80712 11.5425 5.80772C11.8791 5.822 12.0891 5.93986 12.2466 6.20355C12.354 6.38442 12.4031 6.59508 12.3872 6.80593C12.3854 6.8321 12.3856 6.85837 12.3877 6.8845L12.3837 6.90236L12.3831 6.90296Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="margin-right: 8px; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6666 1.75C12.311 1.75 12.8333 2.26557 12.8333 2.90155V11.5382C12.8333 11.9313 12.5104 12.25 12.1121 12.25C12.0002 12.25 11.8898 12.2243 11.7897 12.1749L8.41102 11.0839C8.24907 11.004 8.0705 10.9624 7.88944 10.9624H2.33329C1.68896 10.9624 1.16663 10.4468 1.16663 9.81085V2.90155C1.16663 2.26557 1.68896 1.75 2.33329 1.75H11.6666ZM11.0833 2.90155H2.91663C2.59446 2.90155 2.33329 3.15933 2.33329 3.47733V9.23508C2.33329 9.55307 2.59446 9.81085 2.91663 9.81085H7.88944C8.19982 9.81085 8.50655 9.87197 8.79183 9.99006L8.9326 10.0538L11.2947 10.7214C11.4495 10.7652 11.611 10.6767 11.6554 10.5239C11.6628 10.4981 11.6666 10.4714 11.6666 10.4446V3.47733C11.6666 3.15933 11.4055 2.90155 11.0833 2.90155ZM7.5832 6.93198C7.90533 6.93202 8.16645 7.18979 8.16645 7.50775C8.16645 7.82571 7.90533 8.08348 7.5832 8.08353H4.0832C3.76107 8.08348 3.49996 7.82571 3.49996 7.50775C3.49996 7.18979 3.76107 6.93202 4.0832 6.93198H7.5832ZM9.91654 4.62888C10.125 4.62884 10.3176 4.73858 10.4218 4.91674C10.526 5.0949 10.526 5.3144 10.4218 5.49256C10.3176 5.67072 10.125 5.78046 9.91654 5.78043H4.0832C3.76107 5.78038 3.49996 5.52261 3.49996 5.20465C3.49996 4.88669 3.76107 4.62892 4.0832 4.62888H9.91654Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.1513 0.592407C12.2679 0.571526 12.3807 0.587559 12.48 0.6307C12.4836 0.633009 12.4876 0.634808 12.4917 0.636657C12.5519 0.663785 12.6065 0.701338 12.6537 0.746589C12.6566 0.749428 12.6596 0.752341 12.6626 0.755292L12.6712 0.764178C12.7165 0.811346 12.754 0.865931 12.7817 0.925713C12.7831 0.930218 12.7849 0.9343 12.7866 0.938397C12.8418 1.06357 12.8529 1.21109 12.8006 1.36048L12.8119 1.32526C12.8096 1.3333 12.8072 1.34131 12.8046 1.34926L12.8006 1.36048L8.92148 12.4438C8.74695 12.9425 8.05241 12.9708 7.83784 12.488L5.71206 7.70519L0.929811 5.58C0.470019 5.37564 0.473825 4.73594 0.905988 4.52472L0.974021 4.49635L12.0574 0.617187C12.0613 0.615824 12.0651 0.614504 12.069 0.613227C12.0766 0.610661 12.0846 0.608239 12.0926 0.605992C12.1093 0.601251 12.1257 0.597343 12.142 0.594157C12.1436 0.594178 12.1454 0.593853 12.1472 0.593537L12.1513 0.592407ZM10.8547 3.38798L6.84954 7.39315L8.30614 10.6697L10.8547 3.38798ZM10.0305 2.5614L2.74756 5.1111L6.02412 6.56773L10.0305 2.5614Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer; margin-inline-start: auto;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.91667 5.83331C3.561 5.83331 4.08333 6.35565 4.08333 6.99998C4.08333 7.64431 3.561 8.16665 2.91667 8.16665C2.27233 8.16665 1.75 7.64431 1.75 6.99998C1.75 6.35565 2.27233 5.83331 2.91667 5.83331ZM7 5.83331C7.64433 5.83331 8.16667 6.35565 8.16667 6.99998C8.16667 7.64431 7.64433 8.16665 7 8.16665C6.35567 8.16665 5.83333 7.64431 5.83333 6.99998C5.83333 6.35565 6.35567 5.83331 7 5.83331ZM11.0833 5.83331C11.7277 5.83331 12.25 6.35565 12.25 6.99998C12.25 7.64431 11.7277 8.16665 11.0833 8.16665C10.439 8.16665 9.91667 7.64431 9.91667 6.99998C9.91667 6.35565 10.439 5.83331 11.0833 5.83331Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card[Base] should render correctly about shadow 1`] = `
+<div>
+  <div
+    class="so-card-wrapper"
+    style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
+  >
+    <div
+      class="so-card-body"
+    >
+      Never
+    </div>
+  </div>
+  <div
+    class="so-card-wrapper so-card-wrapper-hover"
+    style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
+  >
+    <div
+      class="so-card-body"
+    >
+      Hover
+    </div>
+  </div>
+  <div
+    class="so-card-wrapper so-card-wrapper-shadow"
+    style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
+  >
+    <div
+      class="so-card-body"
+    >
+      Always
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card[Base] should render correctly about split 1`] = `
+<div>
+  <div
+    class="so-card-wrapper"
+    style="width: 360px;"
+  >
+    <div
+      class="so-card-header"
+    >
+      <div
+        class="so-card-header-content"
+      >
+        Card title
+      </div>
+      <div
+        class="so-card-header-extra"
+      >
+        <button
+          class="so-button-primary so-button-button so-button-text"
+          type="button"
+        >
+          <span>
+            文字按钮
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="so-card-body"
+    >
+      Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
+    </div>
+    <div
+      class="so-card-right so-card-footer"
+    >
+      <div
+        style="display: flex;"
+      >
+        <div
+          style="margin-right: 8px; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6084 4.76308C11.5697 4.75817 11.5308 4.75559 11.4917 4.75534L9.33165 4.74819C9.42966 4.30236 9.48157 3.85177 9.48157 3.43331C9.48157 3.00474 9.43549 2.57319 9.34507 2.14938C9.33827 2.11717 9.3285 2.08568 9.31591 2.05534C9.0814 1.1845 8.32423 0.583313 7.4434 0.583313C6.40039 0.583313 5.61348 1.45653 5.61348 2.61427L5.61289 2.64403C5.61127 2.6823 5.61127 2.72063 5.61289 2.75891C5.56739 3.96546 4.59497 5.01843 3.38338 5.1732L1.67654 5.20117C1.39501 5.17907 1.11723 5.27806 0.910387 5.4742C0.703543 5.67034 0.586463 5.94578 0.587457 6.23391L0.583374 12.3869C0.583374 12.9541 1.03429 13.4166 1.58904 13.4166H3.46213L10.5794 13.4041C10.9737 13.4041 11.2211 13.2911 11.5145 13.097C11.805 12.9041 12.0409 12.6369 12.1987 12.322C12.253 12.2327 12.2932 12.1375 12.3189 12.0381L12.3236 12.0184L13.3841 7.13748C13.4074 7.04224 13.4173 6.94462 13.4133 6.847C13.4372 6.4303 13.3361 6.01604 13.1233 5.6595C12.7891 5.09879 12.2792 4.7976 11.6084 4.76308ZM2.18914 6.2391L2.30975 6.23731C2.63189 6.23254 2.89681 6.49515 2.90149 6.82385C2.90153 6.82673 2.90155 6.82961 2.90155 6.83249V11.7738C2.90155 12.1025 2.64038 12.369 2.31821 12.369H2.19338C1.87121 12.3695 1.61004 12.103 1.61004 11.7743L1.6105 11.7738L1.61426 6.83381C1.61451 6.50862 1.87048 6.24381 2.18914 6.2391ZM12.3831 6.90296L11.3255 11.7714C11.3129 11.7904 11.3016 11.8103 11.2917 11.8309C11.2162 11.989 11.0998 12.123 10.9551 12.2184C10.7672 12.3428 10.713 12.3565 10.5742 12.3565L4.51258 12.3674C4.19041 12.368 3.92879 12.1019 3.92822 11.7732L3.92822 11.7722V6.13272C5.46006 5.7476 6.59581 4.37141 6.63898 2.76367C6.63993 2.74442 6.63954 2.72513 6.63781 2.70593V2.67617L6.63956 2.61367C6.63956 2.12558 6.91548 1.63034 7.4434 1.63034C7.87098 1.63034 8.2379 1.93748 8.3359 2.37736C8.34123 2.40165 8.34825 2.42552 8.3569 2.44879C8.42131 2.77265 8.45394 3.10226 8.45432 3.43272C8.45432 3.95058 8.3499 4.55772 8.16848 5.09939C8.11461 5.25914 8.13966 5.43562 8.23573 5.57322C8.3318 5.71082 8.48708 5.79261 8.65265 5.79284L11.4912 5.80296C11.5087 5.80534 11.5256 5.80712 11.5425 5.80772C11.8791 5.822 12.0891 5.93986 12.2466 6.20355C12.354 6.38442 12.4031 6.59508 12.3872 6.80593C12.3854 6.8321 12.3856 6.85837 12.3877 6.8845L12.3837 6.90236L12.3831 6.90296Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="margin-right: 8px; width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.6666 1.75C12.311 1.75 12.8333 2.26557 12.8333 2.90155V11.5382C12.8333 11.9313 12.5104 12.25 12.1121 12.25C12.0002 12.25 11.8898 12.2243 11.7897 12.1749L8.41102 11.0839C8.24907 11.004 8.0705 10.9624 7.88944 10.9624H2.33329C1.68896 10.9624 1.16663 10.4468 1.16663 9.81085V2.90155C1.16663 2.26557 1.68896 1.75 2.33329 1.75H11.6666ZM11.0833 2.90155H2.91663C2.59446 2.90155 2.33329 3.15933 2.33329 3.47733V9.23508C2.33329 9.55307 2.59446 9.81085 2.91663 9.81085H7.88944C8.19982 9.81085 8.50655 9.87197 8.79183 9.99006L8.9326 10.0538L11.2947 10.7214C11.4495 10.7652 11.611 10.6767 11.6554 10.5239C11.6628 10.4981 11.6666 10.4714 11.6666 10.4446V3.47733C11.6666 3.15933 11.4055 2.90155 11.0833 2.90155ZM7.5832 6.93198C7.90533 6.93202 8.16645 7.18979 8.16645 7.50775C8.16645 7.82571 7.90533 8.08348 7.5832 8.08353H4.0832C3.76107 8.08348 3.49996 7.82571 3.49996 7.50775C3.49996 7.18979 3.76107 6.93202 4.0832 6.93198H7.5832ZM9.91654 4.62888C10.125 4.62884 10.3176 4.73858 10.4218 4.91674C10.526 5.0949 10.526 5.3144 10.4218 5.49256C10.3176 5.67072 10.125 5.78046 9.91654 5.78043H4.0832C3.76107 5.78038 3.49996 5.52261 3.49996 5.20465C3.49996 4.88669 3.76107 4.62892 4.0832 4.62888H9.91654Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.1513 0.592407C12.2679 0.571526 12.3807 0.587559 12.48 0.6307C12.4836 0.633009 12.4876 0.634808 12.4917 0.636657C12.5519 0.663785 12.6065 0.701338 12.6537 0.746589C12.6566 0.749428 12.6596 0.752341 12.6626 0.755292L12.6712 0.764178C12.7165 0.811346 12.754 0.865931 12.7817 0.925713C12.7831 0.930218 12.7849 0.9343 12.7866 0.938397C12.8418 1.06357 12.8529 1.21109 12.8006 1.36048L12.8119 1.32526C12.8096 1.3333 12.8072 1.34131 12.8046 1.34926L12.8006 1.36048L8.92148 12.4438C8.74695 12.9425 8.05241 12.9708 7.83784 12.488L5.71206 7.70519L0.929811 5.58C0.470019 5.37564 0.473825 4.73594 0.905988 4.52472L0.974021 4.49635L12.0574 0.617187C12.0613 0.615824 12.0651 0.614504 12.069 0.613227C12.0766 0.610661 12.0846 0.608239 12.0926 0.605992C12.1093 0.601251 12.1257 0.597343 12.142 0.594157C12.1436 0.594178 12.1454 0.593853 12.1472 0.593537L12.1513 0.592407ZM10.8547 3.38798L6.84954 7.39315L8.30614 10.6697L10.8547 3.38798ZM10.0305 2.5614L2.74756 5.1111L6.02412 6.56773L10.0305 2.5614Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+        <div
+          style="width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; cursor: pointer; margin-inline-start: auto;"
+        >
+          <svg
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.91667 5.83331C3.561 5.83331 4.08333 6.35565 4.08333 6.99998C4.08333 7.64431 3.561 8.16665 2.91667 8.16665C2.27233 8.16665 1.75 7.64431 1.75 6.99998C1.75 6.35565 2.27233 5.83331 2.91667 5.83331ZM7 5.83331C7.64433 5.83331 8.16667 6.35565 8.16667 6.99998C8.16667 7.64431 7.64433 8.16665 7 8.16665C6.35567 8.16665 5.83333 7.64431 5.83333 6.99998C5.83333 6.35565 6.35567 5.83331 7 5.83331ZM11.0833 5.83331C11.7277 5.83331 12.25 6.35565 12.25 6.99998C12.25 7.64431 11.7277 8.16665 11.0833 8.16665C10.439 8.16665 9.91667 7.64431 9.91667 6.99998C9.91667 6.35565 10.439 5.83331 11.0833 5.83331Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

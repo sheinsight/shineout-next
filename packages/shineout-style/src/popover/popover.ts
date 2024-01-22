@@ -11,7 +11,7 @@ export type PopoverClass =
   | 'mention'
   | 'footer';
 
-const arrowGap = 12;
+const arrowGap = 10;
 const arrowMargin = '8px';
 
 const popoverStyle: JsStyles<PopoverClass> = {

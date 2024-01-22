@@ -85,8 +85,9 @@ export interface DatePickerClasses {
   timeItem: string;
   timeItemActive: string;
   timeItemDisabled: string;
-  timeBase: string;
-  timeBaseItem: string;
+  timeItemBox: string;
+  // timeBase: string;
+  // timeBaseItem: string;
 
   datetime: string;
 

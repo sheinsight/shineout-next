@@ -39,6 +39,7 @@ export default createUseStyles(
         // position: 'relative',
         marginTop: 24,
         padding: 32,
+        // overflow: 'auto',
         border: '1px solid rgba(232, 235, 240, 1)',
       },
       '& .action': {
@@ -74,16 +75,32 @@ export default createUseStyles(
       '& .describe:last-child': {
         marginBottom: 0,
       },
-      '& .icon': {
-        position: 'relative',
+      '& .iconbox': {
         width: 16,
         height: 16,
+        position: 'relative',
+        '&:hover': {
+          '& .icon:after': {
+            display: 'block',
+          },
+        },
+      },
+      '& .icon': {
+        position: 'absolute',
+        width: 32,
+        height: 32,
+        top: -8,
+        left: -8,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: '50%',
         cursor: 'pointer',
+        '& svg': {
+          width: 16,
+        },
         '&:hover:after': {
+          display: 'none',
           content: '""',
           position: 'absolute',
           width: 32,

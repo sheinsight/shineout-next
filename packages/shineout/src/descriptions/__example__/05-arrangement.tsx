@@ -1,11 +1,11 @@
 /**
  * cn - 不同排列模式
- *    --
+ *    -- 可以通过tableLayout='fixed'设置等宽，通过layout设置不同的排列方式，设置border是否显示边框
  * en - Arrangement
- *    --
+ *    -- You can set the same width by tableLayout='fixed', and set different arrangement by layout, set border to show border
  */
 import React from 'react';
-import { Descriptions } from 'shineout';
+import { Descriptions, Radio } from 'shineout';
 
 const data = [
   {
@@ -30,49 +30,62 @@ const data = [
   },
 ];
 
+type layoutType = 'horizontal' | 'vertical' | 'inlineHorizontal' | 'inlineVertical';
+const layouts: layoutType[] = ['horizontal', 'vertical', 'inlineHorizontal', 'inlineVertical'];
+
+type tableLayoutType = 'fixed' | 'auto';
+const tableLayouts: tableLayoutType[] = ['auto', 'fixed'];
+
+interface borderType {
+  label: string;
+  value: boolean;
+}
+const borders: borderType[] = [
+  { label: 'no border', value: false },
+  { label: 'border', value: true },
+];
+
 export default () => {
+  const [layout, setLayout] = React.useState<layoutType>('horizontal');
+  const [tableLayout, setTableLayout] = React.useState<tableLayoutType>('auto');
+  const [border, setBorder] = React.useState<boolean>(false);
   return (
     <div>
-      <Descriptions
-        items={data}
-        title='User Info'
-        colon={` :`}
-        labelStyle={{ textAlign: 'right' }}
-        layout='horizontal'
-        tableLayout='fixed'
-        style={{ marginBottom: '24px' }}
+      <Radio.Group
+        data={layouts}
+        value={layout}
+        onChange={setLayout}
+        keygen
+        style={{ marginBottom: 24 }}
       />
-      <Descriptions
-        items={data}
-        title='User Info'
-        layout='horizontal'
-        colon={` :`}
-        tableLayout='fixed'
-        style={{ marginBottom: '24px' }}
+      <Radio.Group
+        data={tableLayouts}
+        value={tableLayout}
+        onChange={setTableLayout}
+        keygen
+        style={{ marginBottom: 24 }}
       />
-      <Descriptions
-        items={data}
-        title='User Info'
-        colon={` :`}
-        tableLayout='fixed'
-        style={{ marginBottom: '24px' }}
-      />
-      <Descriptions
-        items={data}
-        title='User Info'
-        colon={` :`}
-        layout='inlineVertical'
-        tableLayout='fixed'
-        style={{ marginBottom: '24px' }}
+      <Radio.Group
+        data={borders}
+        format={'value'}
+        renderItem={'label'}
+        value={border}
+        onChange={setBorder}
+        keygen
+        style={{ marginBottom: 24 }}
       />
       <Descriptions
         items={data}
         title='User Info'
         colon={` :`}
-        border
-        style={{ marginBottom: '24px' }}
+        layout={layout}
+        tableLayout={tableLayout}
+        border={border}
+        labelStyle={{
+          marginBottom: layout === 'inlineVertical' ? '2px' : '',
+          paddingBottom: layout === 'vertical' ? '2px' : '',
+        }}
       />
-      <Descriptions items={data} title='User Info' colon={` :`} layout='inlineVertical' border />
     </div>
   );
 };

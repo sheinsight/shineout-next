@@ -5,7 +5,7 @@
  *    -- Set the content property to a function, you can handle the close event inside the popup panel.
  */
 import React from 'react';
-import { Button, Popover, TYPE } from 'shineout';
+import { Button, Popover, Message, TYPE } from 'shineout';
 
 type PopoverProps = TYPE.Popover.Props;
 type PopoverContentChildren = PopoverProps['children'];
@@ -19,8 +19,7 @@ const App: React.FC = () => {
           size='small'
           onClick={() => {
             close();
-            // todo
-            // Message.success('Popover panel closed.')
+            Message.success('Popover panel closed.');
           }}
         >
           close
@@ -31,7 +30,9 @@ const App: React.FC = () => {
 
   return (
     <Button>
-      <Popover trigger='click'>{content}</Popover>
+      <Popover position='right' trigger='click'>
+        {content}
+      </Popover>
       Click me
     </Button>
   );

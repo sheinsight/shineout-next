@@ -166,7 +166,7 @@ export interface DatePickerTokens {
   datePickerDisabledPlaceholderColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-2
+   * @token Neutral-border-1
    * @description 日期选择器禁用时的边框颜色
    */
   datePickerDisabledBorderColor: string;
@@ -502,7 +502,7 @@ export interface DatePickerTokens {
   datePickerTimePanelPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Padding-7
    * @description 日期选择器时间面板内边距（垂直方向）
    */
   datePickerTimePanelPaddingY: string;
@@ -514,10 +514,22 @@ export interface DatePickerTokens {
   datePickerTimeListGap: string;
   /**
    * @type {string}
-   * @token Size-14
+   * @token Size-15
    * @description 日期选择器时间项高度
    */
   datePickerTimeItemHeight: string;
+  /**
+   * @type {string}
+   * @token Radius-4
+   * @description 日期选择器时间项边框圆角
+   */
+  datePickerTimeItemBorderRadius: string;
+  /**
+   * @type {string}
+   * @token 2px
+   * @description 日期选择器时间项内边距（垂直方向）
+   */
+  datePickerTimeItemPaddingY: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
@@ -532,16 +544,28 @@ export interface DatePickerTokens {
   datePickerTimeItemColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-2
+   * @token Brand-1
    * @description 日期选择器时间项鼠标点击时的背景颜色
    */
   datePickerTimeItemActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 日期选择器时间项鼠标点击时的颜色
+   */
+  datePickerTimeItemActiveColor: string;
   /**
    * @type {string}
    * @token Neutral-text-2
    * @description 日期选择器时间项禁用时的颜色
    */
   datePickerTimeItemDisabledColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 日期选择器时间项鼠标移入时的背景颜色
+   */
+  datePickerTimeItemHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Padding-8

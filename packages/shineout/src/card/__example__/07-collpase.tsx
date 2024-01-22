@@ -12,7 +12,7 @@ const App: React.FC = () => (
     <Card.Header>Card title</Card.Header>
 
     <Card.Body>
-      <div style={{ height: 100 }}>
+      <div>
         <DatePicker />
       </div>
     </Card.Body>

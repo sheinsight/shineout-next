@@ -721,25 +721,25 @@ const figma = [
   },
   {
     name: '警告色-1',
-    value: '#FFF6EB',
+    value: '#FFF3E2',
     describe: '浅色背景',
     token: 'Warning-1',
   },
   {
     name: '警告色-10',
-    value: '#562409',
+    value: '#4D1600',
     describe: '-10',
     token: 'Warning-10',
   },
   {
     name: '警告色-2',
-    value: '#FDE5B5',
+    value: '#FDDFBA',
     describe: '聚焦',
     token: 'Warning-2',
   },
   {
     name: '警告色-3',
-    value: '#FDD18B',
+    value: '#FBC68D',
     describe: '禁用',
     token: 'Warning-3',
   },
@@ -751,31 +751,31 @@ const figma = [
   },
   {
     name: '警告色-5',
-    value: '#FDA344',
+    value: '#F78C35',
     describe: '悬浮',
     token: 'Warning-5',
   },
   {
     name: '警告色-6',
-    value: '#F7862A',
+    value: '#F56C0A',
     describe: '常规',
     token: 'Warning-6',
   },
   {
     name: '警告色-7',
-    value: '#CC641F',
+    value: '#CB5206',
     describe: '点击',
     token: 'Warning-7',
   },
   {
     name: '警告色-8',
-    value: '#A24916',
+    value: '#A13A03',
     describe: '-8',
     token: 'Warning-8',
   },
   {
     name: '警告色-9',
-    value: '#7B3410',
+    value: '#772601',
     describe: '-9',
     token: 'Warning-9',
   },
@@ -1196,24 +1196,27 @@ const figma = [
   },
   {
     name: '基础阴影',
-    value:
-      '0px 2px 4px -1px rgba(2, 11, 24, 0.12),0px 4px 5px 0px rgba(2, 11, 24, 0.08),0px 1px 10px 0px rgba(2, 11, 24, 0.05)',
+    value: '0px 2px 5px rgba(2, 11, 24, 0.1)',
     describe: '表格拖拽、树组件拖拽',
     token: 'Shadow-1',
   },
   {
     name: '中阴影',
-    value:
-      '0px 5px 5px -3px rgba(2, 11, 24, 0.1),0px 8px 10px 1px rgba(2, 11, 24, 0.06),0px 3px 14px 2px rgba(2, 11, 24, 0.05)',
+    value: '0px 4px 10px rgba(2, 11, 24, 0.1)',
     describe: '所有下拉组件使用，下拉菜单、气泡确认框、选择器',
     token: 'Shadow-2',
   },
   {
     name: '重阴影',
-    value:
-      '0px 8px 10px -5px rgba(2, 11, 24, 0.08),0px 16px 24px 2px rgba(2, 11, 24, 0.04),0px 6px 30px 5px rgba(2, 11, 24, 0.05)',
+    value: '0px 8px 20px rgba(2, 11, 24, 0.1)',
     describe: '所有下拉组件使用，下拉菜单、气泡确认框、选择器',
     token: 'Shadow-3',
+  },
+  {
+    name: 'Shadow-4',
+    value: '0px -2px 10px rgba(232, 235, 240, 0.8)',
+    describe: '详情页底部按钮模块阴影',
+    token: 'Shadow-4',
   },
   {
     name: '动态行高',

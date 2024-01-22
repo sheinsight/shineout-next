@@ -8,6 +8,6 @@
 import React from 'react';
 import { Input } from 'shineout';
 
-const App: React.FC = () => <Input underline clearable placeholder='Underline' />;
+const App: React.FC = () => <Input width={300} underline clearable placeholder='Underline' />;
 
 export default App;

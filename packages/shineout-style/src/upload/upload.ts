@@ -74,6 +74,11 @@ const uploadStyle: JsStyles<UploadClassType> = {
         borderColor: token.uploadImageHandlerHoverBorderColor,
         color: token.uploadImageHandlerHoverFontColor,
       },
+      '$wrapperDisabled &': {
+        borderColor: token.uploadImageHandlerDisabledBorderColor,
+        backgroundColor: token.uploadImageHandlerDisabledBackgroundColor,
+        color: token.uploadImageHandlerDisabledFontColor,
+      },
     },
   },
   result: {
@@ -164,6 +169,11 @@ const uploadStyle: JsStyles<UploadClassType> = {
     '$wrapper:not($wrapperDisabled) &:hover': {
       borderColor: token.uploadImageHandlerHoverBorderColor,
       color: token.uploadImageHandlerHoverFontColor,
+    },
+    '$wrapperDisabled &': {
+      borderColor: token.uploadImageHandlerDisabledBorderColor,
+      backgroundColor: token.uploadImageHandlerDisabledBackgroundColor,
+      color: token.uploadImageHandlerDisabledFontColor,
     },
   },
   imageHandlerIcon: {

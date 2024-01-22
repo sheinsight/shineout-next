@@ -842,28 +842,28 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FFF6EB'
+   * @default '#FFF3E2'
    * @description 浅色背景
    */
   'Warning-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#562409'
+   * @default '#4D1600'
    * @description -10
    */
   'Warning-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDE5B5'
+   * @default '#FDDFBA'
    * @description 聚焦
    */
   'Warning-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDD18B'
+   * @default '#FBC68D'
    * @description 禁用
    */
   'Warning-3': string;
@@ -877,35 +877,35 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDA344'
+   * @default '#F78C35'
    * @description 悬浮
    */
   'Warning-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#F7862A'
+   * @default '#F56C0A'
    * @description 常规
    */
   'Warning-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#CC641F'
+   * @default '#CB5206'
    * @description 点击
    */
   'Warning-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#A24916'
+   * @default '#A13A03'
    * @description -8
    */
   'Warning-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#7B3410'
+   * @default '#772601'
    * @description -9
    */
   'Warning-9': string;
@@ -1395,24 +1395,31 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '0px 2px 4px -1px rgba(2, 11, 24, 0.12),0px 4px 5px 0px rgba(2, 11, 24, 0.08),0px 1px 10px 0px rgba(2, 11, 24, 0.05)'
+   * @default '0px 2px 5px rgba(2, 11, 24, 0.1)'
    * @description 表格拖拽、树组件拖拽
    */
   'Shadow-1': string;
   /**
    * @type {string}
    * @categoty string
-   * @default '0px 5px 5px -3px rgba(2, 11, 24, 0.1),0px 8px 10px 1px rgba(2, 11, 24, 0.06),0px 3px 14px 2px rgba(2, 11, 24, 0.05)'
+   * @default '0px 4px 10px rgba(2, 11, 24, 0.1)'
    * @description 所有下拉组件使用，下拉菜单、气泡确认框、选择器
    */
   'Shadow-2': string;
   /**
    * @type {string}
    * @categoty string
-   * @default '0px 8px 10px -5px rgba(2, 11, 24, 0.08),0px 16px 24px 2px rgba(2, 11, 24, 0.04),0px 6px 30px 5px rgba(2, 11, 24, 0.05)'
+   * @default '0px 8px 20px rgba(2, 11, 24, 0.1)'
    * @description 所有下拉组件使用，下拉菜单、气泡确认框、选择器
    */
   'Shadow-3': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0px -2px 10px rgba(232, 235, 240, 0.8)'
+   * @description 详情页底部按钮模块阴影
+   */
+  'Shadow-4': string;
   /**
    * @type {string}
    * @categoty string

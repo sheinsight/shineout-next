@@ -11,6 +11,7 @@ export default () => {
     <>
       <span>{v}</span>
       <Input
+        width={300}
         value={v}
         placeholder='input something'
         delay={300}

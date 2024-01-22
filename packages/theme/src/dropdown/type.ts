@@ -4,6 +4,12 @@
 export interface DropdownTokens {
   /**
    * @type {string}
+   * @token Margin-4
+   * @description 下拉菜单undefined外边距undefined
+   */
+  dropdownCaretMarginLeft: string;
+  /**
+   * @type {string}
    * @token Radius-4
    * @description 下拉菜单undefined边框圆角
    */

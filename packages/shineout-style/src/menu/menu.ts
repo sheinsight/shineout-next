@@ -27,6 +27,7 @@ export type MenuClasses = {
   expandFront: string;
   expandBack: string;
   expandHover: string;
+  icon: string;
   scrollbar: string;
   scrollbarX: string;
   scrollbarY: string;
@@ -154,11 +155,17 @@ const menuStyle: JsStyles<MenuClassType> = {
     '$wrapperDark $itemOpen > &': {
       color: token.menuDarkItemOpenFontColor,
       backgroundColor: token.menuDarkItemOpenBackgroundColor,
+      '& $icon': {
+        color: token.menuDarkItemOpenFontColor,
+      },
     },
 
-    '$itemInPath > &': {
+    '$itemInPath > &&': {
       '$wrapperLight &': {
         color: token.menuItemActiveFontColor,
+        '& $icon': {
+          color: token.menuItemActiveFontColor,
+        },
       },
 
       '$wrapperDark$wrapperInline &::before, $wrapperDark$wrapperVertical &::before': {
@@ -185,14 +192,20 @@ const menuStyle: JsStyles<MenuClassType> = {
         },
       },
     },
-    '$itemActive > &': {
+    '$itemActive > &&': {
       '$wrapperLight &': {
         color: token.menuItemActiveFontColor,
         backgroundColor: token.menuItemActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuItemActiveFontColor,
+        },
       },
       '$wrapperDark &': {
         color: token.menuDarkItemActiveFontColor,
         backgroundColor: token.menuDarkItemActiveBackgroundColor,
+        '& $icon': {
+          color: token.menuDarkItemActiveFontColor,
+        },
       },
       '$wrapperLight$wrapperInline &,  $wrapperLight$wrapperHorizontal &': {
         '&::before': {
@@ -210,10 +223,21 @@ const menuStyle: JsStyles<MenuClassType> = {
         display: 'none',
       },
     },
-    '$wrapperLight $itemDisabled > &': {
+    '$wrapperLight $itemDisabled > &&': {
       cursor: 'not-allowed',
       color: token.menuItemDisabledFontColor,
       backgroundColor: token.menuItemDisabledBackgroundColor,
+      '& $icon': {
+        color: token.menuItemDisabledFontColor,
+      },
+    },
+    '$wrapperDark $itemDisabled > &&': {
+      cursor: 'not-allowed',
+      color: token.menuDarkItemDisabledFontColor,
+      backgroundColor: token.menuDarkItemDisabledBackgroundColor,
+      '& $icon': {
+        color: token.menuDarkItemDisabledFontColor,
+      },
     },
   },
   itemContentFront: {},
@@ -241,7 +265,10 @@ const menuStyle: JsStyles<MenuClassType> = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    '& > div': {
+    '$wrapperLight &': {
+      color: token.menuIconColor,
+    },
+    '& > $icon': {
       lineHeight: 1,
       width: token.menuExpandSize,
       height: token.menuExpandSize,
@@ -253,6 +280,7 @@ const menuStyle: JsStyles<MenuClassType> = {
       transform: 'rotate(-90deg)',
     },
   },
+  icon: {},
   expandHover: {
     '&:hover': {
       backgroundColor: token.menuExpandHoverBackgroundColor,

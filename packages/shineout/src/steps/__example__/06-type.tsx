@@ -9,7 +9,7 @@ import { Steps } from 'shineout';
 
 export default () => {
   return (
-    <div>
+    <div style={{ width: '100%', overflow: 'auto' }}>
       <div style={{ width: 500 }}>
         <Steps current={1} type='dot' style={{ marginBottom: 32 }}>
           <Steps.Step title='Succeeded' />
@@ -25,7 +25,7 @@ export default () => {
           <Steps.Step title='Pending' description='This is a description' />
         </Steps>
       </div>
-      <div>
+      <div style={{ minWidth: 700 }}>
         <Steps current={1} type='arrow' style={{ marginBottom: 32 }}>
           <Steps.Step title='Succeeded' />
           <Steps.Step title='Complete information' />
