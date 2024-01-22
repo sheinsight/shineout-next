@@ -22,6 +22,7 @@ const inputRules = {
       'shadow',
       'clear-color',
       'toggle-color',
+      'icon-color',
     ],
   ],
   infoColor: [['info'], ['', 'error'], ['font-color', 'background-color', 'border-color']],

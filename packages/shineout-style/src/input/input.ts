@@ -206,16 +206,16 @@ const input: JsStyles<InputClass> = {
       cursor: 'pointer',
       width: '18px',
       padding: '0 4px',
-      borderLeft: `1px solid ${token.inputDisabledBorderColor}`,
+      borderLeft: `1px solid ${token.inputBorderColor}`,
       lineHeight: '1',
-      color: token.inputDisabledFontColor,
+      color: token.inputIconColor,
       '&:hover': {
         '$wrapper:not($wrapperDisabled) &': {
           color: token.inputHoverBorderColor,
         },
       },
       '&:first-child': {
-        borderBottom: `1px solid ${token.inputDisabledBorderColor}`,
+        borderBottom: `1px solid ${token.inputBorderColor}`,
       },
       '& svg': {
         transform: 'rotate(-90deg)',
