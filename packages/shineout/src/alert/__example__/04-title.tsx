@@ -9,7 +9,7 @@ import { Alert } from 'shineout';
 
 export default () => {
   return (
-    <Alert type='info' icon title='Heading'>
+    <Alert type='info' icon title='Heading' closable>
       This is a line of important text for alerting purposes
     </Alert>
   );

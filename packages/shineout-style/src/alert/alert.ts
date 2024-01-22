@@ -68,6 +68,7 @@ const alertStyle: JsStyles<AlertClass> = {
     },
     '& $close': {
       marginBottom: Token.alertNearlyMargin,
+      marginTop: 2,
     },
   },
   title: {
