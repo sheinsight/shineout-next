@@ -191,6 +191,12 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Neutral-text-2
+   * @description 选择器禁用时的图标颜色
+   */
+  selectDisabledIconColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
    * @description 选择器禁用时的字体颜色
    */
   selectDisabledFontColor: string;
@@ -352,16 +358,10 @@ export interface SelectTokens {
   selectOptionDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-16
-   * @description 选择器折叠内容的内边距（水平方向）
+   * @token Padding-8
+   * @description 选择器折叠内容的内边距
    */
-  selectMorePaddingX: string;
-  /**
-   * @type {string}
-   * @token Padding-14
-   * @description 选择器折叠内容的内边距（垂直方向）
-   */
-  selectMorePaddingY: string;
+  selectMorePadding: string;
   /**
    * @type {string}
    * @token Padding-8

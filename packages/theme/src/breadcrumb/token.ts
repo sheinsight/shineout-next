@@ -31,6 +31,12 @@ const breadcrumbTokenExtraValue = {
     border: { color: '#f4f5f8' },
     padding: { y: 'Padding-4' },
     item: {
+      border: {
+        radius: 'Radius-4',
+      },
+      wrapper: {
+        padding: { x: 'Padding-4' },
+      },
       padding: { x: 'Padding-8', y: 'Padding-5' },
       hover: {
         background: { color: 'Neutral-fill-2' },

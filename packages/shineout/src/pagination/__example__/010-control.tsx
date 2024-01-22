@@ -19,22 +19,6 @@ export default () => {
         <Input.Number
           min={1}
           max={10}
-          size='small'
-          value={current}
-          onChange={handleCurrentChange}
-          style={{ width: 80, marginLeft: 8 }}
-        />
-        <Input.Number
-          min={1}
-          max={10}
-          value={current}
-          onChange={handleCurrentChange}
-          style={{ width: 80, marginLeft: 8 }}
-        />
-        <Input.Number
-          min={1}
-          max={10}
-          size='large'
           value={current}
           onChange={handleCurrentChange}
           style={{ width: 80, marginLeft: 8 }}

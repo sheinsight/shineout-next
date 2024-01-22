@@ -41,7 +41,11 @@ export default () => {
         {inputVisible ? (
           <Tag.Input style={{ marginLeft: 8 }} onBlur={handleInputBlur} size='small' />
         ) : (
-          <Tag style={{ cursor: 'pointer' }} onClick={showInput}>
+          <Tag
+            style={{ cursor: 'pointer', borderStyle: 'dashed' }}
+            onClick={showInput}
+            mode='outline'
+          >
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <div style={{ color: '#666C7C', marginRight: 4 }}>+ </div>
               <div>Add Tag</div>

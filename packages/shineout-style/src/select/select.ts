@@ -115,6 +115,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     position: 'relative',
     width: '100%',
     outline: 'none',
+    cursor: 'pointer',
     ...wrapper,
     '&$wrapperInnerTitle': {
       '& $placeholder,$ellipsis,$space,input': {
@@ -166,6 +167,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     ...wrapperDisabled,
     '& $icon': {
       color: token.selectDisabledFontColor,
+    },
+    '& $arrowIcon': {
+      color: token.selectDisabledIconColor,
     },
   },
   ...resetWrapper,
@@ -401,7 +405,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     width: 248,
     height: 72,
     overflow: 'auto',
-    padding: `${token.selectMorePaddingY} ${token.selectMorePaddingX}`,
+    padding: token.selectMorePadding,
   },
   virtualList: {
     margin: 0,

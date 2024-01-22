@@ -4,6 +4,7 @@ import { JsStyles } from '../jss-style';
 export type BreadcrumbClasses = {
   wrapper: string;
   content: string;
+  itemWrapper: string;
   item: string;
   itemWithDrop: string;
   down: string;
@@ -42,6 +43,9 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
     position: 'relative',
     top: '-3px',
   },
+  itemWrapper: {
+    padding: `0 ${token.breadcrumbListItemWrapperPaddingX}`,
+  },
   item: {
     display: 'flex',
     alignItems: 'center',
@@ -78,6 +82,7 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
     fontSize: token.breadcrumbFontSize,
     cursor: 'pointer',
     color: token.breadcrumbFontColor,
+    borderRadius: token.breadcrumbListItemBorderRadius,
     '&:hover': {
       backgroundColor: token.breadcrumbListItemHoverBackgroundColor,
     },

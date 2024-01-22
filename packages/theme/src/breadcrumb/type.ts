@@ -52,6 +52,18 @@ export interface BreadcrumbTokens {
   breadcrumbListPaddingY: string;
   /**
    * @type {string}
+   * @token Radius-4
+   * @description xxxundefinedundefined边框圆角
+   */
+  breadcrumbListItemBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description xxxundefinedundefinedundefined内边距（水平方向）
+   */
+  breadcrumbListItemWrapperPaddingX: string;
+  /**
+   * @type {string}
    * @token Padding-8
    * @description xxxundefinedundefined内边距（水平方向）
    */

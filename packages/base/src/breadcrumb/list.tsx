@@ -26,8 +26,10 @@ const List = (props: ListProps) => {
   const renderList = (arr: any[]) => {
     return arr.map((item, index) => {
       return (
-        <div key={index} className={classNames(classes?.dropdownItem)} onClick={closePop}>
-          {props.renderItem(item)}
+        <div key={index} className={classes?.itemWrapper}>
+          <div className={classNames(classes?.dropdownItem)} onClick={closePop}>
+            {props.renderItem(item)}
+          </div>
         </div>
       );
     });
