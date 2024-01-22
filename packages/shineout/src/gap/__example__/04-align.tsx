@@ -21,7 +21,7 @@ const App: React.FC = () => {
 
       <Gap
         style={{
-          width: 190,
+          width: 160,
           marginTop: 16,
           border: '1px solid #e8ebf0',
           borderRadius: '4px',
