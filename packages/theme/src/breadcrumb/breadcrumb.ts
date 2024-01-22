@@ -12,6 +12,8 @@ const breadcrumbTokens: BreadcrumbTokens = {
   breadcrumbListShadow: 'Shadow-1',
   breadcrumbListBorderColor: '#f4f5f8',
   breadcrumbListPaddingY: 'Padding-4',
+  breadcrumbListItemBorderRadius: 'Radius-4',
+  breadcrumbListItemWrapperPaddingX: 'Padding-4',
   breadcrumbListItemPaddingX: 'Padding-8',
   breadcrumbListItemPaddingY: 'Padding-5',
   breadcrumbListItemHoverBackgroundColor: 'Neutral-fill-2',

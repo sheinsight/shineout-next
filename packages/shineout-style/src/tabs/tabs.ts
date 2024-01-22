@@ -606,14 +606,29 @@ const tabsStyle: JsStyles<TabsClass> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    '&:hover': {
-      color: Token.tabsActiveFontColor,
-    },
+    position: 'relative',
     '& svg': {
       width: 14,
       textAlign: 'center',
       transform: 'rotate(-90deg)',
       transition: 'transform .2s',
+    },
+    // after
+    '&:after': {
+      position: 'absolute',
+      content: '""',
+      left: 3,
+      top: 3,
+      width: 22,
+      height: 22,
+      background: 'transparent',
+      borderRadius: '50%',
+      zIndex: -1,
+    },
+    '&:hover': {
+      '&:after': {
+        background: Token.tabsHoverBackgroundColor,
+      },
     },
   },
   collapsed: {

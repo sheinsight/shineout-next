@@ -181,7 +181,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,
-    focused && styles?.wrapperFocus,
+    disabled !== true && focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,

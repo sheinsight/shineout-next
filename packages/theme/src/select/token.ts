@@ -68,6 +68,7 @@ const selectTokenExtraValue = {
   hover: { border: { color: 'Brand-6' }, clear: { color: 'Neutral-text-4' } },
   focus: { border: { color: 'Brand-7' }, shadow: 'Brand-2' },
   disabled: {
+    icon: { color: 'Neutral-text-2' },
     font: { color: 'Neutral-text-2' },
     placeholder: { color: 'Neutral-text-2' },
     border: { color: 'Neutral-border-2' },
@@ -104,10 +105,7 @@ const selectTokenExtraValue = {
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
   },
   more: {
-    padding: {
-      x: 'Padding-16',
-      y: 'Padding-14',
-    },
+    padding: 'Padding-8',
   },
   header: {
     padding: 'Padding-8',

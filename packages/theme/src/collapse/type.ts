@@ -10,6 +10,12 @@ export interface CollapseTokens {
   collapseIconColor: string;
   /**
    * @type {string}
+   * @token Margin-24
+   * @description 折叠面板undefined外边距
+   */
+  collapseExtraMargin: string;
+  /**
+   * @type {string}
    * @token Border-1
    * @description 折叠面板undefined边框字号
    */

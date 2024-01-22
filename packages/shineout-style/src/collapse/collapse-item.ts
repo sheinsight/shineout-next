@@ -88,6 +88,7 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     gap: Token.collapseHeaderExtraGap,
     lineHeight: Token.lineHeightDynamic,
     display: 'flex',
+    marginLeft: Token.collapseExtraMargin,
     alignItems: 'center',
   },
   content: {
