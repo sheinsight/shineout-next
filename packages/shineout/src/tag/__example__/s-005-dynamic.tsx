@@ -30,19 +30,25 @@ export default () => {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      {tags.map((a) => (
-        <Tag key={a} disabled={a === 'Tag 3' ? true : false} onClose={() => remove(a)}>
-          {a}
-        </Tag>
-      ))}
-      {inputVisible ? (
-        <Tag.Input style={{ marginLeft: 8 }} onBlur={handleInputBlur} size='small' />
-      ) : (
-        <Tag style={{ cursor: 'pointer' }} onClick={showInput}>
-          +
-        </Tag>
-      )}
+    <div>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        {tags.map((a) => (
+          <Tag key={a} disabled={a === 'Tag 3' ? true : false} onClose={() => remove(a)}>
+            {a}
+          </Tag>
+        ))}
+
+        {inputVisible ? (
+          <Tag.Input style={{ marginLeft: 8 }} onBlur={handleInputBlur} size='small' />
+        ) : (
+          <Tag style={{ cursor: 'pointer' }} onClick={showInput}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ color: '#666C7C', marginRight: 4 }}>+ </div>
+              <div>Add Tag</div>
+            </div>
+          </Tag>
+        )}
+      </div>
     </div>
   );
 };
