@@ -106,6 +106,12 @@ export interface InputTokens {
   inputToggleColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 输入框图标颜色
+   */
+  inputIconColor: string;
+  /**
+   * @type {string}
    * @token Brand-6
    * @description 输入框鼠标移入时的边框颜色
    */

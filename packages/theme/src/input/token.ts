@@ -19,7 +19,7 @@ const inputTokenValue = {
   font: { size: '14/regular', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
   padding: { x: 'Padding-8', y: 'Padding-4' },
-  icon: { size: 'Size-7' },
+  icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
     font: { size: '12/regular' },
     border: { radius: '' },
@@ -45,6 +45,7 @@ const inputTokenValue = {
     shadow: '',
     clear: { color: 'Neutral-text-4' },
     toggle: { color: 'Neutral-text-5' },
+    icon: { color: '' },
   },
   focus: {
     font: { color: '' },
@@ -54,6 +55,7 @@ const inputTokenValue = {
     shadow: 'Brand-2',
     clear: { color: '' },
     toggle: { color: '' },
+    icon: { color: '' },
   },
   disabled: {
     font: { color: 'Neutral-text-2' },
@@ -63,6 +65,7 @@ const inputTokenValue = {
     shadow: '',
     clear: { color: '' },
     toggle: { color: '' },
+    icon: { color: '' },
     hover: {
       font: { color: '' },
       placeholder: { color: '' },
@@ -71,6 +74,7 @@ const inputTokenValue = {
       shadow: '',
       clear: { color: '' },
       toggle: { color: '' },
+      icon: { color: '' },
     },
     focus: {
       font: { color: '' },
@@ -80,6 +84,7 @@ const inputTokenValue = {
       shadow: '',
       clear: { color: '' },
       toggle: { color: '' },
+      icon: { color: '' },
     },
   },
   error: {
@@ -90,6 +95,7 @@ const inputTokenValue = {
     shadow: '',
     clear: { color: '' },
     toggle: { color: '' },
+    icon: { color: '' },
     hover: {
       font: { color: '' },
       placeholder: { color: '' },
@@ -98,6 +104,7 @@ const inputTokenValue = {
       shadow: '',
       clear: { color: '' },
       toggle: { color: '' },
+      icon: { color: '' },
     },
     focus: {
       font: { color: '' },
@@ -107,6 +114,7 @@ const inputTokenValue = {
       shadow: 'Danger-1',
       clear: { color: '' },
       toggle: { color: '' },
+      icon: { color: '' },
     },
   },
   info: {
@@ -122,13 +130,7 @@ const inputTokenValue = {
   inner: {
     padding: { x: 'Padding-8', y: 'Padding-1' },
     font: { size: '12/regular', color: 'Neutral-text-4' },
-    small: {
-      padding: {
-        x: 'Padding-8',
-        y: 'Padding-1',
-      },
-      font: { size: '12/regular' },
-    },
+    small: { padding: { x: 'Padding-8', y: 'Padding-1' }, font: { size: '12/regular' } },
     large: { padding: { x: 'Padding-12', y: 'Padding-3' }, font: { size: '14/regular' } },
   },
 };
