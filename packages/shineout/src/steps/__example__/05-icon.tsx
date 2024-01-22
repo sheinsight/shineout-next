@@ -22,7 +22,7 @@ export default () => {
     return index + 1;
   };
   return (
-    <div>
+    <div style={{ width: '100%', overflow: 'auto' }}>
       <Steps current={1} renderIcon={renderIcon}>
         <Steps.Step title='Step1' />
         <Steps.Step title='Step2' />
