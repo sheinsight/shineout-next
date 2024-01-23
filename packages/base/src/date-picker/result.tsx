@@ -15,6 +15,7 @@ export const Input = (props: {
   disabled?: boolean;
   onFocus?: (e: React.FocusEvent) => void;
   onBlur?: (e: React.FocusEvent) => void;
+  onClick?: (e?: React.MouseEvent) => void;
 }) => {
   const [value, setValue] = useState(props.value);
   useEffect(() => {
@@ -34,6 +35,7 @@ export const Input = (props: {
       onFocus={props.onFocus}
       onClick={(e) => {
         e.currentTarget.focus();
+        if (props.onClick) props.onClick(e);
       }}
       onChange={(e) => {
         setValue(e.target.value);
@@ -58,6 +60,7 @@ interface ResultProps
   activeIndex?: number;
   onFocus?: (e: React.FocusEvent) => void;
   onBlur?: (e: React.FocusEvent) => void;
+  onClick?: (e?: React.MouseEvent) => void;
 }
 const Result = (props: ResultProps) => {
   const {
@@ -74,6 +77,7 @@ const Result = (props: ResultProps) => {
     disabledLeft,
     disabledRight,
     activeIndex = -1,
+    onClick: onClickProps,
   } = props;
   const { locale } = useConfig();
 
@@ -175,6 +179,7 @@ const Result = (props: ResultProps) => {
                 if (focused) return;
                 props.onFocus?.(e);
               }}
+              onClick={onClickProps}
             />
           ) : (
             info.target || info.value || <span className={styles?.placeholder}>{info.place}</span>

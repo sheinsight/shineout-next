@@ -153,6 +153,9 @@ const selectStyle: JsStyles<SelectClassType> = {
         right: token.selectLargePaddingX,
       },
     },
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   wrapperDisabled: {
     ...wrapperDisabled,
