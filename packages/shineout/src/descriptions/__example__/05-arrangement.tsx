@@ -71,7 +71,7 @@ export default () => {
         renderItem={'label'}
         value={border}
         onChange={setBorder}
-        keygen
+        keygen={'label'}
         style={{ marginBottom: 24 }}
       />
       <Descriptions
