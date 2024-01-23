@@ -32,8 +32,8 @@ const useButton = (props: BaseButtonProps = {}) => {
       otherHandlers?.onClick?.(event);
     };
 
-  const getSpaceChildren = (children: React.ReactNode, space?: boolean) => {
-    return wrapSpan(children, space);
+  const getSpaceChildren = (children: React.ReactNode, space?: boolean, className?: string) => {
+    return wrapSpan(children, space, className);
   };
 
   const getAnchorProps = <TOther extends ObjectType = ObjectType>(

@@ -82,8 +82,25 @@ export default () => {
             onChange={handleChange}
           ></Tree>
         </div>
-
-        <pre style={{ flex: 1, margin: 10 }}>{JSON.stringify(value, null, 2)}</pre>
+        <pre
+          style={{
+            flex: 1,
+            margin: 10,
+            background: '#1d1d1d',
+            color: '#94d5fc',
+            borderRadius: 4,
+            padding: 10,
+          }}
+        >
+          <div style={{ marginBottom: 10 }}>
+            <code style={{ color: '#5D8E4E' }}>
+              <span>/</span>
+              <span>/</span> DataItem[]
+            </code>
+          </div>
+          {value && value.length > 0 && <code>{JSON.stringify(value, null, 2)}</code>}
+          {!value || (value.length === 0 && <code style={{ color: '#757575' }}>no data</code>)}
+        </pre>
       </div>
     </div>
   );

@@ -23,6 +23,7 @@ type ButtonClass =
   | 'large'
   | 'group'
   | 'groupItem'
+  | 'spaceWrapper'
   | 'spin';
 
 type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
@@ -210,7 +211,8 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     transition: 'all 0.15s ease-in-out',
     fontFamily: 'inherit',
     height: Token.buttonHeight,
-    '& > span,& > a': {
+
+    '& $spaceWrapper': {
       height: '100%',
     },
 
@@ -233,7 +235,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
       animationTimingFunction: 'ease-out',
     },
   },
-
+  spaceWrapper: {},
   small: {
     height: Token.buttonSmallHeight,
 
