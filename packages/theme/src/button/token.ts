@@ -212,8 +212,8 @@ const buttonTokenValue = {
     },
     hover: {
       font: { color: 'Neutral-text-5' },
-      background: { color: 'Neutral-fill-4' },
-      border: { color: 'Neutral-fill-4' },
+      background: { color: 'Neutral-fill-3' },
+      border: { color: 'Neutral-fill-3' },
     },
     active: {
       font: { color: 'Neutral-text-5' },

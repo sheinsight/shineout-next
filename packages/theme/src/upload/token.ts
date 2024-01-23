@@ -86,7 +86,7 @@ const uploadTokenExtraValue = {
       btn: {
         size: 'Size-7',
         close: { color: 'Danger-6' },
-        recover: { color: 'Brand-6' },
+        recover: { color: 'Neutral-text-4' },
       },
       mask: {
         background: { color: 'Mask-fill-1' },

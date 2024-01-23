@@ -24,7 +24,7 @@ export default () => {
     return <span style={{ fontSize: 12, fontWeight: 300 }}>{name}</span>;
   };
   return (
-    <div>
+    <div style={{ width: '100%', overflow: 'auto' }}>
       <div style={{ display: 'flex', flexWrap: 'nowrap', gap: 65, marginBottom: 32 }}>
         {names1.map((name, index) => (
           <div key={index} style={{ width: '16%' }}>

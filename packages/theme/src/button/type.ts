@@ -328,13 +328,13 @@ export interface ButtonTokens {
   buttonSecondaryHoverFontColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-4
+   * @token Neutral-fill-3
    * @description 按钮次要色鼠标移入时的背景颜色
    */
   buttonSecondaryHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-4
+   * @token Neutral-fill-3
    * @description 按钮次要色鼠标移入时的边框颜色
    */
   buttonSecondaryHoverBorderColor: string;

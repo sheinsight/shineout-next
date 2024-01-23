@@ -88,13 +88,13 @@ export interface RadioTokens {
   radioIconCheckedColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-2
+   * @token Neutral-fill-1
    * @description 单选框图标undefined禁用时的背景颜色
    */
   radioIconCheckedDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-2
+   * @token Brand-3
    * @description 单选框图标undefined禁用时的颜色
    */
   radioIconCheckedDisabledColor: string;
