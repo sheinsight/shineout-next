@@ -179,17 +179,19 @@ const Pulse = (props: SpinProps) => {
 };
 
 const Ring = (props: SpinProps) => {
-  const { size = 40, color, jssStyle, className } = props;
+  const { size = 40, color, jssStyle, className, style: styleProp = {} } = props;
   const spinStyles = jssStyle?.spin?.() || ({} as SpinClasses);
 
   const { value, unit } = formatSize(size);
   const style = {
+    ...styleProp,
     borderWidth: value / 10 + unit,
     borderLeftColor: color,
     borderRightColor: color,
     borderBottomColor: color,
     fontSize: value / 10 + unit,
   };
+
   return (
     <BaseSpin
       {...props}

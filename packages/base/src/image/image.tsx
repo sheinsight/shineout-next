@@ -7,6 +7,7 @@ import showGallery from './image-event';
 import { ImageProps } from './image.type';
 import ImageGroup from './image-group';
 import Icons from '../icons';
+import Spin from '../spin';
 
 const PLACEHOLDER = 0;
 const SRC = 1;
@@ -127,26 +128,7 @@ const Image = (props: ImageProps) => {
   const renderDefaultPlaceholder = () => {
     return (
       <div className={defaultPlaceholderClass}>
-        {/* 后面替换成 Spin 组件 */}
-        <svg
-          width='16'
-          height='16'
-          viewBox='0 0 16 16'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <g clipPath='url(#clip0_1483_450)'>
-            <path
-              d='M7.99984 0.666626C12.0499 0.666626 15.3332 3.94987 15.3332 7.99996C15.3332 12.05 12.0499 15.3333 7.99984 15.3333C3.94975 15.3333 0.666504 12.05 0.666504 7.99996C0.666504 7.63177 0.964981 7.33329 1.33317 7.33329C1.70136 7.33329 1.99984 7.63177 1.99984 7.99996C1.99984 11.3137 4.68613 14 7.99984 14C11.3135 14 13.9998 11.3137 13.9998 7.99996C13.9998 4.68625 11.3135 1.99996 7.99984 1.99996C7.63165 1.99996 7.33317 1.70148 7.33317 1.33329C7.33317 0.965103 7.63165 0.666626 7.99984 0.666626Z'
-              fill='#B3B7C1'
-            />
-          </g>
-          <defs>
-            <clipPath id='clip0_1483_450'>
-              <rect width='16' height='16' fill='white' />
-            </clipPath>
-          </defs>
-        </svg>
+        <Spin jssStyle={jssStyle} name='ring' color='#B3B7C1' size={16}></Spin>
       </div>
     );
   };

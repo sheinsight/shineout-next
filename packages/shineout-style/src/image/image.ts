@@ -272,7 +272,7 @@ const ImageStyle: JsStyles<ImageClass> = {
   },
 
   overlay: {
-    position: 'absolute',
+    position: 'fixed',
     zIndex: 1100,
     top: 0,
     right: 0,

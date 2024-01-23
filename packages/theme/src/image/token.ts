@@ -39,7 +39,11 @@ const imageTokenValue = {
   background: { color: 'Neutral-fill-2' },
 };
 
-const imageTokenExtraValue = {};
+const imageTokenExtraValue = {
+  spin: {
+    color: 'Neutral-text-2',
+  },
+};
 
 module.exports = {
   imageTokenValue,

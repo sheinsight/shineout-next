@@ -45,7 +45,8 @@ const Collapse = (props: CollapseProps) => {
       expandIcon !== undefined
         ? expandIcon
         : expandIconPosition === 'right'
-        ? Icons.ArrowLeft
+        ? // ? Icons.ArrowLeft
+          Icons.ArrowRight
         : Icons.ArrowRight,
     onChange,
   };

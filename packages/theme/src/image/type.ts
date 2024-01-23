@@ -4,6 +4,12 @@
 export interface ImageTokens {
   /**
    * @type {string}
+   * @token Neutral-text-2
+   * @description 图片undefined颜色
+   */
+  imageSpinColor: string;
+  /**
+   * @type {string}
    * @token Radius-50%
    * @description 图片圆形边框圆角
    */
