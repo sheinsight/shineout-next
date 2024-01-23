@@ -34,7 +34,7 @@ const uploadTokens: UploadTokens = {
   uploadImageResultBorderColor: 'Neutral-border-1',
   uploadImageResultBtnSize: 'Size-7',
   uploadImageResultBtnCloseColor: 'Danger-6',
-  uploadImageResultBtnRecoverColor: 'Brand-6',
+  uploadImageResultBtnRecoverColor: 'Neutral-text-4',
   uploadImageResultMaskBackgroundColor: 'Mask-fill-1',
   uploadImageResultMaskIconSize: 'Size-8',
   uploadImageResultMaskIconColor: 'Neutral-text-1',

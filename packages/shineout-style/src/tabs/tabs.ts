@@ -242,6 +242,7 @@ const tabsStyle: JsStyles<TabsClass> = {
         alignItems: 'center',
       },
       '& $next,& $prev': {
+        lineHeight: 0,
         padding: `${Token.tabsActionHorizontalPaddingY} ${Token.tabsActionHorizontalPaddingX}`,
       },
 

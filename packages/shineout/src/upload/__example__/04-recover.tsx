@@ -29,6 +29,7 @@ const App: React.FC = () => (
       </Button>
     </Upload>
     <Upload.Image
+      leftHandler
       style={{ marginTop: 24 }}
       defaultValue={df}
       action='/api/upload'

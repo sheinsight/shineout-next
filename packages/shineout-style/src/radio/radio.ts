@@ -111,7 +111,7 @@ const radioStyle: JsStyles<RadioClass> = {
         transform: 'translate(-50%, -50%)',
       },
     },
-    '$wrapperDisabled &': {
+    '$wrapperDisabled:not($wrapperChecked) &': {
       backgroundColor: token.radioIconDisabledBackgroundColor,
       color: token.radioIconDisabledColor,
     },

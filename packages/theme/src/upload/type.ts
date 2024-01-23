@@ -184,7 +184,7 @@ export interface UploadTokens {
   uploadImageResultBtnCloseColor: string;
   /**
    * @type {string}
-   * @token Brand-6
+   * @token Neutral-text-4
    * @description 上传图片结果按钮恢复颜色
    */
   uploadImageResultBtnRecoverColor: string;

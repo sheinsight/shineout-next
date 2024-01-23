@@ -32,7 +32,7 @@ const radioTokenExtraValue = {
     checked: {
       background: { color: 'Neutral-fill-1' },
       color: 'Brand-6',
-      disabled: { background: { color: 'Neutral-fill-2' }, color: 'Neutral-border-2' },
+      disabled: { background: { color: 'Neutral-fill-1' }, color: 'Brand-3' },
     },
     wrapper: { fill: 'Neutral-fill-2' },
   },

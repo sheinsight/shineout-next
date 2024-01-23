@@ -9,7 +9,7 @@ import { Steps } from 'shineout';
 
 export default () => {
   return (
-    <div>
+    <div style={{ width: '100%', overflow: 'auto' }}>
       <div
         style={{ width: 500, display: 'flex', gap: 32, marginBottom: 24, alignItems: 'flex-start' }}
       >
