@@ -4,6 +4,7 @@
 import { ImageTokens } from './type';
 
 const imageTokens: ImageTokens = {
+  imageSpinColor: 'Neutral-text-2',
   imageCircleBorderRadius: 'Radius-50%',
   imageCircleBorderColor: 'Neutral-border-1',
   imageRoundedBorderRadius: 'Radius-4',

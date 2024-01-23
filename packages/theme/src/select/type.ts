@@ -208,7 +208,7 @@ export interface SelectTokens {
   selectDisabledPlaceholderColor: string;
   /**
    * @type {string}
-   * @token Neutral-border-2
+   * @token Neutral-border-1
    * @description 选择器禁用时的边框颜色
    */
   selectDisabledBorderColor: string;

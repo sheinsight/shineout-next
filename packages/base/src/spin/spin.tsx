@@ -8,6 +8,7 @@ const Spin = (props: SpinProps = {}) => {
     jssStyle,
     className,
     children,
+    style,
     loading = true,
     name: nameProps,
     tip,
@@ -28,7 +29,7 @@ const Spin = (props: SpinProps = {}) => {
 
   const renderSpin = () => {
     if (Spins[name]) {
-      return Spins[name](props);
+      return Spins[name]({ ...props, style });
     }
 
     return null;
@@ -54,7 +55,6 @@ const Spin = (props: SpinProps = {}) => {
 
     return renderSpin();
   };
-
   const renderContainer = () => {
     return (
       <div className={spinStyle.container}>

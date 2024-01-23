@@ -38,7 +38,7 @@ const selectTokens: SelectTokens = {
   selectDisabledIconColor: 'Neutral-text-2',
   selectDisabledFontColor: 'Neutral-text-2',
   selectDisabledPlaceholderColor: 'Neutral-text-2',
-  selectDisabledBorderColor: 'Neutral-border-2',
+  selectDisabledBorderColor: 'Neutral-border-1',
   selectDisabledBackgroundColor: 'Neutral-fill-2',
   selectResultTextBorderRadius: 'Radius-4',
   selectResultTextPaddingX: 'Padding-4',

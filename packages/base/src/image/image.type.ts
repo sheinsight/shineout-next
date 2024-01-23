@@ -1,12 +1,14 @@
 import React from 'react';
 import { BaseImageProps } from '@sheinx/hooks';
 import { ImageClasses } from '@sheinx/shineout-style';
+import { SpinClasses } from '../spin/spin.type';
 import { CommonType } from '../common/type';
 
 export type MagnifyPositionType = 'left' | 'right' | 'center';
 
 export type ImageJssStyleType = {
   image?: () => ImageClasses;
+  spin?: () => SpinClasses;
 };
 
 export type Image = {
