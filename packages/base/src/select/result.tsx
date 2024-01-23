@@ -183,8 +183,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderMultipleResultMore = () => {
-    if (isEmptyResult()) return renderNbsp();
-    const result = getDataByValues(value as Value[]).map(renderItem);
+    const result = renderMultipleResult() as React.ReactNode[];
     const moreNumber = getCompressedBound();
     return (
       <More
