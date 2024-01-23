@@ -264,7 +264,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     const hoverIndex = optionListRef.current?.getHoverIndex() || 0;
     if (onCreate && hideCreateOption && createdData) {
       handleHideOption();
-
+      setInputText('');
       return;
     }
 
@@ -272,6 +272,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     if (currentDataItem && !currentDataItem[groupKey as keyof typeof currentDataItem]) {
       isKeydown.current = true;
       handleChange(currentDataItem);
+      setInputText('');
     }
   };
 
@@ -403,7 +404,14 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   };
 
   const getDataByValues = (values: (Value | undefined)[]) => {
-    return datum.getDataByValues(values, { childrenKey });
+    const dataByValues = datum.getDataByValues(values, { childrenKey });
+
+    return dataByValues.map((item) => {
+      if (util.isObject(item) && item?.IS_NOT_MATCHED_VALUE && item?.value) {
+        return item.value;
+      }
+      return item;
+    });
   };
 
   const checkUnMatched = (item: DataItem | UnMatchedData): item is UnMatchedData => {
