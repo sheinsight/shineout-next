@@ -17,12 +17,16 @@ const SPACE = ' ';
  * @param insertSpace 是否需要插入空格
  * @returns 处理后的 ReactNode
  */
-export function wrapSpan(children: React.ReactNode, insertSpace = false): React.ReactNode {
+export function wrapSpan(
+  children: React.ReactNode,
+  insertSpace = false,
+  className?: string,
+): React.ReactNode {
   if (!children) return children;
   return React.Children.map(children, (item) => {
     if (typeof item === 'string') {
       if (insertSpace && isTwoCNChar(item)) return <span>{item.split('').join(SPACE)}</span>;
-      return <span>{item}</span>;
+      return <span className={className}>{item}</span>;
     }
     return item;
   });

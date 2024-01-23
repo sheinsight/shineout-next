@@ -77,7 +77,7 @@ const Button = (props: ButtonProps) => {
     return 12;
   };
 
-  const childrenEl = getSpaceChildren(children, space);
+  const childrenEl = getSpaceChildren(children, space, buttonStyle.spaceWrapper);
 
   let buttonInnerEl: React.ReactNode = childrenEl;
 

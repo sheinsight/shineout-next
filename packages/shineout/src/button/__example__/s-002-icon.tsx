@@ -13,29 +13,18 @@ export default () => {
     margin: 0,
   };
 
-  const iconWarpperStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 4,
-  };
-
   return (
     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
       <Button type='primary' style={buttonStyle}>
-        <span style={iconWarpperStyle}>
-          <Icon01></Icon01> Primary
-        </span>
+        <Icon01></Icon01>
+        <span style={{ marginLeft: 4 }}>Primary</span>
       </Button>
       <Button type='primary' style={buttonStyle}>
-        <span style={iconWarpperStyle}>
-          Primary <Icon01></Icon01>
-        </span>
+        <span style={{ marginRight: 4 }}>Primary</span>
+        <Icon01></Icon01>
       </Button>
       <Button type='primary' shape='square' style={buttonStyle}>
-        <span style={iconWarpperStyle}>
-          <Icon01></Icon01>
-        </span>
+        <Icon01></Icon01>
       </Button>
     </div>
   );

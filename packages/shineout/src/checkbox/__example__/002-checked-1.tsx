@@ -9,18 +9,23 @@ import { Checkbox } from 'shineout';
 
 const App: React.FC = () => (
   <div>
-    <Checkbox checked={false}>not checked</Checkbox>
-    <Checkbox checked>checked</Checkbox>
-    <Checkbox checked='indeterminate'>indeterminate</Checkbox>
-    <Checkbox checked={false} disabled>
-      not checked
-    </Checkbox>
-    <Checkbox checked disabled>
-      checked
-    </Checkbox>
-    <Checkbox checked='indeterminate' disabled>
-      indeterminate
-    </Checkbox>
+    <div style={{ marginBottom: 12, lineHeight: 0 }}>
+      <Checkbox checked={false}>not checked</Checkbox>
+      <Checkbox checked>checked</Checkbox>
+      <Checkbox checked='indeterminate'>indeterminate</Checkbox>
+    </div>
+
+    <div style={{ lineHeight: 0 }}>
+      <Checkbox checked={false} disabled>
+        not checked
+      </Checkbox>
+      <Checkbox checked disabled>
+        checked
+      </Checkbox>
+      <Checkbox checked='indeterminate' disabled>
+        indeterminate
+      </Checkbox>
+    </div>
   </div>
 );
 
