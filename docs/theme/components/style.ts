@@ -98,14 +98,7 @@ export default createUseStyles(
           marginTop: 40,
         },
       },
-      '& .paragraph': {
-        padding: '0 40px',
-        fontSize: 14,
-        lineHeight: '22px',
-        fontWeight: 400,
-        marginTop: 0,
-        marginBottom: 0,
-      },
+      '& .paragraph': {},
       '& .image': {
         padding: '0 40px',
         width: 'calc(100% - 272px)',
@@ -114,12 +107,53 @@ export default createUseStyles(
         marginBottom: 32,
         boxSizing: 'border-box',
       },
-      '& .guide > div': {
-        // last child
-        '&:last-child img': {
-          marginBottom: 0,
+    },
+    paragraph: {
+      padding: '0 40px',
+      fontSize: 14,
+      lineHeight: '22px',
+      fontWeight: 400,
+      marginTop: 32,
+      marginBottom: 0,
+    },
+    firstParagraph: {
+      marginTop: 0,
+    },
+    imageWrapper: {
+      marginTop: 16,
+      display: 'flex',
+      padding: '0 40px',
+      // 第二个元素
+      '& > :nth-child(2)': {
+        '&$imageContent': {
+          marginLeft: 24,
         },
       },
+    },
+    image: {
+      width: '100%',
+      maxWidth: 442,
+    },
+    imageContent: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    imageType: {
+      marginTop: 8,
+      fontSize: 12,
+      display: 'flex',
+      alignItems: 'center',
+      lineHeight: '20px',
+      fontWeight: 'bold',
+      '& svg': {
+        marginRight: 4,
+      },
+    },
+    imageDescription: {
+      fontSize: 12,
+      lineHeight: '20px',
+      color: '#999DA8',
+      marginTop: 8,
     },
     apiTable: {
       width: '100%',

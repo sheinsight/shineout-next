@@ -12,6 +12,40 @@ const md = require('markdown-it')({
   html: true,
 });
 
+const splitByTagSections = (data, tag) => {
+  // 初始化结果数组和缓存数组
+  const results = [];
+  let currentSection = [];
+
+  // 遍历数据
+  data.forEach((item, index, array) => {
+    // 判断是否为 tag 开始标签
+    if (item.type === 'heading_open' && item.tag === tag) {
+      // 如果 currentSection 已有内容，推入结果数组
+      if (currentSection.length > 0) results.push(currentSection);
+      // 重置 currentSection 为新的部分
+      currentSection = [];
+    }
+    // 将当前元素推入当前部分
+    currentSection.push(item);
+
+    // 判断是否为 tag 结束标签
+    if (item.type === 'heading_close' && item.tag === tag) {
+      // 如果是在数组的最后，推入结果数组（这里的校验可能是多余的，因为同样的工作已经在开始标签那里做过了）
+      if (index === array.length - 1) {
+        results.push(currentSection);
+        currentSection = [];
+      }
+    }
+  });
+
+  // 如果最后一个部分非空，也推入结果数组
+  if (currentSection.length > 0) results.push(currentSection);
+
+  // 返回结果数组
+  return results;
+};
+
 const tokenLoader = (content) => {
   const formattedCode = prettier.format(content, {
     filepath: prettierPath,
@@ -22,74 +56,51 @@ const tokenLoader = (content) => {
   return result;
 };
 
-const getParagraph = (tokens, index, component) => {
-  const nextH2Index = tokens.findIndex((token, i) => {
-    return (
-      i > index &&
-      token.tag === 'h2' &&
-      token.type === 'heading_open' &&
-      tokens[i + 1].type === 'inline' &&
-      tokens?.[i + 4] &&
-      tokens[i + 4].content.indexOf('![') > -1
-    );
-  });
-
-  const paragraphs = tokens.filter((token, i) => {
-    if (nextH2Index === -1) {
-      return i > index && token.content.indexOf('![') > -1;
-    } else {
-      return i > index && i < nextH2Index && token.content.indexOf('![') > -1;
-    }
-  });
-
-  const result = paragraphs.map((p) => {
-    return {
-      paragraph: p.children?.[0]?.content,
-      image: getStaticUrl(component, p.children?.[0]?.attrs?.[0]?.[1]),
-    };
-  });
-  return result;
-};
-
 // 提取 tokens 中的段落信息
 const paragraphLoader = (tokens, component) => {
-  const paragraphs = [];
-  tokens.forEach((token, index) => {
-    if (
-      index === 0 &&
-      token.tag === 'h2' &&
-      token.type === 'heading_open' &&
-      tokens[index + 1].type === 'inline' &&
-      tokens[index + 1].content.indexOf('![') === -1
-    ) {
-      paragraphs.push({
-        title: tokens[index + 1].content,
-        paragraphs: [
-          {
-            paragraph: tokens[index + 4].content,
-            image: '',
-          },
-        ],
+  const p = [];
+  const h2 = splitByTagSections(tokens, 'h2');
+  h2.forEach((_h2, _h2_index) => {
+    if (_h2[0].type === 'heading_open' && _h2[0].tag === 'h2') {
+      p.push({
+        title: _h2[1].content,
+        paragraphs: [],
       });
-    }
-
-    if (
-      token.tag === 'h2' &&
-      token.type === 'heading_open' &&
-      tokens[index + 1].type === 'inline' &&
-      tokens?.[index + 4] &&
-      tokens[index + 4].content.indexOf('![') > -1
-    ) {
-      const title = tokens[index + 1].content;
-      const paragraph = getParagraph(tokens, index, component);
-      paragraphs.push({
-        title,
-        paragraphs: paragraph,
+      const h3 = splitByTagSections(_h2.splice(3, _h2.length - 1) || [], 'h3') || [];
+      h3.forEach((_h3, _h3_index) => {
+        if (_h3[0].type === 'heading_open' && _h3[0].tag === 'h3') {
+          p[_h2_index].paragraphs.push({
+            title: _h3[1].content,
+            image: [],
+          });
+        }
+        const image = splitByTagSections(_h3.splice(3, _h3.length - 1) || [], 'p') || [];
+        image.forEach((_image) => {
+          if (_image[0].type === 'paragraph_open' && _image[0].tag === 'p') {
+            if (_image[1].children && _image[1].children.length > 0) {
+              _image[1].children.forEach((img) => {
+                if (
+                  img.type === 'image' &&
+                  img.tag === 'img' &&
+                  p[_h2_index].paragraphs[_h3_index] &&
+                  p[_h2_index].paragraphs[_h3_index].image
+                ) {
+                  const isDescription = img.content !== 'success' && img.content !== 'warning';
+                  p[_h2_index].paragraphs[_h3_index].image.push({
+                    type: isDescription ? '' : img.content,
+                    description: isDescription ? img.content : '',
+                    image: getStaticUrl(component, img.attrs[0][1]),
+                  });
+                }
+              });
+            }
+          }
+        });
       });
     }
   });
 
-  return paragraphs;
+  return p;
 };
 
 // 提取 tokens 中 title 、 group 信息
@@ -221,7 +232,8 @@ const markdownLoader = (content, component, module) => {
 
 const guideLoader = (content, component) => {
   const tokens = tokenLoader(content);
-  const paragraph = paragraphLoader(tokens, component);
+  const paragraph = paragraphLoader(tokens, component) || [];
+
   return paragraph;
 };
 
