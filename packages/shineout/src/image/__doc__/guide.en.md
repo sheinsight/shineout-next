@@ -1,21 +1,33 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+### Use when images need to be displayed, showcased, or previewed; it also provides default placeholder styles for image loading, load failure, and when there are no images available.
 
-## Related to layout
+## Related to Layout
 
-![1. Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### When displaying multiple images together, ensure that the images have uniform sizes and proportions to maintain consistency on the page. If there are exceptional circumstances, it is recommended that the images have a consistent width and uniform margins on all sides.
 
-![2. Main button is usually used alone and is the main visual focus in the page. It is recommended to only have one main button per page.](02)
+![Illustration: Images of the same proportion and size](001)
+![Illustration: Images of different proportions and sizes](002)
 
-![3. When too many buttons need to be placed in a limited space, secondary buttons can be folded appropriately or combined and arranged.](03)
+## Combination with Other Components
 
-## Component Combination
+### 1. Combine images with pagination when there are too many images and a specific number needs to be displayed per page, allowing users to choose the page number to find images.
 
-![Different types of buttons can be used together to express different levels of emphasis.](04)
+![](003)
 
-## Recommended/Use with caution examples
+### 2. Combine images with step loading to create an image waterfall stream. When browsing a large number of images, this can reduce user interactions and provide an immersive experience.
 
-![1. When using the main and secondary buttons, it is necessary to express the main-secondary relationship, highlighting the main operation with the main button, and using the secondary button for other operations. Multiple main buttons should not be used at the same time.](05)
+![](004)
 
-![2. When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](06)
+## Recommended Image Ratios
+
+### Four common aspect ratios are recommended. The system should use a consistent image ratio to avoid mixing different ratios in the same scenario.
+
+![](005)
+
+## Recommended/Cautionary Examples
+
+### For thumbnail images without a preview function, do not present them in too small a size, ensuring that users can clearly see the images.
+
+![success](006)
+![warning](007)

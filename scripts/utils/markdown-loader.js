@@ -85,7 +85,8 @@ const paragraphLoader = (tokens, component) => {
                   p[_h2_index].paragraphs[_h3_index] &&
                   p[_h2_index].paragraphs[_h3_index].image
                 ) {
-                  const isDescription = img.content !== 'success' && img.content !== 'warning';
+                  const isDescription =
+                    img.content.indexOf('success') === -1 && img.content.indexOf('warning') === -1;
                   p[_h2_index].paragraphs[_h3_index].image.push({
                     type: isDescription ? '' : img.content,
                     description: isDescription ? img.content : '',

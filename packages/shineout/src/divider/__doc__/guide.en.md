@@ -1,13 +1,21 @@
-## When to use
+## When to Use
 
-Separate different items or sections in a form or long list\n Visually separate different blocks of content on the page\n Visually separate different topics
+### To separate different items or sections in forms or long lists\n To visually divide different content blocks on a page\n To visually separate different themes
 
-## Related to layout
+## Related to Layout
 
-![1. Splitting Form Fields - Adding separators in the form interface can separate different types of fields or content blocks, making the page more intuitive and easier for users to locate and fill out the form](01.en)
+### 1. To divide form fields - In a form interface, adding dividing lines can separate different types of fields or content blocks, making the page more intuitive and easier to understand, allowing users to locate and fill out forms more quickly.
 
-![2. Splitting Action Buttons - Separators can be used in the action interface to separate different action buttons, filters, or quick filter buttons, making the page more refreshing, effective, and navigable](02.en)
+![](001)
+![](002)
 
-## Recommended/Use with caution examples
+### 2. To divide action buttons - In an interface, dividing lines can separate different operation buttons, filters, or quick filter buttons, making the page cleaner, more effective, and more navigable
 
-![Avoid excessive use of separators that may cause visual interference when there is obvious blank space or subheadings that have separated the content](03.en)
+![](003)
+
+## Recommended/Cautionary Examples
+
+### Avoid the overuse of dividing lines that cause visual disturbance when there is clear whitespace or subtitles that already serve as dividers.
+
+![success](004)
+![warning](005)

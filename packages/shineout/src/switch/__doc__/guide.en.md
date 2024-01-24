@@ -1,11 +1,17 @@
-## When to use
+## When to Use
 
-When you need to represent the state of a switch or toggle between only two states\nwhen you need instant application of changes
+### When you need to show a toggle state or switch between only two states\n When you require the operation to take effect immediately
 
-## Component pairing
+## Combination with Components
 
-![When there is a risk associated with opening or closing the switch, a dialog box can be used for secondary confirmation when used in conjunction with a modal](01)
+### Use with modal dialogs, when toggling a switch involves operational risk, employ a dialog box for secondary confirmation
 
-## Recommended/Not recommended examples
+![](001)
+![](002)
 
-![Switch text should be accurate and concise, expressing only the content that is being controlled, avoiding logical phrases or content that contradicts the action of the switch](02-en)
+## Recommended/Cautionary Examples
+
+### The text associated with a switch should be precise and concise, only expressing the content it controls, avoiding logical terms or content that is opposite to the effect of the switch
+
+![success](003)
+![warning](004)

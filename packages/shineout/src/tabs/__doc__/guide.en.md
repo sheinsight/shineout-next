@@ -1,15 +1,22 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+### Tabs can be used to categorize content when there is a large amount of information on a page. This can improve the efficiency of finding information and also streamline the amount of information users receive at one time, helping them to focus more on the content currently displayed.
 
-## Related to layout
+## Related to Layout
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### When encountering multi-level page layouts, different styles and orientations of tabs can be combined to make the page hierarchy clearer.
 
-## Component combination
+![{maxWidth:100%}](001)
+![{maxWidth:100%}](002)
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+## Recommended/Cautionary Examples
 
-## Recommended/Use with caution examples
+### 1. It's recommended to give tabs sufficient width and height according to the business context, to avoid truncating tab labels due to a width that is too narrow or creating tabs with click areas that are too small.
 
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![success](003)
+![warning](004)
+
+### 2. When there are too many tabs to fit on one line, they should not wrap onto new lines, nor should the text within the tabs. Instead, consider using a scrollable tab list.
+
+![success](005)
+![warning](006)

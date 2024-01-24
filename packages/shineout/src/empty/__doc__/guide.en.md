@@ -1,15 +1,16 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+Use this to explicitly prompt users when there is no data present.
 
-## Related to layout
+## Combination with Other Components
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### Combine with text buttons to guide users on the next step of action.
 
-## Component combination
+![](001)
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+## Recommended/Cautionary Examples
 
-## Recommended/Use with caution examples
+### The size of empty state icons should be adjusted based on the size of the container they are placed in.
 
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![success](002)
+![warning](003)

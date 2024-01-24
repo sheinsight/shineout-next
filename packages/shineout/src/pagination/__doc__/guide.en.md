@@ -1,13 +1,19 @@
-## When to use
+## When to Use
 
-When there is too much data to display, and paging is required; when there is too much data to load in one go.
+### When there is a large amount of data content that needs to be displayed across multiple pages;\n When there is a large amount of data content that needs to be loaded in batches.
 
-## Related to layout
+## Related to Layout
 
-![1. When using a full-page layout, pagination generally appears below the module, usually fixed in the bottom-right corner of the page.](01)
+### 1. In a full-page layout, pagination typically appears at the bottom of the module and is usually fixed to the bottom right of the page.
 
-![2. When the module space is limited or the data amount is small, a minimalist style can be used.](02)
+![{maxWidth:100%}](001)
 
-## Component combination
+### 2. When module space is limited or data volume is small, a minimalistic style can be used.
 
-![Can be used with tables or lists to help users understand the total amount of data.](03)
+![{maxWidth:100%}](002)
+
+## Combination with Components
+
+### Can be used in conjunction with tables or lists to help users understand the total amount of data.
+
+![{maxWidth:100%}](003)

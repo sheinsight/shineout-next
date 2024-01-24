@@ -122,13 +122,16 @@ export default createUseStyles(
     imageWrapper: {
       marginTop: 16,
       display: 'flex',
+      flexWrap: 'wrap',
       padding: '0 40px',
+      maxWidth: 909,
+      gap: 24,
       // 第二个元素
-      '& > :nth-child(2)': {
-        '&$imageContent': {
-          marginLeft: 24,
-        },
-      },
+      // '& > :nth-child(2)': {
+      //   '&$imageContent': {
+      //     marginLeft: 24,
+      //   },
+      // },
     },
     image: {
       width: '100%',

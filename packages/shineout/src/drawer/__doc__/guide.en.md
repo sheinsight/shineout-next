@@ -1,13 +1,22 @@
-## When to use
+## When to Use
 
-When you need an additional panel to supplement the content of the page\nwhen you need to insert temporary operation tasks in the current task flow.
+### When an additional panel is required to supplement information on the page\n When a temporary operation task needs to be inserted into the current task flow
 
-## Related to page layout
+## Related to Page Layout
 
-![Overall interface layout: The drawer appears across the entire page\nPartial area layout: The drawer only appears in the current operation area, without covering the entire page](01)
+### Overall interface layout: Drawer appears over the entire page\n Local area layout: Drawer appears only in the area of the current operation, without covering the whole page
 
-## Recommended/Cautious examples
+![Illustration: Overall Page Layout](001)
+![Illustration: Local Area Layout](002)
 
-![1. The maximum width of the drawer is recommended not to exceed 80% of the screen width, because the original intention of the drawer design is to provide a quick access channel, not to replace the entire page](01)
+## Recommended/Cautionary Examples
 
-![2. Avoid designing too many nested levels, usually not more than two levels. Too many levels will make users spend more time looking for the information they need, increase user burden, and also affect user experience](02)
+### 1. It is suggested that the maximum width of the drawer should not exceed 80% of the screen width, as the initial intent of the drawer is to provide a quick access channel, not to replace the entire page.
+
+![success](003)
+![warning](004)
+
+### 2. Avoid designing too many nested levels, typically no more than two layers. Excessive levels can cause users to spend more time finding the information they need, increasing user burden and affecting the user experience.
+
+![success](005)
+![warning](006)

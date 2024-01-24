@@ -1,15 +1,22 @@
-## When to use
+## When to Use
 
-When you need to select multiple options from a data set\nwhen you need to switch between two states (selected or unselected, open or closed), you can use the multi-selection box alone\nyou need a marker control, which will only take effect after triggering the action button
+### When multiple options need to be selected from a dataset\n When toggling between two states (checked or unchecked, on or off) is required, checkboxes can be used individually\n When a tag control is needed that only takes effect after triggering an action button
 
-## Common usage
+## Common Usage
 
-![The multi-select box can be used alone in the form](01)
+### Checkboxes can be used individually in forms
 
-## Components are used together
+![](001)
 
-![In the list, it is generally used for full selection and semi-full selection](02)
+## Combination of Components
 
-## Recommended/cautionary examples
+### In a list, they are commonly used for selecting all items or for semi-selection
 
-![When there are many options and the field lengths are different, it is recommended to align the multi-select boxes](03-en)
+![](002)
+
+## Recommended/Cautionary Examples
+
+### When there are many options and the length of the fields is varied, it is recommended to align the checkboxes
+
+![success](003)
+![warning](004)

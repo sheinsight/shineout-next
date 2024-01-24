@@ -1,23 +1,28 @@
-## When To Use
+## When to Use
 
-When the user needs to input multiple lines of information, this component can be used to support setting the maximum copy length and word count
+### Use when choosing one option from a set of mutually exclusive options.
 
 ## Common Usage
 
-![Can be used when entering multiple lines of text information in the form](01)
+### Selecting data options within a form.
 
-## Page Layout
+![](001)
+![](002)
 
-![In practical applications, layout with other components, follow the overall left alignment, right alignment, horizontal center, vertical center alignment 4 layout methods, note that only one layout is recommended in the unified business system](02)
+## Combination with Other Components
 
-## Combination Usage
+### In practical applications, radio buttons are laid out with other components, following four types of alignments: left align, right align, horizontal center, and vertical center. Note that it is recommended to use only one alignment method within a business system for uniformity.
 
-![Common combination usage with other input components and submit buttons](03)
-
-## Limit Height
-
-![When the text content is large, it is recommended to define the maximum height of the text box, and the content can be scrolled to view](04)
+![{maxWidth:100%}](003)
 
 ## Recommended/Cautionary Examples
 
-![When the user enters short information content, or other multiple information fields, do not use a multi-line text box, it is recommended to use an input box or a selector](05)
+### 1. In a form, do not use a radio button to turn a feature on; instead, use a checkbox or a toggle switch to turn a feature on or off. If there is only one option to choose from, consider using a checkbox as well.
+
+![success](004)
+![warning](005)
+
+### 2. If there are only two mutually exclusive options, consider merging them into a single checkbox or a toggle switch.
+
+![success](004)
+![warning](005)

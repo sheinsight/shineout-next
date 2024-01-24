@@ -1,15 +1,25 @@
-When to use
+## When to Use
 
-When the user needs more additional information; \n When the user needs to confirm twice.
+### Use when users require additional information;\n When user confirmation is needed.
 
-## Related to layout
+## Related to Layout
 
-! [The location of the bubble confirmation box can be arranged according to the specific needs of the current page, and the location should avoid blocking the page information or being blocked.](01)
+### The positioning of the bubble confirmation box can be laid out according to the specific needs of the current page. The position should avoid covering page information or being obscured.
 
-## Recommended
+![Illustration: When there is white space on the right, the bubble is positioned there](001)
+![Illustration: When there is no white space, it can appear on the side of unrelated information to avoid covering pertinent information](002)
+![Illustration: The maximum size for the popover is 300*300px, use a dialog box when content exceeds this width](003)
 
-! [Popover bubbles and Tooltip tips both have the function of displaying additional information, bubbles can carry titles, paragraph text, links, buttons, etc., so in the selection of components, if you need to operate on additional information elements, it is recommended to use the Popover bubble component.](02)
+## Recommended Usage
 
-## Examples recommended/used with caution
+### Both Popover bubbles and Tooltip hints have the function to display additional information. Since popovers can carry titles, paragraph texts, links, buttons, etc., they are the recommended component if operations on the additional information elements are required.
 
-! [When multiple buttons are used in combination, there must be a certain interval between each button, and it is not recommended to connect together](03)
+![](004)
+![](005)
+
+## Recommended/Cautionary Examples
+
+### When multiple buttons are used in combination, there should be a certain space between each button. It is not recommended to attach them directly together.
+
+![success](006)
+![warning](007)

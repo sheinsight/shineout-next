@@ -1,7 +1,10 @@
-## When to use
+## When to Use
 
-Used to provide feedback information such as success, warning and error\nA lightweight prompt method that does not interrupt user operations
+### To provide feedback such as success, warning, and error messages\n A lightweight method of notification that does not interrupt user operations
 
-## Related to layout
+## Related to Layout
 
-![Global reminders commonly have two different pop-up positions, namely top and upper right corner.](01)
+### Global alerts commonly have two different pop-up positions: at the top and at the top-right.
+
+![](001)
+![](002)

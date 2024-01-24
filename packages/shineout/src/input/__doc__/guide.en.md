@@ -1,11 +1,16 @@
-## When to use
+## When to Use
 
-Use when inputting text information content is required.
+### Use when text information needs to be entered.
 
-## Related to layouts
+## Related to Layout
 
-![The layout styles of input boxes in form applications, which are divided into regular layouts and multiple input box combination layouts.](01)
+### The layout style of input fields in form applications is divided into regular layout and combinations of multiple input fields.
 
-## Recommended usage
+![{maxWidth:100%}Illustration: Regular Form Layout](001)
+![{maxWidth:100%}Illustration: Combination of Multiple Input Fields Layout](002)
 
-![When encountering multilingual scenarios where fields are too long and wrapping occurs with advanced filtering components, embedded input boxes are recommended to solve the problem of long text wrapping.](02)
+## Recommended Usage
+
+### When advanced filter components encounter multilingual scenarios that may cause the fields to be too long and thus wrap, it is recommended to use embedded input fields to address the issue of text wrapping due to lengthy content.
+
+![{maxWidth:100%}Illustration: Advanced Filter Component](003)

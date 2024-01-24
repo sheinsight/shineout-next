@@ -1,12 +1,22 @@
-## When to use
+## When to Use
 
-It is used to display critical information or important reminders. This component is usually placed at the top of the relevant module in the page and is statically displayed. It does not disappear automatically, nor does it interrupt the user's current operation.
+### To convey critical and important information, it's typically placed at the top of the relevant module within the page. It is statically displayed and does not automatically disappear, nor does it interrupt the user's current activities.
 
-## Layout Related
+## Related to Layout
 
-![Statically displayed at the top of the relevant module in the page](01)
+### It is generally placed at the top of the relevant module within the page for static display.
 
-## Recommended/Not Recommended Examples
+![Illustration: Content Top](001)
+![Illustration: Site Top](002)
 
-![1. When multiple warnings are needed on a single page, it is recommended to use a combination prompt box with titles.](02)
-![2. The wording should match the color theme.](03)
+## Recommended/Cautionary Examples
+
+### 1. When multiple alerts are needed on one page, it is recommended to use a combined alert box with a title.
+
+![success](003)
+![warning](004)
+
+### 2. When using color themes, the copy should match the intended meaning.
+
+![success](005)
+![warning](006)

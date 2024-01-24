@@ -1,21 +1,47 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+### Use when an operation command requires user interaction to trigger the corresponding business logic.
 
-## Related to layout
+## Related to Layout
 
-![1. Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### 1. In pages, forms, dialogs, and other scenarios, buttons are generally placed along the user's browsing path for easy discovery, efficiently guiding actions.
 
-![2. Main button is usually used alone and is the main visual focus in the page. It is recommended to only have one main button per page.](02)
+![Illustration: Behind the Field](001)
+![Illustration: Bottom Left of Content](002)
+![Illustration: Above the Content](003)
+![Illustration: Behind the Content](004)
+![Illustration: Directly Below the Content](005)
 
-![3. When too many buttons need to be placed in a limited space, secondary buttons can be folded appropriately or combined and arranged.](03)
+### 2. Primary buttons are usually used on their own as the main visual focus of the page. It is recommended to have no more than one primary button on a page.
+
+![](006)
+
+### 3. When a limited space necessitates more buttons than it can accommodate, secondary buttons may be collapsed or buttons can be grouped. The grouping can be based on primary/secondary roles or business scenarios.
+
+![](007)
+![](008)
 
 ## Component Combination
 
-![Different types of buttons can be used together to express different levels of emphasis.](04)
+### Different types of buttons used together can express different levels of emphasis.
 
-## Recommended/Use with caution examples
+![{maxWidth:287}](009)
+![{maxWidth:287}](010)
+![{maxWidth:287}](011)
 
-![1. When using the main and secondary buttons, it is necessary to express the main-secondary relationship, highlighting the main operation with the main button, and using the secondary button for other operations. Multiple main buttons should not be used at the same time.](05)
+## Recommended/Cautionary Examples
 
-![2. When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](06)
+### 1. When using primary and secondary buttons, it is necessary to express their hierarchy. Use primary buttons for emphasized actions and secondary buttons for other operations. It is forbidden to use multiple primary buttons at the same time.
+
+![success](012)
+![warning](013)
+
+### 2. When multiple buttons are used in combination, there should be a certain space between each button. It is not recommended to attach them directly together.
+
+![success](014)
+![warning](015)
+
+### 3. When multiple buttons are used in combination, and there is a need to wrap to a new line, they should be combined with layout components to prevent white space on the left side of the wrapping.
+
+![success](016)
+![warning](017)

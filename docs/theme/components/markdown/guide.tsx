@@ -17,6 +17,35 @@ const Guide = (props: GuideProps) => {
 
   const anchors = guides[state.locales].map((i) => i.title);
 
+  const getDescription = (str: string) => {
+    const regex = /\{[^}]*\}/g;
+    return str.replace(regex, '');
+  };
+
+  const parseStringToObject = (str?: string) => {
+    if (!str) return {};
+    if (str.startsWith('{') && str.endsWith('}')) {
+      const content = str.slice(1, -1).trim();
+      const [key, value] = content.split(':').map((s) => s.trim());
+      const obj: any = {};
+      obj[key] = isNaN(value as any) ? value : parseInt(value, 10);
+      return obj;
+    }
+    throw new Error('Invalid input string format');
+  };
+
+  const getImageCss = (str: string) => {
+    const regex = /\{[^}]*\}/g;
+    const matches = [];
+    let match;
+
+    while ((match = regex.exec(str)) !== null) {
+      matches.push(match[0]);
+    }
+
+    return matches;
+  };
+
   const renderIcon = (icon: string) => {
     if (icon === 'success') {
       return (
@@ -66,7 +95,7 @@ const Guide = (props: GuideProps) => {
       );
     }
   };
-  console.log(guides[state.locales]);
+
   return (
     <div className={classes.guide}>
       <div className='guides'>
@@ -99,21 +128,39 @@ const Guide = (props: GuideProps) => {
                     {p.image && p.image.length > 0 && (
                       <div className={classes.imageWrapper}>
                         {p.image.map((i, idx) => {
+                          const description = getDescription(i.description);
+                          const type = getDescription(i.type || '');
+                          const imageCss = Object.assign(
+                            parseStringToObject(getImageCss(i.description)[0]),
+                            parseStringToObject(getImageCss(i.type || '')[0]),
+                          );
+
                           return (
                             <div key={idx} className={classes.imageContent}>
-                              <img className={classes.image} src={i.image} alt='' />
-                              {i.type && (
+                              <img
+                                style={imageCss}
+                                className={classes.image}
+                                src={i.image}
+                                alt=''
+                              />
+                              {type && (
                                 <div className={classes.imageType}>
-                                  {renderIcon(i.type)}
+                                  {renderIcon(type)}
                                   <span
-                                    style={{ color: i.type === 'success' ? '#00A85F' : '#F56C0A' }}
+                                    style={{ color: type === 'success' ? '#00A85F' : '#F56C0A' }}
                                   >
-                                    {i.type === 'success' ? '推荐' : '慎用'}
+                                    {type === 'success'
+                                      ? state.locales === 'cn'
+                                        ? '推荐'
+                                        : 'Recommended'
+                                      : state.locales === 'cn'
+                                      ? '慎用'
+                                      : 'Not Recommended'}
                                   </span>
                                 </div>
                               )}
-                              {i.description && (
-                                <div className={classes.imageDescription}>{i.description}</div>
+                              {description && (
+                                <div className={classes.imageDescription}>{description}</div>
                               )}
                             </div>
                           );
