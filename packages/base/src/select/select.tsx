@@ -404,14 +404,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   };
 
   const getDataByValues = (values: (Value | undefined)[]) => {
-    const dataByValues = datum.getDataByValues(values, { childrenKey });
-
-    return dataByValues.map((item) => {
-      if (util.isObject(item) && item?.IS_NOT_MATCHED_VALUE && item?.value) {
-        return item.value;
-      }
-      return item;
-    });
+    return datum.getDataByValues(values, { childrenKey });
   };
 
   const checkUnMatched = (item: DataItem | UnMatchedData): item is UnMatchedData => {

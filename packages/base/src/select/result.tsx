@@ -8,7 +8,7 @@ import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
 
-const { isObject, isEmpty, isNumber, getKey } = util;
+const { isObject, isEmpty, isNumber, getKey, isUnMatchedData, isFunc } = util;
 
 const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const {
@@ -91,14 +91,23 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const renderResultContent = (data: DataItem | UnMatchedData) => {
     if (checkUnMatched(data)) {
       const _data = data as UnMatchedData;
-      if (typeof renderUnmatched === 'function') return renderUnmatched(_data.value);
+      if (isFunc(renderUnmatched)) return renderUnmatched(_data.value);
       return isObject(_data.value) ? renderResultProp(_data.value as DataItem) : _data.value;
     }
     return renderResultProp(data as DataItem);
   };
 
   const renderItem = (item: DataItem | UnMatchedData, index: number): React.ReactNode => {
-    const key = getKey(keygen, item as DataItem, index);
+    let key;
+    if (isUnMatchedData(item)) {
+      if (isFunc(keygen)) {
+        key = keygen(item.value, index);
+      } else {
+        key = item.value;
+      }
+    } else {
+      key = getKey(keygen, item as DataItem, index);
+    }
     const handleClose = () => {
       onRemove(item, key, index);
     };
