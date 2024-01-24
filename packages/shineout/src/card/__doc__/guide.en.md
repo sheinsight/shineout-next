@@ -1,15 +1,24 @@
-## When to use
+## When to Use
 
-When different types of data need to be combined and displayed in the same area\nWhen more data or operations are needed to supplement the picture\nWhen there is interactive information content and the length needs to be changed within a spatial layout
+### Use when needing to display different types of data as a collection in the same area\n when additional data or actions are required to supplement an explanation for an image\n when interactive content needs to vary in length within a spatial layout
 
-## Use components together
+## Combination of Components
 
-![1. Cards are used in conjunction with paging. When there are too many cards and a certain number needs to be displayed on each page, users can turn pages to find pictures](01)
+### 1. Cards can be used with pagination when there are many cards and a set number needs to be displayed per page, allowing users to flip through pages to find images.
 
-![2. Cards are used in conjunction with step-by-step loading. When there are a large number of cards and need to be updated in real time, or waterfall flow display is required, user operations can be reduced and an immersive experience can be provided](02)
+![](001)
 
-![3. Cards are used in conjunction with the search box. When there are a large number of cards, users can accurately search and quickly find the corresponding card](03)
+### 2. Cards can be used with step loading when there are many cards that need to be updated in real-time, or when a waterfall layout is needed, reducing user operations and providing an immersive experience.
 
-## Recommended/use with caution examples
+![](002)
 
-![When the data format is consistent and the information type is simple, it is recommended to use list presentation instead of cards to avoid increasing the complexity of the page](04)
+### 3. Cards can be used with search boxes when there are many cards, allowing users to precisely search and quickly find the corresponding card.
+
+![](003)
+
+## Recommended/Cautionary Examples
+
+### When the data format is consistent and the information type is simple, it is recommended to use a list instead of cards to avoid increasing the complexity of the page.
+
+![success](004)
+![warning](005)

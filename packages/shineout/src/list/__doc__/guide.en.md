@@ -1,15 +1,25 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+### To aggregate information of the same category, facilitating quick browsing and searching.
 
-## Related to layout
+## Combination with Components
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### 1. List combined with loading mechanism
 
-## Component combination
+![{maxWidth:100%}](001)
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+### 2. List combined with pagination, allowing users to navigate pages to find data when there is a surplus of information and a set number needs to be displayed per page.
 
-## Recommended/Use with caution examples
+![{maxWidth:100%}](002)
 
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+## Recommended/Cautionary Examples
+
+### 1. It is recommended to keep the number of actions within a list to 3 or fewer. Use a dropdown menu to accommodate excess actions rather than presenting too many directly.
+
+![{maxWidth:100%}success](003)
+![{maxWidth:100%}warning](004)
+
+### 2. When a list contains various types of content which require complex backend categorization, filtration, and management, it is recommended to use a table instead of a list.
+
+![{maxWidth:100%}success](005)
+![{maxWidth:100%}warning](006)

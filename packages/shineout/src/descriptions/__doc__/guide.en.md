@@ -1,15 +1,13 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+### When an operation command requires user interaction to trigger the corresponding business logic.
 
-## Related to layout
+## Recommended Usage Examples
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### When text wraps, it is recommended to use the following wrapping method.
 
-## Component combination
+![{maxWidth:100%}success](001)
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+### For multilingual support, a vertical layout style is recommended.
 
-## Recommended/Use with caution examples
-
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![{maxWidth:100%}success](002)

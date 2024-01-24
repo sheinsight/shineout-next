@@ -1,23 +1,37 @@
-## When to use
+## When to Use
 
-Use when there is a lot of information to display, for the convenience of users to browse and obtain bulk data; when you need to sort, search, filter, paginate, etc. the data; when you need to summarize and categorize the data, to help users quickly understand the differences, changes, associations, and distinctions within.
+### When there is a lot of information to display, making it easier for users to browse and acquire bulk data;\n When operations such as sorting, searching, filtering, and pagination are required on the data;\n When there is a need to summarize and categorize data to help users quickly understand differences and changes, correlations and distinctions.
 
-## Component combinations
+## Combination with Components
 
-![Use with filtering and searching, filter according to certain data dimensions](01)
+### Use with filtering and searching components to filter data according to certain dimensions.
 
-## Common uses of the component
+![{maxWidth:100%}](001)
+![{maxWidth:100%}](002)
 
-![When the cell field is long, you can set the field to truncate after a certain number of lines, and display all content in a bubble when the mouse hovers over it](02)
+## Common Usage of the Component
 
-![In the operation column, when space is insufficient, you can set to display 2 high-frequency operations, and hide the rest](03)
+### When cell fields are long, they can be set to truncate with ellipses beyond a certain number of lines, displaying the full content in a tooltip on hover.
 
-## Recommended/Cautious examples
+![{maxWidth:100%}](003)
 
-![About column width: Do not have some columns overly reserve width, while some columns are so narrow that they have to wrap or omit information](04)
+### In the action column, when space is limited, display 2 frequent operations, with the rest hidden.
 
-## Content style examples
+![{maxWidth:100%}](004)
 
-![1. Numbers and amounts should be right-aligned and keep two decimal places. When the content unit is unified, display the unit uniformly in the header](05)
+## Recommended/Cautionary Examples
 
-![2. Try to keep year, month, day, hour, and minute on the same line as much as possible. If you have to wrap, ensure that year, month, and day are on the same line, and hour and minute are on the same line](06)
+### Regarding column width: Avoid columns that are excessively wide or too narrow to the point that information must wrap or be truncated.
+
+![{maxWidth:100%}success](005)
+![{maxWidth:100%}warning](006)
+
+## Content Style Examples
+
+### 1. Numbers and amounts should be aligned to the right, retaining two decimal places, and when the content unit is uniform, display the unit in the table header.
+
+![{maxWidth:100%}](007)
+
+### 2. Ensure dates and times do not wrap onto multiple lines if possible. If wrapping is necessary, keep the date (year, month, day) on one line and the time (hour, minute) on another line.
+
+![{maxWidth:100%}](008)

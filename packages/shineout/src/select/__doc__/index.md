@@ -5,12 +5,12 @@ group: Other
 
 # Title
 
-Select 标题
+Select 选择器
 Select
 
 # Describe
 
-Select 描述
+用于收纳大量选项的信息录入类组件
 Select Describe
 
 # Example

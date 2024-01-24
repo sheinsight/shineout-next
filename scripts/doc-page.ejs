@@ -77,7 +77,7 @@ export const guides = {
       paragraphs: [
       <% guide.paragraphs.forEach(function (item, i) { -%>
         {
-          paragraph: '<%= item.paragraph %>',
+          paragraph: '<%= item.title %>',
           image: [
           <% item.image.forEach(function (img, i) { -%>
             {

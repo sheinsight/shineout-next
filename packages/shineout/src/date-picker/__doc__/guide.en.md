@@ -1,11 +1,16 @@
-## When to use
+## When to Use
 
-When you need to input a date;\nWhen you need to input a date range;\nCommonly used for date input in forms or date filtering conditions.
+### When a date needs to be entered;\n When a date range needs to be entered;\n Often used in form date inputs, or when entering date conditions for data filtering.
 
-## Related to layout
+## Related to Layout
 
-![Date picker is commonly used in form layout on detail pages, and different types of date selection may cause inconsistent length of the selection box. The layout should be chosen based on the specific type.](01.en)
+### Date pickers are commonly used in detail page form layouts. The type of date selection can lead to different lengths of the picker, so the layout should be chosen according to the specific type.
 
-## Component pairing
+![{maxWidth:100%}Illustration: Common date picker layout](001)
+![{maxWidth:100%}Illustration: Extended date range picker layout](002)
 
-![Used in combination with selectors, to switch the granularity (year, month, day) of the selection. Commonly used for selecting the type of date picker.](02.en)
+## Combination of Components
+
+### Used in conjunction with selectors to switch the granularity of selection (year, month, day), commonly used for choosing the type of date picker.
+
+![{maxWidth:100%}](003)

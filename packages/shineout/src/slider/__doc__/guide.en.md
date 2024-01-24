@@ -1,19 +1,31 @@
-## When to use
+## When to Use
 
-Use when you need to provide real-time visual data ratio feedback during the process of numerical input.
+### When visual feedback on the proportion of real-time data is required during the numerical input process.
 
-## Related to page layout
+## Related to Page Layout
 
-![Use in forms, usually laid out within the form, associated with other form items for data input](01)
+### Used within forms, it is usually laid out inside the form, associated with other form items for data entry.
 
-![Use across the entire page, usually laid out at the bottom of the page content area, controlling the content area by adjusting the slider](02)
+![](001)
 
-## Component combinations
+### Used within an entire page, it is typically laid out below the content area, adjusting the content area through the slider control.
 
-![When used in combination with a numeric input box, it can help users to input numbers accurately and adjust quickly](03)
+![{maxWidth:100%}](002)
 
-## Recommended/Cautious examples
+## Combination with Components
 
-![When the slider width is too small, it is recommended to add an input box](04)
+### When used in conjunction with a numerical input box, it can help users precisely input and quickly adjust values.
 
-![When the optional numerical range is large, it is recommended to add an input box to avoid dense scales causing visual recognition and operational difficulties](05)
+![{maxWidth:100%}](003)
+
+## Recommended/Cautionary Examples
+
+### When the slider width is too narrow, it is recommended to add an input box.
+
+![success](004)
+![warning](005)
+
+### When the range of possible numerical values is large, it's advisable to include an input box to avoid visual confusion and difficulty in operation due to dense scales.
+
+![success](006)
+![warning](007)

@@ -1,19 +1,34 @@
-## When to use
+## When to Use
 
-This function is usually used in the web page navigation menu and other function usage scenarios with many tool menus and options
+### This feature is commonly used in web navigation menus, as well as other tools and functionalities with a larger number of options and menu items.
 
-## Related to the layout
+## Related to Layout
 
-![The drop-down menu supports different layout methods according to the layout position in the page](01)
+### Dropdown menus support different layout methods based on their position within the page layout.
 
-## Recommended Use
+![Illustration: Expanding from top left to bottom right](001)
+![Illustration: Expanding from top right to bottom left](002)
+![Illustration: Expanding from bottom left to top right](003)
+![Illustration: Expanding from bottom right to top left](004)
 
-![1. It can be used as a navigation menu for websites or applications. Users can click on options in the drop-down menu to access specific pages or perform operations](02)
+## Recommended Usage
 
-![2. Operation menu: used to perform operations on a certain data item, such as the context menu popped up by the right mouse button](03)
+### 1. Can be used as navigation menus for websites or applications, where users can visit a specific page or perform an action by clicking on an option within the dropdown menu.
 
-## Example with caution
+![{maxWidth:100%}Illustration: Navigation Menu](005)
 
-![1. Simplify the interaction. When there are only 2 or 1 options, it is not recommended to use the drop-down menu. Please let the user choose directly](04)
+### 2. Action menus: Used to perform actions on specific data items, such as context menus that pop up with a right-click.
 
-![2. When there are too many menu items, it is recommended to group or classify them](05)
+![{maxWidth:100%}Illustration: Action Menu](006)
+
+## Cautionary Examples
+
+### 1. Simplify interactions, it is not recommended to use a dropdown menu when there are only 2 options or 1 option available, let the users make a direct selection.
+
+![success](007)
+![warning](008)
+
+### 2. When there are too many menu items, it is recommended to organize them into groups or categories.
+
+![success](009)
+![warning](010)

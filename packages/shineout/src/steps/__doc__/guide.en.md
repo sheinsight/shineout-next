@@ -1,15 +1,31 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+### When data content needs to be displayed step by step, and a step approach helps users anticipate the entire process;\n When a task cannot be completed in one go and it's necessary to present the progress and the current step.
 
-## Related to layout
+## Common Usage
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### 1. Horizontal step bars should show the steps of the process from left to right. A common complete process includes 3 types of steps: completed, in progress, and not started.
 
-## Component combination
+![{maxWidth:100%}](001)
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+### 2. When a failure or warning state occurs in the current process, the corresponding step icon can turn red to serve as an important prompt.
 
-## Recommended/Use with caution examples
+![{maxWidth:100%}](002)
 
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+### 3. Vertical step bars can be displayed in order (from top to bottom) or reversed (from bottom to top), depending on the needs.
+
+![](003)
+![](004)
+
+## Nodable Customizations
+
+### Suitable for scenarios where nodes need custom icons or numbers only.
+
+![{maxWidth:100%}](005)
+
+## Recommended/Cautionary Examples
+
+### 1、When the page or module width is limited, or when there are many steps, it is not recommended to use a horizontal scroll bar. You may consider reducing the number of steps or using a default vertical step bar or a dotted vertical step bar.
+
+![success](006)
+![warning](007)

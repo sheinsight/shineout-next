@@ -1,11 +1,16 @@
-## When to use
+## When to Use
 
-When the system has more than two levels of hierarchy; when the system needs to let users understand their current location and need to return upwards.
+### Use when the system has more than two levels of hierarchy; \n when the system needs to inform users of their current location and provide a way to navigate back up.
 
-## Common uses of the component
+## Common Usage of the Component
 
-![1. When the breadcrumb text is too long, it can be abbreviated, and display all when the mouse hovers over it](01)
+### 1. If the text in breadcrumbs is too long, it can be displayed in an abbreviated form, with the full text appearing when the mouse hovers over it.
 
-## Recommended/Cautious examples
+![](001)
 
-![The function of breadcrumbs is to display the hierarchical structure and the current location. It should emphasize the current location and weaken the visual effect of the separator and the upper-level pages](02)
+## Recommended/Cautionary Examples
+
+### Breadcrumbs serve to display the hierarchical structure and the user's current location; emphasis should be on highlighting the current position while downplaying the visual effect of separators and parent pages.
+
+![success](002)
+![warning](003)

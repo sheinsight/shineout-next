@@ -1,15 +1,24 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+### Use when needing to display different types of data as a collection in the same area\n when additional data or actions are required to supplement an explanation for an image\n when interactive content needs to vary in length within a spatial layout
 
-## Related to layout
+## Combination of Components
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### 1. Cards can be used with pagination when there are many cards and a set number needs to be displayed per page, allowing users to flip through pages to find images.
 
-## Component combination
+![](001)
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+### 2. Cards can be used with step loading when there are many cards that need to be updated in real-time, or when a waterfall layout is needed, reducing user operations and providing an immersive experience.
 
-## Recommended/Use with caution examples
+![](002)
 
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+### 3. Cards can be used with search boxes when there are many cards, allowing users to precisely search and quickly find the corresponding card.
+
+![](003)
+
+## Recommended/Cautionary Examples
+
+### When the data format is consistent and the information type is simple, it is recommended to use a list instead of cards to avoid increasing the complexity of the page.
+
+![success](004)
+![warning](005)

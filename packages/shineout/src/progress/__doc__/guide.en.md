@@ -1,9 +1,15 @@
-## When to use
+## When to Use
 
-When an operation takes a long time to complete and requires an explicit expectation for the user to complete the task\nWhen an operation runs in the background and a real-time progress of the operation needs to be displayed
+### When an operation will take a considerable amount of time to complete and the user needs a clear expectation of completion\n When an operation is running in the background and the real-time progress of that operation needs to be displayed
 
-## Basic usage
+## Basic Usage
 
-![1、When the entire page is loading, the progress bar is usually placed in the center of the page.](01)
+### 1. When displaying the loading progress of the entire page, the progress bar is typically placed in the center of the page.
 
-![2、When displaying progress of data changes for a specific section of the page, the progress bar component is placed within the corresponding local area block.](02)
+![](001)
+![](002)
+
+### 2. When showing the progress of data changes for a part of the page, the progress bar component is placed within the corresponding section.
+
+![](003)
+![](004)
