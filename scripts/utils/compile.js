@@ -43,7 +43,11 @@ function compile(dirPath = shineoutDir) {
     const guideENPath = path.join(dirPath, dir, docDirName, 'guide.en.md');
     if (fs.existsSync(guideCNPath)) {
       const guide = fs.readFileSync(guideCNPath, 'utf8');
-      guides.cn = guideLoader(guide, dir);
+      if (dir === 'alert') {
+        guides.cn = guideLoader(guide, dir, true);
+      } else {
+        guides.cn = guideLoader(guide, dir);
+      }
     }
 
     if (fs.existsSync(guideENPath)) {

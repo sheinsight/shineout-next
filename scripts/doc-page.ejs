@@ -54,8 +54,16 @@ export const guides = {
       paragraphs: [
       <% guide.paragraphs.forEach(function (item, i) { -%>
         {
-          paragraph: '<%= item.paragraph %>',
-          image: '<%= item.image %>',
+          paragraph: '<%= item.title %>',
+          image: [
+          <% item.image.forEach(function (img, i) { -%>
+            {
+              type: '<%= img.type %>',
+              description: '<%= img.description %>',
+              image: '<%= img.image %>',
+            },
+          <% }) -%>
+          ],
         },
       <% }) -%>
       ]
@@ -70,7 +78,15 @@ export const guides = {
       <% guide.paragraphs.forEach(function (item, i) { -%>
         {
           paragraph: '<%= item.paragraph %>',
-          image: '<%= item.image %>',
+          image: [
+          <% item.image.forEach(function (img, i) { -%>
+            {
+              type: '<%= img.type %>',
+              description: '<%= img.description %>',
+              image: '<%= img.image %>',
+            },
+          <% }) -%>
+          ],
         },
       <% }) -%>
       ]

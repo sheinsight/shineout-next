@@ -22,11 +22,18 @@ export interface Example {
   className?: string;
   hash?: string;
 }
+
+export interface Images {
+  type?: 'success' | 'warning';
+  description: string;
+  image: string;
+}
+
 export interface Guide {
   title: string;
   paragraphs: {
     paragraph: string;
-    image: string;
+    image: Images[];
   }[];
 }
 
