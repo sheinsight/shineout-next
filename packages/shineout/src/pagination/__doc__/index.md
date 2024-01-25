@@ -1,6 +1,6 @@
 ---
 name: Pagination
-group: Other
+group: Navigation
 ---
 
 # Title

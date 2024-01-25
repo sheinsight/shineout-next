@@ -1,6 +1,6 @@
 ---
 name: TreeSelect
-group: Other
+group: Form
 ---
 
 # Title

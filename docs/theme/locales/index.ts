@@ -1,13 +1,13 @@
 import en from './en-US';
-import zh from './zh-CN';
+import cn from './zh-CN';
 
 interface DocLocales {
-  locale: 'en' | 'zh';
+  locale: 'cn' | 'en';
 }
 
-const useDocsLocale = (props: DocLocales) => {
+const getDocsLocale = (props: DocLocales) => {
   const { locale } = props;
-  return locale === 'en' ? en : zh;
+  return locale === 'en' ? en : cn;
 };
 
-export default useDocsLocale;
+export default getDocsLocale;

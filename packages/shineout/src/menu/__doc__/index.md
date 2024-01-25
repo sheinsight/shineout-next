@@ -1,6 +1,6 @@
 ---
 name: Menu
-group: Layout
+group: Navigation
 ---
 
 # Title

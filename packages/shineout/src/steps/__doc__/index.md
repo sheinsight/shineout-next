@@ -1,6 +1,6 @@
 ---
 name: Steps
-group: Other
+group: Navigation
 ---
 
 # Title

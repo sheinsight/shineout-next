@@ -1,6 +1,6 @@
 ---
 name: Tag
-group: Other
+group: Data
 ---
 
 # Title

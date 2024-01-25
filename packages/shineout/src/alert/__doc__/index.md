@@ -1,6 +1,6 @@
 ---
 name: Alert
-group: Other
+group: Feedback
 ---
 
 # Title

@@ -23,7 +23,7 @@
 
 ### Four common aspect ratios are recommended. The system should use a consistent image ratio to avoid mixing different ratios in the same scenario.
 
-![](005)
+![{maxWidth:100%}](005)
 
 ## Recommended/Cautionary Examples
 

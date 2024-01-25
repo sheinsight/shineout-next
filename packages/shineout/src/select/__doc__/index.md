@@ -1,6 +1,6 @@
 ---
 name: Select
-group: Other
+group: Form
 ---
 
 # Title

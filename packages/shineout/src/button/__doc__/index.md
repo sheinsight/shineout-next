@@ -1,6 +1,6 @@
 ---
 name: Button
-group: Other
+group: General
 ---
 
 # Title
