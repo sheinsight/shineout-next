@@ -117,12 +117,18 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     } else {
       isDisabled = disabled;
     }
+    let resultClassName;
+    if (util.isFunc(props.resultClassName)) {
+      resultClassName = props.resultClassName(key as DataItem);
+    } else {
+      resultClassName = props.resultClassName;
+    }
     return (
       <Tag
         key={key}
         disabled={isDisabled}
         size={size}
-        className={styles.tag}
+        className={classNames(styles.tag, resultClassName)}
         onClose={handleClose}
         jssStyle={jssStyle as any}
       >

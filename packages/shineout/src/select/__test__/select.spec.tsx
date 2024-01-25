@@ -69,6 +69,7 @@ const originItemClasses = [
   'multiple',
   'wrapperSmall',
   'wrapperLarge',
+  'wrapperUnderline',
 ];
 const {
   wrapper,
@@ -100,6 +101,7 @@ const {
   wrapperSmall,
   wrapperLarge,
   optionGroupTitle,
+  wrapperUnderline,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const defaultSelectPicker =
@@ -315,7 +317,16 @@ describe('Select[Base]', () => {
     );
     const selectWrapper = container.querySelector(wrapper)!;
     textContentTest(selectWrapper.querySelector(result)!, unMatchStr);
-    screen.debug();
+  });
+  test('should render when set underline', () => {
+    const { container } = render(<SelectTest underline />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    classTest(selectWrapper, wrapperUnderline);
+  });
+  test('should render when set showArrow is false', () => {
+    const { container } = render(<SelectTest showArrow={false} />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    classLengthTest(selectWrapper, arrowIcon, 0);
   });
 });
 describe('Select[Multiple]', () => {
@@ -342,5 +353,39 @@ describe('Select[Multiple]', () => {
       await delay(200);
     });
     expect(selectResultWrapper.querySelectorAll(tag).length).toBe(2);
+  });
+  test('should render when set separator', async () => {
+    const separator = '/';
+    const App = () => {
+      const [value, setValue] = React.useState();
+      return (
+        <div>
+          <div className='test'>{value}</div>
+          <SelectTest value={value} onChange={setValue} multiple separator={separator} />
+        </div>
+      );
+    };
+    const { container } = render(<App />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    const selectOptions = selectWrapper.querySelectorAll(option);
+    fireEvent.click(selectOptions[1]);
+    fireEvent.click(selectOptions[2]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    textContentTest(container.querySelector('.test')!, `${testData[1]}${separator}${testData[2]}`);
+  });
+  test('should render when set resultClassName', async () => {
+    const className = 'test';
+    const { container } = render(<SelectTest multiple resultClassName={className} />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    const selectOptions = selectWrapper.querySelectorAll(option);
+    const selectResultWrapper = container.querySelector(resultWrapper)!;
+    fireEvent.click(selectOptions[1]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classTest(selectResultWrapper.querySelectorAll(tag)[0], className);
+    screen.debug();
   });
 });
