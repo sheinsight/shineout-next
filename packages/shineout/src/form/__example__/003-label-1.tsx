@@ -21,11 +21,11 @@ export default () => {
       </div>
       <Form labelWidth={65} labelAlign={align} style={{ maxWidth: 500 }}>
         <Form.Item label='Email'>
-          <Input name='email' />
+          <Input name='email' clearable />
         </Form.Item>
 
         <Form.Item label='Password'>
-          <Input name='password' type='password' />
+          <Input name='password' type='password' clearable />
         </Form.Item>
 
         <Form.Item label='' style={{ marginTop: align === 'top' ? -10 : 32 }}>

@@ -75,6 +75,7 @@ export type InputClass =
   | 'groupUnderline'
   | 'wrapperNumber'
   | 'numberStep'
+  | 'password'
   | 'passwordToggle'
   | 'info'
   | 'infoError';
@@ -151,6 +152,12 @@ const input: JsStyles<InputClass> = {
     display: 'none',
     '$wrapper:hover &, $wrapperFocus &': {
       display: 'flex',
+    },
+  },
+
+  password: {
+    '& $clear': {
+      marginRight: 8,
     },
   },
 

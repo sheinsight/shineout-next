@@ -11,15 +11,13 @@ type PopoverProps = TYPE.Popover.Props;
 type PopoverOnOpen = PopoverProps['onOpen'];
 type PopoverOnClose = PopoverProps['onClose'];
 
-const style: React.CSSProperties = { width: 200, padding: 20 };
-
 const App: React.FC = () => {
   const open: PopoverOnOpen = () => console.log('popover open');
   const close: PopoverOnClose = () => console.log('popover close');
 
   return (
     <Button>
-      <Popover onOpen={open} onClose={close} trigger='click' style={style}>
+      <Popover onOpen={open} onClose={close} trigger='click'>
         Some text
       </Popover>
       Click me.

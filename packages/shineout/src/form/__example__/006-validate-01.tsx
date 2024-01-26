@@ -74,11 +74,11 @@ const App: React.FC = () => {
       onSubmit={(d) => console.log(d)}
     >
       <Form.Item required label='Email'>
-        <Input name='email' title='Email' rules={[rules.required, rules.email]} />
+        <Input name='email' title='Email' rules={[rules.required, rules.email]} clearable />
       </Form.Item>
 
       <Form.Item required label='Name'>
-        <Input name='name' title='Name' rules={[rules.required, rules.isExist]} />
+        <Input name='name' title='Name' rules={[rules.required, rules.isExist]} clearable />
       </Form.Item>
 
       <Form.Item
@@ -90,6 +90,7 @@ const App: React.FC = () => {
           name='password'
           title='Password'
           type='password'
+          clearable
           rules={[rules.required, rules.range(6, 20), rules.password]}
         />
       </Form.Item>
@@ -100,16 +101,22 @@ const App: React.FC = () => {
           title='Age'
           style={{ width: 100 }}
           type='integer'
+          clearable
           rules={[rules.required, rules.integer, rules.range(18, 60)]}
         />
       </Form.Item>
 
       <Form.Item required label='Tel'>
-        <Input name='tel' title='Tel' rules={[rules.required, rules.regExp('^[\\d\\s ().-]+$')]} />
+        <Input
+          name='tel'
+          title='Tel'
+          rules={[rules.required, rules.regExp('^[\\d\\s ().-]+$')]}
+          clearable
+        />
       </Form.Item>
 
       <Form.Item required label='IPv4'>
-        <Input name='IPv4' title='IP' rules={[rules.required, rules.ipv4]} />
+        <Input name='IPv4' title='IP' rules={[rules.required, rules.ipv4]} clearable />
       </Form.Item>
 
       <Form.Item required label='Favorite Colors' tip='select your favorite colors'>
@@ -119,7 +126,13 @@ const App: React.FC = () => {
           data={['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet']}
           defaultValue={[]}
           renderItem={(d) => <div style={{ width: 40 }}>{d}</div>}
-          style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'space-between' }}
+          style={{
+            display: 'flex',
+            gap: 12,
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            marginTop: 4,
+          }}
           rules={[rules.required('At least select one favorite color'), rules.min(2), rules.max(3)]}
         />
       </Form.Item>

@@ -31,10 +31,10 @@ export default () => {
         }}
       >
         <Form.Item label='Name'>
-          <Input name={'name'} placeholder='please input name' />
+          <Input name={'name'} placeholder='please input name' clearable />
         </Form.Item>
         <Form.Item label='Password'>
-          <Input name={'password'} placeholder='please input password' />
+          <Input name={'password'} placeholder='please input password' clearable />
         </Form.Item>
         <Form.Item label='Email'>
           <Input name={'email'} clearable placeholder='please input email' />
@@ -46,7 +46,7 @@ export default () => {
           <Checkbox.Group name='course' data={['chinese', 'maths', 'english', 'physics']} keygen />
         </Form.Item>
         <Form.Item label='Enrollment date'>
-          <DatePicker name='date' placeholder={'please select date'} />
+          <DatePicker name='date' placeholder={'please select date'} clearable />
         </Form.Item>
         <Form.Item label='Score'>
           <StarRate name='score'></StarRate>

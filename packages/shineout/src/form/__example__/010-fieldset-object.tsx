@@ -46,9 +46,9 @@ const App: React.FC = () => {
           <Form.Item label='Name'>
             <Form.FieldSet name='name'>
               <Input.Group style={{ width: 300 }}>
-                <Input name='firstName' placeholder='First Name' />
+                <Input name='firstName' placeholder='First Name' clearable />
                 -
-                <Input name='lastName' placeholder='Last Name' />
+                <Input name='lastName' placeholder='Last Name' clearable />
               </Input.Group>
             </Form.FieldSet>
           </Form.Item>
@@ -60,6 +60,7 @@ const App: React.FC = () => {
               type='number'
               defaultValue='18'
               style={{ width: 100 }}
+              clearable
             />
           </Form.Item>
         </Form.FieldSet>

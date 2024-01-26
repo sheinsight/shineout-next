@@ -35,7 +35,7 @@ const App: React.FC = () => (
         rules={[rule.required('不能为空'), rule.email('格式不正确')]}
       >
         {({ value, onChange, status }) => (
-          <Input value={value || ''} status={status} onChange={onChange} type='text' />
+          <Input value={value || ''} status={status} onChange={onChange} type='text' clearable />
         )}
       </Form.Field>
     </Form.Item>
@@ -49,7 +49,7 @@ const App: React.FC = () => (
           rule.regExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/, '格式不正确'),
         ]}
       >
-        <Input type='password' />
+        <Input type='password' clearable />
       </Form.Field>
     </Form.Item>
 

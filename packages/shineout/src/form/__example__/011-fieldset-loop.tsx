@@ -68,10 +68,10 @@ const App: React.FC = () => {
       }}
     >
       <Form.Item label='Name'>
-        <Input name='name' defaultValue='Harry Potter' />
+        <Input name='name' defaultValue='Harry Potter' clearable />
       </Form.Item>
       <Form.Item label='age'>
-        <Input type='number' name='age' defaultValue='20' />
+        <Input type='number' name='age' defaultValue='20' clearable />
       </Form.Item>
       <Form.Item label='Friends'>
         <Form.FieldSet
@@ -93,6 +93,7 @@ const App: React.FC = () => {
                 title='Friend name'
                 rules={[rules.required('Name is required')]}
                 style={{ width: 180, marginInlineEnd: 8 }}
+                clearable
               />
               <Input
                 name='age'
@@ -101,6 +102,7 @@ const App: React.FC = () => {
                 rules={[rules.required('Age is required')]}
                 title='Friend age'
                 style={{ width: 60 }}
+                clearable
               />
               <a
                 style={{ margin: '0 12px', lineHeight: 1, cursor: 'pointer' }}

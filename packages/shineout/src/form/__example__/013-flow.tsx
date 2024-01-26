@@ -14,11 +14,11 @@ const rule = Rule();
 const App: React.FC = () => (
   <Form onSubmit={(d) => console.log(d)}>
     <Form.Item label='First Name'>
-      <Input name='firstName' delay={0} defaultValue='Harry' />
+      <Input name='firstName' delay={0} defaultValue='Harry' clearable />
     </Form.Item>
 
     <Form.Item label='Last Name'>
-      <Input name='lastName' delay={0} defaultValue='Potter' />
+      <Input name='lastName' delay={0} defaultValue='Potter' clearable />
     </Form.Item>
 
     <Form.Item label='Full Name'>
@@ -28,7 +28,7 @@ const App: React.FC = () => (
     </Form.Item>
 
     <Form.Item label='Password'>
-      <Input name='password' type='password' />
+      <Input name='password' type='password' clearable />
     </Form.Item>
 
     <Form.Item label=''>
@@ -59,6 +59,7 @@ const App: React.FC = () => (
               type='number'
               defaultValue='18'
               style={{ width: 100 }}
+              clearable
               rules={[rule.range(18, 60)]}
             />
           </Form.Item>
