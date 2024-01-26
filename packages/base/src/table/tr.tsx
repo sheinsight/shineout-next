@@ -149,7 +149,10 @@ const Tr = (props: TrProps) => {
             }
           : undefined;
       return (
-        <div className={classNames(tableClasses?.iconWrapper)} onClick={clickEvent}>
+        <div
+          className={classNames(tableClasses?.iconWrapper, tableClasses?.expandIconWrapper)}
+          onClick={clickEvent}
+        >
           <span className={tableClasses?.expandIcon}>
             {props.expanded ? Icons.Expand : Icons.OdecShrink}
           </span>

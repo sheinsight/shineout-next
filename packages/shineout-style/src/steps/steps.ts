@@ -371,11 +371,11 @@ const stepsStyle: JsStyles<StepsClassType> = {
       },
       '& $icon': {
         lineHeight: 0,
-        padding: 10,
+        padding: '8px 10px',
       },
       '& $process': {
         '& $icon': {
-          padding: 9,
+          padding: '7px 9px',
         },
       },
       '& $tail': {
@@ -438,6 +438,8 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
   },
   arrow: {
+    position: 'relative',
+    zIndex: 0,
     '&$steps': {
       overflow: 'hidden',
     },

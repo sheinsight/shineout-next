@@ -124,6 +124,12 @@ export interface TableTokens {
   tableExpandIconColor: string;
   /**
    * @type {string}
+   * @token Neutral-fill-3
+   * @description xxxundefined图标鼠标移入时的背景颜色
+   */
+  tableExpandIconHoverBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description xxxundefined背景颜色
    */

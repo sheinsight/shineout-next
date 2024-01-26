@@ -142,70 +142,70 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FFEDED'
+   * @default '#FCE6E6'
    * @description 浅色背景
    */
   'Danger-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#46080D'
+   * @default '#4D000A'
    * @description -10
    */
   'Danger-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FFD7CF'
+   * @default '#F7C1C0'
    * @description 聚焦
    */
   'Danger-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FFBBB1'
+   * @default '#F29896'
    * @description 禁用
    */
   'Danger-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FF9C91'
+   * @default '#F38981'
    * @description -4
    */
   'Danger-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FF7A71'
+   * @default '#EF6661'
    * @description 悬浮
    */
   'Danger-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FF4D50'
+   * @default '#EB4242'
    * @description 常规
    */
   'Danger-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#CC3D3A'
+   * @default '#CC2C29'
    * @description 点击
    */
   'Danger-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#A62B29'
+   * @default '#9C161F'
    * @description -8
    */
   'Danger-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#801B1C'
+   * @default '#740813'
    * @description -9
    */
   'Danger-9': string;
@@ -282,70 +282,70 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FEFFE8'
+   * @default '#FCFADE'
    * @description 浅色背景
    */
   'Lemon-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#5D4813'
+   * @default '#4D3000'
    * @description -10
    */
   'Lemon-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FFFFC0'
+   * @default '#FFF9BF'
    * @description 聚焦
    */
   'Lemon-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FEFB9D'
+   * @default '#FFE76C'
    * @description 禁用
    */
   'Lemon-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDF57D'
+   * @default '#FFE76C'
    * @description -4
    */
   'Lemon-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FCED61'
+   * @default '#FFD943'
    * @description 悬浮
    */
   'Lemon-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#F5DC4D'
+   * @default '#FFC91A'
    * @description 常规
    */
   'Lemon-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#CEB23C'
+   * @default '#D29F10'
    * @description 点击
    */
   'Lemon-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#A88C2D'
+   * @default '#A67708'
    * @description -8
    */
   'Lemon-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#826920'
+   * @default '#795203'
    * @description -9
    */
   'Lemon-9': string;
@@ -422,70 +422,70 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDFFE8'
+   * @default '#F1FAE1'
    * @description 浅色背景
    */
   'Neon-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#2B3F0D'
+   * @default '#194D00'
    * @description -10
    */
   'Neon-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#F6FFC0'
+   * @default '#DDF2BE'
    * @description 聚焦
    */
   'Neon-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#EEFE9D'
+   * @default '#C4E598'
    * @description 禁用
    */
   'Neon-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#D9F177'
+   * @default '#AAD974'
    * @description -4
    */
   'Neon-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#C3E559'
+   * @default '#90CC54'
    * @description 悬浮
    */
   'Neon-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#ACD746'
+   * @default '#77BF37'
    * @description 常规
    */
   'Neon-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#88B236'
+   * @default '#5AA223'
    * @description 点击
    */
   'Neon-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#668B28'
+   * @default '#418613'
    * @description -8
    */
   'Neon-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#48651A'
+   * @default '#2B6908'
    * @description -9
    */
   'Neon-9': string;
@@ -562,70 +562,70 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#FEFBE3'
+   * @default '#FAF4E3'
    * @description 浅色背景
    */
   'Orange-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#552F0B'
+   * @default '#4D2100'
    * @description -10
    */
   'Orange-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDF0B3'
+   * @default '#EBDDBC'
    * @description 聚焦
    */
   'Orange-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FDE38A'
+   * @default '#D6C094'
    * @description 禁用
    */
   'Orange-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FCD365'
+   * @default '#C2A470'
    * @description 悬浮
    */
   'Orange-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#FCC045'
+   * @default '#AD8951'
    * @description 悬浮
    */
   'Orange-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#F7A72D'
+   * @default '#996F37'
    * @description 常规
    */
   'Orange-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#CC8021'
+   * @default '#865824'
    * @description 点击
    */
   'Orange-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#A26019'
+   * @default '#734415'
    * @description -8
    */
   'Orange-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#7B4612'
+   * @default '#603109'
    * @description -9
    */
   'Orange-9': string;
@@ -702,70 +702,70 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty color
-   * @default '#F1FAEB'
+   * @default '#E4FCED'
    * @description 浅色背景
    */
   'Success-1': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#DFF6C3'
+   * @default '#ADEEC9'
    * @description 聚焦
    */
   'Success-2': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#173307'
+   * @default '#004D36'
    * @description -10
    */
   'Success-10': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#C2E999'
+   * @default '#78DCA7'
    * @description 禁用
    */
   'Success-3': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#A5DC74'
+   * @default '#4ACB8A'
    * @description -4
    */
   'Success-4': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#90D959'
+   * @default '#22B973'
    * @description 悬浮
    */
   'Success-5': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#74D13D'
+   * @default '#00A85F'
    * @description 常规
    */
   'Success-6': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#62B237'
+   * @default '#009157'
    * @description 点击
    */
   'Success-7': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#4F992B'
+   * @default '#007A4D'
    * @description -8
    */
   'Success-8': string;
   /**
    * @type {string}
    * @categoty color
-   * @default '#377319'
+   * @default '#006342'
    * @description -9
    */
   'Success-9': string;

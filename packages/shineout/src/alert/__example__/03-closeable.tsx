@@ -22,9 +22,11 @@ export default () => {
 
   return (
     <div>
-      <Button onClick={handleReset} mode='text' type='primary' style={{ marginBottom: 12 }}>
-        重置
-      </Button>
+      {!reset && (
+        <Button onClick={handleReset} mode='text' type='primary' style={{ marginBottom: 12 }}>
+          重置
+        </Button>
+      )}
       {reset && (
         <Alert icon closable type='info' onClose={handleClose}>
           This is informative text.

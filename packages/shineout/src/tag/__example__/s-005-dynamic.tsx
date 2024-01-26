@@ -1,6 +1,6 @@
 /**
  * cn - 可删除和添加标签
- *    -- 通过数组生成tags,动态增改
+ *    -- 通过数组生成tags，动态增改
  * en - Delete and add tags
  *    -- Generate tags through arrays, dynamically increase and change
  */

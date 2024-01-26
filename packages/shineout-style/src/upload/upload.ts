@@ -93,6 +93,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
     color: token.uploadResultIconColor,
     display: 'flex',
     alignItems: 'center',
+    padding: '0 6px',
     '$resultError $resultText &': { color: token.uploadResultErrorFontColor },
     '$resultDeleted $resultText &': { color: token.uploadResultDeletedFontColor },
   },

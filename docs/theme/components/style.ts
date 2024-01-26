@@ -135,7 +135,7 @@ export default createUseStyles(
     },
     image: {
       width: '100%',
-      maxWidth: 442,
+      maxWidth: 412,
     },
     imageContent: {
       display: 'flex',

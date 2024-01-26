@@ -66,6 +66,11 @@ const tableTokenExtraValue = {
     icon: {
       size: 'Size-7',
       color: 'Neutral-text-2',
+      hover: {
+        background: {
+          color: 'Neutral-fill-3',
+        },
+      },
     },
     background: { color: 'Neutral-fill-2' },
   },
