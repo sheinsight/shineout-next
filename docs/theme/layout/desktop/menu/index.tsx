@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store, { Menu, dispatch } from '../../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Locale from '../../../locales';
 
 import useStyles from '../style';
 
@@ -11,22 +12,18 @@ const MenuComponent = () => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
+  const docsLocale = Locale({ locale: state.locales });
+
+  const groupLocale = docsLocale['shineout.menu.group'];
 
   const handleClick = (component: Menu) => {
     dispatch.setDoctab('examples');
     navigate({
       pathname: `/${state.locales}/component/${state.doc}/${component.name}`,
-      search: `?tab=${state.doctab}`,
+      search: `?tab=examples`,
     });
+    document.getElementById('layout')?.scrollTo(0, 0);
   };
-
-  // const handleChangeDoc = (doc: Doc) => {
-  //   const currentDoc: Doc = doc === 'shineout' ? 'base' : 'shineout';
-  //   const nextPath = location.pathname.replace(`/${currentDoc}`, `/${doc}`);
-  //   dispatch.setDoc(doc);
-  //   dispatch.setMenu();
-  //   navigate(nextPath);
-  // };
 
   useEffect(() => {
     dispatch.setMenu();
@@ -44,7 +41,9 @@ const MenuComponent = () => {
       {state.menu.map((item, index) => {
         return (
           <li key={index}>
-            <div className={classnames('group', index === 0 ? 'first' : '')}>{item.group}</div>
+            <div className={classnames('group', index === 0 ? 'first' : '')}>
+              {groupLocale[item.group as keyof typeof groupLocale]}
+            </div>
             <ul>
               {item.components.map((component, index) => {
                 return (

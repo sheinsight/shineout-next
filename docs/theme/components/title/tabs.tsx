@@ -39,11 +39,11 @@ const DocTabs = (props: { showGuide: boolean }) => {
         dispatch.setDoctab(params as DocType);
       }
     }
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className={classes.tabs}>
-      <Tabs shape='fill' autoFill defaultActive={state.doctab} onChange={handleChangeTab}>
+      <Tabs shape='fill' autoFill active={state.doctab} onChange={handleChangeTab}>
         {tabs.map((tab, index) => {
           if (tab.path === 'guide' && !props.showGuide) return null;
 

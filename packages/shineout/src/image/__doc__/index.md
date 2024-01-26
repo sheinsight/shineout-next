@@ -1,6 +1,6 @@
 ---
 name: Image
-group: Other
+group: Data
 ---
 
 # Title

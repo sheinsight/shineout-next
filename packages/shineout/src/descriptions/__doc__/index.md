@@ -1,6 +1,6 @@
 ---
 name: Descriptions
-group: Other
+group: Data
 ---
 
 # Title

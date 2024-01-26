@@ -115,7 +115,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
   });
 
   const renderMoreIcon = () => {
-    return <span className={styles.moreIcon}>{Icons.More}</span>;
+    return Icons.More;
   };
 
   const {

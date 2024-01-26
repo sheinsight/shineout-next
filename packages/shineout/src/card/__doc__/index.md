@@ -1,6 +1,6 @@
 ---
 name: Card
-group: Layout
+group: Data
 ---
 
 # Title

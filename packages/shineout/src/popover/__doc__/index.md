@@ -1,6 +1,6 @@
 ---
 name: Popover
-group: Feedback
+group: Data
 ---
 
 # Title

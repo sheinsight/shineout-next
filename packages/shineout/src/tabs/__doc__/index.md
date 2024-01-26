@@ -1,6 +1,6 @@
 ---
 name: Tabs
-group: Other
+group: Data
 ---
 
 # Title

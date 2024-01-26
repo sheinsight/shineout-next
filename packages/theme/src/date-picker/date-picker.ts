@@ -67,7 +67,7 @@ const datePickerTokens: DatePickerTokens = {
   datePickerCellHotHeight: 'Size-12',
   datePickerCellHeight: 'Size-16',
   datePickerCellHoverColor: 'Neutral-text-5',
-  datePickerCellHoverBackgroundColor: 'Neutral-fill-2',
+  datePickerCellHoverBackgroundColor: 'Neutral-fill-3',
   datePickerCellActiveColor: 'Neutral-text-1',
   datePickerCellActiveBackgroundColor: 'Brand-6',
   datePickerCellActiveHoverBackgroundColor: 'Brand-2',

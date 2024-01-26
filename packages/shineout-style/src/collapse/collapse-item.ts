@@ -73,11 +73,28 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
+    position: 'relative',
     color: Token.collapseIconColor,
+    lineHeight: Token.lineHeightDynamic,
+    zIndex: 0,
     '& svg': {
+      zIndex: 1,
       width: Token.collapseHeaderIconWidth,
     },
-    lineHeight: Token.lineHeightDynamic,
+    '&:hover': {
+      '&:after': {
+        content: '""',
+        position: 'absolute',
+        top: -4,
+        right: 0,
+        bottom: 0,
+        left: -4,
+        width: 22,
+        height: 22,
+        borderRadius: '50%',
+        background: Token.collapseIconHoverBackgroundColor,
+      },
+    },
   },
   title: {
     flex: 1,
@@ -112,11 +129,19 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
       '& svg > path': {
         fill: Token.collapseDisabledColor,
       },
+      '&:after': {
+        display: 'none',
+      },
     },
   },
   expanded: {},
   region: {
     cursor: 'pointer',
+    '& $icon': {
+      '&:after': {
+        display: 'none',
+      },
+    },
   },
 };
 

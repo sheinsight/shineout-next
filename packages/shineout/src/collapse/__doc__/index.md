@@ -1,6 +1,6 @@
 ---
 name: Collapse
-group: Other
+group: Data
 ---
 
 # Title

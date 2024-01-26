@@ -28,7 +28,7 @@ const NameInput = (props: FormProps) => {
   };
 
   return (
-    <div>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <Input value={value![0]} width={120} onChange={handleFirstName} />
       <span style={{ margin: '0 4px' }}>-</span>
       <Input value={value![1]} width={120} onChange={handleLastName} />

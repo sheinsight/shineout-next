@@ -1,6 +1,6 @@
 ---
 name: Empty
-group: Other
+group: Data
 ---
 
 # Title

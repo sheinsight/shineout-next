@@ -52,6 +52,7 @@ export type TableClasses = {
 
   expandIcon: string;
   iconWrapper: string;
+  expandIconWrapper: string;
 
   expandWrapper: string;
   pagination: string;
@@ -362,16 +363,33 @@ const tableStyle: JsStyles<TableClassType> = {
   },
   sticky: {},
   expandIcon: {
-    display: 'inline-block',
+    position: 'relative',
+    display: 'block',
     width: token.tableExpandIconSize,
     height: token.tableExpandIconSize,
     cursor: 'pointer',
     color: token.tableExpandIconColor,
+    zIndex: 1,
     '&>svg': {
       cursor: 'pointer',
     },
   },
 
+  expandIconWrapper: {
+    position: 'relative',
+    '&:hover': {
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: -4,
+        width: 22,
+        height: 22,
+        borderRadius: '50%',
+        background: token.tableExpandIconHoverBackgroundColor,
+      },
+    },
+  },
   verticalAlignTop: {
     '& td': {
       verticalAlign: 'top',

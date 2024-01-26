@@ -382,7 +382,7 @@ export interface DatePickerTokens {
   datePickerCellHoverColor: string;
   /**
    * @type {string}
-   * @token Neutral-fill-2
+   * @token Neutral-fill-3
    * @description 日期选择器单元格鼠标移入时的背景颜色
    */
   datePickerCellHoverBackgroundColor: string;

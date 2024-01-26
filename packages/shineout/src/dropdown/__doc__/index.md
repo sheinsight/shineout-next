@@ -1,6 +1,6 @@
 ---
 name: Dropdown
-group: General
+group: Navigation
 ---
 
 # Title

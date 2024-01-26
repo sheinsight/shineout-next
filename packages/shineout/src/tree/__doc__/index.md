@@ -1,6 +1,6 @@
 ---
 name: Tree
-group: Other
+group: Data
 ---
 
 # Title

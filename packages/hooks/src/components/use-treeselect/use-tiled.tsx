@@ -60,7 +60,13 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
 
     return (
       <span
-        style={{ display: 'inline-block', width: '100%', height: '100%' }}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100%',
+          height: '100%',
+        }}
         onClick={handleClick}
       >
         {/* <span /> */}

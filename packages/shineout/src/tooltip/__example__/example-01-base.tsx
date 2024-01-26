@@ -11,7 +11,7 @@ import { Tooltip, Button } from 'shineout';
 
 const App: React.FC = () => (
   <div>
-    <Tooltip tip='hello world' trigger='focus'>
+    <Tooltip tip='hello world' trigger='hover'>
       <Button type='primary'>hover me</Button>
     </Tooltip>
   </div>
