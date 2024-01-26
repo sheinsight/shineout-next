@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import SimpleInput from './simple-input';
 import { useInputPassword, util } from '@sheinx/hooks';
 import useInputCommon from './use-input-common';
@@ -43,7 +44,14 @@ const Password = (props: InputPasswordProps) => {
     </>
   );
 
-  return <SimpleInput {...forwardProps} {...inputProps} suffix={suffix} />;
+  return (
+    <SimpleInput
+      {...forwardProps}
+      {...inputProps}
+      className={classNames(props.className, inputStyle?.password)}
+      suffix={suffix}
+    />
+  );
 };
 
 export default React.memo(Password);

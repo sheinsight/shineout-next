@@ -10,26 +10,33 @@ import { Form, Input, Textarea } from 'shineout';
 const App: React.FC = () => (
   <Form disabled>
     <Form.Item label='Email'>
-      <Input name='email' />
+      <Input name='email' clearable />
     </Form.Item>
     <Form.Item label='Email2'>
-      <Input />
+      <Input clearable />
     </Form.Item>
 
     <Form.Item label='Password'>
-      <Input name='password' type='password' />
+      <Input name='password' type='password' clearable />
     </Form.Item>
 
     <Form.Item label='Name'>
       <Input.Group style={{ width: 300 }} disabled>
-        <Input name='firstName' placeholder='First Name' />
+        <Input name='firstName' placeholder='First Name' clearable />
         -
-        <Input name='lastName' placeholder='Last Name' />
+        <Input name='lastName' placeholder='Last Name' clearable />
       </Input.Group>
     </Form.Item>
 
     <Form.Item label='Age'>
-      <Input.Number style={{ width: 100 }} name='age' type='number' digits={0} defaultValue='0' />
+      <Input.Number
+        style={{ width: 100 }}
+        name='age'
+        type='number'
+        digits={0}
+        defaultValue='0'
+        clearable
+      />
     </Form.Item>
     <Form.Item label='address'>
       <Textarea rows={2} name='address' defaultValue='xxx' />

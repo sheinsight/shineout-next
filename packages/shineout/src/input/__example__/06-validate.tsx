@@ -19,7 +19,7 @@ export default function () {
     <Input
       placeholder='email'
       rules={[rules.required]}
-      tip='Email, required'
+      tip='Please enter a valid Email address'
       popover='top-left'
       width={300}
     />

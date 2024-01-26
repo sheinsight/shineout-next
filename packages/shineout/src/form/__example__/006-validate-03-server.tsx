@@ -27,11 +27,11 @@ const App: React.FC = () => {
   return (
     <Form disabled={loading} error={error} style={{ maxWidth: 500 }} onSubmit={handleSubmit}>
       <Form.Item required label='Email'>
-        <Input name='email' title='Email' rules={[rules.required, rules.email]} />
+        <Input name='email' title='Email' rules={[rules.required, rules.email]} clearable />
       </Form.Item>
 
       <Form.Item required label='Name'>
-        <Input name='name' title='Name' rules={[rules.required]} />
+        <Input name='name' title='Name' rules={[rules.required]} clearable />
       </Form.Item>
 
       <Form.Item
@@ -43,6 +43,7 @@ const App: React.FC = () => {
           name='password'
           title='Password'
           type='password'
+          clearable
           rules={[rules.required, rules.range(6, 20)]}
         />
       </Form.Item>

@@ -49,11 +49,12 @@ const App: React.FC = () => {
       </div>
 
       <Form.Item label='name' required>
-        <Input name='name' rules={[{ required: true, message: 'name is required' }]} />
+        <Input name='name' rules={[{ required: true, message: 'name is required' }]} clearable />
       </Form.Item>
 
       <Form.Item label='Password' required>
         <Input.Password
+          clearable
           name='password'
           rules={[{ required: true, message: 'password is required' }]}
         />

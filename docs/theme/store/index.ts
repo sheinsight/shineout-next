@@ -1,4 +1,5 @@
 import { proxy } from 'valtio';
+import Locale from '../locales';
 
 export interface Menu {
   group?: string;
@@ -51,6 +52,8 @@ const proxyState = proxy(state);
 export const dispatch = {
   setMenu: () => {
     const menus: Menus[] = [];
+    const docsLocale = Locale({ locale: state.locales });
+    const groupLocale = docsLocale['shineout.menu.group'];
 
     const context = require(`chunk/${proxyState.doc}/index.ts`);
     const files = context.files as string[];
@@ -77,7 +80,11 @@ export const dispatch = {
         menu.title = component.title;
         menus.find((item) => item.group === component.header.group)?.components.push(menu);
       });
-    proxyState.menu = menus;
+    const groupByLocalMenu = Object.keys(groupLocale).map((key) => {
+      return menus.find((item) => item.group === key);
+    }) as Menus[];
+
+    proxyState.menu = groupByLocalMenu;
   },
   setLocales: (locales: Locales) => {
     proxyState.locales = locales;

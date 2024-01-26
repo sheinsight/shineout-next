@@ -10,7 +10,7 @@ import { Form, Input } from 'shineout';
 const App: React.FC = () => (
   <Form style={{ maxWidth: 500 }}>
     <Form.Item label='Email' tip='Email or nickname or phonenumber'>
-      <Input name='email' />
+      <Input name='email' clearable />
     </Form.Item>
 
     <Form.Item
@@ -18,7 +18,7 @@ const App: React.FC = () => (
       tip='Use at least one letter, one numeral, and seven characters.'
       style={{ marginBottom: 0 }}
     >
-      <Input name='password' type='password' />
+      <Input name='password' type='password' clearable />
     </Form.Item>
   </Form>
 );

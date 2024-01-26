@@ -1,6 +1,6 @@
 ---
 name: Tooltip
-group: Feedback
+group: Data
 ---
 
 # Title

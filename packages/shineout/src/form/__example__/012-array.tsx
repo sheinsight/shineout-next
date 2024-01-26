@@ -29,9 +29,9 @@ const NameInput = (props: FormProps) => {
 
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <Input value={value![0]} width={120} onChange={handleFirstName} />
+      <Input value={value![0]} width={120} onChange={handleFirstName} clearable />
       <span style={{ margin: '0 4px' }}>-</span>
-      <Input value={value![1]} width={120} onChange={handleLastName} />
+      <Input value={value![1]} width={120} onChange={handleLastName} clearable />
     </div>
   );
 };
@@ -62,7 +62,12 @@ const App: React.FC = () => {
       </Form.Item>
 
       <Form.Item label='Date'>
-        <DatePicker range rules={[rule.required]} name={['date.startDate', 'date.endDate']} />
+        <DatePicker
+          range
+          rules={[rule.required]}
+          name={['date.startDate', 'date.endDate']}
+          clearable
+        />
       </Form.Item>
 
       <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>

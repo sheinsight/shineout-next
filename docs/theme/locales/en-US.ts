@@ -5,12 +5,12 @@ export default {
   'shineout.demo.menu.title': 'Developer Guide',
 
   'shineout.menu.group': {
-    Other: 'Other',
-    Navigation: 'Navigation',
+    General: 'General',
     Layout: 'Layout',
     Data: 'Data',
     Form: 'Form',
     Feedback: 'Feedback',
-    General: 'General',
+    Navigation: 'Navigation',
+    Other: 'Other',
   },
 };
