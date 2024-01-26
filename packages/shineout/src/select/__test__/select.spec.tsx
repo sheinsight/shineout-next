@@ -752,8 +752,9 @@ describe('Select[OnCreate/OnFilter]', () => {
     });
   });
   test('should render when blur and set trim', async () => {
+    const blurFn = jest.fn();
     const testValue = 'test';
-    const { container } = render(<SelectTest onCreate multiple trim />);
+    const { container } = render(<SelectTest onCreate multiple trim onBlur={blurFn} />);
     const selectWrapper = container.querySelector(wrapper)!;
     const selectResultTextWrapper = selectWrapper.querySelector(resultTextWrapper)!;
     fireEvent.click(selectResultTextWrapper);
@@ -769,6 +770,7 @@ describe('Select[OnCreate/OnFilter]', () => {
       await delay(200);
     });
     expect(selectInput.value).toBe(testValue);
+    expect(blurFn.mock.calls.length).toBe(1);
   });
   test('should render when blur and click', async () => {
     const testValue = 'test';
@@ -956,14 +958,13 @@ describe('Select[Tree]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    screen.debug();
     textContentTest(selectWrapper.querySelector(result)!, treeData[0].title);
     fireEvent.click(selectTreeOptions[0].querySelector(treeText)!);
     await waitFor(async () => {
       await delay(200);
     });
   });
-  test('should render when set diabled and treData', async () => {
+  test('should render when set disabled and treeData', async () => {
     const { container } = render(
       <Select
         treeData={treeData}
@@ -982,6 +983,55 @@ describe('Select[Tree]', () => {
       classTest(item, optionDisabled);
     });
   });
+  // treeData test is same as tree test
+});
+describe('Select[Other]', () => {
+  test('Should render when set absolute', () => {
+    const { container } = render(<SelectTest absolute />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    classLengthTest(selectWrapper, pickerWrapper, 0);
+    classLengthTest(document, pickerWrapper, 1);
+  });
+  test('should render when set beforeChange', async () => {
+    const beforeChange = jest.fn();
+    const { container } = render(<SelectTest beforeChange={beforeChange} />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(resultWrapper)!);
+    fireEvent.click(selectWrapper.querySelectorAll(option)[1]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(beforeChange.mock.calls.length).toBe(1);
+  });
+  test('should render when set onFocus', async () => {
+    const focusFn = jest.fn();
+    const { container } = render(<SelectTest onFocus={focusFn} />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.focus(selectWrapper);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(focusFn.mock.calls.length).toBe(1);
+  });
+  test('should render when set onCollapse', async () => {
+    const collapseFn = jest.fn();
+    const { container } = render(<SelectTest onCollapse={collapseFn} />);
+    const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(resultWrapper)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    expect(collapseFn.mock.calls.length).toBe(1);
+  });
 });
 
+// virtual list is same as table or list
+
+// disabled
+// filterSingleSelect
+// focusSelected
+// showHitDescendants
+
+// select missing api and function
 // emptyText
+// emptyAfterSelect
