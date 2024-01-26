@@ -11,68 +11,13 @@ export default createUseStyles(
       '&.last': {
         marginBottom: 40,
       },
-      '& .head': {},
-      '& .title': {
-        fontSize: 20,
-        marginTop: 48,
-        marginBottom: 12,
-        '& a': {
-          color: '#000000',
-          textDecoration: 'none',
-        },
-      },
-      '& .footer': {
-        borderLeft: '1px solid #E8EBF0',
-        borderRight: '1px solid #E8EBF0',
-        borderBottom: '1px solid #E8EBF0',
-      },
       '&.first': {
-        '& .title': {
+        '& $exampleTitle': {
           marginTop: 40,
         },
       },
-      '& .subtitle': {
-        fontSize: 14,
-        color: 'rgb(78,89,105)',
-      },
-      '& .demo': {
-        // position: 'relative',
-        marginTop: 24,
-        padding: 32,
-        // overflow: 'auto',
-        border: '1px solid rgba(232, 235, 240, 1)',
-      },
-      '& .action': {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-        width: '100%',
-        minHeight: 48,
-        boxSizing: 'border-box',
-        borderTop: 'none',
-        padding: '14px 16px',
-        border: '1px solid rgba(232, 235, 240, 1)',
-        fontSize: 12,
-        color: 'rgba(20, 23, 55, 1)',
-        '& .btn': {
-          marginLeft: 8,
-          right: 16,
-          top: 16,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          gap: 24,
-        },
-      },
-      '& .describe': {
-        margin: 0,
-        display: 'flex',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-        marginBottom: 4,
-      },
       // 非第一个和最后一个 describe
-      '& .describe:last-child': {
+      '& $exampleDescribe:last-child': {
         marginBottom: 0,
       },
       '& .iconbox': {
@@ -125,6 +70,66 @@ export default createUseStyles(
         marginTop: '20px',
       },
     },
+    exampleTitle: {
+      fontSize: 20,
+      lineHeight: '28px',
+      marginTop: 48,
+      marginBottom: 12,
+      '& a': {
+        color: '#000000',
+        textDecoration: 'none',
+      },
+    },
+    exampleAnchorTitle: {},
+    exampleHeader: {},
+    exampleFooter: {
+      borderLeft: '1px solid #E8EBF0',
+      borderRight: '1px solid #E8EBF0',
+      borderBottom: '1px solid #E8EBF0',
+    },
+    exampleDemo: {
+      marginTop: 24,
+      padding: 32,
+      lineHeight: 'calc(1em + 8px)',
+      border: '1px solid rgba(232, 235, 240, 1)',
+      '& p': {
+        margin: 0,
+        lineHeight: 'calc(1em + 8px)',
+      },
+    },
+    exampleDescribe: {
+      margin: 0,
+      fontSize: 12,
+      display: 'flex',
+      lineHeight: '20px',
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      // marginBottom: 4,
+    },
+    exampleAction: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start',
+      width: '100%',
+      minHeight: 48,
+      boxSizing: 'border-box',
+      borderTop: 'none',
+      padding: '14px 16px',
+      border: '1px solid rgba(232, 235, 240, 1)',
+      fontSize: 12,
+      color: 'rgba(20, 23, 55, 1)',
+    },
+    exampleActionButton: {
+      marginLeft: 8,
+      right: 16,
+      height: 20,
+      lineHeight: '20px',
+      top: 16,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      gap: 24,
+    },
     tip: {
       display: 'inline-block',
       height: 14,
@@ -167,5 +172,5 @@ export default createUseStyles(
       },
     },
   },
-  { name: 'doc-example' },
+  { name: 'doc' },
 );

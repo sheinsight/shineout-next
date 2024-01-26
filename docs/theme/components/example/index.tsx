@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import classnames from 'classnames';
+import classNames from 'classNames';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import Code from './code';
@@ -63,29 +63,29 @@ const Example = (props: ExampleProps) => {
   };
 
   return (
-    <div className={classnames(classes.example, className)}>
-      <div className='header'>
+    <div className={classNames(classes.example, className)}>
+      <div className={classes.exampleHeader}>
         {(propName[state.locales] || defaultName) && (
           <h2
-            className='title anchor-title'
+            className={classNames(classes.exampleTitle, classes.exampleAnchorTitle)}
             id={`example-${propName[state.locales] || defaultName}`}
           >
             {propName[state.locales] || defaultName}
           </h2>
         )}
       </div>
-      <div className='demo'>{Example && !hasDebug && <Example></Example>}</div>
-      <div className='action'>
+      <div className={classes.exampleDemo}>{Example && !hasDebug && <Example></Example>}</div>
+      <div className={classes.exampleAction}>
         <div>
           {describe.map((item, index) => {
             return (
-              <div className='describe' key={index}>
+              <div className={classes.exampleDescribe} key={index}>
                 {renderDescribe(item)}
               </div>
             );
           })}
         </div>
-        <div className='btn'>
+        <div className={classes.exampleActionButton}>
           <Codesandbox></Codesandbox>
           <Open open={open} onClick={handleOpen}></Open>
           <Copy onCopy={handleCopy}></Copy>
@@ -93,7 +93,7 @@ const Example = (props: ExampleProps) => {
         </div>
       </div>
       {open && (
-        <div className='footer'>
+        <div className={classes.exampleFooter}>
           <Code>{code}</Code>
         </div>
       )}

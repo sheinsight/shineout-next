@@ -16,12 +16,12 @@ export default () => {
   return (
     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
       <Button type='primary' style={buttonStyle}>
-        <Icon01></Icon01>
-        <span style={{ marginLeft: 4 }}>Primary</span>
+        <Icon01 style={{ marginRight: 4 }}></Icon01>
+        Primary
       </Button>
       <Button type='primary' style={buttonStyle}>
-        <span style={{ marginRight: 4 }}>Primary</span>
-        <Icon01></Icon01>
+        Primary
+        <Icon01 style={{ marginLeft: 4 }}></Icon01>
       </Button>
       <Button type='primary' shape='square' style={buttonStyle}>
         <Icon01></Icon01>
