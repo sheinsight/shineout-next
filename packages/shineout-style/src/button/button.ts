@@ -64,7 +64,7 @@ const beforeLine = () => ({
   '&::before': {
     position: 'absolute',
     content: '" "',
-    height: '50%',
+    height: 'calc(50% - 2px)',
     top: 'calc(25% + 1px)',
     left: -1,
     width: 1,
@@ -85,7 +85,7 @@ const outlineBeforeLine = (type: ButtonType, styles: ButtonStyleType) => ({
   '&::before': {
     position: 'absolute',
     content: '" "',
-    height: '50%',
+    height: 'calc(50% - 2px)',
     top: 'calc(25% + 1px)',
     left: -1,
     width: 1,
@@ -161,7 +161,7 @@ const textBeforeLine = () => ({
     transition: 'all 0.3s',
     position: 'absolute',
     content: '" "',
-    height: '50%',
+    height: 'calc(50% - 2px)',
     top: 'calc(25% + 1px)',
     left: -1,
     width: 1,
@@ -213,7 +213,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     height: Token.buttonHeight,
 
     '& $spaceWrapper': {
-      height: '100%',
+      // height: '100%',
     },
 
     '& + &': {
@@ -440,7 +440,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
         '&::before': {
           position: 'absolute',
           content: '" "',
-          height: '50%',
+          height: 'calc(50% - 2px)',
           top: 'calc(25% + 1px)',
           left: -1,
           width: 1,
@@ -489,7 +489,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
         '&::before': {
           position: 'absolute',
           content: '" "',
-          height: '50%',
+          height: 'calc(50% - 2px)',
           top: 'calc(25% + 1px)',
           left: -1,
           width: 1,

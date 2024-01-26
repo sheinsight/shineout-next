@@ -7,14 +7,20 @@
 import React from 'react';
 import { Divider } from 'shineout';
 
+const inlineStyle = {
+  display: 'inline-block',
+  lineHeight: '22px',
+  fontSize: 14,
+};
+
 const App: React.FC = () => (
-  <div style={{ fontSize: 12 }}>
-    <span>Left</span>
+  <>
+    <span style={inlineStyle}>Item 1</span>
     <Divider mode='vertical'>H</Divider>
-    <span>Center</span>
+    <span style={inlineStyle}>Item 2</span>
     <Divider mode='vertical' />
-    <span>Right</span>
-  </div>
+    <span style={inlineStyle}>Item 3</span>
+  </>
 );
 
 export default App;

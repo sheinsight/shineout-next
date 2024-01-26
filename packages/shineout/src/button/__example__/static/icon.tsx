@@ -1,10 +1,12 @@
 interface IconProps {
   fontSize?: number;
   color?: string;
+  style?: React.CSSProperties;
 }
 
 const Icon01 = (props: IconProps) => (
   <svg
+    style={props.style}
     width={props.fontSize || 14}
     height={props.fontSize || 14}
     viewBox='0 0 24 24'

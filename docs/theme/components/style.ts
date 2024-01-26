@@ -19,11 +19,12 @@ export default createUseStyles(
         marginTop: 0,
         paddingTop: 32,
         transition: 'all 0.3s ease',
-        lineHeight: 'calc(1em + 8px)',
+        lineHeight: '44px',
       },
 
       '& .subtitle': {
         fontSize: 14,
+        lineHeight: '22px',
         height: 20,
         opacity: 1,
         marginBottom: 0,

@@ -65,7 +65,7 @@ const Desktop = () => {
     if (!scrollElement) return;
     const handleScroll = () => {
       const top = scrollElement.scrollTop + 108;
-      const titleElements = document.querySelectorAll('.anchor-title');
+      const titleElements = document.querySelectorAll('.so-doc-example-anchor-title');
       let newActive = '';
       titleElements.forEach((item) => {
         if ((item as HTMLElement).offsetTop - 108 <= top) {
