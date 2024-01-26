@@ -25,9 +25,7 @@
 
 ### Different types of buttons used together can express different levels of emphasis.
 
-![{maxWidth:287}](009)
-![{maxWidth:287}](010)
-![{maxWidth:287}](011)
+![{maxWidth:100%}](009)
 
 ## Recommended/Cautionary Examples
 
