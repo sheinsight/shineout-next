@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import classNames from 'classNames';
+import classNames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import Code from './code';
