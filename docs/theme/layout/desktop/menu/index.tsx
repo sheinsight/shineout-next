@@ -34,7 +34,6 @@ const MenuComponent = () => {
     const componentName = paths[paths.length - 1];
     return componentName;
   }, [location.pathname]);
-
   return (
     <ul className={classes.menu}>
       {/* <li className='doc'>使用指南</li> */}

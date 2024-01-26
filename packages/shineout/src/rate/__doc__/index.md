@@ -1,6 +1,6 @@
 ---
 name: Rate
-group: Other
+group: Form
 ---
 
 # Title

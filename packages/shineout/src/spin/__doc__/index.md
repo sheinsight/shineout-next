@@ -1,6 +1,6 @@
 ---
 name: Spin
-group: Feedback
+group: Data
 ---
 
 # Title

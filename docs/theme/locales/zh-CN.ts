@@ -5,12 +5,12 @@ export default {
   'shineout.demo.menu.title': '使用指南',
 
   'shineout.menu.group': {
-    Other: '其他',
-    Navigation: '导航',
-    Layout: '布局',
-    Data: '数据',
-    Form: '表单',
-    Feedback: '反馈',
     General: '通用',
+    Layout: '布局',
+    Data: '数据展示',
+    Form: '数据输入',
+    Feedback: '反馈',
+    Navigation: '导航',
+    Other: '其他',
   },
 };
