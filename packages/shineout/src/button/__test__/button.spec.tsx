@@ -26,21 +26,11 @@ import { useState } from 'react';
 
 const SO_PREFIX = 'button';
 const originClasses = [] as string[];
-const originItemClasses = [
-  'button',
-  'secondary',
-  'outline',
-  'default',
-  'text',
-  'disabled',
-  'loading',
-  'href',
-];
+const originItemClasses = ['button', 'secondary', 'outline', 'text', 'disabled', 'loading', 'href'];
 const {
   button: buttonClassName,
   secondary: buttonSecondary,
   outline: buttonOutline,
-  default: buttonDefault,
   text: buttonText,
   disabled: buttonDisabled,
   loading: buttonLoading,
@@ -88,7 +78,9 @@ describe('Button[Base]', () => {
   });
   test('should render when default', () => {
     const { container } = render(<Button>button</Button>);
-    classTest(container.querySelector('button')!, buttonDefault);
+    const buttonWrapper = container.querySelector('button')!;
+    classTest(buttonWrapper, buttonSecondary);
+    classTest(buttonWrapper, buttonOutline);
   });
   test('should render when set icon', () => {
     const { container } = render(<ButtonIcon />);
@@ -159,17 +151,6 @@ describe('Button[Disabled]', () => {
     fireEvent.click(container.querySelector('button') as HTMLButtonElement);
     expect(handleFn.mock.calls.length).toBe(0);
   });
-  // TODO: form中还未有button
-  // test('should render when set disabled in form', () => {
-  //   const handleFn = jest.fn()
-  //   const { container } = render(
-  //     <Form disabled={true}>
-  //       <Button disabled={false} type='success' onClick={handleFn}>button</Button>
-  //     </Form>
-  //   )
-  //   fireEvent.click(container.querySelector('button') as HTMLButtonElement)
-  //   expect(handleFn.mock.calls.length).toBe(1)
-  // })
 });
 describe('Button[Loading]', () => {
   test('should render when set loading', () => {
@@ -178,7 +159,6 @@ describe('Button[Loading]', () => {
       expect(button.classList.contains(buttonLoading)).toBeTruthy();
     });
   });
-  // TODO: 未开发spin，当前onClick不受loading控制
   test('should can not click when set loading', () => {
     const handleFn = jest.fn();
     const { container } = render(
@@ -189,7 +169,6 @@ describe('Button[Loading]', () => {
     fireEvent.click(container.querySelector('button') as HTMLButtonElement);
     expect(handleFn.mock.calls.length).toBe(0);
   });
-  // TODO: 添加对onClick的测试
   test('should control by other status', () => {
     const ButtonLoadingStatus: React.FC<any> = () => {
       const [loading, setLoading] = useState<boolean>(false);
@@ -251,7 +230,7 @@ describe('Button[HtmlType]', () => {
   htmlTypes.forEach((htmlType) => {
     test(`should render when set htmlType is ${htmlType}`, () => {
       const { container } = render(<Button htmlType={htmlType as htmlTypesProp}>Test</Button>);
-      attributesTest(container.querySelector('button')!, 'htmltype', htmlType);
+      attributesTest(container.querySelector('button')!, 'type', htmlType);
     });
   });
 });

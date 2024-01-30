@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Alert from '..';
 import mountTest from '../../tests/mountTest';
@@ -78,7 +78,6 @@ describe('Alert[Base]', () => {
         Demo
       </Alert>,
     );
-    screen.debug();
     const alert = container.querySelector(alertClassName)!;
     const icon = alert.querySelector(iconClassName)!;
     expect(icon).toBeInTheDocument();

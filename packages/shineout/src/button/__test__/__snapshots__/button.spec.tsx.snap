@@ -5,40 +5,45 @@ exports[`Button[Base] should render correctly  1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="button-primary-0-2-5 button-button-0-2-1"
+    class="so-button-primary so-button-button"
     style="margin: 0px;"
+    type="button"
   >
     <span>
       Primary
     </span>
   </button>
   <button
-    class="button-secondary-0-2-6 button-button-0-2-1"
+    class="so-button-secondary so-button-button"
     style="margin: 0px;"
+    type="button"
   >
     <span>
       Secondary
     </span>
   </button>
   <button
-    class="button-secondary-0-2-6 button-button-0-2-1 button-outline-0-2-11"
+    class="so-button-secondary so-button-button so-button-outline"
     style="margin: 0px;"
+    type="button"
   >
     <span>
       Outline
     </span>
   </button>
   <button
-    class="button-secondary-0-2-6 button-button-0-2-1 button-dashed-0-2-12"
+    class="so-button-secondary so-button-button so-button-dashed"
     style="margin: 0px;"
+    type="button"
   >
     <span>
       Dashed
     </span>
   </button>
   <button
-    class="button-primary-0-2-5 button-button-0-2-1 button-text-0-2-13"
+    class="so-button-primary so-button-button so-button-text"
     style="margin: 0px;"
+    type="button"
   >
     <span>
       Text
@@ -55,36 +60,40 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="button-primary-0-2-5 button-button-0-2-1 button-disabled-0-2-18"
+      class="so-button-primary so-button-button so-button-disabled"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Primary
       </span>
     </button>
     <button
-      class="button-primary-0-2-5 button-button-0-2-1 button-disabled-0-2-18 button-outline-0-2-11"
+      class="so-button-primary so-button-button so-button-disabled so-button-outline"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Primary
       </span>
     </button>
     <button
-      class="button-primary-0-2-5 button-button-0-2-1 button-disabled-0-2-18 button-dashed-0-2-12"
+      class="so-button-primary so-button-button so-button-disabled so-button-dashed"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Primary
       </span>
     </button>
     <button
-      class="button-primary-0-2-5 button-button-0-2-1 button-disabled-0-2-18 button-text-0-2-13"
+      class="so-button-primary so-button-button so-button-disabled so-button-text"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Primary
@@ -95,36 +104,40 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="button-danger-0-2-7 button-button-0-2-1 button-disabled-0-2-18"
+      class="so-button-danger so-button-button so-button-disabled"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Danger
       </span>
     </button>
     <button
-      class="button-danger-0-2-7 button-button-0-2-1 button-disabled-0-2-18 button-outline-0-2-11"
+      class="so-button-danger so-button-button so-button-disabled so-button-outline"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Danger
       </span>
     </button>
     <button
-      class="button-danger-0-2-7 button-button-0-2-1 button-disabled-0-2-18 button-dashed-0-2-12"
+      class="so-button-danger so-button-button so-button-disabled so-button-dashed"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Danger
       </span>
     </button>
     <button
-      class="button-danger-0-2-7 button-button-0-2-1 button-disabled-0-2-18 button-text-0-2-13"
+      class="so-button-danger so-button-button so-button-disabled so-button-text"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Danger
@@ -135,36 +148,40 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="button-warning-0-2-8 button-button-0-2-1 button-disabled-0-2-18"
+      class="so-button-warning so-button-button so-button-disabled"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Warning
       </span>
     </button>
     <button
-      class="button-warning-0-2-8 button-button-0-2-1 button-disabled-0-2-18 button-outline-0-2-11"
+      class="so-button-warning so-button-button so-button-disabled so-button-outline"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Warning
       </span>
     </button>
     <button
-      class="button-warning-0-2-8 button-button-0-2-1 button-disabled-0-2-18 button-dashed-0-2-12"
+      class="so-button-warning so-button-button so-button-disabled so-button-dashed"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Warning
       </span>
     </button>
     <button
-      class="button-warning-0-2-8 button-button-0-2-1 button-disabled-0-2-18 button-text-0-2-13"
+      class="so-button-warning so-button-button so-button-disabled so-button-text"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Warning
@@ -175,36 +192,40 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="button-success-0-2-9 button-button-0-2-1 button-disabled-0-2-18"
+      class="so-button-success so-button-button so-button-disabled"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Success
       </span>
     </button>
     <button
-      class="button-success-0-2-9 button-button-0-2-1 button-disabled-0-2-18 button-outline-0-2-11"
+      class="so-button-success so-button-button so-button-disabled so-button-outline"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Success
       </span>
     </button>
     <button
-      class="button-success-0-2-9 button-button-0-2-1 button-disabled-0-2-18 button-dashed-0-2-12"
+      class="so-button-success so-button-button so-button-disabled so-button-dashed"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Success
       </span>
     </button>
     <button
-      class="button-success-0-2-9 button-button-0-2-1 button-disabled-0-2-18 button-text-0-2-13"
+      class="so-button-success so-button-button so-button-disabled so-button-text"
       disabled=""
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Success
@@ -219,32 +240,36 @@ exports[`Button[Base] should render correctly about group 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;"
 >
   <div
-    class="button-group-0-2-21"
+    class="so-button-group"
   >
     <button
-      class="button-primary-0-2-5 button-button-0-2-1 button-text-0-2-13"
+      class="so-button-primary so-button-button so-button-text"
+      type="button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1 button-text-0-2-13"
+      class="so-button-secondary so-button-button so-button-text"
+      type="button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1 button-text-0-2-13"
+      class="so-button-secondary so-button-button so-button-text"
+      type="button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1 button-disabled-0-2-18 button-text-0-2-13"
+      class="so-button-secondary so-button-button so-button-disabled so-button-text"
       disabled=""
+      type="button"
     >
       <span>
         Publish
@@ -252,31 +277,35 @@ exports[`Button[Base] should render correctly about group 1`] = `
     </button>
   </div>
   <div
-    class="button-group-0-2-21"
+    class="so-button-group"
   >
     <button
-      class="button-primary-0-2-5 button-button-0-2-1"
+      class="so-button-primary so-button-button"
+      type="button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1"
+      class="so-button-secondary so-button-button"
+      type="button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1"
+      class="so-button-secondary so-button-button"
+      type="button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1"
+      class="so-button-secondary so-button-button"
+      type="button"
     >
       <span>
         Publish
@@ -284,64 +313,38 @@ exports[`Button[Base] should render correctly about group 1`] = `
     </button>
   </div>
   <div
-    class="button-group-0-2-21"
+    class="so-button-group"
   >
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1 button-outline-0-2-11"
+      class="so-button-secondary so-button-button so-button-outline"
+      type="button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1 button-outline-0-2-11"
+      class="so-button-secondary so-button-button so-button-outline"
+      type="button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1 button-outline-0-2-11"
+      class="so-button-secondary so-button-button so-button-outline"
+      type="button"
     >
       <span>
         Publish
       </span>
     </button>
     <button
-      class="button-secondary-0-2-6 button-button-0-2-1 button-outline-0-2-11"
+      class="so-button-secondary so-button-button so-button-outline"
+      type="button"
     >
       <span>
         Publish
-      </span>
-    </button>
-  </div>
-  <div>
-    <button
-      class="button-primary-0-2-5 button-button-0-2-1"
-    >
-      <span>
-        Primary
-      </span>
-    </button>
-    <button
-      class="button-secondary-0-2-6 button-button-0-2-1"
-    >
-      <span>
-        Secondary
-      </span>
-    </button>
-    <button
-      class="button-secondary-0-2-6 button-button-0-2-1"
-    >
-      <span>
-        Secondary
-      </span>
-    </button>
-    <button
-      class="button-secondary-0-2-6 button-button-0-2-1"
-    >
-      <span>
-        Secondary
       </span>
     </button>
   </div>
@@ -349,17 +352,19 @@ exports[`Button[Base] should render correctly about group 1`] = `
     style="display: flex; gap: 24px;"
   >
     <div
-      class="button-group-0-2-21"
+      class="so-button-group"
     >
       <button
-        class="button-primary-0-2-5 button-button-0-2-1"
+        class="so-button-primary so-button-button"
+        type="button"
       >
         <span>
           Publish
         </span>
       </button>
       <button
-        class="button-primary-0-2-5 button-button-0-2-1"
+        class="so-button-primary so-button-button"
+        type="button"
       >
         <span
           style="display: inline-flex; line-height: 22px;"
@@ -380,17 +385,19 @@ exports[`Button[Base] should render correctly about group 1`] = `
       </button>
     </div>
     <div
-      class="button-group-0-2-21"
+      class="so-button-group"
     >
       <button
-        class="button-secondary-0-2-6 button-button-0-2-1"
+        class="so-button-secondary so-button-button"
+        type="button"
       >
         <span>
           Publish
         </span>
       </button>
       <button
-        class="button-secondary-0-2-6 button-button-0-2-1"
+        class="so-button-secondary so-button-button"
+        type="button"
       >
         <span
           style="display: inline-flex; line-height: 22px;"
@@ -419,8 +426,9 @@ exports[`Button[Base] should render correctly about icon 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="button-primary-0-2-5 button-button-0-2-1"
+    class="so-button-primary so-button-button"
     style="margin: 0px;"
+    type="button"
   >
     <span
       style="display: flex; align-items: center; justify-content: center; gap: 4px;"
@@ -441,8 +449,9 @@ exports[`Button[Base] should render correctly about icon 1`] = `
     </span>
   </button>
   <button
-    class="button-primary-0-2-5 button-button-0-2-1"
+    class="so-button-primary so-button-button"
     style="margin: 0px;"
+    type="button"
   >
     <span
       style="display: flex; align-items: center; justify-content: center; gap: 4px;"
@@ -463,8 +472,9 @@ exports[`Button[Base] should render correctly about icon 1`] = `
     </span>
   </button>
   <button
-    class="button-primary-0-2-5 button-button-0-2-1 button-square-0-2-17"
+    class="so-button-primary so-button-button so-button-square"
     style="margin: 0px;"
+    type="button"
   >
     <span
       style="display: flex; align-items: center; justify-content: center; gap: 4px;"
@@ -491,15 +501,16 @@ exports[`Button[Base] should render correctly about loading 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="button-primary-0-2-5 button-button-0-2-1 button-loading-0-2-19"
+    class="so-button-primary so-button-button so-button-loading"
     disabled=""
     style="margin: 0px;"
+    type="button"
   >
     <span
-      class="button-spin-0-2-22"
+      class="so-button-spin"
     >
       <div
-        class="spin-ring-0-2-53"
+        class="so-spin-ring"
         style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
       />
     </span>
@@ -508,15 +519,16 @@ exports[`Button[Base] should render correctly about loading 1`] = `
     </span>
   </button>
   <button
-    class="button-primary-0-2-5 button-button-0-2-1 button-loading-0-2-19 button-square-0-2-17"
+    class="so-button-primary so-button-button so-button-loading so-button-square"
     disabled=""
     style="margin: 0px;"
+    type="button"
   >
     <span
-      class="button-spin-0-2-22"
+      class="so-button-spin"
     >
       <div
-        class="spin-ring-0-2-53"
+        class="so-spin-ring"
         style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
       />
     </span>
@@ -529,8 +541,27 @@ exports[`Button[Base] should render correctly about shape 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="button-primary-0-2-5 button-button-0-2-1 button-square-0-2-17"
+    class="so-button-primary so-button-button"
     style="margin: 0px;"
+    type="button"
+  >
+    <span>
+      Primary
+    </span>
+  </button>
+  <button
+    class="so-button-primary so-button-button so-button-round"
+    style="margin: 0px;"
+    type="button"
+  >
+    <span>
+      Primary
+    </span>
+  </button>
+  <button
+    class="so-button-primary so-button-button so-button-square"
+    style="margin: 0px;"
+    type="button"
   >
     <span
       style="display: flex; align-items: center; justify-content: center; gap: 4px;"
@@ -550,8 +581,9 @@ exports[`Button[Base] should render correctly about shape 1`] = `
     </span>
   </button>
   <button
-    class="button-primary-0-2-5 button-button-0-2-1 button-circle-0-2-16"
+    class="so-button-primary so-button-button so-button-circle"
     style="margin: 0px;"
+    type="button"
   >
     <span
       style="display: flex; align-items: center; justify-content: center; gap: 4px;"
@@ -568,22 +600,6 @@ exports[`Button[Base] should render correctly about shape 1`] = `
           fill="#ffffff"
         />
       </svg>
-    </span>
-  </button>
-  <button
-    class="button-primary-0-2-5 button-button-0-2-1 button-round-0-2-15"
-    style="margin: 0px;"
-  >
-    <span>
-      Primary
-    </span>
-  </button>
-  <button
-    class="button-primary-0-2-5 button-button-0-2-1"
-    style="margin: 0px;"
-  >
-    <span>
-      Primary
     </span>
   </button>
 </div>
@@ -594,24 +610,27 @@ exports[`Button[Base] should render correctly about size 1`] = `
   style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="button-primary-0-2-5 button-button-0-2-1 button-small-0-2-2"
+    class="so-button-primary so-button-button so-button-small"
     style="margin: 0px;"
+    type="button"
   >
     <span>
       Primary
     </span>
   </button>
   <button
-    class="button-primary-0-2-5 button-button-0-2-1"
+    class="so-button-primary so-button-button"
     style="margin: 0px;"
+    type="button"
   >
     <span>
       Primary
     </span>
   </button>
   <button
-    class="button-primary-0-2-5 button-button-0-2-1 button-large-0-2-3"
+    class="so-button-primary so-button-button so-button-large"
     style="margin: 0px;"
+    type="button"
   >
     <span>
       Primary
@@ -628,32 +647,36 @@ exports[`Button[Base] should render correctly about status 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="button-danger-0-2-7 button-button-0-2-1"
+      class="so-button-danger so-button-button"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Danger
       </span>
     </button>
     <button
-      class="button-danger-0-2-7 button-button-0-2-1 button-outline-0-2-11"
+      class="so-button-danger so-button-button so-button-outline"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Danger
       </span>
     </button>
     <button
-      class="button-danger-0-2-7 button-button-0-2-1 button-dashed-0-2-12"
+      class="so-button-danger so-button-button so-button-dashed"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Danger
       </span>
     </button>
     <button
-      class="button-danger-0-2-7 button-button-0-2-1 button-text-0-2-13"
+      class="so-button-danger so-button-button so-button-text"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Danger
@@ -664,32 +687,36 @@ exports[`Button[Base] should render correctly about status 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="button-warning-0-2-8 button-button-0-2-1"
+      class="so-button-warning so-button-button"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Warning
       </span>
     </button>
     <button
-      class="button-warning-0-2-8 button-button-0-2-1 button-outline-0-2-11"
+      class="so-button-warning so-button-button so-button-outline"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Warning
       </span>
     </button>
     <button
-      class="button-warning-0-2-8 button-button-0-2-1 button-dashed-0-2-12"
+      class="so-button-warning so-button-button so-button-dashed"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Warning
       </span>
     </button>
     <button
-      class="button-warning-0-2-8 button-button-0-2-1 button-text-0-2-13"
+      class="so-button-warning so-button-button so-button-text"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Warning
@@ -700,32 +727,36 @@ exports[`Button[Base] should render correctly about status 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="button-success-0-2-9 button-button-0-2-1"
+      class="so-button-success so-button-button"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Success
       </span>
     </button>
     <button
-      class="button-success-0-2-9 button-button-0-2-1 button-outline-0-2-11"
+      class="so-button-success so-button-button so-button-outline"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Success
       </span>
     </button>
     <button
-      class="button-success-0-2-9 button-button-0-2-1 button-dashed-0-2-12"
+      class="so-button-success so-button-button so-button-dashed"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Success
       </span>
     </button>
     <button
-      class="button-success-0-2-9 button-button-0-2-1 button-text-0-2-13"
+      class="so-button-success so-button-button so-button-text"
       style="margin: 0px; width: 72px;"
+      type="button"
     >
       <span>
         Success
