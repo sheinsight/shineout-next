@@ -15,7 +15,7 @@ exports[`Slider[Base] should render correctly  1`] = `
         class="so-slider-indicator so-slider-indicator-end"
       />
       <div
-        class="so-slider-end-value so-slider-value so-slider-value-hover"
+        class="so-slider-end-value so-slider-value"
       >
         50
       </div>
@@ -957,7 +957,7 @@ exports[`Slider[Base] should render correctly about value hover 1`] = `
       style="left: 0%; right: 50%;"
     >
       <div
-        class="so-slider-indicator so-slider-indicator-end"
+        class="so-slider-indicator so-slider-indicator-end so-slider-indicator-hover"
       />
       <div
         class="so-slider-end-value so-slider-value so-slider-value-hover"
@@ -1002,7 +1002,7 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     >
       <div
         class="so-slider-track-inner"
-        style="top: 0%; bottom: 50%;"
+        style="bottom: 0%; top: 50%;"
       >
         <div
           class="so-slider-indicator so-slider-indicator-end"
@@ -1046,7 +1046,7 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     >
       <div
         class="so-slider-track-inner"
-        style="top: 12%; bottom: 30.000000000000004%;"
+        style="bottom: 12%; top: 30.000000000000004%;"
       >
         <div
           class="so-slider-indicator so-slider-indicator-start"
@@ -1098,7 +1098,7 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     >
       <div
         class="so-slider-track-inner"
-        style="top: 0%; bottom: 77.5%;"
+        style="bottom: 0%; top: 77.5%;"
       >
         <div
           class="so-slider-indicator so-slider-indicator-end"
@@ -1164,7 +1164,7 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     >
       <div
         class="so-slider-track-inner"
-        style="top: 12%; bottom: 30.000000000000004%;"
+        style="bottom: 12%; top: 30.000000000000004%;"
       >
         <div
           class="so-slider-indicator so-slider-indicator-start"
@@ -1216,7 +1216,7 @@ exports[`Slider[Base] should render correctly about virtual 1`] = `
     >
       <div
         class="so-slider-track-inner"
-        style="top: 12%; bottom: 30.000000000000004%;"
+        style="bottom: 12%; top: 30.000000000000004%;"
       >
         <div
           class="so-slider-indicator so-slider-indicator-start"

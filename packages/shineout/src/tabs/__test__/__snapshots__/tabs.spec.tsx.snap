@@ -5,65 +5,65 @@ exports[`Tabs[Base] should render correctly  1`] = `
   style="height: 100px;"
 >
   <div
-    class="tabs-tabs-0-2-1"
+    class="so-tabs-tabs"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="tabs-headerWrapper-0-2-7"
+      class="so-tabs-header-wrapper"
     >
       <div
-        class="tabs-header-0-2-9"
+        class="so-tabs-hr"
+      />
+      <div
+        class="so-tabs-header"
         data-soui-shape="line"
       >
         <div
-          class="tabs-headerScroll-0-2-8"
+          class="so-tabs-header-scroll"
           style="transform: translateX(0px);"
         >
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state="active"
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 2
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 3
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="tabs-hr-0-2-6"
-      />
     </div>
     <div
-      class="tabs-panelWrapper-0-2-2"
+      class="so-tabs-panel-wrapper"
     >
       <div
-        class="tabs-panel-0-2-3 tabs-show-0-2-20"
+        class="so-tabs-panel so-tabs-show"
       >
         <div
-          style="padding: 5px; height: 100%;"
+          style="padding: 16px; height: 100%; font-size: 14px;"
         >
           Content of Tab 1
         </div>
@@ -78,62 +78,62 @@ exports[`Tabs[Base] should render correctly about autofill 1`] = `
   style="height: 150px;"
 >
   <div
-    class="tabs-tabs-0-2-1 tabs-autoFill-0-2-4"
+    class="so-tabs-tabs so-tabs-auto-fill"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="tabs-headerWrapper-0-2-7"
+      class="so-tabs-header-wrapper"
     >
       <div
-        class="tabs-header-0-2-9"
+        class="so-tabs-hr"
+      />
+      <div
+        class="so-tabs-header"
         data-soui-shape="line"
       >
         <div
-          class="tabs-headerScroll-0-2-8"
+          class="so-tabs-header-scroll"
           style="transform: translateX(0px);"
         >
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state="active"
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 2
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 3
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="tabs-hr-0-2-6"
-      />
     </div>
     <div
-      class="tabs-panelWrapper-0-2-2"
+      class="so-tabs-panel-wrapper"
     >
       <div
-        class="tabs-panel-0-2-3 tabs-show-0-2-20"
+        class="so-tabs-panel so-tabs-show"
       >
         <div
           style="padding: 5px; height: 100%; font-weight: 300; font-size: 14px; line-height: 20px;"
@@ -149,15 +149,18 @@ exports[`Tabs[Base] should render correctly about autofill 1`] = `
 exports[`Tabs[Base] should render correctly about collapsible 1`] = `
 <div>
   <div
-    class="tabs-tabs-0-2-1"
+    class="so-tabs-tabs"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="tabs-headerWrapper-0-2-7"
+      class="so-tabs-header-wrapper"
     >
       <div
-        class="tabs-collapsible-0-2-24"
+        class="so-tabs-hr"
+      />
+      <div
+        class="so-tabs-collapsible"
       >
         <svg
           aria-hidden="true"
@@ -171,37 +174,38 @@ exports[`Tabs[Base] should render correctly about collapsible 1`] = `
         </svg>
       </div>
       <div
-        class="tabs-header-0-2-9"
+        class="so-tabs-header"
         data-soui-shape="line"
       >
         <div
-          class="tabs-headerScroll-0-2-8"
+          class="so-tabs-header-scroll"
           style="transform: translateX(0px);"
         >
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state="active"
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
-              <span
+              <div
                 style="display: flex; align-items: center;"
               >
+                Tab2
                 <svg
                   fill="none"
                   height="14"
-                  style="margin-right: 8px;"
+                  style="margin-left: 8px;"
                   viewBox="0 0 14 14"
                   width="14"
                   xmlns="http://www.w3.org/2000/svg"
@@ -211,51 +215,34 @@ exports[`Tabs[Base] should render correctly about collapsible 1`] = `
                     fill="#666C7C"
                   />
                 </svg>
-                Tab 2
-              </span>
+              </div>
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
-              <span
-                style="display: flex; align-items: center;"
+              <div
+                style="display: flex; align-items: center; height: 100%; overflow: hidden;"
               >
-                <svg
-                  fill="none"
-                  height="14"
-                  style="margin-right: 8px;"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.33333 0.583374C9.88789 0.583374 10.4468 1.11488 10.4964 1.67055L10.5 1.75004V2.33337H11.0833C11.6379 2.33337 12.1968 2.86488 12.2464 3.42055L12.25 3.50004V12.8334C12.25 13.2408 11.8466 13.5155 11.4748 13.3844L11.4132 13.3587L7.875 11.6515L4.33683 13.3587C3.99148 13.5254 3.59669 13.3191 3.51518 12.9676L3.50366 12.9L3.5 12.8334V11.168L2.58683 11.6087C2.24148 11.7754 1.84669 11.5691 1.76518 11.2176L1.75366 11.15L1.75 11.0834V1.75004C1.75 1.209 2.31633 0.637838 2.84192 0.587033L2.91667 0.583374H9.33333ZM10.7917 3.50004H4.95833C4.81515 3.50004 4.69606 3.60322 4.67137 3.73928L4.66667 3.79171V11.4396C4.66667 11.4834 4.67657 11.5268 4.69564 11.5663C4.75786 11.6953 4.90254 11.7577 5.03582 11.7208L5.08508 11.7022L7.47075 10.5508L7.6215 10.4785C7.7359 10.4233 7.86383 10.4075 7.98596 10.4312L8.05839 10.4501L8.11974 10.4749L8.13701 10.4826L10.298 11.525L10.6649 11.7022C10.7045 11.7213 10.7478 11.7312 10.7917 11.7312C10.9349 11.7312 11.0539 11.628 11.0786 11.492L11.0833 11.4396V3.79171C11.0833 3.63062 10.9527 3.50004 10.7917 3.50004ZM9.04167 1.75004H3.20833C3.06515 1.75004 2.94606 1.85322 2.92137 1.98928L2.91667 2.04171V9.68956C2.91667 9.73345 2.92657 9.77677 2.94564 9.8163C3.00787 9.94526 3.15254 10.0077 3.28582 9.9708L3.33508 9.95225L3.5 9.87237V3.50004C3.5 2.96452 4.05684 2.38834 4.59063 2.33707L4.66667 2.33337H9.33333V2.04171C9.33333 1.89852 9.23016 1.77944 9.09409 1.75474L9.04167 1.75004Z"
-                    fill="#666C7C"
-                  />
-                </svg>
-                Tab 3
-              </span>
+                Tab3
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="tabs-hr-0-2-6"
-      />
     </div>
     <div
-      class="tabs-panelWrapper-0-2-2"
+      class="so-tabs-panel-wrapper"
     >
       <div
-        class="tabs-panel-0-2-3 tabs-show-0-2-20"
+        class="so-tabs-panel so-tabs-show"
       >
         <div
-          style="padding: 5px; height: 100%; font-weight: 300; font-size: 14px; line-height: 20px;"
+          style="padding: 16px; font-size: 14px;"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings. We can never get it by working for it directly. It comes, like happiness, to those who are aiming at something higher. It is a byproduct of great, simple living. The joy of living comes from what we put into living, not from what we seek to get from it. As you travel through life there are always those times when decisions just have to be made when the choices are hard, and solutions seem scarce and the rain seems to soak your parade!
         </div>
@@ -268,46 +255,33 @@ exports[`Tabs[Base] should render correctly about collapsible 1`] = `
 exports[`Tabs[Base] should render correctly about control 1`] = `
 <div>
   <div
-    class="radio-group-0-2-55"
-    style="margin-bottom: 32px;"
+    class="so-radio-group"
+    style="margin-bottom: 24px;"
   >
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         Tab 1
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47 radio-wrapperChecked-0-2-50"
+      class="so-radio-wrapper so-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -315,64 +289,38 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         Tab 2
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         Tab 3
       </span>
@@ -383,65 +331,65 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
   >
     <div
       active="1"
-      class="tabs-tabs-0-2-1"
+      class="so-tabs-tabs"
       data-soui-position="top-left"
       data-soui-shape="line"
     >
       <div
-        class="tabs-headerWrapper-0-2-7"
+        class="so-tabs-header-wrapper"
       >
         <div
-          class="tabs-header-0-2-9"
+          class="so-tabs-hr"
+        />
+        <div
+          class="so-tabs-header"
           data-soui-shape="line"
         >
           <div
-            class="tabs-headerScroll-0-2-8"
+            class="so-tabs-header-scroll"
             style="transform: translateX(0px);"
           >
             <div
-              class="tabs-tab-0-2-5"
+              class="so-tabs-tab"
               data-soui-state=""
             >
               <div
-                class="tabs-lineInner-0-2-12"
+                class="so-tabs-line-inner"
               >
                 Tab 1
               </div>
             </div>
             <div
-              class="tabs-tab-0-2-5"
+              class="so-tabs-tab"
               data-soui-state="active"
             >
               <div
-                class="tabs-lineInner-0-2-12"
+                class="so-tabs-line-inner"
               >
                 Tab 2
               </div>
             </div>
             <div
-              class="tabs-tab-0-2-5"
+              class="so-tabs-tab"
               data-soui-state=""
             >
               <div
-                class="tabs-lineInner-0-2-12"
+                class="so-tabs-line-inner"
               >
                 Tab 3
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="tabs-hr-0-2-6"
-        />
       </div>
       <div
-        class="tabs-panelWrapper-0-2-2"
+        class="so-tabs-panel-wrapper"
       >
         <div
-          class="tabs-panel-0-2-3 tabs-show-0-2-20"
+          class="so-tabs-panel so-tabs-show"
         >
           <div
-            style="padding: 5px; height: 100%;"
+            style="padding: 16px; height: 100%; font-size: 14px;"
           >
             Content of Tab 2
           </div>
@@ -457,47 +405,50 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
   style="height: 100px;"
 >
   <div
-    class="tabs-tabs-0-2-1"
+    class="so-tabs-tabs"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="tabs-headerWrapper-0-2-7"
+      class="so-tabs-header-wrapper"
     >
       <div
-        class="tabs-header-0-2-9"
+        class="so-tabs-hr"
+      />
+      <div
+        class="so-tabs-header"
         data-soui-shape="line"
       >
         <div
-          class="tabs-headerScroll-0-2-8"
+          class="so-tabs-header-scroll"
           style="transform: translateX(0px);"
         >
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state="active"
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 2
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 3
             </div>
@@ -505,28 +456,26 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
         </div>
       </div>
       <div
-        class="tabs-extra-0-2-23"
+        class="so-tabs-extra"
       >
         <button
-          class="button-primary-0-2-30 button-button-0-2-26 button-text-0-2-38"
+          class="so-button-primary so-button-button so-button-text"
+          type="button"
         >
           <span>
             extra operation
           </span>
         </button>
       </div>
-      <div
-        class="tabs-hr-0-2-6"
-      />
     </div>
     <div
-      class="tabs-panelWrapper-0-2-2"
+      class="so-tabs-panel-wrapper"
     >
       <div
-        class="tabs-panel-0-2-3 tabs-show-0-2-20"
+        class="so-tabs-panel so-tabs-show"
       >
         <div
-          style="padding: 5px; height: 100%;"
+          style="padding: 16px; height: 100%; font-size: 14px;"
         >
           Content of Tab 1
         </div>
@@ -539,11 +488,11 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
 exports[`Tabs[Base] should render correctly about position 1`] = `
 <div>
   <div
-    class="radio-group-0-2-55"
-    style="margin-bottom: 32px;"
+    class="so-radio-group"
+    style="margin-bottom: 16px;"
   >
     <div
-      class="radio-wrapper-0-2-47 radio-wrapperChecked-0-2-50"
+      class="so-radio-wrapper so-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -551,180 +500,115 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         line
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         card
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         button
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         fill
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         dash
       </span>
     </div>
   </div>
   <div
-    class="radio-group-0-2-55"
-    style="margin-bottom: 32px;"
+    class="so-radio-group"
+    style="margin-bottom: 24px;"
   >
     <div
-      class="radio-wrapper-0-2-47 radio-wrapperChecked-0-2-50"
+      class="so-radio-wrapper so-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -732,204 +616,126 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         top-left
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         top-right
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         bottom-left
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         bottom-right
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         left-top
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         right-top
       </span>
@@ -939,65 +745,65 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
     style="height: 150px;"
   >
     <div
-      class="tabs-tabs-0-2-1 tabs-autoFill-0-2-4"
+      class="so-tabs-tabs so-tabs-auto-fill"
       data-soui-position="top-left"
       data-soui-shape="line"
     >
       <div
-        class="tabs-headerWrapper-0-2-7"
+        class="so-tabs-header-wrapper"
       >
         <div
-          class="tabs-header-0-2-9"
+          class="so-tabs-hr"
+        />
+        <div
+          class="so-tabs-header"
           data-soui-shape="line"
         >
           <div
-            class="tabs-headerScroll-0-2-8"
+            class="so-tabs-header-scroll"
             style="transform: translateX(0px);"
           >
             <div
-              class="tabs-tab-0-2-5"
+              class="so-tabs-tab"
               data-soui-state="active"
             >
               <div
-                class="tabs-lineInner-0-2-12"
+                class="so-tabs-line-inner"
               >
                 Tab 1
               </div>
             </div>
             <div
-              class="tabs-tab-0-2-5"
+              class="so-tabs-tab"
               data-soui-state=""
             >
               <div
-                class="tabs-lineInner-0-2-12"
+                class="so-tabs-line-inner"
               >
                 Tab 2
               </div>
             </div>
             <div
-              class="tabs-tab-0-2-5"
-              data-soui-state=""
+              class="so-tabs-tab"
+              data-soui-state="disabled"
             >
               <div
-                class="tabs-lineInner-0-2-12"
+                class="so-tabs-line-inner"
               >
                 Tab 3
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="tabs-hr-0-2-6"
-        />
       </div>
       <div
-        class="tabs-panelWrapper-0-2-2"
+        class="so-tabs-panel-wrapper"
       >
         <div
-          class="tabs-panel-0-2-3 tabs-show-0-2-20"
+          class="so-tabs-panel so-tabs-show"
         >
           <div
-            style="padding: 5px; height: 100%;"
+            style="padding: 16px; font-size: 14px;"
           >
             Content of Tab 1
           </div>
@@ -1013,1035 +819,1035 @@ exports[`Tabs[Base] should render correctly about scroll 1`] = `
   style="height: 100px;"
 >
   <div
-    class="tabs-tabs-0-2-1"
+    class="so-tabs-tabs"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="tabs-headerWrapper-0-2-7"
+      class="so-tabs-header-wrapper"
     >
       <div
-        class="tabs-header-0-2-9"
+        class="so-tabs-hr"
+      />
+      <div
+        class="so-tabs-header"
         data-soui-shape="line"
       >
         <div
-          class="tabs-headerScroll-0-2-8"
+          class="so-tabs-header-scroll"
           style="transform: translateX(0px);"
         >
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state="active"
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 2
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 3
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 4
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 5
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 6
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 7
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 8
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 9
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 10
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 11
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 12
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 13
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 14
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 15
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 16
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 17
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 18
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 19
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 20
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 21
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 22
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 23
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 24
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 25
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 26
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 27
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 28
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 29
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 30
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 31
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 32
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 33
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 34
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 35
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 36
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 37
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 38
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 39
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 40
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 41
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 42
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 43
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 44
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 45
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 46
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 47
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 48
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 49
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 50
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 51
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 52
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 53
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 54
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 55
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 56
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 57
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 58
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 59
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 60
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 61
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 62
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 63
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 64
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 65
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 66
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 67
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 68
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 69
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 70
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 71
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 72
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 73
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 74
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 75
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 76
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 77
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 78
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 79
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 80
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 81
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 82
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 83
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 84
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 85
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 86
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 87
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 88
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 89
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 90
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 91
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 92
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 93
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 94
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 95
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 96
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 97
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 98
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 99
             </div>
           </div>
           <div
-            class="tabs-tab-0-2-5"
+            class="so-tabs-tab"
             data-soui-state=""
           >
             <div
-              class="tabs-lineInner-0-2-12"
+              class="so-tabs-line-inner"
             >
               Tab 100
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="tabs-hr-0-2-6"
-      />
     </div>
     <div
-      class="tabs-panelWrapper-0-2-2"
+      class="so-tabs-panel-wrapper"
     >
       <div
-        class="tabs-panel-0-2-3 tabs-show-0-2-20"
+        class="so-tabs-panel so-tabs-show"
       >
         <div
-          style="padding: 5px; height: 100%;"
+          style="padding: 16px; height: 100%; font-size: 14px;"
         >
           Content of Tab 1
         </div>
@@ -2054,11 +1860,11 @@ exports[`Tabs[Base] should render correctly about scroll 1`] = `
 exports[`Tabs[Base] should render correctly about shape 1`] = `
 <div>
   <div
-    class="radio-group-0-2-55"
-    style="margin-bottom: 32px;"
+    class="so-radio-group"
+    style="margin-bottom: 24px;"
   >
     <div
-      class="radio-wrapper-0-2-47 radio-wrapperChecked-0-2-50"
+      class="so-radio-wrapper so-radio-wrapper-checked"
     >
       <input
         checked=""
@@ -2066,169 +1872,104 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         line
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         card
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         button
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         fill
       </span>
     </div>
     <div
-      class="radio-wrapper-0-2-47"
+      class="so-radio-wrapper"
     >
       <input
         style="display: none;"
         tabindex="0"
         type="radio"
       />
-      <div
-        class="radio-indicatorWrapper-0-2-52"
+      <span
+        class="so-radio-indicator-wrapper"
       >
         <span
-          class="radio-indicator-0-2-53"
+          class="so-radio-indicator"
           tabindex="1"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
+        />
+      </span>
       <span
-        class="radio-desc-0-2-54"
+        class="so-radio-desc"
       >
         dash
       </span>
@@ -2238,65 +1979,65 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
     style="height: 100px;"
   >
     <div
-      class="tabs-tabs-0-2-1"
+      class="so-tabs-tabs"
       data-soui-position="top-left"
       data-soui-shape="line"
     >
       <div
-        class="tabs-headerWrapper-0-2-7"
+        class="so-tabs-header-wrapper"
       >
         <div
-          class="tabs-header-0-2-9"
+          class="so-tabs-hr"
+        />
+        <div
+          class="so-tabs-header"
           data-soui-shape="line"
         >
           <div
-            class="tabs-headerScroll-0-2-8"
+            class="so-tabs-header-scroll"
             style="transform: translateX(0px);"
           >
             <div
-              class="tabs-tab-0-2-5"
+              class="so-tabs-tab"
               data-soui-state="active"
             >
               <div
-                class="tabs-lineInner-0-2-12"
+                class="so-tabs-line-inner"
               >
                 Tab 1
               </div>
             </div>
             <div
-              class="tabs-tab-0-2-5"
+              class="so-tabs-tab"
               data-soui-state=""
             >
               <div
-                class="tabs-lineInner-0-2-12"
+                class="so-tabs-line-inner"
               >
                 Tab 2
               </div>
             </div>
             <div
-              class="tabs-tab-0-2-5"
+              class="so-tabs-tab"
               data-soui-state=""
             >
               <div
-                class="tabs-lineInner-0-2-12"
+                class="so-tabs-line-inner"
               >
                 Tab 3
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="tabs-hr-0-2-6"
-        />
       </div>
       <div
-        class="tabs-panelWrapper-0-2-2"
+        class="so-tabs-panel-wrapper"
       >
         <div
-          class="tabs-panel-0-2-3 tabs-show-0-2-20"
+          class="so-tabs-panel so-tabs-show"
         >
           <div
-            style="padding: 5px; height: 100%;"
+            style="padding: 16px; height: 100%; font-size: 14px;"
           >
             Content of Tab 1
           </div>

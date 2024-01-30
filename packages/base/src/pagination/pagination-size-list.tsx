@@ -21,7 +21,7 @@ const PaginationSizeList = (props: PaginationSizeListProps) => {
 
     onChange(Math.ceil(start / pageSize), pageSize);
   };
-  console.log(pageSize);
+
   return (
     <div className={rootClasses}>
       <Select

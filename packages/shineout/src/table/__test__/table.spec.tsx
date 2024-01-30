@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Table, Button, TYPE, Form, Input } from 'shineout';
 
@@ -541,7 +541,6 @@ describe('Table[Base]', () => {
     });
     document.dispatchEvent(event);
     expect(document.execCommand).toHaveBeenCalledWith('copy');
-    screen.debug();
   });
   test('should render when set verticalAlign', () => {
     const { container } = render(
@@ -812,7 +811,6 @@ describe('Table[Expand]', () => {
     const tableWrapper = container.querySelector(wrapper)!;
     const tbody = tableWrapper.querySelector('tbody')!;
     const trs = tbody.querySelectorAll('tr');
-    screen.debug();
     styleContentTest(trs[1].querySelector(expandWrapper)!, `margin-left: ${treeIndent}px;`);
     styleContentTest(trs[2].querySelector(expandWrapper)!, `margin-left: ${treeIndent * 2}px;`);
   });
@@ -1351,7 +1349,6 @@ describe('Table[Virtual]', () => {
     const tableBody = tableHead.nextElementSibling;
     const tableSroll = tableBody?.firstElementChild as Element;
     fireEvent.scroll(tableSroll, { target: { scrollTop: 100 } });
-    screen.debug();
   });
   test('should render when set scrollToIndex', async () => {
     const App = () => {
@@ -1419,7 +1416,6 @@ describe('Table[Virtual]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    screen.debug();
   });
   // TODO: scrollToIndex
 });

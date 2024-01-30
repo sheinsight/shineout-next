@@ -85,9 +85,10 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-indeterminate"
+    class="so-checkbox-wrapper so-checkbox-wrapper-checked so-checkbox-wrapper-indeterminate"
   >
     <input
+      checked=""
       style="display: none;"
       tabindex="0"
       type="checkbox"
@@ -175,9 +176,10 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-indeterminate"
+    class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-checked so-checkbox-wrapper-indeterminate"
   >
     <input
+      checked=""
       disabled=""
       style="display: none;"
       tabindex="0"

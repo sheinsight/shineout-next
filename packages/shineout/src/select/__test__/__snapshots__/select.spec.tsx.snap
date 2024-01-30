@@ -1,0 +1,4737 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select[Base] should render correctly  1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about absolute 1`] = `
+<div
+  style="padding: 10px; height: 100px; width: 100%; overflow: hidden;"
+>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 120px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              default
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 120px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div>
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 238px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-select-wrapper so-select-clearable so-select-multiple"
+    data-soui-type="input"
+    style="margin-left: 16px; width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select user
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about autoAdapt 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; min-width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="loooooooooooooooooooooooooooooooooooooooooooong"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    loooooooooooooooooooooooooooooooooooooooooooong
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about big data 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Tag
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="标签 0"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 0
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="标签 1"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 1
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="标签 2"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 2
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="标签 3"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 3
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="标签 4"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 4
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="标签 5"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 5
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="标签 6"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 6
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="标签 7"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 7
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-8"
+                  tabindex="-1"
+                  title="标签 8"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 8
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-9"
+                  tabindex="-1"
+                  title="标签 9"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 9
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 3400000px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about create 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable so-select-multiple"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about custom render 1`] = `
+<div
+  style="display: flex; gap: 24px 32px; flex-wrap: wrap;"
+>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        style="background: black; color: white;"
+      >
+        SHEIN
+      </div>
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="background: black; color: white;"
+      >
+        SHEIN
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        style="background: black; color: white;"
+      >
+        SHEIN
+      </div>
+      <div>
+        <div
+          style="background: black; color: white;"
+        >
+          SHEIN
+        </div>
+        <div>
+          <div
+            class="so-select-list so-select-control-keyboard"
+          >
+            <div
+              style="height: 250px;"
+            >
+              <div
+                data-soui-type="scroll"
+                style="height: 100%; width: 100%; overflow: auto;"
+              >
+                <div
+                  data-soui-type="scroll-container"
+                  style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+                >
+                  <ul
+                    class="so-select-virtual-list"
+                    style="transform: translate3d(0, -0px, 0);"
+                  >
+                    <li
+                      class="so-select-option option-0 so-select-option-hover"
+                      tabindex="-1"
+                      title="red"
+                    >
+                      <div
+                        class="so-select-option-inner"
+                      >
+                        red
+                      </div>
+                    </li>
+                    <li
+                      class="so-select-option option-1"
+                      tabindex="-1"
+                      title="orange"
+                    >
+                      <div
+                        class="so-select-option-inner"
+                      >
+                        orange
+                      </div>
+                    </li>
+                    <li
+                      class="so-select-option option-2"
+                      tabindex="-1"
+                      title="yellow"
+                    >
+                      <div
+                        class="so-select-option-inner"
+                      >
+                        yellow
+                      </div>
+                    </li>
+                    <li
+                      class="so-select-option option-3"
+                      tabindex="-1"
+                      title="green"
+                    >
+                      <div
+                        class="so-select-option-inner"
+                      >
+                        green
+                      </div>
+                    </li>
+                    <li
+                      class="so-select-option option-4"
+                      tabindex="-1"
+                      title="cyan"
+                    >
+                      <div
+                        class="so-select-option-inner"
+                      >
+                        cyan
+                      </div>
+                    </li>
+                    <li
+                      class="so-select-option option-5"
+                      tabindex="-1"
+                      title="blue"
+                    >
+                      <div
+                        class="so-select-option-inner"
+                      >
+                        blue
+                      </div>
+                    </li>
+                    <li
+                      class="so-select-option option-6"
+                      tabindex="-1"
+                      title="violet"
+                    >
+                      <div
+                        class="so-select-option-inner"
+                      >
+                        violet
+                      </div>
+                    </li>
+                    <li
+                      class="so-select-option option-7"
+                      tabindex="-1"
+                      title="pink"
+                    >
+                      <div
+                        class="so-select-option-inner"
+                      >
+                        pink
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+                >
+                   
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="background: black; color: white;"
+        >
+          SHEIN
+        </div>
+      </div>
+      <div
+        style="background: black; color: white;"
+      >
+        SHEIN
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about custom result 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about custom unmatch 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-ellipsis"
+          >
+            I am redddd color
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about disabled 1`] = `
+<div
+  style="display: flex; flex-wrap: wrap; gap: 32px; width: 632px;"
+>
+  <div
+    class="so-select-wrapper so-select-wrapper-disabled so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="-1"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-select-wrapper so-select-wrapper-disabled so-select-clearable so-select-multiple"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="-1"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper so-select-compressed-wrapper"
+        >
+          <span
+            style="display: inline-flex;"
+          >
+            <div
+              class="so-select-tag so-tag-tag so-tag-default so-tag-bright"
+              style=""
+            >
+              <span>
+                +2
+              </span>
+            </div>
+            <noscript />
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-active so-select-option-disabled"
+                  >
+                    red
+                    <span
+                      class="so-select-checked-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-active so-select-option-disabled"
+                  >
+                    orange
+                    <span
+                      class="so-select-checked-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-disabled"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-select-wrapper so-select-clearable so-select-multiple"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper so-select-compressed-wrapper"
+        >
+          <span
+            style="display: inline-flex;"
+          >
+            <div
+              class="so-select-tag so-tag-tag so-tag-default so-tag-bright"
+              style=""
+            >
+              <span>
+                +2
+              </span>
+            </div>
+            <noscript />
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-active"
+                  >
+                    red
+                    <span
+                      class="so-select-checked-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner so-select-option-active so-select-option-disabled"
+                  >
+                    orange
+                    <span
+                      class="so-select-checked-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="currentColor"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about filter 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about format 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="标签 0"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 0
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="标签 1"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 1
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="标签 2"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 2
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="标签 3"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 3
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="标签 4"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 4
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="标签 5"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 5
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="标签 6"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 6
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="标签 7"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 7
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-8"
+                  tabindex="-1"
+                  title="标签 8"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 8
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-9"
+                  tabindex="-1"
+                  title="标签 9"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    标签 9
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 510px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about group 1`] = `
+<div
+  class="so-select-wrapper so-select-clearable"
+  data-soui-type="input"
+  style="width: 300px;"
+  tabindex="0"
+>
+  <div
+    class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+  >
+    <div
+      class="so-select-result"
+    >
+      <div
+        class="so-select-result-text-wrapper"
+      >
+        <span
+          class="so-select-placeholder so-select-ellipsis"
+        >
+          <span>
+            Select a city
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <span
+    class="so-select-arrow-icon"
+  >
+    <svg
+      aria-hidden="true"
+      fill="currentColor"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+      />
+    </svg>
+  </span>
+  <div
+    class="so-select-picker-wrapper"
+    data-sheinx-animation-duration="fast"
+    data-sheinx-animation-type="scale-y"
+    style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+  >
+    <div
+      class="so-select-list so-select-control-keyboard"
+    >
+      <div>
+        <div
+          data-soui-type="scroll"
+          style="height: 100%; width: 100%; overflow: auto;"
+        >
+          <div
+            data-soui-type="scroll-container"
+            style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+          >
+            <ul
+              class="so-select-virtual-list"
+              style="transform: translate3d(0, -0px, 0);"
+            >
+              <div
+                class="so-select-option-group-title"
+                title="Other"
+              >
+                Other
+              </div>
+              <li
+                class="so-select-option option-1"
+                tabindex="-1"
+                title="Mars"
+              >
+                <div
+                  class="so-select-option-inner"
+                >
+                  Mars
+                </div>
+              </li>
+              <div
+                class="so-select-option-group-title"
+                title="Country"
+              >
+                Country
+              </div>
+              <li
+                class="so-select-option option-3"
+                tabindex="-1"
+                title="China"
+              >
+                <div
+                  class="so-select-option-inner"
+                >
+                  China
+                </div>
+              </li>
+              <div
+                class="so-select-option-group-title"
+                title="City"
+              >
+                City
+              </div>
+              <li
+                class="so-select-option option-5"
+                tabindex="-1"
+                title="Beijing"
+              >
+                <div
+                  class="so-select-option-inner"
+                >
+                  Beijing
+                </div>
+              </li>
+              <li
+                class="so-select-option option-6"
+                tabindex="-1"
+                title="Shanghai"
+              >
+                <div
+                  class="so-select-option-inner"
+                >
+                  Shanghai
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div
+            style="margin-top: 238px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+          >
+             
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about group more 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select City
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <div
+                  class="so-select-option-group-title"
+                  title="Other"
+                >
+                  Other
+                </div>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="Mars"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    Mars
+                  </div>
+                </li>
+                <div
+                  class="so-select-option-group-title"
+                  title="Country"
+                >
+                  Country
+                </div>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="China"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    China
+                  </div>
+                </li>
+                <div
+                  class="so-select-option-group-title"
+                  title="City"
+                >
+                  City
+                </div>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="Beijing"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    Beijing
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="Shanghai"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    Shanghai
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="shenzhen"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    shenzhen
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-select-wrapper so-select-clearable so-select-multiple"
+    data-soui-type="input"
+    style="margin-left: 32px; width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper so-select-compressed-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select City
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <div
+                  class="so-select-option-group-title"
+                  title="Other"
+                >
+                  Other
+                </div>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="Mars"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    Mars
+                  </div>
+                </li>
+                <div
+                  class="so-select-option-group-title"
+                  title="Country"
+                >
+                  Country
+                </div>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="China"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    China
+                  </div>
+                </li>
+                <div
+                  class="so-select-option-group-title"
+                  title="City"
+                >
+                  City
+                </div>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="Beijing"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    Beijing
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="Shanghai"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    Shanghai
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="shenzhen"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    shenzhen
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about inner title 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-wrapper-inner-title so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-inner-title-wrapper"
+      >
+        <div
+          class="so-inner-title-title"
+        >
+          Select Color
+        </div>
+        <div
+          class="so-inner-title-title so-inner-title-place"
+        >
+          Select Color
+        </div>
+        <div
+          class="so-inner-title-content"
+        >
+          <div
+            class="so-select-result"
+          >
+            <div
+              class="so-select-result-text-wrapper"
+            >
+              <span
+                class="so-select-placeholder so-select-ellipsis"
+              >
+                <span>
+                  Select Color
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about loading 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-loading"
+      >
+        <div
+          class="so-spin-ring"
+          style="width: 14px; height: 14px; border-width: 1.4px; font-size: 1.4px;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about max length 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about max length more 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-loading"
+      >
+        <div
+          class="so-spin-ring"
+          style="width: 14px; height: 14px; border-width: 1.4px; font-size: 1.4px;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about multiple 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable so-select-multiple"
+    data-soui-type="input"
+    style="width: 300px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-7"
+                  tabindex="-1"
+                  title="pink"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    pink
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about size 1`] = `
+<div
+  style="display: flex; gap: 32px; align-items: center;"
+>
+  <div
+    class="so-select-wrapper so-select-wrapper-small so-select-clearable"
+    data-soui-type="input"
+    style="width: 240px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 240px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div>
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 182px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 240px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 240px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div>
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 238px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="so-select-wrapper so-select-wrapper-large so-select-clearable"
+    data-soui-type="input"
+    style="width: 240px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 240px; display: none;"
+    >
+      <div
+        class="so-select-list so-select-control-keyboard"
+      >
+        <div
+          style="height: 250px;"
+        >
+          <div
+            data-soui-type="scroll"
+            style="height: 100%; width: 100%; overflow: auto;"
+          >
+            <div
+              data-soui-type="scroll-container"
+              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
+            >
+              <ul
+                class="so-select-virtual-list"
+                style="transform: translate3d(0, -0px, 0);"
+              >
+                <li
+                  class="so-select-option option-0 so-select-option-hover"
+                  tabindex="-1"
+                  title="red"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    red
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-1"
+                  tabindex="-1"
+                  title="orange"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    orange
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-2"
+                  tabindex="-1"
+                  title="yellow"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    yellow
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-3"
+                  tabindex="-1"
+                  title="green"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    green
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-4"
+                  tabindex="-1"
+                  title="cyan"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    cyan
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-5"
+                  tabindex="-1"
+                  title="blue"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    blue
+                  </div>
+                </li>
+                <li
+                  class="so-select-option option-6"
+                  tabindex="-1"
+                  title="violet"
+                >
+                  <div
+                    class="so-select-option-inner"
+                  >
+                    violet
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 294px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
+            >
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about tree 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 260px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 260px; display: none;"
+    >
+      <div
+        class="so-select-tree"
+        style="max-height: 250px;"
+      >
+        <div
+          class="so-tree-tree so-tree-noline"
+        >
+          <div
+            class="so-tree-root"
+            style="display: block;"
+          >
+            <div
+              class="so-tree-node so-select-tree-option"
+            >
+              <div
+                class="so-tree-content-wrapper so-tree-childnode"
+              >
+                <span
+                  class="so-tree-icon-wrapper"
+                  data-expanded="false"
+                  data-icon="false"
+                >
+                  <span
+                    class="so-tree-icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <div
+                  class="so-tree-content"
+                >
+                  <div
+                    class="so-tree-text"
+                  >
+                    node 1
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="so-tree-node so-select-tree-option so-tree-leaf"
+            >
+              <div
+                class="so-tree-content-wrapper"
+              >
+                <div
+                  class="so-tree-content"
+                >
+                  <div
+                    class="so-tree-text"
+                  >
+                    node 2
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="so-tree-node so-select-tree-option"
+            >
+              <div
+                class="so-tree-content-wrapper so-tree-childnode"
+              >
+                <span
+                  class="so-tree-icon-wrapper"
+                  data-expanded="false"
+                  data-icon="false"
+                >
+                  <span
+                    class="so-tree-icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <div
+                  class="so-tree-content"
+                >
+                  <div
+                    class="so-tree-text"
+                  >
+                    node 3
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="so-tree-node so-select-tree-option so-tree-leaf"
+            >
+              <div
+                class="so-tree-content-wrapper"
+              >
+                <div
+                  class="so-tree-content"
+                >
+                  <div
+                    class="so-tree-text"
+                  >
+                    node 4
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select[Base] should render correctly about tree more 1`] = `
+<div>
+  <div
+    class="so-select-wrapper so-select-clearable"
+    data-soui-type="input"
+    style="width: 260px;"
+    tabindex="0"
+  >
+    <div
+      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    >
+      <div
+        class="so-select-result"
+      >
+        <div
+          class="so-select-result-text-wrapper"
+        >
+          <span
+            class="so-select-placeholder so-select-ellipsis"
+          >
+            <span>
+              Select Color
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      class="so-select-arrow-icon"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+        />
+      </svg>
+    </span>
+    <div
+      class="so-select-picker-wrapper"
+      data-sheinx-animation-duration="fast"
+      data-sheinx-animation-type="scale-y"
+      style="pointer-events: none; position: absolute; z-index: -1000; width: 260px; display: none;"
+    >
+      <div
+        class="so-select-tree"
+        style="max-height: 250px;"
+      >
+        <div
+          class="so-tree-tree so-tree-noline"
+        >
+          <div
+            class="so-tree-root"
+            style="display: block;"
+          >
+            <div
+              class="so-tree-node so-select-tree-option"
+            >
+              <div
+                class="so-tree-content-wrapper so-tree-childnode"
+              >
+                <span
+                  class="so-tree-icon-wrapper"
+                  data-expanded="false"
+                  data-icon="false"
+                >
+                  <span
+                    class="so-tree-icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <div
+                  class="so-tree-content"
+                >
+                  <div
+                    class="so-tree-text"
+                  >
+                    node 1
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="so-tree-node so-select-tree-option so-tree-leaf"
+            >
+              <div
+                class="so-tree-content-wrapper"
+              >
+                <div
+                  class="so-tree-content"
+                >
+                  <div
+                    class="so-tree-text"
+                  >
+                    node 2
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="so-tree-node so-select-tree-option"
+            >
+              <div
+                class="so-tree-content-wrapper so-tree-childnode"
+              >
+                <span
+                  class="so-tree-icon-wrapper"
+                  data-expanded="false"
+                  data-icon="false"
+                >
+                  <span
+                    class="so-tree-icon"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <div
+                  class="so-tree-content"
+                >
+                  <div
+                    class="so-tree-text"
+                  >
+                    node 3
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="so-tree-node so-select-tree-option so-tree-leaf"
+            >
+              <div
+                class="so-tree-content-wrapper"
+              >
+                <div
+                  class="so-tree-content"
+                >
+                  <div
+                    class="so-tree-text"
+                  >
+                    node 4
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

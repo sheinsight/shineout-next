@@ -94,6 +94,7 @@ describe('ButtonGroup[Base]', () => {
   test('should not click when set click in button group', () => {
     const handleFn = jest.fn();
     const { container } = render(
+      // @ts-ignore
       <Button.Group onClick={handleFn}>
         <Button>test</Button>
       </Button.Group>,

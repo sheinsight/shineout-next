@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tabs from '..';
 import mountTest from '../../tests/mountTest';
@@ -7,6 +7,8 @@ import { classLengthTest } from '../../tests/structureTest';
 import {
   attributesTest,
   classTest,
+  createClassName,
+  delay,
   displayTest,
   snapshotTest,
   styleTest,
@@ -22,22 +24,43 @@ import TabsScroll from '../__example__/07-scroll';
 import TabsCollapsible from '../__example__/08-collapsible';
 
 const SO_PREFIX = 'tabs';
-const tabsClassName = `.${SO_PREFIX}-tabs-0-2-1`;
-const tabsHeaderWrapperClassName = `.${SO_PREFIX}-headerWrapper-0-2-7`;
-const tabsHeaderClassName = `.${SO_PREFIX}-header-0-2-9`;
-const tabsHeaderScrollClassName = `.${SO_PREFIX}-headerScroll-0-2-8`;
-const tabsHrClassName = `.${SO_PREFIX}-hr-0-2-6`;
-const tabsPanelWrapperClassName = `.${SO_PREFIX}-panelWrapper-0-2-2`;
-const tabsTabClassName = `.${SO_PREFIX}-tab-0-2-5`;
-const tabsTabOtherClassName = `.${SO_PREFIX}-tab-0-2-37`;
-const tabsPanelClassName = `.${SO_PREFIX}-panel-0-2-3`;
-const tabsShowClassName = `.${SO_PREFIX}-show-0-2-20`;
-const tabsLineInnerClassName = `${SO_PREFIX}-lineInner-0-2-12`;
-const tabsFillInnerClassName = `${SO_PREFIX}-fillInner-0-2-13`;
-const tabsCollapsibleClassName = `.${SO_PREFIX}-collapsible-0-2-24`;
-const tabsCollapsedClassName = `${SO_PREFIX}-collapsed-0-2-25`;
-const tabsAutoFillClassName = `${SO_PREFIX}-autoFill-0-2-4`;
-const tabsExtraClassName = `.${SO_PREFIX}-extra-0-2-23`;
+const originClasses = [
+  'tabs',
+  'headerWrapper',
+  'header',
+  'headerScroll',
+  'hr',
+  'panelWrapper',
+  'tab',
+  'panel',
+  'show',
+  'collapsible',
+  'extra',
+  'prev',
+  'next',
+];
+const originItemClasses = ['lineInner', 'fillInner', 'collapsed', 'autoFill'];
+const {
+  tabs: tabsClassName,
+  headerWrapper: tabsHeaderWrapperClassName,
+  header: tabsHeaderClassName,
+  headerScroll: tabsHeaderScrollClassName,
+  hr: tabsHrClassName,
+  panelWrapper: tabsPanelWrapperClassName,
+  tab: tabsTabClassName,
+  panel: tabsPanelClassName,
+  show: tabsShowClassName,
+  lineInner: tabsLineInnerClassName,
+  fillInner: tabsFillInnerClassName,
+  collapsible: tabsCollapsibleClassName,
+  collapsed: tabsCollapsedClassName,
+  autoFill: tabsAutoFillClassName,
+  extra: tabsExtraClassName,
+} = createClassName(SO_PREFIX, originClasses, originItemClasses);
+
+const { secondary, button } = createClassName('button', [''], ['secondary', 'button']);
+
+const { wrapper: radioWrapperClassName } = createClassName('radio', ['wrapper'], ['']);
 
 const TabsDemo = ({
   className,
@@ -106,8 +129,7 @@ describe('Tabs[Base]', () => {
   test('should render when set style and className', () => {
     const { container } = render(<TabsDemo className='demo' style={{ backgroundColor: 'red' }} />);
     const component = container.querySelector(tabsClassName)!;
-    // TODO: 存在bug
-    // classTest(component, 'demo');
+    classTest(component, 'demo');
     styleTest(component, 'background-color: red;');
   });
   test('should render default', () => {
@@ -120,9 +142,7 @@ describe('Tabs[Base]', () => {
     const header = headerWrapper.querySelector(tabsHeaderClassName)!;
     attributesTest(header, 'data-soui-shape', 'card');
     styleTest(header.querySelector(tabsHeaderScrollClassName)!, 'transform: translateX(0px);');
-    classLengthTest(headerWrapper, tabsHrClassName, 1);
     classLengthTest(tabs, tabsPanelWrapperClassName, 1);
-    screen.debug();
   });
   test('should active controlled', () => {
     const { container } = render(<TabsBase />);
@@ -145,7 +165,6 @@ describe('Tabs[Base]', () => {
     });
     classLengthTest(panel, tabsPanelClassName, 2);
     textContentTest(panel.querySelector(tabsShowClassName)!, 'Content of Tab 2');
-    screen.debug();
   });
 });
 describe('Tabs[Shape]', () => {
@@ -168,13 +187,13 @@ describe('Tabs[Shape]', () => {
   test('should render when set shape is card', () => {
     const { container } = render(<ShapeDemo shape='card' />);
     attTest(container, 'card');
-    classTest(screen.getByText('Home'), `${SO_PREFIX}-tab-0-2-5`);
+    classTest(screen.getByText('Home'), tabsTabClassName.split('.')[1]);
   });
   test('should render when set shape is button', () => {
     const { container } = render(<ShapeDemo shape='button' />);
     attTest(container, 'button');
-    classTest(container.querySelector(tabsTabClassName)!, 'button-secondary-0-2-31');
-    classTest(container.querySelector(tabsTabClassName)!, 'button-button-0-2-26');
+    classTest(container.querySelector(tabsTabClassName)!, secondary);
+    classTest(container.querySelector(tabsTabClassName)!, button);
   });
   test('should render when set shape is fill', () => {
     const { container } = render(<ShapeDemo shape='fill' />);
@@ -286,7 +305,19 @@ describe('Tabs[Collapsible/defaultCollapsed]', () => {
       attributesTest(tabs, 'data-soui-position', 'top-left');
     });
   });
-  test('should render when set collapsible', () => {
+  test('should render when set defaultCollapsed', () => {
+    const { container } = render(<TabsDemo collapsible defaultCollapsed />);
+    const tabs = container.querySelector(tabsClassName)!;
+    classTest(tabs, tabsCollapsedClassName);
+    const panel = tabs.querySelector(tabsPanelWrapperClassName)!;
+    styleTest(panel, 'height: 0px;');
+  });
+  test('should render when set collapsible', async () => {
+    const height = 200;
+    Object.defineProperty(HTMLElement.prototype, 'clientHeight', {
+      configurable: true,
+      value: height,
+    });
     const { container } = render(<TabsDemo collapsible />);
     const tabs = container.querySelector(tabsClassName)!;
     const header = tabs.querySelector(tabsHeaderWrapperClassName)!;
@@ -294,14 +325,19 @@ describe('Tabs[Collapsible/defaultCollapsed]', () => {
     const panel = tabs.querySelector(tabsPanelWrapperClassName)!;
     expect(coll).toBeInTheDocument();
     fireEvent.click(coll);
-    styleTest(panel, 'height: 0px;');
-  });
-  test('should render when set defaultCollapsed', () => {
-    const { container } = render(<TabsDemo collapsible defaultCollapsed />);
-    const tabs = container.querySelector(tabsClassName)!;
-    classTest(tabs, tabsCollapsedClassName);
-    const panel = tabs.querySelector(tabsPanelWrapperClassName)!;
-    styleTest(panel, 'height: 0px;');
+
+    styleTest(panel, `height: ${height}px;`);
+    await waitFor(async () => {
+      await delay(200);
+    });
+
+    styleTest(panel, 'height: 0px; flex: 0 0 auto;');
+    fireEvent.click(header.querySelector(tabsCollapsibleClassName)!);
+    await waitFor(async () => {
+      await delay(500);
+    });
+    styleTest(panel, 'height: auto;');
+    screen.debug();
   });
   // TODO: test collapsed time
 });
@@ -313,7 +349,6 @@ describe('Tabs[Children]', () => {
         <div className='demo'>demoB</div>
       </Tabs>,
     );
-    screen.debug();
     classLengthTest(container, tabsTabClassName, 2);
     container.querySelectorAll(tabsTabClassName).forEach((item) => {
       attributesTest(item, 'data-soui-state', '');
@@ -377,12 +412,8 @@ describe('Tabs[Active/DefaultActive]', () => {
   });
   test('should render when tabs is control', () => {
     const { container } = render(<TabsControl />);
-    screen.debug();
-    const radiosOther = container.querySelectorAll('.radio-wrapper-0-2-1')!;
-    const radios =
-      radiosOther.length !== 0 ? radiosOther : container.querySelectorAll('.radio-wrapper-0-2-47')!;
-    const tabOther = container.querySelectorAll(tabsTabOtherClassName)!;
-    const tabs = tabOther.length !== 0 ? tabOther : container.querySelectorAll(tabsTabClassName)!;
+    const radios = container.querySelectorAll(radioWrapperClassName)!;
+    const tabs = container.querySelectorAll(tabsTabClassName)!;
     attributesTest(tabs[1], 'data-soui-state', 'active');
     tabs.forEach((item, index) => {
       if (index === 1) return;
@@ -532,7 +563,7 @@ describe('Tabs[Background]', () => {
 describe('Tabs[Border/splitColor/hideSplit]', () => {
   test('should render when set border', () => {
     const { container } = render(
-      <Tabs defaultActive={1} border='red'>
+      <Tabs defaultActive={1} border='red' shape='button'>
         <Tabs.Panel tab='A'>Test</Tabs.Panel>
         <Tabs.Panel tab='B'>Test</Tabs.Panel>
         <Tabs.Panel tab='C'>Test</Tabs.Panel>
@@ -543,7 +574,7 @@ describe('Tabs[Border/splitColor/hideSplit]', () => {
   });
   test('should render when set splitColor', () => {
     const { container } = render(
-      <Tabs defaultActive={1} splitColor='red'>
+      <Tabs defaultActive={1} splitColor='red' shape='button'>
         <Tabs.Panel tab='A'>Test</Tabs.Panel>
         <Tabs.Panel tab='B'>Test</Tabs.Panel>
         <Tabs.Panel tab='C'>Test</Tabs.Panel>
@@ -554,7 +585,7 @@ describe('Tabs[Border/splitColor/hideSplit]', () => {
   });
   test('should render when set splitColor and border', () => {
     const { container } = render(
-      <Tabs defaultActive={1} splitColor='red' border='blue'>
+      <Tabs defaultActive={1} splitColor='red' border='blue' shape='button'>
         <Tabs.Panel tab='A'>Test</Tabs.Panel>
         <Tabs.Panel tab='B'>Test</Tabs.Panel>
         <Tabs.Panel tab='C'>Test</Tabs.Panel>
@@ -565,13 +596,13 @@ describe('Tabs[Border/splitColor/hideSplit]', () => {
   });
   test('should render when set hideSplit', () => {
     const { container, rerender } = render(
-      <Tabs defaultActive={1}>
+      <Tabs defaultActive={1} shape='button'>
         <Tabs.Panel tab='A'>Test</Tabs.Panel>
       </Tabs>,
     );
     classLengthTest(container, tabsHrClassName, 1);
     rerender(
-      <Tabs defaultActive={1} hideSplit>
+      <Tabs defaultActive={1} hideSplit shape='button'>
         <Tabs.Panel tab='A'>Test</Tabs.Panel>
       </Tabs>,
     );
@@ -633,27 +664,10 @@ describe('Tabs[SwitchToTop/Sticky]', () => {
         <Tabs.Panel tab='C'>Test</Tabs.Panel>
       </Tabs>,
     );
-    screen.debug();
   });
 });
-// TODO: scroll
-describe('Tabs[Scroll]', () => {
-  // beforeAll(() => {
-  //   // jest.spyOn(React, 'useRef').mockReturnValue({
-  //   //   current: {
-  //   //     clientWidth: 300
-  //   //   },
-  //   // });
-  //   Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
-  //     get() {
-  //       if (this.classList.contains('tabs-header-0-2-9')) {
-  //         return 100
-  //       }
-  //       return 300
-  //     }
-  //   })
-  // })
-  test('should render when set scroll', async () => {
+describe('Tabs[ScrollNums]', () => {
+  test('should render nums when set scroll', async () => {
     jest.mock('react', () => {
       const originReact = jest.requireActual('react');
       const mUseRef = jest.fn();

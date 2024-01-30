@@ -678,7 +678,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                          class="so-datePicker-picker-cell"
                         >
                           <div
                             class="so-datePicker-picker-cell-content"
@@ -711,7 +711,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="so-datePicker-picker-cell"
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                         >
                           <div
                             class="so-datePicker-picker-cell-content"

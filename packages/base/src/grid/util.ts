@@ -44,11 +44,11 @@ function generate(w: number | string, type: 'grid' | 'offset', res: Responsive) 
   let width = w;
   const responsive = res || defaultResponsive;
 
-  if (!width || width <= 0) {
+  if (!width || Number(width) <= 0) {
     return '';
   }
 
-  if (width > 1) {
+  if (Number(width) > 1) {
     width = 1;
   }
   width = ((width as number) * 100).toFixed(4);

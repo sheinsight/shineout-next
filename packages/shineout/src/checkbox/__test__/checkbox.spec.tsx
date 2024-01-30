@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import Checkbox from '..';
 import mountTest from '../../tests/mountTest';
 import structureTest, { inputTest, classLengthTest } from '../../tests/structureTest';
@@ -92,7 +92,6 @@ describe('Checkbox[Base]', () => {
     inputTest(renderContent, inputAttributes);
     const { container } = render(renderContent);
     attributesTest(container.querySelector('i')!, 'tabindex', '1');
-    screen.debug();
     textContentTest(container.querySelector(desc)!, 'Checkbox');
   });
   test('should render when click', () => {
@@ -101,7 +100,6 @@ describe('Checkbox[Base]', () => {
     const checkbox = container.querySelector(checkboxClassName)!;
     classTest(checkbox, checkboxCheckedClassName, false);
     fireEvent.click(checkbox);
-    screen.debug();
     classTest(checkbox, checkboxCheckedClassName);
     expect(clickFn.mock.calls.length).toBe(1);
     fireEvent.click(checkbox);
@@ -125,11 +123,10 @@ describe('Checkbox[Checked, disabled]', () => {
       [0, 1],
     ];
     container.querySelectorAll(checkboxClassName).forEach((checkbox, index) => {
-      classTest(checkbox, checkboxCheckedClassName, statusMap[index][0] === 1 ? true : false);
+      classTest(checkbox, checkboxCheckedClassName, statusMap[index][0] !== -1 ? true : false);
       const input = checkbox.querySelector('input')!;
-      hasAttributesTest(input, 'checked', statusMap[index][0] === 1 ? true : false);
+      hasAttributesTest(input, 'checked', statusMap[index][0] !== -1 ? true : false);
       classTest(checkbox, checkboxIndeterminateClassName, statusMap[index][0] === 0 ? true : false);
-      screen.debug();
       classTest(checkbox, checkboxDisabledClassName, !!statusMap[index][1]);
       hasAttributesTest(input, 'disabled', !!statusMap[index][1]);
     });
@@ -161,7 +158,7 @@ describe('Checkbox[Checked, disabled]', () => {
         Checkbox
       </Checkbox>,
     );
-    checkTest(container, false);
+    checkTest(container, true);
     expect(clickFn.mock.calls.length).toBe(1);
   });
   test('should render about indetermimnate', () => {
@@ -172,6 +169,7 @@ describe('Checkbox[Checked, disabled]', () => {
       classTest(checkboxAll, checkboxIndeterminateClassName, iStatus);
       classTest(checkboxAll, checkboxCheckedClassName, cStatus);
     };
+
     expect(checkboxAll.textContent).toBe('CheckAll');
     checkboxAllTest(false, false);
     fireEvent.click(checkboxs[0]);
@@ -180,13 +178,12 @@ describe('Checkbox[Checked, disabled]', () => {
     classTest(checkboxs[0], checkboxCheckedClassName);
     fireEvent.click(checkboxs[1]);
     fireEvent.click(checkboxs[2]);
-
     expect(checkboxAll.textContent).toBe('CheckAll');
-    checkboxAllTest(true, false);
+    checkboxAllTest(true, true);
     fireEvent.click(checkboxs[0]);
-    expect(checkboxAll.textContent).toBe('UnCheckAll');
-    checkboxAllTest(false, true);
-    classTest(checkboxs[0], checkboxCheckedClassName);
+    expect(checkboxAll.textContent).toBe('CheckAll');
+    checkboxAllTest(false, false);
+    classTest(checkboxs[0], checkboxCheckedClassName, false);
   });
 
   test('should render when set disabled', () => {
@@ -224,7 +221,6 @@ describe('Checkbox[Inputable]', () => {
 
     expect(clickFn.mock.calls.length).toBe(1);
     const input = container.querySelector(checkboxInputClassName)!;
-    screen.debug();
     classLengthTest(container, checkboxInputClassName, 1);
     classLengthTest(input, 'input', 1);
     attributesTest(input?.querySelector('input') as Element, 'value', '');

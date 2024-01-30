@@ -21,7 +21,7 @@ export interface TabsClasses {
   bordered: string;
   card: string;
   dash: string;
-
+  cardHr: string;
   active: string;
   disabled: string;
   show: string;

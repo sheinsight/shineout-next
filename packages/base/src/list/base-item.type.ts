@@ -4,11 +4,11 @@ import { ImageJssStyleType } from '../image/image.type';
 
 export interface BaseItemProps {
   jssStyle?: BaseItemJssStyle;
-  desc: string;
+  desc?: string;
   title?: string;
   className?: string;
   extra?: ReactNode[];
-  avatar: ReactNode | (() => ReactNode);
+  avatar?: ReactNode | (() => ReactNode);
   content?: ReactNode | (() => ReactNode);
 }
 
@@ -33,9 +33,9 @@ export interface BaseItemJssStyle extends ImageJssStyleType {
 
 export interface MetaProps {
   jssStyle?: BaseItemJssStyle;
-  avatar: ReactNode | (() => ReactNode);
+  avatar?: ReactNode | (() => ReactNode);
   title?: string;
-  desc: string;
+  desc?: string;
   content?: ReactNode | (() => ReactNode);
   className?: string;
 }
