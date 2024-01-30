@@ -1,6 +1,6 @@
 /**
  * cn - 不同尺寸
- *    -- 通过设置 size 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 size，则尺寸为中。
+ *    -- 通过设置 size 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 size，则尺寸为中
  * en - Size
  *    -- Set size to `large` or `small` to change the size of button.
  */

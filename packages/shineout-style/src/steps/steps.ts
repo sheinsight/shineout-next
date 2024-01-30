@@ -107,6 +107,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $verticalLabel': {
         '& $title': {
           lineHeight: Token.lineHeightDynamic,
+          whiteSpace: 'normal',
         },
       },
       '& $title': {
@@ -181,6 +182,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $verticalLabel': {
         '& $title': {
           lineHeight: Token.lineHeightDynamic,
+          whiteSpace: 'normal',
         },
       },
     },
@@ -347,6 +349,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $iconWrapper': {
       color: Token.stepsErrorFontColor,
       backgroundColor: Token.stepsErrorBackgroundColor,
+    },
+    '& $title': {
+      fontWeight: 500,
     },
   },
   icon: {
@@ -612,6 +617,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $verticalLabel': {
       '& $title': {
         lineHeight: Token.lineHeightDynamic,
+        whiteSpace: 'normal',
       },
       '& $description': {
         marginTop: 4,

@@ -585,6 +585,7 @@ const tabsStyle: JsStyles<TabsClass> = {
 
   prev: {
     textAlign: 'center',
+    color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
     '&[data-soui-shape="card"]': {
       marginRight: Token.tabsNearlyMargin,
@@ -592,6 +593,7 @@ const tabsStyle: JsStyles<TabsClass> = {
   },
   next: {
     textAlign: 'center',
+    color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
     '&[data-soui-shape="card"]': {
       marginLeft: Token.tabsNearlyMargin,
@@ -608,6 +610,7 @@ const tabsStyle: JsStyles<TabsClass> = {
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
+    color: Token.tabsArrowFontColor,
     '& svg': {
       width: 14,
       textAlign: 'center',

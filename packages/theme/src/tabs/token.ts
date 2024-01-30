@@ -77,6 +77,11 @@ const tabsTokenExtraValue = {
       background: { color: 'Neutral-fill-2' },
     },
   },
+  arrow: {
+    font: {
+      color: 'Neutral-text-4',
+    },
+  },
 };
 
 module.exports = {

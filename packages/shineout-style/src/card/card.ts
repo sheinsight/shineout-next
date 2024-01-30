@@ -102,6 +102,7 @@ const cardStyle: JsStyles<CardClassType> = {
     lineHeight: 1,
   },
   indicatorIcon: {
+    color: token.cardIndicatorColor,
     width: token.cardIndicatorSize,
     height: token.cardIndicatorSize,
     marginRight: token.cardHeaderGap,

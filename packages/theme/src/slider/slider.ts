@@ -24,9 +24,9 @@ const sliderTokens: SliderTokens = {
   sliderValueHoverPaddingX: 'Padding-8',
   sliderValueHoverPaddingY: 'Padding-3',
   sliderScaleLineSize: 'Size-3',
-  sliderScaleLineBackgroundColor: 'Neutrall-border-1',
+  sliderScaleLineBackgroundColor: 'Neutral-border-1',
   sliderScaleMarginY: 'Margin-4',
-  sliderScaleFontColor: 'Neutrall-text-4',
+  sliderScaleFontColor: 'Neutral-text-4',
   sliderScaleFontSize: '12/regular',
 };
 

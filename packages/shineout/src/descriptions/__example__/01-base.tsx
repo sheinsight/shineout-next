@@ -33,7 +33,11 @@ const data = [
 export default () => {
   return (
     <div>
-      <Descriptions items={data} title='User Info' colon={` :`} />
+      <Descriptions
+        items={data}
+        title='User Info'
+        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
+      />
     </div>
   );
 };

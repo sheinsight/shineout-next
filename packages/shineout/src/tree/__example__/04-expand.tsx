@@ -30,7 +30,7 @@ export default () => {
 
   return (
     <div>
-      <div style={{ marginBottom: 32 }}>
+      <div style={{ marginBottom: 24 }}>
         <Button size='small' mode='outline' type='secondary' onClick={handleExpandAll}>
           Expand all
         </Button>

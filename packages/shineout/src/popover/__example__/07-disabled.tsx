@@ -8,11 +8,10 @@ import React from 'react';
 import { Button, Popover } from 'shineout';
 
 const style: React.CSSProperties = { display: 'inline-block' };
-const popoverStyle: React.CSSProperties = { padding: '8px 16px' };
 
 const App: React.FC = () => (
   <div style={style}>
-    <Popover style={popoverStyle}>Disabled parent</Popover>
+    <Popover>Disabled parent</Popover>
 
     <Button disabled>Disabled</Button>
   </div>

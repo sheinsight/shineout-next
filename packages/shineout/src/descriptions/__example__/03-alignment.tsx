@@ -37,14 +37,14 @@ export default () => {
         items={data}
         title='User Info'
         layout='horizontal'
-        colon={` :`}
+        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
         style={{ marginBottom: '24px' }}
       />
       <Descriptions
         items={data}
         title='User Info'
         layout='horizontal'
-        colon={` :`}
+        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
         labelStyle={{ textAlign: 'right' }}
         style={{ marginBottom: '24px' }}
       />
@@ -52,7 +52,7 @@ export default () => {
         items={data}
         title='User Info'
         layout='vertical'
-        colon={` :`}
+        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
         labelStyle={{ paddingBottom: '2px' }}
       />
     </div>

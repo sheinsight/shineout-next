@@ -1,6 +1,6 @@
 /**
  * cn - 折叠
- *    -- 通过设置 `collapsible` 属性折叠面板区域。
+ *    -- 通过设置 `collapsible` 属性折叠面板区域
  * en - Collapsible
  *    -- Set the `collapsible` property to collapse the panel area.
  */

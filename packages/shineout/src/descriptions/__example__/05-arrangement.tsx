@@ -77,7 +77,7 @@ export default () => {
       <Descriptions
         items={data}
         title='User Info'
-        colon={` :`}
+        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
         layout={layout}
         tableLayout={tableLayout}
         border={border}

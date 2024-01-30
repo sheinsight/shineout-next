@@ -16,6 +16,12 @@ export interface TabsTokens {
   tabsCardDisabledBackgroundColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 标签页undefined字体颜色
+   */
+  tabsArrowFontColor: string;
+  /**
+   * @type {string}
    * @token Neutral-text-5
    * @description 标签页字体颜色
    */

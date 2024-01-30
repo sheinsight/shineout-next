@@ -44,6 +44,7 @@ const sliderStyle: JsStyles<SliderClassType> = {
     padding: `10px 70px 10px 20px`,
   },
   track: {
+    cursor: 'pointer',
     borderRadius: '100px',
     height: token.sliderTrackSize,
     boxSizing: 'border-box',
@@ -239,6 +240,7 @@ const sliderStyle: JsStyles<SliderClassType> = {
     position: 'absolute',
     fontSize: token.sliderScaleFontSize,
     userSelect: 'none',
+    color: token.sliderScaleFontColor,
     '$wrapper:not($vertical) &': {
       transform: 'translate(-50%)',
       lineHeight: token.lineHeightDynamic,

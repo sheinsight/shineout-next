@@ -20,7 +20,12 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Slider scale={scale1} defaultValue={50} onIncrease={onIncrease1} />
+      <Slider
+        scale={scale1}
+        defaultValue={50}
+        onIncrease={onIncrease1}
+        style={{ marginBottom: '24px' }}
+      />
       <Slider range scale={scale2} defaultValue={[20, 50]} onIncrease={onIncrease2} />
     </div>
   );

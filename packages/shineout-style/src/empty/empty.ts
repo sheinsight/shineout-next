@@ -14,7 +14,7 @@ const emptyStyle: JsStyles<EmptyClass> = {
     textAlign: 'center',
   },
   image: {
-    marginBottom: 6,
+    marginBottom: 8,
     lineHeight: 1,
     '& img': {
       width: 100,

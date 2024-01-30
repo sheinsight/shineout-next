@@ -40,9 +40,10 @@ const CollapseItem = (props: CollapseItemProps) => {
   const headerIconItem = () => {
     const collapseItemIconClassName = classNames(
       jssStyle?.collapseItem.icon,
-      expandIconPosition === 'right'
-        ? jssStyle?.collapseItem.activeTransformRight
-        : jssStyle?.collapseItem.activeTransform,
+      jssStyle?.collapseItem.activeTransform,
+      // expandIconPosition === 'right'
+      //   ? jssStyle?.collapseItem.activeTransformRight
+      //   : jssStyle?.collapseItem.activeTransform,
     );
     const headerIcon = showExpandIcon
       ? expandIcon !== undefined
