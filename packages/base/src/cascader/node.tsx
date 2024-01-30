@@ -1,5 +1,7 @@
 import { useState, useRef } from 'react';
+import classNames from 'classnames';
 import { KeygenResult, util } from '@sheinx/hooks';
+import { CascaderClasses } from '@sheinx/shineout-style';
 import { CascaderNodeProps } from './node.type';
 import Checkbox from '../checkbox';
 import Spin from '../spin';
@@ -9,6 +11,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   props: CascaderNodeProps<DataItem, Value>,
 ) => {
   const {
+    jssStyle,
     active,
     data,
     multiple,
@@ -23,6 +26,9 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     onChange,
     onPathChange,
   } = props;
+
+  const styles = jssStyle?.cascader?.() as CascaderClasses;
+  const rootClass = classNames(styles.option, active && styles.activeOption);
 
   const [loading, setLoading] = useState(false);
   const checkboxRef = useRef<HTMLElement>();
@@ -77,22 +83,23 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
 
   const renderContent = () => {
     const render = typeof renderItem === 'function' ? renderItem : (d: DataItem) => d[renderItem];
-    return render(data, active, id);
+    return render(data, active, id) as React.ReactNode;
   };
 
   const renderIcon = () => {
-    return <span>{Icons.ArrowRight}</span>;
+    return <span className={classNames(styles.optionIcon)}>{Icons.ArrowRight}</span>;
   };
 
   return (
-    <div {...getEvents()}>
-      {multiple && !(shouldFinal && hasChildren) && (
-        <Checkbox checked={datum.getChecked(id)} disabled={isDisabled} onChange={handleChange} />
-      )}
-
-      {renderContent()}
-      {loading && children === undefined && <Spin size={10} name='ring' />}
-      {(hasChildren || uncertainChildren) && renderIcon()}
+    <div className={rootClass} {...getEvents()}>
+      <div className={classNames(styles.optionInner)}>
+        {multiple && !(shouldFinal && hasChildren) && (
+          <Checkbox checked={datum.getChecked(id)} disabled={isDisabled} onChange={handleChange} />
+        )}
+        {renderContent()}
+        {loading && children === undefined && <Spin size={10} name='ring' />}
+        {(hasChildren || uncertainChildren) && renderIcon()}
+      </div>
     </div>
   );
 };

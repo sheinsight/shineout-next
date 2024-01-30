@@ -410,4 +410,10 @@ export interface CascaderTokens {
    * @description 级联选择器多列模式下选项外边距
    */
   cascaderColumnOptionMargin: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 级联选择器undefined边框颜色
+   */
+  cascaderListBorderColor: string;
 }

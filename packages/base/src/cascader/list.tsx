@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import { KeygenResult } from '@sheinx/hooks';
+import { CascaderClasses } from '@sheinx/shineout-style';
 import { getLocale } from '../config';
 import { CascaderListProps } from './list.type';
 import Node from './node';
@@ -7,7 +9,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
   props: CascaderListProps<DataItem, Value>,
 ) => {
   const {
-    // jssStyle,
+    jssStyle,
     data,
     keygen,
     parentId,
@@ -22,6 +24,8 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
     shouldFinal,
     path,
   } = props;
+
+  const styles = jssStyle?.cascader?.() as CascaderClasses;
 
   const getKey = (item: DataItem, index: number): KeygenResult => {
     if (typeof keygen === 'function') return keygen(item, parentId);
@@ -46,12 +50,13 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
   if (!data || data.length === 0) return renderEmpety();
 
   return (
-    <div className='cascader-list' style={{ display: 'inline-block' }}>
+    <div className={classNames(styles.list)} style={{ display: 'inline-block' }}>
       {data.map((item, index) => {
         const id = getKey(item, index);
         return (
           <Node
             key={id}
+            jssStyle={jssStyle}
             active={props.id === id}
             id={id}
             data={item}

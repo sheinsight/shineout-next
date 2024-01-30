@@ -38,15 +38,16 @@ export type CascaderClasses = {
   multiple: string;
   loading: string;
   checkedIcon: string;
+  listContent: string;
   list: string;
-  tree: string;
-  treeOption: string;
   tag: string;
   space: string;
   inputMirror: string;
   moreWrapper: string;
   virtualList: string;
   option: string;
+  activeOption: string;
+  optionIcon: string;
   optionInner: string;
   optionHover: string;
   optionActive: string;
@@ -341,21 +342,16 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     width: token.cascaderFontSize,
     fontSize: token.cascaderFontSize,
   },
+  listContent: {
+    display: 'flex',
+    '& > $list:not(:last-child)': {
+      // 你的样式
+      borderRight: `1px solid ${token.cascaderListBorderColor}`,
+    },
+  },
   list: {
     paddingTop: 3,
     paddingBottom: 3,
-  },
-  tree: {
-    padding: 4,
-    overflow: 'auto',
-  },
-  treeOption: {
-    '& $optionDisabled': {
-      cursor: 'not-allowed',
-      '&:hover:not([data-active="true"])': {
-        backgroundColor: `${token.cascaderOptionDisabledBackgroundColor}`,
-      },
-    },
   },
   tag: {
     '&$tag + &$tag': {
@@ -391,32 +387,43 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     listStyle: 'none',
     lineHeight: token.lineHeightDynamic,
     padding: `${token.cascaderOptionPaddingY} ${token.cascaderOptionPaddingX}`,
-    // not disabled
     '&:not($optionDisabled)': {
       cursor: 'pointer',
     },
-    // hover
-    // '&:hover': {
-    //   '& $optionInner': {
-    //     backgroundColor: token.cascaderOptionHoverBackgroundColor,
-    //   },
-    // },
+  },
+  activeOption: {
+    '& $optionInner': {
+      color: token.cascaderOptionActiveColor,
+      backgroundColor: token.cascaderOptionActiveBackgroundColor,
+    },
   },
   optionInner: {
     position: 'relative',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
+    minWidth: 44,
     fontSize: token.cascaderFontSize,
+    lineHeight: token.lineHeightDynamic,
     padding: `${token.cascaderOptionInnerPaddingY} ${token.cascaderOptionInnerPaddingX}`,
+    paddingRight: 30,
     borderRadius: token.cascaderOptionInnerBorderRadius,
+    // hover
+    '&:hover': {
+      backgroundColor: token.cascaderOptionHoverBackgroundColor,
+    },
   },
-  optionHover: {
-    // backgroundColor: token.cascaderOptionHoverBackgroundColor,
-    // '& $optionInner:hover': {
-    //   backgroundColor: token.cascaderOptionHoverBackgroundColor,
-    // },
+  optionIcon: {
+    position: 'absolute',
+    right: 8,
+    top: 9,
+    fontSize: token.cascaderFontSize,
+    lineHeight: 0,
+    verticalAlign: 'middle',
+    '& svg': {
+      verticalAlign: 'middle',
+      width: 14,
+    },
   },
+  optionHover: {},
   optionActive: {
     color: token.cascaderOptionActiveColor,
     backgroundColor: token.cascaderOptionActiveBackgroundColor,

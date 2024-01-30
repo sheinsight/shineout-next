@@ -127,6 +127,9 @@ const cascaderTokenExtraValue = {
       margin: 'Margin-8',
     },
   },
+  list: {
+    border: { color: 'Neutral-border-1' },
+  },
 };
 
 module.exports = {

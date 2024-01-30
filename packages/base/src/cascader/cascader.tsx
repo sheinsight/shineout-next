@@ -270,7 +270,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const handleChange = (item: (DataItem | UnMatchedData)[]) => {
-    console.log(item);
+    onChange?.(item);
   };
 
   const handleClear = (e: React.MouseEvent) => {
@@ -287,8 +287,12 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const handleExpand = () => {};
 
   const getDataByValues = (values?: Value) => {
-    if (!values) return [];
-    return datum.getDataByValues(values);
+    const nextValues = values
+      ?.filter((v) => !util.isEmpty(v))
+      .reduce((acc, val) => acc.concat(val), []);
+
+    if (!nextValues) return [];
+    return datum.getDataByValues(nextValues);
   };
 
   const getValue = () => {
@@ -366,6 +370,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           jssStyle={jssStyle}
           size={size}
           value={value}
+          closeable={false}
           data={data}
           focus={open}
           keygen={keygen as any}
@@ -374,7 +379,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           compressed={compressed}
           compressedBound={compressedBound}
           compressedClassName={compressedClassName}
-          multiple={multiple}
+          multiple={true}
           placeholder={placeholder}
           renderItem={renderItem as any}
           childrenKey={childrenKey}
@@ -413,8 +418,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderList = () => {
+    let tempData: any = data;
     let cascaderList: React.ReactNode[] = [
       <CascaderList
+        jssStyle={jssStyle}
         datum={datum}
         renderItem={renderItem as any}
         keygen={keygen}
@@ -426,30 +433,26 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         childrenKey={childrenKey}
         shouldFinal={getFinal()}
         key='root'
-        data={data}
+        data={tempData}
         id={path[0]}
         parentId=''
         path={[] as unknown as Value}
       />,
     ];
-
     const childs = path.map((p, i) => {
-      let currentItem: any =
-        data &&
-        data instanceof Array &&
-        data.find((d) => {
+      tempData =
+        tempData &&
+        tempData instanceof Array &&
+        tempData.find((d) => {
           const nid = datum.getKey(d, path[i - 1]);
           return nid === p;
         });
-      if (
-        currentItem &&
-        currentItem[childrenKey] &&
-        (currentItem[childrenKey] as DataItem[]).length > 0
-      ) {
-        currentItem = currentItem[childrenKey];
+      if (tempData && tempData[childrenKey] && (tempData[childrenKey] as DataItem[]).length > 0) {
+        tempData = tempData[childrenKey];
         return (
           <CascaderList<DataItem, Value>
             datum={datum}
+            jssStyle={jssStyle}
             renderItem={renderItem as any}
             keygen={keygen}
             loader={loader}
@@ -460,7 +463,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
             childrenKey={childrenKey}
             shouldFinal={getFinal()}
             key={p}
-            data={currentItem}
+            data={tempData}
             id={path[i + 1]}
             parentId={path[i]}
             path={path.slice(0, i + 1) as Value}
@@ -475,8 +478,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
 
     const listStyle = data && data.length === 0 ? { height: 'auto', width: '100%' } : { height };
-
-    return <div style={listStyle}>{cascaderList}</div>;
+    return (
+      <div className={classNames(styles.listContent)} style={listStyle}>
+        {cascaderList}
+      </div>
+    );
   };
 
   const renderNormalList = () => {

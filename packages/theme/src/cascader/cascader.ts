@@ -72,6 +72,7 @@ const cascaderTokens: CascaderTokens = {
   cascaderGroupTitlePaddingY: 'Padding-6',
   cascaderColumnPadding: 'Padding-8',
   cascaderColumnOptionMargin: 'Margin-8',
+  cascaderListBorderColor: 'Neutral-border-1',
 };
 
 export default cascaderTokens;

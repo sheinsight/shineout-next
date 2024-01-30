@@ -1,8 +1,12 @@
 /**
- * cn - 基本用法
- *    -- 基础级联选择器的用法
+ * cn - 多选
+ *    -- 开启 `multiple` 属性或者设置 `mode` 属性可以选择多个值
+ *    -- 模式为 0 时，返回完全选中的节点，包含父节点
+ *    -- 模式为 1 时，返回选中、半选中的节点
+ *    -- 模式为 2 时，只返回叶子节点
+ *    -- 模式为 3 时，只返回完全选中的父节点
  * en - Basic
- *    -- Basic usage of cascader
+ *    --
  */
 import React from 'react';
 import { Cascader } from 'shineout';
@@ -44,7 +48,15 @@ const data: DataItem[] = [
 export default () => {
   return (
     <div>
-      <Cascader width={300} placeholder='Cascader' data={data} keygen='value' renderItem={(n) => `${n?.value}`} />
+      <Cascader
+        multiple
+        mode={0}
+        width={300}
+        placeholder='Cascader'
+        data={data}
+        keygen='value'
+        renderItem={(n) => `${n?.value}`}
+      />
     </div>
   );
 };
