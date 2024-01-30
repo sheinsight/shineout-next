@@ -33,6 +33,7 @@ export interface PaginationClasses {
   simple: string;
   small: string;
   large: string;
+  sizeList: string;
 }
 
 export interface TextParams {
