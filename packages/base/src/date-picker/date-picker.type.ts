@@ -1,3 +1,4 @@
+import React from 'react';
 import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { ButtonClasses } from '../button/button.type';
@@ -292,6 +293,6 @@ export interface DatePickerProps<Value extends DatePickerValueType>
   width?: number | string;
 }
 export interface QuickSelectType {
-  name: string;
+  name: React.ReactNode;
   value: DatePickerValueType | (() => DatePickerValueType);
 }

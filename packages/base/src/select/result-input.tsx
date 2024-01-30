@@ -80,6 +80,9 @@ const ResultInput = (props: ResultInputProps) => {
         onChange={onChange}
         onBlur={handleBlur}
         open={focus}
+        onClick={(e) => {
+          e?.stopPropagation();
+        }}
       ></Input>
       <span className={styles.inputMirror} ref={mirrorRef}>
         {inputText || value}

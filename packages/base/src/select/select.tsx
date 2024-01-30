@@ -245,8 +245,13 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   // 点击 Select 结果框的处理方法
   const handleResultClick = usePersistFn(() => {
     if (disabled === true) return;
-    openPop();
-    inputRef.current?.focus();
+    if (!open) {
+      openPop();
+      inputRef.current?.focus();
+    } else {
+      closePop();
+      inputRef.current?.blur();
+    }
   });
 
   // 创建选项时，开启隐藏创建项目后的处理方法
@@ -259,7 +264,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     const hoverIndex = optionListRef.current?.getHoverIndex() || 0;
     if (onCreate && hideCreateOption && createdData) {
       handleHideOption();
-
+      setInputText('');
       return;
     }
 
@@ -267,6 +272,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     if (currentDataItem && !currentDataItem[groupKey as keyof typeof currentDataItem]) {
       isKeydown.current = true;
       handleChange(currentDataItem);
+      setInputText('');
     }
   };
 
@@ -450,7 +456,10 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     if (!multiple && !showArrow) return null;
     const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
     return (
-      <span className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}>
+      <span
+        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        onClick={handleResultClick}
+      >
         {defaultIcon}
       </span>
     );

@@ -141,7 +141,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     setInputText,
     setFilterText,
     onCreate: onCreate ? handleCreate : undefined,
-    onFilter: onFilter ? handleFilter : undefined,
+    onFilter: onFilter || onCreate ? handleFilter : undefined,
     onResetFilter: handleResetData,
     onClearCreatedData: handleClearCreatedData,
   };
