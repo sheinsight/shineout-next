@@ -1,10 +1,11 @@
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Pagination from '..';
 import {
   baseTest,
   classTest,
   createClassName,
+  delay,
   displayTest,
   snapshotTest,
   textContentTest,
@@ -199,5 +200,18 @@ describe('Pagination[Base]', () => {
     const buttons = paginationWrapper.querySelectorAll('button');
     fireEvent.click(buttons[2]);
     expect(onChange.mock.calls.length).toBe(1);
+  });
+  test('should render when set list in layout', async () => {
+    const layout = ['list', 'links'];
+    const { container } = render(<PaginationTest layout={layout} />);
+    const paginationWrapper = container.querySelector(pagination)!;
+    const buttons = paginationWrapper.querySelectorAll('button');
+    expect(buttons.length).toBe(9);
+    fireEvent.click(document.querySelectorAll('li')[1]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    screen.debug();
+    expect(paginationWrapper.querySelectorAll('button').length).toBe(7);
   });
 });
