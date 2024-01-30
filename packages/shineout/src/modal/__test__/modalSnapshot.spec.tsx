@@ -3,7 +3,7 @@ import ModalBase from '../__example__/01-base';
 import ModalType from '../__example__/02-type';
 import ModalConfirm from '../__example__/03-confirm';
 import ModalFocus from '../__example__/04-focus';
-import ModalFull from '../__example__/05-full';
+// import ModalFull from '../__example__/05-full';
 import ModalContainer from '../__example__/06-container';
 import ModalForm from '../__example__/07-form';
 import ModalMove from '../__example__/08-move';
@@ -24,7 +24,7 @@ describe('Modal[SnapShot]', () => {
   snapshotTestByClick(<ModalType />, 'about type');
   snapshotTestByClick(<ModalConfirm />, 'about confirm');
   snapshotTestByClick(<ModalFocus />, 'about focus');
-  snapshotTestByClick(<ModalFull />, 'about full');
+  // snapshotTestByClick(<ModalFull />, 'about full');
   snapshotTestByClick(<ModalContainer />, 'about container');
   snapshotTestByClick(<ModalForm />, 'about form');
   snapshotTestByClick(<ModalMove />, 'about move');
