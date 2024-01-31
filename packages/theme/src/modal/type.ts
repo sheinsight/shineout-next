@@ -64,13 +64,13 @@ export interface ModalTokens {
   modalHeaderIconMarginEnd: string;
   /**
    * @type {string}
-   * @token Size-1
+   * @token Size-2
    * @description xxxundefined图标外边距undefined
    */
   modalHeaderIconMarginTop: string;
   /**
    * @type {string}
-   * @token Size-10
+   * @token Size-8
    * @description xxxundefined图标字号
    */
   modalHeaderIconSize: string;
@@ -98,6 +98,12 @@ export interface ModalTokens {
    * @description xxxundefinedundefined颜色
    */
   modalHeaderCloseColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description xxxundefinedundefined背景颜色
+   */
+  modalHeaderCloseBackgroundColor: string;
   /**
    * @type {string}
    * @token 16/regular

@@ -53,7 +53,7 @@ const dropdownTokenValue = {
       height: 'Border-1',
     },
   },
-  column: { padding: { x: 'Padding-8', y: 'Padding-8' } },
+  column: { padding: { x: 'Padding-4', y: 'Padding-4' } },
 };
 
 const dropdownTokenExtraValue = {

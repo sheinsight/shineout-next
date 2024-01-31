@@ -23,7 +23,7 @@ const uploadTokens: UploadTokens = {
   uploadImageBorderRadius: 'Radius-4',
   uploadImageHandlerBorderColor: 'Neutral-border-1',
   uploadImageHandlerBackgroundColor: 'Neutral-fill-1',
-  uploadImageHandlerFontColor: 'Neutral-text-3',
+  uploadImageHandlerFontColor: 'Neutral-text-4',
   uploadImageHandlerHoverBorderColor: 'Brand-6',
   uploadImageHandlerHoverFontColor: 'Brand-6',
   uploadImageHandlerErrorBorderColor: 'Danger-6',

@@ -24,6 +24,7 @@ const alertTokens: AlertTokens = {
   alertNearlyMargin: 'Margin-8',
   alertTitleFontSize: '16/regular',
   alertCloseFontColor: 'Neutral-text-4',
+  alertCloseHoverColor: 'Neutral-text-5',
 };
 
 export default alertTokens;

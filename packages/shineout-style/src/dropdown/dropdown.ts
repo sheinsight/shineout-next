@@ -41,7 +41,7 @@ const dropdown: JsStyles<DropDownClass> = {
     fontSize: token.dropdownListFontSize,
     border: `${token.dropdownListBorderWidth} solid ${token.dropdownListBorderColor}`,
     borderRadius: token.dropdownListBorderRadius,
-    padding: `${token.dropdownListPaddingY} 0`,
+    padding: `${token.dropdownListPaddingY}`,
     background: token.dropdownListBackgroundColor,
     boxShadow: token.dropdownListBoxShadow,
     width: 'max-content',
@@ -54,12 +54,12 @@ const dropdown: JsStyles<DropDownClass> = {
   listSmall: {
     fontSize: token.dropdownListSmallFontSize,
     borderRadius: token.dropdownListSmallBorderRadius,
-    padding: `${token.dropdownListSmallPaddingY} 0`,
+    padding: `${token.dropdownListSmallPaddingY}`,
   },
   listLarge: {
     fontSize: token.dropdownListLargeFontSize,
     borderRadius: token.dropdownListLargeBorderRadius,
-    padding: `${token.dropdownListLargePaddingY} 0`,
+    padding: `${token.dropdownListLargePaddingY}`,
   },
   boxList: {
     padding: `${token.dropdownColumnPaddingY} ${token.dropdownColumnPaddingX}`,
@@ -97,9 +97,7 @@ const dropdown: JsStyles<DropDownClass> = {
       display: 'flex',
     },
   },
-  itemWrapper: {
-    padding: '0 4px',
-  },
+  itemWrapper: {},
   item: {
     display: 'block',
     borderRadius: 4,

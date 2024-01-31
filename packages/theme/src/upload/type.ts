@@ -118,7 +118,7 @@ export interface UploadTokens {
   uploadImageHandlerBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-3
+   * @token Neutral-text-4
    * @description 上传图片操作区字体颜色
    */
   uploadImageHandlerFontColor: string;

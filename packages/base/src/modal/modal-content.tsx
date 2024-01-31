@@ -240,8 +240,8 @@ const Modal = (props: ModalContentProps) => {
     transformOrigin: origin,
     top: props.fullScreen ? undefined : top,
     ...props.style,
-    width,
-    height,
+    width: props.fullScreen ? undefined : width,
+    height: props.fullScreen ? undefined : height,
   };
   if (props.resizable) {
     panelStyle.width = resizeInfo.width;

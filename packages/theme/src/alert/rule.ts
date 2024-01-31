@@ -14,7 +14,7 @@ const alertRules = {
   size: [['font-size', 'font-color', 'padding-x', 'padding-y', 'border-radius']],
   extra_margin: [['nearly'], ['margin']],
   extra_title: [['title'], ['font-size']],
-  extra_close: [['close'], ['font-color']],
+  extra_close: [['close'], ['font-color', 'hover-color']],
 };
 
 module.exports = {

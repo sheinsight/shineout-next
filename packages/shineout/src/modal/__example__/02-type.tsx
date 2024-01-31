@@ -1,6 +1,6 @@
 /**
  * cn - 类型
- *    -- Modal 内置了 4 个类型的样式：info（纯信息展示，不带有状态）、Success、Warn 和 Error，为了方便调用，设计为静态函数。
+ *    -- Modal 内置了 4 个类型的样式：info（纯信息展示，不带有状态）、Success、Warn 和 Error，为了方便调用，设计为静态函数
  * en - Type
  *    -- Modal has 4 built in style.
  */
@@ -44,7 +44,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{ display: 'flex', gap: '16px' }}>
       <Button onClick={show} mode='outline'>
         show
       </Button>

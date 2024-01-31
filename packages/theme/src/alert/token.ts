@@ -41,7 +41,7 @@ const alertTokenValue = {
   border: { radius: 'Radius-4' },
   nearly: { margin: 'Margin-8' },
   title: { font: { size: '16/regular' } },
-  close: { font: { color: 'Neutral-text-4' } },
+  close: { font: { color: 'Neutral-text-4' }, hover: { color: 'Neutral-text-5' } },
 };
 
 const alertTokenExtraValue = {};

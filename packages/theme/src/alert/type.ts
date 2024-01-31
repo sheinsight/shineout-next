@@ -122,4 +122,10 @@ export interface AlertTokens {
    * @description 提示框undefined字体颜色
    */
   alertCloseFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-5
+   * @description 提示框undefined鼠标移入时的颜色
+   */
+  alertCloseHoverColor: string;
 }

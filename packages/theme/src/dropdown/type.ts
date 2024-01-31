@@ -190,13 +190,13 @@ export interface DropdownTokens {
   dropdownOptionDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Padding-4
    * @description 下拉菜单undefined内边距（水平方向）
    */
   dropdownColumnPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Padding-4
    * @description 下拉菜单undefined内边距（垂直方向）
    */
   dropdownColumnPaddingY: string;

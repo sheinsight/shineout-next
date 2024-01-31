@@ -27,6 +27,7 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     alignItems: 'center',
     fontSize: Token.paginationFontSize,
     color: Token.paginationFontColor,
+    height: 'fit-content',
   },
   left: {
     justifyContent: 'flex-start',

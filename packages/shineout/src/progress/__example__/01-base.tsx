@@ -8,5 +8,5 @@ import React from 'react';
 import { Progress } from 'shineout';
 
 export default () => {
-  return <Progress style={{ width: 400 }} />;
+  return <Progress style={{ width: 400 }} value={75} />;
 };

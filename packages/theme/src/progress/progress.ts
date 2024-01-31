@@ -20,6 +20,8 @@ const progressTokens: ProgressTokens = {
   progressLineInnerFontSize: '12/regular',
   progressLineInnerRightFontColor: 'Neutral-text-5',
   progressLineIconSize: 'Size-7',
+  progressLineBackgroundColor: 'Neutral-fill-9',
+  progressLineColor: 'Neutral-text-1',
 };
 
 export default progressTokens;
