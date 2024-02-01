@@ -25,7 +25,8 @@ type TransferClass =
   | 'checkbox'
   | 'itemWrapper'
   | 'footer'
-  | 'empty';
+  | 'empty'
+  | 'emptyDescription';
 
 const TransferStyle: JsStyles<TransferClass> = {
   transfer: {
@@ -198,6 +199,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  emptyDescription: {
+    color: Token.transferEmptyFontColor,
   },
 };
 

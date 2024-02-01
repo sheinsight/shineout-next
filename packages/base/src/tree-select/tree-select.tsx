@@ -195,7 +195,8 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
   // 点击 Select 结果框的处理方法
   const handleResultClick = usePersistFn(() => {
     if (disabled === true) return;
-    openPop();
+    if (!open) openPop();
+    else closePop();
     // inputRef.current?.focus();
   });
 
@@ -269,7 +270,10 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     if (!multiple && !showArrow) return null;
     const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
     return (
-      <span className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}>
+      <span
+        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        onClick={handleResultClick}
+      >
         {defaultIcon}
       </span>
     );

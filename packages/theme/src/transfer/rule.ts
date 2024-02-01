@@ -4,7 +4,7 @@ const transferRules = {
     ['font-size', 'header-height'],
   ],
   color: [
-    ['', 'disabled'],
+    ['', 'disabled', 'empty'],
     ['border-color', 'font-color', 'icon-color'],
   ],
   radius: [['border-radius']],

@@ -316,17 +316,20 @@ const selectStyle: JsStyles<SelectClassType> = {
   clearIcon: {
     position: 'absolute',
     right: token.selectPaddingX,
-    top: `calc(50% - 1em/2)`,
+    top: `calc(50% - 7px)`,
     cursor: 'pointer',
     width: token.selectFontSize,
     lineHeight: 0,
     color: token.selectClearColor,
     verticalAlign: 'middle',
+    '&:hover': {
+      color: token.selectIconColor,
+    },
   },
   arrowIcon: {
     position: 'absolute',
     right: token.selectPaddingX,
-    top: `calc(50% - 1em/2)`,
+    top: `calc(50% - 7px)`,
     verticalAlign: 'middle',
     width: token.selectFontSize,
     lineHeight: 0,
@@ -405,8 +408,8 @@ const selectStyle: JsStyles<SelectClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
-    width: 248,
-    height: 72,
+    maxWidth: 400,
+    maxHeight: 160,
     overflow: 'auto',
     padding: token.selectMorePadding,
   },
