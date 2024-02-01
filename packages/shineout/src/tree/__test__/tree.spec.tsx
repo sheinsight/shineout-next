@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tree from '..';
 import { Button } from 'shineout';
@@ -587,7 +587,7 @@ describe('Tree[Checkbox]', () => {
   test('should render when set defaultValue', () => {
     const changeFn = jest.fn();
     const { container } = render(
-      <TreeTest defaultValue={['0-0']} defaultExpandAll onChange={changeFn} mode='4' />,
+      <TreeTest defaultValue={['0-0']} defaultExpandAll onChange={changeFn} mode={4} />,
     );
     const treeWrapper = container.querySelector(treeClassName)!;
     const treeRootNodeAll = treeWrapper.querySelectorAll(nodeClassName)!;
@@ -604,7 +604,7 @@ describe('Tree[Checkbox]', () => {
         value={['0']}
         defaultExpandAll
         onChange={changeFn}
-        mode='4'
+        mode={4}
       />,
     );
     const treeWrapper = container.querySelector(treeClassName)!;

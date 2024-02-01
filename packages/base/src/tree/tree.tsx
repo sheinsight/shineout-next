@@ -58,7 +58,6 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
   // useEffect(() => {
   //   if (dataProps !== data && dataUpdate) setData(dataProps);
   // }, [dataProps])
-
   const { datum, updateMap, expanded, onExpand } = useTree({
     mode,
     value,
@@ -86,6 +85,13 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
   const getDragImageSelector = (data?: DataItem) => {
     if (util.isFunc(dragImageSelector)) return dragImageSelector(data);
     return dragImageSelector;
+  };
+
+  const handleUpdateExpanded = (expanded?: KeygenResult[]) => {
+    const tempExpandMap = new Set(expanded);
+    updateMap.forEach((update, id) => {
+      update('expanded', tempExpandMap.has(id));
+    });
   };
 
   const handleUpdateActive = (active?: KeygenResult) => {
@@ -118,7 +124,6 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
     } else {
       newExpanded = [...expandedArr, id];
     }
-
     if (onExpand) onExpand(newExpanded);
   };
 
@@ -181,6 +186,10 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
   useEffect(() => {
     if (onRef) onRef(datum);
   }, []);
+
+  useEffect(() => {
+    handleUpdateExpanded(expanded);
+  }, [expanded]);
 
   return (
     <div className={rootClass} {...rest}>

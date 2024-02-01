@@ -53,10 +53,8 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
 
   const element = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
-  // const dragLock = useRef(false);
   const dragImage = useRef<null | HTMLElement>(null);
 
-  // const [expanded, setExpanded] = useState(false)
   const { getPath } = useTreeContext();
   const { active, isLeaf, fetching, setFetching, expanded, setExpanded } = useTreeNode({
     id,
@@ -70,6 +68,7 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
     dragImageSelector,
     dragImageStyle,
   });
+  
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
 
@@ -177,7 +176,6 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
     setTimeout(() => {
       (element.current as HTMLElement).style.display = 'none';
     }, 0);
-
     if (onDragStart) onDragStart(e, data);
   };
 

@@ -164,14 +164,9 @@ const NodeContent = <DataItem, Value extends KeygenResult>(
   return (
     <div className={rootClass} onDragOver={onDragOver}>
       {renderIndicator()}
-      <div
-        ref={bindContent}
-        className={contentClass}
-        {...contentDataProps()}
-        onClick={handleNodeClick}
-      >
+      <div ref={bindContent} className={contentClass} {...contentDataProps()}>
         {onChange && renderCheckbox()}
-        <div className={textClass} onDoubleClick={handleNodeExpand}>
+        <div className={textClass} onDoubleClick={handleNodeExpand} onClick={handleNodeClick}>
           {renderNode()}
         </div>
       </div>

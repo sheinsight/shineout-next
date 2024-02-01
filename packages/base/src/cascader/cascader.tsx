@@ -30,6 +30,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     className,
     size,
     maxLength,
+    defaultValue,
     value: valueProp,
     data = [],
     keygen,
@@ -103,6 +104,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     data,
     control: 'value' in props,
     keygen,
+    disabled,
+    mode,
+    defaultValue,
     childrenKey,
     value: valueProp,
     onChange: onChangeProp,
@@ -135,7 +139,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,
-    focused && styles?.wrapperFocus,
+    focused && styles?.wrapperFocus && disabled !== true,
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
@@ -419,6 +423,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderList = () => {
     let tempData: any = data;
+    const isMultiple = multiple === true || mode !== undefined;
+
     let cascaderList: React.ReactNode[] = [
       <CascaderList
         jssStyle={jssStyle}
@@ -428,7 +434,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         loader={loader}
         onPathChange={handlePathChange}
         onChange={handleChange}
-        multiple={multiple}
+        multiple={isMultiple}
         expandTrigger={expandTrigger}
         childrenKey={childrenKey}
         shouldFinal={getFinal()}
@@ -458,7 +464,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
             loader={loader}
             onPathChange={handlePathChange}
             onChange={handleChange}
-            multiple={multiple}
+            multiple={isMultiple}
             expandTrigger={expandTrigger}
             childrenKey={childrenKey}
             shouldFinal={getFinal()}

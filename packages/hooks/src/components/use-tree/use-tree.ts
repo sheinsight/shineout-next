@@ -82,7 +82,8 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
-    const expandeds = expanded;
+    const expandeds = expanded || defaultExpanded;
+
     if (defaultExpandAll) {
       return { active: isActive, expanded: true };
     }
@@ -375,13 +376,6 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return current;
   };
 
-  const handleExpanded = (expanded?: KeygenResult[]) => {
-    const temp = new Set(expanded);
-    context.updateMap.forEach((update, id) => {
-      update('expanded', temp.has(id));
-    });
-  };
-
   useEffect(() => {
     setValue(value);
     setData(data);
@@ -391,16 +385,16 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
   }, [data]);
 
   useEffect(() => {
-    if (expanded && expanded.length === 0) {
-      return;
+    if (defaultExpandAll) {
+      const nextExpanded = [] as KeygenResult[];
+      context.dataMap.forEach((item, k) => {
+        if (item[childrenKey]) {
+          nextExpanded.push(k);
+        }
+      });
+      onExpand(nextExpanded);
     }
-    if (firstRender.current) {
-      handleExpanded(expanded);
-      return;
-    }
-
-    handleExpanded(expanded);
-  }, [expanded]);
+  }, []);
 
   const datum = useLatestObj({
     get,
@@ -417,7 +411,6 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     bindNode,
     getDataById,
   });
-
   return {
     datum,
     getKey,

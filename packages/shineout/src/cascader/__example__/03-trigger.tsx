@@ -1,12 +1,8 @@
 /**
- * cn - 多选
- *    -- 开启 `multiple` 属性或者设置 `mode` 属性可以选择多个值
- *    -- 模式为 0 时，返回完全选中的节点，包含父节点
- *    -- 模式为 1 时，返回选中、半选中的节点
- *    -- 模式为 2 时，只返回叶子节点
- *    -- 模式为 3 时，只返回完全选中的父节点
- * en - Basic
- *    --
+ * cn - 移入展开
+ *    -- 更改`expandTrigger`属性可以设置鼠标移入节点时展开下一层级，默认为点击展开
+ * en - Trigger
+ *    -- Set `expandTrigger` property to change the trigger event of expanding next level, default is click
  */
 import React from 'react';
 import { Cascader } from 'shineout';
@@ -49,9 +45,8 @@ export default () => {
   return (
     <div>
       <Cascader
-        multiple
-        mode={0}
         width={300}
+        expandTrigger='hover'
         placeholder='Cascader'
         data={data}
         keygen='value'

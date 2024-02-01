@@ -27,15 +27,19 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     onPathChange,
   } = props;
 
-  const styles = jssStyle?.cascader?.() as CascaderClasses;
-  const rootClass = classNames(styles.option, active && styles.activeOption);
-
   const [loading, setLoading] = useState(false);
   const checkboxRef = useRef<HTMLElement>();
   const isDisabled = datum.isDisabled(id);
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
   const uncertainChildren = loader && !loading && children === undefined;
+
+  const styles = jssStyle?.cascader?.() as CascaderClasses;
+  const rootClass = classNames(
+    styles.option,
+    active && styles.activeOption,
+    isDisabled && styles.optionDisabled,
+  );
 
   const handlePathChange = () => {
     onPathChange?.(id, data, path);
@@ -89,12 +93,17 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   const renderIcon = () => {
     return <span className={classNames(styles.optionIcon)}>{Icons.ArrowRight}</span>;
   };
-
   return (
     <div className={rootClass} {...getEvents()}>
-      <div className={classNames(styles.optionInner)}>
+      <div className={classNames(styles.optionInner, !hasChildren && styles.optionLeaf)}>
         {multiple && !(shouldFinal && hasChildren) && (
-          <Checkbox checked={datum.getChecked(id)} disabled={isDisabled} onChange={handleChange} />
+          <Checkbox
+            jssStyle={jssStyle}
+            className={styles.optionCheckbox}
+            checked={datum.getChecked(id)}
+            disabled={isDisabled}
+            onChange={handleChange}
+          />
         )}
         {renderContent()}
         {loading && children === undefined && <Spin size={10} name='ring' />}

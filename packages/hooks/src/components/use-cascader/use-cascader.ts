@@ -10,6 +10,8 @@ const useCascader = <DataItem, Value extends KeygenResult[]>(
     data,
     control,
     keygen,
+    mode,
+    disabled,
     defaultValue,
     beforeChange,
     value: valueProp,
@@ -23,13 +25,16 @@ const useCascader = <DataItem, Value extends KeygenResult[]>(
     beforeChange,
     onChange: onChangeProp,
   });
-
   const { datum } = useTree({
     value,
     data,
+    unmatch: false,
     keygen,
+    mode,
+    disabled,
     isControlled: control,
   });
+  console.log(datum);
 
   return {
     datum,

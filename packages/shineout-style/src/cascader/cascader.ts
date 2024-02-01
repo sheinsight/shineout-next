@@ -46,9 +46,11 @@ export type CascaderClasses = {
   moreWrapper: string;
   virtualList: string;
   option: string;
+  optionCheckbox: string;
   activeOption: string;
   optionIcon: string;
   optionInner: string;
+  optionLeaf: string;
   optionHover: string;
   optionActive: string;
   optionDisabled: string;
@@ -390,6 +392,16 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     '&:not($optionDisabled)': {
       cursor: 'pointer',
     },
+
+    '& $optionCheckbox': {
+      marginRight: 8,
+    },
+    // hover
+    '&:not($optionDisabled):hover': {
+      '& $optionInner': {
+        backgroundColor: token.cascaderOptionHoverBackgroundColor,
+      },
+    },
   },
   activeOption: {
     '& $optionInner': {
@@ -397,19 +409,20 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       backgroundColor: token.cascaderOptionActiveBackgroundColor,
     },
   },
+  optionCheckbox: {},
   optionInner: {
     position: 'relative',
     whiteSpace: 'nowrap',
     minWidth: 44,
+    display: 'flex',
     fontSize: token.cascaderFontSize,
     lineHeight: token.lineHeightDynamic,
     padding: `${token.cascaderOptionInnerPaddingY} ${token.cascaderOptionInnerPaddingX}`,
     paddingRight: 30,
     borderRadius: token.cascaderOptionInnerBorderRadius,
-    // hover
-    '&:hover': {
-      backgroundColor: token.cascaderOptionHoverBackgroundColor,
-    },
+  },
+  optionLeaf: {
+    paddingRight: 8,
   },
   optionIcon: {
     position: 'absolute',
