@@ -18,7 +18,7 @@ for (let i = 0; i < 10; i++) {
 }
 
 export default () => {
-  const [radio, setRadio] = useState<'small' | 'default' | 'large'>('small');
+  const [radio, setRadio] = useState<'small' | 'default' | 'large'>('default');
 
   return (
     <div>

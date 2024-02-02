@@ -154,6 +154,12 @@ export interface ModalTokens {
   modalDrawerFooterPaddingX: string;
   /**
    * @type {string}
+   * @token Neutral-fill-3
+   * @description xxxundefinedundefined背景颜色
+   */
+  modalDrawerCloseBackgroundColor: string;
+  /**
+   * @type {string}
    * @token 14/regular
    * @description xxx字体字号
    */

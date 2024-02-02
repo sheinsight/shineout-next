@@ -18,7 +18,7 @@ const loop = () => {
 
 export default {
   position: 'relative',
-  margin: 'auto',
+  // margin: 'auto',
   boxSizing: 'border-box',
   '& $item': {
     position: 'absolute',

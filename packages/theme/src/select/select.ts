@@ -72,6 +72,7 @@ const selectTokens: SelectTokens = {
   selectGroupTitlePaddingY: 'Padding-6',
   selectColumnPadding: 'Padding-8',
   selectColumnOptionMargin: 'Margin-8',
+  selectColumnBackgroundColor: 'Neutral-fill-2',
 };
 
 export default selectTokens;

@@ -25,6 +25,7 @@ const alertTokens: AlertTokens = {
   alertTitleFontSize: '16/regular',
   alertCloseFontColor: 'Neutral-text-4',
   alertCloseHoverColor: 'Neutral-text-5',
+  alertMessageHoverColor: 'Neutral-fill-2',
 };
 
 export default alertTokens;

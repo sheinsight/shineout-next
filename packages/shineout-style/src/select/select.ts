@@ -288,7 +288,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     overflow: 'hidden',
   },
   controlMouse: {
-    '& $optionInner:hover': {
+    '& $optionInner:not($optionDisabled):not($optionActive):hover': {
       backgroundColor: token.selectOptionHoverBackgroundColor,
     },
   },
@@ -503,6 +503,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     overflow: 'hidden',
     '& $columnsCheckbox': {
       marginRight: 0,
+    },
+    '&:not($optionDisabled):hover': {
+      background: token.selectColumnBackgroundColor,
     },
   },
   columnsRadio: {

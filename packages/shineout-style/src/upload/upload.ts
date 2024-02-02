@@ -144,12 +144,14 @@ const uploadStyle: JsStyles<UploadClassType> = {
     color: token.uploadResultFontColor,
     lineHeight: token.lineHeightDynamic,
     padding: `${token.uploadResultPaddingY} ${token.uploadResultPaddingX}`,
-    backgroundColor: token.uploadResultBackgroundColor,
     borderRadius: token.uploadResultBorderRadius,
     '$resultError &': { color: token.uploadResultErrorFontColor },
     '$resultDeleted &': {
       textDecoration: 'line-through',
       color: token.uploadResultDeletedFontColor,
+    },
+    '&:hover': {
+      backgroundColor: token.uploadResultBackgroundColor,
     },
   },
   resultTextBody: {

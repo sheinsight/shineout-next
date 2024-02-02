@@ -172,6 +172,18 @@ const animationStyle = {
   },
 };
 
+const hoverAfterStyles = {
+  content: '""',
+  position: 'absolute',
+  top: -4,
+  right: 0,
+  bottom: 0,
+  left: -4,
+  width: 24,
+  height: 24,
+  borderRadius: '50%',
+};
+
 const modalStyle: JsStyles<ModalClassType> = {
   ...animationStyle,
   wrapper: {
@@ -281,7 +293,7 @@ const modalStyle: JsStyles<ModalClassType> = {
         padding: `${token.modalDrawerBodyPaddingY} ${token.modalDrawerBodyPaddingX}`,
       },
       '& $bodyWithIcon': {
-        paddingLeft: `calc(${token.modalHeaderIconMarginEnd} + ${token.modalHeaderIconSize} + ${token.modalDrawerBodyPaddingX})`,
+        paddingLeft: token.modalDrawerBodyPaddingX,
       },
       '& $footer': {
         padding: `${token.modalDrawerFooterPaddingY} ${token.modalDrawerFooterPaddingX}`,
@@ -375,16 +387,14 @@ const modalStyle: JsStyles<ModalClassType> = {
     },
     '&:hover': {
       '&:after': {
-        content: '""',
-        position: 'absolute',
-        top: -4,
-        right: 0,
-        bottom: 0,
-        left: -4,
-        width: 24,
-        height: 24,
-        borderRadius: '50%',
+        ...hoverAfterStyles,
         background: token.modalHeaderCloseBackgroundColor,
+      },
+    },
+    '$wrapperDrawer &:hover': {
+      '&:after': {
+        ...hoverAfterStyles,
+        background: token.modalDrawerCloseBackgroundColor,
       },
     },
   },

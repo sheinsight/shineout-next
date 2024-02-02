@@ -54,6 +54,9 @@ const modalTokenExtraValue = {
     footer: {
       padding: { y: 'Padding-16', x: 'Padding-16' },
     },
+    close: {
+      background: { color: 'Neutral-fill-3' },
+    },
   },
 };
 

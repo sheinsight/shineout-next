@@ -410,4 +410,10 @@ export interface SelectTokens {
    * @description 选择器多列模式下选项外边距
    */
   selectColumnOptionMargin: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-2
+   * @description 选择器多列模式下背景颜色
+   */
+  selectColumnBackgroundColor: string;
 }

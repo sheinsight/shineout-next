@@ -4,7 +4,7 @@ export const successIcon = (
       display: 'inline-block',
       width: '100%',
       height: '100%',
-      background: '#74d13d',
+      background: '#00A85F',
       overflow: 'hidden',
       borderRadius: '50%',
     }}
@@ -26,7 +26,7 @@ export const warningIcon = (
       display: 'inline-block',
       width: '100%',
       height: '100%',
-      background: '#f7862a',
+      background: '#F56C0A',
       overflow: 'hidden',
       borderRadius: '50%',
     }}

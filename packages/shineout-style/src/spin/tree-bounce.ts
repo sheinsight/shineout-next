@@ -1,5 +1,5 @@
 export default {
-  margin: 'auto',
+  // margin: 'auto',
   textAlign: 'center',
   boxSizing: 'border-box',
   '& $item': {

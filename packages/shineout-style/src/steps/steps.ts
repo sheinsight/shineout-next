@@ -107,7 +107,6 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $verticalLabel': {
         '& $title': {
           lineHeight: Token.lineHeightDynamic,
-          whiteSpace: 'normal',
         },
       },
       '& $title': {
@@ -182,7 +181,6 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $verticalLabel': {
         '& $title': {
           lineHeight: Token.lineHeightDynamic,
-          whiteSpace: 'normal',
         },
       },
     },
@@ -617,7 +615,6 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $verticalLabel': {
       '& $title': {
         lineHeight: Token.lineHeightDynamic,
-        whiteSpace: 'normal',
       },
       '& $description': {
         marginTop: 4,

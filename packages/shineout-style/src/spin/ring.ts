@@ -1,5 +1,5 @@
 export default {
-  margin: 'auto',
+  // margin: 'auto',
   boxSizing: 'border-box',
   position: 'relative',
   borderStyle: 'solid',

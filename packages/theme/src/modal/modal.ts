@@ -29,6 +29,7 @@ const modalTokens: ModalTokens = {
   modalDrawerBodyPaddingX: 'Padding-16',
   modalDrawerFooterPaddingY: 'Padding-16',
   modalDrawerFooterPaddingX: 'Padding-16',
+  modalDrawerCloseBackgroundColor: 'Neutral-fill-3',
   modalFontSize: '14/regular',
 };
 

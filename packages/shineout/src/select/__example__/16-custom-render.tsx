@@ -13,7 +13,7 @@ export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   const shein = <div style={{ background: 'black', color: 'white' }}>SHEIN</div>;
   return (
-    <div style={{ display: 'flex', gap: '24px 32px', flexWrap: 'wrap' }}>
+    <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
       <Select
         header={shein}
         width={300}

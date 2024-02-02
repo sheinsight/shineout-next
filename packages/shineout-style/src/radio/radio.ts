@@ -12,7 +12,8 @@ export type RadioClass =
   | 'desc'
   | 'group'
   | 'groupBlock'
-  | 'groupButton';
+  | 'groupButton'
+  | 'darkIndicatorWrapper';
 
 const radioStyle: JsStyles<RadioClass> = {
   // '@keyframes so-checkinput-focus': {
@@ -76,6 +77,13 @@ const radioStyle: JsStyles<RadioClass> = {
       },
       '& $indicator': {
         backgroundColor: token.radioIconWrapperFill,
+      },
+    },
+  },
+  darkIndicatorWrapper: {
+    '$wrapper:not($wrapperChecked):not($wrapperDisabled):hover &': {
+      '&::before': {
+        background: token.radioIconWrapperDark,
       },
     },
   },
