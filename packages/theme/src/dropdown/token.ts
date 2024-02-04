@@ -43,12 +43,6 @@ const dropdownTokenValue = {
     active: { background: { color: 'Neutral-fill-3' }, font: { color: 'Neutral-text-5' } },
     select: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
     disabled: { background: { color: 'Neutral-fill-1' }, font: { color: 'Neutral-text-2' } },
-    /**
-     * padding: { x: 'Padding-8', top: 'Padding-10', bottom: 'Padding-2' },
-      font: { size: '14/regular', color: 'Neutral-text-3' },
-      small: { x: 'Padding-8', top: 'Padding-4' },
-      large: { x: 'Padding-12', top: 'Padding-14', bottom: 'Padding-4' },
-     */
     group: {
       padding: { x: 'Padding-8', top: 'Padding-10', bottom: 'Padding-2' },
       font: { size: '14/regular', color: 'Neutral-text-3' },
