@@ -14,7 +14,7 @@ export default () => {
   const [value, setValue] = useState([]);
 
   const renderItem = (node: any) => {
-    return <span>{`node ${node.id}`}</span>;
+    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
   const createRange = () => Array.from({ length: Math.round(Math.random() * 4) }, (_, i) => i);

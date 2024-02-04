@@ -42,6 +42,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
     '& $title,$count,$simpleTarget,$removeAll': { fontSize: Token.transferSmallFontSize },
     '& $close': { width: 20 },
+    '& $left, & $right': {
+      padding: 0,
+    },
   },
   large: {
     '& $operations': { '& svg': { width: 16 } },

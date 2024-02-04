@@ -24,7 +24,7 @@ import PaginationText from '../__example__/009-text';
 import PaginationControl from '../__example__/010-control';
 import PaginationSimple from '../__example__/011-simple';
 
-const SO_PREFIX = 'tag';
+const SO_PREFIX = 'pagination';
 const originClasses = ['pagination', 'section', 'jumper'];
 const originItemClasses = ['small', 'large', 'center', 'right'];
 const { pagination, section, jumper, small, large, center, right } = createClassName(

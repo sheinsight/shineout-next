@@ -60,14 +60,14 @@ const QuickSelectDataTime = [
 ];
 
 const App: React.FC = () => (
-  <div>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
     <DatePicker
       range
       type='datetime'
       onChange={(d) => console.log(d)}
       quickSelect={QuickSelectDataTime}
       placeholder={['Start datetime', 'End datetime']}
-      style={{ marginBottom: '12px', display: 'block' }}
+      style={{ display: 'block' }}
     />
 
     <DatePicker placeholder='Quick Date' quickSelect={QuickSelectData} />

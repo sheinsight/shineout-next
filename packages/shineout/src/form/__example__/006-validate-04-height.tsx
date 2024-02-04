@@ -116,7 +116,15 @@ const App: React.FC = () => {
           keygen={(d) => d}
           data={['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet']}
           defaultValue={[]}
+          renderItem={(d) => <div style={{ width: 40 }}>{d}</div>}
           rules={[rules.required('At least select one favorite color'), rules.min(2), rules.max(3)]}
+          style={{
+            display: 'flex',
+            gap: 12,
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            marginTop: 4,
+          }}
         />
       </Form.Item>
 

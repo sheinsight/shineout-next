@@ -10,16 +10,13 @@ import { DatePicker } from 'shineout';
 const Now = Date.now();
 
 const App: React.FC = () => (
-  <div>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
     <DatePicker type='datetime' min={Now} placeholder='Select min datetime' />
-
-    <br />
 
     <DatePicker
       min={Now}
       type='datetime'
       max={Now + 4 * 86400000}
-      style={{ marginTop: '16px' }}
       placeholder='Select min/max datetime'
     />
   </div>

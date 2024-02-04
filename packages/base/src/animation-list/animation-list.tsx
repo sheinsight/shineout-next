@@ -27,7 +27,7 @@ const AnimationList = (props: AnimationListProps) => {
     ...forwardProps
   } = props;
 
-  const [innerStyle, setStyle] = useState({
+  const [innerStyle, setStyle] = useState<React.CSSProperties>({
     display: show ? display : 'none',
   });
   const { current: context } = useRef({
@@ -224,7 +224,11 @@ const AnimationList = (props: AnimationListProps) => {
       className={classNamePo}
       data-sheinx-animation-type={type.join(' ')}
       data-sheinx-animation-duration={duration}
-      style={{ ...style, ...innerStyle }}
+      style={{
+        ...style,
+        ...innerStyle,
+        transform: `${style?.transform || ''} ${innerStyle?.transform || ''}`.trim(),
+      }}
       {...forwardProps}
     >
       {children}

@@ -37,6 +37,16 @@ export type MenuClasses = {
 };
 export type MenuClassType = keyof MenuClasses;
 
+const arrow = {
+  content: '""',
+  position: 'absolute',
+  left: 0,
+  transform: 'translateY(-50%)',
+  border: '6px solid transparent',
+  borderRightColor: token.menuItemBackgroundColor,
+  marginLeft: '-10px',
+};
+
 const menuStyle: JsStyles<MenuClassType> = {
   wrapper: {},
   wrapperLight: {},
@@ -107,12 +117,27 @@ const menuStyle: JsStyles<MenuClassType> = {
     '$wrapperVertical &': {
       position: 'absolute',
       top: 0,
-      right: '-2px',
+      right: '-6px',
       transform: 'translateX(100%)',
       minWidth: 'auto',
       '&$childrenUp': {
         top: 'auto',
         bottom: 0,
+      },
+      '&$childrenUp::before': {
+        top: 'auto',
+        bottom: '20%',
+        ...arrow,
+        '$wrapperDark&': {
+          borderRightColor: token.menuDarkItemBackgroundColor,
+        },
+      },
+      '&::before': {
+        top: '20%',
+        ...arrow,
+        '$wrapperDark&': {
+          borderRightColor: token.menuDarkItemBackgroundColor,
+        },
       },
     },
   },

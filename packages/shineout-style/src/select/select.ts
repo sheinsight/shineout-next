@@ -145,6 +145,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       '& $clearIcon': {
         right: token.selectSmallPaddingX,
       },
+      '& $optionGroupTitle': {
+        padding: `${token.selectGroupTitleSmallTop} ${token.selectGroupTitlePaddingX} 0 ${token.selectGroupTitlePaddingX}`,
+      },
     },
     '&$wrapperLarge': {
       '& $placeholder,$ellipsis,$space,input': {
@@ -160,6 +163,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       },
       '& $clearIcon': {
         right: token.selectLargePaddingX,
+      },
+      '& $optionGroupTitle': {
+        padding: `${token.selectGroupTitleLargeTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitleLargeBottom} ${token.selectGroupTitlePaddingX}`,
       },
     },
     '&:hover': {
@@ -467,7 +473,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   optionGroup: {},
   optionGroupTitle: {
     fontSize: token.selectGroupTitleFontSize,
-    padding: `${token.selectGroupTitlePaddingY} ${token.selectGroupTitlePaddingX}`,
+    padding: `${token.selectGroupTitlePaddingTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitlePaddingBottom} ${token.selectGroupTitlePaddingX}`,
     color: token.selectGroupTitleFontColor,
   },
   header: {

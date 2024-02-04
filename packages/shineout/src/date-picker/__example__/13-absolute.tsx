@@ -10,24 +10,24 @@ import { DatePicker } from 'shineout';
 const Now = Date.now();
 // todo formatResult
 const App: React.FC = () => (
-  <div style={{ padding: 10, height: 150, overflow: 'hidden' }}>
+  <div
+    style={{
+      padding: 10,
+      height: 150,
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '24px',
+    }}
+  >
     <DatePicker
       absolute
       format='x'
       type='datetime'
       defaultValue={new Date()}
-      style={{ marginBottom: 16 }}
       formatResult='YYYY-MM-DD HH:mm:ss'
     />
-    <br />
-    <DatePicker
-      absolute
-      inputable
-      range
-      defaultValue={['2018-05-25', '2018-06-05']}
-      style={{ marginBottom: 16 }}
-    />
-    <br />
+    <DatePicker absolute inputable range defaultValue={['2018-05-25', '2018-06-05']} />
     <DatePicker absolute type='time' defaultValue={Now} />
   </div>
 );

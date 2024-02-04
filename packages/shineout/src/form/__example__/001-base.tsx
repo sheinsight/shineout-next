@@ -1,8 +1,8 @@
 /**
  * cn - 基本用法
- *    --
+ *    -- 表单内置了类似双向绑定的机制，根据表单元素的 name 属性自动下发、收集数据
  * en - Basic usage
- *    --
+ *    -- The form has built-in two-way binding mechanism, which automatically issues and collects data based on the name attribute of the form element
  */
 
 import { Form, Input, Upload, Radio, Checkbox, DatePicker, Rate, Textarea } from 'shineout';

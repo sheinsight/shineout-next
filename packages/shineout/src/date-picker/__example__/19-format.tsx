@@ -35,7 +35,7 @@ const App: React.FC = () => {
         format={format}
         type='datetime'
         placeholder='format date'
-        style={{ marginBottom: 16 }}
+        style={{ marginBottom: 24 }}
         onChange={setValue}
       />
 
@@ -56,10 +56,10 @@ const App: React.FC = () => {
         value={formatResultValue}
         formatResult={formatResult}
         onChange={setFormatResultValue}
-        style={{ marginBottom: 16 }}
+        style={{ marginBottom: 24 }}
       />
 
-      <Input.Group width={240} style={{ marginBottom: 16 }} disabled>
+      <Input.Group width={240} style={{ marginBottom: 24 }} disabled>
         <Input style={{ flex: 1 }} value='value' />
         <Input style={{ flex: 3 }} placeholder='值' value={String(formatResultValue)} />
       </Input.Group>

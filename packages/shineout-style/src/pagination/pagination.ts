@@ -69,6 +69,9 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     '& $icon': {
       width: Token.paginationSmallFontSize,
     },
+    '& $section': {
+      padding: 0,
+    },
   },
   large: {
     '& $icon': {

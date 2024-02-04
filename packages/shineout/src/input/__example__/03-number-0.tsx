@@ -14,7 +14,7 @@
 import React from 'react';
 import { Input } from 'shineout';
 
-const style: React.CSSProperties = { marginBottom: 12 };
+const style: React.CSSProperties = { marginBottom: 24 };
 
 const App: React.FC = () => (
   <div style={{ width: 300 }}>

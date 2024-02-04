@@ -212,6 +212,9 @@ const carouselStyle: JsStyles<CarouselClassType> = {
     width: token.carouselIndicatorWrapperHeight,
     flexDirection: 'column',
     background: 'linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%)',
+    '& $indicatorNumber': {
+      margin: '8px',
+    },
   },
   indicatorRight: {
     right: '0',
@@ -220,6 +223,9 @@ const carouselStyle: JsStyles<CarouselClassType> = {
     width: token.carouselIndicatorWrapperHeight,
     flexDirection: 'column',
     background: 'linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%)',
+    '& $indicatorNumber': {
+      margin: '8px',
+    },
   },
   indicatorOuter: {
     position: 'static',

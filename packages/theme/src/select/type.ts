@@ -388,16 +388,52 @@ export interface SelectTokens {
   selectGroupTitleFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Padding-8
    * @description 选择器分组标题的内边距（水平方向）
    */
   selectGroupTitlePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-6
-   * @description 选择器分组标题的内边距（垂直方向）
+   * @token Padding-10
+   * @description 选择器分组标题的内边距undefined
    */
-  selectGroupTitlePaddingY: string;
+  selectGroupTitlePaddingTop: string;
+  /**
+   * @type {string}
+   * @token Padding-2
+   * @description 选择器分组标题的内边距undefined
+   */
+  selectGroupTitlePaddingBottom: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 选择器分组标题的小尺寸（水平方向）
+   */
+  selectGroupTitleSmallX: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 选择器分组标题的小尺寸undefined
+   */
+  selectGroupTitleSmallTop: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description 选择器分组标题的大尺寸（水平方向）
+   */
+  selectGroupTitleLargeX: string;
+  /**
+   * @type {string}
+   * @token Padding-14
+   * @description 选择器分组标题的大尺寸undefined
+   */
+  selectGroupTitleLargeTop: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 选择器分组标题的大尺寸undefined
+   */
+  selectGroupTitleLargeBottom: string;
   /**
    * @type {string}
    * @token Padding-8

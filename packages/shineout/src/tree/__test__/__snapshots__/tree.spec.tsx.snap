@@ -109,7 +109,9 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 0
               </span>
             </div>
@@ -147,6 +149,7 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
               </span>
               <div
                 class="so-tree-content"
+                data-disabled="true"
               >
                 <div
                   class="so-tree-checkbox so-checkbox-wrapper so-checkbox-wrapper-disabled"
@@ -169,7 +172,9 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 <div
                   class="so-tree-text so-tree-text-disabled"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 0-0
                   </span>
                 </div>
@@ -225,7 +230,9 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 <div
                   class="so-tree-text"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 0-1
                   </span>
                 </div>
@@ -281,7 +288,9 @@ exports[`Tree[Base] should render correctly about disabled 1`] = `
                 <div
                   class="so-tree-text"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 0-2
                   </span>
                 </div>
@@ -337,7 +346,9 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 0
               </span>
             </div>
@@ -377,7 +388,9 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 1
               </span>
             </div>
@@ -417,7 +430,9 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 2
               </span>
             </div>
@@ -457,7 +472,9 @@ exports[`Tree[Base] should render correctly about drag 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 3
               </span>
             </div>
@@ -511,7 +528,9 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 0
               </span>
             </div>
@@ -551,7 +570,9 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 1
               </span>
             </div>
@@ -591,7 +612,9 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 2
               </span>
             </div>
@@ -631,7 +654,9 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 3
               </span>
             </div>
@@ -671,7 +696,9 @@ exports[`Tree[Base] should render correctly about drag style 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 4
               </span>
             </div>
@@ -748,7 +775,9 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 0
               </span>
             </div>
@@ -787,7 +816,9 @@ exports[`Tree[Base] should render correctly about expand 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 1
               </span>
             </div>
@@ -841,7 +872,9 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 0
               </span>
             </div>
@@ -881,7 +914,9 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 1
               </span>
             </div>
@@ -921,7 +956,9 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 2
               </span>
             </div>
@@ -961,7 +998,9 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 3
               </span>
             </div>
@@ -1001,7 +1040,9 @@ exports[`Tree[Base] should render correctly about highlight 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 4
               </span>
             </div>
@@ -1054,7 +1095,9 @@ exports[`Tree[Base] should render correctly about line 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 0
               </span>
             </div>
@@ -1096,7 +1139,9 @@ exports[`Tree[Base] should render correctly about line 1`] = `
                 <div
                   class="so-tree-text"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 0-0
                   </span>
                 </div>
@@ -1135,7 +1180,9 @@ exports[`Tree[Base] should render correctly about line 1`] = `
                 <div
                   class="so-tree-text"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 0-1
                   </span>
                 </div>
@@ -1207,7 +1254,9 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 0
               </span>
             </div>
@@ -1263,7 +1312,9 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 1
               </span>
             </div>
@@ -1319,7 +1370,9 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 2
               </span>
             </div>
@@ -1375,7 +1428,9 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 3
               </span>
             </div>
@@ -1431,7 +1486,9 @@ exports[`Tree[Base] should render correctly about loader 1`] = `
             <div
               class="so-tree-text"
             >
-              <span>
+              <span
+                style="display: inline-block;"
+              >
                 node 4
               </span>
             </div>
@@ -1623,7 +1680,9 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 <div
                   class="so-tree-text"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 0
                   </span>
                 </div>
@@ -1679,7 +1738,9 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 <div
                   class="so-tree-text"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 1
                   </span>
                 </div>
@@ -1735,7 +1796,9 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 <div
                   class="so-tree-text"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 2
                   </span>
                 </div>
@@ -1791,7 +1854,9 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 <div
                   class="so-tree-text"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 3
                   </span>
                 </div>
@@ -1847,7 +1912,9 @@ exports[`Tree[Base] should render correctly about onChange 1`] = `
                 <div
                   class="so-tree-text"
                 >
-                  <span>
+                  <span
+                    style="display: inline-block;"
+                  >
                     node 4
                   </span>
                 </div>

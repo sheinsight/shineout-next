@@ -21,7 +21,11 @@ export default () => {
   const names2 = ['pulse', 'ring', 'scale-circle', 'three-bounce', 'wave', 'chasing-ring'];
 
   const renderTip = (name: string) => {
-    return <span style={{ fontSize: 12 }}>{name}</span>;
+    return (
+      <span style={{ fontSize: 12, lineHeight: 'calc(1em + 8px)', display: 'inline-block' }}>
+        {name}
+      </span>
+    );
   };
   return (
     <div style={{ width: '100%', overflow: 'auto' }}>
