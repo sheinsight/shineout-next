@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import classNames from 'classnames';
 import { TreeProps, TreeClasses } from './tree.type';
-import { KeygenResult, useTree, util } from '@sheinx/hooks';
+import { KeygenResult, useTree, util, usePrevious } from '@sheinx/hooks';
 import RootTree from './tree-root';
 import { produce } from 'immer';
 import { Provider } from './tree-context';
@@ -52,12 +52,8 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
     ...rest
   } = props;
 
-  // [TODO] - Props: dataUpdate
-  // [TODO] - This is a workaround for the issue of data not updating when dataProps changes.
-  // const [data, setData] = useState<DataItem[]>(dataProps);
-  // useEffect(() => {
-  //   if (dataProps !== data && dataUpdate) setData(dataProps);
-  // }, [dataProps])
+  const prevData = usePrevious(data);
+
   const { datum, updateMap, expanded, onExpand } = useTree({
     mode,
     value,
@@ -184,12 +180,26 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
   };
 
   useEffect(() => {
-    if (onRef) onRef(datum);
-  }, []);
-
-  useEffect(() => {
     handleUpdateExpanded(expanded);
   }, [expanded]);
+
+  // [TODO] - Props: dataUpdate
+  // [TODO] - This is a workaround for the issue of data not updating when dataProps changes.
+  useEffect(() => {
+    if (!prevData) return;
+    if (prevData !== data && dataUpdate) {
+      datum.setData(data);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (!value) return;
+    datum.setValue(value);
+  }, [value]);
+
+  useEffect(() => {
+    if (onRef) onRef(datum);
+  }, []);
 
   return (
     <div className={rootClass} {...rest}>

@@ -34,7 +34,6 @@ const useCascader = <DataItem, Value extends KeygenResult[]>(
     disabled,
     isControlled: control,
   });
-  console.log(datum);
 
   return {
     datum,

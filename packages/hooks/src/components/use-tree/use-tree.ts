@@ -57,6 +57,14 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     onExpand: onExpandProp,
   } = props;
 
+  // const {} = useInputAble({
+  //   value: props.value,
+  //   defaultValue: props.defaultValue,
+  //   control: props.control,
+  //   onChange: props.onChange,
+  //   beforeChange: props.beforeChange,
+  // });
+
   const { value: expanded, onChange: onExpand } = useInputAble({
     value: expandedProp,
     defaultValue: defaultExpanded,
@@ -71,7 +79,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     valueMap: new Map<Value, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
     disabled: false,
-    value: [],
+    value: undefined,
     data: [],
     cachedValue: [],
   });
@@ -180,8 +188,6 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
 
   const setValueMap = (id: Value, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
-    // const update = context.updateMap.get(id)
-    // update()
   };
 
   const initData = (
@@ -196,6 +202,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
       const id = getKey(item, path[path.length - 1], i) as Value;
       // 重复 id 警告
       if (context.dataMap.get(id)) {
+        console.error(`There is already a key "${id}" exists. The key must be unique.`);
         return;
       }
       // 制作 data mapping
@@ -207,9 +214,10 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
         isDisabled = context.disabled(item);
       }
 
+      const indexPath = [...index, i];
+
       ids.push(id);
 
-      const indexPath = [...index, i];
       let children: Value[] = [];
 
       if (Array.isArray(item[childrenKey])) {
@@ -223,11 +231,11 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
       }
 
       context.pathMap.set(id, {
-        index: i,
-        path,
         children,
+        path,
         isDisabled,
         indexPath,
+        index: i,
       });
     }
     return ids;
@@ -259,7 +267,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
       if (forceCheck) {
         setValueMap(item, 1);
         initValue(children, forceCheck);
-        return;
+        continue;
       }
 
       let childChecked: CheckedStatusType = context.value!.indexOf(item) >= 0 ? 1 : 0;
@@ -325,7 +333,6 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     context.valueMap = new Map();
     context.disabled = getDisabled();
     context.data = data;
-
     if (!data) return;
 
     initData(data, []);
@@ -376,13 +383,11 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return current;
   };
 
-  useEffect(() => {
+  if (firstRender.current) {
     setValue(value);
     setData(data);
-    setTimeout(() => {
-      firstRender.current = false;
-    });
-  }, [data]);
+    firstRender.current = false;
+  }
 
   useEffect(() => {
     if (defaultExpandAll) {
@@ -407,6 +412,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     getKey,
     getDataByValues,
     setValue,
+    setData,
     isDisabled,
     bindNode,
     getDataById,
