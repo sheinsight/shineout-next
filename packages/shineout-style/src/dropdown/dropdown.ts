@@ -133,9 +133,15 @@ const dropdown: JsStyles<DropDownClass> = {
   },
   itemDisabled: {},
   optionGroup: {
-    padding: `${token.dropdownOptionGroupPaddingY} ${token.dropdownOptionGroupPaddingX}`,
+    padding: `${token.dropdownOptionGroupPaddingTop} ${token.dropdownOptionGroupPaddingX} ${token.dropdownOptionGroupPaddingBottom} ${token.dropdownOptionGroupPaddingX}`,
     fontSize: token.dropdownOptionGroupFontSize,
     color: token.dropdownOptionGroupFontColor,
+    '$listSmall &': {
+      padding: `${token.dropdownOptionGroupSmallTop} ${token.dropdownOptionGroupSmallX} 0 ${token.dropdownOptionGroupSmallX}`,
+    },
+    '$listLarge &': {
+      padding: `${token.dropdownOptionGroupLargeTop} ${token.dropdownOptionGroupLargeX} ${token.dropdownOptionGroupLargeBottom} ${token.dropdownOptionGroupLargeX}`,
+    },
   },
   optionDivider: {
     padding: `${token.dropdownOptionDividerPaddingY} ${token.dropdownOptionDividerPaddingX}`,

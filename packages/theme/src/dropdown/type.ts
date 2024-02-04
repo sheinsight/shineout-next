@@ -208,10 +208,16 @@ export interface DropdownTokens {
   dropdownOptionGroupPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
-   * @description 下拉菜单undefinedundefined内边距（垂直方向）
+   * @token Padding-10
+   * @description 下拉菜单undefinedundefined内边距undefined
    */
-  dropdownOptionGroupPaddingY: string;
+  dropdownOptionGroupPaddingTop: string;
+  /**
+   * @type {string}
+   * @token Padding-2
+   * @description 下拉菜单undefinedundefined内边距undefined
+   */
+  dropdownOptionGroupPaddingBottom: string;
   /**
    * @type {string}
    * @token 14/regular
@@ -224,6 +230,36 @@ export interface DropdownTokens {
    * @description 下拉菜单undefinedundefined字体颜色
    */
   dropdownOptionGroupFontColor: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 下拉菜单undefinedundefined小尺寸（水平方向）
+   */
+  dropdownOptionGroupSmallX: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 下拉菜单undefinedundefined小尺寸undefined
+   */
+  dropdownOptionGroupSmallTop: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description 下拉菜单undefinedundefined大尺寸（水平方向）
+   */
+  dropdownOptionGroupLargeX: string;
+  /**
+   * @type {string}
+   * @token Padding-14
+   * @description 下拉菜单undefinedundefined大尺寸undefined
+   */
+  dropdownOptionGroupLargeTop: string;
+  /**
+   * @type {string}
+   * @token Padding-4
+   * @description 下拉菜单undefinedundefined大尺寸undefined
+   */
+  dropdownOptionGroupLargeBottom: string;
   /**
    * @type {string}
    * @token Neutral-border-1
