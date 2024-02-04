@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import {
   util,
@@ -9,6 +9,7 @@ import {
   KeygenResult,
   UnMatchedData,
   ObjectKey,
+  usePrevious,
 } from '@sheinx/hooks';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
@@ -81,6 +82,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
   const isFirstRender = useRef(true);
+  const prevData = usePrevious(data);
 
   const {
     filterText,
@@ -510,6 +512,18 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
     return renderFilterList();
   };
+
+  useEffect(() => {
+    if (!prevData) return;
+    if (prevData !== data) {
+      datum.setData(data);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (!value) return;
+    datum.setValue(value);
+  }, [value]);
 
   return (
     <div

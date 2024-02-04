@@ -49,6 +49,7 @@ export type CascaderClasses = {
   optionCheckbox: string;
   activeOption: string;
   optionIcon: string;
+  optionSpin: string;
   optionInner: string;
   optionLeaf: string;
   optionHover: string;
@@ -435,6 +436,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       verticalAlign: 'middle',
       width: 14,
     },
+  },
+  optionSpin: {
+    paddingTop: 2,
   },
   optionHover: {},
   optionActive: {

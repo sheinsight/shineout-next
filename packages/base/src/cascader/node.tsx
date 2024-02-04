@@ -54,8 +54,8 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     if (!multiple) {
       if (onChange && path) onChange([...path, id] as Value, datum.getDataById(id));
     }
-
-    if (loader && !loading && !util.getParent(e.target as HTMLElement, checkboxRef.current)) {
+    // [TODO] - className Search
+    if (loader && !loading && !util.getParent(e.target as HTMLElement, '.so-checkbox-indicator')) {
       setLoading(true);
       loader(id, data);
     }
@@ -91,11 +91,22 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderIcon = () => {
-    return <span className={classNames(styles.optionIcon)}>{Icons.ArrowRight}</span>;
+    if (loading && children === undefined) {
+      return (
+        <span className={classNames(styles.optionIcon)} style={{ paddingTop: 2 }}>
+          <Spin jssStyle={jssStyle} size={10} name='ring' />
+        </span>
+      );
+    }
+    if (hasChildren || uncertainChildren) {
+      return <span className={classNames(styles.optionIcon)}>{Icons.ArrowRight}</span>;
+    }
+
+    return null;
   };
   return (
     <div className={rootClass} {...getEvents()}>
-      <div className={classNames(styles.optionInner, !hasChildren && styles.optionLeaf)}>
+      <div className={classNames(styles.optionInner)}>
         {multiple && !(shouldFinal && hasChildren) && (
           <Checkbox
             jssStyle={jssStyle}
@@ -106,8 +117,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
           />
         )}
         {renderContent()}
-        {loading && children === undefined && <Spin size={10} name='ring' />}
-        {(hasChildren || uncertainChildren) && renderIcon()}
+        {renderIcon()}
       </div>
     </div>
   );

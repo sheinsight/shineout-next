@@ -47,7 +47,7 @@ export default () => {
       <Cascader
         width={300}
         expandTrigger='hover'
-        placeholder='Cascader'
+        placeholder='Please select city'
         data={data}
         keygen='value'
         renderItem={(n) => `${n?.value}`}

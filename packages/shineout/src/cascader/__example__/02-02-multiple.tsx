@@ -53,7 +53,7 @@ export default () => {
         compressed
         compressedBound={2}
         width={300}
-        placeholder='Cascader'
+        placeholder='Please select city'
         data={data}
         keygen='value'
         renderItem={(n) => `${n?.value}`}

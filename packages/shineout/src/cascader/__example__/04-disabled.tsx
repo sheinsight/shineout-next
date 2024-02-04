@@ -48,39 +48,43 @@ export default () => {
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32, width: 632 }}>
-      {/* <Cascader
+      <Cascader
         width={300}
         disabled
-        placeholder='Cascader'
+        placeholder='Please select city'
         data={data}
         keygen='value'
-        renderItem={(n) => `${n?.value}`}
+        renderItem={(n) => `${n.value}`}
       />
       <Cascader
         width={300}
         disabled={handleDisabled}
-        placeholder='Cascader'
+        placeholder='Please select city'
         data={data}
         keygen='value'
-        renderItem={(n) => `${n?.value}`}
-      /> */}
+        renderItem={(n) => `${n.value}`}
+      />
       <Cascader
         width={300}
         disabled
+        mode={0}
+        onChange={(v) => console.log(v)}
         defaultValue={['jiangsu', 'nanjing']}
-        placeholder='Cascader'
+        placeholder='Please select city'
         data={data}
         keygen='value'
-        renderItem={(n) => `${n?.value}`}
+        renderItem={(n) => `${n.value}`}
       />
-      {/* <Cascader
+      <Cascader
+        mode={0}
+        onChange={(v) => console.log(v)}
         width={300}
-        disabled
-        placeholder='Cascader'
+        disabled={handleDisabled}
+        placeholder='Please select city'
         data={data}
         keygen='value'
-        renderItem={(n) => `${n?.value}`}
-      /> */}
+        renderItem={(n) => `${n.value}`}
+      />
     </div>
   );
 };

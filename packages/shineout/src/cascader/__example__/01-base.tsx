@@ -44,7 +44,13 @@ const data: DataItem[] = [
 export default () => {
   return (
     <div>
-      <Cascader width={300} placeholder='Cascader' data={data} keygen='value' renderItem={(n) => `${n?.value}`} />
+      <Cascader
+        width={300}
+        placeholder='Please select city'
+        data={data}
+        keygen='value'
+        renderItem={(n) => `${n?.value}`}
+      />
     </div>
   );
 };
