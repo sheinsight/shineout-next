@@ -437,7 +437,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                     <span
                       class="so-datePicker-picker-header-info"
                     >
-                      1
+                      2
                     </span>
                   </div>
                   <div
@@ -507,6 +507,39 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                         class="so-datePicker-picker-row"
                       >
                         <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              29
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              30
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              31
+                            </span>
+                          </div>
+                        </td>
+                        <td
                           class="so-datePicker-picker-cell"
                         >
                           <div
@@ -540,7 +573,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="so-datePicker-picker-cell"
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                         >
                           <div
                             class="so-datePicker-picker-cell-content"
@@ -550,6 +583,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -583,10 +620,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -631,6 +664,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -664,10 +701,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -712,6 +745,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -745,10 +782,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -793,6 +826,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -826,10 +863,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -838,28 +871,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           >
                             <span>
                               29
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
-                        >
-                          <div
-                            class="so-datePicker-picker-cell-content"
-                          >
-                            <span>
-                              30
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="so-datePicker-picker-cell"
-                        >
-                          <div
-                            class="so-datePicker-picker-cell-content"
-                          >
-                            <span>
-                              31
                             </span>
                           </div>
                         </td>
@@ -896,6 +907,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
                           class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
                         >
@@ -907,10 +922,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
                         >
@@ -974,17 +985,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           >
                             <span>
                               10
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
-                        >
-                          <div
-                            class="so-datePicker-picker-cell-content"
-                          >
-                            <span>
-                              11
                             </span>
                           </div>
                         </td>

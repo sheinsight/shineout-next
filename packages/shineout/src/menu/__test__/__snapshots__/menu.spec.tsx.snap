@@ -43,7 +43,9 @@ exports[`Menu[Base] should render correctly  1`] = `
             <div
               class="so-menu-expand so-menu-expand-back"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -114,7 +116,9 @@ exports[`Menu[Base] should render correctly  1`] = `
             <div
               class="so-menu-expand so-menu-expand-back"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -168,7 +172,9 @@ exports[`Menu[Base] should render correctly  1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-back"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -303,7 +309,9 @@ exports[`Menu[Base] should render correctly about click 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -374,7 +382,9 @@ exports[`Menu[Base] should render correctly about click 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -428,7 +438,9 @@ exports[`Menu[Base] should render correctly about click 1`] = `
               <div
                 class="so-menu-expand so-menu-expand-back"
               >
-                <div>
+                <div
+                  class="so-menu-icon"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -532,7 +544,9 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back so-menu-expand-hover"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -603,7 +617,9 @@ exports[`Menu[Base] should render correctly about click father 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back so-menu-expand-hover"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -720,7 +736,9 @@ exports[`Menu[Base] should render correctly about control 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -791,7 +809,9 @@ exports[`Menu[Base] should render correctly about control 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -845,7 +865,9 @@ exports[`Menu[Base] should render correctly about control 1`] = `
               <div
                 class="so-menu-expand so-menu-expand-back"
               >
-                <div>
+                <div
+                  class="so-menu-icon"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -925,7 +947,7 @@ exports[`Menu[Base] should render correctly about control 1`] = `
 exports[`Menu[Base] should render correctly about dark 1`] = `
 <div>
   <div
-    class="so-menu-wrapper so-menu-wrapper-inline so-menu-wrapper-has-expand so-menu-wrapper-dark"
+    class="so-menu-wrapper so-menu-wrapper-vertical so-menu-wrapper-has-expand so-menu-wrapper-dark"
     style="width: 256px;"
   >
     <div
@@ -933,6 +955,7 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
     >
       <ul
         class="so-menu-root"
+        style="width: 256px;"
       >
         <li
           class="so-menu-item so-menu-item-active"
@@ -965,7 +988,9 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
             <div
               class="so-menu-expand so-menu-expand-back"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -988,9 +1013,6 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
               <div
                 class="so-menu-item-content so-menu-item-content-back"
               >
-                <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
                 <a
                   class="so-menu-title"
                 >
@@ -1006,9 +1028,6 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
               <div
                 class="so-menu-item-content so-menu-item-content-back"
               >
-                <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
                 <a
                   class="so-menu-title"
                 >
@@ -1036,7 +1055,9 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
             <div
               class="so-menu-expand so-menu-expand-back"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -1059,9 +1080,6 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
               <div
                 class="so-menu-item-content so-menu-item-content-back"
               >
-                <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
                 <a
                   class="so-menu-title"
                 >
@@ -1077,9 +1095,6 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
               <div
                 class="so-menu-item-content so-menu-item-content-back"
               >
-                <div
-                  style="width: 24px; flex-shrink: 0;"
-                />
                 <a
                   class="so-menu-title"
                 >
@@ -1090,7 +1105,9 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-back"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1113,9 +1130,6 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                   <div
                     class="so-menu-item-content so-menu-item-content-back"
                   >
-                    <div
-                      style="width: 48px; flex-shrink: 0;"
-                    />
                     <a
                       class="so-menu-title"
                     >
@@ -1131,9 +1145,6 @@ exports[`Menu[Base] should render correctly about dark 1`] = `
                   <div
                     class="so-menu-item-content so-menu-item-content-back"
                   >
-                    <div
-                      style="width: 48px; flex-shrink: 0;"
-                    />
                     <a
                       class="so-menu-title"
                     >
@@ -1210,7 +1221,9 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -1281,7 +1294,9 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -1335,7 +1350,9 @@ exports[`Menu[Base] should render correctly about disabled 1`] = `
               <div
                 class="so-menu-expand so-menu-expand-back"
               >
-                <div>
+                <div
+                  class="so-menu-icon"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -1435,7 +1452,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <div
               class="so-menu-expand so-menu-expand-front"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -1466,7 +1485,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <div
               class="so-menu-expand so-menu-expand-front"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -1502,7 +1523,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-front"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1536,7 +1559,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-front"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1569,7 +1594,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <div
               class="so-menu-expand so-menu-expand-front"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -1605,7 +1632,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-front"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1639,7 +1668,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-front"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1675,7 +1706,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     <div
                       class="so-menu-expand so-menu-expand-front"
                     >
-                      <div>
+                      <div
+                        class="so-menu-icon"
+                      >
                         <svg
                           aria-hidden="true"
                           fill="currentColor"
@@ -1709,7 +1742,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     <div
                       class="so-menu-expand so-menu-expand-front"
                     >
-                      <div>
+                      <div
+                        class="so-menu-icon"
+                      >
                         <svg
                           aria-hidden="true"
                           fill="currentColor"
@@ -1744,7 +1779,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <div
               class="so-menu-expand so-menu-expand-front"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -1788,7 +1825,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <div
               class="so-menu-expand so-menu-expand-front"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -1819,7 +1858,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <div
               class="so-menu-expand so-menu-expand-front"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -1855,7 +1896,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-front"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1889,7 +1932,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-front"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1922,7 +1967,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <div
               class="so-menu-expand so-menu-expand-front"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -1958,7 +2005,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-front"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1992,7 +2041,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                 <div
                   class="so-menu-expand so-menu-expand-front"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -2028,7 +2079,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     <div
                       class="so-menu-expand so-menu-expand-front"
                     >
-                      <div>
+                      <div
+                        class="so-menu-icon"
+                      >
                         <svg
                           aria-hidden="true"
                           fill="currentColor"
@@ -2062,7 +2115,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                     <div
                       class="so-menu-expand so-menu-expand-front"
                     >
-                      <div>
+                      <div
+                        class="so-menu-icon"
+                      >
                         <svg
                           aria-hidden="true"
                           fill="currentColor"
@@ -2097,7 +2152,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
             <div
               class="so-menu-expand so-menu-expand-front"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -2142,7 +2199,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               class="so-menu-expand so-menu-expand-front"
               style="color: green;"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -2174,7 +2233,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               class="so-menu-expand so-menu-expand-front"
               style="color: green;"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -2211,7 +2272,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="so-menu-expand so-menu-expand-front"
                   style="color: green;"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -2246,7 +2309,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="so-menu-expand so-menu-expand-front"
                   style="color: green;"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -2280,7 +2345,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               class="so-menu-expand so-menu-expand-front"
               style="color: green;"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -2317,7 +2384,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="so-menu-expand so-menu-expand-front"
                   style="color: green;"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -2352,7 +2421,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                   class="so-menu-expand so-menu-expand-front"
                   style="color: green;"
                 >
-                  <div>
+                  <div
+                    class="so-menu-icon"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -2389,7 +2460,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="so-menu-expand so-menu-expand-front"
                       style="color: green;"
                     >
-                      <div>
+                      <div
+                        class="so-menu-icon"
+                      >
                         <svg
                           aria-hidden="true"
                           fill="currentColor"
@@ -2424,7 +2497,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
                       class="so-menu-expand so-menu-expand-front"
                       style="color: green;"
                     >
-                      <div>
+                      <div
+                        class="so-menu-icon"
+                      >
                         <svg
                           aria-hidden="true"
                           fill="currentColor"
@@ -2460,7 +2535,9 @@ exports[`Menu[Base] should render correctly about front 1`] = `
               class="so-menu-expand so-menu-expand-front"
               style="color: green;"
             >
-              <div>
+              <div
+                class="so-menu-icon"
+              >
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -2529,7 +2606,9 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -2562,7 +2641,9 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
               <div
                 class="so-menu-expand so-menu-expand-back"
               >
-                <div>
+                <div
+                  class="so-menu-icon"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -2644,7 +2725,9 @@ exports[`Menu[Base] should render correctly about horizontal 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -2841,7 +2924,9 @@ exports[`Menu[Base] should render correctly about render 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -2923,7 +3008,9 @@ exports[`Menu[Base] should render correctly about render 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -2977,7 +3064,9 @@ exports[`Menu[Base] should render correctly about render 1`] = `
               <div
                 class="so-menu-expand so-menu-expand-back"
               >
-                <div>
+                <div
+                  class="so-menu-icon"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -3108,7 +3197,9 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -3308,7 +3399,9 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
           <div
             class="so-menu-expand so-menu-expand-back"
           >
-            <div>
+            <div
+              class="so-menu-icon"
+            >
               <svg
                 aria-hidden="true"
                 fill="currentColor"
@@ -3356,7 +3449,9 @@ exports[`Menu[Base] should render correctly about vertical 1`] = `
               <div
                 class="so-menu-expand so-menu-expand-back"
               >
-                <div>
+                <div
+                  class="so-menu-icon"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"

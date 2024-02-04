@@ -53,7 +53,7 @@ describe('Gap[Base]', () => {
       .querySelector('.demo')
       ?.querySelectorAll('div')
       .forEach((item) => {
-        styleTest(item, baseItemStyle);
+        styleTest(item, `width: 10px; ${baseItemStyle}`);
       });
   });
   test('should render when set column and row', () => {

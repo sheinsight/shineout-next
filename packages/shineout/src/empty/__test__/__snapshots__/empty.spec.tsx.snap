@@ -428,8 +428,11 @@ exports[`Empty[Base] should render correctly anout image 1`] = `
     >
       <button
         class="so-button-primary so-button-button"
+        type="button"
       >
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Refresh
         </span>
       </button>

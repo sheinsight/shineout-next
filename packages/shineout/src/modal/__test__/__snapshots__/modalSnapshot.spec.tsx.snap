@@ -9,7 +9,7 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 400px; top: 10vh;"
+      style="top: 10vh; width: 400px;"
     >
       <div
         class="so-modal-header"
@@ -60,7 +60,9 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
           class="so-button-secondary so-button-button so-button-outline"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             Cancel
           </span>
         </button>
@@ -68,7 +70,9 @@ exports[`Modal[SnapShot] should render correctly  1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             Ok
           </span>
         </button>
@@ -87,7 +91,7 @@ exports[`Modal[SnapShot] should render correctly about close 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -124,7 +128,9 @@ exports[`Modal[SnapShot] should render correctly about close 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -143,7 +149,7 @@ exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -180,7 +186,9 @@ exports[`Modal[SnapShot] should render correctly about confirm 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -199,7 +207,7 @@ exports[`Modal[SnapShot] should render correctly about container 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -236,7 +244,9 @@ exports[`Modal[SnapShot] should render correctly about container 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -255,7 +265,7 @@ exports[`Modal[SnapShot] should render correctly about focus 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -292,7 +302,9 @@ exports[`Modal[SnapShot] should render correctly about focus 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -311,7 +323,7 @@ exports[`Modal[SnapShot] should render correctly about form 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -348,7 +360,9 @@ exports[`Modal[SnapShot] should render correctly about form 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -367,7 +381,7 @@ exports[`Modal[SnapShot] should render correctly about icon 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -404,7 +418,9 @@ exports[`Modal[SnapShot] should render correctly about icon 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -423,7 +439,7 @@ exports[`Modal[SnapShot] should render correctly about move 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -460,7 +476,9 @@ exports[`Modal[SnapShot] should render correctly about move 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -479,7 +497,7 @@ exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -516,7 +534,9 @@ exports[`Modal[SnapShot] should render correctly about multiple 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -535,7 +555,7 @@ exports[`Modal[SnapShot] should render correctly about position 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -572,7 +592,9 @@ exports[`Modal[SnapShot] should render correctly about position 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -591,7 +613,7 @@ exports[`Modal[SnapShot] should render correctly about type 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -628,7 +650,9 @@ exports[`Modal[SnapShot] should render correctly about type 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>
@@ -647,7 +671,7 @@ exports[`Modal[SnapShot] should render correctly about zoom 1`] = `
   >
     <div
       class="so-modal-panel"
-      style="width: 500px; top: 10vh;"
+      style="top: 10vh; width: 500px;"
     >
       <div
         class="so-modal-header"
@@ -684,7 +708,9 @@ exports[`Modal[SnapShot] should render correctly about zoom 1`] = `
           class="so-button-primary so-button-button"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             确定
           </span>
         </button>

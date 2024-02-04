@@ -356,6 +356,7 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
   >
     <div
       class="so-collapseItem-wrapper"
+      style="background: rgb(244, 245, 248);"
     >
       <div
         class="so-collapseItem-header so-collapseItem-region"
@@ -366,13 +367,16 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
           class="so-collapseItem-icon so-collapseItem-active-transform"
         >
           <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
+            height="24"
             viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289L18.7071 11.2929L18.7903 11.3871C19.0953 11.7794 19.0676 12.3466 18.7071 12.7071L12.7071 18.7071L12.6129 18.7903C12.2206 19.0953 11.6534 19.0676 11.2929 18.7071L11.2097 18.6129C10.9047 18.2206 10.9324 17.6534 11.2929 17.2929L15.8779 12.7072C16.2683 12.3165 16.2683 11.6835 15.8779 11.2928L11.2929 6.70711L11.2097 6.6129C10.9047 6.22061 10.9324 5.65338 11.2929 5.29289ZM5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12.7071 11.2929L12.7903 11.3871C13.0953 11.7794 13.0676 12.3466 12.7071 12.7071L6.70711 18.7071L6.6129 18.7903C6.22061 19.0953 5.65338 19.0676 5.29289 18.7071L5.2097 18.6129C4.90468 18.2206 4.93241 17.6534 5.29289 17.2929L9.87795 12.7072C10.2683 12.3165 10.2683 11.6835 9.87795 11.2928L5.29289 6.70711L5.2097 6.6129C4.90468 6.22061 4.93241 5.65338 5.29289 5.29289Z"
+              clip-rule="evenodd"
+              d="M10.6957 5.75207L16.2694 11.3386C16.6589 11.7289 16.6589 12.3609 16.2694 12.7512L10.7576 18.2751C10.3675 18.6661 9.73435 18.6668 9.3434 18.2767C9.15675 18.0904 9.05121 17.838 9.04974 17.5744L8.98776 6.46395C8.98467 5.91168 9.42988 5.46147 9.98216 5.45839C10.2497 5.4569 10.5067 5.56268 10.6957 5.75207Z"
+              fill="#666C7C"
+              fill-rule="evenodd"
             />
           </svg>
         </div>
@@ -390,6 +394,7 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
       >
         <div
           class="so-collapseItem-content-main"
+          style="background: rgb(255, 255, 255);"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
@@ -397,6 +402,7 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
     </div>
     <div
       class="so-collapseItem-wrapper so-collapseItem-active"
+      style="background: rgb(244, 245, 248);"
     >
       <div
         class="so-collapseItem-header so-collapseItem-region"
@@ -407,13 +413,16 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
           class="so-collapseItem-icon so-collapseItem-active-transform"
         >
           <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
+            height="24"
             viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289L18.7071 11.2929L18.7903 11.3871C19.0953 11.7794 19.0676 12.3466 18.7071 12.7071L12.7071 18.7071L12.6129 18.7903C12.2206 19.0953 11.6534 19.0676 11.2929 18.7071L11.2097 18.6129C10.9047 18.2206 10.9324 17.6534 11.2929 17.2929L15.8779 12.7072C16.2683 12.3165 16.2683 11.6835 15.8779 11.2928L11.2929 6.70711L11.2097 6.6129C10.9047 6.22061 10.9324 5.65338 11.2929 5.29289ZM5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12.7071 11.2929L12.7903 11.3871C13.0953 11.7794 13.0676 12.3466 12.7071 12.7071L6.70711 18.7071L6.6129 18.7903C6.22061 19.0953 5.65338 19.0676 5.29289 18.7071L5.2097 18.6129C4.90468 18.2206 4.93241 17.6534 5.29289 17.2929L9.87795 12.7072C10.2683 12.3165 10.2683 11.6835 9.87795 11.2928L5.29289 6.70711L5.2097 6.6129C4.90468 6.22061 4.93241 5.65338 5.29289 5.29289Z"
+              clip-rule="evenodd"
+              d="M10.6957 5.75207L16.2694 11.3386C16.6589 11.7289 16.6589 12.3609 16.2694 12.7512L10.7576 18.2751C10.3675 18.6661 9.73435 18.6668 9.3434 18.2767C9.15675 18.0904 9.05121 17.838 9.04974 17.5744L8.98776 6.46395C8.98467 5.91168 9.42988 5.46147 9.98216 5.45839C10.2497 5.4569 10.5067 5.56268 10.6957 5.75207Z"
+              fill="#666C7C"
+              fill-rule="evenodd"
             />
           </svg>
         </div>
@@ -431,30 +440,35 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
       >
         <div
           class="so-collapseItem-content-main"
+          style="background: rgb(255, 255, 255);"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="so-collapseItem-wrapper so-collapseItem-disabled"
+      style="background: rgb(244, 245, 248);"
     >
       <div
         class="so-collapseItem-header so-collapseItem-region"
-        data-soui-disabled="false"
-        tabindex="0"
+        data-soui-disabled="true"
+        tabindex="-1"
       >
         <div
           class="so-collapseItem-icon so-collapseItem-active-transform"
         >
           <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
+            height="24"
             viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289L18.7071 11.2929L18.7903 11.3871C19.0953 11.7794 19.0676 12.3466 18.7071 12.7071L12.7071 18.7071L12.6129 18.7903C12.2206 19.0953 11.6534 19.0676 11.2929 18.7071L11.2097 18.6129C10.9047 18.2206 10.9324 17.6534 11.2929 17.2929L15.8779 12.7072C16.2683 12.3165 16.2683 11.6835 15.8779 11.2928L11.2929 6.70711L11.2097 6.6129C10.9047 6.22061 10.9324 5.65338 11.2929 5.29289ZM5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12.7071 11.2929L12.7903 11.3871C13.0953 11.7794 13.0676 12.3466 12.7071 12.7071L6.70711 18.7071L6.6129 18.7903C6.22061 19.0953 5.65338 19.0676 5.29289 18.7071L5.2097 18.6129C4.90468 18.2206 4.93241 17.6534 5.29289 17.2929L9.87795 12.7072C10.2683 12.3165 10.2683 11.6835 9.87795 11.2928L5.29289 6.70711L5.2097 6.6129C4.90468 6.22061 4.93241 5.65338 5.29289 5.29289Z"
+              clip-rule="evenodd"
+              d="M10.6957 5.75207L16.2694 11.3386C16.6589 11.7289 16.6589 12.3609 16.2694 12.7512L10.7576 18.2751C10.3675 18.6661 9.73435 18.6668 9.3434 18.2767C9.15675 18.0904 9.05121 17.838 9.04974 17.5744L8.98776 6.46395C8.98467 5.91168 9.42988 5.46147 9.98216 5.45839C10.2497 5.4569 10.5067 5.56268 10.6957 5.75207Z"
+              fill="#666C7C"
+              fill-rule="evenodd"
             />
           </svg>
         </div>
@@ -472,6 +486,7 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
       >
         <div
           class="so-collapseItem-content-main"
+          style="background: rgb(255, 255, 255);"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
@@ -560,6 +575,7 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
         >
           <div
             class="so-checkbox-wrapper"
+            style="margin: 0px;"
           >
             <input
               style="display: none;"

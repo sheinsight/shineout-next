@@ -62,6 +62,7 @@ export type SelectClasses = {
   columnsOption: string;
   columnsRadio: string;
   columnsCheckbox: string;
+  footer: string;
 };
 export type SelectClassType = keyof SelectClasses;
 

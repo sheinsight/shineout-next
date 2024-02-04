@@ -8,7 +8,7 @@ exports[`Upload[Base] should render correctly  1`] = `
     class="so-upload-handler"
   >
     <button
-      class="so-button-default so-button-button so-button-outline"
+      class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
       <svg
@@ -24,7 +24,9 @@ exports[`Upload[Base] should render correctly  1`] = `
           fill="currentColor"
         />
       </svg>
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Upload file
       </span>
     </button>
@@ -101,7 +103,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       class="so-upload-handler"
     >
       <button
-        class="so-button-default so-button-button so-button-outline"
+        class="so-button-secondary so-button-button so-button-outline"
         type="button"
       >
         <svg
@@ -117,7 +119,9 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Upload file
         </span>
       </button>
@@ -204,33 +208,10 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
         <div
           class="so-image-default-placeholder"
         >
-          <svg
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g
-              clip-path="url(#clip0_1483_450)"
-            >
-              <path
-                d="M7.99984 0.666626C12.0499 0.666626 15.3332 3.94987 15.3332 7.99996C15.3332 12.05 12.0499 15.3333 7.99984 15.3333C3.94975 15.3333 0.666504 12.05 0.666504 7.99996C0.666504 7.63177 0.964981 7.33329 1.33317 7.33329C1.70136 7.33329 1.99984 7.63177 1.99984 7.99996C1.99984 11.3137 4.68613 14 7.99984 14C11.3135 14 13.9998 11.3137 13.9998 7.99996C13.9998 4.68625 11.3135 1.99996 7.99984 1.99996C7.63165 1.99996 7.33317 1.70148 7.33317 1.33329C7.33317 0.965103 7.63165 0.666626 7.99984 0.666626Z"
-                fill="#B3B7C1"
-              />
-            </g>
-            <defs>
-              <clippath
-                id="clip0_1483_450"
-              >
-                <rect
-                  fill="white"
-                  height="16"
-                  width="16"
-                />
-              </clippath>
-            </defs>
-          </svg>
+          <div
+            class="so-spin-ring"
+            style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+          />
         </div>
       </div>
       <div
@@ -310,7 +291,7 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
       class="so-upload-handler"
     >
       <button
-        class="so-button-default so-button-button so-button-outline"
+        class="so-button-secondary so-button-button so-button-outline"
         type="button"
       >
         <svg
@@ -326,7 +307,9 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Upload file
         </span>
       </button>
@@ -405,8 +388,8 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
 exports[`Upload[Base] should render correctly about drag 1`] = `
 <div>
   <div
-    class="so-upload-wrapper"
-    style="width: 100%;"
+    class="so-upload-wrapper so-upload-wrapper-drop"
+    style="width: 400px;"
   >
     <span
       class="so-upload-drop-item"
@@ -416,12 +399,12 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
         class="so-upload-handler"
       >
         <div
-          style="padding: 60px 0px; text-align: center;"
+          style="height: 200px; box-sizing: border-box; padding: 50px 16px; font-size: 12px; line-height: 16px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;"
         >
           <svg
             fill="none"
             height="20"
-            style="font-size: 28px;"
+            style="font-size: 20px; margin-bottom: 16px;"
             viewBox="0 0 20 20"
             width="20"
             xmlns="http://www.w3.org/2000/svg"
@@ -432,7 +415,7 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
             />
           </svg>
           <p
-            style="margin: 12px 0px 0px 0px; font-size: 14px;"
+            style="margin: 0px;"
           >
             Click or drag file to this area to upload
           </p>
@@ -449,8 +432,7 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
     style="margin-top: 24px;"
   />
   <div
-    class="so-upload-wrapper so-upload-wrapper-image"
-    style="width: 100%;"
+    class="so-upload-wrapper so-upload-wrapper-image so-upload-wrapper-drop"
   >
     <span
       class="so-upload-drop-item"
@@ -458,16 +440,16 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
     >
       <span
         class="so-upload-image-handler"
-        style="width: 230px; height: 180px;"
+        style="width: 200px; height: 156px;"
       >
         <div
-          style="text-align: center;"
+          style="text-align: center; padding: 50px 16px; font-size: 12px; line-height: 16px;"
         >
           <svg
-            height="24"
-            style="font-size: 20px;"
+            height="20"
+            style="font-size: 20px; margin-bottom: 16px;"
             viewBox="0 0 24 24"
-            width="24"
+            width="20"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -476,7 +458,7 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
             />
           </svg>
           <p
-            style="margin: 0px; font-size: 14px;"
+            style="margin: 0px;"
           >
             Click or drag image to upload
           </p>
@@ -501,7 +483,7 @@ exports[`Upload[Base] should render correctly about handle error 1`] = `
       class="so-upload-handler"
     >
       <button
-        class="so-button-default so-button-button so-button-outline"
+        class="so-button-secondary so-button-button so-button-outline"
         type="button"
       >
         <svg
@@ -517,7 +499,9 @@ exports[`Upload[Base] should render correctly about handle error 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Upload file
         </span>
       </button>
@@ -540,7 +524,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
       class="so-upload-handler"
     >
       <button
-        class="so-button-default so-button-button so-button-outline"
+        class="so-button-secondary so-button-button so-button-outline"
         type="button"
       >
         <svg
@@ -556,7 +540,9 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Upload file
         </span>
       </button>
@@ -631,6 +617,29 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
     class="so-upload-wrapper so-upload-wrapper-image"
     style="margin-top: 24px;"
   >
+    <span
+      class="so-upload-image-handler"
+      style="width: 80px; height: 80px;"
+    >
+      <div
+        class="so-upload-image-handler-icon"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12.0317 4C12.5445 4.00067 12.9667 4.38727 13.0238 4.88468L13.0303 5.00131L13.022 11H19C19.5523 11 20 11.4477 20 12C20 12.5128 19.614 12.9355 19.1166 12.9933L19 13H13.02L13.012 19.0013C13.0113 19.5536 12.563 20.0007 12.0107 20C11.4979 19.9993 11.0757 19.6127 11.0186 19.1153L11.012 18.9987L11.02 13H5C4.44772 13 4 12.5523 4 12C4 11.4872 4.38604 11.0645 4.88338 11.0067L5 11H11.022L11.0304 4.99869C11.0311 4.44641 11.4794 3.99928 12.0317 4Z"
+          />
+        </svg>
+      </div>
+      <input
+        style="display: none;"
+        type="file"
+      />
+    </span>
     <div
       class="so-upload-image-result so-upload-result-success"
       style="width: 80px; height: 80px;"
@@ -642,33 +651,10 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
         <div
           class="so-image-default-placeholder"
         >
-          <svg
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g
-              clip-path="url(#clip0_1483_450)"
-            >
-              <path
-                d="M7.99984 0.666626C12.0499 0.666626 15.3332 3.94987 15.3332 7.99996C15.3332 12.05 12.0499 15.3333 7.99984 15.3333C3.94975 15.3333 0.666504 12.05 0.666504 7.99996C0.666504 7.63177 0.964981 7.33329 1.33317 7.33329C1.70136 7.33329 1.99984 7.63177 1.99984 7.99996C1.99984 11.3137 4.68613 14 7.99984 14C11.3135 14 13.9998 11.3137 13.9998 7.99996C13.9998 4.68625 11.3135 1.99996 7.99984 1.99996C7.63165 1.99996 7.33317 1.70148 7.33317 1.33329C7.33317 0.965103 7.63165 0.666626 7.99984 0.666626Z"
-                fill="#B3B7C1"
-              />
-            </g>
-            <defs>
-              <clippath
-                id="clip0_1483_450"
-              >
-                <rect
-                  fill="white"
-                  height="16"
-                  width="16"
-                />
-              </clippath>
-            </defs>
-          </svg>
+          <div
+            class="so-spin-ring"
+            style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+          />
         </div>
       </div>
       <div
@@ -710,29 +696,6 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
         </div>
       </div>
     </div>
-    <span
-      class="so-upload-image-handler"
-      style="width: 80px; height: 80px;"
-    >
-      <div
-        class="so-upload-image-handler-icon"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12.0317 4C12.5445 4.00067 12.9667 4.38727 13.0238 4.88468L13.0303 5.00131L13.022 11H19C19.5523 11 20 11.4477 20 12C20 12.5128 19.614 12.9355 19.1166 12.9933L19 13H13.02L13.012 19.0013C13.0113 19.5536 12.563 20.0007 12.0107 20C11.4979 19.9993 11.0757 19.6127 11.0186 19.1153L11.012 18.9987L11.02 13H5C4.44772 13 4 12.5523 4 12C4 11.4872 4.38604 11.0645 4.88338 11.0067L5 11H11.022L11.0304 4.99869C11.0311 4.44641 11.4794 3.99928 12.0317 4Z"
-          />
-        </svg>
-      </div>
-      <input
-        style="display: none;"
-        type="file"
-      />
-    </span>
   </div>
 </div>
 `;
@@ -745,7 +708,7 @@ exports[`Upload[Base] should render correctly about request 1`] = `
     class="so-upload-handler"
   >
     <button
-      class="so-button-default so-button-button so-button-outline"
+      class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
       <svg
@@ -761,7 +724,9 @@ exports[`Upload[Base] should render correctly about request 1`] = `
           fill="currentColor"
         />
       </svg>
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Upload file
       </span>
     </button>
@@ -782,7 +747,7 @@ exports[`Upload[Base] should render correctly about request ignore 1`] = `
     class="so-upload-handler"
   >
     <button
-      class="so-button-default so-button-button so-button-outline"
+      class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
       <svg
@@ -798,7 +763,9 @@ exports[`Upload[Base] should render correctly about request ignore 1`] = `
           fill="currentColor"
         />
       </svg>
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Upload file
       </span>
     </button>
@@ -820,7 +787,7 @@ exports[`Upload[Base] should render correctly about request zip 1`] = `
     class="so-upload-handler"
   >
     <button
-      class="so-button-default so-button-button so-button-outline"
+      class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
       <svg
@@ -836,7 +803,9 @@ exports[`Upload[Base] should render correctly about request zip 1`] = `
           fill="currentColor"
         />
       </svg>
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Upload file
       </span>
     </button>
@@ -856,7 +825,7 @@ exports[`Upload[Base] should render correctly about result 1`] = `
     class="so-upload-handler"
   >
     <button
-      class="so-button-default so-button-button so-button-outline"
+      class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
       <svg
@@ -872,7 +841,9 @@ exports[`Upload[Base] should render correctly about result 1`] = `
           fill="currentColor"
         />
       </svg>
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Upload file
       </span>
     </button>
@@ -925,29 +896,33 @@ exports[`Upload[Base] should render correctly about validate image 1`] = `
     style="width: 400px; height: 200px;"
   >
     <div
-      style="margin: auto; font-size: 14px; text-align: center;"
+      style="padding: 50px 16px;"
     >
-      <svg
-        fill="none"
-        height="20"
-        viewBox="0 0 20 20"
-        width="20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M10.0263 3.33484C10.4537 3.3354 10.8055 3.65756 10.8531 4.07207L10.8585 4.16927L10.8516 9.16817H15.8333C16.2935 9.16817 16.6666 9.54127 16.6666 10.0015C16.6666 10.4289 16.3449 10.7811 15.9304 10.8292L15.8333 10.8348H10.8499L10.8433 15.8359C10.8426 16.2962 10.4691 16.6688 10.0088 16.6682C9.58146 16.6676 9.22966 16.3455 9.18207 15.9309L9.17659 15.8337L9.18325 10.8348H4.16659C3.70635 10.8348 3.33325 10.4617 3.33325 10.0015C3.33325 9.57414 3.65495 9.22192 4.0694 9.17378L4.16659 9.16817H9.18492L9.19188 4.16708C9.19248 3.70684 9.56607 3.33424 10.0263 3.33484Z"
-          fill="currentColor"
-        />
-      </svg>
       <div
-        style="margin-top: 16px;"
+        style="margin: auto; font-size: 12px; text-align: center; line-height: 16px;"
       >
-        Upload Image
-      </div>
-      <div
-        style="margin-top: 16px;"
-      >
-        Allow size 200 * 100
+        <svg
+          fill="none"
+          height="20"
+          viewBox="0 0 20 20"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10.0263 3.33484C10.4537 3.3354 10.8055 3.65756 10.8531 4.07207L10.8585 4.16927L10.8516 9.16817H15.8333C16.2935 9.16817 16.6666 9.54127 16.6666 10.0015C16.6666 10.4289 16.3449 10.7811 15.9304 10.8292L15.8333 10.8348H10.8499L10.8433 15.8359C10.8426 16.2962 10.4691 16.6688 10.0088 16.6682C9.58146 16.6676 9.22966 16.3455 9.18207 15.9309L9.17659 15.8337L9.18325 10.8348H4.16659C3.70635 10.8348 3.33325 10.4617 3.33325 10.0015C3.33325 9.57414 3.65495 9.22192 4.0694 9.17378L4.16659 9.16817H9.18492L9.19188 4.16708C9.19248 3.70684 9.56607 3.33424 10.0263 3.33484Z"
+            fill="currentColor"
+          />
+        </svg>
+        <div
+          style="margin-top: 16px;"
+        >
+          Upload Image
+        </div>
+        <div
+          style="margin-top: 4px;"
+        >
+          Allow size 200 * 100
+        </div>
       </div>
     </div>
     <input
@@ -968,7 +943,7 @@ exports[`Upload[Base] should render correctly about validate size 1`] = `
       class="so-upload-handler"
     >
       <button
-        class="so-button-default so-button-button so-button-outline"
+        class="so-button-secondary so-button-button so-button-outline"
         type="button"
       >
         <svg
@@ -984,7 +959,9 @@ exports[`Upload[Base] should render correctly about validate size 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Upload file
         </span>
       </button>

@@ -182,16 +182,17 @@ describe('Rate[Base]', () => {
   });
   test('should render when set different background and icon', () => {
     const { container } = render(<RateLevel />);
-    const rateItems = container.querySelectorAll(item);
+    const wrappers = container.querySelectorAll(wrapper);
+    const rateItems = wrappers[0].querySelectorAll(item);
     fireEvent.mouseEnter(rateItems[2].querySelector(itemFront)!);
     rateItems.forEach((item, index) => {
-      if (index > 3) return;
-      classTest(item.querySelector(itemFront)?.querySelector('i') as Element, 'icon-sleeping');
+      if (index > 2) classTest(item, itemChecked, false);
+      else classTest(item, itemChecked);
     });
     fireEvent.mouseEnter(rateItems[3].querySelector(itemFront)!);
     rateItems.forEach((item, index) => {
-      if (index > 3) return;
-      classTest(item.querySelector(itemFront)?.querySelector('i') as Element, 'icon-happy');
+      if (index > 3) classTest(item, itemChecked, false);
+      else classTest(item, itemChecked);
     });
   });
   test('should render when set repeat is false', () => {

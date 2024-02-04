@@ -9,7 +9,9 @@ exports[`Button[Base] should render correctly  1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Primary
     </span>
   </button>
@@ -18,7 +20,9 @@ exports[`Button[Base] should render correctly  1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Secondary
     </span>
   </button>
@@ -27,7 +31,9 @@ exports[`Button[Base] should render correctly  1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Outline
     </span>
   </button>
@@ -36,7 +42,9 @@ exports[`Button[Base] should render correctly  1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Dashed
     </span>
   </button>
@@ -45,7 +53,9 @@ exports[`Button[Base] should render correctly  1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Text
     </span>
   </button>
@@ -65,7 +75,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Primary
       </span>
     </button>
@@ -75,7 +87,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Primary
       </span>
     </button>
@@ -85,7 +99,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Primary
       </span>
     </button>
@@ -95,7 +111,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Primary
       </span>
     </button>
@@ -109,7 +127,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Danger
       </span>
     </button>
@@ -119,7 +139,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Danger
       </span>
     </button>
@@ -129,7 +151,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Danger
       </span>
     </button>
@@ -139,7 +163,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Danger
       </span>
     </button>
@@ -153,7 +179,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Warning
       </span>
     </button>
@@ -163,7 +191,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Warning
       </span>
     </button>
@@ -173,7 +203,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Warning
       </span>
     </button>
@@ -183,7 +215,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Warning
       </span>
     </button>
@@ -197,7 +231,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Success
       </span>
     </button>
@@ -207,7 +243,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Success
       </span>
     </button>
@@ -217,7 +255,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Success
       </span>
     </button>
@@ -227,7 +267,9 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Success
       </span>
     </button>
@@ -246,7 +288,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-primary so-button-button so-button-text"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -254,7 +298,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-secondary so-button-button so-button-text"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -262,7 +308,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-secondary so-button-button so-button-text"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -271,7 +319,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       disabled=""
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -283,7 +333,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -291,7 +343,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-secondary so-button-button"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -299,7 +353,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-secondary so-button-button"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -307,7 +363,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-secondary so-button-button"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -319,7 +377,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -327,7 +387,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -335,7 +397,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -343,7 +407,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
       class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -358,7 +424,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
         class="so-button-primary so-button-button"
         type="button"
       >
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Publish
         </span>
       </button>
@@ -367,7 +435,7 @@ exports[`Button[Base] should render correctly about group 1`] = `
         type="button"
       >
         <span
-          style="display: inline-flex; line-height: 22px;"
+          style="display: inline-flex; align-items: center; line-height: 22px;"
         >
           <svg
             fill="none"
@@ -391,7 +459,9 @@ exports[`Button[Base] should render correctly about group 1`] = `
         class="so-button-secondary so-button-button"
         type="button"
       >
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Publish
         </span>
       </button>
@@ -400,7 +470,7 @@ exports[`Button[Base] should render correctly about group 1`] = `
         type="button"
       >
         <span
-          style="display: inline-flex; line-height: 22px;"
+          style="display: inline-flex; align-items: center; line-height: 22px;"
         >
           <svg
             fill="none"
@@ -430,22 +500,23 @@ exports[`Button[Base] should render correctly about icon 1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span
-      style="display: flex; align-items: center; justify-content: center; gap: 4px;"
+    <svg
+      fill="none"
+      height="14"
+      style="margin-right: 4px;"
+      viewBox="0 0 24 24"
+      width="14"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        fill="none"
-        height="14"
-        viewBox="0 0 24 24"
-        width="14"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.1277 12.6744L14.706 12.6805L15.2223 12.6925L15.6829 12.7117L15.7902 12.7177L15.8944 12.7243L16.2838 12.7567C17.0824 12.8374 17.6032 12.9908 18.1427 13.2738C19.0608 13.7553 19.815 14.496 20.3182 15.4004L20.4388 15.6299L20.5331 15.8296L20.5549 15.8791L20.5761 15.9285L20.6541 16.1276L20.672 16.178L20.6893 16.2289L20.7525 16.4381L20.8067 16.6601L20.8189 16.7182L20.8306 16.7775L20.8725 17.0278L20.907 17.303L20.9349 17.608L20.9568 17.9475L20.9733 18.3264L20.9897 18.9792L20.9991 20.0326L21 21.3025C21 21.818 20.587 22.2423 20.0565 22.2966L19.9412 22.3025H4.05882C3.51294 22.3025 3.06369 21.9123 3.00621 21.4112L3 21.3022L3.00035 20.0105L3.00336 19.4085L3.01669 18.6212L3.03295 18.165L3.0563 17.7569L3.08778 17.3908L3.09704 17.3052L3.10689 17.2217L3.15247 16.9077L3.19362 16.6905L3.24121 16.4862L3.31544 16.2295C3.38268 16.0216 3.46373 15.8269 3.56125 15.6298C4.06047 14.6212 4.86271 13.7954 5.85729 13.2737C6.33682 13.0222 6.80166 12.8731 7.45989 12.7864L7.7162 12.7567L8.10556 12.7243L8.20982 12.7177L8.31705 12.7117L8.77771 12.6925L9.29398 12.6805L9.87234 12.6744H14.1277ZM14.0877 14.6742H9.91425L9.78201 14.6751L9.65386 14.6762L8.96581 14.6883L8.57784 14.7024L8.24002 14.722L7.94682 14.7476C7.85591 14.7572 7.77152 14.7679 7.69273 14.7798L7.57862 14.7986L7.37286 14.8418C7.18067 14.889 7.02646 14.9482 6.88541 15.0222C6.35273 15.3016 5.90352 15.7341 5.59052 16.2708L5.47964 16.4768L5.44372 16.5528L5.37878 16.7131L5.32258 16.8887L5.30983 16.9356L5.29759 16.9839L5.25346 17.1921L5.21667 17.4286L5.20855 17.4928L5.20085 17.5591L5.17404 17.8477L5.15316 18.1776L5.13768 18.5538L5.12703 18.9815L5.12066 19.466L5.11765 20.3018H18.8813L18.8762 19.3237L18.8646 18.6863L18.8453 18.1584L18.8275 17.8595L18.8051 17.5977L18.7778 17.3681L18.745 17.1661L18.7065 16.9872L18.6616 16.8265L18.6494 16.7887L18.6367 16.7516L18.5816 16.6096L18.5204 16.4768C18.2075 15.8447 17.7139 15.3365 17.1146 15.0222C17.0088 14.9667 16.8956 14.9195 16.7646 14.8795L16.6272 14.8418L16.4215 14.7986L16.3655 14.7889L16.3074 14.7798L16.0535 14.7476L15.9841 14.7406L15.9122 14.734L15.5976 14.7115L15.2356 14.6947L14.8209 14.6832L14.0877 14.6742ZM12 1C14.7614 1 17 3.23858 17 6C17 8.76142 14.7614 11 12 11C9.23858 11 7 8.76142 7 6C7 3.23858 9.23858 1 12 1ZM12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3Z"
-          fill="#ffffff"
-        />
-      </svg>
-       Primary
+      <path
+        d="M14.1277 12.6744L14.706 12.6805L15.2223 12.6925L15.6829 12.7117L15.7902 12.7177L15.8944 12.7243L16.2838 12.7567C17.0824 12.8374 17.6032 12.9908 18.1427 13.2738C19.0608 13.7553 19.815 14.496 20.3182 15.4004L20.4388 15.6299L20.5331 15.8296L20.5549 15.8791L20.5761 15.9285L20.6541 16.1276L20.672 16.178L20.6893 16.2289L20.7525 16.4381L20.8067 16.6601L20.8189 16.7182L20.8306 16.7775L20.8725 17.0278L20.907 17.303L20.9349 17.608L20.9568 17.9475L20.9733 18.3264L20.9897 18.9792L20.9991 20.0326L21 21.3025C21 21.818 20.587 22.2423 20.0565 22.2966L19.9412 22.3025H4.05882C3.51294 22.3025 3.06369 21.9123 3.00621 21.4112L3 21.3022L3.00035 20.0105L3.00336 19.4085L3.01669 18.6212L3.03295 18.165L3.0563 17.7569L3.08778 17.3908L3.09704 17.3052L3.10689 17.2217L3.15247 16.9077L3.19362 16.6905L3.24121 16.4862L3.31544 16.2295C3.38268 16.0216 3.46373 15.8269 3.56125 15.6298C4.06047 14.6212 4.86271 13.7954 5.85729 13.2737C6.33682 13.0222 6.80166 12.8731 7.45989 12.7864L7.7162 12.7567L8.10556 12.7243L8.20982 12.7177L8.31705 12.7117L8.77771 12.6925L9.29398 12.6805L9.87234 12.6744H14.1277ZM14.0877 14.6742H9.91425L9.78201 14.6751L9.65386 14.6762L8.96581 14.6883L8.57784 14.7024L8.24002 14.722L7.94682 14.7476C7.85591 14.7572 7.77152 14.7679 7.69273 14.7798L7.57862 14.7986L7.37286 14.8418C7.18067 14.889 7.02646 14.9482 6.88541 15.0222C6.35273 15.3016 5.90352 15.7341 5.59052 16.2708L5.47964 16.4768L5.44372 16.5528L5.37878 16.7131L5.32258 16.8887L5.30983 16.9356L5.29759 16.9839L5.25346 17.1921L5.21667 17.4286L5.20855 17.4928L5.20085 17.5591L5.17404 17.8477L5.15316 18.1776L5.13768 18.5538L5.12703 18.9815L5.12066 19.466L5.11765 20.3018H18.8813L18.8762 19.3237L18.8646 18.6863L18.8453 18.1584L18.8275 17.8595L18.8051 17.5977L18.7778 17.3681L18.745 17.1661L18.7065 16.9872L18.6616 16.8265L18.6494 16.7887L18.6367 16.7516L18.5816 16.6096L18.5204 16.4768C18.2075 15.8447 17.7139 15.3365 17.1146 15.0222C17.0088 14.9667 16.8956 14.9195 16.7646 14.8795L16.6272 14.8418L16.4215 14.7986L16.3655 14.7889L16.3074 14.7798L16.0535 14.7476L15.9841 14.7406L15.9122 14.734L15.5976 14.7115L15.2356 14.6947L14.8209 14.6832L14.0877 14.6742ZM12 1C14.7614 1 17 3.23858 17 6C17 8.76142 14.7614 11 12 11C9.23858 11 7 8.76142 7 6C7 3.23858 9.23858 1 12 1ZM12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3Z"
+        fill="#ffffff"
+      />
+    </svg>
+    <span
+      class="so-button-space-wrapper"
+    >
+      Primary
     </span>
   </button>
   <button
@@ -454,44 +525,41 @@ exports[`Button[Base] should render correctly about icon 1`] = `
     type="button"
   >
     <span
-      style="display: flex; align-items: center; justify-content: center; gap: 4px;"
+      class="so-button-space-wrapper"
     >
-      Primary 
-      <svg
-        fill="none"
-        height="14"
-        viewBox="0 0 24 24"
-        width="14"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.1277 12.6744L14.706 12.6805L15.2223 12.6925L15.6829 12.7117L15.7902 12.7177L15.8944 12.7243L16.2838 12.7567C17.0824 12.8374 17.6032 12.9908 18.1427 13.2738C19.0608 13.7553 19.815 14.496 20.3182 15.4004L20.4388 15.6299L20.5331 15.8296L20.5549 15.8791L20.5761 15.9285L20.6541 16.1276L20.672 16.178L20.6893 16.2289L20.7525 16.4381L20.8067 16.6601L20.8189 16.7182L20.8306 16.7775L20.8725 17.0278L20.907 17.303L20.9349 17.608L20.9568 17.9475L20.9733 18.3264L20.9897 18.9792L20.9991 20.0326L21 21.3025C21 21.818 20.587 22.2423 20.0565 22.2966L19.9412 22.3025H4.05882C3.51294 22.3025 3.06369 21.9123 3.00621 21.4112L3 21.3022L3.00035 20.0105L3.00336 19.4085L3.01669 18.6212L3.03295 18.165L3.0563 17.7569L3.08778 17.3908L3.09704 17.3052L3.10689 17.2217L3.15247 16.9077L3.19362 16.6905L3.24121 16.4862L3.31544 16.2295C3.38268 16.0216 3.46373 15.8269 3.56125 15.6298C4.06047 14.6212 4.86271 13.7954 5.85729 13.2737C6.33682 13.0222 6.80166 12.8731 7.45989 12.7864L7.7162 12.7567L8.10556 12.7243L8.20982 12.7177L8.31705 12.7117L8.77771 12.6925L9.29398 12.6805L9.87234 12.6744H14.1277ZM14.0877 14.6742H9.91425L9.78201 14.6751L9.65386 14.6762L8.96581 14.6883L8.57784 14.7024L8.24002 14.722L7.94682 14.7476C7.85591 14.7572 7.77152 14.7679 7.69273 14.7798L7.57862 14.7986L7.37286 14.8418C7.18067 14.889 7.02646 14.9482 6.88541 15.0222C6.35273 15.3016 5.90352 15.7341 5.59052 16.2708L5.47964 16.4768L5.44372 16.5528L5.37878 16.7131L5.32258 16.8887L5.30983 16.9356L5.29759 16.9839L5.25346 17.1921L5.21667 17.4286L5.20855 17.4928L5.20085 17.5591L5.17404 17.8477L5.15316 18.1776L5.13768 18.5538L5.12703 18.9815L5.12066 19.466L5.11765 20.3018H18.8813L18.8762 19.3237L18.8646 18.6863L18.8453 18.1584L18.8275 17.8595L18.8051 17.5977L18.7778 17.3681L18.745 17.1661L18.7065 16.9872L18.6616 16.8265L18.6494 16.7887L18.6367 16.7516L18.5816 16.6096L18.5204 16.4768C18.2075 15.8447 17.7139 15.3365 17.1146 15.0222C17.0088 14.9667 16.8956 14.9195 16.7646 14.8795L16.6272 14.8418L16.4215 14.7986L16.3655 14.7889L16.3074 14.7798L16.0535 14.7476L15.9841 14.7406L15.9122 14.734L15.5976 14.7115L15.2356 14.6947L14.8209 14.6832L14.0877 14.6742ZM12 1C14.7614 1 17 3.23858 17 6C17 8.76142 14.7614 11 12 11C9.23858 11 7 8.76142 7 6C7 3.23858 9.23858 1 12 1ZM12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3Z"
-          fill="#ffffff"
-        />
-      </svg>
+      Primary
     </span>
+    <svg
+      fill="none"
+      height="14"
+      style="margin-left: 4px;"
+      viewBox="0 0 24 24"
+      width="14"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.1277 12.6744L14.706 12.6805L15.2223 12.6925L15.6829 12.7117L15.7902 12.7177L15.8944 12.7243L16.2838 12.7567C17.0824 12.8374 17.6032 12.9908 18.1427 13.2738C19.0608 13.7553 19.815 14.496 20.3182 15.4004L20.4388 15.6299L20.5331 15.8296L20.5549 15.8791L20.5761 15.9285L20.6541 16.1276L20.672 16.178L20.6893 16.2289L20.7525 16.4381L20.8067 16.6601L20.8189 16.7182L20.8306 16.7775L20.8725 17.0278L20.907 17.303L20.9349 17.608L20.9568 17.9475L20.9733 18.3264L20.9897 18.9792L20.9991 20.0326L21 21.3025C21 21.818 20.587 22.2423 20.0565 22.2966L19.9412 22.3025H4.05882C3.51294 22.3025 3.06369 21.9123 3.00621 21.4112L3 21.3022L3.00035 20.0105L3.00336 19.4085L3.01669 18.6212L3.03295 18.165L3.0563 17.7569L3.08778 17.3908L3.09704 17.3052L3.10689 17.2217L3.15247 16.9077L3.19362 16.6905L3.24121 16.4862L3.31544 16.2295C3.38268 16.0216 3.46373 15.8269 3.56125 15.6298C4.06047 14.6212 4.86271 13.7954 5.85729 13.2737C6.33682 13.0222 6.80166 12.8731 7.45989 12.7864L7.7162 12.7567L8.10556 12.7243L8.20982 12.7177L8.31705 12.7117L8.77771 12.6925L9.29398 12.6805L9.87234 12.6744H14.1277ZM14.0877 14.6742H9.91425L9.78201 14.6751L9.65386 14.6762L8.96581 14.6883L8.57784 14.7024L8.24002 14.722L7.94682 14.7476C7.85591 14.7572 7.77152 14.7679 7.69273 14.7798L7.57862 14.7986L7.37286 14.8418C7.18067 14.889 7.02646 14.9482 6.88541 15.0222C6.35273 15.3016 5.90352 15.7341 5.59052 16.2708L5.47964 16.4768L5.44372 16.5528L5.37878 16.7131L5.32258 16.8887L5.30983 16.9356L5.29759 16.9839L5.25346 17.1921L5.21667 17.4286L5.20855 17.4928L5.20085 17.5591L5.17404 17.8477L5.15316 18.1776L5.13768 18.5538L5.12703 18.9815L5.12066 19.466L5.11765 20.3018H18.8813L18.8762 19.3237L18.8646 18.6863L18.8453 18.1584L18.8275 17.8595L18.8051 17.5977L18.7778 17.3681L18.745 17.1661L18.7065 16.9872L18.6616 16.8265L18.6494 16.7887L18.6367 16.7516L18.5816 16.6096L18.5204 16.4768C18.2075 15.8447 17.7139 15.3365 17.1146 15.0222C17.0088 14.9667 16.8956 14.9195 16.7646 14.8795L16.6272 14.8418L16.4215 14.7986L16.3655 14.7889L16.3074 14.7798L16.0535 14.7476L15.9841 14.7406L15.9122 14.734L15.5976 14.7115L15.2356 14.6947L14.8209 14.6832L14.0877 14.6742ZM12 1C14.7614 1 17 3.23858 17 6C17 8.76142 14.7614 11 12 11C9.23858 11 7 8.76142 7 6C7 3.23858 9.23858 1 12 1ZM12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3Z"
+        fill="#ffffff"
+      />
+    </svg>
   </button>
   <button
     class="so-button-primary so-button-button so-button-square"
     style="margin: 0px;"
     type="button"
   >
-    <span
-      style="display: flex; align-items: center; justify-content: center; gap: 4px;"
+    <svg
+      fill="none"
+      height="14"
+      viewBox="0 0 24 24"
+      width="14"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        fill="none"
-        height="14"
-        viewBox="0 0 24 24"
-        width="14"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.1277 12.6744L14.706 12.6805L15.2223 12.6925L15.6829 12.7117L15.7902 12.7177L15.8944 12.7243L16.2838 12.7567C17.0824 12.8374 17.6032 12.9908 18.1427 13.2738C19.0608 13.7553 19.815 14.496 20.3182 15.4004L20.4388 15.6299L20.5331 15.8296L20.5549 15.8791L20.5761 15.9285L20.6541 16.1276L20.672 16.178L20.6893 16.2289L20.7525 16.4381L20.8067 16.6601L20.8189 16.7182L20.8306 16.7775L20.8725 17.0278L20.907 17.303L20.9349 17.608L20.9568 17.9475L20.9733 18.3264L20.9897 18.9792L20.9991 20.0326L21 21.3025C21 21.818 20.587 22.2423 20.0565 22.2966L19.9412 22.3025H4.05882C3.51294 22.3025 3.06369 21.9123 3.00621 21.4112L3 21.3022L3.00035 20.0105L3.00336 19.4085L3.01669 18.6212L3.03295 18.165L3.0563 17.7569L3.08778 17.3908L3.09704 17.3052L3.10689 17.2217L3.15247 16.9077L3.19362 16.6905L3.24121 16.4862L3.31544 16.2295C3.38268 16.0216 3.46373 15.8269 3.56125 15.6298C4.06047 14.6212 4.86271 13.7954 5.85729 13.2737C6.33682 13.0222 6.80166 12.8731 7.45989 12.7864L7.7162 12.7567L8.10556 12.7243L8.20982 12.7177L8.31705 12.7117L8.77771 12.6925L9.29398 12.6805L9.87234 12.6744H14.1277ZM14.0877 14.6742H9.91425L9.78201 14.6751L9.65386 14.6762L8.96581 14.6883L8.57784 14.7024L8.24002 14.722L7.94682 14.7476C7.85591 14.7572 7.77152 14.7679 7.69273 14.7798L7.57862 14.7986L7.37286 14.8418C7.18067 14.889 7.02646 14.9482 6.88541 15.0222C6.35273 15.3016 5.90352 15.7341 5.59052 16.2708L5.47964 16.4768L5.44372 16.5528L5.37878 16.7131L5.32258 16.8887L5.30983 16.9356L5.29759 16.9839L5.25346 17.1921L5.21667 17.4286L5.20855 17.4928L5.20085 17.5591L5.17404 17.8477L5.15316 18.1776L5.13768 18.5538L5.12703 18.9815L5.12066 19.466L5.11765 20.3018H18.8813L18.8762 19.3237L18.8646 18.6863L18.8453 18.1584L18.8275 17.8595L18.8051 17.5977L18.7778 17.3681L18.745 17.1661L18.7065 16.9872L18.6616 16.8265L18.6494 16.7887L18.6367 16.7516L18.5816 16.6096L18.5204 16.4768C18.2075 15.8447 17.7139 15.3365 17.1146 15.0222C17.0088 14.9667 16.8956 14.9195 16.7646 14.8795L16.6272 14.8418L16.4215 14.7986L16.3655 14.7889L16.3074 14.7798L16.0535 14.7476L15.9841 14.7406L15.9122 14.734L15.5976 14.7115L15.2356 14.6947L14.8209 14.6832L14.0877 14.6742ZM12 1C14.7614 1 17 3.23858 17 6C17 8.76142 14.7614 11 12 11C9.23858 11 7 8.76142 7 6C7 3.23858 9.23858 1 12 1ZM12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3Z"
-          fill="#ffffff"
-        />
-      </svg>
-    </span>
+      <path
+        d="M14.1277 12.6744L14.706 12.6805L15.2223 12.6925L15.6829 12.7117L15.7902 12.7177L15.8944 12.7243L16.2838 12.7567C17.0824 12.8374 17.6032 12.9908 18.1427 13.2738C19.0608 13.7553 19.815 14.496 20.3182 15.4004L20.4388 15.6299L20.5331 15.8296L20.5549 15.8791L20.5761 15.9285L20.6541 16.1276L20.672 16.178L20.6893 16.2289L20.7525 16.4381L20.8067 16.6601L20.8189 16.7182L20.8306 16.7775L20.8725 17.0278L20.907 17.303L20.9349 17.608L20.9568 17.9475L20.9733 18.3264L20.9897 18.9792L20.9991 20.0326L21 21.3025C21 21.818 20.587 22.2423 20.0565 22.2966L19.9412 22.3025H4.05882C3.51294 22.3025 3.06369 21.9123 3.00621 21.4112L3 21.3022L3.00035 20.0105L3.00336 19.4085L3.01669 18.6212L3.03295 18.165L3.0563 17.7569L3.08778 17.3908L3.09704 17.3052L3.10689 17.2217L3.15247 16.9077L3.19362 16.6905L3.24121 16.4862L3.31544 16.2295C3.38268 16.0216 3.46373 15.8269 3.56125 15.6298C4.06047 14.6212 4.86271 13.7954 5.85729 13.2737C6.33682 13.0222 6.80166 12.8731 7.45989 12.7864L7.7162 12.7567L8.10556 12.7243L8.20982 12.7177L8.31705 12.7117L8.77771 12.6925L9.29398 12.6805L9.87234 12.6744H14.1277ZM14.0877 14.6742H9.91425L9.78201 14.6751L9.65386 14.6762L8.96581 14.6883L8.57784 14.7024L8.24002 14.722L7.94682 14.7476C7.85591 14.7572 7.77152 14.7679 7.69273 14.7798L7.57862 14.7986L7.37286 14.8418C7.18067 14.889 7.02646 14.9482 6.88541 15.0222C6.35273 15.3016 5.90352 15.7341 5.59052 16.2708L5.47964 16.4768L5.44372 16.5528L5.37878 16.7131L5.32258 16.8887L5.30983 16.9356L5.29759 16.9839L5.25346 17.1921L5.21667 17.4286L5.20855 17.4928L5.20085 17.5591L5.17404 17.8477L5.15316 18.1776L5.13768 18.5538L5.12703 18.9815L5.12066 19.466L5.11765 20.3018H18.8813L18.8762 19.3237L18.8646 18.6863L18.8453 18.1584L18.8275 17.8595L18.8051 17.5977L18.7778 17.3681L18.745 17.1661L18.7065 16.9872L18.6616 16.8265L18.6494 16.7887L18.6367 16.7516L18.5816 16.6096L18.5204 16.4768C18.2075 15.8447 17.7139 15.3365 17.1146 15.0222C17.0088 14.9667 16.8956 14.9195 16.7646 14.8795L16.6272 14.8418L16.4215 14.7986L16.3655 14.7889L16.3074 14.7798L16.0535 14.7476L15.9841 14.7406L15.9122 14.734L15.5976 14.7115L15.2356 14.6947L14.8209 14.6832L14.0877 14.6742ZM12 1C14.7614 1 17 3.23858 17 6C17 8.76142 14.7614 11 12 11C9.23858 11 7 8.76142 7 6C7 3.23858 9.23858 1 12 1ZM12 3C10.3431 3 9 4.34315 9 6C9 7.65685 10.3431 9 12 9C13.6569 9 15 7.65685 15 6C15 4.34315 13.6569 3 12 3Z"
+        fill="#ffffff"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -506,15 +574,17 @@ exports[`Button[Base] should render correctly about loading 1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span
+    <div
       class="so-button-spin"
     >
       <div
         class="so-spin-ring"
         style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
       />
-    </span>
-    <span>
+    </div>
+    <span
+      class="so-button-space-wrapper"
+    >
       Primary
     </span>
   </button>
@@ -524,14 +594,14 @@ exports[`Button[Base] should render correctly about loading 1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span
+    <div
       class="so-button-spin"
     >
       <div
         class="so-spin-ring"
         style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
       />
-    </span>
+    </div>
   </button>
 </div>
 `;
@@ -545,7 +615,9 @@ exports[`Button[Base] should render correctly about shape 1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Primary
     </span>
   </button>
@@ -554,7 +626,9 @@ exports[`Button[Base] should render correctly about shape 1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Primary
     </span>
   </button>
@@ -614,7 +688,9 @@ exports[`Button[Base] should render correctly about size 1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Primary
     </span>
   </button>
@@ -623,7 +699,9 @@ exports[`Button[Base] should render correctly about size 1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Primary
     </span>
   </button>
@@ -632,7 +710,9 @@ exports[`Button[Base] should render correctly about size 1`] = `
     style="margin: 0px;"
     type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Primary
     </span>
   </button>
@@ -651,7 +731,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Danger
       </span>
     </button>
@@ -660,7 +742,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Danger
       </span>
     </button>
@@ -669,7 +753,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Danger
       </span>
     </button>
@@ -678,7 +764,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Danger
       </span>
     </button>
@@ -691,7 +779,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Warning
       </span>
     </button>
@@ -700,7 +790,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Warning
       </span>
     </button>
@@ -709,7 +801,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Warning
       </span>
     </button>
@@ -718,7 +812,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Warning
       </span>
     </button>
@@ -731,7 +827,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Success
       </span>
     </button>
@@ -740,7 +838,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Success
       </span>
     </button>
@@ -749,7 +849,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Success
       </span>
     </button>
@@ -758,7 +860,9 @@ exports[`Button[Base] should render correctly about status 1`] = `
       style="margin: 0px; width: 72px;"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Success
       </span>
     </button>

@@ -5,7 +5,7 @@ exports[`Spin[Base] should render correctly  1`] = `
   style="width: 20px;"
 >
   <div
-    class="spin-ring-0-2-31"
+    class="so-spin-ring"
     style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
   />
 </div>
@@ -13,873 +13,827 @@ exports[`Spin[Base] should render correctly  1`] = `
 
 exports[`Spin[Base] should render correctly  2`] = `
 <div
-  style="display: flex; flex-wrap: wrap; gap: 65px;"
+  style="width: 100%; overflow: auto;"
 >
   <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
+    style="display: flex; flex-wrap: nowrap; gap: 65px; margin-bottom: 32px;"
   >
     <div
-      class="spin-default-0-2-20 spin-spin-0-2-36"
-      style="width: 16px; height: 16px;"
+      style="width: 16%;"
     >
       <div
-        class="spin-item-0-2-25"
+        class="so-spin-content so-spin-vertical"
       >
         <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
+          class="so-spin-chasing-dots"
+          style="width: 16px; height: 16px;"
+        >
+          <div
+            class="so-spin-item"
+          >
+            <svg
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item"
+          >
+            <svg
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+        </div>
         <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <div
-          style="width: 2px; border-radius: 2px;"
-        />
+          class="so-spin-tip"
+        >
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            chasing-dots
+          </span>
+        </div>
       </div>
     </div>
     <div
-      class="spin-tip-0-2-40"
+      style="width: 16%;"
     >
-      <span
-        style="font-size: 12px; font-weight: 300;"
+      <div
+        class="so-spin-content so-spin-vertical"
       >
-        default
-      </span>
+        <div
+          class="so-spin-cube-grid"
+          style="width: 16px; height: 16px;"
+        >
+          <div
+            class="so-spin-item"
+          />
+          <div
+            class="so-spin-item"
+          />
+          <div
+            class="so-spin-item"
+          />
+          <div
+            class="so-spin-item"
+          />
+          <div
+            class="so-spin-item"
+          />
+          <div
+            class="so-spin-item"
+          />
+          <div
+            class="so-spin-item"
+          />
+          <div
+            class="so-spin-item"
+          />
+          <div
+            class="so-spin-item"
+          />
+        </div>
+        <div
+          class="so-spin-tip"
+        >
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            cube-grid
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      style="width: 16%;"
+    >
+      <div
+        class="so-spin-content so-spin-vertical"
+      >
+        <div
+          class="so-spin-double-bounce"
+          style="width: 16px; height: 16px;"
+        >
+          <div
+            class="so-spin-item"
+          />
+          <div
+            class="so-spin-item"
+          />
+        </div>
+        <div
+          class="so-spin-tip"
+        >
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            double-bounce
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      style="width: 16%;"
+    >
+      <div
+        class="so-spin-content so-spin-vertical"
+      >
+        <div
+          class="so-spin-fading-circle"
+          style="width: 16px; height: 16px;"
+        >
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-fade"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="so-spin-tip"
+        >
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            fading-circle
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      style="width: 16%;"
+    >
+      <div
+        class="so-spin-content so-spin-vertical"
+      >
+        <div
+          class="so-spin-four-dots"
+          style="width: 16px; height: 16px;"
+        >
+          <div
+            class="so-spin-item"
+          >
+            <svg
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item"
+          >
+            <svg
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item"
+          >
+            <svg
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item"
+          >
+            <svg
+              viewBox="0 0 100 100"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="so-spin-tip"
+        >
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            four-dots
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      style="width: 16%;"
+    >
+      <div
+        class="so-spin-content so-spin-vertical"
+      >
+        <div
+          class="so-spin-plane"
+          style="width: 16px; height: 16px;"
+        />
+        <div
+          class="so-spin-tip"
+        >
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            plane
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
+    style="display: flex; flex-wrap: nowrap; gap: 65px;"
   >
     <div
-      class="spin-chasingDots-0-2-21 spin-spin-0-2-36"
-      style="width: 16px; height: 16px;"
+      style="width: 16%;"
     >
       <div
-        class="spin-item-0-2-25"
+        class="so-spin-content so-spin-vertical"
       >
-        <svg
-          viewBox="0 0 100 100"
+        <div
+          class="so-spin-pulse"
+          style="width: 16px; height: 16px;"
+        />
+        <div
+          class="so-spin-tip"
         >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <svg
-          viewBox="0 0 100 100"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            pulse
+          </span>
+        </div>
       </div>
     </div>
     <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        chasing-dots
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-cubeGrid-0-2-22 spin-spin-0-2-36"
-      style="width: 16px; height: 16px;"
+      style="width: 16%;"
     >
       <div
-        class="spin-item-0-2-25"
-      />
-      <div
-        class="spin-item-0-2-25"
-      />
-      <div
-        class="spin-item-0-2-25"
-      />
-      <div
-        class="spin-item-0-2-25"
-      />
-      <div
-        class="spin-item-0-2-25"
-      />
-      <div
-        class="spin-item-0-2-25"
-      />
-      <div
-        class="spin-item-0-2-25"
-      />
-      <div
-        class="spin-item-0-2-25"
-      />
-      <div
-        class="spin-item-0-2-25"
-      />
-    </div>
-    <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
+        class="so-spin-content so-spin-vertical"
       >
-        cube-grid
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-doubleBounce-0-2-23 spin-spin-0-2-36"
-      style="width: 16px; height: 16px;"
-    >
-      <div
-        class="spin-item-0-2-25"
-      />
-      <div
-        class="spin-item-0-2-25"
-      />
-    </div>
-    <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        double-bounce
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-fadingCircle-0-2-26 spin-spin-0-2-36"
-      style="width: 16px; height: 16px;"
-    >
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
+        <div
+          class="so-spin-ring"
+          style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
+        />
+        <div
+          class="so-spin-tip"
         >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-fade-0-2-35"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            ring
+          </span>
+        </div>
       </div>
     </div>
     <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        fading-circle
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-fourDots-0-2-28 spin-spin-0-2-36"
-      style="width: 16px; height: 16px;"
+      style="width: 16%;"
     >
       <div
-        class="spin-item-0-2-25"
+        class="so-spin-content so-spin-vertical"
       >
-        <svg
-          viewBox="0 0 100 100"
+        <div
+          class="so-spin-fading-circle"
+          style="width: 16px; height: 16px;"
         >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <svg
-          viewBox="0 0 100 100"
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item so-spin-scale-circle"
+          >
+            <svg
+              height="2.286px"
+              viewBox="0 0 100 100"
+              width="2.286px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="so-spin-tip"
         >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <svg
-          viewBox="0 0 100 100"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <svg
-          viewBox="0 0 100 100"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-    </div>
-    <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        four-dots
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-plane-0-2-29"
-      style="width: 16px; height: 16px;"
-    />
-    <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        plane
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-pulse-0-2-30"
-      style="width: 16px; height: 16px;"
-    />
-    <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        pulse
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-ring-0-2-31"
-      style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
-    />
-    <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        ring
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-fadingCircle-0-2-26 spin-spin-0-2-36"
-      style="width: 16px; height: 16px;"
-    >
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25 spin-scaleCircle-0-2-27"
-      >
-        <svg
-          height="2.286px"
-          viewBox="0 0 100 100"
-          width="2.286px"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            scale-circle
+          </span>
+        </div>
       </div>
     </div>
     <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        scale-circle
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-threeBounce-0-2-32 spin-spin-0-2-36"
-      style="width: 32px; height: auto;"
+      style="width: 16%;"
     >
       <div
-        class="spin-item-0-2-25"
+        class="so-spin-content so-spin-vertical"
       >
-        <svg
-          height="8px"
-          viewBox="0 0 100 100"
-          width="8px"
+        <div
+          class="so-spin-three-bounce"
+          style="width: 32px; height: auto;"
         >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
-      </div>
-      <div
-        class="spin-item-0-2-25"
-      >
-        <svg
-          height="8px"
-          viewBox="0 0 100 100"
-          width="8px"
+          <div
+            class="so-spin-item"
+          >
+            <svg
+              height="8px"
+              viewBox="0 0 100 100"
+              width="8px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item"
+          >
+            <svg
+              height="8px"
+              viewBox="0 0 100 100"
+              width="8px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+          <div
+            class="so-spin-item"
+          >
+            <svg
+              height="8px"
+              viewBox="0 0 100 100"
+              width="8px"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="50"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="so-spin-tip"
         >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
-          />
-        </svg>
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            three-bounce
+          </span>
+        </div>
       </div>
+    </div>
+    <div
+      style="width: 16%;"
+    >
       <div
-        class="spin-item-0-2-25"
+        class="so-spin-content so-spin-vertical"
       >
-        <svg
-          height="8px"
-          viewBox="0 0 100 100"
-          width="8px"
+        <div
+          class="so-spin-wave"
+          style="width: 16px; height: 16px;"
         >
-          <circle
-            cx="50"
-            cy="50"
-            r="50"
+          <div
+            class="so-spin-item"
+            style="width: 2px; margin-right: 1px;"
           />
-        </svg>
+          <div
+            class="so-spin-item"
+            style="width: 2px; margin-right: 1px;"
+          />
+          <div
+            class="so-spin-item"
+            style="width: 2px; margin-right: 1px;"
+          />
+          <div
+            class="so-spin-item"
+            style="width: 2px; margin-right: 1px;"
+          />
+          <div
+            class="so-spin-item"
+            style="width: 2px; margin-right: 1px;"
+          />
+        </div>
+        <div
+          class="so-spin-tip"
+        >
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            wave
+          </span>
+        </div>
       </div>
     </div>
     <div
-      class="spin-tip-0-2-40"
+      style="width: 16%;"
     >
-      <span
-        style="font-size: 12px; font-weight: 300;"
+      <div
+        class="so-spin-content so-spin-vertical"
       >
-        three-bounce
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-wave-0-2-33 spin-spin-0-2-36"
-      style="width: 16px; height: 16px;"
-    >
-      <div
-        class="spin-item-0-2-25"
-        style="width: 2px; margin-right: 1px;"
-      />
-      <div
-        class="spin-item-0-2-25"
-        style="width: 2px; margin-right: 1px;"
-      />
-      <div
-        class="spin-item-0-2-25"
-        style="width: 2px; margin-right: 1px;"
-      />
-      <div
-        class="spin-item-0-2-25"
-        style="width: 2px; margin-right: 1px;"
-      />
-      <div
-        class="spin-item-0-2-25"
-        style="width: 2px; margin-right: 1px;"
-      />
-    </div>
-    <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        wave
-      </span>
-    </div>
-  </div>
-  <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
-  >
-    <div
-      class="spin-chasingRing-0-2-34 spin-spin-0-2-36"
-      style="width: 16px; height: 16px;"
-    >
-      <div
-        class="spin-item-0-2-25"
-        style="background-color: transparent; border-width: 1.6px;"
-      />
-      <div
-        class="spin-item-0-2-25"
-        style="background-color: transparent; border-width: 1.6px;"
-      />
-      <div
-        class="spin-item-0-2-25"
-        style="background-color: transparent; border-width: 1.6px;"
-      />
-      <div
-        class="spin-item-0-2-25"
-        style="background-color: transparent; border-width: 1.6px;"
-      />
-    </div>
-    <div
-      class="spin-tip-0-2-40"
-    >
-      <span
-        style="font-size: 12px; font-weight: 300;"
-      >
-        chasing-ring
-      </span>
+        <div
+          class="so-spin-chasing-ring"
+          style="width: 16px; height: 16px;"
+        >
+          <div
+            class="so-spin-item"
+            style="background-color: transparent; border-width: 1.6px;"
+          />
+          <div
+            class="so-spin-item"
+            style="background-color: transparent; border-width: 1.6px;"
+          />
+          <div
+            class="so-spin-item"
+            style="background-color: transparent; border-width: 1.6px;"
+          />
+          <div
+            class="so-spin-item"
+            style="background-color: transparent; border-width: 1.6px;"
+          />
+        </div>
+        <div
+          class="so-spin-tip"
+        >
+          <span
+            style="font-size: 12px; line-height: calc(1em + 8px); display: inline-block;"
+          >
+            chasing-ring
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -893,14 +847,14 @@ exports[`Spin[Mode] should render correctly  1`] = `
     style="width: 100px;"
   >
     <div
-      class="spin-content-0-2-37 spin-vertical-0-2-41"
+      class="so-spin-content so-spin-vertical"
     >
       <div
-        class="spin-ring-0-2-31"
+        class="so-spin-ring"
         style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
       />
       <div
-        class="spin-tip-0-2-40"
+        class="so-spin-tip"
       >
         <span
           style="font-size: 12px; font-weight: 300;"
@@ -914,14 +868,14 @@ exports[`Spin[Mode] should render correctly  1`] = `
     style="width: 100px;"
   >
     <div
-      class="spin-content-0-2-37 spin-horizontal-0-2-42"
+      class="so-spin-content so-spin-horizontal"
     >
       <div
-        class="spin-ring-0-2-31"
+        class="so-spin-ring"
         style="width: 16px; height: 16px; border-width: 1.6px; font-size: 1.6px;"
       />
       <div
-        class="spin-tip-0-2-40"
+        class="so-spin-tip"
       >
         <span
           style="font-size: 12px; font-weight: 300;"
@@ -939,17 +893,17 @@ exports[`Spin[Tip] should render correctly  1`] = `
   style="width: 200px;"
 >
   <div
-    class="spin-content-0-2-37 spin-vertical-0-2-41"
+    class="so-spin-content so-spin-vertical"
   >
     <div
-      class="spin-ring-0-2-31"
+      class="so-spin-ring"
       style="width: 24px; height: 24px; border-width: 2.4px; font-size: 2.4px;"
     />
     <div
-      class="spin-tip-0-2-40"
+      class="so-spin-tip"
     >
       <div
-        style="font-weight: 300; font-size: 14px;"
+        style="font-size: 14px;"
       >
         This may take a while...
       </div>

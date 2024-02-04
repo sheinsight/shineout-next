@@ -405,6 +405,7 @@ exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
 <div>
   <div
     class="so-breadcrumb-wrapper"
+    style="margin-bottom: 24px;"
   >
     <div
       class="so-breadcrumb-item"
