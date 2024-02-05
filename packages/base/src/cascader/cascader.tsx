@@ -17,6 +17,7 @@ import AnimationList from '../animation-list';
 import { CascaderClasses } from '@sheinx/shineout-style';
 import { CascaderProps } from './cascader.type';
 import CascaderList from './list';
+import CascaderFilterList from './filter-list';
 import Result from '../select/result';
 import Icons from '../icons';
 
@@ -93,9 +94,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     setInputText,
     onFilter,
     onResetFilter,
-    onCreate,
   } = useFilter({
-    data,
+    treeData: data,
     keygen,
     childrenKey,
     onFilter: onFilterProp,
@@ -237,19 +237,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     if (multiple) return;
   };
 
-  // 退格键可删除选项，仅在多选模式下生效
-  const handleDelete = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    // if (!multiple) return;
-    // if (inputText) return;
-    // e.preventDefault();
-    // const raws = Array.isArray(value) ? value : [value];
-    // const values = [...raws];
-    // const last = values.pop();
-    // if (last) {
-    //   datum.remove(last);
-    // }
-  };
-
   const handleMouseEnter = () => {
     setEnter(true);
   };
@@ -289,8 +276,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     handleChange([]);
     if (open) closePop();
   };
-
-  const handleExpand = () => {};
 
   const getDataByValues = (values?: Value) => {
     const nextValues = values
@@ -503,7 +488,12 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderFilterList = () => {
-    return <div>CascaderFilterList</div>;
+    const listStyle = data && data.length === 0 ? { height: 'auto', width: '100%' } : { height };
+    return (
+      <div className={classNames(styles.listContent)} style={listStyle}>
+        <CascaderFilterList jssStyle={jssStyle} data={filterData}></CascaderFilterList>
+      </div>
+    );
   };
 
   const renderPanel = () => {
@@ -534,8 +524,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       onBlur={handleBlur}
       onFocus={handleFocus}
       onKeyDown={handleKeyDown}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      // onMouseEnter={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
     >
       {renderResult()}
       {renderIcon()}

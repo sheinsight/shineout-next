@@ -355,6 +355,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   list: {
     paddingTop: 3,
     paddingBottom: 3,
+    display: 'inline-block',
   },
   tag: {
     '&$tag + &$tag': {

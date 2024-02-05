@@ -22,7 +22,7 @@ export default () => {
   const [_data, setData] = useState(initData);
   const [value, setValue] = useState<string[]>([]);
 
-  const loader = (key) => {
+  const loader = (key: string[]) => {
     const path = key.toString().split(',');
     console.log(23333);
     setTimeout(() => {

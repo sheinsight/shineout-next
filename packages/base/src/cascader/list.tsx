@@ -27,6 +27,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
 
+  // 和 datum 中的 geyKey 不一样，根据 parentId 生成唯一的 key
   const getKey = (item: DataItem, index: number): KeygenResult => {
     if (typeof keygen === 'function') return keygen(item, parentId);
     if (keygen && typeof keygen === 'string') {
@@ -39,18 +40,14 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
     return parentId + (parentId ? ',' : '') + index;
   };
 
-  const getText = (key: string) => {
-    return getLocale(key);
-  };
-
   const renderEmpety = () => {
-    return <span> {getText('noData')}</span>;
+    return <span> {getLocale('noData')}</span>;
   };
 
   if (!data || data.length === 0) return renderEmpety();
 
   return (
-    <div className={classNames(styles.list)} style={{ display: 'inline-block' }}>
+    <div className={classNames(styles.list)}>
       {data.map((item, index) => {
         const id = getKey(item, index);
         return (

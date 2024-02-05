@@ -7,9 +7,9 @@ export interface CascaderListProps<DataItem, Value extends KeygenResult[]>
     CascaderProps<DataItem, Value>,
     'loader' | 'childrenKey' | 'multiple' | 'expandTrigger' | 'renderItem' | 'keygen'
   > {
+  jssStyle?: JssStyleType;
   id: KeygenResult;
   parentId: KeygenResult;
-  jssStyle?: JssStyleType;
   data: DataItem[];
   datum: DatumType<DataItem, KeygenResult>['datum'];
   shouldFinal: boolean;
