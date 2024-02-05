@@ -17,10 +17,10 @@ const App: React.FC = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       <Radio.Group button={'outline'} data={Size} value={size} onChange={setSize} keygen />
-      <DatePicker size={size} type='date' />
-      <DatePicker size={size} type='datetime' />
-      <DatePicker size={size} type='date' range />
-      <DatePicker size={size} type='datetime' range />
+      <DatePicker size={size} type='date' showSelNow />
+      <DatePicker size={size} type='datetime' showSelNow />
+      <DatePicker size={size} type='date' range showSelNow />
+      <DatePicker size={size} type='datetime' range showSelNow />
     </div>
   );
 };

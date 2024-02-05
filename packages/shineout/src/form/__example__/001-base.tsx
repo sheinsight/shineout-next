@@ -46,7 +46,7 @@ export default () => {
           <Checkbox.Group name='course' data={['chinese', 'maths', 'english', 'physics']} keygen />
         </Form.Item>
         <Form.Item label='Enrollment date'>
-          <DatePicker name='date' placeholder={'please select date'} clearable />
+          <DatePicker name='date' placeholder={'please select date'} clearable showSelNow />
         </Form.Item>
         <Form.Item label='Score'>
           <StarRate name='score'></StarRate>

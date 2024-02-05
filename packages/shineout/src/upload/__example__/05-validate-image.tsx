@@ -13,6 +13,7 @@ const App: React.FC = () => (
     action='/api/upload'
     accept='image/*'
     name='file'
+    leftHandler
     onSuccess={(_res, _file, data) => ({ data })}
     width={400}
     height={200}
@@ -27,8 +28,8 @@ const App: React.FC = () => (
     <div style={{ padding: '50px 16px' }}>
       <div style={{ margin: 'auto', fontSize: 12, textAlign: 'center', lineHeight: '16px' }}>
         <AddIcon />
-        <div style={{ marginTop: 16 }}>Upload Image</div>
-        <div style={{ marginTop: 4 }}>Allow size 200 * 100</div>
+        <div style={{ marginTop: 16, color: '#666c7c' }}>Upload Image</div>
+        <div style={{ marginTop: 4, color: '#666c7c' }}>Allow size 200 * 100</div>
       </div>
     </div>
   </Upload.Image>

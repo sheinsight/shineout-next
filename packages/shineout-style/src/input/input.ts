@@ -157,7 +157,7 @@ const input: JsStyles<InputClass> = {
 
   password: {
     '& $clear': {
-      marginRight: 8,
+      marginRight: 4,
     },
   },
 
@@ -247,7 +247,7 @@ const input: JsStyles<InputClass> = {
     '&:hover svg': {
       color: token.inputHoverToggleColor,
     },
-    marginRight: token.inputPaddingX,
+    // marginRight: token.inputPaddingX,
   },
   info: {
     position: 'absolute',

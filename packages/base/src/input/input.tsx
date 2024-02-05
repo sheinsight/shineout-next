@@ -34,6 +34,7 @@ const Input = (props: InputProps) => {
       {...forwardProps}
       {...inputFormatProps}
       value={inputFormatProps.value || ''}
+      hasSuffix={!!props.suffix}
     />
   );
 };
