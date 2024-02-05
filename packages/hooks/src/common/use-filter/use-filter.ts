@@ -21,6 +21,9 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
 
   const [filterData, setFilterData] = useState<DataItem[] | undefined>(data);
   const [filterText, setFilterText] = useState<string | undefined>('');
+  const [filterFunc, setFilterFunc] = useState<((data: DataItem) => boolean) | undefined>(
+    undefined,
+  );
   const [inputText, setInputText] = useState('');
   const [createdData, setCreatedData] = useState<string>();
 
@@ -41,10 +44,11 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   const getTreeData = () => {
     let filterExpandedKeys: KeygenResult[] | undefined = expandedProp || [];
     let newData: DataItem[] | undefined = treeData;
+    const nextFilter = onFilter?.(filterText);
     if (filterText) {
       newData = getFilterTree(
         treeData,
-        onFilter?.(filterText),
+        nextFilter,
         filterExpandedKeys,
         (node: DataItem) => getKey(keygen, node),
         childrenKey,
@@ -81,6 +85,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
       }
 
       setFilterText('');
+      setFilterFunc(undefined);
 
       handleClearCreatedData();
       // 没有 text 时触发一次 onFilter 以便外部重置数据
@@ -98,8 +103,8 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     setFilterText(text);
 
     const next = onFilter(text);
-
     if (!isFunc(next)) return;
+    setFilterFunc(next);
 
     const nextData = data?.filter((item) => {
       if (!groupKey) return next(item);

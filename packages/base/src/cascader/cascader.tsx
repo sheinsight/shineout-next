@@ -491,7 +491,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     const listStyle = data && data.length === 0 ? { height: 'auto', width: '100%' } : { height };
     return (
       <div className={classNames(styles.listContent)} style={listStyle}>
-        <CascaderFilterList jssStyle={jssStyle} data={filterData}></CascaderFilterList>
+        <CascaderFilterList
+          jssStyle={jssStyle}
+          datum={datum}
+          data={filterData}
+        ></CascaderFilterList>
       </div>
     );
   };
