@@ -5,7 +5,7 @@ dist
 docs/chunk
 .DS_Store
 coverage
-./uploads
+uploads
 cypress/videos
 cypress/screenshots
 cypress/downloads
