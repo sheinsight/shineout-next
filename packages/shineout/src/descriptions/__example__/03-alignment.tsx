@@ -32,13 +32,13 @@ const data = [
 
 export default () => {
   return (
-    <div>
+    <div style={{ marginBottom: '-12px' }}>
       <Descriptions
         items={data}
         title='User Info'
         layout='horizontal'
         colon={<span style={{ paddingLeft: '4px' }}>:</span>}
-        style={{ marginBottom: '24px' }}
+        style={{ marginBottom: '12px' }}
       />
       <Descriptions
         items={data}
@@ -46,7 +46,7 @@ export default () => {
         layout='horizontal'
         colon={<span style={{ paddingLeft: '4px' }}>:</span>}
         labelStyle={{ textAlign: 'right' }}
-        style={{ marginBottom: '24px' }}
+        style={{ marginBottom: '12px' }}
       />
       <Descriptions
         items={data}

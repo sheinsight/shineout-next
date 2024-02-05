@@ -49,12 +49,12 @@ const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {
   item: {
     display: 'flex',
     alignItems: 'center',
-    '&:not(a) svg': {
-      color: token.breadcrumbIconBackgroundColor,
-    },
-    '& a svg': {
-      color: 'inherit',
-    },
+    // '&:not(a) svg': {
+    //   color: token.breadcrumbIconBackgroundColor,
+    // },
+    // '& a svg': {
+    //   color: 'inherit',
+    // },
   },
   itemWithDrop: {
     display: 'flex',
