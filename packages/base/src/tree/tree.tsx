@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import classNames from 'classnames';
 import { TreeProps, TreeClasses } from './tree.type';
-import { KeygenResult, useTree, util } from '@sheinx/hooks';
+import { KeygenResult, useTree, util, usePrevious } from '@sheinx/hooks';
 import RootTree from './tree-root';
 import { produce } from 'immer';
 import { Provider } from './tree-context';
@@ -52,12 +52,7 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
     ...rest
   } = props;
 
-  // [TODO] - Props: dataUpdate
-  // [TODO] - This is a workaround for the issue of data not updating when dataProps changes.
-  // const [data, setData] = useState<DataItem[]>(dataProps);
-  // useEffect(() => {
-  //   if (dataProps !== data && dataUpdate) setData(dataProps);
-  // }, [dataProps])
+  const prevData = usePrevious(data);
 
   const { datum, updateMap, expanded, onExpand } = useTree({
     mode,
@@ -86,6 +81,13 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
   const getDragImageSelector = (data?: DataItem) => {
     if (util.isFunc(dragImageSelector)) return dragImageSelector(data);
     return dragImageSelector;
+  };
+
+  const handleUpdateExpanded = (expanded?: KeygenResult[]) => {
+    const tempExpandMap = new Set(expanded);
+    updateMap.forEach((update, id) => {
+      update('expanded', tempExpandMap.has(id));
+    });
   };
 
   const handleUpdateActive = (active?: KeygenResult) => {
@@ -118,7 +120,6 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
     } else {
       newExpanded = [...expandedArr, id];
     }
-
     if (onExpand) onExpand(newExpanded);
   };
 
@@ -177,6 +178,24 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
       onDrop(newData, id, targetId, position);
     }
   };
+
+  useEffect(() => {
+    handleUpdateExpanded(expanded);
+  }, [expanded]);
+
+  // [TODO] - Props: dataUpdate
+  // [TODO] - This is a workaround for the issue of data not updating when dataProps changes.
+  useEffect(() => {
+    if (!prevData) return;
+    if (prevData !== data && dataUpdate) {
+      datum.setData(data);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (!value) return;
+    datum.setValue(value);
+  }, [value]);
 
   useEffect(() => {
     if (onRef) onRef(datum);

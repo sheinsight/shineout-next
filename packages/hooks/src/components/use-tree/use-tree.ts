@@ -57,6 +57,14 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     onExpand: onExpandProp,
   } = props;
 
+  // const {} = useInputAble({
+  //   value: props.value,
+  //   defaultValue: props.defaultValue,
+  //   control: props.control,
+  //   onChange: props.onChange,
+  //   beforeChange: props.beforeChange,
+  // });
+
   const { value: expanded, onChange: onExpand } = useInputAble({
     value: expandedProp,
     defaultValue: defaultExpanded,
@@ -71,7 +79,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     valueMap: new Map<Value, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
     disabled: false,
-    value: [],
+    value: undefined,
     data: [],
     cachedValue: [],
   });
@@ -82,7 +90,8 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
     const isActive = activeProp === id;
-    const expandeds = expanded;
+    const expandeds = expanded || defaultExpanded;
+
     if (defaultExpandAll) {
       return { active: isActive, expanded: true };
     }
@@ -179,8 +188,6 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
 
   const setValueMap = (id: Value, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
-    // const update = context.updateMap.get(id)
-    // update()
   };
 
   const initData = (
@@ -195,6 +202,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
       const id = getKey(item, path[path.length - 1], i) as Value;
       // 重复 id 警告
       if (context.dataMap.get(id)) {
+        console.error(`There is already a key "${id}" exists. The key must be unique.`);
         return;
       }
       // 制作 data mapping
@@ -206,9 +214,10 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
         isDisabled = context.disabled(item);
       }
 
+      const indexPath = [...index, i];
+
       ids.push(id);
 
-      const indexPath = [...index, i];
       let children: Value[] = [];
 
       if (Array.isArray(item[childrenKey])) {
@@ -222,11 +231,11 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
       }
 
       context.pathMap.set(id, {
-        index: i,
-        path,
         children,
+        path,
         isDisabled,
         indexPath,
+        index: i,
       });
     }
     return ids;
@@ -258,7 +267,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
       if (forceCheck) {
         setValueMap(item, 1);
         initValue(children, forceCheck);
-        return;
+        continue;
       }
 
       let childChecked: CheckedStatusType = context.value!.indexOf(item) >= 0 ? 1 : 0;
@@ -324,7 +333,6 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     context.valueMap = new Map();
     context.disabled = getDisabled();
     context.data = data;
-
     if (!data) return;
 
     initData(data, []);
@@ -375,32 +383,23 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return current;
   };
 
-  const handleExpanded = (expanded?: KeygenResult[]) => {
-    const temp = new Set(expanded);
-    context.updateMap.forEach((update, id) => {
-      update('expanded', temp.has(id));
-    });
-  };
-
-  useEffect(() => {
+  if (firstRender.current) {
     setValue(value);
     setData(data);
-    setTimeout(() => {
-      firstRender.current = false;
-    });
-  }, [data]);
+    firstRender.current = false;
+  }
 
   useEffect(() => {
-    if (expanded && expanded.length === 0) {
-      return;
+    if (defaultExpandAll) {
+      const nextExpanded = [] as KeygenResult[];
+      context.dataMap.forEach((item, k) => {
+        if (item[childrenKey]) {
+          nextExpanded.push(k);
+        }
+      });
+      onExpand(nextExpanded);
     }
-    if (firstRender.current) {
-      handleExpanded(expanded);
-      return;
-    }
-
-    handleExpanded(expanded);
-  }, [expanded]);
+  }, []);
 
   const datum = useLatestObj({
     get,
@@ -413,11 +412,11 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     getKey,
     getDataByValues,
     setValue,
+    setData,
     isDisabled,
     bindNode,
     getDataById,
   });
-
   return {
     datum,
     getKey,

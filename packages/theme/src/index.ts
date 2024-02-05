@@ -13,6 +13,9 @@ import { ButtonTokens } from './button/type';
 import Card from './card';
 import { CardTokens } from './card/type';
 
+import Cascader from './cascader';
+import { CascaderTokens } from './cascader/type';
+
 import CardGroup from './card-group';
 import { CardGroupTokens } from './card-group/type';
 
@@ -135,6 +138,7 @@ export type ThemeTokens = AlertTokens &
   ButtonTokens &
   CardTokens &
   CardGroupTokens &
+  CascaderTokens &
   CarouselTokens &
   CheckboxTokens &
   CollapseTokens &
@@ -180,6 +184,7 @@ const Tokens: ThemeTokens = {
   ...Button,
   ...Card,
   ...CardGroup,
+  ...Cascader,
   ...Carousel,
   ...Checkbox,
   ...Collapse,

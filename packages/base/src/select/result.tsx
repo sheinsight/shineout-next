@@ -20,6 +20,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     keygen,
     disabled,
     trim,
+    closeable = true,
     separator,
     maxLength,
     placeholder,
@@ -134,7 +135,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         disabled={isDisabled}
         size={size}
         className={classNames(styles.tag, resultClassName)}
-        onClose={handleClose}
+        onClose={closeable && handleClose}
         jssStyle={jssStyle as any}
       >
         {renderResultContent(item)}

@@ -1,0 +1,40 @@
+import React, { memo } from 'react';
+import { Cascader as UnStyledCascader } from '@sheinx/base';
+import { useCascaderStyle } from '@sheinx/shineout-style';
+import { KeygenResult } from '@sheinx/hooks';
+import { CascaderProps } from './cascader.type';
+import useFieldCommon from '../hooks/use-field-common';
+import {
+  useSelectStyle,
+  useInnerTitleStyle,
+  useVirtualScrollStyle,
+  useTagStyle,
+  useCheckboxStyle,
+  useRadioStyle,
+  usePopoverStyle,
+  useSpinStyle,
+} from '@sheinx/shineout-style';
+
+const jssStyle = {
+  cascader: useCascaderStyle,
+  tag: useTagStyle,
+  select: useSelectStyle,
+  innerTitle: useInnerTitleStyle,
+  virtualScroll: useVirtualScrollStyle,
+  popover: usePopoverStyle,
+  checkbox: useCheckboxStyle,
+  radio: useRadioStyle,
+  spin: useSpinStyle,
+};
+
+const Cascader = <DataItem, Value extends KeygenResult[]>(
+  props: CascaderProps<DataItem, Value>,
+) => {
+  return <UnStyledCascader {...props} jssStyle={jssStyle} />;
+};
+
+export default memo(
+  <DataItem, Value extends KeygenResult[]>(props: CascaderProps<DataItem, Value>) => {
+    return useFieldCommon(props, Cascader<DataItem, Value>);
+  },
+) as typeof Cascader;

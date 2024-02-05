@@ -335,7 +335,7 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
         class="so-select-result"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="so-select-result-text-wrapper so-select-multiple-result-wrapper"
         >
           <span
             class="so-select-placeholder so-select-ellipsis"
@@ -738,7 +738,7 @@ exports[`Select[Base] should render correctly about create 1`] = `
         class="so-select-result"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="so-select-result-text-wrapper so-select-multiple-result-wrapper"
         >
           <span
             class="so-select-placeholder so-select-ellipsis"
@@ -2098,7 +2098,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         class="so-select-result"
       >
         <div
-          class="so-select-result-text-wrapper so-select-compressed-wrapper"
+          class="so-select-result-text-wrapper so-select-compressed-wrapper so-select-multiple-result-wrapper so-select-multiple-compressed-wrapper"
         >
           <span
             style="display: inline-flex;"
@@ -2299,7 +2299,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         class="so-select-result"
       >
         <div
-          class="so-select-result-text-wrapper so-select-compressed-wrapper"
+          class="so-select-result-text-wrapper so-select-compressed-wrapper so-select-multiple-result-wrapper so-select-multiple-compressed-wrapper"
         >
           <span
             style="display: inline-flex;"
@@ -3149,7 +3149,7 @@ exports[`Select[Base] should render correctly about group more 1`] = `
         class="so-select-result"
       >
         <div
-          class="so-select-result-text-wrapper so-select-compressed-wrapper"
+          class="so-select-result-text-wrapper so-select-compressed-wrapper so-select-multiple-result-wrapper so-select-multiple-compressed-wrapper"
         >
           <span
             class="so-select-placeholder so-select-ellipsis"
@@ -3776,7 +3776,7 @@ exports[`Select[Base] should render correctly about multiple 1`] = `
         class="so-select-result"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="so-select-result-text-wrapper so-select-multiple-result-wrapper"
         >
           <span
             class="so-select-placeholder so-select-ellipsis"

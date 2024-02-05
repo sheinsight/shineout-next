@@ -4,6 +4,7 @@ export * from './button';
 export * from './card';
 export * from './card-group';
 export * from './carousel';
+export * from './cascader';
 export * from './checkbox';
 export * from './collapse';
 export * from './config';

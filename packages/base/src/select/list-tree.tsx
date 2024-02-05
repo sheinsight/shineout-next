@@ -11,6 +11,7 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
     keygen,
     multiple,
     height,
+    allowOnFilter,
     renderItem: renderItemProp,
     datum,
     expanded,
@@ -65,7 +66,7 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
         jssStyle={jssStyle as any}
         onClick={handleClick}
         data={data}
-        expanded={expanded}
+        expanded={allowOnFilter ? expanded : undefined}
         keygen={keygen as StructKeygenStringType<DataItem>}
         defaultExpanded={defaultExpanded}
         defaultExpandAll={defaultExpandAll}

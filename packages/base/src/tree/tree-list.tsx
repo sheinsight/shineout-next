@@ -65,7 +65,7 @@ const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataIte
 
   const renderNode = (node: DataItem, index: number) => {
     const id = getKey(node, index) as Value;
-
+    
     return (
       <TreeNode<DataItem, Value>
         jssStyle={jssStyle}

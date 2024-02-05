@@ -26,7 +26,14 @@ export default () => {
 
   return (
     <div>
-      <Tree line={false} data={data} keygen='id' renderItem={renderItem} onDrop={handleDrag}></Tree>
+      <Tree
+        line={false}
+        data={data}
+        onDragStart={(v) => console.log(v)}
+        keygen='id'
+        renderItem={renderItem}
+        onDrop={handleDrag}
+      ></Tree>
     </div>
   );
 };

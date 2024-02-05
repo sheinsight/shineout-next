@@ -12,7 +12,7 @@ const App: React.FC = () => {
   return (
     <div
       id='popup-target'
-      style={{ height: 100, overflow: 'auto', position: 'relative', padding: 10, marginLeft: -10 }}
+      style={{ height: 100, overflowY: 'auto', position: 'relative', padding: 10, marginLeft: -10 }}
     >
       <div style={{ height: 50 }} />
 

@@ -11,6 +11,7 @@ export interface ListTreeProps<DataItem, Value>
   data: DataItem[];
   keygen: KeygenType<DataItem>;
   childrenKey: keyof DataItem;
+  allowOnFilter: boolean;
   datum: DatumType<DataItem, Value>;
   closePop: () => void;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;

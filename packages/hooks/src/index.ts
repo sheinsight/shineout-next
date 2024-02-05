@@ -50,5 +50,6 @@ export * from './components/use-menu';
 export * from './components/use-descriptions';
 export * from './components/use-treeselect';
 export * from './components/use-collapse';
+export * from './components/use-cascader';
 
 export default {};

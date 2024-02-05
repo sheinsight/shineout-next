@@ -565,6 +565,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
         datum={datum}
         multiple={multiple}
         keygen={keygen}
+        allowOnFilter={'onFilter' in props}
         height={height as number}
         defaultExpandAll={defaultExpandAll}
         defaultExpanded={defaultExpanded}
