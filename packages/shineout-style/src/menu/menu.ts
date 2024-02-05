@@ -310,6 +310,9 @@ const menuStyle: JsStyles<MenuClassType> = {
     '&:hover': {
       backgroundColor: token.menuExpandHoverBackgroundColor,
     },
+    '$itemActive &:hover': {
+      backgroundColor: token.menuItemActiveHoverBackgroundColor,
+    },
   },
   expandFront: {
     width: 'auto',

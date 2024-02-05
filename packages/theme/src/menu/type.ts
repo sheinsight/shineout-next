@@ -52,6 +52,12 @@ export interface MenuTokens {
   menuItemActiveBackgroundColor: string;
   /**
    * @type {string}
+   * @token Brand-2
+   * @description xxxundefined鼠标点击时的鼠标移入时的背景颜色
+   */
+  menuItemActiveHoverBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Brand-6
    * @description xxxundefined鼠标点击时的字体颜色
    */

@@ -69,7 +69,11 @@ const PaginationButton = (props: PaginationButtonProps) => {
     };
   }, []);
 
-  return <Button {...getButtonProps()}>{children}</Button>;
+  return (
+    <Button {...getButtonProps()} style={{ transition: 'none' }}>
+      {children}
+    </Button>
+  );
 };
 
 export default PaginationButton;
