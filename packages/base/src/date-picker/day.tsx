@@ -48,7 +48,7 @@ const Day = (props: DayProps) => {
     let now = new Date();
     if (func.isDisabled(now)) return;
     props.setCurrent(new Date(), areaType);
-    props.onChange(new Date(), true);
+    props.onChange(new Date(), props.type === 'datetime');
   };
 
   const renderDay = (item: Date, index: number) => {
