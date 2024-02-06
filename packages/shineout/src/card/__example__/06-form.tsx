@@ -17,11 +17,11 @@ const App: React.FC = () => (
           console.log(data);
         }}
       >
-        <Form.Item label='User name:'>
+        <Form.Item label='User name :'>
           <Input name='name' defaultValue='user' />
         </Form.Item>
 
-        <Form.Item label='Email:'>
+        <Form.Item label='Email :'>
           <Input name='email' defaultValue='test@example.com' />
         </Form.Item>
       </Form>
