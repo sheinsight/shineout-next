@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import classNames from 'classnames';
 import { ButtonShape } from '@sheinx/hooks';
 import { PaginationMoreTypes } from './pagination-buttons.type';
 import { PaginationButtonProps } from './pagination-button.type';
@@ -20,6 +21,8 @@ const PaginationButton = (props: PaginationButtonProps) => {
     onMouseEnter,
     onMouseLeave,
   } = props;
+
+  const paginationStyle = jssStyle?.pagination?.();
 
   const handleClick = () => {
     onClick(page);
@@ -46,7 +49,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
     } = {
       jssStyle,
       disabled,
-      className,
+      className: classNames(className, paginationStyle?.buttonItem),
       shape: shape,
       type,
       size,
@@ -70,7 +73,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
   }, []);
 
   return (
-    <Button {...getButtonProps()} style={{ transition: 'none' }}>
+    <Button {...getButtonProps()}>
       {children}
     </Button>
   );

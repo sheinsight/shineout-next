@@ -349,7 +349,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
       backgroundColor: Token.stepsErrorBackgroundColor,
     },
     '& $title': {
-      fontWeight: 500,
+      fontWeight: 'bold',
     },
   },
   icon: {

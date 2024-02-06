@@ -16,6 +16,7 @@ export interface PaginationClasses {
   simple: string;
   small: string;
   large: string;
+  buttonItem: string;
 }
 
 type PaginationClass = keyof PaginationClasses;
@@ -78,6 +79,9 @@ const PaginationStyle: JsStyles<PaginationClass> = {
       width: Token.paginationLargeFontSize,
     },
   },
+  buttonItem: {
+    transition: 'none'
+  }
 };
 
 export default PaginationStyle;

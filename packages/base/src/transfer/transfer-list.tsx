@@ -125,7 +125,7 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         <div className={styles.empty}>
           <Empty
             jssStyle={jssStyle}
-            description={<span className={styles.emptyDescription}>暂无数据</span>}
+            description={<span className={styles.emptyDescription}>{getLocale(locale, 'noData')}</span>}
           ></Empty>
         </div>
       );

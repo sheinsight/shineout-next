@@ -17,9 +17,9 @@ export interface DropdownTokens {
   /**
    * @type {string}
    * @token Padding-4
-   * @description 下拉菜单undefined内边距（垂直方向）
+   * @description 下拉菜单undefined内边距
    */
-  dropdownListPaddingY: string;
+  dropdownListPadding: string;
   /**
    * @type {string}
    * @token 14/regular
@@ -34,10 +34,10 @@ export interface DropdownTokens {
   dropdownListSmallBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-4
-   * @description 下拉菜单undefined小尺寸内边距（垂直方向）
+   * @token [object Object]
+   * @description 下拉菜单undefined小尺寸内边距
    */
-  dropdownListSmallPaddingY: string;
+  dropdownListSmallPadding: string;
   /**
    * @type {string}
    * @token 12/regular
@@ -52,10 +52,10 @@ export interface DropdownTokens {
   dropdownListLargeBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-4
-   * @description 下拉菜单undefined大尺寸内边距（垂直方向）
+   * @token [object Object]
+   * @description 下拉菜单undefined大尺寸内边距
    */
-  dropdownListLargePaddingY: string;
+  dropdownListLargePadding: string;
   /**
    * @type {string}
    * @token 16/regular

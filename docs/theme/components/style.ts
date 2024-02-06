@@ -25,7 +25,6 @@ export default createUseStyles(
       '& .subtitle': {
         fontSize: 14,
         lineHeight: '22px',
-        height: 22,
         opacity: 1,
         marginBottom: 0,
         marginTop: 12,

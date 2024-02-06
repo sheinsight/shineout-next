@@ -41,7 +41,7 @@ const dropdown: JsStyles<DropDownClass> = {
     fontSize: token.dropdownListFontSize,
     border: `${token.dropdownListBorderWidth} solid ${token.dropdownListBorderColor}`,
     borderRadius: token.dropdownListBorderRadius,
-    padding: `${token.dropdownListPaddingY}`,
+    padding: `${token.dropdownListPadding}`,
     background: token.dropdownListBackgroundColor,
     boxShadow: token.dropdownListBoxShadow,
     width: 'max-content',
