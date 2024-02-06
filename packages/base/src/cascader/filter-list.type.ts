@@ -1,4 +1,4 @@
-import { KeygenResult, UnMatchedData } from '@sheinx/hooks';
+import { KeygenResult } from '@sheinx/hooks';
 import { DatumType } from '../tree/tree.type';
 import { JssStyleType, CascaderProps } from './cascader.type';
 
@@ -13,7 +13,7 @@ export interface FilterListProps<DataItem, Value extends KeygenResult[]>
   filterFunc?: (data: DataItem) => boolean;
   shouldFinal: boolean;
   renderItem: (data: DataItem, active?: boolean, id?: Value[0] | undefined) => React.ReactNode;
-  onChange: (item: (UnMatchedData | DataItem)[]) => void;
+  onChange: (item: Value) => void;
   onPathChange: (
     id: KeygenResult,
     item: DataItem | null,

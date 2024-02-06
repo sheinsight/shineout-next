@@ -111,6 +111,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     position: 'relative',
     width: '100%',
     outline: 'none',
+    cursor: 'pointer',
     ...wrapper,
     '&$wrapperSmall': {
       '& $tag': {

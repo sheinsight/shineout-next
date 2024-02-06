@@ -46,6 +46,7 @@ export default () => {
     <div>
       <Cascader
         width={300}
+        clearable
         placeholder='Please select city'
         data={data}
         keygen='value'

@@ -26,7 +26,11 @@ export interface ResultProps<DataItem, Value>
   data: DataItem[];
   focus: boolean;
   childrenKey?: keyof DataItem & string;
-  renderResult: (data: DataItem, index?: number) => React.ReactNode;
+  renderResult: (
+    data: DataItem,
+    index?: number,
+    nodes?: (DataItem | UnMatchedData)[],
+  ) => React.ReactNode;
   inputText?: string;
   filterText?: string;
   onRef: React.MutableRefObject<HTMLInputElement | undefined>;
@@ -38,9 +42,9 @@ export interface ResultProps<DataItem, Value>
   onFilter?: (text: string) => void;
   onInputBlur?: (text?: string) => void;
   onResetFilter: () => void;
-  onClearCreatedData: () => void;
   // crud
+  onClearCreatedData?: () => void;
   getDataByValues: (values: Value[]) => (DataItem | UnMatchedData)[];
   checkUnMatched: (item: DataItem | UnMatchedData) => boolean;
-  onRemove: (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => void;
+  onRemove?: (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => void;
 }

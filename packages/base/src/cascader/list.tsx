@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { KeygenResult } from '@sheinx/hooks';
 import { CascaderClasses } from '@sheinx/shineout-style';
-import { getLocale } from '../config';
 import { CascaderListProps } from './list.type';
 import Node from './node';
 

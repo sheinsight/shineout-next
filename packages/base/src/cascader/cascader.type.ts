@@ -1,5 +1,6 @@
 import React from 'react';
 import { KeygenResult, ObjectKey, TreeModeType } from '@sheinx/hooks';
+import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
 import { TagClasses } from '../tag/tag.type';
 import { SelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
@@ -25,7 +26,8 @@ export type JssStyleType = {
 };
 
 export interface CascaderProps<DataItem, Value extends KeygenResult[]>
-  extends Pick<CommonType, 'className' | 'style' | 'size'> {
+  extends Pick<CommonType, 'className' | 'style' | 'size'>,
+    Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle?: JssStyleType;
   multiple?: boolean;
   mode?: TreeModeType;
@@ -40,6 +42,11 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @cn 选中的 key （受控)
    */
   value?: Value;
+  /**
+   * @en Selected key
+   * @cn 默认选中的 key
+   */
+  defaultValue?: Value;
   /**
    * @en data. The child node is children. If the children value is null or its length is 0, it is render as a leaf node
    * @cn 数据，子节点为children，如果 children 值为 null 或 长度为 0 时，视为叶子节点
@@ -193,12 +200,12 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @en blur event
    * @cn 失焦事件
    */
-  onBlur?: (e?: React.FocusEvent) => void;
+  onBlur?: (e?: React.KeyboardEvent<HTMLDivElement>) => void;
   /**
    * @en focus event
    * @cn 聚焦事件
    */
-  onFocus?: (e?: React.FocusEvent) => void;
+  onFocus?: (e?: React.KeyboardEvent<HTMLDivElement>) => void;
   /**
    * @en placeholder
    * @cn 占位符

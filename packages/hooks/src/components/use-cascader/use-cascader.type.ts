@@ -12,4 +12,5 @@ export interface BaseCascaderProps<DataItem, Value extends KeygenResult[]> {
   beforeChange?: (value: Value) => any;
   mode?: TreeModeType;
   keygen: TreeKeygenType<DataItem>;
+  disabled?: ((data: DataItem) => boolean) | boolean;
 }

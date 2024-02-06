@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import { KeygenResult, util } from '@sheinx/hooks';
 import { CascaderClasses } from '@sheinx/shineout-style';
 import { FilterListProps } from './filter-list.type';
-import { getLocale } from '../config';
 import FilterNode from './filter-node';
 import Spin from '../spin';
 
