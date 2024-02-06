@@ -1,8 +1,9 @@
 /**
- * cn - 基本用法
- *    -- 基础级联选择器的用法
- * en - Basic
- *    -- Basic usage of cascader
+ /**
+ * cn - 内嵌标题
+ *    -- 使用 innerTitle 展示内嵌标题
+ * en - inner title
+ *    -- use innerTitle to display the inner title
  */
 import React from 'react';
 import { Cascader } from 'shineout';
@@ -45,8 +46,8 @@ export default () => {
   return (
     <div>
       <Cascader
+        innerTitle='Inner Title'
         width={300}
-        clearable
         placeholder='Please select city'
         data={data}
         keygen='value'

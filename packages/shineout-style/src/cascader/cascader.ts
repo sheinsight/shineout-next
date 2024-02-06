@@ -46,6 +46,9 @@ export type CascaderClasses = {
   moreWrapper: string;
   virtualList: string;
   option: string;
+  filterOption: string;
+  filterDisabledOption: string;
+  filterOptionSeparator: string;
   optionCheckbox: string;
   activeOption: string;
   optionIcon: string;
@@ -108,6 +111,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     position: 'relative',
     width: '100%',
     outline: 'none',
+    cursor: 'pointer',
     ...wrapper,
     '&$wrapperSmall': {
       '& $tag': {
@@ -405,6 +409,13 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       },
     },
   },
+  filterOption: {
+    display: 'flex',
+    '& $optionInner': {
+      width: '100%',
+    },
+  },
+  filterDisabledOption: {},
   activeOption: {
     '& $optionInner': {
       color: token.cascaderOptionActiveColor,

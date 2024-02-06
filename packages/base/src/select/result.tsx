@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
-import { util, addResizeObserver, UnMatchedData } from '@sheinx/hooks';
+import { util, addResizeObserver, UnMatchedData, KeygenResult } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
 import { SelectClasses } from '@sheinx/shineout-style';
 import Input from './result-input';
@@ -88,23 +88,33 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           onChange={onFilter!}
           onInputBlur={onInputBlur}
           onResetFilter={onResetFilter}
-          onClearCreatedData={onClearCreatedData}
+          onClearCreatedData={onClearCreatedData!}
         ></Input>
       </React.Fragment>
     );
   };
 
-  const renderResultContent = (data: DataItem | UnMatchedData) => {
+  const renderResultContent = (
+    data: DataItem | UnMatchedData,
+    index?: number,
+    nodes?: (DataItem | UnMatchedData)[],
+  ) => {
     if (checkUnMatched(data)) {
       const _data = data as UnMatchedData;
       if (isFunc(renderUnmatched)) return renderUnmatched(_data.value);
-      return isObject(_data.value) ? renderResultProp(_data.value as DataItem) : _data.value;
+      return isObject(_data.value)
+        ? renderResultProp(_data.value as DataItem, index, nodes)
+        : _data.value;
     }
-    return renderResultProp(data as DataItem);
+    return renderResultProp(data as DataItem, index, nodes);
   };
 
-  const renderItem = (item: DataItem | UnMatchedData, index: number): React.ReactNode => {
-    let key;
+  const renderItem = (
+    item: DataItem | UnMatchedData,
+    index: number,
+    nodes?: (DataItem | UnMatchedData)[],
+  ): React.ReactNode => {
+    let key: KeygenResult;
     if (isUnMatchedData(item)) {
       if (isFunc(keygen)) {
         key = keygen(item.value, index);
@@ -115,7 +125,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       key = getKey(keygen, item as DataItem, index);
     }
     const handleClose = () => {
-      onRemove(item, key, index);
+      onRemove?.(item, key, index);
     };
     let isDisabled;
     if (util.isFunc(disabled)) {
@@ -139,7 +149,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         jssStyle={jssStyle as any}
         data-soui-type={disabled === true ? 'dark' : undefined}
       >
-        {renderResultContent(item)}
+        {renderResultContent(item, index, nodes)}
       </Tag>
     );
   };
@@ -149,9 +159,10 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     // const values = (multiple ? value : [value]) as Value[];
 
     if (value.length <= 0) return true;
+    const values = getDataByValues(value);
     const hasValue =
-      getDataByValues(value).findIndex((item) => {
-        const cur = renderResultContent(item);
+      values.findIndex((item, index) => {
+        const cur = renderResultContent(item, index, values);
         return !isEmpty(cur);
       }) >= 0;
 
@@ -200,7 +211,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (separator && util.isString(valueProp)) {
       nextValue = valueProp.split(separator) as Value[];
     }
-    const result = getDataByValues(nextValue).map(renderItem);
+    const values = getDataByValues(nextValue);
+    const result = values.map((v, i) => renderItem(v, i, values));
     return result;
   };
 

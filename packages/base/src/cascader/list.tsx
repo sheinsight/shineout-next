@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { KeygenResult } from '@sheinx/hooks';
 import { CascaderClasses } from '@sheinx/shineout-style';
-import { getLocale } from '../config';
 import { CascaderListProps } from './list.type';
 import Node from './node';
 
@@ -41,7 +40,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderEmpety = () => {
-    return <span> {getLocale('noData')}</span>;
+    return <span>noData</span>;
   };
 
   if (!data || data.length === 0) return renderEmpety();

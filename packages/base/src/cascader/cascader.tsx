@@ -33,6 +33,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     size,
     maxLength,
     defaultValue,
+    wideMatch,
+    unmatch = true,
     value: valueProp,
     data = [],
     keygen,
@@ -59,7 +61,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     resultClassName,
     renderUnmatched,
     renderOptionList,
-    showArrow,
+    showArrow = true,
     compressed,
     compressedBound,
     position: positionProp = 'bottom-left',
@@ -77,7 +79,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     width,
   };
   const [focused, setFocused] = useState(false);
-  const [enter, setEnter] = useState(false);
+  const [enter] = useState(false);
   const [path, setPath] = useState<KeygenResult[]>([]);
   const isPreventBlur = useRef(false);
   const blurEvent = useRef<(() => void) | null>();
@@ -89,16 +91,19 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     filterText,
     inputText,
     filterData,
-    createdData,
-    expanded,
+    firstMatchNode,
     setInputText,
+    setFilterText,
+    filterFunc,
     onFilter,
     onResetFilter,
   } = useFilter({
     treeData: data,
     keygen,
     childrenKey,
+    firstMatch: true,
     onFilter: onFilterProp,
+    showHitDescendants: true,
     onAdvancedFilter: false,
   });
 
@@ -106,6 +111,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     data,
     control: 'value' in props,
     keygen,
+    unmatch,
     disabled,
     mode,
     defaultValue,
@@ -164,28 +170,32 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     return expandTrigger === 'hover-only' || !!final;
   };
 
+  const shouldFinal = getFinal();
+
   const renderItem = getRenderItem;
 
-  const getRenderResult = (data: DataItem) => {
+  const getRenderResult = (
+    data: DataItem,
+    index?: number,
+    nodes?: (DataItem | UnMatchedData)[],
+  ) => {
     if (!renderResultProp) return renderItem(data);
     return typeof renderResultProp === 'function'
-      ? renderResultProp(data)
+      ? renderResultProp(data, nodes as DataItem[])
       : (data[renderResultProp] as React.ReactNode);
   };
 
   // 点击结果框的处理方法
   const handleResultClick = usePersistFn(() => {
     if (disabled === true) return;
-    openPop();
-    inputRef.current?.focus();
+    if (!open) {
+      openPop();
+      inputRef.current?.focus();
+    } else {
+      closePop();
+      inputRef.current?.blur();
+    }
   });
-
-  // 回车时的处理方法
-  const handleEnter = () => {};
-
-  // input blur 时的处理方法
-  // 注意，在点击 option 的时候也会触发 blur 事件，此时要规避点击 option 后的 blur 事件
-  const handleInputBlur = (text?: string) => {};
 
   const handleFilter = (text: string) => {
     onFilter?.(trim ? text.trim() : text);
@@ -207,6 +217,16 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
 
     setPath([...nextPath, id]);
+  };
+
+  const updatePath = () => {
+    if (!filterText || !firstMatchNode) {
+      setPath([]);
+      return;
+    }
+    const key = util.getKey(keygen, firstMatchNode);
+    const current = datum.getPath(key) || { path: [] };
+    setPath([...current.path, key]);
   };
 
   const updatePathByValue = () => {
@@ -232,19 +252,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
   };
 
-  const handleOptionClick = () => {
-    isPreventBlur.current = true;
-    if (multiple) return;
-  };
-
-  const handleMouseEnter = () => {
-    setEnter(true);
-  };
-
-  const handleMouseLeave = () => {
-    setEnter(false);
-  };
-
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     // 回车或下箭头可打开下拉列表
     if (e.keyCode === 13 || e.code === 'Enter') {
@@ -262,7 +269,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
   };
 
-  const handleChange = (item: (DataItem | UnMatchedData)[]) => {
+  const handleChange = (item: Value) => {
     onChange?.(item);
   };
 
@@ -273,49 +280,32 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     if (mode !== undefined) {
       datum.setValue([]);
     }
-    handleChange([]);
+    handleChange([] as unknown as Value);
     if (open) closePop();
   };
 
   const getDataByValues = (values?: Value) => {
     const nextValues = values
       ?.filter((v) => !util.isEmpty(v))
-      .reduce((acc, val) => acc.concat(val), []);
+      .reduce((acc, val) => acc.concat(val as any), []);
 
     if (!nextValues) return [];
     return datum.getDataByValues(nextValues);
-  };
-
-  const getValue = () => {
-    const nextValue = datum.getValue();
-    if (multiple) return nextValue;
-    return nextValue.length ? nextValue[0] : '';
   };
 
   const checkUnMatched = (item: any) => {
     return util.isUnMatchedData(item);
   };
 
-  const handleFocus = usePersistFn((e: React.FocusEvent) => {
+  const handleFocus: React.FocusEventHandler<HTMLDivElement> = usePersistFn((e: any) => {
     setFocused(true);
     onFocus?.(e);
   });
 
-  const handleBlur = usePersistFn((e: React.FocusEvent) => {
+  const handleBlur: React.FocusEventHandler<HTMLDivElement> = usePersistFn((e: any) => {
     setFocused(false);
     onBlur?.(e);
   });
-
-  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => {
-    const dataKey = util.isUnMatchedData(item) ? item.value : datum.getKey(item, key, index);
-
-    const isDisabled = datum.isDisabled(dataKey);
-
-    if (isDisabled) return;
-
-    datum.set(dataKey, 0);
-    handleChange(item);
-  };
 
   // innerTitle 模式
   const renderInnerTitle = useInnerTitle({
@@ -335,7 +325,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderIcon = () => {
     let isEmpty;
-    if (multiple) {
+    if (mode !== undefined) {
       isEmpty = !value || (Array.isArray(value) && value.length === 0);
     } else {
       isEmpty = util.isEmpty(value);
@@ -344,10 +334,13 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     if ((clearable && !isEmpty && open) || (clearable && !isEmpty && enter && disabled !== true)) {
       return renderClearable();
     }
-    if (!multiple && !showArrow) return null;
+    if (!mode !== undefined && !showArrow) return null;
     const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
     return (
-      <span className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}>
+      <span
+        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        onClick={handleResultClick}
+      >
         {defaultIcon}
       </span>
     );
@@ -364,7 +357,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           closeable={false}
           data={data}
           focus={open}
-          keygen={keygen as any}
+          keygen={keygen}
           disabled={disabled}
           maxLength={maxLength}
           compressed={compressed}
@@ -386,8 +379,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           onRef={inputRef}
           onResetFilter={onResetFilter}
           checkUnMatched={checkUnMatched}
-          getDataByValues={getDataByValues}
-          onRemove={handleRemove}
+          getDataByValues={getDataByValues as any}
         ></Result>
       </div>
     );
@@ -409,9 +401,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderList = () => {
-    let tempData: any = data;
+    let tempData: any = filterData;
     const isMultiple = multiple === true || mode !== undefined;
-
     let cascaderList: React.ReactNode[] = [
       <CascaderList
         jssStyle={jssStyle}
@@ -424,7 +415,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         multiple={isMultiple}
         expandTrigger={expandTrigger}
         childrenKey={childrenKey}
-        shouldFinal={getFinal()}
+        shouldFinal={shouldFinal}
         key='root'
         data={tempData}
         id={path[0]}
@@ -454,7 +445,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
             multiple={isMultiple}
             expandTrigger={expandTrigger}
             childrenKey={childrenKey}
-            shouldFinal={getFinal()}
+            shouldFinal={shouldFinal}
             key={p}
             data={tempData}
             id={path[i + 1]}
@@ -493,8 +484,17 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       <div className={classNames(styles.listContent)} style={listStyle}>
         <CascaderFilterList
           jssStyle={jssStyle}
+          data={filterData!}
           datum={datum}
-          data={filterData}
+          wideMatch={wideMatch}
+          filterFunc={filterFunc}
+          renderItem={renderItem}
+          childrenKey={childrenKey}
+          shouldFinal={shouldFinal}
+          onChange={handleChange}
+          setInputText={setInputText}
+          setFilterText={setFilterText}
+          onPathChange={handlePathChange}
         ></CascaderFilterList>
       </div>
     );
@@ -517,7 +517,23 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   useEffect(() => {
     if (!value) return;
     datum.setValue(value);
+    updatePathByValue();
   }, [value]);
+
+  useEffect(() => {
+    if (filterText !== undefined) {
+      updatePath();
+    }
+  }, [filterText]);
+
+  useEffect(() => {
+    updatePathByValue();
+    if (mode !== undefined && loader && [0, 1, 2].includes(mode)) {
+      console.error(
+        new Error(`The mode ${mode} is not supported when loader setted. Only 3 or 4 can be set.`),
+      );
+    }
+  }, []);
 
   return (
     <div
@@ -528,8 +544,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       onBlur={handleBlur}
       onFocus={handleFocus}
       onKeyDown={handleKeyDown}
-      // onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
     >
       {renderResult()}
       {renderIcon()}
