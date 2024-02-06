@@ -33,8 +33,8 @@ type ListRenderItem = ListProps['renderItem'];
 const names: ListItem[] = user.fetchSync(10000);
 
 const style: React.CSSProperties = {
-  width: 40,
-  height: 40,
+  width: 30,
+  height: 30,
   background: '#eee',
   borderRadius: '50%',
   marginInlineEnd: 12,
