@@ -1,4 +1,4 @@
-name: test
+name: publish
 
 on:
   push:
@@ -33,6 +33,15 @@ jobs:
         run: echo -e //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc
         env:
           NPM_TOKEN: ${{ secrets.SHINEOUT_PUB_TOKEN }}
+    
+      - name: pwd
+        run: pwd
+
+      - name: ls
+      run: ls
+
+      - name: show shineout
+        run: ls ./packages/shineout
 
       - name: publish
         run: pnpm run release

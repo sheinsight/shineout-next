@@ -111,6 +111,7 @@ const editableAreaStyle: JsStyles<EditableAreaClass> = {
   popup: {
     opacity: 0,
     pointerEvents: 'none',
+    width: '1px',
   },
   popupShow: {
     '&&': {

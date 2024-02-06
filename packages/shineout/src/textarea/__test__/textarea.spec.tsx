@@ -13,7 +13,7 @@ import {
   displayTest,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
-import TextareaBase from '../__example__/01-base';
+import TextareaBase from '../__example__/01-01-base';
 import TextareaSize from '../__example__/02-size';
 import TextareaAutosize from '../__example__/03-autosize';
 import TextareaInfo from '../__example__/04-info';
