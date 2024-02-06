@@ -41,7 +41,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderEmpety = () => {
-    return <span> {getLocale('noData')}</span>;
+    return <span>noData</span>;
   };
 
   if (!data || data.length === 0) return renderEmpety();

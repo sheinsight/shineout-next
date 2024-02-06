@@ -10,6 +10,7 @@ export interface TreeContext<DataItem, Value> {
   pathMap: Map<Value, TreePathType<Value>>;
   dataMap: Map<KeygenResult, DataItem>;
   valueMap: Map<Value, CheckedStatusType>;
+  unmatchedValueMap: Map<any, any>;
   updateMap: Map<KeygenResult, UpdateFunc>;
   disabled: boolean | ((item: DataItem) => boolean);
   value?: Value[];

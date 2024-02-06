@@ -6,6 +6,7 @@ export interface BaseCascaderProps<DataItem, Value extends KeygenResult[]> {
   defaultValue?: Value;
   data: DataItem[];
   control: boolean;
+  unmatch: boolean;
   childrenKey?: ObjectKey<DataItem>;
   onChange?: (value: Value, selected?: DataItem) => void;
   beforeChange?: (value: Value) => any;

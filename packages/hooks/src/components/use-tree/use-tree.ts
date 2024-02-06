@@ -9,7 +9,7 @@ import {
   UpdateFunc,
 } from './use-tree.type';
 import { KeygenResult } from '../../common/type';
-import { isFunc, isString, isNumber, isArray } from '../../utils/is';
+import { isFunc, isString, isNumber, isArray, isUnMatchedData } from '../../utils/is';
 
 export const MODE = {
   /**
@@ -57,14 +57,6 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     onExpand: onExpandProp,
   } = props;
 
-  // const {} = useInputAble({
-  //   value: props.value,
-  //   defaultValue: props.defaultValue,
-  //   control: props.control,
-  //   onChange: props.onChange,
-  //   beforeChange: props.beforeChange,
-  // });
-
   const { value: expanded, onChange: onExpand } = useInputAble({
     value: expandedProp,
     defaultValue: defaultExpanded,
@@ -78,6 +70,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     dataMap: new Map<KeygenResult, DataItem>(),
     valueMap: new Map<Value, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
+    unmatchedValueMap: new Map<any, any>(),
     disabled: false,
     value: undefined,
     data: [],
@@ -148,6 +141,9 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
         default:
       }
     });
+    context.unmatchedValueMap.forEach((unmatch, id) => {
+      if (unmatch) values.push(id);
+    });
     context.cachedValue = values;
     return values;
   };
@@ -188,6 +184,17 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
 
   const setValueMap = (id: Value, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
+  };
+
+  const setUnmatedValue = () => {
+    context.unmatchedValueMap = new Map();
+    if (!context.value || !context.data) return;
+    context.value.forEach((v) => {
+      const data = getDataById(v);
+      const unmatched = isUnMatchedData(data);
+      if (unmatched) context.unmatchedValueMap.set(v, true);
+      else context.unmatchedValueMap.delete(v);
+    });
   };
 
   const initData = (
@@ -305,6 +312,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     if (value && value !== context.cachedValue) {
       initValue();
     }
+    setUnmatedValue();
   };
 
   const isDisabled = (id: Value) => {
@@ -331,6 +339,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     context.pathMap = new Map();
     context.dataMap = new Map();
     context.valueMap = new Map();
+    context.unmatchedValueMap = new Map();
     context.disabled = getDisabled();
     context.data = data;
     if (!data) return;
@@ -345,7 +354,13 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
       setValueMap(id, checked);
     }
 
-    // const data = getDataById(id);
+    const data = getDataById(id);
+
+    if (data && (data as any)['IS_NOT_MATCHED_VALUE']) {
+      if (checked) context.unmatchedValueMap.set(id, true);
+      else context.unmatchedValueMap.delete(id);
+      return null;
+    }
 
     if (mode === MODE.MODE_4) {
       return 0;

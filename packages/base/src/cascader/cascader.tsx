@@ -33,6 +33,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     size,
     maxLength,
     defaultValue,
+    wideMatch,
+    unmatch = true,
     value: valueProp,
     data = [],
     keygen,
@@ -111,6 +113,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     data,
     control: 'value' in props,
     keygen,
+    unmatch,
     disabled,
     mode,
     defaultValue,
@@ -214,6 +217,16 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
 
     setPath([...nextPath, id]);
+  };
+
+  const updatePath = () => {
+    if (!filterText || !firstMatchNode) {
+      setPath([]);
+      return;
+    }
+    const key = util.getKey(keygen, firstMatchNode);
+    const current = datum.getPath(key) || { path: [] };
+    setPath([...current.path, key]);
   };
 
   const updatePathByValue = () => {
@@ -416,9 +429,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   const renderList = () => {
-    let tempData: any = data;
+    let tempData: any = filterData;
     const isMultiple = multiple === true || mode !== undefined;
-
     let cascaderList: React.ReactNode[] = [
       <CascaderList
         jssStyle={jssStyle}
@@ -500,12 +512,13 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       <div className={classNames(styles.listContent)} style={listStyle}>
         <CascaderFilterList
           jssStyle={jssStyle}
+          data={filterData!}
           datum={datum}
+          wideMatch={wideMatch}
           filterFunc={filterFunc}
           renderItem={renderItem}
           childrenKey={childrenKey}
           shouldFinal={shouldFinal}
-          data={filterData!}
           onChange={handleChange}
           setInputText={setInputText}
           setFilterText={setFilterText}
@@ -533,6 +546,12 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     if (!value) return;
     datum.setValue(value);
   }, [value]);
+
+  useEffect(() => {
+    if (filterText !== undefined) {
+      updatePath();
+    }
+  }, [filterText]);
 
   return (
     <div
