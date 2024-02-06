@@ -11,6 +11,8 @@ export interface UseFilterProps<DataItem> {
   groupKey?: string;
   hideCreateOption?: boolean;
   onAdvancedFilter: boolean;
+  // 仅仅 cascader 启用了该开关
+  firstMatch?: boolean;
   onFilter?: (text: string) => void | ((data: DataItem) => boolean);
   onFilterWidthCreate?: (data: DataItem, createdData: DataItem, key: string | number) => boolean;
   onCreate?: ((input: string | DataItem) => DataItem | string) | boolean;

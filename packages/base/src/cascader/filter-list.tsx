@@ -1,14 +1,28 @@
 import classNames from 'classnames';
-import { KeygenResult } from '@sheinx/hooks';
+import { KeygenResult, util } from '@sheinx/hooks';
 import { CascaderClasses } from '@sheinx/shineout-style';
 import { FilterListProps } from './filter-list.type';
 import { getLocale } from '../config';
 import FilterNode from './filter-node';
+import Spin from '../spin';
 
 const FilterList = <DataItem, Value extends KeygenResult[]>(
   props: FilterListProps<DataItem, Value>,
 ) => {
-  const { jssStyle, data, datum, loading, filterDataChange, renderOptionList } = props;
+  const {
+    jssStyle,
+    data,
+    datum,
+    loading,
+    childrenKey,
+    wideMatch,
+    shouldFinal,
+    filterFunc,
+    renderItem,
+    renderOptionList,
+    onChange,
+    onPathChange,
+  } = props;
   const styles = jssStyle?.cascader?.() as CascaderClasses;
 
   const getKey = (path: DataItem[]) => {
@@ -16,26 +30,48 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
   };
 
   const getWideMatch = (list: DataItem[][]) => {
-    return list.filter((arr) => arr.some((item) => filterDataChange(item)));
+    return list.filter((arr) => arr.some((item) => filterFunc?.(item)));
+  };
+
+  const renderLoading = () => {
+    return <Spin jssStyle={jssStyle}></Spin>;
   };
 
   const renderList = () => {
-    return <span>noData</span>;
+    let list = util.getFlattenTree(data, childrenKey, wideMatch);
+    if (wideMatch) {
+      list = getWideMatch(list);
+    }
+    if (loading) return renderLoading();
+
+    return (
+      <div className={classNames(styles.list)}>
+        {list.map((item) => {
+          return (
+            <FilterNode
+              jssStyle={jssStyle}
+              key={getKey(item)}
+              data={item}
+              datum={datum}
+              shouldFinal={shouldFinal}
+              renderItem={renderItem}
+              onChange={onChange}
+              onPathChange={onPathChange}
+            />
+          );
+        })}
+      </div>
+    );
   };
 
   const renderEmpety = () => {
-    return <span> {getLocale('noData')}</span>;
+    return <span>noData</span>;
   };
 
   if (!data || data.length === 0) return renderEmpety();
 
   const list = renderList();
-
-  return (
-    <div className={classNames(styles.list)}>
-      {renderOptionList ? renderOptionList(list, { loading: !!loading }) : list}
-    </div>
-  );
+  return renderOptionList ? renderOptionList(list, { loading: !!loading }) : list;
 };
 
 export default FilterList;

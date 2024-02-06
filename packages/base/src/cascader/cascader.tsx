@@ -91,14 +91,18 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     filterData,
     createdData,
     expanded,
+    firstMatchNode,
     setInputText,
+    filterFunc,
     onFilter,
     onResetFilter,
   } = useFilter({
     treeData: data,
     keygen,
     childrenKey,
+    firstMatch: true,
     onFilter: onFilterProp,
+    showHitDescendants: true,
     onAdvancedFilter: false,
   });
 
@@ -163,6 +167,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   const getFinal = () => {
     return expandTrigger === 'hover-only' || !!final;
   };
+
+  const shouldFinal = getFinal();
 
   const renderItem = getRenderItem;
 
@@ -232,18 +238,18 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
   };
 
-  const handleOptionClick = () => {
-    isPreventBlur.current = true;
-    if (multiple) return;
-  };
+  // const handleOptionClick = () => {
+  //   isPreventBlur.current = true;
+  //   if (multiple) return;
+  // };
 
-  const handleMouseEnter = () => {
-    setEnter(true);
-  };
+  // const handleMouseEnter = () => {
+  //   setEnter(true);
+  // };
 
-  const handleMouseLeave = () => {
-    setEnter(false);
-  };
+  // const handleMouseLeave = () => {
+  //   setEnter(false);
+  // };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     // 回车或下箭头可打开下拉列表
@@ -424,7 +430,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         multiple={isMultiple}
         expandTrigger={expandTrigger}
         childrenKey={childrenKey}
-        shouldFinal={getFinal()}
+        shouldFinal={shouldFinal}
         key='root'
         data={tempData}
         id={path[0]}
@@ -454,7 +460,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
             multiple={isMultiple}
             expandTrigger={expandTrigger}
             childrenKey={childrenKey}
-            shouldFinal={getFinal()}
+            shouldFinal={shouldFinal}
             key={p}
             data={tempData}
             id={path[i + 1]}
@@ -494,7 +500,12 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         <CascaderFilterList
           jssStyle={jssStyle}
           datum={datum}
-          data={filterData}
+          filterFunc={filterFunc}
+          renderItem={renderItem}
+          childrenKey={childrenKey}
+          data={filterData!}
+          onChange={handleChange}
+          onPathChange={handlePathChange}
         ></CascaderFilterList>
       </div>
     );
