@@ -17,7 +17,7 @@ const App: React.FC = () => {
         defaultStyle
       </Button>
 
-      <Button>
+      <Button style={{ marginInlineStart: 24 }}>
         <Popover useTextStyle>
           <div>hello</div>
         </Popover>
