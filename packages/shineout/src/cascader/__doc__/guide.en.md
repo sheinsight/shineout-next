@@ -1,15 +1,15 @@
-## When to use
+## When to Use
 
-When the operation command requires user clicks to trigger corresponding business logic.
+### Common scenarios include: 1. Data with a clear and consistent hierarchical structure, where cascading selections can support users in viewing data level by level; 2. Large data sets.
 
-## Related to layout
+## Recommended/Cautious Examples
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](01)
+### 1. It is recommended that cascading selections do not exceed 4 levels. If the data structure genuinely requires more levels, it is advisable to use other more suitable forms of interaction or presentation methods for the data structure.
 
-## Component combination
+![success](001)
+![warning](002)
 
-![ Buttons in webpages, forms, and dialog boxes are usually placed on the user's browsing path, making them easy to discover and efficiently guide actions.](02)
+### 2. Avoid having too many levels as much as possible. In special cases, allow text to wrap within the container width, instead of causing a horizontal scrollbar to appear.
 
-## Recommended/Use with caution examples
-
-![ When multiple buttons are used together, there should be a certain distance between each button, and it is not recommended to connect them together.](03)
+![success](003)
+![warning](004)
