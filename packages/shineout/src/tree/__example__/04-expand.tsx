@@ -13,7 +13,7 @@ export default () => {
   const [expanded, setExpanded] = useState<any[]>([]);
 
   const renderItem = (node: any) => {
-    return <span>{`node ${node.id}`}</span>;
+    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
   const handleExpandAll = () => {
@@ -30,7 +30,7 @@ export default () => {
 
   return (
     <div>
-      <div style={{ marginBottom: 32 }}>
+      <div style={{ marginBottom: 24 }}>
         <Button size='small' mode='outline' type='secondary' onClick={handleExpandAll}>
           Expand all
         </Button>

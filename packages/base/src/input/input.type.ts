@@ -48,6 +48,7 @@ export interface InputClasses {
 
   //password
   passwordToggle: string;
+  password: string;
 }
 
 export interface InputStyle {
@@ -77,6 +78,7 @@ export interface SimpleInputProps
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
   showClear?: boolean;
   renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
+  hasSuffix?: boolean;
 }
 
 export interface InputCommonProps<V> extends BaseTipProps {
@@ -120,6 +122,7 @@ export type GetCommonProps<Props, V> = Omit<
   | 'getStatus'
   | 'renderInput'
   | 'addEnd'
+  | 'hasSuffix'
 > &
   InputCommonProps<V>;
 

@@ -28,185 +28,193 @@ exports[`Checkbox[Base] should render correctly  1`] = `
 exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] = `
 <div>
   <div
-    class="so-checkbox-wrapper"
+    style="margin-bottom: 12px; line-height: 0;"
   >
-    <input
-      style="display: none;"
-      tabindex="0"
-      type="checkbox"
-    />
-    <span
-      class="so-checkbox-indicator-wrapper"
+    <div
+      class="so-checkbox-wrapper"
     >
-      <i
-        class="so-checkbox-indicator"
-        tabindex="1"
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
       />
-    </span>
-    <span
-      class="so-checkbox-desc"
-    >
-      not checked
-    </span>
-  </div>
-  <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked"
-  >
-    <input
-      checked=""
-      style="display: none;"
-      tabindex="0"
-      type="checkbox"
-    />
-    <span
-      class="so-checkbox-indicator-wrapper"
-    >
-      <i
-        class="so-checkbox-indicator"
-        tabindex="1"
+      <span
+        class="so-checkbox-indicator-wrapper"
       >
-        <svg
-          fill="currentColor"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M2.2216 7.27815C2.61213 6.88763 3.24529 6.88763 3.63582 7.27815L7.17135 10.8137C7.56188 11.2042 7.56188 11.8374 7.17135 12.2279V12.2279C6.78083 12.6184 6.14766 12.6184 5.75714 12.2279L2.2216 8.69237C1.83108 8.30184 1.83108 7.66868 2.2216 7.27815V7.27815Z"
-          />
-          <path
-            d="M14.2431 3.7426C14.6336 4.13312 14.6336 4.76629 14.2431 5.15681L7.17202 12.2279C6.7815 12.6184 6.14833 12.6184 5.75781 12.2279V12.2279C5.36728 11.8374 5.36728 11.2042 5.75781 10.8137L12.8289 3.7426C13.2194 3.35208 13.8526 3.35208 14.2431 3.7426V3.7426Z"
-          />
-        </svg>
-      </i>
-    </span>
-    <span
-      class="so-checkbox-desc"
-    >
-      checked
-    </span>
-  </div>
-  <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked so-checkbox-wrapper-indeterminate"
-  >
-    <input
-      checked=""
-      style="display: none;"
-      tabindex="0"
-      type="checkbox"
-    />
-    <span
-      class="so-checkbox-indicator-wrapper"
-    >
-      <i
-        class="so-checkbox-indicator"
-        tabindex="1"
+        <i
+          class="so-checkbox-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-checkbox-desc"
       >
-        <svg
-          fill="currentColor"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M3 8C3 7.44772 3.44772 7 4 7H12C12.5523 7 13 7.44772 13 8V8C13 8.55228 12.5523 9 12 9H4C3.44772 9 3 8.55228 3 8V8Z"
-          />
-        </svg>
-      </i>
-    </span>
-    <span
-      class="so-checkbox-desc"
+        not checked
+      </span>
+    </div>
+    <div
+      class="so-checkbox-wrapper so-checkbox-wrapper-checked"
     >
-      indeterminate
-    </span>
-  </div>
-  <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled"
-  >
-    <input
-      disabled=""
-      style="display: none;"
-      tabindex="0"
-      type="checkbox"
-    />
-    <span
-      class="so-checkbox-indicator-wrapper"
-    >
-      <i
-        class="so-checkbox-indicator"
-        tabindex="-1"
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
       />
-    </span>
-    <span
-      class="so-checkbox-desc"
+      <span
+        class="so-checkbox-indicator-wrapper"
+      >
+        <i
+          class="so-checkbox-indicator"
+          tabindex="1"
+        >
+          <svg
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.2216 7.27815C2.61213 6.88763 3.24529 6.88763 3.63582 7.27815L7.17135 10.8137C7.56188 11.2042 7.56188 11.8374 7.17135 12.2279V12.2279C6.78083 12.6184 6.14766 12.6184 5.75714 12.2279L2.2216 8.69237C1.83108 8.30184 1.83108 7.66868 2.2216 7.27815V7.27815Z"
+            />
+            <path
+              d="M14.2431 3.7426C14.6336 4.13312 14.6336 4.76629 14.2431 5.15681L7.17202 12.2279C6.7815 12.6184 6.14833 12.6184 5.75781 12.2279V12.2279C5.36728 11.8374 5.36728 11.2042 5.75781 10.8137L12.8289 3.7426C13.2194 3.35208 13.8526 3.35208 14.2431 3.7426V3.7426Z"
+            />
+          </svg>
+        </i>
+      </span>
+      <span
+        class="so-checkbox-desc"
+      >
+        checked
+      </span>
+    </div>
+    <div
+      class="so-checkbox-wrapper so-checkbox-wrapper-checked so-checkbox-wrapper-indeterminate"
     >
-      not checked
-    </span>
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
+      />
+      <span
+        class="so-checkbox-indicator-wrapper"
+      >
+        <i
+          class="so-checkbox-indicator"
+          tabindex="1"
+        >
+          <svg
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3 8C3 7.44772 3.44772 7 4 7H12C12.5523 7 13 7.44772 13 8V8C13 8.55228 12.5523 9 12 9H4C3.44772 9 3 8.55228 3 8V8Z"
+            />
+          </svg>
+        </i>
+      </span>
+      <span
+        class="so-checkbox-desc"
+      >
+        indeterminate
+      </span>
+    </div>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-checked"
+    style="line-height: 0;"
   >
-    <input
-      checked=""
-      disabled=""
-      style="display: none;"
-      tabindex="0"
-      type="checkbox"
-    />
-    <span
-      class="so-checkbox-indicator-wrapper"
+    <div
+      class="so-checkbox-wrapper so-checkbox-wrapper-disabled"
     >
-      <i
-        class="so-checkbox-indicator"
-        tabindex="-1"
+      <input
+        disabled=""
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
+      />
+      <span
+        class="so-checkbox-indicator-wrapper"
       >
-        <svg
-          fill="currentColor"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M2.2216 7.27815C2.61213 6.88763 3.24529 6.88763 3.63582 7.27815L7.17135 10.8137C7.56188 11.2042 7.56188 11.8374 7.17135 12.2279V12.2279C6.78083 12.6184 6.14766 12.6184 5.75714 12.2279L2.2216 8.69237C1.83108 8.30184 1.83108 7.66868 2.2216 7.27815V7.27815Z"
-          />
-          <path
-            d="M14.2431 3.7426C14.6336 4.13312 14.6336 4.76629 14.2431 5.15681L7.17202 12.2279C6.7815 12.6184 6.14833 12.6184 5.75781 12.2279V12.2279C5.36728 11.8374 5.36728 11.2042 5.75781 10.8137L12.8289 3.7426C13.2194 3.35208 13.8526 3.35208 14.2431 3.7426V3.7426Z"
-          />
-        </svg>
-      </i>
-    </span>
-    <span
-      class="so-checkbox-desc"
-    >
-      checked
-    </span>
-  </div>
-  <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-checked so-checkbox-wrapper-indeterminate"
-  >
-    <input
-      checked=""
-      disabled=""
-      style="display: none;"
-      tabindex="0"
-      type="checkbox"
-    />
-    <span
-      class="so-checkbox-indicator-wrapper"
-    >
-      <i
-        class="so-checkbox-indicator"
-        tabindex="-1"
+        <i
+          class="so-checkbox-indicator"
+          tabindex="-1"
+        />
+      </span>
+      <span
+        class="so-checkbox-desc"
       >
-        <svg
-          fill="currentColor"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M3 8C3 7.44772 3.44772 7 4 7H12C12.5523 7 13 7.44772 13 8V8C13 8.55228 12.5523 9 12 9H4C3.44772 9 3 8.55228 3 8V8Z"
-          />
-        </svg>
-      </i>
-    </span>
-    <span
-      class="so-checkbox-desc"
+        not checked
+      </span>
+    </div>
+    <div
+      class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-checked"
     >
-      indeterminate
-    </span>
+      <input
+        checked=""
+        disabled=""
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
+      />
+      <span
+        class="so-checkbox-indicator-wrapper"
+      >
+        <i
+          class="so-checkbox-indicator"
+          tabindex="-1"
+        >
+          <svg
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.2216 7.27815C2.61213 6.88763 3.24529 6.88763 3.63582 7.27815L7.17135 10.8137C7.56188 11.2042 7.56188 11.8374 7.17135 12.2279V12.2279C6.78083 12.6184 6.14766 12.6184 5.75714 12.2279L2.2216 8.69237C1.83108 8.30184 1.83108 7.66868 2.2216 7.27815V7.27815Z"
+            />
+            <path
+              d="M14.2431 3.7426C14.6336 4.13312 14.6336 4.76629 14.2431 5.15681L7.17202 12.2279C6.7815 12.6184 6.14833 12.6184 5.75781 12.2279V12.2279C5.36728 11.8374 5.36728 11.2042 5.75781 10.8137L12.8289 3.7426C13.2194 3.35208 13.8526 3.35208 14.2431 3.7426V3.7426Z"
+            />
+          </svg>
+        </i>
+      </span>
+      <span
+        class="so-checkbox-desc"
+      >
+        checked
+      </span>
+    </div>
+    <div
+      class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-checked so-checkbox-wrapper-indeterminate"
+    >
+      <input
+        checked=""
+        disabled=""
+        style="display: none;"
+        tabindex="0"
+        type="checkbox"
+      />
+      <span
+        class="so-checkbox-indicator-wrapper"
+      >
+        <i
+          class="so-checkbox-indicator"
+          tabindex="-1"
+        >
+          <svg
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3 8C3 7.44772 3.44772 7 4 7H12C12.5523 7 13 7.44772 13 8V8C13 8.55228 12.5523 9 12 9H4C3.44772 9 3 8.55228 3 8V8Z"
+            />
+          </svg>
+        </i>
+      </span>
+      <span
+        class="so-checkbox-desc"
+      >
+        indeterminate
+      </span>
+    </div>
   </div>
 </div>
 `;

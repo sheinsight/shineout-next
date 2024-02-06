@@ -34,6 +34,7 @@ const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataIt
   const renderCheckbox = (d: DataItem) => {
     return (
       <Checkbox
+        theme='dark'
         className={styles.columnsCheckbox}
         jssStyle={jssStyle}
         size={size}
@@ -49,6 +50,7 @@ const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataIt
   const renderRadio = (d: DataItem) => {
     return (
       <Radio
+        theme='dark'
         className={styles.columnsRadio}
         jssStyle={jssStyle}
         size={size}

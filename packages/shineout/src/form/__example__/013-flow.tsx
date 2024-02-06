@@ -1,7 +1,7 @@
 /**
  * cn - 联动
- *    -- 在通常情况下，Form 不通过 value 和 onChange 方式处理数据，只是在 submit 的时候获取数据提交。
- *    -- 这种情况下，需要联动时，可以使用 Flow 组件来实现。如果设置了 names 属性，只监听 names 包含的字段变化，如果没有设置，会监听 Form 内所有数据的变化。
+ *    -- 在通常情况下，Form 不通过 value 和 onChange 方式处理数据，只是在 submit 的时候获取数据提交
+ *    -- 这种情况下，需要联动时，可以使用 Flow 组件来实现。如果设置了 names 属性，只监听 names 包含的字段变化，如果没有设置，会监听 Form 内所有数据的变化
  * en - Flow
  *    -- For performance reasons, internal data of the Form is isolated and changing one component does not trigger another component to change.
  *    -- If one component depends on another component's value, place it in the Flow component.
@@ -23,7 +23,11 @@ const App: React.FC = () => (
 
     <Form.Item label='Full Name'>
       <Form.Flow names={['firstName', 'lastName']}>
-        {(datum) => <div>{`${datum?.get('firstName')}-${datum?.get('lastName')}`}</div>}
+        {(datum) => (
+          <div style={{ lineHeight: '32px' }}>{`${datum?.get('firstName')}-${datum?.get(
+            'lastName',
+          )}`}</div>
+        )}
       </Form.Flow>
     </Form.Item>
 

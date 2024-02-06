@@ -31,6 +31,7 @@ const menuTokenExtraValue = {
     },
     active: {
       background: { color: 'Brand-1' },
+      hover: { background: { color: 'Brand-2' } },
       font: { color: 'Brand-6' },
     },
     disabled: {

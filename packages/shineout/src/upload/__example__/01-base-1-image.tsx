@@ -18,6 +18,7 @@ const App: React.FC = () => {
       value={value}
       htmlName='file'
       recoverAble
+      leftHandler
       removeConfirm='Are you sure to delete it ?'
       limit={3}
       onSuccess={(_res, filem, data) => {

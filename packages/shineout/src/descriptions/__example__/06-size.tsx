@@ -47,8 +47,8 @@ export default () => {
       <Descriptions
         items={data}
         title='User Info'
-        colon={` :`}
-        style={{ marginBottom: '20px' }}
+        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
+        style={{ marginBottom: '12px' }}
         size={size}
       />
       <Descriptions

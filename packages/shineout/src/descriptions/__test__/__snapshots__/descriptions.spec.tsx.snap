@@ -36,7 +36,11 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Name
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"
@@ -55,7 +59,11 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Residence
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"
@@ -74,7 +82,11 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Address
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"
@@ -97,7 +109,11 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Mobile
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"
@@ -117,7 +133,11 @@ exports[`Alert[Base] should render correctly  1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Hometown
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"
@@ -165,7 +185,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Name
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -176,7 +200,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Residence
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -187,7 +215,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Address
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -202,7 +234,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Hometown
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -213,7 +249,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               class="so-descriptions-label"
             >
               Mobile
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -256,7 +296,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Name
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -268,7 +312,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Residence
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -280,7 +328,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Address
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -296,7 +348,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Hometown
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -308,7 +364,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="text-align: right;"
             >
               Mobile
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -350,21 +410,33 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="padding-bottom: 2px;"
             >
               Name
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-label"
               style="padding-bottom: 2px;"
             >
               Residence
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-label"
               style="padding-bottom: 2px;"
             >
               Address
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
           </tr>
           <tr
@@ -394,7 +466,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="padding-bottom: 2px;"
             >
               Hometown
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-label"
@@ -402,7 +478,11 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               style="padding-bottom: 2px;"
             >
               Mobile
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
           </tr>
           <tr
@@ -651,7 +731,11 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               class="so-descriptions-label"
             >
               Name
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -662,7 +746,11 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               class="so-descriptions-label"
             >
               Residence
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -673,7 +761,11 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               class="so-descriptions-label"
             >
               Address
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -688,7 +780,11 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               class="so-descriptions-label"
             >
               Mobile
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -699,7 +795,11 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               class="so-descriptions-label"
             >
               Hometown
-               :
+              <span
+                style="padding-left: 4px;"
+              >
+                :
+              </span>
             </td>
             <td
               class="so-descriptions-value"
@@ -1334,7 +1434,11 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Name
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"
@@ -1353,7 +1457,11 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Residence
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"
@@ -1372,7 +1480,11 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Address
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"
@@ -1395,7 +1507,11 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Mobile
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"
@@ -1415,7 +1531,11 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   class="so-descriptions-label-inline"
                 >
                   Hometown
-                   :
+                  <span
+                    style="padding-left: 4px;"
+                  >
+                    :
+                  </span>
                 </div>
                 <div
                   class="so-descriptions-value-inline"

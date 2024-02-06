@@ -59,13 +59,13 @@ const sliderTokenExtraValue = {
   scale: {
     line: {
       size: 'Size-3',
-      background: { color: 'Neutrall-border-1' },
+      background: { color: 'Neutral-border-1' },
     },
     margin: {
       y: 'Margin-4',
     },
     font: {
-      color: 'Neutrall-text-4',
+      color: 'Neutral-text-4',
       size: '12/regular',
     },
   },

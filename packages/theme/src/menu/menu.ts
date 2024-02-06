@@ -12,6 +12,7 @@ const menuTokens: MenuTokens = {
   menuItemHoverBackgroundColor: 'Neutral-fill-2',
   menuItemHoverFontColor: 'Neutral-text-5',
   menuItemActiveBackgroundColor: 'Brand-1',
+  menuItemActiveHoverBackgroundColor: 'Brand-2',
   menuItemActiveFontColor: 'Brand-6',
   menuItemDisabledBackgroundColor: 'Neutral-fill-1',
   menuItemDisabledFontColor: 'Neutral-text-2',

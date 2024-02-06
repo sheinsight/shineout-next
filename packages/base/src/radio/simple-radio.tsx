@@ -4,7 +4,7 @@ import React from 'react';
 import { SimpleRadioProps } from './radio.type';
 
 const Radio = (props: SimpleRadioProps) => {
-  const { jssStyle, className, style, children, renderRadio, size, ...rest } = props;
+  const { jssStyle, className, style, children, renderRadio, size, theme, ...rest } = props;
   const radioClasses = jssStyle?.radio?.();
   const { getRootProps, getIndicatorProps, getInputProps, disabled, checked } = useCheck({
     ...rest,
@@ -18,6 +18,11 @@ const Radio = (props: SimpleRadioProps) => {
     size === 'large' && radioClasses?.wrapperLarge,
   ]);
 
+  const indicatorClass = classNames(
+    radioClasses?.indicatorWrapper,
+    theme === 'dark' && radioClasses?.darkIndicatorWrapper,
+  );
+
   const inputProps = getInputProps();
   const rootProps = getRootProps({
     className: rootClass,
@@ -28,7 +33,7 @@ const Radio = (props: SimpleRadioProps) => {
   const simpleRadio = (
     <div {...rootProps}>
       <input {...inputProps} type='radio' />
-      <span className={radioClasses?.indicatorWrapper}>
+      <span className={indicatorClass}>
         <span {...indicatorProps} className={radioClasses?.indicator} />
       </span>
       <span className={radioClasses?.desc}>{children}</span>

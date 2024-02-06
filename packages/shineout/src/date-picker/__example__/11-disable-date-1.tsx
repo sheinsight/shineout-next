@@ -10,12 +10,11 @@ import { DatePicker } from 'shineout';
 const Now = Date.now();
 
 const App: React.FC = () => (
-  <div>
+  <div style={{ display: 'flex', gap: '24px' }}>
     <DatePicker
       type='datetime'
       inputable
       defaultValue={Now}
-      style={{ marginInlineEnd: 12 }}
       disabled={(d) => {
         return d.getDay() === 0 || d.getDay() === 6;
       }}

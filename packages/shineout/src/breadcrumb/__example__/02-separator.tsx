@@ -24,7 +24,7 @@ const data: BreadcrumbProps<BreadcrumbData>['data'] = [
 
 const App: React.FC = () => (
   <div>
-    <Breadcrumb data={data} separator='/' />
+    <Breadcrumb data={data} separator='/' style={{ marginBottom: '24px' }} />
     <Breadcrumb data={data} separator={<Separator />} />
   </div>
 );

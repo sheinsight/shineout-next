@@ -3,44 +3,67 @@
 exports[`Message[Base] should render correctly  1`] = `
 <div>
   <button
-    class="so-button-default so-button-button"
+    class="so-button-secondary so-button-button so-button-outline"
+    type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Show
     </span>
   </button>
   <button
-    class="so-button-default so-button-button"
+    class="so-button-primary so-button-button"
+    style="margin-inline-start: 24px;"
+    type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Info
     </span>
   </button>
   <button
-    class="so-button-default so-button-button"
+    class="so-button-success so-button-button"
+    style="margin-inline-start: 24px;"
+    type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Success
     </span>
   </button>
   <button
-    class="so-button-default so-button-button"
+    class="so-button-warning so-button-button"
+    style="margin-inline-start: 24px;"
+    type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Warn
     </span>
   </button>
   <button
-    class="so-button-default so-button-button"
+    class="so-button-danger so-button-button"
+    style="margin-inline-start: 24px;"
+    type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Error
     </span>
   </button>
   <button
-    class="so-button-default so-button-button"
+    class="so-button-secondary so-button-button so-button-outline"
+    style="margin-inline-start: 24px;"
+    type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Close All
     </span>
   </button>
@@ -50,16 +73,23 @@ exports[`Message[Base] should render correctly  1`] = `
 exports[`Message[Base] should render correctly  2`] = `
 <div>
   <button
-    class="so-button-default so-button-button"
+    class="so-button-secondary so-button-button so-button-outline"
+    type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Duration 10 s.
     </span>
   </button>
   <button
-    class="so-button-default so-button-button"
+    class="so-button-secondary so-button-button so-button-outline"
+    style="margin-inline-start: 24px;"
+    type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Manually close
     </span>
   </button>
@@ -71,10 +101,8 @@ exports[`Message[Base] should render correctly  3`] = `
   <div
     style="display: flex; align-items: center; margin-bottom: 24px;"
   >
-    position:
     <div
       class="so-radio-group"
-      style="margin: 0px 20px;"
     >
       <div
         class="so-radio-wrapper"
@@ -90,20 +118,7 @@ exports[`Message[Base] should render correctly  3`] = `
           <span
             class="so-radio-indicator"
             tabindex="1"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+          />
         </span>
         <span
           class="so-radio-desc"
@@ -125,20 +140,7 @@ exports[`Message[Base] should render correctly  3`] = `
           <span
             class="so-radio-indicator"
             tabindex="1"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+          />
         </span>
         <span
           class="so-radio-desc"
@@ -160,20 +162,7 @@ exports[`Message[Base] should render correctly  3`] = `
           <span
             class="so-radio-indicator"
             tabindex="1"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+          />
         </span>
         <span
           class="so-radio-desc"
@@ -196,20 +185,7 @@ exports[`Message[Base] should render correctly  3`] = `
           <span
             class="so-radio-indicator"
             tabindex="1"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7Z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+          />
         </span>
         <span
           class="so-radio-desc"
@@ -231,20 +207,7 @@ exports[`Message[Base] should render correctly  3`] = `
           <span
             class="so-radio-indicator"
             tabindex="1"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+          />
         </span>
         <span
           class="so-radio-desc"
@@ -266,20 +229,7 @@ exports[`Message[Base] should render correctly  3`] = `
           <span
             class="so-radio-indicator"
             tabindex="1"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1Z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
+          />
         </span>
         <span
           class="so-radio-desc"
@@ -290,9 +240,12 @@ exports[`Message[Base] should render correctly  3`] = `
     </div>
   </div>
   <button
-    class="so-button-default so-button-button"
+    class="so-button-secondary so-button-button so-button-outline"
+    type="button"
   >
-    <span>
+    <span
+      class="so-button-space-wrapper"
+    >
       Show message.
     </span>
   </button>
@@ -309,6 +262,7 @@ exports[`Message[Base] should render default 1`] = `
   >
     <div
       class="so-message-message so-alert-alert so-alert-warning"
+      data-soui-type="message"
     >
       <div
         class="so-alert-content"
@@ -340,6 +294,7 @@ exports[`Message[Base] should render default 1`] = `
   >
     <div
       class="so-message-message so-alert-alert so-alert-warning"
+      data-soui-type="message"
     >
       <div
         class="so-alert-content"
@@ -379,6 +334,7 @@ exports[`Message[Base] should render default 2`] = `
   >
     <div
       class="so-message-message so-alert-alert so-alert-warning"
+      data-soui-type="message"
     >
       <div
         class="so-alert-content"
@@ -410,6 +366,7 @@ exports[`Message[Base] should render default 2`] = `
   >
     <div
       class="so-message-message so-alert-alert so-alert-warning"
+      data-soui-type="message"
     >
       <div
         class="so-alert-content"

@@ -13,7 +13,7 @@ const Default = (count = 12) => {
   const defaultStyle = {
     width: 54,
     height: 54,
-    margin: 'auto',
+    // margin: 'auto',
     position: 'relative',
     boxSizing: 'border-box',
     '& $item': {

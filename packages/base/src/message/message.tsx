@@ -112,6 +112,7 @@ const MessagePure = (props: {
                 style={{ top }}
                 title={title}
                 type={type === 'default' ? undefined : type}
+                data-soui-type='message'
               >
                 {content}
               </Alert>

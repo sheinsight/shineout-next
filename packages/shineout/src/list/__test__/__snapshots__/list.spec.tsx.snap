@@ -52,7 +52,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Preview
               </span>
             </button>
@@ -60,7 +62,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Edit
               </span>
             </button>
@@ -68,7 +72,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Delete
               </span>
             </button>
@@ -121,7 +127,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Preview
               </span>
             </button>
@@ -129,7 +137,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Edit
               </span>
             </button>
@@ -137,7 +147,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Delete
               </span>
             </button>
@@ -190,7 +202,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Preview
               </span>
             </button>
@@ -198,7 +212,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Edit
               </span>
             </button>
@@ -206,7 +222,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Delete
               </span>
             </button>
@@ -259,7 +277,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Preview
               </span>
             </button>
@@ -267,7 +287,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Edit
               </span>
             </button>
@@ -275,7 +297,9 @@ exports[`List[Base] should render correctly  1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Delete
               </span>
             </button>
@@ -403,7 +427,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Preview
               </span>
             </button>
@@ -411,7 +437,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Edit
               </span>
             </button>
@@ -419,7 +447,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Delete
               </span>
             </button>
@@ -468,7 +498,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Preview
               </span>
             </button>
@@ -476,7 +508,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Edit
               </span>
             </button>
@@ -484,7 +518,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Delete
               </span>
             </button>
@@ -537,7 +573,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Preview
               </span>
             </button>
@@ -545,7 +583,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Edit
               </span>
             </button>
@@ -553,7 +593,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Delete
               </span>
             </button>
@@ -602,7 +644,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Preview
               </span>
             </button>
@@ -610,7 +654,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Edit
               </span>
             </button>
@@ -618,7 +664,9 @@ exports[`List[Base] should render correctly about colNum 1`] = `
               class="so-button-primary so-button-button so-button-text"
               type="button"
             >
-              <span>
+              <span
+                class="so-button-space-wrapper"
+              >
                 Delete
               </span>
             </button>

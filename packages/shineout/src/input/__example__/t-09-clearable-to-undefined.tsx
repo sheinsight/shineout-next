@@ -9,7 +9,7 @@ import React from 'react';
 import { Input } from 'shineout';
 
 const App: React.FC = () => (
-  <div style={{ width: 300, display: 'flex', flexDirection: 'column', gap: 12 }}>
+  <div style={{ width: 300, display: 'flex', flexDirection: 'column', gap: 24 }}>
     <Input clearable placeholder='input' />
     <Input
       clearable

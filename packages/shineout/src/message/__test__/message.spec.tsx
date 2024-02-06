@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Message from '..';
 import type { MessageOptions } from '../message.type';
@@ -376,11 +376,6 @@ describe('Message[Option]', () => {
   test('should render manual close', async () => {
     const { container } = render(<MessageManualClose />);
     fireEvent.click(container.querySelector('button')!);
-    await waitFor(async () => {
-      await delay(200);
-      screen.debug();
-      fireEvent.click(document.querySelectorAll('button')[1]);
-    });
     await waitFor(async () => {
       await delay(200);
       expect(document.querySelector(wrapper)).not.toBeInTheDocument();

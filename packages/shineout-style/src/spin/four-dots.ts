@@ -1,5 +1,5 @@
 export default {
-  margin: 'auto',
+  // margin: 'auto',
   position: 'relative',
   animation: '$four-dots-2 1.6s linear infinite',
   boxSizing: 'border-box',

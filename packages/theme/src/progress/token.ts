@@ -35,6 +35,8 @@ const progressTokenExtraValue = {
       right: { font: { color: 'Neutral-text-5' } },
     },
     icon: { size: 'Size-7' },
+    background: { color: 'Neutral-fill-9' },
+    color: 'Neutral-text-1',
   },
 };
 

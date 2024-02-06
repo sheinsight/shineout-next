@@ -1,7 +1,7 @@
 const delayRange = 0.4;
 
 export default {
-  margin: 'auto',
+  // margin: 'auto',
   '& $item': {
     width: '33.33333%',
     height: '33.3333%',

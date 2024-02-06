@@ -98,13 +98,15 @@ export default createUseStyles(
       },
     },
     exampleDescribe: {
-      margin: 0,
       fontSize: 12,
       display: 'flex',
       lineHeight: '20px',
       alignItems: 'center',
       flexWrap: 'wrap',
-      // marginBottom: 4,
+      marginBottom: 2,
+      '&:last-child': {
+        marginBottom: 0,
+      },
     },
     exampleAction: {
       display: 'flex',

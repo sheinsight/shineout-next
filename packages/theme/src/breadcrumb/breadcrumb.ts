@@ -19,6 +19,7 @@ const breadcrumbTokens: BreadcrumbTokens = {
   breadcrumbListItemHoverBackgroundColor: 'Neutral-fill-2',
   breadcrumbListItemHoverFontColor: 'Neutral-text-3',
   breadcrumbSeparatorMarginX: 'Padding-8',
+  breadcrumbIconBackgroundColor: 'Neutral-text-4',
 };
 
 export default breadcrumbTokens;

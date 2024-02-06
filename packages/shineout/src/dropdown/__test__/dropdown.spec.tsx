@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Dropdown from '..';
 import { TYPE } from 'shineout';
@@ -81,8 +81,7 @@ const data: DropdownItem[] = [
 ];
 const menu: DropdownItem[] = [{ content: 'America' }, { content: 'Germany' }];
 const dataPosition = 'data-position';
-const closeStyle =
-  'pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;';
+const closeStyle = 'pointer-events: none; position: absolute; z-index: -1000; display: none;';
 
 const textSplit = (e: Element) => e.textContent?.split('AmericaGermany')[0];
 
@@ -268,8 +267,8 @@ describe('Dropdown[Button]', () => {
 });
 describe('Dropdown[Children]', () => {
   test('should render when set group in children', () => {
-    const { container } = render(<DropdownGroup />);
-    const list = container.querySelector(dropdownListClassName)!;
+    render(<DropdownGroup />);
+    const list = document.querySelector(dropdownListClassName)!;
     const groups = list.querySelectorAll(dropdownGroupClassName)!;
     const items = list.querySelectorAll('a')!;
     expect(groups.length).toBe(items.length / 2);
@@ -322,7 +321,6 @@ describe('Dropdown[Size]', () => {
   const listClassNames = [dropdownListSmallClassName, '', dropdownListLargeClassName];
   test('should render when set size', () => {
     const { container } = render(<DropdownSize />);
-    screen.debug();
     container.querySelectorAll('button').forEach((button, index) => {
       if (index === 1) return;
       classTest(button, buttonClassNames[index]);
@@ -358,7 +356,7 @@ describe('Dropdown[absolute]', () => {
       await delay(200);
       styleTest(
         document.querySelector(dropdownListClassName)!,
-        'position: absolute; z-index: 1051; display: block; opacity: 1; min-width: 0; left: 0px; top: 2px; transition: opacity 240ms ease-in-out;',
+        'position: absolute; z-index: 1051; display: block; min-width: 0; left: 0px; top: 4px; opacity: 1; transition: opacity 240ms ease-in-out;',
       );
     });
   });
@@ -435,10 +433,7 @@ describe('Dropdown[Open]', () => {
     classTest(dropdown, dropdownOpenClassName);
     attributesTest(list, 'data-sheinx-animation-duration', 'fast');
     attributesTest(list, 'data-sheinx-animation-type', 'fade');
-    styleTest(
-      list,
-      'pointer-events: none; position: absolute; z-index: -1000; display: block; opacity: 0;',
-    );
+    styleTest(list, 'pointer-events: none; position: absolute; z-index: -1000; display: block;');
   });
 });
 describe('Dropdown[OnCollapse]', () => {

@@ -27,8 +27,8 @@ const descriptionsTokens: DescriptionsTokens = {
   descriptionsTitleFontWeight: '500',
   descriptionsTitleGap: 'Size-2',
   descriptionsBorderRadius: 'Size-2',
-  descriptionsBorderRightSize: '0.5px',
-  descriptionsBorderBottomSize: '0.5px',
+  descriptionsBorderRightSize: '1px',
+  descriptionsBorderBottomSize: '1px',
   descriptionsInlineBorderPaddingX: 'Padding-8',
   descriptionsInlineBorderPaddingY: 'Padding-12',
 };

@@ -8,16 +8,12 @@ import React from 'react';
 import { DatePicker } from 'shineout';
 
 const App: React.FC = () => (
-  <div>
-    <DatePicker type='date' innerTitle='Select date' clearable style={{ marginBottom: 16 }} />
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <DatePicker type='date' innerTitle='Select date' clearable showSelNow />
 
-    <br />
+    <DatePicker range innerTitle='Select date' clearable showSelNow />
 
-    <DatePicker range innerTitle='Select date' clearable style={{ marginBottom: 16 }} />
-
-    <br />
-
-    <DatePicker type='datetime' inputable clearable innerTitle='Select datetime' />
+    <DatePicker type='datetime' inputable clearable innerTitle='Select datetime' showSelNow />
   </div>
 );
 

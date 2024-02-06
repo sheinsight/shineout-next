@@ -25,7 +25,8 @@ type TransferClass =
   | 'checkbox'
   | 'itemWrapper'
   | 'footer'
-  | 'empty';
+  | 'empty'
+  | 'emptyDescription';
 
 const TransferStyle: JsStyles<TransferClass> = {
   transfer: {
@@ -41,6 +42,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
     '& $title,$count,$simpleTarget,$removeAll': { fontSize: Token.transferSmallFontSize },
     '& $close': { width: 20 },
+    '& $left, & $right': {
+      padding: 0,
+    },
   },
   large: {
     '& $operations': { '& svg': { width: 16 } },
@@ -198,6 +202,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  emptyDescription: {
+    color: Token.transferEmptyFontColor,
   },
 };
 

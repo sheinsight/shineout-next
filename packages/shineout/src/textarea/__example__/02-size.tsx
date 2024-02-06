@@ -7,7 +7,7 @@
 import React from 'react';
 import { Textarea } from 'shineout';
 
-const style: React.CSSProperties = { width: 120, marginInlineEnd: 12 };
+const style: React.CSSProperties = { width: 120, marginInlineEnd: 24 };
 
 const App: React.FC = () => (
   <div>

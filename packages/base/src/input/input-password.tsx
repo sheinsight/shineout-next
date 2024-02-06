@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import SimpleInput from './simple-input';
 import { useInputPassword, util } from '@sheinx/hooks';
 import useInputCommon from './use-input-common';
@@ -48,8 +47,9 @@ const Password = (props: InputPasswordProps) => {
     <SimpleInput
       {...forwardProps}
       {...inputProps}
-      className={classNames(props.className, inputStyle?.password)}
+      className={props.className}
       suffix={suffix}
+      hasSuffix
     />
   );
 };

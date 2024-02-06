@@ -433,7 +433,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
           >
             <div>
               <span
-                style="background: rgb(204, 204, 204); display: block; line-height: 40px; color: rgb(255, 255, 255);"
+                style="background: rgb(232, 235, 240); display: block; line-height: 40px; color: rgb(20, 23, 55);"
               >
                 Name
               </span>

@@ -4,7 +4,7 @@
 export interface UploadTokens {
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Padding-16
    * @description 上传结果内边距（水平方向）
    */
   uploadResultPaddingX: string;
@@ -22,7 +22,7 @@ export interface UploadTokens {
   uploadResultBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Margin-4
    * @description 上传结果内间距
    */
   uploadResultGap: string;
@@ -118,7 +118,7 @@ export interface UploadTokens {
   uploadImageHandlerBackgroundColor: string;
   /**
    * @type {string}
-   * @token Neutral-text-3
+   * @token Neutral-text-4
    * @description 上传图片操作区字体颜色
    */
   uploadImageHandlerFontColor: string;

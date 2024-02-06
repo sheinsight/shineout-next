@@ -10,7 +10,7 @@ export default () => {
   return (
     <div>
       <Pagination
-        style={{ marginBottom: 32 }}
+        style={{ marginBottom: 24 }}
         total={100}
         mode='text'
         defaultCurrent={1}

@@ -16,6 +16,7 @@ export interface PaginationClasses {
   simple: string;
   small: string;
   large: string;
+  buttonItem: string;
 }
 
 type PaginationClass = keyof PaginationClasses;
@@ -27,6 +28,7 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     alignItems: 'center',
     fontSize: Token.paginationFontSize,
     color: Token.paginationFontColor,
+    height: 'fit-content',
   },
   left: {
     justifyContent: 'flex-start',
@@ -68,12 +70,18 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     '& $icon': {
       width: Token.paginationSmallFontSize,
     },
+    '& $section': {
+      padding: 0,
+    },
   },
   large: {
     '& $icon': {
       width: Token.paginationLargeFontSize,
     },
   },
+  buttonItem: {
+    transition: 'none'
+  }
 };
 
 export default PaginationStyle;

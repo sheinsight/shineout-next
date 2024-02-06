@@ -11,10 +11,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      0
     </button>
   </div>
   <div
@@ -24,10 +25,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      1
     </button>
   </div>
   <div
@@ -37,10 +39,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      2
     </button>
   </div>
   <div
@@ -50,10 +53,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      3
     </button>
   </div>
   <div
@@ -63,10 +67,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      4
     </button>
   </div>
   <div
@@ -76,10 +81,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      5
     </button>
   </div>
   <div
@@ -89,10 +95,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      6
     </button>
   </div>
   <div
@@ -102,10 +109,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      7
     </button>
   </div>
   <div
@@ -115,10 +123,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      8
     </button>
   </div>
   <div
@@ -128,10 +137,11 @@ exports[`Gap[Base] should render correctly  1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      9
     </button>
   </div>
 </div>
@@ -235,7 +245,7 @@ exports[`Gap[Base] should render correctly about align 1`] = `
 
 exports[`Gap[Base] should render correctly about custom 1`] = `
 <div
-  style="display: flex; align-items: center;"
+  style="display: flex; align-items: center; margin-bottom: 16px;"
 >
   <div
     style="width: 80px;"
@@ -263,28 +273,6 @@ exports[`Gap[Base] should render correctly about custom 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="so-slider-scale-wrapper"
-    >
-      <div
-        class="so-slider-scale"
-      >
-        <div
-          class="so-slider-label"
-        >
-          0
-        </div>
-      </div>
-      <div
-        class="so-slider-scale"
-      >
-        <div
-          class="so-slider-label"
-        >
-          100
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -300,10 +288,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      0
     </button>
   </div>
   <div
@@ -313,10 +302,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      1
     </button>
   </div>
   <div
@@ -326,10 +316,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      2
     </button>
   </div>
   <div
@@ -339,10 +330,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
-        Item
+      <span
+        class="so-button-space-wrapper"
+      >
+        Button
       </span>
-      3
     </button>
   </div>
 </div>

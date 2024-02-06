@@ -27,6 +27,7 @@ export interface RadioClasses {
   group: string;
   groupBlock: string;
   groupButton: string;
+  darkIndicatorWrapper: string;
 }
 
 export interface SimpleRadioProps
@@ -40,6 +41,7 @@ export interface SimpleRadioProps
    * @private 内部属性用于封装按钮单选框样式
    */
   renderRadio?: (...args: any) => React.ReactElement;
+  theme?: 'dark';
 }
 
 export interface RadioProps<T> extends Omit<SimpleRadioProps, 'onChange' | 'checked'> {

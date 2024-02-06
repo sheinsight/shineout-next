@@ -32,8 +32,8 @@ const descriptionsTokenValue = {
     large: { size: '' },
     color: 'Neutral-border-1',
     radius: 'Size-2',
-    right: { size: '0.5px' },
-    bottom: { size: '0.5px' },
+    right: { size: '1px' },
+    bottom: { size: '1px' },
   },
   label: {
     padding: { top: '', bottom: 'Padding-12', left: '', right: 'Padding-8' },

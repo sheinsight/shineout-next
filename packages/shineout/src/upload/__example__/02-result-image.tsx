@@ -12,6 +12,7 @@ const App: React.FC = () => (
     action='/api/upload'
     accept='image/*'
     name='file'
+    leftHandler
     onSuccess={(_res, _file, data) => ({ data })}
     renderResult={(f) => f.data}
     limit={3}

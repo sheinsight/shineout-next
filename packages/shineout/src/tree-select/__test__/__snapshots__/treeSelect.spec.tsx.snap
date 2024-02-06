@@ -594,7 +594,7 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
   <div
     class="so-select-wrapper so-select-clearable"
     data-soui-type="input"
-    style="margin-left: 32px; width: 300px;"
+    style="margin-left: 24px; width: 300px;"
     tabindex="0"
   >
     <div

@@ -54,6 +54,30 @@ const alertStyle: JsStyles<AlertClass> = {
       fontSize: Token.alertFontSize,
       lineHeight: Token.lineHeightDynamic,
     },
+    '&[data-soui-type="message"]': {
+      '& $close': {
+        position: 'relative',
+        zIndex: 0,
+        '& svg': {
+          zIndex: 1,
+          position: 'relative',
+        },
+        '&:hover': {
+          '&:after': {
+            content: '""',
+            position: 'absolute',
+            top: -2,
+            right: 0,
+            bottom: 0,
+            left: -5,
+            width: 24,
+            height: 24,
+            borderRadius: '50%',
+            background: Token.alertMessageHoverColor,
+          },
+        },
+      },
+    },
     '&$widthTitle': {},
     '& $icon': {},
   },
@@ -94,6 +118,9 @@ const alertStyle: JsStyles<AlertClass> = {
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: Token.alertNearlyMargin,
+    '&:hover': {
+      color: Token.alertCloseHoverColor,
+    },
   },
   content: {
     flex: '1 1 0',

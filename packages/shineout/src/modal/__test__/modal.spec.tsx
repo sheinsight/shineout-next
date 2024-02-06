@@ -72,7 +72,7 @@ const {
   wrapperZoom,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const defaultStyle = 'width: 500px; top: 10vh;';
+const defaultStyle = 'top: 10vh; width: 500px;';
 
 const title = 'this is a title';
 const content = 'this is a content';

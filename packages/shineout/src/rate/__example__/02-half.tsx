@@ -1,6 +1,6 @@
 /**
  * cn - 半星
- *    -- Rate 是否允许半星。
+ *    -- Rate 是否允许半星
  * en - Semi selection
  *    -- Rate whether to allow semi selection.
  */

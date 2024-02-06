@@ -23,7 +23,7 @@ const popoverTokenDescription = {
  */
 const popoverTokenValue = {
   font: { size: '14/regular', color: 'Neutral-text-5' },
-  padding: { x: 'Padding-8', y: 'Padding-3' },
+  padding: { x: 'Padding-8', y: 'Padding-8' },
   radius: 'Radius-4',
   border: { width: 'Border-1', color: 'Neutral-border-1' },
   background: { color: 'Neutral-fill-1' },

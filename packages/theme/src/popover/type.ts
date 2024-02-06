@@ -16,7 +16,7 @@ export interface PopoverTokens {
   popoverPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-3
+   * @token Padding-8
    * @description 气泡内边距（垂直方向）
    */
   popoverPaddingY: string;

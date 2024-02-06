@@ -98,4 +98,16 @@ export interface ProgressTokens {
    * @description xxx行图标字号
    */
   progressLineIconSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-9
+   * @description xxx行背景颜色
+   */
+  progressLineBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description xxx行颜色
+   */
+  progressLineColor: string;
 }

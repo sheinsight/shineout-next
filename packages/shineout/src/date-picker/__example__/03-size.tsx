@@ -15,20 +15,12 @@ const Size: DatePickerSize[] = ['small', 'default', 'large'];
 const App: React.FC = () => {
   const [size, setSize] = React.useState<DatePickerSize>('default');
   return (
-    <div>
-      <Radio.Group
-        button={'outline'}
-        data={Size}
-        value={size}
-        onChange={setSize}
-        keygen
-        style={{ marginBottom: 24 }}
-      />
-      <br />
-      <DatePicker size={size} type='date' style={{ marginBottom: 16 }} /> <br />
-      <DatePicker size={size} type='datetime' style={{ marginBottom: 16 }} /> <br />
-      <DatePicker size={size} type='date' range style={{ marginBottom: 16 }} /> <br />
-      <DatePicker size={size} type='datetime' range style={{ marginBottom: 16 }} />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <Radio.Group button={'outline'} data={Size} value={size} onChange={setSize} keygen />
+      <DatePicker size={size} type='date' showSelNow />
+      <DatePicker size={size} type='datetime' showSelNow />
+      <DatePicker size={size} type='date' range showSelNow />
+      <DatePicker size={size} type='datetime' range showSelNow />
     </div>
   );
 };

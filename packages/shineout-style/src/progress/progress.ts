@@ -104,15 +104,16 @@ const progressStyle: JsStyles<ProgressClassType> = {
     position: 'absolute',
     transition: 'all 0.32s linear',
     top: 0,
-    background: '#fff',
-    padding: '4px 8px',
+    background: token.progressLineBackgroundColor,
+    padding: '3px 8px',
     borderRadius: '2px',
+    color: token.progressLineColor,
     boxShadow:
       '0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05)',
   },
   linePopValue: {},
   linePopArrow: {
-    background: '#fff',
+    background: token.progressLineBackgroundColor,
     position: 'absolute',
     display: 'block',
     width: '6px',
@@ -139,8 +140,8 @@ const progressStyle: JsStyles<ProgressClassType> = {
       transform: 'translate(-50%,-50%)',
     },
     '& $icon': {
-      width: '37.5%',
-      height: '37.5%',
+      width: '31.25%',
+      height: '31.25%',
     },
   },
   circleBg: {

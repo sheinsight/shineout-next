@@ -11,7 +11,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-primary so-button-button so-button-text"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -19,7 +21,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-secondary so-button-button so-button-text"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -27,7 +31,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-secondary so-button-button so-button-text"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -36,7 +42,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       disabled=""
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -48,7 +56,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -56,7 +66,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-secondary so-button-button"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -64,7 +76,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-secondary so-button-button"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -72,7 +86,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-secondary so-button-button"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -84,7 +100,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -92,7 +110,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -100,7 +120,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -108,7 +130,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       class="so-button-secondary so-button-button so-button-outline"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Publish
       </span>
     </button>
@@ -123,7 +147,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
         class="so-button-primary so-button-button"
         type="button"
       >
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Publish
         </span>
       </button>
@@ -132,7 +158,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
         type="button"
       >
         <span
-          style="display: inline-flex; line-height: 22px;"
+          style="display: inline-flex; align-items: center; line-height: 22px;"
         >
           <svg
             fill="none"
@@ -156,7 +182,9 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
         class="so-button-secondary so-button-button"
         type="button"
       >
-        <span>
+        <span
+          class="so-button-space-wrapper"
+        >
           Publish
         </span>
       </button>
@@ -165,7 +193,7 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
         type="button"
       >
         <span
-          style="display: inline-flex; line-height: 22px;"
+          style="display: inline-flex; align-items: center; line-height: 22px;"
         >
           <svg
             fill="none"

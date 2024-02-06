@@ -56,11 +56,14 @@ const NodeContent = <DataItem, Value extends KeygenResult>(
   const contentDataProps = () => {
     const dataProps: {
       'data-active'?: boolean;
+      'data-disabled'?: boolean;
     } = {};
     if (highlight) {
       dataProps['data-active'] = active;
     }
-
+    if (disabled) {
+      dataProps['data-disabled'] = disabled;
+    }
     return dataProps;
   };
 

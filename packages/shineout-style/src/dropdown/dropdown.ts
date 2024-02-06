@@ -41,7 +41,7 @@ const dropdown: JsStyles<DropDownClass> = {
     fontSize: token.dropdownListFontSize,
     border: `${token.dropdownListBorderWidth} solid ${token.dropdownListBorderColor}`,
     borderRadius: token.dropdownListBorderRadius,
-    padding: `${token.dropdownListPaddingY} 0`,
+    padding: `${token.dropdownListPadding}`,
     background: token.dropdownListBackgroundColor,
     boxShadow: token.dropdownListBoxShadow,
     width: 'max-content',
@@ -54,12 +54,12 @@ const dropdown: JsStyles<DropDownClass> = {
   listSmall: {
     fontSize: token.dropdownListSmallFontSize,
     borderRadius: token.dropdownListSmallBorderRadius,
-    padding: `${token.dropdownListSmallPaddingY} 0`,
+    padding: `${token.dropdownListSmallPaddingY}`,
   },
   listLarge: {
     fontSize: token.dropdownListLargeFontSize,
     borderRadius: token.dropdownListLargeBorderRadius,
-    padding: `${token.dropdownListLargePaddingY} 0`,
+    padding: `${token.dropdownListLargePaddingY}`,
   },
   boxList: {
     padding: `${token.dropdownColumnPaddingY} ${token.dropdownColumnPaddingX}`,
@@ -97,9 +97,7 @@ const dropdown: JsStyles<DropDownClass> = {
       display: 'flex',
     },
   },
-  itemWrapper: {
-    padding: '0 4px',
-  },
+  itemWrapper: {},
   item: {
     display: 'block',
     borderRadius: 4,
@@ -135,9 +133,15 @@ const dropdown: JsStyles<DropDownClass> = {
   },
   itemDisabled: {},
   optionGroup: {
-    padding: `${token.dropdownOptionGroupPaddingY} ${token.dropdownOptionGroupPaddingX}`,
+    padding: `${token.dropdownOptionGroupPaddingTop} ${token.dropdownOptionGroupPaddingX} ${token.dropdownOptionGroupPaddingBottom} ${token.dropdownOptionGroupPaddingX}`,
     fontSize: token.dropdownOptionGroupFontSize,
     color: token.dropdownOptionGroupFontColor,
+    '$listSmall &': {
+      padding: `${token.dropdownOptionGroupSmallTop} ${token.dropdownOptionGroupSmallX} 0 ${token.dropdownOptionGroupSmallX}`,
+    },
+    '$listLarge &': {
+      padding: `${token.dropdownOptionGroupLargeTop} ${token.dropdownOptionGroupLargeX} ${token.dropdownOptionGroupLargeBottom} ${token.dropdownOptionGroupLargeX}`,
+    },
   },
   optionDivider: {
     padding: `${token.dropdownOptionDividerPaddingY} ${token.dropdownOptionDividerPaddingX}`,

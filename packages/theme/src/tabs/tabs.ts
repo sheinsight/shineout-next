@@ -6,6 +6,7 @@ import { TabsTokens } from './type';
 const tabsTokens: TabsTokens = {
   tabsExtraFillHoverBackgroundColor: 'Neutral-fill-3',
   tabsCardDisabledBackgroundColor: 'Neutral-fill-2',
+  tabsArrowFontColor: 'Neutral-text-4',
   tabsFontColor: 'Neutral-text-5',
   tabsBackgroundColor: 'Neutral-fill-2',
   tabsBorderColor: 'Neutral-border-1',

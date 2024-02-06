@@ -1,6 +1,6 @@
 /**
  * cn - 全选/半选
- *    -- 通过设置 checked = 'indeterminate' 属性，可以实现半选效果。
+ *    -- 通过设置 checked = 'indeterminate' 属性，可以实现半选效果
  * en - Check all
  *    -- Set checked = 'indeterminate' to achieve half-check effect.
  */

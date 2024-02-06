@@ -7,15 +7,13 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const style = { marginBottom: 16 };
-
 const now = Date.now();
 
 const App: React.FC = () => (
-  <div>
-    <DatePicker style={style} type='time' defaultValue={now} showSelNow /> <br />
-    <DatePicker style={style} type='time' format='HH:mm' defaultValue={now} /> <br />
-    <DatePicker style={style} type='time' format='hh:mm A' defaultValue={now} />
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <DatePicker type='time' defaultValue={now} showSelNow />
+    <DatePicker type='time' format='HH:mm' defaultValue={now} />
+    <DatePicker type='time' format='hh:mm A' defaultValue={now} />
   </div>
 );
 

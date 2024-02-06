@@ -124,7 +124,7 @@ export interface SliderTokens {
   sliderScaleLineSize: string;
   /**
    * @type {string}
-   * @token Neutrall-border-1
+   * @token Neutral-border-1
    * @description xxxundefined行背景颜色
    */
   sliderScaleLineBackgroundColor: string;
@@ -136,7 +136,7 @@ export interface SliderTokens {
   sliderScaleMarginY: string;
   /**
    * @type {string}
-   * @token Neutrall-text-4
+   * @token Neutral-text-4
    * @description xxxundefined字体颜色
    */
   sliderScaleFontColor: string;

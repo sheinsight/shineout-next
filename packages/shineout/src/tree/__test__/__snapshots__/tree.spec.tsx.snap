@@ -1,0 +1,2004 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tree[Base] should render correctly  1`] = `
+<div>
+  <div
+    class="so-tree-tree so-tree-line"
+  >
+    <div
+      class="so-tree-root"
+      style="display: block;"
+    >
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM12 7C12.5128 7 12.9355 7.38604 12.9933 7.88338L13 8V11H16C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13H13V16C13 16.5523 12.5523 17 12 17C11.4872 17 11.0645 16.614 11.0067 16.1166L11 16V13H8C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11H11V8C11 7.44772 11.4477 7 12 7Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              node 0
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tree[Base] should render correctly about disabled 1`] = `
+<div>
+  <div
+    class="so-tree-tree so-tree-noline"
+  >
+    <div
+      class="so-tree-root"
+      style="display: block;"
+    >
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="true"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-checkbox so-checkbox-wrapper"
+            >
+              <input
+                style="display: none;"
+                tabindex="0"
+                type="checkbox"
+              />
+              <span
+                class="so-checkbox-indicator-wrapper"
+              >
+                <i
+                  class="so-checkbox-indicator"
+                  tabindex="1"
+                />
+              </span>
+            </div>
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 0
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="so-tree-children"
+          style="display: block;"
+        >
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+                data-disabled="true"
+              >
+                <div
+                  class="so-tree-checkbox so-checkbox-wrapper so-checkbox-wrapper-disabled"
+                >
+                  <input
+                    disabled=""
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="so-checkbox-indicator-wrapper"
+                  >
+                    <i
+                      class="so-checkbox-indicator"
+                      tabindex="-1"
+                    />
+                  </span>
+                </div>
+                <div
+                  class="so-tree-text so-tree-text-disabled"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 0-0
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+              >
+                <div
+                  class="so-tree-checkbox so-checkbox-wrapper"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="so-checkbox-indicator-wrapper"
+                  >
+                    <i
+                      class="so-checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
+                <div
+                  class="so-tree-text"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 0-1
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+              >
+                <div
+                  class="so-tree-checkbox so-checkbox-wrapper"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="so-checkbox-indicator-wrapper"
+                  >
+                    <i
+                      class="so-checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
+                <div
+                  class="so-tree-text"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 0-2
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tree[Base] should render correctly about drag 1`] = `
+<div>
+  <div
+    class="so-tree-tree so-tree-noline"
+  >
+    <div
+      class="so-tree-root"
+      style="display: block;"
+    >
+      <div
+        class="so-tree-node"
+        draggable="true"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 0
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+        draggable="true"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 1
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+        draggable="true"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+        draggable="true"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 3
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tree[Base] should render correctly about drag style 1`] = `
+<div>
+  <div
+    class="so-tree-tree so-tree-noline"
+  >
+    <div
+      class="so-tree-root"
+      style="display: block;"
+    >
+      <div
+        class="so-tree-node"
+        draggable="true"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 0
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+        draggable="true"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 1
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+        draggable="true"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+        draggable="true"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 3
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+        draggable="true"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 4
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tree[Base] should render correctly about expand 1`] = `
+<div>
+  <div
+    style="margin-bottom: 24px;"
+  >
+    <button
+      class="so-button-secondary so-button-button so-button-outline so-button-small"
+      type="button"
+    >
+      <span
+        class="so-button-space-wrapper"
+      >
+        Expand all
+      </span>
+    </button>
+    <button
+      class="so-button-secondary so-button-button so-button-outline so-button-small"
+      type="button"
+    >
+      <span
+        class="so-button-space-wrapper"
+      >
+        Collapse all
+      </span>
+    </button>
+  </div>
+  <div
+    class="so-tree-tree so-tree-noline"
+  >
+    <div
+      class="so-tree-root"
+      style="display: block;"
+    >
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 0
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 1
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tree[Base] should render correctly about highlight 1`] = `
+<div>
+  <div
+    class="so-tree-tree so-tree-noline"
+  >
+    <div
+      class="so-tree-root"
+      style="display: block;"
+    >
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+            data-active="false"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 0
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+            data-active="false"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 1
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+            data-active="false"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+            data-active="false"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 3
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+            data-active="false"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 4
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tree[Base] should render correctly about line 1`] = `
+<div>
+  <div
+    class="so-tree-tree so-tree-noline"
+  >
+    <div
+      class="so-tree-root"
+      style="display: block;"
+    >
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="true"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 0
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="so-tree-children"
+          style="display: block;"
+        >
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+              >
+                <div
+                  class="so-tree-text"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 0-0
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+              >
+                <div
+                  class="so-tree-text"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 0-1
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tree[Base] should render correctly about loader 1`] = `
+<div>
+  <div
+    class="so-tree-tree so-tree-noline"
+  >
+    <div
+      class="so-tree-root"
+      style="display: block;"
+    >
+      <div
+        class="so-tree-node so-tree-leaf"
+      >
+        <div
+          class="so-tree-content-wrapper"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-checkbox so-checkbox-wrapper"
+            >
+              <input
+                style="display: none;"
+                tabindex="0"
+                type="checkbox"
+              />
+              <span
+                class="so-checkbox-indicator-wrapper"
+              >
+                <i
+                  class="so-checkbox-indicator"
+                  tabindex="1"
+                />
+              </span>
+            </div>
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 0
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node so-tree-leaf"
+      >
+        <div
+          class="so-tree-content-wrapper"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-checkbox so-checkbox-wrapper"
+            >
+              <input
+                style="display: none;"
+                tabindex="0"
+                type="checkbox"
+              />
+              <span
+                class="so-checkbox-indicator-wrapper"
+              >
+                <i
+                  class="so-checkbox-indicator"
+                  tabindex="1"
+                />
+              </span>
+            </div>
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 1
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node so-tree-leaf"
+      >
+        <div
+          class="so-tree-content-wrapper"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-checkbox so-checkbox-wrapper"
+            >
+              <input
+                style="display: none;"
+                tabindex="0"
+                type="checkbox"
+              />
+              <span
+                class="so-checkbox-indicator-wrapper"
+              >
+                <i
+                  class="so-checkbox-indicator"
+                  tabindex="1"
+                />
+              </span>
+            </div>
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 2
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node so-tree-leaf"
+      >
+        <div
+          class="so-tree-content-wrapper"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-checkbox so-checkbox-wrapper"
+            >
+              <input
+                style="display: none;"
+                tabindex="0"
+                type="checkbox"
+              />
+              <span
+                class="so-checkbox-indicator-wrapper"
+              >
+                <i
+                  class="so-checkbox-indicator"
+                  tabindex="1"
+                />
+              </span>
+            </div>
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 3
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="so-tree-node so-tree-leaf"
+      >
+        <div
+          class="so-tree-content-wrapper"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-checkbox so-checkbox-wrapper"
+            >
+              <input
+                style="display: none;"
+                tabindex="0"
+                type="checkbox"
+              />
+              <span
+                class="so-checkbox-indicator-wrapper"
+              >
+                <i
+                  class="so-checkbox-indicator"
+                  tabindex="1"
+                />
+              </span>
+            </div>
+            <div
+              class="so-tree-text"
+            >
+              <span
+                style="display: inline-block;"
+              >
+                node 4
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tree[Base] should render correctly about onChange 1`] = `
+<div>
+  <div
+    class="so-radio-group"
+    style="margin-bottom: 24px;"
+  >
+    <div
+      class="so-radio-wrapper so-radio-wrapper-checked"
+    >
+      <input
+        checked=""
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        模式 0
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        模式 1
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        模式 2
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        模式 3
+      </span>
+    </div>
+    <div
+      class="so-radio-wrapper"
+    >
+      <input
+        style="display: none;"
+        tabindex="0"
+        type="radio"
+      />
+      <span
+        class="so-radio-indicator-wrapper"
+      >
+        <span
+          class="so-radio-indicator"
+          tabindex="1"
+        />
+      </span>
+      <span
+        class="so-radio-desc"
+      >
+        模式 4
+      </span>
+    </div>
+  </div>
+  <div
+    style="display: flex;"
+  >
+    <div
+      style="flex: 1;"
+    >
+      <div
+        class="so-tree-tree so-tree-noline"
+      >
+        <div
+          class="so-tree-root"
+          style="display: block;"
+        >
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+              >
+                <div
+                  class="so-tree-checkbox so-checkbox-wrapper"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="so-checkbox-indicator-wrapper"
+                  >
+                    <i
+                      class="so-checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
+                <div
+                  class="so-tree-text"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 0
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+              >
+                <div
+                  class="so-tree-checkbox so-checkbox-wrapper"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="so-checkbox-indicator-wrapper"
+                  >
+                    <i
+                      class="so-checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
+                <div
+                  class="so-tree-text"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 1
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+              >
+                <div
+                  class="so-tree-checkbox so-checkbox-wrapper"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="so-checkbox-indicator-wrapper"
+                  >
+                    <i
+                      class="so-checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
+                <div
+                  class="so-tree-text"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 2
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+              >
+                <div
+                  class="so-tree-checkbox so-checkbox-wrapper"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="so-checkbox-indicator-wrapper"
+                  >
+                    <i
+                      class="so-checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
+                <div
+                  class="so-tree-text"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 3
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="so-tree-node"
+          >
+            <div
+              class="so-tree-content-wrapper so-tree-childnode"
+            >
+              <span
+                class="so-tree-icon-wrapper"
+                data-expanded="false"
+                data-icon="false"
+              >
+                <span
+                  class="so-tree-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <div
+                class="so-tree-content"
+              >
+                <div
+                  class="so-tree-checkbox so-checkbox-wrapper"
+                >
+                  <input
+                    style="display: none;"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <span
+                    class="so-checkbox-indicator-wrapper"
+                  >
+                    <i
+                      class="so-checkbox-indicator"
+                      tabindex="1"
+                    />
+                  </span>
+                </div>
+                <div
+                  class="so-tree-text"
+                >
+                  <span
+                    style="display: inline-block;"
+                  >
+                    node 4
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pre
+      style="flex: 1; margin: 10px; background: rgb(29, 29, 29); color: rgb(148, 213, 252); border-radius: 4px; padding: 10px;"
+    >
+      <div
+        style="margin-bottom: 10px;"
+      >
+        <code
+          style="color: rgb(93, 142, 78);"
+        >
+          <span>
+            /
+          </span>
+          <span>
+            /
+          </span>
+           DataItem[]
+        </code>
+      </div>
+      <code
+        style="color: rgb(117, 117, 117);"
+      >
+        no data
+      </code>
+    </pre>
+  </div>
+</div>
+`;
+
+exports[`Tree[Base] should render correctly about size 1`] = `
+<div>
+  <div
+    class="so-tree-tree so-tree-line"
+  >
+    <div
+      class="so-tree-root"
+      style="display: block;"
+    >
+      <div
+        class="so-tree-node"
+      >
+        <div
+          class="so-tree-content-wrapper so-tree-childnode"
+        >
+          <span
+            class="so-tree-icon-wrapper"
+            data-expanded="false"
+            data-icon="false"
+          >
+            <span
+              class="so-tree-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4ZM12 7C12.5128 7 12.9355 7.38604 12.9933 7.88338L13 8V11H16C16.5523 11 17 11.4477 17 12C17 12.5128 16.614 12.9355 16.1166 12.9933L16 13H13V16C13 16.5523 12.5523 17 12 17C11.4872 17 11.0645 16.614 11.0067 16.1166L11 16V13H8C7.44772 13 7 12.5523 7 12C7 11.4872 7.38604 11.0645 7.88338 11.0067L8 11H11V8C11 7.44772 11.4477 7 12 7Z"
+                />
+              </svg>
+            </span>
+          </span>
+          <div
+            class="so-tree-content"
+          >
+            <div
+              class="so-tree-text"
+            >
+              node 0
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

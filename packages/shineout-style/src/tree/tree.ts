@@ -131,7 +131,10 @@ const treeStyle: JsStyles<TreeClass> = {
         color: Token.treeContentActiveFontColor,
       },
     },
-    '&:hover:not([data-active="true"])': {
+    '&[data-disabled="true"]': {
+      cursor: 'not-allowed',
+    },
+    '&:hover:not([data-active="true"]):not([data-disabled="true"])': {
       background: Token.treeContentHoverBackgroundColor,
     },
   },
