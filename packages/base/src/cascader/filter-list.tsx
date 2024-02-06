@@ -20,6 +20,8 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
     filterFunc,
     renderItem,
     renderOptionList,
+    setInputText,
+    setFilterText,
     onChange,
     onPathChange,
   } = props;
@@ -55,6 +57,8 @@ const FilterList = <DataItem, Value extends KeygenResult[]>(
               datum={datum}
               shouldFinal={shouldFinal}
               renderItem={renderItem}
+              setInputText={setInputText}
+              setFilterText={setFilterText}
               onChange={onChange}
               onPathChange={onPathChange}
             />

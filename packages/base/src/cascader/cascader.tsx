@@ -93,6 +93,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     expanded,
     firstMatchNode,
     setInputText,
+    setFilterText,
     filterFunc,
     onFilter,
     onResetFilter,
@@ -503,8 +504,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           filterFunc={filterFunc}
           renderItem={renderItem}
           childrenKey={childrenKey}
+          shouldFinal={shouldFinal}
           data={filterData!}
           onChange={handleChange}
+          setInputText={setInputText}
+          setFilterText={setFilterText}
           onPathChange={handlePathChange}
         ></CascaderFilterList>
       </div>

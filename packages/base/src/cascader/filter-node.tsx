@@ -6,7 +6,17 @@ import { FilterNodeProps } from './filter-node.type';
 const FilterNode = <DataItem, Value extends KeygenResult[]>(
   props: FilterNodeProps<DataItem, Value>,
 ) => {
-  const { jssStyle, data, shouldFinal, datum, renderItem, onChange, onPathChange } = props;
+  const {
+    jssStyle,
+    data,
+    shouldFinal,
+    datum,
+    renderItem,
+    setInputText,
+    setFilterText,
+    onChange,
+    onPathChange,
+  } = props;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
 
@@ -21,6 +31,8 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
     if (onChange) onChange(keys);
     onPathChange(datum.getKey(item), item, keys.slice(0, keys.length - 1) as Value, true);
     // TODO: 清空输入框内容
+    setInputText('');
+    setFilterText('');
   };
 
   const handleSelect = () => {

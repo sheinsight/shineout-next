@@ -8,6 +8,8 @@ export interface FilterNodeProps<DataItem, Value extends KeygenResult[]> {
   datum: DatumType<DataItem, KeygenResult>['datum'];
   shouldFinal: boolean;
   renderItem: (data: DataItem, active?: boolean, id?: Value[0] | undefined) => React.ReactNode;
+  setInputText: (text: string) => void;
+  setFilterText: (text: string) => void;
   onChange: (item: (UnMatchedData | DataItem)[]) => void;
   onPathChange: (
     id: KeygenResult,

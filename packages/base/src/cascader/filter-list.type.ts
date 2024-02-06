@@ -20,4 +20,6 @@ export interface FilterListProps<DataItem, Value extends KeygenResult[]>
     nextPath: Value,
     fromClick?: boolean,
   ) => void;
+  setInputText: (text: string) => void;
+  setFilterText: (text: string) => void;
 }
