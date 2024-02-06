@@ -479,9 +479,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 </svg>
               </i>
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -534,9 +531,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -589,9 +583,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -644,9 +635,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -699,9 +687,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -754,9 +739,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -809,9 +791,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -864,9 +843,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -919,9 +895,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -974,9 +947,6 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
       </div>
@@ -1049,9 +1019,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="-1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -1104,9 +1071,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -1160,9 +1124,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="-1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -1215,9 +1176,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -1271,9 +1229,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="-1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -1326,9 +1281,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -1382,9 +1334,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="-1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -1437,9 +1386,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -1493,9 +1439,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="-1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
         <div
@@ -1548,9 +1491,6 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
                 tabindex="1"
               />
             </span>
-            <span
-              class="so-checkbox-desc"
-            />
           </div>
         </div>
       </div>

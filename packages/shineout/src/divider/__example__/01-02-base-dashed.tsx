@@ -1,6 +1,6 @@
 /**
  * cn - 虚线分割
- *    --使用 `type`="dashed" 设置为虚线分割线。
+ *    --使用 `type`="dashed" 设置为虚线分割线
  * en - Dashed
  *    --Use type="dashed" make it dashed.
  */

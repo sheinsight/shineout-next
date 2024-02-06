@@ -3,6 +3,7 @@
 exports[`EditableArea[Base] should render correctly  1`] = `
 <div
   class="so-editableArea-wrapper"
+  style="width: 300px;"
 >
   <div
     class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
@@ -24,7 +25,7 @@ exports[`EditableArea[Base] should render correctly  1`] = `
 exports[`EditableArea[Base] should render correctly  2`] = `
 <div
   class="so-editableArea-wrapper"
-  style="width: 400px;"
+  style="width: 300px;"
 >
   <div
     class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
@@ -33,11 +34,7 @@ exports[`EditableArea[Base] should render correctly  2`] = `
     <div
       class="so-editableArea-content"
     >
-      <span
-        class="so-editableArea-placeholder"
-      >
-        Input something
-      </span>
+      i am a long text, i am a long text, i am a long text
     </div>
   </div>
 </div>
@@ -46,13 +43,14 @@ exports[`EditableArea[Base] should render correctly  2`] = `
 exports[`EditableArea[Base] should render correctly  3`] = `
 <div
   id="popup-target"
-  style="height: 200px; overflow: auto; position: relative; padding: 10px;"
+  style="height: 100px; overflow: auto; position: relative; padding: 10px; margin-left: -10px;"
 >
   <div
-    style="height: 100px;"
+    style="height: 50px;"
   />
   <div
     class="so-editableArea-wrapper"
+    style="width: 300px;"
   >
     <div
       class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
@@ -79,6 +77,7 @@ exports[`EditableArea[Base] should render correctly  4`] = `
 <div>
   <div
     class="so-editableArea-wrapper"
+    style="width: 300px;"
   >
     <div
       class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
@@ -102,6 +101,7 @@ exports[`EditableArea[Base] should render correctly  5`] = `
 <div>
   <div
     class="so-editableArea-wrapper"
+    style="width: 300px;"
   >
     <div
       class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"

@@ -76,7 +76,7 @@ const App: React.FC = () => {
       </div>
       <div style={{ fontSize: 14 }}>
         <span>onRowClick call count： </span>
-        <strong>{count}</strong>
+        <span>{count}</span>
       </div>
     </div>
   );

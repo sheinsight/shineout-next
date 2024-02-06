@@ -45,7 +45,7 @@ export default () => {
   const [mode, setMode] = useState<0 | 1 | 2 | 3 | 4>(0);
 
   const renderItem = (node: any) => {
-    return <span>{`node ${node.id}`}</span>;
+    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
   const handleChange = (v) => {

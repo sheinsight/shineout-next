@@ -74,4 +74,10 @@ export interface CardTokens {
    * @description xxxundefined字号
    */
   cardIndicatorSize: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description xxxundefined颜色
+   */
+  cardIndicatorColor: string;
 }

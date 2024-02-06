@@ -33,12 +33,13 @@ const modalTokenExtraValue = {
     font: { size: '14/regular' },
   },
   header: {
-    icon: { margin: { end: 'Margin-8', top: 'Size-1' }, size: 'Size-10' },
+    icon: { margin: { end: 'Margin-8', top: 'Size-2' }, size: 'Size-8' },
     close: {
       margin: { x: { start: 'Margin-16' } },
       size: 'Size-8',
       top: 'Size-2',
       color: 'Neutral-text-4',
+      background: { color: 'Neutral-fill-2' },
     },
     font: { size: '16/regular' },
   },
@@ -52,6 +53,9 @@ const modalTokenExtraValue = {
     },
     footer: {
       padding: { y: 'Padding-16', x: 'Padding-16' },
+    },
+    close: {
+      background: { color: 'Neutral-fill-3' },
     },
   },
 };

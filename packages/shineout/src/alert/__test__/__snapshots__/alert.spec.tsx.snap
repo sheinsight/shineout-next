@@ -32,15 +32,6 @@ exports[`Alert[Base] should render correctly  1`] = `
 
 exports[`Alert[Base] should render correctly about closeable 1`] = `
 <div>
-  <button
-    class="so-button-primary so-button-button so-button-text"
-    style="margin-bottom: 12px;"
-    type="button"
-  >
-    <span>
-      重置
-    </span>
-  </button>
   <div
     class="so-alert-alert so-alert-info"
   >
@@ -117,12 +108,26 @@ exports[`Alert[Base] should render correctly about title 1`] = `
       This is a line of important text for alerting purposes
     </div>
   </div>
+  <div
+    class="so-alert-close"
+  >
+    <svg
+      aria-hidden="true"
+      fill="currentColor"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M4.6129 3.2097L4.70711 3.29289L12 10.585L19.2929 3.29289C19.6834 2.90237 20.3166 2.90237 20.7071 3.29289C21.0676 3.65338 21.0953 4.22061 20.7903 4.6129L20.7071 4.70711L13.415 12L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3466 21.0676 19.7794 21.0953 19.3871 20.7903L19.2929 20.7071L12 13.415L4.70711 20.7071C4.31658 21.0976 3.68342 21.0976 3.29289 20.7071C2.93241 20.3466 2.90468 19.7794 3.2097 19.3871L3.29289 19.2929L10.585 12L3.29289 4.70711C2.90237 4.31658 2.90237 3.68342 3.29289 3.29289C3.65338 2.93241 4.22061 2.90468 4.6129 3.2097Z"
+      />
+    </svg>
+  </div>
 </div>
 `;
 
 exports[`Alert[Base] should render correctly about type 1`] = `
 <div
-  style="display: flex; flex-wrap: wrap; gap: 32px;"
+  style="display: flex; flex-wrap: wrap; gap: 24px;"
 >
   <div
     class="so-alert-alert so-alert-info"

@@ -16,6 +16,7 @@ const cardTokens: CardTokens = {
   cardHeaderGap: '12px',
   cardHeaderExtraMarginX: 'Margin-16',
   cardIndicatorSize: 'Size-7',
+  cardIndicatorColor: 'Neutral-text-4',
 };
 
 export default cardTokens;

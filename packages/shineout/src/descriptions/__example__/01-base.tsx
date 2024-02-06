@@ -32,8 +32,12 @@ const data = [
 
 export default () => {
   return (
-    <div>
-      <Descriptions items={data} title='User Info' colon={` :`} />
+    <div style={{ marginBottom: '-12px' }}>
+      <Descriptions
+        items={data}
+        title='User Info'
+        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
+      />
     </div>
   );
 };

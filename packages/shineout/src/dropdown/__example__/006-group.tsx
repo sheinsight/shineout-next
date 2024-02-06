@@ -13,6 +13,6 @@ const menu = new Array(4).fill(null).map((_, index) => ({
   group: index % 2 === 0 ? `group${index / 2}` : undefined,
 }));
 
-const App: React.FC = () => <Dropdown data={menu} placeholder={'Group Menu'} />;
+const App: React.FC = () => <Dropdown data={menu} placeholder={'Group Menu'} absolute />;
 
 export default App;

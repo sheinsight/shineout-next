@@ -49,6 +49,9 @@ const breadcrumbTokenExtraValue = {
       x: 'Padding-8',
     },
   },
+  icon: {
+    background: { color: 'Neutral-text-4' },
+  },
 };
 
 module.exports = {

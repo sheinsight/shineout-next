@@ -4,10 +4,10 @@
 import { UploadTokens } from './type';
 
 const uploadTokens: UploadTokens = {
-  uploadResultPaddingX: 'Padding-12',
+  uploadResultPaddingX: 'Padding-16',
   uploadResultPaddingY: 'Padding-5',
   uploadResultBackgroundColor: 'Neutral-fill-2',
-  uploadResultGap: 'Margin-8',
+  uploadResultGap: 'Margin-4',
   uploadResultMarginY: 'Margin-8',
   uploadResultIconSize: 'Size-7',
   uploadResultIconColor: 'Neutral-text-4',
@@ -23,7 +23,7 @@ const uploadTokens: UploadTokens = {
   uploadImageBorderRadius: 'Radius-4',
   uploadImageHandlerBorderColor: 'Neutral-border-1',
   uploadImageHandlerBackgroundColor: 'Neutral-fill-1',
-  uploadImageHandlerFontColor: 'Neutral-text-3',
+  uploadImageHandlerFontColor: 'Neutral-text-4',
   uploadImageHandlerHoverBorderColor: 'Brand-6',
   uploadImageHandlerHoverFontColor: 'Brand-6',
   uploadImageHandlerErrorBorderColor: 'Danger-6',

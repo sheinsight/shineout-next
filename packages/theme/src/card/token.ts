@@ -44,6 +44,7 @@ const cardTokenExtraValue = {
   },
   indicator: {
     size: 'Size-7',
+    color: 'Neutral-text-4',
   },
   body: {},
 };

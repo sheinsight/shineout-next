@@ -186,7 +186,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
         parentElement={targetRef.current}
         absolute={absolute}
         fixedWidth={'min'}
-        popupGap={6}
+        popupGap={4}
         popupEl={popupRef.current}
         adjust={!isSub}
       >

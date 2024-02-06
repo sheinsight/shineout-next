@@ -1,5 +1,5 @@
 export default {
-  margin: 'auto',
+  // margin: 'auto',
   boxSizing: 'border-box',
   borderRadius: '100%',
   animation: '$pulse 1s linear infinite',

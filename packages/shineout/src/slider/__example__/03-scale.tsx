@@ -1,6 +1,6 @@
 /**
  * cn - 区间
- *    -- 设置 scale 属性可以自定义区间。
+ *    -- 设置 scale 属性可以自定义区间
  * en - Scale
  *    -- Set the scale property to customize the interval.
  */

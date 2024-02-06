@@ -94,7 +94,7 @@ const App: React.FC = () => {
 
   const renderFooter = () => (
     <div style={style}>
-      <Button size='small' loading={loading} onClick={onClick} type='primary'>
+      <Button loading={loading} onClick={onClick} mode='text' type='primary'>
         load more
       </Button>
     </div>

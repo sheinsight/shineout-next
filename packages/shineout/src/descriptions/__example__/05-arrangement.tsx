@@ -50,7 +50,7 @@ export default () => {
   const [tableLayout, setTableLayout] = React.useState<tableLayoutType>('auto');
   const [border, setBorder] = React.useState<boolean>(false);
   return (
-    <div>
+    <div style={{ marginBottom: '-12px' }}>
       <Radio.Group
         data={layouts}
         value={layout}
@@ -77,7 +77,7 @@ export default () => {
       <Descriptions
         items={data}
         title='User Info'
-        colon={` :`}
+        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
         layout={layout}
         tableLayout={tableLayout}
         border={border}

@@ -137,6 +137,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         className={classNames(styles.tag, resultClassName)}
         onClose={closeable && handleClose}
         jssStyle={jssStyle as any}
+        data-soui-type={disabled === true ? 'dark' : undefined}
       >
         {renderResultContent(item)}
       </Tag>

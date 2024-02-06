@@ -12,7 +12,7 @@ export default () => {
   const data = createNestedArray([5, 1, 1]);
 
   const renderItem = (node: any) => {
-    return <span>{`node ${node.id}`}</span>;
+    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
   return (

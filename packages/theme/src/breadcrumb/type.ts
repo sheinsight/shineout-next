@@ -92,4 +92,10 @@ export interface BreadcrumbTokens {
    * @description xxxundefined外边距（水平方向）
    */
   breadcrumbSeparatorMarginX: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description xxx图标背景颜色
+   */
+  breadcrumbIconBackgroundColor: string;
 }

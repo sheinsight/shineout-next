@@ -34,7 +34,7 @@ const getFormat = (format: string | undefined, type: string) => {
     case 'time':
       return 'HH:mm:ss';
     case 'week':
-      return 'gggg ww';
+      return 'gggg-ww';
     case 'year':
       return 'YYYY';
     case 'quarter':

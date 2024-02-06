@@ -12,7 +12,7 @@ type PopoverProps = TYPE.Popover.Props;
 const types: PopoverProps['type'][] = ['success', 'info', 'warning', 'danger'];
 
 const App: React.FC = () => (
-  <div>
+  <div style={{ display: 'flex', gap: 8 }}>
     {types.map((t, i) => (
       <Button key={i}>
         <Popover type={t}>Some text</Popover>

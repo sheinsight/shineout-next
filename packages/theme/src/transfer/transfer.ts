@@ -14,6 +14,7 @@ const transferTokens: TransferTokens = {
   transferFontColor: 'Neutral-text-5',
   transferIconColor: 'Neutral-text-4',
   transferDisabledFontColor: 'Neutral-text-2',
+  transferEmptyFontColor: 'Neutral-text-3',
   transferBorderRadius: 'Radius-4',
   transferHeaderBackgroundColor: 'Neutral-fill-2',
   transferIconBackgroundColor: 'Neutral-fill-3',

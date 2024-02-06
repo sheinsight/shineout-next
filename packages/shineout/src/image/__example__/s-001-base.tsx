@@ -10,7 +10,12 @@ import { Image } from 'shineout';
 
 export default () => {
   return (
-    <div>
+    <div
+      style={{
+        gap: 8,
+        display: 'flex',
+      }}
+    >
       <Image
         fit='fill'
         width={128}

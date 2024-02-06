@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tabs from '..';
 import { Button } from 'shineout';
@@ -92,7 +92,6 @@ describe('Tabs[ScrollX]', () => {
     await waitFor(async () => {
       await delay(500);
     });
-    screen.debug();
   });
   test('should render when can srcoll when set position is top-right', async () => {
     const { container } = render(<App position='top-right' />);
@@ -121,7 +120,6 @@ describe('Tabs[ScrollY]', () => {
     await waitFor(async () => {
       await delay(500);
     });
-    screen.debug();
     classLengthTest(container.querySelector(prev)!, 'svg', 1);
     classLengthTest(container.querySelector(next)!, 'svg', 1);
   });

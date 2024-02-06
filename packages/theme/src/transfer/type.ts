@@ -64,6 +64,12 @@ export interface TransferTokens {
   transferDisabledFontColor: string;
   /**
    * @type {string}
+   * @token Neutral-text-3
+   * @description 穿梭框undefined字体颜色
+   */
+  transferEmptyFontColor: string;
+  /**
+   * @type {string}
    * @token Radius-4
    * @description 穿梭框边框圆角
    */

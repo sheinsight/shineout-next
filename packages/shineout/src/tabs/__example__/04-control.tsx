@@ -1,6 +1,6 @@
 /**
  * cn - 受控
- *    -- 通过设置 `active` 属性来控制选项卡的激活状态。
+ *    -- 通过设置 `active` 属性来控制选项卡的激活状态
  * en - Control
  *    -- Set the `active` property to control the active state of the tab.
  */

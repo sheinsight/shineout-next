@@ -106,6 +106,12 @@ export interface RadioTokens {
   radioIconWrapperFill: string;
   /**
    * @type {string}
+   * @token Neutral-fill-3
+   * @description 单选框图标undefinedundefined
+   */
+  radioIconWrapperDark: string;
+  /**
+   * @type {string}
    * @token Padding-4
    * @description 单选框内边距（垂直方向）
    */

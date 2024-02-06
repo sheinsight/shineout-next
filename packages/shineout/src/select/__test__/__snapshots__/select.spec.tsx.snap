@@ -893,7 +893,7 @@ exports[`Select[Base] should render correctly about create 1`] = `
 
 exports[`Select[Base] should render correctly about custom render 1`] = `
 <div
-  style="display: flex; gap: 24px 32px; flex-wrap: wrap;"
+  style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <div
     class="so-select-wrapper so-select-clearable"

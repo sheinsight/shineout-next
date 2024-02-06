@@ -14,12 +14,13 @@ const modalTokens: ModalTokens = {
   modalPanelRadius: 'Radius-4',
   modalPanelFontSize: '14/regular',
   modalHeaderIconMarginEnd: 'Margin-8',
-  modalHeaderIconMarginTop: 'Size-1',
-  modalHeaderIconSize: 'Size-10',
+  modalHeaderIconMarginTop: 'Size-2',
+  modalHeaderIconSize: 'Size-8',
   modalHeaderCloseMarginXStart: 'Margin-16',
   modalHeaderCloseSize: 'Size-8',
   modalHeaderCloseTop: 'Size-2',
   modalHeaderCloseColor: 'Neutral-text-4',
+  modalHeaderCloseBackgroundColor: 'Neutral-fill-2',
   modalHeaderFontSize: '16/regular',
   modalDrawerTitlePaddingY: 'Padding-12',
   modalDrawerTitlePaddingX: 'Padding-16',
@@ -28,6 +29,7 @@ const modalTokens: ModalTokens = {
   modalDrawerBodyPaddingX: 'Padding-16',
   modalDrawerFooterPaddingY: 'Padding-16',
   modalDrawerFooterPaddingX: 'Padding-16',
+  modalDrawerCloseBackgroundColor: 'Neutral-fill-3',
   modalFontSize: '14/regular',
 };
 

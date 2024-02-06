@@ -116,7 +116,9 @@ const selectTokenExtraValue = {
   group: {
     title: {
       font: { color: 'Neutral-text-3', size: '12/regular' },
-      padding: { x: 'Padding-12', y: 'Padding-6' },
+      padding: { x: 'Padding-8', top: 'Padding-10', bottom: 'Padding-2' },
+      small: { x: 'Padding-8', top: 'Padding-4' },
+      large: { x: 'Padding-12', top: 'Padding-14', bottom: 'Padding-4' },
     },
   },
   column: {
@@ -124,6 +126,7 @@ const selectTokenExtraValue = {
     option: {
       margin: 'Margin-8',
     },
+    background: { color: 'Neutral-fill-2' },
   },
 };
 

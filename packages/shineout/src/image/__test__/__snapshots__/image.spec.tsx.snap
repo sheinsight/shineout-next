@@ -1,18 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Image[Base] should render correctly  1`] = `
-<div>
+<div
+  style="gap: 8px; display: flex;"
+>
   <a
-    class="image-image-0-2-6 image-href-0-2-5 image-fill-0-2-10 image-rounded-0-2-17 image-preview-0-2-13"
+    class="so-image-image so-image-href so-image-fill so-image-rounded so-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="image-inner-0-2-8"
+      class="so-image-inner"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="image-previewMask-0-2-11"
+      class="so-image-preview-mask"
     >
       <svg
         aria-hidden="true"
@@ -34,167 +36,75 @@ exports[`Image[Group] should render correctly about group 1`] = `
   style="gap: 8px; display: flex;"
 >
   <div
-    class="image-group-0-2-33"
+    class="so-image-group"
   >
     <a
-      class="image-image-0-2-6 image-href-0-2-5 image-fill-0-2-10 image-rounded-0-2-17"
+      class="so-image-image so-image-href so-image-fill so-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="image-defaultPlaceholder-0-2-20"
+        class="so-image-default-placeholder"
       >
-        <svg
-          fill="none"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            clip-path="url(#clip0_1483_450)"
-          >
-            <path
-              d="M7.99984 0.666626C12.0499 0.666626 15.3332 3.94987 15.3332 7.99996C15.3332 12.05 12.0499 15.3333 7.99984 15.3333C3.94975 15.3333 0.666504 12.05 0.666504 7.99996C0.666504 7.63177 0.964981 7.33329 1.33317 7.33329C1.70136 7.33329 1.99984 7.63177 1.99984 7.99996C1.99984 11.3137 4.68613 14 7.99984 14C11.3135 14 13.9998 11.3137 13.9998 7.99996C13.9998 4.68625 11.3135 1.99996 7.99984 1.99996C7.63165 1.99996 7.33317 1.70148 7.33317 1.33329C7.33317 0.965103 7.63165 0.666626 7.99984 0.666626Z"
-              fill="#B3B7C1"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="clip0_1483_450"
-            >
-              <rect
-                fill="white"
-                height="16"
-                width="16"
-              />
-            </clippath>
-          </defs>
-        </svg>
+        <div
+          class="so-spin-ring"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+        />
       </div>
     </a>
     <a
-      class="image-image-0-2-6 image-href-0-2-5 image-fill-0-2-10 image-rounded-0-2-17"
+      class="so-image-image so-image-href so-image-fill so-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="image-defaultPlaceholder-0-2-20"
+        class="so-image-default-placeholder"
       >
-        <svg
-          fill="none"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            clip-path="url(#clip0_1483_450)"
-          >
-            <path
-              d="M7.99984 0.666626C12.0499 0.666626 15.3332 3.94987 15.3332 7.99996C15.3332 12.05 12.0499 15.3333 7.99984 15.3333C3.94975 15.3333 0.666504 12.05 0.666504 7.99996C0.666504 7.63177 0.964981 7.33329 1.33317 7.33329C1.70136 7.33329 1.99984 7.63177 1.99984 7.99996C1.99984 11.3137 4.68613 14 7.99984 14C11.3135 14 13.9998 11.3137 13.9998 7.99996C13.9998 4.68625 11.3135 1.99996 7.99984 1.99996C7.63165 1.99996 7.33317 1.70148 7.33317 1.33329C7.33317 0.965103 7.63165 0.666626 7.99984 0.666626Z"
-              fill="#B3B7C1"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="clip0_1483_450"
-            >
-              <rect
-                fill="white"
-                height="16"
-                width="16"
-              />
-            </clippath>
-          </defs>
-        </svg>
+        <div
+          class="so-spin-ring"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+        />
       </div>
     </a>
     <a
-      class="image-image-0-2-6 image-href-0-2-5 image-fill-0-2-10 image-rounded-0-2-17"
+      class="so-image-image so-image-href so-image-fill so-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="image-defaultPlaceholder-0-2-20"
+        class="so-image-default-placeholder"
       >
-        <svg
-          fill="none"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            clip-path="url(#clip0_1483_450)"
-          >
-            <path
-              d="M7.99984 0.666626C12.0499 0.666626 15.3332 3.94987 15.3332 7.99996C15.3332 12.05 12.0499 15.3333 7.99984 15.3333C3.94975 15.3333 0.666504 12.05 0.666504 7.99996C0.666504 7.63177 0.964981 7.33329 1.33317 7.33329C1.70136 7.33329 1.99984 7.63177 1.99984 7.99996C1.99984 11.3137 4.68613 14 7.99984 14C11.3135 14 13.9998 11.3137 13.9998 7.99996C13.9998 4.68625 11.3135 1.99996 7.99984 1.99996C7.63165 1.99996 7.33317 1.70148 7.33317 1.33329C7.33317 0.965103 7.63165 0.666626 7.99984 0.666626Z"
-              fill="#B3B7C1"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="clip0_1483_450"
-            >
-              <rect
-                fill="white"
-                height="16"
-                width="16"
-              />
-            </clippath>
-          </defs>
-        </svg>
+        <div
+          class="so-spin-ring"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+        />
       </div>
     </a>
     <a
-      class="image-image-0-2-6 image-href-0-2-5 image-fill-0-2-10 image-rounded-0-2-17"
+      class="so-image-image so-image-href so-image-fill so-image-rounded"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="image-defaultPlaceholder-0-2-20"
+        class="so-image-default-placeholder"
       >
-        <svg
-          fill="none"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            clip-path="url(#clip0_1483_450)"
-          >
-            <path
-              d="M7.99984 0.666626C12.0499 0.666626 15.3332 3.94987 15.3332 7.99996C15.3332 12.05 12.0499 15.3333 7.99984 15.3333C3.94975 15.3333 0.666504 12.05 0.666504 7.99996C0.666504 7.63177 0.964981 7.33329 1.33317 7.33329C1.70136 7.33329 1.99984 7.63177 1.99984 7.99996C1.99984 11.3137 4.68613 14 7.99984 14C11.3135 14 13.9998 11.3137 13.9998 7.99996C13.9998 4.68625 11.3135 1.99996 7.99984 1.99996C7.63165 1.99996 7.33317 1.70148 7.33317 1.33329C7.33317 0.965103 7.63165 0.666626 7.99984 0.666626Z"
-              fill="#B3B7C1"
-            />
-          </g>
-          <defs>
-            <clippath
-              id="clip0_1483_450"
-            >
-              <rect
-                fill="white"
-                height="16"
-                width="16"
-              />
-            </clippath>
-          </defs>
-        </svg>
+        <div
+          class="so-spin-ring"
+          style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
+        />
       </div>
     </a>
     <a
-      class="image-image-0-2-6 image-href-0-2-5 image-fill-0-2-10 image-rounded-0-2-17 image-preview-0-2-13"
+      class="so-image-image so-image-href so-image-fill so-image-rounded so-image-preview"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="image-inner-0-2-8"
+        class="so-image-inner"
         style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png);"
       />
       <span
-        class="image-previewMask-0-2-11"
+        class="so-image-preview-mask"
       >
         <svg
           aria-hidden="true"
@@ -214,19 +124,19 @@ exports[`Image[Group] should render correctly about group 1`] = `
 
 exports[`Image[Pile] should render correctly about pile 1`] = `
 <div
-  class="image-group-0-2-33 image-groupPile-0-2-34"
+  class="so-image-group so-image-group-pile"
 >
   <a
-    class="image-image-0-2-6 image-href-0-2-5 image-fill-0-2-10 image-rounded-0-2-17 image-preview-0-2-13"
+    class="so-image-image so-image-href so-image-fill so-image-rounded so-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="image-inner-0-2-8"
+      class="so-image-inner"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="image-previewMask-0-2-11"
+      class="so-image-preview-mask"
     >
       <svg
         aria-hidden="true"
@@ -241,15 +151,15 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
     </span>
   </a>
   <div
-    class="image-groupPileItem-0-2-35"
+    class="so-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="image-groupPileItem-0-2-35"
+    class="so-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="image-groupCount-0-2-36"
+    class="so-image-group-count"
   >
     <svg
       aria-hidden="true"
@@ -270,19 +180,19 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
 
 exports[`Image[Pile] should render correctly about pile without showCount 1`] = `
 <div
-  class="image-group-0-2-33 image-groupPile-0-2-34"
+  class="so-image-group so-image-group-pile"
 >
   <a
-    class="image-image-0-2-6 image-href-0-2-5 image-fill-0-2-10 image-rounded-0-2-17 image-preview-0-2-13"
+    class="so-image-image so-image-href so-image-fill so-image-rounded so-image-preview"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="image-inner-0-2-8"
+      class="so-image-inner"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="image-previewMask-0-2-11"
+      class="so-image-preview-mask"
     >
       <svg
         aria-hidden="true"
@@ -297,11 +207,11 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
     </span>
   </a>
   <div
-    class="image-groupPileItem-0-2-35"
+    class="so-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="image-groupPileItem-0-2-35"
+    class="so-image-group-pile-item"
     style="width: 128px; height: 128px;"
   />
 </div>
@@ -309,11 +219,11 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
 
 exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 <div
-  class="image-image-0-2-6 image-fill-0-2-10 image-circle-0-2-16"
+  class="so-image-image so-image-fill so-image-circle"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="image-inner-0-2-8"
+    class="so-image-inner"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>
@@ -321,11 +231,11 @@ exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 <div
-  class="image-image-0-2-6 image-fill-0-2-10 image-rounded-0-2-17"
+  class="so-image-image so-image-fill so-image-rounded"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="image-inner-0-2-8"
+    class="so-image-inner"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>
@@ -333,11 +243,11 @@ exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is thumbnail 1`] = `
 <div
-  class="image-image-0-2-6 image-fill-0-2-10 image-thumbnail-0-2-18"
+  class="so-image-image so-image-fill so-image-thumbnail"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="image-inner-0-2-8"
+    class="so-image-inner"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>

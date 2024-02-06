@@ -18,7 +18,7 @@ const dropdownTokenDescription = { dropdown: '下拉菜单', outline: '线框模
 const dropdownTokenValue = {
   list: {
     border: { radius: 'Radius-4', color: 'Neutral-border-1', width: 'Border-1' },
-    padding: { y: 'Padding-4' },
+    padding: 'Padding-4',
     font: { size: '14/regular', color: 'Neutral-text-5' },
     small: {
       border: { radius: 'Radius-4' },
@@ -44,8 +44,10 @@ const dropdownTokenValue = {
     select: { background: { color: 'Brand-1' }, font: { color: 'Brand-6' } },
     disabled: { background: { color: 'Neutral-fill-1' }, font: { color: 'Neutral-text-2' } },
     group: {
-      padding: { x: 'Padding-8', y: 'Padding-4' },
+      padding: { x: 'Padding-8', top: 'Padding-10', bottom: 'Padding-2' },
       font: { size: '14/regular', color: 'Neutral-text-3' },
+      small: { x: 'Padding-8', top: 'Padding-4', bottom: '' },
+      large: { x: 'Padding-12', top: 'Padding-14', bottom: 'Padding-4' },
     },
     divider: {
       background: { color: 'Neutral-border-1' },
@@ -53,14 +55,10 @@ const dropdownTokenValue = {
       height: 'Border-1',
     },
   },
-  column: { padding: { x: 'Padding-8', y: 'Padding-8' } },
+  column: { padding: { x: 'Padding-4', y: 'Padding-4' } },
 };
 
-const dropdownTokenExtraValue = {
-  caret: {
-    margin: { left: 'Margin-4' },
-  },
-};
+const dropdownTokenExtraValue = { caret: { margin: { left: 'Margin-4' } } };
 
 module.exports = {
   dropdownTokenValue,

@@ -17,7 +17,7 @@ export default () => {
   const [data, setData] = useState(d);
 
   const renderItem = (node: any) => {
-    return <span>{`node ${node.id}`}</span>;
+    return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
   const handleDrag = (data) => {

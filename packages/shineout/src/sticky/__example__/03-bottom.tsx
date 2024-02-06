@@ -23,9 +23,7 @@ const App: React.FC = () => {
     >
       <div style={{ height: 300 }}></div>
       <Sticky bottom={0} parent={elRef.current}>
-        <Alert style={{ marginBottom: 0 }} closable>
-          Sticky at bottom.
-        </Alert>
+        <Alert style={{ marginBottom: 0 }}>Sticky at bottom.</Alert>
       </Sticky>
     </div>
   );

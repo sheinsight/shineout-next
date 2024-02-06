@@ -172,6 +172,18 @@ const animationStyle = {
   },
 };
 
+const hoverAfterStyles = {
+  content: '""',
+  position: 'absolute',
+  top: -4,
+  right: 0,
+  bottom: 0,
+  left: -4,
+  width: 24,
+  height: 24,
+  borderRadius: '50%',
+};
+
 const modalStyle: JsStyles<ModalClassType> = {
   ...animationStyle,
   wrapper: {
@@ -281,7 +293,7 @@ const modalStyle: JsStyles<ModalClassType> = {
         padding: `${token.modalDrawerBodyPaddingY} ${token.modalDrawerBodyPaddingX}`,
       },
       '& $bodyWithIcon': {
-        paddingLeft: `calc(${token.modalHeaderIconMarginEnd} + ${token.modalHeaderIconSize} + ${token.modalDrawerBodyPaddingX})`,
+        paddingLeft: token.modalDrawerBodyPaddingX,
       },
       '& $footer': {
         padding: `${token.modalDrawerFooterPaddingY} ${token.modalDrawerFooterPaddingX}`,
@@ -347,6 +359,7 @@ const modalStyle: JsStyles<ModalClassType> = {
       marginTop: token.modalHeaderIconMarginTop,
       width: token.modalHeaderIconSize,
       height: token.modalHeaderIconSize,
+      lineHeight: token.modalHeaderIconSize,
       display: 'block',
       alignItems: 'center',
     },
@@ -366,6 +379,24 @@ const modalStyle: JsStyles<ModalClassType> = {
     cursor: 'pointer',
     display: 'block',
     color: token.modalHeaderCloseColor,
+    position: 'relative',
+    zIndex: 0,
+    '& svg': {
+      zIndex: 1,
+      position: 'relative',
+    },
+    '&:hover': {
+      '&:after': {
+        ...hoverAfterStyles,
+        background: token.modalHeaderCloseBackgroundColor,
+      },
+    },
+    '$wrapperDrawer &:hover': {
+      '&:after': {
+        ...hoverAfterStyles,
+        background: token.modalDrawerCloseBackgroundColor,
+      },
+    },
   },
   body: {
     flex: '1 1 auto',

@@ -7,15 +7,13 @@
 import React from 'react';
 import { DatePicker } from 'shineout';
 
-const style = { marginInlineEnd: 12 };
-
 const step: number = 2;
 
 const App: React.FC = () => (
-  <div>
-    <DatePicker placeholder='Hour Step' style={style} type='time' hourStep={step} />
-    <DatePicker placeholder='Minute Step' style={style} type='time' minuteStep={step} />
-    <DatePicker placeholder='Second Step' style={style} type='time' secondStep={step} />
+  <div style={{ display: 'flex', gap: '24px' }}>
+    <DatePicker placeholder='Hour Step' type='time' hourStep={step} />
+    <DatePicker placeholder='Minute Step' type='time' minuteStep={step} />
+    <DatePicker placeholder='Second Step' type='time' secondStep={step} />
   </div>
 );
 

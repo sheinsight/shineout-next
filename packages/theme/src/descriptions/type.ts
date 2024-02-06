@@ -142,13 +142,13 @@ export interface DescriptionsTokens {
   descriptionsBorderRadius: string;
   /**
    * @type {string}
-   * @token 0.5px
+   * @token 1px
    * @description 描述列表边框undefined字号
    */
   descriptionsBorderRightSize: string;
   /**
    * @type {string}
-   * @token 0.5px
+   * @token 1px
    * @description 描述列表边框undefined字号
    */
   descriptionsBorderBottomSize: string;

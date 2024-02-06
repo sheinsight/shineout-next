@@ -18,6 +18,7 @@ const App: React.FC = () => {
   return (
     <Upload.Image
       action='/api/upload'
+      leftHandler
       accept='image/*'
       defaultValue={df}
       renderResult={(d) => d.data}

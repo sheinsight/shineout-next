@@ -1,6 +1,6 @@
 /**
  * cn - 表单方法
- *    -- 可以通过 formRef 去获得表单的一些方法集, 包含校验, 清空校验, 提交等.
+ *    -- 可以通过 formRef 去获得表单的一些方法集, 包含校验, 清空校验, 提交等
  * en - Form Methods
  *    -- You can use formRef to get some methods of the form, including validation, clear validation, submission, etc.
  */
@@ -31,7 +31,7 @@ const App: React.FC = () => {
         console.log(data);
       }}
     >
-      <div style={{ margin: '20px 0' }}>
+      <div style={{ margin: '0 0 24px 0' }}>
         <Button onClick={() => form.current?.reset()}>reset</Button>
         <Button onClick={() => form.current?.submit()}>submit</Button>
         <Button

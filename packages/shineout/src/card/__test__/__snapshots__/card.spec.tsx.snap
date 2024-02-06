@@ -21,7 +21,9 @@ exports[`Card[Base] should render correctly  1`] = `
           class="so-button-primary so-button-button so-button-text"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             文字按钮
           </span>
         </button>
@@ -270,7 +272,9 @@ exports[`Card[Base] should render correctly about border 1`] = `
           class="so-button-primary so-button-button so-button-text"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             文字按钮
           </span>
         </button>
@@ -325,9 +329,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
     <div
       class="so-card-body"
     >
-      <div
-        style="height: 100px;"
-      >
+      <div>
         <div
           class="so-datePicker-wrapper"
           data-soui-type="date"
@@ -435,7 +437,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                     <span
                       class="so-datePicker-picker-header-info"
                     >
-                      1
+                      2
                     </span>
                   </div>
                   <div
@@ -505,6 +507,39 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                         class="so-datePicker-picker-row"
                       >
                         <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              29
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              30
+                            </span>
+                          </div>
+                        </td>
+                        <td
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                        >
+                          <div
+                            class="so-datePicker-picker-cell-content"
+                          >
+                            <span>
+                              31
+                            </span>
+                          </div>
+                        </td>
+                        <td
                           class="so-datePicker-picker-cell"
                         >
                           <div
@@ -538,7 +573,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="so-datePicker-picker-cell"
+                          class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
                         >
                           <div
                             class="so-datePicker-picker-cell-content"
@@ -548,6 +583,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -581,10 +620,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -629,6 +664,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -662,10 +701,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -710,8 +745,12 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
-                          class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
+                          class="so-datePicker-picker-cell"
                         >
                           <div
                             class="so-datePicker-picker-cell-content"
@@ -743,10 +782,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -791,6 +826,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -824,10 +863,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell"
                         >
@@ -836,28 +871,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           >
                             <span>
                               29
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="so-datePicker-picker-cell"
-                        >
-                          <div
-                            class="so-datePicker-picker-cell-content"
-                          >
-                            <span>
-                              30
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="so-datePicker-picker-cell"
-                        >
-                          <div
-                            class="so-datePicker-picker-cell-content"
-                          >
-                            <span>
-                              31
                             </span>
                           </div>
                         </td>
@@ -894,6 +907,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
+                      </tr>
+                      <tr
+                        class="so-datePicker-picker-row"
+                      >
                         <td
                           class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
                         >
@@ -905,10 +922,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                      </tr>
-                      <tr
-                        class="so-datePicker-picker-row"
-                      >
                         <td
                           class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
                         >
@@ -975,17 +988,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                             </span>
                           </div>
                         </td>
-                        <td
-                          class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
-                        >
-                          <div
-                            class="so-datePicker-picker-cell-content"
-                          >
-                            <span>
-                              11
-                            </span>
-                          </div>
-                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -1027,7 +1029,7 @@ exports[`Card[Base] should render correctly about form 1`] = `
         <div
           class="so-form-item-label"
         >
-          User name
+          User name:
         </div>
         <div
           class="so-form-item-control"
@@ -1054,7 +1056,7 @@ exports[`Card[Base] should render correctly about form 1`] = `
         <div
           class="so-form-item-label"
         >
-          Email
+          Email:
         </div>
         <div
           class="so-form-item-control"
@@ -1083,7 +1085,9 @@ exports[`Card[Base] should render correctly about form 1`] = `
       class="so-button-primary so-button-button"
       type="button"
     >
-      <span>
+      <span
+        class="so-button-space-wrapper"
+      >
         Submit
       </span>
     </button>
@@ -1112,7 +1116,9 @@ exports[`Card[Base] should render correctly about hover 1`] = `
           class="so-button-primary so-button-button so-button-text"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             文字按钮
           </span>
         </button>
@@ -1215,7 +1221,9 @@ exports[`Card[Base] should render correctly about hover 1`] = `
           class="so-button-primary so-button-button so-button-text"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             文字按钮
           </span>
         </button>
@@ -1358,7 +1366,9 @@ exports[`Card[Base] should render correctly about split 1`] = `
           class="so-button-primary so-button-button so-button-text"
           type="button"
         >
-          <span>
+          <span
+            class="so-button-space-wrapper"
+          >
             文字按钮
           </span>
         </button>

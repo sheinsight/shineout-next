@@ -2,7 +2,7 @@ const duration = 2;
 
 export default {
   position: 'relative',
-  margin: 'auto',
+  // margin: 'auto',
   textAlign: 'center',
   animation: `$chasing-dots-1 ${duration}s linear infinite`,
   boxSizing: 'border-box',

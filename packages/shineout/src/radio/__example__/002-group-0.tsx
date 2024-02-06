@@ -1,6 +1,6 @@
 /**
  * cn - 单选框组
- *    -- Radio.Group 通过数据来生成一组单选框。
+ *    -- Radio.Group 通过数据来生成一组单选框
  * en - Group
  *    -- Radio.Group generate a group of radios from an array.
  */

@@ -1,6 +1,6 @@
 /**
  * cn -
- *    -- 将一组 Radio 放在 Radio.Group 中，以 React 组件方式调用。
+ *    -- 将一组 Radio 放在 Radio.Group 中，以 React 组件方式调用
  * en -
  *    -- A series of radios group by Radio.Group.
  */

@@ -62,6 +62,7 @@ export type SelectClasses = {
   columnsOption: string;
   columnsRadio: string;
   columnsCheckbox: string;
+  footer: string;
 };
 export type SelectClassType = keyof SelectClasses;
 
@@ -145,6 +146,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       '& $clearIcon': {
         right: token.selectSmallPaddingX,
       },
+      '& $optionGroupTitle': {
+        padding: `${token.selectGroupTitleSmallTop} ${token.selectGroupTitlePaddingX} 0 ${token.selectGroupTitlePaddingX}`,
+      },
     },
     '&$wrapperLarge': {
       '& $placeholder,$ellipsis,$space,input': {
@@ -160,6 +164,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       },
       '& $clearIcon': {
         right: token.selectLargePaddingX,
+      },
+      '& $optionGroupTitle': {
+        padding: `${token.selectGroupTitleLargeTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitleLargeBottom} ${token.selectGroupTitlePaddingX}`,
       },
     },
     '&:hover': {
@@ -288,7 +295,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     overflow: 'hidden',
   },
   controlMouse: {
-    '& $optionInner:hover': {
+    '& $optionInner:not($optionDisabled):not($optionActive):hover': {
       backgroundColor: token.selectOptionHoverBackgroundColor,
     },
   },
@@ -316,17 +323,20 @@ const selectStyle: JsStyles<SelectClassType> = {
   clearIcon: {
     position: 'absolute',
     right: token.selectPaddingX,
-    top: `calc(50% - 1em/2)`,
+    top: `calc(50% - 7px)`,
     cursor: 'pointer',
     width: token.selectFontSize,
     lineHeight: 0,
     color: token.selectClearColor,
     verticalAlign: 'middle',
+    '&:hover': {
+      color: token.selectIconColor,
+    },
   },
   arrowIcon: {
     position: 'absolute',
     right: token.selectPaddingX,
-    top: `calc(50% - 1em/2)`,
+    top: `calc(50% - 7px)`,
     verticalAlign: 'middle',
     width: token.selectFontSize,
     lineHeight: 0,
@@ -405,8 +415,8 @@ const selectStyle: JsStyles<SelectClassType> = {
     visibility: 'hidden',
   },
   moreWrapper: {
-    width: 248,
-    height: 72,
+    maxWidth: 400,
+    maxHeight: 160,
     overflow: 'auto',
     padding: token.selectMorePadding,
   },
@@ -464,7 +474,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   optionGroup: {},
   optionGroupTitle: {
     fontSize: token.selectGroupTitleFontSize,
-    padding: `${token.selectGroupTitlePaddingY} ${token.selectGroupTitlePaddingX}`,
+    padding: `${token.selectGroupTitlePaddingTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitlePaddingBottom} ${token.selectGroupTitlePaddingX}`,
     color: token.selectGroupTitleFontColor,
   },
   header: {
@@ -500,6 +510,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     overflow: 'hidden',
     '& $columnsCheckbox': {
       marginRight: 0,
+    },
+    '&:not($optionDisabled):hover': {
+      background: token.selectColumnBackgroundColor,
     },
   },
   columnsRadio: {

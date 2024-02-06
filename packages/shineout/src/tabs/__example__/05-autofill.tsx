@@ -1,6 +1,6 @@
 /**
  * cn - 自动填充
- *    -- 设置 `autoFill` 属性后，选项卡会自动填充父元素的宽度。
+ *    -- 设置 `autoFill` 属性后，选项卡会自动填充父元素的宽度
  * en - autoFill
  *    -- Set the `autoFill` property, the tab will automatically fill the width of the parent element.
  */
@@ -20,9 +20,8 @@ export default () => {
             <Tabs.Panel key={index} tab={tab.title}>
               <div
                 style={{
-                  padding: 5,
+                  padding: 16,
                   height: '100%',
-                  fontWeight: 300,
                   fontSize: 14,
                   lineHeight: '20px',
                 }}

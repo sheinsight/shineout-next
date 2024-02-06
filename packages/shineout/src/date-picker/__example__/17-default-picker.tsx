@@ -8,10 +8,8 @@ import React from 'react';
 import { DatePicker } from 'shineout';
 
 const App: React.FC = () => (
-  <div>
-    <DatePicker defaultPickerValue='2022-09' type='date' style={{ marginBottom: 16 }} />
-
-    <br />
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <DatePicker defaultPickerValue='2022-09' type='date' />
 
     <DatePicker range type='date' defaultPickerValue={['2022-11', '2022-12']} />
   </div>

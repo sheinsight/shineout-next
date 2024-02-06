@@ -24,13 +24,13 @@ const data = [
 
 export default () => {
   return (
-    <div>
+    <div style={{ marginBottom: '-12px' }}>
       <Descriptions
         items={data}
         title='User Info'
         layout='horizontal'
         column={1}
-        style={{ marginBottom: '24px' }}
+        style={{ marginBottom: '12px' }}
       />
       <Descriptions
         items={data}

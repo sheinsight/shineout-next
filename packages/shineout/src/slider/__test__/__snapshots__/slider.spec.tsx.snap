@@ -376,6 +376,7 @@ exports[`Slider[Base] should render correctly about increase 1`] = `
 <div>
   <div
     class="so-slider-wrapper"
+    style="margin-bottom: 24px;"
   >
     <div
       class="so-slider-track"

@@ -79,6 +79,9 @@ const uploadStyle: JsStyles<UploadClassType> = {
         backgroundColor: token.uploadImageHandlerDisabledBackgroundColor,
         color: token.uploadImageHandlerDisabledFontColor,
       },
+      '& svg': {
+        color: token.uploadImageResultBtnRecoverColor,
+      },
     },
   },
   result: {
@@ -93,7 +96,6 @@ const uploadStyle: JsStyles<UploadClassType> = {
     color: token.uploadResultIconColor,
     display: 'flex',
     alignItems: 'center',
-    padding: '0 6px',
     '$resultError $resultText &': { color: token.uploadResultErrorFontColor },
     '$resultDeleted $resultText &': { color: token.uploadResultDeletedFontColor },
   },
@@ -142,12 +144,14 @@ const uploadStyle: JsStyles<UploadClassType> = {
     color: token.uploadResultFontColor,
     lineHeight: token.lineHeightDynamic,
     padding: `${token.uploadResultPaddingY} ${token.uploadResultPaddingX}`,
-    backgroundColor: token.uploadResultBackgroundColor,
     borderRadius: token.uploadResultBorderRadius,
     '$resultError &': { color: token.uploadResultErrorFontColor },
     '$resultDeleted &': {
       textDecoration: 'line-through',
       color: token.uploadResultDeletedFontColor,
+    },
+    '&:hover': {
+      backgroundColor: token.uploadResultBackgroundColor,
     },
   },
   resultTextBody: {
@@ -156,6 +160,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
   },
   resultClose: {
     cursor: 'pointer',
+    margin: '0 6px',
   },
   imageHandler: {
     boxSizing: 'border-box',
@@ -163,6 +168,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    cursor: 'pointer',
     borderRadius: token.uploadImageBorderRadius,
     border: `1px dashed ${token.uploadImageHandlerBorderColor}`,
     backgroundColor: token.uploadImageHandlerBackgroundColor,

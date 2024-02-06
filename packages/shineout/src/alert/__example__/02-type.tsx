@@ -9,7 +9,7 @@ import { Alert } from 'shineout';
 
 export default () => {
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32 }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }}>
       <Alert icon type='info' style={{ width: 'calc(50% - 16px)' }}>
         This is informative text.
       </Alert>

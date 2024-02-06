@@ -20,6 +20,7 @@ const Input = (props: SimpleInputProps) => {
     getStatus,
     renderInput,
     addEnd,
+    hasSuffix,
     ...rest
   } = props;
   const inputStyle = jssStyle?.input?.();
@@ -36,6 +37,7 @@ const Input = (props: SimpleInputProps) => {
     size === 'large' && inputStyle?.wrapperLarge,
     !!underline && inputStyle?.wrapperUnderline,
     !border && inputStyle?.wrapperNoBorder,
+    hasSuffix && inputStyle?.password,
   );
 
   const keyHandler = useKeyEvent({

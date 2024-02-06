@@ -1,6 +1,6 @@
 /**
  * cn - border
- *    -- 设置 `border` false ，Input 组件将不再显示边框。
+ *    -- 设置 `border` false ，Input 组件将不再显示边框
  * en - Borderless mode
  *    -- Set `border` false, the Input component will no longer display the border.
  */
