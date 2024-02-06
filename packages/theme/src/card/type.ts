@@ -58,7 +58,7 @@ export interface CardTokens {
   cardTitleFontSize: string;
   /**
    * @type {string}
-   * @token 12px
+   * @token 8px
    * @description xxxundefinedundefined
    */
   cardHeaderGap: string;

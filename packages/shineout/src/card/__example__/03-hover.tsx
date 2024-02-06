@@ -28,7 +28,7 @@ const iconStyle = {
 
 const HoverCard: React.FC<{ className?: string }> = (props) => (
   <Card
-    style={{ ...cardStyle, marginInlineEnd: 32 }}
+    style={{...cardStyle, margin: '16px'}}
     split
     className={props.className}
     shadow='hover'
@@ -135,7 +135,7 @@ const useStyle = createUseStyles(
 const App = () => {
   const classes = useStyle();
   return (
-    <div>
+    <div style={{display: 'flex', flexWrap: 'wrap', margin:'-16px'}}>
       <HoverCard />
       <HoverCard className={classes?.customCard} />
     </div>

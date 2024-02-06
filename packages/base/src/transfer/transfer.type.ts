@@ -37,7 +37,6 @@ export interface TransferClasses {
   itemWrapper: string;
   checkbox: string;
   empty: string;
-  emptyDescription: string;
 }
 
 export type JssStyleType = {

@@ -10,7 +10,7 @@ export interface EmptyTokens {
   emptyFontSize: string;
   /**
    * @type {string}
-   * @token Neutral-text-4
+   * @token Neutral-text-3
    * @description 空状态字体颜色
    */
   emptyFontColor: string;

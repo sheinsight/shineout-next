@@ -82,7 +82,7 @@ export interface TabsTokens {
   tabsTabPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-9
+   * @token Padding-10
    * @description 标签页页签内边距（垂直方向）
    */
   tabsTabPaddingY: string;

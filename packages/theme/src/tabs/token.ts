@@ -42,7 +42,7 @@ const tabsTokenValue = {
   },
   click: { font: { color: '' }, background: { color: 'Neutral-fill-4' }, border: { color: '' } },
   tab: {
-    padding: { x: 'Padding-16', y: 'Padding-9' },
+    padding: { x: 'Padding-16', y: 'Padding-10' },
     font: { size: '14/regular' },
     border: { radius: 'Radius-4' },
   },

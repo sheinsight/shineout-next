@@ -294,7 +294,7 @@ const carouselStyle: JsStyles<CarouselClassType> = {
   indicatorNumber: {
     margin: '0 8px',
     fontSize: token.carouselIndicatorNumberFontSize,
-    lineHeight: 1,
+    lineHeight: token.lineHeightDynamic,
     color: token.carouselIndicatorNumberColor,
     '$indicatorOuter &': {
       color: token.carouselIndicatorOuterNumberColor,

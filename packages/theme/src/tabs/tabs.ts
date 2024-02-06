@@ -17,7 +17,7 @@ const tabsTokens: TabsTokens = {
   tabsDisabledBackgroundColor: 'Neutral-fill-1',
   tabsClickBackgroundColor: 'Neutral-fill-4',
   tabsTabPaddingX: 'Padding-16',
-  tabsTabPaddingY: 'Padding-9',
+  tabsTabPaddingY: 'Padding-10',
   tabsTabFontSize: '14/regular',
   tabsTabBorderRadius: 'Radius-4',
   tabsNearlyMargin: 'Margin-4',
