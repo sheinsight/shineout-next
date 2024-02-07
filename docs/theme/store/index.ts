@@ -48,7 +48,7 @@ const state: State = {
 };
 
 const proxyState = proxy(state);
-
+const whiteList = ['api', 'changelog'];
 export const dispatch = {
   setMenu: () => {
     const menus: Menus[] = [];
@@ -58,7 +58,7 @@ export const dispatch = {
     const context = require(`chunk/${proxyState.doc}/index.ts`);
     const files = context.files as string[];
     files
-      .filter((f) => f !== 'api')
+      .filter((f) => whiteList.includes(f) === false)
       .forEach((file) => {
         const menu: Menu = {
           name: '',

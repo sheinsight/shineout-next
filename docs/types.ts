@@ -42,6 +42,11 @@ export interface Guides {
   en: Guide[];
 }
 
+export interface Changelog {
+  version: string;
+  changes: { [key: string]: string }[];
+}
+
 // name: property.getName(),
 //   tag: {
 //   cn: convertQuotes(propertyJsDocTags.cn),
@@ -60,6 +65,10 @@ export interface MarkdownProps {
   describe: Local;
   examples: Example[];
   guides: Guides;
+  changelog: {
+    cn: Changelog[];
+    en: Changelog[];
+  };
   api: Array<{
     title: string;
     cn: string;
