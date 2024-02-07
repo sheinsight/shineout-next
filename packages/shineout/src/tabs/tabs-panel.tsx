@@ -1,5 +1,6 @@
-import { TabsPanel as UnStyleTabsPanel, TabsPanelProps } from '@sheinx/base';
+import { TabsPanel as UnStyleTabsPanel } from '@sheinx/base';
 import { useButtonStyle, useTabsStyle } from '@sheinx/shineout-style';
+import { TabsPanelProps } from './tabs-panel.type';
 
 const jssStyle = {
   tabs: useTabsStyle,

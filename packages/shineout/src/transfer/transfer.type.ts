@@ -7,6 +7,9 @@ export interface BaseTransferProps<DataItem, Value extends KeygenResult[]>
   value?: Value;
 }
 
+/**
+ * @title Transfer
+ */
 export type TransferProps<DataItem, Value extends KeygenResult[]> = GetWithFieldProps<
   BaseTransferProps<DataItem, Value>,
   BaseTransferProps<DataItem, Value>['value']

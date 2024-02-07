@@ -8,6 +8,9 @@ export type BaseDatePickerProps<Value extends DatePickerValueType> = Omit<
   'jssStyle'
 >;
 
+/**
+ * @title DatePicker
+ */
 export type DatePickerProps<Value extends DatePickerValueType = DatePickerValueType> =
   GetWithFieldProps<
     BaseDatePickerProps<Value>,
