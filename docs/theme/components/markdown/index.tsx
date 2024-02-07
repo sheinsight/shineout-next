@@ -10,7 +10,7 @@ import Guide from './guide';
 import Changelog from './changelog';
 
 const Markdown = (props: MarkdownProps) => {
-  const { title, describe, examples, guides, api } = props;
+  const { title, describe, examples, guides, api, changelog } = props;
   const classes = useStyles();
   const state = useSnapshot(store);
   return (
@@ -19,7 +19,7 @@ const Markdown = (props: MarkdownProps) => {
       {state.doctab === 'examples' && <Doc examples={examples}></Doc>}
       {state.doctab === 'api' && <Api api={api}></Api>}
       {state.doctab === 'guide' && <Guide guides={guides}></Guide>}
-      {state.doctab === 'changelog' && <Changelog></Changelog>}
+      {state.doctab === 'changelog' && <Changelog changelog={changelog}></Changelog>}
     </div>
   );
 };

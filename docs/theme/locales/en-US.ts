@@ -13,4 +13,16 @@ export default {
     Navigation: 'Navigation',
     Other: 'Other',
   },
+  'shineout.changelog': {
+    feat: 'feat',
+    fix: 'fix',
+    docs: 'docs',
+    style: 'style',
+    refactor: 'refactor',
+    perf: 'perf',
+    test: 'test',
+    build: 'build',
+    ci: 'ci',
+    chore: 'chore',
+  },
 };

@@ -217,6 +217,50 @@ const exampleLoader = (tokens, component, module) => {
   return examples;
 };
 
+const changelogLoader = (content) => {
+  const tokens = tokenLoader(content);
+  const changelogs = [];
+  let currentVersion = '';
+  let currentChangeType = '';
+
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i];
+
+    // 开始新版本的记录
+    if (token.type === 'heading_open' && token.tag === 'h1') {
+      const versionToken = tokens[i + 1];
+      currentVersion = versionToken.children[0].content;
+      changelogs.push({
+        version: currentVersion,
+        changes: {},
+      });
+    }
+
+    // 确定变更类型（fix、feat等）
+    if (token.type === 'heading_open' && token.tag === 'h2') {
+      const changeTypeToken = tokens[i + 1];
+      currentChangeType = changeTypeToken.children[0].content;
+      // 确保当前版本的变更类型已经初始化为数组
+      changelogs[changelogs.length - 1].changes[currentChangeType] =
+        changelogs[changelogs.length - 1].changes[currentChangeType] || [];
+    }
+
+    // 从段落中提取变更项
+    if (
+      token.type === 'inline' &&
+      token.children &&
+      token.children.some((t) => t.type === 'code_inline')
+    ) {
+      const changeDescriptions = token.content.split('\n').filter(Boolean);
+      for (const desc of changeDescriptions) {
+        changelogs[changelogs.length - 1].changes[currentChangeType].push(desc.trim());
+      }
+    }
+  }
+
+  return changelogs;
+};
+
 const markdownLoader = (content, component, module) => {
   const tokens = tokenLoader(content);
   const header = headerLoader(tokens);
@@ -242,4 +286,5 @@ module.exports = {
   guideLoader,
   tokenLoader,
   markdownLoader,
+  changelogLoader,
 };
