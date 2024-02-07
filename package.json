@@ -13,7 +13,7 @@
     "dev:create": "cross-env NODE_ENV=development CASE_ENV=test  node ./scripts/dev-create.js",
     "build:md": "cross-env NODE_ENV=development CASE_ENV=test node ./scripts/dev-doc.js",
     "build:doc": "cross-env NODE_ENV=production webpack --config ./webpack/config.doc.js",
-    "build": "pnpm run build:pkg && pnpm run build:doc",
+    "build": "pnpm run build:pkg",
     "build:pkg": "pnpm --filter=./packages/* run build",
     "build:watch": "pnpm --filter=./packages/* run build:watch",
     "release": "node ./scripts/publish.js",
