@@ -63,9 +63,8 @@ const validateFile = (name) => {
 };
 
 const publishPackage = (name) => {
-  // 在dist 目录执行 npm publish
-  process.chdir(path.resolve(__dirname, `../packages/${name}/dist`));
-  exec('npm publish --access public' + (tag ? ` --tag ${tag}` : ''), (error, stdout) => {
+  const distPath = path.resolve(__dirname, `../packages/${name}/dist`)
+    exec('npm publish ' + distPath + ' --access public' + (tag ? ` --tag ${tag}` : ''), (error, stdout) => {
     if (error) {
       console.error(error);
       process.exit(1);
