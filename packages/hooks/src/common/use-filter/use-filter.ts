@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { isFunc, getKey, getFilterTree } from '../../utils';
 import { UseFilterProps } from './use-filter.type';
 import { KeygenResult } from '../type';
@@ -15,17 +15,18 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     showHitDescendants,
     onFilter,
     onCreate,
+    firstMatch,
     onFilterWidthCreate,
     onAdvancedFilter,
   } = props;
 
   const [filterData, setFilterData] = useState<DataItem[] | undefined>(data);
   const [filterText, setFilterText] = useState<string | undefined>('');
-  const [filterFunc, setFilterFunc] = useState<((data: DataItem) => boolean) | undefined>(
-    undefined,
-  );
+  const [filterFunc, setFilterFunc] = useState<((d: DataItem) => boolean) | undefined>(undefined);
   const [inputText, setInputText] = useState('');
   const [createdData, setCreatedData] = useState<string>();
+
+  const firstMatchNode = useRef<DataItem | null>();
 
   const filterFn =
     onFilterWidthCreate ||
@@ -41,23 +42,26 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     return newData;
   };
 
+  const getFirstMatchNode = (node: DataItem) => {
+    if (firstMatchNode.current) return;
+    firstMatchNode.current = node;
+  };
+
   const getTreeData = () => {
     let filterExpandedKeys: KeygenResult[] | undefined = expandedProp || [];
     let newData: DataItem[] | undefined = treeData;
-    const nextFilter = onFilter?.(filterText);
     if (filterText) {
       newData = getFilterTree(
         treeData,
-        nextFilter,
+        onFilter?.(filterText),
         filterExpandedKeys,
         (node: DataItem) => getKey(keygen, node),
         childrenKey,
         showHitDescendants,
-        undefined,
+        firstMatch ? getFirstMatchNode : undefined,
         { advanced: !!onAdvancedFilter },
       ) as DataItem[];
     }
-
     return {
       newData,
       filterExpandedKeys,
@@ -75,6 +79,9 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
 
   const handleFilter = (text: string) => {
     setInputText(text);
+
+    firstMatchNode.current = null;
+
     if (!text) {
       if (data) {
         setFilterData(data);
@@ -86,7 +93,6 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
 
       setFilterText('');
       setFilterFunc(undefined);
-
       handleClearCreatedData();
       // 没有 text 时触发一次 onFilter 以便外部重置数据
       if (onFilter) onFilter(text);
@@ -103,8 +109,10 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     setFilterText(text);
 
     const next = onFilter(text);
+
     if (!isFunc(next)) return;
-    setFilterFunc(next);
+
+    setFilterFunc(() => next);
 
     const nextData = data?.filter((item) => {
       if (!groupKey) return next(item);
@@ -135,16 +143,17 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   if (data) {
     nextData = getData();
   }
-
   return {
     inputText,
     filterText,
+    firstMatchNode: firstMatchNode.current,
     expanded: nextExpanded,
     rawData: data || treeData,
     filterData: nextData,
     createdData,
     setInputText,
     setFilterText,
+    filterFunc,
     onCreate: onCreate ? handleCreate : undefined,
     onFilter: onFilter || onCreate ? handleFilter : undefined,
     onResetFilter: handleResetData,

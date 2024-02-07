@@ -1,11 +1,11 @@
-import { KeygenResult, UnMatchedData } from '@sheinx/hooks';
+import { KeygenResult, ObjectKey } from '@sheinx/hooks';
 import { DatumType } from '../tree/tree.type';
 import { JssStyleType, CascaderProps } from './cascader.type';
 
 export interface CascaderListProps<DataItem, Value extends KeygenResult[]>
   extends Pick<
     CascaderProps<DataItem, Value>,
-    'loader' | 'childrenKey' | 'multiple' | 'expandTrigger' | 'renderItem' | 'keygen'
+    'loader' | 'multiple' | 'expandTrigger' | 'renderItem' | 'keygen'
   > {
   jssStyle?: JssStyleType;
   id: KeygenResult;
@@ -14,11 +14,12 @@ export interface CascaderListProps<DataItem, Value extends KeygenResult[]>
   datum: DatumType<DataItem, KeygenResult>['datum'];
   shouldFinal: boolean;
   path: Value;
+  childrenKey: ObjectKey<DataItem>;
   onPathChange: (
     id: KeygenResult,
     item: DataItem | null,
     nextPath: Value,
     fromClick?: boolean,
   ) => void;
-  onChange: (item: (DataItem | UnMatchedData)[]) => void;
+  onChange: (item: Value) => void;
 }

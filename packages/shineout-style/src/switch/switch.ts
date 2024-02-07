@@ -36,6 +36,7 @@ const switchStyle: JsStyles<SwitchClass> = {
     backgroundColor: token.switchBackgroundColor,
     color: token.switchFontColor,
     verticalAlign: 'middle',
+    outline: 'none',
     '$wrapperDisabled&': {
       backgroundColor: token.switchDisabledBackgroundColor,
       color: token.switchDisabledFontColor,

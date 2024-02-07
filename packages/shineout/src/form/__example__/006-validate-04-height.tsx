@@ -64,7 +64,7 @@ const App: React.FC = () => {
       onSubmit={(d) => console.log(d)}
       keepErrorHeight
     >
-      <Form.Item required label='Email'>
+      <Form.Item required label='Email' tip="88888">
         <Input name='email' title='Email' rules={[rules.required, rules.email]} clearable />
       </Form.Item>
 

@@ -84,7 +84,7 @@ const App: React.FC = () => {
         data={data}
         virtual
         width={1400}
-        rowsInView={5}
+        rowsInView={10}
         columns={columns}
         style={{ height: 500 }}
         tableRef={(t) => setTable(t)}

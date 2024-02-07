@@ -1,8 +1,8 @@
 /**
- * cn - 基本用法
- *    -- 基础级联选择器的用法
- * en - Basic
- *    -- Basic usage of cascader
+ * cn - 宽泛过滤
+ *    -- 打开`wideMatch`后，将筛选出所有可能的匹配项目
+ * en - Wide match
+ *    -- After opening `wideMatch`, all possible matching items will be filtered out
  */
 import React from 'react';
 import { Cascader } from 'shineout';
@@ -21,6 +21,9 @@ const data: DataItem[] = [
         children: [
           {
             value: 'jiangning',
+          },
+          {
+            value: 'gulou',
           },
         ],
       },
@@ -42,14 +45,17 @@ const data: DataItem[] = [
 ];
 
 export default () => {
+  const onFilter = (text: string) => (d: DataItem) => d.value.indexOf(text) >= 0;
+
   return (
-    <div>
+    <div style={{ display: 'flex', gap: 32 }}>
       <Cascader
+        wideMatch
         width={300}
-        clearable
         placeholder='Please select city'
         data={data}
         keygen='value'
+        onFilter={onFilter}
         renderItem={(n) => `${n?.value}`}
       />
     </div>

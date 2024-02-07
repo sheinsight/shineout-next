@@ -55,7 +55,7 @@ const validateFile = (name) => {
     console.error(`${esPath} 或 ${cjsPath} 不存在`);
     process.exit(1);
   }
-  const umdPath = path.resolve(__dirname, `../packages/${name}/dist/umd`);
+  const umdPath = path.resolve(__dirname, `../packages/${name}/dist/dist`);
   if (name === 'shineout' && !fs.existsSync(umdPath)) {
     console.error(`${umdPath} 不存在`);
     process.exit(1);

@@ -45,7 +45,7 @@ function init() {
       country: one(c20),
       office: one(c30),
       office5: one(c5),
-      height: pickNumber(80, 200),
+      height: pickNumber(40, 100),
       age: pickInteger(18, 100),
     });
   }

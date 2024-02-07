@@ -57,6 +57,7 @@ export default () => {
         compressed
         compressedBound={2}
         width={300}
+        onChange={(d) => console.log(d)}
         placeholder='Please select city'
         data={data}
         keygen='value'
