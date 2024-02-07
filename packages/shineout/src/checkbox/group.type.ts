@@ -6,6 +6,9 @@ export type BaseCheckboxGroupProps<DataItem, Value extends any[]> = Omit<
   'jssStyle'
 >;
 
+/**
+ * @title Checkbox.Group
+ */
 export type CheckboxGroupProps<DataItem, Value extends any[]> = GetWithFieldProps<
   BaseCheckboxGroupProps<DataItem, Value>,
   BaseCheckboxGroupProps<DataItem, Value>['value']

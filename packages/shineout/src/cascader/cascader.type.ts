@@ -6,6 +6,9 @@ export type BaseCascaderProps<DataItem, Value extends KeygenResult[]> = Omit<
   'jssStyle'
 >;
 
+/**
+ * @title Cascader
+ */
 export type CascaderProps<DataItem, Value extends KeygenResult[]> = GetWithFieldProps<
   BaseCascaderProps<DataItem, Value>,
   BaseCascaderProps<DataItem, Value>['value']

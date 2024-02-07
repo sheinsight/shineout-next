@@ -5,6 +5,9 @@ export type BaseRadioGroupProps<DataItem, Value> = Omit<
   'jssStyle'
 >;
 
+/**
+ * @title Radio.Group
+ */
 export type RadioGroupProps<DataItem, Value> = GetWithFieldProps<
   BaseRadioGroupProps<DataItem, Value>,
   BaseRadioGroupProps<DataItem, Value>['value']

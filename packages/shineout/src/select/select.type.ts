@@ -5,6 +5,9 @@ import {
 } from '@sheinx/base';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 
+/**
+ * @title Select
+ */
 export type SelectPropsComponent<DataItem, Value> = Omit<
   UnStyledSelectProps<DataItem, Value>,
   'jssStyle'
