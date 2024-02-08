@@ -33,7 +33,7 @@ function compile(dirPath, componentPath) {
    *
    * @param dir 文件目录名 如：button
    */
-  function generateApi(dir) {
+  function makeApi(dir) {
     if (dir.indexOf('select') === -1) {
       writeTemplate({
         templatePath: templateApiPath,
@@ -69,10 +69,10 @@ function compile(dirPath, componentPath) {
       // 检查是否存在 .md 文件
       const mdPath = path.join(dirPath, dir, docDirName, 'index.md');
       if (!fs.existsSync(mdPath)) return;
-      generateApi(dir);
+      makeApi(dir);
     });
   } else {
-    generateApi(componentPath);
+    makeApi(componentPath);
   }
 }
 

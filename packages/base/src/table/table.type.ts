@@ -66,6 +66,7 @@ export interface TableClasses {
   iconWrapper: string;
 
   expandWrapper: string;
+  expandIconWrapper: string;
 
   pagination: string;
 }

@@ -2,7 +2,7 @@
  * cn - 固定表头
  *    -- 当 table 设置高度后，表头会固定在顶部
  * en - Fixed head
- *    -- When the table sets the height, the header will be fixed at the top.
+ *    -- When the table sets the height, the header will be fixed at the top
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';

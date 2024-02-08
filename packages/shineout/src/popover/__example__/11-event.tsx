@@ -20,7 +20,7 @@ const App: React.FC = () => {
       <Popover onOpen={open} onClose={close} trigger='click'>
         Some text
       </Popover>
-      Click me.
+      Click me
     </Button>
   );
 };

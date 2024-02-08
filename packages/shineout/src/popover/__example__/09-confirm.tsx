@@ -24,7 +24,6 @@ const App: React.FC = () => {
         title='Tips'
         onCancel={() => console.log('cancel')}
         onOk={onOk}
-        text={{ ok: 'Cancel', cancel: 'Ok' }}
       >
         Are you sure you want to delete this content ?
       </Popover.Confirm>
