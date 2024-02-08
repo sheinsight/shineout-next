@@ -1,6 +1,8 @@
 <% files.forEach(function (file, i) { -%>
 export { default as <%= getComponentName(file) %> } from './<%= file %>';
 <% }) -%>
-export { setConfig } from '@sheinx/base';
+
+export { setConfig, config, setLocale } from '@sheinx/base';
+export * from './deprecated';
 
 export * as TYPE from './type';
