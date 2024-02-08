@@ -63,6 +63,7 @@ export default (props: TbodyProps) => {
         onRowClick={props.onRowClick}
         rowEvents={props.rowEvents}
         disabled={props.datum.disabledCheck(item)}
+        bodyScrollWidth={props.bodyScrollWidth}
       />
     );
   };

@@ -83,6 +83,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const updateRateScroll = usePersistFn((rate: number) => {
     const { scrollRef } = props;
     const sumHeight = getContentHeight(props.data.length - 1);
+    if (sumHeight === scrollHeight) return;
     context.shouldUpdateHeight = true;
     context.heightCallback = () => {
       if (scrollRef && scrollRef.current) {
@@ -118,6 +119,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     if (scrollTop > max) {
       scrollTop = max;
     }
+    // 拖动滚动条后保持滚动位置
+    console.log(context.controlScrollRate, 'controlScrollRate')
     if (context.controlScrollRate !== null) {
       const top = context.controlScrollRate * max;
       updateIndexAndTopFromTop(top);
@@ -125,7 +128,9 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       context.controlScrollRate = null;
       return;
     }
+    // 拖动滚动条
     if (fromDrag) {
+      console.log('fromDrag')
       const top = y * max;
       updateIndexAndTopFromTop(top);
       if (context.rateTimer) clearTimeout(context.rateTimer);
