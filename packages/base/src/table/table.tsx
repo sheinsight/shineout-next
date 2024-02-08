@@ -104,6 +104,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     shouldLastColAuto,
     maxScrollLeft,
     scrollBarWidth,
+    scrollWidth,
   } = useTableLayout({
     theadRef,
     tbodyRef,
@@ -256,6 +257,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       radio: props.radio,
       onRowClick: props.onRowClick,
       rowEvents: props.rowEvents,
+      bodyScrollWidth: scrollWidth,
     };
 
     const headCommonProps = {
@@ -468,7 +470,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           tableClasses?.simple,
           props.striped && tableClasses?.striped,
         )}
-        style={{ height: props.height, ...props.style }}
+        style={{ height: props.height || '100%', ...props.style }}
       >
         <table style={{ width }}>{props.children}</table>
       </div>
