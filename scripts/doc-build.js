@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { compile } = require('./utils/compile');
 const { rmrf } = require('./utils/rmrf');
-const { compileApi } = require('./utils/compileApi');
+const { compileApi } = require('./utils/compile-api');
 
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const baseDir = path.join(__dirname, '../packages', 'base', 'src');

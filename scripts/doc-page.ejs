@@ -1,6 +1,7 @@
 import React from 'react'
 import MarkDown from '../../theme/components/markdown/index.tsx'
 import api from './api/<%= componentDir %>.ts'
+import changelog from './changelog/<%= componentDir %>.ts'
 
 
 const source = require('<%= chunkModuleName %>/<%= componentDir %>/<%= docDir %>/index.md')
@@ -97,4 +98,4 @@ export const guides = {
 
 
 
-export default (props) => <MarkDown {...props} source={source} header={header} title={title} describe={describe} examples={examples} api={api} guides={guides} />
+export default (props) => <MarkDown {...props} source={source} header={header} title={title} describe={describe} examples={examples} api={api} changelog={changelog} guides={guides} />

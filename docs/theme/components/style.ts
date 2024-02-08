@@ -108,6 +108,30 @@ export default createUseStyles(
         boxSizing: 'border-box',
       },
     },
+    changelog: {
+      padding: 40,
+    },
+    changelogWrapper: {
+      marginBottom: 64,
+    },
+    changelogVersion: {
+      fontSize: 32,
+      lineHeight: '40px',
+      fontWeight: 600,
+      marginBottom: 32,
+    },
+    changelogType: {},
+    changelogTypeTitle: {
+      fontSize: 18,
+      lineHeight: '26px',
+      fontWeight: 500,
+      marginBottom: 16,
+    },
+    changelogItem: {
+      fontSize: 14,
+      lineHeight: '22px',
+      marginBottom: 8,
+    },
     paragraph: {
       padding: '0 40px',
       fontSize: 14,
