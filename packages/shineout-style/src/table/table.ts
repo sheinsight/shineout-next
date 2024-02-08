@@ -145,6 +145,8 @@ const tableStyle: JsStyles<TableClassType> = {
     right: 0,
     bottom: 0,
     display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     overflow: 'hidden',
     zIndex: loadingIndex,
     backgroundColor: 'hsla(0,0%,100%,.4)',
@@ -266,7 +268,7 @@ const tableStyle: JsStyles<TableClassType> = {
   },
 
   hasSorter: {
-    display: 'flex',
+    display: 'inline-flex',
     alignItems: 'center',
   },
   sorterContainer: {

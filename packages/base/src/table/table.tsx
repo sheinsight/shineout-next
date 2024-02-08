@@ -410,8 +410,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         className={tableClasses?.pagination}
         jssStyle={props.jssStyle}
         align='right'
-        {...paginationInfo}
         {...pagination}
+        {...paginationInfo}
       />
     );
   };
