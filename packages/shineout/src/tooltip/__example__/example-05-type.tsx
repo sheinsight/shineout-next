@@ -9,7 +9,7 @@ import { Tooltip, Button } from 'shineout';
 
 const App: React.FC = () => (
   <div style={{ display: 'flex' }}>
-    <Tooltip tip='This is tooltip content' trigger='click'>
+    <Tooltip tip='This is tooltip content'>
       <Button style={{ marginRight: 16 }} type='secondary'>
         default
       </Button>

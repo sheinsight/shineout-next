@@ -49,6 +49,7 @@ export default () => {
         innerTitle='Inner Title'
         width={300}
         placeholder='Please select city'
+        clearable
         data={data}
         keygen='value'
         renderItem={(n) => `${n?.value}`}
