@@ -29,7 +29,7 @@ export interface TooltipProps
    * @cn 弹出方式
    * @default "hover"
    */
-  trigger: 'hover' | 'click' | 'focus';
+  trigger?: 'hover' | 'click' | 'focus';
   jssStyle?: {
     tooltip?: () => TooltipClasses;
   };

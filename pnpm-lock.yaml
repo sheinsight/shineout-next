@@ -132,6 +132,9 @@ importers:
       mini-css-extract-plugin:
         specifier: ^2.7.6
         version: 2.7.6(webpack@5.88.2)
+      minimist:
+        specifier: 1.2.8
+        version: 1.2.8
       multer:
         specifier: 1.4.5-lts.1
         version: 1.4.5-lts.1
