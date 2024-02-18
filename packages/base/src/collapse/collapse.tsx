@@ -15,7 +15,7 @@ const Collapse = (props: CollapseProps) => {
     active: activeProps,
     accordion = false,
     onChange: onChangeProps,
-    triggerRegion = 'header',
+    triggerRegion,
     expandIconPosition = 'left',
     extraPosition = 'right',
     expandIcon,
