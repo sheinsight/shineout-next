@@ -5,7 +5,7 @@ const { parseApi } = require('./parseapi');
 
 const docDirName = '__doc__';
 const templateApiPath = path.resolve(__dirname, '../doc-page-api.ejs');
-const chunkDir = path.join(__dirname, '../../docs', 'chunk');
+const apiDir = path.join(__dirname, '../../docs', 'api');
 
 /**
  *
@@ -18,12 +18,7 @@ function compile(dirPath, componentPath) {
   if (!match[1]) return;
 
   const chunkModuleName = match[1];
-  const chunkModulePath = path.join(chunkDir, chunkModuleName);
-  const chunkModuleAPIPath = path.join(chunkModulePath, 'api');
-
-  if (!fs.existsSync(chunkModulePath)) {
-    fs.mkdirSync(chunkModulePath);
-  }
+  const chunkModuleAPIPath = path.join(apiDir, chunkModuleName);
 
   if (!fs.existsSync(chunkModuleAPIPath)) {
     fs.mkdirSync(chunkModuleAPIPath);
@@ -34,18 +29,6 @@ function compile(dirPath, componentPath) {
    * @param dir 文件目录名 如：button
    */
   function makeApi(dir) {
-    if (dir.indexOf('select') === -1) {
-      writeTemplate({
-        templatePath: templateApiPath,
-        targetPath: `${chunkDir}/${chunkModuleName}/api`,
-        fileName: `${dir}.ts`,
-        needPrettier: false,
-        ejsVars: {
-          api: [],
-        },
-      });
-      return;
-    }
     // 读取 dir下面的 **.type.ts 文件
     const types = fs.readdirSync(path.join(dirPath, dir)).filter((i) => i.endsWith('.type.ts'));
     const apis = types.reduce((acc, type) => {
@@ -56,7 +39,7 @@ function compile(dirPath, componentPath) {
 
     writeTemplate({
       templatePath: templateApiPath,
-      targetPath: `${chunkDir}/${chunkModuleName}/api`,
+      targetPath: chunkModuleAPIPath,
       fileName: `${dir}.ts`,
       needPrettier: false,
       ejsVars: {
