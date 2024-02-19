@@ -45,6 +45,9 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 开启多选后，指定允许展示标签数量，超过后将折叠
    */
   compressedBound?: number;
+  /**
+   * todo
+   */
   compressedClassName?: string;
   /**
    * @en If clearable is true, show clear value icon
@@ -69,7 +72,10 @@ export interface TreeSelectProps<DataItem, Value>
    * @default []
    */
   data?: DataItem[];
-
+  /**
+   * @en Auxiliary method for generating key. When it is a function, use the return value of this function. When it is a string, use the data value corresponding to this string. For example, 'id' is the same thing as (d) => d.id.
+   * @cn 生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 'id'，相当于 (d) => d.id
+   */
   keygen: ObjectKey<DataItem> | ((data: DataItem, parentKey: KeygenResult) => string | number);
   /**
    * @en Some methods of getting components Currently only support getDataByValue
@@ -78,6 +84,10 @@ export interface TreeSelectProps<DataItem, Value>
   getComponentRef?: ((ref: ComponentRef<DataItem, Value>) => void) & {
     current?: ComponentRef<DataItem, Value>;
   };
+  /**
+   * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering.
+   * @cn onFilter 不为空时，可以输入过滤数据。 onFilter 如果返回一个函数，使用这个函数做前端过滤。 如果不返回，可以自行做后端过滤
+   */
   onFilter?: (text: string) => void;
   /**
    * @en Placeholder content when there is no data
@@ -165,6 +175,10 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 选中的 key （受控），多选时必须为array
    */
   value?: Value;
+  /**
+   * @en defaultValue 和 value 类型相同
+   * @cn 默认值  和 value 类型相同
+   */
   defaultValue?: Value;
   /**
    * @en Merges selected values; the repeat value will not appear in the Popover when it is'no-repeat'.
@@ -173,18 +187,50 @@ export interface TreeSelectProps<DataItem, Value>
    */
   compressed?: boolean | 'no-repeat';
 
+  /**
+   * @en Set visible of select popup
+   * @cn 控制浮层显隐
+   */
   open?: boolean;
+  /**
+   * @en whether show line
+   * @cn 是否显示连接线
+   * @default true
+   */
   line?: boolean;
-
+  /**
+   * @en input width
+   * @cn 输入框宽度
+   */
   width?: number | string;
+   /**
+   * @en only display border bottom
+   * @cn 是否只展示下边框
+   * @default false
+   */
   underline?: boolean;
+  /**
+   * @en Whether to display border
+   * @cn 是否展示边框
+   * @default false
+   */
   border?: boolean;
   showArrow?: boolean;
+  /**
+   * @en specify the name of the subdata
+   * @cn 指定子数据的属性名
+   * @default 'children'
+   */
   childrenKey?: ObjectKey<DataItem>;
   focusSelected?: boolean;
   resultClassName?: ((value: DataItem) => string) | string;
+  /**
+   * @en dynamically load nodes
+   * @cn 设置 loader 属性后，未定义 children 的节点视为动态加载节点，点击展开触发 loader事件，children 为 null 或者长度为 0 视为叶子节点
+   */
   loader?: (key: KeygenResult, data: DataItem) => void;
   maxLength?: number;
+  // todo 相同属性可以使用extends继承
   // Tree 组件同款属性
   defaultExpanded?: KeygenResult[];
   defaultExpandAll?: boolean;
