@@ -31,11 +31,13 @@ function compile(dirPath, componentPath) {
   function makeApi(dir) {
     // 读取 dir下面的 **.type.ts 文件
     const types = fs.readdirSync(path.join(dirPath, dir)).filter((i) => i.endsWith('.type.ts'));
-    const apis = types.reduce((acc, type) => {
-      // console.log('type', type);
-      const api = parseApi(chunkModuleName, `./src/${dir}/${type}`);
-      return [...acc, ...api];
-    }, []);
+    const apis = types
+      .reduce((acc, type) => {
+        // console.log('type', type);
+        const api = parseApi(chunkModuleName, `./src/${dir}/${type}`);
+        return [...acc, ...api];
+      }, [])
+      .sort((a, b) => (a.sort || 0) - (b.sort || 0));
 
     writeTemplate({
       templatePath: templateApiPath,

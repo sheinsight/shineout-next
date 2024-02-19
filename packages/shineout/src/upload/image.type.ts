@@ -1,12 +1,18 @@
 import { UploadImageProps as UnStyledUploadImageProps } from '@sheinx/base';
 import { GetWithFieldProps } from '../hooks/use-field-common';
+import { UploadProps } from './upload.type';
 
 export type BaseUploadImageProps<T> = Omit<UnStyledUploadImageProps<T>, 'jssStyle'>;
 
-/**
- * @title Upload.Image
- */
 export type UploadImageProps<T> = GetWithFieldProps<
   BaseUploadImageProps<T>,
   BaseUploadImageProps<T>['value']
 >;
+
+/**
+ * @title Upload.Image
+ * @cn 基本API 和 Upload 一致，特定API如下
+ * @en The basic API is consistent with Upload, and the specific API is as follows
+ * @sort 1
+ */
+type _UploadImageSelfProps<T> = Omit<UploadImageProps<T>, keyof UploadProps<T>>;
