@@ -1,2 +1,2 @@
 export { default, default as Descriptions } from './descriptions';
-export type { DescriptionsProps } from './descriptions.type';
+export type { DescriptionsProps, ItemType } from './descriptions.type';

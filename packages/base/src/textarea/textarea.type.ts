@@ -44,16 +44,44 @@ export interface SimpleTextareaProps
   jssStyle?: {
     textarea?: () => TextareaClasses;
   };
+  /**
+   * @en prefix
+   * @cn 前缀
+   */
   prefix?: React.ReactNode;
+  /**
+   * @en suffix
+   * @cn 后缀
+   */
   suffix?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;
+  /**
+   * @en Whether to display only the bottom border
+   * @cn 是否只展示下边框
+   * @default false
+   */
   underline?: boolean;
   /**
-   * @default: true
+   * @en Whether to display border
+   * @cn 是否展示边框
+   * @default true
    */
   border?: boolean;
+  /**
+   * @en Support resize
+   * @cn 是否可以伸缩高度
+   * @default false
+   */
   resize?: boolean;
+  /**
+   * @en The callback function for enter key
+   * @cn 回车键的回调函数
+   */
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
+  /**
+   * @en Custom rendering Textarea
+   * @cn 自定义渲染Textarea
+   */
   renderTextarea?: (textareaEl: React.ReactElement) => React.ReactElement;
 }
 
@@ -71,22 +99,75 @@ export interface TextareaProps
       | 'rootRef'
       | 'renderTextarea'
     > {
+  /**
+   * @en Inner title
+   * @cn 内嵌标题
+   */
   innerTitle?: React.ReactNode;
+  /**
+   * @en Placeholder title, which needs to be used together with innerTitle
+   * @cn 占位标题，需要配合 innerTitle 一起使用
+   */
   placeTitle?: React.ReactNode;
   jssStyle?: {
     textarea?: () => TextareaClasses;
     popover?: () => PopoverClasses;
     innerTitle?: () => InnerTitleClasses;
   };
+  /**
+   * @en Whether to automatically get the focus
+   * @cn 高度是否随内容自动变化
+   * @default false
+   */
   autosize?: boolean;
+  /**
+   * @en Information
+   * @cn 提示信息
+   */
   info?: number | ((value: string | undefined) => React.ReactNode | Error);
+  /**
+   * @en DefaultValue and value can be set at the same time and defaultValue will be overridden by value
+   * @cn defaultValue 和 value 可以同时设置，defaultValue 会被value覆盖
+   */
   value?: TextareaValueType;
+  /**
+   * @en DefaultValue
+   * @cn 默认值  和 value 类型相同
+   */
   defaultValue?: TextareaValueType;
+  /**
+   * @en The callback function for changing value
+   * @cn 值改变回调函数
+   */
   onChange?: (value: TextareaValueType) => void;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
   beforeChange?: (value: TextareaValueType) => void | string;
+  /**
+   * @en The maxHeight of the textarea, scroll bars appear after more than
+   * @cn 输入框的最大高度, 超过之后会出现滚动条
+   */
   maxHeight?: string | number;
+  /**
+   * @en When trim is true, blank characters are automatically deleted when lose focus
+   * @cn Trim 为 true 时，失去焦点时会自动删除空白字符
+   */
   trim?: boolean;
+  /**
+   * @en Render textarea footer
+   * @cn 渲染 textarea footer
+   */
   renderFooter?: (value?: string) => React.ReactNode;
+  /**
+   * @en Input width
+   * @cn 输入框宽度
+   */
   width?: number | string;
+  /**
+   * @en User input triggers the onChange and to check interval, unit: ms
+   * @cn 用户输入触发 onChange 和校验间隔时间，单位 毫秒
+   */
   delay?: number;
 }

@@ -134,7 +134,11 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @cn 下拉列表展开/收起回调
    */
   onCollapse?: (collapse: boolean) => void;
-
+  /**
+   * @en Horizontal align of the value
+   * @cn 值水平排布方式
+   * @default 'center'
+   */
   align?: 'left' | 'right' | 'center';
   /**
    * @en Set the default time zone, the format is /^([+-]\\d{2})$/ Support '-12' to '+13'
@@ -164,10 +168,30 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    * @default props.format
    */
   formatResult?: string | ((date: Date) => string);
+  /**
+   * @en Range span，unit: second，When it is true, selection scope is not limited
+   * @cn 范围跨度，单位 秒，为 true 时表示不限制选择范围
+   */
   range?: boolean | number;
+  /**
+   * @en When the value is string, it needs to match the format attribute.When the range property is true, the value is an array of length 2
+   * @cn 值为 string 时，需要和 format 属性匹配。非 string 会格式化为 string。range 属性为 true 时，值为长度为2的数组
+   */
   value?: Value;
+  /**
+   * @en Default value
+   * @cn 默认值  和 value 类型相同
+   */
   defaultValue?: Value;
+  /**
+   * @en A callback when the value is changing
+   * @cn 值改变回调函数
+   */
   onChange?: (value: Value extends any[] ? string[] : string) => void;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
   beforeChange?: (
     value: Value extends any[] ? string[] : string,
   ) => (Value extends any[] ? string[] : string) | undefined | void;
@@ -190,7 +214,7 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    */
   allowSingle?: boolean;
   /**
-   * @deprecated
+   * @deprecated 废弃属性
    */
   border?: boolean;
   /**
