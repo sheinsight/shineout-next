@@ -121,7 +121,7 @@ const collapseItemStyle: JsStyles<CollapseItemClass> = {
     gap: Token.collapseContentGap,
   },
   disabled: {
-    '& $header, $content, $extra, $icon': {
+    '& $header, $content, $contentMain, $extra, $icon': {
       cursor: 'not-allowed',
       color: Token.collapseDisabledColor,
     },
