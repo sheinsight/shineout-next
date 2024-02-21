@@ -33,21 +33,58 @@ export type AlertType = 'success' | 'info' | 'warning' | 'danger' | 'confirmwarn
 
 export interface AlertProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: AlertJssStyle;
+  /**
+   * @en Alert type
+   * @cn 类型
+   * @default 'warning
+   */
   type?: AlertType;
+  /**
+   * @en Custom close button
+   * @cn 自定义关闭按钮
+   */
   closeItem?: React.ReactNode;
   /**
    * @deprecated 即将废弃，同时 onClose 属性即将不再支持 boolean 值，请使用 closable 控制是否显示关闭按钮
    */
   hideClose?: boolean;
+  /**
+   * @en When the type is true, the status icon is displayed according to the type property. If you need to display a custom icon, pass in ReactElement
+   * @cn 为 true 时，根据 type 属性显示状态图标。如果需要显示自定义图标，传入 ReactElement
+   */
   icon?: React.ReactNode | boolean;
+  /**
+   * @en The size for icon
+   * @cn icon 的尺寸
+   * @default 14
+   */
   iconSize?: number;
+  /**
+   * @en The title of the alert
+   * @cn 标题模式
+   */
   title?: React.ReactNode;
+  /**
+   * @en Whether to display the close button, when set to only, only the close button is displayed
+   * @cn 是否现实关闭按钮，当设置为only的时候，仅仅显示关闭按钮
+   */
   closable?: boolean | 'only';
 
   /**
+   * @cn 关闭事件
+   * @en Close event
    * @description onClose 属性即将不再支持 boolean 值，请使用 closable 控制是否显示关闭按钮
    */
   onClose?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  /**
+   * @en Whether to display the border
+   * @cn 是否显示边框
+   * @default true
+   */
   bordered?: boolean;
+  /**
+   * @en Content, text or react component
+   * @cn 内容，文字或 react 组件
+   */
   children?: React.ReactNode;
 }

@@ -61,21 +61,48 @@ export interface SimpleInputProps
   extends BaseInputProps,
     Pick<CommonType, 'status' | 'style' | 'className' | 'size'> {
   jssStyle?: InputStyle;
+  /**
+   * @en Custom clear icon
+   * @cn 自定义清除图标
+   */
   clearIcon?: React.ReactNode;
   /**
    * @en prefix
    * @cn 前缀
    */
   prefix?: React.ReactNode;
+  /**
+   * @en suffix
+   * @cn 后缀
+   */
   suffix?: React.ReactNode;
   addEnd?: React.ReactNode;
+  /**
+   * @en Get status
+   * @cn 获取状态
+   */
   getStatus?: (status: { focused?: boolean }) => void;
+  /**
+   * @en Show border bottom
+   * @cn 仅仅展示下边框
+   * @default false
+   */
   underline?: boolean;
   /**
+   * @en Whether to display border
+   * @cn 是否展示边框
    * @default: true
    */
   border?: boolean;
+  /**
+   * @en The callback function for enter key
+   * @cn 回车键回调函数
+   */
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
+  /**
+   * @en Whether to show clear
+   * @cn 是否显示清除
+   */
   showClear?: boolean;
   renderInput?: (inputEl: React.ReactElement) => React.ReactElement;
   hasSuffix?: boolean;
@@ -84,24 +111,90 @@ export interface SimpleInputProps
 export interface InputCommonProps<V> extends BaseTipProps {
   suffix?: SimpleInputProps['suffix'];
   className?: SimpleInputProps['className'];
+  /**
+   * @en get input dom element
+   * @cn 获取input dom元素
+   */
   forwardRef?: SimpleInputProps['inputRef'];
+  /**
+   * @en Get status
+   * @cn 获取状态
+   */
   getStatus?: SimpleInputProps['getStatus'];
   size?: SimpleInputProps['size'];
   jssStyle?: SimpleInputProps['jssStyle'];
+  /**
+   * @en Inner title
+   * @cn 内嵌标题
+   */
   innerTitle?: React.ReactNode;
+  /**
+   * @en Placeholder title, which needs to be used together with innerTitle
+   * @cn 占位标题，需要配合 innerTitle 一起使用
+   */
   placeTitle?: React.ReactNode;
+  /**
+   * @en The original property of html
+   * @cn 原生 html 属性
+   */
   htmlName?: string;
+  /**
+   * @en Value
+   * @cn 输入值
+   */
   value?: V;
+  /**
+   * @en Value change callback
+   * @cn 值改变回调
+   * @override (value: string) => void
+   */
   onChange?: (value: V) => void;
+  /**
+   * @en Default value
+   * @cn 默认值
+   * @override string
+   */
   defaultValue?: V;
   beforeChange?: (value: V) => void | V;
+  /**
+   * @en Remove content of the input when clicking the clear icon, clear event function
+   * @cn 可点击清空图标删除输入框内容，为函数式表示清空回调
+   * @default false
+   */
   clearable?: boolean | (() => void);
+  /**
+   * @en After clicking the clear button, the data becomes undefined
+   * @cn 点击清除按钮后数据变为 undefined
+   * @default false
+   */
   clearToUndefined?: boolean;
+  /**
+   * @en width
+   * @cn 宽度
+   */
   width?: string | number;
   style?: React.CSSProperties;
+  /**
+   * @en Infomation
+   * @cn 提示信息
+   * @override number | ((value: string | undefined) => string)
+   */
   info?: number | ((value: V | undefined) => string);
+  /**
+   * @en Disable component
+   * @cn 禁用组件
+   * @default false
+   */
   disabled?: boolean;
+  /**
+   * @en User input triggers the onChange and to check interval, unit: ms
+   * @cn 用户输入触发 onChange 和校验间隔时间，单位 毫秒
+   */
   delay?: number;
+  /**
+   * @en The callback of blur
+   * @cn 失去焦点后的回调
+   */
   onBlur?: React.FocusEventHandler;
   status?: CommonType['status'];
 }

@@ -1,2 +1,2 @@
-const api = JSON.parse('[]');
+const api = JSON.parse('[{"title":"FormFlow","properties":[{"name":"children","tag":{"cn":"datum 为 Datum.Form 对象","en":"datum is the object of Datum.Form.","default":"","version":""},"required":true,"type":"(datum: FormDatum) => ReactNode"},{"name":"names","tag":{"cn":"names 为空时，Form 内任意值变化会触发 Flow 更新；不为空时，只监听指定字段变化","en":"Specifying which fields to change trigger the Flow update.","default":"","version":""},"required":false,"type":"string[] "}],"cn":"","en":"","sort":"0"}]');
 export default api;

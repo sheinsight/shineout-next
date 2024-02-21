@@ -29,9 +29,22 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
   extends Pick<CommonType, 'className' | 'style' | 'size'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
   jssStyle?: JssStyleType;
+  /**
+   * @en Open multiple selection
+   * @cn 开启多选
+   * @default false
+   */
   multiple?: boolean;
+  /**
+   * @en Mode 0: Returns only the fully selected node including the parent node. 1: Returns all selected nodes and semi-selected nodes. 2: Return only the selected child nodes. 3: If the parent node is full selected, only return the parent node. 4: What you choose is what you get
+   * @cn 选中值模式，未设置值为单选 0: 只返回完全选中的节点，包含父节点 1: 返回全部选中的节点和半选中的父节点 2: 只返回选中的子节点 3: 如果父节点选中，只返回父节点 4: 所选即所得
+   */
   mode?: TreeModeType;
-  width?: number;
+  /**
+   * @en Input width
+   * @cn 输入框宽度
+   */
+  width?: number | string;
   /**
    * @en Set visible of cascader popup
    * @cn 控制浮层显隐
@@ -221,8 +234,16 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @default true
    */
   emptyAfterSelect?: boolean;
-
+  /**
+   * @en Whether to display border
+   * @cn 是否展示边框
+   * @default true
+   */
   border?: boolean;
+  /**
+   * @en Only display border bottom
+   * @cn 是否只展示下边框
+   */
   underline?: boolean;
 
   /**
@@ -230,8 +251,25 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @cn 内嵌标题
    */
   innerTitle?: React.ReactNode;
+  /**
+   * @en The maximum length of the input string in the Select input box
+   * @cn Select 输入框输入字符串最大长度
+   */
   maxLength?: number;
+  /**
+   * @en The className of the selected result content container
+   * @cn 选中结果内容容器的className
+   */
   resultClassName?: ((value: DataItem) => string) | string;
+  /**
+   * @en Compressed popover classname
+   * @cn 多选合并展示弹出框的类名
+   */
   compressedClassName?: string;
+  /**
+   * @en Selected value while click under onCreate or onFilter
+   * @cn onCreate 或 onFilter 在单选情况下单击值后是否选中值
+   * @default true
+   */
   focusSelected?: boolean;
 }

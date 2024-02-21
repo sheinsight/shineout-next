@@ -3,14 +3,14 @@ import { TreeSelect as UnStyleTreeSelect } from '@sheinx/base';
 import { KeygenResult } from '@sheinx/hooks';
 import useFieldCommon from '../hooks/use-field-common';
 import {
+  useCheckboxStyle,
+  useInnerTitleStyle,
+  usePopoverStyle,
+  useSelectStyle,
+  useSpinStyle,
   useTagStyle,
   useTreeSelectStyle,
   useTreeStyle,
-  useSelectStyle,
-  useCheckboxStyle,
-  usePopoverStyle,
-  useSpinStyle,
-  useInnerTitleStyle,
 } from '@sheinx/shineout-style';
 import { BaseTreeSelectProps, TreeSelectProps } from './tree-select.type';
 

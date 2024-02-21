@@ -1,4 +1,5 @@
+import { GridProps as UnStyledGridProps } from '@sheinx/base';
 /**
  * @title Grid
  */
-export { GridProps } from '@sheinx/base';
+export type GridProps = UnStyledGridProps

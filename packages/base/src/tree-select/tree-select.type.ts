@@ -1,7 +1,7 @@
 import React from 'react';
 import { TreeClasses } from '../tree/tree.type';
 import { KeygenResult, ObjectKey, UnMatchedData, ValueItem } from '@sheinx/hooks';
-import { TreeSelectClasses, SelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
+import { SelectClasses, TreeSelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
 import { TagClasses } from '../tag/tag.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
@@ -46,7 +46,8 @@ export interface TreeSelectProps<DataItem, Value>
    */
   compressedBound?: number;
   /**
-   * todo
+   * @en Compressed popover classname
+   * @cn 多选合并展示弹出框的类名
    */
   compressedClassName?: string;
   /**
@@ -55,6 +56,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @default false
    */
   clearable?: boolean;
+
   filterText?: string;
   /**
    * @en ender unmatched value
@@ -73,8 +75,8 @@ export interface TreeSelectProps<DataItem, Value>
    */
   data?: DataItem[];
   /**
-   * @en Auxiliary method for generating key. When it is a function, use the return value of this function. When it is a string, use the data value corresponding to this string. For example, 'id' is the same thing as (d) => d.id.
-   * @cn 生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 'id'，相当于 (d) => d.id
+   * @en Auxiliary method for generating key. When it is a function, use the return value of this function. When it is a string, use the data value corresponding to this string. For example, "id" is the same thing as (d) => d.id
+   * @cn 生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 "id"，相当于 (d) => d.id
    */
   keygen: ObjectKey<DataItem> | ((data: DataItem, parentKey: KeygenResult) => string | number);
   /**
@@ -85,7 +87,7 @@ export interface TreeSelectProps<DataItem, Value>
     current?: ComponentRef<DataItem, Value>;
   };
   /**
-   * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering.
+   * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering
    * @cn onFilter 不为空时，可以输入过滤数据。 onFilter 如果返回一个函数，使用这个函数做前端过滤。 如果不返回，可以自行做后端过滤
    */
   onFilter?: (text: string) => void;
@@ -176,7 +178,7 @@ export interface TreeSelectProps<DataItem, Value>
    */
   value?: Value;
   /**
-   * @en defaultValue 和 value 类型相同
+   * @en Initial value
    * @cn 默认值  和 value 类型相同
    */
   defaultValue?: Value;
@@ -186,25 +188,24 @@ export interface TreeSelectProps<DataItem, Value>
    * @default false
    */
   compressed?: boolean | 'no-repeat';
-
   /**
-   * @en Set visible of select popup
+   * @en Set visible of datepicker popup
    * @cn 控制浮层显隐
    */
   open?: boolean;
   /**
-   * @en whether show line
+   * @en Whether show line
    * @cn 是否显示连接线
-   * @default true
+   * @default false
    */
   line?: boolean;
   /**
-   * @en input width
+   * @en Input width
    * @cn 输入框宽度
    */
   width?: number | string;
-   /**
-   * @en only display border bottom
+  /**
+   * @en Only display border bottom
    * @cn 是否只展示下边框
    * @default false
    */
@@ -215,6 +216,11 @@ export interface TreeSelectProps<DataItem, Value>
    * @default false
    */
   border?: boolean;
+  /**
+   * @en Whether to display arrow
+   * @cn 是否展示箭头
+   * @default true
+   */
   showArrow?: boolean;
   /**
    * @en specify the name of the subdata
@@ -222,22 +228,69 @@ export interface TreeSelectProps<DataItem, Value>
    * @default 'children'
    */
   childrenKey?: ObjectKey<DataItem>;
+  /**
+   * @en Selected value while click under onCreate or onFilter
+   * @cn onCreate 或 onFilter 在单选情况下单击值后是否选中值
+   * @default true
+   */
   focusSelected?: boolean;
+  /**
+   * @en The className of the selected result content container
+   * @cn 选中结果内容容器的className
+   */
   resultClassName?: ((value: DataItem) => string) | string;
   /**
-   * @en dynamically load nodes
+   * @en Dynamically load nodes
    * @cn 设置 loader 属性后，未定义 children 的节点视为动态加载节点，点击展开触发 loader事件，children 为 null 或者长度为 0 视为叶子节点
    */
   loader?: (key: KeygenResult, data: DataItem) => void;
+  /**
+   * @en The maximum length of the input string in the Select input box
+   * @cn Select 输入框输入字符串最大长度
+   */
   maxLength?: number;
-  // todo 相同属性可以使用extends继承
+  /**
+   * @en default expanded nodes
+   * @cn 默认展开的节点 key（非受控）
+   * @override (string | number)[]
+   */
   // Tree 组件同款属性
   defaultExpanded?: KeygenResult[];
+  /**
+   * @en Expand all node, only in can be use in treeData
+   * @cn 默认展开全部子节点, 仅树形数据下有效
+   * @default false
+   */
   defaultExpandAll?: boolean;
+  /**
+   * @en Expand by click parent node
+   * @cn 点击父节点展开
+   * @default false
+   */
   parentClickExpand?: boolean;
+  /**
+   * @en Expanded node
+   * @cn 展开的节点 key(受控)
+   * @override (string | number)[]
+   */
   expanded?: KeygenResult[];
+  /**
+   * @en When trim is true, blank characters are automatically deleted when lose focus
+   * @cn trim 为 true 时，失去焦点时会自动删除空白字符
+   * @default false
+   */
   trim?: boolean;
+  /**
+   * @en Render unmatch value
+   * @cn 是否展示data中不存在的值
+   * @default true
+   */
   unmatch?: boolean;
+  /**
+   * @en When it is a string, return d[string]. When it is a function, return the result of the function
+   * @cn 为 string 时，返回 d[string]。 为 function 时，返回函数结果
+   * @default index
+   */
   renderItem:
     | ObjectKey<DataItem>
     | ((data: DataItem, expanded: boolean, active: boolean, id: KeygenResult) => React.ReactNode);

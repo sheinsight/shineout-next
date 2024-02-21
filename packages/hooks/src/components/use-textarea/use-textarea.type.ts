@@ -16,25 +16,30 @@ export interface TextAreaPropsOwn {
    */
   onBlur?: React.FocusEventHandler;
   /**
-   * @en callback function for blur focus
+   * @en Callback function for blur focus
    * @cn focus 事件回调函数
    */
   onFocus?: React.FocusEventHandler;
   /**
-   * @private 同原生事件
+   * @en Callback function for click
+   * @cn click 事件回调函数
    */
   onClick?: React.MouseEventHandler;
   /**
-   * @en disabled
+   * @en Disabled
    * @cn 是否禁用
    * @default false
    */
   disabled?: boolean;
   /**
-   * @cn 获取 textarea 元素
-   * @en get textarea element
+   * @en Get textarea dom
+   * @cn 获取textarea dom
    */
   textareaRef?: React.Ref<HTMLTextAreaElement>;
+  /**
+   * @en Get root dom
+   * @cn 获取Root dom
+   */
   rootRef?: React.Ref<HTMLElement>;
 }
 

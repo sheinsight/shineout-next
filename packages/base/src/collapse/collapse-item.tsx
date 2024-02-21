@@ -73,7 +73,7 @@ const CollapseItem = (props: CollapseItemProps) => {
   const collapseItemHeaderClassName = classNames(
     jssStyle?.collapseItem.header,
     !showExpandIcon && jssStyle?.collapseItem.noIcon,
-    triggerRegion === 'header' && jssStyle?.collapseItem.region,
+    !triggerRegion && jssStyle?.collapseItem.region,
   );
 
   const collapseItemContentClassName = classNames(
@@ -101,7 +101,7 @@ const CollapseItem = (props: CollapseItemProps) => {
       <div {...getItemContentProps({ className: collapseItemHeaderClassName })}>
         {expandIconPosition === 'left' && headerIconItem()}
         {extraPosition === 'left' && extraItem()}
-        <div {...getTitleProps({ className: jssStyle?.collapseItem.title })}>{title}</div>
+        <div {...getTitleProps({ className: classNames(jssStyle?.collapseItem.title, triggerRegion === 'header' && jssStyle?.collapseItem.region) })}>{title}</div>
         {extraPosition === 'right' && extraItem()}
         {expandIconPosition === 'right' && headerIconItem()}
       </div>

@@ -56,7 +56,7 @@ export interface SimpleTextareaProps
   suffix?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;
   /**
-   * @en only display border bottom
+   * @en Whether to display only the bottom border
    * @cn 是否只展示下边框
    * @default false
    */
@@ -68,16 +68,20 @@ export interface SimpleTextareaProps
    */
   border?: boolean;
   /**
-   * @en support resize
+   * @en Support resize
    * @cn 是否可以伸缩高度
    * @default false
    */
   resize?: boolean;
   /**
    * @en The callback function for enter key
-   * @cn 回车键回调函数
+   * @cn 回车键的回调函数
    */
   onEnterPress?: (value: string, e: React.KeyboardEvent) => void;
+  /**
+   * @en Custom rendering Textarea
+   * @cn 自定义渲染Textarea
+   */
   renderTextarea?: (textareaEl: React.ReactElement) => React.ReactElement;
 }
 
@@ -128,7 +132,7 @@ export interface TextareaProps
    */
   value?: TextareaValueType;
   /**
-   * @en defaultValue 和 value 类型相同
+   * @en DefaultValue
    * @cn 默认值  和 value 类型相同
    */
   defaultValue?: TextareaValueType;
@@ -137,6 +141,10 @@ export interface TextareaProps
    * @cn 值改变回调函数
    */
   onChange?: (value: TextareaValueType) => void;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
   beforeChange?: (value: TextareaValueType) => void | string;
   /**
    * @en the maxHeight of the textarea, scroll bars appear after more than
@@ -145,24 +153,23 @@ export interface TextareaProps
   maxHeight?: string | number;
   /**
    * @en When trim is true, blank characters are automatically deleted when lose focus
-   * @cn trim 为 true 时，失去焦点时会自动删除空白字符。
+   * @cn Trim 为 true 时，失去焦点时会自动删除空白字符
    * @default false
    */
   trim?: boolean;
   /**
-   * @en render textarea footer
+   * @en Render textarea footer
    * @cn 渲染 textarea footer
    */
   renderFooter?: (value?: string) => React.ReactNode;
-   /**
-   * @en input width
+  /**
+   * @en Input width
    * @cn 输入框宽度
    */
   width?: number | string;
-   /**
-   * @en User input triggers the onChange and to check interval, unit: ms.
-   * @cn 用户输入触发 onChange 和校验间隔时间，单位 毫秒。
-   * @default 400
+  /**
+   * @en User input triggers the onChange and to check interval, unit: ms
+   * @cn 用户输入触发 onChange 和校验间隔时间，单位 毫秒
    */
   delay?: number;
 }

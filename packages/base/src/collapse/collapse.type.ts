@@ -19,8 +19,27 @@ export interface CollapseProps
   jssStyle?: {
     collapse: CollapseClasses;
   };
+  /**
+   * @en Whether to show the border
+   * @cn 是否显示边框
+   * @default true
+   */
   border?: boolean;
+  /**
+   * @en The position of the expand icon
+   * @cn 折叠图标位置
+   * @default 'left'
+   */
   expandIconPosition?: 'left' | 'right';
+  /**
+   * @en The position of the extra content
+   * @cn 扩展内容位置
+   * @default 'right'
+   */
   extraPosition?: 'left' | 'right';
+  /**
+   * @en The content inside the collapse
+   * @cn 折叠面板内的内容
+   */
   children?: ReactNode;
 }
