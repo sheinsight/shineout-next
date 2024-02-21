@@ -40,7 +40,7 @@ const dropdownTokens: DropdownTokens = {
   dropdownOptionGroupPaddingX: 'Padding-8',
   dropdownOptionGroupPaddingTop: 'Padding-10',
   dropdownOptionGroupPaddingBottom: 'Padding-2',
-  dropdownOptionGroupFontSize: '14/regular',
+  dropdownOptionGroupFontSize: '12/regular',
   dropdownOptionGroupFontColor: 'Neutral-text-3',
   dropdownOptionGroupSmallX: 'Padding-8',
   dropdownOptionGroupSmallTop: 'Padding-4',

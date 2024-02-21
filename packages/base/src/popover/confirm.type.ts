@@ -46,5 +46,9 @@ export interface PopoverConfirmProps extends PopoverProps {
    * @default "confirmwarning"
    */
   type?: AlertProps['type'];
+  /**
+   * @en title
+   * @cn 标题
+   */
   title?: React.ReactNode;
 }

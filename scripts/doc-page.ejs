@@ -1,8 +1,7 @@
 import React from 'react'
-import MarkDown from '../../theme/components/markdown/index.tsx'
-import api from './api/<%= componentDir %>.ts'
-import changelog from './changelog/<%= componentDir %>.ts'
-
+import MarkDown from '../../theme/components/markdown/index'
+import changelog from './changelog/<%= componentDir %>'
+import api from '../../api/<%= chunkModuleName %>/<%= componentDir %>'
 
 const source = require('<%= chunkModuleName %>/<%= componentDir %>/<%= docDir %>/index.md')
 

@@ -77,11 +77,42 @@ export interface BaseSpinProps {
 
 export interface SpinProps extends Pick<CommonType, 'className' | 'style'> {
   jssStyle?: SpinStyle;
+  /**
+   * @en Spin has children
+   * @cn 作为包裹元素使用
+   */
   children?: React.ReactNode;
+  /**
+   * @en Custom tip
+   * @cn 提示文案
+   */
   tip?: string | React.ReactNode;
+  /**
+   * @en Size
+   * @cn 尺寸
+   * @default 40
+   */
   size?: number | string;
+  /**
+   * @en Type
+   * @cn 类型
+   */
   name?: SpinNameType;
+  /**
+   * @en Color
+   * @cn 颜色
+   */
   color?: string;
+  /**
+   * @en Layout mode
+   * @cn 布局模式
+   * @default 'vertical'
+   */
   mode?: SpinModeType;
+  /**
+   * @en Loading
+   * @cn 是否为加载中
+   * @default true
+   */
   loading?: boolean;
 }

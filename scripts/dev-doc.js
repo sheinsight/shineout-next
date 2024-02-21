@@ -6,7 +6,7 @@ const { compileToken } = require('../packages/theme/scripts/token');
 const { compileFigma } = require('../packages/theme/scripts/build-token');
 const { compileRule } = require('./utils/rules');
 const { rmrf } = require('./utils/rmrf');
-const { compileApi } = require('./utils/compile-api');
+// const { compileApi } = require('./utils/compile-api');
 const { compileChangelog } = require('./utils/compile-changelog');
 
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
@@ -22,8 +22,8 @@ fs.mkdirSync(chunkDir);
 compileChangelog(shineoutDir);
 compileChangelog(baseDir);
 
-compileApi(shineoutDir);
-compileApi(baseDir);
+// compileApi(shineoutDir);
+// compileApi(baseDir);
 compile(shineoutDir);
 compile(baseDir);
 
@@ -34,7 +34,7 @@ watcher.on('change', (filePath) => {
   const pattern = new RegExp(`src/(.*?)/`, 'i');
   const match = filePath.match(pattern);
   if (!match?.[1]) return;
-  const chunkModuleName = match[1];
+  // const chunkModuleName = match[1];
   const isType = filePath.endsWith('.type.ts');
 
   if (filePath.indexOf('theme') > -1 && filePath.indexOf('figma') > -1) {
@@ -43,14 +43,14 @@ watcher.on('change', (filePath) => {
 
   if (filePath.indexOf(shineoutDir) > -1) {
     if (isType) {
-      compileApi(shineoutDir, chunkModuleName);
+      // compileApi(shineoutDir, chunkModuleName);
       return;
     }
     compile(shineoutDir);
   }
   if (filePath.indexOf(baseDir) > -1) {
     if (isType) {
-      compileApi(baseDir, chunkModuleName);
+      // compileApi(baseDir, chunkModuleName);
       return;
     }
     compile(baseDir);

@@ -34,9 +34,28 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
     alert?: () => AlertClasses;
     button?: () => ButtonClasses;
   };
+  /**
+   * @en The position of pop-up layer. Default auto
+   * @cn 弹出层位置。若不设置，则默认为 auto
+   */
   position?: BasePopupProps['position'];
+  /**
+   * @en Popup location priority, default is top and bottom priority, only valid when position is not set, Options: ['vertical', 'horizontal', 'auto']
+   * @cn 弹出位置优先级, 默认为左右优先, 只在未设置 position 时生效
+   * @default 'vertical'
+   */
   priorityDirection?: BasePopupProps['priorityDirection'];
+  /**
+   * @en The show delay of mouseenter(ms)
+   * @cn 移入显示延迟(毫秒)
+   * @default 0
+   */
   mouseEnterDelay?: BasePopupProps['mouseEnterDelay'];
+  /**
+   * @en The hidden delay of mouseleave (ms)
+   * @cn 移除隐藏延迟(毫秒)
+   * @default 0
+   */
   mouseLeaveDelay?: BasePopupProps['mouseLeaveDelay'];
   /**
    * @cn 触发方式
@@ -44,20 +63,91 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @default 'hover'
    */
   trigger?: 'click' | 'hover';
+  /**
+   * @en Delete dom when close
+   * @cn 关闭 Popover 后销毁内容 dom
+   * @default false
+   */
   destroy?: boolean;
+  /**
+   * @en Is visible (controlled)
+   * @cn 是否可见(受控)
+   */
   visible?: BasePopupProps['open'];
+  /**
+   * @en 显示隐藏改变时事件
+   * @cn The event of visible change
+   */
   onVisibleChange?: BasePopupProps['onCollapse'];
+  /**
+   * @en Callback event when open
+   * @cn Popover 弹出回调事件
+   */
   onOpen?: () => void;
+  /**
+   * @en Callback event when close
+   * @cn Popover 关闭时回调事件
+   */
   onClose?: () => void;
+  /**
+   * @en Pop-up content
+   * @cn 弹出显示内容，如果内容为函数，则参数是主动关闭操作
+   * @default index
+   */
   children?: React.ReactNode | ((close: () => void) => React.ReactNode);
+  /**
+   * @en Custom Popover container, override the default behavior which is rendering under the body, () => DOMElement
+   * @cn 自定义 Popover 容器，覆盖默认渲染在 body 下的行为, () => DOMElement
+   */
   getPopupContainer?: () => HTMLElement | null;
+  /**
+   * @en Using inner styles
+   * @cn 使用内置文本样式
+   */
   useTextStyle?: boolean;
+  /**
+   * @en 类型
+   * @cn Type of popover
+   */
   type?: 'info' | 'success' | 'warning' | 'danger' | 'error';
+  /**
+   * @en The color of pop-up border(with arrows)
+   * @cn 弹出层边框颜色（含箭头）
+   */
   border?: string;
+  /**
+   * @en Pop-up background-color(with arrows)
+   * @cn 弹出层背景色（含箭头）
+   */
   background?: string;
+  /**
+   * @en Z-index of popover
+   * @cn Popover 层级
+   * @default 1060
+   */
   zIndex?: number;
+  /**
+   * @en Show arrow
+   * @cn 是否显示箭头
+   * @default true
+   */
   showArrow?: boolean;
+  /**
+   * @en Whether to display by default
+   * @cn 默认是否显示
+   */
   defaultVisible?: boolean;
+  /**
+   * TODO: have question
+   * @en Cancel the popup after clicking the element in mouseEnterDelay
+   * @cn MouseEnterDelay 内点击元素后取消弹出
+   * @default false
+   */
   clickToCancelDelay?: number;
+  /**
+   * @en Scroll to dismiss, return el to order scroller
+   * @cn 滚动来关闭气泡框，如果需要指定滚动元素，则通过函数返回
+   * @default false
+   */
   scrollDismiss?: boolean | (() => HTMLElement | null);
 }

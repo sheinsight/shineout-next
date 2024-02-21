@@ -94,7 +94,7 @@ export interface AlertTokens {
   alertPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Padding-8
    * @description 提示框内边距（垂直方向）
    */
   alertPaddingY: string;

@@ -120,6 +120,15 @@ const menuStyle: JsStyles<MenuClassType> = {
       right: '-6px',
       transform: 'translateX(100%)',
       minWidth: 'auto',
+      borderRadius: '4px',
+      '& > :first-child > $itemContent': {
+        borderTopRightRadius: '4px',
+        borderTopLeftRadius: '4px',
+      },
+      '& > :last-child > $itemContent': {
+        borderBottomRightRadius: '4px',
+        borderBottomLeftRadius: '4px',
+      },
       '&$childrenUp': {
         top: 'auto',
         bottom: 0,

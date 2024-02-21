@@ -220,7 +220,7 @@ export interface DropdownTokens {
   dropdownOptionGroupPaddingBottom: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token 12/regular
    * @description 下拉菜单undefinedundefined字体字号
    */
   dropdownOptionGroupFontSize: string;

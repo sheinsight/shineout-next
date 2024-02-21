@@ -2,7 +2,7 @@
  * cn - 自定义排序图标
  *    -- 设置 Table 的 renderSorter 属性来自定义图标
  * en - Sorter
- *    -- Set the renderSorter property of the Table to customize the icon.
+ *    -- Set the renderSorter property of the Table to customize the icon
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';

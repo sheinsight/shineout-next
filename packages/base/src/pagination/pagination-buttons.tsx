@@ -169,6 +169,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
           moreType={pageNum as PaginationMoreTypes}
           onMouseEnter={handleHoverMore}
           onMouseLeave={handleHoverMore}
+          className={paginationStyle?.sectionSize}
         >
           <span className={paginationStyle?.icon}>
             {renderMore(pageNum as PaginationMoreTypes)}

@@ -51,7 +51,6 @@ export default () => {
         multiple
         mode={0}
         compressed
-        compressedBound={2}
         width={300}
         placeholder='Please select city'
         data={data}

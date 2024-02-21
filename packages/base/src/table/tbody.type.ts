@@ -36,4 +36,5 @@ export interface TbodyProps
   setRowHeight?: (index: number, height: number) => void;
   fixLeftNum?: number;
   fixRightNum?: number;
+  bodyScrollWidth?: number;
 }

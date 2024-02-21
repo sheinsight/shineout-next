@@ -1,8 +1,8 @@
 /**
  * cn - 基本用法
- *    -- 基础的表格用法。推荐 columns 写为常量，以提升性能。
+ *    -- 基础的表格用法。推荐 columns 写为常量，以提升性能
  * en - Base
- *    -- Basic table usage.
+ *    -- Basic table usage
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';

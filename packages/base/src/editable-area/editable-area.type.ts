@@ -127,7 +127,19 @@ export interface EditableAreaProps extends Pick<CommonType, 'className' | 'style
    * @default false
    */
   bordered?: boolean;
+  /**
+   * @en User input triggers the onChange and to check interval, unit: ms
+   * @cn 用户输入触发 onChange 和校验间隔时间，单位 毫秒
+   */
   delay?: number;
+  /**
+   * @en inner title
+   * @cn 内嵌标题
+   */
   innerTitle?: React.ReactNode;
+  /**
+   * @en Placeholder title, which needs to be used together with innerTitle
+   * @cn 占位标题，需要配合 innerTitle 一起使用
+   */
   placeTitle?: React.ReactNode;
 }

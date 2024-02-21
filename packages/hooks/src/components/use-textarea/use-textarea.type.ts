@@ -5,12 +5,41 @@ export interface TextAreaPropsOwn {
    * The default value. Use when the component is not controlled.
    */
   value?: string;
+  /**
+   * @en The callback function for changing value
+   * @cn 值改变回调函数
+   */
   onChange?: (value: string) => void;
+  /**
+   * @en The callback when Textarea blur
+   * @cn 失去焦点后的回调
+   */
   onBlur?: React.FocusEventHandler;
+  /**
+   * @en Callback function for blur focus
+   * @cn focus 事件回调函数
+   */
   onFocus?: React.FocusEventHandler;
+  /**
+   * @en Callback function for click
+   * @cn click 事件回调函数
+   */
   onClick?: React.MouseEventHandler;
+  /**
+   * @en Disabled
+   * @cn 是否禁用
+   * @default false
+   */
   disabled?: boolean;
+  /**
+   * @en Get textarea dom
+   * @cn 获取textarea dom
+   */
   textareaRef?: React.Ref<HTMLTextAreaElement>;
+  /**
+   * @en Get root dom
+   * @cn 获取Root dom
+   */
   rootRef?: React.Ref<HTMLElement>;
 }
 

@@ -6,11 +6,11 @@
  *    -- sorter 返回一个 sort 函数时，使用这个函数对数据进行内部排序
  *    -- 后端或自行排序用户自行处理，sorter 函数不要返回结果
  * en - Sorter
- *    -- Set the sorter property of Table to indicate the method of table sort.
+ *    -- Set the sorter property of Table to indicate the method of table sort
  *    -- Set the sorter property of Column to indicate the sort key string, will pass to table sorter method
  *    -- Set defaultOrder mark defualt order
- *    -- When the sorter returns a function, use this function to sort data internally.
- *    -- Server-side or self-sorting is is handled by the user, do not return results.
+ *    -- When the sorter returns a function, use this function to sort data internally
+ *    -- Server-side or self-sorting is is handled by the user, do not return results
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';

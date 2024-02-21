@@ -19,7 +19,7 @@ const alertTokens: AlertTokens = {
   alertFontSize: '14/regular',
   alertFontColor: 'Neutral-text-5',
   alertPaddingX: 'Padding-16',
-  alertPaddingY: 'Padding-7',
+  alertPaddingY: 'Padding-8',
   alertBorderRadius: 'Radius-4',
   alertNearlyMargin: 'Margin-8',
   alertTitleFontSize: '16/regular',

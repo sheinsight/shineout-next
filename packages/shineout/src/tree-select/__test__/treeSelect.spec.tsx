@@ -112,7 +112,7 @@ describe('TreeSelect[Base]', () => {
       />,
     );
     const selectWrapper = container.querySelector(wrapper)!;
-    fireEvent.change(selectWrapper.querySelector('input')!, { target: { value: '1-1' } });
+    fireEvent.change(selectWrapper.querySelector('input')!, { target: { value: filterText } });
     await waitFor(async () => {
       await delay(200);
     });
