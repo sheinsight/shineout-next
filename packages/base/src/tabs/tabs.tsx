@@ -12,7 +12,7 @@ const Tabs = (props: TabsProps) => {
     jssStyle,
     align,
     children,
-    shape = 'card',
+    shape: shapeProps,
     position,
     lazy = true,
     autoFill,
@@ -33,6 +33,9 @@ const Tabs = (props: TabsProps) => {
     className: tabsClassName,
     ...rest
   } = props;
+
+  const shape = (shapeProps && shapeProps !== 'bordered') ? shapeProps : 'card';
+
   const { Provider, active, onChange } = useTabs({
     ...rest,
     defaultActive,

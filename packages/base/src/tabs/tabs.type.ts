@@ -57,8 +57,8 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    */
   lazy?: boolean;
   /**
-   * @en If shape is not null, the style properties such as activeBackground, border will lose effect
-   * @cn Shape 不为空时，activeBackground 等颜色参数将会无效
+   * @en When Shape is not empty, color parameters such as activeBackground will be invalid. When shape is bordered, it points to card
+   * @cn Shape 不为空时，activeBackground 等颜色参数将会无效，当shape为bordered时，指向card
    * @default 'card'
    */
   shape?: TabsShapeType;
