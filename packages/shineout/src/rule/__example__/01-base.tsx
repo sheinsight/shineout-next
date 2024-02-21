@@ -5,7 +5,7 @@
  *    -- Basic Spin usage.
  */
 import React from 'react';
-import {Form, Input, Rule} from 'shineout';
+import { Form, Input, Rule } from 'shineout';
 
 const rule = Rule();
 export default () => {

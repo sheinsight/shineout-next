@@ -1,9 +1,9 @@
 import React from 'react';
-import {CommonType} from '../common/type';
-import {BaseTextareaProps} from '@sheinx/hooks';
-import {BaseTipProps} from '../common/use-tip';
-import {PopoverClasses} from '../popover/popover.type';
-import {InnerTitleClasses} from '../common/use-inner-title';
+import { CommonType } from '../common/type';
+import { BaseTextareaProps } from '@sheinx/hooks';
+import { BaseTipProps } from '../common/use-tip';
+import { PopoverClasses } from '../popover/popover.type';
+import { InnerTitleClasses } from '../common/use-inner-title';
 
 export interface TextareaClasses {
   /**

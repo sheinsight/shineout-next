@@ -1,7 +1,7 @@
 // 此文件由脚本自动生成，请勿直接修改。
 // This file was generated automatically by a script. Please do not modify it directly.
 
-import {FormTokens} from './type';
+import { FormTokens } from './type';
 
 const formTokens: FormTokens = {
   formItemFontSize: '14/regular',

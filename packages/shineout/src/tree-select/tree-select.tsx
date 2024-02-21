@@ -1,6 +1,6 @@
-import React, {memo} from 'react';
-import {TreeSelect as UnStyleTreeSelect} from '@sheinx/base';
-import {KeygenResult} from '@sheinx/hooks';
+import React, { memo } from 'react';
+import { TreeSelect as UnStyleTreeSelect } from '@sheinx/base';
+import { KeygenResult } from '@sheinx/hooks';
 import useFieldCommon from '../hooks/use-field-common';
 import {
   useCheckboxStyle,
@@ -12,7 +12,7 @@ import {
   useTreeSelectStyle,
   useTreeStyle,
 } from '@sheinx/shineout-style';
-import {BaseTreeSelectProps, TreeSelectProps} from './tree-select.type';
+import { BaseTreeSelectProps, TreeSelectProps } from './tree-select.type';
 
 const jssStyle = {
   tag: useTagStyle,

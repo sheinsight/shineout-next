@@ -1,8 +1,7 @@
-import {UploadProps as UnStyledUploadProps} from '@sheinx/base';
-import {GetWithFieldProps} from '../hooks/use-field-common';
+import { UploadProps as UnStyledUploadProps } from '@sheinx/base';
+import { GetWithFieldProps } from '../hooks/use-field-common';
 
-import type {UploadOptions as _UploadOptions} from '@sheinx/hooks';
-
+import type { UploadOptions as _UploadOptions } from '@sheinx/hooks';
 
 export type BaseUploadProps<T> = Omit<UnStyledUploadProps<T>, 'jssStyle'>;
 
@@ -11,9 +10,6 @@ export type BaseUploadProps<T> = Omit<UnStyledUploadProps<T>, 'jssStyle'>;
  *  @sort 0
  */
 export type UploadProps<T> = GetWithFieldProps<BaseUploadProps<T>, BaseUploadProps<T>['value']>;
-
-
-
 
 /**
  * @title UploadOptions
@@ -26,5 +22,3 @@ export type UploadOptions<T> = _UploadOptions<T>;
  * @sort 4
  */
 export type Validator = Exclude<BaseUploadProps<any>['validator'], undefined>;
-
-

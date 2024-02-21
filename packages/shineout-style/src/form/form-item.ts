@@ -1,6 +1,6 @@
 import token from '@sheinx/theme';
 
-import {JsStyles} from '../jss-style';
+import { JsStyles } from '../jss-style';
 
 type FormItemClass =
   | 'wrapper'

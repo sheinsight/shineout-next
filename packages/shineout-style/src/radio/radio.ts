@@ -1,4 +1,4 @@
-import {JsStyles} from '../jss-style';
+import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 
 export type RadioClass =

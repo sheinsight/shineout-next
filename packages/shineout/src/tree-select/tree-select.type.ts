@@ -1,6 +1,9 @@
-import {TreeSelectProps as UnStyledTreeSelectProps, TreeSelectRef as _TreeSelectRef,} from '@sheinx/base';
+import {
+  TreeSelectProps as UnStyledTreeSelectProps,
+  TreeSelectRef as _TreeSelectRef,
+} from '@sheinx/base';
 
-import {GetWithFieldProps} from '../hooks/use-field-common';
+import { GetWithFieldProps } from '../hooks/use-field-common';
 
 /**
  * @title TreeSelect

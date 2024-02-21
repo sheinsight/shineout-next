@@ -1,4 +1,4 @@
-import {ResultItem} from '../tree-select/tree-select.type';
+import { ResultItem } from '../tree-select/tree-select.type';
 
 export type CheckedStatusType = 0 | 1 | 2;
 export interface TreeContextProps<DataItem, Value> {
