@@ -142,6 +142,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
   },
   group: {
     // padding: '5px 0',
+    lineHeight: 1,
   },
   groupBlock: {
     '& $wrapper': {

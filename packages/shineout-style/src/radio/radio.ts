@@ -144,7 +144,9 @@ const radioStyle: JsStyles<RadioClass> = {
       fontSize: token.radioLargeLabelFontSize,
     },
   },
-  group: {},
+  group: {
+    lineHeight: 1,
+  },
   groupBlock: {
     '& $wrapper': {
       display: 'flex',

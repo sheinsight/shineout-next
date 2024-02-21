@@ -15,6 +15,10 @@ export interface ExtendsFieldProps<T, Name = string>
    */
   name?: Name;
   defaultValue?: T;
+  /**
+   * @en The callback before the value is changed, when the return value is not empty, it will be used as the new value of the component
+   * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
+   */
   beforeChange?: (value: T) => T | undefined | void;
 }
 export interface FiledItemCommonProps {

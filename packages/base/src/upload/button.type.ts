@@ -11,7 +11,6 @@ export type ButtonUploadInnerPropsType = Pick<
   | 'customResult'
   | 'drop'
   | 'multiple'
-  | 'gapProps'
   | 'leftHandler'
   | 'onPreview'
   | 'renderContent'

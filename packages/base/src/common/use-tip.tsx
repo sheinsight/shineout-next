@@ -9,6 +9,10 @@ export interface BaseTipProps {
   popover?: PopoverProps['position'];
   popoverProps?: PopoverProps;
   tip?: React.ReactNode;
+  /**
+   * @cn 错误信息
+   * @en error message
+   */
   error?: string | { message?: string };
   jssStyle?: PopoverProps['jssStyle'];
 }

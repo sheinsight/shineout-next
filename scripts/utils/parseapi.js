@@ -166,6 +166,7 @@ function parseApi(pack, filePath) {
         properties: [],
         cn: convertQuotes(mainTags.cn),
         en: convertQuotes(mainTags.en),
+        sort: mainTags.sort || '0',
       };
       const type = inter.getType();
       // const typeArgs = interface.getTypeParameters().reduce((result, param) => {
