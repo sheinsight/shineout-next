@@ -25,6 +25,7 @@ const exampleLoader = (content, component, fileName) => {
       cn: [],
     },
     component: '',
+    files: {},
   };
 
   if (fileName.indexOf(testFlag) > -1) {
@@ -34,6 +35,18 @@ const exampleLoader = (content, component, fileName) => {
   }
 
   const textLine = content.split(`\n`);
+  if (component === 'select') {
+    textLine.forEach((i, index) => {
+      if (i.indexOf(`from './static/`) > -1) {
+        let matches = i.match(/'([^']+)'/g);
+        matches = matches.map((match) => match.slice(1, -1));
+        if (matches.length > 0 && matches[0]) {
+          const file = matches[0].split('/').at(-1);
+          example.files[file] = '';
+        }
+      }
+    });
+  }
 
   const cnStart = textLine.findIndex((i) => i.indexOf('cn -') > -1);
   const enStart = textLine.findIndex((i) => i.indexOf('en -') > -1);

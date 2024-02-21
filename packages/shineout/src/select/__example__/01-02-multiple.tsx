@@ -6,17 +6,16 @@
  */
 import React from 'react';
 import { Select } from 'shineout';
+import { primitiveData } from './static/mock';
 
 export default () => {
-  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   return (
     <div>
       <Select
         width={300}
         multiple
         onChange={(v) => console.log(v)}
-        separator='~'
-        data={data}
+        data={primitiveData}
         keygen
         placeholder='Select Color'
         renderItem={(d) => d}

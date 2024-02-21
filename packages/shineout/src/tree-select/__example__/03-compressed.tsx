@@ -37,7 +37,7 @@ const data = [
 export default () => {
   const [value, setValue] = useState([]);
 
-  const handleChange = (v: any) => {
+  const handleChange = (v) => {
     setValue(v);
   };
 

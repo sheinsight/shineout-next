@@ -6,12 +6,12 @@
  */
 import React from 'react';
 import { Select } from 'shineout';
+import { primitiveData } from './static/mock';
 
 export default () => {
-  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   return (
     <div>
-      <Select width={300} data={data} keygen placeholder='Select Color' renderItem={(d) => d} />
+      <Select width={300} data={primitiveData} keygen placeholder='Select Color' renderItem={(d) => d} />
     </div>
   );
 };

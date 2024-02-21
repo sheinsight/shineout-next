@@ -142,6 +142,18 @@ export default createUseStyles(
       background: '#F4F5F8',
       borderRadius: 2,
     },
+    code: {
+      display: 'flex',
+    },
+    codeFile: {
+      width: 140,
+      borderRight: '1px solid #E8EBF0',
+      boxSizing: 'border-box',
+      background: '#f7f8fa',
+    },
+    codeWrapper: {
+      flex: 1,
+    },
     debug: {
       position: 'fixed',
       top: 60,
