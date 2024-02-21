@@ -7,5 +7,5 @@ import { TreeProps as UnStyledTreeProps } from '@sheinx/base';
  */
 export type TreeProps<DataItem, Value extends KeygenResult> = Omit<
   UnStyledTreeProps<DataItem, Value>,
-  'jssStyle'
+  'jssStyle' | 'onRef'
 >;

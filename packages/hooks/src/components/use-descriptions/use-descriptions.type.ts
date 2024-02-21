@@ -1,6 +1,9 @@
 import React from 'react';
 
 export interface DescriptionsItemProps {
+  /**
+   * @private 内部属性
+   */
   key?: React.Key;
   /**
    * @en Data label
@@ -31,7 +34,8 @@ export interface DescriptionsItemProps {
 export interface BaseDescriptionsProps {
   /**
    * @en Descriptions array
-   * @cn 描述项数组
+   * @cn 描述项数组,描述项对象结构见下
+   * @override ItemType[]
    */
   items?: DescriptionsItemProps[];
   /**
