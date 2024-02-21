@@ -56,7 +56,9 @@ export interface TreeSelectProps<DataItem, Value>
    * @default false
    */
   clearable?: boolean;
-
+  /**
+   * @private 内部属性
+   */
   filterText?: string;
   /**
    * @en ender unmatched value

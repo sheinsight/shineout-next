@@ -29,6 +29,7 @@ const Tabs = (props: TabsProps) => {
     inactiveBackground,
     defaultActive,
     tabBarStyle,
+    color,
     className: tabsClassName,
     ...rest
   } = props;
@@ -149,15 +150,20 @@ const Tabs = (props: TabsProps) => {
 
   const renderHeader = () => {
     const tabs: TabData[] = [];
-
+    let border = getSplitColor();
     Children.toArray(children).forEach((child, index) => {
       const Chlid = child as React.ReactElement<TabsPanelProps>;
-
+      const childBorder = Chlid.props.splitColor || Chlid.props.border;
+      const { id = index } = Chlid.props;
+      if (active === id && childBorder) {
+        border = childBorder;
+      }
       tabs.push({
         id: Chlid.props.id !== undefined ? Chlid.props.id : index,
         tab: Chlid.props.tab,
         disabled: Chlid.props.disabled,
         jssStyle,
+        color: Chlid.props.color || (active === id ? color : undefined),
       });
     });
     return (
@@ -168,7 +174,7 @@ const Tabs = (props: TabsProps) => {
         position={position}
         hideSplit={hideSplit}
         extra={getExtra()}
-        splitColor={getSplitColor()}
+        splitColor={border}
         collapsible={collapsible}
         tabBarStyle={tabBarStyle}
         getPosition={getPosition()}
