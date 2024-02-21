@@ -1,9 +1,9 @@
 import React from 'react';
-import { CommonType } from '../common/type';
-import { BaseTextareaProps } from '@sheinx/hooks';
-import { BaseTipProps } from '../common/use-tip';
-import { PopoverClasses } from '../popover/popover.type';
-import { InnerTitleClasses } from '../common/use-inner-title';
+import {CommonType} from '../common/type';
+import {BaseTextareaProps} from '@sheinx/hooks';
+import {BaseTipProps} from '../common/use-tip';
+import {PopoverClasses} from '../popover/popover.type';
+import {InnerTitleClasses} from '../common/use-inner-title';
 
 export interface TextareaClasses {
   /**
@@ -45,12 +45,12 @@ export interface SimpleTextareaProps
     textarea?: () => TextareaClasses;
   };
   /**
-   * @en prefix
+   * @en The prefix of the textarea
    * @cn 前缀
    */
   prefix?: React.ReactNode;
   /**
-   * @en suffix
+   * @en The suffix of the textarea
    * @cn 后缀
    */
   suffix?: React.ReactNode;
@@ -100,22 +100,23 @@ export interface TextareaProps
       | 'renderTextarea'
     > {
   /**
-   * @en Inner title
-   * @cn 内嵌标题
+   * @private 内部属性
    */
   innerTitle?: React.ReactNode;
   /**
-   * @en Placeholder title, which needs to be used together with innerTitle
-   * @cn 占位标题，需要配合 innerTitle 一起使用
+   * @private 内部属性
    */
   placeTitle?: React.ReactNode;
+  /**
+   * @private 内部属性
+   */
   jssStyle?: {
     textarea?: () => TextareaClasses;
     popover?: () => PopoverClasses;
     innerTitle?: () => InnerTitleClasses;
   };
   /**
-   * @en Whether to automatically get the focus
+   * @en Whether the height changes automatically with the content
    * @cn 高度是否随内容自动变化
    * @default false
    */
@@ -126,7 +127,7 @@ export interface TextareaProps
    */
   info?: number | ((value: string | undefined) => React.ReactNode | Error);
   /**
-   * @en DefaultValue and value can be set at the same time and defaultValue will be overridden by value
+   * @en DefaultValue and value can be set at the same time and defaultValue will be overridden by value.
    * @cn defaultValue 和 value 可以同时设置，defaultValue 会被value覆盖
    */
   value?: TextareaValueType;
@@ -146,13 +147,14 @@ export interface TextareaProps
    */
   beforeChange?: (value: TextareaValueType) => void | string;
   /**
-   * @en The maxHeight of the textarea, scroll bars appear after more than
+   * @en the maxHeight of the textarea, scroll bars appear after more than
    * @cn 输入框的最大高度, 超过之后会出现滚动条
    */
   maxHeight?: string | number;
   /**
    * @en When trim is true, blank characters are automatically deleted when lose focus
    * @cn Trim 为 true 时，失去焦点时会自动删除空白字符
+   * @default false
    */
   trim?: boolean;
   /**

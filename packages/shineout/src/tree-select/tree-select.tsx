@@ -1,18 +1,18 @@
-import React, { memo } from 'react';
-import { TreeSelect as UnStyleTreeSelect } from '@sheinx/base';
-import { KeygenResult } from '@sheinx/hooks';
+import React, {memo} from 'react';
+import {TreeSelect as UnStyleTreeSelect} from '@sheinx/base';
+import {KeygenResult} from '@sheinx/hooks';
 import useFieldCommon from '../hooks/use-field-common';
 import {
+  useCheckboxStyle,
+  useInnerTitleStyle,
+  usePopoverStyle,
+  useSelectStyle,
+  useSpinStyle,
   useTagStyle,
   useTreeSelectStyle,
   useTreeStyle,
-  useSelectStyle,
-  useCheckboxStyle,
-  usePopoverStyle,
-  useSpinStyle,
-  useInnerTitleStyle,
 } from '@sheinx/shineout-style';
-import { TreeSelectProps } from './tree-select.type';
+import {BaseTreeSelectProps, TreeSelectProps} from './tree-select.type';
 
 const jssStyle = {
   tag: useTagStyle,
@@ -26,7 +26,7 @@ const jssStyle = {
 };
 
 const TreeSelectComponent = <DataItem, Value extends KeygenResult>(
-  props: TreeSelectProps<DataItem, Value>,
+  props: BaseTreeSelectProps<DataItem, Value>,
 ) => {
   return <UnStyleTreeSelect jssStyle={jssStyle} {...props} />;
 };

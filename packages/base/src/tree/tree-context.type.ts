@@ -1,8 +1,7 @@
-import { KeygenResult } from '@sheinx/hooks';
-import { ResultItem } from '../tree-select/tree-select.type';
+import {ResultItem} from '../tree-select/tree-select.type';
 
 export type CheckedStatusType = 0 | 1 | 2;
-export interface TreeContextProps<DataItem, Value extends KeygenResult> {
+export interface TreeContextProps<DataItem, Value> {
   set: (id: Value, checked: CheckedStatusType) => void;
   get: (id: Value) => CheckedStatusType | undefined;
   getValue: () => Value[];
@@ -17,7 +16,7 @@ export interface TreeContextProps<DataItem, Value extends KeygenResult> {
   isDisabled: (id: Value) => boolean;
 }
 
-export interface TreeProviderProps<DataItem, Value extends KeygenResult> {
+export interface TreeProviderProps<DataItem, Value> {
   children: React.ReactNode;
   value: TreeContextProps<DataItem, Value>;
 }

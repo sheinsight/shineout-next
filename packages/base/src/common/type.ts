@@ -1,6 +1,10 @@
-import React, { CSSProperties } from 'react';
+import React, {CSSProperties} from 'react';
 
 export interface CommonType {
+  /**
+   * @en The status of the component
+   * @cn 组件状态
+   */
   status?: 'error';
   /**
    * @en Custom class name

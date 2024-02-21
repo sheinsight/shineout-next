@@ -1,6 +1,6 @@
 import token from '@sheinx/theme';
 
-import { JsStyles } from '../jss-style';
+import {JsStyles} from '../jss-style';
 
 type FormItemClass =
   | 'wrapper'
@@ -105,7 +105,8 @@ const formItemStyle: JsStyles<FormItemClass> = {
     lineHeight: token.lineHeightDynamic,
     minHeight: token.formItemTipMinHeight,
     fontSize: token.formItemTipFontSize,
-    width: '100%',
+    flexBasis: '100%',
+    width: 0,
   },
   tip: {
     color: token.formItemTipFontColor,

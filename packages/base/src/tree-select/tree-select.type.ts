@@ -1,11 +1,11 @@
 import React from 'react';
-import { TreeClasses } from '../tree/tree.type';
-import { KeygenResult, ObjectKey, UnMatchedData, ValueItem } from '@sheinx/hooks';
-import { TreeSelectClasses, SelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
-import { TagClasses } from '../tag/tag.type';
-import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
-import { CommonType } from '../common/type';
-import { InnerTitleClasses } from '../common/use-inner-title';
+import {TreeClasses} from '../tree/tree.type';
+import {KeygenResult, ObjectKey, UnMatchedData, ValueItem} from '@sheinx/hooks';
+import {SelectClasses, TreeSelectClasses, VirtualScrollClasses} from '@sheinx/shineout-style';
+import {TagClasses} from '../tag/tag.type';
+import {AbsoluteListProps} from '../absolute-list/absolute-list.type';
+import {CommonType} from '../common/type';
+import {InnerTitleClasses} from '../common/use-inner-title';
 
 export type JssStyleType = {
   virtualScroll?: () => VirtualScrollClasses;
@@ -56,7 +56,7 @@ export interface TreeSelectProps<DataItem, Value>
    * @default false
    */
   clearable?: boolean;
-  
+
   filterText?: string;
   /**
    * @en ender unmatched value
@@ -77,7 +77,6 @@ export interface TreeSelectProps<DataItem, Value>
   /**
    * @en Auxiliary method for generating key. When it is a function, use the return value of this function. When it is a string, use the data value corresponding to this string. For example, "id" is the same thing as (d) => d.id
    * @cn 生成 key 的辅助方法, 为函数时，使用此函数返回值, 为 string 时，使用这个 string 对应的数据值。如 "id"，相当于 (d) => d.id
-   * @default index
    */
   keygen: ObjectKey<DataItem> | ((data: DataItem, parentKey: KeygenResult) => string | number);
   /**

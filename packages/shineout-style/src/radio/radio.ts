@@ -1,4 +1,4 @@
-import { JsStyles } from '../jss-style';
+import {JsStyles} from '../jss-style';
 import token from '@sheinx/theme';
 
 export type RadioClass =
@@ -144,7 +144,9 @@ const radioStyle: JsStyles<RadioClass> = {
       fontSize: token.radioLargeLabelFontSize,
     },
   },
-  group: {},
+  group: {
+    lineHeight: 1,
+  },
   groupBlock: {
     '& $wrapper': {
       display: 'flex',

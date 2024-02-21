@@ -1,5 +1,5 @@
 import token from '@sheinx/theme';
-import { JsStyles } from '../jss-style';
+import {JsStyles} from '../jss-style';
 
 export type CheckboxClass =
   | 'wrapper'
@@ -142,6 +142,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
   },
   group: {
     // padding: '5px 0',
+    lineHeight: 1,
   },
   groupBlock: {
     '& $wrapper': {

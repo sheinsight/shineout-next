@@ -2,13 +2,17 @@ import Popover from '../popover';
 import React from 'react';
 import ErrorTrans from '../form/error-trans';
 
-import type { PopoverProps } from '../popover/popover.type';
+import type {PopoverProps} from '../popover/popover.type';
 
 // 透传Props
 export interface BaseTipProps {
   popover?: PopoverProps['position'];
   popoverProps?: PopoverProps;
   tip?: React.ReactNode;
+  /**
+   * @cn 错误信息
+   * @en error message
+   */
   error?: string | { message?: string };
   jssStyle?: PopoverProps['jssStyle'];
 }

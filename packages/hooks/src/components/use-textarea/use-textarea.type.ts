@@ -5,6 +5,10 @@ export interface TextAreaPropsOwn {
    * The default value. Use when the component is not controlled.
    */
   value?: string;
+  /**
+   * @en The callback function for changing value
+   * @cn 值改变回调函数
+   */
   onChange?: (value: string) => void;
   /**
    * @en The callback when Textarea blur

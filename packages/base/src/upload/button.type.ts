@@ -1,6 +1,6 @@
 import React from 'react';
-import { UploadProps } from './upload.type';
-import { ButtonProps } from '../button/button.type';
+import {UploadProps} from './upload.type';
+import {ButtonProps} from '../button/button.type';
 
 export type ButtonUploadInnerPropsType = Pick<
   UploadProps<any>,
@@ -11,7 +11,6 @@ export type ButtonUploadInnerPropsType = Pick<
   | 'customResult'
   | 'drop'
   | 'multiple'
-  | 'gapProps'
   | 'leftHandler'
   | 'onPreview'
   | 'renderContent'
