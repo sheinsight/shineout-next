@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { KeygenResult } from '@sheinx/hooks';
 import { TreeContextProps, TreeProviderProps } from './tree-context.type';
 
 export const TreeContext = React.createContext<TreeContextProps<any, any>>(
   {} as TreeContextProps<any, any>,
 );
 
-export const Provider = <DataItem, Value extends KeygenResult>(
+export const Provider = <DataItem, Value>(
   props: TreeProviderProps<DataItem, Value>,
 ) => {
   const { children, value } = props;

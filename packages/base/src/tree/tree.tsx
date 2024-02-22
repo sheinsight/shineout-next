@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import classNames from 'classnames';
-import { TreeProps, TreeClasses } from './tree.type';
-import { KeygenResult, useTree, util, usePrevious } from '@sheinx/hooks';
+import { KeygenResult, useTree, util, usePrevious, ObjectKey } from '@sheinx/hooks';
+import { TreeClasses } from '@sheinx/shineout-style';
+import { TreeProps } from './tree.type';
 import RootTree from './tree-root';
 import { produce } from 'immer';
 import { Provider } from './tree-context';
@@ -10,7 +11,7 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
   const {
     jssStyle,
     line = true,
-    childrenKey = 'children',
+    childrenKey = 'children' as ObjectKey<DataItem>,
     data,
     value,
     mode = 1,
@@ -67,7 +68,7 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
     defaultValue,
     defaultExpandAll,
     defaultExpanded,
-    childrenKey: childrenKey as keyof DataItem & string,
+    childrenKey: childrenKey,
     keygen,
     onExpand: onExpandProp,
   });
@@ -96,7 +97,7 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
     });
   };
 
-  const handleNodeClick = (node: DataItem, id: Value) => {
+  const handleNodeClick = (node: DataItem, id: KeygenResult) => {
     if (active === undefined) {
       handleUpdateActive(id);
     }
@@ -123,7 +124,7 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
     if (onExpand) onExpand(newExpanded);
   };
 
-  const handleDrop = (id: Value, targetId: Value, position: number) => {
+  const handleDrop = (id: KeygenResult, targetId: KeygenResult, position: number) => {
     let targetIdCopy = targetId;
     let positionCopy = position;
 
@@ -220,7 +221,7 @@ const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, V
           expandIcons={expandIcons}
           childrenClass={util.isFunc(childrenClass) ? childrenClass : () => childrenClass}
           bindNode={datum.bindNode}
-          childrenKey={childrenKey as keyof DataItem}
+          childrenKey={childrenKey}
           onNodeClick={handleNodeClick}
           renderItem={renderItem}
           loader={loader}

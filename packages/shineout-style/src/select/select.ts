@@ -63,6 +63,7 @@ export type SelectClasses = {
   columnsRadio: string;
   columnsCheckbox: string;
   footer: string;
+  moreIcon: string;
 };
 export type SelectClassType = keyof SelectClasses;
 
@@ -378,6 +379,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     width: token.selectFontSize,
     fontSize: token.selectFontSize,
   },
+  moreIcon: {},
   list: {
     paddingTop: 3,
     paddingBottom: 3,

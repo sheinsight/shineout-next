@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import { TreeSelect as UnStyleTreeSelect } from '@sheinx/base';
-import { KeygenResult } from '@sheinx/hooks';
+import { TreeSelect as UnStyleTreeSelect, TreeSelectValueType } from '@sheinx/base';
 import useFieldCommon from '../hooks/use-field-common';
 import {
   useCheckboxStyle,
@@ -25,15 +24,11 @@ const jssStyle = {
   innerTitle: useInnerTitleStyle,
 };
 
-const TreeSelectComponent = <DataItem, Value extends KeygenResult>(
-  props: BaseTreeSelectProps<DataItem, Value>,
-) => {
+const TreeSelectComponent = <DataItem, Value extends TreeSelectValueType>(props: BaseTreeSelectProps<DataItem, Value>) => {
   return <UnStyleTreeSelect jssStyle={jssStyle} {...props} />;
 };
 
-const TreeSelect = <DataItem, Value extends KeygenResult>(
-  props: TreeSelectProps<DataItem, Value>,
-) => {
+const TreeSelect = <DataItem, Value extends TreeSelectValueType>(props: TreeSelectProps<DataItem, Value>) => {
   return useFieldCommon(props, TreeSelectComponent<DataItem, Value>);
 };
 

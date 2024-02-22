@@ -75,6 +75,7 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
         nodeClass={classNames(styles.treeOption)}
         contentClass={getContentClass}
         renderItem={renderItem}
+        isControlled={'expanded' in props}
       ></Tree>
     </div>
   );

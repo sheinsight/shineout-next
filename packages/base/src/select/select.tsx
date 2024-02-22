@@ -8,6 +8,7 @@ import {
   useFilter,
   useGroup,
   UnMatchedData,
+  ObjectKey,
 } from '@sheinx/hooks';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { SelectPropsBase, OptionListRefType } from './select.type';
@@ -72,7 +73,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     resultClassName,
     hideCreateOption,
     filterSingleSelect,
-    childrenKey,
+    childrenKey = 'children' as ObjectKey<DataItem>,
     expanded: expandedProp,
     defaultExpanded,
     defaultExpandAll,
@@ -403,8 +404,8 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
       : data[renderResultProp];
   };
 
-  const getDataByValues = (values: (Value | undefined)[]) => {
-    return datum.getDataByValues(values, { childrenKey });
+  const getDataByValues = (values: Value) => {
+    return datum.getDataByValues(values as Value[], { childrenKey });
   };
 
   const checkUnMatched = (item: DataItem | UnMatchedData): item is UnMatchedData => {
@@ -571,7 +572,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
         defaultExpanded={defaultExpanded}
         expanded={expanded}
         onExpand={onExpand}
-        childrenKey={childrenKey as keyof DataItem}
+        childrenKey={childrenKey}
         closePop={closePop}
         renderItem={renderItem}
       ></TreeList>
