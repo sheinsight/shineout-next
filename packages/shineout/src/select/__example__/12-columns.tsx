@@ -5,8 +5,10 @@
  *    -- Basic usage
  */
 import React, { useState, useEffect } from 'react';
-import { Select } from 'shineout';
+import { Select, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
+
+type SelectProps = TYPE.Select.Props<DataItem, string>;
 
 interface DataItem {
   id: number;
@@ -25,6 +27,8 @@ interface DataItem {
 export default () => {
   const [data, setData] = useState<DataItem[]>([]);
 
+  const renderItem: SelectProps['renderItem'] = (d) => `${d.firstName}-${d.lastName}`;
+
   useEffect(() => {
     user.fetch.get('user', { username: '', sorter: {} }).then((res: { data: DataItem[] }) => {
       setData(res.data);
@@ -39,7 +43,7 @@ export default () => {
         keygen='id'
         columns={4}
         placeholder='Select Color'
-        renderItem={(d) => `${d.firstName}-${d.lastName}`}
+        renderItem={renderItem}
       />
       <Select
         style={{ marginLeft: 32 }}
@@ -51,7 +55,7 @@ export default () => {
         keygen='id'
         columns={4}
         placeholder='Select Color'
-        renderItem={(d) => `${d.firstName}-${d.lastName}`}
+        renderItem={renderItem}
       />
     </div>
   );

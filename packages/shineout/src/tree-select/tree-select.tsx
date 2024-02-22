@@ -24,12 +24,16 @@ const jssStyle = {
   innerTitle: useInnerTitleStyle,
 };
 
-const TreeSelectComponent = <DataItem, Value extends TreeSelectValueType>(props: BaseTreeSelectProps<DataItem, Value>) => {
+const TreeSelectComponent = <DataItem, Value extends TreeSelectValueType>(
+  props: BaseTreeSelectProps<DataItem, Value>,
+) => {
   return <UnStyleTreeSelect jssStyle={jssStyle} {...props} />;
 };
 
-const TreeSelect = <DataItem, Value extends TreeSelectValueType>(props: TreeSelectProps<DataItem, Value>) => {
-  return useFieldCommon(props, TreeSelectComponent<DataItem, Value>);
+const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
+  props: TreeSelectProps<DataItem, Value>,
+) => {
+  return useFieldCommon(props, TreeSelectComponent<DataItem, Value>, 'array');
 };
 
 export default memo(TreeSelect) as typeof TreeSelect;

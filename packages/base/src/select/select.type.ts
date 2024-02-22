@@ -74,7 +74,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en Options data
    * @cn 选项数据
-   * @override Item[]
+   * @override DataItem[]
    */
   // data treeData 的类型交给重载去实现
   data?: DataItem[];
@@ -354,7 +354,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 为 string 时，返回 d[string]。 为 function 时，返回函数结果
    * @default d => d
    */
-  renderItem: ((data: DataItem, index?: number) => React.ReactNode) | ObjectKey<DataItem>;
+  renderItem?: ((data: DataItem, index?: number) => React.ReactNode) | ObjectKey<DataItem>;
 
   /**
    * @en The content displayed in the result after selecting, if not set, use renderItem
@@ -423,7 +423,7 @@ export interface SelectPropsA<DataItem, Value>
   /**
    * @en Options data
    * @cn 选项数据
-   * @override Item[]
+   * @override DataItem[]
    */
   data: DataItem[];
 }

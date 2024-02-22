@@ -26,7 +26,6 @@ export default () => {
         data={data}
         keygen
         placeholder='Select Color'
-        renderItem={(d) => d}
       />
     </div>
   );

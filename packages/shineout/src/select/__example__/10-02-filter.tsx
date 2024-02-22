@@ -5,8 +5,10 @@
  *    -- Set the `onFilter` property and do not return the content, you can filter according to the input content, and reset the data according to the data returned by the backend interface
  */
 import React, { useState, useEffect } from 'react';
-import { Select } from 'shineout';
+import { Select, TYPE } from 'shineout';
 import { user } from '@sheinx/mock';
+
+type SelectProps = TYPE.Select.Props<DataItem, string>;
 
 interface DataItem {
   id: number;
@@ -33,10 +35,12 @@ export default () => {
     });
   };
 
-  const handleFilter = (text: string) => {
+  const handleFilter: SelectProps['onFilter'] = (text) => {
     setLoading(true);
     getData(text);
   };
+
+  const renderItem: SelectProps['renderItem'] = (d) => `${d.firstName}-${d.lastName}`;
 
   useEffect(() => {
     getData('');
@@ -50,7 +54,7 @@ export default () => {
         data={data}
         keygen='id'
         placeholder='Select Color'
-        renderItem={(d) => `${d.firstName}-${d.lastName}`}
+        renderItem={renderItem}
         onFilter={handleFilter}
       />
     </div>
