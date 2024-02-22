@@ -48,6 +48,7 @@ interface FooterBtnOptions {
   text: ModalOptions['text'];
   id: string;
   autoFocus?: boolean;
+  type?: string;
 }
 
 const LoadingOk = (props: FooterBtnOptions) => {
@@ -57,7 +58,7 @@ const LoadingOk = (props: FooterBtnOptions) => {
   return (
     <Button
       autoFocus={props.autoFocus}
-      type='primary'
+      type={props.type === 'error' ? 'danger' : 'primary'}
       jssStyle={props.jssStyle}
       loading={loading}
       onClick={callback}
@@ -102,7 +103,7 @@ const method =
       id,
     };
 
-    const ok = <LoadingOk {...btnOptions} autoFocus={options.autoFocusButton === 'ok'} key='ok' />;
+    const ok = <LoadingOk {...btnOptions} type={type} autoFocus={options.autoFocusButton === 'ok'} key='ok' />;
     const cancel = (
       <BtnCancel {...btnOptions} autoFocus={options.autoFocusButton === 'cancel'} key='cancel' />
     );

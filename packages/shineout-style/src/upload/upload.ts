@@ -294,7 +294,6 @@ const uploadStyle: JsStyles<UploadClassType> = {
     transform: 'translateX(-50%)',
     padding: '2px 8px',
     width: 'max-content',
-    minWidth: '120px',
     maxWidth: '240px',
     zIndex: '1000',
     marginTop: '8px',
