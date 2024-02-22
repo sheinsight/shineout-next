@@ -57,8 +57,8 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    */
   lazy?: boolean;
   /**
-   * @en If shape is not null, the style properties such as background, border will lose effect
-   * @cn Shape 不为空时，background 等颜色参数将会无效
+   * @en When Shape is not empty, color parameters such as activeBackground will be invalid. When shape is bordered, it points to card
+   * @cn Shape 不为空时，activeBackground 等颜色参数将会无效，当shape为bordered时，指向card
    * @default 'card'
    */
   shape?: TabsShapeType;
@@ -92,8 +92,8 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    */
   extra?: React.ReactNode;
   /**
-   * @en Split line color
-   * @cn 分割线颜色
+   * @en Split line color, replace the original border property
+   * @cn 分割线颜色,替代原有border属性
    */
   splitColor?: string;
   /**
@@ -156,4 +156,9 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    * @cn 标签选中时触发回调事件
    */
   onChange?: (key: string | number) => void;
+  /**
+   * @en The color of tab"s text only when the shape is "card"
+   * @cn 标签页文字颜色，仅当 shape 为 "card" 时生效
+   */
+  color?: string
 }

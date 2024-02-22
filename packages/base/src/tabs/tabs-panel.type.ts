@@ -30,4 +30,18 @@ export interface TabsPanelProps extends TabsContextProps, Pick<CommonType, 'clas
    * @cn Panel 内容
    */
   children?: React.ReactNode;
+  /**
+   * @en The color of the dividing line, only takes effect when shape=line
+   * @cn 分割线颜色,仅在shape=line的时候生效
+   */
+  splitColor?: string;
+  /**
+   * @deprecated 即将弃用，请使用 splitColor 替代
+   */
+  border?: string;
+  /**
+   * @en The color of tab"s text only when the shape is "card"
+   * @cn 标签页文字颜色，仅当 shape 为 "card" 时生效
+   */
+  color?: string;
 }

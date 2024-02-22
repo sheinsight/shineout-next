@@ -7,7 +7,7 @@ import Button from '../button';
 import { useTabsContext } from '@sheinx/hooks';
 
 const Tab = (props: TabProps, ref: any) => {
-  const { jssStyle, tab, disabled, id } = props;
+  const { jssStyle, tab, disabled, id, color } = props;
   const {
     active,
     shape = 'card',
@@ -54,7 +54,7 @@ const Tab = (props: TabProps, ref: any) => {
     return <div className={tabsStyle.fillInner}>{tab}</div>;
   };
 
-  const style: { background?: string } = {};
+  const style: { background?: string, color?: string } = {};
 
   if (activeBackground && isActive) {
     style.background = activeBackground;
@@ -62,6 +62,10 @@ const Tab = (props: TabProps, ref: any) => {
 
   if (inactiveBackground && !isActive) {
     style.background = inactiveBackground;
+  }
+
+  if (shape === 'card') {
+    style.color = color
   }
 
   if (shape === 'button')
