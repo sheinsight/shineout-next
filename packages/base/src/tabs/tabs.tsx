@@ -1,11 +1,14 @@
 import React, { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
-import { useTabs } from '@sheinx/hooks';
+import { useTabs, util } from '@sheinx/hooks';
 import { TabsClasses, TabsProps } from './tabs.type';
 import { TabData } from './tab.type';
 import { TabsPanelProps } from './tabs-panel.type';
 import TabsPanel from './tabs-panel';
 import TabsHeader from './tabs-header';
+import Sticky, { type StickyProps} from '../sticky';
+
+const { isEmpty, isObject, isNumber } = util;
 
 const Tabs = (props: TabsProps) => {
   const {
@@ -30,6 +33,7 @@ const Tabs = (props: TabsProps) => {
     defaultActive,
     tabBarStyle,
     color,
+    sticky,
     className: tabsClassName,
     ...rest
   } = props;
@@ -169,7 +173,7 @@ const Tabs = (props: TabsProps) => {
         color: Chlid.props.color || (active === id ? color : undefined),
       });
     });
-    return (
+    const header = (
       <TabsHeader
         tabs={tabs}
         align={align}
@@ -181,8 +185,33 @@ const Tabs = (props: TabsProps) => {
         collapsible={collapsible}
         tabBarStyle={tabBarStyle}
         getPosition={getPosition()}
+        sticky={!!sticky}
       ></TabsHeader>
-    );
+    )
+    if (!isEmpty(sticky) && !isVertical) {
+      const stickyClassName = tabsStyle.sticky
+      let stickyProps: { top?: number | undefined; className: string } = {
+        top: 0,
+        className: stickyClassName
+      }
+      if (isNumber(sticky)) {
+        stickyProps.top = sticky
+      }
+      if (isObject(sticky)) {
+        stickyProps = {
+          ...(sticky as StickyProps),
+          className: classNames(stickyClassName, (sticky as StickyProps).className)
+        }
+      }
+      return (
+        <Sticky {...stickyProps}>
+          <div {...getDataProps()}>
+            {header}
+          </div>
+        </Sticky>
+      )
+    }
+    return header
   };
 
   const renderTabs = () => {

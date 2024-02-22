@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { TabsHeaderProps } from './tabs-header.type';
 import { TabsClasses } from './tabs.type';
@@ -9,13 +9,20 @@ import Icon from '../icons';
 import Button from '../button';
 
 const TabsHeader = (props: TabsHeaderProps) => {
-  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition } =
+  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition, sticky } =
     props;
 
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [loaded, setLoaded] = useState(false); 
   const tabRef = useRef<Record<string | number, HTMLDivElement>>({});
   const { shape, isVertical, onCollapsible, active } = useTabsContext();
+
+  useEffect(() => {
+    if (sticky && headerRef.current && scrollRef.current && !loaded) {
+      setLoaded(true);
+    }
+  }, [loaded, sticky]);
 
   const {
     delta,

@@ -2,6 +2,7 @@
 import { CommonType } from '../common/type';
 import { ButtonClasses } from '../button/button.type';
 import { BaseTabsProps, TabsShapeType } from '@sheinx/hooks';
+import type { StickyProps } from '../sticky';
 
 export interface TabsClasses {
   tabs: string;
@@ -32,6 +33,7 @@ export interface TabsClasses {
 
   collapsible: string;
   collapsed: string;
+  sticky: string;
 }
 
 export type TabsAlignType = 'left' | 'right' | 'bottom' | 'vertical-left' | 'vertical-right';
@@ -125,7 +127,7 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    * @en Sticky header
    * @cn 开启头部附着
    */
-  sticky?: boolean;
+  sticky?: boolean | number | StickyProps;
   /**
    * @en The position of the tab
    * @cn 选项卡位置
