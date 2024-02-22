@@ -5,13 +5,20 @@
  *    -- Set the `highlight` property to highlight the node when clicked.
  */
 
-import { Tree } from 'shineout';
+import { Tree, TYPE } from 'shineout';
 import { createNestedArray } from './utils';
 
-export default () => {
-  const data = createNestedArray([5, 1, 1]);
+type TreeProps = TYPE.Tree.Props<DataItem, string[]>;
 
-  const renderItem = (node: any) => {
+interface DataItem {
+  id: string;
+  children?: DataItem[];
+}
+
+export default () => {
+  const data: DataItem[] = createNestedArray([5, 1, 1]);
+
+  const renderItem: TreeProps['renderItem'] = (node) => {
     return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 

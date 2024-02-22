@@ -5,9 +5,16 @@
  *    -- Set line to false to hide the connection line.
  */
 
-import { Tree } from 'shineout';
+import { Tree, TYPE } from 'shineout';
+type TreeProps = TYPE.Tree.Props<DataItem, string[]>;
+
+interface DataItem {
+  id: string;
+  children?: DataItem[];
+}
+
 export default () => {
-  const data = [
+  const data: DataItem[] = [
     {
       id: '0',
       children: [
@@ -36,7 +43,7 @@ export default () => {
     },
   ];
 
-  const renderItem = (node: any) => {
+  const renderItem: TreeProps['renderItem'] = (node: any) => {
     return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 

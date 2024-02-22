@@ -17,7 +17,7 @@ export type JsstyleType = {
 export type DatumType<DataItem> = ReturnType<typeof useTree<DataItem>>;
 
 export interface TreeProps<DataItem, Value extends any[]>
-  extends BaseTreeProps<DataItem>,
+  extends Omit<BaseTreeProps<DataItem>, 'isControlled'>,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: JsstyleType;
   /**
@@ -108,7 +108,7 @@ export interface TreeProps<DataItem, Value extends any[]>
    * @en Change event
    * @cn 设置 onChange 属性时，显示 选择框。参数为当前选中值，和 mode 属性相关
    */
-  onChange?: (value: KeygenResult[]) => void;
+  onChange?: (value: Value) => void;
   /**
    * @en Dom style when drop images
    * @cn 拖拽图片的原生 style 样式

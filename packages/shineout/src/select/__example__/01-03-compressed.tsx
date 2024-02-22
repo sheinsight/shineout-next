@@ -15,7 +15,6 @@ export default () => {
         width={300}
         multiple
         onChange={(v) => console.log(v)}
-        separator='~'
         data={data}
         keygen
         placeholder='Select Color'

@@ -12,10 +12,17 @@
  */
 
 import { useState } from 'react';
-import { Tree, Radio } from 'shineout';
+import { Tree, Radio, TYPE } from 'shineout';
 import { createNestedArray } from './utils';
 
-const data = createNestedArray([5, 1, 2]);
+type TreeProps = TYPE.Tree.Props<DataItem, string[]>;
+
+interface DataItem {
+  id: string;
+  children?: DataItem[];
+}
+
+const data: DataItem[] = createNestedArray([5, 1, 2]);
 
 export default () => {
   const radio = [
@@ -41,18 +48,18 @@ export default () => {
     },
   ];
 
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState<TreeProps['value']>([]);
   const [mode, setMode] = useState<0 | 1 | 2 | 3 | 4>(0);
 
   const renderItem = (node: any) => {
     return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
-  const handleChange = (v) => {
+  const handleChange: TreeProps['onChange'] = (v) => {
     setValue(v);
   };
 
-  const handleModeChange = (v) => {
+  const handleModeChange = (v: any) => {
     setMode(v.value);
     setValue([]);
   };

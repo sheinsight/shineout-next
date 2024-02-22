@@ -5,14 +5,21 @@
  *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes.
  */
 import { useState } from 'react';
-import { Tree, Button } from 'shineout';
+import { Tree, Button, TYPE } from 'shineout';
 import { createNestedArray, getIds } from './utils';
 
-export default () => {
-  const data = createNestedArray([2, 2, 2]);
-  const [expanded, setExpanded] = useState<any[]>([]);
+type TreeProps = TYPE.Tree.Props<DataItem, string[]>;
 
-  const renderItem = (node: any) => {
+interface DataItem {
+  id: string;
+  children?: DataItem[];
+}
+
+export default () => {
+  const data: DataItem[] = createNestedArray([2, 2, 2]);
+  const [expanded, setExpanded] = useState<TreeProps['expanded']>([]);
+
+  const renderItem: TreeProps['renderItem'] = (node) => {
     return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
@@ -24,7 +31,7 @@ export default () => {
     setExpanded([]);
   };
 
-  const handleExpand = (ids: any[]) => {
+  const handleExpand: TreeProps['onExpand'] = (ids) => {
     setExpanded([...ids]);
   };
 

@@ -7,7 +7,7 @@ import RootTree from './tree-root';
 import { produce } from 'immer';
 import { Provider } from './tree-context';
 
-const Tree = <DataItem, Value extends KeygenResult>(props: TreeProps<DataItem, Value>) => {
+const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) => {
   const {
     jssStyle,
     line = true,

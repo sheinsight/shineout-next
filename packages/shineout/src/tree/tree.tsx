@@ -3,7 +3,7 @@ import { Tree as UnStyledButton } from '@sheinx/base';
 import { useTreeStyle, useSpinStyle, useCheckboxStyle } from '@sheinx/shineout-style';
 import { TreeProps } from './tree.type';
 
-const Tree = <DataItem,>(props: TreeProps<DataItem>) => {
+const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) => {
   const treeStyle = useTreeStyle;
   const spinStyle = useSpinStyle;
   const checkboxStyle = useCheckboxStyle;

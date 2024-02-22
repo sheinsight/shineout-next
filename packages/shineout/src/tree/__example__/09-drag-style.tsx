@@ -6,17 +6,24 @@
  */
 
 import { useState } from 'react';
-import { Tree } from 'shineout';
+import { Tree, TYPE } from 'shineout';
 import { createNestedArray } from './utils';
 
-export default () => {
-  const [data, setData] = useState(createNestedArray([5, 2, 2]));
+type TreeProps = TYPE.Tree.Props<DataItem, string[]>;
 
-  const renderItem = (node: any) => {
+interface DataItem {
+  id: string;
+  children?: DataItem[];
+}
+
+export default () => {
+  const [data, setData] = useState<TreeProps['data']>(createNestedArray([5, 2, 2]));
+
+  const renderItem: TreeProps['renderItem'] = (node) => {
     return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
-  const handleDrag = (data) => {
+  const handleDrag: TreeProps['onDrop'] = (data) => {
     setData(data);
   };
 
