@@ -5,17 +5,23 @@
  *    -- Set the `groupBy` function to group the data
  */
 import React from 'react';
-import { Select } from 'shineout';
+import { Select, TYPE } from 'shineout';
+
+type SelectProps = TYPE.Select.Props<DataItem, string>;
+interface DataItem {
+  value: string;
+  group: string;
+}
 
 export default () => {
-  const data = [
+  const data: DataItem[] = [
     { value: 'Mars', group: '3' },
     { value: 'China', group: '2' },
     { value: 'Beijing', group: '1' },
     { value: 'Shanghai', group: '1' },
   ];
 
-  const groupBy = (d: { value: string; group: string }) => {
+  const groupBy: SelectProps['groupBy'] = (d) => {
     if (d.group === '1') return 'City';
     if (d.group === '2') return 'Country';
     return 'Other';

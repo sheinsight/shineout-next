@@ -5,7 +5,9 @@
  *    --
  */
 import React from 'react';
-import { Select } from 'shineout';
+import { Select, TYPE } from 'shineout';
+
+type SelectProps = TYPE.Select.Props<DataItem, string>;
 
 type DataItem = {
   id: string;
@@ -14,7 +16,7 @@ type DataItem = {
 };
 
 export default () => {
-  const treeData: DataItem[] = [
+  const treeData: SelectProps['treeData'] = [
     {
       id: '1',
       title: 'node 1',
@@ -38,6 +40,10 @@ export default () => {
     { id: '4', title: 'node 4' },
   ];
 
+  const prediction: SelectProps['prediction'] = (v, d) => v === d.id;
+
+  const renderItem: SelectProps['renderItem'] = (d) => d.title;
+
   return (
     <div>
       <Select
@@ -47,8 +53,8 @@ export default () => {
         keygen='id'
         format='id'
         placeholder='Select Color'
-        prediction={(v, d) => v === d.id}
-        renderItem={(d) => d.title}
+        prediction={prediction}
+        renderItem={renderItem}
       />
     </div>
   );

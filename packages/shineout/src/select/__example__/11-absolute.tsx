@@ -18,7 +18,7 @@ const styleAbsolute: React.CSSProperties = {
 export default () => {
   return (
     <div style={styleAbsolute}>
-      <Select width={120} renderItem={(d) => d} keygen data={data} placeholder='default' />
+      <Select width={120} keygen data={data} placeholder='default' />
       <Select
         style={{ marginLeft: 16 }}
         width={300}
@@ -26,7 +26,6 @@ export default () => {
         multiple
         keygen
         data={data}
-        renderItem={(d) => d}
         placeholder='Select user'
       />
     </div>

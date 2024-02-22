@@ -5,7 +5,9 @@
  *    -- Set onFilter and treeData to filter tree data
  */
 import React from 'react';
-import { Select } from 'shineout';
+import { Select, TYPE } from 'shineout';
+
+type SelectProps = TYPE.Select.Props<DataItem, string>;
 
 type DataItem = {
   id: string;
@@ -38,9 +40,13 @@ export default () => {
     { id: '4', title: 'node 4' },
   ];
 
-  const handleFilter = (text: string) => (d: DataItem) => {
+  const handleFilter: SelectProps['onFilter'] = (text) => (d) => {
     return d.title.indexOf(text) >= 0;
   };
+
+  const renderItem: SelectProps['renderItem'] = (d) => d.title;
+
+  const prediction: SelectProps['prediction'] = (v, d) => v === d.id;
 
   return (
     <div>
@@ -52,8 +58,8 @@ export default () => {
         format='id'
         onFilter={handleFilter}
         placeholder='Select Color'
-        prediction={(v, d) => v === d.id}
-        renderItem={(d) => d.title}
+        prediction={prediction}
+        renderItem={renderItem}
       />
     </div>
   );

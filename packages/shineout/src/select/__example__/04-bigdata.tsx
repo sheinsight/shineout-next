@@ -5,15 +5,25 @@
  *    -- Select has built-in virtual list to support big data rendering, this example shows 100,000 pieces of data
  */
 import React from 'react';
-import { Select } from 'shineout';
+import { Select, TYPE } from 'shineout';
 
-const data: { id: string; name: string }[] = [];
+type SelectProps = TYPE.Select.Props<DataItem, string>;
+
+interface DataItem {
+  id: string;
+  name: string;
+}
+
+const data: DataItem[] = [];
+
 for (let i = 0; i < 100000; i++) {
   data.push({
     id: `id-${i}`,
     name: `标签 ${i}`,
   });
 }
+
+const renderItem: SelectProps['renderItem'] = (d) => d.name;
 
 export default () => {
   return (
@@ -23,7 +33,7 @@ export default () => {
         data={data}
         keygen='id'
         placeholder='Select Tag'
-        renderItem={(d) => d.name}
+        renderItem={renderItem}
       />
     </div>
   );

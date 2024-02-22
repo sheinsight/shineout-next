@@ -5,12 +5,14 @@
  *    -- The unmatched value can be rendered through the `renderUnmatched` property.
  */
 import React from 'react';
-import { Select } from 'shineout';
+import { Select, TYPE } from 'shineout';
+
+type SelectProps = TYPE.Select.Props<string, string>;
 
 export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
 
-  const renderUnmatched = (v: string) => {
+  const renderUnmatched: SelectProps['renderUnmatched'] = (v) => {
     return `I am ${v} color`;
   };
 
@@ -23,7 +25,6 @@ export default () => {
         data={data}
         keygen
         placeholder='Select Color'
-        renderItem={(d) => d}
       />
     </div>
   );
