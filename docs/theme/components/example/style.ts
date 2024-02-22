@@ -88,6 +88,9 @@ export default createUseStyles(
       borderBottom: '1px solid #E8EBF0',
     },
     exampleDemo: {
+      '#examples-carousel &': {
+        overflow: 'auto'
+      },
       marginTop: 24,
       padding: 32,
       lineHeight: 'calc(1em + 8px)',

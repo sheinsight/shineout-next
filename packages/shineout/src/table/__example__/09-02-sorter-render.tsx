@@ -35,7 +35,7 @@ const columns: TableColumnItem[] = [
     defaultOrder: 'asc',
     render: (d) => `${d.firstName} ${d.lastName}`,
   },
-  { title: 'Age', render: 'age', sorter: 'age' },
+  { title: 'Age', render: 'age', sorter: 'age', align: 'right' },
   { title: 'Position', render: 'position' },
   {
     title: 'Salary($)',

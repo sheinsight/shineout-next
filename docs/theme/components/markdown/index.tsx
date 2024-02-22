@@ -10,13 +10,13 @@ import Guide from './guide';
 import Changelog from './changelog';
 
 const Markdown = (props: MarkdownProps) => {
-  const { title, describe, examples, guides, api, changelog } = props;
+  const { title, describe, examples, guides, api, changelog, header } = props;
   const classes = useStyles();
   const state = useSnapshot(store);
   return (
     <div className={classes.pages}>
       <Title title={title} describe={describe} guides={guides}></Title>
-      {state.doctab === 'examples' && <Doc examples={examples}></Doc>}
+      {state.doctab === 'examples' && <Doc examples={examples} name={header.name}></Doc>}
       {state.doctab === 'api' && <Api api={api}></Api>}
       {state.doctab === 'guide' && <Guide guides={guides}></Guide>}
       {state.doctab === 'changelog' && <Changelog changelog={changelog}></Changelog>}

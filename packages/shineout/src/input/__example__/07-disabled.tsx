@@ -8,11 +8,11 @@
 import React from 'react';
 import { Input } from 'shineout';
 
-const style: React.CSSProperties = { width: 300, marginBottom: 24 };
+const style: React.CSSProperties = { width: 300 };
 
 const App: React.FC = () => (
   <div>
-    <Input.Group disabled style={style}>
+    <Input.Group disabled style={{ ...style, marginBottom: 24 }}>
       <Input placeholder='first name' />
       -
       <Input placeholder='last name' />

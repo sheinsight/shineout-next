@@ -145,7 +145,7 @@ const useInput = (params: BaseInputProps) => {
   return {
     focused,
     disabled,
-    showClear: showClearValue,
+    showClear: !disabled && showClearValue,
     getRootProps,
     getInputProps,
     getClearProps,
