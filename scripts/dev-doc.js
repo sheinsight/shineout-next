@@ -1,31 +1,11 @@
-const fs = require('fs');
-const path = require('path');
 const chokidar = require('chokidar');
 const { compile } = require('./utils/compile');
 const { compileToken } = require('../packages/theme/scripts/token');
 const { compileFigma } = require('../packages/theme/scripts/build-token');
 const { compileRule } = require('./utils/rules');
-const { rmrf } = require('./utils/rmrf');
-// const { compileApi } = require('./utils/compile-api');
-const { compileChangelog } = require('./utils/compile-changelog');
+const { docBuild } = require('./doc-build');
 
-const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
-const hooksDir = path.join(__dirname, '../packages', 'hooks', 'src');
-const styleDir = path.join(__dirname, '../packages', 'shineout-style', 'src');
-const baseDir = path.join(__dirname, '../packages', 'base', 'src');
-const themeDir = path.join(__dirname, '../packages', 'theme', 'src');
-const chunkDir = path.join(__dirname, '../docs', 'chunk');
-
-rmrf(chunkDir);
-fs.mkdirSync(chunkDir);
-
-compileChangelog(shineoutDir);
-compileChangelog(baseDir);
-
-// compileApi(shineoutDir);
-// compileApi(baseDir);
-compile(shineoutDir);
-compile(baseDir);
+docBuild();
 
 const watchList = [shineoutDir, hooksDir, styleDir, baseDir, themeDir];
 const watcher = chokidar.watch(watchList);
