@@ -18,7 +18,7 @@ const App: React.FC = () => (
   <div>
     <Upload
       defaultValue={df}
-      action='/api/upload'
+      action='//jsonplaceholder.typicode.com/posts'
       recoverAble
       renderResult={(d) => d.name}
       onSuccess={(_res, file) => ({ name: file.name })}
@@ -32,7 +32,7 @@ const App: React.FC = () => (
       leftHandler
       style={{ marginTop: 24 }}
       defaultValue={df}
-      action='/api/upload'
+      action='//jsonplaceholder.typicode.com/posts'
       renderResult={(d) => d.data}
       onSuccess={(_res, file, data) => ({ data, name: file.name })}
       recoverAble

@@ -15,7 +15,7 @@ const request: UploadProps['request'] = (options) => {
   const { file, onLoad, onError, onProgress } = options;
 
   const xhr = new XMLHttpRequest();
-  xhr.open('post', '/api/upload');
+  xhr.open('post', '//jsonplaceholder.typicode.com/posts');
 
   // @ts-ignore
   const zip = new JSZip();

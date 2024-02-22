@@ -10,7 +10,7 @@ import { AddIcon } from './static/icon';
 
 const App: React.FC = () => (
   <Upload.Image
-    action='/api/upload'
+    action='//jsonplaceholder.typicode.com/posts'
     accept='image/*'
     name='file'
     leftHandler
