@@ -5,7 +5,7 @@ export interface TabData {
   id: string | number;
   tab: React.ReactNode;
   disabled?: boolean;
-
+  color?: string;
   jssStyle: {
     tabs: () => TabsClasses;
     button: () => ButtonClasses;

@@ -4,5 +4,6 @@ export type BaseImageGroupProps = Omit<UnStyledImageGroupProps, 'jssStyle'>;
 
 /**
  * @title Image.Group
+ * @sort 2
  */
 export type ImageGroupProps = BaseImageGroupProps;

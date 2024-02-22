@@ -7,6 +7,7 @@ export type BaseRadioGroupProps<DataItem, Value> = Omit<
 
 /**
  * @title Radio.Group
+ * @sort 2
  */
 export type RadioGroupProps<DataItem, Value> = GetWithFieldProps<
   BaseRadioGroupProps<DataItem, Value>,

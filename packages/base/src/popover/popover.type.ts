@@ -143,7 +143,7 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    * @cn MouseEnterDelay 内点击元素后取消弹出
    * @default false
    */
-  clickToCancelDelay?: number;
+  clickToCancelDelay?: boolean;
   /**
    * @en Scroll to dismiss, return el to order scroller
    * @cn 滚动来关闭气泡框，如果需要指定滚动元素，则通过函数返回

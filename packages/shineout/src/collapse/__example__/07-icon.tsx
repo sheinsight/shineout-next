@@ -15,22 +15,30 @@ export default () => {
   const regions: RegionType[] = ['header', 'icon', 'disabled'];
   const [position, setPosition] = React.useState('left');
   const [region, setRegion] = React.useState<RegionType>('header');
+
+  const rowStyle = { display: 'flex', marginBottom: 16, alignItems: 'center' };
+
   return (
     <div>
-      <Radio.Group
-        keygen
-        data={iconPosition}
-        value={position}
-        onChange={(d) => setPosition(d)}
-        style={{ marginBottom: 24 }}
-      />
-      <Radio.Group
-        keygen
-        data={regions}
-        value={region}
-        onChange={(d) => setRegion(d)}
-        style={{ marginBottom: 24 }}
-      />
+      <div style={rowStyle}>
+        <div style={{ width: 80 }}>Icon:</div>
+        <Radio.Group
+          keygen
+          data={iconPosition}
+          value={position}
+          onChange={(d) => setPosition(d)}
+        />
+      </div>
+      <div style={rowStyle}>
+        <div style={{ width: 80 }}>Hotspot:</div>
+        <Radio.Group
+          keygen
+          data={regions}
+          value={region}
+          onChange={(d) => setRegion(d)}
+        />
+      </div>
+      
       <Collapse
         style={{ maxWidth: 1180 }}
         triggerRegion={region}
