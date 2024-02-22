@@ -5,7 +5,7 @@ import { JssStyleType } from './cascader.type';
 export interface FilterNodeProps<DataItem, Value extends KeygenResult[]> {
   jssStyle?: JssStyleType;
   data: DataItem[];
-  datum: DatumType<DataItem, KeygenResult>['datum'];
+  datum: DatumType<DataItem>['datum'];
   shouldFinal: boolean;
   renderItem: (data: DataItem, active?: boolean, id?: Value[0] | undefined) => React.ReactNode;
   setInputText: (text: string) => void;

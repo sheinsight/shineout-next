@@ -5,9 +5,16 @@
  *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes.
  */
 
-import { Tree } from 'shineout';
+import { Tree, TYPE } from 'shineout';
+type TreeProps = TYPE.Tree.Props<DataItem, string[]>;
+
+interface DataItem {
+  id: string;
+  children?: DataItem[];
+}
+
 export default () => {
-  const data = [
+  const data: DataItem[] = [
     {
       id: '0',
       children: [
@@ -31,7 +38,7 @@ export default () => {
     },
   ];
 
-  const renderItem = (node: any) => {
+  const renderItem: TreeProps['renderItem'] = (node) => {
     return `node ${node.id}`;
   };
 

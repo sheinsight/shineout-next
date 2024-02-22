@@ -29,4 +29,6 @@ export * as Rule from './rule/interface';
 export * as Card from './card/interface';
 export * as CardGroup from './card-group/interface';
 export * as Select from './select/interface';
+export * as Cascader from './cascader/interface';
 export * as TreeSelect from './tree-select/interface';
+export * as Tree from './tree/interface';

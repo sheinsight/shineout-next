@@ -27,9 +27,9 @@ export const createNestedArray = (numbers: number[]) => {
   return result;
 };
 
-export const getIds = (array: [], res = []) => {
+export const getIds = (array: any, res: any = []) => {
   if (array && array.length > 0) {
-    array.forEach((item) => {
+    array.forEach((item: any) => {
       res.push(item.id);
       if (item.children && item.children.length > 0) {
         getIds(item.children, res);

@@ -14,14 +14,22 @@ export type JsstyleType = {
   checkbox: () => CheckboxClasses;
 };
 
-export type DatumType<DataItem, Value extends KeygenResult> = ReturnType<
-  typeof useTree<DataItem, Value>
->;
+export type DatumType<DataItem> = ReturnType<typeof useTree<DataItem>>;
 
-export interface TreeProps<DataItem, Value extends KeygenResult>
-  extends BaseTreeProps<DataItem>,
+export interface TreeProps<DataItem, Value extends any[]>
+  extends Omit<BaseTreeProps<DataItem>, 'isControlled'>,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: JsstyleType;
+  /**
+   * @en The default selected keys of the tree
+   * @cn 默认选中的 key （非受控）
+   */
+  defaultValues?: Value;
+  /**
+   * @en The keys of selected
+   * @cn 选中的 key （受控）
+   */
+  value?: Value;
   /**
    * @en Whether show line
    * @cn 是否显示连接线
@@ -100,7 +108,7 @@ export interface TreeProps<DataItem, Value extends KeygenResult>
    * @en Change event
    * @cn 设置 onChange 属性时，显示 选择框。参数为当前选中值，和 mode 属性相关
    */
-  onChange?: (value: KeygenResult[]) => void;
+  onChange?: (value: Value) => void;
   /**
    * @en Dom style when drop images
    * @cn 拖拽图片的原生 style 样式
@@ -138,7 +146,7 @@ export interface TreeProps<DataItem, Value extends KeygenResult>
    * @en Ref
    * @cn ref
    */
-  onRef?: (datum: DatumType<DataItem, Value>['datum']) => void;
+  onRef?: (datum: DatumType<DataItem>['datum']) => void;
   /**
    * @en Click event
    * @cn 节点点击事件

@@ -6,10 +6,16 @@
  */
 
 import { useState } from 'react';
-import { Tree } from 'shineout';
+import { Tree, TYPE } from 'shineout';
+type TreeProps = TYPE.Tree.Props<DataItem, string[]>;
+
+interface DataItem {
+  id: string;
+  children?: DataItem[];
+}
 
 export default () => {
-  const data = [
+  const data: DataItem[] = [
     {
       id: '0',
       children: [
@@ -41,17 +47,17 @@ export default () => {
     },
   ];
 
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState<TreeProps['value']>([]);
 
-  const renderItem = (node: any) => {
+  const renderItem: TreeProps['renderItem'] = (node) => {
     return <span style={{ display: 'inline-block' }}>{`node ${node.id}`}</span>;
   };
 
-  const isDisabled = (node: any) => {
+  const isDisabled: TreeProps['disabled'] = (node) => {
     return node.id === '0-0';
   };
 
-  const handleChange = (keys: any) => {
+  const handleChange: TreeProps['onChange'] = (keys) => {
     setValue(keys);
   };
 

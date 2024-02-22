@@ -5,7 +5,9 @@
  *    -- The unmatched value can be rendered through the `renderUnmatched` property.
  */
 import React from 'react';
-import { Cascader } from 'shineout';
+import { Cascader, TYPE } from 'shineout';
+
+type CascaderProps = TYPE.Cascader.Props<DataItem, string[]>;
 
 interface DataItem {
   value: string;
@@ -42,9 +44,12 @@ const data: DataItem[] = [
 ];
 
 export default () => {
-  const renderUnmatched = (text: string) => {
+  const renderUnmatched: CascaderProps['renderUnmatched'] = (text) => {
     return `Unmatched: ${text}`;
   };
+
+  const renderItem: CascaderProps['renderItem'] = (n) => `${n.value}`;
+
   return (
     <div>
       <Cascader
@@ -55,7 +60,7 @@ export default () => {
         data={data}
         renderUnmatched={renderUnmatched}
         keygen='value'
-        renderItem={(n) => `${n?.value}`}
+        renderItem={renderItem}
       />
     </div>
   );

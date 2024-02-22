@@ -33,7 +33,7 @@ function SelectComponent<DataItem, Value>(props: SelectProps<DataItem, Value>) {
 function Select<DataItem, Value>(props: SelectPropsA<DataItem, Value>): JSX.Element;
 function Select<DataItem, Value>(props: SelectPropsB<DataItem, Value>): JSX.Element;
 function Select<DataItem, Value>(props: SelectProps<DataItem, Value>) {
-  return useFieldCommon(props, SelectComponent<DataItem, Value>);
+  return useFieldCommon(props, SelectComponent<DataItem, Value>, 'array');
 }
 
 export default Select;

@@ -1,9 +1,8 @@
-import { KeygenResult } from '@sheinx/hooks';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 
 import { TreeProps as UnStyledTreeProps } from '@sheinx/base';
 
-export type BaseTreeProps<DataItem, Value extends KeygenResult> = Omit<
+export type BaseTreeProps<DataItem, Value extends any[]> = Omit<
   UnStyledTreeProps<DataItem, Value>,
   'jssStyle'
 >;
@@ -11,7 +10,7 @@ export type BaseTreeProps<DataItem, Value extends KeygenResult> = Omit<
 /**
  * @title Tree
  */
-export type TreeProps<DataItem, Value extends KeygenResult> = GetWithFieldProps<
+export type TreeProps<DataItem, Value extends any[]> = GetWithFieldProps<
   BaseTreeProps<DataItem, Value>,
   BaseTreeProps<DataItem, Value>['value']
 >;
