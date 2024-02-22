@@ -7,9 +7,10 @@
 import React from 'react';
 import { Message, Upload } from 'shineout';
 
+
 const App: React.FC = () => (
   <Upload.Image
-    action='/api/upload'
+    action='//jsonplaceholder.typicode.com/posts'
     accept='image/*'
     name='file'
     leftHandler

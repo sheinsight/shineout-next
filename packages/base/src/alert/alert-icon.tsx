@@ -13,9 +13,9 @@ const icons = {
   info: Icons.PcInfoCircleFill,
   success: Icons.PcCheckCircleFill,
   warning: Icons.PcWarningCircleFill,
-  danger: Icons.PcCloseCircleFill,
+  danger: Icons.PcWarningCircleFill,
   confirmwarning: Icons.PcWarningCircleFill,
-  error: Icons.PcCloseCircleFill,
+  error: Icons.PcWarningCircleFill,
   confirm: Icons.PcHelpCircleFill,
 };
 

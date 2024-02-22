@@ -10,7 +10,7 @@ import { Upload } from 'shineout';
 const App: React.FC = () => (
   <Upload.Button
     type={'primary'}
-    action='/api/upload'
+    action='//jsonplaceholder.typicode.com/posts'
     name='file'
     onSuccess={(_res, file) => file.name}
     loading='正在上传...'

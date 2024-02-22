@@ -10,7 +10,7 @@ import { AddIcon, ImageIcon } from './static/icon';
 
 const DraggerImage: React.FC = () => (
   <Upload.Image
-    action='/api/upload'
+    action='//jsonplaceholder.typicode.com/posts'
     multiple
     name='file'
     onSuccess={(_res, _file, data) => data}
@@ -28,7 +28,7 @@ const DraggerImage: React.FC = () => (
 
 const DraggerFile: React.FC = () => (
   <Upload
-    action='/api/upload'
+    action='//jsonplaceholder.typicode.com/posts'
     multiple
     name='file'
     onSuccess={(_res, file) => file.name}

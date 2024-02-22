@@ -16,19 +16,19 @@ export interface SwitchTokens {
   switchFontColor: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-2
    * @description xxx内边距（水平方向）
    */
   switchPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-2
    * @description xxx内边距（垂直方向）
    */
   switchPaddingY: string;
   /**
    * @type {string}
-   * @token Size-8
+   * @token Size-9
    * @description xxx圆形字号
    */
   switchCircleSize: string;
@@ -46,7 +46,7 @@ export interface SwitchTokens {
   switchCircleShadow: string;
   /**
    * @type {string}
-   * @token Size-20
+   * @token Size-21
    * @description xxx宽度
    */
   switchWidth: string;
@@ -94,25 +94,25 @@ export interface SwitchTokens {
   switchLargeFontSize: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-2
    * @description xxx大尺寸内边距（水平方向）
    */
   switchLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-2
    * @description xxx大尺寸内边距（垂直方向）
    */
   switchLargePaddingY: string;
   /**
    * @type {string}
-   * @token Size-10
+   * @token Size-12
    * @description xxx大尺寸圆形字号
    */
   switchLargeCircleSize: string;
   /**
    * @type {string}
-   * @token Size-26
+   * @token Size-27
    * @description xxx大尺寸宽度
    */
   switchLargeWidth: string;

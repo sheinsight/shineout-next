@@ -5,6 +5,7 @@ import { setConfig } from 'shineout';
 const app = document.getElementById('app');
 setConfig({
   popupContainer: () => document.getElementById('doc'),
+  locale: 'en-US',
 });
 
 if (app) {

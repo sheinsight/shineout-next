@@ -100,18 +100,6 @@ const App: React.FC = () => {
         style={{ width: 256, border: '1px solid #e8ebf0' }}
         renderItem={renderItem}
       />
-      <Menu
-        keygen='id'
-        frontCaret
-        frontCaretType='hollow'
-        caretColor='green'
-        data={data}
-        inlineIndent={24}
-        active={checkActive}
-        onClick={handleClick}
-        style={{ width: 256, border: '1px solid #e8ebf0' }}
-        renderItem={renderItem}
-      />
     </div>
   );
 };

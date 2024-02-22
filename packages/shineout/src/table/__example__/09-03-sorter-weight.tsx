@@ -86,6 +86,7 @@ const columns: TableColumnItem[] = [
       rule: 'age',
       weight: 2,
     },
+    align: 'right',
     defaultOrder: 'asc',
   },
   { title: 'Position', render: 'position' },

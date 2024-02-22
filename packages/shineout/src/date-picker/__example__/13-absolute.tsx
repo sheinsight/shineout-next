@@ -8,7 +8,7 @@ import React from 'react';
 import { DatePicker } from 'shineout';
 
 const Now = Date.now();
-// todo formatResult
+
 const App: React.FC = () => (
   <div
     style={{

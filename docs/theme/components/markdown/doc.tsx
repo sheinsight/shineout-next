@@ -10,6 +10,7 @@ import useStyles from '../style';
 
 interface DocProps {
   examples: ExampleType[];
+  name: string;
 }
 
 const Doc = (props: DocProps) => {
@@ -46,7 +47,7 @@ const Doc = (props: DocProps) => {
 
   return (
     <div className={classes.doc} id='doc'>
-      <div className='examples'>
+      <div className='examples' id={`examples-${props.name.toLocaleLowerCase()}`}>
         {examples.map((example, index) => {
           return (
             <Example

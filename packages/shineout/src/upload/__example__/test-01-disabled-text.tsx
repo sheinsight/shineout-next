@@ -12,7 +12,7 @@ import { UploadIcon } from './static/icon';
 const App: React.FC = () => {
   return (
     <Upload
-      action='/api/upload'
+      action='//jsonplaceholder.typicode.com/posts'
       defaultValue={['1.png']}
       accept='image/*'
       htmlName='file'

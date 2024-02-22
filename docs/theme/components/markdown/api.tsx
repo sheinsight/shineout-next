@@ -2,6 +2,7 @@ import { MarkdownProps } from 'docs/types';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import useStyles from '../style';
+import Anchor from 'docs/theme/layout/desktop/anchor';
 
 const SingleAPi = (props: MarkdownProps['api'][0]) => {
   const { title, properties, cn, en, subTitle, isDetail } = props;
@@ -63,11 +64,17 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
 
 const Api = (props: { api: MarkdownProps['api'] }) => {
   const api = props.api || [];
+  const titles = api.map((item) => item.title);
   return (
-    <div style={{ padding: 24 }}>
-      {api.map((item, index) => {
-        return <SingleAPi key={index} {...item}></SingleAPi>;
-      })}
+    <div style={{ padding: 24, display: 'flex' }}>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        {api.map((item, index) => {
+          return <SingleAPi key={index} {...item}></SingleAPi>;
+        })}
+      </div>
+      <div className='anchor' style={{ width: 192 }}>
+        <Anchor anchorName='api' data={titles}></Anchor>
+      </div>
     </div>
   );
 };

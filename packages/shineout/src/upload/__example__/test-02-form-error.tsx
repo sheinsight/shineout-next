@@ -17,7 +17,7 @@ const App: React.FC = () => {
       }}
     >
       <Upload
-        action='/api/upload/404'
+        action='//jsonplaceholder.typicode.com/posts/404'
         defaultValue={['1.png']}
         showUploadList={true}
         accept='image/*'

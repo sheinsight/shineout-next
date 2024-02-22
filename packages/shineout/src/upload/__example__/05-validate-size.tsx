@@ -11,7 +11,7 @@ import { UploadIcon } from './static/icon';
 const App: React.FC = () => (
   <div>
     <Upload
-      action='/api/upload'
+      action='//jsonplaceholder.typicode.com/posts'
       accept='image/*'
       multiple
       name='file'

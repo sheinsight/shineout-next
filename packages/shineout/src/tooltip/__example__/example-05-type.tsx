@@ -10,32 +10,32 @@ import { Tooltip, Button } from 'shineout';
 const App: React.FC = () => (
   <div style={{ display: 'flex' }}>
     <Tooltip tip='This is tooltip content'>
-      <Button style={{ marginRight: 16 }} type='secondary'>
+      <Button style={{ marginRight: 24 }} type='secondary'>
         default
       </Button>
     </Tooltip>
     <Tooltip tip='This is tooltip content' type='light'>
-      <Button style={{ marginRight: 16 }} type='default' mode='outline'>
+      <Button style={{ marginRight: 24 }} type='default' mode='outline'>
         light
       </Button>
     </Tooltip>
     <Tooltip tip='This is tooltip content' type='primary'>
-      <Button style={{ marginRight: 16 }} type='primary'>
+      <Button style={{ marginRight: 24 }} type='primary'>
         primary
       </Button>
     </Tooltip>
     <Tooltip tip='This is tooltip content' type='success'>
-      <Button style={{ marginRight: 16 }} type='success'>
+      <Button style={{ marginRight: 24 }} type='success'>
         success
       </Button>
     </Tooltip>
     <Tooltip tip='This is tooltip content' type='warning'>
-      <Button style={{ marginRight: 16 }} type='warning'>
+      <Button style={{ marginRight: 24 }} type='warning'>
         warning
       </Button>
     </Tooltip>
     <Tooltip tip='This is tooltip content' type='danger'>
-      <Button style={{ marginRight: 16 }} type='danger'>
+      <Button style={{ marginRight: 24 }} type='danger'>
         danger
       </Button>
     </Tooltip>

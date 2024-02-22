@@ -17,7 +17,7 @@ const df = [
 const App: React.FC = () => {
   return (
     <Upload.Image
-      action='/api/upload'
+      action='//jsonplaceholder.typicode.com/posts'
       leftHandler
       accept='image/*'
       defaultValue={df}

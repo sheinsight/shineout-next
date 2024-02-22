@@ -14,7 +14,7 @@ const App: React.FC = () => {
 
   return (
     <Upload
-      action='/api/upload'
+      action='//jsonplaceholder.typicode.com/posts'
       accept='image/*'
       value={value}
       htmlName='file'

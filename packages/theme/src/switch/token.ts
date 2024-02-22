@@ -19,9 +19,9 @@ const switchTokenValue = {};
 
 const switchTokenExtraValue = {
   font: { size: '14/regular', color: 'Neutral-text-1' },
-  padding: { x: 'Padding-4', y: 'Padding-4' },
-  circle: { size: 'Size-8', fill: 'Neutral-text-1', shadow: 'Shadow-3' },
-  width: 'Size-20',
+  padding: { x: 'Padding-2', y: 'Padding-2' },
+  circle: { size: 'Size-9', fill: 'Neutral-text-1', shadow: 'Shadow-3' },
+  width: 'Size-21',
   text: {
     padding: { x: 'Padding-4' },
   },
@@ -33,9 +33,9 @@ const switchTokenExtraValue = {
   },
   large: {
     font: { size: 'regular/16' },
-    padding: { x: 'Padding-4', y: 'Padding-4' },
-    circle: { size: 'Size-10' },
-    width: 'Size-26',
+    padding: { x: 'Padding-2', y: 'Padding-2' },
+    circle: { size: 'Size-12' },
+    width: 'Size-27',
   },
   background: { color: 'Neutral-fill-4' },
   disabled: {

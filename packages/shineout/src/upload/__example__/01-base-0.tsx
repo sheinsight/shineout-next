@@ -9,12 +9,13 @@ import React from 'react';
 import { Button, Upload } from 'shineout';
 import { UploadIcon } from './static/icon';
 
+
 const App: React.FC = () => {
   const [value, setValue] = React.useState<string[]>([]);
 
   return (
     <Upload
-      action='/api/upload'
+      action='//jsonplaceholder.typicode.com/posts'
       accept='image/*'
       value={value}
       htmlName='file'

@@ -47,5 +47,6 @@ export { default as Upload } from './upload';
 export { default as Collapse } from './collapse';
 export { setConfig, config, setLocale } from '@sheinx/base';
 export * from './deprecated';
+export * as utls from './utils';
 
 export * as TYPE from './type';

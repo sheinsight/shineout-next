@@ -93,7 +93,7 @@ const useTime = (props: UseTimeProps) => {
         const date = getTargetDate(mode, index);
         let str = index < 10 ? `0${index}` : `${index}`;
         if (mode === 'h' && str === '00') str = '12';
-        if (mode === 'ampm') str = index === 0 ? 'am' : 'pm';
+        if (mode === 'ampm') str = index === 0 ? 'AM' : 'PM';
         return {
           str,
           date,
