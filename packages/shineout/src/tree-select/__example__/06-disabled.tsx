@@ -7,7 +7,13 @@
 import React from 'react';
 import { TreeSelect } from 'shineout';
 
-const data = [
+interface DataItem {
+  id: string;
+  title: string;
+  children?: DataItem[];
+}
+
+const data: DataItem[] = [
   {
     id: '1',
     title: '1',

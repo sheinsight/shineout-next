@@ -8,10 +8,18 @@
  *    -- The default value of the `childrenKey` property is 'children'
  *    -- In single selection `mode`, TreeSelect follows the mode attribute rules, see the mode attribute description for details
  */
-import React, { useState, useRef } from 'react';
-import { TreeSelect } from 'shineout';
+import React, { useState } from 'react';
+import { TreeSelect, TYPE } from 'shineout';
 
-const data = [
+interface DataItem {
+  id: string;
+  title: string;
+  children?: DataItem[];
+}
+
+type TreeSelectProps = TYPE.TreeSelect.Props<DataItem, string[]>;
+
+const data: DataItem[] = [
   {
     id: '1',
     title: '1',
@@ -39,9 +47,9 @@ const data = [
 ];
 
 export default () => {
-  const [value, setValue] = useState([]);
-  const ref = useRef();
-  const handleChange = (v: any) => {
+  const [value, setValue] = useState<TreeSelectProps['value']>([]);
+
+  const handleChange: TreeSelectProps['onChange'] = (v) => {
     setValue(v);
   };
 
@@ -55,7 +63,6 @@ export default () => {
         keygen='id'
         renderItem={(node) => `node ${node.title}`}
         data={data}
-        getComponentRef={ref}
         placeholder='Please select content'
       ></TreeSelect>
     </div>

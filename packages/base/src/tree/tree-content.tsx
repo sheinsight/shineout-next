@@ -1,15 +1,13 @@
 import classNames from 'classnames';
-import { util, KeygenResult } from '@sheinx/hooks';
-import { TreeClasses } from './tree.type';
+import { util } from '@sheinx/hooks';
+import { TreeClasses } from '@sheinx/shineout-style';
 import { TreeContextProps } from './tree-content.type';
 import Checkbox from './tree-checkbox';
 import { useTreeContext } from './tree-context';
 import Icons from '../icons';
 import Spin from '../spin';
 
-const NodeContent = <DataItem, Value extends KeygenResult>(
-  props: TreeContextProps<DataItem, Value>,
-) => {
+const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
   const {
     jssStyle,
     id,

@@ -20,9 +20,9 @@ import Result from '../select/result';
 import Icons from '../icons';
 import Tree from '../tree';
 
-const TreeSelect = <DataItem, Value extends KeygenResult>(
-  props: TreeSelectProps<DataItem, Value>,
-) => {
+export type TreeSelectValueType = KeygenResult | KeygenResult[]
+
+const TreeSelect = <DataItem, Value extends TreeSelectValueType>(props: TreeSelectProps<DataItem, Value>) => {
   const {
     jssStyle,
     className,
@@ -73,6 +73,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     onFilter: onFilterProp,
     onChangeAddition,
     onEnterExpand,
+    onExpand,
   } = props;
   const styles = jssStyle?.select?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = {
@@ -181,7 +182,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     id?: KeygenResult,
   ) => {
     return typeof renderItemProp === 'function'
-      ? renderItemProp(data, expanded, active, id)
+      ? renderItemProp(data, expanded!, active!, id!)
       : (data[renderItemProp] as React.ReactNode);
   };
 
@@ -243,9 +244,8 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     if (open) closePop();
   };
 
-  const handleExpand = () => {
-    // console.log(exp);
-    // onExpanded(exp);
+  const handleExpand = (expands: KeygenResult[]) => {
+    onExpand?.(expands);
   };
 
   const renderClearable = () => {
@@ -279,16 +279,25 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     );
   };
 
-  const getDataByValues = (values?: Value | Value[]): ResultItem<DataItem>[] => {
+  const getDataByValues = (values?: Value): (DataItem | UnMatchedData)[] => {
     if (!datum.current || !values) return [];
-    return datum.current.getDataByValues(values as Value[]);
+    return datum.current.getDataByValues(values);
+  };
+
+  const getDataByValuesRef = (values: Value) => {
+    type Result = Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
+    if (util.isArray(values)) {
+      return values.map((id) => datum.current?.getDataById(id)) as Result;
+    }
+
+    return datum.current?.getDataById(values) as Result;
   };
 
   const getValue = () => {
     if (!datum.current) return;
     const nextValue = datum.current.getValue();
     if (multiple) return nextValue;
-    return (nextValue.length ? nextValue[0] : '') as Value;
+    return nextValue.length ? nextValue[0] : '';
   };
 
   const getContentClass = (data: DataItem) => {
@@ -314,7 +323,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     return '';
   };
 
-  const checkUnMatched = (item: any) => {
+  const checkUnMatched = (item: unknown) => {
     return util.isUnMatchedData(item);
   };
 
@@ -332,16 +341,16 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     onTiledFilter?.(trim ? text.trim() : text);
   };
 
-  const handleChange = (item: DataItem | UnMatchedData, id: Value) => {
+  const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
     if (!datum.current) return;
     if (disabled === true || datum.current?.isDisabled(id)) return;
-    const currentData = getDataByValues(id) as DataItem;
+    const currentData = datum.current.getDataById(id);
     if (!multiple) {
       datum.current.setValue([]);
       datum.current.set(datum.current.getKey(item), 1);
     }
 
-    const nextValue = getValue()!;
+    const nextValue = getValue() as Value;
 
     if (onChange) {
       onChange(nextValue, currentData, id ? (datum.current.getPath(id) || {}).path : undefined);
@@ -356,7 +365,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
     }
   };
 
-  const handleTreeChange = (item: DataItem | UnMatchedData, id: Value) => {
+  const handleTreeChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
     handleChange(item, id);
     if (!multiple) closePop();
   };
@@ -366,14 +375,14 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
 
     const dataKey = util.isUnMatchedData(item)
       ? item.value
-      : datum.current.getKey(item, key as Value, index);
+      : datum.current.getKey(item, key, index);
 
     const isDisabled = datum.current.isDisabled(dataKey);
 
     if (isDisabled) return;
 
     datum.current.set(dataKey, 0);
-    handleChange(item, datum.current.getKey(item, key as Value, index));
+    handleChange(item, datum.current.getKey(item, key, index));
   };
 
   // innerTitle 模式
@@ -387,7 +396,7 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
   const renderResult = () => {
     const result = (
       <div className={classNames(styles?.result)}>
-        <Result<DataItem, Value>
+        <Result
           trim={trim}
           jssStyle={jssStyle}
           size={size}
@@ -459,6 +468,8 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
       treeProps.expanded = expanded;
     }
 
+    const nextValue = util.isArray(valueProp) ? valueProp : [valueProp];
+
     return (
       <div className={classNames(styles.tree)} style={{ maxHeight: height }}>
         <Tree
@@ -471,9 +482,9 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
           data={tiledData}
           keygen={keygen}
           unmatch={unmatch}
-          value={valueProp}
+          value={nextValue}
           loader={loader}
-          expanded={'expanded' in props ? expanded : undefined}
+          expanded={'expanded' in props || expanded?.length ? expanded : undefined}
           expandIcons={tiledExpandIcons}
           disabled={disabled}
           parentClickExpand={parentClickExpand}
@@ -487,10 +498,12 @@ const TreeSelect = <DataItem, Value extends KeygenResult>(
   };
 
   useEffect(() => {
-    if (util.isFunc(getComponentRef) && datum.current) {
-      getComponentRef({ getDataByValues: datum.current.getDataByValues });
-    } else if (getComponentRef && datum.current) {
-      getComponentRef.current = { getDataByValues: datum.current?.getDataByValues };
+    if (getComponentRef && datum.current) {
+      if (util.isFunc(getComponentRef)) {
+        getComponentRef({ getDataByValues: getDataByValuesRef });
+      } else {
+        getComponentRef.current = { getDataByValues: getDataByValuesRef };
+      }
     }
   }, []);
 

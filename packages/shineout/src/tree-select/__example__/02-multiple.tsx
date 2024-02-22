@@ -6,9 +6,17 @@
  *    -- Set `multiple` to true, you can select multiple nodes.
  */
 import React, { useState } from 'react';
-import { TreeSelect } from 'shineout';
+import { TreeSelect, TYPE } from 'shineout';
 
-const data = [
+interface DataItem {
+  id: string;
+  title: string;
+  children?: DataItem[];
+}
+
+type TreeSelectProps = TYPE.TreeSelect.Props<DataItem, string[]>;
+
+const data: DataItem[] = [
   {
     id: '1',
     title: '1',
@@ -36,9 +44,9 @@ const data = [
 ];
 
 export default () => {
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState<TreeSelectProps['value']>([]);
 
-  const handleChange = (v: any) => {
+  const handleChange: TreeSelectProps['onChange'] = (v) => {
     setValue(v);
   };
 

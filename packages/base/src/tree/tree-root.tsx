@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { KeygenResult } from '@sheinx/hooks';
 import { TreeRootProps } from './tree-root.type';
-import { TreeClasses } from './tree.type';
+import { TreeClasses } from '@sheinx/shineout-style';
 import TreeList from './tree-list';
 
 const Root = <DataItem, Value extends KeygenResult>(props: TreeRootProps<DataItem, Value>) => {

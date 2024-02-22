@@ -38,7 +38,7 @@ export const MODE = {
   MODE_4: 4,
 };
 
-const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<DataItem, Value>) => {
+const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<DataItem>) => {
   const {
     defaultValue,
     value = defaultValue,
@@ -65,8 +65,8 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     beforeChange: undefined,
   });
 
-  const { current: context } = useRef<TreeContext<DataItem, Value>>({
-    pathMap: new Map<Value, TreePathType<Value>>(),
+  const { current: context } = useRef<TreeContext<DataItem>>({
+    pathMap: new Map<Value, TreePathType>(),
     dataMap: new Map<KeygenResult, DataItem>(),
     valueMap: new Map<Value, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
@@ -91,13 +91,13 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return { active: isActive, expanded: !!(expandeds && expandeds.indexOf(id) >= 0) };
   };
 
-  const get = (id: Value) => {
+  const get = (id: KeygenResult) => {
     return context.valueMap.get(id);
   };
 
-  const getKey = (item: DataItem, id: KeygenResult = '', index?: number): Value => {
+  const getKey = (item: DataItem, id: KeygenResult = '', index?: number): KeygenResult => {
     if (isFunc(keygen)) {
-      return keygen(item, id as string) as Value;
+      return keygen(item, id as string);
     }
 
     if (keygen && (isString(keygen) || isNumber(keygen))) {
@@ -109,7 +109,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
   };
 
   const getValue = () => {
-    const values = [] as Value[];
+    const values = [] as KeygenResult[];
     context.valueMap.forEach((checked, id) => {
       switch (mode) {
         case MODE.MODE_0:
@@ -148,7 +148,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return values;
   };
 
-  const getPath = (id: Value) => {
+  const getPath = (id: KeygenResult) => {
     return context.pathMap.get(id);
   };
 
@@ -182,7 +182,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return getDataById(values);
   };
 
-  const setValueMap = (id: Value, checked: CheckedStatusType) => {
+  const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
   };
 
@@ -248,7 +248,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return ids;
   };
 
-  const initValue = (ids_outer?: Value[], forceCheck?: boolean) => {
+  const initValue = (ids_outer?: KeygenResult[], forceCheck?: boolean) => {
     let ids = ids_outer;
     if (!context.data || !context.value) {
       return undefined;
@@ -307,7 +307,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return checked!;
   };
 
-  const setValue = (value?: Value[]) => {
+  const setValue = (value?: KeygenResult[]) => {
     context.value = value;
     if (value && value !== context.cachedValue) {
       initValue();
@@ -315,7 +315,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     setUnmatedValue();
   };
 
-  const isDisabled = (id: Value) => {
+  const isDisabled = (id: KeygenResult) => {
     const node = context.pathMap.get(id);
     if (node) return node.isDisabled;
     return false;
@@ -349,7 +349,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     setValue(prevValue);
   };
 
-  const set = (id: Value, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
+  const set = (id: KeygenResult, checked: CheckedStatusType, direction?: 'asc' | 'desc') => {
     if (!isDisabled(id)) {
       setValueMap(id, checked);
     }
@@ -372,7 +372,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
 
     if (direction !== 'asc') {
       children.forEach((cid) => {
-        const v = set(cid, checked, 'desc');
+        const v = set(cid, checked, 'desc')!;
         childrenStack.push(v);
       });
     }

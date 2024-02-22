@@ -6,13 +6,15 @@
  *    -- Set the `onFilter` property and return the content as a function, the local data will be filtered according to the returned filter function
  */
 import React, { useState } from 'react';
-import { TreeSelect } from 'shineout';
+import { TreeSelect, TYPE } from 'shineout';
 
 interface DataItem {
   id: string;
   title: string;
   children?: DataItem[];
 }
+
+type TreeSelectProps = TYPE.TreeSelect.Props<DataItem, string>;
 
 const data: DataItem[] = [
   {
@@ -42,12 +44,11 @@ const data: DataItem[] = [
 ];
 
 export default () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<TreeSelectProps['value']>('');
 
   const handleFilter = (text: string) => (d: DataItem) => d.title.indexOf(text) > -1;
 
-  const handleChange = (v: any) => {
-    console.log(v);
+  const handleChange: TreeSelectProps['onChange'] = (v) => {
     setValue(v);
   };
 
