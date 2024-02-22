@@ -1,4 +1,5 @@
 import {
+  SelectPropsBase as UnStyledSelectPropsBase,
   SelectProps as UnStyledSelectProps,
   SelectPropsA as UnStyledSelectPropsA,
   SelectPropsB as UnStyledSelectPropsB,
@@ -35,3 +36,5 @@ export type SelectPropsB<DataItem, Value> = GetWithFieldProps<
   SelectPropsComponentB<DataItem, Value>,
   SelectPropsComponentB<DataItem, Value>['value']
 >;
+
+export type SelectPropsBase<DataItem, Value> = UnStyledSelectPropsBase<DataItem, Value>;

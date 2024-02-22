@@ -18,7 +18,6 @@ export default () => {
         placeholder='Select Color'
         data={data}
         keygen
-        renderItem={(d) => d}
       />
       <Select width={240} placeholder='Select Color' data={data} keygen renderItem={(d) => d} />
       <Select
@@ -27,7 +26,6 @@ export default () => {
         size='large'
         data={data}
         keygen
-        renderItem={(d) => d}
       />
     </div>
   );

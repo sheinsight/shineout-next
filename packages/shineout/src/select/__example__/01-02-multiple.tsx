@@ -15,10 +15,9 @@ export default () => {
         width={300}
         multiple
         onChange={(v) => console.log(v)}
-        data={primitiveData}
+        data={data}
         keygen
         placeholder='Select Color'
-        renderItem={(d) => d}
       />
     </div>
   );

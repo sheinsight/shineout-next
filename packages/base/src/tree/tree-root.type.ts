@@ -1,15 +1,15 @@
 import { JsstyleType, TreeRenderItemType } from './tree.type';
-import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
+import { BaseTreeProps, KeygenResult, UpdateFunc, ObjectKey } from '@sheinx/hooks';
 
 export interface TreeRootProps<DataItem, Value extends KeygenResult>
-  extends Omit<BaseTreeProps<DataItem, Value>, 'chilrdrenKey'> {
+  extends Omit<BaseTreeProps<DataItem>, 'chilrdrenKey'> {
   jssStyle?: JsstyleType;
   line: boolean;
   childrenClass: (data: DataItem) => string | undefined;
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
   parentClickExpand?: boolean;
   doubleClickExpand?: boolean;
-  childrenKey: keyof DataItem;
+  childrenKey: ObjectKey<DataItem>;
   renderItem: TreeRenderItemType<DataItem>;
   iconClass?: string;
   leafClass?: string;
@@ -21,9 +21,9 @@ export interface TreeRootProps<DataItem, Value extends KeygenResult>
   dragSibling?: boolean;
   dragHoverExpand?: boolean;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
-  onNodeClick: (data: DataItem, id: Value) => void;
+  onNodeClick: (data: DataItem, id: KeygenResult) => void;
   onChange?: (value: KeygenResult[]) => void;
-  onDrop?: (id: Value, targetId: Value, position: number) => void;
+  onDrop?: (id: KeygenResult, targetId: Value, position: number) => void;
   loader?: (key: KeygenResult, data: DataItem) => void;
   inlineNode?: boolean;
   highlight?: boolean;

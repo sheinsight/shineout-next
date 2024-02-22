@@ -4,5 +4,5 @@ export interface BaseTreeSelectProps<DataItem, Value> {
   defaultValue?: Value;
   control: boolean;
   beforeChange?: (value: Value) => any;
-  onChange?: (value: Value | Value[], selected?: DataItem, path?: (string | number)[]) => void;
+  onChange?: (value: Value, selected?: DataItem, path?: (string | number)[]) => void;
 }

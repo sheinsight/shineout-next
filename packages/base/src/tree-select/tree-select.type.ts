@@ -1,5 +1,5 @@
 import React from 'react';
-import { TreeClasses } from '../tree/tree.type';
+import { TreeClasses } from '@sheinx/shineout-style';
 import { KeygenResult, ObjectKey, UnMatchedData, ValueItem } from '@sheinx/hooks';
 import { SelectClasses, TreeSelectClasses, VirtualScrollClasses } from '@sheinx/shineout-style';
 import { TagClasses } from '../tag/tag.type';
@@ -18,6 +18,8 @@ export type JssStyleType = {
 
 export type TreeModeType = 0 | 1 | 2 | 3 | 4;
 
+export type TreeSelectValueType = KeygenResult | KeygenResult[];
+
 export type ResultItem<DataItem> = DataItem | UnMatchedData;
 
 export interface ComponentRef<DataItem, Value> {
@@ -25,10 +27,9 @@ export interface ComponentRef<DataItem, Value> {
    * @en Get the data corresponding to the value
    * @cn 获取 value 对应的 data
    */
-  getDataByValues: {
-    (values: Value): ResultItem<DataItem>;
-    (values: Value[]): ResultItem<DataItem>[];
-  };
+  getDataByValues: (
+    values: Value,
+  ) => Value extends any[] ? ResultItem<DataItem>[] : ResultItem<DataItem>;
 }
 
 export interface TreeSelectProps<DataItem, Value>
@@ -85,9 +86,9 @@ export interface TreeSelectProps<DataItem, Value>
    * @en Some methods of getting components Currently only support getDataByValue
    * @cn 获取组件的一些方法 目前只支持 getDataByValues
    */
-  getComponentRef?: ((ref: ComponentRef<DataItem, Value>) => void) & {
-    current?: ComponentRef<DataItem, Value>;
-  };
+  getComponentRef?:
+    | ((ref: ComponentRef<DataItem, Value>) => void)
+    | { current?: ComponentRef<DataItem, Value> };
   /**
    * @en When the onFilter is not empty, you can filter data by input. If the onFilter returns a function, use this function as a front-end filter. If return undefined, you can do your own backend filtering
    * @cn onFilter 不为空时，可以输入过滤数据。 onFilter 如果返回一个函数，使用这个函数做前端过滤。 如果不返回，可以自行做后端过滤
@@ -163,14 +164,18 @@ export interface TreeSelectProps<DataItem, Value>
    * @en value is your picker now
    * @cn 参数 为 当前选中值
    */
-  onChange?: (value: Value, selected?: DataItem, path?: (string | number)[]) => void;
+  onChange?: (
+    value: Value,
+    selected?: DataItem | UnMatchedData,
+    path?: (string | number)[],
+  ) => void;
 
   /**
    * @en onChange additional parameters (current is the data of the clicked node, data is the currently selected data, checked is whether it is selected or canceled in the multi-select state)
    * @cn onChange 额外参数 (current 为点击的节点的数据， data 为当前选中的数据， checked 为多选状态下是选中还是取消)
    */
   onChangeAddition?: (params: {
-    current?: DataItem | DataItem[];
+    current?: ResultItem<DataItem>[] | ResultItem<DataItem>;
     checked?: 0 | 1 | 2;
     data?: ResultItem<DataItem>[] | ResultItem<DataItem> | null;
   }) => void;
@@ -301,4 +306,10 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 高级筛选模式，可针对当前层级在筛选结果和原始数据间切换
    */
   onAdvancedFilter?: (text: string) => (data: DataItem) => boolean;
+
+  /**
+   * @en Expand event
+   * @cn 节点展开回调，参数为当前展开节点 key 数组
+   */
+  onExpand?: (value: KeygenResult[]) => void;
 }

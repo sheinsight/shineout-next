@@ -1,19 +1,17 @@
-import { ResultItem } from '../tree-select/tree-select.type';
+import { UnMatchedData, KeygenResult } from '@sheinx/hooks';
 
 export type CheckedStatusType = 0 | 1 | 2;
 export interface TreeContextProps<DataItem, Value> {
-  set: (id: Value, checked: CheckedStatusType) => void;
-  get: (id: Value) => CheckedStatusType | undefined;
+  set: (id: KeygenResult, checked: CheckedStatusType) => void;
+  get: (id: KeygenResult) => CheckedStatusType | undefined;
   getValue: () => Value[];
-  getKey: (item: any, id?: Value, index?: number) => Value;
-  getChecked: (id: Value) => boolean | 'indeterminate';
-  getPath: (id: Value) => any;
-  getDataByValues: {
-    (values: Value): ResultItem<DataItem>;
-    (values: Value[]): ResultItem<DataItem>[];
-  };
+  getKey: (item: any, id?: KeygenResult, index?: number) => KeygenResult;
+  getChecked: (id: KeygenResult) => boolean | 'indeterminate';
+  getPath: (id: KeygenResult) => any;
+  getDataByValues: (values: Value) => (DataItem | UnMatchedData)[];
   setValue: (value?: Value[]) => void;
-  isDisabled: (id: Value) => boolean;
+  isDisabled: (id: KeygenResult) => boolean;
+  getDataById: (id: KeygenResult) => DataItem | UnMatchedData;
 }
 
 export interface TreeProviderProps<DataItem, Value> {

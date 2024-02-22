@@ -7,7 +7,12 @@
 import React from 'react';
 import { Select } from 'shineout';
 
-const data: { id: string; name: string }[] = [];
+type DataItem = {
+  id: string;
+  name: string;
+};
+
+const data: DataItem[] = [];
 for (let i = 0; i < 15; i++) {
   data.push({
     id: `id-${i}`,
@@ -25,11 +30,9 @@ export default () => {
         width={300}
         data={data}
         onCreate
-        onChange={(v) => console.log(v)}
         height={250}
         keygen
         placeholder='Select Color'
-        renderItem={(d) => d}
       />
     </div>
   );

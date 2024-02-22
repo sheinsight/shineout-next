@@ -1,27 +1,9 @@
 import { CommonType } from '../common/type';
 import { BaseTreeProps, ObjectKey, KeygenResult, TreePathType, useTree } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
+import { TreeClasses } from '@sheinx/shineout-style';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 
-export interface TreeClasses {
-  tree: string;
-  root: string;
-  line: string;
-  noline: string;
-  content: string;
-  childnode: string;
-  checkbox: string;
-  contentWrapper: string;
-  inlineContent: string;
-  text: string;
-  list: string;
-  iconWrapper: string;
-  icon: string;
-  node: string;
-  children: string;
-  leaf: string;
-  placement: string;
-}
 export type TreeRenderItemType<DataItem> =
   | ((item: DataItem, expanded: boolean, active: boolean, id: KeygenResult) => React.ReactNode)
   | ObjectKey<DataItem>;
@@ -37,7 +19,7 @@ export type DatumType<DataItem, Value extends KeygenResult> = ReturnType<
 >;
 
 export interface TreeProps<DataItem, Value extends KeygenResult>
-  extends BaseTreeProps<DataItem, Value>,
+  extends BaseTreeProps<DataItem>,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: JsstyleType;
   /**
@@ -161,7 +143,7 @@ export interface TreeProps<DataItem, Value extends KeygenResult>
    * @en Click event
    * @cn 节点点击事件
    */
-  onClick?: (data: DataItem, id: KeygenResult, path?: TreePathType<Value>) => void;
+  onClick?: (data: DataItem, id: KeygenResult, path?: TreePathType) => void;
   /**
    * @en Drag start event
    * @cn 拖拽开始事件

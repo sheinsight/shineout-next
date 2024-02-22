@@ -1,4 +1,4 @@
-import { StructKeygenStringType, KeygenResult } from '../../common/type';
+import { StructKeygenStringType, KeygenResult, ObjectKey } from '../../common/type';
 
 export type CheckedStatusType = 0 | 1 | 2;
 
@@ -6,27 +6,27 @@ export type TreeModeType = 0 | 1 | 2 | 3 | 4;
 
 export type UpdateFunc = (name: string, active: boolean) => void;
 
-export interface TreeContext<DataItem, Value> {
-  pathMap: Map<Value, TreePathType<Value>>;
+export interface TreeContext<DataItem> {
+  pathMap: Map<KeygenResult, TreePathType>;
   dataMap: Map<KeygenResult, DataItem>;
-  valueMap: Map<Value, CheckedStatusType>;
+  valueMap: Map<KeygenResult, CheckedStatusType>;
   unmatchedValueMap: Map<any, any>;
   updateMap: Map<KeygenResult, UpdateFunc>;
   disabled: boolean | ((item: DataItem) => boolean);
-  value?: Value[];
-  cachedValue: Value[];
+  value?: KeygenResult[];
+  cachedValue: KeygenResult[];
   data?: DataItem[];
 }
 
-export interface TreePathType<Value> {
-  children: Value[];
-  path: Value[];
+export interface TreePathType {
+  children: KeygenResult[];
+  path: KeygenResult[];
   isDisabled: boolean;
   indexPath: number[];
   index: number;
 }
 
-export interface BaseTreeProps<DataItem, Value extends KeygenResult> {
+export interface BaseTreeProps<DataItem> {
   /**
    * @private 内部属性
    */
@@ -36,12 +36,12 @@ export interface BaseTreeProps<DataItem, Value extends KeygenResult> {
    * @en Selected key (controlled)
    * @cn 选中的 key （受控）
    */
-  value?: Value[];
+  value?: KeygenResult[];
   /**
    * @en Default selected key (not controlled)
    * @cn 默认选中的 key （非受控）
    */
-  defaultValue?: Value[];
+  defaultValue?: KeygenResult[];
   /**
    * @en Data, children is children, if children is null or length is 0, it is considered as a leaf node
    * @cn 数据，子节点为 children，如果 children 值为 null 或 长度为 0 时，视为叶子节点
@@ -80,7 +80,7 @@ export interface BaseTreeProps<DataItem, Value extends KeygenResult> {
    * @cn 指定子数据的属性名
    * @default 'children'
    */
-  childrenKey?: keyof DataItem & string;
+  childrenKey?: ObjectKey<DataItem>;
   /**
    * @en Mode 0: Returns only the fully selected node including the parent node. 1: Returns all selected nodes and semi-selected nodes. 2: Return only the selected child nodes. 3: If the parent node is full selected, only return the parent node. 4: What you choose is what you get
    * @cn 选中值模式，未设置值为单选 0: 只返回完全选中的节点，包含父节点 1: 返回全部选中的节点和半选中的父节点 2: 只返回选中的子节点 3: 如果父节点选中，只返回父节点 4: 所选即所得

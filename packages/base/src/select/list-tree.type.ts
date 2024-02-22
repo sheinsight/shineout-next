@@ -1,4 +1,4 @@
-import { KeygenType } from '@sheinx/hooks';
+import { KeygenType, ObjectKey } from '@sheinx/hooks';
 import { JssStyleType, SelectProps, DatumType } from './select.type';
 
 export interface ListTreeProps<DataItem, Value>
@@ -10,7 +10,7 @@ export interface ListTreeProps<DataItem, Value>
   height: number;
   data: DataItem[];
   keygen: KeygenType<DataItem>;
-  childrenKey: keyof DataItem;
+  childrenKey: ObjectKey<DataItem>;
   allowOnFilter: boolean;
   datum: DatumType<DataItem, Value>;
   closePop: () => void;

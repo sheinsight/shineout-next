@@ -5,11 +5,13 @@
  *    -- Set the `onFilter` property and return the content as a function, the local data will be filtered according to the returned filter function
  */
 import React from 'react';
-import { Select } from 'shineout';
+import { Select, TYPE } from 'shineout';
+
+type SelectProps = TYPE.Select.Props<string, string>;
 
 export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
-  const handleFilter = (v: string) => (d: string) => d.indexOf(v) >= 0;
+  const handleFilter: SelectProps['onFilter'] = (v) => (d) => d.indexOf(v) >= 0;
 
   return (
     <div>
@@ -18,7 +20,6 @@ export default () => {
         data={data}
         keygen
         placeholder='Select Color'
-        renderItem={(d) => d}
         onFilter={handleFilter}
       />
     </div>

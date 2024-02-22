@@ -12,6 +12,7 @@ import { Select } from 'shineout';
 export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   const shein = <div style={{ background: 'black', color: 'white' }}>SHEIN</div>;
+  
   return (
     <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
       <Select
@@ -20,7 +21,6 @@ export default () => {
         data={data}
         keygen
         placeholder='Select Color'
-        renderItem={(d) => d}
       />
       <Select
         footer={shein}
@@ -28,7 +28,6 @@ export default () => {
         data={data}
         keygen
         placeholder='Select Color'
-        renderItem={(d) => d}
       />
       <Select
         keygen
@@ -36,7 +35,6 @@ export default () => {
         footer={shein}
         width={300}
         data={data}
-        renderItem={(d) => d}
         placeholder='Select Color'
         renderOptionList={(s) => (
           <div>

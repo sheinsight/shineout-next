@@ -3,7 +3,7 @@ import classNames from 'classnames';
 // import { util } from '@sheinx/hooks';
 import { KeygenResult } from '@sheinx/hooks';
 import TreeNode from './tree-node';
-import { TreeClasses } from './tree.type';
+import { TreeClasses } from '@sheinx/shineout-style';
 import { TreeListProps } from './tree-list.type';
 
 const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataItem, Value>) => {
@@ -67,7 +67,7 @@ const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataIte
     const id = getKey(node, index) as Value;
     
     return (
-      <TreeNode<DataItem, Value>
+      <TreeNode
         jssStyle={jssStyle}
         id={id}
         isControlled={isControlled}

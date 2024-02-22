@@ -7,9 +7,16 @@
  *    -- Note that when formatting complex data, you need to configure the prediction auxiliary comparison function to compare complex types of data.
  */
 import React from 'react';
-import { Select } from 'shineout';
+import { Select, TYPE } from 'shineout';
 
-const data: { id: string; name: string }[] = [];
+type SelectProps = TYPE.Select.Props<DataItem, string>;
+
+interface DataItem {
+  id: string;
+  name: string;
+}
+
+const data: DataItem[] = [];
 for (let i = 0; i < 15; i++) {
   data.push({
     id: `id-${i}`,
@@ -18,6 +25,10 @@ for (let i = 0; i < 15; i++) {
 }
 
 export default () => {
+  const prediction: SelectProps['prediction'] = (v, d) => v === d.id;
+
+  const renderItem: SelectProps['renderItem'] = (d) => d.name;
+
   return (
     <div>
       <Select
@@ -25,9 +36,9 @@ export default () => {
         data={data}
         keygen='id'
         format='id'
-        prediction={(v, d) => v === d.id}
+        prediction={prediction}
         placeholder='Select Color'
-        renderItem={(d) => d.name}
+        renderItem={renderItem}
       />
     </div>
   );

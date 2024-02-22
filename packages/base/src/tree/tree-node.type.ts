@@ -4,10 +4,10 @@ import { JsstyleType, TreeRenderItemType } from './tree.type';
 import { TreeListProps } from './tree-list.type';
 
 export interface TreeNodeProps<DataItem, Value extends KeygenResult>
-  extends Omit<BaseTreeProps<DataItem, Value>, 'data' | 'childrenKey' | 'expanded'>,
+  extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className'> {
   jssStyle?: JsstyleType;
-  id: Value;
+  id: KeygenResult;
   data: DataItem;
   index: number;
   line: boolean;
@@ -16,8 +16,8 @@ export interface TreeNodeProps<DataItem, Value extends KeygenResult>
   parentClickExpand?: boolean;
   childrenKey: keyof DataItem;
   onChange?: (value: KeygenResult[]) => void;
-  onDrop?: (id: Value, targetId: Value, position: number) => void;
-  onToggle?: (id: Value, expanded?: boolean) => void;
+  onDrop?: (id: KeygenResult, targetId: Value, position: number) => void;
+  onToggle?: (id: KeygenResult, expanded?: boolean) => void;
   iconClass?: string;
   leafClass?: string;
   nodeClass?: string | ((data: DataItem) => string);
@@ -25,7 +25,7 @@ export interface TreeNodeProps<DataItem, Value extends KeygenResult>
   expandIcons?: (React.ReactNode | ((d: DataItem) => React.ReactNode))[];
   childrenClass: (data: DataItem) => string | undefined;
   bindNode: (id: KeygenResult, update: UpdateFunc) => { expanded: boolean; active: boolean };
-  onNodeClick: (data: DataItem, id: Value) => void;
+  onNodeClick: (data: DataItem, id: KeygenResult) => void;
   renderItem: TreeRenderItemType<DataItem>;
   listComponent: (props: TreeListProps<DataItem, Value>) => JSX.Element | null;
   dragImageSelector: (data?: DataItem) => string | undefined;

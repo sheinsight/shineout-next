@@ -8,7 +8,7 @@ import { getResetMore } from './result-more';
 import More from './result-more';
 import Tag from '../tag';
 
-const { isObject, isEmpty, isNumber, getKey, isUnMatchedData, isFunc } = util;
+const { isObject, isEmpty, isNumber, getKey, isUnMatchedData, isFunc, isArray } = util;
 
 const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const {
@@ -44,7 +44,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onRemove,
   } = props;
 
-  const value = (multiple ? valueProp : [valueProp]) as Value[];
+  const value = (multiple ? valueProp : [valueProp]) as Value;
 
   const [more, setMore] = useState(-1);
 
@@ -156,9 +156,8 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const isEmptyResult = () => {
     if (!value) return true;
-    // const values = (multiple ? value : [value]) as Value[];
 
-    if (value.length <= 0) return true;
+    if (isArray(value) && value.length <= 0) return true;
     const values = getDataByValues(value);
     const hasValue =
       values.findIndex((item, index) => {
@@ -209,7 +208,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     // [TODO] separator 处理逻辑后续交给 hooks 处理，此处临时处理
     let nextValue = value;
     if (separator && util.isString(valueProp)) {
-      nextValue = valueProp.split(separator) as Value[];
+      nextValue = valueProp.split(separator) as Value;
     }
     const values = getDataByValues(nextValue);
     const result = values.map((v, i) => renderItem(v, i, values));
@@ -282,7 +281,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (!resultRef.current) return;
 
     if (more === -1) {
-      if (shouldResetMore.current && (value || []).length) {
+      if (shouldResetMore.current && isArray(value) && (value || []).length) {
         shouldResetMore.current = false;
         const newMore = getResetMore(
           showInput,

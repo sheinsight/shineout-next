@@ -44,7 +44,7 @@ export interface ResultProps<DataItem, Value>
   onResetFilter: () => void;
   // crud
   onClearCreatedData?: () => void;
-  getDataByValues: (values: Value[]) => (DataItem | UnMatchedData)[];
+  getDataByValues: (values: Value) => (DataItem | UnMatchedData)[];
   checkUnMatched: (item: DataItem | UnMatchedData) => boolean;
   onRemove?: (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => void;
 }
