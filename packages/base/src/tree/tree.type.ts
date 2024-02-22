@@ -14,14 +14,22 @@ export type JsstyleType = {
   checkbox: () => CheckboxClasses;
 };
 
-export type DatumType<DataItem, Value extends KeygenResult> = ReturnType<
-  typeof useTree<DataItem, Value>
->;
+export type DatumType<DataItem> = ReturnType<typeof useTree<DataItem>>;
 
-export interface TreeProps<DataItem, Value extends KeygenResult>
+export interface TreeProps<DataItem, Value extends any[]>
   extends BaseTreeProps<DataItem>,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: JsstyleType;
+  /**
+   * @en The default selected keys of the tree
+   * @cn 默认选中的 key （非受控）
+   */
+  defaultValues?: Value;
+  /**
+   * @en The keys of selected
+   * @cn 选中的 key （受控）
+   */
+  value?: Value;
   /**
    * @en Whether show line
    * @cn 是否显示连接线
@@ -138,7 +146,7 @@ export interface TreeProps<DataItem, Value extends KeygenResult>
    * @en Ref
    * @cn ref
    */
-  onRef?: (datum: DatumType<DataItem, Value>['datum']) => void;
+  onRef?: (datum: DatumType<DataItem>['datum']) => void;
   /**
    * @en Click event
    * @cn 节点点击事件

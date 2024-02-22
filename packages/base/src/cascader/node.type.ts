@@ -13,7 +13,7 @@ export interface CascaderNodeProps<DataItem, Value extends KeygenResult[]>
   id: KeygenResult;
   parentId: KeygenResult;
   jssStyle?: JssStyleType;
-  datum: DatumType<DataItem, KeygenResult>['datum'];
+  datum: DatumType<DataItem>['datum'];
   shouldFinal: boolean;
   path: Value;
   onPathChange: (

@@ -8,10 +8,13 @@
  */
 import React, { useState } from 'react';
 import { produce } from 'immer';
-import { Cascader } from 'shineout';
+import { Cascader, TYPE } from 'shineout';
+
+type CascaderProps = TYPE.Cascader.Props<DataItem, string[]>;
 
 interface DataItem {
-  value: string;
+  value?: string;
+  id?: string;
   children?: DataItem[];
 }
 
@@ -19,12 +22,11 @@ const initData = ['0', '1', '2', '3', '4', '5', '6', '7', '8'].map((i) => ({ id:
 const createRange = () => Array.from({ length: Math.round(Math.random() * 4) }, (_, i) => i);
 
 export default () => {
-  const [_data, setData] = useState(initData);
+  const [_data, setData] = useState<DataItem[]>(initData);
   const [value, setValue] = useState<string[]>([]);
 
-  const loader = (key: string[]) => {
+  const loader: CascaderProps['loader'] = (key) => {
     const path = key.toString().split(',');
-    console.log(23333);
     setTimeout(() => {
       const producer = produce((draft) => {
         let { data } = draft;
@@ -39,9 +41,10 @@ export default () => {
     }, 500);
   };
 
-  const handleChange = (v) => setValue(v);
-  const renderItem = (node) => `node ${node.id}`;
-  const keyGenerator = (node, parentKey) => `${String(parentKey)},${node.id}`.replace(/^,/, '');
+  const handleChange: CascaderProps['onChange'] = (v) => setValue(v);
+  const renderItem: CascaderProps['renderItem'] = (node) => `node ${node.id}`;
+  const keyGenerator: CascaderProps['keygen'] = (node, parentKey) =>
+    `${String(parentKey)},${node.id}`.replace(/^,/, '');
 
   return (
     <div>

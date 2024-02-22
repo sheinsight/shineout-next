@@ -37,4 +37,7 @@ export type SelectPropsB<DataItem, Value> = GetWithFieldProps<
   SelectPropsComponentB<DataItem, Value>['value']
 >;
 
-export type SelectPropsBase<DataItem, Value> = UnStyledSelectPropsBase<DataItem, Value>;
+export type SelectPropsBase<DataItem, Value> = GetWithFieldProps<
+  UnStyledSelectPropsBase<DataItem, Value>,
+  UnStyledSelectPropsBase<DataItem, Value>['value']
+>;

@@ -38,7 +38,7 @@ export const MODE = {
   MODE_4: 4,
 };
 
-const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<DataItem>) => {
+const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const {
     defaultValue,
     value = defaultValue,
@@ -66,9 +66,9 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
   });
 
   const { current: context } = useRef<TreeContext<DataItem>>({
-    pathMap: new Map<Value, TreePathType>(),
+    pathMap: new Map<KeygenResult, TreePathType>(),
     dataMap: new Map<KeygenResult, DataItem>(),
-    valueMap: new Map<Value, CheckedStatusType>(),
+    valueMap: new Map<KeygenResult, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
     unmatchedValueMap: new Map<any, any>(),
     disabled: false,
@@ -101,11 +101,11 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     }
 
     if (keygen && (isString(keygen) || isNumber(keygen))) {
-      return item[keygen] as Value;
+      return item[keygen] as KeygenResult;
     }
 
     // 降级处理
-    return (id + (id ? ',' : '') + index) as Value;
+    return (id + (id ? ',' : '') + index) as KeygenResult;
   };
 
   const getValue = () => {
@@ -160,7 +160,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return () => !!disabledProps;
   };
 
-  const getChecked = (id: Value) => {
+  const getChecked = (id: KeygenResult) => {
     const value = get(id);
     let checked: boolean | 'indeterminate' = value === 1;
     if (value === 2) checked = 'indeterminate';
@@ -174,7 +174,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
     return { IS_NOT_MATCHED_VALUE: true, value: id };
   };
 
-  const getDataByValues = (values: Value[] | Value) => {
+  const getDataByValues = (values: KeygenResult[] | KeygenResult) => {
     if (isArray(values)) {
       return values.map(getDataById);
     }
@@ -199,14 +199,14 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
 
   const initData = (
     data: DataItem[],
-    path: Value[],
+    path: KeygenResult[],
     disabled?: boolean,
     index: number[] = [],
-  ): Value[] | undefined => {
-    const ids: Value[] = [];
+  ): KeygenResult[] | undefined => {
+    const ids: KeygenResult[] = [];
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
-      const id = getKey(item, path[path.length - 1], i) as Value;
+      const id = getKey(item, path[path.length - 1], i) as KeygenResult;
       // 重复 id 警告
       if (context.dataMap.get(id)) {
         console.error(`There is already a key "${id}" exists. The key must be unique.`);
@@ -225,7 +225,7 @@ const useTree = <DataItem, Value extends KeygenResult>(props: BaseTreeProps<Data
 
       ids.push(id);
 
-      let children: Value[] = [];
+      let children: KeygenResult[] = [];
 
       if (Array.isArray(item[childrenKey])) {
         const _children = initData(

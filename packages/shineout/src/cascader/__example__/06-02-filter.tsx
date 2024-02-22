@@ -5,7 +5,9 @@
  *    -- After opening `wideMatch`, all possible matching items will be filtered out
  */
 import React from 'react';
-import { Cascader } from 'shineout';
+import { Cascader, TYPE } from 'shineout';
+
+type CascaderProps = TYPE.Cascader.Props<DataItem, string[]>;
 
 interface DataItem {
   value: string;
@@ -45,7 +47,10 @@ const data: DataItem[] = [
 ];
 
 export default () => {
-  const onFilter = (text: string) => (d: DataItem) => d.value.indexOf(text) >= 0;
+  const handleFilter: CascaderProps['onFilter'] = (text: string) => (d: DataItem) =>
+    d.value.indexOf(text) >= 0;
+
+  const renderItem: CascaderProps['renderItem'] = (n) => `${n.value}`;
 
   return (
     <div style={{ display: 'flex', gap: 32 }}>
@@ -55,8 +60,8 @@ export default () => {
         placeholder='Please select city'
         data={data}
         keygen='value'
-        onFilter={onFilter}
-        renderItem={(n) => `${n?.value}`}
+        onFilter={handleFilter}
+        renderItem={renderItem}
       />
     </div>
   );

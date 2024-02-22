@@ -35,6 +35,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
 export default memo(
   <DataItem, Value extends KeygenResult[]>(props: CascaderProps<DataItem, Value>) => {
-    return useFieldCommon(props, Cascader<DataItem, Value>);
+    return useFieldCommon(props, Cascader<DataItem, Value>, 'array');
   },
 ) as typeof Cascader;

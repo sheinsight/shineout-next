@@ -5,7 +5,9 @@
  *    -- Set the `disabled` property to disable the component. When `disabled` is a function, support disabling a single option
  */
 import React from 'react';
-import { Cascader } from 'shineout';
+import { Cascader, TYPE } from 'shineout';
+
+type CascaderProps = TYPE.Cascader.Props<DataItem, string[]>;
 
 interface DataItem {
   value: string;
@@ -42,9 +44,11 @@ const data: DataItem[] = [
 ];
 
 export default () => {
-  const handleDisabled = (item: DataItem) => {
+  const handleDisabled: CascaderProps['disabled'] = (item) => {
     return item.value === 'jiangsu';
   };
+
+  const renderItem: CascaderProps['renderItem'] = (n) => `${n.value}`;
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32, width: 632 }}>
@@ -54,7 +58,7 @@ export default () => {
         placeholder='Please select city'
         data={data}
         keygen='value'
-        renderItem={(n) => `${n.value}`}
+        renderItem={renderItem}
       />
       <Cascader
         width={300}
@@ -62,7 +66,7 @@ export default () => {
         placeholder='Please select city'
         data={data}
         keygen='value'
-        renderItem={(n) => `${n.value}`}
+        renderItem={renderItem}
       />
       <Cascader
         width={300}
@@ -73,7 +77,7 @@ export default () => {
         placeholder='Please select city'
         data={data}
         keygen='value'
-        renderItem={(n) => `${n.value}`}
+        renderItem={renderItem}
       />
       <Cascader
         mode={0}
@@ -83,7 +87,7 @@ export default () => {
         placeholder='Please select city'
         data={data}
         keygen='value'
-        renderItem={(n) => `${n.value}`}
+        renderItem={renderItem}
       />
     </div>
   );

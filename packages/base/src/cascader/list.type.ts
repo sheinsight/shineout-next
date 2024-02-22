@@ -11,7 +11,7 @@ export interface CascaderListProps<DataItem, Value extends KeygenResult[]>
   id: KeygenResult;
   parentId: KeygenResult;
   data: DataItem[];
-  datum: DatumType<DataItem, KeygenResult>['datum'];
+  datum: DatumType<DataItem>['datum'];
   shouldFinal: boolean;
   path: Value;
   childrenKey: ObjectKey<DataItem>;
