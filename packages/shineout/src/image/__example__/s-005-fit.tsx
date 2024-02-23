@@ -4,7 +4,7 @@
  *    -- fill 填充整个容器、center 居中、fit 原图、stretch 拉伸
  * en - Fit
  *    -- Image has four different fill modes:
- *    -- fill, center, fit, stretch.
+ *    -- fill, center, fit, stretch
  */
 
 import React from 'react';

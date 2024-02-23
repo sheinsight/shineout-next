@@ -2,7 +2,7 @@
  * cn - 禁用菜单
  *    -- 通过 disabled 属性可以禁用选项
  * en - Disabled
- *    --Disable the option by the disabled property.
+ *    --Disable the option by the disabled property
  */
 import React, { useState } from 'react';
 import { Menu, TYPE } from 'shineout';

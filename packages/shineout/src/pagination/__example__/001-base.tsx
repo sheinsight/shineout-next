@@ -2,7 +2,7 @@
  * cn - 基本用法
  *    -- 最基本的使用
  * en - Base
- *    -- The basic usage.
+ *    -- The basic usage
  */
 import { Pagination } from 'shineout';
 

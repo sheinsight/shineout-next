@@ -2,7 +2,7 @@
  * cn - 滚动加载
  *    -- 设置 scrollLoading 属性，当滚动到底部时，会自动调用该属性
  * en - scroll loading
- *    -- Set the scrollLoad property, when the scroll to the bottom, it will automatically call to change the property.
+ *    -- Set the scrollLoad property, when the scroll to the bottom, it will automatically call to change the property
  */
 import React, { useState, useEffect } from 'react';
 import { List, Button, TYPE } from 'shineout';

@@ -4,8 +4,8 @@
  *    -- 支持通过 formatResult 属性单独格式化值展示格式.
  *    -- 注: 我们使用dayjs格式化
  * en - Format
- *    -- The format attribute defines the format of the return value.
- *    -- support formatResult attribute to format the display format separately.
+ *    -- The format attribute defines the format of the return value
+ *    -- support formatResult attribute to format the display format separately
  *    -- tip: we use dayjs format
  */
 import React, { useState } from 'react';

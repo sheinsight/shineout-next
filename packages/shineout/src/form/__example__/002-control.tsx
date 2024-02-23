@@ -2,7 +2,7 @@
  * cn - 表单方法
  *    -- 可以通过 formRef 去获得表单的一些方法集, 包含校验, 清空校验, 提交等
  * en - Form Methods
- *    -- You can use formRef to get some methods of the form, including validation, clear validation, submission, etc.
+ *    -- You can use formRef to get some methods of the form, including validation, clear validation, submission, etc
  */
 import React, { useEffect, useRef, useState } from 'react';
 import { Form, Input, TYPE, Button } from 'shineout';

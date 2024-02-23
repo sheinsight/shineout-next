@@ -3,7 +3,7 @@
  *    -- 设置 mode 为 "vertical"，显示为垂直布局
  *    -- 设置 mode 为 "vertical-auto" 可以自动选择弹出方向（上下）
  * en - Vertical
- *    -- Set mode to "vertical" to display it as vertical layout.
+ *    -- Set mode to "vertical" to display it as vertical layout
  *    -- set 'vertical-auto' auto popup position
  */
 import React, { useState } from 'react';

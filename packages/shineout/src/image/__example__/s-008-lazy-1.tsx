@@ -2,7 +2,7 @@
  * cn - 懒加载
  *    -- Image 通过配置 `lazy` 属性开启懒加载模式
  * en - Lazy
- *    -- Image enables lazy loading mode by configuring the `lazy` property.
+ *    -- Image enables lazy loading mode by configuring the `lazy` property
  */
 
 import React from 'react';

@@ -2,7 +2,7 @@
  * cn - 点击加载
  *    -- 通过使用 footer 属性，可实现加载更多功能
  * en - Load more
- *    -- Through use the footer attribute, you can load more functions.
+ *    -- Through use the footer attribute, you can load more functions
  */
 import React, { useState, useEffect } from 'react';
 import { List, Button, TYPE } from 'shineout';

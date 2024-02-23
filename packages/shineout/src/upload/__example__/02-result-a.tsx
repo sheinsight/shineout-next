@@ -2,7 +2,7 @@
  * cn - 自定义结果
  *    -- 默认展示的结果和 value 里面所存储的值是一样的, 如果有需求需要, 可以用 renderResult 自行处理
  * en - Custom result
- *    -- The result of the default display is the same as the value stored in the value. If there is a need, you can use the renderResult to handle it yourself.
+ *    -- The result of the default display is the same as the value stored in the value. If there is a need, you can use the renderResult to handle it yourself
 
  */
 import React from 'react';

@@ -2,7 +2,7 @@
  * cn -
  *    -- Image 支持平铺展示一组图片
  * en -
- *    -- Image supports tiled display of a group of images.
+ *    -- Image supports tiled display of a group of images
  */
 
 import React from 'react';

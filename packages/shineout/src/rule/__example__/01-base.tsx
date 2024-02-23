@@ -2,7 +2,7 @@
  * cn - required
  *    -- 必填校验函数
  * en - required
- *    -- Basic Spin usage.
+ *    -- Basic Spin usage
  */
 import React from 'react';
 import { Form, Input, Rule } from 'shineout';

@@ -2,7 +2,7 @@
  * cn - 一组复选框
  *    -- 一组复选框可以放在 Checkbox.Group 中
  * en - Group
- *    -- A series of checkboxes group by Checkbox.Group.
+ *    -- A series of checkboxes group by Checkbox.Group
  */
 import React from 'react';
 import { Checkbox } from 'shineout';

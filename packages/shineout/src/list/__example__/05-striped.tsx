@@ -2,7 +2,7 @@
  * cn - 斑马纹
  *    -- 基础的List用法
  * en - Base
- *    -- Basic List usage.
+ *    -- Basic List usage
  */
 import React from 'react';
 import { List, TYPE } from 'shineout';

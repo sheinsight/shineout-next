@@ -6,11 +6,11 @@
  *    -- page 每页数量列表选择器文案
  *    -- jumper 跳转输入框文案，其中 {input} 占位符代表输入框
  * en - Jumper
- *    -- Show jumper by setting `jumper` value of `layout` property.
- *    -- prev Prev button text.
- *    -- next Next button text.
- *    -- page Page button text.
- *    -- jumper Jumper text, the placeholder {input} represents the input box.
+ *    -- Show jumper by setting `jumper` value of `layout` property
+ *    -- prev Prev button text
+ *    -- next Next button text
+ *    -- page Page button text
+ *    -- jumper Jumper text, the placeholder {input} represents the input box
  */
 import { Pagination } from 'shineout';
 

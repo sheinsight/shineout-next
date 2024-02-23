@@ -2,7 +2,7 @@
  * cn - 基本用法
  *    -- 基础 Spin 用法
  * en - Basic
- *    -- Basic Spin usage.
+ *    -- Basic Spin usage
  */
 import React from 'react';
 import { Spin } from 'shineout';

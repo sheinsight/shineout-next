@@ -2,7 +2,7 @@
  * cn - 自定义 Indicator
  *    -- 当 indicatorType 为函数时，可以自定义 Indicator
  * en - Custom Indicator
- *    -- Indicators can be customized when indicatorType is a function.
+ *    -- Indicators can be customized when indicatorType is a function
  */
 import React from 'react';
 import { Carousel, TYPE } from 'shineout';

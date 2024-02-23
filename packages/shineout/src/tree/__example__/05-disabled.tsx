@@ -2,7 +2,7 @@
  * cn - 禁用状态
  *    -- 基础 Tree 组件用法，当配置 `children` 字段时，允许展开和收起节点
  * en - disabled
- *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes.
+ *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes
  */
 
 import { useState } from 'react';

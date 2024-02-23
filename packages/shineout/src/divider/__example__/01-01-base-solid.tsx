@@ -2,7 +2,7 @@
  * cn - 基本用法
  *    --默认为水平分割线
  * en - Base
- *    --Divider is horizontal by default. You can add text within Divider.
+ *    --Divider is horizontal by default. You can add text within Divider
  */
 import React from 'react';
 import { Divider } from 'shineout';

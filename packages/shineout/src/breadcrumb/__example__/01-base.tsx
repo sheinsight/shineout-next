@@ -2,7 +2,7 @@
  * cn - 基本用法
  *    -- 组件调用通过 json 数据配置
  * en - Base
- *    -- The basic usage.
+ *    -- The basic usage
  */
 
 import React from 'react';

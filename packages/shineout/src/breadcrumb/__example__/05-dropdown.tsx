@@ -2,7 +2,7 @@
  * cn - 带有下拉
  *    -- dataItem 为数组时，会渲染为下拉
  * en - Dropdown
- *    -- When dataItem is an array, it will be rendered as a dropdown.
+ *    -- When dataItem is an array, it will be rendered as a dropdown
  */
 
 import React from 'react';

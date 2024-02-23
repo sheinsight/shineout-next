@@ -2,7 +2,7 @@
  * cn - 自定义文案
  *    -- 通过配置 `tip` 属性来自定义文案
  * en - Tip
- *    -- Set the `tip` property to customize the text.
+ *    -- Set the `tip` property to customize the text
  */
 import React from 'react';
 import { Spin } from 'shineout';

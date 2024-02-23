@@ -2,7 +2,7 @@
  * cn - 按钮数量
  *    -- 通过`span`属性设置按钮数量
  * en - Span
- *    -- Set the number of buttons by `span` property.
+ *    -- Set the number of buttons by `span` property
  */
 import { Pagination } from 'shineout';
 

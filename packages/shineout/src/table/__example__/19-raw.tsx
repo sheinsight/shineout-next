@@ -2,7 +2,7 @@
  * cn - 只使用样式
  *    -- 使用原生的tr, td来显示表格
  * en - Style only
- *    -- Use the native tr and td to display the table.
+ *    -- Use the native tr and td to display the table
  */
 import React from 'react';
 import { Table } from 'shineout';

@@ -2,7 +2,7 @@
  * cn - 自定义渲染
  *    -- 设置 renderItem 属性展现稍微复杂的内容
  * en - RenderItem
- *    -- Set the renderItem property to show format content.
+ *    -- Set the renderItem property to show format content
  */
 import React, { useState } from 'react';
 import { Menu, TYPE } from 'shineout';

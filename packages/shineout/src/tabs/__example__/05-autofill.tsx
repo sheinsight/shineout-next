@@ -2,7 +2,7 @@
  * cn - 自动填充
  *    -- 设置 `autoFill` 属性后，选项卡会自动填充父元素的宽度
  * en - autoFill
- *    -- Set the `autoFill` property, the tab will automatically fill the width of the parent element.
+ *    -- Set the `autoFill` property, the tab will automatically fill the width of the parent element
  */
 import { Tabs } from 'shineout';
 

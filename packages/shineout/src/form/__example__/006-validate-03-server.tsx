@@ -4,8 +4,8 @@
  *    -- 在表单值被改变后，对应后端校验数据会被清空
  *    -- 前端校验优先级大于后端校验
  * en - Back-end validation
- *    -- By setting an `error` on the Form, the back-end validation data is presented. After the form value is changed, the corresponding back-end validation data is cleared.
- *    -- front-end validation priority is greater than back-end validation.
+ *    -- By setting an `error` on the Form, the back-end validation data is presented. After the form value is changed, the corresponding back-end validation data is cleared
+ *    -- front-end validation priority is greater than back-end validation
  */
 import React, { useState } from 'react';
 import { Form, Input, Rule } from 'shineout';

@@ -2,7 +2,7 @@
  * cn - 无分割线
  *    -- 通过设置 `split` = false 属性，可以去掉卡片的分割线
  * en - No split
- *    -- Set `split` = false to remove the split line of the card.
+ *    -- Set `split` = false to remove the split line of the card
  */
 import React from 'react';
 import { Card, TYPE, Button } from 'shineout';

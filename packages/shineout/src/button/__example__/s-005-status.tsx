@@ -2,7 +2,7 @@
  * cn - 按钮状态
  *    -- 按钮状态分为危险、警告、成功三种，可以与按钮类型同时生效，优先级高于按钮类型
  * en - Button status
- *    -- Button status is divided into danger, warning, and success. It can take effect at the same time as the button type, and the priority is higher than the button type.
+ *    -- Button status is divided into danger, warning, and success. It can take effect at the same time as the button type, and the priority is higher than the button type
  */
 
 import { Button } from 'shineout';
