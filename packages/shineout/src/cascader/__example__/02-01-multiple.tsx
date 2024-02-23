@@ -52,10 +52,9 @@ export default () => {
   return (
     <div>
       <Cascader
+        clearable
         multiple
         mode={0}
-        compressed
-        compressedBound={2}
         width={300}
         onChange={(d) => console.log(d)}
         placeholder='Please select city'

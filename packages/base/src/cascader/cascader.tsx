@@ -79,7 +79,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     width,
   };
   const [focused, setFocused] = useState(false);
-  const [enter] = useState(false);
   const [path, setPath] = useState<KeygenResult[]>([]);
   const isPreventBlur = useRef(false);
   const blurEvent = useRef<(() => void) | null>();
@@ -142,8 +141,22 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     position: positionProp as any,
   });
 
+  const checkEmpty = () => {
+    let isEmpty;
+    if (mode !== undefined) {
+      isEmpty = !value || (Array.isArray(value) && value.length === 0);
+    } else {
+      isEmpty = util.isEmpty(value);
+    }
+
+    return isEmpty;
+  };
+
+  const isEmpty = checkEmpty();
+
   const rootClass = classNames(
     className,
+    isEmpty && styles.empty,
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,
@@ -316,29 +329,43 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   });
 
   const renderClearable = () => {
-    return (
-      <span className={styles.clearIcon} onClick={handleClear}>
-        {Icons.PcCloseCircleFill}
+    if (!mode !== undefined && !showArrow) return null;
+    const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
+    const arrow = (
+      <span
+        className={classNames(
+          compressed && styles.compressedIcon,
+          styles.arrowIcon,
+          open && !compressed && styles.arrowIconOpen,
+        )}
+        onClick={handleResultClick}
+      >
+        {defaultIcon}
       </span>
+    );
+    return (
+      <>
+        <span className={styles.clearIcon} onClick={handleClear}>
+          {Icons.PcCloseCircleFill}
+        </span>
+        {!open && !isEmpty && arrow}
+      </>
     );
   };
 
   const renderIcon = () => {
-    let isEmpty;
-    if (mode !== undefined) {
-      isEmpty = !value || (Array.isArray(value) && value.length === 0);
-    } else {
-      isEmpty = util.isEmpty(value);
-    }
-
-    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && enter && disabled !== true)) {
+    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && disabled !== true)) {
       return renderClearable();
     }
     if (!mode !== undefined && !showArrow) return null;
     const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
     return (
       <span
-        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        className={classNames(
+          compressed && styles.compressedIcon,
+          styles.arrowIcon,
+          open && !compressed && styles.arrowIconOpen,
+        )}
         onClick={handleResultClick}
       >
         {defaultIcon}

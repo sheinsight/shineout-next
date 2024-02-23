@@ -48,6 +48,7 @@ export default () => {
   return (
     <div>
       <Cascader
+        clearable
         multiple
         mode={0}
         compressed

@@ -3,6 +3,7 @@ import { JsStyles } from '../jss-style';
 import border from '../input/input-border';
 
 export type CascaderClasses = {
+  empty: string;
   wrapper: string;
   wrapperDisabled: string;
   wrapperSmall: string;
@@ -32,6 +33,7 @@ export type CascaderClasses = {
   pickerWrapper: string;
   clearable: string;
   clearIcon: string;
+  compressedIcon: string;
   arrowIconOpen: string;
   arrowIcon: string;
   ellipsis: string;
@@ -106,6 +108,7 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const cascaderStyle: JsStyles<CascaderClassType> = {
+  empty: {},
   wrapper: {
     display: 'inline-block',
     position: 'relative',
@@ -150,6 +153,26 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       },
       '& $clearIcon': {
         right: token.cascaderLargePaddingX,
+      },
+    },
+    // hover
+    '&:hover': {
+      '& $clearIcon': {
+        display: 'inline-block',
+      },
+      '&$clearable:not($empty)': {
+        '& :not($compressedIcon)$arrowIcon': {
+          display: 'none',
+        },
+        '& $compressedIcon': {
+          display: 'none',
+        }
+      },
+    },
+    // not wrapperFocus
+    '&:not($wrapperFocus)': {
+      '& $clearIcon': {
+        display: 'none',
       },
     },
   },
@@ -304,6 +327,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     color: token.cascaderClearColor,
     verticalAlign: 'middle',
   },
+  compressedIcon: {},
   arrowIcon: {
     position: 'absolute',
     right: token.cascaderPaddingX,
@@ -416,6 +440,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     },
   },
   filterDisabledOption: {},
+  filterOptionSeparator: {},
   activeOption: {
     '& $optionInner': {
       color: token.cascaderOptionActiveColor,
