@@ -20,7 +20,7 @@ export default () => {
             <Tabs.Panel key={index} tab={tab.title}>
               <div
                 style={{
-                  padding: 16,
+                  padding: 12,
                   height: '100%',
                   fontSize: 14,
                   lineHeight: '20px',
