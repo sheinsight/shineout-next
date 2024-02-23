@@ -30,6 +30,10 @@ export function generateClassName(version: string, prefix: string, ns: string, k
   // return `${prefix}-${ns}${key}`;
 }
 
+// function camelToDash(str: string): string {
+//   return str.replace(/([A-Z])/g, '-$1').toLowerCase();
+// }
+
 const createClassname = (rule: any, sheet: any) => {
   const options = sheet.options;
   const ns = options.classNamePrefix;
