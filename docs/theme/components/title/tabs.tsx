@@ -5,18 +5,20 @@ import store, { dispatch, DocType } from '../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Tabs } from 'shineout';
 import useStyles from '../style';
+import { getLocale, useConfig } from 'base'; 
 
 const DocTabs = (props: { showGuide: boolean }) => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
+  const { locale } = useConfig();
 
   const classes = useStyles();
   const tabs: { name: string; path: DocType }[] = [
-    { name: '示例', path: 'examples' },
-    { name: 'API', path: 'api' },
-    { name: '指南', path: 'guide' },
-    { name: '更新记录', path: 'changelog' },
+    { name: getLocale(locale, 'exmples'), path: 'examples' },
+    { name: getLocale(locale, 'api'), path: 'api' },
+    { name: getLocale(locale, 'guide'), path: 'guide' },
+    { name: getLocale(locale, 'updateRecord'), path: 'changelog' },
   ];
 
   const handleChangeTab = (tab: DocType) => {

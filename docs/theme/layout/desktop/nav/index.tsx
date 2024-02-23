@@ -3,12 +3,14 @@ import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
 import { Dropdown, Input } from 'shineout';
+import { getLocale, useConfig } from 'base'; 
 
 const Nav = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const state = useSnapshot(store);
   const location = useLocation();
+  const { locale } = useConfig();
 
   const navs = [
     // {
@@ -163,7 +165,7 @@ const Nav = () => {
       <ul className='entry'>
         <li>
           <Input
-            placeholder='搜索...'
+            placeholder={`${getLocale(locale, 'search')}...`}
             prefix={renderPrefix()}
             border={false}
             style={{ backgroundColor: '#F4F5F8', width: 280 }}
