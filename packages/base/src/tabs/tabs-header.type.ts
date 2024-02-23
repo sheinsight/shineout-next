@@ -16,4 +16,5 @@ export interface TabsHeaderProps {
   collapsible?: boolean;
   tabBarStyle?: React.CSSProperties;
   getPosition?: string;
+  sticky?: boolean;
 }
