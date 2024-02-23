@@ -44,7 +44,7 @@ export * from './upload';
 export * from './virtual-scroll';
 export * from './collapse';
 
-export { styled, StyleProvider } from './jss-style';
+export { styled, JssProvider, generateClassName } from './jss-style';
 export * as mixins from './mixin';
 
 export default {};
