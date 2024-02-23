@@ -13,7 +13,7 @@ export default () => {
   };
   return (
     <Empty
-      imgSrc='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png'
+      imgSrc='https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png'
       description={renderDescription()}
     ></Empty>
   );

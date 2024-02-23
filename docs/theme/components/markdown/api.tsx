@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { MarkdownProps } from 'docs/types';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
@@ -18,7 +19,7 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
     <>
       {title || subTitle ? (
         <>
-          <h3 id={`api-${title}`}>
+          <h3 className={classNames('so-doc-example-anchor-title')} id={`api-${title}`}>
             <span>{title}</span>
             {subTitle ? <em>{`${`  ${subTitle}`}`}</em> : null}
           </h3>
