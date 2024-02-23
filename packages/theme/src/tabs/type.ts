@@ -76,13 +76,13 @@ export interface TabsTokens {
   tabsClickBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Padding-15
    * @description 标签页页签内边距（水平方向）
    */
   tabsTabPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-10
+   * @token Padding-9
    * @description 标签页页签内边距（垂直方向）
    */
   tabsTabPaddingY: string;
@@ -112,7 +112,7 @@ export interface TabsTokens {
   tabsLinePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Padding-6
    * @description 标签页下划模式内边距（垂直方向）
    */
   tabsLinePaddingY: string;
@@ -124,7 +124,7 @@ export interface TabsTokens {
   tabsLineInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-3
+   * @token Padding-4
    * @description 标签页下划模式内部容器的内边距（垂直方向）
    */
   tabsLineInnerPaddingY: string;
