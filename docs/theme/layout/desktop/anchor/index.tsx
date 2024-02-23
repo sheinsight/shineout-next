@@ -24,10 +24,11 @@ const Anchor = (props: AnchorProps) => {
     const hash = hashes?.[hashes.length - 1];
     const activeAnchor = decodeURIComponent(hash);
     location.hash = activeAnchor;
+    e.preventDefault();
     const layout = document.getElementById('layout');
     const target = document.getElementById(`${anchorName}-${activeAnchor}`);
+    layout?.scrollTo(0, (target?.offsetTop as number) - (anchorName === 'example' ? 10 : 200));
 
-    layout?.scrollTo(0, (target?.offsetTop as number) - 200);
     dispatch.setActiveAnchor(activeAnchor, true);
     setTimeout(() => {
       dispatch.setLocked(false);

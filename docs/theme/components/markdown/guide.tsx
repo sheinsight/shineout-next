@@ -103,7 +103,12 @@ const Guide = (props: GuideProps) => {
           return (
             <div className='guide' key={index}>
               <h2
-                className={classNames('title', 'anchor-title', index === 0 ? 'first' : '')}
+                className={classNames(
+                  'so-doc-example-anchor-title',
+                  'title',
+                  'anchor-title',
+                  index === 0 ? 'first' : '',
+                )}
                 id={`guide-${guide.title}`}
               >
                 {guide.title}
