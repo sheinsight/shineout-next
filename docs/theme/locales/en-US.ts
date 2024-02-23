@@ -11,7 +11,7 @@ export default {
     Form: 'Form',
     Feedback: 'Feedback',
     Navigation: 'Navigation',
-    Other: 'Other',
+    // Other: 'Other',
   },
   'shineout.changelog': {
     feat: 'feat',

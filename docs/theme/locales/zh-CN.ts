@@ -11,7 +11,7 @@ export default {
     Form: '数据输入',
     Feedback: '反馈',
     Navigation: '导航',
-    Other: '其他',
+    // Other: '其他',
   },
   'shineout.changelog': {
     feat: '新增',

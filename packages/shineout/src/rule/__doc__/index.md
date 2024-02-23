@@ -1,6 +1,6 @@
 ---
 name: Rule
-group: Other
+group: Form
 ---
 
 # Title
