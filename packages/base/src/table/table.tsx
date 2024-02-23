@@ -43,6 +43,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
 
   const virtual =
     props.data?.length &&
+    props.rowsInView !== 0 &&
     (!!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto');
 
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;

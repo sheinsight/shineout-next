@@ -18,6 +18,8 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const preIndex = usePrevious(startIndex);
   const [offsetY, setOffsetY] = useState(0);
 
+  const rowsInView = props.rowsInView === 0 ? props.data.length: props.rowsInView;
+
   const sleft = props.scrollLeft !== undefined ? props.scrollLeft : innerLeft;
 
   const { current: context } = useRef({
@@ -64,7 +66,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     let sum = 0;
     let currentIndex = 0;
     let top = 0;
-    const maxIndex = Math.max(props.data.length - props.rowsInView, 0);
+    const maxIndex = Math.max(props.data.length - rowsInView, 0);
     for (let i = 0; i <= maxIndex; i++) {
       sum += context.cachedHeight[i] || props.rowHeight;
       if (scrollTop < sum || i === maxIndex) {
@@ -179,7 +181,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
   }, [scrollHeight]);
 
-  const renderData = [...props.data].slice(startIndex, startIndex + props.rowsInView);
+  const renderData = [...props.data].slice(startIndex, startIndex + rowsInView);
 
   return {
     scrollHeight,

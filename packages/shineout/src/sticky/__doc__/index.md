@@ -1,6 +1,6 @@
 ---
 name: Sticky
-group: Other
+group: Layout
 ---
 
 # Title
