@@ -27,7 +27,8 @@ export type TabsClass =
   | 'extra'
   | 'collapsible'
   | 'collapsed'
-  | 'autoFill';
+  | 'autoFill'
+  | 'sticky';
 
 interface AfterOptions {
   top?: number | string;
@@ -642,6 +643,55 @@ const tabsStyle: JsStyles<TabsClass> = {
       },
     },
   },
+  sticky: {
+    '& > :first-child': {
+      '&[data-soui-position^="top-"],&[data-soui-position^="bottom-"]': {
+        '& $tab + $tab': {
+          marginLeft: Token.tabsNearlyMargin,
+        },
+        '&[data-soui-shape="fill"],&[data-soui-shape="button"]': {
+          '& $tab + $tab': {
+            margin: 0,
+          },
+        },
+        '& $headerWrapper': {
+          alignItems: 'center',
+        },
+        '& $header': {
+          width: '100%',
+          alignItems: 'center',
+        },
+        '& $next,& $prev': {
+          lineHeight: 0,
+          padding: `${Token.tabsActionHorizontalPaddingY} ${Token.tabsActionHorizontalPaddingX}`,
+        },
+    
+        '& $headerScroll': { display: 'inline-flex' },
+        '&[data-soui-position^="top-left"]': {
+          '& $headerScroll': { justifyContent: 'flex-start' },
+        },
+        '&[data-soui-position^="bottom-left"]': {
+          '& $headerScroll': { justifyContent: 'flex-start' },
+        },
+        '&[data-soui-position^="top-right"]': {
+          '& $headerScroll': { justifyContent: 'flex-end' },
+        },
+        '&[data-soui-position^="bottom-right"]': {
+          '& $headerScroll': { justifyContent: 'flex-end' },
+        },
+        '&[data-soui-position^="bottom-right"],&[data-soui-position^="top-right"]': {
+          '& $header': { display: 'block', textAlign: 'right' },
+          '& $headerScroll': { display: 'inline-block' },
+        },
+        ...getCardStyle(),
+        ...getLineStyle(),
+        ...getDashStyle(),
+        ...getFillStyle(),
+        ...getButtonStyle(),
+        ...getHeaderStyle(),
+      }
+    }
+  }
 };
 
 export default tabsStyle;

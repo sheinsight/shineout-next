@@ -27,7 +27,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: build
-        run: pnpm run build
+        run: pnpm run build:pkg
 
       - name: set token
         run: echo -e //registry.npmjs.org/:_authToken=${NPM_TOKEN} >> .npmrc

@@ -61,6 +61,7 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
   },
   body: {
     fontSize: token.descriptionsTableDefaultSize,
+    overflow: 'hidden'
   },
   table: {
     width: '100%',
@@ -80,6 +81,9 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     textAlign: 'left',
     boxSizing: 'border-box',
     color: token.descriptionsValueColor,
+    '&:last-child': {
+      padding: `0 0 ${token.descriptionsLabelPaddingBottom} 0`,
+    }
   },
   inlineTable: {
     textAlign: 'left',
@@ -127,7 +131,6 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
   border: {
     border: `${token.descriptionsBorderDefaultSize} solid ${token.descriptionsBorderColor}`,
     borderRadius: token.descriptionsBorderRadius,
-    overflow: 'hidden',
     '& $row:not(:last-child)': {
       borderBottom: `${token.descriptionsBorderBottomSize} solid ${token.descriptionsBorderColor}`,
     },

@@ -34,7 +34,7 @@ const Desktop = () => {
       element: <Introduce />,
     },
     {
-      path: ':name?/component/:name?/:name?',
+      path: ':lan/component/:project?/:comp?',
       element: (
         <>
           <Menu></Menu>
