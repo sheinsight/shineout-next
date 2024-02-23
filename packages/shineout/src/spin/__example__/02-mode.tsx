@@ -9,7 +9,7 @@ import { Spin } from 'shineout';
 
 export default () => {
   const renderTip = () => {
-    return <span style={{ fontSize: 12, fontWeight: 300 }}>Loading...</span>;
+    return <span style={{ fontSize: 12 }}>Loading...</span>;
   };
 
   return (
