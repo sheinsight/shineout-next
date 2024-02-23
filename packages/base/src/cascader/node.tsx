@@ -7,6 +7,8 @@ import Checkbox from '../checkbox';
 import Spin from '../spin';
 import Icons from '../icons';
 
+const { getDataAttributeName } = util;
+
 const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   props: CascaderNodeProps<DataItem, Value>,
 ) => {
@@ -54,8 +56,14 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     if (!multiple) {
       if (onChange && path) onChange([...path, id] as Value, datum.getDataById(id));
     }
-    // [TODO] - className Search
-    if (loader && !loading && !util.getParent(e.target as HTMLElement, '.so-checkbox-indicator')) {
+    if (
+      loader &&
+      !loading &&
+      !util.getParent(
+        e.target as HTMLElement,
+        `[${getDataAttributeName('type')}=checkbox-indicator]`,
+      )
+    ) {
       setLoading(true);
       loader(id, data);
     }

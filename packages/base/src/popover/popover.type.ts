@@ -138,7 +138,7 @@ export interface PopoverProps extends Pick<CommonType, 'className' | 'style'> {
    */
   defaultVisible?: boolean;
   /**
-   * TODO: have question
+   * 
    * @en Cancel the popup after clicking the element in mouseEnterDelay
    * @cn MouseEnterDelay 内点击元素后取消弹出
    * @default false

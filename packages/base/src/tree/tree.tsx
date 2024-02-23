@@ -184,8 +184,6 @@ const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) 
     handleUpdateExpanded(expanded);
   }, [expanded]);
 
-  // [TODO] - Props: dataUpdate
-  // [TODO] - This is a workaround for the issue of data not updating when dataProps changes.
   useEffect(() => {
     if (!prevData) return;
     if (prevData !== data && dataUpdate) {

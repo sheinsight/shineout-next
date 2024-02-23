@@ -1,7 +1,9 @@
-import { useCheck } from '@sheinx/hooks';
+import { useCheck, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
 import { SimpleCheckboxProps } from './checkbox.type';
+
+const { getDataAttribute } = util;
 
 const Checkbox = (props: SimpleCheckboxProps) => {
   const { jssStyle, className, style, children, renderFooter, size, theme, ...rest } = props;
@@ -38,7 +40,11 @@ const Checkbox = (props: SimpleCheckboxProps) => {
     >
       <input {...inputProps} type='checkbox' />
       <span className={indicatorClass}>
-        <i {...getIndicatorProps()} className={checkboxStyle?.indicator}>
+        <i
+          {...getIndicatorProps()}
+          {...getDataAttribute({ type: 'checkbox-indicator' })}
+          className={checkboxStyle?.indicator}
+        >
           {props.checked === 'indeterminate' ? (
             <svg viewBox='0 0 16 16' fill='currentColor'>
               <path d='M3 8C3 7.44772 3.44772 7 4 7H12C12.5523 7 13 7.44772 13 8V8C13 8.55228 12.5523 9 12 9H4C3.44772 9 3 8.55228 3 8V8Z' />
