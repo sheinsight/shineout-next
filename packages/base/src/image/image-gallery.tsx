@@ -59,11 +59,9 @@ const ImageModal = (props: ImageGalleryProps) => {
     });
 
     return (
-      <div className={galleryStyle.gallery}>
-        <div key={image.key} {...galleryProps}>
-          {renderColseIcon()}
-          <Magnify {...magnifyProps}></Magnify>
-        </div>
+      <div key={image.key} {...galleryProps}>
+        {renderColseIcon()}
+        <Magnify {...magnifyProps}></Magnify>
       </div>
     );
   };

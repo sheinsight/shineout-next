@@ -26,6 +26,7 @@ export interface ImageClasses {
   close: string;
 
   gallery: string;
+  galleryCurrent: string;
   galleryInit: string;
   galleryForward: string;
   galleryBackward: string;
@@ -306,12 +307,16 @@ const ImageStyle: JsStyles<ImageClass> = {
 
   // gallery
   gallery: {
-    position: 'fixed',
-    zIndex: 1100,
+    position: 'absolute',
+    zIndex: 1,
     top: 0,
     right: 0,
     bottom: 0,
     left: 0,
+  },
+
+  galleryCurrent: {
+    zIndex: 1100,
   },
 
   galleryInit: {
@@ -334,7 +339,7 @@ const ImageStyle: JsStyles<ImageClass> = {
     cursor: 'zoom-in',
     position: 'absolute',
     display: 'flex',
-    zIndex: 20,
+    zIndex: 1101,
     minWidth: 100,
     minHeight: 100,
     background: '#fff',
@@ -359,7 +364,7 @@ const ImageStyle: JsStyles<ImageClass> = {
     transform: 'translateY(-50%)',
     display: 'flex',
     position: 'absolute',
-    zIndex: 10,
+    zIndex: 1100,
 
     right: '100%',
     top: '50%',
@@ -375,7 +380,7 @@ const ImageStyle: JsStyles<ImageClass> = {
     transform: 'translateY(-50%)',
     display: 'flex',
     position: 'absolute',
-    zIndex: 10,
+    zIndex: 1100,
 
     left: '100%',
     top: '50%',
@@ -389,13 +394,16 @@ const ImageStyle: JsStyles<ImageClass> = {
   group: {
     lineHeight: 1,
     display: 'inline-block',
-    '& $image + $image': {
-      marginLeft: Token.imageGroupNearlyMargin,
+    '& $image': {
+      marginRight: Token.imageGroupNearlyMargin,
     },
   },
 
   groupPile: {
     position: 'relative',
+    '& $image': {
+      marginRight: 0,
+    },
     '& $image:nth-child(1)': {
       // zIndex: 3,
     },
