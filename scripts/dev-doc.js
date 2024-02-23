@@ -1,4 +1,5 @@
 const chokidar = require('chokidar');
+const path = require('path');
 const { compile } = require('./utils/compile');
 const { compileToken } = require('../packages/theme/scripts/token');
 const { compileFigma } = require('../packages/theme/scripts/build-token');
@@ -6,7 +7,11 @@ const { compileRule } = require('./utils/rules');
 const { docBuild } = require('./doc-build');
 
 docBuild();
-
+const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
+const baseDir = path.join(__dirname, '../packages', 'base', 'src');
+const hooksDir = path.join(__dirname, '../packages', 'hooks', 'src');
+const styleDir = path.join(__dirname, '../packages', 'style', 'src');
+const themeDir = path.join(__dirname, '../packages', 'theme', 'src');
 const watchList = [shineoutDir, hooksDir, styleDir, baseDir, themeDir];
 const watcher = chokidar.watch(watchList);
 

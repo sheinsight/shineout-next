@@ -12,7 +12,7 @@ type DropdownItem = TYPE.Dropdown.Item;
 const data: DropdownItem[] = [
   {
     content:
-      'subMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenusubMenu',
+      'subMenu',
     children: [
       {
         content: 'Link to Google',
