@@ -394,13 +394,16 @@ const ImageStyle: JsStyles<ImageClass> = {
   group: {
     lineHeight: 1,
     display: 'inline-block',
-    '& $image + $image': {
-      marginLeft: Token.imageGroupNearlyMargin,
+    '& $image': {
+      marginRight: Token.imageGroupNearlyMargin,
     },
   },
 
   groupPile: {
     position: 'relative',
+    '& $image': {
+      marginRight: 0,
+    },
     '& $image:nth-child(1)': {
       // zIndex: 3,
     },

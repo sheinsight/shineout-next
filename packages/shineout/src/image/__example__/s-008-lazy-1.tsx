@@ -28,9 +28,9 @@ export default () => {
     },
   ];
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       {images.map((item, index) => {
-        return <Image key={index} lazy fit='fill' width={845} height={528} src={item.src}></Image>;
+        return <Image key={index} lazy fit='fill' width={'100%'} height={528} src={item.src}></Image>;
       })}
     </div>
   );
