@@ -1,6 +1,6 @@
 import { CommonType } from '../common/type';
 import { ObjectKey, KeygenType, TransferListType } from '@sheinx/hooks';
-import { TransferClasses } from './transfer.type';
+import { TransferClasses } from '@sheinx/shineout-style';
 import { ButtonClasses } from '../button/button.type';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 
