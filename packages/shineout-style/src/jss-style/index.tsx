@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import { JssStyle, GenerateId } from 'jss';
 import handleStyle from './handleStyle';
+import version from '../version';
 
 export { JssProvider } from 'react-jss';
 
@@ -11,9 +12,6 @@ const config: {
 export const setJssConfig = (newConfig: { generateId?: GenerateId }) => {
   Object.assign(config, newConfig);
 };
-
-const packageJson = require('../version');
-const version = packageJson.version;
 
 const stringToHash = (str: string) => {
   let hash = 0;
@@ -28,8 +26,8 @@ const stringToHash = (str: string) => {
 
 export function generateClassName(version: string, prefix: string, ns: string, key: string) {
   const name = `${version}-${prefix}-${ns}-${key}`;
-  // return stringToHash(name);
-  return `${prefix}-${ns}${key}`
+  return stringToHash(name);
+  // return `${prefix}-${ns}${key}`;
 }
 
 const createClassname = (rule: any, sheet: any) => {
