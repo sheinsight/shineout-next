@@ -2,10 +2,10 @@
 
 exports[`Alert[Base] should render correctly  1`] = `
 <div
-  class="so-alert-alert so-alert-info"
+  class="ctvjgqd c-cs34wb"
 >
   <span
-    class="so-alert-icon so-alert-info-icon"
+    class="c-cs3cu8 c-18n2pe"
   >
     <svg
       aria-hidden="true"
@@ -14,15 +14,15 @@ exports[`Alert[Base] should render correctly  1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM12 16C12.5523 16 13 16.4477 13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16ZM12 5C12.5523 5 13 5.44772 13 6V14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14V6C11 5.44772 11.4477 5 12 5Z"
+        d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM12 8C12.5523 8 13 7.55228 13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7C11 7.55228 11.4477 8 12 8ZM12 19C12.5523 19 13 18.5523 13 18V10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10V18C11 18.5523 11.4477 19 12 19Z"
       />
     </svg>
   </span>
   <div
-    class="so-alert-content"
+    class="c-pn3xri"
   >
     <div
-      class="so-alert-text"
+      class="c-crwaa4"
     >
       This is a line of important text for alerting purposes
     </div>
@@ -33,10 +33,10 @@ exports[`Alert[Base] should render correctly  1`] = `
 exports[`Alert[Base] should render correctly about closeable 1`] = `
 <div>
   <div
-    class="so-alert-alert so-alert-info"
+    class="ctvjgqd c-cs34wb"
   >
     <span
-      class="so-alert-icon so-alert-info-icon"
+      class="c-cs3cu8 c-18n2pe"
     >
       <svg
         aria-hidden="true"
@@ -45,21 +45,21 @@ exports[`Alert[Base] should render correctly about closeable 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM12 16C12.5523 16 13 16.4477 13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16ZM12 5C12.5523 5 13 5.44772 13 6V14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14V6C11 5.44772 11.4477 5 12 5Z"
+          d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM12 8C12.5523 8 13 7.55228 13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7C11 7.55228 11.4477 8 12 8ZM12 19C12.5523 19 13 18.5523 13 18V10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10V18C11 18.5523 11.4477 19 12 19Z"
         />
       </svg>
     </span>
     <div
-      class="so-alert-content"
+      class="c-pn3xri"
     >
       <div
-        class="so-alert-text"
+        class="c-crwaa4"
       >
         This is informative text.
       </div>
     </div>
     <div
-      class="so-alert-close"
+      class="ctwn9ch"
     >
       <svg
         aria-hidden="true"
@@ -78,10 +78,10 @@ exports[`Alert[Base] should render correctly about closeable 1`] = `
 
 exports[`Alert[Base] should render correctly about title 1`] = `
 <div
-  class="so-alert-alert so-alert-info so-alert-width-title"
+  class="ctvjgqd c-cs34wb c7y2e9l"
 >
   <span
-    class="so-alert-icon so-alert-info-icon"
+    class="c-cs3cu8 c-18n2pe"
   >
     <svg
       aria-hidden="true"
@@ -90,26 +90,26 @@ exports[`Alert[Base] should render correctly about title 1`] = `
       viewBox="0 0 24 24"
     >
       <path
-        d="M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM12 16C12.5523 16 13 16.4477 13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16ZM12 5C12.5523 5 13 5.44772 13 6V14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14V6C11 5.44772 11.4477 5 12 5Z"
+        d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM12 8C12.5523 8 13 7.55228 13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7C11 7.55228 11.4477 8 12 8ZM12 19C12.5523 19 13 18.5523 13 18V10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10V18C11 18.5523 11.4477 19 12 19Z"
       />
     </svg>
   </span>
   <div
-    class="so-alert-content"
+    class="c-pn3xri"
   >
     <div
-      class="so-alert-title"
+      class="cu5xy0h"
     >
       Heading
     </div>
     <div
-      class="so-alert-text"
+      class="c-crwaa4"
     >
       This is a line of important text for alerting purposes
     </div>
   </div>
   <div
-    class="so-alert-close"
+    class="ctwn9ch"
   >
     <svg
       aria-hidden="true"
@@ -130,11 +130,11 @@ exports[`Alert[Base] should render correctly about type 1`] = `
   style="display: flex; flex-wrap: wrap; gap: 24px;"
 >
   <div
-    class="so-alert-alert so-alert-info"
+    class="ctvjgqd c-cs34wb"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="so-alert-icon so-alert-info-icon"
+      class="c-cs3cu8 c-18n2pe"
     >
       <svg
         aria-hidden="true"
@@ -143,26 +143,26 @@ exports[`Alert[Base] should render correctly about type 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM12 16C12.5523 16 13 16.4477 13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16ZM12 5C12.5523 5 13 5.44772 13 6V14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14V6C11 5.44772 11.4477 5 12 5Z"
+          d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM12 8C12.5523 8 13 7.55228 13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7C11 7.55228 11.4477 8 12 8ZM12 19C12.5523 19 13 18.5523 13 18V10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10V18C11 18.5523 11.4477 19 12 19Z"
         />
       </svg>
     </span>
     <div
-      class="so-alert-content"
+      class="c-pn3xri"
     >
       <div
-        class="so-alert-text"
+        class="c-crwaa4"
       >
         This is informative text.
       </div>
     </div>
   </div>
   <div
-    class="so-alert-alert so-alert-success"
+    class="ctvjgqd c-186exw"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="so-alert-icon so-alert-success-icon"
+      class="c-cs3cu8 c-l1tvnv"
     >
       <svg
         aria-hidden="true"
@@ -176,21 +176,21 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="so-alert-content"
+      class="c-pn3xri"
     >
       <div
-        class="so-alert-text"
+        class="c-crwaa4"
       >
         This is success text.
       </div>
     </div>
   </div>
   <div
-    class="so-alert-alert so-alert-warning"
+    class="ctvjgqd c-ms5rbf"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="so-alert-icon so-alert-warning-icon"
+      class="c-cs3cu8 c-813ofm"
     >
       <svg
         aria-hidden="true"
@@ -204,21 +204,21 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="so-alert-content"
+      class="c-pn3xri"
     >
       <div
-        class="so-alert-text"
+        class="c-crwaa4"
       >
         This is warning text.
       </div>
     </div>
   </div>
   <div
-    class="so-alert-alert so-alert-danger"
+    class="ctvjgqd c40jc4q"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="so-alert-icon so-alert-danger-icon"
+      class="c-cs3cu8 c-kwv60t"
     >
       <svg
         aria-hidden="true"
@@ -227,15 +227,15 @@ exports[`Alert[Base] should render correctly about type 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+          d="M12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM12 16C12.5523 16 13 16.4477 13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16ZM12 5C12.5523 5 13 5.44772 13 6V14C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14V6C11 5.44772 11.4477 5 12 5Z"
         />
       </svg>
     </span>
     <div
-      class="so-alert-content"
+      class="c-pn3xri"
     >
       <div
-        class="so-alert-text"
+        class="c-crwaa4"
       >
         This is danger text.
       </div>

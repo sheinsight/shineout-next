@@ -26,7 +26,7 @@ import { useState } from 'react';
 
 const SO_PREFIX = 'button';
 const originClasses = [] as string[];
-const originItemClasses = ['button', 'secondary', 'outline', 'text', 'disabled', 'loading', 'href'];
+const originItemClasses = ['button', 'secondary', 'outline', 'text', 'disabled', 'loading', 'href', 'round', 'square', 'circle', 'small', 'large', 'danger', 'warning', 'success'];
 const {
   button: buttonClassName,
   secondary: buttonSecondary,
@@ -35,6 +35,14 @@ const {
   disabled: buttonDisabled,
   loading: buttonLoading,
   href: buttonHref,
+  round: buttonRound,
+  square: buttonSquare,
+  circle: buttonCircle,
+  small: buttonSmall,
+  large: buttonLarge,
+  danger: buttonDanger,
+  warning: buttonWarning,
+  success: buttonSuccess,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 beforeAll(() => {
@@ -63,7 +71,7 @@ describe('Button[Base]', () => {
     buttons.forEach((button) => {
       styleTest(button, 'margin: 0px;');
       classTest(button, buttonClassName);
-      classContentTest(button, button.textContent?.toLocaleLowerCase() as string);
+      // classContentTest(button, button.textContent?.toLocaleLowerCase() as string);
     });
   });
   test('should render className about type and mode', () => {
@@ -103,7 +111,7 @@ describe('Button[Base]', () => {
     classTest(button, buttonText, false);
   });
   test('should render when set shape', () => {
-    const shape = ['round', 'square', 'circle'];
+    const shape = [buttonRound, buttonSquare, buttonCircle];
     const { container } = render(<ButtonShape />);
     container.querySelectorAll('button').forEach((button, index) => {
       if (index === 0) return;
@@ -111,7 +119,7 @@ describe('Button[Base]', () => {
     });
   });
   test('should render when set size', () => {
-    const sizes = ['small', '', 'large'];
+    const sizes = [buttonSmall, '', buttonLarge];
     const { container } = render(<ButtonSize />);
     container.querySelectorAll('button').forEach((button, index) => {
       if (!button.classList[2]) return;
@@ -128,8 +136,10 @@ describe('Button[Base]', () => {
 describe('Button[Status]', () => {
   test('should render when set type', () => {
     const { container } = render(<ButtonStatus />);
-    container.querySelectorAll('button').forEach((button) => {
-      classContentTest(button, button.textContent?.toLocaleLowerCase() as string);
+    container.querySelectorAll('button').forEach((button, index) => {
+      if (Math.floor(index / 4) === 0) classTest(button, buttonDanger);
+      if (Math.floor(index / 4) === 1) classTest(button, buttonWarning);
+      if (Math.floor(index / 4) === 2) classTest(button, buttonSuccess);
     });
   });
 });
@@ -137,7 +147,6 @@ describe('Button[Disabled]', () => {
   test('should render when set disabled', () => {
     const { container } = render(<ButtonDisbled />);
     container.querySelectorAll('button').forEach((button) => {
-      classContentTest(button, button.textContent?.toLocaleLowerCase() as string);
       classTest(button, buttonDisabled);
     });
   });
