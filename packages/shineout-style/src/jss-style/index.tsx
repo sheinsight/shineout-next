@@ -21,7 +21,8 @@ const stringToHash = (str: string) => {
 
 export function generateClassName(version: string, prefix: string, ns: string, key: string) {
   const name = `${version}-${prefix}-${ns}-${key}`;
-  return stringToHash(name);
+  // return stringToHash(name);
+  return `${prefix}-${ns}${key}`
 }
 
 // function camelToDash(str: string): string {

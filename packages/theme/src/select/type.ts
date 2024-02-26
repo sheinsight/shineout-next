@@ -388,7 +388,7 @@ export interface SelectTokens {
   selectGroupTitleFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Padding-12
    * @description 选择器分组标题的内边距（水平方向）
    */
   selectGroupTitlePaddingX: string;

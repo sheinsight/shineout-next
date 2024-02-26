@@ -11,7 +11,7 @@ import { Select } from 'shineout';
 
 export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
-  const shein = <div style={{ background: 'black', color: 'white' }}>SHEIN</div>;
+  const shein = <div style={{ background: 'black', color: 'white' }}>Shineout</div>;
   
   return (
     <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>

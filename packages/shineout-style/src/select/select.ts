@@ -370,6 +370,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   loading: {
     padding: 10,
+    display: 'flex',
+    justifyContent: 'center',
   },
   checkedIcon: {
     right: 8,
@@ -486,7 +488,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     height: 32,
     padding: token.selectHeaderPadding,
     borderBottom: `1px solid ${token.selectHeaderBorderColor}`,
-
+    marginBottom: 4,
     '& $columnsCheckbox': {
       marginRight: 0,
       width: 'auto',
@@ -498,23 +500,27 @@ const selectStyle: JsStyles<SelectClassType> = {
   columns: {
     display: 'flex',
     alignItems: 'center',
+    padding: `0 ${token.selectOptionPaddingX}`,
     '& $optionGroupTitle': {
       padding: `0 ${token.selectHeaderPadding}`,
       marginLeft: token.selectColumnOptionMargin,
     },
   },
   columnsOption: {
-    // flex: 1,
     paddingLeft: token.selectColumnPadding,
     paddingRight: token.selectColumnPadding,
     lineHeight: 1,
     boxSizing: 'border-box',
     overflow: 'hidden',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
     '& $columnsCheckbox': {
       marginRight: 0,
     },
     '&:not($optionDisabled):hover': {
       background: token.selectColumnBackgroundColor,
+      borderRadius: token.selectOptionInnerBorderRadius,
     },
   },
   columnsRadio: {

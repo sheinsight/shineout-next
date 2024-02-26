@@ -50,7 +50,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const resultRef = useRef<HTMLDivElement>(null);
   const shouldResetMore = useRef(false);
-  const showInput = allowOnFilter;
+  const showInput = allowOnFilter && focus;
 
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootClass = classNames(
