@@ -43,7 +43,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     checkUnMatched,
     onRemove,
   } = props;
-
   const value = (multiple ? valueProp : [valueProp]) as Value;
 
   const [more, setMore] = useState(-1);
