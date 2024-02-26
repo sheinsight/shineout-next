@@ -382,9 +382,9 @@ const stepsStyle: JsStyles<StepsClassType> = {
         },
       },
       '& $tail': {
-        top: 26,
+        top: 20,
         paddingTop: 0,
-        paddingBottom: 25,
+        paddingBottom: 17,
         '&:after': {
           width: 1,
         },
@@ -419,6 +419,11 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $iconWrapper': {
         width: 10,
         height: 10,
+      },
+    },
+    '& $icon:not($process)': {
+      '& $iconWrapper': {
+        marginBottom: 1,
       },
     },
     '& $iconWrapper': {

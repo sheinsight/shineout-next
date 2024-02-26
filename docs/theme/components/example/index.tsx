@@ -67,7 +67,11 @@ const Example = (props: ExampleProps) => {
       <div className={classes.exampleHeader}>
         {(propName[state.locales] || defaultName) && (
           <h2
-            className={classNames(classes.exampleTitle, classes.exampleAnchorTitle)}
+            className={classNames(
+              classes.exampleTitle,
+              'anchor-title',
+              classes.exampleAnchorTitle,
+            )}
             id={`example-${propName[state.locales] || defaultName}`}
           >
             {propName[state.locales] || defaultName}
