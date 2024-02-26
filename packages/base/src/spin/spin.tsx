@@ -57,7 +57,7 @@ const Spin = (props: SpinProps = {}) => {
   };
   const renderContainer = () => {
     return (
-      <div className={spinStyle.container}>
+      <div className={classNames(className, spinStyle.container)}>
         {children}
         {loading && <div className={spinStyle.loading}>{renderContent()}</div>}
       </div>

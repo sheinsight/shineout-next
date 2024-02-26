@@ -43,6 +43,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     boxSizing: 'border-box',
     width: token.checkboxIconSize,
     height: token.checkboxIconSize,
+    flexShrink: 0,
     '$wrapperSmall &': {
       width: token.checkboxSmallIconSize,
       height: token.checkboxSmallIconSize,

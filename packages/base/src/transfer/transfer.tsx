@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import classNames from 'classnames';
-import { TransferProps, TransferClasses } from './transfer.type';
+import { TransferProps } from './transfer.type';
+import { TransferClasses } from '@sheinx/shineout-style';
 import { useTransfer, TransferListType, KeygenResult, util } from '@sheinx/hooks';
 import TransferList from './transfer-list';
 import TransferOperate from './transfer-operate';
