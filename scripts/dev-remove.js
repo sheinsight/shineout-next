@@ -3,21 +3,19 @@ const path = require('path');
 const componentNameReg = /^[a-zA-Z-]*$/;
 const { rmrf } = require('./utils/rmrf');
 const { compile } = require('./utils/compile');
-const { writeTemplate } = require('./utils/write-template');
 const component = (process.argv.slice(2)?.[0] || '').trim().toLowerCase();
+const {
+  updateBase,
+  updateShineout,
+  updateShineoutStyle,
+  updateTheme,
+} = require('./utils/update-package');
 
 const chunkDir = path.join(__dirname, '../docs', 'chunk');
 const shineoutDir = path.join(__dirname, '../packages', 'shineout', 'src');
 const baseDir = path.join(__dirname, '../packages', 'base', 'src');
 const shineoutStyleDir = path.join(__dirname, '../packages', 'shineout-style', 'src');
 const themeDir = path.join(__dirname, '../packages', 'theme', 'src');
-
-const whiteList = {
-  shineout: ['icon'],
-  'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts', 'cssvar'],
-  base: ['rule', 'config'],
-  theme: ['index.ts', 'config.ts', 'utils', 'token', '.DS_Store'],
-};
 
 if (!component) {
   console.log('\x1b[31m%s\x1b[0m', '[ERROR] Please enter the component name.');
@@ -34,89 +32,14 @@ function rmTheme() {
   updateTheme();
 }
 
-function getComponentName(fileName) {
-  return fileName
-    .split('-')
-    .map((i) => i[0].toUpperCase() + i.slice(1))
-    .join('');
-}
-
-function updateTheme() {
-  const fileName = 'index.ts';
-  const targetPath = path.join(__dirname, '../packages', 'theme', 'src');
-  const templatePath = path.join(__dirname, `./ejs/theme.index.ts.ejs`);
-  const files = fs.readdirSync(targetPath, 'utf-8').filter((i) => !whiteList.theme.includes(i));
-
-  writeTemplate({
-    fileName,
-    targetPath,
-    templatePath,
-    ejsVars: {
-      files,
-      getComponentName,
-    },
-    needPrettier: true,
-  });
-}
-
 function rmBase() {
   fs.rmSync(path.join(baseDir, component), { recursive: true, force: true });
   updateBase();
 }
 
-function updateBase() {
-  const fileName = 'index.ts';
-  const targetPath = path.join(__dirname, '../packages', 'base', 'src');
-  const templatePath = path.join(__dirname, `./ejs/base.index.ts.ejs`);
-  const files = fs.readdirSync(targetPath, 'utf-8').filter((i) => {
-    if (whiteList.base.includes(i)) return true;
-    const isDir = fs.statSync(path.join(targetPath, i)).isDirectory();
-    if (!isDir) return false;
-    const hasDoc = fs.existsSync(path.join(targetPath, i, '__doc__'));
-    if (!hasDoc) return false;
-    return true;
-  });
-
-  writeTemplate({
-    fileName,
-    targetPath,
-    templatePath,
-    ejsVars: {
-      getComponentName,
-      files,
-    },
-    needPrettier: true,
-  });
-}
-
 function rmShineout() {
   fs.rmSync(path.join(shineoutDir, component), { recursive: true, force: true });
   updateShineout();
-}
-
-function updateShineout() {
-  const fileName = 'index.ts';
-  const targetPath = path.join(__dirname, '../packages', 'shineout', 'src');
-  const templatePath = path.join(__dirname, `./ejs/shineout.index.ts.ejs`);
-  const files = fs.readdirSync(targetPath, 'utf-8').filter((i) => {
-    if (whiteList.shineout.includes(i)) return true;
-    const isDir = fs.statSync(path.join(targetPath, i)).isDirectory();
-    if (!isDir) return false;
-    const hasDoc = fs.existsSync(path.join(targetPath, i, '__doc__'));
-    if (!hasDoc) return false;
-    return true;
-  });
-
-  writeTemplate({
-    fileName,
-    targetPath,
-    templatePath,
-    ejsVars: {
-      files,
-      getComponentName,
-    },
-    needPrettier: true,
-  });
 }
 
 function rmShineoutStyle() {
@@ -128,27 +51,6 @@ function rmShineoutStyle() {
   updateShineoutStyle();
 }
 
-function updateShineoutStyle() {
-  const fileName = 'index.ts';
-  const files = fs
-    .readdirSync(shineoutStyleDir, 'utf-8')
-    .filter((i) => !whiteList['shineout-style'].includes(i))
-    .map((file) => file.split('.')[0]);
-
-  const templatePath = path.join(__dirname, `./ejs/shineout-style.index.ts.ejs`);
-
-  writeTemplate({
-    fileName,
-    targetPath: shineoutStyleDir,
-    templatePath,
-    ejsVars: {
-      files,
-      getComponentName,
-    },
-    needPrettier: true,
-  });
-}
-
 function rmComponent() {
   rmBase();
   rmShineout();
@@ -156,28 +58,8 @@ function rmComponent() {
   rmTheme();
 }
 
-function updatePackages() {
-  updateBase();
-  updateShineout();
-  updateShineoutStyle();
-  updateTheme();
-}
-
 rmComponent();
-
 rmrf(chunkDir);
 fs.mkdirSync(chunkDir);
 compile(baseDir);
 compile(shineoutDir);
-
-module.exports = {
-  whiteList,
-  rmBase,
-  rmShineout,
-  rmShineoutStyle,
-  updateBase,
-  updateShineout,
-  updateShineoutStyle,
-  updatePackages,
-  getComponentName,
-};
