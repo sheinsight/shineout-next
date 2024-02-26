@@ -170,7 +170,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
             {...commonResultProps}
             values={value}
             index={index}
-            status={'success'}
+            status={2}
             name={!isImage && renderResult(v)}
             src={isImage ? (renderResult(v) as string) : ''}
             removeAble={
@@ -199,7 +199,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
           {...commonResultProps}
           values={recycleValues}
           index={index}
-          status={'deleted'}
+          status={-1}
           onRemove={() => {
             func.recoverValue(index);
           }}

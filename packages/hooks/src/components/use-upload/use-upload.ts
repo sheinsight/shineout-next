@@ -96,7 +96,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
     setFiles((files) =>
       produce(files, (draft) => {
         if (!draft[id]) return draft;
-        draft[id].status = 'error';
+        draft[id].status = 3;
         draft[id].message = message;
       }),
     );
@@ -153,7 +153,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
           setFiles((files) => {
             return produce(files, (draft) => {
               if (!draft[id]) return draft;
-              draft[id].status = 'error';
+              draft[id].status = 3;
               draft[id].name = file.name;
               draft[id].message = result.message;
             });
@@ -230,7 +230,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
       const fileRecord: FileRecord = {
         name: blob.name,
         process: -1,
-        status: 'uploading',
+        status: 1,
         blob,
       };
       newFiles[id] = fileRecord;
@@ -256,7 +256,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
           continue;
         }
         fileRecord.message = error.message;
-        fileRecord.status = 'error';
+        fileRecord.status = 3;
         setFiles({ ...newFiles });
         continue;
       }
@@ -300,7 +300,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
           return newFiles;
         }),
       );
-      if (file.status === 'error' && onErrorRemove) {
+      if (file.status === 3 && onErrorRemove) {
         onErrorRemove(file.xhr!, file.blob, file);
       }
     }
