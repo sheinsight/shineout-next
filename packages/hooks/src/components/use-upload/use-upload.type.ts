@@ -12,7 +12,11 @@ export interface XhrResult {
 export interface FileRecord {
   name: string;
   process: number;
-  status: 'error' | 'success' | 'uploading';
+  /**
+   * @en 1: uploading, 2: success, 3: error
+   * @cn 1: 上传中, 2: 成功, 3: 失败
+   */
+  status: 1 | 2 | 3;
   blob: File;
   xhr?: XhrResult | void;
   message?: string;
