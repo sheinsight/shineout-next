@@ -1,11 +1,18 @@
-// import type { FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import { JssStyle } from 'jss';
+import { JssStyle, GenerateId } from 'jss';
 import handleStyle from './handleStyle';
 
 export { JssProvider } from 'react-jss';
 
-const packageJson = require('../../package.json');
+const config: {
+  generateId?: GenerateId;
+} = {};
+
+export const setJssConfig = (newConfig: { generateId?: GenerateId }) => {
+  Object.assign(config, newConfig);
+};
+
+const packageJson = require('../version');
 const version = packageJson.version;
 
 const stringToHash = (str: string) => {
@@ -25,16 +32,14 @@ export function generateClassName(version: string, prefix: string, ns: string, k
   return `${prefix}-${ns}${key}`
 }
 
-// function camelToDash(str: string): string {
-//   return str.replace(/([A-Z])/g, '-$1').toLowerCase();
-// }
-
 const createClassname = (rule: any, sheet: any) => {
-  const ns = sheet.options.classNamePrefix;
+  const options = sheet.options;
+  const ns = options.classNamePrefix;
   if (!ns) {
     console.warn('[sheinx/base]: styled should give namespace');
   }
   const prefix = 'so';
+  if (config.generateId) return config.generateId(rule, sheet);
   return generateClassName(version, prefix, ns, rule.key);
   // return `${prefix}${ns}${camelToDash(rule.key)}`;
 };
