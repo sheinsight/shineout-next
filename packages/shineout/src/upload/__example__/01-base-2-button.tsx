@@ -13,8 +13,8 @@ const App: React.FC = () => (
     action='//jsonplaceholder.typicode.com/posts'
     name='file'
     onSuccess={(_res, file) => file.name}
-    loading='正在上传...'
-    placeholder='点击上传'
+    loading='Uploading...'
+    placeholder='Click to upload'
   />
 );
 

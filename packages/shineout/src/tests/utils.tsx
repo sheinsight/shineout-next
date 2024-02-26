@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { generateClassName } from '@sheinx/shineout-style';
 
 export function classTest(element: Element, className: string, bool: boolean = true) {
   expect(element?.classList.contains(className)).toBe(bool);
@@ -134,11 +135,18 @@ type classNamesMapType = {
   [key: string]: string;
 };
 
-function convertCamelToDash(str: string): string {
+function _convertCamelToDash(str: string): string {
   return str
     .replace(/([A-Z])/g, '-$1')
     .replace(/^-/, '')
     .toLowerCase();
+}
+
+function convertHashClassName(componentsName: string, key: string): string {
+  const version = process.env.VERSION;
+  const prefix = 'so'
+  console.log('222', `${version}-${prefix}-${componentsName}--${key}`)
+  return generateClassName(version!, prefix, `${componentsName}-`, key);
 }
 
 // Automatically generate corresponding className according to jss type
@@ -147,11 +155,12 @@ export const createClassName = (
   originClasses: string[],
   originItemClasses: string[],
 ): classNamesMapType => {
-  const prefix = `so-${componentsName}-`;
+  // const prefix = `so-${componentsName}-`;
   const classNamesMap: classNamesMapType = {};
   const classes = [...originClasses, ...originItemClasses];
   classes.forEach((item) => {
-    classNamesMap[item] = `${prefix}${convertCamelToDash(item)}`;
+    // classNamesMap[item] = `${prefix}${convertCamelToDash(item)}`;
+    classNamesMap[item] = convertHashClassName(componentsName, item);
     if (!originItemClasses.includes(item)) classNamesMap[item] = `.${classNamesMap[item]}`;
   });
   return classNamesMap;

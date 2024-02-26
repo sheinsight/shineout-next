@@ -18,7 +18,7 @@ export default () => {
         <Input.Number name='age' title='age' rules={[rule.required(), rule.range(18, 100)]} />
       </Form.Item>
       <Form.Item label=''>
-        <Form.Submit>提交</Form.Submit>
+        <Form.Submit>Submit</Form.Submit>
       </Form.Item>
     </Form>
   );
