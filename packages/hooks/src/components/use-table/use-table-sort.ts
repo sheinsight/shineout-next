@@ -58,7 +58,7 @@ const useTableSort = <Item = any>(props: UseTableSorterProps<Item>) => {
        *  null means cancel sort
        */
       direction: 'desc' | 'asc' | null,
-      // menual true means sort by user not by default
+      // manual true means sort by user not by default
       manual: boolean = true,
       columnSorter: TableColumnItem<Item>['sorter'],
     ) => {
