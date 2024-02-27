@@ -64,14 +64,14 @@ const Debug = (props: CopyProps) => {
 
   const handleOpen = () => {
     navigate({
-      search: `?example=${name}`,
+      search: `?debug=${name}`,
     });
     setOpen(true);
   };
 
   const handleClose = () => {
     navigate({
-      search: `?tab=examples`,
+      search: `?tab=examples&example=${name}`,
     });
     setOpen(false);
   };
@@ -105,8 +105,8 @@ const Debug = (props: CopyProps) => {
   };
 
   useEffect(() => {
-    const example = searchParams.get('example');
-    if (example && example === name) {
+    const debug = searchParams.get('debug');
+    if (debug && debug === name) {
       setOpen(true);
     }
   }, []);

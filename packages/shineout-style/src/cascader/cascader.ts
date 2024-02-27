@@ -18,6 +18,8 @@ export type CascaderClasses = {
   wrapperPaddingBox: string;
   resultWrapper: string;
   result: string;
+  resultItem: string;
+  resultItemActive: string;
   resultAlignRight: string;
   resultAlignLeft: string;
   resultAlignCenter: string;
@@ -202,6 +204,22 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
     paddingRight: `calc(${token.cascaderSmallFontSize} + ${token.cascaderClearPadding})`,
+  },
+  resultItem: {
+    transition: 'color 0.3s',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    // hover
+    '&:hover': {
+      color: token.cascaderResultItemHoverColor,
+    },
+    // active
+    '&:active': {
+      color: token.cascaderResultItemActiveColor,
+    },
+  },
+  resultItemActive: {
+    color: token.cascaderResultItemCheckedColor,
   },
   resultTextWrapper: {
     display: 'flex',

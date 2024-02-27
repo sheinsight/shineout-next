@@ -272,4 +272,11 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @default true
    */
   focusSelected?: boolean;
+
+  /**
+   * @en Hide tag style, by default, the result is displayed in tag mode. After hiding the tag style, the result can be rendered by custom renderResult
+   * @cn 隐藏标签样式，默认情况下展示结果以标签模式分割，隐藏标签样式后可通过自定义 renderResult 渲染分割结果
+   * @default false
+   */
+  hideTag?: boolean;
 }
