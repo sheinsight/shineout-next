@@ -21,6 +21,7 @@ const Tag = (props: TagProps) => {
     onClose,
     style,
     backgroundColor,
+    inlineStyle,
     onKeyUp,
     onCompleted,
     onEnterPress,
@@ -67,13 +68,13 @@ const Tag = (props: TagProps) => {
   const renderChildren = () => {
     if (onClose) {
       return (
-        <div className={tagStyle.inline}>
+        <div className={classNames(inlineStyle && tagStyle.inline)}>
           <span>{children}</span>
         </div>
       );
     }
 
-    return <span>{children}</span>;
+    return <span className={classNames(inlineStyle && tagStyle.inline)}>{children}</span>;
   };
 
   const renderInput = () => {

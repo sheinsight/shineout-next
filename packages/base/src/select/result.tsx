@@ -164,6 +164,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         onClose={closeable && handleClose}
         onClick={handleClick}
         jssStyle={jssStyle as any}
+        inlineStyle
         data-soui-type={disabled === true ? 'dark' : undefined}
       >
         {content}
