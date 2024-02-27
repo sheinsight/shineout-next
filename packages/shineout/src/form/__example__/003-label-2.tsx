@@ -13,7 +13,7 @@ type FormProps = TYPE.Form.Props<any>;
 const alignArr: FormProps['labelVerticalAlign'][] = ['bottom', 'top', 'middle'];
 
 export default () => {
-  const [align, setAlign] = useState<FormProps['labelVerticalAlign']>('middle');
+  const [align, setAlign] = useState<FormProps['labelVerticalAlign']>('top');
   return (
     <>
       <div style={{ marginBottom: 24 }}>
