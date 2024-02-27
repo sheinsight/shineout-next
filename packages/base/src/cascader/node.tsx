@@ -117,6 +117,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
       <div className={classNames(styles.optionInner)}>
         {multiple && !(shouldFinal && hasChildren) && (
           <Checkbox
+            theme='dark'
             jssStyle={jssStyle}
             className={styles.optionCheckbox}
             checked={datum.getChecked(id)}

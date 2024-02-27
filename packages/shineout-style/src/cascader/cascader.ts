@@ -166,7 +166,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
         },
         '& $compressedIcon': {
           display: 'none',
-        }
+        },
       },
     },
     // not wrapperFocus
@@ -467,6 +467,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     right: 8,
     top: 9,
     fontSize: token.cascaderFontSize,
+    color: token.cascaderOptionIconColor,
     lineHeight: 0,
     verticalAlign: 'middle',
     '& svg': {
