@@ -1,7 +1,7 @@
 import { defineConfig } from 'father';
 export default defineConfig({
   umd: {
-    name: 'shineout',
+    name: 'Shineout',
     output: 'dist/umd2',
     externals: {
       react: {

@@ -52,4 +52,4 @@ export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.0.0-alpha.7' };
+export default { version: '3.0.0-alpha.10' };
