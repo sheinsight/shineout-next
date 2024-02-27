@@ -77,7 +77,7 @@ const App: React.FC = () => {
   const checkActive: MenuActive = (d: MenuItem) => active === d.id;
 
   return (
-    <div style={{ display: 'flex', gap: 20 }}>
+    <div style={{ display: 'flex', gap: 24 }}>
       <Menu
         keygen='id'
         frontCaret
