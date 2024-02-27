@@ -334,6 +334,12 @@ export interface CascaderTokens {
   cascaderOptionInnerBorderRadius: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 级联选择器选项图标颜色
+   */
+  cascaderOptionIconColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description 级联选择器选项鼠标移入时的背景颜色
    */

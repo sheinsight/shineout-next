@@ -100,6 +100,9 @@ const cascaderTokenExtraValue = {
       padding: { x: 'Padding-8', y: 'Padding-5', right: 'Size-15' },
       border: { radius: 'Radius-2' },
     },
+    icon: {
+      color: 'Neutral-text-4',
+    },
     hover: { background: { color: 'Neutral-fill-2' } },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
   },

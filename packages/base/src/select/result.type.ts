@@ -47,4 +47,9 @@ export interface ResultProps<DataItem, Value>
   getDataByValues: (values: Value) => (DataItem | UnMatchedData)[];
   checkUnMatched: (item: DataItem | UnMatchedData) => boolean;
   onRemove?: (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => void;
+  onResultItemClick?: (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    item: DataItem,
+    index?: number,
+  ) => void;
 }

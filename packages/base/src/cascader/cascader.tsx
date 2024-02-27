@@ -49,6 +49,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     underline,
     trim,
     loading,
+    singleRemove = false,
     loader,
     final,
     expandTrigger,
@@ -297,6 +298,26 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     if (open) closePop();
   };
 
+  const handleResultItemClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    item: DataItem,
+  ) => {
+    e.stopPropagation();
+    if (!open) {
+      openPop();
+    }
+    const id = datum.getKey(item);
+    const { path } = datum.getPath(id) || {};
+    if (!path) return;
+    handlePathChange(id, null, path as Value);
+  };
+
+  const handleRemove = (item: DataItem) => {
+    const id = datum.getKey(item);
+    datum.set(id, 0);
+    onChange?.(datum.getValue() as Value, item);
+  };
+
   const getDataByValues = (values?: Value) => {
     const nextValues = values
       ?.filter((v) => !util.isEmpty(v))
@@ -381,7 +402,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           jssStyle={jssStyle}
           size={size}
           value={value}
-          closeable={false}
+          closeable={singleRemove}
           data={data}
           focus={open}
           keygen={keygen}
@@ -404,7 +425,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           setInputText={setInputText}
           onFilter={handleFilter}
           onRef={inputRef}
+          onRemove={handleRemove}
           onResetFilter={onResetFilter}
+          onResultItemClick={handleResultItemClick}
           checkUnMatched={checkUnMatched}
           getDataByValues={getDataByValues as any}
         ></Result>
@@ -488,7 +511,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       cascaderList = cascaderList.concat(childs);
     }
 
-    const listStyle = data && data.length === 0 ? { height: 'auto', width: '100%' } : { height };
+    const listStyle =
+      data && data.length === 0
+        ? { height: 'auto', minHeight: 232, width: '100%' }
+        : { height, minHeight: 232 };
     return (
       <div className={classNames(styles.listContent)} style={listStyle}>
         {cascaderList}
