@@ -18,7 +18,7 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   const preIndex = usePrevious(startIndex);
   const [offsetY, setOffsetY] = useState(0);
 
-  const rowsInView = props.rowsInView === 0 ? props.data.length: props.rowsInView;
+  const rowsInView = props.rowsInView === 0 ? props.data.length : props.rowsInView;
 
   const sleft = props.scrollLeft !== undefined ? props.scrollLeft : innerLeft;
 
@@ -32,8 +32,14 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
   });
 
   const getTranslate = usePersistFn((left?: number, top?: number) => {
-    const l = left === undefined ? sleft : left;
-    const t = top === undefined ? innerTop + offsetY : top;
+    let l = left === undefined ? sleft : left;
+    let t = top === undefined ? innerTop + offsetY : top;
+    if (t < 0) {
+      t = 0;
+    }
+    if (l < 0) {
+      l = 0;
+    }
     return `translate3d(-${l}px, -${t}px, 0)`;
   });
 
@@ -122,7 +128,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
       scrollTop = max;
     }
     // 拖动滚动条后保持滚动位置
-    console.log(context.controlScrollRate, 'controlScrollRate')
     if (context.controlScrollRate !== null) {
       const top = context.controlScrollRate * max;
       updateIndexAndTopFromTop(top);
@@ -132,7 +137,6 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     }
     // 拖动滚动条
     if (fromDrag) {
-      console.log('fromDrag')
       const top = y * max;
       updateIndexAndTopFromTop(top);
       if (context.rateTimer) clearTimeout(context.rateTimer);

@@ -40,7 +40,6 @@ const UploadButton = <T,>(props: UploadButtonProps<T>) => {
   });
 
   const onSuccess: UploadButtonProps<T>['onSuccess'] = usePersistFn((value, file, data) => {
-    console.log('success');
     setProcess(-1);
     return props.onSuccess ? props.onSuccess(value, file, data) : value;
   });
