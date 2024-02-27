@@ -82,6 +82,7 @@ const tableStyle: JsStyles<TableClassType> = {
     boxSizing: 'border-box',
     position: 'relative',
     zIndex: 0,
+    minHeight: 0,
     fontSize: token.tableFontSize,
     '& table': {
       textAlign: 'left',

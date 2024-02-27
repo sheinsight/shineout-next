@@ -1,16 +1,41 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 
+const moveOffset = '-10px';
+const moveTime = '120ms';
+
 export type Class =
   | 'wrapper'
   | 'wrapperSmall'
   | 'wrapperLarge'
   | 'wrapperOpen'
   | 'title'
+  | 'top'
   | 'content'
-  | 'place';
+  | 'place'
+  | 'animation';
+
+const animation = {
+  '@keyframes movein': {
+    from: {
+      top: 0,
+    },
+    to: {
+      top: moveOffset,
+    },
+  },
+  '@keyframes moveout': {
+    from: {
+      top: moveOffset,
+    },
+    to: {
+      top: 0,
+    },
+  },
+};
 
 const innerTitle: JsStyles<Class> = {
+  ...animation,
   wrapper: {
     width: '100%',
     boxSizing: 'border-box',
@@ -18,41 +43,57 @@ const innerTitle: JsStyles<Class> = {
   },
   wrapperSmall: {},
   wrapperLarge: {},
+  animation: {},
   wrapperOpen: {
     display: 'block',
   },
   title: {
-    visibility: 'hidden',
     height: 'initial',
     lineHeight: token.lineHeightDynamic,
     fontSize: token.inputInnerFontSize,
     color: token.inputInnerFontColor,
-    '$wrapperSmall &': {
+    transition: `font-size ${moveTime} ease-in`,
+    '$wrapperSmall:not($wrapperOpen) $place &': {
       fontSize: token.inputInnerSmallFontSize,
     },
-    '$wrapperLarge &': {
+    '$wrapperLarge:not($wrapperOpen) $place &': {
       fontSize: token.inputInnerLargeFontSize,
+    },
+  },
+  top: {
+    opacity: '0',
+    '$wrapperOpen &': {
+      opacity: '1',
+    },
+    '$animation$wrapperOpen &': {
+      transition: `opacity 0s ease-in ${moveTime}`,
     },
   },
   place: {
     pointerEvents: 'none',
-    position: 'absolute',
-    visibility: 'visible',
-    transition: 'top 150ms linear 50ms, transform 150ms linear 50ms, font-size 150ms linear 50ms',
-    '$wrapperLarge &': {
-      transition: 'top 120ms linear 50ms, transform 120ms linear 50ms, font-size 120ms linear 50ms',
+    '& $title': {
+      position: 'relative',
+      top: 0,
     },
-    top: `50%`,
-    transform: 'translate3d(0, -50%, 0)',
+    '$animation$wrapperOpen &': {
+      transition: `opacity 0s ease-in ${moveTime}`,
+    },
+    '$animation$wrapperOpen & $title': {
+      animation: `$movein ${moveTime} ease-in`,
+    },
+    '$animation:not($wrapperOpen) & $title': {
+      animation: `$moveout ${moveTime} ease-in`,
+    },
+    position: 'absolute',
+    top: '0',
     left: '0',
     right: '0',
-    padding: 'inherit',
+    bottom: '0',
+    display: 'flex',
+    alignItems: 'center',
+    opacity: '1',
     '$wrapperOpen &': {
-      top: '0',
-      transform: 'translate3d(0, 0%, 0)',
-    },
-    '$wrapper:not($wrapperOpen) &': {
-      fontSize: 'inherit',
+      opacity: '0',
     },
   },
   content: {
