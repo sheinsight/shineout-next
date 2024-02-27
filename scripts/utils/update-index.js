@@ -89,6 +89,18 @@ function updateShineout() {
     },
     needPrettier: true,
   });
+
+  writeTemplate({
+    fileName: 'type.ts',
+    targetPath: path.join(__dirname, '../../packages', 'shineout', 'src'),
+    templatePath: path.join(__dirname, `../ejs/shineout.type.ts.ejs`),
+    ejsVars: {
+      files,
+      getComponentName,
+      version,
+    },
+    needPrettier: true,
+  });
 }
 
 function updateShineoutStyleVersion() {
