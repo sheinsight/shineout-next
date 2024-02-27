@@ -31,6 +31,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     height,
     className,
     size,
+    hideTag = false,
     maxLength,
     defaultValue,
     wideMatch,
@@ -343,7 +344,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   // innerTitle 模式
   const renderInnerTitle = useInnerTitle({
-    open: open || !!value,
+    open: open || (value && util.isArray(value) ? value.length > 0 : !!value),
     size,
     jssStyle,
     innerTitle,
@@ -394,6 +395,15 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
+  const renderResultContent = (contentProps: any) => {
+    const { children } = contentProps;
+    return (
+      <div {...contentProps} className={classNames(contentProps.className, styles.resultItem)}>
+        {children}
+      </div>
+    );
+  };
+
   const renderResult = () => {
     const result = (
       <div className={classNames(styles?.result)}>
@@ -402,7 +412,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           jssStyle={jssStyle}
           size={size}
           value={value}
-          closeable={singleRemove}
+          closeable={singleRemove && multiple}
           data={data}
           focus={open}
           keygen={keygen}
@@ -418,6 +428,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           renderResult={getRenderResult}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
+          renderResultContent={hideTag && multiple === false ? renderResultContent : undefined}
           allowOnFilter={'onFilter' in props || 'onAdvancedFilter' in props}
           focusSelected={focusSelected}
           inputText={inputText}

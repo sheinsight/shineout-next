@@ -37,6 +37,7 @@ export interface ResultProps<DataItem, Value>
   allowOnFilter: boolean;
   closeable?: boolean;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
+  renderResultContent?: (props: any) => React.ReactNode;
   setInputText: (text: string) => void;
   onCreate?: (text: string) => string | DataItem | undefined;
   onFilter?: (text: string) => void;
