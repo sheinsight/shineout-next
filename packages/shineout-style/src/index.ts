@@ -1,3 +1,4 @@
+import './normalize';
 export * from './alert';
 export * from './breadcrumb';
 export * from './button';
