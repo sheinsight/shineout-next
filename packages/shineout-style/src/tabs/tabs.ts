@@ -99,6 +99,12 @@ const getCardStyle = () => {
         borderRadius: `0 0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius}`,
       },
       '& $hr': { top: 0, height: 1, width: '100%' },
+      '& $cardHr': {
+        '&:after': {
+          top: 0,
+          bottom: 'auto',
+        },
+      },
       ...active({ top: -1, left: 0, right: 0, height: 1, background: '#FFFFFF' }),
     },
   };
@@ -560,7 +566,7 @@ const tabsStyle: JsStyles<TabsClass> = {
   lineInner: {
     // transition: 'all .2s',
     borderRadius: Token.tabsTabBorderRadius,
-    padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
+    padding: `${Token.tabsLineInnerPaddingY} ${Token.tabsLineInnerPaddingX}`,
   },
   fillInner: {
     // transition: 'all .2s',
@@ -665,7 +671,7 @@ const tabsStyle: JsStyles<TabsClass> = {
           lineHeight: 0,
           padding: `${Token.tabsActionHorizontalPaddingY} ${Token.tabsActionHorizontalPaddingX}`,
         },
-    
+
         '& $headerScroll': { display: 'inline-flex' },
         '&[data-soui-position^="top-left"]': {
           '& $headerScroll': { justifyContent: 'flex-start' },
@@ -689,9 +695,9 @@ const tabsStyle: JsStyles<TabsClass> = {
         ...getFillStyle(),
         ...getButtonStyle(),
         ...getHeaderStyle(),
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 export default tabsStyle;

@@ -3,9 +3,9 @@ import { TagProps as UnStyledTagProps, TagInputProps as UnStyledTagInputProps } 
 /**
  * @title Tag
  */
-export type TagProps = Omit<UnStyledTagProps, 'jssStyle'>;
+export type TagProps = Omit<UnStyledTagProps, 'jssStyle' | 'inlineStyle'>;
 
 /**
  * @title Tag.Input
  */
-export type TagInputProps = Omit<UnStyledTagInputProps, 'jssStyle'>;
+export type TagInputProps = Omit<UnStyledTagInputProps, 'jssStyle' | 'inlineStyle'>;

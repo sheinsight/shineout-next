@@ -20,9 +20,11 @@ import Result from '../select/result';
 import Icons from '../icons';
 import Tree from '../tree';
 
-export type TreeSelectValueType = KeygenResult | KeygenResult[]
+export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
-const TreeSelect = <DataItem, Value extends TreeSelectValueType>(props: TreeSelectProps<DataItem, Value>) => {
+const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
+  props: TreeSelectProps<DataItem, Value>,
+) => {
   const {
     jssStyle,
     className,
@@ -76,10 +78,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(props: TreeSele
     onExpand,
   } = props;
   const styles = jssStyle?.select?.() as TreeSelectClasses;
-  const rootStyle: React.CSSProperties = {
-    ...style,
-    width,
-  };
+  const rootStyle: React.CSSProperties = Object.assign({ width }, style);
 
   const datum = useRef<TreeContextProps<DataItem, Value>>();
   const blurEvent = useRef<(() => void) | null>();
@@ -300,6 +299,12 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(props: TreeSele
     return nextValue.length ? nextValue[0] : '';
   };
 
+  const getValueArray = (value?: Value) => {
+    if (!value) return [];
+    if (!Array.isArray(value)) return [value];
+    return value;
+  };
+
   const getContentClass = (data: DataItem) => {
     if (!datum.current) return '';
 
@@ -468,7 +473,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(props: TreeSele
       treeProps.expanded = expanded;
     }
 
-    const nextValue = util.isArray(valueProp) ? valueProp : [valueProp];
+    const nextValue = getValueArray(value);
 
     return (
       <div className={classNames(styles.tree)} style={{ maxHeight: height }}>

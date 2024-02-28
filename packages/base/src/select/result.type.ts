@@ -37,6 +37,7 @@ export interface ResultProps<DataItem, Value>
   allowOnFilter: boolean;
   closeable?: boolean;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;
+  renderResultContent?: (props: any) => React.ReactNode;
   setInputText: (text: string) => void;
   onCreate?: (text: string) => string | DataItem | undefined;
   onFilter?: (text: string) => void;
@@ -47,4 +48,9 @@ export interface ResultProps<DataItem, Value>
   getDataByValues: (values: Value) => (DataItem | UnMatchedData)[];
   checkUnMatched: (item: DataItem | UnMatchedData) => boolean;
   onRemove?: (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => void;
+  onResultItemClick?: (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    item: DataItem,
+    index?: number,
+  ) => void;
 }

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { util, KeygenResult } from '@sheinx/hooks';
 import { getLocale, useConfig } from '../config';
-import { TransferClasses } from './transfer.type';
+import { TransferClasses } from '@sheinx/shineout-style';
 import { TransferListProps } from './transfer-list.type';
 import TransferListItem from './transfer-list-item';
 import TransferListHeader from './transfer-list-header';
@@ -106,8 +106,9 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
       );
     }
     return (
-      <div className={styles.input}>
+      <div className={styles.inputWrapper}>
         <Input
+          className={styles.input}
           clearable
           jssStyle={jssStyle}
           value={filterText}
@@ -169,13 +170,14 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
         </div>
       );
     }
+
     return (
       <VirtualList
         className={listClass}
         data={data}
         colNum={colNum}
         keygen={keygen}
-        style={listStyle}
+        style={{ ...listStyle, height: listHeight }}
         lineHeight={getLineHeight()}
         height={listHeight}
         rowsInView={rowsInView}
@@ -194,7 +196,13 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
   return (
     <div className={rootClass}>
       {renderHeader()}
-      <Spin jssStyle={jssStyle} name='ring' loading={loading} size={24}>
+      <Spin
+        className={styles.spinContainer}
+        jssStyle={jssStyle}
+        name='ring'
+        loading={loading}
+        size={24}
+      >
         {onFilter && renderFilter()}
         {renderList()}
         {renderFooter()}

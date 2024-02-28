@@ -244,6 +244,24 @@ export interface CascaderTokens {
   cascaderResultTextActiveBackgroundColor: string;
   /**
    * @type {string}
+   * @token Brand-5
+   * @description 级联选择器结果undefined鼠标移入时的颜色
+   */
+  cascaderResultItemHoverColor: string;
+  /**
+   * @type {string}
+   * @token Brand-7
+   * @description 级联选择器结果undefined鼠标点击时的颜色
+   */
+  cascaderResultItemActiveColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 级联选择器结果undefinedundefined颜色
+   */
+  cascaderResultItemCheckedColor: string;
+  /**
+   * @type {string}
    * @token Danger-6
    * @description 级联选择器错误状态的边框颜色
    */
@@ -332,6 +350,12 @@ export interface CascaderTokens {
    * @description 级联选择器选项内部容器的边框圆角
    */
   cascaderOptionInnerBorderRadius: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 级联选择器选项图标颜色
+   */
+  cascaderOptionIconColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-2

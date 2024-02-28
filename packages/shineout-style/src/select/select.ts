@@ -64,6 +64,7 @@ export type SelectClasses = {
   columnsCheckbox: string;
   footer: string;
   moreIcon: string;
+  hideTag: string;
 };
 export type SelectClassType = keyof SelectClasses;
 
@@ -370,6 +371,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   loading: {
     padding: 10,
+    display: 'flex',
+    justifyContent: 'center',
   },
   checkedIcon: {
     right: 8,
@@ -380,6 +383,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     fontSize: token.selectFontSize,
   },
   moreIcon: {},
+  hideTag: {},
   list: {
     paddingTop: 3,
     paddingBottom: 3,
@@ -405,6 +409,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginTop: token.selectPlaceholderMarginY,
     marginBottom: token.selectPlaceholderMarginY,
     textWrap: 'nowrap',
+    '&$hideTag': {
+      marginRight: 0,
+    },
   },
   space: {
     marginTop: token.selectPlaceholderMarginY,
@@ -486,9 +493,10 @@ const selectStyle: JsStyles<SelectClassType> = {
     height: 32,
     padding: token.selectHeaderPadding,
     borderBottom: `1px solid ${token.selectHeaderBorderColor}`,
-
+    marginBottom: 4,
     '& $columnsCheckbox': {
       marginRight: 0,
+      marginLeft: 4,
       width: 'auto',
     },
   },
@@ -498,23 +506,27 @@ const selectStyle: JsStyles<SelectClassType> = {
   columns: {
     display: 'flex',
     alignItems: 'center',
+    padding: `0 ${token.selectOptionPaddingX}`,
     '& $optionGroupTitle': {
       padding: `0 ${token.selectHeaderPadding}`,
       marginLeft: token.selectColumnOptionMargin,
     },
   },
   columnsOption: {
-    // flex: 1,
     paddingLeft: token.selectColumnPadding,
     paddingRight: token.selectColumnPadding,
     lineHeight: 1,
     boxSizing: 'border-box',
     overflow: 'hidden',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
     '& $columnsCheckbox': {
       marginRight: 0,
     },
     '&:not($optionDisabled):hover': {
       background: token.selectColumnBackgroundColor,
+      borderRadius: token.selectColumnBorderRadius,
     },
   },
   columnsRadio: {
@@ -529,7 +541,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   columnsCheckbox: {
     width: '100%',
-    marginLeft: token.selectColumnOptionMargin,
+    // marginLeft: token.selectColumnOptionMargin,
+    marginLeft: 0,
     '& :last-child': {
       flex: 1,
       overflow: 'hidden',

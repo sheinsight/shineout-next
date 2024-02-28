@@ -11,7 +11,8 @@ interface ResultProps {
   removeAble: boolean;
   name: React.ReactNode;
   message?: React.ReactNode | undefined;
-  status: 'error' | 'success' | 'uploading' | 'deleted';
+  // error: 3, success: 2, uploading: 1, deleted: -1
+  status: 3 | 2 | 1 | -1;
   process?: number;
   jssStyle?: UploadProps<any>['jssStyle'];
   confirm?: PopoverConfirmProps | string;
@@ -41,11 +42,11 @@ const Result = (props: ResultProps) => {
           </div>
           <div className={uploadClasses?.resultTextFooter}>
             <div className={classNames(uploadClasses?.icon, uploadClasses?.resultStatusIcon)}>
-              {status === 'uploading' && <Spin jssStyle={props.jssStyle} size={10} name={'ring'} />}
-              {status === 'success' && icons.PcCheckCircleFill}
-              {status === 'error' && icons.PcWarningCircleFill}
+              {status === 1 && <Spin jssStyle={props.jssStyle} size={10} name={'ring'} />}
+              {status === 2 && icons.PcCheckCircleFill}
+              {status === 3 && icons.PcWarningCircleFill}
             </div>
-            {status === 'uploading' && props.process !== -1 && (
+            {status === 1 && props.process !== -1 && (
               <div>{Math.min(99, Math.floor(props.process || 0))}%</div>
             )}
           </div>
@@ -67,7 +68,7 @@ const Result = (props: ResultProps) => {
                 jssStyle={props.jssStyle}
               />
             )}
-            {status === 'deleted' ? icons.Return : icons.Delete}
+            {status === -1 ? icons.Return : icons.Delete}
           </div>
         )}
       </>
@@ -83,11 +84,11 @@ const Result = (props: ResultProps) => {
         )}
         onClick={props.onRemove}
       >
-        {status === 'deleted' ? icons.UndeleteOpaque : icons.CloseOpaqueMultic1}
+        {status === -1 ? icons.UndeleteOpaque : icons.CloseOpaqueMultic1}
       </div>
     );
 
-    const errorTip = status === 'error' && message && (
+    const errorTip = status === -1 && message && (
       <div className={uploadClasses?.imageResultTip}>{message}</div>
     );
     if (props.customImage) {
@@ -117,11 +118,11 @@ const Result = (props: ResultProps) => {
         <div
           className={classNames(
             uploadClasses?.imageResultMask,
-            (isConfirm || status === 'uploading') && uploadClasses?.imageResultMaskShow,
+            (isConfirm || status === 1) && uploadClasses?.imageResultMaskShow,
           )}
         >
           <div className={uploadClasses?.imageResultMaskOperator}>
-            {status === 'uploading' && (
+            {status === 1 && (
               <Spin
                 size={'null'}
                 jssStyle={props.jssStyle}
@@ -129,7 +130,7 @@ const Result = (props: ResultProps) => {
                 className={uploadClasses?.imageResultLoading}
               />
             )}
-            {(status === 'success' || status === 'deleted') && src && (
+            {(status === 2 || status === -1) && src && (
               <div
                 className={classNames(uploadClasses?.icon)}
                 onClick={() => {
@@ -145,7 +146,7 @@ const Result = (props: ResultProps) => {
                 {icons.Preview}
               </div>
             )}
-            {status === 'success' && props.removeAble && (
+            {status === 2 && props.removeAble && (
               <div
                 className={classNames(uploadClasses?.icon)}
                 onClick={confirmProps ? undefined : props.onRemove}
@@ -162,14 +163,14 @@ const Result = (props: ResultProps) => {
               </div>
             )}
           </div>
-          {status === 'uploading' && props.process !== -1 && (
+          {status === 1 && props.process !== -1 && (
             <div className={uploadClasses?.imageResultMaskInfo}>
               {Math.min(99, Math.floor(props.process || 0))}%
             </div>
           )}
         </div>
 
-        {status !== 'success' && props.removeAble && topBtn}
+        {status !== 2 && props.removeAble && topBtn}
         {errorTip}
       </>
     );
@@ -178,10 +179,10 @@ const Result = (props: ResultProps) => {
     <div
       className={classNames(
         listType === 'image' ? uploadClasses?.imageResult : uploadClasses?.result,
-        status === 'error' && uploadClasses?.resultError,
-        status === 'success' && uploadClasses?.resultSuccess,
-        status === 'uploading' && uploadClasses?.resultUploading,
-        status === 'deleted' && uploadClasses?.resultDeleted,
+        status === 3 && uploadClasses?.resultError,
+        status === 2 && uploadClasses?.resultSuccess,
+        status === 1 && uploadClasses?.resultUploading,
+        status === -1 && uploadClasses?.resultDeleted,
       )}
       style={listType === 'image' ? props.imageStyle : undefined}
     >

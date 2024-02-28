@@ -32,7 +32,6 @@ export * from './rate';
 export * from './rule';
 export * from './select';
 export * from './slider';
-export * from './select';
 export * from './spin';
 export * from './steps';
 export * from './sticky';
@@ -46,7 +45,6 @@ export * from './transfer';
 export * from './tree';
 export * from './tree-select';
 export * from './upload';
-export * from './collapse';
 
 export type { ObjectType } from '@sheinx/hooks';
 export { default as Icons } from './icons';

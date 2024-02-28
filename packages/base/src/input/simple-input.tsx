@@ -1,6 +1,6 @@
 import { useInput, useKeyEvent, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
-import React, { KeyboardEvent, useEffect } from 'react';
+import React, { KeyboardEvent } from 'react';
 import { SimpleInputProps } from './input.type';
 import Icons from '../icons';
 
@@ -17,16 +17,19 @@ const Input = (props: SimpleInputProps) => {
     underline,
     border = true,
     onEnterPress,
-    getStatus,
+    onFocusedChange,
     renderInput,
     addEnd,
     hasSuffix,
     ...rest
   } = props;
+
   const inputStyle = jssStyle?.input?.();
   const { getRootProps, getClearProps, getInputProps, showClear, focused, disabled } = useInput({
     ...rest,
+    onFocusedChange,
   });
+
   const rootClass = classNames(
     className,
     inputStyle?.wrapper,
@@ -56,12 +59,6 @@ const Input = (props: SimpleInputProps) => {
     onKeyUp,
   });
 
-  useEffect(() => {
-    if (getStatus) {
-      getStatus({ focused });
-    }
-  }, [focused]);
-
   let inputEl = <input type='text' {...inputProps} />;
 
   if (typeof renderInput === 'function') {
@@ -86,7 +83,7 @@ const Input = (props: SimpleInputProps) => {
       >
         {prefix}
         {inputEl}
-        {(showClear) && (
+        {showClear && (
           <div className={inputStyle?.clearWrapper} {...getClearProps()}>
             <span className={inputStyle?.clear}>{clearIcon || Icons.CloseOpaqueMultic1}</span>
           </div>

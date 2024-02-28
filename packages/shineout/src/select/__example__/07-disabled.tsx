@@ -10,7 +10,7 @@ import { Select } from 'shineout';
 export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32, width: 632 }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, width: 624 }}>
       <Select width={300} disabled data={data} keygen placeholder='Select Color' />
       <Select
         width={300}

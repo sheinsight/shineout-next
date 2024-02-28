@@ -22,7 +22,7 @@ export default () => {
 
   const renderTip = (name: string) => {
     return (
-      <span style={{ fontSize: 12, lineHeight: 'calc(1em + 8px)', display: 'inline-block' }}>
+      <span style={{ fontSize: 12, lineHeight: '20px', display: 'inline-block' }}>
         {name}
       </span>
     );

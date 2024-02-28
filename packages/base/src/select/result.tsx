@@ -31,6 +31,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     compressedClassName,
     renderUnmatched,
     renderResult: renderResultProp,
+    renderResultContent: renderResultContentProp,
     allowOnFilter,
     setInputText,
     onRef,
@@ -42,15 +43,15 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     getDataByValues,
     checkUnMatched,
     onRemove,
+    onResultItemClick,
   } = props;
-
   const value = (multiple ? valueProp : [valueProp]) as Value;
 
   const [more, setMore] = useState(-1);
 
   const resultRef = useRef<HTMLDivElement>(null);
   const shouldResetMore = useRef(false);
-  const showInput = allowOnFilter;
+  const showInput = allowOnFilter && focus;
 
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootClass = classNames(
@@ -69,6 +70,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       return compressedBound;
     }
     return more;
+  };
+
+  const handleResultItemClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    item: DataItem,
+  ) => {
+    onResultItemClick?.(e, item);
   };
 
   const renderInput = () => {
@@ -109,7 +117,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return renderResultProp(data as DataItem, index, nodes);
   };
 
-  const renderItem = (
+  const renderResultItem = (
     item: DataItem | UnMatchedData,
     index: number,
     nodes?: (DataItem | UnMatchedData)[],
@@ -139,6 +147,27 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     } else {
       resultClassName = props.resultClassName;
     }
+
+    const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      handleResultItemClick(e, item as DataItem);
+    };
+
+    const content = renderResultContent(item, index, nodes);
+
+    if (!content) return null;
+
+    if (renderResultContentProp) {
+      return renderResultContentProp({
+        key,
+        size,
+        disabled: isDisabled,
+        className: classNames(styles.tag, styles.hideTag, resultClassName),
+        children: content,
+        onClick: handleClick,
+        'data-soui-type': disabled === true ? 'dark' : undefined,
+      });
+    }
+
     return (
       <Tag
         key={key}
@@ -146,10 +175,12 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         size={size}
         className={classNames(styles.tag, resultClassName)}
         onClose={closeable && handleClose}
+        onClick={handleClick}
         jssStyle={jssStyle as any}
+        inlineStyle={true}
         data-soui-type={disabled === true ? 'dark' : undefined}
       >
-        {renderResultContent(item, index, nodes)}
+        {content}
       </Tag>
     );
   };
@@ -211,7 +242,17 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       nextValue = valueProp.split(separator) as Value;
     }
     const values = getDataByValues(nextValue);
-    const result = values.map((v, i) => renderItem(v, i, values));
+    const result = values.map((v, i) => {
+      if (renderResultContentProp && i !== values.length - 1) {
+        return [
+          renderResultItem(v, i, values),
+          <span key={`separator-${i}`} className={classNames(styles.tag, styles.hideTag)}>
+            /
+          </span>,
+        ];
+      }
+      return renderResultItem(v, i, values);
+    });
     return result;
   };
 

@@ -3,9 +3,10 @@ export { default as Breadcrumb } from './breadcrumb';
 export { default as Button } from './button';
 export { default as Card } from './card';
 export { default as CardGroup } from './card-group';
-export { default as Cascader } from './cascader';
 export { default as Carousel } from './carousel';
+export { default as Cascader } from './cascader';
 export { default as Checkbox } from './checkbox';
+export { default as Collapse } from './collapse';
 export { default as DatePicker } from './date-picker';
 export { default as Descriptions } from './descriptions';
 export { default as Divider } from './divider';
@@ -44,9 +45,11 @@ export { default as Transfer } from './transfer';
 export { default as Tree } from './tree';
 export { default as TreeSelect } from './tree-select';
 export { default as Upload } from './upload';
-export { default as Collapse } from './collapse';
+
 export { setConfig, config, setLocale } from '@sheinx/base';
-export * from './deprecated';
 export * as utls from './utils';
+export * from './deprecated';
 
 export * as TYPE from './type';
+
+export default { version: '3.0.0-alpha.10' };

@@ -42,14 +42,14 @@ const tabsTokenValue = {
   },
   click: { font: { color: '' }, background: { color: 'Neutral-fill-4' }, border: { color: '' } },
   tab: {
-    padding: { x: 'Padding-16', y: 'Padding-10' },
+    padding: { x: 'Padding-15', y: 'Padding-9' },
     font: { size: '14/regular' },
     border: { radius: 'Radius-4' },
   },
   nearly: { margin: 'Margin-4' },
   line: {
-    padding: { x: 'Padding-8', y: 'Padding-4' },
-    inner: { padding: { x: 'Padding-8', y: 'Padding-3' } },
+    padding: { x: 'Padding-8', y: 'Padding-6' },
+    inner: { padding: { x: 'Padding-8', y: 'Padding-4' } },
   },
   fill: {
     padding: { x: 'Padding-4', y: 'Padding-4' },

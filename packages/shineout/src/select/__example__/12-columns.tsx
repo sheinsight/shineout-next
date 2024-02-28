@@ -36,7 +36,7 @@ export default () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ display: 'flex', gap: 24 }}>
       <Select
         width={300}
         data={data}
@@ -46,7 +46,6 @@ export default () => {
         renderItem={renderItem}
       />
       <Select
-        style={{ marginLeft: 32 }}
         multiple
         compressed
         compressedBound={2}

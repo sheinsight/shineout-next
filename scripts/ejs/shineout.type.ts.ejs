@@ -1,0 +1,5 @@
+<% files.forEach(function (file, i) { -%>
+  export * as <%= getComponentName(file) %>  from './<%= file %>/interface';
+  <% }) -%>
+  
+  

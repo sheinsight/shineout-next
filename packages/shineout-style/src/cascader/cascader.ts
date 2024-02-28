@@ -3,6 +3,7 @@ import { JsStyles } from '../jss-style';
 import border from '../input/input-border';
 
 export type CascaderClasses = {
+  empty: string;
   wrapper: string;
   wrapperDisabled: string;
   wrapperSmall: string;
@@ -17,6 +18,8 @@ export type CascaderClasses = {
   wrapperPaddingBox: string;
   resultWrapper: string;
   result: string;
+  resultItem: string;
+  resultItemActive: string;
   resultAlignRight: string;
   resultAlignLeft: string;
   resultAlignCenter: string;
@@ -32,6 +35,7 @@ export type CascaderClasses = {
   pickerWrapper: string;
   clearable: string;
   clearIcon: string;
+  compressedIcon: string;
   arrowIconOpen: string;
   arrowIcon: string;
   ellipsis: string;
@@ -106,6 +110,7 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const cascaderStyle: JsStyles<CascaderClassType> = {
+  empty: {},
   wrapper: {
     display: 'inline-block',
     position: 'relative',
@@ -152,6 +157,26 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
         right: token.cascaderLargePaddingX,
       },
     },
+    // hover
+    '&:hover': {
+      '& $clearIcon': {
+        display: 'inline-block',
+      },
+      '&$clearable:not($empty)': {
+        '& :not($compressedIcon)$arrowIcon': {
+          display: 'none',
+        },
+        '& $compressedIcon': {
+          display: 'none',
+        },
+      },
+    },
+    // not wrapperFocus
+    '&:not($wrapperFocus)': {
+      '& $clearIcon': {
+        display: 'none',
+      },
+    },
   },
   wrapperDisabled: {
     ...wrapperDisabled,
@@ -179,6 +204,22 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
     paddingRight: `calc(${token.cascaderSmallFontSize} + ${token.cascaderClearPadding})`,
+  },
+  resultItem: {
+    transition: 'color 0.3s',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    // hover
+    '&:hover': {
+      color: token.cascaderResultItemHoverColor,
+    },
+    // active
+    '&:active': {
+      color: token.cascaderResultItemActiveColor,
+    },
+  },
+  resultItemActive: {
+    color: token.cascaderResultItemCheckedColor,
   },
   resultTextWrapper: {
     display: 'flex',
@@ -304,6 +345,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     color: token.cascaderClearColor,
     verticalAlign: 'middle',
   },
+  compressedIcon: {},
   arrowIcon: {
     position: 'absolute',
     right: token.cascaderPaddingX,
@@ -416,6 +458,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     },
   },
   filterDisabledOption: {},
+  filterOptionSeparator: {},
   activeOption: {
     '& $optionInner': {
       color: token.cascaderOptionActiveColor,
@@ -442,6 +485,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     right: 8,
     top: 9,
     fontSize: token.cascaderFontSize,
+    color: token.cascaderOptionIconColor,
     lineHeight: 0,
     verticalAlign: 'middle',
     '& svg': {

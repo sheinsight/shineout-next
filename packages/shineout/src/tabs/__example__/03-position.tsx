@@ -8,7 +8,7 @@
  *    -- Currently supported positions are top-left, top-right, bottom-left, bottom-right, left-top, right-top
  */
 import { useState } from 'react';
-import { Tabs, Radio } from 'shineout';
+import { Tabs, Radio, Form } from 'shineout';
 
 export default () => {
   const [shape, setShape] = useState('line');
@@ -36,20 +36,16 @@ export default () => {
 
   return (
     <div>
-      <Radio.Group
-        keygen
-        data={shapes}
-        value={shape}
-        onChange={setShape}
-        style={{ marginBottom: 16 }}
-      />
-      <Radio.Group
-        keygen
-        data={positions}
-        value={position}
-        onChange={setPosition}
-        style={{ marginBottom: 24 }}
-      />
+      <Form labelWidth={65} labelAlign='left'>
+        <Form.Item label='Position:' style={{ marginBottom: 16 }}>
+          <Radio.Group keygen data={positions} value={position} onChange={setPosition} />
+        </Form.Item>
+
+        <Form.Item label='Type:' style={{ marginBottom: 24 }}>
+          <Radio.Group keygen data={shapes} value={shape} onChange={setShape} />
+        </Form.Item>
+      </Form>
+
       <div style={{ height: 150 }}>
         <Tabs shape={shape as any} position={position as any} autoFill defaultActive={0}>
           {tabs.map((tab, index) => {

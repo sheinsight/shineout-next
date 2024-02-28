@@ -49,7 +49,6 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   };
 
   const result = renderItem(data);
-  // [TODO] title 可能是 ReactNode，这种情况无法展示 title
   const title = typeof result === 'string' ? result : '';
 
   return (

@@ -51,6 +51,7 @@ const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataIt
     return (
       <Radio
         theme='dark'
+        style={{ height: '100%', margin: 0 }}
         className={styles.columnsRadio}
         jssStyle={jssStyle}
         size={size}

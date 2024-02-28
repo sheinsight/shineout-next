@@ -61,6 +61,7 @@ export default () => {
         renderItem={renderItem}
       />
       <Cascader
+        clearable
         width={300}
         disabled={handleDisabled}
         placeholder='Please select city'
@@ -80,6 +81,7 @@ export default () => {
         renderItem={renderItem}
       />
       <Cascader
+        clearable
         mode={0}
         onChange={(v) => console.log(v)}
         width={300}

@@ -1,31 +1,36 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
 
-type TransferClass =
-  | 'transfer'
-  | 'small'
-  | 'large'
-  | 'simple'
-  | 'view'
-  | 'source'
-  | 'target'
-  | 'close'
-  | 'removeAll'
-  | 'simpleTarget'
-  | 'operations'
-  | 'input'
-  | 'left'
-  | 'right'
-  | 'header'
-  | 'title'
-  | 'count'
-  | 'list'
-  | 'item'
-  | 'disabled'
-  | 'checkbox'
-  | 'itemWrapper'
-  | 'footer'
-  | 'empty';
+export interface TransferClasses {
+  transfer: string;
+  small: string;
+  large: string;
+  simple: string;
+  view: string;
+  source: string;
+  target: string;
+  close: string;
+  removeAll: string;
+  simpleTarget: string;
+  operations: string;
+  input: string;
+  inputWrapper: string;
+  left: string;
+  right: string;
+  header: string;
+  spinContainer: string;
+  title: string;
+  count: string;
+  list: string;
+  footer: string;
+  item: string;
+  disabled: string;
+  itemWrapper: string;
+  checkbox: string;
+  empty: string;
+}
+
+export type TransferClass = keyof TransferClasses;
 
 const TransferStyle: JsStyles<TransferClass> = {
   transfer: {
@@ -52,6 +57,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
     '& $title,$count,$simpleTarget,$removeAll': { fontSize: Token.transferLargeFontSize },
     '& $close': { width: 24 },
+    '& $left, & $right': {
+      padding: 0,
+    },
   },
   simple: {
     '& $source': {
@@ -105,7 +113,9 @@ const TransferStyle: JsStyles<TransferClass> = {
     },
   },
   close: {
-    width: 24,
+    width: 22,
+    height: 22,
+    flexShrink: 0,
     borderRadius: '50%',
     minWidth: 12,
     fontSize: 12,
@@ -133,9 +143,11 @@ const TransferStyle: JsStyles<TransferClass> = {
       width: 14,
     },
   },
-  input: {
+  inputWrapper: {
     padding: '6px 12px',
-    '& svg': {
+  },
+  input: {
+    '& > div > svg': {
       width: 14,
       minWidth: 14,
       color: Token.transferIconColor,
@@ -154,6 +166,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     justifyContent: 'space-between',
     background: Token.transferHeaderBackgroundColor,
   },
+  spinContainer: {},
   title: {
     display: 'flex',
     alignItems: 'center',
@@ -201,7 +214,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  }
+  },
 };
 
 export default TransferStyle;

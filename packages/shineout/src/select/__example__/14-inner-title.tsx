@@ -16,7 +16,6 @@ export default () => {
         width={300}
         data={data}
         keygen
-        placeholder='Select Color'
       />
     </div>
   );

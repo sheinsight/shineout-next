@@ -30,7 +30,6 @@ const FilterNode = <DataItem, Value extends KeygenResult[]>(
     const keys = data.slice(0, index + 1).map((i: DataItem) => datum.getKey(i)) as Value;
     if (onChange) onChange(keys);
     onPathChange(datum.getKey(item), item, keys.slice(0, keys.length - 1) as Value, true);
-    // TODO: 清空输入框内容
     setInputText('');
     setFilterText('');
   };

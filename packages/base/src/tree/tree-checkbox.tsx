@@ -17,6 +17,7 @@ const TreeCheckbox = (props: TreeCheckboxProps) => {
 
   return (
     <Checkbox
+      theme='dark'
       className={className}
       jssStyle={jssStyle}
       checked={checked}

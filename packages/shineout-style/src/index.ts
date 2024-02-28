@@ -2,10 +2,11 @@ export * from './alert';
 export * from './breadcrumb';
 export * from './button';
 export * from './card';
-export * from './cascader';
 export * from './card-group';
 export * from './carousel';
+export * from './cascader';
 export * from './checkbox';
+export * from './collapse';
 export * from './date-picker';
 export * from './descriptions';
 export * from './divider';
@@ -41,10 +42,11 @@ export * from './transfer';
 export * from './tree';
 export * from './tree-select';
 export * from './upload';
+export * from './version';
 export * from './virtual-scroll';
-export * from './collapse';
 
-export { styled, StyleProvider } from './jss-style';
+export { styled, setJssConfig, generateClassName } from './jss-style';
+
 export * as mixins from './mixin';
 
 export default {};

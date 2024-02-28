@@ -31,6 +31,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     height,
     className,
     size,
+    hideTag = false,
     maxLength,
     defaultValue,
     wideMatch,
@@ -49,6 +50,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     underline,
     trim,
     loading,
+    singleRemove = false,
     loader,
     final,
     expandTrigger,
@@ -73,13 +75,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     onFilter: onFilterProp,
     onCollapse: onCollapseProp,
   } = props;
+
   const styles = jssStyle?.cascader?.() as CascaderClasses;
-  const rootStyle: React.CSSProperties = {
-    ...style,
-    width,
-  };
+  const rootStyle: React.CSSProperties = Object.assign({ width }, style);
+
   const [focused, setFocused] = useState(false);
-  const [enter] = useState(false);
   const [path, setPath] = useState<KeygenResult[]>([]);
   const isPreventBlur = useRef(false);
   const blurEvent = useRef<(() => void) | null>();
@@ -142,8 +142,22 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     position: positionProp as any,
   });
 
+  const checkEmpty = () => {
+    let isEmpty;
+    if (mode !== undefined) {
+      isEmpty = !value || (Array.isArray(value) && value.length === 0);
+    } else {
+      isEmpty = util.isEmpty(value);
+    }
+
+    return isEmpty;
+  };
+
+  const isEmpty = checkEmpty();
+
   const rootClass = classNames(
     className,
+    isEmpty && styles.empty,
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,
@@ -284,6 +298,26 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     if (open) closePop();
   };
 
+  const handleResultItemClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    item: DataItem,
+  ) => {
+    e.stopPropagation();
+    if (!open) {
+      openPop();
+    }
+    const id = datum.getKey(item);
+    const { path } = datum.getPath(id) || {};
+    if (!path) return;
+    handlePathChange(id, null, path as Value);
+  };
+
+  const handleRemove = (item: DataItem) => {
+    const id = datum.getKey(item);
+    datum.set(id, 0);
+    onChange?.(datum.getValue() as Value, item);
+  };
+
   const getDataByValues = (values?: Value) => {
     const nextValues = values
       ?.filter((v) => !util.isEmpty(v))
@@ -309,40 +343,63 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   // innerTitle 模式
   const renderInnerTitle = useInnerTitle({
-    open: open || !!value,
+    open: open || (value && util.isArray(value) ? value.length > 0 : !!value),
     size,
     jssStyle,
     innerTitle,
   });
 
   const renderClearable = () => {
-    return (
-      <span className={styles.clearIcon} onClick={handleClear}>
-        {Icons.PcCloseCircleFill}
+    if (!mode !== undefined && !showArrow) return null;
+    const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
+    const arrow = (
+      <span
+        className={classNames(
+          compressed && styles.compressedIcon,
+          styles.arrowIcon,
+          open && !compressed && styles.arrowIconOpen,
+        )}
+        onClick={handleResultClick}
+      >
+        {defaultIcon}
       </span>
+    );
+    return (
+      <>
+        <span className={styles.clearIcon} onClick={handleClear}>
+          {Icons.PcCloseCircleFill}
+        </span>
+        {!open && !isEmpty && arrow}
+      </>
     );
   };
 
   const renderIcon = () => {
-    let isEmpty;
-    if (mode !== undefined) {
-      isEmpty = !value || (Array.isArray(value) && value.length === 0);
-    } else {
-      isEmpty = util.isEmpty(value);
-    }
-
-    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && enter && disabled !== true)) {
+    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && disabled !== true)) {
       return renderClearable();
     }
     if (!mode !== undefined && !showArrow) return null;
     const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
     return (
       <span
-        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        className={classNames(
+          compressed && styles.compressedIcon,
+          styles.arrowIcon,
+          open && !compressed && styles.arrowIconOpen,
+        )}
         onClick={handleResultClick}
       >
         {defaultIcon}
       </span>
+    );
+  };
+
+  const renderResultContent = (contentProps: any) => {
+    const { children } = contentProps;
+    return (
+      <div {...contentProps} className={classNames(contentProps.className, styles.resultItem)}>
+        {children}
+      </div>
     );
   };
 
@@ -354,7 +411,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           jssStyle={jssStyle}
           size={size}
           value={value}
-          closeable={false}
+          closeable={singleRemove && multiple}
           data={data}
           focus={open}
           keygen={keygen}
@@ -370,6 +427,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           renderResult={getRenderResult}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
+          renderResultContent={hideTag && multiple === false ? renderResultContent : undefined}
           allowOnFilter={'onFilter' in props || 'onAdvancedFilter' in props}
           focusSelected={focusSelected}
           inputText={inputText}
@@ -377,7 +435,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           setInputText={setInputText}
           onFilter={handleFilter}
           onRef={inputRef}
+          onRemove={handleRemove}
           onResetFilter={onResetFilter}
+          onResultItemClick={handleResultItemClick}
           checkUnMatched={checkUnMatched}
           getDataByValues={getDataByValues as any}
         ></Result>
@@ -461,7 +521,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       cascaderList = cascaderList.concat(childs);
     }
 
-    const listStyle = data && data.length === 0 ? { height: 'auto', width: '100%' } : { height };
+    const listStyle =
+      data && data.length === 0
+        ? { height: 'auto', minHeight: 232, width: '100%' }
+        : { height, minHeight: 232 };
     return (
       <div className={classNames(styles.listContent)} style={listStyle}>
         {cascaderList}

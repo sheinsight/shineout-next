@@ -81,6 +81,17 @@ const cascaderTokenExtraValue = {
       large: { padding: { x: 'Padding-10' } },
       active: { background: { color: 'Brand-1' } },
     },
+    item: {
+      hover: {
+        color: 'Brand-5',
+      },
+      active: {
+        color: 'Brand-7',
+      },
+      checked: {
+        color: 'Brand-6',
+      },
+    },
   },
   error: { border: { color: 'Danger-6' }, focus: { shadow: 'Danger-1' } },
   panel: {
@@ -99,6 +110,9 @@ const cascaderTokenExtraValue = {
     inner: {
       padding: { x: 'Padding-8', y: 'Padding-5', right: 'Size-15' },
       border: { radius: 'Radius-2' },
+    },
+    icon: {
+      color: 'Neutral-text-4',
     },
     hover: { background: { color: 'Neutral-fill-2' } },
     disabled: { color: 'Neutral-text-2', background: { color: 'Neutral-fill-1' } },
