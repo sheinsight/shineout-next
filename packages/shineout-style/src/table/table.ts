@@ -229,7 +229,7 @@ const tableStyle: JsStyles<TableClassType> = {
   cellAlignRight: { textAlign: 'right' },
   cellFixedLast: {},
   cellCheckbox: {
-    width: '0',
+    width: '42px',
   },
   cellGroup: {
     textAlign: 'center',

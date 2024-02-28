@@ -199,7 +199,7 @@ export default (props: TheadProps) => {
               )}
             </div>
           )}
-          {renderDrag(colTemp.index)}
+          {colTemp.type !== 'checkbox' ? renderDrag(colTemp.index) : null}
         </th>,
       );
       return;
