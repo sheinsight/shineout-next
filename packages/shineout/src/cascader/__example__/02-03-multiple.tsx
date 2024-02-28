@@ -1,13 +1,11 @@
 /**
  * cn -
- *    -- 通过`renderResult`支持自定义渲染结果
+ *    -- 当`compressed`属性值为 'no-repeat' 时，合并的选项中不会出现结果框中的重复内容
  * en -
- *    -- Support custom rendering results through `renderResult`
+ *    -- When the value of the `compressed` property is 'no-repeat', the repeated content in the merged options will not appear in the result box
  */
 import React from 'react';
-import { Cascader, TYPE } from 'shineout';
-
-type CascaderProps = TYPE.Cascader.Props<DataItem, string[]>;
+import { Cascader } from 'shineout';
 
 interface DataItem {
   value: string;
@@ -23,6 +21,9 @@ const data: DataItem[] = [
         children: [
           {
             value: 'jiangning',
+          },
+          {
+            value: 'yuhuatai',
           },
         ],
       },
@@ -44,19 +45,17 @@ const data: DataItem[] = [
 ];
 
 export default () => {
-  const renderResult: CascaderProps['renderResult'] = (node) => {
-    return node.value.toLocaleUpperCase();
-  };
-
   return (
     <div>
       <Cascader
-        width={300}
         clearable
+        multiple
+        mode={0}
+        compressed='no-repeat'
+        width={300}
         placeholder='Please select city'
         data={data}
         keygen='value'
-        renderResult={renderResult}
         renderItem={(n) => `${n?.value}`}
       />
     </div>

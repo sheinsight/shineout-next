@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
@@ -13,6 +13,7 @@ const Anchor = (props: AnchorProps) => {
   const { anchorName, data } = props;
   const classes = useStyles();
   const location = useLocation();
+  const navigate = useNavigate();
   const state = useSnapshot(store);
 
   const anchorClasses = classnames(classes.anchor, {
@@ -28,8 +29,10 @@ const Anchor = (props: AnchorProps) => {
     const layout = document.getElementById('layout');
     const target = document.getElementById(`${anchorName}-${activeAnchor}`);
     layout?.scrollTo(0, (target?.offsetTop as number) - (anchorName === 'example' ? 10 : 200));
-
     dispatch.setActiveAnchor(activeAnchor, true);
+    navigate({
+      search: `tab=${state.doctab}&${anchorName}=${activeAnchor}`,
+    });
     setTimeout(() => {
       dispatch.setLocked(false);
     });

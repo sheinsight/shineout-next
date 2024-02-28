@@ -124,6 +124,10 @@ export interface BaseTagProps
    * @cn 可编辑输入框回车事件
    */
   onEnterPress?: (value: string, e: React.KeyboardEvent<HTMLInputElement>) => void;
+  /**
+   * 内部属性，用于控制截断样式
+   */
+  inlineStyle?: boolean;
 }
 
 export interface BaseTagInputProps extends Pick<CommonType, 'style' | 'className' | 'size'> {

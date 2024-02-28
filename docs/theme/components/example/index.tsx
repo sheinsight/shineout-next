@@ -18,7 +18,7 @@ const Example = (props: ExampleProps) => {
   const classes = useStyles();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const hasDebug = !!searchParams.get('example');
+  const hasDebug = !!searchParams.get('debug');
 
   const state = useSnapshot(store);
   const [open, setOpen] = useState(false);

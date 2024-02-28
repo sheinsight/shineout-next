@@ -29,7 +29,7 @@ const App: React.FC = () => (
       <div style={{ margin: 'auto', fontSize: 12, textAlign: 'center', lineHeight: '16px' }}>
         <AddIcon />
         <div style={{ marginTop: 16, color: '#666c7c' }}>Upload Image</div>
-        <div style={{ marginTop: 4, color: '#666c7c' }}>Allow size 200 * 100</div>
+        <div style={{ marginTop: 4, color: '#999DA8' }}>Allow size 200 * 100</div>
       </div>
     </div>
   </Upload.Image>

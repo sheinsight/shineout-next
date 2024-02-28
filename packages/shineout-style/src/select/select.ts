@@ -64,6 +64,7 @@ export type SelectClasses = {
   columnsCheckbox: string;
   footer: string;
   moreIcon: string;
+  hideTag: string;
 };
 export type SelectClassType = keyof SelectClasses;
 
@@ -382,6 +383,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     fontSize: token.selectFontSize,
   },
   moreIcon: {},
+  hideTag: {},
   list: {
     paddingTop: 3,
     paddingBottom: 3,
@@ -407,6 +409,9 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginTop: token.selectPlaceholderMarginY,
     marginBottom: token.selectPlaceholderMarginY,
     textWrap: 'nowrap',
+    '&$hideTag': {
+      marginRight: 0,
+    },
   },
   space: {
     marginTop: token.selectPlaceholderMarginY,

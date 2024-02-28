@@ -31,6 +31,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     compressedClassName,
     renderUnmatched,
     renderResult: renderResultProp,
+    renderResultContent: renderResultContentProp,
     allowOnFilter,
     setInputText,
     onRef,
@@ -152,8 +153,20 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     };
 
     const content = renderResultContent(item, index, nodes);
-    
+
     if (!content) return null;
+
+    if (renderResultContentProp) {
+      return renderResultContentProp({
+        key,
+        size,
+        disabled: isDisabled,
+        className: classNames(styles.tag, styles.hideTag, resultClassName),
+        children: content,
+        onClick: handleClick,
+        'data-soui-type': disabled === true ? 'dark' : undefined,
+      });
+    }
 
     return (
       <Tag
@@ -164,6 +177,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         onClose={closeable && handleClose}
         onClick={handleClick}
         jssStyle={jssStyle as any}
+        inlineStyle={true}
         data-soui-type={disabled === true ? 'dark' : undefined}
       >
         {content}
@@ -228,7 +242,17 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       nextValue = valueProp.split(separator) as Value;
     }
     const values = getDataByValues(nextValue);
-    const result = values.map((v, i) => renderResultItem(v, i, values));
+    const result = values.map((v, i) => {
+      if (renderResultContentProp && i !== values.length - 1) {
+        return [
+          renderResultItem(v, i, values),
+          <span key={`separator-${i}`} className={classNames(styles.tag, styles.hideTag)}>
+            /
+          </span>,
+        ];
+      }
+      return renderResultItem(v, i, values);
+    });
     return result;
   };
 

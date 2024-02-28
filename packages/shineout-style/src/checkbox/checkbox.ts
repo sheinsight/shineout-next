@@ -67,7 +67,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       background: 'transparent',
       borderRadius: '50%',
     },
-    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &': {
+    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &:not($darkIndicatorWrapper)': {
       '&::before': {
         background: token.checkboxIconCircleFill,
       },
@@ -78,7 +78,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     },
   },
   darkIndicatorWrapper: {
-    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &': {
+    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled) &:hover': {
       '&::before': {
         background: token.checkboxIconCircleDark,
       },
