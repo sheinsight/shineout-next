@@ -66,6 +66,8 @@ export interface InputPropsOwn {
   onClear?: () => void;
   // 否显示清除按钮(受控)
   showClear?: boolean;
+  // focus状态改变
+  onFocusedChange?: (focused?: boolean) => void;
 }
 
 export interface BaseInputProps

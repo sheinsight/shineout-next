@@ -19,7 +19,6 @@ const UploadButton = <T,>(props: UploadButtonProps<T>) => {
     customResult: undefined,
     drop: false,
     multiple: false,
-    gapProps: undefined,
     leftHandler: false,
     onPreview: undefined,
     renderContent: undefined,
