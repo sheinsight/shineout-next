@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { usePersistFn, usePrevious } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { CommonType } from './type';
@@ -27,13 +27,14 @@ export interface InnerTitleProps {
 }
 
 const useInnerTitle = (props: InnerTitleProps) => {
-  const { innerTitle, open, placeTitle, size, jssStyle } = props;
+  const { innerTitle, placeTitle, size, jssStyle } = props;
   const [animation, setAnimation] = useState(false);
-  const prevOpen = usePrevious(open);
+  const open = !!props.open;
+  const prevOpen = usePrevious(!!open);
   const innerTitleStyle = jssStyle?.innerTitle?.();
-  useEffect(() => {
-    if (open !== prevOpen) setAnimation(true);
-  }, [open]);
+  if (props.innerTitle && !open !== !prevOpen && !animation) {
+    setAnimation(true);
+  }
   const renderInput = usePersistFn((el: React.ReactElement) => {
     if (!innerTitle) return el;
 

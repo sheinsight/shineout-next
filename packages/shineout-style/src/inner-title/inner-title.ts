@@ -64,8 +64,6 @@ const innerTitle: JsStyles<Class> = {
     opacity: '0',
     '$wrapperOpen &': {
       opacity: '1',
-    },
-    '$animation$wrapperOpen &': {
       transition: `opacity 0s ease-in ${moveTime}`,
     },
   },
@@ -74,9 +72,6 @@ const innerTitle: JsStyles<Class> = {
     '& $title': {
       position: 'relative',
       top: 0,
-    },
-    '$animation$wrapperOpen &': {
-      transition: `opacity 0s ease-in ${moveTime}`,
     },
     '$animation$wrapperOpen & $title': {
       animation: `$movein ${moveTime} ease-in`,
@@ -94,6 +89,7 @@ const innerTitle: JsStyles<Class> = {
     opacity: '1',
     '$wrapperOpen &': {
       opacity: '0',
+      transition: `opacity 0s ease-in ${moveTime}`,
     },
   },
   content: {
