@@ -75,11 +75,10 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     onFilter: onFilterProp,
     onCollapse: onCollapseProp,
   } = props;
+
   const styles = jssStyle?.cascader?.() as CascaderClasses;
-  const rootStyle: React.CSSProperties = {
-    ...style,
-    width,
-  };
+  const rootStyle: React.CSSProperties = Object.assign({ width }, style);
+
   const [focused, setFocused] = useState(false);
   const [path, setPath] = useState<KeygenResult[]>([]);
   const isPreventBlur = useRef(false);
