@@ -46,7 +46,10 @@ const Anchor = (props: AnchorProps) => {
     const target = document.getElementById(`${anchorName}-${activeAnchor}`);
 
     if (target) {
-      target.scrollIntoView();
+      const layout = document.getElementById('layout');
+      setTimeout(() => {
+        layout?.scrollTo(0, (target?.offsetTop as number) - (anchorName === 'example' ? 10 : 200));
+      }, 50);
     }
   }, []);
 
