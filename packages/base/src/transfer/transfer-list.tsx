@@ -106,8 +106,9 @@ const TransferList = <DataItem, Value extends KeygenResult[]>(
       );
     }
     return (
-      <div className={styles.input}>
+      <div className={styles.inputWrapper}>
         <Input
+          className={styles.input}
           clearable
           jssStyle={jssStyle}
           value={filterText}

@@ -14,6 +14,7 @@ export interface TransferClasses {
   simpleTarget: string;
   operations: string;
   input: string;
+  inputWrapper: string;
   left: string;
   right: string;
   header: string;
@@ -142,9 +143,11 @@ const TransferStyle: JsStyles<TransferClass> = {
       width: 14,
     },
   },
-  input: {
+  inputWrapper: {
     padding: '6px 12px',
-    '& svg': {
+  },
+  input: {
+    '& > div > svg': {
       width: 14,
       minWidth: 14,
       color: Token.transferIconColor,

@@ -156,8 +156,15 @@ const input: JsStyles<InputClass> = {
   },
 
   password: {
+    '& $clearWrapper': {
+      flexBasis: `calc(${token.inputIconSize} + 12px)`,
+    },
     '& $clear': {
-      marginRight: 4,
+      marginRight: 8,
+      color: token.inputClearColor,
+      '&:hover svg': {
+        color: token.inputHoverClearColor,
+      },
     },
   },
 
