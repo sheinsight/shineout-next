@@ -126,6 +126,9 @@ const selectTokenExtraValue = {
     option: {
       margin: 'Margin-8',
     },
+    border: {
+      radius: 'Radius-4',
+    },
     background: { color: 'Neutral-fill-2' },
   },
 };

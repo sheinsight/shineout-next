@@ -496,6 +496,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     marginBottom: 4,
     '& $columnsCheckbox': {
       marginRight: 0,
+      marginLeft: 4,
       width: 'auto',
     },
   },
@@ -525,7 +526,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     '&:not($optionDisabled):hover': {
       background: token.selectColumnBackgroundColor,
-      borderRadius: token.selectOptionInnerBorderRadius,
+      borderRadius: token.selectColumnBorderRadius,
     },
   },
   columnsRadio: {
@@ -540,7 +541,8 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   columnsCheckbox: {
     width: '100%',
-    marginLeft: token.selectColumnOptionMargin,
+    // marginLeft: token.selectColumnOptionMargin,
+    marginLeft: 0,
     '& :last-child': {
       flex: 1,
       overflow: 'hidden',
