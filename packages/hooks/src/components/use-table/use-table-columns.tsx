@@ -49,6 +49,13 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
     let columns = columnsA
       .filter((c) => typeof c === 'object')
       .filter((c) => c !== context.expandHideCol);
+
+    const haveCheckbox = columns.find((v) => v.type === 'checkbox');
+    if (props.showCheckbox && !haveCheckbox) {
+      columns.unshift({
+        type: 'checkbox',
+      });
+    }
     let left = -1;
     let right = -1;
     columns.forEach((c, i) => {
@@ -59,6 +66,7 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
         context.groupLevel = Math.max(context.groupLevel, group.length);
       }
     });
+
     context.cachedColumns = columns.map(
       (c, i) =>
         produce(c, (draft: TableFormatColumn<Data>) => {
@@ -70,15 +78,7 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
           if (i === right) draft.firstFixed = true;
         }) as TableFormatColumn<Data>,
     );
-    const haveCheckbox = columns.find((v) => v.type === 'checkbox');
-    if (props.showCheckbox && !haveCheckbox) {
-      context.cachedColumns.unshift({
-        index: -1,
-        key: 'checkbox',
-        type: 'checkbox',
-        fixed: left >= 0 ? 'left' : undefined,
-      });
-    }
+
     context.oldColumns = columnsA;
     return context.cachedColumns;
   });

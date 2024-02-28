@@ -74,11 +74,12 @@ const useTableLayout = (props: UseTableLayoutProps) => {
 
   // 拖拽列
   const dragCol = usePersistFn((index: number, deltaX: number) => {
+
     const col = props.columns[index];
     if (!colgroup) return;
     const table = theadRef.current || tbodyRef.current;
     if (!table) return;
-    const colEl = table.querySelector(`colgroup col:nth-child(${col.index + 1})`) as HTMLElement;
+    const colEl = table.querySelector(`colgroup col:nth-child(${index + 1})`) as HTMLElement;
     if (!colEl) return;
     let oWidth = parseInt(colEl.style.width, 10);
     if (Number.isNaN(oWidth) || oWidth === 0) {
@@ -106,6 +107,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const resizeCol = usePersistFn((index) => {
     if (!props.columnResizable) return;
     if (!colgroup) return;
+
     const deltaX = context.dragWidth - colgroup[index]!;
 
     const newColgroup = [...colgroup];

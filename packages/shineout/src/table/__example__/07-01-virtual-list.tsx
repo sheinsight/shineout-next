@@ -51,6 +51,8 @@ for (let i = 0; i < 50; i++) {
 const App: React.FC = () => (
   <Table
     verticalAlign='top'
+    columnResizable
+    onRowSelect={()=>{}}
     virtual
     keygen='id'
     width={6400}

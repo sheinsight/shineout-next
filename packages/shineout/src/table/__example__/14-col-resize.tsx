@@ -50,6 +50,7 @@ const App: React.FC = () => (
     columns={columns}
     bordered
     data={data}
+    onRowSelect={() => {}}
   />
 );
 
