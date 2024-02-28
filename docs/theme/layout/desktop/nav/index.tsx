@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
 import { Dropdown, Input } from 'shineout';
-import { getLocale, useConfig } from 'base'; 
+import { getLocale, useConfig } from 'base';
 
 const Nav = () => {
   const classes = useStyles();
@@ -42,7 +42,7 @@ const Nav = () => {
 
     const nextPath = location.pathname.replace(`/${state.locales}/`, `/${nextLocales}/`);
 
-    navigate(nextPath);
+    navigate(nextPath + location.search);
   };
 
   const renderLeftNav = () => {

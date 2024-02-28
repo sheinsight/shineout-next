@@ -5,7 +5,7 @@ import store, { dispatch, DocType } from '../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Tabs } from 'shineout';
 import useStyles from '../style';
-import { getLocale, useConfig } from 'base'; 
+import { getLocale, useConfig } from '@sheinx/base';
 
 const DocTabs = (props: { showGuide: boolean }) => {
   const state = useSnapshot(store);
@@ -14,6 +14,9 @@ const DocTabs = (props: { showGuide: boolean }) => {
   const { locale } = useConfig();
 
   const classes = useStyles();
+  const searchParams = new URLSearchParams(location.search);
+  const activeTab = searchParams.get('tab') || state.doctab;
+
   const tabs: { name: string; path: DocType }[] = [
     { name: getLocale(locale, 'exmples'), path: 'examples' },
     { name: getLocale(locale, 'api'), path: 'api' },
@@ -35,17 +38,14 @@ const DocTabs = (props: { showGuide: boolean }) => {
 
   useEffect(() => {
     if (location.search) {
-      const searchParams = new URLSearchParams(location.search);
-      const params = searchParams.get('tab');
-      if (params) {
-        dispatch.setDoctab(params as DocType);
+      if (activeTab && state.doctab !== activeTab) {
+        dispatch.setDoctab(activeTab as DocType);
       }
     }
   }, [location.pathname]);
-
   return (
     <div className={classes.tabs}>
-      <Tabs shape='fill' autoFill active={state.doctab} onChange={handleChangeTab}>
+      <Tabs shape='fill' autoFill active={activeTab} onChange={handleChangeTab}>
         {tabs.map((tab, index) => {
           if (tab.path === 'guide' && !props.showGuide) return null;
 
