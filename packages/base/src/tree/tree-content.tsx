@@ -162,12 +162,20 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
     return render(data, expanded, active, id) as React.ReactNode;
   };
 
+  const contentEvent = {
+    onClick: inlineNode ? undefined : handleNodeClick,
+  };
+
+  const textEvent = {
+    onClick: inlineNode ? handleNodeClick : undefined,
+  };
+
   return (
     <div className={rootClass} onDragOver={onDragOver}>
       {renderIndicator()}
-      <div ref={bindContent} className={contentClass} {...contentDataProps()}>
+      <div ref={bindContent} className={contentClass} {...contentDataProps()} {...contentEvent}>
         {onChange && renderCheckbox()}
-        <div className={textClass} onDoubleClick={handleNodeExpand} onClick={handleNodeClick}>
+        <div className={textClass} onDoubleClick={handleNodeExpand} {...textEvent}>
           {renderNode()}
         </div>
       </div>
