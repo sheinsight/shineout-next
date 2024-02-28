@@ -2,7 +2,7 @@
  * cn - 动态进度条
  *    -- value 变更时动画效果演示
  * en - Animation
- *    -- The animation for changing value.
+ *    -- The animation for changing value
  */
 import React, { useState } from 'react';
 import { Button, Progress } from 'shineout';

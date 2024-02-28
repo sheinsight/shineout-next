@@ -344,6 +344,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     lineHeight: 0,
     color: token.cascaderClearColor,
     verticalAlign: 'middle',
+    '&:hover': {
+      color: token.cascaderClearHoverColor,
+    },
   },
   compressedIcon: {},
   arrowIcon: {

@@ -2,7 +2,7 @@
  * cn - FieldSet (Loop)
  *    -- FieldSet children 为函数时，根据 name 从 Form 中获取 value （类型为 array），遍历这个 value 生成一组子组件
  * en - FieldSet (Loop)
- *    -- When FieldSet's children is a function, takes the value (type is array) from the form by the name property, and generate a set of subcomponents.
+ *    -- When FieldSet's children is a function, takes the value (type is array) from the form by the name property, and generate a set of subcomponents
  */
 import React, { useState } from 'react';
 import { Form, Input, Rule } from 'shineout';

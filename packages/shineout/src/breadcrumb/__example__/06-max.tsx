@@ -2,7 +2,7 @@
  * cn - 显示省略
  *    -- 通过 max 来指定最多渲染的面包屑数量，超出的部分将显示为省略号。
  * en - Max
- *    -- Set max to limit the number of breadcrumbs displayed.
+ *    -- Set max to limit the number of breadcrumbs displayed
  */
 
 import React from 'react';

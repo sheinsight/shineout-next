@@ -2,7 +2,7 @@
  * cn - 悬浮样式
  *    -- 可以设置 `shadow` = 'hover'，让卡片在鼠标移入时显示阴影，同时你可以通过样式覆盖来自定义悬浮样式
  * en - Hover
- *    -- Set shadow to hover to show shadow when the mouse is over the card, and you can customize the hover style by overriding the style.
+ *    -- Set shadow to hover to show shadow when the mouse is over the card, and you can customize the hover style by overriding the style
  */
 import React from 'react';
 import { Card, TYPE, Button } from 'shineout';

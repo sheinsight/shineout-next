@@ -2,7 +2,7 @@
  * cn - 文本样式
  *    -- 当内容为 string 或者 设置 useTextStyle 为 true 时会有默认的文本样式
  * en - useTextStyle
- *    -- When the content is string or set useTextStyle to true, the default text style will be used.
+ *    -- When the content is string or set useTextStyle to true, the default text style will be used
  */
 import React from 'react';
 import { Button, Popover } from 'shineout';

@@ -3,7 +3,7 @@
  *    -- Image 可以设置不同的形状
  *    -- 内置三种不同的形状：圆形模式 circle、圆角模式 rounded、带边框模式 thumbnail
  * en - Shape
- *    -- Image can be set to different shapes.
+ *    -- Image can be set to different shapes
  */
 
 import React from 'react';

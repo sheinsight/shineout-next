@@ -2,7 +2,7 @@
  * cn - 基础校验
  *    -- 通过 Rule 对象，可以使用内置的规则。规则详见 Rule
  * en - validate
- *    -- Use the built-in rules through the Rule object. See Rule for details.
+ *    -- Use the built-in rules through the Rule object. See Rule for details
  */
 
 import React, { useState, useCallback } from 'react';

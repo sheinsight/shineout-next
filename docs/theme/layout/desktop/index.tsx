@@ -1,4 +1,4 @@
-import { useRoutes } from 'react-router-dom';
+import { useRoutes, useLocation, useNavigate } from 'react-router-dom';
 import { dispatch } from '../../store';
 import useStyles from './style';
 import { useEffect, useRef } from 'react';
@@ -17,6 +17,8 @@ import Debugger from '../../../pages/debug';
 
 const Desktop = () => {
   const classes = useStyles();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -63,6 +65,7 @@ const Desktop = () => {
     const scrollElement = ref.current;
     let scroll = false;
     if (!scrollElement) return;
+
     const handleScroll = () => {
       const top = scrollElement.scrollTop + 108;
       const titleElements = document.querySelectorAll('.anchor-title');
@@ -86,6 +89,7 @@ const Desktop = () => {
     };
 
     scrollElement.addEventListener('scroll', handleScroll);
+
 
     return () => {
       scrollElement.removeEventListener('scroll', handleScroll);

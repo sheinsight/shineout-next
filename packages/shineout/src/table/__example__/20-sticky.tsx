@@ -2,7 +2,7 @@
  * cn - 表头附着
  *    -- 在滚屏场景下，可以设置 sticky 属性使表头附着顶部
  * en - Sticky Header
- *    -- Use the sticky attribute to sticky the header.
+ *    -- Use the sticky attribute to sticky the header
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';

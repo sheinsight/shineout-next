@@ -3,7 +3,7 @@
  *    -- 开启`multiple`属性后，可以选择多个节点
  *    -- 注意，开启多选模式后，最终数据结果遵循`mode`属性规则，详见mode属性说明
  * en - Multiple
- *    -- Set `multiple` to true, you can select multiple nodes.
+ *    -- Set `multiple` to true, you can select multiple nodes
  */
 import React, { useState } from 'react';
 import { TreeSelect, TYPE } from 'shineout';

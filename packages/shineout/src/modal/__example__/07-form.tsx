@@ -2,7 +2,7 @@
  * cn - 表单
  *    -- Modal 支持 Form 表单，并且支持 Form 的所有特性，表单提交可以使用 Modal.Submit 来代替 Button[type=submit]
  * en - Form
- *    --The internal form of Modal can use Modal.Submit to trigger submit.
+ *    --The internal form of Modal can use Modal.Submit to trigger submit
  */
 import React, { useState } from 'react';
 import { Modal, Button, Form, Input, Message, TYPE } from 'shineout';

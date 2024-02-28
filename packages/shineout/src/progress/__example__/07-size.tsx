@@ -4,9 +4,9 @@
  *    -- 通过 strokeWidth 属性来控制线框宽度
  *    -- 通过 iconSize 属性来控制图标大小
  * en - Size
- *    -- Set size or style to change the size of progress.
- *   -- Set strokeWidth to change the width of line.
- *  -- Set iconSize to change the size of icon.
+ *    -- Set size or style to change the size of progress
+ *   -- Set strokeWidth to change the width of line
+ *  -- Set iconSize to change the size of icon
  */
 import React, { useState } from 'react';
 import { Progress, Radio } from 'shineout';

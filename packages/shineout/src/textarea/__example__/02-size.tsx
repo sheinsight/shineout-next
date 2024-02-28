@@ -2,7 +2,7 @@
  * cn - 尺寸
  *    -- 提供了三种尺寸 small default large
  * en - Size
- *    -- There are three sizes: small, default, and large.
+ *    -- There are three sizes: small, default, and large
  */
 import React from 'react';
 import { Textarea } from 'shineout';

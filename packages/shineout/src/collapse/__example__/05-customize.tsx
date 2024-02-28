@@ -2,7 +2,7 @@
  * cn - 自定义面板样式
  *    -- 可自定义标题背景色、内容背景色、折叠图标等
  * en - Customize
- *    -- You can customize the title background color, content background color, collapse icon, etc.
+ *    -- You can customize the title background color, content background color, collapse icon, etc
  */
 import React from 'react';
 import { Collapse } from 'shineout';

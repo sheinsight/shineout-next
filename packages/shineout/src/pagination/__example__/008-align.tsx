@@ -2,7 +2,7 @@
  * cn - 位置
  *    -- 设置`align`属性调整分页器的位置，默认为left
  * en - Align
- *    -- Set the position of pagination by `align` property.
+ *    -- Set the position of pagination by `align` property
  */
 import { Pagination } from 'shineout';
 

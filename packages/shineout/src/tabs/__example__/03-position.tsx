@@ -4,8 +4,8 @@
  *    -- 当 `shape` 为 button 或 fill 时，仅支持 top-left, top-right, bottom-left, bottom-right 四个位置
  *    -- 目前支持的位置有 top-left, top-right, bottom-left, bottom-right, left-top, right-top 六种布局
  * en - Position
- *    -- Set the position of the tab through the `position` property. When the `shape` is button or fill, only the four positions of top-left, top-right, bottom-left, bottom-right are supported.
- *    -- Currently supported positions are top-left, top-right, bottom-left, bottom-right, left-top, right-top.
+ *    -- Set the position of the tab through the `position` property. When the `shape` is button or fill, only the four positions of top-left, top-right, bottom-left, bottom-right are supported
+ *    -- Currently supported positions are top-left, top-right, bottom-left, bottom-right, left-top, right-top
  */
 import { useState } from 'react';
 import { Tabs, Radio, Form } from 'shineout';

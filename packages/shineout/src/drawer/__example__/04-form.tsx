@@ -2,7 +2,7 @@
  * cn - 表单
  *    -- Drawer 支持 Form 表单，并且支持 Form 的所有特性，表单提交可以使用 Drawer.Submit 来代替 Button[type=submit]
  * en - Form
- *    --The internal form of Drawer can use Drawer.Submit to trigger submit.
+ *    --The internal form of Drawer can use Drawer.Submit to trigger submit
  */
 import React, { useState } from 'react';
 import { Drawer, Button, Form, Input, Message, TYPE } from 'shineout';

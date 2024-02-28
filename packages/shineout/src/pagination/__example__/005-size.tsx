@@ -2,7 +2,7 @@
  * cn - 尺寸
  *    -- 通过`size`属性设置分页器的尺寸
  * en - Size
- *    -- Set the size of pagination by `size` property.
+ *    -- Set the size of pagination by `size` property
  */
 import { Pagination } from 'shineout';
 

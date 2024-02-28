@@ -52,7 +52,7 @@ export default () => {
     <div>
       <Cascader
         width={300}
-        mode={0}
+        hideTag
         clearable
         placeholder='Please select city'
         data={data}

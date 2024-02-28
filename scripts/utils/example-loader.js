@@ -50,6 +50,7 @@ const exampleLoader = (content, component, fileName) => {
 
   const cnStart = textLine.findIndex((i) => i.indexOf('cn -') > -1);
   const enStart = textLine.findIndex((i) => i.indexOf('en -') > -1);
+  const end = textLine.findIndex((i) => i.indexOf('*/') > -1);
 
   // 从 textLine 中提取中文描述，起始位置为 cnStart，如果有 enStart 则结束位置为 enStart，否则结束位置为 textLine.length
   if (cnStart > -1) {
@@ -66,7 +67,7 @@ const exampleLoader = (content, component, fileName) => {
   // 从 textLine 中提取英文描述，起始位置为 enStart，如果有 cnStart 则结束位置为 cnStart，否则结束位置为 textLine.length
   if (enStart > -1) {
     example.propName.en = textLine[enStart].split('en -')?.[1].trim() || '';
-    for (let i = enStart; i < (cnStart > -1 ? cnStart : textLine.length); i++) {
+    for (let i = enStart; i < end; i++) {
       if (textLine[i].indexOf('*    --') > -1) {
         example.propDescribe.en.push(
           wrapWithSpan(textLine[i].split('--')?.[1].trim() || '').replace(/`/g, ''),

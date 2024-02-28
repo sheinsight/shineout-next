@@ -2,7 +2,7 @@
  * cn - 标签样式
  *    -- 标签样式分为 亮色、填充、线框、亮色线框 4 种
  * en - Mode
- *    -- The mode of the tag is divided into bright, fill, outline, brightOutline line 4 kinds.
+ *    -- The mode of the tag is divided into bright, fill, outline, brightOutline line 4 kinds
  */
 
 import { Tag } from 'shineout';

@@ -2,7 +2,7 @@
  * cn - 尺寸
  *    -- 内置三种尺寸，small、default、large
  * en - Size
- *    -- There are three built-in sizes, small, default, and large.
+ *    -- There are three built-in sizes, small, default, and large
  */
 import { useState } from 'react';
 import { Transfer, Radio } from 'shineout';

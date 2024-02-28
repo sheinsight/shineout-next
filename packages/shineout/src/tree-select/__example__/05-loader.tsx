@@ -2,7 +2,7 @@
  * cn - 动态加载
  *    -- 通过设置`loader`函数实现动态加载节点
  * en - Loader
- *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes.
+ *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes
  */
 import React from 'react';
 import { produce } from 'immer';

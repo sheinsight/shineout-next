@@ -64,7 +64,7 @@ const Debug = (props: CopyProps) => {
 
   const handleOpen = () => {
     navigate({
-      search: `?debug=${name}`,
+      search: `?tab=examples&example=${name}&debug=${name}`,
     });
     setOpen(true);
   };

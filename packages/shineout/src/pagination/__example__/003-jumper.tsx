@@ -2,7 +2,7 @@
  * cn - 跳转
  *    -- 通过配置`layout`属性的`jumper`值展示跳转输入框，借助`text`属性自定义文案
  * en - Jumper
- *    -- Show jumper by setting `jumper` value of `layout` property.
+ *    -- Show jumper by setting `jumper` value of `layout` property
  */
 import { Pagination } from 'shineout';
 

@@ -2,7 +2,7 @@
  * cn - 样式
  *    -- 内置四种样式
  * en - Type
- *    -- Four styles are built in.
+ *    -- Four styles are built in
  */
 import React from 'react';
 import { Popover, Button, TYPE } from 'shineout';

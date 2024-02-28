@@ -2,7 +2,7 @@
  * cn - 不可选取的时间
  *    -- 当 `disabled` 为函数时，可以根据返回值禁用某些时间
  * en - Disabled date
- *    -- When `disabled` is a function, you can disable some date according to the return value.
+ *    -- When `disabled` is a function, you can disable some date according to the return value
  */
 import React from 'react';
 import { DatePicker } from 'shineout';

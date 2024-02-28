@@ -2,7 +2,7 @@
  * cn - 拖拽上传
  *    -- 设置 drop 来支持拖拽上传
  * en - Drag and Drop
- *    -- set drop to Drag files to upload.
+ *    -- set drop to Drag files to upload
  */
 import React from 'react';
 import { Upload } from 'shineout';
