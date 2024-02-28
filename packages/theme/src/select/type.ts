@@ -448,6 +448,12 @@ export interface SelectTokens {
   selectColumnOptionMargin: string;
   /**
    * @type {string}
+   * @token Radius-4
+   * @description 选择器多列模式下边框圆角
+   */
+  selectColumnBorderRadius: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-2
    * @description 选择器多列模式下背景颜色
    */
