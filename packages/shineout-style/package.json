@@ -5,7 +5,7 @@
   "keywords": [],
   "license": "ISC",
   "author": "",
-  "sideEffects": false,
+  "sideEffects": ["./*/index.ts", "./*/normalize.ts", "./*/index.js", "./*/normalize.js"],
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "typings": "./dist/cjs/index.d.ts",
