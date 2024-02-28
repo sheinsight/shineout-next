@@ -92,10 +92,8 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
   } = props;
 
   const styles = jssStyle?.select?.() as SelectClasses;
-  const rootStyle: React.CSSProperties = {
-    ...style,
-    width,
-  };
+  const rootStyle: React.CSSProperties = Object.assign({ width }, style);
+
   const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('keyboard');
   const [focused, setFocused] = useState(false);
   const [enter, setEnter] = useState(false);

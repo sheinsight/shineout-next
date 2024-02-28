@@ -78,10 +78,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onExpand,
   } = props;
   const styles = jssStyle?.select?.() as TreeSelectClasses;
-  const rootStyle: React.CSSProperties = {
-    ...style,
-    width,
-  };
+  const rootStyle: React.CSSProperties = Object.assign({ width }, style);
 
   const datum = useRef<TreeContextProps<DataItem, Value>>();
   const blurEvent = useRef<(() => void) | null>();
