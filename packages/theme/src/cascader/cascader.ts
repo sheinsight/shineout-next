@@ -31,6 +31,7 @@ const cascaderTokens: CascaderTokens = {
   cascaderBackgroundColor: 'Neutral-fill-1',
   cascaderClearColor: 'Neutral-text-3',
   cascaderClearPadding: 'Padding-8',
+  cascaderClearHoverColor: 'Neutral-text-4',
   cascaderHoverBorderColor: 'Brand-6',
   cascaderHoverClearColor: 'Neutral-text-4',
   cascaderFocusBorderColor: 'Brand-7',

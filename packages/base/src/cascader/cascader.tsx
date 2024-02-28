@@ -427,7 +427,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           renderResult={getRenderResult}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
-          renderResultContent={hideTag && multiple === false ? renderResultContent : undefined}
+          renderResultContent={hideTag && !multiple ? renderResultContent : undefined}
           allowOnFilter={'onFilter' in props || 'onAdvancedFilter' in props}
           focusSelected={focusSelected}
           inputText={inputText}
