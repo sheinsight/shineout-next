@@ -24,23 +24,22 @@ interface TableRowData {
 }
 type TableColumnItem = TYPE.Table.ColumnItem<TableRowData>;
 
-const data: TableRowData[] = user.fetchSync(10000);
+const data: TableRowData[] = user.fetchSync(10);
 
 const columns: TableColumnItem[] = [
-  { title: 'id', render: 'id', width: 80 },
+  { title: 'id', render: 'id', },
   {
     title: 'Name',
     fixed: 'left',
     render: (d) => <div style={{ height: d.height }}>{`${d.firstName} ${d.lastName}`}</div>,
-    width: 160,
   },
-  { title: 'Country', render: 'country', width: 200 },
+  { title: 'Country', render: 'country', },
   { title: 'Position', render: 'position' },
   { title: 'Office', render: 'office' },
-  { title: 'Start Date', render: 'start', width: 140 },
+  { title: 'Start Date', render: 'start', width: 200},
 ];
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 10; i++) {
   columns.push({
     title: `${i + 1}($)`,
     align: 'right',
@@ -59,6 +58,8 @@ const App: React.FC = () => (
     data={data}
     rowsInView={20}
     bordered
+    columnResizable
+    onRowSelect={()=>{}}
   />
 );
 
