@@ -111,7 +111,7 @@ const Alert = (props: AlertProps) => {
 
   if ('title' in props && title !== undefined) {
     return (
-      <div data-role='root' className={rootClass} {...getRootProps()}>
+      <div data-role='alert' className={rootClass} {...getRootProps()}>
         {icon && renderIcon()}
         <div data-role='wrapper' className={styles.wrapper}>
           {renderTitle()}
@@ -126,7 +126,7 @@ const Alert = (props: AlertProps) => {
   }
 
   return (
-    <div data-role='root' className={rootClass} {...getRootProps()}>
+    <div data-role='alert' className={rootClass} {...getRootProps()}>
       {icon && renderIcon()}
       <div data-role='wrapper' className={styles.wrapper}>
         <div data-role='content' className={styles.content}>

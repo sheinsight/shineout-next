@@ -20,7 +20,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
         };
         if (d.url) props.href = d.url;
         item = (
-          <a {...props} className={breadcrumbClasses?.content}>
+          <a data-role='item-content' {...props} className={breadcrumbClasses?.content}>
             {d.icon}
             {d.icon && d.title && <>&nbsp;</>}
             {d.title}
@@ -28,7 +28,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
         );
       } else {
         item = (
-          <span className={breadcrumbClasses?.content}>
+          <span data-role='item-content' className={breadcrumbClasses?.content}>
             {d.icon}
             {d.icon && d.title && <>&nbsp;</>}
             {d.title}
@@ -51,7 +51,10 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
     const reset = data.slice(data.length - props.max + 1);
     const more = {
       title: (
-        <span className={classNames(breadcrumbClasses?.content, breadcrumbClasses?.ellipsis)}>
+        <span
+          data-role='ellipsis'
+          className={classNames(breadcrumbClasses?.content, breadcrumbClasses?.ellipsis)}
+        >
           ...
         </span>
       ),
@@ -60,18 +63,23 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
   };
 
   return (
-    <div className={className} style={props.style}>
+    <div data-role='breadcrumb' className={className} style={props.style}>
       {data &&
         getRenderData().map((d, index) => {
           const itemFirst = Array.isArray(d) ? d[0] : d;
           const isLastItem = index === (props.max !== undefined ? props.max : data.length - 1);
           return (
             <div
+              data-role='item-wrapper'
               className={breadcrumbClasses?.item}
               key={props.keygen ? getKey(props.keygen, itemFirst as Item, index) : index}
             >
               {Array.isArray(d) ? renderArray(d) : renderItem(d as Item)}
-              {!isLastItem && <div className={breadcrumbClasses?.separator}>{separator}</div>}
+              {!isLastItem && (
+                <div data-role='separator' className={breadcrumbClasses?.separator}>
+                  {separator}
+                </div>
+              )}
             </div>
           );
         })}

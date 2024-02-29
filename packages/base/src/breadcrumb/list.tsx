@@ -26,8 +26,8 @@ const List = (props: ListProps) => {
   const renderList = (arr: any[]) => {
     return arr.map((item, index) => {
       return (
-        <div key={index} className={classes?.itemWrapper}>
-          <div className={classNames(classes?.dropdownItem)} onClick={closePop}>
+        <div data-role='drop-item-wrapper' key={index} className={classes?.itemWrapper}>
+          <div data-role='drop-item' className={classNames(classes?.dropdownItem)} onClick={closePop}>
             {props.renderItem(item)}
           </div>
         </div>
@@ -37,9 +37,9 @@ const List = (props: ListProps) => {
   const targetProps = getTargetProps();
   const [first, ...rest] = props.data;
   return (
-    <div ref={targetRef} {...targetProps} className={classes?.itemWithDrop}>
+    <div data-role='drop' ref={targetRef} {...targetProps} className={classes?.itemWithDrop}>
       {props.renderItem(first)}
-      <div className={classNames(classes?.down, open && classes?.downOpen)}>{<Caret />}</div>
+      <div data-role='icon' className={classNames(classes?.down, open && classes?.downOpen)}>{<Caret />}</div>
       <AbsoluteList
         position={position}
         focus={open}
