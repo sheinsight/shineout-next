@@ -1,29 +1,8 @@
 // import React from 'react';
 import { CommonType } from '../common/type';
+import { AlertClasses } from '@sheinx/shineout-style';
 
 // import { BaseAlertProps } from '@sheinx/hooks';
-
-export interface AlertClasses {
-  alert: string;
-  title: string;
-  close: string;
-  widthTitle: string;
-  content: string;
-  icon: string;
-  text: string;
-  info: string;
-  success: string;
-  warning: string;
-  confirmwarning: string;
-  danger: string;
-  infoIcon: string;
-  successIcon: string;
-  warningIcon: string;
-  confirmwarningIcon: string;
-  dangerIcon: string;
-  pending: string;
-  noBordered: string;
-}
 
 export interface AlertJssStyle {
   alert?: () => AlertClasses;

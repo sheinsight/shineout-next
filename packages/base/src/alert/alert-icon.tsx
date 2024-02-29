@@ -20,7 +20,7 @@ const icons = {
 };
 
 const AlertIcon = (props: AlertIconProps) => {
-  const AlertClasses = props.jssStyle?.alert?.();
+  const styles = props.jssStyle?.alert?.();
   let { type } = props;
   if (type === 'error') type = 'danger';
   if (!type) return null;
@@ -28,11 +28,12 @@ const AlertIcon = (props: AlertIconProps) => {
   if (!Icon) return null;
   return (
     <span
+      data-role='icon'
       style={props.style}
       className={classNames(
         props.className,
-        AlertClasses?.icon,
-        AlertClasses && AlertClasses[(type + 'Icon') as keyof AlertJssStyle],
+        styles?.icon,
+        styles && styles[(type + 'Icon') as keyof AlertJssStyle],
       )}
     >
       {Icon}

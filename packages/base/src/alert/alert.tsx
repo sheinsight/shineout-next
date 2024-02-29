@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { AlertClasses, AlertProps } from './alert.type';
+import { AlertClasses } from '@sheinx/shineout-style';
+import { AlertProps } from './alert.type';
 import Icons from '../icons';
 import AlertIcon from './alert-icon';
 
@@ -34,12 +35,12 @@ const Alert = (props: AlertProps) => {
 
   const type = getType();
 
-  const alertStyle = jssStyle?.alert?.() || ({} as AlertClasses);
-  const rootClass = classNames(className, alertStyle.alert, {
-    [alertStyle[type]]: true,
-    [alertStyle.widthTitle]: title,
-    [alertStyle.pending]: dismiss === PENDING,
-    [alertStyle.noBordered]: bordered === false,
+  const styles = jssStyle?.alert?.() || ({} as AlertClasses);
+  const rootClass = classNames(className, styles.alert, {
+    [styles[type]]: true,
+    [styles.widthTitle]: title,
+    [styles.pending]: dismiss === PENDING,
+    [styles.noBordered]: bordered === false,
   });
 
   const getRootProps = () => {
@@ -77,21 +78,28 @@ const Alert = (props: AlertProps) => {
     }
 
     return (
-      <div className={alertStyle.icon} style={style}>
+      <div data-role='icon' className={styles.icon} style={style}>
         {icon}
       </div>
     );
   };
 
   const renderTitle = () => {
-    return <div className={alertStyle.title}>{title}</div>;
+    return (
+      <div data-role='title' className={styles.title}>
+        {title}
+      </div>
+    );
   };
 
   const renderClose = () => {
     if (React.isValidElement(closeItem))
-      return React.cloneElement(closeItem, { onClick: handleClose } as React.Attributes);
+      return React.cloneElement(closeItem, {
+        onClick: handleClose,
+        'data-role': 'close',
+      } as React.Attributes);
     return (
-      <div className={alertStyle.close} onClick={handleClose}>
+      <div data-role='close' className={styles.close} onClick={handleClose}>
         {closeItem || Icons.Close}
       </div>
     );
@@ -103,11 +111,13 @@ const Alert = (props: AlertProps) => {
 
   if ('title' in props && title !== undefined) {
     return (
-      <div className={rootClass} {...getRootProps()}>
+      <div data-role='root' className={rootClass} {...getRootProps()}>
         {icon && renderIcon()}
-        <div className={alertStyle.content}>
+        <div data-role='wrapper' className={styles.wrapper}>
           {renderTitle()}
-          <div className={alertStyle.text}>{children}</div>
+          <div data-role='content' className={styles.content}>
+            {children}
+          </div>
         </div>
 
         {getCloseable() && renderClose()}
@@ -116,10 +126,12 @@ const Alert = (props: AlertProps) => {
   }
 
   return (
-    <div className={rootClass} {...getRootProps()}>
+    <div data-role='root' className={rootClass} {...getRootProps()}>
       {icon && renderIcon()}
-      <div className={alertStyle.content}>
-        <div className={alertStyle.text}>{children}</div>
+      <div data-role='wrapper' className={styles.wrapper}>
+        <div data-role='content' className={styles.content}>
+          {children}
+        </div>
       </div>
       {getCloseable() && renderClose()}
     </div>

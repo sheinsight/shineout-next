@@ -1,27 +1,30 @@
 import Token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 
-export type AlertClass =
-  | 'alert'
-  | 'noBordered'
-  | 'content'
-  | 'widthTitle'
-  | 'title'
-  | 'close'
-  | 'info'
-  | 'success'
-  | 'warning'
-  | 'confirmwarning'
-  | 'danger'
-  | 'infoIcon'
-  | 'successIcon'
-  | 'warningIcon'
-  | 'confirmwarningIcon'
-  | 'confirmIcon'
-  | 'dangerIcon'
-  | 'icon'
-  | 'text'
-  | 'pending';
+export interface AlertClasses {
+  alert: string;
+  title: string;
+  close: string;
+  widthTitle: string;
+  wrapper: string;
+  content: string;
+  icon: string;
+  info: string;
+  success: string;
+  warning: string;
+  confirmwarning: string;
+  danger: string;
+  infoIcon: string;
+  successIcon: string;
+  warningIcon: string;
+  confirmIcon: string;
+  confirmwarningIcon: string;
+  dangerIcon: string;
+  pending: string;
+  noBordered: string;
+}
+
+export type AlertClass = keyof AlertClasses;
 
 const alertStyle: JsStyles<AlertClass> = {
   alert: {
@@ -102,11 +105,6 @@ const alertStyle: JsStyles<AlertClass> = {
     overflowWrap: 'anywhere',
     lineHeight: Token.alertTitleFontSize,
   },
-  text: {
-    overflowWrap: 'anywhere',
-    fontSize: Token.alertFontSize,
-    lineHeight: Token.lineHeightDynamic,
-  },
   close: {
     cursor: 'pointer',
     width: Token.alertFontSize,
@@ -122,8 +120,13 @@ const alertStyle: JsStyles<AlertClass> = {
       color: Token.alertCloseHoverColor,
     },
   },
-  content: {
+  wrapper: {
     flex: '1 1 0',
+  },
+  content: {
+    overflowWrap: 'anywhere',
+    fontSize: Token.alertFontSize,
+    lineHeight: Token.lineHeightDynamic,
   },
   pending: {
     opacity: 0,
