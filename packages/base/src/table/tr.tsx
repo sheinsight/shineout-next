@@ -26,6 +26,7 @@ interface TrProps
     | 'rowClickAttr'
     | 'rowEvents'
     | 'bodyScrollWidth'
+    | 'resizeFlag'
   > {
   row: {
     data: any[];
@@ -100,7 +101,7 @@ const Tr = (props: TrProps) => {
       const expandHeight = expandRef.current ? expandRef.current.offsetHeight : 0;
       props.setRowHeight(props.rowIndex, trRef.current.offsetHeight + expandHeight);
     }
-  }, [props.expanded, props.rowIndex, props.bodyScrollWidth]);
+  }, [props.expanded, props.rowIndex, props.bodyScrollWidth, props.resizeFlag]);
 
   const renderTreeExpand = (content: React.ReactNode, treeIndent: number = 22) => {
     const level = props.treeExpandLevel.get(props.originKey) || 0;

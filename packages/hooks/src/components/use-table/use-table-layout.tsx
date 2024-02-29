@@ -44,6 +44,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const [isScrollY, setIsScrollY] = React.useState(false);
   const [floatLeft, setFloatLeft] = React.useState(false);
   const [floatRight, setFloatRight] = React.useState(false);
+  const [resizeFlag, setResizeFlag] = React.useState(0);
   const [scrollBarWidth, setScrollBarWidth] = React.useState(0);
   const [scrollWidth, setScrollWidth] = React.useState(0);
   const [colgroup, setColgroup] = React.useState(props.columns.map((v) => v.width));
@@ -74,7 +75,6 @@ const useTableLayout = (props: UseTableLayoutProps) => {
 
   // 拖拽列
   const dragCol = usePersistFn((index: number, deltaX: number) => {
-
     const col = props.columns[index];
     if (!colgroup) return;
     const table = theadRef.current || tbodyRef.current;
@@ -98,9 +98,16 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     context.dragWidth = w;
   });
 
+  const updateResizeFlag = () => {
+    setResizeFlag((v) => (v + 1) % 10);
+  };
+
   const changeColGroup = (cols: Array<number | undefined>, adjust: boolean | 'drag') => {
     setColgroup(cols);
     setAdjust(adjust);
+    if (!adjust) {
+      updateResizeFlag();
+    }
   };
 
   // 完成拖拽
@@ -149,6 +156,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       sum += width;
       newCols.push(width);
     }
+
 
     if (fromDrag && props.columnResizable) {
       const widthArr = [...newCols];
@@ -256,6 +264,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     shouldLastColAuto: props.columnResizable && !adjust,
     scrollWidth,
     maxScrollLeft: scrollWidth - context.clientWidth,
+    resizeFlag,
   };
 };
 
