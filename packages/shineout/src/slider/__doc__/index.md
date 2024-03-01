@@ -1,6 +1,6 @@
 ---
 name: Slider
-group: Data
+group: Form
 ---
 
 # Title

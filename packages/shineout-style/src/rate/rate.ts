@@ -38,6 +38,9 @@ const rateStyle: JsStyles<RateClassType> = {
   // ...animation,
   wrapper: {
     display: 'inline-block',
+    '[data-soui-role="form-control"] >  &': {
+      padding: '4px 0'
+    },
   },
   inner: {
     display: 'flex',
