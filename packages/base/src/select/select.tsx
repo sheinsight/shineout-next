@@ -21,8 +21,10 @@ import List from './list';
 import TreeList from './list-tree';
 import Icons from '../icons';
 import ColumnsList from './list-columns';
+import useWithFormConfig from '../common/use-with-form-config';
 
-function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
+function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
+  const props = useWithFormConfig(props0);
   const {
     jssStyle,
     className,

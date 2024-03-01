@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 import { RateProps } from './rate.type';
 import Icons from '../icons';
 import { useInputAble } from '@sheinx/hooks';
+import useWithFormConfig from '../common/use-with-form-config';
 
-const Rate = (props: RateProps) => {
-  const { max = 5, repeat = true, size, clearable = false } = props;
+const Rate = (props0: RateProps) => {
+  const props = useWithFormConfig(props0);
+  const { size } = props0;
+  const { max = 5, repeat = true, clearable = false } = props;
   const [hoverValue, setHoverValue] = useState<null | number>(null);
   const [animationIndex, setAnimationIndex] = useState<null | number>(null);
   const rateClasses = props.jssStyle?.rate?.();

@@ -7,10 +7,11 @@ import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 import Button from '../button/button';
 
-const Group = <DataItem, Value>(props: RadioGroupProps<DataItem, Value>) => {
-  const { children, className, button, block, keygen, jssStyle, style } = props;
+const Group = <DataItem, Value>(props0: RadioGroupProps<DataItem, Value>) => {
+  const props = useWithFormConfig(props0);
+
+  const { children, className, button, block, keygen, jssStyle, style, size, disabled  } = props;
   const radioClasses = jssStyle?.radio?.();
-  const { size, disabled } = useWithFormConfig(props);
 
   const inputAbleProps = useInputAble({
     value: props.value,

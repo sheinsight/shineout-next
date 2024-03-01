@@ -16,8 +16,9 @@ const defaultInfo = (num: number, msg: any) => {
   return new Error(text);
 };
 
-const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Props) => {
+const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Props) => {
   const config = useConfig();
+  const props = useWithFormConfig(props0);
   const {
     forwardRef,
     htmlName,
@@ -40,6 +41,8 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     popover,
     popoverProps,
     status,
+    disabled,
+    size,
     ...rest
   } = props;
 
@@ -47,7 +50,6 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
 
   const inputStyle = props.jssStyle?.input?.();
 
-  const { size, disabled } = useWithFormConfig(props);
   const rootRef = React.useRef<HTMLElement>(null);
 
   const [focused, setFocused] = React.useState(false);

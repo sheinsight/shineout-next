@@ -9,6 +9,7 @@ import { getLocale, useConfig } from '../config';
 import Icons from '../icons';
 import Result from './result';
 import useInnerTitle from '../common/use-inner-title';
+import useWithFormConfig from '../common/use-with-form-config';
 
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
 const horizontalPosition = ['left-top', 'left-bottom', 'right-top', 'right-bottom'];
@@ -16,9 +17,10 @@ const horizontalPosition = ['left-top', 'left-bottom', 'right-top', 'right-botto
 const preventDefault = (e: React.MouseEvent) => {
   e.preventDefault();
 };
-const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Value>) => {
+const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<Value>) => {
+  const props = useWithFormConfig(props0);
   const { locale } = useConfig();
-  const { jssStyle, range, type = 'date', border = true, clearable = true } = props;
+  const { jssStyle, range, type = 'date', border = true, clearable = true, disabled, size } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
 
   const styles = jssStyle?.datePicker?.();
@@ -61,7 +63,7 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
     format: props.format,
     options,
     clearable,
-    disabled: props.disabled!,
+    disabled: disabled!,
     clearWithUndefined: props.clearWithUndefined,
     onClear: undefined,
     allowSingle: props.allowSingle,
@@ -95,7 +97,7 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
     innerTitle: props.innerTitle,
     placeTitle: props.placeTitle,
     open: open || hasValue,
-    size: props.size,
+    size: size,
     jssStyle: jssStyle,
   });
 
@@ -194,13 +196,13 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
 
   return (
     <div
-      data-soui-type={'input'}
+      {...util.getDataAttribute({ type: 'input' })}
       className={classNames(
         props.className,
         styles?.wrapper,
         props.innerTitle && styles?.wrapperInnerTitle,
-        props.size === 'small' && styles?.wrapperSmall,
-        props.size === 'large' && styles?.wrapperLarge,
+        size === 'small' && styles?.wrapperSmall,
+        size === 'large' && styles?.wrapperLarge,
         focused && styles?.wrapperFocus,
         disabledStatus === 'all' && styles?.wrapperDisabled,
         props.status === 'error' && styles?.wrapperError,
@@ -243,7 +245,7 @@ const DatePicker = <Value extends DatePickerValueType>(props: DatePickerProps<Va
             setMode={func.setMode}
             type={type}
             options={options}
-            disabled={props.disabled}
+            disabled={disabled}
             jssStyle={jssStyle}
             closePop={closePop}
             defaultTime={props.defaultTime}
