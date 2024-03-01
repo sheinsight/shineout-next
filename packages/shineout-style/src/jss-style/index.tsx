@@ -36,7 +36,7 @@ const createClassname = (rule: any, sheet: any) => {
   if (!ns) {
     console.warn('[sheinx/base]: styled should give namespace');
   }
-  const prefix = 'so';
+  const prefix = 'soui';
   if (config.generateId) return config.generateId(rule, sheet);
   return generateClassName(version, prefix, ns, rule.key);
   // return `${prefix}${ns}${camelToDash(rule.key)}`;

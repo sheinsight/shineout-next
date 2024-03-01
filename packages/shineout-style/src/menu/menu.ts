@@ -284,6 +284,9 @@ const menuStyle: JsStyles<MenuClassType> = {
   itemContentFront: {},
   itemContentBack: {},
   title: {
+    '&:hover': {
+      color: 'inherit',
+    },
     flex: 1,
     textDecoration: 'none',
     color: 'inherit',
