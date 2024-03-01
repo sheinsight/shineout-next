@@ -19,12 +19,14 @@ import { TreeContextProps } from '../tree/tree-context.type';
 import Result from '../select/result';
 import Icons from '../icons';
 import Tree from '../tree';
+import useWithFormConfig from '../common/use-with-form-config';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
 const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
-  props: TreeSelectProps<DataItem, Value>,
+  props0: TreeSelectProps<DataItem, Value>,
 ) => {
+  const props = useWithFormConfig(props0);
   const {
     jssStyle,
     className,
