@@ -146,6 +146,9 @@ const radioStyle: JsStyles<RadioClass> = {
   },
   group: {
     lineHeight: 1,
+    '[data-soui-role="form-control"] >  &': {
+      padding: '5px 0'
+    }
   },
   groupBlock: {
     '& $wrapper': {
