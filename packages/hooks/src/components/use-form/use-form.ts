@@ -65,6 +65,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     lastValue: props.value || emptyObj,
     resetTime: 0,
     mounted: false,
+    unmounted: false,
   });
 
   const update = (name?: string | string[]) => {
@@ -148,6 +149,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   const remove = () => {
     if (!context.removeArr.size) return;
+    if (context.unmounted) return;
     onChange((v) => {
       context.removeArr.forEach((n) => {
         deepRemove(v, n);
@@ -405,6 +407,11 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   React.useEffect(() => {
     context.mounted = true;
+    context.unmounted = false;
+    return () => {
+      context.mounted = false;
+      context.unmounted = true;
+    }
   }, []);
 
   return {
