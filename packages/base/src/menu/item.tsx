@@ -11,6 +11,10 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const children = props.dataItem.children || [];
   const { inlineIndent = 24, frontCaretType = 'solid' } = props;
 
+  const hasExpandAbleChildren = children.some(
+    (item: any) => item && item.children && (props.looseChildren || item.children.length),
+  );
+
   const {
     id,
     isChecked,
@@ -127,7 +131,11 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     >
       {renderItem()}
       {children.length > 0 && (
-        <ul className={classNames(classes?.children, isUp && classes?.childrenUp)}>
+        <ul className={classNames(
+          classes?.children,
+           isUp && classes?.childrenUp,
+           hasExpandAbleChildren && classes?.childrenHasExpand,
+           )}>
           {children.map((item: any, index: number) => {
             const key = util.getKey(props.keygen, item, index);
             return (

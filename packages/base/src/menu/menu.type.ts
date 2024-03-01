@@ -9,7 +9,6 @@ export interface MenuClasses {
   wrapperInline: string;
   wrapperVertical: string;
   wrapperHorizontal: string;
-  wrapperHasExpand: string;
   wrapperHasOpen: string;
   wrapperLight: string;
   wrapperDark: string;
@@ -37,6 +36,7 @@ export interface MenuClasses {
   scrolbarHandler: string;
   scrollbox: string;
   icon: string;
+  childrenHasExpand: string;
 }
 
 export type MenuJssStyle = {
