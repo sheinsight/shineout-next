@@ -110,10 +110,10 @@ const Tabs = (props: TabsProps) => {
   };
 
   const getDataProps = () => {
-    return {
-      'data-soui-position': getPosition(),
-      'data-soui-shape': shape,
-    };
+    return util.getDataAttribute({
+      position: getPosition(),
+      shape
+    });
   };
 
   const handleCollapsible = () => {

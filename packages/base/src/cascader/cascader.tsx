@@ -601,7 +601,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   return (
     <div
       tabIndex={disabled === true ? -1 : 0}
-      data-soui-type={'input'}
+      {...util.getDataAttribute({ type: 'input' })}
       className={rootClass}
       style={rootStyle}
       onBlur={handleBlur}

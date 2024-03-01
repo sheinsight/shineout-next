@@ -3,18 +3,27 @@ import classNames from 'classnames';
 import { TabsHeaderProps } from './tabs-header.type';
 import { TabsClasses } from './tabs.type';
 import { ButtonClasses } from '../button/button.type';
-import { useTabsContext, useTransform } from '@sheinx/hooks';
+import { useTabsContext, useTransform, util } from '@sheinx/hooks';
 import Tab from './tab';
 import Icon from '../icons';
 import Button from '../button';
 
 const TabsHeader = (props: TabsHeaderProps) => {
-  const { tabs, jssStyle, hideSplit, collapsible, extra, splitColor, tabBarStyle, getPosition, sticky } =
-    props;
+  const {
+    tabs,
+    jssStyle,
+    hideSplit,
+    collapsible,
+    extra,
+    splitColor,
+    tabBarStyle,
+    getPosition,
+    sticky,
+  } = props;
 
   const headerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [loaded, setLoaded] = useState(false); 
+  const [loaded, setLoaded] = useState(false);
   const tabRef = useRef<Record<string | number, HTMLDivElement>>({});
   const { shape, isVertical, onCollapsible, active } = useTabsContext();
 
@@ -85,11 +94,11 @@ const TabsHeader = (props: TabsHeaderProps) => {
     setTransform(getActiveTabOffest());
   }, [active, tabRef.current, headerRef.current, scrollRef.current, shouldScroll]);
 
-  const getDataProps = (options?: { 'data-soui-state'?: string }) => {
-    return {
-      'data-soui-shape': shape,
+  const getDataProps = (options?: { state?: string }) => {
+    return util.getDataAttribute({
+      shape,
       ...options,
-    };
+    });
   };
 
   const handlePrev = () => {
@@ -155,7 +164,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
     return (
       <div
         className={classNames(headerStyle.prev)}
-        {...getDataProps({ 'data-soui-state': atStart ? 'disabled' : '' })}
+        {...getDataProps({ state: atStart ? 'disabled' : '' })}
         onClick={handlePrev}
       >
         {shape === 'card' ? (
@@ -171,7 +180,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
     return (
       <div
         className={headerStyle.next}
-        {...getDataProps({ 'data-soui-state': atEnd ? 'disabled' : '' })}
+        {...getDataProps({ state: atEnd ? 'disabled' : '' })}
         onClick={handleNext}
       >
         {shape === 'card' ? (
