@@ -73,7 +73,7 @@ const Scroll = (props: scrollProps) => {
   return (
     <div className={props.className} style={props.style} onMouseMove={props.onMouseMove}>
       <div
-        {...util.getDataAttribute({ type: 'scroll' })}
+        {...util.getDataAttribute({ role: 'scroll' })}
         style={scrollerStyle}
         onScroll={handleScroll}
         ref={props.wrapperRef}
@@ -85,7 +85,7 @@ const Scroll = (props: scrollProps) => {
         }}
       >
         <div
-          {...util.getDataAttribute({ type: 'scroll-container' })}
+          {...util.getDataAttribute({ role: 'scroll-container' })}
           style={containerStyle}
           ref={containerRef}
         >

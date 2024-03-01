@@ -88,12 +88,12 @@ const formItemStyle: JsStyles<FormItemClass> = {
     },
   },
   control: {
-    minWidth: '0',
     fontSize: token.formItemFontSize,
-    minHeight: `calc(${token.lineHeightDynamic} + ${token.formItemLabelPaddingY} * 2)`,
-    display: 'flex',
-    flexFlow: 'row wrap',
-    alignItems: 'center',
+    // minHeight: `calc(${token.lineHeightDynamic} + ${token.formItemLabelPaddingY} * 2)`,
+    // minWidth: '0',
+    // display: 'flex',
+    // flexFlow: 'row wrap',
+    // alignItems: 'center',
     flex: '1',
     lineHeight: token.lineHeightDynamic,
     '$wrapperInline &': {
@@ -105,8 +105,8 @@ const formItemStyle: JsStyles<FormItemClass> = {
     lineHeight: token.lineHeightDynamic,
     minHeight: token.formItemTipMinHeight,
     fontSize: token.formItemTipFontSize,
-    flexBasis: '100%',
-    width: 0,
+    // flexBasis: '100%',
+    // width: 0,
   },
   tip: {
     color: token.formItemTipFontColor,

@@ -42,7 +42,7 @@ const Checkbox = (props: SimpleCheckboxProps) => {
       <span className={indicatorClass}>
         <i
           {...getIndicatorProps()}
-          {...getDataAttribute({ type: 'checkbox-indicator' })}
+          {...getDataAttribute({ role: 'checkbox-indicator' })}
           className={checkboxStyle?.indicator}
         >
           {props.checked === 'indeterminate' ? (

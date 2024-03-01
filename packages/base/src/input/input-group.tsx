@@ -4,6 +4,7 @@ import { Children, cloneElement, useRef } from 'react';
 import classNames from 'classnames';
 import { InputGroupProps } from './input-group.type';
 import useWithFormConfig from '../common/use-with-form-config';
+import { util } from '@sheinx/hooks';
 
 export default (props: InputGroupProps) => {
   const [focus, setFocus] = React.useState(false);
@@ -45,7 +46,7 @@ export default (props: InputGroupProps) => {
     !!focus && inputStyle?.groupFocus,
   );
   return (
-    <div className={rootClass} style={{ width, ...style }} data-soui-type={'input-group'}>
+    <div {...util.getDataAttribute({ type: 'input-group' })} className={rootClass} style={{ width, ...style }}>
       {Children.toArray(children).map((child, i) => {
         if (typeof child === 'string') {
           return <span key={i}>{child}</span>;

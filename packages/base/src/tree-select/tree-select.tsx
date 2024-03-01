@@ -516,7 +516,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     <div
       ref={treeSelectRef}
       tabIndex={disabled === true ? -1 : 0}
-      data-soui-type={'input'}
+      {...util.getDataAttribute({ type: 'input' })}
       className={rootClass}
       style={rootStyle}
       onBlur={handleBlur}

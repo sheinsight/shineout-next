@@ -112,7 +112,7 @@ const MessagePure = (props: {
                 style={{ top }}
                 title={title}
                 type={type === 'default' ? undefined : type}
-                data-soui-type='message'
+                {...util.getDataAttribute({ type: 'message' })}
               >
                 {content}
               </Alert>
