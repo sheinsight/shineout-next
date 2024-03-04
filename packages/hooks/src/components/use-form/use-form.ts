@@ -5,7 +5,7 @@ import usePersistFn from '../../common/use-persist-fn';
 import { getDataAttributeName } from '../../utils/attribute';
 
 const globalKey = '__global__&&@@';
-import { current, produce } from 'immer';
+import { current, produce } from '../../utils/immer';
 import {
   deepGet,
   deepRemove,
