@@ -4,8 +4,9 @@ import { KeygenResult, useTree, util, usePrevious, ObjectKey } from '@sheinx/hoo
 import { TreeClasses } from '@sheinx/shineout-style';
 import { TreeProps } from './tree.type';
 import RootTree from './tree-root';
-import { produce } from 'immer';
 import { Provider } from './tree-context';
+
+const { produce } = util;
 
 const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) => {
   const {

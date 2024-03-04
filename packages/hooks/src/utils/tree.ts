@@ -1,4 +1,4 @@
-import { produce } from 'immer';
+import { produce } from '../utils/immer';
 import { KeygenResult } from '../common/type';
 import { deepClone } from './clone';
 
