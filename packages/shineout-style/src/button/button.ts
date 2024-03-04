@@ -196,7 +196,6 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     fontWeight: 400,
     cursor: 'pointer',
     userSelect: 'none',
-    // textAlign: 'center',
     whiteSpace: 'nowrap',
     display: 'inline-flex',
     alignItems: 'center',
@@ -210,11 +209,8 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
     transition: 'all 0.15s ease-in-out',
     fontFamily: 'inherit',
-    height: Token.buttonHeight,
 
-    '& $spaceWrapper': {
-      // height: '100%',
-    },
+    '& $spaceWrapper': {},
 
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,
@@ -237,7 +233,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
   },
   spaceWrapper: {},
   small: {
-    height: Token.buttonSmallHeight,
+    // height: Token.buttonSmallHeight,
 
     fontSize: Token.buttonSmallFontSize,
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
