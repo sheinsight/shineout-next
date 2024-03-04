@@ -7,7 +7,10 @@
  *    -- The basic usage for component.
  */
 import React, { useState } from 'react';
-import { Modal, Button } from 'shineout';
+import { Modal, Button ,Select} from 'shineout';
+
+const primitiveData = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
+
 
 const App: React.FC = () => {
   const [content, setContent] = useState(1);
@@ -49,7 +52,8 @@ const App: React.FC = () => {
           </Button>,
         ]}
       >
-        {`you are visited ${content}`}
+        {/* {`you are visited ${content}`} */}
+        <Select width={300} data={primitiveData} keygen placeholder='Select Color' />
       </Modal>
     </div>
   );
