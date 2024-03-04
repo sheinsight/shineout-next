@@ -1,17 +1,18 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+const menuIndex = 1000;
 
 export type MenuClasses = {
   wrapper: string;
   wrapperInline: string;
   wrapperVertical: string;
   wrapperHorizontal: string;
-  wrapperHasExpand: string;
   wrapperHasOpen: string;
   wrapperLight: string;
   wrapperDark: string;
   root: string;
   children: string;
+  childrenHasExpand: string;
   childrenUp: string;
   item: string;
   itemActive: string;
@@ -80,19 +81,19 @@ const menuStyle: JsStyles<MenuClassType> = {
   wrapperInline: {},
   wrapperVertical: {
     position: 'relative',
-    zIndex: 0,
+    zIndex: menuIndex,
   },
   wrapperHorizontal: {
     height: '42px',
     position: 'relative',
-    zIndex: 0,
+    zIndex: menuIndex,
   },
-  wrapperHasExpand: {},
   wrapperHasOpen: {},
   children: {
     padding: '0',
     display: 'none',
     minWidth: '100%',
+    whiteSpace: 'nowrap',
     '$itemOpen > &': {
       display: 'block',
     },
@@ -163,6 +164,7 @@ const menuStyle: JsStyles<MenuClassType> = {
   itemOpen: {},
   itemInPath: {},
   itemHasChildren: {},
+  childrenHasExpand: {},
   itemContent: {
     lineHeight: token.lineHeightDynamic,
     display: 'flex',
@@ -254,7 +256,12 @@ const menuStyle: JsStyles<MenuClassType> = {
         },
       },
       '$wrapperLight$wrapperHorizontal $root > &::before': {
-        display: 'none',
+        width: '100%',
+        height: '2px',
+        top: 'auto',
+        bottom: 0,
+        left: 0,
+        right: 'auto',
       },
     },
     '$wrapperLight $itemDisabled > &&': {
@@ -277,6 +284,9 @@ const menuStyle: JsStyles<MenuClassType> = {
   itemContentFront: {},
   itemContentBack: {},
   title: {
+    '&:hover': {
+      color: 'inherit',
+    },
     flex: 1,
     textDecoration: 'none',
     color: 'inherit',
@@ -284,13 +294,21 @@ const menuStyle: JsStyles<MenuClassType> = {
     alignItems: 'center',
     minWidth: 0,
     padding: `${token.menuTitlePaddingY} ${token.menuTitlePaddingX}`,
-    '$wrapperHasExpand $itemContentBack > &': {
+    '$wrapperInline $childrenHasExpand $itemContentBack > &': {
       paddingRight: token.menuExpandWidth,
     },
-    '$wrapperHasExpand $itemHasChildren > $itemContentBack > &': {
+    '$wrapperInline $itemHasChildren > $itemContentBack > &': {
       paddingRight: 0,
     },
-    '$wrapperHasExpand $itemContentFront > &': {
+
+    '$childrenHasExpand > $item > $itemContentBack > &': {
+      paddingRight: token.menuExpandWidth,
+    },
+    '$childrenHasExpand $itemHasChildren > $itemContentBack > &': {
+      paddingRight: 0,
+    },
+
+    '$childrenHasExpand $itemContentFront > &': {
       paddingLeft: 0,
     },
   },

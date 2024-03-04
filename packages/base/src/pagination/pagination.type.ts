@@ -46,9 +46,7 @@ export interface TextParams {
   jumper?: string;
 }
 
-export interface PaginationProps
-  extends Pick<CommonType, 'style' | 'className' | 'size'>,
-    Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
+export interface PaginationProps extends Pick<CommonType, 'style' | 'className' | 'size'> {
   /**
    * @en Align of pagination
    * @cn 排布方式
