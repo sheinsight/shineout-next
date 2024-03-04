@@ -2,7 +2,7 @@
  * cn - 无边框卡片
  *    -- 通过设置 border 样式，可以去掉卡片的边框
  * en - Hover
- *    -- Set shadow to hover to show shadow when the mouse is over the card, and you can customize the hover style by overriding the style.
+ *    -- Set shadow to hover to show shadow when the mouse is over the card, and you can customize the hover style by overriding the style
  */
 import React from 'react';
 import { Card, TYPE, Button } from 'shineout';

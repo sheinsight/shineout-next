@@ -2,7 +2,7 @@
  * cn - 滚动
  *    -- 当 Tabs 数量过多时，将自动开启滚动功能
  * en - Scroll
- *    -- When there are too many Tabs, the scroll function will be automatically enabled.
+ *    -- When there are too many Tabs, the scroll function will be automatically enabled
  */
 import { Tabs } from 'shineout';
 

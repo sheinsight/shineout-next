@@ -5,7 +5,7 @@
  *    -- lineHeight 用来设置列表项高度
  *    -- rowsInView 用来设置同时所展示的列表项数量，默认为10个
  * en - Big data list
- *    -- Set the fixed property to enable the virtual list, which in this case loads 10,000 pieces of data.
+ *    -- Set the fixed property to enable the virtual list, which in this case loads 10,000 pieces of data
  *    -- support automatic height, and follow the height of parent element by default
  *    -- lineheight is used to set the height of list items
  *    -- rowsinview is used to set the number of list items displayed on a page. The default is 10

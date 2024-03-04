@@ -64,6 +64,7 @@ export default (props: TbodyProps) => {
         rowEvents={props.rowEvents}
         disabled={props.datum.disabledCheck(item)}
         bodyScrollWidth={props.bodyScrollWidth}
+        resizeFlag={props.resizeFlag}
       />
     );
   };

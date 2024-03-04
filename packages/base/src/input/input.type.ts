@@ -78,11 +78,6 @@ export interface SimpleInputProps
   suffix?: React.ReactNode;
   addEnd?: React.ReactNode;
   /**
-   * @en Get status
-   * @cn 获取状态
-   */
-  getStatus?: (status: { focused?: boolean }) => void;
-  /**
    * @en Show border bottom
    * @cn 仅仅展示下边框
    * @default false
@@ -116,11 +111,6 @@ export interface InputCommonProps<V> extends BaseTipProps {
    * @cn 获取input dom元素
    */
   forwardRef?: SimpleInputProps['inputRef'];
-  /**
-   * @en Get status
-   * @cn 获取状态
-   */
-  getStatus?: SimpleInputProps['getStatus'];
   size?: SimpleInputProps['size'];
   jssStyle?: SimpleInputProps['jssStyle'];
   /**
@@ -216,6 +206,7 @@ export type GetCommonProps<Props, V> = Omit<
   | 'renderInput'
   | 'addEnd'
   | 'hasSuffix'
+  | 'onFocusedChange'
 > &
   InputCommonProps<V>;
 

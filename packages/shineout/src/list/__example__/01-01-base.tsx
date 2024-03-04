@@ -2,7 +2,7 @@
  * cn - 基本用法
  *    -- 基础的List用法
  * en - Base
- *    -- Basic List usage.
+ *    -- Basic List usage
  */
 import React from 'react';
 import { List, TYPE, Button } from 'shineout';

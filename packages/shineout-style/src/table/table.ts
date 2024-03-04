@@ -82,6 +82,7 @@ const tableStyle: JsStyles<TableClassType> = {
     boxSizing: 'border-box',
     position: 'relative',
     zIndex: 0,
+    minHeight: 0,
     fontSize: token.tableFontSize,
     '& table': {
       textAlign: 'left',
@@ -228,7 +229,7 @@ const tableStyle: JsStyles<TableClassType> = {
   cellAlignRight: { textAlign: 'right' },
   cellFixedLast: {},
   cellCheckbox: {
-    width: '0',
+    width: '42px',
   },
   cellGroup: {
     textAlign: 'center',

@@ -5,8 +5,8 @@
  *    -- 注意，showCount 属性仅在 pile 属性为 true 时生效。开启 pile 属性后，图片组将默认开启 _modal 模式预览
  * en - Group
  *    -- Image supports a group of images.
- *    -- Set the `pile` property to fold the images, and set the `showCount` property to show the number of images.
- *    -- Note that the showCount property only takes effect when the pile property is true. After the pile property is turned on, the image group will default to preview in _modal mode.
+ *    -- Set the `pile` property to fold the images, and set the `showCount` property to show the number of images
+ *    -- Note that the showCount property only takes effect when the pile property is true. After the pile property is turned on, the image group will default to preview in _modal mode
  */
 
 import React from 'react';

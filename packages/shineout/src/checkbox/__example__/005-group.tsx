@@ -2,7 +2,7 @@
  * cn -
  *    -- 可以直接通过数据来渲染一组 Checkbox
  * en -
- *    -- Render a group of checkboxes from data.
+ *    -- Render a group of checkboxes from data
  */
 import React from 'react';
 import { Checkbox, TYPE } from 'shineout';

@@ -2,7 +2,7 @@
  * cn - 受控模式
  *    -- 设置`current`和`onChange`属性，可以作为受控组件使用
  * en - Controlled
- *    -- Set `current` and `onChange` property to use as a controlled component.
+ *    -- Set `current` and `onChange` property to use as a controlled component
  */
 import { useState } from 'react';
 import { Pagination, Input } from 'shineout';

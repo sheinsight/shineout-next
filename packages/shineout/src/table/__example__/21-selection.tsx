@@ -2,7 +2,7 @@
  * cn - 单元格选中
  *    -- 通过 cellSelectable 属性来启用 ctrl/cmd + click 选中单元格
  * en - Cell selectable
- *    -- whether to enable ctrl/cmd + click check.
+ *    -- whether to enable ctrl/cmd + click check
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';

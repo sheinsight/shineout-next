@@ -2,7 +2,7 @@
  * cn - 异常处理
  *    -- onHttpError 用来处理上传到服务器返回的异常
  * en - Error
- *    -- Set onHttpError to handle exceptions returned by uploading to the server.
+ *    -- Set onHttpError to handle exceptions returned by uploading to the server
  */
 import React from 'react';
 import { Button, Upload } from 'shineout';

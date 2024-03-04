@@ -2,7 +2,7 @@
  * cn - 不同状态
  *    -- 图片在加载过程中，会有不同的状态。不同状态下的 Image 展现形式不同
  * en - Status
- *    -- Image has different status when loading.
+ *    -- Image has different status when loading
  */
 
 import React from 'react';

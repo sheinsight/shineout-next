@@ -4,7 +4,7 @@
  *    -- 内置了四个弹出方向
  * en - Base
  *    -- children can only be a ReactElement and cannot be a Fragment
- *    -- There are four pop-up directions built in.
+ *    -- There are four pop-up directions built in
  */
 import React from 'react';
 import { Tooltip, Button } from 'shineout';

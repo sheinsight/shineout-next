@@ -2,7 +2,7 @@
  * cn - 受控
  *    -- active 参数控制选中选项
  * en - Controlled
- *    -- Set active property to control the actived option.
+ *    -- Set active property to control the actived option
  */
 import React, { useState } from 'react';
 import { Menu, TYPE } from 'shineout';

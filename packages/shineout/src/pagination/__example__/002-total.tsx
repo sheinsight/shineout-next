@@ -2,7 +2,7 @@
  * cn - 带总条数的
  *    -- 通过自定义 layout 属性展示总条数
  * en - Total
- *    -- Show total by custom layout property.
+ *    -- Show total by custom layout property
  */
 import { Pagination } from 'shineout';
 

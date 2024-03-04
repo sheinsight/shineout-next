@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import classnames from 'classnames';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
@@ -30,6 +31,7 @@ const Anchor = (props: AnchorProps) => {
     const target = document.getElementById(`${anchorName}-${activeAnchor}`);
     layout?.scrollTo(0, (target?.offsetTop as number) - (anchorName === 'example' ? 10 : 200));
     dispatch.setActiveAnchor(activeAnchor, true);
+
     navigate({
       search: `tab=${state.doctab}&${anchorName}=${activeAnchor}`,
     });
@@ -37,6 +39,19 @@ const Anchor = (props: AnchorProps) => {
       dispatch.setLocked(false);
     });
   };
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const activeAnchor = params.get(anchorName);
+    const target = document.getElementById(`${anchorName}-${activeAnchor}`);
+
+    if (target) {
+      const layout = document.getElementById('layout');
+      setTimeout(() => {
+        layout?.scrollTo(0, (target?.offsetTop as number) - (anchorName === 'example' ? 10 : 200));
+      }, 50);
+    }
+  }, []);
 
   return (
     <ul className={anchorClasses}>

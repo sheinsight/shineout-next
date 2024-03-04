@@ -8,7 +8,7 @@
  *    -- 模式为 3 时，只返回完全选中的父节点
  *    -- 模式为 4 时，所选即所得
  * en - line
- *    -- Set line to false to hide the connection line.
+ *    -- Set line to false to hide the connection line
  */
 
 import { useState } from 'react';

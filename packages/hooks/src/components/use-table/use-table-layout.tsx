@@ -44,6 +44,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
   const [isScrollY, setIsScrollY] = React.useState(false);
   const [floatLeft, setFloatLeft] = React.useState(false);
   const [floatRight, setFloatRight] = React.useState(false);
+  const [resizeFlag, setResizeFlag] = React.useState(0);
   const [scrollBarWidth, setScrollBarWidth] = React.useState(0);
   const [scrollWidth, setScrollWidth] = React.useState(0);
   const [colgroup, setColgroup] = React.useState(props.columns.map((v) => v.width));
@@ -78,7 +79,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     if (!colgroup) return;
     const table = theadRef.current || tbodyRef.current;
     if (!table) return;
-    const colEl = table.querySelector(`colgroup col:nth-child(${col.index + 1})`) as HTMLElement;
+    const colEl = table.querySelector(`colgroup col:nth-child(${index + 1})`) as HTMLElement;
     if (!colEl) return;
     let oWidth = parseInt(colEl.style.width, 10);
     if (Number.isNaN(oWidth) || oWidth === 0) {
@@ -97,15 +98,23 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     context.dragWidth = w;
   });
 
+  const updateResizeFlag = () => {
+    setResizeFlag((v) => (v + 1) % 10);
+  };
+
   const changeColGroup = (cols: Array<number | undefined>, adjust: boolean | 'drag') => {
     setColgroup(cols);
     setAdjust(adjust);
+    if (!adjust) {
+      updateResizeFlag();
+    }
   };
 
   // 完成拖拽
   const resizeCol = usePersistFn((index) => {
     if (!props.columnResizable) return;
     if (!colgroup) return;
+
     const deltaX = context.dragWidth - colgroup[index]!;
 
     const newColgroup = [...colgroup];
@@ -147,6 +156,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       sum += width;
       newCols.push(width);
     }
+
 
     if (fromDrag && props.columnResizable) {
       const widthArr = [...newCols];
@@ -254,6 +264,7 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     shouldLastColAuto: props.columnResizable && !adjust,
     scrollWidth,
     maxScrollLeft: scrollWidth - context.clientWidth,
+    resizeFlag,
   };
 };
 

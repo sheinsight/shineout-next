@@ -2,7 +2,7 @@
  * cn - 暗系主题
  *    -- 内置了一个暗色的主题，通过 theme 使用
  * en - Dark theme
- *    -- The dark theme.
+ *    -- The dark theme
  */
 import React, { useState } from 'react';
 import { Menu, TYPE } from 'shineout';

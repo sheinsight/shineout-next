@@ -2,7 +2,7 @@
  * cn - 动态加载
  *    -- 动态加载节点
  * en - Loader
- *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes.
+ *    -- Basic usage of Tree component. When the `children` field is configured, it allows expanding and collapsing nodes
  */
 import { useState } from 'react';
 import { Tree, TYPE } from 'shineout';

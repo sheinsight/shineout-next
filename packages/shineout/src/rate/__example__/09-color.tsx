@@ -2,7 +2,7 @@
  * cn - 颜色
  *    -- 在创建组件时设置颜色
  * en - Icon color
- *    -- Set the color when the component is created.
+ *    -- Set the color when the component is created
  */
 import React from 'react';
 import { Rate } from 'shineout';

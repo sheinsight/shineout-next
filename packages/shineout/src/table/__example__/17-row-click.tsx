@@ -2,7 +2,7 @@
  * cn - 行内元素点击
  *    -- 设置 rowClickAttr，可以使行内元素的点击事件触发onRowClick
  * en - Base
- *    -- Set the rowClickAttr to trigger an onRowClick event for an element.
+ *    -- Set the rowClickAttr to trigger an onRowClick event for an element
  */
 import React, { useState } from 'react';
 import { Table, Radio, Button, TYPE } from 'shineout';

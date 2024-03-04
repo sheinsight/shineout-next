@@ -30,7 +30,6 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     style,
     suffix,
     info,
-    getStatus,
     innerTitle,
     placeTitle,
     width,
@@ -116,11 +115,8 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     </React.Fragment>
   );
 
-  const onStatusChange = usePersistFn((status: { focused?: boolean }) => {
-    setFocused(!!status.focused);
-    if (getStatus) {
-      getStatus(status);
-    }
+  const onFocusedChange = usePersistFn((focused?: boolean) => {
+    setFocused(!!focused);
   });
 
   const mergeStyle = useMemo(() => {
@@ -147,7 +143,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props: Pro
     rootRef,
     inputRef: forwardRef,
     renderInput: renderInput,
-    getStatus: onStatusChange,
+    onFocusedChange: onFocusedChange,
   };
 };
 

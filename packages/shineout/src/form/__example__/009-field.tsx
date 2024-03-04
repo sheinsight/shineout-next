@@ -4,9 +4,9 @@
  *    -- children 为 ReactElement时，必须支持 value 和 onChange 属性
  *    -- children 为 Function 时，返回一个或一组 ReactElement，在函数内部自行处理 value 和 onChange
  * en - Field
- *    -- Components that support value property and onChange property can be put in a Form.Field .
- *    -- When the children property is a ReactElement, the value and onChange property must be provided.
- *    -- When the children property is a function, return one or one group of ReactElement.
+ *    -- Components that support value property and onChange property can be put in a Form.Field
+ *    -- When the children property is a ReactElement, the value and onChange property must be provided
+ *    -- When the children property is a function, return one or one group of ReactElement
  */
 import React from 'react';
 import { Form, Rule } from 'shineout';
@@ -35,7 +35,7 @@ const App: React.FC = () => (
         rules={[rule.required('不能为空'), rule.email('格式不正确')]}
       >
         {({ value, onChange, status }) => (
-          <Input value={value || ''} status={status} onChange={onChange} type='text' clearable />
+          <Input value={value || ''} status={status} onChange={onChange} type='text' />
         )}
       </Form.Field>
     </Form.Item>
@@ -49,7 +49,7 @@ const App: React.FC = () => (
           rule.regExp(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/, '格式不正确'),
         ]}
       >
-        <Input type='password' clearable />
+        <Input type='password' />
       </Form.Field>
     </Form.Item>
 

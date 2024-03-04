@@ -87,4 +87,8 @@ export default {
   invalidAccept: 'Invalid file format',
 
   notFound: 'not found',
+  exmples: 'exmples',
+  api: 'API',
+  guide: 'guide',
+  updateRecord: 'update record',
 };

@@ -2,7 +2,7 @@
  * cn - Radio 组禁用
  *    -- 设置 disabled 为 true 时，禁用所有选项
  * en - Radio Group Disabled
- *    -- Set disabled property is set to true, all the options is disabled.
+ *    -- Set disabled property is set to true, all the options is disabled
  */
 import React from 'react';
 import { Radio } from 'shineout';

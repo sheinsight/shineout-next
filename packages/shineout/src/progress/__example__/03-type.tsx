@@ -2,7 +2,7 @@
  * cn - 进度条状态
  *    -- 内置了四种样式，通过 type 来调用
  * en - Type
- *    -- There are 4 built-in style.
+ *    -- There are 4 built-in style
  */
 import React from 'react';
 import { Progress } from 'shineout';

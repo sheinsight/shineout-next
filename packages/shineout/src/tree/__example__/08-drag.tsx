@@ -4,7 +4,7 @@
  *    -- 设置 `dragSibling` 属性，将限制节点拖拽范围至兄弟节点之间
  * en - Drag
  *    -- Set the `onDrop` property to drag the node.
- *    -- Set the `dragSibling` property to limit the node drag range to between sibling nodes.
+ *    -- Set the `dragSibling` property to limit the node drag range to between sibling nodes
  */
 
 import { useState } from 'react';

@@ -24,7 +24,7 @@ const Pagination = (props: PaginationProps) => {
     disabled,
     text = {},
     pageSizeList,
-    ...rest
+    style,
   } = props;
 
   const { onChange, current, pageSize } = usePagination({
@@ -49,7 +49,7 @@ const Pagination = (props: PaginationProps) => {
 
   const getRootProps = () => {
     return {
-      ...rest,
+      style,
     };
   };
 

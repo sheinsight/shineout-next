@@ -2,7 +2,7 @@
  * cn - 指示器
  *    -- 可以指定指示器类型和位置
  * en - Indicator
- *    -- You can set indicator type and position.
+ *    -- You can set indicator type and position
  */
 import React, { useState } from 'react';
 import { Carousel, Radio, TYPE } from 'shineout';

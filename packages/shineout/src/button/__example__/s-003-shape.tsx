@@ -2,7 +2,7 @@
  * cn - 按钮形状
  *    -- 按钮分为矩形、全圆角、方形、圆形四种
  * en - Button shape
- *    -- Button is divided into square, circle, round, and rectangle.
+ *    -- Button is divided into square, circle, round, and rectangle
  */
 
 import { Button } from 'shineout';

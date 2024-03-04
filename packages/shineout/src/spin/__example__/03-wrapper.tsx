@@ -2,7 +2,7 @@
  * cn - 对容器使用
  *    -- Spin 可以当作容器使用，只需将它包裹在外层即可
  * en - Wrapper
- *    -- Spin can be used as a container, just wrap it in the outer layer.
+ *    -- Spin can be used as a container, just wrap it in the outer layer
  */
 import React from 'react';
 import { Spin } from 'shineout';

@@ -2,7 +2,7 @@
  * cn - 自定义图片
  *    -- 使用  renderContent 可以自定义上传之后的图片结果.
  * en - Custom Image
- *    -- Use renderContent to customize the image results after uploading.
+ *    -- Use renderContent to customize the image results after uploading
  */
 import React from 'react';
 import { Message, Upload } from 'shineout';

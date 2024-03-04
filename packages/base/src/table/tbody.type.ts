@@ -37,4 +37,5 @@ export interface TbodyProps
   fixLeftNum?: number;
   fixRightNum?: number;
   bodyScrollWidth?: number;
+  resizeFlag?: number;
 }

@@ -5,11 +5,11 @@
  *    -- sorter 返回一个 sort 函数时，使用这个函数对数据进行内部排序
  *    -- 后端或自行排序用户自行处理，sorter 函数不要返回结果
  * en - multiple Sorter
- *    -- Set the sorter property of Table to indicate the method of table sort.
+ *    -- Set the sorter property of Table to indicate the method of table sort
  *    -- Set the sorter of column to an object, the rule attribute of the object is the same as the sorter of single column sorting, weight indicates the sorting weight, the larger the value, the higher the sorting priority
  *    -- Support multi-column default sorting, set defaultOrder for columns that need default sorting
- *    -- When the sorter returns a function, use this function to sort data internally.
- *    -- Server-side or self-sorting is is handled by the user, do not return results.
+ *    -- When the sorter returns a function, use this function to sort data internally
+ *    -- Server-side or self-sorting is is handled by the user, do not return results
  */
 import React from 'react';
 import { Table, TYPE } from 'shineout';

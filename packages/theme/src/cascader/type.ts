@@ -166,6 +166,12 @@ export interface CascaderTokens {
   cascaderClearPadding: string;
   /**
    * @type {string}
+   * @token Neutral-text-4
+   * @description 级联选择器清除按钮的鼠标移入时的颜色
+   */
+  cascaderClearHoverColor: string;
+  /**
+   * @type {string}
    * @token Brand-6
    * @description 级联选择器鼠标移入时的边框颜色
    */

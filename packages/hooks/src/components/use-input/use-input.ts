@@ -34,12 +34,18 @@ const useInput = (params: BaseInputProps) => {
     onClear,
     onClick,
     showClear,
+    onFocusedChange,
     ...propsToForward
   } = params;
 
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  const [focused, setFocused] = React.useState(false);
+  const [focused, changeFocued] = React.useState(false);
+
+  const setFocused = (focus: boolean) => {
+    changeFocued(focus);
+    onFocusedChange?.(focus);
+  };
 
   const handleClick =
     (otherHandlers: HandlerType) => (event: React.MouseEvent<HTMLInputElement>) => {
@@ -119,6 +125,7 @@ const useInput = (params: BaseInputProps) => {
       // do not blur
       event.preventDefault();
       if (!focused) {
+        setFocused(true);
         inputRef.current?.focus();
       }
       if (onClear) {

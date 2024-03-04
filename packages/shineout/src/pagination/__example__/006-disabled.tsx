@@ -2,7 +2,7 @@
  * cn - 禁用
  *    -- 通过设置`disabled`属性禁用分页器
  * en - Disabled
- *    -- Set `disabled` property to disable pagination.
+ *    -- Set `disabled` property to disable pagination
  */
 import { Pagination } from 'shineout';
 

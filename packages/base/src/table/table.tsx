@@ -106,6 +106,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     maxScrollLeft,
     scrollBarWidth,
     scrollWidth,
+    resizeFlag,
   } = useTableLayout({
     theadRef,
     tbodyRef,
@@ -259,6 +260,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       onRowClick: props.onRowClick,
       rowEvents: props.rowEvents,
       bodyScrollWidth: scrollWidth,
+      resizeFlag: resizeFlag,
     };
 
     const headCommonProps = {
