@@ -2,18 +2,18 @@
 
 exports[`CardGroup[Base] should render correctly  1`] = `
 <div
-  class="so-cardGroup-wrapper"
+  class="c-b9aon7"
   style="height: 300px;"
 >
   <div
-    class="so-cardGroup-scroller"
+    class="cxvmjbk"
   >
     <div
-      class="so-cardGroup-grid"
+      class="ct95mxo"
       style="grid-template-columns: repeat(3, 1fr);"
     >
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -48,7 +48,7 @@ exports[`CardGroup[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -83,7 +83,7 @@ exports[`CardGroup[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -118,7 +118,7 @@ exports[`CardGroup[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -153,7 +153,7 @@ exports[`CardGroup[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -188,7 +188,7 @@ exports[`CardGroup[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -223,7 +223,7 @@ exports[`CardGroup[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -258,7 +258,7 @@ exports[`CardGroup[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -293,7 +293,7 @@ exports[`CardGroup[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -328,7 +328,7 @@ exports[`CardGroup[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -373,7 +373,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
     style="margin: 8px; padding: 8px 16px; background: rgba(130, 130, 130, 0.1); border-radius: 10px;"
   >
     <div
-      class="so-checkbox-wrapper so-checkbox-wrapper-checked so-checkbox-wrapper-indeterminate"
+      class="c-h6l6x c-viv3ps ctu8lac"
     >
       <input
         checked=""
@@ -382,10 +382,11 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-cgztsw"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cr32jlf"
+          data-soui-type="checkbox-indicator"
           tabindex="1"
         >
           <svg
@@ -399,25 +400,25 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
         </i>
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c-5q6dn7"
       >
         全选
       </span>
     </div>
   </div>
   <div
-    class="so-cardGroup-wrapper"
+    class="c-b9aon7"
     style="height: 300px;"
   >
     <div
-      class="so-cardGroup-scroller"
+      class="cxvmjbk"
     >
       <div
-        class="so-cardGroup-grid"
+        class="ct95mxo"
         style="grid-template-columns: repeat(3, 1fr);"
       >
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -451,7 +452,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper so-checkbox-wrapper-checked"
+            class="c-530t2f c-h6l6x c-viv3ps"
           >
             <input
               checked=""
@@ -460,10 +461,11 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               >
                 <svg
@@ -482,7 +484,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -516,7 +518,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -524,17 +526,18 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -568,7 +571,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -576,17 +579,18 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -620,7 +624,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -628,17 +632,18 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -672,7 +677,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -680,17 +685,18 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -724,7 +730,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -732,17 +738,18 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -776,7 +783,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -784,17 +791,18 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -828,7 +836,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -836,17 +844,18 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -880,7 +889,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -888,17 +897,18 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -932,7 +942,7 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -940,10 +950,11 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
@@ -958,18 +969,18 @@ exports[`CardGroup[Base] should render correctly about checkbox 1`] = `
 exports[`CardGroup[Base] should render correctly about disabled 1`] = `
 <div>
   <div
-    class="so-cardGroup-wrapper"
+    class="c-b9aon7"
     style="height: 300px;"
   >
     <div
-      class="so-cardGroup-scroller"
+      class="cxvmjbk"
     >
       <div
-        class="so-cardGroup-grid"
+        class="ct95mxo"
         style="grid-template-columns: repeat(3, 1fr);"
       >
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1003,7 +1014,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper so-checkbox-wrapper-disabled"
+            class="c-530t2f c-h6l6x c-3qx7hp"
           >
             <input
               disabled=""
@@ -1012,17 +1023,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="-1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1056,7 +1068,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -1064,17 +1076,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1108,7 +1121,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper so-checkbox-wrapper-disabled"
+            class="c-530t2f c-h6l6x c-3qx7hp"
           >
             <input
               disabled=""
@@ -1117,17 +1130,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="-1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1161,7 +1175,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -1169,17 +1183,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1213,7 +1228,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper so-checkbox-wrapper-disabled"
+            class="c-530t2f c-h6l6x c-3qx7hp"
           >
             <input
               disabled=""
@@ -1222,17 +1237,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="-1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1266,7 +1282,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -1274,17 +1290,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1318,7 +1335,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper so-checkbox-wrapper-disabled"
+            class="c-530t2f c-h6l6x c-3qx7hp"
           >
             <input
               disabled=""
@@ -1327,17 +1344,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="-1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1371,7 +1389,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -1379,17 +1397,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1423,7 +1442,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper so-checkbox-wrapper-disabled"
+            class="c-530t2f c-h6l6x c-3qx7hp"
           >
             <input
               disabled=""
@@ -1432,17 +1451,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="-1"
               />
             </span>
           </div>
         </div>
         <div
-          class="so-cardGroup-item"
+          class="ct96yax"
         >
           <div
             style="padding: 20px;"
@@ -1476,7 +1496,7 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="so-cardGroup-checkbox so-checkbox-wrapper"
+            class="c-530t2f c-h6l6x"
           >
             <input
               style="display: none;"
@@ -1484,10 +1504,11 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-cgztsw"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cr32jlf"
+                data-soui-type="checkbox-indicator"
                 tabindex="1"
               />
             </span>
@@ -1501,18 +1522,18 @@ exports[`CardGroup[Base] should render correctly about disabled 1`] = `
 
 exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
 <div
-  class="so-cardGroup-wrapper"
+  class="c-b9aon7"
   style="height: 400px;"
 >
   <div
-    class="so-cardGroup-scroller"
+    class="cxvmjbk"
   >
     <div
-      class="so-cardGroup-grid"
+      class="ct95mxo"
       style="grid-template-columns: repeat(1, 1fr);"
     >
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1547,7 +1568,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1582,7 +1603,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1617,7 +1638,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1652,7 +1673,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1687,7 +1708,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1722,7 +1743,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1757,7 +1778,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1792,7 +1813,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1827,7 +1848,7 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1868,18 +1889,18 @@ exports[`CardGroup[Base] should render correctly about lazyout 1`] = `
 
 exports[`CardGroup[Base] should render correctly about width 1`] = `
 <div
-  class="so-cardGroup-wrapper"
+  class="c-b9aon7"
   style="height: 300px;"
 >
   <div
-    class="so-cardGroup-scroller"
+    class="cxvmjbk"
   >
     <div
-      class="so-cardGroup-grid"
+      class="ct95mxo"
       style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));"
     >
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1914,7 +1935,7 @@ exports[`CardGroup[Base] should render correctly about width 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1949,7 +1970,7 @@ exports[`CardGroup[Base] should render correctly about width 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -1984,7 +2005,7 @@ exports[`CardGroup[Base] should render correctly about width 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -2019,7 +2040,7 @@ exports[`CardGroup[Base] should render correctly about width 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -2054,7 +2075,7 @@ exports[`CardGroup[Base] should render correctly about width 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -2089,7 +2110,7 @@ exports[`CardGroup[Base] should render correctly about width 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -2124,7 +2145,7 @@ exports[`CardGroup[Base] should render correctly about width 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -2159,7 +2180,7 @@ exports[`CardGroup[Base] should render correctly about width 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"
@@ -2194,7 +2215,7 @@ exports[`CardGroup[Base] should render correctly about width 1`] = `
         </div>
       </div>
       <div
-        class="so-cardGroup-item"
+        class="ct96yax"
       >
         <div
           style="padding: 20px;"

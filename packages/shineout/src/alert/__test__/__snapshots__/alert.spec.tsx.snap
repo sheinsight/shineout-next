@@ -2,10 +2,10 @@
 
 exports[`Alert[Base] should render correctly  1`] = `
 <div
-  class="ctvjgqd c-cs34wb"
+  class="c-557i93 c-2gbhbj"
 >
   <span
-    class="c-cs3cu8 c-18n2pe"
+    class="c-2gbp9g c-4a5umu"
   >
     <svg
       aria-hidden="true"
@@ -19,10 +19,10 @@ exports[`Alert[Base] should render correctly  1`] = `
     </svg>
   </span>
   <div
-    class="c-pn3xri"
+    class="c-bzptmy"
   >
     <div
-      class="c-crwaa4"
+      class="c-2g4mpc"
     >
       This is a line of important text for alerting purposes
     </div>
@@ -33,10 +33,10 @@ exports[`Alert[Base] should render correctly  1`] = `
 exports[`Alert[Base] should render correctly about closeable 1`] = `
 <div>
   <div
-    class="ctvjgqd c-cs34wb"
+    class="c-557i93 c-2gbhbj"
   >
     <span
-      class="c-cs3cu8 c-18n2pe"
+      class="c-2gbp9g c-4a5umu"
     >
       <svg
         aria-hidden="true"
@@ -50,16 +50,16 @@ exports[`Alert[Base] should render correctly about closeable 1`] = `
       </svg>
     </span>
     <div
-      class="c-pn3xri"
+      class="c-bzptmy"
     >
       <div
-        class="c-crwaa4"
+        class="c-2g4mpc"
       >
         This is informative text.
       </div>
     </div>
     <div
-      class="ctwn9ch"
+      class="c-543pmz"
     >
       <svg
         aria-hidden="true"
@@ -78,10 +78,10 @@ exports[`Alert[Base] should render correctly about closeable 1`] = `
 
 exports[`Alert[Base] should render correctly about title 1`] = `
 <div
-  class="ctvjgqd c-cs34wb c7y2e9l"
+  class="c-557i93 c-2gbhbj c-3eiwiz"
 >
   <span
-    class="c-cs3cu8 c-18n2pe"
+    class="c-2gbp9g c-4a5umu"
   >
     <svg
       aria-hidden="true"
@@ -95,21 +95,21 @@ exports[`Alert[Base] should render correctly about title 1`] = `
     </svg>
   </span>
   <div
-    class="c-pn3xri"
+    class="c-bzptmy"
   >
     <div
-      class="cu5xy0h"
+      class="c-4ut0yz"
     >
       Heading
     </div>
     <div
-      class="c-crwaa4"
+      class="c-2g4mpc"
     >
       This is a line of important text for alerting purposes
     </div>
   </div>
   <div
-    class="ctwn9ch"
+    class="c-543pmz"
   >
     <svg
       aria-hidden="true"
@@ -130,11 +130,11 @@ exports[`Alert[Base] should render correctly about type 1`] = `
   style="display: flex; flex-wrap: wrap; gap: 24px;"
 >
   <div
-    class="ctvjgqd c-cs34wb"
+    class="c-557i93 c-2gbhbj"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="c-cs3cu8 c-18n2pe"
+      class="c-2gbp9g c-4a5umu"
     >
       <svg
         aria-hidden="true"
@@ -148,21 +148,21 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="c-pn3xri"
+      class="c-bzptmy"
     >
       <div
-        class="c-crwaa4"
+        class="c-2g4mpc"
       >
         This is informative text.
       </div>
     </div>
   </div>
   <div
-    class="ctvjgqd c-186exw"
+    class="c-557i93 ccf7p6o"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="c-cs3cu8 c-l1tvnv"
+      class="c-2gbp9g c-hqlwdj"
     >
       <svg
         aria-hidden="true"
@@ -176,21 +176,21 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="c-pn3xri"
+      class="c-bzptmy"
     >
       <div
-        class="c-crwaa4"
+        class="c-2g4mpc"
       >
         This is success text.
       </div>
     </div>
   </div>
   <div
-    class="ctvjgqd c-ms5rbf"
+    class="c-557i93 c-94rn6v"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="c-cs3cu8 c-813ofm"
+      class="c-2gbp9g c-4pvp5a"
     >
       <svg
         aria-hidden="true"
@@ -204,21 +204,21 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="c-pn3xri"
+      class="c-bzptmy"
     >
       <div
-        class="c-crwaa4"
+        class="c-2g4mpc"
       >
         This is warning text.
       </div>
     </div>
   </div>
   <div
-    class="ctvjgqd c40jc4q"
+    class="c-557i93 c-g5zyre"
     style="width: calc(50% - 16px);"
   >
     <span
-      class="c-cs3cu8 c-kwv60t"
+      class="c-2gbp9g c-w9ggtd"
     >
       <svg
         aria-hidden="true"
@@ -232,10 +232,10 @@ exports[`Alert[Base] should render correctly about type 1`] = `
       </svg>
     </span>
     <div
-      class="c-pn3xri"
+      class="c-bzptmy"
     >
       <div
-        class="c-crwaa4"
+        class="c-2g4mpc"
       >
         This is danger text.
       </div>

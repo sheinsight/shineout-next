@@ -5,133 +5,133 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;"
 >
   <div
-    class="cf7ek8"
+    class="c-jrbwbw"
   >
     <button
-      class="c-uc49qd carvzh5 c-w2406k"
+      class="c-xdn1nt cofa3lp c3y92t4"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-dvrksz carvzh5 c-w2406k"
+      class="c-p8cvlj cofa3lp c3y92t4"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-dvrksz carvzh5 c-w2406k"
+      class="c-p8cvlj cofa3lp c3y92t4"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-dvrksz carvzh5 c6rdo0z c-w2406k"
+      class="c-p8cvlj cofa3lp c-giobsp c3y92t4"
       disabled=""
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
   </div>
   <div
-    class="cf7ek8"
+    class="c-jrbwbw"
   >
     <button
-      class="c-uc49qd carvzh5"
+      class="c-xdn1nt cofa3lp"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-dvrksz carvzh5"
+      class="c-p8cvlj cofa3lp"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-dvrksz carvzh5"
+      class="c-p8cvlj cofa3lp"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-dvrksz carvzh5"
+      class="c-p8cvlj cofa3lp"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
   </div>
   <div
-    class="cf7ek8"
+    class="c-jrbwbw"
   >
     <button
-      class="c-dvrksz carvzh5 crlrmkb"
+      class="c-p8cvlj cofa3lp cok8umv"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-dvrksz carvzh5 crlrmkb"
+      class="c-p8cvlj cofa3lp cok8umv"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-dvrksz carvzh5 crlrmkb"
+      class="c-p8cvlj cofa3lp cok8umv"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-dvrksz carvzh5 crlrmkb"
+      class="c-p8cvlj cofa3lp cok8umv"
       type="button"
     >
       <span
-        class="c-6alrak"
+        class="c-k4n9c8"
       >
         Publish
       </span>
@@ -141,20 +141,20 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     style="display: flex; gap: 24px;"
   >
     <div
-      class="cf7ek8"
+      class="c-jrbwbw"
     >
       <button
-        class="c-uc49qd carvzh5"
+        class="c-xdn1nt cofa3lp"
         type="button"
       >
         <span
-          class="c-6alrak"
+          class="c-k4n9c8"
         >
           Publish
         </span>
       </button>
       <button
-        class="c-uc49qd carvzh5"
+        class="c-xdn1nt cofa3lp"
         type="button"
       >
         <span
@@ -176,20 +176,20 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </button>
     </div>
     <div
-      class="cf7ek8"
+      class="c-jrbwbw"
     >
       <button
-        class="c-dvrksz carvzh5"
+        class="c-p8cvlj cofa3lp"
         type="button"
       >
         <span
-          class="c-6alrak"
+          class="c-k4n9c8"
         >
           Publish
         </span>
       </button>
       <button
-        class="c-dvrksz carvzh5"
+        class="c-p8cvlj cofa3lp"
         type="button"
       >
         <span
