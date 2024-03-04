@@ -27,6 +27,9 @@ const transition = '.2s cubic-bezier(.34,.69,.1,1)';
 const switchStyle: JsStyles<SwitchClass> = {
   ...animation,
   wrapper: {
+    '[data-soui-role="form-control"] >  &': {
+      margin: '5px 0'
+    },
     transition: `background-color ${transition}`,
     border: '0',
     display: 'inline-block',

@@ -129,10 +129,10 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const { data: pagedData, ...paginationInfo } = usePaginationList({
     data: sortedData,
     shouldPage: !!props.pagination,
-    current: pagination.current,
-    defaultCurrent: pagination.defaultCurrent,
-    pageSize: pagination.pageSize,
-    onChange: pagination.onChange,
+    current: pagination?.current,
+    defaultCurrent: pagination?.defaultCurrent,
+    pageSize: pagination?.pageSize,
+    onChange: pagination?.onChange,
     loading: !!props.loading,
   });
 

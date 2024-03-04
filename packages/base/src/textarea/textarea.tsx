@@ -15,7 +15,8 @@ const defaultInfo = (num: number, msg: any) => {
   if (msg.length <= num) return text;
   return new Error(text);
 };
-const Textarea = (props: TextareaProps) => {
+const Textarea = (props0: TextareaProps) => {
+  const props = useWithFormConfig(props0);
   const {
     info,
     suffix,
@@ -35,10 +36,6 @@ const Textarea = (props: TextareaProps) => {
 
   const trim = trimProps ?? config.trim ?? false;
   const delay = delayProps ?? config.delay ?? 0;
-
-  const { disabled, size } = useWithFormConfig(props);
-  resetProps.disabled = disabled;
-  resetProps.size = size;
 
   const [focused, setFocused] = React.useState(false);
 

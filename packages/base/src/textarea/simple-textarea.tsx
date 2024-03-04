@@ -1,4 +1,4 @@
-import { useKeyEvent, usePersistFn, useTextarea } from '@sheinx/hooks';
+import { useKeyEvent, usePersistFn, useTextarea, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { KeyboardEvent, useEffect } from 'react';
 import { SimpleTextareaProps } from './textarea.type';
@@ -72,7 +72,7 @@ const Textarea = (props: SimpleTextareaProps) => {
 
   return (
     <div
-      data-soui-type='input'
+      {...util.getDataAttribute({ type: 'input' })}
       {...getRootProps({
         className: rootClass,
         style,

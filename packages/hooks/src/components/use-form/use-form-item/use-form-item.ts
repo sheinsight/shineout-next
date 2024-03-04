@@ -4,7 +4,7 @@ import { FormItemContext } from './form-item-context';
 import { useFormConfig } from '../form-config-context';
 import usePersistFn from '../../../common/use-persist-fn';
 import { getDataAttribute } from '../../../utils/attribute';
-import { produce } from 'immer';
+import { produce } from '../../../utils/immer';
 
 const UseFormItem = () => {
   const [errors, setErrors] = React.useState<{ [name: string]: Error | undefined }>({});

@@ -142,7 +142,9 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
     },
   },
   group: {
-    // padding: '5px 0',
+    '[data-soui-role="form-control"] >  &': {
+      padding: '5px 0'
+    },
     lineHeight: 1,
   },
   groupBlock: {

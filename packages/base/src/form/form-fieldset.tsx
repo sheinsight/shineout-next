@@ -1,7 +1,7 @@
 import { useFormFieldSet, util, usePersistFn } from '@sheinx/hooks';
 import React from 'react';
 import { FormFieldSetProps } from './form-fieldset.type';
-import { produce } from 'immer';
+const { produce } = util;
 
 const FormFieldSet = <T,>(props: FormFieldSetProps<T>) => {
   const { children, empty } = props;

@@ -4,7 +4,7 @@ import { TabProps } from './tab.type';
 import { TabsClasses } from './tabs.type';
 import { ButtonClasses } from '../button/button.type';
 import Button from '../button';
-import { useTabsContext } from '@sheinx/hooks';
+import { useTabsContext, util } from '@sheinx/hooks';
 
 const Tab = (props: TabProps, ref: any) => {
   const { jssStyle, tab, disabled, id, color } = props;
@@ -27,10 +27,7 @@ const Tab = (props: TabProps, ref: any) => {
     const stateProps = [];
     if (isActive) stateProps.push('active');
     if (disabled) stateProps.push('disabled');
-
-    return {
-      'data-soui-state': stateProps.join(' '),
-    };
+    return util.getDataAttribute({ state: stateProps.join(' ') });
   };
 
   const handleClick = () => {

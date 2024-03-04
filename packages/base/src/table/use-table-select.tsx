@@ -12,8 +12,8 @@ interface CacheType {
   dom?: HTMLTableCellElement;
 }
 
-const selectAttribute = 'data-soui-table-selection';
-const tableAttribute = 'data-soui-table';
+const selectAttribute = util.getDataAttributeName("table-selection");
+const tableAttribute = util.getDataAttributeName("table");
 const tdSelect = `td[${selectAttribute}]`;
 
 let instanceNum = 0;
