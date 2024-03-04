@@ -1,7 +1,7 @@
 /**
  * cn - 数组 name
  *    -- 数据为数组类型的组件，name 可以传入一个相应的数组，来分别处理数组内的单个数据
- * en - 数组 name
+ * en - Array name
  *    -- When the data is an array type, the name can pass in a corresponding array to process the single data in the array
  */
 import React, { useState } from 'react';

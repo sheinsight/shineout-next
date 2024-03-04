@@ -1,8 +1,8 @@
 /**
  * cn - 在 Scroll 中滚动会自动Tooltip更新位置
  *    -- Scroll 中滚动
- * en - 在 Scroll 中滚动会自动Tooltip更新位置
- *    -- Scroll 中滚动
+ * en - Scrolling in Scroll will automatically update the Tooltip position
+ *    -- Scroll in Scroll
  */
 // todo 参考原来的例子
 // import React from 'react'

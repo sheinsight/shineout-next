@@ -21,11 +21,11 @@ export default () => {
         <Input.Number
           name='address'
           title='address'
-          rules={[rule.required(), { max: 3, message: 'address 至少三个字符' }]}
+          rules={[rule.required(), { max: 3, message: 'address must be at least three characters' }]}
         />
       </Form.Item>
       <Form.Item label=''>
-        <Form.Submit>提交</Form.Submit>
+        <Form.Submit>Submit</Form.Submit>
       </Form.Item>
     </Form>
   );

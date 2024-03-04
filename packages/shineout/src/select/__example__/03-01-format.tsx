@@ -20,7 +20,7 @@ const data: DataItem[] = [];
 for (let i = 0; i < 15; i++) {
   data.push({
     id: `id-${i}`,
-    name: `标签 ${i}`,
+    name: `Label ${i}`,
   });
 }
 

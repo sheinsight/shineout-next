@@ -9,5 +9,5 @@ import { Empty } from 'shineout';
 import { customIcon } from './static/icon';
 
 export default () => {
-  return <Empty icon={customIcon} description='无网络'></Empty>;
+  return <Empty icon={customIcon} description='No network'></Empty>;
 };
