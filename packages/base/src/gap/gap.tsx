@@ -1,5 +1,6 @@
 import support from './support';
 import React from 'react';
+import classNames from 'classnames';
 import { GapProps } from './gap.type';
 
 let supportFlexGap: boolean | undefined = undefined;
@@ -31,8 +32,8 @@ const Gap = (props: GapProps) => {
       };
 
   return (
-    <div className={className} style={{ ...extendStyle, ...style }}>
-      {React.Children.map(children, (child) => child && <div style={itemStyle}>{child}</div>)}
+    <div className={classNames(className, 'so-gap')} style={{ ...extendStyle, ...style }}>
+      {React.Children.map(children, (child) => child && <div className='so-gap-item' style={itemStyle}>{child}</div>)}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import './normalize';
 export * from './alert';
 export * from './breadcrumb';
 export * from './button';
@@ -23,6 +22,7 @@ export * from './list';
 export * from './menu';
 export * from './message';
 export * from './modal';
+export * from './normalize';
 export * from './pagination';
 export * from './popover';
 export * from './progress';
