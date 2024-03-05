@@ -30,7 +30,7 @@ const App: React.FC = () => (
       <Card.Header
         extra={
           <Button mode='text' type='primary'>
-            文字按钮
+            Text Button
           </Button>
         }
       >

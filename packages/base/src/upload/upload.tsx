@@ -8,8 +8,10 @@ import { useInputClick } from './useInputClick';
 import { getLocale, useConfig } from '../config';
 import icons from '../icons';
 import { produce } from 'immer';
+import useWithFormConfig from '../common/use-with-form-config';
 
-const Upload = <T,>(props: UploadProps<T>) => {
+const Upload = <T,>(props0: UploadProps<T>) => {
+  const props = useWithFormConfig(props0);
   const {
     canDelete = true,
     showUploadList = true,
@@ -19,6 +21,7 @@ const Upload = <T,>(props: UploadProps<T>) => {
     listType = 'text',
     leftHandler,
   } = props;
+  
   const { locale } = useConfig();
   const uploadClasses = props.jssStyle?.upload?.();
   const imageStyle = {

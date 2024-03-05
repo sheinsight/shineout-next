@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { produce } from 'immer';
+import { produce } from '../../utils/immer';
 import { FileRecord, UseUploadProps, XhrResult } from './use-upload.type';
 import useLatestObj from '../../common/use-latest-obj';
 import xhrUpload from './xhr';
 import { attrAccept } from '../../utils/accept';
-import { getUidStr } from '../../utils';
+import { getUidStr } from '../../utils/uid';
 import { usePersistFn, util } from '@sheinx/hooks';
 
 const VALIDATORITEMS: {

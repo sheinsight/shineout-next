@@ -52,7 +52,7 @@ export default () => {
                   callback(new Error('repeat is required'));
                 }
                 if (value && value !== formValue.password) {
-                  callback(new Error('两次输入不一致'));
+                  callback(new Error('Two inputs are inconsistent'));
                 }
                 callback(true);
               },
@@ -63,8 +63,8 @@ export default () => {
         </Form.Item>
 
         <Form.Item label='' style={{ marginTop: 32, marginBottom: 0 }}>
-          <Form.Submit>提交</Form.Submit>
-          <Form.Reset>重置</Form.Reset>
+          <Form.Submit>Submit</Form.Submit>
+          <Form.Reset>Reset</Form.Reset>
         </Form.Item>
       </Form>
     </div>

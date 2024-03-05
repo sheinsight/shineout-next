@@ -15,7 +15,7 @@ const App: React.FC = () => {
   return (
     <div style={{ display: 'flex' }}>
       <Button id='control' onClick={() => setOpen(true)}>
-        打开弹层
+        Open elastic layer
       </Button>
       <DatePicker open={open} onCollapse={handleClose} type='date' placeholder='Select date' />
     </div>

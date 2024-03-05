@@ -15,13 +15,13 @@ export default () => {
         <Input name='name' title='name' rules={[rule.required()]} />
       </Form.Item>
       <Form.Item label='age' required>
-        <Input name='age' rules={[rule.required('email 不能为空')]} />
+        <Input name='age' rules={[rule.required('age required')]} />
       </Form.Item>
       <Form.Item label='address' required>
-        <Input name='address' rules={[{ required: true, message: 'address 必填' }]} />
+        <Input name='address' rules={[{ required: true, message: 'address required' }]} />
       </Form.Item>
       <Form.Item label=''>
-        <Form.Submit>提交</Form.Submit>
+        <Form.Submit>Submit</Form.Submit>
       </Form.Item>
     </Form>
   );

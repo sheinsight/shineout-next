@@ -164,7 +164,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         className: classNames(styles.tag, styles.hideTag, resultClassName),
         children: content,
         onClick: handleClick,
-        'data-soui-type': disabled === true ? 'dark' : undefined,
+        ...util.getDataAttribute({type: disabled === true ? 'dark' : undefined})
       });
     }
 
@@ -178,7 +178,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         onClick={handleClick}
         jssStyle={jssStyle as any}
         inlineStyle={true}
-        data-soui-type={disabled === true ? 'dark' : undefined}
+        {...util.getDataAttribute({type: disabled === true ? 'dark' : undefined})}
       >
         {content}
       </Tag>
@@ -306,7 +306,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       // 获取合法的 content
       const content = renderResultContent(result[0]);
       // 仅在关闭下拉框时，将输入框的值设置为合法的s选中的值
-      if (!isEmpty(content) && focus === false) {
+      if (!isEmpty(content)) {
         setInputText(content as string);
       }
     }

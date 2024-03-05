@@ -46,14 +46,14 @@ export default () => {
         </Form.Item>
 
         <Form.Item label=''>
-          <Form.Submit>提交</Form.Submit>
-          <Form.Reset>重置</Form.Reset>
+          <Form.Submit>Submit</Form.Submit>
+          <Form.Reset>Reset</Form.Reset>
           <Button
             onClick={() => {
               setV({ name: 'aelsssssllonnnnggggggg' });
             }}
           >
-            改值后自动校验修改的字段
+            Automatically verify modified fields after changing values
           </Button>
         </Form.Item>
       </Form>

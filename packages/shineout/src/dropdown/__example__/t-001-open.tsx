@@ -22,7 +22,7 @@ const App: React.FC = () => {
   return (
     <div style={{ height: 150 }}>
       <Button onClick={() => setShow(true)} style={{ marginInlineEnd: 24 }}>
-        打开弹层
+        Open elastic layer
       </Button>
       <Dropdown onCollapse={handleCollapse} open={show} placeholder='Dropdown' data={menu} />
     </div>

@@ -18,7 +18,7 @@ export default () => {
         />
       </Form.Item>
       <Form.Item label=''>
-        <Form.Submit>提交</Form.Submit>
+        <Form.Submit>Submit</Form.Submit>
       </Form.Item>
     </Form>
   );

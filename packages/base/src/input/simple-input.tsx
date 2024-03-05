@@ -1,4 +1,4 @@
-import { useInput, useKeyEvent, usePersistFn } from '@sheinx/hooks';
+import { useInput, useKeyEvent, usePersistFn, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { KeyboardEvent } from 'react';
 import { SimpleInputProps } from './input.type';
@@ -67,7 +67,7 @@ const Input = (props: SimpleInputProps) => {
 
   return (
     <div
-      data-soui-type='input'
+      {...util.getDataAttribute({ type: 'input' })}
       {...getRootProps({
         className: rootClass,
         style,

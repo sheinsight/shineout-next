@@ -1,6 +1,6 @@
 import { BaseFormProps, useFormConfig } from '@sheinx/hooks';
 
-export const useWithFormConfig = (props: any) => {
+export const useWithFormConfig = <T>(props: T) => {
   const formConfig = useFormConfig();
   const size: BaseFormProps<any>['size'] = (props as any)?.size || formConfig.size;
   const disabled: boolean = formConfig.disabled || (props as any)?.disabled;
@@ -8,7 +8,7 @@ export const useWithFormConfig = (props: any) => {
     ...props,
     size,
     disabled,
-  };
+  } as T;
 };
 
 export default useWithFormConfig;

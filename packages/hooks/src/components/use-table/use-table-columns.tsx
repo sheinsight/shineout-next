@@ -1,5 +1,5 @@
 import { TableColumnItem, TableFormatColumn } from './use-table.type';
-import { produce } from 'immer';
+import { produce } from '../../utils/immer';
 import { useRef } from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 export interface UseColumnsProps<Data> {
