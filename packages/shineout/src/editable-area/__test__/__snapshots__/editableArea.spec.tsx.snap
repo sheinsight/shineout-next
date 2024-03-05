@@ -2,18 +2,18 @@
 
 exports[`EditableArea[Base] should render correctly  1`] = `
 <div
-  class="so-editableArea-wrapper"
+  class="c8pbwtj"
   style="width: 300px;"
 >
   <div
-    class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+    class="ctjdwm3 c-g7agv ck61dbg csqbo1g"
     tabindex="0"
   >
     <div
-      class="so-editableArea-content"
+      class="c-1y2r77"
     >
       <span
-        class="so-editableArea-placeholder"
+        class="c-wb5oah"
       >
         input something
       </span>
@@ -24,15 +24,15 @@ exports[`EditableArea[Base] should render correctly  1`] = `
 
 exports[`EditableArea[Base] should render correctly  2`] = `
 <div
-  class="so-editableArea-wrapper"
+  class="c8pbwtj"
   style="width: 300px;"
 >
   <div
-    class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+    class="ctjdwm3 c-g7agv ck61dbg csqbo1g"
     tabindex="0"
   >
     <div
-      class="so-editableArea-content"
+      class="c-1y2r77"
     >
       i am a long text, i am a long text, i am a long text
     </div>
@@ -43,24 +43,24 @@ exports[`EditableArea[Base] should render correctly  2`] = `
 exports[`EditableArea[Base] should render correctly  3`] = `
 <div
   id="popup-target"
-  style="height: 100px; overflow: auto; position: relative; padding: 10px; margin-left: -10px;"
+  style="height: 100px; overflow-y: auto; position: relative; padding: 10px; margin-left: -10px;"
 >
   <div
     style="height: 50px;"
   />
   <div
-    class="so-editableArea-wrapper"
+    class="c8pbwtj"
     style="width: 300px;"
   >
     <div
-      class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+      class="ctjdwm3 c-g7agv ck61dbg csqbo1g"
       tabindex="0"
     >
       <div
-        class="so-editableArea-content"
+        class="c-1y2r77"
       >
         <span
-          class="so-editableArea-placeholder"
+          class="c-wb5oah"
         >
           scroll in container
         </span>
@@ -76,18 +76,18 @@ exports[`EditableArea[Base] should render correctly  3`] = `
 exports[`EditableArea[Base] should render correctly  4`] = `
 <div>
   <div
-    class="so-editableArea-wrapper"
+    class="c8pbwtj"
     style="width: 300px;"
   >
     <div
-      class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+      class="ctjdwm3 c-g7agv ck61dbg csqbo1g"
       tabindex="0"
     >
       <div
-        class="so-editableArea-content"
+        class="c-1y2r77"
       >
         <span
-          class="so-editableArea-placeholder"
+          class="c-wb5oah"
         >
           input something
         </span>
@@ -100,15 +100,15 @@ exports[`EditableArea[Base] should render correctly  4`] = `
 exports[`EditableArea[Base] should render correctly  5`] = `
 <div>
   <div
-    class="so-editableArea-wrapper"
+    class="c8pbwtj"
     style="width: 300px;"
   >
     <div
-      class="so-editableArea-place so-editableArea-wrapper-padding-box so-editableArea-wrapper-inner-title-top so-editableArea-wrapper-inner-title-bottom"
+      class="ctjdwm3 c-g7agv ck61dbg csqbo1g"
       tabindex="0"
     >
       <div
-        class="so-editableArea-content"
+        class="c-1y2r77"
       >
         <div>
           Guessing what I inputed ?

@@ -8,7 +8,7 @@ exports[`Divider[Base] should render correctly  1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="so-divider-wrapper so-divider-horizontal"
+    class="cifvu9h c-7vwj9a"
   />
   <p>
     A design is a plan or specification for the construction of an object.
@@ -24,10 +24,10 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="so-divider-wrapper so-divider-horizontal so-divider-with-text so-divider-with-text-center"
+    class="cifvu9h c-7vwj9a cm94rn5 c-7loggq"
   >
     <span
-      class="so-divider-inner-text"
+      class="cqxnm9x"
     >
       Center
     </span>
@@ -36,10 +36,10 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="so-divider-wrapper so-divider-horizontal so-divider-with-text so-divider-with-text-left"
+    class="cifvu9h c-7vwj9a cm94rn5 cchkbrs"
   >
     <span
-      class="so-divider-inner-text"
+      class="cqxnm9x"
     >
       Left
     </span>
@@ -48,10 +48,10 @@ exports[`Divider[Base] should render correctly about text 1`] = `
     A design is a plan or specification for the construction of an object.
   </p>
   <div
-    class="so-divider-wrapper so-divider-horizontal so-divider-with-text so-divider-with-text-right"
+    class="cifvu9h c-7vwj9a cm94rn5 cw2b73f"
   >
     <span
-      class="so-divider-inner-text"
+      class="cqxnm9x"
     >
       Right
     </span>

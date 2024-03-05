@@ -2,7 +2,7 @@
 
 exports[`Checkbox[Base] should render correctly  1`] = `
 <div
-  class="so-checkbox-wrapper"
+  class="c-2oyyob"
 >
   <input
     style="display: none;"
@@ -10,15 +10,16 @@ exports[`Checkbox[Base] should render correctly  1`] = `
     type="checkbox"
   />
   <span
-    class="so-checkbox-indicator-wrapper"
+    class="c-do3bmm"
   >
     <i
-      class="so-checkbox-indicator"
+      class="cs409o1"
+      data-soui-role="checkbox-indicator"
       tabindex="1"
     />
   </span>
   <span
-    class="so-checkbox-desc"
+    class="c19hl67"
   >
     Checkbox
   </span>
@@ -31,7 +32,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
     style="margin-bottom: 12px; line-height: 0;"
   >
     <div
-      class="so-checkbox-wrapper"
+      class="c-2oyyob"
     >
       <input
         style="display: none;"
@@ -39,21 +40,22 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-do3bmm"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cs409o1"
+          data-soui-role="checkbox-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c19hl67"
       >
         not checked
       </span>
     </div>
     <div
-      class="so-checkbox-wrapper so-checkbox-wrapper-checked"
+      class="c-2oyyob c-jx5dse"
     >
       <input
         checked=""
@@ -62,10 +64,11 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-do3bmm"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cs409o1"
+          data-soui-role="checkbox-indicator"
           tabindex="1"
         >
           <svg
@@ -82,13 +85,13 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         </i>
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c19hl67"
       >
         checked
       </span>
     </div>
     <div
-      class="so-checkbox-wrapper so-checkbox-wrapper-checked so-checkbox-wrapper-indeterminate"
+      class="c-2oyyob c-jx5dse c-ua7ewq"
     >
       <input
         checked=""
@@ -97,10 +100,11 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-do3bmm"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cs409o1"
+          data-soui-role="checkbox-indicator"
           tabindex="1"
         >
           <svg
@@ -114,7 +118,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         </i>
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c19hl67"
       >
         indeterminate
       </span>
@@ -124,7 +128,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
     style="line-height: 0;"
   >
     <div
-      class="so-checkbox-wrapper so-checkbox-wrapper-disabled"
+      class="c-2oyyob csnudt"
     >
       <input
         disabled=""
@@ -133,21 +137,22 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-do3bmm"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cs409o1"
+          data-soui-role="checkbox-indicator"
           tabindex="-1"
         />
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c19hl67"
       >
         not checked
       </span>
     </div>
     <div
-      class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-checked"
+      class="c-2oyyob csnudt c-jx5dse"
     >
       <input
         checked=""
@@ -157,10 +162,11 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-do3bmm"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cs409o1"
+          data-soui-role="checkbox-indicator"
           tabindex="-1"
         >
           <svg
@@ -177,13 +183,13 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         </i>
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c19hl67"
       >
         checked
       </span>
     </div>
     <div
-      class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-checked so-checkbox-wrapper-indeterminate"
+      class="c-2oyyob csnudt c-jx5dse c-ua7ewq"
     >
       <input
         checked=""
@@ -193,10 +199,11 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-do3bmm"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cs409o1"
+          data-soui-role="checkbox-indicator"
           tabindex="-1"
         >
           <svg
@@ -210,7 +217,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
         </i>
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c19hl67"
       >
         indeterminate
       </span>
@@ -222,7 +229,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked 1`] =
 exports[`Checkbox[Checked, disabled] should render correctly about checked is indeterminate 1`] = `
 <div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -230,25 +237,26 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       CheckAll
     </span>
   </div>
   <div
-    class="so-checkbox-group"
+    class="c-vt37hb"
     style="margin-top: 12px;"
   >
     <div
-      class="so-checkbox-wrapper"
+      class="c-2oyyob"
     >
       <input
         style="display: none;"
@@ -256,21 +264,22 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-do3bmm"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cs409o1"
+          data-soui-role="checkbox-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c19hl67"
       >
         Option1
       </span>
     </div>
     <div
-      class="so-checkbox-wrapper"
+      class="c-2oyyob"
     >
       <input
         style="display: none;"
@@ -278,21 +287,22 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-do3bmm"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cs409o1"
+          data-soui-role="checkbox-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c19hl67"
       >
         Option2
       </span>
     </div>
     <div
-      class="so-checkbox-wrapper"
+      class="c-2oyyob"
     >
       <input
         style="display: none;"
@@ -300,15 +310,16 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
         type="checkbox"
       />
       <span
-        class="so-checkbox-indicator-wrapper"
+        class="c-do3bmm"
       >
         <i
-          class="so-checkbox-indicator"
+          class="cs409o1"
+          data-soui-role="checkbox-indicator"
           tabindex="1"
         />
       </span>
       <span
-        class="so-checkbox-desc"
+        class="c19hl67"
       >
         Option3
       </span>
@@ -320,7 +331,7 @@ exports[`Checkbox[Checked, disabled] should render correctly about checked is in
 exports[`Checkbox[Click] should render correctly about click 1`] = `
 <div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -328,15 +339,16 @@ exports[`Checkbox[Click] should render correctly about click 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       Click Me
        0 Times!
@@ -347,7 +359,7 @@ exports[`Checkbox[Click] should render correctly about click 1`] = `
 
 exports[`Checkbox[HtmlValue] should render correctly about htmlValue 1`] = `
 <div
-  class="so-checkbox-wrapper"
+  class="c-2oyyob"
 >
   <input
     style="display: none;"
@@ -355,15 +367,16 @@ exports[`Checkbox[HtmlValue] should render correctly about htmlValue 1`] = `
     type="checkbox"
   />
   <span
-    class="so-checkbox-indicator-wrapper"
+    class="c-do3bmm"
   >
     <i
-      class="so-checkbox-indicator"
+      class="cs409o1"
+      data-soui-role="checkbox-indicator"
       tabindex="1"
     />
   </span>
   <span
-    class="so-checkbox-desc"
+    class="c19hl67"
   >
     value is "ok"
   </span>

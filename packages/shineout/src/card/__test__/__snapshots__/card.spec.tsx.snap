@@ -3,26 +3,26 @@
 exports[`Card[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c-gbgiye c4q604w"
+    class="c-tu9kjc c71ug4y"
     style="width: 360px;"
   >
     <div
-      class="cxezs52"
+      class="c5hfut4"
     >
       <div
-        class="c-qo3wkd"
+        class="c-pn66hr"
       >
         Card title
       </div>
       <div
-        class="ctv9fne"
+        class="crnh260"
       >
         <button
-          class="c-xdn1nt cofa3lp c3y92t4"
+          class="c-trc8a3 cvey2f3 c-nzauiu"
           type="button"
         >
           <span
-            class="c-k4n9c8"
+            class="cboe6wq"
           >
             Text Button
           </span>
@@ -30,12 +30,12 @@ exports[`Card[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="chx33bf"
+      class="c-8ckprn"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="c-cijnhp cwmnqys"
+      class="cpjaykx c4p3tmu"
     >
       <div
         style="display: flex;"
@@ -112,19 +112,19 @@ exports[`Card[Base] should render correctly  1`] = `
 
 exports[`Card[Base] should render correctly about accordion 1`] = `
 <div
-  class="c-dzsxkx"
+  class="c-adi477"
 >
   <div
-    class="c-gbgiye ckkxo68 crnxxt9 c4q604w c-n2dps7"
+    class="c-tu9kjc cw6ne3m c-kfuys1 c71ug4y c-bgnzut"
   >
     <div
-      class="cxezs52"
+      class="c5hfut4"
     >
       <div
-        class="c4hvzye"
+        class="c846tc4"
       >
         <div
-          class="ct9klen"
+          class="cuaibh9"
         >
           <svg
             aria-hidden="true"
@@ -139,19 +139,19 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
         </div>
       </div>
       <div
-        class="c-qo3wkd"
+        class="c-pn66hr"
       >
         Card title 1
       </div>
     </div>
     <div
-      class="c-wuxoyw"
+      class="c-uj98yu"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
       style="display: none;"
     >
       <div
-        class="chx33bf"
+        class="c-8ckprn"
         style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -159,16 +159,16 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
     </div>
   </div>
   <div
-    class="c-gbgiye ckkxo68 c4q604w c-n2dps7"
+    class="c-tu9kjc cw6ne3m c71ug4y c-bgnzut"
   >
     <div
-      class="cxezs52"
+      class="c5hfut4"
     >
       <div
-        class="c4hvzye"
+        class="c846tc4"
       >
         <div
-          class="ct9klen"
+          class="cuaibh9"
         >
           <svg
             aria-hidden="true"
@@ -183,19 +183,19 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
         </div>
       </div>
       <div
-        class="c-qo3wkd"
+        class="c-pn66hr"
       >
         Card title 2
       </div>
     </div>
     <div
-      class="c-wuxoyw"
+      class="c-uj98yu"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
       style="display: block;"
     >
       <div
-        class="chx33bf"
+        class="c-8ckprn"
         style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -203,16 +203,16 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
     </div>
   </div>
   <div
-    class="c-gbgiye ckkxo68 crnxxt9 c4q604w c-n2dps7"
+    class="c-tu9kjc cw6ne3m c-kfuys1 c71ug4y c-bgnzut"
   >
     <div
-      class="cxezs52"
+      class="c5hfut4"
     >
       <div
-        class="c4hvzye"
+        class="c846tc4"
       >
         <div
-          class="ct9klen"
+          class="cuaibh9"
         >
           <svg
             aria-hidden="true"
@@ -227,19 +227,19 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
         </div>
       </div>
       <div
-        class="c-qo3wkd"
+        class="c-pn66hr"
       >
         Card title 3
       </div>
     </div>
     <div
-      class="c-wuxoyw"
+      class="c-uj98yu"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
       style="display: none;"
     >
       <div
-        class="chx33bf"
+        class="c-8ckprn"
         style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -254,26 +254,26 @@ exports[`Card[Base] should render correctly about border 1`] = `
   style="padding: 32px; background: rgb(244, 245, 248);"
 >
   <div
-    class="c-gbgiye c4q604w"
+    class="c-tu9kjc c71ug4y"
     style="width: 360px;"
   >
     <div
-      class="cxezs52"
+      class="c5hfut4"
     >
       <div
-        class="c-qo3wkd"
+        class="c-pn66hr"
       >
         Card title
       </div>
       <div
-        class="ctv9fne"
+        class="crnh260"
       >
         <button
-          class="c-xdn1nt cofa3lp c3y92t4"
+          class="c-trc8a3 cvey2f3 c-nzauiu"
           type="button"
         >
           <span
-            class="c-k4n9c8"
+            class="cboe6wq"
           >
             Text Button
           </span>
@@ -281,7 +281,7 @@ exports[`Card[Base] should render correctly about border 1`] = `
       </div>
     </div>
     <div
-      class="chx33bf"
+      class="c-8ckprn"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
@@ -291,16 +291,16 @@ exports[`Card[Base] should render correctly about border 1`] = `
 
 exports[`Card[Base] should render correctly about collpase 1`] = `
 <div
-  class="c-gbgiye ckkxo68"
+  class="c-tu9kjc cw6ne3m"
 >
   <div
-    class="cxezs52"
+    class="c5hfut4"
   >
     <div
-      class="c4hvzye"
+      class="c846tc4"
     >
       <div
-        class="ct9klen"
+        class="cuaibh9"
       >
         <svg
           aria-hidden="true"
@@ -315,43 +315,43 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
       </div>
     </div>
     <div
-      class="c-qo3wkd"
+      class="c-pn66hr"
     >
       Card title
     </div>
   </div>
   <div
-    class="c-wuxoyw"
+    class="c-uj98yu"
     data-sheinx-animation-duration="fast"
     data-sheinx-animation-type="collapse"
     style="display: block;"
   >
     <div
-      class="chx33bf"
+      class="c-8ckprn"
     >
       <div>
         <div
-          class="c-lby5xe"
+          class="c-kb0fus"
           data-soui-type="date"
         >
           <div
-            class="c-ictlzz conce1k c-c778gb c5mojyj"
+            class="c-dt8k4h ci4jqom csb873r c9qf70p"
             tabindex="1"
           >
             <div
-              class="cjo1uj6"
+              class="clzqaj8"
             >
               <div
-                class="c-wa88zw"
+                class="cw835ma"
               >
                 <div
-                  class="cfb8i73"
+                  class="c-wskee7"
                 >
                   <div
-                    class="c-z44cu"
+                    class="c-7hwrps"
                   >
                     <span
-                      class="c-3l7pk2"
+                      class="c-37qmec"
                     >
                       请选择日期
                     </span>
@@ -360,7 +360,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
               </div>
             </div>
             <div
-              class="c-5ob8uq"
+              class="czhvzzk"
             >
               <svg
                 aria-hidden="true"
@@ -377,25 +377,25 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
             </div>
           </div>
           <div
-            class="ck77a34"
+            class="coqsbym"
             data-sheinx-animation-duration="fast"
             data-sheinx-animation-type="fade"
             style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
           >
             <div
-              class="c4mfmh4"
+              class="c-3sw5h6"
             >
               <div
-                class="cgqknlh cirvcqr"
+                class="c8b8vn7 cl3jsqt"
               >
                 <div
-                  class="c2iks6o"
+                  class="ce4ai42"
                 >
                   <div
-                    class="c-lqfjft"
+                    class="czc6jq1"
                   >
                     <span
-                      class="c-lqhho7"
+                      class="czc4lhn"
                     >
                       <svg
                         aria-hidden="true"
@@ -409,7 +409,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                       </svg>
                     </span>
                     <span
-                      class="c-lqhho7"
+                      class="czc4lhn"
                     >
                       <svg
                         aria-hidden="true"
@@ -424,10 +424,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                     </span>
                   </div>
                   <div
-                    class="chmnsl4"
+                    class="c-jhck0a"
                   >
                     <span
-                      class="c-lqh9qa"
+                      class="czc4tfk"
                     >
                       2024
                     </span>
@@ -435,16 +435,16 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                       -
                     </i>
                     <span
-                      class="c-lqh9qa"
+                      class="czc4tfk"
                     >
                       3
                     </span>
                   </div>
                   <div
-                    class="c-ydzws4"
+                    class="cu4bhu2"
                   >
                     <span
-                      class="c-lqhho7"
+                      class="czc4lhn"
                     >
                       <svg
                         aria-hidden="true"
@@ -458,7 +458,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                       </svg>
                     </span>
                     <span
-                      class="c-lqhho7"
+                      class="czc4lhn"
                     >
                       <svg
                         aria-hidden="true"
@@ -474,7 +474,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                   </div>
                 </div>
                 <div
-                  class="c1988ed"
+                  class="co6jds7"
                 >
                   <table>
                     <thead>
@@ -504,13 +504,13 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                     </thead>
                     <tbody>
                       <tr
-                        class="c4mfyc7"
+                        class="c-3svtm3"
                       >
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               26
@@ -518,10 +518,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               27
@@ -529,10 +529,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               28
@@ -540,10 +540,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               29
@@ -551,10 +551,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               1
@@ -562,10 +562,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               2
@@ -573,10 +573,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               3
@@ -585,13 +585,13 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="c4mfyc7"
+                        class="c-3svtm3"
                       >
                         <td
-                          class="c198o5h c-n307wk"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               4
@@ -599,10 +599,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb cau3hh6"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               5
@@ -610,10 +610,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               6
@@ -621,10 +621,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               7
@@ -632,10 +632,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               8
@@ -643,10 +643,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               9
@@ -654,10 +654,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               10
@@ -666,13 +666,13 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="c4mfyc7"
+                        class="c-3svtm3"
                       >
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               11
@@ -680,10 +680,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               12
@@ -691,10 +691,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               13
@@ -702,10 +702,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               14
@@ -713,10 +713,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               15
@@ -724,10 +724,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               16
@@ -735,10 +735,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               17
@@ -747,13 +747,13 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="c4mfyc7"
+                        class="c-3svtm3"
                       >
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               18
@@ -761,10 +761,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               19
@@ -772,10 +772,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               20
@@ -783,10 +783,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               21
@@ -794,10 +794,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               22
@@ -805,10 +805,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               23
@@ -816,10 +816,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               24
@@ -828,13 +828,13 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="c4mfyc7"
+                        class="c-3svtm3"
                       >
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               25
@@ -842,10 +842,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               26
@@ -853,10 +853,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               27
@@ -864,10 +864,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               28
@@ -875,10 +875,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               29
@@ -886,10 +886,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               30
@@ -897,10 +897,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h"
+                          class="co6jtjb"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               31
@@ -909,13 +909,13 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="c4mfyc7"
+                        class="c-3svtm3"
                       >
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               1
@@ -923,10 +923,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               2
@@ -934,10 +934,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               3
@@ -945,10 +945,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               4
@@ -956,10 +956,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               5
@@ -967,10 +967,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               6
@@ -978,10 +978,10 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
                           </div>
                         </td>
                         <td
-                          class="c198o5h c-ncw5on"
+                          class="co6jtjb cak7jp3"
                         >
                           <div
-                            class="cd5t8xg"
+                            class="c6n0lki"
                           >
                             <span>
                               7
@@ -1004,45 +1004,46 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
 
 exports[`Card[Base] should render correctly about form 1`] = `
 <div
-  class="c-gbgiye"
+  class="c-tu9kjc"
   style="width: 360px;"
 >
   <div
-    class="cxezs52"
+    class="c5hfut4"
   >
     <div
-      class="c-qo3wkd"
+      class="c-pn66hr"
     >
       Card title
     </div>
   </div>
   <div
-    class="chx33bf"
+    class="c-8ckprn"
   >
     <form
-      class="c-u8khm2"
+      class="cr9qis4"
     >
       <div
-        class="cqg4y0g c-sy375b"
+        class="csrte0i c-u56oz1"
         data-soui-status="default"
       >
         <div
-          class="c-199sfj"
+          class="c-v46lkd"
         >
           User name :
         </div>
         <div
-          class="cfsqjne"
+          class="ci4ezng"
+          data-soui-role="form-control"
         >
           <div
-            class="c-1jmggu"
+            class="c5g1ick"
             data-soui-type="input"
           >
             <div
-              class="c-hkvqnj c-ot96c1 c1wzhz0 c-c714hk"
+              class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
             >
               <input
-                class="c-uqrilj"
+                class="cccsm1n"
                 value="user"
               />
             </div>
@@ -1050,26 +1051,27 @@ exports[`Card[Base] should render correctly about form 1`] = `
         </div>
       </div>
       <div
-        class="cqg4y0g c-sy375b"
+        class="csrte0i c-u56oz1"
         data-soui-status="default"
       >
         <div
-          class="c-199sfj"
+          class="c-v46lkd"
         >
           Email :
         </div>
         <div
-          class="cfsqjne"
+          class="ci4ezng"
+          data-soui-role="form-control"
         >
           <div
-            class="c-1jmggu"
+            class="c5g1ick"
             data-soui-type="input"
           >
             <div
-              class="c-hkvqnj c-ot96c1 c1wzhz0 c-c714hk"
+              class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
             >
               <input
-                class="c-uqrilj"
+                class="cccsm1n"
                 value="test@example.com"
               />
             </div>
@@ -1079,14 +1081,14 @@ exports[`Card[Base] should render correctly about form 1`] = `
     </form>
   </div>
   <div
-    class="c-cijnhp cwmnqys"
+    class="cpjaykx c4p3tmu"
   >
     <button
-      class="c-xdn1nt cofa3lp"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="cboe6wq"
       >
         Submit
       </span>
@@ -1100,26 +1102,26 @@ exports[`Card[Base] should render correctly about hover 1`] = `
   style="display: flex; flex-wrap: wrap; margin: -16px;"
 >
   <div
-    class="c-gbgiye c4k3txu c4q604w"
+    class="c-tu9kjc c6vs9xw c71ug4y"
     style="width: 360px; display: inline-flex; margin: 16px;"
   >
     <div
-      class="cxezs52"
+      class="c5hfut4"
     >
       <div
-        class="c-qo3wkd"
+        class="c-pn66hr"
       >
         Card title
       </div>
       <div
-        class="ctv9fne"
+        class="crnh260"
       >
         <button
-          class="c-xdn1nt cofa3lp c3y92t4"
+          class="c-trc8a3 cvey2f3 c-nzauiu"
           type="button"
         >
           <span
-            class="c-k4n9c8"
+            class="cboe6wq"
           >
             Text Button
           </span>
@@ -1127,12 +1129,12 @@ exports[`Card[Base] should render correctly about hover 1`] = `
       </div>
     </div>
     <div
-      class="chx33bf"
+      class="c-8ckprn"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="c-cijnhp cwmnqys"
+      class="cpjaykx c4p3tmu"
     >
       <div
         style="display: flex;"
@@ -1205,26 +1207,26 @@ exports[`Card[Base] should render correctly about hover 1`] = `
     </div>
   </div>
   <div
-    class="custom-card-customCard-0-2-1 c-gbgiye c4k3txu c4q604w"
+    class="custom-card-customCard-0-2-1 c-tu9kjc c6vs9xw c71ug4y"
     style="width: 360px; display: inline-flex; margin: 16px;"
   >
     <div
-      class="cxezs52"
+      class="c5hfut4"
     >
       <div
-        class="c-qo3wkd"
+        class="c-pn66hr"
       >
         Card title
       </div>
       <div
-        class="ctv9fne"
+        class="crnh260"
       >
         <button
-          class="c-xdn1nt cofa3lp c3y92t4"
+          class="c-trc8a3 cvey2f3 c-nzauiu"
           type="button"
         >
           <span
-            class="c-k4n9c8"
+            class="cboe6wq"
           >
             Text Button
           </span>
@@ -1232,12 +1234,12 @@ exports[`Card[Base] should render correctly about hover 1`] = `
       </div>
     </div>
     <div
-      class="chx33bf"
+      class="c-8ckprn"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="c-cijnhp cwmnqys"
+      class="cpjaykx c4p3tmu"
     >
       <div
         style="display: flex;"
@@ -1315,31 +1317,31 @@ exports[`Card[Base] should render correctly about hover 1`] = `
 exports[`Card[Base] should render correctly about shadow 1`] = `
 <div>
   <div
-    class="c-gbgiye"
+    class="c-tu9kjc"
     style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
   >
     <div
-      class="chx33bf"
+      class="c-8ckprn"
     >
       Never
     </div>
   </div>
   <div
-    class="c-gbgiye c4k3txu"
+    class="c-tu9kjc c6vs9xw"
     style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
   >
     <div
-      class="chx33bf"
+      class="c-8ckprn"
     >
       Hover
     </div>
   </div>
   <div
-    class="c-gbgiye c4ccix6"
+    class="c-tu9kjc c5da8zs"
     style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
   >
     <div
-      class="chx33bf"
+      class="c-8ckprn"
     >
       Always
     </div>
@@ -1350,26 +1352,26 @@ exports[`Card[Base] should render correctly about shadow 1`] = `
 exports[`Card[Base] should render correctly about split 1`] = `
 <div>
   <div
-    class="c-gbgiye"
+    class="c-tu9kjc"
     style="width: 360px;"
   >
     <div
-      class="cxezs52"
+      class="c5hfut4"
     >
       <div
-        class="c-qo3wkd"
+        class="c-pn66hr"
       >
         Card title
       </div>
       <div
-        class="ctv9fne"
+        class="crnh260"
       >
         <button
-          class="c-xdn1nt cofa3lp c3y92t4"
+          class="c-trc8a3 cvey2f3 c-nzauiu"
           type="button"
         >
           <span
-            class="c-k4n9c8"
+            class="cboe6wq"
           >
             Text Button
           </span>
@@ -1377,12 +1379,12 @@ exports[`Card[Base] should render correctly about split 1`] = `
       </div>
     </div>
     <div
-      class="chx33bf"
+      class="c-8ckprn"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="c-cijnhp cwmnqys"
+      class="cpjaykx c4p3tmu"
     >
       <div
         style="display: flex;"

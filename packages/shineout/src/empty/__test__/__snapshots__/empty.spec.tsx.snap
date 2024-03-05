@@ -2,13 +2,13 @@
 
 exports[`Empty[Base] should render correctly  1`] = `
 <div
-  class="so-empty-empty"
+  class="c-5m2u2t"
 >
   <div
-    class="so-empty-wrapper"
+    class="c-dtjbpb"
   >
     <div
-      class="so-empty-image"
+      class="c-5jvz5j"
     >
       <svg
         fill="none"
@@ -197,7 +197,7 @@ exports[`Empty[Base] should render correctly  1`] = `
       </svg>
     </div>
     <div
-      class="so-empty-description"
+      class="c-9acvx2"
     >
       暂无数据
     </div>
@@ -207,13 +207,13 @@ exports[`Empty[Base] should render correctly  1`] = `
 
 exports[`Empty[Base] should render correctly about icon 1`] = `
 <div
-  class="so-empty-empty"
+  class="c-5m2u2t"
 >
   <div
-    class="so-empty-wrapper"
+    class="c-dtjbpb"
   >
     <div
-      class="so-empty-image"
+      class="c-5jvz5j"
     >
       <svg
         fill="none"
@@ -400,9 +400,9 @@ exports[`Empty[Base] should render correctly about icon 1`] = `
       </svg>
     </div>
     <div
-      class="so-empty-description"
+      class="c-9acvx2"
     >
-      无网络
+      No network
     </div>
   </div>
 </div>
@@ -410,28 +410,28 @@ exports[`Empty[Base] should render correctly about icon 1`] = `
 
 exports[`Empty[Base] should render correctly anout image 1`] = `
 <div
-  class="so-empty-empty"
+  class="c-5m2u2t"
 >
   <div
-    class="so-empty-wrapper"
+    class="c-dtjbpb"
   >
     <div
-      class="so-empty-image"
+      class="c-5jvz5j"
     >
       <img
         alt="empty"
-        src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
+        src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
       />
     </div>
     <div
-      class="so-empty-description"
+      class="c-9acvx2"
     >
       <button
-        class="so-button-primary so-button-button"
+        class="c-trc8a3 cvey2f3"
         type="button"
       >
         <span
-          class="so-button-space-wrapper"
+          class="cboe6wq"
         >
           Refresh
         </span>

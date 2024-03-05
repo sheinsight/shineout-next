@@ -2,25 +2,25 @@
 
 exports[`Breadcrumb[Base] should render correctly 1`] = `
 <div
-  class="so-breadcrumb-wrapper"
+  class="cl3pqph"
 >
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <a
-      class="so-breadcrumb-content"
+      class="cagb2or"
       href="/"
     >
       Home
     </a>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <a
       href="/cn/components/shineout/button"
@@ -28,30 +28,30 @@ exports[`Breadcrumb[Base] should render correctly 1`] = `
       Button
     </a>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <a
-      class="so-breadcrumb-content"
+      class="cagb2or"
     >
       Handler
     </a>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <span
-      class="so-breadcrumb-content"
+      class="cagb2or"
     >
       Self
     </span>
@@ -61,25 +61,25 @@ exports[`Breadcrumb[Base] should render correctly 1`] = `
 
 exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
 <div
-  class="so-breadcrumb-wrapper"
+  class="cl3pqph"
 >
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <a
-      class="so-breadcrumb-content"
+      class="cagb2or"
       href="/"
     >
       Home
     </a>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <a
       href="/cn/components/shineout/button"
@@ -87,24 +87,24 @@ exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
       Button
     </a>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <div
-      class="so-breadcrumb-item-with-drop"
+      class="cwvjfja"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         Dropdown
       </a>
       <div
-        class="so-breadcrumb-down"
+        class="c-735nnk"
       >
         <svg
           aria-hidden="true"
@@ -119,16 +119,16 @@ exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
       </div>
     </div>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <span
-      class="so-breadcrumb-content"
+      class="cagb2or"
     >
       Self
     </span>
@@ -139,14 +139,14 @@ exports[`Breadcrumb[Base] should render correctly about dropdown 1`] = `
 exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
 <div>
   <div
-    class="so-breadcrumb-wrapper"
+    class="cl3pqph"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
         href="#home"
       >
         <svg
@@ -163,16 +163,16 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
         </svg>
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
         href="https://www.google.com"
       >
         <svg
@@ -191,16 +191,16 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
         Custom
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <span
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         <svg
           fill="none"
@@ -220,10 +220,10 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
     </div>
   </div>
   <div
-    class="so-breadcrumb-wrapper"
+    class="cl3pqph"
   >
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
         href="#home"
@@ -245,13 +245,13 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
          
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
         href="https://www.google.com"
@@ -272,13 +272,13 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
         </svg>
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <span
         style="display: flex; align-items: center;"
@@ -304,56 +304,56 @@ exports[`Breadcrumb[Base] should render correctly about icon 1`] = `
 
 exports[`Breadcrumb[Base] should render correctly about max 1`] = `
 <div
-  class="so-breadcrumb-wrapper"
+  class="cl3pqph"
 >
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <a
-      class="so-breadcrumb-content"
+      class="cagb2or"
       href="/"
     >
       Home
     </a>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <span
-      class="so-breadcrumb-content so-breadcrumb-ellipsis"
+      class="cagb2or c-ilwq1d"
     >
       ...
     </span>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <a
-      class="so-breadcrumb-content"
+      class="cagb2or"
     >
       Table
     </a>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <span
-      class="so-breadcrumb-content"
+      class="cagb2or"
     >
       Self
     </span>
@@ -363,10 +363,10 @@ exports[`Breadcrumb[Base] should render correctly about max 1`] = `
 
 exports[`Breadcrumb[Base] should render correctly about renderItem 1`] = `
 <div
-  class="so-breadcrumb-wrapper"
+  class="cl3pqph"
 >
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <a
       href="#home"
@@ -374,13 +374,13 @@ exports[`Breadcrumb[Base] should render correctly about renderItem 1`] = `
       home
     </a>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     <a
       href="https://www.google.com"
@@ -388,13 +388,13 @@ exports[`Breadcrumb[Base] should render correctly about renderItem 1`] = `
       menu
     </a>
     <div
-      class="so-breadcrumb-separator"
+      class="c-5oaoqh"
     >
       /
     </div>
   </div>
   <div
-    class="so-breadcrumb-item"
+    class="c-732dfz"
   >
     self
   </div>
@@ -404,48 +404,48 @@ exports[`Breadcrumb[Base] should render correctly about renderItem 1`] = `
 exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
 <div>
   <div
-    class="so-breadcrumb-wrapper"
+    class="cl3pqph"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
         href="/"
       >
         Home
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <span
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         Self
       </span>
     </div>
   </div>
   <div
-    class="so-breadcrumb-wrapper"
+    class="cl3pqph"
   >
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
         href="/"
       >
         Home
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         <span>
           &gt;
@@ -453,10 +453,10 @@ exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <span
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         Self
       </span>
@@ -468,26 +468,26 @@ exports[`Breadcrumb[Base] should render correctly about separator 1`] = `
 exports[`Breadcrumb[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="so-breadcrumb-wrapper"
+    class="cl3pqph"
     style="font-size: 12px;"
   >
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
         href="/"
       >
         Home
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
         href="/cn/components/shineout/button"
@@ -495,56 +495,56 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
         Button
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         Handler
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <span
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         Self
       </span>
     </div>
   </div>
   <div
-    class="so-breadcrumb-wrapper"
+    class="cl3pqph"
     style="font-size: 14px; margin-top: 24px;"
   >
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
         href="/"
       >
         Home
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
         href="/cn/components/shineout/button"
@@ -552,56 +552,56 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
         Button
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         Handler
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <span
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         Self
       </span>
     </div>
   </div>
   <div
-    class="so-breadcrumb-wrapper"
+    class="cl3pqph"
     style="font-size: 16px; margin-top: 24px;"
   >
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
         href="/"
       >
         Home
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
         href="/cn/components/shineout/button"
@@ -609,30 +609,30 @@ exports[`Breadcrumb[Base] should render correctly about size 1`] = `
         Button
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <a
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         Handler
       </a>
       <div
-        class="so-breadcrumb-separator"
+        class="c-5oaoqh"
       >
         /
       </div>
     </div>
     <div
-      class="so-breadcrumb-item"
+      class="c-732dfz"
     >
       <span
-        class="so-breadcrumb-content"
+        class="cagb2or"
       >
         Self
       </span>

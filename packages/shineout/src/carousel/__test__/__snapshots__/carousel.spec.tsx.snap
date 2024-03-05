@@ -2,36 +2,36 @@
 
 exports[`Carousel[Base] should render correctly  1`] = `
 <div
-  class="c-wwz5ja csodlhi cvw31qg"
+  class="c-z4rj0o c-ur0qk8 cw9k4w6"
   style="width: 600px; height: auto;"
 >
   <div
-    class="c-z4e7c6"
+    class="c61t1i4"
     style="height: 280px;"
   >
     <div
-      class="c-r3dfsk chtyw3x"
+      class="c-k3pgz6 c9en45n"
     >
       <img
         src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
       />
     </div>
     <div
-      class="c-r3dfsk"
+      class="c-k3pgz6"
     >
       <img
         src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
       />
     </div>
     <div
-      class="c-r3dfsk"
+      class="c-k3pgz6"
     >
       <img
         src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png"
       />
     </div>
     <div
-      class="c-r3dfsk"
+      class="c-k3pgz6"
     >
       <img
         src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png"
@@ -39,26 +39,26 @@ exports[`Carousel[Base] should render correctly  1`] = `
     </div>
   </div>
   <div
-    class="c-7zm6gz c-no0p3p c-6mlgow"
+    class="c-96poap c-j4fn87 c-d5e41u"
   >
     <div
-      class="c-yz4h6y c-on3wx0"
+      class="c-xy6r4c c-k3iv1i"
     />
     <div
-      class="c-yz4h6y"
+      class="c-xy6r4c"
     />
     <div
-      class="c-yz4h6y"
+      class="c-xy6r4c"
     />
     <div
-      class="c-yz4h6y"
+      class="c-xy6r4c"
     />
   </div>
   <div
-    class="cx6097w c-bcc7b1"
+    class="c-622cia cbkyy2t"
   >
     <div
-      class="cuux2tz cuuvgyr"
+      class="cvvuswl cvvt71d"
     >
       <svg
         aria-hidden="true"
@@ -72,7 +72,7 @@ exports[`Carousel[Base] should render correctly  1`] = `
       </svg>
     </div>
     <div
-      class="cxbe26k cuuvgyr"
+      class="c-5wojjm cvvt71d"
     >
       <svg
         aria-hidden="true"
@@ -100,10 +100,10 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
       animation type:
     </div>
     <div
-      class="c-awrlvn"
+      class="cw6sirj"
     >
       <div
-        class="c-lm6ub3 c-odm5yi"
+        class="c-emivhp c-wsxxws"
       >
         <input
           checked=""
@@ -112,21 +112,21 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           slide
         </span>
       </div>
       <div
-        class="c-lm6ub3"
+        class="c-emivhp"
       >
         <input
           style="display: none;"
@@ -134,21 +134,21 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           slide-y
         </span>
       </div>
       <div
-        class="c-lm6ub3"
+        class="c-emivhp"
       >
         <input
           style="display: none;"
@@ -156,15 +156,15 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           fade
         </span>
@@ -172,36 +172,36 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
     </div>
   </div>
   <div
-    class="c-wwz5ja csodlhi cvw31qg"
+    class="c-z4rj0o c-ur0qk8 cw9k4w6"
     style="width: 600px; height: auto;"
   >
     <div
-      class="c-z4e7c6"
+      class="c61t1i4"
       style="height: 280px;"
     >
       <div
-        class="c-r3dfsk chtyw3x"
+        class="c-k3pgz6 c9en45n"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
         />
       </div>
       <div
-        class="c-r3dfsk"
+        class="c-k3pgz6"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
         />
       </div>
       <div
-        class="c-r3dfsk"
+        class="c-k3pgz6"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png"
         />
       </div>
       <div
-        class="c-r3dfsk"
+        class="c-k3pgz6"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png"
@@ -209,19 +209,19 @@ exports[`Carousel[Base] should render correctly about animation 1`] = `
       </div>
     </div>
     <div
-      class="c-7zm6gz c-no0p3p c-6mlgow"
+      class="c-96poap c-j4fn87 c-d5e41u"
     >
       <div
-        class="c-yz4h6y c-on3wx0"
+        class="c-xy6r4c c-k3iv1i"
       />
       <div
-        class="c-yz4h6y"
+        class="c-xy6r4c"
       />
       <div
-        class="c-yz4h6y"
+        class="c-xy6r4c"
       />
       <div
-        class="c-yz4h6y"
+        class="c-xy6r4c"
       />
     </div>
   </div>
@@ -239,10 +239,10 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
       indicator position:
     </div>
     <div
-      class="c-awrlvn"
+      class="cw6sirj"
     >
       <div
-        class="c-lm6ub3"
+        class="c-emivhp"
       >
         <input
           style="display: none;"
@@ -250,21 +250,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           left
         </span>
       </div>
       <div
-        class="c-lm6ub3 c-odm5yi"
+        class="c-emivhp c-wsxxws"
       >
         <input
           checked=""
@@ -273,21 +273,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           center
         </span>
       </div>
       <div
-        class="c-lm6ub3"
+        class="c-emivhp"
       >
         <input
           style="display: none;"
@@ -295,21 +295,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           right
         </span>
       </div>
       <div
-        class="c-lm6ub3"
+        class="c-emivhp"
       >
         <input
           style="display: none;"
@@ -317,15 +317,15 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           outer
         </span>
@@ -341,10 +341,10 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
       indicator type:
     </div>
     <div
-      class="c-awrlvn"
+      class="cw6sirj"
     >
       <div
-        class="c-lm6ub3 c-odm5yi"
+        class="c-emivhp c-wsxxws"
       >
         <input
           checked=""
@@ -353,21 +353,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           circle
         </span>
       </div>
       <div
-        class="c-lm6ub3"
+        class="c-emivhp"
       >
         <input
           style="display: none;"
@@ -375,21 +375,21 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           line
         </span>
       </div>
       <div
-        class="c-lm6ub3"
+        class="c-emivhp"
       >
         <input
           style="display: none;"
@@ -397,15 +397,15 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
           type="radio"
         />
         <span
-          class="c-zdc08q"
+          class="c-yzux30"
         >
           <span
-            class="cr9iwb1"
+            class="c-2ldwtt"
             tabindex="1"
           />
         </span>
         <span
-          class="c6iqcpf"
+          class="c-qgj373"
         >
           number
         </span>
@@ -413,36 +413,36 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
     </div>
   </div>
   <div
-    class="c-wwz5ja csodlhi cvw31qg"
+    class="c-z4rj0o c-ur0qk8 cw9k4w6"
     style="width: 600px; height: auto;"
   >
     <div
-      class="c-z4e7c6"
+      class="c61t1i4"
       style="height: 280px;"
     >
       <div
-        class="c-r3dfsk chtyw3x"
+        class="c-k3pgz6 c9en45n"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png"
         />
       </div>
       <div
-        class="c-r3dfsk"
+        class="c-k3pgz6"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-02.png"
         />
       </div>
       <div
-        class="c-r3dfsk"
+        class="c-k3pgz6"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-03.png"
         />
       </div>
       <div
-        class="c-r3dfsk"
+        class="c-k3pgz6"
       >
         <img
           src="https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-04.png"
@@ -450,19 +450,19 @@ exports[`Carousel[Base] should render correctly about indicator 1`] = `
       </div>
     </div>
     <div
-      class="c-7zm6gz c-no0p3p c-6mlgow"
+      class="c-96poap c-j4fn87 c-d5e41u"
     >
       <div
-        class="c-yz4h6y c-on3wx0"
+        class="c-xy6r4c c-k3iv1i"
       />
       <div
-        class="c-yz4h6y"
+        class="c-xy6r4c"
       />
       <div
-        class="c-yz4h6y"
+        class="c-xy6r4c"
       />
       <div
-        class="c-yz4h6y"
+        class="c-xy6r4c"
       />
     </div>
   </div>

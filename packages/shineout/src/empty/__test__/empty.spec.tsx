@@ -52,7 +52,7 @@ describe('Empty[Base]', () => {
     classLengthTest(emptyImage, 'svg', 1);
     const emptyDescription = emptyWrapper.querySelector(description)!;
     expect(emptyDescription).toBeInTheDocument();
-    textContentTest(emptyDescription, '无网络');
+    textContentTest(emptyDescription, 'No network');
   });
   test('should render when set icon is reactNode', () => {
     const { container } = render(<Empty icon={<div className='demo'>demo</div>} />);

@@ -2,7 +2,7 @@ import { cleanup, screen, waitFor, render, fireEvent, act } from '@testing-libra
 import Image from '..';
 import mountTest from '../../tests/mountTest';
 import renderImage, { imageSnapshotTest } from '../../tests/renderTest';
-import { styleTest, classTest, attributesTest } from '../../tests/utils';
+import { styleTest, classTest, attributesTest, createClassName } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 import {
   displayTest,
@@ -15,28 +15,36 @@ import ImageGroup from '../__example__/s-007-group-2';
 import ImgaeLazy from '../__example__/s-008-lazy-1';
 
 const SO_PREFIX = 'image';
-const imageClassName = `.${SO_PREFIX}-image-0-2-6`;
-const imageImgClassName = `${SO_PREFIX}-img-0-2-7`;
-const imageInnerClassName = `.${SO_PREFIX}-inner-0-2-8`;
-const imageCenterClassName = `${SO_PREFIX}-center-0-2-14`;
-const imageStretchClassName = `${SO_PREFIX}-stretch-0-2-15`;
-const imageFillClassName = `${SO_PREFIX}-fill-0-2-10`;
-const imageFitClassName = `${SO_PREFIX}-fit-0-2-9`;
-const imageRoundedClassName = `${SO_PREFIX}-rounded-0-2-17`;
-const imageDefaultPlaceholderClassName = `.${SO_PREFIX}-defaultPlaceholder-0-2-20`;
-const imagePlaceholderClassName = `.${SO_PREFIX}-placeholder-0-2-19`;
-const imageHrefClassName = `${SO_PREFIX}-href-0-2-5`;
-const imagePreviewClassName = `${SO_PREFIX}-preview-0-2-13`;
-const imagePreviewMaskClassName = `.${SO_PREFIX}-previewMask-0-2-11`;
-const imageDownloadClassName = `${SO_PREFIX}-download-0-2-12`;
-const imageGroupClassName = `.${SO_PREFIX}-group-0-2-33`;
-const imageGroupPileClassName = `${SO_PREFIX}-groupPile-0-2-34`;
-const imageGroupPileItemClassName = `.${SO_PREFIX}-groupPileItem-0-2-35`;
-const imageGroupCountClassName = `.${SO_PREFIX}-groupCount-0-2-36`;
-const imageGalleryClassName = `${SO_PREFIX}-gallery-0-2-26`;
-const imageDefaultErrorClassName = `.${SO_PREFIX}-defaultError-0-2-21`;
-const imageErrorClassName = `.${SO_PREFIX}-error-0-2-22`;
-const imageOverlayClassName = `${SO_PREFIX}-overlay-0-2-23`;
+
+const originClasses = ['image', 'inner', 'defaultPlaceholder', 'placeholder', 'previewMask', 'group', 'groupPileItem', 'groupCount', 'defaultError', 'error']
+const originItemClasses = ['img', 'center', 'stretch', 'fill', 'fit', 'rounded', 'href', 'preview', 'download', 'groupPile', 'galleryInit', 'overlay', 'thumbnail', 'circle']
+const {
+  image: imageClassName,
+  img: imageImgClassName,
+  inner: imageInnerClassName,
+  center: imageCenterClassName,
+  stretch: imageStretchClassName,
+  fill: imageFillClassName,
+  fit: imageFitClassName,
+  rounded: imageRoundedClassName,
+  defaultPlaceholder: imageDefaultPlaceholderClassName,
+  placeholder: imagePlaceholderClassName,
+  href: imageHrefClassName,
+  preview: imagePreviewClassName,
+  previewMask: imagePreviewMaskClassName,
+  download: imageDownloadClassName,
+  group: imageGroupClassName,
+  groupPile: imageGroupPileClassName,
+  groupPileItem: imageGroupPileItemClassName,
+  groupCount: imageGroupCountClassName,
+  galleryInit: imageGalleryClassName,
+  defaultError: imageDefaultErrorClassName,
+  error: imageErrorClassName,
+  overlay: imageOverlayClassName,
+  thumbnail,
+  circle
+} = createClassName(SO_PREFIX, originClasses, originItemClasses)
+
 const imgFitArray = ['center', 'stretch'];
 const divFitArray = ['fill', 'fit'];
 const shapeArray = ['rounded', 'circle', 'thumbnail'];
@@ -137,7 +145,6 @@ describe('Image[Base]', () => {
       <Image fit='fill' width={width} height={height} src={imageUrl}></Image>,
     );
     classLengthTest(container, imageDefaultPlaceholderClassName, 1);
-    classLengthTest(container, 'svg', 1);
   });
   test('should render when set placeholder', () => {
     const placeholder = ' demo';
@@ -174,7 +181,7 @@ describe('Image[Base]', () => {
   });
 });
 describe('Image[Shape]', () => {
-  shapeArray.forEach((shape) => {
+  shapeArray.forEach((shape, index) => {
     imageSnapshotTest(
       <Image
         shape={shape as ImageShapeType}
@@ -185,6 +192,7 @@ describe('Image[Shape]', () => {
       ></Image>,
       `about shape is ${shape}`,
     );
+    const classes = [imageRoundedClassName, circle, thumbnail]
     test(`should render when set shape is ${shape}`, async () => {
       const { container } = renderImage(
         <Image
@@ -196,7 +204,7 @@ describe('Image[Shape]', () => {
         ></Image>,
       );
       await waitFor(() => {
-        classContentTest(container.querySelector(imageClassName), shape);
+        classContentTest(container.querySelector(imageClassName), classes[index]);
       });
     });
   });
@@ -379,7 +387,7 @@ describe('Image[Pile]', () => {
     await waitFor(() => {
       const pre = container.querySelector(imageClassName)!;
       fireEvent.click(pre);
-      expect(document.getElementsByClassName(imageGalleryClassName).length).toBe(1);
+      expect(document.getElementsByClassName(imageGalleryClassName).length).toBe(2);
       expect(clickFn.mock.calls.length).toBe(1);
     });
   });

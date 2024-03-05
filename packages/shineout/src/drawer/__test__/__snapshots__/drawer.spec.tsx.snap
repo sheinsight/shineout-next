@@ -2,25 +2,25 @@
 
 exports[`Drawer[Base] should render correctly about base 1`] = `
 <div
-  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask so-modal-wrapper-drawer so-modal-wrapper-drawer-right"
+  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
 >
   <div
-    class="so-modal-mask"
+    class="cf4334u"
   >
     <div
-      class="so-modal-panel"
+      class="c-snheni"
       style="width: 400px;"
     >
       <div
-        class="so-modal-header"
+        class="cvg2z0f"
       >
         <div
-          class="so-modal-header-title"
+          class="c-s33w2v"
         >
           Drawer Title
         </div>
         <div
-          class="so-modal-header-close"
+          class="c-scekqv"
         >
           <svg
             aria-hidden="true"
@@ -35,29 +35,29 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-body"
+        class="cf3wcb8"
       >
         you are visited 1
       </div>
       <div
-        class="so-modal-footer"
+        class="cunqxu5"
       >
         <button
-          class="so-button-secondary so-button-button so-button-outline"
+          class="c-rg592x cvey2f3 cs6jo0l"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             Cancel
           </span>
         </button>
         <button
-          class="so-button-primary so-button-button"
+          class="c-trc8a3 cvey2f3"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             Ok
           </span>
@@ -70,26 +70,26 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
 
 exports[`Drawer[Base] should render correctly about close 1`] = `
 <div
-  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask so-modal-wrapper-drawer so-modal-wrapper-drawer-right"
+  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
 >
   <div
-    class="so-modal-mask"
+    class="cf4334u"
   >
     <div
-      class="so-modal-panel"
+      class="c-snheni"
       style="width: 400px;"
     >
       <div
-        class="so-modal-header"
+        class="cvg2z0f"
       >
         <div
-          class="so-modal-header-title"
+          class="c-s33w2v"
         >
           Modal Title
         </div>
       </div>
       <div
-        class="so-modal-body"
+        class="cf3wcb8"
       >
         The prop maskCloseAble is  
         false
@@ -98,14 +98,14 @@ exports[`Drawer[Base] should render correctly about close 1`] = `
         You must click the button to close the Modal.
       </div>
       <div
-        class="so-modal-footer"
+        class="cunqxu5"
       >
         <button
-          class="so-button-secondary so-button-button so-button-outline"
+          class="c-rg592x cvey2f3 cs6jo0l"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             Close
           </span>
@@ -118,25 +118,25 @@ exports[`Drawer[Base] should render correctly about close 1`] = `
 
 exports[`Drawer[Base] should render correctly about container 1`] = `
 <div
-  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask so-modal-wrapper-drawer so-modal-wrapper-drawer-right"
+  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
 >
   <div
-    class="so-modal-mask"
+    class="cf4334u"
   >
     <div
-      class="so-modal-panel"
+      class="c-snheni"
       style="width: 400px;"
     >
       <div
-        class="so-modal-header"
+        class="cvg2z0f"
       >
         <div
-          class="so-modal-header-title"
+          class="c-s33w2v"
         >
           Drawer Title
         </div>
         <div
-          class="so-modal-header-close"
+          class="c-scekqv"
         >
           <svg
             aria-hidden="true"
@@ -151,29 +151,29 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-body"
+        class="cf3wcb8"
       >
         Drawer mount after Button
       </div>
       <div
-        class="so-modal-footer"
+        class="cunqxu5"
       >
         <button
-          class="so-button-secondary so-button-button so-button-outline"
+          class="c-rg592x cvey2f3 cs6jo0l"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             Cancel
           </span>
         </button>
         <button
-          class="so-button-primary so-button-button"
+          class="c-trc8a3 cvey2f3"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             Ok
           </span>
@@ -186,25 +186,25 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
 
 exports[`Drawer[Base] should render correctly about form 1`] = `
 <div
-  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask so-modal-wrapper-drawer so-modal-wrapper-drawer-right"
+  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
 >
   <div
-    class="so-modal-mask"
+    class="cf4334u"
   >
     <div
-      class="so-modal-panel"
+      class="c-snheni"
       style="width: 456px;"
     >
       <div
-        class="so-modal-header"
+        class="cvg2z0f"
       >
         <div
-          class="so-modal-header-title"
+          class="c-s33w2v"
         >
           Form
         </div>
         <div
-          class="so-modal-header-close"
+          class="c-scekqv"
         >
           <svg
             aria-hidden="true"
@@ -219,34 +219,35 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-body"
+        class="cf3wcb8"
       >
         <form
-          class="so-form-wrapper"
+          class="cr9qis4"
           style="max-width: 400px;"
         >
           <div
-            class="so-form-item-wrapper so-form-item-wrapper-required"
+            class="csrte0i c-48r573"
             data-soui-status="default"
           >
             <div
-              class="so-form-item-label"
+              class="c-v46lkd"
               style="width: 100px;"
             >
               Email
             </div>
             <div
-              class="so-form-item-control"
+              class="ci4ezng"
+              data-soui-role="form-control"
             >
               <div
-                class="so-input-wrapper"
+                class="c5g1ick"
                 data-soui-type="input"
               >
                 <div
-                  class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
                 >
                   <input
-                    class="so-input-input"
+                    class="cccsm1n"
                     value=""
                   />
                 </div>
@@ -254,27 +255,28 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
             </div>
           </div>
           <div
-            class="so-form-item-wrapper so-form-item-wrapper-required"
+            class="csrte0i c-48r573"
             data-soui-status="default"
           >
             <div
-              class="so-form-item-label"
+              class="c-v46lkd"
               style="width: 100px;"
             >
               Password
             </div>
             <div
-              class="so-form-item-control"
+              class="ci4ezng"
+              data-soui-role="form-control"
             >
               <div
-                class="so-input-wrapper"
+                class="c5g1ick"
                 data-soui-type="input"
               >
                 <div
-                  class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
                 >
                   <input
-                    class="so-input-input"
+                    class="cccsm1n"
                     type="password"
                     value=""
                   />
@@ -285,25 +287,25 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
         </form>
       </div>
       <div
-        class="so-modal-footer"
+        class="cunqxu5"
       >
         <div>
           <button
-            class="so-button-secondary so-button-button so-button-outline"
+            class="c-rg592x cvey2f3 cs6jo0l"
             type="button"
           >
             <span
-              class="so-button-space-wrapper"
+              class="cboe6wq"
             >
               Cancel
             </span>
           </button>
           <button
-            class="so-button-primary so-button-button"
+            class="c-trc8a3 cvey2f3"
             type="button"
           >
             <span
-              class="so-button-space-wrapper"
+              class="cboe6wq"
             >
               Submit
             </span>
@@ -317,24 +319,24 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
 
 exports[`Drawer[Base] should render correctly about full screen 1`] = `
 <div
-  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask so-modal-wrapper-full-screen so-modal-wrapper-drawer so-modal-wrapper-drawer-right"
+  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-mokj38 c-8u2kum c-1f0vjq"
 >
   <div
-    class="so-modal-mask"
+    class="cf4334u"
   >
     <div
-      class="so-modal-panel"
+      class="c-snheni"
     >
       <div
-        class="so-modal-header"
+        class="cvg2z0f"
       >
         <div
-          class="so-modal-header-title"
+          class="c-s33w2v"
         >
           Profile
         </div>
         <div
-          class="so-modal-header-close"
+          class="c-scekqv"
         >
           <svg
             aria-hidden="true"
@@ -349,41 +351,42 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-body"
+        class="cf3wcb8"
       >
         <div>
           <form
-            class="so-form-wrapper"
+            class="cr9qis4"
           >
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               >
                 Name
               </div>
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <div
-                  class="so-input-wrapper"
+                  class="c5g1ick"
                   data-soui-type="input"
                 >
                   <div
-                    class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+                    class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
                   >
                     <input
-                      class="so-input-input"
+                      class="cccsm1n"
                       placeholder="please input name"
                       value="zhangsan"
                     />
                     <div
-                      class="so-input-clear-wrapper"
+                      class="c-9f965n"
                     >
                       <span
-                        class="so-input-clear"
+                        class="cc9gbvi"
                       >
                         <svg
                           aria-hidden="true"
@@ -407,26 +410,27 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               >
                 Password
               </div>
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <div
-                  class="so-input-wrapper"
+                  class="c5g1ick"
                   data-soui-type="input"
                 >
                   <div
-                    class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+                    class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
                   >
                     <input
-                      class="so-input-input"
+                      class="cccsm1n"
                       placeholder="please input password"
                       value=""
                     />
@@ -435,34 +439,35 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               >
                 Email
               </div>
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <div
-                  class="so-input-wrapper"
+                  class="c5g1ick"
                   data-soui-type="input"
                 >
                   <div
-                    class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+                    class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
                   >
                     <input
-                      class="so-input-input"
+                      class="cccsm1n"
                       placeholder="please input email"
                       value="zhangsan@qq.com"
                     />
                     <div
-                      class="so-input-clear-wrapper"
+                      class="c-9f965n"
                     >
                       <span
-                        class="so-input-clear"
+                        class="cc9gbvi"
                       >
                         <svg
                           aria-hidden="true"
@@ -486,22 +491,23 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               >
                 Gendar
               </div>
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <div
-                  class="so-radio-group"
+                  class="cw6sirj"
                 >
                   <div
-                    class="so-radio-wrapper"
+                    class="c-emivhp"
                   >
                     <input
                       style="display: none;"
@@ -509,21 +515,21 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="radio"
                     />
                     <span
-                      class="so-radio-indicator-wrapper"
+                      class="c-yzux30"
                     >
                       <span
-                        class="so-radio-indicator"
+                        class="c-2ldwtt"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="so-radio-desc"
+                      class="c-qgj373"
                     >
                       male
                     </span>
                   </div>
                   <div
-                    class="so-radio-wrapper"
+                    class="c-emivhp"
                   >
                     <input
                       style="display: none;"
@@ -531,15 +537,15 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="radio"
                     />
                     <span
-                      class="so-radio-indicator-wrapper"
+                      class="c-yzux30"
                     >
                       <span
-                        class="so-radio-indicator"
+                        class="c-2ldwtt"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="so-radio-desc"
+                      class="c-qgj373"
                     >
                       female
                     </span>
@@ -548,22 +554,23 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               >
                 Course
               </div>
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <div
-                  class="so-checkbox-group"
+                  class="c-vt37hb"
                 >
                   <div
-                    class="so-checkbox-wrapper"
+                    class="c-2oyyob"
                   >
                     <input
                       style="display: none;"
@@ -571,21 +578,22 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="so-checkbox-indicator-wrapper"
+                      class="c-do3bmm"
                     >
                       <i
-                        class="so-checkbox-indicator"
+                        class="cs409o1"
+                        data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="so-checkbox-desc"
+                      class="c19hl67"
                     >
                       chinese
                     </span>
                   </div>
                   <div
-                    class="so-checkbox-wrapper"
+                    class="c-2oyyob"
                   >
                     <input
                       style="display: none;"
@@ -593,21 +601,22 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="so-checkbox-indicator-wrapper"
+                      class="c-do3bmm"
                     >
                       <i
-                        class="so-checkbox-indicator"
+                        class="cs409o1"
+                        data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="so-checkbox-desc"
+                      class="c19hl67"
                     >
                       maths
                     </span>
                   </div>
                   <div
-                    class="so-checkbox-wrapper"
+                    class="c-2oyyob"
                   >
                     <input
                       style="display: none;"
@@ -615,21 +624,22 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="so-checkbox-indicator-wrapper"
+                      class="c-do3bmm"
                     >
                       <i
-                        class="so-checkbox-indicator"
+                        class="cs409o1"
+                        data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="so-checkbox-desc"
+                      class="c19hl67"
                     >
                       english
                     </span>
                   </div>
                   <div
-                    class="so-checkbox-wrapper"
+                    class="c-2oyyob"
                   >
                     <input
                       style="display: none;"
@@ -637,15 +647,16 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="so-checkbox-indicator-wrapper"
+                      class="c-do3bmm"
                     >
                       <i
-                        class="so-checkbox-indicator"
+                        class="cs409o1"
+                        data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="so-checkbox-desc"
+                      class="c19hl67"
                     >
                       physics
                     </span>
@@ -654,39 +665,40 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               >
                 Enrollment date
               </div>
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <div
-                  class="so-datePicker-wrapper"
+                  class="c-kb0fus"
                   data-soui-type="date"
                 >
                   <div
-                    class="so-datePicker-result-wrapper so-datePicker-wrapper-padding-box so-datePicker-wrapper-inner-title-top so-datePicker-wrapper-inner-title-bottom"
+                    class="c-dt8k4h ci4jqom csb873r c9qf70p"
                     tabindex="1"
                   >
                     <div
-                      class="so-datePicker-result"
+                      class="clzqaj8"
                     >
                       <div
-                        class="so-datePicker-result-text-wrapper"
+                        class="cw835ma"
                       >
                         <div
-                          class="so-datePicker-result-text"
+                          class="c-wskee7"
                         >
                           <div
-                            class="so-datePicker-result-text-padding"
+                            class="c-7hwrps"
                           >
                             <span
-                              class="so-datePicker-placeholder"
+                              class="c-37qmec"
                             >
                               please select date
                             </span>
@@ -695,7 +707,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </div>
                     </div>
                     <div
-                      class="so-datePicker-icon"
+                      class="czhvzzk"
                     >
                       <svg
                         aria-hidden="true"
@@ -712,25 +724,25 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                     </div>
                   </div>
                   <div
-                    class="so-datePicker-picker-wrapper"
+                    class="coqsbym"
                     data-sheinx-animation-duration="fast"
                     data-sheinx-animation-type="fade"
                     style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
                   >
                     <div
-                      class="so-datePicker-picker-box"
+                      class="c-3sw5h6"
                     >
                       <div
-                        class="so-datePicker-day-picker so-datePicker-picker"
+                        class="c8b8vn7 cl3jsqt"
                       >
                         <div
-                          class="so-datePicker-picker-header"
+                          class="ce4ai42"
                         >
                           <div
-                            class="so-datePicker-picker-header-left"
+                            class="czc6jq1"
                           >
                             <span
-                              class="so-datePicker-picker-header-icon"
+                              class="czc4lhn"
                             >
                               <svg
                                 aria-hidden="true"
@@ -744,7 +756,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                               </svg>
                             </span>
                             <span
-                              class="so-datePicker-picker-header-icon"
+                              class="czc4lhn"
                             >
                               <svg
                                 aria-hidden="true"
@@ -759,10 +771,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                             </span>
                           </div>
                           <div
-                            class="so-datePicker-picker-header-mid"
+                            class="c-jhck0a"
                           >
                             <span
-                              class="so-datePicker-picker-header-info"
+                              class="czc4tfk"
                             >
                               2024
                             </span>
@@ -770,16 +782,16 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                               -
                             </i>
                             <span
-                              class="so-datePicker-picker-header-info"
+                              class="czc4tfk"
                             >
-                              2
+                              3
                             </span>
                           </div>
                           <div
-                            class="so-datePicker-picker-header-right"
+                            class="cu4bhu2"
                           >
                             <span
-                              class="so-datePicker-picker-header-icon"
+                              class="czc4lhn"
                             >
                               <svg
                                 aria-hidden="true"
@@ -793,7 +805,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                               </svg>
                             </span>
                             <span
-                              class="so-datePicker-picker-header-icon"
+                              class="czc4lhn"
                             >
                               <svg
                                 aria-hidden="true"
@@ -809,7 +821,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                           </div>
                         </div>
                         <div
-                          class="so-datePicker-picker-body"
+                          class="co6jds7"
                         >
                           <table>
                             <thead>
@@ -839,337 +851,13 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                             </thead>
                             <tbody>
                               <tr
-                                class="so-datePicker-picker-row"
+                                class="c-3svtm3"
                               >
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb cak7jp3"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      29
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      30
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      31
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      1
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      2
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      3
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-today"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      4
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr
-                                class="so-datePicker-picker-row"
-                              >
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      5
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      6
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      7
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      8
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      9
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      10
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      11
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr
-                                class="so-datePicker-picker-row"
-                              >
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      12
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      13
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      14
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      15
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      16
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      17
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      18
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr
-                                class="so-datePicker-picker-row"
-                              >
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      19
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      20
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      21
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      22
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      23
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      24
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
-                                  >
-                                    <span>
-                                      25
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr
-                                class="so-datePicker-picker-row"
-                              >
-                                <td
-                                  class="so-datePicker-picker-cell"
-                                >
-                                  <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       26
@@ -1177,10 +865,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell"
+                                  class="co6jtjb cak7jp3"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       27
@@ -1188,10 +876,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell"
+                                  class="co6jtjb cak7jp3"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       28
@@ -1199,10 +887,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell"
+                                  class="co6jtjb cak7jp3"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       29
@@ -1210,10 +898,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       1
@@ -1221,10 +909,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       2
@@ -1232,10 +920,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       3
@@ -1244,13 +932,13 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                 </td>
                               </tr>
                               <tr
-                                class="so-datePicker-picker-row"
+                                class="c-3svtm3"
                               >
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       4
@@ -1258,10 +946,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb cau3hh6"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       5
@@ -1269,10 +957,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       6
@@ -1280,10 +968,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       7
@@ -1291,10 +979,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       8
@@ -1302,10 +990,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       9
@@ -1313,10 +1001,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                                 <td
-                                  class="so-datePicker-picker-cell so-datePicker-picker-cell-bound"
+                                  class="co6jtjb"
                                 >
                                   <div
-                                    class="so-datePicker-picker-cell-content"
+                                    class="c6n0lki"
                                   >
                                     <span>
                                       10
@@ -1324,8 +1012,350 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                                   </div>
                                 </td>
                               </tr>
+                              <tr
+                                class="c-3svtm3"
+                              >
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      11
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      12
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      13
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      14
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      15
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      16
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      17
+                                    </span>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr
+                                class="c-3svtm3"
+                              >
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      18
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      19
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      20
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      21
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      22
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      23
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      24
+                                    </span>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr
+                                class="c-3svtm3"
+                              >
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      25
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      26
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      27
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      28
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      29
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      30
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      31
+                                    </span>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr
+                                class="c-3svtm3"
+                              >
+                                <td
+                                  class="co6jtjb cak7jp3"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      1
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb cak7jp3"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      2
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb cak7jp3"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      3
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb cak7jp3"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      4
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb cak7jp3"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      5
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb cak7jp3"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      6
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="co6jtjb cak7jp3"
+                                >
+                                  <div
+                                    class="c6n0lki"
+                                  >
+                                    <span>
+                                      7
+                                    </span>
+                                  </div>
+                                </td>
+                              </tr>
                             </tbody>
                           </table>
+                        </div>
+                        <div
+                          class="cdbygxs"
+                        >
+                          <div
+                            class="cspcuyk"
+                          >
+                            <button
+                              class="c-qnii2s c-rg592x cvey2f3 cs6jo0l c-x3mwbq"
+                              type="button"
+                            >
+                              <span
+                                class="cboe6wq"
+                              >
+                                今天
+                              </span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1334,28 +1364,29 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               >
                 Score
               </div>
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <div
-                  class="so-rate-wrapper"
+                  class="c-n90wlk"
                 >
                   <div
-                    class="so-rate-inner"
+                    class="c-p5cnid"
                   >
                     <div
-                      class="so-rate-item so-rate-item-checked"
+                      class="cf87lce cxz6xvd"
                     >
                       <span
-                        class="so-rate-item-bg"
+                        class="c1thigj"
                       >
                         <svg
                           fill="currentColor"
@@ -1368,7 +1399,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="so-rate-item-front"
+                        class="c-4n6vph"
                       >
                         <svg
                           fill="currentColor"
@@ -1382,10 +1413,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="so-rate-item so-rate-item-checked"
+                      class="cf87lce cxz6xvd"
                     >
                       <span
-                        class="so-rate-item-bg"
+                        class="c1thigj"
                       >
                         <svg
                           fill="currentColor"
@@ -1398,7 +1429,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="so-rate-item-front"
+                        class="c-4n6vph"
                       >
                         <svg
                           fill="currentColor"
@@ -1412,10 +1443,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="so-rate-item so-rate-item-checked"
+                      class="cf87lce cxz6xvd"
                     >
                       <span
-                        class="so-rate-item-bg"
+                        class="c1thigj"
                       >
                         <svg
                           fill="currentColor"
@@ -1428,7 +1459,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="so-rate-item-front"
+                        class="c-4n6vph"
                       >
                         <svg
                           fill="currentColor"
@@ -1442,10 +1473,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="so-rate-item"
+                      class="cf87lce"
                     >
                       <span
-                        class="so-rate-item-bg"
+                        class="c1thigj"
                       >
                         <svg
                           fill="currentColor"
@@ -1458,7 +1489,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="so-rate-item-front"
+                        class="c-4n6vph"
                       >
                         <svg
                           fill="currentColor"
@@ -1472,10 +1503,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="so-rate-item"
+                      class="cf87lce"
                     >
                       <span
-                        class="so-rate-item-bg"
+                        class="c1thigj"
                       >
                         <svg
                           fill="currentColor"
@@ -1488,7 +1519,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="so-rate-item-front"
+                        class="c-4n6vph"
                       >
                         <svg
                           fill="currentColor"
@@ -1506,26 +1537,27 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               >
                 upload avatar
               </div>
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <div
-                  class="so-upload-wrapper so-upload-wrapper-image"
+                  class="c-dsitl c-4cljbw"
                 >
                   <span
-                    class="so-upload-image-handler"
+                    class="c-bnmddh"
                     style="width: 80px; height: 80px;"
                   >
                     <div
-                      class="so-upload-image-handler-icon"
+                      class="cxtwbfo"
                     >
                       <svg
                         aria-hidden="true"
@@ -1548,55 +1580,57 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               >
                 Address
               </div>
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <div
-                  class="so-textarea-wrapper"
+                  class="c-i7z34y"
                   data-soui-type="input"
                 >
                   <textarea
-                    class="so-textarea-wrapper-padding-box so-textarea-wrapper-inner-title-bottom so-textarea-textarea"
+                    class="c-kulds8 c-km3xn9 cl630en"
                     rows="4"
                   />
                 </div>
               </div>
             </div>
             <div
-              class="so-form-item-wrapper"
+              class="csrte0i"
               data-soui-status="default"
               style="margin-top: 32px; margin-bottom: 0px;"
             >
               <div
-                class="so-form-item-label"
+                class="c-v46lkd"
               />
               <div
-                class="so-form-item-control"
+                class="ci4ezng"
+                data-soui-role="form-control"
               >
                 <button
-                  class="so-button-primary so-button-button"
+                  class="c-trc8a3 cvey2f3"
                   type="submit"
                 >
                   <span
-                    class="so-button-space-wrapper"
+                    class="cboe6wq"
                   >
                     Submit
                   </span>
                 </button>
                 <button
-                  class="so-button-secondary so-button-button so-button-outline"
+                  class="c-rg592x cvey2f3 cs6jo0l"
                   type="reset"
                 >
                   <span
-                    class="so-button-space-wrapper"
+                    class="cboe6wq"
                   >
                     Reset
                   </span>
@@ -1607,14 +1641,14 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-footer"
+        class="cunqxu5"
       >
         <button
-          class="so-button-primary so-button-button"
+          class="c-trc8a3 cvey2f3"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             OK
           </span>
@@ -1627,25 +1661,25 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
 
 exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 <div
-  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask so-modal-wrapper-hide-mask so-modal-wrapper-drawer so-modal-wrapper-drawer-right"
+  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 chaeb67 c-8u2kum c-1f0vjq"
 >
   <div
-    class="so-modal-mask"
+    class="cf4334u"
   >
     <div
-      class="so-modal-panel"
+      class="c-snheni"
       style="width: 400px;"
     >
       <div
-        class="so-modal-header"
+        class="cvg2z0f"
       >
         <div
-          class="so-modal-header-title"
+          class="c-s33w2v"
         >
           Drawer Title
         </div>
         <div
-          class="so-modal-header-close"
+          class="c-scekqv"
         >
           <svg
             aria-hidden="true"
@@ -1660,29 +1694,29 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-body"
+        class="cf3wcb8"
       >
         you are visited 1
       </div>
       <div
-        class="so-modal-footer"
+        class="cunqxu5"
       >
         <button
-          class="so-button-secondary so-button-button so-button-outline"
+          class="c-rg592x cvey2f3 cs6jo0l"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             Cancel
           </span>
         </button>
         <button
-          class="so-button-primary so-button-button"
+          class="c-trc8a3 cvey2f3"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             Ok
           </span>
@@ -1695,25 +1729,25 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 
 exports[`Drawer[Base] should render correctly about position 1`] = `
 <div
-  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask so-modal-wrapper-drawer so-modal-wrapper-drawer-right"
+  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
 >
   <div
-    class="so-modal-mask"
+    class="cf4334u"
   >
     <div
-      class="so-modal-panel"
+      class="c-snheni"
       style="width: auto;"
     >
       <div
-        class="so-modal-header"
+        class="cvg2z0f"
       >
         <div
-          class="so-modal-header-title"
+          class="c-s33w2v"
         >
           Form
         </div>
         <div
-          class="so-modal-header-close"
+          class="c-scekqv"
         >
           <svg
             aria-hidden="true"
@@ -1728,34 +1762,35 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-body"
+        class="cf3wcb8"
       >
         <form
-          class="so-form-wrapper"
+          class="cr9qis4"
           style="width: 500px;"
         >
           <div
-            class="so-form-item-wrapper so-form-item-wrapper-required"
+            class="csrte0i c-48r573"
             data-soui-status="default"
           >
             <div
-              class="so-form-item-label"
+              class="c-v46lkd"
               style="width: 100px;"
             >
               Email
             </div>
             <div
-              class="so-form-item-control"
+              class="ci4ezng"
+              data-soui-role="form-control"
             >
               <div
-                class="so-input-wrapper"
+                class="c5g1ick"
                 data-soui-type="input"
               >
                 <div
-                  class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
                 >
                   <input
-                    class="so-input-input"
+                    class="cccsm1n"
                     value=""
                   />
                 </div>
@@ -1763,27 +1798,28 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
             </div>
           </div>
           <div
-            class="so-form-item-wrapper so-form-item-wrapper-required"
+            class="csrte0i c-48r573"
             data-soui-status="default"
           >
             <div
-              class="so-form-item-label"
+              class="c-v46lkd"
               style="width: 100px;"
             >
               Password
             </div>
             <div
-              class="so-form-item-control"
+              class="ci4ezng"
+              data-soui-role="form-control"
             >
               <div
-                class="so-input-wrapper"
+                class="c5g1ick"
                 data-soui-type="input"
               >
                 <div
-                  class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
                 >
                   <input
-                    class="so-input-input"
+                    class="cccsm1n"
                     type="password"
                     value=""
                   />
@@ -1794,25 +1830,25 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
         </form>
       </div>
       <div
-        class="so-modal-footer"
+        class="cunqxu5"
       >
         <div>
           <button
-            class="so-button-secondary so-button-button so-button-outline"
+            class="c-rg592x cvey2f3 cs6jo0l"
             type="button"
           >
             <span
-              class="so-button-space-wrapper"
+              class="cboe6wq"
             >
               Cancel
             </span>
           </button>
           <button
-            class="so-button-primary so-button-button"
+            class="c-trc8a3 cvey2f3"
             type="button"
           >
             <span
-              class="so-button-space-wrapper"
+              class="cboe6wq"
             >
               Submit
             </span>
@@ -1826,25 +1862,25 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
 
 exports[`Drawer[Base] should render correctly about resizable 1`] = `
 <div
-  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask so-modal-wrapper-drawer so-modal-wrapper-drawer-right"
+  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
 >
   <div
-    class="so-modal-mask"
+    class="cf4334u"
   >
     <div
-      class="so-modal-panel"
+      class="c-snheni"
       style="width: auto;"
     >
       <div
-        class="so-modal-header"
+        class="cvg2z0f"
       >
         <div
-          class="so-modal-header-title"
+          class="c-s33w2v"
         >
           Form
         </div>
         <div
-          class="so-modal-header-close"
+          class="c-scekqv"
         >
           <svg
             aria-hidden="true"
@@ -1859,34 +1895,35 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-body"
+        class="cf3wcb8"
       >
         <form
-          class="so-form-wrapper"
+          class="cr9qis4"
           style="width: 500px;"
         >
           <div
-            class="so-form-item-wrapper so-form-item-wrapper-required"
+            class="csrte0i c-48r573"
             data-soui-status="default"
           >
             <div
-              class="so-form-item-label"
+              class="c-v46lkd"
               style="width: 100px;"
             >
               Email
             </div>
             <div
-              class="so-form-item-control"
+              class="ci4ezng"
+              data-soui-role="form-control"
             >
               <div
-                class="so-input-wrapper"
+                class="c5g1ick"
                 data-soui-type="input"
               >
                 <div
-                  class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
                 >
                   <input
-                    class="so-input-input"
+                    class="cccsm1n"
                     value=""
                   />
                 </div>
@@ -1894,27 +1931,28 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
             </div>
           </div>
           <div
-            class="so-form-item-wrapper so-form-item-wrapper-required"
+            class="csrte0i c-48r573"
             data-soui-status="default"
           >
             <div
-              class="so-form-item-label"
+              class="c-v46lkd"
               style="width: 100px;"
             >
               Password
             </div>
             <div
-              class="so-form-item-control"
+              class="ci4ezng"
+              data-soui-role="form-control"
             >
               <div
-                class="so-input-wrapper"
+                class="c5g1ick"
                 data-soui-type="input"
               >
                 <div
-                  class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
                 >
                   <input
-                    class="so-input-input"
+                    class="cccsm1n"
                     type="password"
                     value=""
                   />
@@ -1925,25 +1963,25 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
         </form>
       </div>
       <div
-        class="so-modal-footer"
+        class="cunqxu5"
       >
         <div>
           <button
-            class="so-button-secondary so-button-button so-button-outline"
+            class="c-rg592x cvey2f3 cs6jo0l"
             type="button"
           >
             <span
-              class="so-button-space-wrapper"
+              class="cboe6wq"
             >
               Cancel
             </span>
           </button>
           <button
-            class="so-button-primary so-button-button"
+            class="c-trc8a3 cvey2f3"
             type="button"
           >
             <span
-              class="so-button-space-wrapper"
+              class="cboe6wq"
             >
               Submit
             </span>
@@ -1951,7 +1989,7 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-resize-x"
+        class="c-el9z2m"
         data-position="right"
       />
     </div>
@@ -1961,20 +1999,20 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
 
 exports[`Drawer[Base] should render correctly about type 1`] = `
 <div
-  class="so-modal-wrapper so-modal-wrapper-animation so-modal-wrapper-show so-modal-wrapper-is-mask so-modal-wrapper-drawer so-modal-wrapper-drawer-right"
+  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
 >
   <div
-    class="so-modal-mask"
+    class="cf4334u"
   >
     <div
-      class="so-modal-panel"
+      class="c-snheni"
       style="width: 500px;"
     >
       <div
-        class="so-modal-header"
+        class="cvg2z0f"
       >
         <span
-          class="so-modal-header-icon so-alert-icon so-alert-success-icon"
+          class="cql19eg c-zfl55y c-fexgdh"
         >
           <svg
             aria-hidden="true"
@@ -1988,12 +2026,12 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
           </svg>
         </span>
         <div
-          class="so-modal-header-title"
+          class="c-s33w2v"
         >
           Drawer Title with success Icon
         </div>
         <div
-          class="so-modal-header-close"
+          class="c-scekqv"
         >
           <svg
             aria-hidden="true"
@@ -2008,7 +2046,7 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="so-modal-body so-modal-body-with-icon"
+        class="cf3wcb8 c5d4xjn"
       >
         <span>
           Drawer type: 
@@ -2018,24 +2056,24 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
         </b>
       </div>
       <div
-        class="so-modal-footer"
+        class="cunqxu5"
       >
         <button
-          class="so-button-secondary so-button-button so-button-outline"
+          class="c-rg592x cvey2f3 cs6jo0l"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             Cancel
           </span>
         </button>
         <button
-          class="so-button-primary so-button-button"
+          class="c-trc8a3 cvey2f3"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             Ok
           </span>

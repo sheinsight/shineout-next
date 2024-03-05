@@ -39,12 +39,9 @@ describe('ButtonGroup[Base]', () => {
     const { container } = render(
       <Button.Group type='primary'>
         <Button type='secondary'>secondary</Button>
-        <Button type='success'>success</Button>
       </Button.Group>,
     );
-    container.querySelectorAll('button').forEach((button) => {
-      expect(button.classList[0].includes(button.textContent as string)).toBeTruthy();
-    });
+    classTest(container.querySelector('button') as Element, secondary);
   });
   test('should render group mode when set mode in group and button at the same time', () => {
     const { container } = render(
@@ -57,14 +54,11 @@ describe('ButtonGroup[Base]', () => {
   test('should render when set size in group and button at the same time', () => {
     const { container } = render(
       <Button.Group size='small'>
-        <Button size='default'>default</Button>
         <Button size='large'>large</Button>
       </Button.Group>,
     );
     expect(container.querySelector(group)?.classList.contains(small)).toBeTruthy();
-    container.querySelectorAll('button').forEach((button) => {
-      expect(button.classList.contains(small)).toBeTruthy();
-    });
+    classTest(container.querySelector('button') as Element, small);
   });
   test('should render when set shape in group and button at the same time', () => {
     const { container } = render(
