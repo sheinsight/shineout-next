@@ -3,10 +3,9 @@ import Alert from '../alert';
 import { MessageItemType, MessageProps } from './message.type';
 import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
-import { produce } from 'immer';
 import { MessageOptions } from './func.type';
 
-const { getUidStr, getDataAttribute } = util;
+const { getUidStr, getDataAttribute, produce } = util;
 
 const dismissDuration = 200;
 interface MessageState {
@@ -112,7 +111,7 @@ const MessagePure = (props: {
                 style={{ top }}
                 title={title}
                 type={type === 'default' ? undefined : type}
-                data-soui-type='message'
+                {...util.getDataAttribute({ type: 'message' })}
               >
                 {content}
               </Alert>

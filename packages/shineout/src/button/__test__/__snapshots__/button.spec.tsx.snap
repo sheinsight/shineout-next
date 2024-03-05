@@ -5,56 +5,56 @@ exports[`Button[Base] should render correctly  1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="c-xdn1nt cofa3lp"
+    class="c-uc49qd carvzh5"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Primary
     </span>
   </button>
   <button
-    class="c-p8cvlj cofa3lp"
+    class="c-dvrksz carvzh5"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Secondary
     </span>
   </button>
   <button
-    class="c-p8cvlj cofa3lp cok8umv"
+    class="c-dvrksz carvzh5 crlrmkb"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Outline
     </span>
   </button>
   <button
-    class="c-p8cvlj cofa3lp cp2cke4"
+    class="c-dvrksz carvzh5 cbeyg9k"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Dashed
     </span>
   </button>
   <button
-    class="c-xdn1nt cofa3lp c3y92t4"
+    class="c-uc49qd carvzh5 c-w2406k"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Text
     </span>
@@ -70,49 +70,49 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="c-xdn1nt cofa3lp c-giobsp"
+      class="c-uc49qd carvzh5 c6rdo0z"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Primary
       </span>
     </button>
     <button
-      class="c-xdn1nt cofa3lp c-giobsp cok8umv"
+      class="c-uc49qd carvzh5 c6rdo0z crlrmkb"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Primary
       </span>
     </button>
     <button
-      class="c-xdn1nt cofa3lp c-giobsp cp2cke4"
+      class="c-uc49qd carvzh5 c6rdo0z cbeyg9k"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Primary
       </span>
     </button>
     <button
-      class="c-xdn1nt cofa3lp c-giobsp c3y92t4"
+      class="c-uc49qd carvzh5 c6rdo0z c-w2406k"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Primary
       </span>
@@ -122,49 +122,49 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="cp29cq6 cofa3lp c-giobsp"
+      class="cbev8lm carvzh5 c6rdo0z"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Danger
       </span>
     </button>
     <button
-      class="cp29cq6 cofa3lp c-giobsp cok8umv"
+      class="cbev8lm carvzh5 c6rdo0z crlrmkb"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Danger
       </span>
     </button>
     <button
-      class="cp29cq6 cofa3lp c-giobsp cp2cke4"
+      class="cbev8lm carvzh5 c6rdo0z cbeyg9k"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Danger
       </span>
     </button>
     <button
-      class="cp29cq6 cofa3lp c-giobsp c3y92t4"
+      class="cbev8lm carvzh5 c6rdo0z c-w2406k"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Danger
       </span>
@@ -174,49 +174,49 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="c-9krqmn cofa3lp c-giobsp"
+      class="c-6j8yp7 carvzh5 c6rdo0z"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Warning
       </span>
     </button>
     <button
-      class="c-9krqmn cofa3lp c-giobsp cok8umv"
+      class="c-6j8yp7 carvzh5 c6rdo0z crlrmkb"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Warning
       </span>
     </button>
     <button
-      class="c-9krqmn cofa3lp c-giobsp cp2cke4"
+      class="c-6j8yp7 carvzh5 c6rdo0z cbeyg9k"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Warning
       </span>
     </button>
     <button
-      class="c-9krqmn cofa3lp c-giobsp c3y92t4"
+      class="c-6j8yp7 carvzh5 c6rdo0z c-w2406k"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Warning
       </span>
@@ -226,49 +226,49 @@ exports[`Button[Base] should render correctly about disbled 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="cbz7lqw cofa3lp c-giobsp"
+      class="cf0qdoc carvzh5 c6rdo0z"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Success
       </span>
     </button>
     <button
-      class="cbz7lqw cofa3lp c-giobsp cok8umv"
+      class="cf0qdoc carvzh5 c6rdo0z crlrmkb"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Success
       </span>
     </button>
     <button
-      class="cbz7lqw cofa3lp c-giobsp cp2cke4"
+      class="cf0qdoc carvzh5 c6rdo0z cbeyg9k"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Success
       </span>
     </button>
     <button
-      class="cbz7lqw cofa3lp c-giobsp c3y92t4"
+      class="cf0qdoc carvzh5 c6rdo0z c-w2406k"
       disabled=""
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Success
       </span>
@@ -282,133 +282,133 @@ exports[`Button[Base] should render correctly about group 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;"
 >
   <div
-    class="c-jrbwbw"
+    class="cf7ek8"
   >
     <button
-      class="c-xdn1nt cofa3lp c3y92t4"
+      class="c-uc49qd carvzh5 c-w2406k"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-p8cvlj cofa3lp c3y92t4"
+      class="c-dvrksz carvzh5 c-w2406k"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-p8cvlj cofa3lp c3y92t4"
+      class="c-dvrksz carvzh5 c-w2406k"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-p8cvlj cofa3lp c-giobsp c3y92t4"
+      class="c-dvrksz carvzh5 c6rdo0z c-w2406k"
       disabled=""
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
   </div>
   <div
-    class="c-jrbwbw"
+    class="cf7ek8"
   >
     <button
-      class="c-xdn1nt cofa3lp"
+      class="c-uc49qd carvzh5"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-p8cvlj cofa3lp"
+      class="c-dvrksz carvzh5"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-p8cvlj cofa3lp"
+      class="c-dvrksz carvzh5"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-p8cvlj cofa3lp"
+      class="c-dvrksz carvzh5"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
   </div>
   <div
-    class="c-jrbwbw"
+    class="cf7ek8"
   >
     <button
-      class="c-p8cvlj cofa3lp cok8umv"
+      class="c-dvrksz carvzh5 crlrmkb"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-p8cvlj cofa3lp cok8umv"
+      class="c-dvrksz carvzh5 crlrmkb"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-p8cvlj cofa3lp cok8umv"
+      class="c-dvrksz carvzh5 crlrmkb"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
     </button>
     <button
-      class="c-p8cvlj cofa3lp cok8umv"
+      class="c-dvrksz carvzh5 crlrmkb"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Publish
       </span>
@@ -418,20 +418,20 @@ exports[`Button[Base] should render correctly about group 1`] = `
     style="display: flex; gap: 24px;"
   >
     <div
-      class="c-jrbwbw"
+      class="cf7ek8"
     >
       <button
-        class="c-xdn1nt cofa3lp"
+        class="c-uc49qd carvzh5"
         type="button"
       >
         <span
-          class="c-k4n9c8"
+          class="c-6alrak"
         >
           Publish
         </span>
       </button>
       <button
-        class="c-xdn1nt cofa3lp"
+        class="c-uc49qd carvzh5"
         type="button"
       >
         <span
@@ -453,20 +453,20 @@ exports[`Button[Base] should render correctly about group 1`] = `
       </button>
     </div>
     <div
-      class="c-jrbwbw"
+      class="cf7ek8"
     >
       <button
-        class="c-p8cvlj cofa3lp"
+        class="c-dvrksz carvzh5"
         type="button"
       >
         <span
-          class="c-k4n9c8"
+          class="c-6alrak"
         >
           Publish
         </span>
       </button>
       <button
-        class="c-p8cvlj cofa3lp"
+        class="c-dvrksz carvzh5"
         type="button"
       >
         <span
@@ -496,7 +496,7 @@ exports[`Button[Base] should render correctly about icon 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="c-xdn1nt cofa3lp"
+    class="c-uc49qd carvzh5"
     style="margin: 0px;"
     type="button"
   >
@@ -514,18 +514,18 @@ exports[`Button[Base] should render correctly about icon 1`] = `
       />
     </svg>
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Primary
     </span>
   </button>
   <button
-    class="c-xdn1nt cofa3lp"
+    class="c-uc49qd carvzh5"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Primary
     </span>
@@ -544,7 +544,7 @@ exports[`Button[Base] should render correctly about icon 1`] = `
     </svg>
   </button>
   <button
-    class="c-xdn1nt cofa3lp cweuqw8"
+    class="c-uc49qd carvzh5 cirgmro"
     style="margin: 0px;"
     type="button"
   >
@@ -569,36 +569,36 @@ exports[`Button[Base] should render correctly about loading 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="c-xdn1nt cofa3lp c-mlsxkf"
+    class="c-uc49qd carvzh5 c-jka5mz"
     disabled=""
     style="margin: 0px;"
     type="button"
   >
     <div
-      class="c3y8nm5"
+      class="c-w24fdj"
     >
       <div
-        class="c-qu1l4l"
+        class="c-kako0p"
         style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
       />
     </div>
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Primary
     </span>
   </button>
   <button
-    class="c-xdn1nt cofa3lp c-mlsxkf cweuqw8"
+    class="c-uc49qd carvzh5 c-jka5mz cirgmro"
     disabled=""
     style="margin: 0px;"
     type="button"
   >
     <div
-      class="c3y8nm5"
+      class="c-w24fdj"
     >
       <div
-        class="c-qu1l4l"
+        class="c-kako0p"
         style="width: 12px; height: 12px; border-width: 1.2px; font-size: 1.2px;"
       />
     </div>
@@ -611,29 +611,29 @@ exports[`Button[Base] should render correctly about shape 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="c-xdn1nt cofa3lp"
+    class="c-uc49qd carvzh5"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Primary
     </span>
   </button>
   <button
-    class="c-xdn1nt cofa3lp c-jlbyhp"
+    class="c-uc49qd carvzh5 cl7cef"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Primary
     </span>
   </button>
   <button
-    class="c-xdn1nt cofa3lp cweuqw8"
+    class="c-uc49qd carvzh5 cirgmro"
     style="margin: 0px;"
     type="button"
   >
@@ -655,7 +655,7 @@ exports[`Button[Base] should render correctly about shape 1`] = `
     </span>
   </button>
   <button
-    class="c-xdn1nt cofa3lp copok7v"
+    class="c-uc49qd carvzh5 cb2ag3b"
     style="margin: 0px;"
     type="button"
   >
@@ -684,34 +684,34 @@ exports[`Button[Base] should render correctly about size 1`] = `
   style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;"
 >
   <button
-    class="c-xdn1nt cofa3lp c-jktuqs"
+    class="c-uc49qd carvzh5 clpg5c"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Primary
     </span>
   </button>
   <button
-    class="c-xdn1nt cofa3lp"
+    class="c-uc49qd carvzh5"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Primary
     </span>
   </button>
   <button
-    class="c-xdn1nt cofa3lp c-jovq9c"
+    class="c-uc49qd carvzh5 chnkms"
     style="margin: 0px;"
     type="button"
   >
     <span
-      class="c-k4n9c8"
+      class="c-6alrak"
     >
       Primary
     </span>
@@ -727,45 +727,45 @@ exports[`Button[Base] should render correctly about status 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="cp29cq6 cofa3lp"
+      class="cbev8lm carvzh5"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Danger
       </span>
     </button>
     <button
-      class="cp29cq6 cofa3lp cok8umv"
+      class="cbev8lm carvzh5 crlrmkb"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Danger
       </span>
     </button>
     <button
-      class="cp29cq6 cofa3lp cp2cke4"
+      class="cbev8lm carvzh5 cbeyg9k"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Danger
       </span>
     </button>
     <button
-      class="cp29cq6 cofa3lp c3y92t4"
+      class="cbev8lm carvzh5 c-w2406k"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Danger
       </span>
@@ -775,45 +775,45 @@ exports[`Button[Base] should render correctly about status 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="c-9krqmn cofa3lp"
+      class="c-6j8yp7 carvzh5"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Warning
       </span>
     </button>
     <button
-      class="c-9krqmn cofa3lp cok8umv"
+      class="c-6j8yp7 carvzh5 crlrmkb"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Warning
       </span>
     </button>
     <button
-      class="c-9krqmn cofa3lp cp2cke4"
+      class="c-6j8yp7 carvzh5 cbeyg9k"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Warning
       </span>
     </button>
     <button
-      class="c-9krqmn cofa3lp c3y92t4"
+      class="c-6j8yp7 carvzh5 c-w2406k"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Warning
       </span>
@@ -823,45 +823,45 @@ exports[`Button[Base] should render correctly about status 1`] = `
     style="gap: 24px; display: flex; flex-wrap: wrap; align-items: center;"
   >
     <button
-      class="cbz7lqw cofa3lp"
+      class="cf0qdoc carvzh5"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Success
       </span>
     </button>
     <button
-      class="cbz7lqw cofa3lp cok8umv"
+      class="cf0qdoc carvzh5 crlrmkb"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Success
       </span>
     </button>
     <button
-      class="cbz7lqw cofa3lp cp2cke4"
+      class="cf0qdoc carvzh5 cbeyg9k"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Success
       </span>
     </button>
     <button
-      class="cbz7lqw cofa3lp c3y92t4"
+      class="cf0qdoc carvzh5 c-w2406k"
       style="margin: 0px; width: 72px;"
       type="button"
     >
       <span
-        class="c-k4n9c8"
+        class="c-6alrak"
       >
         Success
       </span>

@@ -6,10 +6,10 @@ import React from 'react';
 import classNames from 'classnames';
 import useWithFormConfig from '../common/use-with-form-config';
 
-const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem, Value>) => {
-  const { children, className, block, keygen, jssStyle, style } = props;
+const Group = <DataItem, Value extends any[]>(props0: CheckboxGroupProps<DataItem, Value>) => {
+  const props = useWithFormConfig(props0);
+  const { children, className, block, keygen, jssStyle, style, disabled } = props;
   const checkboxStyle = jssStyle?.checkbox?.();
-  const { disabled } = useWithFormConfig(props);
 
   const inputAbleProps = useInputAble({
     value: props.value,
@@ -48,8 +48,8 @@ const Group = <DataItem, Value extends any[]>(props: CheckboxGroupProps<DataItem
 
   const getContent = (d: DataItem, index: number) => {
     const { renderItem } = props;
-    if (typeof renderItem === 'string') {
-      return d[renderItem] as unknown as React.ReactNode;
+    if (typeof renderItem === 'string' && d) {
+      return (d as any)[renderItem] as unknown as React.ReactNode;
     }
     if (typeof renderItem === 'function') {
       return renderItem(d, index);

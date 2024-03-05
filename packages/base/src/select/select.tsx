@@ -21,8 +21,10 @@ import List from './list';
 import TreeList from './list-tree';
 import Icons from '../icons';
 import ColumnsList from './list-columns';
+import useWithFormConfig from '../common/use-with-form-config';
 
-function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
+function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
+  const props = useWithFormConfig(props0);
   const {
     jssStyle,
     className,
@@ -622,7 +624,7 @@ function Select<DataItem, Value>(props: SelectPropsBase<DataItem, Value>) {
     <div
       ref={selectRef}
       tabIndex={disabled === true ? -1 : 0}
-      data-soui-type={'input'}
+      {...util.getDataAttribute({type: 'input'})}
       className={rootClass}
       style={rootStyle}
       onMouseEnter={handleMouseEnter}

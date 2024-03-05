@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormItem } from '@sheinx/hooks';
+import { useFormItem, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import ErrorTrans from './error-trans';
 
@@ -45,7 +45,7 @@ export default (props: FormItemProps) => {
           {label}
         </div>
       ) : null}
-      <div className={formItemClasses?.control}>
+      <div className={formItemClasses?.control} {...util.getDataAttribute({ role: 'form-control' })}>
         <Provider value={ProviderValue}>{children}</Provider>
         {showError && (
           <div className={formItemClasses?.error}>
