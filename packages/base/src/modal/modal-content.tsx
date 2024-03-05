@@ -204,6 +204,7 @@ const Modal = (props: ModalContentProps) => {
   };
 
   const renderFooter = () => {
+    if (!props.footer) return null;
     return <div className={modalClasses?.footer}>{props.footer}</div>;
   };
 

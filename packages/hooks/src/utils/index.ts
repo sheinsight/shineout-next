@@ -19,3 +19,4 @@ export * from './attribute';
 export * from './accept';
 export * from './array';
 export * from './tree';
+export * from './immer';

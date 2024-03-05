@@ -130,8 +130,7 @@ const Popover = (props: PopoverProps) => {
       <div
         className={classNames(className, popoverStyle?.wrapper, open && popoverStyle?.wrapperOpen)}
         style={colorStyle}
-        data-soui-position={position}
-        data-soui-type={type}
+        {...util.getDataAttribute({ position, type })}
         ref={popupRef}
         onMouseLeave={events.onMouseLeave}
       >

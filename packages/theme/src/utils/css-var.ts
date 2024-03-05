@@ -1,4 +1,4 @@
-const cssvarFlag = '--';
+const prefix = 'soui';
 
 function replaceNonAlphanumeric(str: string) {
   const nonAlphanumericRegEx = /[^a-z0-9]+/gi; // 匹配所有非字母和非数字字符
@@ -29,5 +29,5 @@ export const cssvar = (str: string, value: string, key: string, size?: string) =
   if (pxNum) {
     return `${Number(str.split('px')[0])}px`;
   }
-  return `var(--${camelCaseToDash(key)},var(${cssvarFlag}${replaceNonAlphanumeric(str)},${value}))`;
+  return `var(--${prefix}-${camelCaseToDash(key)},var(--${prefix}-${replaceNonAlphanumeric(str)},${value}))`;
 };

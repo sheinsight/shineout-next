@@ -25,7 +25,7 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const hasExpand = data.some(
-    (item) => item.children && (props.looseChildren || item.children.length),
+    (item) => item && item.children && (props.looseChildren || item.children.length),
   );
 
   const showScrollBar = isHorizontal || isVertical;
@@ -49,7 +49,6 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
         mode === 'inline' && classes?.wrapperInline,
         (mode === 'vertical' || mode === 'vertical-auto') && classes?.wrapperVertical,
         mode === 'horizontal' && classes?.wrapperHorizontal,
-        hasExpand && classes?.wrapperHasExpand,
         hasOpen && classes?.wrapperHasOpen,
         theme === 'dark' ? classes?.wrapperDark : classes?.wrapperLight,
       )}
@@ -59,7 +58,10 @@ const Menu = <DataItem, Key extends KeygenResult>(props: MenuProps<DataItem, Key
       }}
     >
       <div className={classes?.scrollbox} ref={scrollRef}>
-        <ul className={classes?.root} style={listStyle}>
+        <ul
+          className={classNames(classes?.root, hasExpand && classes?.childrenHasExpand)}
+          style={listStyle}
+        >
           {data.map((item, index) => {
             const key = util.getKey(props.keygen, item, index);
             return (

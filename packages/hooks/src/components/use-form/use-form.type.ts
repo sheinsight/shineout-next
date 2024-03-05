@@ -188,6 +188,7 @@ export type FormContext = {
   value: ObjectType;
   errors: ObjectType<Error | undefined>;
   serverErrors: ObjectType<Error | undefined>;
+  unmounted: boolean;
 };
 
 export type UseFormSlotOwnProps = {

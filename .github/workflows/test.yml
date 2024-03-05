@@ -2,7 +2,7 @@ name: test
 
 on:
   pull_request:
-    branches: []
+    branches: ['nothing']
 jobs:
   build:
     runs-on: ubuntu-latest

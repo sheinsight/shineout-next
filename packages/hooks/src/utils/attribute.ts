@@ -1,7 +1,9 @@
-export const getDataAttribute = (attrs: Record<string, string>) => {
+export const getDataAttribute = (attrs: Record<string, string | undefined>) => {
   return Object.keys(attrs).reduce((acc, key) => {
     const ns = `data-soui-${key}`;
-    acc[ns] = attrs[key];
+    if (attrs[key] !== undefined) {
+      acc[ns] = attrs[key]!;
+    }
     return acc;
   }, {} as Record<string, string>);
 };

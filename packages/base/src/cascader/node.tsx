@@ -61,7 +61,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
       !loading &&
       !util.getParent(
         e.target as HTMLElement,
-        `[${getDataAttributeName('type')}=checkbox-indicator]`,
+        `[${getDataAttributeName('role')}=checkbox-indicator]`,
       )
     ) {
       setLoading(true);

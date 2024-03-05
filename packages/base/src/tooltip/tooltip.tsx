@@ -1,4 +1,4 @@
-import { usePopup } from '@sheinx/hooks';
+import { usePopup, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React, { cloneElement, isValidElement } from 'react';
 import { TooltipProps } from './tooltip.type';
@@ -78,8 +78,7 @@ const Tooltip = (props: TooltipProps) => {
             tooltipClasses?.wrapper,
             open && tooltipClasses?.wrapperOpen,
           )}
-          data-soui-position={position}
-          data-soui-type={type}
+          {...util.getDataAttribute({ type, position })}
           ref={popupRef}
           onMouseLeave={events.onMouseLeave}
         >

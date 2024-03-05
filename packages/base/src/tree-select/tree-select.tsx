@@ -19,12 +19,14 @@ import { TreeContextProps } from '../tree/tree-context.type';
 import Result from '../select/result';
 import Icons from '../icons';
 import Tree from '../tree';
+import useWithFormConfig from '../common/use-with-form-config';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
 const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
-  props: TreeSelectProps<DataItem, Value>,
+  props0: TreeSelectProps<DataItem, Value>,
 ) => {
+  const props = useWithFormConfig(props0);
   const {
     jssStyle,
     className,
@@ -516,7 +518,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     <div
       ref={treeSelectRef}
       tabIndex={disabled === true ? -1 : 0}
-      data-soui-type={'input'}
+      {...util.getDataAttribute({ type: 'input' })}
       className={rootClass}
       style={rootStyle}
       onBlur={handleBlur}

@@ -2,8 +2,10 @@ import { useCheck, useInputAble } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
 import { SwitchProps } from './switch.type';
+import useWithFormConfig from '../common/use-with-form-config';
 
-const Switch = (props: SwitchProps) => {
+const Switch = (props0: SwitchProps) => {
+  const props = useWithFormConfig(props0);
   const { jssStyle, content, size, loading, className, style } = props;
   const switchClasses = jssStyle?.switch?.();
   const disabled = props.disabled || props.loading;

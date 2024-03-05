@@ -25,7 +25,7 @@ export default () => {
   const handleCopy = (id: string) => {
     const icon = document.getElementById(id)!.innerHTML;
     navigator?.clipboard?.writeText(icon);
-    Message.success('svg 复制成功', 1, {
+    Message.success('svg copied successfully', 1, {
       hideClose: true,
     });
   };
@@ -60,12 +60,12 @@ export default () => {
           overflow: 'auto',
         }}
       >
-        {renderIcon(noData, 'noData', '暂无数据')}
-        {renderIcon(noResult, 'noResult', '搜索结果为空')}
-        {renderIcon(noAuth, 'noAuth', '暂无权限')}
-        {renderIcon(noInternet, 'noInternet', '无网络')}
+        {renderIcon(noData, 'noData', 'No data')}
+        {renderIcon(noResult, 'noResult', 'Search results are empty')}
+        {renderIcon(noAuth, 'noAuth', 'No permission yet')}
+        {renderIcon(noInternet, 'noInternet', 'No network')}
         {renderIcon(web404, 'web404', '404')}
-        {renderIcon(error, 'error', '加载失败')}
+        {renderIcon(error, 'error', 'Failed to load')}
       </div>
       <div
         style={{
@@ -76,12 +76,12 @@ export default () => {
           overflow: 'auto',
         }}
       >
-        {renderIcon(noDataColorful, 'noDataColorful', '暂无数据')}
-        {renderIcon(noResultColorful, 'noResultColorful', '搜索结果为空')}
-        {renderIcon(noAuthColorful, 'noAuthColorful', '暂无权限')}
-        {renderIcon(noInternetColorful, 'noInternetColorful', '无网络')}
+        {renderIcon(noDataColorful, 'noDataColorful', 'No data')}
+        {renderIcon(noResultColorful, 'noResultColorful', 'Search results are empty')}
+        {renderIcon(noAuthColorful, 'noAuthColorful', 'No permission yet')}
+        {renderIcon(noInternetColorful, 'noInternetColorful', 'No network')}
         {renderIcon(web404Colorful, 'web404Colorful', '404')}
-        {renderIcon(errorColorful, 'errorColorful', '加载失败')}
+        {renderIcon(errorColorful, 'errorColorful', 'Failed to load')}
       </div>
     </div>
   );

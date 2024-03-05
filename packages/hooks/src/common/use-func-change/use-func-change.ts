@@ -1,12 +1,13 @@
 import React from 'react';
 import { isFunc } from '../../utils';
 import useRender from '../use-render';
-import { produce } from 'immer';
+import { produce } from '../../utils/immer';
 
 interface UseFuncChangeProps<T> {
   value: T;
   onChange: (value: T) => void;
 }
+
 const useFuncChange = <T>(props: UseFuncChangeProps<T>) => {
   const render = useRender();
   const context = React.useRef<{ value: T }>({ value: props.value });

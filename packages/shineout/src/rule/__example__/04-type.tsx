@@ -24,7 +24,7 @@ export default () => {
         <Input name='url' rules={[rule.required(), rule.url('The url is not valid')]} />
       </Form.Item>
       <Form.Item label=''>
-        <Form.Submit>提交</Form.Submit>
+        <Form.Submit>Submit</Form.Submit>
       </Form.Item>
     </Form>
   );

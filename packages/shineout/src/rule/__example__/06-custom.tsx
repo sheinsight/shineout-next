@@ -9,8 +9,8 @@ import { Form, Input, Rule } from 'shineout';
 
 const rule = Rule({
   tel: (value, _formData, callback, _props) => {
-    if (!value) return callback(new Error('请输入电话号码'));
-    if (!/^[0-9\s ().-]+$/.test(value)) return callback(new Error('请输入有效的电话号码'));
+    if (!value) return callback(new Error('Please enter your phone number'));
+    if (!/^[0-9\s ().-]+$/.test(value)) return callback(new Error('Please enter a valid phone number'));
     return callback(true);
   },
 });
@@ -21,7 +21,7 @@ export default () => {
         <Input name='tel' rules={[rule.tel]} />
       </Form.Item>
       <Form.Item label=''>
-        <Form.Submit>提交</Form.Submit>
+        <Form.Submit>Submit</Form.Submit>
       </Form.Item>
     </Form>
   );

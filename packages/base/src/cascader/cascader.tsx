@@ -20,17 +20,18 @@ import CascaderList from './list';
 import CascaderFilterList from './filter-list';
 import Result from '../select/result';
 import Icons from '../icons';
+import useWithFormConfig from '../common/use-with-form-config';
 
 const Cascader = <DataItem, Value extends KeygenResult[]>(
-  props: CascaderProps<DataItem, Value>,
+  props0: CascaderProps<DataItem, Value>,
 ) => {
+  const props = useWithFormConfig(props0);
   const {
     jssStyle,
     style,
     width,
     height,
     className,
-    size,
     hideTag = false,
     maxLength,
     defaultValue,
@@ -74,6 +75,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     onChange: onChangeProp,
     onFilter: onFilterProp,
     onCollapse: onCollapseProp,
+    size,
   } = props;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
@@ -601,7 +603,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   return (
     <div
       tabIndex={disabled === true ? -1 : 0}
-      data-soui-type={'input'}
+      {...util.getDataAttribute({ type: 'input' })}
       className={rootClass}
       style={rootStyle}
       onBlur={handleBlur}

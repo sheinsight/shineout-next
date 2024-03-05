@@ -17,7 +17,7 @@ export interface RateClasses {
 
 export interface RateProps
   extends Pick<CommonType, 'className' | 'style'>,
-    CommonChangeType<number> {
+    CommonChangeType<number | undefined> {
   jssStyle?: {
     rate: () => RateClasses;
   };
@@ -84,7 +84,7 @@ export interface RateProps
    * @en value change callback
    * @cn 值改变回调
    */
-  onChange?: (value: number) => void;
+  onChange?: (value?: number) => void;
   /**
    * @en Unselected element background
    * @cn 未选中元素背景

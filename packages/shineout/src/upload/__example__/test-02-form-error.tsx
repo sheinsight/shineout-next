@@ -34,7 +34,7 @@ const App: React.FC = () => {
         </Button>
       </Upload>
       <Button mode={'outline'} htmlType={'submit'} style={{ marginTop: 8 }}>
-        提交
+        Submit
       </Button>
     </Form>
   );

@@ -15,7 +15,7 @@ export default () => {
   return (
     <div>
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>
-        <span style={{ fontSize: 14 }}>跳转至</span>
+        <span style={{ fontSize: 14 }}>Jump to</span>
         <Input.Number
           min={1}
           max={10}
