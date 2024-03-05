@@ -64,6 +64,7 @@ export default createUseStyles(
     },
     doc: {
       display: 'flex',
+      marginTop: 60,
       position: 'relative',
       '& .examples': {
         flex: 1,

@@ -28,6 +28,8 @@ export interface TagClasses {
   input: string;
 
   inline: string;
+  wrapper: string;
+  container: string;
   closeIcon: string;
   closeIconWrapper: string;
 

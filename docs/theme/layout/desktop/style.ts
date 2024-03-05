@@ -3,11 +3,13 @@ import { createUseStyles } from 'react-jss';
 export default createUseStyles(
   {
     desktop: {
+      position: 'fixed',
+      left: 260,
+      top: -1,
       width: '100%',
       height: '100%',
       overflowY: 'auto',
       overflowX: 'hidden',
-      position: 'relative',
     },
 
     nav: {

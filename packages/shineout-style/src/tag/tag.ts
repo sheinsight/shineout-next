@@ -19,6 +19,8 @@ type TagType =
 type TagClass =
   | 'tag'
   | 'inline'
+  | 'wrapper'
+  | 'container'
   | 'disabled'
   | 'closeIcon'
   | 'closeIconWrapper'
@@ -173,11 +175,9 @@ const tag = (type: TagType) => ({
 const TagStyle: JsStyles<TagClass> = {
   tag: {
     display: 'inline-flex',
-    height: Token.tagHeight,
-    padding: `${Token.tagPaddingY} ${Token.tagPaddingX}`,
+    padding: `0 ${Token.tagPaddingX}`,
     fontSize: Token.tagFontSize,
     borderRadius: Token.tagBorderRadius,
-    // cursor: 'pointer',
     boxSizing: 'border-box',
     lineHeight: `calc(${Token.tagFontSize} + 4px)`,
     '& + &': {
@@ -192,6 +192,10 @@ const TagStyle: JsStyles<TagClass> = {
       },
     },
   },
+  wrapper: {
+    lineHeight: Token.lineHeightDynamic,
+  },
+  container: {},
   inline: {
     display: 'inline-block',
     flex: 1,
@@ -199,15 +203,11 @@ const TagStyle: JsStyles<TagClass> = {
     overflow: 'hidden',
     verticalAlign: 'top',
   },
-
   large: {
-    height: Token.tagLargeHeight,
     fontSize: Token.tagLargeFontSize,
     lineHeight: `calc(${Token.tagLargeFontSize} + 8px)`,
     padding: `${Token.tagLargePaddingY} ${Token.tagLargePaddingX}`,
     '& $closeIconWrapper': {
-      width: 18,
-      height: 18,
       '& svg': {
         width: 14,
         height: 14,
@@ -215,12 +215,15 @@ const TagStyle: JsStyles<TagClass> = {
     },
   },
   small: {
-    height: Token.tagSmallHeight,
     lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
     padding: `0 ${Token.tagSmallPaddingX}`,
+    '& $wrapper': {
+      lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
+    },
     '& $closeIconWrapper': {
-      width: 16,
-      height: 16,
+      width: `calc(${Token.tagSmallFontSize} + 6px)`,
+      height: `calc(${Token.tagSmallFontSize} + 6px)`,
+      lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
       '& svg': {
         width: 12,
         height: 12,
@@ -238,9 +241,9 @@ const TagStyle: JsStyles<TagClass> = {
   closeIcon: {
     marginLeft: 4,
     alignItems: 'center',
-    height: '100%',
     display: 'inline-flex',
     cursor: 'pointer',
+    height: Token.lineHeightDynamic,
   },
 
   closeIconWrapper: {
@@ -248,8 +251,8 @@ const TagStyle: JsStyles<TagClass> = {
     alignItems: 'center',
     borderRadius: '50%',
     justifyContent: 'center',
-    width: 16,
-    height: 16,
+    width: `calc(1em + 4px)`,
+    height: `calc(1em + 4px)`,
     '& svg': {
       width: 12,
       height: 12,
