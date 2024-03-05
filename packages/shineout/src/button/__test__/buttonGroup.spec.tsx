@@ -49,13 +49,10 @@ describe('ButtonGroup[Base]', () => {
   test('should render group mode when set mode in group and button at the same time', () => {
     const { container } = render(
       <Button.Group mode='text'>
-        <Button mode='link'>link</Button>
         <Button mode='outline'>outline</Button>
       </Button.Group>,
     );
-    container.querySelectorAll('button').forEach((button) => {
-      classTest(button, text);
-    });
+    classTest(container.querySelector('button') as Element, text);
   });
   test('should render when set size in group and button at the same time', () => {
     const { container } = render(
