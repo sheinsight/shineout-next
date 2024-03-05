@@ -217,8 +217,14 @@ const TagStyle: JsStyles<TagClass> = {
   small: {
     lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
     padding: `0 ${Token.tagSmallPaddingX}`,
+    '& $container': {
+      lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
+    },
     '& $wrapper': {
       lineHeight: `calc(${Token.tagSmallFontSize} + 6px)`,
+    },
+    '& $closeIcon': {
+      height: `calc(${Token.tagSmallFontSize} + 6px)`,
     },
     '& $closeIconWrapper': {
       width: `calc(${Token.tagSmallFontSize} + 6px)`,
