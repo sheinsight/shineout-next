@@ -6,41 +6,47 @@
  * en - Header
  *    -- Set `header` to customize the content of the header area
  */
-import React from 'react';
+import React, { useState } from 'react';
 import { Select } from 'shineout';
 
+const defaultData = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
+
 export default () => {
-  const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
-  const shein = <div style={{ background: 'black', color: 'white' }}>Shineout</div>;
-  
+  const [data, setData] = useState(defaultData);
+
+  const handleAppend = () => {
+    setData(['new color', ...data]);
+  };
+
+  const addMore = (
+    <div
+      style={{
+        height: 32,
+        backgroundColor: '#197AFA',
+        color: '#ffffff',
+        padding: '5px 12px',
+        boxSizing: 'border-box',
+      }}
+      onClick={handleAppend}
+    >
+      + add
+    </div>
+  );
+
   return (
     <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-      <Select
-        header={shein}
-        width={300}
-        data={data}
-        keygen
-        placeholder='Select Color'
-      />
-      <Select
-        footer={shein}
-        width={300}
-        data={data}
-        keygen
-        placeholder='Select Color'
-      />
+      <Select header={addMore} width={300} data={data} keygen placeholder='Select Color' />
+      <Select footer={addMore} width={300} data={data} keygen placeholder='Select Color' />
       <Select
         keygen
-        header={shein}
-        footer={shein}
         width={300}
         data={data}
         placeholder='Select Color'
         renderOptionList={(s) => (
           <div>
-            {shein}
+            {addMore}
             <div>{s}</div>
-            {shein}
+            {addMore}
           </div>
         )}
       />

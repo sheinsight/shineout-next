@@ -250,7 +250,7 @@ const tagTokens: TagTokens = {
   tagLargeFontSize: '14/regular',
   tagLargeBorderRadius: 'Radius-4',
   tagLargePaddingX: 'Padding-12',
-  tagLargePaddingY: 'Padding-3',
+  tagLargePaddingY: 'Padding-2',
   tagLargeHeight: 'Size-14',
   tagInputPaddingX: 'Padding-4',
   tagInputFontSize: '12/regular',
