@@ -136,11 +136,7 @@ export default createUseStyles(
       gap: 24,
     },
     tip: {
-      display: 'inline-block',
-      height: 14,
-      lineHeight: '14px',
       margin: '0 5px',
-      padding: '2px 5px',
       color: '#5d5d5d',
       background: '#F4F5F8',
       borderRadius: 2,
