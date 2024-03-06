@@ -148,8 +148,10 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
             rect.left + context.popUpWidth - containerRect.right + containerScrollBarWidth;
         }
       } else if (h === 'right') {
-        style.left = rect.right - containerRect.left + containerScroll.left;
-        style.transform = 'translateX(-100%)';
+        style.right = containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left;
+        style.left = 'auto'
+        style.width = 'auto'
+        style.transform = '';
         if (adjust) overLeft = containerRect.left - (rect.right - context.popUpWidth);
       } else {
         // 居中对齐
