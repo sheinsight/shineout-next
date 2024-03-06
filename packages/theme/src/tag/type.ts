@@ -1480,7 +1480,7 @@ export interface TagTokens {
   tagLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-3
+   * @token Padding-2
    * @description 标签大尺寸内边距（垂直方向）
    */
   tagLargePaddingY: string;

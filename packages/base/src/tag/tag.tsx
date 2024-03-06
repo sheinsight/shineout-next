@@ -68,13 +68,17 @@ const Tag = (props: TagProps) => {
   const renderChildren = () => {
     if (onClose) {
       return (
-        <div className={classNames(inlineStyle && tagStyle.inline)}>
-          <span>{children}</span>
+        <div className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
+          <span className={tagStyle.container}>{children}</span>
         </div>
       );
     }
 
-    return <span className={classNames(inlineStyle && tagStyle.inline)}>{children}</span>;
+    return (
+      <span className={classNames(tagStyle.wrapper, inlineStyle && tagStyle.inline)}>
+        {children}
+      </span>
+    );
   };
 
   const renderInput = () => {

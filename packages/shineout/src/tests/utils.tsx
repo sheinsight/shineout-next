@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { generateClassName } from '@sheinx/shineout-style';
+import version from '@sheinx/shineout-style/src/version';
 
 export function classTest(element: Element, className: string, bool: boolean = true) {
   expect(element?.classList.contains(className)).toBe(bool);
@@ -143,9 +144,7 @@ function _convertCamelToDash(str: string): string {
 }
 
 function convertHashClassName(componentsName: string, key: string): string {
-  const version = process.env.VERSION;
-  const prefix = 'so'
-  console.log('222', `${version}-${prefix}-${componentsName}--${key}`)
+  const prefix = 'soui'
   return generateClassName(version!, prefix, `${componentsName}-`, key);
 }
 

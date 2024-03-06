@@ -64,6 +64,7 @@ export default createUseStyles(
     },
     doc: {
       display: 'flex',
+      marginTop: 60,
       position: 'relative',
       '& .examples': {
         flex: 1,
@@ -149,6 +150,7 @@ export default createUseStyles(
       flexWrap: 'wrap',
       padding: '0 40px',
       maxWidth: 909,
+      boxSizing: 'content-box',
       gap: 24,
       // 第二个元素
       // '& > :nth-child(2)': {

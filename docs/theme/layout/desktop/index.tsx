@@ -1,12 +1,9 @@
-import { useRoutes, useLocation, useNavigate } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import { dispatch } from '../../store';
 import useStyles from './style';
 import { useEffect, useRef } from 'react';
 
-import Nav from './nav';
-import Menu from './menu';
 import Content from './content';
-// import Anchor from './anchor';
 
 import Home from '../../../pages/home';
 import Design from '../../../pages/design';
@@ -17,8 +14,6 @@ import Debugger from '../../../pages/debug';
 
 const Desktop = () => {
   const classes = useStyles();
-  const location = useLocation();
-  const navigate = useNavigate();
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -38,12 +33,9 @@ const Desktop = () => {
     {
       path: ':lan/component/:project?/:comp?',
       element: (
-        <>
-          <Menu></Menu>
-          <Component>
-            <Content></Content>
-          </Component>
-        </>
+        <Component>
+          <Content></Content>
+        </Component>
       ),
       children: [],
     },
@@ -90,7 +82,6 @@ const Desktop = () => {
 
     scrollElement.addEventListener('scroll', handleScroll);
 
-
     return () => {
       scrollElement.removeEventListener('scroll', handleScroll);
     };
@@ -98,7 +89,6 @@ const Desktop = () => {
 
   return (
     <section ref={ref} id='layout' className={classes.desktop}>
-      <Nav></Nav>
       <Routes></Routes>
     </section>
   );
