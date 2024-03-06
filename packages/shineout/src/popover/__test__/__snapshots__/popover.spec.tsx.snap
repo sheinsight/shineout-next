@@ -1,24 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Popover[Base] render snapshot default 1`] = `
+exports[`Popover[Base] should render default 1`] = `
 <div
-  class="popover-wrapper-0-2-65 popover-wrapperOpen-0-2-66"
+  class="c-fva9zr c-c4rpkd"
   data-soui-position="bottom"
   style="position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px;"
 >
   <div
-    class="popover-arrow-0-2-67"
+    class="ck71mu7"
   />
   <div
-    class="popover-content-0-2-68 popover-text-0-2-69"
+    class="c-qioy0h c-3x6x61"
   >
     some Text
   </div>
 </div>
 `;
 
-exports[`Popover[Base] should render default 1`] = `null`;
-
-exports[`Popover[Base] should render when set className and style 1`] = `null`;
-
-exports[`Popover[Snapshot] render snapshot default 1`] = `null`;
+exports[`Popover[Snapshot] render snapshot default 1`] = `
+<div
+  class="c-fva9zr c-c4rpkd"
+  data-soui-position="bottom"
+  style="position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px;"
+>
+  <div
+    class="ck71mu7"
+  />
+  <div
+    class="c-qioy0h c-3x6x61"
+  >
+    some Text
+  </div>
+</div>
+`;
