@@ -12,7 +12,7 @@ function flexGapSupport() {
   flex.appendChild(document.createElement('div'));
   flex.appendChild(document.createElement('div'));
 
-  document.body.appendChild(flex);
+  document.documentElement.appendChild(flex);
   const isSupported = flex.scrollHeight === 1;
   if (flex.parentNode) flex.parentNode.removeChild(flex);
 
