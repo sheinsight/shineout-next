@@ -85,6 +85,20 @@ export const isLink = (el: unknown): el is React.ReactElement => {
   return false;
 };
 
-export const isMacOS = (): boolean => /macintosh|mac os x/i.test(navigator.userAgent);
+export const isMacOS = (): boolean =>
+  isBrowser() && /macintosh|mac os x/i.test(navigator.userAgent);
 
-export const isFirefox = (): boolean => navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+export const isFirefox = (): boolean => {
+  if (!isBrowser()) return false;
+  return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+};
+
+export function isDomElement(element: any): element is HTMLElement {
+  return typeof HTMLElement === 'object'
+    ? element instanceof HTMLElement // DOM2
+    : element &&
+        typeof element === 'object' &&
+        element !== null &&
+        element.nodeType === 1 &&
+        typeof element.nodeName === 'string';
+}

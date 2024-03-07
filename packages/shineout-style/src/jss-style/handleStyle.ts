@@ -3,6 +3,7 @@ interface ObjectType {
 }
 
 function flexGapSupport() {
+  if (typeof window === 'undefined') return true;
   const flex = document.createElement('div');
   flex.style.display = 'flex';
   flex.style.flexDirection = 'column';
