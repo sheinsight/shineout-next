@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'development') {
       if (!ns) {
         console.warn('[sheinx/base]: styled should give namespace');
       }
-      const prefix = 'so-';
+      const prefix = 'soui-';
       return `${prefix}${ns}${camelToDash(rule.key)}`;
     },
   });

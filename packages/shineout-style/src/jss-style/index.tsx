@@ -1,9 +1,10 @@
 import { createUseStyles } from 'react-jss';
-import { JssStyle, GenerateId } from 'jss';
+import { JssStyle, GenerateId, Classes } from 'jss';
 import handleStyle from './handleStyle';
 import version from '../version';
 
 export { JssProvider } from 'react-jss';
+const prefix = 'soui';
 
 const config: {
   generateId?: GenerateId;
@@ -24,6 +25,8 @@ const stringToHash = (str: string) => {
   return 'c' + hash.toString(36);
 };
 
+const camelToDash = (str: string) => str.replace(/([A-Z])/g, '-$1').toLowerCase();
+
 export function generateClassName(version: string, prefix: string, ns: string, key: string) {
   const name = `${version}-${prefix}-${ns}-${key}`;
   return stringToHash(name);
@@ -36,7 +39,7 @@ const createClassname = (rule: any, sheet: any) => {
   if (!ns) {
     console.warn('[sheinx/base]: styled should give namespace');
   }
-  const prefix = 'soui';
+
   if (config.generateId) return config.generateId(rule, sheet);
   return generateClassName(version, prefix, ns, rule.key);
   // return `${prefix}${ns}${camelToDash(rule.key)}`;
@@ -50,7 +53,20 @@ export type JsStyles<Name extends string = string> = Record<Name, JssStyle<undef
 export type ClassStyle<K extends Record<string, any>> = {
   [P in keyof K]: Record<string, any>;
 };
+
 export const styled = <C extends string>(style: JsStyles<C>, ns: string) => {
   const hoc = createUseStyles(handleStyle(style), { name: ns, generateId: createClassname });
-  return hoc;
+  const getClassName = () => {
+    const classes = hoc();
+    return Object.keys(classes).reduce((acc, key) => {
+      const k = key as keyof typeof classes;
+      const oldClass = classes[k];
+      const constClass = `${prefix}-${ns}-${camelToDash(k)}`;
+      console.log('oldClass', oldClass, constClass);
+      const value = constClass === oldClass ? oldClass : `${oldClass} ${constClass}`;
+      acc[k] = value;
+      return acc;
+    }, {} as Classes<C>);
+  };
+  return getClassName;
 };
