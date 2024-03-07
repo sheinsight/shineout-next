@@ -2,13 +2,13 @@
 
 exports[`Upload[Base] should render correctly  1`] = `
 <div
-  class="so-upload-wrapper"
+  class="c-dsitl"
 >
   <span
-    class="so-upload-handler"
+    class="c-fb8m1e"
   >
     <button
-      class="so-button-secondary so-button-button so-button-outline"
+      class="c-rg592x cvey2f3 cs6jo0l"
       type="button"
     >
       <svg
@@ -25,7 +25,7 @@ exports[`Upload[Base] should render correctly  1`] = `
         />
       </svg>
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Upload file
       </span>
@@ -41,18 +41,18 @@ exports[`Upload[Base] should render correctly  1`] = `
 
 exports[`Upload[Base] should render correctly about base button 1`] = `
 <div
-  class="so-upload-wrapper"
+  class="c-dsitl"
 >
   <span
-    class="so-upload-handler"
+    class="c-fb8m1e"
   >
     <button
-      class="so-upload-button so-button-primary so-button-button"
+      class="chlg49a c-trc8a3 cvey2f3"
       tabindex="0"
       type="button"
     >
       <span>
-        点击上传
+        Click to upload
       </span>
     </button>
     <input
@@ -65,14 +65,14 @@ exports[`Upload[Base] should render correctly about base button 1`] = `
 
 exports[`Upload[Base] should render correctly about base image 1`] = `
 <div
-  class="so-upload-wrapper so-upload-wrapper-image"
+  class="c-dsitl c-4cljbw"
 >
   <span
-    class="so-upload-image-handler"
+    class="c-bnmddh"
     style="width: 80px; height: 80px;"
   >
     <div
-      class="so-upload-image-handler-icon"
+      class="cxtwbfo"
     >
       <svg
         aria-hidden="true"
@@ -97,13 +97,13 @@ exports[`Upload[Base] should render correctly about base image 1`] = `
 exports[`Upload[Base] should render correctly about confirm 1`] = `
 <div>
   <div
-    class="so-upload-wrapper"
+    class="c-dsitl"
   >
     <span
-      class="so-upload-handler"
+      class="c-fb8m1e"
     >
       <button
-        class="so-button-secondary so-button-button so-button-outline"
+        class="c-rg592x cvey2f3 cs6jo0l"
         type="button"
       >
         <svg
@@ -120,7 +120,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
           />
         </svg>
         <span
-          class="so-button-space-wrapper"
+          class="cboe6wq"
         >
           Upload file
         </span>
@@ -131,13 +131,13 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       />
     </span>
     <div
-      class="so-upload-result so-upload-result-success"
+      class="coxcqrd c-3opzue"
     >
       <div
-        class="so-upload-result-text"
+        class="cnee1c6"
       >
         <div
-          class="so-upload-icon"
+          class="c3f695h"
         >
           <svg
             aria-hidden="true"
@@ -151,15 +151,15 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
           </svg>
         </div>
         <div
-          class="so-upload-result-text-body"
+          class="c-pzzl6g"
         >
           mountain.png
         </div>
         <div
-          class="so-upload-result-text-footer"
+          class="cj30fi9"
         >
           <div
-            class="so-upload-icon so-upload-result-status-icon"
+            class="c3f695h c-17p7a4"
           >
             <svg
               aria-hidden="true"
@@ -175,7 +175,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
         </div>
       </div>
       <div
-        class="so-upload-result-close so-upload-icon so-upload-icon-hover"
+        class="cetqdxb c3f695h cyzsfaf"
       >
         <noscript />
         <svg
@@ -194,15 +194,15 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
     </div>
   </div>
   <div
-    class="so-upload-wrapper so-upload-wrapper-image"
+    class="c-dsitl c-4cljbw"
     style="margin-top: 24px;"
   >
     <span
-      class="so-upload-image-handler"
+      class="c-bnmddh"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="so-upload-image-handler-icon"
+        class="cxtwbfo"
       >
         <svg
           aria-hidden="true"
@@ -221,30 +221,30 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       />
     </span>
     <div
-      class="so-upload-image-result so-upload-result-success"
+      class="c-bm77no c-3opzue"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="so-upload-image-bg so-image-image so-image-center so-image-rounded"
+        class="c4ulk4k c5xp75n c-w12imj cdf7qvh"
         style="width: auto; padding-bottom: 0px;"
       >
         <div
-          class="so-image-default-placeholder"
+          class="ct7mkia"
         >
           <div
-            class="so-spin-ring"
+            class="chxenrh"
             style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
           />
         </div>
       </div>
       <div
-        class="so-upload-image-result-mask"
+        class="c-kmqp2w"
       >
         <div
-          class="so-upload-image-result-mask-operator"
+          class="closwc"
         >
           <div
-            class="so-upload-icon"
+            class="c3f695h"
           >
             <svg
               aria-hidden="true"
@@ -258,7 +258,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
             </svg>
           </div>
           <div
-            class="so-upload-icon"
+            class="c3f695h"
           >
             <noscript />
             <svg
@@ -284,14 +284,14 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
 exports[`Upload[Base] should render correctly about default value 1`] = `
 <div>
   <div
-    class="so-upload-wrapper"
+    class="c-dsitl"
     style="width: 300px; margin-bottom: 30px;"
   >
     <span
-      class="so-upload-handler"
+      class="c-fb8m1e"
     >
       <button
-        class="so-button-secondary so-button-button so-button-outline"
+        class="c-rg592x cvey2f3 cs6jo0l"
         type="button"
       >
         <svg
@@ -308,7 +308,7 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
           />
         </svg>
         <span
-          class="so-button-space-wrapper"
+          class="cboe6wq"
         >
           Upload file
         </span>
@@ -321,13 +321,13 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
       />
     </span>
     <div
-      class="so-upload-result so-upload-result-success"
+      class="coxcqrd c-3opzue"
     >
       <div
-        class="so-upload-result-text"
+        class="cnee1c6"
       >
         <div
-          class="so-upload-icon"
+          class="c3f695h"
         >
           <svg
             aria-hidden="true"
@@ -341,15 +341,15 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
           </svg>
         </div>
         <div
-          class="so-upload-result-text-body"
+          class="c-pzzl6g"
         >
           test file.png
         </div>
         <div
-          class="so-upload-result-text-footer"
+          class="cj30fi9"
         >
           <div
-            class="so-upload-icon so-upload-result-status-icon"
+            class="c3f695h c-17p7a4"
           >
             <svg
               aria-hidden="true"
@@ -365,7 +365,7 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
         </div>
       </div>
       <div
-        class="so-upload-result-close so-upload-icon so-upload-icon-hover"
+        class="cetqdxb c3f695h cyzsfaf"
       >
         <svg
           aria-hidden="true"
@@ -388,15 +388,15 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
 exports[`Upload[Base] should render correctly about drag 1`] = `
 <div>
   <div
-    class="so-upload-wrapper so-upload-wrapper-drop"
+    class="c-dsitl c-dw28je"
     style="width: 400px;"
   >
     <span
-      class="so-upload-drop-item"
+      class="cfcfc3i"
       data-soui-dragover="false"
     >
       <span
-        class="so-upload-handler"
+        class="c-fb8m1e"
       >
         <div
           style="height: 200px; box-sizing: border-box; padding: 50px 16px; font-size: 12px; line-height: 16px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;"
@@ -432,14 +432,14 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
     style="margin-top: 24px;"
   />
   <div
-    class="so-upload-wrapper so-upload-wrapper-image so-upload-wrapper-drop"
+    class="c-dsitl c-4cljbw c-dw28je"
   >
     <span
-      class="so-upload-drop-item"
+      class="cfcfc3i"
       data-soui-dragover="false"
     >
       <span
-        class="so-upload-image-handler"
+        class="c-bnmddh"
         style="width: 200px; height: 156px;"
       >
         <div
@@ -477,13 +477,13 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
 exports[`Upload[Base] should render correctly about handle error 1`] = `
 <div>
   <div
-    class="so-upload-wrapper"
+    class="c-dsitl"
   >
     <span
-      class="so-upload-handler"
+      class="c-fb8m1e"
     >
       <button
-        class="so-button-secondary so-button-button so-button-outline"
+        class="c-rg592x cvey2f3 cs6jo0l"
         type="button"
       >
         <svg
@@ -500,7 +500,7 @@ exports[`Upload[Base] should render correctly about handle error 1`] = `
           />
         </svg>
         <span
-          class="so-button-space-wrapper"
+          class="cboe6wq"
         >
           Upload file
         </span>
@@ -518,13 +518,13 @@ exports[`Upload[Base] should render correctly about handle error 1`] = `
 exports[`Upload[Base] should render correctly about recover 1`] = `
 <div>
   <div
-    class="so-upload-wrapper"
+    class="c-dsitl"
   >
     <span
-      class="so-upload-handler"
+      class="c-fb8m1e"
     >
       <button
-        class="so-button-secondary so-button-button so-button-outline"
+        class="c-rg592x cvey2f3 cs6jo0l"
         type="button"
       >
         <svg
@@ -541,7 +541,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
           />
         </svg>
         <span
-          class="so-button-space-wrapper"
+          class="cboe6wq"
         >
           Upload file
         </span>
@@ -552,13 +552,13 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
       />
     </span>
     <div
-      class="so-upload-result so-upload-result-success"
+      class="coxcqrd c-3opzue"
     >
       <div
-        class="so-upload-result-text"
+        class="cnee1c6"
       >
         <div
-          class="so-upload-icon"
+          class="c3f695h"
         >
           <svg
             aria-hidden="true"
@@ -572,15 +572,15 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
           </svg>
         </div>
         <div
-          class="so-upload-result-text-body"
+          class="c-pzzl6g"
         >
           mountain.png
         </div>
         <div
-          class="so-upload-result-text-footer"
+          class="cj30fi9"
         >
           <div
-            class="so-upload-icon so-upload-result-status-icon"
+            class="c3f695h c-17p7a4"
           >
             <svg
               aria-hidden="true"
@@ -596,7 +596,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
         </div>
       </div>
       <div
-        class="so-upload-result-close so-upload-icon so-upload-icon-hover"
+        class="cetqdxb c3f695h cyzsfaf"
       >
         <svg
           aria-hidden="true"
@@ -614,15 +614,15 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
     </div>
   </div>
   <div
-    class="so-upload-wrapper so-upload-wrapper-image"
+    class="c-dsitl c-4cljbw"
     style="margin-top: 24px;"
   >
     <span
-      class="so-upload-image-handler"
+      class="c-bnmddh"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="so-upload-image-handler-icon"
+        class="cxtwbfo"
       >
         <svg
           aria-hidden="true"
@@ -641,30 +641,30 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
       />
     </span>
     <div
-      class="so-upload-image-result so-upload-result-success"
+      class="c-bm77no c-3opzue"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="so-upload-image-bg so-image-image so-image-center so-image-rounded"
+        class="c4ulk4k c5xp75n c-w12imj cdf7qvh"
         style="width: auto; padding-bottom: 0px;"
       >
         <div
-          class="so-image-default-placeholder"
+          class="ct7mkia"
         >
           <div
-            class="so-spin-ring"
+            class="chxenrh"
             style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
           />
         </div>
       </div>
       <div
-        class="so-upload-image-result-mask"
+        class="c-kmqp2w"
       >
         <div
-          class="so-upload-image-result-mask-operator"
+          class="closwc"
         >
           <div
-            class="so-upload-icon"
+            class="c3f695h"
           >
             <svg
               aria-hidden="true"
@@ -678,7 +678,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
             </svg>
           </div>
           <div
-            class="so-upload-icon"
+            class="c3f695h"
           >
             <svg
               aria-hidden="true"
@@ -702,13 +702,13 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
 
 exports[`Upload[Base] should render correctly about request 1`] = `
 <div
-  class="so-upload-wrapper"
+  class="c-dsitl"
 >
   <span
-    class="so-upload-handler"
+    class="c-fb8m1e"
   >
     <button
-      class="so-button-secondary so-button-button so-button-outline"
+      class="c-rg592x cvey2f3 cs6jo0l"
       type="button"
     >
       <svg
@@ -725,7 +725,7 @@ exports[`Upload[Base] should render correctly about request 1`] = `
         />
       </svg>
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Upload file
       </span>
@@ -741,13 +741,13 @@ exports[`Upload[Base] should render correctly about request 1`] = `
 
 exports[`Upload[Base] should render correctly about request ignore 1`] = `
 <div
-  class="so-upload-wrapper"
+  class="c-dsitl"
 >
   <span
-    class="so-upload-handler"
+    class="c-fb8m1e"
   >
     <button
-      class="so-button-secondary so-button-button so-button-outline"
+      class="c-rg592x cvey2f3 cs6jo0l"
       type="button"
     >
       <svg
@@ -764,7 +764,7 @@ exports[`Upload[Base] should render correctly about request ignore 1`] = `
         />
       </svg>
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Upload file
       </span>
@@ -780,14 +780,14 @@ exports[`Upload[Base] should render correctly about request ignore 1`] = `
 
 exports[`Upload[Base] should render correctly about request zip 1`] = `
 <div
-  class="so-upload-wrapper"
+  class="c-dsitl"
   style="width: 300px;"
 >
   <span
-    class="so-upload-handler"
+    class="c-fb8m1e"
   >
     <button
-      class="so-button-secondary so-button-button so-button-outline"
+      class="c-rg592x cvey2f3 cs6jo0l"
       type="button"
     >
       <svg
@@ -804,7 +804,7 @@ exports[`Upload[Base] should render correctly about request zip 1`] = `
         />
       </svg>
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Upload file
       </span>
@@ -819,13 +819,13 @@ exports[`Upload[Base] should render correctly about request zip 1`] = `
 
 exports[`Upload[Base] should render correctly about result 1`] = `
 <div
-  class="so-upload-wrapper"
+  class="c-dsitl"
 >
   <span
-    class="so-upload-handler"
+    class="c-fb8m1e"
   >
     <button
-      class="so-button-secondary so-button-button so-button-outline"
+      class="c-rg592x cvey2f3 cs6jo0l"
       type="button"
     >
       <svg
@@ -842,7 +842,7 @@ exports[`Upload[Base] should render correctly about result 1`] = `
         />
       </svg>
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Upload file
       </span>
@@ -858,14 +858,14 @@ exports[`Upload[Base] should render correctly about result 1`] = `
 
 exports[`Upload[Base] should render correctly about result image 1`] = `
 <div
-  class="so-upload-wrapper so-upload-wrapper-image"
+  class="c-dsitl c-4cljbw"
 >
   <span
-    class="so-upload-image-handler"
+    class="c-bnmddh"
     style="width: 80px; height: 80px;"
   >
     <div
-      class="so-upload-image-handler-icon"
+      class="cxtwbfo"
     >
       <svg
         aria-hidden="true"
@@ -889,10 +889,10 @@ exports[`Upload[Base] should render correctly about result image 1`] = `
 
 exports[`Upload[Base] should render correctly about validate image 1`] = `
 <div
-  class="so-upload-wrapper so-upload-wrapper-image"
+  class="c-dsitl c-4cljbw"
 >
   <span
-    class="so-upload-image-handler"
+    class="c-bnmddh"
     style="width: 400px; height: 200px;"
   >
     <div
@@ -919,7 +919,7 @@ exports[`Upload[Base] should render correctly about validate image 1`] = `
           Upload Image
         </div>
         <div
-          style="margin-top: 4px; color: rgb(102, 108, 124);"
+          style="margin-top: 4px; color: rgb(153, 157, 168);"
         >
           Allow size 200 * 100
         </div>
@@ -937,13 +937,13 @@ exports[`Upload[Base] should render correctly about validate image 1`] = `
 exports[`Upload[Base] should render correctly about validate size 1`] = `
 <div>
   <div
-    class="so-upload-wrapper"
+    class="c-dsitl"
   >
     <span
-      class="so-upload-handler"
+      class="c-fb8m1e"
     >
       <button
-        class="so-button-secondary so-button-button so-button-outline"
+        class="c-rg592x cvey2f3 cs6jo0l"
         type="button"
       >
         <svg
@@ -960,7 +960,7 @@ exports[`Upload[Base] should render correctly about validate size 1`] = `
           />
         </svg>
         <span
-          class="so-button-space-wrapper"
+          class="cboe6wq"
         >
           Upload file
         </span>

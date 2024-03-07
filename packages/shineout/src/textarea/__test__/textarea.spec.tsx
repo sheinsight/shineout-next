@@ -11,6 +11,7 @@ import {
   styleTest,
   textContentTest,
   displayTest,
+  createClassName,
 } from '../../tests/utils';
 import { classLengthTest } from '../../tests/structureTest';
 import TextareaBase from '../__example__/01-01-base';
@@ -21,15 +22,17 @@ import TextareaInfoFunction from '../__example__/05-custom';
 import TextareaFooter from '../__example__/06-footer';
 
 const SO_PREFIX = 'textarea';
-const textareaClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
-const textareaFocusClassName = `${SO_PREFIX}-wrapperFocus-0-2-5`;
-const textareaSmallClassName = `${SO_PREFIX}-wrapperSmall-0-2-3`;
-const textareaShadowClassName = `${SO_PREFIX}-shadow-0-2-15`;
-const textareaInfoClassName = `.${SO_PREFIX}-info-0-2-13`;
-const textareaInfoErrorClassName = `${SO_PREFIX}-infoError-0-2-14`;
-const textareaFooterClassName = `.${SO_PREFIX}-footer-0-2-16`;
-const textareaUnderlineClassName = `${SO_PREFIX}-wrapperUnderline-0-2-8`;
-const textareaNoBorderClassName = `${SO_PREFIX}-wrapperNoBorder-0-2-9`;
+const {
+  wrapper: textareaClassName,
+  wrapperFocus: textareaFocusClassName,
+  wrapperSmall: textareaSmallClassName,
+  shadow: textareaShadowClassName,
+  info: textareaInfoClassName,
+  infoError: textareaInfoErrorClassName,
+  footer: textareaFooterClassName,
+  wrapperUnderline: textareaUnderlineClassName,
+  wrapperNoBorder: textareaNoBorderClassName,
+} = createClassName(SO_PREFIX, ['wrapper', 'info', 'footer'], ['wrapperFocus', 'wrapperSmall', 'shadow', 'infoError', 'wrapperUnderline', 'wrapperNoBorder'])
 
 afterEach(cleanup);
 describe('Textarea[Base]', () => {

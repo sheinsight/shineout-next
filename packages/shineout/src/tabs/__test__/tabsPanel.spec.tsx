@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tabs from '..';
 import { classLengthTest } from '../../tests/structureTest';
@@ -52,7 +52,6 @@ describe('Tabs.Panel[Children]', () => {
     );
     const panel = container.querySelector(tabsPanelClassName)!;
     classLengthTest(panel, '.demo', 1);
-    screen.debug();
   });
 });
 describe('Tabs.Panel[Disabled]', () => {

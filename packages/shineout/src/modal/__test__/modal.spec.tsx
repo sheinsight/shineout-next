@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, fireEvent, render, waitFor, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Modal, Button, Form, Input } from 'shineout';
 import mountTest from '../../tests/mountTest';
@@ -114,7 +114,6 @@ describe('Modal[Base]', () => {
   });
   test('should render default', () => {
     render(<Modal visible={true} />);
-    screen.debug();
     const modalWrapper = document.querySelector(wrapper)!;
     classTest(modalWrapper, wrapperAnimation);
     classTest(modalWrapper, wrapperShow);

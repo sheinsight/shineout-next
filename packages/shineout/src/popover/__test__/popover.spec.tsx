@@ -1,4 +1,4 @@
-import { render, cleanup, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, cleanup, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Popover from '..';
 import { Button } from 'shineout';
@@ -350,7 +350,6 @@ describe('Popover[Disabled]', () => {
     fireEvent.mouseEnter(button);
     await waitFor(async () => {
       await delay(200);
-      screen.debug();
       // expect(getPopoverRoot()).toBeInTheDocument();
     });
   });

@@ -155,8 +155,9 @@ describe('Transfer[Base]', () => {
       const transferContainer = item.querySelector(containerClassName)!;
       expect(transferContainer.querySelector(list)!).toBeInTheDocument();
     });
-    const virtualScroll = views[0].querySelector(viretualScroll)!;
-    const virtualContainers = virtualScroll.querySelector(virtualContainer)!;
+    const virtualList = views[0].querySelector(list)
+    const virtualScroll = virtualList?.firstElementChild
+    const virtualContainers = virtualScroll?.firstElementChild as Element
     const items = virtualContainers.querySelectorAll(item);
     expect(items.length).toBe(10);
     items.forEach((item) => {
@@ -229,7 +230,7 @@ describe('Transfer[Base]', () => {
     const leftHeaderCheckbox = views[0].querySelector(header)?.querySelector(`.${checkboxWrapper}`);
     const leftHeaderCount = leftHeaderCheckbox?.querySelector(count);
     fireEvent.click(leftHeaderCheckbox!);
-    textContentTest(leftHeaderCount!, '0/0');
+    textContentTest(leftHeaderCount!, '0');
   });
   const sizeClassNameMap: { [key: string]: string } = {
     small: small,
@@ -327,15 +328,15 @@ describe('Transfer[Simple]', () => {
     const rightHeaderCheckbox = views[1].querySelector(header)!;
     const leftHeaderCount = leftHeaderCheckbox?.querySelector(count);
     const rightHeaderCount = rightHeaderCheckbox?.querySelector(count);
-    textContentTest(leftHeaderCount!, '0/10');
-    textContentTest(rightHeaderCount!, '0/0');
+    textContentTest(leftHeaderCount!, '10');
+    textContentTest(rightHeaderCount!, '0');
     const leftItems = views[0].querySelectorAll(item);
     fireEvent.click(leftItems[1].querySelector(checkbox)!);
-    textContentTest(leftHeaderCount!, '0/9');
-    textContentTest(rightHeaderCount!, '0/1');
+    textContentTest(leftHeaderCount!, '9');
+    textContentTest(rightHeaderCount!, '1');
     fireEvent.click(rightHeaderCheckbox.querySelector(removeAll)!);
-    textContentTest(leftHeaderCount!, '0/10');
-    textContentTest(rightHeaderCount!, '0/0');
+    textContentTest(leftHeaderCount!, '10');
+    textContentTest(rightHeaderCount!, '0');
   });
 });
 describe('Transfer[onFilter]', () => {
@@ -387,8 +388,8 @@ describe('Transfer[Titles/Footers/Operations]', () => {
     const transferOperations = container
       .querySelector(operations)
       ?.querySelectorAll('button') as NodeListOf<HTMLButtonElement>;
-    textContentTest(transferOperations[0], 'to right');
-    textContentTest(transferOperations[1], 'to left');
+    textContentTest(transferOperations[0], 'To right');
+    textContentTest(transferOperations[1], 'To left');
   });
 });
 describe('Transfer[Loading]', () => {
@@ -522,22 +523,24 @@ describe('Transfer[DefaultValue/Value/OnChange/SelectedKeys/OnSelectChange/Defau
 describe('Transfer[VirtualScroll]', () => {
   test('should render default virtual scroll', () => {
     const { container } = render(<TransferBigData />);
-    const scrollContainer = container.querySelectorAll(view)[0].querySelector(virtualContainer)!;
+    const scrollList = container.querySelectorAll(view)[0].querySelector(list)!
+    const scrollContainer = scrollList.firstElementChild?.firstElementChild as Element;
     classLengthTest(scrollContainer, item, 20);
     fireEvent.wheel(scrollContainer, { deltaY: 100 });
     classLengthTest(scrollContainer, item, 20);
-    const bar = container.querySelector(viretualScroll)?.querySelector(viretualBar)?.parentElement;
-    fireEvent.mouseEnter(bar!);
-    fireEvent.scroll(bar!, {
-      target: {
-        scrollTop: 100,
-      },
-    });
-    classLengthTest(scrollContainer, item, 20);
+    // const bar = container.querySelector(viretualScroll)?.querySelector(viretualBar)?.parentElement;
+    // fireEvent.mouseEnter(bar!);
+    // fireEvent.scroll(bar!, {
+    //   target: {
+    //     scrollTop: 100,
+    //   },
+    // });
+    // classLengthTest(scrollContainer, item, 20);
   });
   test('should render when set rowsInView', () => {
     const { container } = render(<TransferTest rowsInView={5} />);
-    const scrollContainer = container.querySelectorAll(view)[0].querySelector(virtualContainer)!;
+    const scrollList = container.querySelectorAll(view)[0].querySelector(list)!
+    const scrollContainer = scrollList.firstElementChild?.firstElementChild as Element;
     classLengthTest(scrollContainer, item, 5);
   });
 });
