@@ -150,7 +150,6 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       } else if (h === 'right') {
         style.right = containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left;
         style.left = 'auto'
-        style.width = 'auto'
         style.transform = '';
         if (adjust) overLeft = containerRect.left - (rect.right - context.popUpWidth);
       } else {
