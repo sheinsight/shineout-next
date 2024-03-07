@@ -12,6 +12,7 @@ export interface BaseTipProps {
   /**
    * @cn 错误信息
    * @en error message
+   * @private 内部属性
    */
   error?: string | { message?: string };
   jssStyle?: PopoverProps['jssStyle'];
