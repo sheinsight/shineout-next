@@ -5,50 +5,50 @@ exports[`Tabs[Base] should render correctly  1`] = `
   style="height: 100px;"
 >
   <div
-    class="so-tabs-tabs"
+    class="c-kgu1m1"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="so-tabs-header-wrapper"
+      class="c-quu3jn"
     >
       <div
-        class="so-tabs-hr"
+        class="cgglzqb"
       />
       <div
-        class="so-tabs-header"
+        class="cjt06e"
         data-soui-shape="line"
       >
         <div
-          class="so-tabs-header-scroll"
+          class="cqt0syb"
           style="transform: translateX(0px);"
         >
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state="active"
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 2
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 3
             </div>
@@ -57,10 +57,10 @@ exports[`Tabs[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="so-tabs-panel-wrapper"
+      class="c-i8si0o"
     >
       <div
-        class="so-tabs-panel so-tabs-show"
+        class="c4py62z c-kguj3e"
       >
         <div
           style="padding: 16px; height: 100%; font-size: 14px;"
@@ -78,50 +78,50 @@ exports[`Tabs[Base] should render correctly about autofill 1`] = `
   style="height: 150px;"
 >
   <div
-    class="so-tabs-tabs so-tabs-auto-fill"
+    class="c-kgu1m1 c2op6az"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="so-tabs-header-wrapper"
+      class="c-quu3jn"
     >
       <div
-        class="so-tabs-hr"
+        class="cgglzqb"
       />
       <div
-        class="so-tabs-header"
+        class="cjt06e"
         data-soui-shape="line"
       >
         <div
-          class="so-tabs-header-scroll"
+          class="cqt0syb"
           style="transform: translateX(0px);"
         >
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state="active"
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 2
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 3
             </div>
@@ -130,13 +130,13 @@ exports[`Tabs[Base] should render correctly about autofill 1`] = `
       </div>
     </div>
     <div
-      class="so-tabs-panel-wrapper"
+      class="c-i8si0o"
     >
       <div
-        class="so-tabs-panel so-tabs-show"
+        class="c4py62z c-kguj3e"
       >
         <div
-          style="padding: 16px; height: 100%; font-size: 14px; line-height: 20px;"
+          style="padding: 12px; height: 100%; font-size: 14px; line-height: 20px;"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings. We can never get it by working for it directly. It comes, like happiness, to those who are aiming at something higher. It is a byproduct of great, simple living. The joy of living comes from what we put into living, not from what we seek to get from it. As you travel through life there are always those times when decisions just have to be made when the choices are hard, and solutions seem scarce and the rain seems to soak your parade!
         </div>
@@ -149,18 +149,18 @@ exports[`Tabs[Base] should render correctly about autofill 1`] = `
 exports[`Tabs[Base] should render correctly about collapsible 1`] = `
 <div>
   <div
-    class="so-tabs-tabs"
+    class="c-kgu1m1"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="so-tabs-header-wrapper"
+      class="c-quu3jn"
     >
       <div
-        class="so-tabs-hr"
+        class="cgglzqb"
       />
       <div
-        class="so-tabs-collapsible"
+        class="c-f8fc33"
       >
         <svg
           aria-hidden="true"
@@ -174,29 +174,29 @@ exports[`Tabs[Base] should render correctly about collapsible 1`] = `
         </svg>
       </div>
       <div
-        class="so-tabs-header"
+        class="cjt06e"
         data-soui-shape="line"
       >
         <div
-          class="so-tabs-header-scroll"
+          class="cqt0syb"
           style="transform: translateX(0px);"
         >
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state="active"
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               <span
                 style="margin-left: 4px; display: flex; align-items: center;"
@@ -222,11 +222,11 @@ exports[`Tabs[Base] should render correctly about collapsible 1`] = `
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               <span
                 style="margin-left: 4px; display: flex; align-items: center;"
@@ -255,10 +255,10 @@ exports[`Tabs[Base] should render correctly about collapsible 1`] = `
       </div>
     </div>
     <div
-      class="so-tabs-panel-wrapper"
+      class="c-i8si0o"
     >
       <div
-        class="so-tabs-panel so-tabs-show"
+        class="c4py62z c-kguj3e"
       >
         <div
           style="padding: 16px; font-size: 14px;"
@@ -274,11 +274,11 @@ exports[`Tabs[Base] should render correctly about collapsible 1`] = `
 exports[`Tabs[Base] should render correctly about control 1`] = `
 <div>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -286,21 +286,21 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         Tab 1
       </span>
     </div>
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         checked=""
@@ -309,21 +309,21 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         Tab 2
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -331,15 +331,15 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         Tab 3
       </span>
@@ -350,50 +350,50 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
   >
     <div
       active="1"
-      class="so-tabs-tabs"
+      class="c-kgu1m1"
       data-soui-position="top-left"
       data-soui-shape="line"
     >
       <div
-        class="so-tabs-header-wrapper"
+        class="c-quu3jn"
       >
         <div
-          class="so-tabs-hr"
+          class="cgglzqb"
         />
         <div
-          class="so-tabs-header"
+          class="cjt06e"
           data-soui-shape="line"
         >
           <div
-            class="so-tabs-header-scroll"
+            class="cqt0syb"
             style="transform: translateX(0px);"
           >
             <div
-              class="so-tabs-tab"
+              class="cd35me4"
               data-soui-state=""
             >
               <div
-                class="so-tabs-line-inner"
+                class="cq4zqmh"
               >
                 Tab 1
               </div>
             </div>
             <div
-              class="so-tabs-tab"
+              class="cd35me4"
               data-soui-state="active"
             >
               <div
-                class="so-tabs-line-inner"
+                class="cq4zqmh"
               >
                 Tab 2
               </div>
             </div>
             <div
-              class="so-tabs-tab"
+              class="cd35me4"
               data-soui-state=""
             >
               <div
-                class="so-tabs-line-inner"
+                class="cq4zqmh"
               >
                 Tab 3
               </div>
@@ -402,10 +402,10 @@ exports[`Tabs[Base] should render correctly about control 1`] = `
         </div>
       </div>
       <div
-        class="so-tabs-panel-wrapper"
+        class="c-i8si0o"
       >
         <div
-          class="so-tabs-panel so-tabs-show"
+          class="c4py62z c-kguj3e"
         >
           <div
             style="padding: 16px; height: 100%; font-size: 14px;"
@@ -424,50 +424,50 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
   style="height: 100px;"
 >
   <div
-    class="so-tabs-tabs"
+    class="c-kgu1m1"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="so-tabs-header-wrapper"
+      class="c-quu3jn"
     >
       <div
-        class="so-tabs-hr"
+        class="cgglzqb"
       />
       <div
-        class="so-tabs-header"
+        class="cjt06e"
         data-soui-shape="line"
       >
         <div
-          class="so-tabs-header-scroll"
+          class="cqt0syb"
           style="transform: translateX(0px);"
         >
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state="active"
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 2
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 3
             </div>
@@ -475,14 +475,14 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
         </div>
       </div>
       <div
-        class="so-tabs-extra"
+        class="c4kb907"
       >
         <button
-          class="so-button-primary so-button-button so-button-text"
+          class="c-trc8a3 cvey2f3 c-nzauiu"
           type="button"
         >
           <span
-            class="so-button-space-wrapper"
+            class="cboe6wq"
           >
             extra operation
           </span>
@@ -490,10 +490,10 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
       </div>
     </div>
     <div
-      class="so-tabs-panel-wrapper"
+      class="c-i8si0o"
     >
       <div
-        class="so-tabs-panel so-tabs-show"
+        class="c4py62z c-kguj3e"
       >
         <div
           style="padding: 16px; height: 100%; font-size: 14px;"
@@ -508,308 +508,344 @@ exports[`Tabs[Base] should render correctly about extra 1`] = `
 
 exports[`Tabs[Base] should render correctly about position 1`] = `
 <div>
-  <div
-    class="so-radio-group"
-    style="margin-bottom: 16px;"
+  <form
+    class="cr9qis4"
   >
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="csrte0i"
+      data-soui-status="default"
+      style="margin-bottom: 16px;"
     >
-      <input
-        checked=""
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
+      <div
+        class="c-v46lkd c9st5a2"
+        style="width: 65px;"
       >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
+        Position:
+      </div>
+      <div
+        class="ci4ezng"
+        data-soui-role="form-control"
       >
-        line
-      </span>
+        <div
+          class="cw6sirj"
+        >
+          <div
+            class="c-emivhp c-wsxxws"
+          >
+            <input
+              checked=""
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              top-left
+            </span>
+          </div>
+          <div
+            class="c-emivhp"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              top-right
+            </span>
+          </div>
+          <div
+            class="c-emivhp"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              bottom-left
+            </span>
+          </div>
+          <div
+            class="c-emivhp"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              bottom-right
+            </span>
+          </div>
+          <div
+            class="c-emivhp"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              left-top
+            </span>
+          </div>
+          <div
+            class="c-emivhp"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              right-top
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="csrte0i"
+      data-soui-status="default"
+      style="margin-bottom: 24px;"
     >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
+      <div
+        class="c-v46lkd c9st5a2"
+        style="width: 65px;"
       >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
+        Type:
+      </div>
+      <div
+        class="ci4ezng"
+        data-soui-role="form-control"
       >
-        card
-      </span>
+        <div
+          class="cw6sirj"
+        >
+          <div
+            class="c-emivhp c-wsxxws"
+          >
+            <input
+              checked=""
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              line
+            </span>
+          </div>
+          <div
+            class="c-emivhp"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              card
+            </span>
+          </div>
+          <div
+            class="c-emivhp"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              button
+            </span>
+          </div>
+          <div
+            class="c-emivhp"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              fill
+            </span>
+          </div>
+          <div
+            class="c-emivhp"
+          >
+            <input
+              style="display: none;"
+              tabindex="0"
+              type="radio"
+            />
+            <span
+              class="c-yzux30"
+            >
+              <span
+                class="c-2ldwtt"
+                tabindex="1"
+              />
+            </span>
+            <span
+              class="c-qgj373"
+            >
+              dash
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        button
-      </span>
-    </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        fill
-      </span>
-    </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        dash
-      </span>
-    </div>
-  </div>
-  <div
-    class="so-radio-group"
-    style="margin-bottom: 24px;"
-  >
-    <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
-    >
-      <input
-        checked=""
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        top-left
-      </span>
-    </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        top-right
-      </span>
-    </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        bottom-left
-      </span>
-    </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        bottom-right
-      </span>
-    </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        left-top
-      </span>
-    </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        right-top
-      </span>
-    </div>
-  </div>
+  </form>
   <div
     style="height: 150px;"
   >
     <div
-      class="so-tabs-tabs so-tabs-auto-fill"
+      class="c-kgu1m1 c2op6az"
       data-soui-position="top-left"
       data-soui-shape="line"
     >
       <div
-        class="so-tabs-header-wrapper"
+        class="c-quu3jn"
       >
         <div
-          class="so-tabs-hr"
+          class="cgglzqb"
         />
         <div
-          class="so-tabs-header"
+          class="cjt06e"
           data-soui-shape="line"
         >
           <div
-            class="so-tabs-header-scroll"
+            class="cqt0syb"
             style="transform: translateX(0px);"
           >
             <div
-              class="so-tabs-tab"
+              class="cd35me4"
               data-soui-state="active"
             >
               <div
-                class="so-tabs-line-inner"
+                class="cq4zqmh"
               >
                 Tab 1
               </div>
             </div>
             <div
-              class="so-tabs-tab"
+              class="cd35me4"
               data-soui-state=""
             >
               <div
-                class="so-tabs-line-inner"
+                class="cq4zqmh"
               >
                 Tab 2
               </div>
             </div>
             <div
-              class="so-tabs-tab"
+              class="cd35me4"
               data-soui-state="disabled"
             >
               <div
-                class="so-tabs-line-inner"
+                class="cq4zqmh"
               >
                 Tab 3
               </div>
@@ -818,10 +854,10 @@ exports[`Tabs[Base] should render correctly about position 1`] = `
         </div>
       </div>
       <div
-        class="so-tabs-panel-wrapper"
+        class="c-i8si0o"
       >
         <div
-          class="so-tabs-panel so-tabs-show"
+          class="c4py62z c-kguj3e"
         >
           <div
             style="padding: 16px; font-size: 14px;"
@@ -840,1020 +876,1020 @@ exports[`Tabs[Base] should render correctly about scroll 1`] = `
   style="height: 100px;"
 >
   <div
-    class="so-tabs-tabs"
+    class="c-kgu1m1"
     data-soui-position="top-left"
     data-soui-shape="line"
   >
     <div
-      class="so-tabs-header-wrapper"
+      class="c-quu3jn"
     >
       <div
-        class="so-tabs-hr"
+        class="cgglzqb"
       />
       <div
-        class="so-tabs-header"
+        class="cjt06e"
         data-soui-shape="line"
       >
         <div
-          class="so-tabs-header-scroll"
+          class="cqt0syb"
           style="transform: translateX(0px);"
         >
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state="active"
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 1
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 2
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 3
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 4
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 5
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 6
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 7
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 8
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 9
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 10
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 11
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 12
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 13
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 14
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 15
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 16
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 17
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 18
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 19
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 20
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 21
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 22
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 23
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 24
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 25
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 26
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 27
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 28
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 29
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 30
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 31
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 32
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 33
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 34
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 35
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 36
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 37
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 38
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 39
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 40
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 41
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 42
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 43
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 44
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 45
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 46
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 47
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 48
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 49
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 50
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 51
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 52
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 53
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 54
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 55
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 56
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 57
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 58
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 59
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 60
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 61
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 62
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 63
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 64
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 65
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 66
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 67
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 68
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 69
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 70
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 71
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 72
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 73
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 74
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 75
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 76
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 77
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 78
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 79
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 80
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 81
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 82
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 83
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 84
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 85
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 86
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 87
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 88
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 89
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 90
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 91
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 92
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 93
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 94
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 95
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 96
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 97
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 98
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 99
             </div>
           </div>
           <div
-            class="so-tabs-tab"
+            class="cd35me4"
             data-soui-state=""
           >
             <div
-              class="so-tabs-line-inner"
+              class="cq4zqmh"
             >
               Tab 100
             </div>
@@ -1862,10 +1898,10 @@ exports[`Tabs[Base] should render correctly about scroll 1`] = `
       </div>
     </div>
     <div
-      class="so-tabs-panel-wrapper"
+      class="c-i8si0o"
     >
       <div
-        class="so-tabs-panel so-tabs-show"
+        class="c4py62z c-kguj3e"
       >
         <div
           style="padding: 16px; height: 100%; font-size: 14px;"
@@ -1881,11 +1917,11 @@ exports[`Tabs[Base] should render correctly about scroll 1`] = `
 exports[`Tabs[Base] should render correctly about shape 1`] = `
 <div>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         checked=""
@@ -1894,21 +1930,21 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         line
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -1916,21 +1952,21 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         card
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -1938,21 +1974,21 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         button
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -1960,21 +1996,21 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         fill
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -1982,15 +2018,15 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         dash
       </span>
@@ -2000,50 +2036,50 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
     style="height: 100px;"
   >
     <div
-      class="so-tabs-tabs"
+      class="c-kgu1m1"
       data-soui-position="top-left"
       data-soui-shape="line"
     >
       <div
-        class="so-tabs-header-wrapper"
+        class="c-quu3jn"
       >
         <div
-          class="so-tabs-hr"
+          class="cgglzqb"
         />
         <div
-          class="so-tabs-header"
+          class="cjt06e"
           data-soui-shape="line"
         >
           <div
-            class="so-tabs-header-scroll"
+            class="cqt0syb"
             style="transform: translateX(0px);"
           >
             <div
-              class="so-tabs-tab"
+              class="cd35me4"
               data-soui-state="active"
             >
               <div
-                class="so-tabs-line-inner"
+                class="cq4zqmh"
               >
                 Tab 1
               </div>
             </div>
             <div
-              class="so-tabs-tab"
+              class="cd35me4"
               data-soui-state=""
             >
               <div
-                class="so-tabs-line-inner"
+                class="cq4zqmh"
               >
                 Tab 2
               </div>
             </div>
             <div
-              class="so-tabs-tab"
+              class="cd35me4"
               data-soui-state=""
             >
               <div
-                class="so-tabs-line-inner"
+                class="cq4zqmh"
               >
                 Tab 3
               </div>
@@ -2052,10 +2088,10 @@ exports[`Tabs[Base] should render correctly about shape 1`] = `
         </div>
       </div>
       <div
-        class="so-tabs-panel-wrapper"
+        class="c-i8si0o"
       >
         <div
-          class="so-tabs-panel so-tabs-show"
+          class="c4py62z c-kguj3e"
         >
           <div
             style="padding: 16px; height: 100%; font-size: 14px;"

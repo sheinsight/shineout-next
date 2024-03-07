@@ -7,6 +7,7 @@ import {
   attributesTest,
   baseTest,
   classTest,
+  createClassName,
   displayTest,
   hasAttributesTest,
   snapshotTest,
@@ -19,14 +20,18 @@ import SwitchSize from '../__example__/03-size';
 import SwitchLoading from '../__example__/04-loading';
 
 const SO_PREFIX = 'switch';
-const switchClassName = `${SO_PREFIX}-wrapper-0-2-2`;
-const switchCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-3`;
-const switchIndicatorClassName = `.${SO_PREFIX}-indicator-0-2-6`;
-const switchContentClassName = `.${SO_PREFIX}-content-0-2-7`;
-const switchDisabledClassName = `${SO_PREFIX}-wrapperDisabled-0-2-8`;
-const switchSmallClassName = `${SO_PREFIX}-wrapperSmall-0-2-4`;
-const switchLargeClassName = `${SO_PREFIX}-wrapperLarge-0-2-5`;
-const switchLoadingClassName = `.${SO_PREFIX}-loading-0-2-9`;
+
+const {
+  wrapper: switchClassName,
+  wrapperChecked: switchCheckedClassName,
+  indicator: switchIndicatorClassName,
+  content: switchContentClassName,
+  wrapperDisabled: switchDisabledClassName,
+  wrapperSmall: switchSmallClassName,
+  wrapperLarge: switchLargeClassName,
+  loading: switchLoadingClassName,
+} = createClassName(SO_PREFIX, ['indicator', 'content', 'loading'], ['wrapper', 'wrapperChecked', 'wrapperDisabled', 'wrapperSmall', 'wrapperLarge']);
+
 const sizeClasses = [switchSmallClassName, '', switchLargeClassName];
 
 const uncheckedText = '1';

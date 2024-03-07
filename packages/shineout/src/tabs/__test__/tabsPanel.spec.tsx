@@ -3,11 +3,13 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tabs from '..';
 import { classLengthTest } from '../../tests/structureTest';
-import { attributesTest } from '../../tests/utils';
+import { attributesTest, createClassName } from '../../tests/utils';
 
 const SO_PREFIX = 'tabs';
-const tabsPanelClassName = `.${SO_PREFIX}-panel-0-2-3`;
-const tabsTabClassName = `.${SO_PREFIX}-tab-0-2-5`;
+const {
+  panel: tabsPanelClassName,
+  tab: tabsTabClassName,
+} = createClassName(SO_PREFIX, ['panel', 'tab'], ['']);
 
 afterEach(cleanup);
 describe('Tabs.Panel[Base]', () => {
