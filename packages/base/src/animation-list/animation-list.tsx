@@ -35,7 +35,7 @@ const AnimationList = (props: AnimationListProps) => {
     height: 0,
     show: show,
     timer: null as any,
-    lastShow: show,
+    lastShow: undefined,
   });
   const ref = useRef<HTMLDivElement>(null);
   const forkRef = useForkRef(ref, onRef);
@@ -218,17 +218,22 @@ const AnimationList = (props: AnimationListProps) => {
     context.lastShow = show;
   }, [show]);
 
+  const wrapperStyle: React.CSSProperties = {
+    ...style,
+    ...innerStyle,
+    transform: `${style?.transform || ''} ${innerStyle?.transform || ''}`.trim(),
+  };
+  if (!wrapperStyle.transform) {
+    delete wrapperStyle.transform;
+  }
+
   return (
     <div
       ref={forkRef}
       className={classNamePo}
       data-sheinx-animation-type={type.join(' ')}
       data-sheinx-animation-duration={duration}
-      style={{
-        ...style,
-        ...innerStyle,
-        transform: `${style?.transform || ''} ${innerStyle?.transform || ''}`.trim(),
-      }}
+      style={wrapperStyle}
       {...forwardProps}
     >
       {children}

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { usePersistFn, util } from '@sheinx/hooks';
 import { getDefaultContainer } from '../config';
 
-let root: HTMLDivElement;
+let root: HTMLDivElement | null = null;
 
 export interface ContainerProps {
   container?: HTMLElement | null | (() => HTMLElement | null);
@@ -24,7 +24,7 @@ export const getRootContainer = (props: ContainerProps) => {
     root = document.createElement('div');
     root.setAttribute('style', 'contain: size');
   }
-  if (root.parentElement !== defaultContainer) {
+  if (defaultContainer && root.parentElement !== defaultContainer) {
     defaultContainer.appendChild(root);
   }
   return root;
@@ -32,6 +32,8 @@ export const getRootContainer = (props: ContainerProps) => {
 
 export const getRoot = (props: ContainerProps) => {
   const rootContainer = getRootContainer(props);
+  if (!rootContainer) return null;
+  if (!util.isBrowser()) return null;
   const root = document.createElement('div');
   rootContainer.appendChild(root);
   return root;
@@ -42,11 +44,12 @@ const useContainer = (props: ContainerProps = {}) => {
   const getContainerFn = usePersistFn(() => getContainer(props));
 
   const getRoot = usePersistFn(() => {
+    if (!util.isBrowser()) return null;
     if (!context.element) {
       context.element = document.createElement('div');
     }
     const rootContainer = getRootContainer(props);
-    if (context.element.parentElement !== rootContainer) {
+    if (rootContainer && context.element.parentElement !== rootContainer) {
       rootContainer.appendChild(context.element);
     }
     return context.element;

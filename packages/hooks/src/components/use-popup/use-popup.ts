@@ -29,12 +29,16 @@ const usePopup = (props: BasePopupProps) => {
     };
   }, []);
 
+  useEffect(() => {
+    setOpenState(!!props.open);
+  }, [props.open]);
+
   const { current: context } = useRef({
     triggerTimer: null as NodeJS.Timeout | null,
     // 记录所有的子popup 点击子 popup 不关闭弹窗
     chain: [targetRef, popupRef] as React.MutableRefObject<HTMLElement | null>[],
   });
-  const open = props.open !== undefined ? props.open : openState;
+  const open = openState;
   const changeOpen = (openIn: boolean, delay?: number) => {
     if (context.triggerTimer) clearTimeout(context.triggerTimer);
     context.triggerTimer = setTimeout(() => {

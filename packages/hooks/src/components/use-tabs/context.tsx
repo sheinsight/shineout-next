@@ -1,3 +1,4 @@
+"use client"
 import * as React from 'react';
 import { TabsProviderProps, TabsContextProps } from './context.type';
 

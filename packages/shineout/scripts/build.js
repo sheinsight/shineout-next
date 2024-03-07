@@ -46,7 +46,13 @@ const build = (config, cb) => {
     });
   });
 };
-build(fatherBundless, () => {
+
+if (process.env.NODE_ENV !== 'production') {
+  build(fatherBundless);
+}
+
+if (process.env.NODE_ENV === 'production') {
+  console.log('production mode');
   build(fatherrcDev, () => {
     build(fatherrcProd, () => {
       // 将dist/umd1 和 dist/umd2 的内容拷贝到 dist/umd
@@ -62,4 +68,4 @@ build(fatherBundless, () => {
       deleteDirectory('dist/umd2');
     });
   });
-});
+}

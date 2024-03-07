@@ -46,7 +46,7 @@ export * from './upload';
 export * from './version';
 export * from './virtual-scroll';
 
-export { styled, setJssConfig, generateClassName } from './jss-style';
+export * from './jss-style';
 
 export * as mixins from './mixin';
 

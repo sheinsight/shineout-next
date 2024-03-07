@@ -9,7 +9,7 @@ export default (color: ColorStep) => {
   }
 
   return Object.keys(color)
-    .sort((a, b) => window.parseInt(a) - window.parseInt(b))
+    .sort((a, b) => parseInt(a) - parseInt(b))
     .reduce((p: ColorStep[], v) => {
       p.push({ pos: v, color: color[v] });
       return p;

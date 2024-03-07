@@ -30,7 +30,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     onClick,
     renderItem,
     absolute,
-    data,
+    data=[],
     jssStyle,
     isSub,
     columns,

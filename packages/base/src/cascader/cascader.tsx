@@ -167,7 +167,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
-    status === 'error' && styles?.wrapperError,
+    // status === 'error' && styles?.wrapperError,
     clearable && styles?.clearable,
     !border && styles?.wrapperNoBorder,
     !!underline && styles?.wrapperUnderline,

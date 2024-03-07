@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React, { useRef, useEffect, useState } from 'react';
 import AlertIcon, { AlertIconMap } from '../alert/alert-icon';
 import Icons from '../icons';
+import { util } from '@sheinx/hooks';
 import { useDragMove, useDragResize, usePersistFn } from '@sheinx/hooks';
 import { FormFooterProvider } from '../form/form-footer-context';
 
@@ -21,7 +22,9 @@ const getClickPosition: EventListener = (e: any) => {
   }, 100);
 };
 
-document.addEventListener('click', getClickPosition, true);
+if (util.isBrowser()) {
+  document.addEventListener('click', getClickPosition, true);
+}
 
 const Modal = (props: ModalContentProps) => {
   const modalClasses = props.jssStyle?.modal?.();

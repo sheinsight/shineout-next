@@ -2,6 +2,7 @@ node_modules
 dist
 .idea
 .vscode
+.next
 docs/chunk
 .DS_Store
 coverage

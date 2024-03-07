@@ -1,9 +1,9 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles, JssProvider, SheetsRegistry } from 'react-jss';
 import { JssStyle, GenerateId, Classes } from 'jss';
 import handleStyle from './handleStyle';
 import version from '../version';
 
-export { JssProvider } from 'react-jss';
+export { JssProvider, SheetsRegistry };
 const prefix = 'soui';
 
 const config: {
@@ -62,7 +62,6 @@ export const styled = <C extends string>(style: JsStyles<C>, ns: string) => {
       const k = key as keyof typeof classes;
       const oldClass = classes[k];
       const constClass = `${prefix}-${ns}-${camelToDash(k)}`;
-      console.log('oldClass', oldClass, constClass);
       const value = constClass === oldClass ? oldClass : `${oldClass} ${constClass}`;
       acc[k] = value;
       return acc;
