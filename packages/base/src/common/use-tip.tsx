@@ -6,24 +6,24 @@ import type { PopoverProps } from '../popover/popover.type';
 
 // 透传Props
 export interface BaseTipProps {
-   /**
+  /**
    * @en The position where the validation info pop up
    * @cn 校验信息弹出位置
    * @override PopoverProps["position"]
    */
-   popover?: boolean | PopoverProps['position'];
-   /**
-    * @en Prompt information
-    * @cn 提示信息
-    * @private 内部属性
-    */
-   tip?: React.ReactNode;
-   /**
-    * @en Vilidate popup properties
-    * @cn 校验或者tip弹框接受的属性
-    * @type PopoverProps
-    */
-   popoverProps?: PopoverProps;
+  popover?: boolean | PopoverProps['position'];
+  /**
+   * @en Prompt information
+   * @cn 提示信息
+   * @private 内部属性
+   */
+  tip?: React.ReactNode;
+  /**
+   * @en Vilidate popup properties
+   * @cn 校验或者tip弹框接受的属性
+   * @type PopoverProps
+   */
+  popoverProps?: PopoverProps;
   /**
    * @cn 错误信息
    * @en error message

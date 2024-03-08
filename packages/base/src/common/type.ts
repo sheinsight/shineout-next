@@ -31,6 +31,7 @@ export interface CommonType {
   /**
    * @en Placeholder title, which needs to be used together with innerTitle
    * @cn 占位标题，需要配合 innerTitle 一起使用
+   * @private
    */
   placeTitle?: React.ReactNode;
   /**

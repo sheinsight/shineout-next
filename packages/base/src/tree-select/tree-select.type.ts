@@ -6,6 +6,8 @@ import { TagClasses } from '../tag/tag.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
 import { InnerTitleClasses } from '../common/use-inner-title';
+import { BaseTipProps } from '../common/use-tip';
+import { PopoverClasses } from '../popover/popover.type';
 
 export type JssStyleType = {
   virtualScroll?: () => VirtualScrollClasses;
@@ -14,6 +16,7 @@ export type JssStyleType = {
   select?: () => SelectClasses;
   tree?: () => TreeClasses;
   innerTitle?: () => InnerTitleClasses;
+  popover?: () => PopoverClasses;
 };
 
 export type TreeModeType = 0 | 1 | 2 | 3 | 4;
@@ -33,8 +36,9 @@ export interface ComponentRef<DataItem, Value> {
 }
 
 export interface TreeSelectProps<DataItem, Value>
-  extends Pick<CommonType, 'className' | 'style' | 'size'>,
-    Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
+  extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
+    Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
+    BaseTipProps {
   jssStyle?: JssStyleType;
   /**
    * @en placeholder when value is empty
@@ -66,11 +70,6 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 渲染未匹配值的方式
    */
   renderUnmatched?: (data: ValueItem<Value>) => React.ReactNode;
-  /**
-   * @en inner title
-   * @cn 内嵌标题
-   */
-  innerTitle?: React.ReactNode;
   /**
    * @en data source
    * @cn 数据源

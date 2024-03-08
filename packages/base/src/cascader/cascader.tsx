@@ -21,6 +21,7 @@ import CascaderFilterList from './filter-list';
 import Result from '../select/result';
 import Icons from '../icons';
 import useWithFormConfig from '../common/use-with-form-config';
+import useTip from '../common/use-tip';
 
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
@@ -144,6 +145,16 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     position: positionProp as any,
   });
 
+  const tipNode = useTip({
+    popover: props.popover,
+    popoverProps: props.popoverProps,
+    error: props.error,
+    tip: props.tip,
+    focused,
+    rootRef: targetRef,
+    jssStyle: props.jssStyle,
+  });
+
   const checkEmpty = () => {
     let isEmpty;
     if (mode !== undefined) {
@@ -162,12 +173,11 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     isEmpty && styles.empty,
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
-    !!open && styles?.wrapperFocus,
-    focused && styles?.wrapperFocus && disabled !== true,
+    focused && disabled !== true && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
-    // status === 'error' && styles?.wrapperError,
+    (!!props.error || props.status === 'error') && styles?.wrapperError,
     clearable && styles?.clearable,
     !border && styles?.wrapperNoBorder,
     !!underline && styles?.wrapperUnderline,
@@ -448,7 +458,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
     return (
       <div
-        ref={targetRef}
         className={classNames(
           styles?.resultWrapper,
           styles?.wrapperPaddingBox,
@@ -609,7 +618,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       onBlur={handleBlur}
       onFocus={handleFocus}
       onKeyDown={handleKeyDown}
+      ref={targetRef}
     >
+      {tipNode}
       {renderResult()}
       {renderIcon()}
       <AbsoluteList

@@ -11,6 +11,7 @@ import { TreeClasses } from '@sheinx/shineout-style';
 import { RadioClasses } from '../radio/radio.type';
 import { SpinClasses } from '../spin/spin.type';
 import { InputClasses } from '../input/input.type';
+import { BaseTipProps } from '../common/use-tip';
 
 export type JssStyleType = {
   tag?: () => TagClasses;
@@ -68,7 +69,8 @@ export interface BaseListProps<DataItem, Value>
 export interface SelectPropsBase<DataItem, Value>
   extends Omit<BaseSelectProps<DataItem, Value>, 'control'>,
     Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
-    Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
+    Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
+    BaseTipProps {
   jssStyle?: JssStyleType;
 
   /**
@@ -274,7 +276,7 @@ export interface SelectPropsBase<DataItem, Value>
    */
   separator?: string;
 
-   /**
+  /**
    * @en Option list is auto adapt
    * @cn 下拉列表宽度根据内容自由展开
    * @default false

@@ -22,6 +22,7 @@ import TreeList from './list-tree';
 import Icons from '../icons';
 import ColumnsList from './list-columns';
 import useWithFormConfig from '../common/use-with-form-config';
+import useTip from '../common/use-tip';
 
 function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const props = useWithFormConfig(props0);
@@ -40,7 +41,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     innerTitle,
     underline,
     border = true,
-    status,
     columns = 1,
     columnsTitle,
     columnWidth = 160,
@@ -177,16 +177,25 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     position: positionProp,
   });
 
+  const tipNode = useTip({
+    popover: props.popover,
+    popoverProps: props.popoverProps,
+    error: props.error,
+    tip: props.tip,
+    focused,
+    rootRef: selectRef,
+    jssStyle: props.jssStyle,
+  });
+
   const rootClass = classNames(
     className,
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
-    !!open && styles?.wrapperFocus,
     disabled !== true && focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
-    status === 'error' && styles?.wrapperError,
+    (!!props.error || props.status === 'error') && styles?.wrapperError,
     clearable && styles?.clearable,
     !border && styles?.wrapperNoBorder,
     !!underline && styles?.wrapperUnderline,
@@ -634,6 +643,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       onBlur={handleBlur}
       onFocus={handleFocus}
     >
+      {tipNode}
       {renderResult()}
       {renderIcon()}
       <AbsoluteList

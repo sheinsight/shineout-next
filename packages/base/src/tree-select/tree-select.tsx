@@ -20,6 +20,7 @@ import Result from '../select/result';
 import Icons from '../icons';
 import Tree from '../tree';
 import useWithFormConfig from '../common/use-with-form-config';
+import useTip from '../common/use-tip';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
@@ -154,6 +155,16 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     position: positionProp,
   });
 
+  const tipNode = useTip({
+    popover: props.popover,
+    popoverProps: props.popoverProps,
+    error: props.error,
+    tip: props.tip,
+    focused,
+    rootRef: treeSelectRef,
+    jssStyle: props.jssStyle,
+  });
+
   const rootClass = classNames(
     className,
     styles?.wrapper,
@@ -163,7 +174,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
-    // status === 'error' && styles?.wrapperError,
+    (!!props.error || props.status === 'error') && styles?.wrapperError,
     clearable && styles?.clearable,
     !border && styles?.wrapperNoBorder,
     !!underline && styles?.wrapperUnderline,
@@ -527,6 +538,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      {tipNode}
       {renderResult()}
       {renderIcon()}
       <AbsoluteList
