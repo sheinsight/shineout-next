@@ -65,6 +65,7 @@ export type SelectClasses = {
   footer: string;
   moreIcon: string;
   hideTag: string;
+  empty: string;
 };
 export type SelectClassType = keyof SelectClasses;
 
@@ -551,6 +552,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       whiteSpace: 'nowrap',
     },
   },
+  empty: {
+    color: token.selectPlaceholderColor,
+  }
 };
 
 export default selectStyle;

@@ -72,6 +72,11 @@ export interface SelectPropsBase<DataItem, Value>
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
     BaseTipProps {
   jssStyle?: JssStyleType;
+  /**
+   * @en custom empty copy
+   * @cn 自定义 empty 文案
+   */
+  emptyText?: string;
 
   /**
    * @en Options data

@@ -23,9 +23,11 @@ import Icons from '../icons';
 import ColumnsList from './list-columns';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
+import { getLocale, useConfig } from '../config';
 
 function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const props = useWithFormConfig(props0);
+  const { locale } = useConfig();
   const {
     jssStyle,
     className,
@@ -588,8 +590,21 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     );
   };
 
+  const renderEmpty = () => {
+    return (
+      <div className={styles?.option}>
+        <div className={styles?.optionInner}>
+          <span className={styles?.empty}>{props.emptyText || getLocale(locale, 'noData')}</span>
+        </div>
+      </div>
+    );
+  };
+
   const renderOptions = () => {
     if (loading) return renderLoading();
+
+    const isEmpty = !props.treeData?.length && !props.data?.length;
+    if (isEmpty) return renderEmpty();
 
     const options = 'treeData' in props ? renderTreeList() : renderList();
     if (renderOptionList) {

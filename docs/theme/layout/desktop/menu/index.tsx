@@ -27,8 +27,8 @@ const MenuComponent = () => {
     document.getElementById('layout')?.scrollTo(0, 0);
   };
   useEffect(() => {
-    setConfig({ locale: lan });
-  }, [lan]);
+    setConfig({ locale: 'en-US' });
+  }, []);
 
   useEffect(() => {
     dispatch.setMenu();
