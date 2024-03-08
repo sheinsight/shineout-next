@@ -6,9 +6,23 @@ import type { PopoverProps } from '../popover/popover.type';
 
 // 透传Props
 export interface BaseTipProps {
-  popover?: PopoverProps['position'];
-  popoverProps?: PopoverProps;
-  tip?: React.ReactNode;
+   /**
+   * @en The position where the validation info pop up
+   * @cn 校验信息弹出位置
+   * @override PopoverProps["position"]
+   */
+   popover?: boolean | PopoverProps['position'];
+   /**
+    * @en Prompt information
+    * @cn 提示信息
+    */
+   tip?: React.ReactNode;
+   /**
+    * @en Vilidate popup properties
+    * @cn 校验或者tip弹框接受的属性
+    * @type PopoverProps
+    */
+   popoverProps?: PopoverProps;
   /**
    * @cn 错误信息
    * @en error message
@@ -21,7 +35,6 @@ const useTip = (
   props: BaseTipProps & { focused: boolean; rootRef: React.RefObject<HTMLElement> },
 ) => {
   const { popover, popoverProps, error, tip, focused, rootRef, jssStyle } = props;
-  if (!tip) return null;
   const styles =
     popoverProps?.style && popoverProps?.style?.width
       ? popoverProps?.style

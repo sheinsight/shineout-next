@@ -123,6 +123,7 @@ const useNumberFormat = (props: InputNumberProps) => {
       digits,
       onChange: onNumberChange,
       onBlur: onNumberBlur,
+      onFocus: props.onFocus,
       cancelBlurChange: true,
     }),
     onPlus: handlePlus,

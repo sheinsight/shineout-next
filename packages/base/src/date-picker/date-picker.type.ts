@@ -3,6 +3,8 @@ import { CommonType } from '../common/type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { ButtonClasses } from '../button/button.type';
 import { InnerTitleClasses } from '../common/use-inner-title';
+import { BaseTipProps } from '../common/use-tip';
+import { PopoverClasses } from '../popover/popover.type';
 
 import type { DatePickerValueType, DateTimeType } from '@sheinx/hooks';
 
@@ -99,14 +101,18 @@ export interface DatePickerClasses {
 
 export type DisabledType = 'start' | 'end';
 
+interface DatePickerJssStyle {
+  datePicker?: () => DatePickerClasses;
+  button?: () => ButtonClasses;
+  innerTitle?: () => InnerTitleClasses;
+  popover?: () => PopoverClasses;
+}
+
 export interface DatePickerProps<Value extends DatePickerValueType>
   extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'placeTitle'>,
-    Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
-  jssStyle?: {
-    datePicker?: () => DatePickerClasses;
-    button?: () => ButtonClasses;
-    innerTitle?: () => InnerTitleClasses;
-  };
+    Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
+    BaseTipProps {
+  jssStyle?: DatePickerJssStyle;
 
   /**
    * @en When the value is true, disabled all options; When the value is function, disable the options that this function returns true.

@@ -1,6 +1,5 @@
 import React from 'react';
 import { util, usePersistFn, useFormDatum } from '@sheinx/hooks';
-import { TipProps } from '../@types/common';
 import { FormField } from '@sheinx/base';
 import type { FormFieldProps } from '@sheinx/base';
 
@@ -20,6 +19,10 @@ export interface ExtendsFieldProps<T, Name = string>
    * @cn 值改变前的回调，当返回值不为空时将作为组件的新值
    */
   beforeChange?: (value: T) => T | undefined | void;
+  /**
+   * @private for rule
+   */
+  title?: string;
 }
 export interface FiledItemCommonProps {
   defaultValue?: any;
@@ -28,8 +31,7 @@ export interface FiledItemCommonProps {
 }
 
 export type GetWithFieldProps<Props, Value, Name = string> = Omit<Props, 'beforeChange'> &
-  ExtendsFieldProps<Value, Name> &
-  TipProps;
+  ExtendsFieldProps<Value, Name>
 const useFieldCommon = <
   Props extends FiledItemCommonProps,
   Value,

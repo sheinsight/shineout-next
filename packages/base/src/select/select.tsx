@@ -624,7 +624,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     <div
       ref={selectRef}
       tabIndex={disabled === true ? -1 : 0}
-      {...util.getDataAttribute({type: 'input'})}
+      {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}
       onMouseEnter={handleMouseEnter}

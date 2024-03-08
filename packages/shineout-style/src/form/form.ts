@@ -8,10 +8,10 @@ const form: JsStyles<FormClass> = {
     display: 'block',
   },
   wrapperInline: {
-    '& [data-soui-type="input"]': {
+    '& [data-soui-input-border]': {
       width: 'auto',
     },
-    '& > [data-soui-type="input"]': {
+    '& > [data-soui-input-border]': {
       marginRight: CssVar.formItemMarginRight,
     },
   },

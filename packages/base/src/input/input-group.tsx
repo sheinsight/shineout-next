@@ -46,7 +46,7 @@ export default (props: InputGroupProps) => {
     !!focus && inputStyle?.groupFocus,
   );
   return (
-    <div {...util.getDataAttribute({ type: 'input-group' })} className={rootClass} style={{ width, ...style }}>
+    <div {...util.getDataAttribute({ role: 'input-group' })} className={rootClass} style={{ width, ...style }}>
       {Children.toArray(children).map((child, i) => {
         if (typeof child === 'string') {
           return <span key={i}>{child}</span>;

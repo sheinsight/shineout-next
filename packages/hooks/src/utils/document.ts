@@ -34,6 +34,5 @@ export function isInDocument(element: HTMLElement | null) {
   if (element && 'isConnected' in element) {
     return element.isConnected;
   }
-  if (!isBrowser()) return false;
-  return document.documentElement.contains(element);
+  return isBrowser() && document.documentElement.contains(element);
 }
