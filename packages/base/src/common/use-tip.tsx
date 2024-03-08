@@ -15,6 +15,7 @@ export interface BaseTipProps {
    /**
     * @en Prompt information
     * @cn 提示信息
+    * @private 内部属性
     */
    tip?: React.ReactNode;
    /**

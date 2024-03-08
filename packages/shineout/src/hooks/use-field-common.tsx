@@ -6,7 +6,7 @@ import type { FormFieldProps } from '@sheinx/base';
 export interface ExtendsFieldProps<T, Name = string>
   extends Omit<
     FormFieldProps<T>,
-    'value' | 'defaultValue' | 'children' | 'onChange' | 'name' | 'getProps'
+    'value' | 'defaultValue' | 'children' | 'onChange' | 'name' | 'getProps' | 'getValidateProps'
   > {
   /**
    * @en The key access data in the Form

@@ -181,7 +181,7 @@ function parseApi(pack, filePath) {
         const declarations1 = property.getDeclarations();
         const sourceFile = declarations1[0].getSourceFile().getFilePath();
         // 过滤掉 @types/react 中的属性 这些是原生属性比如 input 的 autoComplete
-        if (sourceFile.includes('@types/react')) break;
+        if (sourceFile.includes('@types/react')) continue;
         const propertyJsDocTags = parseDocTag(
           declarations1
             .map((d) => d.getJsDocs())
@@ -189,7 +189,7 @@ function parseApi(pack, filePath) {
             .map((jsDoc) => jsDoc.getTags())
             .flat(),
         );
-        if (propertyJsDocTags.private && propertyJsDocTags.deprecated) break;
+        if (propertyJsDocTags.private || propertyJsDocTags.deprecated) continue;
         if (!propertyJsDocTags.cn) {
           lost.push(property.getName());
         }
