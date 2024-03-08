@@ -28,8 +28,10 @@ const Spin = (props: SpinProps = {}) => {
   });
 
   const renderSpin = () => {
-    if (Spins[name]) {
-      return Spins[name]({ ...props, style });
+    const n = name as keyof typeof Spins
+    if (Spins[n]) {
+      const Comp = Spins[n];
+      return <Comp {...props} style={style} />;
     }
 
     return null;
