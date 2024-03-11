@@ -84,11 +84,11 @@ const {
   ['desc'],
   ['wrapper', 'wrapperChecked', 'wrapperIndeterminate', 'wrapperDisabled'],
 );
-const {
-  scroll: viretualScroll,
-  container: virtualContainer,
-  bar: viretualBar,
-} = createClassName('virtual', ['scroll', 'container', 'bar'], []);
+// const {
+//   scroll: viretualScroll,
+//   container: virtualContainer,
+//   bar: viretualBar,
+// } = createClassName('virtual', ['scroll', 'container', 'bar'], []);
 const { disabled: buttonDisabled } = createClassName('button', [], ['disabled']);
 
 type dataType = { id: string; name: string };
