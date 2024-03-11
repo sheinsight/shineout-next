@@ -298,6 +298,8 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     boxShadow: token.treeSelectPanelShadow,
     borderRadius: token.treeSelectPanelRadius,
     transformOrigin: '0 0',
+    width: 'max-content',
+    maxWidth: '640px',
   },
   clearable: {},
   clearIcon: {

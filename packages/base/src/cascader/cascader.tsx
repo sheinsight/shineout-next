@@ -660,8 +660,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         zIndex={zIndex}
         position={position}
         popupGap={4}
-        popupEl={popupRef.current}
-        parentElement={targetRef.current}
+        popupElRef={popupRef}
+        parentElRef={targetRef}
       >
         <AnimationList
           onRef={popupRef}

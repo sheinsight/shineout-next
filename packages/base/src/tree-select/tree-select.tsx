@@ -83,7 +83,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onEnterExpand,
     onExpand,
   } = props;
-  const styles = jssStyle?.select?.() as TreeSelectClasses;
+  const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
 
   const datum = useRef<TreeContextProps<DataItem, Value>>();
@@ -572,13 +572,13 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       <AbsoluteList
         adjust
         focus={open}
-        fixedWidth
+        fixedWidth="min"
         absolute={props.absolute}
         zIndex={props.zIndex}
         position={position}
         popupGap={4}
-        popupEl={popupRef.current}
-        parentElement={targetRef.current}
+        popupElRef={popupRef}
+        parentElRef={targetRef}
       >
         <AnimationList
           onRef={popupRef}
@@ -587,9 +587,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           display={'block'}
           type='scale-y'
           duration={'fast'}
-          style={{
-            width: width || '100%',
-          }}
         >
           {renderList()}
         </AnimationList>

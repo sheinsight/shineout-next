@@ -183,11 +183,11 @@ const Dropdown = (props: SimpleDropdownProps) => {
       <AbsoluteList
         position={position}
         focus={open}
-        parentElement={targetRef.current}
+        parentElRef={targetRef}
         absolute={absolute}
         fixedWidth={'min'}
         popupGap={4}
-        popupEl={popupRef.current}
+        popupElRef={popupRef}
         adjust={!isSub}
       >
         <AnimationList

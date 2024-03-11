@@ -35,7 +35,7 @@ const AnimationList = (props: AnimationListProps) => {
     height: 0,
     show: show,
     timer: null as any,
-    lastShow: undefined,
+    lastShow: undefined as boolean | undefined,
   });
   const ref = useRef<HTMLDivElement>(null);
   const forkRef = useForkRef(ref, onRef);

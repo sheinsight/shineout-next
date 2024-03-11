@@ -54,7 +54,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     loading,
     keygen,
     focusSelected = true,
-    optionWidth = '100%',
+    optionWidth,
     height = 250,
     open: openProp,
     position: positionProp = 'bottom-left',
@@ -626,18 +626,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const getListStyle = () => {
     const style: React.CSSProperties = {};
-    if (autoAdapt) {
-      if (width) {
-        style.minWidth = width || 'auto';
-      } else {
-        style.width = width || 'auto';
-      }
-      return style;
-    } else {
+    {
       if (columns > 1) {
         style.width = columns * columnWidth;
-      } else {
-        style.width = ('optionWidth' in props ? optionWidth : undefined) || width || '100%';
+      } else if (optionWidth) {
+        style.width = optionWidth;
       }
     }
 
@@ -669,8 +662,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         zIndex={props.zIndex}
         position={position}
         popupGap={4}
-        popupEl={popupRef.current}
-        parentElement={targetRef.current}
+        popupElRef={popupRef}
+        parentElRef={targetRef}
       >
         <AnimationList
           onRef={popupRef}

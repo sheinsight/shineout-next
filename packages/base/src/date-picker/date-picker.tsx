@@ -226,8 +226,8 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
       {tipNode}
       {renderResult()}
       <AbsoluteList
-        parentElement={targetRef.current}
-        popupEl={popupRef.current}
+        parentElRef={targetRef}
+        popupElRef={popupRef}
         absolute={props.absolute}
         zIndex={props.zIndex}
         position={position}
