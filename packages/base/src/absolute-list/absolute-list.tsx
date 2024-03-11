@@ -21,7 +21,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     destroy = false,
   } = props;
 
-  const { getRoot, getContainer } = useContainer({
+  const { getRoot } = useContainer({
     container: typeof absolute === 'function' ? absolute : undefined,
   });
 
@@ -29,7 +29,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
   const { current: context } = useRef({ rendered: false });
 
   const style = usePositionStyle({
-    getContainer: getContainer,
+    getContainer: getRoot,
     position,
     absolute: !!absolute,
     parentEl: parentElement,

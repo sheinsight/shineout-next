@@ -3,58 +3,32 @@
 exports[`Tooltip[Base] should render correctly  1`] = `
 <div>
   <noscript />
-  <span
-    style="font-size: 20px; line-height: 1; margin: 4px;"
+  <button
+    class="c-trc8a3 cvey2f3"
+    type="button"
   >
-    left
-  </span>
-  <noscript />
-  <span
-    style="font-size: 20px; line-height: 1; margin: 4px;"
-  >
-    top
-  </span>
-  <noscript />
-  <span
-    style="font-size: 20px; line-height: 1; margin: 4px;"
-  >
-    bottom
-  </span>
-  <noscript />
-  <span
-    style="font-size: 20px; line-height: 1; margin: 4px;"
-  >
-    right
-  </span>
+    <span
+      class="cboe6wq"
+    >
+      hover me
+    </span>
+  </button>
 </div>
 `;
 
 exports[`Tooltip[Base] should render correctly  2`] = `
 <div>
   <noscript />
-  <span
-    style="font-size: 20px; line-height: 1; margin: 4px;"
+  <button
+    class="c-trc8a3 cvey2f3"
+    type="button"
   >
-    leftbottom
-  </span>
-  <noscript />
-  <span
-    style="font-size: 20px; line-height: 1; margin: 4px;"
-  >
-    top
-  </span>
-  <noscript />
-  <span
-    style="font-size: 20px; line-height: 1; margin: 4px;"
-  >
-    bottom
-  </span>
-  <noscript />
-  <span
-    style="font-size: 20px; line-height: 1; margin: 4px;"
-  >
-    right
-  </span>
+    <span
+      class="cboe6wq"
+    >
+      click me
+    </span>
+  </button>
 </div>
 `;
 
@@ -62,15 +36,18 @@ exports[`Tooltip[Base] should render correctly  3`] = `
 <div>
   <noscript />
   <span
-    class="tooltip-target-0-2-8"
+    class="c-d650rr"
     style="cursor: not-allowed;"
   >
     <button
-      class="button-default-0-2-13 button-button-0-2-10 button-disabled-0-2-27"
+      class="c-rg592x cvey2f3 conix1l cs6jo0l"
       disabled=""
       style="pointer-events: none;"
+      type="button"
     >
-      <span>
+      <span
+        class="cboe6wq"
+      >
         Disabled
       </span>
     </button>

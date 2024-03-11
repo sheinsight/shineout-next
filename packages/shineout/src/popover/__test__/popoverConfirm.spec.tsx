@@ -4,20 +4,26 @@ import '@testing-library/jest-dom';
 import Popover from '..';
 import { Button } from 'shineout';
 import { classLengthTest } from '../../tests/structureTest';
-import { classContentTest, delay, displayTest, textContentTest } from '../../tests/utils';
+import { classContentTest, createClassName, delay, displayTest, textContentTest } from '../../tests/utils';
 import PopoverConfirm from '../__example__/09-confirm';
 
 const SO_PREFIX = 'popover';
-const popoverClassName = `.${SO_PREFIX}-wrapper-0-2-65`;
-const popoverBaseClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
-const popoverContentClassName = `.${SO_PREFIX}-content-0-2-68`;
-const popoverContentBaseClassName = `.${SO_PREFIX}-content-0-2-4`;
-const popoverMentionClassName = `.${SO_PREFIX}-mention-0-2-71`;
-const popoverFooterClassName = `.${SO_PREFIX}-footer-0-2-72`;
-const popoverOpenClassName = `${SO_PREFIX}-wrapperOpen-0-2-66`;
-const popoverOpenBaseClassName = `${SO_PREFIX}-wrapperOpen-0-2-2`;
-const buttonSpinClassName = '.button-spin-0-2-22';
-const alertIconClassName = '.alert-icon-0-2-84';
+
+const { wrapper: popoverClassName, content: popoverContentClassName, wrapperOpen: popoverOpenClassName, mention: popoverMentionClassName, footer: popoverFooterClassName } = createClassName(SO_PREFIX, ['wrapper', 'content', 'mention', 'footer'], ['wrapperOpen'])
+
+const { spin: buttonSpinClassName } = createClassName('button', ['spin'], ['']);
+const { icon: alertIconClassName } = createClassName('alert', ['icon'], ['']);
+
+const { 
+  danger,
+  warning,
+  success
+ } = createClassName('button', [''], ['danger', 'warning', 'success'])
+
+const {
+  success: successAlert,
+  danger: dangerAlert
+} = createClassName('alert', [''], ['success', 'danger'])
 
 beforeAll(() => {
   jest.useFakeTimers();
@@ -28,14 +34,12 @@ afterAll(() => {
 afterEach(cleanup);
 
 const getPopoverRoot = () =>
-  document.querySelector(popoverClassName)! || document.querySelector(popoverBaseClassName)!;
+  document.querySelector(popoverClassName)!
 const getPopoverContent = () =>
-  getPopoverRoot().querySelector(popoverContentClassName)! ||
-  getPopoverRoot().querySelector(popoverContentBaseClassName)!;
+  getPopoverRoot().querySelector(popoverContentClassName)!
 const getPopoverStatus = (status: boolean) => {
   expect(
-    getPopoverRoot().classList.contains(popoverOpenClassName) ||
-      getPopoverRoot().classList.contains(popoverOpenBaseClassName),
+    getPopoverRoot().classList.contains(popoverOpenClassName)
   ).toBe(status);
 };
 
@@ -68,14 +72,14 @@ describe('Popover[Base]', () => {
     expect(getPopoverContent()).toBeInTheDocument();
     textContentTest(
       getPopoverContent().querySelector(popoverMentionClassName)!,
-      'Are you sure delete ?',
+      'TipsAre you sure you want to delete this content ?',
     );
     const buttons = getPopoverContent()
       .querySelector(popoverFooterClassName)
       ?.querySelectorAll('button') as NodeListOf<HTMLButtonElement>;
     expect(buttons.length).toBe(2);
-    textContentTest(buttons[0], 'No');
-    textContentTest(buttons[1], 'Yes');
+    textContentTest(buttons[0], '取消');
+    textContentTest(buttons[1], '确定');
     fireEvent.click(buttons[1]);
     await waitFor(async () => {
       await delay(200);
@@ -137,19 +141,19 @@ describe('Popover[Base]', () => {
     let buttons = getPopoverContent()
       .querySelector(popoverFooterClassName)
       ?.querySelectorAll('button') as NodeListOf<HTMLButtonElement>;
-    classContentTest(buttons[1], 'danger');
+    classContentTest(buttons[1], danger);
     rerender(<PopoverConfimDemo okType='success' />);
     fireEvent.click(button);
     await waitFor(async () => {
       await delay(200);
     });
-    classContentTest(buttons[1], 'success');
+    classContentTest(buttons[1], success);
     rerender(<PopoverConfimDemo okType='warning' />);
     fireEvent.click(button);
     await waitFor(async () => {
       await delay(200);
     });
-    classContentTest(buttons[1], 'warning');
+    classContentTest(buttons[1], warning);
   });
   test('should render when set type', async () => {
     const { container, rerender } = render(<PopoverConfimDemo type='success' />);
@@ -157,13 +161,13 @@ describe('Popover[Base]', () => {
     fireEvent.click(button);
     await waitFor(async () => {
       await delay(200);
-      classContentTest(getPopoverContent().querySelector(popoverMentionClassName)!, 'success');
+      classContentTest(getPopoverContent().querySelector(popoverMentionClassName)!, successAlert);
     });
     rerender(<PopoverConfimDemo type='danger' />);
     fireEvent.click(button);
     await waitFor(async () => {
       await delay(200);
-      classContentTest(getPopoverContent().querySelector(popoverMentionClassName)!, 'danger');
+      classContentTest(getPopoverContent().querySelector(popoverMentionClassName)!, dangerAlert);
     });
   });
 });

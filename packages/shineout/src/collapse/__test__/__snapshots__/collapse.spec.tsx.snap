@@ -3,19 +3,19 @@
 exports[`Collapse[Base] should render correctly  1`] = `
 <div>
   <div
-    class="so-collapse-wrapper"
+    class="c-c9j7at"
     style="max-width: 1180px;"
   >
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -29,34 +29,34 @@ exports[`Collapse[Base] should render correctly  1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 1
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper so-collapseItem-active"
+      class="c4nwqg c3463y9"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -70,34 +70,34 @@ exports[`Collapse[Base] should render correctly  1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 2
         </div>
       </div>
       <div
-        class="so-collapseItem-content so-collapseItem-expanded"
+        class="c-aiqraa c6bssxg"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: block;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper so-collapseItem-disabled"
+      class="c4nwqg c-s5iea1"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="true"
         tabindex="-1"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -111,34 +111,34 @@ exports[`Collapse[Base] should render correctly  1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 3
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper so-collapseItem-active so-collapseItem-disabled"
+      class="c4nwqg c3463y9 c-s5iea1"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="true"
         tabindex="-1"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -152,19 +152,19 @@ exports[`Collapse[Base] should render correctly  1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 4
         </div>
       </div>
       <div
-        class="so-collapseItem-content so-collapseItem-expanded"
+        class="c-aiqraa c6bssxg"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: block;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
@@ -177,19 +177,19 @@ exports[`Collapse[Base] should render correctly  1`] = `
 exports[`Collapse[Base] should render correctly about accordion 1`] = `
 <div>
   <div
-    class="so-collapse-wrapper"
+    class="c-c9j7at"
     style="max-width: 1180px;"
   >
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -203,34 +203,34 @@ exports[`Collapse[Base] should render correctly about accordion 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 1
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -244,34 +244,34 @@ exports[`Collapse[Base] should render correctly about accordion 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 2
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -285,34 +285,34 @@ exports[`Collapse[Base] should render correctly about accordion 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 3
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -326,19 +326,19 @@ exports[`Collapse[Base] should render correctly about accordion 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 4
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
@@ -351,20 +351,20 @@ exports[`Collapse[Base] should render correctly about accordion 1`] = `
 exports[`Collapse[Base] should render correctly about customize 1`] = `
 <div>
   <div
-    class="so-collapse-wrapper"
+    class="c-c9j7at"
     style="max-width: 1180px;"
   >
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
       style="background: rgb(244, 245, 248);"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             height="24"
@@ -381,19 +381,19 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 1
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
           style="background: rgb(255, 255, 255);"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -401,16 +401,16 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper so-collapseItem-active"
+      class="c4nwqg c3463y9"
       style="background: rgb(244, 245, 248);"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             height="24"
@@ -427,19 +427,19 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 2
         </div>
       </div>
       <div
-        class="so-collapseItem-content so-collapseItem-expanded"
+        class="c-aiqraa c6bssxg"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: block;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
           style="background: rgb(255, 255, 255);"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -447,16 +447,16 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper so-collapseItem-disabled"
+      class="c4nwqg c-s5iea1"
       style="background: rgb(244, 245, 248);"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="true"
         tabindex="-1"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             height="24"
@@ -473,19 +473,19 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 3
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
           style="background: rgb(255, 255, 255);"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -499,19 +499,19 @@ exports[`Collapse[Base] should render correctly about customize 1`] = `
 exports[`Collapse[Base] should render correctly about extra 1`] = `
 <div>
   <div
-    class="so-collapse-wrapper"
+    class="c-c9j7at"
     style="max-width: 1180px;"
   >
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -525,34 +525,50 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 1
         </div>
+        <div
+          class="cw90jzp"
+        >
+          <svg
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 5C14 6.10457 13.1046 7 12 7C10.8954 7 10 6.10457 10 5C10 3.89543 10.8954 3 12 3C13.1046 3 14 3.89543 14 5ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM14 19C14 20.1046 13.1046 21 12 21C10.8954 21 10 20.1046 10 19C10 17.8954 10.8954 17 12 17C13.1046 17 14 17.8954 14 19Z"
+              fill="#666C7C"
+            />
+          </svg>
+        </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper so-collapseItem-active"
+      class="c4nwqg c3463y9"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -566,15 +582,15 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 2
         </div>
         <div
-          class="so-collapseItem-extra"
+          class="cw90jzp"
         >
           <div
-            class="so-checkbox-wrapper"
+            class="c-2oyyob"
             style="margin: 0px;"
           >
             <input
@@ -583,15 +599,16 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
               type="checkbox"
             />
             <span
-              class="so-checkbox-indicator-wrapper"
+              class="c-do3bmm"
             >
               <i
-                class="so-checkbox-indicator"
+                class="cs409o1"
+                data-soui-role="checkbox-indicator"
                 tabindex="1"
               />
             </span>
             <span
-              class="so-checkbox-desc"
+              class="c19hl67"
             >
               checkbox
             </span>
@@ -599,28 +616,28 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
         </div>
       </div>
       <div
-        class="so-collapseItem-content so-collapseItem-expanded"
+        class="c-aiqraa c6bssxg"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: block;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -634,19 +651,33 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 3
         </div>
+        <div
+          class="cw90jzp"
+        >
+          <button
+            class="c-trc8a3 cvey2f3"
+            type="button"
+          >
+            <span
+              class="cboe6wq"
+            >
+              Button
+            </span>
+          </button>
+        </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
@@ -659,163 +690,179 @@ exports[`Collapse[Base] should render correctly about extra 1`] = `
 exports[`Collapse[Base] should render correctly about icon 1`] = `
 <div>
   <div
-    class="so-radio-group"
-    style="margin-bottom: 24px;"
+    style="display: flex; margin-bottom: 16px; align-items: center;"
   >
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      style="width: 80px;"
     >
-      <input
-        checked=""
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        left
-      </span>
+      Icon:
     </div>
     <div
-      class="so-radio-wrapper"
+      class="cw6sirj"
     >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
+      <div
+        class="c-emivhp c-wsxxws"
       >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
+        <input
+          checked=""
+          style="display: none;"
+          tabindex="0"
+          type="radio"
         />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        right
-      </span>
-    </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
         <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
+          class="c-yzux30"
+        >
+          <span
+            class="c-2ldwtt"
+            tabindex="1"
+          />
+        </span>
+        <span
+          class="c-qgj373"
+        >
+          left
+        </span>
+      </div>
+      <div
+        class="c-emivhp"
       >
-        none
-      </span>
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="c-yzux30"
+        >
+          <span
+            class="c-2ldwtt"
+            tabindex="1"
+          />
+        </span>
+        <span
+          class="c-qgj373"
+        >
+          right
+        </span>
+      </div>
+      <div
+        class="c-emivhp"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="c-yzux30"
+        >
+          <span
+            class="c-2ldwtt"
+            tabindex="1"
+          />
+        </span>
+        <span
+          class="c-qgj373"
+        >
+          none
+        </span>
+      </div>
     </div>
   </div>
   <div
-    class="so-radio-group"
-    style="margin-bottom: 24px;"
+    style="display: flex; margin-bottom: 16px; align-items: center;"
   >
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      style="width: 80px;"
     >
-      <input
-        checked=""
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        header
-      </span>
+      Hotspot:
     </div>
     <div
-      class="so-radio-wrapper"
+      class="cw6sirj"
     >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
+      <div
+        class="c-emivhp c-wsxxws"
       >
-        <span
-          class="so-radio-indicator"
-          tabindex="1"
+        <input
+          checked=""
+          style="display: none;"
+          tabindex="0"
+          type="radio"
         />
-      </span>
-      <span
-        class="so-radio-desc"
-      >
-        icon
-      </span>
-    </div>
-    <div
-      class="so-radio-wrapper"
-    >
-      <input
-        style="display: none;"
-        tabindex="0"
-        type="radio"
-      />
-      <span
-        class="so-radio-indicator-wrapper"
-      >
         <span
-          class="so-radio-indicator"
-          tabindex="1"
-        />
-      </span>
-      <span
-        class="so-radio-desc"
+          class="c-yzux30"
+        >
+          <span
+            class="c-2ldwtt"
+            tabindex="1"
+          />
+        </span>
+        <span
+          class="c-qgj373"
+        >
+          header
+        </span>
+      </div>
+      <div
+        class="c-emivhp"
       >
-        disabled
-      </span>
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="c-yzux30"
+        >
+          <span
+            class="c-2ldwtt"
+            tabindex="1"
+          />
+        </span>
+        <span
+          class="c-qgj373"
+        >
+          icon
+        </span>
+      </div>
+      <div
+        class="c-emivhp"
+      >
+        <input
+          style="display: none;"
+          tabindex="0"
+          type="radio"
+        />
+        <span
+          class="c-yzux30"
+        >
+          <span
+            class="c-2ldwtt"
+            tabindex="1"
+          />
+        </span>
+        <span
+          class="c-qgj373"
+        >
+          disabled
+        </span>
+      </div>
     </div>
   </div>
   <div
-    class="so-collapse-wrapper"
+    class="c-c9j7at"
     style="max-width: 1180px;"
   >
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -829,34 +876,34 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5 cb6syun"
         >
           This is panel header 1
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -870,34 +917,34 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5 cb6syun"
         >
           This is panel header 2
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -911,19 +958,19 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5 cb6syun"
         >
           This is panel header 3
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
@@ -936,19 +983,19 @@ exports[`Collapse[Base] should render correctly about icon 1`] = `
 exports[`Collapse[Base] should render correctly about nested panels 1`] = `
 <div>
   <div
-    class="so-collapse-wrapper"
+    class="c-c9j7at"
     style="max-width: 1180px;"
   >
     <div
-      class="so-collapseItem-wrapper so-collapseItem-active"
+      class="c4nwqg c3463y9"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -962,33 +1009,33 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 1
         </div>
       </div>
       <div
-        class="so-collapseItem-content so-collapseItem-expanded"
+        class="c-aiqraa c6bssxg"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: block;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           <div
-            class="so-collapse-wrapper"
+            class="c-c9j7at"
           >
             <div
-              class="so-collapseItem-wrapper so-collapseItem-active"
+              class="c4nwqg c3463y9"
             >
               <div
-                class="so-collapseItem-header so-collapseItem-region"
+                class="c6g8t1k cb6syun"
                 data-soui-disabled="false"
                 tabindex="0"
               >
                 <div
-                  class="so-collapseItem-icon so-collapseItem-active-transform"
+                  class="c-ezwggc cut4tez"
                 >
                   <svg
                     aria-hidden="true"
@@ -1002,34 +1049,34 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="so-collapseItem-title"
+                  class="cwgzvy5"
                 >
                   This is panel nest header 2
                 </div>
               </div>
               <div
-                class="so-collapseItem-content so-collapseItem-expanded"
+                class="c-aiqraa c6bssxg"
                 data-sheinx-animation-duration="fast"
                 data-sheinx-animation-type="collapse"
                 style="display: block;"
               >
                 <div
-                  class="so-collapseItem-content-main"
+                  class="c-4ehzgp"
                 >
                   Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
                 </div>
               </div>
             </div>
             <div
-              class="so-collapseItem-wrapper"
+              class="c4nwqg"
             >
               <div
-                class="so-collapseItem-header so-collapseItem-region"
+                class="c6g8t1k cb6syun"
                 data-soui-disabled="false"
                 tabindex="0"
               >
                 <div
-                  class="so-collapseItem-icon so-collapseItem-active-transform"
+                  class="c-ezwggc cut4tez"
                 >
                   <svg
                     aria-hidden="true"
@@ -1043,19 +1090,19 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="so-collapseItem-title"
+                  class="cwgzvy5"
                 >
                   This is panel nest header 3
                 </div>
               </div>
               <div
-                class="so-collapseItem-content"
+                class="c-aiqraa"
                 data-sheinx-animation-duration="fast"
                 data-sheinx-animation-type="collapse"
                 style="display: none;"
               >
                 <div
-                  class="so-collapseItem-content-main"
+                  class="c-4ehzgp"
                 >
                   Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
                 </div>
@@ -1066,15 +1113,15 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -1088,34 +1135,34 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 2
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -1129,34 +1176,34 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 3
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper"
+      class="c4nwqg"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -1170,19 +1217,19 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 4
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
@@ -1195,19 +1242,19 @@ exports[`Collapse[Base] should render correctly about nested panels 1`] = `
 exports[`Collapse[Base] should render correctly about simple panel 1`] = `
 <div>
   <div
-    class="so-collapse-wrapper so-collapse-border-less"
+    class="c-c9j7at c-sn0tsj"
     style="max-width: 1180px;"
   >
     <div
-      class="so-collapseItem-wrapper so-collapseItem-active so-collapseItem-border-less"
+      class="c4nwqg c3463y9 c-6f271c"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -1221,34 +1268,34 @@ exports[`Collapse[Base] should render correctly about simple panel 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 1
         </div>
       </div>
       <div
-        class="so-collapseItem-content so-collapseItem-expanded"
+        class="c-aiqraa c6bssxg"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: block;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper so-collapseItem-border-less"
+      class="c4nwqg c-6f271c"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -1262,34 +1309,34 @@ exports[`Collapse[Base] should render correctly about simple panel 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 2
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>
       </div>
     </div>
     <div
-      class="so-collapseItem-wrapper so-collapseItem-border-less"
+      class="c4nwqg c-6f271c"
     >
       <div
-        class="so-collapseItem-header so-collapseItem-region"
+        class="c6g8t1k cb6syun"
         data-soui-disabled="false"
         tabindex="0"
       >
         <div
-          class="so-collapseItem-icon so-collapseItem-active-transform"
+          class="c-ezwggc cut4tez"
         >
           <svg
             aria-hidden="true"
@@ -1303,19 +1350,19 @@ exports[`Collapse[Base] should render correctly about simple panel 1`] = `
           </svg>
         </div>
         <div
-          class="so-collapseItem-title"
+          class="cwgzvy5"
         >
           This is panel header 3
         </div>
       </div>
       <div
-        class="so-collapseItem-content"
+        class="c-aiqraa"
         data-sheinx-animation-duration="fast"
         data-sheinx-animation-type="collapse"
         style="display: none;"
       >
         <div
-          class="so-collapseItem-content-main"
+          class="c-4ehzgp"
         >
           Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
         </div>

@@ -3,37 +3,47 @@
 exports[`Tag[Base] should render correctly  1`] = `
 <div>
   <div
-    class="so-tag-tag so-tag-default so-tag-bright"
+    class="chrdymz c-tnqn26 c-6aay07"
   >
-    <span>
+    <span
+      class=""
+    >
       Default
     </span>
   </div>
   <div
-    class="so-tag-tag so-tag-info so-tag-bright"
+    class="chrdymz c-ho2d6b c-6aay07"
   >
-    <span>
+    <span
+      class=""
+    >
       Info
     </span>
   </div>
   <div
-    class="so-tag-tag so-tag-danger so-tag-bright"
+    class="chrdymz c-5lh0fy c-6aay07"
   >
-    <span>
+    <span
+      class=""
+    >
       Danger
     </span>
   </div>
   <div
-    class="so-tag-tag so-tag-warning so-tag-bright"
+    class="chrdymz cyf3orh c-6aay07"
   >
-    <span>
+    <span
+      class=""
+    >
       Warning
     </span>
   </div>
   <div
-    class="so-tag-tag so-tag-success so-tag-bright"
+    class="chrdymz c-f210u4 c-6aay07"
   >
-    <span>
+    <span
+      class=""
+    >
       Success
     </span>
   </div>
@@ -46,58 +56,74 @@ exports[`Tag[Base] should render correctly about color 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-tag-tag so-tag-tangerine so-tag-bright"
+      class="chrdymz c4c9jce c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Tangerine
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-magenta so-tag-bright"
+      class="chrdymz ctj5kx6 c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Magenta
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-purple so-tag-bright"
+      class="chrdymz ce52xn c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Purple
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-indigo so-tag-bright"
+      class="chrdymz c-319x3j c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Indigo
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-cyan so-tag-bright"
+      class="chrdymz c-ho5z26 c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Cyan
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-neon so-tag-bright"
+      class="chrdymz c-hnzcp7 c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Neon
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-lemon so-tag-bright"
+      class="chrdymz ckkcvjo c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Lemon
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-orange so-tag-bright"
+      class="chrdymz c-4utmb c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Orange
       </span>
     </div>
@@ -106,58 +132,74 @@ exports[`Tag[Base] should render correctly about color 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-tag-tag so-tag-tangerine so-tag-fill"
+      class="chrdymz c4c9jce c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Tangerine
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-magenta so-tag-fill"
+      class="chrdymz ctj5kx6 c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Magenta
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-purple so-tag-fill"
+      class="chrdymz ce52xn c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Purple
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-indigo so-tag-fill"
+      class="chrdymz c-319x3j c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Indigo
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-cyan so-tag-fill"
+      class="chrdymz c-ho5z26 c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Cyan
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-neon so-tag-fill"
+      class="chrdymz c-hnzcp7 c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Neon
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-lemon so-tag-fill"
+      class="chrdymz ckkcvjo c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Lemon
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-orange so-tag-fill"
+      class="chrdymz c-4utmb c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Orange
       </span>
     </div>
@@ -166,58 +208,74 @@ exports[`Tag[Base] should render correctly about color 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-tag-tag so-tag-tangerine so-tag-outline"
+      class="chrdymz c4c9jce c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Tangerine
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-magenta so-tag-outline"
+      class="chrdymz ctj5kx6 c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Magenta
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-purple so-tag-outline"
+      class="chrdymz ce52xn c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Purple
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-indigo so-tag-outline"
+      class="chrdymz c-319x3j c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Indigo
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-cyan so-tag-outline"
+      class="chrdymz c-ho5z26 c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Cyan
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-neon so-tag-outline"
+      class="chrdymz c-hnzcp7 c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Neon
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-lemon so-tag-outline"
+      class="chrdymz ckkcvjo c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Lemon
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-orange so-tag-outline"
+      class="chrdymz c-4utmb c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Orange
       </span>
     </div>
@@ -226,58 +284,74 @@ exports[`Tag[Base] should render correctly about color 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-tag-tag so-tag-tangerine so-tag-bright-outline"
+      class="chrdymz c4c9jce cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Tangerine
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-magenta so-tag-bright-outline"
+      class="chrdymz ctj5kx6 cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Magenta
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-purple so-tag-bright-outline"
+      class="chrdymz ce52xn cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Purple
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-indigo so-tag-bright-outline"
+      class="chrdymz c-319x3j cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Indigo
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-cyan so-tag-bright-outline"
+      class="chrdymz c-ho5z26 cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Cyan
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-neon so-tag-bright-outline"
+      class="chrdymz c-hnzcp7 cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Neon
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-lemon so-tag-bright-outline"
+      class="chrdymz ckkcvjo cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Lemon
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-orange so-tag-bright-outline"
+      class="chrdymz c-4utmb cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Orange
       </span>
     </div>
@@ -291,37 +365,47 @@ exports[`Tag[Base] should render correctly about mode 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-tag-tag so-tag-default so-tag-bright"
+      class="chrdymz c-tnqn26 c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Default
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-info so-tag-bright"
+      class="chrdymz c-ho2d6b c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Info
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-danger so-tag-bright"
+      class="chrdymz c-5lh0fy c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Danger
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-warning so-tag-bright"
+      class="chrdymz cyf3orh c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Warning
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-success so-tag-bright"
+      class="chrdymz c-f210u4 c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Success
       </span>
     </div>
@@ -330,37 +414,47 @@ exports[`Tag[Base] should render correctly about mode 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-tag-tag so-tag-default so-tag-fill"
+      class="chrdymz c-tnqn26 c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Default
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-info so-tag-fill"
+      class="chrdymz c-ho2d6b c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Info
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-danger so-tag-fill"
+      class="chrdymz c-5lh0fy c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Danger
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-warning so-tag-fill"
+      class="chrdymz cyf3orh c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Warning
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-success so-tag-fill"
+      class="chrdymz c-f210u4 c-ho4dpa"
     >
-      <span>
+      <span
+        class=""
+      >
         Success
       </span>
     </div>
@@ -369,37 +463,47 @@ exports[`Tag[Base] should render correctly about mode 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-tag-tag so-tag-default so-tag-outline"
+      class="chrdymz c-tnqn26 c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Default
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-info so-tag-outline"
+      class="chrdymz c-ho2d6b c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Info
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-danger so-tag-outline"
+      class="chrdymz c-5lh0fy c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Danger
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-warning so-tag-outline"
+      class="chrdymz cyf3orh c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Warning
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-success so-tag-outline"
+      class="chrdymz c-f210u4 c-2gzry5"
     >
-      <span>
+      <span
+        class=""
+      >
         Success
       </span>
     </div>
@@ -408,37 +512,47 @@ exports[`Tag[Base] should render correctly about mode 1`] = `
     style="margin-bottom: 0px;"
   >
     <div
-      class="so-tag-tag so-tag-default so-tag-bright-outline"
+      class="chrdymz c-tnqn26 cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Default
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-info so-tag-bright-outline"
+      class="chrdymz c-ho2d6b cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Info
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-danger so-tag-bright-outline"
+      class="chrdymz c-5lh0fy cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Danger
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-warning so-tag-bright-outline"
+      class="chrdymz cyf3orh cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Warning
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-success so-tag-bright-outline"
+      class="chrdymz c-f210u4 cokjezt"
     >
-      <span>
+      <span
+        class=""
+      >
         Success
       </span>
     </div>
@@ -452,43 +566,49 @@ exports[`Tag[Base] should render correctly about size 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-tag-tag so-tag-small so-tag-default so-tag-bright"
+      class="chrdymz ckocamg c-tnqn26 c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Small
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-default so-tag-bright"
+      class="chrdymz c-tnqn26 c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Default
       </span>
     </div>
     <div
-      class="so-tag-tag so-tag-large so-tag-default so-tag-bright"
+      class="chrdymz ckkaf3w c-tnqn26 c-6aay07"
     >
-      <span>
+      <span
+        class=""
+      >
         Large
       </span>
     </div>
   </div>
   <div>
     <div
-      class="so-tag-tag so-tag-small so-tag-default so-tag-bright"
+      class="chrdymz ckocamg c-tnqn26 c-6aay07"
     >
       <div
-        class="so-tag-inline"
+        class=""
       >
         <span>
           Small
         </span>
       </div>
       <div
-        class="so-tag-close-icon"
+        class="c-2h4372"
       >
         <span
-          class="so-tag-close-icon-wrapper"
+          class="caez2ox"
         >
           <svg
             height="10"
@@ -504,20 +624,20 @@ exports[`Tag[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="so-tag-tag so-tag-default so-tag-bright"
+      class="chrdymz c-tnqn26 c-6aay07"
     >
       <div
-        class="so-tag-inline"
+        class=""
       >
         <span>
           Default
         </span>
       </div>
       <div
-        class="so-tag-close-icon"
+        class="c-2h4372"
       >
         <span
-          class="so-tag-close-icon-wrapper"
+          class="caez2ox"
         >
           <svg
             height="10"
@@ -533,20 +653,20 @@ exports[`Tag[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="so-tag-tag so-tag-large so-tag-default so-tag-bright"
+      class="chrdymz ckkaf3w c-tnqn26 c-6aay07"
     >
       <div
-        class="so-tag-inline"
+        class=""
       >
         <span>
           Large
         </span>
       </div>
       <div
-        class="so-tag-close-icon"
+        class="c-2h4372"
       >
         <span
-          class="so-tag-close-icon-wrapper"
+          class="caez2ox"
         >
           <svg
             height="10"
@@ -571,20 +691,20 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
     style="display: flex; align-items: center; height: 24px;"
   >
     <div
-      class="so-tag-tag so-tag-default so-tag-bright"
+      class="chrdymz c-tnqn26 c-6aay07"
     >
       <div
-        class="so-tag-inline"
+        class=""
       >
         <span>
           Tag 1
         </span>
       </div>
       <div
-        class="so-tag-close-icon"
+        class="c-2h4372"
       >
         <span
-          class="so-tag-close-icon-wrapper"
+          class="caez2ox"
         >
           <svg
             height="10"
@@ -600,20 +720,20 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       </div>
     </div>
     <div
-      class="so-tag-tag so-tag-default so-tag-bright"
+      class="chrdymz c-tnqn26 c-6aay07"
     >
       <div
-        class="so-tag-inline"
+        class=""
       >
         <span>
           Tag 2
         </span>
       </div>
       <div
-        class="so-tag-close-icon"
+        class="c-2h4372"
       >
         <span
-          class="so-tag-close-icon-wrapper"
+          class="caez2ox"
         >
           <svg
             height="10"
@@ -629,20 +749,20 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       </div>
     </div>
     <div
-      class="so-tag-tag so-tag-default so-tag-bright so-tag-disabled"
+      class="chrdymz c-tnqn26 c-6aay07 c-27r46d"
     >
       <div
-        class="so-tag-inline"
+        class=""
       >
         <span>
           Tag 3
         </span>
       </div>
       <div
-        class="so-tag-close-icon"
+        class="c-2h4372"
       >
         <span
-          class="so-tag-close-icon-wrapper"
+          class="caez2ox"
         >
           <svg
             height="10"
@@ -658,10 +778,12 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       </div>
     </div>
     <div
-      class="so-tag-tag so-tag-default so-tag-outline"
+      class="chrdymz c-tnqn26 c-2gzry5"
       style="cursor: pointer; border-style: dashed;"
     >
-      <span>
+      <span
+        class=""
+      >
         <div
           style="display: flex; align-items: center;"
         >
@@ -683,20 +805,20 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
 exports[`Tag[Input] should render correctly about input 1`] = `
 <div>
   <div
-    class="so-tag-tag so-tag-default so-tag-bright"
+    class="chrdymz c-tnqn26 c-6aay07"
   >
     <div
-      class="so-tag-inline"
+      class=""
     >
       <span>
         Abc
       </span>
     </div>
     <div
-      class="so-tag-close-icon"
+      class="c-2h4372"
     >
       <span
-        class="so-tag-close-icon-wrapper"
+        class="caez2ox"
       >
         <svg
           height="10"
@@ -717,16 +839,20 @@ exports[`Tag[Input] should render correctly about input 1`] = `
 exports[`Tag[Shape] should render correctly about shape 1`] = `
 <div>
   <div
-    class="so-tag-tag so-tag-default so-tag-bright"
+    class="chrdymz c-tnqn26 c-6aay07"
   >
-    <span>
+    <span
+      class=""
+    >
       Default
     </span>
   </div>
   <div
-    class="so-tag-tag so-tag-rounded so-tag-default so-tag-bright"
+    class="chrdymz c-walqz6 c-tnqn26 c-6aay07"
   >
-    <span>
+    <span
+      class=""
+    >
       Rounded
     </span>
   </div>

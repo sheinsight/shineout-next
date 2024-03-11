@@ -48,10 +48,22 @@ const {
   listLarge: dropdownListLargeClassName,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const dropdownDisabledClassName = 'so-button-disabled';
-const buttonSmallClassName = 'so-button-small';
-const buttonLargeClassName = 'so-button-large';
-const animationList = 'so-animation-list-fade-animation';
+const {
+  disabled: dropdownDisabledClassName,
+  small: buttonSmallClassName,
+  large: buttonLargeClassName,
+  primary,
+  secondary,
+  danger,
+  warning,
+  success,
+  outline,
+  text
+} = createClassName('button', [''], ['disabled', 'small', 'large', 'primary', 'secondary', 'danger', 'warning', 'success', 'outline', 'text']);
+
+const {
+  listFadeAnimation: animationList
+} = createClassName('animation', [''], ['listFadeAnimation']);
 
 type DropdownItem = TYPE.Dropdown.Item;
 const data: DropdownItem[] = [
@@ -246,21 +258,23 @@ describe('Dropdown[Button]', () => {
     </div>
   );
   test('should render when set button', () => {
+    const classes = [primary, secondary, danger, warning, success]
     const { container } = render(<DropdownButtonDemo />);
     const type = container.querySelector('.type');
     const dropdowns = type?.querySelectorAll(dropdownClassName);
-    dropdowns?.forEach((dropdown) => {
-      classContentTest(dropdown.querySelector('button')!, textSplit(dropdown) as string);
+    dropdowns?.forEach((dropdown, index) => {
+      classContentTest(dropdown.querySelector('button')!, classes[index]);
     });
   });
   test('should render when set different type', () => {
+    const classes = [outline, text]
     const { container } = render(<DropdownButtonDemo />);
     const other = container.querySelector('.other');
     const dropdowns = other?.querySelectorAll(dropdownClassName);
-    dropdowns?.forEach((dropdown) => {
+    dropdowns?.forEach((dropdown, index) => {
       classContentTest(
         dropdown.querySelector('button')!,
-        textSplit(dropdown)?.toLocaleLowerCase() as string,
+        classes[index]
       );
     });
   });

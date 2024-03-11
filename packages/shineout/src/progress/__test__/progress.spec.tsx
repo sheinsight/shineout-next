@@ -68,7 +68,10 @@ const {
   circleFront,
   icon,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
-const radioClassName = '.so-radio-wrapper';
+
+const {
+  wrapper: radioClassName,
+} = createClassName('radio', ['wrapper'], ['']);
 
 type typeType = 'success' | 'info' | 'warning' | 'danger' | undefined;
 const typeClassNameMap: { [key: string]: string } = {

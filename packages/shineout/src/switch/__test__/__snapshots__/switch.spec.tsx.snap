@@ -2,7 +2,7 @@
 
 exports[`Switch[Base] should render correctly  1`] = `
 <button
-  class="switch-wrapper-0-2-2"
+  class="c-dx1yqk"
   role="switch"
   type="button"
 >
@@ -12,11 +12,15 @@ exports[`Switch[Base] should render correctly  1`] = `
     type="checkbox"
   />
   <div
-    class="switch-indicator-0-2-6"
+    class="c-x0444g"
   />
   <div
-    class="switch-content-0-2-7"
-  />
+    class="c-okgmra"
+  >
+    <div
+      class="ctkieid"
+    />
+  </div>
 </button>
 `;
 
@@ -25,7 +29,7 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
   style="display: flex; flex-direction: row; gap: 24px; align-items: center;"
 >
   <button
-    class="switch-wrapper-0-2-2 switch-wrapperChecked-0-2-3 switch-wrapperDisabled-0-2-8"
+    class="c-dx1yqk cj0v5lv ck7m2o"
     role="switch"
     type="button"
   >
@@ -37,18 +41,22 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
       type="checkbox"
     />
     <div
-      class="switch-indicator-0-2-6"
+      class="c-x0444g"
     >
       <div
-        class="switch-loading-0-2-9"
+        class="c-yqjn8z"
       />
     </div>
     <div
-      class="switch-content-0-2-7"
-    />
+      class="c-okgmra"
+    >
+      <div
+        class="ctkieid"
+      />
+    </div>
   </button>
   <button
-    class="switch-wrapper-0-2-2 switch-wrapperDisabled-0-2-8"
+    class="c-dx1yqk ck7m2o"
     role="switch"
     type="button"
   >
@@ -59,15 +67,19 @@ exports[`Switch[Base] should render correctly about loading 1`] = `
       type="checkbox"
     />
     <div
-      class="switch-indicator-0-2-6"
+      class="c-x0444g"
     >
       <div
-        class="switch-loading-0-2-9"
+        class="c-yqjn8z"
       />
     </div>
     <div
-      class="switch-content-0-2-7"
-    />
+      class="c-okgmra"
+    >
+      <div
+        class="ctkieid"
+      />
+    </div>
   </button>
 </div>
 `;
@@ -77,7 +89,7 @@ exports[`Switch[Base] should render correctly about size 1`] = `
   style="display: flex; flex-direction: row; gap: 24px; align-items: center;"
 >
   <button
-    class="switch-wrapper-0-2-2 switch-wrapperSmall-0-2-4"
+    class="c-dx1yqk cdpvm2r"
     role="switch"
     type="button"
   >
@@ -87,14 +99,18 @@ exports[`Switch[Base] should render correctly about size 1`] = `
       type="checkbox"
     />
     <div
-      class="switch-indicator-0-2-6"
+      class="c-x0444g"
     />
     <div
-      class="switch-content-0-2-7"
-    />
+      class="c-okgmra"
+    >
+      <div
+        class="ctkieid"
+      />
+    </div>
   </button>
   <button
-    class="switch-wrapper-0-2-2"
+    class="c-dx1yqk"
     role="switch"
     type="button"
   >
@@ -104,14 +120,18 @@ exports[`Switch[Base] should render correctly about size 1`] = `
       type="checkbox"
     />
     <div
-      class="switch-indicator-0-2-6"
+      class="c-x0444g"
     />
     <div
-      class="switch-content-0-2-7"
-    />
+      class="c-okgmra"
+    >
+      <div
+        class="ctkieid"
+      />
+    </div>
   </button>
   <button
-    class="switch-wrapper-0-2-2 switch-wrapperLarge-0-2-5"
+    class="c-dx1yqk cdltqk7"
     role="switch"
     type="button"
   >
@@ -121,11 +141,15 @@ exports[`Switch[Base] should render correctly about size 1`] = `
       type="checkbox"
     />
     <div
-      class="switch-indicator-0-2-6"
+      class="c-x0444g"
     />
     <div
-      class="switch-content-0-2-7"
-    />
+      class="c-okgmra"
+    >
+      <div
+        class="ctkieid"
+      />
+    </div>
   </button>
 </div>
 `;
@@ -135,42 +159,7 @@ exports[`Switch[Base] should render correctly about status 1`] = `
   style="display: flex; flex-direction: row; gap: 24px;"
 >
   <button
-    class="switch-wrapper-0-2-2 switch-wrapperChecked-0-2-3"
-    role="switch"
-    type="button"
-  >
-    <input
-      checked=""
-      style="display: none;"
-      tabindex="0"
-      type="checkbox"
-    />
-    <div
-      class="switch-indicator-0-2-6"
-    />
-    <div
-      class="switch-content-0-2-7"
-    />
-  </button>
-  <button
-    class="switch-wrapper-0-2-2"
-    role="switch"
-    type="button"
-  >
-    <input
-      style="display: none;"
-      tabindex="0"
-      type="checkbox"
-    />
-    <div
-      class="switch-indicator-0-2-6"
-    />
-    <div
-      class="switch-content-0-2-7"
-    />
-  </button>
-  <button
-    class="switch-wrapper-0-2-2 switch-wrapperChecked-0-2-3 switch-wrapperDisabled-0-2-8"
+    class="c-dx1yqk cj0v5lv ck7m2o"
     role="switch"
     type="button"
   >
@@ -182,14 +171,18 @@ exports[`Switch[Base] should render correctly about status 1`] = `
       type="checkbox"
     />
     <div
-      class="switch-indicator-0-2-6"
+      class="c-x0444g"
     />
     <div
-      class="switch-content-0-2-7"
-    />
+      class="c-okgmra"
+    >
+      <div
+        class="ctkieid"
+      />
+    </div>
   </button>
   <button
-    class="switch-wrapper-0-2-2 switch-wrapperDisabled-0-2-8"
+    class="c-dx1yqk ck7m2o"
     role="switch"
     type="button"
   >
@@ -200,11 +193,15 @@ exports[`Switch[Base] should render correctly about status 1`] = `
       type="checkbox"
     />
     <div
-      class="switch-indicator-0-2-6"
+      class="c-x0444g"
     />
     <div
-      class="switch-content-0-2-7"
-    />
+      class="c-okgmra"
+    >
+      <div
+        class="ctkieid"
+      />
+    </div>
   </button>
 </div>
 `;

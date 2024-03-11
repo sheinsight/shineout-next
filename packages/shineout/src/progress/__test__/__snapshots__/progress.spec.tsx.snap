@@ -2,14 +2,14 @@
 
 exports[`Progress[Base] should render correctly  1`] = `
 <div
-  class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+  class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb"
   style="width: 400px;"
 >
   <div
-    class="so-progress-line-bg"
+    class="c-wnsv6n"
   >
     <div
-      class="so-progress-line-front"
+      class="c-r99stv"
       style="width: 75%;"
     />
   </div>
@@ -20,19 +20,19 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
 <div>
   <div>
     <div
-      class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+      class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb"
       style="width: 400px;"
     >
       <div
-        class="so-progress-line-bg"
+        class="c-wnsv6n"
       >
         <div
-          class="so-progress-line-front"
+          class="c-r99stv"
           style="width: 0%;"
         />
       </div>
       <div
-        class="so-progress-content"
+        class="c-592hqn"
       >
         <div
           style="width: 50px;"
@@ -46,14 +46,14 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
     style="margin-top: 24px;"
   >
     <div
-      class="so-progress-circle so-progress-wrapper so-progress-wrapper-success"
+      class="cy3z4pk c5ec6a3 czfd77c"
       style="width: 64px; height: 64px;"
     >
       <svg
         viewBox="0 0 64 64"
       >
         <circle
-          class="so-progress-circle-bg"
+          class="cyvvh8d"
           cx="32"
           cy="32"
           fill="transparent"
@@ -61,7 +61,7 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
           stroke-width="4"
         />
         <circle
-          class="so-progress-circle-front"
+          class="chtyxkh"
           cx="32"
           cy="32"
           fill="transparent"
@@ -72,19 +72,19 @@ exports[`Progress[Base] should render correctly about animation 1`] = `
         />
       </svg>
       <div
-        class="so-progress-content"
+        class="c-592hqn"
       >
         0%
       </div>
     </div>
   </div>
   <button
-    class="so-button-secondary so-button-button so-button-outline"
+    class="c-rg592x cvey2f3 cs6jo0l"
     style="margin-top: 24px;"
     type="button"
   >
     <span
-      class="so-button-space-wrapper"
+      class="cboe6wq"
     >
       Start
     </span>
@@ -96,24 +96,24 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
 <div>
   <div>
     <div
-      class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+      class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb"
       style="width: 400px;"
     >
       <div
-        class="so-progress-line-bg"
+        class="c-wnsv6n"
       >
         <div
-          class="so-progress-line-front"
-          style="width: 8.545457233834142%;"
+          class="c-r99stv"
+          style="width: 3.536664885867941%;"
         />
       </div>
       <div
-        class="so-progress-content"
+        class="c-592hqn"
       >
         <div
           style="width: 50px;"
         >
-          9%
+          4%
         </div>
       </div>
     </div>
@@ -122,14 +122,14 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
     style="margin-top: 24px;"
   >
     <div
-      class="so-progress-circle so-progress-wrapper so-progress-wrapper-success"
+      class="cy3z4pk c5ec6a3 czfd77c"
       style="width: 64px; height: 64px;"
     >
       <svg
         viewBox="0 0 64 64"
       >
         <circle
-          class="so-progress-circle-bg"
+          class="cyvvh8d"
           cx="32"
           cy="32"
           fill="transparent"
@@ -137,30 +137,30 @@ exports[`Progress[Base] should render correctly about animation 2`] = `
           stroke-width="4"
         />
         <circle
-          class="so-progress-circle-front"
+          class="chtyxkh"
           cx="32"
           cy="32"
           fill="transparent"
           r="30"
-          stroke-dasharray="16.107807400427454,172.38775181496013"
+          stroke-dasharray="6.666456254191023,181.82910296119653"
           stroke-linecap="round"
           stroke-width="4"
         />
       </svg>
       <div
-        class="so-progress-content"
+        class="c-592hqn"
       >
-        9%
+        4%
       </div>
     </div>
   </div>
   <button
-    class="so-button-secondary so-button-button so-button-outline"
+    class="c-rg592x cvey2f3 cs6jo0l"
     style="margin-top: 24px;"
     type="button"
   >
     <span
-      class="so-button-space-wrapper"
+      class="cboe6wq"
     >
       Start
     </span>
@@ -173,14 +173,14 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
   style="display: flex; gap: 32px;"
 >
   <div
-    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    class="cy3z4pk c5ec6a3 c-ipopgn"
     style="width: 64px; height: 64px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="so-progress-circle-bg"
+        class="cyvvh8d"
         cx="32"
         cy="32"
         fill="transparent"
@@ -188,7 +188,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         stroke-width="4"
       />
       <circle
-        class="so-progress-circle-front"
+        class="chtyxkh"
         cx="32"
         cy="32"
         fill="transparent"
@@ -199,7 +199,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
       />
     </svg>
     <div
-      class="so-progress-content"
+      class="c-592hqn"
     >
        
       60%
@@ -207,14 +207,14 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-circle so-progress-wrapper so-progress-wrapper-warning"
+    class="cy3z4pk c5ec6a3 cdvdutt"
     style="width: 64px; height: 64px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="so-progress-circle-bg"
+        class="cyvvh8d"
         cx="32"
         cy="32"
         fill="transparent"
@@ -222,7 +222,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         stroke-width="4"
       />
       <circle
-        class="so-progress-circle-front"
+        class="chtyxkh"
         cx="32"
         cy="32"
         fill="transparent"
@@ -233,7 +233,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
       />
     </svg>
     <div
-      class="so-progress-icon"
+      class="cv5m43l"
     >
       <svg
         aria-hidden="true"
@@ -250,14 +250,14 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-circle so-progress-wrapper so-progress-wrapper-success"
+    class="cy3z4pk c5ec6a3 czfd77c"
     style="width: 64px; height: 64px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="so-progress-circle-bg"
+        class="cyvvh8d"
         cx="32"
         cy="32"
         fill="transparent"
@@ -265,7 +265,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         stroke-width="4"
       />
       <circle
-        class="so-progress-circle-front"
+        class="chtyxkh"
         cx="32"
         cy="32"
         fill="transparent"
@@ -276,7 +276,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
       />
     </svg>
     <div
-      class="so-progress-icon"
+      class="cv5m43l"
     >
       <svg
         aria-hidden="true"
@@ -293,14 +293,14 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-circle so-progress-wrapper so-progress-wrapper-danger"
+    class="cy3z4pk c5ec6a3 c-ffa8mq"
     style="width: 64px; height: 64px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="so-progress-circle-bg"
+        class="cyvvh8d"
         cx="32"
         cy="32"
         fill="transparent"
@@ -308,7 +308,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
         stroke-width="4"
       />
       <circle
-        class="so-progress-circle-front"
+        class="chtyxkh"
         cx="32"
         cy="32"
         fill="transparent"
@@ -319,7 +319,7 @@ exports[`Progress[Base] should render correctly about circle 1`] = `
       />
     </svg>
     <div
-      class="so-progress-icon"
+      class="cv5m43l"
     >
       <svg
         aria-hidden="true"
@@ -341,35 +341,35 @@ exports[`Progress[Base] should render correctly about color 1`] = `
   style="width: 400px;"
 >
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 40%;"
       />
     </div>
     <div
-      class="so-progress-content"
+      class="c-592hqn"
     >
       40%
     </div>
   </div>
   <br />
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-r7ozye"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 75%;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           75%
         </div>
@@ -378,7 +378,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
   </div>
   <br />
   <div
-    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    class="cy3z4pk c5ec6a3 c-ipopgn"
     style="width: 64px; height: 64px;"
   >
     <svg
@@ -403,7 +403,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
         </lineargradient>
       </defs>
       <circle
-        class="so-progress-circle-bg"
+        class="cyvvh8d"
         cx="32"
         cy="32"
         fill="transparent"
@@ -411,7 +411,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
         stroke-width="4"
       />
       <circle
-        class="so-progress-circle-front"
+        class="chtyxkh"
         cx="32"
         cy="32"
         fill="transparent"
@@ -423,7 +423,7 @@ exports[`Progress[Base] should render correctly about color 1`] = `
       />
     </svg>
     <div
-      class="so-progress-content"
+      class="c-592hqn"
     >
       60%
     </div>
@@ -436,17 +436,17 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
   style="display: flex; flex-direction: column; gap: 32px; width: 400px;"
 >
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner so-progress-line-inner-right"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-r7ozye cxggdoi"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 0%;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           0%
         </div>
@@ -454,17 +454,17 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner so-progress-line-inner-right"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-r7ozye cxggdoi"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 5%;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           5%
         </div>
@@ -472,17 +472,17 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-r7ozye"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 40%;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           10%
         </div>
@@ -490,17 +490,17 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-warning so-progress-line-inner"
+    class="cv5o5h8 c5ec6a3 cdvdutt c-r7ozye"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 50%;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           50%
         </div>
@@ -508,17 +508,17 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-success so-progress-line-inner"
+    class="cv5o5h8 c5ec6a3 czfd77c c-r7ozye"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 100%;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           100%
         </div>
@@ -526,17 +526,17 @@ exports[`Progress[Base] should render correctly about lineInner 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-danger so-progress-line-inner"
+    class="cv5o5h8 c5ec6a3 c-ffa8mq c-r7ozye"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 60%;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           60%
         </div>
@@ -551,37 +551,37 @@ exports[`Progress[Base] should render correctly about linePop 1`] = `
   style="width: 400px;"
 >
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default so-progress-line-pop"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb c-i29sej"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 0%;"
       />
     </div>
     <div
-      class="so-progress-line-pop-wrapper"
+      class="c-oqcraa"
       style="left: 0%; transform: translateX(-50%) rotate(0deg);"
     >
       <span
-        class="so-progress-line-pop-value"
+        class="cqhhj7g"
       >
         0%
       </span>
       <span
-        class="so-progress-line-pop-arrow"
+        class="cq68tuc"
       />
     </div>
   </div>
   <br />
   <button
-    class="so-button-secondary so-button-button so-button-outline"
+    class="c-rg592x cvey2f3 cs6jo0l"
     type="button"
   >
     <span
-      class="so-button-space-wrapper"
+      class="cboe6wq"
     >
       Start
     </span>
@@ -594,37 +594,37 @@ exports[`Progress[Base] should render correctly about linepop 1`] = `
   style="width: 400px;"
 >
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default so-progress-line-pop"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb c-i29sej"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
-        style="width: 1.5012627394684923%;"
+        class="c-r99stv"
+        style="width: 4.784617515493274%;"
       />
     </div>
     <div
-      class="so-progress-line-pop-wrapper"
-      style="left: 1.5012627394684923%; transform: translateX(-50%) rotate(0.3753156848671231deg);"
+      class="c-oqcraa"
+      style="left: 4.784617515493274%; transform: translateX(-50%) rotate(1.1961543788733184deg);"
     >
       <span
-        class="so-progress-line-pop-value"
+        class="cqhhj7g"
       >
-        1%
+        4%
       </span>
       <span
-        class="so-progress-line-pop-arrow"
+        class="cq68tuc"
       />
     </div>
   </div>
   <br />
   <button
-    class="so-button-secondary so-button-button so-button-outline"
+    class="c-rg592x cvey2f3 cs6jo0l"
     type="button"
   >
     <span
-      class="so-button-space-wrapper"
+      class="cboe6wq"
     >
       Start
     </span>
@@ -635,11 +635,11 @@ exports[`Progress[Base] should render correctly about linepop 1`] = `
 exports[`Progress[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -647,21 +647,21 @@ exports[`Progress[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         small
       </span>
     </div>
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         checked=""
@@ -670,21 +670,21 @@ exports[`Progress[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         default
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -692,34 +692,34 @@ exports[`Progress[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb"
     style="width: 400px;"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 75%;"
       />
     </div>
     <div
-      class="so-progress-content"
+      class="c-592hqn"
     >
       <span>
         75%
@@ -727,18 +727,18 @@ exports[`Progress[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-r7ozye"
     style="width: 400px; margin-top: 24px;"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 40%;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           <span>
             40%
@@ -748,14 +748,14 @@ exports[`Progress[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    class="cy3z4pk c5ec6a3 c-ipopgn"
     style="width: 64px; height: 64px; margin-top: 24px;"
   >
     <svg
       viewBox="0 0 64 64"
     >
       <circle
-        class="so-progress-circle-bg"
+        class="cyvvh8d"
         cx="32"
         cy="32"
         fill="transparent"
@@ -763,7 +763,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
         stroke-width="4"
       />
       <circle
-        class="so-progress-circle-front"
+        class="chtyxkh"
         cx="32"
         cy="32"
         fill="transparent"
@@ -774,7 +774,7 @@ exports[`Progress[Base] should render correctly about size 1`] = `
       />
     </svg>
     <div
-      class="so-progress-content"
+      class="c-592hqn"
     >
       <span>
         60%
@@ -787,11 +787,11 @@ exports[`Progress[Base] should render correctly about size 1`] = `
 exports[`Progress[Base] should render correctly about size 2`] = `
 <div>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         style="display: none;"
@@ -799,21 +799,21 @@ exports[`Progress[Base] should render correctly about size 2`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         small
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         checked=""
@@ -822,21 +822,21 @@ exports[`Progress[Base] should render correctly about size 2`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         default
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -844,35 +844,35 @@ exports[`Progress[Base] should render correctly about size 2`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb"
     style="width: 400px;"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
       style="height: 3px; border-radius: 1.5px;"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 75%; border-radius: 1.5px;"
       />
     </div>
     <div
-      class="so-progress-content"
+      class="c-592hqn"
     >
       <span
         style="font-size: 12px;"
@@ -882,19 +882,19 @@ exports[`Progress[Base] should render correctly about size 2`] = `
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-r7ozye"
     style="width: 400px; margin-top: 24px;"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
       style="height: 16px; border-radius: 8px;"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 40%; border-radius: 8px;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           <span
             style="font-size: 12px;"
@@ -906,14 +906,14 @@ exports[`Progress[Base] should render correctly about size 2`] = `
     </div>
   </div>
   <div
-    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    class="cy3z4pk c5ec6a3 c-ipopgn"
     style="width: 48px; height: 48px; margin-top: 24px;"
   >
     <svg
       viewBox="0 0 48 48"
     >
       <circle
-        class="so-progress-circle-bg"
+        class="cyvvh8d"
         cx="24"
         cy="24"
         fill="transparent"
@@ -921,7 +921,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
         stroke-width="4"
       />
       <circle
-        class="so-progress-circle-front"
+        class="chtyxkh"
         cx="24"
         cy="24"
         fill="transparent"
@@ -932,7 +932,7 @@ exports[`Progress[Base] should render correctly about size 2`] = `
       />
     </svg>
     <div
-      class="so-progress-content"
+      class="c-592hqn"
     >
       <span
         style="font-size: 12px;"
@@ -947,11 +947,11 @@ exports[`Progress[Base] should render correctly about size 2`] = `
 exports[`Progress[Base] should render correctly about size 3`] = `
 <div>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -959,21 +959,21 @@ exports[`Progress[Base] should render correctly about size 3`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         small
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         checked=""
@@ -982,21 +982,21 @@ exports[`Progress[Base] should render correctly about size 3`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         default
       </span>
     </div>
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         style="display: none;"
@@ -1004,35 +1004,35 @@ exports[`Progress[Base] should render correctly about size 3`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb"
     style="width: 400px;"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
       style="height: 8px; border-radius: 4px;"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 75%; border-radius: 4px;"
       />
     </div>
     <div
-      class="so-progress-content"
+      class="c-592hqn"
     >
       <span
         style="font-size: 16px;"
@@ -1042,19 +1042,19 @@ exports[`Progress[Base] should render correctly about size 3`] = `
     </div>
   </div>
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-inner"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-r7ozye"
     style="width: 400px; margin-top: 24px;"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
       style="height: 24px; border-radius: 12px;"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 40%; border-radius: 12px;"
       >
         <div
-          class="so-progress-content"
+          class="c-592hqn"
         >
           <span>
             40%
@@ -1064,14 +1064,14 @@ exports[`Progress[Base] should render correctly about size 3`] = `
     </div>
   </div>
   <div
-    class="so-progress-circle so-progress-wrapper so-progress-wrapper-info"
+    class="cy3z4pk c5ec6a3 c-ipopgn"
     style="width: 80px; height: 80px; margin-top: 24px;"
   >
     <svg
       viewBox="0 0 80 80"
     >
       <circle
-        class="so-progress-circle-bg"
+        class="cyvvh8d"
         cx="40"
         cy="40"
         fill="transparent"
@@ -1079,7 +1079,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
         stroke-width="4"
       />
       <circle
-        class="so-progress-circle-front"
+        class="chtyxkh"
         cx="40"
         cy="40"
         fill="transparent"
@@ -1090,7 +1090,7 @@ exports[`Progress[Base] should render correctly about size 3`] = `
       />
     </svg>
     <div
-      class="so-progress-content"
+      class="c-592hqn"
     >
       <span
         style="font-size: 16px;"
@@ -1107,52 +1107,52 @@ exports[`Progress[Base] should render correctly about type 1`] = `
   style="width: 400px;"
 >
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-success so-progress-line-default"
+    class="cv5o5h8 c5ec6a3 czfd77c c-jrmckb"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 100%;"
       />
     </div>
   </div>
   <br />
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-info so-progress-line-default"
+    class="cv5o5h8 c5ec6a3 c-ipopgn c-jrmckb"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 90%;"
       />
     </div>
   </div>
   <br />
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-warning so-progress-line-default"
+    class="cv5o5h8 c5ec6a3 cdvdutt c-jrmckb"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 80%;"
       />
     </div>
   </div>
   <br />
   <div
-    class="so-progress-line so-progress-wrapper so-progress-wrapper-danger so-progress-line-default"
+    class="cv5o5h8 c5ec6a3 c-ffa8mq c-jrmckb"
   >
     <div
-      class="so-progress-line-bg"
+      class="c-wnsv6n"
     >
       <div
-        class="so-progress-line-front"
+        class="c-r99stv"
         style="width: 70%;"
       />
     </div>

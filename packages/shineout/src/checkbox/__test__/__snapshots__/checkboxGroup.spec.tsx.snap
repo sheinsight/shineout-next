@@ -2,10 +2,10 @@
 
 exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
 <div
-  class="so-checkbox-group"
+  class="c-vt37hb"
 >
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -13,21 +13,22 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       red
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -35,21 +36,22 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       orange
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -57,21 +59,22 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       yellow
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -79,21 +82,22 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       green
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked"
+    class="c-2oyyob c-jx5dse"
   >
     <input
       checked=""
@@ -102,10 +106,11 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       >
         <svg
@@ -122,13 +127,13 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       cyan
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked"
+    class="c-2oyyob c-jx5dse"
   >
     <input
       checked=""
@@ -137,10 +142,11 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       >
         <svg
@@ -157,13 +163,13 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       blue
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -171,15 +177,16 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       violet
     </span>
@@ -189,10 +196,10 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxBlock 1`] = `
 
 exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
 <div
-  class="so-checkbox-group"
+  class="c-vt37hb"
 >
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -200,15 +207,16 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       <span
         style="border-bottom: 1px solid red;"
@@ -218,7 +226,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -226,15 +234,16 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       <span
         style="border-bottom: 1px solid orange;"
@@ -244,7 +253,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -252,15 +261,16 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       <span
         style="border-bottom: 1px solid yellow;"
@@ -270,7 +280,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -278,15 +288,16 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       <span
         style="border-bottom: 1px solid green;"
@@ -296,7 +307,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked"
+    class="c-2oyyob c-jx5dse"
   >
     <input
       checked=""
@@ -305,10 +316,11 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       >
         <svg
@@ -325,7 +337,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       <span
         style="border-bottom: 1px solid cyan;"
@@ -335,7 +347,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked"
+    class="c-2oyyob c-jx5dse"
   >
     <input
       checked=""
@@ -344,10 +356,11 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       >
         <svg
@@ -364,7 +377,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       <span
         style="border-bottom: 1px solid blue;"
@@ -374,7 +387,7 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -382,15 +395,16 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       <span
         style="border-bottom: 1px solid violet;"
@@ -404,10 +418,10 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxGroup 1`] = `
 
 exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
 <div
-  class="so-checkbox-group"
+  class="c-vt37hb"
 >
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -415,21 +429,22 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       red
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -437,21 +452,22 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       cyan
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked"
+    class="c-2oyyob c-jx5dse"
   >
     <input
       checked=""
@@ -460,10 +476,11 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       >
         <svg
@@ -480,13 +497,13 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       blue
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -494,21 +511,22 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       green
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked"
+    class="c-2oyyob c-jx5dse"
   >
     <input
       checked=""
@@ -517,10 +535,11 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       >
         <svg
@@ -537,13 +556,13 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       yellow
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -551,21 +570,22 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       orange
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -573,15 +593,16 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       violet
     </span>
@@ -591,10 +612,10 @@ exports[`CheckboxGroup[Base] should render correctly by CheckboxRawgroup 1`] = `
 
 exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
 <div
-  class="so-checkbox-group"
+  class="c-vt37hb"
 >
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled"
+    class="c-2oyyob csnudt"
   >
     <input
       disabled=""
@@ -603,21 +624,22 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       red
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled"
+    class="c-2oyyob csnudt"
   >
     <input
       disabled=""
@@ -626,21 +648,22 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       orange
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled"
+    class="c-2oyyob csnudt"
   >
     <input
       disabled=""
@@ -649,21 +672,22 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       yellow
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled"
+    class="c-2oyyob csnudt"
   >
     <input
       disabled=""
@@ -672,21 +696,22 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       green
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-checked"
+    class="c-2oyyob csnudt c-jx5dse"
   >
     <input
       checked=""
@@ -696,10 +721,11 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="-1"
       >
         <svg
@@ -716,13 +742,13 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       cyan
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled so-checkbox-wrapper-checked"
+    class="c-2oyyob csnudt c-jx5dse"
   >
     <input
       checked=""
@@ -732,10 +758,11 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="-1"
       >
         <svg
@@ -752,13 +779,13 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       blue
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled"
+    class="c-2oyyob csnudt"
   >
     <input
       disabled=""
@@ -767,15 +794,16 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       violet
     </span>
@@ -785,10 +813,10 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-A 1`] = `
 
 exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
 <div
-  class="so-checkbox-group"
+  class="c-vt37hb"
 >
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -796,21 +824,22 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       red
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -818,21 +847,22 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       orange
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-disabled"
+    class="c-2oyyob csnudt"
   >
     <input
       disabled=""
@@ -841,21 +871,22 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       yellow
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -863,21 +894,22 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       green
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked"
+    class="c-2oyyob c-jx5dse"
   >
     <input
       checked=""
@@ -886,10 +918,11 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       >
         <svg
@@ -906,13 +939,13 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       cyan
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper so-checkbox-wrapper-checked"
+    class="c-2oyyob c-jx5dse"
   >
     <input
       checked=""
@@ -921,10 +954,11 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       >
         <svg
@@ -941,13 +975,13 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
       </i>
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       blue
     </span>
   </div>
   <div
-    class="so-checkbox-wrapper"
+    class="c-2oyyob"
   >
     <input
       style="display: none;"
@@ -955,15 +989,16 @@ exports[`CheckboxGroup[Disabled] should render correctly by disabled-B 1`] = `
       type="checkbox"
     />
     <span
-      class="so-checkbox-indicator-wrapper"
+      class="c-do3bmm"
     >
       <i
-        class="so-checkbox-indicator"
+        class="cs409o1"
+        data-soui-role="checkbox-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="so-checkbox-desc"
+      class="c19hl67"
     >
       violet
     </span>

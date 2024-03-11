@@ -5,7 +5,7 @@ import {
   baseTest,
   childrenTest,
   classTest,
-  createClassName,
+  // createClassName,
   displayTest,
   snapshotTest,
   styleTest,
@@ -16,13 +16,16 @@ import GridOffset from '../__example__/02-offset';
 import GridNested from '../__example__/03-nested';
 import GridGutter from '../__example__/04-gutter';
 
-const SO_PREFIX = 'grid';
-const originClasses = [''];
-const originItemClasses = ['full', 'md'];
-const { full, md } = createClassName(SO_PREFIX, originClasses, originItemClasses);
+// const SO_PREFIX = 'grid';
+// const originClasses = [''];
+// const originItemClasses = ['full', 'md'];
+// const { full, md } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const wrapper = '.so-grid';
 const offsetPre = 'so-offset-md';
+
+const full = 'so-grid-full';
+const md = 'so-grid-md';
 
 const mdClassName = (f: number | string, s: number | string = '000') => `${md}-${f}-${s}`;
 const mdDefaultClassName = mdClassName(100);

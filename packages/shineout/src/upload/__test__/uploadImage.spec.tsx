@@ -1,4 +1,4 @@
-import { render, cleanup, waitFor, fireEvent, screen } from '@testing-library/react';
+import { render, cleanup, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Upload from '..';
 import { mockXhr, uploadFile } from './util';
@@ -118,7 +118,6 @@ describe('Upload.Image[Base]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    screen.debug();
     classTest(container.querySelector(`.${imageResult}`)!, resultError);
   });
   test('should remove image and recover', async () => {

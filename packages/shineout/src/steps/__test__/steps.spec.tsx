@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Steps from '..';
 import { classLengthTest } from '../../tests/structureTest';
@@ -112,7 +112,6 @@ describe('Steps[Base]', () => {
         <Steps.Step title='Pending' />
       </Steps>,
     );
-    screen.debug();
     classTest(container.querySelectorAll(step)[0], 'demo');
   });
   test('should render default', () => {
@@ -315,7 +314,6 @@ describe('Steps[OnClick/OnChange]', () => {
         <Steps.Step title='Pending' />
       </Steps>,
     );
-    screen.debug();
     const stepsWrapper = container.querySelector(steps)!;
     const stepWrapper = stepsWrapper.querySelectorAll(step)!;
     fireEvent.click(stepWrapper[1].querySelector(icon)!);

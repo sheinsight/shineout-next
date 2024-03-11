@@ -1,4 +1,4 @@
-import { render, cleanup, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, cleanup, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Popover from '..';
 import { Button } from 'shineout';
@@ -6,6 +6,7 @@ import mountTest from '../../tests/mountTest';
 import {
   attributesTest,
   classTest,
+  createClassName,
   delay,
   displayTest,
   styleContentTest,
@@ -19,16 +20,13 @@ import PopoverFunc from '../__example__/10-func';
 import PopoverDestroy from '../__example__/t-01-destroy';
 
 const SO_PREFIX = 'popover';
-const popoverClassName = `.${SO_PREFIX}-wrapper-0-2-65`;
-const popoverBaseClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
-const popoverContentClassName = `.${SO_PREFIX}-content-0-2-68`;
-const popoverContentBaseClassName = `.${SO_PREFIX}-content-0-2-4`;
-const popoverOpenClassName = `${SO_PREFIX}-wrapperOpen-0-2-66`;
-const popoverOpenBaseClassName = `${SO_PREFIX}-wrapperOpen-0-2-2`;
-const popoverArrowClassName = `.${SO_PREFIX}-arrow-0-2-3`;
-const popoverArrowBaseClassName = `.${SO_PREFIX}-arrow-0-2-67`;
-const popoverTextClassName = `${SO_PREFIX}-text-0-2-69`;
-const popoverBaseTextClassName = `${SO_PREFIX}-text-0-2-5`;
+const { 
+  wrapper: popoverClassName,
+  content: popoverContentClassName,
+  wrapperOpen: popoverOpenClassName,
+  arrow: popoverArrowClassName,
+  text: popoverTextClassName,
+} = createClassName(SO_PREFIX, ['wrapper', 'content', 'arrow'], ['wrapperOpen', 'text'])
 
 beforeAll(() => {
   jest.useFakeTimers();
@@ -87,17 +85,15 @@ const PopoverDemo = ({
 };
 
 const getPopoverRoot = () =>
-  document.querySelector(popoverClassName)! || document.querySelector(popoverBaseClassName)!;
+  document.querySelector(popoverClassName)!
 
 const getPopoverStatus = (status: boolean) => {
   expect(
-    getPopoverRoot().classList.contains(popoverOpenClassName) ||
-      getPopoverRoot().classList.contains(popoverOpenBaseClassName),
+    getPopoverRoot().classList.contains(popoverOpenClassName)
   ).toBe(status);
 };
 const getPopoverContent = () =>
-  document.querySelector(popoverContentClassName)! ||
-  document.querySelector(popoverContentBaseClassName)!;
+  document.querySelector(popoverContentClassName)!
 
 describe('Popover[Snapshot]', () => {
   test('render snapshot default', async () => {
@@ -122,7 +118,7 @@ describe('Popover[Base]', () => {
       popover = getPopoverRoot();
       expect(
         popover.classList.contains(popoverOpenClassName) ||
-          popover.classList.contains(popoverOpenBaseClassName),
+          popover.classList.contains(popoverOpenClassName),
       ).toBeTruthy();
       styleTest(
         popover,
@@ -130,14 +126,12 @@ describe('Popover[Base]', () => {
       );
       attributesTest(popover, 'data-soui-position', 'bottom');
       expect(
-        popover.querySelector(popoverArrowClassName) ||
-          popover.querySelector(popoverArrowBaseClassName),
+        popover.querySelector(popoverArrowClassName)
       ).toBeTruthy();
       const content = getPopoverContent();
       expect(content.textContent).toBe('some Text');
       expect(
-        content.classList.contains(popoverTextClassName) ||
-          content.classList.contains(popoverBaseTextClassName),
+        content.classList.contains(popoverTextClassName)
       ).toBeTruthy();
     });
     fireEvent.mouseLeave(container.querySelector('button')!);
@@ -214,10 +208,10 @@ describe('Popover[Base]', () => {
     'left-bottom':
       'position: absolute; z-index: 1060; top: 0px; transform: translateY(-100%) translateX(-100%); left: 0px;',
     'top-left':
-      'position: absolute; z-index: 1060; left: 0px; transform: translateY(-100%); top: 0px;',
-    top: 'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%)translateY(-100%); top: 0px;',
+      'position: absolute; z-index: 1060; left: 0px; transform: translateY(-100%); top: 0px; transform-origin: center bottom;',
+    top: 'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%)translateY(-100%); top: 0px; transform-origin: center bottom;',
     'top-right':
-      'position: absolute; z-index: 1060; left: 0px; transform: translateX(-100%)translateY(-100%); top: 0px;',
+      'position: absolute; z-index: 1060; left: 0px; transform: translateX(-100%)translateY(-100%); top: 0px; transform-origin: center bottom;',
   };
 
   Object.keys(positionStyleMap).forEach((item: string) => {
@@ -343,7 +337,7 @@ describe('Popover[Container]', () => {
     await waitFor(async () => {
       await delay(200);
       expect(
-        container.querySelector(popoverClassName) || container.querySelector(popoverBaseClassName),
+        container.querySelector(popoverClassName) || container.querySelector(popoverClassName),
       ).toBeTruthy();
     });
   });
@@ -356,7 +350,6 @@ describe('Popover[Disabled]', () => {
     fireEvent.mouseEnter(button);
     await waitFor(async () => {
       await delay(200);
-      screen.debug();
       // expect(getPopoverRoot()).toBeInTheDocument();
     });
   });
@@ -408,8 +401,7 @@ describe('Popover[UseTextStyle]', () => {
     await waitFor(async () => {
       await delay(200);
       expect(
-        getPopoverContent().classList.contains(popoverTextClassName) ||
-          getPopoverContent().classList.contains(popoverBaseTextClassName),
+        getPopoverContent().classList.contains(popoverTextClassName)
       ).toBeTruthy();
     });
     rerender(
@@ -425,8 +417,7 @@ describe('Popover[UseTextStyle]', () => {
     await waitFor(async () => {
       await delay(200);
       expect(
-        getPopoverContent().classList.contains(popoverTextClassName) ||
-          getPopoverContent().classList.contains(popoverBaseTextClassName),
+        getPopoverContent().classList.contains(popoverTextClassName)
       ).toBeFalsy();
     });
   });
@@ -504,8 +495,7 @@ describe('Popover[ShowArrow]', () => {
       await delay(200);
       const popover = getPopoverRoot();
       expect(
-        popover.querySelector(popoverArrowClassName) ||
-          popover.querySelector(popoverArrowBaseClassName),
+        popover.querySelector(popoverArrowClassName)
       ).toBeFalsy();
     });
   });
@@ -519,7 +509,7 @@ describe('Popover[PriorityDirection]', () => {
       await delay(200);
       styleTest(
         getPopoverRoot(),
-        'position: absolute; z-index: 1060; left: 0px; transform: translateX(-50%); top: 0px;',
+        'position: absolute; z-index: 1060; top: 0px; transform: translateY(-50%); left: 0px;',
       );
     });
   });

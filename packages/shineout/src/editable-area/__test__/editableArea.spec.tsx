@@ -49,7 +49,9 @@ const {
   popupShow,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const textareaFooterClassName = '.so-textarea-footer';
+const {
+  footer: textareaFooterClassName
+} = createClassName('textarea', ['footer'], ['']);
 
 const changeValueHandle = (container: HTMLElement, value: string) => {
   fireEvent.click(container.querySelector(place)!);

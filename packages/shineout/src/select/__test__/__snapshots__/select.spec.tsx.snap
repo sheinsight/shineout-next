@@ -3,22 +3,22 @@
 exports[`Select[Base] should render correctly  1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -28,7 +28,7 @@ exports[`Select[Base] should render correctly  1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -42,113 +42,113 @@ exports[`Select[Base] should render correctly  1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -173,22 +173,22 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
   style="padding: 10px; height: 100px; width: 100%; overflow: hidden;"
 >
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 120px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               default
@@ -198,7 +198,7 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -212,100 +212,100 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 120px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div>
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
@@ -323,22 +323,22 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
     </div>
   </div>
   <div
-    class="so-select-wrapper so-select-clearable so-select-multiple"
+    class="c-k1257o c-jl3hqo c-7gyxy1"
     data-soui-type="input"
-    style="margin-left: 16px; width: 300px;"
+    style="width: 300px; margin-left: 16px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper so-select-multiple-result-wrapper"
+          class="cml870y cvyv5u7"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select user
@@ -348,7 +348,7 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -368,22 +368,22 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
 exports[`Select[Base] should render correctly about autoAdapt 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -393,7 +393,7 @@ exports[`Select[Base] should render correctly about autoAdapt 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -407,113 +407,113 @@ exports[`Select[Base] should render correctly about autoAdapt 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; min-width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="loooooooooooooooooooooooooooooooooooooooooooong"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     loooooooooooooooooooooooooooooooooooooooooooong
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -536,22 +536,22 @@ exports[`Select[Base] should render correctly about autoAdapt 1`] = `
 exports[`Select[Base] should render correctly about big data 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Tag
@@ -561,7 +561,7 @@ exports[`Select[Base] should render correctly about big data 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -575,135 +575,135 @@ exports[`Select[Base] should render correctly about big data 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="标签 0"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 0
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="标签 1"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 1
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="标签 2"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 2
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="标签 3"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 3
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="标签 4"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 4
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="标签 5"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 5
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="标签 6"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 6
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="标签 7"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 7
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-8"
+                  class="c-msac6s option-8"
                   tabindex="-1"
                   title="标签 8"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 8
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-9"
+                  class="c-msac6s option-9"
                   tabindex="-1"
                   title="标签 9"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     标签 9
                   </div>
@@ -726,22 +726,22 @@ exports[`Select[Base] should render correctly about big data 1`] = `
 exports[`Select[Base] should render correctly about create 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable so-select-multiple"
+    class="c-k1257o c-jl3hqo c-7gyxy1"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper so-select-multiple-result-wrapper"
+          class="cml870y cvyv5u7"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -751,7 +751,7 @@ exports[`Select[Base] should render correctly about create 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -765,113 +765,113 @@ exports[`Select[Base] should render correctly about create 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -896,22 +896,22 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -921,7 +921,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -935,118 +935,118 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        style="background: black; color: white;"
+        style="height: 32px; background-color: rgb(25, 122, 250); color: rgb(255, 255, 255); padding: 5px 12px; box-sizing: border-box;"
       >
-        SHEIN
+        + add
       </div>
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -1064,22 +1064,22 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
     </div>
   </div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -1089,7 +1089,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -1103,113 +1103,113 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -1225,29 +1225,29 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
         </div>
       </div>
       <div
-        style="background: black; color: white;"
+        style="height: 32px; background-color: rgb(25, 122, 250); color: rgb(255, 255, 255); padding: 5px 12px; box-sizing: border-box;"
       >
-        SHEIN
+        + add
       </div>
     </div>
   </div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -1257,7 +1257,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -1271,125 +1271,120 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
-      <div
-        style="background: black; color: white;"
-      >
-        SHEIN
-      </div>
       <div>
         <div
-          style="background: black; color: white;"
+          style="height: 32px; background-color: rgb(25, 122, 250); color: rgb(255, 255, 255); padding: 5px 12px; box-sizing: border-box;"
         >
-          SHEIN
+          + add
         </div>
         <div>
           <div
-            class="so-select-list so-select-control-keyboard"
+            class="c-5xs56z cdfaub1"
           >
             <div
               style="height: 250px;"
             >
               <div
-                data-soui-type="scroll"
+                data-soui-role="scroll"
                 style="height: 100%; width: 100%; overflow: auto;"
               >
                 <div
-                  data-soui-type="scroll-container"
+                  data-soui-role="scroll-container"
                   style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
                 >
                   <ul
-                    class="so-select-virtual-list"
+                    class="c4he79u"
                     style="transform: translate3d(0, -0px, 0);"
                   >
                     <li
-                      class="so-select-option option-0 so-select-option-hover"
+                      class="c-msac6s option-0 celt4gg"
                       tabindex="-1"
                       title="red"
                     >
                       <div
-                        class="so-select-option-inner"
+                        class="cemc44q"
                       >
                         red
                       </div>
                     </li>
                     <li
-                      class="so-select-option option-1"
+                      class="c-msac6s option-1"
                       tabindex="-1"
                       title="orange"
                     >
                       <div
-                        class="so-select-option-inner"
+                        class="cemc44q"
                       >
                         orange
                       </div>
                     </li>
                     <li
-                      class="so-select-option option-2"
+                      class="c-msac6s option-2"
                       tabindex="-1"
                       title="yellow"
                     >
                       <div
-                        class="so-select-option-inner"
+                        class="cemc44q"
                       >
                         yellow
                       </div>
                     </li>
                     <li
-                      class="so-select-option option-3"
+                      class="c-msac6s option-3"
                       tabindex="-1"
                       title="green"
                     >
                       <div
-                        class="so-select-option-inner"
+                        class="cemc44q"
                       >
                         green
                       </div>
                     </li>
                     <li
-                      class="so-select-option option-4"
+                      class="c-msac6s option-4"
                       tabindex="-1"
                       title="cyan"
                     >
                       <div
-                        class="so-select-option-inner"
+                        class="cemc44q"
                       >
                         cyan
                       </div>
                     </li>
                     <li
-                      class="so-select-option option-5"
+                      class="c-msac6s option-5"
                       tabindex="-1"
                       title="blue"
                     >
                       <div
-                        class="so-select-option-inner"
+                        class="cemc44q"
                       >
                         blue
                       </div>
                     </li>
                     <li
-                      class="so-select-option option-6"
+                      class="c-msac6s option-6"
                       tabindex="-1"
                       title="violet"
                     >
                       <div
-                        class="so-select-option-inner"
+                        class="cemc44q"
                       >
                         violet
                       </div>
                     </li>
                     <li
-                      class="so-select-option option-7"
+                      class="c-msac6s option-7"
                       tabindex="-1"
                       title="pink"
                     >
                       <div
-                        class="so-select-option-inner"
+                        class="cemc44q"
                       >
                         pink
                       </div>
@@ -1406,15 +1401,10 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
           </div>
         </div>
         <div
-          style="background: black; color: white;"
+          style="height: 32px; background-color: rgb(25, 122, 250); color: rgb(255, 255, 255); padding: 5px 12px; box-sizing: border-box;"
         >
-          SHEIN
+          + add
         </div>
-      </div>
-      <div
-        style="background: black; color: white;"
-      >
-        SHEIN
       </div>
     </div>
   </div>
@@ -1424,22 +1414,22 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
 exports[`Select[Base] should render correctly about custom result 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -1449,7 +1439,7 @@ exports[`Select[Base] should render correctly about custom result 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -1463,113 +1453,113 @@ exports[`Select[Base] should render correctly about custom result 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -1592,22 +1582,22 @@ exports[`Select[Base] should render correctly about custom result 1`] = `
 exports[`Select[Base] should render correctly about custom unmatch 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-ellipsis"
+            class="c-f5w80o"
           >
             I am redddd color
           </span>
@@ -1615,7 +1605,7 @@ exports[`Select[Base] should render correctly about custom unmatch 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -1629,113 +1619,113 @@ exports[`Select[Base] should render correctly about custom unmatch 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -1757,25 +1747,25 @@ exports[`Select[Base] should render correctly about custom unmatch 1`] = `
 
 exports[`Select[Base] should render correctly about disabled 1`] = `
 <div
-  style="display: flex; flex-wrap: wrap; gap: 32px; width: 632px;"
+  style="display: flex; flex-wrap: wrap; gap: 24px; width: 624px;"
 >
   <div
-    class="so-select-wrapper so-select-wrapper-disabled so-select-clearable"
+    class="c-k1257o co2pi9k c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="-1"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -1785,7 +1775,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -1799,113 +1789,113 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     pink
                   </div>
@@ -1923,22 +1913,22 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -1948,7 +1938,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -1962,113 +1952,113 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -2086,28 +2076,30 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="so-select-wrapper so-select-wrapper-disabled so-select-clearable so-select-multiple"
+    class="c-k1257o co2pi9k c-jl3hqo c-7gyxy1"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="-1"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper so-select-compressed-wrapper so-select-multiple-result-wrapper so-select-multiple-compressed-wrapper"
+          class="cml870y c-5upq05 cvyv5u7 cn8xp0r"
         >
           <span
             style="display: inline-flex;"
           >
             <div
-              class="so-select-tag so-tag-tag so-tag-default so-tag-bright"
+              class="c23lg2r chrdymz c-tnqn26 c-6aay07"
               style=""
             >
-              <span>
+              <span
+                class=""
+              >
                 +2
               </span>
             </div>
@@ -2117,7 +2109,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -2131,40 +2123,40 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-active so-select-option-disabled"
+                    class="cemc44q cn3gfle c-5jcexk"
                   >
                     red
                     <span
-                      class="so-select-checked-icon"
+                      class="c-t69g6v"
                     >
                       <svg
                         aria-hidden="true"
@@ -2182,16 +2174,16 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-active so-select-option-disabled"
+                    class="cemc44q cn3gfle c-5jcexk"
                   >
                     orange
                     <span
-                      class="so-select-checked-icon"
+                      class="c-t69g6v"
                     >
                       <svg
                         aria-hidden="true"
@@ -2209,67 +2201,67 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-disabled"
+                    class="cemc44q c-5jcexk"
                   >
                     pink
                   </div>
@@ -2287,28 +2279,30 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="so-select-wrapper so-select-clearable so-select-multiple"
+    class="c-k1257o c-jl3hqo c-7gyxy1"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper so-select-compressed-wrapper so-select-multiple-result-wrapper so-select-multiple-compressed-wrapper"
+          class="cml870y c-5upq05 cvyv5u7 cn8xp0r"
         >
           <span
             style="display: inline-flex;"
           >
             <div
-              class="so-select-tag so-tag-tag so-tag-default so-tag-bright"
+              class="c23lg2r chrdymz c-tnqn26 c-6aay07"
               style=""
             >
-              <span>
+              <span
+                class=""
+              >
                 +2
               </span>
             </div>
@@ -2318,7 +2312,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -2332,40 +2326,40 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-active"
+                    class="cemc44q cn3gfle"
                   >
                     red
                     <span
-                      class="so-select-checked-icon"
+                      class="c-t69g6v"
                     >
                       <svg
                         aria-hidden="true"
@@ -2383,16 +2377,16 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner so-select-option-active so-select-option-disabled"
+                    class="cemc44q cn3gfle c-5jcexk"
                   >
                     orange
                     <span
-                      class="so-select-checked-icon"
+                      class="c-t69g6v"
                     >
                       <svg
                         aria-hidden="true"
@@ -2410,67 +2404,67 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -2493,22 +2487,22 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
 exports[`Select[Base] should render correctly about filter 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -2518,7 +2512,7 @@ exports[`Select[Base] should render correctly about filter 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -2532,113 +2526,113 @@ exports[`Select[Base] should render correctly about filter 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -2661,22 +2655,22 @@ exports[`Select[Base] should render correctly about filter 1`] = `
 exports[`Select[Base] should render correctly about format 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -2686,7 +2680,7 @@ exports[`Select[Base] should render correctly about format 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -2700,137 +2694,137 @@ exports[`Select[Base] should render correctly about format 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
-                  title="标签 0"
+                  title="Label 0"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 0
+                    Label 0
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
-                  title="标签 1"
+                  title="Label 1"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 1
+                    Label 1
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
-                  title="标签 2"
+                  title="Label 2"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 2
+                    Label 2
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
-                  title="标签 3"
+                  title="Label 3"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 3
+                    Label 3
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
-                  title="标签 4"
+                  title="Label 4"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 4
+                    Label 4
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
-                  title="标签 5"
+                  title="Label 5"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 5
+                    Label 5
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
-                  title="标签 6"
+                  title="Label 6"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 6
+                    Label 6
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
-                  title="标签 7"
+                  title="Label 7"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 7
+                    Label 7
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-8"
+                  class="c-msac6s option-8"
                   tabindex="-1"
-                  title="标签 8"
+                  title="Label 8"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 8
+                    Label 8
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-9"
+                  class="c-msac6s option-9"
                   tabindex="-1"
-                  title="标签 9"
+                  title="Label 9"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
-                    标签 9
+                    Label 9
                   </div>
                 </li>
               </ul>
@@ -2850,22 +2844,22 @@ exports[`Select[Base] should render correctly about format 1`] = `
 
 exports[`Select[Base] should render correctly about group 1`] = `
 <div
-  class="so-select-wrapper so-select-clearable"
+  class="c-k1257o c-jl3hqo"
   data-soui-type="input"
-  style="width: 300px;"
+  style="width: 240px;"
   tabindex="0"
 >
   <div
-    class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+    class="c-hka1dt c8hos3a crwdlef c9869pl"
   >
     <div
-      class="so-select-result"
+      class="c-lj7los"
     >
       <div
-        class="so-select-result-text-wrapper"
+        class="cml870y"
       >
         <span
-          class="so-select-placeholder so-select-ellipsis"
+          class="cus4m0s c-f5w80o"
         >
           <span>
             Select a city
@@ -2875,7 +2869,7 @@ exports[`Select[Base] should render correctly about group 1`] = `
     </div>
   </div>
   <span
-    class="so-select-arrow-icon"
+    class="c-fjov4l"
   >
     <svg
       aria-hidden="true"
@@ -2889,85 +2883,85 @@ exports[`Select[Base] should render correctly about group 1`] = `
     </svg>
   </span>
   <div
-    class="so-select-picker-wrapper"
+    class="ckzqupa"
     data-sheinx-animation-duration="fast"
     data-sheinx-animation-type="scale-y"
     style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
   >
     <div
-      class="so-select-list so-select-control-keyboard"
+      class="c-5xs56z cdfaub1"
     >
       <div>
         <div
-          data-soui-type="scroll"
+          data-soui-role="scroll"
           style="height: 100%; width: 100%; overflow: auto;"
         >
           <div
-            data-soui-type="scroll-container"
+            data-soui-role="scroll-container"
             style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
           >
             <ul
-              class="so-select-virtual-list"
+              class="c4he79u"
               style="transform: translate3d(0, -0px, 0);"
             >
               <div
-                class="so-select-option-group-title"
+                class="c-haw54r"
                 title="Other"
               >
                 Other
               </div>
               <li
-                class="so-select-option option-1"
+                class="c-msac6s option-1"
                 tabindex="-1"
                 title="Mars"
               >
                 <div
-                  class="so-select-option-inner"
+                  class="cemc44q"
                 >
                   Mars
                 </div>
               </li>
               <div
-                class="so-select-option-group-title"
+                class="c-haw54r"
                 title="Country"
               >
                 Country
               </div>
               <li
-                class="so-select-option option-3"
+                class="c-msac6s option-3"
                 tabindex="-1"
                 title="China"
               >
                 <div
-                  class="so-select-option-inner"
+                  class="cemc44q"
                 >
                   China
                 </div>
               </li>
               <div
-                class="so-select-option-group-title"
+                class="c-haw54r"
                 title="City"
               >
                 City
               </div>
               <li
-                class="so-select-option option-5"
+                class="c-msac6s option-5"
                 tabindex="-1"
                 title="Beijing"
               >
                 <div
-                  class="so-select-option-inner"
+                  class="cemc44q"
                 >
                   Beijing
                 </div>
               </li>
               <li
-                class="so-select-option option-6"
+                class="c-msac6s option-6"
                 tabindex="-1"
                 title="Shanghai"
               >
                 <div
-                  class="so-select-option-inner"
+                  class="cemc44q"
                 >
                   Shanghai
                 </div>
@@ -2986,354 +2980,55 @@ exports[`Select[Base] should render correctly about group 1`] = `
 </div>
 `;
 
-exports[`Select[Base] should render correctly about group more 1`] = `
-<div>
-  <div
-    class="so-select-wrapper so-select-clearable"
-    data-soui-type="input"
-    style="width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
-    >
-      <div
-        class="so-select-result"
-      >
-        <div
-          class="so-select-result-text-wrapper"
-        >
-          <span
-            class="so-select-placeholder so-select-ellipsis"
-          >
-            <span>
-              Select City
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="so-select-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-        />
-      </svg>
-    </span>
-    <div
-      class="so-select-picker-wrapper"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="so-select-list so-select-control-keyboard"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-type="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-type="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="so-select-virtual-list"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <div
-                  class="so-select-option-group-title"
-                  title="Other"
-                >
-                  Other
-                </div>
-                <li
-                  class="so-select-option option-1"
-                  tabindex="-1"
-                  title="Mars"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    Mars
-                  </div>
-                </li>
-                <div
-                  class="so-select-option-group-title"
-                  title="Country"
-                >
-                  Country
-                </div>
-                <li
-                  class="so-select-option option-3"
-                  tabindex="-1"
-                  title="China"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    China
-                  </div>
-                </li>
-                <div
-                  class="so-select-option-group-title"
-                  title="City"
-                >
-                  City
-                </div>
-                <li
-                  class="so-select-option option-5"
-                  tabindex="-1"
-                  title="Beijing"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    Beijing
-                  </div>
-                </li>
-                <li
-                  class="so-select-option option-6"
-                  tabindex="-1"
-                  title="Shanghai"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    Shanghai
-                  </div>
-                </li>
-                <li
-                  class="so-select-option option-7"
-                  tabindex="-1"
-                  title="shenzhen"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    shenzhen
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="so-select-wrapper so-select-clearable so-select-multiple"
-    data-soui-type="input"
-    style="margin-left: 32px; width: 300px;"
-    tabindex="0"
-  >
-    <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
-    >
-      <div
-        class="so-select-result"
-      >
-        <div
-          class="so-select-result-text-wrapper so-select-compressed-wrapper so-select-multiple-result-wrapper so-select-multiple-compressed-wrapper"
-        >
-          <span
-            class="so-select-placeholder so-select-ellipsis"
-          >
-            <span>
-              Select City
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <span
-      class="so-select-arrow-icon"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
-        />
-      </svg>
-    </span>
-    <div
-      class="so-select-picker-wrapper"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="so-select-list so-select-control-keyboard"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-type="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-type="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="so-select-virtual-list"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <div
-                  class="so-select-option-group-title"
-                  title="Other"
-                >
-                  Other
-                </div>
-                <li
-                  class="so-select-option option-1"
-                  tabindex="-1"
-                  title="Mars"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    Mars
-                  </div>
-                </li>
-                <div
-                  class="so-select-option-group-title"
-                  title="Country"
-                >
-                  Country
-                </div>
-                <li
-                  class="so-select-option option-3"
-                  tabindex="-1"
-                  title="China"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    China
-                  </div>
-                </li>
-                <div
-                  class="so-select-option-group-title"
-                  title="City"
-                >
-                  City
-                </div>
-                <li
-                  class="so-select-option option-5"
-                  tabindex="-1"
-                  title="Beijing"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    Beijing
-                  </div>
-                </li>
-                <li
-                  class="so-select-option option-6"
-                  tabindex="-1"
-                  title="Shanghai"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    Shanghai
-                  </div>
-                </li>
-                <li
-                  class="so-select-option option-7"
-                  tabindex="-1"
-                  title="shenzhen"
-                >
-                  <div
-                    class="so-select-option-inner"
-                  >
-                    shenzhen
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Select[Base] should render correctly about inner title 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-wrapper-inner-title so-select-clearable"
+    class="c-k1257o ckg5l9a c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-inner-title-wrapper"
+        class="c3ceru5"
       >
         <div
-          class="so-inner-title-title"
+          class="c-yxm0y6 c-tlnvtd"
         >
           Select Color
         </div>
         <div
-          class="so-inner-title-title so-inner-title-place"
-        >
-          Select Color
-        </div>
-        <div
-          class="so-inner-title-content"
+          class="c-yzronz"
         >
           <div
-            class="so-select-result"
+            class="c-yxm0y6"
+          >
+            Select Color
+          </div>
+        </div>
+        <div
+          class="c-7azw6l"
+        >
+          <div
+            class="c-lj7los"
           >
             <div
-              class="so-select-result-text-wrapper"
+              class="cml870y"
             >
-              <span
-                class="so-select-placeholder so-select-ellipsis"
+              <div
+                class="ct42cb3"
               >
-                <span>
-                  Select Color
-                </span>
-              </span>
+                 
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -3347,113 +3042,113 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -3476,22 +3171,22 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
 exports[`Select[Base] should render correctly about loading 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -3501,7 +3196,7 @@ exports[`Select[Base] should render correctly about loading 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -3515,16 +3210,16 @@ exports[`Select[Base] should render correctly about loading 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-loading"
+        class="cu6k891"
       >
         <div
-          class="so-spin-ring"
+          class="chxenrh"
           style="width: 14px; height: 14px; border-width: 1.4px; font-size: 1.4px;"
         />
       </div>
@@ -3536,22 +3231,22 @@ exports[`Select[Base] should render correctly about loading 1`] = `
 exports[`Select[Base] should render correctly about max length 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -3561,7 +3256,7 @@ exports[`Select[Base] should render correctly about max length 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -3575,113 +3270,113 @@ exports[`Select[Base] should render correctly about max length 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -3704,22 +3399,22 @@ exports[`Select[Base] should render correctly about max length 1`] = `
 exports[`Select[Base] should render correctly about max length more 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -3729,7 +3424,7 @@ exports[`Select[Base] should render correctly about max length more 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -3743,16 +3438,16 @@ exports[`Select[Base] should render correctly about max length more 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-loading"
+        class="cu6k891"
       >
         <div
-          class="so-spin-ring"
+          class="chxenrh"
           style="width: 14px; height: 14px; border-width: 1.4px; font-size: 1.4px;"
         />
       </div>
@@ -3764,22 +3459,22 @@ exports[`Select[Base] should render correctly about max length more 1`] = `
 exports[`Select[Base] should render correctly about multiple 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable so-select-multiple"
+    class="c-k1257o c-jl3hqo c-7gyxy1"
     data-soui-type="input"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper so-select-multiple-result-wrapper"
+          class="cml870y cvyv5u7"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -3789,7 +3484,7 @@ exports[`Select[Base] should render correctly about multiple 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -3803,113 +3498,113 @@ exports[`Select[Base] should render correctly about multiple 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-7"
+                  class="c-msac6s option-7"
                   tabindex="-1"
                   title="pink"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     pink
                   </div>
@@ -3931,25 +3626,25 @@ exports[`Select[Base] should render correctly about multiple 1`] = `
 
 exports[`Select[Base] should render correctly about size 1`] = `
 <div
-  style="display: flex; gap: 32px; align-items: center;"
+  style="display: flex; gap: 24px; align-items: center;"
 >
   <div
-    class="so-select-wrapper so-select-wrapper-small so-select-clearable"
+    class="c-k1257o c-xzkfcl c-jl3hqo"
     data-soui-type="input"
     style="width: 240px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -3959,7 +3654,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -3973,100 +3668,100 @@ exports[`Select[Base] should render correctly about size 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 240px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div>
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
@@ -4084,22 +3779,22 @@ exports[`Select[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 240px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -4109,7 +3804,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -4123,100 +3818,100 @@ exports[`Select[Base] should render correctly about size 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 240px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div>
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
@@ -4234,22 +3929,22 @@ exports[`Select[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="so-select-wrapper so-select-wrapper-large so-select-clearable"
+    class="c-k1257o c-y3mav5 c-jl3hqo"
     data-soui-type="input"
     style="width: 240px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -4259,7 +3954,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -4273,102 +3968,102 @@ exports[`Select[Base] should render correctly about size 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 240px; display: none;"
     >
       <div
-        class="so-select-list so-select-control-keyboard"
+        class="c-5xs56z cdfaub1"
       >
         <div
           style="height: 250px;"
         >
           <div
-            data-soui-type="scroll"
+            data-soui-role="scroll"
             style="height: 100%; width: 100%; overflow: auto;"
           >
             <div
-              data-soui-type="scroll-container"
+              data-soui-role="scroll-container"
               style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
             >
               <ul
-                class="so-select-virtual-list"
+                class="c4he79u"
                 style="transform: translate3d(0, -0px, 0);"
               >
                 <li
-                  class="so-select-option option-0 so-select-option-hover"
+                  class="c-msac6s option-0 celt4gg"
                   tabindex="-1"
                   title="red"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     red
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-1"
+                  class="c-msac6s option-1"
                   tabindex="-1"
                   title="orange"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     orange
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-2"
+                  class="c-msac6s option-2"
                   tabindex="-1"
                   title="yellow"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     yellow
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-3"
+                  class="c-msac6s option-3"
                   tabindex="-1"
                   title="green"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     green
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-4"
+                  class="c-msac6s option-4"
                   tabindex="-1"
                   title="cyan"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     cyan
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-5"
+                  class="c-msac6s option-5"
                   tabindex="-1"
                   title="blue"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     blue
                   </div>
                 </li>
                 <li
-                  class="so-select-option option-6"
+                  class="c-msac6s option-6"
                   tabindex="-1"
                   title="violet"
                 >
                   <div
-                    class="so-select-option-inner"
+                    class="cemc44q"
                   >
                     violet
                   </div>
@@ -4391,22 +4086,22 @@ exports[`Select[Base] should render correctly about size 1`] = `
 exports[`Select[Base] should render correctly about tree 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 260px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -4416,7 +4111,7 @@ exports[`Select[Base] should render correctly about tree 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -4430,35 +4125,35 @@ exports[`Select[Base] should render correctly about tree 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 260px; display: none;"
     >
       <div
-        class="so-select-tree"
+        class="c-5xmuyz"
         style="max-height: 250px;"
       >
         <div
-          class="so-tree-tree so-tree-noline"
+          class="c-8de4ix c-lw53bm"
         >
           <div
-            class="so-tree-root"
+            class="c-8dfgh1"
             style="display: block;"
           >
             <div
-              class="so-tree-node so-select-tree-option"
+              class="c-8di0p1 c-i1uik6"
             >
               <div
-                class="so-tree-content-wrapper so-tree-childnode"
+                class="ctat7yr ca3mdad"
               >
                 <span
-                  class="so-tree-icon-wrapper"
+                  class="c-8jk8v"
                   data-expanded="false"
                   data-icon="false"
                 >
                   <span
-                    class="so-tree-icon"
+                    class="c-8dlg9a"
                   >
                     <svg
                       aria-hidden="true"
@@ -4473,10 +4168,10 @@ exports[`Select[Base] should render correctly about tree 1`] = `
                   </span>
                 </span>
                 <div
-                  class="so-tree-content"
+                  class="cc9w3xc"
                 >
                   <div
-                    class="so-tree-text"
+                    class="c-8dedp6"
                   >
                     node 1
                   </div>
@@ -4484,16 +4179,16 @@ exports[`Select[Base] should render correctly about tree 1`] = `
               </div>
             </div>
             <div
-              class="so-tree-node so-select-tree-option so-tree-leaf"
+              class="c-8di0p1 c-i1uik6 c-8dji5l"
             >
               <div
-                class="so-tree-content-wrapper"
+                class="ctat7yr"
               >
                 <div
-                  class="so-tree-content"
+                  class="cc9w3xc"
                 >
                   <div
-                    class="so-tree-text"
+                    class="c-8dedp6"
                   >
                     node 2
                   </div>
@@ -4501,18 +4196,18 @@ exports[`Select[Base] should render correctly about tree 1`] = `
               </div>
             </div>
             <div
-              class="so-tree-node so-select-tree-option"
+              class="c-8di0p1 c-i1uik6"
             >
               <div
-                class="so-tree-content-wrapper so-tree-childnode"
+                class="ctat7yr ca3mdad"
               >
                 <span
-                  class="so-tree-icon-wrapper"
+                  class="c-8jk8v"
                   data-expanded="false"
                   data-icon="false"
                 >
                   <span
-                    class="so-tree-icon"
+                    class="c-8dlg9a"
                   >
                     <svg
                       aria-hidden="true"
@@ -4527,10 +4222,10 @@ exports[`Select[Base] should render correctly about tree 1`] = `
                   </span>
                 </span>
                 <div
-                  class="so-tree-content"
+                  class="cc9w3xc"
                 >
                   <div
-                    class="so-tree-text"
+                    class="c-8dedp6"
                   >
                     node 3
                   </div>
@@ -4538,16 +4233,16 @@ exports[`Select[Base] should render correctly about tree 1`] = `
               </div>
             </div>
             <div
-              class="so-tree-node so-select-tree-option so-tree-leaf"
+              class="c-8di0p1 c-i1uik6 c-8dji5l"
             >
               <div
-                class="so-tree-content-wrapper"
+                class="ctat7yr"
               >
                 <div
-                  class="so-tree-content"
+                  class="cc9w3xc"
                 >
                   <div
-                    class="so-tree-text"
+                    class="c-8dedp6"
                   >
                     node 4
                   </div>
@@ -4565,22 +4260,22 @@ exports[`Select[Base] should render correctly about tree 1`] = `
 exports[`Select[Base] should render correctly about tree more 1`] = `
 <div>
   <div
-    class="so-select-wrapper so-select-clearable"
+    class="c-k1257o c-jl3hqo"
     data-soui-type="input"
     style="width: 260px;"
     tabindex="0"
   >
     <div
-      class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+      class="c-hka1dt c8hos3a crwdlef c9869pl"
     >
       <div
-        class="so-select-result"
+        class="c-lj7los"
       >
         <div
-          class="so-select-result-text-wrapper"
+          class="cml870y"
         >
           <span
-            class="so-select-placeholder so-select-ellipsis"
+            class="cus4m0s c-f5w80o"
           >
             <span>
               Select Color
@@ -4590,7 +4285,7 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
       </div>
     </div>
     <span
-      class="so-select-arrow-icon"
+      class="c-fjov4l"
     >
       <svg
         aria-hidden="true"
@@ -4604,35 +4299,35 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
       </svg>
     </span>
     <div
-      class="so-select-picker-wrapper"
+      class="ckzqupa"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="scale-y"
       style="pointer-events: none; position: absolute; z-index: -1000; width: 260px; display: none;"
     >
       <div
-        class="so-select-tree"
+        class="c-5xmuyz"
         style="max-height: 250px;"
       >
         <div
-          class="so-tree-tree so-tree-noline"
+          class="c-8de4ix c-lw53bm"
         >
           <div
-            class="so-tree-root"
+            class="c-8dfgh1"
             style="display: block;"
           >
             <div
-              class="so-tree-node so-select-tree-option"
+              class="c-8di0p1 c-i1uik6"
             >
               <div
-                class="so-tree-content-wrapper so-tree-childnode"
+                class="ctat7yr ca3mdad"
               >
                 <span
-                  class="so-tree-icon-wrapper"
+                  class="c-8jk8v"
                   data-expanded="false"
                   data-icon="false"
                 >
                   <span
-                    class="so-tree-icon"
+                    class="c-8dlg9a"
                   >
                     <svg
                       aria-hidden="true"
@@ -4647,10 +4342,10 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
                   </span>
                 </span>
                 <div
-                  class="so-tree-content"
+                  class="cc9w3xc"
                 >
                   <div
-                    class="so-tree-text"
+                    class="c-8dedp6"
                   >
                     node 1
                   </div>
@@ -4658,16 +4353,16 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
               </div>
             </div>
             <div
-              class="so-tree-node so-select-tree-option so-tree-leaf"
+              class="c-8di0p1 c-i1uik6 c-8dji5l"
             >
               <div
-                class="so-tree-content-wrapper"
+                class="ctat7yr"
               >
                 <div
-                  class="so-tree-content"
+                  class="cc9w3xc"
                 >
                   <div
-                    class="so-tree-text"
+                    class="c-8dedp6"
                   >
                     node 2
                   </div>
@@ -4675,18 +4370,18 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
               </div>
             </div>
             <div
-              class="so-tree-node so-select-tree-option"
+              class="c-8di0p1 c-i1uik6"
             >
               <div
-                class="so-tree-content-wrapper so-tree-childnode"
+                class="ctat7yr ca3mdad"
               >
                 <span
-                  class="so-tree-icon-wrapper"
+                  class="c-8jk8v"
                   data-expanded="false"
                   data-icon="false"
                 >
                   <span
-                    class="so-tree-icon"
+                    class="c-8dlg9a"
                   >
                     <svg
                       aria-hidden="true"
@@ -4701,10 +4396,10 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
                   </span>
                 </span>
                 <div
-                  class="so-tree-content"
+                  class="cc9w3xc"
                 >
                   <div
-                    class="so-tree-text"
+                    class="c-8dedp6"
                   >
                     node 3
                   </div>
@@ -4712,16 +4407,16 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
               </div>
             </div>
             <div
-              class="so-tree-node so-select-tree-option so-tree-leaf"
+              class="c-8di0p1 c-i1uik6 c-8dji5l"
             >
               <div
-                class="so-tree-content-wrapper"
+                class="ctat7yr"
               >
                 <div
-                  class="so-tree-content"
+                  class="cc9w3xc"
                 >
                   <div
-                    class="so-tree-text"
+                    class="c-8dedp6"
                   >
                     node 4
                   </div>

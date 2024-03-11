@@ -5,24 +5,24 @@ exports[`Steps[Base] should render correctly  1`] = `
   style="width: 500px;"
 >
   <div
-    class="so-steps-steps so-steps-default so-steps-horizontal"
+    class="cbxowl7 ck8p0d1 c-pjlhrk"
   >
     <div
-      class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label"
+      class="c-teh5l4 c8jekhr c8jekhr chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-finish"
+          class="c-tenvtn c8jekhr"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               aria-hidden="true"
@@ -39,10 +39,10 @@ exports[`Steps[Base] should render correctly  1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Succeeded
           </div>
@@ -50,30 +50,30 @@ exports[`Steps[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-process so-steps-vertical-label"
+      class="c-teh5l4 c-afbk59 chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-process"
+          class="c-tenvtn c-afbk59"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             2
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Processing
           </div>
@@ -81,30 +81,30 @@ exports[`Steps[Base] should render correctly  1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-wait so-steps-vertical-label"
+      class="c-teh5l4 c-teezmn chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-wait"
+          class="c-tenvtn c-teezmn"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             3
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Pending
           </div>
@@ -120,24 +120,24 @@ exports[`Steps[Base] should render correctly about description 1`] = `
   style="width: 500px;"
 >
   <div
-    class="so-steps-steps so-steps-default so-steps-horizontal"
+    class="cbxowl7 ck8p0d1 c-pjlhrk"
   >
     <div
-      class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label so-steps-width-description"
+      class="c-teh5l4 c8jekhr c8jekhr chfnfn6 c-50wp32"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-finish"
+          class="c-tenvtn c8jekhr"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               aria-hidden="true"
@@ -154,15 +154,15 @@ exports[`Steps[Base] should render correctly about description 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Succeeded
           </div>
           <div
-            class="so-steps-description"
+            class="cuvamz4"
           >
             This is a description
           </div>
@@ -170,35 +170,35 @@ exports[`Steps[Base] should render correctly about description 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-process so-steps-vertical-label so-steps-width-description"
+      class="c-teh5l4 c-afbk59 chfnfn6 c-50wp32"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-process"
+          class="c-tenvtn c-afbk59"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             2
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Processing
           </div>
           <div
-            class="so-steps-description"
+            class="cuvamz4"
           >
             This is a description
           </div>
@@ -206,35 +206,35 @@ exports[`Steps[Base] should render correctly about description 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-wait so-steps-vertical-label so-steps-width-description"
+      class="c-teh5l4 c-teezmn chfnfn6 c-50wp32"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-wait"
+          class="c-tenvtn c-teezmn"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             3
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Pending
           </div>
           <div
-            class="so-steps-description"
+            class="cuvamz4"
           >
             This is a description
           </div>
@@ -253,24 +253,24 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
     style="width: 500px; display: flex; gap: 32px; margin-bottom: 24px; align-items: flex-start;"
   >
     <div
-      class="so-steps-steps so-steps-default so-steps-vertical"
+      class="cbxowl7 ck8p0d1 cfrqntu"
     >
       <div
-        class="so-steps-step so-steps-finish so-steps-finish so-steps-horizontal-label"
+        class="c-teh5l4 c8jekhr c8jekhr c-1e6t4s"
       >
         <div
-          class="so-steps-default"
+          class="ck8p0d1"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-finish"
+            class="c-tenvtn c8jekhr"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             >
               <svg
                 aria-hidden="true"
@@ -287,10 +287,10 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
             </span>
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Succeeded
             </div>
@@ -298,30 +298,30 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-process so-steps-horizontal-label"
+        class="c-teh5l4 c-afbk59 c-1e6t4s"
       >
         <div
-          class="so-steps-default"
+          class="ck8p0d1"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-process"
+            class="c-tenvtn c-afbk59"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             >
               2
             </span>
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Processing
             </div>
@@ -329,30 +329,30 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-wait so-steps-horizontal-label"
+        class="c-teh5l4 c-teezmn c-1e6t4s"
       >
         <div
-          class="so-steps-default"
+          class="ck8p0d1"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-wait"
+            class="c-tenvtn c-teezmn"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             >
               3
             </span>
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Pending
             </div>
@@ -361,24 +361,24 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-steps so-steps-default so-steps-vertical"
+      class="cbxowl7 ck8p0d1 cfrqntu"
     >
       <div
-        class="so-steps-step so-steps-finish so-steps-finish so-steps-horizontal-label so-steps-width-description"
+        class="c-teh5l4 c8jekhr c8jekhr c-1e6t4s c-50wp32"
       >
         <div
-          class="so-steps-default"
+          class="ck8p0d1"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-finish"
+            class="c-tenvtn c8jekhr"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             >
               <svg
                 aria-hidden="true"
@@ -395,15 +395,15 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
             </span>
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Succeeded
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>
@@ -411,35 +411,35 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-process so-steps-horizontal-label so-steps-width-description"
+        class="c-teh5l4 c-afbk59 c-1e6t4s c-50wp32"
       >
         <div
-          class="so-steps-default"
+          class="ck8p0d1"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-process"
+            class="c-tenvtn c-afbk59"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             >
               2
             </span>
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Processing
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>
@@ -447,35 +447,35 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-wait so-steps-horizontal-label so-steps-width-description"
+        class="c-teh5l4 c-teezmn c-1e6t4s c-50wp32"
       >
         <div
-          class="so-steps-default"
+          class="ck8p0d1"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-wait"
+            class="c-tenvtn c-teezmn"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             >
               3
             </span>
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Pending
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>
@@ -488,31 +488,31 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
     style="width: 500px; display: flex; gap: 32px; align-items: flex-start;"
   >
     <div
-      class="so-steps-steps so-steps-dot so-steps-vertical"
+      class="cbxowl7 c-cel9er cfrqntu"
     >
       <div
-        class="so-steps-step so-steps-finish so-steps-finish so-steps-horizontal-label"
+        class="c-teh5l4 c8jekhr c8jekhr c-1e6t4s"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-finish"
+            class="c-tenvtn c8jekhr"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Succeeded
             </div>
@@ -520,28 +520,28 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-process so-steps-horizontal-label"
+        class="c-teh5l4 c-afbk59 c-1e6t4s"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-process"
+            class="c-tenvtn c-afbk59"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Processing
             </div>
@@ -549,28 +549,28 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-wait so-steps-horizontal-label"
+        class="c-teh5l4 c-teezmn c-1e6t4s"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-wait"
+            class="c-tenvtn c-teezmn"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Pending
             </div>
@@ -579,36 +579,36 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-steps so-steps-dot so-steps-vertical"
+      class="cbxowl7 c-cel9er cfrqntu"
     >
       <div
-        class="so-steps-step so-steps-finish so-steps-finish so-steps-horizontal-label so-steps-width-description"
+        class="c-teh5l4 c8jekhr c8jekhr c-1e6t4s c-50wp32"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-finish"
+            class="c-tenvtn c8jekhr"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Succeeded
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>
@@ -616,33 +616,33 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-process so-steps-horizontal-label so-steps-width-description"
+        class="c-teh5l4 c-afbk59 c-1e6t4s c-50wp32"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-process"
+            class="c-tenvtn c-afbk59"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Processing
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>
@@ -650,33 +650,33 @@ exports[`Steps[Base] should render correctly about direction 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-wait so-steps-horizontal-label so-steps-width-description"
+        class="c-teh5l4 c-teezmn c-1e6t4s c-50wp32"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-wait"
+            class="c-tenvtn c-teezmn"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Pending
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>
@@ -693,24 +693,24 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
   style="width: 100%; overflow: auto;"
 >
   <div
-    class="so-steps-steps so-steps-default so-steps-horizontal"
+    class="cbxowl7 ck8p0d1 c-pjlhrk"
   >
     <div
-      class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label"
+      class="c-teh5l4 c8jekhr c8jekhr chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-finish"
+          class="c-tenvtn c8jekhr"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <span
               style="display: inline-block; width: 100%; height: 100%; background: rgb(0, 168, 95); overflow: hidden; border-radius: 50%;"
@@ -733,10 +733,10 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Step1
           </div>
@@ -744,21 +744,21 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-process so-steps-vertical-label"
+      class="c-teh5l4 c-afbk59 chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-process"
+          class="c-tenvtn c-afbk59"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <span
               style="display: inline-block; width: 100%; height: 100%; background: rgb(245, 108, 10); overflow: hidden; border-radius: 50%;"
@@ -781,10 +781,10 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Step2
           </div>
@@ -792,21 +792,21 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-wait so-steps-vertical-label"
+      class="c-teh5l4 c-teezmn chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-wait"
+          class="c-tenvtn c-teezmn"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               fill="none"
@@ -839,10 +839,10 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Step3
           </div>
@@ -850,21 +850,21 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-wait so-steps-vertical-label"
+      class="c-teh5l4 c-teezmn chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-wait"
+          class="c-tenvtn c-teezmn"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               fill="none"
@@ -897,10 +897,10 @@ exports[`Steps[Base] should render correctly about icon 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Step4
           </div>
@@ -916,19 +916,19 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
   style="width: 500px;"
 >
   <div
-    class="so-steps-steps so-steps-default so-steps-horizontal"
+    class="cbxowl7 ck8p0d1 c-pjlhrk"
   >
     <div
-      class="so-steps-step so-steps-finish so-steps-finish so-steps-horizontal-label so-steps-width-description"
+      class="c-teh5l4 c8jekhr c8jekhr c-1e6t4s c-50wp32"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-icon so-steps-finish"
+          class="c-tenvtn c8jekhr"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               aria-hidden="true"
@@ -945,15 +945,15 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Succeeded
           </div>
           <div
-            class="so-steps-description"
+            class="cuvamz4"
           >
             This is a description
           </div>
@@ -961,30 +961,30 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-process so-steps-horizontal-label so-steps-width-description"
+      class="c-teh5l4 c-afbk59 c-1e6t4s c-50wp32"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-icon so-steps-process"
+          class="c-tenvtn c-afbk59"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             2
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Processing
           </div>
           <div
-            class="so-steps-description"
+            class="cuvamz4"
           >
             This is a description
           </div>
@@ -992,30 +992,30 @@ exports[`Steps[Base] should render correctly about labelPlacement 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-wait so-steps-horizontal-label so-steps-width-description"
+      class="c-teh5l4 c-teezmn c-1e6t4s c-50wp32"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-icon so-steps-wait"
+          class="c-tenvtn c-teezmn"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             3
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Pending
           </div>
           <div
-            class="so-steps-description"
+            class="cuvamz4"
           >
             This is a description
           </div>
@@ -1031,25 +1031,25 @@ exports[`Steps[Base] should render correctly about size 1`] = `
   style="width: 500px;"
 >
   <div
-    class="so-steps-steps so-steps-default so-steps-small so-steps-horizontal"
+    class="cbxowl7 ck8p0d1 cbxkcm3 c-pjlhrk"
     style="margin-bottom: 32px;"
   >
     <div
-      class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label"
+      class="c-teh5l4 c8jekhr c8jekhr chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-finish"
+          class="c-tenvtn c8jekhr"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               aria-hidden="true"
@@ -1066,10 +1066,10 @@ exports[`Steps[Base] should render correctly about size 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Succeeded
           </div>
@@ -1077,30 +1077,30 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-process so-steps-vertical-label"
+      class="c-teh5l4 c-afbk59 chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-process"
+          class="c-tenvtn c-afbk59"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             2
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Processing
           </div>
@@ -1108,30 +1108,30 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-wait so-steps-vertical-label"
+      class="c-teh5l4 c-teezmn chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-wait"
+          class="c-tenvtn c-teezmn"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             3
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Pending
           </div>
@@ -1140,25 +1140,25 @@ exports[`Steps[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="so-steps-steps so-steps-default so-steps-horizontal"
+    class="cbxowl7 ck8p0d1 c-pjlhrk"
     style="margin-bottom: 32px;"
   >
     <div
-      class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label"
+      class="c-teh5l4 c8jekhr c8jekhr chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-finish"
+          class="c-tenvtn c8jekhr"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               aria-hidden="true"
@@ -1175,10 +1175,10 @@ exports[`Steps[Base] should render correctly about size 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Succeeded
           </div>
@@ -1186,30 +1186,30 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-process so-steps-vertical-label"
+      class="c-teh5l4 c-afbk59 chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-process"
+          class="c-tenvtn c-afbk59"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             2
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Processing
           </div>
@@ -1217,30 +1217,30 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-wait so-steps-vertical-label"
+      class="c-teh5l4 c-teezmn chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-wait"
+          class="c-tenvtn c-teezmn"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             3
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Pending
           </div>
@@ -1249,24 +1249,24 @@ exports[`Steps[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="so-steps-steps so-steps-default so-steps-large so-steps-horizontal"
+    class="cbxowl7 ck8p0d1 cbtih3j c-pjlhrk"
   >
     <div
-      class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label"
+      class="c-teh5l4 c8jekhr c8jekhr chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-finish"
+          class="c-tenvtn c8jekhr"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               aria-hidden="true"
@@ -1283,10 +1283,10 @@ exports[`Steps[Base] should render correctly about size 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Succeeded
           </div>
@@ -1294,30 +1294,30 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-process so-steps-vertical-label"
+      class="c-teh5l4 c-afbk59 chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-process"
+          class="c-tenvtn c-afbk59"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             2
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Processing
           </div>
@@ -1325,30 +1325,30 @@ exports[`Steps[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-wait so-steps-vertical-label"
+      class="c-teh5l4 c-teezmn chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-wait"
+          class="c-tenvtn c-teezmn"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             3
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Pending
           </div>
@@ -1364,24 +1364,24 @@ exports[`Steps[Base] should render correctly about status 1`] = `
   style="width: 500px;"
 >
   <div
-    class="so-steps-steps so-steps-default so-steps-horizontal"
+    class="cbxowl7 ck8p0d1 c-pjlhrk"
   >
     <div
-      class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label"
+      class="c-teh5l4 c8jekhr c8jekhr chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-finish"
+          class="c-tenvtn c8jekhr"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               aria-hidden="true"
@@ -1398,10 +1398,10 @@ exports[`Steps[Base] should render correctly about status 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Succeeded
           </div>
@@ -1409,21 +1409,21 @@ exports[`Steps[Base] should render correctly about status 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-error so-steps-vertical-label"
+      class="c-teh5l4 cbpyrx8 chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-error"
+          class="c-tenvtn cbpyrx8"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             <svg
               aria-hidden="true"
@@ -1438,10 +1438,10 @@ exports[`Steps[Base] should render correctly about status 1`] = `
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Error
           </div>
@@ -1449,30 +1449,30 @@ exports[`Steps[Base] should render correctly about status 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-step so-steps-wait so-steps-vertical-label"
+      class="c-teh5l4 c-teezmn chfnfn6"
     >
       <div
-        class="so-steps-default"
+        class="ck8p0d1"
       >
         <div
-          class="so-steps-tail"
+          class="c-tegwlg"
         >
            
         </div>
         <div
-          class="so-steps-icon so-steps-wait"
+          class="c-tenvtn c-teezmn"
         >
           <span
-            class="so-steps-icon-wrapper"
+            class="c45t0a6"
           >
             3
           </span>
         </div>
         <div
-          class="so-steps-content"
+          class="cafh3rh"
         >
           <div
-            class="so-steps-title"
+            class="cby1zcc"
           >
             Pending
           </div>
@@ -1491,32 +1491,32 @@ exports[`Steps[Base] should render correctly about type 1`] = `
     style="width: 500px;"
   >
     <div
-      class="so-steps-steps so-steps-dot so-steps-horizontal"
+      class="cbxowl7 c-cel9er c-pjlhrk"
       style="margin-bottom: 32px;"
     >
       <div
-        class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label"
+        class="c-teh5l4 c8jekhr c8jekhr chfnfn6"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-finish"
+            class="c-tenvtn c8jekhr"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Succeeded
             </div>
@@ -1524,28 +1524,28 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-process so-steps-vertical-label"
+        class="c-teh5l4 c-afbk59 chfnfn6"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-process"
+            class="c-tenvtn c-afbk59"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Complete information
             </div>
@@ -1553,28 +1553,28 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-wait so-steps-vertical-label"
+        class="c-teh5l4 c-teezmn chfnfn6"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-wait"
+            class="c-tenvtn c-teezmn"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Pending
             </div>
@@ -1583,37 +1583,37 @@ exports[`Steps[Base] should render correctly about type 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-steps so-steps-dot so-steps-horizontal"
+      class="cbxowl7 c-cel9er c-pjlhrk"
       style="margin-bottom: 32px;"
     >
       <div
-        class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label so-steps-width-description"
+        class="c-teh5l4 c8jekhr c8jekhr chfnfn6 c-50wp32"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-finish"
+            class="c-tenvtn c8jekhr"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Succeeded
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>
@@ -1621,33 +1621,33 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-process so-steps-vertical-label so-steps-width-description"
+        class="c-teh5l4 c-afbk59 chfnfn6 c-50wp32"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-process"
+            class="c-tenvtn c-afbk59"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Complete information
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               Please fill in your home address and phone number
             </div>
@@ -1655,33 +1655,33 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-wait so-steps-vertical-label so-steps-width-description"
+        class="c-teh5l4 c-teezmn chfnfn6 c-50wp32"
       >
         <div
-          class="so-steps-dot"
+          class="c-cel9er"
         >
           <div
-            class="so-steps-tail"
+            class="c-tegwlg"
           >
              
           </div>
           <div
-            class="so-steps-icon so-steps-wait"
+            class="c-tenvtn c-teezmn"
           >
             <span
-              class="so-steps-icon-wrapper"
+              class="c45t0a6"
             />
           </div>
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Pending
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>
@@ -1694,20 +1694,20 @@ exports[`Steps[Base] should render correctly about type 1`] = `
     style="min-width: 700px;"
   >
     <div
-      class="so-steps-steps so-steps-arrow so-steps-horizontal"
+      class="cbxowl7 cbnrljx c-pjlhrk"
       style="margin-bottom: 32px;"
     >
       <div
-        class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label"
+        class="c-teh5l4 c8jekhr c8jekhr chfnfn6"
       >
         <div
-          class="so-steps-arrow"
+          class="cbnrljx"
         >
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Succeeded
             </div>
@@ -1715,16 +1715,16 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-process so-steps-vertical-label"
+        class="c-teh5l4 c-afbk59 chfnfn6"
       >
         <div
-          class="so-steps-arrow"
+          class="cbnrljx"
         >
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Complete information
             </div>
@@ -1732,16 +1732,16 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-wait so-steps-vertical-label"
+        class="c-teh5l4 c-teezmn chfnfn6"
       >
         <div
-          class="so-steps-arrow"
+          class="cbnrljx"
         >
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Pending
             </div>
@@ -1750,24 +1750,24 @@ exports[`Steps[Base] should render correctly about type 1`] = `
       </div>
     </div>
     <div
-      class="so-steps-steps so-steps-arrow so-steps-horizontal"
+      class="cbxowl7 cbnrljx c-pjlhrk"
     >
       <div
-        class="so-steps-step so-steps-finish so-steps-finish so-steps-vertical-label so-steps-width-description"
+        class="c-teh5l4 c8jekhr c8jekhr chfnfn6 c-50wp32"
       >
         <div
-          class="so-steps-arrow"
+          class="cbnrljx"
         >
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Succeeded
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>
@@ -1775,21 +1775,21 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-process so-steps-vertical-label so-steps-width-description"
+        class="c-teh5l4 c-afbk59 chfnfn6 c-50wp32"
       >
         <div
-          class="so-steps-arrow"
+          class="cbnrljx"
         >
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Complete information
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               Please fill in your home address and phone number
             </div>
@@ -1797,21 +1797,21 @@ exports[`Steps[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="so-steps-step so-steps-wait so-steps-vertical-label so-steps-width-description"
+        class="c-teh5l4 c-teezmn chfnfn6 c-50wp32"
       >
         <div
-          class="so-steps-arrow"
+          class="cbnrljx"
         >
           <div
-            class="so-steps-content"
+            class="cafh3rh"
           >
             <div
-              class="so-steps-title"
+              class="cby1zcc"
             >
               Pending
             </div>
             <div
-              class="so-steps-description"
+              class="cuvamz4"
             >
               This is a description
             </div>

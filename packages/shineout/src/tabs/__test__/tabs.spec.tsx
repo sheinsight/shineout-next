@@ -337,7 +337,6 @@ describe('Tabs[Collapsible/defaultCollapsed]', () => {
       await delay(500);
     });
     styleTest(panel, 'height: auto;');
-    screen.debug();
   });
   // TODO: test collapsed time
 });
