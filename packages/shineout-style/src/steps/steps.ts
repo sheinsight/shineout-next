@@ -202,7 +202,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '& $tail': {
       width: 1,
       height: '100%',
-      left: 13.5,
+      left: 13,
       '&:after': {
         position: 'relative',
         width: 1,
@@ -378,7 +378,11 @@ const stepsStyle: JsStyles<StepsClassType> = {
       },
       '& $process': {
         '& $icon': {
-          padding: '7px 9px',
+          marginTop: 0,
+          padding: '7px 8px',
+        },
+        '& $tail': {
+          top: 22,
         },
       },
       '& $tail': {
@@ -410,25 +414,33 @@ const stepsStyle: JsStyles<StepsClassType> = {
         whiteSpace: 'normal',
       },
       '& $process': {
+        '& $tail': {
+          width: 'calc(100% - 4px)',
+        },
         '& $icon': {
           marginLeft: 73,
         },
       },
     },
     '& $process': {
+      '& $icon': {
+        marginTop: 6,
+      },
+      // 抵消 1px
+      '& $title': {
+        marginTop: -1,
+      },
       '& $iconWrapper': {
-        width: 10,
-        height: 10,
+        width: 11,
+        height: 11,
       },
     },
     '& $icon:not($process)': {
-      '& $iconWrapper': {
-        marginBottom: 1,
-      },
+      '& $iconWrapper': {},
     },
     '& $iconWrapper': {
-      width: 8,
-      height: 8,
+      width: 7,
+      height: 7,
     },
 
     '& $description': {
@@ -611,7 +623,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
       '& $tail': {
         // left: `calc(50% + ${Token.stepsIconWidth}/2 + 4px)`,
         left: 98,
-        top: 13.5,
+        top: 13,
         '&:after': {
           width: `calc(100% - ${Token.stepsIconWidth} + 4px)`,
         },
@@ -641,6 +653,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
     },
     '& $icon svg': {
       padding: 6,
+      boxSizing: 'content-box',
     },
     '& $horizontalLabel:not(:last-child)': {
       minWidth: 160,
