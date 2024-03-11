@@ -63,6 +63,7 @@ export type TreeSelectClasses = {
   columnsOption: string;
   columnsRadio: string;
   columnsCheckbox: string;
+  empty: string;
 };
 export type TreeSelectClassType = keyof TreeSelectClasses;
 
@@ -519,6 +520,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
     },
+  },
+  empty: {
+    color: token.selectPlaceholderColor,
   },
 };
 export default treeSelectStyle;

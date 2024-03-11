@@ -388,6 +388,8 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   loading: {
     padding: 10,
     color: token.cascaderPlaceholderColor,
+    display: 'flex',
+    justifyContent: 'center',
   },
   empty: {
     padding: `calc(${token.cascaderOptionPaddingY} + ${token.cascaderOptionInnerPaddingY}) calc(${token.cascaderOptionPaddingX} + ${token.cascaderOptionInnerPaddingX})`,

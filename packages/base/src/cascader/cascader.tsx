@@ -585,7 +585,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
     return (
       <div className={styles?.loading}>
-        <Spin jssStyle={jssStyle} size={14} style={{ margin: 'auto' }}></Spin>
+        <Spin jssStyle={jssStyle} size={14}></Spin>
       </div>
     );
   };

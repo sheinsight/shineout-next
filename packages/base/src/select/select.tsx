@@ -426,18 +426,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return datum.remove(item);
   };
 
-  const renderLoading = () => {
-    if (loading !== true) {
-      return loading;
-    }
-
-    return (
-      <div className={styles?.loading}>
-        <Spin jssStyle={jssStyle} size={14}></Spin>
-      </div>
-    );
-  };
-
   // innerTitle 模式
   const renderInnerTitle = useInnerTitle({
     open: open || !!value,
@@ -587,6 +575,18 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         closePop={closePop}
         renderItem={renderItem}
       ></TreeList>
+    );
+  };
+
+  const renderLoading = () => {
+    if (loading !== true) {
+      return loading;
+    }
+
+    return (
+      <div className={styles?.loading}>
+        <Spin jssStyle={jssStyle} size={14}></Spin>
+      </div>
     );
   };
 
