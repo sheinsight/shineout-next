@@ -12,7 +12,8 @@ export default () => {
   const iconWarpperStyle = {
     display: 'inline-flex',
     alignItems: 'center',
-    lineHeight: '22px',
+    // lineHeight: '22px',
+    height: '100%',
   };
 
   return (
