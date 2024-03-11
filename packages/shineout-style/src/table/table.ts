@@ -107,8 +107,8 @@ const tableStyle: JsStyles<TableClassType> = {
           top: 0,
           right: 0,
           bottom: 0,
-          width: '1px',
           background: token.tableCellBorderColor,
+          borderLeft: `1px solid ${token.tableCellBorderColor}`,
         },
       },
 
@@ -136,6 +136,9 @@ const tableStyle: JsStyles<TableClassType> = {
       '& tfoot td': {
         background: token.tableTfootBackgroundColor,
         color: token.tableTfootFontColor,
+      },
+      '&bordered tr:last-child td': {
+        borderBottom: 'none',
       },
     },
   },
@@ -177,8 +180,7 @@ const tableStyle: JsStyles<TableClassType> = {
       bottom: 0,
       left: 0,
       right: 0,
-      height: '1px',
-      background: token.tableCellBorderColor,
+      borderTop: `1px solid ${token.tableCellBorderColor}`,
     },
   },
   headWrapper: {
