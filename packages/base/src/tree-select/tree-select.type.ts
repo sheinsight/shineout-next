@@ -6,6 +6,9 @@ import { TagClasses } from '../tag/tag.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 import { CommonType } from '../common/type';
 import { InnerTitleClasses } from '../common/use-inner-title';
+import { BaseTipProps } from '../common/use-tip';
+import { PopoverClasses } from '../popover/popover.type';
+import { SpinClasses } from '../spin/spin.type';
 
 export type JssStyleType = {
   virtualScroll?: () => VirtualScrollClasses;
@@ -14,6 +17,8 @@ export type JssStyleType = {
   select?: () => SelectClasses;
   tree?: () => TreeClasses;
   innerTitle?: () => InnerTitleClasses;
+  popover?: () => PopoverClasses;
+  spin?: () => SpinClasses;
 };
 
 export type TreeModeType = 0 | 1 | 2 | 3 | 4;
@@ -33,8 +38,21 @@ export interface ComponentRef<DataItem, Value> {
 }
 
 export interface TreeSelectProps<DataItem, Value>
-  extends Pick<CommonType, 'className' | 'style' | 'size'>,
-    Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
+  extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
+    Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
+    BaseTipProps {
+  /**
+   * @en custom empty copy
+   * @cn 自定义 empty 文案
+   */
+  emptyText?: string;
+  /**
+   * @en When it is true, a default [Spin](/components/Spin) component will be displayed, a custom loading icon can be passed in to replace.
+   * @cn 数据加载中，为true时会展示一个默认的 [Spin](/components/Spin) 组件，可以传入一个自定义的Spin代替
+   * @override boolean | ReactNode
+   * @default false
+   */
+  loading?: boolean | React.ReactNode;
   jssStyle?: JssStyleType;
   /**
    * @en placeholder when value is empty
@@ -66,11 +84,6 @@ export interface TreeSelectProps<DataItem, Value>
    * @cn 渲染未匹配值的方式
    */
   renderUnmatched?: (data: ValueItem<Value>) => React.ReactNode;
-  /**
-   * @en inner title
-   * @cn 内嵌标题
-   */
-  innerTitle?: React.ReactNode;
   /**
    * @en data source
    * @cn 数据源

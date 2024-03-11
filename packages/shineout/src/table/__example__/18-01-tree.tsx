@@ -178,7 +178,7 @@ const columns: TableColumnItem[] = [
 ];
 
 const App: React.FC = () => (
-  <Table bordered virtual height={300} keygen='id' columns={columns} data={data} />
+  <Table bordered height={300} keygen='id' columns={columns} data={data} />
 );
 
 export default App;

@@ -102,7 +102,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
     if (loading && children === undefined) {
       return (
         <span className={classNames(styles.optionIcon)} style={{ paddingTop: 2 }}>
-          <Spin jssStyle={jssStyle} size={10} name='ring' />
+          <Spin jssStyle={jssStyle} size={10} />
         </span>
       );
     }

@@ -11,6 +11,7 @@ import { CascaderClasses } from '@sheinx/shineout-style';
 import { RadioClasses } from '../radio/radio.type';
 import { SpinClasses } from '../spin/spin.type';
 import { InputClasses } from '../input/input.type';
+import { BaseTipProps } from '../common/use-tip';
 
 export type JssStyleType = {
   tag?: () => TagClasses;
@@ -26,8 +27,9 @@ export type JssStyleType = {
 };
 
 export interface CascaderProps<DataItem, Value extends KeygenResult[]>
-  extends Pick<CommonType, 'className' | 'style' | 'size'>,
-    Pick<AbsoluteListProps, 'absolute' | 'zIndex'> {
+  extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
+    Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
+    BaseTipProps {
   jssStyle?: JssStyleType;
   /**
    * @en Open multiple selection
@@ -246,11 +248,6 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    */
   underline?: boolean;
 
-  /**
-   * @en inner title
-   * @cn 内嵌标题
-   */
-  innerTitle?: React.ReactNode;
   /**
    * @en The maximum length of the input string in the Select input box
    * @cn Select 输入框输入字符串最大长度

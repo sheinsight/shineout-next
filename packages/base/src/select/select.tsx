@@ -22,9 +22,12 @@ import TreeList from './list-tree';
 import Icons from '../icons';
 import ColumnsList from './list-columns';
 import useWithFormConfig from '../common/use-with-form-config';
+import useTip from '../common/use-tip';
+import { getLocale, useConfig } from '../config';
 
 function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const props = useWithFormConfig(props0);
+  const { locale } = useConfig();
   const {
     jssStyle,
     className,
@@ -40,7 +43,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     innerTitle,
     underline,
     border = true,
-    status,
     columns = 1,
     columnsTitle,
     columnWidth = 160,
@@ -177,16 +179,25 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     position: positionProp,
   });
 
+  const tipNode = useTip({
+    popover: props.popover,
+    popoverProps: props.popoverProps,
+    error: props.error,
+    tip: props.tip,
+    focused,
+    rootRef: selectRef,
+    jssStyle: props.jssStyle,
+  });
+
   const rootClass = classNames(
     className,
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
-    !!open && styles?.wrapperFocus,
     disabled !== true && focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
-    status === 'error' && styles?.wrapperError,
+    (!!props.error || props.status === 'error') && styles?.wrapperError,
     clearable && styles?.clearable,
     !border && styles?.wrapperNoBorder,
     !!underline && styles?.wrapperUnderline,
@@ -415,18 +426,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return datum.remove(item);
   };
 
-  const renderLoading = () => {
-    if (loading !== true) {
-      return loading;
-    }
-
-    return (
-      <div className={styles?.loading}>
-        <Spin jssStyle={jssStyle} size={14} name='ring'></Spin>
-      </div>
-    );
-  };
-
   // innerTitle 模式
   const renderInnerTitle = useInnerTitle({
     open: open || !!value,
@@ -579,8 +578,33 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     );
   };
 
+  const renderLoading = () => {
+    if (loading !== true) {
+      return loading;
+    }
+
+    return (
+      <div className={styles?.loading}>
+        <Spin jssStyle={jssStyle} size={14}></Spin>
+      </div>
+    );
+  };
+
+  const renderEmpty = () => {
+    return (
+      <div className={styles?.option}>
+        <div className={styles?.optionInner}>
+          <span className={styles?.empty}>{props.emptyText || getLocale(locale, 'noData')}</span>
+        </div>
+      </div>
+    );
+  };
+
   const renderOptions = () => {
     if (loading) return renderLoading();
+
+    const isEmpty = !props.treeData?.length && !props.data?.length;
+    if (isEmpty) return renderEmpty();
 
     const options = 'treeData' in props ? renderTreeList() : renderList();
     if (renderOptionList) {
@@ -624,7 +648,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     <div
       ref={selectRef}
       tabIndex={disabled === true ? -1 : 0}
-      {...util.getDataAttribute({type: 'input'})}
+      {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}
       onMouseEnter={handleMouseEnter}
@@ -634,6 +658,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       onBlur={handleBlur}
       onFocus={handleFocus}
     >
+      {tipNode}
       {renderResult()}
       {renderIcon()}
       <AbsoluteList

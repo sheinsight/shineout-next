@@ -56,7 +56,7 @@ const UploadButton = <T,>(props: UploadButtonProps<T>) => {
     ) : (
       <span>
         <span className={uploadClasses?.buttonBgSpin}>
-          <Spin jssStyle={props.jssStyle} size={10} name='ring' color={color} />
+          <Spin jssStyle={props.jssStyle} size={10} color={color} />
         </span>
         {typeof loading === 'string' ? loading : placeholder}
       </span>

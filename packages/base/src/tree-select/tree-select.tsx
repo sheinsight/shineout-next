@@ -17,9 +17,12 @@ import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
 import { TreeContextProps } from '../tree/tree-context.type';
 import Result from '../select/result';
+import Spin from '../spin';
 import Icons from '../icons';
 import Tree from '../tree';
 import useWithFormConfig from '../common/use-with-form-config';
+import useTip from '../common/use-tip';
+import { getLocale, useConfig } from '../config';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
 
@@ -27,6 +30,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
   const props = useWithFormConfig(props0);
+  const { locale } = useConfig();
   const {
     jssStyle,
     className,
@@ -154,6 +158,16 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     position: positionProp,
   });
 
+  const tipNode = useTip({
+    popover: props.popover,
+    popoverProps: props.popoverProps,
+    error: props.error,
+    tip: props.tip,
+    focused,
+    rootRef: treeSelectRef,
+    jssStyle: props.jssStyle,
+  });
+
   const rootClass = classNames(
     className,
     styles?.wrapper,
@@ -163,7 +177,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     innerTitle && styles?.wrapperInnerTitle,
     size === 'small' && styles?.wrapperSmall,
     size === 'large' && styles?.wrapperLarge,
-    // status === 'error' && styles?.wrapperError,
+    (!!props.error || props.status === 'error') && styles?.wrapperError,
     clearable && styles?.clearable,
     !border && styles?.wrapperNoBorder,
     !!underline && styles?.wrapperUnderline,
@@ -460,8 +474,33 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
     return <span>{items}</span>;
   };
+  const renderLoading = () => {
+    if (props.loading !== true) {
+      return props.loading;
+    }
 
+    return (
+      <div className={styles?.loading}>
+        <Spin jssStyle={jssStyle} size={14}></Spin>
+      </div>
+    );
+  };
+
+  const renderEmpty = () => {
+    return (
+      <div className={styles?.option}>
+        <div className={styles?.optionInner}>
+          <span className={styles?.empty}>{props.emptyText || getLocale(locale, 'noData')}</span>
+        </div>
+      </div>
+    );
+  };
   const renderList = () => {
+    if (props.loading) return renderLoading();
+
+    const isEmpty = !props.data?.length;
+    if (isEmpty) return renderEmpty();
+
     const treeProps: any = {};
 
     if (multiple) {
@@ -518,7 +557,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     <div
       ref={treeSelectRef}
       tabIndex={disabled === true ? -1 : 0}
-      {...util.getDataAttribute({ type: 'input' })}
+      {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}
       onBlur={handleBlur}
@@ -527,6 +566,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      {tipNode}
       {renderResult()}
       {renderIcon()}
       <AbsoluteList

@@ -10,6 +10,7 @@ import Icons from '../icons';
 import Result from './result';
 import useInnerTitle from '../common/use-inner-title';
 import useWithFormConfig from '../common/use-with-form-config';
+import useTip from '../common/use-tip';
 
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
 const horizontalPosition = ['left-top', 'left-bottom', 'right-top', 'right-bottom'];
@@ -87,6 +88,16 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
     disabled: disabledStatus === 'all',
     trigger: 'click',
     position: listPosition as DatePickerProps<Value>['position'],
+  });
+
+  const tipNode = useTip({
+    popover: props.popover,
+    popoverProps: props.popoverProps,
+    error: props.error,
+    tip: props.tip,
+    focused,
+    rootRef: targetRef,
+    jssStyle: props.jssStyle,
   });
 
   const hasValue = Array.isArray(inputAbleResult.value)
@@ -196,7 +207,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
 
   return (
     <div
-      {...util.getDataAttribute({ type: 'input' })}
+      {...util.getDataAttribute({ ['input-border']: 'true', type })}
       className={classNames(
         props.className,
         styles?.wrapper,
@@ -205,14 +216,14 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
         size === 'large' && styles?.wrapperLarge,
         focused && styles?.wrapperFocus,
         disabledStatus === 'all' && styles?.wrapperDisabled,
-        props.status === 'error' && styles?.wrapperError,
+        (!!props.error || props.status === 'error') && styles?.wrapperError,
         range && styles?.wrapperRange,
         !border && styles?.wrapperNoBorder,
         !!props.underline && styles?.wrapperUnderline,
       )}
-      {...util.getDataAttribute({ type })}
       style={{ width: props.width, ...props.style }}
     >
+      {tipNode}
       {renderResult()}
       <AbsoluteList
         parentElement={targetRef.current}

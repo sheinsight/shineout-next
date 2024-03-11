@@ -5,6 +5,7 @@ import border from '../input/input-border';
 export type CascaderClasses = {
   empty: string;
   wrapper: string;
+  wrapperEmpty: string;
   wrapperDisabled: string;
   wrapperSmall: string;
   wrapperLarge: string;
@@ -62,6 +63,7 @@ export type CascaderClasses = {
   optionHover: string;
   optionActive: string;
   optionDisabled: string;
+
 };
 export type CascaderClassType = keyof CascaderClasses;
 
@@ -110,7 +112,7 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const cascaderStyle: JsStyles<CascaderClassType> = {
-  empty: {},
+  wrapperEmpty:  {},
   wrapper: {
     display: 'inline-block',
     position: 'relative',
@@ -162,7 +164,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       '& $clearIcon': {
         display: 'inline-block',
       },
-      '&$clearable:not($empty)': {
+      '&$clearable:not($wrapperEmpty)': {
         '& :not($compressedIcon)$arrowIcon': {
           display: 'none',
         },
@@ -385,6 +387,13 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   loading: {
     padding: 10,
+    color: token.cascaderPlaceholderColor,
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  empty: {
+    padding: `calc(${token.cascaderOptionPaddingY} + ${token.cascaderOptionInnerPaddingY}) calc(${token.cascaderOptionPaddingX} + ${token.cascaderOptionInnerPaddingX})`,
+    color: token.cascaderPlaceholderColor,
   },
   checkedIcon: {
     right: 8,

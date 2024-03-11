@@ -210,6 +210,9 @@ importers:
       classnames:
         specifier: ^2.0.0
         version: 2.3.2
+      core-js:
+        specifier: '>=3'
+        version: 3.33.3
       immer:
         specifier: ^10.0.0
         version: 10.0.2
@@ -226,6 +229,9 @@ importers:
 
   packages/hooks:
     dependencies:
+      core-js:
+        specifier: '>=3'
+        version: 3.33.3
       date-fns:
         specifier: 2.30.0
         version: 2.30.0
@@ -272,6 +278,9 @@ importers:
       classnames:
         specifier: ^2.0.0
         version: 2.3.2
+      core-js:
+        specifier: '>=3'
+        version: 3.33.3
       deep-eql:
         specifier: ^4.0.0
         version: 4.0.0
@@ -297,6 +306,9 @@ importers:
       '@sheinx/theme':
         specifier: workspace:*
         version: link:../theme
+      core-js:
+        specifier: '>=3'
+        version: 3.33.3
       jss:
         specifier: 10.9.2
         version: 10.9.2
@@ -342,6 +354,10 @@ importers:
         version: 5.2.2
 
   packages/theme:
+    dependencies:
+      core-js:
+        specifier: '>=3'
+        version: 3.33.3
     devDependencies:
       '@types/node':
         specifier: ^20.4.0
