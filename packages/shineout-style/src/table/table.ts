@@ -92,7 +92,7 @@ const tableStyle: JsStyles<TableClassType> = {
       borderCollapse: 'separate',
       borderSpacing: 0,
       '& th, & td': {
-        wordBreak: 'normal',
+        wordBreak: 'break-all',
         position: 'relative',
         borderBottom: `1px solid ${token.tableCellBorderColor}`,
         boxSizing: 'border-box',
