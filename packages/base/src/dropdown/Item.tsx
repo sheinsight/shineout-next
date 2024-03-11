@@ -1,3 +1,5 @@
+"use client"
+
 import React, { cloneElement, isValidElement } from 'react';
 import { util } from '@sheinx/hooks';
 import { DropdownNode, ItemProps } from './dropdown.type';

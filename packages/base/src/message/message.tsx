@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 import Alert from '../alert';
 import { MessageItemType, MessageProps } from './message.type';
@@ -139,11 +140,10 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
 
   addMessage(msg: Omit<MessageItemType, 'id'>) {
     const id = getUidStr();
-    this.setState(
-      produce((state) => {
-        state.messages.push(Object.assign({ id }, msg));
-      }),
-    );
+    const newState = produce(this.state, (state) => {
+      state.messages.push(Object.assign({ id }, msg));
+    });
+    this.setState(newState);
 
     if (msg.duration > 0) {
       const closeTimeDelay = setTimeout(() => {

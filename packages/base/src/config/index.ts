@@ -41,14 +41,14 @@ subscribe(state, () => {
 export function getDefaultContainer() {
   if (util.isFunc(config.popupContainer)) {
     const container = config.popupContainer();
-    if (container instanceof HTMLElement) {
+    if (util.isDomElement(container)) {
       return container;
     }
   }
 
-  if (config.popupContainer instanceof HTMLElement) return config.popupContainer;
+  if (util.isDomElement(config.popupContainer)) return config.popupContainer;
 
-  return document.body;
+  return util.isBrowser() ? document.body : null;
 }
 
 export const useConfig = (): Snapshot<ConfigOption> => {
