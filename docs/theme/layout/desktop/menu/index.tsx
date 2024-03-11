@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react';
 import classnames from 'classnames';
 import { useSnapshot } from 'valtio';
 import store, { Menu, dispatch } from '../../../store';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Locale from '../../../locales';
 import { setConfig } from 'shineout';
 
@@ -13,9 +13,9 @@ const MenuComponent = () => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
-  const params = useParams();
+  // const params = useParams();
   const docsLocale = Locale({ locale: state.locales });
-  const lan = params.lan === 'en' ? 'en-US' : 'zh-CN';
+  // const lan = params.lan === 'en' ? 'en-US' : 'zh-CN';
   const groupLocale = docsLocale['shineout.menu.group'];
 
   const handleClick = (component: Menu) => {
@@ -27,7 +27,7 @@ const MenuComponent = () => {
     document.getElementById('layout')?.scrollTo(0, 0);
   };
   useEffect(() => {
-    setConfig({ locale: 'en-US' });
+    setConfig({ locale: 'en-US', spin: 'ring' });
   }, []);
 
   useEffect(() => {

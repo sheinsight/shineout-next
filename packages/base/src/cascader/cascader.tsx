@@ -11,6 +11,7 @@ import {
   ObjectKey,
   usePrevious,
 } from '@sheinx/hooks';
+import { Spin } from '../spin';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
@@ -22,6 +23,7 @@ import Result from '../select/result';
 import Icons from '../icons';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
+import { useConfig, getLocale } from '../config';
 
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
@@ -81,6 +83,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
+  const { locale } = useConfig();
 
   const [focused, setFocused] = useState(false);
   const [path, setPath] = useState<KeygenResult[]>([]);
@@ -109,6 +112,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     showHitDescendants: true,
     onAdvancedFilter: false,
   });
+
+  const isDataEmpty = !filterData || filterData.length === 0;
 
   const { datum, value, onChange } = useCascader({
     data,
@@ -170,7 +175,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const rootClass = classNames(
     className,
-    isEmpty && styles.empty,
+    isEmpty && styles.wrapperEmpty,
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
     focused && disabled !== true && styles?.wrapperFocus,
@@ -470,7 +475,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       </div>
     );
   };
-
   const renderList = () => {
     let tempData: any = filterData;
     const isMultiple = multiple === true || mode !== undefined;
@@ -574,7 +578,29 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
+  const renderLoading = () => {
+    if (loading !== true) {
+      return loading;
+    }
+
+    return (
+      <div className={styles?.loading}>
+        <Spin jssStyle={jssStyle} size={14} style={{ margin: 'auto' }}></Spin>
+      </div>
+    );
+  };
+
+  const renderEmpty = () => {
+    return <div className={styles?.empty}>{getLocale(locale, 'noData')}</div>;
+  };
+
   const renderPanel = () => {
+    if (props.loading) {
+      return renderLoading();
+    }
+    if (isDataEmpty) {
+      return renderEmpty();
+    }
     if (!filterText || (filterText && mode !== undefined) || (data && data.length === 0)) {
       return renderNormalList();
     }
@@ -609,6 +635,9 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
   }, []);
 
+  const shouldFullWidth = props.loading || isDataEmpty;
+  const pickerWrapperStyle = shouldFullWidth ? { minWidth: '100%' } : {};
+
   return (
     <div
       tabIndex={disabled === true ? -1 : 0}
@@ -626,7 +655,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       <AbsoluteList
         adjust
         focus={open}
-        fixedWidth
+        fixedWidth='min'
         absolute={absolute}
         zIndex={zIndex}
         position={position}
@@ -641,6 +670,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           display={'block'}
           type='scale-y'
           duration={'fast'}
+          style={pickerWrapperStyle}
         >
           {renderPanel()}
         </AnimationList>

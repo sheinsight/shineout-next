@@ -433,7 +433,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
     return (
       <div className={styles?.loading}>
-        <Spin jssStyle={jssStyle} size={14} name='ring'></Spin>
+        <Spin jssStyle={jssStyle} size={14}></Spin>
       </div>
     );
   };

@@ -128,7 +128,7 @@ const Image = (props: ImageProps) => {
   const renderDefaultPlaceholder = () => {
     return (
       <div className={defaultPlaceholderClass}>
-        <Spin jssStyle={jssStyle} name='ring' color='#B3B7C1' size={16}></Spin>
+        <Spin jssStyle={jssStyle} color='#B3B7C1' size={16}></Spin>
       </div>
     );
   };
