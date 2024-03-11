@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { IconCompProps } from './icon.type';
+import { util } from '@sheinx/hooks';
 
 function Icon(
   props: IconCompProps = {
@@ -66,19 +67,21 @@ function makeIcon(
     return null as unknown as React.ComponentType<IconCompProps>;
   }
   const ext = url.substr(url.lastIndexOf('.') + 1);
-  if (ext === 'css' && !links[url]) {
-    links[url] = true;
-    const link = document.createElement('link');
-    link.setAttribute('rel', 'stylesheet');
-    link.setAttribute('type', 'text/css');
-    link.setAttribute('href', url);
-    document.head.appendChild(link);
-  }
-  if (ext === 'js' && !scripts[url]) {
-    const script = document.createElement('script');
-    scripts[url] = script;
-    script.setAttribute('src', url);
-    document.body.appendChild(script);
+  if (util.isBrowser()) {
+    if (ext === 'css' && !links[url]) {
+      links[url] = true;
+      const link = document.createElement('link');
+      link.setAttribute('rel', 'stylesheet');
+      link.setAttribute('type', 'text/css');
+      link.setAttribute('href', url);
+      document.head.appendChild(link);
+    }
+    if (ext === 'js' && !scripts[url]) {
+      const script = document.createElement('script');
+      scripts[url] = script;
+      script.setAttribute('src', url);
+      document.body.appendChild(script);
+    }
   }
 
   const wrapperIcon = (props: IconCompProps) => (

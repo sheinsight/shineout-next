@@ -1,3 +1,4 @@
+"use client"
 import { usePersistFn } from '@sheinx/hooks';
 import React, { createContext, useMemo, useRef, useState, useContext } from 'react';
 

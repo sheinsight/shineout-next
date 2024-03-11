@@ -3,6 +3,7 @@ interface ObjectType {
 }
 
 function flexGapSupport() {
+  if (typeof window === 'undefined') return true;
   const flex = document.createElement('div');
   flex.style.display = 'flex';
   flex.style.flexDirection = 'column';
@@ -11,7 +12,7 @@ function flexGapSupport() {
   flex.appendChild(document.createElement('div'));
   flex.appendChild(document.createElement('div'));
 
-  document.body.appendChild(flex);
+  document.documentElement.appendChild(flex);
   const isSupported = flex.scrollHeight === 1;
   if (flex.parentNode) flex.parentNode.removeChild(flex);
 
