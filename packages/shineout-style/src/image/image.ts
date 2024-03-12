@@ -303,6 +303,10 @@ const ImageStyle: JsStyles<ImageClass> = {
     width: 32,
     height: 32,
     color: '#666C7C',
+    // hover
+    '&:hover': {
+      color: '#666C7C',
+    },
   },
 
   // gallery
