@@ -100,7 +100,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('keyboard');
   const [focused, setFocused] = useState(false);
-  const [enter, setEnter] = useState(false);
 
   const isKeydown = useRef(false);
   const isPreventBlur = useRef(false);
@@ -151,6 +150,19 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onChange,
   });
 
+  const checkEmpty = () => {
+    let isEmpty;
+    if (multiple) {
+      isEmpty = !value || (Array.isArray(value) && value.length === 0);
+    } else {
+      isEmpty = util.isEmpty(value);
+    }
+
+    return isEmpty;
+  };
+
+  const isEmpty = checkEmpty();
+
   const { data: groupData, groupKey } = useGroup({
     data: filterData,
     groupBy,
@@ -191,6 +203,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const rootClass = classNames(
     className,
+    isEmpty && styles.wrapperEmpty,
     styles?.wrapper,
     disabled === true && styles?.wrapperDisabled,
     disabled !== true && focused && styles?.wrapperFocus,
@@ -345,13 +358,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     }
   };
 
-  const handleMouseEnter = () => {
-    setEnter(true);
-  };
+  // const handleMouseEnter = () => {
+  //   setEnter(true);
+  // };
 
-  const handleMouseLeave = () => {
-    setEnter(false);
-  };
+  // const handleMouseLeave = () => {
+  //   setEnter(false);
+  // };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     // 回车或下箭头可打开下拉列表
@@ -435,22 +448,28 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   });
 
   const renderClearable = () => {
-    return (
-      <span className={styles.clearIcon} onClick={handleClear}>
-        {Icons.PcCloseCircleFill}
+    if (!multiple !== undefined && !showArrow) return null;
+    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
+    const arrow = (
+      <span
+        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        onClick={handleResultClick}
+      >
+        {defaultIcon}
       </span>
+    );
+    return (
+      <>
+        <span className={styles.clearIcon} onClick={handleClear}>
+          {Icons.PcCloseCircleFill}
+        </span>
+        {!open && !isEmpty && arrow}
+      </>
     );
   };
 
   const renderIcon = () => {
-    let isEmpty;
-    if (multiple) {
-      isEmpty = !value || (Array.isArray(value) && value.length === 0);
-    } else {
-      isEmpty = util.isEmpty(value);
-    }
-
-    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && enter && disabled !== true)) {
+    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && disabled !== true)) {
       return renderClearable();
     }
     if (!multiple && !showArrow) return null;
@@ -644,8 +663,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      // onMouseEnter={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
       onBlur={handleBlur}

@@ -51,6 +51,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const resultRef = useRef<HTMLDivElement>(null);
   const shouldResetMore = useRef(false);
+  const prevMore = useRef(more);
   const showInput = allowOnFilter && focus;
 
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -164,7 +165,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         className: classNames(styles.tag, styles.hideTag, resultClassName),
         children: content,
         onClick: handleClick,
-        ...util.getDataAttribute({type: disabled === true ? 'dark' : undefined})
+        ...util.getDataAttribute({ type: disabled === true ? 'dark' : undefined }),
       });
     }
 
@@ -173,12 +174,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         key={key}
         disabled={isDisabled}
         size={size}
+        style={{ opacity: more === index ? 0 : 1 }}
         className={classNames(styles.tag, resultClassName)}
         onClose={closeable && handleClose}
         onClick={handleClick}
         jssStyle={jssStyle as any}
         inlineStyle={true}
-        {...util.getDataAttribute({type: disabled === true ? 'dark' : undefined})}
+        {...util.getDataAttribute({ type: disabled === true ? 'dark' : undefined })}
       >
         {content}
       </Tag>
@@ -320,7 +322,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   useEffect(() => {
     if (!compressed) return;
     if (!resultRef.current) return;
-
     if (more === -1) {
       if (shouldResetMore.current && isArray(value) && (value || []).length) {
         shouldResetMore.current = false;
@@ -329,6 +330,15 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           resultRef.current,
           resultRef.current.querySelectorAll(`.${styles.tag}`),
         );
+
+        // 下次触发折叠逻辑的时候，将多余的 tag 隐藏，避免视图闪断
+        if (newMore !== prevMore.current && prevMore.current === -1 && newMore > prevMore.current) {
+          const tags = resultRef.current.querySelectorAll(`.${styles.tag}`);
+          tags.forEach((tag, index) => {
+            if (index >= newMore) tag.setAttribute('style', 'opacity: 0');
+          });
+        }
+        prevMore.current = newMore;
         setMore(newMore);
       }
     }

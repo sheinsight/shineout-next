@@ -4,6 +4,7 @@ import border from '../input/input-border';
 
 export type SelectClasses = {
   wrapper: string;
+  wrapperEmpty: string;
   wrapperDisabled: string;
   wrapperSmall: string;
   wrapperLarge: string;
@@ -114,6 +115,7 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const selectStyle: JsStyles<SelectClassType> = {
+  wrapperEmpty: {},
   wrapper: {
     display: 'inline-block',
     position: 'relative',
@@ -174,6 +176,24 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     '&:hover': {
       cursor: 'pointer',
+      '& $clearIcon': {
+        display: 'inline-block',
+      },
+
+      '&$clearable:not($wrapperEmpty)': {
+        '& :not($compressedIcon)$arrowIcon': {
+          display: 'none',
+        },
+        '& $compressedIcon': {
+          display: 'none',
+        },
+      },
+    },
+    // not wrapperFocus
+    '&:not($wrapperFocus)': {
+      '& $clearIcon': {
+        display: 'none',
+      },
     },
   },
   wrapperDisabled: {
@@ -557,7 +577,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   empty: {
     color: token.selectPlaceholderColor,
-  }
+  },
 };
 
 export default selectStyle;
