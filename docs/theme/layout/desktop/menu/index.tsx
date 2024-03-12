@@ -27,7 +27,11 @@ const MenuComponent = () => {
     document.getElementById('layout')?.scrollTo(0, 0);
   };
   useEffect(() => {
-    setConfig({ locale: 'en-US', spin: 'ring' });
+    setConfig({
+      locale: 'en-US',
+      spin: 'ring',
+      popupContainer: () => document.getElementById('layout'),
+    });
   }, []);
 
   useEffect(() => {

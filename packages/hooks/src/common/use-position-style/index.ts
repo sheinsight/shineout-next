@@ -135,6 +135,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     let targetPosition = position;
     const rootContainer = getContainer() || document.body;
     const containerRect = rootContainer.getBoundingClientRect();
+    const bodyRect = (document.documentElement || document.body).getBoundingClientRect();
     const containerScrollBarWidth = rootContainer.offsetWidth - rootContainer.clientWidth;
     const containerScroll = {
       left: rootContainer.scrollLeft,
@@ -150,15 +151,14 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         style.left = rect.left - containerRect.left + containerScroll.left;
         style.transform = '';
         if (adjust) {
-          overRight =
-            rect.left + context.popUpWidth - containerRect.right + containerScrollBarWidth;
+          overRight = rect.left + context.popUpWidth - bodyRect.right + containerScrollBarWidth;
         }
       } else if (h === 'right') {
         style.right =
           containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left;
         style.left = 'auto';
         style.transform = '';
-        if (adjust) overLeft = containerRect.left - (rect.right - context.popUpWidth);
+        if (adjust) overLeft = bodyRect.left - (rect.right - context.popUpWidth);
       } else {
         // 居中对齐
         style.left = rect.left + rect.width / 2 - containerRect.left + containerScroll.left;
@@ -168,9 +168,9 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
             rect.left +
             rect.width / 2 +
             context.popUpWidth / 2 -
-            containerRect.width +
+            bodyRect.width +
             containerScrollBarWidth;
-          overLeft = containerRect.left - (rect.left + rect.width / 2 - context.popUpWidth / 2);
+          overLeft = bodyRect.left - (rect.left + rect.width / 2 - context.popUpWidth / 2);
         }
       }
 
