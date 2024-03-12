@@ -2,6 +2,7 @@ import { useInputAble } from '../../common/use-input-able';
 import { useListSelect } from '../../common/use-list-select';
 import { BaseSelectProps } from './use-select.type';
 
+const emptyArray: any[] = [];
 const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => {
   const {
     data,
@@ -28,7 +29,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
   });
 
   const datum = useListSelect({
-    data: data || treeData,
+    data: data || treeData || emptyArray,
     separator,
     format,
     value,

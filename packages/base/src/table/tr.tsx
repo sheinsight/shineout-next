@@ -138,7 +138,7 @@ const Tr = (props: TrProps) => {
     );
   };
 
-  const renderContent = (col: TrProps['columns'][number], data: any, index: number) => {
+  const renderContent = (col: TrProps['columns'][number], data: any) => {
     if (col.type === 'expand' || col.type === 'row-expand') {
       const renderResult =
         typeof col.render === 'function' ? col.render(props.rawData, props.rowIndex) : undefined;
@@ -200,7 +200,7 @@ const Tr = (props: TrProps) => {
       );
     }
 
-    const content = util.render(col.render as any, data, index);
+    const content = util.render(col.render as any, data, props.rowIndex);
 
     if (col.treeColumnsName) {
       return renderTreeExpand(content, col.treeIndent);
@@ -246,7 +246,7 @@ const Tr = (props: TrProps) => {
             )}
             style={getTdStyle(col, data[i].colSpan)}
           >
-            {renderContent(col, data[i].data, col.index)}
+            {renderContent(col, data[i].data)}
           </td>
         );
         tds.push(td);
