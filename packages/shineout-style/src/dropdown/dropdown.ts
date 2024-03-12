@@ -17,7 +17,8 @@ export type DropDownClass =
   | 'itemActive'
   | 'splitButton'
   | 'optionGroup'
-  | 'optionDivider';
+  | 'optionDivider'
+  | 'listHasChildren';
 
 const dropdown: JsStyles<DropDownClass> = {
   wrapper: {
@@ -41,7 +42,7 @@ const dropdown: JsStyles<DropDownClass> = {
     fontSize: token.dropdownListFontSize,
     border: `${token.dropdownListBorderWidth} solid ${token.dropdownListBorderColor}`,
     borderRadius: token.dropdownListBorderRadius,
-    padding: `${token.dropdownListPadding}`,
+    padding: `${token.dropdownListPaddingY} ${token.dropdownListPaddingX}`,
     background: token.dropdownListBackgroundColor,
     boxShadow: token.dropdownListBoxShadow,
     width: 'max-content',
@@ -54,12 +55,24 @@ const dropdown: JsStyles<DropDownClass> = {
   listSmall: {
     fontSize: token.dropdownListSmallFontSize,
     borderRadius: token.dropdownListSmallBorderRadius,
-    padding: `${token.dropdownListSmallPaddingY}`,
+    padding: `${token.dropdownListSmallPaddingY} ${token.dropdownListSmallPaddingX}`,
   },
   listLarge: {
     fontSize: token.dropdownListLargeFontSize,
     borderRadius: token.dropdownListLargeBorderRadius,
-    padding: `${token.dropdownListLargePaddingY}`,
+    padding: `${token.dropdownListLargePaddingY} ${token.dropdownListLargePaddingX}`,
+  },
+  listHasChildren: {
+    '$wrapper[data-position^="left"] > &': {
+      '& > $itemWrapper > $item': {
+        '&::before': {
+          content: '""',
+          width: '1em',
+          marginLeft: token.dropdownCaretMarginLeft,
+          display: 'inline-block',
+        },
+      },
+    },
   },
   boxList: {
     padding: `${token.dropdownColumnPaddingY} ${token.dropdownColumnPaddingX}`,
@@ -76,9 +89,15 @@ const dropdown: JsStyles<DropDownClass> = {
     '$wrapper[data-position^="right"] > $button & > svg': {
       transform: 'rotate(-90deg)',
     },
-    '$wrapper[data-position^="left"] > $button & > svg': {
-      transform: 'rotate(90deg)',
+    '$wrapper[data-position^="left"] > $button &': {
+      marginLeft: '0',
+      marginRight: token.dropdownCaretMarginLeft,
+      textAlign: 'right',
+      '& > svg': {
+        transform: 'rotate(90deg)',
+      },
     },
+    '$wrapper[data-position^="left"] > $button & > svg': {},
     '$wrapper[data-position^="top"] > $button & > svg': {
       transform: 'rotate(180deg)',
     },

@@ -63,7 +63,7 @@ const App: React.FC = () => (
     </div>
     <div style={{ display: 'flex', justifyContent: 'center', gap: 12 }}>
       <Dropdown placeholder='Top Left' position='top-left' data={menu} />
-      <Dropdown placeholder='Top' position='top-left' data={menu} />
+      <Dropdown placeholder='Top' position='top' data={menu} />
       <Dropdown placeholder='Top right' position='top-right' data={menu} />
     </div>
   </div>

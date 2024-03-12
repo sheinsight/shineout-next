@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 export default createUseStyles(
   {
     desktop: {
-      position: 'fixed',
+      position: 'absolute',
       left: 260,
       top: -1,
       width: '100%',
