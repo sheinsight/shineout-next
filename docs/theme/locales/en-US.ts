@@ -24,5 +24,6 @@ export default {
     build: 'build',
     ci: 'ci',
     chore: 'chore',
+    break: 'break',
   },
 };

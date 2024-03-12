@@ -24,5 +24,6 @@ export default {
     build: '构建调整',
     ci: '集成服务更改',
     chore: '无关源码变更',
+    break: '不兼容变更',
   },
 };
