@@ -8,13 +8,15 @@
 import React from 'react';
 import { Input } from '@sheinx/base';
 import { useInputStyle } from '@sheinx/shineout-style';
+const jssStyle = {
+  input: useInputStyle,
+};
 
 export default () => {
-  const style = useInputStyle();
   return (
     <div>
       <Input
-        jssStyle={{ input: style }}
+        jssStyle={jssStyle}
         onChange={(v) => {
           console.log('input onchange', v);
         }}

@@ -8,11 +8,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -22,11 +22,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -36,11 +36,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -50,11 +50,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -64,11 +64,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -78,11 +78,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -92,11 +92,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -106,11 +106,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -120,11 +120,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -134,11 +134,11 @@ exports[`Gap[Base] should render correctly  1`] = `
     style="margin-bottom: 8px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -149,10 +149,10 @@ exports[`Gap[Base] should render correctly  1`] = `
 
 exports[`Gap[Base] should render correctly about align 1`] = `
 <div
-  class="so-radio-group"
+  class="cw6sirj"
 >
   <div
-    class="so-radio-wrapper so-radio-wrapper-checked"
+    class="c-emivhp c-wsxxws"
   >
     <input
       checked=""
@@ -161,21 +161,21 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="so-radio-indicator-wrapper"
+      class="c-yzux30"
     >
       <span
-        class="so-radio-indicator"
+        class="c-2ldwtt"
         tabindex="1"
       />
     </span>
     <span
-      class="so-radio-desc"
+      class="c-qgj373"
     >
       flex-start
     </span>
   </div>
   <div
-    class="so-radio-wrapper"
+    class="c-emivhp"
   >
     <input
       style="display: none;"
@@ -183,21 +183,21 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="so-radio-indicator-wrapper"
+      class="c-yzux30"
     >
       <span
-        class="so-radio-indicator"
+        class="c-2ldwtt"
         tabindex="1"
       />
     </span>
     <span
-      class="so-radio-desc"
+      class="c-qgj373"
     >
       center
     </span>
   </div>
   <div
-    class="so-radio-wrapper"
+    class="c-emivhp"
   >
     <input
       style="display: none;"
@@ -205,21 +205,21 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="so-radio-indicator-wrapper"
+      class="c-yzux30"
     >
       <span
-        class="so-radio-indicator"
+        class="c-2ldwtt"
         tabindex="1"
       />
     </span>
     <span
-      class="so-radio-desc"
+      class="c-qgj373"
     >
       flex-end
     </span>
   </div>
   <div
-    class="so-radio-wrapper"
+    class="c-emivhp"
   >
     <input
       style="display: none;"
@@ -227,15 +227,15 @@ exports[`Gap[Base] should render correctly about align 1`] = `
       type="radio"
     />
     <span
-      class="so-radio-indicator-wrapper"
+      class="c-yzux30"
     >
       <span
-        class="so-radio-indicator"
+        class="c-2ldwtt"
         tabindex="1"
       />
     </span>
     <span
-      class="so-radio-desc"
+      class="c-qgj373"
     >
       baseline
     </span>
@@ -253,21 +253,21 @@ exports[`Gap[Base] should render correctly about custom 1`] = `
     column:
   </div>
   <div
-    class="so-slider-wrapper"
+    class="cmzo79z"
     style="flex: 1;"
   >
     <div
-      class="so-slider-track"
+      class="cj1pxn3"
     >
       <div
-        class="so-slider-track-inner"
+        class="ccmbr"
         style="left: 0%; right: 92%;"
       >
         <div
-          class="so-slider-indicator so-slider-indicator-end"
+          class="c-7ssxpp c-uua2rc"
         />
         <div
-          class="so-slider-end-value so-slider-value"
+          class="c-5umq26 cj2iwmt"
         >
           8
         </div>
@@ -285,11 +285,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -299,11 +299,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -313,11 +313,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>
@@ -327,11 +327,11 @@ exports[`Gap[Base] should render correctly about vertical 1`] = `
     style="margin-bottom: 10px; margin-right: 8px;"
   >
     <button
-      class="so-button-primary so-button-button"
+      class="c-trc8a3 cvey2f3"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Button
       </span>

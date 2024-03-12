@@ -1,5 +1,5 @@
-import React from 'react';
-import { usePositionStyle } from '@sheinx/hooks';
+import React, { useRef } from 'react';
+import { usePositionStyle, util } from '@sheinx/hooks';
 import ReactDOM from 'react-dom';
 import { AbsoluteListProps } from './absolute-list.type';
 import useContainer from './use-container';
@@ -9,32 +9,34 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     absolute,
     position,
     children,
-    parentElement,
-    scrollElement,
+    parentElRef,
+    scrollElRef,
     fixedWidth,
     zIndex = 1051,
     focus,
-    popupEl,
+    popupElRef,
     updateKey,
     popupGap,
     adjust,
     destroy = false,
   } = props;
 
-  const { getRoot, getContainer } = useContainer({
+  const { getRoot } = useContainer({
     container: typeof absolute === 'function' ? absolute : undefined,
   });
 
+  const { current: context } = useRef({ rendered: false });
+
   const style = usePositionStyle({
-    getContainer: getContainer,
+    getContainer: getRoot,
     position,
     absolute: !!absolute,
-    parentEl: parentElement,
+    parentElRef,
     show: focus,
     fixedWidth,
     zIndex,
-    visibleEl: scrollElement,
-    popupEl,
+    scrollElRef,
+    popupElRef,
     updateKey,
     popupGap,
     adjust,
@@ -48,9 +50,13 @@ const AbsoluteList = (props: AbsoluteListProps) => {
   if (React.isValidElement(children) === false) return null;
 
   const styledChild = React.cloneElement(children, { style: newStyle });
+  if (!util.isBrowser()) return null;
+  if (!context.rendered && !focus) return null;
   if (destroy && !focus) return null;
+  context.rendered = true;
   if (absolute) {
     const root = getRoot();
+    if (!root) return null;
     root.className = props.rootClass || '';
     return ReactDOM.createPortal(styledChild, root);
   }

@@ -44,7 +44,7 @@ const originItemClasses = [
   'title',
   'root',
   'item',
-  'wrapperHasExpand',
+  'childrenHasExpand',
   'expandBack',
   'children',
   'itemHasChildren',
@@ -71,7 +71,7 @@ const {
   itemContent,
   itemContentBack,
   title,
-  wrapperHasExpand,
+  childrenHasExpand,
   itemHasChildren,
   expand,
   expandBack,
@@ -208,11 +208,12 @@ describe('Menu[Base]', () => {
   test('should render default when have children', () => {
     const { container } = render(<MenuTest />);
     const menuWrapper = container.querySelector(wrapper)!;
-    classTest(menuWrapper, wrapperHasExpand);
+    classTest(menuWrapper.querySelector(`.${root}`)!, childrenHasExpand);
     const items = container.querySelectorAll(`.${root} > li`);
     expect(items?.length).toBe(testData.length);
     items.forEach((item, index) => {
       if (!testData[index]?.children) return;
+      
       classTest(item, itemHasChildren);
       const expandWrapper = item.querySelector(expand)!;
       classTest(expandWrapper, expandBack);
@@ -397,7 +398,7 @@ describe('Menu[Base]', () => {
       />,
     );
     const menuWrapper = container.querySelector(wrapper)!;
-    classTest(menuWrapper, wrapperHasExpand);
+    classTest(menuWrapper.querySelector(`.${root}`)!, childrenHasExpand);
     const items = container.querySelectorAll(`.${root} > li`);
     fireEvent.click(items[0].querySelector(itemContent)!);
     classTest(items[0], itemOpen);

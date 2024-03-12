@@ -46,7 +46,9 @@ const build = (config, cb) => {
     });
   });
 };
-build(fatherBundless, () => {
+
+if (process.env.BUILD_MODE === 'bundle') {
+  console.log('bundle');
   build(fatherrcDev, () => {
     build(fatherrcProd, () => {
       // 将dist/umd1 和 dist/umd2 的内容拷贝到 dist/umd
@@ -62,4 +64,17 @@ build(fatherBundless, () => {
       deleteDirectory('dist/umd2');
     });
   });
-});
+} else {
+  console.log('bundless');
+  build(fatherBundless, () => {
+    // 执行 handle-rsc.js
+    const handleRscPath = path.resolve(__dirname, './handle-rsc.js');
+    exec(`node ${handleRscPath}`, (error, stdout) => {
+      if (error) {
+        console.error(error);
+        return;
+      }
+      console.log(stdout);
+    });
+  });
+}

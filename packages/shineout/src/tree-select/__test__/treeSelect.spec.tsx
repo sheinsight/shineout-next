@@ -112,6 +112,11 @@ describe('TreeSelect[Base]', () => {
       />,
     );
     const selectWrapper = container.querySelector(wrapper)!;
+    const treeResult = selectWrapper.querySelector(result)!;
+    fireEvent.click(treeResult);
+    await waitFor(async () => {
+      await delay(200);
+    });
     fireEvent.change(selectWrapper.querySelector('input')!, { target: { value: filterText } });
     await waitFor(async () => {
       await delay(200);
@@ -119,7 +124,7 @@ describe('TreeSelect[Base]', () => {
     const treeIconWrapper = container.querySelector(treeIcon)!;
     styleTest(treeIconWrapper.firstElementChild!, filterTreeIconStyle);
     expect(screen.getByText(filterText)).toBeInTheDocument();
-    classLengthTest(container, treeContent, 2);
+    classLengthTest(container, treeContent, 4);
     fireEvent.click(treeIconWrapper.querySelector('svg')!);
     await waitFor(async () => {
       await delay(200);

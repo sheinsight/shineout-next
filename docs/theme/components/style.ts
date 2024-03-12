@@ -20,6 +20,7 @@ export default createUseStyles(
         paddingTop: 32,
         transition: 'all 0.3s ease',
         lineHeight: '44px',
+        height: 76,
       },
 
       '& .subtitle': {
@@ -34,8 +35,10 @@ export default createUseStyles(
     },
     stickyHeader: {
       '& .title': {
-        paddingTop: 16,
+        paddingTop: 0,
         fontSize: 24,
+        opacity: 0,
+        height: 0,
       },
       '& .subtitle': {
         height: 0,
@@ -43,8 +46,8 @@ export default createUseStyles(
         marginTop: 0,
       },
       '& $tabs': {
-        marginTop: 16,
-        marginBottom: 16,
+        marginTop: 12,
+        marginBottom: 12,
       },
     },
     hiddenHeader: {},
@@ -76,6 +79,7 @@ export default createUseStyles(
     },
     guide: {
       display: 'flex',
+      marginTop: 60,
       '& .guides': {
         flex: 1,
         // '&:last-child': {

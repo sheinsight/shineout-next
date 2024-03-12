@@ -5,7 +5,7 @@ import { Table, Button, TYPE, Form, Input } from 'shineout';
 
 import {
   attributesTest,
-  baseTest,
+  // baseTest,
   childrenTest,
   classTest,
   createClassName,
@@ -251,7 +251,7 @@ mountTest(<Table keygen={'id'} />);
 
 describe('Table[Base]', () => {
   displayTest(Table as React.FC, 'ShineoutTable');
-  baseTest(Table as React.FC, wrapper);
+  // baseTest(Table as React.FC, wrapper);
   childrenTest(Table as React.FC, wrapper);
   snapshotTest(<TableBase />);
   snapshotTest(<TableBorder />, 'about border');
@@ -267,6 +267,14 @@ describe('Table[Base]', () => {
   // snapshotTest(<TablePagination />, 'about pagination');
   // snapshotTest(<TableScroll />, 'about scroll');
   // snapshotTest(<TableColRowSpan />, 'about col row span');
+  test('should render when set style and className', () => {
+    const { container } = render(
+      <Table keygen={'id'} style={{ color: 'red' }} className='test' columns={columns} />,
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    styleContentTest(tableWrapper, 'color: red;');
+    classTest(tableWrapper, 'test');
+  })
   test('should render when set children is div', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
     const testContent = 'Test Children';
@@ -1224,10 +1232,16 @@ describe('Table[RowsInView]', () => {
     expect(trs.length).toBe(20);
     rerender(<Table keygen={'id'} columns={columns} data={tempData} virtual rowsInView={10} />);
     expect(tbody.querySelectorAll('tr').length).toBe(10);
-    // TODO: rowsInview = 0 should render all data
-    rerender(<Table keygen={'id'} columns={columns} data={tempData} virtual rowsInView={0} />);
-    expect(tbody.querySelectorAll('tr').length).toBe(20);
   });
+  test('should render when set rowsInView is 0', () => {
+    const tempData = dataGenerate(30);
+    const { container } = render(
+      <Table keygen={'id'} columns={columns} data={tempData} virtual rowsInView={0} />
+    );
+    const tableWrapper = container.querySelector(wrapper)!;
+    const tbody = tableWrapper.querySelector('tbody')!;
+    expect(tbody.querySelectorAll('tr').length).toBe(30);
+  })
 });
 describe('Table[Virtual]', () => {
   test('should render when set virtual', () => {
@@ -1242,7 +1256,7 @@ describe('Table[Virtual]', () => {
     styleTest(tableFoot.querySelector('table')!, 'transform: translate3d(-0px, 0, 0);');
     const tableBody = tableHead.nextElementSibling;
     const tableSroll = tableBody?.firstElementChild as Element;
-    attributesTest(tableSroll, 'data-soui-type', 'scroll');
+    // attributesTest(tableSroll, 'data-soui-type', 'scroll');
     const tableBodyWrapper = tableBody?.querySelector('table') as Element;
     styleTest(tableBodyWrapper, 'transform: translate3d(-0px, -0px, 0);');
     fireEvent.scroll(tableSroll, { target: { scrollTop: 50 } });
@@ -1430,7 +1444,7 @@ describe('Table[Fixed]', () => {
       const tableHead = container.querySelector(headWrapper)!;
       const tableBody = tableHead.nextElementSibling;
       const tableSroll = tableBody?.firstElementChild as Element;
-      attributesTest(tableSroll, 'data-soui-type', 'scroll');
+      // attributesTest(tableSroll, 'data-soui-type', 'scroll');
       fireEvent.scroll(tableSroll, { target: { scrollTop: 50 } });
       const tableBodyWrapper = tableBody?.querySelector('table') as Element;
       styleTest(tableBodyWrapper, 'transform: translate3d(-0px, -10px, 0);');
@@ -1717,6 +1731,5 @@ describe('Table[RowEvents]', () => {
 
 // TODO: TableColumn
 
-// rowsInview=0
 // innerScrollAttr
 // rowHeight

@@ -3,10 +3,10 @@
 exports[`Table[Base] should render correctly  1`] = `
 <div>
   <div
-    class="so-table-wrapper so-table-vertical-align-top so-table-default"
+    class="c-l8p00w cv4tmwp c-m2vrg2"
   >
     <div
-      class="so-table-body-wrapper"
+      class="c-67knhe"
     >
       <table>
         <colgroup>
@@ -62,7 +62,7 @@ exports[`Table[Base] should render correctly  1`] = `
               </div>
             </th>
             <th
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               rowspan="1"
             >
               <div
@@ -98,7 +98,7 @@ exports[`Table[Base] should render correctly  1`] = `
               Marketing Designer
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               Miami
@@ -126,7 +126,7 @@ exports[`Table[Base] should render correctly  1`] = `
               Financial Controller
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               San Paulo
@@ -154,7 +154,7 @@ exports[`Table[Base] should render correctly  1`] = `
               Development Lead
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               Boston
@@ -182,7 +182,7 @@ exports[`Table[Base] should render correctly  1`] = `
               Developer
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               Chengdu
@@ -201,10 +201,10 @@ exports[`Table[Base] should render correctly  1`] = `
 exports[`Table[Base] should render correctly about border 1`] = `
 <div>
   <div
-    class="so-table-wrapper so-table-bordered so-table-vertical-align-top so-table-default"
+    class="c-l8p00w c-ldtk0y cv4tmwp c-m2vrg2"
   >
     <div
-      class="so-table-body-wrapper"
+      class="c-67knhe"
     >
       <table>
         <colgroup>
@@ -260,7 +260,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
               </div>
             </th>
             <th
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               rowspan="1"
             >
               <div
@@ -296,14 +296,14 @@ exports[`Table[Base] should render correctly about border 1`] = `
               Marketing Designer
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               Miami
             </td>
           </tr>
           <tr
-            class="so-table-row-striped"
+            class="c-u92ca8"
           >
             <td
               class=""
@@ -324,7 +324,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
               Financial Controller
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               San Paulo
@@ -352,14 +352,14 @@ exports[`Table[Base] should render correctly about border 1`] = `
               Development Lead
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               Boston
             </td>
           </tr>
           <tr
-            class="so-table-row-striped"
+            class="c-u92ca8"
           >
             <td
               class=""
@@ -380,7 +380,7 @@ exports[`Table[Base] should render correctly about border 1`] = `
               Developer
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               Chengdu
@@ -398,10 +398,10 @@ exports[`Table[Base] should render correctly about border 1`] = `
 
 exports[`Table[Base] should render correctly about group 1`] = `
 <div
-  class="so-table-wrapper so-table-bordered so-table-vertical-align-top so-table-default"
+  class="c-l8p00w c-ldtk0y cv4tmwp c-m2vrg2"
 >
   <div
-    class="so-table-body-wrapper"
+    class="c-67knhe"
   >
     <table>
       <colgroup>
@@ -427,7 +427,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
       <thead>
         <tr>
           <th
-            class="so-table-cell-group"
+            class="c-aminq"
             colspan="3"
             style="padding: 0px;"
           >
@@ -452,7 +452,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class="so-table-cell-ignore-border so-table-cell-group"
+            class="c-pw17pp c-aminq"
             colspan="2"
             style="padding: 0px;"
           >
@@ -465,7 +465,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
         </tr>
         <tr>
           <th
-            class="so-table-cell-group"
+            class="c-aminq"
             colspan="2"
           >
             <div>
@@ -497,7 +497,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             </div>
           </th>
           <th
-            class="so-table-cell-ignore-border"
+            class="c-pw17pp"
             rowspan="2"
           >
             <div
@@ -571,7 +571,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             Miami
           </td>
           <td
-            class="so-table-cell-ignore-border"
+            class="c-pw17pp"
             colspan="1"
           >
             Marketing Designer
@@ -611,7 +611,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             San Paulo
           </td>
           <td
-            class="so-table-cell-ignore-border"
+            class="c-pw17pp"
             colspan="1"
           >
             Financial Controller
@@ -651,7 +651,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             Boston
           </td>
           <td
-            class="so-table-cell-ignore-border"
+            class="c-pw17pp"
             colspan="1"
           >
             Development Lead
@@ -691,7 +691,7 @@ exports[`Table[Base] should render correctly about group 1`] = `
             Chengdu
           </td>
           <td
-            class="so-table-cell-ignore-border"
+            class="c-pw17pp"
             colspan="1"
           >
             Developer
@@ -709,11 +709,11 @@ exports[`Table[Base] should render correctly about group 1`] = `
 exports[`Table[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -721,21 +721,21 @@ exports[`Table[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         small
       </span>
     </div>
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         checked=""
@@ -744,21 +744,21 @@ exports[`Table[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         default
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -766,25 +766,25 @@ exports[`Table[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="so-table-wrapper so-table-vertical-align-top so-table-default"
+    class="c-l8p00w cv4tmwp c-m2vrg2"
   >
     <div
-      class="so-table-body-wrapper"
+      class="c-67knhe"
     >
       <table>
         <colgroup>
@@ -840,7 +840,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
               </div>
             </th>
             <th
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               rowspan="1"
             >
               <div
@@ -876,7 +876,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
               Marketing Designer
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               Miami
@@ -904,7 +904,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
               Financial Controller
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               San Paulo
@@ -932,7 +932,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
               Development Lead
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               Boston
@@ -960,7 +960,7 @@ exports[`Table[Base] should render correctly about size 1`] = `
               Developer
             </td>
             <td
-              class="so-table-cell-ignore-border"
+              class="c-pw17pp"
               colspan="1"
             >
               Chengdu

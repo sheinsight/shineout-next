@@ -176,11 +176,12 @@ function parseApi(pack, filePath) {
       // }, {})
       const properties = typeChecker.getPropertiesOfType(type);
       const lost = [];
-      properties.forEach((property) => {
+      for (let jj = 0; jj < properties.length; jj++) {
+        const property = properties[jj];
         const declarations1 = property.getDeclarations();
         const sourceFile = declarations1[0].getSourceFile().getFilePath();
         // 过滤掉 @types/react 中的属性 这些是原生属性比如 input 的 autoComplete
-        if (sourceFile.includes('@types/react')) return;
+        if (sourceFile.includes('@types/react')) continue;
         const propertyJsDocTags = parseDocTag(
           declarations1
             .map((d) => d.getJsDocs())
@@ -188,10 +189,9 @@ function parseApi(pack, filePath) {
             .map((jsDoc) => jsDoc.getTags())
             .flat(),
         );
+        if (propertyJsDocTags.private || propertyJsDocTags.deprecated) continue;
         if (!propertyJsDocTags.cn) {
-          if (!propertyJsDocTags.private && !propertyJsDocTags.deprecated)
-            lost.push(property.getName());
-          return;
+          lost.push(property.getName());
         }
 
         const nodeType = declarations1[0].getType();
@@ -216,7 +216,7 @@ function parseApi(pack, filePath) {
         item.properties.push(itemProperty);
         // console.log('---------');
         // console.log(itemProperty.name, itemProperty.type, itemProperty.tag.cn);
-      });
+      }
       if (lost.length) {
         console.warn(`${mainTags.title}缺失`, lost.join(','));
       }

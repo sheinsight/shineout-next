@@ -8,13 +8,18 @@ const ReverseDir: Record<string, string> = {
 };
 export const getPositionStyle = (
   position: string,
-  config?: { popupGap?: number; zIndex?: number },
+  config?: { popupGap?: number; zIndex?: number; fixedWidth?: boolean | 'min' },
 ) => {
   const { popupGap = 0 } = config || {};
-  const mainMargin = `calc(100% + ${popupGap}px`;
-  const halfMargin = `calc(50% + ${popupGap}px`;
+  const mainMargin = `calc(100% + ${popupGap}px)`;
+  const halfMargin = `calc(50% + ${popupGap}px)`;
 
   let newStyle: React.CSSProperties = { zIndex: config?.zIndex };
+
+  if (config?.fixedWidth) {
+    const key = config.fixedWidth === 'min' ? 'minWidth' : 'width';
+    newStyle[key] = '100%';
+  }
   if (position === 'drop-down') {
     newStyle.top = mainMargin;
     newStyle.left = 0;

@@ -10,7 +10,7 @@ import { Spin } from 'shineout';
 export default () => {
   return (
     <div style={{ width: 20 }}>
-      <Spin name='ring' size={16} />
+      <Spin name='chasing-dots' />
     </div>
   );
 };

@@ -1,39 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert[Base] should render correctly  1`] = `
-<div>
+<div
+  style="margin-bottom: -12px;"
+>
   <div
-    class="so-descriptions-wrapper"
+    class="c-kmkpj3"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-inline-horizontal"
+      class="c43ht84 ccjb0vj"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Name
                   <span
@@ -43,20 +45,20 @@ exports[`Alert[Base] should render correctly  1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   Mai Mai
                 </div>
               </div>
             </td>
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Residence
                   <span
@@ -66,20 +68,20 @@ exports[`Alert[Base] should render correctly  1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   Beijing
                 </div>
               </div>
             </td>
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Address
                   <span
@@ -89,7 +91,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   Yingdu Building
                 </div>
@@ -97,16 +99,16 @@ exports[`Alert[Base] should render correctly  1`] = `
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Mobile
                   <span
@@ -116,21 +118,21 @@ exports[`Alert[Base] should render correctly  1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   187-2323-9834
                 </div>
               </div>
             </td>
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
               colspan="2"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Hometown
                   <span
@@ -140,7 +142,7 @@ exports[`Alert[Base] should render correctly  1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   Beijing
                 </div>
@@ -155,34 +157,36 @@ exports[`Alert[Base] should render correctly  1`] = `
 `;
 
 exports[`Alert[Base] should render correctly about alignment 1`] = `
-<div>
+<div
+  style="margin-bottom: -12px;"
+>
   <div
-    class="so-descriptions-wrapper"
-    style="margin-bottom: 24px;"
+    class="c-kmkpj3"
+    style="margin-bottom: 12px;"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-horizontal"
+      class="c43ht84 ck2b4mu"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Name
               <span
@@ -192,12 +196,12 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Residence
               <span
@@ -207,12 +211,12 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Address
               <span
@@ -222,16 +226,16 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Yingdu Building
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Hometown
               <span
@@ -241,12 +245,12 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Mobile
               <span
@@ -256,7 +260,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
               colspan="3"
             >
               187-2323-9834
@@ -267,32 +271,32 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
     </div>
   </div>
   <div
-    class="so-descriptions-wrapper"
-    style="margin-bottom: 24px;"
+    class="c-kmkpj3"
+    style="margin-bottom: 12px;"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-horizontal"
+      class="c43ht84 ck2b4mu"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Name
@@ -303,12 +307,12 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Residence
@@ -319,12 +323,12 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Address
@@ -335,16 +339,16 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Yingdu Building
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Hometown
@@ -355,12 +359,12 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Mobile
@@ -371,7 +375,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
               colspan="3"
             >
               187-2323-9834
@@ -382,31 +386,31 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
     </div>
   </div>
   <div
-    class="so-descriptions-wrapper"
+    class="c-kmkpj3"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body"
+      class="c43ht84"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="padding-bottom: 2px;"
             >
               Name
@@ -417,7 +421,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="padding-bottom: 2px;"
             >
               Residence
@@ -428,7 +432,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="padding-bottom: 2px;"
             >
               Address
@@ -440,29 +444,29 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Yingdu Building
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="padding-bottom: 2px;"
             >
               Hometown
@@ -473,7 +477,7 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               colspan="2"
               style="padding-bottom: 2px;"
             >
@@ -486,15 +490,15 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
               colspan="2"
             >
               187-2323-9834
@@ -508,13 +512,15 @@ exports[`Alert[Base] should render correctly about alignment 1`] = `
 `;
 
 exports[`Alert[Base] should render correctly about arrangement 1`] = `
-<div>
+<div
+  style="margin-bottom: -12px;"
+>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         checked=""
@@ -523,21 +529,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         horizontal
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -545,21 +551,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         vertical
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -567,21 +573,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         inlineHorizontal
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -589,26 +595,26 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         inlineVertical
       </span>
     </div>
   </div>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         checked=""
@@ -617,21 +623,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         auto
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -639,26 +645,26 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         fixed
       </span>
     </div>
   </div>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         checked=""
@@ -667,21 +673,21 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         no border
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -689,46 +695,46 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         border
       </span>
     </div>
   </div>
   <div
-    class="so-descriptions-wrapper"
+    class="c-kmkpj3"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-horizontal"
+      class="c43ht84 ck2b4mu"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Name
               <span
@@ -738,12 +744,12 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Residence
               <span
@@ -753,12 +759,12 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Address
               <span
@@ -768,16 +774,16 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Yingdu Building
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Mobile
               <span
@@ -787,12 +793,12 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               187-2323-9834
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Hometown
               <span
@@ -802,7 +808,7 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
               </span>
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
               colspan="3"
             >
               Beijing
@@ -818,81 +824,81 @@ exports[`Alert[Base] should render correctly about arrangement 1`] = `
 exports[`Alert[Base] should render correctly about border 1`] = `
 <div>
   <div
-    class="so-descriptions-wrapper"
+    class="c-kmkpj3"
     style="margin-bottom: 20px;"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-border so-descriptions-table-layout-fixed so-descriptions-horizontal"
+      class="c43ht84 culipmm cnbzsjy ck2b4mu"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Name
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Residence
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Address
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Mobile
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               187-2323-9834
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Hometown
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
               colspan="3"
             >
               Beijing
@@ -903,86 +909,86 @@ exports[`Alert[Base] should render correctly about border 1`] = `
     </div>
   </div>
   <div
-    class="so-descriptions-wrapper"
+    class="c-kmkpj3"
     style="margin-bottom: 20px;"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-border so-descriptions-table-layout-fixed so-descriptions-horizontal"
+      class="c43ht84 culipmm cnbzsjy ck2b4mu"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Name
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Residence
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Address
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Mobile
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               187-2323-9834
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Hometown
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
               colspan="3"
             >
               Beijing
@@ -993,89 +999,89 @@ exports[`Alert[Base] should render correctly about border 1`] = `
     </div>
   </div>
   <div
-    class="so-descriptions-wrapper"
+    class="c-kmkpj3"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-border so-descriptions-table-layout-fixed"
+      class="c43ht84 culipmm cnbzsjy"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Name
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Residence
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Address
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Mobile
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               187-2323-9834
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               colspan="4"
             >
               Hometown
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
               colspan="4"
             >
               Beijing
@@ -1089,67 +1095,69 @@ exports[`Alert[Base] should render correctly about border 1`] = `
 `;
 
 exports[`Alert[Base] should render correctly about colums 1`] = `
-<div>
+<div
+  style="margin-bottom: -12px;"
+>
   <div
-    class="so-descriptions-wrapper"
-    style="margin-bottom: 24px;"
+    class="c-kmkpj3"
+    style="margin-bottom: 12px;"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-horizontal"
+      class="c43ht84 ck2b4mu"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Name
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Mobile
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               187-2323-9834
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
             >
               Residence
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
@@ -1159,67 +1167,67 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
     </div>
   </div>
   <div
-    class="so-descriptions-wrapper"
+    class="c-kmkpj3"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-horizontal"
+      class="c43ht84 ck2b4mu"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Name
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Mobile
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               187-2323-9834
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Residence
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
@@ -1234,85 +1242,85 @@ exports[`Alert[Base] should render correctly about colums 1`] = `
 exports[`Alert[Base] should render correctly about responsive 1`] = `
 <div>
   <div
-    class="so-descriptions-wrapper"
+    class="c-kmkpj3"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-border so-descriptions-horizontal"
+      class="c43ht84 culipmm ck2b4mu"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Name
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Residence
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Address
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Mobile
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               187-2323-9834
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Hometown
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
               colspan="3"
             >
               Beijing
@@ -1328,11 +1336,11 @@ exports[`Alert[Base] should render correctly about responsive 1`] = `
 exports[`Alert[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="so-radio-group"
+    class="cw6sirj"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -1340,21 +1348,21 @@ exports[`Alert[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         small
       </span>
     </div>
     <div
-      class="so-radio-wrapper so-radio-wrapper-checked"
+      class="c-emivhp c-wsxxws"
     >
       <input
         checked=""
@@ -1363,21 +1371,21 @@ exports[`Alert[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         default
       </span>
     </div>
     <div
-      class="so-radio-wrapper"
+      class="c-emivhp"
     >
       <input
         style="display: none;"
@@ -1385,53 +1393,53 @@ exports[`Alert[Base] should render correctly about size 1`] = `
         type="radio"
       />
       <span
-        class="so-radio-indicator-wrapper"
+        class="c-yzux30"
       >
         <span
-          class="so-radio-indicator"
+          class="c-2ldwtt"
           tabindex="1"
         />
       </span>
       <span
-        class="so-radio-desc"
+        class="c-qgj373"
       >
         large
       </span>
     </div>
   </div>
   <div
-    class="so-descriptions-wrapper"
-    style="margin-bottom: 20px;"
+    class="c-kmkpj3"
+    style="margin-bottom: 12px;"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-inline-horizontal"
+      class="c43ht84 ccjb0vj"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Name
                   <span
@@ -1441,20 +1449,20 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   Mai Mai
                 </div>
               </div>
             </td>
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Residence
                   <span
@@ -1464,20 +1472,20 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   Beijing
                 </div>
               </div>
             </td>
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Address
                   <span
@@ -1487,7 +1495,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   Yingdu Building,Zhichun Road,Beijing
                 </div>
@@ -1495,16 +1503,16 @@ exports[`Alert[Base] should render correctly about size 1`] = `
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Mobile
                   <span
@@ -1514,21 +1522,21 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   187-2323-9834
                 </div>
               </div>
             </td>
             <td
-              class="so-descriptions-inline-table"
+              class="cpcncv7"
               colspan="2"
             >
               <div
-                class="so-descriptions-item"
+                class="c43mdut"
               >
                 <div
-                  class="so-descriptions-label-inline"
+                  class="c-m73qqt"
                 >
                   Hometown
                   <span
@@ -1538,7 +1546,7 @@ exports[`Alert[Base] should render correctly about size 1`] = `
                   </span>
                 </div>
                 <div
-                  class="so-descriptions-value-inline"
+                  class="co8ut94"
                 >
                   Beijing
                 </div>
@@ -1550,85 +1558,85 @@ exports[`Alert[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="so-descriptions-wrapper"
+    class="c-kmkpj3"
   >
     <div
-      class="so-descriptions-header"
+      class="cx9zna7"
     >
       <div
-        class="so-descriptions-title"
+        class="c-es35kq"
       >
         User Info
       </div>
     </div>
     <div
-      class="so-descriptions-body so-descriptions-border so-descriptions-horizontal"
+      class="c43ht84 culipmm ck2b4mu"
     >
       <table
         cellpadding="0"
         cellspacing="0"
-        class="so-descriptions-table"
+        class="c-es8mtg"
       >
         <tbody>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Name
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Mai Mai
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Residence
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Beijing
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Address
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               Yingdu Building,Zhichun Road,Beijing
             </td>
           </tr>
           <tr
-            class="so-descriptions-row"
+            class="c-khmc54"
           >
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Mobile
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
             >
               187-2323-9834
             </td>
             <td
-              class="so-descriptions-label"
+              class="c-ewmzq6"
               style="text-align: right;"
             >
               Hometown
             </td>
             <td
-              class="so-descriptions-value"
+              class="c-er4u01"
               colspan="3"
             >
               Beijing

@@ -2,18 +2,18 @@
 
 exports[`Pagination[Base] should render correctly  1`] = `
 <div
-  class="so-pagination-pagination so-pagination-left"
+  class="c-r3kqy9 c-8xwqpw"
 >
   <div
-    class="so-pagination-section so-pagination-buttons"
+    class="c8idq1c c-k2yd04"
   >
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -28,41 +28,41 @@ exports[`Pagination[Base] should render correctly  1`] = `
       </span>
     </button>
     <button
-      class="so-button-primary so-button-button so-button-square"
+      class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
       type="button"
     >
       1
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       2
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       3
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       4
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       5
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -77,17 +77,17 @@ exports[`Pagination[Base] should render correctly  1`] = `
       </span>
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       10
     </button>
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -108,19 +108,19 @@ exports[`Pagination[Base] should render correctly  1`] = `
 exports[`Pagination[Base] should render correctly about align 1`] = `
 <div>
   <div
-    class="so-pagination-pagination so-pagination-left"
+    class="c-r3kqy9 c-8xwqpw"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -135,41 +135,41 @@ exports[`Pagination[Base] should render correctly about align 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -184,17 +184,17 @@ exports[`Pagination[Base] should render correctly about align 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -211,19 +211,19 @@ exports[`Pagination[Base] should render correctly about align 1`] = `
     </div>
   </div>
   <div
-    class="so-pagination-pagination so-pagination-center"
+    class="c-r3kqy9 c-2po186"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -238,41 +238,41 @@ exports[`Pagination[Base] should render correctly about align 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -287,17 +287,17 @@ exports[`Pagination[Base] should render correctly about align 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -314,18 +314,18 @@ exports[`Pagination[Base] should render correctly about align 1`] = `
     </div>
   </div>
   <div
-    class="so-pagination-pagination so-pagination-right"
+    class="c-r3kqy9 c70mjnr"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -340,41 +340,41 @@ exports[`Pagination[Base] should render correctly about align 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -389,17 +389,17 @@ exports[`Pagination[Base] should render correctly about align 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -426,24 +426,24 @@ exports[`Pagination[Base] should render correctly about control 1`] = `
     <span
       style="font-size: 14px;"
     >
-      跳转至
+      Jump to
     </span>
     <div
-      class="so-input-wrapper-number so-input-wrapper"
+      class="c62jszx c5g1ick"
       data-soui-type="input"
       style="width: 80px; margin-left: 8px;"
     >
       <div
-        class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+        class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
       >
         <input
-          class="so-input-input"
+          class="cccsm1n"
           type="text"
           value="1"
         />
       </div>
       <div
-        class="so-input-number-step"
+        class="c-jaruk"
       >
         <span>
           <svg
@@ -473,18 +473,18 @@ exports[`Pagination[Base] should render correctly about control 1`] = `
     </div>
   </div>
   <div
-    class="so-pagination-pagination so-pagination-left"
+    class="c-r3kqy9 c-8xwqpw"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -499,41 +499,41 @@ exports[`Pagination[Base] should render correctly about control 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -548,17 +548,17 @@ exports[`Pagination[Base] should render correctly about control 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -579,25 +579,25 @@ exports[`Pagination[Base] should render correctly about control 1`] = `
 
 exports[`Pagination[Base] should render correctly about disabled 1`] = `
 <div
-  class="so-pagination-pagination so-pagination-left"
+  class="c-r3kqy9 c-8xwqpw"
 >
   <div
-    class="so-pagination-section"
+    class="c8idq1c"
   >
     <span>
       total 500
     </span>
   </div>
   <div
-    class="so-pagination-section so-pagination-buttons"
+    class="c8idq1c c-k2yd04"
   >
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -612,47 +612,47 @@ exports[`Pagination[Base] should render correctly about disabled 1`] = `
       </span>
     </button>
     <button
-      class="so-button-primary so-button-button so-button-disabled so-button-square"
+      class="cse7e56 c-trc8a3 cvey2f3 conix1l c-vmlc9i"
       disabled=""
       type="button"
     >
       1
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       2
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       3
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       4
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       5
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -667,19 +667,19 @@ exports[`Pagination[Base] should render correctly about disabled 1`] = `
       </span>
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       50
     </button>
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -695,24 +695,24 @@ exports[`Pagination[Base] should render correctly about disabled 1`] = `
     </button>
   </div>
   <div
-    class="so-pagination-section so-pagination-size-list"
+    class="c8idq1c c-lyvyj0"
   >
     <div
-      class="so-select-wrapper so-select-wrapper-disabled"
+      class="c-k1257o co2pi9k"
       data-soui-type="input"
       tabindex="-1"
     >
       <div
-        class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+        class="c-hka1dt c8hos3a crwdlef c9869pl"
       >
         <div
-          class="so-select-result"
+          class="c-lj7los"
         >
           <div
-            class="so-select-result-text-wrapper"
+            class="cml870y"
           >
             <span
-              class="so-select-ellipsis"
+              class="c-f5w80o"
             >
               10  / page
             </span>
@@ -720,7 +720,7 @@ exports[`Pagination[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <span
-        class="so-select-arrow-icon"
+        class="c-fjov4l"
       >
         <svg
           aria-hidden="true"
@@ -736,23 +736,23 @@ exports[`Pagination[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="so-pagination-section so-pagination-jumper"
+    class="c8idq1c cufb2o"
   >
     <span
-      class="so-pagination-section"
+      class="c8idq1c"
     >
       Go to 
     </span>
     <div
-      class="so-pagination-section so-pagination-jumper-input so-input-wrapper so-input-wrapper-disabled"
+      class="c8idq1c cnaztga c5g1ick c-pt79s0"
       data-soui-type="input"
       style="width: 56px;"
     >
       <div
-        class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+        class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
       >
         <input
-          class="so-input-input"
+          class="cccsm1n"
           disabled=""
           type="text"
           value="1"
@@ -760,7 +760,7 @@ exports[`Pagination[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="so-pagination-section"
+      class="c8idq1c"
     >
        Page
     </span>
@@ -770,18 +770,18 @@ exports[`Pagination[Base] should render correctly about disabled 1`] = `
 
 exports[`Pagination[Base] should render correctly about jumper 1`] = `
 <div
-  class="so-pagination-pagination so-pagination-left"
+  class="c-r3kqy9 c-8xwqpw"
 >
   <div
-    class="so-pagination-section so-pagination-buttons"
+    class="c8idq1c c-k2yd04"
   >
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -796,41 +796,41 @@ exports[`Pagination[Base] should render correctly about jumper 1`] = `
       </span>
     </button>
     <button
-      class="so-button-primary so-button-button so-button-square"
+      class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
       type="button"
     >
       1
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       2
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       3
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       4
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       5
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -845,17 +845,17 @@ exports[`Pagination[Base] should render correctly about jumper 1`] = `
       </span>
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       10
     </button>
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -871,30 +871,30 @@ exports[`Pagination[Base] should render correctly about jumper 1`] = `
     </button>
   </div>
   <div
-    class="so-pagination-section so-pagination-jumper"
+    class="c8idq1c cufb2o"
   >
     <span
-      class="so-pagination-section"
+      class="c8idq1c"
     >
       Go to 
     </span>
     <div
-      class="so-pagination-section so-pagination-jumper-input so-input-wrapper"
+      class="c8idq1c cnaztga c5g1ick"
       data-soui-type="input"
       style="width: 56px;"
     >
       <div
-        class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+        class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
       >
         <input
-          class="so-input-input"
+          class="cccsm1n"
           type="text"
           value="1"
         />
       </div>
     </div>
     <span
-      class="so-pagination-section"
+      class="c8idq1c"
     >
        Page
     </span>
@@ -905,19 +905,19 @@ exports[`Pagination[Base] should render correctly about jumper 1`] = `
 exports[`Pagination[Base] should render correctly about mode 1`] = `
 <div>
   <div
-    class="so-pagination-pagination so-pagination-left"
+    class="c-r3kqy9 c-8xwqpw"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -932,41 +932,41 @@ exports[`Pagination[Base] should render correctly about mode 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -981,17 +981,17 @@ exports[`Pagination[Base] should render correctly about mode 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1008,18 +1008,18 @@ exports[`Pagination[Base] should render correctly about mode 1`] = `
     </div>
   </div>
   <div
-    class="so-pagination-pagination so-pagination-left"
+    class="c-r3kqy9 c-8xwqpw"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-outline so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l cs6jo0l c-vmlc9i"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1034,41 +1034,41 @@ exports[`Pagination[Base] should render correctly about mode 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-outline so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 cs6jo0l c-vmlc9i"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-outline so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 cs6jo0l c-vmlc9i"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-outline so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 cs6jo0l c-vmlc9i"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-outline so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 cs6jo0l c-vmlc9i"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-outline so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 cs6jo0l c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1083,17 +1083,17 @@ exports[`Pagination[Base] should render correctly about mode 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-outline so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 cs6jo0l c-vmlc9i"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-outline so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 cs6jo0l c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1114,15 +1114,15 @@ exports[`Pagination[Base] should render correctly about mode 1`] = `
 
 exports[`Pagination[Base] should render correctly about simple 1`] = `
 <div
-  class="so-pagination-pagination so-pagination-left"
+  class="c-r3kqy9 c-8xwqpw"
 >
   <button
-    class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+    class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
     disabled=""
     type="button"
   >
     <span
-      class="so-pagination-icon"
+      class="c-8xyoya"
     >
       <svg
         aria-hidden="true"
@@ -1137,40 +1137,40 @@ exports[`Pagination[Base] should render correctly about simple 1`] = `
     </span>
   </button>
   <div
-    class="so-pagination-section so-pagination-jumper"
+    class="c8idq1c cufb2o"
   >
     <div
-      class="so-pagination-section so-pagination-jumper-input so-input-wrapper"
+      class="c8idq1c cnaztga c5g1ick"
       data-soui-type="input"
       style="width: 56px;"
     >
       <div
-        class="so-input-wrapper-inner-title-top so-input-wrapper-inner-title-bottom so-input-wrapper-padding-box so-input-content"
+        class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
       >
         <input
-          class="so-input-input"
+          class="cccsm1n"
           type="text"
           value="1"
         />
       </div>
     </div>
     <span
-      class="so-pagination-section so-pagination-split"
+      class="c8idq1c c71aww5"
     >
       /
     </span>
     <span
-      class="so-pagination-section"
+      class="c8idq1c"
     >
       5
     </span>
   </div>
   <button
-    class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+    class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
     type="button"
   >
     <span
-      class="so-pagination-icon"
+      class="c-8xyoya"
     >
       <svg
         aria-hidden="true"
@@ -1190,19 +1190,19 @@ exports[`Pagination[Base] should render correctly about simple 1`] = `
 exports[`Pagination[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="so-pagination-pagination so-pagination-left so-pagination-small"
+    class="c-r3kqy9 c-8xwqpw c718rua"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square so-button-small"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i c-x3mwbq"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1217,41 +1217,41 @@ exports[`Pagination[Base] should render correctly about size 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square so-button-small"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i c-x3mwbq"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-small"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x3mwbq"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-small"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x3mwbq"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-small"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x3mwbq"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-small"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x3mwbq"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-small"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x3mwbq"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1266,17 +1266,17 @@ exports[`Pagination[Base] should render correctly about size 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-small"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x3mwbq"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square so-button-small"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x3mwbq"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1293,19 +1293,19 @@ exports[`Pagination[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="so-pagination-pagination so-pagination-left"
+    class="c-r3kqy9 c-8xwqpw"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1320,41 +1320,41 @@ exports[`Pagination[Base] should render correctly about size 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1369,17 +1369,17 @@ exports[`Pagination[Base] should render correctly about size 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1396,18 +1396,18 @@ exports[`Pagination[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="so-pagination-pagination so-pagination-left so-pagination-large"
+    class="c-r3kqy9 c-8xwqpw c6x6wbq"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square so-button-large"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i c-x7orua"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1422,41 +1422,41 @@ exports[`Pagination[Base] should render correctly about size 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square so-button-large"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i c-x7orua"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-large"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x7orua"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-large"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x7orua"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-large"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x7orua"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-large"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x7orua"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-large"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x7orua"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1471,17 +1471,17 @@ exports[`Pagination[Base] should render correctly about size 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square so-button-large"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x7orua"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square so-button-large"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i c-x7orua"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1503,19 +1503,19 @@ exports[`Pagination[Base] should render correctly about size 1`] = `
 exports[`Pagination[Base] should render correctly about span 1`] = `
 <div>
   <div
-    class="so-pagination-pagination so-pagination-left"
+    class="c-r3kqy9 c-8xwqpw"
     style="margin-bottom: 24px;"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
         disabled=""
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1530,53 +1530,53 @@ exports[`Pagination[Base] should render correctly about span 1`] = `
         </span>
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         2
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         3
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         4
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         6
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         7
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1591,17 +1591,17 @@ exports[`Pagination[Base] should render correctly about span 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         10
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1618,17 +1618,17 @@ exports[`Pagination[Base] should render correctly about span 1`] = `
     </div>
   </div>
   <div
-    class="so-pagination-pagination so-pagination-left"
+    class="c-r3kqy9 c-8xwqpw"
   >
     <div
-      class="so-pagination-section so-pagination-buttons"
+      class="c8idq1c c-k2yd04"
     >
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1643,17 +1643,17 @@ exports[`Pagination[Base] should render correctly about span 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         1
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1668,71 +1668,71 @@ exports[`Pagination[Base] should render correctly about span 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         5
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         6
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         7
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         8
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         9
       </button>
       <button
-        class="so-button-primary so-button-button so-button-square"
+        class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
         type="button"
       >
         10
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         11
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         12
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         13
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         14
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1747,17 +1747,17 @@ exports[`Pagination[Base] should render correctly about span 1`] = `
         </span>
       </button>
       <button
-        class="so-button-secondary so-button-button so-button-text so-button-square"
+        class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         100
       </button>
       <button
-        class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+        class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
         type="button"
       >
         <span
-          class="so-pagination-icon"
+          class="c-8xyoya"
         >
           <svg
             aria-hidden="true"
@@ -1778,58 +1778,58 @@ exports[`Pagination[Base] should render correctly about span 1`] = `
 
 exports[`Pagination[Base] should render correctly about text 1`] = `
 <div
-  class="so-pagination-pagination so-pagination-left"
+  class="c-r3kqy9 c-8xwqpw"
 >
   <div
-    class="so-pagination-section so-pagination-buttons"
+    class="c8idq1c c-k2yd04"
   >
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu"
       disabled=""
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Previous
       </span>
     </button>
     <button
-      class="so-button-primary so-button-button so-button-square"
+      class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
       type="button"
     >
       1
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       2
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       3
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       4
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       5
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -1844,41 +1844,41 @@ exports[`Pagination[Base] should render correctly about text 1`] = `
       </span>
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       26
     </button>
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-text"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu"
       type="button"
     >
       <span
-        class="so-button-space-wrapper"
+        class="cboe6wq"
       >
         Next
       </span>
     </button>
   </div>
   <div
-    class="so-pagination-section so-pagination-size-list"
+    class="c8idq1c c-lyvyj0"
   >
     <div
-      class="so-select-wrapper"
+      class="c-k1257o"
       data-soui-type="input"
       tabindex="0"
     >
       <div
-        class="so-select-result-wrapper so-select-wrapper-padding-box so-select-wrapper-inner-title-top so-select-wrapper-inner-title-bottom"
+        class="c-hka1dt c8hos3a crwdlef c9869pl"
       >
         <div
-          class="so-select-result"
+          class="c-lj7los"
         >
           <div
-            class="so-select-result-text-wrapper"
+            class="cml870y"
           >
             <span
-              class="so-select-ellipsis"
+              class="c-f5w80o"
             >
               10  / page
             </span>
@@ -1886,7 +1886,7 @@ exports[`Pagination[Base] should render correctly about text 1`] = `
         </div>
       </div>
       <span
-        class="so-select-arrow-icon"
+        class="c-fjov4l"
       >
         <svg
           aria-hidden="true"
@@ -1902,7 +1902,7 @@ exports[`Pagination[Base] should render correctly about text 1`] = `
     </div>
   </div>
   <div
-    class="so-pagination-section"
+    class="c8idq1c"
   >
     <span>
       1 to 10 of 256 items
@@ -1913,25 +1913,25 @@ exports[`Pagination[Base] should render correctly about text 1`] = `
 
 exports[`Pagination[Base] should render correctly about total 1`] = `
 <div
-  class="so-pagination-pagination so-pagination-left"
+  class="c-r3kqy9 c-8xwqpw"
 >
   <div
-    class="so-pagination-section"
+    class="c8idq1c"
   >
     <span>
       total 500
     </span>
   </div>
   <div
-    class="so-pagination-section so-pagination-buttons"
+    class="c8idq1c c-k2yd04"
   >
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-disabled so-button-text so-button-square"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 conix1l c-nzauiu c-vmlc9i"
       disabled=""
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -1946,41 +1946,41 @@ exports[`Pagination[Base] should render correctly about total 1`] = `
       </span>
     </button>
     <button
-      class="so-button-primary so-button-button so-button-square"
+      class="cse7e56 c-trc8a3 cvey2f3 c-vmlc9i"
       type="button"
     >
       1
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       2
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       3
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       4
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       5
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"
@@ -1995,17 +1995,17 @@ exports[`Pagination[Base] should render correctly about total 1`] = `
       </span>
     </button>
     <button
-      class="so-button-secondary so-button-button so-button-text so-button-square"
+      class="cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       50
     </button>
     <button
-      class="so-pagination-section so-button-secondary so-button-button so-button-text so-button-square"
+      class="c8idq1c c-489olr cse7e56 c-rg592x cvey2f3 c-nzauiu c-vmlc9i"
       type="button"
     >
       <span
-        class="so-pagination-icon"
+        class="c-8xyoya"
       >
         <svg
           aria-hidden="true"

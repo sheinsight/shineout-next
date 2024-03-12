@@ -6,7 +6,7 @@ import { TabData } from './tab.type';
 import { TabsPanelProps } from './tabs-panel.type';
 import TabsPanel from './tabs-panel';
 import TabsHeader from './tabs-header';
-import Sticky, { type StickyProps} from '../sticky';
+import Sticky, { type StickyProps } from '../sticky';
 
 const { isEmpty, isObject, isNumber } = util;
 
@@ -30,7 +30,7 @@ const Tabs = (props: TabsProps) => {
     background,
     activeBackground,
     inactiveBackground,
-    defaultActive,
+    defaultActive = 0,
     tabBarStyle,
     color,
     sticky,
@@ -38,7 +38,7 @@ const Tabs = (props: TabsProps) => {
     ...rest
   } = props;
 
-  const shape = (shapeProps && shapeProps !== 'bordered') ? shapeProps : 'card';
+  const shape = shapeProps && shapeProps !== 'bordered' ? shapeProps : 'card';
 
   const { Provider, active, onChange } = useTabs({
     ...rest,
@@ -112,7 +112,7 @@ const Tabs = (props: TabsProps) => {
   const getDataProps = () => {
     return util.getDataAttribute({
       position: getPosition(),
-      shape
+      shape,
     });
   };
 
@@ -187,31 +187,29 @@ const Tabs = (props: TabsProps) => {
         getPosition={getPosition()}
         sticky={!!sticky}
       ></TabsHeader>
-    )
+    );
     if (!isEmpty(sticky) && !isVertical) {
-      const stickyClassName = tabsStyle.sticky
+      const stickyClassName = tabsStyle.sticky;
       let stickyProps: { top?: number | undefined; className: string } = {
         top: 0,
-        className: stickyClassName
-      }
+        className: stickyClassName,
+      };
       if (isNumber(sticky)) {
-        stickyProps.top = sticky
+        stickyProps.top = sticky;
       }
       if (isObject(sticky)) {
         stickyProps = {
           ...(sticky as StickyProps),
-          className: classNames(stickyClassName, (sticky as StickyProps).className)
-        }
+          className: classNames(stickyClassName, (sticky as StickyProps).className),
+        };
       }
       return (
         <Sticky {...stickyProps}>
-          <div {...getDataProps()}>
-            {header}
-          </div>
+          <div {...getDataProps()}>{header}</div>
         </Sticky>
-      )
+      );
     }
-    return header
+    return header;
   };
 
   const renderTabs = () => {

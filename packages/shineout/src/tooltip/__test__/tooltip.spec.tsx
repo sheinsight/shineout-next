@@ -1,12 +1,14 @@
 import { render, cleanup, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Tooltip from '..';
+import { Button } from 'shineout'
 import mountTest from '../../tests/mountTest';
 import { classLengthTest } from '../../tests/structureTest';
 import {
   StyleProps,
   attributesTest,
   classContentTest,
+  createClassName,
   delay,
   displayTest,
   snapshotTest,
@@ -18,10 +20,12 @@ import TooltipClick from '../__example__/example-03-01-click';
 import TooltipDisabled from '../__example__/example-04-disabled-inner';
 
 const SO_PREFIX = 'tooltip';
-const tooltipClassName = `.${SO_PREFIX}-wrapper-0-2-6`;
-const tooltipContentClassName = `.${SO_PREFIX}-content-0-2-9`;
-const tooltipWrapperOpenClassName = `${SO_PREFIX}-wrapperOpen-0-2-7`;
-const tooltipTargetClassName = `.${SO_PREFIX}-target-0-2-8`;
+const {
+  wrapper: tooltipClassName,
+  content: tooltipContentClassName,
+  wrapperOpen: tooltipWrapperOpenClassName,
+  target: tooltipTargetClassName,
+} = createClassName(SO_PREFIX, ['wrapper', 'content', 'target'], ['wrapperOpen'])
 
 const TooltipDemo = ({
   className,
@@ -74,8 +78,8 @@ describe('Tooltip[Base]', () => {
     const { container } = render(<TooltipDemo />);
     textContentTest(container, 'demo');
     const wrapper = document.querySelector(tooltipClassName)!;
-    attributesTest(wrapper, 'data-soui-position', 'bottom-left');
-    styleTest(wrapper, 'opacity: 0; pointer-events: none; position: absolute; z-index: 1051;');
+    attributesTest(wrapper, 'data-soui-position', 'bottom');
+    styleTest(wrapper, 'pointer-events: none; position: absolute; z-index: -1000;');
     const content = wrapper.querySelector(tooltipContentClassName)!;
     textContentTest(content, 'hello');
   });
@@ -125,7 +129,22 @@ describe('Tooltip[Base]', () => {
   });
   test('should render when set different position', async () => {
     const positions = ['left', 'top', 'bottom', 'right'];
-    render(<TooltipBase />);
+    render(
+      <div>
+        <Tooltip tip='hello world' trigger='hover' position='left'>
+          <Button type='primary'>left</Button>
+        </Tooltip>
+        <Tooltip tip='hello world' trigger='hover' position='top'>
+          <Button type='primary'>top</Button>
+        </Tooltip>
+        <Tooltip tip='hello world' trigger='hover' position='bottom'>
+          <Button type='primary'>bottom</Button>
+        </Tooltip>
+        <Tooltip tip='hello world' trigger='hover' position='right'>
+          <Button type='primary'>right</Button>
+        </Tooltip>
+      </div>
+    );
     const wrappers = document.querySelectorAll(tooltipClassName)!;
     wrappers.forEach((item, index) => {
       attributesTest(item, 'data-soui-position', positions[index]);
@@ -143,7 +162,7 @@ describe('Tooltip[Base]', () => {
       await delay(200);
       styleTest(
         wrappers[1],
-        'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%)translateY(-100%); top: 0px;',
+        'position: absolute; z-index: 1051; left: 0px; transform: translateX(-50%)translateY(-100%); top: 0px; transform-origin: center bottom;',
       );
     });
     fireEvent.mouseEnter(screen.getByText(positions[2]));
@@ -201,7 +220,6 @@ describe('Tooltip[Base]', () => {
       classContentTest(
         document.querySelector(tooltipClassName)!,
         tooltipWrapperOpenClassName,
-        false,
       );
     });
     await waitFor(async () => {

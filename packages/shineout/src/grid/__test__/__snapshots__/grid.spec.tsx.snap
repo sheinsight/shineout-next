@@ -3,100 +3,100 @@
 exports[`Grid[Base] should render correctly  1`] = `
 <div>
   <div
-    class="so-slider-wrapper"
+    class="cmzo79z"
   >
     <div
-      class="so-slider-track"
+      class="cj1pxn3"
     >
       <div
-        class="so-slider-track-inner"
+        class="ccmbr"
         style="left: 0%; right: 62.5%;"
       >
         <div
-          class="so-slider-indicator so-slider-indicator-end"
+          class="c-7ssxpp c-uua2rc"
         />
       </div>
     </div>
     <div
-      class="so-slider-scale-wrapper"
+      class="c54lued"
     >
       <div
-        class="so-slider-scale"
+        class="cj0wkge"
       >
         <div
-          class="so-slider-label"
+          class="cix0qwo"
         >
           1
         </div>
       </div>
       <div
-        class="so-slider-scale"
+        class="cj0wkge"
       >
         <div
-          class="so-slider-label"
+          class="cix0qwo"
         >
           2
         </div>
       </div>
       <div
-        class="so-slider-scale"
+        class="cj0wkge"
       >
         <div
-          class="so-slider-label"
+          class="cix0qwo"
         >
           3
         </div>
       </div>
       <div
-        class="so-slider-scale"
+        class="cj0wkge"
       >
         <div
-          class="so-slider-label"
+          class="cix0qwo"
         >
           5
         </div>
       </div>
       <div
-        class="so-slider-scale"
+        class="cj0wkge"
       >
         <div
-          class="so-slider-label"
+          class="cix0qwo"
         >
           8
         </div>
       </div>
       <div
-        class="so-slider-scale"
+        class="cj0wkge"
       >
         <div
-          class="so-slider-label"
+          class="cix0qwo"
         >
           13
         </div>
       </div>
       <div
-        class="so-slider-scale"
+        class="cj0wkge"
       >
         <div
-          class="so-slider-label"
+          class="cix0qwo"
         >
           21
         </div>
       </div>
       <div
-        class="so-slider-scale"
+        class="cj0wkge"
       >
         <div
-          class="so-slider-label"
+          class="cix0qwo"
         >
           34
         </div>
       </div>
       <div
-        class="so-slider-scale"
+        class="cj0wkge"
       >
         <div
-          class="so-slider-label"
+          class="cix0qwo"
         >
           55
         </div>

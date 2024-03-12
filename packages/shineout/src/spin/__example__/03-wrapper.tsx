@@ -4,16 +4,21 @@
  * en - Wrapper
  *    -- Spin can be used as a container, just wrap it in the outer layer
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Spin } from 'shineout';
 
 export default () => {
+  const [loading, setLoading] = React.useState(false);
+  useEffect(() => {
+    setLoading(true);
+  }, []);
   return (
     <Spin
       size={20}
       tip={<span style={{ fontSize: 14 }}>loading...</span>}
       name='ring'
       mode='vertical'
+      loading={loading}
     >
       <div
         style={{

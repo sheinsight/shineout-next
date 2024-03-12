@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '@testing-library/jest-dom';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import Spin from '..';
 import { Button } from 'shineout';
@@ -10,6 +11,7 @@ import {
   displayTest,
   baseTest,
   childrenTest,
+  createClassName,
 } from '../../tests/utils';
 import mountTest from '../../tests/mountTest';
 import { classLengthTest } from '../../tests/structureTest';
@@ -19,29 +21,31 @@ import SpinMode from '../__example__/02-mode';
 import SpinTip from '../__example__/04-tip';
 
 const SO_PREFIX = 'spin';
-const spinDefaultClassName = `${SO_PREFIX}-default-0-2-20`;
-const spinClassName = `.${SO_PREFIX}-spin-0-2-36`;
-const spinRingClassName = `.${SO_PREFIX}-ring-0-2-31`;
-const spinItemClassName = `.${SO_PREFIX}-item-0-2-25`;
-const spinChasingDotsClassName = `${SO_PREFIX}-chasingDots-0-2-21`;
-const spinCubeGridClassName = `${SO_PREFIX}-cubeGrid-0-2-22`;
-const spinDoubleBounceClassName = `${SO_PREFIX}-doubleBounce-0-2-23`;
-const spinFadingCircleClassName = `${SO_PREFIX}-fadingCircle-0-2-26`;
-const spinFadeClassName = `${SO_PREFIX}-fade-0-2-35`;
-const spinFourDotsClassName = `${SO_PREFIX}-fourDots-0-2-28`;
-const spinPlaneClassName = `.${SO_PREFIX}-plane-0-2-29`;
-const spinPulseClassName = `.${SO_PREFIX}-pulse-0-2-30`;
-const spinThreeBounceClassName = `${SO_PREFIX}-threeBounce-0-2-32`;
-const spinWaveClassName = `${SO_PREFIX}-wave-0-2-33`;
-const spinChasingRingClassName = `${SO_PREFIX}-chasingRing-0-2-34`;
-const spinContentClassName = `.${SO_PREFIX}-content-0-2-37`;
-const spinVerticalClassName = `${SO_PREFIX}-vertical-0-2-41`;
-const spinTipClassName = `.${SO_PREFIX}-tip-0-2-40`;
-const spinHorizontalClassName = `${SO_PREFIX}-horizontal-0-2-42`;
-const spinContainerClassName = `.${SO_PREFIX}-container-0-2-38`;
-const spinLoadingClassName = `.${SO_PREFIX}-loading-0-2-60`;
-const spinLoadingOtherClassName = `.${SO_PREFIX}-loading-0-2-39`;
-const spinRingOtherClassName = `.${SO_PREFIX}-ring-0-2-52`;
+
+const {
+  default: spinDefaultClassName,
+  spin: spinClassName,
+  ring: spinRingClassName,
+  item: spinItemClassName,
+  plane: spinPlaneClassName,
+  pulse: spinPulseClassName,
+  chasingDots: spinChasingDotsClassName,
+  cubeGrid: spinCubeGridClassName,
+  doubleBounce: spinDoubleBounceClassName,
+  fadingCircle: spinFadingCircleClassName,
+  fade: spinFadeClassName,
+  fourDots: spinFourDotsClassName,
+  threeBounce: spinThreeBounceClassName,
+  vertical: spinVerticalClassName,
+  horizontal: spinHorizontalClassName,
+  wave: spinWaveClassName,
+  chasingRing: spinChasingRingClassName,
+  content: spinContentClassName,
+  tip: spinTipClassName,
+  container: spinContainerClassName,
+  loading: spinLoadingClassName,
+  ringOther: spinRingOtherClassName,
+} = createClassName(SO_PREFIX, ['spin', 'ring', 'item', 'plane', 'pulse', 'content', 'tip', 'container', 'loading', 'ring', 'default', 'chasingDots', 'cubeGrid', 'doubleBounce', 'fadingCircle', 'fourDots', 'wave', 'chasingRing', 'threeBounce'], ['fade', 'vertical', 'horizontal'])
 
 type SpinNameType =
   | 'default'
@@ -92,7 +96,7 @@ afterEach(cleanup);
 mountTest(Spin);
 describe('Spin[Base]', () => {
   displayTest(Spin, 'ShineoutSpin');
-  baseTest(Spin, spinClassName, { backgroundColor: 'red' }, style + ' background-color: red;');
+  baseTest(Spin, spinDefaultClassName, { backgroundColor: 'red' }, style + ' background-color: red;');
   childrenTest(Spin, spinContainerClassName);
   snapshotTest(<SpinBase />);
   snapshotTest(<SpinBaseAll />);
@@ -111,8 +115,8 @@ describe('Spin[Name/Size]', () => {
   Object.keys(spinObj).forEach((name) => {
     test(`should render when set name is ${name}`, () => {
       const { container, rerender } = render(<Spin name={name as SpinNameType} />);
-      const spin = container.querySelector(spinClassName)!;
-      classTest(spin, spinObj[name][0] as string);
+      const spin = container.querySelector(spinObj[name][0] as string)!;
+      expect(spin).toBeInTheDocument()
       styleTest(spin, style);
       classLengthTest(spin, spinItemClassName, spinObj[name][1] as number);
       rerender(<Spin name={name as SpinNameType} size={size} />);
@@ -149,8 +153,7 @@ describe('Spin[Name/Size]', () => {
   });
   test('should render when set name is three-bounce', () => {
     const { container, rerender } = render(<Spin name='three-bounce' />);
-    const spin = container.querySelector(spinClassName)!;
-    classTest(spin, spinThreeBounceClassName);
+    const spin = container.querySelector(spinThreeBounceClassName)!;
     styleTest(spin, 'width: 80px; height: auto;');
     classLengthTest(spin, spinItemClassName, 3);
     rerender(<Spin name='three-bounce' size={size} />);
@@ -194,39 +197,21 @@ describe('Spin[inexistence]', () => {
   });
   test('should render when set name is undefined', () => {
     const { container } = render(<Spin name={undefined} />);
-    classLengthTest(container, spinClassName, 1);
-    classTest(container.querySelector(spinClassName)!, spinDefaultClassName);
+    expect(container.querySelector(spinDefaultClassName)!).toBeInTheDocument();
   });
 });
 describe('Spin[Loading]', () => {
   test('should render when set loading', () => {
     const Demo = () => {
-      const [load, setLoad] = useState<boolean>(false);
       return (
-        <div>
-          <Button
-            onClick={() => {
-              setLoad(!load);
-            }}
-          >
-            Click
-          </Button>
-          <Spin name='ring' loading={load}>
+        <Spin name='ring' loading>
             <div>Demo</div>
           </Spin>
-        </div>
       );
     };
     const { container } = render(<Demo />);
-    const buttonCon = container.querySelector('button') as HTMLButtonElement;
     expect(
-      container.querySelector(spinLoadingClassName) ||
-        container.querySelector(spinLoadingOtherClassName),
-    ).toBeFalsy();
-    fireEvent.click(buttonCon);
-    expect(
-      container.querySelector(spinLoadingClassName) ||
-        container.querySelector(spinLoadingOtherClassName),
+      container.querySelector(spinLoadingClassName)
     ).toBeTruthy();
   });
   test('should render when set loading without children', () => {

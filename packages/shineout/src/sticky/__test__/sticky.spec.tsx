@@ -1,4 +1,4 @@
-import { render, cleanup, screen, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Sticky, Alert } from 'shineout';
 import React from 'react';
@@ -42,7 +42,6 @@ describe('Sticky[Base]', () => {
       </div>,
     );
     fireEvent.scroll(window, { target: { scrollY: -700 } });
-    screen.debug();
   });
 });
 describe('Sticky[Css]', () => {

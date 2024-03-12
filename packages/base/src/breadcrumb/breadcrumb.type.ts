@@ -18,6 +18,7 @@ export interface BreadcrumbClasses {
   itemWithDrop: string;
   dropdown: string;
   ellipsis: string;
+  itemWrapper: string;
 }
 
 export interface BreadcrumbJssStyle extends PopoverJssStyle {

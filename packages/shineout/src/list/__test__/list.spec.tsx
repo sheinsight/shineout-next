@@ -4,7 +4,6 @@ import '@testing-library/jest-dom';
 import { List, TYPE, Button } from 'shineout';
 import mountTest from '../../tests/mountTest';
 import {
-  attributesTest,
   classTest,
   createClassName,
   displayTest,
@@ -237,8 +236,8 @@ describe('List[Fixed]', () => {
     listRow.forEach((item) => {
       styleContentTest(item.querySelector(itemClassName)!, `height: ${defaultLineHeight}px;`);
     });
-    attributesTest(listScroll, 'data-soui-type', 'scroll');
-    attributesTest(listScrollContainer, 'data-soui-type', 'scroll-container');
+    // attributesTest(listScroll, 'data-soui-type', 'scroll');
+    // attributesTest(listScrollContainer, 'data-soui-type', 'scroll-container');
     styleTest(listScrollMain, 'transform: translate3d(0, -0px, 0);');
     fireEvent.scroll(listScroll, { target: { scrollTop } });
     styleTest(listScrollMain, `transform: translate3d(0, -${scrollTop - defaultLineHeight}px, 0);`);

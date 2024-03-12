@@ -6,11 +6,20 @@ import TreeContent from './tree-content';
 import { useTreeContext } from './tree-context';
 import { useTreeNode, ObjectType, util, KeygenResult } from '@sheinx/hooks';
 
-const placeElement = document.createElement('div');
-const innerPlaceElement = document.createElement('div');
-placeElement.appendChild(innerPlaceElement);
+let placeElement: HTMLDivElement | null = null;
+let innerPlaceElement: HTMLDivElement | null = null;
 const placeInfo: any = { start: '', target: '' };
 let dragLock = false;
+
+const initPlaceElement = () => {
+  if (util.isBrowser() && !(placeElement && innerPlaceElement)) {
+    placeElement = document.createElement('div');
+    innerPlaceElement = document.createElement('div');
+    placeElement.appendChild(innerPlaceElement);
+  }
+};
+
+initPlaceElement()
 
 const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataItem, Value>) => {
   const {
@@ -51,6 +60,8 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
     listComponent: List,
   } = props;
 
+  initPlaceElement();
+
   const element = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
   const dragImage = useRef<null | HTMLElement>(null);
@@ -68,7 +79,7 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
     dragImageSelector,
     dragImageStyle,
   });
-  
+
   const children = data[childrenKey] as DataItem[];
   const hasChildren = children && children.length > 0;
 
@@ -84,7 +95,9 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
     },
   );
 
-  placeElement.className = contentStyle.placement;
+  if (placeElement) {
+    placeElement.className = contentStyle.placement;
+  }
 
   const handleFetch = () => {};
 
@@ -118,26 +131,30 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
 
     let position = index;
 
-    innerPlaceElement.style.height = '0px';
-
-    if (hoverClientY < hoverMiddleY + clientHeight * 0.2) {
-      hover.parentNode!.insertBefore(placeElement, hover);
-      if (hoverClientY > clientHeight * 0.3) {
-        if (!dragSibling) {
-          position = -1;
-          innerPlaceElement.style.height = `${rect.height}px`;
-        } else {
-          position += 1;
-          hover.parentNode!.insertBefore(placeElement, hover.nextElementSibling);
-        }
-      }
-    } else {
-      position += 1;
-      hover.parentNode!.insertBefore(placeElement, hover.nextElementSibling);
+    if (innerPlaceElement) {
+      innerPlaceElement.style.height = '0px';
     }
-    placeInfo.target = id;
-    // @ts-ignore
-    placeElement.setAttribute('data-position', position);
+
+    if (placeElement && innerPlaceElement) {
+      if (hoverClientY < hoverMiddleY + clientHeight * 0.2) {
+        hover.parentNode!.insertBefore(placeElement, hover);
+        if (hoverClientY > clientHeight * 0.3) {
+          if (!dragSibling) {
+            position = -1;
+            innerPlaceElement.style.height = `${rect.height}px`;
+          } else {
+            position += 1;
+            hover.parentNode!.insertBefore(placeElement, hover.nextElementSibling);
+          }
+        }
+      } else {
+        position += 1;
+        hover.parentNode!.insertBefore(placeElement, hover.nextElementSibling);
+      }
+      placeInfo.target = id;
+      // @ts-ignore
+      placeElement.setAttribute('data-position', position);
+    }
 
     if (onDragOver) onDragOver(e, data);
   };
@@ -185,7 +202,7 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
 
     dragLock = false;
 
-    if (!placeElement.parentNode) return;
+    if (!placeElement || !placeElement.parentNode) return;
     if (dragImage.current && dragImage.current.parentNode)
       dragImage.current.parentNode.removeChild(dragImage.current);
     const position = parseInt(placeElement.getAttribute('data-position') || '', 10);

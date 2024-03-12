@@ -2,16 +2,16 @@
 
 exports[`Rate[Base] should render correctly  1`] = `
 <div
-  class="so-rate-wrapper"
+  class="c-n90wlk"
 >
   <div
-    class="so-rate-inner"
+    class="c-p5cnid"
   >
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -24,7 +24,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -38,10 +38,10 @@ exports[`Rate[Base] should render correctly  1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -54,7 +54,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -68,10 +68,10 @@ exports[`Rate[Base] should render correctly  1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -84,7 +84,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -98,10 +98,10 @@ exports[`Rate[Base] should render correctly  1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -114,7 +114,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -128,10 +128,10 @@ exports[`Rate[Base] should render correctly  1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -144,7 +144,7 @@ exports[`Rate[Base] should render correctly  1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -163,16 +163,16 @@ exports[`Rate[Base] should render correctly  1`] = `
 
 exports[`Rate[Base] should render correctly about color 1`] = `
 <div
-  class="so-rate-wrapper"
+  class="c-n90wlk"
 >
   <div
-    class="so-rate-inner"
+    class="c-p5cnid"
   >
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -185,7 +185,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="#ff4d4f"
@@ -199,10 +199,10 @@ exports[`Rate[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -215,7 +215,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="#ff4d4f"
@@ -229,10 +229,10 @@ exports[`Rate[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -245,7 +245,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="#ff4d4f"
@@ -259,10 +259,10 @@ exports[`Rate[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -275,7 +275,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="#ff4d4f"
@@ -289,10 +289,10 @@ exports[`Rate[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -305,7 +305,7 @@ exports[`Rate[Base] should render correctly about color 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="#ff4d4f"
@@ -324,16 +324,16 @@ exports[`Rate[Base] should render correctly about color 1`] = `
 
 exports[`Rate[Base] should render correctly about disable 1`] = `
 <div
-  class="so-rate-wrapper"
+  class="c-n90wlk"
 >
   <div
-    class="so-rate-inner"
+    class="c-p5cnid"
   >
     <div
-      class="so-rate-item so-rate-item-checked so-rate-item-disabled"
+      class="cf87lce cxz6xvd c-x3ffkm"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -346,7 +346,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -360,10 +360,10 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked so-rate-item-disabled"
+      class="cf87lce cxz6xvd c-x3ffkm"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -376,7 +376,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -390,10 +390,10 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked so-rate-item-disabled"
+      class="cf87lce cxz6xvd c-x3ffkm"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -406,7 +406,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -420,10 +420,10 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked so-rate-item-disabled"
+      class="cf87lce cxz6xvd c-x3ffkm"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -436,7 +436,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -450,10 +450,10 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-disabled"
+      class="cf87lce c-x3ffkm"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -466,7 +466,7 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -485,16 +485,16 @@ exports[`Rate[Base] should render correctly about disable 1`] = `
 
 exports[`Rate[Base] should render correctly about half 1`] = `
 <div
-  class="so-rate-wrapper"
+  class="c-n90wlk"
 >
   <div
-    class="so-rate-inner"
+    class="c-p5cnid"
   >
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -507,7 +507,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -520,7 +520,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -534,10 +534,10 @@ exports[`Rate[Base] should render correctly about half 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -550,7 +550,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -563,7 +563,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -577,10 +577,10 @@ exports[`Rate[Base] should render correctly about half 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -593,7 +593,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -606,7 +606,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -620,10 +620,10 @@ exports[`Rate[Base] should render correctly about half 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked-half"
+      class="cf87lce c-wrkvn8"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -636,7 +636,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -649,7 +649,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -663,10 +663,10 @@ exports[`Rate[Base] should render correctly about half 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -679,7 +679,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -692,7 +692,7 @@ exports[`Rate[Base] should render correctly about half 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -714,17 +714,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
   style="display: flex; flex-direction: column; gap: 12px;"
 >
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -740,7 +740,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -757,11 +757,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -777,7 +777,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -794,11 +794,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -814,7 +814,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -831,11 +831,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -851,7 +851,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -868,11 +868,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -888,7 +888,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -907,17 +907,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -933,7 +933,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -950,11 +950,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -970,7 +970,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -987,11 +987,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1007,7 +1007,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1024,11 +1024,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1044,7 +1044,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1061,11 +1061,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1081,7 +1081,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1100,17 +1100,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1126,7 +1126,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1143,11 +1143,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1163,7 +1163,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1180,11 +1180,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1200,7 +1200,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1217,11 +1217,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1237,7 +1237,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1254,11 +1254,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1274,7 +1274,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1293,17 +1293,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1319,7 +1319,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1336,11 +1336,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1356,7 +1356,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1373,11 +1373,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1393,7 +1393,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1410,11 +1410,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1430,7 +1430,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1447,11 +1447,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1467,7 +1467,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1486,17 +1486,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1512,7 +1512,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1529,11 +1529,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1549,7 +1549,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1566,11 +1566,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1586,7 +1586,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1603,11 +1603,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1623,7 +1623,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1640,11 +1640,11 @@ exports[`Rate[Base] should render correctly about level 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1660,7 +1660,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="none"
@@ -1679,17 +1679,17 @@ exports[`Rate[Base] should render correctly about level 1`] = `
     </div>
   </div>
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1705,15 +1705,15 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         />
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1729,15 +1729,15 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         />
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1753,15 +1753,15 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         />
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1777,15 +1777,15 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         />
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="none"
@@ -1801,7 +1801,7 @@ exports[`Rate[Base] should render correctly about level 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         />
       </div>
     </div>
@@ -1811,16 +1811,16 @@ exports[`Rate[Base] should render correctly about level 1`] = `
 
 exports[`Rate[Base] should render correctly about max 1`] = `
 <div
-  class="so-rate-wrapper"
+  class="c-n90wlk"
 >
   <div
-    class="so-rate-inner"
+    class="c-p5cnid"
   >
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -1833,7 +1833,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -1847,10 +1847,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -1863,7 +1863,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -1877,10 +1877,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -1893,7 +1893,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -1907,10 +1907,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -1923,7 +1923,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -1937,10 +1937,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -1953,7 +1953,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -1967,10 +1967,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -1983,7 +1983,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -1997,10 +1997,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2013,7 +2013,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2027,10 +2027,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2043,7 +2043,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2057,10 +2057,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2073,7 +2073,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2087,10 +2087,10 @@ exports[`Rate[Base] should render correctly about max 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2103,7 +2103,7 @@ exports[`Rate[Base] should render correctly about max 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2125,77 +2125,77 @@ exports[`Rate[Base] should render correctly about repeat 1`] = `
   style="display: flex; flex-direction: column; gap: 24px;"
 >
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           A
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           A
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           B
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           B
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           C
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           C
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           D
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           D
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           E
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           E
         </span>
@@ -2203,77 +2203,77 @@ exports[`Rate[Base] should render correctly about repeat 1`] = `
     </div>
   </div>
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           1
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           1
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           2
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           2
         </span>
       </div>
       <div
-        class="so-rate-item so-rate-item-checked"
+        class="cf87lce cxz6xvd"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           3
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           3
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           4
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           4
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           5
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           5
         </span>
@@ -2291,18 +2291,18 @@ exports[`Rate[Base] should render correctly about size 1`] = `
     16px
   </div>
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
     style="margin-bottom: 32px;"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2315,7 +2315,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2329,11 +2329,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2346,7 +2346,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2360,11 +2360,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2377,7 +2377,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2391,11 +2391,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2408,7 +2408,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2422,11 +2422,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 16px; width: 16px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2439,7 +2439,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2460,17 +2460,17 @@ exports[`Rate[Base] should render correctly about size 1`] = `
     24px
   </div>
   <div
-    class="so-rate-wrapper"
+    class="c-n90wlk"
   >
     <div
-      class="so-rate-inner"
+      class="c-p5cnid"
     >
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2483,7 +2483,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2497,11 +2497,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2514,7 +2514,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2528,11 +2528,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2545,7 +2545,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2559,11 +2559,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2576,7 +2576,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2590,11 +2590,11 @@ exports[`Rate[Base] should render correctly about size 1`] = `
         </span>
       </div>
       <div
-        class="so-rate-item"
+        class="cf87lce"
         style="font-size: 24px; width: 24px;"
       >
         <span
-          class="so-rate-item-bg"
+          class="c1thigj"
         >
           <svg
             fill="currentColor"
@@ -2607,7 +2607,7 @@ exports[`Rate[Base] should render correctly about size 1`] = `
           </svg>
         </span>
         <span
-          class="so-rate-item-front"
+          class="c-4n6vph"
         >
           <svg
             fill="currentColor"
@@ -2627,16 +2627,16 @@ exports[`Rate[Base] should render correctly about size 1`] = `
 
 exports[`Rate[Base] should render correctly about text 1`] = `
 <div
-  class="so-rate-wrapper"
+  class="c-n90wlk"
 >
   <div
-    class="so-rate-inner"
+    class="c-p5cnid"
   >
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2649,7 +2649,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2662,7 +2662,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -2676,10 +2676,10 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2692,7 +2692,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2705,7 +2705,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -2719,10 +2719,10 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2735,7 +2735,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2748,7 +2748,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -2762,10 +2762,10 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item so-rate-item-checked"
+      class="cf87lce cxz6xvd"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2778,7 +2778,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2791,7 +2791,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -2805,10 +2805,10 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2821,7 +2821,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2834,7 +2834,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-half"
+        class="c-rn7u1r"
       >
         <svg
           fill="currentColor"
@@ -2848,7 +2848,7 @@ exports[`Rate[Base] should render correctly about text 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-text"
+      class="cf8ebjc"
     >
       very good
     </div>
@@ -2858,16 +2858,16 @@ exports[`Rate[Base] should render correctly about text 1`] = `
 
 exports[`Rate[Base] should render correctly bout clear 1`] = `
 <div
-  class="so-rate-wrapper"
+  class="c-n90wlk"
 >
   <div
-    class="so-rate-inner"
+    class="c-p5cnid"
   >
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2880,7 +2880,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2894,10 +2894,10 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2910,7 +2910,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2924,10 +2924,10 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2940,7 +2940,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2954,10 +2954,10 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -2970,7 +2970,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"
@@ -2984,10 +2984,10 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
       </span>
     </div>
     <div
-      class="so-rate-item"
+      class="cf87lce"
     >
       <span
-        class="so-rate-item-bg"
+        class="c1thigj"
       >
         <svg
           fill="currentColor"
@@ -3000,7 +3000,7 @@ exports[`Rate[Base] should render correctly bout clear 1`] = `
         </svg>
       </span>
       <span
-        class="so-rate-item-front"
+        class="c-4n6vph"
       >
         <svg
           fill="currentColor"

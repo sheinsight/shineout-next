@@ -18,7 +18,7 @@ export type VerticalPosition =
 export interface AbsoluteListProps {
   children: React.ReactElement;
   focus: boolean;
-  parentElement: HTMLElement | null;
+  parentElRef: React.RefObject<HTMLElement>;
   fixedWidth: 'min' | boolean; // same width with parentElement
   position: HorizontalPosition | VerticalPosition | 'cover';
   updateKey?: number | string;
@@ -43,10 +43,10 @@ export interface AbsoluteListProps {
    */
   popupGap?: number;
 
-  scrollElement?: HTMLElement;
+  scrollElRef?: React.RefObject<HTMLElement>;
   scrollLeft?: number;
   scrollTop?: number;
-  popupEl?: HTMLElement | null;
+  popupElRef: React.RefObject<HTMLElement>;
   // 隐藏后是否卸载
   destroy?: boolean;
   // 自动调整位置来适应容器大小

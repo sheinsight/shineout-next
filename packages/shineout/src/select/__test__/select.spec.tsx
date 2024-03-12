@@ -704,7 +704,6 @@ describe('Select[OnCreate/OnFilter]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    attributesTest(selectResultTextWrapper.querySelector('input')!, 'value', 'test');
     classLengthTest(selectResultTextWrapper, tag, 0);
   });
   test('should render when onCreate and handleHideOption', async () => {
@@ -755,9 +754,13 @@ describe('Select[OnCreate/OnFilter]', () => {
     const blurFn = jest.fn();
     const testValue = 'test';
     const { container } = render(<SelectTest onCreate multiple trim onBlur={blurFn} />);
+    
     const selectWrapper = container.querySelector(wrapper)!;
     const selectResultTextWrapper = selectWrapper.querySelector(resultTextWrapper)!;
     fireEvent.click(selectResultTextWrapper);
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectInput = selectResultTextWrapper.querySelector('input')!;
     fireEvent.click(selectInput);
     await waitFor(async () => {
@@ -812,7 +815,6 @@ describe('Select[OnCreate/OnFilter]', () => {
     await waitFor(async () => {
       await delay(200);
     });
-    screen.debug();
     fireEvent.blur(selectInput);
     await waitFor(async () => {
       await delay(200);

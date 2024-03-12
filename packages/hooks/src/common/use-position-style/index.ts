@@ -34,9 +34,12 @@ export interface PositionStyleConfig {
   position: PositionType | undefined;
   absolute: boolean;
   show: boolean;
-  parentEl: HTMLElement | null | undefined;
-  popupEl?: HTMLElement | null | undefined;
-  visibleEl?: HTMLElement | null;
+  // 弹出层的目标元素
+  parentElRef: React.RefObject<HTMLElement>;
+  // 弹出层
+  popupElRef: React.RefObject<HTMLElement>;
+  // 可视区域
+  scrollElRef?: React.RefObject<HTMLElement>;
   getContainer: () => HTMLElement | null | undefined;
   zIndex?: number;
   popupGap?: number;
@@ -44,6 +47,13 @@ export interface PositionStyleConfig {
   updateKey?: number | string;
   adjust?: boolean;
 }
+
+const hideStyle: React.CSSProperties = {
+  pointerEvents: 'none',
+  position: 'absolute',
+  zIndex: -1000,
+  opacity: 0,
+};
 export const usePositionStyle = (config: PositionStyleConfig) => {
   const {
     absolute,
@@ -53,18 +63,14 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     fixedWidth,
     popupGap = 2,
     getContainer,
-    parentEl,
-    popupEl,
-    visibleEl,
+    parentElRef,
+    popupElRef,
+    scrollElRef,
     updateKey,
     adjust,
   } = config || {};
   // 初次渲染无样式的时候， 隐藏展示
-  const [style, setStyle] = useState<React.CSSProperties>({
-    pointerEvents: 'none',
-    position: 'absolute',
-    zIndex: -1000,
-  });
+  const [style, setStyle] = useState<React.CSSProperties>(hideStyle);
 
   const { current: context } = React.useRef({
     element: null as HTMLDivElement | null,
@@ -100,8 +106,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   };
 
   const getPopUpInfo = (parentRect: DOMRect) => {
-    if (!popupEl) return { width: 0, height: 0 };
-    const el = popupEl.cloneNode(true) as HTMLElement;
+    if (!popupElRef.current) return { width: 0, height: 0 };
+    const el = popupElRef.current.cloneNode(true) as HTMLElement;
     el.style.visibility = 'true';
     el.style.opacity = '0';
     el.style.pointerEvents = 'none';
@@ -110,7 +116,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
       const widthKey = fixedWidth === 'min' ? 'minWidth' : 'width';
       el.style[widthKey] = parentRect.width + 'px';
     }
-    popupEl.parentElement?.appendChild(el);
+    popupElRef.current.parentElement?.appendChild(el);
     const height = el.offsetHeight;
     const width = el.offsetWidth;
     el.remove();
@@ -129,6 +135,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     let targetPosition = position;
     const rootContainer = getContainer() || document.body;
     const containerRect = rootContainer.getBoundingClientRect();
+    const bodyRect = (document.documentElement || document.body).getBoundingClientRect();
     const containerScrollBarWidth = rootContainer.offsetWidth - rootContainer.clientWidth;
     const containerScroll = {
       left: rootContainer.scrollLeft,
@@ -144,13 +151,14 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         style.left = rect.left - containerRect.left + containerScroll.left;
         style.transform = '';
         if (adjust) {
-          overRight =
-            rect.left + context.popUpWidth - containerRect.right + containerScrollBarWidth;
+          overRight = rect.left + context.popUpWidth - bodyRect.right + containerScrollBarWidth;
         }
       } else if (h === 'right') {
-        style.left = rect.right - containerRect.left + containerScroll.left;
-        style.transform = 'translateX(-100%)';
-        if (adjust) overLeft = containerRect.left - (rect.right - context.popUpWidth);
+        style.right =
+          containerRect.right - rect.right + containerScrollBarWidth - containerScroll.left;
+        style.left = 'auto';
+        style.transform = '';
+        if (adjust) overLeft = bodyRect.left - (rect.right - context.popUpWidth);
       } else {
         // 居中对齐
         style.left = rect.left + rect.width / 2 - containerRect.left + containerScroll.left;
@@ -160,19 +168,19 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
             rect.left +
             rect.width / 2 +
             context.popUpWidth / 2 -
-            containerRect.width +
+            bodyRect.width +
             containerScrollBarWidth;
-          overLeft = containerRect.left - (rect.left + rect.width / 2 - context.popUpWidth / 2);
+          overLeft = bodyRect.left - (rect.left + rect.width / 2 - context.popUpWidth / 2);
         }
       }
 
       if (adjust) {
         // 调节左右溢出
         if (overRight > 0) {
-          style.left -= overRight;
+          (style.left as number) -= overRight;
         }
         if (overLeft > 0) {
-          style.left += overLeft;
+          (style.left as number) += overLeft;
         }
       }
 
@@ -209,17 +217,17 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   };
 
   const getAbsoluteStyle = (position: string) => {
-    if (!parentEl) return;
+    if (!parentElRef.current) return hideStyle;
     const rect = context.parentRect;
-    if (visibleEl) {
-      const visibleRect = visibleEl?.getBoundingClientRect() || {};
+    if (scrollElRef?.current) {
+      const visibleRect = scrollElRef.current?.getBoundingClientRect() || {};
       if (
         rect.bottom < visibleRect.top ||
         rect.top > visibleRect.bottom ||
         rect.right < visibleRect.left ||
         rect.left > visibleRect.right
       ) {
-        return;
+        return hideStyle;
       }
     }
     const style = getAbsolutePositionStyle(rect, position);
@@ -229,8 +237,8 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
   const getStyle = () => {
     let newStyle: React.CSSProperties = {};
     const { position, absolute } = config || {};
-    if (!position || !show || !parentEl) return style;
-    context.parentRect = parentEl.getBoundingClientRect();
+    if (!position || !show || !parentElRef.current) return style;
+    context.parentRect = parentElRef.current.getBoundingClientRect();
     if (adjust) {
       const popupInfo = getPopUpInfo(context.parentRect);
       context.popUpHeight = popupInfo.height;
@@ -239,7 +247,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
 
     const realPosition = adjust ? adjustPosition(position) : position;
     if (!absolute) {
-      newStyle = getPositionStyle(realPosition, { popupGap, zIndex });
+      newStyle = getPositionStyle(realPosition, { popupGap, zIndex, fixedWidth });
     } else {
       newStyle = getAbsoluteStyle(realPosition)!;
     }
@@ -257,8 +265,7 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
     }
   });
 
-  useEffect(updateStyle, [show, position, absolute, parentEl, visibleEl, updateKey]);
-
+  useEffect(updateStyle, [show, position, absolute, updateKey]);
   return style;
 };
 

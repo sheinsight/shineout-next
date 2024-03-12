@@ -2,11 +2,11 @@
 
 exports[`Textarea[Base] should render correctly  1`] = `
 <div
-  class="textarea-wrapper-0-2-1 textarea-wrapperFocus-0-2-5"
+  class="c-i7z34y cj7pbfe"
   data-soui-type="input"
 >
   <textarea
-    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    class="c-kulds8 c-km3xn9 cl630en"
     placeholder="input something"
     rows="4"
   />
@@ -15,17 +15,17 @@ exports[`Textarea[Base] should render correctly  1`] = `
 
 exports[`Textarea[Base] should render correctly about autosize 1`] = `
 <div
-  class="textarea-wrapper-0-2-1"
+  class="c-i7z34y"
   data-soui-type="input"
 >
   <textarea
-    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    class="c-kulds8 c-km3xn9 cl630en"
     placeholder="Please enter content, the height can be automatically adjusted"
     rows="2"
     style="overflow: auto; max-height: 150px; height: 0px;"
   />
   <textarea
-    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11 textarea-shadow-0-2-15"
+    class="c-kulds8 c-km3xn9 cl630en c-9ib3t7"
     placeholder="Please enter content, the height can be automatically adjusted"
     rows="2"
   />
@@ -34,16 +34,16 @@ exports[`Textarea[Base] should render correctly about autosize 1`] = `
 
 exports[`Textarea[Base] should render correctly about footer 1`] = `
 <div
-  class="textarea-wrapper-0-2-1"
+  class="c-i7z34y"
   data-soui-type="input"
 >
   <textarea
-    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    class="c-kulds8 c-km3xn9 cl630en"
     placeholder="input something"
     rows="3"
   />
   <div
-    class="textarea-paddingBox-0-2-2 textarea-footer-0-2-16"
+    class="c-kulds8 c-fjsdcg"
   >
     <div
       style="text-align: right;"
@@ -59,11 +59,11 @@ exports[`Textarea[Base] should render correctly about footer 1`] = `
 
 exports[`Textarea[Base] should render correctly about info 1`] = `
 <div
-  class="textarea-wrapper-0-2-1"
+  class="c-i7z34y"
   data-soui-type="input"
 >
   <textarea
-    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    class="c-kulds8 c-km3xn9 cl630en"
     placeholder="input something"
     rows="4"
   />
@@ -72,11 +72,11 @@ exports[`Textarea[Base] should render correctly about info 1`] = `
 
 exports[`Textarea[Base] should render correctly about info by function 1`] = `
 <div
-  class="textarea-wrapper-0-2-1"
+  class="c-i7z34y"
   data-soui-type="input"
 >
   <textarea
-    class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+    class="c-kulds8 c-km3xn9 cl630en"
     placeholder="input something"
     rows="4"
   />
@@ -86,34 +86,34 @@ exports[`Textarea[Base] should render correctly about info by function 1`] = `
 exports[`Textarea[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="textarea-wrapper-0-2-1 textarea-wrapperSmall-0-2-3"
+    class="c-i7z34y cjetbgp"
     data-soui-type="input"
-    style="width: 120px; margin-inline-end: 12px;"
+    style="width: 120px; margin-inline-end: 24px;"
   >
     <textarea
-      class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+      class="c-kulds8 c-km3xn9 cl630en"
       placeholder="small size"
       rows="3"
     />
   </div>
   <div
-    class="textarea-wrapper-0-2-1"
+    class="c-i7z34y"
     data-soui-type="input"
-    style="width: 120px; margin-inline-end: 12px;"
+    style="width: 120px; margin-inline-end: 24px;"
   >
     <textarea
-      class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+      class="c-kulds8 c-km3xn9 cl630en"
       placeholder="default size"
       rows="3"
     />
   </div>
   <div
-    class="textarea-wrapper-0-2-1 textarea-wrapperLarge-0-2-4"
+    class="c-i7z34y cjarfy5"
     data-soui-type="input"
-    style="width: 120px; margin-inline-end: 12px;"
+    style="width: 120px; margin-inline-end: 24px;"
   >
     <textarea
-      class="textarea-paddingBox-0-2-2 textarea-textarea-0-2-11"
+      class="c-kulds8 c-km3xn9 cl630en"
       placeholder="large size"
       rows="3"
     />

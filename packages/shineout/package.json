@@ -10,8 +10,9 @@
   "module": "./dist/esm/index.js",
   "typings": "./dist/cjs/index.d.ts",
   "scripts": {
-    "build": "node ./scripts/build.js",
-    "build:watch": "father dev",
+    "build": "cross-env node ./scripts/clean && node ./scripts/build.js",
+    "build:bundle": "cross-env BUILD_MODE=bundle  node ./scripts/build.js",
+    "build:watch": "node ./scripts/setconfig.js && father dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -22,12 +23,13 @@
     "immer": "^10.0.0",
     "deep-eql": "^4.0.0"
   },
-  "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
-  },
   "devDependencies": {
     "jszip": "^3.10.1",
     "@sheinx/mock": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8",
+    "core-js": ">=3"
   }
 }

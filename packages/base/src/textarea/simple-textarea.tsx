@@ -72,7 +72,7 @@ const Textarea = (props: SimpleTextareaProps) => {
 
   return (
     <div
-      {...util.getDataAttribute({ type: 'input' })}
+      {...util.getDataAttribute({ ['input-border']: 'true' })}
       {...getRootProps({
         className: rootClass,
         style,

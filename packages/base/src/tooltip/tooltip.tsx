@@ -66,7 +66,8 @@ const Tooltip = (props: TooltipProps) => {
       {cloneElement(inner, events)}
       <AbsoluteList
         focus={open}
-        parentElement={targetRef.current}
+        parentElRef={targetRef}
+        popupElRef={popupRef}
         absolute
         position={position}
         fixedWidth={false}

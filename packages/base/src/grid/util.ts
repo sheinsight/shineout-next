@@ -1,4 +1,5 @@
 import { config } from '../config';
+import { util } from '@sheinx/hooks';
 
 const CACHES: {
   [className: string]: boolean;
@@ -16,6 +17,7 @@ const GridFullClassName = `${config.prefix}-grid-full`;
 const defaultResponsive = 'md';
 
 function createStyle(text: string, id: string) {
+  if (!util.isBrowser()) {return;}
   let style = document.head.querySelector(`#${id}`) as Element & { type: string };
   if (style) {
     return;

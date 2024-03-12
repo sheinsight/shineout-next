@@ -372,6 +372,8 @@ p {
   margin: 0 0 ${lineHeightComputed2};
 }`;
 
-const link = document.createElement('style');
-link.innerHTML = css;
-document.head.appendChild(link);
+if (typeof window !== 'undefined') {
+  const link = document.createElement('style');
+  link.innerHTML = css;
+  document.head.appendChild(link);
+}

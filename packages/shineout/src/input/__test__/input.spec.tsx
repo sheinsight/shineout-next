@@ -5,8 +5,7 @@ import { Form } from 'shineout';
 const SO_PREFIX = 'input';
 describe('Input[Base]', () => {
   test('should render correct dom structure', () => {
-    const { container } = render(<Input />);
-    screen.debug();
+    const { container } = render(<Input />);;
     expect(container.innerHTML).toBe(
       `<div data-soui-type="input" class="${SO_PREFIX}-wrapper-0-2-1"><input class="${SO_PREFIX}-input-0-2-12 ${SO_PREFIX}-paddingBox-0-2-2" value=""></div>`,
     );

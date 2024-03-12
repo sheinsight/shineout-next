@@ -47,9 +47,10 @@ export { default as TreeSelect } from './tree-select';
 export { default as Upload } from './upload';
 
 export { setConfig, config, setLocale } from '@sheinx/base';
+export { JssProvider, SheetsRegistry, setJssConfig } from '@sheinx/shineout-style';
 export * as utls from './utils';
 export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.0.0-alpha.16' };
+export default { version: '3.0.0-alpha.19' };

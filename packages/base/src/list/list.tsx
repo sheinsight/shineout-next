@@ -69,16 +69,17 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
       typeof props.rowClassName === 'function'
         ? props.rowClassName(item, index)
         : props.rowClassName;
+
+    const listStyle = {
+      width: `${100 / colNum}%`,
+      ...props.itemStyle,
+    };
+    if (props.fixed) {
+      listStyle.height = lineHeight;
+    }
+
     return (
-      <div
-        key={key}
-        className={classNames(listClasses?.item, rowClass)}
-        style={{
-          height: props.fixed ? lineHeight : '',
-          width: `${100 / colNum}%`,
-          ...props.itemStyle,
-        }}
-      >
+      <div key={key} className={classNames(listClasses?.item, rowClass)} style={listStyle}>
         {shouldRenderCheckbox ? (
           <>
             <Checkbox
@@ -119,11 +120,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
   const renderLoading = () => {
     if (!props.loading) return null;
     const Loading =
-      props.loading === true ? (
-        <Spin name='ring' size={16} jssStyle={props.jssStyle} />
-      ) : (
-        props.loading
-      );
+      props.loading === true ? <Spin size={16} jssStyle={props.jssStyle} /> : props.loading;
     return <div className={listClasses?.loading}>{Loading}</div>;
   };
 

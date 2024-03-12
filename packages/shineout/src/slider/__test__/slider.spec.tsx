@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Slider, Input } from 'shineout';
 import { classLengthTest } from '../../tests/structureTest';
@@ -229,7 +229,6 @@ describe('Slider[Base]', () => {
         scale={scaleValues}
       />,
     );
-    screen.debug();
     const sliderScale = container.querySelector(scaleWrapper);
     const scales = sliderScale?.querySelectorAll(scale) as NodeListOf<Element>;
     scales.forEach((scale, index) => {
@@ -351,7 +350,6 @@ describe('Slider[Click]', () => {
       toJSON: () => {},
     }));
     fireEvent.click(sliderTrack!, { clientX });
-    screen.debug();
     styleTest(sliderTrackInner, innerStyle(0, 75));
     textContentTest(sliderValues[1], `${(clientX / sliderWidth) * 100}`);
   });

@@ -5,16 +5,16 @@ exports[`Image[Base] should render correctly  1`] = `
   style="gap: 8px; display: flex;"
 >
   <a
-    class="so-image-image so-image-href so-image-fill so-image-rounded so-image-preview"
+    class="c5xp75n cg8ahhn cg8910j cdf7qvh c-er3g9k"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="so-image-inner"
+      class="c5xq3qu"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="so-image-preview-mask"
+      class="c-rau9e4"
     >
       <svg
         aria-hidden="true"
@@ -36,75 +36,75 @@ exports[`Image[Group] should render correctly about group 1`] = `
   style="gap: 8px; display: flex;"
 >
   <div
-    class="so-image-group"
+    class="c5wp3mn"
   >
     <a
-      class="so-image-image so-image-href so-image-fill so-image-rounded"
+      class="c5xp75n cg8ahhn cg8910j cdf7qvh"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="so-image-default-placeholder"
+        class="ct7mkia"
       >
         <div
-          class="so-spin-ring"
+          class="chxenrh"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="so-image-image so-image-href so-image-fill so-image-rounded"
+      class="c5xp75n cg8ahhn cg8910j cdf7qvh"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="so-image-default-placeholder"
+        class="ct7mkia"
       >
         <div
-          class="so-spin-ring"
+          class="chxenrh"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="so-image-image so-image-href so-image-fill so-image-rounded"
+      class="c5xp75n cg8ahhn cg8910j cdf7qvh"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="so-image-default-placeholder"
+        class="ct7mkia"
       >
         <div
-          class="so-spin-ring"
+          class="chxenrh"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="so-image-image so-image-href so-image-fill so-image-rounded"
+      class="c5xp75n cg8ahhn cg8910j cdf7qvh"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="so-image-default-placeholder"
+        class="ct7mkia"
       >
         <div
-          class="so-spin-ring"
+          class="chxenrh"
           style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
         />
       </div>
     </a>
     <a
-      class="so-image-image so-image-href so-image-fill so-image-rounded so-image-preview"
+      class="c5xp75n cg8ahhn cg8910j cdf7qvh c-er3g9k"
       style="width: 128px; padding-bottom: 128px;"
       target="_modal"
     >
       <div
-        class="so-image-inner"
+        class="c5xq3qu"
         style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-05.png);"
       />
       <span
-        class="so-image-preview-mask"
+        class="c-rau9e4"
       >
         <svg
           aria-hidden="true"
@@ -124,19 +124,19 @@ exports[`Image[Group] should render correctly about group 1`] = `
 
 exports[`Image[Pile] should render correctly about pile 1`] = `
 <div
-  class="so-image-group so-image-group-pile"
+  class="c5wp3mn ci43ss1"
 >
   <a
-    class="so-image-image so-image-href so-image-fill so-image-rounded so-image-preview"
+    class="c5xp75n cg8ahhn cg8910j cdf7qvh c-er3g9k"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="so-image-inner"
+      class="c5xq3qu"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="so-image-preview-mask"
+      class="c-rau9e4"
     >
       <svg
         aria-hidden="true"
@@ -151,15 +151,15 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
     </span>
   </a>
   <div
-    class="so-image-group-pile-item"
+    class="c-2z7xlo"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="so-image-group-pile-item"
+    class="c-2z7xlo"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="so-image-group-count"
+    class="c-6wnyhc"
   >
     <svg
       aria-hidden="true"
@@ -180,19 +180,19 @@ exports[`Image[Pile] should render correctly about pile 1`] = `
 
 exports[`Image[Pile] should render correctly about pile without showCount 1`] = `
 <div
-  class="so-image-group so-image-group-pile"
+  class="c5wp3mn ci43ss1"
 >
   <a
-    class="so-image-image so-image-href so-image-fill so-image-rounded so-image-preview"
+    class="c5xp75n cg8ahhn cg8910j cdf7qvh c-er3g9k"
     style="width: 128px; padding-bottom: 128px;"
     target="_modal"
   >
     <div
-      class="so-image-inner"
+      class="c5xq3qu"
       style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
     />
     <span
-      class="so-image-preview-mask"
+      class="c-rau9e4"
     >
       <svg
         aria-hidden="true"
@@ -207,11 +207,11 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
     </span>
   </a>
   <div
-    class="so-image-group-pile-item"
+    class="c-2z7xlo"
     style="width: 128px; height: 128px;"
   />
   <div
-    class="so-image-group-pile-item"
+    class="c-2z7xlo"
     style="width: 128px; height: 128px;"
   />
 </div>
@@ -219,11 +219,11 @@ exports[`Image[Pile] should render correctly about pile without showCount 1`] = 
 
 exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 <div
-  class="so-image-image so-image-fill so-image-circle"
+  class="c5xp75n cg8910j c-vyt4r4"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="so-image-inner"
+    class="c5xq3qu"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>
@@ -231,11 +231,11 @@ exports[`Image[Shape] should render correctly about shape is circle 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 <div
-  class="so-image-image so-image-fill so-image-rounded"
+  class="c5xp75n cg8910j cdf7qvh"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="so-image-inner"
+    class="c5xq3qu"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>
@@ -243,11 +243,11 @@ exports[`Image[Shape] should render correctly about shape is rounded 1`] = `
 
 exports[`Image[Shape] should render correctly about shape is thumbnail 1`] = `
 <div
-  class="so-image-image so-image-fill so-image-thumbnail"
+  class="c5xp75n cg8910j c-6du6t0"
   style="width: 128px; padding-bottom: 128px;"
 >
   <div
-    class="so-image-inner"
+    class="c5xq3qu"
     style="background-image: url(https://raw.githubusercontent.com/sheinsight/shineout-static/main/shineout-next/images/image/s-01.png);"
   />
 </div>

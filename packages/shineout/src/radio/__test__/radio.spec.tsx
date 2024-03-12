@@ -12,6 +12,7 @@ import {
   baseTest,
   childrenTest,
   displayTest,
+  createClassName,
 } from '../../tests/utils';
 import { classLengthTest, inputTest } from '../../tests/structureTest';
 import RadioBase from '../__example__/001-base-0';
@@ -28,18 +29,23 @@ import RadioDisabledFunc from '../__example__/008-disabled-func';
 import { RadioGroupProps } from '../group.type';
 
 const SO_PREFIX = 'radio';
-const radioClassName = `.${SO_PREFIX}-wrapper-0-2-1`;
-const radioCheckedClassName = `${SO_PREFIX}-wrapperChecked-0-2-4`;
-const radioIndicatorWrapper = `.${SO_PREFIX}-indicatorWrapper-0-2-6`;
-const radioDescClassName = `.${SO_PREFIX}-desc-0-2-8`;
-const radioGroupClassName = `.${SO_PREFIX}-group-0-2-9`;
-const radioBlockClassName = `${SO_PREFIX}-groupBlock-0-2-10`;
-const radioGroupButtonClassName = `${SO_PREFIX}-groupButton-0-2-11`;
-const buttonGroupClassName = 'button-group-0-2-32';
-const radioDisabledClassName = `${SO_PREFIX}-wrapperDisabled-0-2-5`;
-const radioOutlineClassName = 'button-outline-0-2-22';
-const buttonSmallClassName = 'button-small-0-2-13';
-const buttonLargeClassName = 'button-large-0-2-14';
+const {
+  wrapper: radioClassName,
+  wrapperChecked: radioCheckedClassName,
+  indicatorWrapper: radioIndicatorWrapper,
+  desc: radioDescClassName,
+  group: radioGroupClassName,
+  groupBlock: radioBlockClassName,
+  groupButton: radioGroupButtonClassName,
+  wrapperDisabled: radioDisabledClassName,
+} = createClassName(SO_PREFIX, ['wrapper', 'indicatorWrapper', 'desc', 'group'], ['wrapperChecked', 'groupBlock', 'groupButton', 'wrapperDisabled']);
+
+const {
+  group: buttonGroupClassName,
+  outline: radioOutlineClassName,
+  small: buttonSmallClassName,
+  large: buttonLargeClassName,
+} = createClassName('button', [''], ['group', 'outline', 'small', 'large'])
 
 const renderData = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
 const preData = [

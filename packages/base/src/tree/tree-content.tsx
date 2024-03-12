@@ -95,7 +95,7 @@ const NodeContent = <DataItem,>(props: TreeContextProps<DataItem>) => {
         data-expanded={expanded}
         data-icon={hasExpandIcons}
       >
-        <Spin name='ring' size={12} jssStyle={jssStyle}></Spin>
+        <Spin size={12} jssStyle={jssStyle}></Spin>
       </span>
     );
   };

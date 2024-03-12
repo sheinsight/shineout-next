@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Breadcrumb } from 'shineout';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
@@ -119,7 +119,6 @@ describe('Breadcrumb[Base]', () => {
       },
     ];
     const { container } = render(<Breadcrumb data={renderDataUrl} />);
-    screen.debug();
     const breadcrumbWrapper = container.querySelector(wrapper)!;
     const breadcrumbItems = breadcrumbWrapper.querySelectorAll(item);
     breadcrumbItems.forEach((item, index) => {
@@ -144,7 +143,6 @@ describe('Breadcrumb[Base]', () => {
     const { container } = render(<Breadcrumb data={renderDataOnClick} />);
     const breadcrumbWrapper = container.querySelector(wrapper)!;
     const breadcrumbItems = breadcrumbWrapper.querySelectorAll(item);
-    screen.debug();
     breadcrumbItems.forEach((item) => {
       const onClickEl = item.querySelector('a')!;
       expect(onClickEl).toBeInTheDocument();

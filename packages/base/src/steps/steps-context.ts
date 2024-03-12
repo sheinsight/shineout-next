@@ -1,3 +1,4 @@
+"use client"
 import { createContext } from 'react';
 import { StepsContextProps } from './steps-context.type';
 

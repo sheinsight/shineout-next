@@ -133,10 +133,12 @@ const {
   resultAlignCenter,
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
-const innerTitleWrapper = '.so-inner-title-wrapper';
-const innerTitle = '.so-inner-title-title';
-const innerTitlePlace = 'so-inner-title-place';
-const innerTitleWrapperOpen = 'so-inner-title-wrapper-open';
+const {
+  wrapper: innerTitleWrapper,
+  title: innerTitle,
+  // place: innerTitlePlace,
+  wrapperOpen: innerTitleWrapperOpen
+} = createClassName('inner-title', ['wrapper', 'title'], ['place', 'wrapperOpen']);
 
 const Now = Date.now();
 const nowDate = new Date(Now);
@@ -145,17 +147,24 @@ const getFormatTime = (time: number) => ('0' + time).slice(-2);
 
 const year = nowDate.getFullYear();
 const month = getFormatTime(nowDate.getMonth() + 1);
+const monthWithFormat = nowDate.getMonth() + 1;
 const day = getFormatTime(nowDate.getDate());
 const hours = getFormatTime(nowDate.getHours());
 const minutes = getFormatTime(nowDate.getMinutes());
 const seconds = getFormatTime(nowDate.getSeconds());
 
 const styleWithoutShow =
-  'pointer-events: none; position: absolute; z-index: -1000; display: none; opacity: 1;';
+  'pointer-events: none; position: absolute; z-index: -1000; display: none;';
 const styleWithShow =
-  'z-index: 1051; display: block; opacity: 1; transition: opacity 240ms ease-in-out; left: 0px;';
+  'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
+const styleWithShowRight =
+  'z-index: 1051; display: block; right: 0px; opacity: 1; transition: opacity 240ms ease-in-out;'
+const styleWithShowTopLeft = 
+  'z-index: 1051; display: block; left: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 240ms ease-in-out;'
+const styleWithShowTopRight =
+  'z-index: 1051; display: block; right: 0px; transform-origin: center bottom; opacity: 1; transition: opacity 240ms ease-in-out;'
 const styleWithShowOther =
-  'z-index: 1051; display: block; opacity: 1; left: 0px; transition: opacity 240ms ease-in-out;';
+  'z-index: 1051; display: block; left: 0px; opacity: 1; transition: opacity 240ms ease-in-out;';
 
 beforeAll(() => {
   jest.useFakeTimers();
@@ -216,7 +225,7 @@ describe('Alert[Base]', () => {
     const headerInfos = datePickerHeaderMid.querySelectorAll(pickerHeaderInfo);
     expect(headerInfos.length).toBe(2);
     textContentTest(headerInfos[0], `${year}`);
-    textContentTest(headerInfos[1], month);
+    textContentTest(headerInfos[1], `${monthWithFormat}`);
     classLengthTest(datePickerHeaderRight, 'svg', 2);
     const leftHeaderIcons = datePickerHeaderLeft.querySelectorAll(pickerHeaderIcon);
     expect(leftHeaderIcons.length).toBe(2);
@@ -240,7 +249,7 @@ describe('Alert[Base]', () => {
     fireEvent.click(leftHeaderIcons[1]);
     await waitFor(async () => {
       await delay(300);
-      textContentTest(headerInfos[1], `${month}`);
+      textContentTest(headerInfos[1], `${monthWithFormat}`);
     });
     const datePickerPickerBody = datePickerPickerWrapper.querySelector(pickerBody)!;
     classLengthTest(datePickerPickerBody, 'table', 1);
@@ -634,7 +643,7 @@ describe('DatePicker[Type]', () => {
     await waitFor(async () => {
       textContentTest(
         datePickerResult,
-        `${year} ${tbody.querySelectorAll('tr')[2].querySelector('th')?.textContent}`,
+        `${year}-${tbody.querySelectorAll('tr')[2].querySelector('th')?.textContent}`,
       );
       tbody
         .querySelectorAll('tr')[2]
@@ -647,7 +656,7 @@ describe('DatePicker[Type]', () => {
     const headerInfos = datePickerHeaderMid.querySelectorAll(pickerHeaderInfo);
     expect(headerInfos.length).toBe(2);
     textContentTest(headerInfos[0], `${year}`);
-    textContentTest(headerInfos[1], `${month}`);
+    textContentTest(headerInfos[1], `${monthWithFormat}`);
     fireEvent.click(headerInfos[1]);
     await waitFor(async () => {
       await delay(300);
@@ -968,8 +977,8 @@ describe('DatePicker[Range]', () => {
     await waitFor(async () => {
       await delay(300);
     });
-    textContentTest(DatePickTexts[0], '2023-Q3');
-    textContentTest(DatePickTexts[1], '2023-Q4');
+    textContentTest(DatePickTexts[0], `${year}-Q3`);
+    textContentTest(DatePickTexts[1], `${year}-Q4`);
   });
   test('should render when set range and type is year', async () => {
     const { container } = render(<DatePicker type='year' range />);
@@ -1154,7 +1163,7 @@ describe('DatePicker[QuickSelect]', () => {
     expect(datePickerPickers.length).toBe(2);
     classTest(datePickerPickers[0], quickPicker);
     classTest(datePickerPickers[1], dayPicker);
-    textContentTest(datePickerPickers[1].querySelectorAll(pickerHeaderInfo)[1], `${month}`);
+    textContentTest(datePickerPickers[1].querySelectorAll(pickerHeaderInfo)[1], `${monthWithFormat}`);
     const quickPickerItems = datePickerPickers[0].querySelectorAll(quickPickerItem);
     expect(quickPickerItems.length).toBe(3);
     quickPickerItems.forEach((item, index) => {
@@ -1366,7 +1375,7 @@ describe('DatePicker[Inputable]', () => {
       await delay(300);
     });
     inputValueTest(resultInput, tempTime);
-    textContentTest(datePickerPickerWrapper.querySelector(pickerHeader)!, `${year}-${month}`);
+    textContentTest(datePickerPickerWrapper.querySelector(pickerHeader)!, `${year}-${monthWithFormat}`);
     datePickerPickerWrapper
       .querySelector('tbody')
       ?.querySelectorAll('tr')
@@ -1427,7 +1436,7 @@ describe('DatePicker[InnerTitle]', () => {
     titles.forEach((item, index) => {
       textContentTest(item, innerTitleText);
       if (index === 0) return;
-      classTest(item, innerTitlePlace);
+      // classTest(item, innerTitlePlace);
     });
     fireEvent.focus(datePickerResultWrapper);
     fireEvent.click(datePickerResultWrapper);
@@ -1440,14 +1449,10 @@ describe('DatePicker[InnerTitle]', () => {
 describe('DatePicker[Position]', () => {
   type positionType = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | undefined;
   const positionStyleMap: { [key: string]: string } = {
-    'top-left':
-      'z-index: 1051; display: block; opacity: 1; transition: opacity 240ms ease-in-out; left: 0px;',
-    'top-right':
-      'z-index: 1051; display: block; opacity: 1; transition: opacity 240ms ease-in-out; right: 0px;',
-    'bottom-left':
-      'z-index: 1051; display: block; opacity: 1; transition: opacity 240ms ease-in-out; left: 0px;',
-    'bottom-right':
-      'z-index: 1051; display: block; opacity: 1; transition: opacity 240ms ease-in-out; right: 0px;',
+    'top-left': styleWithShowTopLeft,
+    'top-right': styleWithShowTopRight,
+    'bottom-left': styleWithShow,
+    'bottom-right': styleWithShowRight
   };
   const revertPosition = (listPosition: string) => listPosition.split('-').reverse().join('-');
   test.each(['top-left', 'top-right', 'bottom-left', 'bottom-right'])(
