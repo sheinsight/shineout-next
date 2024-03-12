@@ -15,12 +15,7 @@ export interface ConfigOption {
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
 
-let processEnv: Record<string, any> = {};
-try {
-  processEnv = process?.env;
-} catch (error) {
-  processEnv = {};
-}
+const processEnv: Record<string, any> = typeof process !== 'undefined' ? process?.env : {};
 export let config: ConfigOption = {
   prefix: 'so',
   locale: (processEnv.LOCALE as LanType) || 'zh-CN',
