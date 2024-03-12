@@ -33,7 +33,7 @@ const App: React.FC = () => {
       Cancel
     </Button>,
 
-    <Button key='ok' type='primary' onClick={handleOk}>
+    <Button key='ok' type={type === 'error' ? 'danger' : 'primary'} onClick={handleOk}>
       Ok
     </Button>,
   ];

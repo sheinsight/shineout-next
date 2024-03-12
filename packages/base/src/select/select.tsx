@@ -455,7 +455,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       return renderClearable();
     }
     if (!multiple && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
+    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
     return (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}

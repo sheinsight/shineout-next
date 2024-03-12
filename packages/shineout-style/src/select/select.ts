@@ -366,6 +366,9 @@ const selectStyle: JsStyles<SelectClassType> = {
       flexWrap: 'nowrap',
     },
     '& $placeholder': {},
+    '& $arrowIconOpen': {
+      transform: 'none',
+    },
   },
   multipleCompressedWrapper: {
     flexWrap: 'nowrap',

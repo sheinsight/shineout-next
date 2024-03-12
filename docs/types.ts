@@ -70,6 +70,7 @@ export interface MarkdownProps {
     en: Changelog[];
   };
   api: Array<{
+    isLast: boolean;
     title: string;
     cn: string;
     en: string;
