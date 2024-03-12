@@ -25,4 +25,10 @@ export default {
     ci: 'ci',
     chore: 'chore',
   },
+  'shineout.tabs': {
+    exmples: 'exmples',
+    api: 'API',
+    guide: 'guide',
+    updateRecord: 'update record',
+  }
 };
