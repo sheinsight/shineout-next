@@ -18,16 +18,16 @@ const dropdownTokenDescription = { dropdown: '下拉菜单', outline: '线框模
 const dropdownTokenValue = {
   list: {
     border: { radius: 'Radius-4', color: 'Neutral-border-1', width: 'Border-1' },
-    padding: 'Padding-4',
+    padding: { x: 'Padding-4', y: 'Padding-4' },
     font: { size: '14/regular', color: 'Neutral-text-5' },
     small: {
       border: { radius: 'Radius-4' },
-      padding: { y: 'Padding-4' },
+      padding: { x: 'Padding-4', y: 'Padding-4' },
       font: { size: '12/regular' },
     },
     large: {
       border: { radius: 'Radius-4' },
-      padding: { y: 'Padding-4' },
+      padding: { x: 'Padding-4', y: 'Padding-4' },
       font: { size: '16/regular' },
     },
     background: { color: 'Neutral-fill-1' },
