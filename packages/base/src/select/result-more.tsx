@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Children } from 'react';
 import { SelectClasses } from '@sheinx/shineout-style';
 import { ReultMoreProps } from './result-more.type';
 import { parsePxToNumber } from '@sheinx/hooks';
@@ -78,8 +78,8 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
   const styles = jssStyle?.select?.() as SelectClasses;
 
   const shouldShowMore = showNum! < 0 || showNum! >= data.length;
-  let before: React.ReactNode[] = [];
-  let after: React.ReactNode[] = [];
+  let before: React.ReactElement[] = [];
+  let after: React.ReactElement[] = [];
   let itemsLength = 0;
   let tagStlye: React.CSSProperties = shouldShowMore
     ? {
@@ -88,15 +88,32 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
         userSelect: 'none',
         msUserSelect: 'none',
         contain: 'layout',
+        opacity: 0,
+        pointerEvents: 'none',
       }
     : {};
 
   if (!shouldShowMore) {
-    before = new Array(showNum!).fill(undefined).map((_item, index) => data[index]);
+    before = new Array(showNum!)
+      .fill(undefined)
+      .map((_item, index) => data[index] as React.ReactElement);
+
     after = new Array(data.length - showNum!)
       .fill(undefined)
-      .map((_item, index) => data[showNum! + index]);
+      .map((_item, index) => data[showNum! + index] as React.ReactElement);
     itemsLength = after.length;
+  }
+
+  if (after && after.length > 0) {
+    after =
+      Children.map(after, (item) => {
+        return React.cloneElement(item, {
+          ...item.props,
+          style: {
+            opcacity: 1,
+          },
+        });
+      }) || after;
   }
 
   return (
@@ -120,7 +137,7 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
           visible={visible}
           onVisibleChange={setVisible}
         >
-          <div className={styles.moreWrapper}>
+          <div className={styles.moreWrapper} onClick={(e) => e.stopPropagation()}>
             {compressed === 'no-repeat' ? null : before}
             {after}
           </div>

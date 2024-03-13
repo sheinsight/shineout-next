@@ -1,7 +1,7 @@
+import { util } from '@sheinx/hooks';
 import { getDefaultContainer } from '../config';
 import { Image, ImageProps } from './image.type';
 import ImageGallery from './image-gallery';
-import { util } from '@sheinx/hooks';
 
 const { ReactRender, ReactUnmount } = util;
 
@@ -26,7 +26,7 @@ const getContainer = () => {
   if (container) return container;
   const defaultContainer = getDefaultContainer();
   container = document.createElement('div');
-  defaultContainer.appendChild(container);
+  defaultContainer?.appendChild(container);
 
   return container;
 };
@@ -35,12 +35,12 @@ const showGallery = (
   jssStyle: ImageProps['jssStyle'],
   images: Image | Image[],
   current: number = 0,
+  containerClass?: string,
 ) => {
   const Images = !Array.isArray(images) ? [images] : images;
   const container = getContainer();
-
   document.addEventListener('keydown', keyClose);
-
+  container.className = containerClass || '';
   ReactRender(
     <ImageGallery jssStyle={jssStyle} onClose={close} current={current} images={Images} />,
     container,

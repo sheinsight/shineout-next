@@ -22,7 +22,7 @@ const ImageGroup = (props: ImageGroupProps) => {
   // 图片组成员点击事件
   const handleItemClick = (images: Image[], current: number) => {
     if (shouldPreview) {
-      showGallery(jssStyle, images, current);
+      showGallery(jssStyle, images, current, imageClasses.gallery);
     }
   };
 

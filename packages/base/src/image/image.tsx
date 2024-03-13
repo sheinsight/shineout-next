@@ -39,7 +39,7 @@ const Image = (props: ImageProps) => {
   } = props;
 
   const { status, getRootProps, getImageProps, getImageDivProps } = useImage({
-    container: getDefaultContainer(),
+    container: getDefaultContainer()!,
     alt,
     src,
     href,
@@ -91,12 +91,12 @@ const Image = (props: ImageProps) => {
     }
     if (shouldPreview) {
       e.preventDefault();
-      showGallery(jssStyle, { thumb: src, src: href || src, key: 'key' });
+      showGallery(jssStyle, { thumb: src, src: href || src, key: 'key' }, 0, imageStyle.gallery);
     }
   };
 
   const preview = usePersistFn(() => {
-    showGallery(jssStyle, { thumb: src, src: href || src, key: 'key' });
+    showGallery(jssStyle, { thumb: src, src: href || src, key: 'key' }, 0, imageStyle.gallery);
   });
 
   const ComponentRef = useLatestObj({ preview });

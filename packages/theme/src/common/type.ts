@@ -20,4 +20,11 @@ export interface CommonTokens {
    * @description icon 悬浮后的圆形背景边距
    */
   iconCirclePadding: string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default 'transparent'
+   * @description 透明
+   */
+  transparent: string;
 }
