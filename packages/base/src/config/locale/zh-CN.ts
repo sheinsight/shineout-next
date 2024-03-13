@@ -88,8 +88,4 @@ export default {
   invalidAccept: '文件格式不正确',
 
   notFound: '未找到',
-  exmples: '示例',
-  api: 'API',
-  guide: '指南',
-  updateRecord: '更新记录',
 };

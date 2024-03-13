@@ -25,4 +25,10 @@ export default {
     ci: '集成服务更改',
     chore: '无关源码变更',
   },
+  'shineout.tabs': {
+    exmples: '示例',
+    api: 'API',
+    guide: '指南',
+    updateRecord: '更新记录',
+  }
 };
