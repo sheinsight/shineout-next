@@ -9,6 +9,7 @@ interface ListPaginationProps {
   onChange: ((current: number, pageSize: number) => void) | undefined;
   shouldPage: boolean;
   loading: boolean;
+  total?: number;
 }
 
 const usePaginationList = (props: ListPaginationProps) => {
@@ -24,7 +25,7 @@ const usePaginationList = (props: ListPaginationProps) => {
 
   const getPager = (data: any[]) => {
     if (!shouldPage) return {};
-    const total = Array.isArray(data) ? data.length : 0;
+    const total = (props.total !== undefined && props.total !== null && props.total >= 0) ? props.total : (Array.isArray(data) ? data.length : 0);
     return {
       current: props.current || current,
       pageSize: props.pageSize || pageSize,
