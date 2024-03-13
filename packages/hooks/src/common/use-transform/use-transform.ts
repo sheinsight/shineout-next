@@ -30,27 +30,24 @@ const useTransform = <T>(props: UseTransformProps) => {
     if (!containerDimension || !targetDimension) return;
     // 内部容器的宽度小于外部容器的宽度，无需移动
     if (targetDimension < containerDimension) {
-      if (atEnd === false) {
-        setAtEnd(true);
-      }
+      if (atEnd === true) setAtEnd(false);
+      if (atStart === true) setAtStart(false);
       return;
     }
 
     // 移动距离大于0，说明已经到达最左边或者最上边，无需移动
     if (dimension <= 0) {
       setDelta(0);
-      if (atStart === false) {
-        setAtStart(true);
-      }
+      if (atEnd === true) setAtEnd(false);
+      if (atStart === false) setAtStart(true);
       return;
     }
     // 移动距离大于最大可移动距离，说明已经到达最右边或者最下边，无需移动
     const maxDelta = targetDimension - containerDimension;
     if (dimension >= maxDelta) {
       setDelta(maxDelta);
-      if (atEnd === false) {
-        setAtEnd(true);
-      }
+      if (atEnd === false) setAtEnd(true);
+      if (atStart === true) setAtStart(false);
       return;
     }
     if (atStart === true) setAtStart(false);
