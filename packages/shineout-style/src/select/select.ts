@@ -110,8 +110,23 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     '&:hover': {
       cursor: 'pointer',
+      '&$clearable:not($wrapperEmpty)': {
+        '& $clearIcon': {
+          display: 'block',
+        },
+        '& $arrowIcon': {
+          display: 'none',
+        },
+      },
+    },
+    '&:not($wrapperEmpty):not($wrapperOpen)': {
+      '& $clearIcon': {
+        display: 'none',
+      },
     },
   },
+  wrapperEmpty: {},
+  wrapperOpen: {},
   wrapperDisabled: {
     ...wrapperDisabled,
     '& $icon': {
@@ -121,6 +136,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       color: token.selectDisabledIconColor,
     },
   },
+  popover: {},
   ...resetWrapper,
   resultWrapper: {
     display: 'flex',
@@ -369,6 +385,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     maxHeight: 160,
     overflow: 'auto',
     padding: token.selectMorePadding,
+    '&:hover': {
+      '& $clearIcon': {
+        display: 'inline-block',
+      },
+    },
   },
   virtualList: {
     margin: 0,

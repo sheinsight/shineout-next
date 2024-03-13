@@ -5,23 +5,24 @@ import store, { dispatch, DocType } from '../../store';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Tabs } from 'shineout';
 import useStyles from '../style';
-import { getLocale, useConfig } from '@sheinx/base';
+import Locale from '../../locales';
 
 const DocTabs = (props: { showGuide: boolean }) => {
   const state = useSnapshot(store);
   const navigate = useNavigate();
   const location = useLocation();
-  const { locale } = useConfig();
+  const docsLocale = Locale({ locale: state.locales });
+  const tabsLocale = docsLocale['shineout.tabs'];
 
   const classes = useStyles();
   const searchParams = new URLSearchParams(location.search);
   const activeTab = searchParams.get('tab') || state.doctab;
 
   const tabs: { name: string; path: DocType }[] = [
-    { name: getLocale(locale, 'exmples'), path: 'examples' },
-    { name: getLocale(locale, 'api'), path: 'api' },
-    { name: getLocale(locale, 'guide'), path: 'guide' },
-    { name: getLocale(locale, 'updateRecord'), path: 'changelog' },
+    { name: tabsLocale['exmples'], path: 'examples' },
+    { name: tabsLocale['api'], path: 'api' },
+    { name: tabsLocale['guide'], path: 'guide' },
+    { name: tabsLocale['updateRecord'], path: 'changelog' },
   ];
 
   const handleChangeTab = (tab: DocType) => {
