@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { StepsClasses } from '@sheinx/shineout-style';
+import { StepsClasses } from './steps.type';
 import { util } from '@sheinx/hooks';
 import { StepProps, BaseStepProps } from './step.type';
 import { StepsStatusType } from './steps.type';

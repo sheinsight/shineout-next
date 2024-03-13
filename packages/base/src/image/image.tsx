@@ -1,5 +1,5 @@
 import { useImage, useLatestObj, usePersistFn } from '@sheinx/hooks';
-import { ImageClasses } from '@sheinx/shineout-style';
+import { ImageClasses } from './image.type';
 import { getDefaultContainer } from '../config';
 import classNames from 'classnames';
 import React, { useEffect } from 'react';

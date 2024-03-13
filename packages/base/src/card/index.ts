@@ -1,5 +1,5 @@
 export { default, default as Card } from './card';
-export type { CardProps } from './card.type';
+export type { CardProps, CardClasses } from './card.type';
 export { default as CardHeader } from './card-header';
 export type { CardHeaderProps } from './card-header.type';
 export { default as CardBody } from './card-body';

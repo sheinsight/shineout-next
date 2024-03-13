@@ -1,2 +1,2 @@
 export { default, default as Rate } from './rate';
-export type { RateProps } from './rate.type';
+export type { RateProps, RateClasses } from './rate.type';

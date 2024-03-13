@@ -1,7 +1,7 @@
 import React from 'react';
 import { util } from '@sheinx/hooks';
 import { VirtualScrollList } from '../virtual-scroll';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from './select.type';
 import { BaseListProps } from './select.type';
 import ListColumnsOption from './list-columns-option';
 import Checkbox from '../checkbox/simple-checkbox';

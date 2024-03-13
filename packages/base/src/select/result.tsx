@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, KeygenResult } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from './select.type';
 import Input from './result-input';
 import { getResetMore } from './result-more';
 import More from './result-more';

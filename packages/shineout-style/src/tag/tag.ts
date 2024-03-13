@@ -1,5 +1,6 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
+import { TagClasses } from '@sheinx/base';
 
 type TagType =
   | 'Info'
@@ -15,36 +16,6 @@ type TagType =
   | 'Neon'
   | 'Lemon'
   | 'Tangerine';
-
-type TagClass =
-  | 'tag'
-  | 'inline'
-  | 'wrapper'
-  | 'container'
-  | 'disabled'
-  | 'closeIcon'
-  | 'closeIconWrapper'
-  | 'info'
-  | 'default'
-  | 'success'
-  | 'warning'
-  | 'danger'
-  | 'orange'
-  | 'magenta'
-  | 'purple'
-  | 'indigo'
-  | 'cyan'
-  | 'neon'
-  | 'lemon'
-  | 'tangerine'
-  | 'large'
-  | 'small'
-  | 'outline'
-  | 'fill'
-  | 'bright'
-  | 'brightOutline'
-  | 'rounded'
-  | 'input';
 
 const tag = (type: TagType) => ({
   // bright 亮色风格
@@ -172,7 +143,7 @@ const tag = (type: TagType) => ({
   },
 });
 
-const TagStyle: JsStyles<TagClass> = {
+const TagStyle: JsStyles<keyof TagClasses> = {
   tag: {
     display: 'inline-flex',
     padding: `0 ${Token.tagPaddingX}`,

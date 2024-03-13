@@ -1,2 +1,2 @@
 export { default, default as Textarea } from './textarea';
-export type { TextareaProps } from './textarea.type';
+export type { TextareaProps, TextareaClasses } from './textarea.type';

@@ -17,7 +17,8 @@
   "dependencies": {
     "jss": "10.9.2",
     "react-jss": "10.9.2",
-    "@sheinx/theme": "workspace:*"
+    "@sheinx/theme": "workspace:*",
+    "@sheinx/base": "workspace:*"
   },
   "peerDependencies": {
     "core-js": ">=3"

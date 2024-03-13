@@ -1,26 +1,8 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
+import { DropdownClasses } from '@sheinx/base';
 
-export type DropDownClass =
-  | 'wrapper'
-  | 'open'
-  | 'list'
-  | 'listSmall'
-  | 'listLarge'
-  | 'boxList'
-  | 'caret'
-  | 'content'
-  | 'button'
-  | 'itemWrapper'
-  | 'item'
-  | 'itemDisabled'
-  | 'itemActive'
-  | 'splitButton'
-  | 'optionGroup'
-  | 'optionDivider'
-  | 'listHasChildren';
-
-const dropdown: JsStyles<DropDownClass> = {
+const dropdown: JsStyles<keyof DropdownClasses> = {
   wrapper: {
     display: 'inline-block',
     position: 'relative',

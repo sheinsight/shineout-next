@@ -1,22 +1,8 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { CheckboxClasses } from '@sheinx/base';
 
-export type CheckboxClass =
-  | 'wrapper'
-  | 'wrapperSmall'
-  | 'wrapperLarge'
-  | 'wrapperDisabled'
-  | 'wrapperChecked'
-  | 'wrapperIndeterminate'
-  | 'indicator'
-  | 'indicatorWrapper'
-  | 'darkIndicatorWrapper'
-  | 'desc'
-  | 'input'
-  | 'group'
-  | 'groupBlock';
-
-const checkboxStyle: JsStyles<CheckboxClass> = {
+const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
   wrapper: {
     display: 'inline-flex',
     position: 'relative',
@@ -67,15 +53,16 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
       background: 'transparent',
       borderRadius: '50%',
     },
-    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &:not($darkIndicatorWrapper)': {
-      '&::before': {
-        background: token.checkboxIconCircleFill,
+    '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled):hover &:not($darkIndicatorWrapper)':
+      {
+        '&::before': {
+          background: token.checkboxIconCircleFill,
+        },
+        '& $indicator': {
+          backgroundColor: token.checkboxIconHoverBackgroundColor,
+          color: token.checkboxIconHoverColor,
+        },
       },
-      '& $indicator': {
-        backgroundColor: token.checkboxIconHoverBackgroundColor,
-        color: token.checkboxIconHoverColor,
-      },
-    },
   },
   darkIndicatorWrapper: {
     '$wrapper:not($wrapperChecked):not($wrapperIndeterminate):not($wrapperDisabled) &:hover': {
@@ -143,7 +130,7 @@ const checkboxStyle: JsStyles<CheckboxClass> = {
   },
   group: {
     '[data-soui-role="form-control"] >  &': {
-      padding: '5px 0'
+      padding: '5px 0',
     },
     lineHeight: 1,
   },

@@ -1,19 +1,7 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { BreadcrumbClasses } from '@sheinx/base';
 
-export type BreadcrumbClasses = {
-  wrapper: string;
-  content: string;
-  itemWrapper: string;
-  item: string;
-  itemWithDrop: string;
-  down: string;
-  downOpen: string;
-  dropdownItem: string;
-  separator: string;
-  dropdown: string;
-  ellipsis: string;
-};
 export type BreadcrumbClassType = keyof BreadcrumbClasses;
 
 const breadcrumbStyle: JsStyles<BreadcrumbClassType> = {

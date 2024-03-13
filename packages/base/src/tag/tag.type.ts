@@ -45,6 +45,7 @@ export interface TagClasses {
   indigo: string;
   tangerine: string;
   neon: string;
+  lemon: string;
 
   large: string;
   small: string;

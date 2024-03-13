@@ -1,34 +1,6 @@
 import Token from '@sheinx/theme';
+import { TabsClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
-
-export type TabsClass =
-  | 'tabs'
-  | 'panelWrapper'
-  | 'panel'
-  | 'tab'
-  | 'header'
-  | 'hr'
-  | 'cardHr'
-  | 'headerWrapper'
-  | 'headerScroll'
-  | 'button'
-  | 'line'
-  | 'lineInner'
-  | 'fillInner'
-  | 'iconInner'
-  | 'bordered'
-  | 'card'
-  | 'dash'
-  | 'active'
-  | 'show'
-  | 'disabled'
-  | 'prev'
-  | 'next'
-  | 'extra'
-  | 'collapsible'
-  | 'collapsed'
-  | 'autoFill'
-  | 'sticky';
 
 interface AfterOptions {
   top?: number | string;
@@ -242,7 +214,7 @@ const getHeaderStyle = () => {
   };
 };
 
-const tabsStyle: JsStyles<TabsClass> = {
+const tabsStyle: JsStyles<keyof TabsClasses> = {
   tabs: {
     // 水平模式
     '&[data-soui-position^="top-"],&[data-soui-position^="bottom-"]': {

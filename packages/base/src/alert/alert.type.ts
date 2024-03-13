@@ -1,7 +1,4 @@
-// import React from 'react';
 import { CommonType } from '../common/type';
-
-// import { BaseAlertProps } from '@sheinx/hooks';
 
 export interface AlertClasses {
   alert: string;

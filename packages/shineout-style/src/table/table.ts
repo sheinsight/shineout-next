@@ -1,62 +1,7 @@
 import token from '@sheinx/theme';
+import { TableClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 import { customScrollBar } from '../mixin';
-
-export type TableClasses = {
-  wrapper: string;
-  small: string;
-  large: string;
-  default: string;
-  scrollY: string;
-  floatLeft: string;
-  floatRight: string;
-  bordered: string;
-  sticky: string;
-  verticalAlignTop: string;
-  verticalAlignMiddle: string;
-
-  simple: string;
-  striped: string;
-
-  loading: string;
-
-  headWrapper: string;
-  bodyWrapper: string;
-  footWrapper: string;
-  emptyWrapper: string;
-
-  cellAlignRight: string;
-  cellAlignCenter: string;
-  cellFixedLeft: string;
-  cellFixedRight: string;
-  cellFixedLast: string;
-  cellCheckbox: string;
-  cellGroup: string;
-  cellHover: string;
-  rowExpand: string;
-
-  rowStriped: string;
-  rowChecked: string;
-
-  hasSorter: string;
-  sorterContainer: string;
-  sorterActive: string;
-  sorterAsc: string;
-  sorterDesc: string;
-
-  resizeSpanner: string;
-  resizeSpannerActive: string;
-  resizeSpannerInactive: string;
-
-  cellIgnoreBorder: string;
-
-  expandIcon: string;
-  iconWrapper: string;
-  expandIconWrapper: string;
-
-  expandWrapper: string;
-  pagination: string;
-};
 
 const cellBaseIndex = 4;
 const sorterIndex = 10;

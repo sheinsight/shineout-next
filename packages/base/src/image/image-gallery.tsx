@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useImageGallery } from '@sheinx/hooks';
-import { ImageClasses } from '@sheinx/shineout-style';
+import { ImageClasses } from './image.type';
 import Magnify from './image-magnify';
 import { Image, ImageGalleryProps, MagnifyPositionType } from './image.type';
 import Icons from '../icons';

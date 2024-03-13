@@ -1,7 +1,9 @@
 import token from '@sheinx/theme';
+import { MessageClasses } from '@sheinx/base';
+
 import { JsStyles } from '../jss-style';
 
-export type MessageClass = 'wrapper' | 'item' | 'itemDismissed' | 'itemShow' | 'message';
+export type MessageClassType = keyof MessageClasses;
 const animationDuration = '0.2s';
 const messageMargin = token.messageMarginBottom;
 const animations = {
@@ -26,7 +28,7 @@ const animations = {
     '100%': { transform: 'translateY(0)', opacity: 1 },
   },
 };
-const messageStyle: JsStyles<MessageClass> = {
+const messageStyle: JsStyles<MessageClassType> = {
   ...animations,
   wrapper: {
     position: 'fixed',

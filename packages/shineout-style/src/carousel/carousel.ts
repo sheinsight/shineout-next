@@ -1,37 +1,6 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
-
-export interface CarouselClasses {
-  wrapper?: string;
-  animationSlide?: string;
-  animationFade?: string;
-  animationSlideY?: string;
-  directionForward?: string;
-  directionBackward?: string;
-  directionStop?: string;
-  slider?: string;
-  item?: string;
-  itemCurrent?: string;
-  itemPre?: string;
-  arrowWrapper?: string;
-  arrowHover?: string;
-  arrowItem?: string;
-  arrowLeft?: string;
-  arrowRight?: string;
-  indicatorWrapper?: string;
-  indicatorCenter?: string;
-  indicatorLeft?: string;
-  indicatorRight?: string;
-  indicatorOuter?: string;
-  indicatorTypeCircle?: string;
-  indicatorTypeNumber?: string;
-  indicatorTypeLine?: string;
-  indicatorTypeSlider?: string;
-  indicatorArrow?: string;
-  indicatorNumber?: string;
-  indicator?: string;
-  indicatorActive?: string;
-}
+import { CarouselClasses } from '@sheinx/base';
 
 export type CarouselClassType = keyof CarouselClasses;
 

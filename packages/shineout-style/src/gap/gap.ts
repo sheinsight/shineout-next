@@ -1,10 +1,9 @@
 import { JsStyles } from '../jss-style';
+import { GapClasses } from '@sheinx/base';
 
-export type GapClass = 'item' | 'wrapper'
-
-const gapStyle: JsStyles<GapClass> = {
+const gapStyle: JsStyles<keyof GapClasses> = {
   item: {},
-  wrapper: {}
-}
+  wrapper: {},
+};
 
 export default gapStyle;

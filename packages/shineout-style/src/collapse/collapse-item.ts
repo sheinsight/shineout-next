@@ -1,24 +1,10 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
+import { CollapseItemClasses } from '@sheinx/base';
 
-export type CollapseItemClass =
-  | 'wrapper'
-  | 'header'
-  | 'active'
-  | 'icon'
-  | 'noIcon'
-  | 'title'
-  | 'extra'
-  | 'content'
-  | 'contentMain'
-  | 'disabled'
-  | 'activeTransform'
-  | 'activeTransformRight'
-  | 'expanded'
-  | 'borderLess'
-  | 'region';
+export type CollapseItemClassType = keyof CollapseItemClasses;
 
-const collapseItemStyle: JsStyles<CollapseItemClass> = {
+const collapseItemStyle: JsStyles<CollapseItemClassType> = {
   wrapper: {
     boxSizing: 'border-box',
     borderBottom: `${Token.collapseWrapperBorderSize} solid ${Token.collapseWrapperBorderColor}`,

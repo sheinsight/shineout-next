@@ -1,31 +1,7 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { CardClasses } from '@sheinx/base';
 
-export type CardClasses = {
-  wrapper: string;
-  wrapperShadow: string;
-  wrapperHover: string;
-  wrapperSplit: string;
-  wrapperCollapsible: string;
-  wrapperCollapsed: string;
-  wrapperResizable: string;
-  wrapperMoveable: string;
-  wrapperInAccordion: string;
-  header: string;
-  headerContent: string;
-  headerExtra: string;
-  indicator: string;
-  indicatorIcon: string;
-  body: string;
-  footer: string;
-  accordion: string;
-  resizeX: string;
-  resizeY: string;
-  resizeXY: string;
-  bodyCollapse: string;
-  center: string;
-  right: string;
-};
 export type CardClassType = keyof CardClasses;
 
 const cardStyle: JsStyles<CardClassType> = {

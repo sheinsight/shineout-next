@@ -45,7 +45,6 @@ export * from './tree';
 export * from './tree-select';
 export * from './upload';
 export * from './version';
-export * from './virtual-scroll';
 
 export * from './jss-style';
 

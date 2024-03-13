@@ -1,17 +1,7 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
+import { DividerClasses } from '@sheinx/base';
 
-export interface DividerClasses {
-  wrapper: string;
-  wrapperDashed: string;
-  vertical: string;
-  horizontal: string;
-  withText: string;
-  withTextCenter: string;
-  withTextLeft: string;
-  withTextRight: string;
-  innerText: string;
-}
 export type DividerClassesKeys = keyof DividerClasses;
 
 const dividerStyle: JsStyles<DividerClassesKeys> = {

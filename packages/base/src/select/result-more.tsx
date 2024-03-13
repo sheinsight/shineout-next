@@ -1,5 +1,5 @@
 import React, { useState, Children } from 'react';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from './select.type';
 import { ReultMoreProps } from './result-more.type';
 import { parsePxToNumber } from '@sheinx/hooks';
 import Tag from '../tag';

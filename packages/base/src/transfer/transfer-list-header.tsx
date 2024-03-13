@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { KeygenResult } from '@sheinx/hooks';
-import { TransferClasses } from '@sheinx/shineout-style';
+import { TransferClasses } from './transfer.type';
 import { Checkbox } from '../checkbox';
 import { TransferListHeaderProps } from './transfer-list-header.type';
 import Icons from '../icons';

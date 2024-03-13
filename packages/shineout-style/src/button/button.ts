@@ -1,30 +1,7 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
+import { ButtonClasses } from '@sheinx/base';
 
-type ButtonClass =
-  | 'button'
-  | 'default'
-  | 'disabled'
-  | 'loading'
-  | 'primary'
-  | 'secondary'
-  | 'danger'
-  | 'warning'
-  | 'success'
-  | 'text'
-  | 'outline'
-  | 'dashed'
-  | 'round'
-  | 'circle'
-  | 'square'
-  | 'link'
-  | 'href'
-  | 'small'
-  | 'large'
-  | 'group'
-  | 'groupItem'
-  | 'spaceWrapper'
-  | 'spin';
 
 type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 
@@ -188,7 +165,7 @@ const loading = (type: ButtonType, styles: ButtonStyleType) => {
   };
 };
 
-const ButtonStyle: JsStyles<ButtonClass> = {
+const ButtonStyle: JsStyles<keyof ButtonClasses> = {
   button: {
     outline: 'none',
     fontWeight: 400,

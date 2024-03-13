@@ -1,9 +1,35 @@
 // import React from 'react';
 import { BaseStepProps, StepProps } from './step.type';
 import { CommonType } from '../common/type';
-import { StepsClasses } from '@sheinx/shineout-style';
 
 export type StepsStatusType = 'wait' | 'process' | 'finish' | 'error';
+
+export type StepsClasses = {
+  steps: string;
+  step: string;
+  small: string;
+  large: string;
+  disabled: string;
+  content: string;
+  title: string;
+  horizontalLabel: string;
+  verticalLabel: string;
+  tail: string;
+  description: string;
+  vertical: string;
+  horizontal: string;
+  wait: string;
+  process: string;
+  finish: string;
+  error: string;
+  icon: string;
+  iconWrapper: string;
+  dot: string;
+  arrow: string;
+  widthDescription: string;
+  default: string;
+  click: string;
+};
 
 export type JssStyleType = {
   steps: () => StepsClasses;

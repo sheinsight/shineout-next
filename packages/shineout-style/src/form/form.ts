@@ -1,9 +1,8 @@
 import { JsStyles } from '../jss-style';
-import CssVar from '../cssvar';
+import token from '@sheinx/theme';
+import { FormClasses } from '@sheinx/base';
 
-export type FormClass = 'wrapper' | 'wrapperInline';
-
-const form: JsStyles<FormClass> = {
+const form: JsStyles<keyof FormClasses> = {
   wrapper: {
     display: 'block',
   },
@@ -12,7 +11,7 @@ const form: JsStyles<FormClass> = {
       width: 'auto',
     },
     '& > [data-soui-input-border]': {
-      marginRight: CssVar.formItemMarginRight,
+      marginRight: token.formItemMarginXEnd,
     },
   },
 };

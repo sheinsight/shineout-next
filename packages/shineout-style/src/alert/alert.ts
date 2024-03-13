@@ -1,31 +1,9 @@
 import Token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { AlertClasses } from '@sheinx/base';
 
-export type AlertClass =
-  | 'alert'
-  | 'noBordered'
-  | 'content'
-  | 'widthTitle'
-  | 'title'
-  | 'close'
-  | 'info'
-  | 'success'
-  | 'warning'
-  | 'confirmwarning'
-  | 'danger'
-  | 'infoIcon'
-  | 'successIcon'
-  | 'warningIcon'
-  | 'confirmwarningIcon'
-  | 'confirmIcon'
-  | 'dangerIcon'
-  | 'icon'
-  | 'text'
-  | 'pending';
-
-const alertStyle: JsStyles<AlertClass> = {
+const alertStyle: JsStyles<keyof AlertClasses> = {
   alert: {
-    // display: 'table',
     display: 'flex',
     width: '100%',
     lineHeight: '1em',

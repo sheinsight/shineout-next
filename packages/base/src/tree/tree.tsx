@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, useTree, util, usePrevious, ObjectKey } from '@sheinx/hooks';
-import { TreeClasses } from '@sheinx/shineout-style';
+import { TreeClasses } from './tree.type';
 import { TreeProps } from './tree.type';
 import RootTree from './tree-root';
 import { Provider } from './tree-context';

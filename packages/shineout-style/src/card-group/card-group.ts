@@ -1,13 +1,7 @@
 // import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { CardGroupClasses } from '@sheinx/base';
 
-export type CardGroupClasses = {
-  wrapper: string;
-  item: string;
-  checkbox: string;
-  scroller: string;
-  grid: string;
-};
 export type CardGroupClassType = keyof CardGroupClasses;
 
 const cardGroupPadding = 0;

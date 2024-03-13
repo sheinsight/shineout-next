@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { util, KeygenResult } from '@sheinx/hooks';
 import { getLocale, useConfig } from '../config';
-import { TransferClasses } from '@sheinx/shineout-style';
+import { TransferClasses } from './transfer.type';
 import { TransferListProps } from './transfer-list.type';
 import TransferListItem from './transfer-list-item';
 import TransferListHeader from './transfer-list-header';

@@ -1,28 +1,7 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { ProgressClasses } from '@sheinx/base';
 
-export interface ProgressClasses {
-  wrapper: string;
-  wrapperSuccess: string;
-  wrapperInfo: string;
-  wrapperWarning: string;
-  wrapperDanger: string;
-  line: string;
-  linePop: string;
-  lineInner: string;
-  content: string;
-  lineBg: string;
-  lineFront: string;
-  lineDefault: string;
-  lineInnerRight: string;
-  linePopWrapper: string;
-  linePopValue: string;
-  linePopArrow: string;
-  icon: string;
-  circle: string;
-  circleBg: string;
-  circleFront: string;
-}
 export type ProgressClassType = keyof ProgressClasses;
 
 const progressStyle: JsStyles<ProgressClassType> = {
