@@ -134,6 +134,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     pageSize: pagination?.pageSize,
     onChange: pagination?.onChange,
     loading: !!props.loading,
+    total: pagination?.total,
   });
 
   const treeColumnsName = columns.find((item) => item.treeColumnsName)?.treeColumnsName;
