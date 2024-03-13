@@ -55,7 +55,7 @@ const List = (props: ListProps) => {
           duration={'fast'}
           show={open}
           onRef={popupRef as any}
-          animation
+          animation={false}
         >
           {renderList(rest)}
         </AnimationList>

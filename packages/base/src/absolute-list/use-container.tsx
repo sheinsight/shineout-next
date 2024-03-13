@@ -23,10 +23,20 @@ export const getRootContainer = (props: ContainerProps) => {
   if (!root || util.isInDocument(root) === false) {
     root = document.createElement('div');
     root.setAttribute('style', 'contain: size');
+    if (defaultContainer) {
+      defaultContainer.appendChild(root);
+    }
   }
-  if (defaultContainer && root.parentElement !== defaultContainer) {
+  if (
+    util.isBrowser() &&
+    defaultContainer &&
+    // body在微前端会被劫持导致死循环
+    defaultContainer !== document.body &&
+    root.parentElement !== defaultContainer
+  ) {
     defaultContainer.appendChild(root);
   }
+
   return root;
 };
 
@@ -47,7 +57,10 @@ const useContainer = (props: ContainerProps = {}) => {
     if (!util.isBrowser()) return null;
     if (!context.element) {
       context.element = document.createElement('div');
-      context.element.setAttribute('style', ' position: absolute; top: 0px; left: 0px; width: 100% ')
+      context.element.setAttribute(
+        'style',
+        ' position: absolute; top: 0px; left: 0px; width: 100% ',
+      );
     }
     const rootContainer = getRootContainer(props);
     if (rootContainer && context.element.parentElement !== rootContainer) {

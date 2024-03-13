@@ -8,6 +8,7 @@ export interface DropdownClass {
   open: string;
   boxList: string;
   list: string;
+  listHasChildren: string;
   listSmall: string;
   listLarge: string;
   caret: string;
@@ -19,6 +20,7 @@ export interface DropdownClass {
   splitButton: string;
   optionGroup: string;
   optionDivider: string;
+  itemWrapper: string;
 }
 
 export type MenuPosition =
