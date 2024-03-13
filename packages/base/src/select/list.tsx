@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, usePersistFn } from '@sheinx/hooks';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from './select.type';
 import { BaseListProps } from './select.type';
 import { VirtualScrollList } from '../virtual-scroll';
 import ListOption from './list-option';

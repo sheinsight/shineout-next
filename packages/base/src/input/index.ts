@@ -1,5 +1,5 @@
 export { default, default as Input } from './input';
-export type { InputProps } from './input.type';
+export type { InputProps, InputClasses } from './input.type';
 
 export { default as InputPassword } from './input-password';
 export type { InputPasswordProps } from './input-password.type';

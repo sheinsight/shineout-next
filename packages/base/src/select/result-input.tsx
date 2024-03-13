@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from './select.type';
 import { ResultInputProps } from './result-input.type';
 import { Input } from '../date-picker/result';
 

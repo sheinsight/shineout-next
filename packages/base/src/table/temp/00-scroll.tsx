@@ -6,7 +6,6 @@
  */
 import React from 'react';
 import { Scroll } from '@sheinx/base';
-import {} from '@sheinx/shineout-style';
 
 export default () => {
   return (

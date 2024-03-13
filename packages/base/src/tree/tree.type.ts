@@ -1,13 +1,34 @@
 import { CommonType } from '../common/type';
 import { BaseTreeProps, ObjectKey, KeygenResult, TreePathType, useTree } from '@sheinx/hooks';
 import { SpinClasses } from '../spin/spin.type';
-import { TreeClasses } from '@sheinx/shineout-style';
 import { CheckboxClasses } from '../checkbox/checkbox.type';
 
 export type TreeRenderItemType<DataItem> =
   | ((item: DataItem, expanded: boolean, active: boolean, id: KeygenResult) => React.ReactNode)
   | ObjectKey<DataItem>;
 
+export type TreeClasses = {
+  tree: string;
+  root: string;
+  line: string;
+  noline: string;
+  content: string;
+  small: string;
+  large: string;
+  childnode: string;
+  checkbox: string;
+  contentWrapper: string;
+  inlineContent: string;
+  text: string;
+  list: string;
+  iconWrapper: string;
+  icon: string;
+  node: string;
+  children: string;
+  leaf: string;
+  placement: string;
+  textDisabled: string;
+};
 export type JsstyleType = {
   tree: () => TreeClasses;
   spin: () => SpinClasses;

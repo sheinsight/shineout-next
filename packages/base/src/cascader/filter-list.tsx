@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { KeygenResult, util } from '@sheinx/hooks';
-import { CascaderClasses } from '@sheinx/shineout-style';
+import { CascaderClasses } from './cascader.type';
 import { FilterListProps } from './filter-list.type';
 import FilterNode from './filter-node';
 import Spin from '../spin';

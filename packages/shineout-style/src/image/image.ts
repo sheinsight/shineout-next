@@ -38,15 +38,13 @@ export interface ImageClasses {
   groupPile: string;
   groupPileItem: string;
   groupCount: string;
-  '@keyframes keyframe-f2c': string;
-  '@keyframes keyframe-c2b': string;
-  '@keyframes keyframe-c2f': string;
-  '@keyframes keyframe-b2c': string;
+ 
 }
+
 
 type ImageClass = keyof ImageClasses;
 
-const ImageStyle: JsStyles<ImageClass> = {
+const animation = {
   '@keyframes keyframe-f2c': {
     '0%': {
       left: '100%',
@@ -101,6 +99,10 @@ const ImageStyle: JsStyles<ImageClass> = {
       transform: 'translate(50%, -50%)',
     },
   },
+}
+
+const ImageStyle: JsStyles<ImageClass> = {
+  ...animation,
   // image
   href: {
     outline: 'none',

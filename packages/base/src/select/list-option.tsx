@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from './select.type';
 import { ListOptionProps } from './list-option.type';
 import Icons from '../icons';
 

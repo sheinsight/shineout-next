@@ -11,7 +11,7 @@ import {
 } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { TreeSelectProps, ResultItem } from './tree-select.type';
-import { TreeSelectClasses } from '@sheinx/shineout-style';
+import { TreeSelectClasses } from './tree-select.type';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';

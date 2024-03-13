@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
-import { TreeClasses } from '@sheinx/shineout-style';
+import { TreeClasses } from './tree.type';
 import { TreeContextProps } from './tree-content.type';
 import Checkbox from './tree-checkbox';
 import { useTreeContext } from './tree-context';

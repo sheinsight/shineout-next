@@ -10,7 +10,7 @@ import {
   UnMatchedData,
   ObjectKey,
 } from '@sheinx/hooks';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from './select.type';
 import { SelectPropsBase, OptionListRefType } from './select.type';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';

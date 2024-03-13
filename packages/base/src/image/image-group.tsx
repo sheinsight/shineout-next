@@ -1,6 +1,6 @@
 import React, { Children, cloneElement } from 'react';
 import { useImageGroup } from '@sheinx/hooks';
-import { ImageClasses } from '@sheinx/shineout-style';
+import { ImageClasses } from './image.type';
 import { ImageGroupProps } from './image-group.type';
 import { Image, ImageProps } from './image.type';
 import showGallery from './image-event';

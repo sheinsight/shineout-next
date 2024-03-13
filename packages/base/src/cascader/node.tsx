@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import classNames from 'classnames';
 import { KeygenResult, util } from '@sheinx/hooks';
-import { CascaderClasses } from '@sheinx/shineout-style';
+import { CascaderClasses } from './cascader.type';
 import { CascaderNodeProps } from './node.type';
 import Checkbox from '../checkbox';
 import Spin from '../spin';

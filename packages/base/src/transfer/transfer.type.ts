@@ -1,4 +1,3 @@
-import { TransferClasses } from '@sheinx/shineout-style';
 import { CommonType } from '../common/type';
 import { BaseTransferProps, ObjectKey, KeygenResult, useListSelectMultiple } from '@sheinx/hooks';
 import { ButtonClasses } from '../button/button.type';
@@ -12,6 +11,35 @@ import React from 'react';
 export type ListDatum<DataItem, Value extends KeygenResult[]> = ReturnType<
   typeof useListSelectMultiple<DataItem, Value>
 >;
+
+export interface TransferClasses {
+  transfer: string;
+  small: string;
+  large: string;
+  simple: string;
+  view: string;
+  source: string;
+  target: string;
+  close: string;
+  removeAll: string;
+  simpleTarget: string;
+  operations: string;
+  input: string;
+  inputWrapper: string;
+  left: string;
+  right: string;
+  header: string;
+  spinContainer: string;
+  title: string;
+  count: string;
+  list: string;
+  footer: string;
+  item: string;
+  disabled: string;
+  itemWrapper: string;
+  checkbox: string;
+  empty: string;
+}
 
 export type JssStyleType = {
   transfer: () => TransferClasses;

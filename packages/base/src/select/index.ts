@@ -1,2 +1,2 @@
 export { default, default as Select } from './select';
-export type { SelectProps, SelectPropsA, SelectPropsB, SelectPropsBase } from './select.type';
+export type { SelectProps, SelectPropsA, SelectPropsB, SelectPropsBase, SelectClasses } from './select.type';
