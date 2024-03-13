@@ -323,17 +323,18 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (!compressed) return;
     if (!resultRef.current) return;
     if (more === -1) {
+      const tagClassName = `.${styles.tag.split(' ')[0]}`;
       if (shouldResetMore.current && isArray(value) && (value || []).length) {
         shouldResetMore.current = false;
         const newMore = getResetMore(
           showInput,
           resultRef.current,
-          resultRef.current.querySelectorAll(`.${styles.tag}`),
+          resultRef.current.querySelectorAll(tagClassName),
         );
 
         // 下次触发折叠逻辑的时候，将多余的 tag 隐藏，避免视图闪断
         if (newMore !== prevMore.current && prevMore.current === -1 && newMore > prevMore.current) {
-          const tags = resultRef.current.querySelectorAll(`.${styles.tag}`);
+          const tags = resultRef.current.querySelectorAll(tagClassName);
           tags.forEach((tag, index) => {
             if (index >= newMore) tag.setAttribute('style', 'opacity: 0');
           });
