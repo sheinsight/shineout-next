@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, useState } from 'react';
+import React, { ReactNode, useRef, useState, useMemo } from 'react';
 import classNames from 'classnames';
 import {
   util,
@@ -482,7 +482,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     );
   };
 
-  const renderResult = () => {
+  const renderResult = useMemo(() => {
     const result = (
       <div className={classNames(styles?.result)}>
         <Result<DataItem, Value>
@@ -538,7 +538,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         {renderInnerTitle(result)}
       </div>
     );
-  };
+  }, [value]);
 
   const renderList = () => {
     const listProps = {
@@ -667,7 +667,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       onFocus={handleFocus}
     >
       {tipNode}
-      {renderResult()}
+      {renderResult}
       {renderIcon()}
       <AbsoluteList
         adjust
