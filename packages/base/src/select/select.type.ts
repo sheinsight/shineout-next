@@ -1,19 +1,21 @@
 // import React from 'react';
-import { BaseSelectProps, KeygenType, useListSelect, KeygenResult, ObjectKey } from '@sheinx/hooks';
-import { CommonType } from '../common/type';
-import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
-import { TagClasses } from '../tag/tag.type';
-import { InnerTitleClasses } from '../common/use-inner-title';
-import { PopoverClasses } from '../popover/popover.type';
-import { CheckboxClasses } from '../checkbox/checkbox.type';
-import { TreeClasses } from '../tree/tree.type';
-import { RadioClasses } from '../radio/radio.type';
-import { SpinClasses } from '../spin/spin.type';
-import { InputClasses } from '../input/input.type';
-import { BaseTipProps } from '../common/use-tip';
+import {BaseSelectProps, KeygenResult, KeygenType, ObjectKey, useListSelect} from '@sheinx/hooks';
+import {CommonType} from '../common/type';
+import {AbsoluteListProps} from '../absolute-list/absolute-list.type';
+import {TagClasses} from '../tag/tag.type';
+import {InnerTitleClasses} from '../common/use-inner-title';
+import {PopoverClasses} from '../popover/popover.type';
+import {CheckboxClasses} from '../checkbox/checkbox.type';
+import {TreeClasses} from '../tree/tree.type';
+import {RadioClasses} from '../radio/radio.type';
+import {SpinClasses} from '../spin/spin.type';
+import {InputClasses} from '../input/input.type';
+import {BaseTipProps} from '../common/use-tip';
 
 export type SelectClasses = {
   wrapper: string;
+  wrapperEmpty: string;
+  wrapperOpen: string;
   wrapperDisabled: string;
   wrapperSmall: string;
   wrapperLarge: string;
@@ -76,6 +78,7 @@ export type SelectClasses = {
   moreIcon: string;
   hideTag: string;
   empty: string;
+  popover: string;
 };
 export type JssStyleType = {
   tag?: () => TagClasses;
