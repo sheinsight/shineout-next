@@ -137,7 +137,7 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
           visible={visible}
           onVisibleChange={setVisible}
         >
-          <div className={styles.moreWrapper}>
+          <div className={styles.moreWrapper} onClick={(e) => e.stopPropagation()}>
             {compressed === 'no-repeat' ? null : before}
             {after}
           </div>

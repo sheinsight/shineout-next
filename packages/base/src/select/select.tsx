@@ -205,6 +205,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     className,
     isEmpty && styles.wrapperEmpty,
     styles?.wrapper,
+    open && styles?.wrapperOpen,
     disabled === true && styles?.wrapperDisabled,
     disabled !== true && focused && styles?.wrapperFocus,
     innerTitle && styles?.wrapperInnerTitle,
@@ -358,14 +359,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     }
   };
 
-  // const handleMouseEnter = () => {
-  //   setEnter(true);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setEnter(false);
-  // };
-
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     // 回车或下箭头可打开下拉列表
     if (
@@ -458,18 +451,23 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         {defaultIcon}
       </span>
     );
+
+    const close = (
+      <span className={styles.clearIcon} onClick={handleClear}>
+        {isEmpty ? arrow : Icons.PcCloseCircleFill}
+      </span>
+    );
     return (
       <>
-        <span className={styles.clearIcon} onClick={handleClear}>
-          {Icons.PcCloseCircleFill}
-        </span>
-        {!open && !isEmpty && arrow}
+        {open && close}
+        {!open && arrow}
+        {!open && close}
       </>
     );
   };
 
   const renderIcon = () => {
-    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && disabled !== true)) {
+    if (clearable && !isEmpty && disabled !== true) {
       return renderClearable();
     }
     if (!multiple && !showArrow) return null;
@@ -663,8 +661,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}
-      // onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
       onBlur={handleBlur}

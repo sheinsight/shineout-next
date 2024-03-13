@@ -5,6 +5,7 @@ import border from '../input/input-border';
 export type SelectClasses = {
   wrapper: string;
   wrapperEmpty: string;
+  wrapperOpen: string;
   wrapperDisabled: string;
   wrapperSmall: string;
   wrapperLarge: string;
@@ -67,6 +68,7 @@ export type SelectClasses = {
   moreIcon: string;
   hideTag: string;
   empty: string;
+  popover: string;
 };
 export type SelectClassType = keyof SelectClasses;
 
@@ -115,7 +117,6 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const selectStyle: JsStyles<SelectClassType> = {
-  wrapperEmpty: {},
   wrapper: {
     display: 'inline-block',
     position: 'relative',
@@ -176,26 +177,23 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     '&:hover': {
       cursor: 'pointer',
-      '& $clearIcon': {
-        display: 'inline-block',
-      },
-
       '&$clearable:not($wrapperEmpty)': {
-        '& :not($compressedIcon)$arrowIcon': {
-          display: 'none',
+        '& $clearIcon': {
+          display: 'block',
         },
-        '& $compressedIcon': {
+        '& $arrowIcon': {
           display: 'none',
         },
       },
     },
-    // not wrapperFocus
-    '&:not($wrapperFocus)': {
+    '&:not($wrapperEmpty):not($wrapperOpen)': {
       '& $clearIcon': {
         display: 'none',
       },
     },
   },
+  wrapperEmpty: {},
+  wrapperOpen: {},
   wrapperDisabled: {
     ...wrapperDisabled,
     '& $icon': {
@@ -205,6 +203,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       color: token.selectDisabledIconColor,
     },
   },
+  popover: {},
   ...resetWrapper,
   resultWrapper: {
     display: 'flex',
@@ -453,6 +452,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     maxHeight: 160,
     overflow: 'auto',
     padding: token.selectMorePadding,
+    '&:hover': {
+      '& $clearIcon': {
+        display: 'inline-block',
+      },
+    },
   },
   virtualList: {
     margin: 0,
