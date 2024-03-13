@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import {
   util,
@@ -420,7 +420,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     );
   };
 
-  const renderResult = () => {
+  const renderResult = useMemo(() => {
     const result = (
       <div className={classNames(styles?.result)}>
         <Result<DataItem, Value>
@@ -474,7 +474,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         {renderInnerTitle(result)}
       </div>
     );
-  };
+  }, [value]);
+
   const renderList = () => {
     let tempData: any = filterData;
     const isMultiple = multiple === true || mode !== undefined;
@@ -650,7 +651,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       ref={targetRef}
     >
       {tipNode}
-      {renderResult()}
+      {renderResult}
       {renderIcon()}
       <AbsoluteList
         adjust
