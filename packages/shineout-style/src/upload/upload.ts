@@ -1,45 +1,7 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { UploadClasses } from '@sheinx/base';
 
-export interface UploadClasses {
-  wrapper: string;
-  wrapperImage: string;
-  wrapperDisabled: string;
-  wrapperDrop: string;
-  dropItem: string;
-  handler: string;
-  icon: string;
-  iconHover: string;
-  result: string;
-  resultText: string;
-  resultTextBody: string;
-  resultUploading: string;
-  resultSuccess: string;
-  resultTextFooter: string;
-  resultError: string;
-  resultDeleted: string;
-  resultClose: string;
-  resultStatusIcon: string;
-  // image
-  imageHandler: string;
-  imageHandlerIcon: string;
-  imageBg: string;
-  imageResult: string;
-  imageResultMask: string;
-  imageResultMaskOperator: string;
-  imageResultLoading: string;
-  imageResultMaskInfo: string;
-  imageResultMaskShow: string;
-  imageResultTopBtn: string;
-  imageResultTip: string;
-  customImageBtn: string;
-  // button
-  button: string;
-  buttonUploading: string;
-  buttonCover: string;
-  buttonBg: string;
-  buttonBgSpin: string;
-}
 export type UploadClassType = keyof UploadClasses;
 
 const uploadStyle: JsStyles<UploadClassType> = {

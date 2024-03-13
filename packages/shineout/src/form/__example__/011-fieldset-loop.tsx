@@ -7,14 +7,14 @@
 import React, { useState } from 'react';
 import { Form, Input, Rule } from 'shineout';
 
+interface FriendsItem {
+  name?: string;
+  age?: string;
+}
 interface Value {
-  account?: {
-    name?: {
-      firstName: string;
-      lastName: string;
-    };
-    age?: string;
-  };
+  name?: string;
+  age?: string;
+  friends?: FriendsItem[];
 }
 
 const rules = Rule();

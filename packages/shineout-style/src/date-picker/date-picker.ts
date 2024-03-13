@@ -1,78 +1,9 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 import border from '../input/input-border';
+import { DatePickerClasses } from '@sheinx/base';
 
-export type DatePickerClass =
-  | 'wrapper'
-  | 'wrapperSmall'
-  | 'wrapperLarge'
-  | 'wrapperFocus'
-  | 'wrapperDisabled'
-  | 'wrapperError'
-  | 'wrapperNoBorder'
-  | 'wrapperUnderline'
-  | 'wrapperRange'
-  | 'wrapperPaddingBox'
-  | 'wrapperInnerTitle'
-  | 'wrapperInnerTitleTop'
-  | 'wrapperInnerTitleBottom'
-  | 'resultWrapper'
-  | 'result'
-  | 'resultAlignRight'
-  | 'resultAlignLeft'
-  | 'resultAlignCenter'
-  | 'resultText'
-  | 'resultTextActive'
-  | 'resultTextDisabled'
-  | 'resultTextWrapper'
-  | 'resultTextPadding'
-  | 'resultSeparator'
-  | 'placeholder'
-  | 'icon'
-  | 'clear'
-  | 'pickerWrapper'
-  | 'pickerBox'
-  | 'pickerWrapperOpen'
-  | 'picker'
-  | 'dayPicker'
-  | 'pickerTitle'
-  | 'pickerHeader'
-  | 'pickerHeaderLeft'
-  | 'pickerHeaderRight'
-  | 'pickerHeaderMid'
-  | 'pickerHeaderIcon'
-  | 'pickerHeaderInfo'
-  | 'pickerBody'
-  | 'pickerFooter'
-  | 'pickerFooterBtn'
-  | 'pickerFooterLeft'
-  | 'pickerFooterRight'
-  | 'pickerRow'
-  | 'pickerRowWeek'
-  | 'pickerCell'
-  | 'pickerCellContent'
-  | 'pickerCellActive'
-  | 'pickerCellDisabled'
-  | 'pickerCellToday'
-  | 'pickerCellInRange'
-  | 'pickerCellInRangeStart'
-  | 'pickerCellInRangeEnd'
-  | 'pickerCellBound'
-  | 'yearPicker'
-  | 'weekPicker'
-  | 'monthPicker'
-  | 'quarterPicker'
-  | 'timePicker'
-  | 'timeList'
-  | 'timeItem'
-  | 'timeItemActive'
-  | 'timeItemDisabled'
-  | 'timeItemBox'
-  // | 'timeBase'
-  // | 'timeBaseItem'
-  | 'datetime'
-  | 'quickPicker'
-  | 'quickPickerItem';
+export type DatePickerClassType = keyof DatePickerClasses;
 
 const inputBorderToken = {
   lineHeight: token.lineHeightDynamic,
@@ -117,7 +48,7 @@ const inputBorderToken = {
 const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
-const datePickerStyle: JsStyles<DatePickerClass> = {
+const datePickerStyle: JsStyles<DatePickerClassType> = {
   wrapper: {
     display: 'inline-block',
     position: 'relative',

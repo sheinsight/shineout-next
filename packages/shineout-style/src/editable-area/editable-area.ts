@@ -1,25 +1,9 @@
-// import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import border from '../input/input-border';
 import token from '@sheinx/theme';
+import { EditableAreaClasses } from '@sheinx/base';
 
-export type EditableAreaClass =
-  | 'wrapper'
-  | 'wrapperDisabled'
-  | 'wrapperError'
-  | 'wrapperNoBorder'
-  | 'wrapperSmall'
-  | 'wrapperLarge'
-  | 'wrapperPaddingBox'
-  | 'wrapperInnerTitle'
-  | 'wrapperInnerTitleTop'
-  | 'wrapperInnerTitleBottom'
-  | 'content'
-  | 'clear'
-  | 'place'
-  | 'placeholder'
-  | 'popup'
-  | 'popupShow';
+export type EditableAreaClassType = keyof EditableAreaClasses;
 const inputBorder = border('wrapper', {
   lineHeight: token.lineHeightDynamic,
   borderRadius: token.textareaBorderRadius,
@@ -63,7 +47,7 @@ const inputBorder = border('wrapper', {
 
 const { wrapper, wrapperNoBorder, wrapperFocus: _noFocus, ...resetWrapper } = inputBorder;
 
-const editableAreaStyle: JsStyles<EditableAreaClass> = {
+const editableAreaStyle: JsStyles<EditableAreaClassType> = {
   wrapper: {
     display: 'block',
     position: 'relative',

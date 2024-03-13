@@ -1,38 +1,11 @@
 import token from '@sheinx/theme';
+import { ModalClasses } from '@sheinx/base';
+
 import { JsStyles } from '../jss-style';
 
 const zoomOut = 'cubic-bezier(0.78, 0.14, 0.15, 0.86)';
 const zoomIn = 'cubic-bezier(0.08, 0.82, 0.17, 1)';
 
-export type ModalClasses = {
-  wrapper: string;
-  wrapperShow: string;
-  wrapperHide: string;
-  wrapperFullScreen: string;
-  wrapperMoveable: string;
-  wrapperAnimation: string;
-  wrapperZoom: string;
-  wrapperIsMask: string;
-  wrapperHideMask: string;
-  wrapperDrawer: string;
-  wrapperDrawerLeft: string;
-  wrapperDrawerRight: string;
-  wrapperDrawerTop: string;
-  wrapperDrawerBottom: string;
-
-  mask: string;
-  panel: string;
-  header: string;
-  headerIcon: string;
-  headerTitle: string;
-  headerClose: string;
-  body: string;
-  bodyWithIcon: string;
-  footer: string;
-  resizeX: string;
-  resizeY: string;
-  resizeXY: string;
-};
 export type ModalClassType = keyof ModalClasses;
 const modalIndex = 1050;
 

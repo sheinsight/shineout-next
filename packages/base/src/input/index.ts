@@ -9,3 +9,5 @@ export type { InputNumberProps } from './input-number.type';
 
 export { default as InputGroup } from './input-group';
 export type { InputGroupProps } from './input-group.type';
+
+export type { InnerTitleClasses } from '../common/use-inner-title';

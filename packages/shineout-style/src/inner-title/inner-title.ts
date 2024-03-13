@@ -1,19 +1,9 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
+import { InnerTitleClasses } from '@sheinx/base';
 
 const moveOffset = '-10px';
 const moveTime = '120ms';
-
-export type Class =
-  | 'wrapper'
-  | 'wrapperSmall'
-  | 'wrapperLarge'
-  | 'wrapperOpen'
-  | 'title'
-  | 'top'
-  | 'content'
-  | 'place'
-  | 'animation';
 
 const animation = {
   '@keyframes movein': {
@@ -34,7 +24,7 @@ const animation = {
   },
 };
 
-const innerTitle: JsStyles<Class> = {
+const innerTitle: JsStyles<keyof InnerTitleClasses> = {
   ...animation,
   wrapper: {
     width: '100%',

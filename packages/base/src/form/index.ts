@@ -6,7 +6,7 @@ export { default as FormButton } from './form-button';
 export { default as FormFlow } from './form-flow';
 
 export type { FormProps, FormRef, FormClasses } from './form.type';
-export type { FormItemProps } from './form-item.type';
+export type { FormItemProps, FormItemClasses } from './form-item.type';
 export type { FormFieldProps, FormFieldChildrenFunc } from './form-field.type';
 export type { FormFieldSetProps, FormFieldSetChildrenFunc } from './form-fieldset.type';
 export type { FormFlowProps } from './form-flow.type';

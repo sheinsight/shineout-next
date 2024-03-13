@@ -1,7 +1,8 @@
 import Token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { CollapseClasses } from '@sheinx/base';
 
-export type CollapseClass = 'wrapper' | 'borderLess';
+export type CollapseClass = keyof CollapseClasses;
 
 const collapseStyle: JsStyles<CollapseClass> = {
   wrapper: {

@@ -303,6 +303,9 @@ importers:
 
   packages/shineout-style:
     dependencies:
+      '@sheinx/base':
+        specifier: workspace:*
+        version: link:../base
       '@sheinx/theme':
         specifier: workspace:*
         version: link:../theme

@@ -1,17 +1,6 @@
 import token from '@sheinx/theme';
+import { SwitchClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
-
-export type SwitchClass =
-  | 'wrapper'
-  | 'wrapperDisabled'
-  | 'wrapperChecked'
-  // | 'wrapperLoading'
-  | 'wrapperSmall'
-  | 'wrapperLarge'
-  | 'indicator'
-  | 'loading'
-  | 'content'
-  | 'textPadding';
 
 const animation = {
   '@keyframes ring': {
@@ -24,11 +13,11 @@ const animation = {
   },
 };
 const transition = '.2s cubic-bezier(.34,.69,.1,1)';
-const switchStyle: JsStyles<SwitchClass> = {
+const switchStyle: JsStyles<keyof SwitchClasses> = {
   ...animation,
   wrapper: {
     '[data-soui-role="form-control"] >  &': {
-      margin: '5px 0'
+      margin: '5px 0',
     },
     transition: `background-color ${transition}`,
     border: '0',

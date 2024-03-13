@@ -81,7 +81,6 @@ export type JssStyleType = {
   tag?: () => TagClasses;
   select?: () => SelectClasses;
   innerTitle?: () => InnerTitleClasses;
-  virtualScroll?: () => VirtualScrollClasses;
   popover?: () => PopoverClasses;
   checkbox?: () => CheckboxClasses;
   radio?: () => RadioClasses;

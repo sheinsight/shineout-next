@@ -1,28 +1,10 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { DescriptionsClasses } from '@sheinx/base';
 
-export type DescriptionsClass =
-  | 'wrapper'
-  | 'header'
-  | 'title'
-  | 'extra'
-  | 'body'
-  | 'table'
-  | 'row'
-  | 'label'
-  | 'value'
-  | 'tableLayoutFixed'
-  | 'border'
-  | 'small'
-  | 'large'
-  | 'item'
-  | 'labelInline'
-  | 'valueInline'
-  | 'inlineHorizontal'
-  | 'horizontal'
-  | 'inlineTable';
+export type DescriptionsClassType = keyof DescriptionsClasses;
 
-const descriptionsStyle: JsStyles<DescriptionsClass> = {
+const descriptionsStyle: JsStyles<DescriptionsClassType> = {
   wrapper: {
     display: 'block',
   },
@@ -61,7 +43,7 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
   },
   body: {
     fontSize: token.descriptionsTableDefaultSize,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   table: {
     width: '100%',
@@ -83,7 +65,7 @@ const descriptionsStyle: JsStyles<DescriptionsClass> = {
     color: token.descriptionsValueColor,
     '&:last-child': {
       padding: `0 0 ${token.descriptionsLabelPaddingBottom} 0`,
-    }
+    },
   },
   inlineTable: {
     textAlign: 'left',

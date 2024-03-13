@@ -4,7 +4,6 @@ import useFieldCommon from '../hooks/use-field-common';
 import {
   useSelectStyle,
   useInnerTitleStyle,
-  useVirtualScrollStyle,
   useTagStyle,
   useCheckboxStyle,
   useRadioStyle,
@@ -18,7 +17,6 @@ const jssStyle = {
   tag: useTagStyle,
   select: useSelectStyle,
   innerTitle: useInnerTitleStyle,
-  virtualScroll: useVirtualScrollStyle,
   popover: usePopoverStyle,
   checkbox: useCheckboxStyle,
   radio: useRadioStyle,

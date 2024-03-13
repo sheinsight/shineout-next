@@ -1,5 +1,6 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
+import { SpinClasses } from '@sheinx/base';
 
 import Default from './default';
 import chasingDots from './chasing-dots';
@@ -17,32 +18,7 @@ import chasingRing from './chasing-ring';
 
 import Animation from './animation';
 
-export type SpinClass =
-  | 'spin'
-  | 'default'
-  | 'chasingDots'
-  | 'cubeGrid'
-  | 'doubleBounce'
-  | 'dots'
-  | 'item'
-  | 'fadingCircle'
-  | 'scaleCircle'
-  | 'fade'
-  | 'fourDots'
-  | 'plane'
-  | 'pulse'
-  | 'ring'
-  | 'threeBounce'
-  | 'wave'
-  | 'chasingRing'
-  | 'content'
-  | 'container'
-  | 'loading'
-  | 'tip'
-  | 'vertical'
-  | 'horizontal';
-
-const spinStyle: JsStyles<SpinClass> = {
+const spinStyle: JsStyles<keyof SpinClasses> = {
   ...Animation,
   default: Default(12),
   chasingDots,

@@ -1,4 +1,5 @@
 import border from '../input/input-border';
+import { TextareaClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
 
@@ -44,27 +45,7 @@ const inputBorder = border('wrapper', {
 });
 const { wrapper, ...resetWrapper } = inputBorder;
 
-export type InputClass =
-  | 'wrapper'
-  | 'wrapperSmall'
-  | 'wrapperLarge'
-  | 'wrapperFocus'
-  | 'wrapperError'
-  | 'wrapperDisabled'
-  | 'wrapperUnderline'
-  | 'wrapperNoBorder'
-  | 'wrapperPaddingBox'
-  | 'wrapperInnerTitle'
-  | 'wrapperInnerTitleTop'
-  | 'wrapperInnerTitleBottom'
-  | 'textarea'
-  | 'resize'
-  | 'shadow'
-  | 'info'
-  | 'infoError'
-  | 'footer';
-
-const input: JsStyles<InputClass> = {
+const input: JsStyles<keyof TextareaClasses> = {
   ...inputBorder,
   wrapper: {
     display: 'inline-flex',

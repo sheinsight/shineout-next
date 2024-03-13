@@ -1,23 +1,9 @@
 import token from '@sheinx/theme';
+import { FormItemClasses } from '@sheinx/base';
 
 import { JsStyles } from '../jss-style';
 
-type FormItemClass =
-  | 'wrapper'
-  | 'wrapperTip'
-  | 'label'
-  | 'labelLeft'
-  | 'wrapperInline'
-  | 'wrapperLabelTop'
-  | 'wrapperLabelVerticalMiddle'
-  | 'wrapperLabelVerticalBottom'
-  | 'wrapperRequired'
-  | 'wrapperKeepHeight'
-  | 'control'
-  | 'error'
-  | 'tip';
-
-const formItemStyle: JsStyles<FormItemClass> = {
+const formItemStyle: JsStyles<keyof FormItemClasses> = {
   wrapper: {
     display: 'flex',
     alignItems: 'flex-start',

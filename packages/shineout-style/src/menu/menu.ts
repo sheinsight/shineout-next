@@ -1,41 +1,8 @@
 import token from '@sheinx/theme';
+import { MenuClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 const menuIndex = 1000;
 
-export type MenuClasses = {
-  wrapper: string;
-  wrapperInline: string;
-  wrapperVertical: string;
-  wrapperHorizontal: string;
-  wrapperHasOpen: string;
-  wrapperLight: string;
-  wrapperDark: string;
-  root: string;
-  children: string;
-  childrenHasExpand: string;
-  childrenUp: string;
-  item: string;
-  itemActive: string;
-  itemDisabled: string;
-  itemOpen: string;
-  itemInPath: string;
-  itemHasChildren: string;
-  itemContent: string;
-  itemContentFront: string;
-  itemContentBack: string;
-  title: string;
-  expand: string;
-  expandFront: string;
-  expandBack: string;
-  expandHover: string;
-  icon: string;
-  scrollbar: string;
-  scrollbarX: string;
-  scrollbarY: string;
-  scrollbarDragging: string;
-  scrolbarHandler: string;
-  scrollbox: string;
-};
 export type MenuClassType = keyof MenuClasses;
 
 const arrow = {

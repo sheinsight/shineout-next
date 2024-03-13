@@ -1,34 +1,6 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
-
-export interface TransferClasses {
-  transfer: string;
-  small: string;
-  large: string;
-  simple: string;
-  view: string;
-  source: string;
-  target: string;
-  close: string;
-  removeAll: string;
-  simpleTarget: string;
-  operations: string;
-  input: string;
-  inputWrapper: string;
-  left: string;
-  right: string;
-  header: string;
-  spinContainer: string;
-  title: string;
-  count: string;
-  list: string;
-  footer: string;
-  item: string;
-  disabled: string;
-  itemWrapper: string;
-  checkbox: string;
-  empty: string;
-}
+import { TransferClasses } from '@sheinx/base';
 
 export type TransferClass = keyof TransferClasses;
 

@@ -1,19 +1,7 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { RateClasses } from '@sheinx/base';
 
-export type RateClasses = {
-  wrapper: string;
-  inner: string;
-  item: string;
-  itemBg: string;
-  itemFront: string;
-  itemHalf: string;
-  itemChecked: string;
-  itemCheckedHalf: string;
-  text: string;
-  itemDisabled: string;
-  itemAnimation: string;
-};
 export type RateClassType = keyof RateClasses;
 
 // const animation = {
@@ -39,7 +27,7 @@ const rateStyle: JsStyles<RateClassType> = {
   wrapper: {
     display: 'inline-block',
     '[data-soui-role="form-control"] >  &': {
-      padding: '4px 0'
+      padding: '4px 0',
     },
   },
   inner: {

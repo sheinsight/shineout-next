@@ -1,46 +1,6 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
-
-export interface ImageClasses {
-  image: string;
-  img: string;
-  inner: string;
-  circle: string;
-  rounded: string;
-  thumbnail: string;
-  fill: string;
-  center: string;
-  fit: string;
-  stretch: string;
-  href: string;
-  placeholder: string;
-  defaultPlaceholder: string;
-  error: string;
-  defaultError: string;
-  preview: string;
-  previewMask: string;
-  download: string;
-
-  overlay: string;
-  magnify: string;
-  close: string;
-
-  gallery: string;
-  galleryCurrent: string;
-  galleryInit: string;
-  galleryForward: string;
-  galleryBackward: string;
-  galleryCenter: string;
-  galleryLeft: string;
-  galleryRight: string;
-
-  group: string;
-  groupPile: string;
-  groupPileItem: string;
-  groupCount: string;
- 
-}
-
+import { ImageClasses } from '@sheinx/base';
 
 type ImageClass = keyof ImageClasses;
 
@@ -99,7 +59,7 @@ const animation = {
       transform: 'translate(50%, -50%)',
     },
   },
-}
+};
 
 const ImageStyle: JsStyles<ImageClass> = {
   ...animation,

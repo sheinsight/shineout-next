@@ -1,21 +1,8 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
+import { RadioClasses } from '@sheinx/base';
 
-export type RadioClass =
-  | 'wrapper'
-  | 'wrapperSmall'
-  | 'wrapperLarge'
-  | 'wrapperDisabled'
-  | 'wrapperChecked'
-  | 'indicatorWrapper'
-  | 'indicator'
-  | 'desc'
-  | 'group'
-  | 'groupBlock'
-  | 'groupButton'
-  | 'darkIndicatorWrapper';
-
-const radioStyle: JsStyles<RadioClass> = {
+const radioStyle: JsStyles<keyof RadioClasses> = {
   // '@keyframes so-checkinput-focus': {
   //   '0%': {
   //     boxShadow: `0 0 0 0 ${cssVars.primaryColorFade50}`,
@@ -147,8 +134,8 @@ const radioStyle: JsStyles<RadioClass> = {
   group: {
     lineHeight: 1,
     '[data-soui-role="form-control"] >  &': {
-      padding: '5px 0'
-    }
+      padding: '5px 0',
+    },
   },
   groupBlock: {
     '& $wrapper': {

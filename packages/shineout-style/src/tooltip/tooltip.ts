@@ -1,7 +1,6 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
-
-export type TooltipClass = 'wrapper' | 'wrapperOpen' | 'content' | 'target';
+import { TooltipClasses } from '@sheinx/base';
 
 const arrowGap = 12;
 const arrowMargin = '8px';
@@ -48,7 +47,7 @@ const animation = {
     },
   },
 };
-const tooltipStyle: JsStyles<TooltipClass> = {
+const tooltipStyle: JsStyles<keyof TooltipClasses> = {
   ...animation,
   wrapper: {
     display: 'none',

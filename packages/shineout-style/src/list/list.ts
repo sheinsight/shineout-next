@@ -1,35 +1,7 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { ListClasses } from '@sheinx/base';
 
-export type ListClasses = {
-  wrapper: string;
-  wrapperSmall: string;
-  wrapperLarge: string;
-  wrapperBordered: string;
-  wrapperStriped: string;
-  scrollContainer: string;
-  row: string;
-  item: string;
-  checkContent: string;
-  pagination: string;
-  loading: string;
-  empty: string;
-  footer: string;
-
-  // baseItem
-  baseItem: string;
-  baseItemMeta: string;
-  baseItemMetaIncludes: string;
-  baseItemMetaContainer: string;
-  baseItemMetaMeta: string;
-  baseItemMetaAvatar: string;
-  baseItemMetaTitle: string;
-  baseItemMetaDesc: string;
-  baseItemMetaCenter: string;
-  baseItemMetaContent: string;
-  baseItemExtra: string;
-  baseItemExtraSplit: string;
-};
 export type ListClassType = keyof ListClasses;
 
 const listStyle: JsStyles<ListClassType> = {
