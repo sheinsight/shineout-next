@@ -94,20 +94,18 @@ const outlineBeforeLine = (type: ButtonType, styles: ButtonStyleType) => ({
   '&:not(:disabled):hover': {
     // before
     '&::before': {
-      height: 'calc(100% + 2px)',
-      top: -1,
+      height: 'calc(100% + 1.8px)',
+      top: -0.8,
       left: -1,
       width: 1,
-      bottom: -1,
       background: Token[`button${type}${styles}HoverBorderColor`],
     },
     '& + $button,& + * $button': {
       '&::before': {
-        height: 'calc(100% + 2px)',
-        top: -1,
+        height: 'calc(100% + 1.8px)',
+        top: -0.8,
         left: -1,
         width: 1,
-        bottom: -1,
         background: Token[`button${type}${styles}HoverBorderColor`],
       },
     },
@@ -196,7 +194,6 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     fontWeight: 400,
     cursor: 'pointer',
     userSelect: 'none',
-    // textAlign: 'center',
     whiteSpace: 'nowrap',
     display: 'inline-flex',
     alignItems: 'center',
@@ -208,13 +205,11 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     borderRadius: Token.buttonBorderRadius,
     lineHeight: Token.lineHeightDynamic,
     padding: `${Token.buttonPaddingY} ${Token.buttonPaddingX}`,
-    transition: 'all 0.15s ease-in-out',
+    transition: 'all .1s linear',
     fontFamily: 'inherit',
     height: Token.buttonHeight,
 
-    '& $spaceWrapper': {
-      // height: '100%',
-    },
+    '& $spaceWrapper': {},
 
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,
@@ -225,14 +220,7 @@ const ButtonStyle: JsStyles<ButtonClass> = {
     },
 
     '&:active': {
-      animationDelay: '0s',
-      backgroundImage: 'none',
-      animationDuration: '0.4s',
-      animationFillMode: 'none',
-      animationIterationCount: '1',
-      animationDirection: 'normal',
-      animationPlayState: 'running',
-      animationTimingFunction: 'ease-out',
+      transition: 'none',
     },
   },
   spaceWrapper: {},

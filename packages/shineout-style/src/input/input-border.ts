@@ -53,7 +53,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
       '&:hover': {
         borderColor: token.hoverBorderColor,
       },
-      '[data-soui-type="input-group"] &': {
+      '[data-soui-role="input-group"] &': {
         borderWidth: 0,
         borderRadius: 0,
         boxShadow: 'none',
@@ -61,7 +61,7 @@ export default <T extends string>(name: T, token: Token = {} as any) => {
         flex: 1,
         minWidth: 0,
       },
-      '[data-soui-type="input-group"] [data-soui-type="input"] + &': {
+      '[data-soui-role="input-group"] [data-soui-input-border] + &': {
         borderLeftWidth: '1px',
       },
     },

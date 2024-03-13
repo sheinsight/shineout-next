@@ -9,6 +9,7 @@ export interface BaseTabsProps {
   /**
    * @en Default active tab id or index
    * @cn 默认选中标签页（非受控）
+   * @default 0
    */
   defaultActive?: number | string;
   onChange?: (key: number | string) => void;

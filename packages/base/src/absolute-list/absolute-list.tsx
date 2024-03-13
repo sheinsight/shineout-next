@@ -9,12 +9,12 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     absolute,
     position,
     children,
-    parentElement,
-    scrollElement,
+    parentElRef,
+    scrollElRef,
     fixedWidth,
     zIndex = 1051,
     focus,
-    popupEl,
+    popupElRef,
     updateKey,
     popupGap,
     adjust,
@@ -25,19 +25,18 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     container: typeof absolute === 'function' ? absolute : undefined,
   });
 
-
   const { current: context } = useRef({ rendered: false });
 
   const style = usePositionStyle({
     getContainer: getRoot,
     position,
     absolute: !!absolute,
-    parentEl: parentElement,
+    parentElRef,
     show: focus,
     fixedWidth,
     zIndex,
-    visibleEl: scrollElement,
-    popupEl,
+    scrollElRef,
+    popupElRef,
     updateKey,
     popupGap,
     adjust,

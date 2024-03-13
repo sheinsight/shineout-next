@@ -8,7 +8,6 @@ const { getKey } = util;
 const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) => {
   const { data = [], separator = '/' } = props;
   const breadcrumbClasses = props.jssStyle?.breadcrumb?.();
-  // ...
 
   const renderItem = (dataItem: Item): ReactNode => {
     const d = dataItem as BreadcrumbDataType;

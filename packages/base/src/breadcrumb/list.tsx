@@ -43,10 +43,10 @@ const List = (props: ListProps) => {
       <AbsoluteList
         position={position}
         focus={open}
-        parentElement={targetRef.current}
+        parentElRef={targetRef}
         absolute={true}
         fixedWidth={'min'}
-        popupEl={popupRef.current}
+        popupElRef={popupRef}
         adjust={true}
       >
         <AnimationList
@@ -55,7 +55,7 @@ const List = (props: ListProps) => {
           duration={'fast'}
           show={open}
           onRef={popupRef as any}
-          animation
+          animation={false}
         >
           {renderList(rest)}
         </AnimationList>

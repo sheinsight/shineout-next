@@ -7,10 +7,6 @@ import classNames from 'classnames';
 import Icons from '../icons';
 import useInnerTitle from '../common/use-inner-title';
 
-interface Context {
-  wrapper: HTMLDivElement | null;
-  textarea: HTMLTextAreaElement | null;
-}
 
 function formatShowValue(value: unknown) {
   if (!value && value !== 0) return '';
@@ -46,10 +42,9 @@ const EditableArea = (props: EditableAreaProps) => {
 
   const status = error ? 'error' : props.status;
 
-  const { current: context } = React.useRef<Context>({
-    wrapper: null,
-    textarea: null,
-  });
+  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+
+  const wrapperRef = React.useRef<HTMLDivElement>(null);
 
   const { value, onChange } = useInputAble({
     control: 'value' in props,
@@ -63,9 +58,9 @@ const EditableArea = (props: EditableAreaProps) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    if (show && context.textarea) {
+    if (show && textareaRef.current) {
       setTimeout(() => {
-        if (show && context.textarea) context.textarea.focus();
+        if (show && textareaRef.current) textareaRef.current.focus();
       });
     }
   }, [show]);
@@ -127,15 +122,14 @@ const EditableArea = (props: EditableAreaProps) => {
       <AbsoluteList
         absolute={getPopupContainer || true}
         focus={show}
-        parentElement={context.wrapper}
+        parentElRef={wrapperRef}
+        popupElRef={textareaRef}
         fixedWidth={true}
         position={'cover'}
       >
         <Textarea
           jssStyle={jssStyle}
-          textareaRef={(el) => {
-            context.textarea = el;
-          }}
+          textareaRef={textareaRef}
           status={status}
           placeholder={placeholder}
           className={classNames(editableAreaStyle?.popup, show && editableAreaStyle?.popupShow)}
@@ -182,9 +176,7 @@ const EditableArea = (props: EditableAreaProps) => {
         !!props.innerTitle && editableAreaStyle?.wrapperInnerTitle,
       )}
       style={{ ...style, width }}
-      ref={(el) => {
-        context.wrapper = el;
-      }}
+      ref={wrapperRef}
     >
       {renderPlaceholder()}
       {renderClear()}

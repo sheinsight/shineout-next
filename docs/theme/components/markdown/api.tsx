@@ -2,18 +2,43 @@ import classNames from 'classnames';
 import { MarkdownProps } from 'docs/types';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
-import useStyles from '../style';
+// import useStyles from '../style';
+import { Table } from 'shineout';
 import Anchor from 'docs/theme/layout/desktop/anchor';
 
 const SingleAPi = (props: MarkdownProps['api'][0]) => {
-  const { title, properties, cn, en, subTitle, isDetail } = props;
-  const hasVersion = properties.find((item: any) => !!item.version);
-  const style = useStyles();
+  const { title, properties, cn, en, subTitle, isLast } = props;
+  // const hasVersion = properties.find((item: any) => !!item.version);
+  // const style = useStyles();
 
   const state = useSnapshot(store);
   const locate = (cn: string, en: string) => {
     return state.locales === 'cn' ? cn : en;
   };
+
+  const columns = [
+    {
+      title: locate('属性', 'Property'),
+      width: 200,
+      render: (d: any) => d.name,
+    },
+    {
+      title: locate('类型', 'Type'),
+      width: 400,
+      render: (d: any) => d.type,
+    },
+    {
+      title: locate('默认值', 'Default'),
+      width: 100,
+      render: (d: any) => d.tag.default || '-',
+    },
+    {
+      title: locate('说明', 'Description'),
+      render: (d: any) => locate(d.tag.cn, d.tag.en),
+    },
+  ];
+
+  const data = properties.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <>
@@ -30,34 +55,8 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
           ) : null}
         </>
       ) : null}
-      <div style={{ overflow: 'auto' }}>
-        <table className={style.apiTable}>
-          <thead>
-            <tr>
-              <th>{locate('属性', 'Property')}</th>
-              <th>{locate('类型', 'Type')}</th>
-              {isDetail ? null : <th>{locate('默认值', 'Default')}</th>}
-              <th>{locate('说明', 'Description')}</th>
-              {hasVersion ? <th>{locate('版本', 'Version')}</th> : null}
-            </tr>
-          </thead>
-          <tbody>
-            {properties
-              .sort((a, b) => a.name.localeCompare(b.name))
-              .map(({ name, tag, type, required } = {} as any) => {
-                const defaultV = required ? locate('必填', 'required') : undefined;
-                return (
-                  <tr key={name}>
-                    <td>{name}</td>
-                    <td>{type}</td>
-                    {isDetail ? null : <td>{defaultV || tag.default || '-'}</td>}
-                    <td>{locate(tag.cn, tag.en)}</td>
-                    {hasVersion ? <td>{tag.version || '-'}</td> : null}
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
+      <div style={{ overflow: 'auto', marginBottom: isLast ? 0 : 48 }}>
+        <Table bordered columns={columns} data={data} keygen='name'></Table>
       </div>
     </>
   );
@@ -67,10 +66,10 @@ const Api = (props: { api: MarkdownProps['api'] }) => {
   const api = props.api || [];
   const titles = api.map((item) => item.title);
   return (
-    <div style={{ padding: 24, display: 'flex' }}>
+    <div style={{ padding: 24, display: 'flex', marginTop: 60 }}>
       <div style={{ flex: 1, minWidth: 0 }}>
         {api.map((item, index) => {
-          return <SingleAPi key={index} {...item}></SingleAPi>;
+          return <SingleAPi key={index} {...item} isLast={index === api.length - 1}></SingleAPi>;
         })}
       </div>
       <div className='anchor' style={{ width: 192 }}>

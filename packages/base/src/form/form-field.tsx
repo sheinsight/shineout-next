@@ -31,14 +31,22 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     }
   });
 
+  const childrenProps = React.isValidElement(children) ? children.props : {};
+
+  const error = childrenProps.error ?? formControl.error;
+
+  const status = childrenProps.status ?? (formControl.error ? 'error' : undefined);
+
   const cloneProps: FieldControlProps<T> = {
     onChange: handleChange,
-    status: formControl.error ? 'error' : undefined,
-    error: formControl.error,
+    status,
+    error,
   };
+
   if (formControl.inForm) {
     cloneProps.value = formControl.value;
   }
+
   if (formControl.disabled) {
     cloneProps.disabled = true;
   }

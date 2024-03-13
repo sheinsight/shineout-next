@@ -1,10 +1,18 @@
 import React from 'react';
 import { CommonType } from '../common/type';
 
+export interface GapClasses {
+  wrapper: string;
+  item: string
+}
+
 /**
  * @title Gap
  */
 export interface GapProps extends Pick<CommonType, 'className' | 'style'> {
+  jssStyle?: {
+    gap?: () => GapClasses;
+  };
   /**
    * @en column spacing in the horizontal direction
    * @cn 水平方向的列间距

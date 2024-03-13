@@ -63,6 +63,7 @@ const App: React.FC = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
     <DatePicker
       range
+      absolute
       type='datetime'
       onChange={(d) => console.log(d)}
       quickSelect={QuickSelectDataTime}

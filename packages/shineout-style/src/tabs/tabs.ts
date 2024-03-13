@@ -115,10 +115,20 @@ const getLineStyle = () => {
     '&[data-soui-position^="left-"][data-soui-shape="line"]': {
       '& $hr': { right: 0, width: 1, height: '100%' },
       ...active({ top: 0, bottom: 0, right: 0, width: 2 }),
+      '& :not([data-soui-state="active"])$tab': {
+        '&:after': {
+          display: 'none',
+        },
+      },
     },
     '&[data-soui-position^="right-"][data-soui-shape="line"]': {
       '& $hr': { left: 0, width: 1, height: '100%' },
       ...active({ top: 0, bottom: 0, left: 0, width: 2 }),
+      '& :not([data-soui-state="active"])$tab': {
+        '&:after': {
+          display: 'none',
+        },
+      },
     },
     '&[data-soui-position^="top-"][data-soui-shape="line"]': {
       '& $hr': { bottom: 0, height: 1, width: '100%' },
@@ -127,6 +137,11 @@ const getLineStyle = () => {
     '&[data-soui-position^="bottom-"][data-soui-shape="line"]': {
       '& $hr': { top: 0, height: 1, width: '100%' },
       ...active({ top: 0, left: 0, right: 0, height: 2 }),
+      '& :not([data-soui-state="active"])$tab': {
+        '&:after': {
+          display: 'none',
+        },
+      },
     },
   };
 };
@@ -521,6 +536,17 @@ const tabsStyle: JsStyles<TabsClass> = {
         '&[data-soui-state="disabled"]': {
           color: Token.tabsDisabledFontColor,
           cursor: 'not-allowed',
+        },
+        '&:not([data-soui-state="active"])': {
+          '&:after': {
+            position: 'absolute',
+            content: '""',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: 1,
+            background: Token.tabsBorderColor,
+          },
         },
 
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $lineInner': {

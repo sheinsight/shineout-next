@@ -1,11 +1,14 @@
 import support from './support';
 import React from 'react';
+import classNames from 'classnames';
 import { GapProps } from './gap.type';
 
 let supportFlexGap: boolean | undefined = undefined;
 const Gap = (props: GapProps) => {
   if (supportFlexGap === undefined) supportFlexGap = support();
-  const { column = 8, row = 8, style, className, children, itemStyle: itemStyleProps } = props;
+  const { column = 8, row = 8, style, className, children, itemStyle: itemStyleProps, jssStyle } = props;
+
+  const styles = jssStyle?.gap?.();
 
   const extendStyle = (
     supportFlexGap
@@ -31,8 +34,8 @@ const Gap = (props: GapProps) => {
       };
 
   return (
-    <div className={className} style={{ ...extendStyle, ...style }}>
-      {React.Children.map(children, (child) => child && <div style={itemStyle}>{child}</div>)}
+    <div className={classNames(className, styles?.wrapper)} style={{ ...extendStyle, ...style }}>
+      {React.Children.map(children, (child) => child && <div className={styles?.item} style={itemStyle}>{child}</div>)}
     </div>
   );
 };

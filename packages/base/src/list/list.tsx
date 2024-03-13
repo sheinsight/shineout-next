@@ -120,11 +120,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
   const renderLoading = () => {
     if (!props.loading) return null;
     const Loading =
-      props.loading === true ? (
-        <Spin name='ring' size={16} jssStyle={props.jssStyle} />
-      ) : (
-        props.loading
-      );
+      props.loading === true ? <Spin size={16} jssStyle={props.jssStyle} /> : props.loading;
     return <div className={listClasses?.loading}>{Loading}</div>;
   };
 

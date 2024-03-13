@@ -13,7 +13,6 @@ const App: React.FC = () => (
   <div
     style={{
       padding: 10,
-      height: 150,
       overflow: 'hidden',
       display: 'flex',
       flexDirection: 'column',
