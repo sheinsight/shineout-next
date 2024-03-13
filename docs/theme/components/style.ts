@@ -4,8 +4,10 @@ export default createUseStyles(
   {
     pages: {},
     header: {
-      position: 'sticky',
-      top: 60,
+      position: 'fixed',
+      top: 59,
+      right: 0,
+      left: 260,
       zIndex: 1,
       color: '#141737',
       padding: '0 40px',
@@ -67,7 +69,7 @@ export default createUseStyles(
     },
     doc: {
       display: 'flex',
-      marginTop: 60,
+      marginTop: 267,
       position: 'relative',
       '& .examples': {
         flex: 1,
@@ -79,7 +81,7 @@ export default createUseStyles(
     },
     guide: {
       display: 'flex',
-      marginTop: 60,
+      marginTop: 267,
       '& .guides': {
         flex: 1,
         // '&:last-child': {

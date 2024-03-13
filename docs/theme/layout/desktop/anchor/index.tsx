@@ -29,7 +29,7 @@ const Anchor = (props: AnchorProps) => {
     e.preventDefault();
     const layout = document.getElementById('layout');
     const target = document.getElementById(`${anchorName}-${activeAnchor}`);
-    layout?.scrollTo(0, (target?.offsetTop as number) - (anchorName === 'example' ? 10 : 200));
+    layout?.scrollTo(0, (target?.offsetTop as number) + 125);
     dispatch.setActiveAnchor(activeAnchor, true);
 
     navigate({
@@ -48,7 +48,8 @@ const Anchor = (props: AnchorProps) => {
     if (target) {
       const layout = document.getElementById('layout');
       setTimeout(() => {
-        layout?.scrollTo(0, (target?.offsetTop as number) - (anchorName === 'example' ? 10 : 200));
+        layout?.scrollTo(0, (target?.offsetTop as number) + 125);
+        // layout?.scrollTo(0, (target?.offsetTop as number) - (anchorName === 'example' ? 10 : 267));
       }, 50);
     }
   }, []);

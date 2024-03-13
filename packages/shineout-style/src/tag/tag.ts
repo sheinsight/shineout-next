@@ -51,7 +51,7 @@ const tag = (type: TagType) => ({
   '&$bright': {
     color: Token[`tag${type}FontColor`],
     backgroundColor: Token[`tag${type}BackgroundColor`],
-    border: `1px solid ${Token[`tag${type}BorderColor`]}`,
+    border: `1px solid transparent`,
 
     '& $closeIconWrapper': {
       '&:hover': {
