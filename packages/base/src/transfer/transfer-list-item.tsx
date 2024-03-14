@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
 import { TransferListItemProps } from './transfer-list-item.type';
-import { TransferClasses } from '@sheinx/shineout-style';
+import { TransferClasses } from './transfer.type';
 import { util } from '@sheinx/hooks';
 import Icons from '../icons';
 import Checkbox from '../checkbox';

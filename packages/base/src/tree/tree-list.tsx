@@ -3,7 +3,7 @@ import classNames from 'classnames';
 // import { util } from '@sheinx/hooks';
 import { KeygenResult } from '@sheinx/hooks';
 import TreeNode from './tree-node';
-import { TreeClasses } from '@sheinx/shineout-style';
+import { TreeClasses } from './tree.type';
 import { TreeListProps } from './tree-list.type';
 
 const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataItem, Value>) => {

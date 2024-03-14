@@ -15,7 +15,7 @@ import { Spin } from '../spin';
 import { AbsoluteList } from '../absolute-list';
 import useInnerTitle from '../common/use-inner-title';
 import AnimationList from '../animation-list';
-import { CascaderClasses } from '@sheinx/shineout-style';
+import { CascaderClasses } from '../cascader/cascader.type';
 import { CascaderProps } from './cascader.type';
 import CascaderList from './list';
 import CascaderFilterList from './filter-list';

@@ -1,2 +1,2 @@
 export { default, default as Gap } from './gap';
-export type { GapProps } from './gap.type';
+export type { GapProps, GapClasses } from './gap.type';

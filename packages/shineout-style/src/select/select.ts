@@ -1,72 +1,8 @@
 import token from '@sheinx/theme';
+import { SelectClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 import border from '../input/input-border';
 
-export type SelectClasses = {
-  wrapper: string;
-  wrapperDisabled: string;
-  wrapperSmall: string;
-  wrapperLarge: string;
-  wrapperFocus: string;
-  wrapperError: string;
-  wrapperNoBorder: string;
-  wrapperUnderline: string;
-  wrapperInnerTitle: string;
-  wrapperInnerTitleTop: string;
-  wrapperInnerTitleBottom: string;
-  wrapperPaddingBox: string;
-  resultWrapper: string;
-  result: string;
-  resultAlignRight: string;
-  resultAlignLeft: string;
-  resultAlignCenter: string;
-  resultText: string;
-  resultTextActive: string;
-  resultTextDisabled: string;
-  resultTextWrapper: string;
-  multipleResultWrapper: string;
-  resultTextPadding: string;
-  compressedWrapper: string;
-  multipleCompressedWrapper: string;
-  controlMouse: string;
-  controlKeyboard: string;
-  placeholder: string;
-  pickerWrapper: string;
-  clearable: string;
-  clearIcon: string;
-  arrowIconOpen: string;
-  arrowIcon: string;
-  ellipsis: string;
-  multiple: string;
-  loading: string;
-  checkedIcon: string;
-  list: string;
-  tree: string;
-  treeOption: string;
-  tag: string;
-  space: string;
-  inputMirror: string;
-  moreWrapper: string;
-  virtualList: string;
-  option: string;
-  optionInner: string;
-  optionHover: string;
-  optionActive: string;
-  optionDisabled: string;
-  optionGroup: string;
-  optionGroupTitle: string;
-  header: string;
-  customHeader: string;
-  columnsTitle: string;
-  columns: string;
-  columnsOption: string;
-  columnsRadio: string;
-  columnsCheckbox: string;
-  footer: string;
-  moreIcon: string;
-  hideTag: string;
-  empty: string;
-};
 export type SelectClassType = keyof SelectClasses;
 
 const inputBorderToken = {
@@ -174,8 +110,23 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
     '&:hover': {
       cursor: 'pointer',
+      '&$clearable:not($wrapperEmpty)': {
+        '& $clearIcon': {
+          display: 'block',
+        },
+        '& $arrowIcon': {
+          display: 'none',
+        },
+      },
+    },
+    '&:not($wrapperEmpty):not($wrapperOpen)': {
+      '& $clearIcon': {
+        display: 'none',
+      },
     },
   },
+  wrapperEmpty: {},
+  wrapperOpen: {},
   wrapperDisabled: {
     ...wrapperDisabled,
     '& $icon': {
@@ -185,6 +136,7 @@ const selectStyle: JsStyles<SelectClassType> = {
       color: token.selectDisabledIconColor,
     },
   },
+  popover: {},
   ...resetWrapper,
   resultWrapper: {
     display: 'flex',
@@ -433,6 +385,11 @@ const selectStyle: JsStyles<SelectClassType> = {
     maxHeight: 160,
     overflow: 'auto',
     padding: token.selectMorePadding,
+    '&:hover': {
+      '& $clearIcon': {
+        display: 'inline-block',
+      },
+    },
   },
   virtualList: {
     margin: 0,
@@ -557,7 +514,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   },
   empty: {
     color: token.selectPlaceholderColor,
-  }
+  },
 };
 
 export default selectStyle;

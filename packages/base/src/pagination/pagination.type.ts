@@ -1,5 +1,5 @@
 import { ButtonClasses } from '../button/button.type';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from '../select/select.type';
 import { InputClasses } from '../input/input.type';
 import { CommonType } from '../common/type';
 

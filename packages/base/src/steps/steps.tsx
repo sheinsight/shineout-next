@@ -1,6 +1,6 @@
 import { Children, cloneElement } from 'react';
 import classNames from 'classnames';
-import { StepsClasses } from '@sheinx/shineout-style';
+import { StepsClasses } from './steps.type';
 import { StepsProps } from './steps.type';
 import { StepProps } from './step.type';
 import StepsContext from './steps-context';

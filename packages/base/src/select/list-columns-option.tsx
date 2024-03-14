@@ -1,4 +1,4 @@
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from '../select/select.type';
 import { ListColumnsOptionProps } from './list-columns-option.type';
 import Checkbox from '../checkbox/simple-checkbox';
 import Radio from '../radio/simple-radio';

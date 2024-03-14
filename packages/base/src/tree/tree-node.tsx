@@ -1,6 +1,6 @@
 import { useRef, createElement } from 'react';
 import classNames from 'classnames';
-import { TreeClasses } from '@sheinx/shineout-style';
+import { TreeClasses } from './tree.type';
 import { TreeNodeProps } from './tree-node.type';
 import TreeContent from './tree-content';
 import { useTreeContext } from './tree-context';

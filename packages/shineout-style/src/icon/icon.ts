@@ -1,19 +1,8 @@
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
+import { IconClasses } from '@sheinx/base';
 
-export type FormClass =
-  | 'wrapper'
-  | 'small'
-  | 'large'
-  | 'primary'
-  | 'success'
-  | 'secondary'
-  | 'info'
-  | 'warning'
-  | 'danger'
-  | 'svg';
-
-const form: JsStyles<FormClass> = {
+const form: JsStyles<keyof IconClasses> = {
   wrapper: {
     display: 'inline-block',
     fontSize: 'inherit',

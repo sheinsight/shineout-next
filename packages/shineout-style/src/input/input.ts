@@ -2,6 +2,7 @@ import border from './input-border';
 
 import { JsStyles } from '../jss-style';
 import token from '@sheinx/theme';
+import { InputClasses } from '@sheinx/base';
 
 const inputBorderToken = {
   lineHeight: token.lineHeightDynamic,
@@ -49,37 +50,6 @@ const { wrapper, ...resetWrapper } = inputBorder;
 
 const { group, groupSmall, groupLarge, ...resetGroup } = groupBorder;
 
-export type InputClass =
-  | 'wrapper'
-  | 'wrapperSmall'
-  | 'wrapperLarge'
-  | 'wrapperFocus'
-  | 'wrapperError'
-  | 'wrapperDisabled'
-  | 'wrapperUnderline'
-  | 'wrapperNoBorder'
-  | 'wrapperInnerTitle'
-  | 'wrapperInnerTitleTop'
-  | 'wrapperInnerTitleBottom'
-  | 'wrapperPaddingBox'
-  | 'clearWrapper'
-  | 'content'
-  | 'input'
-  | 'clear'
-  | 'group'
-  | 'groupSmall'
-  | 'groupLarge'
-  | 'groupFocus'
-  | 'groupError'
-  | 'groupDisabled'
-  | 'groupUnderline'
-  | 'wrapperNumber'
-  | 'numberStep'
-  | 'password'
-  | 'passwordToggle'
-  | 'info'
-  | 'infoError';
-
 const groupSpace = (gap: string) => ({
   '& > i:first-child, & > span:first-child': {
     paddingLeft: gap,
@@ -110,7 +80,7 @@ const groupSpace = (gap: string) => ({
   },
 });
 
-const input: JsStyles<InputClass> = {
+const input: JsStyles<keyof InputClasses> = {
   wrapper: {
     display: 'inline-flex',
     width: '100%',

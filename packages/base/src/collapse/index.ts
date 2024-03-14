@@ -1,5 +1,5 @@
 export { default, default as Collapse } from './collapse';
-export type { CollapseProps } from './collapse.type';
+export type { CollapseProps, CollapseClasses } from './collapse.type';
 
 export { default as CollapseItem } from './collapse-item';
-export type { CollapseItemProps } from './collapse-item.type';
+export type { CollapseItemProps, CollapseItemClasses } from './collapse-item.type';

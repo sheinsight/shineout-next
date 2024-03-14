@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { SelectClasses } from '@sheinx/shineout-style';
+import { SelectClasses } from './select.type';
 import { StructKeygenStringType } from '@sheinx/hooks';
 import { ListTreeProps } from './list-tree.type';
 import Tree from '../tree';

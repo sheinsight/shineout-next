@@ -1,28 +1,6 @@
 import Token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
-
-export type TreeClasses = {
-  tree: string;
-  root: string;
-  line: string;
-  noline: string;
-  content: string;
-  small: string;
-  large: string;
-  childnode: string;
-  checkbox: string;
-  contentWrapper: string;
-  inlineContent: string;
-  text: string;
-  list: string;
-  iconWrapper: string;
-  icon: string;
-  node: string;
-  children: string;
-  leaf: string;
-  placement: string;
-  textDisabled: string;
-};
+import { TreeClasses } from '@sheinx/base';
 
 export type TreeClassType = keyof TreeClasses;
 

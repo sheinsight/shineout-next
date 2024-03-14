@@ -1,24 +1,6 @@
 import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
-
-export interface PaginationClasses {
-  pagination: string;
-  section: string;
-  buttons: string;
-  left: string;
-  right: string;
-  center: string;
-  jumper: string;
-  jumperInput: string;
-  sizeList: string;
-  split: string;
-  icon: string;
-  simple: string;
-  small: string;
-  large: string;
-  buttonItem: string;
-  sectionSize: string
-}
+import { PaginationClasses } from '@sheinx/base';
 
 type PaginationClass = keyof PaginationClasses;
 
@@ -84,9 +66,9 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     },
   },
   buttonItem: {
-    transition: 'none'
+    transition: 'none',
   },
-  sectionSize: {}
+  sectionSize: {},
 };
 
 export default PaginationStyle;

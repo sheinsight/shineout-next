@@ -39,7 +39,8 @@ const Button = (props: ButtonProps) => {
   };
 
   const getMode = () => {
-    if (typeProp === 'default' && modeProp === undefined) return 'outline';
+    if (typeProp === 'default' && modeProp === undefined && outline) return 'outline';
+    if (typeProp === 'default' && modeProp === undefined && text) return 'text';
     return modeProp;
   };
 

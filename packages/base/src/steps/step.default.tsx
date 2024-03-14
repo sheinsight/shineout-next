@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { StepsClasses } from '@sheinx/shineout-style';
+import { StepsClasses } from './steps.type';
 import { StepStyleProps } from './steps.type';
 import Icons from '../icons';
 

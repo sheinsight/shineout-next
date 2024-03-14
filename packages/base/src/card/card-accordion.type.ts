@@ -2,14 +2,6 @@ import React from 'react';
 import { CardJssStyle } from './card.type';
 import { CommonType } from '../common/type';
 
-export interface CardClasses {
-  wrapper: string;
-  wrapperShadow: string;
-  wrapperHover: string;
-  header: string;
-  body: string;
-  footer: string;
-}
 
 export interface CardAccordionProps<T = string | number>
   extends Pick<CommonType, 'className' | 'style'> {

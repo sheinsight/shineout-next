@@ -1,20 +1,13 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { PopoverClasses } from '@sheinx/base';
 
-export type PopoverClass =
-  | 'wrapper'
-  | 'wrapperOpen'
-  | 'arrow'
-  | 'content'
-  | 'text'
-  | 'confirm'
-  | 'mention'
-  | 'footer';
+export type PopoverClassType = keyof PopoverClasses;
 
 const arrowGap = 10;
 const arrowMargin = '8px';
 
-const popoverStyle: JsStyles<PopoverClass> = {
+const popoverStyle: JsStyles<PopoverClassType> = {
   wrapper: {
     display: 'none',
     cursor: 'pointer',

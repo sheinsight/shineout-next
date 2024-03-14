@@ -1,32 +1,6 @@
 import Token from '@sheinx/theme';
+import { StepsClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
-
-export type StepsClasses = {
-  steps: string;
-  step: string;
-  small: string;
-  large: string;
-  disabled: string;
-  content: string;
-  title: string;
-  horizontalLabel: string;
-  verticalLabel: string;
-  tail: string;
-  description: string;
-  vertical: string;
-  horizontal: string;
-  wait: string;
-  process: string;
-  finish: string;
-  error: string;
-  icon: string;
-  iconWrapper: string;
-  dot: string;
-  arrow: string;
-  widthDescription: string;
-  default: string;
-  click: string;
-};
 
 export type StepsClassType = keyof StepsClasses;
 

@@ -1,2 +1,2 @@
 export { default, default as Pagination } from './pagination';
-export type { PaginationProps, LayoutType } from './pagination.type';
+export type { PaginationProps, LayoutType, PaginationClasses } from './pagination.type';

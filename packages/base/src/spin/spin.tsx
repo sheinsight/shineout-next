@@ -9,7 +9,7 @@ const Spin = (props: SpinProps = {}) => {
     className,
     children,
     style,
-    loading = true,
+    loading,
     name: nameProps,
     tip,
     color,

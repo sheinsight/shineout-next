@@ -112,7 +112,7 @@ export interface SpinProps extends Pick<CommonType, 'className' | 'style'> {
   /**
    * @en Loading
    * @cn 是否为加载中
-   * @default true
+   * @default false
    */
   loading?: boolean;
 }

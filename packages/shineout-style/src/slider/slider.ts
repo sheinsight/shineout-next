@@ -1,26 +1,7 @@
 import token from '@sheinx/theme';
+import { SliderClasses } from '@sheinx/base';
 import { JsStyles } from '../jss-style';
 
-export type SliderClasses = {
-  wrapper: string;
-  track: string;
-  trackInner: string;
-  indicator: string;
-  indicatorStart: string;
-  indicatorEnd: string;
-  indicatorHover: string;
-  scaleWrapper: string;
-  scale: string;
-  label: string;
-  indicatorActive: string;
-  startValue: string;
-  valueHover: string;
-  endValue: string;
-  autoHide: string;
-  disabled: string;
-  vertical: string;
-  value: string;
-};
 export type SliderClassType = keyof SliderClasses;
 
 const sliderStyle: JsStyles<SliderClassType> = {

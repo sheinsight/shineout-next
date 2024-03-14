@@ -1,9 +1,8 @@
 import Token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
+import { EmptyClasses } from '@sheinx/base';
 
-export type EmptyClass = 'empty' | 'wrapper' | 'image' | 'description';
-
-const emptyStyle: JsStyles<EmptyClass> = {
+const emptyStyle: JsStyles<keyof EmptyClasses> = {
   empty: {
     width: '100%',
     boxSizing: 'border-box',

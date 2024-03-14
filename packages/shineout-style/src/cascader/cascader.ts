@@ -1,70 +1,8 @@
 import token from '@sheinx/theme';
 import { JsStyles } from '../jss-style';
 import border from '../input/input-border';
+import { CascaderClasses } from '@sheinx/base';
 
-export type CascaderClasses = {
-  empty: string;
-  wrapper: string;
-  wrapperEmpty: string;
-  wrapperDisabled: string;
-  wrapperSmall: string;
-  wrapperLarge: string;
-  wrapperFocus: string;
-  wrapperError: string;
-  wrapperNoBorder: string;
-  wrapperUnderline: string;
-  wrapperInnerTitle: string;
-  wrapperInnerTitleTop: string;
-  wrapperInnerTitleBottom: string;
-  wrapperPaddingBox: string;
-  resultWrapper: string;
-  result: string;
-  resultItem: string;
-  resultItemActive: string;
-  resultAlignRight: string;
-  resultAlignLeft: string;
-  resultAlignCenter: string;
-  resultText: string;
-  resultTextActive: string;
-  resultTextDisabled: string;
-  resultTextWrapper: string;
-  resultTextPadding: string;
-  compressedWrapper: string;
-  controlMouse: string;
-  controlKeyboard: string;
-  placeholder: string;
-  pickerWrapper: string;
-  clearable: string;
-  clearIcon: string;
-  compressedIcon: string;
-  arrowIconOpen: string;
-  arrowIcon: string;
-  ellipsis: string;
-  multiple: string;
-  loading: string;
-  checkedIcon: string;
-  listContent: string;
-  list: string;
-  tag: string;
-  space: string;
-  inputMirror: string;
-  moreWrapper: string;
-  virtualList: string;
-  option: string;
-  filterOption: string;
-  filterDisabledOption: string;
-  filterOptionSeparator: string;
-  optionCheckbox: string;
-  activeOption: string;
-  optionIcon: string;
-  optionSpin: string;
-  optionInner: string;
-  optionLeaf: string;
-  optionHover: string;
-  optionActive: string;
-  optionDisabled: string;
-
-};
 export type CascaderClassType = keyof CascaderClasses;
 
 const inputBorderToken = {
@@ -112,7 +50,7 @@ const inputBorder = border('wrapper', inputBorderToken);
 const { wrapper, wrapperDisabled, ...resetWrapper } = inputBorder;
 
 const cascaderStyle: JsStyles<CascaderClassType> = {
-  wrapperEmpty:  {},
+  wrapperEmpty: {},
   wrapper: {
     display: 'inline-block',
     position: 'relative',

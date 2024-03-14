@@ -24,5 +24,12 @@ export default {
     build: 'build',
     ci: 'ci',
     chore: 'chore',
+    break: 'break',
   },
+  'shineout.tabs': {
+    exmples: 'exmples',
+    api: 'API',
+    guide: 'guide',
+    updateRecord: 'update record',
+  }
 };

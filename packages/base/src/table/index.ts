@@ -8,4 +8,5 @@ export type {
   RenderSorterParam as TableRenderSorterParam,
   SummaryItem as TableSummaryItem,
   TableRef as TableTableRef,
+  TableClasses,
 } from './table.type';

@@ -4,12 +4,12 @@ import usePersistFn from '../use-persist-fn';
 interface ListPaginationProps {
   data: any[];
   current: number | undefined;
-  pageSize?: number | undefined;
+  pageSize: number | undefined;
   defaultCurrent: number | undefined;
   onChange: ((current: number, pageSize: number) => void) | undefined;
   shouldPage: boolean;
   loading: boolean;
-  total?: number;
+  total: number | undefined;
 }
 
 const usePaginationList = (props: ListPaginationProps) => {
@@ -25,7 +25,7 @@ const usePaginationList = (props: ListPaginationProps) => {
 
   const getPager = (data: any[]) => {
     if (!shouldPage) return {};
-    const total = (props.total !== undefined && props.total !== null && props.total >= 0) ? props.total : (Array.isArray(data) ? data.length : 0);
+    const total = props.total ?? (Array.isArray(data) ? data.length : 0);
     return {
       current: props.current || current,
       pageSize: props.pageSize || pageSize,

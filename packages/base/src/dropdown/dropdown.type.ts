@@ -3,7 +3,7 @@ import { CommonType } from '../common/type';
 import { ButtonClasses, ButtonProps } from '../button/button.type';
 import { AbsoluteListProps } from '../absolute-list/absolute-list.type';
 
-export interface DropdownClass {
+export interface DropdownClasses {
   wrapper: string;
   open: string;
   boxList: string;
@@ -108,7 +108,7 @@ export interface SimpleDropdownProps
     Pick<AbsoluteListProps, 'absolute'>,
     Pick<ButtonProps, 'type' | 'size' | 'text' | 'outline' | 'mode'> {
   jssStyle?: {
-    dropdown?: () => DropdownClass;
+    dropdown?: () => DropdownClasses;
     button?: () => ButtonClasses;
   };
   /**

@@ -1,10 +1,48 @@
 import React from 'react';
 import { BaseImageProps } from '@sheinx/hooks';
-import { ImageClasses } from '@sheinx/shineout-style';
 import { SpinClasses } from '../spin/spin.type';
 import { CommonType } from '../common/type';
 
 export type MagnifyPositionType = 'left' | 'right' | 'center';
+
+export interface ImageClasses {
+  image: string;
+  img: string;
+  inner: string;
+  circle: string;
+  rounded: string;
+  thumbnail: string;
+  fill: string;
+  center: string;
+  fit: string;
+  stretch: string;
+  href: string;
+  placeholder: string;
+  defaultPlaceholder: string;
+  error: string;
+  defaultError: string;
+  preview: string;
+  previewMask: string;
+  download: string;
+
+  overlay: string;
+  magnify: string;
+  close: string;
+
+  gallery: string;
+  galleryCurrent: string;
+  galleryInit: string;
+  galleryForward: string;
+  galleryBackward: string;
+  galleryCenter: string;
+  galleryLeft: string;
+  galleryRight: string;
+
+  group: string;
+  groupPile: string;
+  groupPileItem: string;
+  groupCount: string;
+}
 
 export type ImageJssStyleType = {
   image?: () => ImageClasses;

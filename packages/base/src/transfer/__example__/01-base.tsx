@@ -12,7 +12,6 @@ import {
   useCheckboxStyle,
   useEmptyStyle,
   useInputStyle,
-  useVirtualScrollStyle,
   useSpinStyle,
 } from '@sheinx/shineout-style';
 
@@ -34,7 +33,6 @@ export default () => {
     checkbox: useCheckboxStyle,
     empty: useEmptyStyle,
     input: useInputStyle,
-    virtualScroll: useVirtualScrollStyle,
     spin: useSpinStyle,
   };
 
