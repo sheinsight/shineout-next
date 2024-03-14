@@ -655,7 +655,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       <AbsoluteList
         adjust
         focus={open}
-        fixedWidth='min'
+        fixedWidth={false}
         absolute={absolute}
         zIndex={zIndex}
         position={position}
