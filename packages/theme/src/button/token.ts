@@ -654,10 +654,26 @@ const buttonTokenValue = {
     font: { color: 'Brand-6' },
     background: { color: 'transparent' },
     border: { color: 'transparent' },
-    disabled: { font: { color: 'Brand-3' }, background: { color: 'transparent' }, border: { color: 'transparent' } },
-    hover: { font: { color: 'Brand-5' }, background: { color: 'transparent' }, border: { color: 'transparent' } },
-    active: { font: { color: 'Brand-7' }, background: { color: 'transparent' }, border: { color: 'transparent' } },
-    focus: { font: { color: 'Brand-5' }, background: { color: 'transparent' }, border: { color: 'transparent' } },
+    disabled: {
+      font: { color: 'Brand-3' },
+      background: { color: 'transparent' },
+      border: { color: 'transparent' },
+    },
+    hover: {
+      font: { color: 'Brand-5' },
+      background: { color: 'transparent' },
+      border: { color: 'transparent' },
+    },
+    active: {
+      font: { color: 'Brand-7' },
+      background: { color: 'transparent' },
+      border: { color: 'transparent' },
+    },
+    focus: {
+      font: { color: 'Brand-5' },
+      background: { color: 'transparent' },
+      border: { color: 'transparent' },
+    },
     outline: {
       font: { color: '' },
       background: { color: '' },

@@ -300,8 +300,8 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
         onChange((v) => {
           deepSet(v, n, df, deepSetOptions);
         });
-        update(n);
       }
+      update(n);
     },
     unbind: (n: string, reserveAble?: boolean) => {
       delete context.validateMap[n];
@@ -411,7 +411,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     return () => {
       context.mounted = false;
       context.unmounted = true;
-    }
+    };
   }, []);
 
   return {
