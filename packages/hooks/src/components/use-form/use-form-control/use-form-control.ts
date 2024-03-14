@@ -164,5 +164,5 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     updateError(isArray(name) ? name.join('|') : name, error);
   }, [error]);
 
-  return { value, onChange, error, inForm, disabled };
+  return { value, onChange, error, inForm, disabled, name };
 }
