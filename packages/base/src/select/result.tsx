@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, KeygenResult } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -225,7 +225,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const renderSingleResult = () => {
     if (isEmptyResult()) return renderNbsp();
-    // const values = [value];
     const result = getDataByValues(value);
     const content = renderResultContent(result[0]);
 
@@ -258,7 +257,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return result;
   };
 
-  const renderMultipleResultMore = () => {
+  const renderMultipleResultMore = useMemo(() => {
     const result = renderMultipleResult() as React.ReactNode[];
     const moreNumber = getCompressedBound();
     return (
@@ -274,12 +273,12 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         showNum={moreNumber}
       ></More>
     );
-  };
+  }, [value, more]);
 
   const renderResult = () => {
     let result = [];
     if (multiple) {
-      result.push(compressed ? renderMultipleResultMore() : renderMultipleResult());
+      result.push(compressed ? renderMultipleResultMore : renderMultipleResult());
       if (showInput) {
         result.push(renderInput());
       } else if (result.length === 0) {
@@ -299,7 +298,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const handleResetMore = () => {
     if (!compressed) return;
     shouldResetMore.current = true;
-    setMore(-1);
   };
 
   useEffect(() => {
@@ -307,7 +305,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       const result = getDataByValues(value);
       // 获取合法的 content
       const content = renderResultContent(result[0]);
-      // 仅在关闭下拉框时，将输入框的值设置为合法的s选中的值
+      // 仅在关闭下拉框时，将输入框的值设置为合法的选中的值
       if (!isEmpty(content)) {
         setInputText(content as string);
       }
