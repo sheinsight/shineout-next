@@ -2,8 +2,7 @@ import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
 import { ButtonClasses } from '@sheinx/base';
 
-
-type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
+type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success' | 'Link';
 
 type ButtonStyleType = 'Text' | 'Outline' | ''; // Dashed 用 Outline 的样式
 
@@ -243,7 +242,9 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
   success: {
     ...button('Success', ''),
   },
-  link: {},
+  link: {
+    ...button('Link', ''),
+  },
   outline: {
     '&$default': {
       ...button('Secondary', 'Outline'),
