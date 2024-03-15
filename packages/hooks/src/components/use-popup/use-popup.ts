@@ -163,6 +163,7 @@ const usePopup = (props: BasePopupProps) => {
     onClickAway: () => handleBlur(),
     target: context.chain,
     effect: (trigger === 'click' || trigger === 'hover') && open,
+    event: 'mousedown',
   });
 
   const providerValue = useMemo(
