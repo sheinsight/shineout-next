@@ -374,7 +374,7 @@ const modalStyle: JsStyles<ModalClassType> = {
   body: {
     flex: '1 1 auto',
     minHeight: '1px',
-    overflow: 'auto',
+    // overflow: 'auto',
   },
   bodyWithIcon: {
     paddingLeft: `calc(${token.modalHeaderIconMarginEnd} + ${token.modalHeaderIconSize})`,

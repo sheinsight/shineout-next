@@ -37,8 +37,10 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
     marginRight: token.formItemMarginXEnd,
   },
   wrapperLabelTop: {
-    flexFlow: 'column nowrap',
-    alignItems: 'stretch',
+    // flexFlow: 'column nowrap',
+    // alignItems: 'stretch',
+    display: 'block',
+    width: '100%',
     '& $label': {
       textAlign: 'start',
       width: 'auto',
