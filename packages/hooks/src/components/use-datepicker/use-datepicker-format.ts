@@ -173,6 +173,10 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     const dateArr = convertValueToDateArr(value, format, options);
     context.cachedDateArr = dateArr;
     setStateDate(dateArr);
+    if (!value) return;
+    if (Array.isArray(value) && !value[0] && !value[1]) {
+      return;
+    }
     const formatValue = getFormatValueArr(dateArr);
     const v = range ? formatValue : formatValue[0];
     if (!shallowEqual(v, value)) {
