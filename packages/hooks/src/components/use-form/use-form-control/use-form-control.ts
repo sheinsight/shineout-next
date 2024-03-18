@@ -57,7 +57,12 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const formFunc = useFormFunc();
   const { updateError } = React.useContext(FormItemContext);
 
-  const formValue = name && formFunc ? (formFunc.getValue(name) as T) : undefined;
+  const formValue =
+    name && formFunc
+      ? Array.isArray(name)
+        ? name.map((n) => formFunc.getValue(n))
+        : formFunc.getValue(name)
+      : undefined;
   const [valueState, setValueState] = React.useState<T | undefined>(formValue);
 
   if (name && formFunc) {
