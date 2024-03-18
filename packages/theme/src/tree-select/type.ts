@@ -323,7 +323,7 @@ export interface TreeSelectTokens {
   /**
    * @type {string}
    * @token Size-15
-   * @description 树选择器选项容器的内边距undefined
+   * @description 树选择器选项容器的内边距（右侧）
    */
   treeSelectOptionInnerPaddingRight: string;
   /**
@@ -365,13 +365,13 @@ export interface TreeSelectTokens {
   /**
    * @type {string}
    * @token Padding-8
-   * @description 树选择器undefined内边距
+   * @description 树选择器下拉列表的头部区域内边距
    */
   treeSelectHeaderPadding: string;
   /**
    * @type {string}
    * @token Neutral-border-1
-   * @description 树选择器undefined边框颜色
+   * @description 树选择器下拉列表的头部区域边框颜色
    */
   treeSelectHeaderBorderColor: string;
   /**

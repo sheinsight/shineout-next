@@ -6,7 +6,7 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const rateTokenDescription = { rate: 'xxx' };
+const rateTokenDescription = { rate: '评分', front: '已完成评分的', gap: '间距' };
 
 /**
  * token 值映射表
@@ -22,7 +22,7 @@ const rateTokenExtraValue = {
   gap: 'Size-3',
   size: 'Size-12',
   background: { color: 'Neutral-fill-3' },
-  fornt: { background: { color: 'Warning-5' } },
+  front: { background: { color: 'Warning-5' } },
 };
 
 module.exports = {

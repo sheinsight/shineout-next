@@ -5,13 +5,13 @@ export interface TreeTokens {
   /**
    * @type {string}
    * @token Padding-2
-   * @description 树组件undefined内边距（垂直方向）
+   * @description 树组件文字内边距（垂直方向）
    */
   treeTextPaddingY: string;
   /**
    * @type {string}
    * @token Margin-8
-   * @description 树组件undefined外边距（水平方向）
+   * @description 树组件复选框外边距（水平方向）
    */
   treeCheckboxMarginX: string;
   /**
@@ -71,61 +71,61 @@ export interface TreeTokens {
   /**
    * @type {string}
    * @token Neutral-text-4
-   * @description 树组件undefined字体颜色
+   * @description 树组件节点字体颜色
    */
   treeItemFontColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-2
-   * @description 树组件undefined鼠标移入时的背景颜色
+   * @description 树组件节点鼠标移入时的背景颜色
    */
   treeItemHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-4
-   * @description 树组件undefined鼠标移入时的字体颜色
+   * @description 树组件节点鼠标移入时的字体颜色
    */
   treeItemHoverFontColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-4
-   * @description 树组件undefined鼠标点击时的背景颜色
+   * @description 树组件节点鼠标点击时的背景颜色
    */
   treeItemActiveBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-4
-   * @description 树组件undefined鼠标点击时的字体颜色
+   * @description 树组件节点鼠标点击时的字体颜色
    */
   treeItemActiveFontColor: string;
   /**
    * @type {string}
    * @token Neutral-text-2
-   * @description 树组件undefined禁用时的字体颜色
+   * @description 树组件节点禁用时的字体颜色
    */
   treeItemDisabledFontColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-2
-   * @description 树组件undefined鼠标移入时的背景颜色
+   * @description 树组件节点容器鼠标移入时的背景颜色
    */
   treeContentHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Brand-1
-   * @description 树组件undefined鼠标点击时的背景颜色
+   * @description 树组件节点容器鼠标点击时的背景颜色
    */
   treeContentActiveBackgroundColor: string;
   /**
    * @type {string}
    * @token Brand-6
-   * @description 树组件undefined鼠标点击时的字体颜色
+   * @description 树组件节点容器鼠标点击时的字体颜色
    */
   treeContentActiveFontColor: string;
   /**
    * @type {string}
    * @token Neutral-text-2
-   * @description 树组件undefined禁用时的字体颜色
+   * @description 树组件节点容器禁用时的字体颜色
    */
   treeContentDisabledFontColor: string;
   /**
@@ -143,7 +143,7 @@ export interface TreeTokens {
   /**
    * @type {string}
    * @token Radius-2
-   * @description 树组件undefined边框圆角
+   * @description 树组件节点容器边框圆角
    */
   treeContentBorderRadius: string;
 }

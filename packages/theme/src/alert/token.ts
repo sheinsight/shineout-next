@@ -6,7 +6,13 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const alertTokenDescription = { alert: '提示框', info: '提示色' };
+const alertTokenDescription = {
+  alert: '提示框',
+  info: '提示色',
+  nearly: '相邻之间的',
+  close: '关闭icon',
+  message: '在全局提示中使用时',
+};
 
 /**
  * token 值映射表

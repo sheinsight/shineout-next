@@ -6,7 +6,15 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const sliderTokenDescription = { slider: 'xxx' };
+const sliderTokenDescription = {
+  slider: '滑块',
+  track: '滚动槽',
+  active: '已滑过的',
+  indicator: '拖拽点的',
+  shadow: '阴影',
+  value: '文案',
+  scale: '刻度',
+};
 
 /**
  * token 值映射表
@@ -47,7 +55,7 @@ const sliderTokenExtraValue = {
   value: {
     background: { color: 'Neutral-fill-1' },
     hover: {
-      bakground: { color: 'Neutral-fill-9' },
+      background: { color: 'Neutral-fill-9' },
       font: { color: 'Neutral-text-1' },
       radius: 'Radius-2',
       padding: {

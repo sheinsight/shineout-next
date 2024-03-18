@@ -6,7 +6,7 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const tooltipTokenDescription = { tooltip: '文字提示' };
+const tooltipTokenDescription = { tooltip: '文字提示', shadow: '阴影', light: '亮色模式' };
 
 /**
  * token 值映射表

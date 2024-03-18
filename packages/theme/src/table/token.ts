@@ -6,7 +6,21 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const tableTokenDescription = { table: 'xxx' };
+const tableTokenDescription = {
+  table: '表格',
+  cell: '单元格',
+  fixed: '固定列',
+  thead: '表头',
+  tbody: '表格主体',
+  striped: '斑马纹',
+  shadow: '阴影',
+  expand: '展开',
+  sorter: '排序icon的',
+  pagination: '分页器的',
+  tfoot: '表格底部的',
+  resize: '拖拽时的',
+  selection: '选择状态下的',
+};
 
 /**
  * token 值映射表

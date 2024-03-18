@@ -17,6 +17,7 @@ const stepsTokenDescription = {
   description: '描述信息',
   tail: '尾部连接线',
   arrow: '箭头形状的',
+  content: '容器',
 };
 
 /**

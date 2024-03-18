@@ -71,37 +71,37 @@ export interface CheckboxTokens {
   /**
    * @type {string}
    * @token Brand-6
-   * @description 单选框图标undefined边框颜色
+   * @description 单选框图标选中状态的边框颜色
    */
   checkboxIconCheckedBorderColor: string;
   /**
    * @type {string}
    * @token Brand-6
-   * @description 单选框图标undefined背景颜色
+   * @description 单选框图标选中状态的背景颜色
    */
   checkboxIconCheckedBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 单选框图标undefined颜色
+   * @description 单选框图标选中状态的颜色
    */
   checkboxIconCheckedColor: string;
   /**
    * @type {string}
    * @token Brand-3
-   * @description 单选框图标undefined禁用时的边框颜色
+   * @description 单选框图标选中状态的禁用时的边框颜色
    */
   checkboxIconCheckedDisabledBorderColor: string;
   /**
    * @type {string}
    * @token Brand-3
-   * @description 单选框图标undefined禁用时的背景颜色
+   * @description 单选框图标选中状态的禁用时的背景颜色
    */
   checkboxIconCheckedDisabledBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 单选框图标undefined禁用时的颜色
+   * @description 单选框图标选中状态的禁用时的颜色
    */
   checkboxIconCheckedDisabledColor: string;
   /**
@@ -113,7 +113,7 @@ export interface CheckboxTokens {
   /**
    * @type {string}
    * @token Neutral-fill-2
-   * @description 单选框图标圆形undefined
+   * @description 单选框图标圆形填充色
    */
   checkboxIconCircleFill: string;
   /**
@@ -125,19 +125,19 @@ export interface CheckboxTokens {
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description 单选框undefined字体颜色
+   * @description 单选框标签字体颜色
    */
   checkboxLabelFontColor: string;
   /**
    * @type {string}
    * @token 14/regular
-   * @description 单选框undefined字体字号
+   * @description 单选框标签字体字号
    */
   checkboxLabelFontSize: string;
   /**
    * @type {string}
    * @token Neutral-text-2
-   * @description 单选框undefined禁用时的字体颜色
+   * @description 单选框标签禁用时的字体颜色
    */
   checkboxLabelDisabledFontColor: string;
   /**
@@ -149,7 +149,7 @@ export interface CheckboxTokens {
   /**
    * @type {string}
    * @token Margin-12
-   * @description 单选框undefined间距
+   * @description 单选框块级之间间距
    */
   checkboxBlockGap: string;
   /**
@@ -161,7 +161,7 @@ export interface CheckboxTokens {
   /**
    * @type {string}
    * @token 12/regular
-   * @description 单选框小尺寸undefined字体字号
+   * @description 单选框小尺寸标签字体字号
    */
   checkboxSmallLabelFontSize: string;
   /**
@@ -173,7 +173,7 @@ export interface CheckboxTokens {
   /**
    * @type {string}
    * @token 16/regular
-   * @description 单选框大尺寸undefined字体字号
+   * @description 单选框大尺寸标签字体字号
    */
   checkboxLargeLabelFontSize: string;
 }

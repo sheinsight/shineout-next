@@ -20,6 +20,10 @@ const selectTokenDescription = {
   group: '分组',
   title: '标题的',
   column: '多列模式下',
+  shadow: '阴影',
+  panel: '下拉面板的',
+  top: '（顶部）',
+  bottom: '（底部）',
 };
 
 /**

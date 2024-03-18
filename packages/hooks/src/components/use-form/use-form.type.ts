@@ -189,6 +189,7 @@ export type FormContext = {
   errors: ObjectType<Error | undefined>;
   serverErrors: ObjectType<Error | undefined>;
   unmounted: boolean;
+  removeLock: boolean;
 };
 
 export type UseFormSlotOwnProps = {

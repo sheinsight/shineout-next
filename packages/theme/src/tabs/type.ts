@@ -5,19 +5,19 @@ export interface TabsTokens {
   /**
    * @type {string}
    * @token Neutral-fill-3
-   * @description 标签页undefined填充模式鼠标移入时的背景颜色
+   * @description 标签页附加内容填充模式鼠标移入时的背景颜色
    */
   tabsExtraFillHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-2
-   * @description 标签页undefined禁用时的背景颜色
+   * @description 标签页卡片模式禁用时的背景颜色
    */
   tabsCardDisabledBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-text-4
-   * @description 标签页undefined字体颜色
+   * @description 标签页箭头icon字体颜色
    */
   tabsArrowFontColor: string;
   /**
@@ -161,25 +161,25 @@ export interface TabsTokens {
   /**
    * @type {string}
    * @token Padding-7
-   * @description 标签页操作按钮undefined内边距（水平方向）
+   * @description 标签页操作按钮垂直模式内边距（水平方向）
    */
   tabsActionVerticalPaddingX: string;
   /**
    * @type {string}
    * @token Padding-4
-   * @description 标签页操作按钮undefined内边距（垂直方向）
+   * @description 标签页操作按钮垂直模式内边距（垂直方向）
    */
   tabsActionVerticalPaddingY: string;
   /**
    * @type {string}
    * @token Padding-7
-   * @description 标签页操作按钮undefined内边距（水平方向）
+   * @description 标签页操作按钮水平模式内边距（水平方向）
    */
   tabsActionHorizontalPaddingX: string;
   /**
    * @type {string}
    * @token Padding-8
-   * @description 标签页操作按钮undefined内边距（垂直方向）
+   * @description 标签页操作按钮水平模式内边距（垂直方向）
    */
   tabsActionHorizontalPaddingY: string;
 }

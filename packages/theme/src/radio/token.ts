@@ -6,7 +6,18 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const radioTokenDescription = { radio: '单选框', button: '按钮模式', outline: '线框模式' };
+const radioTokenDescription = {
+  radio: '单选框',
+  button: '按钮模式',
+  outline: '线框模式',
+  gap: '间距',
+  block: '块级',
+  checked: '选中状态下的',
+  wrapper: '包裹层',
+  fill: '填充色',
+  dark: '暗色模式',
+  label: '文案',
+};
 
 /**
  * token 值映射表

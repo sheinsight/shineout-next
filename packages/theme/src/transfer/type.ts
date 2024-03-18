@@ -65,7 +65,7 @@ export interface TransferTokens {
   /**
    * @type {string}
    * @token Neutral-text-3
-   * @description 穿梭框undefined字体颜色
+   * @description 穿梭框空状态的字体颜色
    */
   transferEmptyFontColor: string;
   /**
@@ -101,7 +101,7 @@ export interface TransferTokens {
   /**
    * @type {string}
    * @token Neutral-fill-3
-   * @description 穿梭框undefined鼠标移入时的背景颜色
+   * @description 穿梭框复选框鼠标移入时的背景颜色
    */
   transferCheckboxHoverBackgroundColor: string;
 }

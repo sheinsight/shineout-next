@@ -3,7 +3,7 @@
 
 import { IconTokens } from './type';
 
-const icon: IconTokens = {
+const iconTokens: IconTokens = {
   iconFontSize: '14/regular',
   iconSmallFontSize: '12/regular',
   iconLargeFontSize: '16/regular',
@@ -16,4 +16,4 @@ const icon: IconTokens = {
   iconDangerFontColor: 'Danger-5',
 };
 
-export default icon;
+export default iconTokens;

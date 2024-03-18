@@ -47,7 +47,7 @@ export interface IconTokens {
   /**
    * @type {string}
    * @token #17a2b8
-   * @description 图标undefined字体颜色
+   * @description 图标基础字体颜色
    */
   iconInfoFontColor: string;
   /**

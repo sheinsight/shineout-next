@@ -12,6 +12,7 @@ const popoverTokenDescription = {
   info: '提示',
   error: '错误',
   confirm: '确认',
+  shadow: '阴影',
 };
 
 /**

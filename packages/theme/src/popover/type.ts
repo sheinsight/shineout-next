@@ -47,7 +47,7 @@ export interface PopoverTokens {
   /**
    * @type {string}
    * @token Shadow-2
-   * @description 气泡undefined
+   * @description 气泡阴影
    */
   popoverShadow: string;
   /**

@@ -185,7 +185,7 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Brand-2
-   * @description 选择器鼠标聚焦时的undefined
+   * @description 选择器鼠标聚焦时的阴影
    */
   selectFocusShadow: string;
   /**
@@ -257,31 +257,31 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Danger-1
-   * @description 选择器错误状态的鼠标聚焦时的undefined
+   * @description 选择器错误状态的鼠标聚焦时的阴影
    */
   selectErrorFocusShadow: string;
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description 选择器undefined颜色
+   * @description 选择器下拉面板的颜色
    */
   selectPanelColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 选择器undefined背景颜色
+   * @description 选择器下拉面板的背景颜色
    */
   selectPanelBackgroundColor: string;
   /**
    * @type {string}
    * @token Shadow-2
-   * @description 选择器undefinedundefined
+   * @description 选择器下拉面板的阴影
    */
   selectPanelShadow: string;
   /**
    * @type {string}
    * @token Radius-4
-   * @description 选择器undefined圆角
+   * @description 选择器下拉面板的圆角
    */
   selectPanelRadius: string;
   /**
@@ -395,13 +395,13 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Padding-10
-   * @description 选择器分组标题的内边距undefined
+   * @description 选择器分组标题的内边距（顶部）
    */
   selectGroupTitlePaddingTop: string;
   /**
    * @type {string}
    * @token Padding-2
-   * @description 选择器分组标题的内边距undefined
+   * @description 选择器分组标题的内边距（底部）
    */
   selectGroupTitlePaddingBottom: string;
   /**
@@ -413,7 +413,7 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Padding-4
-   * @description 选择器分组标题的小尺寸undefined
+   * @description 选择器分组标题的小尺寸（顶部）
    */
   selectGroupTitleSmallTop: string;
   /**
@@ -425,13 +425,13 @@ export interface SelectTokens {
   /**
    * @type {string}
    * @token Padding-14
-   * @description 选择器分组标题的大尺寸undefined
+   * @description 选择器分组标题的大尺寸（顶部）
    */
   selectGroupTitleLargeTop: string;
   /**
    * @type {string}
    * @token Padding-4
-   * @description 选择器分组标题的大尺寸undefined
+   * @description 选择器分组标题的大尺寸（底部）
    */
   selectGroupTitleLargeBottom: string;
   /**

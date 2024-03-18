@@ -107,7 +107,7 @@ export interface AlertTokens {
   /**
    * @type {string}
    * @token Margin-8
-   * @description 提示框undefined外边距
+   * @description 提示框相邻之间的外边距
    */
   alertNearlyMargin: string;
   /**
@@ -119,19 +119,19 @@ export interface AlertTokens {
   /**
    * @type {string}
    * @token Neutral-text-4
-   * @description 提示框undefined字体颜色
+   * @description 提示框关闭icon字体颜色
    */
   alertCloseFontColor: string;
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description 提示框undefined鼠标移入时的颜色
+   * @description 提示框关闭icon鼠标移入时的颜色
    */
   alertCloseHoverColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-2
-   * @description 提示框undefined鼠标移入时的颜色
+   * @description 提示框在全局提示中使用时鼠标移入时的颜色
    */
   alertMessageHoverColor: string;
 }

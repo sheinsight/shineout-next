@@ -1,6 +1,6 @@
-const prefix = 'soui';
+export const prefix = 'soui';
 
-function replaceNonAlphanumeric(str: string) {
+export function replaceNonAlphanumeric(str: string) {
   const nonAlphanumericRegEx = /[^a-z0-9]+/gi; // 匹配所有非字母和非数字字符
   const replacement = '-'; // 替换字符
 

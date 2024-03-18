@@ -16,6 +16,7 @@ const imageTokenDescription = {
   placeholder: '加载中的',
   nearly: '相邻之间的',
   mask: '遮罩层',
+  spin: '加载中的旋转图标',
 };
 
 /**
