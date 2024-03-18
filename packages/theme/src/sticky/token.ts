@@ -6,7 +6,7 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const stickyTokenDescription = { sticky: 'xxx' };
+const stickyTokenDescription = { sticky: '附着' };
 
 /**
  * token 值映射表

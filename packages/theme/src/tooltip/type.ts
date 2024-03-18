@@ -35,7 +35,7 @@ export interface TooltipTokens {
   /**
    * @type {string}
    * @token Shadow-1
-   * @description 文字提示undefined
+   * @description 文字提示阴影
    */
   tooltipShadow: string;
   /**
@@ -47,19 +47,19 @@ export interface TooltipTokens {
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description 文字提示undefined颜色
+   * @description 文字提示亮色模式颜色
    */
   tooltipLightColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 文字提示undefined背景颜色
+   * @description 文字提示亮色模式背景颜色
    */
   tooltipLightBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-border-1
-   * @description 文字提示undefined边框颜色
+   * @description 文字提示亮色模式边框颜色
    */
   tooltipLightBorderColor: string;
   /**

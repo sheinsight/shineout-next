@@ -5,7 +5,7 @@ export interface ImageTokens {
   /**
    * @type {string}
    * @token Neutral-text-2
-   * @description 图片undefined颜色
+   * @description 图片加载中的旋转图标颜色
    */
   imageSpinColor: string;
   /**

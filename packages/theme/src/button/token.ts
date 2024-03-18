@@ -16,6 +16,7 @@ const buttonTokenDescription = {
   full: '填充模式',
   link: '链接风格',
   splitline: '按钮组分割线',
+  spin: '加载中icon的',
 };
 
 /**

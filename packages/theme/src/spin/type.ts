@@ -5,7 +5,7 @@ export interface SpinTokens {
   /**
    * @type {string}
    * @token Brand-6
-   * @description 加载动画undefined字体颜色
+   * @description 加载动画提示文案字体颜色
    */
   spinTipFontColor: string;
   /**

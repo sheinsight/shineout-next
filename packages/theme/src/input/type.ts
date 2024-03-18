@@ -77,7 +77,7 @@ export interface InputTokens {
   /**
    * @type {string}
    * @token Neutral-text-2
-   * @description 输入框undefined颜色
+   * @description 输入框占位符颜色
    */
   inputPlaceholderColor: string;
   /**
@@ -101,7 +101,7 @@ export interface InputTokens {
   /**
    * @type {string}
    * @token Neutral-text-4
-   * @description 输入框undefined颜色
+   * @description 输入框反转颜色
    */
   inputToggleColor: string;
   /**
@@ -125,7 +125,7 @@ export interface InputTokens {
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description 输入框鼠标移入时的undefined颜色
+   * @description 输入框鼠标移入时的反转颜色
    */
   inputHoverToggleColor: string;
   /**
@@ -137,7 +137,7 @@ export interface InputTokens {
   /**
    * @type {string}
    * @token Brand-2
-   * @description 输入框鼠标聚焦时的undefined
+   * @description 输入框鼠标聚焦时的阴影
    */
   inputFocusShadow: string;
   /**
@@ -149,7 +149,7 @@ export interface InputTokens {
   /**
    * @type {string}
    * @token Neutral-text-2
-   * @description 输入框禁用时的undefined颜色
+   * @description 输入框禁用时的占位符颜色
    */
   inputDisabledPlaceholderColor: string;
   /**
@@ -173,43 +173,43 @@ export interface InputTokens {
   /**
    * @type {string}
    * @token Danger-1
-   * @description 输入框错误状态的鼠标聚焦时的undefined
+   * @description 输入框错误状态的鼠标聚焦时的阴影
    */
   inputErrorFocusShadow: string;
   /**
    * @type {string}
    * @token Brand-6
-   * @description 输入框undefined字体颜色
+   * @description 输入框基础字体颜色
    */
   inputInfoFontColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 输入框undefined背景颜色
+   * @description 输入框基础背景颜色
    */
   inputInfoBackgroundColor: string;
   /**
    * @type {string}
    * @token Neutral-border-2
-   * @description 输入框undefined边框颜色
+   * @description 输入框基础边框颜色
    */
   inputInfoBorderColor: string;
   /**
    * @type {string}
    * @token Danger-6
-   * @description 输入框undefined错误状态的字体颜色
+   * @description 输入框基础错误状态的字体颜色
    */
   inputInfoErrorFontColor: string;
   /**
    * @type {string}
    * @token Danger-1
-   * @description 输入框undefined错误状态的背景颜色
+   * @description 输入框基础错误状态的背景颜色
    */
   inputInfoErrorBackgroundColor: string;
   /**
    * @type {string}
    * @token Danger-6
-   * @description 输入框undefined错误状态的边框颜色
+   * @description 输入框基础错误状态的边框颜色
    */
   inputInfoErrorBorderColor: string;
   /**

@@ -8,7 +8,7 @@
  */
 const tagTokenDescription = {
   tag: '标签',
-  outline: '线框模式',
+  outline: '线框风格',
   disabled: '禁用状态的',
   info: '提示色',
   magenta: '洋红色',
@@ -19,6 +19,8 @@ const tagTokenDescription = {
   neon: '荧光色',
   lemon: '柠檬色',
   tangerine: '橘红色',
+  fill: '填充风格',
+  input: '输入框',
 };
 
 /**

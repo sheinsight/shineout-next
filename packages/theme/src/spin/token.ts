@@ -10,6 +10,7 @@ const spinTokenDescription = {
   spin: '加载动画',
   vertical: '垂直模式下与提示文字的',
   horizontal: '水平模式下与提示文字的',
+  tip: '提示文案',
 };
 
 /**

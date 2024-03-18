@@ -12,6 +12,8 @@ const transferTokenDescription = {
   nearly: '相邻',
   item: '选项',
   header: '头部区域的',
+  empty: '空状态的',
+  checkbox: '复选框',
 };
 
 /**

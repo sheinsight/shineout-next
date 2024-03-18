@@ -6,7 +6,14 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const progressTokenDescription = { progress: 'xxx' };
+const progressTokenDescription = {
+  progress: '进度条',
+  gap: '间距',
+  info: '基础色',
+  front: '已完成进度的',
+  inner: '内嵌文案模式',
+  right: '右侧的',
+};
 
 /**
  * token 值映射表

@@ -2057,7 +2057,7 @@ export interface ButtonTokens {
   /**
    * @type {string}
    * @token Margin-4
-   * @description 按钮undefined外边距
+   * @description 按钮加载中icon的外边距
    */
   buttonSpinMargin: string;
 }

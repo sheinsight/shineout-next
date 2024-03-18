@@ -5,37 +5,37 @@ export interface RateTokens {
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description xxx字体颜色
+   * @description 评分字体颜色
    */
   rateFontColor: string;
   /**
    * @type {string}
    * @token 14/regular
-   * @description xxx字体字号
+   * @description 评分字体字号
    */
   rateFontSize: string;
   /**
    * @type {string}
    * @token Size-3
-   * @description xxxundefined
+   * @description 评分间距
    */
   rateGap: string;
   /**
    * @type {string}
    * @token Size-12
-   * @description xxx字号
+   * @description 评分字号
    */
   rateSize: string;
   /**
    * @type {string}
    * @token Neutral-fill-3
-   * @description xxx背景颜色
+   * @description 评分背景颜色
    */
   rateBackgroundColor: string;
   /**
    * @type {string}
    * @token Warning-5
-   * @description xxxundefined背景颜色
+   * @description 评分已完成评分的背景颜色
    */
-  rateForntBackgroundColor: string;
+  rateFrontBackgroundColor: string;
 }

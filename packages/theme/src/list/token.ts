@@ -6,7 +6,12 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const listTokenDescription = { list: 'xxx' };
+const listTokenDescription = {
+  list: '列表',
+  item: '选项',
+  pagination: '分页器',
+  striped: '斑马纹的',
+};
 
 /**
  * token 值映射表

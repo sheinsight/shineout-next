@@ -215,7 +215,7 @@ export interface StepsTokens {
   /**
    * @type {string}
    * @token Margin-8
-   * @description 步骤条相邻之间的undefined外边距
+   * @description 步骤条相邻之间的容器外边距
    */
   stepsNearlyContentMargin: string;
   /**

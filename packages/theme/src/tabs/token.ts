@@ -16,6 +16,11 @@ const tabsTokenDescription = {
   fill: '填充模式',
   split: '分割线',
   action: '操作按钮',
+  extra: '附加内容',
+  card: '卡片模式',
+  arrow: '箭头icon',
+  vertical: '垂直模式',
+  horizontal: '水平模式',
 };
 
 /**
