@@ -191,7 +191,7 @@ export interface CascaderTokens {
   /**
    * @type {string}
    * @token Brand-2
-   * @description 级联选择器鼠标聚焦时的undefined
+   * @description 级联选择器鼠标聚焦时的阴影
    */
   cascaderFocusShadow: string;
   /**
@@ -221,49 +221,49 @@ export interface CascaderTokens {
   /**
    * @type {string}
    * @token Radius-4
-   * @description 级联选择器结果文本边框圆角
+   * @description 级联选择器展示框文本边框圆角
    */
   cascaderResultTextBorderRadius: string;
   /**
    * @type {string}
    * @token Padding-4
-   * @description 级联选择器结果文本内边距（水平方向）
+   * @description 级联选择器展示框文本内边距（水平方向）
    */
   cascaderResultTextPaddingX: string;
   /**
    * @type {string}
    * @token Padding-4
-   * @description 级联选择器结果文本小尺寸内边距（水平方向）
+   * @description 级联选择器展示框文本小尺寸内边距（水平方向）
    */
   cascaderResultTextSmallPaddingX: string;
   /**
    * @type {string}
    * @token Padding-10
-   * @description 级联选择器结果文本大尺寸内边距（水平方向）
+   * @description 级联选择器展示框文本大尺寸内边距（水平方向）
    */
   cascaderResultTextLargePaddingX: string;
   /**
    * @type {string}
    * @token Brand-1
-   * @description 级联选择器结果文本鼠标点击时的背景颜色
+   * @description 级联选择器展示框文本鼠标点击时的背景颜色
    */
   cascaderResultTextActiveBackgroundColor: string;
   /**
    * @type {string}
    * @token Brand-5
-   * @description 级联选择器结果undefined鼠标移入时的颜色
+   * @description 级联选择器展示框选项鼠标移入时的颜色
    */
   cascaderResultItemHoverColor: string;
   /**
    * @type {string}
    * @token Brand-7
-   * @description 级联选择器结果undefined鼠标点击时的颜色
+   * @description 级联选择器展示框选项鼠标点击时的颜色
    */
   cascaderResultItemActiveColor: string;
   /**
    * @type {string}
    * @token Brand-6
-   * @description 级联选择器结果undefinedundefined颜色
+   * @description 级联选择器展示框选项选中状态的颜色
    */
   cascaderResultItemCheckedColor: string;
   /**
@@ -275,31 +275,31 @@ export interface CascaderTokens {
   /**
    * @type {string}
    * @token Danger-1
-   * @description 级联选择器错误状态的鼠标聚焦时的undefined
+   * @description 级联选择器错误状态的鼠标聚焦时的阴影
    */
   cascaderErrorFocusShadow: string;
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description 级联选择器undefined颜色
+   * @description 级联选择器下拉面板颜色
    */
   cascaderPanelColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 级联选择器undefined背景颜色
+   * @description 级联选择器下拉面板背景颜色
    */
   cascaderPanelBackgroundColor: string;
   /**
    * @type {string}
    * @token Shadow-2
-   * @description 级联选择器undefinedundefined
+   * @description 级联选择器下拉面板阴影
    */
   cascaderPanelShadow: string;
   /**
    * @type {string}
    * @token Radius-4
-   * @description 级联选择器undefined圆角
+   * @description 级联选择器下拉面板圆角
    */
   cascaderPanelRadius: string;
   /**
@@ -443,7 +443,7 @@ export interface CascaderTokens {
   /**
    * @type {string}
    * @token Neutral-border-1
-   * @description 级联选择器undefined边框颜色
+   * @description 级联选择器下拉列表的边框颜色
    */
   cascaderListBorderColor: string;
 }

@@ -6,7 +6,23 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const modalTokenDescription = { modal: 'xxx' };
+const modalTokenDescription = {
+  modal: '对话框',
+  panel: '面板',
+  shadow: '阴影',
+  gap: '间距',
+  header: '头部区域',
+  close: '关闭icon的',
+  start: '（左侧）',
+  end: '（右侧）',
+  top: '顶部距离',
+  title: '标题的',
+  drawer: '抽屉模式',
+  body: '主区域',
+  footer: '底部区域',
+  mask: '遮罩层',
+  light: '浅色',
+};
 
 /**
  * token 值映射表

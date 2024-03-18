@@ -6,7 +6,22 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const dropdownTokenDescription = { dropdown: '下拉菜单', outline: '线框模式下' };
+const dropdownTokenDescription = {
+  dropdown: '下拉菜单',
+  outline: '线框模式下',
+  caret: '箭头icon的',
+  left: '（左侧）',
+  list: '列表',
+  box: '',
+  shadow: '阴影',
+  option: '选项',
+  select: '选中状态的',
+  group: '分组',
+  top: '（顶部）',
+  bottom: '（底部）',
+  column: '多列平铺模式下每列的',
+  divider: '分割线',
+};
 
 /**
  * token 值映射表

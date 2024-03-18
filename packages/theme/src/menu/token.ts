@@ -6,7 +6,16 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const menuTokenDescription = { menu: 'xxx' };
+const menuTokenDescription = {
+  menu: '菜单',
+  item: '选项',
+  children: '子菜单',
+  shadow: '阴影',
+  dark: '深色模式',
+  expand: '展开icon的',
+  open: '打开状态的',
+  box: '',
+};
 
 /**
  * token 值映射表

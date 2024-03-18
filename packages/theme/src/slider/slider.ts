@@ -18,7 +18,7 @@ const sliderTokens: SliderTokens = {
   sliderIndicatorDisabledBorderColor: 'Neutral-border-2',
   sliderIndicatorDisabledBackgroundColor: 'Neutral-fill-1',
   sliderValueBackgroundColor: 'Neutral-fill-1',
-  sliderValueHoverBakgroundColor: 'Neutral-fill-9',
+  sliderValueHoverBackgroundColor: 'Neutral-fill-9',
   sliderValueHoverFontColor: 'Neutral-text-1',
   sliderValueHoverRadius: 'Radius-2',
   sliderValueHoverPaddingX: 'Padding-8',

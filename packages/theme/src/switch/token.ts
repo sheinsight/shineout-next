@@ -6,7 +6,14 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const switchTokenDescription = { switch: 'xxx' };
+const switchTokenDescription = {
+  switch: '开关',
+  fill: '填充色',
+  shadow: '阴影',
+  text: '文案',
+  loading: '加载模式下的',
+  checked: '打开状态下的',
+};
 
 /**
  * token 值映射表

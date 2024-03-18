@@ -6,7 +6,12 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const textareaTokenDescription = {};
+const textareaTokenDescription = {
+  textarea: '多行文本框',
+  placeholder: '占位符',
+  shadow: '阴影',
+  info: '基础',
+};
 
 /**
  * token 值映射表

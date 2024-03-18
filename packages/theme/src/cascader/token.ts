@@ -9,7 +9,7 @@
 const cascaderTokenDescription = {
   cascader: '级联选择器',
   placeholder: '占位符',
-  result: '结果',
+  result: '展示框',
   text: '文本',
   option: '选项',
   right: '(右侧)',
@@ -20,6 +20,11 @@ const cascaderTokenDescription = {
   group: '分组',
   title: '标题的',
   column: '多列模式下',
+  shadow: '阴影',
+  item: '选项',
+  checked: '选中状态的',
+  panel: '下拉面板',
+  list: '下拉列表的',
 };
 
 /**

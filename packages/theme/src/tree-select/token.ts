@@ -20,6 +20,8 @@ const treeSelectTokenDescription = {
   title: '标题',
   group: '分组模式下的',
   more: '合并弹层的',
+  right: '（右侧）',
+  header: '下拉列表的头部区域',
 };
 
 /**

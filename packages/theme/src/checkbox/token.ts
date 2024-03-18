@@ -12,6 +12,10 @@ const checkboxTokenDescription = {
   outline: '线框模式',
   gap: '间距',
   dark: '深色背景',
+  checked: '选中状态的',
+  fill: '填充色',
+  label: '标签',
+  block: '块级之间',
 };
 
 /**

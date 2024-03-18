@@ -5,13 +5,13 @@ export interface RadioTokens {
   /**
    * @type {string}
    * @token Margin-24
-   * @description 单选框undefined
+   * @description 单选框间距
    */
   radioGap: string;
   /**
    * @type {string}
    * @token Margin-12
-   * @description 单选框undefinedundefined
+   * @description 单选框块级间距
    */
   radioBlockGap: string;
   /**
@@ -23,7 +23,7 @@ export interface RadioTokens {
   /**
    * @type {string}
    * @token Margin-8
-   * @description 单选框图标undefined
+   * @description 单选框图标间距
    */
   radioIconGap: string;
   /**
@@ -77,37 +77,37 @@ export interface RadioTokens {
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 单选框图标undefined背景颜色
+   * @description 单选框图标选中状态下的背景颜色
    */
   radioIconCheckedBackgroundColor: string;
   /**
    * @type {string}
    * @token Brand-6
-   * @description 单选框图标undefined颜色
+   * @description 单选框图标选中状态下的颜色
    */
   radioIconCheckedColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 单选框图标undefined禁用时的背景颜色
+   * @description 单选框图标选中状态下的禁用时的背景颜色
    */
   radioIconCheckedDisabledBackgroundColor: string;
   /**
    * @type {string}
    * @token Brand-3
-   * @description 单选框图标undefined禁用时的颜色
+   * @description 单选框图标选中状态下的禁用时的颜色
    */
   radioIconCheckedDisabledColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-2
-   * @description 单选框图标undefinedundefined
+   * @description 单选框图标包裹层填充色
    */
   radioIconWrapperFill: string;
   /**
    * @type {string}
    * @token Neutral-fill-3
-   * @description 单选框图标undefinedundefined
+   * @description 单选框图标包裹层暗色模式
    */
   radioIconWrapperDark: string;
   /**
@@ -137,7 +137,7 @@ export interface RadioTokens {
   /**
    * @type {string}
    * @token 12/regular
-   * @description 单选框小尺寸undefined字体字号
+   * @description 单选框小尺寸文案字体字号
    */
   radioSmallLabelFontSize: string;
   /**
@@ -167,7 +167,7 @@ export interface RadioTokens {
   /**
    * @type {string}
    * @token 16/regular
-   * @description 单选框大尺寸undefined字体字号
+   * @description 单选框大尺寸文案字体字号
    */
   radioLargeLabelFontSize: string;
   /**
@@ -179,19 +179,19 @@ export interface RadioTokens {
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description 单选框undefined字体颜色
+   * @description 单选框文案字体颜色
    */
   radioLabelFontColor: string;
   /**
    * @type {string}
    * @token 14/regular
-   * @description 单选框undefined字体字号
+   * @description 单选框文案字体字号
    */
   radioLabelFontSize: string;
   /**
    * @type {string}
    * @token Neutral-text-2
-   * @description 单选框undefined禁用时的字体颜色
+   * @description 单选框文案禁用时的字体颜色
    */
   radioLabelDisabledFontColor: string;
 }

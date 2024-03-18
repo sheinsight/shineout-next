@@ -7,6 +7,12 @@ export interface Props {
   selector?: string;
 }
 
+const extraToken = [
+  `--primary-color: var(--${prefix}-brand-6)`,
+  `--gray-500: var(--${prefix}-neutral-6)`,
+  `--primary-color-fade-50: rgba(25,122,250,0.5)`,
+];
+
 const setToken = (props: Props) => {
   const { target, selector = 'body' } = props;
 
@@ -43,7 +49,7 @@ const setToken = (props: Props) => {
     tokens.push(token);
   });
   if (dom) {
-    dom.innerHTML = `${selector} {${tokens.join(';')}}`;
+    dom.innerHTML = `${selector} {${tokens.concat(extraToken).join(';')}}`;
   }
 };
 

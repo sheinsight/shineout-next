@@ -6,7 +6,14 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const cardTokenDescription = { card: 'xxx' };
+const cardTokenDescription = {
+  card: '卡片',
+  indicator: '指示器',
+  header: '头部',
+  extra: '额外内容的',
+  gap: '间距',
+  shadow:'阴影',
+};
 
 /**
  * token 值映射表

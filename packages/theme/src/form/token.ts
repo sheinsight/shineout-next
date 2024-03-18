@@ -7,10 +7,16 @@
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
 const formTokenDescription = {
-  form: '分割线',
+  form: '表单',
   horizontal: '水平模式',
   vertical: '垂直模式',
   text: '带文字',
+  item: '项',
+  end: '（后部）',
+  start: '（前部）',
+  label: '标签',
+  tip: '提示信息',
+  min: '最小',
 };
 
 /**

@@ -66,7 +66,7 @@ const rateStyle: JsStyles<RateClassType> = {
     right: 0,
     bottom: 0,
     opacity: 0,
-    color: token.rateForntBackgroundColor,
+    color: token.rateFrontBackgroundColor,
   },
   itemHalf: {
     position: 'absolute',
@@ -76,7 +76,7 @@ const rateStyle: JsStyles<RateClassType> = {
     overflow: 'hidden',
     width: '50%',
     opacity: 0,
-    color: token.rateForntBackgroundColor,
+    color: token.rateFrontBackgroundColor,
     '& > svg': {
       width: '1em',
       height: '1em',
