@@ -42,11 +42,6 @@ export interface TreeProps<DataItem, Value extends any[]>
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: JsstyleType;
   /**
-   * @en The default selected keys of the tree
-   * @cn 默认选中的 key （非受控）
-   */
-  defaultValues?: Value;
-  /**
    * @en The keys of selected
    * @cn 选中的 key （受控）
    */

@@ -6,7 +6,16 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const descriptionsTokenDescription = { descriptions: '描述列表', label: '标签的' };
+const descriptionsTokenDescription = {
+  descriptions: '描述列表',
+  label: '标签的',
+  value: '值的',
+  bottom: '底部',
+  right: '右部',
+  inline: '内联',
+  gap: '间距',
+  weight: '字重',
+};
 
 /**
  * token 值映射表
@@ -25,16 +34,6 @@ const descriptionsTokenValue = {
     font: { weight: '500' },
     gap: 'Size-2',
   },
-  border: {
-    padding: { top: 'Padding-12', bottom: 'Padding-12', left: 'Padding-8', right: 'Padding-8' },
-    small: { size: '' },
-    default: { size: '1px' },
-    large: { size: '' },
-    color: 'Neutral-border-1',
-    radius: 'Size-2',
-    right: { size: '1px' },
-    bottom: { size: '1px' },
-  },
   label: {
     padding: { top: '', bottom: 'Padding-12', left: '', right: 'Padding-8' },
     color: 'Neutral-text-4',
@@ -43,7 +42,17 @@ const descriptionsTokenValue = {
     padding: { top: '', bottom: 'Padding-12', left: '', right: '' },
     color: 'Neutral-text-5',
   },
-  table: {
+  border: {
+    small: { size: '' },
+    default: { size: '1px' },
+    large: { size: '' },
+    color: 'Neutral-border-1',
+    radius: 'Size-2',
+    right: { size: '1px', x: '', y: '' },
+    bottom: { size: '1px', x: '', y: '' },
+    padding: { size: '', x: 'Padding-8', y: 'Padding-12' },
+  },
+  font: {
     small: { size: '12/regular' },
     default: { size: '14/regular' },
     large: { size: '16/regular' },

@@ -13,7 +13,7 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
       fontSize: token.descriptionsTitleSmallSize,
     },
     '& $table': {
-      fontSize: token.descriptionsTableSmallSize,
+      fontSize: token.descriptionsFontSmallSize,
     },
   },
   large: {
@@ -21,7 +21,7 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
       fontSize: token.descriptionsTitleLargeSize,
     },
     '& $table': {
-      fontSize: token.descriptionsTableLargeSize,
+      fontSize: token.descriptionsFontLargeSize,
     },
   },
   header: {
@@ -42,7 +42,7 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
     lineHeight: token.lineHeightDynamic,
   },
   body: {
-    fontSize: token.descriptionsTableDefaultSize,
+    fontSize: token.descriptionsFontDefaultSize,
     overflow: 'hidden',
   },
   table: {
@@ -117,12 +117,12 @@ const descriptionsStyle: JsStyles<DescriptionsClassType> = {
       borderBottom: `${token.descriptionsBorderBottomSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $label': {
-      padding: `${token.descriptionsBorderPaddingLeft} ${token.descriptionsBorderPaddingTop}`,
+      padding: `${token.descriptionsBorderPaddingX} ${token.descriptionsBorderPaddingY}`,
       backgroundColor: token.descriptionsBackgroundColor,
       borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $value': {
-      padding: `${token.descriptionsBorderPaddingLeft} ${token.descriptionsBorderPaddingTop}`,
+      padding: `${token.descriptionsBorderPaddingX} ${token.descriptionsBorderPaddingY}`,
       borderRight: `${token.descriptionsBorderRightSize} solid ${token.descriptionsBorderColor}`,
     },
     '& $inlineTable': {

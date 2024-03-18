@@ -1,7 +1,8 @@
 import { ImageFitType, ImageShapeType, ImageTargetType } from '@sheinx/hooks';
 import { ImageJssStyleType } from './image.type';
+import { CommonType } from '../common/type';
 
-export interface ImageGroupProps {
+export interface ImageGroupProps extends Pick<CommonType, 'style' | 'className'> {
   jssStyle?: ImageJssStyleType;
   /**
    * @en The number of images to be displayed
