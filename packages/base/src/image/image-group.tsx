@@ -8,14 +8,14 @@ import classNames from 'classnames';
 import Icons from '../icons';
 
 const ImageGroup = (props: ImageGroupProps) => {
-  const { jssStyle, children, target = '_modal', pile, showCount = false, ...rest } = props;
+  const { jssStyle, children, target = '_modal', pile, showCount = false, className, style, ...rest } = props;
   const { getGroupItemProps, getPileProps } = useImageGroup(props);
   const imageClasses = jssStyle?.image?.() || ({} as ImageClasses);
 
   const targetSet = pile ? '_modal' : target;
   const shouldPreview = targetSet === '_modal';
 
-  const groupClass = classNames(imageClasses?.group, {
+  const groupClass = classNames(imageClasses?.group, className, {
     [imageClasses?.groupPile]: pile,
   });
 
@@ -56,7 +56,7 @@ const ImageGroup = (props: ImageGroupProps) => {
   };
 
   return (
-    <div className={groupClass}>
+    <div className={groupClass} style={style}>
       {Children.toArray(children).map((child, index) => {
         const Child = child as React.ReactElement<ImageProps>;
         if (pile) {

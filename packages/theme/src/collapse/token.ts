@@ -6,7 +6,7 @@
  * 用于生成文本。
  * 描述词典变量名称为 组件名称 + TokenDescription。请勿修改变量命名，否则将导致 token 无法生成。
  */
-const collapseTokenDescription = { collapse: '折叠面板' };
+const collapseTokenDescription = { collapse: '折叠面板', content: '内容', extra: '扩充', wrapper: '主体', gap: '边距', header: '头部', weight: '字重', left: '左部', right: '右部' };
 
 /**
  * token 值映射表

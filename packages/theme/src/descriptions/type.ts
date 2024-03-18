@@ -5,69 +5,27 @@ export interface DescriptionsTokens {
   /**
    * @type {string}
    * @token Padding-12
-   * @description 描述列表标题模式内边距undefined
+   * @description 描述列表标题模式内边距底部
    */
   descriptionsTitlePaddingBottom: string;
   /**
    * @type {string}
    * @token Padding-12
-   * @description 描述列表边框内边距undefined
-   */
-  descriptionsBorderPaddingTop: string;
-  /**
-   * @type {string}
-   * @token Padding-12
-   * @description 描述列表边框内边距undefined
-   */
-  descriptionsBorderPaddingBottom: string;
-  /**
-   * @type {string}
-   * @token Padding-8
-   * @description 描述列表边框内边距undefined
-   */
-  descriptionsBorderPaddingLeft: string;
-  /**
-   * @type {string}
-   * @token Padding-8
-   * @description 描述列表边框内边距undefined
-   */
-  descriptionsBorderPaddingRight: string;
-  /**
-   * @type {string}
-   * @token Padding-12
-   * @description 描述列表标签的内边距undefined
+   * @description 描述列表标签的内边距底部
    */
   descriptionsLabelPaddingBottom: string;
   /**
    * @type {string}
    * @token Padding-8
-   * @description 描述列表标签的内边距undefined
+   * @description 描述列表标签的内边距右部
    */
   descriptionsLabelPaddingRight: string;
   /**
    * @type {string}
    * @token Padding-12
-   * @description 描述列表undefined内边距undefined
+   * @description 描述列表值的内边距底部
    */
   descriptionsValuePaddingBottom: string;
-  /**
-   * @type {string}
-   * @token 12/regular
-   * @description 描述列表undefined小尺寸字号
-   */
-  descriptionsTableSmallSize: string;
-  /**
-   * @type {string}
-   * @token 14/regular
-   * @description 描述列表undefined默认尺寸字号
-   */
-  descriptionsTableDefaultSize: string;
-  /**
-   * @type {string}
-   * @token 16/regular
-   * @description 描述列表undefined大尺寸字号
-   */
-  descriptionsTableLargeSize: string;
   /**
    * @type {string}
    * @token 14/medium
@@ -94,6 +52,24 @@ export interface DescriptionsTokens {
   descriptionsBorderDefaultSize: string;
   /**
    * @type {string}
+   * @token 12/regular
+   * @description 描述列表字体小尺寸字号
+   */
+  descriptionsFontSmallSize: string;
+  /**
+   * @type {string}
+   * @token 14/regular
+   * @description 描述列表字体默认尺寸字号
+   */
+  descriptionsFontDefaultSize: string;
+  /**
+   * @type {string}
+   * @token 16/regular
+   * @description 描述列表字体大尺寸字号
+   */
+  descriptionsFontLargeSize: string;
+  /**
+   * @type {string}
    * @token Neutral-text-4
    * @description 描述列表标签的颜色
    */
@@ -101,7 +77,7 @@ export interface DescriptionsTokens {
   /**
    * @type {string}
    * @token Neutral-text-5
-   * @description 描述列表undefined颜色
+   * @description 描述列表值的颜色
    */
   descriptionsValueColor: string;
   /**
@@ -125,13 +101,13 @@ export interface DescriptionsTokens {
   /**
    * @type {string}
    * @token 500
-   * @description 描述列表标题模式字体undefined
+   * @description 描述列表标题模式字体字重
    */
   descriptionsTitleFontWeight: string;
   /**
    * @type {string}
    * @token Size-2
-   * @description 描述列表标题模式undefined
+   * @description 描述列表标题模式间距
    */
   descriptionsTitleGap: string;
   /**
@@ -143,25 +119,37 @@ export interface DescriptionsTokens {
   /**
    * @type {string}
    * @token 1px
-   * @description 描述列表边框undefined字号
+   * @description 描述列表边框右部字号
    */
   descriptionsBorderRightSize: string;
   /**
    * @type {string}
    * @token 1px
-   * @description 描述列表边框undefined字号
+   * @description 描述列表边框底部字号
    */
   descriptionsBorderBottomSize: string;
   /**
    * @type {string}
    * @token Padding-8
-   * @description 描述列表undefined边框内边距（水平方向）
+   * @description 描述列表边框内边距（水平方向）
+   */
+  descriptionsBorderPaddingX: string;
+  /**
+   * @type {string}
+   * @token Padding-12
+   * @description 描述列表边框内边距（垂直方向）
+   */
+  descriptionsBorderPaddingY: string;
+  /**
+   * @type {string}
+   * @token Padding-8
+   * @description 描述列表内联边框内边距（水平方向）
    */
   descriptionsInlineBorderPaddingX: string;
   /**
    * @type {string}
    * @token Padding-12
-   * @description 描述列表undefined边框内边距（垂直方向）
+   * @description 描述列表内联边框内边距（垂直方向）
    */
   descriptionsInlineBorderPaddingY: string;
 }

@@ -9,6 +9,7 @@ import {
 
 /**
  * @title Form
+ * @sort 1
  */
 export interface FormProps<T extends ObjectType> extends Omit<UiFormProps<T>, 'jssStyle'> {
   /**
@@ -25,20 +26,24 @@ export interface FormProps<T extends ObjectType> extends Omit<UiFormProps<T>, 'j
 }
 /**
  * @title Form.Item
+ * @sort 2
  */
 export type FormItemProps = Omit<UiFormItemProps, 'jssStyle'>;
 
 /**
  * @title Form.Field
+ * @sort 3
  */
 export type FormFieldProps<T> = UiFormFieldProps<T>;
 
 /**
  * @title Form.FieldSet
+ * @sort 4
  */
 export type FormFieldSetProps<T> = UiFormFieldSetProps<T>;
 
 /**
  * @title Form.Flow
+ * @sort 5
  */
 export type FormFlowProps = UiFormFlowProps;

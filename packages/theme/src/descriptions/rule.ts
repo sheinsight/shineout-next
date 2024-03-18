@@ -8,18 +8,18 @@
  */
 const descriptionsRules = {
   size: [
-    ['title', 'border', 'label', 'value'],
+    ['title', 'label', 'value'],
     ['padding-top', 'padding-bottom', 'padding-left', 'padding-right'],
   ],
   font: [
-    ['table', 'title', 'border'],
+    ['title', 'border', 'font'],
     ['small-size', 'default-size', 'large-size'],
   ],
   color: [['label', 'value', 'title', 'extra', 'background', 'border'], ['color']],
   weight: [['title'], ['font-weight']],
   gap: [['title'], ['gap']],
   radius: [['border'], ['radius']],
-  border: [['border-right', 'border-bottom'], ['size']],
+  border: [['border-right', 'border-bottom', 'border-padding'], ['size', 'x', 'y']],
   Inline: [['inline-border'], ['padding-x', 'padding-y']],
 };
 
