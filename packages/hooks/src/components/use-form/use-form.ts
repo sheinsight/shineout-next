@@ -66,6 +66,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     resetTime: 0,
     mounted: false,
     unmounted: false,
+    removeLock: false,
   });
 
   const update = (name?: string | string[]) => {
@@ -308,7 +309,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       delete context.defaultValues[n];
       delete context.updateMap[n];
       context.names.delete(n);
-      if (!reserveAble) {
+      if (!reserveAble && !context.removeLock) {
         addRemove(n);
       }
     },
@@ -390,6 +391,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
 
   // 默认值更新
   React.useEffect(() => {
+    context.removeLock = false;
     if (props.value === context.lastValue) return;
     context.value = (props.value || emptyObj) as T;
     if (initValidate && !context.resetTime) {
@@ -413,6 +415,9 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
       context.unmounted = true;
     };
   }, []);
+  if (props.value !== context.lastValue) {
+    context.removeLock = true;
+  }
 
   return {
     getFormProps,
