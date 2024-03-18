@@ -1366,6 +1366,96 @@ export interface ButtonTokens {
   buttonDangerTextFocusBorderColor: string;
   /**
    * @type {string}
+   * @token Brand-6
+   * @description 按钮链接风格字体颜色
+   */
+  buttonLinkFontColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格背景颜色
+   */
+  buttonLinkBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格边框颜色
+   */
+  buttonLinkBorderColor: string;
+  /**
+   * @type {string}
+   * @token Brand-3
+   * @description 按钮链接风格禁用时的字体颜色
+   */
+  buttonLinkDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格禁用时的背景颜色
+   */
+  buttonLinkDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格禁用时的边框颜色
+   */
+  buttonLinkDisabledBorderColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 按钮链接风格鼠标移入时的字体颜色
+   */
+  buttonLinkHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格鼠标移入时的背景颜色
+   */
+  buttonLinkHoverBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格鼠标移入时的边框颜色
+   */
+  buttonLinkHoverBorderColor: string;
+  /**
+   * @type {string}
+   * @token Brand-7
+   * @description 按钮链接风格鼠标点击时的字体颜色
+   */
+  buttonLinkActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格鼠标点击时的背景颜色
+   */
+  buttonLinkActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格鼠标点击时的边框颜色
+   */
+  buttonLinkActiveBorderColor: string;
+  /**
+   * @type {string}
+   * @token Brand-5
+   * @description 按钮链接风格鼠标聚焦时的字体颜色
+   */
+  buttonLinkFocusFontColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格鼠标聚焦时的背景颜色
+   */
+  buttonLinkFocusBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token transparent
+   * @description 按钮链接风格鼠标聚焦时的边框颜色
+   */
+  buttonLinkFocusBorderColor: string;
+  /**
+   * @type {string}
    * @token 14/regular
    * @description 按钮字体字号
    */

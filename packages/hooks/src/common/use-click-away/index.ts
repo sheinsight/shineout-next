@@ -12,8 +12,9 @@ export function useClickAway<T extends Event = Event>(params: {
   effect?: boolean;
   // 目标元素内点击不触发 onClickAway
   target: Target | Array<Target>;
+  event?: 'click' | 'mousedown';
 }) {
-  const { onClickAway, effect = true, target: t } = params;
+  const { onClickAway, effect = true, target: t, event = 'click' } = params;
   const context = useLatestObj({ onClickAway });
   const target = Array.isArray(t) ? t : [t];
   const handleClickAway = usePersistFn((event: T) => {
@@ -30,7 +31,7 @@ export function useClickAway<T extends Event = Event>(params: {
       setTimeout(
         () =>
           document.addEventListener(
-            'click',
+            event,
             // @ts-ignore
             handleClickAway,
             {
@@ -43,7 +44,7 @@ export function useClickAway<T extends Event = Event>(params: {
     }
     return () => {
       // @ts-ignore
-      document.removeEventListener('click', handleClickAway);
+      document.removeEventListener(event, handleClickAway);
     };
   }, [effect]);
 }

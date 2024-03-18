@@ -1,6 +1,6 @@
 const buttonRules = {
   color: [
-    ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],
+    ['default', 'primary', 'secondary', 'success', 'warning', 'danger', 'link'],
     ['', 'outline', 'text', 'dashed'],
     ['', 'disabled', 'hover', 'active', 'focus'],
     ['font-color', 'background-color', 'border-color'],

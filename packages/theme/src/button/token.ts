@@ -14,6 +14,7 @@ const buttonTokenDescription = {
   nearly: '相邻之间的',
   split: '分割线',
   full: '填充模式',
+  link: '链接风格',
   splitline: '按钮组分割线',
 };
 
@@ -649,6 +650,58 @@ const buttonTokenValue = {
       focus: { background: { color: 'Neutral-fill-1' } },
     },
   },
+  link: {
+    font: { color: 'Brand-6' },
+    background: { color: 'transparent' },
+    border: { color: 'transparent' },
+    disabled: {
+      font: { color: 'Brand-3' },
+      background: { color: 'transparent' },
+      border: { color: 'transparent' },
+    },
+    hover: {
+      font: { color: 'Brand-5' },
+      background: { color: 'transparent' },
+      border: { color: 'transparent' },
+    },
+    active: {
+      font: { color: 'Brand-7' },
+      background: { color: 'transparent' },
+      border: { color: 'transparent' },
+    },
+    focus: {
+      font: { color: 'Brand-5' },
+      background: { color: 'transparent' },
+      border: { color: 'transparent' },
+    },
+    outline: {
+      font: { color: '' },
+      background: { color: '' },
+      border: { color: '' },
+      disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+    },
+    text: {
+      font: { color: '' },
+      background: { color: '' },
+      border: { color: '' },
+      disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+    },
+    dashed: {
+      font: { color: '' },
+      background: { color: '' },
+      border: { color: '' },
+      disabled: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      hover: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      active: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+      focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
+    },
+  },
   font: { size: '14/regular' },
   border: { radius: 'Radius-4' },
   padding: { x: 'Padding-8', y: 'Padding-5' },
@@ -680,16 +733,8 @@ const buttonTokenValue = {
 
 const buttonTokenExtraValue = {
   splitline: {
-    full: {
-      background: {
-        color: '#ffffff',
-      },
-    },
-    outline: {
-      background: {
-        color: 'Neutral-border-2',
-      },
-    },
+    full: { background: { color: '#ffffff' } },
+    outline: { background: { color: 'Neutral-border-2' } },
   },
 };
 

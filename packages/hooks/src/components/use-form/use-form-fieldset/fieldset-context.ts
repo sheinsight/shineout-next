@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { createContext } from 'react';
 
 const FieldsetContext = createContext({ path: '' });
@@ -7,18 +7,29 @@ interface BaseFieldProps {
   bind?: string[];
   name: string | string[];
 }
+
+function extendName(path: string | undefined, name: string): string;
+function extendName(path: string | undefined, name: undefined): undefined;
+function extendName(path: string | undefined, name: string[]): string[];
+
+function extendName(
+  path: string = '',
+  name: string | undefined | string[],
+): string | string[] | undefined {
+  if (name === undefined) return undefined;
+  if (name === '') return path;
+  if (Array.isArray(name)) {
+    return name.map((n) => extendName(path, n));
+  }
+  return `${path}${path.length > 0 ? '.' : ''}${name}`;
+}
 export const useFieldSetConsumer = <T extends BaseFieldProps>(props: T) => {
   const { path } = React.useContext(FieldsetContext);
   const bind = React.useMemo(() => {
     return path ? (props.bind || []).concat(path) : props.bind;
   }, [path, props.bind]);
   const name = React.useMemo(() => {
-    if (Array.isArray(props.name)) {
-      return props.name.map((item) => {
-        return path ? `${path}.${item}` : item;
-      });
-    }
-    return path ? `${path}.${props.name}` : props.name;
+    return extendName(path, props.name as any);
   }, [path, props.name]);
 
   return {

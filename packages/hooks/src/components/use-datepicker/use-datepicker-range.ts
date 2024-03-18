@@ -36,7 +36,8 @@ const useRangePick = (props: useRangeProps) => {
             newArr[1] = rangeMax;
           }
         } else if (date.getTime() > newArr[1]!.getTime()) {
-          newArr[1] = new Date(date);
+          const a = utils.cloneTime(new Date(date), defaultTimeArr[1], 'HH:mm:ss', options);
+          newArr[1] = a.getTime() > date.getTime() ? a : new Date(date);
         }
       }
       if (!noClose) {

@@ -1,20 +1,17 @@
-import FieldsetContext, { useFieldSetConsumer } from './fieldset-context';
+import FieldsetContext from './fieldset-context';
 import { BaseFormFieldSetProps } from './use-form-fieldset.type';
 import { useFormControl } from '../use-form-control';
 
 const emptyFunc = () => {};
+const emptyArr: string[] = [];
 export const useFormFieldSet = <T>(props: BaseFormFieldSetProps<T>) => {
-  const { name, bind } = useFieldSetConsumer({
+  const { inForm, error, value, onChange, name } = useFormControl({
     name: props.name,
-  });
-
-  const { inForm, error, value, onChange } = useFormControl({
-    name,
     defaultValue: props.defaultValue,
     reserveAble: props.reserveAble,
     rules: props.rules,
     onError: props.onError,
-    bind,
+    bind: emptyArr,
     onChange: emptyFunc,
     getValidateProps: props.getValidateProps,
   });
