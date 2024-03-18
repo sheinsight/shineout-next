@@ -12,7 +12,8 @@ const getDuration = (duration: AnimationListProps['duration']) => {
       return 360;
   }
 };
-const mm = 20;
+
+const mm = 30;
 const AnimationList = (props: AnimationListProps) => {
   const {
     display = 'block',
@@ -26,6 +27,10 @@ const AnimationList = (props: AnimationListProps) => {
     animation = true,
     ...forwardProps
   } = props;
+
+  const [status, setStatus] = useState<
+    'enter' | 'beforeEnter' | 'afterEnter' | 'leave' | 'beforeLeave' | 'afterLeave' | undefined
+  >(undefined);
 
   const [innerStyle, setStyle] = useState<React.CSSProperties>({
     display: show ? display : 'none',
@@ -88,6 +93,7 @@ const AnimationList = (props: AnimationListProps) => {
       ...s,
       ...newStyle,
     }));
+    setStatus('beforeEnter');
     if (type.indexOf('collapse') >= 0) {
       if (!context.height) {
         context.height = getElInfo(ref.current!).height;
@@ -115,6 +121,7 @@ const AnimationList = (props: AnimationListProps) => {
       newStyle.transform = 'scaleY(1)';
     }
     setStyle((s) => ({ ...s, ...newStyle }));
+    setStatus('enter');
   };
   const afterEnter = () => {
     const newStyle: React.CSSProperties = {};
@@ -123,6 +130,7 @@ const AnimationList = (props: AnimationListProps) => {
       newStyle.overflow = '';
     }
     setStyle((s) => ({ ...s, ...newStyle }));
+    setStatus('afterEnter');
   };
 
   const beforeLeave = () => {
@@ -140,6 +148,7 @@ const AnimationList = (props: AnimationListProps) => {
       newStyle.transform = 'scaleY(1)';
     }
     setStyle((s) => ({ ...s, ...newStyle }));
+    setStatus('beforeLeave');
   };
   const leave = () => {
     const newStyle: React.CSSProperties = { transition };
@@ -153,6 +162,7 @@ const AnimationList = (props: AnimationListProps) => {
       newStyle.transform = 'scaleY(0)';
     }
     setStyle((s) => ({ ...s, ...newStyle }));
+    setStatus('leave');
   };
   const afterLeave = () => {
     const newStyle: React.CSSProperties = {};
@@ -164,6 +174,7 @@ const AnimationList = (props: AnimationListProps) => {
       newStyle.display = 'none';
     }
     setStyle((s) => ({ ...s, ...newStyle }));
+    setStatus('afterLeave');
   };
 
   const cleanTimer = () => {
@@ -179,14 +190,6 @@ const AnimationList = (props: AnimationListProps) => {
       return;
     }
     beforeEnter();
-    cleanTimer();
-    context.timer = setTimeout(() => {
-      enter();
-      cleanTimer();
-      context.timer = setTimeout(() => {
-        afterEnter();
-      }, durationNum);
-    }, mm);
   };
 
   // 关闭
@@ -198,15 +201,34 @@ const AnimationList = (props: AnimationListProps) => {
       return;
     }
     beforeLeave();
-    cleanTimer();
-    context.timer = setTimeout(() => {
-      leave();
+  };
+
+  useEffect(() => {
+    if (status === 'beforeEnter') {
+      cleanTimer();
+      context.timer = setTimeout(() => {
+        enter();
+      }, mm);
+    }
+    if (status === 'enter') {
+      cleanTimer();
+      context.timer = setTimeout(() => {
+        afterEnter();
+      }, durationNum);
+    }
+    if (status === 'beforeLeave') {
+      cleanTimer();
+      context.timer = setTimeout(() => {
+        leave();
+      }, mm);
+    }
+    if (status === 'leave') {
       cleanTimer();
       context.timer = setTimeout(() => {
         afterLeave();
       }, durationNum);
-    }, mm);
-  };
+    }
+  }, [status]);
 
   useEffect(() => {
     if (context.lastShow === show) return;
