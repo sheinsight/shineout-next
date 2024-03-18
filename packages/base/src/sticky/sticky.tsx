@@ -160,6 +160,14 @@ const Sticky = (props: StickyProps) => {
       } else {
         target.parentNode!.insertBefore(context.div, target);
       }
+      const style = window.getComputedStyle(target);
+      if (style.position === 'absolute' || style.position === 'fixed') {
+        context.div.style.position = style.position;
+        context.div.style.top = style.top;
+        context.div.style.left = style.left;
+        context.div.style.right = style.right;
+        context.div.style.bottom = style.bottom;
+      }
       if (window.IntersectionObserver) {
         const observer = new IntersectionObserver(handlePosition, {
           root: target,
