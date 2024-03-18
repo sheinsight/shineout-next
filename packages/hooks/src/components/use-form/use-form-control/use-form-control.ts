@@ -48,7 +48,6 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   });
 
   const [errorState, setErrorState] = React.useState<Error | undefined>(undefined);
-  const [valueState, setValueState] = React.useState<T | undefined>(undefined);
 
   let value: T | undefined;
   let error: Error | undefined = errorState;
@@ -57,6 +56,9 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
   const { func: controlFunc, disabled } = useFormBind();
   const formFunc = useFormFunc();
   const { updateError } = React.useContext(FormItemContext);
+
+  const formValue = name && formFunc ? (formFunc.getValue(name) as T) : undefined;
+  const [valueState, setValueState] = React.useState<T | undefined>(formValue);
 
   if (name && formFunc) {
     inForm = true;
