@@ -52,7 +52,7 @@ export default (props: InputGroupProps) => {
           return <span key={i}>{child}</span>;
         }
         if (React.isValidElement(child)) {
-          return cloneElement(child, { ...getProps(child), disabled });
+          return cloneElement(child, { ...getProps(child), disabled: child.props.disabled || disabled });
         }
         return <span key={i}>{child}</span>;
       })}
