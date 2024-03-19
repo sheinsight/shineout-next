@@ -185,8 +185,6 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     fontFamily: 'inherit',
     height: Token.buttonHeight,
 
-    '& $spaceWrapper': {},
-
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,
     },
@@ -199,7 +197,6 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
       transition: 'none',
     },
   },
-  spaceWrapper: {},
   small: {
     height: Token.buttonSmallHeight,
 
@@ -307,20 +304,20 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
       ...button('Secondary', 'Text'),
     },
   },
-  href: {
-    textDecoration: 'none',
-    boxSizing: 'border-box',
-    color: 'red',
-    '$primary&': {
-      color: 'blue',
-    },
-    '$disabled&': {
-      color: 'blue',
-    },
-    '&$danger': {
-      ...button('Danger', ''),
-    },
-  },
+  // href: {
+  //   textDecoration: 'none',
+  //   boxSizing: 'border-box',
+  //   color: 'red',
+  //   '$primary&': {
+  //     color: 'blue',
+  //   },
+  //   '$disabled&': {
+  //     color: 'blue',
+  //   },
+  //   '&$danger': {
+  //     ...button('Danger', ''),
+  //   },
+  // },
   round: {
     borderRadius: Token.buttonRoundBorderRadius,
   },

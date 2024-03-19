@@ -76,17 +76,17 @@ export interface IconCompProps extends Pick<CommonType, 'className' | 'style'> {
   type?: 'default' | 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger';
 
   /**
-   * @inner 内部属性
+   * @private 内部属性
    */
   prefix?: string;
 
   /**
-   * @inner 内部属性
+   * @private 内部属性
    */
   fontFamily?: string;
 
   /**
-   * @inner 内部属性
+   * @private 内部属性
    */
   ext?: string;
 }

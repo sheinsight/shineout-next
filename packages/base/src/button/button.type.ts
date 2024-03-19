@@ -27,7 +27,6 @@ export interface ButtonClasses {
   danger: string;
   warning: string;
   success: string;
-  href: string;
   link: string;
   dashed: string;
   outline: string;
