@@ -63,7 +63,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     showArrow = true,
     disabled,
     separator,
-    clearable = true,
+    clearable = false,
     beforeChange,
     compressed,
     compressedBound,
@@ -116,7 +116,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     expanded,
     setInputText,
     onFilter,
-    onResetFilter,
     onCreate,
     onClearCreatedData,
   } = useFilter({
@@ -515,7 +514,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           onRef={inputRef}
           onCreate={onCreate}
           onInputBlur={handleInputBlur}
-          onResetFilter={onResetFilter}
           onClearCreatedData={onClearCreatedData}
           getDataByValues={getDataByValues}
           checkUnMatched={checkUnMatched}

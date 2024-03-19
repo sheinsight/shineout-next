@@ -34,6 +34,7 @@ export default () => {
         keygen='id'
         placeholder='Select Tag'
         renderItem={renderItem}
+        clearable
       />
     </div>
   );

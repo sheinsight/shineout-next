@@ -60,6 +60,7 @@ export default () => {
         placeholder='Select Color'
         prediction={prediction}
         renderItem={renderItem}
+        clearable
       />
     </div>
   );

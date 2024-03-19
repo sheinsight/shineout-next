@@ -11,13 +11,7 @@ export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   return (
     <div>
-      <Select
-        loading
-        width={300}
-        data={data}
-        keygen
-        placeholder='Select Color'
-      />
+      <Select loading width={300} data={data} keygen placeholder='Select Color' clearable />
     </div>
   );
 };

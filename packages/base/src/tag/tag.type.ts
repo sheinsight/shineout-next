@@ -118,6 +118,10 @@ export interface BaseTagProps
    */
   onClose?: boolean | ((e: React.MouseEvent<HTMLDivElement>) => void | Promise<any>);
   /**
+   * @private
+   */
+  closable ?: boolean | 'only';
+  /**
    * @en Editable input box keyUp event
    * @cn 可编辑输入框 keyUp 事件
    */

@@ -20,6 +20,7 @@ export default () => {
         data={data}
         keygen
         placeholder='Select Color'
+        clearable
       />
     </div>
   );
