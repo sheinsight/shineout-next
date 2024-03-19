@@ -117,6 +117,7 @@ export default createUseStyles(
     },
     changelog: {
       padding: 40,
+      marginTop: 267,
     },
     changelogWrapper: {
       marginBottom: 64,
@@ -127,7 +128,18 @@ export default createUseStyles(
       fontWeight: 600,
       marginBottom: 32,
     },
-    changelogType: {},
+    changelogType: {
+      '&:not(:first-child) $changelogTypeTitle': {
+        marginTop: 32,
+      },
+
+      '& ul': {
+        padding: 0,
+      },
+      '& li': {
+        marginLeft: 14,
+      },
+    },
     changelogTypeTitle: {
       fontSize: 18,
       lineHeight: '26px',
