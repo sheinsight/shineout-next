@@ -54,7 +54,6 @@ const Button = (props: ButtonProps) => {
     buttonStyle.button,
     !!disabled && buttonStyle.disabled,
     !!loading && buttonStyle.loading,
-    !!href && buttonStyle.href,
     modeSetted === 'text' && buttonStyle.text,
     modeSetted === 'dashed' && buttonStyle.dashed,
     modeSetted === 'outline' && buttonStyle.outline,
@@ -78,7 +77,7 @@ const Button = (props: ButtonProps) => {
     return 12;
   };
 
-  const childrenEl = getSpaceChildren(children, space, buttonStyle.spaceWrapper);
+  const childrenEl = getSpaceChildren(children, space);
 
   let buttonInnerEl: React.ReactNode = childrenEl;
 

@@ -185,8 +185,6 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     fontFamily: 'inherit',
     height: Token.buttonHeight,
 
-    '& $spaceWrapper': {},
-
     '& + &': {
       marginLeft: Token.buttonNearlyMargin,
     },
@@ -199,7 +197,6 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
       transition: 'none',
     },
   },
-  spaceWrapper: {},
   small: {
     height: Token.buttonSmallHeight,
 
