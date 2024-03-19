@@ -16,9 +16,14 @@ const arrow = {
 };
 
 const menuStyle: JsStyles<MenuClassType> = {
-  wrapper: {},
+  wrapper: {
+    height: '100%',
+    backgroundColor: token.menuItemBackgroundColor,
+  },
   wrapperLight: {},
-  wrapperDark: {},
+  wrapperDark: {
+    backgroundColor: token.menuDarkItemBackgroundColor
+  },
   scrollbox: {
     '$wrapperVertical &': {
       overflow: 'hidden',
