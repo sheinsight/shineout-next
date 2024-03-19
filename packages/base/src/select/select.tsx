@@ -620,7 +620,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const renderOptions = () => {
     if (loading) return renderLoading();
 
-    const isEmpty = !props.treeData?.length && !props.data?.length;
+    const isEmpty = !filterData?.length;
     if (isEmpty) return renderEmpty();
 
     const options = 'treeData' in props ? renderTreeList() : renderList();
