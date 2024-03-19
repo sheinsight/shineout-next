@@ -16,6 +16,7 @@
       "shineout": ["packages/shineout/src/index.ts"],
       "base": ["packages/base/src/index.ts"],
       "@sheinx/shineout-style": ["packages/shineout-style/src/index.ts"],
+      "@sheinx/theme": ["packages/theme/src/index.ts"],
     }
   },
   "includes": ["packages/**/*", "./docs/**/*"]
