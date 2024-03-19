@@ -190,7 +190,7 @@ export interface SelectPropsBase<DataItem, Value>
   /**
    * @en If clearable is true, show clear value icon
    * @cn 是否显示清除数据图标
-   * @default true
+   * @default false
    */
   clearable?: boolean;
 
