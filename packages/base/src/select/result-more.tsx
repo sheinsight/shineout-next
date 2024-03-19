@@ -1,4 +1,4 @@
-import React, { useState, Children } from 'react';
+import React, { useState, Children, memo } from 'react';
 import { SelectClasses } from './select.type';
 import { ReultMoreProps } from './result-more.type';
 import { parsePxToNumber } from '@sheinx/hooks';
@@ -147,4 +147,4 @@ const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
   );
 };
 
-export default More;
+export default memo(More) as typeof More;

@@ -257,23 +257,21 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     return result;
   };
 
-  const renderMultipleResultMore = useMemo(() => {
-    const result = renderMultipleResult() as React.ReactNode[];
-    const moreNumber = getCompressedBound();
-    return (
-      <More
-        keygen={keygen}
-        key='more'
-        jssStyle={jssStyle}
-        data={result}
-        size={size}
-        more={moreNumber}
-        compressed={compressed}
-        compressedClassName={compressedClassName}
-        showNum={moreNumber}
-      ></More>
-    );
-  }, [value, more]);
+  const result = renderMultipleResult() as React.ReactNode[];
+  const moreNumber = getCompressedBound();
+  const renderMultipleResultMore = (
+    <More
+      keygen={keygen}
+      key='more'
+      jssStyle={jssStyle}
+      data={result}
+      size={size}
+      more={moreNumber}
+      compressed={compressed}
+      compressedClassName={compressedClassName}
+      showNum={moreNumber}
+    ></More>
+  );
 
   const renderResult = () => {
     let result = [];
