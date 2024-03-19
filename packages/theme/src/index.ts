@@ -1,6 +1,7 @@
 import { Tokens as TokenType } from './token/type';
 import Token from './token/token';
-import { setToken } from './hooks';
+import setToken from './utils/token-setter';
+import { setConfig } from './config';
 
 import Alert from './alert';
 import { AlertTokens } from './alert/type';
@@ -227,6 +228,6 @@ const Tokens: ThemeTokens = {
 };
 
 export type { TokenType };
-export { Token, setToken };
+export { Token, setToken, setConfig };
 
 export default Tokens;

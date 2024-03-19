@@ -266,14 +266,14 @@ const menuStyle: JsStyles<MenuClassType> = {
     alignItems: 'center',
     minWidth: 0,
     padding: `${token.menuTitlePaddingY} ${token.menuTitlePaddingX}`,
-    '$wrapperInline $childrenHasExpand $itemContentBack > &': {
+    '$wrapperInline $childrenHasExpand  $item:not($itemHasChildren)  $itemContentBack > &': {
       paddingRight: token.menuExpandWidth,
     },
     '$wrapperInline $itemHasChildren > $itemContentBack > &': {
       paddingRight: 0,
     },
 
-    '$childrenHasExpand > $item > $itemContentBack > &': {
+    '$childrenHasExpand > $item:not($itemHasChildren) > $itemContentBack > &': {
       paddingRight: token.menuExpandWidth,
     },
     '$childrenHasExpand $itemHasChildren > $itemContentBack > &': {

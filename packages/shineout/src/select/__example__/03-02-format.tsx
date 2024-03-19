@@ -24,6 +24,7 @@ export default () => {
           keygen
           placeholder='Select Color'
           renderItem={(d) => d}
+          clearable
         />
       </div>
       <Code value={value}></Code>

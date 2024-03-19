@@ -1,4 +1,4 @@
-export const prefix = 'soui';
+import { getConfig } from '../config';
 
 export function replaceNonAlphanumeric(str: string) {
   const nonAlphanumericRegEx = /[^a-z0-9]+/gi; // 匹配所有非字母和非数字字符
@@ -15,6 +15,8 @@ function camelCaseToDash(str: string) {
 }
 
 export const cssvar = (str: string, value: string, key: string, size?: string) => {
+  const { prefix } = getConfig();
+
   if (str.indexOf('Size-') > -1) {
     // 正则提取出Size-后面的数字
     const sizeReg = /Size-(\d+)/;
@@ -29,5 +31,7 @@ export const cssvar = (str: string, value: string, key: string, size?: string) =
   if (pxNum) {
     return `${Number(str.split('px')[0])}px`;
   }
-  return `var(--${prefix}-${camelCaseToDash(key)},var(--${prefix}-${replaceNonAlphanumeric(str)},${value}))`;
+  return `var(--${prefix}-${camelCaseToDash(key)},var(--${prefix}-${replaceNonAlphanumeric(
+    str,
+  )},${value}))`;
 };

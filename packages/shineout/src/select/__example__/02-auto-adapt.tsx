@@ -20,13 +20,7 @@ export default () => {
   ];
   return (
     <div>
-      <Select
-        width={300}
-        autoAdapt
-        data={data}
-        keygen
-        placeholder='Select Color'
-      />
+      <Select width={300} autoAdapt data={data} keygen placeholder='Select Color' clearable />
     </div>
   );
 };

@@ -377,9 +377,6 @@ if (typeof window !== 'undefined') {
   const link = document.createElement('style');
   link.innerHTML = css;
   document.head.appendChild(link);
-
-  const token = document.createElement('style');
-  token.setAttribute('data-token', 'shineout');
-  setToken({ target: token, selector: 'body' });
-  document.head.appendChild(token);
 }
+
+setToken({ onlyExtra: true, tokenName: 'shineout-extra' });

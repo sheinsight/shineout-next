@@ -19,6 +19,7 @@ export default () => {
         keygen
         placeholder='Select Color'
         compressed
+        clearable
       />
     </div>
   );

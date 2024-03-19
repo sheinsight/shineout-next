@@ -16,6 +16,5 @@ export interface ResultInputProps extends Pick<CommonType, 'style' | 'className'
   onRef: React.MutableRefObject<HTMLInputElement | undefined>;
   onBindInput?: (input: HTMLInputElement) => void;
   onInputBlur?: (text?: string) => void;
-  onResetFilter: () => void;
   onClearCreatedData: () => void;
 }

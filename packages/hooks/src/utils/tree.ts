@@ -27,7 +27,7 @@ export const getFlattenTree = <T>(
 
 export const getFilterTree = <DataItem, K extends (node: DataItem) => KeygenResult>(
   treeNodes: DataItem[] | undefined,
-  filterFunc: undefined | ((data: DataItem) => boolean),
+  filterFunc: undefined | void | ((data: DataItem) => boolean),
   filterExpandKeys: KeygenResult[] | undefined,
   keyFunc: K,
   childrenKey = 'children' as keyof DataItem,

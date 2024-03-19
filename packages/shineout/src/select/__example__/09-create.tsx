@@ -33,6 +33,7 @@ export default () => {
         height={250}
         keygen
         placeholder='Select Color'
+        clearable
       />
     </div>
   );

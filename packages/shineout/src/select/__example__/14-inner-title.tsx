@@ -11,12 +11,7 @@ export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   return (
     <div>
-      <Select
-        innerTitle='Select Color'
-        width={300}
-        data={data}
-        keygen
-      />
+      <Select innerTitle='Select Color' width={300} data={data} keygen clearable />
     </div>
   );
 };

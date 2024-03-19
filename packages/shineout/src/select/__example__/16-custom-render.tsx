@@ -35,11 +35,26 @@ export default () => {
 
   return (
     <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-      <Select header={addMore} width={300} data={data} keygen placeholder='Select Color' />
-      <Select footer={addMore} width={300} data={data} keygen placeholder='Select Color' />
+      <Select
+        header={addMore}
+        width={300}
+        data={data}
+        keygen
+        placeholder='Select Color'
+        clearable
+      />
+      <Select
+        footer={addMore}
+        width={300}
+        data={data}
+        keygen
+        placeholder='Select Color'
+        clearable
+      />
       <Select
         keygen
         width={300}
+        clearable
         data={data}
         placeholder='Select Color'
         renderOptionList={(s) => (

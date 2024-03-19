@@ -21,6 +21,7 @@ export default () => {
         keygen
         placeholder='Select Color'
         onFilter={handleFilter}
+        clearable
       />
     </div>
   );

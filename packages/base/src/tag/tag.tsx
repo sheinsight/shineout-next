@@ -25,8 +25,11 @@ const Tag = (props: TagProps) => {
     onKeyUp,
     onCompleted,
     onEnterPress,
+    closable,
     ...rest
   } = props;
+
+  const showClose = closable || onClose;
 
   const { dismiss, showInput, value, handleClose, handleClick, handleBlur, handleInputChange } =
     useTag({
@@ -36,6 +39,7 @@ const Tag = (props: TagProps) => {
       disabled,
       onCompleted,
       children,
+      closable
     });
 
   const modeSet = mode || 'bright';
@@ -96,7 +100,7 @@ const Tag = (props: TagProps) => {
   };
 
   const renderClose = () => {
-    if (!onClose) {
+    if (!showClose) {
       return null;
     }
 
