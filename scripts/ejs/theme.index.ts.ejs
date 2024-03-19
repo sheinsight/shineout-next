@@ -1,5 +1,7 @@
 import { Tokens as TokenType } from './token/type';
 import Token from './token/token';
+import setToken from './utils/token-setter';
+import { setConfig } from './config';
 
 <% const tokens = [] -%>
 <% files.forEach(function (file, i) { -%>
@@ -19,7 +21,7 @@ const Tokens: ThemeTokens = {
 };
 
 export type { TokenType };
-export { Token };
+export { Token, setToken, setConfig };
 
 export default Tokens;
 
