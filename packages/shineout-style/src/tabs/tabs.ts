@@ -544,6 +544,11 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active  $lineInner': {
           background: Token.tabsClickBackgroundColor,
         },
+
+        '&[data-soui-state="disabled"]': {
+          color: Token.tabsDisabledFontColor,
+          cursor: 'not-allowed',
+        },
       },
     },
     ['&[data-soui-shape="fill"]']: {
@@ -558,6 +563,13 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         },
       },
     },
+    '&[data-soui-shape="button"]': {
+      '& $tab': {
+        '&[data-soui-state="disabled"]': {
+          cursor: 'not-allowed',
+        },
+      }
+    }
   },
   button: {},
   line: {},

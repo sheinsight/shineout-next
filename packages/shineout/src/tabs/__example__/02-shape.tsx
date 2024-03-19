@@ -29,7 +29,7 @@ export default () => {
         <Tabs shape={shape as any} defaultActive={0}>
           {tabs.map((tab, index) => {
             return (
-              <Tabs.Panel key={index} tab={tab.title}>
+              <Tabs.Panel key={index} tab={tab.title} disabled>
                 <div style={{ padding: 16, height: '100%', fontSize: 14 }}>{tab.content}</div>
               </Tabs.Panel>
             );
