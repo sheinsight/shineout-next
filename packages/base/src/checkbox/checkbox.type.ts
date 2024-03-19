@@ -50,7 +50,7 @@ export interface SimpleCheckboxProps
   defaultChecked?: boolean | 'indeterminate';
   renderFooter?: (checked?: boolean) => React.ReactNode;
   /**
-   * @inner 内部属性
+   * @private 内部属性
    */
   theme?: 'dark';
 }

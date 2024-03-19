@@ -105,7 +105,16 @@ export interface SimpleInputProps
 
 export interface InputCommonProps<V> extends BaseTipProps {
   suffix?: SimpleInputProps['suffix'];
+  /**
+   * @en class of the outermost layer
+   * @cn 最外层class
+   */
   className?: SimpleInputProps['className'];
+  /**
+   * @en Prompt information
+   * @cn 提示信息
+   */
+  tip?: React.ReactNode;
   /**
    * @en get input dom element
    * @cn 获取input dom元素
@@ -163,6 +172,10 @@ export interface InputCommonProps<V> extends BaseTipProps {
    * @cn 宽度
    */
   width?: string | number;
+  /**
+   * @en custom style
+   * @cn 自定义样式
+   */
   style?: React.CSSProperties;
   /**
    * @en Infomation

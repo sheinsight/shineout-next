@@ -269,7 +269,7 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    */
   renderResult?: ObjectKey<DataItem> | ((data: DataItem, row: DataItem[]) => React.ReactNode);
   /**
-   * @inner 弹出位置
+   * @private 弹出位置
    */
   position?: 'drop-up' | 'drop-down';
   /**
@@ -288,7 +288,7 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    */
   placeholder?: string;
   /**
-   * @inner 内部属性
+   * @private 内部属性
    */
   trim?: boolean;
   /**

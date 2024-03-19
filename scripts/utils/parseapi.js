@@ -179,9 +179,9 @@ function parseApi(pack, filePath) {
       for (let jj = 0; jj < properties.length; jj++) {
         const property = properties[jj];
         const declarations1 = property.getDeclarations();
-        const sourceFile = declarations1[0].getSourceFile().getFilePath();
+        const sourceFiles = declarations1.map((d) => d.getSourceFile().getFilePath());
         // 过滤掉 @types/react 中的属性 这些是原生属性比如 input 的 autoComplete
-        if (sourceFile.includes('@types/react')) continue;
+        if (sourceFiles.every((s) => s.includes('@types/react'))) continue;
         const propertyJsDocTags = parseDocTag(
           declarations1
             .map((d) => d.getJsDocs())
