@@ -274,6 +274,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     boxShadow: token.selectPanelShadow,
     borderRadius: token.selectPanelRadius,
     transformOrigin: '0 0',
+    border: `1px solid ${token.selectPanelBorder}`,
   },
   clearable: {},
   clearIcon: {

@@ -50,6 +50,7 @@ const treeSelectTokens: TreeSelectTokens = {
   treeSelectPanelBackgroundColor: 'Neutral-fill-1',
   treeSelectPanelShadow: 'Shadow-2',
   treeSelectPanelRadius: 'Radius-4',
+  treeSelectPanelBorder: 'Neutral-border-1',
   treeSelectOptionHeight: 'Size-16',
   treeSelectOptionPaddingX: 'Padding-4',
   treeSelectOptionPaddingY: 'Padding-1',

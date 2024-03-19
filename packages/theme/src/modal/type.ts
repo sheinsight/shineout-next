@@ -34,10 +34,16 @@ export interface ModalTokens {
   modalPanelBackground: string;
   /**
    * @type {string}
-   * @token Shadow-2
+   * @token Shadow-3
    * @description 对话框面板阴影
    */
   modalPanelShadow: string;
+  /**
+   * @type {string}
+   * @token Neutral-border-1
+   * @description 对话框面板边框
+   */
+  modalPanelBorder: string;
   /**
    * @type {string}
    * @token Padding-16

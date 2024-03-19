@@ -262,6 +262,12 @@ export interface DatePickerTokens {
   datePickerPanelMargin: string;
   /**
    * @type {string}
+   * @token Neutral-border-1
+   * @description 日期选择器面板边框
+   */
+  datePickerPanelBorder: string;
+  /**
+   * @type {string}
    * @token 14/regular
    * @description 日期选择器面板头部字体字号
    */

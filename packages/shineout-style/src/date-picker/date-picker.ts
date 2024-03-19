@@ -182,6 +182,7 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     backgroundColor: token.datePickerPanelBackgroundColor,
     boxShadow: token.datePickerPanelShadow,
     borderRadius: token.datePickerPanelRadius,
+    border: `1px solid ${token.datePickerPanelBorder}`,
   },
   pickerBox: {
     display: 'flex',

@@ -113,6 +113,7 @@ const cascaderTokenExtraValue = {
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
     radius: 'Radius-4',
+    border: 'Neutral-border-1',
   },
   option: {
     height: 'Size-16',

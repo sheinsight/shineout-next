@@ -321,6 +321,7 @@ const modalStyle: JsStyles<ModalClassType> = {
     fontSize: token.modalPanelFontSize,
     boxSizing: 'border-box',
     boxShadow: token.modalPanelShadow,
+    border: `1px solid ${token.modalPanelBorder}`,
   },
   header: {
     display: 'flex',

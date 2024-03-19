@@ -23,7 +23,7 @@ const tooltipTokenExtraValue = {
   padding: { x: 'Padding-8', y: 'Padding-5' },
   border: { radius: 'Radius-2' },
   color: 'Neutral-text-1',
-  shadow: 'Shadow-1',
+  shadow: 'Shadow-2',
   background: { color: 'Neutral-fill-9' },
   light: {
     color: 'Neutral-text-5',

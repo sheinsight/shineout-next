@@ -47,6 +47,7 @@ const datePickerTokens: DatePickerTokens = {
   datePickerPanelShadow: 'Shadow-2',
   datePickerPanelRadius: 'Radius-4',
   datePickerPanelMargin: 'Margin-24',
+  datePickerPanelBorder: 'Neutral-border-1',
   datePickerPanelHeaderFontSize: '14/regular',
   datePickerPanelHeaderPaddingX: 'Padding-12',
   datePickerPanelHeaderPaddingY: 'Padding-8',

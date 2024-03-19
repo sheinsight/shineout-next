@@ -304,6 +304,12 @@ export interface CascaderTokens {
   cascaderPanelRadius: string;
   /**
    * @type {string}
+   * @token Neutral-border-1
+   * @description 级联选择器下拉面板边框
+   */
+  cascaderPanelBorder: string;
+  /**
+   * @type {string}
    * @token Size-16
    * @description 级联选择器选项高度
    */
