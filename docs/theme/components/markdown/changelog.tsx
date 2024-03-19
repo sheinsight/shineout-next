@@ -22,7 +22,6 @@ const Changelog = (props: Props) => {
   const changelogList = changelog[state.locales].reverse();
 
   const renderItem = (str: any) => {
-    console.log(str)
     const regex = /(.*?)(`.*?`|$)/g;
     const result = [];
     for (const [, part, span] of str.matchAll(regex)) {
@@ -44,18 +43,18 @@ const Changelog = (props: Props) => {
 
   const renderChanges = (type: string, changelogs: any = [], index: number) => {
     return (
-      <div key={index}>
+      <ul key={index}>
         <div className={style.changelogTypeTitle}>
           {changelogLocale[type as keyof typeof changelogLocale]}
         </div>
         {changelogs.map((item: any, i: number) => {
           return (
-            <div key={i} className={style.changelogItem}>
+            <li key={i} className={style.changelogItem}>
               {renderItem(item)}
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     );
   };
 
