@@ -44,6 +44,7 @@ export default () => {
         columns={4}
         placeholder='Select Color'
         renderItem={renderItem}
+        clearable
       />
       <Select
         multiple
@@ -55,6 +56,7 @@ export default () => {
         columns={4}
         placeholder='Select Color'
         renderItem={renderItem}
+        clearable
       />
     </div>
   );

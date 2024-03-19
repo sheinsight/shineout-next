@@ -38,6 +38,7 @@ export default () => {
       renderItem='value'
       style={{ width: 240 }}
       groupBy={groupBy}
+      clearable
     />
   );
 };

@@ -11,13 +11,14 @@ export default () => {
   const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet', 'pink'];
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, width: 624 }}>
-      <Select width={300} disabled data={data} keygen placeholder='Select Color' />
+      <Select width={300} disabled data={data} keygen placeholder='Select Color' clearable />
       <Select
         width={300}
         disabled={(d) => d === 'orange'}
         data={data}
         keygen
         placeholder='Select Color'
+        clearable
       />
       <Select
         compressed
@@ -28,6 +29,7 @@ export default () => {
         data={data}
         keygen
         placeholder='Select Color'
+        clearable
       />
       <Select
         multiple
@@ -38,6 +40,7 @@ export default () => {
         data={data}
         keygen
         placeholder='Select Color'
+        clearable
       />
     </div>
   );

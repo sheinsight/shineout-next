@@ -63,7 +63,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     showArrow = true,
     disabled,
     separator,
-    clearable = true,
+    clearable = false,
     beforeChange,
     compressed,
     compressedBound,

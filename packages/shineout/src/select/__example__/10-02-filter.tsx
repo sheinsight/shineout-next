@@ -56,6 +56,7 @@ export default () => {
         placeholder='Select Color'
         renderItem={renderItem}
         onFilter={handleFilter}
+        clearable
       />
     </div>
   );

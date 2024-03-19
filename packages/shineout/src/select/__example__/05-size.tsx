@@ -13,9 +13,16 @@ const data = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet'];
 export default () => {
   return (
     <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-      <Select width={240} size='small' placeholder='Select Color' data={data} keygen />
-      <Select width={240} placeholder='Select Color' data={data} keygen renderItem={(d) => d} />
-      <Select width={240} placeholder='Select Color' size='large' data={data} keygen />
+      <Select width={240} size='small' placeholder='Select Color' data={data} keygen clearable />
+      <Select
+        width={240}
+        placeholder='Select Color'
+        data={data}
+        keygen
+        renderItem={(d) => d}
+        clearable
+      />
+      <Select width={240} placeholder='Select Color' size='large' data={data} keygen clearable />
     </div>
   );
 };
