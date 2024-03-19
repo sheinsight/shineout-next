@@ -5,14 +5,14 @@ import {
 
 import { GetWithFieldProps } from '../hooks/use-field-common';
 
-/**
- * @title TreeSelect
- */
 export type BaseTreeSelectProps<DataItem, Value> = Omit<
   UnStyledTreeSelectProps<DataItem, Value>,
   'jssStyle'
 >;
 
+/**
+ * @title TreeSelect
+ */
 export type TreeSelectProps<DataItem, Value> = GetWithFieldProps<
   BaseTreeSelectProps<DataItem, Value>,
   Value
