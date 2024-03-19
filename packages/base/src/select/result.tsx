@@ -175,6 +175,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         size={size}
         style={{ opacity: more === index ? 0 : 1 }}
         className={classNames(styles.tag, resultClassName)}
+        closable='only'
         onClose={closeable && handleClose}
         onClick={handleClick}
         jssStyle={jssStyle as any}

@@ -218,10 +218,8 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
               raws.splice(j, 1);
               continue outer;
             }
-            if (j === raws.length - 1) {
-              result.push({ IS_NOT_MATCHED_VALUE: true, value: values[i] });
-            }
           }
+          result.push({ IS_NOT_MATCHED_VALUE: true, value: values[i] });
         }
       }
 

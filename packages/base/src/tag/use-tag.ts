@@ -9,7 +9,7 @@ const Pendding = 1;
 const { isEmpty, isPromise, isString, isFunc } = util;
 
 const useTag = (props: BaseTagProps) => {
-  const { onClose, disabled, onCompleted, onClick, children } = props;
+  const { onClose, disabled, onCompleted, onClick, children, closable } = props;
 
   const [dismiss, setDismiss] = useState(Finish);
   const [showInput, setShowInput] = useState(false);
@@ -33,6 +33,10 @@ const useTag = (props: BaseTagProps) => {
 
   const handleDismiss = (e: React.MouseEvent<HTMLDivElement>) => {
     let callback;
+    if (closable === 'only') {
+      onClick?.(e);
+      return
+    }
     if (onClose === true) {
       setDismiss(Done);
       return;
