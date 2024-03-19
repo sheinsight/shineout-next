@@ -6,9 +6,6 @@ import {
 } from '@sheinx/base';
 import { GetWithFieldProps } from '../hooks/use-field-common';
 
-/**
- * @title Select
- */
 export type SelectPropsComponent<DataItem, Value> = Omit<
   UnStyledSelectProps<DataItem, Value>,
   'jssStyle'
@@ -19,6 +16,11 @@ export type SelectPropsComponentA<DataItem, Value> = Omit<
 >;
 export type SelectPropsComponentB<DataItem, Value> = Omit<
   UnStyledSelectPropsB<DataItem, Value>,
+  'jssStyle'
+>;
+
+export type SelectPropsBaseComp<DataItem, Value> = Omit<
+  UnStyledSelectPropsBase<DataItem, Value>,
   'jssStyle'
 >;
 
@@ -37,7 +39,10 @@ export type SelectPropsB<DataItem, Value> = GetWithFieldProps<
   SelectPropsComponentB<DataItem, Value>['value']
 >;
 
+/**
+ * @title Select
+ */
 export type SelectPropsBase<DataItem, Value> = GetWithFieldProps<
-  UnStyledSelectPropsBase<DataItem, Value>,
-  UnStyledSelectPropsBase<DataItem, Value>['value']
+  SelectPropsBaseComp<DataItem, Value>,
+  SelectPropsBaseComp<DataItem, Value>['value']
 >;
