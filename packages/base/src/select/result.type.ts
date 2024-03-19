@@ -40,9 +40,8 @@ export interface ResultProps<DataItem, Value>
   renderResultContent?: (props: any) => React.ReactNode;
   setInputText: (text: string) => void;
   onCreate?: (text: string) => string | DataItem | undefined;
-  onFilter?: (text: string) => void;
+  onFilter?: (text: string, form?: string) => void;
   onInputBlur?: (text?: string) => void;
-  onResetFilter: () => void;
   // crud
   onClearCreatedData?: () => void;
   getDataByValues: (values: Value) => (DataItem | UnMatchedData)[];

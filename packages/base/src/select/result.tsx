@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, KeygenResult } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
@@ -37,7 +37,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onRef,
     onFilter,
     onInputBlur,
-    onResetFilter,
     onClearCreatedData,
     // crud
     getDataByValues,
@@ -53,6 +52,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const shouldResetMore = useRef(false);
   const prevMore = useRef(more);
   const showInput = allowOnFilter && focus;
+  const mounted = useRef(false);
 
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootClass = classNames(
@@ -96,7 +96,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           inputText={inputText}
           onChange={onFilter!}
           onInputBlur={onInputBlur}
-          onResetFilter={onResetFilter}
           onClearCreatedData={onClearCreatedData!}
         ></Input>
       </React.Fragment>
@@ -303,17 +302,24 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       const result = getDataByValues(value);
       // 获取合法的 content
       const content = renderResultContent(result[0]);
-      // 仅在关闭下拉框时，将输入框的值设置为合法的选中的值
-      if (!isEmpty(content)) {
+      // 仅在打开拉框时，将输入框的值设置为合法的选中的值
+      if (focus && !isEmpty(content)) {
         setInputText(content as string);
       }
     }
+    if (!focus && mounted.current) {
+      onFilter?.('', 'blur');
+    }
+    mounted.current = true;
+  }, [focus]);
+
+  useEffect(() => {
+    if (!focus) return;
     if (!resultRef.current) return;
     if (!compressed) return;
     if (isCompressedBound()) return;
-
     handleResetMore();
-  }, [value, focus]);
+  }, [valueProp, focus]);
 
   useEffect(() => {
     if (!compressed) return;
@@ -339,7 +345,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         setMore(newMore);
       }
     }
-  }, [value, more]);
+  }, [valueProp, more]);
 
   useEffect(() => {
     if (!resultRef.current) return;

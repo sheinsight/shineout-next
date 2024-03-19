@@ -17,7 +17,6 @@ const ResultInput = (props: ResultInputProps) => {
     onChange,
     onBindInput,
     onInputBlur,
-    onResetFilter,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const mirrorRef = useRef<HTMLSpanElement>(null);
@@ -54,8 +53,7 @@ const ResultInput = (props: ResultInputProps) => {
 
   // 聚焦时重置 filter
   useEffect(() => {
-    onResetFilter();
-
+    
     if (!focus) return;
     if (inputRef.current) {
       inputRef.current.focus();

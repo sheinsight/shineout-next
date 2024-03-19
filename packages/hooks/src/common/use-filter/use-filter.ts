@@ -57,7 +57,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
         filterExpandedKeys,
         (node: DataItem) => getKey(keygen, node),
         childrenKey,
-        showHitDescendants,
+        !!showHitDescendants,
         firstMatch ? getFirstMatchNode : undefined,
         { advanced: !!onAdvancedFilter },
       ) as DataItem[];
@@ -77,7 +77,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     return createFn?.(text);
   };
 
-  const handleFilter = (text: string) => {
+  const handleFilter = (text: string, from: string = 'edit') => {
     setInputText(text);
 
     firstMatchNode.current = null;
@@ -95,7 +95,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
       setFilterFunc(undefined);
       handleClearCreatedData();
       // 没有 text 时触发一次 onFilter 以便外部重置数据
-      if (onFilter) onFilter(text);
+      if (onFilter) onFilter(text, from);
       return;
     }
 
@@ -108,7 +108,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
 
     setFilterText(text);
 
-    const next = onFilter(text);
+    const next = onFilter(text, from);
 
     if (!isFunc(next)) return;
 
@@ -123,9 +123,9 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     setFilterData(nextData);
   };
 
-  const handleResetData = () => {
-    setFilterData(data);
-  };
+  // const handleResetData = () => {
+  //   handleFilter('');
+  // };
 
   useEffect(() => {
     if (data) setFilterData(data);
@@ -156,7 +156,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     filterFunc,
     onCreate: onCreate ? handleCreate : undefined,
     onFilter: onFilter || onCreate ? handleFilter : undefined,
-    onResetFilter: handleResetData,
+    // onResetFilter: handleResetData,
     onClearCreatedData: handleClearCreatedData,
   };
 };
