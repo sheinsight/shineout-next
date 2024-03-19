@@ -54,6 +54,7 @@ const cascaderTokens: CascaderTokens = {
   cascaderPanelBackgroundColor: 'Neutral-fill-1',
   cascaderPanelShadow: 'Shadow-2',
   cascaderPanelRadius: 'Radius-4',
+  cascaderPanelBorder: 'Neutral-border-1',
   cascaderOptionHeight: 'Size-16',
   cascaderOptionPaddingX: 'Padding-4',
   cascaderOptionPaddingY: 'Padding-1',

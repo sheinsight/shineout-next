@@ -51,6 +51,7 @@ const selectTokens: SelectTokens = {
   selectPanelBackgroundColor: 'Neutral-fill-1',
   selectPanelShadow: 'Shadow-2',
   selectPanelRadius: 'Radius-4',
+  selectPanelBorder: 'Neutral-border-1',
   selectOptionHeight: 'Size-16',
   selectOptionPaddingX: 'Padding-4',
   selectOptionPaddingY: 'Padding-1',

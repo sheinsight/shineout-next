@@ -280,6 +280,12 @@ export interface TreeSelectTokens {
   treeSelectPanelRadius: string;
   /**
    * @type {string}
+   * @token Neutral-border-1
+   * @description 树选择器下拉面板的边框
+   */
+  treeSelectPanelBorder: string;
+  /**
+   * @type {string}
    * @token Size-16
    * @description 树选择器选项高度
    */

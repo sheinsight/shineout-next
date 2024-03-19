@@ -286,6 +286,12 @@ export interface SelectTokens {
   selectPanelRadius: string;
   /**
    * @type {string}
+   * @token Neutral-border-1
+   * @description 选择器下拉面板的边框
+   */
+  selectPanelBorder: string;
+  /**
+   * @type {string}
    * @token Size-16
    * @description 选择器选项高度
    */

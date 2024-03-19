@@ -34,7 +34,7 @@ export interface TooltipTokens {
   tooltipColor: string;
   /**
    * @type {string}
-   * @token Shadow-1
+   * @token Shadow-2
    * @description 文字提示阴影
    */
   tooltipShadow: string;

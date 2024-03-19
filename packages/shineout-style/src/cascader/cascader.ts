@@ -271,6 +271,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     position: 'absolute',
     backgroundColor: token.cascaderPanelBackgroundColor,
     boxShadow: token.cascaderPanelShadow,
+    border: `1px solid ${token.cascaderPanelBorder}`,
     borderRadius: token.cascaderPanelRadius,
     transformOrigin: '0 0',
   },

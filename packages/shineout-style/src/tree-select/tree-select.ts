@@ -234,6 +234,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     position: 'absolute',
     backgroundColor: token.treeSelectPanelBackgroundColor,
     boxShadow: token.treeSelectPanelShadow,
+    border: `1px solid ${token.treeSelectPanelBorder}`,
     borderRadius: token.treeSelectPanelRadius,
     transformOrigin: '0 0',
     width: 'max-content',

@@ -9,7 +9,7 @@ const tooltipTokens: TooltipTokens = {
   tooltipPaddingY: 'Padding-5',
   tooltipBorderRadius: 'Radius-2',
   tooltipColor: 'Neutral-text-1',
-  tooltipShadow: 'Shadow-1',
+  tooltipShadow: 'Shadow-2',
   tooltipBackgroundColor: 'Neutral-fill-9',
   tooltipLightColor: 'Neutral-text-5',
   tooltipLightBackgroundColor: 'Neutral-fill-1',
