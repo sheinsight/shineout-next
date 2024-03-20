@@ -128,7 +128,7 @@ const useDatePickerFormat = <Value extends DatePickerValueType>(
     (
       arg: React.SetStateAction<Date[]>,
       type: string,
-      quick: { name: string; value: any } | undefined,
+      quick: { name: React.ReactNode; value: any } | undefined,
     ) => {
       setCurrentArr(arg);
       setParams({ type, quick });

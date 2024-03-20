@@ -9,4 +9,5 @@ export interface QuickProps {
   setCurrentArr: PickerProps['setCurrentArr'];
   range: PickerProps['range'];
   options: PickerProps['options'];
+  children?: PickerProps['children'];
 }
