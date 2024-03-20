@@ -59,4 +59,5 @@ export interface BaseSelectProps<DataItem, Value> {
    * @cn 分组
    */
   groupBy?: (item: DataItem, index?: number, data?: DataItem[]) => string;
+  filterSameChange?: boolean;
 }

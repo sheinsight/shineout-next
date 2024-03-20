@@ -7,4 +7,5 @@ export interface InputAbleProps<T, V extends ChangeType<T>> {
   control: boolean;
   // 延迟时间
   delay?: number;
+  filterSameChange?: boolean;
 }

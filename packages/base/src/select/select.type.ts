@@ -134,7 +134,7 @@ export interface BaseListProps<DataItem, Value>
 
 export interface SelectPropsBase<DataItem, Value>
   extends Omit<BaseSelectProps<DataItem, Value>, 'control'>,
-    Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
+    Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'filterSameChange'>,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
     BaseTipProps {
   jssStyle?: JssStyleType;

@@ -39,6 +39,12 @@ export interface CommonType {
    * @en style type
    */
   iconType: 'success' | 'info' | 'warning' | 'danger' | 'confirmwarning' | 'error' | 'confirm';
+  /**
+   * @en onChange is not triggered when two selected values are the same
+   * @cn 当两次选择的值相同时不触发 onChange
+   * @default false
+   */
+  filterSameChange?: boolean;
 }
 
 export interface CommonChangeType<T> {
