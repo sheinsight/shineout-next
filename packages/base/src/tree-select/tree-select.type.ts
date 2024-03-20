@@ -100,7 +100,10 @@ export interface ComponentRef<DataItem, Value> {
 }
 
 export interface TreeSelectProps<DataItem, Value>
-  extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
+  extends Pick<
+      CommonType,
+      'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'filterSameChange'
+    >,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
     BaseTipProps {
   /**

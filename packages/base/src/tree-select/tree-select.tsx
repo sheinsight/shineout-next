@@ -82,6 +82,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onChangeAddition,
     onEnterExpand,
     onExpand,
+    filterSameChange,
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -98,6 +99,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onChange: onChangeProp,
     defaultValue,
     control: 'value' in props,
+    filterSameChange: filterSameChange,
   });
 
   const {
@@ -108,7 +110,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     rawData,
     setInputText,
     onFilter,
-    onResetFilter,
     onClearCreatedData,
   } = useFilter({
     treeData: data,
@@ -444,7 +445,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           setInputText={setInputText}
           onFilter={handleFilter}
           onRef={inputRef}
-          onResetFilter={onResetFilter}
           checkUnMatched={checkUnMatched}
           onClearCreatedData={onClearCreatedData}
           getDataByValues={getDataByValues}
@@ -572,7 +572,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       <AbsoluteList
         adjust
         focus={open}
-        fixedWidth="min"
+        fixedWidth='min'
         absolute={props.absolute}
         zIndex={props.zIndex}
         position={position}
