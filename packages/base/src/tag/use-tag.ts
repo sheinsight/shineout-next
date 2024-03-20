@@ -34,8 +34,8 @@ const useTag = (props: BaseTagProps) => {
   const handleDismiss = (e: React.MouseEvent<HTMLDivElement>) => {
     let callback;
     if (closable === 'only') {
-      onClick?.(e);
-      return
+      if (isFunc(onClose)) onClose(e);
+      return;
     }
     if (onClose === true) {
       setDismiss(Done);
