@@ -3,6 +3,7 @@ import Scroll from '../virtual-scroll/scroll';
 import classNames from 'classnames';
 import Spin from '../spin';
 import Pagination, { PaginationProps } from '../pagination';
+import AbsoluteContext from '../absolute-list/absolute-context';
 import Empty from '../empty';
 import {
   useTableLayout,
@@ -492,9 +493,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         style={{ height: props.height, ...props.style }}
         {...selection.getTableProps()}
       >
-        {renderTable()}
-        {renderLoading()}
-        {props.children}
+        <AbsoluteContext.Provider value={true}>
+          {renderTable()}
+          {renderLoading()}
+          {props.children}
+        </AbsoluteContext.Provider>
       </div>
       {renderPagination()}
     </>
