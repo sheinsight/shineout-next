@@ -97,11 +97,6 @@ export interface ButtonBaseProps
    * @cn 自定义loading
    */
   renderLoading?: (buttonEl: React.ReactNode) => React.ReactElement;
-  /**
-   * @en Customize the inner wrapper
-   * @cn 自定义内部包裹
-   */
-  renderInnerWrapper?: (innerWrapperEl: React.ReactNode) => React.ReactElement;
 }
 
 export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className' | 'size'> {

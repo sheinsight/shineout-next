@@ -22,7 +22,7 @@ const Button = (props: ButtonProps) => {
     target,
     mode: modeProp,
     htmlType: htmlTypeProp = 'button',
-    renderInnerWrapper,
+    // renderInnerWrapper,
     renderLoading,
     ...rest
   } = props;
@@ -81,9 +81,9 @@ const Button = (props: ButtonProps) => {
 
   let buttonInnerEl: React.ReactNode = childrenEl;
 
-  if (typeof renderInnerWrapper === 'function') {
-    buttonInnerEl = renderInnerWrapper(childrenEl);
-  }
+  // if (typeof renderInnerWrapper === 'function') {
+  //   buttonInnerEl = renderInnerWrapper(childrenEl);
+  // }
 
   let loadingEl: React.ReactNode = (
     <div className={buttonStyle.spin}>
