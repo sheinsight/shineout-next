@@ -61,7 +61,7 @@ const Scroll = (props: ScrollProps) => {
     } else {
       target.scrollTop += delta;
     }
-    let newOffset = offset + delta / length;
+    let newOffset = offset + delta / (scrollLength - length);
     if (newOffset < 0) newOffset = 0;
     if (newOffset > 1) newOffset = 1;
     setScroll(newOffset);
