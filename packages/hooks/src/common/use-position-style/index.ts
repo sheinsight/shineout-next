@@ -102,6 +102,23 @@ export const usePositionStyle = (config: PositionStyleConfig) => {
         newPosition = newPosition.replace('bottom', 'top') as VerticalPosition;
       }
     }
+    if (!absolute) {
+      const winWidth = docSize.width;
+      const horizontalPoint = context.parentRect.left + context.parentRect.width / 2;
+      if (newPosition.endsWith('right')) {
+        if (horizontalPoint / winWidth < 0.5 && context.parentRect.right - context.popUpWidth < 0) {
+          newPosition = newPosition.replace('right', 'left') as VerticalPosition;
+        }
+      } else {
+        if (
+          horizontalPoint / winWidth > 0.5 &&
+          context.parentRect.left + context.popUpWidth > winWidth
+        ) {
+          newPosition = newPosition.replace('left', 'right') as VerticalPosition;
+        }
+      }
+    }
+
     return newPosition;
   };
 
