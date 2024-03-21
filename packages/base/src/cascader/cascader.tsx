@@ -79,6 +79,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     onFilter: onFilterProp,
     onCollapse: onCollapseProp,
     size,
+    filterSameChange,
   } = props;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
@@ -102,7 +103,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     setFilterText,
     filterFunc,
     onFilter,
-    onResetFilter,
   } = useFilter({
     treeData: data,
     keygen,
@@ -126,6 +126,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     childrenKey,
     value: valueProp,
     onChange: onChangeProp,
+    filterSameChange,
   });
 
   const onCollapse = usePersistFn((collapse: boolean) => {
@@ -453,7 +454,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           onFilter={handleFilter}
           onRef={inputRef}
           onRemove={handleRemove}
-          onResetFilter={onResetFilter}
           onResultItemClick={handleResultItemClick}
           checkUnMatched={checkUnMatched}
           getDataByValues={getDataByValues as any}

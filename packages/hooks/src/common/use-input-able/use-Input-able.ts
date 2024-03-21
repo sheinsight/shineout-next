@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { isFunc } from '../../utils';
+import { isFunc } from '../../utils/is';
+import { shallowEqual } from '../../utils/shallow-equal';
 import usePersistFn from '../use-persist-fn';
 import { useLatestObj } from '../use-latest-obj';
 import { useRender } from '../use-render';
@@ -50,6 +51,9 @@ export default function useInputAble<T, V extends ChangeType<T>>(props: InputAbl
 
   const handleChange = usePersistFn((v: T, ...other: any[]) => {
     let vv = v;
+    if (other.length === 0 || props.filterSameChange) {
+      if (shallowEqual(v, value)) return;
+    }
     if (isFunc(beforeChange)) {
       const temp = beforeChange(v);
       vv = temp === undefined ? vv : temp;

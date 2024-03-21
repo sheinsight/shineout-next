@@ -93,6 +93,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onCollapse: onCollapseProp,
     onEnterExpand,
     onFilterWidthCreate,
+    filterSameChange,
   } = props;
 
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -147,6 +148,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     prediction,
     beforeChange,
     onChange,
+    filterSameChange,
   });
 
   const checkEmpty = () => {

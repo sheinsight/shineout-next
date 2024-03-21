@@ -5,7 +5,7 @@ import { dateUtil, util } from '@sheinx/hooks';
 import classNames from 'classnames';
 
 const Quick = (props: QuickProps) => {
-  const { jssStyle, quickSelect, format, options } = props;
+  const { jssStyle, quickSelect, format, options, children } = props;
   const styles = jssStyle?.datePicker?.();
 
   const handleClick = (item: QuickSelectType) => {
@@ -22,6 +22,9 @@ const Quick = (props: QuickProps) => {
     props.setDateArr(dateArr);
     props.setCurrentArr(dateArr, 'quick', item);
   };
+  if (!quickSelect?.length) {
+    return (children || null) as React.ReactElement;
+  }
   return (
     <div className={classNames(styles?.quickPicker, styles?.picker)}>
       {quickSelect?.map((item, index) => {

@@ -88,7 +88,10 @@ export type JssStyleType = {
 };
 
 export interface CascaderProps<DataItem, Value extends KeygenResult[]>
-  extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
+  extends Pick<
+      CommonType,
+      'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'filterSameChange'
+    >,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
     BaseTipProps {
   jssStyle?: JssStyleType;

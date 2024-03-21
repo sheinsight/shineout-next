@@ -18,6 +18,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     prediction,
     value: valueProp,
     onChange: onChangeProp,
+    filterSameChange,
   } = props;
 
   const { value, onChange } = useInputAble({
@@ -26,6 +27,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     defaultValue,
     beforeChange,
     onChange: onChangeProp,
+    filterSameChange,
   });
 
   const datum = useListSelect({
