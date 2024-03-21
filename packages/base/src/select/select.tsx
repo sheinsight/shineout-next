@@ -52,6 +52,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     style,
     multiple,
     loading,
+    convertBr,
     keygen,
     focusSelected = true,
     optionWidth,
@@ -69,6 +70,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     compressedBound,
     compressedClassName,
     placeholder,
+    emptyAfterSelect,
     autoAdapt,
     groupBy,
     renderItem: renderItemProp = (d) => d as ReactNode,
@@ -495,6 +497,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           keygen={keygen}
           disabled={disabled}
           maxLength={maxLength}
+          convertBr={convertBr}
           compressed={compressed}
           compressedBound={compressedBound}
           compressedClassName={compressedClassName}
@@ -557,6 +560,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       columnsTitle,
       columnWidth,
       itemsInView,
+      emptyAfterSelect,
       renderItem,
       controlType,
       onControlTypeChange: setControlType,

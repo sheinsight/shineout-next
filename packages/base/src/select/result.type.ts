@@ -52,4 +52,5 @@ export interface ResultProps<DataItem, Value>
     item: DataItem,
     index?: number,
   ) => void;
+  convertBr?: string | ((text: string) => string);
 }

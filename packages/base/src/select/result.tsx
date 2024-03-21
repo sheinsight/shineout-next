@@ -34,6 +34,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     renderResultContent: renderResultContentProp,
     allowOnFilter,
     setInputText,
+    convertBr,
     onRef,
     onFilter,
     onInputBlur,
@@ -95,6 +96,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           onRef={onRef}
           inputText={inputText}
           onChange={onFilter!}
+          convertBr={convertBr}
           onInputBlur={onInputBlur}
           onClearCreatedData={onClearCreatedData!}
         ></Input>
