@@ -73,12 +73,14 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     position: positionProp = 'bottom-left',
     absolute,
     zIndex,
+    getComponentRef,
     onFocus,
     onBlur,
     onChange: onChangeProp,
     onFilter: onFilterProp,
     onCollapse: onCollapseProp,
     size,
+    filterSameChange,
   } = props;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
@@ -102,7 +104,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     setFilterText,
     filterFunc,
     onFilter,
-    onResetFilter,
   } = useFilter({
     treeData: data,
     keygen,
@@ -126,6 +127,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     childrenKey,
     value: valueProp,
     onChange: onChangeProp,
+    filterSameChange,
   });
 
   const onCollapse = usePersistFn((collapse: boolean) => {
@@ -453,7 +455,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           onFilter={handleFilter}
           onRef={inputRef}
           onRemove={handleRemove}
-          onResetFilter={onResetFilter}
           onResultItemClick={handleResultItemClick}
           checkUnMatched={checkUnMatched}
           getDataByValues={getDataByValues as any}
@@ -628,6 +629,19 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   useEffect(() => {
     updatePathByValue();
+
+    // 注册 close 事件
+    if (getComponentRef) {
+      const componentRef = {
+        close: closePop,
+      };
+      if (util.isFunc(getComponentRef)) {
+        getComponentRef(componentRef);
+      } else {
+        getComponentRef.current = componentRef;
+      }
+    }
+
     if (mode !== undefined && loader && [0, 1, 2].includes(mode)) {
       console.error(
         new Error(`The mode ${mode} is not supported when loader setted. Only 3 or 4 can be set.`),

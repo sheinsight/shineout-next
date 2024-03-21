@@ -12,6 +12,7 @@ export interface PickerProps {
   hourStep?: DatePickerProps<any>['hourStep'];
   minuteStep?: DatePickerProps<any>['minuteStep'];
   secondStep?: DatePickerProps<any>['secondStep'];
+  children?: DatePickerProps<any>['children'];
   format: string;
   type: string;
   dateArr: Array<Date | undefined>;
@@ -23,7 +24,7 @@ export interface PickerProps {
     type: string,
     quick:
       | {
-          name: string;
+          name: React.ReactNode;
           value: any;
         }
       | undefined,
@@ -48,7 +49,7 @@ export interface PickerProps {
 export interface CommonPickerProps
   extends Pick<
     PickerProps,
-    'jssStyle' | 'options' | 'format' | 'type' | 'showSelNow' | 'registerModeDisabled'
+    'jssStyle' | 'options' | 'format' | 'type' | 'showSelNow' | 'registerModeDisabled' | 'children'
   > {
   rangeDate: Array<Date | undefined>;
   current: Date;

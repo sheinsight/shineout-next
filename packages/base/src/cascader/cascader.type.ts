@@ -87,8 +87,19 @@ export type JssStyleType = {
   cascader?: () => CascaderClasses;
 };
 
+export interface CascaderRef {
+  /**
+   * @en Close the drop-down box
+   * @cn 关闭下拉框
+   */
+  close: (e?: MouseEvent) => void;
+}
+
 export interface CascaderProps<DataItem, Value extends KeygenResult[]>
-  extends Pick<CommonType, 'className' | 'style' | 'size' | 'status' | 'innerTitle'>,
+  extends Pick<
+      CommonType,
+      'className' | 'style' | 'size' | 'status' | 'innerTitle' | 'filterSameChange'
+    >,
     Pick<AbsoluteListProps, 'absolute' | 'zIndex'>,
     BaseTipProps {
   jssStyle?: JssStyleType;
@@ -337,4 +348,10 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @default false
    */
   hideTag?: boolean;
+  /**
+   *  @en A reference to the binding component, you can call some component methods
+   *  @cn 绑定组件的引用, 可以调用某些组件的方法
+   *
+   */
+  getCascaderRef?: ((comp: CascaderRef) => void) | { current: CascaderRef | undefined };
 }

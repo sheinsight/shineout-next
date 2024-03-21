@@ -40,7 +40,6 @@ export interface ButtonJssStyle {
 }
 
 export interface ButtonItemProps extends Pick<CommonType, 'style' | 'className'> {
-
   /**
    * @en The type of the button
    * @cn 按钮类型
@@ -140,6 +139,7 @@ export interface ButtonGroupProps extends Pick<CommonType, 'style' | 'className'
    * @default index
    */
   children: React.ReactNode;
+
   jssStyle?: ButtonJssStyle;
 }
 

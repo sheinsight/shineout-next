@@ -271,7 +271,9 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
             minuteStep={props.minuteStep}
             secondStep={props.secondStep}
             registerModeDisabled={func.registerModeDisabled}
-          />
+          >
+            {props.children}
+          </Picker>
         </AnimationList>
       </AbsoluteList>
     </div>

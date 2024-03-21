@@ -136,7 +136,8 @@ export interface BaseFormProps<T> extends FormCommonConfig {
    */
   scrollToError?: boolean | number;
   /**
-   * @private 内部属性
+   * @en rules validation callback
+   * @cn rules 校验回调
    */
   onError?: (error: Error) => void;
   /**

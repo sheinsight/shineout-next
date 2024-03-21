@@ -1,12 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { usePositionStyle, util } from '@sheinx/hooks';
 import ReactDOM from 'react-dom';
 import { AbsoluteListProps } from './absolute-list.type';
 import useContainer from './use-container';
+import AbsoluteContext from './absolute-context';
 
 const AbsoluteList = (props: AbsoluteListProps) => {
   const {
-    absolute,
     position,
     children,
     parentElRef,
@@ -20,6 +20,9 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     adjust,
     destroy = false,
   } = props;
+
+  const defaultAbsolute = useContext(AbsoluteContext);
+  const absolute = props.absolute === undefined ? defaultAbsolute : props.absolute;
 
   const { getRoot } = useContainer({
     container: typeof absolute === 'function' ? absolute : undefined,

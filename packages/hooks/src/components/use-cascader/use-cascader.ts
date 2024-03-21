@@ -17,6 +17,7 @@ const useCascader = <DataItem, Value extends KeygenResult[]>(
     beforeChange,
     value: valueProp,
     onChange: onChangeProp,
+    filterSameChange,
   } = props;
 
   const { value, onChange } = useInputAble({
@@ -25,6 +26,7 @@ const useCascader = <DataItem, Value extends KeygenResult[]>(
     defaultValue,
     beforeChange,
     onChange: onChangeProp,
+    filterSameChange,
   });
   const { datum } = useTree({
     value,

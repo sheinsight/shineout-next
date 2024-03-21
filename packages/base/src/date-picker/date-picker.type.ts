@@ -115,6 +115,12 @@ export interface DatePickerProps<Value extends DatePickerValueType>
   jssStyle?: DatePickerJssStyle;
 
   /**
+   * @en extra children
+   * @cn 额外渲染的节点
+   */
+  children?: React.ReactNode;
+
+  /**
    * @en When the value is true, disabled all options; When the value is function, disable the options that this function returns true.
    * @cn 如果 disabled 为 true，禁用全部选项，如果 disabled 为函数，根据函数反回结果禁用选项
    * @default false

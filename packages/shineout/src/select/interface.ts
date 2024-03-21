@@ -1,1 +1,1 @@
-export type { SelectProps as Props } from './select.type';
+export type { SelectPropsBaseComp as Props } from './select.type';

@@ -103,13 +103,8 @@ export interface SimpleInputProps
   hasSuffix?: boolean;
 }
 
-export interface InputCommonProps<V> extends BaseTipProps {
+export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'className' | 'style'> {
   suffix?: SimpleInputProps['suffix'];
-  /**
-   * @en class of the outermost layer
-   * @cn 最外层class
-   */
-  className?: SimpleInputProps['className'];
   /**
    * @en Prompt information
    * @cn 提示信息
@@ -173,11 +168,6 @@ export interface InputCommonProps<V> extends BaseTipProps {
    */
   width?: string | number;
   /**
-   * @en custom style
-   * @cn 自定义样式
-   */
-  style?: React.CSSProperties;
-  /**
    * @en Infomation
    * @cn 提示信息
    * @override number | ((value: string | undefined) => string)
@@ -220,9 +210,10 @@ export type GetCommonProps<Props, V> = Omit<
   | 'addEnd'
   | 'hasSuffix'
   | 'onFocusedChange'
+  | 'showClear'
 > &
   InputCommonProps<V>;
 
 export interface InputProps
   extends GetCommonProps<SimpleInputProps, string | undefined>,
-    Omit<InputFormatProps, 'value' | 'onChange'> {}
+    Omit<InputFormatProps, 'value' | 'onChange' | 'cancelBlurChange'> {}

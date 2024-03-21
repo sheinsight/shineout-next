@@ -43,7 +43,7 @@ const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) 
     className,
     onClick,
     loader,
-    onRef,
+    getDatum,
     onDrop,
     onExpand: onExpandProp,
     onChange,
@@ -198,7 +198,7 @@ const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) 
   }, [value]);
 
   useEffect(() => {
-    if (onRef) onRef(datum);
+    if (getDatum) getDatum(datum);
   }, []);
 
   return (

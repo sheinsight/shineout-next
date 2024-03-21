@@ -114,7 +114,7 @@ const Picker = (props: PickerProps) => {
 
   return (
     <div className={styles?.pickerBox}>
-      {props.quickSelect?.length && (
+      {
         <Quick
           quickSelect={props.quickSelect}
           range={props.range}
@@ -124,8 +124,10 @@ const Picker = (props: PickerProps) => {
           setCurrentArr={props.setCurrentArr}
           format={props.format}
           options={props.options}
-        />
-      )}
+        >
+          {props.children}
+        </Quick>
+      }
       {range
         ? ['start', 'end'].map((item) => {
             return renderPicker(item as 'start' | 'end');
