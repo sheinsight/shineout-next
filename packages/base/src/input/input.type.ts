@@ -210,9 +210,10 @@ export type GetCommonProps<Props, V> = Omit<
   | 'addEnd'
   | 'hasSuffix'
   | 'onFocusedChange'
+  | 'showClear'
 > &
   InputCommonProps<V>;
 
 export interface InputProps
   extends GetCommonProps<SimpleInputProps, string | undefined>,
-    Omit<InputFormatProps, 'value' | 'onChange'> {}
+    Omit<InputFormatProps, 'value' | 'onChange' | 'cancelBlurChange'> {}

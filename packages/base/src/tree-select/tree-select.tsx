@@ -520,7 +520,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       <div className={classNames(styles.tree)} style={{ maxHeight: height }}>
         <Tree
           jssStyle={jssStyle}
-          onRef={bindTreeDatum}
+          getDatum={bindTreeDatum}
           renderItem={renderItem}
           {...treeProps}
           line={line}

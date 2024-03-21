@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Tree as UnStyledButton } from '@sheinx/base';
+import { Tree as UnStyledTree } from '@sheinx/base';
 import { useTreeStyle, useSpinStyle, useCheckboxStyle } from '@sheinx/shineout-style';
 import { TreeProps } from './tree.type';
 
@@ -11,7 +11,7 @@ const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) 
     () => ({ tree: treeStyle, spin: spinStyle, checkbox: checkboxStyle }),
     [treeStyle, spinStyle],
   );
-  return <UnStyledButton {...props} jssStyle={jssStyle}></UnStyledButton>;
+  return <UnStyledTree {...props} jssStyle={jssStyle}></UnStyledTree>;
 };
 
 Tree.displayName = 'ShineoutTree';

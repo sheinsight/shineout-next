@@ -161,8 +161,9 @@ export interface TreeProps<DataItem, Value extends any[]>
   /**
    * @en Ref
    * @cn ref
+   * @private no static
    */
-  onRef?: (datum: DatumType<DataItem>['datum']) => void;
+  getDatum?: (datum: DatumType<DataItem>['datum']) => void;
   /**
    * @en Click event
    * @cn 节点点击事件

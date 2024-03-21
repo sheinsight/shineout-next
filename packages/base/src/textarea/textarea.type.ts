@@ -52,11 +52,13 @@ export interface SimpleTextareaProps
   /**
    * @en The prefix of the textarea
    * @cn 前缀
+   * @private not export
    */
   prefix?: React.ReactNode;
   /**
    * @en The suffix of the textarea
    * @cn 后缀
+   * @private not export
    */
   suffix?: React.ReactNode;
   getStatus?: (status: { focused?: boolean }) => void;
@@ -103,6 +105,7 @@ export interface TextareaProps
       | 'getStatus'
       | 'rootRef'
       | 'renderTextarea'
+      | 'prefix'
     > {
   /**
    * @private 内部属性
