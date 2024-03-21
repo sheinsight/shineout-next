@@ -417,6 +417,13 @@ export interface SelectPropsBase<DataItem, Value>
   showHitDescendants?: boolean;
 
   /**
+   * @cn 用来转化粘贴文本中的换行
+   * @en Used to convert line breaks in pasted text
+   * @default " "
+   */
+  convertBr?: string | ((text: string) => string);
+
+  /**
    * @en The className of the selected result content container
    * @cn 选中结果内容容器的className
    */
@@ -489,6 +496,13 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 新增 api ，开启 onFilter 和 onCreate 时，用于比对是否已经存在相同的数据，默认用输入的值和 keygen 值比对
    */
   onFilterWidthCreate?: (data: DataItem, createdData: DataItem, key: string | number) => boolean;
+
+  /**
+   * @en empty input after select value
+   * @cn 选中后是否清空输入框内容
+   * @default false
+   */
+  emptyAfterSelect?: boolean;
 }
 
 export interface SelectPropsA<DataItem, Value>

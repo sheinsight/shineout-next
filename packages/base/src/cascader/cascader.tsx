@@ -73,6 +73,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     position: positionProp = 'bottom-left',
     absolute,
     zIndex,
+    getComponentRef,
     onFocus,
     onBlur,
     onChange: onChangeProp,
@@ -628,6 +629,19 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   useEffect(() => {
     updatePathByValue();
+
+    // 注册 close 事件
+    if (getComponentRef) {
+      const componentRef = {
+        close: closePop,
+      };
+      if (util.isFunc(getComponentRef)) {
+        getComponentRef(componentRef);
+      } else {
+        getComponentRef.current = componentRef;
+      }
+    }
+
     if (mode !== undefined && loader && [0, 1, 2].includes(mode)) {
       console.error(
         new Error(`The mode ${mode} is not supported when loader setted. Only 3 or 4 can be set.`),

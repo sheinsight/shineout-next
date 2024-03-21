@@ -13,6 +13,7 @@ export const Input = (props: {
   onMouseDown?: (e: React.MouseEvent) => void;
   open?: boolean;
   disabled?: boolean;
+  onPaste?: (e: React.ClipboardEvent) => void;
   onFocus?: (e: React.FocusEvent) => void;
   onBlur?: (e: React.FocusEvent) => void;
   onClick?: (e?: React.MouseEvent) => void;
@@ -33,6 +34,7 @@ export const Input = (props: {
       disabled={props.disabled}
       onBlur={props.onBlur}
       onFocus={props.onFocus}
+      onPaste={props.onPaste}
       onClick={(e) => {
         e.currentTarget.focus();
         if (props.onClick) props.onClick(e);

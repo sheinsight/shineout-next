@@ -3,6 +3,12 @@ import { SelectClasses } from './select.type';
 import { ResultInputProps } from './result-input.type';
 import { Input } from '../date-picker/result';
 
+interface IEWindow extends Window {
+  clipboardData: {
+    getData: () => string;
+  };
+}
+
 const ResultInput = (props: ResultInputProps) => {
   const {
     jssStyle,
@@ -13,6 +19,7 @@ const ResultInput = (props: ResultInputProps) => {
     trim,
     maxLength,
     multiple,
+    convertBr = ' ',
     onRef,
     onChange,
     onBindInput,
@@ -36,6 +43,20 @@ const ResultInput = (props: ResultInputProps) => {
     onInputBlur?.(inputText);
   };
 
+  const handlePaste = (e: React.ClipboardEvent) => {
+    e.preventDefault();
+    let text = (e.clipboardData || (window as unknown as IEWindow).clipboardData).getData(
+      'text/plain',
+    );
+
+    if (typeof convertBr === 'function') {
+      text = convertBr(text).replace(/([\t\n\f\r\v])+/g, ' ');
+    } else {
+      text = text.replace(/([\t\n\f\r\v])+/g, convertBr);
+    }
+    document.execCommand('insertText', false, text);
+  };
+
   // 设置 input 宽度
   useEffect(() => {
     if (!multiple) return;
@@ -53,7 +74,6 @@ const ResultInput = (props: ResultInputProps) => {
 
   // 聚焦时重置 filter
   useEffect(() => {
-    
     if (!focus) return;
     if (inputRef.current) {
       inputRef.current.focus();
@@ -78,6 +98,7 @@ const ResultInput = (props: ResultInputProps) => {
         onChange={onChange}
         onBlur={handleBlur}
         open={focus}
+        onPaste={handlePaste}
         onClick={(e) => {
           e?.stopPropagation();
         }}
