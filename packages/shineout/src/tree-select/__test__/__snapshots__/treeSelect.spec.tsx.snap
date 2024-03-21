@@ -3,22 +3,22 @@
 exports[`TreeSelect[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -28,7 +28,7 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -41,144 +41,6 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 1
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -186,22 +48,22 @@ exports[`TreeSelect[Base] should render correctly  1`] = `
 exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo c-7gyxy1"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-un6lio soui-treeSelect-clearable c-lkqjcp soui-treeSelect-multiple"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y c-5upq05 cvyv5u7 cn8xp0r"
+          class="cst20xc soui-select-result-text-wrapper cd43w9 soui-select-compressed-wrapper c-7vjtar soui-select-multiple-result-wrapper c-7a22yf soui-select-multiple-compressed-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -211,7 +73,7 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -224,192 +86,6 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-av8cec c-2oyyob"
-                  >
-                    <input
-                      style="display: none;"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <span
-                      class="c-do3bmm c-xf7g94"
-                    >
-                      <i
-                        class="cs409o1"
-                        data-soui-role="checkbox-indicator"
-                        tabindex="1"
-                      />
-                    </span>
-                  </div>
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 1
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-av8cec c-2oyyob"
-                  >
-                    <input
-                      style="display: none;"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <span
-                      class="c-do3bmm c-xf7g94"
-                    >
-                      <i
-                        class="cs409o1"
-                        data-soui-role="checkbox-indicator"
-                        tabindex="1"
-                      />
-                    </span>
-                  </div>
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 2
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-av8cec c-2oyyob"
-                  >
-                    <input
-                      style="display: none;"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <span
-                      class="c-do3bmm c-xf7g94"
-                    >
-                      <i
-                        class="cs409o1"
-                        data-soui-role="checkbox-indicator"
-                        tabindex="1"
-                      />
-                    </span>
-                  </div>
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 3
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -417,22 +93,22 @@ exports[`TreeSelect[Base] should render correctly about compressed 1`] = `
 exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
 <div>
   <div
-    class="c-k1257o co2pi9k c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-8p7oko soui-treeSelect-wrapper-disabled c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 250px;"
     tabindex="-1"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -442,7 +118,7 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -455,165 +131,24 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                  data-disabled="true"
-                >
-                  <div
-                    class="c-8dedp6 c1i5s2"
-                  >
-                    <span>
-                      node 1
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                  data-disabled="true"
-                >
-                  <div
-                    class="c-8dedp6 c1i5s2"
-                  >
-                    <span>
-                      node 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                  data-disabled="true"
-                >
-                  <div
-                    class="c-8dedp6 c1i5s2"
-                  >
-                    <span>
-                      node 3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 300px; margin-left: 24px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -623,7 +158,7 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -636,144 +171,6 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 1
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -781,22 +178,22 @@ exports[`TreeSelect[Base] should render correctly about disabled 1`] = `
 exports[`TreeSelect[Base] should render correctly about filter 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -806,7 +203,7 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -819,144 +216,6 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 1
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -964,22 +223,22 @@ exports[`TreeSelect[Base] should render correctly about filter 1`] = `
 exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -989,7 +248,7 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1002,105 +261,6 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      jiangsu
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      anhui
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -1108,42 +268,42 @@ exports[`TreeSelect[Base] should render correctly about filter more 1`] = `
 exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
 <div>
   <div
-    class="c-k1257o ckg5l9a c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-a7xog2 soui-treeSelect-wrapper-inner-title c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c3ceru5"
+        class="c-o6szqp soui-inner-title-wrapper"
       >
         <div
-          class="c-yxm0y6 c-tlnvtd"
+          class="c4kxj2s soui-inner-title-title cv1qspd soui-inner-title-top"
         >
           Please select content
         </div>
         <div
-          class="c-yzronz"
+          class="c4irvcz soui-inner-title-place"
         >
           <div
-            class="c-yxm0y6"
+            class="c4kxj2s soui-inner-title-title"
           >
             Please select content
           </div>
         </div>
         <div
-          class="c-7azw6l"
+          class="c-yu7nrf soui-inner-title-content"
         >
           <div
-            class="c-lj7los"
+            class="ch6kcpg soui-treeSelect-result"
           >
             <div
-              class="cml870y"
+              class="cst20xc soui-select-result-text-wrapper"
             >
               <div
-                class="ct42cb3"
+                class="ccborcd soui-select-space"
               >
                  
               </div>
@@ -1153,7 +313,7 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1166,166 +326,28 @@ exports[`TreeSelect[Base] should render correctly about inner title 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 1
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
 
 exports[`TreeSelect[Base] should render correctly about loader 1`] = `
 <div
-  class="c-k1257o c-jl3hqo c-7gyxy1"
-  data-soui-type="input"
+  class="c-rcwgjo soui-treeSelect-wrapper c-un6lio soui-treeSelect-clearable c-lkqjcp soui-treeSelect-multiple"
+  data-soui-input-border="true"
   style="width: 300px;"
   tabindex="0"
 >
   <div
-    class="c-hka1dt c8hos3a crwdlef c9869pl"
+    class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
   >
     <div
-      class="c-lj7los"
+      class="ch6kcpg soui-treeSelect-result"
     >
       <div
-        class="cml870y cvyv5u7"
+        class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
       >
         <span
-          class="cus4m0s c-f5w80o"
+          class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
         >
           <span>
             Please select content
@@ -1335,7 +357,7 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
     </div>
   </div>
   <span
-    class="c-fjov4l"
+    class="c-qlrywl soui-treeSelect-arrow-icon"
   >
     <svg
       aria-hidden="true"
@@ -1348,324 +370,28 @@ exports[`TreeSelect[Base] should render correctly about loader 1`] = `
       />
     </svg>
   </span>
-  <div
-    class="ckzqupa"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="scale-y"
-    style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-  >
-    <div
-      class="c-5xmuyz"
-      style="max-height: 250px;"
-    >
-      <div
-        class="c-8de4ix c-lw53bm"
-      >
-        <div
-          class="c-8dfgh1"
-          style="display: block;"
-        >
-          <div
-            class="c-8di0p1 c-8dji5l"
-          >
-            <div
-              class="ctat7yr"
-            >
-              <span
-                class="c-8jk8v"
-                data-expanded="false"
-                data-icon="false"
-              >
-                <span
-                  class="c-8dlg9a"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <div
-                class="cc9w3xc"
-              >
-                <div
-                  class="c-av8cec c-2oyyob"
-                >
-                  <input
-                    style="display: none;"
-                    tabindex="0"
-                    type="checkbox"
-                  />
-                  <span
-                    class="c-do3bmm c-xf7g94"
-                  >
-                    <i
-                      class="cs409o1"
-                      data-soui-role="checkbox-indicator"
-                      tabindex="1"
-                    />
-                  </span>
-                </div>
-                <div
-                  class="c-8dedp6"
-                >
-                  node 0
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c-8di0p1 c-8dji5l"
-          >
-            <div
-              class="ctat7yr"
-            >
-              <span
-                class="c-8jk8v"
-                data-expanded="false"
-                data-icon="false"
-              >
-                <span
-                  class="c-8dlg9a"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <div
-                class="cc9w3xc"
-              >
-                <div
-                  class="c-av8cec c-2oyyob"
-                >
-                  <input
-                    style="display: none;"
-                    tabindex="0"
-                    type="checkbox"
-                  />
-                  <span
-                    class="c-do3bmm c-xf7g94"
-                  >
-                    <i
-                      class="cs409o1"
-                      data-soui-role="checkbox-indicator"
-                      tabindex="1"
-                    />
-                  </span>
-                </div>
-                <div
-                  class="c-8dedp6"
-                >
-                  node 1
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c-8di0p1 c-8dji5l"
-          >
-            <div
-              class="ctat7yr"
-            >
-              <span
-                class="c-8jk8v"
-                data-expanded="false"
-                data-icon="false"
-              >
-                <span
-                  class="c-8dlg9a"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <div
-                class="cc9w3xc"
-              >
-                <div
-                  class="c-av8cec c-2oyyob"
-                >
-                  <input
-                    style="display: none;"
-                    tabindex="0"
-                    type="checkbox"
-                  />
-                  <span
-                    class="c-do3bmm c-xf7g94"
-                  >
-                    <i
-                      class="cs409o1"
-                      data-soui-role="checkbox-indicator"
-                      tabindex="1"
-                    />
-                  </span>
-                </div>
-                <div
-                  class="c-8dedp6"
-                >
-                  node 2
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c-8di0p1 c-8dji5l"
-          >
-            <div
-              class="ctat7yr"
-            >
-              <span
-                class="c-8jk8v"
-                data-expanded="false"
-                data-icon="false"
-              >
-                <span
-                  class="c-8dlg9a"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <div
-                class="cc9w3xc"
-              >
-                <div
-                  class="c-av8cec c-2oyyob"
-                >
-                  <input
-                    style="display: none;"
-                    tabindex="0"
-                    type="checkbox"
-                  />
-                  <span
-                    class="c-do3bmm c-xf7g94"
-                  >
-                    <i
-                      class="cs409o1"
-                      data-soui-role="checkbox-indicator"
-                      tabindex="1"
-                    />
-                  </span>
-                </div>
-                <div
-                  class="c-8dedp6"
-                >
-                  node 3
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="c-8di0p1 c-8dji5l"
-          >
-            <div
-              class="ctat7yr"
-            >
-              <span
-                class="c-8jk8v"
-                data-expanded="false"
-                data-icon="false"
-              >
-                <span
-                  class="c-8dlg9a"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    focusable="false"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <div
-                class="cc9w3xc"
-              >
-                <div
-                  class="c-av8cec c-2oyyob"
-                >
-                  <input
-                    style="display: none;"
-                    tabindex="0"
-                    type="checkbox"
-                  />
-                  <span
-                    class="c-do3bmm c-xf7g94"
-                  >
-                    <i
-                      class="cs409o1"
-                      data-soui-role="checkbox-indicator"
-                      tabindex="1"
-                    />
-                  </span>
-                </div>
-                <div
-                  class="c-8dedp6"
-                >
-                  node 4
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 `;
 
 exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo c-7gyxy1"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-un6lio soui-treeSelect-clearable c-lkqjcp soui-treeSelect-multiple"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y cvyv5u7"
+          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -1675,7 +401,7 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1688,192 +414,6 @@ exports[`TreeSelect[Base] should render correctly about multiple 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-av8cec c-2oyyob"
-                  >
-                    <input
-                      style="display: none;"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <span
-                      class="c-do3bmm c-xf7g94"
-                    >
-                      <i
-                        class="cs409o1"
-                        data-soui-role="checkbox-indicator"
-                        tabindex="1"
-                      />
-                    </span>
-                  </div>
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 1
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-av8cec c-2oyyob"
-                  >
-                    <input
-                      style="display: none;"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <span
-                      class="c-do3bmm c-xf7g94"
-                    >
-                      <i
-                        class="cs409o1"
-                        data-soui-role="checkbox-indicator"
-                        tabindex="1"
-                      />
-                    </span>
-                  </div>
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 2
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-av8cec c-2oyyob"
-                  >
-                    <input
-                      style="display: none;"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <span
-                      class="c-do3bmm c-xf7g94"
-                    >
-                      <i
-                        class="cs409o1"
-                        data-soui-role="checkbox-indicator"
-                        tabindex="1"
-                      />
-                    </span>
-                  </div>
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 3
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -1883,22 +423,22 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
   style="width: 100%; display: flex; align-items: center; gap: 24px;"
 >
   <div
-    class="c-k1257o c-xzkfcl c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-k2l5n9 soui-treeSelect-wrapper-small c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -1908,7 +448,7 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1921,162 +461,24 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 1
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -2086,7 +488,7 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -2099,162 +501,24 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 1
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-y3mav5 c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-k6n15t soui-treeSelect-wrapper-large c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -2264,7 +528,7 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -2277,144 +541,6 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 1
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -2422,22 +548,22 @@ exports[`TreeSelect[Base] should render correctly about size 1`] = `
 exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c-rcwgjo soui-treeSelect-wrapper c-un6lio soui-treeSelect-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-ccl0f5 soui-treeSelect-result-wrapper c-m6ehm2 soui-treeSelect-wrapper-padding-box cwmkarb soui-treeSelect-wrapper-inner-title-top c-b842ev soui-treeSelect-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="ch6kcpg soui-treeSelect-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Please select content
@@ -2447,7 +573,7 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="c-qlrywl soui-treeSelect-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -2460,144 +586,6 @@ exports[`TreeSelect[Base] should render correctly about unmatch 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 1
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 2
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    <span>
-                      node 3
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;

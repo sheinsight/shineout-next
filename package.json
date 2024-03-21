@@ -25,6 +25,7 @@
     "lint:es": "eslint \"packages/**/*.{js,jsx,ts,tsx}\"",
     "prepublishOnly": "father doctor && npm run build",
     "test": "jest",
+    "test:update": "jest -u",
     "test:coverage": "jest --coverage",
     "test:merge": "cross-env NODE_ENV=test node ./scripts/merge-coverage.js",
     "cypress:open": "cross-env NODE_ENV=test cypress open",
