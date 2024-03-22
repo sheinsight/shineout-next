@@ -45,7 +45,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onRemove,
     onResultItemClick,
   } = props;
-  const value = (multiple ? valueProp : [valueProp]) as Value;
+  const value = (
+    valueProp === null || valueProp === undefined ? [] : multiple ? valueProp : [valueProp]
+  ) as Value;
 
   const [more, setMore] = useState(-1);
 
