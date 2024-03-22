@@ -443,10 +443,9 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     innerTitle,
   });
 
-  const renderClearable = () => {
-    if (!multiple !== undefined && !showArrow) return null;
+  const arrow = () => {
     const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
-    const arrow = (
+    return (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
         onClick={handleResultClick}
@@ -454,16 +453,20 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         {defaultIcon}
       </span>
     );
+  }
+
+  const renderClearable = () => {
+    if (!multiple !== undefined && !showArrow) return null;
 
     const close = (
       <span className={styles.clearIcon} onClick={handleClear}>
-        {isEmpty ? arrow : Icons.PcCloseCircleFill}
+        {isEmpty ? arrow() : Icons.PcCloseCircleFill}
       </span>
     );
     return (
       <>
         {open && close}
-        {!open && arrow}
+        {!open && arrow()}
         {!open && close}
       </>
     );
@@ -474,15 +477,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       return renderClearable();
     }
     if (!multiple && !showArrow) return null;
-    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
-    return (
-      <span
-        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
-        onClick={handleResultClick}
-      >
-        {defaultIcon}
-      </span>
-    );
+    return arrow();
   };
 
   const renderResult = () => {
@@ -529,7 +524,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
     return (
       <div
-        ref={targetRef}
         className={classNames(
           styles?.resultWrapper,
           styles?.wrapperPaddingBox,
@@ -660,7 +654,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   return (
     <div
-      ref={selectRef}
+      ref={(n) => {
+        selectRef.current = n;
+        targetRef.current = n;
+      }}
       tabIndex={disabled === true ? -1 : 0}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
