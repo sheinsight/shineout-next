@@ -137,6 +137,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onCreate: onCreateProp,
     onFilter: onFilterProp,
     onFilterWidthCreate,
+    filterDelay: props.filterDelay,
   });
 
   const onCollapse = usePersistFn((collapse: boolean) => {

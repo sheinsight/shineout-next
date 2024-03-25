@@ -18,15 +18,19 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     firstMatch,
     onFilterWidthCreate,
     onAdvancedFilter,
+    filterDelay = 400,
   } = props;
 
   const [filterData, setFilterData] = useState<DataItem[] | undefined>(data);
   const [filterText, setFilterText] = useState<string | undefined>('');
   const [filterFunc, setFilterFunc] = useState<((d: DataItem) => boolean) | undefined>(undefined);
   const [inputText, setInputText] = useState('');
-  const [createdData, setCreatedData] = useState<string>();
+  const [createdData, setCreatedData] = useState<any>();
 
   const firstMatchNode = useRef<DataItem | null>();
+  const { current: context } = useRef({
+    filterTimer: null as NodeJS.Timeout | null,
+  });
 
   const filterFn =
     onFilterWidthCreate ||
@@ -105,22 +109,22 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     }
 
     if (!onFilter || !isFunc(onFilter)) return;
+    if (context.filterTimer) clearTimeout(context.filterTimer);
+    context.filterTimer = setTimeout(() => {
+      const next = onFilter(text, from);
 
-    setFilterText(text);
+      if (!isFunc(next)) return;
 
-    const next = onFilter(text, from);
+      setFilterFunc(() => next);
 
-    if (!isFunc(next)) return;
-
-    setFilterFunc(() => next);
-
-    const nextData = data?.filter((item) => {
-      if (!groupKey) return next(item);
-      // 剔除分组项
-      if (item[groupKey as keyof typeof item]) return item;
-      return next(item);
-    });
-    setFilterData(nextData);
+      const nextData = data?.filter((item) => {
+        if (!groupKey) return next(item);
+        // 剔除分组项
+        if (item[groupKey as keyof typeof item]) return item;
+        return next(item);
+      });
+      setFilterData(nextData);
+    }, filterDelay);
   };
 
   // const handleResetData = () => {
@@ -130,6 +134,10 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   useEffect(() => {
     if (data) setFilterData(data);
   }, [data]);
+
+  useEffect(() => {
+    if (context.filterTimer) clearTimeout(context.filterTimer);
+  }, []);
 
   let nextData: DataItem[] | undefined;
   let nextExpanded: KeygenResult[] | undefined;
@@ -143,6 +151,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   if (data) {
     nextData = getData();
   }
+
   return {
     inputText,
     filterText,

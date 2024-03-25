@@ -503,6 +503,12 @@ export interface SelectPropsBase<DataItem, Value>
    * @default false
    */
   emptyAfterSelect?: boolean;
+  /**
+   * @en ms. The delay of user input triggering filter events
+   * @cn 毫秒。用户输入触发 fitler 事件的延时
+   * @default 400
+   */
+  filterDelay?: number;
 }
 
 export interface SelectPropsA<DataItem, Value>
