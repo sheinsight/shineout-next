@@ -21,13 +21,13 @@ const FormField = <T extends any = any>(props: FormFieldProps<T>) => {
     getValidateProps,
   });
 
-  const handleChange = usePersistFn((value: T) => {
+  const handleChange = usePersistFn((value: T, ...args) => {
     // @ts-ignore 兼容老版本支持传 event
     if (value && value.nativeEvent) {
       // @ts-ignore
-      formControl.onChange(value.target.value);
+      formControl.onChange(value.target.value, ...args);
     } else {
-      formControl.onChange(value);
+      formControl.onChange(value, ...args);
     }
   });
 

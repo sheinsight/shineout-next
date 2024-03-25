@@ -315,8 +315,8 @@ export interface SelectPropsBase<DataItem, Value>
   showArrow?: boolean;
 
   /**
-   * @en Selected value while click under onCreate or onFilter
-   * @cn onCreate 或 onFilter 在单选情况下单击值后是否选中值
+   * @en onFilter Whether to select filter text after clicking the option in multi-selection situation
+   * @cn onFilter 在多选情况下点击选项后是否选中过滤文本
    * @default true
    */
   focusSelected?: boolean;
@@ -503,6 +503,12 @@ export interface SelectPropsBase<DataItem, Value>
    * @default false
    */
   emptyAfterSelect?: boolean;
+  /**
+   * @en ms. The delay of user input triggering filter events
+   * @cn 毫秒。用户输入触发 fitler 事件的延时
+   * @default 400
+   */
+  filterDelay?: number;
 }
 
 export interface SelectPropsA<DataItem, Value>

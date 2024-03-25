@@ -18,4 +18,6 @@ export interface ResultInputProps extends Pick<CommonType, 'style' | 'className'
   onInputBlur?: (text?: string) => void;
   onClearCreatedData: () => void;
   convertBr?: string | ((text: string) => string);
+  placeholder?: string;
+  isEmpty?: boolean;
 }
