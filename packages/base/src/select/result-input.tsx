@@ -24,6 +24,7 @@ const ResultInput = (props: ResultInputProps) => {
     onChange,
     onBindInput,
     onInputBlur,
+    isEmpty,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const mirrorRef = useRef<HTMLSpanElement>(null);
@@ -57,29 +58,26 @@ const ResultInput = (props: ResultInputProps) => {
     document.execCommand('insertText', false, text);
   };
 
-  // 设置 input 宽度
-  useEffect(() => {
+  const syncWidth = () => {
     if (!multiple) return;
     if (!mirrorRef.current) return;
     const input = inputRef.current as HTMLInputElement;
-    input.style.width = `${mirrorRef.current.offsetWidth}px`;
+    if (isEmpty) {
+      input.style.width = '100%';
+    } else input.style.width = `${mirrorRef.current.offsetWidth}px`;
+  };
+
+  // 设置 input 宽度
+  useEffect(() => {
+    syncWidth();
   }, [inputText, focus, value]);
 
-  // 选中结果后，聚焦并全选 input
+  // 多选选中结果后，聚焦并全选 input
   useEffect(() => {
     if (!inputRef.current || !multiple || !focus) return;
-    inputRef.current.focus();
+    syncWidth();
     inputRef.current.select();
-  }, [values]);
-
-  // 聚焦时重置 filter
-  useEffect(() => {
-    if (!focus) return;
-    if (inputRef.current) {
-      inputRef.current.focus();
-      inputRef.current.select();
-    }
-  }, [focus]);
+  }, [values.length]);
 
   // 注册 input ref
   useEffect(() => {
@@ -88,20 +86,28 @@ const ResultInput = (props: ResultInputProps) => {
     onBindInput?.(inputRef.current);
   }, []);
 
+  const style: React.CSSProperties = {};
+  if (!multiple) {
+    style.width = '100%';
+  }
+  if (!multiple && !focus && values.length !== 0) {
+    style.width = '0';
+    style.opacity = '0';
+    style.minWidth = '0';
+  }
+
   return (
     <React.Fragment>
       <Input
         onRef={bindInputRef}
-        style={{ width: multiple ? 12 : '100%' }}
+        style={style}
+        placeholder={props.placeholder}
         value={inputText as string}
         maxLength={maxLength}
         onChange={onChange}
         onBlur={handleBlur}
         open={focus}
         onPaste={handlePaste}
-        onClick={(e) => {
-          e?.stopPropagation();
-        }}
       ></Input>
       <span className={styles.inputMirror} ref={mirrorRef}>
         {inputText || value}

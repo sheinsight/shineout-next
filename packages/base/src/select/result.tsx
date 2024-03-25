@@ -33,7 +33,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     renderResult: renderResultProp,
     renderResultContent: renderResultContentProp,
     allowOnFilter,
-    setInputText,
     convertBr,
     onRef,
     onFilter,
@@ -54,7 +53,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const resultRef = useRef<HTMLDivElement>(null);
   const shouldResetMore = useRef(false);
   const prevMore = useRef(more);
-  const showInput = allowOnFilter && focus;
+  const showInput = allowOnFilter;
   const mounted = useRef(false);
 
   const styles = jssStyle?.select?.() as SelectClasses;
@@ -64,6 +63,37 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     multiple && styles.multipleResultWrapper,
     multiple && compressed && styles.multipleCompressedWrapper,
   );
+
+  const renderResultContent = (
+    data: DataItem | UnMatchedData,
+    index?: number,
+    nodes?: (DataItem | UnMatchedData)[],
+  ) => {
+    if (checkUnMatched(data)) {
+      const _data = data as UnMatchedData;
+      if (isFunc(renderUnmatched)) return renderUnmatched(_data.value);
+      return isObject(_data.value)
+        ? renderResultProp(_data.value as DataItem, index, nodes)
+        : _data.value;
+    }
+    return renderResultProp(data as DataItem, index, nodes);
+  };
+
+  const isEmptyResult = () => {
+    if (!value) return true;
+
+    if (isArray(value) && value.length <= 0) return true;
+    const values = getDataByValues(value);
+    const hasValue =
+      values.findIndex((item, index) => {
+        const cur = renderResultContent(item, index, values);
+        return !isEmpty(cur);
+      }) >= 0;
+
+    return !hasValue;
+  };
+
+  const empty = isEmptyResult();
 
   const isCompressedBound = () => {
     return compressedBound && isNumber(compressedBound) && compressedBound >= 1;
@@ -84,11 +114,18 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderInput = () => {
+    let placeholder2 = empty ? placeholder : '';
+    if (!multiple && valueProp && valueProp !== 0) {
+      const result = getDataByValues(value);
+      // 获取合法的 content
+      const content = renderResultContent(result[0]);
+      placeholder2 = content;
+    }
     return (
       <React.Fragment key='input'>
         <Input
+          isEmpty={empty}
           jssStyle={jssStyle}
-          style={{ width: 12 }}
           value={filterText}
           trim={trim}
           focus={focus}
@@ -101,24 +138,10 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
           convertBr={convertBr}
           onInputBlur={onInputBlur}
           onClearCreatedData={onClearCreatedData!}
+          placeholder={placeholder2}
         ></Input>
       </React.Fragment>
     );
-  };
-
-  const renderResultContent = (
-    data: DataItem | UnMatchedData,
-    index?: number,
-    nodes?: (DataItem | UnMatchedData)[],
-  ) => {
-    if (checkUnMatched(data)) {
-      const _data = data as UnMatchedData;
-      if (isFunc(renderUnmatched)) return renderUnmatched(_data.value);
-      return isObject(_data.value)
-        ? renderResultProp(_data.value as DataItem, index, nodes)
-        : _data.value;
-    }
-    return renderResultProp(data as DataItem, index, nodes);
   };
 
   const renderResultItem = (
@@ -191,21 +214,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     );
   };
 
-  const isEmptyResult = () => {
-    if (!value) return true;
-
-    if (isArray(value) && value.length <= 0) return true;
-    const values = getDataByValues(value);
-    const hasValue =
-      values.findIndex((item, index) => {
-        const cur = renderResultContent(item, index, values);
-        return !isEmpty(cur);
-      }) >= 0;
-
-    return !hasValue;
-  };
-
-  const showPlaceholder = placeholder && isEmptyResult();
 
   const renderNbsp = () => {
     return (
@@ -216,7 +224,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   const renderPlaceholder = () => {
-    if (focus && showInput && showPlaceholder) {
+    if (showInput) {
       return renderInput();
     }
 
@@ -278,6 +286,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   );
 
   const renderResult = () => {
+    if (empty) {
+      return renderPlaceholder();
+    }
     let result = [];
     if (multiple) {
       result.push(compressed ? renderMultipleResultMore : renderMultipleResult());
@@ -287,14 +298,16 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         result.push(renderNbsp());
       }
     } else {
+      result.push(renderSingleResult());
       if (showInput) {
-        result = [renderInput()];
-      } else {
-        result.push(renderSingleResult());
+        if (focus) {
+          result = [renderInput()];
+        } else {
+          result.push(renderInput());
+        }
       }
     }
-
-    return showPlaceholder ? renderPlaceholder() : result;
+    return result;
   };
 
   const handleResetMore = () => {
@@ -303,15 +316,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   };
 
   useEffect(() => {
-    if (!multiple && showInput && valueProp) {
-      const result = getDataByValues(value);
-      // 获取合法的 content
-      const content = renderResultContent(result[0]);
-      // 仅在打开拉框时，将输入框的值设置为合法的选中的值
-      if (focus && !isEmpty(content)) {
-        setInputText(content as string);
-      }
-    }
     if (!focus && mounted.current) {
       onFilter?.('', 'blur');
     }

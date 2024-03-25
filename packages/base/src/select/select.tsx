@@ -25,6 +25,10 @@ import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { getLocale, useConfig } from '../config';
 
+const preventDefault = (e: React.MouseEvent) => {
+  e.preventDefault();
+};
+
 function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const props = useWithFormConfig(props0);
   const { locale } = useConfig();
@@ -98,17 +102,17 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     filterSameChange,
   } = props;
 
+  const showInput = util.isFunc(onFilterProp) || util.isFunc(onCreateProp);
+
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
 
   const [controlType, setControlType] = useState<'mouse' | 'keyboard'>('keyboard');
   const [focused, setFocused] = useState(false);
 
-  const isKeydown = useRef(false);
   const isPreventBlur = useRef(false);
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
-  const selectRef = useRef<any>();
   const optionListRef = useRef<OptionListRefType>();
 
   const {
@@ -135,42 +139,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onFilterWidthCreate,
   });
 
-  const { datum, value } = useSelect<DataItem, Value>({
-    value: valueProp,
-    data,
-    separator,
-    treeData,
-    childrenKey,
-    multiple,
-    defaultValue,
-    control: 'value' in props,
-    format,
-    disabled,
-    groupBy,
-    prediction,
-    beforeChange,
-    onChange,
-    filterSameChange,
-  });
-
-  const checkEmpty = () => {
-    let isEmpty;
-    if (multiple) {
-      isEmpty = !value || (Array.isArray(value) && value.length === 0);
-    } else {
-      isEmpty = util.isEmpty(value);
-    }
-
-    return isEmpty;
-  };
-
-  const isEmpty = checkEmpty();
-
-  const { data: groupData, groupKey } = useGroup({
-    data: filterData,
-    groupBy,
-  });
-
   const onCollapse = usePersistFn((collapse: boolean) => {
     onCollapseProp?.(collapse);
 
@@ -194,13 +162,82 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     position: positionProp,
   });
 
+  const handleSelectChange = usePersistFn((value: Value, dataItem: any, checked?: boolean) => {
+    if (createdData || props.emptyAfterSelect) {
+      setInputText('');
+    }
+    if (!multiple) {
+      closePop();
+    }
+    onChange?.(value, dataItem, checked);
+  });
+
+  const { datum, value } = useSelect<DataItem, Value>({
+    value: valueProp,
+    data,
+    separator,
+    treeData,
+    childrenKey,
+    multiple,
+    defaultValue,
+    control: 'value' in props,
+    format,
+    disabled,
+    groupBy,
+    prediction,
+    beforeChange,
+    onChange: handleSelectChange,
+    filterSameChange,
+  });
+
+  const checkEmpty = () => {
+    let isEmpty;
+    if (multiple) {
+      isEmpty = !value || (Array.isArray(value) && value.length === 0);
+    } else {
+      isEmpty = util.isEmpty(value);
+    }
+
+    return isEmpty;
+  };
+
+  const isEmpty = checkEmpty();
+
+  const { data: groupData, groupKey } = useGroup({
+    data: filterData,
+    groupBy,
+  });
+
+  const triggerOpen = usePersistFn(() => {
+    if (disabled === true) return;
+    if (open) {
+      closePop();
+    } else {
+      openPop();
+    }
+  });
+
+  const focusAndOpen = () => {
+    if (!focused) {
+      inputRef.current?.focus();
+    } else {
+      openPop();
+    }
+  };
+
+  // 点击 Select 结果框的处理方法
+  const handleResultClick = usePersistFn(() => {
+    if (disabled === true) return;
+    focusAndOpen();
+  });
+
   const tipNode = useTip({
     popover: props.popover,
     popoverProps: props.popoverProps,
     error: props.error,
     tip: props.tip,
     focused,
-    rootRef: selectRef,
+    rootRef: targetRef,
     jssStyle: props.jssStyle,
   });
 
@@ -234,90 +271,55 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const handleFocus = usePersistFn((e: React.FocusEvent) => {
     setFocused(true);
     onFocus?.(e);
+    if (!open) openPop();
   });
 
   const handleBlur = usePersistFn((e: React.FocusEvent) => {
     setFocused(false);
     onBlur?.(e);
+    if (open) closePop();
   });
 
   const handleChange = (item: DataItem) => {
     if (multiple) {
-      let unMatchData = item as UnMatchedData;
-
-      if (util.isObject(item) && unMatchData.IS_NOT_MATCHED_VALUE) {
+      if (datum.isUnMatchedData(item)) {
         datum.remove(item);
       } else {
         const checked = datum.check(item);
         if (checked) datum.remove(item);
         else datum.add(item);
       }
-      return;
-    }
-
-    const checked = datum.check(item);
-    if (!checked) datum.add(item);
-
-    inputRef.current?.blur();
-
-    if (!multiple) {
-      closePop();
-      onClearCreatedData();
-    }
-
-    // 单选模式下，关闭列表后需要聚焦外层容器，以便继续键盘操作
-    if (selectRef.current) {
-      selectRef.current.focus();
-    }
-  };
-
-  // 点击 Select 结果框的处理方法
-  const handleResultClick = usePersistFn(() => {
-    if (disabled === true) return;
-    if (!open) {
-      openPop();
-      inputRef.current?.focus();
     } else {
-      closePop();
-      inputRef.current?.blur();
+      const checked = datum.check(item);
+      if (!checked) datum.add(item);
     }
-  });
-
-  // 创建选项时，开启隐藏创建项目后的处理方法
-  const handleHideOption = () => {
-    handleChange(createdData as DataItem);
   };
 
   // 回车时的处理方法
   const handleEnter = () => {
     const hoverIndex = optionListRef.current?.getHoverIndex() || 0;
-    if (onCreate && hideCreateOption && createdData) {
-      handleHideOption();
-      setInputText('');
-      return;
+    if (onCreate && createdData) {
+      if (hideCreateOption) {
+        handleChange(createdData as DataItem);
+        return;
+      }
     }
-
     const currentDataItem = filterData?.[hoverIndex];
     if (currentDataItem && !currentDataItem[groupKey as keyof typeof currentDataItem]) {
-      isKeydown.current = true;
       handleChange(currentDataItem);
-      setInputText('');
     }
   };
 
   // input blur 时的处理方法
   // 注意，在点击 option 的时候也会触发 blur 事件，此时要规避点击 option 后的 blur 事件
   const handleInputBlur = (text?: string) => {
-    if (onFilterProp && text && filterSingleSelect && data?.length === 1) {
-      handleChange(data[0]);
+    // 当筛选数据仅为一条时，失焦后直接选中该条数据仅在 Filter 下有效
+    if (onFilterProp && text && filterSingleSelect && filterData?.length === 1) {
+      datum.add(filterData[0]);
       return;
     }
     if (!onCreate) return;
     if (multiple && !text) return;
-    if (isKeydown.current) {
-      isKeydown.current = false;
-      return;
-    }
     // 防止点击 option 后触发 blur 事件，先把要做的事情存起来，后面再看要不要执行
     blurEvent.current = () => {
       if (createdData) {
@@ -327,9 +329,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     };
   };
 
-  const handleFilter = (text: string) => {
+  const handleFilter = (text: string, from?: string) => {
     const hideCreate = onCreate && hideCreateOption;
-
+    if (from !== 'blur') {
+      focusAndOpen();
+    }
     if (onCreate && !hideCreateOption) {
       optionListRef.current?.hoverMove(0, true);
     }
@@ -337,7 +341,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       // optionListRef.current?.hoverMove(filterData.length - 1, true);
     }
 
-    onFilter?.(trim ? text.trim() : text);
+    onFilter?.(trim ? text.trim() : text, from);
   };
 
   const handleOptionClick = () => {
@@ -372,7 +376,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         const canOpen = onEnterExpand(e);
         if (canOpen === false) return;
       }
-      handleResultClick();
+      focusAndOpen();
       return;
     }
 
@@ -449,7 +453,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     const arrow = (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
-        onClick={handleResultClick}
+        onClick={triggerOpen}
       >
         {defaultIcon}
       </span>
@@ -462,9 +466,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     );
     return (
       <>
-        {open && close}
+        {close}
         {!open && arrow}
-        {!open && close}
       </>
     );
   };
@@ -478,7 +481,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
-        onClick={handleResultClick}
+        onClick={triggerOpen}
       >
         {defaultIcon}
       </span>
@@ -510,11 +513,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           renderResult={getRenderResult}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
-          allowOnFilter={'onFilter' in props || 'onCreate' in props}
+          allowOnFilter={showInput}
           focusSelected={focusSelected}
           inputText={inputText}
           filterText={filterText}
-          setInputText={setInputText}
           onFilter={handleFilter}
           onRef={inputRef}
           onCreate={onCreate}
@@ -529,7 +531,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
     return (
       <div
-        ref={targetRef}
         className={classNames(
           styles?.resultWrapper,
           styles?.wrapperPaddingBox,
@@ -657,11 +658,10 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
     return style;
   };
-
   return (
     <div
-      ref={selectRef}
-      tabIndex={disabled === true ? -1 : 0}
+      ref={targetRef}
+      tabIndex={disabled === true || showInput ? undefined : 0}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}
@@ -669,6 +669,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       onKeyUp={handleKeyUp}
       onBlur={handleBlur}
       onFocus={handleFocus}
+      onMouseDown={(e) => {
+        if (focused && e.target !== inputRef.current) {
+          e.preventDefault();
+        }
+      }}
     >
       {tipNode}
       {renderResult()}
@@ -688,6 +693,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           onRef={popupRef}
           show={open}
           className={classNames(styles?.pickerWrapper)}
+          onMouseDown={preventDefault}
           display={'block'}
           type='scale-y'
           duration={'fast'}
