@@ -509,6 +509,16 @@ export interface SelectPropsBase<DataItem, Value>
    * @default 400
    */
   filterDelay?: number;
+  /**
+   * @en Dynamically load nodes
+   * @cn 设置 loader 属性后，未定义 children 的节点视为动态加载节点，点击展开触发 loader事件，children 为 null 或者长度为 0 视为叶子节点
+   */
+  loader?: (key: KeygenResult, data: DataItem) => void;
+  /**
+   * @en In the advanced filter mode, you can switch between the filter results and the original data for the current level by pressing the button
+   * @cn 高级筛选模式，可针对当前层级在筛选结果和原始数据间切换
+   */
+  onAdvancedFilter?: (text: string) => (data: DataItem) => boolean;
 }
 
 export interface SelectPropsA<DataItem, Value>

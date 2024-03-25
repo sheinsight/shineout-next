@@ -83,6 +83,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
 
   const handleFilter = (text: string, from: string = 'edit') => {
     setInputText(text);
+    setFilterText(text);
 
     firstMatchNode.current = null;
 
@@ -95,7 +96,6 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
         setFilterData(treeData);
       }
 
-      setFilterText('');
       setFilterFunc(undefined);
       handleClearCreatedData();
       // 没有 text 时触发一次 onFilter 以便外部重置数据
@@ -146,9 +146,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     const { newData, filterExpandedKeys } = getTreeData();
     nextData = newData;
     nextExpanded = filterExpandedKeys;
-  }
-
-  if (data) {
+  } else if (data) {
     nextData = getData();
   }
 
