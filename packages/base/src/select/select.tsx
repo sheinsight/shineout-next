@@ -9,6 +9,7 @@ import {
   useGroup,
   UnMatchedData,
   ObjectKey,
+  useTiled,
 } from '@sheinx/hooks';
 import { SelectClasses } from './select.type';
 import { SelectPropsBase, OptionListRefType } from './select.type';
@@ -102,7 +103,8 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     filterSameChange,
   } = props;
 
-  const showInput = util.isFunc(onFilterProp) || util.isFunc(onCreateProp);
+  const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
+  const showInput = hasFilter || util.isFunc(onCreateProp);
 
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -118,13 +120,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const {
     filterText,
     inputText,
-    filterData,
+    filterData: filterData0,
     createdData,
     expanded,
-    setInputText,
-    onFilter,
+    onFilter: onFilter0,
     onCreate,
     onClearCreatedData,
+    rawData,
   } = useFilter({
     data,
     treeData,
@@ -135,7 +137,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     hideCreateOption,
     onAdvancedFilter: 'onAdvancedFilter' in props,
     onCreate: onCreateProp,
-    onFilter: onFilterProp,
+    onFilter: props.onAdvancedFilter || onFilterProp,
     onFilterWidthCreate,
     filterDelay: props.filterDelay,
   });
@@ -155,6 +157,27 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onClearCreatedData();
   });
 
+  const renderMoreIcon = () => {
+    return Icons.More;
+  };
+
+  const {
+    data: filterData,
+    onFilter,
+    expandIcons: tiledExpandIcons,
+  } = useTiled<DataItem>({
+    data: filterData0!,
+    filterText,
+    onAdvancedFilter: props.onAdvancedFilter,
+    keygen: keygen as any,
+    originIcon: Icons.More,
+    moreIcon: renderMoreIcon,
+    childrenKey,
+    expanded,
+    rawData: rawData!,
+    onFilter: onFilter0,
+  });
+
   const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
@@ -165,7 +188,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const handleSelectChange = usePersistFn((value: Value, dataItem: any, checked?: boolean) => {
     if (createdData || props.emptyAfterSelect) {
-      setInputText('');
+      onFilter?.('');
     }
     if (!multiple) {
       closePop();
@@ -417,7 +440,9 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
     datum.removeAll();
-    setInputText('');
+    if (filterText) {
+      onFilter?.('');
+    }
 
     if (open) closePop();
   };
@@ -586,17 +611,17 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         jssStyle={jssStyle}
         data={filterData as DataItem[]}
         datum={datum}
+        expanded={'expanded' in props || expanded?.length ? expanded : undefined}
         multiple={multiple}
         keygen={keygen}
-        allowOnFilter={'onFilter' in props}
         height={height as number}
         defaultExpandAll={defaultExpandAll}
         defaultExpanded={defaultExpanded}
-        expanded={expanded}
         onExpand={onExpand}
         childrenKey={childrenKey}
         closePop={closePop}
         renderItem={renderItem}
+        expandIcons={tiledExpandIcons}
       ></TreeList>
     );
   };

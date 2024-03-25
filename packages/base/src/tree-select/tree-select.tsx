@@ -25,7 +25,9 @@ import useTip from '../common/use-tip';
 import { getLocale, useConfig } from '../config';
 
 export type TreeSelectValueType = KeygenResult | KeygenResult[];
-
+const preventDefault = (e: React.MouseEvent) => {
+  e.preventDefault();
+};
 const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
@@ -86,10 +88,10 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   } = props;
   const styles = jssStyle?.treeSelect?.() as TreeSelectClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
+  const showInput = util.isFunc(props.onAdvancedFilter || onFilterProp);
 
   const datum = useRef<TreeContextProps<DataItem, Value>>();
   const blurEvent = useRef<(() => void) | null>();
-  const treeSelectRef = useRef<any>();
   const inputRef = useRef<HTMLInputElement>();
   const [focused, setFocused] = useState(false);
   const [enter, setEnter] = useState(false);
@@ -102,24 +104,16 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     filterSameChange: filterSameChange,
   });
 
-  const {
-    filterText,
-    inputText,
-    filterData,
-    expanded,
-    rawData,
-    setInputText,
-    onFilter,
-    onClearCreatedData,
-  } = useFilter({
-    treeData: data,
-    keygen: keygen as any,
-    childrenKey,
-    expanded: expandedProp,
-    showHitDescendants,
-    onAdvancedFilter: 'onAdvancedFilter' in props,
-    onFilter: onAdvancedFilter || onFilterProp,
-  });
+  const { filterText, inputText, filterData, expanded, rawData, onFilter, onClearCreatedData } =
+    useFilter({
+      treeData: data,
+      keygen: keygen as any,
+      childrenKey,
+      expanded: expandedProp,
+      showHitDescendants,
+      onAdvancedFilter: 'onAdvancedFilter' in props,
+      onFilter: onAdvancedFilter || onFilterProp,
+    });
 
   const renderMoreIcon = () => {
     return Icons.More;
@@ -165,7 +159,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     error: props.error,
     tip: props.tip,
     focused,
-    rootRef: treeSelectRef,
+    rootRef: targetRef,
     jssStyle: props.jssStyle,
   });
 
@@ -438,11 +432,10 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           renderResult={getRenderResult}
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
-          allowOnFilter={'onFilter' in props || 'onAdvancedFilter' in props}
+          allowOnFilter={showInput}
           focusSelected={focusSelected}
           inputText={inputText}
           filterText={filterText}
-          setInputText={setInputText}
           onFilter={handleFilter}
           onRef={inputRef}
           checkUnMatched={checkUnMatched}
@@ -455,7 +448,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
     return (
       <div
-        ref={targetRef}
         className={classNames(
           styles?.resultWrapper,
           styles?.wrapperPaddingBox,
@@ -555,8 +547,8 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   return (
     <div
-      ref={treeSelectRef}
-      tabIndex={disabled === true ? -1 : 0}
+      ref={targetRef}
+      tabIndex={disabled === true || showInput ? undefined : 0}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}
@@ -565,6 +557,11 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       onKeyDown={handleKeyDown}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onMouseDown={(e) => {
+        if (focused && e.target !== inputRef.current) {
+          e.preventDefault();
+        }
+      }}
     >
       {tipNode}
       {renderResult()}
@@ -582,6 +579,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       >
         <AnimationList
           onRef={popupRef}
+          onMouseDown={preventDefault}
           show={open}
           className={classNames(styles?.pickerWrapper)}
           display={'block'}
