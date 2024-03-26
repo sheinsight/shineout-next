@@ -51,4 +51,5 @@ export interface AbsoluteListProps {
   destroy?: boolean;
   // 自动调整位置来适应容器大小
   adjust?: boolean;
+  lazy?: boolean;
 }

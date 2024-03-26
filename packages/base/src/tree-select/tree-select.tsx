@@ -8,6 +8,7 @@ import {
   useFilter,
   UnMatchedData,
   KeygenResult,
+  useRender,
 } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { TreeSelectProps, ResultItem } from './tree-select.type';
@@ -32,6 +33,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
   const props = useWithFormConfig(props0);
+  const render = useRender();
   const { locale } = useConfig();
   const {
     jssStyle,
@@ -90,7 +92,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
   const showInput = util.isFunc(props.onAdvancedFilter || onFilterProp);
 
-  const datum = useRef<TreeContextProps<DataItem, Value>>();
+  const datum = useRef<TreeContextProps<DataItem>>();
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
   const [focused, setFocused] = useState(false);
@@ -181,8 +183,9 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     },
   );
 
-  const bindTreeDatum = (treeDatum: TreeContextProps<DataItem, Value>) => {
+  const bindTreeDatum = (treeDatum: TreeContextProps<DataItem>) => {
     datum.current = treeDatum;
+    render();
   };
 
   const getRenderItem = (
@@ -204,11 +207,19 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   };
 
   // 点击 Select 结果框的处理方法
-  const handleResultClick = usePersistFn(() => {
+  const handleResultClick = usePersistFn((e) => {
     if (disabled === true) return;
-    if (!open) openPop();
-    else closePop();
-    // inputRef.current?.focus();
+    if (!focus) {
+      inputRef.current?.focus();
+    }
+    if (open) {
+      if (e.target.tagName === 'INPUT') {
+        return;
+      }
+      closePop();
+    } else {
+      openPop();
+    }
   });
 
   const handleMouseEnter = () => {
@@ -219,6 +230,14 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     setEnter(false);
   };
 
+  const focusAndOpen = () => {
+    if (!focused) {
+      inputRef.current?.focus();
+    } else {
+      openPop();
+    }
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     // 回车或下箭头可打开下拉列表
     if (e.keyCode === 13 || e.code === 'Enter') {
@@ -227,7 +246,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           const canOpen = onEnterExpand(e);
           if (canOpen === false) return;
         }
-        handleResultClick();
+        focusAndOpen();
         return;
       }
     }
@@ -490,7 +509,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const renderList = () => {
     if (props.loading) return renderLoading();
 
-    const isEmpty = !props.data?.length;
+    const isEmpty = !filterData?.length;
     if (isEmpty) return renderEmpty();
 
     const treeProps: any = {};
@@ -570,6 +589,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
         adjust
         focus={open}
         fixedWidth='min'
+        lazy={false}
         absolute={props.absolute}
         zIndex={props.zIndex}
         position={position}
