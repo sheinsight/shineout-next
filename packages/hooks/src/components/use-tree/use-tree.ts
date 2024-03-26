@@ -77,8 +77,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     cachedValue: [],
   });
 
-  const firstRender = useRef(true);
-
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
     context.updateMap.set(id, update);
@@ -398,12 +396,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     return current;
   };
 
-  if (firstRender.current) {
-    setValue(value);
-    setData(data);
-    firstRender.current = false;
-  }
-
   useEffect(() => {
     if (defaultExpandAll) {
       const nextExpanded = [] as KeygenResult[];
@@ -415,6 +407,11 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
       onExpand(nextExpanded);
     }
   }, []);
+
+  useEffect(() => {
+    setValue(value);
+    setData(data);
+  }, [data]);
 
   const datum = useLatestObj({
     get,
@@ -431,17 +428,16 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     isDisabled,
     bindNode,
     getDataById,
-  });
-  return {
-    datum,
-    getKey,
-    getDataById,
-    expanded,
-    onExpand,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,
     updateMap: context.updateMap,
+  });
+
+  return {
+    datum,
+    expanded,
+    onExpand,
   };
 };
 

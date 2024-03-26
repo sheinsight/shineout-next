@@ -129,9 +129,6 @@ const selectStyle: JsStyles<SelectClassType> = {
   wrapperOpen: {},
   wrapperDisabled: {
     ...wrapperDisabled,
-    '& $icon': {
-      color: token.selectDisabledFontColor,
-    },
     '& $arrowIcon': {
       color: token.selectDisabledIconColor,
     },
@@ -145,10 +142,6 @@ const selectStyle: JsStyles<SelectClassType> = {
     position: 'relative',
     outline: 'none',
     overflow: 'hidden',
-    '&:hover': {
-      '& $clear': { display: 'inline-flex' },
-      '& $clear + $icon': { display: 'none' },
-    },
   },
   result: {
     display: 'flex',

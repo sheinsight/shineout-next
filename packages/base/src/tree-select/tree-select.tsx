@@ -96,7 +96,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
   const [focused, setFocused] = useState(false);
-  const [enter, setEnter] = useState(false);
 
   const { value, onChange } = useTreeSelect({
     value: valueProp,
@@ -105,6 +104,19 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     control: 'value' in props,
     filterSameChange: filterSameChange,
   });
+
+  const checkEmpty = () => {
+    let isEmpty;
+    if (multiple) {
+      isEmpty = !value || (Array.isArray(value) && value.length === 0);
+    } else {
+      isEmpty = util.isEmpty(value);
+    }
+
+    return isEmpty;
+  };
+
+  const isEmpty = checkEmpty();
 
   const { filterText, inputText, filterData, expanded, rawData, onFilter, onClearCreatedData } =
     useFilter({
@@ -167,7 +179,9 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const rootClass = classNames(
     className,
+    isEmpty && styles.wrapperEmpty,
     styles?.wrapper,
+    open && styles?.wrapperOpen,
     disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,
     disabled !== true && focused && styles?.wrapperFocus,
@@ -222,14 +236,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
   });
 
-  const handleMouseEnter = () => {
-    setEnter(true);
-  };
-
-  const handleMouseLeave = () => {
-    setEnter(false);
-  };
-
   const focusAndOpen = () => {
     if (!focused) {
       inputRef.current?.focus();
@@ -278,26 +284,38 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   };
 
   const renderClearable = () => {
-    return (
-      <span className={styles.clearIcon} onClick={handleClear}>
-        {Icons.PcCloseCircleFill}
+    if (!multiple !== undefined && !showArrow) return null;
+    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
+
+    const arrow = (
+      <span
+        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        onClick={handleResultClick}
+      >
+        {defaultIcon}
       </span>
+    );
+
+    const close = (
+      <span className={styles.clearIcon} onClick={handleClear}>
+        {isEmpty ? arrow : Icons.PcCloseCircleFill}
+      </span>
+    );
+
+    return (
+      <>
+        {close}
+        {!open && arrow}
+      </>
     );
   };
 
   const renderIcon = () => {
-    let isEmpty;
-    if (multiple) {
-      isEmpty = !value || (Array.isArray(value) && value.length === 0);
-    } else {
-      isEmpty = util.isEmpty(value);
-    }
-
-    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && enter && disabled !== true)) {
+    if (clearable && !isEmpty && disabled !== true) {
       return renderClearable();
     }
     if (!multiple && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
+    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
     return (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
@@ -310,7 +328,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const getDataByValues = (values?: Value): (DataItem | UnMatchedData)[] => {
     if (!datum.current || !values) return [];
-    return datum.current.getDataByValues(values);
+    return datum.current.getDataByValues(values) as DataItem[];
   };
 
   const getDataByValuesRef = (values: Value) => {
@@ -379,10 +397,10 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
     if (!datum.current) return;
     if (disabled === true || datum.current?.isDisabled(id)) return;
-    const currentData = datum.current.getDataById(id);
+    const currentData = datum.current.getDataById(id) as DataItem;
     if (!multiple) {
       datum.current.setValue([]);
-      datum.current.set(datum.current.getKey(item), 1);
+      datum.current.set(datum.current.getKey(item as DataItem), 1);
     }
 
     const nextValue = getValue() as Value;
@@ -417,7 +435,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     if (isDisabled) return;
 
     datum.current.set(dataKey, 0);
-    handleChange(item, datum.current.getKey(item, key, index));
+    handleChange(item, datum.current.getKey(item as DataItem, key, index));
   };
 
   // innerTitle 模式
@@ -526,7 +544,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     const nextValue = getValueArray(value);
-
     return (
       <div className={classNames(styles.tree)} style={{ maxHeight: height }}>
         <Tree
@@ -535,6 +552,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           renderItem={renderItem}
           {...treeProps}
           line={line}
+          datum={datum.current}
           mode={mode}
           data={tiledData}
           keygen={keygen}
@@ -574,8 +592,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       onBlur={handleBlur}
       onFocus={handleFocus}
       onKeyDown={handleKeyDown}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onMouseDown={(e) => {
         if (focused && e.target !== inputRef.current) {
           e.preventDefault();
