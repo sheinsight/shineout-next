@@ -1430,27 +1430,6 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '1px'
-   * @description 常规边框宽度
-   */
-  'Border-1': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '2px'
-   * @description 较粗边框宽度
-   */
-  'Border-2': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '3px'
-   * @description 较粗边框宽度
-   */
-  'Border-3': string;
-  /**
-   * @type {string}
-   * @categoty string
    * @default 'transparent'
    * @description 较粗边框宽度
    */
@@ -1469,4 +1448,683 @@ export interface Tokens {
    * @description 尺寸基数，以乘积形式生成所有尺寸，比如：Size * 4px = 8px
    */
   Size: string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0px'
+   * @description 直角 Radius-rect (0px)
+   */
+  'Radius-rect': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '2px'
+   * @description 小 Radius-lesser (2px)
+   */
+  'Radius-lesser': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '3px'
+   * @description 较小 Radius-small (3px)
+   */
+  'Radius-small': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '4px'
+   * @description 常规 Radius-default (4px)
+   */
+  'Radius-default': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '8px'
+   * @description 大 Radius-large (8px)
+   */
+  'Radius-large': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '1000px'
+   * @description 超大 Radius-full (1000px)
+   */
+  'Radius-full': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '50%'
+   * @description 全圆角 Radius-circle (50%)
+   */
+  'Radius-circle': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0px'
+   * @description 无边框 (0px)
+   */
+  'Border-0': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '1px'
+   * @description 常规 Border-1
+   */
+  'Border-1': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '2px'
+   * @description 较粗 Border-2
+   */
+  'Border-2': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '3px'
+   * @description 粗 Border-3
+   */
+  'Border-3': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '300'
+   * @description 细体 Light
+   */
+  'Weight-light': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '400'
+   * @description 常规 Regular
+   */
+  'Weight-regular': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '500'
+   * @description 中等 Medium
+   */
+  'Weight-medium': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '600'
+   * @description 较粗 Semibold
+   */
+  'Weight-Semibold': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '700'
+   * @description 粗体 Bold
+   */
+  'Weight-Bold': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '12px'
+   * @description 提示、标签、辅助文案 (12px)
+   */
+  'Font-12': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '14px'
+   * @description 正文内容 (14px)
+   */
+  'Font-14': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '16px'
+   * @description 标题-小 (16px)
+   */
+  'Font-16': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '18px'
+   * @description 标题-中 (18px)
+   */
+  'Font-18': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '20px'
+   * @description 标题-大 (20px)
+   */
+  'Font-20': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '24px'
+   * @description 标题-较大 (24px)
+   */
+  'Font-24': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '28px'
+   * @description 重点文本 (28px)
+   */
+  'Font-28': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '32px'
+   * @description 运营数据-小 (32px)
+   */
+  'Font-32': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '36px'
+   * @description 运营数据-中 (36px)
+   */
+  'Font-36': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '48px'
+   * @description 运营数据-大 (48px)
+   */
+  'Font-48': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '0px'
+   * @description Spacing-0 (0px)
+   */
+  'Spacing-0': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '1px'
+   * @description Spacing-1 (1px)
+   */
+  'Spacing-1': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '2px'
+   * @description Spacing-2 (2px)
+   */
+  'Spacing-2': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '3px'
+   * @description Spacing-3 (3px)
+   */
+  'Spacing-3': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '4px'
+   * @description Spacing-4 (4px)
+   */
+  'Spacing-4': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '5px'
+   * @description Spacing-5 (5px)
+   */
+  'Spacing-5': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '6px'
+   * @description Spacing-6 (6px)
+   */
+  'Spacing-6': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '7px'
+   * @description Spacing-7 (7px)
+   */
+  'Spacing-7': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '8px'
+   * @description Spacing-8 (8px)
+   */
+  'Spacing-8': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '9px'
+   * @description Spacing-9 (9px)
+   */
+  'Spacing-9': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '10px'
+   * @description Spacing-10 (10px)
+   */
+  'Spacing-10': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '11px'
+   * @description Spacing-11 (11px)
+   */
+  'Spacing-11': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '12px'
+   * @description Spacing-12 (12px)
+   */
+  'Spacing-12': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '13px'
+   * @description Spacing-13 (13px)
+   */
+  'Spacing-13': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '14px'
+   * @description Spacing-14 (14px)
+   */
+  'Spacing-14': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '15px'
+   * @description Spacing-15 (15px)
+   */
+  'Spacing-15': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '16px'
+   * @description Spacing-16 (16px)
+   */
+  'Spacing-16': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '17px'
+   * @description Spacing-17 (17px)
+   */
+  'Spacing-17': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '18px'
+   * @description Spacing-18 (18px)
+   */
+  'Spacing-18': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '19px'
+   * @description Spacing-19 (19px)
+   */
+  'Spacing-19': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '20px'
+   * @description Spacing-20 (20px)
+   */
+  'Spacing-20': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '21px'
+   * @description Spacing-21 (21px)
+   */
+  'Spacing-21': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '22px'
+   * @description Spacing-22 (22px)
+   */
+  'Spacing-22': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '23px'
+   * @description Spacing-23 (23px)
+   */
+  'Spacing-23': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '24px'
+   * @description Spacing-24 (24px)
+   */
+  'Spacing-24': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '25px'
+   * @description Spacing-25 (25px)
+   */
+  'Spacing-25': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '26px'
+   * @description Spacing-26 (26px)
+   */
+  'Spacing-26': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '27px'
+   * @description Spacing-27 (27px)
+   */
+  'Spacing-27': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '28px'
+   * @description Spacing-28 (28px)
+   */
+  'Spacing-28': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '29px'
+   * @description Spacing-29 (29px)
+   */
+  'Spacing-29': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '30px'
+   * @description Spacing-30 (30px)
+   */
+  'Spacing-30': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '31px'
+   * @description Spacing-31 (31px)
+   */
+  'Spacing-31': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '32px'
+   * @description Spacing-32 (32px)
+   */
+  'Spacing-32': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '33px'
+   * @description Spacing-33 (33px)
+   */
+  'Spacing-33': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '34px'
+   * @description Spacing-34 (34px)
+   */
+  'Spacing-34': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '35px'
+   * @description Spacing-35 (35px)
+   */
+  'Spacing-35': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '36px'
+   * @description Spacing-36 (36px)
+   */
+  'Spacing-36': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '37px'
+   * @description Spacing-37 (37px)
+   */
+  'Spacing-37': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '38px'
+   * @description Spacing-38 (38px)
+   */
+  'Spacing-38': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '39px'
+   * @description Spacing-39 (39px)
+   */
+  'Spacing-39': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '40px'
+   * @description Spacing-40 (40px)
+   */
+  'Spacing-40': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '41px'
+   * @description Spacing-41 (41px)
+   */
+  'Spacing-41': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '42px'
+   * @description Spacing-42 (42px)
+   */
+  'Spacing-42': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '43px'
+   * @description Spacing-43 (43px)
+   */
+  'Spacing-43': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '44px'
+   * @description Spacing-44 (44px)
+   */
+  'Spacing-44': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '45px'
+   * @description Spacing-45 (45px)
+   */
+  'Spacing-45': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '46px'
+   * @description Spacing-46 (46px)
+   */
+  'Spacing-46': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '47px'
+   * @description Spacing-47 (47px)
+   */
+  'Spacing-47': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '48px'
+   * @description Spacing-48 (48px)
+   */
+  'Spacing-48': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '2px'
+   * @description Size-1 (2px)
+   */
+  'Size-1': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '4px'
+   * @description Size-2 (4px)
+   */
+  'Size-2': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '6px'
+   * @description Size-3 (6px)
+   */
+  'Size-3': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '8px'
+   * @description Size-4 (8px)
+   */
+  'Size-4': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '10px'
+   * @description Size-5 (10px)
+   */
+  'Size-5': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '12px'
+   * @description Size-6 (12px)
+   */
+  'Size-6': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '14px'
+   * @description Size-7 (14px)
+   */
+  'Size-7': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '16px'
+   * @description Size-8 (16px)
+   */
+  'Size-8': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '18px'
+   * @description Size-9 (18px)
+   */
+  'Size-9': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '20px'
+   * @description Size-10 (20px)
+   */
+  'Size-10': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '22px'
+   * @description Size-11 (22px)
+   */
+  'Size-11': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '24px'
+   * @description Size-12 (24px)
+   */
+  'Size-12': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '26px'
+   * @description Size-13 (26px)
+   */
+  'Size-13': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '28px'
+   * @description Size-14 (28px)
+   */
+  'Size-14': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '30px'
+   * @description Size-15 (30px)
+   */
+  'Size-15': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '32px'
+   * @description Size-16 (32px)
+   */
+  'Size-16': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '34px'
+   * @description Size-17 (34px)
+   */
+  'Size-17': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '36px'
+   * @description Size-18 (36px)
+   */
+  'Size-18': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '38px'
+   * @description Size-19 (38px)
+   */
+  'Size-19': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '40px'
+   * @description Size-20 (40px)
+   */
+  'Size-20': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '42px'
+   * @description Size-21 (42px)
+   */
+  'Size-21': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '44px'
+   * @description Size-22 (44px)
+   */
+  'Size-22': string;
 }

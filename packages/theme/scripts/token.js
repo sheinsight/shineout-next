@@ -185,6 +185,7 @@ function generateTokenTs(component, describesValue, describeMap, valueMap) {
 
 const compileToken = (filePath) => {
   if (!filePath) return;
+  console.log(filePath)
   const pattern = new RegExp(`src(.*?)token`, 'i');
   const match = filePath.match(pattern);
   if (!match?.[1]) return;

@@ -63,7 +63,7 @@ const Tabs = (props: TabsProps) => {
   const panelHeight = useRef<number>(0);
   const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
   const rootClass = classNames(tabsStyle.tabs, tabsClassName, {
-    [tabsStyle.autoFill]: autoFill,
+    [tabsStyle.autoFill]: isVertical || autoFill,
     [tabsStyle.collapsed]: collapse,
   });
 

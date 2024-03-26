@@ -3,67 +3,55 @@
 exports[`Message[Base] should render correctly  1`] = `
 <div>
   <button
-    class="c-rg592x cvey2f3 cs6jo0l"
+    class="c5wkfol soui-button-secondary c871ech soui-button-button"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Show
     </span>
   </button>
   <button
-    class="c-trc8a3 cvey2f3"
+    class="cvrrn77 soui-button-primary c871ech soui-button-button"
     style="margin-inline-start: 24px;"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Info
     </span>
   </button>
   <button
-    class="cflif4m cvey2f3"
+    class="c63i8ms soui-button-success c871ech soui-button-button"
     style="margin-inline-start: 24px;"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Success
     </span>
   </button>
   <button
-    class="c-5ygx8x cvey2f3"
+    class="c-fgh3qr soui-button-warning c871ech soui-button-button"
     style="margin-inline-start: 24px;"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Warn
     </span>
   </button>
   <button
-    class="cw1xbjk cvey2f3"
+    class="c8u0ngy soui-button-danger c871ech soui-button-button"
     style="margin-inline-start: 24px;"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Error
     </span>
   </button>
   <button
-    class="c-rg592x cvey2f3 cs6jo0l"
+    class="c5wkfol soui-button-secondary c871ech soui-button-button"
     style="margin-inline-start: 24px;"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Close All
     </span>
   </button>
@@ -73,23 +61,19 @@ exports[`Message[Base] should render correctly  1`] = `
 exports[`Message[Base] should render correctly  2`] = `
 <div>
   <button
-    class="c-rg592x cvey2f3 cs6jo0l"
+    class="c5wkfol soui-button-secondary c871ech soui-button-button"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Duration 10 s.
     </span>
   </button>
   <button
-    class="c-rg592x cvey2f3 cs6jo0l"
+    class="c5wkfol soui-button-secondary c871ech soui-button-button"
     style="margin-inline-start: 24px;"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Manually close
     </span>
   </button>
@@ -102,10 +86,10 @@ exports[`Message[Base] should render correctly  3`] = `
     style="display: flex; align-items: center; margin-bottom: 24px;"
   >
     <div
-      class="cw6sirj"
+      class="c-ggxw0v soui-radio-group"
     >
       <div
-        class="c-emivhp"
+        class="cx6oiet soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -113,21 +97,21 @@ exports[`Message[Base] should render correctly  3`] = `
           type="radio"
         />
         <span
-          class="c-yzux30"
+          class="c-smsfdq soui-radio-indicator-wrapper"
         >
           <span
-            class="c-2ldwtt"
+            class="c-cz3aa7 soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-qgj373"
+          class="c-iv35qp soui-radio-desc"
         >
           top
         </span>
       </div>
       <div
-        class="c-emivhp"
+        class="cx6oiet soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -135,21 +119,21 @@ exports[`Message[Base] should render correctly  3`] = `
           type="radio"
         />
         <span
-          class="c-yzux30"
+          class="c-smsfdq soui-radio-indicator-wrapper"
         >
           <span
-            class="c-2ldwtt"
+            class="c-cz3aa7 soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-qgj373"
+          class="c-iv35qp soui-radio-desc"
         >
           middle
         </span>
       </div>
       <div
-        class="c-emivhp"
+        class="cx6oiet soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -157,21 +141,21 @@ exports[`Message[Base] should render correctly  3`] = `
           type="radio"
         />
         <span
-          class="c-yzux30"
+          class="c-smsfdq soui-radio-indicator-wrapper"
         >
           <span
-            class="c-2ldwtt"
+            class="c-cz3aa7 soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-qgj373"
+          class="c-iv35qp soui-radio-desc"
         >
           top-left
         </span>
       </div>
       <div
-        class="c-emivhp c-wsxxws"
+        class="cx6oiet soui-radio-wrapper c-xza15a soui-radio-wrapper-checked"
       >
         <input
           checked=""
@@ -180,21 +164,21 @@ exports[`Message[Base] should render correctly  3`] = `
           type="radio"
         />
         <span
-          class="c-yzux30"
+          class="c-smsfdq soui-radio-indicator-wrapper"
         >
           <span
-            class="c-2ldwtt"
+            class="c-cz3aa7 soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-qgj373"
+          class="c-iv35qp soui-radio-desc"
         >
           top-right
         </span>
       </div>
       <div
-        class="c-emivhp"
+        class="cx6oiet soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -202,21 +186,21 @@ exports[`Message[Base] should render correctly  3`] = `
           type="radio"
         />
         <span
-          class="c-yzux30"
+          class="c-smsfdq soui-radio-indicator-wrapper"
         >
           <span
-            class="c-2ldwtt"
+            class="c-cz3aa7 soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-qgj373"
+          class="c-iv35qp soui-radio-desc"
         >
           bottom-left
         </span>
       </div>
       <div
-        class="c-emivhp"
+        class="cx6oiet soui-radio-wrapper"
       >
         <input
           style="display: none;"
@@ -224,15 +208,15 @@ exports[`Message[Base] should render correctly  3`] = `
           type="radio"
         />
         <span
-          class="c-yzux30"
+          class="c-smsfdq soui-radio-indicator-wrapper"
         >
           <span
-            class="c-2ldwtt"
+            class="c-cz3aa7 soui-radio-indicator"
             tabindex="1"
           />
         </span>
         <span
-          class="c-qgj373"
+          class="c-iv35qp soui-radio-desc"
         >
           bottom-right
         </span>
@@ -240,12 +224,10 @@ exports[`Message[Base] should render correctly  3`] = `
     </div>
   </div>
   <button
-    class="c-rg592x cvey2f3 cs6jo0l"
+    class="c5wkfol soui-button-secondary c871ech soui-button-button"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Show message.
     </span>
   </button>
@@ -254,27 +236,27 @@ exports[`Message[Base] should render correctly  3`] = `
 
 exports[`Message[Base] should render default 1`] = `
 <div
-  class="c8s7xdz"
+  class="c-1lhg2f soui-message-wrapper"
   data-soui-position="top"
 >
   <div
-    class="cqjg8rj c-szzlz8 "
+    class="c9r2nst soui-message-item c4cq2sa soui-message-item-show "
   >
     <div
-      class="c-1t5zgl c-x2rfl1 c-253odh"
+      class="c-c6vcwz soui-message-message c-apdseb soui-alert-alert c-pd0cg3 soui-alert-warning"
       data-soui-type="message"
     >
       <div
-        class="c-501utk"
+        class="c-s7yiw6 soui-alert-content"
       >
         <div
-          class="c-zfe2lu"
+          class="c-rty55g soui-alert-text"
         >
           Test
         </div>
       </div>
       <div
-        class="c-x1nmyx"
+        class="c-ao9zs7 soui-alert-close"
       >
         <svg
           aria-hidden="true"
@@ -290,23 +272,23 @@ exports[`Message[Base] should render default 1`] = `
     </div>
   </div>
   <div
-    class="cqjg8rj c-szzlz8 "
+    class="c9r2nst soui-message-item c4cq2sa soui-message-item-show "
   >
     <div
-      class="c-1t5zgl c-x2rfl1 c-253odh"
+      class="c-c6vcwz soui-message-message c-apdseb soui-alert-alert c-pd0cg3 soui-alert-warning"
       data-soui-type="message"
     >
       <div
-        class="c-501utk"
+        class="c-s7yiw6 soui-alert-content"
       >
         <div
-          class="c-zfe2lu"
+          class="c-rty55g soui-alert-text"
         >
           Test
         </div>
       </div>
       <div
-        class="c-x1nmyx"
+        class="c-ao9zs7 soui-alert-close"
       >
         <svg
           aria-hidden="true"
@@ -326,27 +308,27 @@ exports[`Message[Base] should render default 1`] = `
 
 exports[`Message[Base] should render default 2`] = `
 <div
-  class="c8s7xdz"
+  class="c-1lhg2f soui-message-wrapper"
   data-soui-position="top"
 >
   <div
-    class="cqjg8rj c-szzlz8 "
+    class="c9r2nst soui-message-item c4cq2sa soui-message-item-show "
   >
     <div
-      class="c-1t5zgl c-x2rfl1 c-253odh"
+      class="c-c6vcwz soui-message-message c-apdseb soui-alert-alert c-pd0cg3 soui-alert-warning"
       data-soui-type="message"
     >
       <div
-        class="c-501utk"
+        class="c-s7yiw6 soui-alert-content"
       >
         <div
-          class="c-zfe2lu"
+          class="c-rty55g soui-alert-text"
         >
           Test
         </div>
       </div>
       <div
-        class="c-x1nmyx"
+        class="c-ao9zs7 soui-alert-close"
       >
         <svg
           aria-hidden="true"
@@ -362,23 +344,23 @@ exports[`Message[Base] should render default 2`] = `
     </div>
   </div>
   <div
-    class="cqjg8rj c-szzlz8 "
+    class="c9r2nst soui-message-item c4cq2sa soui-message-item-show "
   >
     <div
-      class="c-1t5zgl c-x2rfl1 c-253odh"
+      class="c-c6vcwz soui-message-message c-apdseb soui-alert-alert c-pd0cg3 soui-alert-warning"
       data-soui-type="message"
     >
       <div
-        class="c-501utk"
+        class="c-s7yiw6 soui-alert-content"
       >
         <div
-          class="c-zfe2lu"
+          class="c-rty55g soui-alert-text"
         >
           Test
         </div>
       </div>
       <div
-        class="c-x1nmyx"
+        class="c-ao9zs7 soui-alert-close"
       >
         <svg
           aria-hidden="true"
