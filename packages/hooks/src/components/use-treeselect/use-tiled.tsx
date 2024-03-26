@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { KeygenResult } from '../../common/type';
+import { KeygenResult, ObjectKey } from '../../common/type';
 import { useTree } from '../use-tree';
-import { UseTiledProps, FilterFormType } from './use-tiled.type';
+import { UseTiledProps } from './use-tiled.type';
 import { mergeFilteredTree } from '../../utils/tree';
 
 const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
   const {
     data,
     keygen,
-    childrenKey = 'children' as keyof DataItem & string,
+    childrenKey = 'children' as ObjectKey<DataItem>,
     expanded = [],
     rawData,
     onFilter,
@@ -19,7 +19,7 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
   } = props;
 
   const [tileds, setTileds] = useState<KeygenResult[]>([]);
-  const { datum } = useTree({ data, childrenKey, keygen, isControlled: false, a: true });
+  const { datum } = useTree({ data, childrenKey, keygen, isControlled: false });
   const { datum: rawDatum } = useTree({ data: rawData, childrenKey, keygen, isControlled: false });
 
   const handleToggle = (e: React.MouseEvent, key: KeygenResult) => {
@@ -32,7 +32,7 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
     setTileds(nextTileds);
   };
 
-  const handleFilter = (text: string, from: FilterFormType) => {
+  const handleFilter = (text: string, from?: string) => {
     if (!text) setTileds([]);
     if (onFilter) onFilter(text, from);
   };

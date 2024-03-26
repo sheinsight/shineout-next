@@ -96,12 +96,27 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
         right: token.treeSelectLargePaddingX,
       },
     },
+    '&:hover': {
+      cursor: 'pointer',
+      '&$clearable:not($wrapperEmpty)': {
+        '& $clearIcon': {
+          display: 'block',
+        },
+        '& $arrowIcon': {
+          display: 'none',
+        },
+      },
+    },
+    '&:not($wrapperEmpty):not($wrapperOpen)': {
+      '& $clearIcon': {
+        display: 'none',
+      },
+    },
   },
+  wrapperEmpty: {},
+  wrapperOpen: {},
   wrapperDisabled: {
     ...wrapperDisabled,
-    '& $icon': {
-      color: token.treeSelectDisabledFontColor,
-    },
   },
   ...resetWrapper,
   resultWrapper: {
@@ -111,10 +126,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     position: 'relative',
     outline: 'none',
     overflow: 'hidden',
-    '&:hover': {
-      '& $clear': { display: 'inline-flex' },
-      '& $clear + $icon': { display: 'none' },
-    },
+    '&:hover': {},
   },
   result: {
     display: 'flex',
@@ -284,6 +296,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
       flexWrap: 'nowrap',
     },
     '& $placeholder': {},
+    '& $arrowIconOpen': {
+      transform: 'none',
+    },
   },
   multipleCompressedWrapper: {
     flexWrap: 'nowrap',

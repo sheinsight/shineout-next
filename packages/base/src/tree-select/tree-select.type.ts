@@ -12,6 +12,8 @@ import { SpinClasses } from '../spin/spin.type';
 
 export type TreeSelectClasses = {
   wrapper: string;
+  wrapperEmpty: string;
+  wrapperOpen: string;
   wrapperDisabled: string;
   wrapperSmall: string;
   wrapperLarge: string;
