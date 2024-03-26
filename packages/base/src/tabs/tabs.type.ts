@@ -114,8 +114,8 @@ export interface TabsProps extends BaseTabsProps, Pick<CommonType, 'className' |
    */
   defaultCollapsed?: boolean;
   /**
-   * @en Auto fill the panel
-   * @cn 自动填充内容区域
+   * @en Auto fill the panel, when the position is left-top, right-top and the shape is not button and fill, it is enabled by default, and other cases need to be controlled manually
+   * @cn 自动填充内容区域,当position为left-top, right-top且shape为非button和fill时默认开启，其他情况需手动控制
    */
   autoFill?: boolean;
   /**

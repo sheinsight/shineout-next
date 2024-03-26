@@ -2,13 +2,13 @@
 
 exports[`Upload[Base] should render correctly  1`] = `
 <div
-  class="c-dsitl"
+  class="c-9vspbf soui-upload-wrapper"
 >
   <span
-    class="c-fb8m1e"
+    class="c-ot8sj8 soui-upload-handler"
   >
     <button
-      class="c-rg592x cvey2f3 cs6jo0l"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
       <svg
@@ -24,9 +24,7 @@ exports[`Upload[Base] should render correctly  1`] = `
           fill="currentColor"
         />
       </svg>
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Upload file
       </span>
     </button>
@@ -41,13 +39,13 @@ exports[`Upload[Base] should render correctly  1`] = `
 
 exports[`Upload[Base] should render correctly about base button 1`] = `
 <div
-  class="c-dsitl"
+  class="c-9vspbf soui-upload-wrapper"
 >
   <span
-    class="c-fb8m1e"
+    class="c-ot8sj8 soui-upload-handler"
   >
     <button
-      class="chlg49a c-trc8a3 cvey2f3"
+      class="c-5mgjtc soui-upload-button cvrrn77 soui-button-primary c871ech soui-button-button"
       tabindex="0"
       type="button"
     >
@@ -65,14 +63,14 @@ exports[`Upload[Base] should render correctly about base button 1`] = `
 
 exports[`Upload[Base] should render correctly about base image 1`] = `
 <div
-  class="c-dsitl c-4cljbw"
+  class="c-9vspbf soui-upload-wrapper c-vvtawq soui-upload-wrapper-image"
 >
   <span
-    class="c-bnmddh"
+    class="cvu9x0t soui-upload-image-handler"
     style="width: 80px; height: 80px;"
   >
     <div
-      class="cxtwbfo"
+      class="chzpe9y soui-upload-image-handler-icon"
     >
       <svg
         aria-hidden="true"
@@ -97,13 +95,13 @@ exports[`Upload[Base] should render correctly about base image 1`] = `
 exports[`Upload[Base] should render correctly about confirm 1`] = `
 <div>
   <div
-    class="c-dsitl"
+    class="c-9vspbf soui-upload-wrapper"
   >
     <span
-      class="c-fb8m1e"
+      class="c-ot8sj8 soui-upload-handler"
     >
       <button
-        class="c-rg592x cvey2f3 cs6jo0l"
+        class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <svg
@@ -119,9 +117,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span
-          class="cboe6wq"
-        >
+        <span>
           Upload file
         </span>
       </button>
@@ -131,13 +127,13 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       />
     </span>
     <div
-      class="coxcqrd c-3opzue"
+      class="c1pg2or soui-upload-result c-4v232w soui-upload-result-success"
     >
       <div
-        class="cnee1c6"
+        class="c-846gm0 soui-upload-result-text"
       >
         <div
-          class="c3f695h"
+          class="cpsjwc7 soui-upload-icon"
         >
           <svg
             aria-hidden="true"
@@ -151,15 +147,15 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
           </svg>
         </div>
         <div
-          class="c-pzzl6g"
+          class="c8kpoh6 soui-upload-result-text-body"
         >
           mountain.png
         </div>
         <div
-          class="cj30fi9"
+          class="c38ticj soui-upload-result-text-footer"
         >
           <div
-            class="c3f695h c-17p7a4"
+            class="cpsjwc7 soui-upload-icon c-h1w4fu soui-upload-result-status-icon"
           >
             <svg
               aria-hidden="true"
@@ -175,7 +171,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
         </div>
       </div>
       <div
-        class="cetqdxb c3f695h cyzsfaf"
+        class="cw9np5p soui-upload-result-close cpsjwc7 soui-upload-icon c-2olxx7 soui-upload-icon-hover"
       >
         <noscript />
         <svg
@@ -194,15 +190,15 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
     </div>
   </div>
   <div
-    class="c-dsitl c-4cljbw"
+    class="c-9vspbf soui-upload-wrapper c-vvtawq soui-upload-wrapper-image"
     style="margin-top: 24px;"
   >
     <span
-      class="c-bnmddh"
+      class="cvu9x0t soui-upload-image-handler"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="cxtwbfo"
+        class="chzpe9y soui-upload-image-handler-icon"
       >
         <svg
           aria-hidden="true"
@@ -221,30 +217,115 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
       />
     </span>
     <div
-      class="c-bm77no c-3opzue"
+      class="c5tq3kq soui-upload-image-result c-4v232w soui-upload-result-success"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="c4ulk4k c5xp75n c-w12imj cdf7qvh"
+        class="c-4nemda soui-upload-image-bg csb2ucd soui-image-image cm7nydv soui-image-center c-9sox75 soui-image-rounded"
         style="width: auto; padding-bottom: 0px;"
       >
         <div
-          class="ct7mkia"
+          class="czfgeeo soui-image-default-placeholder"
         >
           <div
-            class="chxenrh"
-            style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
-          />
+            class="c-6hiam soui-spin-default c-2g4yrj soui-spin-spin"
+            style="width: 16px; height: 16px;"
+          >
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div
-        class="c-kmqp2w"
+        class="c-e9o7dm soui-upload-image-result-mask"
       >
         <div
-          class="closwc"
+          class="c-4odlee soui-upload-image-result-mask-operator"
         >
           <div
-            class="c3f695h"
+            class="cpsjwc7 soui-upload-icon"
           >
             <svg
               aria-hidden="true"
@@ -258,7 +339,7 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
             </svg>
           </div>
           <div
-            class="c3f695h"
+            class="cpsjwc7 soui-upload-icon"
           >
             <noscript />
             <svg
@@ -284,14 +365,14 @@ exports[`Upload[Base] should render correctly about confirm 1`] = `
 exports[`Upload[Base] should render correctly about default value 1`] = `
 <div>
   <div
-    class="c-dsitl"
+    class="c-9vspbf soui-upload-wrapper"
     style="width: 300px; margin-bottom: 30px;"
   >
     <span
-      class="c-fb8m1e"
+      class="c-ot8sj8 soui-upload-handler"
     >
       <button
-        class="c-rg592x cvey2f3 cs6jo0l"
+        class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <svg
@@ -307,9 +388,7 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span
-          class="cboe6wq"
-        >
+        <span>
           Upload file
         </span>
       </button>
@@ -321,13 +400,13 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
       />
     </span>
     <div
-      class="coxcqrd c-3opzue"
+      class="c1pg2or soui-upload-result c-4v232w soui-upload-result-success"
     >
       <div
-        class="cnee1c6"
+        class="c-846gm0 soui-upload-result-text"
       >
         <div
-          class="c3f695h"
+          class="cpsjwc7 soui-upload-icon"
         >
           <svg
             aria-hidden="true"
@@ -341,15 +420,15 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
           </svg>
         </div>
         <div
-          class="c-pzzl6g"
+          class="c8kpoh6 soui-upload-result-text-body"
         >
           test file.png
         </div>
         <div
-          class="cj30fi9"
+          class="c38ticj soui-upload-result-text-footer"
         >
           <div
-            class="c3f695h c-17p7a4"
+            class="cpsjwc7 soui-upload-icon c-h1w4fu soui-upload-result-status-icon"
           >
             <svg
               aria-hidden="true"
@@ -365,7 +444,7 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
         </div>
       </div>
       <div
-        class="cetqdxb c3f695h cyzsfaf"
+        class="cw9np5p soui-upload-result-close cpsjwc7 soui-upload-icon c-2olxx7 soui-upload-icon-hover"
       >
         <svg
           aria-hidden="true"
@@ -388,15 +467,15 @@ exports[`Upload[Base] should render correctly about default value 1`] = `
 exports[`Upload[Base] should render correctly about drag 1`] = `
 <div>
   <div
-    class="c-dsitl c-dw28je"
+    class="c-9vspbf soui-upload-wrapper c3jv2p0 soui-upload-wrapper-drop"
     style="width: 400px;"
   >
     <span
-      class="cfcfc3i"
+      class="c4ypyn4 soui-upload-drop-item"
       data-soui-dragover="false"
     >
       <span
-        class="c-fb8m1e"
+        class="c-ot8sj8 soui-upload-handler"
       >
         <div
           style="height: 200px; box-sizing: border-box; padding: 50px 16px; font-size: 12px; line-height: 16px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;"
@@ -432,14 +511,14 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
     style="margin-top: 24px;"
   />
   <div
-    class="c-dsitl c-4cljbw c-dw28je"
+    class="c-9vspbf soui-upload-wrapper c-vvtawq soui-upload-wrapper-image c3jv2p0 soui-upload-wrapper-drop"
   >
     <span
-      class="cfcfc3i"
+      class="c4ypyn4 soui-upload-drop-item"
       data-soui-dragover="false"
     >
       <span
-        class="c-bnmddh"
+        class="cvu9x0t soui-upload-image-handler"
         style="width: 200px; height: 156px;"
       >
         <div
@@ -477,13 +556,13 @@ exports[`Upload[Base] should render correctly about drag 1`] = `
 exports[`Upload[Base] should render correctly about handle error 1`] = `
 <div>
   <div
-    class="c-dsitl"
+    class="c-9vspbf soui-upload-wrapper"
   >
     <span
-      class="c-fb8m1e"
+      class="c-ot8sj8 soui-upload-handler"
     >
       <button
-        class="c-rg592x cvey2f3 cs6jo0l"
+        class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <svg
@@ -499,9 +578,7 @@ exports[`Upload[Base] should render correctly about handle error 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span
-          class="cboe6wq"
-        >
+        <span>
           Upload file
         </span>
       </button>
@@ -518,13 +595,13 @@ exports[`Upload[Base] should render correctly about handle error 1`] = `
 exports[`Upload[Base] should render correctly about recover 1`] = `
 <div>
   <div
-    class="c-dsitl"
+    class="c-9vspbf soui-upload-wrapper"
   >
     <span
-      class="c-fb8m1e"
+      class="c-ot8sj8 soui-upload-handler"
     >
       <button
-        class="c-rg592x cvey2f3 cs6jo0l"
+        class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <svg
@@ -540,9 +617,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span
-          class="cboe6wq"
-        >
+        <span>
           Upload file
         </span>
       </button>
@@ -552,13 +627,13 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
       />
     </span>
     <div
-      class="coxcqrd c-3opzue"
+      class="c1pg2or soui-upload-result c-4v232w soui-upload-result-success"
     >
       <div
-        class="cnee1c6"
+        class="c-846gm0 soui-upload-result-text"
       >
         <div
-          class="c3f695h"
+          class="cpsjwc7 soui-upload-icon"
         >
           <svg
             aria-hidden="true"
@@ -572,15 +647,15 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
           </svg>
         </div>
         <div
-          class="c-pzzl6g"
+          class="c8kpoh6 soui-upload-result-text-body"
         >
           mountain.png
         </div>
         <div
-          class="cj30fi9"
+          class="c38ticj soui-upload-result-text-footer"
         >
           <div
-            class="c3f695h c-17p7a4"
+            class="cpsjwc7 soui-upload-icon c-h1w4fu soui-upload-result-status-icon"
           >
             <svg
               aria-hidden="true"
@@ -596,7 +671,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
         </div>
       </div>
       <div
-        class="cetqdxb c3f695h cyzsfaf"
+        class="cw9np5p soui-upload-result-close cpsjwc7 soui-upload-icon c-2olxx7 soui-upload-icon-hover"
       >
         <svg
           aria-hidden="true"
@@ -614,15 +689,15 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
     </div>
   </div>
   <div
-    class="c-dsitl c-4cljbw"
+    class="c-9vspbf soui-upload-wrapper c-vvtawq soui-upload-wrapper-image"
     style="margin-top: 24px;"
   >
     <span
-      class="c-bnmddh"
+      class="cvu9x0t soui-upload-image-handler"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="cxtwbfo"
+        class="chzpe9y soui-upload-image-handler-icon"
       >
         <svg
           aria-hidden="true"
@@ -641,30 +716,115 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
       />
     </span>
     <div
-      class="c-bm77no c-3opzue"
+      class="c5tq3kq soui-upload-image-result c-4v232w soui-upload-result-success"
       style="width: 80px; height: 80px;"
     >
       <div
-        class="c4ulk4k c5xp75n c-w12imj cdf7qvh"
+        class="c-4nemda soui-upload-image-bg csb2ucd soui-image-image cm7nydv soui-image-center c-9sox75 soui-image-rounded"
         style="width: auto; padding-bottom: 0px;"
       >
         <div
-          class="ct7mkia"
+          class="czfgeeo soui-image-default-placeholder"
         >
           <div
-            class="chxenrh"
-            style="width: 16px; height: 16px; border-width: 1.6px; border-left-color: #B3B7C1; border-right-color: #B3B7C1; border-bottom-color: #B3B7C1; font-size: 1.6px;"
-          />
+            class="c-6hiam soui-spin-default c-2g4yrj soui-spin-spin"
+            style="width: 16px; height: 16px;"
+          >
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+            <div
+              class="c-2gb9ri soui-spin-item"
+            >
+              <div
+                style="background-color: rgb(179, 183, 193); width: 2px; border-radius: 2px;"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div
-        class="c-kmqp2w"
+        class="c-e9o7dm soui-upload-image-result-mask"
       >
         <div
-          class="closwc"
+          class="c-4odlee soui-upload-image-result-mask-operator"
         >
           <div
-            class="c3f695h"
+            class="cpsjwc7 soui-upload-icon"
           >
             <svg
               aria-hidden="true"
@@ -678,7 +838,7 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
             </svg>
           </div>
           <div
-            class="c3f695h"
+            class="cpsjwc7 soui-upload-icon"
           >
             <svg
               aria-hidden="true"
@@ -702,13 +862,13 @@ exports[`Upload[Base] should render correctly about recover 1`] = `
 
 exports[`Upload[Base] should render correctly about request 1`] = `
 <div
-  class="c-dsitl"
+  class="c-9vspbf soui-upload-wrapper"
 >
   <span
-    class="c-fb8m1e"
+    class="c-ot8sj8 soui-upload-handler"
   >
     <button
-      class="c-rg592x cvey2f3 cs6jo0l"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
       <svg
@@ -724,9 +884,7 @@ exports[`Upload[Base] should render correctly about request 1`] = `
           fill="currentColor"
         />
       </svg>
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Upload file
       </span>
     </button>
@@ -741,13 +899,13 @@ exports[`Upload[Base] should render correctly about request 1`] = `
 
 exports[`Upload[Base] should render correctly about request ignore 1`] = `
 <div
-  class="c-dsitl"
+  class="c-9vspbf soui-upload-wrapper"
 >
   <span
-    class="c-fb8m1e"
+    class="c-ot8sj8 soui-upload-handler"
   >
     <button
-      class="c-rg592x cvey2f3 cs6jo0l"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
       <svg
@@ -763,9 +921,7 @@ exports[`Upload[Base] should render correctly about request ignore 1`] = `
           fill="currentColor"
         />
       </svg>
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Upload file
       </span>
     </button>
@@ -780,14 +936,14 @@ exports[`Upload[Base] should render correctly about request ignore 1`] = `
 
 exports[`Upload[Base] should render correctly about request zip 1`] = `
 <div
-  class="c-dsitl"
+  class="c-9vspbf soui-upload-wrapper"
   style="width: 300px;"
 >
   <span
-    class="c-fb8m1e"
+    class="c-ot8sj8 soui-upload-handler"
   >
     <button
-      class="c-rg592x cvey2f3 cs6jo0l"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
       <svg
@@ -803,9 +959,7 @@ exports[`Upload[Base] should render correctly about request zip 1`] = `
           fill="currentColor"
         />
       </svg>
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Upload file
       </span>
     </button>
@@ -819,13 +973,13 @@ exports[`Upload[Base] should render correctly about request zip 1`] = `
 
 exports[`Upload[Base] should render correctly about result 1`] = `
 <div
-  class="c-dsitl"
+  class="c-9vspbf soui-upload-wrapper"
 >
   <span
-    class="c-fb8m1e"
+    class="c-ot8sj8 soui-upload-handler"
   >
     <button
-      class="c-rg592x cvey2f3 cs6jo0l"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
       <svg
@@ -841,9 +995,7 @@ exports[`Upload[Base] should render correctly about result 1`] = `
           fill="currentColor"
         />
       </svg>
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Upload file
       </span>
     </button>
@@ -858,14 +1010,14 @@ exports[`Upload[Base] should render correctly about result 1`] = `
 
 exports[`Upload[Base] should render correctly about result image 1`] = `
 <div
-  class="c-dsitl c-4cljbw"
+  class="c-9vspbf soui-upload-wrapper c-vvtawq soui-upload-wrapper-image"
 >
   <span
-    class="c-bnmddh"
+    class="cvu9x0t soui-upload-image-handler"
     style="width: 80px; height: 80px;"
   >
     <div
-      class="cxtwbfo"
+      class="chzpe9y soui-upload-image-handler-icon"
     >
       <svg
         aria-hidden="true"
@@ -889,10 +1041,10 @@ exports[`Upload[Base] should render correctly about result image 1`] = `
 
 exports[`Upload[Base] should render correctly about validate image 1`] = `
 <div
-  class="c-dsitl c-4cljbw"
+  class="c-9vspbf soui-upload-wrapper c-vvtawq soui-upload-wrapper-image"
 >
   <span
-    class="c-bnmddh"
+    class="cvu9x0t soui-upload-image-handler"
     style="width: 400px; height: 200px;"
   >
     <div
@@ -937,13 +1089,13 @@ exports[`Upload[Base] should render correctly about validate image 1`] = `
 exports[`Upload[Base] should render correctly about validate size 1`] = `
 <div>
   <div
-    class="c-dsitl"
+    class="c-9vspbf soui-upload-wrapper"
   >
     <span
-      class="c-fb8m1e"
+      class="c-ot8sj8 soui-upload-handler"
     >
       <button
-        class="c-rg592x cvey2f3 cs6jo0l"
+        class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <svg
@@ -959,9 +1111,7 @@ exports[`Upload[Base] should render correctly about validate size 1`] = `
             fill="currentColor"
           />
         </svg>
-        <span
-          class="cboe6wq"
-        >
+        <span>
           Upload file
         </span>
       </button>

@@ -2,25 +2,25 @@
 
 exports[`Drawer[Base] should render correctly about base 1`] = `
 <div
-  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
+  class="c-tki81p soui-modal-wrapper c-l9lx4v soui-modal-wrapper-animation cp0xsv4 soui-modal-wrapper-show c-xzvnl3 soui-modal-wrapper-is-mask cyntpjo soui-modal-wrapper-drawer c4ssyco soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cf4334u"
+    class="cmpj0l8 soui-modal-mask"
   >
     <div
-      class="c-snheni"
+      class="c-6a3rgs soui-modal-panel"
       style="width: 400px;"
     >
       <div
-        class="cvg2z0f"
+        class="cenpe1p soui-modal-header"
       >
         <div
-          class="c-s33w2v"
+          class="cbffny3 soui-modal-header-title"
         >
           Drawer Title
         </div>
         <div
-          class="c-scekqv"
+          class="cb64za3 soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -35,30 +35,26 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
         </div>
       </div>
       <div
-        class="cf3wcb8"
+        class="cmpc9rm soui-modal-body"
       >
         you are visited 1
       </div>
       <div
-        class="cunqxu5"
+        class="cdvdcvf soui-modal-footer"
       >
         <button
-          class="c-rg592x cvey2f3 cs6jo0l"
+          class="c5wkfol soui-button-secondary c871ech soui-button-button"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Cancel
           </span>
         </button>
         <button
-          class="c-trc8a3 cvey2f3"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Ok
           </span>
         </button>
@@ -70,26 +66,26 @@ exports[`Drawer[Base] should render correctly about base 1`] = `
 
 exports[`Drawer[Base] should render correctly about close 1`] = `
 <div
-  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
+  class="c-tki81p soui-modal-wrapper c-l9lx4v soui-modal-wrapper-animation cp0xsv4 soui-modal-wrapper-show c-xzvnl3 soui-modal-wrapper-is-mask cyntpjo soui-modal-wrapper-drawer c4ssyco soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cf4334u"
+    class="cmpj0l8 soui-modal-mask"
   >
     <div
-      class="c-snheni"
+      class="c-6a3rgs soui-modal-panel"
       style="width: 400px;"
     >
       <div
-        class="cvg2z0f"
+        class="cenpe1p soui-modal-header"
       >
         <div
-          class="c-s33w2v"
+          class="cbffny3 soui-modal-header-title"
         >
           Modal Title
         </div>
       </div>
       <div
-        class="cf3wcb8"
+        class="cmpc9rm soui-modal-body"
       >
         The prop maskCloseAble is  
         false
@@ -98,15 +94,13 @@ exports[`Drawer[Base] should render correctly about close 1`] = `
         You must click the button to close the Modal.
       </div>
       <div
-        class="cunqxu5"
+        class="cdvdcvf soui-modal-footer"
       >
         <button
-          class="c-rg592x cvey2f3 cs6jo0l"
+          class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Close
           </span>
         </button>
@@ -118,25 +112,25 @@ exports[`Drawer[Base] should render correctly about close 1`] = `
 
 exports[`Drawer[Base] should render correctly about container 1`] = `
 <div
-  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
+  class="c-tki81p soui-modal-wrapper c-l9lx4v soui-modal-wrapper-animation cp0xsv4 soui-modal-wrapper-show c-xzvnl3 soui-modal-wrapper-is-mask cyntpjo soui-modal-wrapper-drawer c4ssyco soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cf4334u"
+    class="cmpj0l8 soui-modal-mask"
   >
     <div
-      class="c-snheni"
+      class="c-6a3rgs soui-modal-panel"
       style="width: 400px;"
     >
       <div
-        class="cvg2z0f"
+        class="cenpe1p soui-modal-header"
       >
         <div
-          class="c-s33w2v"
+          class="cbffny3 soui-modal-header-title"
         >
           Drawer Title
         </div>
         <div
-          class="c-scekqv"
+          class="cb64za3 soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -151,30 +145,26 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
         </div>
       </div>
       <div
-        class="cf3wcb8"
+        class="cmpc9rm soui-modal-body"
       >
         Drawer mount after Button
       </div>
       <div
-        class="cunqxu5"
+        class="cdvdcvf soui-modal-footer"
       >
         <button
-          class="c-rg592x cvey2f3 cs6jo0l"
+          class="c5wkfol soui-button-secondary c871ech soui-button-button"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Cancel
           </span>
         </button>
         <button
-          class="c-trc8a3 cvey2f3"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Ok
           </span>
         </button>
@@ -186,25 +176,25 @@ exports[`Drawer[Base] should render correctly about container 1`] = `
 
 exports[`Drawer[Base] should render correctly about form 1`] = `
 <div
-  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
+  class="c-tki81p soui-modal-wrapper c-l9lx4v soui-modal-wrapper-animation cp0xsv4 soui-modal-wrapper-show c-xzvnl3 soui-modal-wrapper-is-mask cyntpjo soui-modal-wrapper-drawer c4ssyco soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cf4334u"
+    class="cmpj0l8 soui-modal-mask"
   >
     <div
-      class="c-snheni"
+      class="c-6a3rgs soui-modal-panel"
       style="width: 456px;"
     >
       <div
-        class="cvg2z0f"
+        class="cenpe1p soui-modal-header"
       >
         <div
-          class="c-s33w2v"
+          class="cbffny3 soui-modal-header-title"
         >
           Form
         </div>
         <div
-          class="c-scekqv"
+          class="cb64za3 soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -219,35 +209,35 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
         </div>
       </div>
       <div
-        class="cf3wcb8"
+        class="cmpc9rm soui-modal-body"
       >
         <form
-          class="cr9qis4"
+          class="cahcxte soui-form-wrapper"
           style="max-width: 400px;"
         >
           <div
-            class="csrte0i c-48r573"
+            class="c-2qr3xo soui-form-item-wrapper c-olek8d soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-v46lkd"
+              class="ctj82yd soui-form-item-label"
               style="width: 100px;"
             >
               Email
             </div>
             <div
-              class="ci4ezng"
+              class="c-de5iaq soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="c5g1ick"
-                data-soui-type="input"
+                class="c-hrv5q2 soui-input-wrapper"
+                data-soui-input-border="true"
               >
                 <div
-                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+                  class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
                 >
                   <input
-                    class="cccsm1n"
+                    class="cyq698d soui-input-input"
                     value=""
                   />
                 </div>
@@ -255,28 +245,28 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
             </div>
           </div>
           <div
-            class="csrte0i c-48r573"
+            class="c-2qr3xo soui-form-item-wrapper c-olek8d soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-v46lkd"
+              class="ctj82yd soui-form-item-label"
               style="width: 100px;"
             >
               Password
             </div>
             <div
-              class="ci4ezng"
+              class="c-de5iaq soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="c5g1ick"
-                data-soui-type="input"
+                class="c-hrv5q2 soui-input-wrapper"
+                data-soui-input-border="true"
               >
                 <div
-                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+                  class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
                 >
                   <input
-                    class="cccsm1n"
+                    class="cyq698d soui-input-input"
                     type="password"
                     value=""
                   />
@@ -287,26 +277,22 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
         </form>
       </div>
       <div
-        class="cunqxu5"
+        class="cdvdcvf soui-modal-footer"
       >
         <div>
           <button
-            class="c-rg592x cvey2f3 cs6jo0l"
+            class="c5wkfol soui-button-secondary c871ech soui-button-button"
             type="button"
           >
-            <span
-              class="cboe6wq"
-            >
+            <span>
               Cancel
             </span>
           </button>
           <button
-            class="c-trc8a3 cvey2f3"
+            class="cvrrn77 soui-button-primary c871ech soui-button-button"
             type="button"
           >
-            <span
-              class="cboe6wq"
-            >
+            <span>
               Submit
             </span>
           </button>
@@ -319,24 +305,24 @@ exports[`Drawer[Base] should render correctly about form 1`] = `
 
 exports[`Drawer[Base] should render correctly about full screen 1`] = `
 <div
-  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-mokj38 c-8u2kum c-1f0vjq"
+  class="c-tki81p soui-modal-wrapper c-l9lx4v soui-modal-wrapper-animation cp0xsv4 soui-modal-wrapper-show c-xzvnl3 soui-modal-wrapper-is-mask cwiclq6 soui-modal-wrapper-full-screen cyntpjo soui-modal-wrapper-drawer c4ssyco soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cf4334u"
+    class="cmpj0l8 soui-modal-mask"
   >
     <div
-      class="c-snheni"
+      class="c-6a3rgs soui-modal-panel"
     >
       <div
-        class="cvg2z0f"
+        class="cenpe1p soui-modal-header"
       >
         <div
-          class="c-s33w2v"
+          class="cbffny3 soui-modal-header-title"
         >
           Profile
         </div>
         <div
-          class="c-scekqv"
+          class="cb64za3 soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -351,42 +337,42 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
         </div>
       </div>
       <div
-        class="cf3wcb8"
+        class="cmpc9rm soui-modal-body"
       >
         <div>
           <form
-            class="cr9qis4"
+            class="cahcxte soui-form-wrapper"
           >
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               >
                 Name
               </div>
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c5g1ick"
-                  data-soui-type="input"
+                  class="c-hrv5q2 soui-input-wrapper"
+                  data-soui-input-border="true"
                 >
                   <div
-                    class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+                    class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
                   >
                     <input
-                      class="cccsm1n"
+                      class="cyq698d soui-input-input"
                       placeholder="please input name"
                       value="zhangsan"
                     />
                     <div
-                      class="c-9f965n"
+                      class="c80o52r soui-input-clear-wrapper"
                     >
                       <span
-                        class="cc9gbvi"
+                        class="cymtz28 soui-input-clear"
                       >
                         <svg
                           aria-hidden="true"
@@ -410,27 +396,27 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               >
                 Password
               </div>
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c5g1ick"
-                  data-soui-type="input"
+                  class="c-hrv5q2 soui-input-wrapper"
+                  data-soui-input-border="true"
                 >
                   <div
-                    class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+                    class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
                   >
                     <input
-                      class="cccsm1n"
+                      class="cyq698d soui-input-input"
                       placeholder="please input password"
                       value=""
                     />
@@ -439,35 +425,35 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               >
                 Email
               </div>
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c5g1ick"
-                  data-soui-type="input"
+                  class="c-hrv5q2 soui-input-wrapper"
+                  data-soui-input-border="true"
                 >
                   <div
-                    class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+                    class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
                   >
                     <input
-                      class="cccsm1n"
+                      class="cyq698d soui-input-input"
                       placeholder="please input email"
                       value="zhangsan@qq.com"
                     />
                     <div
-                      class="c-9f965n"
+                      class="c80o52r soui-input-clear-wrapper"
                     >
                       <span
-                        class="cc9gbvi"
+                        class="cymtz28 soui-input-clear"
                       >
                         <svg
                           aria-hidden="true"
@@ -491,23 +477,23 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               >
                 Gendar
               </div>
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="cw6sirj"
+                  class="c-ggxw0v soui-radio-group"
                 >
                   <div
-                    class="c-emivhp"
+                    class="cx6oiet soui-radio-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -515,21 +501,21 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="radio"
                     />
                     <span
-                      class="c-yzux30"
+                      class="c-smsfdq soui-radio-indicator-wrapper"
                     >
                       <span
-                        class="c-2ldwtt"
+                        class="c-cz3aa7 soui-radio-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c-qgj373"
+                      class="c-iv35qp soui-radio-desc"
                     >
                       male
                     </span>
                   </div>
                   <div
-                    class="c-emivhp"
+                    class="cx6oiet soui-radio-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -537,15 +523,15 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="radio"
                     />
                     <span
-                      class="c-yzux30"
+                      class="c-smsfdq soui-radio-indicator-wrapper"
                     >
                       <span
-                        class="c-2ldwtt"
+                        class="c-cz3aa7 soui-radio-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c-qgj373"
+                      class="c-iv35qp soui-radio-desc"
                     >
                       female
                     </span>
@@ -554,23 +540,23 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               >
                 Course
               </div>
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c-vt37hb"
+                  class="ctq0nzz soui-checkbox-group"
                 >
                   <div
-                    class="c-2oyyob"
+                    class="cunqq37 soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -578,22 +564,22 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="c-do3bmm"
+                      class="c-y0qqnw soui-checkbox-indicator-wrapper"
                     >
                       <i
-                        class="cs409o1"
+                        class="c-ph6h2p soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c19hl67"
+                      class="c-lyf2wf soui-checkbox-desc"
                     >
                       chinese
                     </span>
                   </div>
                   <div
-                    class="c-2oyyob"
+                    class="cunqq37 soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -601,22 +587,22 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="c-do3bmm"
+                      class="c-y0qqnw soui-checkbox-indicator-wrapper"
                     >
                       <i
-                        class="cs409o1"
+                        class="c-ph6h2p soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c19hl67"
+                      class="c-lyf2wf soui-checkbox-desc"
                     >
                       maths
                     </span>
                   </div>
                   <div
-                    class="c-2oyyob"
+                    class="cunqq37 soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -624,22 +610,22 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="c-do3bmm"
+                      class="c-y0qqnw soui-checkbox-indicator-wrapper"
                     >
                       <i
-                        class="cs409o1"
+                        class="c-ph6h2p soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c19hl67"
+                      class="c-lyf2wf soui-checkbox-desc"
                     >
                       english
                     </span>
                   </div>
                   <div
-                    class="c-2oyyob"
+                    class="cunqq37 soui-checkbox-wrapper"
                   >
                     <input
                       style="display: none;"
@@ -647,16 +633,16 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       type="checkbox"
                     />
                     <span
-                      class="c-do3bmm"
+                      class="c-y0qqnw soui-checkbox-indicator-wrapper"
                     >
                       <i
-                        class="cs409o1"
+                        class="c-ph6h2p soui-checkbox-indicator"
                         data-soui-role="checkbox-indicator"
                         tabindex="1"
                       />
                     </span>
                     <span
-                      class="c19hl67"
+                      class="c-lyf2wf soui-checkbox-desc"
                     >
                       physics
                     </span>
@@ -665,40 +651,41 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               >
                 Enrollment date
               </div>
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c-kb0fus"
+                  class="c-2v34me soui-datePicker-wrapper"
+                  data-soui-input-border="true"
                   data-soui-type="date"
                 >
                   <div
-                    class="c-dt8k4h ci4jqom csb873r c9qf70p"
+                    class="c-7leq83 soui-datePicker-result-wrapper c-lpv8gc soui-datePicker-wrapper-padding-box c6pdztl soui-datePicker-wrapper-inner-title-top c8gw12f soui-datePicker-wrapper-inner-title-bottom"
                     tabindex="1"
                   >
                     <div
-                      class="clzqaj8"
+                      class="c-9iu7ey soui-datePicker-result"
                     >
                       <div
-                        class="cw835ma"
+                        class="c-7mbtio soui-datePicker-result-text-wrapper"
                       >
                         <div
-                          class="c-wskee7"
+                          class="c1s4v9f soui-datePicker-result-text"
                         >
                           <div
-                            class="c-7hwrps"
+                            class="cnosb4e soui-datePicker-result-text-padding"
                           >
                             <span
-                              class="c-37qmec"
+                              class="c35bvay soui-datePicker-placeholder"
                             >
                               please select date
                             </span>
@@ -707,7 +694,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </div>
                     </div>
                     <div
-                      class="czhvzzk"
+                      class="cp46mj6 soui-datePicker-icon"
                     >
                       <svg
                         aria-hidden="true"
@@ -723,670 +710,33 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </svg>
                     </div>
                   </div>
-                  <div
-                    class="coqsbym"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="c-3sw5h6"
-                    >
-                      <div
-                        class="c8b8vn7 cl3jsqt"
-                      >
-                        <div
-                          class="ce4ai42"
-                        >
-                          <div
-                            class="czc6jq1"
-                          >
-                            <span
-                              class="czc4lhn"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                focusable="false"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  d="M11.3871 5.2097C11.7794 4.90468 12.3466 4.93241 12.7071 5.29289L12.7903 5.3871C13.0953 5.77939 13.0676 6.34662 12.7071 6.70711L8.12205 11.2928C7.7317 11.6835 7.7317 12.3165 8.12205 12.7072L12.7071 17.2929L12.7903 17.3871C13.0953 17.7794 13.0676 18.3466 12.7071 18.7071C12.3166 19.0976 11.6834 19.0976 11.2929 18.7071L5.29289 12.7071L5.2097 12.6129C4.90468 12.2206 4.93241 11.6534 5.29289 11.2929L11.2929 5.29289L11.3871 5.2097ZM17.3871 5.2097C17.7794 4.90468 18.3466 4.93241 18.7071 5.29289L18.7903 5.3871C19.0953 5.77939 19.0676 6.34662 18.7071 6.70711L14.1221 11.2928C13.7317 11.6835 13.7317 12.3165 14.1221 12.7072L18.7071 17.2929L18.7903 17.3871C19.0953 17.7794 19.0676 18.3466 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L11.2929 12.7071L11.2097 12.6129C10.9047 12.2206 10.9324 11.6534 11.2929 11.2929L17.2929 5.29289L17.3871 5.2097Z"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="czc4lhn"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                focusable="false"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                          <div
-                            class="c-jhck0a"
-                          >
-                            <span
-                              class="czc4tfk"
-                            >
-                              2024
-                            </span>
-                            <i>
-                              -
-                            </i>
-                            <span
-                              class="czc4tfk"
-                            >
-                              3
-                            </span>
-                          </div>
-                          <div
-                            class="cu4bhu2"
-                          >
-                            <span
-                              class="czc4lhn"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                focusable="false"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="czc4lhn"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                focusable="false"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  d="M11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289L18.7071 11.2929L18.7903 11.3871C19.0953 11.7794 19.0676 12.3466 18.7071 12.7071L12.7071 18.7071L12.6129 18.7903C12.2206 19.0953 11.6534 19.0676 11.2929 18.7071L11.2097 18.6129C10.9047 18.2206 10.9324 17.6534 11.2929 17.2929L15.8779 12.7072C16.2683 12.3165 16.2683 11.6835 15.8779 11.2928L11.2929 6.70711L11.2097 6.6129C10.9047 6.22061 10.9324 5.65338 11.2929 5.29289ZM5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12.7071 11.2929L12.7903 11.3871C13.0953 11.7794 13.0676 12.3466 12.7071 12.7071L6.70711 18.7071L6.6129 18.7903C6.22061 19.0953 5.65338 19.0676 5.29289 18.7071L5.2097 18.6129C4.90468 18.2206 4.93241 17.6534 5.29289 17.2929L9.87795 12.7072C10.2683 12.3165 10.2683 11.6835 9.87795 11.2928L5.29289 6.70711L5.2097 6.6129C4.90468 6.22061 4.93241 5.65338 5.29289 5.29289Z"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          class="co6jds7"
-                        >
-                          <table>
-                            <thead>
-                              <tr>
-                                <th>
-                                  一
-                                </th>
-                                <th>
-                                  二
-                                </th>
-                                <th>
-                                  三
-                                </th>
-                                <th>
-                                  四
-                                </th>
-                                <th>
-                                  五
-                                </th>
-                                <th>
-                                  六
-                                </th>
-                                <th>
-                                  日
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr
-                                class="c-3svtm3"
-                              >
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      26
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      27
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      28
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      29
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      1
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      2
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      3
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr
-                                class="c-3svtm3"
-                              >
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      4
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cau3hh6"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      5
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      6
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      7
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      8
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      9
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      10
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr
-                                class="c-3svtm3"
-                              >
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      11
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      12
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      13
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      14
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      15
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      16
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      17
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr
-                                class="c-3svtm3"
-                              >
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      18
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      19
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      20
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      21
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      22
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      23
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      24
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr
-                                class="c-3svtm3"
-                              >
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      25
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      26
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      27
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      28
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      29
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      30
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      31
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr
-                                class="c-3svtm3"
-                              >
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      1
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      2
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      3
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      4
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      5
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      6
-                                    </span>
-                                  </div>
-                                </td>
-                                <td
-                                  class="co6jtjb cak7jp3"
-                                >
-                                  <div
-                                    class="c6n0lki"
-                                  >
-                                    <span>
-                                      7
-                                    </span>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <div
-                          class="cdbygxs"
-                        >
-                          <div
-                            class="cspcuyk"
-                          >
-                            <button
-                              class="c-qnii2s c-rg592x cvey2f3 cs6jo0l c-x3mwbq"
-                              type="button"
-                            >
-                              <span
-                                class="cboe6wq"
-                              >
-                                今天
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               >
                 Score
               </div>
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c-n90wlk"
+                  class="cuzpkeu soui-rate-wrapper"
                 >
                   <div
-                    class="c-p5cnid"
+                    class="c-hjwq1z soui-rate-inner"
                   >
                     <div
-                      class="cf87lce cxz6xvd"
+                      class="c-55ct8w soui-rate-item c-3p7fc9 soui-rate-item-checked"
                     >
                       <span
-                        class="c1thigj"
+                        class="co6v5n9 soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -1399,7 +749,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="c-4n6vph"
+                        class="c-e5727b soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -1413,10 +763,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="cf87lce cxz6xvd"
+                      class="c-55ct8w soui-rate-item c-3p7fc9 soui-rate-item-checked"
                     >
                       <span
-                        class="c1thigj"
+                        class="co6v5n9 soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -1429,7 +779,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="c-4n6vph"
+                        class="c-e5727b soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -1443,10 +793,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="cf87lce cxz6xvd"
+                      class="c-55ct8w soui-rate-item c-3p7fc9 soui-rate-item-checked"
                     >
                       <span
-                        class="c1thigj"
+                        class="co6v5n9 soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -1459,7 +809,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="c-4n6vph"
+                        class="c-e5727b soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -1473,10 +823,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="cf87lce"
+                      class="c-55ct8w soui-rate-item"
                     >
                       <span
-                        class="c1thigj"
+                        class="co6v5n9 soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -1489,7 +839,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="c-4n6vph"
+                        class="c-e5727b soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -1503,10 +853,10 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                       </span>
                     </div>
                     <div
-                      class="cf87lce"
+                      class="c-55ct8w soui-rate-item"
                     >
                       <span
-                        class="c1thigj"
+                        class="co6v5n9 soui-rate-item-bg"
                       >
                         <svg
                           fill="currentColor"
@@ -1519,7 +869,7 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="c-4n6vph"
+                        class="c-e5727b soui-rate-item-front"
                       >
                         <svg
                           fill="currentColor"
@@ -1537,27 +887,27 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               >
                 upload avatar
               </div>
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c-dsitl c-4cljbw"
+                  class="c-9vspbf soui-upload-wrapper c-vvtawq soui-upload-wrapper-image"
                 >
                   <span
-                    class="c-bnmddh"
+                    class="cvu9x0t soui-upload-image-handler"
                     style="width: 80px; height: 80px;"
                   >
                     <div
-                      class="cxtwbfo"
+                      class="chzpe9y soui-upload-image-handler-icon"
                     >
                       <svg
                         aria-hidden="true"
@@ -1580,58 +930,54 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
               </div>
             </div>
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               >
                 Address
               </div>
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <div
-                  class="c-i7z34y"
-                  data-soui-type="input"
+                  class="cf4qlmk soui-textarea-wrapper"
+                  data-soui-input-border="true"
                 >
                   <textarea
-                    class="c-kulds8 c-km3xn9 cl630en"
+                    class="c-cgqu3u soui-textarea-wrapper-padding-box cjw0ccp soui-textarea-wrapper-inner-title-bottom c-achhjj soui-textarea-textarea"
                     rows="4"
                   />
                 </div>
               </div>
             </div>
             <div
-              class="csrte0i"
+              class="c-2qr3xo soui-form-item-wrapper"
               data-soui-status="default"
               style="margin-top: 32px; margin-bottom: 0px;"
             >
               <div
-                class="c-v46lkd"
+                class="ctj82yd soui-form-item-label"
               />
               <div
-                class="ci4ezng"
+                class="c-de5iaq soui-form-item-control"
                 data-soui-role="form-control"
               >
                 <button
-                  class="c-trc8a3 cvey2f3"
+                  class="cvrrn77 soui-button-primary c871ech soui-button-button"
                   type="submit"
                 >
-                  <span
-                    class="cboe6wq"
-                  >
+                  <span>
                     Submit
                   </span>
                 </button>
                 <button
-                  class="c-rg592x cvey2f3 cs6jo0l"
+                  class="c5wkfol soui-button-secondary c871ech soui-button-button"
                   type="reset"
                 >
-                  <span
-                    class="cboe6wq"
-                  >
+                  <span>
                     Reset
                   </span>
                 </button>
@@ -1641,15 +987,13 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
         </div>
       </div>
       <div
-        class="cunqxu5"
+        class="cdvdcvf soui-modal-footer"
       >
         <button
-          class="c-trc8a3 cvey2f3"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             OK
           </span>
         </button>
@@ -1661,25 +1005,25 @@ exports[`Drawer[Base] should render correctly about full screen 1`] = `
 
 exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 <div
-  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 chaeb67 c-8u2kum c-1f0vjq"
+  class="c-tki81p soui-modal-wrapper c-l9lx4v soui-modal-wrapper-animation cp0xsv4 soui-modal-wrapper-show c-xzvnl3 soui-modal-wrapper-is-mask c-j60h5b soui-modal-wrapper-hide-mask cyntpjo soui-modal-wrapper-drawer c4ssyco soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cf4334u"
+    class="cmpj0l8 soui-modal-mask"
   >
     <div
-      class="c-snheni"
+      class="c-6a3rgs soui-modal-panel"
       style="width: 400px;"
     >
       <div
-        class="cvg2z0f"
+        class="cenpe1p soui-modal-header"
       >
         <div
-          class="c-s33w2v"
+          class="cbffny3 soui-modal-header-title"
         >
           Drawer Title
         </div>
         <div
-          class="c-scekqv"
+          class="cb64za3 soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -1694,30 +1038,26 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
         </div>
       </div>
       <div
-        class="cf3wcb8"
+        class="cmpc9rm soui-modal-body"
       >
         you are visited 1
       </div>
       <div
-        class="cunqxu5"
+        class="cdvdcvf soui-modal-footer"
       >
         <button
-          class="c-rg592x cvey2f3 cs6jo0l"
+          class="c5wkfol soui-button-secondary c871ech soui-button-button"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Cancel
           </span>
         </button>
         <button
-          class="c-trc8a3 cvey2f3"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Ok
           </span>
         </button>
@@ -1729,25 +1069,25 @@ exports[`Drawer[Base] should render correctly about hide mask 1`] = `
 
 exports[`Drawer[Base] should render correctly about position 1`] = `
 <div
-  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
+  class="c-tki81p soui-modal-wrapper c-l9lx4v soui-modal-wrapper-animation cp0xsv4 soui-modal-wrapper-show c-xzvnl3 soui-modal-wrapper-is-mask cyntpjo soui-modal-wrapper-drawer c4ssyco soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cf4334u"
+    class="cmpj0l8 soui-modal-mask"
   >
     <div
-      class="c-snheni"
+      class="c-6a3rgs soui-modal-panel"
       style="width: auto;"
     >
       <div
-        class="cvg2z0f"
+        class="cenpe1p soui-modal-header"
       >
         <div
-          class="c-s33w2v"
+          class="cbffny3 soui-modal-header-title"
         >
           Form
         </div>
         <div
-          class="c-scekqv"
+          class="cb64za3 soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -1762,35 +1102,35 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
         </div>
       </div>
       <div
-        class="cf3wcb8"
+        class="cmpc9rm soui-modal-body"
       >
         <form
-          class="cr9qis4"
+          class="cahcxte soui-form-wrapper"
           style="width: 500px;"
         >
           <div
-            class="csrte0i c-48r573"
+            class="c-2qr3xo soui-form-item-wrapper c-olek8d soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-v46lkd"
+              class="ctj82yd soui-form-item-label"
               style="width: 100px;"
             >
               Email
             </div>
             <div
-              class="ci4ezng"
+              class="c-de5iaq soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="c5g1ick"
-                data-soui-type="input"
+                class="c-hrv5q2 soui-input-wrapper"
+                data-soui-input-border="true"
               >
                 <div
-                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+                  class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
                 >
                   <input
-                    class="cccsm1n"
+                    class="cyq698d soui-input-input"
                     value=""
                   />
                 </div>
@@ -1798,28 +1138,28 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
             </div>
           </div>
           <div
-            class="csrte0i c-48r573"
+            class="c-2qr3xo soui-form-item-wrapper c-olek8d soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-v46lkd"
+              class="ctj82yd soui-form-item-label"
               style="width: 100px;"
             >
               Password
             </div>
             <div
-              class="ci4ezng"
+              class="c-de5iaq soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="c5g1ick"
-                data-soui-type="input"
+                class="c-hrv5q2 soui-input-wrapper"
+                data-soui-input-border="true"
               >
                 <div
-                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+                  class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
                 >
                   <input
-                    class="cccsm1n"
+                    class="cyq698d soui-input-input"
                     type="password"
                     value=""
                   />
@@ -1830,26 +1170,22 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
         </form>
       </div>
       <div
-        class="cunqxu5"
+        class="cdvdcvf soui-modal-footer"
       >
         <div>
           <button
-            class="c-rg592x cvey2f3 cs6jo0l"
+            class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
             type="button"
           >
-            <span
-              class="cboe6wq"
-            >
+            <span>
               Cancel
             </span>
           </button>
           <button
-            class="c-trc8a3 cvey2f3"
+            class="cvrrn77 soui-button-primary c871ech soui-button-button"
             type="button"
           >
-            <span
-              class="cboe6wq"
-            >
+            <span>
               Submit
             </span>
           </button>
@@ -1862,25 +1198,25 @@ exports[`Drawer[Base] should render correctly about position 1`] = `
 
 exports[`Drawer[Base] should render correctly about resizable 1`] = `
 <div
-  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
+  class="c-tki81p soui-modal-wrapper c-l9lx4v soui-modal-wrapper-animation cp0xsv4 soui-modal-wrapper-show c-xzvnl3 soui-modal-wrapper-is-mask cyntpjo soui-modal-wrapper-drawer c4ssyco soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cf4334u"
+    class="cmpj0l8 soui-modal-mask"
   >
     <div
-      class="c-snheni"
+      class="c-6a3rgs soui-modal-panel"
       style="width: auto;"
     >
       <div
-        class="cvg2z0f"
+        class="cenpe1p soui-modal-header"
       >
         <div
-          class="c-s33w2v"
+          class="cbffny3 soui-modal-header-title"
         >
           Form
         </div>
         <div
-          class="c-scekqv"
+          class="cb64za3 soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -1895,35 +1231,35 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
         </div>
       </div>
       <div
-        class="cf3wcb8"
+        class="cmpc9rm soui-modal-body"
       >
         <form
-          class="cr9qis4"
+          class="cahcxte soui-form-wrapper"
           style="width: 500px;"
         >
           <div
-            class="csrte0i c-48r573"
+            class="c-2qr3xo soui-form-item-wrapper c-olek8d soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-v46lkd"
+              class="ctj82yd soui-form-item-label"
               style="width: 100px;"
             >
               Email
             </div>
             <div
-              class="ci4ezng"
+              class="c-de5iaq soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="c5g1ick"
-                data-soui-type="input"
+                class="c-hrv5q2 soui-input-wrapper"
+                data-soui-input-border="true"
               >
                 <div
-                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+                  class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
                 >
                   <input
-                    class="cccsm1n"
+                    class="cyq698d soui-input-input"
                     value=""
                   />
                 </div>
@@ -1931,28 +1267,28 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
             </div>
           </div>
           <div
-            class="csrte0i c-48r573"
+            class="c-2qr3xo soui-form-item-wrapper c-olek8d soui-form-item-wrapper-required"
             data-soui-status="default"
           >
             <div
-              class="c-v46lkd"
+              class="ctj82yd soui-form-item-label"
               style="width: 100px;"
             >
               Password
             </div>
             <div
-              class="ci4ezng"
+              class="c-de5iaq soui-form-item-control"
               data-soui-role="form-control"
             >
               <div
-                class="c5g1ick"
-                data-soui-type="input"
+                class="c-hrv5q2 soui-input-wrapper"
+                data-soui-input-border="true"
               >
                 <div
-                  class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+                  class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
                 >
                   <input
-                    class="cccsm1n"
+                    class="cyq698d soui-input-input"
                     type="password"
                     value=""
                   />
@@ -1963,33 +1299,29 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
         </form>
       </div>
       <div
-        class="cunqxu5"
+        class="cdvdcvf soui-modal-footer"
       >
         <div>
           <button
-            class="c-rg592x cvey2f3 cs6jo0l"
+            class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
             type="button"
           >
-            <span
-              class="cboe6wq"
-            >
+            <span>
               Cancel
             </span>
           </button>
           <button
-            class="c-trc8a3 cvey2f3"
+            class="cvrrn77 soui-button-primary c871ech soui-button-button"
             type="button"
           >
-            <span
-              class="cboe6wq"
-            >
+            <span>
               Submit
             </span>
           </button>
         </div>
       </div>
       <div
-        class="c-el9z2m"
+        class="cx7xetw soui-modal-resize-x"
         data-position="right"
       />
     </div>
@@ -1999,20 +1331,20 @@ exports[`Drawer[Base] should render correctly about resizable 1`] = `
 
 exports[`Drawer[Base] should render correctly about type 1`] = `
 <div
-  class="c-6cljz3 c-rmoeu5 c-ehlr5u c-6gnw09 c-8u2kum c-1f0vjq"
+  class="c-tki81p soui-modal-wrapper c-l9lx4v soui-modal-wrapper-animation cp0xsv4 soui-modal-wrapper-show c-xzvnl3 soui-modal-wrapper-is-mask cyntpjo soui-modal-wrapper-drawer c4ssyco soui-modal-wrapper-drawer-right"
 >
   <div
-    class="cf4334u"
+    class="cmpj0l8 soui-modal-mask"
   >
     <div
-      class="c-snheni"
+      class="c-6a3rgs soui-modal-panel"
       style="width: 500px;"
     >
       <div
-        class="cvg2z0f"
+        class="cenpe1p soui-modal-header"
       >
         <span
-          class="cql19eg c-zfl55y c-fexgdh"
+          class="c-b3d3t6 soui-modal-header-icon c-ru57pk soui-alert-icon co3m3nh soui-alert-success-icon"
         >
           <svg
             aria-hidden="true"
@@ -2026,12 +1358,12 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
           </svg>
         </span>
         <div
-          class="c-s33w2v"
+          class="cbffny3 soui-modal-header-title"
         >
           Drawer Title with success Icon
         </div>
         <div
-          class="c-scekqv"
+          class="cb64za3 soui-modal-header-close"
         >
           <svg
             aria-hidden="true"
@@ -2046,7 +1378,7 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
         </div>
       </div>
       <div
-        class="cf3wcb8 c5d4xjn"
+        class="cmpc9rm soui-modal-body cmt28s1 soui-modal-body-with-icon"
       >
         <span>
           Drawer type: 
@@ -2056,25 +1388,21 @@ exports[`Drawer[Base] should render correctly about type 1`] = `
         </b>
       </div>
       <div
-        class="cunqxu5"
+        class="cdvdcvf soui-modal-footer"
       >
         <button
-          class="c-rg592x cvey2f3 cs6jo0l"
+          class="c5wkfol soui-button-secondary c871ech soui-button-button"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Cancel
           </span>
         </button>
         <button
-          class="c-trc8a3 cvey2f3"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Ok
           </span>
         </button>

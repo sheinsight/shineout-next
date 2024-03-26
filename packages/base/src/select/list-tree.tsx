@@ -9,7 +9,6 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
     jssStyle,
     data,
     keygen,
-    multiple,
     height,
     renderItem: renderItemProp,
     datum,
@@ -18,7 +17,6 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
     defaultExpanded,
     defaultExpandAll,
     onExpand,
-    closePop,
   } = props;
   const styles = jssStyle?.select?.() as SelectClasses;
   const rootClass = classNames(styles.tree);
@@ -48,9 +46,6 @@ const TreeList = <DataItem, Value>(props: ListTreeProps<DataItem, Value>) => {
       return;
     }
     datum.add(data);
-    if (!multiple) {
-      closePop();
-    }
   };
 
   // tree 的 renderItem 与 list 的 renderItem 不同，需要转换，且 tree 无 index 返回

@@ -519,6 +519,12 @@ export interface SelectPropsBase<DataItem, Value>
    * @cn 高级筛选模式，可针对当前层级在筛选结果和原始数据间切换
    */
   onAdvancedFilter?: (text: string) => (data: DataItem) => boolean;
+  /**
+   * @en There are onFilter and onCreate, select Option, automatically focus Input
+   * @cn 存在 onFilter 和 onCreate，选中 Option，自动 focus Input
+   * @default false
+   */
+  reFocus?: boolean;
 }
 
 export interface SelectPropsA<DataItem, Value>

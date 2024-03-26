@@ -13,7 +13,6 @@ const ResultInput = (props: ResultInputProps) => {
   const {
     jssStyle,
     value,
-    values,
     inputText,
     focus,
     trim,
@@ -70,14 +69,7 @@ const ResultInput = (props: ResultInputProps) => {
   // 设置 input 宽度
   useEffect(() => {
     syncWidth();
-  }, [inputText, focus, value]);
-
-  // 多选选中结果后，聚焦并全选 input
-  useEffect(() => {
-    if (!inputRef.current || !multiple || !focus) return;
-    syncWidth();
-    inputRef.current.select();
-  }, [values.length]);
+  }, [inputText, focus, value, isEmpty]);
 
   // 注册 input ref
   useEffect(() => {
@@ -90,7 +82,7 @@ const ResultInput = (props: ResultInputProps) => {
   if (!multiple) {
     style.width = '100%';
   }
-  if (!multiple && !focus && values.length !== 0) {
+  if (!multiple && !focus && !isEmpty) {
     style.width = '0';
     style.opacity = '0';
     style.minWidth = '0';

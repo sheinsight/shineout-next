@@ -2,20 +2,20 @@
 
 exports[`Dropdown[Base] should render correctly  1`] = `
 <div
-  class="c3dw8dj"
+  class="c-yai4u3 soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+    class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
     type="button"
   >
     <span
-      class="c-79ifn7"
+      class="cq3794b soui-dropdown-content"
     >
       Click me
     </span>
     <span
-      class="coawvvb"
+      class="ceswpdh soui-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -29,115 +29,28 @@ exports[`Dropdown[Base] should render correctly  1`] = `
       </svg>
     </span>
   </button>
-  <div
-    class="c7nulai"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-  >
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c3dw8dj"
-        data-position="right-top"
-      >
-        <a
-          class="c-s3xb8i c7nsw5b"
-          data-role="item"
-        >
-          <span
-            class="c-79ifn7"
-          >
-            Submenu
-          </span>
-          <span
-            class="coawvvb"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-              />
-            </svg>
-          </span>
-        </a>
-        <div
-          class="c7nulai"
-          data-sheinx-animation-duration="fast"
-          data-sheinx-animation-type="fade"
-          style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-        >
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-              href="https://google.com"
-              target="_blank"
-            >
-              Link to Google
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-              disabled=""
-            >
-              Disabled
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-        href="/"
-      >
-        Home
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        Message
-      </a>
-    </div>
-  </div>
 </div>
 `;
 
 exports[`Dropdown[Base] should render correctly about absolute 1`] = `
 <div
-  style="background: rgb(238, 238, 238); padding: 20px; border-radius: 10px; overflow: hidden;"
+  style="background: rgb(238, 238, 238); padding: 20px; border-radius: 4px; overflow: hidden;"
 >
   <div
-    class="c3dw8dj"
+    class="c-yai4u3 soui-dropdown-wrapper"
     data-position="bottom"
   >
     <button
-      class="c-s3xb8i c-trc8a3 cvey2f3 cs6jo0l"
+      class="cwjhda8 soui-dropdown-button cvrrn77 soui-button-primary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
       <span
-        class="c-79ifn7"
+        class="cq3794b soui-dropdown-content"
       >
         Absolute
       </span>
       <span
-        class="coawvvb"
+        class="ceswpdh soui-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -153,21 +66,21 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
     </button>
   </div>
   <div
-    class="c3dw8dj"
+    class="c-yai4u3 soui-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-start: 24px;"
   >
     <button
-      class="c-s3xb8i c-trc8a3 cvey2f3 cs6jo0l"
+      class="cwjhda8 soui-dropdown-button cvrrn77 soui-button-primary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
       <span
-        class="c-79ifn7"
+        class="cq3794b soui-dropdown-content"
       >
         Default
       </span>
       <span
-        class="coawvvb"
+        class="ceswpdh soui-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -181,93 +94,6 @@ exports[`Dropdown[Base] should render correctly about absolute 1`] = `
         </svg>
       </span>
     </button>
-    <div
-      class="c7nulai"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="fade"
-      style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-    >
-      <div
-        class="cggtv4k"
-      >
-        <div
-          class="c3dw8dj"
-          data-position="right-top"
-        >
-          <a
-            class="c-s3xb8i c7nsw5b"
-            data-role="item"
-          >
-            <span
-              class="c-79ifn7"
-            >
-              subMenu
-            </span>
-            <span
-              class="coawvvb"
-            >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                />
-              </svg>
-            </span>
-          </a>
-          <div
-            class="c7nulai"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-          >
-            <div
-              class="cggtv4k"
-            >
-              <a
-                class="c7nsw5b"
-                href="https://google.com"
-                target="_blank"
-              >
-                Link to Google
-              </a>
-            </div>
-            <div
-              class="cggtv4k"
-            >
-              <a
-                class="c7nsw5b"
-                disabled=""
-              >
-                Disabled
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-          href="/"
-        >
-          Home
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          Message
-        </a>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -280,20 +106,20 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-trc8a3 cvey2f3"
+        class="cwjhda8 soui-dropdown-button cvrrn77 soui-button-primary c871ech soui-button-button"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -307,56 +133,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -370,56 +162,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i cw1xbjk cvey2f3"
+        class="cwjhda8 soui-dropdown-button c8u0ngy soui-button-danger c871ech soui-button-button"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -433,56 +191,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-5ygx8x cvey2f3"
+        class="cwjhda8 soui-dropdown-button c-fgh3qr soui-button-warning c871ech soui-button-button"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -496,56 +220,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i cflif4m cvey2f3"
+        class="cwjhda8 soui-dropdown-button c63i8ms soui-button-success c871ech soui-button-button"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Default
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -559,60 +249,26 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
   </div>
   <div
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-trc8a3 cvey2f3 cs6jo0l"
+        class="cwjhda8 soui-dropdown-button cvrrn77 soui-button-primary c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -626,56 +282,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 cs6jo0l"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -689,56 +311,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i cw1xbjk cvey2f3 cs6jo0l"
+        class="cwjhda8 soui-dropdown-button c8u0ngy soui-button-danger c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -752,56 +340,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-5ygx8x cvey2f3 cs6jo0l"
+        class="cwjhda8 soui-dropdown-button c-fgh3qr soui-button-warning c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -815,56 +369,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i cflif4m cvey2f3 cs6jo0l"
+        class="cwjhda8 soui-dropdown-button c63i8ms soui-button-success c871ech soui-button-button ciojhir soui-button-outline"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Outline
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -878,60 +398,26 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
   </div>
   <div
     style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"
   >
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-trc8a3 cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button cvrrn77 soui-button-primary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -945,56 +431,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1008,56 +460,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i cw1xbjk cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c8u0ngy soui-button-danger c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1071,56 +489,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-5ygx8x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c-fgh3qr soui-button-warning c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1134,56 +518,22 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i cflif4m cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c63i8ms soui-button-success c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Text
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -1197,40 +547,6 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item1
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item2
-          </a>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <a
-            class="c7nsw5b"
-          >
-            item3
-          </a>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -1238,20 +554,20 @@ exports[`Dropdown[Base] should render correctly about button 1`] = `
 
 exports[`Dropdown[Base] should render correctly about children 1`] = `
 <div
-  class="c3dw8dj"
+  class="c-yai4u3 soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+    class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
     type="button"
   >
     <span
-      class="c-79ifn7"
+      class="cq3794b soui-dropdown-content"
     >
       Click me
     </span>
     <span
-      class="coawvvb"
+      class="ceswpdh soui-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -1265,457 +581,25 @@ exports[`Dropdown[Base] should render correctly about children 1`] = `
       </svg>
     </span>
   </button>
-  <div
-    class="c7nulai"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-  >
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c3dw8dj"
-        data-position="right-top"
-      >
-        <a
-          class="c-s3xb8i c7nsw5b"
-          data-role="item"
-        >
-          <span
-            class="c-79ifn7"
-          >
-            item0
-          </span>
-          <span
-            class="coawvvb"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-              />
-            </svg>
-          </span>
-        </a>
-        <div
-          class="c7nulai"
-          data-sheinx-animation-duration="fast"
-          data-sheinx-animation-type="fade"
-          style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-        >
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item0-0
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item0-1
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item0-2
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item0-3
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item0-4
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c3dw8dj"
-        data-position="right-top"
-      >
-        <a
-          class="c-s3xb8i c7nsw5b"
-          data-role="item"
-        >
-          <span
-            class="c-79ifn7"
-          >
-            item1
-          </span>
-          <span
-            class="coawvvb"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-              />
-            </svg>
-          </span>
-        </a>
-        <div
-          class="c7nulai"
-          data-sheinx-animation-duration="fast"
-          data-sheinx-animation-type="fade"
-          style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-        >
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item1-0
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item1-1
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item1-2
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item1-3
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item1-4
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c3dw8dj"
-        data-position="right-top"
-      >
-        <a
-          class="c-s3xb8i c7nsw5b"
-          data-role="item"
-        >
-          <span
-            class="c-79ifn7"
-          >
-            item2
-          </span>
-          <span
-            class="coawvvb"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-              />
-            </svg>
-          </span>
-        </a>
-        <div
-          class="c7nulai"
-          data-sheinx-animation-duration="fast"
-          data-sheinx-animation-type="fade"
-          style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-        >
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item2-0
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item2-1
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item2-2
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item2-3
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item2-4
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c3dw8dj"
-        data-position="right-top"
-      >
-        <a
-          class="c-s3xb8i c7nsw5b"
-          data-role="item"
-        >
-          <span
-            class="c-79ifn7"
-          >
-            item3
-          </span>
-          <span
-            class="coawvvb"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-              />
-            </svg>
-          </span>
-        </a>
-        <div
-          class="c7nulai"
-          data-sheinx-animation-duration="fast"
-          data-sheinx-animation-type="fade"
-          style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-        >
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item3-0
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item3-1
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item3-2
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item3-3
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item3-4
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c3dw8dj"
-        data-position="right-top"
-      >
-        <a
-          class="c-s3xb8i c7nsw5b"
-          data-role="item"
-        >
-          <span
-            class="c-79ifn7"
-          >
-            item4
-          </span>
-          <span
-            class="coawvvb"
-          >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-              />
-            </svg>
-          </span>
-        </a>
-        <div
-          class="c7nulai"
-          data-sheinx-animation-duration="fast"
-          data-sheinx-animation-type="fade"
-          style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-        >
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item4-0
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item4-1
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item4-2
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item4-3
-            </a>
-          </div>
-          <div
-            class="cggtv4k"
-          >
-            <a
-              class="c7nsw5b"
-            >
-              item4-4
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 `;
 
 exports[`Dropdown[Base] should render correctly about columns 1`] = `
 <div
-  class="c3dw8dj"
+  class="c-yai4u3 soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+    class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
     type="button"
   >
     <span
-      class="c-79ifn7"
+      class="cq3794b soui-dropdown-content"
     >
       Tiling Menu
     </span>
     <span
-      class="coawvvb"
+      class="ceswpdh soui-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -1729,302 +613,25 @@ exports[`Dropdown[Base] should render correctly about columns 1`] = `
       </svg>
     </span>
   </button>
-  <div
-    class="c7nulai c-lt48bn"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; width: 500px; grid-template-columns: repeat(5, 1fr); display: none;"
-  >
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item0
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item1
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item2
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item3
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item4
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item5
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item6
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item7
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item8
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item9
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item10
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item11
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item12
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item13
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item14
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item15
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item16
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item17
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item18
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item19
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item20
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item21
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item22
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item23
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item24
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item25
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item26
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item27
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item28
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        item29
-      </a>
-    </div>
-  </div>
 </div>
 `;
 
 exports[`Dropdown[Base] should render correctly about divider 1`] = `
 <div
-  class="c3dw8dj"
+  class="c-yai4u3 soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+    class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
     type="button"
   >
     <span
-      class="c-79ifn7"
+      class="cq3794b soui-dropdown-content"
     >
       Dividing Line
     </span>
     <span
-      class="coawvvb"
+      class="ceswpdh soui-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -2038,71 +645,25 @@ exports[`Dropdown[Base] should render correctly about divider 1`] = `
       </svg>
     </span>
   </button>
-  <div
-    class="c7nulai"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-  >
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        First
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        Second
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        Third
-      </a>
-    </div>
-    <div
-      class="ct4vt14"
-    />
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        Fourth
-      </a>
-    </div>
-  </div>
 </div>
 `;
 
 exports[`Dropdown[Base] should render correctly about group 1`] = `
 <div
-  class="c3dw8dj"
+  class="c-yai4u3 soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+    class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
     type="button"
   >
     <span
-      class="c-79ifn7"
+      class="cq3794b soui-dropdown-content"
     >
       Group Menu
     </span>
     <span
-      class="coawvvb"
+      class="ceswpdh soui-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -2121,20 +682,20 @@ exports[`Dropdown[Base] should render correctly about group 1`] = `
 
 exports[`Dropdown[Base] should render correctly about hover 1`] = `
 <div
-  class="c3dw8dj"
+  class="c-yai4u3 soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+    class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
     type="button"
   >
     <span
-      class="c-79ifn7"
+      class="cq3794b soui-dropdown-content"
     >
       Click me
     </span>
     <span
-      class="coawvvb"
+      class="ceswpdh soui-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -2148,77 +709,25 @@ exports[`Dropdown[Base] should render correctly about hover 1`] = `
       </svg>
     </span>
   </button>
-  <div
-    class="c7nulai"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-  >
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        America
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        Germany
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        United Kingdom
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        France
-      </a>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <a
-        class="c7nsw5b"
-      >
-        Russia
-      </a>
-    </div>
-  </div>
 </div>
 `;
 
 exports[`Dropdown[Base] should render correctly about icon 1`] = `
 <div
-  class="c3dw8dj"
+  class="c-yai4u3 soui-dropdown-wrapper"
   data-position="bottom-left"
 >
   <button
-    class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+    class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
     type="button"
   >
     <span
-      class="c-79ifn7"
+      class="cq3794b soui-dropdown-content"
     >
       Icon Menu
     </span>
     <span
-      class="coawvvb"
+      class="ceswpdh soui-dropdown-caret"
     >
       <svg
         aria-hidden="true"
@@ -2232,103 +741,6 @@ exports[`Dropdown[Base] should render correctly about icon 1`] = `
       </svg>
     </span>
   </button>
-  <div
-    class="c7nulai"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="fade"
-    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-  >
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c7nsw5b"
-      >
-        <i
-          class="c1ywznj fa-user-o"
-          style="font-family: FontAwesome;"
-        />
-         
-        <span
-          style="margin-inline-start: 4px;"
-        >
-          item0
-        </span>
-      </div>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c7nsw5b"
-      >
-        <i
-          class="c1ywznj fa-user-o"
-          style="font-family: FontAwesome;"
-        />
-         
-        <span
-          style="margin-inline-start: 4px;"
-        >
-          item1
-        </span>
-      </div>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c7nsw5b"
-      >
-        <i
-          class="c1ywznj fa-user-o"
-          style="font-family: FontAwesome;"
-        />
-         
-        <span
-          style="margin-inline-start: 4px;"
-        >
-          item2
-        </span>
-      </div>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c7nsw5b"
-      >
-        <i
-          class="c1ywznj fa-user-o"
-          style="font-family: FontAwesome;"
-        />
-         
-        <span
-          style="margin-inline-start: 4px;"
-        >
-          item3
-        </span>
-      </div>
-    </div>
-    <div
-      class="cggtv4k"
-    >
-      <div
-        class="c7nsw5b"
-      >
-        <i
-          class="c1ywznj fa-user-o"
-          style="font-family: FontAwesome;"
-        />
-         
-        <span
-          style="margin-inline-start: 4px;"
-        >
-          item4
-        </span>
-      </div>
-    </div>
-  </div>
 </div>
 `;
 
@@ -2340,20 +752,20 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
     style="display: flex; justify-content: center; gap: 12px; padding: 0px 120px;"
   >
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-left"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Bottom left
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2367,194 +779,22 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-top"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-top"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="right-top"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Bottom
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2568,194 +808,22 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="right"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="bottom-right"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Bottom right
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2769,198 +837,26 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left-top"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left-top"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="left-top"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <div
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="right-top"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Right Top
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -2974,189 +870,17 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-top"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-top"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="right-top"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="left-top"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -3170,203 +894,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Left Top
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left-top"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left-top"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="left-top"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <div
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="right"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Right
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -3380,189 +932,17 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="right"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="left"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -3576,203 +956,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Left
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="left"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <div
     style="display: flex; justify-content: space-between;"
   >
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="right-bottom"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Right Bottom
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -3786,189 +994,17 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="right-bottom"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="left-bottom"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -3982,203 +1018,31 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Left Bottom
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="left-bottom"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <div
     style="display: flex; justify-content: center; gap: 12px;"
   >
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="top-left"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Top Left
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -4192,194 +1056,22 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="right-bottom"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
-      data-position="top-left"
+      class="c-yai4u3 soui-dropdown-wrapper"
+      data-position="top"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Top
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -4393,194 +1085,22 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="right-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="right-bottom"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div
-      class="c3dw8dj"
+      class="c-yai4u3 soui-dropdown-wrapper"
       data-position="top-right"
     >
       <button
-        class="c-s3xb8i c-rg592x cvey2f3 c-nzauiu"
+        class="cwjhda8 soui-dropdown-button c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
         type="button"
       >
         <span
-          class="c-79ifn7"
+          class="cq3794b soui-dropdown-content"
         >
           Top right
         </span>
         <span
-          class="coawvvb"
+          class="ceswpdh soui-dropdown-caret"
         >
           <svg
             aria-hidden="true"
@@ -4594,178 +1114,6 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
           </svg>
         </span>
       </button>
-      <div
-        class="c7nulai"
-        data-sheinx-animation-duration="fast"
-        data-sheinx-animation-type="fade"
-        style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-      >
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                First
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link1
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link2
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="cggtv4k"
-        >
-          <div
-            class="c3dw8dj"
-            data-position="left-bottom"
-          >
-            <a
-              class="c-s3xb8i c7nsw5b"
-              data-role="item"
-            >
-              <span
-                class="coawvvb"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="c-79ifn7"
-              >
-                Second
-              </span>
-            </a>
-            <div
-              class="c7nulai"
-              data-sheinx-animation-duration="fast"
-              data-sheinx-animation-type="fade"
-              style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-            >
-              <div
-                class="cggtv4k"
-              >
-                <a
-                  class="c7nsw5b"
-                >
-                  link3
-                </a>
-              </div>
-              <div
-                class="cggtv4k"
-              >
-                <div
-                  class="c3dw8dj"
-                  data-position="left-bottom"
-                >
-                  <a
-                    class="c-s3xb8i c7nsw5b"
-                    data-role="item"
-                  >
-                    <span
-                      class="coawvvb"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="c-79ifn7"
-                    >
-                      link4
-                    </span>
-                  </a>
-                  <div
-                    class="c7nulai"
-                    data-sheinx-animation-duration="fast"
-                    data-sheinx-animation-type="fade"
-                    style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-                  >
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link5
-                      </a>
-                    </div>
-                    <div
-                      class="cggtv4k"
-                    >
-                      <a
-                        class="c7nsw5b"
-                      >
-                        link6
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -4774,21 +1122,21 @@ exports[`Dropdown[Base] should render correctly about position 1`] = `
 exports[`Dropdown[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="c3dw8dj"
+    class="c-yai4u3 soui-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="c-s3xb8i c-trc8a3 cvey2f3 cs6jo0l c-x3mwbq"
+      class="cwjhda8 soui-dropdown-button cvrrn77 soui-button-primary c871ech soui-button-button ciojhir soui-button-outline cl53koo soui-button-small"
       type="button"
     >
       <span
-        class="c-79ifn7"
+        class="cq3794b soui-dropdown-content"
       >
         Dropdown
       </span>
       <span
-        class="coawvvb"
+        class="ceswpdh soui-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -4802,66 +1150,23 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
         </svg>
       </span>
     </button>
-    <div
-      class="c7nulai c-xl6u5f"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="fade"
-      style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-    >
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item0
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item1
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item2
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item3
-        </a>
-      </div>
-    </div>
   </div>
   <div
-    class="c3dw8dj"
+    class="c-yai4u3 soui-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="c-s3xb8i c-trc8a3 cvey2f3 cs6jo0l"
+      class="cwjhda8 soui-dropdown-button cvrrn77 soui-button-primary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
       <span
-        class="c-79ifn7"
+        class="cq3794b soui-dropdown-content"
       >
         Dropdown
       </span>
       <span
-        class="coawvvb"
+        class="ceswpdh soui-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -4875,66 +1180,23 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
         </svg>
       </span>
     </button>
-    <div
-      class="c7nulai"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="fade"
-      style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-    >
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item0
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item1
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item2
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item3
-        </a>
-      </div>
-    </div>
   </div>
   <div
-    class="c3dw8dj"
+    class="c-yai4u3 soui-dropdown-wrapper"
     data-position="bottom-left"
     style="margin-inline-end: 24px;"
   >
     <button
-      class="c-s3xb8i c-trc8a3 cvey2f3 cs6jo0l c-x7orua"
+      class="cwjhda8 soui-dropdown-button cvrrn77 soui-button-primary c871ech soui-button-button ciojhir soui-button-outline cl11p64 soui-button-large"
       type="button"
     >
       <span
-        class="c-79ifn7"
+        class="cq3794b soui-dropdown-content"
       >
         Dropdown
       </span>
       <span
-        class="coawvvb"
+        class="ceswpdh soui-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -4948,91 +1210,44 @@ exports[`Dropdown[Base] should render correctly about size 1`] = `
         </svg>
       </span>
     </button>
-    <div
-      class="c7nulai c-xp8pnz"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="fade"
-      style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-    >
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item0
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item1
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item2
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          item3
-        </a>
-      </div>
-    </div>
   </div>
 </div>
 `;
 
 exports[`Dropdown[Base] should render correctly about split 1`] = `
 <div
-  class="c-xa4xwu"
+  class="ckylj3k soui-button-group"
   style="display: inline-block; margin-inline-end: 24px;"
 >
   <button
-    class="c-rg592x cvey2f3 cs6jo0l"
+    class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Option
     </span>
   </button>
   <button
-    class="c-rg592x cvey2f3 cs6jo0l"
+    class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
     type="button"
   >
-    <span
-      class="cboe6wq"
-    >
+    <span>
       Option
     </span>
   </button>
   <div
-    class="c3dw8dj"
+    class="c-yai4u3 soui-dropdown-wrapper"
     data-position="bottom-right"
   >
     <button
-      class="c-s3xb8i co2ppkw c-rg592x cvey2f3 cs6jo0l"
+      class="cwjhda8 soui-dropdown-button cmwdmce soui-dropdown-split-button c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
       <span
-        class="c-79ifn7"
+        class="cq3794b soui-dropdown-content"
       />
       <span
-        class="coawvvb"
+        class="ceswpdh soui-dropdown-caret"
       >
         <svg
           aria-hidden="true"
@@ -5046,33 +1261,6 @@ exports[`Dropdown[Base] should render correctly about split 1`] = `
         </svg>
       </span>
     </button>
-    <div
-      class="c7nulai"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="fade"
-      style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-    >
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-        >
-          First
-        </a>
-      </div>
-      <div
-        class="cggtv4k"
-      >
-        <a
-          class="c7nsw5b"
-          href="http://www.google.com"
-          target="_blank"
-        >
-          Second
-        </a>
-      </div>
-    </div>
   </div>
 </div>
 `;

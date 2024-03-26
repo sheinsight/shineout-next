@@ -19,6 +19,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     popupGap,
     adjust,
     destroy = false,
+    lazy = true,
   } = props;
 
   const defaultAbsolute = useContext(AbsoluteContext);
@@ -54,7 +55,7 @@ const AbsoluteList = (props: AbsoluteListProps) => {
 
   const styledChild = React.cloneElement(children, { style: newStyle });
   if (!util.isBrowser()) return null;
-  if (!context.rendered && !focus) return null;
+  if (lazy && !context.rendered && !focus) return null;
   if (destroy && !focus) return null;
   context.rendered = true;
   if (absolute) {
