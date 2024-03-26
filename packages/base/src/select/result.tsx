@@ -214,7 +214,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     );
   };
 
-
   const renderNbsp = () => {
     return (
       <React.Fragment key='space'>
@@ -317,7 +316,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   useEffect(() => {
     if (!focus && mounted.current) {
-      onFilter?.('', 'blur');
+      setTimeout(() => {
+        onFilter?.('', 'blur');
+      }, 400);
     }
     mounted.current = true;
   }, [focus]);

@@ -4,7 +4,7 @@ import { TreeKeygenType, KeygenResult } from '../../common/type';
 export interface UseTiledProps<DataItem> {
   data: DataItem[];
   rawData: DataItem[];
-  onFilter?: (text: string) => void;
+  onFilter?: (text: string, from?: string) => void;
   keygen: TreeKeygenType<DataItem>;
   childrenKey?: keyof DataItem & string;
   expanded?: KeygenResult[];
