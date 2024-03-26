@@ -11,7 +11,6 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
     data,
     multiple,
     isHover,
-    closePop,
     renderItem,
     onHover,
     onOptionClick,
@@ -37,9 +36,6 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
       if (multiple) datum.remove(data);
     } else {
       datum.add(data);
-    }
-    if (!multiple) {
-      closePop();
     }
     onOptionClick(data, index);
   };

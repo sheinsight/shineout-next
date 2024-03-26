@@ -70,14 +70,7 @@ const ResultInput = (props: ResultInputProps) => {
   // 设置 input 宽度
   useEffect(() => {
     syncWidth();
-  }, [inputText, focus, value]);
-
-  // 多选选中结果后，聚焦并全选 input
-  useEffect(() => {
-    if (!inputRef.current || !multiple || !focus) return;
-    syncWidth();
-    inputRef.current.select();
-  }, [values.length]);
+  }, [inputText, focus, value, isEmpty]);
 
   // 注册 input ref
   useEffect(() => {
