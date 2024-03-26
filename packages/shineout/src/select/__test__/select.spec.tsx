@@ -354,6 +354,7 @@ describe('Select[Base]', () => {
     await waitFor(async () => {
       await delay(200);
     });
+    screen.debug()
     const selectOptions = selectWrapper.querySelectorAll(option);
     fireEvent.click(selectOptions[1]);
     await waitFor(async () => {
@@ -385,20 +386,22 @@ describe('Select[Base]', () => {
         </>
       )
     }
+    
     const { container } = render(<App />);
+    
     const selectWrapper = container.querySelector(wrapper)!;
     const selectResult = container.querySelector(result)!;
     fireEvent.click(selectResult);
     await waitFor(async () => {
       await delay(200);
     });
-    
+    screen.debug()
     const selectOptions = selectWrapper.querySelectorAll(option);
     fireEvent.click(selectOptions[1]);
     await waitFor(async () => {
       await delay(200);
     });
-    screen.debug()
+   
     
   })
   test('should render when set groupBy', async () => {
