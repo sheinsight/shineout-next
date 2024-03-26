@@ -19,7 +19,7 @@ const initPlaceElement = () => {
   }
 };
 
-initPlaceElement()
+initPlaceElement();
 
 const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataItem, Value>) => {
   const {
@@ -227,7 +227,7 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
       jssStyle,
       renderItem,
       expandIcons,
-      childrenKey,
+
       iconClass,
       leafClass,
       nodeClass,
@@ -246,13 +246,15 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
       onChange,
       onToggle,
       onNodeClick,
+
       bindNode,
+      childrenClassName: childrenClass(data),
+      childrenKey,
       childrenClass,
       dragSibling,
       dragHoverExpand,
       dragImageStyle,
       dragImageSelector,
-      childrenClassName: childrenClass(data),
     };
   };
 
@@ -270,7 +272,6 @@ const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataIte
 
     return dropEvents;
   };
-
   return (
     <div {...getDropProps()} ref={element} className={rootClass}>
       <TreeContent

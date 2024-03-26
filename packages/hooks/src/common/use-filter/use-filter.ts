@@ -127,10 +127,6 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     }, filterDelay);
   };
 
-  // const handleResetData = () => {
-  //   handleFilter('');
-  // };
-
   useEffect(() => {
     if (data) setFilterData(data);
   }, [data]);
@@ -149,7 +145,6 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   } else if (data) {
     nextData = getData();
   }
-
   return {
     inputText,
     filterText,

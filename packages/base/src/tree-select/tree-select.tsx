@@ -507,7 +507,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     const nextValue = getValueArray(value);
-
     return (
       <div className={classNames(styles.tree)} style={{ maxHeight: height }}>
         <Tree
@@ -516,6 +515,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           renderItem={renderItem}
           {...treeProps}
           line={line}
+          datum={datum.current}
           mode={mode}
           data={tiledData}
           keygen={keygen}
@@ -552,11 +552,11 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}
-      onBlur={handleBlur}
-      onFocus={handleFocus}
+      // onBlur={handleBlur}
+      // onFocus={handleFocus}
       onKeyDown={handleKeyDown}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      // onMouseEnter={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
       onMouseDown={(e) => {
         if (focused && e.target !== inputRef.current) {
           e.preventDefault();

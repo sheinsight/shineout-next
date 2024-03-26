@@ -56,7 +56,7 @@ const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) 
 
   const prevData = usePrevious(data);
 
-  const { datum, updateMap, expanded, onExpand } = useTree({
+  const { datum, expanded, onExpand } = useTree({
     mode,
     value,
     data,
@@ -87,13 +87,13 @@ const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) 
 
   const handleUpdateExpanded = (expanded?: KeygenResult[]) => {
     const tempExpandMap = new Set(expanded);
-    updateMap.forEach((update, id) => {
+    datum.updateMap.forEach((update, id) => {
       update('expanded', tempExpandMap.has(id));
     });
   };
 
   const handleUpdateActive = (active?: KeygenResult) => {
-    updateMap.forEach((update, id) => {
+    datum.updateMap.forEach((update, id) => {
       update('active', id === active);
     });
   };
@@ -166,7 +166,7 @@ const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) 
         if (!Array.isArray(tnode[childrenKey])) tnode[childrenKey] = [];
         tnode[childrenKey].push(node);
         positionCopy = tnode[childrenKey].length - 1;
-        const update = updateMap.get(targetIdCopy);
+        const update = datum.updateMap.get(targetIdCopy);
         if (update) update('expanded', true);
       } else {
         tnode.splice(positionCopy + offset, 0, node);
