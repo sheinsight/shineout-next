@@ -159,7 +159,16 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
   });
 
-  const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
+  const {
+    open,
+    position,
+    targetRef,
+    popupRef,
+    openPop,
+    closePop,
+    Provider: PopupProvider,
+    providerValue: popupProviderValue,
+  } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
     disabled: false,
@@ -390,7 +399,10 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onBlur?.(e);
   });
 
-  const handleFilter = (text: string) => {
+  const handleFilter = (text: string, from?: string) => {
+    if (from !== 'blur') {
+      focusAndOpen();
+    }
     onTiledFilter?.(trim ? text.trim() : text);
   };
 
@@ -484,17 +496,19 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     );
 
     return (
-      <div
-        className={classNames(
-          styles?.resultWrapper,
-          styles?.wrapperPaddingBox,
-          styles?.wrapperInnerTitleTop,
-          styles?.wrapperInnerTitleBottom,
-        )}
-        onClick={handleResultClick}
-      >
-        {renderInnerTitle(result)}
-      </div>
+      <PopupProvider value={popupProviderValue}>
+        <div
+          className={classNames(
+            styles?.resultWrapper,
+            styles?.wrapperPaddingBox,
+            styles?.wrapperInnerTitleTop,
+            styles?.wrapperInnerTitleBottom,
+          )}
+          onClick={handleResultClick}
+        >
+          {renderInnerTitle(result)}
+        </div>
+      </PopupProvider>
     );
   };
 
