@@ -38,14 +38,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onFilter,
     onInputBlur,
     onClearCreatedData,
-    // crud
     getDataByValues,
     checkUnMatched,
     onRemove,
     onResultItemClick,
   } = props;
   const value = (
-    valueProp === null || valueProp === undefined ? [] : multiple ? valueProp : [valueProp]
+    [null, undefined, ''].includes(valueProp as any) ? [] : multiple ? valueProp : [valueProp]
   ) as Value;
 
   const [more, setMore] = useState(-1);
@@ -226,6 +225,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (showInput) {
       return renderInput();
     }
+    if (!placeholder) return renderNbsp();
 
     return (
       <span className={classNames(styles.placeholder, styles.ellipsis)}>

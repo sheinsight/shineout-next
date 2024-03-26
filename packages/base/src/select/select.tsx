@@ -309,13 +309,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const handleFocus = usePersistFn((e: React.FocusEvent) => {
     setFocused(true);
     onFocus?.(e);
-    if (!open) openPop();
   });
 
   const handleBlur = usePersistFn((e: React.FocusEvent) => {
     setFocused(false);
     onBlur?.(e);
-    if (open) closePop();
   });
 
   const handleChange = (item: DataItem) => {
