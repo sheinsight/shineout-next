@@ -3,39 +3,37 @@
 exports[`Card[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c-tu9kjc c71ug4y"
+    class="coegwh2 soui-card-wrapper c-ogq1t8 soui-card-wrapper-split"
     style="width: 360px;"
   >
     <div
-      class="c5hfut4"
+      class="cruthzu soui-card-header"
     >
       <div
-        class="c-pn66hr"
+        class="c-878v9d soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="crnh260"
+        class="c-a0xb1m soui-card-header-extra"
       >
         <button
-          class="c-trc8a3 cvey2f3 c-nzauiu"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button c-1lx7c4 soui-button-text"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Text Button
           </span>
         </button>
       </div>
     </div>
     <div
-      class="c-8ckprn"
+      class="c-sq54cx soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="cpjaykx c4p3tmu"
+      class="cx4qw1b soui-card-right cr2hgtk soui-card-footer"
     >
       <div
         style="display: flex;"
@@ -112,19 +110,19 @@ exports[`Card[Base] should render correctly  1`] = `
 
 exports[`Card[Base] should render correctly about accordion 1`] = `
 <div
-  class="c-adi477"
+  class="c-jviap1 soui-card-accordion"
 >
   <div
-    class="c-tu9kjc cw6ne3m c-kfuys1 c71ug4y c-bgnzut"
+    class="coegwh2 soui-card-wrapper cgcggxw soui-card-wrapper-collapsible ce4uavl soui-card-wrapper-collapsed c-ogq1t8 soui-card-wrapper-split c-raux0j soui-card-wrapper-in-accordion"
   >
     <div
-      class="c5hfut4"
+      class="cruthzu soui-card-header"
     >
       <div
-        class="c846tc4"
+        class="c-1dtd5q soui-card-indicator"
       >
         <div
-          class="cuaibh9"
+          class="c-naof9h soui-card-indicator-icon"
         >
           <svg
             aria-hidden="true"
@@ -139,19 +137,19 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
         </div>
       </div>
       <div
-        class="c-pn66hr"
+        class="c-878v9d soui-card-header-content"
       >
         Card title 1
       </div>
     </div>
     <div
-      class="c-uj98yu"
+      class="c8zab24 soui-card-body-collapse"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
-      style="display: none;"
+      style="display: none; height: 0px; overflow: hidden;"
     >
       <div
-        class="c-8ckprn"
+        class="c-sq54cx soui-card-body"
         style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -159,16 +157,16 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
     </div>
   </div>
   <div
-    class="c-tu9kjc cw6ne3m c71ug4y c-bgnzut"
+    class="coegwh2 soui-card-wrapper cgcggxw soui-card-wrapper-collapsible c-ogq1t8 soui-card-wrapper-split c-raux0j soui-card-wrapper-in-accordion"
   >
     <div
-      class="c5hfut4"
+      class="cruthzu soui-card-header"
     >
       <div
-        class="c846tc4"
+        class="c-1dtd5q soui-card-indicator"
       >
         <div
-          class="cuaibh9"
+          class="c-naof9h soui-card-indicator-icon"
         >
           <svg
             aria-hidden="true"
@@ -183,19 +181,19 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
         </div>
       </div>
       <div
-        class="c-pn66hr"
+        class="c-878v9d soui-card-header-content"
       >
         Card title 2
       </div>
     </div>
     <div
-      class="c-uj98yu"
+      class="c8zab24 soui-card-body-collapse"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
-      style="display: block;"
+      style="display: block; height: 0px; overflow: hidden;"
     >
       <div
-        class="c-8ckprn"
+        class="c-sq54cx soui-card-body"
         style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -203,16 +201,16 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
     </div>
   </div>
   <div
-    class="c-tu9kjc cw6ne3m c-kfuys1 c71ug4y c-bgnzut"
+    class="coegwh2 soui-card-wrapper cgcggxw soui-card-wrapper-collapsible ce4uavl soui-card-wrapper-collapsed c-ogq1t8 soui-card-wrapper-split c-raux0j soui-card-wrapper-in-accordion"
   >
     <div
-      class="c5hfut4"
+      class="cruthzu soui-card-header"
     >
       <div
-        class="c846tc4"
+        class="c-1dtd5q soui-card-indicator"
       >
         <div
-          class="cuaibh9"
+          class="c-naof9h soui-card-indicator-icon"
         >
           <svg
             aria-hidden="true"
@@ -227,19 +225,19 @@ exports[`Card[Base] should render correctly about accordion 1`] = `
         </div>
       </div>
       <div
-        class="c-pn66hr"
+        class="c-878v9d soui-card-header-content"
       >
         Card title 3
       </div>
     </div>
     <div
-      class="c-uj98yu"
+      class="c8zab24 soui-card-body-collapse"
       data-sheinx-animation-duration="fast"
       data-sheinx-animation-type="collapse"
-      style="display: none;"
+      style="display: none; height: 0px; overflow: hidden;"
     >
       <div
-        class="c-8ckprn"
+        class="c-sq54cx soui-card-body"
         style="background: rgb(244, 245, 248);"
       >
         Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open. Joy in living can never be assumed as a pose, or put on from the outside as a mask. People who have this joy do not need to talk about it; they radiate it. They just live out their joy and let it splash its sunlight and glow into other lives as naturally as bird sings.
@@ -254,34 +252,32 @@ exports[`Card[Base] should render correctly about border 1`] = `
   style="padding: 32px; background: rgb(244, 245, 248);"
 >
   <div
-    class="c-tu9kjc c71ug4y"
+    class="coegwh2 soui-card-wrapper c-ogq1t8 soui-card-wrapper-split"
     style="width: 360px;"
   >
     <div
-      class="c5hfut4"
+      class="cruthzu soui-card-header"
     >
       <div
-        class="c-pn66hr"
+        class="c-878v9d soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="crnh260"
+        class="c-a0xb1m soui-card-header-extra"
       >
         <button
-          class="c-trc8a3 cvey2f3 c-nzauiu"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button c-1lx7c4 soui-button-text"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Text Button
           </span>
         </button>
       </div>
     </div>
     <div
-      class="c-8ckprn"
+      class="c-sq54cx soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
@@ -291,16 +287,16 @@ exports[`Card[Base] should render correctly about border 1`] = `
 
 exports[`Card[Base] should render correctly about collpase 1`] = `
 <div
-  class="c-tu9kjc cw6ne3m"
+  class="coegwh2 soui-card-wrapper cgcggxw soui-card-wrapper-collapsible"
 >
   <div
-    class="c5hfut4"
+    class="cruthzu soui-card-header"
   >
     <div
-      class="c846tc4"
+      class="c-1dtd5q soui-card-indicator"
     >
       <div
-        class="cuaibh9"
+        class="c-naof9h soui-card-indicator-icon"
       >
         <svg
           aria-hidden="true"
@@ -315,43 +311,44 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
       </div>
     </div>
     <div
-      class="c-pn66hr"
+      class="c-878v9d soui-card-header-content"
     >
       Card title
     </div>
   </div>
   <div
-    class="c-uj98yu"
+    class="c8zab24 soui-card-body-collapse"
     data-sheinx-animation-duration="fast"
     data-sheinx-animation-type="collapse"
-    style="display: block;"
+    style="display: block; height: 0px; overflow: hidden;"
   >
     <div
-      class="c-8ckprn"
+      class="c-sq54cx soui-card-body"
     >
       <div>
         <div
-          class="c-kb0fus"
+          class="c-2v34me soui-datePicker-wrapper"
+          data-soui-input-border="true"
           data-soui-type="date"
         >
           <div
-            class="c-dt8k4h ci4jqom csb873r c9qf70p"
+            class="c-7leq83 soui-datePicker-result-wrapper c-lpv8gc soui-datePicker-wrapper-padding-box c6pdztl soui-datePicker-wrapper-inner-title-top c8gw12f soui-datePicker-wrapper-inner-title-bottom"
             tabindex="1"
           >
             <div
-              class="clzqaj8"
+              class="c-9iu7ey soui-datePicker-result"
             >
               <div
-                class="cw835ma"
+                class="c-7mbtio soui-datePicker-result-text-wrapper"
               >
                 <div
-                  class="c-wskee7"
+                  class="c1s4v9f soui-datePicker-result-text"
                 >
                   <div
-                    class="c-7hwrps"
+                    class="cnosb4e soui-datePicker-result-text-padding"
                   >
                     <span
-                      class="c-37qmec"
+                      class="c35bvay soui-datePicker-placeholder"
                     >
                       请选择日期
                     </span>
@@ -360,7 +357,7 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
               </div>
             </div>
             <div
-              class="czhvzzk"
+              class="cp46mj6 soui-datePicker-icon"
             >
               <svg
                 aria-hidden="true"
@@ -376,625 +373,6 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
               </svg>
             </div>
           </div>
-          <div
-            class="coqsbym"
-            data-sheinx-animation-duration="fast"
-            data-sheinx-animation-type="fade"
-            style="pointer-events: none; position: absolute; z-index: -1000; display: none;"
-          >
-            <div
-              class="c-3sw5h6"
-            >
-              <div
-                class="c8b8vn7 cl3jsqt"
-              >
-                <div
-                  class="ce4ai42"
-                >
-                  <div
-                    class="czc6jq1"
-                  >
-                    <span
-                      class="czc4lhn"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.3871 5.2097C11.7794 4.90468 12.3466 4.93241 12.7071 5.29289L12.7903 5.3871C13.0953 5.77939 13.0676 6.34662 12.7071 6.70711L8.12205 11.2928C7.7317 11.6835 7.7317 12.3165 8.12205 12.7072L12.7071 17.2929L12.7903 17.3871C13.0953 17.7794 13.0676 18.3466 12.7071 18.7071C12.3166 19.0976 11.6834 19.0976 11.2929 18.7071L5.29289 12.7071L5.2097 12.6129C4.90468 12.2206 4.93241 11.6534 5.29289 11.2929L11.2929 5.29289L11.3871 5.2097ZM17.3871 5.2097C17.7794 4.90468 18.3466 4.93241 18.7071 5.29289L18.7903 5.3871C19.0953 5.77939 19.0676 6.34662 18.7071 6.70711L14.1221 11.2928C13.7317 11.6835 13.7317 12.3165 14.1221 12.7072L18.7071 17.2929L18.7903 17.3871C19.0953 17.7794 19.0676 18.3466 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L11.2929 12.7071L11.2097 12.6129C10.9047 12.2206 10.9324 11.6534 11.2929 11.2929L17.2929 5.29289L17.3871 5.2097Z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="czc4lhn"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M7.29289 12.7071C6.93241 12.3466 6.90468 11.7794 7.2097 11.3871L7.29289 11.2929L13.2929 5.29289C13.6834 4.90237 14.3166 4.90237 14.7071 5.29289C15.0676 5.65338 15.0953 6.22061 14.7903 6.6129L14.7071 6.70711L10.1221 11.2928C9.7317 11.6835 9.7317 12.3165 10.1221 12.7072L14.7071 17.2929C15.0676 17.6534 15.0953 18.2206 14.7903 18.6129L14.7071 18.7071C14.3466 19.0676 13.7794 19.0953 13.3871 18.7903L13.2929 18.7071L7.29289 12.7071Z"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                  <div
-                    class="c-jhck0a"
-                  >
-                    <span
-                      class="czc4tfk"
-                    >
-                      2024
-                    </span>
-                    <i>
-                      -
-                    </i>
-                    <span
-                      class="czc4tfk"
-                    >
-                      3
-                    </span>
-                  </div>
-                  <div
-                    class="cu4bhu2"
-                  >
-                    <span
-                      class="czc4lhn"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M16.7071 12.7071C17.0676 12.3466 17.0953 11.7794 16.7903 11.3871L16.7071 11.2929L10.7071 5.29289C10.3166 4.90237 9.68342 4.90237 9.29289 5.29289C8.93241 5.65338 8.90468 6.22061 9.2097 6.6129L9.29289 6.70711L13.8779 11.2928C14.2683 11.6835 14.2683 12.3165 13.8779 12.7072L9.29289 17.2929C8.93241 17.6534 8.90468 18.2206 9.2097 18.6129L9.29289 18.7071C9.65338 19.0676 10.2206 19.0953 10.6129 18.7903L10.7071 18.7071L16.7071 12.7071Z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="czc4lhn"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11.2929 5.29289C11.6834 4.90237 12.3166 4.90237 12.7071 5.29289L18.7071 11.2929L18.7903 11.3871C19.0953 11.7794 19.0676 12.3466 18.7071 12.7071L12.7071 18.7071L12.6129 18.7903C12.2206 19.0953 11.6534 19.0676 11.2929 18.7071L11.2097 18.6129C10.9047 18.2206 10.9324 17.6534 11.2929 17.2929L15.8779 12.7072C16.2683 12.3165 16.2683 11.6835 15.8779 11.2928L11.2929 6.70711L11.2097 6.6129C10.9047 6.22061 10.9324 5.65338 11.2929 5.29289ZM5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12.7071 11.2929L12.7903 11.3871C13.0953 11.7794 13.0676 12.3466 12.7071 12.7071L6.70711 18.7071L6.6129 18.7903C6.22061 19.0953 5.65338 19.0676 5.29289 18.7071L5.2097 18.6129C4.90468 18.2206 4.93241 17.6534 5.29289 17.2929L9.87795 12.7072C10.2683 12.3165 10.2683 11.6835 9.87795 11.2928L5.29289 6.70711L5.2097 6.6129C4.90468 6.22061 4.93241 5.65338 5.29289 5.29289Z"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="co6jds7"
-                >
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          一
-                        </th>
-                        <th>
-                          二
-                        </th>
-                        <th>
-                          三
-                        </th>
-                        <th>
-                          四
-                        </th>
-                        <th>
-                          五
-                        </th>
-                        <th>
-                          六
-                        </th>
-                        <th>
-                          日
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr
-                        class="c-3svtm3"
-                      >
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              26
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              27
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              28
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              29
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              1
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              2
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              3
-                            </span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="c-3svtm3"
-                      >
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              4
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cau3hh6"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              5
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              6
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              7
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              8
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              9
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              10
-                            </span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="c-3svtm3"
-                      >
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              11
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              12
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              13
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              14
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              15
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              16
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              17
-                            </span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="c-3svtm3"
-                      >
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              18
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              19
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              20
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              21
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              22
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              23
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              24
-                            </span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="c-3svtm3"
-                      >
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              25
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              26
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              27
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              28
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              29
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              30
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              31
-                            </span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="c-3svtm3"
-                      >
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              1
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              2
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              3
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              4
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              5
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              6
-                            </span>
-                          </div>
-                        </td>
-                        <td
-                          class="co6jtjb cak7jp3"
-                        >
-                          <div
-                            class="c6n0lki"
-                          >
-                            <span>
-                              7
-                            </span>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1004,46 +382,46 @@ exports[`Card[Base] should render correctly about collpase 1`] = `
 
 exports[`Card[Base] should render correctly about form 1`] = `
 <div
-  class="c-tu9kjc"
+  class="coegwh2 soui-card-wrapper"
   style="width: 360px;"
 >
   <div
-    class="c5hfut4"
+    class="cruthzu soui-card-header"
   >
     <div
-      class="c-pn66hr"
+      class="c-878v9d soui-card-header-content"
     >
       Card title
     </div>
   </div>
   <div
-    class="c-8ckprn"
+    class="c-sq54cx soui-card-body"
   >
     <form
-      class="cr9qis4"
+      class="cahcxte soui-form-wrapper"
     >
       <div
-        class="csrte0i c-u56oz1"
+        class="c-2qr3xo soui-form-item-wrapper ckj9xyt soui-form-item-wrapper-label-top"
         data-soui-status="default"
       >
         <div
-          class="c-v46lkd"
+          class="ctj82yd soui-form-item-label"
         >
           User name :
         </div>
         <div
-          class="ci4ezng"
+          class="c-de5iaq soui-form-item-control"
           data-soui-role="form-control"
         >
           <div
-            class="c5g1ick"
-            data-soui-type="input"
+            class="c-hrv5q2 soui-input-wrapper"
+            data-soui-input-border="true"
           >
             <div
-              class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+              class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
             >
               <input
-                class="cccsm1n"
+                class="cyq698d soui-input-input"
                 value="user"
               />
             </div>
@@ -1051,27 +429,27 @@ exports[`Card[Base] should render correctly about form 1`] = `
         </div>
       </div>
       <div
-        class="csrte0i c-u56oz1"
+        class="c-2qr3xo soui-form-item-wrapper ckj9xyt soui-form-item-wrapper-label-top"
         data-soui-status="default"
       >
         <div
-          class="c-v46lkd"
+          class="ctj82yd soui-form-item-label"
         >
           Email :
         </div>
         <div
-          class="ci4ezng"
+          class="c-de5iaq soui-form-item-control"
           data-soui-role="form-control"
         >
           <div
-            class="c5g1ick"
-            data-soui-type="input"
+            class="c-hrv5q2 soui-input-wrapper"
+            data-soui-input-border="true"
           >
             <div
-              class="cgc7yq7 c-dwl4jz cdip7we c-57d5o6"
+              class="coq2iel soui-input-wrapper-inner-title-top ctgjlqr soui-input-wrapper-inner-title-bottom c-2bhp9c soui-input-wrapper-padding-box c-sf9tqs soui-input-content"
             >
               <input
-                class="cccsm1n"
+                class="cyq698d soui-input-input"
                 value="test@example.com"
               />
             </div>
@@ -1081,15 +459,13 @@ exports[`Card[Base] should render correctly about form 1`] = `
     </form>
   </div>
   <div
-    class="cpjaykx c4p3tmu"
+    class="cx4qw1b soui-card-right cr2hgtk soui-card-footer"
   >
     <button
-      class="c-trc8a3 cvey2f3"
+      class="cvrrn77 soui-button-primary c871ech soui-button-button"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Submit
       </span>
     </button>
@@ -1102,39 +478,37 @@ exports[`Card[Base] should render correctly about hover 1`] = `
   style="display: flex; flex-wrap: wrap; margin: -16px;"
 >
   <div
-    class="c-tu9kjc c6vs9xw c71ug4y"
+    class="coegwh2 soui-card-wrapper c-oms80a soui-card-wrapper-hover c-ogq1t8 soui-card-wrapper-split"
     style="width: 360px; display: inline-flex; margin: 16px;"
   >
     <div
-      class="c5hfut4"
+      class="cruthzu soui-card-header"
     >
       <div
-        class="c-pn66hr"
+        class="c-878v9d soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="crnh260"
+        class="c-a0xb1m soui-card-header-extra"
       >
         <button
-          class="c-trc8a3 cvey2f3 c-nzauiu"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button c-1lx7c4 soui-button-text"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Text Button
           </span>
         </button>
       </div>
     </div>
     <div
-      class="c-8ckprn"
+      class="c-sq54cx soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="cpjaykx c4p3tmu"
+      class="cx4qw1b soui-card-right cr2hgtk soui-card-footer"
     >
       <div
         style="display: flex;"
@@ -1207,39 +581,37 @@ exports[`Card[Base] should render correctly about hover 1`] = `
     </div>
   </div>
   <div
-    class="custom-card-customCard-0-2-1 c-tu9kjc c6vs9xw c71ug4y"
+    class="custom-card-customCard-0-2-1 coegwh2 soui-card-wrapper c-oms80a soui-card-wrapper-hover c-ogq1t8 soui-card-wrapper-split"
     style="width: 360px; display: inline-flex; margin: 16px;"
   >
     <div
-      class="c5hfut4"
+      class="cruthzu soui-card-header"
     >
       <div
-        class="c-pn66hr"
+        class="c-878v9d soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="crnh260"
+        class="c-a0xb1m soui-card-header-extra"
       >
         <button
-          class="c-trc8a3 cvey2f3 c-nzauiu"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button c-1lx7c4 soui-button-text"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Text Button
           </span>
         </button>
       </div>
     </div>
     <div
-      class="c-8ckprn"
+      class="c-sq54cx soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="cpjaykx c4p3tmu"
+      class="cx4qw1b soui-card-right cr2hgtk soui-card-footer"
     >
       <div
         style="display: flex;"
@@ -1317,31 +689,31 @@ exports[`Card[Base] should render correctly about hover 1`] = `
 exports[`Card[Base] should render correctly about shadow 1`] = `
 <div>
   <div
-    class="c-tu9kjc"
+    class="coegwh2 soui-card-wrapper"
     style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
   >
     <div
-      class="c-8ckprn"
+      class="c-sq54cx soui-card-body"
     >
       Never
     </div>
   </div>
   <div
-    class="c-tu9kjc c6vs9xw"
+    class="coegwh2 soui-card-wrapper c-oms80a soui-card-wrapper-hover"
     style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
   >
     <div
-      class="c-8ckprn"
+      class="c-sq54cx soui-card-body"
     >
       Hover
     </div>
   </div>
   <div
-    class="c-tu9kjc c5da8zs"
+    class="coegwh2 soui-card-wrapper cmt7k86 soui-card-wrapper-shadow"
     style="width: 140px; display: inline-flex; margin-inline-end: 20px;"
   >
     <div
-      class="c-8ckprn"
+      class="c-sq54cx soui-card-body"
     >
       Always
     </div>
@@ -1352,39 +724,37 @@ exports[`Card[Base] should render correctly about shadow 1`] = `
 exports[`Card[Base] should render correctly about split 1`] = `
 <div>
   <div
-    class="c-tu9kjc"
+    class="coegwh2 soui-card-wrapper"
     style="width: 360px;"
   >
     <div
-      class="c5hfut4"
+      class="cruthzu soui-card-header"
     >
       <div
-        class="c-pn66hr"
+        class="c-878v9d soui-card-header-content"
       >
         Card title
       </div>
       <div
-        class="crnh260"
+        class="c-a0xb1m soui-card-header-extra"
       >
         <button
-          class="c-trc8a3 cvey2f3 c-nzauiu"
+          class="cvrrn77 soui-button-primary c871ech soui-button-button c-1lx7c4 soui-button-text"
           type="button"
         >
-          <span
-            class="cboe6wq"
-          >
+          <span>
             Text Button
           </span>
         </button>
       </div>
     </div>
     <div
-      class="c-8ckprn"
+      class="c-sq54cx soui-card-body"
     >
       Joy in living comes from having fine emotions, trusting them, giving them the freedom of a bird in the open.
     </div>
     <div
-      class="cpjaykx c4p3tmu"
+      class="cx4qw1b soui-card-right cr2hgtk soui-card-footer"
     >
       <div
         style="display: flex;"

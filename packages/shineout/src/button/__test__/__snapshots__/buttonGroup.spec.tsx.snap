@@ -5,134 +5,110 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap; flex-direction: column;"
 >
   <div
-    class="c-xa4xwu"
+    class="ckylj3k soui-button-group"
   >
     <button
-      class="c-trc8a3 cvey2f3 c-nzauiu"
+      class="cvrrn77 soui-button-primary c871ech soui-button-button c-1lx7c4 soui-button-text"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
     <button
-      class="c-rg592x cvey2f3 c-nzauiu"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
     <button
-      class="c-rg592x cvey2f3 c-nzauiu"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button c-1lx7c4 soui-button-text"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
     <button
-      class="c-rg592x cvey2f3 conix1l c-nzauiu"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ce9tjl7 soui-button-disabled c-1lx7c4 soui-button-text"
       disabled=""
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
   </div>
   <div
-    class="c-xa4xwu"
+    class="ckylj3k soui-button-group"
   >
     <button
-      class="c-trc8a3 cvey2f3"
+      class="cvrrn77 soui-button-primary c871ech soui-button-button"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
     <button
-      class="c-rg592x cvey2f3"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
     <button
-      class="c-rg592x cvey2f3"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
     <button
-      class="c-rg592x cvey2f3"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
   </div>
   <div
-    class="c-xa4xwu"
+    class="ckylj3k soui-button-group"
   >
     <button
-      class="c-rg592x cvey2f3 cs6jo0l"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
     <button
-      class="c-rg592x cvey2f3 cs6jo0l"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
     <button
-      class="c-rg592x cvey2f3 cs6jo0l"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
     <button
-      class="c-rg592x cvey2f3 cs6jo0l"
+      class="c5wkfol soui-button-secondary c871ech soui-button-button ciojhir soui-button-outline"
       type="button"
     >
-      <span
-        class="cboe6wq"
-      >
+      <span>
         Publish
       </span>
     </button>
@@ -141,24 +117,22 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
     style="display: flex; gap: 24px;"
   >
     <div
-      class="c-xa4xwu"
+      class="ckylj3k soui-button-group"
     >
       <button
-        class="c-trc8a3 cvey2f3"
+        class="cvrrn77 soui-button-primary c871ech soui-button-button"
         type="button"
       >
-        <span
-          class="cboe6wq"
-        >
+        <span>
           Publish
         </span>
       </button>
       <button
-        class="c-trc8a3 cvey2f3"
+        class="cvrrn77 soui-button-primary c871ech soui-button-button"
         type="button"
       >
         <span
-          style="display: inline-flex; align-items: center; line-height: 22px;"
+          style="display: inline-flex; align-items: center; height: 100%;"
         >
           <svg
             fill="none"
@@ -176,24 +150,22 @@ exports[`ButtonGroup[Base] should render correctly 1`] = `
       </button>
     </div>
     <div
-      class="c-xa4xwu"
+      class="ckylj3k soui-button-group"
     >
       <button
-        class="c-rg592x cvey2f3"
+        class="c5wkfol soui-button-secondary c871ech soui-button-button"
         type="button"
       >
-        <span
-          class="cboe6wq"
-        >
+        <span>
           Publish
         </span>
       </button>
       <button
-        class="c-rg592x cvey2f3"
+        class="c5wkfol soui-button-secondary c871ech soui-button-button"
         type="button"
       >
         <span
-          style="display: inline-flex; align-items: center; line-height: 22px;"
+          style="display: inline-flex; align-items: center; height: 100%;"
         >
           <svg
             fill="none"

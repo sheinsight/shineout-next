@@ -3,22 +3,22 @@
 exports[`Select[Base] should render correctly  1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -28,7 +28,7 @@ exports[`Select[Base] should render correctly  1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -41,129 +41,6 @@ exports[`Select[Base] should render correctly  1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -173,22 +50,22 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
   style="padding: 10px; height: 100px; width: 100%; overflow: hidden;"
 >
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 120px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               default
@@ -198,7 +75,7 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -211,134 +88,24 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 120px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div>
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 238px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-jl3hqo c-7gyxy1"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable c-huobef soui-select-multiple"
+    data-soui-input-border="true"
     style="width: 300px; margin-left: 16px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y cvyv5u7"
+          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select user
@@ -348,7 +115,7 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -357,7 +124,7 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
         />
       </svg>
     </span>
@@ -368,22 +135,22 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
 exports[`Select[Base] should render correctly about autoAdapt 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -393,7 +160,7 @@ exports[`Select[Base] should render correctly about autoAdapt 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -406,129 +173,6 @@ exports[`Select[Base] should render correctly about autoAdapt 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; min-width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="loooooooooooooooooooooooooooooooooooooooooooong"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    loooooooooooooooooooooooooooooooooooooooooooong
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -536,22 +180,22 @@ exports[`Select[Base] should render correctly about autoAdapt 1`] = `
 exports[`Select[Base] should render correctly about big data 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Tag
@@ -561,7 +205,7 @@ exports[`Select[Base] should render correctly about big data 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -574,151 +218,6 @@ exports[`Select[Base] should render correctly about big data 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="标签 0"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 0
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="标签 1"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 1
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="标签 2"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 2
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="标签 3"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 3
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="标签 4"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 4
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="标签 5"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 5
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="标签 6"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 6
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="标签 7"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 7
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-8"
-                  tabindex="-1"
-                  title="标签 8"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 8
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-9"
-                  tabindex="-1"
-                  title="标签 9"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    标签 9
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 3400000px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -726,22 +225,22 @@ exports[`Select[Base] should render correctly about big data 1`] = `
 exports[`Select[Base] should render correctly about create 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo c-7gyxy1"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable c-huobef soui-select-multiple"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y cvyv5u7"
+          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -751,7 +250,7 @@ exports[`Select[Base] should render correctly about create 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -760,133 +259,10 @@ exports[`Select[Base] should render correctly about create 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -896,22 +272,22 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -921,7 +297,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -934,152 +310,24 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        style="height: 32px; background-color: rgb(25, 122, 250); color: rgb(255, 255, 255); padding: 5px 12px; box-sizing: border-box;"
-      >
-        + add
-      </div>
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1089,7 +337,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1102,152 +350,24 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        style="height: 32px; background-color: rgb(25, 122, 250); color: rgb(255, 255, 255); padding: 5px 12px; box-sizing: border-box;"
-      >
-        + add
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1257,7 +377,7 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1270,143 +390,6 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div>
-        <div
-          style="height: 32px; background-color: rgb(25, 122, 250); color: rgb(255, 255, 255); padding: 5px 12px; box-sizing: border-box;"
-        >
-          + add
-        </div>
-        <div>
-          <div
-            class="c-5xs56z cdfaub1"
-          >
-            <div
-              style="height: 250px;"
-            >
-              <div
-                data-soui-role="scroll"
-                style="height: 100%; width: 100%; overflow: auto;"
-              >
-                <div
-                  data-soui-role="scroll-container"
-                  style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-                >
-                  <ul
-                    class="c4he79u"
-                    style="transform: translate3d(0, -0px, 0);"
-                  >
-                    <li
-                      class="c-msac6s option-0 celt4gg"
-                      tabindex="-1"
-                      title="red"
-                    >
-                      <div
-                        class="cemc44q"
-                      >
-                        red
-                      </div>
-                    </li>
-                    <li
-                      class="c-msac6s option-1"
-                      tabindex="-1"
-                      title="orange"
-                    >
-                      <div
-                        class="cemc44q"
-                      >
-                        orange
-                      </div>
-                    </li>
-                    <li
-                      class="c-msac6s option-2"
-                      tabindex="-1"
-                      title="yellow"
-                    >
-                      <div
-                        class="cemc44q"
-                      >
-                        yellow
-                      </div>
-                    </li>
-                    <li
-                      class="c-msac6s option-3"
-                      tabindex="-1"
-                      title="green"
-                    >
-                      <div
-                        class="cemc44q"
-                      >
-                        green
-                      </div>
-                    </li>
-                    <li
-                      class="c-msac6s option-4"
-                      tabindex="-1"
-                      title="cyan"
-                    >
-                      <div
-                        class="cemc44q"
-                      >
-                        cyan
-                      </div>
-                    </li>
-                    <li
-                      class="c-msac6s option-5"
-                      tabindex="-1"
-                      title="blue"
-                    >
-                      <div
-                        class="cemc44q"
-                      >
-                        blue
-                      </div>
-                    </li>
-                    <li
-                      class="c-msac6s option-6"
-                      tabindex="-1"
-                      title="violet"
-                    >
-                      <div
-                        class="cemc44q"
-                      >
-                        violet
-                      </div>
-                    </li>
-                    <li
-                      class="c-msac6s option-7"
-                      tabindex="-1"
-                      title="pink"
-                    >
-                      <div
-                        class="cemc44q"
-                      >
-                        pink
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-                >
-                   
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="height: 32px; background-color: rgb(25, 122, 250); color: rgb(255, 255, 255); padding: 5px 12px; box-sizing: border-box;"
-        >
-          + add
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -1414,22 +397,22 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
 exports[`Select[Base] should render correctly about custom result 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1439,7 +422,7 @@ exports[`Select[Base] should render correctly about custom result 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1452,129 +435,6 @@ exports[`Select[Base] should render correctly about custom result 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -1582,22 +442,22 @@ exports[`Select[Base] should render correctly about custom result 1`] = `
 exports[`Select[Base] should render correctly about custom unmatch 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="c-f5w80o"
+            class="c-pjllh2 soui-select-ellipsis"
           >
             I am redddd color
           </span>
@@ -1605,7 +465,7 @@ exports[`Select[Base] should render correctly about custom unmatch 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1618,129 +478,20 @@ exports[`Select[Base] should render correctly about custom unmatch 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    <span
+      class="cdr6w5p soui-select-clear-icon"
     >
-      <div
-        class="c-5xs56z cdfaub1"
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
       >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <path
+          d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+        />
+      </svg>
+    </span>
   </div>
 </div>
 `;
@@ -1750,22 +501,22 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
   style="display: flex; flex-wrap: wrap; gap: 24px; width: 624px;"
 >
   <div
-    class="c-k1257o co2pi9k c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cufrzyu soui-select-wrapper-disabled cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="-1"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1775,7 +526,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1788,147 +539,24 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1938,7 +566,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -1951,156 +579,99 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o co2pi9k c-jl3hqo c-7gyxy1"
-    data-soui-type="input"
+    class="c-tj2bpi soui-select-wrapper cufrzyu soui-select-wrapper-disabled cdrm70u soui-select-clearable c-huobef soui-select-multiple"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="-1"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y c-5upq05 cvyv5u7 cn8xp0r"
+          class="cst20xc soui-select-result-text-wrapper cd43w9 soui-select-compressed-wrapper c-7vjtar soui-select-multiple-result-wrapper c-7a22yf soui-select-multiple-compressed-wrapper"
         >
+          <div
+            class="c9p1dj5 soui-select-tag cd2zl8d soui-tag-tag c-7aczvg soui-tag-default c1b4zg7 soui-tag-bright c-j04p53 soui-tag-disabled"
+            data-soui-type="dark"
+            style="opacity: 1;"
+          >
+            <div
+              class="c-6g68ga soui-tag-wrapper c4kb4eu soui-tag-inline"
+            >
+              <span
+                class="c-oi8krg soui-tag-container"
+              >
+                red
+              </span>
+            </div>
+            <div
+              class="c-pp0r9o soui-tag-close-icon"
+            >
+              <span
+                class="c98mzgf soui-tag-close-icon-wrapper"
+              >
+                <svg
+                  height="10"
+                  viewBox="0 0 10 10"
+                  width="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div
+            class="c9p1dj5 soui-select-tag cd2zl8d soui-tag-tag c-7aczvg soui-tag-default c1b4zg7 soui-tag-bright c-j04p53 soui-tag-disabled"
+            data-soui-type="dark"
+            style="opacity: 1;"
+          >
+            <div
+              class="c-6g68ga soui-tag-wrapper c4kb4eu soui-tag-inline"
+            >
+              <span
+                class="c-oi8krg soui-tag-container"
+              >
+                orange
+              </span>
+            </div>
+            <div
+              class="c-pp0r9o soui-tag-close-icon"
+            >
+              <span
+                class="c98mzgf soui-tag-close-icon-wrapper"
+              >
+                <svg
+                  height="10"
+                  viewBox="0 0 10 10"
+                  width="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
           <span
             style="display: inline-flex;"
           >
             <div
-              class="c23lg2r chrdymz c-tnqn26 c-6aay07"
-              style=""
+              class="c9p1dj5 soui-select-tag cd2zl8d soui-tag-tag c-7aczvg soui-tag-default c1b4zg7 soui-tag-bright"
+              style="position: absolute; z-index: -100; user-select: none; contain: layout; opacity: 0; pointer-events: none;"
             >
               <span
-                class=""
+                class="c-6g68ga soui-tag-wrapper"
               >
-                +2
+                +
               </span>
             </div>
             <noscript />
@@ -2109,7 +680,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -2122,188 +693,97 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q cn3gfle c-5jcexk"
-                  >
-                    red
-                    <span
-                      class="c-t69g6v"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q cn3gfle c-5jcexk"
-                  >
-                    orange
-                    <span
-                      class="c-t69g6v"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q c-5jcexk"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-jl3hqo c-7gyxy1"
-    data-soui-type="input"
+    class="c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable c-huobef soui-select-multiple"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y c-5upq05 cvyv5u7 cn8xp0r"
+          class="cst20xc soui-select-result-text-wrapper cd43w9 soui-select-compressed-wrapper c-7vjtar soui-select-multiple-result-wrapper c-7a22yf soui-select-multiple-compressed-wrapper"
         >
+          <div
+            class="c9p1dj5 soui-select-tag cd2zl8d soui-tag-tag c-7aczvg soui-tag-default c1b4zg7 soui-tag-bright"
+            style="opacity: 1;"
+          >
+            <div
+              class="c-6g68ga soui-tag-wrapper c4kb4eu soui-tag-inline"
+            >
+              <span
+                class="c-oi8krg soui-tag-container"
+              >
+                red
+              </span>
+            </div>
+            <div
+              class="c-pp0r9o soui-tag-close-icon"
+            >
+              <span
+                class="c98mzgf soui-tag-close-icon-wrapper"
+              >
+                <svg
+                  height="10"
+                  viewBox="0 0 10 10"
+                  width="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div
+            class="c9p1dj5 soui-select-tag cd2zl8d soui-tag-tag c-7aczvg soui-tag-default c1b4zg7 soui-tag-bright c-j04p53 soui-tag-disabled"
+            style="opacity: 1;"
+          >
+            <div
+              class="c-6g68ga soui-tag-wrapper c4kb4eu soui-tag-inline"
+            >
+              <span
+                class="c-oi8krg soui-tag-container"
+              >
+                orange
+              </span>
+            </div>
+            <div
+              class="c-pp0r9o soui-tag-close-icon"
+            >
+              <span
+                class="c98mzgf soui-tag-close-icon-wrapper"
+              >
+                <svg
+                  height="10"
+                  viewBox="0 0 10 10"
+                  width="10"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.92204 1.33738L1.96129 1.37204L5 4.41042L8.03871 1.37204C8.20142 1.20932 8.46524 1.20932 8.62796 1.37204C8.77816 1.52224 8.78972 1.75859 8.66262 1.92204L8.62796 1.96129L5.58958 5L8.62796 8.03871C8.79068 8.20142 8.79068 8.46524 8.62796 8.62796C8.47776 8.77816 8.24141 8.78972 8.07796 8.66262L8.03871 8.62796L5 5.58958L1.96129 8.62796C1.79858 8.79068 1.53476 8.79068 1.37204 8.62796C1.22184 8.47776 1.21028 8.24141 1.33738 8.07796L1.37204 8.03871L4.41042 5L1.37204 1.96129C1.20932 1.79858 1.20932 1.53476 1.37204 1.37204C1.52224 1.22184 1.75859 1.21028 1.92204 1.33738Z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
           <span
             style="display: inline-flex;"
           >
             <div
-              class="c23lg2r chrdymz c-tnqn26 c-6aay07"
-              style=""
+              class="c9p1dj5 soui-select-tag cd2zl8d soui-tag-tag c-7aczvg soui-tag-default c1b4zg7 soui-tag-bright"
+              style="position: absolute; z-index: -100; user-select: none; contain: layout; opacity: 0; pointer-events: none;"
             >
               <span
-                class=""
+                class="c-6g68ga soui-tag-wrapper"
               >
-                +2
+                +
               </span>
             </div>
             <noscript />
@@ -2312,7 +792,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -2325,161 +805,20 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
+    <span
+      class="cdr6w5p soui-select-clear-icon"
     >
-      <div
-        class="c-5xs56z cdfaub1"
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
       >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q cn3gfle"
-                  >
-                    red
-                    <span
-                      class="c-t69g6v"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q cn3gfle c-5jcexk"
-                  >
-                    orange
-                    <span
-                      class="c-t69g6v"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        fill="currentColor"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          clip-rule="evenodd"
-                          d="M2.29274 13.0709L7.94818 18.7264C8.73024 19.5084 9.99738 19.5084 10.7794 18.7264L22.7988 6.70696C23.1892 6.31663 23.1892 5.68307 22.7988 5.29274C22.4085 4.90242 21.7749 4.90242 21.3846 5.29274L10.0723 16.605C9.6813 16.9961 9.04632 16.9961 8.65529 16.605L3.70696 11.6567C3.31663 11.2664 2.68307 11.2664 2.29274 11.6567C1.90242 12.047 1.90242 12.6806 2.29274 13.0709Z"
-                          fill-rule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <path
+          d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM9.7845 8.38125C9.39221 8.07623 8.82498 8.10396 8.46449 8.46444C8.07397 8.85497 8.07397 9.48813 8.46449 9.87866L10.5846 11.9995L8.46449 14.1213L8.3813 14.2155C8.07628 14.6078 8.10401 15.175 8.46449 15.5355C8.85502 15.926 9.48818 15.926 9.87871 15.5355L11.9996 13.4136L14.1213 15.5355L14.2156 15.6187C14.6078 15.9237 15.1751 15.896 15.5356 15.5355C15.9261 15.145 15.9261 14.5118 15.5356 14.1213L13.4136 11.9995L15.5356 9.87866L15.6187 9.78445C15.9238 9.39216 15.896 8.82493 15.5356 8.46444C15.145 8.07392 14.5119 8.07392 14.1213 8.46444L11.9996 10.5845L9.87871 8.46444L9.7845 8.38125Z"
+        />
+      </svg>
+    </span>
   </div>
 </div>
 `;
@@ -2487,22 +826,22 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
 exports[`Select[Base] should render correctly about filter 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -2512,7 +851,7 @@ exports[`Select[Base] should render correctly about filter 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -2525,129 +864,6 @@ exports[`Select[Base] should render correctly about filter 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -2655,22 +871,22 @@ exports[`Select[Base] should render correctly about filter 1`] = `
 exports[`Select[Base] should render correctly about format 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -2680,7 +896,7 @@ exports[`Select[Base] should render correctly about format 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -2693,173 +909,28 @@ exports[`Select[Base] should render correctly about format 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="Label 0"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 0
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="Label 1"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 1
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="Label 2"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 2
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="Label 3"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 3
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="Label 4"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 4
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="Label 5"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 5
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="Label 6"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 6
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="Label 7"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 7
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-8"
-                  tabindex="-1"
-                  title="Label 8"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 8
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-9"
-                  tabindex="-1"
-                  title="Label 9"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    Label 9
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 510px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
 
 exports[`Select[Base] should render correctly about group 1`] = `
 <div
-  class="c-k1257o c-jl3hqo"
-  data-soui-type="input"
+  class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+  data-soui-input-border="true"
   style="width: 240px;"
   tabindex="0"
 >
   <div
-    class="c-hka1dt c8hos3a crwdlef c9869pl"
+    class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
   >
     <div
-      class="c-lj7los"
+      class="cq9zs7q soui-select-result"
     >
       <div
-        class="cml870y"
+        class="cst20xc soui-select-result-text-wrapper"
       >
         <span
-          class="cus4m0s c-f5w80o"
+          class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
         >
           <span>
             Select a city
@@ -2869,7 +940,7 @@ exports[`Select[Base] should render correctly about group 1`] = `
     </div>
   </div>
   <span
-    class="c-fjov4l"
+    class="cht0tmx soui-select-arrow-icon"
   >
     <svg
       aria-hidden="true"
@@ -2882,143 +953,48 @@ exports[`Select[Base] should render correctly about group 1`] = `
       />
     </svg>
   </span>
-  <div
-    class="ckzqupa"
-    data-sheinx-animation-duration="fast"
-    data-sheinx-animation-type="scale-y"
-    style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-  >
-    <div
-      class="c-5xs56z cdfaub1"
-    >
-      <div>
-        <div
-          data-soui-role="scroll"
-          style="height: 100%; width: 100%; overflow: auto;"
-        >
-          <div
-            data-soui-role="scroll-container"
-            style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-          >
-            <ul
-              class="c4he79u"
-              style="transform: translate3d(0, -0px, 0);"
-            >
-              <div
-                class="c-haw54r"
-                title="Other"
-              >
-                Other
-              </div>
-              <li
-                class="c-msac6s option-1"
-                tabindex="-1"
-                title="Mars"
-              >
-                <div
-                  class="cemc44q"
-                >
-                  Mars
-                </div>
-              </li>
-              <div
-                class="c-haw54r"
-                title="Country"
-              >
-                Country
-              </div>
-              <li
-                class="c-msac6s option-3"
-                tabindex="-1"
-                title="China"
-              >
-                <div
-                  class="cemc44q"
-                >
-                  China
-                </div>
-              </li>
-              <div
-                class="c-haw54r"
-                title="City"
-              >
-                City
-              </div>
-              <li
-                class="c-msac6s option-5"
-                tabindex="-1"
-                title="Beijing"
-              >
-                <div
-                  class="cemc44q"
-                >
-                  Beijing
-                </div>
-              </li>
-              <li
-                class="c-msac6s option-6"
-                tabindex="-1"
-                title="Shanghai"
-              >
-                <div
-                  class="cemc44q"
-                >
-                  Shanghai
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div
-            style="margin-top: 238px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-          >
-             
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 `;
 
 exports[`Select[Base] should render correctly about inner title 1`] = `
 <div>
   <div
-    class="c-k1257o ckg5l9a c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cqnzf5o soui-select-wrapper-inner-title cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c3ceru5"
+        class="c-o6szqp soui-inner-title-wrapper"
       >
         <div
-          class="c-yxm0y6 c-tlnvtd"
+          class="c4kxj2s soui-inner-title-title cv1qspd soui-inner-title-top"
         >
           Select Color
         </div>
         <div
-          class="c-yzronz"
+          class="c4irvcz soui-inner-title-place"
         >
           <div
-            class="c-yxm0y6"
+            class="c4kxj2s soui-inner-title-title"
           >
             Select Color
           </div>
         </div>
         <div
-          class="c-7azw6l"
+          class="c-yu7nrf soui-inner-title-content"
         >
           <div
-            class="c-lj7los"
+            class="cq9zs7q soui-select-result"
           >
             <div
-              class="cml870y"
+              class="cst20xc soui-select-result-text-wrapper"
             >
               <div
-                class="ct42cb3"
+                class="ccborcd soui-select-space"
               >
                  
               </div>
@@ -3028,7 +1004,7 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -3041,129 +1017,6 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -3171,22 +1024,22 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
 exports[`Select[Base] should render correctly about loading 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -3196,7 +1049,7 @@ exports[`Select[Base] should render correctly about loading 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -3209,21 +1062,6 @@ exports[`Select[Base] should render correctly about loading 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="cu6k891"
-      >
-        <div
-          class="chxenrh"
-          style="width: 14px; height: 14px; border-width: 1.4px; font-size: 1.4px;"
-        />
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -3231,22 +1069,22 @@ exports[`Select[Base] should render correctly about loading 1`] = `
 exports[`Select[Base] should render correctly about max length 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -3256,7 +1094,7 @@ exports[`Select[Base] should render correctly about max length 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -3269,129 +1107,6 @@ exports[`Select[Base] should render correctly about max length 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -3399,22 +1114,22 @@ exports[`Select[Base] should render correctly about max length 1`] = `
 exports[`Select[Base] should render correctly about max length more 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -3424,7 +1139,7 @@ exports[`Select[Base] should render correctly about max length more 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -3437,21 +1152,6 @@ exports[`Select[Base] should render correctly about max length more 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="cu6k891"
-      >
-        <div
-          class="chxenrh"
-          style="width: 14px; height: 14px; border-width: 1.4px; font-size: 1.4px;"
-        />
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -3459,22 +1159,22 @@ exports[`Select[Base] should render correctly about max length more 1`] = `
 exports[`Select[Base] should render correctly about multiple 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo c-7gyxy1"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable c-huobef soui-select-multiple"
+    data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y cvyv5u7"
+          class="cst20xc soui-select-result-text-wrapper c-7vjtar soui-select-multiple-result-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -3484,7 +1184,7 @@ exports[`Select[Base] should render correctly about multiple 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -3493,133 +1193,10 @@ exports[`Select[Base] should render correctly about multiple 1`] = `
         viewBox="0 0 24 24"
       >
         <path
-          d="M11.2929 15.7071C11.6534 16.0676 12.2206 16.0953 12.6129 15.7903L12.7071 15.7071L18.7071 9.70711C19.0976 9.31658 19.0976 8.68342 18.7071 8.29289C18.3466 7.93241 17.7794 7.90468 17.3871 8.2097L17.2929 8.29289L12.7072 12.8779C12.3165 13.2683 11.6835 13.2683 11.2928 12.8779L6.70711 8.29289C6.34662 7.93241 5.77939 7.90468 5.3871 8.2097L5.29289 8.29289C4.93241 8.65338 4.90468 9.22061 5.2097 9.6129L5.29289 9.70711L11.2929 15.7071Z"
+          d="M5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM19 10C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10Z"
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 300px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-7"
-                  tabindex="-1"
-                  title="pink"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    pink
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 272px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -3629,22 +1206,22 @@ exports[`Select[Base] should render correctly about size 1`] = `
   style="display: flex; gap: 24px; align-items: center;"
 >
   <div
-    class="c-k1257o c-xzkfcl c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper c9ibv1p soui-select-wrapper-small cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 240px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -3654,7 +1231,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -3667,134 +1244,24 @@ exports[`Select[Base] should render correctly about size 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 240px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div>
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 182px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 240px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -3804,7 +1271,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -3817,134 +1284,24 @@ exports[`Select[Base] should render correctly about size 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 240px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div>
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 238px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div
-    class="c-k1257o c-y3mav5 c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper c9e9zj5 soui-select-wrapper-large cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 240px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -3954,7 +1311,7 @@ exports[`Select[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -3967,118 +1324,6 @@ exports[`Select[Base] should render correctly about size 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 240px; display: none;"
-    >
-      <div
-        class="c-5xs56z cdfaub1"
-      >
-        <div
-          style="height: 250px;"
-        >
-          <div
-            data-soui-role="scroll"
-            style="height: 100%; width: 100%; overflow: auto;"
-          >
-            <div
-              data-soui-role="scroll-container"
-              style="height: 100%; width: 100%; position: sticky; left: 0px; top: 0px;"
-            >
-              <ul
-                class="c4he79u"
-                style="transform: translate3d(0, -0px, 0);"
-              >
-                <li
-                  class="c-msac6s option-0 celt4gg"
-                  tabindex="-1"
-                  title="red"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    red
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-1"
-                  tabindex="-1"
-                  title="orange"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    orange
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-2"
-                  tabindex="-1"
-                  title="yellow"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    yellow
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-3"
-                  tabindex="-1"
-                  title="green"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    green
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-4"
-                  tabindex="-1"
-                  title="cyan"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    cyan
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-5"
-                  tabindex="-1"
-                  title="blue"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    blue
-                  </div>
-                </li>
-                <li
-                  class="c-msac6s option-6"
-                  tabindex="-1"
-                  title="violet"
-                >
-                  <div
-                    class="cemc44q"
-                  >
-                    violet
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              style="margin-top: 294px; margin-right: 0px; height: 0px; width: 0px; overflow: hidden;"
-            >
-               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -4086,22 +1331,22 @@ exports[`Select[Base] should render correctly about size 1`] = `
 exports[`Select[Base] should render correctly about tree 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 260px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -4111,7 +1356,7 @@ exports[`Select[Base] should render correctly about tree 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -4124,135 +1369,6 @@ exports[`Select[Base] should render correctly about tree 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 260px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1 c-i1uik6"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 1
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1 c-i1uik6 c-8dji5l"
-            >
-              <div
-                class="ctat7yr"
-              >
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 2
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1 c-i1uik6"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 3
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1 c-i1uik6 c-8dji5l"
-            >
-              <div
-                class="ctat7yr"
-              >
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 4
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -4260,22 +1376,22 @@ exports[`Select[Base] should render correctly about tree 1`] = `
 exports[`Select[Base] should render correctly about tree more 1`] = `
 <div>
   <div
-    class="c-k1257o c-jl3hqo"
-    data-soui-type="input"
+    class="c9an22b soui-select-wrapper-empty c-tj2bpi soui-select-wrapper cdrm70u soui-select-clearable"
+    data-soui-input-border="true"
     style="width: 260px;"
     tabindex="0"
   >
     <div
-      class="c-hka1dt c8hos3a crwdlef c9869pl"
+      class="c-iqm4mb soui-select-result-wrapper cepilzo soui-select-wrapper-padding-box c3p8bi1 soui-select-wrapper-inner-title-top c3y3vev soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-lj7los"
+        class="cq9zs7q soui-select-result"
       >
         <div
-          class="cml870y"
+          class="cst20xc soui-select-result-text-wrapper"
         >
           <span
-            class="cus4m0s c-f5w80o"
+            class="c-mt24py soui-select-placeholder c-pjllh2 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -4285,7 +1401,7 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
       </div>
     </div>
     <span
-      class="c-fjov4l"
+      class="cht0tmx soui-select-arrow-icon"
     >
       <svg
         aria-hidden="true"
@@ -4298,135 +1414,6 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
         />
       </svg>
     </span>
-    <div
-      class="ckzqupa"
-      data-sheinx-animation-duration="fast"
-      data-sheinx-animation-type="scale-y"
-      style="pointer-events: none; position: absolute; z-index: -1000; width: 260px; display: none;"
-    >
-      <div
-        class="c-5xmuyz"
-        style="max-height: 250px;"
-      >
-        <div
-          class="c-8de4ix c-lw53bm"
-        >
-          <div
-            class="c-8dfgh1"
-            style="display: block;"
-          >
-            <div
-              class="c-8di0p1 c-i1uik6"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 1
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1 c-i1uik6 c-8dji5l"
-            >
-              <div
-                class="ctat7yr"
-              >
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 2
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1 c-i1uik6"
-            >
-              <div
-                class="ctat7yr ca3mdad"
-              >
-                <span
-                  class="c-8jk8v"
-                  data-expanded="false"
-                  data-icon="false"
-                >
-                  <span
-                    class="c-8dlg9a"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M18.2209 9.72141L12.6344 15.2952C12.2441 15.6847 11.6121 15.6846 11.2218 15.2952L5.6979 9.78337C5.30695 9.39327 5.30625 8.76011 5.69635 8.36915C5.88258 8.18251 6.13499 8.07697 6.39865 8.0755L17.5091 8.01351C18.0613 8.01043 18.5116 8.45564 18.5146 9.00792C18.5161 9.27546 18.4103 9.53244 18.2209 9.72141Z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 3
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="c-8di0p1 c-i1uik6 c-8dji5l"
-            >
-              <div
-                class="ctat7yr"
-              >
-                <div
-                  class="cc9w3xc"
-                >
-                  <div
-                    class="c-8dedp6"
-                  >
-                    node 4
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
