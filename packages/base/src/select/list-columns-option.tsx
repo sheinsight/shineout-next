@@ -27,8 +27,6 @@ const ListColumnsOption = <DataItem, Value>(props: ListColumnsOptionProps<DataIt
       return;
     }
     datum.add(data);
-
-    if (!multiple) closePop();
   };
 
   const renderCheckbox = (d: DataItem) => {

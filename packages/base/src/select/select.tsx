@@ -190,8 +190,13 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (createdData || props.emptyAfterSelect) {
       onFilter?.('');
     }
-    if (!multiple) {
+
+    const shouldFocus = showInput && props.reFocus;
+    if (!multiple && !shouldFocus) {
       closePop();
+    }
+    if (multiple && !shouldFocus) {
+      inputRef?.current?.select();
     }
     onChange?.(value, dataItem, checked);
   });
