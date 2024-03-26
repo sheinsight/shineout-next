@@ -37,9 +37,9 @@ const useTiled = <DataItem,>(props: UseTiledProps<DataItem>) => {
     setTileds(nextTileds);
   };
 
-  const handleFilter = (text: string) => {
+  const handleFilter = (text: string, from?: string) => {
     if (!text) setTileds([]);
-    if (onFilter) onFilter(text);
+    if (onFilter) onFilter(text, from);
   };
 
   const getIcon = (item: DataItem) => {
