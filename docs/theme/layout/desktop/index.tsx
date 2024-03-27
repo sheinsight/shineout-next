@@ -19,15 +19,15 @@ const Desktop = () => {
 
   const routes = [
     {
-      path: ':name?/home',
+      path: ':lan/home',
       element: <Home />,
     },
     {
-      path: ':name?/design',
+      path: ':lan/design',
       element: <Design />,
     },
     {
-      path: ':name?/introduce',
+      path: ':lan/introduce',
       element: <Introduce />,
     },
     {
