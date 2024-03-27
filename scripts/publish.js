@@ -8,7 +8,7 @@ const version = require(path.resolve(__dirname, '../package.json')).version;
 // 获取version中的 tag 比如 3.0.0-alpha.1 中的 alpha
 let tag = (version.split('-')[1] || '').split('.')[0] || 'latest';
 if (tag === 'rc') {
-  tag = 'next';
+  tag = 'next-3';
 }
 const mainVersion = version.split('.')[0];
 if (mainVersion !== '3') {
