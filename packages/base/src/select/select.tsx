@@ -588,6 +588,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           onClick={handleResultClick}
         >
           {renderInnerTitle(result)}
+          <div className={styles.iconWrapper}>{renderIcon()}</div>
         </div>
       </PopupProvider>
     );
@@ -726,7 +727,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     >
       {tipNode}
       {renderResult()}
-      {renderIcon()}
       <AbsoluteList
         adjust
         focus={open}
