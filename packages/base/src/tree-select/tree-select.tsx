@@ -8,6 +8,7 @@ import {
   useFilter,
   UnMatchedData,
   KeygenResult,
+  useRender,
 } from '@sheinx/hooks';
 import classNames from 'classnames';
 import { TreeSelectProps, ResultItem } from './tree-select.type';
@@ -32,6 +33,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   props0: TreeSelectProps<DataItem, Value>,
 ) => {
   const props = useWithFormConfig(props0);
+  const render = useRender();
   const { locale } = useConfig();
   const {
     jssStyle,
@@ -90,11 +92,10 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
   const showInput = util.isFunc(props.onAdvancedFilter || onFilterProp);
 
-  const datum = useRef<TreeContextProps<DataItem, Value>>();
+  const datum = useRef<TreeContextProps<DataItem>>();
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
   const [focused, setFocused] = useState(false);
-  const [enter, setEnter] = useState(false);
 
   const { value, onChange } = useTreeSelect({
     value: valueProp,
@@ -103,6 +104,19 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     control: 'value' in props,
     filterSameChange: filterSameChange,
   });
+
+  const checkEmpty = () => {
+    let isEmpty;
+    if (multiple) {
+      isEmpty = !value || (Array.isArray(value) && value.length === 0);
+    } else {
+      isEmpty = util.isEmpty(value);
+    }
+
+    return isEmpty;
+  };
+
+  const isEmpty = checkEmpty();
 
   const { filterText, inputText, filterData, expanded, rawData, onFilter, onClearCreatedData } =
     useFilter({
@@ -145,7 +159,16 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
   });
 
-  const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
+  const {
+    open,
+    position,
+    targetRef,
+    popupRef,
+    openPop,
+    closePop,
+    Provider: PopupProvider,
+    providerValue: popupProviderValue,
+  } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
     disabled: false,
@@ -165,7 +188,9 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const rootClass = classNames(
     className,
+    isEmpty && styles.wrapperEmpty,
     styles?.wrapper,
+    open && styles?.wrapperOpen,
     disabled === true && styles?.wrapperDisabled,
     !!open && styles?.wrapperFocus,
     disabled !== true && focused && styles?.wrapperFocus,
@@ -181,8 +206,9 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     },
   );
 
-  const bindTreeDatum = (treeDatum: TreeContextProps<DataItem, Value>) => {
+  const bindTreeDatum = (treeDatum: TreeContextProps<DataItem>) => {
     datum.current = treeDatum;
+    render();
   };
 
   const getRenderItem = (
@@ -204,19 +230,27 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   };
 
   // 点击 Select 结果框的处理方法
-  const handleResultClick = usePersistFn(() => {
+  const handleResultClick = usePersistFn((e) => {
     if (disabled === true) return;
-    if (!open) openPop();
-    else closePop();
-    // inputRef.current?.focus();
+    if (!focus) {
+      inputRef.current?.focus();
+    }
+    if (open) {
+      if (e.target.tagName === 'INPUT') {
+        return;
+      }
+      closePop();
+    } else {
+      openPop();
+    }
   });
 
-  const handleMouseEnter = () => {
-    setEnter(true);
-  };
-
-  const handleMouseLeave = () => {
-    setEnter(false);
+  const focusAndOpen = () => {
+    if (!focused) {
+      inputRef.current?.focus();
+    } else {
+      openPop();
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -227,7 +261,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           const canOpen = onEnterExpand(e);
           if (canOpen === false) return;
         }
-        handleResultClick();
+        focusAndOpen();
         return;
       }
     }
@@ -259,26 +293,38 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   };
 
   const renderClearable = () => {
-    return (
-      <span className={styles.clearIcon} onClick={handleClear}>
-        {Icons.PcCloseCircleFill}
+    if (!multiple !== undefined && !showArrow) return null;
+    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
+
+    const arrow = (
+      <span
+        className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
+        onClick={handleResultClick}
+      >
+        {defaultIcon}
       </span>
+    );
+
+    const close = (
+      <span className={styles.clearIcon} onClick={handleClear}>
+        {isEmpty ? arrow : Icons.PcCloseCircleFill}
+      </span>
+    );
+
+    return (
+      <>
+        {close}
+        {!open && arrow}
+      </>
     );
   };
 
   const renderIcon = () => {
-    let isEmpty;
-    if (multiple) {
-      isEmpty = !value || (Array.isArray(value) && value.length === 0);
-    } else {
-      isEmpty = util.isEmpty(value);
-    }
-
-    if ((clearable && !isEmpty && open) || (clearable && !isEmpty && enter && disabled !== true)) {
+    if (clearable && !isEmpty && disabled !== true) {
       return renderClearable();
     }
     if (!multiple && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
+    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
     return (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
@@ -291,7 +337,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const getDataByValues = (values?: Value): (DataItem | UnMatchedData)[] => {
     if (!datum.current || !values) return [];
-    return datum.current.getDataByValues(values);
+    return datum.current.getDataByValues(values) as DataItem[];
   };
 
   const getDataByValuesRef = (values: Value) => {
@@ -353,17 +399,20 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     onBlur?.(e);
   });
 
-  const handleFilter = (text: string) => {
+  const handleFilter = (text: string, from?: string) => {
+    if (from !== 'blur') {
+      focusAndOpen();
+    }
     onTiledFilter?.(trim ? text.trim() : text);
   };
 
   const handleChange = (item: DataItem | UnMatchedData, id: KeygenResult) => {
     if (!datum.current) return;
     if (disabled === true || datum.current?.isDisabled(id)) return;
-    const currentData = datum.current.getDataById(id);
+    const currentData = datum.current.getDataById(id) as DataItem;
     if (!multiple) {
       datum.current.setValue([]);
-      datum.current.set(datum.current.getKey(item), 1);
+      datum.current.set(datum.current.getKey(item as DataItem), 1);
     }
 
     const nextValue = getValue() as Value;
@@ -398,7 +447,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     if (isDisabled) return;
 
     datum.current.set(dataKey, 0);
-    handleChange(item, datum.current.getKey(item, key, index));
+    handleChange(item, datum.current.getKey(item as DataItem, key, index));
   };
 
   // innerTitle 模式
@@ -447,17 +496,19 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     );
 
     return (
-      <div
-        className={classNames(
-          styles?.resultWrapper,
-          styles?.wrapperPaddingBox,
-          styles?.wrapperInnerTitleTop,
-          styles?.wrapperInnerTitleBottom,
-        )}
-        onClick={handleResultClick}
-      >
-        {renderInnerTitle(result)}
-      </div>
+      <PopupProvider value={popupProviderValue}>
+        <div
+          className={classNames(
+            styles?.resultWrapper,
+            styles?.wrapperPaddingBox,
+            styles?.wrapperInnerTitleTop,
+            styles?.wrapperInnerTitleBottom,
+          )}
+          onClick={handleResultClick}
+        >
+          {renderInnerTitle(result)}
+        </div>
+      </PopupProvider>
     );
   };
 
@@ -490,7 +541,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const renderList = () => {
     if (props.loading) return renderLoading();
 
-    const isEmpty = !props.data?.length;
+    const isEmpty = !filterData?.length;
     if (isEmpty) return renderEmpty();
 
     const treeProps: any = {};
@@ -507,7 +558,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     }
 
     const nextValue = getValueArray(value);
-
     return (
       <div className={classNames(styles.tree)} style={{ maxHeight: height }}>
         <Tree
@@ -516,6 +566,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           renderItem={renderItem}
           {...treeProps}
           line={line}
+          datum={datum.current}
           mode={mode}
           data={tiledData}
           keygen={keygen}
@@ -555,8 +606,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       onBlur={handleBlur}
       onFocus={handleFocus}
       onKeyDown={handleKeyDown}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onMouseDown={(e) => {
         if (focused && e.target !== inputRef.current) {
           e.preventDefault();
@@ -570,6 +619,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
         adjust
         focus={open}
         fixedWidth='min'
+        lazy={false}
         absolute={props.absolute}
         zIndex={props.zIndex}
         position={position}

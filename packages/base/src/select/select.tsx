@@ -178,7 +178,16 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onFilter: onFilter0,
   });
 
-  const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
+  const {
+    open,
+    position,
+    targetRef,
+    popupRef,
+    openPop,
+    closePop,
+    Provider: PopupProvider,
+    providerValue: popupProviderValue,
+  } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
     disabled: false,
@@ -190,7 +199,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     if (createdData || props.emptyAfterSelect) {
       onFilter?.('');
     }
-
     const shouldFocus = showInput && props.reFocus;
     if (!multiple && !shouldFocus) {
       closePop();
@@ -237,14 +245,14 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     groupBy,
   });
 
-  const triggerOpen = usePersistFn(() => {
-    if (disabled === true) return;
-    if (open) {
-      closePop();
-    } else {
-      openPop();
-    }
-  });
+  // const triggerOpen = usePersistFn(() => {
+  //   if (disabled === true) return;
+  //   if (open) {
+  //     closePop();
+  //   } else {
+  //     openPop();
+  //   }
+  // });
 
   const focusAndOpen = () => {
     if (!focused) {
@@ -255,9 +263,19 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   };
 
   // 点击 Select 结果框的处理方法
-  const handleResultClick = usePersistFn(() => {
+  const handleResultClick = usePersistFn((e) => {
     if (disabled === true) return;
-    focusAndOpen();
+    if (!focus) {
+      inputRef.current?.focus();
+    }
+    if (open) {
+      if (e.target.tagName === 'INPUT') {
+        return;
+      }
+      closePop();
+    } else {
+      openPop();
+    }
   });
 
   const tipNode = useTip({
@@ -300,13 +318,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   const handleFocus = usePersistFn((e: React.FocusEvent) => {
     setFocused(true);
     onFocus?.(e);
-    if (!open) openPop();
   });
 
   const handleBlur = usePersistFn((e: React.FocusEvent) => {
     setFocused(false);
     onBlur?.(e);
-    if (open) closePop();
   });
 
   const handleChange = (item: DataItem) => {
@@ -484,7 +500,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     const arrow = (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
-        onClick={triggerOpen}
+        onClick={handleResultClick}
       >
         {defaultIcon}
       </span>
@@ -512,7 +528,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     return (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
-        onClick={triggerOpen}
+        onClick={handleResultClick}
       >
         {defaultIcon}
       </span>
@@ -561,17 +577,19 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     );
 
     return (
-      <div
-        className={classNames(
-          styles?.resultWrapper,
-          styles?.wrapperPaddingBox,
-          styles?.wrapperInnerTitleTop,
-          styles?.wrapperInnerTitleBottom,
-        )}
-        onClick={handleResultClick}
-      >
-        {renderInnerTitle(result)}
-      </div>
+      <PopupProvider value={popupProviderValue}>
+        <div
+          className={classNames(
+            styles?.resultWrapper,
+            styles?.wrapperPaddingBox,
+            styles?.wrapperInnerTitleTop,
+            styles?.wrapperInnerTitleBottom,
+          )}
+          onClick={handleResultClick}
+        >
+          {renderInnerTitle(result)}
+        </div>
+      </PopupProvider>
     );
   };
 

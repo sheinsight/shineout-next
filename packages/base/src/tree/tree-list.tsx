@@ -65,19 +65,20 @@ const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataIte
 
   const renderNode = (node: DataItem, index: number) => {
     const id = getKey(node, index) as Value;
-    
+
     return (
       <TreeNode
         jssStyle={jssStyle}
         id={id}
-        isControlled={isControlled}
         data={node}
-        mode={mode}
         index={index}
         key={id}
         line={line}
         keygen={keygen}
         listComponent={List}
+
+        isControlled={isControlled}
+        mode={mode}
         active={active}
         childrenClass={childrenClass}
         childrenKey={childrenKey}
@@ -114,7 +115,6 @@ const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataIte
   hasExpanded.current = true;
 
   const newStyle = Object.assign({}, style, { display: expanded ? 'block' : 'none' });
-
   return (
     <div onDrop={empty} onDragOver={empty} style={newStyle} className={rootClass}>
       {data.map(renderNode)}

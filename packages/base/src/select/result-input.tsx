@@ -13,7 +13,6 @@ const ResultInput = (props: ResultInputProps) => {
   const {
     jssStyle,
     value,
-    values,
     inputText,
     focus,
     trim,
@@ -83,7 +82,7 @@ const ResultInput = (props: ResultInputProps) => {
   if (!multiple) {
     style.width = '100%';
   }
-  if (!multiple && !focus && values.length !== 0) {
+  if (!multiple && !focus && !isEmpty) {
     style.width = '0';
     style.opacity = '0';
     style.minWidth = '0';

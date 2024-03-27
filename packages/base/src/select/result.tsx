@@ -38,14 +38,13 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     onFilter,
     onInputBlur,
     onClearCreatedData,
-    // crud
     getDataByValues,
     checkUnMatched,
     onRemove,
     onResultItemClick,
   } = props;
   const value = (
-    valueProp === null || valueProp === undefined ? [] : multiple ? valueProp : [valueProp]
+    [null, undefined, ''].includes(valueProp as any) ? [] : multiple ? valueProp : [valueProp]
   ) as Value;
 
   const [more, setMore] = useState(-1);
@@ -202,7 +201,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
         size={size}
         style={{ opacity: more === index ? 0 : 1 }}
         className={classNames(styles.tag, resultClassName)}
-        closable='only'
+        closable={closeable && 'only'}
         onClose={closeable && handleClose}
         onClick={handleClick}
         jssStyle={jssStyle as any}
@@ -213,7 +212,6 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       </Tag>
     );
   };
-
 
   const renderNbsp = () => {
     return (
@@ -227,6 +225,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (showInput) {
       return renderInput();
     }
+    if (!placeholder) return renderNbsp();
 
     return (
       <span className={classNames(styles.placeholder, styles.ellipsis)}>
@@ -317,7 +316,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   useEffect(() => {
     if (!focus && mounted.current) {
-      onFilter?.('', 'blur');
+      setTimeout(() => {
+        onFilter?.('', 'blur');
+      }, 400);
     }
     mounted.current = true;
   }, [focus]);
