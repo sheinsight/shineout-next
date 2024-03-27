@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import Scroll from '../virtual-scroll/scroll';
 import classNames from 'classnames';
 import Spin from '../spin';
@@ -61,35 +61,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     beforeChange: undefined,
   });
 
-  const getSelectData = () => {
-    const checkboxColumn = (props.columns || emptyArr).find((item) => item.type === 'checkbox');
-    let selectData = props.data || emptyArr;
-    if (checkboxColumn) {
-      if (typeof checkboxColumn.filterAll === 'function') {
-        selectData = checkboxColumn.filterAll(selectData);
-      } else if (typeof checkboxColumn.rowSpan === 'function') {
-        selectData = selectData.filter((item, index) => {
-          if (index > 0) {
-            const before = selectData[index - 1];
-            return !checkboxColumn.rowSpan!(before, item);
-          }
-          return true;
-        });
-      }
-    }
-    return selectData;
-  };
-
-  const datum = useListSelect({
-    data: getSelectData(),
-    value: inputableData.value,
-    multiple: !props.radio,
-    prediction: props.prediction,
-    format: props.format,
-    onChange: inputableData.onChange,
-    disabled: props.disabled,
-  });
-
   const { columns, expandHideCol } = useTableColumns({
     columns: props.columns,
     showCheckbox: typeof props.onRowSelect === 'function',
@@ -144,7 +115,6 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     func: treeFunc,
     data: treeData,
     isEmptyTree,
-    // changedByExpand,
     treeExpandLevel,
   } = useTableTree({
     data: pagedData,
@@ -153,7 +123,42 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     defaultTreeExpandKeys: props.defaultTreeExpandKeys,
     keygen: props.keygen,
     onTreeExpand: props.onTreeExpand,
-    treeCheckAll: props.treeCheckAll,
+  });
+
+  const getSelectData = () => {
+    // 全选需要过滤掉合并的行
+    const checkboxColumn = (props.columns || emptyArr).find((item) => item.type === 'checkbox');
+    let selectData = pagedData || emptyArr;
+    if (treeColumnsName && !props.treeCheckAll) {
+      selectData = treeData;
+    }
+
+    if (checkboxColumn) {
+      if (typeof checkboxColumn.filterAll === 'function') {
+        selectData = checkboxColumn.filterAll(selectData);
+      } else if (typeof checkboxColumn.rowSpan === 'function') {
+        selectData = selectData.filter((item, index) => {
+          if (index > 0) {
+            const before = selectData[index - 1];
+            return !checkboxColumn.rowSpan!(before, item);
+          }
+          return true;
+        });
+      }
+    }
+    return selectData;
+  };
+
+  const selectData = useMemo(() => getSelectData(), [pagedData, treeData]);
+
+  const datum = useListSelect({
+    data: selectData,
+    value: inputableData.value,
+    multiple: !props.radio,
+    prediction: props.prediction,
+    format: props.format,
+    onChange: inputableData.onChange,
+    disabled: props.disabled,
   });
 
   const virtualInfo = useTableVirtual({
@@ -263,13 +268,14 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       rowEvents: props.rowEvents,
       bodyScrollWidth: scrollWidth,
       resizeFlag: resizeFlag,
+      treeCheckAll: props.treeCheckAll,
     };
 
     const headCommonProps = {
       disabled: props.disabled,
       jssStyle: props.jssStyle,
       columns: columns,
-      data: pagedData,
+      data: treeData,
       colgroup: colgroup,
       sortInfo: sortInfo,
       onSorterChange: onSorterChange,
@@ -282,6 +288,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       renderSorter: props.renderSorter,
       radio: props.radio,
       treeColumnsName,
+      treeCheckAll: props.treeCheckAll,
     };
 
     const footCommonProps = {

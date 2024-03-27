@@ -27,6 +27,7 @@ interface TrProps
     | 'rowEvents'
     | 'bodyScrollWidth'
     | 'resizeFlag'
+    | 'treeCheckAll'
   > {
   row: {
     data: any[];
@@ -190,9 +191,15 @@ const Tr = (props: TrProps) => {
             checked={props.isSelect}
             onChange={(_value, check) => {
               if (check) {
-                props.datum.add(data, { childrenKey: props.treeColumnsName });
+                props.datum.add(
+                  data,
+                  props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
+                );
               } else {
-                props.datum.remove(data, { childrenKey: props.treeColumnsName });
+                props.datum.remove(
+                  data,
+                  props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
+                );
               }
             }}
           />

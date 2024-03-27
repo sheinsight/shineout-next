@@ -21,6 +21,7 @@ export interface TbodyProps
     | 'rowEvents'
     | 'disabled'
     | 'hover'
+    | 'treeCheckAll'
   > {
   columns: TableFormatColumn<any>[];
   data: any[];
