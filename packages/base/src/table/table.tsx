@@ -405,7 +405,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     if (!props.loading) return null;
     return (
       <div className={classNames(tableClasses?.loading)}>
-        {props.loading === true ? <Spin jssStyle={props.jssStyle} size={24} /> : null}
+        {props.loading === true ? <Spin jssStyle={props.jssStyle} size={24} /> : props.loading}
       </div>
     );
   };
