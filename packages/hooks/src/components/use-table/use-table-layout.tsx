@@ -157,7 +157,6 @@ const useTableLayout = (props: UseTableLayoutProps) => {
       newCols.push(width);
     }
 
-
     if (fromDrag && props.columnResizable) {
       const widthArr = [...newCols];
       if (typeof props.width === 'number') {
@@ -249,6 +248,8 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     } else {
       checkFloat();
       checkScroll();
+      // 拖拽列会导致 scrollWidth 变化
+      syncScrollWidth();
     }
   }, [colgroup]);
 
