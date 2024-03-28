@@ -230,16 +230,16 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
   const getCheckedStatus = usePersistFn((childrenKey?: string) => {
     if (valueArr.length === 0) return false;
     const dataMap = getDataMap(childrenKey);
-    const valueMap = getValueMap();
-    const formatValues = Array.from(dataMap, ([value, data]) => [value, data]);
+    const formatValues = Array.from(dataMap, ([_value, data]) => data);
     let checkedNum = 0;
     let validateNum = 0;
-    formatValues.forEach(([value, data]) => {
+    for (let i = 0; i < formatValues.length; i++) {
+      const data = formatValues[i];
       if (!disabledCheck(data)) {
         validateNum++;
-        if (valueMap.get(value)) checkedNum++;
+        if (check(data)) checkedNum++;
       }
-    });
+    }
     if (checkedNum === 0) return false;
     if (checkedNum === validateNum) return true;
     return 'indeterminate';
