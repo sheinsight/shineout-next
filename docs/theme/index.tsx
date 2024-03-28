@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Layout from './layout';
-import { setToken } from '@sheinx/theme';
+import { setToken } from 'shineout';
 
 const App = () => {
   useEffect(() => {
@@ -9,6 +9,7 @@ const App = () => {
       tokenName: 'doc',
     });
   }, []);
+
   return <Layout></Layout>;
 };
 

@@ -228,6 +228,7 @@ const Tokens: ThemeTokens = {
 };
 
 export type { TokenType };
+export * from './hooks';
 export { Token, setToken, setConfig };
 
 export default Tokens;

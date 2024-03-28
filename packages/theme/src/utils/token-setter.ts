@@ -39,9 +39,9 @@ export interface Options {
    */
   attributes?: Attributes;
   /**
-   * @cn 生效 token 的选择器，默认为 body，语法为 css 选择器
-   * @en The selector of the effective token, default is body, the syntax is css selector
-   * @default 'body'
+   * @cn 自定义 token 参数
+   * @en Custom token parameters
+   * @default undefined
    */
   token?: Tokens;
   /**
@@ -89,12 +89,12 @@ const setToken = (options?: Options) => {
     Object.keys(defaultToken)
       .filter((item) => (customExtraToken || ['Brand-6', 'Neutral-6']).includes(item))
       .forEach((key: string) => {
-        const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${Token[key as keyof Tokens]}`;
+        const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${defaultToken[key as keyof Tokens]}`;
         tokens.push(token);
       });
   } else {
     Object.keys(defaultToken).forEach((key: string) => {
-      const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${Token[key as keyof Tokens]}`;
+      const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${defaultToken[key as keyof Tokens]}`;
       tokens.push(token);
     });
   }
@@ -106,7 +106,6 @@ const setToken = (options?: Options) => {
   }
 
   tag.setAttribute('data-token', tokenName || '');
-
   tag.innerHTML = `${selector} {${tokens.concat(extraToken).join(';')}}`;
 
   if (!target) {
