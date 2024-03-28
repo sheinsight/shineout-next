@@ -275,6 +275,9 @@ importers:
       '@sheinx/shineout-style':
         specifier: workspace:*
         version: link:../shineout-style
+      '@sheinx/theme':
+        specifier: workspace:*
+        version: link:../theme
       classnames:
         specifier: ^2.0.0
         version: 2.3.2
