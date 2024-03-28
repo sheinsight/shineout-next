@@ -62,6 +62,23 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginTop: 0,
         marginBottom: 0,
       },
+      '& $tag': {
+        marginTop: 0,
+        paddingTop: 0,
+        paddingBottom: 0,
+        height: token.lineHeightDynamic,
+        border: 'none',
+        '&  *': {
+          lineHeight: token.lineHeightDynamic,
+        },
+      },
+      '&$wrapperSmall $tag': {
+        height: 18,
+        marginBottom: 2,
+        '&$tag  *': {
+          lineHeight: '18px',
+        },
+      },
     },
     '&$wrapperSmall': {
       '& $tag': {
