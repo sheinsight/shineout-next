@@ -75,6 +75,7 @@ export type SelectClasses = {
   columnsRadio: string;
   columnsCheckbox: string;
   footer: string;
+  iconWrapper: string;
   moreIcon: string;
   hideTag: string;
   empty: string;

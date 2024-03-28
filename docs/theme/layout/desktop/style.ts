@@ -5,13 +5,12 @@ export default createUseStyles(
     desktop: {
       position: 'absolute',
       left: 260,
-      top: -1,
+      top: 59,
       width: '100%',
       height: '100%',
       overflowY: 'auto',
       overflowX: 'hidden',
     },
-
     nav: {
       position: 'sticky',
       top: 0,

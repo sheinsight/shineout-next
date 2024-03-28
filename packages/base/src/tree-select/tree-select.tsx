@@ -507,6 +507,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           onClick={handleResultClick}
         >
           {renderInnerTitle(result)}
+          <div className={styles.iconWrapper}>{renderIcon()}</div>
         </div>
       </PopupProvider>
     );
@@ -614,7 +615,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     >
       {tipNode}
       {renderResult()}
-      {renderIcon()}
       <AbsoluteList
         adjust
         focus={open}

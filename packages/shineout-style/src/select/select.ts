@@ -78,8 +78,6 @@ const selectStyle: JsStyles<SelectClassType> = {
         paddingTop: token.selectSmallOptionInnerPaddingY,
         paddingBottom: token.selectSmallOptionInnerPaddingY,
         paddingLeft: token.selectSmallOptionInnerPaddingX,
-
-        // padding: `${token.selectSmallOptionInnerPaddingY} ${token.selectSmallOptionInnerPaddingX}`,
         fontSize: token.selectSmallFontSize,
       },
       '& $clearIcon': {
@@ -149,7 +147,6 @@ const selectStyle: JsStyles<SelectClassType> = {
     minWidth: 0,
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
-    paddingRight: `calc(${token.selectSmallFontSize} + ${token.selectClearPadding})`,
   },
   resultTextWrapper: {
     display: 'flex',
@@ -269,11 +266,13 @@ const selectStyle: JsStyles<SelectClassType> = {
     transformOrigin: '0 0',
     border: `1px solid ${token.selectPanelBorder}`,
   },
+  iconWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   clearable: {},
   clearIcon: {
-    position: 'absolute',
-    right: token.selectPaddingX,
-    top: `calc(50% - 7px)`,
     cursor: 'pointer',
     width: token.selectFontSize,
     lineHeight: 0,
@@ -284,9 +283,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     },
   },
   arrowIcon: {
-    position: 'absolute',
-    right: token.selectPaddingX,
-    top: `calc(50% - 7px)`,
+    display: 'inline-block',
     verticalAlign: 'middle',
     width: token.selectFontSize,
     lineHeight: 0,

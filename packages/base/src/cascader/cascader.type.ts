@@ -45,6 +45,7 @@ export interface CascaderClasses {
   placeholder: string;
   pickerWrapper: string;
   clearable: string;
+  iconWrapper: string;
   clearIcon: string;
   compressedIcon: string;
   arrowIconOpen: string;

@@ -2,14 +2,13 @@ import classNames from 'classnames';
 import { MarkdownProps } from 'docs/types';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
-// import useStyles from '../style';
+import useStyles from '../style';
 import { Table } from 'shineout';
 import Anchor from 'docs/theme/layout/desktop/anchor';
 
 const SingleAPi = (props: MarkdownProps['api'][0]) => {
   const { title, properties, cn, en, subTitle, isLast } = props;
   // const hasVersion = properties.find((item: any) => !!item.version);
-  // const style = useStyles();
 
   const state = useSnapshot(store);
   const locate = (cn: string, en: string) => {
@@ -65,8 +64,9 @@ const SingleAPi = (props: MarkdownProps['api'][0]) => {
 const Api = (props: { api: MarkdownProps['api'] }) => {
   const api = props.api || [];
   const titles = api.map((item) => item.title);
+  const classes = useStyles();
   return (
-    <div style={{ padding: 24, display: 'flex', marginTop: 267 }}>
+    <div className={classes.api} style={{ padding: 24, display: 'flex' }}>
       <div style={{ flex: 1, minWidth: 0 }}>
         {api.map((item, index) => {
           return <SingleAPi key={index} {...item} isLast={index === api.length - 1}></SingleAPi>;

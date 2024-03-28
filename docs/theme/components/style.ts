@@ -1,5 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
+const top = 208;
 export default createUseStyles(
   {
     pages: {},
@@ -69,7 +70,7 @@ export default createUseStyles(
     },
     doc: {
       display: 'flex',
-      marginTop: 267,
+      marginTop: top,
       position: 'relative',
       '& .examples': {
         flex: 1,
@@ -81,7 +82,7 @@ export default createUseStyles(
     },
     guide: {
       display: 'flex',
-      marginTop: 267,
+      marginTop: top,
       '& .guides': {
         flex: 1,
         // '&:last-child': {
@@ -115,9 +116,14 @@ export default createUseStyles(
         boxSizing: 'border-box',
       },
     },
+    api: {
+      padding: 24,
+      display: 'flex',
+      marginTop: top,
+    },
     changelog: {
       padding: 40,
-      marginTop: 267,
+      marginTop: top,
     },
     changelogWrapper: {
       marginBottom: 64,

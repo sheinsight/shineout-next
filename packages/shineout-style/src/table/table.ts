@@ -177,6 +177,7 @@ const tableStyle: JsStyles<TableClassType> = {
   cellFixedLast: {},
   cellCheckbox: {
     width: '42px',
+    textAlign: 'center',
   },
   cellGroup: {
     textAlign: 'center',

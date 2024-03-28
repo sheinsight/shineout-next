@@ -134,7 +134,6 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     minWidth: 0,
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
-    paddingRight: `calc(${token.treeSelectSmallFontSize} + ${token.treeSelectClearPadding})`,
   },
   resultTextWrapper: {
     display: 'flex',
@@ -252,11 +251,13 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     width: 'max-content',
     maxWidth: '640px',
   },
+  iconWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   clearable: {},
   clearIcon: {
-    position: 'absolute',
-    right: token.treeSelectPaddingX,
-    top: `calc(50% - 1em/2)`,
     cursor: 'pointer',
     width: token.treeSelectFontSize,
     lineHeight: 0,
@@ -264,9 +265,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     verticalAlign: 'middle',
   },
   arrowIcon: {
-    position: 'absolute',
-    right: token.treeSelectPaddingX,
-    top: `calc(50% - 1em/2)`,
+    display: 'inline-block',
     verticalAlign: 'middle',
     width: token.treeSelectFontSize,
     lineHeight: 0,

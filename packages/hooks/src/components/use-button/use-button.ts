@@ -1,26 +1,11 @@
 import * as React from 'react';
-import useForkRef from '../../common/use-fork-ref';
 import { HandlerType, ObjectType } from '../../common/type';
 import { extractEventHandlers } from '../../utils';
 import { wrapSpan } from '../../utils/dom/element';
 import { BaseButtonProps } from './use-button.type';
 
 const useButton = (props: BaseButtonProps = {}) => {
-  const {
-    htmlType,
-    href,
-    target,
-    buttonRef: buttonRefPo,
-    disabled,
-    loading,
-    onClick,
-    onRef,
-    ...propsToForward
-  } = props;
-
-  const buttonRef = React.useRef<HTMLButtonElement>(null);
-
-  const handleButtonRef = useForkRef(buttonRef, buttonRefPo);
+  const { htmlType, href, target, disabled, loading, onClick, ...propsToForward } = props;
 
   const handleClick =
     (otherHandlers: HandlerType) =>
@@ -47,7 +32,6 @@ const useButton = (props: BaseButtonProps = {}) => {
       ...propsToForward,
       ...externalProps,
       onClick: handleClick(externalEventHandlers),
-      onRef,
     };
 
     return {
@@ -69,14 +53,10 @@ const useButton = (props: BaseButtonProps = {}) => {
       ...externalProps,
       disabled: disabled || loading,
       htmlType,
-      onRef,
       onClick: handleClick(externalEventHandlers),
     };
 
-    return {
-      ...mergedEventHandlers,
-      ref: handleButtonRef,
-    };
+    return mergedEventHandlers;
   };
 
   return {

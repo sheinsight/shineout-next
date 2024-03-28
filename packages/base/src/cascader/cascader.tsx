@@ -503,6 +503,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           onClick={handleResultClick}
         >
           {renderInnerTitle(result)}
+          <div className={styles.iconWrapper}>{renderIcon()}</div>
         </div>
       </PopupProvider>
     );
@@ -701,7 +702,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     >
       {tipNode}
       {renderResult()}
-      {renderIcon()}
       <AbsoluteList
         adjust
         focus={open}
