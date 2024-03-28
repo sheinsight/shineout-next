@@ -179,6 +179,7 @@ describe('Cascader[Base]', () => {
     const tagsNew = cascaderResult.querySelectorAll(tag)
     expect(tagsNew.length).toBe(3)
     textContentTest(tagsNew[2], data[0]?.children?.[0]?.children?.[0].value)
+    fireEvent.click()
     screen.debug()
   })
 })
