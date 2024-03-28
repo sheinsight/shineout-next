@@ -143,7 +143,6 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     minWidth: 0,
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
-    paddingRight: `calc(${token.cascaderSmallFontSize} + ${token.cascaderClearPadding})`,
   },
   resultItem: {
     transition: 'color 0.3s',
@@ -275,11 +274,13 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     borderRadius: token.cascaderPanelRadius,
     transformOrigin: '0 0',
   },
+  iconWrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   clearable: {},
   clearIcon: {
-    position: 'absolute',
-    right: token.cascaderPaddingX,
-    top: `calc(50% - 1em/2)`,
     cursor: 'pointer',
     width: token.cascaderFontSize,
     lineHeight: 0,
@@ -291,9 +292,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
   },
   compressedIcon: {},
   arrowIcon: {
-    position: 'absolute',
-    right: token.cascaderPaddingX,
-    top: `calc(50% - 1em/2)`,
+    display: 'inline-block',
     verticalAlign: 'middle',
     width: token.cascaderFontSize,
     lineHeight: 0,
