@@ -149,6 +149,7 @@ export default (props: TheadProps) => {
 
     const cellClassName = classNames(
       colTemp.className,
+      colTemp.type === 'checkbox' && tableClasses?.cellCheckbox,
       col.fixed === 'left' && tableClasses?.cellFixedLeft,
       col.fixed === 'right' && tableClasses?.cellFixedRight,
       colTemp.align === 'center' && tableClasses?.cellAlignCenter,
