@@ -927,14 +927,14 @@ export interface Tokens {
    * @type {string}
    * @categoty color
    * @default '#999DA8'
-   * @description 禁用文字
+   * @description 辅助文字
    */
   'Neutral-text-3': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#B3B7C1'
-   * @description 占位符文字
+   * @description 禁用文字颜色
    */
   'Neutral-text-2': string;
   /**
@@ -990,14 +990,14 @@ export interface Tokens {
    * @type {string}
    * @categoty color
    * @default '#CCCFD7'
-   * @description 悬浮
+   * @description 点击
    */
   'Neutral-fill-4': string;
   /**
    * @type {string}
    * @categoty color
    * @default '#E8EBF0'
-   * @description 常规
+   * @description 悬浮
    */
   'Neutral-fill-3': string;
   /**
@@ -1438,7 +1438,7 @@ export interface Tokens {
    * @type {string}
    * @categoty string
    * @default 'rgba(2, 11, 24, 0.3)'
-   * @description 用于遮罩层的带透明度背景色
+   * @description 遮罩填充色
    */
   'Mask-fill-1': string;
   /**

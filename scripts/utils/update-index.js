@@ -10,7 +10,7 @@ const whiteList = {
   shineout: ['icon'],
   'shineout-style': ['jss-style', 'mixin', 'themes', 'index.ts', 'cssvar'],
   base: ['rule', 'config'],
-  theme: ['index.ts', 'config.ts', 'utils', 'token', '.DS_Store'],
+  theme: ['index.ts', 'config.ts', 'utils', 'token', '.DS_Store', 'hooks', 'provider'],
 };
 
 function getComponentName(fileName) {
