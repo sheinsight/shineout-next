@@ -4,7 +4,7 @@ import { FormClasses } from '@sheinx/base';
 
 const form: JsStyles<keyof FormClasses> = {
   wrapper: {
-    display: 'block',
+    // display: 'block',
   },
   wrapperInline: {
     '& [data-soui-input-border]': {

@@ -45,6 +45,7 @@ export interface CascaderClasses {
   placeholder: string;
   pickerWrapper: string;
   clearable: string;
+  iconWrapper: string;
   clearIcon: string;
   compressedIcon: string;
   arrowIconOpen: string;
@@ -353,5 +354,5 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    *  @cn 绑定组件的引用, 可以调用某些组件的方法
    *
    */
-  getCascaderRef?: ((comp: CascaderRef) => void) | { current: CascaderRef | undefined };
+  getComponentRef?: ((comp: CascaderRef) => void) | { current: CascaderRef | undefined };
 }

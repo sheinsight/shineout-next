@@ -50,6 +50,7 @@ export type TreeSelectClasses = {
   multiple: string;
   loading: string;
   checkedIcon: string;
+  iconWrapper: string;
   moreIcon: string;
   list: string;
   tree: string;

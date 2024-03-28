@@ -366,18 +366,21 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
     // 2.x 之前非 inline-block
     display: 'inline-block',
 
-    // 第一个元素下的所有 button 标签的元素
     '& > :first-child$button,& > :first-child $button': {
-      borderTopRightRadius: 0,
-      borderBottomRightRadius: 0,
-      borderRight: 'none',
       '&::before': {
         display: 'none',
       },
     },
 
+    // 第一个元素下的所有 button 标签的元素
+    '& > :first-child:not(:last-child)$button,& > :first-child:not(:last-child) $button': {
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0,
+      borderRight: 'none',
+    },
+
     // 最后一个元素下的所有 button 标签的元素
-    '& > :last-child$button,& > :last-child $button': {
+    '& > :last-child:not(:first-child)$button,& > :last-child:not(:first-child) $button': {
       borderTopLeftRadius: 0,
       borderBottomLeftRadius: 0,
       borderLeft: 'none',

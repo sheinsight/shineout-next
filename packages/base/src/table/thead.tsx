@@ -149,6 +149,7 @@ export default (props: TheadProps) => {
 
     const cellClassName = classNames(
       colTemp.className,
+      colTemp.type === 'checkbox' && tableClasses?.cellCheckbox,
       col.fixed === 'left' && tableClasses?.cellFixedLeft,
       col.fixed === 'right' && tableClasses?.cellFixedRight,
       colTemp.align === 'center' && tableClasses?.cellAlignCenter,
@@ -185,12 +186,20 @@ export default (props: TheadProps) => {
               {props.radio ? null : (
                 <Checkbox
                   disabled={props.disabled === true}
-                  checked={props.datum.getCheckedStatus(props.treeColumnsName)}
+                  checked={props.datum.getCheckedStatus(
+                    props.treeCheckAll ? props.treeColumnsName : undefined,
+                  )}
                   onChange={(_value, checked) => {
                     if (checked) {
-                      props.datum.add(props.datum.data, { childrenKey: props.treeColumnsName });
+                      props.datum.add(
+                        props.datum.data,
+                        props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
+                      );
                     } else {
-                      props.datum.remove(props.datum.data, { childrenKey: props.treeColumnsName });
+                      props.datum.remove(
+                        props.datum.data,
+                        props.treeCheckAll ? { childrenKey: props.treeColumnsName } : undefined,
+                      );
                     }
                   }}
                   jssStyle={props.jssStyle}

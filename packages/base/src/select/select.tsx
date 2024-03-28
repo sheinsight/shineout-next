@@ -178,7 +178,16 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onFilter: onFilter0,
   });
 
-  const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
+  const {
+    open,
+    position,
+    targetRef,
+    popupRef,
+    openPop,
+    closePop,
+    Provider: PopupProvider,
+    providerValue: popupProviderValue,
+  } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
     disabled: false,
@@ -568,17 +577,20 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     );
 
     return (
-      <div
-        className={classNames(
-          styles?.resultWrapper,
-          styles?.wrapperPaddingBox,
-          styles?.wrapperInnerTitleTop,
-          styles?.wrapperInnerTitleBottom,
-        )}
-        onClick={handleResultClick}
-      >
-        {renderInnerTitle(result)}
-      </div>
+      <PopupProvider value={popupProviderValue}>
+        <div
+          className={classNames(
+            styles?.resultWrapper,
+            styles?.wrapperPaddingBox,
+            styles?.wrapperInnerTitleTop,
+            styles?.wrapperInnerTitleBottom,
+          )}
+          onClick={handleResultClick}
+        >
+          {renderInnerTitle(result)}
+          <div className={styles.iconWrapper}>{renderIcon()}</div>
+        </div>
+      </PopupProvider>
     );
   };
 
@@ -715,7 +727,6 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     >
       {tipNode}
       {renderResult()}
-      {renderIcon()}
       <AbsoluteList
         adjust
         focus={open}

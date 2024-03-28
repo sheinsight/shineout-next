@@ -25,6 +25,9 @@ import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
 import { useConfig, getLocale } from '../config';
 
+const preventDefault = (e: React.MouseEvent) => {
+  e.preventDefault();
+};
 const Cascader = <DataItem, Value extends KeygenResult[]>(
   props0: CascaderProps<DataItem, Value>,
 ) => {
@@ -82,6 +85,8 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     size,
     filterSameChange,
   } = props;
+
+  const showInput = util.isFunc(onFilterProp);
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
   const rootStyle: React.CSSProperties = Object.assign({ width }, style);
@@ -144,7 +149,16 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     }
   });
 
-  const { open, position, targetRef, popupRef, openPop, closePop } = usePopup({
+  const {
+    open,
+    position,
+    targetRef,
+    popupRef,
+    openPop,
+    closePop,
+    Provider: PopupProvider,
+    providerValue: popupProviderValue,
+  } = usePopup({
     open: openProp,
     onCollapse: onCollapse,
     disabled: false,
@@ -219,18 +233,33 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   };
 
   // 点击结果框的处理方法
-  const handleResultClick = usePersistFn(() => {
+  const handleResultClick = usePersistFn((e) => {
     if (disabled === true) return;
-    if (!open) {
-      openPop();
+    if (!focus) {
       inputRef.current?.focus();
-    } else {
+    }
+    if (open) {
+      if (e.target.tagName === 'INPUT') {
+        return;
+      }
       closePop();
-      inputRef.current?.blur();
+    } else {
+      openPop();
     }
   });
 
-  const handleFilter = (text: string) => {
+  const focusAndOpen = () => {
+    if (!focused) {
+      inputRef.current?.focus();
+    } else {
+      openPop();
+    }
+  };
+
+  const handleFilter = (text: string, from?: string) => {
+    if (from !== 'blur') {
+      focusAndOpen();
+    }
     onFilter?.(trim ? text.trim() : text);
   };
 
@@ -289,7 +318,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     // 回车或下箭头可打开下拉列表
     if (e.keyCode === 13 || e.code === 'Enter') {
       if (!open) {
-        handleResultClick();
+        focusAndOpen();
         return;
       }
     }
@@ -447,7 +476,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           resultClassName={resultClassName}
           renderUnmatched={renderUnmatched}
           renderResultContent={hideTag && !multiple ? renderResultContent : undefined}
-          allowOnFilter={'onFilter' in props || 'onAdvancedFilter' in props}
+          allowOnFilter={showInput}
           focusSelected={focusSelected}
           inputText={inputText}
           filterText={filterText}
@@ -463,17 +492,20 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     );
 
     return (
-      <div
-        className={classNames(
-          styles?.resultWrapper,
-          styles?.wrapperPaddingBox,
-          styles?.wrapperInnerTitleTop,
-          styles?.wrapperInnerTitleBottom,
-        )}
-        onClick={handleResultClick}
-      >
-        {renderInnerTitle(result)}
-      </div>
+      <PopupProvider value={popupProviderValue}>
+        <div
+          className={classNames(
+            styles?.resultWrapper,
+            styles?.wrapperPaddingBox,
+            styles?.wrapperInnerTitleTop,
+            styles?.wrapperInnerTitleBottom,
+          )}
+          onClick={handleResultClick}
+        >
+          {renderInnerTitle(result)}
+          <div className={styles.iconWrapper}>{renderIcon()}</div>
+        </div>
+      </PopupProvider>
     );
   };
   const renderList = () => {
@@ -662,10 +694,14 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       onFocus={handleFocus}
       onKeyDown={handleKeyDown}
       ref={targetRef}
+      onMouseDown={(e) => {
+        if (focused && e.target !== inputRef.current) {
+          e.preventDefault();
+        }
+      }}
     >
       {tipNode}
       {renderResult()}
-      {renderIcon()}
       <AbsoluteList
         adjust
         focus={open}
@@ -685,6 +721,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           type='scale-y'
           duration={'fast'}
           style={pickerWrapperStyle}
+          onMouseDown={preventDefault}
         >
           {renderPanel()}
         </AnimationList>

@@ -93,9 +93,4 @@ export interface BaseButtonProps {
    * @cn 按钮点击回调
    */
   onClick?: React.MouseEventHandler;
-  /**
-   * @en Get button dom
-   * @cn 获取按钮节点
-   */
-  onRef?: React.Ref<HTMLButtonElement | HTMLAnchorElement>;
 }

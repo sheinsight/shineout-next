@@ -30,6 +30,7 @@ const innerTitle: JsStyles<keyof InnerTitleClasses> = {
     width: '100%',
     boxSizing: 'border-box',
     position: 'relative',
+    minWidth: '0',
   },
   wrapperSmall: {},
   wrapperLarge: {},
@@ -43,6 +44,9 @@ const innerTitle: JsStyles<keyof InnerTitleClasses> = {
     fontSize: token.inputInnerFontSize,
     color: token.inputInnerFontColor,
     transition: `font-size ${moveTime} ease-in`,
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
     '$wrapperSmall:not($wrapperOpen) $place &': {
       fontSize: token.inputInnerSmallFontSize,
     },
