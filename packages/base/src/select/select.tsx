@@ -572,6 +572,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           getDataByValues={getDataByValues}
           checkUnMatched={checkUnMatched}
           onRemove={handleRemove}
+          classes={styles}
         ></Result>
       </div>
     );

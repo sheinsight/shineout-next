@@ -460,6 +460,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           size={size}
           value={value}
           closeable={singleRemove && multiple}
+          classes={styles}
           data={data}
           focus={open}
           keygen={keygen}

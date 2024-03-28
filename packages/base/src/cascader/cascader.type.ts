@@ -74,6 +74,9 @@ export interface CascaderClasses {
   optionHover: string;
   optionActive: string;
   optionDisabled: string;
+  multipleResultWrapper: string;
+  multipleCompressedWrapper: string;
+  hideTag: string;
 }
 
 export type JssStyleType = {

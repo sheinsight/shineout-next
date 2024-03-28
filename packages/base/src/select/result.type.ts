@@ -53,4 +53,17 @@ export interface ResultProps<DataItem, Value>
     index?: number,
   ) => void;
   convertBr?: string | ((text: string) => string);
+  classes: {
+    tag: string;
+    resultTextWrapper: string;
+    compressedWrapper: string;
+    multipleResultWrapper: string;
+    multipleCompressedWrapper: string;
+    hideTag: string;
+    space: string;
+    placeholder: string;
+    ellipsis: string;
+    moreWrapper: string;
+    inputMirror: string;
+  };
 }

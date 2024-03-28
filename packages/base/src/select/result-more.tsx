@@ -1,5 +1,4 @@
 import React, { useState, Children, memo } from 'react';
-import { SelectClasses } from './select.type';
 import { ReultMoreProps } from './result-more.type';
 import { parsePxToNumber } from '@sheinx/hooks';
 import Tag from '../tag';
@@ -72,10 +71,10 @@ export function getResetMore(
 }
 
 const More = <DataItem, Value>(props: ReultMoreProps<DataItem, Value>) => {
-  const { jssStyle, data, showNum, size, compressed, compressedClassName } = props;
+  const { jssStyle, data, showNum, size, compressed, compressedClassName, classes } = props;
   const [visible, setVisible] = useState(false);
 
-  const styles = jssStyle?.select?.() as SelectClasses;
+  const styles = classes;
 
   const shouldShowMore = showNum! < 0 || showNum! >= data.length;
   let before: React.ReactElement[] = [];

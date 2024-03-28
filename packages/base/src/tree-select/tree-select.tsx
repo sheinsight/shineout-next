@@ -491,6 +491,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           onClearCreatedData={onClearCreatedData}
           getDataByValues={getDataByValues}
           onRemove={handleRemove}
+          classes={styles}
         ></Result>
       </div>
     );

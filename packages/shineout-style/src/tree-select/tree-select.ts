@@ -158,6 +158,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     alignItems: 'center',
     lineHeight: token.lineHeightDynamic,
   },
+  hideTag: {},
   resultTextWrapper: {
     display: 'flex',
     flex: '1',
@@ -371,6 +372,9 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     marginTop: token.treeSelectPlaceholderMarginY,
     marginBottom: token.treeSelectPlaceholderMarginY,
     textWrap: 'nowrap',
+    '&$hideTag': {
+      marginRight: 0,
+    },
   },
   space: {
     marginTop: token.treeSelectPlaceholderMarginY,

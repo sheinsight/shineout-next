@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { util, addResizeObserver, UnMatchedData, KeygenResult } from '@sheinx/hooks';
 import { ResultProps } from './result.type';
-import { SelectClasses } from './select.type';
 import Input from './result-input';
 import { getResetMore } from './result-more';
 import More from './result-more';
@@ -55,7 +54,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   const showInput = allowOnFilter;
   const mounted = useRef(false);
 
-  const styles = jssStyle?.select?.() as SelectClasses;
+  const styles = props.classes;
   const rootClass = classNames(
     styles.resultTextWrapper,
     compressed && styles.compressedWrapper,
@@ -124,7 +123,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       <React.Fragment key='input'>
         <Input
           isEmpty={empty}
-          jssStyle={jssStyle}
+          classes={props.classes}
           value={filterText}
           trim={trim}
           focus={focus}
@@ -274,7 +273,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     <More
       keygen={keygen}
       key='more'
-      jssStyle={jssStyle}
+      classes={props.classes}
       data={result}
       size={size}
       more={moreNumber}

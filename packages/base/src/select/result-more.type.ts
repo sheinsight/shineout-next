@@ -18,4 +18,5 @@ export interface ReultMoreProps<DataItem, Value>
   data: React.ReactNode[];
   more?: number;
   showNum?: number;
+  classes: { tag: string; moreWrapper: string };
 }

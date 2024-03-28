@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import { SelectClasses } from './select.type';
 import { ResultInputProps } from './result-input.type';
 import { Input } from '../date-picker/result';
 
@@ -11,7 +10,6 @@ interface IEWindow extends Window {
 
 const ResultInput = (props: ResultInputProps) => {
   const {
-    jssStyle,
     value,
     inputText,
     focus,
@@ -25,7 +23,7 @@ const ResultInput = (props: ResultInputProps) => {
     onInputBlur,
     isEmpty,
   } = props;
-  const styles = jssStyle?.select?.() as SelectClasses;
+  const styles = props.classes;
   const mirrorRef = useRef<HTMLSpanElement>(null);
   const inputRef = useRef<HTMLInputElement>();
 

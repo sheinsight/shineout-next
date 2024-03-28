@@ -75,6 +75,7 @@ export type TreeSelectClasses = {
   columnsRadio: string;
   columnsCheckbox: string;
   empty: string;
+  hideTag: string;
 };
 export type JssStyleType = {
   tag?: () => TagClasses;

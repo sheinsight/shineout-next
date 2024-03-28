@@ -211,6 +211,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       },
     },
   },
+  multipleResultWrapper: {
+    flexWrap: 'wrap',
+  },
   resultAlignLeft: {
     '& $resultTextWrapper': {
       textAlign: 'left',
@@ -346,6 +349,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     },
     '& $placeholder': {},
   },
+  multipleCompressedWrapper: {
+    flexWrap: 'nowrap',
+  },
   loading: {
     padding: 10,
     color: token.cascaderPlaceholderColor,
@@ -371,6 +377,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
       borderRight: `1px solid ${token.cascaderListBorderColor}`,
     },
   },
+  hideTag: {},
   list: {
     paddingTop: 3,
     paddingBottom: 3,
@@ -385,6 +392,9 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     marginTop: token.cascaderPlaceholderMarginY,
     marginBottom: token.cascaderPlaceholderMarginY,
     textWrap: 'nowrap',
+    '&$hideTag': {
+      marginRight: 0,
+    },
   },
   space: {
     marginTop: token.cascaderPlaceholderMarginY,
