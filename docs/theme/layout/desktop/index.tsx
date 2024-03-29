@@ -1,4 +1,4 @@
-import { useRoutes } from 'react-router-dom';
+import { useRoutes, Navigate } from 'react-router-dom';
 import { dispatch } from '../../store';
 import useStyles from './style';
 import { useEffect, useRef } from 'react';
@@ -11,6 +11,7 @@ import Introduce from '../../../pages/introduce';
 import Component from '../../../pages/component';
 import Changelog from '../../../pages/changelog';
 import Debugger from '../../../pages/debug';
+import Markdown from '../../../markdown';
 
 const Desktop = () => {
   const classes = useStyles();
@@ -40,12 +41,20 @@ const Desktop = () => {
       children: [],
     },
     {
-      path: ':name?/changelog',
+      path: ':name/changelog',
       element: <Changelog />,
     },
     {
-      path: ':name?/debugger',
+      path: ':name/debugger',
       element: <Debugger />,
+    },
+    {
+      path: ':lan/doc/:project/:comp',
+      element: <Markdown />,
+    },
+    {
+      path: '*',
+      element: <Navigate to='/cn/doc/shineout/start' replace={true} />,
     },
   ];
 

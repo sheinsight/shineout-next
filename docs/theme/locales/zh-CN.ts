@@ -11,8 +11,8 @@ export default {
     Form: '数据输入',
     Feedback: '反馈',
     Navigation: '导航',
-    // Other: '其他',
   },
+  'shineout.menu.group.guide': '开发指南',
   'shineout.changelog': {
     feat: '新增',
     fix: '修复',
@@ -31,5 +31,5 @@ export default {
     api: 'API',
     guide: '指南',
     updateRecord: '更新记录',
-  }
+  },
 };

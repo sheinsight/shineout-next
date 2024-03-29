@@ -9,6 +9,7 @@ import Anchor from 'docs/theme/layout/desktop/anchor';
 const SingleAPi = (props: MarkdownProps['api'][0]) => {
   const { title, properties, cn, en, subTitle, isLast } = props;
   // const hasVersion = properties.find((item: any) => !!item.version);
+  
 
   const state = useSnapshot(store);
   const locate = (cn: string, en: string) => {
