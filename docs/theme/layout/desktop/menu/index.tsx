@@ -26,6 +26,14 @@ const MenuComponent = () => {
     });
     document.getElementById('layout')?.scrollTo(0, 0);
   };
+
+  const handleDocClick = (name: string) => {
+    navigate({
+      pathname: `/${state.locales}/doc/${state.doc}/${name}`,
+      // search: `?tab=examples`,
+    });
+    document.getElementById('layout')?.scrollTo(0, 0);
+  };
   useEffect(() => {
     setConfig({
       locale: 'en-US',
@@ -43,13 +51,52 @@ const MenuComponent = () => {
     const componentName = paths[paths.length - 1];
     return componentName;
   }, [location.pathname]);
+
+  const devGuide = [
+    {
+      title: {
+        cn: '快速上手',
+        en: 'Quick Start',
+      },
+      name: 'start',
+    },
+    {
+      title: {
+        cn: 'SSR',
+        en: 'SSR',
+      },
+      name: 'ssr',
+    },
+  ];
+
   return (
     <ul className={classes.menu}>
-      {/* <li className='doc'>使用指南</li> */}
+      <li>
+        <div className={classnames('group', 'first')}>
+          {docsLocale['shineout.menu.group.guide']}
+        </div>
+        <ul>
+          {devGuide.map((component, index) => {
+            return (
+              component &&
+              component.title && (
+                <li
+                  key={index}
+                  onClick={() => handleDocClick(component.name)}
+                  className={active === component.name ? 'active' : ''}
+                >
+                  {component.title[state.locales]}
+                </li>
+              )
+            );
+          })}
+        </ul>
+      </li>
+
       {state.menu.map((item, index) => {
         return (
           <li key={index}>
-            <div className={classnames('group', index === 0 ? 'first' : '')}>
+            <div className={classnames('group')}>
               {groupLocale[item.group as keyof typeof groupLocale]}
             </div>
             <ul>

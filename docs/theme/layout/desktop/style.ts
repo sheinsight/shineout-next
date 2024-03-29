@@ -1,20 +1,22 @@
 import { createUseStyles } from 'react-jss';
 
+const navHeight = 59;
+
 export default createUseStyles(
   {
     desktop: {
       position: 'absolute',
       left: 260,
-      top: 59,
-      width: '100%',
-      height: '100%',
+      right: 0,
+      top: navHeight,
+      height: `calc(100% - ${navHeight}px)`,
       overflowY: 'auto',
       overflowX: 'hidden',
     },
     nav: {
       position: 'sticky',
       top: 0,
-      height: 59,
+      height: navHeight,
       width: '100%',
       display: 'flex',
       backgroundColor: '#ffffff',

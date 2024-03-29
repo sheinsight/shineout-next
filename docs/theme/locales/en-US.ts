@@ -11,8 +11,8 @@ export default {
     Form: 'Form',
     Feedback: 'Feedback',
     Navigation: 'Navigation',
-    // Other: 'Other',
   },
+  'shineout.menu.group.guide': 'Development Guide',
   'shineout.changelog': {
     feat: 'feat',
     fix: 'fix',
@@ -31,5 +31,5 @@ export default {
     api: 'API',
     guide: 'guide',
     updateRecord: 'update record',
-  }
+  },
 };
