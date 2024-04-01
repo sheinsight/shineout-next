@@ -11,11 +11,6 @@ export interface TextareaClasses {
    */
   wrapper: string;
   /**
-   * @en Prompt information
-   * @cn 提示信息
-   */
-  tip?: React.ReactNode;
-  /**
    * 当 input focus 时最外层class
    */
   wrapperFocus: string;
