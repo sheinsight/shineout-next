@@ -18,7 +18,7 @@ export interface ConfigOption {
 const processEnv: Record<string, any> = typeof process !== 'undefined' ? process?.env : {};
 export let config: ConfigOption = {
   prefix: 'so',
-  locale: (processEnv.LOCALE as LanType) || 'zh-CN',
+  locale: (processEnv.LOCALE as LanType) || 'en-US',
   delay: 0,
   trim: undefined,
   spin: undefined,

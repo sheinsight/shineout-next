@@ -67,6 +67,13 @@ const MenuComponent = () => {
       },
       name: 'ssr',
     },
+    {
+      title: {
+        cn: '国际化',
+        en: 'Internationalization',
+      },
+      name: 'i18n',
+    },
   ];
 
   return (
