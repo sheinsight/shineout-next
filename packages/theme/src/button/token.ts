@@ -17,6 +17,7 @@ const buttonTokenDescription = {
   link: '链接风格',
   splitline: '按钮组分割线',
   spin: '加载中icon的',
+  weight: '字重',
 };
 
 /**
@@ -703,12 +704,12 @@ const buttonTokenValue = {
       focus: { font: { color: '' }, background: { color: '' }, border: { color: '' } },
     },
   },
-  font: { size: '14/regular' },
+  font: { size: '14/regular', weight: 'Weight-regular' },
   border: { radius: 'Radius-4' },
   padding: { x: 'Padding-8', y: 'Padding-5' },
   height: 'Size-16',
   small: {
-    font: { size: '12/regular' },
+    font: { size: '12/regular', weight: 'Weight-regular' },
     border: { radius: 'Radius-4' },
     padding: { x: 'Padding-8', y: 'Padding-2' },
     height: 'Size-12',
@@ -717,7 +718,7 @@ const buttonTokenValue = {
     square: { border: { radius: 'Radius-4' } },
   },
   large: {
-    font: { size: '16/regular' },
+    font: { size: '16/regular', weight: 'Weight-regular' },
     border: { radius: 'Radius-4' },
     padding: { x: 'Padding-12', y: 'Padding-8' },
     height: 'Size-20',
