@@ -790,7 +790,7 @@ export interface ButtonTokens {
   buttonSuccessTextHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Success-7
+   * @token Success-6
    * @description 按钮成功色文本模式鼠标点击时的字体颜色
    */
   buttonSuccessTextActiveFontColor: string;
@@ -1060,7 +1060,7 @@ export interface ButtonTokens {
   buttonWarningTextHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Warning-7
+   * @token Warning-6
    * @description 按钮警告色文本模式鼠标点击时的字体颜色
    */
   buttonWarningTextActiveFontColor: string;
@@ -1330,7 +1330,7 @@ export interface ButtonTokens {
   buttonDangerTextHoverBorderColor: string;
   /**
    * @type {string}
-   * @token Danger-7
+   * @token Danger-6
    * @description 按钮危险色文本模式鼠标点击时的字体颜色
    */
   buttonDangerTextActiveFontColor: string;

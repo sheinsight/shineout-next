@@ -386,7 +386,7 @@ const buttonTokenValue = {
         border: { color: 'Neutral-fill-2' },
       },
       active: {
-        font: { color: 'Success-7' },
+        font: { color: 'Success-6' },
         background: { color: 'Neutral-fill-3' },
         border: { color: 'Neutral-fill-3' },
       },
@@ -498,7 +498,7 @@ const buttonTokenValue = {
         border: { color: 'Neutral-fill-2' },
       },
       active: {
-        font: { color: 'Warning-7' },
+        font: { color: 'Warning-6' },
         background: { color: 'Neutral-fill-3' },
         border: { color: 'Neutral-fill-3' },
       },
@@ -610,7 +610,7 @@ const buttonTokenValue = {
         border: { color: 'Neutral-fill-2' },
       },
       active: {
-        font: { color: 'Danger-7' },
+        font: { color: 'Danger-6' },
         background: { color: 'Neutral-fill-3' },
         border: { color: 'Neutral-fill-3' },
       },
