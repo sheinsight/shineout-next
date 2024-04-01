@@ -6,7 +6,7 @@ type RefConfirm = typeof IConfirm;
 export interface ConfirmComponent extends RefConfirm {
   displayName: string;
 }
-const ConfirmComp: ConfirmComponent = IConfirm as PopoverComponent;
+const ConfirmComp: ConfirmComponent = IConfirm as ConfirmComponent;
 ConfirmComp.displayName = 'ShineoutPopoverConfirm';
 
 type RefPopover = typeof IPopover;

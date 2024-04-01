@@ -347,8 +347,9 @@ export function hslToRgb(hsl: string) {
   console.error(new Error(`the string '${hsl}' is not a hsl color`));
   return '';
 }
-
+// @ts-ignore
 export const rgbToHex = rgbTranlate(toHex);
+// @ts-ignore
 export const rgbTohsl = rgbTranlate(toHsl);
 
 export function hexToHsl(hex: string) {

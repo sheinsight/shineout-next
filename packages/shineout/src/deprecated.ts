@@ -12,7 +12,7 @@ export const color: any = {
   infoColor: 'rgb(24, 144, 255)',
   primary: 'rgb(44, 95, 193)',
   secondary: 'rgb(51, 62, 89)',
-  setColor: (e) => {
+  setColor: (_e: any) => {
     console.warn('shineout: color.setColor is deprecated');
   },
   success: 'rgb(82, 196, 26)',

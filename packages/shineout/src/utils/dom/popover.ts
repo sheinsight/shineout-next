@@ -77,12 +77,9 @@ export const getPosition = (
       break;
     default:
   }
-
-  return posKeys.reduce(
-    (data, key: keyof PositionInfo) => ({
-      ...data,
-      [key]: typeof pos[key] === 'number' ? `${Math.round(pos[key]!)}px` : 'auto',
-    }),
-    {} as Record<keyof PositionInfo, string>,
-  );
+  const func: any = (data: any, key: keyof PositionInfo) => ({
+    ...data,
+    [key]: typeof pos[key] === 'number' ? `${Math.round(pos[key]!)}px` : 'auto',
+  });
+  return posKeys.reduce(func, {} as Record<keyof PositionInfo, string>);
 };

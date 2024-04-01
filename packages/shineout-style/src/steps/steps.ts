@@ -281,7 +281,7 @@ const stepsStyle: JsStyles<StepsClassType> = {
   },
   description: {
     textAlign: 'center',
-    fontSize: Token.stepsDescriptionFontSize,
+    // fontSize: Token.stepsDescriptionFontSize,
     color: Token.stepsDescriptionFontColor,
     lineHeight: Token.lineHeightDynamic,
     // marginTop: Token.stepsNearlyDescribeMargin,
