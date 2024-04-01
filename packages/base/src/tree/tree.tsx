@@ -8,7 +8,7 @@ import { Provider } from './tree-context';
 
 const { produce } = util;
 
-const Tree = <DataItem, Value extends any[]>(props: TreeProps<DataItem, Value>) => {
+const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem, Value>) => {
   const {
     jssStyle,
     line = true,

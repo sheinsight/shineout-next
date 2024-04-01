@@ -33,7 +33,7 @@ export interface BaseSelectProps<DataItem, Value> {
    * @cn 默认使用 format 函数执行的结果来比较是否匹配，在某些情况下（例如返回原始数据的对象，更新数据时，生成了一个值相同，非同一个对象的选项），需要借助 prediction 函数来判断是否匹配
    * @default (val, d) => val===format(d)
    */
-  prediction?: (value: Value, Data: DataItem) => boolean;
+  prediction?: (value: Value extends (infer U)[] ? U : Value, Data: DataItem) => boolean;
 
   /**
    * @en Format value. The defaule value is return the original data. When it is a string, the value is fetched from the original data as a key equivalent to (d) => d[format] When it is a function, use its return value

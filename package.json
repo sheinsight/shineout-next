@@ -105,7 +105,7 @@
     "cypress": "^13.1.0",
     "ejs": "^3.1.9",
     "eslint": "^8.52.0",
-    "father": "^4.1.9",
+    "father": "^4.4.0",
     "glob": "^10.2.5",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.3",

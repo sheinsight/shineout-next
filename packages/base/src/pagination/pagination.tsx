@@ -108,6 +108,7 @@ const Pagination = (props: PaginationProps) => {
               <List
                 key={i}
                 {...props}
+                total={props.total || 0}
                 text={text}
                 size={size}
                 current={current || 0}

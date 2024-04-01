@@ -12,7 +12,7 @@ const Confirm = (props: PopoverConfirmProps) => {
 
   const handleOk = (close: () => void) => {
     const { onOk } = props;
-    let callback: Promise<any> | void;
+    let callback: Promise<any> | void = undefined;
     if (onOk) callback = onOk();
     if (callback && typeof callback.then === 'function') {
       setOk(true);
@@ -27,7 +27,7 @@ const Confirm = (props: PopoverConfirmProps) => {
 
   const handleCancel = (close: () => void) => {
     const { onCancel } = props;
-    let callback: Promise<any> | void;
+    let callback: Promise<any> | void = undefined;
     if (onCancel) callback = onCancel();
     if (callback && typeof callback.then === 'function') {
       setCancel(true);

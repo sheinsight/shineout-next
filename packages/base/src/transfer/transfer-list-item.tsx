@@ -68,6 +68,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
       );
     return (
       <Checkbox
+        // @ts-ignore
         theme='dark'
         size={size}
         jssStyle={jssStyle}

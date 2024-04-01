@@ -69,7 +69,7 @@ const useColumns = <Data,>(props: UseColumnsProps<Data>) => {
 
     context.cachedColumns = columns.map(
       (c, i) =>
-        produce(c, (draft: TableFormatColumn<Data>) => {
+        produce(c as TableFormatColumn<Data>, (draft: TableFormatColumn<Data>) => {
           draft.index = i;
           if (draft.key === undefined) draft.key = i;
           if (i <= left) draft.fixed = 'left';

@@ -360,10 +360,15 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     handlePathChange(id, null, path as Value);
   };
 
-  const handleRemove = (item: DataItem) => {
-    const id = datum.getKey(item);
-    datum.set(id, 0);
-    onChange?.(datum.getValue() as Value, item);
+  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => {
+    const dataKey = util.isUnMatchedData(item) ? item.value : datum.getKey(item, key, index);
+
+    const isDisabled = datum.isDisabled(dataKey);
+
+    if (isDisabled) return;
+
+    datum.set(dataKey, 0);
+    onChange(datum.getValue() as Value, item as DataItem);
   };
 
   const getDataByValues = (values?: Value) => {
@@ -481,7 +486,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           focusSelected={focusSelected}
           inputText={inputText}
           filterText={filterText}
-          setInputText={setInputText}
           onFilter={handleFilter}
           onRef={inputRef}
           onRemove={handleRemove}

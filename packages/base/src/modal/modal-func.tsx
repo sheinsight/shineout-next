@@ -9,7 +9,8 @@ import type { ModalJssStyle } from './modal.type';
 import type { ModalOptions } from './modal-func.type';
 
 const modals = new Set<HTMLElement>();
-const destroy = (root: HTMLElement) => {
+const destroy = (root: HTMLElement | null) => {
+  if (!root) return;
   util.ReactUnmount(root);
   if (root && root.parentElement) {
     root.parentElement.removeChild(root);
@@ -90,6 +91,7 @@ const method =
   (type: MethodType, jssStyle: ModalJssStyle) => (options: Omit<ModalOptions, 'jssStyle'>) => {
     const id = util.getUidStr();
     const root = getRoot({ container: options.container });
+    if (!root) return;
     const destroyModal = () => {
       destroy(root);
     };

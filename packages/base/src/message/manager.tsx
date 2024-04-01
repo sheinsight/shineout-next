@@ -51,7 +51,9 @@ export function getComponent(params: Params) {
       const div = document.createElement('div');
       div.className = rootClassName || '';
       elements[position] = div;
-      target.appendChild(div);
+      if (target) {
+        target.appendChild(div);
+      }
       util.ReactRender(
         <Message
           ref={(comp) => {
