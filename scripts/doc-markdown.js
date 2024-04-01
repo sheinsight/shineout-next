@@ -13,6 +13,12 @@ const matchFn = (dirPath) => {
   return match[1] ?? null;
 };
 
+const replacePipeWithSlash = (str) => {
+  return str.replace(/\|/g, '/');
+}
+
+const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1)
+
 const compileApi = (dirPath) => {
   const chunkModuleName = matchFn(dirPath);
   if (!chunkModuleName) return;
@@ -40,7 +46,7 @@ const compileApi = (dirPath) => {
 };
 
 const compileContent = (dirPath) => {
-  let fromApiMap = compileApi(baseDir);
+  let fromApiMap = compileApi(dirPath);
   if (!matchFn(dirPath) || !fromApiMap) return;
 
   const guidePathFn = (dirPath, dir, docDirName, type) => {
@@ -76,6 +82,54 @@ const compileContent = (dirPath) => {
 const getExampleContent = (pathUrl, fileName) =>
   fs.readFileSync(path.resolve(shineoutDir, `${pathUrl}/__example__/${fileName}`)).toString();
 
+const formatApi = (api) => {
+  if (!api || api.length === 0) return [];
+  const apiResult = [];
+  api.forEach((item) => {
+    const { title, properties } = item;
+    const apiChild = [
+`|属性|类型|默认值|说明|
+|:-|:-|:-|:-|`
+    ];
+    properties.forEach(({ name, tag, type }) => {
+      apiChild.push(
+`|${name}|${replacePipeWithSlash(type)}|${replacePipeWithSlash(tag.default)}|${tag.cn}|`,
+      );
+    });
+    apiResult.push(
+`### ${title}
+${apiChild.join('\n')}`,
+    );
+  });
+  return apiResult;
+}
+
+const formatExamples = (examples, key) => {
+  if (!examples || examples.length === 0) return [];
+  const examplesResult = [];
+  examples.forEach(({ fileName, propName, propDescribe }) => {
+    const exampleContent = '```tsx\n' + getExampleContent(key, fileName) + '\n```';
+    examplesResult.push(
+`### ${propName.cn}
+${propDescribe.cn.join('\n')}
+${exampleContent}`,
+    );
+  });
+  return examplesResult
+}
+
+const formatGuides = (guides) => {
+  if (!guides) return [];
+  const guidesResult = [];
+  guides?.cn?.forEach(({title, paragraphs}) => {
+    guidesResult.push(
+`### ${title}
+${paragraphs.map(item => item.title).join('\n')}`
+    )
+  })
+  return guidesResult;
+}
+
 const format = () => {
   const conpomentMap = compileContent(shineoutDir);
   if (!conpomentMap) return;
@@ -85,48 +139,20 @@ const format = () => {
   Object.entries(conpomentMap).forEach(([key, value]) => {
     const api = value.api;
     const { describe = {}, examples = [], guides = {} } = value.content || {};
-    const apiResult = [];
-    const examplesResult = [];
-    if (api && api.length > 0) {
-      api.forEach((item) => {
-        const { title, properties } = item;
-        const apiChild = [];
-        properties.forEach(({ name, tag }) => {
-          apiChild.push(
-            `
-#### ${name}
-${tag.cn}
-`,
-          );
-        });
-        apiResult.push(
-          `
-### ${title}
-${apiChild.join('\n')}
-`,
-        );
-      });
-    }
-    examples.forEach(({ fileName, propName, propDescribe }) => {
-      const exampleContent = '```tsx\n' + getExampleContent(key, fileName) + '\n```';
-      examplesResult.push(
-        `
-### ${propName.cn}
-${propDescribe.cn.join('/')}
-${exampleContent}
-`,
-      );
-    });
+    const apiResult = formatApi(api);
+    const examplesResult = formatExamples(examples, key);
+    const guidesResult = formatGuides(guides);
+    
     result.push(
       `
-# ${key}
+# ${capitalizeFirstLetter(key)}
 ${describe?.cn}
 ## API
 ${apiResult.join('\n')}
 ## Example
 ${examplesResult.join('\n')}
 ## Guide
-${guides?.cn}
+${guidesResult.join('\n')}
 `,
     );
   });
@@ -141,4 +167,12 @@ const init = () => {
   });
 };
 
-init();
+// init();
+
+module.exports = {
+  compileContent,
+  formatApi,
+  formatExamples,
+  formatGuides,
+  capitalizeFirstLetter
+}
