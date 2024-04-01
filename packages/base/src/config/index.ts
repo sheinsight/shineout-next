@@ -1,7 +1,7 @@
 import { util } from '@sheinx/hooks';
-import { proxy, subscribe, useSnapshot } from 'valtio';
+import { create } from '@shined/reactive';
+import { getSnapshot } from '@shined/reactive/vanilla';
 import { CaretType } from '../icons/caret.type';
-import { INTERNAL_Snapshot as Snapshot } from 'valtio/vanilla';
 import { LanType, Direction } from './locale/Props';
 
 export interface ConfigOption {
@@ -27,10 +27,10 @@ export let config: ConfigOption = {
   popupContainer: null,
 };
 
-const state = proxy(config);
+const state = create<ConfigOption>(config);
 
-subscribe(state, () => {
-  config = state;
+state.subscribe(() => {
+  config = getSnapshot(state.mutate);
 });
 
 export function getDefaultContainer() {
@@ -46,8 +46,8 @@ export function getDefaultContainer() {
   return util.isBrowser() ? document.body : null;
 }
 
-export const useConfig = (): Snapshot<ConfigOption> => {
-  return useSnapshot(state) as Snapshot<ConfigOption>;
+export const useConfig = () => {
+  return state.useSnapshot();
 };
 
 export const setConfig = (option: Partial<ConfigOption>) => {

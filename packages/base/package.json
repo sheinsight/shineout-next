@@ -18,7 +18,7 @@
     "@sheinx/hooks": "workspace:*",
     "immer": "^10.0.0",
     "classnames": "^2.0.0",
-    "valtio": "^1.13.0"
+    "@shined/reactive": "^0.1.2"
   },
   "devDependencies": {
     "@sheinx/shineout-style": "workspace:*"

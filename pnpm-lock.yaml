@@ -219,6 +219,9 @@ importers:
       '@sheinx/hooks':
         specifier: workspace:*
         version: link:../hooks
+      '@shined/reactive':
+        specifier: ^0.1.2
+        version: 0.1.2(react@18.2.0)
       classnames:
         specifier: ^2.0.0
         version: 2.3.2
@@ -231,9 +234,6 @@ importers:
       react:
         specifier: '>=16.8'
         version: 18.2.0
-      valtio:
-        specifier: ^1.13.0
-        version: 1.13.0(@types/react@18.2.0)(react@18.2.0)
     devDependencies:
       '@sheinx/shineout-style':
         specifier: workspace:*
@@ -241,6 +241,9 @@ importers:
 
   packages/hooks:
     dependencies:
+      '@shined/reactive':
+        specifier: ^0.1.2
+        version: 0.1.2(react@18.2.0)
       core-js:
         specifier: '>=3'
         version: 3.33.3
@@ -253,9 +256,6 @@ importers:
       dayjs:
         specifier: ^1.11.9
         version: 1.11.9
-      immer:
-        specifier: ^10.0.0
-        version: 10.0.2
       react:
         specifier: '>=16.8'
         version: 18.2.0
@@ -3315,6 +3315,15 @@ packages:
       string-argv: 0.3.2
     dev: true
 
+  /@shined/reactive@0.1.2(react@18.2.0):
+    resolution: {integrity: sha512-zglZXnFnc8hog+tcUAhnwQrJnUd6YwQuZ3cF0DkP+YR8AQskBQK5WH8a3thqw1JeBMi5nTYdT3Q7u5tutYBwWw==}
+    peerDependencies:
+      react: ^16.8 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
   /@sinclair/typebox@0.25.24:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
     dev: true
@@ -3844,6 +3853,7 @@ packages:
 
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+    dev: true
 
   /@types/qs@6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
@@ -3871,6 +3881,7 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
+    dev: true
 
   /@types/retry@0.12.0:
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
@@ -3878,6 +3889,7 @@ packages:
 
   /@types/scheduler@0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
+    dev: true
 
   /@types/semver@7.5.0:
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
@@ -6383,6 +6395,7 @@ packages:
       valtio: '*'
     dependencies:
       valtio: 1.13.0(@types/react@18.2.0)(react@18.2.0)
+    dev: true
 
   /des.js@1.1.0:
     resolution: {integrity: sha512-r17GxjhUCjSRy8aiJpr8/UadFIzMzJGexI3Nmz4ADi9LYSFx4gTBp80+NaX/YsXWWLhpZ7v/v/ubEc/bCNfKwg==}
@@ -12321,6 +12334,7 @@ packages:
 
   /proxy-compare@2.5.1:
     resolution: {integrity: sha512-oyfc0Tx87Cpwva5ZXezSp5V9vht1c7dZBhvuV/y3ctkgMVUmiAGDVeeB0dKhGSyT0v1ZTEQYpe/RXlBVBNuCLA==}
+    dev: true
 
   /proxy-from-env@1.0.0:
     resolution: {integrity: sha512-F2JHgJQ1iqwnHDcQjVBsq3n/uoaFL+iPW/eAeL7kVxy/2RrWaN4WroKjjvbsoRtv0ftelNyC01bjRhn/bhcf4A==}
@@ -14515,6 +14529,7 @@ packages:
       proxy-compare: 2.5.1
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: true
 
   /vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
