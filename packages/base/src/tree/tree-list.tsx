@@ -6,7 +6,7 @@ import TreeNode from './tree-node';
 import { TreeClasses } from './tree.type';
 import { TreeListProps } from './tree-list.type';
 
-const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataItem, Value>) => {
+const List = <DataItem, Value extends KeygenResult[]>(props: TreeListProps<DataItem, Value>) => {
   const hasExpanded = useRef(false);
 
   const {
@@ -64,7 +64,7 @@ const List = <DataItem, Value extends KeygenResult>(props: TreeListProps<DataIte
   };
 
   const renderNode = (node: DataItem, index: number) => {
-    const id = getKey(node, index) as Value;
+    const id = getKey(node, index) as KeygenResult;
 
     return (
       <TreeNode
