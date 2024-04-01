@@ -2,7 +2,7 @@ import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
 import { CommonType } from '../common/type';
 import { JsstyleType, TreeRenderItemType } from './tree.type';
 
-export interface TreeListProps<DataItem, Value>
+export interface TreeListProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'childrenKey' | 'expanded'>,
     Pick<CommonType, 'className' | 'style'> {
   jssStyle?: JsstyleType;
@@ -27,9 +27,9 @@ export interface TreeListProps<DataItem, Value>
   renderItem: TreeRenderItemType<DataItem>;
   loader?: (key: KeygenResult, data: DataItem) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
-  onChange?: (value: KeygenResult[]) => void;
+  onChange?: (value: Value) => void;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
-  onDrop?: (id: KeygenResult, targetId: Value, position: number) => void;
+  onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   inlineNode?: boolean;
   highlight?: boolean;
   onDragStart?: (e: React.DragEvent, data: DataItem) => void;

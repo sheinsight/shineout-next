@@ -1,7 +1,7 @@
 import { BaseTreeProps, KeygenResult, UpdateFunc } from '@sheinx/hooks';
 import { JsstyleType, TreeRenderItemType } from './tree.type';
 
-export interface TreeContextProps<DataItem>
+export interface TreeContextProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'data' | 'childrenKey' | 'expanded' | 'active'> {
   jssStyle?: JsstyleType;
   id: KeygenResult;
@@ -29,5 +29,5 @@ export interface TreeContextProps<DataItem>
   onFetch: () => void;
   onDragOver: (e: React.DragEvent) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
-  onChange?: (value: KeygenResult[]) => void;
+  onChange?: (value: Value) => void;
 }
