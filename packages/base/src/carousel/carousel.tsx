@@ -54,14 +54,14 @@ const Carousel = (props: CarouselProps) => {
           key={'left'}
           onClick={func.backward}
         >
-          {Icons.ArrowLeft}
+          {Icons.carousel.Backward}
         </div>
         <div
           className={classNames(carouselClasses?.arrowRight, carouselClasses?.arrowItem)}
           key={'right'}
           onClick={func.forward}
         >
-          {Icons.ArrowRight}
+          {Icons.carousel.Forward}
         </div>
       </div>
     );
@@ -76,7 +76,7 @@ const Carousel = (props: CarouselProps) => {
       content = (
         <>
           <div className={carouselClasses?.indicatorArrow} onClick={func.backward}>
-            {Icons.ArrowLeft}
+            {Icons.carousel.Backward}
           </div>
           <div className={carouselClasses?.indicatorNumber}>
             <span>{current + 1}</span>
@@ -84,7 +84,7 @@ const Carousel = (props: CarouselProps) => {
             <span>{total}</span>
           </div>
           <div className={carouselClasses?.indicatorArrow} onClick={func.forward}>
-            {Icons.ArrowRight}
+            {Icons.carousel.Forward}
           </div>
         </>
       );

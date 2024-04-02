@@ -404,7 +404,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   const renderClearable = () => {
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
+    const defaultIcon = compressed ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     const arrow = (
       <span
         className={classNames(
@@ -420,7 +420,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     return (
       <>
         <span className={styles.clearIcon} onClick={handleClear}>
-          {Icons.PcCloseCircleFill}
+          {Icons.cascader.Close}
         </span>
         {!open && !isEmpty && arrow}
       </>
@@ -432,7 +432,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
       return renderClearable();
     }
     if (!mode !== undefined && !showArrow) return null;
-    const defaultIcon = compressed ? Icons.More : Icons.ArrowDown;
+    const defaultIcon = compressed ? Icons.cascader.More : Icons.cascader.DropdownArrow;
     return (
       <span
         className={classNames(

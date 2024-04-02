@@ -84,7 +84,9 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
           >
             {
               <div className={classes?.icon}>
-                {frontCaretType === 'hollow' ? Icons.ArrowDown : Icons.PcArrowFillDown}
+                {frontCaretType === 'hollow'
+                  ? Icons.menu.CollapseArrow
+                  : Icons.menu.FrontSolidArrowDown}
               </div>
             }
           </div>
@@ -109,7 +111,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
                 props.parentSelectable && classes?.expandHover,
               )}
             >
-              <div className={classes?.icon}>{Icons.ArrowDown}</div>
+              <div className={classes?.icon}>{Icons.menu.CollapseArrow}</div>
             </div>
           )}
         </div>
@@ -131,11 +133,13 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     >
       {renderItem()}
       {children.length > 0 && (
-        <ul className={classNames(
-          classes?.children,
-           isUp && classes?.childrenUp,
-           hasExpandAbleChildren && classes?.childrenHasExpand,
-           )}>
+        <ul
+          className={classNames(
+            classes?.children,
+            isUp && classes?.childrenUp,
+            hasExpandAbleChildren && classes?.childrenHasExpand,
+          )}
+        >
           {children.map((item: any, index: number) => {
             const key = util.getKey(props.keygen, item, index);
             return (

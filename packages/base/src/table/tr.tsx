@@ -131,7 +131,7 @@ const Tr = (props: TrProps) => {
               treeFunc.handleTreeExpand(props.rawData, props.rowIndex);
             }}
           >
-            {isExpanded ? Icons.Expand : Icons.OdecShrink}
+            {isExpanded ? Icons.table.Expand : Icons.table.Collapse}
           </span>
         </div>
         {content}
@@ -157,7 +157,7 @@ const Tr = (props: TrProps) => {
           onClick={clickEvent}
         >
           <span className={tableClasses?.expandIcon}>
-            {props.expanded ? Icons.Expand : Icons.OdecShrink}
+            {props.expanded ? Icons.table.Expand : Icons.table.Collapse}
           </span>
         </div>
       );

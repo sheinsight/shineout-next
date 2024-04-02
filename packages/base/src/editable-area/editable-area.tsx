@@ -7,7 +7,6 @@ import classNames from 'classnames';
 import Icons from '../icons';
 import useInnerTitle from '../common/use-inner-title';
 
-
 function formatShowValue(value: unknown) {
   if (!value && value !== 0) return '';
   const arr = String(value).split('\n');
@@ -160,7 +159,7 @@ const EditableArea = (props: EditableAreaProps) => {
         }}
         className={editableAreaStyle?.clear}
       >
-        {Icons.CloseOpaqueMultic1}
+        {Icons.editableArea.Close}
       </span>
     );
   };

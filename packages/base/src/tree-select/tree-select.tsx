@@ -130,7 +130,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     });
 
   const renderMoreIcon = () => {
-    return Icons.More;
+    return Icons.treeSelect.More;
   };
 
   const {
@@ -142,7 +142,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     filterText,
     onAdvancedFilter,
     keygen,
-    originIcon: Icons.More,
+    originIcon: Icons.treeSelect.More,
     moreIcon: renderMoreIcon,
     childrenKey,
     expanded,
@@ -294,7 +294,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const renderClearable = () => {
     if (!multiple !== undefined && !showArrow) return null;
-    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
+    const defaultIcon = multiple ? Icons.treeSelect.More : Icons.treeSelect.DropdownArrow;
 
     const arrow = (
       <span
@@ -307,7 +307,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
     const close = (
       <span className={styles.clearIcon} onClick={handleClear}>
-        {isEmpty ? arrow : Icons.PcCloseCircleFill}
+        {isEmpty ? arrow : Icons.treeSelect.Close}
       </span>
     );
 
@@ -324,7 +324,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
       return renderClearable();
     }
     if (!multiple && !showArrow) return null;
-    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
+    const defaultIcon = multiple ? Icons.treeSelect.More : Icons.treeSelect.DropdownArrow;
     return (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}

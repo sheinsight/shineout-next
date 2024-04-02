@@ -31,7 +31,7 @@ const ImageModal = (props: ImageGalleryProps) => {
   const renderColseIcon = () => {
     return (
       <a className={closeClass} {...closeIconProps}>
-        {Icons.CloseOpaqueMultic1}
+        {Icons.image.Close}
       </a>
     );
   };

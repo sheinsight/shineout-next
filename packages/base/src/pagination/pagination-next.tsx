@@ -22,7 +22,11 @@ const PaginationButtonNext = (props: PaginationActionButtonProps) => {
       disabled={disabled || next > max}
       onClick={onChange}
     >
-      {hasText ? text.next : <span className={paginationStyle?.icon}>{Icons.ArrowRight}</span>}
+      {hasText ? (
+        text.next
+      ) : (
+        <span className={paginationStyle?.icon}>{Icons.pagination.NextInButton}</span>
+      )}
     </Button>
   );
 };

@@ -168,9 +168,9 @@ const TabsHeader = (props: TabsHeaderProps) => {
         onClick={handlePrev}
       >
         {shape === 'card' ? (
-          Icon.ArrowLeft
+          Icon.tabs.Pre
         ) : (
-          <span className={headerStyle.iconInner}>{Icon.ArrowLeft}</span>
+          <span className={headerStyle.iconInner}>{Icon.tabs.Pre}</span>
         )}
       </div>
     );
@@ -184,9 +184,9 @@ const TabsHeader = (props: TabsHeaderProps) => {
         onClick={handleNext}
       >
         {shape === 'card' ? (
-          Icon.ArrowRight
+          Icon.tabs.Next
         ) : (
-          <span className={headerStyle.iconInner}>{Icon.ArrowRight}</span>
+          <span className={headerStyle.iconInner}>{Icon.tabs.Next}</span>
         )}
       </div>
     );
@@ -195,7 +195,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const renderCollapsibleButton = () => {
     return (
       <div className={headerStyle.collapsible} onClick={onCollapsible}>
-        {Icon.ArrowLeft}
+        {Icon.tabs.CollapseArrow}
       </div>
     );
   };

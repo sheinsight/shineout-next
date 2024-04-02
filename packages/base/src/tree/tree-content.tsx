@@ -108,8 +108,8 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     const icon = expandIcons
       ? expandIcons[expanded ? 1 : 0]
       : expanded
-      ? Icons.TreeMinus
-      : Icons.TreePlus;
+      ? Icons.tree.LineExpand
+      : Icons.tree.LineCollapse;
 
     let indicator: React.ReactNode;
 
@@ -133,7 +133,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           data-icon={hasExpandIcons}
         >
           <span className={classNames(contentStyle.icon, iconClass)} onClick={handleIndicatorClick}>
-            {util.isFunc(icon) ? icon(data) : hasExpandIcons ? icon : Icons.TreeArrow}
+            {util.isFunc(icon) ? icon(data) : hasExpandIcons ? icon : Icons.tree.Expand}
           </span>
         </span>
       );

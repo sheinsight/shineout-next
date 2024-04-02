@@ -9,10 +9,7 @@ import { Progress } from 'shineout';
 
 const App: React.FC = () => (
   <div style={{ display: 'flex', gap: '32px' }}>
-    <Progress value={60} shape='circle' type='info' size={64} strokeWidth={4}>
-      {' '}
-      60%{' '}
-    </Progress>
+    <Progress value={60} shape='circle' type='info' size={64} strokeWidth={4} icon></Progress>
     <Progress value={70} shape='circle' type='warning' size={64} strokeWidth={4} icon />
     <Progress value={80} shape='circle' type='success' size={64} strokeWidth={4} icon />
     <Progress value={90} shape='circle' type='danger' size={64} strokeWidth={4} icon />

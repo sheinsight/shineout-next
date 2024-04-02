@@ -143,7 +143,7 @@ const Image = (props: ImageProps) => {
 
   // 默认错误图
   const renderDefaultError = () => {
-    return <div className={defaultErrorClass}>{title || Icons.LoadingError2}</div>;
+    return <div className={defaultErrorClass}>{title || Icons.image.LoadFail}</div>;
   };
 
   // 错误图
@@ -174,8 +174,8 @@ const Image = (props: ImageProps) => {
   const renderMask = () => {
     return (
       <span className={maskClass} onClick={handleOpenGallery}>
-        {shouldDownload && Icons.Download}
-        {shouldPreview && Icons.Preview}
+        {shouldDownload && Icons.image.Download}
+        {shouldPreview && Icons.image.Preview}
       </span>
     );
   };

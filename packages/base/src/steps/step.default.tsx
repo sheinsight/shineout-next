@@ -49,9 +49,9 @@ const DefaultStep = (props: StepStyleProps) => {
 
     let iconComponent;
     if (status === 'finish') {
-      iconComponent = Icons.Check;
+      iconComponent = Icons.steps.Finish;
     } else if (status === 'error') {
-      iconComponent = Icons.Close;
+      iconComponent = Icons.steps.Error;
     } else {
       iconComponent = index + 1;
     }

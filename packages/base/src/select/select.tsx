@@ -158,7 +158,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   });
 
   const renderMoreIcon = () => {
-    return Icons.More;
+    return Icons.select.More;
   };
 
   const {
@@ -170,7 +170,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     filterText,
     onAdvancedFilter: props.onAdvancedFilter,
     keygen: keygen as any,
-    originIcon: Icons.More,
+    originIcon: Icons.select.More,
     moreIcon: renderMoreIcon,
     childrenKey,
     expanded,
@@ -496,7 +496,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
   const renderClearable = () => {
     if (!multiple !== undefined && !showArrow) return null;
-    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
+    const defaultIcon = multiple ? Icons.select.More : Icons.select.DropdownArrow;
     const arrow = (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}
@@ -508,7 +508,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
 
     const close = (
       <span className={styles.clearIcon} onClick={handleClear}>
-        {isEmpty ? arrow : Icons.PcCloseCircleFill}
+        {isEmpty ? arrow : Icons.select.Close}
       </span>
     );
     return (
@@ -524,7 +524,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
       return renderClearable();
     }
     if (!multiple && !showArrow) return null;
-    const defaultIcon = multiple ? Icons.More : Icons.ArrowDown;
+    const defaultIcon = multiple ? Icons.select.More : Icons.select.DropdownArrow;
     return (
       <span
         className={classNames(styles.arrowIcon, open && !compressed && styles.arrowIconOpen)}

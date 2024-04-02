@@ -53,7 +53,7 @@ const TransferListItem = <DataItem,>(props: TransferListItemProps<DataItem>) => 
   const renderRemove = () => {
     return (
       <span className={styles.close} onClick={handleRemove}>
-        {Icons.Close}
+        {Icons.transfer.DeleteItem}
       </span>
     );
   };

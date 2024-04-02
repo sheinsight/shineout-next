@@ -181,7 +181,7 @@ const Modal = (props: ModalContentProps) => {
         <div className={modalClasses?.headerTitle}>{props.title}</div>
         {showCloseIcon && !props.hideClose && (
           <div className={modalClasses?.headerClose} onClick={handleClose}>
-            {Icons?.Close}
+            {Icons.modal.Close}
           </div>
         )}
       </div>

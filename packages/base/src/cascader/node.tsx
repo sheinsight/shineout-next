@@ -107,7 +107,7 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
       );
     }
     if (hasChildren || uncertainChildren) {
-      return <span className={classNames(styles.optionIcon)}>{Icons.ArrowRight}</span>;
+      return <span className={classNames(styles.optionIcon)}>{Icons.cascader.CollapseArrow}</span>;
     }
 
     return null;

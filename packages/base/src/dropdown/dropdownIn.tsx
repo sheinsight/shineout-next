@@ -4,7 +4,7 @@ import { DropdownNode, MenuPosition, SimpleDropdownProps } from './dropdown.type
 import { usePopup, util } from '@sheinx/hooks';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
-import Caret from '../icons/caret';
+import Icons from '../icons';
 import classNames from 'classnames';
 import Item from './Item';
 
@@ -66,7 +66,9 @@ const Dropdown = (props: SimpleDropdownProps) => {
   const renderButton = () => {
     const caret = (
       <span key={'caret'} className={dropdownClasses?.caret}>
-        <Caret />
+        {
+          Icons.dropdown.DropdownArrow
+        }
       </span>
     );
     const child = [

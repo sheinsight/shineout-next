@@ -79,10 +79,10 @@ const Circle = (props: ProgressProps) => {
       )}
       {showIcon && (
         <div className={progressClasses?.icon} style={iconStyle}>
-          {type === 'info' && Icons.Warning}
-          {type === 'warning' && Icons.Warning}
-          {type === 'success' && Icons.Check}
-          {type === 'danger' && Icons.Close}
+          {type === 'info' && Icons.progress.InfoCircle}
+          {type === 'warning' && Icons.progress.WarningCircle}
+          {type === 'success' && Icons.progress.SuccessCircle}
+          {type === 'danger' && Icons.progress.DangerCircle}
         </div>
       )}
     </div>

@@ -88,7 +88,7 @@ const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
         <span className={styles.title}>
           <span>{title}</span>
           <span className={styles.removeAll} onClick={handleRemoveAll}>
-            {Icons.Delete}
+            {Icons.transfer.DeleteAll}
           </span>
         </span>
       );
