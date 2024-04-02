@@ -4,9 +4,11 @@ import { ButtonClasses } from '@sheinx/base';
 
 type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 
+type ButtonTypeWithoutLink = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
+
 type ButtonStyleType = 'Text' | 'Outline' | ''; // Dashed 用 Outline 的样式
 
-const button = (type: ButtonType, styles: ButtonStyleType) => ({
+const button = (type: ButtonTypeWithoutLink, styles: ButtonStyleType) => ({
   color: Token[`button${type}${styles}FontColor`],
   backgroundColor: Token[`button${type}${styles}BackgroundColor`],
   borderColor: Token[`button${type}${styles}BorderColor`],
@@ -57,7 +59,7 @@ const beforeLine = () => ({
     },
   },
 });
-const outlineBeforeLine = (type: ButtonType, styles: ButtonStyleType) => ({
+const outlineBeforeLine = (type: ButtonTypeWithoutLink, styles: ButtonStyleType) => ({
   '&::before': {
     position: 'absolute',
     content: '" "',
@@ -154,7 +156,7 @@ const textBeforeLine = () => ({
   },
 });
 
-const loading = (type: ButtonType, styles: ButtonStyleType) => {
+const loading = (type: ButtonTypeWithoutLink, styles: ButtonStyleType) => {
   const buttonStyle = button(type, styles);
 
   return {
@@ -167,7 +169,7 @@ const loading = (type: ButtonType, styles: ButtonStyleType) => {
 const ButtonStyle: JsStyles<keyof ButtonClasses> = {
   button: {
     outline: 'none',
-    fontWeight: 400,
+    fontWeight: Token.buttonFontWeight,
     cursor: 'pointer',
     userSelect: 'none',
     whiteSpace: 'nowrap',
@@ -199,7 +201,7 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
   },
   small: {
     height: Token.buttonSmallHeight,
-
+    fontWeight: Token.buttonSmallFontWeight,
     fontSize: Token.buttonSmallFontSize,
     padding: `${Token.buttonSmallPaddingY} ${Token.buttonSmallPaddingX}`,
 
@@ -211,7 +213,7 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
 
   large: {
     height: Token.buttonLargeHeight,
-
+    fontWeight: Token.buttonLargeFontWeight,
     fontSize: Token.buttonLargeFontSize,
     padding: `${Token.buttonLargePaddingY} ${Token.buttonLargePaddingX}`,
 

@@ -9,6 +9,7 @@ const tokenDescriptionMap = {
   radius: '圆角',
   width: '宽度',
   height: '高度',
+  weight: '字重',
 
   hover: '鼠标移入时的',
   active: '鼠标点击时的',

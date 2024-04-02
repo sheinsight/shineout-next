@@ -1486,6 +1486,12 @@ export interface ButtonTokens {
   buttonHeight: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 按钮字体字重
+   */
+  buttonFontWeight: string;
+  /**
+   * @type {string}
    * @token 12/regular
    * @description 按钮小尺寸字体字号
    */
@@ -1516,6 +1522,12 @@ export interface ButtonTokens {
   buttonSmallHeight: string;
   /**
    * @type {string}
+   * @token Weight-regular
+   * @description 按钮小尺寸字体字重
+   */
+  buttonSmallFontWeight: string;
+  /**
+   * @type {string}
    * @token 16/regular
    * @description 按钮大尺寸字体字号
    */
@@ -1544,6 +1556,12 @@ export interface ButtonTokens {
    * @description 按钮大尺寸高度
    */
   buttonLargeHeight: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 按钮大尺寸字体字重
+   */
+  buttonLargeFontWeight: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
