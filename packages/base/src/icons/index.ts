@@ -1,1 +1,1 @@
-export * from './config';
+export { default, setIcons } from './config';
