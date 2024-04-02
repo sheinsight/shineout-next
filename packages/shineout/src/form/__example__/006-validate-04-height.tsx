@@ -123,7 +123,6 @@ const App: React.FC = () => {
             gap: 12,
             flexWrap: 'wrap',
             justifyContent: 'space-between',
-            marginTop: 4,
           }}
         />
       </Form.Item>

@@ -131,7 +131,6 @@ const App: React.FC = () => {
             gap: 12,
             flexWrap: 'wrap',
             justifyContent: 'space-between',
-            marginTop: 4,
           }}
           rules={[rules.required('At least select one favorite color'), rules.min(2), rules.max(3)]}
         />
