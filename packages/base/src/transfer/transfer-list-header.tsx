@@ -104,6 +104,7 @@ const TransferListHeader = <DataItem, Value extends KeygenResult[]>(
       <Checkbox
         jssStyle={jssStyle}
         size={size}
+        // @ts-ignore
         theme='dark'
         disabled={loading}
         checked={checked}

@@ -21,7 +21,7 @@ const initPlaceElement = () => {
 
 initPlaceElement();
 
-const Node = <DataItem, Value extends KeygenResult>(props: TreeNodeProps<DataItem, Value>) => {
+const Node = <DataItem, Value extends KeygenResult[]>(props: TreeNodeProps<DataItem, Value>) => {
   const {
     jssStyle,
     id,

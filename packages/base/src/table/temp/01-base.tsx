@@ -6,6 +6,7 @@
  */
 import React from 'react';
 import { Table, RadioGroup } from '@sheinx/base';
+import type { TableColumnItem } from '@sheinx/base';
 import { useTableStyle, useRadioStyle, useCheckboxStyle } from '@sheinx/shineout-style';
 
 const jssStyle = {
@@ -34,13 +35,13 @@ const data = Array(10)
     ...mockData(i),
   }));
 
-const columns = [
+const columns: TableColumnItem<any>[] = [
   {
-    type: 'checkbox',
+    type: 'checkbox' as 'checkbox',
     width: 20,
   },
   {
-    type: 'expand',
+    type: 'expand' as 'expand',
     width: 20,
     render: () => () => {
       return <div style={{ padding: '12px' }}>123213</div>;

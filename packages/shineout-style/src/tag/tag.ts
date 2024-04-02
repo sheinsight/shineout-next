@@ -31,7 +31,7 @@ const tag = (type: TagType) => ({
     },
 
     '& $closeIcon': {
-      fill: Token[`tag${type}IconFontColor`],
+      // fill: Token[`tag${type}IconFontColor`],
     },
     '&[data-soui-type="dark"]': {
       '&$disabled': {

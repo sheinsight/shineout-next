@@ -43,6 +43,7 @@ const List = <DataItem, Value extends any[]>(props: ListProps<DataItem, Value>) 
     onChange: pagination.onChange,
     shouldPage: !!props.pagination,
     loading: !!props.loading,
+    total: pagination.total,
   });
 
   const datum = useListSelectMultiple({

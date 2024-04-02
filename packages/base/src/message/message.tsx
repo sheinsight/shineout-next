@@ -175,8 +175,8 @@ class Message extends React.PureComponent<MessageProps, MessageState> {
 
   closeMessageForAnimation(id: string, duration?: number, msgHeight?: number) {
     // duration animation duration time
-    this.setState(
-      produce((state) => {
+    this.setState((preState) =>
+      produce(preState, (state) => {
         state.messages.forEach((m: MessageItemType) => {
           if (m.id === id) {
             m.dismiss = true;

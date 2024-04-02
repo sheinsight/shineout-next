@@ -2,7 +2,7 @@ import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
 import { ButtonClasses } from '@sheinx/base';
 
-type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success' | 'Link';
+type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 
 type ButtonTypeWithoutLink = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 

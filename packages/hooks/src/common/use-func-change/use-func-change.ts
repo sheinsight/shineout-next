@@ -8,7 +8,7 @@ interface UseFuncChangeProps<T> {
   onChange: (value: T) => void;
 }
 
-const useFuncChange = <T>(props: UseFuncChangeProps<T>) => {
+const useFuncChange = <T extends object>(props: UseFuncChangeProps<T>) => {
   const render = useRender();
   const context = React.useRef<{ value: T }>({ value: props.value });
   context.current.value = props.value;

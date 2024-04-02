@@ -69,7 +69,7 @@ const TransferStyle: JsStyles<TransferClass> = {
     height: 24,
     borderRadius: '50%',
     minWidth: 24,
-    fontSize: Token.transfer,
+    fontSize: Token.transferFontSize,
     lineHeight: '14px',
     cursor: 'pointer',
     display: 'flex',

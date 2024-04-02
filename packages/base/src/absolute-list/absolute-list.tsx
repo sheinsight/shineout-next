@@ -46,14 +46,14 @@ const AbsoluteList = (props: AbsoluteListProps) => {
     adjust,
   });
   const childStyle = children.props.style;
-  const newStyle = {
+  const newStyle: React.CSSProperties = {
     ...style,
     ...childStyle,
   };
 
   if (React.isValidElement(children) === false) return null;
 
-  const styledChild = React.cloneElement(children, { style: newStyle });
+  const styledChild = React.cloneElement(children as any, { style: newStyle });
   if (!util.isBrowser()) return null;
   if (lazy && !context.rendered && !focus) return null;
   if (destroy && !focus) return null;

@@ -1,7 +1,7 @@
 import { JsstyleType, TreeRenderItemType } from './tree.type';
 import { BaseTreeProps, KeygenResult, UpdateFunc, ObjectKey } from '@sheinx/hooks';
 
-export interface TreeRootProps<DataItem, Value extends KeygenResult>
+export interface TreeRootProps<DataItem, Value extends KeygenResult[]>
   extends Omit<BaseTreeProps<DataItem>, 'chilrdrenKey'> {
   jssStyle?: JsstyleType;
   line: boolean;
@@ -22,8 +22,8 @@ export interface TreeRootProps<DataItem, Value extends KeygenResult>
   dragHoverExpand?: boolean;
   onToggle?: (id: KeygenResult, expanded?: boolean) => void;
   onNodeClick: (data: DataItem, id: KeygenResult) => void;
-  onChange?: (value: KeygenResult[]) => void;
-  onDrop?: (id: KeygenResult, targetId: Value, position: number) => void;
+  onChange?: (value: Value) => void;
+  onDrop?: (id: KeygenResult, targetId: KeygenResult, position: number) => void;
   loader?: (key: KeygenResult, data: DataItem) => void;
   inlineNode?: boolean;
   highlight?: boolean;

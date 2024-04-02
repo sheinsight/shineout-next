@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { util } from '@sheinx/hooks';
 import { StepsClasses } from './steps.type';
 import { StepStyleProps } from './steps.type';
 
@@ -20,7 +21,7 @@ const DotStep = (props: StepStyleProps) => {
   };
 
   const renderTitle = () => {
-    return <div className={styles.title}>{title}</div>;
+    return <div className={styles.title}>{util.isFunc(title) ? title(props.index, status!) : title}</div>;
   };
 
   const renderDescription = () => {

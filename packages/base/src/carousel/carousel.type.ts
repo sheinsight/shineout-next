@@ -31,7 +31,6 @@ export interface CarouselClasses {
   indicatorNumber?: string;
   indicator?: string;
   indicatorActive?: string;
-  indicatorDot?: string;
 }
 
 /**
