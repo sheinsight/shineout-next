@@ -44,6 +44,11 @@ export interface FormRef<Value> {
    * @cn 重置表单
    */
   reset: () => void;
+  /**
+   * @en set field value, key is field path, Example: { 'name': 'sanmao', 'account.name': 'sanmao'   'friends[0].name': 'sanmao' }
+   * @cn 设置字段值, key为字段路径,示例：{ 'name': 'sanmao', 'account.name': 'sanmao'   'friends[0].name': 'sanmao' }
+   */
+  set: (value: { [key: string]: any }) => void;
 }
 export interface FormProps<V extends ObjectType>
   extends Partial<BaseFormProps<V>>,

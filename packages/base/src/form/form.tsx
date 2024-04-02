@@ -39,6 +39,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     validate,
     validateFields,
     validateFieldsWithError: formFunc.validateFields,
+    set:formFunc.setValue
   });
 
   React.useEffect(() => {
