@@ -8,6 +8,37 @@ import { setConfig } from 'shineout';
 
 import useStyles from '../style';
 
+const devGuide = [
+  {
+    title: {
+      cn: '快速上手',
+      en: 'Quick Start',
+    },
+    name: 'start',
+  },
+  {
+    title: {
+      cn: 'SSR',
+      en: 'SSR',
+    },
+    name: 'ssr',
+  },
+  {
+    title: {
+      cn: '国际化',
+      en: 'Internationalization',
+    },
+    name: 'i18n',
+  },
+  {
+    title: {
+      cn: '自定义 Icon',
+      en: 'Custom Icon',
+    },
+    name: 'icons',
+  },
+];
+
 const MenuComponent = () => {
   const classes = useStyles();
   const state = useSnapshot(store);
@@ -51,30 +82,6 @@ const MenuComponent = () => {
     const componentName = paths[paths.length - 1];
     return componentName;
   }, [location.pathname]);
-
-  const devGuide = [
-    {
-      title: {
-        cn: '快速上手',
-        en: 'Quick Start',
-      },
-      name: 'start',
-    },
-    {
-      title: {
-        cn: 'SSR',
-        en: 'SSR',
-      },
-      name: 'ssr',
-    },
-    {
-      title: {
-        cn: '国际化',
-        en: 'Internationalization',
-      },
-      name: 'i18n',
-    },
-  ];
 
   return (
     <ul className={classes.menu}>
