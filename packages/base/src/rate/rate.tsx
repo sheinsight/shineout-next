@@ -22,8 +22,8 @@ const Rate = (props0: RateProps) => {
   });
 
   const renderIcon = (index: number) => {
-    const front = props.front ?? Icons.PcStarFill;
-    const back = props.background ?? Icons.PcStarFill;
+    const front = props.front ?? Icons.rate.Star;
+    const back = props.background ?? Icons.rate.Star;
 
     const showValue = hoverValue === null ? value : hoverValue;
 

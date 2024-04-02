@@ -45,7 +45,7 @@ const InputNumber = (props: InputNumberProps) => {
             onPlus();
           }}
         >
-          {Icons.ArrowRight}
+          {Icons.input.ArrowRight}
         </span>
         <span
           onMouseDown={(e) => {
@@ -54,7 +54,7 @@ const InputNumber = (props: InputNumberProps) => {
             onMinus();
           }}
         >
-          {Icons.ArrowLeft}
+          {Icons.input.ArrowLeft}
         </span>
       </div>
     </React.Fragment>

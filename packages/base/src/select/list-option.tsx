@@ -32,7 +32,7 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   };
 
   const renderCheckedIcon = () => {
-    return <span className={styles.checkedIcon}>{Icons.Check}</span>;
+    return <span className={styles.checkedIcon}>{Icons.select.Check}</span>;
   };
 
   const result = renderItem(data);

@@ -1,7 +1,6 @@
 import { util } from '@sheinx/hooks';
 import { create } from '@shined/reactive';
 import { getSnapshot } from '@shined/reactive/vanilla';
-import { CaretType } from '../icons/caret.type';
 import { LanType, Direction } from './locale/Props';
 
 export interface ConfigOption {
@@ -10,7 +9,6 @@ export interface ConfigOption {
   delay?: number;
   trim?: boolean;
   spin?: string;
-  caret?: CaretType;
   direction: Direction;
   popupContainer?: HTMLElement | null | (() => HTMLElement | null);
 }
@@ -22,7 +20,6 @@ export let config: ConfigOption = {
   delay: 0,
   trim: undefined,
   spin: undefined,
-  caret: 'line',
   direction: 'ltr',
   popupContainer: null,
 };

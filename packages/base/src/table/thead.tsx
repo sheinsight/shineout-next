@@ -69,7 +69,7 @@ export default (props: TheadProps) => {
                 handleChange(currentOrder === 'asc' ? null : 'asc');
               }}
             >
-              {Icons.TableSortIconUp}
+              {Icons.table.SortUp}
             </div>
             <div
               className={classNames(
@@ -80,7 +80,7 @@ export default (props: TheadProps) => {
                 handleChange(currentOrder === 'desc' ? null : 'desc');
               }}
             >
-              {Icons.TableSortIconDown}
+              {Icons.table.SortDown}
             </div>
           </>
         )}

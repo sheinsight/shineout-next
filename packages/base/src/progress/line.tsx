@@ -74,10 +74,10 @@ const Line = (props: ProgressProps) => {
       {shape === 'line' && children}
       {!!props.icon && (
         <div className={progressClasses?.icon} style={iconStyle}>
-          {type === 'info' && Icons.PcInfoCircleFill}
-          {type === 'warning' && Icons.PcInfoCircleFill}
-          {type === 'success' && Icons.PcCheckCircleFill}
-          {type === 'danger' && Icons.PcCloseCircleFill}
+          {type === 'info' && Icons.progress.InfoLine}
+          {type === 'warning' && Icons.progress.WarningLine}
+          {type === 'success' && Icons.progress.SuccessLine}
+          {type === 'danger' && Icons.progress.DangerLine}
         </div>
       )}
     </div>

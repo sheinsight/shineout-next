@@ -8,7 +8,16 @@ import classNames from 'classnames';
 import Icons from '../icons';
 
 const ImageGroup = (props: ImageGroupProps) => {
-  const { jssStyle, children, target = '_modal', pile, showCount = false, className, style, ...rest } = props;
+  const {
+    jssStyle,
+    children,
+    target = '_modal',
+    pile,
+    showCount = false,
+    className,
+    style,
+    ...rest
+  } = props;
   const { getGroupItemProps, getPileProps } = useImageGroup(props);
   const imageClasses = jssStyle?.image?.() || ({} as ImageClasses);
 
@@ -36,7 +45,7 @@ const ImageGroup = (props: ImageGroupProps) => {
   const renderGroupCount = () => {
     return (
       <div className={classNames(imageClasses?.groupCount)}>
-        {Icons.Pics2}
+        {Icons.image.Pics}
         <span>{Children.count(children)}</span>
       </div>
     );

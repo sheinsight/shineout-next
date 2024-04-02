@@ -10,13 +10,13 @@ export interface AlertIconProps {
 }
 
 const icons = {
-  info: Icons.PcInfoCircleFill,
-  success: Icons.PcCheckCircleFill,
-  warning: Icons.PcWarningCircleFill,
-  danger: Icons.PcWarningCircleFill,
-  confirmwarning: Icons.PcWarningCircleFill,
-  error: Icons.PcWarningCircleFill,
-  confirm: Icons.PcHelpCircleFill,
+  info: Icons.alert.Info,
+  success: Icons.alert.Success,
+  warning: Icons.alert.Warning,
+  danger: Icons.alert.Danger,
+  confirmwarning: Icons.alert.ConfirmWarning,
+  error: Icons.alert.Error,
+  confirm: Icons.alert.Confirm,
 };
 
 const AlertIcon = (props: AlertIconProps) => {

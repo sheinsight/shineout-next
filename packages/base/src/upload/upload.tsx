@@ -21,7 +21,7 @@ const Upload = <T,>(props0: UploadProps<T>) => {
     listType = 'text',
     leftHandler,
   } = props;
-  
+
   const { locale } = useConfig();
   const uploadClasses = props.jssStyle?.upload?.();
   const imageStyle = {
@@ -107,7 +107,9 @@ const Upload = <T,>(props0: UploadProps<T>) => {
           {...wrapperProps}
         >
           {listType === 'image' &&
-            (props.children || <div className={uploadClasses?.imageHandlerIcon}>{icons.Add}</div>)}
+            (props.children || (
+              <div className={uploadClasses?.imageHandlerIcon}>{icons.upload.AddImage}</div>
+            ))}
           {listType === 'text' && props.children}
           <input
             accept={accept}

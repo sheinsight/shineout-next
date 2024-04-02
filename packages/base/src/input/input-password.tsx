@@ -37,7 +37,7 @@ const Password = (props: InputPasswordProps) => {
       {props.suffix}
       {visibilityToggle ? (
         <span {...toggleProps} className={inputStyle?.passwordToggle}>
-          {visibility ? icons.Hide : icons.Display}
+          {visibility ? icons.input.Hide : icons.input.Show}
         </span>
       ) : null}
     </>

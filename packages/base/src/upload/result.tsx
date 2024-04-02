@@ -35,7 +35,7 @@ const Result = (props: ResultProps) => {
     return (
       <>
         <div className={uploadClasses?.resultText}>
-          <div className={uploadClasses?.icon}>{icons.File}</div>
+          <div className={uploadClasses?.icon}>{icons.upload.File}</div>
           <div className={uploadClasses?.resultTextBody}>
             {name}
             {message && <span>({message}) </span>}
@@ -43,8 +43,8 @@ const Result = (props: ResultProps) => {
           <div className={uploadClasses?.resultTextFooter}>
             <div className={classNames(uploadClasses?.icon, uploadClasses?.resultStatusIcon)}>
               {status === 1 && <Spin jssStyle={props.jssStyle} size={10} name={'ring'} />}
-              {status === 2 && icons.PcCheckCircleFill}
-              {status === 3 && icons.PcWarningCircleFill}
+              {status === 2 && icons.upload.Success}
+              {status === 3 && icons.upload.Warning}
             </div>
             {status === 1 && props.process !== -1 && (
               <div>{Math.min(99, Math.floor(props.process || 0))}%</div>
@@ -68,7 +68,7 @@ const Result = (props: ResultProps) => {
                 jssStyle={props.jssStyle}
               />
             )}
-            {status === -1 ? icons.Return : icons.Delete}
+            {status === -1 ? icons.upload.Recover : icons.upload.Delete}
           </div>
         )}
       </>
@@ -84,7 +84,7 @@ const Result = (props: ResultProps) => {
         )}
         onClick={props.onRemove}
       >
-        {status === -1 ? icons.UndeleteOpaque : icons.CloseOpaqueMultic1}
+        {status === -1 ? icons.upload.RecoverImage : icons.upload.DeleteImage}
       </div>
     );
 
@@ -143,7 +143,7 @@ const Result = (props: ResultProps) => {
                   }
                 }}
               >
-                {icons.Preview}
+                {icons.upload.PreviewImage}
               </div>
             )}
             {status === 2 && props.removeAble && (
@@ -159,7 +159,7 @@ const Result = (props: ResultProps) => {
                     jssStyle={props.jssStyle}
                   />
                 )}
-                {icons.Delete}
+                {icons.upload.Delete}
               </div>
             )}
           </div>

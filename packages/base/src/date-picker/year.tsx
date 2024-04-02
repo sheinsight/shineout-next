@@ -89,7 +89,7 @@ const Year = (props: YearProps) => {
       <div className={styles?.pickerHeader}>
         <div className={styles?.pickerHeaderLeft}>
           <span className={styles?.pickerHeaderIcon} onClick={func.handlePrev}>
-            {Icons.AngleDoubleLeft}
+            {Icons.datepicker.ArrowDoubleRight}
           </span>
         </div>
         <div className={styles?.pickerHeaderMid}>
@@ -99,7 +99,7 @@ const Year = (props: YearProps) => {
         </div>
         <div className={styles?.pickerHeaderRight}>
           <span className={styles?.pickerHeaderIcon} onClick={func.handleNext}>
-            {Icons.AngleDoubleRight}
+            {Icons.datepicker.ArrowDoubleRight}
           </span>
         </div>
       </div>

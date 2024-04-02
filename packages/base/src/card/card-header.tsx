@@ -14,7 +14,7 @@ const CardHeader = (props: CardHeaderProps) => {
     if (!collapsible) return null;
     return (
       <div className={cardClasses?.indicator}>
-        <div className={cardClasses?.indicatorIcon}>{Icons.ArrowRight}</div>
+        <div className={cardClasses?.indicatorIcon}>{Icons.card.CollapseArrow}</div>
       </div>
     );
   };

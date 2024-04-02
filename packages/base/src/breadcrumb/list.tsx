@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import AnimationList from '../animation-list';
 import AbsoluteList from '../absolute-list';
 import { usePopup } from '@sheinx/hooks';
-import Caret from '../icons/caret';
+import Icons from '../icons';
 
 import type { BreadcrumbJssStyle } from './breadcrumb.type';
 
@@ -39,7 +39,7 @@ const List = (props: ListProps) => {
   return (
     <div ref={targetRef} {...targetProps} className={classes?.itemWithDrop}>
       {props.renderItem(first)}
-      <div className={classNames(classes?.down, open && classes?.downOpen)}>{<Caret />}</div>
+      <div className={classNames(classes?.down, open && classes?.downOpen)}>{Icons.breadcrumb.DropdownArrow}</div>
       <AbsoluteList
         position={position}
         focus={open}

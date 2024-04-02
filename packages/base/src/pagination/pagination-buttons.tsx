@@ -126,14 +126,14 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
 
   const renderMore = (type: PaginationMoreTypes) => {
     if (type === 'prev' && showPrevMore) {
-      return Icons.ArrowLeftDouble;
+      return Icons.pagination.PrePage;
     }
 
     if (type === 'next' && showNextMore) {
-      return Icons.ArrowRightDouble;
+      return Icons.pagination.NetPage;
     }
 
-    return Icons.More;
+    return Icons.pagination.More;
   };
 
   const renderButtons = () => {
