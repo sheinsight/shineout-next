@@ -6,7 +6,7 @@ import { setConfig } from './config';
 <% const tokens = [] -%>
 <% files.forEach(function (file, i) { -%>
     <% const Comp= getComponentName(file) -%>
-    import <%- Comp %> from './<%= file %>';
+    import <%- Comp %>, { <%- Comp %> as default<%- Comp %> } from './<%= file %>';
     import {  <%- Comp %>Tokens } from './<%= file %>/type';
 
     <%  tokens.push(Comp+'Tokens') -%>
@@ -20,9 +20,16 @@ const Tokens: ThemeTokens = {
 <% }) -%>
 };
 
+const defaultTokens: ThemeTokens = {
+<% files.forEach(function (file, i) { -%>
+    <% const Comp= getComponentName(file) -%>
+    ...default<%- Comp -%>,
+<% }) -%>
+};
+
 export type { TokenType };
 export * from './hooks';
-export { Token, setToken, setConfig };
+export { Token, defaultTokens, setToken, setConfig };
 
 export default Tokens;
 
