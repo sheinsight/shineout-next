@@ -256,6 +256,9 @@ importers:
       dayjs:
         specifier: ^1.11.9
         version: 1.11.9
+      immer:
+        specifier: 10.0.2
+        version: 10.0.2
       react:
         specifier: '>=16.8'
         version: 18.2.0

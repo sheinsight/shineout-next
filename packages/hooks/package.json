@@ -19,7 +19,8 @@
     "date-fns": "2.30.0",
     "dayjs": "^1.11.9",
     "react-fast-compare": "^3.2.2",
-    "@shined/reactive": "^0.1.2"
+    "@shined/reactive": "^0.1.2",
+    "immer": "10.0.2"
   },
   "peerDependencies": {
     "react": ">=16.8",
