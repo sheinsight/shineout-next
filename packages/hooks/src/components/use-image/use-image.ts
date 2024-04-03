@@ -15,7 +15,6 @@ const ERROR = 3;
 
 const useImage = (props: BaseImageProps = {}) => {
   let lazyId: string | null = null;
-  let image = null;
 
   const { container, lazy, src, alt, href, autoSSL, noImgDrag = false, onError } = props;
 
@@ -57,14 +56,11 @@ const useImage = (props: BaseImageProps = {}) => {
       handleAlt();
       return;
     }
-    image = null;
     const img = new window.Image();
     img.onload = () => setStatus(SRC);
     img.onerror = (e) => handleError(SRC, e as Event);
     img.src = getUrl(src);
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    image = img;
   };
 
   const fetchImage = () => {

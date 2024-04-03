@@ -4,6 +4,11 @@ const navHeight = 59;
 
 export default createUseStyles(
   {
+    '@global': {
+      body: {
+        position: 'relative',
+      },
+    },
     desktop: {
       position: 'absolute',
       left: 260,

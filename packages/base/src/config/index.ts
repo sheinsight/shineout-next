@@ -49,10 +49,10 @@ export const useConfig = () => {
 
 export const setConfig = (option: Partial<ConfigOption>) => {
   for (const [key, value] of Object.entries(option)) {
-    if (value && key in state) {
+    if (value && key in config) {
       const k = key as keyof ConfigOption;
       // @ts-ignore
-      state[k] = value;
+      state.mutate[k] = value;
     }
   }
 };
