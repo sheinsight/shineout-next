@@ -186,6 +186,7 @@ const App: React.FC = () => {
 
   const dragEnterHandler = useCallback((e: React.DragEvent) => {
     e.preventDefault();
+    if (!ref.current.dragging) return;
     const tr = findNearestDOM(e.target as HTMLElement, 'TR');
     const index = findIndex(tr);
     setTarget(index);
@@ -195,8 +196,8 @@ const App: React.FC = () => {
     e.preventDefault();
   }, []);
 
-  const dragEndHandler = useCallback((e: React.DragEvent) => {
-    console.log('dragEnd', e.target);
+  const dragEndHandler = useCallback(() => {
+    if (!ref.current.dragging) return;
     ref.current.dragging = false;
     setTarget(null);
   }, []);
@@ -204,6 +205,7 @@ const App: React.FC = () => {
   const dropHandler = useCallback(
     (e: React.DragEvent) => {
       e.preventDefault();
+      if (!ref.current.dragging) return;
       const tr = findNearestDOM(e.target as HTMLTableRowElement, 'TR');
       const start = ref.current.startIndex;
       const end = findIndex(tr);
