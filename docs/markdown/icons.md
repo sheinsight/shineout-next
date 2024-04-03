@@ -11,7 +11,7 @@
 使用 setIcons 方法替换 Icon
 
 ```js
-import { setIcon } from 'shineout'
+import { setIcons } from 'shineout'
 setIcons({
   select: {
     DropdownArrow: <Icon name="angle-down" />,
