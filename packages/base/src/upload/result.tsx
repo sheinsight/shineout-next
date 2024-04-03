@@ -88,7 +88,7 @@ const Result = (props: ResultProps) => {
       </div>
     );
 
-    const errorTip = status === -1 && message && (
+    const errorTip = status === 3 && message && (
       <div className={uploadClasses?.imageResultTip}>{message}</div>
     );
     if (props.customImage) {
