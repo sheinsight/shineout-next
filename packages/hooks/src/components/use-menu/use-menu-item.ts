@@ -16,7 +16,8 @@ const useMenuItem = (props: UseMenuItemProps) => {
   }
   const gopenKeySet = new Set(props.openKeys);
   const isDisabled =
-    typeof props.disabled === 'function' ? props.disabled(dataItem) : !!props.disabled;
+    (dataItem && dataItem.disabled) ||
+    (typeof props.disabled === 'function' ? props.disabled(dataItem) : !!props.disabled);
   const expandAble = dataItem.children && (props.looseChildren || dataItem.children.length > 0);
   const [isChecked, setChecked] = useState(false);
   const [isInPath, setInPath] = useState(false);
