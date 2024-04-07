@@ -274,6 +274,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       keygen={keygen}
       key='more'
       classes={props.classes}
+      jssStyle={props.jssStyle}
       data={result}
       size={size}
       more={moreNumber}
