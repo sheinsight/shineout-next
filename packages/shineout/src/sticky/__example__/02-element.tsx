@@ -25,7 +25,7 @@ const App: React.FC = () => {
           }}
         >
           <div style={{ height: 600 }}></div>
-          <Sticky top={0} bottom={0} target='#sticky_element'>
+          <Sticky top={0} bottom={0} scrollContainer='#sticky_element'>
             <Alert style={{ marginBottom: 0 }} type='info'>
               Sticky to element
             </Alert>

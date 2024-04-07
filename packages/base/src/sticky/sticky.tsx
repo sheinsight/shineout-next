@@ -7,24 +7,25 @@ const { cssSupport } = util;
 const supportSticky = cssSupport('position', 'sticky');
 const defaultZIndex = 900;
 
-const getFirstScrollParent = (el: HTMLElement) => {
-  let parent = el.parentNode as HTMLElement;
-  while (parent) {
-    if (parent === document.body || parent === document.documentElement) {
-      parent = document.body;
-      break;
-    }
-    const { overflowY } = window.getComputedStyle(parent);
-    if (overflowY === 'scroll' || overflowY === 'auto') {
-      break;
-    }
-    parent = parent.parentNode as HTMLElement;
-  }
-  return parent;
-};
+// const getFirstScrollParent = (el: HTMLElement) => {
+//   let parent = el.parentNode as HTMLElement;
+//   while (parent) {
+//     if (parent === document.body || parent === document.documentElement) {
+//       parent = document.body;
+//       break;
+//     }
+//     const { overflowY } = window.getComputedStyle(parent);
+//     if (overflowY === 'scroll' || overflowY === 'auto') {
+//       break;
+//     }
+//     parent = parent.parentNode as HTMLElement;
+//   }
+//   return parent;
+// };
 
 const Sticky = (props: StickyProps) => {
-  const { css, children, top, bottom } = props;
+  const { children, top, bottom } = props;
+  const css = props.css || props.target;
   const { current: context } = useRef({
     target: null as HTMLElement | null,
     div: null as HTMLElement | null,
@@ -42,15 +43,15 @@ const Sticky = (props: StickyProps) => {
   const elementSize = useResize({ targetRef: elementRef, timer: 0 });
 
   const getTarget = () => {
-    let { target } = props;
-    if (typeof props.target === 'string') {
-      target = document.querySelector(props.target) as HTMLElement;
+    let { scrollContainer } = props;
+    if (typeof scrollContainer === 'string') {
+      scrollContainer = document.querySelector(scrollContainer) as HTMLElement;
     }
     // 判断是否是dom元素
-    if (target && (target as HTMLElement).nodeType === 1) {
-      return target as HTMLElement;
+    if (scrollContainer && (scrollContainer as HTMLElement).nodeType === 1) {
+      return scrollContainer as HTMLElement;
     }
-    return getFirstScrollParent(elementRef.current!);
+    return document.body;
   };
 
   const updateStyle = usePersistFn(() => {
@@ -147,7 +148,7 @@ const Sticky = (props: StickyProps) => {
 
   const createObserver = () => {
     const target = getTarget();
-    if (!context.div) {
+    if (!context.div && target !== document.body) {
       context.div = document.createElement('div');
       context.div.style.position = 'relative';
     }
@@ -155,18 +156,21 @@ const Sticky = (props: StickyProps) => {
       forceRender();
       context.target = target;
       cleanEvents();
-      if (target === document.body) {
-        document.body.appendChild(context.div);
-      } else {
-        target.parentNode!.insertBefore(context.div, target);
-      }
-      const style = window.getComputedStyle(target);
-      if (style.position === 'absolute' || style.position === 'fixed') {
-        context.div.style.position = style.position;
-        context.div.style.top = style.top;
-        context.div.style.left = style.left;
-        context.div.style.right = style.right;
-        context.div.style.bottom = style.bottom;
+      if (context.div) {
+        // append div
+        if (target === document.body) {
+          document.body.appendChild(context.div);
+        } else {
+          target.parentNode!.insertBefore(context.div, target);
+        }
+        const style = window.getComputedStyle(target);
+        if (style.position === 'absolute' || style.position === 'fixed') {
+          context.div.style.position = style.position;
+          context.div.style.top = style.top;
+          context.div.style.left = style.left;
+          context.div.style.right = style.right;
+          context.div.style.bottom = style.bottom;
+        }
       }
       if (window.IntersectionObserver) {
         const observer = new IntersectionObserver(handlePosition, {
@@ -242,9 +246,14 @@ const Sticky = (props: StickyProps) => {
         </div>
       </div>
     ) : null;
+
+  const isFixed = style.position === 'fixed';
+
   return (
     <>
-      {context.target && context.div && createPortal(StickyEl, context.div as HTMLElement)}
+      {isFixed
+        ? StickyEl
+        : context.target && context.div && createPortal(StickyEl, context.div as HTMLElement)}
       <div
         className={props.className}
         style={{
