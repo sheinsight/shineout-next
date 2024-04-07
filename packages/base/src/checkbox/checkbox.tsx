@@ -19,6 +19,11 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
   } = props;
   const checkboxStyle = jssStyle?.checkbox?.();
 
+  let disabled = props.disabled;
+  if (htmlValue !== undefined && typeof disabled === 'function') {
+    disabled = (disabled as any)(htmlValue);
+  }
+
   const { onChange, value } = useInputAble({
     value: valuePo,
     defaultValue: defaultValuePo,
@@ -63,6 +68,7 @@ const Checkbox = <T,>(props: CheckboxProps<T>) => {
     <SimpleCheckbox
       jssStyle={jssStyle}
       {...rest}
+      disabled={disabled}
       checked={getChecked()}
       onChange={handleChange}
       renderFooter={(c) => {
