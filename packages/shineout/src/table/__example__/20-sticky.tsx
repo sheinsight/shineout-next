@@ -41,7 +41,7 @@ const columns: TableColumnItem[] = [
 ];
 
 const App: React.FC = () => {
-  return <Table sticky={{ top: 190 }} data={data} columns={columns} keygen='id' />;
+  return <Table sticky={{ top: 80 }} data={data} columns={columns} keygen='id' />;
 };
 
 export default App;
