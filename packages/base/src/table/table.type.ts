@@ -297,10 +297,11 @@ export interface TableProps<DataItem, Value>
    */
   summary?: SummaryItem[][] | SummaryItem[];
   /**
-   * @en sticky header, When it is true, the distance from the top is 0. When it is an object, the attribute value reference [Sticky component](/components/Sticky)
-   * @cn 表头是否附着顶部，为 true 时距离顶部为0，为对象时属性值参考 [Sticky](/components/Sticky) 组件
+   * @en sticky header, When it is true, the distance from the top is 0
+   * @cn 表头是否附着顶部，为 true 时距离顶部为0
+   *
    */
-  sticky?: boolean | { top: number };
+  sticky?: boolean | { top?: number; css?: boolean };
   /**
    * @en Table instance (please use with caution: only fixed Table)
    * @cn Table 实例（请谨慎使用：仅虚拟列表支持）
