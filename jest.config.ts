@@ -13,26 +13,16 @@ function createTesterConfig(namespace: string): Config.InitialOptions {
     testPathIgnorePatterns: ['/node_modules/', `/dist/`],
     testEnvironment: 'jsdom',
     cacheDirectory: `./node_modules/.cache/jest`,
-    // transform: {
-    //   '\\.[j|t]sx?$': [
-    //     '@swc/jest',
-    //     {
-    //       jsc: {
-    //         transform: { react: { runtime: 'automatic' } },
-    //       },
-    //     },
-    //   ],
-    // },
     // modulePathIgnorePatterns: [
     //   '<rootDir>/packages-infra/compiled-utils/compiled/',
     // ],
     transformIgnorePatterns: [
-      `<rootDir>/${namespace}/node_modules/`,
       `<rootDir>/*/dist/`,
-      'node_modules/',
+      'node_modules/core-js',
+      'node_modules/.pnpm/*/core-js',
     ],
     // moduleNameMapper: {
-    //   '^(\\.{1,2}/.*)\\.js$': '$1',
+    //   'core-js': '<rootDir>/node_modules/.pnpm/core-js@3.33.3/node_modules/core-js',
     // },
   };
 }
