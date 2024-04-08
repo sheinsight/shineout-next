@@ -4,7 +4,7 @@
  * en - Sticky header
  *    -- The sticky property will enable the sticky header feature; when sticky=true, the header will be attached to the top; when sticky=number, it means that the header is attached to the top and the distance from the top; when sticky=StickyProps, the parameters will be passed to the Sticky component; the switchToTop property supports whether to automatically scroll to Tabs
  */
-import React, {useRef} from 'react'
+import React, { useRef } from 'react';
 import { Tabs } from 'shineout';
 
 const App: React.FC = () => {
@@ -16,7 +16,7 @@ const App: React.FC = () => {
 
   return (
     <div style={{ position: 'relative', zIndex: 0 }}>
-      <div id='sticky_element' ref={Element} style={{ height: 400, overflow: 'auto' }}>
+      <div id='sticky_element' style={{ height: 400, overflow: 'auto' }}>
         <div
           style={{
             height: 1600,
@@ -29,15 +29,27 @@ const App: React.FC = () => {
           }}
         >
           <div style={{ height: 200 }}></div>
-          <Tabs shape='line' defaultActive={0} sticky style={{ backgroundColor: '#fff' }} inactiveBackground='#fff'>
-            {tabs.map((tab, index) => {
-              return (
-                <Tabs.Panel key={index} tab={tab.title}>
-                  <div style={{ padding: 16, height: 100, fontSize: 14 }}>{tab.content}</div>
-                </Tabs.Panel>
-              );
-            })}
-          </Tabs>
+          <div ref={Element}>
+            <Tabs
+              shape='line'
+              defaultActive={0}
+              sticky={{
+                scrollContainer: '#sticky_element',
+                parent: Element.current,
+                top: 0,
+              }}
+              style={{ backgroundColor: '#fff' }}
+              inactiveBackground='#fff'
+            >
+              {tabs.map((tab, index) => {
+                return (
+                  <Tabs.Panel key={index} tab={tab.title}>
+                    <div style={{ padding: 16, height: 100, fontSize: 14 }}>{tab.content}</div>
+                  </Tabs.Panel>
+                );
+              })}
+            </Tabs>
+          </div>
         </div>
       </div>
     </div>
