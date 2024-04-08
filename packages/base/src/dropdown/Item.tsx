@@ -18,6 +18,11 @@ interface ItemLinkProps {
   style?: React.CSSProperties;
 }
 
+interface Props {
+  className?: string;
+  [key: string]: any;
+}
+
 class Item extends React.PureComponent<ItemProps> {
   static defaultProps = DefaultProps;
 
@@ -58,7 +63,14 @@ class Item extends React.PureComponent<ItemProps> {
     }
 
     if (isValidElement(content)) {
-      return cloneElement(content, Object.assign(props, content.props));
+      const { className: propsClassName = '', ...otherProps } = props as Props;
+      const { className: contentPropsClassName = '', ...otherContentProps } = content.props as Props;
+
+      const classNames = [propsClassName, contentPropsClassName].filter(Boolean).join(' ');
+
+      return cloneElement(content, Object.assign(otherProps, otherContentProps, {
+        className: classNames
+      }));
     }
 
     return <a {...props}>{content}</a>;
