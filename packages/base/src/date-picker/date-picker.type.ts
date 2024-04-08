@@ -226,7 +226,9 @@ export interface DatePickerProps<Value extends DatePickerValueType>
    */
   allowSingle?: boolean;
   /**
-   * @deprecated 废弃属性
+   * @cn 是否展示边框
+   * @en Whether to display border
+   * @default true
    */
   border?: boolean;
   /**

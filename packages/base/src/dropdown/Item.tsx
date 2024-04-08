@@ -3,6 +3,7 @@
 import React, { cloneElement, isValidElement } from 'react';
 import { util } from '@sheinx/hooks';
 import { DropdownNode, ItemProps } from './dropdown.type';
+import classNames from 'classnames';
 
 const DefaultProps = {
   data: {},
@@ -16,6 +17,11 @@ interface ItemLinkProps {
   disabled?: boolean;
   onClick?: (e: React.MouseEvent) => void;
   style?: React.CSSProperties;
+}
+
+interface Props {
+  className?: string;
+  [key: string]: any;
 }
 
 class Item extends React.PureComponent<ItemProps> {
@@ -58,7 +64,14 @@ class Item extends React.PureComponent<ItemProps> {
     }
 
     if (isValidElement(content)) {
-      return cloneElement(content, Object.assign(props, content.props));
+      const { className: propsClassName = '', ...otherProps } = props as Props;
+      const { className: contentPropsClassName = '', ...otherContentProps } = content.props as Props;
+
+      const className = classNames(propsClassName, contentPropsClassName);
+
+      return cloneElement(content, Object.assign(otherProps, otherContentProps, {
+        className
+      }));
     }
 
     return <a {...props}>{content}</a>;
