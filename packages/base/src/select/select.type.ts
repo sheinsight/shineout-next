@@ -231,7 +231,9 @@ export interface SelectPropsBase<DataItem, Value>
   ) => React.ReactNode;
 
   /**
-   * @deprecated 已弃用
+   * @cn 是否展示边框
+   * @en Whether to display border
+   * @default true
    */
   border?: boolean;
 
