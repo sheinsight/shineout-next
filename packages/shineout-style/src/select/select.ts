@@ -424,6 +424,7 @@ const selectStyle: JsStyles<SelectClassType> = {
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     fontSize: token.selectFontSize,
+    lineHeight: token.lineHeightDynamic,
     padding: `${token.selectOptionInnerPaddingY} ${token.selectOptionInnerPaddingX}`,
     borderRadius: token.selectOptionInnerBorderRadius,
   },
@@ -453,6 +454,7 @@ const selectStyle: JsStyles<SelectClassType> = {
   optionGroup: {},
   optionGroupTitle: {
     fontSize: token.selectGroupTitleFontSize,
+    lineHeight: token.lineHeightDynamic,
     padding: `${token.selectGroupTitlePaddingTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitlePaddingBottom} ${token.selectGroupTitlePaddingX}`,
     color: token.selectGroupTitleFontColor,
   },

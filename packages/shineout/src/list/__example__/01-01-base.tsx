@@ -1,6 +1,6 @@
 /**
  * cn - 基本用法
- *    -- 基础的List用法
+ *    -- 基础的 List 用法
  * en - Base
  *    -- Basic List usage
  */
