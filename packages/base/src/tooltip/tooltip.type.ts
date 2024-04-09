@@ -70,4 +70,10 @@ export interface TooltipProps
    * @default default
    */
   type?: 'default' | 'light' | 'primary' | 'success' | 'warning' | 'danger';
+  /**
+   * @en Z-index of popover
+   * @cn tooltip 层级
+   * @default 1051
+   */
+  zIndex?: number
 }
