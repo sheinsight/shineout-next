@@ -20,6 +20,7 @@
 ### 废弃的特性
 
 ### 功能改进
+
 - Table
   - 支持非虚拟列表的 Table 单独开启固定列
   - 重构了虚拟列表 
@@ -31,5 +32,8 @@
 - Sticky
   - 新增 `parent` 指定 sticky 的父元素当，父元素离开视口时，sticky 元素也会消失
   - 重构了 sticky 的实现，支持更多的场景，性能更好。
+- Button
+  - 新增 `renderLoading` 属性，支持自定义 loading 的渲染
 - Card
-  - Card 
+  - Card 新增 `Split` 属性，支持展示和隐藏分割线
+  - Card.Header 新增 `Extra` 属性，支持在头部右侧添加额外内容
