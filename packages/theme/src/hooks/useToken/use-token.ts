@@ -28,7 +28,7 @@ const useToken = (props?: useTokenProps) => {
   const baseToken: { [token: string]: string } = {};
 
   Object.keys(Token).forEach((key: string) => {
-    const k = key.replace('-', '_').toLocaleLowerCase();
+    const k = key.replace(/-/g, '_').toLocaleLowerCase();
     if (/^\d/.test(k)) {
       return;
     }
