@@ -22,7 +22,7 @@ const App: React.FC = () => {
       }}
     >
       <div style={{ height: 300 }}></div>
-      <Sticky bottom={0} parent={elRef.current}>
+      <Sticky bottom={0} scrollContainer='#layout' parent={elRef.current}>
         <Alert style={{ marginBottom: 0 }}>Sticky at bottom.</Alert>
       </Sticky>
     </div>

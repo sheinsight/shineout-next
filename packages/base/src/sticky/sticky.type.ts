@@ -21,10 +21,15 @@ export interface StickyProps extends Pick<CommonType, 'className' | 'style'> {
   bottom?: number;
 
   /**
+   * @deprecated use scrollContainer
+   */
+  target?: string | HTMLElement | null;
+
+  /**
    * @en Custom attachment target. You can pass in HTMLElement or css selector. The target must be an ancestor node of the Sticky component
    * @cn 自定义附着的目标。可以传入 HTMLElement 或者 css selector，target 必须为 Sticky 组件的祖先节点
    */
-  target?: string | HTMLElement | null;
+  scrollContainer?: string | HTMLElement | null;
 
   /**
    * @cn sticky 父级元素, 当父元素离开视窗时，sticky 将失效

@@ -5,6 +5,7 @@ import Spin from '../spin';
 import Pagination, { PaginationProps } from '../pagination';
 import AbsoluteContext from '../absolute-list/absolute-context';
 import Empty from '../empty';
+import Sticky from '../sticky';
 import {
   useTableLayout,
   useTableColumns,
@@ -41,6 +42,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   const theadRef = useRef<HTMLTableElement | null>(null);
   const tfootRef = useRef<HTMLTableElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const tableRef = useRef<HTMLDivElement | null>(null);
 
   const virtual =
     props.data?.length &&
@@ -372,19 +374,26 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         </div>
       );
 
-    const sticky = props.sticky === true ? { top: 0 } : props.sticky || { top: undefined };
-    const top = sticky.top;
-    let stickyStyle =
-      top !== undefined ? ({ top, position: 'sticky' } as React.CSSProperties) : undefined;
+    const Wrapper = props.sticky ? Sticky : React.Fragment;
+    const sticky = typeof props.sticky === 'object' ? props.sticky : { top: 0 };
+    const stickyProps = {
+      // @ts-ignore
+      target: sticky?.target,
+      top: sticky?.top ?? 0,
+      css: sticky?.css,
+      parent: tableRef?.current,
+    };
     return (
       <>
         {!props.hideHeader && (
-          <div className={headWrapperClass} style={stickyStyle}>
-            <table style={{ width }} ref={theadRef}>
-              {Group}
-              {<Thead {...headCommonProps} />}
-            </table>
-          </div>
+          <Wrapper {...(props.sticky ? stickyProps : {})}>
+            <div className={headWrapperClass}>
+              <table style={{ width }} ref={theadRef}>
+                {Group}
+                {<Thead {...headCommonProps} />}
+              </table>
+            </div>
+          </Wrapper>
         )}
         <div
           ref={scrollRef}
@@ -499,6 +508,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         )}
         style={{ height: props.height, ...props.style }}
         {...selection.getTableProps()}
+        ref={tableRef}
       >
         <AbsoluteContext.Provider value={true}>
           {renderTable()}
