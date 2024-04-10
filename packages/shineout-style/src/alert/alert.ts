@@ -134,6 +134,7 @@ const alertStyle: JsStyles<keyof AlertClasses> = {
   warningIcon: { color: Token.alertWarningFontColor },
   confirmwarningIcon: { color: Token.alertDangerFontColor },
   dangerIcon: { color: Token.alertDangerFontColor },
+  confirmIcon: { color: Token.alertWarningFontColor },
   noBordered: {
     borderColor: 'transparent',
   },

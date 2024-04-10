@@ -18,6 +18,7 @@ export interface AlertClasses {
   warningIcon: string;
   confirmwarningIcon: string;
   dangerIcon: string;
+  confirmIcon: string;
   pending: string;
   noBordered: string;
 }
