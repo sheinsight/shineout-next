@@ -14,6 +14,7 @@ const Tooltip = (props: TooltipProps) => {
     jssStyle,
     className,
     style,
+    zIndex,
     type = 'default',
     position: popsitionProps = 'bottom',
   } = props;
@@ -72,6 +73,7 @@ const Tooltip = (props: TooltipProps) => {
         position={position}
         fixedWidth={false}
         popupGap={0}
+        zIndex={zIndex}
       >
         <div
           className={classNames(
