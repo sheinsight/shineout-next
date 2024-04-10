@@ -379,4 +379,4 @@ if (typeof window !== 'undefined') {
   document.head.appendChild(link);
 }
 
-setToken({ onlyExtra: true, tokenName: 'shineout-extra' });
+setToken({ onlyExtra: true, tokenName: 'shineout-extra', selector: 'html' });

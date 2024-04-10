@@ -44,15 +44,6 @@ createRoot(document.getElementById('root')).render(
 );
 ```
 
-```js:react
-  <iframe src="https://codesandbox.io/embed/c585ck?view=Editor+%2B+Preview&module=%2Fsrc%2Findex.js"
-     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="getStart"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-```
-
 ## 按需加载
 
 `shineout` 的组件默认支持 `tree shaking`, 使用 `import { Button } from 'shineout';` 方式引入即可按需加载。

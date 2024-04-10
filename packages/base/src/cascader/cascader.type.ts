@@ -302,10 +302,7 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @cn 占位符
    */
   placeholder?: string;
-  /**
-   * @private 内部属性
-   */
-  trim?: boolean;
+ 
   /**
    * @en empty input after select value
    * @cn 选中后是否清空输入框内容
@@ -323,12 +320,6 @@ export interface CascaderProps<DataItem, Value extends KeygenResult[]>
    * @cn 是否只展示下边框
    */
   underline?: boolean;
-
-  /**
-   * @en The maximum length of the input string in the Select input box
-   * @cn Select 输入框输入字符串最大长度
-   */
-  maxLength?: number;
   /**
    * @en The className of the selected result content container
    * @cn 选中结果内容容器的className

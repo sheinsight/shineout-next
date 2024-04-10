@@ -39,7 +39,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     height,
     className,
     hideTag = false,
-    maxLength,
     defaultValue,
     wideMatch,
     unmatch = true,
@@ -55,7 +54,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     disabled,
     clearable,
     underline,
-    trim,
     loading,
     singleRemove = false,
     loader,
@@ -260,7 +258,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     if (from !== 'blur') {
       focusAndOpen();
     }
-    onFilter?.(trim ? text.trim() : text);
+    onFilter?.(text);
   };
 
   // path change
@@ -460,7 +458,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     const result = (
       <div className={classNames(styles?.result)}>
         <Result<DataItem, Value>
-          trim={trim}
           jssStyle={jssStyle}
           size={size}
           value={value}
@@ -470,7 +467,6 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           focus={open}
           keygen={keygen}
           disabled={disabled}
-          maxLength={maxLength}
           compressed={compressed}
           compressedBound={compressedBound}
           compressedClassName={compressedClassName}

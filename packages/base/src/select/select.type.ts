@@ -182,13 +182,6 @@ export interface SelectPropsBase<DataItem, Value>
   value?: Value;
 
   /**
-   * @en Allow enter something into DatePicker
-   * @cn 可输入
-   * @default false
-   */
-  inputable?: boolean;
-
-  /**
    * @en If clearable is true, show clear value icon
    * @cn 是否显示清除数据图标
    * @default false
@@ -498,7 +491,7 @@ export interface SelectPropsBase<DataItem, Value>
    * @en Added a new API, which is used to compare whether the same data already exists when onFilter and onCreate are turned on. By default, the input value is compared with the keygen value
    * @cn 新增 api ，开启 onFilter 和 onCreate 时，用于比对是否已经存在相同的数据，默认用输入的值和 keygen 值比对
    */
-  onFilterWidthCreate?: (data: DataItem, createdData: DataItem, key: string | number) => boolean;
+  // onFilterWidthCreate?: (data: DataItem, createdData: DataItem, key: string | number) => boolean;
 
   /**
    * @en empty input after select value

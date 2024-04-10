@@ -46,14 +46,31 @@ const useStyles = createUseStyles(
         },
         '& th, & td': { padding: 10 },
       },
+      '& li': {
+        lineHeight: 2,
+        color: 'rgb( 78,89,105 )',
+      },
       '& ul': {
-        listStyle: 'none',
-        padding: 0,
+        paddingLeft: '24px',
+        margin: 0,
+        listStyle: 'circle',
+        '& ul': {
+          marginBottom: 0,
+          marginTop: 0,
+          listStyleType: 'disc',
+          '& ul': {
+            listStyleType: 'square',
+          },
+        },
       },
       '& code, & $tag': {
         fontFamily: 'Menlo, Consola',
         fontSize: '12px',
+        borderRadius: '4px',
       },
+    },
+    noPadding: {
+      padding: 0,
     },
     head: {
       borderBottom: '1px solid rgb(229, 230, 235)',
@@ -83,6 +100,7 @@ const useStyles = createUseStyles(
       backgroundColor: `${codeBg}!important`,
     },
   },
+ 
   { name: 'Doc' },
 );
 
@@ -135,15 +153,15 @@ const Md = (props: { children: string; className: string }) => {
   );
 };
 
-const Content = (props: { children: string }) => {
-  const { children: markdown } = props;
+export const MarkdownWrapper = (props: { children: string; noPadding?: boolean }) => {
+  const { children: markdown, noPadding } = props;
   const classes = useStyles();
   const headReg = /`````([\s\S]+)`````/;
   const match = markdown.match(headReg);
   const headContent = match ? match[1] : '';
   const bodyContent = markdown.replace(headReg, '');
   return (
-    <div className={classes.wrapper}>
+    <div className={classnames(classes.wrapper, noPadding && classes.noPadding)}>
       {headContent && <Md className={classes.head}>{headContent}</Md>}
       {bodyContent && <Md className={classes.body}>{bodyContent}</Md>}
     </div>
@@ -153,7 +171,7 @@ const Content = (props: { children: string }) => {
 const Doc = () => {
   const params = useParams();
   const markdown = require(`!!raw-loader!./${params.comp}.md`).default;
-  return <Content>{markdown}</Content>;
+  return <MarkdownWrapper>{markdown}</MarkdownWrapper>;
 };
 
 export default Doc;

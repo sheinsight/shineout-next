@@ -1,9 +1,10 @@
 /**
  * cn - 斑马纹
- *    -- 基础的List用法
- * en - Base
- *    -- Basic List usage
+ *    -- 设置 `striped` 开启斑马纹
+ * en - Striped
+ *    -- Set `striped` to enable striped effect
  */
+
 import React from 'react';
 import { List, TYPE } from 'shineout';
 
