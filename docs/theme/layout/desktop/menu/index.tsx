@@ -37,6 +37,13 @@ const devGuide = [
     },
     name: 'icons',
   },
+  {
+    title: {
+      cn: '更新日志',
+      en: 'Changelog',
+    },
+    name: 'changelog',
+  },
 ];
 
 const MenuComponent = () => {

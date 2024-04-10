@@ -41,12 +41,12 @@ const Desktop = () => {
       children: [],
     },
     {
-      path: ':name/changelog',
-      element: <Changelog />,
-    },
-    {
       path: ':name/debugger',
       element: <Debugger />,
+    },
+    {
+      path: ':lan/doc/:project/changelog',
+      element: <Changelog />,
     },
     {
       path: ':lan/doc/:project/:comp',
