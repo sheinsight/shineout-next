@@ -417,6 +417,7 @@ const treeSelectStyle: JsStyles<TreeSelectClassType> = {
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     fontSize: token.treeSelectFontSize,
+    lineHeight: token.lineHeightDynamic,
     padding: `${token.treeSelectOptionInnerPaddingY} ${token.treeSelectOptionInnerPaddingX}`,
     borderRadius: token.treeSelectOptionInnerBorderRadius,
   },

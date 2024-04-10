@@ -99,7 +99,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onFocus,
     onCollapse: onCollapseProp,
     onEnterExpand,
-    onFilterWidthCreate,
+    // onFilterWidthCreate,
     filterSameChange,
   } = props;
 
@@ -138,7 +138,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onAdvancedFilter: 'onAdvancedFilter' in props,
     onCreate: onCreateProp,
     onFilter: props.onAdvancedFilter || onFilterProp,
-    onFilterWidthCreate,
+    // onFilterWidthCreate,
     filterDelay: props.filterDelay,
   });
 

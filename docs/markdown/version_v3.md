@@ -1,0 +1,122 @@
+### 主要更新
+- 使用全新的设计语言，更注重细节交互，更加符合现代审美
+- 新增了 Description、Step、Collpase、Empty 四个组件
+- 支持 React18
+- 支持 SSR 场景
+- 使用 css-in-jss 对于微前端更友好
+- 使用 React Hook 重写了绝大多数的组件，同时对冗余、低效的代码逻辑进行优化提升组件性能和稳定性
+- 对 VirtualList 和 Sticky 进行了完全重构，性能更好，体验几乎和原生一致
+- 移除了 2.x 版本中不合理的属性设计，精简使用逻辑，新增部分组件用法，覆盖更多的业务使用场景
+
+
+### 设计变化
+- 统一了色系 、字体、间距、阴影、圆角等设计规范。
+- 优化了一些交互细节，提升了用户体验 比如 DatePicker 的选择，Table 的合并行选择等
+- 增加了设计指南提供了更多的使用示例和最佳实践
+- 文字行高更改为字号 + 8px
+
+### 不兼容改动
+
+### 废弃的特性
+- Tabs
+  - 移除 `border` 属性，使用 `splitColor` 代替
+  - 移除 `tabBarExtraContent` 属性，使用 `extra` 代替
+  - 移除 `align` 属性，使用 `position` 代替
+  - 移除 `background` 属性，使用 `activeBackGround` 代替
+
+
+### 功能改进
+
+- Table
+  - 支持非虚拟列表的 Table 单独开启固定列
+  - 重构了虚拟列表 
+    - 列表滚动更丝滑（原生滚动条的体验）
+    - 解决了内部元素无法滚动问题
+    - 解决滚动到边界无法触发外部滚动问题
+    - 解决在 mac 下滚动可能导致浏览器跳转页面的问题
+  - 优化合并行的高效果
+- Sticky
+  - 新增 `parent` 指定 sticky 的父元素当，父元素离开视口时，sticky 元素也会消失
+  - 重构了 sticky 的实现，支持更多的场景，性能更好。
+- Button
+  - 新增 `renderLoading` 属性，支持自定义 loading 的渲染
+- Card
+  - Card 新增 `Split` 属性，支持展示和隐藏分割线
+  - Card.Header 新增 `Extra` 属性，支持在头部右侧添加额外内容
+- Carousel
+  - `indicatorPosition` 属性新增 "outer" 选项，支持指示器在轮播图外部显示
+  - `indicatorType` 属性新增 "number" 选项，支持指示器显示数字
+- Image
+  - Image.Group 新增 `showCount` 属性，支持显示图片数量
+- List
+  - 增加 `striped` 属性，支持斑马纹
+- Tag
+  - 新增多个内置颜色 `color` 属性
+  - 新增 `size` 属性，支持设置标签大小
+  - 新增 `mode` 属性，支持亮色、填充、线框、亮色线框四种模式
+  - 新增 `shape` 属性，支持圆角标签
+- Tooltip
+  - 新增 `trigger = "focus"` 属性，支持聚焦触发
+  - 新增 `type` 属性，支持多种主题色
+- Tree
+  - 新增 `inlineNode` 属性，支持节点是否内联
+  - 新增 `highlight` 属性，点击节点高亮
+- Cascader
+  - 新增 `compressedClassName` 属性，设置多选合并展示弹出框的类名
+  - 新增 `focusSelected` 属性，onFilter 在多选情况下点击选项后是否选中过滤文本
+  - 新增 `hideTag` 属性, 隐藏标签样式，默认情况下展示结果以标签模式分割，隐藏标签样式后可通过自定义 renderResult 渲染分割结果
+  - 新增 `resultClassName` 属性, 选中内容容器的className
+- Checkbox
+  - 新增 `size` 属性，支持多个尺寸
+  - 新增 `defaultChecked` 属性，用于设置默认选中状态
+- DatePicker
+  - 优化快速选择每次点击都可以获取最新的时间
+  - 新增 `showTime` 属性，支持选择时间
+  - 新增 `showSelNow` 属性，支持快捷选择当前时间
+  - 新增交互鼠标悬浮选项显示日期时间结果
+  - 选择周模式下第一列显示周数
+  - 选择时间面板重新设计，选取时间更加便捷
+  - disabled 支持传数组，支持分别设置开始和结束时间的禁用
+  - 优化范围选择面板的高亮和禁用样式。
+  - 修复了之前版本 value 不变仍然可以修改的问题
+- Form
+  - FormRef 新增 set 方法用于设置表单字段值
+- Input
+  - 新增 `clearIcon` 属性，支持清空按钮
+  - 新增 `prefix` 和 `suffix` 属性，支持前缀和后缀
+- Radio
+  - 新增 `size` 属性，支持多个尺寸
+- Rate
+  - 增加鼠标悬浮的交互动画
+- Select
+  - 新增 `footer` 属性，支持底部插槽
+- Slider
+  - 完全重构了代码逻辑，优化交互
+  - 支持双滑可以无限制滑动
+  - 修复背景色重叠的问题
+  - 新增 `tipType = 'hover'` 属性，鼠标悬浮时显示当前值
+- Textarea
+  - 新增 `textareaRef` 属性，支持获取 textarea 的 ref
+- Transfer
+  - 新增 `searchPlaceholder` 属性，设置搜索框占位
+  - 新增 `simple` 属性，支持简单模式
+  - 新增 `size` 属性，支持多个尺寸
+- TreeSelect
+  - 新增 `compressedClassName` 属性，设置搜索框占位
+  - 新增 `trim` 属性，支持失去焦点时会自动删除空白字符
+  - 新增 `resultClassName` 属性，选中结果内容容器的className
+  - 新增 `emptyText` 属性，自定义 empty 文案
+  - 新增 `showArrow` 属性，是否展示箭头
+  - 新增 `focusSelected` 属性，onFilter 在多选情况下点击选项后是否选中过滤文本
+- Upload
+  - Upload 新增 `listType` 属性，用于切换列表类型
+- Alert 
+  - 新增 `bordered` 属性，是否显示边框
+  - 新增 `closable` 属性，配置是否可以关闭
+  - 新增 `title` 属性，配置标题
+
+
+
+
+
+

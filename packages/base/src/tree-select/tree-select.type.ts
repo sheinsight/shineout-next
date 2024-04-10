@@ -334,11 +334,6 @@ export interface TreeSelectProps<DataItem, Value>
    */
   loader?: (key: KeygenResult, data: DataItem) => void;
   /**
-   * @en The maximum length of the input string in the Select input box
-   * @cn Select 输入框输入字符串最大长度
-   */
-  maxLength?: number;
-  /**
    * @en default expanded nodes
    * @cn 默认展开的节点 key（非受控）
    * @override (string | number)[]

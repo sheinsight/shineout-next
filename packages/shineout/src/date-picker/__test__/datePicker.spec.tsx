@@ -37,7 +37,7 @@ import DatePickerAbsolute from '../__example__/13-absolute';
 import DatePickerInnerTitle from '../__example__/14-innerTitle';
 import DatePickerPosition from '../__example__/14-position';
 import DatePickerTimezone from '../__example__/15-timezone';
-import DatePickerClearableWithUndefine from '../__example__/16-clearable';
+import DatePickerClearableWithUndefine from '../__example__/16-clearable-02';
 import DatePickerDefaultPicker from '../__example__/17-default-picker';
 import DatePickerAllowSingle from '../__example__/18-allow-single';
 import DatePickerFormat from '../__example__/19-format';
