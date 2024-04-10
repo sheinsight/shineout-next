@@ -5,7 +5,7 @@ import { useTabsContext } from '@sheinx/hooks';
 import { TabsPanelProps } from './tabs-panel.type';
 
 const TabsPanel = (props: TabsPanelProps) => {
-  const { children, id, className, jssStyle } = props;
+  const { children, id, className, style, color, jssStyle } = props;
   const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
   const { active, lazy } = useTabsContext();
@@ -23,7 +23,16 @@ const TabsPanel = (props: TabsPanelProps) => {
     [panelStyle.show]: isActive,
   });
 
-  return <div className={panelClass}>{children}</div>;
+  const styles: React.CSSProperties = {
+    color,
+    ...style,
+  };
+
+  return (
+    <div className={panelClass} style={styles}>
+      {children}
+    </div>
+  );
 };
 
 export default TabsPanel;
