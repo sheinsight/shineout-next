@@ -5,7 +5,7 @@ import { useTabsContext } from '@sheinx/hooks';
 import { TabsPanelProps } from './tabs-panel.type';
 
 const TabsPanel = (props: TabsPanelProps) => {
-  const { children, id, jssStyle } = props;
+  const { children, id, className, style, color, jssStyle } = props;
   const panelStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
 
   const { active, lazy } = useTabsContext();
@@ -19,11 +19,20 @@ const TabsPanel = (props: TabsPanelProps) => {
   // 首次不加载，一旦加载后常驻
   keekAlive.current = true;
 
-  const panelClass = classNames(panelStyle.panel, {
+  const panelClass = classNames(className, panelStyle.panel, {
     [panelStyle.show]: isActive,
   });
 
-  return <div className={panelClass}>{children}</div>;
+  const styles: React.CSSProperties = {
+    color,
+    ...style,
+  };
+
+  return (
+    <div className={panelClass} style={styles}>
+      {children}
+    </div>
+  );
 };
 
 export default TabsPanel;
