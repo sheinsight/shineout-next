@@ -653,111 +653,111 @@ export interface TagTokens {
   /**
    * @type {string}
    * @token Orange-6
-   * @description 标签橘黄色字体颜色
+   * @description 标签明黄色字体颜色
    */
-  tagOrangeFontColor: string;
+  tagBrownFontColor: string;
   /**
    * @type {string}
    * @token Orange-1
-   * @description 标签橘黄色背景颜色
+   * @description 标签明黄色背景颜色
    */
-  tagOrangeBackgroundColor: string;
+  tagBrownBackgroundColor: string;
   /**
    * @type {string}
    * @token Orange-1
-   * @description 标签橘黄色边框颜色
+   * @description 标签明黄色边框颜色
    */
-  tagOrangeBorderColor: string;
+  tagBrownBorderColor: string;
   /**
    * @type {string}
    * @token Orange-3
-   * @description 标签橘黄色禁用状态的字体颜色
+   * @description 标签明黄色禁用状态的字体颜色
    */
-  tagOrangeDisabledFontColor: string;
+  tagBrownDisabledFontColor: string;
   /**
    * @type {string}
    * @token Orange-1
-   * @description 标签橘黄色禁用状态的背景颜色
+   * @description 标签明黄色禁用状态的背景颜色
    */
-  tagOrangeDisabledBackgroundColor: string;
+  tagBrownDisabledBackgroundColor: string;
   /**
    * @type {string}
    * @token Orange-1
-   * @description 标签橘黄色禁用状态的边框颜色
+   * @description 标签明黄色禁用状态的边框颜色
    */
-  tagOrangeDisabledBorderColor: string;
+  tagBrownDisabledBorderColor: string;
   /**
    * @type {string}
    * @token Orange-5
-   * @description 标签橘黄色线框风格字体颜色
+   * @description 标签明黄色线框风格字体颜色
    */
-  tagOrangeOutlineFontColor: string;
+  tagBrownOutlineFontColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 标签橘黄色线框风格背景颜色
+   * @description 标签明黄色线框风格背景颜色
    */
-  tagOrangeOutlineBackgroundColor: string;
+  tagBrownOutlineBackgroundColor: string;
   /**
    * @type {string}
    * @token Orange-5
-   * @description 标签橘黄色线框风格边框颜色
+   * @description 标签明黄色线框风格边框颜色
    */
-  tagOrangeOutlineBorderColor: string;
+  tagBrownOutlineBorderColor: string;
   /**
    * @type {string}
    * @token Orange-3
-   * @description 标签橘黄色线框风格禁用状态的字体颜色
+   * @description 标签明黄色线框风格禁用状态的字体颜色
    */
-  tagOrangeOutlineDisabledFontColor: string;
+  tagBrownOutlineDisabledFontColor: string;
   /**
    * @type {string}
    * @token Neutral-fill-1
-   * @description 标签橘黄色线框风格禁用状态的背景颜色
+   * @description 标签明黄色线框风格禁用状态的背景颜色
    */
-  tagOrangeOutlineDisabledBackgroundColor: string;
+  tagBrownOutlineDisabledBackgroundColor: string;
   /**
    * @type {string}
    * @token Orange-3
-   * @description 标签橘黄色线框风格禁用状态的边框颜色
+   * @description 标签明黄色线框风格禁用状态的边框颜色
    */
-  tagOrangeOutlineDisabledBorderColor: string;
+  tagBrownOutlineDisabledBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-text-1
-   * @description 标签橘黄色填充风格字体颜色
+   * @description 标签明黄色填充风格字体颜色
    */
-  tagOrangeFillFontColor: string;
+  tagBrownFillFontColor: string;
   /**
    * @type {string}
    * @token Orange-6
-   * @description 标签橘黄色填充风格背景颜色
+   * @description 标签明黄色填充风格背景颜色
    */
-  tagOrangeFillBackgroundColor: string;
+  tagBrownFillBackgroundColor: string;
   /**
    * @type {string}
    * @token Orange-6
-   * @description 标签橘黄色填充风格边框颜色
+   * @description 标签明黄色填充风格边框颜色
    */
-  tagOrangeFillBorderColor: string;
+  tagBrownFillBorderColor: string;
   /**
    * @type {string}
    * @token Neutral-text-1
-   * @description 标签橘黄色填充风格禁用状态的字体颜色
+   * @description 标签明黄色填充风格禁用状态的字体颜色
    */
-  tagOrangeFillDisabledFontColor: string;
+  tagBrownFillDisabledFontColor: string;
   /**
    * @type {string}
    * @token Orange-3
-   * @description 标签橘黄色填充风格禁用状态的背景颜色
+   * @description 标签明黄色填充风格禁用状态的背景颜色
    */
-  tagOrangeFillDisabledBackgroundColor: string;
+  tagBrownFillDisabledBackgroundColor: string;
   /**
    * @type {string}
    * @token Orange-3
-   * @description 标签橘黄色填充风格禁用状态的边框颜色
+   * @description 标签明黄色填充风格禁用状态的边框颜色
    */
-  tagOrangeFillDisabledBorderColor: string;
+  tagBrownFillDisabledBorderColor: string;
   /**
    * @type {string}
    * @token Purple-6
@@ -1673,21 +1673,21 @@ export interface TagTokens {
   /**
    * @type {string}
    * @token Orange-6
-   * @description 标签橘黄色图标字体颜色
+   * @description 标签明黄色图标字体颜色
    */
-  tagOrangeIconFontColor: string;
+  tagBrownIconFontColor: string;
   /**
    * @type {string}
    * @token Orange-3
-   * @description 标签橘黄色图标禁用状态的字体颜色
+   * @description 标签明黄色图标禁用状态的字体颜色
    */
-  tagOrangeIconDisabledFontColor: string;
+  tagBrownIconDisabledFontColor: string;
   /**
    * @type {string}
    * @token Orange-2
-   * @description 标签橘黄色图标鼠标移入时的背景颜色
+   * @description 标签明黄色图标鼠标移入时的背景颜色
    */
-  tagOrangeIconHoverBackgroundColor: string;
+  tagBrownIconHoverBackgroundColor: string;
   /**
    * @type {string}
    * @token Purple-6
