@@ -6,7 +6,7 @@ import List from './list';
 
 const { getKey } = util;
 const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) => {
-  const { data = [], separator = '/' } = props;
+  const { data = [], separator = '/', maxHeight = '50vh' } = props;
   const breadcrumbClasses = props.jssStyle?.breadcrumb?.();
 
   const renderItem = (dataItem: Item): ReactNode => {
@@ -39,7 +39,7 @@ const Breadcrumb = <Item = BreadcrumbDataType,>(props: BreadcrumbProps<Item>) =>
   };
 
   const renderArray = (data: StructureArray<Item>) => {
-    return <List data={data} renderItem={renderItem} jssStyle={props.jssStyle} />;
+    return <List data={data} renderItem={renderItem} jssStyle={props.jssStyle} maxHeight={maxHeight} />;
   };
   const className = classNames(breadcrumbClasses?.wrapper, props.className);
 

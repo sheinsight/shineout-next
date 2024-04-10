@@ -9,6 +9,7 @@ import type { BreadcrumbJssStyle } from './breadcrumb.type';
 
 interface ListProps {
   data: any[];
+  maxHeight?: string | number;
   jssStyle?: BreadcrumbJssStyle;
   renderItem: (dataItem: any) => React.ReactNode;
 }
@@ -56,6 +57,7 @@ const List = (props: ListProps) => {
           show={open}
           onRef={popupRef as any}
           animation={false}
+          style={{ maxHeight: props.maxHeight, overflow: 'auto' }}
         >
           {renderList(rest)}
         </AnimationList>

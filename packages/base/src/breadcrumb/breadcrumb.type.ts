@@ -61,6 +61,12 @@ export interface BreadcrumbProps<Item = BreadcrumbDataType>
    * @en Maximum number of displays
    */
   max?: number;
+  /**
+   * @en The maximum height of the drop-down box. It can be scrolled if it exceeds the height.
+   * @cn 下拉框最大高度，超出可以内滚
+   * @default 50vh
+   */
+  maxHeight?: string | number
 }
 
 /**
