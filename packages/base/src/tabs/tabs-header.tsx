@@ -94,9 +94,8 @@ const TabsHeader = (props: TabsHeaderProps) => {
     setTransform(getActiveTabOffest());
   }, [active, tabRef.current, headerRef.current, scrollRef.current, shouldScroll]);
 
-  const getDataProps = (options?: { state?: string }) => {
+  const getDataProps = (options?: { state?: string; position?: string; shape?: string }) => {
     return util.getDataAttribute({
-      shape,
       ...options,
     });
   };
@@ -113,7 +112,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const renderTab = () => {
     return (
-      <div ref={headerRef} className={headerClass} {...getDataProps()}>
+      <div ref={headerRef} className={headerClass}>
         <div
           ref={scrollRef}
           className={classNames(
@@ -210,7 +209,11 @@ const TabsHeader = (props: TabsHeaderProps) => {
   };
 
   return (
-    <div className={headerWrapperClass} style={tabBarStyle}>
+    <div
+      className={headerWrapperClass}
+      style={tabBarStyle}
+      {...getDataProps({ position: props.getPosition, shape })}
+    >
       {!hideSplit && shape !== 'card' && renderHr()}
       {collapsible && renderCollapsibleButton()}
       {shouldScroll && renderPrevButton()}
