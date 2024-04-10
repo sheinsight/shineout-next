@@ -2,6 +2,7 @@ import Token from '../token/token';
 import { Tokens } from '../token/type';
 import { replaceNonAlphanumeric } from '../utils/css-var';
 import { getConfig } from '../config';
+import hash from './hash';
 
 export interface Attributes {
   [key: string]: any;
@@ -80,7 +81,10 @@ const setToken = (options?: Options) => {
 
   const { prefix } = getConfig();
 
-  const tag: HTMLElement = document.createElement(tagName);
+  const id = `__shineoutThemeStyleContainer__${hash(selector)}`;
+  const cacheTag = document.querySelector(`[data-token-id="${id}"]`) as HTMLElement;
+
+  const tag: HTMLElement = cacheTag || document.createElement(tagName);
   const tokens: string[] = [];
   const defaultToken = token || Token;
   const extraToken = getExtraToken(prefix);
@@ -89,12 +93,16 @@ const setToken = (options?: Options) => {
     Object.keys(defaultToken)
       .filter((item) => (customExtraToken || ['Brand-6', 'Neutral-6']).includes(item))
       .forEach((key: string) => {
-        const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${defaultToken[key as keyof Tokens]}`;
+        const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${
+          defaultToken[key as keyof Tokens]
+        }`;
         tokens.push(token);
       });
   } else {
     Object.keys(defaultToken).forEach((key: string) => {
-      const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${defaultToken[key as keyof Tokens]}`;
+      const token = `--${prefix}-${replaceNonAlphanumeric(key)}:${
+        defaultToken[key as keyof Tokens]
+      }`;
       tokens.push(token);
     });
   }
@@ -106,6 +114,9 @@ const setToken = (options?: Options) => {
   }
 
   tag.setAttribute('data-token', tokenName || '');
+  tag.setAttribute('data-token-id', id);
+  tag.setAttribute('data-token-selector', selector);
+
   tag.innerHTML = `${selector} {${tokens.concat(extraToken).join(';')}}`;
 
   if (!target) {
