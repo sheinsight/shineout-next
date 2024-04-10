@@ -71,4 +71,52 @@
   - 新增 `defaultChecked` 属性，用于设置默认选中状态
 - DatePicker
   - 优化快速选择每次点击都可以获取最新的时间
-  
+  - 新增 `showTime` 属性，支持选择时间
+  - 新增 `showSelNow` 属性，支持快捷选择当前时间
+  - 新增交互鼠标悬浮选项显示日期时间结果
+  - 选择周模式下第一列显示周数
+  - 选择时间面板重新设计，选取时间更加便捷
+  - disabled 支持传数组，支持分别设置开始和结束时间的禁用
+  - 优化范围选择面板的高亮和禁用样式。
+  - 修复了之前版本 value 不变仍然可以修改的问题
+- Form
+  - FormRef 新增 set 方法用于设置表单字段值
+- Input
+  - 新增 `clearIcon` 属性，支持清空按钮
+  - 新增 `prefix` 和 `suffix` 属性，支持前缀和后缀
+- Radio
+  - 新增 `size` 属性，支持多个尺寸
+- Rate
+  - 增加鼠标悬浮的交互动画
+- Select
+  - 新增 `footer` 属性，支持底部插槽
+- Slider
+  - 完全重构了代码逻辑，优化交互
+  - 支持双滑可以无限制滑动
+  - 修复背景色重叠的问题
+  - 新增 `tipType = 'hover'` 属性，鼠标悬浮时显示当前值
+- Textarea
+  - 新增 `textareaRef` 属性，支持获取 textarea 的 ref
+- Transfer
+  - 新增 `searchPlaceholder` 属性，设置搜索框占位
+  - 新增 `simple` 属性，支持简单模式
+  - 新增 `size` 属性，支持多个尺寸
+- TreeSelect
+  - 新增 `compressedClassName` 属性，设置搜索框占位
+  - 新增 `trim` 属性，支持失去焦点时会自动删除空白字符
+  - 新增 `resultClassName` 属性，选中结果内容容器的className
+  - 新增 `emptyText` 属性，自定义 empty 文案
+  - 新增 `showArrow` 属性，是否展示箭头
+  - 新增 `focusSelected` 属性，onFilter 在多选情况下点击选项后是否选中过滤文本
+- Upload
+  - Upload 新增 `listType` 属性，用于切换列表类型
+- Alert 
+  - 新增 `bordered` 属性，是否显示边框
+  - 新增 `closable` 属性，配置是否可以关闭
+  - 新增 `title` 属性，配置标题
+
+
+
+
+
+

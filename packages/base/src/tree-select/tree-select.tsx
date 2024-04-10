@@ -63,7 +63,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     loader,
     renderResult: renderResultProp,
     renderItem: renderItemProp = (d) => d as React.ReactNode,
-    maxLength,
+    // maxLength,
     trim = false,
     placeholder,
     renderUnmatched,
@@ -470,7 +470,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           focus={open}
           keygen={keygen as any}
           disabled={disabled}
-          maxLength={maxLength}
+          // maxLength={maxLength}
           compressed={compressed}
           compressedBound={compressedBound}
           compressedClassName={compressedClassName}

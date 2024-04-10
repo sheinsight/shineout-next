@@ -45,8 +45,8 @@ export interface FormRef<Value> {
    */
   reset: () => void;
   /**
-   * @en set field value, key is field path, Example: { 'name': 'sanmao', 'account.name': 'sanmao'   'friends[0].name': 'sanmao' }
-   * @cn 设置字段值, key为字段路径,示例：{ 'name': 'sanmao', 'account.name': 'sanmao'   'friends[0].name': 'sanmao' }
+   * @en set field value, key is field path, Example: { 'name': 'sanmao', 'account.name': 'sanmao', 'friends[0].name': 'sanmao' }
+   * @cn 设置字段值, key为字段路径,示例：{ 'name': 'sanmao', 'account.name': 'sanmao', 'friends[0].name': 'sanmao' }
    */
   set: (value: { [key: string]: any }) => void;
 }
