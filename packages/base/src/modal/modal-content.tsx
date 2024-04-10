@@ -137,10 +137,23 @@ const Modal = (props: ModalContentProps) => {
   }, []);
 
   useEffect(() => {
+    if (!props.hideMask) {
+      const doc = document.body.parentNode! as HTMLElement;
+      if (props.visible) {
+        if (!doc.style.paddingRight) {
+          doc.style.paddingRight = `${window.innerWidth - util.docSize.width}px`;
+          doc.style.overflow = 'hidden';
+        }
+      } else {
+        doc.style.paddingRight = '';
+        doc.style.overflow = '';
+      }
+    }
     // sync aniamtion
-    if (props.autoShow) return;
-    setVisible(!!props.visible);
-    setAnimation(true);
+    if (!props.autoShow) {
+      setVisible(!!props.visible);
+      setAnimation(true);
+    }
   }, [props.visible]);
 
   const canDestroy = !visible && !animation;
@@ -159,6 +172,11 @@ const Modal = (props: ModalContentProps) => {
       if (context.isMask) {
         context.isMask = false;
         hasMask = false;
+      }
+      {
+        const doc = document.body.parentNode! as HTMLElement;
+        doc.style.paddingRight = '';
+        doc.style.overflow = '';
       }
     };
   }, []);
