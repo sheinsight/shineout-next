@@ -205,10 +205,8 @@ const getHeaderStyle = () => {
     },
 
     '&[data-soui-shape="dash"],&[data-soui-shape="fill"]': {
-      '& $headerWrapper': {
-        '&:after': {
-          display: 'none',
-        },
+      '&:after': {
+        display: 'none',
       },
     },
   };
@@ -220,41 +218,6 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     '&[data-soui-position^="top-"],&[data-soui-position^="bottom-"]': {
       display: 'flex',
       flexDirection: 'column',
-      '& $tab + $tab': {
-        marginLeft: Token.tabsNearlyMargin,
-      },
-      '&[data-soui-shape="fill"],&[data-soui-shape="button"]': {
-        '& $tab + $tab': {
-          margin: 0,
-        },
-      },
-      '& $headerWrapper': {
-        alignItems: 'center',
-      },
-      '& $header': {
-        width: '100%',
-        alignItems: 'center',
-      },
-      '& $next,& $prev': {
-        lineHeight: 0,
-        padding: `${Token.tabsActionHorizontalPaddingY} ${Token.tabsActionHorizontalPaddingX}`,
-      },
-
-      '& $headerScroll': { display: 'inline-flex' },
-
-      '&[data-soui-position^="top-left"]': {
-        '& $headerScroll': { justifyContent: 'flex-start' },
-      },
-      '&[data-soui-position^="bottom-left"]': {
-        '& $headerScroll': { justifyContent: 'flex-start' },
-      },
-      '&[data-soui-position^="top-right"]': {
-        '& $headerScroll': { justifyContent: 'flex-end' },
-      },
-      '&[data-soui-position^="bottom-right"]': {
-        '& $headerScroll': { justifyContent: 'flex-end' },
-      },
-
       '& $panel': {
         width: '100%',
       },
@@ -265,61 +228,12 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'flex-start',
-      '& $tab': {
-        display: 'block',
-      },
-      '& $tab + $tab': {
-        marginTop: Token.tabsNearlyMargin,
-      },
-      '& $headerWrapper': {
-        flexDirection: 'column',
-      },
-      '& $next,& $prev': {
-        padding: `${Token.tabsActionVerticalPaddingY} ${Token.tabsActionVerticalPaddingX}`,
-        '&:after': {
-          display: 'none',
-        },
-      },
-      '& $next': {
-        marginLeft: 0,
-        marginTop: Token.tabsNearlyMargin,
 
-        '& svg': {
-          transform: 'rotate(90deg)',
-        },
-      },
-      '& $prev': {
-        marginRight: 0,
-        marginBottom: Token.tabsNearlyMargin,
-        '& svg': {
-          transform: 'rotate(90deg)',
-        },
-      },
-      '& $header': {
-        height: '100%',
-      },
       '& $panel': {
         width: 'auto',
         height: '100%',
       },
     },
-
-    '&[data-soui-position^="bottom-right"],&[data-soui-position^="top-right"]': {
-      '& $header': { display: 'block', textAlign: 'right' },
-      '& $headerScroll': { display: 'inline-block' },
-    },
-    '&[data-soui-position="left-top"],&[data-soui-position="right-top"]': {
-      '& $header': { alignItems: 'flex-start' },
-    },
-    '&[data-soui-position="left-bottom"],&[data-soui-position="right-bottom"]': {
-      '& $header': { alignItems: 'flex-start' },
-    },
-    ...getCardStyle(),
-    ...getLineStyle(),
-    ...getDashStyle(),
-    ...getFillStyle(),
-    ...getButtonStyle(),
-    ...getHeaderStyle(),
   },
   panelWrapper: {
     width: 'auto',
@@ -375,8 +289,84 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     display: 'flex',
     overflow: 'hidden',
     position: 'relative',
+    '&[data-soui-position^="top-"],&[data-soui-position^="bottom-"]': {
+      alignItems: 'center',
+      '& $tab + $tab': {
+        marginLeft: Token.tabsNearlyMargin,
+      },
+      '&[data-soui-shape="fill"],&[data-soui-shape="button"]': {
+        '& $tab + $tab': {
+          margin: 0,
+        },
+      },
+      '& $header': {
+        width: '100%',
+        alignItems: 'center',
+      },
+      '& $next,& $prev': {
+        lineHeight: 0,
+        padding: `${Token.tabsActionHorizontalPaddingY} ${Token.tabsActionHorizontalPaddingX}`,
+      },
+      '& $headerScroll': { display: 'inline-flex' },
+      '&[data-soui-position^="top-left"]': {
+        '& $headerScroll': { justifyContent: 'flex-start' },
+      },
+      '&[data-soui-position^="bottom-left"]': {
+        '& $headerScroll': { justifyContent: 'flex-start' },
+      },
+      '&[data-soui-position^="top-right"]': {
+        '& $headerScroll': { justifyContent: 'flex-end' },
+      },
+      '&[data-soui-position^="bottom-right"]': {
+        '& $headerScroll': { justifyContent: 'flex-end' },
+      },
+    },
 
-    '& $prev[data-soui-shape="card"],$next[data-soui-shape="card"]': {
+    '&[data-soui-position^="left-"],&[data-soui-position^="right-"]': {
+      flexDirection: 'column',
+      '& $tab': {
+        display: 'block',
+      },
+      '& $tab + $tab': {
+        marginTop: Token.tabsNearlyMargin,
+      },
+      '& $next,& $prev': {
+        padding: `${Token.tabsActionVerticalPaddingY} ${Token.tabsActionVerticalPaddingX}`,
+        '&:after': {
+          display: 'none',
+        },
+      },
+      '& $next': {
+        marginLeft: 0,
+        marginTop: Token.tabsNearlyMargin,
+        '& svg': {
+          transform: 'rotate(90deg)',
+        },
+      },
+      '& $prev': {
+        marginRight: 0,
+        marginBottom: Token.tabsNearlyMargin,
+        '& svg': {
+          transform: 'rotate(90deg)',
+        },
+      },
+      '& $header': {
+        height: '100%',
+      },
+    },
+
+    '&[data-soui-position^="bottom-right"],&[data-soui-position^="top-right"]': {
+      '& $header': { display: 'block', textAlign: 'right' },
+      '& $headerScroll': { display: 'inline-block' },
+    },
+    '&[data-soui-position="left-top"],&[data-soui-position="right-top"]': {
+      '& $header': { alignItems: 'flex-start' },
+    },
+    '&[data-soui-position="left-bottom"],&[data-soui-position="right-bottom"]': {
+      '& $header': { alignItems: 'flex-start' },
+    },
+
+    '&[data-soui-shape="card"] $prev, &[data-soui-shape="card"] $next': {
       background: '#FFFFFF',
       border: `1px solid ${Token.tabsBorderColor}`,
 
@@ -390,7 +380,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         background: Token.tabsClickBackgroundColor,
       },
     },
-    '& $prev[data-soui-shape="line"],$next[data-soui-shape="line"]': {
+    '&[data-soui-shape="line"] $prev, &[data-soui-shape="line"] $next': {
       '&:not([data-soui-state="disabled"]):hover': {
         '& $iconInner': {
           background: Token.tabsHoverBackgroundColor,
@@ -403,7 +393,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       },
     },
     // fill 同 line
-    '& $prev[data-soui-shape="fill"],$next[data-soui-shape="fill"]': {
+    '&[data-soui-shape="fill"] $prev,&[data-soui-shape="fill"] $next': {
       '&:not([data-soui-state="disabled"]):hover': {
         '& $iconInner': {
           background: Token.tabsHoverBackgroundColor,
@@ -416,7 +406,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       },
     },
     // button 同 line
-    '& $prev[data-soui-shape="button"],$next[data-soui-shape="button"]': {
+    '&[data-soui-shape="button"] $prev,&[data-soui-shape="button"] $next': {
       '&:not([data-soui-state="disabled"]):hover': {
         '& $iconInner': {
           background: Token.tabsHoverBackgroundColor,
@@ -428,7 +418,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         },
       },
     },
-    '& $prev[data-soui-shape="dash"],$next[data-soui-shape="dash"]': {
+    '&[data-soui-shape="dash"] $prev,&[data-soui-shape="dash"] $next': {
       '&:not([data-soui-state="disabled"]):hover': {
         '& $iconInner': {
           background: Token.tabsHoverBackgroundColor,
@@ -456,6 +446,12 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         width: 14,
       },
     },
+    ...getCardStyle(),
+    ...getLineStyle(),
+    ...getDashStyle(),
+    ...getFillStyle(),
+    ...getButtonStyle(),
+    ...getHeaderStyle(),
   },
   headerScroll: {
     transition: 'all .15s ease-out',
@@ -467,7 +463,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     position: 'relative',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
-    '&[data-soui-shape="card"]': {
+    '$headerWrapper[data-soui-shape="card"] &': {
       '& $tab': {
         position: 'relative',
         border: `1px solid ${Token.tabsBorderColor}`,
@@ -493,7 +489,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         },
       },
     },
-    '&[data-soui-shape="line"]': {
+    '$headerWrapper[data-soui-shape="line"] &': {
       '& $tab': {
         position: 'relative',
         padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
@@ -529,7 +525,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         },
       },
     },
-    ['&[data-soui-shape="dash"]']: {
+    '$headerWrapper[data-soui-shape="dash"] &': {
       '& $tab': {
         padding: `${Token.tabsLinePaddingY} ${Token.tabsLinePaddingX}`,
         '&[data-soui-state="active"]': {
@@ -551,7 +547,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         },
       },
     },
-    ['&[data-soui-shape="fill"]']: {
+    '$headerWrapper[data-soui-shape="fill"] &': {
       '& $tab': {
         '&[data-soui-state="active"]': {
           fontWeight: 'bold',
@@ -563,13 +559,13 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
         },
       },
     },
-    '&[data-soui-shape="button"]': {
+    '$headerWrapper[data-soui-shape="button"] &': {
       '& $tab': {
         '&[data-soui-state="disabled"]': {
           cursor: 'not-allowed',
         },
-      }
-    }
+      },
+    },
   },
   button: {},
   line: {},
@@ -604,7 +600,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     textAlign: 'center',
     color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
-    '&[data-soui-shape="card"]': {
+    '$wrapperHeader[data-soui-shape="card"] &': {
       marginRight: Token.tabsNearlyMargin,
     },
   },
@@ -612,7 +608,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     textAlign: 'center',
     color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
-    '&[data-soui-shape="card"]': {
+    '$wrapperHeader[data-soui-shape="card"] &': {
       marginLeft: Token.tabsNearlyMargin,
     },
   },
@@ -659,55 +655,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
       },
     },
   },
-  sticky: {
-    '& > :first-child': {
-      '&[data-soui-position^="top-"],&[data-soui-position^="bottom-"]': {
-        '& $tab + $tab': {
-          marginLeft: Token.tabsNearlyMargin,
-        },
-        '&[data-soui-shape="fill"],&[data-soui-shape="button"]': {
-          '& $tab + $tab': {
-            margin: 0,
-          },
-        },
-        '& $headerWrapper': {
-          alignItems: 'center',
-        },
-        '& $header': {
-          width: '100%',
-          alignItems: 'center',
-        },
-        '& $next,& $prev': {
-          lineHeight: 0,
-          padding: `${Token.tabsActionHorizontalPaddingY} ${Token.tabsActionHorizontalPaddingX}`,
-        },
-
-        '& $headerScroll': { display: 'inline-flex' },
-        '&[data-soui-position^="top-left"]': {
-          '& $headerScroll': { justifyContent: 'flex-start' },
-        },
-        '&[data-soui-position^="bottom-left"]': {
-          '& $headerScroll': { justifyContent: 'flex-start' },
-        },
-        '&[data-soui-position^="top-right"]': {
-          '& $headerScroll': { justifyContent: 'flex-end' },
-        },
-        '&[data-soui-position^="bottom-right"]': {
-          '& $headerScroll': { justifyContent: 'flex-end' },
-        },
-        '&[data-soui-position^="bottom-right"],&[data-soui-position^="top-right"]': {
-          '& $header': { display: 'block', textAlign: 'right' },
-          '& $headerScroll': { display: 'inline-block' },
-        },
-        ...getCardStyle(),
-        ...getLineStyle(),
-        ...getDashStyle(),
-        ...getFillStyle(),
-        ...getButtonStyle(),
-        ...getHeaderStyle(),
-      },
-    },
-  },
+  sticky: {},
 };
 
 export default tabsStyle;

@@ -205,7 +205,7 @@ const Tabs = (props: TabsProps) => {
       }
       return (
         <Sticky {...stickyProps}>
-          <div {...getDataProps()}>{header}</div>
+          {header}
         </Sticky>
       );
     }
