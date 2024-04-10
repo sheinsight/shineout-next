@@ -8,7 +8,7 @@ type TagType =
   | 'Success'
   | 'Warning'
   | 'Danger'
-  | 'Orange'
+  | 'Brown'
   | 'Magenta'
   | 'Purple'
   | 'Indigo'
@@ -251,8 +251,8 @@ const TagStyle: JsStyles<keyof TagClasses> = {
   danger: {
     ...tag('Danger'),
   },
-  orange: {
-    ...tag('Orange'),
+  brown: {
+    ...tag('Brown'),
   },
   magenta: {
     ...tag('Magenta'),

@@ -8,7 +8,7 @@ export type TagColorType =
   | 'success'
   | 'warning'
   | 'danger'
-  | 'orange'
+  | 'brown'
   | 'purple'
   | 'cyan'
   | 'magenta'
@@ -38,7 +38,7 @@ export interface TagClasses {
   success: string;
   warning: string;
   danger: string;
-  orange: string;
+  brown: string;
   purple: string;
   cyan: string;
   magenta: string;

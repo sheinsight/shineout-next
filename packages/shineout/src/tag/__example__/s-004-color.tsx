@@ -9,7 +9,7 @@
 
 import { Tag } from 'shineout';
 export default () => {
-  const TagColor = ['tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'orange'];
+  const TagColor = ['tangerine', 'magenta', 'purple', 'indigo', 'cyan', 'neon', 'lemon', 'brown'];
   const TagMode = ['bright', 'fill', 'outline', 'brightOutline'];
 
   const capitalizeFirstLetter = (str: string) => {
