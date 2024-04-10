@@ -1,7 +1,8 @@
+## 3.0.0
 ### 主要更新
 - 使用全新的设计语言，更注重细节交互，更加符合现代审美
 - 新增了 Description、Step、Collpase、Empty 四个组件
-- 支持 React18
+- 支持 React 18
 - 支持 SSR 场景
 - 使用 css-in-jss 对于微前端更友好
 - 使用 React Hook 重写了绝大多数的组件，同时对冗余、低效的代码逻辑进行优化提升组件性能和稳定性
@@ -11,18 +12,49 @@
 
 ### 设计变化
 - 统一了色系 、字体、间距、阴影、圆角等设计规范。
-- 优化了一些交互细节，提升了用户体验 比如 DatePicker 的选择，Table 的合并行选择等
+- 优化了一些交互细节，提升了用户体验，比如 DatePicker 的选择，Table 的合并行选择等
 - 增加了设计指南提供了更多的使用示例和最佳实践
 - 文字行高更改为字号 + 8px
 
 ### 不兼容改动
+- 表单组件
+  - beforeChange 的参数 datum 被移除，可以使用 formRef 替代
+- 样式
+  - 重构后结构 dom 有所变化，className和原来不同，会影响到一些自定义样式
+- Button
+  - 布局改为 inline-flex 内部的多个空格会被合并为一个
+
 
 ### 废弃的特性
+废弃属性目前还可以使用，未来会移除
+- Alert
+  - 废弃 `hideClose` 属性，使用 `closable` 代替
+- Button
+  - 废弃 `outline` 属性，使用 `mode="outline"` 代替
+  - 废弃 `text` 属性，使用 `mode="text"` 代替
+- Checkbox
+  - 废弃 `inputable` 属性，使用 Checkbox + Input 代替
+- Dropdown
+  - 废弃 `outline` 属性，使用 `mode="outline"` 代替
+- DatePicker
+  - 废弃 `defaultRangeMonth` 属性，使用 `defaultPickerValue` 代替
+- List
+  - 废弃 List.BaseItem 组件
+- Modal
+  - 废弃 `maskOpacity` 属性，使用 `代替在主题进行配置maskBackground` 代替
 - Tabs
-  - 移除 `border` 属性，使用 `splitColor` 代替
-  - 移除 `tabBarExtraContent` 属性，使用 `extra` 代替
-  - 移除 `align` 属性，使用 `position` 代替
-  - 移除 `background` 属性，使用 `activeBackGround` 代替
+  - 废弃 `border` 属性，使用 `splitColor` 代替
+  - 废弃 `tabBarExtraContent` 属性，使用 `extra` 代替
+  - 废弃 `align` 属性，使用 `position` 代替
+  - 废弃 `background` 属性，使用 `activeBackGround` 代替
+- Progress
+  - 废弃 `popup` 属性，使用 `shape = 'line-pop'` 代替
+- Sticky
+  - 废弃 `target` 属性，使用 `scrollContainer` 代替
+- Table
+  - 废弃 `fixed` 属性，使用 `virtual` 代替
+- Tag
+  - 废弃 `tyoe` 属性，使用 `color` 代替
 
 
 ### 功能改进
@@ -32,17 +64,17 @@
   - 重构了虚拟列表 
     - 列表滚动更丝滑（原生滚动条的体验）
     - 解决了内部元素无法滚动问题
-    - 解决滚动到边界无法触发外部滚动问题
-    - 解决在 mac 下滚动可能导致浏览器跳转页面的问题
-  - 优化合并行的高效果
+    - 解决了滚动到边界无法触发外部滚动问题
+    - 解决了在 mac 系统浏览器中使用触控板左右滚动可能导致页面跳转的问题
+  - 优化合并行的高量效果
 - Sticky
-  - 新增 `parent` 指定 sticky 的父元素当，父元素离开视口时，sticky 元素也会消失
-  - 重构了 sticky 的实现，支持更多的场景，性能更好。
+  - 新增 `parent` 指定 sticky 的父元素，当父元素离开视口时，sticky 元素也会消失
+  - 重构了 sticky 的实现，支持更多的场景，性能更好
 - Button
   - 新增 `renderLoading` 属性，支持自定义 loading 的渲染
 - Card
-  - Card 新增 `Split` 属性，支持展示和隐藏分割线
-  - Card.Header 新增 `Extra` 属性，支持在头部右侧添加额外内容
+  - Card 新增 `split` 属性，用于展示和隐藏分割线
+  - Card.Header 新增 `extra` 属性，支持在头部右侧添加额外内容
 - Carousel
   - `indicatorPosition` 属性新增 "outer" 选项，支持指示器在轮播图外部显示
   - `indicatorType` 属性新增 "number" 选项，支持指示器显示数字
@@ -51,13 +83,14 @@
 - List
   - 增加 `striped` 属性，支持斑马纹
 - Tag
-  - 新增多个内置颜色 `color` 属性
+  - 新增  `color` 属性，内置多套颜色
   - 新增 `size` 属性，支持设置标签大小
   - 新增 `mode` 属性，支持亮色、填充、线框、亮色线框四种模式
   - 新增 `shape` 属性，支持圆角标签
 - Tooltip
   - 新增 `trigger = "focus"` 属性，支持聚焦触发
   - 新增 `type` 属性，支持多种主题色
+  - 新增 `zIndex`属性，支持设置层级
 - Tree
   - 新增 `inlineNode` 属性，支持节点是否内联
   - 新增 `highlight` 属性，点击节点高亮
@@ -92,11 +125,11 @@
   - 新增 `footer` 属性，支持底部插槽
 - Slider
   - 完全重构了代码逻辑，优化交互
-  - 支持双滑可以无限制滑动
+  - 支持双滑快可以交叉滑动
   - 修复背景色重叠的问题
   - 新增 `tipType = 'hover'` 属性，鼠标悬浮时显示当前值
 - Textarea
-  - 新增 `textareaRef` 属性，支持获取 textarea 的 ref
+  - 新增 `textareaRef` 属性，支持获取 textarea dom
 - Transfer
   - 新增 `searchPlaceholder` 属性，设置搜索框占位
   - 新增 `simple` 属性，支持简单模式
@@ -114,6 +147,25 @@
   - 新增 `bordered` 属性，是否显示边框
   - 新增 `closable` 属性，配置是否可以关闭
   - 新增 `title` 属性，配置标题
+- Drawer
+  - 新增 `resize` 属性，支持拖拽改变抽屉大小
+- Message
+  - 优化交互，当鼠标悬浮在消息上时，消息不会自动关闭
+- Progress
+  - 新增 `icon` 属性，支持展示图标
+  - 新增 `iconSize` 属性，支持设置图标大小
+- Breadcrumb
+  - 新增 `max` 属性，设置最大显示个数，超过最大显示个数时，会显示省略号
+  - 优化下拉菜单交互
+- Dropdown
+  - 新增 `mode` 属性，设置按钮样式
+  - 新增分组菜单
+  - 新增带分割线下拉菜单
+- Pagination
+  - 新增 `mode` 属性，设置按钮样式
+
+ 
+
 
 
 
