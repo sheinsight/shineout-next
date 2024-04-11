@@ -91,17 +91,9 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginTop: 0,
         marginBottom: 0,
       },
-      '& $optionInner': {
-        paddingTop: token.selectSmallOptionInnerPaddingY,
-        paddingBottom: token.selectSmallOptionInnerPaddingY,
-        paddingLeft: token.selectSmallOptionInnerPaddingX,
-        fontSize: token.selectSmallFontSize,
-      },
+
       '& $clearIcon': {
         right: token.selectSmallPaddingX,
-      },
-      '& $optionGroupTitle': {
-        padding: `${token.selectGroupTitleSmallTop} ${token.selectGroupTitlePaddingX} 0 ${token.selectGroupTitlePaddingX}`,
       },
     },
     '&$wrapperLarge': {
@@ -109,18 +101,9 @@ const selectStyle: JsStyles<SelectClassType> = {
         marginTop: token.selectLargePlaceholderMarginY,
         marginBottom: token.selectLargePlaceholderMarginY,
       },
-      '& $optionInner': {
-        // padding: `${token.selectLargeOptionInnerPaddingY} ${token.selectLargeOptionInnerPaddingX}`,
-        paddingTop: token.selectLargeOptionInnerPaddingY,
-        paddingBottom: token.selectLargeOptionInnerPaddingY,
-        paddingLeft: token.selectLargeOptionInnerPaddingX,
-        fontSize: token.selectLargeFontSize,
-      },
+
       '& $clearIcon': {
         right: token.selectLargePaddingX,
-      },
-      '& $optionGroupTitle': {
-        padding: `${token.selectGroupTitleLargeTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitleLargeBottom} ${token.selectGroupTitlePaddingX}`,
       },
     },
     '&:hover': {
@@ -282,6 +265,29 @@ const selectStyle: JsStyles<SelectClassType> = {
     borderRadius: token.selectPanelRadius,
     transformOrigin: '0 0',
     border: `1px solid ${token.selectPanelBorder}`,
+  },
+  pickerSmall: {
+    '& $optionInner': {
+      paddingTop: token.selectSmallOptionInnerPaddingY,
+      paddingBottom: token.selectSmallOptionInnerPaddingY,
+      paddingLeft: token.selectSmallOptionInnerPaddingX,
+      fontSize: token.selectSmallFontSize,
+    },
+    '& $optionGroupTitle': {
+      padding: `${token.selectGroupTitleSmallTop} ${token.selectGroupTitlePaddingX} 0 ${token.selectGroupTitlePaddingX}`,
+    },
+  },
+  pickerLarge: {
+    '& $optionInner': {
+      // padding: `${token.selectLargeOptionInnerPaddingY} ${token.selectLargeOptionInnerPaddingX}`,
+      paddingTop: token.selectLargeOptionInnerPaddingY,
+      paddingBottom: token.selectLargeOptionInnerPaddingY,
+      paddingLeft: token.selectLargeOptionInnerPaddingX,
+      fontSize: token.selectLargeFontSize,
+    },
+    '& $optionGroupTitle': {
+      padding: `${token.selectGroupTitleLargeTop} ${token.selectGroupTitlePaddingX} ${token.selectGroupTitleLargeBottom} ${token.selectGroupTitlePaddingX}`,
+    },
   },
   iconWrapper: {
     display: 'flex',

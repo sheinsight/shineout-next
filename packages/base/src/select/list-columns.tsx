@@ -10,7 +10,6 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
   const {
     jssStyle,
     data,
-    height,
     header,
     keygen,
     datum,
@@ -39,8 +38,14 @@ const ColumnsList = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => 
     if (size === 'large') return 40;
     return 32;
   };
-
   const lineHeight = getLineHeight();
+
+  const getHeight = () => {
+    if (props.height) return props.height;
+    return lineHeight * 7;
+  };
+
+  const height = getHeight();
 
   const getChecked = () => {
     if (!value) return false;

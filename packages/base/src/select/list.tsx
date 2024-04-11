@@ -11,7 +11,6 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   const {
     jssStyle,
     data,
-    height,
     size,
     header,
     keygen,
@@ -55,6 +54,13 @@ const List = <DataItem, Value>(props: BaseListProps<DataItem, Value>) => {
   };
 
   const lineHeight = getLineHeight();
+
+  const getHeight = () => {
+    if (props.height) return props.height;
+    return lineHeight * 7;
+  };
+
+  const height = getHeight();
 
   const handleHover = usePersistFn((index: number, force?: boolean) => {
     if ((controlType === 'mouse' || force) && hoverIndex !== index) {
