@@ -353,6 +353,7 @@ const tableStyle: JsStyles<TableClassType> = {
   },
 
   expandWrapper: {
+    display: 'inline-block',
     '& $iconWrapper': {
       marginRight: '8px',
     },
