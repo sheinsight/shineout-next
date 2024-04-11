@@ -115,6 +115,10 @@ export interface InputCommonProps<V> extends BaseTipProps, Pick<CommonType, 'cla
    * @cn 获取input dom元素
    */
   forwardRef?: SimpleInputProps['inputRef'];
+  /**
+   * @deprecated 即将弃用，请使用 forwardRef 替代
+   */
+  forwardedRef?: SimpleInputProps['inputRef'];
   size?: SimpleInputProps['size'];
   jssStyle?: SimpleInputProps['jssStyle'];
   /**
