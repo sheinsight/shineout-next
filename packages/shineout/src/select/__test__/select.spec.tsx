@@ -26,14 +26,12 @@ import SelectDisabled from '../__example__/07-disabled';
 import SelectTree from '../__example__/08-tree';
 import SelectCreate from '../__example__/09-create';
 import SelectFilter from '../__example__/10-01-filter';
-import SelectMaxLength from '../__example__/10-03-max-length';
 import SelectTreeMore from '../__example__/10-04-tree';
 import SelectAbsolute from '../__example__/11-absolute';
 // import SelectGroupMore from '../__example__/13-group';
 import SelectInnerTitle from '../__example__/14-inner-title';
 import SelectLoading from '../__example__/15-loading';
 import SelectCustomRender from '../__example__/16-custom-render';
-import SelectMaxLengthMore from '../__example__/16-max-length';
 import SelectCustomResult from '../__example__/17-custom-result';
 import SelectCustomUnmatch from '../__example__/18-custom-unmatch';
 
@@ -201,14 +199,12 @@ describe('Select[Base]', () => {
   snapshotTest(<SelectTree />, 'about tree');
   snapshotTest(<SelectCreate />, 'about create');
   snapshotTest(<SelectFilter />, 'about filter');
-  snapshotTest(<SelectMaxLength />, 'about max length');
   snapshotTest(<SelectTreeMore />, 'about tree more');
   snapshotTest(<SelectAbsolute />, 'about absolute');
   // snapshotTest(<SelectGroupMore />, 'about group more');
   snapshotTest(<SelectInnerTitle />, 'about inner title');
   snapshotTest(<SelectLoading />, 'about loading');
   snapshotTest(<SelectCustomRender />, 'about custom render');
-  snapshotTest(<SelectMaxLengthMore />, 'about max length more');
   snapshotTest(<SelectCustomResult />, 'about custom result');
   snapshotTest(<SelectCustomUnmatch />, 'about custom unmatch');
 

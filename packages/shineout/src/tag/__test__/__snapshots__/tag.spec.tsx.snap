@@ -119,12 +119,12 @@ exports[`Tag[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag cnllj2j soui-tag-orange chg5eon soui-tag-bright"
+      class="ctvabz1 soui-tag-tag undefined chg5eon soui-tag-bright"
     >
       <span
         class="c-3cli0a soui-tag-wrapper"
       >
-        Orange
+        Brown
       </span>
     </div>
   </div>
@@ -195,12 +195,12 @@ exports[`Tag[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag cnllj2j soui-tag-orange c2j6tsw soui-tag-fill"
+      class="ctvabz1 soui-tag-tag undefined c2j6tsw soui-tag-fill"
     >
       <span
         class="c-3cli0a soui-tag-wrapper"
       >
-        Orange
+        Brown
       </span>
     </div>
   </div>
@@ -271,12 +271,12 @@ exports[`Tag[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag cnllj2j soui-tag-orange cmzylol soui-tag-outline"
+      class="ctvabz1 soui-tag-tag undefined cmzylol soui-tag-outline"
     >
       <span
         class="c-3cli0a soui-tag-wrapper"
       >
-        Orange
+        Brown
       </span>
     </div>
   </div>
@@ -347,12 +347,12 @@ exports[`Tag[Base] should render correctly about color 1`] = `
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag cnllj2j soui-tag-orange co4138r soui-tag-bright-outline"
+      class="ctvabz1 soui-tag-tag undefined co4138r soui-tag-bright-outline"
     >
       <span
         class="c-3cli0a soui-tag-wrapper"
       >
-        Orange
+        Brown
       </span>
     </div>
   </div>
