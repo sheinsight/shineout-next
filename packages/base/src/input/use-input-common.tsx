@@ -21,6 +21,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
   const props = useWithFormConfig(props0);
   const {
     forwardRef,
+    forwardedRef,
     htmlName,
     value,
     onChange,
@@ -143,7 +144,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
     disabled,
     size,
     rootRef,
-    inputRef: forwardRef,
+    inputRef: forwardRef || forwardedRef,
     renderInput: renderInput,
     onFocusedChange: onFocusedChange,
   };
