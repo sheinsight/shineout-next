@@ -44,6 +44,8 @@ export type SelectClasses = {
   controlKeyboard: string;
   placeholder: string;
   pickerWrapper: string;
+  pickerSmall: string;
+  pickerLarge: string;
   clearable: string;
   clearIcon: string;
   arrowIconOpen: string;
@@ -120,7 +122,7 @@ export interface BaseListProps<DataItem, Value>
     | 'hideCreateOption'
   > {
   customHeader?: React.ReactNode;
-  height: number | string;
+  height?: number | string;
   data: DataItem[];
   datum: any;
   renderItem: (data: DataItem, index?: number) => React.ReactNode;

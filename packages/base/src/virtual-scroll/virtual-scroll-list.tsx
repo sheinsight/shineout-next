@@ -58,6 +58,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
   }) => {
     const current = Math.floor(info.scrollTop / lineHeight);
     const top = info.scrollTop - current * lineHeight;
+
     setTop(top);
     setCurrentIndex(current);
   };
@@ -69,7 +70,7 @@ const VirtualList = <DataItem,>(props: VirtualListProps<DataItem>) => {
     const end = currentIndex + rowsInView;
     let items = data.slice(start, end);
     const Tag = tag;
-    const shouldScroll = items.length * lineHeight > (height as number);
+    const shouldScroll = data.length * lineHeight > (height as number);
     const nextStyle = {
       ...style,
     };

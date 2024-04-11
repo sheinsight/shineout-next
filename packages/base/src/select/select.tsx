@@ -102,6 +102,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     // onFilterWidthCreate,
     filterSameChange,
   } = props;
+  
 
   const hasFilter = util.isFunc(props.onAdvancedFilter || onFilterProp);
   const showInput = hasFilter || util.isFunc(onCreateProp);
@@ -742,7 +743,11 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
         <AnimationList
           onRef={popupRef}
           show={open}
-          className={classNames(styles?.pickerWrapper)}
+          className={classNames(
+            styles?.pickerWrapper,
+            size === 'small' && styles?.pickerSmall,
+            size === 'large' && styles?.pickerLarge,
+          )}
           onMouseDown={preventDefault}
           display={'block'}
           type='scale-y'
