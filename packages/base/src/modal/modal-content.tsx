@@ -137,24 +137,27 @@ const Modal = (props: ModalContentProps) => {
   }, []);
 
   useEffect(() => {
-    if (!props.hideMask) {
-      const doc = document.body.parentNode! as HTMLElement;
-      if (props.visible) {
-        if (!doc.style.paddingRight) {
-          doc.style.paddingRight = `${window.innerWidth - util.docSize.width}px`;
-          doc.style.overflow = 'hidden';
-        }
-      } else {
-        doc.style.paddingRight = '';
-        doc.style.overflow = '';
-      }
-    }
     // sync aniamtion
     if (!props.autoShow) {
       setVisible(!!props.visible);
       setAnimation(true);
     }
   }, [props.visible]);
+
+  useEffect(() => {
+    if (!props.hideMask) {
+      const doc = document.body.parentNode! as HTMLElement;
+      if (visible) {
+        doc.style.overflow = 'hidden';
+        if (!doc.style.paddingRight) {
+          doc.style.paddingRight = `${window.innerWidth - util.docSize.width}px`;
+        }
+      } else {
+        doc.style.paddingRight = '';
+        doc.style.overflow = '';
+      }
+    }
+  }, [visible]);
 
   const canDestroy = !visible && !animation;
   useEffect(() => {
