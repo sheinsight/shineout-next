@@ -41,7 +41,7 @@
 - List
   - 废弃 List.BaseItem 组件
 - Modal
-  - 废弃 `maskOpacity` 属性，使用 `代替在主题进行配置maskBackground` 代替
+  - 废弃 `maskOpacity` 属性，使用 `maskBackground` 代替
 - Tabs
   - 废弃 `border` 属性，使用 `splitColor` 代替
   - 废弃 `tabBarExtraContent` 属性，使用 `extra` 代替
@@ -87,6 +87,8 @@
   - 新增 `size` 属性，支持设置标签大小
   - 新增 `mode` 属性，支持亮色、填充、线框、亮色线框四种模式
   - 新增 `shape` 属性，支持圆角标签
+- Tabs
+  - 支持 Tbas 头部可以滑动
 - Tooltip
   - 新增 `trigger = "focus"` 属性，支持聚焦触发
   - 新增 `type` 属性，支持多种主题色
