@@ -41,6 +41,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
     className,
     size,
     animation,
+    hideArrow,
   } = props;
   const dropdownClasses = jssStyle?.dropdown?.();
 
@@ -66,17 +67,17 @@ const Dropdown = (props: SimpleDropdownProps) => {
   const renderButton = () => {
     const caret = (
       <span key={'caret'} className={dropdownClasses?.caret}>
-        {
-          Icons.dropdown.DropdownArrow
-        }
+        {Icons.dropdown.DropdownArrow}
       </span>
     );
     const child = [
       <span key='text' className={dropdownClasses?.content}>
         {placeholder}
       </span>,
-      caret,
     ];
+    if (!hideArrow) {
+      child.push(caret);
+    }
     if (['left-bottom', 'left-top', 'left'].includes(position!)) {
       child.reverse();
     }

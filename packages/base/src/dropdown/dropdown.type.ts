@@ -196,6 +196,12 @@ export interface SimpleDropdownProps
    * @cn 下拉列表展开/收起回调
    */
   onCollapse?: (collapse: boolean) => void;
+
+  /**
+   * @en hide arrow
+   * @cn 隐藏箭头
+   */
+  hideArrow?: boolean;
 }
 
 /**
