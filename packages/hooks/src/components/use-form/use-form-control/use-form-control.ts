@@ -87,44 +87,63 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
     },
   );
 
-  const validateFiled = usePersistFn((name, v, formV, config = {}) => {
-    const validateProps = getValidateProps?.() || {};
-    if (inForm) {
-      const bindValidate = () => {
-        if (!config.ignoreBind && isArray(bind)) {
-          formFunc?.validateFields(bind, { ignoreBind: true }).catch(() => {});
+  const validateFiled = usePersistFn(
+    (
+      name,
+      v,
+      formV,
+      config: {
+        ignoreBind?: boolean;
+        type?: 'forcePass';
+      } = {},
+    ) => {
+      const validateProps = getValidateProps?.() || {};
+      if (config.type === 'forcePass') {
+        if (inForm) {
+          formFunc?.setError(name, undefined);
+        } else {
+          setErrorState(undefined);
         }
-      };
-      const fullRules = controlFunc?.combineRules(name, rules || []) || [];
-      return validate(v, formV, fullRules, validateProps)
-        .then((res) => {
-          const err = res === true ? undefined : res;
-          formFunc?.setError(name, err);
-          onError?.(err);
-          bindValidate();
-          return res;
-        })
-        .catch((e) => {
-          formFunc?.setError(name, e);
-          onError?.(e);
-          bindValidate();
-          return e;
-        });
-    } else {
-      return validate(v, {}, rules || [], {})
-        .then((res) => {
-          const err = res === true ? undefined : res;
-          setErrorState(err);
-          onError?.(err);
-          return res;
-        })
-        .catch((e) => {
-          setErrorState(e);
-          onError?.(e);
-          return e;
-        });
-    }
-  });
+        onError?.(undefined);
+        return Promise.resolve(true);
+      }
+      if (inForm) {
+        const bindValidate = () => {
+          if (!config.ignoreBind && isArray(bind)) {
+            formFunc?.validateFields(bind, { ignoreBind: true }).catch(() => {});
+          }
+        };
+        const fullRules = controlFunc?.combineRules(name, rules || []) || [];
+        return validate(v, formV, fullRules, validateProps)
+          .then((res) => {
+            const err = res === true ? undefined : res;
+            formFunc?.setError(name, err);
+            onError?.(err);
+            bindValidate();
+            return res;
+          })
+          .catch((e) => {
+            formFunc?.setError(name, e);
+            onError?.(e);
+            bindValidate();
+            return e;
+          });
+      } else {
+        return validate(v, {}, rules || [], {})
+          .then((res) => {
+            const err = res === true ? undefined : res;
+            setErrorState(err);
+            onError?.(err);
+            return res;
+          })
+          .catch((e) => {
+            setErrorState(e);
+            onError?.(e);
+            return e;
+          });
+      }
+    },
+  );
 
   const onChange = usePersistFn((v: T, ...other: any[]) => {
     if (inForm && formFunc) {

@@ -193,11 +193,18 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   );
 
   const getErrors = usePersistFn(() => context.errors);
-  const clearErrors = usePersistFn(() => {
-    const keys = Object.keys(context.errors);
-    context.errors = {};
-    context.serverErrors = {};
-    update(keys);
+  const clearValidate = usePersistFn((names?: string[]) => {
+    const keys = names || Object.keys(context.errors);
+    validateFields(keys, { type: 'forcePass' }).then(() => {
+      if (!names) {
+        context.errors = {};
+        context.serverErrors = {};
+      } else {
+        keys.forEach((key) => {
+          delete context.serverErrors[key];
+        });
+      }
+    });
   });
 
   const setError = usePersistFn((name: string, e: Error | undefined) => {
@@ -249,7 +256,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
   const handleReset = (other: HandlerType) => (e: React.FormEventHandler<HTMLFormElement>) => {
     if (disabled) return;
     onChange(getDefaultValue());
-    clearErrors();
+    clearValidate();
     update();
     context.resetTime = 1;
     props.onReset?.();
@@ -355,7 +362,7 @@ const useForm = <T extends ObjectType>(props: UseFormProps<T>) => {
     reset,
     setError,
     getErrors,
-    clearErrors,
+    clearValidate,
     validateFields,
   });
 
