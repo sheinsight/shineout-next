@@ -99,7 +99,7 @@ export interface FormFunc {
   reset: () => void;
   setError: (name: string, e: Error | undefined) => void;
   getErrors: () => ObjectType<Error | undefined>;
-  clearErrors: () => void;
+  clearValidate: (names?: string[]) => void;
   validateFields: (fields?: string | string[], config?: { ignoreBind?: boolean }) => Promise<true>;
 }
 

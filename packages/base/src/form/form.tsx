@@ -32,7 +32,7 @@ const Form = <V extends ObjectType>(props: FormProps<V>) => {
     return formFunc.validateFields(fileds).catch(() => {});
   });
   const formRefObj = useLatestObj({
-    clearValidate: formFunc.clearErrors,
+    clearValidate: formFunc.clearValidate,
     getValue: formFunc.getValue,
     reset: formFunc.reset,
     submit: formFunc.submit,

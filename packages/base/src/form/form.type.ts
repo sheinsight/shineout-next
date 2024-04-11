@@ -33,7 +33,7 @@ export interface FormRef<Value> {
    * @en Clear check
    * @cn 清除校验
    */
-  clearValidate: () => void;
+  clearValidate: (names?: string[]) => void;
   /**
    * @en Submit Form, withValidate: Whether to verify
    * @cn 提交表单, withValidate: 是否校验
