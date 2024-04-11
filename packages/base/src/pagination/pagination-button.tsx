@@ -17,6 +17,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
     moreType,
     children,
     className,
+    style,
     onClick,
     onMouseEnter,
     onMouseLeave,
@@ -39,7 +40,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
   const getButtonProps = () => {
     const baseProps: Pick<
       PaginationButtonProps,
-      'jssStyle' | 'mode' | 'type' | 'size' | 'disabled'
+      'jssStyle' | 'mode' | 'type' | 'size' | 'disabled' | 'style'
     > & {
       className?: string;
       shape?: ButtonShape;
@@ -54,6 +55,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
       type,
       size,
       mode,
+      style,
       onClick: handleClick,
     };
 
@@ -72,11 +74,7 @@ const PaginationButton = (props: PaginationButtonProps) => {
     };
   }, []);
 
-  return (
-    <Button {...getButtonProps()}>
-      {children}
-    </Button>
-  );
+  return <Button {...getButtonProps()}>{children}</Button>;
 };
 
 export default PaginationButton;

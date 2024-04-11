@@ -5,15 +5,30 @@
  *    -- Button is divided into five types: primary, secondary, outline, dash, and text. The primary button can only appear once in the same operation area
  */
 
-import { Button } from 'shineout';
+import { Button, setToken } from 'shineout';
 export default () => {
   const buttonStyle = {
     margin: 0,
   };
 
+  const handleCLick = () => {
+    setToken({
+      selector: 'body',
+      update: true,
+      token: {
+        'Brand-1': 'red',
+        'Brand-2': 'blue',
+        'Brand-3': 'black',
+        'Brand-4': 'green',
+        'Brand-5': 'yellow',
+        'Brand-6': 'pink',
+      },
+    });
+  };
+
   return (
     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
-      <Button type='primary' style={buttonStyle}>
+      <Button onClick={handleCLick} type='primary' style={buttonStyle}>
         Primary
       </Button>
 

@@ -44,7 +44,7 @@ export interface Options {
    * @en Custom token parameters
    * @default undefined
    */
-  token?: Tokens;
+  token?: Partial<Tokens>;
   /**
    * @cn 是否只生效关键 token，默认为 false
    * @en Whether only the key token is effective, default is false
@@ -57,6 +57,11 @@ export interface Options {
    * @default undefined
    */
   extraToken?: string[];
+  /**
+   * @cn 是否仅更新 token。默认为 false 直接全部覆盖当前 token，true 时只更新 token
+   * @en Whether to update the token only, default is false
+   */
+  update?: boolean;
 }
 
 const getExtraToken = (prefix: string) => {
@@ -65,6 +70,11 @@ const getExtraToken = (prefix: string) => {
     `--gray-500: var(--${prefix}-neutral-6)`,
     `--primary-color-fade-50: rgba(25,122,250,0.5)`,
   ];
+};
+
+const replaceCssVarValue = (innerHTML: string, cssvar: string, targetValue?: string) => {
+  const regex = new RegExp(`(${cssvar}:.*?;)`);
+  return innerHTML.replace(regex, `${cssvar}: ${targetValue};`);
 };
 
 const setToken = (options?: Options) => {
@@ -76,6 +86,7 @@ const setToken = (options?: Options) => {
     token,
     attributes,
     onlyExtra,
+    update,
     extraToken: customExtraToken,
   } = options || {};
 
@@ -88,6 +99,16 @@ const setToken = (options?: Options) => {
   const tokens: string[] = [];
   const defaultToken = token || Token;
   const extraToken = getExtraToken(prefix);
+
+  if (update && token) {
+    Object.keys(token).forEach((key: string) => {
+      const cssvar = `--${prefix}-${replaceNonAlphanumeric(key)}`;
+      const targetValue = token[key as keyof Tokens];
+      tag.innerHTML = replaceCssVarValue(tag.innerHTML, cssvar, targetValue);
+    });
+
+    return;
+  }
 
   if (onlyExtra) {
     Object.keys(defaultToken)

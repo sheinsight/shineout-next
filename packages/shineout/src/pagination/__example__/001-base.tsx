@@ -7,5 +7,5 @@
 import { Pagination } from 'shineout';
 
 export default () => {
-  return <Pagination total={100} defaultCurrent={1} span={3}></Pagination>;
+  return <Pagination total={10000} defaultCurrent={1} span={3}></Pagination>;
 };

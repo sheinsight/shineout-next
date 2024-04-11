@@ -4,7 +4,7 @@ import Button from './pagination-button';
 import Icons from '../icons';
 
 const PaginationButtonNext = (props: PaginationActionButtonProps) => {
-  const { jssStyle, disabled, total, pageSize, current, text, size, mode, onChange } = props;
+  const { jssStyle, disabled, total, pageSize, current, text, size, style, mode, onChange } = props;
   const paginationStyle = jssStyle?.pagination?.();
   const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sectionSize);
   const max = Math.ceil(total / pageSize);
@@ -18,7 +18,9 @@ const PaginationButtonNext = (props: PaginationActionButtonProps) => {
       mode={mode}
       page={next}
       size={size}
-      shape={hasText ? undefined : 'square'}
+      style={style}
+      // shape={hasText ? undefined : 'square'}
+      shape={'square'}
       disabled={disabled || next > max}
       onClick={onChange}
     >
