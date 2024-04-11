@@ -1468,7 +1468,7 @@ export interface ButtonTokens {
   buttonBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Padding-12
    * @description 按钮内边距（水平方向）
    */
   buttonPaddingX: string;
@@ -1540,7 +1540,7 @@ export interface ButtonTokens {
   buttonLargeBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Padding-16
    * @description 按钮大尺寸内边距（水平方向）
    */
   buttonLargePaddingX: string;

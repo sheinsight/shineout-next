@@ -80,7 +80,6 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
       size,
       jssStyle,
       disabled,
-      shape: 'square' as ButtonShape,
     };
   };
 
@@ -147,6 +146,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
             mode={pageNum === current ? undefined : mode}
             key={pageNum}
             page={pageNum}
+            shape={pageNum >= 100 ? undefined : 'square'}
             type={pageNum === current ? 'primary' : 'secondary'}
             onClick={onChange}
           >
@@ -168,6 +168,7 @@ const PaginationButtons = (props: PaginationButtonsProps) => {
           onClick={onChange}
           moreType={pageNum as PaginationMoreTypes}
           onMouseEnter={handleHoverMore}
+          shape='square'
           onMouseLeave={handleHoverMore}
           className={paginationStyle?.sectionSize}
         >

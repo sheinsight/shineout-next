@@ -68,7 +68,9 @@ const PaginationStyle: JsStyles<PaginationClass> = {
   buttonItem: {
     transition: 'none',
   },
-  sectionSize: {},
+  sectionSize: {
+    padding: 0,
+  },
 };
 
 export default PaginationStyle;

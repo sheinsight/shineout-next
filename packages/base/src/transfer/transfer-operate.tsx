@@ -23,7 +23,7 @@ const TransferOperate = <DataItem, Value extends KeygenResult[]>(
   };
 
   const disabled = listDatum.getValueMap().size === 0 || listDatum.getVaildData().length === 0;
-  const style = operation ? { width: '100%' } : undefined;
+  const style = operation ? { width: '100%' } : { padding: 0 };
 
   return (
     <span>

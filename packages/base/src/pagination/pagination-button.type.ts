@@ -5,7 +5,7 @@ import { ButtonClasses } from '../button/button.type';
 import { PaginationMoreTypes } from './pagination-buttons.type';
 import { PaginationClasses } from '../pagination/pagination.type';
 
-export interface PaginationButtonProps extends Pick<CommonType, 'size' | 'className'> {
+export interface PaginationButtonProps extends Pick<CommonType, 'size' | 'className' | 'style'> {
   jssStyle?: {
     input?: () => InputClasses;
     button?: () => ButtonClasses;

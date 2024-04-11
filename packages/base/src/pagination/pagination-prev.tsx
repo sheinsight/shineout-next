@@ -18,7 +18,8 @@ const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
       disabled={disabled || prev < 1}
       page={prev}
       size={size}
-      shape={hasText ? undefined : 'square'}
+      // shape={hasText ? undefined : 'square'}
+      shape='square'
       onClick={onChange}
     >
       {hasText ? (
