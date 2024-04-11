@@ -38,8 +38,8 @@ export default (props: InputGroupProps) => {
 
   const { children, className, width, style } = props;
   const rootClass = classNames(
-    className,
     inputStyle?.group,
+    className,
     size === 'small' && inputStyle?.groupSmall,
     size === 'large' && inputStyle?.groupLarge,
     !!disabled && inputStyle?.groupDisabled,
