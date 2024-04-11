@@ -86,7 +86,7 @@ export interface SimpleInputProps
   /**
    * @en Whether to display border
    * @cn 是否展示边框
-   * @default: true
+   * @default true
    */
   border?: boolean;
   /**
