@@ -1,3 +1,4 @@
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import useStyles from '../style';
 import Title from '../title';
@@ -19,10 +20,12 @@ const Markdown = (props: MarkdownProps) => {
   return (
     <div className={classes.pages}>
       <Title title={title} describe={describe} guides={guides}></Title>
-      {activeTab === 'examples' && <Doc examples={examples} name={header.name}></Doc>}
-      {activeTab === 'api' && <Api api={api}></Api>}
-      {activeTab === 'guide' && <Guide guides={guides}></Guide>}
-      {activeTab === 'changelog' && <Changelog changelog={changelog}></Changelog>}
+      <React.Fragment key={header.name}>
+        {activeTab === 'examples' && <Doc examples={examples} name={header.name}></Doc>}
+        {activeTab === 'api' && <Api api={api}></Api>}
+        {activeTab === 'guide' && <Guide guides={guides}></Guide>}
+        {activeTab === 'changelog' && <Changelog changelog={changelog}></Changelog>}
+      </React.Fragment>
     </div>
   );
 };

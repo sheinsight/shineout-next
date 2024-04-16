@@ -163,17 +163,17 @@ const Nav = () => {
       <div className='left-nav'>{renderLeftNav()}</div>
       <div className='logo'>{renderLogo()}</div>
       <ul className='entry'>
-        <li>
+        {/* <li>
           <Input
             placeholder={`${getLocale(locale, 'search')}...`}
             prefix={renderPrefix()}
             border={false}
             style={{ backgroundColor: '#F4F5F8', width: 280 }}
           ></Input>
-        </li>
-        <li style={{ padding: '0 12px' }}>
+        </li> */}
+        {/* <li style={{ padding: '0 12px' }}>
           <Dropdown placeholder={<span style={{ color: '#141737' }}>RTL</span>} data={[]} />
-        </li>
+        </li> */}
         <li style={{ paddingRight: 24 }} onClick={handleChangeLocales}>
           <svg
             width='20'
@@ -203,7 +203,7 @@ const Nav = () => {
             />
           </svg>
         </li>
-        <li style={{ paddingRight: 24 }}>
+        {/* <li style={{ paddingRight: 24 }}>
           <svg
             width='20'
             height='20'
@@ -230,12 +230,12 @@ const Nav = () => {
               fill='#333E59'
             />
           </svg>
-        </li>
-        {navs.map((nav) => (
+        </li> */}
+        {/* {navs.map((nav) => (
           <li key={nav.title} onClick={() => navigate(nav.path)}>
             {nav.title === 'Component' ? renderAvatar() : ''}
           </li>
-        ))}
+        ))} */}
         {/* <li onClick={handleChangeEnv}>{state.env}</li> */}
       </ul>
     </div>
