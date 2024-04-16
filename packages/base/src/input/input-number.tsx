@@ -35,7 +35,7 @@ const InputNumber = (props: InputNumberProps) => {
     ...numberFormatParams,
   });
 
-  const addEnd = (
+  const addEnd = props.hideArrow ? null : (
     <React.Fragment>
       <div className={inputStyle?.numberStep}>
         <span
