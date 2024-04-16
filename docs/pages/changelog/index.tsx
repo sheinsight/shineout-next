@@ -28,23 +28,28 @@ changelogArr.forEach((item) => {
   }
 });
 
-
 const Changelog = () => {
-  const styles = useStyles()
+  const styles = useStyles();
 
-  const markdowns = Object.keys(cn).map((version) => {
-    const { time, changes } = cn[version];
-    const title = `## ${version}`;
-    const timestr = `<span class="time">${time}</span>`;
-    const content = Object.keys(changes).filter((key) => changes[key].length > 0)
-      .map((key) => {
-        const title = `### ${key}`;
-        const list = changes[key].map((item: string) => `- ${item}`).join('\n');
-        return `${title}\n${list}`;
-      })
-      .join('\n');
-    return `${title}\n${timestr}\n${content}`;
-  });
+  const markdowns = Object.keys(cn)
+    .sort(
+      // 比较版本号 a 和 b 倒叙
+      (a, b) => b.localeCompare(a),
+    )
+    .map((version) => {
+      const { time, changes } = cn[version];
+      const title = `## ${version}`;
+      const timestr = `<span class="time">${time}</span>`;
+      const content = Object.keys(changes)
+        .filter((key) => changes[key].length > 0)
+        .map((key) => {
+          const title = `### ${key}`;
+          const list = changes[key].map((item: string) => `- ${item}`).join('\n');
+          return `${title}\n${list}`;
+        })
+        .join('\n');
+      return `${title}\n${timestr}\n${content}`;
+    });
 
   return (
     <div className={classNames(styles.wrapper)}>
