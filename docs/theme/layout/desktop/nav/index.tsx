@@ -2,17 +2,17 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useSnapshot } from 'valtio';
 import store, { dispatch } from '../../../store';
 import useStyles from '../style';
-import { Dropdown, Input } from 'shineout';
-import { getLocale, useConfig } from 'base';
+// import { Dropdown, Input } from 'shineout';
+// import { getLocale, useConfig } from 'base';
 
 const Nav = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const state = useSnapshot(store);
   const location = useLocation();
-  const { locale } = useConfig();
+  // const { locale } = useConfig();
 
-  const navs = [
+  // const navs = [
     // {
     //   title: 'Home',
     //   path: `/${state.locales}/home`,
@@ -25,15 +25,15 @@ const Nav = () => {
     //   title: 'Introduce',
     //   path: `/${state.locales}/introduce`,
     // },
-    {
-      title: 'Component',
-      path: `/${state.locales}/component/${state.doc}`,
-    },
+    // {
+    //   title: 'Component',
+    //   path: `/${state.locales}/component/${state.doc}`,
+    // },
     // {
     //   title: 'Changelog',
     //   path: `/${state.locales}/changelog`,
     // },
-  ];
+  // ];
 
   const handleChangeLocales = () => {
     const nextLocales = state.locales === 'en' ? 'cn' : 'en';
@@ -100,36 +100,36 @@ const Nav = () => {
   //   dispatch.setEnv(state.env === 'SHEIN' ? 'GitHub' : 'SHEIN');
   // };
 
-  const renderPrefix = () => {
-    return (
-      <svg
-        style={{ marginRight: 8 }}
-        width='14'
-        height='14'
-        viewBox='0 0 14 14'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <g clipPath='url(#clip0_193_361)'>
-          <path
-            d='M2.87521 2.63359C0.824961 4.68384 0.824961 8.00796 2.87521 10.0582C4.78609 11.9691 7.80351 12.099 9.86484 10.4479L11.7081 12.2915C11.9359 12.5193 12.3053 12.5193 12.5331 12.2915C12.7609 12.0637 12.7609 11.6943 12.5331 11.4665L10.6899 9.62276C12.3406 7.56144 12.2106 4.54432 10.2998 2.63359C8.24958 0.583338 4.92547 0.583338 2.87521 2.63359ZM3.70017 3.45855C5.29481 1.86391 7.88024 1.86391 9.47488 3.45855C11.0695 5.05319 11.0695 7.63861 9.47488 9.23325C7.88024 10.8279 5.29481 10.8279 3.70017 9.23325C2.10553 7.63861 2.10553 5.05319 3.70017 3.45855Z'
-            fill='#B3B7C1'
-          />
-        </g>
-        <defs>
-          <clipPath id='clip0_193_361'>
-            <rect width='14' height='14' fill='white' />
-          </clipPath>
-        </defs>
-      </svg>
-    );
-  };
+  // const renderPrefix = () => {
+  //   return (
+  //     <svg
+  //       style={{ marginRight: 8 }}
+  //       width='14'
+  //       height='14'
+  //       viewBox='0 0 14 14'
+  //       fill='none'
+  //       xmlns='http://www.w3.org/2000/svg'
+  //     >
+  //       <g clipPath='url(#clip0_193_361)'>
+  //         <path
+  //           d='M2.87521 2.63359C0.824961 4.68384 0.824961 8.00796 2.87521 10.0582C4.78609 11.9691 7.80351 12.099 9.86484 10.4479L11.7081 12.2915C11.9359 12.5193 12.3053 12.5193 12.5331 12.2915C12.7609 12.0637 12.7609 11.6943 12.5331 11.4665L10.6899 9.62276C12.3406 7.56144 12.2106 4.54432 10.2998 2.63359C8.24958 0.583338 4.92547 0.583338 2.87521 2.63359ZM3.70017 3.45855C5.29481 1.86391 7.88024 1.86391 9.47488 3.45855C11.0695 5.05319 11.0695 7.63861 9.47488 9.23325C7.88024 10.8279 5.29481 10.8279 3.70017 9.23325C2.10553 7.63861 2.10553 5.05319 3.70017 3.45855Z'
+  //           fill='#B3B7C1'
+  //         />
+  //       </g>
+  //       <defs>
+  //         <clipPath id='clip0_193_361'>
+  //           <rect width='14' height='14' fill='white' />
+  //         </clipPath>
+  //       </defs>
+  //     </svg>
+  //   );
+  // };
 
-  const renderAvatar = () => {
-    return (
-      <div style={{ height: 32, width: 32, borderRadius: '50%', background: '#F4F5F8' }}></div>
-    );
-  };
+  // const renderAvatar = () => {
+  //   return (
+  //     <div style={{ height: 32, width: 32, borderRadius: '50%', background: '#F4F5F8' }}></div>
+  //   );
+  // };
 
   const renderLogo = () => {
     return (

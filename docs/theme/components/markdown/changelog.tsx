@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import useStyles from '../style';
-import { MarkdownWrapper } from '../../../markdown';
+import { MarkdownWrapper } from '../../../pages/markdown';
 import { Changelog as ChangelogProps } from 'docs/types';
 
 interface Props {

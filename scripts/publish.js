@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 const version = require(path.resolve(__dirname, '../package.json')).version;
 
 // 获取version中的 tag 比如 3.0.0-alpha.1 中的 alpha
-let tag = (version.split('-')[1] || '').split('.')[0] || 'latest';
+let tag = (version.split('-')[1] || '').split('.')[0] || 'latest-3';
 if (tag === 'rc') {
   tag = 'next-3';
 }
