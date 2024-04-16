@@ -2,7 +2,8 @@ import React from 'react';
 import usePersistFn from '../../common/use-persist-fn';
 import { InputNumberProps } from './use-input-number.type';
 import useInputFormat from './use-input-format';
-import { sub } from '../../utils';
+import { sub } from '../../utils/number';
+import { isNumber } from '../../utils/is';
 
 const useNumberFormat = (props: InputNumberProps) => {
   const {
@@ -42,8 +43,8 @@ const useNumberFormat = (props: InputNumberProps) => {
     let num = val;
     if (typeof num === 'number') {
       if (isNaN(num)) num = 0;
-      if (min && num < min) num = min;
-      if (max && num > max) num = max;
+      if (isNumber(min) && num < min) num = min;
+      if (isNumber(max) && num > max) num = max;
     }
     return num;
   };
