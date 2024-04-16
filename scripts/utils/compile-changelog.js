@@ -5,6 +5,7 @@ const { changelogLoader } = require('./markdown-loader');
 
 const docDirName = '__doc__';
 const templateChangelogPath = path.resolve(__dirname, '../doc-page-changelog.ejs');
+const templateChangelogIndexPath = path.resolve(__dirname, '../doc-changelog.ejs');
 const chunkDir = path.join(__dirname, '../../docs', 'chunk');
 
 /**
@@ -60,15 +61,34 @@ function compile(dirPath, componentPath) {
       },
     });
   }
+  /**
+   *
+   * @param components 所有组件名称
+   */
+  function generateChangelogIndex(components) {
+    writeTemplate({
+      templatePath: templateChangelogIndexPath,
+      targetPath: `${chunkDir}/${chunkModuleName}/changelog`,
+      fileName: `index.ts`,
+      needPrettier: false,
+      ejsVars: {
+        components,
+      },
+    });
+
+  }
 
   if (!componentPath) {
+    const components = [];
     fs.readdirSync(dirPath).forEach((dir) => {
       // 检查是否存在 .md 文件
       const mdPath = path.join(dirPath, dir, docDirName, 'index.md');
       if (!fs.existsSync(mdPath)) return;
+      components.push(dir)
       const changelogPath = path.join(dirPath, dir, docDirName);
       generateChangelog(changelogPath, dir);
     });
+    generateChangelogIndex(components);
   } else {
     generateChangelog(componentPath);
   }

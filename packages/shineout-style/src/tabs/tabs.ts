@@ -600,17 +600,11 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     textAlign: 'center',
     color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
-    '$wrapperHeader[data-soui-shape="card"] &': {
-      marginRight: Token.tabsNearlyMargin,
-    },
   },
   next: {
     textAlign: 'center',
     color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
-    '$wrapperHeader[data-soui-shape="card"] &': {
-      marginLeft: Token.tabsNearlyMargin,
-    },
   },
   extra: {},
   collapsible: {
