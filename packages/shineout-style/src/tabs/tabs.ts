@@ -238,7 +238,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
   panelWrapper: {
     width: 'auto',
     height: 'auto',
-    overflow: 'hidden',
+    // overflow: 'hidden',
     transition: 'all .2s ease-out',
   },
   panel: {
@@ -248,6 +248,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     height: '100%',
     '& $panelWrapper': {
       flex: 1,
+      minHeight: '0'
     },
     '& $panel': {
       overflow: 'auto',
