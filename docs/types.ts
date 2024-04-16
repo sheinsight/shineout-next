@@ -44,6 +44,7 @@ export interface Guides {
 
 export interface Changelog {
   version: string;
+  time: string;
   changes: { [key: string]: string }[];
 }
 

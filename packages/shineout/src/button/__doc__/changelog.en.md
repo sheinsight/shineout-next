@@ -1,37 +1,12 @@
-# 3.0.0-bate.1
+## 3.0.0
+2023-10-12
 
-## fix
+### feat
 
-fixfixfixfixfixfixfix
-fixfixfixfixfixfixfix
+- 新增 `mode` 字段代替旧版的 outline text 属性，并兼容旧版写法，未来将移除旧版用法
+- 新增 `dashed` 风格按钮
 
-## feat
+### break
 
-新增 `xxx` 功能
-新增 `xxx` 功能
-新增 `xxx` 功能
-
-## docs
-
-调整 `xxx` 文档
-调整 `xxx` 文档
-调整 `xxx` 文档
-调整 `xxx` 文档
-
-## perf
-
-优化 `xxx` 性能
-优化 `xxx` 性能
-优化 `xxx` 性能
-
-## test
-
-新增 `xxx` 测试
-删除 `xxx` 测试
-调整 `xxx` 测试
-
-## chore
-
-其他不修改源码或测试文件的更改，例如构建过程、辅助工具的变动
-其他不修改源码或测试文件的更改，例如构建过程、辅助工具的变动
-其他不修改源码或测试文件的更改，例如构建过程、辅助工具的变动
+- 隐藏 type = `default` 样式，更改为近似 secondary 的样式，并不推荐使用
+- 调整按钮布局方式为 `inline-flex`，原有空格将不生效

@@ -1,0 +1,15 @@
+<% function trans (file) { if (file === 'switch') return 'Switch'; return file.split('-').map((item, index) => { if (index === 0) {return item}; return item.slice(0, 1).toUpperCase() + item.slice(1)}).join('')}  %>
+
+// 循环遍历components下的所有文件夹 引入
+<% components.forEach(function(comp) {  %>
+    import <%= trans(comp) %> from './<%= comp %>';
+<% }) %>
+
+const changelogs = {
+    // 循环遍历components下的所有文件夹 导出
+    <% components.forEach(function(comp) {  %>
+        <%= trans(comp) %>,
+    <% }) %>
+};
+
+export default changelogs;

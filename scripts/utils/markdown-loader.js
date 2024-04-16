@@ -227,17 +227,22 @@ const changelogLoader = (content) => {
     const token = tokens[i];
 
     // 开始新版本的记录
-    if (token.type === 'heading_open' && token.tag === 'h1') {
+    if (token.type === 'heading_open' && token.tag === 'h2') {
       const versionToken = tokens[i + 1];
       currentVersion = versionToken.children[0].content;
+      currentTime = versionToken.children[0].content;
       changelogs.push({
         version: currentVersion,
         changes: {},
       });
     }
+    if (token.type === 'heading_close' && token.tag === 'h2') {
+      const timeToken = tokens[i + 2];
+      changelogs[changelogs.length - 1].time = timeToken.children[0].content;
+    }
 
     // 确定变更类型（fix、feat等）
-    if (token.type === 'heading_open' && token.tag === 'h2') {
+    if (token.type === 'heading_open' && token.tag === 'h3') {
       const changeTypeToken = tokens[i + 1];
       currentChangeType = changeTypeToken.children[0].content;
       // 确保当前版本的变更类型已经初始化为数组

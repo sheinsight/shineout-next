@@ -1,15 +1,56 @@
 import { MarkdownWrapper } from '../../markdown/index';
+import changelogs from '../../chunk/shineout/changelog';
+import { useStyles } from '../../markdown/style';
+import classNames from 'classnames';
 const mainChangelog = require(`!!raw-loader!../../markdown/version_v3.md`).default;
 
+const changelogArr = Object.values(changelogs);
+// todo 英文
+const cn: any = {};
+changelogArr.forEach((item) => {
+  if (item.cn && item.cn.length > 0) {
+    item.cn.forEach((i: any) => {
+      const { version, changes, time } = i;
+      if (!cn[version]) {
+        cn[version] = { time, changes };
+      } else {
+        Object.keys(changes).forEach((key) => {
+          if (!cn[version].changes[key]) {
+            cn[version].changes[key] = changes[key];
+          } else {
+            cn[version].changes[key] = cn[version].changes[key].concat(changes[key]);
+          }
+        });
+      }
+    });
+  }
+});
+
+
 const Changelog = () => {
+  const styles = useStyles()
+
+  const markdowns = Object.keys(cn).map((version) => {
+    const { time, changes } = cn[version];
+    const title = `## ${version}`;
+    const timestr = `<span class="time">${time}</span>`;
+    const content = Object.keys(changes).filter((key) => changes[key].length > 0)
+      .map((key) => {
+        const title = `### ${key}`;
+        const list = changes[key].map((item: string) => `- ${item}`).join('\n');
+        return `${title}\n${list}`;
+      })
+      .join('\n');
+    return `${title}\n${timestr}\n${content}`;
+  });
+
   return (
-    <div style={{padding: 20}}>
-      <MarkdownWrapper noPadding>
+    <div className={classNames(styles.wrapper)}>
+      <MarkdownWrapper>
         {'`````\n开发指南\n# 更新日志 \n这里会有详细的发版记录，版本号严格遵循 Semver 规范`````'}
       </MarkdownWrapper>
-      <MarkdownWrapper noPadding>
-        {mainChangelog}
-      </MarkdownWrapper>
+      <MarkdownWrapper>{markdowns.join('\n')}</MarkdownWrapper>
+      <MarkdownWrapper>{mainChangelog}</MarkdownWrapper>
     </div>
   );
 };

@@ -129,10 +129,13 @@ export default createUseStyles(
       marginBottom: 64,
     },
     changelogVersion: {
-      fontSize: 32,
+      fontSize: 24,
       lineHeight: '40px',
       fontWeight: 600,
-      marginBottom: 32,
+      marginBottom: 8
+    },
+    changelogTime: {
+      fontSize: 16,
     },
     changelogType: {
       '&:not(:first-child) $changelogTypeTitle': {

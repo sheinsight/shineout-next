@@ -1,4 +1,6 @@
 ## 3.0.0
+<span class="time">2024-04-16</span>
+
 ### 主要更新
 - 使用全新的设计语言，更注重细节交互，更加符合现代审美
 - 新增了 Description、Step、Collpase、Empty 四个组件
@@ -82,6 +84,9 @@
   - Image.Group 新增 `showCount` 属性，支持显示图片数量
 - List
   - 增加 `striped` 属性，支持斑马纹
+- Tooltop
+  - 重构代码, 逻辑与 popover 保持一致
+  - 支持自定义弹出位置
 - Tag
   - 新增  `color` 属性，内置多套颜色
   - 新增 `size` 属性，支持设置标签大小

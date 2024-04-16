@@ -2,9 +2,8 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import store from '../../store';
 import useStyles from '../style';
+import { MarkdownWrapper } from '../../../markdown';
 import { Changelog as ChangelogProps } from 'docs/types';
-import { Tag } from 'shineout';
-import Locale from '../../locales';
 
 interface Props {
   changelog: {
@@ -17,44 +16,15 @@ const Changelog = (props: Props) => {
   const { changelog } = props;
   const style = useStyles();
   const state = useSnapshot(store);
-  const docsLocale = Locale({ locale: state.locales });
-  const changelogLocale = docsLocale['shineout.changelog'];
   const changelogList = changelog[state.locales].reverse();
 
-  const renderItem = (str: any) => {
-    const regex = /(.*?)(`.*?`|$)/g;
-    const result = [];
-    for (const [, part, span] of str.matchAll(regex)) {
-      if (part) {
-        const textNode = <React.Fragment key={result.length}>{part}</React.Fragment>;
-        result.push(textNode);
-      }
-      if (span) {
-        const spanRegex = /`(.*?)`/g;
-        const spanMatch = spanRegex.exec(span);
-        if (spanMatch) {
-          const tipNode = <Tag key={result.length} color='warning'>{spanMatch[1]}</Tag>;
-          result.push(tipNode);
-        }
-      }
-    }
-    return result;
-  };
-
   const renderChanges = (type: string, changelogs: any = [], index: number) => {
+    if (!changelogs.length) return null;
     return (
-      <ul key={index}>
-        <div className={style.changelogTypeTitle}>
-          {changelogLocale[type as keyof typeof changelogLocale]}
-        </div>
-        {changelogs.map((item: any, i: number) => {
-          return (
-            <li key={i} className={style.changelogItem}>
-              {renderItem(item)}
-            </li>
-          );
-        })}
-      </ul>
+      <React.Fragment key={index}>
+        <div className={style.changelogTypeTitle}>{type}</div>
+        <MarkdownWrapper>{`- ${changelogs.join('\n- ')}`}</MarkdownWrapper>
+      </React.Fragment>
     );
   };
 
@@ -62,6 +32,7 @@ const Changelog = (props: Props) => {
     return (
       <div key={index} className={style.changelogWrapper}>
         <div className={style.changelogVersion}>{item.version}</div>
+        <div className={style.changelogTime}>{item.time}</div>
         <div className={style.changelogType}>
           {Object.keys(item.changes || {}).map((type, i) => {
             return renderChanges(type, item.changes[type as any], i);
