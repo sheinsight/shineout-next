@@ -1,12 +1,23 @@
-## 3.0.0
-2023-10-12
+## 3.0.x
+2024-xx-xx
 
-### feat
+### 🆕 Feature
 
-- 新增 `mode` 字段代替旧版的 outline text 属性，并兼容旧版写法，未来将移除旧版用法
-- 新增 `dashed` 风格按钮
+- `xxx` 组件 `xxxx` 属性支持 xxx 功能 ([#280](https://github.com/sheinsight/shineout-next/pull/280))
 
-### break
+### 🐞 BugFix
 
-- 隐藏 type = `default` 样式，更改为近似 secondary 的样式，并不推荐使用
-- 调整按钮布局方式为 `inline-flex`，原有空格将不生效
+- 修复 `xxx` 组件 `xxx` 方法的 xxx bug ([#280](https://github.com/sheinsight/shineout-next/pull/280))
+
+### 💎 Enhancement
+
+- 优化 `xxx` 组件xxx功能 ([#280](https://github.com/sheinsight/shineout-next/pull/280))
+
+### 💅 Style
+
+### 🆎 Type
+
+
+
+
+

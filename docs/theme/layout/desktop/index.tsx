@@ -11,7 +11,7 @@ import Introduce from '../../../pages/introduce';
 import Component from '../../../pages/component';
 import Changelog from '../../../pages/changelog';
 import Debugger from '../../../pages/debug';
-import Markdown from '../../../markdown';
+import Markdown from '../../../pages/markdown';
 
 const Desktop = () => {
   const classes = useStyles();

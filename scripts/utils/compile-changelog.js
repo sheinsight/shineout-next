@@ -7,6 +7,27 @@ const docDirName = '__doc__';
 const templateChangelogPath = path.resolve(__dirname, '../doc-page-changelog.ejs');
 const templateChangelogIndexPath = path.resolve(__dirname, '../doc-changelog.ejs');
 const chunkDir = path.join(__dirname, '../../docs', 'chunk');
+const commonName = 'common';
+
+function compileCommon(project) {
+  const cnPath = path.join(__dirname, `../../docs/markdown/${project}/changelog-common.md`);
+  let cn = [];
+  let en = [];
+  if (cnPath) {
+    const content = fs.readFileSync(cnPath, 'utf8');
+    cn = changelogLoader(content);
+  }
+  writeTemplate({
+    templatePath: templateChangelogPath,
+    targetPath: `${chunkDir}/${project}/changelog`,
+    fileName: `${commonName}.ts`,
+    needPrettier: false,
+    ejsVars: {
+      cn,
+      en,
+    },
+  });
+}
 
 /**
  *
@@ -66,16 +87,16 @@ function compile(dirPath, componentPath) {
    * @param components 所有组件名称
    */
   function generateChangelogIndex(components) {
+    compileCommon(chunkModuleName);
     writeTemplate({
       templatePath: templateChangelogIndexPath,
       targetPath: `${chunkDir}/${chunkModuleName}/changelog`,
       fileName: `index.ts`,
       needPrettier: false,
       ejsVars: {
-        components,
+        components: [...components, commonName],
       },
     });
-
   }
 
   if (!componentPath) {
@@ -84,7 +105,7 @@ function compile(dirPath, componentPath) {
       // 检查是否存在 .md 文件
       const mdPath = path.join(dirPath, dir, docDirName, 'index.md');
       if (!fs.existsSync(mdPath)) return;
-      components.push(dir)
+      components.push(dir);
       const changelogPath = path.join(dirPath, dir, docDirName);
       generateChangelog(changelogPath, dir);
     });

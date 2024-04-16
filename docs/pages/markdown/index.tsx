@@ -72,7 +72,7 @@ export const MarkdownWrapper = (props: { children: string }) => {
 
 const Doc = () => {
   const params = useParams();
-  const markdown = require(`!!raw-loader!./${params.comp}.md`).default;
+  const markdown = require(`!!raw-loader!../../markdown/${params.project}/${params.comp}.md`).default;
   const classes = useStyles();
   return (
     <div className={classnames(classes.wrapper)}>

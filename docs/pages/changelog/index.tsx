@@ -1,8 +1,10 @@
-import { MarkdownWrapper } from '../../markdown/index';
-import changelogs from '../../chunk/shineout/changelog';
-import { useStyles } from '../../markdown/style';
+import { MarkdownWrapper } from '../markdown/index';
+import { useStyles } from '../markdown/style';
 import classNames from 'classnames';
-const mainChangelog = require(`!!raw-loader!../../markdown/version_v3.md`).default;
+//shineout replace variable
+import changelogs from '../../chunk/shineout/changelog';
+
+const mainChangelog = require(`!!raw-loader!../../markdown/shineout/changelog-v3.md`).default;
 
 const changelogArr = Object.values(changelogs);
 // todo 英文
