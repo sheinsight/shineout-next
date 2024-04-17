@@ -37,22 +37,22 @@ export default () => {
         items={data}
         title='User Info'
         layout='horizontal'
-        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
+        colon={<span style={{ paddingInlineStart: '4px' }}>:</span>}
         style={{ marginBottom: '12px' }}
       />
       <Descriptions
         items={data}
         title='User Info'
         layout='horizontal'
-        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
-        labelStyle={{ textAlign: 'right' }}
+        colon={<span style={{ paddingInlineStart: '4px' }}>:</span>}
+        labelStyle={{ textAlign: 'end' }}
         style={{ marginBottom: '12px' }}
       />
       <Descriptions
         items={data}
         title='User Info'
         layout='vertical'
-        colon={<span style={{ paddingLeft: '4px' }}>:</span>}
+        colon={<span style={{ paddingInlineStart: '4px' }}>:</span>}
         labelStyle={{ paddingBottom: '2px' }}
       />
     </div>
