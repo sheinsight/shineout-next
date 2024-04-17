@@ -48,16 +48,15 @@ const CascaderNode = <DataItem, Value extends KeygenResult[]>(
   };
 
   const handleClick = (e: MouseEvent) => {
-    if (shouldFinal && hasChildren) {
-      handlePathChange();
-      return;
-    }
     if (onPathChange) onPathChange(id, data, path, true);
     if (!multiple) {
-      if (onChange && path) onChange([...path, id] as Value, datum.getDataById(id));
+      // 单选设置了 final 属性后 如果不是末节点不触发onChange
+      const shouldJump = shouldFinal && hasChildren
+      if (onChange && path && !shouldJump) onChange([...path, id] as Value, datum.getDataById(id));
     }
     if (
       loader &&
+      uncertainChildren &&
       !loading &&
       !util.getParent(
         e.target as HTMLElement,
