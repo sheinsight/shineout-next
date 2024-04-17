@@ -2,8 +2,6 @@ import { JsStyles } from '../jss-style';
 import Token from '@sheinx/theme';
 import { ButtonClasses } from '@sheinx/base';
 
-type ButtonType = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
-
 type ButtonTypeWithoutLink = 'Primary' | 'Secondary' | 'Danger' | 'Warning' | 'Success';
 
 type ButtonStyleType = 'Text' | 'Outline' | ''; // Dashed 用 Outline 的样式
@@ -326,11 +324,13 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
   circle: {
     width: `32px`,
     height: `32px`,
+    padding: 0,
     borderRadius: Token.buttonCircleBorderRadius,
   },
   square: {
     width: `32px`,
     height: `32px`,
+    padding: 0,
     borderRadius: Token.buttonSquareBorderRadius,
     '& $spin': {
       margin: 0,
