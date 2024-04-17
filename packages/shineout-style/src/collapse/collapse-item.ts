@@ -48,8 +48,14 @@ const collapseItemStyle: JsStyles<CollapseItemClassType> = {
       },
     },
   },
-  activeTransform: {},
-  activeTransformRight: {},
+  activeTransform: {
+    '&[dir=rtl] svg': {
+      transform: 'rotate(180deg)',
+    }
+  },
+  activeTransformRight: {
+    
+  },
   noIcon: {
     '& > $icon': {
       display: 'none',
