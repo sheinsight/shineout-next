@@ -18,7 +18,14 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
+const search  = window.location.href.split('?')[1];
+const params = new URLSearchParams(search);
+const direction = params.get('direction') === 'rtl' ? 'rtl' : 'ltr';
+document.body.className = direction;
+
 const app = document.getElementById('app');
+
+
 if (app) {
   const root = ReactDOM.createRoot(app);
   root.render(<App></App>);

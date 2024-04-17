@@ -56,19 +56,26 @@ const MenuComponent = () => {
   // const lan = params.lan === 'en' ? 'en-US' : 'zh-CN';
   const groupLocale = docsLocale['shineout.menu.group'];
 
+  
+
   const handleClick = (component: Menu) => {
     dispatch.setDoctab('examples');
+    const params = new URLSearchParams(location.search);
+    params.set('tab', 'examples');
     navigate({
       pathname: `/${state.locales}/component/${state.doc}/${component.name}`,
-      search: `?tab=examples`,
+      search: params.toString(),
     });
     document.getElementById('layout')?.scrollTo(0, 0);
   };
 
+
   const handleDocClick = (name: string) => {
+    const params = new URLSearchParams(location.search);
+    params.delete('tab');
     navigate({
       pathname: `/${state.locales}/doc/${state.doc}/${name}`,
-      // search: `?tab=examples`,
+      search: params.toString(),
     });
     document.getElementById('layout')?.scrollTo(0, 0);
   };

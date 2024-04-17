@@ -7,6 +7,9 @@ export default createUseStyles(
     '@global': {
       body: {
         position: 'relative',
+        '&.rtl': {
+          direction: 'rtl',
+        },
       },
     },
     desktop: {
@@ -17,6 +20,10 @@ export default createUseStyles(
       height: `calc(100% - ${navHeight}px)`,
       overflowY: 'auto',
       overflowX: 'hidden',
+      'body.rtl &': {
+        left: 0,
+        right: 260,
+      }
     },
     nav: {
       position: 'sticky',
@@ -78,6 +85,11 @@ export default createUseStyles(
         height: '100%',
         paddingLeft: 260,
         boxSizing: 'border-box',
+        'body.rtl &': {
+          float: 'right',
+          paddingLeft: 0,
+          paddingRight: 260,
+        }
       },
     },
 
@@ -94,6 +106,11 @@ export default createUseStyles(
       fontSize: 14,
       padding: '0 16px',
       boxSizing: 'border-box',
+      'body.rtl &': {
+        float: 'right',
+        borderRight: 'none',
+        borderLeft: '1px solid rgba(232, 235, 240, 1)',
+      },
       '& .group': {
         height: 40,
         padding: '0 16px',
@@ -175,6 +192,10 @@ export default createUseStyles(
       margin: 0,
       padding: 0,
       transition: 'all ease 0.3s',
+      'body.rtl &': {
+        right: 'auto',
+        left: 16,
+      },
       '& a': {
         position: 'relative',
         display: 'block',
@@ -200,6 +221,10 @@ export default createUseStyles(
             width: 1,
             height: '100%',
             backgroundColor: '#197AFA',
+            'body.rtl &': {
+              left: 'auto',
+              right: 0,
+            }
           },
         },
         '&:hover': {
@@ -213,6 +238,10 @@ export default createUseStyles(
           width: 1,
           height: '100%',
           backgroundColor: '#E8EBF0',
+          'body.rtl &': {
+            left: 'auto',
+            right: 0,
+          }
         },
       },
     },
