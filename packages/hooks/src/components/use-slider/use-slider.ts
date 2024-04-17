@@ -48,7 +48,8 @@ const getRateFromValue = (value: number, scale: number[]) => {
 };
 
 export const useSlider = <Value extends number | number[]>(props: UseSliderProps<Value>) => {
-  const { scale, step } = props;
+  const { scale, step, direction = 'ltr' } = props;
+  const isReserve = direction === 'rtl';
 
   const [rate, setRate] = useState([0, 0]);
 
@@ -95,7 +96,7 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
       const v = context.dragIndex === 0 ? r[0] : r[1];
 
       const max = props.vertical ? target.clientHeight : target.clientWidth;
-      const delta = props.vertical ? deltaY * -1 : deltaX;
+      const delta = props.vertical ? deltaY * -1 : deltaX * (isReserve ? -1 : 1);
       let rate = Math.max(v + delta / max, 0);
       if (rate > 1) {
         rate = 1;
@@ -133,7 +134,7 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
     const target = e.currentTarget as HTMLDivElement;
     const rect = target.getBoundingClientRect();
     const rate = !props.vertical
-      ? (e.clientX - rect.left) / rect.width
+      ? (isReserve ? rect.right - e.clientX : e.clientX - rect.left) / rect.width
       : (rect.bottom - e.clientY) / rect.height;
     const value = getValueFromRate(rate, scale, step);
     if (props.range) {
@@ -158,6 +159,12 @@ export const useSlider = <Value extends number | number[]>(props: UseSliderProps
         bottom: start * 100 + '%',
         top: (1 - end) * 100 + '%',
       };
+    if (isReserve) {
+      return {
+        right: start * 100 + '%',
+        left: (1 - end) * 100 + '%',
+      };
+    }
     return {
       left: start * 100 + '%',
       right: (1 - end) * 100 + '%',
