@@ -10,8 +10,8 @@ export function replaceNonAlphanumeric(str: string) {
   return result;
 }
 
-function camelCaseToDash(str: string) {
-  return str.replace(/([A-Z])/g, '-$1').toLowerCase();
+export function camelCaseToDash(str: string) {
+  return str.replace(/(?<=.)([A-Z])/g, '-$1').toLowerCase();
 }
 
 export const cssvar = (str: string, value: string, key: string, size?: string) => {
