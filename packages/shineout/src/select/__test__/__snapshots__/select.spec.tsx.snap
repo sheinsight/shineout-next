@@ -3,22 +3,22 @@
 exports[`Select[Base] should render correctly  1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -27,10 +27,10 @@ exports[`Select[Base] should render correctly  1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -54,22 +54,22 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
   style="padding: 10px; height: 100px; width: 100%; overflow: hidden;"
 >
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 120px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               default
@@ -78,10 +78,10 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -98,22 +98,22 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
     </div>
   </div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable cj4xjc9 soui-select-multiple"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable cn6td3o soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px; margin-left: 16px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper c-c22far soui-select-multiple-result-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper cfhcqyq soui-select-multiple-result-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select user
@@ -122,10 +122,10 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -147,22 +147,22 @@ exports[`Select[Base] should render correctly about absolute 1`] = `
 exports[`Select[Base] should render correctly about autoAdapt 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -171,10 +171,10 @@ exports[`Select[Base] should render correctly about autoAdapt 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -196,22 +196,22 @@ exports[`Select[Base] should render correctly about autoAdapt 1`] = `
 exports[`Select[Base] should render correctly about big data 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Tag
@@ -220,10 +220,10 @@ exports[`Select[Base] should render correctly about big data 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -245,22 +245,22 @@ exports[`Select[Base] should render correctly about big data 1`] = `
 exports[`Select[Base] should render correctly about create 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable cj4xjc9 soui-select-multiple"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable cn6td3o soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper c-c22far soui-select-multiple-result-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper cfhcqyq soui-select-multiple-result-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -269,10 +269,10 @@ exports[`Select[Base] should render correctly about create 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -296,22 +296,22 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
   style="display: flex; gap: 24px; flex-wrap: wrap;"
 >
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -320,10 +320,10 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -340,22 +340,22 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
     </div>
   </div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -364,10 +364,10 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -384,22 +384,22 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
     </div>
   </div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -408,10 +408,10 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -433,22 +433,22 @@ exports[`Select[Base] should render correctly about custom render 1`] = `
 exports[`Select[Base] should render correctly about custom result 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -457,10 +457,10 @@ exports[`Select[Base] should render correctly about custom result 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -482,32 +482,32 @@ exports[`Select[Base] should render correctly about custom result 1`] = `
 exports[`Select[Base] should render correctly about custom unmatch 1`] = `
 <div>
   <div
-    class="cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cbg099m soui-select-ellipsis"
+            class="cfhw311 soui-select-ellipsis"
           >
             I am redddd color
           </span>
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="cnx7hil soui-select-clear-icon"
+          class="c7he06a soui-select-clear-icon"
         >
           <svg
             aria-hidden="true"
@@ -526,7 +526,7 @@ exports[`Select[Base] should render correctly about custom unmatch 1`] = `
           </svg>
         </span>
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -550,21 +550,21 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
   style="display: flex; flex-wrap: wrap; gap: 24px; width: 624px;"
 >
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper c-plasju soui-select-wrapper-disabled cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c8cbiuj soui-select-wrapper-disabled c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -573,10 +573,10 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -593,22 +593,22 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -617,10 +617,10 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -637,38 +637,38 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="cxj1wt6 soui-select-wrapper c-plasju soui-select-wrapper-disabled cnxmsdq soui-select-clearable cj4xjc9 soui-select-multiple"
+    class="c-uhw2up soui-select-wrapper c8cbiuj soui-select-wrapper-disabled c7htb1f soui-select-clearable cn6td3o soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper c-2z1l47 soui-select-compressed-wrapper c-c22far soui-select-multiple-result-wrapper c-xirb6f soui-select-multiple-compressed-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper c4aziku soui-select-compressed-wrapper cfhcqyq soui-select-multiple-result-wrapper c4un44e soui-select-multiple-compressed-wrapper"
         >
           <div
-            class="cpu1srl soui-select-tag ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright c61m0nt soui-tag-disabled"
+            class="c-lp7ca soui-select-tag cw08yvc soui-tag-tag csmbay7 soui-tag-default c-8zllf8 soui-tag-bright cso3sr2 soui-tag-disabled"
             data-soui-type="dark"
             style="opacity: 1;"
           >
             <div
-              class="c-3cli0a soui-tag-wrapper ckpbjna soui-tag-inline"
+              class="ctgi2dd soui-tag-wrapper c-5qfggl soui-tag-inline"
             >
               <span
-                class="c-tcgym4 soui-tag-container"
+                class="cwqtqen soui-tag-container"
               >
                 red
               </span>
             </div>
             <div
-              class="c-uj954c soui-tag-close-icon"
+              class="cvk1jwf soui-tag-close-icon"
             >
               <span
-                class="c-dd149t soui-tag-close-icon-wrapper"
+                class="c-cai9nw soui-tag-close-icon-wrapper"
               >
                 <svg
                   height="10"
@@ -684,24 +684,24 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="cpu1srl soui-select-tag ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright c61m0nt soui-tag-disabled"
+            class="c-lp7ca soui-select-tag cw08yvc soui-tag-tag csmbay7 soui-tag-default c-8zllf8 soui-tag-bright cso3sr2 soui-tag-disabled"
             data-soui-type="dark"
             style="opacity: 1;"
           >
             <div
-              class="c-3cli0a soui-tag-wrapper ckpbjna soui-tag-inline"
+              class="ctgi2dd soui-tag-wrapper c-5qfggl soui-tag-inline"
             >
               <span
-                class="c-tcgym4 soui-tag-container"
+                class="cwqtqen soui-tag-container"
               >
                 orange
               </span>
             </div>
             <div
-              class="c-uj954c soui-tag-close-icon"
+              class="cvk1jwf soui-tag-close-icon"
             >
               <span
-                class="c-dd149t soui-tag-close-icon-wrapper"
+                class="c-cai9nw soui-tag-close-icon-wrapper"
               >
                 <svg
                   height="10"
@@ -720,11 +720,11 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
             style="display: inline-flex;"
           >
             <div
-              class="cpu1srl soui-select-tag"
+              class="c-lp7ca soui-select-tag cw08yvc soui-tag-tag csmbay7 soui-tag-default c-8zllf8 soui-tag-bright"
               style="position: absolute; z-index: -100; user-select: none; contain: layout; opacity: 0; pointer-events: none;"
             >
               <span
-                class=""
+                class="ctgi2dd soui-tag-wrapper"
               >
                 +
               </span>
@@ -734,10 +734,10 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -754,38 +754,38 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
     </div>
   </div>
   <div
-    class="cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable cj4xjc9 soui-select-multiple"
+    class="c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable cn6td3o soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper c-2z1l47 soui-select-compressed-wrapper c-c22far soui-select-multiple-result-wrapper c-xirb6f soui-select-multiple-compressed-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper c4aziku soui-select-compressed-wrapper cfhcqyq soui-select-multiple-result-wrapper c4un44e soui-select-multiple-compressed-wrapper"
         >
           <div
-            class="cpu1srl soui-select-tag ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+            class="c-lp7ca soui-select-tag cw08yvc soui-tag-tag csmbay7 soui-tag-default c-8zllf8 soui-tag-bright"
             style="opacity: 1;"
           >
             <div
-              class="c-3cli0a soui-tag-wrapper ckpbjna soui-tag-inline"
+              class="ctgi2dd soui-tag-wrapper c-5qfggl soui-tag-inline"
             >
               <span
-                class="c-tcgym4 soui-tag-container"
+                class="cwqtqen soui-tag-container"
               >
                 red
               </span>
             </div>
             <div
-              class="c-uj954c soui-tag-close-icon"
+              class="cvk1jwf soui-tag-close-icon"
             >
               <span
-                class="c-dd149t soui-tag-close-icon-wrapper"
+                class="c-cai9nw soui-tag-close-icon-wrapper"
               >
                 <svg
                   height="10"
@@ -801,23 +801,23 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
             </div>
           </div>
           <div
-            class="cpu1srl soui-select-tag ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright c61m0nt soui-tag-disabled"
+            class="c-lp7ca soui-select-tag cw08yvc soui-tag-tag csmbay7 soui-tag-default c-8zllf8 soui-tag-bright cso3sr2 soui-tag-disabled"
             style="opacity: 1;"
           >
             <div
-              class="c-3cli0a soui-tag-wrapper ckpbjna soui-tag-inline"
+              class="ctgi2dd soui-tag-wrapper c-5qfggl soui-tag-inline"
             >
               <span
-                class="c-tcgym4 soui-tag-container"
+                class="cwqtqen soui-tag-container"
               >
                 orange
               </span>
             </div>
             <div
-              class="c-uj954c soui-tag-close-icon"
+              class="cvk1jwf soui-tag-close-icon"
             >
               <span
-                class="c-dd149t soui-tag-close-icon-wrapper"
+                class="c-cai9nw soui-tag-close-icon-wrapper"
               >
                 <svg
                   height="10"
@@ -836,11 +836,11 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
             style="display: inline-flex;"
           >
             <div
-              class="cpu1srl soui-select-tag"
+              class="c-lp7ca soui-select-tag cw08yvc soui-tag-tag csmbay7 soui-tag-default c-8zllf8 soui-tag-bright"
               style="position: absolute; z-index: -100; user-select: none; contain: layout; opacity: 0; pointer-events: none;"
             >
               <span
-                class=""
+                class="ctgi2dd soui-tag-wrapper"
               >
                 +
               </span>
@@ -850,10 +850,10 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="cnx7hil soui-select-clear-icon"
+          class="c7he06a soui-select-clear-icon"
         >
           <svg
             aria-hidden="true"
@@ -872,7 +872,7 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
           </svg>
         </span>
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -894,18 +894,18 @@ exports[`Select[Base] should render correctly about disabled 1`] = `
 exports[`Select[Base] should render correctly about filter 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <input
             autocomplete="off"
@@ -914,15 +914,15 @@ exports[`Select[Base] should render correctly about filter 1`] = `
             value=""
           />
           <span
-            class="c-1ebgy8 soui-select-input-mirror"
+            class="c-utb7x7 soui-select-input-mirror"
           />
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -944,22 +944,22 @@ exports[`Select[Base] should render correctly about filter 1`] = `
 exports[`Select[Base] should render correctly about format 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -968,10 +968,10 @@ exports[`Select[Base] should render correctly about format 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -992,22 +992,22 @@ exports[`Select[Base] should render correctly about format 1`] = `
 
 exports[`Select[Base] should render correctly about group 1`] = `
 <div
-  class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+  class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
   data-soui-input-border="true"
   style="width: 240px;"
   tabindex="0"
 >
   <div
-    class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+    class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
   >
     <div
-      class="clfred2 soui-select-result"
+      class="cchy1ep soui-select-result"
     >
       <div
-        class="cpgwbww soui-select-result-text-wrapper"
+        class="cwqxflx soui-select-result-text-wrapper"
       >
         <span
-          class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+          class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
         >
           <span>
             Select a city
@@ -1016,10 +1016,10 @@ exports[`Select[Base] should render correctly about group 1`] = `
       </div>
     </div>
     <div
-      class="cmh1eld soui-select-icon-wrapper"
+      class="c-6xycdm soui-select-icon-wrapper"
     >
       <span
-        class="crz1ezt soui-select-arrow-icon"
+        class="cbj7xni soui-select-arrow-icon"
       >
         <svg
           aria-hidden="true"
@@ -1040,42 +1040,42 @@ exports[`Select[Base] should render correctly about group 1`] = `
 exports[`Select[Base] should render correctly about inner title 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnbtq58 soui-select-wrapper-inner-title cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper culutu9 soui-select-wrapper-inner-title c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="c-b64ljl soui-inner-title-wrapper"
+        class="cbjw0q soui-inner-title-wrapper"
       >
         <div
-          class="c-ze4cp8 soui-inner-title-title c-2zrej3 soui-inner-title-top"
+          class="cn8e5i7 soui-inner-title-title c124f8c soui-inner-title-top"
         >
           Select Color
         </div>
         <div
-          class="c-zga0f1 soui-inner-title-place"
+          class="cn68hse soui-inner-title-place"
         >
           <div
-            class="c-ze4cp8 soui-inner-title-title"
+            class="cn8e5i7 soui-inner-title-title"
           >
             Select Color
           </div>
         </div>
         <div
-          class="c-ltj9kb soui-inner-title-content"
+          class="c-abus00 soui-inner-title-content"
         >
           <div
-            class="clfred2 soui-select-result"
+            class="cchy1ep soui-select-result"
           >
             <div
-              class="cpgwbww soui-select-result-text-wrapper"
+              class="cwqxflx soui-select-result-text-wrapper"
             >
               <div
-                class="c-xnoktv soui-select-space"
+                class="c-b16sqm soui-select-space"
               >
                  
               </div>
@@ -1084,10 +1084,10 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1109,22 +1109,22 @@ exports[`Select[Base] should render correctly about inner title 1`] = `
 exports[`Select[Base] should render correctly about loading 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1133,10 +1133,10 @@ exports[`Select[Base] should render correctly about loading 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1158,22 +1158,22 @@ exports[`Select[Base] should render correctly about loading 1`] = `
 exports[`Select[Base] should render correctly about multiple 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable cj4xjc9 soui-select-multiple"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable cn6td3o soui-select-multiple"
     data-soui-input-border="true"
     style="width: 300px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper c-c22far soui-select-multiple-result-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper cfhcqyq soui-select-multiple-result-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1182,10 +1182,10 @@ exports[`Select[Base] should render correctly about multiple 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1209,22 +1209,22 @@ exports[`Select[Base] should render correctly about size 1`] = `
   style="display: flex; gap: 24px; align-items: center;"
 >
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cmj098t soui-select-wrapper-small cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper cy0oqt4 soui-select-wrapper-small c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 240px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1233,10 +1233,10 @@ exports[`Select[Base] should render correctly about size 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1253,22 +1253,22 @@ exports[`Select[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 240px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1277,10 +1277,10 @@ exports[`Select[Base] should render correctly about size 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1297,22 +1297,22 @@ exports[`Select[Base] should render correctly about size 1`] = `
     </div>
   </div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cmeydq9 soui-select-wrapper-large cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper cxwmvak soui-select-wrapper-large c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 240px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1321,10 +1321,10 @@ exports[`Select[Base] should render correctly about size 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1346,22 +1346,22 @@ exports[`Select[Base] should render correctly about size 1`] = `
 exports[`Select[Base] should render correctly about tree 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 260px;"
     tabindex="0"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <span
-            class="cgkchq2 soui-select-placeholder cbg099m soui-select-ellipsis"
+            class="c-cun98x soui-select-placeholder cfhw311 soui-select-ellipsis"
           >
             <span>
               Select Color
@@ -1370,10 +1370,10 @@ exports[`Select[Base] should render correctly about tree 1`] = `
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"
@@ -1395,18 +1395,18 @@ exports[`Select[Base] should render correctly about tree 1`] = `
 exports[`Select[Base] should render correctly about tree more 1`] = `
 <div>
   <div
-    class="cmbbg9f soui-select-wrapper-empty cxj1wt6 soui-select-wrapper cnxmsdq soui-select-clearable"
+    class="cxszxtq soui-select-wrapper-empty c-uhw2up soui-select-wrapper c7htb1f soui-select-clearable"
     data-soui-input-border="true"
     style="width: 260px;"
   >
     <div
-      class="ctottml soui-select-result-wrapper cbdcwz8 soui-select-wrapper-padding-box ccqbq55 soui-select-wrapper-inner-title-top cyqpq07 soui-select-wrapper-inner-title-bottom"
+      class="curco8i soui-select-result-wrapper cine0o9 soui-select-wrapper-padding-box c-702wak soui-select-wrapper-inner-title-top c5nrg2k soui-select-wrapper-inner-title-bottom"
     >
       <div
-        class="clfred2 soui-select-result"
+        class="cchy1ep soui-select-result"
       >
         <div
-          class="cpgwbww soui-select-result-text-wrapper"
+          class="cwqxflx soui-select-result-text-wrapper"
         >
           <input
             autocomplete="off"
@@ -1415,15 +1415,15 @@ exports[`Select[Base] should render correctly about tree more 1`] = `
             value=""
           />
           <span
-            class="c-1ebgy8 soui-select-input-mirror"
+            class="c-utb7x7 soui-select-input-mirror"
           />
         </div>
       </div>
       <div
-        class="cmh1eld soui-select-icon-wrapper"
+        class="c-6xycdm soui-select-icon-wrapper"
       >
         <span
-          class="crz1ezt soui-select-arrow-icon"
+          class="cbj7xni soui-select-arrow-icon"
         >
           <svg
             aria-hidden="true"

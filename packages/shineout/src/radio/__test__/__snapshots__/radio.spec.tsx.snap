@@ -2,7 +2,7 @@
 
 exports[`Radio[Base] should render correctly  1`] = `
 <div
-  class="cscg4k5 soui-radio-wrapper"
+  class="cjemrls soui-radio-wrapper"
 >
   <input
     style="display: none;"
@@ -10,15 +10,15 @@ exports[`Radio[Base] should render correctly  1`] = `
     type="radio"
   />
   <span
-    class="c-dmr5xa soui-radio-indicator-wrapper"
+    class="ckav5h3 soui-radio-indicator-wrapper"
   >
     <span
-      class="co0ikgh soui-radio-indicator"
+      class="cs2ee7w soui-radio-indicator"
       tabindex="1"
     />
   </span>
   <span
-    class="c-2q2qi9 soui-radio-desc"
+    class="c-t5tqm4 soui-radio-desc"
   >
     Option
   </span>
@@ -27,10 +27,10 @@ exports[`Radio[Base] should render correctly  1`] = `
 
 exports[`Radio[Base] should render correctly about block 1`] = `
 <div
-  class="c-ddd5kv soui-radio-group"
+  class="cjfqess soui-radio-group"
 >
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -38,21 +38,21 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       red
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -60,21 +60,21 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       orange
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked"
+    class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked"
   >
     <input
       checked=""
@@ -83,21 +83,21 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       yellow
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -105,21 +105,21 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       green
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -127,21 +127,21 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       cyan
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -149,21 +149,21 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       blue
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -171,15 +171,15 @@ exports[`Radio[Base] should render correctly about block 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       violet
     </span>
@@ -189,10 +189,10 @@ exports[`Radio[Base] should render correctly about block 1`] = `
 
 exports[`Radio[Base] should render correctly about button 1`] = `
 <div
-  class="c-ddd5kv soui-radio-group cja407n soui-radio-group-button c-p0rt2o soui-button-group"
+  class="cjfqess soui-radio-group c6vigfy soui-radio-group-button c-2ea0zf soui-button-group"
 >
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button"
     type="button"
   >
     <input
@@ -205,7 +205,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button"
     type="button"
   >
     <input
@@ -218,7 +218,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+    class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked cusxw20 soui-button-primary c-5l0cgk soui-button-button"
     type="button"
   >
     <input
@@ -232,7 +232,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button"
     type="button"
   >
     <input
@@ -245,7 +245,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button"
     type="button"
   >
     <input
@@ -258,7 +258,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button"
     type="button"
   >
     <input
@@ -271,7 +271,7 @@ exports[`Radio[Base] should render correctly about button 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button"
     type="button"
   >
     <input
@@ -288,10 +288,10 @@ exports[`Radio[Base] should render correctly about button 1`] = `
 
 exports[`Radio[Base] should render correctly about button outline 1`] = `
 <div
-  class="c-ddd5kv soui-radio-group cja407n soui-radio-group-button c-p0rt2o soui-button-group"
+  class="cjfqess soui-radio-group c6vigfy soui-radio-group-button c-2ea0zf soui-button-group"
 >
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button chppqdk soui-button-outline"
     type="button"
   >
     <input
@@ -304,7 +304,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button chppqdk soui-button-outline"
     type="button"
   >
     <input
@@ -317,7 +317,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked cnsrtqr soui-button-primary c3ct0ht soui-button-button capjo2b soui-button-outline"
+    class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked cusxw20 soui-button-primary c-5l0cgk soui-button-button chppqdk soui-button-outline"
     type="button"
   >
     <input
@@ -331,7 +331,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button chppqdk soui-button-outline"
     type="button"
   >
     <input
@@ -344,7 +344,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button chppqdk soui-button-outline"
     type="button"
   >
     <input
@@ -357,7 +357,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button chppqdk soui-button-outline"
     type="button"
   >
     <input
@@ -370,7 +370,7 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
     </span>
   </button>
   <button
-    class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button capjo2b soui-button-outline"
+    class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button chppqdk soui-button-outline"
     type="button"
   >
     <input
@@ -387,10 +387,10 @@ exports[`Radio[Base] should render correctly about button outline 1`] = `
 
 exports[`Radio[Base] should render correctly about cancel 1`] = `
 <div
-  class="c-ddd5kv soui-radio-group"
+  class="cjfqess soui-radio-group"
 >
   <div
-    class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked"
+    class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked"
   >
     <input
       checked=""
@@ -399,21 +399,21 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       red
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -421,21 +421,21 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       orange
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -443,21 +443,21 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       yellow
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -465,21 +465,21 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       green
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -487,21 +487,21 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       cyan
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -509,21 +509,21 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       blue
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -531,15 +531,15 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       violet
     </span>
@@ -549,10 +549,10 @@ exports[`Radio[Base] should render correctly about cancel 1`] = `
 
 exports[`Radio[Base] should render correctly about disabled 1`] = `
 <div
-  class="c-ddd5kv soui-radio-group"
+  class="cjfqess soui-radio-group"
 >
   <div
-    class="cscg4k5 soui-radio-wrapper cspeb5 soui-radio-wrapper-disabled"
+    class="cjemrls soui-radio-wrapper cxyxr6k soui-radio-wrapper-disabled"
   >
     <input
       disabled=""
@@ -561,21 +561,21 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       red
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper cspeb5 soui-radio-wrapper-disabled"
+    class="cjemrls soui-radio-wrapper cxyxr6k soui-radio-wrapper-disabled"
   >
     <input
       disabled=""
@@ -584,21 +584,21 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       orange
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper cspeb5 soui-radio-wrapper-disabled"
+    class="cjemrls soui-radio-wrapper cxyxr6k soui-radio-wrapper-disabled"
   >
     <input
       disabled=""
@@ -607,21 +607,21 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       yellow
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper cspeb5 soui-radio-wrapper-disabled"
+    class="cjemrls soui-radio-wrapper cxyxr6k soui-radio-wrapper-disabled"
   >
     <input
       disabled=""
@@ -630,21 +630,21 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       green
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper cspeb5 soui-radio-wrapper-disabled"
+    class="cjemrls soui-radio-wrapper cxyxr6k soui-radio-wrapper-disabled"
   >
     <input
       disabled=""
@@ -653,21 +653,21 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       cyan
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper cspeb5 soui-radio-wrapper-disabled ceg5x3m soui-radio-wrapper-checked"
+    class="cjemrls soui-radio-wrapper cxyxr6k soui-radio-wrapper-disabled cfiorpj soui-radio-wrapper-checked"
   >
     <input
       checked=""
@@ -677,21 +677,21 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       blue
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper cspeb5 soui-radio-wrapper-disabled"
+    class="cjemrls soui-radio-wrapper cxyxr6k soui-radio-wrapper-disabled"
   >
     <input
       disabled=""
@@ -700,15 +700,15 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       violet
     </span>
@@ -718,10 +718,10 @@ exports[`Radio[Base] should render correctly about disabled 1`] = `
 
 exports[`Radio[Base] should render correctly about disabled func 1`] = `
 <div
-  class="c-ddd5kv soui-radio-group"
+  class="cjfqess soui-radio-group"
 >
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -729,21 +729,21 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       red
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -751,21 +751,21 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       orange
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper cspeb5 soui-radio-wrapper-disabled"
+    class="cjemrls soui-radio-wrapper cxyxr6k soui-radio-wrapper-disabled"
   >
     <input
       disabled=""
@@ -774,21 +774,21 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="-1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       yellow
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -796,21 +796,21 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       green
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -818,21 +818,21 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       cyan
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked"
+    class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked"
   >
     <input
       checked=""
@@ -841,21 +841,21 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       blue
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -863,15 +863,15 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       violet
     </span>
@@ -881,10 +881,10 @@ exports[`Radio[Base] should render correctly about disabled func 1`] = `
 
 exports[`Radio[Base] should render correctly about group 1`] = `
 <div
-  class="c-ddd5kv soui-radio-group"
+  class="cjfqess soui-radio-group"
 >
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -892,21 +892,21 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       red
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -914,21 +914,21 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       orange
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -936,21 +936,21 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       yellow
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -958,21 +958,21 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       green
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -980,21 +980,21 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       cyan
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked"
+    class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked"
   >
     <input
       checked=""
@@ -1003,21 +1003,21 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       blue
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -1025,15 +1025,15 @@ exports[`Radio[Base] should render correctly about group 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       violet
     </span>
@@ -1043,10 +1043,10 @@ exports[`Radio[Base] should render correctly about group 1`] = `
 
 exports[`Radio[Base] should render correctly about group children 1`] = `
 <div
-  class="c-ddd5kv soui-radio-group"
+  class="cjfqess soui-radio-group"
 >
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -1054,21 +1054,21 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       red
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -1076,21 +1076,21 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       orange
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked"
+    class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked"
   >
     <input
       checked=""
@@ -1099,21 +1099,21 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       yellow
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -1121,21 +1121,21 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       green
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -1143,21 +1143,21 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       cyan
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -1165,21 +1165,21 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       blue
     </span>
   </div>
   <div
-    class="cscg4k5 soui-radio-wrapper"
+    class="cjemrls soui-radio-wrapper"
   >
     <input
       style="display: none;"
@@ -1187,15 +1187,15 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
       type="radio"
     />
     <span
-      class="c-dmr5xa soui-radio-indicator-wrapper"
+      class="ckav5h3 soui-radio-indicator-wrapper"
     >
       <span
-        class="co0ikgh soui-radio-indicator"
+        class="cs2ee7w soui-radio-indicator"
         tabindex="1"
       />
     </span>
     <span
-      class="c-2q2qi9 soui-radio-desc"
+      class="c-t5tqm4 soui-radio-desc"
     >
       violet
     </span>
@@ -1206,10 +1206,10 @@ exports[`Radio[Base] should render correctly about group children 1`] = `
 exports[`Radio[Base] should render correctly about size 1`] = `
 <div>
   <div
-    class="c-ddd5kv soui-radio-group cja407n soui-radio-group-button c-p0rt2o soui-button-group"
+    class="cjfqess soui-radio-group c6vigfy soui-radio-group-button c-2ea0zf soui-button-group"
   >
     <button
-      class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked cnsrtqr soui-button-primary c3ct0ht soui-button-button c-ou9rhk soui-button-small"
+      class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked cusxw20 soui-button-primary c-5l0cgk soui-button-button c-27rzeb soui-button-small"
       type="button"
     >
       <input
@@ -1223,7 +1223,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button c-ou9rhk soui-button-small"
+      class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button c-27rzeb soui-button-small"
       type="button"
     >
       <input
@@ -1236,7 +1236,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button c-ou9rhk soui-button-small"
+      class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button c-27rzeb soui-button-small"
       type="button"
     >
       <input
@@ -1251,11 +1251,11 @@ exports[`Radio[Base] should render correctly about size 1`] = `
   </div>
   <br />
   <div
-    class="c-ddd5kv soui-radio-group cja407n soui-radio-group-button c-p0rt2o soui-button-group"
+    class="cjfqess soui-radio-group c6vigfy soui-radio-group-button c-2ea0zf soui-button-group"
     style="margin-top: 24px;"
   >
     <button
-      class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked cnsrtqr soui-button-primary c3ct0ht soui-button-button"
+      class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked cusxw20 soui-button-primary c-5l0cgk soui-button-button"
       type="button"
     >
       <input
@@ -1269,7 +1269,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button"
+      class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button"
       type="button"
     >
       <input
@@ -1282,7 +1282,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button"
+      class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button"
       type="button"
     >
       <input
@@ -1297,11 +1297,11 @@ exports[`Radio[Base] should render correctly about size 1`] = `
   </div>
   <br />
   <div
-    class="c-ddd5kv soui-radio-group cja407n soui-radio-group-button c-p0rt2o soui-button-group"
+    class="cjfqess soui-radio-group c6vigfy soui-radio-group-button c-2ea0zf soui-button-group"
     style="margin-top: 24px;"
   >
     <button
-      class="cscg4k5 soui-radio-wrapper ceg5x3m soui-radio-wrapper-checked cnsrtqr soui-button-primary c3ct0ht soui-button-button c-oybn04 soui-button-large"
+      class="cjemrls soui-radio-wrapper cfiorpj soui-radio-wrapper-checked cusxw20 soui-button-primary c-5l0cgk soui-button-button c-2btuwv soui-button-large"
       type="button"
     >
       <input
@@ -1315,7 +1315,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button c-oybn04 soui-button-large"
+      class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button c-2btuwv soui-button-large"
       type="button"
     >
       <input
@@ -1328,7 +1328,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
       </span>
     </button>
     <button
-      class="cscg4k5 soui-radio-wrapper cg2l11h soui-button-secondary c3ct0ht soui-button-button c-oybn04 soui-button-large"
+      class="cjemrls soui-radio-wrapper c-d8gau soui-button-secondary c-5l0cgk soui-button-button c-2btuwv soui-button-large"
       type="button"
     >
       <input
@@ -1347,7 +1347,7 @@ exports[`Radio[Base] should render correctly about size 1`] = `
 
 exports[`Radio[Base] should render correctly about status 1`] = `
 <div
-  class="cscg4k5 soui-radio-wrapper"
+  class="cjemrls soui-radio-wrapper"
 >
   <input
     style="display: none;"
@@ -1355,15 +1355,15 @@ exports[`Radio[Base] should render correctly about status 1`] = `
     type="radio"
   />
   <span
-    class="c-dmr5xa soui-radio-indicator-wrapper"
+    class="ckav5h3 soui-radio-indicator-wrapper"
   >
     <span
-      class="co0ikgh soui-radio-indicator"
+      class="cs2ee7w soui-radio-indicator"
       tabindex="1"
     />
   </span>
   <span
-    class="c-2q2qi9 soui-radio-desc"
+    class="c-t5tqm4 soui-radio-desc"
   >
     OptionA
   </span>
