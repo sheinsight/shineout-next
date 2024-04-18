@@ -5,7 +5,7 @@
  *    -- Set the columnResizable property to make all columns resizable. set columnResizable: false on columns item to cancel resizable
  */
 import React from 'react';
-import { Table, TYPE } from 'shineout';
+import { Table, TYPE, Popover } from 'shineout';
 import { user } from '@sheinx/mock';
 
 interface TableRowData {
