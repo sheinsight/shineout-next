@@ -100,6 +100,7 @@ const uploadStyle: JsStyles<UploadClassType> = {
     display: 'flex',
     alignItems: 'center',
     minWidth: '0',
+    wordBreak: 'break-all',
     flex: 1,
     gap: token.uploadResultGap,
     fontSize: token.uploadResultFontSize,

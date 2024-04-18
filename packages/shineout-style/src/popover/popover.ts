@@ -16,6 +16,7 @@ const popoverStyle: JsStyles<PopoverClassType> = {
     backgroundColor: token.popoverBackgroundColor,
     borderRadius: token.popoverRadius,
     border: `1px solid ${token.popoverBorderColor}`,
+    wordWrap: 'break-word',
     '& $arrow': {
       'z-index': 1,
       position: 'absolute',
