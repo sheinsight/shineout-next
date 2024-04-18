@@ -13,6 +13,7 @@ const setScrollBehavior = () => {
 };
 
 const resetScrollBehavior = () => {
+  if (!htmlDom) return;
   htmlDom.style.overscrollBehaviorX = lastStyle;
   lastStyle = null;
 };

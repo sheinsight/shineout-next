@@ -1,3 +1,4 @@
+import React from "react";
 export interface UseTransformProps {
   /**
    * 滚动方向
@@ -5,14 +6,14 @@ export interface UseTransformProps {
   direction: 'X' | 'Y';
 
   /**
-   * 滚动容器
+   * 滚动容器 react ref
    */
-  container: HTMLElement | null;
+  containerRef: React.RefObject<HTMLElement>;
 
   /**
    * 滚动目标
    */
-  target: HTMLElement | null;
+  targetRef: React.RefObject<HTMLElement>;
 
   /**
    * 监听滚动

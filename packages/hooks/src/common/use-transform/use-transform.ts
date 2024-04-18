@@ -4,7 +4,9 @@ import { banOverScrollx } from '../../utils/dom/scroll-behavior';
 import { UseTransformProps } from './use-transform.type';
 
 const useTransform = <T>(props: UseTransformProps) => {
-  const { direction, container, target, autoScroll } = props;
+  const { direction, containerRef, targetRef, autoScroll } = props;
+
+  
 
   const [delta, setDelta] = useState(0);
   const [atEnd, setAtEnd] = useState(false);
@@ -16,6 +18,8 @@ const useTransform = <T>(props: UseTransformProps) => {
   };
 
   const getDimension = () => {
+    const container = containerRef.current;
+    const target = targetRef.current;
     if (!container || !target) return {};
     const targetDimension = direction === 'X' ? target.clientWidth : target.clientHeight;
     const containerDimension = direction === 'X' ? container.clientWidth : container.clientHeight;
@@ -90,6 +94,8 @@ const useTransform = <T>(props: UseTransformProps) => {
   };
 
   useEffect(() => {
+    const container = containerRef.current;
+    const target = targetRef.current;
     if (!container || !target) return;
     if (delta === 0 && atStart === false) {
       setAtStart(true);
@@ -103,7 +109,7 @@ const useTransform = <T>(props: UseTransformProps) => {
         removeWheelListener?.();
       };
     }
-  }, [container, target, shouldScroll]);
+  }, [containerRef.current, targetRef.current, shouldScroll]);
 
   return {
     atStart,
@@ -114,6 +120,7 @@ const useTransform = <T>(props: UseTransformProps) => {
     setTransform,
     handleTransform,
     getRectDiff,
+    handleResize,
   };
 };
 
