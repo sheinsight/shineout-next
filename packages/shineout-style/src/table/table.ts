@@ -4,8 +4,9 @@ import { JsStyles } from '../jss-style';
 import { customScrollBar } from '../mixin';
 
 const cellBaseIndex = 4;
-const sorterIndex = 10;
-const fixedIndex = 8;
+const fixedIndex = 6;
+const resizeIndex = 8;
+const fixedFixedIndex = 10;
 const headerIndex = 12;
 const loadingIndex = 16;
 
@@ -203,6 +204,13 @@ const tableStyle: JsStyles<TableClassType> = {
       right: '-5px',
       background: `linear-gradient(90deg, ${token.tableFixedShadow}, transparent)`,
     },
+    '& table': {
+      '& th, & td': {
+        '&$cellFixedLeft': {
+          zIndex: fixedFixedIndex,
+        },
+      },
+    },
   },
   floatRight: {
     '& $cellFixedLast$cellFixedRight::before': {
@@ -213,6 +221,13 @@ const tableStyle: JsStyles<TableClassType> = {
       top: 0,
       bottom: 0,
       position: 'absolute',
+    },
+    '& table': {
+      '& th, & td': {
+        '&$cellFixedRight': {
+          zIndex: fixedFixedIndex,
+        },
+      },
     },
   },
 
@@ -259,7 +274,7 @@ const tableStyle: JsStyles<TableClassType> = {
 
   sorterActive: {},
   resizeSpanner: {
-    zIndex: sorterIndex,
+    zIndex: resizeIndex,
     position: 'absolute',
     opacity: 0,
     right: '-1px',
