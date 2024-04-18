@@ -3,10 +3,11 @@ const packages = ['hooks', 'base', 'shineout-style', 'theme', 'shineout'];
 const fs = require('fs');
 const { exec } = require('child_process');
 
-const version = require(path.resolve(__dirname, '../package.json')).version;
+const mianPackage = require(path.resolve(__dirname, '../package.json'));
+const version = mianPackage.version;
 
 // 获取version中的 tag 比如 3.0.0-alpha.1 中的 alpha
-let tag = (version.split('-')[1] || '').split('.')[0] || 'latest-3';
+let tag = (version.split('-')[1] || '').split('.')[0] || 'latest';
 if (tag === 'rc') {
   tag = 'next-3';
 }
@@ -23,6 +24,9 @@ const buildJason = (name) => {
   const packagePath = path.resolve(__dirname, `../packages/${name}/package.json`);
   const pkg = require(packagePath);
   pkg.version = version;
+  pkg.repository = mianPackage.repository
+  pkg.authors = mianPackage.authors;
+  pkg.license = mianPackage.license;
   delete pkg.scripts;
   delete pkg.devDependencies;
   ['main', 'module', 'typings'].forEach((item) => {
@@ -41,6 +45,18 @@ const buildJason = (name) => {
     path.resolve(__dirname, `../packages/${name}/dist/package.json`),
     JSON.stringify(pkg, null, 2),
   );
+};
+
+const copyFile = (name) => {
+  const targetPath = path.resolve(__dirname, `../packages/${name}/dist`);
+  const sourcePath = path.resolve(__dirname, `../`);
+  // 从sourcePath复制到targetPath 复制 LICENSE
+  fs.copyFileSync(`${sourcePath}/LICENSE`, `${targetPath}/LICENSE`);
+  if (name === 'shineout') {
+    // 从sourcePath复制到targetPath 复制 README.md
+    fs.copyFileSync(`${sourcePath}/README.md`, `${targetPath}/README.md`);
+    fs.copyFileSync(`${sourcePath}/README-zh_CN.md`, `${targetPath}/README-zh_CN.md`);
+  }
 };
 
 const validateFile = (name) => {
@@ -63,21 +79,25 @@ const validateFile = (name) => {
 };
 
 const publishPackage = (name) => {
-  const distPath = path.resolve(__dirname, `../packages/${name}/dist`)
-    exec('npm publish ' + distPath + ' --access public' + (tag ? ` --tag ${tag}` : ''), (error, stdout) => {
-    if (error) {
-      console.error(error);
-      process.exit(1);
-      return;
-    }
-    console.log(stdout);
-  });
+  const distPath = path.resolve(__dirname, `../packages/${name}/dist`);
+  exec(
+    'npm publish ' + distPath + ' --access public' + (tag ? ` --tag ${tag}` : ''),
+    (error, stdout) => {
+      if (error) {
+        console.error(error);
+        process.exit(1);
+        return;
+      }
+      console.log(stdout);
+    },
+  );
 };
 
 try {
   packages.forEach((name) => {
     validateFile(name);
     buildJason(name);
+    copyFile(name);
     publishPackage(name);
   });
 } catch (error) {
