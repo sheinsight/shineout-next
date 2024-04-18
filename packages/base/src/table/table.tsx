@@ -49,6 +49,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     props.rowsInView !== 0 &&
     (!!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto');
 
+  const height = virtual && !props.height ? '100%' : props.height;
+
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
 
   const selection = useTableSelect({
@@ -497,7 +499,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           tableClasses?.simple,
           props.striped && tableClasses?.striped,
         )}
-        style={{ height: props.height || '100%', ...props.style }}
+        style={{ height, ...props.style }}
       >
         <table style={{ width }}>{props.children}</table>
       </div>
@@ -512,7 +514,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           floatRight && tableClasses?.floatRight,
           props.sticky && tableClasses?.sticky,
         )}
-        style={{ height: props.height, ...props.style }}
+        style={{ height, ...props.style }}
         {...selection.getTableProps()}
         ref={tableRef}
       >
