@@ -339,11 +339,13 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
   circle: {
     width: `32px`,
     height: `32px`,
+    padding: 0,
     borderRadius: Token.buttonCircleBorderRadius,
   },
   square: {
     width: `32px`,
     height: `32px`,
+    padding: 0,
     borderRadius: Token.buttonSquareBorderRadius,
     '& $spin': {
       margin: 0,

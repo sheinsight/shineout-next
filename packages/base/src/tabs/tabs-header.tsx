@@ -45,9 +45,10 @@ const TabsHeader = (props: TabsHeaderProps) => {
   } = useTransform({
     autoScroll: true,
     direction: isVertical ? 'Y' : 'X',
-    container: headerRef.current,
-    target: scrollRef.current,
+    containerRef: headerRef,
+    targetRef: scrollRef,
   });
+
 
   const headerStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
   const headerClass = classNames(headerStyle.header, {});
