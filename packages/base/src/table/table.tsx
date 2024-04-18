@@ -293,6 +293,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       treeCheckAll: props.treeCheckAll,
     };
 
+    const showFoot = props.summary?.length;
+
     const footCommonProps = {
       summary: props.summary,
       columns: columns,
@@ -346,19 +348,21 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
               />
             </table>
           </Scroll>
-          <div className={footWrapperClass}>
-            <table
-              style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
-              ref={tfootRef}
-            >
-              {Group}
-              <Tfoot
-                {...footCommonProps}
-                fixLeftNum={virtualInfo.innerLeft}
-                fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
-              />
-            </table>
-          </div>
+          {showFoot ? (
+            <div className={footWrapperClass}>
+              <table
+                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
+                ref={tfootRef}
+              >
+                {Group}
+                <Tfoot
+                  {...footCommonProps}
+                  fixLeftNum={virtualInfo.innerLeft}
+                  fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
+                />
+              </table>
+            </div>
+          ) : null}
         </>
       );
     }
@@ -369,7 +373,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {<Tbody {...bodyCommonProps} />}
-            {<Tfoot {...footCommonProps} />}
+            {showFoot ? <Tfoot {...footCommonProps} /> : null}
           </table>
         </div>
       );
@@ -407,12 +411,14 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           </table>
           {renderEmpty()}
         </div>
-        <div className={footWrapperClass}>
-          <table style={{ width }} ref={tfootRef}>
-            {Group}
-            {<Tfoot {...footCommonProps} />}
-          </table>
-        </div>
+        {showFoot ? (
+          <div className={footWrapperClass}>
+            <table style={{ width }} ref={tfootRef}>
+              {Group}
+              {<Tfoot {...footCommonProps} />}
+            </table>
+          </div>
+        ) : null}
       </>
     );
   };
