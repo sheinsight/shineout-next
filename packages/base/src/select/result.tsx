@@ -117,7 +117,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
       const result = getDataByValues(value);
       // 获取合法的 content
       const content = renderResultContent(result[0]);
-      placeholder2 = content;
+      if (typeof content === 'string') {
+        placeholder2 = content;
+      }
     }
     return (
       <React.Fragment key='input'>
