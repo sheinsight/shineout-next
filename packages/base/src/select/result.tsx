@@ -316,6 +316,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   useEffect(() => {
     if (!focus && mounted.current) {
+      props.setInputText('');
       setTimeout(() => {
         onFilter?.('', 'blur');
       }, 400);
