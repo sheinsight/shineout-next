@@ -186,8 +186,10 @@ const useTableLayout = (props: UseTableLayoutProps) => {
     const max = scrollEl.scrollWidth - scrollEl.clientWidth;
     const min = 0;
     const left = scrollEl.scrollLeft;
-    const l = left !== min;
-    const r = left !== max;
+
+    const l = left > min;
+    // 缩放比例小于1时， 会出现小数， 导致判断错误
+    const r = max - left > 1;
     if (l !== floatLeft) setFloatLeft(l);
     if (r !== floatRight) setFloatRight(r);
   });
