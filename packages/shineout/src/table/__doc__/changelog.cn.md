@@ -5,7 +5,7 @@
 
 ### 🐞 BugFix
 
-- 修复 `Table` 当页面缩放的时候固定列可能出现偏移的问题 ([#383](https://github.com/sheinsight/shineout-next/pull/383))
+- 修复 `Table` 当页面缩放的时候固定列可能出现偏移的问题 ([#384](https://github.com/sheinsight/shineout-next/pull/384))
 
 ### 💎 Enhancement
 
