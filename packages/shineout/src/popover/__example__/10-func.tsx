@@ -30,7 +30,7 @@ const App: React.FC = () => {
 
   return (
     <Button>
-      <Popover position='right' trigger='click'>
+      <Popover priorityDirection='horizontal' trigger='click'>
         {content}
       </Popover>
       Click me
