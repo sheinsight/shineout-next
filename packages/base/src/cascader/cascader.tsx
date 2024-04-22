@@ -233,7 +233,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
   // 点击结果框的处理方法
   const handleResultClick = usePersistFn((e) => {
     if (disabled === true) return;
-    if (!focus) {
+    if (!focused) {
       inputRef.current?.focus();
     }
     if (open) {
@@ -488,6 +488,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
           onResultItemClick={handleResultItemClick}
           checkUnMatched={checkUnMatched}
           getDataByValues={getDataByValues as any}
+          setInputText={setInputText}
         ></Result>
       </div>
     );
