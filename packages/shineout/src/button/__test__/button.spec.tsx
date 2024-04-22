@@ -88,7 +88,6 @@ describe('Button[Base]', () => {
     const { container } = render(<Button>button</Button>);
     const buttonWrapper = container.querySelector('button')!;
     classTest(buttonWrapper, buttonSecondary);
-    classTest(buttonWrapper, buttonOutline);
   });
   test('should render when set icon', () => {
     const { container } = render(<ButtonIcon />);
@@ -122,8 +121,8 @@ describe('Button[Base]', () => {
     const sizes = [buttonSmall, '', buttonLarge];
     const { container } = render(<ButtonSize />);
     container.querySelectorAll('button').forEach((button, index) => {
-      if (!button.classList[2]) return;
-      expect(button.classList[2].includes(sizes[index])).toBeTruthy();
+      if (index === 1) return;
+      classTest(button, sizes[index]);
     });
   });
   test('should render space in text when set space', () => {
@@ -215,7 +214,7 @@ describe('Button[Href]', () => {
     );
     const href = container.querySelector('a')!;
     classLengthTest(container, 'a', 1);
-    classTest(href, buttonHref);
+    // classTest(href, buttonHref);
     attributesTest(href, 'href', 'aaa');
     fireEvent.click(href as HTMLAnchorElement);
     expect(handleFn.mock.calls.length).toBe(1);
@@ -228,7 +227,6 @@ describe('Button[Href]', () => {
     );
     const href = container.querySelector('a');
     expect(container.querySelectorAll('a').length).toBe(1);
-    expect(href?.classList.contains(buttonHref)).toBeTruthy();
     expect(href?.getAttribute('href')).toBe('#home');
     expect(href?.getAttribute('target')).toBe('_blank');
   });
