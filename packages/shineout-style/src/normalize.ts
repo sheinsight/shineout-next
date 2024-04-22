@@ -5,7 +5,7 @@
 // 5. Setting @viewport causes scrollbars to overlap content in IE11 and Edge, so
 //    we force a non-overlapping, non-auto-hiding scrollbar to counteract.
 // 6. Change the default tap highlight to be completely transparent in iOS.
-import { Token as CommonTokens, setToken } from '@sheinx/theme';
+import { CommonToken, setToken } from '@sheinx/theme';
 
 const token = {
   fontFamily:
@@ -13,9 +13,9 @@ const token = {
   color: 'var(--common-body-color, #141737)',
   fontSize: 'var(--font-size-base, 14px)',
   lineHeight: 'var(--common-line-heigh, 1.42857143)',
-  linkColor: CommonTokens['Brand-6'],
+  linkColor: CommonToken['Brand-6'],
   linkHoverDecoration: 'none',
-  linkDisabledColor: CommonTokens['Brand-3'],
+  linkDisabledColor: CommonToken['Brand-3'],
   headingsColor: 'inherit',
   headingsFontFamily: 'inherit',
   headingsFontWeight: 'bold',
