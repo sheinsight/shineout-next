@@ -20,7 +20,7 @@ const token = {
   headingsFontFamily: 'inherit',
   headingsFontWeight: 'bold',
   headingsLineHeight: '1.1',
-  headingsSmallColor: '123',
+  headingsSmallColor: '#adb5bd',
 };
 
 const lineHeightComputed = '20px';
