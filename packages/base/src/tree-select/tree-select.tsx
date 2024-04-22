@@ -240,7 +240,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   // 点击 Select 结果框的处理方法
   const handleResultClick = usePersistFn((e) => {
     if (disabled === true) return;
-    if (!focus) {
+    if (!focused) {
       inputRef.current?.focus();
     }
     if (open) {
