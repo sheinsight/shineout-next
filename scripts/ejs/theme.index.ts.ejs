@@ -1,5 +1,5 @@
 import { Tokens as TokenType } from './token/type';
-import Token from './token/token';
+import CommonTokenMap, { CommonToken } from './token/token';
 import setToken from './utils/token-setter';
 import { setConfig } from './config';
 
@@ -14,13 +14,14 @@ import { setConfig } from './config';
 export type ThemeTokens = <%- tokens.join(' & ') %>;
 
 const Tokens: ThemeTokens = {
+    ...CommonTokenMap,
 <% files.forEach(function (file, i) { -%>
     <% const Comp= getComponentName(file) -%>
     ...<%- Comp -%>,
 <% }) -%>
 };
 
-const defaultTokens: ThemeTokens = {
+const ComponentTokenMap: ThemeTokens = {
 <% files.forEach(function (file, i) { -%>
     <% const Comp= getComponentName(file) -%>
     ...default<%- Comp -%>,
@@ -29,7 +30,7 @@ const defaultTokens: ThemeTokens = {
 
 export type { TokenType };
 export * from './hooks';
-export { Token, defaultTokens, setToken, setConfig };
+export { CommonToken, ComponentTokenMap, setToken, setConfig };
 
 export default Tokens;
 

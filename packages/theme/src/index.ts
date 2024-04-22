@@ -1,5 +1,5 @@
 import { Tokens as TokenType } from './token/type';
-import Token from './token/token';
+import CommonTokenMap, { CommonToken } from './token/token';
 import setToken from './utils/token-setter';
 import { setConfig } from './config';
 
@@ -181,6 +181,7 @@ export type ThemeTokens = AlertTokens &
   UploadTokens;
 
 const Tokens: ThemeTokens = {
+  ...CommonTokenMap,
   ...Alert,
   ...Breadcrumb,
   ...Button,
@@ -227,7 +228,7 @@ const Tokens: ThemeTokens = {
   ...Upload,
 };
 
-const defaultTokens: ThemeTokens = {
+const ComponentTokenMap: ThemeTokens = {
   ...defaultAlert,
   ...defaultBreadcrumb,
   ...defaultButton,
@@ -276,6 +277,6 @@ const defaultTokens: ThemeTokens = {
 
 export type { TokenType };
 export * from './hooks';
-export { Token, defaultTokens, setToken, setConfig };
+export { CommonToken, ComponentTokenMap, setToken, setConfig };
 
 export default Tokens;

@@ -1,4 +1,6 @@
+import { getConfig } from '../config';
 import { Tokens } from './type';
+import { replaceNonAlphanumeric } from '../utils/css-var';
 
 const Token: Tokens = {
   'Brand-1': '#E9F5FE',
@@ -307,4 +309,14 @@ const Token: Tokens = {
   'Size-22': '44px',
 };
 
+const CommonToken = {} as Tokens;
+
+Object.keys(Token).forEach((key) => {
+  const { prefix } = getConfig();
+  CommonToken[key as keyof Tokens] = `var(--${prefix}-${replaceNonAlphanumeric(key)}, ${
+    Token[key as keyof Tokens]
+  })`;
+});
+
+export { CommonToken };
 export default Token;
