@@ -312,6 +312,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       tableClasses?.footWrapper,
       isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
+
+    const fixRightNum =  maxScrollLeft - virtualInfo.innerLeft
     if (virtual) {
       return (
         <>
@@ -325,7 +327,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 <Thead
                   {...headCommonProps}
                   fixLeftNum={virtualInfo.innerLeft}
-                  fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
+                  fixRightNum={fixRightNum}
                 />
               </table>
             </div>
@@ -346,7 +348,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 data={virtualInfo.data}
                 setRowHeight={virtualInfo.setRowHeight}
                 fixLeftNum={virtualInfo.innerLeft}
-                fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
+                fixRightNum={fixRightNum}
               />
             </table>
           </Scroll>
@@ -360,7 +362,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 <Tfoot
                   {...footCommonProps}
                   fixLeftNum={virtualInfo.innerLeft}
-                  fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
+                  fixRightNum={fixRightNum}
                 />
               </table>
             </div>

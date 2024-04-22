@@ -9,12 +9,12 @@ html,
 }
 
 a:not(a[class]) {
-  color: #197afa;
+  color: var(--soui-brand-6);
   cursor: pointer;
 }
 
 a:not(a[class]):hover {
-  color: #429aff;
+  color: var(--soui-brand-5);
 }
 
 body {

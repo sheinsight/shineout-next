@@ -1,7 +1,20 @@
-## 3.0.2
-2024-04-18
+## 3.0.3
+2024-04-22
 
 ### 🆕 Feature
+
+### 🐞 BugFix
+
+- 修复 `Table` 当页面缩放的时候固定列可能出现偏移的问题 ([#384](https://github.com/sheinsight/shineout-next/pull/384))
+
+### 💎 Enhancement
+
+### 💅 Style
+
+### 🆎 Type
+
+## 3.0.2
+2024-04-18
 
 ### 🐞 BugFix
 
@@ -14,9 +27,6 @@
 ### 💅 Style
 
 - 优化 `Table` 拖拽列样式 ([#377](https://github.com/sheinsight/shineout-next/pull/377))
-
-### 🆎 Type
-
 
 
 

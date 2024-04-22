@@ -125,6 +125,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     createdData,
     expanded,
     onFilter: onFilter0,
+    setInputText,
     onCreate,
     onClearCreatedData,
     rawData,
@@ -266,7 +267,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
   // 点击 Select 结果框的处理方法
   const handleResultClick = usePersistFn((e) => {
     if (disabled === true) return;
-    if (!focus) {
+    if (!focused) {
       inputRef.current?.focus();
     }
     if (open) {
@@ -574,6 +575,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
           checkUnMatched={checkUnMatched}
           onRemove={handleRemove}
           classes={styles}
+          setInputText={setInputText}
         ></Result>
       </div>
     );
