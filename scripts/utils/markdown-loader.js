@@ -222,6 +222,7 @@ const changelogLoader = (content) => {
   const changelogs = [];
   let currentVersion = '';
   let currentChangeType = '';
+  let ulIndex = 0;
 
   for (let i = 0; i < tokens.length; i++) {
     const token = tokens[i];
@@ -249,17 +250,17 @@ const changelogLoader = (content) => {
       changelogs[changelogs.length - 1].changes[currentChangeType] =
         changelogs[changelogs.length - 1].changes[currentChangeType] || [];
     }
+    if (token.tag === 'li' && token.type === 'list_item_open') {
+      ulIndex++;
+    }
+    if (token.tag === 'li' && token.type === 'list_item_close') {
+      ulIndex--;
+    }
 
     // 从段落中提取变更项
-    if (
-      token.type === 'inline' &&
-      token.children &&
-      token.children.some((t) => t.type === 'code_inline')
-    ) {
-      const changeDescriptions = token.content.split('\n').filter(Boolean);
-      for (const desc of changeDescriptions) {
-        changelogs[changelogs.length - 1].changes[currentChangeType].push(desc.trim());
-      }
+    if (token.type === 'inline' && token.children && ulIndex > 0) {
+      const changeDescriptions = token.content;
+      changelogs[changelogs.length - 1].changes[currentChangeType].push(changeDescriptions.trim());
     }
   }
 

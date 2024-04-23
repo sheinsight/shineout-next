@@ -49,6 +49,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     props.rowsInView !== 0 &&
     (!!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto');
 
+  const height = virtual && !props.height ? '100%' : props.height;
+
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
 
   const selection = useTableSelect({
@@ -293,6 +295,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       treeCheckAll: props.treeCheckAll,
     };
 
+    const showFoot = props.summary?.length;
+
     const footCommonProps = {
       summary: props.summary,
       columns: columns,
@@ -308,6 +312,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       tableClasses?.footWrapper,
       isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
+
+    const fixRightNum =  maxScrollLeft - virtualInfo.innerLeft
     if (virtual) {
       return (
         <>
@@ -321,7 +327,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 <Thead
                   {...headCommonProps}
                   fixLeftNum={virtualInfo.innerLeft}
-                  fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
+                  fixRightNum={fixRightNum}
                 />
               </table>
             </div>
@@ -342,23 +348,25 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
                 data={virtualInfo.data}
                 setRowHeight={virtualInfo.setRowHeight}
                 fixLeftNum={virtualInfo.innerLeft}
-                fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
+                fixRightNum={fixRightNum}
               />
             </table>
           </Scroll>
-          <div className={footWrapperClass}>
-            <table
-              style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
-              ref={tfootRef}
-            >
-              {Group}
-              <Tfoot
-                {...footCommonProps}
-                fixLeftNum={virtualInfo.innerLeft}
-                fixRightNum={maxScrollLeft - virtualInfo.innerLeft}
-              />
-            </table>
-          </div>
+          {showFoot ? (
+            <div className={footWrapperClass}>
+              <table
+                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
+                ref={tfootRef}
+              >
+                {Group}
+                <Tfoot
+                  {...footCommonProps}
+                  fixLeftNum={virtualInfo.innerLeft}
+                  fixRightNum={fixRightNum}
+                />
+              </table>
+            </div>
+          ) : null}
         </>
       );
     }
@@ -369,7 +377,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
             {Group}
             {!props.hideHeader && <Thead {...headCommonProps} />}
             {<Tbody {...bodyCommonProps} />}
-            {<Tfoot {...footCommonProps} />}
+            {showFoot ? <Tfoot {...footCommonProps} /> : null}
           </table>
         </div>
       );
@@ -407,12 +415,14 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           </table>
           {renderEmpty()}
         </div>
-        <div className={footWrapperClass}>
-          <table style={{ width }} ref={tfootRef}>
-            {Group}
-            {<Tfoot {...footCommonProps} />}
-          </table>
-        </div>
+        {showFoot ? (
+          <div className={footWrapperClass}>
+            <table style={{ width }} ref={tfootRef}>
+              {Group}
+              {<Tfoot {...footCommonProps} />}
+            </table>
+          </div>
+        ) : null}
       </>
     );
   };
@@ -491,7 +501,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           tableClasses?.simple,
           props.striped && tableClasses?.striped,
         )}
-        style={{ height: props.height || '100%', ...props.style }}
+        style={{ height, ...props.style }}
       >
         <table style={{ width }}>{props.children}</table>
       </div>
@@ -506,7 +516,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           floatRight && tableClasses?.floatRight,
           props.sticky && tableClasses?.sticky,
         )}
-        style={{ height: props.height, ...props.style }}
+        style={{ height, ...props.style }}
         {...selection.getTableProps()}
         ref={tableRef}
       >

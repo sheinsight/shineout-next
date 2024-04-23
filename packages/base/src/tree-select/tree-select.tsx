@@ -118,16 +118,24 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 
   const isEmpty = checkEmpty();
 
-  const { filterText, inputText, filterData, expanded, rawData, onFilter, onClearCreatedData } =
-    useFilter({
-      treeData: data,
-      keygen: keygen as any,
-      childrenKey,
-      expanded: expandedProp,
-      showHitDescendants,
-      onAdvancedFilter: 'onAdvancedFilter' in props,
-      onFilter: onAdvancedFilter || onFilterProp,
-    });
+  const {
+    filterText,
+    inputText,
+    filterData,
+    expanded,
+    rawData,
+    onFilter,
+    onClearCreatedData,
+    setInputText,
+  } = useFilter({
+    treeData: data,
+    keygen: keygen as any,
+    childrenKey,
+    expanded: expandedProp,
+    showHitDescendants,
+    onAdvancedFilter: 'onAdvancedFilter' in props,
+    onFilter: onAdvancedFilter || onFilterProp,
+  });
 
   const renderMoreIcon = () => {
     return Icons.treeSelect.More;
@@ -232,7 +240,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   // 点击 Select 结果框的处理方法
   const handleResultClick = usePersistFn((e) => {
     if (disabled === true) return;
-    if (!focus) {
+    if (!focused) {
       inputRef.current?.focus();
     }
     if (open) {
@@ -492,6 +500,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           getDataByValues={getDataByValues}
           onRemove={handleRemove}
           classes={styles}
+          setInputText={setInputText}
         ></Result>
       </div>
     );

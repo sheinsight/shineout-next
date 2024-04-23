@@ -53,9 +53,13 @@ const Scroll = (props: scrollProps) => {
 
   const handleScroll = usePersistFn((e: React.UIEvent) => {
     const target = e.currentTarget as HTMLDivElement;
-    const { scrollLeft, scrollTop } = target;
+    let { scrollLeft, scrollTop } = target;
     const maxY = target.scrollHeight - target.clientHeight;
     const maxX = target.scrollWidth - target.clientWidth;
+    // 解决浏览器缩放以后导致滚动条长度出现小数
+    if (scrollLeft > maxX || maxX - scrollLeft < 1) scrollLeft = maxX;
+    if (scrollTop > maxY || maxY - scrollTop < 1) scrollTop = maxY;
+
     const x = maxX === 0 ? 0 : Math.min(scrollLeft / maxX, 1);
     const y = maxY === 0 ? 0 : Math.min(scrollTop / maxY, 1);
     if (props.onScroll)

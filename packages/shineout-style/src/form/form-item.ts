@@ -17,6 +17,7 @@ const formItemStyle: JsStyles<keyof FormItemClasses> = {
   },
   wrapperTip: {},
   label: {
+    wordWrap: 'break-word',
     width: token.formItemLabelWidth,
     padding: `${token.formItemLabelPaddingY} 0`,
     lineHeight: token.lineHeightDynamic,
