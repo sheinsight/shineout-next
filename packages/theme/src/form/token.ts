@@ -44,7 +44,7 @@ const formTokenExtraValue = {
       color: 'Danger-6',
     },
     tip: {
-      min: { height: '20px' },
+      min: { height: 'Size-10' },
       font: {
         size: '12/regular',
         color: 'Neutral-text-3',

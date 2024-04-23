@@ -30,7 +30,7 @@ const checkboxTokenValue = {};
 const checkboxTokenExtraValue = {
   icon: {
     size: 'Size-7',
-    border: { color: 'Neutral-border-2', radius: 'Radius-2', width: 'Border-1' },
+    border: { color: 'Neutral-border-2', radius: 'Radius-lesser', width: 'Border-1' },
     background: { color: 'Neutral-fill-1' },
     color: 'transparent',
     disabled: {
@@ -52,15 +52,16 @@ const checkboxTokenExtraValue = {
         color: 'Neutral-fill-1',
       },
     },
-    gap: 'Margin-8',
+    gap: 'Spacing-8',
     circle: { fill: 'Neutral-fill-2', dark: 'Neutral-fill-3' },
   },
+  font: { weight: 'Weight-regular' },
   label: {
     font: { color: 'Neutral-text-5', size: '14/regular' },
     disabled: { font: { color: 'Neutral-text-2' } },
   },
-  gap: 'Margin-24',
-  block: { gap: 'Margin-12' },
+  gap: 'Spacing-24',
+  block: { gap: 'Spacing-12' },
   small: {
     icon: { size: 'Size-6' },
     label: { font: { size: '12/regular' } },

@@ -116,6 +116,7 @@ const checkboxStyle: JsStyles<keyof CheckboxClasses> = {
     boxSizing: 'border-box',
     marginLeft: token.checkboxIconGap,
     fontSize: token.checkboxLabelFontSize,
+    fontWeight: token.checkboxFontWeight,
     '$wrapperSmall &': {
       fontSize: token.checkboxSmallLabelFontSize,
     },

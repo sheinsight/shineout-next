@@ -12,7 +12,7 @@ const formTokens: FormTokens = {
   formItemLabelPaddingY: 'Padding-5',
   formItemLabelMarginXEnd: 'Margin-8',
   formItemDangerColor: 'Danger-6',
-  formItemTipMinHeight: '20px',
+  formItemTipMinHeight: 'Size-10',
   formItemTipFontSize: '12/regular',
   formItemTipFontColor: 'Neutral-text-3',
 };

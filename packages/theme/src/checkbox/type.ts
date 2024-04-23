@@ -16,7 +16,7 @@ export interface CheckboxTokens {
   checkboxIconBorderColor: string;
   /**
    * @type {string}
-   * @token Radius-2
+   * @token Radius-lesser
    * @description 单选框图标边框圆角
    */
   checkboxIconBorderRadius: string;
@@ -106,7 +106,7 @@ export interface CheckboxTokens {
   checkboxIconCheckedDisabledColor: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 单选框图标间距
    */
   checkboxIconGap: string;
@@ -122,6 +122,12 @@ export interface CheckboxTokens {
    * @description 单选框图标圆形深色背景
    */
   checkboxIconCircleDark: string;
+  /**
+   * @type {string}
+   * @token Weight-regular
+   * @description 单选框字体字重
+   */
+  checkboxFontWeight: string;
   /**
    * @type {string}
    * @token Neutral-text-5
@@ -142,13 +148,13 @@ export interface CheckboxTokens {
   checkboxLabelDisabledFontColor: string;
   /**
    * @type {string}
-   * @token Margin-24
+   * @token Spacing-24
    * @description 单选框间距
    */
   checkboxGap: string;
   /**
    * @type {string}
-   * @token Margin-12
+   * @token Spacing-12
    * @description 单选框块级之间间距
    */
   checkboxBlockGap: string;

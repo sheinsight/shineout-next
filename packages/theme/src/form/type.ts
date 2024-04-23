@@ -52,7 +52,7 @@ export interface FormTokens {
   formItemDangerColor: string;
   /**
    * @type {string}
-   * @token 20px
+   * @token Size-10
    * @description 表单项提示信息最小高度
    */
   formItemTipMinHeight: string;
