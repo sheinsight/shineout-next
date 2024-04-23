@@ -4,7 +4,6 @@
 import { TreeSelectTokens } from './type';
 
 const treeSelectTokens: TreeSelectTokens = {
-  treeSelectWidth: 'Size-120',
   treeSelectFontSize: '14/regular',
   treeSelectFontColor: 'Neutral-text-5',
   treeSelectBorderRadius: 'Radius-4',

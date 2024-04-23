@@ -4,7 +4,6 @@
 import { SelectTokens } from './type';
 
 const selectTokens: SelectTokens = {
-  selectWidth: 'Size-120',
   selectFontSize: '14/regular',
   selectFontColor: 'Neutral-text-5',
   selectBorderRadius: 'Radius-4',

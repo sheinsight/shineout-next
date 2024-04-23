@@ -30,7 +30,6 @@ const radioTokens: RadioTokens = {
   radioSmallPaddingY: 'Padding-1',
   radioLargeIconWidth: 'Size-8',
   radioLargeIconBorderWidth: 'Border-2',
-  radioLargeIconInnerSize: 'Size-3.5',
   radioLargeLabelFontSize: '16/regular',
   radioLargePaddingY: 'Padding-7',
   radioLabelFontColor: 'Neutral-text-5',

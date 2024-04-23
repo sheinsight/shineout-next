@@ -88,30 +88,6 @@ export interface DatePickerTokens {
   datePickerLargePaddingY: string;
   /**
    * @type {string}
-   * @token Size-120
-   * @description 日期选择器日期宽度
-   */
-  datePickerDateWidth: string;
-  /**
-   * @type {string}
-   * @token Size-140
-   * @description 日期选择器日期范围宽度
-   */
-  datePickerDateRangeWidth: string;
-  /**
-   * @type {string}
-   * @token Size-120
-   * @description 日期选择器日期时间宽度
-   */
-  datePickerDatetimeWidth: string;
-  /**
-   * @type {string}
-   * @token Size-210
-   * @description 日期选择器日期时间范围宽度
-   */
-  datePickerDatetimeRangeWidth: string;
-  /**
-   * @type {string}
    * @token Neutral-text-2
    * @description 日期选择器占位符颜色
    */
@@ -446,60 +422,6 @@ export interface DatePickerTokens {
    * @description 日期选择器单元格外边距（垂直方向）
    */
   datePickerCellMarginY: string;
-  /**
-   * @type {string}
-   * @token Size-124
-   * @description 日期选择器日面板宽度
-   */
-  datePickerDayPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-142
-   * @description 日期选择器周面板宽度
-   */
-  datePickerWeekPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-124
-   * @description 日期选择器年面板宽度
-   */
-  datePickerYearPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-32
-   * @description 日期选择器年单元格热区宽度
-   */
-  datePickerYearCellHotWidth: string;
-  /**
-   * @type {string}
-   * @token Size-124
-   * @description 日期选择器月面板宽度
-   */
-  datePickerMonthPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-32
-   * @description 日期选择器月单元格热区宽度
-   */
-  datePickerMonthCellHotWidth: string;
-  /**
-   * @type {string}
-   * @token Size-124
-   * @description 日期选择器季度面板宽度
-   */
-  datePickerQuarterPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-28
-   * @description 日期选择器季度单元格热区宽度
-   */
-  datePickerQuarterCellHotWidth: string;
-  /**
-   * @type {string}
-   * @token Size-115
-   * @description 日期选择器时间面板宽度
-   */
-  datePickerTimePanelWidth: string;
   /**
    * @type {string}
    * @token Padding-12

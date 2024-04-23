@@ -4,12 +4,6 @@
 export interface TreeSelectTokens {
   /**
    * @type {string}
-   * @token Size-120
-   * @description 树选择器宽度
-   */
-  treeSelectWidth: string;
-  /**
-   * @type {string}
    * @token 14/regular
    * @description 树选择器字体字号
    */

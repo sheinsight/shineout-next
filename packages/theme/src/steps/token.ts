@@ -33,13 +33,13 @@ const stepsTokenValue = {
     icon: { width: 'Size-12', height: 'Size-12', font: { size: '14/regular' } },
     title: { font: { size: '14/medium' } },
     description: { font: { size: '12/regular' } },
-    arrow: { padding: { x: 'Padding-16', y: 'Padding-5' }, height: 'Size-28' },
+    arrow: { padding: { x: 'Padding-16', y: 'Padding-5' } },
   },
   large: {
     icon: { width: 'Size-16', height: 'Size-16', font: { size: '18/regular' } },
     title: { font: { size: '18/medium' } },
     description: { font: { size: '12/regular' } },
-    arrow: { padding: { x: 'Padding-16', y: 'Padding-11' }, height: 'Size-36' },
+    arrow: { padding: { x: 'Padding-16', y: 'Padding-11' } },
   },
   title: { font: { size: '16/regular' } },
   description: { font: { size: '12/regular' } },
@@ -49,7 +49,6 @@ const stepsTokenValue = {
   error: { font: { color: 'Neutral-text-1' }, background: { color: 'Danger-6' } },
   arrow: {
     padding: { x: 'Padding-16', y: 'Padding-8' },
-    height: 'Size-32',
   },
   tail: { background: { color: 'Neutral-border-1' }, finish: { background: { color: 'Brand-6' } } },
   nearly: { content: { margin: 'Margin-8' }, describe: { margin: 'Margin-4' } },

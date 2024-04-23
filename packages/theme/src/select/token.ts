@@ -36,7 +36,6 @@ const selectTokenDescription = {
 const selectTokenValue = { font: { size: '14/regular' } };
 
 const selectTokenExtraValue = {
-  width: 'Size-120',
   font: { size: '14/regular', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
   padding: { x: 'Padding-8', y: 'Padding-2' },

@@ -160,12 +160,6 @@ export interface RadioTokens {
   radioLargeIconBorderWidth: string;
   /**
    * @type {string}
-   * @token Size-3.5
-   * @description 单选框大尺寸图标内嵌字号
-   */
-  radioLargeIconInnerSize: string;
-  /**
-   * @type {string}
    * @token 16/regular
    * @description 单选框大尺寸文案字体字号
    */

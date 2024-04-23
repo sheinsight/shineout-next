@@ -4,12 +4,6 @@
 export interface SelectTokens {
   /**
    * @type {string}
-   * @token Size-120
-   * @description 选择器宽度
-   */
-  selectWidth: string;
-  /**
-   * @type {string}
    * @token 14/regular
    * @description 选择器字体字号
    */

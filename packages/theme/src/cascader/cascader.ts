@@ -4,7 +4,6 @@
 import { CascaderTokens } from './type';
 
 const cascaderTokens: CascaderTokens = {
-  cascaderWidth: 'Size-120',
   cascaderFontSize: '14/regular',
   cascaderFontColor: 'Neutral-text-5',
   cascaderBorderRadius: 'Radius-4',

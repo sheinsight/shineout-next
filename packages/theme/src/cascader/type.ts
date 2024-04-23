@@ -4,12 +4,6 @@
 export interface CascaderTokens {
   /**
    * @type {string}
-   * @token Size-120
-   * @description 级联选择器宽度
-   */
-  cascaderWidth: string;
-  /**
-   * @type {string}
    * @token 14/regular
    * @description 级联选择器字体字号
    */

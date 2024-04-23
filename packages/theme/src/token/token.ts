@@ -307,6 +307,12 @@ const Token: Tokens = {
   'Size-20': '40px',
   'Size-21': '42px',
   'Size-22': '44px',
+  'Size-23': '46px',
+  'Size-24': '48px',
+  'Size-25': '50px',
+  'Size-26': '52px',
+  'Size-27': '54px',
+  'Size-28': '56px',
 };
 
 const CommonToken = {} as Tokens;
@@ -319,4 +325,5 @@ Object.keys(Token).forEach((key) => {
 });
 
 export { CommonToken };
+
 export default Token;

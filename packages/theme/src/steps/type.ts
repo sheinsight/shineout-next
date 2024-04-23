@@ -160,12 +160,6 @@ export interface StepsTokens {
   stepsArrowPaddingY: string;
   /**
    * @type {string}
-   * @token Size-32
-   * @description 步骤条箭头形状的高度
-   */
-  stepsArrowHeight: string;
-  /**
-   * @type {string}
    * @token Padding-16
    * @description 步骤条小尺寸箭头形状的内边距（水平方向）
    */
@@ -178,12 +172,6 @@ export interface StepsTokens {
   stepsSmallArrowPaddingY: string;
   /**
    * @type {string}
-   * @token Size-28
-   * @description 步骤条小尺寸箭头形状的高度
-   */
-  stepsSmallArrowHeight: string;
-  /**
-   * @type {string}
    * @token Padding-16
    * @description 步骤条大尺寸箭头形状的内边距（水平方向）
    */
@@ -194,12 +182,6 @@ export interface StepsTokens {
    * @description 步骤条大尺寸箭头形状的内边距（垂直方向）
    */
   stepsLargeArrowPaddingY: string;
-  /**
-   * @type {string}
-   * @token Size-36
-   * @description 步骤条大尺寸箭头形状的高度
-   */
-  stepsLargeArrowHeight: string;
   /**
    * @type {string}
    * @token Neutral-border-1

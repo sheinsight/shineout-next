@@ -59,8 +59,6 @@ const datePickerTokenExtraValue = {
     padding: { x: 'Padding-8', y: 'Padding-1' },
   },
   large: { font: { size: '16/regular' }, padding: { x: 'Padding-12', y: 'Padding-7' } },
-  date: { width: 'Size-120', range: { width: 'Size-140' } },
-  datetime: { width: 'Size-120', range: { width: 'Size-210' } },
   placeholder: { color: 'Neutral-text-2' },
   background: { color: 'Neutral-fill-1' },
   clear: { color: 'Neutral-text-3' },
@@ -125,13 +123,8 @@ const datePickerTokenExtraValue = {
     header: { color: 'Neutral-text-4' },
     margin: { y: 'Margin-4' },
   },
-  day: { panel: { width: 'Size-124' } },
-  week: { panel: { width: 'Size-142' } },
-  year: { panel: { width: 'Size-124' }, cell: { hot: { width: 'Size-32' } } },
-  month: { panel: { width: 'Size-124' }, cell: { hot: { width: 'Size-32' } } },
-  quarter: { panel: { width: 'Size-124' }, cell: { hot: { width: 'Size-28' } } },
   time: {
-    panel: { width: 'Size-115', padding: { x: 'Padding-12', y: 'Padding-7' } },
+    panel: { padding: { x: 'Padding-12', y: 'Padding-7' } },
     list: { gap: 'Margin-8' },
     item: {
       height: 'Size-15',

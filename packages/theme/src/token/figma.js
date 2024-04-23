@@ -2127,6 +2127,48 @@ const figma = [
     token: 'Size-22',
     locked: true,
   },
+  {
+    name: 'Size-23',
+    value: '46px',
+    describe: 'Size-23 (46px)',
+    token: 'Size-23',
+    locked: true,
+  },
+  {
+    name: 'Size-24',
+    value: '48px',
+    describe: 'Size-24 (48px)',
+    token: 'Size-24',
+    locked: true,
+  },
+  {
+    name: 'Size-25',
+    value: '50px',
+    describe: 'Size-25 (50px)',
+    token: 'Size-25',
+    locked: true,
+  },
+  {
+    name: 'Size-26',
+    value: '52px',
+    describe: 'Size-26 (52px)',
+    token: 'Size-26',
+    locked: true,
+  },
+  {
+    name: 'Size-27',
+    value: '54px',
+    describe: 'Size-27 (54px)',
+    token: 'Size-27',
+    locked: true,
+  },
+  {
+    name: 'Size-28',
+    value: '56px',
+    describe: 'Size-28 (56px)',
+    token: 'Size-28',
+    locked: true,
+  },
 ];
 
 const compile = (figmaData) => {
