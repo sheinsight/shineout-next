@@ -152,7 +152,7 @@ const Token: Tokens = {
   medium: '12px',
   '14/regular': '14px',
   '14/medium': '14px',
-  '16/regular': '16px',
+  'Font-16': '16px',
   '16/medium': '16px',
   '18/regular': '18px',
   '18/medium': '18px',

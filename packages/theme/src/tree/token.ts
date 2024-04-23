@@ -27,7 +27,7 @@ const treeTokenValue = {
   font: { size: '14/regular', color: 'Neutral-text-5' },
   line: { height: 'Size-18' },
   small: { font: { size: '12/regular' }, line: { height: 'Size-14' } },
-  large: { font: { size: '16/regular' }, line: { height: 'Size-22' } },
+  large: { font: { size: 'Font-16' }, line: { height: 'Size-22' } },
   padding: { x: 'Padding-8', y: 'Padding-1' },
   item: {
     background: { color: '' },

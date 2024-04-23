@@ -58,7 +58,7 @@ const modalTokenExtraValue = {
       color: 'Neutral-text-4',
       background: { color: 'Neutral-fill-2' },
     },
-    font: { size: '16/regular' },
+    font: { size: 'Font-16' },
   },
   drawer: {
     title: {

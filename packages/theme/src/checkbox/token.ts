@@ -68,7 +68,7 @@ const checkboxTokenExtraValue = {
   },
   large: {
     icon: { size: 'Size-8' },
-    label: { font: { size: '16/regular' } },
+    label: { font: { size: 'Font-16' } },
   },
 };
 

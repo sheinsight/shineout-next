@@ -28,7 +28,7 @@ const stepsTokenDescription = {
  * 注意，该映射表的内容不与 stepsRules 强关联，非 stepsRules 规则内的 token 需手动增加或删减。
  */
 const stepsTokenValue = {
-  icon: { width: 'Size-14', height: 'Size-14', font: { size: '16/regular' } },
+  icon: { width: 'Size-14', height: 'Size-14', font: { size: 'Font-16' } },
   small: {
     icon: { width: 'Size-12', height: 'Size-12', font: { size: '14/regular' } },
     title: { font: { size: '14/medium' } },
@@ -41,7 +41,7 @@ const stepsTokenValue = {
     description: { font: { size: '12/regular' } },
     arrow: { padding: { x: 'Padding-16', y: 'Padding-11' } },
   },
-  title: { font: { size: '16/regular' } },
+  title: { font: { size: 'Font-16' } },
   description: { font: { size: '12/regular' } },
   wait: { font: { color: 'Neutral-text-4' }, background: { color: 'Neutral-fill-2' } },
   process: { font: { color: 'Neutral-text-1' }, background: { color: 'Brand-6' } },

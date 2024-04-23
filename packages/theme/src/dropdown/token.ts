@@ -43,7 +43,7 @@ const dropdownTokenValue = {
     large: {
       border: { radius: 'Radius-4' },
       padding: { x: 'Padding-4', y: 'Padding-4' },
-      font: { size: '16/regular' },
+      font: { size: 'Font-16' },
     },
     background: { color: 'Neutral-fill-1' },
     box: { shadow: 'Shadow-2' },

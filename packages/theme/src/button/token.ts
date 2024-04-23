@@ -718,7 +718,7 @@ const buttonTokenValue = {
     square: { border: { radius: 'Radius-4' } },
   },
   large: {
-    font: { size: '16/regular', weight: 'Weight-regular' },
+    font: { size: 'Font-16', weight: 'Weight-regular' },
     border: { radius: 'Radius-4' },
     padding: { x: 'Padding-16', y: 'Padding-8' },
     height: 'Size-20',

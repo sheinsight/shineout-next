@@ -35,7 +35,7 @@ const inputTokenValue = {
     icon: { size: '' },
   },
   large: {
-    font: { size: '16/regular' },
+    font: { size: 'Font-16' },
     border: { radius: '' },
     padding: { x: 'Padding-12', y: 'Padding-7' },
     icon: { size: '' },

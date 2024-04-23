@@ -58,7 +58,7 @@ const datePickerTokenExtraValue = {
     border: { radius: '' },
     padding: { x: 'Padding-8', y: 'Padding-1' },
   },
-  large: { font: { size: '16/regular' }, padding: { x: 'Padding-12', y: 'Padding-7' } },
+  large: { font: { size: 'Font-16' }, padding: { x: 'Padding-12', y: 'Padding-7' } },
   placeholder: { color: 'Neutral-text-2' },
   background: { color: 'Neutral-fill-1' },
   clear: { color: 'Neutral-text-3' },

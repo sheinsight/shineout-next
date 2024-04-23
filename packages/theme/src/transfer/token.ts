@@ -27,7 +27,7 @@ const transferTokenValue = {
   font: { size: '14/regular', color: 'Neutral-text-5' },
   header: { height: 'Size-23', background: { color: 'Neutral-fill-2' } },
   small: { font: { size: '12/regular' }, header: { height: 'Size-22' } },
-  large: { font: { size: '16/regular' }, header: { height: 'Size-24' } },
+  large: { font: { size: 'Font-16' }, header: { height: 'Size-24' } },
   border: { color: 'Neutral-border-1', radius: 'Radius-4' },
   icon: {
     color: 'Neutral-text-4',

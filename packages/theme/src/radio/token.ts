@@ -55,7 +55,7 @@ const radioTokenExtraValue = {
   },
   large: {
     icon: { width: 'Size-8', gap: '', border: { width: 'Border-2' } },
-    label: { font: { size: '16/regular' } },
+    label: { font: { size: 'Font-16' } },
     padding: { y: 'Padding-7' },
   },
   label: {

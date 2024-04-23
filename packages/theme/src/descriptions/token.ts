@@ -55,7 +55,7 @@ const descriptionsTokenValue = {
   font: {
     small: { size: '12/regular' },
     default: { size: '14/regular' },
-    large: { size: '16/regular' },
+    large: { size: 'Font-16' },
   },
   extra: { color: '' },
   background: { color: 'Neutral-fill-2' },

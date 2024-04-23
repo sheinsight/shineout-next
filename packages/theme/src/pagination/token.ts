@@ -18,7 +18,7 @@ const paginationTokenDescription = { pagination: '分页器', nearly: '相邻构
 const paginationTokenValue = {
   font: { size: '14/regular', color: 'Neutral-text-5' },
   small: { font: { size: '12/regular' } },
-  large: { font: { size: '16/regular' } },
+  large: { font: { size: 'Font-16' } },
   nearly: { margin: 'Margin-8' },
 };
 

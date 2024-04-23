@@ -30,7 +30,7 @@ const textareaTokenValue = {
     padding: { x: 'Padding-8', y: 'Padding-1' },
   },
   large: {
-    font: { size: '16/regular' },
+    font: { size: 'Font-16' },
     border: { radius: '' },
     padding: { x: 'Padding-12', y: 'Padding-7' },
   },

@@ -55,7 +55,7 @@ const cascaderTokenExtraValue = {
     },
   },
   large: {
-    font: { size: '16/regular' },
+    font: { size: 'Font-16' },
     padding: { x: 'Padding-12', y: 'Padding-3' },
     option: {
       inner: {

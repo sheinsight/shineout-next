@@ -20,7 +20,7 @@ const iconTokenDescription = {
 const iconTokenValue = {
   font: { size: '14/regular', color: 'inherit' },
   small: { font: { size: '12/regular' } },
-  large: { font: { size: '16/regular' } },
+  large: { font: { size: 'Font-16' } },
   primary: { font: { color: 'Brand-6' } },
   secondary: { font: { color: 'Neutral-text-4' } },
   success: { font: { color: 'Success-5' } },
