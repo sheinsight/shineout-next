@@ -6,6 +6,7 @@ import Pagination, { PaginationProps } from '../pagination';
 import AbsoluteContext from '../absolute-list/absolute-context';
 import Empty from '../empty';
 import Sticky from '../sticky';
+import { useConfig } from '../config';
 import {
   useTableLayout,
   useTableColumns,
@@ -41,7 +42,9 @@ const emptyRef = { current: null };
 
 export default <Item, Value>(props: TableProps<Item, Value>) => {
   const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
+  const config = useConfig();
 
+  const isRtl = config.direction === 'rtl';
   const tableClasses = props?.jssStyle?.table?.();
   const tbodyRef = useRef<HTMLTableElement | null>(null);
   const theadRef = useRef<HTMLTableElement | null>(null);
@@ -100,6 +103,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     columnResizable: props.columnResizable,
     onColumnResize: props.onColumnResize,
     width: props.width,
+    isRtl,
   });
 
   const { sortedData, sortInfo, onSorterChange } = useTableSort({
@@ -180,6 +184,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     scrollRef: scrollRef,
     innerRef: tbodyRef,
     scrollLeft: props.scrollLeft,
+    isRtl,
   });
 
   // handle head and  foot scroll
@@ -293,7 +298,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
-    const fixRightNum = maxScrollLeft - virtualInfo.innerLeft;
+    const fixRightNum = (isRtl ? -1 * maxScrollLeft : maxScrollLeft) - virtualInfo.innerLeft;
     const Wrapper = props.sticky ? Sticky : React.Fragment;
     const sticky = typeof props.sticky === 'object' ? props.sticky : { top: 0 };
     const stickyProps = {
@@ -309,7 +314,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           <Wrapper {...(props.sticky ? stickyProps : {})}>
             <div className={headWrapperClass}>
               <table
-                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
+                style={{ width, transform: `translate3d(${0 - virtualInfo.innerLeft}px, 0, 0)` }}
                 ref={theadRef}
               >
                 {Group}
@@ -438,6 +443,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           props.striped && tableClasses?.striped,
         )}
         style={{ height: defaultHeight, ...props.style }}
+        dir={config.direction}
       >
         <table style={{ width }}>{props.children}</table>
       </div>
@@ -455,6 +461,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         style={{ height: defaultHeight, ...props.style }}
         {...selection.getTableProps()}
         ref={tableRef}
+        dir={config.direction}
       >
         <AbsoluteContext.Provider value={true}>
           {renderTable()}

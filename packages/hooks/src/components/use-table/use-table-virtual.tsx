@@ -10,6 +10,7 @@ interface UseTableVirtualProps {
   innerRef: React.RefObject<HTMLDivElement>;
   scrollLeft?: number;
   disabled?: boolean;
+  isRtl?: boolean;
 }
 const useTableVirtual = (props: UseTableVirtualProps) => {
   const [innerLeft, setLeft] = useState(0);
@@ -38,10 +39,13 @@ const useTableVirtual = (props: UseTableVirtualProps) => {
     if (t < 0) {
       t = 0;
     }
-    if (l < 0) {
+    if (!props.isRtl && l < 0) {
       l = 0;
     }
-    return `translate3d(-${l}px, -${t}px, 0)`;
+    if (props.isRtl && l > 0) {
+      l = 0;
+    }
+    return `translate3d(${0 - l}px, ${0 - t}px, 0)`;
   });
 
   const getContentHeight = (index: number) => {
