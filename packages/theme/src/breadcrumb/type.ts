@@ -46,7 +46,7 @@ export interface BreadcrumbTokens {
   breadcrumbListBorderColor: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 面包屑下拉列表的内边距（垂直方向）
    */
   breadcrumbListPaddingY: string;
@@ -58,19 +58,19 @@ export interface BreadcrumbTokens {
   breadcrumbListItemBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 面包屑下拉列表的选项外部容器内边距（水平方向）
    */
   breadcrumbListItemWrapperPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 面包屑下拉列表的选项内边距（水平方向）
    */
   breadcrumbListItemPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 面包屑下拉列表的选项内边距（垂直方向）
    */
   breadcrumbListItemPaddingY: string;
@@ -88,7 +88,7 @@ export interface BreadcrumbTokens {
   breadcrumbListItemHoverFontColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 面包屑分隔符外边距（水平方向）
    */
   breadcrumbSeparatorMarginX: string;

@@ -51,14 +51,14 @@ const datePickerTokenValue = {};
 const datePickerTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
-  padding: { x: 'Padding-8', y: 'Padding-4' },
+  padding: { x: 'Spacing-8', y: 'Spacing-4' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
     font: { size: 'Font-12' },
     border: { radius: '' },
-    padding: { x: 'Padding-8', y: 'Padding-1' },
+    padding: { x: 'Spacing-8', y: 'Spacing-1' },
   },
-  large: { font: { size: 'Font-16' }, padding: { x: 'Padding-12', y: 'Padding-7' } },
+  large: { font: { size: 'Font-16' }, padding: { x: 'Spacing-12', y: 'Spacing-7' } },
   placeholder: { color: 'Neutral-text-2' },
   background: { color: 'Neutral-fill-1' },
   clear: { color: 'Neutral-text-3' },
@@ -73,15 +73,15 @@ const datePickerTokenExtraValue = {
   result: {
     text: {
       border: { radius: 'Radius-4' },
-      padding: { x: 'Padding-4' },
-      small: { padding: { x: 'Padding-4' } },
-      large: { padding: { x: 'Padding-10' } },
+      padding: { x: 'Spacing-4' },
+      small: { padding: { x: 'Spacing-4' } },
+      large: { padding: { x: 'Spacing-10' } },
       active: { background: { color: 'Brand-1' } },
     },
   },
   error: { border: { color: 'Danger-6' }, focus: { shadow: 'Danger-1' } },
   panel: {
-    title: { padding: { top: 'Padding-10' }, font: { size: 'Font-14' } },
+    title: { padding: { top: 'Spacing-10' }, font: { size: 'Font-14' } },
     color: 'Neutral-text-5',
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
@@ -90,7 +90,7 @@ const datePickerTokenExtraValue = {
     border: 'Neutral-border-1',
     header: {
       font: { size: 'Font-14' },
-      padding: { x: 'Padding-12', y: 'Padding-8' },
+      padding: { x: 'Spacing-12', y: 'Spacing-8' },
       border: { color: 'Neutral-border-1' },
       icon: {
         color: 'Neutral-text-5',
@@ -98,11 +98,11 @@ const datePickerTokenExtraValue = {
         hot: { width: 'Size-13' },
         hover: { background: { color: 'Neutral-fill-3' } },
       },
-      title: { padding: { x: 'Padding-4' } },
+      title: { padding: { x: 'Spacing-4' } },
     },
-    body: { padding: { x: 'Padding-16', y: 'Padding-16' }, font: { size: 'Font-14' } },
+    body: { padding: { x: 'Spacing-16', y: 'Spacing-16' }, font: { size: 'Font-14' } },
     footer: {
-      padding: { x: 'Padding-16', y: 'Padding-10' },
+      padding: { x: 'Spacing-16', y: 'Spacing-10' },
       left: { font: { size: 'Font-14' } },
       right: { font: { size: 'Font-14' } },
     },
@@ -124,7 +124,7 @@ const datePickerTokenExtraValue = {
     margin: { y: 'Spacing-4' },
   },
   time: {
-    panel: { padding: { x: 'Padding-12', y: 'Padding-7' } },
+    panel: { padding: { x: 'Spacing-12', y: 'Spacing-7' } },
     list: { gap: 'Spacing-8' },
     item: {
       height: 'Size-15',
@@ -139,11 +139,11 @@ const datePickerTokenExtraValue = {
   },
   quick: {
     panel: {
-      padding: { x: 'Padding-8', y: 'Padding-12' },
+      padding: { x: 'Spacing-8', y: 'Spacing-12' },
       gap: 'Spacing-8',
       item: {
         font: { size: 'Font-12' },
-        padding: { x: 'Padding-12', y: 'Padding-2' },
+        padding: { x: 'Spacing-12', y: 'Spacing-2' },
         hover: { background: { color: 'Neutral-fill-2' } },
       },
     },

@@ -15,7 +15,7 @@ const progressTokens: ProgressTokens = {
   progressLineGap: 'Spacing-8',
   progressLineInnerHeight: 'Size-10',
   progressLineInnerGap: 'Spacing-8',
-  progressLineInnerPaddingX: 'Padding-8',
+  progressLineInnerPaddingX: 'Spacing-8',
   progressLineInnerFontColor: 'Neutral-text-1',
   progressLineInnerFontSize: 'Font-12',
   progressLineInnerRightFontColor: 'Neutral-text-5',

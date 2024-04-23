@@ -37,7 +37,7 @@ const progressTokenExtraValue = {
     inner: {
       height: 'Size-10',
       gap: 'Spacing-8',
-      padding: { x: 'Padding-8' },
+      padding: { x: 'Spacing-8' },
       font: { color: 'Neutral-text-1', size: 'Font-12' },
       right: { font: { color: 'Neutral-text-5' } },
     },

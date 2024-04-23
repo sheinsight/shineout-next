@@ -9,7 +9,7 @@ const formTokens: FormTokens = {
   formItemMarginYEnd: 'Spacing-12',
   formItemMarginXEnd: 'Spacing-16',
   formItemLabelWidth: '140px',
-  formItemLabelPaddingY: 'Padding-5',
+  formItemLabelPaddingY: 'Spacing-5',
   formItemLabelMarginXEnd: 'Spacing-8',
   formItemDangerColor: 'Danger-6',
   formItemTipMinHeight: 'Size-10',

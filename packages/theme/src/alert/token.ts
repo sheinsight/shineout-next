@@ -43,7 +43,7 @@ const alertTokenValue = {
     font: { color: 'Danger-6' },
   },
   font: { size: 'Font-14', color: 'Neutral-text-5' },
-  padding: { x: 'Padding-16', y: 'Padding-8' },
+  padding: { x: 'Spacing-16', y: 'Spacing-8' },
   border: { radius: 'Radius-4' },
   nearly: { margin: 'Spacing-8' },
   title: { font: { size: 'Font-16' } },

@@ -16,13 +16,13 @@ export interface TextareaTokens {
   textareaBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 多行文本框内边距（水平方向）
    */
   textareaPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 多行文本框内边距（垂直方向）
    */
   textareaPaddingY: string;
@@ -34,13 +34,13 @@ export interface TextareaTokens {
   textareaSmallFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 多行文本框小尺寸内边距（水平方向）
    */
   textareaSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 多行文本框小尺寸内边距（垂直方向）
    */
   textareaSmallPaddingY: string;
@@ -52,13 +52,13 @@ export interface TextareaTokens {
   textareaLargeFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 多行文本框大尺寸内边距（水平方向）
    */
   textareaLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Spacing-7
    * @description 多行文本框大尺寸内边距（垂直方向）
    */
   textareaLargePaddingY: string;

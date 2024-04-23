@@ -16,13 +16,13 @@ export interface InputTokens {
   inputBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 输入框内边距（水平方向）
    */
   inputPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 输入框内边距（垂直方向）
    */
   inputPaddingY: string;
@@ -40,13 +40,13 @@ export interface InputTokens {
   inputSmallFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 输入框小尺寸内边距（水平方向）
    */
   inputSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 输入框小尺寸内边距（垂直方向）
    */
   inputSmallPaddingY: string;
@@ -58,13 +58,13 @@ export interface InputTokens {
   inputLargeFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 输入框大尺寸内边距（水平方向）
    */
   inputLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Spacing-7
    * @description 输入框大尺寸内边距（垂直方向）
    */
   inputLargePaddingY: string;
@@ -214,13 +214,13 @@ export interface InputTokens {
   inputInfoErrorBorderColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 输入框内嵌内边距（水平方向）
    */
   inputInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 输入框内嵌内边距（垂直方向）
    */
   inputInnerPaddingY: string;
@@ -232,13 +232,13 @@ export interface InputTokens {
   inputInnerFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 输入框内嵌小尺寸内边距（水平方向）
    */
   inputInnerSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 输入框内嵌小尺寸内边距（垂直方向）
    */
   inputInnerSmallPaddingY: string;
@@ -250,13 +250,13 @@ export interface InputTokens {
   inputInnerSmallFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 输入框内嵌大尺寸内边距（水平方向）
    */
   inputInnerLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-3
+   * @token Spacing-3
    * @description 输入框内嵌大尺寸内边距（垂直方向）
    */
   inputInnerLargePaddingY: string;

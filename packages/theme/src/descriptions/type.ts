@@ -4,25 +4,25 @@
 export interface DescriptionsTokens {
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表标题模式内边距底部
    */
   descriptionsTitlePaddingBottom: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表标签的内边距底部
    */
   descriptionsLabelPaddingBottom: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 描述列表标签的内边距右部
    */
   descriptionsLabelPaddingRight: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表值的内边距底部
    */
   descriptionsValuePaddingBottom: string;
@@ -130,25 +130,25 @@ export interface DescriptionsTokens {
   descriptionsBorderBottomSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 描述列表边框内边距（水平方向）
    */
   descriptionsBorderPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表边框内边距（垂直方向）
    */
   descriptionsBorderPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 描述列表内联边框内边距（水平方向）
    */
   descriptionsInlineBorderPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 描述列表内联边框内边距（垂直方向）
    */
   descriptionsInlineBorderPaddingY: string;

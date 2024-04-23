@@ -10,13 +10,13 @@ export interface PopoverTokens {
   popoverFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 气泡内边距（水平方向）
    */
   popoverPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 气泡内边距（垂直方向）
    */
   popoverPaddingY: string;
@@ -124,13 +124,13 @@ export interface PopoverTokens {
   popoverErrorBorderColor: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 气泡确认内边距（水平方向）
    */
   popoverConfirmPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 气泡确认内边距（垂直方向）
    */
   popoverConfirmPaddingY: string;

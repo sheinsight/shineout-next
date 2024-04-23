@@ -41,11 +41,11 @@ const modalTokenExtraValue = {
     },
   },
   panel: {
-    padding: { y: 'Padding-24', x: 'Padding-24' },
+    padding: { y: 'Spacing-24', x: 'Spacing-24' },
     background: 'Neutral-fill-1',
     shadow: 'Shadow-3',
     border: 'Neutral-border-1',
-    gap: 'Padding-16',
+    gap: 'Spacing-16',
     radius: 'Radius-4',
     font: { size: 'Font-14' },
   },
@@ -62,14 +62,14 @@ const modalTokenExtraValue = {
   },
   drawer: {
     title: {
-      padding: { y: 'Padding-12', x: 'Padding-16' },
+      padding: { y: 'Spacing-12', x: 'Spacing-16' },
       background: { color: 'Neutral-fill-2' },
     },
     body: {
-      padding: { y: 'Padding-16', x: 'Padding-16' },
+      padding: { y: 'Spacing-16', x: 'Spacing-16' },
     },
     footer: {
-      padding: { y: 'Padding-16', x: 'Padding-16' },
+      padding: { y: 'Spacing-16', x: 'Spacing-16' },
     },
     close: {
       background: { color: 'Neutral-fill-3' },

@@ -4,7 +4,7 @@
 import { TreeTokens } from './type';
 
 const treeTokens: TreeTokens = {
-  treeTextPaddingY: 'Padding-2',
+  treeTextPaddingY: 'Spacing-2',
   treeCheckboxMarginX: 'Spacing-8',
   treeFontSize: 'Font-14',
   treeLineHeight: 'Size-18',
@@ -13,8 +13,8 @@ const treeTokens: TreeTokens = {
   treeLargeFontSize: 'Font-16',
   treeLargeLineHeight: 'Size-22',
   treeFontColor: 'Neutral-text-5',
-  treePaddingX: 'Padding-8',
-  treePaddingY: 'Padding-1',
+  treePaddingX: 'Spacing-8',
+  treePaddingY: 'Spacing-1',
   treeItemFontColor: 'Neutral-text-4',
   treeItemHoverBackgroundColor: 'Neutral-fill-2',
   treeItemHoverFontColor: 'Neutral-text-4',

@@ -36,36 +36,36 @@ const treeSelectTokenValue = { font: { size: 'Font-14' } };
 const treeSelectTokenExtraValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
-  padding: { x: 'Padding-8', y: 'Padding-2' },
+  padding: { x: 'Spacing-8', y: 'Spacing-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
     font: { size: 'Font-12' },
     border: { radius: '' },
-    padding: { x: 'Padding-8', y: 'Padding-1' },
+    padding: { x: 'Spacing-8', y: 'Spacing-1' },
     option: {
       inner: {
-        padding: { x: 'Padding-8', y: 'Padding-2' },
+        padding: { x: 'Spacing-8', y: 'Spacing-2' },
       },
     },
   },
   large: {
     font: { size: 'Font-16' },
-    padding: { x: 'Padding-12', y: 'Padding-3' },
+    padding: { x: 'Spacing-12', y: 'Spacing-3' },
     option: {
       inner: {
-        padding: { x: 'Padding-12', y: 'Padding-8' },
+        padding: { x: 'Spacing-12', y: 'Spacing-8' },
       },
     },
     placeholder: {
-      margin: { y: 'Padding-4' },
+      margin: { y: 'Spacing-4' },
     },
   },
   inner: {
-    padding: { x: 'Padding-8', y: 'Padding-5' },
+    padding: { x: 'Spacing-8', y: 'Spacing-5' },
   },
-  placeholder: { color: 'Neutral-text-2', margin: { y: 'Padding-2' } },
+  placeholder: { color: 'Neutral-text-2', margin: { y: 'Spacing-2' } },
   background: { color: 'Neutral-fill-1' },
-  clear: { color: 'Neutral-text-3', padding: 'Padding-8' },
+  clear: { color: 'Neutral-text-3', padding: 'Spacing-8' },
   hover: { border: { color: 'Brand-6' }, clear: { color: 'Neutral-text-4' } },
   focus: { border: { color: 'Brand-7' }, shadow: 'Brand-2' },
   disabled: {
@@ -77,9 +77,9 @@ const treeSelectTokenExtraValue = {
   result: {
     text: {
       border: { radius: 'Radius-4' },
-      padding: { x: 'Padding-4' },
-      small: { padding: { x: 'Padding-4' } },
-      large: { padding: { x: 'Padding-10' } },
+      padding: { x: 'Spacing-4' },
+      small: { padding: { x: 'Spacing-4' } },
+      large: { padding: { x: 'Spacing-10' } },
       active: { background: { color: 'Brand-1' } },
     },
   },
@@ -93,13 +93,13 @@ const treeSelectTokenExtraValue = {
   },
   option: {
     height: 'Size-16',
-    padding: { x: 'Padding-4', y: 'Padding-1' },
+    padding: { x: 'Spacing-4', y: 'Spacing-1' },
     active: {
       color: 'Brand-6',
       background: { color: 'Brand-1' },
     },
     inner: {
-      padding: { x: 'Padding-8', y: 'Padding-5', right: 'Size-15' },
+      padding: { x: 'Spacing-8', y: 'Spacing-5', right: 'Size-15' },
       border: { radius: 'Radius-2' },
     },
     hover: { background: { color: 'Neutral-fill-2' } },
@@ -107,12 +107,12 @@ const treeSelectTokenExtraValue = {
   },
   more: {
     padding: {
-      x: 'Padding-16',
-      y: 'Padding-14',
+      x: 'Spacing-16',
+      y: 'Spacing-14',
     },
   },
   header: {
-    padding: 'Padding-8',
+    padding: 'Spacing-8',
     border: {
       color: 'Neutral-border-1',
     },
@@ -120,11 +120,11 @@ const treeSelectTokenExtraValue = {
   group: {
     title: {
       font: { color: 'Neutral-text-3', size: 'Font-12' },
-      padding: { x: 'Padding-12', y: 'Padding-6' },
+      padding: { x: 'Spacing-12', y: 'Spacing-6' },
     },
   },
   column: {
-    padding: 'Padding-8',
+    padding: 'Spacing-8',
     option: {
       margin: 'Spacing-8',
     },

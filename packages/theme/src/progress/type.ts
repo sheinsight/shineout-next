@@ -70,7 +70,7 @@ export interface ProgressTokens {
   progressLineInnerGap: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 进度条行内嵌文案模式内边距（水平方向）
    */
   progressLineInnerPaddingX: string;

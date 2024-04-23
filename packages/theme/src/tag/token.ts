@@ -664,23 +664,23 @@ const tagTokenValue = {
   },
   font: { size: 'Font-12' },
   border: { radius: 'Radius-3' },
-  padding: { x: 'Padding-6', y: 'Padding-2' },
+  padding: { x: 'Spacing-6', y: 'Spacing-2' },
   height: 'Size-11',
   small: {
     font: { size: 'Font-12' },
     border: { radius: 'Radius-2' },
-    padding: { x: 'Padding-4', y: '' },
+    padding: { x: 'Spacing-4', y: '' },
     height: 'Size-10',
-    input: { padding: { x: 'Padding-4', y: '' }, font: { size: 'Font-12' } },
+    input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-12' } },
   },
   large: {
     font: { size: 'Font-14' },
     border: { radius: 'Radius-4' },
-    padding: { x: 'Padding-12', y: 'Padding-2' },
+    padding: { x: 'Spacing-12', y: 'Spacing-2' },
     height: 'Size-14',
-    input: { padding: { x: 'Padding-4', y: '' }, font: { size: 'Font-14' } },
+    input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-14' } },
   },
-  input: { padding: { x: 'Padding-4', y: '' }, font: { size: 'Font-12' } },
+  input: { padding: { x: 'Spacing-4', y: '' }, font: { size: 'Font-12' } },
 };
 
 const tagTokenExtraValue = {};

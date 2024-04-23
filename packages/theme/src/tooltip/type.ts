@@ -10,13 +10,13 @@ export interface TooltipTokens {
   tooltipFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 文字提示内边距（水平方向）
    */
   tooltipPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 文字提示内边距（垂直方向）
    */
   tooltipPaddingY: string;

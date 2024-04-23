@@ -4,13 +4,13 @@
 export interface UploadTokens {
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 上传结果内边距（水平方向）
    */
   uploadResultPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 上传结果内边距（垂直方向）
    */
   uploadResultPaddingY: string;

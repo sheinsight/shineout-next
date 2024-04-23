@@ -16,13 +16,13 @@ export interface SwitchTokens {
   switchFontColor: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 开关内边距（水平方向）
    */
   switchPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 开关内边距（垂直方向）
    */
   switchPaddingY: string;
@@ -52,7 +52,7 @@ export interface SwitchTokens {
   switchWidth: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 开关文案内边距（水平方向）
    */
   switchTextPaddingX: string;
@@ -64,13 +64,13 @@ export interface SwitchTokens {
   switchSmallFontSize: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 开关小尺寸内边距（水平方向）
    */
   switchSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 开关小尺寸内边距（垂直方向）
    */
   switchSmallPaddingY: string;
@@ -94,13 +94,13 @@ export interface SwitchTokens {
   switchLargeFontSize: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 开关大尺寸内边距（水平方向）
    */
   switchLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 开关大尺寸内边距（垂直方向）
    */
   switchLargePaddingY: string;

@@ -112,7 +112,7 @@ export interface RadioTokens {
   radioIconWrapperDark: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 单选框内边距（垂直方向）
    */
   radioPaddingY: string;
@@ -142,7 +142,7 @@ export interface RadioTokens {
   radioSmallLabelFontSize: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 单选框小尺寸内边距（垂直方向）
    */
   radioSmallPaddingY: string;
@@ -166,7 +166,7 @@ export interface RadioTokens {
   radioLargeLabelFontSize: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Spacing-7
    * @description 单选框大尺寸内边距（垂直方向）
    */
   radioLargePaddingY: string;

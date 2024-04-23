@@ -40,13 +40,13 @@ export interface CollapseTokens {
   collapseWrapperGap: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 折叠面板整体容器（包含头部内容）内边距（水平方向）
    */
   collapseWrapperPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 折叠面板整体容器（包含头部内容）内边距（垂直方向）
    */
   collapseWrapperPaddingY: string;
@@ -100,7 +100,7 @@ export interface CollapseTokens {
   collapseContentGap: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 折叠面板内部容器内边距（垂直方向）
    */
   collapseContentPaddingY: string;
@@ -124,7 +124,7 @@ export interface CollapseTokens {
   collapseContentPaddingLeft: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 折叠面板内部容器内边距（右侧）
    */
   collapseContentPaddingRight: string;

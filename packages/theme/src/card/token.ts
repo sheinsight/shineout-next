@@ -37,7 +37,7 @@ const cardTokenExtraValue = {
     color: 'Neutral-text-5',
     size: 'Font-14',
   },
-  padding: { x: 'Padding-16', y: 'Padding-12' },
+  padding: { x: 'Spacing-16', y: 'Spacing-12' },
   title: {
     font: {
       size: 'Font-16',

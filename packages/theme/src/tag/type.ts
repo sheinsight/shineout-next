@@ -1420,13 +1420,13 @@ export interface TagTokens {
   tagBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-6
+   * @token Spacing-6
    * @description 标签内边距（水平方向）
    */
   tagPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 标签内边距（垂直方向）
    */
   tagPaddingY: string;
@@ -1450,7 +1450,7 @@ export interface TagTokens {
   tagSmallBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 标签小尺寸内边距（水平方向）
    */
   tagSmallPaddingX: string;
@@ -1474,13 +1474,13 @@ export interface TagTokens {
   tagLargeBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 标签大尺寸内边距（水平方向）
    */
   tagLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 标签大尺寸内边距（垂直方向）
    */
   tagLargePaddingY: string;
@@ -1492,7 +1492,7 @@ export interface TagTokens {
   tagLargeHeight: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 标签输入框内边距（水平方向）
    */
   tagInputPaddingX: string;
@@ -1504,7 +1504,7 @@ export interface TagTokens {
   tagInputFontSize: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 标签小尺寸输入框内边距（水平方向）
    */
   tagSmallInputPaddingX: string;
@@ -1516,7 +1516,7 @@ export interface TagTokens {
   tagSmallInputFontSize: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 标签大尺寸输入框内边距（水平方向）
    */
   tagLargeInputPaddingX: string;

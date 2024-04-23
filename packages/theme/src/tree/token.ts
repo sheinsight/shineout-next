@@ -28,7 +28,7 @@ const treeTokenValue = {
   line: { height: 'Size-18' },
   small: { font: { size: 'Font-12' }, line: { height: 'Size-14' } },
   large: { font: { size: 'Font-16' }, line: { height: 'Size-22' } },
-  padding: { x: 'Padding-8', y: 'Padding-1' },
+  padding: { x: 'Spacing-8', y: 'Spacing-1' },
   item: {
     background: { color: '' },
     font: { color: 'Neutral-text-4' },
@@ -51,7 +51,7 @@ const treeTokenValue = {
 const treeTokenExtraValue = {
   text: {
     padding: {
-      y: 'Padding-2',
+      y: 'Spacing-2',
     },
   },
   checkbox: {

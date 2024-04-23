@@ -88,13 +88,13 @@ export interface AlertTokens {
   alertFontColor: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 提示框内边距（水平方向）
    */
   alertPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 提示框内边距（垂直方向）
    */
   alertPaddingY: string;

@@ -10,13 +10,13 @@ export interface TableTokens {
   tableFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 表格单元格内边距（水平方向）
    */
   tableCellPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 表格单元格内边距（垂直方向）
    */
   tableCellPaddingY: string;
@@ -28,25 +28,25 @@ export interface TableTokens {
   tableCellBorderColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 表格小尺寸单元格内边距（水平方向）
    */
   tableSmallCellPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 表格小尺寸单元格内边距（垂直方向）
    */
   tableSmallCellPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 表格大尺寸单元格内边距（水平方向）
    */
   tableLargeCellPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 表格大尺寸单元格内边距（垂直方向）
    */
   tableLargeCellPaddingY: string;

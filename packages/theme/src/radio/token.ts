@@ -47,16 +47,16 @@ const radioTokenExtraValue = {
     },
     wrapper: { fill: 'Neutral-fill-2', dark: 'Neutral-fill-3' },
   },
-  padding: { y: 'Padding-4' },
+  padding: { y: 'Spacing-4' },
   small: {
     icon: { width: 'Size-6', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },
     label: { font: { size: 'Font-12' } },
-    padding: { y: 'Padding-1' },
+    padding: { y: 'Spacing-1' },
   },
   large: {
     icon: { width: 'Size-8', gap: '', border: { width: 'Border-2' } },
     label: { font: { size: 'Font-16' } },
-    padding: { y: 'Padding-7' },
+    padding: { y: 'Spacing-7' },
   },
   label: {
     font: { color: 'Neutral-text-5', size: 'Font-14' },

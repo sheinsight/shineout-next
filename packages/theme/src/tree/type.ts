@@ -4,7 +4,7 @@
 export interface TreeTokens {
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 树组件文字内边距（垂直方向）
    */
   treeTextPaddingY: string;
@@ -58,13 +58,13 @@ export interface TreeTokens {
   treeFontColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树组件内边距（水平方向）
    */
   treePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 树组件内边距（垂直方向）
    */
   treePaddingY: string;

@@ -148,37 +148,37 @@ export interface StepsTokens {
   stepsErrorBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 步骤条箭头形状的内边距（水平方向）
    */
   stepsArrowPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 步骤条箭头形状的内边距（垂直方向）
    */
   stepsArrowPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 步骤条小尺寸箭头形状的内边距（水平方向）
    */
   stepsSmallArrowPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 步骤条小尺寸箭头形状的内边距（垂直方向）
    */
   stepsSmallArrowPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 步骤条大尺寸箭头形状的内边距（水平方向）
    */
   stepsLargeArrowPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-11
+   * @token Spacing-11
    * @description 步骤条大尺寸箭头形状的内边距（垂直方向）
    */
   stepsLargeArrowPaddingY: string;

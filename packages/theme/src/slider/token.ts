@@ -59,8 +59,8 @@ const sliderTokenExtraValue = {
       font: { color: 'Neutral-text-1' },
       radius: 'Radius-2',
       padding: {
-        x: 'Padding-8',
-        y: 'Padding-3',
+        x: 'Spacing-8',
+        y: 'Spacing-3',
       },
     },
   },

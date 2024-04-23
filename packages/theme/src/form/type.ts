@@ -34,7 +34,7 @@ export interface FormTokens {
   formItemLabelWidth: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 表单项标签内边距（垂直方向）
    */
   formItemLabelPaddingY: string;

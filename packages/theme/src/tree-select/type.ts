@@ -28,13 +28,13 @@ export interface TreeSelectTokens {
   treeSelectBorderColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树选择器内边距（水平方向）
    */
   treeSelectPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 树选择器内边距（垂直方向）
    */
   treeSelectPaddingY: string;
@@ -58,25 +58,25 @@ export interface TreeSelectTokens {
   treeSelectSmallFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树选择器小尺寸内边距（水平方向）
    */
   treeSelectSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 树选择器小尺寸内边距（垂直方向）
    */
   treeSelectSmallPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树选择器小尺寸选项容器的内边距（水平方向）
    */
   treeSelectSmallOptionInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 树选择器小尺寸选项容器的内边距（垂直方向）
    */
   treeSelectSmallOptionInnerPaddingY: string;
@@ -88,43 +88,43 @@ export interface TreeSelectTokens {
   treeSelectLargeFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 树选择器大尺寸内边距（水平方向）
    */
   treeSelectLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-3
+   * @token Spacing-3
    * @description 树选择器大尺寸内边距（垂直方向）
    */
   treeSelectLargePaddingY: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 树选择器大尺寸选项容器的内边距（水平方向）
    */
   treeSelectLargeOptionInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树选择器大尺寸选项容器的内边距（垂直方向）
    */
   treeSelectLargeOptionInnerPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 树选择器大尺寸占位符的外边距（垂直方向）
    */
   treeSelectLargePlaceholderMarginY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树选择器容器的内边距（水平方向）
    */
   treeSelectInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 树选择器容器的内边距（垂直方向）
    */
   treeSelectInnerPaddingY: string;
@@ -136,7 +136,7 @@ export interface TreeSelectTokens {
   treeSelectPlaceholderColor: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 树选择器占位符的外边距（垂直方向）
    */
   treeSelectPlaceholderMarginY: string;
@@ -154,7 +154,7 @@ export interface TreeSelectTokens {
   treeSelectClearColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树选择器清除内边距
    */
   treeSelectClearPadding: string;
@@ -214,19 +214,19 @@ export interface TreeSelectTokens {
   treeSelectResultTextBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 树选择器选中结果框文本区域的内边距（水平方向）
    */
   treeSelectResultTextPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 树选择器选中结果框文本区域的小尺寸内边距（水平方向）
    */
   treeSelectResultTextSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-10
+   * @token Spacing-10
    * @description 树选择器选中结果框文本区域的大尺寸内边距（水平方向）
    */
   treeSelectResultTextLargePaddingX: string;
@@ -286,13 +286,13 @@ export interface TreeSelectTokens {
   treeSelectOptionHeight: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 树选择器选项内边距（水平方向）
    */
   treeSelectOptionPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 树选择器选项内边距（垂直方向）
    */
   treeSelectOptionPaddingY: string;
@@ -310,13 +310,13 @@ export interface TreeSelectTokens {
   treeSelectOptionActiveBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树选择器选项容器的内边距（水平方向）
    */
   treeSelectOptionInnerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-5
+   * @token Spacing-5
    * @description 树选择器选项容器的内边距（垂直方向）
    */
   treeSelectOptionInnerPaddingY: string;
@@ -352,19 +352,19 @@ export interface TreeSelectTokens {
   treeSelectOptionDisabledBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 树选择器合并弹层的内边距（水平方向）
    */
   treeSelectMorePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-14
+   * @token Spacing-14
    * @description 树选择器合并弹层的内边距（垂直方向）
    */
   treeSelectMorePaddingY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树选择器下拉列表的头部区域内边距
    */
   treeSelectHeaderPadding: string;
@@ -388,19 +388,19 @@ export interface TreeSelectTokens {
   treeSelectGroupTitleFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 树选择器分组模式下的标题内边距（水平方向）
    */
   treeSelectGroupTitlePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-6
+   * @token Spacing-6
    * @description 树选择器分组模式下的标题内边距（垂直方向）
    */
   treeSelectGroupTitlePaddingY: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 树选择器多列模式下的内边距
    */
   treeSelectColumnPadding: string;

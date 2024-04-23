@@ -32,7 +32,7 @@ const uploadTokenValue = { font: { size: 'Font-14' } };
 
 const uploadTokenExtraValue = {
   result: {
-    padding: { x: 'Padding-16', y: 'Padding-5' },
+    padding: { x: 'Spacing-16', y: 'Spacing-5' },
     background: { color: 'Neutral-fill-2' },
     gap: 'Spacing-4',
     margin: { y: 'Spacing-8' },
