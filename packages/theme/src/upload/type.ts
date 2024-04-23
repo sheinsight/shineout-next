@@ -22,13 +22,13 @@ export interface UploadTokens {
   uploadResultBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 上传结果内间距
    */
   uploadResultGap: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 上传结果外边距（垂直方向）
    */
   uploadResultMarginY: string;

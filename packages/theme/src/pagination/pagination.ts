@@ -8,7 +8,7 @@ const paginationTokens: PaginationTokens = {
   paginationSmallFontSize: 'Font-12',
   paginationLargeFontSize: 'Font-16',
   paginationFontColor: 'Neutral-text-5',
-  paginationNearlyMargin: 'Margin-8',
+  paginationNearlyMargin: 'Spacing-8',
 };
 
 export default paginationTokens;

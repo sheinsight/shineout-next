@@ -8,9 +8,9 @@ const dividerTokens: DividerTokens = {
   dividerFontColor: 'Neutral-text-5',
   dividerBorderColor: 'Neutral-border-1',
   dividerBorderWidth: 'Border-1',
-  dividerHorizontalMarginY: 'Margin-24',
-  dividerHorizontalTextMarginY: 'Margin-16',
-  dividerVerticalMarginX: 'Margin-12',
+  dividerHorizontalMarginY: 'Spacing-24',
+  dividerHorizontalTextMarginY: 'Spacing-16',
+  dividerVerticalMarginX: 'Spacing-12',
   dividerTextPaddingX: '1em',
 };
 

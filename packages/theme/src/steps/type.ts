@@ -10,7 +10,7 @@ export interface StepsTokens {
   stepsDescriptionFontColor: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 步骤条描述信息标题模式外边距（水平方向）
    */
   stepsDescriptionTitleMarginX: string;
@@ -196,13 +196,13 @@ export interface StepsTokens {
   stepsTailFinishBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 步骤条相邻之间的容器外边距
    */
   stepsNearlyContentMargin: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 步骤条相邻之间的描述信息的外边距
    */
   stepsNearlyDescribeMargin: string;

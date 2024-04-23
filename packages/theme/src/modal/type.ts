@@ -64,7 +64,7 @@ export interface ModalTokens {
   modalPanelFontSize: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 对话框头部区域图标外边距（右侧）
    */
   modalHeaderIconMarginEnd: string;
@@ -82,7 +82,7 @@ export interface ModalTokens {
   modalHeaderIconSize: string;
   /**
    * @type {string}
-   * @token Margin-16
+   * @token Spacing-16
    * @description 对话框头部区域关闭icon的外边距（水平方向）（左侧）
    */
   modalHeaderCloseMarginXStart: string;

@@ -86,7 +86,7 @@ const datePickerTokenExtraValue = {
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
     radius: 'Radius-4',
-    margin: 'Margin-24',
+    margin: 'Spacing-24',
     border: 'Neutral-border-1',
     header: {
       font: { size: 'Font-14' },
@@ -121,11 +121,11 @@ const datePickerTokenExtraValue = {
     range: { background: { color: 'Brand-1' } },
     other: { color: 'Neutral-text-2' },
     header: { color: 'Neutral-text-4' },
-    margin: { y: 'Margin-4' },
+    margin: { y: 'Spacing-4' },
   },
   time: {
     panel: { padding: { x: 'Padding-12', y: 'Padding-7' } },
-    list: { gap: 'Margin-8' },
+    list: { gap: 'Spacing-8' },
     item: {
       height: 'Size-15',
       border: { radius: 'Radius-4' },
@@ -140,7 +140,7 @@ const datePickerTokenExtraValue = {
   quick: {
     panel: {
       padding: { x: 'Padding-8', y: 'Padding-12' },
-      gap: 'Margin-8',
+      gap: 'Spacing-8',
       item: {
         font: { size: 'Font-12' },
         padding: { x: 'Padding-12', y: 'Padding-2' },

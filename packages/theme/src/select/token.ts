@@ -128,7 +128,7 @@ const selectTokenExtraValue = {
   column: {
     padding: 'Padding-8',
     option: {
-      margin: 'Margin-8',
+      margin: 'Spacing-8',
     },
     border: {
       radius: 'Radius-4',

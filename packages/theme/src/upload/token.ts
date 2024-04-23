@@ -34,8 +34,8 @@ const uploadTokenExtraValue = {
   result: {
     padding: { x: 'Padding-16', y: 'Padding-5' },
     background: { color: 'Neutral-fill-2' },
-    gap: 'Margin-4',
-    margin: { y: 'Margin-8' },
+    gap: 'Spacing-4',
+    margin: { y: 'Spacing-8' },
     icon: {
       size: 'Size-7',
       color: 'Neutral-text-4',

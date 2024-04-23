@@ -4,10 +4,10 @@
 import { RadioTokens } from './type';
 
 const radioTokens: RadioTokens = {
-  radioGap: 'Margin-24',
-  radioBlockGap: 'Margin-12',
+  radioGap: 'Spacing-24',
+  radioBlockGap: 'Spacing-12',
   radioIconWidth: 'Size-7',
-  radioIconGap: 'Margin-8',
+  radioIconGap: 'Spacing-8',
   radioIconBorderWidth: 'Border-2',
   radioIconInnerSize: 'Size-3',
   radioIconBackgroundColor: 'Neutral-fill-1',

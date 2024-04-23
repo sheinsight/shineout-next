@@ -16,13 +16,13 @@ export interface FormTokens {
   formItemFontColor: string;
   /**
    * @type {string}
-   * @token Margin-12
+   * @token Spacing-12
    * @description 表单项外边距（垂直方向）（后部）
    */
   formItemMarginYEnd: string;
   /**
    * @type {string}
-   * @token Margin-16
+   * @token Spacing-16
    * @description 表单项外边距（水平方向）（后部）
    */
   formItemMarginXEnd: string;
@@ -40,7 +40,7 @@ export interface FormTokens {
   formItemLabelPaddingY: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 表单项标签外边距（水平方向）（后部）
    */
   formItemLabelMarginXEnd: string;

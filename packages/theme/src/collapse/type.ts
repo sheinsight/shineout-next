@@ -16,7 +16,7 @@ export interface CollapseTokens {
   collapseIconHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-24
+   * @token Spacing-24
    * @description 折叠面板右侧附加内容外边距
    */
   collapseExtraMargin: string;

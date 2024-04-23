@@ -130,7 +130,7 @@ export interface SliderTokens {
   sliderScaleLineBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 滑块刻度外边距（垂直方向）
    */
   sliderScaleMarginY: string;

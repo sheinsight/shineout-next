@@ -28,7 +28,7 @@ export interface MessageTokens {
   messageFontColor: string;
   /**
    * @type {string}
-   * @token Margin-24
+   * @token Spacing-24
    * @description 全局提示外边距
    */
   messageMarginBottom: string;

@@ -19,7 +19,7 @@ const paginationTokenValue = {
   font: { size: 'Font-14', color: 'Neutral-text-5' },
   small: { font: { size: 'Font-12' } },
   large: { font: { size: 'Font-16' } },
-  nearly: { margin: 'Margin-8' },
+  nearly: { margin: 'Spacing-8' },
 };
 
 const paginationTokenExtraValue = {};

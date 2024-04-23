@@ -73,7 +73,7 @@ const dropdownTokenValue = {
   column: { padding: { x: 'Padding-4', y: 'Padding-4' } },
 };
 
-const dropdownTokenExtraValue = { caret: { margin: { left: 'Margin-4' } } };
+const dropdownTokenExtraValue = { caret: { margin: { left: 'Spacing-4' } } };
 
 module.exports = {
   dropdownTokenValue,

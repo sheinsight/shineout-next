@@ -77,7 +77,7 @@ const selectTokens: SelectTokens = {
   selectGroupTitleLargeTop: 'Padding-14',
   selectGroupTitleLargeBottom: 'Padding-4',
   selectColumnPadding: 'Padding-8',
-  selectColumnOptionMargin: 'Margin-8',
+  selectColumnOptionMargin: 'Spacing-8',
   selectColumnBorderRadius: 'Radius-4',
   selectColumnBackgroundColor: 'Neutral-fill-2',
 };

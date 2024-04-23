@@ -70,7 +70,7 @@ const sliderTokenExtraValue = {
       background: { color: 'Neutral-border-1' },
     },
     margin: {
-      y: 'Margin-4',
+      y: 'Spacing-4',
     },
     font: {
       color: 'Neutral-text-4',

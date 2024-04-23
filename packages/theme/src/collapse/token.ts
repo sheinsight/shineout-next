@@ -68,7 +68,7 @@ const collapseTokenValue = {
 
 const collapseTokenExtraValue = {
   icon: { color: 'Neutral-text-4', hover: { background: { color: 'Neutral-fill-3' } } },
-  extra: { margin: 'Margin-24' },
+  extra: { margin: 'Spacing-24' },
 };
 
 module.exports = {

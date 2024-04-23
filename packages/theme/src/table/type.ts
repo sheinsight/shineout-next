@@ -166,7 +166,7 @@ export interface TableTokens {
   tableSelectionBorderColor: string;
   /**
    * @type {string}
-   * @token Margin-12
+   * @token Spacing-12
    * @description 表格分页器的外边距（垂直方向）
    */
   tablePaginationMarginY: string;

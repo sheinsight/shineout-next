@@ -52,7 +52,7 @@ export interface ProgressTokens {
   progressLineHeight: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 进度条行间距
    */
   progressLineGap: string;
@@ -64,7 +64,7 @@ export interface ProgressTokens {
   progressLineInnerHeight: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 进度条行内嵌文案模式间距
    */
   progressLineInnerGap: string;

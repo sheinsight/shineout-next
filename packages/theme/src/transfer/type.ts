@@ -88,7 +88,7 @@ export interface TransferTokens {
   transferIconBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 穿梭框图标相邻外边距
    */
   transferIconNearlyMargin: string;

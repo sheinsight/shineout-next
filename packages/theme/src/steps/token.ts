@@ -51,11 +51,11 @@ const stepsTokenValue = {
     padding: { x: 'Padding-16', y: 'Padding-8' },
   },
   tail: { background: { color: 'Neutral-border-1' }, finish: { background: { color: 'Brand-6' } } },
-  nearly: { content: { margin: 'Margin-8' }, describe: { margin: 'Margin-4' } },
+  nearly: { content: { margin: 'Spacing-8' }, describe: { margin: 'Spacing-4' } },
 };
 
 const stepsTokenExtraValue = {
-  description: { font: { color: 'Neutral-text-3' }, title: { margin: { x: 'Margin-4' } } },
+  description: { font: { color: 'Neutral-text-3' }, title: { margin: { x: 'Spacing-4' } } },
 };
 
 module.exports = {

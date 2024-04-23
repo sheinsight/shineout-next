@@ -64,7 +64,7 @@ export interface ListTokens {
   listLargeItemPaddingX: string;
   /**
    * @type {string}
-   * @token Margin-12
+   * @token Spacing-12
    * @description 列表分页器外边距（垂直方向）
    */
   listPaginationMarginY: string;

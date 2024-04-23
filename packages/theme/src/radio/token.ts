@@ -29,11 +29,11 @@ const radioTokenDescription = {
 const radioTokenValue = {};
 
 const radioTokenExtraValue = {
-  gap: 'Margin-24',
-  block: { gap: 'Margin-12' },
+  gap: 'Spacing-24',
+  block: { gap: 'Spacing-12' },
   icon: {
     width: 'Size-7',
-    gap: 'Margin-8',
+    gap: 'Spacing-8',
     border: { width: 'Border-2' },
     inner: { size: 'Size-3' },
     background: { color: 'Neutral-fill-1' },

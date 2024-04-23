@@ -232,7 +232,7 @@ export interface DatePickerTokens {
   datePickerPanelRadius: string;
   /**
    * @type {string}
-   * @token Margin-24
+   * @token Spacing-24
    * @description 日期选择器面板外边距
    */
   datePickerPanelMargin: string;
@@ -418,7 +418,7 @@ export interface DatePickerTokens {
   datePickerCellHeaderColor: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 日期选择器单元格外边距（垂直方向）
    */
   datePickerCellMarginY: string;
@@ -436,7 +436,7 @@ export interface DatePickerTokens {
   datePickerTimePanelPaddingY: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 日期选择器时间列表间距
    */
   datePickerTimeListGap: string;
@@ -508,7 +508,7 @@ export interface DatePickerTokens {
   datePickerQuickPanelPaddingY: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 日期选择器快捷选择面板间距
    */
   datePickerQuickPanelGap: string;

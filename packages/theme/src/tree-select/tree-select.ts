@@ -71,7 +71,7 @@ const treeSelectTokens: TreeSelectTokens = {
   treeSelectGroupTitlePaddingX: 'Padding-12',
   treeSelectGroupTitlePaddingY: 'Padding-6',
   treeSelectColumnPadding: 'Padding-8',
-  treeSelectColumnOptionMargin: 'Margin-8',
+  treeSelectColumnOptionMargin: 'Spacing-8',
 };
 
 export default treeSelectTokens;

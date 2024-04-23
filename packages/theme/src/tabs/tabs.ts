@@ -20,7 +20,7 @@ const tabsTokens: TabsTokens = {
   tabsTabPaddingY: 'Padding-9',
   tabsTabFontSize: 'Font-14',
   tabsTabBorderRadius: 'Radius-4',
-  tabsNearlyMargin: 'Margin-4',
+  tabsNearlyMargin: 'Spacing-4',
   tabsLinePaddingX: 'Padding-8',
   tabsLinePaddingY: 'Padding-6',
   tabsLineInnerPaddingX: 'Padding-8',

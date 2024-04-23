@@ -31,7 +31,7 @@ const tableTokens: TableTokens = {
   tableSorterActiveColor: 'Brand-6',
   tableResizeColor: 'Brand-7',
   tableSelectionBorderColor: 'Brand-6',
-  tablePaginationMarginY: 'Margin-12',
+  tablePaginationMarginY: 'Spacing-12',
 };
 
 export default tableTokens;

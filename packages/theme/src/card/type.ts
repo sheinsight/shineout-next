@@ -64,7 +64,7 @@ export interface CardTokens {
   cardHeaderGap: string;
   /**
    * @type {string}
-   * @token Margin-16
+   * @token Spacing-16
    * @description 卡片头部额外内容的外边距（水平方向）
    */
   cardHeaderExtraMarginX: string;

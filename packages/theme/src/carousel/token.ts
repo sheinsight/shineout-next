@@ -28,7 +28,7 @@ const carouselTokenValue = { font: { size: 'Font-14' } };
 
 const carouselTokenExtraValue = {
   arrow: {
-    margin: 'Margin-18',
+    margin: 'Spacing-18',
     size: 'Size-12',
     icon: { size: 'Size-10' },
     background: { color: 'rgba(255, 255, 255, 0.2)' },
@@ -40,8 +40,8 @@ const carouselTokenExtraValue = {
     background: { color: 'Neutral-fill-4' },
     active: { background: { color: 'Neutral-fill-1' } },
     wrapper: { height: 'Size-20' },
-    circle: { width: 'Size-3', gap: 'Margin-8' },
-    line: { width: 'Size-6', height: 'Size-2', gap: 'Margin-4' },
+    circle: { width: 'Size-3', gap: 'Spacing-8' },
+    line: { width: 'Size-6', height: 'Size-2', gap: 'Spacing-4' },
     arrow: { size: 'Size-8', color: 'Neutral-fill-4', hover: { color: 'Neutral-fill-1' } },
     number: { color: 'Neutral-fill-1', font: { size: 'Font-14' } },
     outer: {

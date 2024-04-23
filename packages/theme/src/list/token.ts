@@ -35,7 +35,7 @@ const listTokenExtraValue = {
     item: { padding: { y: 'Padding-16', x: 'Padding-20' } },
   },
   pagination: {
-    margin: { y: 'Margin-12' },
+    margin: { y: 'Spacing-12' },
   },
   striped: { background: { color: 'Neutral-fill-2' } },
 };

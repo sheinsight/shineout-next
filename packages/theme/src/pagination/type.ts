@@ -28,7 +28,7 @@ export interface PaginationTokens {
   paginationFontColor: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 分页器相邻构件的外边距
    */
   paginationNearlyMargin: string;

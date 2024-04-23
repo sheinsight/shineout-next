@@ -18,7 +18,7 @@ const transferTokens: TransferTokens = {
   transferBorderRadius: 'Radius-4',
   transferHeaderBackgroundColor: 'Neutral-fill-2',
   transferIconBackgroundColor: 'Neutral-fill-3',
-  transferIconNearlyMargin: 'Margin-8',
+  transferIconNearlyMargin: 'Spacing-8',
   transferItemHoverBackgroundColor: 'Neutral-fill-2',
   transferCheckboxHoverBackgroundColor: 'Neutral-fill-3',
 };

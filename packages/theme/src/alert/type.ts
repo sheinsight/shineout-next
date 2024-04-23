@@ -106,7 +106,7 @@ export interface AlertTokens {
   alertBorderRadius: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 提示框相邻之间的外边距
    */
   alertNearlyMargin: string;

@@ -4,7 +4,7 @@
 export interface DropdownTokens {
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 下拉菜单箭头icon的外边距（左侧）
    */
   dropdownCaretMarginLeft: string;

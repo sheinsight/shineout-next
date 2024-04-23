@@ -406,7 +406,7 @@ export interface TreeSelectTokens {
   treeSelectColumnPadding: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 树选择器多列模式下的选项外边距
    */
   treeSelectColumnOptionMargin: string;

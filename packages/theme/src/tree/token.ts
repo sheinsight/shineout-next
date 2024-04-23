@@ -56,7 +56,7 @@ const treeTokenExtraValue = {
   },
   checkbox: {
     margin: {
-      x: 'Margin-8',
+      x: 'Spacing-8',
     },
   },
 };

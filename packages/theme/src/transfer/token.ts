@@ -32,7 +32,7 @@ const transferTokenValue = {
   icon: {
     color: 'Neutral-text-4',
     background: { color: 'Neutral-fill-3' },
-    nearly: { margin: 'Margin-8' },
+    nearly: { margin: 'Spacing-8' },
   },
   disabled: { border: { color: '' }, font: { color: 'Neutral-text-2' }, icon: { color: '' } },
   empty: { border: { color: '' }, font: { color: 'Neutral-text-3' }, icon: { color: '' } },

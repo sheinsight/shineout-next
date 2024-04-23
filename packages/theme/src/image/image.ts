@@ -15,7 +15,7 @@ const imageTokens: ImageTokens = {
   imageErrorBackgroundColor: 'Neutral-fill-2',
   imageErrorFontColor: 'Neutral-text-4',
   imageErrorFontSize: 'Font-12',
-  imageGroupNearlyMargin: 'Margin-8',
+  imageGroupNearlyMargin: 'Spacing-8',
   imageMaskBackgroundColor: 'Mask-fill-1',
   imageBackgroundColor: 'Neutral-fill-2',
 };

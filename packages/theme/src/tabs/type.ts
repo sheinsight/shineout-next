@@ -100,7 +100,7 @@ export interface TabsTokens {
   tabsTabBorderRadius: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 标签页相邻之间的外边距
    */
   tabsNearlyMargin: string;

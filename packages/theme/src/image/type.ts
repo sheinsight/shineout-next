@@ -70,7 +70,7 @@ export interface ImageTokens {
   imageErrorFontSize: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 图片组相邻之间的外边距
    */
   imageGroupNearlyMargin: string;

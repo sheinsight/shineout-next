@@ -33,10 +33,10 @@ const progressTokenExtraValue = {
   danger: { front: { background: { color: 'Danger-6' } } },
   line: {
     height: 'Size-3',
-    gap: 'Margin-8',
+    gap: 'Spacing-8',
     inner: {
       height: 'Size-10',
-      gap: 'Margin-8',
+      gap: 'Spacing-8',
       padding: { x: 'Padding-8' },
       font: { color: 'Neutral-text-1', size: 'Font-12' },
       right: { font: { color: 'Neutral-text-5' } },

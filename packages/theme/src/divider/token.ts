@@ -26,11 +26,11 @@ const dividerTokenExtraValue = {
   font: { size: 'Font-12', color: 'Neutral-text-5' },
   border: { color: 'Neutral-border-1', width: 'Border-1' },
   horizontal: {
-    margin: { y: 'Margin-24' },
-    text: { margin: { y: 'Margin-16' } },
+    margin: { y: 'Spacing-24' },
+    text: { margin: { y: 'Spacing-16' } },
   },
   vertical: {
-    margin: { x: 'Margin-12' },
+    margin: { x: 'Spacing-12' },
   },
   text: {
     padding: { x: '1em' },

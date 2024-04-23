@@ -10,7 +10,7 @@ export interface TreeTokens {
   treeTextPaddingY: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 树组件复选框外边距（水平方向）
    */
   treeCheckboxMarginX: string;

@@ -32,13 +32,13 @@ const formTokenExtraValue = {
   item: {
     font: { size: 'Font-14', color: 'Neutral-text-5' },
     margin: {
-      y: { end: 'Margin-12' },
-      x: { end: 'Margin-16' },
+      y: { end: 'Spacing-12' },
+      x: { end: 'Spacing-16' },
     },
     label: {
       width: '140px',
       padding: { y: 'Padding-5' },
-      margin: { x: { end: 'Margin-8' } },
+      margin: { x: { end: 'Spacing-8' } },
     },
     danger: {
       color: 'Danger-6',

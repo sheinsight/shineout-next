@@ -101,7 +101,7 @@ const tableTokenExtraValue = {
   },
   pagination: {
     margin: {
-      y: 'Margin-12',
+      y: 'Spacing-12',
     },
   },
 };

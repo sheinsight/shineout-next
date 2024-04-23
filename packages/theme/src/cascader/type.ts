@@ -436,7 +436,7 @@ export interface CascaderTokens {
   cascaderColumnPadding: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 级联选择器多列模式下选项外边距
    */
   cascaderColumnOptionMargin: string;
