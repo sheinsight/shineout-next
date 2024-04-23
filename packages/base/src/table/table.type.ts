@@ -36,7 +36,8 @@ export interface TableClasses {
   bodyWrapper: string;
   footWrapper: string;
   emptyWrapper: string;
-
+  
+  cellAlignLeft: string;
   cellAlignRight: string;
   cellAlignCenter: string;
   cellFixedLeft: string;

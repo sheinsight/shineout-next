@@ -154,6 +154,7 @@ export default (props: TheadProps) => {
       col.fixed === 'right' && tableClasses?.cellFixedRight,
       colTemp.align === 'center' && tableClasses?.cellAlignCenter,
       colTemp.align === 'right' && tableClasses?.cellAlignRight,
+      colTemp.align !== 'right' && colTemp.align !== 'center' && tableClasses?.cellAlignLeft,
       (col.lastFixed || col.firstFixed) && tableClasses?.cellFixedLast,
       isLast && tableClasses?.cellIgnoreBorder,
     );

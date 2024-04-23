@@ -60,6 +60,9 @@ const Scroll = (props: scrollProps) => {
     if (scrollLeft > maxX || maxX - scrollLeft < 1) scrollLeft = maxX;
     if (scrollTop > maxY || maxY - scrollTop < 1) scrollTop = maxY;
 
+    if (scrollLeft < 0) scrollLeft = 0;
+    if (scrollTop < 0) scrollTop = 0;
+
     const x = maxX === 0 ? 0 : Math.min(scrollLeft / maxX, 1);
     const y = maxY === 0 ? 0 : Math.min(scrollTop / maxY, 1);
     if (props.onScroll)

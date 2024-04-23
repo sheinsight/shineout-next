@@ -31,7 +31,6 @@ const tableStyle: JsStyles<TableClassType> = {
     minHeight: 0,
     fontSize: token.tableFontSize,
     '& table': {
-      textAlign: 'left',
       minWidth: '100%',
       boxSizing: 'border-box',
       tableLayout: 'fixed',
@@ -173,6 +172,7 @@ const tableStyle: JsStyles<TableClassType> = {
   cellFixedRight: {
     position: 'sticky',
   },
+  cellAlignLeft: { textAlign: 'left' },
   cellAlignCenter: { textAlign: 'center' },
   cellAlignRight: { textAlign: 'right' },
   cellFixedLast: {},

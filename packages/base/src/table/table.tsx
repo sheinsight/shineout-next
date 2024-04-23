@@ -17,6 +17,7 @@ import {
   useTableVirtual,
   usePaginationList,
   useLatestObj,
+  useResize,
 } from '@sheinx/hooks';
 import { TableProps } from './table.type';
 import useTableSelect from './use-table-select';
@@ -36,7 +37,11 @@ const virtualScrollerStyle = {
 };
 const scrollWrapperStyle = { flex: 1, minHeight: 0, minWidth: 0, display: 'flex' };
 
+const emptyRef = { current: null };
+
 export default <Item, Value>(props: TableProps<Item, Value>) => {
+  const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
+
   const tableClasses = props?.jssStyle?.table?.();
   const tbodyRef = useRef<HTMLTableElement | null>(null);
   const theadRef = useRef<HTMLTableElement | null>(null);
@@ -49,9 +54,11 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     props.rowsInView !== 0 &&
     (!!props.virtual || props.fixed === 'both' || props.fixed === 'y' || props.fixed === 'auto');
 
-  const height = virtual && !props.height ? '100%' : props.height;
+  // 虚拟列表高度另外计算
+  const { height: tbodyHeight } = useResize({ targetRef: virtual ? emptyRef : tbodyRef });
 
-  const { verticalAlign = 'top', size = 'default', pagination = {} as PaginationProps } = props;
+  // default height
+  const defaultHeight = virtual && !props.height ? '100%' : props.height;
 
   const selection = useTableSelect({
     cellSelectable: props.cellSelectable,
@@ -166,7 +173,8 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
   });
 
   const virtualInfo = useTableVirtual({
-    data: virtual ? treeData : emptyArr,
+    disabled: !virtual,
+    data: treeData,
     rowsInView: props.rowsInView || 20,
     rowHeight: props.rowHeight || 40,
     scrollRef: scrollRef,
@@ -174,45 +182,17 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
     scrollLeft: props.scrollLeft,
   });
 
-  // simple table sync left to head and foot
-  const setLeft = usePersistFn((left: number) => {
-    let thead = theadRef?.current;
-    let tfoot = tfootRef?.current;
-    [thead, tfoot].forEach((el) => {
-      if (el) {
-        if (virtual) {
-          el.style.transform = `translate3d(-${left}px, 0, 0)`;
-        } else {
-          el.parentElement!.scrollLeft = left;
-        }
-      }
-    });
-
-    layoutFunc.checkFloat();
-  });
-
   // handle head and  foot scroll
   const handleHeaderWheel = usePersistFn((e: any) => {
-    e.preventDefault();
     const scrollEl = scrollRef.current!;
     if (!scrollEl) return;
     const max = scrollEl.scrollWidth - scrollEl.clientWidth;
     const scrollLeft = scrollEl.scrollLeft + e.deltaX;
-    if (scrollLeft === scrollEl.scrollLeft) return;
-    scrollEl.scrollLeft = Math.min(Math.max(scrollLeft, 0), max);
-  });
-
-  const handleBodyScroll = usePersistFn((e: React.UIEvent<HTMLDivElement>) => {
-    const target = e.currentTarget;
-    if (!target) return;
-    setLeft(target.scrollLeft);
-    if (props.onScroll && typeof props.onScroll === 'function') {
-      const maxWidth = target.scrollWidth - target.clientWidth;
-      const maxHeight = target.scrollHeight - target.clientHeight;
-      const x = Math.min(target.scrollLeft / maxWidth, 1);
-      const y = Math.min(target.scrollTop / maxHeight, 1);
-      props.onScroll(x, y, target.scrollLeft);
+    if (scrollLeft === scrollEl.scrollLeft) {
+      return;
     }
+    e.preventDefault();
+    scrollEl.scrollLeft = Math.min(Math.max(scrollLeft, 0), max);
   });
 
   const handleVirtualScroll = usePersistFn(
@@ -313,75 +293,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
       isScrollY && scrollBarWidth && tableClasses?.scrollY,
     );
 
-    const fixRightNum =  maxScrollLeft - virtualInfo.innerLeft
-    if (virtual) {
-      return (
-        <>
-          {!props.hideHeader && (
-            <div className={headWrapperClass}>
-              <table
-                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
-                ref={theadRef}
-              >
-                {Group}
-                <Thead
-                  {...headCommonProps}
-                  fixLeftNum={virtualInfo.innerLeft}
-                  fixRightNum={fixRightNum}
-                />
-              </table>
-            </div>
-          )}
-          <Scroll
-            style={scrollWrapperStyle}
-            scrollerStyle={virtualScrollerStyle}
-            wrapperRef={scrollRef}
-            scrollWidth={width || 1}
-            scrollHeight={virtualInfo.scrollHeight}
-            onScroll={handleVirtualScroll}
-          >
-            <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
-              {Group}
-              <Tbody
-                {...bodyCommonProps}
-                currentIndex={virtualInfo.startIndex}
-                data={virtualInfo.data}
-                setRowHeight={virtualInfo.setRowHeight}
-                fixLeftNum={virtualInfo.innerLeft}
-                fixRightNum={fixRightNum}
-              />
-            </table>
-          </Scroll>
-          {showFoot ? (
-            <div className={footWrapperClass}>
-              <table
-                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
-                ref={tfootRef}
-              >
-                {Group}
-                <Tfoot
-                  {...footCommonProps}
-                  fixLeftNum={virtualInfo.innerLeft}
-                  fixRightNum={fixRightNum}
-                />
-              </table>
-            </div>
-          ) : null}
-        </>
-      );
-    }
-    if (!isScrollY && !props.sticky && props.data?.length)
-      return (
-        <div ref={scrollRef} className={tableClasses?.bodyWrapper} onScroll={handleBodyScroll}>
-          <table style={{ width }} ref={tbodyRef}>
-            {Group}
-            {!props.hideHeader && <Thead {...headCommonProps} />}
-            {<Tbody {...bodyCommonProps} />}
-            {showFoot ? <Tfoot {...footCommonProps} /> : null}
-          </table>
-        </div>
-      );
-
+    const fixRightNum = maxScrollLeft - virtualInfo.innerLeft;
     const Wrapper = props.sticky ? Sticky : React.Fragment;
     const sticky = typeof props.sticky === 'object' ? props.sticky : { top: 0 };
     const stickyProps = {
@@ -396,30 +308,54 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
         {!props.hideHeader && (
           <Wrapper {...(props.sticky ? stickyProps : {})}>
             <div className={headWrapperClass}>
-              <table style={{ width }} ref={theadRef}>
+              <table
+                style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
+                ref={theadRef}
+              >
                 {Group}
-                {<Thead {...headCommonProps} />}
+                <Thead
+                  {...headCommonProps}
+                  fixLeftNum={virtualInfo.innerLeft}
+                  fixRightNum={fixRightNum}
+                />
               </table>
             </div>
           </Wrapper>
         )}
-        <div
-          ref={scrollRef}
-          className={tableClasses?.bodyWrapper}
-          onScroll={handleBodyScroll}
-          style={{ height: '100%' }}
+
+        <Scroll
+          style={scrollWrapperStyle}
+          scrollerStyle={virtualScrollerStyle}
+          wrapperRef={scrollRef}
+          scrollWidth={width || 1}
+          scrollHeight={virtual ? virtualInfo.scrollHeight : tbodyHeight}
+          onScroll={handleVirtualScroll}
         >
-          <table style={{ width }} ref={tbodyRef}>
+          <table style={{ width, transform: virtualInfo.getTranslate() }} ref={tbodyRef}>
             {Group}
-            {<Tbody {...bodyCommonProps} />}
+            <Tbody
+              {...bodyCommonProps}
+              currentIndex={virtualInfo.startIndex}
+              data={virtualInfo.data}
+              setRowHeight={virtualInfo.setRowHeight}
+              fixLeftNum={virtualInfo.innerLeft}
+              fixRightNum={fixRightNum}
+            />
           </table>
-          {renderEmpty()}
-        </div>
+        </Scroll>
+        {renderEmpty()}
         {showFoot ? (
           <div className={footWrapperClass}>
-            <table style={{ width }} ref={tfootRef}>
+            <table
+              style={{ width, transform: `translate3d(-${virtualInfo.innerLeft}px, 0, 0)` }}
+              ref={tfootRef}
+            >
               {Group}
-              {<Tfoot {...footCommonProps} />}
+              <Tfoot
+                {...footCommonProps}
+                fixLeftNum={virtualInfo.innerLeft}
+                fixRightNum={fixRightNum}
+              />
             </table>
           </div>
         ) : null}
@@ -501,7 +437,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           tableClasses?.simple,
           props.striped && tableClasses?.striped,
         )}
-        style={{ height, ...props.style }}
+        style={{ height: defaultHeight, ...props.style }}
       >
         <table style={{ width }}>{props.children}</table>
       </div>
@@ -516,7 +452,7 @@ export default <Item, Value>(props: TableProps<Item, Value>) => {
           floatRight && tableClasses?.floatRight,
           props.sticky && tableClasses?.sticky,
         )}
-        style={{ height, ...props.style }}
+        style={{ height: defaultHeight, ...props.style }}
         {...selection.getTableProps()}
         ref={tableRef}
       >
