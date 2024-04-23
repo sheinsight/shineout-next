@@ -28,19 +28,19 @@ export interface DescriptionsTokens {
   descriptionsValuePaddingBottom: string;
   /**
    * @type {string}
-   * @token 14/medium
+   * @token Font-14
    * @description 描述列表标题模式小尺寸字号
    */
   descriptionsTitleSmallSize: string;
   /**
    * @type {string}
-   * @token 16/medium
+   * @token Font-16
    * @description 描述列表标题模式默认尺寸字号
    */
   descriptionsTitleDefaultSize: string;
   /**
    * @type {string}
-   * @token 18/medium
+   * @token Font-18
    * @description 描述列表标题模式大尺寸字号
    */
   descriptionsTitleLargeSize: string;

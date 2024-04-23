@@ -12,7 +12,7 @@ const cardTokens: CardTokens = {
   cardFontSize: 'Font-14',
   cardPaddingX: 'Padding-16',
   cardPaddingY: 'Padding-12',
-  cardTitleFontSize: '16/medium',
+  cardTitleFontSize: 'Font-16',
   cardHeaderGap: '8px',
   cardHeaderExtraMarginX: 'Margin-16',
   cardIndicatorSize: 'Size-7',

@@ -18,7 +18,7 @@ const switchTokens: SwitchTokens = {
   switchSmallPaddingY: 'Padding-2',
   switchSmallCircleSize: 'Size-6',
   switchSmallWidth: 'Size-14',
-  switchLargeFontSize: 'regular/16',
+  switchLargeFontSize: 'Font-16',
   switchLargePaddingX: 'Padding-2',
   switchLargePaddingY: 'Padding-2',
   switchLargeCircleSize: 'Size-12',

@@ -31,13 +31,13 @@ const stepsTokenValue = {
   icon: { width: 'Size-14', height: 'Size-14', font: { size: 'Font-16' } },
   small: {
     icon: { width: 'Size-12', height: 'Size-12', font: { size: 'Font-14' } },
-    title: { font: { size: '14/medium' } },
+    title: { font: { size: 'Font-14' } },
     description: { font: { size: 'Font-12' } },
     arrow: { padding: { x: 'Padding-16', y: 'Padding-5' } },
   },
   large: {
     icon: { width: 'Size-16', height: 'Size-16', font: { size: 'Font-18' } },
-    title: { font: { size: '18/medium' } },
+    title: { font: { size: 'Font-18' } },
     description: { font: { size: 'Font-12' } },
     arrow: { padding: { x: 'Padding-16', y: 'Padding-11' } },
   },

@@ -27,9 +27,9 @@ const descriptionsTokenDescription = {
 const descriptionsTokenValue = {
   title: {
     padding: { top: '', bottom: 'Padding-12', left: '', right: '' },
-    small: { size: '14/medium' },
-    default: { size: '16/medium' },
-    large: { size: '18/medium' },
+    small: { size: 'Font-14' },
+    default: { size: 'Font-16' },
+    large: { size: 'Font-18' },
     color: 'Neutral-text-5',
     font: { weight: '500' },
     gap: 'Size-2',

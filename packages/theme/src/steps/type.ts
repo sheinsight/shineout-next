@@ -76,7 +76,7 @@ export interface StepsTokens {
   stepsTitleFontSize: string;
   /**
    * @type {string}
-   * @token 14/medium
+   * @token Font-14
    * @description 步骤条小尺寸标题模式字体字号
    */
   stepsSmallTitleFontSize: string;
@@ -88,7 +88,7 @@ export interface StepsTokens {
   stepsSmallDescriptionFontSize: string;
   /**
    * @type {string}
-   * @token 18/medium
+   * @token Font-18
    * @description 步骤条大尺寸标题模式字体字号
    */
   stepsLargeTitleFontSize: string;

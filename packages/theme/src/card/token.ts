@@ -40,7 +40,7 @@ const cardTokenExtraValue = {
   padding: { x: 'Padding-16', y: 'Padding-12' },
   title: {
     font: {
-      size: '16/medium',
+      size: 'Font-16',
     },
   },
   header: {

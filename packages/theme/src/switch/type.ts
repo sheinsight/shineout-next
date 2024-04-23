@@ -88,7 +88,7 @@ export interface SwitchTokens {
   switchSmallWidth: string;
   /**
    * @type {string}
-   * @token regular/16
+   * @token Font-16
    * @description 开关大尺寸字体字号
    */
   switchLargeFontSize: string;

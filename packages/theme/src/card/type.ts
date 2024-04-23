@@ -52,7 +52,7 @@ export interface CardTokens {
   cardPaddingY: string;
   /**
    * @type {string}
-   * @token 16/medium
+   * @token Font-16
    * @description 卡片标题模式字体字号
    */
   cardTitleFontSize: string;

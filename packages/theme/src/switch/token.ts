@@ -39,7 +39,7 @@ const switchTokenExtraValue = {
     width: 'Size-14',
   },
   large: {
-    font: { size: 'regular/16' },
+    font: { size: 'Font-16' },
     padding: { x: 'Padding-2', y: 'Padding-2' },
     circle: { size: 'Size-12' },
     width: 'Size-27',
