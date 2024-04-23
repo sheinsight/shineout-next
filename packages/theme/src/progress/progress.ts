@@ -4,7 +4,7 @@
 import { ProgressTokens } from './type';
 
 const progressTokens: ProgressTokens = {
-  progressFontSize: '14/regular',
+  progressFontSize: 'Font-14',
   progressFontColor: 'Neutral-text-4',
   progressBackground: 'Neutral-fill-3',
   progressInfoFrontBackgroundColor: 'Brand-6',
@@ -17,7 +17,7 @@ const progressTokens: ProgressTokens = {
   progressLineInnerGap: 'Margin-8',
   progressLineInnerPaddingX: 'Padding-8',
   progressLineInnerFontColor: 'Neutral-text-1',
-  progressLineInnerFontSize: '12/regular',
+  progressLineInnerFontSize: 'Font-12',
   progressLineInnerRightFontColor: 'Neutral-text-5',
   progressLineIconSize: 'Size-7',
   progressLineBackgroundColor: 'Neutral-fill-9',

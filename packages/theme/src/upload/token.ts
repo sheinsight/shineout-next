@@ -28,7 +28,7 @@ const uploadTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 uploadRules 强关联，非 uploadRules 规则内的 token 需手动增加或删减。
  */
-const uploadTokenValue = { font: { size: '14/regular' } };
+const uploadTokenValue = { font: { size: 'Font-14' } };
 
 const uploadTokenExtraValue = {
   result: {
@@ -41,7 +41,7 @@ const uploadTokenExtraValue = {
       color: 'Neutral-text-4',
       hover: { background: { color: 'Neutral-fill-2' } },
     },
-    font: { size: '14/regular', color: 'Neutral-text-5' },
+    font: { size: 'Font-14', color: 'Neutral-text-5' },
     border: { radius: 'Radius-4' },
     error: {
       font: { color: 'Danger-6' },
@@ -98,7 +98,7 @@ const uploadTokenExtraValue = {
       },
       tip: {
         background: { color: 'Neutral-fill-1' },
-        font: { size: '12/regular' },
+        font: { size: 'Font-12' },
       },
     },
   },

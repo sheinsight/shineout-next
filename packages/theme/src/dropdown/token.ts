@@ -34,11 +34,11 @@ const dropdownTokenValue = {
   list: {
     border: { radius: 'Radius-4', color: 'Neutral-border-1', width: 'Border-1' },
     padding: { x: 'Padding-4', y: 'Padding-4' },
-    font: { size: '14/regular', color: 'Neutral-text-5' },
+    font: { size: 'Font-14', color: 'Neutral-text-5' },
     small: {
       border: { radius: 'Radius-4' },
       padding: { x: 'Padding-4', y: 'Padding-4' },
-      font: { size: '12/regular' },
+      font: { size: 'Font-12' },
     },
     large: {
       border: { radius: 'Radius-4' },
@@ -60,7 +60,7 @@ const dropdownTokenValue = {
     disabled: { background: { color: 'Neutral-fill-1' }, font: { color: 'Neutral-text-2' } },
     group: {
       padding: { x: 'Padding-8', top: 'Padding-10', bottom: 'Padding-2' },
-      font: { size: '12/regular', color: 'Neutral-text-3' },
+      font: { size: 'Font-12', color: 'Neutral-text-3' },
       small: { x: 'Padding-8', top: 'Padding-4', bottom: '' },
       large: { x: 'Padding-12', top: 'Padding-14', bottom: 'Padding-4' },
     },

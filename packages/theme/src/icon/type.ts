@@ -4,19 +4,19 @@
 export interface IconTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 图标字体字号
    */
   iconFontSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 图标小尺寸字体字号
    */
   iconSmallFontSize: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 图标大尺寸字体字号
    */
   iconLargeFontSize: string;

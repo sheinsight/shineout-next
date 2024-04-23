@@ -136,7 +136,7 @@ export interface RadioTokens {
   radioSmallIconInnerSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 单选框小尺寸文案字体字号
    */
   radioSmallLabelFontSize: string;
@@ -160,7 +160,7 @@ export interface RadioTokens {
   radioLargeIconBorderWidth: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 单选框大尺寸文案字体字号
    */
   radioLargeLabelFontSize: string;
@@ -178,7 +178,7 @@ export interface RadioTokens {
   radioLabelFontColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 单选框文案字体字号
    */
   radioLabelFontSize: string;

@@ -4,7 +4,7 @@
 export interface SelectTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 选择器字体字号
    */
   selectFontSize: string;
@@ -52,7 +52,7 @@ export interface SelectTokens {
   selectIconColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 选择器小尺寸字体字号
    */
   selectSmallFontSize: string;
@@ -82,7 +82,7 @@ export interface SelectTokens {
   selectSmallOptionInnerPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 选择器大尺寸字体字号
    */
   selectLargeFontSize: string;
@@ -382,7 +382,7 @@ export interface SelectTokens {
   selectGroupTitleFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 选择器分组标题的字体字号
    */
   selectGroupTitleFontSize: string;

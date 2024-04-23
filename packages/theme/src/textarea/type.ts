@@ -4,7 +4,7 @@
 export interface TextareaTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 多行文本框字体字号
    */
   textareaFontSize: string;
@@ -28,7 +28,7 @@ export interface TextareaTokens {
   textareaPaddingY: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 多行文本框小尺寸字体字号
    */
   textareaSmallFontSize: string;
@@ -46,7 +46,7 @@ export interface TextareaTokens {
   textareaSmallPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 多行文本框大尺寸字体字号
    */
   textareaLargeFontSize: string;

@@ -26,14 +26,14 @@ const checkboxTokens: CheckboxTokens = {
   checkboxIconCircleDark: 'Neutral-fill-3',
   checkboxFontWeight: 'Weight-regular',
   checkboxLabelFontColor: 'Neutral-text-5',
-  checkboxLabelFontSize: '14/regular',
+  checkboxLabelFontSize: 'Font-14',
   checkboxLabelDisabledFontColor: 'Neutral-text-2',
   checkboxGap: 'Spacing-24',
   checkboxBlockGap: 'Spacing-12',
   checkboxSmallIconSize: 'Size-6',
-  checkboxSmallLabelFontSize: '12/regular',
+  checkboxSmallLabelFontSize: 'Font-12',
   checkboxLargeIconSize: 'Size-8',
-  checkboxLargeLabelFontSize: '16/regular',
+  checkboxLargeLabelFontSize: 'Font-16',
 };
 
 export default checkboxTokens;

@@ -4,7 +4,7 @@
 import { SelectTokens } from './type';
 
 const selectTokens: SelectTokens = {
-  selectFontSize: '14/regular',
+  selectFontSize: 'Font-14',
   selectFontColor: 'Neutral-text-5',
   selectBorderRadius: 'Radius-4',
   selectBorderColor: 'Neutral-border-2',
@@ -12,12 +12,12 @@ const selectTokens: SelectTokens = {
   selectPaddingY: 'Padding-2',
   selectIconSize: 'Size-7',
   selectIconColor: 'Neutral-text-4',
-  selectSmallFontSize: '12/regular',
+  selectSmallFontSize: 'Font-12',
   selectSmallPaddingX: 'Padding-8',
   selectSmallPaddingY: 'Padding-1',
   selectSmallOptionInnerPaddingX: 'Padding-8',
   selectSmallOptionInnerPaddingY: 'Padding-2',
-  selectLargeFontSize: '16/regular',
+  selectLargeFontSize: 'Font-16',
   selectLargePaddingX: 'Padding-12',
   selectLargePaddingY: 'Padding-3',
   selectLargeOptionInnerPaddingX: 'Padding-12',
@@ -67,7 +67,7 @@ const selectTokens: SelectTokens = {
   selectHeaderPadding: 'Padding-8',
   selectHeaderBorderColor: 'Neutral-border-1',
   selectGroupTitleFontColor: 'Neutral-text-3',
-  selectGroupTitleFontSize: '12/regular',
+  selectGroupTitleFontSize: 'Font-12',
   selectGroupTitlePaddingX: 'Padding-12',
   selectGroupTitlePaddingTop: 'Padding-10',
   selectGroupTitlePaddingBottom: 'Padding-2',

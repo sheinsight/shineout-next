@@ -25,7 +25,7 @@ const breadcrumbTokenDescription = {
 const breadcrumbTokenValue = {};
 
 const breadcrumbTokenExtraValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   link: {
     color: 'Neutral-text-3',
     hover: {

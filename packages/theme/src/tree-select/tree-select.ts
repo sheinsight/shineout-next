@@ -4,7 +4,7 @@
 import { TreeSelectTokens } from './type';
 
 const treeSelectTokens: TreeSelectTokens = {
-  treeSelectFontSize: '14/regular',
+  treeSelectFontSize: 'Font-14',
   treeSelectFontColor: 'Neutral-text-5',
   treeSelectBorderRadius: 'Radius-4',
   treeSelectBorderColor: 'Neutral-border-2',
@@ -12,12 +12,12 @@ const treeSelectTokens: TreeSelectTokens = {
   treeSelectPaddingY: 'Padding-2',
   treeSelectIconSize: 'Size-7',
   treeSelectIconColor: 'Neutral-text-4',
-  treeSelectSmallFontSize: '12/regular',
+  treeSelectSmallFontSize: 'Font-12',
   treeSelectSmallPaddingX: 'Padding-8',
   treeSelectSmallPaddingY: 'Padding-1',
   treeSelectSmallOptionInnerPaddingX: 'Padding-8',
   treeSelectSmallOptionInnerPaddingY: 'Padding-2',
-  treeSelectLargeFontSize: '16/regular',
+  treeSelectLargeFontSize: 'Font-16',
   treeSelectLargePaddingX: 'Padding-12',
   treeSelectLargePaddingY: 'Padding-3',
   treeSelectLargeOptionInnerPaddingX: 'Padding-12',
@@ -67,7 +67,7 @@ const treeSelectTokens: TreeSelectTokens = {
   treeSelectHeaderPadding: 'Padding-8',
   treeSelectHeaderBorderColor: 'Neutral-border-1',
   treeSelectGroupTitleFontColor: 'Neutral-text-3',
-  treeSelectGroupTitleFontSize: '12/regular',
+  treeSelectGroupTitleFontSize: 'Font-12',
   treeSelectGroupTitlePaddingX: 'Padding-12',
   treeSelectGroupTitlePaddingY: 'Padding-6',
   treeSelectColumnPadding: 'Padding-8',

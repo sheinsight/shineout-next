@@ -21,11 +21,11 @@ const textareaTokenDescription = {
  * 注意，该映射表的内容不与 textareaRules 强关联，非 textareaRules 规则内的 token 需手动增加或删减。
  */
 const textareaTokenValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
   padding: { x: 'Padding-8', y: 'Padding-4' },
   small: {
-    font: { size: '12/regular' },
+    font: { size: 'Font-12' },
     border: { radius: '' },
     padding: { x: 'Padding-8', y: 'Padding-1' },
   },

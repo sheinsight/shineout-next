@@ -28,7 +28,7 @@ export interface StepsTokens {
   stepsIconHeight: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 步骤条图标字体字号
    */
   stepsIconFontSize: string;
@@ -46,7 +46,7 @@ export interface StepsTokens {
   stepsSmallIconHeight: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 步骤条小尺寸图标字体字号
    */
   stepsSmallIconFontSize: string;
@@ -64,13 +64,13 @@ export interface StepsTokens {
   stepsLargeIconHeight: string;
   /**
    * @type {string}
-   * @token 18/regular
+   * @token Font-18
    * @description 步骤条大尺寸图标字体字号
    */
   stepsLargeIconFontSize: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 步骤条标题模式字体字号
    */
   stepsTitleFontSize: string;
@@ -82,7 +82,7 @@ export interface StepsTokens {
   stepsSmallTitleFontSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 步骤条小尺寸描述信息字体字号
    */
   stepsSmallDescriptionFontSize: string;
@@ -94,7 +94,7 @@ export interface StepsTokens {
   stepsLargeTitleFontSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 步骤条大尺寸描述信息字体字号
    */
   stepsLargeDescriptionFontSize: string;

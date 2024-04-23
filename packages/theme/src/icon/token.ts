@@ -18,8 +18,8 @@ const iconTokenDescription = {
  * 注意，该映射表的内容不与 iconRules 强关联，非 iconRules 规则内的 token 需手动增加或删减。
  */
 const iconTokenValue = {
-  font: { size: '14/regular', color: 'inherit' },
-  small: { font: { size: '12/regular' } },
+  font: { size: 'Font-14', color: 'inherit' },
+  small: { font: { size: 'Font-12' } },
   large: { font: { size: 'Font-16' } },
   primary: { font: { color: 'Brand-6' } },
   secondary: { font: { color: 'Neutral-text-4' } },

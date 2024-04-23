@@ -52,19 +52,19 @@ export interface DescriptionsTokens {
   descriptionsBorderDefaultSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 描述列表字体小尺寸字号
    */
   descriptionsFontSmallSize: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 描述列表字体默认尺寸字号
    */
   descriptionsFontDefaultSize: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 描述列表字体大尺寸字号
    */
   descriptionsFontLargeSize: string;

@@ -4,7 +4,7 @@
 export interface CascaderTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 级联选择器字体字号
    */
   cascaderFontSize: string;
@@ -52,7 +52,7 @@ export interface CascaderTokens {
   cascaderIconColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 级联选择器小尺寸字体字号
    */
   cascaderSmallFontSize: string;
@@ -82,7 +82,7 @@ export interface CascaderTokens {
   cascaderSmallOptionInnerPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 级联选择器大尺寸字体字号
    */
   cascaderLargeFontSize: string;
@@ -412,7 +412,7 @@ export interface CascaderTokens {
   cascaderGroupTitleFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 级联选择器分组标题的字体字号
    */
   cascaderGroupTitleFontSize: string;

@@ -4,7 +4,7 @@
 export interface TooltipTokens {
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 文字提示字体字号
    */
   tooltipFontSize: string;

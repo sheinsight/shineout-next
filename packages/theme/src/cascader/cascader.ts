@@ -4,7 +4,7 @@
 import { CascaderTokens } from './type';
 
 const cascaderTokens: CascaderTokens = {
-  cascaderFontSize: '14/regular',
+  cascaderFontSize: 'Font-14',
   cascaderFontColor: 'Neutral-text-5',
   cascaderBorderRadius: 'Radius-4',
   cascaderBorderColor: 'Neutral-border-2',
@@ -12,12 +12,12 @@ const cascaderTokens: CascaderTokens = {
   cascaderPaddingY: 'Padding-2',
   cascaderIconSize: 'Size-7',
   cascaderIconColor: 'Neutral-text-4',
-  cascaderSmallFontSize: '12/regular',
+  cascaderSmallFontSize: 'Font-12',
   cascaderSmallPaddingX: 'Padding-8',
   cascaderSmallPaddingY: 'Padding-1',
   cascaderSmallOptionInnerPaddingX: 'Padding-8',
   cascaderSmallOptionInnerPaddingY: 'Padding-2',
-  cascaderLargeFontSize: '16/regular',
+  cascaderLargeFontSize: 'Font-16',
   cascaderLargePaddingX: 'Padding-12',
   cascaderLargePaddingY: 'Padding-3',
   cascaderLargeOptionInnerPaddingX: 'Padding-12',
@@ -72,7 +72,7 @@ const cascaderTokens: CascaderTokens = {
   cascaderHeaderPadding: 'Padding-8',
   cascaderHeaderBorderColor: 'Neutral-border-1',
   cascaderGroupTitleFontColor: 'Neutral-text-3',
-  cascaderGroupTitleFontSize: '12/regular',
+  cascaderGroupTitleFontSize: 'Font-12',
   cascaderGroupTitlePaddingX: 'Padding-12',
   cascaderGroupTitlePaddingY: 'Padding-6',
   cascaderColumnPadding: 'Padding-8',

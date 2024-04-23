@@ -1408,7 +1408,7 @@ export interface TagTokens {
   tagTangerineFillDisabledBorderColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 标签字体字号
    */
   tagFontSize: string;
@@ -1438,7 +1438,7 @@ export interface TagTokens {
   tagHeight: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 标签小尺寸字体字号
    */
   tagSmallFontSize: string;
@@ -1462,7 +1462,7 @@ export interface TagTokens {
   tagSmallHeight: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 标签大尺寸字体字号
    */
   tagLargeFontSize: string;
@@ -1498,7 +1498,7 @@ export interface TagTokens {
   tagInputPaddingX: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 标签输入框字体字号
    */
   tagInputFontSize: string;
@@ -1510,7 +1510,7 @@ export interface TagTokens {
   tagSmallInputPaddingX: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 标签小尺寸输入框字体字号
    */
   tagSmallInputFontSize: string;
@@ -1522,7 +1522,7 @@ export interface TagTokens {
   tagLargeInputPaddingX: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 标签大尺寸输入框字体字号
    */
   tagLargeInputFontSize: string;

@@ -24,9 +24,9 @@ const transferTokenDescription = {
  * 注意，该映射表的内容不与 transferRules 强关联，非 transferRules 规则内的 token 需手动增加或删减。
  */
 const transferTokenValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   header: { height: 'Size-23', background: { color: 'Neutral-fill-2' } },
-  small: { font: { size: '12/regular' }, header: { height: 'Size-22' } },
+  small: { font: { size: 'Font-12' }, header: { height: 'Size-22' } },
   large: { font: { size: 'Font-16' }, header: { height: 'Size-24' } },
   border: { color: 'Neutral-border-1', radius: 'Radius-4' },
   icon: {

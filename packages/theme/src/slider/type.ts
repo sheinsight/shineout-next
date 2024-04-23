@@ -4,7 +4,7 @@
 export interface SliderTokens {
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 滑块字体字号
    */
   sliderFontSize: string;
@@ -142,7 +142,7 @@ export interface SliderTokens {
   sliderScaleFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 滑块刻度字体字号
    */
   sliderScaleFontSize: string;

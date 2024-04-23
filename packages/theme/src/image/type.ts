@@ -64,7 +64,7 @@ export interface ImageTokens {
   imageErrorFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 图片加载错误时的字体字号
    */
   imageErrorFontSize: string;

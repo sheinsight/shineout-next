@@ -50,7 +50,7 @@ const radioTokenExtraValue = {
   padding: { y: 'Padding-4' },
   small: {
     icon: { width: 'Size-6', gap: '', border: { width: 'Border-1' }, inner: { size: 'Size-3' } },
-    label: { font: { size: '12/regular' } },
+    label: { font: { size: 'Font-12' } },
     padding: { y: 'Padding-1' },
   },
   large: {
@@ -59,7 +59,7 @@ const radioTokenExtraValue = {
     padding: { y: 'Padding-7' },
   },
   label: {
-    font: { color: 'Neutral-text-5', size: '14/regular' },
+    font: { color: 'Neutral-text-5', size: 'Font-14' },
     disabled: { font: { color: 'Neutral-text-2' } },
   },
 };

@@ -13,7 +13,7 @@ const modalTokens: ModalTokens = {
   modalPanelBorder: 'Neutral-border-1',
   modalPanelGap: 'Padding-16',
   modalPanelRadius: 'Radius-4',
-  modalPanelFontSize: '14/regular',
+  modalPanelFontSize: 'Font-14',
   modalHeaderIconMarginEnd: 'Margin-8',
   modalHeaderIconMarginTop: 'Size-2',
   modalHeaderIconSize: 'Size-8',
@@ -22,7 +22,7 @@ const modalTokens: ModalTokens = {
   modalHeaderCloseTop: 'Size-2',
   modalHeaderCloseColor: 'Neutral-text-4',
   modalHeaderCloseBackgroundColor: 'Neutral-fill-2',
-  modalHeaderFontSize: '16/regular',
+  modalHeaderFontSize: 'Font-16',
   modalDrawerTitlePaddingY: 'Padding-12',
   modalDrawerTitlePaddingX: 'Padding-16',
   modalDrawerTitleBackgroundColor: 'Neutral-fill-2',
@@ -31,7 +31,7 @@ const modalTokens: ModalTokens = {
   modalDrawerFooterPaddingY: 'Padding-16',
   modalDrawerFooterPaddingX: 'Padding-16',
   modalDrawerCloseBackgroundColor: 'Neutral-fill-3',
-  modalFontSize: '14/regular',
+  modalFontSize: 'Font-14',
 };
 
 export default modalTokens;

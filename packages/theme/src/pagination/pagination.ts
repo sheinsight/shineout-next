@@ -4,9 +4,9 @@
 import { PaginationTokens } from './type';
 
 const paginationTokens: PaginationTokens = {
-  paginationFontSize: '14/regular',
-  paginationSmallFontSize: '12/regular',
-  paginationLargeFontSize: '16/regular',
+  paginationFontSize: 'Font-14',
+  paginationSmallFontSize: 'Font-12',
+  paginationLargeFontSize: 'Font-16',
   paginationFontColor: 'Neutral-text-5',
   paginationNearlyMargin: 'Margin-8',
 };

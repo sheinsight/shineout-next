@@ -4,7 +4,7 @@
 export interface InputTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 输入框字体字号
    */
   inputFontSize: string;
@@ -34,7 +34,7 @@ export interface InputTokens {
   inputIconSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 输入框小尺寸字体字号
    */
   inputSmallFontSize: string;
@@ -52,7 +52,7 @@ export interface InputTokens {
   inputSmallPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 输入框大尺寸字体字号
    */
   inputLargeFontSize: string;
@@ -226,7 +226,7 @@ export interface InputTokens {
   inputInnerPaddingY: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 输入框内嵌字体字号
    */
   inputInnerFontSize: string;
@@ -244,7 +244,7 @@ export interface InputTokens {
   inputInnerSmallPaddingY: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 输入框内嵌小尺寸字体字号
    */
   inputInnerSmallFontSize: string;
@@ -262,7 +262,7 @@ export interface InputTokens {
   inputInnerLargePaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 输入框内嵌大尺寸字体字号
    */
   inputInnerLargeFontSize: string;

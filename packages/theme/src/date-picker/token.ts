@@ -49,12 +49,12 @@ const datePickerTokenDescription = {
 const datePickerTokenValue = {};
 
 const datePickerTokenExtraValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
   padding: { x: 'Padding-8', y: 'Padding-4' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
-    font: { size: '12/regular' },
+    font: { size: 'Font-12' },
     border: { radius: '' },
     padding: { x: 'Padding-8', y: 'Padding-1' },
   },
@@ -81,7 +81,7 @@ const datePickerTokenExtraValue = {
   },
   error: { border: { color: 'Danger-6' }, focus: { shadow: 'Danger-1' } },
   panel: {
-    title: { padding: { top: 'Padding-10' }, font: { size: '14/regular' } },
+    title: { padding: { top: 'Padding-10' }, font: { size: 'Font-14' } },
     color: 'Neutral-text-5',
     background: { color: 'Neutral-fill-1' },
     shadow: 'Shadow-2',
@@ -89,7 +89,7 @@ const datePickerTokenExtraValue = {
     margin: 'Margin-24',
     border: 'Neutral-border-1',
     header: {
-      font: { size: '14/regular' },
+      font: { size: 'Font-14' },
       padding: { x: 'Padding-12', y: 'Padding-8' },
       border: { color: 'Neutral-border-1' },
       icon: {
@@ -100,11 +100,11 @@ const datePickerTokenExtraValue = {
       },
       title: { padding: { x: 'Padding-4' } },
     },
-    body: { padding: { x: 'Padding-16', y: 'Padding-16' }, font: { size: '14/regular' } },
+    body: { padding: { x: 'Padding-16', y: 'Padding-16' }, font: { size: 'Font-14' } },
     footer: {
       padding: { x: 'Padding-16', y: 'Padding-10' },
-      left: { font: { size: '14/regular' } },
-      right: { font: { size: '14/regular' } },
+      left: { font: { size: 'Font-14' } },
+      right: { font: { size: 'Font-14' } },
     },
   },
   cell: {
@@ -142,7 +142,7 @@ const datePickerTokenExtraValue = {
       padding: { x: 'Padding-8', y: 'Padding-12' },
       gap: 'Margin-8',
       item: {
-        font: { size: '12/regular' },
+        font: { size: 'Font-12' },
         padding: { x: 'Padding-12', y: 'Padding-2' },
         hover: { background: { color: 'Neutral-fill-2' } },
       },

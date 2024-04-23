@@ -4,7 +4,7 @@
 export interface DatePickerTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器字体字号
    */
   datePickerFontSize: string;
@@ -52,7 +52,7 @@ export interface DatePickerTokens {
   datePickerIconColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 日期选择器小尺寸字体字号
    */
   datePickerSmallFontSize: string;
@@ -70,7 +70,7 @@ export interface DatePickerTokens {
   datePickerSmallPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 日期选择器大尺寸字体字号
    */
   datePickerLargeFontSize: string;
@@ -202,7 +202,7 @@ export interface DatePickerTokens {
   datePickerPanelTitlePaddingTop: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板标题模式字体字号
    */
   datePickerPanelTitleFontSize: string;
@@ -244,7 +244,7 @@ export interface DatePickerTokens {
   datePickerPanelBorder: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板头部字体字号
    */
   datePickerPanelHeaderFontSize: string;
@@ -310,7 +310,7 @@ export interface DatePickerTokens {
   datePickerPanelBodyPaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板主体字体字号
    */
   datePickerPanelBodyFontSize: string;
@@ -328,13 +328,13 @@ export interface DatePickerTokens {
   datePickerPanelFooterPaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板底部左侧字体字号
    */
   datePickerPanelFooterLeftFontSize: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板底部右侧字体字号
    */
   datePickerPanelFooterRightFontSize: string;
@@ -514,7 +514,7 @@ export interface DatePickerTokens {
   datePickerQuickPanelGap: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 日期选择器快捷选择面板项字体字号
    */
   datePickerQuickPanelItemFontSize: string;

@@ -4,7 +4,7 @@
 import { FormTokens } from './type';
 
 const formTokens: FormTokens = {
-  formItemFontSize: '14/regular',
+  formItemFontSize: 'Font-14',
   formItemFontColor: 'Neutral-text-5',
   formItemMarginYEnd: 'Margin-12',
   formItemMarginXEnd: 'Margin-16',
@@ -13,7 +13,7 @@ const formTokens: FormTokens = {
   formItemLabelMarginXEnd: 'Margin-8',
   formItemDangerColor: 'Danger-6',
   formItemTipMinHeight: 'Size-10',
-  formItemTipFontSize: '12/regular',
+  formItemTipFontSize: 'Font-12',
   formItemTipFontColor: 'Neutral-text-3',
 };
 

@@ -118,7 +118,7 @@ export interface CarouselTokens {
   carouselIndicatorNumberColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 轮播图指示器数字字体字号
    */
   carouselIndicatorNumberFontSize: string;
@@ -154,7 +154,7 @@ export interface CarouselTokens {
   carouselIndicatorOuterNumberColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 轮播图字体字号
    */
   carouselFontSize: string;

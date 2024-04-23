@@ -26,14 +26,14 @@ const radioTokens: RadioTokens = {
   radioSmallIconWidth: 'Size-6',
   radioSmallIconBorderWidth: 'Border-1',
   radioSmallIconInnerSize: 'Size-3',
-  radioSmallLabelFontSize: '12/regular',
+  radioSmallLabelFontSize: 'Font-12',
   radioSmallPaddingY: 'Padding-1',
   radioLargeIconWidth: 'Size-8',
   radioLargeIconBorderWidth: 'Border-2',
-  radioLargeLabelFontSize: '16/regular',
+  radioLargeLabelFontSize: 'Font-16',
   radioLargePaddingY: 'Padding-7',
   radioLabelFontColor: 'Neutral-text-5',
-  radioLabelFontSize: '14/regular',
+  radioLabelFontSize: 'Font-14',
   radioLabelDisabledFontColor: 'Neutral-text-2',
 };
 

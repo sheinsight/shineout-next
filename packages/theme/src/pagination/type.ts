@@ -4,19 +4,19 @@
 export interface PaginationTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 分页器字体字号
    */
   paginationFontSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 分页器小尺寸字体字号
    */
   paginationSmallFontSize: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 分页器大尺寸字体字号
    */
   paginationLargeFontSize: string;

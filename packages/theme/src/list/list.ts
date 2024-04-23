@@ -4,7 +4,7 @@
 import { ListTokens } from './type';
 
 const listTokens: ListTokens = {
-  listFontSize: '14/regular',
+  listFontSize: 'Font-14',
   listFontColor: 'Neutral-text-5',
   listBorderColor: 'Neutral-border-1',
   listBorderRadius: 'Radius-2',

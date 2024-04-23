@@ -33,15 +33,15 @@ const selectTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 selectRules 强关联，非 selectRules 规则内的 token 需手动增加或删减。
  */
-const selectTokenValue = { font: { size: '14/regular' } };
+const selectTokenValue = { font: { size: 'Font-14' } };
 
 const selectTokenExtraValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
   padding: { x: 'Padding-8', y: 'Padding-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
-    font: { size: '12/regular' },
+    font: { size: 'Font-12' },
     border: { radius: '' },
     padding: { x: 'Padding-8', y: 'Padding-1' },
     option: {
@@ -119,7 +119,7 @@ const selectTokenExtraValue = {
   },
   group: {
     title: {
-      font: { color: 'Neutral-text-3', size: '12/regular' },
+      font: { color: 'Neutral-text-3', size: 'Font-12' },
       padding: { x: 'Padding-12', top: 'Padding-10', bottom: 'Padding-2' },
       small: { x: 'Padding-8', top: 'Padding-4' },
       large: { x: 'Padding-12', top: 'Padding-14', bottom: 'Padding-4' },

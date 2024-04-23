@@ -23,13 +23,13 @@ const carouselTokens: CarouselTokens = {
   carouselIndicatorArrowColor: 'Neutral-fill-4',
   carouselIndicatorArrowHoverColor: 'Neutral-fill-1',
   carouselIndicatorNumberColor: 'Neutral-fill-1',
-  carouselIndicatorNumberFontSize: '14/regular',
+  carouselIndicatorNumberFontSize: 'Font-14',
   carouselIndicatorOuterBackgroundColor: 'Neutral-fill-4',
   carouselIndicatorOuterActiveBackgroundColor: 'Neutral-fill-6',
   carouselIndicatorOuterArrowColor: 'Neutral-text-4',
   carouselIndicatorOuterArrowHoverColor: 'Neutral-text-2',
   carouselIndicatorOuterNumberColor: 'Neutral-text-4',
-  carouselFontSize: '14/regular',
+  carouselFontSize: 'Font-14',
 };
 
 export default carouselTokens;

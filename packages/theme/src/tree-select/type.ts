@@ -4,7 +4,7 @@
 export interface TreeSelectTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 树选择器字体字号
    */
   treeSelectFontSize: string;
@@ -52,7 +52,7 @@ export interface TreeSelectTokens {
   treeSelectIconColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 树选择器小尺寸字体字号
    */
   treeSelectSmallFontSize: string;
@@ -82,7 +82,7 @@ export interface TreeSelectTokens {
   treeSelectSmallOptionInnerPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 树选择器大尺寸字体字号
    */
   treeSelectLargeFontSize: string;
@@ -382,7 +382,7 @@ export interface TreeSelectTokens {
   treeSelectGroupTitleFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 树选择器分组模式下的标题字体字号
    */
   treeSelectGroupTitleFontSize: string;

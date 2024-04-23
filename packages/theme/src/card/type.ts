@@ -34,7 +34,7 @@ export interface CardTokens {
   cardFontColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 卡片字体字号
    */
   cardFontSize: string;

@@ -28,7 +28,7 @@ export interface DropdownTokens {
   dropdownListPaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 下拉菜单列表字体字号
    */
   dropdownListFontSize: string;
@@ -52,7 +52,7 @@ export interface DropdownTokens {
   dropdownListSmallPaddingY: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 下拉菜单列表小尺寸字体字号
    */
   dropdownListSmallFontSize: string;
@@ -76,7 +76,7 @@ export interface DropdownTokens {
   dropdownListLargePaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 下拉菜单列表大尺寸字体字号
    */
   dropdownListLargeFontSize: string;
@@ -238,7 +238,7 @@ export interface DropdownTokens {
   dropdownOptionGroupPaddingBottom: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 下拉菜单选项分组字体字号
    */
   dropdownOptionGroupFontSize: string;

@@ -33,7 +33,7 @@ const tableTokenValue = {};
 
 const tableTokenExtraValue = {
   font: {
-    size: '14/regular',
+    size: 'Font-14',
   },
   cell: {
     padding: {

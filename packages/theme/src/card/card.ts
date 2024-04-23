@@ -9,7 +9,7 @@ const cardTokens: CardTokens = {
   cardBorderColor: 'Neutral-border-1',
   cardBorderRadius: 'Radius-4',
   cardFontColor: 'Neutral-text-5',
-  cardFontSize: '14/regular',
+  cardFontSize: 'Font-14',
   cardPaddingX: 'Padding-16',
   cardPaddingY: 'Padding-12',
   cardTitleFontSize: '16/medium',

@@ -4,7 +4,7 @@
 export interface ProgressTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 进度条字体字号
    */
   progressFontSize: string;
@@ -82,7 +82,7 @@ export interface ProgressTokens {
   progressLineInnerFontColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 进度条行内嵌文案模式字体字号
    */
   progressLineInnerFontSize: string;

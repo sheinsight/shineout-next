@@ -4,7 +4,7 @@
 import { SliderTokens } from './type';
 
 const sliderTokens: SliderTokens = {
-  sliderFontSize: '12/regular',
+  sliderFontSize: 'Font-12',
   sliderTrackSize: 'Size-2',
   sliderTrackBackgroundColor: 'Neutral-fill-2',
   sliderTrackActiveBackgroundColor: 'Brand-6',
@@ -27,7 +27,7 @@ const sliderTokens: SliderTokens = {
   sliderScaleLineBackgroundColor: 'Neutral-border-1',
   sliderScaleMarginY: 'Margin-4',
   sliderScaleFontColor: 'Neutral-text-4',
-  sliderScaleFontSize: '12/regular',
+  sliderScaleFontSize: 'Font-12',
 };
 
 export default sliderTokens;

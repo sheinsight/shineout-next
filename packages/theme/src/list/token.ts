@@ -23,7 +23,7 @@ const listTokenDescription = {
 const listTokenValue = {};
 
 const listTokenExtraValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { color: 'Neutral-border-1', radius: 'Radius-2' },
   item: {
     padding: { y: 'Padding-12', x: 'Padding-16' },

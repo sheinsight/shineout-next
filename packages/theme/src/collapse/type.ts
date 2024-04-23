@@ -64,7 +64,7 @@ export interface CollapseTokens {
   collapseHeaderGap: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 折叠面板头部区域字体字号
    */
   collapseHeaderFontSize: string;
@@ -106,7 +106,7 @@ export interface CollapseTokens {
   collapseContentPaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 折叠面板内部容器字体字号
    */
   collapseContentFontSize: string;

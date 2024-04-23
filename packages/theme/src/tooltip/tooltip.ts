@@ -4,7 +4,7 @@
 import { TooltipTokens } from './type';
 
 const tooltipTokens: TooltipTokens = {
-  tooltipFontSize: '12/regular',
+  tooltipFontSize: 'Font-12',
   tooltipPaddingX: 'Padding-8',
   tooltipPaddingY: 'Padding-5',
   tooltipBorderRadius: 'Radius-2',

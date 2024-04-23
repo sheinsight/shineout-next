@@ -88,7 +88,7 @@ export interface TabsTokens {
   tabsTabPaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 标签页页签字体字号
    */
   tabsTabFontSize: string;

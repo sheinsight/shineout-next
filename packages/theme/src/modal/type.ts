@@ -58,7 +58,7 @@ export interface ModalTokens {
   modalPanelRadius: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 对话框面板字体字号
    */
   modalPanelFontSize: string;
@@ -112,7 +112,7 @@ export interface ModalTokens {
   modalHeaderCloseBackgroundColor: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 对话框头部区域字体字号
    */
   modalHeaderFontSize: string;
@@ -166,7 +166,7 @@ export interface ModalTokens {
   modalDrawerCloseBackgroundColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 对话框字体字号
    */
   modalFontSize: string;

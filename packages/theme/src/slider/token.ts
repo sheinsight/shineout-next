@@ -27,7 +27,7 @@ const sliderTokenValue = {};
 
 const sliderTokenExtraValue = {
   font: {
-    size: '12/regular',
+    size: 'Font-12',
   },
   track: {
     size: 'Size-2',
@@ -74,7 +74,7 @@ const sliderTokenExtraValue = {
     },
     font: {
       color: 'Neutral-text-4',
-      size: '12/regular',
+      size: 'Font-12',
     },
   },
 };

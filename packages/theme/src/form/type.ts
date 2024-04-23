@@ -4,7 +4,7 @@
 export interface FormTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 表单项字体字号
    */
   formItemFontSize: string;
@@ -58,7 +58,7 @@ export interface FormTokens {
   formItemTipMinHeight: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 表单项提示信息字体字号
    */
   formItemTipFontSize: string;

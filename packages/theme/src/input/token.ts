@@ -24,12 +24,12 @@ const inputTokenDescription = {
  * 注意，该映射表的内容不与 inputRules 强关联，非 inputRules 规则内的 token 需手动增加或删减。
  */
 const inputTokenValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
   padding: { x: 'Padding-8', y: 'Padding-4' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
-    font: { size: '12/regular' },
+    font: { size: 'Font-12' },
     border: { radius: '' },
     padding: { x: 'Padding-8', y: 'Padding-1' },
     icon: { size: '' },
@@ -137,9 +137,9 @@ const inputTokenValue = {
   },
   inner: {
     padding: { x: 'Padding-8', y: 'Padding-1' },
-    font: { size: '12/regular', color: 'Neutral-text-4' },
-    small: { padding: { x: 'Padding-8', y: 'Padding-1' }, font: { size: '12/regular' } },
-    large: { padding: { x: 'Padding-12', y: 'Padding-3' }, font: { size: '14/regular' } },
+    font: { size: 'Font-12', color: 'Neutral-text-4' },
+    small: { padding: { x: 'Padding-8', y: 'Padding-1' }, font: { size: 'Font-12' } },
+    large: { padding: { x: 'Padding-12', y: 'Padding-3' }, font: { size: 'Font-14' } },
   },
 };
 

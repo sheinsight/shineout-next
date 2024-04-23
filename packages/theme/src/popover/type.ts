@@ -4,7 +4,7 @@
 export interface PopoverTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 气泡字体字号
    */
   popoverFontSize: string;

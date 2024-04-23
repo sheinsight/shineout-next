@@ -33,7 +33,7 @@ const imageTokenValue = {
   placeholder: { background: { color: 'Neutral-fill-2' }, font: { color: '', size: '' } },
   error: {
     background: { color: 'Neutral-fill-2' },
-    font: { color: 'Neutral-text-4', size: '12/regular' },
+    font: { color: 'Neutral-text-4', size: 'Font-12' },
   },
   group: { nearly: { margin: 'Margin-8' } },
   mask: { background: { color: 'Mask-fill-1' } },

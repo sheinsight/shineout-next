@@ -4,7 +4,7 @@
 export interface SwitchTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 开关字体字号
    */
   switchFontSize: string;
@@ -58,7 +58,7 @@ export interface SwitchTokens {
   switchTextPaddingX: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 开关小尺寸字体字号
    */
   switchSmallFontSize: string;

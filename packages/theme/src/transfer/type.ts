@@ -4,7 +4,7 @@
 export interface TransferTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 穿梭框字体字号
    */
   transferFontSize: string;
@@ -16,7 +16,7 @@ export interface TransferTokens {
   transferHeaderHeight: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 穿梭框小尺寸字体字号
    */
   transferSmallFontSize: string;
@@ -28,7 +28,7 @@ export interface TransferTokens {
   transferSmallHeaderHeight: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 穿梭框大尺寸字体字号
    */
   transferLargeFontSize: string;

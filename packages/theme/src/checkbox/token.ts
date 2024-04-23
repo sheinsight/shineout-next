@@ -57,14 +57,14 @@ const checkboxTokenExtraValue = {
   },
   font: { weight: 'Weight-regular' },
   label: {
-    font: { color: 'Neutral-text-5', size: '14/regular' },
+    font: { color: 'Neutral-text-5', size: 'Font-14' },
     disabled: { font: { color: 'Neutral-text-2' } },
   },
   gap: 'Spacing-24',
   block: { gap: 'Spacing-12' },
   small: {
     icon: { size: 'Size-6' },
-    label: { font: { size: '12/regular' } },
+    label: { font: { size: 'Font-12' } },
   },
   large: {
     icon: { size: 'Size-8' },

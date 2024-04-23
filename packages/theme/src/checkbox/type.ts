@@ -136,7 +136,7 @@ export interface CheckboxTokens {
   checkboxLabelFontColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 单选框标签字体字号
    */
   checkboxLabelFontSize: string;
@@ -166,7 +166,7 @@ export interface CheckboxTokens {
   checkboxSmallIconSize: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 单选框小尺寸标签字体字号
    */
   checkboxSmallLabelFontSize: string;
@@ -178,7 +178,7 @@ export interface CheckboxTokens {
   checkboxLargeIconSize: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 单选框大尺寸标签字体字号
    */
   checkboxLargeLabelFontSize: string;

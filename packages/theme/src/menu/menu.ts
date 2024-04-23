@@ -4,7 +4,7 @@
 import { MenuTokens } from './type';
 
 const menuTokens: MenuTokens = {
-  menuFontSize: '14/regular',
+  menuFontSize: 'Font-14',
   menuFontColor: 'Neutral-text-5',
   menuIconColor: 'Neutral-text-4',
   menuItemBackgroundColor: 'Neutral-fill-1',

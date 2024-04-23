@@ -31,15 +31,15 @@ const treeSelectTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 treeSelectRules 强关联，非 treeSelectRules 规则内的 token 需手动增加或删减。
  */
-const treeSelectTokenValue = { font: { size: '14/regular' } };
+const treeSelectTokenValue = { font: { size: 'Font-14' } };
 
 const treeSelectTokenExtraValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { radius: 'Radius-4', color: 'Neutral-border-2' },
   padding: { x: 'Padding-8', y: 'Padding-2' },
   icon: { size: 'Size-7', color: 'Neutral-text-4' },
   small: {
-    font: { size: '12/regular' },
+    font: { size: 'Font-12' },
     border: { radius: '' },
     padding: { x: 'Padding-8', y: 'Padding-1' },
     option: {
@@ -119,7 +119,7 @@ const treeSelectTokenExtraValue = {
   },
   group: {
     title: {
-      font: { color: 'Neutral-text-3', size: '12/regular' },
+      font: { color: 'Neutral-text-3', size: 'Font-12' },
       padding: { x: 'Padding-12', y: 'Padding-6' },
     },
   },

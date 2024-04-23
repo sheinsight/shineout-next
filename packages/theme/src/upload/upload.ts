@@ -12,7 +12,7 @@ const uploadTokens: UploadTokens = {
   uploadResultIconSize: 'Size-7',
   uploadResultIconColor: 'Neutral-text-4',
   uploadResultIconHoverBackgroundColor: 'Neutral-fill-2',
-  uploadResultFontSize: '14/regular',
+  uploadResultFontSize: 'Font-14',
   uploadResultFontColor: 'Neutral-text-5',
   uploadResultBorderRadius: 'Radius-4',
   uploadResultErrorFontColor: 'Danger-6',
@@ -41,8 +41,8 @@ const uploadTokens: UploadTokens = {
   uploadImageResultErrorBorderColor: 'Danger-6',
   uploadImageResultErrorFontColor: 'Danger-6',
   uploadImageResultTipBackgroundColor: 'Neutral-fill-1',
-  uploadImageResultTipFontSize: '12/regular',
-  uploadFontSize: '14/regular',
+  uploadImageResultTipFontSize: 'Font-12',
+  uploadFontSize: 'Font-14',
 };
 
 export default uploadTokens;

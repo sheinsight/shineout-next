@@ -25,7 +25,7 @@ const progressTokenDescription = {
 const progressTokenValue = {};
 
 const progressTokenExtraValue = {
-  font: { size: '14/regular', color: 'Neutral-text-4' },
+  font: { size: 'Font-14', color: 'Neutral-text-4' },
   background: 'Neutral-fill-3',
   info: { front: { background: { color: 'Brand-6' } } },
   warning: { front: { background: { color: 'Warning-6' } } },
@@ -38,7 +38,7 @@ const progressTokenExtraValue = {
       height: 'Size-10',
       gap: 'Margin-8',
       padding: { x: 'Padding-8' },
-      font: { color: 'Neutral-text-1', size: '12/regular' },
+      font: { color: 'Neutral-text-1', size: 'Font-12' },
       right: { font: { color: 'Neutral-text-5' } },
     },
     icon: { size: 'Size-7' },

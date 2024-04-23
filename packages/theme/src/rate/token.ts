@@ -18,7 +18,7 @@ const rateTokenDescription = { rate: '评分', front: '已完成评分的', gap:
 const rateTokenValue = {};
 
 const rateTokenExtraValue = {
-  font: { color: 'Neutral-text-5', size: '14/regular' },
+  font: { color: 'Neutral-text-5', size: 'Font-14' },
   gap: 'Size-3',
   size: 'Size-12',
   background: { color: 'Neutral-fill-3' },

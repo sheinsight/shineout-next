@@ -4,7 +4,7 @@
 import { SwitchTokens } from './type';
 
 const switchTokens: SwitchTokens = {
-  switchFontSize: '14/regular',
+  switchFontSize: 'Font-14',
   switchFontColor: 'Neutral-text-1',
   switchPaddingX: 'Padding-2',
   switchPaddingY: 'Padding-2',
@@ -13,7 +13,7 @@ const switchTokens: SwitchTokens = {
   switchCircleShadow: 'Shadow-3',
   switchWidth: 'Size-21',
   switchTextPaddingX: 'Padding-4',
-  switchSmallFontSize: '12/regular',
+  switchSmallFontSize: 'Font-12',
   switchSmallPaddingX: 'Padding-2',
   switchSmallPaddingY: 'Padding-2',
   switchSmallCircleSize: 'Size-6',

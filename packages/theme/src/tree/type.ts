@@ -16,7 +16,7 @@ export interface TreeTokens {
   treeCheckboxMarginX: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 树组件字体字号
    */
   treeFontSize: string;
@@ -28,7 +28,7 @@ export interface TreeTokens {
   treeLineHeight: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 树组件小尺寸字体字号
    */
   treeSmallFontSize: string;
@@ -40,7 +40,7 @@ export interface TreeTokens {
   treeSmallLineHeight: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 树组件大尺寸字体字号
    */
   treeLargeFontSize: string;

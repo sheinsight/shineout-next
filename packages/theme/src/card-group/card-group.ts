@@ -4,7 +4,7 @@
 import { CardGroupTokens } from './type';
 
 const cardGroupTokens: CardGroupTokens = {
-  cardGroupFontSize: '14/regular',
+  cardGroupFontSize: 'Font-14',
 };
 
 export default cardGroupTokens;

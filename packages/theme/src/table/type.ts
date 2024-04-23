@@ -4,7 +4,7 @@
 export interface TableTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 表格字体字号
    */
   tableFontSize: string;

@@ -4,14 +4,14 @@
 import { TextareaTokens } from './type';
 
 const textareaTokens: TextareaTokens = {
-  textareaFontSize: '14/regular',
+  textareaFontSize: 'Font-14',
   textareaBorderRadius: 'Radius-4',
   textareaPaddingX: 'Padding-8',
   textareaPaddingY: 'Padding-4',
-  textareaSmallFontSize: '12/regular',
+  textareaSmallFontSize: 'Font-12',
   textareaSmallPaddingX: 'Padding-8',
   textareaSmallPaddingY: 'Padding-1',
-  textareaLargeFontSize: '16/regular',
+  textareaLargeFontSize: 'Font-16',
   textareaLargePaddingX: 'Padding-12',
   textareaLargePaddingY: 'Padding-7',
   textareaFontColor: 'Neutral-text-5',

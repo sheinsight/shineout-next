@@ -24,9 +24,9 @@ const treeTokenDescription = {
  * 注意，该映射表的内容不与 treeRules 强关联，非 treeRules 规则内的 token 需手动增加或删减。
  */
 const treeTokenValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   line: { height: 'Size-18' },
-  small: { font: { size: '12/regular' }, line: { height: 'Size-14' } },
+  small: { font: { size: 'Font-12' }, line: { height: 'Size-14' } },
   large: { font: { size: 'Font-16' }, line: { height: 'Size-22' } },
   padding: { x: 'Padding-8', y: 'Padding-1' },
   item: {

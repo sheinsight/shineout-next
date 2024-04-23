@@ -4,7 +4,7 @@
 export interface ListTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 列表字体字号
    */
   listFontSize: string;

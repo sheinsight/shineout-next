@@ -4,15 +4,15 @@
 import { InputTokens } from './type';
 
 const inputTokens: InputTokens = {
-  inputFontSize: '14/regular',
+  inputFontSize: 'Font-14',
   inputBorderRadius: 'Radius-4',
   inputPaddingX: 'Padding-8',
   inputPaddingY: 'Padding-4',
   inputIconSize: 'Size-7',
-  inputSmallFontSize: '12/regular',
+  inputSmallFontSize: 'Font-12',
   inputSmallPaddingX: 'Padding-8',
   inputSmallPaddingY: 'Padding-1',
-  inputLargeFontSize: '16/regular',
+  inputLargeFontSize: 'Font-16',
   inputLargePaddingX: 'Padding-12',
   inputLargePaddingY: 'Padding-7',
   inputFontColor: 'Neutral-text-5',
@@ -41,13 +41,13 @@ const inputTokens: InputTokens = {
   inputInfoErrorBorderColor: 'Danger-6',
   inputInnerPaddingX: 'Padding-8',
   inputInnerPaddingY: 'Padding-1',
-  inputInnerFontSize: '12/regular',
+  inputInnerFontSize: 'Font-12',
   inputInnerSmallPaddingX: 'Padding-8',
   inputInnerSmallPaddingY: 'Padding-1',
-  inputInnerSmallFontSize: '12/regular',
+  inputInnerSmallFontSize: 'Font-12',
   inputInnerLargePaddingX: 'Padding-12',
   inputInnerLargePaddingY: 'Padding-3',
-  inputInnerLargeFontSize: '14/regular',
+  inputInnerLargeFontSize: 'Font-14',
   inputInnerFontColor: 'Neutral-text-4',
 };
 

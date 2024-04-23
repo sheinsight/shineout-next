@@ -4,7 +4,7 @@
 export interface DividerTokens {
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 分割线字体字号
    */
   dividerFontSize: string;

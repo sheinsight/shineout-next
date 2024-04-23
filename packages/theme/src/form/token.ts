@@ -30,7 +30,7 @@ const formTokenValue = {};
 
 const formTokenExtraValue = {
   item: {
-    font: { size: '14/regular', color: 'Neutral-text-5' },
+    font: { size: 'Font-14', color: 'Neutral-text-5' },
     margin: {
       y: { end: 'Margin-12' },
       x: { end: 'Margin-16' },
@@ -46,7 +46,7 @@ const formTokenExtraValue = {
     tip: {
       min: { height: 'Size-10' },
       font: {
-        size: '12/regular',
+        size: 'Font-12',
         color: 'Neutral-text-3',
       },
     },

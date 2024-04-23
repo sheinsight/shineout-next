@@ -4,7 +4,7 @@
 import { TableTokens } from './type';
 
 const tableTokens: TableTokens = {
-  tableFontSize: '14/regular',
+  tableFontSize: 'Font-14',
   tableCellPaddingX: 'Padding-12',
   tableCellPaddingY: 'Padding-8',
   tableCellBorderColor: 'Neutral-border-1',

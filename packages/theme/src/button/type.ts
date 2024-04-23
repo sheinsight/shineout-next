@@ -1456,7 +1456,7 @@ export interface ButtonTokens {
   buttonLinkFocusBorderColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 按钮字体字号
    */
   buttonFontSize: string;
@@ -1492,7 +1492,7 @@ export interface ButtonTokens {
   buttonFontWeight: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 按钮小尺寸字体字号
    */
   buttonSmallFontSize: string;
@@ -1528,7 +1528,7 @@ export interface ButtonTokens {
   buttonSmallFontWeight: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 按钮大尺寸字体字号
    */
   buttonLargeFontSize: string;

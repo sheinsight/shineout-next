@@ -23,7 +23,7 @@ const dividerTokenDescription = {
 const dividerTokenValue = {};
 
 const dividerTokenExtraValue = {
-  font: { size: '12/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-12', color: 'Neutral-text-5' },
   border: { color: 'Neutral-border-1', width: 'Border-1' },
   horizontal: {
     margin: { y: 'Margin-24' },

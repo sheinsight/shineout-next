@@ -52,7 +52,7 @@ export interface UploadTokens {
   uploadResultIconHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 上传结果字体字号
    */
   uploadResultFontSize: string;
@@ -226,13 +226,13 @@ export interface UploadTokens {
   uploadImageResultTipBackgroundColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 上传图片结果提示字体字号
    */
   uploadImageResultTipFontSize: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 上传字体字号
    */
   uploadFontSize: string;

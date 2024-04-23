@@ -53,8 +53,8 @@ const descriptionsTokenValue = {
     padding: { size: '', x: 'Padding-8', y: 'Padding-12' },
   },
   font: {
-    small: { size: '12/regular' },
-    default: { size: '14/regular' },
+    small: { size: 'Font-12' },
+    default: { size: 'Font-14' },
     large: { size: 'Font-16' },
   },
   extra: { color: '' },
