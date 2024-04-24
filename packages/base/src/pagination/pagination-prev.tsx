@@ -7,7 +7,7 @@ import { useConfig } from '../config';
 const PaginationButtonPrev = (props: PaginationActionButtonProps) => {
   const { jssStyle, disabled, current, mode, text, size, onChange } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sectionSize);
+  const rootClasses = classNames(paginationStyle?.section);
   const prev = current - 1;
   const hasText = text && text.prev;
 
