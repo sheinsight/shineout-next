@@ -28,12 +28,12 @@ const stepsStyle: JsStyles<StepsClassType> = {
     '&$arrow': {
       '& $step:not(:last-child)': {
         '&:after': {
-          top: `calc((100% - 28px)`,
+          top: `calc(100% - 28px)`,
           width: 56,
           height: 56,
         },
         '&:before': {
-          top: `calc((100% - 28px)`,
+          top: `calc(100% - 28px)`,
           width: 56,
           height: 56,
         },
