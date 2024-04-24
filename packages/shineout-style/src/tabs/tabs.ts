@@ -47,17 +47,66 @@ const getCardStyle = () => {
   return {
     '&[data-soui-position^="left-"][data-soui-shape="card"]': {
       '& $tab,& $next,& $prev': {
-        borderRadius: `${Token.tabsTabBorderRadius} 0 0 ${Token.tabsTabBorderRadius}`,
+        '&[dir=ltr]': {
+          borderRadius: `${Token.tabsTabBorderRadius} 0 0 ${Token.tabsTabBorderRadius}`,
+        },
+        '&[dir=rtl]': {
+          borderRadius: `0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0`,
+        },
       },
-      '& $hr': { right: 0, width: 1, height: '100%' },
-      ...active({ top: 0, bottom: 0, right: -1, width: 1, background: '#FFFFFF' }),
+
+      '&[dir=ltr]': {
+        '& $cardHr': {
+          '&:after': {
+            right: 0,
+            width: '1px',
+            height: '100%',
+          },
+        },
+        ...active({ top: 0, bottom: 0, right: -1, width: 1, background: '#FFFFFF' }),
+      },
+      '&[dir=rtl]': {
+        ...active({ top: 0, bottom: 0, left: -1, width: 1, background: '#FFFFFF' }),
+
+        '& $cardHr': {
+          '&:after': {
+            left: 0,
+            width: 1,
+            height: '100%',
+          },
+        },
+      },
     },
     '&[data-soui-position^="right-"][data-soui-shape="card"]': {
       '& $tab,& $next,& $prev': {
-        borderRadius: `0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0`,
+        '&[dir=ltr]': {
+          borderRadius: `0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0`,
+        },
+        '&[dir=rtl]': {
+          borderRadius: `${Token.tabsTabBorderRadius} 0 0 ${Token.tabsTabBorderRadius}`,
+        },
       },
-      '& $hr': { left: 0, width: 1, height: '100%' },
-      ...active({ top: 0, bottom: 0, left: -1, width: 1, background: '#FFFFFF' }),
+      '&[dir=ltr]': {
+        '& $cardHr': {
+          '&:after': {
+            left: 0,
+            width: 1,
+            height: '100%',
+          },
+        },
+        ...active({ top: 0, bottom: 0, left: -1, width: 1, background: '#FFFFFF' }),
+      },
+
+      '&[dir=rtl]': {
+        '& $cardHr': {
+          '&:after': {
+            right: 0,
+            width: 1,
+            height: '100%',
+          },
+        },
+        ...active({ top: 0, bottom: 0, right: -1, width: 1, background: '#FFFFFF' }),
+      },
     },
     '&[data-soui-position^="top-"][data-soui-shape="card"]': {
       '& $tab,& $next,& $prev': {
@@ -85,8 +134,14 @@ const getCardStyle = () => {
 const getLineStyle = () => {
   return {
     '&[data-soui-position^="left-"][data-soui-shape="line"]': {
-      '& $hr': { right: 0, width: 1, height: '100%' },
-      ...active({ top: 0, bottom: 0, right: 0, width: 2 }),
+      '&[dir=ltr]': {
+        '& $hr': { right: 0, width: 1, height: '100%' },
+        ...active({ top: 0, bottom: 0, right: 0, width: 2 }),
+      },
+      '&[dir=rtl]': {
+        '& $hr': { left: 0, width: 1, height: '100%' },
+        ...active({ top: 0, bottom: 0, left: 0, width: 2 }),
+      },
       '& :not([data-soui-state="active"])$tab': {
         '&:after': {
           display: 'none',
@@ -94,8 +149,15 @@ const getLineStyle = () => {
       },
     },
     '&[data-soui-position^="right-"][data-soui-shape="line"]': {
-      '& $hr': { left: 0, width: 1, height: '100%' },
-      ...active({ top: 0, bottom: 0, left: 0, width: 2 }),
+      '&[dir=ltr]': {
+        '& $hr': { left: 0, width: 1, height: '100%' },
+        ...active({ top: 0, bottom: 0, left: 0, width: 2 }),
+      },
+      '&[dir=rtl]': {
+        '& $hr': { right: 0, width: 1, height: '100%' },
+        ...active({ top: 0, bottom: 0, right: 0, width: 2 }),
+      },
+
       '& :not([data-soui-state="active"])$tab': {
         '&:after': {
           display: 'none',
@@ -121,10 +183,20 @@ const getLineStyle = () => {
 const getDashStyle = () => {
   return {
     '&[data-soui-position^="left-"][data-soui-shape="dash"]': {
-      ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, right: 0 }),
+      '&[dir=ltr]': {
+        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, right: 0 }),
+      },
+      '&[dir=rtl]': {
+        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, left: 0 }),
+      },
     },
     '&[data-soui-position^="right-"][data-soui-shape="dash"]': {
-      ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, left: 0 }),
+      '&[dir=ltr]': {
+        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, left: 0 }),
+      },
+      '&[dir=rtl]': {
+        ...active({ top: `calc(50% - 12px)`, width: 2, height: 24, right: 0 }),
+      },
     },
     '&[data-soui-position^="top-"][data-soui-shape="dash"]': {
       ...active({ bottom: 0, left: `calc(50% - 12px)`, width: 24, height: 2 }),
@@ -147,7 +219,6 @@ const getFillStyle = () => {
         },
 
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):hover $fillInner': {
-          // background: Token.tabsHoverBackgroundColor,
           background: Token.tabsExtraFillHoverBackgroundColor,
         },
         '&:not([data-soui-state="active"]):not([data-soui-state="disabled"]):active $fillInner': {
@@ -157,13 +228,15 @@ const getFillStyle = () => {
         '&:before': {
           content: '""',
           position: 'absolute',
-          left: 0,
+
           top: 'calc(50% - 7px)',
           width: 1,
           height: 14,
           background: 'transparent',
           transition: 'background .15s ease-out',
         },
+        '&[dir=ltr]::before': { left: 0 },
+        '&[dir=rtl]::before': { right: 0 },
       },
       '& $tab:not([data-soui-state="active"]):not(:hover) + $tab:not([data-soui-state="active"]):not(:hover)':
         {
@@ -191,15 +264,24 @@ const getHeaderStyle = () => {
     '&[data-soui-shape="fill"] $header': {
       '& $tab': {
         background: Token.tabsBackgroundColor,
-        // padding: `${Token.tabsFillPaddingY} ${Token.tabsFillPaddingX}`,
         padding: `${Token.tabsFillPaddingY} 0`,
       },
       '& $tab:first-child': {
-        borderRadius: `${Token.tabsTabBorderRadius} 0 0 ${Token.tabsTabBorderRadius}`,
+        '&[dir=ltr]': {
+          borderRadius: `${Token.tabsTabBorderRadius} 0 0 ${Token.tabsTabBorderRadius}`,
+        },
+        '&[dir=rtl]': {
+          borderRadius: `0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0`,
+        },
         paddingLeft: Token.tabsFillPaddingX,
       },
       '& $tab:last-child': {
-        borderRadius: `0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0`,
+        '&[dir=rtl]': {
+          borderRadius: `${Token.tabsTabBorderRadius} 0 0 ${Token.tabsTabBorderRadius}`,
+        },
+        '&[dir=ltr]': {
+          borderRadius: `0 ${Token.tabsTabBorderRadius} ${Token.tabsTabBorderRadius} 0`,
+        },
         paddingRight: Token.tabsFillPaddingX,
       },
     },
@@ -248,7 +330,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     height: '100%',
     '& $panelWrapper': {
       flex: 1,
-      minHeight: '0'
+      minHeight: '0',
     },
     '& $panel': {
       overflow: 'auto',
@@ -601,11 +683,17 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     textAlign: 'center',
     color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
+    '&[dir=rtl]': {
+      transform: 'rotate(180deg)',
+    }
   },
   next: {
     textAlign: 'center',
     color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
+    '&[dir=rtl]': {
+      transform: 'rotate(180deg)',
+    }
   },
   extra: {},
   collapsible: {

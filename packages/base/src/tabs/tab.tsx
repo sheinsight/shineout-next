@@ -4,6 +4,8 @@ import { TabProps } from './tab.type';
 import { TabsClasses } from './tabs.type';
 import { ButtonClasses } from '../button/button.type';
 import Button from '../button';
+import { useConfig } from '../config';
+
 import { useTabsContext, util } from '@sheinx/hooks';
 
 const Tab = (props: TabProps, ref: any) => {
@@ -15,6 +17,7 @@ const Tab = (props: TabProps, ref: any) => {
     activeBackground,
     inactiveBackground,
   } = useTabsContext();
+  const config = useConfig();
 
   const tabsStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
@@ -51,7 +54,7 @@ const Tab = (props: TabProps, ref: any) => {
     return <div className={tabsStyle.fillInner}>{tab}</div>;
   };
 
-  const style: { background?: string, color?: string } = {};
+  const style: { background?: string; color?: string } = {};
 
   if (activeBackground && isActive) {
     style.background = activeBackground;
@@ -62,7 +65,7 @@ const Tab = (props: TabProps, ref: any) => {
   }
 
   if (shape === 'card') {
-    style.color = color
+    style.color = color;
   }
 
   if (shape === 'button')
@@ -75,13 +78,21 @@ const Tab = (props: TabProps, ref: any) => {
         disabled={disabled}
         type={isActive ? 'primary' : 'secondary'}
         onClick={handleClick}
+        dir={config.direction}
       >
         {tab}
       </Button>
     );
 
   return (
-    <div className={tabClass} {...getStateProps()} style={style} onClick={handleClick} ref={ref}>
+    <div
+      dir={config.direction}
+      className={tabClass}
+      {...getStateProps()}
+      style={style}
+      onClick={handleClick}
+      ref={ref}
+    >
       {shape === 'card' && renderCardTab()}
       {shape === 'line' && renderLineTab()}
       {shape === 'dash' && renderDashTab()}
