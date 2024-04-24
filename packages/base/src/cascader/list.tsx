@@ -22,6 +22,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
     childrenKey,
     shouldFinal,
     path,
+    mode,
   } = props;
 
   const styles = jssStyle?.cascader?.() as CascaderClasses;
@@ -63,6 +64,7 @@ const CascaderList = <DataItem, Value extends KeygenResult[]>(
             onPathChange={onPathChange}
             onChange={onChange}
             multiple={multiple}
+            mode={mode}
             expandTrigger={expandTrigger}
             childrenKey={childrenKey}
             shouldFinal={shouldFinal}
