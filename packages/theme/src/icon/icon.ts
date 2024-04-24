@@ -4,9 +4,9 @@
 import { IconTokens } from './type';
 
 const iconTokens: IconTokens = {
-  iconFontSize: '14/regular',
-  iconSmallFontSize: '12/regular',
-  iconLargeFontSize: '16/regular',
+  iconFontSize: 'Font-14',
+  iconSmallFontSize: 'Font-12',
+  iconLargeFontSize: 'Font-16',
   iconFontColor: 'inherit',
   iconPrimaryFontColor: 'Brand-6',
   iconSecondaryFontColor: 'Neutral-text-4',

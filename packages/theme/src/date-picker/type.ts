@@ -4,7 +4,7 @@
 export interface DatePickerTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器字体字号
    */
   datePickerFontSize: string;
@@ -28,13 +28,13 @@ export interface DatePickerTokens {
   datePickerBorderColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 日期选择器内边距（水平方向）
    */
   datePickerPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 日期选择器内边距（垂直方向）
    */
   datePickerPaddingY: string;
@@ -52,64 +52,40 @@ export interface DatePickerTokens {
   datePickerIconColor: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 日期选择器小尺寸字体字号
    */
   datePickerSmallFontSize: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 日期选择器小尺寸内边距（水平方向）
    */
   datePickerSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-1
+   * @token Spacing-1
    * @description 日期选择器小尺寸内边距（垂直方向）
    */
   datePickerSmallPaddingY: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 日期选择器大尺寸字体字号
    */
   datePickerLargeFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 日期选择器大尺寸内边距（水平方向）
    */
   datePickerLargePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Spacing-7
    * @description 日期选择器大尺寸内边距（垂直方向）
    */
   datePickerLargePaddingY: string;
-  /**
-   * @type {string}
-   * @token Size-120
-   * @description 日期选择器日期宽度
-   */
-  datePickerDateWidth: string;
-  /**
-   * @type {string}
-   * @token Size-140
-   * @description 日期选择器日期范围宽度
-   */
-  datePickerDateRangeWidth: string;
-  /**
-   * @type {string}
-   * @token Size-120
-   * @description 日期选择器日期时间宽度
-   */
-  datePickerDatetimeWidth: string;
-  /**
-   * @type {string}
-   * @token Size-210
-   * @description 日期选择器日期时间范围宽度
-   */
-  datePickerDatetimeRangeWidth: string;
   /**
    * @type {string}
    * @token Neutral-text-2
@@ -184,19 +160,19 @@ export interface DatePickerTokens {
   datePickerResultTextBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 日期选择器结果文本内边距（水平方向）
    */
   datePickerResultTextPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 日期选择器结果文本小尺寸内边距（水平方向）
    */
   datePickerResultTextSmallPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-10
+   * @token Spacing-10
    * @description 日期选择器结果文本大尺寸内边距（水平方向）
    */
   datePickerResultTextLargePaddingX: string;
@@ -220,13 +196,13 @@ export interface DatePickerTokens {
   datePickerErrorFocusShadow: string;
   /**
    * @type {string}
-   * @token Padding-10
+   * @token Spacing-10
    * @description 日期选择器面板标题模式内边距顶部
    */
   datePickerPanelTitlePaddingTop: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板标题模式字体字号
    */
   datePickerPanelTitleFontSize: string;
@@ -256,7 +232,7 @@ export interface DatePickerTokens {
   datePickerPanelRadius: string;
   /**
    * @type {string}
-   * @token Margin-24
+   * @token Spacing-24
    * @description 日期选择器面板外边距
    */
   datePickerPanelMargin: string;
@@ -268,19 +244,19 @@ export interface DatePickerTokens {
   datePickerPanelBorder: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板头部字体字号
    */
   datePickerPanelHeaderFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 日期选择器面板头部内边距（水平方向）
    */
   datePickerPanelHeaderPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 日期选择器面板头部内边距（垂直方向）
    */
   datePickerPanelHeaderPaddingY: string;
@@ -316,49 +292,49 @@ export interface DatePickerTokens {
   datePickerPanelHeaderIconHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-4
+   * @token Spacing-4
    * @description 日期选择器面板头部标题模式内边距（水平方向）
    */
   datePickerPanelHeaderTitlePaddingX: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 日期选择器面板主体内边距（水平方向）
    */
   datePickerPanelBodyPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 日期选择器面板主体内边距（垂直方向）
    */
   datePickerPanelBodyPaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板主体字体字号
    */
   datePickerPanelBodyFontSize: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 日期选择器面板底部内边距（水平方向）
    */
   datePickerPanelFooterPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-10
+   * @token Spacing-10
    * @description 日期选择器面板底部内边距（垂直方向）
    */
   datePickerPanelFooterPaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板底部左侧字体字号
    */
   datePickerPanelFooterLeftFontSize: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 日期选择器面板底部右侧字体字号
    */
   datePickerPanelFooterRightFontSize: string;
@@ -442,79 +418,25 @@ export interface DatePickerTokens {
   datePickerCellHeaderColor: string;
   /**
    * @type {string}
-   * @token Margin-4
+   * @token Spacing-4
    * @description 日期选择器单元格外边距（垂直方向）
    */
   datePickerCellMarginY: string;
   /**
    * @type {string}
-   * @token Size-124
-   * @description 日期选择器日面板宽度
-   */
-  datePickerDayPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-142
-   * @description 日期选择器周面板宽度
-   */
-  datePickerWeekPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-124
-   * @description 日期选择器年面板宽度
-   */
-  datePickerYearPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-32
-   * @description 日期选择器年单元格热区宽度
-   */
-  datePickerYearCellHotWidth: string;
-  /**
-   * @type {string}
-   * @token Size-124
-   * @description 日期选择器月面板宽度
-   */
-  datePickerMonthPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-32
-   * @description 日期选择器月单元格热区宽度
-   */
-  datePickerMonthCellHotWidth: string;
-  /**
-   * @type {string}
-   * @token Size-124
-   * @description 日期选择器季度面板宽度
-   */
-  datePickerQuarterPanelWidth: string;
-  /**
-   * @type {string}
-   * @token Size-28
-   * @description 日期选择器季度单元格热区宽度
-   */
-  datePickerQuarterCellHotWidth: string;
-  /**
-   * @type {string}
-   * @token Size-115
-   * @description 日期选择器时间面板宽度
-   */
-  datePickerTimePanelWidth: string;
-  /**
-   * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 日期选择器时间面板内边距（水平方向）
    */
   datePickerTimePanelPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-7
+   * @token Spacing-7
    * @description 日期选择器时间面板内边距（垂直方向）
    */
   datePickerTimePanelPaddingY: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 日期选择器时间列表间距
    */
   datePickerTimeListGap: string;
@@ -574,37 +496,37 @@ export interface DatePickerTokens {
   datePickerTimeItemHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 日期选择器快捷选择面板内边距（水平方向）
    */
   datePickerQuickPanelPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 日期选择器快捷选择面板内边距（垂直方向）
    */
   datePickerQuickPanelPaddingY: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 日期选择器快捷选择面板间距
    */
   datePickerQuickPanelGap: string;
   /**
    * @type {string}
-   * @token 12/regular
+   * @token Font-12
    * @description 日期选择器快捷选择面板项字体字号
    */
   datePickerQuickPanelItemFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 日期选择器快捷选择面板项内边距（水平方向）
    */
   datePickerQuickPanelItemPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-2
+   * @token Spacing-2
    * @description 日期选择器快捷选择面板项内边距（垂直方向）
    */
   datePickerQuickPanelItemPaddingY: string;

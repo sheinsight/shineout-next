@@ -16,7 +16,7 @@ export interface CollapseTokens {
   collapseIconHoverBackgroundColor: string;
   /**
    * @type {string}
-   * @token Margin-24
+   * @token Spacing-24
    * @description 折叠面板右侧附加内容外边距
    */
   collapseExtraMargin: string;
@@ -40,13 +40,13 @@ export interface CollapseTokens {
   collapseWrapperGap: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 折叠面板整体容器（包含头部内容）内边距（水平方向）
    */
   collapseWrapperPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 折叠面板整体容器（包含头部内容）内边距（垂直方向）
    */
   collapseWrapperPaddingY: string;
@@ -64,7 +64,7 @@ export interface CollapseTokens {
   collapseHeaderGap: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 折叠面板头部区域字体字号
    */
   collapseHeaderFontSize: string;
@@ -100,13 +100,13 @@ export interface CollapseTokens {
   collapseContentGap: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 折叠面板内部容器内边距（垂直方向）
    */
   collapseContentPaddingY: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 折叠面板内部容器字体字号
    */
   collapseContentFontSize: string;
@@ -124,7 +124,7 @@ export interface CollapseTokens {
   collapseContentPaddingLeft: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 折叠面板内部容器内边距（右侧）
    */
   collapseContentPaddingRight: string;

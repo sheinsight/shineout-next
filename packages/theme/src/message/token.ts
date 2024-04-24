@@ -22,7 +22,7 @@ const messageTokenExtraValue = {
   border: { color: 'Neutral-border-1' },
   background: { color: 'Neutral-fill-1' },
   font: { color: 'Neutral-text-5' },
-  margin: { bottom: 'Margin-24' },
+  margin: { bottom: 'Spacing-24' },
 };
 
 module.exports = {

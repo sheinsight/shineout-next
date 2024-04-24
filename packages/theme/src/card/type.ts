@@ -34,25 +34,25 @@ export interface CardTokens {
   cardFontColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 卡片字体字号
    */
   cardFontSize: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 卡片内边距（水平方向）
    */
   cardPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 卡片内边距（垂直方向）
    */
   cardPaddingY: string;
   /**
    * @type {string}
-   * @token 16/medium
+   * @token Font-16
    * @description 卡片标题模式字体字号
    */
   cardTitleFontSize: string;
@@ -64,7 +64,7 @@ export interface CardTokens {
   cardHeaderGap: string;
   /**
    * @type {string}
-   * @token Margin-16
+   * @token Spacing-16
    * @description 卡片头部额外内容的外边距（水平方向）
    */
   cardHeaderExtraMarginX: string;

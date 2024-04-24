@@ -4,7 +4,7 @@
 export interface EmptyTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 空状态字体字号
    */
   emptyFontSize: string;

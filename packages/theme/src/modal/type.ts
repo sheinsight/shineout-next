@@ -16,13 +16,13 @@ export interface ModalTokens {
   modalMaskLightBackground: string;
   /**
    * @type {string}
-   * @token Padding-24
+   * @token Spacing-24
    * @description 对话框面板内边距（垂直方向）
    */
   modalPanelPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-24
+   * @token Spacing-24
    * @description 对话框面板内边距（水平方向）
    */
   modalPanelPaddingX: string;
@@ -46,7 +46,7 @@ export interface ModalTokens {
   modalPanelBorder: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 对话框面板间距
    */
   modalPanelGap: string;
@@ -58,13 +58,13 @@ export interface ModalTokens {
   modalPanelRadius: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 对话框面板字体字号
    */
   modalPanelFontSize: string;
   /**
    * @type {string}
-   * @token Margin-8
+   * @token Spacing-8
    * @description 对话框头部区域图标外边距（右侧）
    */
   modalHeaderIconMarginEnd: string;
@@ -82,7 +82,7 @@ export interface ModalTokens {
   modalHeaderIconSize: string;
   /**
    * @type {string}
-   * @token Margin-16
+   * @token Spacing-16
    * @description 对话框头部区域关闭icon的外边距（水平方向）（左侧）
    */
   modalHeaderCloseMarginXStart: string;
@@ -112,19 +112,19 @@ export interface ModalTokens {
   modalHeaderCloseBackgroundColor: string;
   /**
    * @type {string}
-   * @token 16/regular
+   * @token Font-16
    * @description 对话框头部区域字体字号
    */
   modalHeaderFontSize: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 对话框抽屉模式标题的内边距（垂直方向）
    */
   modalDrawerTitlePaddingY: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 对话框抽屉模式标题的内边距（水平方向）
    */
   modalDrawerTitlePaddingX: string;
@@ -136,25 +136,25 @@ export interface ModalTokens {
   modalDrawerTitleBackgroundColor: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 对话框抽屉模式主区域内边距（垂直方向）
    */
   modalDrawerBodyPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 对话框抽屉模式主区域内边距（水平方向）
    */
   modalDrawerBodyPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 对话框抽屉模式底部区域内边距（垂直方向）
    */
   modalDrawerFooterPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 对话框抽屉模式底部区域内边距（水平方向）
    */
   modalDrawerFooterPaddingX: string;
@@ -166,7 +166,7 @@ export interface ModalTokens {
   modalDrawerCloseBackgroundColor: string;
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 对话框字体字号
    */
   modalFontSize: string;

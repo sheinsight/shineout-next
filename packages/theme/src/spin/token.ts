@@ -22,8 +22,8 @@ const spinTokenDescription = {
  */
 const spinTokenValue = {
   tip: { font: { color: 'Brand-6' } },
-  vertical: { margin: 'Margin-4' },
-  horizontal: { margin: 'Margin-4' },
+  vertical: { margin: 'Spacing-4' },
+  horizontal: { margin: 'Spacing-4' },
 };
 
 const spinTokenExtraValue = {};

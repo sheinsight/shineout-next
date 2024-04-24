@@ -4,7 +4,7 @@
 export interface ListTokens {
   /**
    * @type {string}
-   * @token 14/regular
+   * @token Font-14
    * @description 列表字体字号
    */
   listFontSize: string;
@@ -28,43 +28,43 @@ export interface ListTokens {
   listBorderRadius: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 列表选项内边距（垂直方向）
    */
   listItemPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 列表选项内边距（水平方向）
    */
   listItemPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-8
+   * @token Spacing-8
    * @description 列表小尺寸选项内边距（垂直方向）
    */
   listSmallItemPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-12
+   * @token Spacing-12
    * @description 列表小尺寸选项内边距（水平方向）
    */
   listSmallItemPaddingX: string;
   /**
    * @type {string}
-   * @token Padding-16
+   * @token Spacing-16
    * @description 列表大尺寸选项内边距（垂直方向）
    */
   listLargeItemPaddingY: string;
   /**
    * @type {string}
-   * @token Padding-20
+   * @token Spacing-20
    * @description 列表大尺寸选项内边距（水平方向）
    */
   listLargeItemPaddingX: string;
   /**
    * @type {string}
-   * @token Margin-12
+   * @token Spacing-12
    * @description 列表分页器外边距（垂直方向）
    */
   listPaginationMarginY: string;

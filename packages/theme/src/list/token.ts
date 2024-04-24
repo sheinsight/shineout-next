@@ -23,19 +23,19 @@ const listTokenDescription = {
 const listTokenValue = {};
 
 const listTokenExtraValue = {
-  font: { size: '14/regular', color: 'Neutral-text-5' },
+  font: { size: 'Font-14', color: 'Neutral-text-5' },
   border: { color: 'Neutral-border-1', radius: 'Radius-2' },
   item: {
-    padding: { y: 'Padding-12', x: 'Padding-16' },
+    padding: { y: 'Spacing-12', x: 'Spacing-16' },
   },
   small: {
-    item: { padding: { y: 'Padding-8', x: 'Padding-12' } },
+    item: { padding: { y: 'Spacing-8', x: 'Spacing-12' } },
   },
   large: {
-    item: { padding: { y: 'Padding-16', x: 'Padding-20' } },
+    item: { padding: { y: 'Spacing-16', x: 'Spacing-20' } },
   },
   pagination: {
-    margin: { y: 'Margin-12' },
+    margin: { y: 'Spacing-12' },
   },
   striped: { background: { color: 'Neutral-fill-2' } },
 };

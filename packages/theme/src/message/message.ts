@@ -8,7 +8,7 @@ const messageTokens: MessageTokens = {
   messageBorderColor: 'Neutral-border-1',
   messageBackgroundColor: 'Neutral-fill-1',
   messageFontColor: 'Neutral-text-5',
-  messageMarginBottom: 'Margin-24',
+  messageMarginBottom: 'Spacing-24',
 };
 
 export default messageTokens;

@@ -27,7 +27,7 @@ const sliderTokenValue = {};
 
 const sliderTokenExtraValue = {
   font: {
-    size: '12/regular',
+    size: 'Font-12',
   },
   track: {
     size: 'Size-2',
@@ -59,8 +59,8 @@ const sliderTokenExtraValue = {
       font: { color: 'Neutral-text-1' },
       radius: 'Radius-2',
       padding: {
-        x: 'Padding-8',
-        y: 'Padding-3',
+        x: 'Spacing-8',
+        y: 'Spacing-3',
       },
     },
   },
@@ -70,11 +70,11 @@ const sliderTokenExtraValue = {
       background: { color: 'Neutral-border-1' },
     },
     margin: {
-      y: 'Margin-4',
+      y: 'Spacing-4',
     },
     font: {
       color: 'Neutral-text-4',
-      size: '12/regular',
+      size: 'Font-12',
     },
   },
 };

@@ -5,8 +5,8 @@ import { SpinTokens } from './type';
 
 const spinTokens: SpinTokens = {
   spinTipFontColor: 'Brand-6',
-  spinVerticalMargin: 'Margin-4',
-  spinHorizontalMargin: 'Margin-4',
+  spinVerticalMargin: 'Spacing-4',
+  spinHorizontalMargin: 'Spacing-4',
 };
 
 export default spinTokens;

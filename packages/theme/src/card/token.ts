@@ -22,7 +22,7 @@ const cardTokenDescription = {
  * 该映射表将根据规则自动生成，并与公共 token 进行合并。若有相同 token，将覆盖公共 token。默认不包含公共 token，除非在映射表中添加覆盖。
  * 注意，该映射表的内容不与 cardRules 强关联，非 cardRules 规则内的 token 需手动增加或删减。
  */
-const cardTokenValue = { font: { size: '14/regular' } };
+const cardTokenValue = { font: { size: 'Font-14' } };
 
 const cardTokenExtraValue = {
   background: {
@@ -35,18 +35,18 @@ const cardTokenExtraValue = {
   },
   font: {
     color: 'Neutral-text-5',
-    size: '14/regular',
+    size: 'Font-14',
   },
-  padding: { x: 'Padding-16', y: 'Padding-12' },
+  padding: { x: 'Spacing-16', y: 'Spacing-12' },
   title: {
     font: {
-      size: '16/medium',
+      size: 'Font-16',
     },
   },
   header: {
     gap: '8px',
     extra: {
-      margin: { x: 'Margin-16' },
+      margin: { x: 'Spacing-16' },
     },
   },
   indicator: {

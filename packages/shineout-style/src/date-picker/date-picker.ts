@@ -52,9 +52,11 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   wrapper: {
     display: 'inline-block',
     position: 'relative',
-    width: token.datePickerDateWidth,
+    // width: token.datePickerDateWidth,
+    width: 240,
     '&[data-soui-type="datetime"]': {
-      width: token.datePickerDatetimeWidth,
+      // width: token.datePickerDatetimeWidth,
+      width: 240,
     },
     ...wrapper,
   },
@@ -65,9 +67,11 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     },
   },
   wrapperRange: {
-    width: token.datePickerDateRangeWidth,
+    // width: token.datePickerDateRangeWidth,
+    width: 280,
     '&[data-soui-type="datetime"]': {
-      width: token.datePickerDatetimeRangeWidth,
+      // width: token.datePickerDatetimeRangeWidth,
+      width: 420,
     },
   },
   ...resetWrapper,
@@ -429,31 +433,38 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   },
   dayPicker: {
     '& table': {
-      width: token.datePickerDayPanelWidth,
+      // width: token.datePickerDayPanelWidth,
+      width: 248,
     },
   },
   yearPicker: {
     '& table': {
-      width: token.datePickerYearPanelWidth,
+      // width: token.datePickerYearPanelWidth,
+      width: 248,
     },
     '& $pickerCellContent span': {
-      minWidth: token.datePickerYearCellHotWidth,
+      // minWidth: token.datePickerYearCellHotWidth,
+      minWidth: 64,
     },
   },
   monthPicker: {
     '& table': {
-      width: token.datePickerMonthPanelWidth,
+      // width: token.datePickerMonthPanelWidth,
+      width: 248,
     },
     '& $pickerCellContent span': {
-      minWidth: token.datePickerMonthCellHotWidth,
+      // minWidth: token.datePickerMonthCellHotWidth,
+      minWidth: 64,
     },
   },
   quarterPicker: {
     '& table': {
-      width: token.datePickerQuarterPanelWidth,
+      // width: token.datePickerQuarterPanelWidth,
+      width: 248,
     },
     '& $pickerCellContent span': {
-      minWidth: token.datePickerQuarterCellHotWidth,
+      // minWidth: token.datePickerQuarterCellHotWidth,
+      minWidth: 56,
     },
     '& $pickerCellContent': {
       marginTop: 0,
@@ -461,13 +472,15 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
   },
   weekPicker: {
     '& table': {
-      width: token.datePickerWeekPanelWidth,
+      // width: token.datePickerWeekPanelWidth,
+      width: 284,
     },
   },
   timePicker: {
     '& $pickerBody': {
       display: 'flex',
-      width: token.datePickerTimePanelWidth,
+      // width: token.datePickerTimePanelWidth,
+      width: 230,
       padding: `${token.datePickerTimePanelPaddingY} ${token.datePickerTimePanelPaddingX} `,
       boxSizing: 'border-box',
       position: 'relative',

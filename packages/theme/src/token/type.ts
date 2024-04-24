@@ -1017,118 +1017,6 @@ export interface Tokens {
   /**
    * @type {string}
    * @categoty string
-   * @default '12px'
-   * @description 提示、标签、辅助文案
-   */
-  '12/regular': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '12px'
-   * @description 提示、标签、辅助文案
-   */
-  medium: string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '14px'
-   * @description 正文内容
-   */
-  '14/regular': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '14px'
-   * @description 正文内容突出显示
-   */
-  '14/medium': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '16px'
-   * @description 标题-小
-   */
-  '16/regular': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '16px'
-   * @description 标题-小
-   */
-  '16/medium': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '18px'
-   * @description 标题-中
-   */
-  '18/regular': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '18px'
-   * @description 标题-中
-   */
-  '18/medium': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '24px'
-   * @description 标题-大
-   */
-  '24/regular': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '24px'
-   * @description 标题-大
-   */
-  '24/medium': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '32px'
-   * @description 运营数据-小
-   */
-  '32/regular': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '32px'
-   * @description 运营数据-小
-   */
-  '32/medium': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '36px'
-   * @description 运营数据-中
-   */
-  '36/regular': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '36px'
-   * @description 运营数据-中
-   */
-  '36/medium': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '48px'
-   * @description 运营数据-大
-   */
-  '48/regular': string;
-  /**
-   * @type {string}
-   * @categoty string
-   * @default '48px'
-   * @description 运营数据-大
-   */
-  '48/medium': string;
-  /**
-   * @type {string}
-   * @categoty string
    * @default '1px'
    * @description 1 内边距
    */
@@ -2127,4 +2015,46 @@ export interface Tokens {
    * @description Size-22 (44px)
    */
   'Size-22': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '46px'
+   * @description Size-23 (46px)
+   */
+  'Size-23': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '48px'
+   * @description Size-24 (48px)
+   */
+  'Size-24': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '50px'
+   * @description Size-25 (50px)
+   */
+  'Size-25': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '52px'
+   * @description Size-26 (52px)
+   */
+  'Size-26': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '54px'
+   * @description Size-27 (54px)
+   */
+  'Size-27': string;
+  /**
+   * @type {string}
+   * @categoty string
+   * @default '56px'
+   * @description Size-28 (56px)
+   */
+  'Size-28': string;
 }

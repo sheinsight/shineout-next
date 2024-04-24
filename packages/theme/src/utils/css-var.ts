@@ -14,18 +14,9 @@ export function camelCaseToDash(str: string) {
   return str.replace(/(?<=.)([A-Z])/g, '-$1').toLowerCase();
 }
 
-export const cssvar = (str: string, value: string, key: string, size?: string) => {
+export const cssvar = (str: string, value: string, key: string, _size?: string) => {
   const { prefix } = getConfig();
 
-  if (str.indexOf('Size-') > -1) {
-    // 正则提取出Size-后面的数字
-    const sizeReg = /Size-(\d+)/;
-    // 正则提取出以px结尾的数字
-    const sizeNum = sizeReg.exec(str);
-    if (sizeNum) {
-      return `${Number(sizeNum[1]) * Number(size)}px`;
-    }
-  }
   const pxReg = /(\d+)px/;
   const pxNum = pxReg.exec(str);
   if (pxNum) {

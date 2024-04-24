@@ -4,7 +4,7 @@
 import { EditableAreaTokens } from './type';
 
 const editableAreaTokens: EditableAreaTokens = {
-  editableAreaFontSize: '14/regular',
+  editableAreaFontSize: 'Font-14',
 };
 
 export default editableAreaTokens;

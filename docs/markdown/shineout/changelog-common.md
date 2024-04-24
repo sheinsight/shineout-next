@@ -34,4 +34,5 @@
 ### 🎨 Theme
 
 - 调整 `setToken` 支持更新组件 token
-
+- 移除 `regular` 和 `medium` token，替换为 `font` 系列 token 并替换组件中所有引用
+- 移除 `padding` 和 `margin` token，替换为 `spacing` 系列 token 并替换组件中所有引用
