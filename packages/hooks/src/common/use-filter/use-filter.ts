@@ -86,7 +86,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     setFilterText(text);
 
     firstMatchNode.current = null;
-
+    if (context.filterTimer) clearTimeout(context.filterTimer);
     if (!text) {
       if (data) {
         setFilterData(data);
@@ -109,7 +109,7 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     }
 
     if (!onFilter || !isFunc(onFilter)) return;
-    if (context.filterTimer) clearTimeout(context.filterTimer);
+
     context.filterTimer = setTimeout(() => {
       const next = onFilter(text, from);
 
@@ -145,6 +145,8 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
   } else if (data) {
     nextData = getData();
   }
+
+  console.log(filterData);
   return {
     inputText,
     filterText,
