@@ -1462,7 +1462,7 @@ export interface ButtonTokens {
   buttonFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 按钮边框圆角
    */
   buttonBorderRadius: string;
@@ -1498,7 +1498,7 @@ export interface ButtonTokens {
   buttonSmallFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 按钮小尺寸边框圆角
    */
   buttonSmallBorderRadius: string;
@@ -1534,7 +1534,7 @@ export interface ButtonTokens {
   buttonLargeFontSize: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 按钮大尺寸边框圆角
    */
   buttonLargeBorderRadius: string;
@@ -2014,19 +2014,19 @@ export interface ButtonTokens {
   buttonDangerTextSplitFocusBackgroundColor: string;
   /**
    * @type {string}
-   * @token Radius-1000
+   * @token Radius-full
    * @description 按钮药丸形边框圆角
    */
   buttonRoundBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-50%
+   * @token Radius-circle
    * @description 按钮圆形边框圆角
    */
   buttonCircleBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 按钮方形边框圆角
    */
   buttonSquareBorderRadius: string;
@@ -2038,13 +2038,13 @@ export interface ButtonTokens {
   buttonSmallRoundBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-50%
+   * @token Radius-circle
    * @description 按钮小尺寸圆形边框圆角
    */
   buttonSmallCircleBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 按钮小尺寸方形边框圆角
    */
   buttonSmallSquareBorderRadius: string;
@@ -2056,13 +2056,13 @@ export interface ButtonTokens {
   buttonLargeRoundBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-50%
+   * @token Radius-circle
    * @description 按钮大尺寸圆形边框圆角
    */
   buttonLargeCircleBorderRadius: string;
   /**
    * @type {string}
-   * @token Radius-4
+   * @token Radius-default
    * @description 按钮大尺寸方形边框圆角
    */
   buttonLargeSquareBorderRadius: string;

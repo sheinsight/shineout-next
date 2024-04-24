@@ -21,7 +21,7 @@ export default () => {
           max={10}
           value={current}
           onChange={handleCurrentChange}
-          style={{ width: 80, marginLeft: 8 }}
+          style={{ width: 80, marginInlineStart: 8 }}
         />
       </div>
       <Pagination total={100} span={3} current={current} onChange={setCurrent} />

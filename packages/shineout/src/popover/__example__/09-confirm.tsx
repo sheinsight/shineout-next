@@ -20,7 +20,7 @@ const App: React.FC = () => {
   return (
     <Button>
       <Popover.Confirm
-        position='right'
+        priorityDirection='horizontal'
         title='Tips'
         onCancel={() => console.log('cancel')}
         onOk={onOk}

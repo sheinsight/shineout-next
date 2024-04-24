@@ -42,9 +42,14 @@ const beforeLine = () => ({
     content: '" "',
     height: 'calc(50% - 2px)',
     top: 'calc(25% + 1px)',
-    left: -1,
     width: 1,
     background: Token.buttonSplitlineFullBackgroundColor,
+  },
+  '&[dir=ltr]::before': {
+    left: -1,
+  },
+  '&[dir=rtl]::before': {
+    right: -1,
   },
   '&:not($disabled):hover': {
     '&::before': {
@@ -63,9 +68,14 @@ const outlineBeforeLine = (type: ButtonTypeWithoutLink, styles: ButtonStyleType)
     content: '" "',
     height: 'calc(50% - 2px)',
     top: 'calc(25% + 1px)',
-    left: -1,
     width: 1,
     background: Token[`button${type}${styles}BorderColor`],
+  },
+  '&[dir=ltr]::before': {
+    left: -1,
+  },
+  '&[dir=rtl]::before': {
+    right: -1,
   },
   '&:not(:disabled):hover': {
     // before
@@ -137,9 +147,14 @@ const textBeforeLine = () => ({
     content: '" "',
     height: 'calc(50% - 2px)',
     top: 'calc(25% + 1px)',
-    left: -1,
     width: 1,
     background: Token.buttonSplitlineOutlineBackgroundColor,
+  },
+  '&[dir=ltr]::before': {
+    left: -1,
+  },
+  '&[dir=rtl]::before': {
+    right: -1,
   },
 
   '&:not($disabled):hover': {
@@ -376,16 +391,30 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
 
     // 第一个元素下的所有 button 标签的元素
     '& > :first-child:not(:last-child)$button,& > :first-child:not(:last-child) $button': {
-      borderTopRightRadius: 0,
-      borderBottomRightRadius: 0,
-      borderRight: 'none',
+      '&[dir=ltr]': {
+        borderTopRightRadius: 0,
+        borderBottomRightRadius: 0,
+        borderRight: 'none',
+      },
+      '&[dir=rtl]': {
+        borderTopLeftRadius: 0,
+        borderBottomLeftRadius: 0,
+        borderRight: 'none',
+      },
     },
 
     // 最后一个元素下的所有 button 标签的元素
     '& > :last-child:not(:first-child)$button,& > :last-child:not(:first-child) $button': {
-      borderTopLeftRadius: 0,
-      borderBottomLeftRadius: 0,
-      borderLeft: 'none',
+      '&[dir=ltr]': {
+        borderTopLeftRadius: 0,
+        borderBottomLeftRadius: 0,
+        borderLeft: 'none',
+      },
+      '&[dir=rtl]': {
+        borderTopRightRadius: 0,
+        borderBottomRightRadius: 0,
+        borderLeft: 'none',
+      },
     },
 
     '& > :not(:first-child):not(:last-child)$button,& > :not(:first-child):not(:last-child) $button':
@@ -410,9 +439,14 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
           content: '" "',
           height: 'calc(50% - 2px)',
           top: 'calc(25% + 1px)',
-          left: -1,
           width: 1,
           background: Token.buttonSplitlineOutlineBackgroundColor,
+        },
+        '&[dir=ltr]::before': {
+          left: -1,
+        },
+        '&[dir=rtl]::before': {
+          right: -1,
         },
         '& + :not(&),& + * $button:not(&)': {
           '&::before': {
@@ -459,9 +493,14 @@ const ButtonStyle: JsStyles<keyof ButtonClasses> = {
           content: '" "',
           height: 'calc(50% - 2px)',
           top: 'calc(25% + 1px)',
-          left: -1,
           width: 1,
           background: Token.buttonSplitlineOutlineBackgroundColor, // Neutral-border-1
+        },
+        '&[dir=ltr]::before': {
+          left: -1,
+        },
+        '&[dir=rtl]::before': {
+          right: -1,
         },
       },
       '&$primary': {

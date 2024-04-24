@@ -38,12 +38,16 @@ const useImageGallery = (props: BaseImageGalleryProps) => {
     setCurrent(newCurrent);
   });
 
+  // handle scroll
   const handleScroll = usePersistFn((e: WheelEvent) => {
     if (shouldScroll) return;
     e.preventDefault();
     if (scrollX !== 0) return;
     const wheel = NormalizeWheel(e);
     scrollX += wheel.spinX;
+    if (props.direction === 'rtl') {
+      scrollX = -scrollX;
+    }
 
     if (scrollX < 0) handleClick(-1);
     if (scrollX > 0) handleClick(1);

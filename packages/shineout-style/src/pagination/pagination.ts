@@ -53,23 +53,14 @@ const PaginationStyle: JsStyles<PaginationClass> = {
     '& $icon': {
       width: Token.paginationSmallFontSize,
     },
-    '& $sectionSize': {
-      padding: 0,
-    },
   },
   large: {
     '& $icon': {
       width: Token.paginationLargeFontSize,
     },
-    '& $sectionSize': {
-      padding: 0,
-    },
   },
   buttonItem: {
     transition: 'none',
-  },
-  sectionSize: {
-    padding: 0,
   },
 };
 
