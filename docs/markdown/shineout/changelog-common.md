@@ -1,10 +1,21 @@
+## 3.1.0-rc.3
+
+2024-04-24
+
+### 🆕 Feature
+- `Button - Table` 支持 rtl
+- 优化 `Table` 固定表头的样式
+
+### 🐞 BugFix
+- 修复 `Table` 虚拟列表拖动到底部可能展示不全的问题
+
+
 ## 3.1.0-rc.2
 2024-04-18
 
 ### 🆕 Feature
 
 ### 🐞 BugFix
-
 
 ### 💎 Enhancement
 
@@ -19,17 +30,8 @@
 ## 3.1.0-rc.1
 2024-04-17
 
-### 🆕 Feature
-
-### 🐞 BugFix
-
-
-### 💎 Enhancement
-
 ### 💅 Style
 - 优化 `Alert` `Form.Item` `Modal` `Popover` `Tooltip` `Upload` 单词换行样式 ([#375](https://github.com/sheinsight/shineout-next/pull/375))
-
-### 🆎 Type
 
 ### 🎨 Theme
 
