@@ -382,6 +382,7 @@ const cascaderStyle: JsStyles<CascaderClassType> = {
     paddingTop: 3,
     paddingBottom: 3,
     display: 'inline-block',
+    overflow: 'auto'
   },
   tag: {
     '&$tag + &$tag': {

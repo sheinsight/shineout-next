@@ -531,6 +531,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
         id={path[0]}
         parentId=''
         path={[] as unknown as Value}
+        mode={mode}
       />,
     ];
     const childs = path.map((p, i) => {
@@ -574,7 +575,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     const listStyle =
       data && data.length === 0
         ? { height: 'auto', minHeight: 232, width: '100%' }
-        : { height, minHeight: 232 };
+        : { height, minHeight: height || 232, };
     return (
       <div className={classNames(styles.listContent)} style={listStyle}>
         {cascaderList}
