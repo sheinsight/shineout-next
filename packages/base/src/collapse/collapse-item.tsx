@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import classNames from 'classnames';
 import type { CollapseItemProps } from './collapse-item.type';
 import groupContext from './group-context';
+import { useConfig } from '../config';
 import { useCollapseItem } from '@sheinx/hooks';
 import AnimationList from '..//animation-list';
 
@@ -29,6 +30,8 @@ const CollapseItem = (props: CollapseItemProps) => {
     contentStyle,
   } = props;
 
+  const config = useConfig();
+
   const { judgeExpanded, getItemContentProps, getHeaderIconProps, getTitleProps, getExtraProps } =
     useCollapseItem({
       active,
@@ -52,7 +55,7 @@ const CollapseItem = (props: CollapseItemProps) => {
       : null;
     return (
       headerIcon && (
-        <div {...getHeaderIconProps({ className: collapseItemIconClassName })}>{headerIcon}</div>
+        <div dir={config.direction} {...getHeaderIconProps({ className: collapseItemIconClassName })}>{headerIcon}</div>
       )
     );
   };

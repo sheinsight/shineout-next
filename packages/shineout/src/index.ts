@@ -1,3 +1,6 @@
+// 此文件由脚本自动生成，请勿直接修改。
+// This file was generated automatically by a script. Please do not modify it directly.
+
 export { default as Alert } from './alert';
 export { default as Breadcrumb } from './breadcrumb';
 export { default as Button } from './button';
@@ -47,11 +50,11 @@ export { default as TreeSelect } from './tree-select';
 export { default as Upload } from './upload';
 
 export { setConfig, config, setLocale, setIcons } from '@sheinx/base';
-export { Token, setToken, useToken } from '@sheinx/theme';
+export { setToken, useToken } from '@sheinx/theme';
 export { JssProvider, SheetsRegistry, setJssConfig } from '@sheinx/shineout-style';
 export * as utls from './utils';
 export * from './deprecated';
 
 export * as TYPE from './type';
 
-export default { version: '3.0.0-rc.4' };
+export default { version: '3.0.2' };

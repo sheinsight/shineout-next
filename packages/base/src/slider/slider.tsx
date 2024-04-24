@@ -1,14 +1,15 @@
 import { useSlider, useInputAble } from '@sheinx/hooks';
 import classNames from 'classnames';
 import React from 'react';
+import { useConfig } from '../config';
 import { SliderProps } from './slider.type';
 import useWithFormConfig from '../common/use-with-form-config';
-
 
 const defaultScale = [0, 100];
 const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => {
   const props = useWithFormConfig(props0);
   const sliderClasses = props.jssStyle?.slider?.();
+  const config = useConfig()
 
   const { scale = defaultScale, step = 1, height = 200, valueTipType: tipType = 'always' } = props;
 
@@ -28,6 +29,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
     step,
     vertical: !!props.vertical,
     onIncrease: props.onIncrease,
+    direction: config.direction,
   });
 
   const renderIndicatorValue = (position: 0 | 1) => {
@@ -40,6 +42,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
     const c = position === 0 ? sliderClasses?.startValue : sliderClasses?.endValue;
     return (
       <div
+        dir={config.direction}
         className={classNames(
           c,
           sliderClasses?.value,
@@ -64,6 +67,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
             dragIndex === position && sliderClasses?.indicatorActive,
             tipType === 'hover' && sliderClasses?.indicatorHover,
           )}
+          dir={config.direction}
         />
         {renderIndicatorValue(position)}
       </>
@@ -99,7 +103,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
         ref={trackRef}
         onClick={props.disabled ? undefined : func.handleTrackClick}
       >
-        <div className={sliderClasses?.trackInner} style={innerStyle}>
+        <div className={sliderClasses?.trackInner} style={innerStyle} dir={config.direction}>
           {renderIndicator(0)}
           {renderIndicator(1)}
         </div>
@@ -108,7 +112,7 @@ const Slider = <Value extends number | number[]>(props0: SliderProps<Value>) => 
         <div className={sliderClasses?.scaleWrapper}>
           {scale?.map((item, index) => (
             <div key={index} className={classNames(sliderClasses?.scale)}>
-              <div key={index} className={classNames(sliderClasses?.label)}>
+              <div key={index} className={classNames(sliderClasses?.label)} dir={config.direction}>
                 {renderScale(item)}
               </div>
             </div>

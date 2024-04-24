@@ -3,11 +3,14 @@ import classNames from 'classnames';
 import React from 'react';
 import { CarouselProps } from './carousel.type';
 import Icons from '../icons';
+import { useConfig } from '../config';
 
 const Carousel = (props: CarouselProps) => {
   const { animation = 'slide', indicatorPosition = 'center', indicatorType = 'circle' } = props;
   const total = React.Children.toArray(props.children).length;
   const carouselClasses = props.jssStyle?.carousel?.();
+  const config = useConfig();
+
   const { current, pre, direction, func } = useCarousel({
     total,
     interval: props.interval,
@@ -52,14 +55,14 @@ const Carousel = (props: CarouselProps) => {
         <div
           className={classNames(carouselClasses?.arrowLeft, carouselClasses?.arrowItem)}
           key={'left'}
-          onClick={func.backward}
+          onClick={config.direction === 'ltr' ? func.backward : func.forward}
         >
           {Icons.carousel.Backward}
         </div>
         <div
           className={classNames(carouselClasses?.arrowRight, carouselClasses?.arrowItem)}
           key={'right'}
-          onClick={func.forward}
+          onClick={config.direction === 'ltr' ? func.forward : func.backward}
         >
           {Icons.carousel.Forward}
         </div>
@@ -75,16 +78,26 @@ const Carousel = (props: CarouselProps) => {
     } else if (indicatorType === 'number') {
       content = (
         <>
-          <div className={carouselClasses?.indicatorArrow} onClick={func.backward}>
-            {Icons.carousel.Backward}
+          <div
+            className={carouselClasses?.indicatorArrow}
+            onClick={func.backward}
+          >
+            {config.direction === 'rtl' && ['center', 'outer'].includes(indicatorPosition)
+              ? Icons.carousel.Forward
+              : Icons.carousel.Backward}
           </div>
           <div className={carouselClasses?.indicatorNumber}>
             <span>{current + 1}</span>
             <span>/</span>
             <span>{total}</span>
           </div>
-          <div className={carouselClasses?.indicatorArrow} onClick={func.forward}>
-            {Icons.carousel.Forward}
+          <div
+            className={carouselClasses?.indicatorArrow}
+            onClick={func.forward}
+          >
+            {config.direction === 'rtl' && ['center', 'outer'].includes(indicatorPosition)
+              ? Icons.carousel.Backward
+              : Icons.carousel.Forward}
           </div>
         </>
       );

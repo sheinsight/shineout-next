@@ -85,7 +85,12 @@ const cardStyle: JsStyles<CardClassType> = {
     transition: 'transform 240ms linear',
     transform: 'rotate(90deg)',
     '$wrapperCollapsed &': {
-      transform: 'rotate(0deg)',
+      '&[dir=ltr]': {
+        transform: 'rotate(0deg)',
+      },
+      '&[dir=rtl]': {
+        transform: 'rotate(180deg)',
+      },
     },
   },
   body: {

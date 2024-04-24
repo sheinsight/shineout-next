@@ -38,7 +38,7 @@ export default () => {
         title='User Info'
         border
         layout='horizontal'
-        labelStyle={{ textAlign: 'right' }}
+        labelStyle={{ textAlign: 'end' }}
         column={{
           xs: 1,
           sm: 2,

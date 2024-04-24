@@ -258,7 +258,7 @@ const ImageStyle: JsStyles<ImageClass> = {
   close: {
     position: 'absolute',
     top: -15,
-    right: -15,
+
     zIndex: 1,
     cursor: 'pointer',
     outline: 'none',
@@ -268,6 +268,12 @@ const ImageStyle: JsStyles<ImageClass> = {
     // hover
     '&:hover': {
       color: '#666C7C',
+    },
+    '&[dir=ltr]': {
+      right: -15,
+    },
+    '&[dir=rtl]': {
+      left: -15,
     },
   },
 
@@ -317,26 +323,46 @@ const ImageStyle: JsStyles<ImageClass> = {
     },
 
     '&$galleryForward': {
-      animation: '$keyframe-f2c 0.5s ease-in-out',
+      '&[dir=ltr]': {
+        animation: '$keyframe-f2c 0.5s ease-in-out',
+      },
+      '&[dir=rtl]': {
+        animation: '$keyframe-b2c 0.5s ease-in-out',
+      },
     },
     '&$galleryBackward': {
-      animation: '$keyframe-b2c 0.5s ease-in-out',
+      '&[dir=ltr]': {
+        animation: '$keyframe-b2c 0.5s ease-in-out',
+      },
+      '&[dir=rtl]': {
+        animation: '$keyframe-f2c 0.5s ease-in-out',
+      },
+      
     },
   },
 
   galleryLeft: {
-    marginRight: '-80px',
     opacity: 0.4,
-    transform: 'translateY(-50%)',
     display: 'flex',
     position: 'absolute',
     zIndex: 1100,
-
-    right: '100%',
+    transform: 'translateY(-50%)',
+    marginRight: '-80px',
     top: '50%',
+    '&[dir=ltr]': {
+      right: '100%',
+    },
+    '&[dir=rtl]': {
+      left: '100%',
+    },
 
     '&$galleryForward': {
-      animation: '$keyframe-c2b 0.5s ease-in-out',
+      '&[dir=ltr]': {
+        animation: '$keyframe-c2b 0.5s ease-in-out',
+      },
+      '&[dir=rtl]': {
+        animation: '$keyframe-c2f 0.5s ease-in-out',
+      }
     },
   },
 
@@ -347,12 +373,21 @@ const ImageStyle: JsStyles<ImageClass> = {
     display: 'flex',
     position: 'absolute',
     zIndex: 1100,
-
-    left: '100%',
     top: '50%',
+    '&[dir=ltr]': {
+      left: '100%',
+    },
+    '&[dir=rtl]': {
+      right: '100%',
+    },
 
     '&$galleryBackward': {
-      animation: '$keyframe-c2f 0.5s ease-in-out',
+      '&[dir=ltr]': {
+        animation: '$keyframe-c2f 0.5s ease-in-out',
+      },
+      '&[dir=rtl]': {
+        animation: '$keyframe-c2b 0.5s ease-in-out',
+      }
     },
   },
 

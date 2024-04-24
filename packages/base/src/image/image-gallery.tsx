@@ -4,9 +4,12 @@ import { ImageClasses } from './image.type';
 import Magnify from './image-magnify';
 import { Image, ImageGalleryProps, MagnifyPositionType } from './image.type';
 import Icons from '../icons';
+import { useConfig } from '../config';
 
 const ImageModal = (props: ImageGalleryProps) => {
   const { jssStyle, images, ...rest } = props;
+  const config = useConfig();
+
 
   const {
     current,
@@ -18,9 +21,11 @@ const ImageModal = (props: ImageGalleryProps) => {
   } = useImageGallery({
     ...rest,
     images,
+    direction: config.direction,
   });
 
   const galleryStyle = jssStyle?.image?.() || ({} as ImageClasses);
+
 
   const overlayClass = classNames(galleryStyle?.overlay);
   const magnifyClass = classNames(galleryStyle?.magnify);
@@ -30,7 +35,7 @@ const ImageModal = (props: ImageGalleryProps) => {
 
   const renderColseIcon = () => {
     return (
-      <a className={closeClass} {...closeIconProps}>
+      <a className={closeClass} {...closeIconProps} dir={config.direction}>
         {Icons.image.Close}
       </a>
     );
@@ -59,7 +64,7 @@ const ImageModal = (props: ImageGalleryProps) => {
     });
 
     return (
-      <div key={image.key} {...galleryProps}>
+      <div key={image.key} {...galleryProps} dir={config.direction}>
         {renderColseIcon()}
         <Magnify {...magnifyProps}></Magnify>
       </div>

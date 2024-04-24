@@ -31,9 +31,10 @@ const Anchor = (props: AnchorProps) => {
     const target = document.getElementById(`${anchorName}-${activeAnchor}`);
     layout?.scrollTo(0, (target?.offsetTop as number) + 125);
     dispatch.setActiveAnchor(activeAnchor, true);
-
+    const params = new URLSearchParams(location.search);
+    params.set(anchorName, activeAnchor);
     navigate({
-      search: `tab=${state.doctab}&${anchorName}=${activeAnchor}`,
+      search: params.toString(),
     });
     setTimeout(() => {
       dispatch.setLocked(false);

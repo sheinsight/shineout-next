@@ -24,8 +24,8 @@ yarn add shineout
 
 除了可以通过 npm 安装之外，你也可以直接使用 CDN 资源，我们提供了 umd 格式的代码产物。
 
-- 开发环境: https://unpkg.com/shineout@latest-3/dist/shineout.js
-- 生产环境: https://unpkg.com/shineout@latest-3/dist/shineout.min.js
+- 开发环境: https://unpkg.com/shineout@version/dist/shineout.js
+- 生产环境: https://unpkg.com/shineout@version/dist/shineout.min.js
 
 不过，我们不建议通过 CDN 使用，因为 CDN 会引入全量的组件代码，这样会影响页面加载速度。
 

@@ -57,6 +57,7 @@ const tooltipStyle: JsStyles<keyof TooltipClasses> = {
     borderRadius: token.tooltipBorderRadius,
     boxShadow: token.tooltipShadow,
     color: token.tooltipColor,
+    wordWrap: 'break-word',
     '&[data-soui-type^="light"]': {
       backgroundColor: token.tooltipLightBackgroundColor,
       color: token.tooltipLightColor,
