@@ -1,3 +1,12 @@
+## 3.0.4
+2024-04-24
+
+### 🐞 BugFix
+
+- 修复 `Cascader` 设置 `height` 后内容溢出无法内滚  ([#386](https://github.com/sheinsight/shineout-next/pull/386))
+- 修复 `Cascader` 设置 `childrenKey` 后选中结果展示错误 ([#386](https://github.com/sheinsight/shineout-next/pull/386))
+- 修复 `Cascader` 设置 `mode = 4` 时禁用节点无法点击展开 ([#386](https://github.com/sheinsight/shineout-next/pull/386))
+
 ## 3.0.3
 2024-04-22
 
