@@ -7,7 +7,7 @@ import { useConfig } from '../config';
 const PaginationButtonNext = (props: PaginationActionButtonProps) => {
   const { jssStyle, disabled, total, pageSize, current, text, size, style, mode, onChange } = props;
   const paginationStyle = jssStyle?.pagination?.();
-  const rootClasses = classNames(paginationStyle?.section, paginationStyle?.sectionSize);
+  const rootClasses = classNames(paginationStyle?.section);
   const max = Math.ceil(total / pageSize);
   const next = current + 1;
   const hasText = text && text.next;
