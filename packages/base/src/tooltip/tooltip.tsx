@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import React, { cloneElement, isValidElement } from 'react';
 import { TooltipProps } from './tooltip.type';
 import AbsoluteList from '../absolute-list';
+import { useConfig } from '../config';
 
 const Tooltip = (props: TooltipProps) => {
   const {
@@ -20,6 +21,7 @@ const Tooltip = (props: TooltipProps) => {
   } = props;
 
   const tooltipClasses = jssStyle?.tooltip?.();
+  const config = useConfig();
 
   const childrenProps = isValidElement(children)
     ? (children?.props as { [name: string]: any })
@@ -84,6 +86,7 @@ const Tooltip = (props: TooltipProps) => {
           {...util.getDataAttribute({ type, position })}
           ref={popupRef}
           onMouseLeave={events.onMouseLeave}
+          dir={config.direction}
         >
           <div style={style} className={classNames(tooltipClasses?.content)}>
             {tip}
