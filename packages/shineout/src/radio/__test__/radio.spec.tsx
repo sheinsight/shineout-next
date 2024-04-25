@@ -143,9 +143,6 @@ describe('Radio[Raw]', () => {
       <Radio.Group
         keygen
         defaultValue='yellow'
-        onChange={(...args: any[]) => {
-          console.log(args);
-        }}
       >
         {renderData.map((d) => (
           <Radio key={d} htmlValue={d}>

@@ -6,6 +6,7 @@ import Checkbox from './tree-checkbox';
 import { useTreeContext } from './tree-context';
 import Icons from '../icons';
 import Spin from '../spin';
+import { useConfig } from '../config';
 
 const NodeContent = <DataItem, Value extends KeygenResult[]>(
   props: TreeContextProps<DataItem, Value>,
@@ -36,6 +37,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     onNodeClick,
   } = props;
   const { isDisabled } = useTreeContext();
+  const config = useConfig();
   const disabled = isDisabled(id);
 
   const contentStyle = jssStyle?.tree() || ({} as TreeClasses);
@@ -96,6 +98,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
         className={contentStyle.iconWrapper}
         data-expanded={expanded}
         data-icon={hasExpandIcons}
+        dir={config.direction}
       >
         <Spin size={12} jssStyle={jssStyle}></Spin>
       </span>
@@ -119,8 +122,13 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           className={contentStyle.iconWrapper}
           data-expanded={expanded}
           data-icon={hasExpandIcons}
+          dir={config.direction}
         >
-          <span className={classNames(contentStyle.icon, iconClass)} onClick={handleIndicatorClick}>
+          <span
+            className={classNames(contentStyle.icon, iconClass)}
+            onClick={handleIndicatorClick}
+            dir={config.direction}
+          >
             {util.isFunc(icon) ? icon(data) : icon}
           </span>
         </span>
@@ -131,8 +139,13 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
           className={contentStyle.iconWrapper}
           data-expanded={expanded}
           data-icon={hasExpandIcons}
+          dir={config.direction}
         >
-          <span className={classNames(contentStyle.icon, iconClass)} onClick={handleIndicatorClick}>
+          <span
+            className={classNames(contentStyle.icon, iconClass)}
+            onClick={handleIndicatorClick}
+            dir={config.direction}
+          >
             {util.isFunc(icon) ? icon(data) : hasExpandIcons ? icon : Icons.tree.Expand}
           </span>
         </span>
@@ -141,7 +154,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
 
     if (children && children.length > 0) return indicator;
     if (Array.isArray(children) || children === null) return null;
-    if (fetching && !children) return renderLoading();
+    if (true && !children) return renderLoading();
     if (loader && !fetching) return indicator;
 
     return null;
@@ -173,11 +186,22 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
   };
 
   return (
-    <div className={rootClass} onDragOver={onDragOver}>
+    <div className={rootClass} onDragOver={onDragOver} dir={config.direction}>
       {renderIndicator()}
-      <div ref={bindContent} className={contentClass} {...contentDataProps()} {...contentEvent}>
+      <div
+        dir={config.direction}
+        ref={bindContent}
+        className={contentClass}
+        {...contentDataProps()}
+        {...contentEvent}
+      >
         {onChange && renderCheckbox()}
-        <div className={textClass} onDoubleClick={handleNodeExpand} {...textEvent}>
+        <div
+          dir={config.direction}
+          className={textClass}
+          onDoubleClick={handleNodeExpand}
+          {...textEvent}
+        >
           {renderNode()}
         </div>
       </div>
