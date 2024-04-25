@@ -47,7 +47,7 @@ export default () => {
             mode='outline'
           >
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <div style={{ color: '#666C7C', marginRight: 4 }}>+ </div>
+              <div style={{ color: '#666C7C', marginInlineEnd: 4 }}>+ </div>
               <div>Add Tag</div>
             </div>
           </Tag>
