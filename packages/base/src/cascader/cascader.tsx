@@ -575,7 +575,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
     const listStyle =
       data && data.length === 0
         ? { height: 'auto', minHeight: 232, width: '100%' }
-        : { height, minHeight: height || 232, };
+        : { height, minHeight: height || 232 };
     return (
       <div className={classNames(styles.listContent)} style={listStyle}>
         {cascaderList}
@@ -689,7 +689,7 @@ const Cascader = <DataItem, Value extends KeygenResult[]>(
 
   return (
     <div
-      tabIndex={disabled === true ? -1 : 0}
+      tabIndex={disabled === true || showInput ? undefined : 0}
       {...util.getDataAttribute({ ['input-border']: 'true' })}
       className={rootClass}
       style={rootStyle}
