@@ -22,6 +22,7 @@ export default () => {
         placeholder='Select Color'
         onFilter={handleFilter}
         clearable
+        multiple
       />
     </div>
   );
