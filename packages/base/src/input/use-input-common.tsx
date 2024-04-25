@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useInputAble, usePersistFn } from '@sheinx/hooks';
+import { useInputAble, usePersistFn, util } from '@sheinx/hooks';
 import useClear from '../common/use-clear';
 import useInnerTitle from '../common/use-inner-title';
 import useTip from '../common/use-tip';
@@ -73,7 +73,8 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
     beforeChange,
     delay,
   });
-  const hasValue = (value: any) => value === 0 || (value && value.length);
+  const hasValue = (value: any) =>
+    (util.isNumber(value) && !util.isNan(value)) || (value && value.length);
 
   const renderInput = useInnerTitle({
     innerTitle,

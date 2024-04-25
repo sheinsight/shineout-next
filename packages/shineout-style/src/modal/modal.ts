@@ -265,6 +265,7 @@ const modalStyle: JsStyles<ModalClassType> = {
       },
       '& $body': {
         padding: `${token.modalDrawerBodyPaddingY} ${token.modalDrawerBodyPaddingX}`,
+        overflow: 'auto',
       },
       '& $bodyWithIcon': {
         paddingLeft: token.modalDrawerBodyPaddingX,

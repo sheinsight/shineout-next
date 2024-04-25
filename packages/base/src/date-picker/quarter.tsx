@@ -85,7 +85,7 @@ const Quarter = (props: QuarterProps) => {
       <div className={styles?.pickerHeader}>
         <div className={styles?.pickerHeaderLeft}>
           <span className={styles?.pickerHeaderIcon} onClick={func.handlePrev}>
-            {Icons.datepicker.ArrowDoubleRight}
+            {Icons.datepicker.ArrowDoubleLeft}
           </span>
         </div>
         <div className={styles?.pickerHeaderMid}>
