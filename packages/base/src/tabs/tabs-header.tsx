@@ -12,15 +12,17 @@ import { useConfig } from '../config';
 const getRectDiff = (node: HTMLElement, pNode: HTMLElement) => {
   const nodeRect = node.getBoundingClientRect();
   const pNodeRect = pNode.getBoundingClientRect();
-  const scaleX = pNode.offsetWidth / pNodeRect.width;
-  const scaleY = pNode.offsetHeight / pNodeRect.height;
   return {
-    left: (nodeRect.left - pNodeRect.left) * scaleX,
-    right: (nodeRect.right - pNodeRect.right) * scaleX,
-    top: (nodeRect.top - pNodeRect.top) * scaleY,
-    bottom: (nodeRect.bottom - pNodeRect.bottom) * scaleY,
+    left: nodeRect.left - pNodeRect.left,
+    right: nodeRect.right - pNodeRect.right,
+    top: nodeRect.top - pNodeRect.top,
+    bottom: nodeRect.bottom - pNodeRect.bottom,
+    width: nodeRect.width,
+    height: nodeRect.height,
+    parentWidth: pNodeRect.width,
+    parentHeight: pNodeRect.height,
   };
-}
+};
 
 const TabsHeader = (props: TabsHeaderProps) => {
   const {
@@ -74,24 +76,20 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
   const calculateOffset = (
-    scrollOffsetValue: number,
-    currentOffsetValue: number,
-    currentOffsetValueOther: number,
-    isAdditon: boolean = true,
+    currentScrollOffsetStartValue: number,
+    width: number,
+    currentOffsetStartValue: number,
+    currentOffsetEndOther: number,
+    parentWidth: number,
   ) => {
-    console.log('scrollOffsetValue', scrollOffsetValue);
-    console.log('currentOffsetValue', currentOffsetValue);
-    console.log('currentOffsetValueOther', currentOffsetValueOther);
-    let nextOffset = scrollOffsetValue;
-    
-    console.log(currentOffsetValue, currentOffsetValueOther)
-    if (currentOffsetValue < 0 || currentOffsetValueOther > 0) {
-      const startOffset = isAdditon
-      ? scrollOffsetValue - currentOffsetValue
-      : scrollOffsetValue + currentOffsetValue;
-      nextOffset = startOffset;
+    const single = isRtl && !isVertical ? -1 : 1;
+    if (currentOffsetStartValue * single < 0) {
+      return currentScrollOffsetStartValue;
     }
-    return nextOffset;
+    if (currentOffsetEndOther * single > 0) {
+      return currentScrollOffsetStartValue + single * (width - parentWidth);
+    }
+    return undefined;
   };
 
   useEffect(() => {
@@ -101,30 +99,38 @@ const TabsHeader = (props: TabsHeaderProps) => {
       if (!currentTab || !headerRef.current || !scrollRef.current) return 0;
 
       const currentOffest = getRectDiff(currentTab, headerRef.current);
-      const scrollOffest = getRectDiff(scrollRef.current, headerRef.current);
-
-      let positionFit = getPosition;
-      // if (isRtl) {
-      //   if (positionFit.indexOf('left') > -1) {
-      //     positionFit = positionFit.replace('left', 'right');
-      //   } else if (positionFit.indexOf('right') > -1) {
-      //     positionFit = positionFit.replace('right', 'left');
-      //   }
-      // }
-      console.log(getPosition, positionFit);
-
-      if (['top-right', 'bottom-right'].includes(positionFit!)) {
-        return -calculateOffset(scrollOffest.right, currentOffest.left, currentOffest.right);
+      const currentScrollOffset = getRectDiff(currentTab, scrollRef.current);
+      // vertical
+      if (['left-top', 'right-top', 'left-bottom', 'right-bottom'].includes(getPosition!)) {
+        return calculateOffset(
+          currentScrollOffset.top,
+          currentScrollOffset.height,
+          currentOffest.top,
+          currentOffest.bottom,
+          currentOffest.parentHeight,
+        );
       }
-      if (['left-top', 'right-top'].includes(positionFit!)) {
-        return calculateOffset(-scrollOffest.top, currentOffest.top, currentOffest.bottom, false);
+      if (isRtl) {
+        return calculateOffset(
+          currentScrollOffset.right,
+          currentScrollOffset.width,
+          currentOffest.right,
+          currentOffest.left,
+          currentOffest.parentWidth,
+        );
       }
-      if (['left-bottom', 'right-bottom'].includes(positionFit!)) {
-        return -calculateOffset(scrollOffest.bottom, currentOffest.top, currentOffest.bottom);
-      }
-      return calculateOffset(-scrollOffest.left, currentOffest.left, currentOffest.right, false);
+      return calculateOffset(
+        currentScrollOffset.left,
+        currentScrollOffset.width,
+        currentOffest.left,
+        currentOffest.right,
+        currentOffest.parentWidth,
+      );
     };
-    // setTransform(getActiveTabOffest());
+    const offset = getActiveTabOffest();
+    if (offset !== undefined) {
+      setTransform(offset);
+    }
   }, [active, tabRef.current, headerRef.current, scrollRef.current, shouldScroll]);
 
   const getDataProps = (options?: { state?: string; position?: string; shape?: string }) => {

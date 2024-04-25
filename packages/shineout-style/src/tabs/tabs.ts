@@ -683,7 +683,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     textAlign: 'center',
     color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
-    '&[dir=rtl]': {
+    '&[dir=rtl] svg': {
       transform: 'rotate(180deg)',
     }
   },
@@ -691,7 +691,7 @@ const tabsStyle: JsStyles<keyof TabsClasses> = {
     textAlign: 'center',
     color: Token.tabsArrowFontColor,
     lineHeight: Token.lineHeightDynamic,
-    '&[dir=rtl]': {
+    '&[dir=rtl] svg': {
       transform: 'rotate(180deg)',
     }
   },
