@@ -5,14 +5,12 @@ import { UseTransformProps } from './use-transform.type';
 
 const useTransform = <T>(props: UseTransformProps) => {
   const { direction, containerRef, targetRef, autoScroll } = props;
-
-  
+  const isRtl = direction === 'X' && props.isRtl;
 
   const [delta, setDelta] = useState(0);
   const [atEnd, setAtEnd] = useState(false);
   const [atStart, setAtStart] = useState(false);
   const [shouldScroll, setShouldScroll] = useState(false);
-
   const style = {
     transform: `translate${direction}(${-delta}px)`,
   };
@@ -39,8 +37,9 @@ const useTransform = <T>(props: UseTransformProps) => {
       return;
     }
 
-    // 移动距离大于0，说明已经到达最左边或者最上边，无需移动
-    if (dimension <= 0) {
+    // 移动距离小于0，说明已经到达最左边或者最上边，无需移动
+    const single = isRtl ? -1 : 1;
+    if (dimension * single <= 0) {
       setDelta(0);
       if (atEnd === true) setAtEnd(false);
       if (atStart === false) setAtStart(true);
@@ -48,8 +47,8 @@ const useTransform = <T>(props: UseTransformProps) => {
     }
     // 移动距离大于最大可移动距离，说明已经到达最右边或者最下边，无需移动
     const maxDelta = targetDimension - containerDimension;
-    if (dimension >= maxDelta) {
-      setDelta(maxDelta);
+    if (dimension * single >= maxDelta) {
+      setDelta(maxDelta * single);
       if (atEnd === false) setAtEnd(true);
       if (atStart === true) setAtStart(false);
       return;
@@ -64,9 +63,13 @@ const useTransform = <T>(props: UseTransformProps) => {
     const dimension = direction === 'X' ? deltaX : deltaY;
 
     // 抵达边界，无需移动
-    if (atStart && dimension <= 0) return;
-    if (atEnd && dimension >= 0) return;
-
+    if (isRtl) {
+      if (atStart && dimension >= 0) return;
+      if (atEnd && dimension <= 0) return;
+    } else {
+      if (atStart && dimension <= 0) return;
+      if (atEnd && dimension >= 0) return;
+    }
     setTransform(dimension + delta);
   };
 
@@ -80,18 +83,6 @@ const useTransform = <T>(props: UseTransformProps) => {
     }
   };
 
-  const getRectDiff = (node: HTMLElement, pNode: HTMLElement) => {
-    const nodeRect = node.getBoundingClientRect();
-    const pNodeRect = pNode.getBoundingClientRect();
-    const scaleX = pNode.offsetWidth / pNodeRect.width;
-    const scaleY = pNode.offsetHeight / pNodeRect.height;
-    return {
-      left: (nodeRect.left - pNodeRect.left) * scaleX,
-      right: (nodeRect.right - pNodeRect.right) * scaleX,
-      top: (nodeRect.top - pNodeRect.top) * scaleY,
-      bottom: (nodeRect.bottom - pNodeRect.bottom) * scaleY,
-    };
-  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -119,7 +110,6 @@ const useTransform = <T>(props: UseTransformProps) => {
     shouldScroll,
     setTransform,
     handleTransform,
-    getRectDiff,
     handleResize,
   };
 };

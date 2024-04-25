@@ -7,6 +7,22 @@ import { useTabsContext, useTransform, util } from '@sheinx/hooks';
 import Tab from './tab';
 import Icon from '../icons';
 import Button from '../button';
+import { useConfig } from '../config';
+
+const getRectDiff = (node: HTMLElement, pNode: HTMLElement) => {
+  const nodeRect = node.getBoundingClientRect();
+  const pNodeRect = pNode.getBoundingClientRect();
+  return {
+    left: nodeRect.left - pNodeRect.left,
+    right: nodeRect.right - pNodeRect.right,
+    top: nodeRect.top - pNodeRect.top,
+    bottom: nodeRect.bottom - pNodeRect.bottom,
+    width: nodeRect.width,
+    height: nodeRect.height,
+    parentWidth: pNodeRect.width,
+    parentHeight: pNodeRect.height,
+  };
+};
 
 const TabsHeader = (props: TabsHeaderProps) => {
   const {
@@ -27,6 +43,10 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const tabRef = useRef<Record<string | number, HTMLDivElement>>({});
   const { shape, isVertical, onCollapsible, active } = useTabsContext();
 
+  const config = useConfig();
+
+  const isRtl = config.direction === 'rtl';
+
   useEffect(() => {
     if (sticky && headerRef.current && scrollRef.current && !loaded) {
       setLoaded(true);
@@ -41,14 +61,13 @@ const TabsHeader = (props: TabsHeaderProps) => {
     shouldScroll,
     handleTransform,
     setTransform,
-    getRectDiff,
   } = useTransform({
     autoScroll: true,
     direction: isVertical ? 'Y' : 'X',
     containerRef: headerRef,
     targetRef: scrollRef,
+    isRtl: config.direction === 'rtl',
   });
-
 
   const headerStyle = jssStyle?.tabs?.() || ({} as TabsClasses);
   const headerClass = classNames(headerStyle.header, {});
@@ -57,19 +76,20 @@ const TabsHeader = (props: TabsHeaderProps) => {
   const buttonStyle = jssStyle?.button || ({} as ButtonClasses);
 
   const calculateOffset = (
-    scrollOffsetValue: number,
-    currentOffsetValue: number,
-    currentOffsetValueOther: number,
-    isAdditon: boolean = true,
+    currentScrollOffsetStartValue: number,
+    width: number,
+    currentOffsetStartValue: number,
+    currentOffsetEndOther: number,
+    parentWidth: number,
   ) => {
-    let nextOffset = scrollOffsetValue;
-    const startOffset = isAdditon
-      ? scrollOffsetValue - currentOffsetValue
-      : scrollOffsetValue + currentOffsetValue;
-    if (currentOffsetValue < 0 || currentOffsetValueOther > 0) {
-      nextOffset = startOffset;
+    const single = isRtl && !isVertical ? -1 : 1;
+    if (currentOffsetStartValue * single < 0) {
+      return currentScrollOffsetStartValue;
     }
-    return nextOffset;
+    if (currentOffsetEndOther * single > 0) {
+      return currentScrollOffsetStartValue + single * (width - parentWidth);
+    }
+    return undefined;
   };
 
   useEffect(() => {
@@ -79,20 +99,38 @@ const TabsHeader = (props: TabsHeaderProps) => {
       if (!currentTab || !headerRef.current || !scrollRef.current) return 0;
 
       const currentOffest = getRectDiff(currentTab, headerRef.current);
-      const scrollOffest = getRectDiff(scrollRef.current, headerRef.current);
-
-      if (['top-right', 'bottom-right'].includes(getPosition!)) {
-        return -calculateOffset(scrollOffest.right, currentOffest.left, currentOffest.right);
+      const currentScrollOffset = getRectDiff(currentTab, scrollRef.current);
+      // vertical
+      if (['left-top', 'right-top', 'left-bottom', 'right-bottom'].includes(getPosition!)) {
+        return calculateOffset(
+          currentScrollOffset.top,
+          currentScrollOffset.height,
+          currentOffest.top,
+          currentOffest.bottom,
+          currentOffest.parentHeight,
+        );
       }
-      if (['left-top', 'right-top'].includes(getPosition!)) {
-        return calculateOffset(-scrollOffest.top, currentOffest.top, currentOffest.bottom, false);
+      if (isRtl) {
+        return calculateOffset(
+          currentScrollOffset.right,
+          currentScrollOffset.width,
+          currentOffest.right,
+          currentOffest.left,
+          currentOffest.parentWidth,
+        );
       }
-      if (['left-bottom', 'right-bottom'].includes(getPosition!)) {
-        return -calculateOffset(scrollOffest.bottom, currentOffest.top, currentOffest.bottom);
-      }
-      return calculateOffset(-scrollOffest.left, currentOffest.left, currentOffest.right, false);
+      return calculateOffset(
+        currentScrollOffset.left,
+        currentScrollOffset.width,
+        currentOffest.left,
+        currentOffest.right,
+        currentOffest.parentWidth,
+      );
     };
-    setTransform(getActiveTabOffest());
+    const offset = getActiveTabOffest();
+    if (offset !== undefined) {
+      setTransform(offset);
+    }
   }, [active, tabRef.current, headerRef.current, scrollRef.current, shouldScroll]);
 
   const getDataProps = (options?: { state?: string; position?: string; shape?: string }) => {
@@ -103,12 +141,14 @@ const TabsHeader = (props: TabsHeaderProps) => {
 
   const handlePrev = () => {
     if (!headerRef.current) return;
-    setTransform(delta - headerRef.current.clientWidth);
+    const single = isRtl && !isVertical ? -1 : 1;
+    setTransform(delta - headerRef.current.clientWidth * single);
   };
 
   const handleNext = () => {
     if (!headerRef.current) return;
-    setTransform(delta + headerRef.current.clientWidth);
+    const single = isRtl && !isVertical ? -1 : 1;
+    setTransform(delta + headerRef.current.clientWidth * single);
   };
 
   const renderTab = () => {
@@ -166,6 +206,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
         className={classNames(headerStyle.prev)}
         {...getDataProps({ state: atStart ? 'disabled' : '' })}
         onClick={handlePrev}
+        dir={config.direction}
       >
         {shape === 'card' ? (
           Icon.tabs.Pre
@@ -182,6 +223,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
         className={headerStyle.next}
         {...getDataProps({ state: atEnd ? 'disabled' : '' })}
         onClick={handleNext}
+        dir={config.direction}
       >
         {shape === 'card' ? (
           Icon.tabs.Next
@@ -214,6 +256,7 @@ const TabsHeader = (props: TabsHeaderProps) => {
       className={headerWrapperClass}
       style={tabBarStyle}
       {...getDataProps({ position: props.getPosition, shape })}
+      dir={config.direction}
     >
       {!hideSplit && shape !== 'card' && renderHr()}
       {collapsible && renderCollapsibleButton()}
