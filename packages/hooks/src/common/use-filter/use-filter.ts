@@ -146,7 +146,6 @@ const useFilter = <DataItem>(props: UseFilterProps<DataItem>) => {
     nextData = getData();
   }
 
-  console.log(filterData);
   return {
     inputText,
     filterText,
