@@ -4,6 +4,7 @@
 ### 🐞 BugFix
 
 - 修复 `Cascader` 在多选场景下点击下拉输入框无法自动聚焦的问题 ([#397](https://github.com/sheinsight/shineout-next/pull/397))
+- 修复 `Cascader` 首次渲染 `compressed` 属性无效的问题 ([#399](https://github.com/sheinsight/shineout-next/pull/399))
 
 ## 3.0.5
 2024-04-24
