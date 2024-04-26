@@ -327,12 +327,11 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   }, [focus]);
 
   useEffect(() => {
-    if (!focus) return;
     if (!resultRef.current) return;
     if (!compressed) return;
     if (isCompressedBound()) return;
     handleResetMore();
-  }, [valueProp, focus]);
+  }, [valueProp]);
 
   useEffect(() => {
     if (!compressed) return;
