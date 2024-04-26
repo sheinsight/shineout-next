@@ -41,15 +41,16 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     checkUnMatched,
     onRemove,
     onResultItemClick,
+    data,
   } = props;
   const value = (
     [null, undefined, ''].includes(valueProp as any) ? [] : multiple ? valueProp : [valueProp]
   ) as Value;
 
   const [more, setMore] = useState(-1);
+  const [shouldResetMore, setShouldResetMore] = useState(false);
 
   const resultRef = useRef<HTMLDivElement>(null);
-  const shouldResetMore = useRef(false);
   const prevMore = useRef(more);
   const showInput = allowOnFilter;
   const mounted = useRef(false);
@@ -153,6 +154,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     if (isUnMatchedData(item)) {
       if (isFunc(keygen)) {
         key = keygen(item.value, index);
+        if (key === undefined) key = index;
       } else {
         key = item.value;
       }
@@ -313,7 +315,9 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
 
   const handleResetMore = () => {
     if (!compressed) return;
-    shouldResetMore.current = true;
+    if (isCompressedBound()) return;
+    setMore(-1);
+    setShouldResetMore(true);
   };
 
   useEffect(() => {
@@ -327,40 +331,39 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   }, [focus]);
 
   useEffect(() => {
-    if (!resultRef.current) return;
-    if (!compressed) return;
-    if (isCompressedBound()) return;
     handleResetMore();
-  }, [valueProp]);
+  }, [valueProp, data]);
 
   useEffect(() => {
-    if (!compressed) return;
-    if (!resultRef.current) return;
-    if (more === -1) {
+    if (
+      shouldResetMore &&
+      more === -1 &&
+      compressed &&
+      resultRef.current &&
+      (props.value || [].length)
+    ) {
       const tagClassName = `.${styles.tag.split(' ')[0]}`;
-      if (shouldResetMore.current && isArray(value) && (value || []).length) {
-        shouldResetMore.current = false;
+      if (shouldResetMore && isArray(value) && (value || []).length) {
         const newMore = getResetMore(
           showInput,
           resultRef.current,
           resultRef.current.querySelectorAll(tagClassName),
         );
-
-        // 下次触发折叠逻辑的时候，将多余的 tag 隐藏，避免视图闪断
-        if (newMore !== prevMore.current && prevMore.current === -1 && newMore > prevMore.current) {
-          const tags = resultRef.current.querySelectorAll(tagClassName);
-          tags.forEach((tag, index) => {
-            if (index >= newMore) tag.setAttribute('style', 'opacity: 0');
-          });
-        }
         prevMore.current = newMore;
         setMore(newMore);
+        setShouldResetMore(false);
+      } else {
+        setShouldResetMore(false);
       }
+    } else {
+      setShouldResetMore(false);
     }
-  }, [valueProp, more]);
+  }, [shouldResetMore]);
 
   useEffect(() => {
     if (!resultRef.current) return;
+    if (!compressed) return;
+    if (isCompressedBound()) return;
 
     const cancelObserver = addResizeObserver(resultRef.current, handleResetMore, {
       direction: 'x',
