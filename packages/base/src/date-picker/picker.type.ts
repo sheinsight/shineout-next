@@ -44,6 +44,7 @@ export interface PickerProps {
     mode: string,
     disabled: (d: Date) => boolean,
   ) => void;
+  isDisabledDate: (date: Date, position: 'start' | 'end' | undefined) => boolean;
 }
 
 export interface CommonPickerProps
