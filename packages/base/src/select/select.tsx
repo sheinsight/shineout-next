@@ -101,6 +101,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     onEnterExpand,
     // onFilterWidthCreate,
     filterSameChange,
+    noCache,
   } = props;
   
 
@@ -227,6 +228,7 @@ function Select<DataItem, Value>(props0: SelectPropsBase<DataItem, Value>) {
     beforeChange,
     onChange: handleSelectChange,
     filterSameChange,
+    noCache
   });
 
   const checkEmpty = () => {

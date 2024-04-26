@@ -1,3 +1,11 @@
+## 3.0.8
+2024-04-26
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` noCache 属性无效的问题 ([#398](https://github.com/sheinsight/shineout-next/pull/398))
+- 修复 `TreeSelect` 首次渲染 `compressed` 属性无效的问题 ([#399](https://github.com/sheinsight/shineout-next/pull/399))
+
 ## 3.0.5
 2024-04-24
 

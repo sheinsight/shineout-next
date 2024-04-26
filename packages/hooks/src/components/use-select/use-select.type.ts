@@ -4,6 +4,12 @@ export interface BaseSelectProps<DataItem, Value> {
   value?: Value;
   data?: DataItem[];
   treeData?: DataItem[];
+  /**
+   * @en Data cache, if data change asynchronously, better set true
+   * @cn 是否开启数据缓存，如果数据存在动态更新的情况建议开启
+   * @default false
+   */
+  noCache?: boolean;
 
   /**
    * @en Initial value

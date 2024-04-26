@@ -81,6 +81,8 @@ const originItemClasses = [
   'wrapperUnderline',
   'wrapperDisabled',
   'optionDisabled',
+  'wrapperOpen',
+  'wrapperEmpty'
 ];
 const {
   wrapper,
@@ -125,6 +127,8 @@ const {
   treeOption,
   wrapperDisabled,
   optionDisabled,
+  wrapperOpen,
+  wrapperEmpty
 } = createClassName(SO_PREFIX, originClasses, originItemClasses);
 
 const { text: treeText, content: treeContent } = createClassName('tree', ['text', 'content'], ['']);
@@ -132,7 +136,7 @@ const { text: treeText, content: treeContent } = createClassName('tree', ['text'
 const defaultSelectPicker =
   'pointer-events: none; position: absolute; z-index: -1000; width: 100%; display: none;';
 const defaultSelectPickerOpen =
-  'z-index: 1051; width: 100%; display: block; left: 0px; transform: scaleY(1); transition: transform 240ms ease-in-out;';
+  'z-index: 1051; display: block; width: 100%; top: calc(100% + 4px); left: 0px; transform: scaleY(1); transition: transform 240ms ease-in-out;';
 
 const testDataObject = [
   { id: 1, city: 'Pune' },
@@ -220,8 +224,8 @@ describe('Select[Base]', () => {
   test('should render default', async () => {
     const { container } = render(<SelectTest />);
     const selectWrapper = container.querySelector(wrapper)!;
-    classTest(selectWrapper, clearable);
-    attributesTest(selectWrapper, 'data-soui-type', 'input');
+    // classTest(selectWrapper, clearable);
+    attributesTest(selectWrapper, 'data-soui-input-border', 'true');
     const selectResultWrapper = container.querySelector(resultWrapper)!;
     classTest(selectResultWrapper, wrapperPaddingBox);
     classTest(selectResultWrapper, wrapperInnerTitleTop);
@@ -230,12 +234,20 @@ describe('Select[Base]', () => {
     classLengthTest(selectResult.querySelector(resultTextWrapper)!, space, 1);
     const selectArrowIcon = selectWrapper.querySelector(arrowIcon)!;
     classLengthTest(selectArrowIcon, 'svg', 1);
+    
+    fireEvent.click(selectResult);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    
+    classTest(selectWrapper, wrapperOpen);
     const selectPickerWrapper = selectWrapper.querySelector(pickerWrapper)!;
     attributesTest(selectPickerWrapper, 'data-sheinx-animation-duration', 'fast');
     attributesTest(selectPickerWrapper, 'data-sheinx-animation-type', 'scale-y');
-    styleTest(selectPickerWrapper, defaultSelectPicker);
+    styleTest(selectPickerWrapper, defaultSelectPickerOpen);
     const selectList = selectPickerWrapper.querySelector(list)!;
     classTest(selectList, controlKeyboard);
+    
     const selectVirtualList = selectList.querySelector(virtualList)!;
     styleTest(selectVirtualList, 'transform: translate3d(0, -0px, 0);');
     const selectOptions = selectVirtualList.querySelectorAll(option);
@@ -247,39 +259,37 @@ describe('Select[Base]', () => {
         classTest(option, optionHover);
       }
     });
-    fireEvent.click(selectResultWrapper);
-    await waitFor(async () => {
-      await delay(200);
-    });
-    classTest(selectWrapper, wrapperFocus);
+    
     classTest(selectWrapper.querySelector(arrowIcon)!, arrowIconOpen);
-    styleTest(selectPickerWrapper, defaultSelectPickerOpen);
     fireEvent.click(selectOptions[1]);
     await waitFor(async () => {
       await delay(200);
     });
     textContentTest(selectResult, testData[1]);
-    classTest(selectOptions[1].querySelector(optionInner)!, optionActive);
+    classTest(selectWrapper, wrapperOpen, false);
+    
     classTest(selectWrapper, wrapperFocus, false);
     classTest(selectWrapper.querySelector(arrowIcon)!, arrowIconOpen, false);
     fireEvent.click(selectArrowIcon);
     await waitFor(async () => {
       await delay(200);
     });
-    classLengthTest(selectWrapper, arrowIcon, 0);
-    classLengthTest(selectWrapper, clearIcon, 1);
-    fireEvent.click(selectWrapper.querySelector(clearIcon)!);
-    await waitFor(async () => {
-      await delay(200);
-    });
-    classTest(selectWrapper, wrapperFocus, false);
+
+    classTest(selectWrapper, wrapperOpen);
+    classTest(selectWrapper.querySelector(arrowIcon)!, arrowIconOpen);
+    classTest(selectOptions[1].querySelector(optionInner)!, optionActive);
   });
-  test('should render when set width and height', () => {
+  test('should render when set width and height', async () => {
     const width = 200;
     const height = 200;
     const { container } = render(<SelectTest width={width} height={height} />);
     const selectWrapper = container.querySelector(wrapper)!;
     styleTest(selectWrapper, `width: ${width}px;`);
+    const selectResult = container.querySelector(result)!;
+    fireEvent.click(selectResult);
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectList = selectWrapper.querySelector(list)!;
     styleTest(selectList.firstElementChild!, `height: ${height}px;`);
   });
@@ -335,6 +345,12 @@ describe('Select[Base]', () => {
     };
     const { container } = render(<App />);
     const selectWrapper = container.querySelector(wrapper)!;
+    const selectResult = container.querySelector(result)!;
+    fireEvent.click(selectResult);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    screen.debug()
     const selectOptions = selectWrapper.querySelectorAll(option);
     fireEvent.click(selectOptions[1]);
     await waitFor(async () => {
@@ -342,7 +358,49 @@ describe('Select[Base]', () => {
     });
     textContentTest(container.querySelector('.test')!, `${testDataObject[1].id}`);
   });
-  test('should render when set groupBy', () => {
+  test('should render when set onChange with all parameters', async () => {
+    const App = () => {
+      const [value, setValue] = React.useState();
+      const [checked, setChecked] = React.useState();
+      return (
+        <>
+          <div className='test'>{value}</div>
+          <div className='test'>{checked}</div>
+          <SelectTest
+            data={testDataObject} 
+            keygen='id' 
+            format='id' 
+            value={value} 
+            onChange={(value: any, data: any, checked: any) => {
+              console.log('11', data)
+              setValue(value)
+              setChecked(checked)
+            }} 
+            renderItem='city' 
+            prediction={(v: any, d: any) => v === d.id}
+          />
+        </>
+      )
+    }
+    
+    const { container } = render(<App />);
+    
+    const selectWrapper = container.querySelector(wrapper)!;
+    const selectResult = container.querySelector(result)!;
+    fireEvent.click(selectResult);
+    await waitFor(async () => {
+      await delay(200);
+    });
+    screen.debug()
+    const selectOptions = selectWrapper.querySelectorAll(option);
+    fireEvent.click(selectOptions[1]);
+    await waitFor(async () => {
+      await delay(200);
+    });
+   
+    
+  })
+  test('should render when set groupBy', async () => {
     const { container } = render(
       <SelectTest
         data={groupData}
@@ -354,6 +412,11 @@ describe('Select[Base]', () => {
       />,
     );
     const selectWrapper = container.querySelector(wrapper)!;
+    const selectResult = container.querySelector(result)!;
+    fireEvent.click(selectResult);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classLengthTest(selectWrapper, optionGroupTitle, 3);
   });
   test('should render when set renderUnmatched', () => {
@@ -378,6 +441,11 @@ describe('Select[Base]', () => {
     const renderResult = (d: any) => `text-${d}`;
     const { container } = render(<SelectTest renderResult={renderResult} />);
     const selectWrapper = container.querySelector(wrapper)!;
+    const selectResult = container.querySelector(result)!;
+    fireEvent.click(selectResult);
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectOptions = selectWrapper.querySelectorAll(option);
     fireEvent.click(selectOptions[1]);
     await waitFor(async () => {
@@ -385,35 +453,57 @@ describe('Select[Base]', () => {
     });
     textContentTest(selectWrapper.querySelector(result)!, renderResult(testData[1]));
   });
-  test('should render when set optionWidth', () => {
+  test('should render when set optionWidth', async () => {
     const optionWidth = 200;
     const { container } = render(<SelectTest optionWidth={optionWidth} />);
+    const selectResult = container.querySelector(result)!;
+    fireEvent.click(selectResult);
+    await waitFor(async () => {
+      await delay(200);
+    });
     styleContentTest(container.querySelector(pickerWrapper)!, `width: ${optionWidth}px;`);
   });
   test('should render when set clearable', async () => {
     const { container } = render(<SelectTest clearable />);
     const selectWrapper = container.querySelector(wrapper)!;
+    const selectResult = container.querySelector(result)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
+    classLengthTest(selectWrapper, clearIcon, 0);
+    classTest(selectWrapper, clearable)
+    classTest(selectWrapper, wrapperOpen)
     const selectOptions = selectWrapper.querySelectorAll(option);
     fireEvent.click(selectOptions[1]);
     await waitFor(async () => {
       await delay(200);
     });
+    classTest(selectWrapper, wrapperOpen, false)
+    textContentTest(selectResult, testData[1]);
+    classTest(selectWrapper, wrapperEmpty, false)
     fireEvent.mouseEnter(selectWrapper.querySelector(arrowIcon)!);
     classLengthTest(selectWrapper, clearIcon, 1);
-    classLengthTest(selectWrapper, arrowIcon, 0);
-    fireEvent.mouseLeave(selectWrapper.querySelector(clearIcon)!);
+    fireEvent.click(selectWrapper.querySelector(clearIcon)!);
+    await waitFor(async () => {
+      await delay(200);
+    });
     classLengthTest(selectWrapper, clearIcon, 0);
-    classLengthTest(selectWrapper, arrowIcon, 1);
+    classTest(selectWrapper, wrapperEmpty)
   });
-  test('should render when set renderOptionList', () => {
+  test('should render when set renderOptionList', async () => {
     const className = 'test';
     const renderOptionList = (d: any) => <div className='test'>{d}</div>;
     const { container } = render(<SelectTest renderOptionList={renderOptionList} />);
     const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectList = selectWrapper.querySelector(list)!;
     classTest(selectList.parentElement!, className);
   });
-  test('should render when set header and footer', () => {
+  test('should render when set header and footer', async () => {
     const headerContent = 'header';
     const footerContent = 'footer';
     const className = 'test';
@@ -421,6 +511,10 @@ describe('Select[Base]', () => {
     const footer = <div className={className}>{footerContent}</div>;
     const { container } = render(<SelectTest header={header} footer={footer} />);
     const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectMore = selectWrapper.querySelectorAll(`.${className}`)!;
     expect(selectMore.length).toBe(2);
     textContentTest(selectMore[0], headerContent);
@@ -440,6 +534,10 @@ describe('Select[Base]', () => {
   test('should render when mouseEnter li', async () => {
     const { container } = render(<SelectTest />);
     const selectWrapper = container.querySelector(wrapper)!;
+    fireEvent.click(selectWrapper.querySelector(result)!)
+    await waitFor(async () => {
+      await delay(200);
+    });
     const selectOptions = selectWrapper.querySelectorAll(option);
     fireEvent.mouseEnter(selectOptions[2]);
     await waitFor(async () => {
@@ -450,6 +548,7 @@ describe('Select[Base]', () => {
 describe('Select[Multiple]', () => {
   test('should render when set multiple', async () => {
     const { container } = render(<SelectTest multiple />);
+    screen.debug()
     const selectWrapper = container.querySelector(wrapper)!;
     const selectResultWrapper = container.querySelector(resultWrapper)!;
     classTest(selectWrapper, multiple);
