@@ -45,7 +45,10 @@ export default (props: FormItemProps) => {
           {label}
         </div>
       ) : null}
-      <div className={formItemClasses?.control} {...util.getDataAttribute({ role: 'form-control' })}>
+      <div
+        className={formItemClasses?.control}
+        {...util.getDataAttribute({ role: 'form-control' })}
+      >
         <Provider value={ProviderValue}>{children}</Provider>
         {showError && (
           <div className={formItemClasses?.error}>

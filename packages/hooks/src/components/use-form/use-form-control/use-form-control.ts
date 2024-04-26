@@ -11,6 +11,7 @@ import usePersistFn from '../../../common/use-persist-fn';
 
 import { BaseFormControlProps } from './use-form-control.type';
 import { ObjectType } from '../../../common/type';
+import useLatestObj from '../../../common/use-latest-obj';
 
 const getValue = (name: string | string[], formValue: ObjectType) => {
   if (!name) return undefined;
@@ -65,6 +66,8 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       : undefined;
   const [valueState, setValueState] = React.useState<T | undefined>(formValue);
 
+  const latestInfo = useLatestObj({ valueState });
+
   if (name && formFunc) {
     inForm = true;
     value = valueState;
@@ -81,8 +84,9 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
       if (error !== errorState) {
         setErrorState(error);
       }
-      if (!shallowEqual(value, valueState)) {
+      if (!shallowEqual(value, latestInfo.valueState)) {
         setValueState(value);
+        latestInfo.valueState = value;
       }
     },
   );
@@ -179,9 +183,11 @@ export default function useFormControl<T>(props: BaseFormControlProps<T>) {
         if (isArray(name)) {
           name.forEach((n) => {
             controlFunc.unbind(n, reserveAble);
+            updateError(n, undefined);
           });
         } else {
           controlFunc.unbind(name, reserveAble);
+          updateError(name, undefined);
         }
       }
     };
