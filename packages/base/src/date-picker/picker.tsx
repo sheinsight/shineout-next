@@ -9,7 +9,7 @@ import Quick from './quick';
 import { useDatePickerRange, usePersistFn } from '@sheinx/hooks';
 
 const Picker = (props: PickerProps) => {
-  const { range, currentArr, dateArr, options, jssStyle } = props;
+  const { range, currentArr, dateArr, options, jssStyle, isDisabledDate } = props;
   const styles = jssStyle?.datePicker?.();
   const { func, defaultTimeArr, endMax, endMin, startMin, startMax } = useDatePickerRange({
     type: props.type,
@@ -94,10 +94,10 @@ const Picker = (props: PickerProps) => {
           onDoubleClick={(item, type) => {
             // 双击同时设置开始和结束日期
             if (props.range && props.type === 'datetime') {
-              if (position === 'start') {
+              if (position === 'start' && !isDisabledDate(item, 'end')) {
                 func.setCurrentEnd(item, type);
                 func.setDateEnd(item, true);
-              } else {
+              } else if (!isDisabledDate(item, 'start')) {
                 func.setCurrentStart(item, type);
                 func.setDateStart(item, true);
               }
