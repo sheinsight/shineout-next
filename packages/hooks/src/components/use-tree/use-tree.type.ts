@@ -16,6 +16,7 @@ export interface TreeContext<DataItem> {
   value?: KeygenResult[];
   cachedValue: KeygenResult[];
   data?: DataItem[];
+  valueDataCache: Map<KeygenResult, DataItem>;
 }
 
 export interface TreePathType {
@@ -103,4 +104,8 @@ export interface BaseTreeProps<DataItem> {
    * @cn 节点展开回调，参数为当前展开节点 key 数组
    */
   onExpand?: (value: KeygenResult[]) => void;
+  /**
+   * @private 保持数据缓存
+   */
+  keepCache?: boolean;
 }

@@ -31,6 +31,7 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     lastData: [] as DataItem[],
     dataMap: new Map<ValueItem, DataItem>(),
     flatDataCache: new Map<any, DataItem[]>(),
+    valueDataCache: new Map<any, DataItem>(),
   });
   const disabledCheck = usePersistFn((data: DataItem) => {
     if (typeof props.disabled === 'boolean') return props.disabled;
@@ -197,11 +198,22 @@ const useListSelectMultiple = <DataItem, Value extends string | any[]>(
     (values: ValueItem[], info: { childrenKey?: string } = {}) => {
       const map = getDataMap(info.childrenKey);
       const result = [];
+      if (props.keepCache && !context.valueDataCache) {
+        context.valueDataCache = new Map();
+      }
       if (!props.prediction) {
         if (!values || !values.length) return [];
         for (let i = 0; i < values.length; i++) {
+          if (props.keepCache) {
+            const item = context.valueDataCache.get(values[i]);
+            if (item !== undefined) {
+              result.push(item);
+              continue;
+            }
+          }
           const item = map.get(values[i]);
           if (item) {
+            if (props.keepCache) context.valueDataCache.set(values[i], item);
             result.push(item);
           } else {
             result.push({ IS_NOT_MATCHED_VALUE: true, value: values[i] });
