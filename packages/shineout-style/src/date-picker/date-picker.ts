@@ -204,9 +204,15 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
           display: 'block',
           position: 'absolute',
           bottom: '-1px',
+          borderBottom: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
+        },
+        '&[dir=ltr]::before': {
           left: '0',
           transform: 'translateX(-100%)',
-          borderBottom: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
+        },
+        '&[dir=rtl]::before': {
+          right: '0',
+          transform: 'translateX(100%)',
         },
       },
       '& $pickerFooter': {
@@ -217,9 +223,15 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
           display: 'block',
           position: 'absolute',
           top: '-1px',
+          borderBottom: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
+        },
+        '&[dir=ltr]::before': {
           left: '0',
           transform: 'translateX(-100%)',
-          borderBottom: `1px solid ${token.datePickerPanelHeaderBorderColor}`,
+        },
+        '&[dir=rtl]::before': {
+          right: '0',
+          transform: 'translateX(100%)',
         },
       },
     },
@@ -252,6 +264,9 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     width: token.datePickerPanelHeaderIconHotWidth,
     height: token.datePickerPanelHeaderIconHotWidth,
     borderRadius: '50%',
+    '&[dir=rtl]': {
+      transform: 'rotate(180deg)',
+    },
     '& svg': {
       width: token.datePickerPanelHeaderIconWidth,
       height: token.datePickerPanelHeaderIconWidth,
@@ -322,16 +337,28 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
         paddingRight: token.datePickerCellMarginY,
       },
     },
-    '& $pickerCell:not(:nth-child(2))': {
+    '& $pickerCell[dir=ltr]:not(:nth-child(2))': {
       '& $pickerCellContent >span': {
         borderTopLeftRadius: '0',
         borderBottomLeftRadius: '0',
       },
     },
-    '& $pickerCell:not(:nth-child(8))': {
+    '& $pickerCell[dir=rtl]:not(:nth-child(2))': {
       '& $pickerCellContent >span': {
         borderTopRightRadius: '0',
         borderBottomRightRadius: '0',
+      },
+    },
+    '& $pickerCell[dir=ltr]:not(:nth-child(8))': {
+      '& $pickerCellContent >span': {
+        borderTopRightRadius: '0',
+        borderBottomRightRadius: '0',
+      },
+    },
+    '& $pickerCell[dir=rtl]:not(:nth-child(8))': {
+      '& $pickerCellContent >span': {
+        borderTopLeftRadius: '0',
+        borderBottomLeftRadius: '0',
       },
     },
     '& $pickerCellContent > span': { width: '100%' },
@@ -413,15 +440,23 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     },
   },
   pickerCellInRangeStart: {
-    '& > $pickerCellContent': {
+    '&[dir=ltr] > $pickerCellContent': {
       borderTopLeftRadius: token.datePickerCellHeight,
       borderBottomLeftRadius: token.datePickerCellHeight,
     },
-  },
-  pickerCellInRangeEnd: {
-    '& > $pickerCellContent': {
+    '&[dir=rtl] > $pickerCellContent': {
       borderTopRightRadius: token.datePickerCellHeight,
       borderBottomRightRadius: token.datePickerCellHeight,
+    },
+  },
+  pickerCellInRangeEnd: {
+    '&[dir=ltr] > $pickerCellContent': {
+      borderTopRightRadius: token.datePickerCellHeight,
+      borderBottomRightRadius: token.datePickerCellHeight,
+    },
+    '&[dir=rtl] > $pickerCellContent': {
+      borderTopLeftRadius: token.datePickerCellHeight,
+      borderBottomLeftRadius: token.datePickerCellHeight,
     },
   },
   pickerCellDisabled: {
@@ -573,7 +608,8 @@ const datePickerStyle: JsStyles<DatePickerClassType> = {
     '& $timePicker': {
       position: 'absolute',
       top: 0,
-      left: 0,
+      '&[dir=ltr]': { left: 0 },
+      '&[dir=rtl]': { right: 0 },
       transform: 'translateY(-100%)',
       backgroundColor: token.datePickerPanelBackgroundColor,
       boxShadow: token.datePickerPanelShadow,

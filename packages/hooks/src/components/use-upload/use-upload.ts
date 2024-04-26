@@ -5,7 +5,8 @@ import useLatestObj from '../../common/use-latest-obj';
 import xhrUpload from './xhr';
 import { attrAccept } from '../../utils/accept';
 import { getUidStr } from '../../utils/uid';
-import { usePersistFn, util } from '@sheinx/hooks';
+import usePersistFn from '../../common/use-persist-fn';
+import { isFunc } from '../../utils/is';
 
 const VALIDATORITEMS: {
   key: 'size' | 'ext' | 'customValidator' | 'imageSize';
@@ -289,7 +290,7 @@ const useUpload = <T>(props: UseUploadProps<T>) => {
     const { beforeCancel, onErrorRemove } = props;
     const file = filesState[id];
 
-    if (beforeCancel && util.isFunc(beforeCancel)) beforeCancel(file);
+    if (beforeCancel && isFunc(beforeCancel)) beforeCancel(file);
 
     if (file) {
       if (file.xhr && file.xhr.abort) file.xhr.abort();

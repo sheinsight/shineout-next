@@ -1,4 +1,5 @@
-import { useFormFunc, useLatestObj } from '@sheinx/hooks';
+import useLatestObj from '../../../common/use-latest-obj';
+import { useFormFunc } from '../form-func-context';
 
 export interface FormDatum {
   set: (vals: { [name: string]: any }) => void;

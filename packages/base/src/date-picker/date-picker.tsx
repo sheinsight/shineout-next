@@ -5,12 +5,13 @@ import React, { useEffect } from 'react';
 import { DatePickerProps, DatePickerValueType } from './date-picker.type';
 import AnimationList from '../animation-list';
 import Picker from './picker';
-import { getLocale, useConfig } from '../config';
+import { getLocale } from '../config';
 import Icons from '../icons';
 import Result from './result';
 import useInnerTitle from '../common/use-inner-title';
 import useWithFormConfig from '../common/use-with-form-config';
 import useTip from '../common/use-tip';
+import { useConfig } from '../config';
 
 const verticalPosition = ['bottom-left', 'bottom-right', 'top-left', 'top-right'];
 const horizontalPosition = ['left-top', 'left-bottom', 'right-top', 'right-bottom'];
@@ -20,17 +21,20 @@ const preventDefault = (e: React.MouseEvent) => {
 };
 const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<Value>) => {
   const props = useWithFormConfig(props0);
-  const { locale } = useConfig();
+  const { locale, direction } = useConfig();
   const { jssStyle, range, type = 'date', border = true, clearable = true, disabled, size } = props;
   const [activeIndex, setActiveIndex] = React.useState(-1);
 
   const styles = jssStyle?.datePicker?.();
+  const isRTL = direction === 'rtl';
+
+  const dfp = isRTL ? 'bottom-Right' : 'bottom-left';
   const [focused, setFocused] = React.useState(false);
-  let listPosition: string = props.position || 'bottom-left';
+  let listPosition: string = props.position || dfp;
   if (horizontalPosition.includes(listPosition)) {
     listPosition = listPosition.split('-').reverse().join('-');
   } else if (!verticalPosition.includes(listPosition)) {
-    listPosition = 'bottom-left';
+    listPosition = dfp;
   }
 
   const options = {
