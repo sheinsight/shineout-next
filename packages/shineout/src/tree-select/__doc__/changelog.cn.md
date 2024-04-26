@@ -1,3 +1,10 @@
+## 3.0.7
+2024-04-26
+
+### 🐞 BugFix
+
+- 修复 `TreeSelect` noCache 属性无效的问题 ([#398](https://github.com/sheinsight/shineout-next/pull/398))
+
 ## 3.0.5
 2024-04-24
 
