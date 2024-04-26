@@ -55,6 +55,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     unmatch,
     isControlled,
     onExpand: onExpandProp,
+    keepCache,
   } = props;
 
   const { value: expanded, onChange: onExpand } = useInputAble({
@@ -75,6 +76,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     value: undefined,
     data: [],
     cachedValue: [],
+    valueDataCache: new Map<KeygenResult, DataItem>(),
   });
 
   // 注册节点
@@ -166,8 +168,18 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const getDataById = (id: KeygenResult) => {
+    if (keepCache) {
+      if (!context.valueDataCache) {
+        context.valueDataCache = new Map();
+      }
+      const cache = context.valueDataCache.get(id);
+      if (cache !== undefined) return cache;
+    }
     const oroginData = context.dataMap.get(id);
-    if (oroginData) return oroginData;
+    if (oroginData) {
+      if (keepCache) context.valueDataCache.set(id, oroginData);
+      return oroginData;
+    }
     if (!unmatch) return null;
     return { IS_NOT_MATCHED_VALUE: true, value: id };
   };

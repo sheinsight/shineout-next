@@ -19,6 +19,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     value: valueProp,
     onChange: onChangeProp,
     filterSameChange,
+    noCache
   } = props;
 
   const { value, onChange } = useInputAble({
@@ -39,6 +40,7 @@ const useSelect = <DataItem, Value>(props: BaseSelectProps<DataItem, Value>) => 
     disabled,
     onChange,
     prediction,
+    keepCache: !noCache,
   });
 
   return {

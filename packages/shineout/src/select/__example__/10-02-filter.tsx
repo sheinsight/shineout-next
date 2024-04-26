@@ -53,6 +53,7 @@ export default () => {
         width={300}
         data={data}
         keygen='id'
+        format={'id'}
         placeholder='Select Color'
         renderItem={renderItem}
         onFilter={handleFilter}

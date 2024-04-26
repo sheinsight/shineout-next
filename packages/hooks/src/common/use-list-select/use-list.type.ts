@@ -14,6 +14,8 @@ export interface UseListProps<DataItem, Value> {
   format?: ObjectKey<DataItem> | ((data: DataItem) => Value extends (infer U)[] ? U : Value);
   prediction?: (value: Value extends (infer U)[] ? U : Value, Data: DataItem) => boolean;
   onChange?: (value: Value, data: DataItem | DataItem[], checked: boolean) => void;
+  // 是否缓存 value 对应 data
+  keepCache?: boolean;
 }
 
 export interface UseListMultipleProps<DataItem, Value extends string | any[]>

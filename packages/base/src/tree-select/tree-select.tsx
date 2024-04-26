@@ -576,8 +576,8 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           getDatum={bindTreeDatum}
           renderItem={renderItem}
           {...treeProps}
+          keepCache={!props.noCache}
           line={line}
-          datum={datum.current}
           mode={mode}
           data={tiledData}
           keygen={keygen}
