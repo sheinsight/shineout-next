@@ -5,9 +5,11 @@ import classNames from 'classnames';
 import { InputGroupProps } from './input-group.type';
 import useWithFormConfig from '../common/use-with-form-config';
 import { util } from '@sheinx/hooks';
+import { useConfig } from '../config';
 
 export default (props: InputGroupProps) => {
   const [focus, setFocus] = React.useState(false);
+  const config = useConfig();
   const { jssStyle } = props;
   const inputStyle = jssStyle?.input?.();
   const ref = useRef({
@@ -46,13 +48,21 @@ export default (props: InputGroupProps) => {
     !!focus && inputStyle?.groupFocus,
   );
   return (
-    <div {...util.getDataAttribute({ role: 'input-group' })} className={rootClass} style={{ width, ...style }}>
+    <div
+      {...util.getDataAttribute({ role: 'input-group' })}
+      className={rootClass}
+      style={{ width, ...style }}
+      dir={config?.direction}
+    >
       {Children.toArray(children).map((child, i) => {
         if (typeof child === 'string') {
           return <span key={i}>{child}</span>;
         }
         if (React.isValidElement(child)) {
-          return cloneElement(child, { ...getProps(child), disabled: child.props.disabled || disabled });
+          return cloneElement(child, {
+            ...getProps(child),
+            disabled: child.props.disabled || disabled,
+          });
         }
         return <span key={i}>{child}</span>;
       })}

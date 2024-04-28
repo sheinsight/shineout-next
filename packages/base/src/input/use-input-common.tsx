@@ -105,6 +105,7 @@ const useInputCommon = <Value, Props extends InputCommonProps<Value>>(props0: Pr
         key='info'
         style={{ minWidth: 'auto' }}
         className={classNames(inputStyle?.info, !!isError && inputStyle?.infoError)}
+        dir={config.direction}
       >
         {text}
       </div>

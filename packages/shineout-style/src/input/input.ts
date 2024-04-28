@@ -66,16 +66,32 @@ const groupSpace = (gap: string) => ({
     background: token.inputDisabledBackgroundColor,
     fontWeight: 'normal',
     '&:first-child': {
-      borderTopLeftRadius: token.inputBorderRadius,
-      borderBottomLeftRadius: token.inputBorderRadius,
       borderLeftColor: 'inherit',
       marginLeft: '-1px',
     },
     '&:last-child': {
-      borderTopRightRadius: token.inputBorderRadius,
-      borderBottomRightRadius: token.inputBorderRadius,
       borderRightColor: 'inherit',
       marginRight: '-1px',
+    },
+  },
+  '&[dir=ltr] > b': {
+    '&:first-child': {
+      borderTopLeftRadius: token.inputBorderRadius,
+      borderBottomLeftRadius: token.inputBorderRadius,
+    },
+    '&:last-child': {
+      borderTopRightRadius: token.inputBorderRadius,
+      borderBottomRightRadius: token.inputBorderRadius,
+    },
+  },
+  '&[dir=rtl] > b': {
+    '&:first-child': {
+      borderTopRightRadius: token.inputBorderRadius,
+      borderBottomRightRadius: token.inputBorderRadius,
+    },
+    '&:last-child': {
+      borderTopLeftRadius: token.inputBorderRadius,
+      borderBottomLeftRadius: token.inputBorderRadius,
     },
   },
 });
@@ -152,7 +168,12 @@ const input: JsStyles<keyof InputClasses> = {
     '&:hover svg': {
       color: token.inputHoverClearColor,
     },
-    right: '0',
+    '&[dir=ltr]': {
+      right: '0',
+    },
+    '&[dir=rtl]': {
+      left: '0',
+    },
   },
 
   group: {
@@ -228,7 +249,12 @@ const input: JsStyles<keyof InputClasses> = {
   },
   info: {
     position: 'absolute',
-    right: '0',
+    '&[dir=ltr]': {
+      right: '0',
+    },
+    '&[dir=rtl]': {
+      left: '0',
+    },
     top: '100%',
     transformOrigin: '100% 0',
     marginTop: '10px',
@@ -243,7 +269,7 @@ const input: JsStyles<keyof InputClasses> = {
     '&::before': {
       display: 'block',
       position: 'absolute',
-      right: '4px',
+      
       bottom: '100%',
       transform: 'rotate(45deg) translateY(3px)',
       width: '6px',
@@ -252,6 +278,12 @@ const input: JsStyles<keyof InputClasses> = {
       borderWidth: '1px 0 0 1px',
       background: 'inherit',
       content: "'  '",
+    },
+    '&[dir=ltr]::before': {
+      right: '4px',
+    },
+    '&[dir=rtl]::before': {
+      left: '8px',
     },
   },
   infoError: {
