@@ -3,46 +3,46 @@
 exports[`Tag[Base] should render correctly  1`] = `
 <div>
   <div
-    class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+    class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
   >
     <span
-      class="c-3cli0a soui-tag-wrapper"
+      class="c-b8lkzb soui-tag-wrapper"
     >
       Default
     </span>
   </div>
   <div
-    class="ctvabz1 soui-tag-tag c2j8ubv soui-tag-info chg5eon soui-tag-bright"
+    class="ciddcb4 soui-tag-tag c19eem0 soui-tag-info c15kqx0 soui-tag-bright"
   >
     <span
-      class="c-3cli0a soui-tag-wrapper"
+      class="c-b8lkzb soui-tag-wrapper"
     >
       Info
     </span>
   </div>
   <div
-    class="ctvabz1 soui-tag-tag ci4zc8w soui-tag-danger chg5eon soui-tag-bright"
+    class="ciddcb4 soui-tag-tag c1ueoh9 soui-tag-danger c15kqx0 soui-tag-bright"
   >
     <span
-      class="c-3cli0a soui-tag-wrapper"
+      class="c-b8lkzb soui-tag-wrapper"
     >
       Danger
     </span>
   </div>
   <div
-    class="ctvabz1 soui-tag-tag c-b51zkx soui-tag-warning chg5eon soui-tag-bright"
+    class="ciddcb4 soui-tag-tag c-j122jy soui-tag-warning c15kqx0 soui-tag-bright"
   >
     <span
-      class="c-3cli0a soui-tag-wrapper"
+      class="c-b8lkzb soui-tag-wrapper"
     >
       Warning
     </span>
   </div>
   <div
-    class="ctvabz1 soui-tag-tag caexcsm soui-tag-success chg5eon soui-tag-bright"
+    class="ciddcb4 soui-tag-tag c2ix9tl soui-tag-success c15kqx0 soui-tag-bright"
   >
     <span
-      class="c-3cli0a soui-tag-wrapper"
+      class="c-b8lkzb soui-tag-wrapper"
     >
       Success
     </span>
@@ -56,73 +56,73 @@ exports[`Tag[Base] should render correctly about color 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c-npvikw soui-tag-tangerine chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-4p109p soui-tag-tangerine c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Tangerine
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-g103f8 soui-tag-magenta chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-nx06e9 soui-tag-magenta c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Magenta
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag co4lfmh soui-tag-purple chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c7u0ruu soui-tag-purple c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Purple
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag ckp6flb soui-tag-indigo chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c4elrto soui-tag-indigo c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Indigo
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2j58g0 soui-tag-cyan chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c19asq5 soui-tag-cyan c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Cyan
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2jbusz soui-tag-neon chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c19hf34 soui-tag-neon c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Neon
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c7kzueu soui-tag-lemon chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-vw7ouv soui-tag-lemon c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Lemon
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag undefined chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-w1haac soui-tag-brown c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Brown
       </span>
@@ -132,73 +132,73 @@ exports[`Tag[Base] should render correctly about color 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c-npvikw soui-tag-tangerine c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c-4p109p soui-tag-tangerine c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Tangerine
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-g103f8 soui-tag-magenta c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c-nx06e9 soui-tag-magenta c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Magenta
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag co4lfmh soui-tag-purple c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c7u0ruu soui-tag-purple c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Purple
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag ckp6flb soui-tag-indigo c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c4elrto soui-tag-indigo c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Indigo
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2j58g0 soui-tag-cyan c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c19asq5 soui-tag-cyan c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Cyan
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2jbusz soui-tag-neon c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c19hf34 soui-tag-neon c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Neon
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c7kzueu soui-tag-lemon c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c-vw7ouv soui-tag-lemon c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Lemon
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag undefined c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c-w1haac soui-tag-brown c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Brown
       </span>
@@ -208,73 +208,73 @@ exports[`Tag[Base] should render correctly about color 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c-npvikw soui-tag-tangerine cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c-4p109p soui-tag-tangerine cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Tangerine
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-g103f8 soui-tag-magenta cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c-nx06e9 soui-tag-magenta cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Magenta
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag co4lfmh soui-tag-purple cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c7u0ruu soui-tag-purple cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Purple
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag ckp6flb soui-tag-indigo cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c4elrto soui-tag-indigo cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Indigo
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2j58g0 soui-tag-cyan cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c19asq5 soui-tag-cyan cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Cyan
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2jbusz soui-tag-neon cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c19hf34 soui-tag-neon cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Neon
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c7kzueu soui-tag-lemon cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c-vw7ouv soui-tag-lemon cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Lemon
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag undefined cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c-w1haac soui-tag-brown cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Brown
       </span>
@@ -284,73 +284,73 @@ exports[`Tag[Base] should render correctly about color 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c-npvikw soui-tag-tangerine co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c-4p109p soui-tag-tangerine cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Tangerine
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-g103f8 soui-tag-magenta co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c-nx06e9 soui-tag-magenta cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Magenta
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag co4lfmh soui-tag-purple co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c7u0ruu soui-tag-purple cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Purple
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag ckp6flb soui-tag-indigo co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c4elrto soui-tag-indigo cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Indigo
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2j58g0 soui-tag-cyan co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c19asq5 soui-tag-cyan cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Cyan
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2jbusz soui-tag-neon co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c19hf34 soui-tag-neon cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Neon
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c7kzueu soui-tag-lemon co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c-vw7ouv soui-tag-lemon cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Lemon
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag undefined co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c-w1haac soui-tag-brown cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Brown
       </span>
@@ -365,46 +365,46 @@ exports[`Tag[Base] should render correctly about mode 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Default
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2j8ubv soui-tag-info chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c19eem0 soui-tag-info c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Info
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag ci4zc8w soui-tag-danger chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c1ueoh9 soui-tag-danger c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Danger
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-b51zkx soui-tag-warning chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-j122jy soui-tag-warning c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Warning
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag caexcsm soui-tag-success chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c2ix9tl soui-tag-success c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Success
       </span>
@@ -414,46 +414,46 @@ exports[`Tag[Base] should render correctly about mode 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Default
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2j8ubv soui-tag-info c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c19eem0 soui-tag-info c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Info
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag ci4zc8w soui-tag-danger c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c1ueoh9 soui-tag-danger c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Danger
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-b51zkx soui-tag-warning c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c-j122jy soui-tag-warning c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Warning
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag caexcsm soui-tag-success c2j6tsw soui-tag-fill"
+      class="ciddcb4 soui-tag-tag c2ix9tl soui-tag-success c19ce31 soui-tag-fill"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Success
       </span>
@@ -463,46 +463,46 @@ exports[`Tag[Base] should render correctly about mode 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Default
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2j8ubv soui-tag-info cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c19eem0 soui-tag-info cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Info
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag ci4zc8w soui-tag-danger cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c1ueoh9 soui-tag-danger cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Danger
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-b51zkx soui-tag-warning cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c-j122jy soui-tag-warning cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Warning
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag caexcsm soui-tag-success cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c2ix9tl soui-tag-success cf3yipk soui-tag-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Success
       </span>
@@ -512,46 +512,46 @@ exports[`Tag[Base] should render correctly about mode 1`] = `
     style="margin-bottom: 0px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Default
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c2j8ubv soui-tag-info co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c19eem0 soui-tag-info cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Info
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag ci4zc8w soui-tag-danger co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c1ueoh9 soui-tag-danger cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Danger
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-b51zkx soui-tag-warning co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c-j122jy soui-tag-warning cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Warning
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag caexcsm soui-tag-success co4138r soui-tag-bright-outline"
+      class="ciddcb4 soui-tag-tag c2ix9tl soui-tag-success cl05bha soui-tag-bright-outline"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Success
       </span>
@@ -566,28 +566,28 @@ exports[`Tag[Base] should render correctly about size 1`] = `
     style="margin-bottom: 24px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c7oz9hm soui-tag-small c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-vs89s3 soui-tag-small c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Small
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Default
       </span>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c7kxdz2 soui-tag-large c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-vwa5an soui-tag-large c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         Large
       </span>
@@ -595,22 +595,22 @@ exports[`Tag[Base] should render correctly about size 1`] = `
   </div>
   <div>
     <div
-      class="ctvabz1 soui-tag-tag c7oz9hm soui-tag-small c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-vs89s3 soui-tag-small c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
     >
       <div
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         <span
-          class="c-tcgym4 soui-tag-container"
+          class="c-abmgax soui-tag-container"
         >
           Small
         </span>
       </div>
       <div
-        class="c-uj954c soui-tag-close-icon"
+        class="c-biemt5 soui-tag-close-icon"
       >
         <span
-          class="c-dd149t soui-tag-close-icon-wrapper"
+          class="cp1aoi4 soui-tag-close-icon-wrapper"
         >
           <svg
             height="10"
@@ -626,22 +626,22 @@ exports[`Tag[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
     >
       <div
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         <span
-          class="c-tcgym4 soui-tag-container"
+          class="c-abmgax soui-tag-container"
         >
           Default
         </span>
       </div>
       <div
-        class="c-uj954c soui-tag-close-icon"
+        class="c-biemt5 soui-tag-close-icon"
       >
         <span
-          class="c-dd149t soui-tag-close-icon-wrapper"
+          class="cp1aoi4 soui-tag-close-icon-wrapper"
         >
           <svg
             height="10"
@@ -657,22 +657,22 @@ exports[`Tag[Base] should render correctly about size 1`] = `
       </div>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c7kxdz2 soui-tag-large c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-vwa5an soui-tag-large c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
     >
       <div
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         <span
-          class="c-tcgym4 soui-tag-container"
+          class="c-abmgax soui-tag-container"
         >
           Large
         </span>
       </div>
       <div
-        class="c-uj954c soui-tag-close-icon"
+        class="c-biemt5 soui-tag-close-icon"
       >
         <span
-          class="c-dd149t soui-tag-close-icon-wrapper"
+          class="cp1aoi4 soui-tag-close-icon-wrapper"
         >
           <svg
             height="10"
@@ -697,22 +697,22 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
     style="display: flex; align-items: center; height: 24px;"
   >
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
     >
       <div
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         <span
-          class="c-tcgym4 soui-tag-container"
+          class="c-abmgax soui-tag-container"
         >
           Tag 1
         </span>
       </div>
       <div
-        class="c-uj954c soui-tag-close-icon"
+        class="c-biemt5 soui-tag-close-icon"
       >
         <span
-          class="c-dd149t soui-tag-close-icon-wrapper"
+          class="cp1aoi4 soui-tag-close-icon-wrapper"
         >
           <svg
             height="10"
@@ -728,22 +728,22 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       </div>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
     >
       <div
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         <span
-          class="c-tcgym4 soui-tag-container"
+          class="c-abmgax soui-tag-container"
         >
           Tag 2
         </span>
       </div>
       <div
-        class="c-uj954c soui-tag-close-icon"
+        class="c-biemt5 soui-tag-close-icon"
       >
         <span
-          class="c-dd149t soui-tag-close-icon-wrapper"
+          class="cp1aoi4 soui-tag-close-icon-wrapper"
         >
           <svg
             height="10"
@@ -759,22 +759,22 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       </div>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright c61m0nt soui-tag-disabled"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c15kqx0 soui-tag-bright c-pf4dkq soui-tag-disabled"
     >
       <div
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         <span
-          class="c-tcgym4 soui-tag-container"
+          class="c-abmgax soui-tag-container"
         >
           Tag 3
         </span>
       </div>
       <div
-        class="c-uj954c soui-tag-close-icon"
+        class="c-biemt5 soui-tag-close-icon"
       >
         <span
-          class="c-dd149t soui-tag-close-icon-wrapper"
+          class="cp1aoi4 soui-tag-close-icon-wrapper"
         >
           <svg
             height="10"
@@ -790,11 +790,11 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
       </div>
     </div>
     <div
-      class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default cmzylol soui-tag-outline"
+      class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default cf3yipk soui-tag-outline"
       style="cursor: pointer; border-style: dashed;"
     >
       <span
-        class="c-3cli0a soui-tag-wrapper"
+        class="c-b8lkzb soui-tag-wrapper"
       >
         <div
           style="display: flex; align-items: center;"
@@ -817,22 +817,22 @@ exports[`Tag[Input] should render correctly about dynamic 1`] = `
 exports[`Tag[Input] should render correctly about input 1`] = `
 <div>
   <div
-    class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+    class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
   >
     <div
-      class="c-3cli0a soui-tag-wrapper"
+      class="c-b8lkzb soui-tag-wrapper"
     >
       <span
-        class="c-tcgym4 soui-tag-container"
+        class="c-abmgax soui-tag-container"
       >
         Abc
       </span>
     </div>
     <div
-      class="c-uj954c soui-tag-close-icon"
+      class="c-biemt5 soui-tag-close-icon"
     >
       <span
-        class="c-dd149t soui-tag-close-icon-wrapper"
+        class="cp1aoi4 soui-tag-close-icon-wrapper"
       >
         <svg
           height="10"
@@ -853,19 +853,19 @@ exports[`Tag[Input] should render correctly about input 1`] = `
 exports[`Tag[Shape] should render correctly about shape 1`] = `
 <div>
   <div
-    class="ctvabz1 soui-tag-tag c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+    class="ciddcb4 soui-tag-tag c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
   >
     <span
-      class="c-3cli0a soui-tag-wrapper"
+      class="c-b8lkzb soui-tag-wrapper"
     >
       Default
     </span>
   </div>
   <div
-    class="ctvabz1 soui-tag-tag c-6tndcg soui-tag-rounded c-46s9fg soui-tag-default chg5eon soui-tag-bright"
+    class="ciddcb4 soui-tag-tag c-epngbh soui-tag-rounded c-c2sceh soui-tag-default c15kqx0 soui-tag-bright"
   >
     <span
-      class="c-3cli0a soui-tag-wrapper"
+      class="c-b8lkzb soui-tag-wrapper"
     >
       Rounded
     </span>
