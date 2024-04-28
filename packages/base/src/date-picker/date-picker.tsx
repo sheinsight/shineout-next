@@ -28,7 +28,7 @@ const DatePicker = <Value extends DatePickerValueType>(props0: DatePickerProps<V
   const styles = jssStyle?.datePicker?.();
   const isRTL = direction === 'rtl';
 
-  const dfp = isRTL ? 'bottom-Right' : 'bottom-left';
+  const dfp = isRTL ? 'bottom-right' : 'bottom-left';
   const [focused, setFocused] = React.useState(false);
   let listPosition: string = props.position || dfp;
   if (horizontalPosition.includes(listPosition)) {
