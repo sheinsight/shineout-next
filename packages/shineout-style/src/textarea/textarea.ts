@@ -83,7 +83,8 @@ const input: JsStyles<keyof TextareaClasses> = {
   },
   info: {
     position: 'absolute',
-    right: '0',
+    '&[dir=ltr]': { right: '0' },
+    '&[dir=rtl]': { left: '0' },
     top: '100%',
     transformOrigin: '100% 0',
     marginTop: '10px',
@@ -98,7 +99,7 @@ const input: JsStyles<keyof TextareaClasses> = {
     '&::before': {
       display: 'block',
       position: 'absolute',
-      right: '4px',
+
       bottom: '100%',
       transform: 'rotate(45deg) translateY(3px)',
       width: '6px',
@@ -107,6 +108,12 @@ const input: JsStyles<keyof TextareaClasses> = {
       borderWidth: '1px 0 0 1px',
       background: 'inherit',
       content: "'  '",
+    },
+    '&[dir=ltr]::before': {
+      right: '4px',
+    },
+    '&[dir=rtl]::before': {
+      left: '8px',
     },
   },
   infoError: {
