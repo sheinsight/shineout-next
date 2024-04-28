@@ -1,3 +1,13 @@
+## 3.0.9
+2024-04-26
+
+### 🐞 BugFix
+
+- 修复 `Select` 设置 `onCreate = true` 无法输入的问题 ([#402](https://github.com/sheinsight/shineout-next/pull/402))
+- 修复 `Select` 合并选项功能当数据动态变化或者宽度变化时没有动态更新的问题  ([#402](https://github.com/sheinsight/shineout-next/pull/402))
+
+
+
 ## 3.0.8
 2024-04-26
 
