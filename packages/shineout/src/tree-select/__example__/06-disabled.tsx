@@ -61,7 +61,7 @@ export default () => {
       />
 
       <TreeSelect
-        style={{ marginLeft: 24 }}
+        style={{ marginInlineStart: 24 }}
         width={300}
         disabled={(v) => v.title.startsWith('2-')}
         clearable
