@@ -4,7 +4,7 @@ import { NormalizeWheel } from '../../utils/dom';
 import { HandlerType, ObjectType } from '../../common/type';
 
 import { BaseImageGalleryProps, ImageGalleryPosition } from './use-image-gallery.type';
-import { usePersistFn } from '@sheinx/hooks';
+import usePersistFn from '../../common/use-persist-fn';
 
 let scrollX = 0;
 const useImageGallery = (props: BaseImageGalleryProps) => {

@@ -3,10 +3,12 @@ import { useMonthPick, usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
 import Icons from '../icons';
 import React from 'react';
+import { useConfig } from '../config';
 import PickerTitle from './pickerTitle';
 
 const Month = (props: MonthProps) => {
   const { jssStyle } = props;
+  const { direction } = useConfig();
   const styles = jssStyle?.datePicker?.();
   const shouldChange = props.type === 'month';
   const changeMode = usePersistFn(() => {
@@ -39,6 +41,7 @@ const Month = (props: MonthProps) => {
     const isDisabled = func.isDisabled(item);
     return (
       <td
+        dir={direction}
         className={classNames(
           styles?.pickerCell,
           func.isActive(item) && styles?.pickerCellActive,
@@ -85,9 +88,9 @@ const Month = (props: MonthProps) => {
       className={classNames(styles?.monthPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={styles?.pickerHeader}>
+      <div className={styles?.pickerHeader} dir={direction}>
         <div className={styles?.pickerHeaderLeft}>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrev}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrev} dir={direction}>
             {Icons.datepicker.ArrowDoubleLeft}
           </span>
         </div>
@@ -102,7 +105,7 @@ const Month = (props: MonthProps) => {
           </span>
         </div>
         <div className={styles?.pickerHeaderRight}>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handleNext}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handleNext} dir={direction}>
             {Icons.datepicker.ArrowDoubleRight}
           </span>
         </div>

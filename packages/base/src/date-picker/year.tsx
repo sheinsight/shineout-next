@@ -4,9 +4,11 @@ import classNames from 'classnames';
 import Icons from '../icons';
 import React from 'react';
 import PickerTitle from './pickerTitle';
+import { useConfig } from '../config';
 
 const Year = (props: YearProps) => {
   const { jssStyle } = props;
+  const config = useConfig();
   const styles = jssStyle?.datePicker?.();
   const shouldChange = props.type === 'year';
   const changeMode = usePersistFn(() => {
@@ -39,6 +41,7 @@ const Year = (props: YearProps) => {
 
     return (
       <td
+        dir={config.direction}
         className={classNames(
           styles?.pickerCell,
           func.isActive(item) && styles?.pickerCellActive,
@@ -86,9 +89,13 @@ const Year = (props: YearProps) => {
       className={classNames(styles?.yearPicker, styles?.picker)}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={styles?.pickerHeader}>
+      <div className={styles?.pickerHeader} dir={config.direction}>
         <div className={styles?.pickerHeaderLeft}>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrev}>
+          <span
+            className={styles?.pickerHeaderIcon}
+            onClick={func.handlePrev}
+            dir={config.direction}
+          >
             {Icons.datepicker.ArrowDoubleLeft}
           </span>
         </div>
@@ -98,7 +105,11 @@ const Year = (props: YearProps) => {
           <span>{currentEnd}</span>
         </div>
         <div className={styles?.pickerHeaderRight}>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handleNext}>
+          <span
+            className={styles?.pickerHeaderIcon}
+            onClick={func.handleNext}
+            dir={config.direction}
+          >
             {Icons.datepicker.ArrowDoubleRight}
           </span>
         </div>

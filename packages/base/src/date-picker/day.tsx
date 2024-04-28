@@ -11,7 +11,7 @@ import PickerTitle from './pickerTitle';
 
 const Day = (props: DayProps) => {
   const { jssStyle } = props;
-  const { locale } = useConfig();
+  const { locale, direction } = useConfig();
 
   const styles = jssStyle?.datePicker?.();
 
@@ -59,6 +59,7 @@ const Day = (props: DayProps) => {
     const isInRange = func.isInRange(item);
     return (
       <td
+        dir={direction}
         className={classNames(
           styles?.pickerCell,
           isActive && styles?.pickerCellActive,
@@ -114,6 +115,7 @@ const Day = (props: DayProps) => {
         onClick={() => func.handleDayClick(item)}
         className={classNames(styles?.pickerCell, styles?.pickerCellBound)}
         key={'week'}
+        dir={direction}
       >
         <div className={styles?.pickerCellContent}>{func.getWeekStr(item)}</div>
       </th>
@@ -135,7 +137,7 @@ const Day = (props: DayProps) => {
       if (match) format = match[0];
     }
     return (
-      <div className={styles?.pickerFooter}>
+      <div className={styles?.pickerFooter} dir={direction}>
         {props.type === 'datetime' && (
           <div className={classNames(styles?.pickerFooterLeft, styles?.datetime)}>
             {timeStr && (
@@ -184,12 +186,12 @@ const Day = (props: DayProps) => {
       onMouseLeave={props.onMouseLeave}
     >
       <PickerTitle position={props.position} jssStyle={jssStyle} />
-      <div className={styles?.pickerHeader}>
+      <div className={styles?.pickerHeader} dir={direction}>
         <div className={styles?.pickerHeaderLeft}>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevYear}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevYear} dir={direction}>
             {Icons.datepicker.ArrowDoubleLeft}
           </span>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevMonth}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handlePrevMonth} dir={direction}>
             {Icons.datepicker.ArrowLeft}
           </span>
         </div>
@@ -213,10 +215,10 @@ const Day = (props: DayProps) => {
           </span>
         </div>
         <div className={styles?.pickerHeaderRight}>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handleNextMonth}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handleNextMonth} dir={direction}>
             {Icons.datepicker.ArrowRight}
           </span>
-          <span className={styles?.pickerHeaderIcon} onClick={func.handleNextYear}>
+          <span className={styles?.pickerHeaderIcon} onClick={func.handleNextYear} dir={direction}>
             {Icons.datepicker.ArrowDoubleRight}
           </span>
         </div>
