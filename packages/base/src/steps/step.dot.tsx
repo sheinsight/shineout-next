@@ -1,10 +1,12 @@
 import classNames from 'classnames';
 import { util } from '@sheinx/hooks';
+import { useConfig } from '../config';
 import { StepsClasses } from './steps.type';
 import { StepStyleProps } from './steps.type';
 
 const DotStep = (props: StepStyleProps) => {
   const { jssStyle, title, description, direction, status, labelPlacement, onChange } = props;
+  const config = useConfig();
   const styles = jssStyle?.steps?.() || ({} as StepsClasses);
   const rootClass = styles.dot;
   const iconClass = classNames(styles.icon, {
@@ -17,11 +19,19 @@ const DotStep = (props: StepStyleProps) => {
   const showTail = direction === 'vertical' || labelPlacement === 'vertical';
 
   const renderTail = () => {
-    return <div className={styles.tail}> </div>;
+    return (
+      <div className={styles.tail} dir={config.direction}>
+        {' '}
+      </div>
+    );
   };
 
   const renderTitle = () => {
-    return <div className={styles.title}>{util.isFunc(title) ? title(props.index, status!) : title}</div>;
+    return (
+      <div className={styles.title} dir={config.direction}>
+        {util.isFunc(title) ? title(props.index, status!) : title}
+      </div>
+    );
   };
 
   const renderDescription = () => {
@@ -30,7 +40,7 @@ const DotStep = (props: StepStyleProps) => {
 
   const renderIcon = () => {
     return (
-      <div className={iconClass}>
+      <div className={iconClass} dir={config.direction}>
         <span className={styles.iconWrapper}></span>
       </div>
     );
