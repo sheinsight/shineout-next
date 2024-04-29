@@ -7,22 +7,7 @@ import AbsoluteList from '../absolute-list';
 import Icons from '../icons';
 import classNames from 'classnames';
 import Item from './Item';
-
-const positionMap = {
-  'left-top': 'left-top',
-  'left-bottom': 'left-bottom',
-  'right-top': 'right-top',
-  'right-bottom': 'right-bottom',
-  'top-right': 'left-bottom',
-  'top-left': 'right-bottom',
-  'bottom-right': 'left-top',
-  'bottom-left': 'right-top',
-  left: 'left',
-  right: 'right',
-  top: 'right-bottom',
-  bottom: 'right-top',
-  auto: '',
-};
+import { useConfig } from '../config';
 
 const Dropdown = (props: SimpleDropdownProps) => {
   const {
@@ -44,13 +29,32 @@ const Dropdown = (props: SimpleDropdownProps) => {
     hideArrow,
   } = props;
   const dropdownClasses = jssStyle?.dropdown?.();
+  const config = useConfig();
+  const isRtl = config.direction === 'rtl';
+  const dfp = isRtl ? 'bottom-right' : 'bottom-left';
+
+  const positionMap = {
+    'left-top': 'left-top',
+    'left-bottom': 'left-bottom',
+    'right-top': 'right-top',
+    'right-bottom': 'right-bottom',
+    'top-right': 'left-bottom',
+    'top-left': 'right-bottom',
+    'bottom-right': 'left-top',
+    'bottom-left': 'right-top',
+    left: 'left',
+    right: 'right',
+    top: isRtl ? 'left-bottom' : 'right-bottom',
+    bottom: isRtl ? 'left-top' : 'right-top',
+    auto: '',
+  };
 
   const { open, position, targetRef, popupRef, getTargetProps, closePop, openPop } = usePopup({
     open: props.open,
     onCollapse: props.onCollapse,
     disabled,
     trigger,
-    position: props.position || 'bottom-left',
+    position: props.position || dfp,
     autoMode: 'menu',
     priorityDirection: 'vertical',
     mouseLeaveDelay: 200,
@@ -66,7 +70,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
 
   const renderButton = () => {
     const caret = (
-      <span key={'caret'} className={dropdownClasses?.caret}>
+      <span key={'caret'} className={dropdownClasses?.caret} dir={config.direction}>
         {Icons.dropdown.DropdownArrow}
       </span>
     );
@@ -78,9 +82,16 @@ const Dropdown = (props: SimpleDropdownProps) => {
     if (!hideArrow) {
       child.push(caret);
     }
-    if (['left-bottom', 'left-top', 'left'].includes(position!)) {
-      child.reverse();
+    if (!isRtl) {
+      if (['left-bottom', 'left-top', 'left'].includes(position!)) {
+        child.reverse();
+      }
+    } else {
+      if (['right-bottom', 'right-top', 'right'].includes(position!)) {
+        child.reverse();
+      }
     }
+
     if (isSub) {
       return (
         <a
@@ -153,6 +164,7 @@ const Dropdown = (props: SimpleDropdownProps) => {
           onClick={d.onClick || onClick}
           itemClassName={classNames(dropdownClasses?.item)}
           renderItem={renderItem}
+          direction={config.direction}
           columns={columns}
           width={width}
           handleBlur={isSub && props.closePop ? props.closePop : closePop}

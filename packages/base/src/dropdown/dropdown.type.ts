@@ -101,6 +101,7 @@ export interface ItemProps {
   columns: DropdownProps['columns'];
   renderItem: ((data: any) => React.ReactNode) | string;
   handleBlur: () => void;
+  direction: 'ltr' | 'rtl';
 }
 
 export interface SimpleDropdownProps

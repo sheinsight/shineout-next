@@ -28,7 +28,7 @@ const App: React.FC = () => {
         style={{ color: 'green' }}
         zoom
         width={400}
-        bodyStyle={{ height: '100px', background: '#ccc' }}
+        bodyStyle={{ height: '100px', background: '#ccc', overflow: 'auto' }}
         title='zoom'
         footer={footer()}
         visible={visible}
