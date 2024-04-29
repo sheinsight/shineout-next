@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { KeygenResult, util } from '@sheinx/hooks';
+import { KeygenResult, util, useRender } from '@sheinx/hooks';
 import { TreeClasses } from './tree.type';
 import { TreeContextProps } from './tree-content.type';
 import Checkbox from './tree-checkbox';
@@ -35,8 +35,11 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
     onDragOver,
     onNodeClick,
   } = props;
-  const { isDisabled } = useTreeContext();
+  const forceUpdate = useRender();
+  const { isDisabled, bindUpdate } = useTreeContext();
   const disabled = isDisabled(id);
+
+  bindUpdate(id, forceUpdate);
 
   const contentStyle = jssStyle?.tree() || ({} as TreeClasses);
   const rootClass = classNames(contentStyle.contentWrapper, {

@@ -69,6 +69,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   const { current: context } = useRef<TreeContext<DataItem>>({
     pathMap: new Map<KeygenResult, TreePathType>(),
     dataMap: new Map<KeygenResult, DataItem>(),
+    forceUpdateMap: new Map<KeygenResult, () => void>(),
     valueMap: new Map<KeygenResult, CheckedStatusType>(),
     updateMap: new Map<KeygenResult, UpdateFunc>(),
     unmatchedValueMap: new Map<any, any>(),
@@ -78,6 +79,15 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     cachedValue: [],
     valueDataCache: new Map<KeygenResult, DataItem>(),
   });
+
+  // 注册刷新方法
+  const bindUpdate = (id: KeygenResult, update: () => void) => {
+    context.forceUpdateMap.set(id, update);
+  };
+
+  const unBindUpdate = (id: KeygenResult) => {
+    context.forceUpdateMap.delete(id);
+  };
 
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
@@ -194,6 +204,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
+    const update = context.forceUpdateMap.get(id);
+    if (update) update();
   };
 
   const setUnmatedValue = () => {
@@ -440,6 +452,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     isDisabled,
     bindNode,
     getDataById,
+    bindUpdate,
+    unBindUpdate,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,
