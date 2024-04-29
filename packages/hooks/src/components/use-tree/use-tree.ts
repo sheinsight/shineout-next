@@ -8,6 +8,7 @@ import {
   TreeContext,
   UpdateFunc,
 } from './use-tree.type';
+import { usePersistFn } from '../../common/use-persist-fn';
 import { KeygenResult } from '../../common/type';
 import { isFunc, isString, isNumber, isArray, isUnMatchedData } from '../../utils/is';
 
@@ -81,13 +82,13 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   });
 
   // 注册刷新方法
-  const bindUpdate = (id: KeygenResult, update: () => void) => {
+  const bindUpdate = usePersistFn((id: KeygenResult, update: () => void) => {
     context.forceUpdateMap.set(id, update);
-  };
+  });
 
-  const unBindUpdate = (id: KeygenResult) => {
+  const unBindUpdate = usePersistFn((id: KeygenResult) => {
     context.forceUpdateMap.delete(id);
-  };
+  });
 
   // 注册节点
   const bindNode = (id: KeygenResult, update: UpdateFunc) => {
