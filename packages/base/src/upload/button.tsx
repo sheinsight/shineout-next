@@ -5,6 +5,7 @@ import Spin from '../spin';
 import { ButtonUploadInnerPropsType, UploadButtonProps } from './button.type';
 import { usePersistFn } from '@sheinx/hooks';
 import classNames from 'classnames';
+import { useConfig } from '../config';
 
 const handleKeyDown = (e: React.KeyboardEvent) => {
   if (e.keyCode === 13) (e.target as HTMLElement).click();
@@ -24,6 +25,8 @@ const UploadButton = <T,>(props: UploadButtonProps<T>) => {
     renderContent: undefined,
     recoverAble: false,
   };
+  const config = useConfig();
+  const isRtl = config.direction === 'rtl';
 
   const uploadClasses = props.jssStyle?.upload?.();
   const [process, setProcess] = React.useState(-1);
@@ -65,7 +68,8 @@ const UploadButton = <T,>(props: UploadButtonProps<T>) => {
 
   const uploading = process >= 0;
   const style = {
-    right: uploading ? `${100 - Math.min(99, process)}%` : '100%',
+    [isRtl ? 'left' : 'right']: uploading ? `${100 - Math.min(99, process)}%` : '100%',
+    [isRtl ? 'right' : 'left']: 0
   };
   return (
     <Upload
