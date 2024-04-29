@@ -1,4 +1,4 @@
-import { cloneElement } from 'react';
+import { cloneElement, useEffect } from 'react';
 import classNames from 'classnames';
 import { useMenuItem, util } from '@sheinx/hooks';
 import Icons from '../icons';
@@ -9,7 +9,7 @@ import type { MenuItemProps } from './menu.type';
 const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const classes = props.jssStyle?.menu?.();
   const children = props.dataItem.children || [];
-  const { inlineIndent = 24, frontCaretType = 'solid' } = props;
+  const { inlineIndent = 24, frontCaretType = 'solid', collapse } = props;
 
   const hasExpandAbleChildren = children.some(
     (item: any) => item && item.children && (props.looseChildren || item.children.length),
@@ -44,6 +44,11 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     mode: props.mode,
     scrollRef: props.scrollRef,
   });
+
+  const handleTransitionEnd = () => {
+    console.log(999);
+  };
+
   const renderItem = () => {
     const item = util.render(props.renderItem, props.dataItem, props.index);
     const link = props.linkKey
@@ -66,10 +71,16 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
         <div style={{ width: props.level * inlineIndent, flexShrink: 0 }} />
       ) : null;
 
+    const isFirstLevelItem = collapse && props.level === 0;
+
     if (props.frontCaret) {
       return (
         <div
-          className={classNames(classes?.itemContent, classes?.itemContentFront)}
+          className={classNames(
+            classes?.itemContent,
+            classes?.itemContentFront,
+            isFirstLevelItem && classes?.itemContentHide,
+          )}
           onClick={handleItemClick}
         >
           {indent}
@@ -96,7 +107,11 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
     } else {
       return (
         <div
-          className={classNames(classes?.itemContent, classes?.itemContentBack)}
+          className={classNames(
+            classes?.itemContent,
+            classes?.itemContentBack,
+            isFirstLevelItem && classes?.itemContentHide,
+          )}
           onClick={handleItemClick}
         >
           {indent}
@@ -118,6 +133,30 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       );
     }
   };
+
+  const renderCollapseItem = () => {
+    if (!props.renderCollapse) return null;
+    const isFirstLevelItem = props.level === 0 && collapse;
+
+    return (
+      <div
+        className={classNames(
+          classes.collapseItem,
+          isInPath && classes?.collapseItemInPath,
+          !isFirstLevelItem && classes.collapseItemHide,
+        )}
+        onClick={handleItemClick}
+        // onTransitionEnd={handleTransitionEnd}
+      >
+        {props.renderCollapse(props.dataItem, props.index)}
+      </div>
+    );
+  };
+
+  useEffect(() => {
+
+  }, []);
+
   return (
     <li
       className={classNames(
@@ -132,6 +171,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       onMouseLeave={handleMouseLeave}
     >
       {renderItem()}
+      {renderCollapseItem()}
       {children.length > 0 && (
         <ul
           className={classNames(

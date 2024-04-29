@@ -22,6 +22,36 @@ export interface MenuTokens {
   menuIconColor: string;
   /**
    * @type {string}
+   * @token Size-20
+   * @description 菜单折叠模式下的宽度
+   */
+  menuCollapseWidth: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-2
+   * @description 菜单折叠模式下的选项禁用时的字体颜色
+   */
+  menuCollapseItemDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 菜单折叠模式下的选项禁用时的背景颜色
+   */
+  menuCollapseItemDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 菜单折叠模式下的选项鼠标点击时的字体颜色
+   */
+  menuCollapseItemActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-1
+   * @description 菜单折叠模式下的选项鼠标点击时的背景颜色
+   */
+  menuCollapseItemActiveBackgroundColor: string;
+  /**
+   * @type {string}
    * @token Neutral-fill-1
    * @description 菜单选项背景颜色
    */
@@ -76,7 +106,7 @@ export interface MenuTokens {
   menuItemDisabledFontColor: string;
   /**
    * @type {string}
-   * @token 16px
+   * @token 13px
    * @description 菜单标题模式内边距（水平方向）
    */
   menuTitlePaddingX: string;
@@ -176,4 +206,52 @@ export interface MenuTokens {
    * @description 菜单深色模式选项禁用时的字体颜色
    */
   menuDarkItemDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-1
+   * @description 菜单深色模式折叠模式下的选项字体颜色
+   */
+  menuDarkCollapseItemFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-9
+   * @description 菜单深色模式折叠模式下的选项背景颜色
+   */
+  menuDarkCollapseItemBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 菜单深色模式折叠模式下的选项鼠标点击时的字体颜色
+   */
+  menuDarkCollapseItemActiveFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-6
+   * @description 菜单深色模式折叠模式下的选项鼠标点击时的背景颜色
+   */
+  menuDarkCollapseItemActiveBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-4
+   * @description 菜单深色模式折叠模式下的选项禁用时的字体颜色
+   */
+  menuDarkCollapseItemDisabledFontColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-fill-9
+   * @description 菜单深色模式折叠模式下的选项禁用时的背景颜色
+   */
+  menuDarkCollapseItemDisabledBackgroundColor: string;
+  /**
+   * @type {string}
+   * @token Neutral-text-1
+   * @description 菜单深色模式折叠模式下的选项鼠标移入时的字体颜色
+   */
+  menuDarkCollapseItemHoverFontColor: string;
+  /**
+   * @type {string}
+   * @token Brand-9
+   * @description 菜单深色模式折叠模式下的选项鼠标移入时的背景颜色
+   */
+  menuDarkCollapseItemHoverBackgroundColor: string;
 }

@@ -337,6 +337,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
   useEffect(() => {
     if (!compressed) return;
     if (!resultRef.current) return;
+    console.log(more);
     if (more === -1) {
       const tagClassName = `.${styles.tag.split(' ')[0]}`;
       if (shouldResetMore.current && isArray(value) && (value || []).length) {

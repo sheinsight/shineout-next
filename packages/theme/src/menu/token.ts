@@ -14,6 +14,7 @@ const menuTokenDescription = {
   dark: '深色模式',
   expand: '展开icon的',
   open: '打开状态的',
+  collapse: '折叠模式下的',
   box: '',
 };
 
@@ -30,6 +31,27 @@ const menuTokenExtraValue = {
   font: { size: '14/regular', color: 'Neutral-text-5' },
   icon: {
     color: 'Neutral-text-4',
+  },
+  collapse: {
+    width: 'Size-20',
+    item: {
+      disabled: {
+        font: {
+          color: 'Neutral-text-2',
+        },
+        background: {
+          color: 'Neutral-fill-1',
+        },
+      },
+      active: {
+        font: {
+          color: 'Brand-6',
+        },
+        background: {
+          color: 'Neutral-fill-1',
+        },
+      },
+    },
   },
   item: {
     background: { color: 'Neutral-fill-1' },
@@ -49,7 +71,7 @@ const menuTokenExtraValue = {
     },
   },
   title: {
-    padding: { x: '16px', y: '9px' },
+    padding: { x: '13px', y: '9px' },
   },
   expand: {
     width: '46px',
@@ -83,6 +105,40 @@ const menuTokenExtraValue = {
       disabled: {
         background: { color: 'Neutral-fill-10' },
         font: { color: 'Neutral-text-4' },
+      },
+    },
+    collapse: {
+      item: {
+        font: {
+          color: 'Brand-1',
+        },
+        background: {
+          color: 'Neutral-fill-9',
+        },
+        active: {
+          font: {
+            color: 'Neutral-text-1',
+          },
+          background: {
+            color: 'Brand-6',
+          },
+        },
+        disabled: {
+          font: {
+            color: 'Neutral-text-4',
+          },
+          background: {
+            color: 'Neutral-fill-9',
+          },
+        },
+        hover: {
+          font: {
+            color: 'Neutral-text-1',
+          },
+          background: {
+            color: 'Brand-9',
+          },
+        },
       },
     },
   },
