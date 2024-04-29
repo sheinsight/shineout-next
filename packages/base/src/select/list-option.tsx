@@ -2,10 +2,12 @@ import classNames from 'classnames';
 import { SelectClasses } from './select.type';
 import { ListOptionProps } from './list-option.type';
 import Icons from '../icons';
+import { useConfig } from '../config';
 
 const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) => {
   const { jssStyle, datum, index, data, multiple, isHover, renderItem, onHover, onOptionClick } =
     props;
+  const config = useConfig();
   const styles = jssStyle?.select?.() as SelectClasses;
   const isChecked = datum.check(data);
   const isDisabled = datum.disabledCheck(data);
@@ -32,7 +34,11 @@ const ListOption = <DataItem, Value>(props: ListOptionProps<DataItem, Value>) =>
   };
 
   const renderCheckedIcon = () => {
-    return <span className={styles.checkedIcon}>{Icons.select.Check}</span>;
+    return (
+      <span className={styles.checkedIcon} dir={config.direction}>
+        {Icons.select.Check}
+      </span>
+    );
   };
 
   const result = renderItem(data);

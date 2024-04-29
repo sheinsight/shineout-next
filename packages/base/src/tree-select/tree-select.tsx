@@ -34,7 +34,10 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
 ) => {
   const props = useWithFormConfig(props0);
   const render = useRender();
-  const { locale } = useConfig();
+  const { locale, direction } = useConfig();
+  const isRtl = direction === 'rtl';
+  const dfp = isRtl ? 'bottom-right' : 'bottom-left';
+
   const {
     jssStyle,
     className,
@@ -51,7 +54,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     underline,
     showArrow = true,
     focusSelected = true,
-    position: positionProp = 'bottom-left',
+    position: positionProp = dfp,
     open: openProp,
     onCollapse: onCollapseProp,
     disabled,

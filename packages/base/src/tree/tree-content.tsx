@@ -154,7 +154,7 @@ const NodeContent = <DataItem, Value extends KeygenResult[]>(
 
     if (children && children.length > 0) return indicator;
     if (Array.isArray(children) || children === null) return null;
-    if (true && !children) return renderLoading();
+    if (fetching && !children) return renderLoading();
     if (loader && !fetching) return indicator;
 
     return null;

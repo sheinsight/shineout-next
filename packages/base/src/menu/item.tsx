@@ -2,6 +2,7 @@ import { cloneElement } from 'react';
 import classNames from 'classnames';
 import { useMenuItem, util } from '@sheinx/hooks';
 import Icons from '../icons';
+import { useConfig } from '../config';
 
 import type { OptionalToRequired } from '@sheinx/hooks';
 import type { MenuItemProps } from './menu.type';
@@ -10,6 +11,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
   const classes = props.jssStyle?.menu?.();
   const children = props.dataItem.children || [];
   const { inlineIndent = 24, frontCaretType = 'solid' } = props;
+  const config = useConfig();
 
   const hasExpandAbleChildren = children.some(
     (item: any) => item && item.children && (props.looseChildren || item.children.length),
@@ -81,6 +83,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
               props.parentSelectable && classes?.expandHover,
             )}
             onClick={handleExpandClick}
+            dir={config.direction}
           >
             {
               <div className={classes?.icon}>
@@ -110,6 +113,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
                 classes?.expandBack,
                 props.parentSelectable && classes?.expandHover,
               )}
+              dir={config.direction}
             >
               <div className={classes?.icon}>{Icons.menu.CollapseArrow}</div>
             </div>
@@ -130,6 +134,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
       )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      dir={config.direction}
     >
       {renderItem()}
       {children.length > 0 && (
@@ -139,6 +144,7 @@ const MenuItem = (props: OptionalToRequired<MenuItemProps>) => {
             isUp && classes?.childrenUp,
             hasExpandAbleChildren && classes?.childrenHasExpand,
           )}
+          dir={config.direction}
         >
           {children.map((item: any, index: number) => {
             const key = util.getKey(props.keygen, item, index);

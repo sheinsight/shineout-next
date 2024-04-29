@@ -6,6 +6,7 @@ import { useTransfer, TransferListType, KeygenResult, util } from '@sheinx/hooks
 import TransferList from './transfer-list';
 import TransferOperate from './transfer-operate';
 import Icon from '../icons';
+import { useConfig } from '../config';
 
 const Transfer = <DataItem, Value extends KeygenResult[]>(
   props: TransferProps<DataItem, Value>,
@@ -47,6 +48,9 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
     onChange: onChangeProp,
     onSelectChange: onSelectChangeProp,
   } = props;
+
+  const config = useConfig();
+  const isRtl = config.direction === 'rtl';
 
   const {
     source,
@@ -103,7 +107,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
           listDatum={sourceDatum}
           value={sourceSelectedKeys}
         >
-          {operationIcon && !sourceOperation && Icon.transfer.Add}
+          {operationIcon && !sourceOperation && (isRtl ? Icon.transfer.Remove : Icon.transfer.Add)}
         </TransferOperate>
         <TransferOperate
           size={size}
@@ -115,7 +119,7 @@ const Transfer = <DataItem, Value extends KeygenResult[]>(
           listDatum={targetDatum}
           value={targetSelectedKeys}
         >
-          {operationIcon && !targetOperation && Icon.transfer.Remove}
+          {operationIcon && !targetOperation && (isRtl ? Icon.transfer.Add : Icon.transfer.Remove)}
         </TransferOperate>
       </div>
     );

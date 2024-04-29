@@ -1,6 +1,7 @@
 import Popover from '../popover';
 import React from 'react';
 import ErrorTrans from '../form/error-trans';
+import { useConfig } from '../config';
 
 import type { PopoverProps } from '../popover/popover.type';
 
@@ -36,6 +37,8 @@ const useTip = (
   props: BaseTipProps & { focused: boolean; rootRef: React.RefObject<HTMLElement> },
 ) => {
   const { popover, popoverProps, error, tip, focused, rootRef, jssStyle } = props;
+  const config = useConfig();
+  const dfp = config.direction === 'rtl' ? 'bottom-right' : 'bottom-left';
   const styles =
     popoverProps?.style && popoverProps?.style?.width
       ? popoverProps?.style
@@ -51,7 +54,7 @@ const useTip = (
         {...popoverProps}
         style={styles}
         visible
-        position={popoverProps?.position || 'bottom-left'}
+        position={popoverProps?.position || dfp}
         type={errorMessage ? 'error' : undefined}
       >
         {errorMessage ? <ErrorTrans error={errorObj} /> : tip}

@@ -140,6 +140,7 @@ const Textarea = (props0: TextareaProps) => {
       <div
         key='info'
         style={{ minWidth: 'auto' }}
+        dir={config.direction}
         className={classNames(textareaClasses?.info, !!isError && textareaClasses?.infoError)}
       >
         {text}

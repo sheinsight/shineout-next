@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import React, { cloneElement, isValidElement } from 'react';
 import { util } from '@sheinx/hooks';
@@ -17,6 +17,7 @@ interface ItemLinkProps {
   disabled?: boolean;
   onClick?: (e: React.MouseEvent) => void;
   style?: React.CSSProperties;
+  dir?: 'ltr' | 'rtl';
 }
 
 interface Props {
@@ -45,7 +46,7 @@ class Item extends React.PureComponent<ItemProps> {
   }
 
   render() {
-    const { itemClassName, renderItem } = this.props;
+    const { itemClassName, renderItem, direction } = this.props;
     const data = (this.props.data || {}) as DropdownNode;
 
     const props: ItemLinkProps = {
@@ -53,6 +54,7 @@ class Item extends React.PureComponent<ItemProps> {
       onClick: this.handleClick,
       className: itemClassName,
       target: data.target,
+      dir: direction,
     };
     if (data.url) props.href = data.url;
 
@@ -65,13 +67,17 @@ class Item extends React.PureComponent<ItemProps> {
 
     if (isValidElement(content)) {
       const { className: propsClassName = '', ...otherProps } = props as Props;
-      const { className: contentPropsClassName = '', ...otherContentProps } = content.props as Props;
+      const { className: contentPropsClassName = '', ...otherContentProps } =
+        content.props as Props;
 
       const className = classNames(propsClassName, contentPropsClassName);
 
-      return cloneElement(content, Object.assign(otherProps, otherContentProps, {
-        className
-      }));
+      return cloneElement(
+        content,
+        Object.assign(otherProps, otherContentProps, {
+          className,
+        }),
+      );
     }
 
     return <a {...props}>{content}</a>;

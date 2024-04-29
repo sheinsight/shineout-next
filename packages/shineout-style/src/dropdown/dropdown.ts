@@ -47,10 +47,32 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
   listHasChildren: {
     '$wrapper[data-position^="left"] > &': {
       '& > $itemWrapper > $item': {
-        '&::before': {
+        '&[dir=ltr]::before': {
           content: '""',
           width: '1em',
           marginLeft: token.dropdownCaretMarginLeft,
+          display: 'inline-block',
+        },
+        '&[dir=rtl]::after': {
+          content: '""',
+          width: '1em',
+          marginRight: token.dropdownCaretMarginLeft,
+          display: 'inline-block',
+        },
+      },
+    },
+    '$wrapper[data-position^="right"] > &': {
+      '& > $itemWrapper > $item': {
+        '&[dir=rtl]::before': {
+          content: '""',
+          width: '1em',
+          marginLeft: token.dropdownCaretMarginLeft,
+          display: 'inline-block',
+        },
+        '&[dir=ltr]::after': {
+          content: '""',
+          width: '1em',
+          marginRight: token.dropdownCaretMarginLeft,
           display: 'inline-block',
         },
       },
@@ -72,12 +94,19 @@ const dropdown: JsStyles<keyof DropdownClasses> = {
       transform: 'rotate(-90deg)',
     },
     '$wrapper[data-position^="left"] > $button &': {
-      marginLeft: '0',
-      marginRight: token.dropdownCaretMarginLeft,
-      textAlign: 'right',
       '& > svg': {
         transform: 'rotate(90deg)',
       },
+    },
+    '$wrapper[data-position^="left"] > $button &[dir=ltr]': {
+      marginLeft: '0',
+      marginRight: token.dropdownCaretMarginLeft,
+      textAlign: 'right',
+    },
+    '$wrapper[data-position^="right"] > $button &[dir=rtl]': {
+      marginLeft: '0',
+      marginRight: token.dropdownCaretMarginLeft,
+      textAlign: 'right',
     },
     '$wrapper[data-position^="left"] > $button & > svg': {},
     '$wrapper[data-position^="top"] > $button & > svg': {
