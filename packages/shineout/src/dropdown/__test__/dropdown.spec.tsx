@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Dropdown from '..';
 import { TYPE } from 'shineout';
@@ -135,6 +135,7 @@ describe('Dropdown[Base]', () => {
     const { container } = render(<Dropdown placeholder='Dropdown' data={data} />);
     const dropdown = container.querySelector(dropdownClassName)!;
     expect(dropdown).toBeTruthy();
+    screen.debug()
     attributesTest(dropdown, dataPosition, 'bottom-left');
     classLengthTest(dropdown, 'button', 1);
     const button = dropdown.querySelector('button')!;
@@ -145,6 +146,7 @@ describe('Dropdown[Base]', () => {
     const list = dropdown.querySelector(dropdownListClassName)!;
     styleTest(list, closeStyle);
     const listDropdown = list.querySelector(dropdownClassName)!;
+    
     attributesTest(listDropdown, dataPosition, 'right-top');
     classTest(listDropdown.querySelector('.' + dropdownButtonClassName)!, dropdownItemClassName);
     classLengthTest(list, 'a', 5);
@@ -155,11 +157,11 @@ describe('Dropdown[Base]', () => {
     fireEvent.click(dropdown);
     await waitFor(async () => {
       await delay(200);
-      classTest(container.querySelectorAll(dropdownClassName)[0]!, dropdownOpenClassName);
-      attributesTest(list, 'data-sheinx-animation-duration', 'fast');
-      attributesTest(list, 'data-sheinx-animation-type', 'fade');
-      expect(list.getAttribute('style')).not.toBe(closeStyle);
     });
+    classTest(container.querySelectorAll(dropdownClassName)[0]!, dropdownOpenClassName);
+    attributesTest(list, 'data-sheinx-animation-duration', 'fast');
+    attributesTest(list, 'data-sheinx-animation-type', 'fade');
+    expect(list.getAttribute('style')).not.toBe(closeStyle);
   });
   test('should render when set disabled is true', () => {
     const clickFn = jest.fn();

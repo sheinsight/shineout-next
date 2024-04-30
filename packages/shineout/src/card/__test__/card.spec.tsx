@@ -213,7 +213,7 @@ describe('Card[Collapse]', () => {
     const cardIndicatorWrapper = cardHeaderWrapper.querySelector(indicator)!;
     classLengthTest(cardIndicatorWrapper, indicatorIcon, 1);
     const cardBodyCollapse = cardWrapper.querySelector(bodyCollapse)!;
-    styleTest(cardBodyCollapse, activeDefaultStyle);
+    styleContentTest(cardBodyCollapse, activeDefaultStyle);
     fireEvent.click(cardIndicatorWrapper.querySelector(indicatorIcon)!);
     await waitFor(async () => {
       await delay(500);
