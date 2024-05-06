@@ -25,8 +25,18 @@ export default () => {
   return (
     <div>
       <Select
+        width={300}
+        data={data}
+        onCreate
+        height={250}
+        keygen
+        placeholder='Select Color'
+        clearable
+      />
+
+      <Select
         multiple
-        hideCreateOption
+        style={{ marginInlineStart: 16 }}
         width={300}
         data={data}
         onCreate

@@ -16,7 +16,7 @@ const Changelog = (props: Props) => {
   const { changelog } = props;
   const style = useStyles();
   const state = useSnapshot(store);
-  const changelogList = changelog[state.locales].reverse();
+  const changelogList = changelog[state.locales];
 
   const renderChanges = (type: string, changelogs: any = [], index: number) => {
     if (!changelogs.length) return null;
