@@ -51,7 +51,6 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     onDragLeave,
     onDragOver,
     onDragStart,
-    keepCache,
     ...rest
   } = props;
 
@@ -73,7 +72,6 @@ const Tree = <DataItem, Value extends KeygenResult[]>(props: TreeProps<DataItem,
     childrenKey: childrenKey,
     keygen,
     onExpand: onExpandProp,
-    keepCache,
   });
 
   const treeStyle = jssStyle?.tree() || ({} as TreeClasses);

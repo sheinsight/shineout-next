@@ -44,7 +44,7 @@ const Result = <DataItem, Value>(props: ResultProps<DataItem, Value>) => {
     data,
   } = props;
   const value = (
-    [null, undefined, ''].includes(valueProp as any) ? [] : multiple ? valueProp : [valueProp]
+    [null, undefined, ''].includes(valueProp as any) ? [] : Array.isArray(valueProp) ? valueProp : [valueProp]
   ) as Value;
 
   const [more, setMore] = useState(-1);

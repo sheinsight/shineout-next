@@ -56,7 +56,6 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     unmatch,
     isControlled,
     onExpand: onExpandProp,
-    keepCache,
   } = props;
 
   const { value: expanded, onChange: onExpand } = useInputAble({
@@ -179,16 +178,8 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
   };
 
   const getDataById = (id: KeygenResult) => {
-    if (keepCache) {
-      if (!context.valueDataCache) {
-        context.valueDataCache = new Map();
-      }
-      const cache = context.valueDataCache.get(id);
-      if (cache !== undefined) return cache;
-    }
     const oroginData = context.dataMap.get(id);
     if (oroginData) {
-      if (keepCache) context.valueDataCache.set(id, oroginData);
       return oroginData;
     }
     if (!unmatch) return null;
@@ -202,6 +193,10 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
 
     return getDataById(values);
   };
+
+  const isUnMatched = usePersistFn((data: any) => {
+    return isUnMatchedData(data);
+  })
 
   const setValueMap = (id: KeygenResult, checked: CheckedStatusType) => {
     context.valueMap.set(id, checked);
@@ -455,6 +450,7 @@ const useTree = <DataItem>(props: BaseTreeProps<DataItem>) => {
     getDataById,
     bindUpdate,
     unBindUpdate,
+    isUnMatched,
     pathMap: context.pathMap,
     dataMap: context.dataMap,
     valueMap: context.valueMap,

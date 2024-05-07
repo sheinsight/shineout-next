@@ -95,6 +95,9 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
   const datum = useRef<TreeContextProps<DataItem>>();
   const blurEvent = useRef<(() => void) | null>();
   const inputRef = useRef<HTMLInputElement>();
+  const { current: context } = useRef({
+    cachedMap: new Map(),
+  });
   const [focused, setFocused] = useState(false);
 
   const { value, onChange } = useTreeSelect({
@@ -343,6 +346,21 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     );
   };
 
+  const getDataById = usePersistFn((id: KeygenResult) => {
+    if (!props.noCache) {
+      if (context.cachedMap.has(id)) {
+        return context.cachedMap.get(id);
+      }
+    }
+    if (!datum.current) return undefined as DataItem;
+    const origin = datum.current?.getDataById(id);
+    if (!datum.current?.isUnMatched(origin)) {
+      context.cachedMap.set(id, origin);
+    }
+
+    return origin;
+  });
+
   const getDataByValues = (values?: Value): (DataItem | UnMatchedData)[] => {
     if (!datum.current || !values) return [];
     return datum.current.getDataByValues(values) as DataItem[];
@@ -466,6 +484,15 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     innerTitle,
   });
 
+  const getResultByValue = usePersistFn((arr: Value) => {
+    const result = (Array.isArray(arr) ? arr : [arr])
+      .map((id) => {
+        return getDataById(id);
+      })
+      .filter((item) => item !== underline);
+    return result;
+  });
+
   const renderResult = () => {
     const result = (
       <div className={classNames(styles?.result)}>
@@ -478,7 +505,6 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           focus={open}
           keygen={keygen as any}
           disabled={disabled}
-          // maxLength={maxLength}
           compressed={compressed}
           compressedBound={compressedBound}
           compressedClassName={compressedClassName}
@@ -497,7 +523,7 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
           onRef={inputRef}
           checkUnMatched={checkUnMatched}
           onClearCreatedData={onClearCreatedData}
-          getDataByValues={getDataByValues}
+          getDataByValues={getResultByValue}
           onRemove={handleRemove}
           classes={styles}
           setInputText={setInputText}
