@@ -464,17 +464,17 @@ const TreeSelect = <DataItem, Value extends TreeSelectValueType>(
     handleChange(item, id);
   };
 
-  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult, index?: number) => {
+  const handleRemove = (item: DataItem | UnMatchedData, key?: KeygenResult) => {
     if (!datum) return;
 
-    const dataKey = util.isUnMatchedData(item) ? item.value : datum.getKey(item, key, index);
+    const dataKey = key ?? (util.isUnMatchedData(item) ? item.value : datum.getKey(item));
 
     const isDisabled = datum.isDisabled(dataKey);
 
     if (isDisabled) return;
 
     datum.set(dataKey, 0);
-    handleChange(item, datum.getKey(item as DataItem, key, index));
+    handleChange(item, dataKey);
   };
 
   // innerTitle 模式
