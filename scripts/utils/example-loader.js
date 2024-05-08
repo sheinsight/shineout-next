@@ -1,6 +1,6 @@
-// t-xxx 为测试示例
-const testFlag = 't-';
+// t-xxx | test-xxx 为测试示例
 
+const isTest = (file) => /^(t|test)-(.)+/.test(file);
 const wrapWithSpan = (str) => {
   const regex = /`([^`]*)`/g;
   const wrappedStr = str.replace(regex, '<span>$1</span>');
@@ -9,8 +9,8 @@ const wrapWithSpan = (str) => {
 
 const exampleLoader = (content, component, fileName) => {
   // 仅处理非 t-xxx 的文件
-
-  if (process.env.NODE_ENV === 'production' && fileName.indexOf(testFlag) > -1) {
+  const fileisTest = isTest(fileName);
+  if (process.env.NODE_ENV === 'production' && fileisTest ) {
     return false;
   }
 
@@ -28,7 +28,7 @@ const exampleLoader = (content, component, fileName) => {
     files: {},
   };
 
-  if (fileName.indexOf(testFlag) > -1) {
+  if (fileisTest) {
     example['isTest'] = true;
   } else {
     example['isTest'] = false;
